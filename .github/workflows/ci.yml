@@ -1,0 +1,83 @@
+# The build and the quick tests (docs/testing.md) on every push to main and every pull request.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TG_COMMIT: 1d99bd7f599fcd687fd563cbe01370d0b020e46f
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      # The .blend sources in LFS are not needed to build or test, so they are not downloaded.
+      - uses: actions/checkout@v4
+        with:
+          path: AnomalyStation
+          lfs: false
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: AnomalyStation/global.json
+
+      # The tools and tests read tg from ../tgstation at the pinned commit (docs/building.md#getting-tgstation).
+      - name: Cache tgstation
+        id: tg-cache
+        uses: actions/cache@v4
+        with:
+          path: tgstation
+          key: tgstation-${{ env.TG_COMMIT }}
+
+      - name: Fetch tgstation
+        if: steps.tg-cache.outputs.cache-hit != 'true'
+        run: |
+          git init tgstation
+          git -C tgstation fetch --depth 1 https://github.com/tgstation/tgstation.git "$TG_COMMIT"
+          git -C tgstation checkout FETCH_HEAD
+          rm -rf tgstation/.git
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ hashFiles('AnomalyStation/**/*.csproj', 'AnomalyStation/**/*.props', 'AnomalyStation/global.json') }}
+          restore-keys: nuget-
+
+      - name: Build
+        working-directory: AnomalyStation
+        run: dotnet build AnomalyStation.sln -warnaserror
+
+      - name: Build the client as its export is
+        working-directory: AnomalyStation
+        run: dotnet build godot/Anomaly.Client.csproj -c ExportDebug -warnaserror
+
+      # One project at a time: a hosted runner has less memory than the 32 GB the parallel quick run wants.
+      - name: Test (analyzers)
+        working-directory: AnomalyStation
+        run: dotnet test tests/Anomaly.Analyzers.Tests --no-build --filter "Category!=Meta"
+
+      - name: Test (server)
+        working-directory: AnomalyStation
+        env:
+          DOTNET_GCHeapHardLimit: "0x300000000"
+        run: dotnet test tests/Anomaly.Server.Tests --no-build --filter "Category!=Meta"
+
+      - name: Test (core)
+        working-directory: AnomalyStation
+        env:
+          DOTNET_GCHeapHardLimit: "0x300000000"
+        run: dotnet test tests/Anomaly.Core.Tests --no-build --filter "Category!=Meta"

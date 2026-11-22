@@ -7,6 +7,8 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+## [1.12.0-pre-alpha] - 2026-11-23
+
 ### Added
 
 - New 3D models: syndicate beacon, turret and sleeper, corgi pinata, Interdyne container, nuke statue, flatpacker, flatpack cart, minimoog, organ harvester.

@@ -554,6 +554,7 @@ public class CodecV2Tests
             r.VarUInt(0); // version 60: no levels without parallax
             r.VarUInt(0); // version 76: no linked levels
             r.VarUInt(0); // version 87: the game's own sky and sun
+            r.Bytes(0xD0, 0x07); // version 91: walls and ceiling 2000 mm high
         });
 
         Assert.True(Codec.TryDecode(Craft(r => r.VarUInt(1).VarUInt(9).VarUInt(1).VarUInt(2).Bytes(0xFF, 0x01)), out MapGrid _, out ProtocolError error), error.ToString());

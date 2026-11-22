@@ -12,7 +12,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: tgstation
-        key: tgstation-${{ env.TG_COMMIT }}
+        key: tgstation-git-${{ env.TG_COMMIT }}
 
     - name: Fetch tgstation
       if: steps.tg-cache.outputs.cache-hit != 'true'
@@ -21,7 +21,6 @@ runs:
         git init tgstation
         git -C tgstation fetch --depth 1 https://github.com/tgstation/tgstation.git "$TG_COMMIT"
         git -C tgstation checkout FETCH_HEAD
-        rm -rf tgstation/.git
 
     - name: Cache NuGet packages
       uses: actions/cache@v4

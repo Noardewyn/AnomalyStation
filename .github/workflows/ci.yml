@@ -76,6 +76,13 @@ jobs:
       - name: Build
         working-directory: AnomalyStation
         run: dotnet build ${{ matrix.project }}
+      # The client's model, sound and bot tests read tg's converted icons and sounds (tools/convert-tg.sh without Godot's import).
+      - name: Convert tg's icons and sounds
+        if: contains(matrix.project, 'Server')
+        working-directory: AnomalyStation
+        run: |
+          dotnet run --project tools/Anomaly.Tools.Icons -- --tg ../tgstation --out godot/assets/tg
+          dotnet run --project tools/Anomaly.Tools.Sounds -- --tg ../tgstation --out godot/assets/tg
       - name: Test
         working-directory: AnomalyStation
         env:

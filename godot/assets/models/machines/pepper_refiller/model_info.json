@@ -1,0 +1,84 @@
+{
+  "pepper_spray_refiller": {
+    "base_state": "pepper",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing_With_Recesses",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Wall_Housing_With_Recesses.001",
+        "materials": [
+          "Pepper_Refiller_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Reservoir_1",
+        "triangles": 60,
+        "shared_mesh": "Reservoir_1.001",
+        "materials": [
+          "Pepper_Refiller_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.22499999403953552,
+          -0.08437500149011612,
+          -0.04218750074505806
+        ],
+        "source_state": "pepper"
+      },
+      {
+        "name": "Reservoir_2",
+        "triangles": 60,
+        "shared_mesh": "Reservoir_2.001",
+        "materials": [
+          "Pepper_Refiller_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.11249999701976776,
+          -0.08437500149011612,
+          -0.04218750074505806
+        ],
+        "source_state": "pepper"
+      },
+      {
+        "name": "Reservoir_3",
+        "triangles": 60,
+        "shared_mesh": "Reservoir_3.001",
+        "materials": [
+          "Pepper_Refiller_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.04218750074505806
+        ],
+        "source_state": "pepper"
+      },
+      {
+        "name": "Recessed_Dispensing_Nozzle",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Dispensing_Nozzle.001",
+        "materials": [
+          "Pepper_Refiller_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 260
+  }
+}

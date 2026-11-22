@@ -1,0 +1,67 @@
+{
+  "medical_laptop": {
+    "triangles": 56,
+    "meshes": 7,
+    "notes": "Bolted tabletop medical records laptop. 0.8m wide, 0.62m tall above table. Original laptop body, keyboard and medical/broken overlays. Source has no open/close mechanic. Separate lid and hinges retained for editing.",
+    "parts": [
+      "Laptop_Base",
+      "Hinge_Barrels",
+      "Laptop_Lid",
+      "Medical_Screen",
+      "Broken_Screen",
+      "Powered_Keyboard",
+      "Unpowered_Keyboard"
+    ]
+  },
+  "modular_computer": {
+    "triangles": 84,
+    "meshes": 5,
+    "notes": "One shared chassis for all 24 placed modular PCs. Program_Screen accepts original atlas overlays via material UV offset; see atlas_bindings.json. Powered/unpowered/broken visibility clips. For standby set screen state standby; powered restores selected program. No duplicate department bodies.",
+    "parts": [
+      "Console_Housing",
+      "Program_Screen",
+      "Broken_Screen",
+      "Powered_Keyboard",
+      "Unpowered_Keyboard"
+    ]
+  },
+  "computer_frame": {
+    "triangles": 174,
+    "meshes": 7,
+    "notes": "Five construction states 0..4: empty, loose board, secured board/keyboard, wired, glassed. Anchored/unanchored uses the same geometry. Completion swaps to the built computer at runtime.",
+    "parts": [
+      "Console_Housing",
+      "Empty_Monitor_Interior",
+      "Installed_Screen_Glass",
+      "Empty_Keyboard_Bay",
+      "Circuit_Board",
+      "Secured_Keyboard",
+      "Side_Wiring"
+    ]
+  },
+  "machine_frame": {
+    "triangles": 202,
+    "meshes": 5,
+    "notes": "Generic machine chassis, not computer frame. Orthographic sprite top region is a horizontal open roof; lower region is the vertical front electronics panel. Dimensions 1.68 x 0.84 x 1.26m. Three original box_0..2 stages; installed PCB lies horizontally below the rim. All opaque beams/panels have thickness and closed surfaces.",
+    "parts": [
+      "Machine_Frame_Skeleton",
+      "Electronics_box_0",
+      "Electronics_box_1",
+      "Electronics_box_2",
+      "Upper_Circuit_Board"
+    ]
+  },
+  "airlock_assembly": {
+    "triangles": 804,
+    "meshes": 6,
+    "notes": "2m one-tile standard public airlock construction. Pixel-boundary silhouette, actual window apertures, solid/glass inserts, three original panel_c1..3 stages. Anchoring has no visual change. Completed door swaps to existing airlock model; assembly has no door-opening animation.",
+    "parts": [
+      "Assembly_Frame",
+      "Solid_Window_Inserts",
+      "Glass_Window_Inserts",
+      "Construction_Panel_1",
+      "Construction_Panel_2",
+      "Construction_Panel_3"
+    ]
+  }
+}

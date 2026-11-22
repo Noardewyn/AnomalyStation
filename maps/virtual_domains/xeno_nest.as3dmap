@@ -1,0 +1,1069 @@
+anomaly-map 1
+source _maps/virtual_domains/xeno_nest.dmm tg 1d99bd7f
+size 44 39 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+1,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,32: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,32: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,32: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,32: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,32: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/item/clothing/under/rank/security/officer | /obj/item/clothing/suit/armor/vest | /obj/item/melee/baton/security/loaded | /obj/item/clothing/head/helmet | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,32: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,31: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,31: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,31: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,31: /obj/structure/alien/weeds | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,31: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,31: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,31: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+1,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,30: /obj/structure/alien/weeds | /mob/living/basic/alien/queen/large{desc = "A gigantic alien who is in charge of the hive and all of its loyal servants."; name = "alien queen"; pixel_x = -16; can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,30: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,30: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,30: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+1,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,29: /obj/structure/alien/weeds | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,29: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,29: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,29: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,29: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+1,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,28: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,28: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/effect/decal/cleanable/blood | /obj/item/clothing/under/syndicate | /obj/item/clothing/glasses/night | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,28: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,28: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,28: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,28: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,28: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,28: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,28: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,28: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,27: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,27: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,27: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,27: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,27: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,27: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,27: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,27: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,27: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,27: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,27: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall{move_resist = 3000} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,20: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,19: /obj/structure/alien/weeds/node | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,18: /obj/structure/alien/weeds | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,16: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,16: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+20,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,16: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,16: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,15: /obj/structure/alien/weeds | /mob/living/basic/alien | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+19,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,15: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,15: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,15: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,14: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,14: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,14: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,14: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,14: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,13: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,13: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,12: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/item/tank/internals/oxygen | /obj/item/clothing/suit/space/syndicate/orange | /obj/item/clothing/mask/gas | /obj/item/clothing/head/helmet/space/syndicate/orange | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,12: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,12: /obj/structure/alien/weeds/node | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+18,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,12: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,12: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,11: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,11: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,11: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,11: /obj/structure/alien/weeds | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,11: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,10: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,10: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+17,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,10: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+16,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,9: /obj/structure/alien/resin/wall | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+27,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+28,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,8: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,8: /turf/template_noop | /area/virtual_domain/safehouse
+27,8: /turf/template_noop | /area/virtual_domain/safehouse
+28,8: /turf/template_noop | /area/virtual_domain/safehouse
+29,8: /turf/template_noop | /area/virtual_domain/safehouse
+30,8: /turf/template_noop | /area/virtual_domain/safehouse
+31,8: /turf/template_noop | /area/virtual_domain/safehouse
+32,8: /turf/template_noop | /area/virtual_domain/safehouse
+18,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,7: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,7: /turf/template_noop | /area/virtual_domain/safehouse
+27,7: /obj/machinery/suit_storage_unit/spaceruin | /turf/template_noop | /area/virtual_domain/safehouse
+28,7: /turf/template_noop | /area/virtual_domain/safehouse
+29,7: /turf/template_noop | /area/virtual_domain/safehouse
+30,7: /turf/template_noop | /area/virtual_domain/safehouse
+31,7: /obj/item/storage/medkit/regular | /obj/item/storage/medkit/regular | /turf/template_noop | /area/virtual_domain/safehouse
+32,7: /turf/template_noop | /area/virtual_domain/safehouse
+18,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,6: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,6: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,6: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,6: /turf/template_noop | /area/virtual_domain/safehouse
+27,6: /obj/machinery/suit_storage_unit/spaceruin | /turf/template_noop | /area/virtual_domain/safehouse
+28,6: /turf/template_noop | /area/virtual_domain/safehouse
+29,6: /obj/structure/table/greyscale | /obj/item/gun/energy/laser/xray | /obj/item/gun/energy/laser{pixel_x = 4; pixel_y = -6} | /obj/item/gun/energy/laser{pixel_x = -8; pixel_y = 6} | /turf/template_noop | /area/virtual_domain/safehouse
+30,6: /turf/template_noop | /area/virtual_domain/safehouse
+31,6: /turf/template_noop | /area/virtual_domain/safehouse
+32,6: /turf/template_noop | /area/virtual_domain/safehouse
+18,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,5: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,5: /turf/template_noop | /area/virtual_domain/safehouse
+27,5: /obj/machinery/suit_storage_unit/spaceruin | /turf/template_noop | /area/virtual_domain/safehouse
+28,5: /turf/template_noop | /area/virtual_domain/safehouse
+29,5: /obj/structure/table/greyscale | /obj/machinery/recharger{pixel_x = 8; pixel_y = 4} | /obj/machinery/recharger{pixel_x = -8; pixel_y = 4} | /turf/template_noop | /area/virtual_domain/safehouse
+30,5: /turf/template_noop | /area/virtual_domain/safehouse
+31,5: /turf/template_noop | /area/virtual_domain/safehouse
+32,5: /turf/template_noop | /area/virtual_domain/safehouse
+18,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,4: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,4: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,4: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,4: /turf/template_noop | /area/virtual_domain/safehouse
+27,4: /turf/template_noop | /area/virtual_domain/safehouse
+28,4: /turf/template_noop | /area/virtual_domain/safehouse
+29,4: /turf/template_noop | /area/virtual_domain/safehouse
+30,4: /turf/template_noop | /area/virtual_domain/safehouse
+31,4: /turf/template_noop | /area/virtual_domain/safehouse
+32,4: /turf/template_noop | /area/virtual_domain/safehouse
+18,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,3: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,3: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,3: /obj/modular_map_root/safehouse{key = "shuttle"} | /turf/template_noop | /area/virtual_domain/safehouse
+27,3: /turf/template_noop | /area/virtual_domain/safehouse
+28,3: /turf/template_noop | /area/virtual_domain/safehouse
+29,3: /turf/template_noop | /area/virtual_domain/safehouse
+30,3: /turf/template_noop | /area/virtual_domain/safehouse
+31,3: /turf/template_noop | /area/virtual_domain/safehouse
+32,3: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+18,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,2: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+20,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+21,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+22,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+23,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+24,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+25,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+26,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+27,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+28,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+29,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+30,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+31,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+32,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+18,1: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 33 1 1]
+33,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,32: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,32: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,32: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,32: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+44,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+35,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+36,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+37,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,31: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,31: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+44,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,30: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+35,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+36,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+37,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,30: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,30: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,30: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,30: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+44,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+35,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+36,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+37,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,29: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,29: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+44,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,28: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,28: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+44,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,27: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+44,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+43,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,24: /obj/structure/alien/weeds/node | /mob/living/basic/alien | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+42,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+37,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+35,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+36,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+37,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,20: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+35,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+36,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+37,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+41,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+35,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+36,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+37,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+38,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+39,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+40,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+39,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+35,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+39,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+40,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+34,10: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,10: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,10: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,10: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,10: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,10: /obj/structure/alien/resin/wall | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,9: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,8: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,7: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,6: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,6: /obj/structure/alien/weeds | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,6: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,5: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,5: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,4: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,3: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+34,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+35,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+36,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+37,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+38,2: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+39,2: /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/virtual_domain
+40,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+39,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+40,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 1 33 1]
+19,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,38: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,38: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,38: /obj/structure/alien/resin/wall | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,38: /obj/structure/alien/resin/wall | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,38: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,37: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,37: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,37: /obj/structure/alien/weeds | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,37: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,37: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,37: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,36: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,36: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,36: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,36: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,36: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,36: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+21,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,35: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,35: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,35: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,35: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,34: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,34: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,34: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,34: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,34: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/item/gun/ballistic/automatic/pistol | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,34: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,34: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+26,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+3,33: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+4,33: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+5,33: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+6,33: /obj/structure/alien/weeds | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+7,33: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+8,33: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+9,33: /obj/structure/alien/weeds/node | /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+10,33: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+11,33: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+12,33: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+13,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+14,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+15,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+22,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+23,33: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+24,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+25,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+29,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+30,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+31,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+32,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 33 33 1]
+40,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+41,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+42,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+43,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+44,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+39,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+40,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+41,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,34: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+44,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+39,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+40,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+41,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+42,33: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+43,33: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/virtual_domain
+44,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright

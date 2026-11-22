@@ -1,0 +1,149 @@
+{
+  "cyborg_recharge_station.004": [
+    "open",
+    "close",
+    "powered",
+    "unpowered"
+  ],
+  "mech_bay_power_port.004": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "emitter.004": [
+    "maintenance_open",
+    "maintenance_close",
+    "powered",
+    "unpowered"
+  ],
+  "tesla_coil.004": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "grounding_rod.004": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "containment_field_generator.004": [
+    "powered",
+    "unpowered"
+  ],
+  "shield_wall_generator.004": [
+    "powered",
+    "unpowered"
+  ],
+  "gas_turbine_inlet.004": [
+    "running",
+    "stopped",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "gas_turbine_core.004": [
+    "running",
+    "stopped",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "gas_turbine_outlet.004": [
+    "running",
+    "stopped",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "beam_reflector_single.004": [
+    "rotate_90"
+  ],
+  "beam_reflector_double.004": [
+    "rotate_90"
+  ],
+  "beam_reflector_box.004": [
+    "rotate_90"
+  ],
+  "emitter.005": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.005": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ],
+  "emitter.006": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.006": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ],
+  "emitter.007": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.007": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ],
+  "emitter.008": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.008": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ],
+  "emitter.009": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.009": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ],
+  "emitter.010": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.010": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ],
+  "emitter.011": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.011": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ],
+  "emitter.012": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "cyborg_recharge_station.012": [
+    "open",
+    "close",
+    "borgcharger0",
+    "borgcharger1",
+    "borgcharger2"
+  ]
+}

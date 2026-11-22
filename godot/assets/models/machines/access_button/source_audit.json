@@ -1,0 +1,24 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/wallmounts.png",
+  "png_sha256": "36a08a447b460fd028e160d56d4514edbf13c4da5be182c9feaeebaeba46abb8",
+  "rgba_matches_dmi": true,
+  "atlas_size": [
+    640,
+    608
+  ],
+  "tile": [
+    32,
+    32
+  ],
+  "source": "code/game/machinery/embedded_controller/access_controller.dm",
+  "map_records": 4,
+  "duplicate_audit": "Existing door_button family is /obj/machinery/button; no access_button model existed",
+  "states": [
+    "access_button_standby",
+    "access_button_off",
+    "access_button_cycle frame 0",
+    "access_button_cycle frame 1"
+  ],
+  "overlays": [],
+  "behavior": "NOPOWER takes priority; busy uses cycle, otherwise standby. Cycle frames are static presets only."
+}

@@ -1,0 +1,754 @@
+{
+  "wall_safe_unlocked": {
+    "base_state": "wall_safe",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Recessed_Safe_Shell",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Recessed_Safe_Shell.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Safe_Door",
+        "triangles": 12,
+        "shared_mesh": "Safe_Door.004",
+        "materials": [
+          "Safe_Door_unlocked_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Rotating_Stepped_Dial",
+        "triangles": 44,
+        "shared_mesh": "Rotating_Stepped_Dial.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.140625,
+          -0.016874998807907104,
+          -0.028124995529651642
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.036",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.037",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.038",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.039",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.040",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.041",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.042",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.043",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.044",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      }
+    ],
+    "triangles": 232
+  },
+  "wall_safe_locked": {
+    "base_state": "wall_safe_locked",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Recessed_Safe_Shell",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Recessed_Safe_Shell.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Safe_Door",
+        "triangles": 12,
+        "shared_mesh": "Safe_Door.004",
+        "materials": [
+          "Safe_Door_locked_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Rotating_Stepped_Dial",
+        "triangles": 44,
+        "shared_mesh": "Rotating_Stepped_Dial.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.140625,
+          -0.016874998807907104,
+          -0.028124995529651642
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.036",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.037",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.038",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.039",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.040",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.041",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.042",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.043",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.044",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_locked"
+      }
+    ],
+    "triangles": 232
+  },
+  "wall_safe_broken_lock": {
+    "base_state": "wall_safe_broken",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Recessed_Safe_Shell",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Recessed_Safe_Shell.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Safe_Door",
+        "triangles": 12,
+        "shared_mesh": "Safe_Door.004",
+        "materials": [
+          "Safe_Door_broken_lock_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Rotating_Stepped_Dial",
+        "triangles": 44,
+        "shared_mesh": "Rotating_Stepped_Dial.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.140625,
+          -0.016874998807907104,
+          -0.028124995529651642
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.036",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.037",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.038",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.039",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.040",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.041",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.042",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.043",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.044",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe_broken"
+      }
+    ],
+    "triangles": 232
+  },
+  "wall_safe_open": {
+    "base_state": "wall_safe",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Recessed_Safe_Shell",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Recessed_Safe_Shell.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Safe_Door",
+        "triangles": 12,
+        "shared_mesh": "Safe_Door.004",
+        "materials": [
+          "Safe_Door_open_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Rotating_Stepped_Dial",
+        "triangles": 44,
+        "shared_mesh": "Rotating_Stepped_Dial.004",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.140625,
+          -0.016874998807907104,
+          -0.028124995529651642
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.036",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.037",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.038",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.039",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.040",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.041",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.042",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.043",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      },
+      {
+        "name": "Keypad_Key",
+        "triangles": 12,
+        "shared_mesh": "Keypad_Key.044",
+        "materials": [
+          "Wall_Safe_Shell_Original.004"
+        ],
+        "parent": "Safe_Door_Left_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wall_safe"
+      }
+    ],
+    "triangles": 232
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "source": "assets/tg/icons/obj/doors/airlocks/highsec/highsec.png",
+  "state": "closed",
+  "rect": [
+    0,
+    0,
+    32,
+    32
+  ],
+  "source_sha256": "14f4e75b418c9f8ef52faa34ee254b55e095c93afd3dfc7ed145f98d78360c6f",
+  "parts": {
+    "Door_Left": {
+      "triangles": 60,
+      "open_offset_godot": [
+        -1.3,
+        0.0,
+        0.0
+      ]
+    },
+    "Door_Right": {
+      "triangles": 60,
+      "open_offset_godot": [
+        1.3,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "triangles": 120,
+  "nearest": true,
+  "original_png_embedded": true,
+  "glass_alpha": null,
+  "notes": "Closed tile; source direction 0. Rotate whole model for other cardinal directions."
+}

@@ -1,0 +1,2249 @@
+{
+  "storage_rack": {
+    "file": "../furniture/storage_rack/storage_rack.glb",
+    "atlas": "structures",
+    "state": "rack",
+    "category": "furniture",
+    "description": "Current source-reference rack; editable source in ../furniture/storage_rack/storage_rack.blend"
+  },
+  "solar_panel": {
+    "file": "power/solar_panel.glb",
+    "atlas": "solar",
+    "state": "sp_base",
+    "description": "Solar pedestal with separated panel layers",
+    "category": "power",
+    "meshes": 6,
+    "triangles": 336,
+    "dimensions_m": [
+      1.288,
+      1.288,
+      0.653
+    ],
+    "bounds_min_m": [
+      -0.644,
+      -0.644,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.644,
+      0.644,
+      0.653
+    ],
+    "materials": [
+      "Atlas_solar_sp_base",
+      "Glass_Slight_Cyan_Closed",
+      "Atlas_solar_solar_panel_glass_edge",
+      "Atlas_solar_solar_panel_glass"
+    ],
+    "parts": [
+      "Pedestal_Assembly",
+      "Power_Cable",
+      "Panel_Swivel_Hub",
+      "Panel_Backplate",
+      "Photovoltaic_Cells",
+      "Glass_Cover"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "solar_panel_frame": {
+    "file": "power/solar_panel_frame.glb",
+    "atlas": "solar",
+    "state": "sp_base",
+    "description": "Unfinished solar pedestal",
+    "category": "power",
+    "meshes": 2,
+    "triangles": 192,
+    "dimensions_m": [
+      0.8,
+      0.8,
+      0.588
+    ],
+    "bounds_min_m": [
+      -0.4,
+      -0.4,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.4,
+      0.4,
+      0.588
+    ],
+    "materials": [
+      "Atlas_solar_sp_base"
+    ],
+    "parts": [
+      "Pedestal_Assembly",
+      "Power_Cable"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "holopad": {
+    "file": "machines/holopad.glb",
+    "atlas": "floor",
+    "state": "holopad0",
+    "description": "Thin floor holopad with separate projected-light mask",
+    "category": "machines",
+    "meshes": 1,
+    "triangles": 276,
+    "dimensions_m": [
+      0.594,
+      0.567,
+      0.055
+    ],
+    "bounds_min_m": [
+      -0.297,
+      -0.27,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.297,
+      0.297,
+      0.055
+    ],
+    "materials": [
+      "Atlas_floor_holopad0"
+    ],
+    "parts": [
+      "Floor_Housing"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "holopad_active": {
+    "file": "machines/holopad_active.glb",
+    "atlas": "floor",
+    "state": "holopad1",
+    "description": "Thin floor holopad with separate projected-light mask",
+    "category": "machines",
+    "meshes": 2,
+    "triangles": 288,
+    "dimensions_m": [
+      0.594,
+      0.567,
+      0.059
+    ],
+    "bounds_min_m": [
+      -0.297,
+      -0.27,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.297,
+      0.297,
+      0.059
+    ],
+    "materials": [
+      "Overlay_floor_holopad1_mask",
+      "Atlas_floor_holopad1"
+    ],
+    "parts": [
+      "Floor_Housing",
+      "Emitter_Overlay"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "vending_atmosdrobe": {
+    "file": "vending/vending_atmosdrobe.glb",
+    "atlas": "vending",
+    "state": "atmosdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_bardrobe": {
+    "file": "vending/vending_bardrobe.glb",
+    "atlas": "vending",
+    "state": "bardrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_boozeomat": {
+    "file": "vending/vending_boozeomat.glb",
+    "atlas": "vending",
+    "state": "boozeomat",
+    "category": "vending",
+    "family": "boozeomat",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 13,
+    "triangles": 200,
+    "dimensions_m": [
+      1.800000011920929,
+      0.8419999778270721,
+      1.6200000047683716
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_cargodrobe": {
+    "file": "vending/vending_cargodrobe.glb",
+    "atlas": "vending",
+    "state": "cargodrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_cart": {
+    "file": "vending/vending_cart.glb",
+    "atlas": "vending",
+    "state": "cart",
+    "category": "vending",
+    "family": "wide_service",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 132,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_chapdrobe": {
+    "file": "vending/vending_chapdrobe.glb",
+    "atlas": "vending",
+    "state": "chapdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_chefdrobe": {
+    "file": "vending/vending_chefdrobe.glb",
+    "atlas": "vending",
+    "state": "chefdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_chemdrobe": {
+    "file": "vending/vending_chemdrobe.glb",
+    "atlas": "vending",
+    "state": "chemdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_cigs": {
+    "file": "vending/vending_cigs.glb",
+    "atlas": "vending",
+    "state": "cigs",
+    "category": "vending",
+    "family": "compact_product",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 128,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_clothes": {
+    "file": "vending/vending_clothes.glb",
+    "atlas": "vending",
+    "state": "clothes",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_coffee": {
+    "file": "vending/vending_coffee.glb",
+    "atlas": "vending",
+    "state": "coffee",
+    "category": "vending",
+    "family": "coffee",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 10,
+    "triangles": 168,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_coroner_drobe": {
+    "file": "vending/vending_coroner_drobe.glb",
+    "atlas": "vending",
+    "state": "coroner_drobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_curadrobe": {
+    "file": "vending/vending_curadrobe.glb",
+    "atlas": "vending",
+    "state": "curadrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_cytopro": {
+    "file": "vending/vending_cytopro.glb",
+    "atlas": "vending",
+    "state": "cytopro",
+    "category": "vending",
+    "family": "cytopro",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 132,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_detdrobe": {
+    "file": "vending/vending_detdrobe.glb",
+    "atlas": "vending",
+    "state": "detdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_dinnerware": {
+    "file": "vending/vending_dinnerware.glb",
+    "atlas": "vending",
+    "state": "dinnerware",
+    "category": "vending",
+    "family": "dinnerware",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_drug": {
+    "file": "vending/vending_drug.glb",
+    "atlas": "vending",
+    "state": "drug",
+    "category": "vending",
+    "family": "wide_medical",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 4,
+    "triangles": 96,
+    "dimensions_m": [
+      1.5,
+      0.6600000262260437,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_engidrobe": {
+    "file": "vending/vending_engidrobe.glb",
+    "atlas": "vending",
+    "state": "engidrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_engivend": {
+    "file": "vending/vending_engivend.glb",
+    "atlas": "vending",
+    "state": "engivend",
+    "category": "vending",
+    "family": "industrial",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 132,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_games": {
+    "file": "vending/vending_games.glb",
+    "atlas": "vending",
+    "state": "games",
+    "category": "vending",
+    "family": "compact_product",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 12,
+    "triangles": 192,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_genedrobe": {
+    "file": "vending/vending_genedrobe.glb",
+    "atlas": "vending",
+    "state": "genedrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_hydrobe": {
+    "file": "vending/vending_hydrobe.glb",
+    "atlas": "vending",
+    "state": "hydrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_janidrobe": {
+    "file": "vending/vending_janidrobe.glb",
+    "atlas": "vending",
+    "state": "janidrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_lawdrobe": {
+    "file": "vending/vending_lawdrobe.glb",
+    "atlas": "vending",
+    "state": "lawdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_med": {
+    "file": "vending/vending_med.glb",
+    "atlas": "vending",
+    "state": "med",
+    "category": "vending",
+    "family": "wide_medical",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 132,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_medidrobe": {
+    "file": "vending/vending_medidrobe.glb",
+    "atlas": "vending",
+    "state": "medidrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_modularpc": {
+    "file": "vending/vending_modularpc.glb",
+    "atlas": "vending",
+    "state": "modularpc",
+    "category": "vending",
+    "family": "wide_electronics",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 12,
+    "triangles": 192,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_nutri": {
+    "file": "vending/vending_nutri.glb",
+    "atlas": "vending",
+    "state": "nutri",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_parts": {
+    "file": "vending/vending_parts.glb",
+    "atlas": "vending",
+    "state": "parts",
+    "category": "vending",
+    "family": "compact_product",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 128,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_red_cola": {
+    "file": "vending/vending_red_cola.glb",
+    "atlas": "vending",
+    "state": "red_cola",
+    "category": "vending",
+    "family": "branded_drink",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 84,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_robodrobe": {
+    "file": "vending/vending_robodrobe.glb",
+    "atlas": "vending",
+    "state": "robodrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_scidrobe": {
+    "file": "vending/vending_scidrobe.glb",
+    "atlas": "vending",
+    "state": "scidrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_sec": {
+    "file": "vending/vending_sec.glb",
+    "atlas": "vending",
+    "state": "sec",
+    "category": "vending",
+    "family": "wide_service",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 132,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_secdrobe": {
+    "file": "vending/vending_secdrobe.glb",
+    "atlas": "vending",
+    "state": "secdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_seeds": {
+    "file": "vending/vending_seeds.glb",
+    "atlas": "vending",
+    "state": "seeds",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 108,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6600000262260437,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_sustenance": {
+    "file": "vending/vending_sustenance.glb",
+    "atlas": "vending",
+    "state": "sustenance",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_theater": {
+    "file": "vending/vending_theater.glb",
+    "atlas": "vending",
+    "state": "theater",
+    "category": "vending",
+    "family": "theater",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 11,
+    "triangles": 180,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_tool": {
+    "file": "vending/vending_tool.glb",
+    "atlas": "vending",
+    "state": "tool",
+    "category": "vending",
+    "family": "industrial",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 3,
+    "triangles": 60,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_virodrobe": {
+    "file": "vending/vending_virodrobe.glb",
+    "atlas": "vending",
+    "state": "virodrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "disposal_unit": {
+    "file": "utility/disposal_unit.glb",
+    "atlas": "disposal",
+    "state": "disposal",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "utility",
+    "meshes": 3,
+    "triangles": 68,
+    "dimensions_m": [
+      0.64,
+      0.67,
+      0.88
+    ],
+    "bounds_min_m": [
+      -0.32,
+      -0.355,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.32,
+      0.315,
+      0.88
+    ],
+    "materials": [
+      "Surface_disposal_unit"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Flush_Lever",
+      "Service_Panel"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "washbasin": {
+    "file": "bathroom/washbasin.glb",
+    "atlas": "plumbing",
+    "state": "sink",
+    "description": "Open ceramic basin, faucet and drain pipe",
+    "category": "bathroom",
+    "meshes": 5,
+    "triangles": 308,
+    "dimensions_m": [
+      0.52,
+      0.52,
+      0.65
+    ],
+    "bounds_min_m": [
+      -0.26,
+      -0.2,
+      0.35
+    ],
+    "bounds_max_m": [
+      0.26,
+      0.32,
+      1.0
+    ],
+    "materials": [
+      "Atlas_plumbing_sink"
+    ],
+    "parts": [
+      "Drain_Assembly",
+      "Faucet_Assembly",
+      "Tap_-1",
+      "Tap_1",
+      "Sculpted_Basin"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "kitchen_sink": {
+    "file": "bathroom/kitchen_sink.glb",
+    "atlas": "plumbing",
+    "state": "sink_alt",
+    "description": "Open ceramic basin, faucet and drain pipe",
+    "category": "bathroom",
+    "meshes": 5,
+    "triangles": 308,
+    "dimensions_m": [
+      0.76,
+      0.565,
+      0.65
+    ],
+    "bounds_min_m": [
+      -0.38,
+      -0.245,
+      0.35
+    ],
+    "bounds_max_m": [
+      0.38,
+      0.32,
+      1.0
+    ],
+    "materials": [
+      "Atlas_plumbing_sink_alt"
+    ],
+    "parts": [
+      "Drain_Assembly",
+      "Faucet_Assembly",
+      "Tap_-1",
+      "Tap_1",
+      "Sculpted_Basin"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "wall_shower": {
+    "file": "bathroom/wall_shower.glb",
+    "atlas": "plumbing",
+    "state": "shower",
+    "description": "Wall shower with stepped pipe elbows, valve and adjustable head",
+    "category": "bathroom",
+    "meshes": 3,
+    "triangles": 92,
+    "dimensions_m": [
+      0.23,
+      0.415,
+      1.0
+    ],
+    "bounds_min_m": [
+      -0.115,
+      -0.195,
+      0.98
+    ],
+    "bounds_max_m": [
+      0.115,
+      0.22,
+      1.98
+    ],
+    "materials": [
+      "Atlas_plumbing_shower"
+    ],
+    "parts": [
+      "Shower_Pipe_Assembly",
+      "Shower_Head",
+      "Temperature_Control"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "toilet": {
+    "file": "bathroom/toilet.glb",
+    "atlas": "plumbing",
+    "state": "toilet00",
+    "description": "Toilet with lined bowl, hinged seat lid and separate cistern lid",
+    "category": "bathroom",
+    "meshes": 4,
+    "triangles": 736,
+    "dimensions_m": [
+      0.47,
+      0.73,
+      0.835
+    ],
+    "bounds_min_m": [
+      -0.235,
+      -0.34,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.235,
+      0.39,
+      0.835
+    ],
+    "materials": [
+      "Water_Slight_Blue_Closed",
+      "Atlas_plumbing_toilet00"
+    ],
+    "parts": [
+      "Porcelain_Body",
+      "Bowl_Water",
+      "Cistern_Lid",
+      "Seat_Lid"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "urinal": {
+    "file": "bathroom/urinal.glb",
+    "atlas": "plumbing",
+    "state": "urinal",
+    "description": "Wall-mounted urinal with recessed and lined opening",
+    "category": "bathroom",
+    "meshes": 2,
+    "triangles": 214,
+    "dimensions_m": [
+      0.486,
+      0.24,
+      0.835
+    ],
+    "bounds_min_m": [
+      -0.243,
+      -0.13,
+      0.425
+    ],
+    "bounds_max_m": [
+      0.243,
+      0.11,
+      1.26
+    ],
+    "materials": [
+      "Atlas_plumbing_urinal"
+    ],
+    "parts": [
+      "Lined_Porcelain_Body",
+      "Flush_Valve"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "wall_mirror": {
+    "file": "bathroom/wall_mirror.glb",
+    "atlas": "plumbing",
+    "state": "mirror",
+    "description": "Stepped oval wall mirror with original highlight pixels",
+    "category": "bathroom",
+    "meshes": 2,
+    "triangles": 216,
+    "dimensions_m": [
+      0.49,
+      0.03,
+      0.665
+    ],
+    "bounds_min_m": [
+      -0.245,
+      0.005,
+      0.985
+    ],
+    "bounds_max_m": [
+      0.245,
+      0.035,
+      1.65
+    ],
+    "materials": [
+      "Atlas_plumbing_mirror"
+    ],
+    "parts": [
+      "Mirror_Frame",
+      "Reflective_Face"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "water_tank": {
+    "file": "tanks/water_tank.glb",
+    "atlas": "chemical_tanks",
+    "state": "water",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 1220,
+    "dimensions_m": [
+      0.78,
+      0.46,
+      0.82
+    ],
+    "bounds_min_m": [
+      -0.39,
+      -0.22,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.39,
+      0.24,
+      0.82
+    ],
+    "materials": [
+      "Surface_water_tank"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Valve_Block"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "fuel_tank": {
+    "file": "tanks/fuel_tank.glb",
+    "atlas": "chemical_tanks",
+    "state": "fuel",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 1220,
+    "dimensions_m": [
+      0.78,
+      0.46,
+      0.82
+    ],
+    "bounds_min_m": [
+      -0.39,
+      -0.22,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.39,
+      0.24,
+      0.82
+    ],
+    "materials": [
+      "Surface_fuel_tank"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Valve_Block"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_generic": {
+    "file": "tanks/portable_canister_generic.glb",
+    "atlas": "portable_gags",
+    "state": "generic",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_generic"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_air": {
+    "file": "tanks/portable_canister_air.glb",
+    "atlas": "portable_gags",
+    "state": "air",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_air"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_anesthetic_mix": {
+    "file": "tanks/portable_canister_anesthetic_mix.glb",
+    "atlas": "portable_gags",
+    "state": "anesthetic_mix",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_anesthetic_mix"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_carbon_dioxide": {
+    "file": "tanks/portable_canister_carbon_dioxide.glb",
+    "atlas": "portable_gags",
+    "state": "carbon_dioxide",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_carbon_dioxide"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_nitrogen": {
+    "file": "tanks/portable_canister_nitrogen.glb",
+    "atlas": "portable_gags",
+    "state": "nitrogen",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_nitrogen"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_nitrous_oxide": {
+    "file": "tanks/portable_canister_nitrous_oxide.glb",
+    "atlas": "portable_gags",
+    "state": "nitrous_oxide",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_nitrous_oxide"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_oxygen": {
+    "file": "tanks/portable_canister_oxygen.glb",
+    "atlas": "portable_gags",
+    "state": "oxygen",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_oxygen"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_plasma": {
+    "file": "tanks/portable_canister_plasma.glb",
+    "atlas": "portable_gags",
+    "state": "plasma",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_plasma"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "portable_canister_water_vapor": {
+    "file": "tanks/portable_canister_water_vapor.glb",
+    "atlas": "portable_gags",
+    "state": "water_vapor",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "tanks",
+    "meshes": 2,
+    "triangles": 838,
+    "dimensions_m": [
+      0.65,
+      0.62,
+      1.12
+    ],
+    "bounds_min_m": [
+      -0.325,
+      -0.31,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.325,
+      0.31,
+      1.12
+    ],
+    "materials": [
+      "Surface_portable_canister_water_vapor"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Pressure_Knob"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "stationary_tank_single": {
+    "file": "stationary_tanks/stationary_tank_single.glb",
+    "atlas": "stationary",
+    "category": "stationary_tanks",
+    "description": "Current source-reference stationary tank; shared editable source stationary_tanks/stationary_tanks.blend"
+  },
+  "stationary_tank_end": {
+    "file": "stationary_tanks/stationary_tank_end.glb",
+    "atlas": "stationary",
+    "category": "stationary_tanks",
+    "description": "Current source-reference stationary tank; shared editable source stationary_tanks/stationary_tanks.blend"
+  },
+  "stationary_tank_straight": {
+    "file": "stationary_tanks/stationary_tank_straight.glb",
+    "atlas": "stationary",
+    "category": "stationary_tanks",
+    "description": "Current source-reference stationary tank; shared editable source stationary_tanks/stationary_tanks.blend"
+  },
+  "stationary_tank_corner": {
+    "file": "stationary_tanks/stationary_tank_corner.glb",
+    "atlas": "stationary",
+    "category": "stationary_tanks",
+    "description": "Current source-reference stationary tank; shared editable source stationary_tanks/stationary_tanks.blend"
+  },
+  "stationary_tank_tee": {
+    "file": "stationary_tanks/stationary_tank_tee.glb",
+    "atlas": "stationary",
+    "category": "stationary_tanks",
+    "description": "Current source-reference stationary tank; shared editable source stationary_tanks/stationary_tanks.blend"
+  },
+  "stationary_tank_center": {
+    "file": "stationary_tanks/stationary_tank_center.glb",
+    "atlas": "stationary",
+    "category": "stationary_tanks",
+    "description": "Current source-reference stationary tank; shared editable source stationary_tanks/stationary_tanks.blend"
+  },
+  "station_bed": {
+    "file": "medical/station_bed.glb",
+    "atlas": "bed",
+    "state": "bed",
+    "description": "Station bed with separate pillow and mattress",
+    "category": "medical",
+    "meshes": 3,
+    "triangles": 332,
+    "dimensions_m": [
+      1.86,
+      0.766,
+      0.625
+    ],
+    "bounds_min_m": [
+      -0.93,
+      -0.383,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.93,
+      0.383,
+      0.625
+    ],
+    "materials": [
+      "Atlas_bed_bed"
+    ],
+    "parts": [
+      "Bed_Frame",
+      "Mattress",
+      "Pillow"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "emergency_stretcher": {
+    "file": "medical/emergency_stretcher.glb",
+    "atlas": "medical_bed",
+    "state": "emerg_down",
+    "description": "Emergency wheeled stretcher",
+    "category": "medical",
+    "meshes": 7,
+    "triangles": 308,
+    "dimensions_m": [
+      1.86,
+      0.766,
+      0.835
+    ],
+    "bounds_min_m": [
+      -0.93,
+      -0.383,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.93,
+      0.383,
+      0.835
+    ],
+    "materials": [
+      "Atlas_medical_bed_emerg_down"
+    ],
+    "parts": [
+      "Stretcher_Frame",
+      "Mattress",
+      "Pillow",
+      "Caster_-1_-1",
+      "Caster_-1_1",
+      "Caster_1_-1",
+      "Caster_1_1"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "hydroponics_tray": {
+    "file": "hydroponics/hydroponics_tray.glb",
+    "atlas": "hydroponics",
+    "state": "hydrotray3",
+    "description": "Open hydroponics basin with separate control face and no plants",
+    "category": "hydroponics",
+    "meshes": 1,
+    "triangles": 208,
+    "dimensions_m": [
+      0.9,
+      0.72,
+      0.75
+    ],
+    "bounds_min_m": [
+      -0.45,
+      -0.37,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.45,
+      0.35,
+      0.75
+    ],
+    "materials": [
+      "Atlas_hydroponics_hydrotray3"
+    ],
+    "parts": [
+      "Tray_And_Support_Frame"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "soil_bed": {
+    "file": "hydroponics/soil_bed.glb",
+    "atlas": "hydroponics",
+    "state": "soil",
+    "description": "Closed terraced soil mound following the original irregular pixel boundary",
+    "category": "hydroponics",
+    "meshes": 1,
+    "triangles": 316,
+    "dimensions_m": [
+      0.9,
+      0.9,
+      0.09
+    ],
+    "bounds_min_m": [
+      -0.45,
+      -0.45,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.45,
+      0.45,
+      0.09
+    ],
+    "materials": [
+      "Atlas_hydroponics_soil"
+    ],
+    "parts": [
+      "Terraced_Soil_Mound"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "suit_storage_classic": {
+    "file": "machines/suit_storage_classic.glb",
+    "atlas": "suit_storage",
+    "state": "classic",
+    "description": "Classic suit storage with separately pivoted glazed doors and gear layers",
+    "category": "machines",
+    "meshes": 9,
+    "triangles": 452,
+    "dimensions_m": [
+      1.08,
+      0.746,
+      1.79
+    ],
+    "bounds_min_m": [
+      -0.45,
+      -0.376,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.63,
+      0.37,
+      1.79
+    ],
+    "materials": [
+      "Overlay_suit_storage_classic_storage",
+      "Atlas_suit_storage_classic",
+      "Glass_Slight_Cyan_Closed",
+      "Overlay_suit_storage_classic_lights_closed",
+      "Overlay_suit_storage_classic_helm",
+      "Overlay_suit_storage_classic_suit"
+    ],
+    "parts": [
+      "Cabinet_Shell",
+      "Door_Glass_-1",
+      "Door_Frame_-1",
+      "Door_Glass_1",
+      "Door_Frame_1",
+      "Stored_Suit_Overlay",
+      "Stored_Helmet_Overlay",
+      "Boot_Storage_Overlay",
+      "Status_Lights"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "pacman_generator": {
+    "file": "power/pacman_generator.glb",
+    "atlas": "engine",
+    "state": "portgen0_0",
+    "description": "Volume reconstruction with full-surface source-derived pixel UVs",
+    "category": "power",
+    "meshes": 3,
+    "triangles": 1078,
+    "dimensions_m": [
+      0.995,
+      0.71,
+      0.83
+    ],
+    "bounds_min_m": [
+      -0.54,
+      -0.355,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.455,
+      0.355,
+      0.83
+    ],
+    "materials": [
+      "Surface_pacman_generator"
+    ],
+    "parts": [
+      "Continuous_Structural_Body",
+      "Central_Access_Hatch",
+      "Starter_Grip"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "old_cyborg_showcase": {
+    "file": "showcase/old_cyborg_showcase.glb",
+    "atlas": "robot",
+    "state": "robot_old",
+    "description": "Static old cyborg exhibit with separated joints; no rig or animations",
+    "category": "showcase",
+    "meshes": 16,
+    "triangles": 408,
+    "dimensions_m": [
+      0.935,
+      0.357,
+      1.595
+    ],
+    "bounds_min_m": [
+      -0.4675,
+      -0.175,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.4675,
+      0.182,
+      1.595
+    ],
+    "materials": [
+      "Atlas_robot_robot_old",
+      "Atlas_robot_robot_old_D1"
+    ],
+    "parts": [
+      "Head",
+      "Torso",
+      "Pelvis",
+      "Left_Upper_Arm",
+      "Left_Forearm",
+      "Right_Upper_Arm",
+      "Right_Forearm",
+      "Left_Thigh",
+      "Left_Shin",
+      "Right_Thigh",
+      "Right_Shin",
+      "Left_Foot",
+      "Right_Foot",
+      "Left_Antenna",
+      "Right_Antenna",
+      "Rear_Identification_Plate"
+    ],
+    "non_manifold_edges": 0,
+    "non_manifold_vertices": 0,
+    "zero_area_faces": 0,
+    "non_positive_volume_meshes": 0
+  },
+  "vending_cola_machine": {
+    "file": "vending/vending_cola_machine.glb",
+    "atlas": "vending",
+    "state": "Cola_Machine",
+    "category": "vending",
+    "family": "branded_drink",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 84,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_cola_black": {
+    "file": "vending/vending_cola_black.glb",
+    "atlas": "vending",
+    "state": "cola_black",
+    "category": "vending",
+    "family": "branded_drink",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 84,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_space_up": {
+    "file": "vending/vending_space_up.glb",
+    "atlas": "vending",
+    "state": "space_up",
+    "category": "vending",
+    "family": "branded_drink",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 84,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_starkist": {
+    "file": "vending/vending_starkist.glb",
+    "atlas": "vending",
+    "state": "starkist",
+    "category": "vending",
+    "family": "drink_display",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 128,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_soda": {
+    "file": "vending/vending_soda.glb",
+    "atlas": "vending",
+    "state": "soda",
+    "category": "vending",
+    "family": "drink_display",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 10,
+    "triangles": 164,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_pwr_game": {
+    "file": "vending/vending_pwr_game.glb",
+    "atlas": "vending",
+    "state": "pwr_game",
+    "category": "vending",
+    "family": "branded_drink",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 84,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_shamblers_juice": {
+    "file": "vending/vending_shamblers_juice.glb",
+    "atlas": "vending",
+    "state": "shamblers_juice",
+    "category": "vending",
+    "family": "branded_drink",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 84,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_custom": {
+    "file": "vending/vending_custom.glb",
+    "atlas": "vending",
+    "state": "custom",
+    "category": "vending",
+    "family": "custom",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 128,
+    "dimensions_m": [
+      1.440000057220459,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_greed": {
+    "file": "vending/vending_greed.glb",
+    "atlas": "vending",
+    "state": "greed",
+    "category": "vending",
+    "family": "custom",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 7,
+    "triangles": 132,
+    "dimensions_m": [
+      1.440000057220459,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_snackdonk": {
+    "file": "vending/vending_snackdonk.glb",
+    "atlas": "vending",
+    "state": "snackdonk",
+    "category": "vending",
+    "family": "wide_food",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 4,
+    "triangles": 72,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_engi": {
+    "file": "vending/vending_engi.glb",
+    "atlas": "vending",
+    "state": "engi",
+    "category": "vending",
+    "family": "engi",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 152,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_hotdog_vendor": {
+    "file": "vending/vending_hotdog_vendor.glb",
+    "atlas": "vending",
+    "state": "hotdog-vendor",
+    "category": "vending",
+    "family": "hotdog",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 12,
+    "triangles": 212,
+    "dimensions_m": [
+      1.3200000524520874,
+      0.7299999892711639,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_liberationstation": {
+    "file": "vending/vending_liberationstation.glb",
+    "atlas": "vending",
+    "state": "liberationstation",
+    "category": "vending",
+    "family": "wide_food",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 5,
+    "triangles": 84,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_syndi": {
+    "file": "vending/vending_syndi.glb",
+    "atlas": "vending",
+    "state": "syndi",
+    "category": "vending",
+    "family": "wide_food",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 4,
+    "triangles": 72,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_magivend": {
+    "file": "vending/vending_magivend.glb",
+    "atlas": "vending",
+    "state": "MagiVend",
+    "category": "vending",
+    "family": "magic",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 8,
+    "triangles": 144,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_wallmed": {
+    "file": "vending/vending_wallmed.glb",
+    "atlas": "vending",
+    "state": "wallmed",
+    "category": "vending",
+    "family": "wall_medical",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 10,
+    "triangles": 164,
+    "dimensions_m": [
+      0.7200000286102295,
+      0.3020000010728836,
+      1.0800000429153442
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_generic": {
+    "file": "vending/vending_generic.glb",
+    "atlas": "vending",
+    "state": "generic",
+    "category": "vending",
+    "family": "compact_product",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 10,
+    "triangles": 168,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_robotics": {
+    "file": "vending/vending_robotics.glb",
+    "atlas": "vending",
+    "state": "robotics",
+    "category": "vending",
+    "family": "wide_electronics",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 10,
+    "triangles": 168,
+    "dimensions_m": [
+      1.440000057220459,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_runicvendor": {
+    "file": "vending/vending_runicvendor.glb",
+    "atlas": "vending",
+    "state": "RunicVendor",
+    "category": "vending",
+    "family": "magic",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 10,
+    "triangles": 168,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_snack": {
+    "file": "vending/vending_snack.glb",
+    "atlas": "vending",
+    "state": "snack",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_snackblue": {
+    "file": "vending/vending_snackblue.glb",
+    "atlas": "vending",
+    "state": "snackblue",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_snackorange": {
+    "file": "vending/vending_snackorange.glb",
+    "atlas": "vending",
+    "state": "snackorange",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_snackgreen": {
+    "file": "vending/vending_snackgreen.glb",
+    "atlas": "vending",
+    "state": "snackgreen",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_snackteal": {
+    "file": "vending/vending_snackteal.glb",
+    "atlas": "vending",
+    "state": "snackteal",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_sovietsoda": {
+    "file": "vending/vending_sovietsoda.glb",
+    "atlas": "vending",
+    "state": "sovietsoda",
+    "category": "vending",
+    "family": "sovietsoda",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 11,
+    "triangles": 180,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.7000000178813934,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_sustenance_labor": {
+    "file": "vending/vending_sustenance_labor.glb",
+    "atlas": "vending",
+    "state": "sustenance_labor",
+    "category": "vending",
+    "family": "snack",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 6,
+    "triangles": 120,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_nt_donk": {
+    "file": "vending/vending_nt_donk.glb",
+    "atlas": "vending",
+    "state": "nt-donk",
+    "category": "vending",
+    "family": "wide_food",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 4,
+    "triangles": 72,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  },
+  "vending_centdrobe": {
+    "file": "vending/vending_centdrobe.glb",
+    "atlas": "vending",
+    "state": "centdrobe",
+    "category": "vending",
+    "family": "wardrobe",
+    "description": "Full-depth source-faithful cabinet with original front/roof and derived service textures",
+    "meshes": 9,
+    "triangles": 156,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "material_details": "vending/material_slots.json",
+    "validation": "vending/export_validation.json"
+  }
+}

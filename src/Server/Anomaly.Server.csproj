@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Anomaly.Server</RootNamespace>
+    <AssemblyName>Anomaly.Server</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- The headless server is a pure .NET process (D1, D37): it references the core, never Godot. -->
+    <ProjectReference Include="..\Core\Tg\Anomaly.Core.Tg.csproj" />
+    <!-- M1: the wire protocol and the transports (LiteNetLib comes through Anomaly.Net). -->
+    <ProjectReference Include="..\Protocol\Anomaly.Protocol.csproj" />
+    <ProjectReference Include="..\Net\Anomaly.Net.csproj" />
+    <ProjectReference Include="..\Core\Motion\Anomaly.Core.Motion.csproj" />
+    <!-- M10 slice I (D76, D275): the keys, bans, notes and round ids in an embedded SQLite database (MIT). -->
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.6" />
+    <!-- The native SQLite past the advisory GHSA-2m69-gcr7-jv3q of the 2.1.11 that Microsoft.Data.Sqlite brings. -->
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.14" />
+  </ItemGroup>
+</Project>

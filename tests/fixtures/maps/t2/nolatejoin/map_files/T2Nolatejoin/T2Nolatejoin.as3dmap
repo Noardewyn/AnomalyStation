@@ -1,0 +1,11 @@
+anomaly-map 1
+source _maps/map_files/T2Nolatejoin/T2Nolatejoin.dmm tg 1d99bd7f
+size 4 3 1
+chunk 32
+default /turf/open/indestructible | /area/station/hallway/primary/central
+
+[chunk 1 1 1]
+2,3: /obj/effect/landmark/start/assistant | /turf/open/indestructible | /area/station/hallway/primary/central
+1,2: /obj/effect/landmark/start/assistant | /turf/open/indestructible | /area/station/hallway/primary/central
+1,1: /obj/effect/landmark/start/janitor | /turf/open/indestructible | /area/station/hallway/primary/central
+3,1: /obj/effect/landmark/start/assistant | /turf/open/indestructible | /area/station/hallway/primary/central

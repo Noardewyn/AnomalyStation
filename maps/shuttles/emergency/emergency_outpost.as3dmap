@@ -1,0 +1,62 @@
+anomaly-map 1
+size 10 6 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+2,6: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+3,6: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+4,6: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+5,6: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/escape
+6,6: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/escape
+7,6: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/escape
+8,6: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+9,6: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+10,6: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+1,5: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/floor/plating/airless | /area/shuttle/escape
+2,5: /obj/machinery/power/shuttle_engine/heater{dir = 8} | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/plating | /area/shuttle/escape
+3,5: /obj/machinery/light/directional/north | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+4,5: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+5,5: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+6,5: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+7,5: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+8,5: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+9,5: /obj/machinery/light/directional/north | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+10,5: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+2,4: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+3,4: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+4,4: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+5,4: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+6,4: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+7,4: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+8,4: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+9,4: /obj/machinery/computer/emergency_shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+10,4: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/escape
+2,3: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+3,3: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+4,3: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+5,3: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+6,3: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+7,3: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+8,3: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+9,3: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+10,3: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/escape
+1,2: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/floor/plating/airless | /area/shuttle/escape
+2,2: /obj/machinery/power/shuttle_engine/heater{dir = 8} | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/plating | /area/shuttle/escape
+3,2: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+4,2: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+5,2: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+6,2: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+7,2: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+8,2: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+9,2: /turf/open/floor/mineral/titanium | /area/shuttle/escape
+10,2: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+2,1: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+3,1: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+4,1: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+5,1: /obj/machinery/door/airlock/titanium{name = "Emergency Shuttle Airlock"} | /obj/docking_port/mobile/emergency{dir = 2; name = "Outpost emergency shuttle"} | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+6,1: /obj/machinery/door/airlock/titanium{name = "Emergency Shuttle Airlock"} | /turf/open/floor/mineral/titanium | /area/shuttle/escape
+7,1: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+8,1: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+9,1: /turf/closed/wall/mineral/titanium | /area/shuttle/escape
+10,1: /turf/closed/wall/mineral/titanium | /area/shuttle/escape

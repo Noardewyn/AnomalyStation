@@ -1,0 +1,38 @@
+anomaly-map 1
+source _maps/safehouses/den.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/closed/wall | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+2,6: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+4,6: /obj/machinery/door/airlock/grunge | /obj/structure/fans/tiny | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+6,6: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{id = "safehouseshutter"} | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,5: /obj/effect/decal/cleanable/dirt/dust | /obj/structure/sign/departments/cargo/directional/west | /obj/machinery/light/small/directional/west | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+3,5: /obj/effect/turf_decal/trimline/yellow/line{dir = 9} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+4,5: /obj/effect/decal/cleanable/generic | /obj/effect/turf_decal/trimline/yellow/warning{dir = 4} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 1} | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+5,5: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+6,5: /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/small/directional/east | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+2,4: /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+3,4: /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+4,4: /obj/effect/turf_decal/trimline/yellow/warning{dir = 4} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+5,4: /obj/structure/railing/corner/end{dir = 4} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+6,4: /obj/structure/railing | /obj/effect/turf_decal/siding/dark | /obj/structure/sign/poster/contraband/hacking_guide/directional/east | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+1,3: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{dir = 4; id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+2,3: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+3,3: /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+4,3: /obj/effect/turf_decal/trimline/yellow/line{dir = 4} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+5,3: /obj/structure/table/reinforced/plastitaniumglass | /obj/effect/spawner/random/food_or_drink/snack{pixel_x = 4; pixel_y = 2} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+6,3: /obj/structure/table/reinforced/plastitaniumglass | /obj/machinery/button/door{pixel_x = 4; pixel_y = 4; id = "safehouseshutter"} | /obj/effect/spawner/random/food_or_drink/refreshing_beverage{pixel_y = 6; pixel_x = -10} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+7,3: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{dir = 8; id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/safehouse
+1,2: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{dir = 4; id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+2,2: /obj/effect/spawner/random/vending/colavend | /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+3,2: /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /obj/effect/decal/cleanable/generic | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/mineral/plastitanium/pod/light | /area/virtual_domain/safehouse
+4,2: /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/mineral/plastitanium/pod/light | /area/virtual_domain/safehouse
+5,2: /obj/effect/turf_decal/trimline/yellow/line{dir = 5} | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/mineral/plastitanium/pod/light | /area/virtual_domain/safehouse
+6,2: /obj/structure/chair/office{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+7,2: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{dir = 8; id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+1,1: /obj/modular_map_connector | /turf/closed/wall | /area/virtual_domain/safehouse
+3,1: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{dir = 1; id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod/light | /area/virtual_domain/safehouse
+4,1: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{dir = 1; id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod/light | /area/virtual_domain/safehouse
+5,1: /obj/effect/spawner/structure/window/reinforced | /obj/machinery/door/poddoor/shutters/preopen{dir = 1; id = "safehouseshutter"} | /turf/open/floor/mineral/plastitanium/pod/light | /area/virtual_domain/safehouse

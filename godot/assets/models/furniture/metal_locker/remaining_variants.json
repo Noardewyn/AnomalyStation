@@ -1,0 +1,1227 @@
+{
+  "atlas": "res://assets/tg/icons/obj/storage/closet.png",
+  "source_sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+  "models": {
+    "wood_cabinet": {
+      "file": "wood_cabinet.glb",
+      "triangles": 144,
+      "parts": [
+        "wood_cabinet_Body",
+        "wood_cabinet_Door_Left",
+        "wood_cabinet_Door_Right"
+      ]
+    },
+    "gun_cabinet": {
+      "file": "gun_cabinet.glb",
+      "triangles": 156,
+      "parts": [
+        "gun_cabinet_Body",
+        "gun_cabinet_Door_Left",
+        "gun_cabinet_Door_Right"
+      ]
+    },
+    "abductor_locker": {
+      "file": "abductor_locker.glb",
+      "triangles": 116,
+      "parts": [
+        "abductor_locker_Body",
+        "abductor_locker_Door_Left",
+        "abductor_locker_Door_Right"
+      ]
+    },
+    "mini_fridge": {
+      "file": "mini_fridge.glb",
+      "triangles": 128,
+      "parts": [
+        "mini_fridge_Body",
+        "mini_fridge_Door_Left"
+      ]
+    },
+    "magic_locker": {
+      "file": "magic_locker.glb",
+      "triangles": 84,
+      "parts": [
+        "magic_locker_Body",
+        "magic_locker_Door_Left"
+      ]
+    },
+    "old_locker": {
+      "file": "old_locker.glb",
+      "triangles": 72,
+      "parts": [
+        "old_locker_Body",
+        "old_locker_Door_Left"
+      ]
+    },
+    "cardboard_box": {
+      "file": "cardboard_box.glb",
+      "triangles": 108,
+      "parts": [
+        "cardboard_box_Body",
+        "cardboard_box_Flap_1",
+        "cardboard_box_Flap_2",
+        "cardboard_box_Flap_3",
+        "cardboard_box_Flap_4"
+      ]
+    },
+    "metal_box": {
+      "file": "metal_box.glb",
+      "triangles": 84,
+      "parts": [
+        "metal_box_Body",
+        "metal_box_Flap_1",
+        "metal_box_Flap_2"
+      ]
+    }
+  },
+  "variants": [
+    {
+      "id": "wood_cabinet",
+      "model": "wood_cabinet",
+      "file": "wood_cabinet.glb",
+      "states": [
+        "cabinet",
+        "cabinet_door"
+      ],
+      "frame": 0,
+      "notes": "Hidden reverse uses a solid pixel from the original body; no reverse sprite exists.",
+      "rects": {
+        "cabinet": [
+          384,
+          336,
+          32,
+          48
+        ],
+        "cabinet_door": [
+          352,
+          336,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cabinet": [
+          0.0,
+          0.0,
+          0
+        ],
+        "cabinet_door": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "gun_cabinet",
+      "model": "gun_cabinet",
+      "file": "gun_cabinet.glb",
+      "states": [
+        "shotguncase",
+        "shotguncase_door"
+      ],
+      "frame": 0,
+      "notes": "Hidden reverse uses a solid pixel from the original body; no reverse sprite exists.",
+      "rects": {
+        "shotguncase": [
+          480,
+          336,
+          32,
+          48
+        ],
+        "shotguncase_door": [
+          448,
+          336,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "shotguncase": [
+          0.0,
+          0.0,
+          0
+        ],
+        "shotguncase_door": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "abductor_locker",
+      "model": "abductor_locker",
+      "file": "abductor_locker.glb",
+      "states": [
+        "abductor",
+        "abductor_door"
+      ],
+      "frame": 0,
+      "notes": "Hidden reverse uses a solid pixel from the original body; no reverse sprite exists.",
+      "rects": {
+        "abductor": [
+          0,
+          384,
+          32,
+          48
+        ],
+        "abductor_door": [
+          64,
+          384,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "abductor": [
+          0.0,
+          0.0,
+          0
+        ],
+        "abductor_door": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "mini_fridge",
+      "model": "mini_fridge",
+      "file": "mini_fridge.glb",
+      "states": [
+        "mini_fridge",
+        "mini_fridge_door"
+      ],
+      "frame": 0,
+      "notes": "Hidden reverse uses a solid pixel from the original body; no reverse sprite exists.",
+      "rects": {
+        "mini_fridge": [
+          352,
+          480,
+          32,
+          48
+        ],
+        "mini_fridge_door": [
+          384,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "mini_fridge": [
+          0.0,
+          0.0,
+          0
+        ],
+        "mini_fridge_door": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "old_locker",
+      "model": "old_locker",
+      "file": "old_locker.glb",
+      "states": [
+        "oldcloset",
+        "oldcloset"
+      ],
+      "frame": 0,
+      "notes": "Hidden reverse uses a solid pixel from the original body; no reverse sprite exists.",
+      "rects": {
+        "oldcloset": [
+          288,
+          384,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "oldcloset": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "fullcabinet",
+      "model": "wood_cabinet",
+      "file": "wood_cabinet.glb",
+      "states": [
+        "cabinet",
+        "cabinet_door"
+      ],
+      "frame": 0,
+      "notes": "fullcabinet is the precomposed closed rendering of the same two-door cabinet; shared geometry/artwork.",
+      "rects": {
+        "cabinet": [
+          384,
+          336,
+          32,
+          48
+        ],
+        "cabinet_door": [
+          352,
+          336,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cabinet": [
+          0.0,
+          0.0,
+          0
+        ],
+        "cabinet_door": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "cursed_1",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "cursed",
+        "cursed_door",
+        "cursed_back"
+      ],
+      "frame": 0,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "cursed": [
+          608,
+          384,
+          32,
+          48
+        ],
+        "cursed_door": [
+          384,
+          384,
+          32,
+          48
+        ],
+        "cursed_back": [
+          224,
+          432,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cursed": [
+          0.0,
+          0.0,
+          0
+        ],
+        "cursed_door": [
+          0.0,
+          0.0,
+          0
+        ],
+        "cursed_back": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cursed_2",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "cursed",
+        "cursed_door",
+        "cursed_back"
+      ],
+      "frame": 1,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "cursed": [
+          0,
+          432,
+          32,
+          48
+        ],
+        "cursed_door": [
+          416,
+          384,
+          32,
+          48
+        ],
+        "cursed_back": [
+          224,
+          432,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cursed": [
+          -0.95,
+          0.07692307692307693,
+          0
+        ],
+        "cursed_door": [
+          0.05,
+          0.0,
+          0
+        ],
+        "cursed_back": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cursed_3",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "cursed",
+        "cursed_door",
+        "cursed_back"
+      ],
+      "frame": 2,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "cursed": [
+          32,
+          432,
+          32,
+          48
+        ],
+        "cursed_door": [
+          448,
+          384,
+          32,
+          48
+        ],
+        "cursed_back": [
+          224,
+          432,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cursed": [
+          -0.9,
+          0.07692307692307693,
+          0
+        ],
+        "cursed_door": [
+          0.1,
+          0.0,
+          0
+        ],
+        "cursed_back": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cursed_4",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "cursed",
+        "cursed_door",
+        "cursed_back"
+      ],
+      "frame": 3,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "cursed": [
+          64,
+          432,
+          32,
+          48
+        ],
+        "cursed_door": [
+          480,
+          384,
+          32,
+          48
+        ],
+        "cursed_back": [
+          224,
+          432,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cursed": [
+          -0.85,
+          0.07692307692307693,
+          0
+        ],
+        "cursed_door": [
+          0.15,
+          0.0,
+          0
+        ],
+        "cursed_back": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cursed_5",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "cursed",
+        "cursed_door",
+        "cursed_back"
+      ],
+      "frame": 4,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "cursed": [
+          96,
+          432,
+          32,
+          48
+        ],
+        "cursed_door": [
+          512,
+          384,
+          32,
+          48
+        ],
+        "cursed_back": [
+          224,
+          432,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cursed": [
+          -0.8,
+          0.07692307692307693,
+          0
+        ],
+        "cursed_door": [
+          0.2,
+          0.0,
+          0
+        ],
+        "cursed_back": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cursed_6",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "cursed",
+        "cursed_door",
+        "cursed_back"
+      ],
+      "frame": 5,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "cursed": [
+          128,
+          432,
+          32,
+          48
+        ],
+        "cursed_door": [
+          544,
+          384,
+          32,
+          48
+        ],
+        "cursed_back": [
+          224,
+          432,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cursed": [
+          -0.75,
+          0.07692307692307693,
+          0
+        ],
+        "cursed_door": [
+          0.25,
+          0.0,
+          0
+        ],
+        "cursed_back": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cursed_7",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "cursed",
+        "cursed_door",
+        "cursed_back"
+      ],
+      "frame": 6,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "cursed": [
+          160,
+          432,
+          32,
+          48
+        ],
+        "cursed_door": [
+          576,
+          384,
+          32,
+          48
+        ],
+        "cursed_back": [
+          224,
+          432,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cursed": [
+          -0.7,
+          0.07692307692307693,
+          0
+        ],
+        "cursed_door": [
+          0.3,
+          0.0,
+          0
+        ],
+        "cursed_back": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "decursed_1",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "decursed",
+        "decursed_door",
+        "decursed_back"
+      ],
+      "frame": 0,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "decursed": [
+          480,
+          432,
+          32,
+          48
+        ],
+        "decursed_door": [
+          256,
+          432,
+          32,
+          48
+        ],
+        "decursed_back": [
+          96,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "decursed": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_door": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_back": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "decursed_2",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "decursed",
+        "decursed_door",
+        "decursed_back"
+      ],
+      "frame": 1,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "decursed": [
+          512,
+          432,
+          32,
+          48
+        ],
+        "decursed_door": [
+          288,
+          432,
+          32,
+          48
+        ],
+        "decursed_back": [
+          96,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "decursed": [
+          -0.15,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_door": [
+          -0.15,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_back": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "decursed_3",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "decursed",
+        "decursed_door",
+        "decursed_back"
+      ],
+      "frame": 2,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "decursed": [
+          544,
+          432,
+          32,
+          48
+        ],
+        "decursed_door": [
+          320,
+          432,
+          32,
+          48
+        ],
+        "decursed_back": [
+          96,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "decursed": [
+          -0.1,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_door": [
+          -0.1,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_back": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "decursed_4",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "decursed",
+        "decursed_door",
+        "decursed_back"
+      ],
+      "frame": 3,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "decursed": [
+          576,
+          432,
+          32,
+          48
+        ],
+        "decursed_door": [
+          352,
+          432,
+          32,
+          48
+        ],
+        "decursed_back": [
+          96,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "decursed": [
+          -0.05,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_door": [
+          -0.05,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_back": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "decursed_5",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "decursed",
+        "decursed_door",
+        "decursed_back"
+      ],
+      "frame": 4,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "decursed": [
+          608,
+          432,
+          32,
+          48
+        ],
+        "decursed_door": [
+          384,
+          432,
+          32,
+          48
+        ],
+        "decursed_back": [
+          96,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "decursed": [
+          0.0,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_door": [
+          0.0,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_back": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "decursed_6",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "decursed",
+        "decursed_door",
+        "decursed_back"
+      ],
+      "frame": 5,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "decursed": [
+          0,
+          480,
+          32,
+          48
+        ],
+        "decursed_door": [
+          416,
+          432,
+          32,
+          48
+        ],
+        "decursed_back": [
+          96,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "decursed": [
+          -0.95,
+          0.15384615384615385,
+          0
+        ],
+        "decursed_door": [
+          0.05,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_back": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "decursed_7",
+      "model": "magic_locker",
+      "file": "magic_locker.glb",
+      "states": [
+        "decursed",
+        "decursed_door",
+        "decursed_back"
+      ],
+      "frame": 6,
+      "notes": "Original animated texture frame; same shared geometry for all seven frames.",
+      "rects": {
+        "decursed": [
+          32,
+          480,
+          32,
+          48
+        ],
+        "decursed_door": [
+          448,
+          432,
+          32,
+          48
+        ],
+        "decursed_back": [
+          96,
+          480,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "decursed": [
+          -0.9,
+          0.15384615384615385,
+          0
+        ],
+        "decursed_door": [
+          0.1,
+          0.07692307692307693,
+          0
+        ],
+        "decursed_back": [
+          -0.2,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "source_frame_delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cardboard",
+      "model": "cardboard_box",
+      "file": "cardboard_box.glb",
+      "states": [
+        "cardboard"
+      ],
+      "frame": 0,
+      "notes": "",
+      "rects": {
+        "cardboard": [
+          128,
+          384,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cardboard": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "agentbox",
+      "model": "cardboard_box",
+      "file": "cardboard_box.glb",
+      "states": [
+        "agentbox"
+      ],
+      "frame": 0,
+      "notes": "",
+      "rects": {
+        "agentbox": [
+          160,
+          384,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "agentbox": [
+          0.05,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "cardboard_roroco",
+      "model": "cardboard_box",
+      "file": "cardboard_box.glb",
+      "states": [
+        "cardboard_roroco"
+      ],
+      "frame": 0,
+      "notes": "",
+      "rects": {
+        "cardboard_roroco": [
+          224,
+          384,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "cardboard_roroco": [
+          0.15,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    },
+    {
+      "id": "metalbox",
+      "model": "metal_box",
+      "file": "metal_box.glb",
+      "states": [
+        "metalbox"
+      ],
+      "frame": 0,
+      "notes": "",
+      "rects": {
+        "metalbox": [
+          320,
+          384,
+          32,
+          48
+        ]
+      },
+      "godot_material_uv_offsets": {
+        "metalbox": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_frame_delays": null
+    }
+  ],
+  "overlay_only": [
+    "cardboard_special",
+    "shotgun",
+    "egun",
+    "wt550",
+    "cursed_whole"
+  ],
+  "notes": [
+    "cardboard_special is an alert overlay, not an extra box.",
+    "Weapon sprites are contents, not part of the gun cabinet.",
+    "Old closet has no open-body sprite; its plain hollow interior is a reconstruction.",
+    "Abductor and wooden door reverse surfaces have no separate _back sprite; opaque body samples are used.",
+    "Gun-cabinet screen retains the original alpha=192 texels, rather than opaque black."
+  ]
+}
+

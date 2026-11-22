@@ -1,0 +1,226 @@
+{
+  "version": "4.0",
+  "width": 32,
+  "height": 32,
+  "sheetWidth": 128,
+  "sheetHeight": 128,
+  "states": [
+    {
+      "name": "control_frame",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "control",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "standby",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ],
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "stun",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          0,
+          32,
+          32,
+          32
+        ],
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "kill",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 6,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ],
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_screen",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button_left",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button_right",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 10,
+      "rects": [
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_button_left",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 11,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_button_right",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 12,
+      "rects": [
+        [
+          0,
+          96,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

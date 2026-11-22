@@ -1,0 +1,888 @@
+anomaly-map 1
+source _maps/virtual_domains/wendigo.dmm tg 1d99bd7f
+size 33 37 1
+chunk 32
+default /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+
+[chunk 1 1 1]
+1,32: /turf/template_noop | /area/template_noop
+2,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,32: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+8,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+12,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+13,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+14,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+15,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+16,32: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+17,32: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+18,32: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+19,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+20,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+21,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+22,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+23,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+24,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+25,32: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,32: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+31,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,31: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+6,31: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+7,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+12,31: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+15,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+16,31: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+17,31: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+18,31: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+19,31: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+20,31: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+21,31: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+22,31: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+24,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+25,31: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+26,31: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+27,31: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+28,31: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+32,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,30: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+6,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,30: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+12,30: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,30: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+15,30: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+16,30: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+17,30: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+18,30: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+19,30: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,30: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,30: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+24,30: /obj/structure/flora/grass/brown/style_random | /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+25,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+26,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,30: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+5,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,29: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,29: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,29: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,29: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,29: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,29: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,29: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,29: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,29: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,29: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,29: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,29: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+25,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+26,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,29: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+5,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,28: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+12,28: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,28: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,28: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,28: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,28: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,28: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,28: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,28: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,28: /obj/structure/flora/rock/pile/icy/style_3 | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+21,28: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,28: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,28: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /obj/effect/mob_spawn/corpse/human/bitrunner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,28: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,28: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+26,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,28: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,28: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+30,28: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+1,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,27: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+5,27: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,27: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,27: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,27: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,27: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+13,27: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,27: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,27: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,27: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,27: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+27,27: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,27: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,27: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+1,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,26: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,26: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,26: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,26: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,26: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+11,26: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,26: /obj/structure/flora/rock/pile/icy/style_3 | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+15,26: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,26: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,26: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,26: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,26: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,26: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,26: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,26: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,26: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,26: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+26,26: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+27,26: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,26: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,26: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+30,26: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+1,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,25: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+4,25: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+5,25: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,25: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,25: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,25: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+11,25: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,25: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,25: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,25: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,25: /obj/structure/flora/rock/pile/icy/style_3 | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+23,25: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+25,25: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+26,25: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+27,25: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+28,25: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+29,25: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+30,25: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+31,25: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+32,25: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+1,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,24: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+5,24: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+6,24: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+7,24: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+8,24: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+9,24: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,24: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,24: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,24: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,24: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+26,24: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+27,24: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+28,24: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+29,24: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+30,24: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+31,24: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+1,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,23: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+4,23: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+5,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+6,23: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,23: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+8,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+9,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+10,23: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+11,23: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,23: /mob/living/simple_animal/hostile/megafauna/wendigo | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,23: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,23: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,23: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,23: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+26,23: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+27,23: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,23: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,23: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+30,23: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+1,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,22: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+3,22: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+5,22: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+6,22: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,22: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,22: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+9,22: /obj/effect/turf_decal/weather/snow/corner | /obj/effect/mob_spawn/corpse/human/bitrunner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+10,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+11,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,22: /obj/effect/decal/cleanable/blood | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,22: /obj/effect/decal/cleanable/blood/gibs/torso | /obj/effect/decal/cleanable/blood/old | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,22: /obj/effect/decal/cleanable/blood/splatter | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,22: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,22: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,22: /obj/structure/flora/rock/pile/icy/style_3 | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+24,22: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,22: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+26,22: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,22: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,22: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,22: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+30,22: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,21: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+3,21: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+5,21: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+6,21: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,21: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,21: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+9,21: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+10,21: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+11,21: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,21: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,21: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,21: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,21: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,21: /obj/effect/decal/cleanable/blood/gibs/core | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,21: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,21: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,21: /obj/effect/mob_spawn/corpse/human/cyber_police | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,21: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,21: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,21: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,21: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+26,21: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+27,21: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,21: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,21: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+30,21: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,20: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+5,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,20: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+10,20: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,20: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+13,20: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,20: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,20: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,20: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,20: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+26,20: /obj/structure/flora/rock/pile/icy/style_random | /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+27,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+30,20: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,19: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+5,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,19: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+12,19: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,19: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,19: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+23,19: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,19: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,19: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+26,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+30,19: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,18: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+5,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,18: /obj/structure/flora/rock/pile/icy/style_3 | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+12,18: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,18: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,18: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+26,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,18: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,17: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+4,17: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+5,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+7,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+8,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,17: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+12,17: /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+13,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,17: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,17: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,17: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+25,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+26,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,17: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+1,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+6,16: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+8,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+13,16: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,16: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,16: /obj/effect/mob_spawn/corpse/human/bitrunner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,16: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,16: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,16: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,16: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,16: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,16: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,16: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+25,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+26,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,16: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,16: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+1,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,15: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+8,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+9,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+12,15: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+14,15: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+15,15: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,15: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,15: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,15: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,15: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,15: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,15: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+22,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+23,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+24,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+25,15: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+32,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,14: /turf/template_noop | /area/template_noop
+2,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,14: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+7,14: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+8,14: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+9,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+10,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+12,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+13,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+14,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+15,14: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+16,14: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,14: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,14: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,14: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+20,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+21,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+22,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+23,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+24,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+25,14: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+29,14: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+31,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,13: /turf/template_noop | /area/template_noop
+2,13: /turf/template_noop | /area/template_noop
+3,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,13: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+10,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+11,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+12,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+13,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+14,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+15,13: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+16,13: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+17,13: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,13: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,13: /turf/closed/indestructible/necropolis | /area/icemoon/underground/explored/virtual_domain
+20,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+21,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+22,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+23,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+24,13: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+25,13: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+30,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,13: /turf/template_noop | /area/template_noop
+1,12: /turf/template_noop | /area/template_noop
+2,12: /turf/template_noop | /area/template_noop
+3,12: /turf/template_noop | /area/template_noop
+4,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,12: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+10,12: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+12,12: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+13,12: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+14,12: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+15,12: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+16,12: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /obj/structure/holosign/barrier | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,12: /obj/effect/decal/cleanable/blood/drip{pixel_x = 2; pixel_y = 3} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,12: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,12: /obj/structure/flora/grass/brown/style_random | /obj/structure/holosign/barrier | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+20,12: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+21,12: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+22,12: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,12: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+29,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,12: /turf/template_noop | /area/template_noop
+32,12: /turf/template_noop | /area/template_noop
+1,11: /turf/template_noop | /area/template_noop
+2,11: /turf/template_noop | /area/template_noop
+3,11: /turf/template_noop | /area/template_noop
+4,11: /turf/template_noop | /area/template_noop
+5,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,11: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+14,11: /obj/structure/flora/rock/pile/icy/style_3 | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+17,11: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,11: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+21,11: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+28,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,11: /turf/template_noop | /area/template_noop
+31,11: /turf/template_noop | /area/template_noop
+32,11: /turf/template_noop | /area/template_noop
+1,10: /turf/template_noop | /area/template_noop
+2,10: /turf/template_noop | /area/template_noop
+3,10: /turf/template_noop | /area/template_noop
+4,10: /turf/template_noop | /area/template_noop
+5,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,10: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,10: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+15,10: /obj/effect/mob_spawn/corpse/human/cargo_tech | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+17,10: /obj/item/paper/crumpled/bloody{default_raw_text = "for your own sake, do not enter"} | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+23,10: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+27,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,10: /turf/template_noop | /area/template_noop
+31,10: /turf/template_noop | /area/template_noop
+32,10: /turf/template_noop | /area/template_noop
+1,9: /turf/template_noop | /area/template_noop
+2,9: /turf/template_noop | /area/template_noop
+3,9: /turf/template_noop | /area/template_noop
+4,9: /turf/template_noop | /area/template_noop
+5,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,9: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+11,9: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+16,9: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+17,9: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+19,9: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+23,9: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+24,9: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+29,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,9: /turf/template_noop | /area/template_noop
+31,9: /turf/template_noop | /area/template_noop
+32,9: /turf/template_noop | /area/template_noop
+1,8: /turf/template_noop | /area/template_noop
+2,8: /turf/template_noop | /area/template_noop
+3,8: /turf/template_noop | /area/template_noop
+4,8: /turf/template_noop | /area/template_noop
+5,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,8: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,8: /turf/template_noop | /area/virtual_domain/safehouse
+15,8: /turf/template_noop | /area/virtual_domain/safehouse
+16,8: /turf/template_noop | /area/virtual_domain/safehouse
+17,8: /turf/template_noop | /area/virtual_domain/safehouse
+18,8: /turf/template_noop | /area/virtual_domain/safehouse
+19,8: /turf/template_noop | /area/virtual_domain/safehouse
+20,8: /turf/template_noop | /area/virtual_domain/safehouse
+24,8: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,8: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /obj/effect/turf_decal/weather/snow/corner | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+29,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,8: /turf/template_noop | /area/template_noop
+31,8: /turf/template_noop | /area/template_noop
+32,8: /turf/template_noop | /area/template_noop
+1,7: /turf/template_noop | /area/template_noop
+2,7: /turf/template_noop | /area/template_noop
+3,7: /turf/template_noop | /area/template_noop
+4,7: /turf/template_noop | /area/template_noop
+5,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,7: /turf/template_noop | /area/virtual_domain/safehouse
+15,7: /turf/template_noop | /area/virtual_domain/safehouse
+16,7: /turf/template_noop | /area/virtual_domain/safehouse
+17,7: /turf/template_noop | /area/virtual_domain/safehouse
+18,7: /turf/template_noop | /area/virtual_domain/safehouse
+19,7: /turf/template_noop | /area/virtual_domain/safehouse
+20,7: /turf/template_noop | /area/virtual_domain/safehouse
+24,7: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+29,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,7: /turf/template_noop | /area/template_noop
+31,7: /turf/template_noop | /area/template_noop
+32,7: /turf/template_noop | /area/template_noop
+1,6: /turf/template_noop | /area/template_noop
+2,6: /turf/template_noop | /area/template_noop
+3,6: /turf/template_noop | /area/template_noop
+4,6: /turf/template_noop | /area/template_noop
+5,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,6: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,6: /turf/template_noop | /area/virtual_domain/safehouse
+15,6: /turf/template_noop | /area/virtual_domain/safehouse
+16,6: /turf/template_noop | /area/virtual_domain/safehouse
+17,6: /turf/template_noop | /area/virtual_domain/safehouse
+18,6: /turf/template_noop | /area/virtual_domain/safehouse
+19,6: /turf/template_noop | /area/virtual_domain/safehouse
+20,6: /turf/template_noop | /area/virtual_domain/safehouse
+29,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,6: /turf/template_noop | /area/template_noop
+31,6: /turf/template_noop | /area/template_noop
+32,6: /turf/template_noop | /area/template_noop
+1,5: /turf/template_noop | /area/template_noop
+2,5: /turf/template_noop | /area/template_noop
+3,5: /turf/template_noop | /area/template_noop
+4,5: /turf/template_noop | /area/template_noop
+5,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,5: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+8,5: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+9,5: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,5: /turf/template_noop | /area/virtual_domain/safehouse
+15,5: /turf/template_noop | /area/virtual_domain/safehouse
+16,5: /turf/template_noop | /area/virtual_domain/safehouse
+17,5: /turf/template_noop | /area/virtual_domain/safehouse
+18,5: /turf/template_noop | /area/virtual_domain/safehouse
+19,5: /turf/template_noop | /area/virtual_domain/safehouse
+20,5: /turf/template_noop | /area/virtual_domain/safehouse
+25,5: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+26,5: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+29,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,5: /turf/template_noop | /area/template_noop
+31,5: /turf/template_noop | /area/template_noop
+32,5: /turf/template_noop | /area/template_noop
+1,4: /turf/template_noop | /area/template_noop
+2,4: /turf/template_noop | /area/template_noop
+3,4: /turf/template_noop | /area/template_noop
+4,4: /turf/template_noop | /area/template_noop
+5,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,4: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+8,4: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+9,4: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+10,4: /obj/effect/turf_decal/weather/snow/corner | /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+11,4: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,4: /turf/template_noop | /area/virtual_domain/safehouse
+15,4: /turf/template_noop | /area/virtual_domain/safehouse
+16,4: /turf/template_noop | /area/virtual_domain/safehouse
+17,4: /turf/template_noop | /area/virtual_domain/safehouse
+18,4: /turf/template_noop | /area/virtual_domain/safehouse
+19,4: /turf/template_noop | /area/virtual_domain/safehouse
+20,4: /turf/template_noop | /area/virtual_domain/safehouse
+24,4: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+25,4: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+29,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,4: /turf/template_noop | /area/template_noop
+31,4: /turf/template_noop | /area/template_noop
+32,4: /turf/template_noop | /area/template_noop
+1,3: /turf/template_noop | /area/template_noop
+2,3: /turf/template_noop | /area/template_noop
+3,3: /turf/template_noop | /area/template_noop
+4,3: /turf/template_noop | /area/template_noop
+5,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,3: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+9,3: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+14,3: /obj/modular_map_root/safehouse{key = "lavaland_boss"} | /turf/template_noop | /area/virtual_domain/safehouse
+15,3: /turf/template_noop | /area/virtual_domain/safehouse
+16,3: /turf/template_noop | /area/virtual_domain/safehouse
+17,3: /turf/template_noop | /area/virtual_domain/safehouse
+18,3: /turf/template_noop | /area/virtual_domain/safehouse
+19,3: /turf/template_noop | /area/virtual_domain/safehouse
+20,3: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+25,3: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+29,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,3: /turf/template_noop | /area/template_noop
+31,3: /turf/template_noop | /area/template_noop
+32,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/template_noop | /area/template_noop
+3,2: /turf/template_noop | /area/template_noop
+4,2: /turf/template_noop | /area/template_noop
+5,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,2: /obj/effect/baseturf_helper/virtual_domain | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+29,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,2: /turf/template_noop | /area/template_noop
+31,2: /turf/template_noop | /area/template_noop
+32,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+5,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,1: /turf/template_noop | /area/template_noop
+31,1: /turf/template_noop | /area/template_noop
+32,1: /turf/template_noop | /area/template_noop
+
+[chunk 33 1 1]
+33,32: /turf/template_noop | /area/template_noop
+33,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,14: /turf/template_noop | /area/template_noop
+33,13: /turf/template_noop | /area/template_noop
+33,12: /turf/template_noop | /area/template_noop
+33,11: /turf/template_noop | /area/template_noop
+33,10: /turf/template_noop | /area/template_noop
+33,9: /turf/template_noop | /area/template_noop
+33,8: /turf/template_noop | /area/template_noop
+33,7: /turf/template_noop | /area/template_noop
+33,6: /turf/template_noop | /area/template_noop
+33,5: /turf/template_noop | /area/template_noop
+33,4: /turf/template_noop | /area/template_noop
+33,3: /turf/template_noop | /area/template_noop
+33,2: /turf/template_noop | /area/template_noop
+33,1: /turf/template_noop | /area/template_noop
+
+[chunk 1 33 1]
+1,37: /turf/template_noop | /area/template_noop
+2,37: /turf/template_noop | /area/template_noop
+3,37: /turf/template_noop | /area/template_noop
+4,37: /turf/template_noop | /area/template_noop
+5,37: /turf/template_noop | /area/template_noop
+6,37: /turf/template_noop | /area/template_noop
+7,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,37: /turf/template_noop | /area/template_noop
+29,37: /turf/template_noop | /area/template_noop
+30,37: /turf/template_noop | /area/template_noop
+31,37: /turf/template_noop | /area/template_noop
+32,37: /turf/template_noop | /area/template_noop
+1,36: /turf/template_noop | /area/template_noop
+2,36: /turf/template_noop | /area/template_noop
+3,36: /turf/template_noop | /area/template_noop
+4,36: /turf/template_noop | /area/template_noop
+5,36: /turf/template_noop | /area/template_noop
+6,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,36: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+21,36: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+27,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,36: /turf/template_noop | /area/template_noop
+30,36: /turf/template_noop | /area/template_noop
+31,36: /turf/template_noop | /area/template_noop
+32,36: /turf/template_noop | /area/template_noop
+1,35: /turf/template_noop | /area/template_noop
+2,35: /turf/template_noop | /area/template_noop
+3,35: /turf/template_noop | /area/template_noop
+4,35: /turf/template_noop | /area/template_noop
+5,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,35: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,35: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+28,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,35: /turf/template_noop | /area/template_noop
+31,35: /turf/template_noop | /area/template_noop
+32,35: /turf/template_noop | /area/template_noop
+1,34: /turf/template_noop | /area/template_noop
+2,34: /turf/template_noop | /area/template_noop
+3,34: /turf/template_noop | /area/template_noop
+4,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,34: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+12,34: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+13,34: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+14,34: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+15,34: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+16,34: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+17,34: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,34: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,34: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+21,34: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+22,34: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+23,34: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+27,34: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+29,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,34: /turf/template_noop | /area/template_noop
+32,34: /turf/template_noop | /area/template_noop
+1,33: /turf/template_noop | /area/template_noop
+2,33: /turf/template_noop | /area/template_noop
+3,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,33: /obj/structure/flora/tree/stump | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+9,33: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+10,33: /obj/structure/flora/grass/brown/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+11,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+12,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+13,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+14,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+15,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+16,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+17,33: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+18,33: /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+19,33: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /turf/open/indestructible/necropolis{initial_gas_mix = "ICEMOON_ATMOS"} | /area/icemoon/underground/explored/virtual_domain
+20,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+21,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+22,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+23,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+24,33: /turf/closed/indestructible/rock/snow/ore | /area/icemoon/underground/explored/virtual_domain
+28,33: /obj/structure/flora/rock/pile/icy/style_random | /turf/open/misc/asteroid/snow/icemoon | /area/icemoon/underground/explored/virtual_domain
+30,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,33: /turf/template_noop | /area/template_noop
+
+[chunk 33 33 1]
+33,37: /turf/template_noop | /area/template_noop
+33,36: /turf/template_noop | /area/template_noop
+33,35: /turf/template_noop | /area/template_noop
+33,34: /turf/template_noop | /area/template_noop
+33,33: /turf/template_noop | /area/template_noop

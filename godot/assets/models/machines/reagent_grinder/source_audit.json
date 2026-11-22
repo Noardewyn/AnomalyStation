@@ -1,0 +1,30 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/kitchen.png",
+  "sha256": "30c311008415eb2d104f64339ac4c4b58a549ed5bc05d06e9659fef3d61d24f1",
+  "rgba_matches_dmi": true,
+  "tile": [
+    32,
+    32
+  ],
+  "atlas_size": [
+    352,
+    320
+  ],
+  "source": "code/modules/reagents/chemistry/machinery/reagentgrinder.dm",
+  "states": [
+    "juicer",
+    "juicer-on",
+    "juicer-beaker"
+  ],
+  "mount_evidence": "anchored_tabletop_offset=8; PASSTABLE",
+  "duplicate_audit": "No existing reagent grinder or juicer models.",
+  "opaque_uv_samples": 31680,
+  "visual_review": [
+    "front",
+    "back",
+    "right",
+    "top",
+    "underside",
+    "three_quarter"
+  ]
+}

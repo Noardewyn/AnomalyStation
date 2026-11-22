@@ -1,0 +1,161 @@
+{
+  "iv_drip.001": [
+    "iv_drip_injectidle",
+    "iv_drip_donateidle",
+    "iv_drip_injecting",
+    "iv_drip_donating"
+  ],
+  "cryo_cell.001": [
+    "open",
+    "close",
+    "maintenance_open",
+    "maintenance_close",
+    "off",
+    "cooling"
+  ],
+  "dna_scanner.001": [
+    "open",
+    "close",
+    "scanner",
+    "scanner_occupied",
+    "scanner_unpowered",
+    "scanner_maintenance"
+  ],
+  "dna_infuser.001": [
+    "open",
+    "close",
+    "infuser",
+    "infuser_on",
+    "infuser_panel"
+  ],
+  "bci_implanter.001": [
+    "open",
+    "close"
+  ],
+  "chemical_dispenser.001": [
+    "dispenser_nopower",
+    "dispenser",
+    "dispense",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "chem_master.001": [
+    "loaded",
+    "printing",
+    "unpowered",
+    "idle",
+    "loaded",
+    "printing",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "condiment_master.001": [
+    "loaded",
+    "printing",
+    "unpowered",
+    "idle",
+    "loaded",
+    "printing",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "reaction_chamber.001": [
+    "open",
+    "close"
+  ],
+  "hplc_chromatograph.001": [
+    "HPLC",
+    "HPLC_on",
+    "off",
+    "analysing",
+    "idle",
+    "analysing",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "medical_kiosk.001": [
+    "kiosk_off",
+    "kiosk",
+    "kiosk_active",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "smart_fridge.001": [
+    "open",
+    "close",
+    "broken",
+    "intact",
+    "empty",
+    "smartfridge-food-2",
+    "smartfridge-food-3",
+    "smartfridge-plant-1",
+    "smartfridge-plant-2",
+    "smartfridge-plant-3",
+    "smartfridge-slime-1",
+    "smartfridge-slime-2",
+    "smartfridge-slime-3",
+    "smartfridge-drink-1",
+    "smartfridge-drink-2",
+    "smartfridge-drink-3",
+    "smartfridge-organ-1",
+    "smartfridge-organ-2",
+    "smartfridge-organ-3",
+    "smartfridge-petri-1",
+    "smartfridge-petri-2",
+    "smartfridge-petri-3",
+    "smartfridge-chem-1",
+    "smartfridge-chem-2",
+    "smartfridge-chem-3",
+    "smartfridge-viro-1",
+    "smartfridge-viro-2",
+    "smartfridge-viro-3",
+    "smartfridge-food-1",
+    "smartfridge-food-2",
+    "smartfridge-food-3",
+    "smartfridge-plant-1",
+    "smartfridge-plant-2",
+    "smartfridge-plant-3",
+    "smartfridge-slime-1",
+    "smartfridge-slime-2",
+    "smartfridge-slime-3",
+    "smartfridge-drink-1",
+    "smartfridge-drink-2",
+    "smartfridge-drink-3",
+    "smartfridge-organ-1",
+    "smartfridge-organ-2",
+    "smartfridge-organ-3",
+    "smartfridge-petri-1",
+    "smartfridge-petri-2",
+    "smartfridge-petri-3",
+    "smartfridge-chem-1",
+    "smartfridge-chem-2",
+    "smartfridge-chem-3",
+    "smartfridge-viro-1",
+    "smartfridge-viro-2",
+    "smartfridge-viro-3",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "dehydrator.001": [
+    "open",
+    "close",
+    "broken",
+    "intact",
+    "dehydrator-off",
+    "dehydrator-on"
+  ],
+  "biological_growing_vat.001": [
+    "empty",
+    "filled",
+    "growing_vat_off",
+    "growing_vat_on"
+  ],
+  "morgue_section.001": [
+    "open",
+    "close"
+  ],
+  "crematorium.001": [
+    "open",
+    "close"
+  ]
+}

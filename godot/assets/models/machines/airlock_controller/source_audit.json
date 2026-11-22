@@ -1,0 +1,39 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/wallmounts.png",
+  "png_sha256": "36a08a447b460fd028e160d56d4514edbf13c4da5be182c9feaeebaeba46abb8",
+  "rgba_matches_dmi": true,
+  "tile": [
+    32,
+    32
+  ],
+  "atlas_size": [
+    640,
+    608
+  ],
+  "source": "code/game/machinery/embedded_controller/access_controller.dm",
+  "type": "/obj/machinery/door_buttons/airlock_controller",
+  "map_definition_records": 2,
+  "mount_evidence": "wallmounts sprite; mapped with pixel shifts to boundaries of open floor cells; wall-oriented model",
+  "duplicate_audit": "No existing airlock_controller/access_control asset; distinct from access_button and computer consoles",
+  "states": {
+    "off": [
+      480,
+      0
+    ],
+    "standby": [
+      512,
+      0
+    ],
+    "process": [
+      [
+        544,
+        0
+      ],
+      [
+        576,
+        0
+      ]
+    ]
+  },
+  "behavior": "NOPOWER -> off; busy -> process; otherwise standby. No separate overlays. Two process frames retained as static presets."
+}

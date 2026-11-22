@@ -1,0 +1,29 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/microwave.png",
+  "sha256": "47a64b458a7e4a2bebbd1a725c9e1ce5f29013a4fa5597b5da5e3432d1dae9e9",
+  "rgba_matches_dmi": true,
+  "tile": [
+    32,
+    32
+  ],
+  "atlas_size": [
+    288,
+    256
+  ],
+  "source": "code/modules/food_and_drinks/machinery/microwave.dm",
+  "mount_evidence": "anchored_tabletop_offset = 6; pass_flags = PASSTABLE",
+  "duplicate_audit": "No microwave model found before this batch.",
+  "opaque_uv_samples": 25760,
+  "visual_review": [
+    "front",
+    "back",
+    "right",
+    "top",
+    "underside",
+    "three_quarter"
+  ],
+  "remaining": [],
+  "scope": "Nine standard and twelve engineering static presets. First frame per animated source state; independent emissive and battery overlays.",
+  "preset_count": 21,
+  "engineering_source_geometry": "Separate cabinet silhouette; wide upper-hinged door, top controls, lower service recess."
+}

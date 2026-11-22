@@ -1,0 +1,25 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/digital_clock.png",
+  "png_sha256": "dfc9474038192318092470dadbb54fdf8d2867a464809fb6f21bc985433f8779",
+  "rgba_matches_original_dmi": true,
+  "tile": [
+    32,
+    32
+  ],
+  "atlas_size": [
+    128,
+    96
+  ],
+  "source": "code/game/machinery/digital_clock.dm",
+  "duplicate_audit": "No digital clock BLEND or GLB in existing models before this batch.",
+  "visual_review": [
+    "front",
+    "back",
+    "right",
+    "top",
+    "three_quarter",
+    "underside"
+  ],
+  "opaque_uv_samples": 3120,
+  "scope": "Four static samples; all ten source digit states available across the shared library. No time logic."
+}

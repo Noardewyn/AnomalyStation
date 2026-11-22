@@ -1,0 +1,3284 @@
+{
+  "version": "4.0",
+  "width": 32,
+  "height": 32,
+  "sheetWidth": 512,
+  "sheetHeight": 512,
+  "states": [
+    {
+      "name": "font_sheet",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "template",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "doors",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "space",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 3,
+      "rects": [
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deathsposal",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          128,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bodysposal",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 5,
+      "rects": [
+        [
+          160,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "pods",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 6,
+      "rects": [
+        [
+          192,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "exodrone",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 7,
+      "rects": [
+        [
+          224,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "evac",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          256,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "drop",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          288,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "custodian1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 10,
+      "rects": [
+        [
+          320,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "custodian2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 11,
+      "rects": [
+        [
+          352,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engine",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 12,
+      "rects": [
+        [
+          384,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "atmos",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 13,
+      "rects": [
+        [
+          416,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "cargo",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 14,
+      "rects": [
+        [
+          448,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "security",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 15,
+      "rects": [
+        [
+          480,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "holy",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 16,
+      "rects": [
+        [
+          0,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "restroom",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 17,
+      "rects": [
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "examroom",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 18,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "xenobio1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 19,
+      "rects": [
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "xenobio2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 20,
+      "rects": [
+        [
+          128,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "science1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 21,
+      "rects": [
+        [
+          160,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "science2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 22,
+      "rects": [
+        [
+          192,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "testchamber",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 23,
+      "rects": [
+        [
+          224,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gene",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 24,
+      "rects": [
+        [
+          256,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "med",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 25,
+      "rects": [
+        [
+          288,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "chemistry1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 26,
+      "rects": [
+        [
+          320,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "chemistry2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 27,
+      "rects": [
+        [
+          352,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "hydro1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 28,
+      "rects": [
+        [
+          384,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "hydro2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 29,
+      "rects": [
+        [
+          416,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "hydro3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 30,
+      "rects": [
+        [
+          448,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "psychology",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 31,
+      "rects": [
+        [
+          480,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "lawyer",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 32,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "court",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 33,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "firingrange",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 34,
+      "rects": [
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "telecomms",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 35,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "telecomms2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 36,
+      "rects": [
+        [
+          128,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "vault",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 37,
+      "rects": [
+        [
+          160,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mait1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 38,
+      "rects": [
+        [
+          192,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mait2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 39,
+      "rects": [
+        [
+          224,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "radshelter",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 40,
+      "rects": [
+        [
+          256,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "aiupload",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 41,
+      "rects": [
+        [
+          288,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "chapel",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 42,
+      "rects": [
+        [
+          320,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "morgue",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 43,
+      "rects": [
+        [
+          352,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "botany",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 44,
+      "rects": [
+        [
+          384,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "pharmacy",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 45,
+      "rects": [
+        [
+          416,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "medbay",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 46,
+      "rects": [
+        [
+          448,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "viro",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 47,
+      "rects": [
+        [
+          480,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "rndserver",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 48,
+      "rects": [
+        [
+          0,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "aisat",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 49,
+      "rects": [
+        [
+          32,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "restaurant",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 50,
+      "rects": [
+        [
+          64,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bar",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 51,
+      "rects": [
+        [
+          96,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bluecross2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 52,
+      "rects": [
+        [
+          128,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bluecross",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 53,
+      "rects": [
+        [
+          160,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bio",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 54,
+      "rects": [
+        [
+          192,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "xeno_warning",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 55,
+      "rects": [
+        [
+          224,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "cold",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 56,
+      "rects": [
+        [
+          256,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "heat",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 57,
+      "rects": [
+        [
+          288,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gasmask",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 58,
+      "rects": [
+        [
+          320,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nanotrasen",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 59,
+      "rects": [
+        [
+          352,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nosmoking2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 60,
+      "rects": [
+        [
+          384,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nosmoking",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 61,
+      "rects": [
+        [
+          416,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "yessmoking",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 62,
+      "rects": [
+        [
+          448,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 63,
+      "rects": [
+        [
+          480,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "radiation",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 64,
+      "rects": [
+        [
+          0,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "securearea",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 65,
+      "rects": [
+        [
+          32,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "shock",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 66,
+      "rects": [
+        [
+          64,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "explosives",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 67,
+      "rects": [
+        [
+          96,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "explosives2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 68,
+      "rects": [
+        [
+          128,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "goldenplaque",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 69,
+      "rects": [
+        [
+          160,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "blankplaque",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 70,
+      "rects": [
+        [
+          192,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "commission_nt",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 71,
+      "rects": [
+        [
+          224,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "kiddieplaque",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 72,
+      "rects": [
+        [
+          256,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "commission_commie",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 73,
+      "rects": [
+        [
+          288,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "commission_syndie",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 74,
+      "rects": [
+        [
+          320,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "atmosplaque",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 75,
+      "rects": [
+        [
+          352,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "map-left",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 76,
+      "rects": [
+        [
+          384,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "map-right",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 77,
+      "rects": [
+        [
+          416,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "map-left-MS",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 78,
+      "rects": [
+        [
+          448,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "map-right-MS",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 79,
+      "rects": [
+        [
+          480,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "map-pubby",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 80,
+      "rects": [
+        [
+          0,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "safety",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 81,
+      "rects": [
+        [
+          32,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "clock",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 82,
+      "rects": [
+        [
+          64,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_eng",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 83,
+      "rects": [
+        [
+          96,
+          160,
+          32,
+          32
+        ],
+        [
+          128,
+          160,
+          32,
+          32
+        ],
+        [
+          160,
+          160,
+          32,
+          32
+        ],
+        [
+          192,
+          160,
+          32,
+          32
+        ],
+        [
+          224,
+          160,
+          32,
+          32
+        ],
+        [
+          256,
+          160,
+          32,
+          32
+        ],
+        [
+          288,
+          160,
+          32,
+          32
+        ],
+        [
+          320,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_supply",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 91,
+      "rects": [
+        [
+          352,
+          160,
+          32,
+          32
+        ],
+        [
+          384,
+          160,
+          32,
+          32
+        ],
+        [
+          416,
+          160,
+          32,
+          32
+        ],
+        [
+          448,
+          160,
+          32,
+          32
+        ],
+        [
+          480,
+          160,
+          32,
+          32
+        ],
+        [
+          0,
+          192,
+          32,
+          32
+        ],
+        [
+          32,
+          192,
+          32,
+          32
+        ],
+        [
+          64,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_sci",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 99,
+      "rects": [
+        [
+          96,
+          192,
+          32,
+          32
+        ],
+        [
+          128,
+          192,
+          32,
+          32
+        ],
+        [
+          160,
+          192,
+          32,
+          32
+        ],
+        [
+          192,
+          192,
+          32,
+          32
+        ],
+        [
+          224,
+          192,
+          32,
+          32
+        ],
+        [
+          256,
+          192,
+          32,
+          32
+        ],
+        [
+          288,
+          192,
+          32,
+          32
+        ],
+        [
+          320,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_sec",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 107,
+      "rects": [
+        [
+          352,
+          192,
+          32,
+          32
+        ],
+        [
+          384,
+          192,
+          32,
+          32
+        ],
+        [
+          416,
+          192,
+          32,
+          32
+        ],
+        [
+          448,
+          192,
+          32,
+          32
+        ],
+        [
+          480,
+          192,
+          32,
+          32
+        ],
+        [
+          0,
+          224,
+          32,
+          32
+        ],
+        [
+          32,
+          224,
+          32,
+          32
+        ],
+        [
+          64,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_med",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 115,
+      "rects": [
+        [
+          96,
+          224,
+          32,
+          32
+        ],
+        [
+          128,
+          224,
+          32,
+          32
+        ],
+        [
+          160,
+          224,
+          32,
+          32
+        ],
+        [
+          192,
+          224,
+          32,
+          32
+        ],
+        [
+          224,
+          224,
+          32,
+          32
+        ],
+        [
+          256,
+          224,
+          32,
+          32
+        ],
+        [
+          288,
+          224,
+          32,
+          32
+        ],
+        [
+          320,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_evac",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 123,
+      "rects": [
+        [
+          352,
+          224,
+          32,
+          32
+        ],
+        [
+          384,
+          224,
+          32,
+          32
+        ],
+        [
+          416,
+          224,
+          32,
+          32
+        ],
+        [
+          448,
+          224,
+          32,
+          32
+        ],
+        [
+          480,
+          224,
+          32,
+          32
+        ],
+        [
+          0,
+          256,
+          32,
+          32
+        ],
+        [
+          32,
+          256,
+          32,
+          32
+        ],
+        [
+          64,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_bridge",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 131,
+      "rects": [
+        [
+          96,
+          256,
+          32,
+          32
+        ],
+        [
+          128,
+          256,
+          32,
+          32
+        ],
+        [
+          160,
+          256,
+          32,
+          32
+        ],
+        [
+          192,
+          256,
+          32,
+          32
+        ],
+        [
+          224,
+          256,
+          32,
+          32
+        ],
+        [
+          256,
+          256,
+          32,
+          32
+        ],
+        [
+          288,
+          256,
+          32,
+          32
+        ],
+        [
+          320,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_dorms",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 139,
+      "rects": [
+        [
+          352,
+          256,
+          32,
+          32
+        ],
+        [
+          384,
+          256,
+          32,
+          32
+        ],
+        [
+          416,
+          256,
+          32,
+          32
+        ],
+        [
+          448,
+          256,
+          32,
+          32
+        ],
+        [
+          480,
+          256,
+          32,
+          32
+        ],
+        [
+          0,
+          288,
+          32,
+          32
+        ],
+        [
+          32,
+          288,
+          32,
+          32
+        ],
+        [
+          64,
+          288,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_lavaland",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 147,
+      "rects": [
+        [
+          96,
+          288,
+          32,
+          32
+        ],
+        [
+          128,
+          288,
+          32,
+          32
+        ],
+        [
+          160,
+          288,
+          32,
+          32
+        ],
+        [
+          192,
+          288,
+          32,
+          32
+        ],
+        [
+          224,
+          288,
+          32,
+          32
+        ],
+        [
+          256,
+          288,
+          32,
+          32
+        ],
+        [
+          288,
+          288,
+          32,
+          32
+        ],
+        [
+          320,
+          288,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_arrival",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 155,
+      "rects": [
+        [
+          352,
+          288,
+          32,
+          32
+        ],
+        [
+          384,
+          288,
+          32,
+          32
+        ],
+        [
+          416,
+          288,
+          32,
+          32
+        ],
+        [
+          448,
+          288,
+          32,
+          32
+        ],
+        [
+          480,
+          288,
+          32,
+          32
+        ],
+        [
+          0,
+          320,
+          32,
+          32
+        ],
+        [
+          32,
+          320,
+          32,
+          32
+        ],
+        [
+          64,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_vault",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 163,
+      "rects": [
+        [
+          96,
+          320,
+          32,
+          32
+        ],
+        [
+          128,
+          320,
+          32,
+          32
+        ],
+        [
+          160,
+          320,
+          32,
+          32
+        ],
+        [
+          192,
+          320,
+          32,
+          32
+        ],
+        [
+          224,
+          320,
+          32,
+          32
+        ],
+        [
+          256,
+          320,
+          32,
+          32
+        ],
+        [
+          288,
+          320,
+          32,
+          32
+        ],
+        [
+          320,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "direction_upload",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 171,
+      "rects": [
+        [
+          352,
+          320,
+          32,
+          32
+        ],
+        [
+          384,
+          320,
+          32,
+          32
+        ],
+        [
+          416,
+          320,
+          32,
+          32
+        ],
+        [
+          448,
+          320,
+          32,
+          32
+        ],
+        [
+          480,
+          320,
+          32,
+          32
+        ],
+        [
+          0,
+          352,
+          32,
+          32
+        ],
+        [
+          32,
+          352,
+          32,
+          32
+        ],
+        [
+          64,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "roomnum",
+      "dirs": 8,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 179,
+      "rects": [
+        [
+          96,
+          352,
+          32,
+          32
+        ],
+        [
+          128,
+          352,
+          32,
+          32
+        ],
+        [
+          160,
+          352,
+          32,
+          32
+        ],
+        [
+          192,
+          352,
+          32,
+          32
+        ],
+        [
+          224,
+          352,
+          32,
+          32
+        ],
+        [
+          256,
+          352,
+          32,
+          32
+        ],
+        [
+          288,
+          352,
+          32,
+          32
+        ],
+        [
+          320,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "monkey_painting",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 187,
+      "rects": [
+        [
+          352,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "backing",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 188,
+      "rects": [
+        [
+          384,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-empty",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 189,
+      "rects": [
+        [
+          416,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-fruit",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 190,
+      "rects": [
+        [
+          448,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-monkey",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 191,
+      "rects": [
+        [
+          480,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-rat",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 192,
+      "rects": [
+        [
+          0,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-ratvar",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 193,
+      "rects": [
+        [
+          32,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-overlay",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 194,
+      "rects": [
+        [
+          64,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-content-overlay",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 195,
+      "rects": [
+        [
+          96,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "frame-large-empty",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 196,
+      "rects": [
+        [
+          128,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nanotrasen_sign1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 197,
+      "rects": [
+        [
+          160,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nanotrasen_sign2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 198,
+      "rects": [
+        [
+          192,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nanotrasen_sign3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 199,
+      "rects": [
+        [
+          224,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nanotrasen_sign4",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 200,
+      "rects": [
+        [
+          256,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "nanotrasen_sign5",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 201,
+      "rects": [
+        [
+          288,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "xenobio-guide",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 202,
+      "rects": [
+        [
+          320,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "chemdiamond",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 203,
+      "rects": [
+        [
+          352,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 204,
+      "rects": [
+        [
+          384,
+          384,
+          32,
+          32
+        ],
+        [
+          416,
+          384,
+          32,
+          32
+        ],
+        [
+          448,
+          384,
+          32,
+          32
+        ],
+        [
+          480,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gym-left",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 208,
+      "rects": [
+        [
+          0,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gym-right",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 209,
+      "rects": [
+        [
+          32,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gymmirror-left",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 210,
+      "rects": [
+        [
+          64,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gymmirror-right",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 211,
+      "rects": [
+        [
+          96,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "calendar",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 212,
+      "rects": [
+        [
+          128,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 213,
+      "rects": [
+        [
+          160,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 214,
+      "rects": [
+        [
+          192,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 215,
+      "rects": [
+        [
+          224,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 216,
+      "rects": [
+        [
+          256,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_4",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 217,
+      "rects": [
+        [
+          288,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_5",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 218,
+      "rects": [
+        [
+          320,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_6",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 219,
+      "rects": [
+        [
+          352,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_7",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 220,
+      "rects": [
+        [
+          384,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_8",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 221,
+      "rects": [
+        [
+          416,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "days_9",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 222,
+      "rects": [
+        [
+          448,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "basketball_scorecard",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 223,
+      "rects": [
+        [
+          480,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "picket",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 224,
+      "rects": [
+        [
+          0,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "eldritch_painting_weeping",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 225,
+      "rects": [
+        [
+          32,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "eldritch_painting_beauty",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 226,
+      "rects": [
+        [
+          64,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "eldritch_painting_vines",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 227,
+      "rects": [
+        [
+          96,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "eldritch_painting_rust",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 228,
+      "rects": [
+        [
+          128,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "eldritch_painting_desire",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 229,
+      "rects": [
+        [
+          160,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "eldritch_painting_debug",
+      "dirs": 1,
+      "frames": 10,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 230,
+      "rects": [
+        [
+          192,
+          448,
+          32,
+          32
+        ],
+        [
+          224,
+          448,
+          32,
+          32
+        ],
+        [
+          256,
+          448,
+          32,
+          32
+        ],
+        [
+          288,
+          448,
+          32,
+          32
+        ],
+        [
+          320,
+          448,
+          32,
+          32
+        ],
+        [
+          352,
+          448,
+          32,
+          32
+        ],
+        [
+          384,
+          448,
+          32,
+          32
+        ],
+        [
+          416,
+          448,
+          32,
+          32
+        ],
+        [
+          448,
+          448,
+          32,
+          32
+        ],
+        [
+          480,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "eyechart",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 240,
+      "rects": [
+        [
+          0,
+          480,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram_plate",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 241,
+      "rects": [
+        [
+          32,
+          480,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

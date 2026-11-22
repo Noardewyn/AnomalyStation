@@ -1,0 +1,97 @@
+{
+  "scope": "Actual exported frame-zero housing mesh groups",
+  "mesh_groups": {
+    "Continuous_Bar_Sign_Housing.004": [
+      "bar_sign_empty",
+      "bar_sign_thegreytide",
+      "bar_sign_honkednloaded",
+      "bar_sign_slipperyshots",
+      "bar_sign_thecavern",
+      "bar_sign_theouterspess",
+      "bar_sign_syndibarsign",
+      "bar_sign_maidcafe",
+      "bar_sign_the_lightbulb",
+      "bar_sign_goose",
+      "bar_sign_chalkboard_menu",
+      "bar_sign_le_cafe_silencieux",
+      "bar_sign_rock-bottom",
+      "bar_sign_the-red-mons",
+      "bar_sign_the-wizard",
+      "bar_sign_thesmallrounyinn",
+      "bar_sign_cold-ones",
+      "bar_sign_thesingulo",
+      "bar_sign_officerbeersky"
+    ],
+    "Shaped_Bar_Sign_Housing.016": [
+      "bar_sign_maltesefalcon"
+    ],
+    "Shaped_Bar_Sign_Housing.017": [
+      "bar_sign_oldcockinn"
+    ],
+    "Shaped_Bar_Sign_Housing.018": [
+      "bar_sign_alohasnackbar"
+    ],
+    "Shaped_Bar_Sign_Housing.019": [
+      "bar_sign_maltroach"
+    ],
+    "Shaped_Bar_Sign_Housing.020": [
+      "bar_sign_neon-flamingo"
+    ],
+    "Shaped_Bar_Sign_Housing.021": [
+      "bar_sign_wrong-turn"
+    ],
+    "Shaped_Bar_Sign_Housing.022": [
+      "bar_sign_pun-puns-pub"
+    ],
+    "Shaped_Bar_Sign_Housing.023": [
+      "bar_sign_doctors-orders"
+    ],
+    "Shaped_Bar_Sign_Housing.024": [
+      "bar_sign_scotchservinwill",
+      "bar_sign_thebark",
+      "bar_sign_thedrunkcarp",
+      "bar_sign_theharmbaton",
+      "bar_sign_thecoderbus",
+      "bar_sign_theadminbus",
+      "bar_sign_thewretchedhive",
+      "bar_sign_robustacafe",
+      "bar_sign_emergencyrumparty",
+      "bar_sign_combocafe",
+      "bar_sign_vladssaladbar",
+      "bar_sign_theshaken",
+      "bar_sign_thealenath"
+    ],
+    "Shaped_Bar_Sign_Housing.025": [
+      "bar_sign_empbarsign"
+    ],
+    "Shaped_Bar_Sign_Housing.026": [
+      "bar_sign_thenest",
+      "bar_sign_moths-moths-moths"
+    ],
+    "Shaped_Bar_Sign_Housing.027": [
+      "bar_sign_thenet"
+    ],
+    "Shaped_Bar_Sign_Housing.028": [
+      "bar_sign_orangejuice"
+    ],
+    "Shaped_Bar_Sign_Housing.029": [
+      "bar_sign_the-assembly-line"
+    ],
+    "Shaped_Bar_Sign_Housing.030": [
+      "bar_sign_little_treats"
+    ],
+    "Shaped_Bar_Sign_Housing.031": [
+      "bar_sign_bargonia"
+    ],
+    "Shaped_Bar_Sign_Housing.032": [
+      "bar_sign_cult-cove"
+    ],
+    "Shaped_Bar_Sign_Housing.033": [
+      "bar_sign_slowdive"
+    ],
+    "Shaped_Bar_Sign_Housing.034": [
+      "bar_sign_therune"
+    ]
+  },
+  "note": "Each group shares housing geometry; light masks remain separate. Special geometry preserves source-alpha silhouettes."
+}

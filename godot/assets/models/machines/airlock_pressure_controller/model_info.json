@@ -1,0 +1,694 @@
+{
+  "airlock_pressure_controller_standby": {
+    "base_state": "airlock_control_standby",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Pressure_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Pressure_Console_Housing",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen.001",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.04218750074505806
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.002",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.09843750298023224
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1.001",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2.001",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3.001",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4.001",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_5",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_5",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_6",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_6",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_7",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_7",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_standby"
+      },
+      {
+        "name": "Push_Button_8",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_8",
+        "materials": [
+          "Airlock_Pressure_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_standby"
+      }
+    ],
+    "triangles": 132
+  },
+  "airlock_pressure_controller_off": {
+    "base_state": "airlock_control_off",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Pressure_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Pressure_Console_Housing",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen.001",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.04218750074505806
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.002",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.09843750298023224
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1.001",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2.001",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3.001",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4.001",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_5",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_5",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_6",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_6",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_7",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_7",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_off"
+      },
+      {
+        "name": "Push_Button_8",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_8",
+        "materials": [
+          "Airlock_Pressure_Controller_off_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_off"
+      }
+    ],
+    "triangles": 132
+  },
+  "airlock_pressure_controller_process_0": {
+    "base_state": "airlock_control_process",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Pressure_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Pressure_Console_Housing",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.04218750074505806
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.002",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.09843750298023224
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_5",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_5",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_6",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_6",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_7",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_7",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_8",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_8",
+        "materials": [
+          "Airlock_Pressure_Controller_process_0_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      }
+    ],
+    "triangles": 132
+  },
+  "airlock_pressure_controller_process_1": {
+    "base_state": "airlock_control_process",
+    "frame": 1,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Pressure_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Pressure_Console_Housing",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.04218750074505806
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.002",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.09843750298023224
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4.001",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.02812499925494194
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_5",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_5",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_6",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_6",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_7",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_7",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      },
+      {
+        "name": "Push_Button_8",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_8",
+        "materials": [
+          "Airlock_Pressure_Controller_process_1_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": "airlock_control_process"
+      }
+    ],
+    "triangles": 132
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "reagent_grinder_empty_off": {
+    "base_state": "juicer",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Base_Column_And_Hopper",
+        "triangles": 700,
+        "shared_mesh": "Continuous_Base_Column_And_Hopper.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Separate_Hopper_Cap",
+        "triangles": 92,
+        "shared_mesh": "Separate_Hopper_Cap.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.675000011920929
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 792
+  },
+  "reagent_grinder_empty_ready": {
+    "base_state": "juicer",
+    "overlays": [
+      "juicer-on"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Base_Column_And_Hopper",
+        "triangles": 700,
+        "shared_mesh": "Continuous_Base_Column_And_Hopper.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Separate_Hopper_Cap",
+        "triangles": 92,
+        "shared_mesh": "Separate_Hopper_Cap.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.675000011920929
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Ready_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Ready_Overlay.002",
+        "materials": [
+          "Grinder_Ready_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 794
+  },
+  "reagent_grinder_beaker_off": {
+    "base_state": "juicer",
+    "overlays": [
+      "juicer-beaker"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Base_Column_And_Hopper",
+        "triangles": 700,
+        "shared_mesh": "Continuous_Base_Column_And_Hopper.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Separate_Hopper_Cap",
+        "triangles": 92,
+        "shared_mesh": "Separate_Hopper_Cap.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.675000011920929
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Open_Beaker",
+        "triangles": 94,
+        "shared_mesh": "Removable_Open_Beaker.002",
+        "materials": [
+          "Grinder_Beaker_Glass.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.08437500149011612,
+          0.22499999403953552
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 886
+  },
+  "reagent_grinder_beaker_ready": {
+    "base_state": "juicer",
+    "overlays": [
+      "juicer-beaker",
+      "juicer-on"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Base_Column_And_Hopper",
+        "triangles": 700,
+        "shared_mesh": "Continuous_Base_Column_And_Hopper.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Separate_Hopper_Cap",
+        "triangles": 92,
+        "shared_mesh": "Separate_Hopper_Cap.004",
+        "materials": [
+          "Grinder_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.675000011920929
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Open_Beaker",
+        "triangles": 94,
+        "shared_mesh": "Removable_Open_Beaker.002",
+        "materials": [
+          "Grinder_Beaker_Glass.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.08437500149011612,
+          0.22499999403953552
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Ready_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Ready_Overlay.002",
+        "materials": [
+          "Grinder_Ready_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 888
+  }
+}

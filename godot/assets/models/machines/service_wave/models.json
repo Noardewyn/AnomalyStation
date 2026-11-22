@@ -1,0 +1,339 @@
+{
+  "photocopier": {
+    "triangles": 116,
+    "meshes": 42,
+    "notes": "Source photocopier1 operation frames/timing, photocopier2 maintenance source retained. Separate input/output anchors; documents and books are runtime attachments.",
+    "parts": [
+      "Service_Hatch",
+      "Machine_Body",
+      "Working_Surface_Frame_0",
+      "Working_Surface_Frame_1",
+      "Working_Surface_Frame_2",
+      "Working_Surface_Frame_3",
+      "Working_Surface_Frame_4",
+      "Working_Surface_Frame_5",
+      "Working_Surface_Frame_6",
+      "Working_Surface_Frame_7",
+      "Working_Surface_Frame_8",
+      "Working_Surface_Frame_9",
+      "Working_Surface_Frame_10",
+      "Working_Surface_Frame_11",
+      "Working_Surface_Frame_12",
+      "Working_Surface_Frame_13",
+      "Working_Surface_Frame_14",
+      "Working_Surface_Frame_15",
+      "Working_Surface_Frame_16",
+      "Working_Surface_Frame_17",
+      "Working_Surface_Frame_18",
+      "Working_Surface_Frame_19",
+      "Working_Surface_Frame_20",
+      "Working_Surface_Frame_21",
+      "Working_Surface_Frame_22",
+      "Working_Surface_Frame_23",
+      "Working_Surface_Frame_24",
+      "Working_Surface_Frame_25",
+      "Working_Surface_Frame_26",
+      "Working_Surface_Frame_27",
+      "Working_Surface_Frame_28",
+      "Working_Surface_Frame_29",
+      "Working_Surface_Frame_30",
+      "Working_Surface_Frame_31",
+      "Working_Surface_Frame_32",
+      "Working_Surface_Frame_33",
+      "Working_Surface_Frame_34",
+      "Working_Surface_Frame_35",
+      "Working_Surface_Frame_36",
+      "Working_Surface_Frame_37",
+      "Working_Surface_Frame_38",
+      "Working_Surface_Frame_39"
+    ]
+  },
+  "library_scanner": {
+    "triangles": 130,
+    "meshes": 36,
+    "notes": "Source bigscanner1 operation frames/timing, bigscanner2 maintenance source retained. Separate input/output anchors; documents and books are runtime attachments.",
+    "parts": [
+      "Machine_Body",
+      "Working_Surface_Frame_0",
+      "Working_Surface_Frame_1",
+      "Working_Surface_Frame_2",
+      "Working_Surface_Frame_3",
+      "Working_Surface_Frame_4",
+      "Working_Surface_Frame_5",
+      "Working_Surface_Frame_6",
+      "Working_Surface_Frame_7",
+      "Working_Surface_Frame_8",
+      "Working_Surface_Frame_9",
+      "Working_Surface_Frame_10",
+      "Working_Surface_Frame_11",
+      "Working_Surface_Frame_12",
+      "Working_Surface_Frame_13",
+      "Working_Surface_Frame_14",
+      "Working_Surface_Frame_15",
+      "Working_Surface_Frame_16",
+      "Working_Surface_Frame_17",
+      "Working_Surface_Frame_18",
+      "Working_Surface_Frame_19",
+      "Working_Surface_Frame_20",
+      "Working_Surface_Frame_21",
+      "Working_Surface_Frame_22",
+      "Working_Surface_Frame_23",
+      "Working_Surface_Frame_24",
+      "Working_Surface_Frame_25",
+      "Working_Surface_Frame_26",
+      "Working_Surface_Frame_27",
+      "Working_Surface_Frame_28",
+      "Working_Surface_Frame_29",
+      "Working_Surface_Frame_30",
+      "Working_Surface_Frame_31",
+      "Working_Surface_Frame_32",
+      "Working_Surface_Frame_33",
+      "Working_Surface_Frame_34"
+    ]
+  },
+  "bookbinder": {
+    "triangles": 90,
+    "meshes": 11,
+    "notes": "Source binder1 operation frames/timing, binder2 maintenance source retained. Separate input/output anchors; documents and books are runtime attachments.",
+    "parts": [
+      "Service_Hatch",
+      "Machine_Body",
+      "Working_Surface_Frame_0",
+      "Working_Surface_Frame_1",
+      "Working_Surface_Frame_2",
+      "Working_Surface_Frame_3",
+      "Working_Surface_Frame_4",
+      "Working_Surface_Frame_5",
+      "Working_Surface_Frame_6",
+      "Working_Surface_Frame_7",
+      "Working_Surface_Frame_8"
+    ]
+  },
+  "pda_painter": {
+    "triangles": 72,
+    "meshes": 5,
+    "notes": "Department variants share original pdapainter. Separate lid, power/broken panel states and PDA attachment; device paint is runtime data.",
+    "parts": [
+      "Painter_Body",
+      "Control_pdapainter",
+      "Control_pdapainter-off",
+      "Control_pdapainter-broken",
+      "Device_Lid"
+    ]
+  },
+  "photobooth": {
+    "triangles": 134,
+    "meshes": 4,
+    "notes": "Hollow booth with seat, original flat curtain shown by closed/open state clips. Security uses same geometry. Occupant/photo items separate; curtain deliberately stays 2D.",
+    "parts": [
+      "Booth_And_Seat",
+      "Flat_Curtain_Frame_0",
+      "Camera_booth_open",
+      "Camera_booth_off"
+    ]
+  },
+  "biogenerator": {
+    "triangles": 158,
+    "meshes": 63,
+    "notes": "Seven exclusive original biomass fill levels, screen/work/container overlays, separate hatch. Organic contents and reagent containers remain runtime objects.",
+    "parts": [
+      "Biomass_Processor",
+      "Biomass_Level_1_Frame_0",
+      "Biomass_Level_1_Frame_1",
+      "Biomass_Level_1_Frame_2",
+      "Biomass_Level_1_Frame_3",
+      "Biomass_Level_1_Frame_4",
+      "Biomass_Level_1_Frame_5",
+      "Biomass_Level_1_Frame_6",
+      "Biomass_Level_2_Frame_0",
+      "Biomass_Level_2_Frame_1",
+      "Biomass_Level_2_Frame_2",
+      "Biomass_Level_2_Frame_3",
+      "Biomass_Level_2_Frame_4",
+      "Biomass_Level_2_Frame_5",
+      "Biomass_Level_2_Frame_6",
+      "Biomass_Level_3_Frame_0",
+      "Biomass_Level_3_Frame_1",
+      "Biomass_Level_3_Frame_2",
+      "Biomass_Level_3_Frame_3",
+      "Biomass_Level_3_Frame_4",
+      "Biomass_Level_3_Frame_5",
+      "Biomass_Level_3_Frame_6",
+      "Biomass_Level_4_Frame_0",
+      "Biomass_Level_4_Frame_1",
+      "Biomass_Level_4_Frame_2",
+      "Biomass_Level_4_Frame_3",
+      "Biomass_Level_4_Frame_4",
+      "Biomass_Level_4_Frame_5",
+      "Biomass_Level_4_Frame_6",
+      "Biomass_Level_5_Frame_0",
+      "Biomass_Level_5_Frame_1",
+      "Biomass_Level_5_Frame_2",
+      "Biomass_Level_5_Frame_3",
+      "Biomass_Level_5_Frame_4",
+      "Biomass_Level_5_Frame_5",
+      "Biomass_Level_5_Frame_6",
+      "Biomass_Level_6_Frame_0",
+      "Biomass_Level_6_Frame_1",
+      "Biomass_Level_6_Frame_2",
+      "Biomass_Level_6_Frame_3",
+      "Biomass_Level_6_Frame_4",
+      "Biomass_Level_6_Frame_5",
+      "Biomass_Level_6_Frame_6",
+      "Biomass_Level_7_Frame_0",
+      "Biomass_Level_7_Frame_1",
+      "Biomass_Level_7_Frame_2",
+      "Biomass_Level_7_Frame_3",
+      "Biomass_Level_7_Frame_4",
+      "Biomass_Level_7_Frame_5",
+      "Biomass_Level_7_Frame_6",
+      "biogenerator_o_screen_Frame_0",
+      "biogenerator_o_screen_Frame_1",
+      "biogenerator_o_screen_Frame_2",
+      "biogenerator_o_screen_Frame_3",
+      "biogenerator_o_screen_Frame_4",
+      "biogenerator_o_screen_Frame_5",
+      "biogenerator_o_screen_Frame_6",
+      "biogenerator_o_process_Frame_0",
+      "biogenerator_o_process_Frame_1",
+      "biogenerator_o_process_Frame_2",
+      "biogenerator_o_process_Frame_3",
+      "biogenerator_o_container_Frame_0",
+      "Service_Hatch"
+    ]
+  },
+  "seed_extractor": {
+    "triangles": 36,
+    "meshes": 2,
+    "notes": "Main scanner and side seed outlet, separate source maintenance cover. No source processing animation; product objects are separate.",
+    "parts": [
+      "Seed_Extractor",
+      "Service_Hatch"
+    ]
+  },
+  "washing_machine": {
+    "triangles": 410,
+    "meshes": 7,
+    "notes": "Hollow cabinet, rotating drum and hinged circular door. Empty/full/bloody source content layers. Clothes are runtime attachments; running blood effect remains source metadata.",
+    "parts": [
+      "Washer_Shell",
+      "Drum",
+      "Round_Door",
+      "Washer_Glass",
+      "Load_wm_0_0_Frame_0",
+      "Load_wm_0_1_Frame_0",
+      "Load_wm_0_blood_Frame_0"
+    ]
+  },
+  "coffee_machine_impressa": {
+    "triangles": 72,
+    "meshes": 1,
+    "notes": "Tabletop Impressa with actual pot cavity and dispenser nozzle. Pot, cups, sugar and bean attachments are dynamic; their original source overlays retained, not baked into body.",
+    "parts": [
+      "Coffee_Machine"
+    ]
+  },
+  "kitchen_oven": {
+    "triangles": 180,
+    "meshes": 7,
+    "notes": "Hollow oven, tray and bottom-hinged framed glass door. Source on/off lamp. Range adds two burners; oven has a tall backguard. Food and flame visuals are runtime attachments.",
+    "parts": [
+      "Oven_Shell",
+      "Oven_Tray",
+      "Oven_Door",
+      "Door_Glass",
+      "Backguard",
+      "Heat_Lamp_oven_off",
+      "Heat_Lamp_oven_on"
+    ]
+  },
+  "kitchen_range": {
+    "triangles": 224,
+    "meshes": 7,
+    "notes": "Hollow oven, tray and bottom-hinged framed glass door. Source on/off lamp. Range adds two burners; oven has a tall backguard. Food and flame visuals are runtime attachments.",
+    "parts": [
+      "Oven_Shell",
+      "Oven_Tray",
+      "Oven_Door",
+      "Door_Glass",
+      "Burners",
+      "Heat_Lamp_range_off",
+      "Heat_Lamp_range_on"
+    ]
+  },
+  "griddle": {
+    "triangles": 144,
+    "meshes": 7,
+    "notes": "One shared griddle for the three source control variants; original flat cooking surface remains clear for dynamically placed food. Food stand subtype is not present in this audit.",
+    "parts": [
+      "Griddle",
+      "Control_griddle1_off",
+      "Control_griddle1_on",
+      "Control_griddle2_off",
+      "Control_griddle2_on",
+      "Control_griddle3_off",
+      "Control_griddle3_on"
+    ]
+  },
+  "deep_fryer": {
+    "triangles": 216,
+    "meshes": 5,
+    "notes": "Two independently modelled baskets with handles and lowering/raising clips; off/on controls. Source start/stop interpreted as physical basket movement. Grease overlay and oil bubbles remain source metadata for runtime.",
+    "parts": [
+      "Fryer_Cabinet",
+      "Basket_0",
+      "Basket_1",
+      "Power_fryer_off",
+      "Power_fryer_on"
+    ]
+  },
+  "food_processor": {
+    "triangles": 36,
+    "meshes": 2,
+    "notes": "Same geometry layout for food/slime variants; original palette atlas and separate side maintenance cover. No invented rotating exterior; processing uses contents and sound in source.",
+    "parts": [
+      "Processor",
+      "Service_Hatch"
+    ]
+  },
+  "slime_processor": {
+    "triangles": 36,
+    "meshes": 2,
+    "notes": "Same geometry layout for food/slime variants; original palette atlas and separate side maintenance cover. No invented rotating exterior; processing uses contents and sound in source.",
+    "parts": [
+      "Processor",
+      "Service_Hatch"
+    ]
+  },
+  "gibber": {
+    "triangles": 134,
+    "meshes": 6,
+    "notes": "Open feed with opposing rotating jaws, source empty/loaded/active indicators. Body contents and blood tint/decal are runtime-owned; no body or gore baked into geometry.",
+    "parts": [
+      "Grinder_Housing",
+      "Grinding_Jaw_0",
+      "Grinding_Jaw_1",
+      "grinder_empty_Frame_0",
+      "grinder_loaded_Frame_0",
+      "grinder_active_Frame_0"
+    ]
+  },
+  "food_cart": {
+    "triangles": 244,
+    "meshes": 2,
+    "notes": "Wheeled serving cart with original parasol silhouette and top compartments. Food and icecream selections supplied at runtime; no duplicate copies per menu item.",
+    "parts": [
+      "Cart",
+      "Parasol"
+    ]
+  },
+  "icecream_cart": {
+    "triangles": 244,
+    "meshes": 2,
+    "notes": "Wheeled serving cart with original parasol silhouette and top compartments. Food and icecream selections supplied at runtime; no duplicate copies per menu item.",
+    "parts": [
+      "Cart",
+      "Parasol"
+    ]
+  }
+}

@@ -1,0 +1,765 @@
+{
+  "notice_board_empty": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      }
+    ],
+    "triangles": 12
+  },
+  "notice_board_1_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_1_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_1"
+      }
+    ],
+    "triangles": 32
+  },
+  "notice_board_2_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_2_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_2"
+      },
+      {
+        "name": "Pinned_Notice_2",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.003",
+        "materials": [
+          "Notice_Board_2_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_2"
+      }
+    ],
+    "triangles": 52
+  },
+  "notice_board_3_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_3"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_3_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_3"
+      },
+      {
+        "name": "Pinned_Notice_2",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_2.004",
+        "materials": [
+          "Notice_Board_3_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_3"
+      },
+      {
+        "name": "Pinned_Notice_3",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.003",
+        "materials": [
+          "Notice_Board_3_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_3"
+      }
+    ],
+    "triangles": 64
+  },
+  "notice_board_4_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_4"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_4_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_4"
+      },
+      {
+        "name": "Pinned_Notice_2",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.005",
+        "materials": [
+          "Notice_Board_4_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.16875000298023224,
+          -0.05681249871850014,
+          -0.01406249962747097
+        ],
+        "source_state": "notices_4"
+      },
+      {
+        "name": "Pinned_Notice_3",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_2.004",
+        "materials": [
+          "Notice_Board_4_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_4"
+      },
+      {
+        "name": "Pinned_Notice_4",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.003",
+        "materials": [
+          "Notice_Board_4_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_4"
+      }
+    ],
+    "triangles": 84
+  },
+  "notice_board_5_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_5"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_5_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_5"
+      },
+      {
+        "name": "Pinned_Notice_2",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.005",
+        "materials": [
+          "Notice_Board_5_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.16875000298023224,
+          -0.05681249871850014,
+          -0.01406249962747097
+        ],
+        "source_state": "notices_5"
+      },
+      {
+        "name": "Pinned_Notice_3",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_2.004",
+        "materials": [
+          "Notice_Board_5_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_5"
+      },
+      {
+        "name": "Pinned_Notice_4",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_4.002",
+        "materials": [
+          "Notice_Board_5_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05681249871850014,
+          0.12656250596046448
+        ],
+        "source_state": "notices_5"
+      },
+      {
+        "name": "Pinned_Notice_5",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.003",
+        "materials": [
+          "Notice_Board_5_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_5"
+      }
+    ],
+    "triangles": 104
+  },
+  "notice_board_6_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_6"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_6_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_6"
+      },
+      {
+        "name": "Pinned_Notice_2",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.005",
+        "materials": [
+          "Notice_Board_6_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.16875000298023224,
+          -0.05681249871850014,
+          -0.01406249962747097
+        ],
+        "source_state": "notices_6"
+      },
+      {
+        "name": "Pinned_Notice_3",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_2.004",
+        "materials": [
+          "Notice_Board_6_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_6"
+      },
+      {
+        "name": "Pinned_Notice_4",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_4.003",
+        "materials": [
+          "Notice_Board_6_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.04218750074505806
+        ],
+        "source_state": "notices_6"
+      },
+      {
+        "name": "Pinned_Notice_5",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_4.002",
+        "materials": [
+          "Notice_Board_6_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05681249871850014,
+          0.12656250596046448
+        ],
+        "source_state": "notices_6"
+      },
+      {
+        "name": "Pinned_Notice_6",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.003",
+        "materials": [
+          "Notice_Board_6_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_6"
+      }
+    ],
+    "triangles": 116
+  },
+  "notice_board_7_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_7"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_7_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_7"
+      },
+      {
+        "name": "Pinned_Notice_2",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.005",
+        "materials": [
+          "Notice_Board_7_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.16875000298023224,
+          -0.05681249871850014,
+          -0.01406249962747097
+        ],
+        "source_state": "notices_7"
+      },
+      {
+        "name": "Pinned_Notice_3",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_2.004",
+        "materials": [
+          "Notice_Board_7_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_7"
+      },
+      {
+        "name": "Pinned_Notice_4",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_4.003",
+        "materials": [
+          "Notice_Board_7_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.04218750074505806
+        ],
+        "source_state": "notices_7"
+      },
+      {
+        "name": "Pinned_Notice_5",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_4.002",
+        "materials": [
+          "Notice_Board_7_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05681249871850014,
+          0.12656250596046448
+        ],
+        "source_state": "notices_7"
+      },
+      {
+        "name": "Pinned_Notice_6",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_6.001",
+        "materials": [
+          "Notice_Board_7_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05681249871850014,
+          -0.04218750074505806
+        ],
+        "source_state": "notices_7"
+      },
+      {
+        "name": "Pinned_Notice_7",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.003",
+        "materials": [
+          "Notice_Board_7_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_7"
+      }
+    ],
+    "triangles": 136
+  },
+  "notice_board_8_notices": {
+    "base_state": "noticeboard",
+    "frame": 0,
+    "overlays": [
+      "notices_8"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Notice_Board",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Notice_Board.001",
+        "materials": [
+          "Notice_Board_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "noticeboard"
+      },
+      {
+        "name": "Pinned_Notice_1",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_1.001",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_8"
+      },
+      {
+        "name": "Pinned_Notice_2",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.005",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.16875000298023224,
+          -0.05681249871850014,
+          -0.01406249962747097
+        ],
+        "source_state": "notices_8"
+      },
+      {
+        "name": "Pinned_Notice_3",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_2.004",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_8"
+      },
+      {
+        "name": "Pinned_Notice_4",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_4.003",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05681249871850014,
+          0.04218750074505806
+        ],
+        "source_state": "notices_8"
+      },
+      {
+        "name": "Pinned_Notice_5",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_4.002",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05681249871850014,
+          0.12656250596046448
+        ],
+        "source_state": "notices_8"
+      },
+      {
+        "name": "Pinned_Notice_6",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_6.001",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05681249871850014,
+          -0.04218750074505806
+        ],
+        "source_state": "notices_8"
+      },
+      {
+        "name": "Pinned_Notice_7",
+        "triangles": 20,
+        "shared_mesh": "Pinned_Notice_2.003",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.05681249871850014,
+          0.15468749403953552
+        ],
+        "source_state": "notices_8"
+      },
+      {
+        "name": "Pinned_Notice_8",
+        "triangles": 12,
+        "shared_mesh": "Pinned_Notice_8.001",
+        "materials": [
+          "Notice_Board_8_Notices_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.18281249701976776,
+          -0.05681249871850014,
+          -0.01406249962747097
+        ],
+        "source_state": "notices_8"
+      }
+    ],
+    "triangles": 148
+  }
+}

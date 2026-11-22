@@ -1,0 +1,4111 @@
+{
+  "atlas": "res://assets/tg/icons/obj/storage/closet.png",
+  "atlas_size": [
+    640,
+    624
+  ],
+  "source_sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+  "geometry_families": {
+    "wardrobe": {
+      "file": "locker_wardrobe.glb",
+      "triangles": 116,
+      "shelves_m": [
+        1.29
+      ],
+      "base_body": "generic",
+      "base_front": "generic_door",
+      "base_back": "generic_back"
+    },
+    "shelves": {
+      "file": "locker_shelves.glb",
+      "triangles": 130,
+      "shelves_m": [
+        0.66,
+        1.27
+      ],
+      "base_body": "med",
+      "base_front": "med_door",
+      "base_back": "med_back"
+    },
+    "rack": {
+      "file": "locker_rack.glb",
+      "triangles": 164,
+      "shelves_m": [
+        1.29
+      ],
+      "base_body": "rack",
+      "base_front": "red_door",
+      "base_back": "rack_back"
+    },
+    "freezer": {
+      "file": "locker_freezer.glb",
+      "triangles": 316,
+      "shelves_m": [
+        0.66,
+        1.2
+      ],
+      "base_body": "freezer",
+      "base_front": "freezer_door",
+      "base_back": "freezer_back"
+    }
+  },
+  "variants": [
+    {
+      "id": "alien__alien",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "alien",
+      "door_front_state": "alien_door",
+      "door_back_state": "alien_back",
+      "requested_door_back_state": "alien_back",
+      "back_fallback": false,
+      "open_reference_state": "alien_open",
+      "dm_types": [
+        "/obj/structure/closet/acloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.9,
+          0.3076923076923077,
+          0
+        ],
+        "front": [
+          0.6,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.23076923076923078,
+          0
+        ]
+      },
+      "rects": {
+        "alien": [
+          0,
+          192,
+          32,
+          48
+        ],
+        "alien_door": [
+          608,
+          144,
+          32,
+          48
+        ],
+        "alien_back": [
+          64,
+          192,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "armory__armory",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "armory",
+      "door_front_state": "armory_door",
+      "door_back_state": "armory_back",
+      "requested_door_back_state": "armory_back",
+      "back_fallback": false,
+      "open_reference_state": "armory_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/armory1"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.9,
+          0.46153846153846156,
+          0
+        ],
+        "front": [
+          0.6,
+          0.38461538461538464,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.38461538461538464,
+          0
+        ]
+      },
+      "rects": {
+        "armory": [
+          0,
+          288,
+          32,
+          48
+        ],
+        "armory_door": [
+          608,
+          240,
+          32,
+          48
+        ],
+        "armory_back": [
+          64,
+          288,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "atmos__atmos",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "atmos",
+      "door_front_state": "atmos_door",
+      "door_back_state": "atmos_back",
+      "requested_door_back_state": "atmos_back",
+      "back_fallback": false,
+      "open_reference_state": "atmos_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/atmospherics"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.5,
+          0.5384615384615384,
+          0
+        ],
+        "front": [
+          0.0,
+          0.5384615384615384,
+          0
+        ],
+        "inside": [
+          0.5,
+          0.46153846153846156,
+          0
+        ]
+      },
+      "rects": {
+        "atmos": [
+          256,
+          336,
+          32,
+          48
+        ],
+        "atmos_door": [
+          224,
+          336,
+          32,
+          48
+        ],
+        "atmos_back": [
+          320,
+          336,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "bio__bio",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "bio",
+      "door_front_state": "bio_door",
+      "door_back_state": "bio_back",
+      "requested_door_back_state": "bio_back",
+      "back_fallback": false,
+      "open_reference_state": "bio_open",
+      "dm_types": [
+        "/obj/structure/closet/l3closet"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.8,
+          0.07692307692307693,
+          0
+        ],
+        "front": [
+          -0.3,
+          0.9230769230769231,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.8461538461538461,
+          0
+        ]
+      },
+      "rects": {
+        "bio": [
+          64,
+          48,
+          32,
+          48
+        ],
+        "bio_door": [
+          32,
+          576,
+          32,
+          48
+        ],
+        "bio_back": [
+          64,
+          576,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "bio__bio_jan",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "bio",
+      "door_front_state": "bio_jan_door",
+      "door_back_state": "bio_back",
+      "requested_door_back_state": "bio_back",
+      "back_fallback": false,
+      "open_reference_state": "bio_open",
+      "dm_types": [
+        "/obj/structure/closet/l3closet/janitor"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.8,
+          0.07692307692307693,
+          0
+        ],
+        "front": [
+          0.2,
+          0.07692307692307693,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.8461538461538461,
+          0
+        ]
+      },
+      "rects": {
+        "bio": [
+          64,
+          48,
+          32,
+          48
+        ],
+        "bio_jan_door": [
+          352,
+          48,
+          32,
+          48
+        ],
+        "bio_back": [
+          64,
+          576,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "bio__bio_sci",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "bio",
+      "door_front_state": "bio_sci_door",
+      "door_back_state": "bio_back",
+      "requested_door_back_state": "bio_back",
+      "back_fallback": false,
+      "open_reference_state": "bio_open",
+      "dm_types": [
+        "/obj/structure/closet/l3closet/scientist"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.8,
+          0.07692307692307693,
+          0
+        ],
+        "front": [
+          -0.3,
+          0.07692307692307693,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.8461538461538461,
+          0
+        ]
+      },
+      "rects": {
+        "bio": [
+          64,
+          48,
+          32,
+          48
+        ],
+        "bio_sci_door": [
+          32,
+          48,
+          32,
+          48
+        ],
+        "bio_back": [
+          64,
+          576,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "bio__bio_sec",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "bio",
+      "door_front_state": "bio_sec_door",
+      "door_back_state": "bio_back",
+      "requested_door_back_state": "bio_back",
+      "back_fallback": false,
+      "open_reference_state": "bio_open",
+      "dm_types": [
+        "/obj/structure/closet/l3closet/security"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.8,
+          0.07692307692307693,
+          0
+        ],
+        "front": [
+          0.05,
+          0.07692307692307693,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.8461538461538461,
+          0
+        ]
+      },
+      "rects": {
+        "bio": [
+          64,
+          48,
+          32,
+          48
+        ],
+        "bio_sec_door": [
+          256,
+          48,
+          32,
+          48
+        ],
+        "bio_back": [
+          64,
+          576,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "bio__bio_viro",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "bio",
+      "door_front_state": "bio_viro_door",
+      "door_back_state": "bio_back",
+      "requested_door_back_state": "bio_back",
+      "back_fallback": false,
+      "open_reference_state": "bio_open",
+      "dm_types": [
+        "/obj/structure/closet/l3closet/virology"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.8,
+          0.07692307692307693,
+          0
+        ],
+        "front": [
+          -0.1,
+          0.07692307692307693,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.8461538461538461,
+          0
+        ]
+      },
+      "rects": {
+        "bio": [
+          64,
+          48,
+          32,
+          48
+        ],
+        "bio_viro_door": [
+          160,
+          48,
+          32,
+          48
+        ],
+        "bio_back": [
+          64,
+          576,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "bomb__bomb",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "bomb",
+      "door_front_state": "bomb_door",
+      "door_back_state": "bomb_back",
+      "requested_door_back_state": "bomb_back",
+      "back_fallback": false,
+      "open_reference_state": "bomb_open",
+      "dm_types": [
+        "/obj/structure/closet/bombcloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.1,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          0.4,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.9,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "bomb": [
+          512,
+          144,
+          32,
+          48
+        ],
+        "bomb_door": [
+          480,
+          144,
+          32,
+          48
+        ],
+        "bomb_back": [
+          576,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "cap__cap",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "cap",
+      "door_front_state": "cap_door",
+      "door_back_state": "cap_back",
+      "requested_door_back_state": "cap_back",
+      "back_fallback": false,
+      "open_reference_state": "cap_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/ert_com",
+        "/obj/structure/closet/secure_closet/captains"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.5,
+          0.46153846153846156,
+          0
+        ],
+        "front": [
+          0.0,
+          0.46153846153846156,
+          0
+        ],
+        "inside": [
+          0.5,
+          0.38461538461538464,
+          0
+        ]
+      },
+      "rects": {
+        "cap": [
+          256,
+          288,
+          32,
+          48
+        ],
+        "cap_door": [
+          224,
+          288,
+          32,
+          48
+        ],
+        "cap_back": [
+          320,
+          288,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "cargo__cargo",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "cargo",
+      "door_front_state": "cargo_door",
+      "door_back_state": "cargo_back",
+      "requested_door_back_state": "cargo_back",
+      "back_fallback": false,
+      "open_reference_state": "cargo_open",
+      "dm_types": [],
+      "atlas_only": true,
+      "godot_uv_offsets": {
+        "body": [
+          -0.9,
+          0.38461538461538464,
+          0
+        ],
+        "front": [
+          0.6,
+          0.3076923076923077,
+          0
+        ],
+        "inside": [
+          0.15,
+          0.3076923076923077,
+          0
+        ]
+      },
+      "rects": {
+        "cargo": [
+          0,
+          240,
+          32,
+          48
+        ],
+        "cargo_door": [
+          608,
+          192,
+          32,
+          48
+        ],
+        "cargo_back": [
+          96,
+          240,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "ce__ce",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "ce",
+      "door_front_state": "ce_door",
+      "door_back_state": "ce_back",
+      "requested_door_back_state": "ce_back",
+      "back_fallback": false,
+      "open_reference_state": "ce_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/engineering_chief",
+        "/obj/structure/closet/secure_closet/ert_engi"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.3076923076923077,
+          0
+        ],
+        "front": [
+          -0.2,
+          0.3076923076923077,
+          0
+        ],
+        "inside": [
+          0.3,
+          0.23076923076923078,
+          0
+        ]
+      },
+      "rects": {
+        "ce": [
+          128,
+          192,
+          32,
+          48
+        ],
+        "ce_door": [
+          96,
+          192,
+          32,
+          48
+        ],
+        "ce_back": [
+          192,
+          192,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "chem_secure__chem_secure",
+      "family": "shelves",
+      "model": "locker_shelves.glb",
+      "body_state": "chem_secure",
+      "door_front_state": "chem_secure_door",
+      "door_back_state": "chem_secure_back",
+      "requested_door_back_state": "chem_secure_back",
+      "back_fallback": false,
+      "open_reference_state": "chem_secure_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/chemical",
+        "/obj/structure/closet/secure_closet/chemical/heisenberg"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.2,
+          0.7692307692307693,
+          0
+        ],
+        "front": [
+          -0.1,
+          0.7692307692307693,
+          0
+        ],
+        "inside": [
+          -0.2,
+          0.7692307692307693,
+          0
+        ]
+      },
+      "rects": {
+        "chem_secure": [
+          128,
+          576,
+          32,
+          48
+        ],
+        "chem_secure_door": [
+          160,
+          576,
+          32,
+          48
+        ],
+        "chem_secure_back": [
+          192,
+          576,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "cmo__cmo",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "cmo",
+      "door_front_state": "cmo_door",
+      "door_back_state": "cmo_back",
+      "requested_door_back_state": "cmo_back",
+      "back_fallback": false,
+      "open_reference_state": "cmo_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/chief_medical",
+        "/obj/structure/closet/secure_closet/ert_med"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.1,
+          0.46153846153846156,
+          0
+        ],
+        "front": [
+          0.4,
+          0.46153846153846156,
+          0
+        ],
+        "inside": [
+          0.9,
+          0.38461538461538464,
+          0
+        ]
+      },
+      "rects": {
+        "cmo": [
+          512,
+          288,
+          32,
+          48
+        ],
+        "cmo_door": [
+          480,
+          288,
+          32,
+          48
+        ],
+        "cmo_back": [
+          576,
+          288,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "emergency__emergency",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "emergency",
+      "door_front_state": "emergency_door",
+      "door_back_state": "emergency_back",
+      "requested_door_back_state": "emergency_back",
+      "back_fallback": false,
+      "open_reference_state": "emergency_open",
+      "dm_types": [
+        "/obj/structure/closet/emcloset",
+        "/obj/structure/closet/emcloset/anchored"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.9,
+          0.15384615384615385,
+          0
+        ],
+        "front": [
+          0.6,
+          0.07692307692307693,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "rects": {
+        "emergency": [
+          0,
+          96,
+          32,
+          48
+        ],
+        "emergency_door": [
+          608,
+          48,
+          32,
+          48
+        ],
+        "emergency_back": [
+          64,
+          96,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "eng__eng_elec",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "eng",
+      "door_front_state": "eng_elec_door",
+      "door_back_state": "eng_back",
+      "requested_door_back_state": "eng_back",
+      "back_fallback": false,
+      "open_reference_state": "eng_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/engineering_electrical"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          -0.25,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.35,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "eng": [
+          128,
+          144,
+          32,
+          48
+        ],
+        "eng_elec_door": [
+          64,
+          144,
+          32,
+          48
+        ],
+        "eng_back": [
+          224,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "eng__eng_rad",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "eng",
+      "door_front_state": "eng_rad_door",
+      "door_back_state": "eng_back",
+      "requested_door_back_state": "eng_back",
+      "back_fallback": false,
+      "open_reference_state": "eng_open",
+      "dm_types": [
+        "/obj/structure/closet/radiation"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          -0.3,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.35,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "eng": [
+          128,
+          144,
+          32,
+          48
+        ],
+        "eng_rad_door": [
+          32,
+          144,
+          32,
+          48
+        ],
+        "eng_back": [
+          224,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "eng__eng_tool",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "eng",
+      "door_front_state": "eng_tool_door",
+      "door_back_state": "eng_back",
+      "requested_door_back_state": "eng_back",
+      "back_fallback": false,
+      "open_reference_state": "eng_open",
+      "dm_types": [
+        "/obj/structure/closet/toolcloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          -0.35,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.35,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "eng": [
+          128,
+          144,
+          32,
+          48
+        ],
+        "eng_tool_door": [
+          0,
+          144,
+          32,
+          48
+        ],
+        "eng_back": [
+          224,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "eng__eng_weld",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "eng",
+      "door_front_state": "eng_weld_door",
+      "door_back_state": "eng_back",
+      "requested_door_back_state": "eng_back",
+      "back_fallback": false,
+      "open_reference_state": "eng_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/engineering_welding"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          -0.2,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.35,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "eng": [
+          128,
+          144,
+          32,
+          48
+        ],
+        "eng_weld_door": [
+          96,
+          144,
+          32,
+          48
+        ],
+        "eng_back": [
+          224,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "eng__generic",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "eng",
+      "door_front_state": "generic_door",
+      "door_back_state": "eng_back",
+      "requested_door_back_state": "eng_back",
+      "back_fallback": false,
+      "open_reference_state": "eng_open",
+      "dm_types": [],
+      "atlas_only": true,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          0.0,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.35,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "eng": [
+          128,
+          144,
+          32,
+          48
+        ],
+        "generic_door": [
+          224,
+          0,
+          32,
+          48
+        ],
+        "eng_back": [
+          224,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "eng_secure__eng_secure",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "eng_secure",
+      "door_front_state": "eng_secure_door",
+      "door_back_state": "eng_secure_back",
+      "requested_door_back_state": "eng_secure_back",
+      "back_fallback": false,
+      "open_reference_state": "eng_secure_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/engineering_personal"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.5,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          -0.05,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.5,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "eng_secure": [
+          256,
+          144,
+          32,
+          48
+        ],
+        "eng_secure_door": [
+          192,
+          144,
+          32,
+          48
+        ],
+        "eng_secure_back": [
+          320,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "fire__fire",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "fire",
+      "door_front_state": "fire_door",
+      "door_back_state": "fire_back",
+      "requested_door_back_state": "fire_back",
+      "back_fallback": false,
+      "open_reference_state": "fire_open",
+      "dm_types": [
+        "/obj/structure/closet/firecloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.05,
+          0.15384615384615385,
+          0
+        ],
+        "front": [
+          0.45,
+          0.15384615384615385,
+          0
+        ],
+        "inside": [
+          0.95,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "rects": {
+        "fire": [
+          544,
+          96,
+          32,
+          48
+        ],
+        "fire_door": [
+          512,
+          96,
+          32,
+          48
+        ],
+        "fire_back": [
+          608,
+          96,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "freezer__freezer",
+      "family": "freezer",
+      "model": "locker_freezer.glb",
+      "body_state": "freezer",
+      "door_front_state": "freezer_door",
+      "door_back_state": "freezer_back",
+      "requested_door_back_state": "freezer_back",
+      "back_fallback": false,
+      "open_reference_state": "freezer_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/freezer",
+        "/obj/structure/closet/secure_closet/freezer/empty",
+        "/obj/structure/closet/secure_closet/freezer/empty/open",
+        "/obj/structure/closet/secure_closet/freezer/kitchen",
+        "/obj/structure/closet/secure_closet/freezer/kitchen/all_access",
+        "/obj/structure/closet/secure_closet/freezer/kitchen/maintenance",
+        "/obj/structure/closet/secure_closet/freezer/kitchen/mining",
+        "/obj/structure/closet/secure_closet/freezer/meat",
+        "/obj/structure/closet/secure_closet/freezer/meat/open",
+        "/obj/structure/closet/secure_closet/freezer/meat/all_access",
+        "/obj/structure/closet/secure_closet/freezer/gulag_fridge",
+        "/obj/structure/closet/secure_closet/freezer/fridge",
+        "/obj/structure/closet/secure_closet/freezer/fridge/all_access",
+        "/obj/structure/closet/secure_closet/freezer/fridge/open",
+        "/obj/structure/closet/secure_closet/freezer/fridge/preopen",
+        "/obj/structure/closet/secure_closet/freezer/money",
+        "/obj/structure/closet/secure_closet/freezer/cream_pie"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.0,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "freezer": [
+          416,
+          96,
+          32,
+          48
+        ],
+        "freezer_door": [
+          384,
+          96,
+          32,
+          48
+        ],
+        "freezer_back": [
+          480,
+          96,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__atmos_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "atmos_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/atmospherics_yellow"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.4,
+          0.7692307692307693,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "atmos_wardrobe_door": [
+          480,
+          480,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__bar_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "bar_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/gmcloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.05,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "bar_wardrobe_door": [
+          256,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__black",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "black_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/black"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.5,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "black_door": [
+          544,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__blue",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "blue_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.05,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "blue_door": [
+          256,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__botany_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "botany_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/botanist"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.55,
+          0.7692307692307693,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "botany_wardrobe_door": [
+          576,
+          480,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__cargo_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "cargo_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/cargotech"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.3,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "cargo_wardrobe_door": [
+          32,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__chap_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "chap_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/chaplain_black"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.1,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "chap_wardrobe_door": [
+          288,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__chef_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "chef_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/chefcloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.2,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "chef_wardrobe_door": [
+          96,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__chem_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "chem_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/chemistry_white"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.1,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "chem_wardrobe_door": [
+          160,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__curator_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "curator_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/curator"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.25,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "curator_wardrobe_door": [
+          64,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__engi_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "engi_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/engineering_yellow"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.45,
+          0.7692307692307693,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "engi_wardrobe_door": [
+          512,
+          480,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__gen_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "gen_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/genetics_white"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.55,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "gen_wardrobe_door": [
+          576,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__generic",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "generic_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet",
+        "/obj/structure/closet/preopen",
+        "/obj/structure/closet/masks",
+        "/obj/structure/closet/thunderdome",
+        "/obj/structure/closet/infinite"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.0,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "generic_door": [
+          224,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__green",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "green_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/thunderdome/tdgreen",
+        "/obj/structure/closet/wardrobe/green"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.2,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "green_door": [
+          352,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__grey",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "grey_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/grey"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.15,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "grey_door": [
+          320,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__jani_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "jani_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/jcloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.6,
+          0.7692307692307693,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "jani_wardrobe_door": [
+          608,
+          480,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__law_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "law_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/lawcloset"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.15,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "law_wardrobe_door": [
+          320,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__med_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "med_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/white/medical"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.15,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "med_wardrobe_door": [
+          128,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__mining_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "mining_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [],
+      "atlas_only": true,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.2,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "mining_wardrobe_door": [
+          352,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__mixed",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "mixed_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/athletic_mixed",
+        "/obj/structure/closet/boxinggloves",
+        "/obj/structure/closet/wardrobe/mixed"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.1,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "mixed_door": [
+          288,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__orange",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "orange_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/orange"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.25,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "orange_door": [
+          384,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__pink",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "pink_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/pink"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.3,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "pink_door": [
+          416,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__red",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "red_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/thunderdome/tdred"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.35,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "red_door": [
+          448,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__robo_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "robo_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/robotics_black"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.05,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "robo_wardrobe_door": [
+          192,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__sci_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "sci_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/science_white"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.0,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "sci_wardrobe_door": [
+          224,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__sec_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "sec_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/red"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.35,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "sec_wardrobe_door": [
+          0,
+          528,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__viro_wardrobe",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "viro_wardrobe_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/virology_white"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.5,
+          0.7692307692307693,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "viro_wardrobe_door": [
+          544,
+          480,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__white",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "white_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/white",
+        "/obj/structure/closet/wardrobe/pjs"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.4,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "white_door": [
+          480,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "generic__yellow",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "generic",
+      "door_front_state": "yellow_door",
+      "door_back_state": "generic_back",
+      "requested_door_back_state": "generic_back",
+      "back_fallback": false,
+      "open_reference_state": "generic_open",
+      "dm_types": [
+        "/obj/structure/closet/wardrobe/yellow"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.45,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "generic": [
+          576,
+          0,
+          32,
+          48
+        ],
+        "yellow_door": [
+          512,
+          0,
+          32,
+          48
+        ],
+        "generic_back": [
+          0,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "hop__hop",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "hop",
+      "door_front_state": "hop_door",
+      "door_back_state": "hop_back",
+      "requested_door_back_state": "hop_back",
+      "back_fallback": false,
+      "open_reference_state": "hop_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/hop"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.3,
+          0.46153846153846156,
+          0
+        ],
+        "front": [
+          0.2,
+          0.46153846153846156,
+          0
+        ],
+        "inside": [
+          0.7,
+          0.38461538461538464,
+          0
+        ]
+      },
+      "rects": {
+        "hop": [
+          384,
+          288,
+          32,
+          48
+        ],
+        "hop_door": [
+          352,
+          288,
+          32,
+          48
+        ],
+        "hop_back": [
+          448,
+          288,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "hos__hos",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "hos",
+      "door_front_state": "hos_door",
+      "door_back_state": "hos_back",
+      "requested_door_back_state": "hos_back",
+      "back_fallback": false,
+      "open_reference_state": "hos_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/ert_sec",
+        "/obj/structure/closet/secure_closet/hos"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.1,
+          0.38461538461538464,
+          0
+        ],
+        "front": [
+          0.4,
+          0.38461538461538464,
+          0
+        ],
+        "inside": [
+          0.9,
+          0.3076923076923077,
+          0
+        ]
+      },
+      "rects": {
+        "hos": [
+          512,
+          240,
+          32,
+          48
+        ],
+        "hos_door": [
+          480,
+          240,
+          32,
+          48
+        ],
+        "hos_back": [
+          576,
+          240,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "hydro__hydro",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "hydro",
+      "door_front_state": "hydro_door",
+      "door_back_state": "hydro_back",
+      "requested_door_back_state": "hydro_back",
+      "back_fallback": false,
+      "open_reference_state": "hydro_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/hydroponics"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.5384615384615384,
+          0
+        ],
+        "front": [
+          -0.2,
+          0.5384615384615384,
+          0
+        ],
+        "inside": [
+          0.3,
+          0.46153846153846156,
+          0
+        ]
+      },
+      "rects": {
+        "hydro": [
+          128,
+          336,
+          32,
+          48
+        ],
+        "hydro_door": [
+          96,
+          336,
+          32,
+          48
+        ],
+        "hydro_back": [
+          192,
+          336,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "med__med",
+      "family": "shelves",
+      "model": "locker_shelves.glb",
+      "body_state": "med",
+      "door_front_state": "med_door",
+      "door_back_state": "med_back",
+      "requested_door_back_state": "med_back",
+      "back_fallback": false,
+      "open_reference_state": "med_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/medical1"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.0,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "med": [
+          256,
+          96,
+          32,
+          48
+        ],
+        "med_door": [
+          224,
+          96,
+          32,
+          48
+        ],
+        "med_back": [
+          320,
+          96,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "med_secure__med_secure",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "med_secure",
+      "door_front_state": "med_secure_door",
+      "door_back_state": "med_secure_back",
+      "requested_door_back_state": "med_secure_back",
+      "back_fallback": false,
+      "open_reference_state": "med_secure_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/medical2",
+        "/obj/structure/closet/secure_closet/medical3"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.5,
+          0.3076923076923077,
+          0
+        ],
+        "front": [
+          0.0,
+          0.3076923076923077,
+          0
+        ],
+        "inside": [
+          0.5,
+          0.23076923076923078,
+          0
+        ]
+      },
+      "rects": {
+        "med_secure": [
+          256,
+          192,
+          32,
+          48
+        ],
+        "med_secure_door": [
+          224,
+          192,
+          32,
+          48
+        ],
+        "med_secure_back": [
+          320,
+          192,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "mining__mining",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "mining",
+      "door_front_state": "mining_door",
+      "door_back_state": "mining_back",
+      "requested_door_back_state": "mining_back",
+      "back_fallback": false,
+      "open_reference_state": "mining_open",
+      "dm_types": [],
+      "atlas_only": true,
+      "godot_uv_offsets": {
+        "body": [
+          -0.3,
+          0.23076923076923078,
+          0
+        ],
+        "front": [
+          0.2,
+          0.23076923076923078,
+          0
+        ],
+        "inside": [
+          0.7,
+          0.15384615384615385,
+          0
+        ]
+      },
+      "rects": {
+        "mining": [
+          384,
+          144,
+          32,
+          48
+        ],
+        "mining_door": [
+          352,
+          144,
+          32,
+          48
+        ],
+        "mining_back": [
+          448,
+          144,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "paramed_secure__paramed_secure",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "paramed_secure",
+      "door_front_state": "paramed_secure_door",
+      "door_back_state": "paramed_secure_back",
+      "requested_door_back_state": "paramed_secure_back",
+      "back_fallback": false,
+      "open_reference_state": "paramed_secure_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/paramedic"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.35,
+          0.3076923076923077,
+          0
+        ],
+        "front": [
+          0.25,
+          0.3076923076923077,
+          0
+        ],
+        "inside": [
+          0.7,
+          0.23076923076923078,
+          0
+        ]
+      },
+      "rects": {
+        "paramed_secure": [
+          352,
+          192,
+          32,
+          48
+        ],
+        "paramed_secure_door": [
+          384,
+          192,
+          32,
+          48
+        ],
+        "paramed_secure_back": [
+          448,
+          192,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "qm__qm",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "qm",
+      "door_front_state": "qm_door",
+      "door_back_state": "qm_back",
+      "requested_door_back_state": "qm_back",
+      "back_fallback": false,
+      "open_reference_state": "qm_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/quartermaster"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.38461538461538464,
+          0
+        ],
+        "front": [
+          -0.25,
+          0.38461538461538464,
+          0
+        ],
+        "inside": [
+          0.3,
+          0.3076923076923077,
+          0
+        ]
+      },
+      "rects": {
+        "qm": [
+          128,
+          240,
+          32,
+          48
+        ],
+        "qm_door": [
+          64,
+          240,
+          32,
+          48
+        ],
+        "qm_back": [
+          192,
+          240,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "rack__blue",
+      "family": "rack",
+      "model": "locker_rack.glb",
+      "body_state": "rack",
+      "door_front_state": "blue_door",
+      "door_back_state": "rack_back",
+      "requested_door_back_state": "rack_back",
+      "back_fallback": false,
+      "open_reference_state": "rack_open",
+      "dm_types": [
+        "/obj/structure/closet/lasertag/blue"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.3,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "rack": [
+          480,
+          528,
+          32,
+          48
+        ],
+        "blue_door": [
+          256,
+          0,
+          32,
+          48
+        ],
+        "rack_back": [
+          512,
+          528,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "rack__generic",
+      "family": "rack",
+      "model": "locker_rack.glb",
+      "body_state": "rack",
+      "door_front_state": "generic_door",
+      "door_back_state": "rack_back",
+      "requested_door_back_state": "rack_back",
+      "back_fallback": false,
+      "open_reference_state": "rack_open",
+      "dm_types": [],
+      "atlas_only": true,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          -0.35,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "rack": [
+          480,
+          528,
+          32,
+          48
+        ],
+        "generic_door": [
+          224,
+          0,
+          32,
+          48
+        ],
+        "rack_back": [
+          512,
+          528,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "rack__red",
+      "family": "rack",
+      "model": "locker_rack.glb",
+      "body_state": "rack",
+      "door_front_state": "red_door",
+      "door_back_state": "rack_back",
+      "requested_door_back_state": "rack_back",
+      "back_fallback": false,
+      "open_reference_state": "rack_open",
+      "dm_types": [
+        "/obj/structure/closet/lasertag/red"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          0.0,
+          0.0,
+          0
+        ],
+        "front": [
+          0.0,
+          0.0,
+          0
+        ],
+        "inside": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "rack": [
+          480,
+          528,
+          32,
+          48
+        ],
+        "red_door": [
+          448,
+          0,
+          32,
+          48
+        ],
+        "rack_back": [
+          512,
+          528,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "rd__rd",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "rd",
+      "door_front_state": "rd_door",
+      "door_back_state": "rd_back",
+      "requested_door_back_state": "rd_back",
+      "back_fallback": false,
+      "open_reference_state": "rd_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/research_director"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.9,
+          0.5384615384615384,
+          0
+        ],
+        "front": [
+          0.6,
+          0.46153846153846156,
+          0
+        ],
+        "inside": [
+          0.1,
+          0.46153846153846156,
+          0
+        ]
+      },
+      "rects": {
+        "rd": [
+          0,
+          336,
+          32,
+          48
+        ],
+        "rd_door": [
+          608,
+          288,
+          32,
+          48
+        ],
+        "rd_back": [
+          64,
+          336,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "science__science",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "science",
+      "door_front_state": "science_door",
+      "door_back_state": "science_back",
+      "requested_door_back_state": "science_back",
+      "back_fallback": false,
+      "open_reference_state": "science_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/cytology"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.1,
+          0.3076923076923077,
+          0
+        ],
+        "front": [
+          0.4,
+          0.3076923076923077,
+          0
+        ],
+        "inside": [
+          0.9,
+          0.23076923076923078,
+          0
+        ]
+      },
+      "rects": {
+        "science": [
+          512,
+          192,
+          32,
+          48
+        ],
+        "science_door": [
+          480,
+          192,
+          32,
+          48
+        ],
+        "science_back": [
+          576,
+          192,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "sec__sec",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "sec",
+      "door_front_state": "sec_door",
+      "door_back_state": "sec_back",
+      "requested_door_back_state": "sec_back",
+      "back_fallback": false,
+      "open_reference_state": "sec_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/security",
+        "/obj/structure/closet/secure_closet/security/sec",
+        "/obj/structure/closet/secure_closet/security/cargo",
+        "/obj/structure/closet/secure_closet/security/engine",
+        "/obj/structure/closet/secure_closet/security/science",
+        "/obj/structure/closet/secure_closet/security/med",
+        "/obj/structure/closet/secure_closet/labor_camp_security"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.5,
+          0.38461538461538464,
+          0
+        ],
+        "front": [
+          0.0,
+          0.38461538461538464,
+          0
+        ],
+        "inside": [
+          0.5,
+          0.3076923076923077,
+          0
+        ]
+      },
+      "rects": {
+        "sec": [
+          256,
+          240,
+          32,
+          48
+        ],
+        "sec_door": [
+          224,
+          240,
+          32,
+          48
+        ],
+        "sec_back": [
+          320,
+          240,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "secure__chemical",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "secure",
+      "door_front_state": "chemical_door",
+      "door_back_state": "secure_back",
+      "requested_door_back_state": "secure_back",
+      "back_fallback": false,
+      "open_reference_state": "secure_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/animal"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.15384615384615385,
+          0
+        ],
+        "front": [
+          0.2,
+          0.15384615384615385,
+          0
+        ],
+        "inside": [
+          0.3,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "rects": {
+        "secure": [
+          128,
+          96,
+          32,
+          48
+        ],
+        "chemical_door": [
+          352,
+          96,
+          32,
+          48
+        ],
+        "secure_back": [
+          192,
+          96,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "secure__secure",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "secure",
+      "door_front_state": "secure_door",
+      "door_back_state": "secure_back",
+      "requested_door_back_state": "secure_back",
+      "back_fallback": false,
+      "open_reference_state": "secure_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/personal",
+        "/obj/structure/closet/secure_closet/personal/patient",
+        "/obj/structure/closet/secure_closet",
+        "/obj/structure/closet/secure_closet/injection",
+        "/obj/structure/closet/secure_closet/brig",
+        "/obj/structure/closet/secure_closet/brig/holodeck",
+        "/obj/structure/closet/secure_closet/brig/genpop",
+        "/obj/structure/closet/secure_closet/evidence",
+        "/obj/structure/closet/secure_closet/courtroom",
+        "/obj/structure/closet/secure_closet/contraband/armory",
+        "/obj/structure/closet/secure_closet/contraband/heads"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.7,
+          0.15384615384615385,
+          0
+        ],
+        "front": [
+          -0.2,
+          0.15384615384615385,
+          0
+        ],
+        "inside": [
+          0.3,
+          0.07692307692307693,
+          0
+        ]
+      },
+      "rects": {
+        "secure": [
+          128,
+          96,
+          32,
+          48
+        ],
+        "secure_door": [
+          96,
+          96,
+          32,
+          48
+        ],
+        "secure_back": [
+          192,
+          96,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "shelves__generic",
+      "family": "shelves",
+      "model": "locker_shelves.glb",
+      "body_state": "shelves",
+      "door_front_state": "generic_door",
+      "door_back_state": "shelves_back",
+      "requested_door_back_state": "shelves_back",
+      "back_fallback": false,
+      "open_reference_state": "shelves_open",
+      "dm_types": [],
+      "atlas_only": true,
+      "godot_uv_offsets": {
+        "body": [
+          0.2,
+          0.6923076923076923,
+          0
+        ],
+        "front": [
+          0.0,
+          -0.15384615384615385,
+          0
+        ],
+        "inside": [
+          0.15,
+          0.6923076923076923,
+          0
+        ]
+      },
+      "rects": {
+        "shelves": [
+          384,
+          528,
+          32,
+          48
+        ],
+        "generic_door": [
+          224,
+          0,
+          32,
+          48
+        ],
+        "shelves_back": [
+          416,
+          528,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "syndicate__syndicate",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "syndicate",
+      "door_front_state": "syndicate_door",
+      "door_back_state": "syndicate_back",
+      "requested_door_back_state": "syndicate_back",
+      "back_fallback": false,
+      "open_reference_state": "syndicate_open",
+      "dm_types": [
+        "/obj/structure/closet/gimmick",
+        "/obj/structure/closet/gimmick/russian",
+        "/obj/structure/closet/gimmick/tacticool",
+        "/obj/structure/closet/malf/suits",
+        "/obj/structure/closet/syndicate",
+        "/obj/structure/closet/syndicate/personal",
+        "/obj/structure/closet/syndicate/nuclear",
+        "/obj/structure/closet/syndicate/resources",
+        "/obj/structure/closet/syndicate/resources/everything"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.15,
+          0.07692307692307693,
+          0
+        ],
+        "front": [
+          0.35,
+          0.07692307692307693,
+          0
+        ],
+        "inside": [
+          0.9,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "syndicate": [
+          480,
+          48,
+          32,
+          48
+        ],
+        "syndicate_door": [
+          448,
+          48,
+          32,
+          48
+        ],
+        "syndicate_back": [
+          576,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "syndicate_chemical__syndicate_chemical",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "syndicate_chemical",
+      "door_front_state": "syndicate_chemical_door",
+      "door_back_state": "syndicate_back",
+      "requested_door_back_state": "syndicate_chemical_back",
+      "back_fallback": true,
+      "open_reference_state": "syndicate_chemical_open",
+      "dm_types": [
+        "/obj/structure/closet/syndicate/chemical"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.35,
+          0.9230769230769231,
+          0
+        ],
+        "front": [
+          0.15,
+          0.9230769230769231,
+          0
+        ],
+        "inside": [
+          0.9,
+          0.0,
+          0
+        ]
+      },
+      "rects": {
+        "syndicate_chemical": [
+          352,
+          576,
+          32,
+          48
+        ],
+        "syndicate_chemical_door": [
+          320,
+          576,
+          32,
+          48
+        ],
+        "syndicate_back": [
+          576,
+          48,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "tac__armory_energy",
+      "family": "rack",
+      "model": "locker_rack.glb",
+      "body_state": "tac",
+      "door_front_state": "armory_energy_door",
+      "door_back_state": "tac_back",
+      "requested_door_back_state": "tac_back",
+      "back_fallback": false,
+      "open_reference_state": "tac_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/armory3"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.55,
+          -0.38461538461538464,
+          0
+        ],
+        "front": [
+          -0.7,
+          0.9230769230769231,
+          0
+        ],
+        "inside": [
+          -0.5,
+          -0.38461538461538464,
+          0
+        ]
+      },
+      "rects": {
+        "tac": [
+          128,
+          288,
+          32,
+          48
+        ],
+        "armory_energy_door": [
+          0,
+          576,
+          32,
+          48
+        ],
+        "tac_back": [
+          192,
+          288,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "tac__armory_shotgun",
+      "family": "rack",
+      "model": "locker_rack.glb",
+      "body_state": "tac",
+      "door_front_state": "armory_shotgun_door",
+      "door_back_state": "tac_back",
+      "requested_door_back_state": "tac_back",
+      "back_fallback": false,
+      "open_reference_state": "tac_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/armory2"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.55,
+          -0.38461538461538464,
+          0
+        ],
+        "front": [
+          0.25,
+          0.8461538461538461,
+          0
+        ],
+        "inside": [
+          -0.5,
+          -0.38461538461538464,
+          0
+        ]
+      },
+      "rects": {
+        "tac": [
+          128,
+          288,
+          32,
+          48
+        ],
+        "armory_shotgun_door": [
+          608,
+          528,
+          32,
+          48
+        ],
+        "tac_back": [
+          192,
+          288,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "tac__tac",
+      "family": "rack",
+      "model": "locker_rack.glb",
+      "body_state": "tac",
+      "door_front_state": "tac_door",
+      "door_back_state": "tac_back",
+      "requested_door_back_state": "tac_back",
+      "back_fallback": false,
+      "open_reference_state": "tac_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/tac"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.55,
+          -0.38461538461538464,
+          0
+        ],
+        "front": [
+          -0.55,
+          0.46153846153846156,
+          0
+        ],
+        "inside": [
+          -0.5,
+          -0.38461538461538464,
+          0
+        ]
+      },
+      "rects": {
+        "tac": [
+          128,
+          288,
+          32,
+          48
+        ],
+        "tac_door": [
+          96,
+          288,
+          32,
+          48
+        ],
+        "tac_back": [
+          192,
+          288,
+          32,
+          48
+        ]
+      }
+    },
+    {
+      "id": "warden__warden",
+      "family": "wardrobe",
+      "model": "locker_wardrobe.glb",
+      "body_state": "warden",
+      "door_front_state": "warden_door",
+      "door_back_state": "warden_back",
+      "requested_door_back_state": "warden_back",
+      "back_fallback": false,
+      "open_reference_state": "warden_open",
+      "dm_types": [
+        "/obj/structure/closet/secure_closet/warden"
+      ],
+      "atlas_only": false,
+      "godot_uv_offsets": {
+        "body": [
+          -0.3,
+          0.38461538461538464,
+          0
+        ],
+        "front": [
+          0.2,
+          0.38461538461538464,
+          0
+        ],
+        "inside": [
+          0.7,
+          0.3076923076923077,
+          0
+        ]
+      },
+      "rects": {
+        "warden": [
+          384,
+          240,
+          32,
+          48
+        ],
+        "warden_door": [
+          352,
+          240,
+          32,
+          48
+        ],
+        "warden_back": [
+          448,
+          240,
+          32,
+          48
+        ]
+      }
+    }
+  ],
+  "variant_count": 75,
+  "rules": {
+    "body": "icon_state",
+    "front": "(icon_door or icon_state) + _door",
+    "inside": "icon_state + _back",
+    "static_open": "icon_state + _open"
+  },
+  "notes": [
+    "Original atlas is embedded unchanged in each GLB. No recolored or repacked textures.",
+    "UV offsets change materials only; share body and door geometry within each family.",
+    "Runtime DM paint jobs with arbitrary overrides can use the same rect-difference mapping."
+  ],
+  "excluded_types": [
+    {
+      "type": "/obj/structure/closet/body_bag",
+      "body": "bodybag",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/bluespace",
+      "body": "bluebodybag",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/environmental",
+      "body": "envirobag",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/environmental/nanotrasen",
+      "body": "ntenvirobag",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/environmental/prisoner",
+      "body": "prisonerenvirobag",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/environmental/prisoner/syndicate",
+      "body": "syndieenvirobag",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/environmental/hardlight",
+      "body": "holobag_med",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/environmental/prisoner/hardlight",
+      "body": "holobag_sec",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/body_bag/environmental/stasis",
+      "body": "holobag_med",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/cardboard",
+      "body": "cardboard",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/cardboard/metal",
+      "body": "metalbox",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/cabinet",
+      "body": "cabinet",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/mini_fridge",
+      "body": "mini_fridge",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/mini_fridge/grimy",
+      "body": "mini_fridge",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/secure_closet/bar",
+      "body": "cabinet",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/secure_closet/bar/all_access",
+      "body": "cabinet",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/secure_closet/bar/lavaland_bartender_clothes",
+      "body": "cabinet",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/secure_closet/psychology",
+      "body": "cabinet",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/secure_closet/personal/cabinet",
+      "body": "cabinet",
+      "reason": "Outside full-height single metal locker atlas family"
+    },
+    {
+      "type": "/obj/structure/closet/secure_closet/detective",
+      "body": "cabinet",
+      "reason": "Outside full-height single metal locker atlas family"
+    }
+  ]
+}

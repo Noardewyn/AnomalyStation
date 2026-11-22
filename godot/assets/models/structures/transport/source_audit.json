@@ -1,0 +1,32 @@
+{
+  "railings": {
+    "png": "godot\\assets\\tg\\icons\\obj\\railings.png",
+    "dmi": "..\\tgstation\\icons\\obj\\railings.dmi",
+    "sha256": "540bea1d11f1923a87e10aaa97e76d1e1aac56e8056ad47893941bc3492d751f",
+    "size": [
+      160,
+      192
+    ],
+    "pixels_identical": true
+  },
+  "machines/recycling": {
+    "png": "godot\\assets\\tg\\icons\\obj\\machines\\recycling.png",
+    "dmi": "..\\tgstation\\icons\\obj\\machines\\recycling.dmi",
+    "sha256": "b1bf353119dfd9c606894594e993b5e3e9d5deba2604e515a8084d0f973f1b3b",
+    "size": [
+      576,
+      576
+    ],
+    "pixels_identical": true
+  },
+  "structures": {
+    "png": "godot\\assets\\tg\\icons\\obj\\structures.png",
+    "dmi": "..\\tgstation\\icons\\obj\\structures.dmi",
+    "sha256": "e7d166af2ca0e9bb30d2a613036ccebe47b19142312a5ec8ec375feb0d4ee2f7",
+    "size": [
+      576,
+      576
+    ],
+    "pixels_identical": true
+  }
+}

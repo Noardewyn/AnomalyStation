@@ -1,0 +1,49 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: one station level with json traits (M3 T2, ZLevelTests.cs)
+// json traits: Linkage Cross, Gravity 1, Baseturf as text, Bombcap Multiplier 2
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"w" = (
+/turf/closed/indestructible,
+/area/station/hallway/primary/central)
+"f" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+
+(1,1,1) = {"
+w
+w
+w
+w
+"}
+(2,1,1) = {"
+w
+f
+f
+w
+"}
+(3,1,1) = {"
+w
+f
+f
+w
+"}
+(4,1,1) = {"
+w
+f
+f
+w
+"}
+(5,1,1) = {"
+w
+f
+f
+w
+"}
+(6,1,1) = {"
+w
+w
+w
+w
+"}

@@ -1,0 +1,15 @@
+{
+  "atlas": "godot\\assets\\tg\\icons\\obj\\machines\\sec.png",
+  "size": [
+    256,
+    224
+  ],
+  "tile_size": [
+    32,
+    32
+  ],
+  "sha256": "d82ecc535d08327af409dafeda7003075e2bd4c6843714b2ec68461bd2425bcb",
+  "rgba_matches_dmi": true,
+  "duplicate_audit": "No existing recharger model found.",
+  "map_placement_audit": "docs/ai/art/weapon_recharger_map_audit.json"
+}

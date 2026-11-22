@@ -1,0 +1,22 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.{csproj,props,targets,json,yml,yaml}]
+indent_size = 2
+
+[*.cs]
+# Brace style is pinned: the C#/DM line ratio used by tools/measure_velocity.py depends on it.
+csharp_new_line_before_open_brace = all
+csharp_prefer_braces = when_multiline:suggestion
+
+# Translated tg code keeps the original DM identifiers (snake_case procs and vars), see docs/ai/translation-rules.md.
+[src/Core/Tg/**.cs]
+dotnet_diagnostic.IDE1006.severity = none
+dotnet_diagnostic.CS8981.severity = none

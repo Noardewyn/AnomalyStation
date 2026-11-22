@@ -1,0 +1,45 @@
+{
+  "parcel_receiver": {
+    "atlas": "assets/tg/icons/obj/pipes_n_cables/disposal.png",
+    "default": "intake",
+    "states": {
+      "intake": {
+        "name": "intake",
+        "dirs": 4,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 56,
+        "rects": [
+          [
+            160,
+            96,
+            32,
+            32
+          ],
+          [
+            192,
+            96,
+            32,
+            32
+          ],
+          [
+            224,
+            96,
+            32,
+            32
+          ],
+          [
+            256,
+            96,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+anomaly-map 1
+source _maps/map_files/T2Idtype/T2Idtype.dmm tg 1d99bd7f
+size 4 1 1
+chunk 32
+default /obj/machinery/power/solar_control{id = "solar_wing"} | /turf/open/indestructible | /area/station/hallway/primary/central
+
+[chunk 1 1 1]
+1,1: /turf/open/indestructible | /area/station/hallway/primary/central
+3,1: /obj/machinery/power/solar_control{id = 7} | /turf/open/indestructible | /area/station/hallway/primary/central
+4,1: /obj/structure/bodycontainer/crematorium{id = "crema_1"} | /turf/open/indestructible | /area/station/hallway/primary/central

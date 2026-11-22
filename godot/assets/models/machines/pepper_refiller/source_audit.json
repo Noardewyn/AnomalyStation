@@ -1,0 +1,24 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/medical/chemical_tanks.png",
+  "sha256": "f2f4c3bde8a9db11c38cb5b7f1fcd97a1a14e29e82a8872ff10b1f9c4f2cf1bb",
+  "rgba_matches_dmi": true,
+  "tile": [
+    32,
+    32
+  ],
+  "state": "pepper",
+  "directions": 1,
+  "frames": 1,
+  "source": "code/modules/reagents/reagent_dispenser.dm",
+  "mount": "wall/peppertank uses find_and_mount_on_atom and directional helpers",
+  "duplicate_audit": "No pepper refiller model found before this batch. Existing stationary tanks untouched.",
+  "opaque_uv_samples": 2600,
+  "visual_review": [
+    "front",
+    "back",
+    "right",
+    "top",
+    "three_quarter",
+    "underside"
+  ]
+}

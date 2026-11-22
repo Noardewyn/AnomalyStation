@@ -1,0 +1,10 @@
+anomaly-map 1
+source _maps/virtual_domains/test_only.dmm tg 1d99bd7f
+size 5 5 1
+chunk 32
+default /turf/open/floor | /area/virtual_domain
+
+[chunk 1 1 1]
+1,5: /mob/living/basic/pet/dog/corgi | /turf/open/floor | /area/virtual_domain
+2,5: /obj/effect/mob_spawn/corpse/human/miner | /turf/open/floor | /area/virtual_domain
+1,1: /obj/modular_map_root/safehouse{key = "test_only"} | /turf/open/floor | /area/virtual_domain/safehouse

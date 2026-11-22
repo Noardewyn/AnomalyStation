@@ -1,0 +1,118 @@
+{
+  "filing_cabinet.003": [
+    "open",
+    "close",
+    "interact"
+  ],
+  "employment_cabinet.003": [
+    "open",
+    "close",
+    "interact"
+  ],
+  "filing_cabinet_white.003": [
+    "open",
+    "close",
+    "interact"
+  ],
+  "drawer_cabinet.003": [
+    "open",
+    "close",
+    "interact"
+  ],
+  "display_case.003": [
+    "open",
+    "close",
+    "broken",
+    "intact"
+  ],
+  "food_display_case.003": [
+    "open",
+    "close",
+    "broken",
+    "intact"
+  ],
+  "linen_bin.003": [
+    "full",
+    "half",
+    "empty"
+  ],
+  "desk_bell.003": [
+    "ring"
+  ],
+  "water_cooler.003": [
+    "full",
+    "half",
+    "empty",
+    "jug_removed",
+    "jug_installed"
+  ],
+  "mop_bucket.003": [
+    "empty",
+    "filled"
+  ],
+  "janitorial_cart.003": [
+    "empty",
+    "filled"
+  ],
+  "vault_safe.003": [
+    "open",
+    "close"
+  ],
+  "punching_bag.003": [
+    "punch"
+  ],
+  "chest_press.003": [
+    "workout"
+  ],
+  "bench_press.003": [
+    "workout"
+  ],
+  "chest_press.004": [
+    "workout"
+  ],
+  "bench_press.004": [
+    "workout"
+  ],
+  "chest_press.005": [
+    "workout"
+  ],
+  "bench_press.005": [
+    "workout"
+  ],
+  "chest_press.006": [
+    "workout"
+  ],
+  "bench_press.006": [
+    "workout"
+  ],
+  "chest_press.007": [
+    "workout"
+  ],
+  "bench_press.007": [
+    "workout"
+  ],
+  "chest_press.008": [
+    "workout"
+  ],
+  "bench_press.008": [
+    "workout"
+  ],
+  "chest_press.009": [
+    "workout"
+  ],
+  "bench_press.009": [
+    "workout"
+  ],
+  "chest_press.010": [
+    "workout"
+  ],
+  "bench_press.010": [
+    "workout"
+  ],
+  "chest_press.011": [
+    "workout"
+  ],
+  "bench_press.011": [
+    "workout"
+  ]
+}

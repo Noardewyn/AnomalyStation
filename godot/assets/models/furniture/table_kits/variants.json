@@ -1,0 +1,146 @@
+{
+  "table": {
+    "family": "metal",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/table.png",
+    "source_sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e"
+  },
+  "table_greyscale": {
+    "family": "metal",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/table_greyscale.png",
+    "source": "assets/tg/icons/obj/smooth_structures/table_greyscale.png",
+    "source_sha256": "862e66fbfe91d73f62172bcbf190a0785ad4eeab05e368b392a42d7a0585ab1a"
+  },
+  "wood_table": {
+    "family": "wood",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/wood_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/wood_table.png",
+    "source_sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271"
+  },
+  "poker_table": {
+    "family": "wood",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/poker_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/poker_table.png",
+    "source_sha256": "5837fbdcaf7e9f5b458d8cf1a6e1a198e819342ed7bb4e7fcdda71499e5d91ca"
+  },
+  "fancy_table": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table.png",
+    "source_sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53"
+  },
+  "fancy_table_black": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_black.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_black.png",
+    "source_sha256": "90c264e2e43e355d4259edca8af4a341bec4d69cf4cf03385c03b2fbd8474417"
+  },
+  "fancy_table_blue": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_blue.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_blue.png",
+    "source_sha256": "7a0bd35352780ff3ecb56bda776c0c7a137a1cd52bb94d91cc81c8dc8e6c1a75"
+  },
+  "fancy_table_cyan": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_cyan.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_cyan.png",
+    "source_sha256": "5fdf24abbee2105978af79a504654748b5eb40c34c24eab84bb28a7d4d83a3e7"
+  },
+  "fancy_table_green": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_green.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_green.png",
+    "source_sha256": "76c0d0e26c0087139e78c76884b6b2af97531293d6cf4424325e21798c72691d"
+  },
+  "fancy_table_orange": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_orange.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_orange.png",
+    "source_sha256": "38c523ca13f5679443b0a2515d9f28645cfdd6a1a4f79d99864a64d8ffa444cc"
+  },
+  "fancy_table_purple": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_purple.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_purple.png",
+    "source_sha256": "d9f428183669c06e5e3d5e82cf003791e00ecb8146061fe6853635c7485f5c09"
+  },
+  "fancy_table_red": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_red.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_red.png",
+    "source_sha256": "5fe3d99c95466e6d87b7fcba35b96c5f0f9042df83d228199072486913497fb9"
+  },
+  "fancy_table_royalblack": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_royalblack.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_royalblack.png",
+    "source_sha256": "3be9bfd9df07c2259f2d5e370415c444edf24ef6494ecfdfe915e05224bb55b4"
+  },
+  "fancy_table_royalblue": {
+    "family": "cloth",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/fancy_table_royalblue.png",
+    "source": "assets/tg/icons/obj/smooth_structures/fancy_table_royalblue.png",
+    "source_sha256": "d8bbb144aa66989ca8f2a29bf0208fa99a4f5ed9dc12fa387fe3af2a1af36784"
+  },
+  "glass_table": {
+    "family": "glass",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/glass_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/glass_table.png",
+    "source_sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9"
+  },
+  "plasmaglass_table": {
+    "family": "glass",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/plasmaglass_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/plasmaglass_table.png",
+    "source_sha256": "8a69636e8d9f0b1370333897acfea3120f577f37b563be5eb4930a32706f2b10"
+  },
+  "rglass_table": {
+    "family": "framed_glass",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/rglass_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/rglass_table.png",
+    "source_sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce"
+  },
+  "rplasmaglass_table": {
+    "family": "framed_glass",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/rplasmaglass_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/rplasmaglass_table.png",
+    "source_sha256": "05994aa742cd849184862a862066ee93ebd3a9bedbb874190c2798431e591217"
+  },
+  "titaniumglass_table": {
+    "family": "framed_glass",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/titaniumglass_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/titaniumglass_table.png",
+    "source_sha256": "ffbf4a565f76e2b4db9e49e984e0ee38fcadac176b5b863f4b33e83fe6869df0"
+  },
+  "plastitaniumglass_table": {
+    "family": "framed_glass",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/plastitaniumglass_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/plastitaniumglass_table.png",
+    "source_sha256": "0f2370a89053514416868eb30978741a8fc00b56b17cf92ad619301546e436c5"
+  },
+  "alien_table": {
+    "family": "framed_glass",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/alien_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/alien_table.png",
+    "source_sha256": "d95f2c5982ac71a614527a73a77617f86df698cd48e1708055b339a910a6a7f0"
+  },
+  "reinforced_table": {
+    "family": "reinforced",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/reinforced_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/reinforced_table.png",
+    "source_sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974"
+  },
+  "brass_table": {
+    "family": "reinforced",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/brass_table.png",
+    "source": "assets/tg/icons/obj/smooth_structures/brass_table.png",
+    "source_sha256": "2b0ddb46dfd8cb058bf60468e41455e031f27ce3d19e7ade7a6509c32f126d20"
+  },
+  "rollingtable": {
+    "family": "rolling",
+    "texture": "res://assets/tg/icons/obj/smooth_structures/rollingtable.png",
+    "source": "assets/tg/icons/obj/smooth_structures/rollingtable.png",
+    "source_sha256": "9114fe80d49264f58b0b6d2477035dcc8cbfa062aa905afe7c6b58f1484ff2af"
+  }
+}

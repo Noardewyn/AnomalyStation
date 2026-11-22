@@ -1,0 +1,1140 @@
+anomaly-map 1
+source _maps/virtual_domains/pipedream.dmm tg 1d99bd7f
+size 36 48 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+10,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,32: /turf/closed/wall | /area/virtual_domain
+12,32: /obj/effect/turf_decal/stripes{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+13,32: /obj/structure/broken_flooring/side{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+14,32: /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/floor/plating | /area/virtual_domain
+15,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+16,32: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/virtual_domain
+17,32: /obj/machinery/door/airlock/engineering/glass | /turf/open/floor/iron | /area/virtual_domain
+18,32: /obj/machinery/door/poddoor/shutters/indestructible{dir = 4; id = "factorylockdown"} | /turf/open/floor/iron | /area/virtual_domain
+19,32: /obj/effect/turf_decal/trimline/yellow/warning{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+20,32: /obj/structure/broken_flooring/corner/directional/west | /turf/open/floor/plating | /area/virtual_domain
+21,32: /obj/structure/disposalpipe/sorting{dir = 8} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+22,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+23,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+24,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+25,32: /turf/open/floor/iron | /area/virtual_domain
+26,32: /turf/open/floor/iron | /area/virtual_domain
+27,32: /obj/effect/decal/cleanable/blood/drip | /turf/open/floor/iron | /area/virtual_domain
+28,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+29,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+30,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+31,32: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+32,32: /obj/structure/broken_flooring/side/directional/north | /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+10,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,31: /turf/closed/indestructible/fakedoor/maintenance{name = "maintenance access"} | /area/virtual_domain
+12,31: /obj/structure/railing/corner/end{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/virtual_domain
+13,31: /obj/structure/railing | /turf/open/floor/plating | /area/virtual_domain
+14,31: /obj/structure/railing | /turf/open/floor/plating | /area/virtual_domain
+15,31: /obj/structure/railing | /obj/effect/decal/cleanable/blood/oil | /turf/open/floor/plating | /area/virtual_domain
+16,31: /obj/structure/railing/corner/end/flip{dir = 8} | /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+17,31: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+18,31: /obj/machinery/door/poddoor/shutters/indestructible{dir = 4; id = "factorylockdown"} | /turf/open/floor/iron | /area/virtual_domain
+19,31: /obj/machinery/light/broken | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/yellow/corner | /obj/effect/turf_decal/trimline/yellow/warning{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+20,31: /obj/structure/broken_flooring/pile{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+21,31: /obj/effect/turf_decal/trimline/yellow/arrow_ccw | /turf/open/floor/iron | /area/virtual_domain
+22,31: /obj/machinery/light/dim | /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+23,31: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+24,31: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+25,31: /obj/effect/turf_decal/trimline/yellow/line | /obj/item/shard | /turf/open/floor/iron | /area/virtual_domain
+26,31: /obj/effect/turf_decal/trimline/yellow/line | /obj/effect/decal/cleanable/glass | /turf/open/floor/iron | /area/virtual_domain
+27,31: /obj/effect/turf_decal/trimline/yellow/corner{dir = 8} | /obj/effect/turf_decal/trimline/yellow/corner | /obj/effect/decal/cleanable/blood/drip | /turf/open/floor/iron | /area/virtual_domain
+28,31: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+29,31: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+30,31: /obj/effect/turf_decal/trimline/yellow/line | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+31,31: /obj/effect/turf_decal/trimline/yellow/line | /obj/machinery/light/small/red/dim | /turf/open/floor/iron | /area/virtual_domain
+32,31: /obj/effect/turf_decal/trimline/yellow/line | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+4,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,30: /obj/effect/smooths_with_walls | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,30: /turf/closed/wall | /area/virtual_domain
+12,30: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/virtual_domain
+13,30: /obj/structure/lattice/catwalk{name = "industrial lift"} | /obj/structure/closet/crate | /turf/open/chasm | /area/virtual_domain
+14,30: /obj/structure/lattice/catwalk{name = "industrial lift"} | /turf/open/chasm | /area/virtual_domain
+15,30: /obj/structure/lattice/catwalk{name = "industrial lift"} | /turf/open/chasm | /area/virtual_domain
+16,30: /obj/machinery/light/dim{dir = 4} | /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+17,30: /turf/closed/wall | /area/virtual_domain
+18,30: /turf/closed/wall | /area/virtual_domain
+19,30: /turf/closed/wall | /area/virtual_domain
+20,30: /turf/closed/wall | /area/virtual_domain
+21,30: /turf/closed/wall | /area/virtual_domain
+22,30: /turf/closed/wall | /area/virtual_domain
+23,30: /turf/closed/wall | /area/virtual_domain
+24,30: /turf/closed/wall | /area/virtual_domain
+25,30: /obj/effect/spawner/structure/window/reinforced | /obj/effect/mapping_helpers/damaged_window | /turf/open/floor/plating | /area/virtual_domain
+26,30: /obj/effect/spawner/structure/window | /obj/item/stack/rods/two | /turf/open/floor/plating | /area/virtual_domain
+27,30: /obj/machinery/door/airlock/command/glass{name = "Quartermaster's Office"} | /obj/effect/mapping_helpers/airlock/access/any/away/command | /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /obj/effect/turf_decal/trimline/yellow/line{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+28,30: /obj/effect/spawner/structure/window/reinforced | /obj/effect/decal/cleanable/blood/splatter/over_window | /turf/open/floor/plating | /area/virtual_domain
+29,30: /obj/effect/spawner/structure/window/reinforced | /obj/effect/mapping_helpers/damaged_window | /turf/open/floor/plating | /area/virtual_domain
+30,30: /turf/closed/wall | /area/virtual_domain
+31,30: /turf/closed/wall | /area/virtual_domain
+32,30: /turf/closed/wall | /area/virtual_domain
+4,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,29: /turf/closed/wall | /area/virtual_domain
+6,29: /turf/closed/wall | /area/virtual_domain
+7,29: /turf/closed/wall | /area/virtual_domain
+8,29: /turf/closed/wall | /area/virtual_domain
+9,29: /turf/closed/wall | /area/virtual_domain
+10,29: /turf/closed/wall | /area/virtual_domain
+11,29: /turf/closed/wall | /area/virtual_domain
+12,29: /obj/structure/disposalpipe/segment | /obj/machinery/light/broken{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+13,29: /obj/structure/lattice/catwalk{name = "industrial lift"} | /turf/open/chasm | /area/virtual_domain
+14,29: /obj/structure/lattice/catwalk{name = "industrial lift"} | /obj/effect/spawner/random/trash/grime | /turf/open/chasm | /area/virtual_domain
+15,29: /obj/structure/lattice/catwalk{name = "industrial lift"} | /turf/open/chasm | /area/virtual_domain
+16,29: /obj/machinery/light/small/red/dim{dir = 4} | /obj/structure/disposalpipe/segment | /obj/structure/broken_flooring/corner | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain
+17,29: /turf/closed/wall | /area/virtual_domain
+18,29: /mob/living/basic/pet/cat/space | /obj/structure/bed/dogbed{name = "cat bed"} | /obj/item/toy/plush/moth{pixel_x = 3; pixel_y = 4} | /obj/machinery/light/small/dim/directional/south | /obj/structure/sign/poster/official/moth_hardhat/directional/west | /turf/open/floor/plating | /area/virtual_domain
+19,29: /obj/structure/falsewall | /turf/open/floor/plating | /area/virtual_domain
+20,29: /obj/machinery/light/small/red/dim{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+21,29: /obj/structure/disposalpipe/segment | /obj/structure/sign/poster/contraband/random/directional/north | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/iron | /area/virtual_domain
+22,29: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+23,29: /turf/closed/wall | /area/virtual_domain
+24,29: /obj/effect/turf_decal/trimline/yellow/line{dir = 9} | /obj/effect/turf_decal/trimline/yellow/corner | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+25,29: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/effect/turf_decal/trimline/yellow/line{dir = 6} | /turf/open/floor/iron | /area/virtual_domain
+26,29: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+27,29: /obj/effect/turf_decal/trimline/yellow/corner{dir = 1} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+28,29: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+29,29: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/effect/turf_decal/trimline/yellow/line{dir = 10} | /turf/open/floor/iron | /area/virtual_domain
+30,29: /obj/effect/turf_decal/trimline/yellow/line{dir = 5} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 8} | /obj/structure/sign/poster/official/random/directional/east | /turf/open/floor/iron | /area/virtual_domain
+31,29: /turf/closed/wall | /area/virtual_domain
+32,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,28: /turf/closed/wall | /area/virtual_domain
+6,28: /obj/effect/spawner/random/structure/closet_empty/crate/with_loot | /obj/effect/turf_decal/stripes{dir = 9} | /turf/open/floor/iron | /area/virtual_domain
+7,28: /obj/structure/disposalpipe/segment | /obj/machinery/light/small/red/dim{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+8,28: /obj/structure/broken_flooring/side | /turf/open/floor/plating | /area/virtual_domain
+9,28: /obj/effect/decal/cleanable/dirt | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/iron | /area/virtual_domain
+10,28: /turf/closed/wall | /area/virtual_domain
+11,28: /obj/machinery/light/small/red/dim{dir = 1} | /obj/structure/sign/warning/chem_diamond/directional/west | /turf/open/floor/plating | /area/virtual_domain
+12,28: /obj/structure/disposalpipe/segment | /obj/structure/railing/corner/end{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+13,28: /obj/structure/lattice/catwalk{name = "industrial lift"} | /obj/structure/railing | /turf/open/chasm | /area/virtual_domain
+14,28: /obj/structure/lattice/catwalk{name = "industrial lift"} | /obj/structure/closet/crate/preopen | /obj/structure/railing | /turf/open/chasm | /area/virtual_domain
+15,28: /obj/structure/lattice/catwalk{name = "industrial lift"} | /obj/structure/railing | /turf/open/chasm | /area/virtual_domain
+16,28: /obj/effect/turf_decal/stripes{dir = 4} | /obj/structure/disposalpipe/segment | /obj/structure/railing/corner/end/flip{dir = 8} | /obj/structure/sign/warning/doors/directional/east | /turf/open/floor/iron | /area/virtual_domain
+17,28: /turf/closed/wall | /area/virtual_domain
+18,28: /turf/closed/wall | /area/virtual_domain
+19,28: /turf/closed/wall | /area/virtual_domain
+20,28: /obj/structure/broken_flooring/corner{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+21,28: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+22,28: /obj/machinery/light/dim{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+23,28: /turf/closed/wall | /area/virtual_domain
+24,28: /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /obj/effect/turf_decal/trimline/yellow/line{dir = 6} | /obj/machinery/light/dim{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+25,28: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-38"} | /area/virtual_domain
+26,28: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-110"} | /area/virtual_domain
+27,28: /obj/effect/decal/cleanable/blood/drip | /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-110"} | /area/virtual_domain
+28,28: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-110"} | /area/virtual_domain
+29,28: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-74"} | /area/virtual_domain
+30,28: /obj/effect/turf_decal/trimline/yellow/line{dir = 4} | /obj/effect/turf_decal/trimline/yellow/line{dir = 10} | /obj/machinery/light/dim{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+31,28: /turf/closed/wall | /area/virtual_domain
+32,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,27: /turf/closed/wall | /area/virtual_domain
+6,27: /obj/structure/disposalpipe/segment{dir = 6} | /obj/machinery/light/dim{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+7,27: /obj/structure/disposalpipe/sorting{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+8,27: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+9,27: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+10,27: /obj/structure/disposalpipe/segment{dir = 4} | /obj/machinery/door/poddoor/shutters/indestructible{dir = 4; id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+11,27: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+12,27: /obj/structure/disposalpipe/sorting{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+13,27: /obj/structure/disposalpipe/segment{dir = 4} | /obj/structure/broken_flooring/pile{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+14,27: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/plating | /area/virtual_domain
+15,27: /obj/structure/disposalpipe/trunk/multiz{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+16,27: /obj/structure/disposalpipe/sorting/mail/flip{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+17,27: /turf/open/floor/plating | /area/virtual_domain
+18,27: /turf/closed/wall | /area/virtual_domain
+19,27: /obj/effect/decal/cleanable/dirt/dust | /obj/structure/sign/warning/secure_area/directional/north | /turf/open/floor/plating | /area/virtual_domain
+20,27: /turf/open/floor/plating | /area/virtual_domain
+21,27: /obj/structure/disposalpipe/broken{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+22,27: /turf/open/floor/plating | /area/virtual_domain
+23,27: /turf/closed/wall | /area/virtual_domain
+24,27: /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /obj/machinery/light/small/red/dim{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+25,27: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-55"} | /area/virtual_domain
+26,27: /obj/structure/table/wood | /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-207"} | /area/virtual_domain
+27,27: /obj/structure/frame/computer | /obj/item/shard | /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-12"} | /area/virtual_domain
+28,27: /obj/structure/table/wood | /obj/machinery/button/door{name = "Cargo Bay Lockdown"; id = "factorylockdown"} | /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-63"} | /area/virtual_domain
+29,27: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-203"} | /area/virtual_domain
+30,27: /obj/effect/turf_decal/trimline/yellow/line{dir = 4} | /obj/effect/decal/cleanable/dirt | /obj/structure/bed/dogbed{name = "cat bed"} | /turf/open/floor/iron | /area/virtual_domain
+31,27: /turf/closed/wall | /area/virtual_domain
+32,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,26: /turf/closed/wall | /area/virtual_domain
+6,26: /obj/structure/disposalpipe/broken{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /obj/structure/closet/crate/preopen | /turf/open/floor/plating | /area/virtual_domain
+7,26: /turf/open/floor/plating | /area/virtual_domain
+8,26: /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/plating | /area/virtual_domain
+9,26: /turf/open/floor/plating | /area/virtual_domain
+10,26: /obj/machinery/door/poddoor/shutters/indestructible{dir = 4; id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+11,26: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/virtual_domain
+12,26: /obj/effect/turf_decal/stripes{dir = 8} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+13,26: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain
+14,26: /obj/structure/disposalpipe/segment | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+15,26: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+16,26: /obj/structure/disposalpipe/segment | /obj/effect/turf_decal/stripes{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+17,26: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/virtual_domain
+18,26: /obj/machinery/door/poddoor/shutters/indestructible{dir = 8; id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+19,26: /obj/structure/broken_flooring/pile{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+20,26: /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/plating | /area/virtual_domain
+21,26: /obj/structure/disposalpipe/broken | /turf/open/floor/plating | /area/virtual_domain
+22,26: /turf/open/floor/plating | /area/virtual_domain
+23,26: /turf/closed/wall | /area/virtual_domain
+24,26: /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /obj/effect/turf_decal/trimline/yellow/line{dir = 5} | /obj/structure/sign/poster/official/random/directional/west | /turf/open/floor/iron | /area/virtual_domain
+25,26: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-21"} | /area/virtual_domain
+26,26: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-157"} | /area/virtual_domain
+27,26: /obj/structure/chair/office{dir = 8} | /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-157"} | /area/virtual_domain
+28,26: /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-157"} | /area/virtual_domain
+29,26: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/carpet/royalblue{icon_state = "carpet_royalblue-137"} | /area/virtual_domain
+30,26: /obj/effect/turf_decal/trimline/yellow/line{dir = 4} | /obj/effect/turf_decal/trimline/yellow/line{dir = 9} | /obj/machinery/light/small/red/dim{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+31,26: /turf/closed/mineral | /area/virtual_domain
+32,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,25: /turf/closed/wall | /area/virtual_domain
+6,25: /obj/structure/broken_flooring/pile{dir = 1} | /obj/structure/sign/poster/contraband/random/directional/west | /turf/open/floor/plating | /area/virtual_domain
+7,25: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/iron | /area/virtual_domain
+8,25: /obj/structure/broken_flooring/corner{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+9,25: /turf/open/floor/plating | /area/virtual_domain
+10,25: /obj/machinery/door/poddoor/shutters/indestructible{dir = 4; id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+11,25: /turf/open/floor/plating | /area/virtual_domain
+12,25: /obj/effect/turf_decal/stripes{dir = 8} | /obj/effect/decal/cleanable/blood/oil | /turf/open/floor/iron | /area/virtual_domain
+13,25: /obj/effect/mob_spawn/corpse/human/factory | /turf/open/floor/plating | /area/virtual_domain
+14,25: /obj/structure/disposalpipe/segment | /turf/open/floor/catwalk_floor/iron | /area/virtual_domain
+15,25: /obj/effect/turf_decal/delivery | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+16,25: /obj/structure/disposalpipe/segment | /obj/structure/broken_flooring/side{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+17,25: /turf/open/floor/plating | /area/virtual_domain
+18,25: /obj/machinery/door/poddoor/shutters/indestructible{dir = 8; id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+19,25: /turf/open/floor/plating | /area/virtual_domain
+20,25: /turf/open/floor/plating | /area/virtual_domain
+21,25: /obj/structure/disposalpipe/segment | /turf/open/floor/iron | /area/virtual_domain
+22,25: /obj/structure/broken_flooring/side{dir = 4} | /obj/machinery/light/broken{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+23,25: /turf/closed/mineral | /area/virtual_domain
+24,25: /obj/effect/turf_decal/trimline/yellow/line{dir = 10} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+25,25: /obj/effect/turf_decal/trimline/yellow/line | /obj/effect/turf_decal/trimline/yellow/line{dir = 5} | /obj/machinery/light/broken | /turf/open/floor/iron | /area/virtual_domain
+26,25: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+27,25: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+28,25: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+29,25: /obj/effect/turf_decal/trimline/yellow/line | /obj/effect/turf_decal/trimline/yellow/line{dir = 9} | /obj/machinery/light/broken | /turf/open/floor/iron | /area/virtual_domain
+30,25: /obj/effect/turf_decal/trimline/yellow/line{dir = 6} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 1} | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/iron | /area/virtual_domain
+31,25: /turf/closed/mineral | /area/virtual_domain
+32,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,24: /turf/closed/wall | /area/virtual_domain
+6,24: /obj/structure/disposalpipe/broken | /turf/open/floor/plating | /area/virtual_domain
+7,24: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+8,24: /obj/machinery/light/broken | /turf/open/floor/plating | /area/virtual_domain
+9,24: /turf/open/floor/plating | /area/virtual_domain
+10,24: /obj/machinery/door/airlock/maintenance | /obj/effect/mapping_helpers/airlock/locked | /turf/open/floor/plating | /area/virtual_domain
+11,24: /obj/structure/sign/warning/secure_area/directional/south | /turf/open/floor/plating | /area/virtual_domain
+12,24: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/virtual_domain
+13,24: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+14,24: /obj/structure/disposalpipe/broken{dir = 1} | /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+15,24: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+16,24: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/floor/plating | /area/virtual_domain
+17,24: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/plating | /area/virtual_domain
+18,24: /obj/machinery/door/poddoor/shutters/indestructible{dir = 8; id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+19,24: /turf/open/floor/plating | /area/virtual_domain
+20,24: /obj/effect/decal/cleanable/dirt/dust | /obj/effect/spawner/random/structure/closet_empty/crate/with_loot | /obj/effect/turf_decal/delivery | /turf/open/floor/iron | /area/virtual_domain
+21,24: /obj/structure/disposalpipe/segment | /turf/open/floor/iron | /area/virtual_domain
+22,24: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/virtual_domain
+23,24: /turf/closed/mineral | /area/virtual_domain
+24,24: /turf/closed/mineral | /area/virtual_domain
+25,24: /turf/closed/wall | /area/virtual_domain
+26,24: /turf/closed/wall | /area/virtual_domain
+27,24: /turf/closed/wall | /area/virtual_domain
+28,24: /turf/closed/wall | /area/virtual_domain
+29,24: /turf/closed/wall | /area/virtual_domain
+30,24: /turf/closed/mineral | /area/virtual_domain
+31,24: /turf/closed/mineral | /area/virtual_domain
+32,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,23: /turf/closed/wall | /area/virtual_domain
+6,23: /turf/closed/wall | /area/virtual_domain
+7,23: /turf/closed/wall | /area/virtual_domain
+8,23: /turf/closed/wall | /area/virtual_domain
+9,23: /turf/closed/wall | /area/virtual_domain
+10,23: /turf/closed/wall | /area/virtual_domain
+11,23: /turf/closed/wall | /area/virtual_domain
+12,23: /obj/structure/disposalpipe/segment | /obj/machinery/light/broken{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+13,23: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+14,23: /obj/structure/disposalpipe/broken | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/plating | /area/virtual_domain
+15,23: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain
+16,23: /turf/open/floor/plating | /area/virtual_domain
+17,23: /obj/machinery/light/small/red/dim | /turf/open/floor/plating | /area/virtual_domain
+18,23: /turf/closed/wall | /area/virtual_domain
+19,23: /obj/machinery/light/dim{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+20,23: /turf/open/floor/plating | /area/virtual_domain
+21,23: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+22,23: /turf/open/floor/plating | /area/virtual_domain
+23,23: /turf/closed/mineral | /area/virtual_domain
+24,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,22: /turf/closed/wall | /area/virtual_domain
+12,22: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+13,22: /turf/open/floor/iron | /area/virtual_domain
+14,22: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+15,22: /turf/open/floor/plating | /area/virtual_domain
+16,22: /obj/machinery/light/dim{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+17,22: /turf/closed/wall | /area/virtual_domain
+18,22: /turf/closed/wall | /area/virtual_domain
+19,22: /obj/structure/broken_flooring/corner{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+20,22: /obj/machinery/light/small/red/dim | /turf/open/floor/plating | /area/virtual_domain
+21,22: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+22,22: /turf/closed/mineral | /area/virtual_domain
+23,22: /turf/closed/mineral | /area/virtual_domain
+24,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,21: /turf/closed/mineral | /area/virtual_domain
+3,21: /turf/closed/mineral | /area/virtual_domain
+4,21: /turf/closed/wall | /area/virtual_domain
+5,21: /turf/closed/wall | /area/virtual_domain
+6,21: /turf/closed/wall | /area/virtual_domain
+7,21: /turf/closed/wall | /area/virtual_domain
+8,21: /turf/closed/wall | /area/virtual_domain
+9,21: /turf/closed/wall | /area/virtual_domain
+10,21: /turf/closed/wall | /area/virtual_domain
+11,21: /turf/closed/wall | /area/virtual_domain
+12,21: /obj/structure/disposalpipe/segment | /obj/machinery/door/poddoor/shutters/indestructible{id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+13,21: /obj/machinery/door/poddoor/shutters/indestructible{id = "factorylockdown"} | /turf/open/floor/iron | /area/virtual_domain
+14,21: /obj/structure/disposalpipe/segment | /obj/machinery/door/poddoor/shutters/indestructible{id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+15,21: /obj/machinery/door/poddoor/shutters/indestructible{id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+16,21: /obj/machinery/door/poddoor/shutters/indestructible{id = "factorylockdown"} | /turf/open/floor/plating | /area/virtual_domain
+17,21: /turf/closed/wall | /area/virtual_domain
+18,21: /turf/closed/wall | /area/virtual_domain
+19,21: /turf/closed/wall | /area/virtual_domain
+20,21: /turf/closed/wall | /area/virtual_domain
+21,21: /turf/closed/wall | /area/virtual_domain
+22,21: /turf/closed/wall | /area/virtual_domain
+23,21: /turf/closed/wall | /area/virtual_domain
+24,21: /turf/closed/wall | /area/virtual_domain
+25,21: /turf/closed/wall | /area/virtual_domain
+26,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,20: /turf/closed/mineral | /area/virtual_domain
+3,20: /obj/structure/table/reinforced | /obj/machinery/microwave{broken = 1; desc = "No longer cooks and boils stuff."} | /turf/open/floor/iron | /area/virtual_domain
+4,20: /obj/effect/turf_decal/siding/white{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+5,20: /obj/machinery/light/dim{dir = 1} | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+6,20: /turf/open/floor/iron/cafeteria | /area/virtual_domain
+7,20: /obj/structure/sign/calendar/directional/north | /obj/effect/spawner/random/trash/garbage | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+8,20: /turf/closed/wall | /area/virtual_domain
+9,20: /turf/open/floor/plating | /area/virtual_domain
+10,20: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+11,20: /obj/machinery/light/broken{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+12,20: /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/floor/plating | /area/virtual_domain
+13,20: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/virtual_domain
+14,20: /obj/structure/disposalpipe/sorting{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+15,20: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/virtual_domain
+16,20: /turf/open/floor/plating | /area/virtual_domain
+17,20: /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/dim{dir = 1} | /obj/structure/sign/warning/doors/directional/north | /turf/open/floor/iron | /area/virtual_domain
+18,20: /turf/open/floor/plating | /area/virtual_domain
+19,20: /turf/open/floor/plating | /area/virtual_domain
+20,20: /turf/closed/wall | /area/virtual_domain
+21,20: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{dir = 1} | /obj/structure/filingcabinet | /turf/open/floor/iron | /area/virtual_domain
+22,20: /obj/effect/turf_decal/tile/yellow/half/contrasted{dir = 1} | /obj/structure/sign/clock/directional/north | /turf/open/floor/iron | /area/virtual_domain
+23,20: /obj/effect/turf_decal/tile/yellow/half/contrasted{dir = 1} | /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/iron | /area/virtual_domain
+24,20: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{dir = 4} | /obj/structure/disposalpipe/trunk{dir = 8} | /obj/machinery/disposal/bin | /turf/open/floor/iron | /area/virtual_domain
+25,20: /turf/closed/mineral | /area/virtual_domain
+26,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,19: /turf/closed/wall | /area/virtual_domain
+3,19: /obj/structure/table/reinforced | /obj/effect/spawner/random/food_or_drink/booze | /turf/open/floor/iron | /area/virtual_domain
+4,19: /obj/effect/turf_decal/siding/white{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+5,19: /obj/structure/table/reinforced | /obj/effect/spawner/random/food_or_drink/snack | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+6,19: /obj/structure/chair/stool/bar/directional/west | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+7,19: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+8,19: /obj/effect/spawner/structure/window/reinforced | /obj/effect/decal/cleanable/blood/splatter/over_window | /turf/open/floor/plating | /area/virtual_domain
+9,19: /turf/open/floor/plating | /area/virtual_domain
+10,19: /obj/effect/decal/cleanable/generic | /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+11,19: /turf/open/floor/plating | /area/virtual_domain
+12,19: /obj/structure/broken_flooring/pile/directional/north | /turf/open/floor/plating | /area/virtual_domain
+13,19: /turf/open/floor/plating | /area/virtual_domain
+14,19: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/virtual_domain
+15,19: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+16,19: /obj/effect/turf_decal/trimline/yellow/warning | /turf/open/floor/iron | /area/virtual_domain
+17,19: /turf/open/floor/plating | /area/virtual_domain
+18,19: /obj/effect/decal/cleanable/blood/oil | /turf/open/floor/plating | /area/virtual_domain
+19,19: /turf/open/floor/plating | /area/virtual_domain
+20,19: /obj/effect/spawner/structure/window/reinforced | /obj/effect/mapping_helpers/damaged_window | /turf/open/floor/plating | /area/virtual_domain
+21,19: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{dir = 8} | /obj/structure/table/reinforced | /obj/effect/spawner/random/bureaucracy/briefcase | /turf/open/floor/iron | /area/virtual_domain
+22,19: /obj/effect/decal/cleanable/generic | /turf/open/floor/iron | /area/virtual_domain
+23,19: /obj/structure/disposalpipe/segment | /turf/open/floor/iron | /area/virtual_domain
+24,19: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/broken{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+25,19: /turf/closed/mineral | /area/virtual_domain
+26,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,18: /turf/closed/wall | /area/virtual_domain
+3,18: /obj/structure/table/reinforced | /obj/machinery/light/small/red/dim{dir = 8} | /obj/structure/sign/poster/official/cleanliness/directional/west | /turf/open/floor/iron | /area/virtual_domain
+4,18: /obj/effect/turf_decal/siding/white{dir = 4} | /obj/effect/mob_spawn/corpse/human/factory | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron | /area/virtual_domain
+5,18: /obj/structure/table/reinforced | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+6,18: /obj/structure/chair/stool/bar/directional/west | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+7,18: /turf/open/floor/iron/cafeteria | /area/virtual_domain
+8,18: /obj/effect/spawner/structure/window/reinforced | /obj/effect/mapping_helpers/damaged_window | /turf/open/floor/plating | /area/virtual_domain
+9,18: /obj/structure/disposalpipe/trunk/multiz | /turf/open/floor/plating | /area/virtual_domain
+10,18: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+11,18: /obj/effect/decal/cleanable/dirt/dust | /obj/structure/closet/crate/preopen | /turf/open/floor/iron | /area/virtual_domain
+12,18: /turf/open/floor/plating | /area/virtual_domain
+13,18: /turf/open/floor/iron | /area/virtual_domain
+14,18: /turf/open/floor/plating | /area/virtual_domain
+15,18: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+16,18: /turf/open/floor/plating | /area/virtual_domain
+17,18: /obj/structure/broken_flooring/corner/directional/south | /turf/open/floor/plating | /area/virtual_domain
+18,18: /turf/open/floor/plating | /area/virtual_domain
+19,18: /turf/open/floor/plating | /area/virtual_domain
+20,18: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+21,18: /obj/effect/turf_decal/tile/yellow/fourcorners | /obj/structure/frame/computer{anchored = 1; dir = 4} | /obj/item/shard{icon_state = "medium"} | /turf/open/floor/iron | /area/virtual_domain
+22,18: /obj/effect/turf_decal/tile/yellow/fourcorners | /obj/structure/chair/office{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+23,18: /obj/effect/turf_decal/tile/yellow/fourcorners | /obj/structure/disposalpipe/segment | /turf/open/floor/iron | /area/virtual_domain
+24,18: /obj/effect/turf_decal/tile/yellow/fourcorners | /obj/machinery/light/small/red/dim{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+25,18: /turf/closed/wall | /area/virtual_domain
+26,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,17: /obj/structure/disposalpipe/segment{dir = 4} | /turf/closed/mineral | /area/virtual_domain
+3,17: /obj/effect/spawner/random/trash/botanical_waste | /obj/item/trash/chips | /obj/structure/closet/secure_closet/freezer/empty/open | /turf/open/floor/iron | /area/virtual_domain
+4,17: /obj/effect/turf_decal/siding/white{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+5,17: /obj/structure/table/reinforced | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+6,17: /obj/structure/chair/stool/bar/directional/west | /turf/open/floor/iron/cafeteria | /area/virtual_domain
+7,17: /turf/open/floor/iron/cafeteria | /area/virtual_domain
+8,17: /obj/effect/spawner/structure/window/reinforced | /obj/effect/mapping_helpers/damaged_window | /turf/open/floor/plating | /area/virtual_domain
+9,17: /obj/effect/decal/cleanable/dirt | /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/floor/plating | /area/virtual_domain
+10,17: /obj/structure/disposalpipe/sorting{dir = 2} | /turf/open/floor/plating | /area/virtual_domain
+11,17: /obj/effect/turf_decal/delivery | /turf/open/floor/iron | /area/virtual_domain
+12,17: /obj/structure/broken_flooring/corner/directional/east | /turf/open/floor/plating | /area/virtual_domain
+13,17: /obj/item/gun/ballistic/revolver | /turf/open/floor/plating | /area/virtual_domain
+14,17: /turf/open/floor/plating | /area/virtual_domain
+15,17: /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/floor/plating | /area/virtual_domain
+16,17: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+17,17: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/iron | /area/virtual_domain
+18,17: /obj/effect/decal/cleanable/dirt | /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+19,17: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+20,17: /obj/effect/spawner/structure/window/reinforced | /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+21,17: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{dir = 1} | /obj/structure/table/reinforced | /obj/structure/disposalpipe/segment{dir = 4} | /obj/item/folder/yellow | /obj/item/folder/blue{pixel_x = 2; pixel_y = -2} | /turf/open/floor/iron | /area/virtual_domain
+22,17: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+23,17: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/floor/iron | /area/virtual_domain
+24,17: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{dir = 4} | /obj/machinery/light/dim{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+25,17: /turf/closed/wall | /area/virtual_domain
+26,17: /obj/effect/smooths_with_walls | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,16: /obj/effect/smooths_with_walls | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,16: /turf/closed/wall | /area/virtual_domain
+3,16: /obj/structure/closet/crate/bin | /obj/item/trash/tray | /obj/effect/spawner/random/trash/garbage | /turf/open/floor/iron | /area/virtual_domain
+4,16: /obj/effect/turf_decal/siding/white{dir = 4} | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/broken | /turf/open/floor/iron | /area/virtual_domain
+5,16: /turf/open/floor/iron/cafeteria | /area/virtual_domain
+6,16: /turf/open/floor/iron/cafeteria | /area/virtual_domain
+7,16: /turf/open/floor/iron/cafeteria | /area/virtual_domain
+8,16: /turf/closed/wall | /area/virtual_domain
+9,16: /turf/open/floor/plating | /area/virtual_domain
+10,16: /obj/effect/turf_decal/tile/dark | /obj/effect/decal/cleanable/dirt | /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/floor/plating | /area/virtual_domain
+11,16: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/virtual_domain
+12,16: /obj/effect/mob_spawn/corpse/human/factory/guard | /turf/open/floor/plating | /area/virtual_domain
+13,16: /turf/open/floor/plating | /area/virtual_domain
+14,16: /obj/effect/turf_decal/tile/dark/half | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain
+15,16: /turf/open/floor/plating | /area/virtual_domain
+16,16: /obj/structure/closet/crate/preopen | /turf/open/floor/plating | /area/virtual_domain
+17,16: /turf/open/floor/plating | /area/virtual_domain
+18,16: /turf/open/floor/plating | /area/virtual_domain
+19,16: /turf/open/floor/plating | /area/virtual_domain
+20,16: /turf/closed/wall | /area/virtual_domain
+21,16: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{dir = 8} | /obj/structure/table/reinforced | /turf/open/floor/iron | /area/virtual_domain
+22,16: /obj/effect/turf_decal/tile/yellow/half/contrasted | /turf/open/floor/iron | /area/virtual_domain
+23,16: /obj/effect/turf_decal/tile/yellow/half/contrasted | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+24,16: /obj/effect/turf_decal/tile/yellow/anticorner/contrasted | /turf/open/floor/iron | /area/virtual_domain
+25,16: /turf/closed/wall | /area/virtual_domain
+26,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,15: /turf/closed/wall | /area/virtual_domain
+3,15: /turf/closed/wall | /area/virtual_domain
+4,15: /turf/closed/wall | /area/virtual_domain
+5,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+6,15: /obj/machinery/door/airlock/glass | /turf/open/floor/iron | /area/virtual_domain
+7,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+8,15: /turf/closed/wall | /area/virtual_domain
+9,15: /obj/machinery/light/dim{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+10,15: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/yellow/warning{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+11,15: /obj/effect/turf_decal/trimline/yellow/warning{dir = 1} | /obj/structure/disposalpipe/segment | /turf/open/floor/iron | /area/virtual_domain
+12,15: /turf/open/floor/plating | /area/virtual_domain
+13,15: /turf/open/floor/plating | /area/virtual_domain
+14,15: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/yellow/warning{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+15,15: /obj/structure/broken_flooring/corner/directional/north | /turf/open/floor/plating | /area/virtual_domain
+16,15: /turf/open/floor/plating | /area/virtual_domain
+17,15: /turf/open/floor/plating | /area/virtual_domain
+18,15: /obj/structure/broken_flooring/side/directional/north | /turf/open/floor/plating | /area/virtual_domain
+19,15: /turf/open/floor/plating | /area/virtual_domain
+20,15: /turf/closed/wall | /area/virtual_domain
+21,15: /obj/effect/spawner/structure/window/reinforced | /obj/effect/mapping_helpers/damaged_window | /turf/open/floor/plating | /area/virtual_domain
+22,15: /obj/machinery/door/airlock/engineering/glass | /obj/effect/mapping_helpers/airlock/access/any/away/supply | /turf/open/floor/iron | /area/virtual_domain
+23,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+24,15: /turf/closed/wall | /area/virtual_domain
+25,15: /turf/closed/wall | /area/virtual_domain
+26,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,14: /turf/closed/wall | /area/virtual_domain
+3,14: /obj/effect/decal/cleanable/dirt/dust | /obj/structure/sign/poster/ripped/directional/west | /turf/open/floor/carpet/orange | /area/virtual_domain
+4,14: /obj/machinery/light/small/red/dim{dir = 1} | /turf/open/floor/carpet/orange | /area/virtual_domain
+5,14: /turf/open/floor/iron/stairs/left{dir = 8} | /area/virtual_domain
+6,14: /turf/open/floor/iron | /area/virtual_domain
+7,14: /turf/open/floor/iron | /area/virtual_domain
+8,14: /obj/effect/turf_decal/trimline/yellow/line{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+9,14: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/iron | /area/virtual_domain
+10,14: /turf/open/floor/iron | /area/virtual_domain
+11,14: /obj/structure/disposalpipe/segment | /turf/open/floor/iron | /area/virtual_domain
+12,14: /turf/open/floor/iron | /area/virtual_domain
+13,14: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/iron | /area/virtual_domain
+14,14: /turf/open/floor/iron | /area/virtual_domain
+15,14: /turf/open/floor/iron | /area/virtual_domain
+16,14: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/iron | /area/virtual_domain
+17,14: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/iron | /area/virtual_domain
+18,14: /turf/open/floor/iron | /area/virtual_domain
+19,14: /turf/open/floor/iron | /area/virtual_domain
+20,14: /obj/effect/turf_decal/trimline/yellow/line{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+21,14: /turf/open/floor/iron | /area/virtual_domain
+22,14: /turf/open/floor/iron | /area/virtual_domain
+23,14: /turf/open/floor/iron | /area/virtual_domain
+24,14: /obj/machinery/light/small/red/dim{dir = 1} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+25,14: /turf/closed/wall | /area/virtual_domain
+26,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,13: /obj/structure/disposalpipe/segment{dir = 4} | /turf/closed/wall | /area/virtual_domain
+3,13: /turf/open/floor/carpet/orange | /area/virtual_domain
+4,13: /turf/open/floor/carpet/orange | /area/virtual_domain
+5,13: /obj/structure/railing | /turf/open/floor/iron/stairs/right{dir = 8} | /area/virtual_domain
+6,13: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/iron | /area/virtual_domain
+7,13: /obj/structure/disposalpipe/broken{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+8,13: /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /obj/structure/disposalpipe/segment{dir = 4} | /obj/machinery/light/broken | /turf/open/floor/iron | /area/virtual_domain
+9,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/structure/disposalpipe/segment{dir = 4} | /obj/structure/sign/poster/official/safety_internals/directional/south | /turf/open/floor/iron | /area/virtual_domain
+10,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+11,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/structure/disposalpipe/segment{dir = 9} | /obj/machinery/light/small/red/dim | /turf/open/floor/iron | /area/virtual_domain
+12,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+13,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 5} | /turf/open/floor/iron | /area/virtual_domain
+14,13: /obj/effect/turf_decal/caution{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+15,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 9} | /turf/open/floor/iron | /area/virtual_domain
+16,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+17,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/machinery/light/small/red/dim | /turf/open/floor/iron | /area/virtual_domain
+18,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+19,13: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+20,13: /obj/effect/turf_decal/trimline/yellow/corner{dir = 1} | /obj/machinery/light/dim | /turf/open/floor/iron | /area/virtual_domain
+21,13: /turf/open/floor/iron | /area/virtual_domain
+22,13: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+23,13: /turf/open/floor/iron | /area/virtual_domain
+24,13: /turf/open/floor/iron | /area/virtual_domain
+25,13: /turf/closed/mineral | /area/virtual_domain
+26,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,12: /turf/closed/mineral | /area/virtual_domain
+3,12: /obj/structure/chair/sofa/corp/left{dir = 1} | /turf/open/floor/carpet/orange | /area/virtual_domain
+4,12: /obj/structure/chair/sofa/corp/right{dir = 1} | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/broken | /turf/open/floor/carpet/orange | /area/virtual_domain
+5,12: /obj/structure/flora/bush/fullgrass/style_random | /obj/structure/flora/rock/pile/style_random | /obj/structure/flora/bush/flowers_yw/style_random | /obj/structure/window/reinforced/spawner/directional/north | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/grass | /area/virtual_domain
+6,12: /turf/closed/wall/r_wall | /area/virtual_domain
+7,12: /turf/closed/wall/r_wall | /area/virtual_domain
+8,12: /turf/closed/wall/r_wall | /area/virtual_domain
+9,12: /turf/closed/wall/r_wall | /area/virtual_domain
+10,12: /turf/closed/wall/r_wall | /area/virtual_domain
+11,12: /turf/closed/wall/r_wall | /area/virtual_domain
+12,12: /turf/closed/wall/r_wall | /area/virtual_domain
+13,12: /obj/effect/turf_decal/trimline/yellow/warning{dir = 5} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /obj/structure/sign/warning/vacuum/external/directional/south | /turf/open/floor/iron | /area/virtual_domain
+14,12: /obj/effect/turf_decal/trimline/yellow/warning{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+15,12: /obj/effect/turf_decal/trimline/yellow/warning{dir = 9} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+16,12: /turf/closed/wall/r_wall | /area/virtual_domain
+17,12: /turf/closed/wall/r_wall | /area/virtual_domain
+18,12: /turf/closed/wall/r_wall | /area/virtual_domain
+19,12: /turf/closed/wall/r_wall | /area/virtual_domain
+20,12: /turf/closed/wall/r_wall | /area/virtual_domain
+21,12: /obj/structure/chair/plastic{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+22,12: /obj/structure/table | /turf/open/floor/iron | /area/virtual_domain
+23,12: /obj/structure/chair/plastic{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+24,12: /turf/closed/mineral | /area/virtual_domain
+25,12: /turf/closed/mineral | /area/virtual_domain
+26,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,11: /turf/closed/mineral | /area/virtual_domain
+3,11: /turf/closed/mineral | /area/virtual_domain
+4,11: /turf/closed/wall/r_wall | /area/virtual_domain
+5,11: /turf/closed/wall/r_wall | /area/virtual_domain
+6,11: /turf/closed/wall/r_wall | /area/virtual_domain
+7,11: /turf/closed/mineral | /area/virtual_domain
+8,11: /turf/open/space/basic | /area/space/virtual_domain
+9,11: /turf/open/space/basic | /area/space/virtual_domain
+10,11: /turf/open/space/basic | /area/space/virtual_domain
+11,11: /turf/open/space/basic | /area/space/virtual_domain
+12,11: /turf/closed/wall/r_wall | /area/virtual_domain
+13,11: /turf/closed/wall | /area/virtual_domain
+14,11: /obj/machinery/door/airlock/external/glass/ruin | /obj/effect/mapping_helpers/airlock/cyclelink_helper | /turf/open/floor/iron | /area/virtual_domain
+15,11: /turf/closed/wall/r_wall | /area/virtual_domain
+16,11: /turf/closed/wall/r_wall | /area/virtual_domain
+17,11: /turf/open/space/basic | /area/space/virtual_domain
+18,11: /turf/open/space/basic | /area/space/virtual_domain
+19,11: /turf/open/space/basic | /area/space/virtual_domain
+20,11: /turf/closed/wall/r_wall | /area/virtual_domain
+21,11: /turf/closed/wall/r_wall | /area/virtual_domain
+22,11: /turf/closed/wall/r_wall | /area/virtual_domain
+23,11: /turf/closed/wall/r_wall | /area/virtual_domain
+24,11: /turf/closed/wall/r_wall | /area/virtual_domain
+25,11: /obj/effect/smooths_with_walls | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,10: /turf/closed/mineral | /area/virtual_domain
+6,10: /turf/closed/mineral | /area/virtual_domain
+7,10: /turf/closed/mineral | /area/virtual_domain
+8,10: /turf/open/space/basic | /area/space/virtual_domain
+9,10: /turf/open/space/basic | /area/space/virtual_domain
+10,10: /turf/open/space/basic | /area/space/virtual_domain
+11,10: /turf/open/space/basic | /area/space/virtual_domain
+12,10: /turf/open/space/basic | /area/space/virtual_domain
+13,10: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+14,10: /turf/open/floor/iron | /area/virtual_domain
+15,10: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+16,10: /turf/open/space/basic | /area/space/virtual_domain
+17,10: /turf/open/space/basic | /area/space/virtual_domain
+18,10: /turf/open/space/basic | /area/space/virtual_domain
+19,10: /turf/open/space/basic | /area/space/virtual_domain
+20,10: /turf/open/space/basic | /area/space/virtual_domain
+21,10: /turf/open/space/basic | /area/space/virtual_domain
+22,10: /turf/open/space/basic | /area/space/virtual_domain
+23,10: /turf/open/space/basic | /area/space/virtual_domain
+24,10: /turf/closed/mineral | /area/virtual_domain
+25,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,9: /turf/closed/mineral | /area/virtual_domain
+6,9: /obj/structure/flora/rock/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+7,9: /turf/open/misc/asteroid/airless | /area/virtual_domain
+8,9: /turf/open/space/basic | /area/space/virtual_domain
+9,9: /turf/open/space/basic | /area/space/virtual_domain
+10,9: /turf/open/space/basic | /area/space/virtual_domain
+11,9: /turf/open/space/basic | /area/space/virtual_domain
+12,9: /turf/open/space/basic | /area/space/virtual_domain
+13,9: /turf/closed/wall/r_wall | /area/virtual_domain
+14,9: /obj/machinery/door/airlock/external/glass/ruin | /obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+15,9: /turf/closed/wall/r_wall | /area/virtual_domain
+16,9: /turf/open/space/basic | /area/space/virtual_domain
+17,9: /turf/open/space/basic | /area/space/virtual_domain
+18,9: /turf/open/space/basic | /area/space/virtual_domain
+19,9: /turf/open/space/basic | /area/space/virtual_domain
+20,9: /turf/open/space/basic | /area/space/virtual_domain
+21,9: /turf/open/space/basic | /area/space/virtual_domain
+22,9: /turf/open/space/basic | /area/space/virtual_domain
+23,9: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+24,9: /turf/closed/mineral | /area/virtual_domain
+25,9: /turf/closed/mineral | /area/virtual_domain
+26,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,8: /turf/closed/mineral | /area/virtual_domain
+5,8: /turf/closed/mineral | /area/virtual_domain
+6,8: /turf/open/misc/asteroid/airless | /area/virtual_domain
+7,8: /turf/open/misc/asteroid/airless | /area/virtual_domain
+8,8: /turf/open/space/basic | /area/space/virtual_domain
+9,8: /turf/open/space/basic | /area/space/virtual_domain
+10,8: /turf/open/space/basic | /area/space/virtual_domain
+11,8: /turf/template_noop | /area/virtual_domain/safehouse
+12,8: /turf/template_noop | /area/virtual_domain/safehouse
+13,8: /turf/template_noop | /area/virtual_domain/safehouse
+14,8: /turf/template_noop | /area/virtual_domain/safehouse
+15,8: /turf/template_noop | /area/virtual_domain/safehouse
+16,8: /turf/template_noop | /area/virtual_domain/safehouse
+17,8: /turf/template_noop | /area/virtual_domain/safehouse
+18,8: /turf/open/space/basic | /area/space/virtual_domain
+19,8: /turf/open/space/basic | /area/space/virtual_domain
+20,8: /turf/open/space/basic | /area/space/virtual_domain
+21,8: /turf/open/space/basic | /area/space/virtual_domain
+22,8: /turf/open/space/basic | /area/space/virtual_domain
+23,8: /turf/open/misc/asteroid/airless | /area/virtual_domain
+24,8: /turf/open/misc/asteroid/airless | /area/virtual_domain
+25,8: /turf/closed/mineral | /area/virtual_domain
+26,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,7: /turf/open/misc/asteroid/airless | /area/virtual_domain
+6,7: /turf/open/space/basic | /area/space/virtual_domain
+7,7: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+8,7: /turf/open/space/basic | /area/space/virtual_domain
+9,7: /turf/open/space/basic | /area/space/virtual_domain
+10,7: /turf/open/space/basic | /area/space/virtual_domain
+11,7: /turf/template_noop | /area/virtual_domain/safehouse
+12,7: /turf/template_noop | /area/virtual_domain/safehouse
+13,7: /turf/template_noop | /area/virtual_domain/safehouse
+14,7: /turf/template_noop | /area/virtual_domain/safehouse
+15,7: /turf/template_noop | /area/virtual_domain/safehouse
+16,7: /turf/template_noop | /area/virtual_domain/safehouse
+17,7: /turf/template_noop | /area/virtual_domain/safehouse
+18,7: /turf/open/space/basic | /area/space/virtual_domain
+19,7: /turf/open/space/basic | /area/space/virtual_domain
+20,7: /turf/open/space/basic | /area/space/virtual_domain
+21,7: /turf/open/space/basic | /area/space/virtual_domain
+22,7: /turf/open/space/basic | /area/space/virtual_domain
+23,7: /turf/open/space/basic | /area/space/virtual_domain
+24,7: /turf/open/misc/asteroid/airless | /area/virtual_domain
+25,7: /turf/closed/mineral | /area/virtual_domain
+26,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,6: /turf/open/misc/asteroid/airless | /area/virtual_domain
+6,6: /turf/open/space/basic | /area/space/virtual_domain
+7,6: /turf/open/space/basic | /area/space/virtual_domain
+8,6: /turf/open/space/basic | /area/space/virtual_domain
+9,6: /turf/open/space/basic | /area/space/virtual_domain
+10,6: /turf/open/space/basic | /area/space/virtual_domain
+11,6: /turf/template_noop | /area/virtual_domain/safehouse
+12,6: /turf/template_noop | /area/virtual_domain/safehouse
+13,6: /turf/template_noop | /area/virtual_domain/safehouse
+14,6: /turf/template_noop | /area/virtual_domain/safehouse
+15,6: /turf/template_noop | /area/virtual_domain/safehouse
+16,6: /turf/template_noop | /area/virtual_domain/safehouse
+17,6: /turf/template_noop | /area/virtual_domain/safehouse
+18,6: /turf/open/space/basic | /area/space/virtual_domain
+19,6: /turf/open/space/basic | /area/space/virtual_domain
+20,6: /turf/open/space/basic | /area/space/virtual_domain
+21,6: /turf/open/space/basic | /area/space/virtual_domain
+22,6: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+23,6: /turf/open/space/basic | /area/space/virtual_domain
+24,6: /turf/open/space/basic | /area/space/virtual_domain
+25,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,5: /turf/closed/mineral | /area/virtual_domain
+5,5: /turf/open/misc/asteroid/airless | /area/virtual_domain
+6,5: /turf/open/misc/asteroid/airless | /area/virtual_domain
+7,5: /turf/open/space/basic | /area/space/virtual_domain
+8,5: /turf/open/space/basic | /area/space/virtual_domain
+9,5: /turf/open/misc/asteroid/airless | /area/virtual_domain
+10,5: /turf/open/space/basic | /area/space/virtual_domain
+11,5: /turf/template_noop | /area/virtual_domain/safehouse
+12,5: /turf/template_noop | /area/virtual_domain/safehouse
+13,5: /turf/template_noop | /area/virtual_domain/safehouse
+14,5: /turf/template_noop | /area/virtual_domain/safehouse
+15,5: /turf/template_noop | /area/virtual_domain/safehouse
+16,5: /turf/template_noop | /area/virtual_domain/safehouse
+17,5: /turf/template_noop | /area/virtual_domain/safehouse
+18,5: /turf/open/space/basic | /area/space/virtual_domain
+19,5: /turf/open/space/basic | /area/space/virtual_domain
+20,5: /turf/open/space/basic | /area/space/virtual_domain
+21,5: /turf/open/space/basic | /area/space/virtual_domain
+22,5: /turf/open/space/basic | /area/space/virtual_domain
+23,5: /turf/open/space/basic | /area/space/virtual_domain
+24,5: /turf/open/space/basic | /area/space/virtual_domain
+25,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,4: /turf/closed/mineral | /area/virtual_domain
+5,4: /turf/closed/mineral | /area/virtual_domain
+6,4: /turf/open/misc/asteroid/airless | /area/virtual_domain
+7,4: /turf/open/space/basic | /area/space/virtual_domain
+8,4: /turf/open/space/basic | /area/space/virtual_domain
+9,4: /turf/open/space/basic | /area/space/virtual_domain
+10,4: /turf/open/space/basic | /area/space/virtual_domain
+11,4: /turf/template_noop | /area/virtual_domain/safehouse
+12,4: /turf/template_noop | /area/virtual_domain/safehouse
+13,4: /turf/template_noop | /area/virtual_domain/safehouse
+14,4: /turf/template_noop | /area/virtual_domain/safehouse
+15,4: /turf/template_noop | /area/virtual_domain/safehouse
+16,4: /turf/template_noop | /area/virtual_domain/safehouse
+17,4: /turf/template_noop | /area/virtual_domain/safehouse
+18,4: /turf/open/space/basic | /area/space/virtual_domain
+19,4: /turf/open/space/basic | /area/space/virtual_domain
+20,4: /turf/open/space/basic | /area/space/virtual_domain
+21,4: /turf/open/space/basic | /area/space/virtual_domain
+22,4: /turf/open/space/basic | /area/space/virtual_domain
+23,4: /turf/open/space/basic | /area/space/virtual_domain
+24,4: /turf/open/space/basic | /area/space/virtual_domain
+25,4: /turf/closed/mineral | /area/virtual_domain
+26,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,3: /turf/closed/mineral | /area/virtual_domain
+6,3: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+7,3: /turf/open/misc/asteroid/airless | /area/virtual_domain
+8,3: /turf/open/space/basic | /area/space/virtual_domain
+9,3: /turf/open/space/basic | /area/space/virtual_domain
+10,3: /turf/open/space/basic | /area/space/virtual_domain
+11,3: /obj/modular_map_root/safehouse{key = "shuttle_space"} | /turf/template_noop | /area/virtual_domain/safehouse
+12,3: /turf/template_noop | /area/virtual_domain/safehouse
+13,3: /turf/template_noop | /area/virtual_domain/safehouse
+14,3: /turf/template_noop | /area/virtual_domain/safehouse
+15,3: /turf/template_noop | /area/virtual_domain/safehouse
+16,3: /turf/template_noop | /area/virtual_domain/safehouse
+17,3: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+18,3: /turf/open/space/basic | /area/space/virtual_domain
+19,3: /turf/open/space/basic | /area/space/virtual_domain
+20,3: /turf/open/space/basic | /area/space/virtual_domain
+21,3: /turf/open/space/basic | /area/space/virtual_domain
+22,3: /turf/open/space/basic | /area/space/virtual_domain
+23,3: /turf/open/space/basic | /area/space/virtual_domain
+24,3: /turf/open/space/basic | /area/space/virtual_domain
+25,3: /turf/closed/mineral | /area/virtual_domain
+26,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,2: /turf/closed/mineral | /area/virtual_domain
+6,2: /turf/closed/mineral | /area/virtual_domain
+7,2: /turf/closed/mineral | /area/virtual_domain
+8,2: /turf/open/space/basic | /area/space/virtual_domain
+9,2: /turf/open/space/basic | /area/space/virtual_domain
+10,2: /turf/open/space/basic | /area/space/virtual_domain
+11,2: /turf/open/space/basic | /area/space/virtual_domain
+12,2: /turf/open/space/basic | /area/space/virtual_domain
+13,2: /turf/open/space/basic | /area/space/virtual_domain
+14,2: /turf/open/space/basic | /area/space/virtual_domain
+15,2: /turf/open/space/basic | /area/space/virtual_domain
+16,2: /turf/open/space/basic | /area/space/virtual_domain
+17,2: /turf/open/space/basic | /area/space/virtual_domain
+18,2: /turf/open/space/basic | /area/space/virtual_domain
+19,2: /turf/open/space/basic | /area/space/virtual_domain
+20,2: /turf/open/space/basic | /area/space/virtual_domain
+21,2: /turf/open/space/basic | /area/space/virtual_domain
+22,2: /turf/open/space/basic | /area/space/virtual_domain
+23,2: /turf/open/space/basic | /area/space/virtual_domain
+24,2: /turf/closed/mineral | /area/virtual_domain
+25,2: /turf/closed/mineral | /area/virtual_domain
+26,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,1: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 33 1 1]
+33,32: /turf/open/floor/iron | /area/virtual_domain
+34,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,31: /obj/effect/turf_decal/trimline/yellow/line | /turf/open/floor/iron | /area/virtual_domain
+34,31: /obj/effect/turf_decal/trimline/yellow/line | /obj/machinery/light/broken | /turf/open/floor/iron | /area/virtual_domain
+35,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,30: /turf/closed/wall | /area/virtual_domain
+35,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 1 33 1]
+19,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,47: /turf/open/space/basic | /area/space/virtual_domain
+21,47: /turf/open/space/basic | /area/space/virtual_domain
+22,47: /turf/open/space/basic | /area/space/virtual_domain
+23,47: /turf/open/space/basic | /area/space/virtual_domain
+24,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,46: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,46: /turf/closed/mineral | /area/virtual_domain
+17,46: /turf/closed/mineral | /area/virtual_domain
+18,46: /turf/open/space/basic | /area/space/virtual_domain
+19,46: /turf/open/space/basic | /area/space/virtual_domain
+20,46: /turf/open/space/basic | /area/space/virtual_domain
+21,46: /turf/open/space/basic | /area/space/virtual_domain
+22,46: /turf/open/space/basic | /area/space/virtual_domain
+23,46: /turf/open/space/basic | /area/space/virtual_domain
+24,46: /turf/open/space/basic | /area/space/virtual_domain
+25,46: /turf/open/space/basic | /area/space/virtual_domain
+26,46: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,45: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,45: /turf/closed/mineral | /area/virtual_domain
+17,45: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+18,45: /turf/open/misc/asteroid/airless | /area/virtual_domain
+19,45: /turf/open/space/basic | /area/space/virtual_domain
+20,45: /turf/open/space/basic | /area/space/virtual_domain
+21,45: /turf/open/space/basic | /area/space/virtual_domain
+22,45: /turf/open/space/basic | /area/space/virtual_domain
+23,45: /turf/open/space/basic | /area/space/virtual_domain
+24,45: /turf/open/space/basic | /area/space/virtual_domain
+25,45: /turf/open/misc/asteroid/airless | /area/virtual_domain
+26,45: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,44: /turf/closed/mineral | /area/virtual_domain
+17,44: /turf/open/misc/asteroid/airless | /area/virtual_domain
+18,44: /turf/open/misc/asteroid/airless | /area/virtual_domain
+19,44: /turf/open/space/basic | /area/space/virtual_domain
+20,44: /turf/open/space/basic | /area/space/virtual_domain
+21,44: /turf/open/space/basic | /area/space/virtual_domain
+22,44: /turf/open/space/basic | /area/space/virtual_domain
+23,44: /turf/open/space/basic | /area/space/virtual_domain
+24,44: /turf/open/space/basic | /area/space/virtual_domain
+25,44: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+26,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,43: /turf/closed/mineral | /area/virtual_domain
+17,43: /turf/closed/mineral | /area/virtual_domain
+18,43: /turf/open/misc/asteroid/airless | /area/virtual_domain
+19,43: /turf/open/space/basic | /area/space/virtual_domain
+20,43: /turf/open/space/basic | /area/space/virtual_domain
+21,43: /turf/open/space/basic | /area/space/virtual_domain
+22,43: /turf/open/space/basic | /area/space/virtual_domain
+23,43: /turf/open/space/basic | /area/space/virtual_domain
+24,43: /turf/open/misc/asteroid/airless | /area/virtual_domain
+25,43: /turf/open/misc/asteroid/airless | /area/virtual_domain
+26,43: /turf/closed/mineral | /area/virtual_domain
+27,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,42: /turf/open/floor/plating | /area/virtual_domain
+15,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,42: /turf/closed/mineral | /area/virtual_domain
+18,42: /turf/open/space/basic | /area/space/virtual_domain
+19,42: /obj/item/shard | /turf/open/space/basic | /area/space/virtual_domain
+20,42: /turf/open/space/basic | /area/space/virtual_domain
+21,42: /obj/item/stack/rods/two | /turf/open/space/basic | /area/space/virtual_domain
+22,42: /turf/open/space/basic | /area/space/virtual_domain
+23,42: /turf/open/misc/asteroid/airless | /area/virtual_domain
+24,42: /obj/structure/flora/rock/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+25,42: /turf/closed/mineral | /area/virtual_domain
+26,42: /turf/closed/mineral | /area/virtual_domain
+27,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,41: /turf/closed/wall | /area/virtual_domain
+13,41: /turf/closed/wall | /area/virtual_domain
+14,41: /turf/open/floor/plating | /area/virtual_domain
+15,41: /turf/open/floor/plating | /area/virtual_domain
+16,41: /turf/closed/wall | /area/virtual_domain
+17,41: /turf/closed/mineral | /area/virtual_domain
+18,41: /turf/open/space/basic | /area/space/virtual_domain
+19,41: /turf/open/space/basic | /area/space/virtual_domain
+20,41: /turf/open/space/basic | /area/space/virtual_domain
+21,41: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/airless | /area/virtual_domain
+22,41: /turf/open/misc/asteroid/airless | /area/virtual_domain
+23,41: /turf/open/misc/asteroid/airless | /area/virtual_domain
+24,41: /turf/closed/mineral | /area/virtual_domain
+25,41: /turf/closed/mineral | /area/virtual_domain
+26,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,40: /turf/closed/wall | /area/virtual_domain
+13,40: /obj/machinery/light/small/red/dim{dir = 1} | /obj/structure/table | /turf/open/floor/plating | /area/virtual_domain
+14,40: /obj/structure/table | /obj/item/flashlight/lantern | /turf/open/floor/plating | /area/virtual_domain
+15,40: /obj/structure/sign/poster/contraband/random/directional/east | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/plating | /area/virtual_domain
+16,40: /turf/closed/wall | /area/virtual_domain
+17,40: /turf/closed/wall | /area/virtual_domain
+18,40: /turf/closed/wall | /area/virtual_domain
+19,40: /obj/structure/fans/tiny | /turf/open/floor/plating | /area/virtual_domain
+20,40: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+21,40: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+22,40: /turf/closed/wall | /area/virtual_domain
+23,40: /turf/closed/mineral | /area/virtual_domain
+24,40: /turf/closed/mineral | /area/virtual_domain
+25,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,39: /turf/closed/wall | /area/virtual_domain
+13,39: /obj/structure/chair/plastic | /turf/open/floor/plating | /area/virtual_domain
+14,39: /turf/open/floor/plating | /area/virtual_domain
+15,39: /turf/open/floor/plating | /area/virtual_domain
+16,39: /turf/closed/wall | /area/virtual_domain
+17,39: /obj/machinery/conveyor/auto{dir = 5} | /obj/effect/decal/cleanable/cobweb | /turf/open/floor/plating | /area/virtual_domain
+18,39: /obj/machinery/conveyor/auto{dir = 6} | /obj/machinery/light/broken{dir = 1} | /obj/structure/sign/warning/vacuum/directional/north | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/plating | /area/virtual_domain
+19,39: /obj/machinery/mass_driver/trash{dir = 1} | /obj/effect/turf_decal/stripes/line{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+20,39: /obj/effect/spawner/random/trash/mess | /turf/open/floor/plating | /area/virtual_domain
+21,39: /turf/open/floor/plating | /area/virtual_domain
+22,39: /turf/closed/wall | /area/virtual_domain
+23,39: /turf/closed/wall | /area/virtual_domain
+24,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,38: /turf/closed/wall | /area/virtual_domain
+13,38: /turf/closed/wall | /area/virtual_domain
+14,38: /obj/machinery/door/airlock/maintenance | /turf/open/floor/plating | /area/virtual_domain
+15,38: /turf/closed/wall | /area/virtual_domain
+16,38: /turf/closed/wall | /area/virtual_domain
+17,38: /obj/machinery/conveyor/auto{dir = 1} | /obj/machinery/light/small/red/dim{dir = 8} | /turf/open/floor/plating | /area/virtual_domain
+18,38: /obj/machinery/conveyor/auto | /obj/structure/window/reinforced/spawner/directional/west | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/plating | /area/virtual_domain
+19,38: /obj/machinery/conveyor/auto{dir = 9} | /obj/effect/turf_decal/stripes/corner{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+20,38: /obj/machinery/conveyor/auto{dir = 8} | /obj/effect/turf_decal/stripes/line{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+21,38: /obj/machinery/conveyor/auto{dir = 6; icon_state = "conveyor_map_inverted"; inverted = 1} | /obj/effect/turf_decal/stripes/line{dir = 5} | /turf/open/floor/plating | /area/virtual_domain
+22,38: /obj/machinery/light/small/red/dim{dir = 4} | /obj/effect/decal/cleanable/dirt | /obj/structure/closet/crate/preopen | /turf/open/floor/plating | /area/virtual_domain
+23,38: /turf/closed/wall | /area/virtual_domain
+24,38: /turf/closed/mineral | /area/virtual_domain
+25,38: /turf/closed/wall/r_wall | /area/virtual_domain
+26,38: /turf/closed/wall/r_wall | /area/virtual_domain
+27,38: /turf/closed/wall/r_wall | /area/virtual_domain
+28,38: /turf/closed/wall/r_wall | /area/virtual_domain
+29,38: /turf/closed/wall/r_wall | /area/virtual_domain
+30,38: /turf/closed/wall/r_wall | /area/virtual_domain
+31,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,37: /turf/closed/wall | /area/virtual_domain
+13,37: /turf/open/floor/plating | /area/virtual_domain
+14,37: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/virtual_domain
+15,37: /obj/structure/disposalpipe/segment{dir = 4} | /obj/machinery/light/small/red/dim{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+16,37: /obj/structure/disposalpipe/segment{dir = 4} | /turf/closed/wall | /area/virtual_domain
+17,37: /obj/structure/disposalpipe/trunk{dir = 8} | /obj/structure/disposaloutlet{dir = 1} | /turf/open/floor/plating | /area/virtual_domain
+18,37: /obj/machinery/conveyor/auto{dir = 9; inverted = 1; icon_state = "conveyor_map_inverted"} | /obj/effect/turf_decal/stripes/line | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating | /area/virtual_domain
+19,37: /obj/machinery/conveyor/auto{dir = 4} | /obj/effect/turf_decal/stripes/line | /turf/open/floor/plating | /area/virtual_domain
+20,37: /obj/machinery/recycler/deathtrap{dir = 8} | /obj/machinery/conveyor/auto{dir = 4} | /obj/effect/turf_decal/stripes/line | /turf/open/floor/plating | /area/virtual_domain
+21,37: /obj/machinery/conveyor/auto{dir = 10; inverted = 1; icon_state = "conveyor_map_inverted"} | /obj/effect/turf_decal/stripes/line{dir = 6} | /turf/open/floor/plating | /area/virtual_domain
+22,37: /obj/structure/broken_flooring/side | /turf/open/floor/plating | /area/virtual_domain
+23,37: /turf/closed/mineral | /area/virtual_domain
+24,37: /turf/closed/mineral | /area/virtual_domain
+25,37: /obj/item/gun/ballistic/shotgun/lethal | /obj/machinery/light/broken{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+26,37: /obj/structure/closet/secure_closet/tac{req_access = null} | /obj/item/ammo_casing/shotgun/buckshot | /obj/item/ammo_casing/shotgun/buckshot | /obj/item/ammo_casing/shotgun/buckshot | /turf/open/floor/iron | /area/virtual_domain
+27,37: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron | /area/virtual_domain
+28,37: /obj/effect/decal/cleanable/dirt | /mob/living/basic/hivebot/strong | /turf/open/floor/iron | /area/virtual_domain
+29,37: /obj/machinery/light/dim{dir = 4} | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/iron | /area/virtual_domain
+30,37: /turf/closed/wall/r_wall | /area/virtual_domain
+31,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,36: /turf/closed/wall | /area/virtual_domain
+13,36: /obj/machinery/light/broken{dir = 8} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/stripes{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+14,36: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+15,36: /obj/effect/turf_decal/stripes{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+16,36: /obj/machinery/door/airlock/maintenance | /obj/effect/mapping_helpers/airlock/welded | /turf/open/floor/iron | /area/virtual_domain
+17,36: /turf/open/floor/plating | /area/virtual_domain
+18,36: /obj/effect/decal/cleanable/generic | /turf/open/floor/plating | /area/virtual_domain
+19,36: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain
+20,36: /turf/open/floor/plating | /area/virtual_domain
+21,36: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/virtual_domain
+22,36: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+23,36: /turf/closed/mineral | /area/virtual_domain
+24,36: /obj/structure/broken_flooring/singular{dir = 4} | /obj/effect/mob_spawn/corpse/human/factory/guard | /turf/open/floor/plating | /area/virtual_domain
+25,36: /obj/structure/broken_flooring/corner/directional/south | /obj/item/ammo_casing/shotgun/buckshot/spent | /turf/open/floor/plating | /area/virtual_domain
+26,36: /obj/effect/decal/cleanable/glass | /turf/open/floor/iron | /area/virtual_domain
+27,36: /obj/effect/decal/cleanable/blood/drip | /turf/open/floor/iron | /area/virtual_domain
+28,36: /obj/effect/decal/cleanable/blood/tracks{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+29,36: /obj/effect/decal/cleanable/blood/tracks{dir = 5} | /obj/effect/mob_spawn/corpse/human/factory/qm | /turf/open/floor/iron | /area/virtual_domain
+30,36: /turf/closed/wall/r_wall | /area/virtual_domain
+31,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,35: /turf/closed/indestructible/fakedoor{name = "Stairwell Access"} | /area/virtual_domain
+13,35: /obj/effect/turf_decal/stripes{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+14,35: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+15,35: /obj/machinery/light/dim{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+16,35: /turf/closed/wall | /area/virtual_domain
+17,35: /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/structure/closet_empty/crate/with_loot | /turf/open/floor/iron | /area/virtual_domain
+18,35: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+19,35: /obj/structure/broken_flooring/corner/directional/north | /turf/open/floor/plating | /area/virtual_domain
+20,35: /turf/open/floor/plating | /area/virtual_domain
+21,35: /obj/structure/broken_flooring/pile/directional/north | /obj/machinery/light/dim | /turf/open/floor/plating | /area/virtual_domain
+22,35: /obj/effect/spawner/random/trash/mess | /turf/open/floor/plating | /area/virtual_domain
+23,35: /turf/closed/wall/r_wall | /area/virtual_domain
+24,35: /turf/open/floor/iron | /area/virtual_domain
+25,35: /obj/structure/door_assembly/door_assembly_eng | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+26,35: /turf/open/floor/iron | /area/virtual_domain
+27,35: /obj/effect/decal/cleanable/blood/gibs/robot_debris/old | /turf/open/floor/iron | /area/virtual_domain
+28,35: /obj/structure/broken_flooring/side/directional/north | /obj/machinery/light/small/red/dim | /turf/open/floor/plating | /area/virtual_domain
+29,35: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+30,35: /turf/closed/wall/r_wall | /area/virtual_domain
+31,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,34: /obj/effect/smooths_with_walls | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,34: /turf/closed/wall | /area/virtual_domain
+12,34: /turf/closed/wall | /area/virtual_domain
+13,34: /obj/structure/broken_flooring/pile{dir = 4} | /turf/open/floor/plating | /area/virtual_domain
+14,34: /obj/structure/disposalpipe/segment | /turf/open/floor/plating | /area/virtual_domain
+15,34: /obj/structure/broken_flooring/corner | /turf/open/floor/plating | /area/virtual_domain
+16,34: /turf/closed/wall | /area/virtual_domain
+17,34: /turf/closed/wall | /area/virtual_domain
+18,34: /turf/closed/wall | /area/virtual_domain
+19,34: /turf/closed/wall | /area/virtual_domain
+20,34: /obj/machinery/door/airlock/maintenance | /turf/open/floor/iron | /area/virtual_domain
+21,34: /turf/closed/wall | /area/virtual_domain
+22,34: /turf/closed/wall | /area/virtual_domain
+23,34: /turf/closed/wall/r_wall | /area/virtual_domain
+24,34: /turf/closed/wall/r_wall | /area/virtual_domain
+25,34: /turf/closed/wall/r_wall | /area/virtual_domain
+26,34: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/iron | /area/virtual_domain
+27,34: /turf/closed/wall/r_wall | /area/virtual_domain
+28,34: /turf/closed/wall/r_wall | /area/virtual_domain
+29,34: /turf/closed/wall/r_wall | /area/virtual_domain
+30,34: /turf/closed/wall/r_wall | /area/virtual_domain
+31,34: /turf/closed/wall | /area/virtual_domain
+32,34: /turf/closed/wall | /area/virtual_domain
+10,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,33: /turf/closed/wall | /area/virtual_domain
+12,33: /obj/machinery/light/small/red/dim{dir = 8} | /obj/effect/turf_decal/stripes{dir = 9} | /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/iron | /area/virtual_domain
+13,33: /turf/open/floor/plating | /area/virtual_domain
+14,33: /obj/structure/disposalpipe/segment | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain
+15,33: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/stripes/corner{dir = 4} | /turf/open/floor/iron | /area/virtual_domain
+16,33: /turf/open/floor/plating | /area/virtual_domain
+17,33: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain
+18,33: /obj/machinery/door/poddoor/shutters/indestructible{dir = 4; id = "factorylockdown"} | /turf/open/floor/iron | /area/virtual_domain
+19,33: /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /obj/effect/turf_decal/trimline/yellow/warning{dir = 8} | /turf/open/floor/iron | /area/virtual_domain
+20,33: /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+21,33: /obj/effect/turf_decal/trimline/yellow/arrow_cw{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/broken{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+22,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/machinery/light/small/red/dim{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+23,33: /obj/structure/broken_flooring/side/directional/north | /turf/open/floor/plating | /area/virtual_domain
+24,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+25,33: /obj/machinery/light/dim{dir = 1} | /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+26,33: /obj/effect/decal/cleanable/blood/splatter/oil | /obj/effect/turf_decal/trimline/yellow/corner{dir = 1} | /obj/effect/turf_decal/trimline/yellow/corner{dir = 4} | /obj/effect/decal/cleanable/blood/drip | /obj/effect/decal/cleanable/blood/drip | /turf/open/floor/iron | /area/virtual_domain
+27,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+28,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+29,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+30,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+31,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/machinery/light/broken{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+32,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain
+
+[chunk 33 33 1]
+33,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,34: /turf/closed/mineral | /area/virtual_domain
+34,34: /turf/closed/mineral | /area/virtual_domain
+35,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+34,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain
+35,33: /obj/effect/turf_decal/trimline/yellow/line{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain
+36,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright

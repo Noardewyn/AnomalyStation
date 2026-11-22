@@ -1,0 +1,165 @@
+{
+  "width": 32,
+  "height": 32,
+  "states": [
+    {
+      "name": "light-nopower",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 253,
+      "rects": [
+        [
+          416,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-off",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 254,
+      "rects": [
+        [
+          448,
+          384,
+          32,
+          32
+        ],
+        [
+          480,
+          384,
+          32,
+          32
+        ],
+        [
+          512,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-on",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 257,
+      "rects": [
+        [
+          544,
+          384,
+          32,
+          32
+        ],
+        [
+          576,
+          384,
+          32,
+          32
+        ],
+        [
+          608,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-emissive-off",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 260,
+      "rects": [
+        [
+          0,
+          416,
+          32,
+          32
+        ],
+        [
+          32,
+          416,
+          32,
+          32
+        ],
+        [
+          64,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-emissive-on",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 263,
+      "rects": [
+        [
+          96,
+          416,
+          32,
+          32
+        ],
+        [
+          128,
+          416,
+          32,
+          32
+        ],
+        [
+          160,
+          416,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

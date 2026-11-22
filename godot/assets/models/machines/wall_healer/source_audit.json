@@ -1,0 +1,14 @@
+{
+  "atlas": "godot\\assets\\tg\\icons\\obj\\machines\\wall_healer.png",
+  "size": [
+    128,
+    96
+  ],
+  "tile_size": [
+    32,
+    32
+  ],
+  "sha256": "7d607674282c12c3ca258161358e112a1723ee3487d5c5ba9df3be589d252bd8",
+  "rgba_matches_dmi": true,
+  "duplicate_audit": "No existing wall healer model found."
+}

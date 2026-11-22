@@ -1,0 +1,35 @@
+anomaly-map 1
+source _maps/safehouses/ice.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/closed/wall/ice | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+3,6: /obj/effect/spawner/structure/window/ice | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+4,6: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/door/airlock/freezer | /obj/structure/fans/tiny | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+5,6: /obj/effect/spawner/structure/window/ice | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+2,5: /obj/effect/turf_decal/weather/snow/corner{dir = 9} | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/small/directional/west | /obj/machinery/smartfridge/drying/rack | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,5: /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/vending/coffee | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+4,5: /obj/effect/decal/cleanable/dirt/dust | /obj/effect/decal/cleanable/generic | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+5,5: /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+6,5: /obj/effect/decal/cleanable/dirt/dust | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+1,4: /obj/effect/spawner/structure/window/ice | /obj/structure/barricade/wooden/crude/snow | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+2,4: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /obj/effect/decal/cleanable/dirt/dust | /obj/structure/rack | /obj/item/grown/log | /obj/item/grown/log | /obj/item/grown/log | /obj/item/hatchet/wooden | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,4: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,4: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+5,4: /obj/effect/decal/cleanable/dirt/dust | /obj/effect/turf_decal/weather/snow/corner{dir = 4} | /obj/structure/railing/corner/end{dir = 4} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+6,4: /obj/structure/railing | /obj/effect/decal/cleanable/dirt/dust | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+7,4: /obj/effect/spawner/structure/window/ice | /obj/structure/barricade/wooden/crude/snow | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+1,3: /obj/effect/spawner/structure/window/ice | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+2,3: /obj/effect/turf_decal/weather/snow/corner{dir = 8} | /obj/effect/decal/cleanable/dirt/dust | /obj/structure/closet/crate/internals | /obj/item/tank/internals/oxygen | /obj/item/tank/internals/oxygen | /obj/item/tank/internals/oxygen | /obj/item/clothing/mask/breath | /obj/item/clothing/mask/breath | /obj/item/clothing/mask/breath | /obj/item/clothing/suit/hooded/wintercoat | /obj/item/clothing/suit/hooded/wintercoat | /obj/item/clothing/suit/hooded/wintercoat | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,3: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain/safehouse
+4,3: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain/safehouse
+5,3: /obj/effect/decal/cleanable/dirt/dust | /obj/effect/turf_decal/weather/snow/corner{dir = 1} | /obj/structure/table/wood | /obj/item/reagent_containers/cup/glass/coffee{pixel_x = 7; pixel_y = 13} | /obj/item/reagent_containers/cup/glass/coffee/no_lid{pixel_x = -4; pixel_y = 14} | /turf/open/floor/plating | /area/virtual_domain/safehouse
+6,3: /obj/effect/turf_decal/weather/snow/corner{dir = 5} | /obj/effect/decal/cleanable/dirt/dust | /obj/structure/table/wood | /obj/item/trash/chips{pixel_x = 8; pixel_y = 15} | /turf/open/floor/iron | /area/virtual_domain/safehouse
+7,3: /obj/effect/spawner/structure/window/ice | /obj/structure/barricade/wooden/crude/snow | /turf/open/floor/plating/snowed/standard_air | /area/virtual_domain/safehouse
+2,2: /obj/effect/turf_decal/weather/snow/corner{dir = 10} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,2: /obj/effect/turf_decal/weather/snow/corner | /obj/effect/decal/cleanable/dirt/dust | /obj/effect/decal/cleanable/generic | /obj/effect/turf_decal/trimline/dark_blue/line{dir = 9} | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+4,2: /obj/effect/turf_decal/weather/snow/corner | /obj/effect/decal/cleanable/dirt/dust | /obj/effect/turf_decal/trimline/dark_blue/line{dir = 1} | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+5,2: /obj/effect/turf_decal/weather/snow/corner | /obj/effect/decal/cleanable/dirt/dust | /obj/effect/turf_decal/trimline/dark_blue/line{dir = 5} | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/mineral/plastitanium/pod | /area/virtual_domain/safehouse
+6,2: /obj/effect/turf_decal/weather/snow/corner{dir = 6} | /obj/effect/decal/cleanable/dirt/dust | /obj/machinery/light/small/directional/east | /obj/structure/chair/wood{dir = 1} | /turf/open/floor/iron | /area/virtual_domain/safehouse
+1,1: /obj/modular_map_connector | /turf/closed/wall/ice | /area/virtual_domain/safehouse

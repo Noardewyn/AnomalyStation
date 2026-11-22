@@ -1,0 +1,83 @@
+{
+  "foam_dispenser": {
+    "atlas": "assets/tg/icons/obj/devices/tool.png",
+    "default": "ai-slipper0",
+    "states": {
+      "ai-slipper0": {
+        "name": "ai-slipper0",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 86,
+        "rects": [
+          [
+            288,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "ai-slipper1": {
+        "name": "ai-slipper1",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 88,
+        "rects": [
+          [
+            0,
+            256,
+            32,
+            32
+          ],
+          [
+            32,
+            256,
+            32,
+            32
+          ],
+          [
+            64,
+            256,
+            32,
+            32
+          ],
+          [
+            96,
+            256,
+            32,
+            32
+          ],
+          [
+            128,
+            256,
+            32,
+            32
+          ],
+          [
+            160,
+            256,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  }
+}

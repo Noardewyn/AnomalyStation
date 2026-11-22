@@ -1,0 +1,714 @@
+{
+  "requests_console_off": {
+    "base_state": "req_comp_off",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 166,
+        "shared_mesh": "Continuous_Housing.071",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Glass",
+        "triangles": 12,
+        "shared_mesh": "Status_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Message_Glass",
+        "triangles": 12,
+        "shared_mesh": "Message_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.004",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring.001",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.051",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 226
+  },
+  "requests_console_normal": {
+    "base_state": "req_comp_off",
+    "overlays": [
+      "req_comp0"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 166,
+        "shared_mesh": "Continuous_Housing.071",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Glass",
+        "triangles": 12,
+        "shared_mesh": "Status_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Message_Glass",
+        "triangles": 12,
+        "shared_mesh": "Message_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.004",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring.001",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.051",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen.008",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp0"
+      },
+      {
+        "name": "Message_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen.009",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp0"
+      }
+    ],
+    "triangles": 230
+  },
+  "requests_console_new_message": {
+    "base_state": "req_comp_off",
+    "overlays": [
+      "req_comp1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 166,
+        "shared_mesh": "Continuous_Housing.071",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Glass",
+        "triangles": 12,
+        "shared_mesh": "Status_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Message_Glass",
+        "triangles": 12,
+        "shared_mesh": "Message_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.004",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring.001",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.051",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen.010",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp1"
+      },
+      {
+        "name": "Message_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen.011",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp1"
+      }
+    ],
+    "triangles": 230
+  },
+  "requests_console_high_priority": {
+    "base_state": "req_comp_off",
+    "overlays": [
+      "req_comp2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 166,
+        "shared_mesh": "Continuous_Housing.071",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Glass",
+        "triangles": 12,
+        "shared_mesh": "Status_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Message_Glass",
+        "triangles": 12,
+        "shared_mesh": "Message_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.004",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring.001",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.051",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen.012",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp2"
+      },
+      {
+        "name": "Message_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen.013",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp2"
+      }
+    ],
+    "triangles": 230
+  },
+  "requests_console_emergency": {
+    "base_state": "req_comp_off",
+    "overlays": [
+      "req_comp3"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 166,
+        "shared_mesh": "Continuous_Housing.071",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Glass",
+        "triangles": 12,
+        "shared_mesh": "Status_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Message_Glass",
+        "triangles": 12,
+        "shared_mesh": "Message_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.004",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring.001",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.051",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Screen.014",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp3"
+      },
+      {
+        "name": "Message_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen.015",
+        "materials": [
+          "Requests_Console_Overlay_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "req_comp3"
+      }
+    ],
+    "triangles": 232
+  },
+  "requests_console_panel_open": {
+    "base_state": "req_comp_off",
+    "overlays": [
+      "req_comp_open"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 166,
+        "shared_mesh": "Continuous_Housing.071",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Glass",
+        "triangles": 12,
+        "shared_mesh": "Status_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Message_Glass",
+        "triangles": 12,
+        "shared_mesh": "Message_Glass.001",
+        "materials": [
+          "Requests_Console_Glass_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.004",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring.001",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.051",
+        "materials": [
+          "Requests_Console_Housing_Original.002"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 226
+  }
+}

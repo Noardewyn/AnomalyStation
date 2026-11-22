@@ -1,0 +1,110 @@
+{
+  "source": "tgstation/code/modules/power/gravitygenerator.dm",
+  "repairs": {
+    "fix0": "Needs screwdriver: refasten screws",
+    "fix1": "Needs welding: seal frame",
+    "fix2": "Needs 10 plasteel sheets",
+    "fix3": "Needs wrench: secure new plating"
+  },
+  "charge_overlays": {
+    "0-20": null,
+    "21-40": "startup",
+    "41-60": "idle",
+    "61-80": "activating",
+    "81-100": "activated"
+  },
+  "clips": {
+    "startup": {
+      "source_frames": 10,
+      "delay_deciseconds": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "duration_seconds": 1.0
+    },
+    "idle": {
+      "source_frames": 7,
+      "delay_deciseconds": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "duration_seconds": 0.7
+    },
+    "activating": {
+      "source_frames": 3,
+      "delay_deciseconds": [
+        1,
+        1,
+        1
+      ],
+      "duration_seconds": 0.3
+    },
+    "activated": {
+      "source_frames": 4,
+      "delay_deciseconds": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "duration_seconds": 0.4
+    },
+    "field_off": {
+      "purpose": "No overlay during 0-20 percent charge",
+      "duration_seconds": 0.03333333333333333
+    }
+  },
+  "models": [
+    {
+      "state": "off",
+      "file": "gravity_generator_low_profile_off.glb",
+      "clips": []
+    },
+    {
+      "state": "fix0",
+      "file": "gravity_generator_low_profile_fix0.glb",
+      "clips": []
+    },
+    {
+      "state": "fix1",
+      "file": "gravity_generator_low_profile_fix1.glb",
+      "clips": []
+    },
+    {
+      "state": "fix2",
+      "file": "gravity_generator_low_profile_fix2.glb",
+      "clips": []
+    },
+    {
+      "state": "fix3",
+      "file": "gravity_generator_low_profile_fix3.glb",
+      "clips": []
+    },
+    {
+      "state": "on",
+      "file": "gravity_generator_low_profile_operational.glb",
+      "clips": [
+        "startup",
+        "idle",
+        "activating",
+        "activated",
+        "field_off"
+      ]
+    }
+  ],
+  "repair_geometry": "Shared approved 2m closed geometry, original repair surface states; no detached wreckage simulation.",
+  "integration": "Models only. No runtime binding changes."
+}

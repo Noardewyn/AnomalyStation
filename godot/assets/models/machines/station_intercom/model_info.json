@@ -1,0 +1,254 @@
+{
+  "station_intercom_listening": {
+    "base_state": "intercom",
+    "overlays": [
+      "intercom_s"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Intercom_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Intercom_Housing.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom"
+      },
+      {
+        "name": "Speaker_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Speaker_Indicator.002",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom_s"
+      }
+    ],
+    "triangles": 90
+  },
+  "station_intercom_broadcasting": {
+    "base_state": "intercom",
+    "overlays": [
+      "intercom_m"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Intercom_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Intercom_Housing.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom"
+      },
+      {
+        "name": "Microphone_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Microphone_Indicator.002",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom_m"
+      }
+    ],
+    "triangles": 90
+  },
+  "station_intercom_two_way": {
+    "base_state": "intercom",
+    "overlays": [
+      "intercom_s",
+      "intercom_m"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Intercom_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Intercom_Housing.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom"
+      },
+      {
+        "name": "Speaker_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Speaker_Indicator.002",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom_s"
+      },
+      {
+        "name": "Microphone_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Microphone_Indicator.002",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom_m"
+      }
+    ],
+    "triangles": 102
+  },
+  "station_intercom_quiet": {
+    "base_state": "intercom",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Intercom_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Intercom_Housing.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.005",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom"
+      }
+    ],
+    "triangles": 78
+  },
+  "station_intercom_off": {
+    "base_state": "intercom-p",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Intercom_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Intercom_Housing.009",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.009",
+        "materials": [
+          "Intercom_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "intercom-p"
+      }
+    ],
+    "triangles": 78
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "industrial_suit_storage": [
+    "/obj/machinery/suit_storage_unit/industrial"
+  ],
+  "drone_shell_dispenser": [
+    "/obj/machinery/drone_dispenser"
+  ],
+  "weapon_scanner_gate": [
+    "/obj/machinery/scanner_gate/preset_guns"
+  ],
+  "training_bomb": [
+    "/obj/machinery/syndicatebomb/training"
+  ],
+  "gulag_teleporter": [
+    "/obj/machinery/gulag_teleporter"
+  ],
+  "gulag_item_reclaimer": [
+    "/obj/machinery/gulag_item_reclaimer"
+  ],
+  "monkey_recycler": [
+    "/obj/machinery/monkey_recycler"
+  ],
+  "basketball_hoop": [
+    "/obj/structure/hoop"
+  ],
+  "skeleton_model": [
+    "/obj/structure/mannequin/skeleton"
+  ],
+  "quartermaster_statue": [
+    "/obj/structure/statue/gold/qm"
+  ],
+  "snowman": [
+    "/obj/structure/statue/snow/snowman"
+  ],
+  "cloning_pod_exhibit": [
+    "/obj/structure/showcase/machinery/cloning_pod"
+  ],
+  "damaged_cryo_exhibit": [
+    "/obj/structure/showcase/machinery/oldpod"
+  ],
+  "fermenting_barrel": [
+    "/obj/structure/fermenting_barrel"
+  ],
+  "meat_spike": [
+    "/obj/structure/kitchenspike",
+    "/obj/structure/kitchenspike_frame"
+  ],
+  "ripley_wreckage": [
+    "/obj/structure/mecha_wreckage/ripley"
+  ],
+  "tachyon_doppler_array": [
+    "/obj/machinery/doppler_array"
+  ],
+  "ectoscopic_sniffer": [
+    "/obj/machinery/ecto_sniffer"
+  ],
+  "exploration_scanner": [
+    "/obj/machinery/exoscanner"
+  ],
+  "fishing_portal_generator": [
+    "/obj/machinery/fishing_portal_generator"
+  ],
+  "broadcast_camera": [
+    "/obj/machinery/greenscreen_camera"
+  ],
+  "restaurant_portal": [
+    "/obj/machinery/restaurant_portal/bar",
+    "/obj/machinery/restaurant_portal/restaurant"
+  ],
+  "television_exhibit": [
+    "/obj/structure/showcase/machinery/tv"
+  ]
+}

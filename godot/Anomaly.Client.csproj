@@ -1,0 +1,53 @@
+<Project Sdk="Godot.NET.Sdk/4.7.2">
+  <PropertyGroup>
+    <!-- D77 pins net10.0. Godot 4.7.2 generates net8.0 (its minimum); net10.0 is accepted and is required to reference
+         the net10.0 core libraries. The editor runs the assembly on the installed .NET 10 runtime. -->
+    <TargetFramework>net10.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>Anomaly.Client</RootNamespace>
+    <!-- The dev menu's ImGui backend reads ImGui's draw lists through pointers (scripts/Dev/ImGuiLayer.cs). -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <!-- Godot builds this project as Debug, ExportDebug or ExportRelease; the core projects know only Debug and
+         Release. An item definition reaches the transitive references (DmShim, Kernel) too. -->
+    <ProjectReference>
+      <SetConfiguration Condition=" '$(Configuration)' == 'ExportRelease' ">Configuration=Release</SetConfiguration>
+      <SetConfiguration Condition=" '$(Configuration)' != 'ExportRelease' ">Configuration=Debug</SetConfiguration>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <!-- The simulation core (Tg, and through it DmShim and Kernel). -->
+    <ProjectReference Include="..\src\Core\Tg\Anomaly.Core.Tg.csproj" />
+    <!-- M1: the wire protocol and the client replica, and the transports (LiteNetLib comes through Anomaly.Net). -->
+    <ProjectReference Include="..\src\Protocol\Anomaly.Protocol.csproj" />
+    <ProjectReference Include="..\src\Net\Anomaly.Net.csproj" />
+    <!-- M2: the motion core (own-capsule prediction, D103; the predictor and the input clock). -->
+    <ProjectReference Include="..\src\Core\Motion\Anomaly.Core.Motion.csproj" />
+  </ItemGroup>
+  <!-- Anomaly Editor (docs/ai/specs/map-editor.md 5.13): built in only when AnomalyEditor is true, so the game's own build carries no
+       server. Its default is on for a build in Godot's editor or by dotnet (Debug, Release) and off for an export; the editor's
+       export sets it (AnomalyEditor=true in the environment, which MSBuild reads as a property). -->
+  <PropertyGroup>
+    <AnomalyEditor Condition=" '$(AnomalyEditor)' == '' and '$(Configuration)' != 'ExportRelease' and '$(Configuration)' != 'ExportDebug' ">true</AnomalyEditor>
+    <DefineConstants Condition=" '$(AnomalyEditor)' == 'true' ">$(DefineConstants);ANOMALY_EDITOR</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(AnomalyEditor)' == 'true' ">
+    <!-- the game's own world, run inside the program to show a map as the game does (map-editor.md 3) -->
+    <ProjectReference Include="..\src\Server\Anomaly.Server.csproj" />
+    <!-- the .dmm import (map-editor.md 5.2): the converter of tools/Anomaly.Tools.Maps, its sources as they are -->
+    <Compile Include="..\tools\Anomaly.Tools.Maps\MapConverter.cs;..\tools\Anomaly.Tools.Maps\DmmFile.cs;..\tools\Anomaly.Tools.Maps\TypeIndex.cs;..\tools\Anomaly.Tools.Maps\DoorFloors.cs" LinkBase="Tools\Maps" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(AnomalyEditor)' != 'true' ">
+    <Compile Remove="scripts\Editor\**;scripts\Shared\Editor\**;scripts\GameScene.Editor*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- M4b slice 3: the dev menu (the owner, 2026-10-13): Dear ImGui through ImGui.NET (MIT), its native cimgui in the package. -->
+    <PackageReference Include="ImGui.NET" Version="1.91.6.1" />
+    <!-- D307: text to speech and speech to text on the client (Supertonic 3, Whisper) through sherpa-onnx (Apache-2.0), its native onnxruntime in the package. -->
+    <PackageReference Include="org.k2fsa.sherpa.onnx" Version="1.13.8" />
+    <!-- D319: the chat translator's Opus-MT models through ONNX Runtime's managed API (MIT) alone: the native onnxruntime is sherpa-onnx's
+         (1.28.2), so the two must stay on the same minor version. -->
+    <PackageReference Include="Microsoft.ML.OnnxRuntime.Managed" Version="1.28.0" />
+  </ItemGroup>
+</Project>

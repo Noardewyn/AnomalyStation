@@ -1,0 +1,42 @@
+{
+  "source": "assets/tg/icons/obj/doors/doorfire.png",
+  "state": "door_closed",
+  "rect": [
+    0,
+    0,
+    32,
+    32
+  ],
+  "source_sha256": "7d6bcda0a75543a7668a727089414a43cae48106a492b6eb884939a789910952",
+  "parts": {
+    "Frame": {
+      "triangles": 166,
+      "open_offset_godot": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Door_Upper": {
+      "triangles": 44,
+      "open_offset_godot": [
+        0.0,
+        0.95,
+        0.0
+      ]
+    },
+    "Door_Lower": {
+      "triangles": 92,
+      "open_offset_godot": [
+        0.0,
+        -0.85,
+        0.0
+      ]
+    }
+  },
+  "triangles": 302,
+  "nearest": true,
+  "original_png_embedded": true,
+  "glass_alpha": null,
+  "notes": "Closed tile; source direction 0. Rotate whole model for other cardinal directions."
+}

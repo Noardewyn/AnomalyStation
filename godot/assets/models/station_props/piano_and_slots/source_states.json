@@ -1,0 +1,251 @@
+{
+  "piano": {
+    "atlas": "assets/tg/icons/obj/art/musician.png",
+    "default": "piano",
+    "states": {
+      "piano": {
+        "name": "piano",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "pianobroken": {
+        "name": "pianobroken",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 3,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "slot_machine": {
+    "atlas": "assets/tg/icons/obj/machines/computer.png",
+    "default": "slots",
+    "states": {
+      "slots": {
+        "name": "slots",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 1228,
+        "rects": [
+          [
+            1248,
+            928,
+            32,
+            32
+          ]
+        ]
+      },
+      "slots_broken": {
+        "name": "slots_broken",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 1248,
+        "rects": [
+          [
+            576,
+            960,
+            32,
+            32
+          ]
+        ]
+      },
+      "slots_screen": {
+        "name": "slots_screen",
+        "dirs": 1,
+        "frames": 16,
+        "delays": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          5,
+          1,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 1229,
+        "rects": [
+          [
+            1280,
+            928,
+            32,
+            32
+          ],
+          [
+            0,
+            960,
+            32,
+            32
+          ],
+          [
+            32,
+            960,
+            32,
+            32
+          ],
+          [
+            64,
+            960,
+            32,
+            32
+          ],
+          [
+            96,
+            960,
+            32,
+            32
+          ],
+          [
+            128,
+            960,
+            32,
+            32
+          ],
+          [
+            160,
+            960,
+            32,
+            32
+          ],
+          [
+            192,
+            960,
+            32,
+            32
+          ],
+          [
+            224,
+            960,
+            32,
+            32
+          ],
+          [
+            256,
+            960,
+            32,
+            32
+          ],
+          [
+            288,
+            960,
+            32,
+            32
+          ],
+          [
+            320,
+            960,
+            32,
+            32
+          ],
+          [
+            352,
+            960,
+            32,
+            32
+          ],
+          [
+            384,
+            960,
+            32,
+            32
+          ],
+          [
+            416,
+            960,
+            32,
+            32
+          ],
+          [
+            448,
+            960,
+            32,
+            32
+          ]
+        ]
+      },
+      "slots_screen_working": {
+        "name": "slots_screen_working",
+        "dirs": 1,
+        "frames": 3,
+        "delays": [
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 1245,
+        "rects": [
+          [
+            480,
+            960,
+            32,
+            32
+          ],
+          [
+            512,
+            960,
+            32,
+            32
+          ],
+          [
+            544,
+            960,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  }
+}

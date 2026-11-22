@@ -1,0 +1,27 @@
+{
+  "parts": {
+    "Frame": {
+      "triangles": 112,
+      "vertices": 56
+    },
+    "Door_Upper": {
+      "triangles": 156,
+      "vertices": 80
+    },
+    "Door_Lower": {
+      "triangles": 44,
+      "vertices": 24
+    }
+  },
+  "atlas_sha256": "f75b110aba5af0106bdddaf279c332efbacdc606cc8f00240f0940eaf2ecbd1d",
+  "glass_alpha": 0.35,
+  "glass_thickness_m": 0.05333333333333334,
+  "leaf_thickness_m": 0.16,
+  "frame_thickness_m": 0.28,
+  "opening_offsets_godot_y": [
+    0.875,
+    -0.8125
+  ],
+  "nearest": true,
+  "original_png_embedded": true
+}

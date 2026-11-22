@@ -1,0 +1,29 @@
+anomaly-map 1
+source _maps/map_files/P2Load/P2Load.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/open/space/basic | /area/space
+
+[chunk 1 1 1]
+2,6: /obj/structure/lattice | /turf/open/space/basic | /area/space/nearstation
+2,5: /turf/closed/indestructible | /area/station/hallway/primary/central
+3,5: /turf/closed/indestructible | /area/station/hallway/primary/central
+4,5: /turf/closed/indestructible | /area/station/hallway/primary/central
+5,5: /turf/closed/indestructible | /area/station/hallway/primary/central
+6,5: /turf/closed/indestructible | /area/station/hallway/primary/central
+2,4: /turf/closed/indestructible | /area/station/hallway/primary/central
+3,4: /turf/open/indestructible | /area/station/hallway/primary/central
+4,4: /obj/effect/landmark/start/assistant | /turf/open/indestructible | /area/station/hallway/primary/central
+5,4: /obj/effect/landmark/latejoin | /obj/effect/landmark/start/assistant | /turf/open/indestructible | /area/station/hallway/primary/central
+6,4: /turf/closed/indestructible | /area/station/hallway/primary/central
+2,3: /turf/closed/indestructible | /area/station/hallway/primary/central
+3,3: /obj/effect/landmark/latejoin | /turf/open/indestructible | /area/station/hallway/primary/central
+4,3: /obj/item/crowbar{name = "\improper Bob's bar"; pixel_x = -4} | /turf/open/indestructible | /area/station/hallway/primary/central
+5,3: /turf/open/indestructible | /area/station/hallway/primary/central
+6,3: /turf/closed/indestructible | /area/station/hallway/primary/central
+2,2: /turf/closed/indestructible | /area/station/hallway/primary/central
+3,2: /turf/closed/indestructible | /area/station/hallway/primary/central
+4,2: /turf/closed/indestructible | /area/station/hallway/primary/central
+5,2: /turf/closed/indestructible | /area/station/hallway/primary/central
+6,2: /turf/closed/indestructible | /area/station/hallway/primary/central
+2,1: /obj/structure/lattice | /turf/open/space/basic | /area/space/nearstation

@@ -1,0 +1,78 @@
+{
+  "source_states": [
+    "on_7",
+    "on_9",
+    "off_7",
+    "off_9"
+  ],
+  "shared_corner_positions": [
+    [
+      -1.95,
+      -2.05,
+      0.12
+    ],
+    [
+      1.95,
+      -2.05,
+      0.12
+    ],
+    [
+      -1.95,
+      1.95,
+      0.12
+    ],
+    [
+      1.95,
+      1.95,
+      0.12
+    ]
+  ],
+  "triangles": {
+    "Generator_Left_Coil": 524,
+    "Generator_Left_Brace": 40,
+    "Generator_Right_Coil": 524,
+    "Generator_Right_Brace": 40,
+    "Generator_Center": 212,
+    "Active_Field_Ring": 1312,
+    "Installation_Base_3x3": 108,
+    "Floor_Conduits": 88,
+    "Rear_Field_Stabilizer": 388,
+    "Corner_1_Peripheral_Housing": 616,
+    "Corner_1_Peripheral_Central_Coil": 156,
+    "Corner_1_Peripheral_Cap": 52,
+    "Corner_1_Peripheral_Forks": 56,
+    "Corner_1_Peripheral_Lights": 24,
+    "Corner_2_Peripheral_Housing": 616,
+    "Corner_2_Peripheral_Central_Coil": 156,
+    "Corner_2_Peripheral_Cap": 52,
+    "Corner_2_Peripheral_Forks": 56,
+    "Corner_2_Peripheral_Lights": 24,
+    "Corner_3_Peripheral_Housing": 616,
+    "Corner_3_Peripheral_Central_Coil": 156,
+    "Corner_3_Peripheral_Cap": 52,
+    "Corner_3_Peripheral_Forks": 56,
+    "Corner_3_Peripheral_Lights": 24,
+    "Corner_4_Peripheral_Housing": 616,
+    "Corner_4_Peripheral_Central_Coil": 156,
+    "Corner_4_Peripheral_Cap": 52,
+    "Corner_4_Peripheral_Forks": 56,
+    "Corner_4_Peripheral_Lights": 24
+  },
+  "total_triangles": 6852,
+  "validation": {
+    "closed_meshes": true,
+    "zero_area_faces": 0,
+    "coplanar_same_facing_overlap_pairs": 0
+  },
+  "scope": "Model only. Four corner placements requested by user; original source lower tiles are 7 and 9. Runtime bindings untouched.",
+  "height_revision": {
+    "column_tops_from_floor_m": 2.0,
+    "columns": [
+      "Generator_Left_Coil",
+      "Generator_Right_Coil",
+      "Rear_Field_Stabilizer",
+      "Generator_Center"
+    ],
+    "corner_modules_unchanged": true
+  }
+}

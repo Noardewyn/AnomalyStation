@@ -1,0 +1,38 @@
+{
+  "orbital_mech_pad.002": [
+    "idle",
+    "launch",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "teleporter_hub.002": [
+    "inactive",
+    "active",
+    "maintenance_open",
+    "maintenance_close",
+    "active"
+  ],
+  "teleporter_station.002": [
+    "controller",
+    "controller-p",
+    "controller-c",
+    "powered",
+    "unpowered",
+    "calibrating",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "gateway_low_profile.002": [
+    "off",
+    "ready",
+    "active"
+  ],
+  "exploration_drone_launcher.002": [
+    "empty",
+    "launchpad_fuel_advanced",
+    "launchpad_fuel_exotic",
+    "launchpad_fuel_basic",
+    "launchpad_fuel_advanced",
+    "launchpad_fuel_exotic"
+  ]
+}

@@ -1,0 +1,1556 @@
+anomaly-map 1
+source _maps/templates/lazy_templates/ninja_den.dmm tg 1d99bd7f
+size 51 35 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+10,32: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+11,32: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+12,32: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+13,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+16,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+17,32: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+18,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+19,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+20,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+21,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+24,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,32: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+28,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+29,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+30,32: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+10,31: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+11,31: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+12,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+16,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+17,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+18,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+19,31: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+20,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+21,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,31: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+23,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+24,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,31: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+26,31: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+27,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+28,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+29,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+30,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+31,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,31: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+10,30: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+11,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+12,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,30: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+15,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+16,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+17,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+18,30: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+19,30: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+20,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+21,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,30: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+24,30: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+25,30: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+26,30: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+27,30: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+28,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+29,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+30,30: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+9,29: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+10,29: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+11,29: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+12,29: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,29: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,29: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,29: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+16,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+17,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+18,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+19,29: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+20,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+21,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+22,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+23,29: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+24,29: /obj/structure/toilet | /obj/structure/window/reinforced/survival_pod/spawner/directional/east | /obj/machinery/door/window/survival_pod/left/directional/south | /turf/open/floor/iron/showroomfloor | /area/centcom/central_command_areas/holding
+25,29: /obj/structure/toilet | /obj/structure/window/reinforced/survival_pod/spawner/directional/east | /obj/machinery/door/window/survival_pod/left/directional/south | /turf/open/floor/iron/showroomfloor | /area/centcom/central_command_areas/holding
+26,29: /obj/machinery/shower/directional/south | /obj/item/soap/syndie | /obj/structure/curtain | /obj/machinery/door/window/survival_pod/left/directional/south | /turf/open/floor/iron/showroomfloor | /area/centcom/central_command_areas/holding
+27,29: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+28,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+29,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+30,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+31,29: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+32,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+6,28: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+7,28: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+8,28: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+9,28: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+10,28: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+11,28: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+12,28: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,28: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+14,28: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+15,28: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+16,28: /obj/structure/dresser | /obj/machinery/light/small/directional/west | /turf/open/floor/bamboo/tatami{dir = 1} | /area/centcom/central_command_areas/holding
+17,28: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/bamboo/tatami{dir = 8} | /area/centcom/central_command_areas/holding
+18,28: /obj/structure/table/reinforced/plastitaniumglass | /turf/open/floor/bamboo/tatami{dir = 4} | /area/centcom/central_command_areas/holding
+19,28: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+20,28: /obj/structure/table/reinforced/plastitaniumglass | /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+21,28: /obj/structure/chair/wood{dir = 8} | /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+22,28: /obj/structure/dresser | /obj/machinery/light/small/directional/east | /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+23,28: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+24,28: /obj/structure/sink/directional/east | /obj/structure/mirror/directional/west | /obj/machinery/light/small/directional/south | /turf/open/floor/iron/showroomfloor | /area/centcom/central_command_areas/holding
+25,28: /turf/open/floor/iron/showroomfloor | /area/centcom/central_command_areas/holding
+26,28: /obj/structure/sink/directional/west | /obj/structure/mirror/directional/east | /obj/machinery/light/small/directional/south | /turf/open/floor/iron/showroomfloor | /area/centcom/central_command_areas/holding
+27,28: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+28,28: /obj/structure/dresser | /obj/machinery/light/small/directional/west | /turf/open/floor/bamboo/tatami{dir = 8} | /area/centcom/central_command_areas/holding
+29,28: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/bamboo/tatami{dir = 4} | /area/centcom/central_command_areas/holding
+30,28: /obj/structure/table/reinforced/plastitaniumglass | /turf/open/floor/bamboo/tatami{dir = 1} | /area/centcom/central_command_areas/holding
+31,28: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+32,28: /obj/structure/table/reinforced/plastitaniumglass | /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+4,27: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+5,27: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+6,27: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+7,27: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+8,27: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+9,27: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+10,27: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+11,27: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+12,27: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,27: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,27: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+15,27: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+16,27: /obj/item/bedsheet/syndie{dir = 4} | /obj/structure/bed{dir = 4} | /turf/open/floor/bamboo/tatami | /area/centcom/central_command_areas/holding
+17,27: /turf/open/floor/bamboo/tatami{dir = 8} | /area/centcom/central_command_areas/holding
+18,27: /obj/structure/table/reinforced/plastitaniumglass | /obj/item/toy/figure/ninja | /turf/open/floor/bamboo/tatami{dir = 4} | /area/centcom/central_command_areas/holding
+19,27: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+20,27: /obj/structure/table/reinforced/plastitaniumglass | /obj/item/toy/figure/syndie | /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+21,27: /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+22,27: /obj/structure/bed | /obj/item/bedsheet/syndie | /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+23,27: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+24,27: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+25,27: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /obj/machinery/door/airlock/wood{name = "Washroom"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+26,27: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+27,27: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+28,27: /obj/item/bedsheet/syndie{dir = 4} | /obj/structure/bed{dir = 4} | /turf/open/floor/bamboo/tatami{dir = 8} | /area/centcom/central_command_areas/holding
+29,27: /turf/open/floor/bamboo/tatami{dir = 4} | /area/centcom/central_command_areas/holding
+30,27: /obj/structure/table/reinforced/plastitaniumglass | /obj/item/toy/katana{desc = "As seen in your favourite Japanese cartoon."; name = "anime katana"} | /turf/open/floor/bamboo/tatami | /area/centcom/central_command_areas/holding
+31,27: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+32,27: /obj/structure/table/reinforced/plastitaniumglass | /obj/item/toy/mecha/phazon | /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+2,26: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,26: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+4,26: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+5,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+6,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+7,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+8,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+9,26: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+10,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+11,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+12,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,26: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,26: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+16,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+17,26: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/mineral_door/paperframe{name = "Guest Suite *A"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+18,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+19,26: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+20,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+21,26: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/mineral_door/paperframe{name = "Guest Suite *B"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+22,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+23,26: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+24,26: /obj/effect/turf_decal/siding/wood | /obj/item/kirbyplants/organic/plant10 | /obj/effect/turf_decal/tile/dark/opposingcorners | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+25,26: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/tile/dark/opposingcorners | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+26,26: /obj/effect/turf_decal/siding/wood | /obj/item/kirbyplants/organic/plant10 | /obj/effect/turf_decal/tile/dark/opposingcorners | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+27,26: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+28,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+29,26: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/mineral_door/paperframe{name = "Guest Suite *C"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+30,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+31,26: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+32,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+2,25: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,25: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+5,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+6,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+7,25: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+8,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+9,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+10,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+11,25: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+12,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,25: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+16,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+17,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+18,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+19,25: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+20,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+21,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+22,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+23,25: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+24,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+25,25: /mob/living/basic/bot/medbot/stationary{desc = "A little medical robot. You can make out the word \"sincerity\" on its chassis."; name = "Hijikata"; radio_key = null} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+26,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+27,25: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+28,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+29,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+30,25: /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+31,25: /obj/structure/sign/painting/library{pixel_y = 32} | /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+32,25: /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+2,24: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+5,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+6,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+7,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+8,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+9,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+10,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+11,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+12,24: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,24: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+14,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,24: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+16,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+17,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+18,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+19,24: /obj/machinery/light/directional/south | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+20,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+21,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+22,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+23,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+24,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+25,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+26,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+27,24: /obj/structure/sign/poster/contraband/syndicate_recruitment/directional/south | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+28,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+29,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+30,24: /obj/machinery/light/directional/south | /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+31,24: /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+32,24: /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+2,23: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,23: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+4,23: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+5,23: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+6,23: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+7,23: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+8,23: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+9,23: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+10,23: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+11,23: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+12,23: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,23: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,23: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+15,23: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+16,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/machinery/computer/arcade/amputation{dir = 1} | /turf/open/floor/eighties/red | /area/centcom/central_command_areas/holding
+17,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/machinery/computer/arcade/battle{dir = 1} | /turf/open/floor/eighties/red | /area/centcom/central_command_areas/holding
+18,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/machinery/computer/arcade/orion_trail{dir = 1} | /turf/open/floor/eighties/red | /area/centcom/central_command_areas/holding
+19,23: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+20,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+21,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+22,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+23,23: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+24,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/table/reinforced/plastitaniumglass | /obj/item/storage/basket | /obj/effect/turf_decal/tile/dark/fourcorners | /obj/machinery/light/small/directional/west | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+25,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/tile/dark/fourcorners | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+26,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/rack | /obj/item/toy/gun{pixel_y = 2} | /obj/item/toy/balloon/syndicate{pixel_x = 8; pixel_y = 2} | /obj/item/toy/balloon/syndicate{pixel_x = 8; pixel_y = 2} | /obj/item/toy/balloon/syndicate{pixel_x = 8; pixel_y = 2} | /obj/item/clothing/under/misc/syndicate_souvenir{pixel_y = -5} | /obj/item/clothing/under/misc/syndicate_souvenir{pixel_y = -5} | /obj/item/clothing/under/misc/syndicate_souvenir{pixel_y = -5} | /obj/effect/turf_decal/tile/dark/fourcorners | /obj/machinery/light/small/directional/east | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+27,23: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+28,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+29,23: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+30,23: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+31,23: /obj/structure/closet{anchored = 1; name = "Plasmaman suits"} | /obj/item/clothing/under/plasmaman | /obj/item/clothing/under/plasmaman/engineering | /obj/item/clothing/under/plasmaman/botany | /obj/item/clothing/under/plasmaman/janitor | /obj/item/clothing/under/plasmaman/chef | /obj/item/clothing/head/helmet/space/plasmaman | /obj/item/clothing/head/helmet/space/plasmaman/engineering | /obj/item/clothing/head/helmet/space/plasmaman/botany | /obj/item/clothing/head/helmet/space/plasmaman/janitor | /obj/item/clothing/head/helmet/space/plasmaman/white | /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+32,23: /obj/structure/closet{anchored = 1; desc = "A storage unit for plasmaman internals, courtesy of the Spider Clan."; icon_state = "emergency"; name = "Plasmaman emergency closet"} | /obj/item/clothing/mask/breath | /obj/item/clothing/mask/breath | /obj/item/clothing/mask/breath | /obj/item/clothing/mask/breath | /obj/item/clothing/mask/breath | /obj/item/tank/internals/plasmaman/belt/full | /obj/item/tank/internals/plasmaman/belt/full | /obj/item/tank/internals/plasmaman/belt/full | /obj/item/tank/internals/plasmaman/belt/full | /obj/item/tank/internals/plasmaman/belt/full | /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+2,22: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,22: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,22: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+5,22: /obj/structure/table/reinforced | /obj/machinery/microwave{pixel_y = 6} | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+6,22: /obj/machinery/griddle | /obj/item/kitchen/rollingpin | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+7,22: /obj/machinery/oven/range | /obj/machinery/light/directional/north | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+8,22: /obj/machinery/deepfryer | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+9,22: /obj/structure/table/reinforced | /obj/item/book/manual/chef_recipes | /obj/item/knife/kitchen | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+10,22: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+11,22: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+12,22: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+13,22: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,22: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,22: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+16,22: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+17,22: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+18,22: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+19,22: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+20,22: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+21,22: /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+22,22: /obj/machinery/light/small/directional/east | /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+23,22: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+24,22: /obj/effect/turf_decal/siding/wood | /obj/structure/table/reinforced/plastitaniumglass | /obj/item/clothing/suit/costume/hawaiian{pixel_x = -3; pixel_y = -3} | /obj/item/clothing/suit/costume/hawaiian | /obj/item/clothing/suit/costume/hawaiian{pixel_x = 3; pixel_y = 3} | /obj/item/clothing/suit/costume/hawaiian | /obj/effect/turf_decal/tile/dark/fourcorners | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+25,22: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/tile/dark/fourcorners | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+26,22: /obj/effect/turf_decal/siding/wood | /obj/machinery/washing_machine | /obj/effect/turf_decal/tile/dark/fourcorners | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+27,22: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+28,22: /obj/machinery/light/small/directional/west | /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+29,22: /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+30,22: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+31,22: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+32,22: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+1,21: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,21: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,21: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+5,21: /obj/structure/table/reinforced | /obj/item/storage/fancy/egg_box | /obj/item/reagent_containers/condiment/flour{pixel_x = -5; pixel_y = 9} | /obj/item/reagent_containers/condiment/rice{pixel_y = 12} | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+6,21: /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+7,21: /obj/machinery/duct | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+8,21: /obj/machinery/duct | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+9,21: /obj/structure/sink/kitchen/directional/west | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+10,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+11,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+12,21: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+13,21: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+14,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+15,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+16,21: /obj/effect/turf_decal/siding/wood | /obj/structure/closet/crate/bin | /obj/item/camera_film | /obj/machinery/light/small/directional/west | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+17,21: /obj/effect/turf_decal/siding/wood | /obj/structure/chair/wood{dir = 4} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+18,21: /obj/structure/table/wood | /obj/effect/turf_decal/siding/wood | /obj/item/paper_bin | /obj/item/pen/fountain | /obj/item/camera/detective{desc = "A polaroid camera with extra capacity for social media marketing."; name = "Professional camera"} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+19,21: /obj/effect/turf_decal/siding/wood | /obj/structure/chair/wood{dir = 8} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+20,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+21,21: /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+22,21: /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+23,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+24,21: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+25,21: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+26,21: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+27,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+28,21: /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+29,21: /turf/open/floor/iron/stairs/medium | /area/centcom/central_command_areas/holding
+30,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+31,21: /obj/effect/turf_decal/siding/wood | /obj/structure/chair/sofa/corp/right{pixel_y = 6} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+32,21: /obj/effect/turf_decal/siding/wood | /obj/structure/chair/sofa/corp/left{pixel_y = 6} | /obj/machinery/light/small/directional/east | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+1,20: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,20: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+3,20: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,20: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+5,20: /obj/structure/table/reinforced | /obj/item/food/grown/tea/astra{pixel_y = 13} | /obj/item/food/grown/soybeans{pixel_y = 13} | /obj/machinery/reagentgrinder{desc = "Used to grind things up into raw materials and liquids."; pixel_y = 5} | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+6,20: /obj/structure/closet/crate/bin | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+7,20: /obj/machinery/duct | /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+8,20: /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+9,20: /turf/open/floor/iron/cafeteria | /area/centcom/central_command_areas/holding
+10,20: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/machinery/door/airlock/wood{name = "Kitchen"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+11,20: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+12,20: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+13,20: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+14,20: /obj/machinery/vending/dinnerware | /obj/machinery/light/warm/directional/north | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+15,20: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+16,20: /obj/machinery/vending/coffee{default_price = 0; extra_price = 0; name = "\improper Jim Norton's Quebecois Coffee"} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+17,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+18,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+19,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+20,20: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+21,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+22,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+23,20: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+24,20: /obj/structure/bookcase/random/nonfiction | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+25,20: /obj/structure/bookcase/random/nonfiction | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+26,20: /obj/structure/bookcase/random/nonfiction | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+27,20: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+28,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+29,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+30,20: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+31,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+32,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+1,19: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,19: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+3,19: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,19: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+5,19: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+6,19: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+7,19: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /obj/machinery/door/airlock/wood{name = "Bar"} | /obj/machinery/duct | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+8,19: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+9,19: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+10,19: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+11,19: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+12,19: /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+13,19: /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+14,19: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+15,19: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+16,19: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+17,19: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+18,19: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+19,19: /obj/structure/table/wood | /obj/item/flashlight/lamp{pixel_x = -5; pixel_y = 11} | /obj/item/camera_film | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+20,19: /obj/structure/chair/wood{dir = 8} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+21,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+22,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+23,19: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+24,19: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+25,19: /obj/machinery/light/small/directional/south | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+26,19: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+27,19: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+28,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+29,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+30,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+31,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+32,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+1,18: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,18: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+3,18: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,18: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+5,18: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+6,18: /obj/structure/table/wood | /obj/machinery/microwave{pixel_y = 6} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+7,18: /obj/machinery/duct | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+8,18: /obj/structure/sink/kitchen/directional/south | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+9,18: /obj/machinery/vending/boozeomat | /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+10,18: /obj/structure/table/wood | /obj/machinery/light/small/directional/north | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+11,18: /obj/structure/chair/stool/bar/directional/west | /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+12,18: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+13,18: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+14,18: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+15,18: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+16,18: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+17,18: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Dining Hall"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+18,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+19,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+20,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+21,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+22,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood/corner | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+23,18: /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+24,18: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+25,18: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+26,18: /obj/structure/chair/comfy/black{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+27,18: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+28,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood/corner{dir = 8} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+29,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/chair/wood{dir = 4} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+30,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/table/wood | /obj/item/wallframe/newscaster{pixel_x = -6} | /obj/item/flashlight/lamp/bananalamp{pixel_x = 9; pixel_y = 9} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+31,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/chair/wood{dir = 8} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+32,18: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+1,17: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,17: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+3,17: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,17: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+5,17: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+6,17: /obj/structure/table/wood | /obj/machinery/chem_dispenser/drinks/beer{dir = 4; pixel_x = -8; pixel_y = 1} | /obj/item/reagent_containers/cup/beaker{pixel_x = 7; pixel_y = -4} | /obj/machinery/light/small/directional/west | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+7,17: /obj/machinery/duct | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+8,17: /obj/item/kirbyplants/organic/plant10 | /obj/machinery/duct | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+9,17: /obj/structure/table/wood | /obj/item/paper_bin | /obj/item/pen/fountain | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+10,17: /obj/structure/table/wood | /obj/item/food/sashimi | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+11,17: /obj/structure/chair/stool/bar/directional/west | /obj/effect/turf_decal/siding/wood/corner{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+12,17: /obj/effect/turf_decal/siding/wood{dir = 5} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+13,17: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+14,17: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+15,17: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+16,17: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+17,17: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Dining Hall"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+18,17: /obj/effect/turf_decal/siding/wood | /obj/machinery/light/small/directional/south | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+19,17: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+20,17: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+21,17: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+22,17: /obj/effect/turf_decal/siding/wood{dir = 9} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+23,17: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+24,17: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+25,17: /obj/machinery/light/small/directional/north | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+26,17: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+27,17: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+28,17: /obj/effect/turf_decal/siding/wood{dir = 5} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+29,17: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+30,17: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+31,17: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+32,17: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+1,16: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,16: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+3,16: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+4,16: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+5,16: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+6,16: /obj/structure/table/wood | /obj/machinery/chem_dispenser/drinks{dir = 4; pixel_x = -8; pixel_y = 4} | /obj/item/reagent_containers/condiment/enzyme{pixel_x = 10; pixel_y = 2} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+7,16: /obj/machinery/duct | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+8,16: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+9,16: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+10,16: /obj/structure/table/wood | /obj/item/reagent_containers/cup/glass/bottle/sake{pixel_y = 15} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+11,16: /obj/structure/chair/stool/bar/directional/west | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+12,16: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+13,16: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+14,16: /obj/structure/chair/bronze{dir = 4} | /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+15,16: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/table/wood/fancy/green | /obj/item/flashlight/flare/candle/infinite{pixel_y = 6} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+16,16: /obj/structure/chair/bronze{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+17,16: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+18,16: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+19,16: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+20,16: /obj/structure/bookcase/random/fiction | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+21,16: /obj/structure/bookcase/random/fiction | /obj/machinery/light/small/directional/east | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+22,16: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+23,16: /obj/structure/table/wood | /obj/machinery/computer/libraryconsole/bookmanagement | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+24,16: /obj/structure/chair/wood{dir = 8} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+25,16: /obj/structure/bed/dogbed/cayenne{name = "Paprika's bed"} | /mob/living/basic/carp/pet/cayenne{desc = "It's Paprika! One of the Spider Clan's lovable Space Carp!"; faction = list("neutral"); name = "Paprika"; real_name = "Paprika"} | /obj/machinery/light/warm/directional/south | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+26,16: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+27,16: /obj/structure/table/wood | /obj/machinery/computer/libraryconsole/bookmanagement | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+28,16: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+29,16: /obj/structure/bookcase/random/reference | /obj/machinery/light/small/directional/west | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+30,16: /obj/structure/bookcase/random/adult | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+31,16: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+32,16: /obj/machinery/vending/cigarette/syndicate | /obj/machinery/light/small/directional/south | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+1,15: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,15: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+3,15: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,15: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+5,15: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+6,15: /obj/item/food/grown/rice | /obj/item/food/grown/rice | /obj/item/food/grown/rice | /obj/item/food/grown/rice | /obj/item/food/grown/rice | /obj/item/food/grown/potato | /obj/item/food/grown/potato | /obj/item/food/grown/potato | /obj/item/food/grown/potato | /obj/item/food/grown/potato | /obj/item/food/grown/onion | /obj/item/food/grown/onion | /obj/item/food/grown/onion/red | /obj/item/food/grown/onion/red | /obj/item/food/grown/coffee | /obj/structure/closet/secure_closet/freezer/fridge/open{name = "kitchen cabinet"} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+7,15: /obj/machinery/duct | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+8,15: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+9,15: /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+10,15: /obj/structure/table/wood | /obj/item/food/chawanmushi | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+11,15: /obj/structure/chair/stool/bar/directional/west | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+12,15: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+13,15: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+14,15: /obj/structure/chair/bronze{dir = 4} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+15,15: /obj/effect/turf_decal/siding/wood | /obj/structure/table/wood/fancy/green | /obj/effect/spawner/random/entertainment/gambling | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+16,15: /obj/structure/chair/bronze{dir = 8} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+17,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+18,15: /obj/effect/turf_decal/siding/wood | /obj/machinery/vending/snack/orange | /obj/machinery/light/small/directional/north | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+19,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+20,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+21,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+22,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+23,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+24,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+25,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+26,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+27,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+28,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+29,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+30,15: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+31,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+32,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+1,14: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,14: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+3,14: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+4,14: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+5,14: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+6,14: /obj/structure/closet/secure_closet/freezer/fridge/open | /obj/item/food/grown/chili | /obj/item/food/grown/chili | /obj/item/food/grown/chili | /obj/item/food/grown/chili | /obj/item/food/grown/chili | /obj/item/reagent_containers/condiment/milk | /obj/item/reagent_containers/condiment/milk | /obj/item/reagent_containers/condiment/soymilk | /obj/item/reagent_containers/condiment/soymilk | /obj/item/storage/fancy/egg_box | /obj/item/food/grown/citrus/lime | /obj/item/food/grown/citrus/orange | /obj/item/food/grown/citrus/lemon | /obj/item/food/grown/melonlike/watermelon | /obj/machinery/light/small/directional/west | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+7,14: /obj/machinery/duct | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+8,14: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+9,14: /obj/structure/table/wood | /obj/item/food/grown/tea/astra | /obj/item/food/grown/soybeans | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+10,14: /obj/structure/table/wood | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+11,14: /obj/structure/chair/stool/bar/directional/west | /obj/effect/turf_decal/siding/wood/corner | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+12,14: /obj/effect/turf_decal/siding/wood{dir = 6} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+13,14: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+14,14: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+15,14: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+16,14: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+17,14: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Dining Hall"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+18,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+19,14: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+20,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+21,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+22,14: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+23,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+24,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+25,14: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+26,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+27,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+28,14: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+29,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+30,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+31,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+32,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+1,13: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,13: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+3,13: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+4,13: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+5,13: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+6,13: /obj/structure/reagent_dispensers/plumbed | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+7,13: /obj/machinery/duct | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+8,13: /obj/structure/closet/crate/bin | /obj/item/soap/syndie | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+9,13: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+10,13: /obj/structure/table/wood | /obj/item/flashlight/lamp/green | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+11,13: /obj/structure/chair/stool/bar/directional/west | /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+12,13: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+13,13: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+14,13: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+15,13: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+16,13: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+17,13: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Dining Hall"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+18,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+19,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+20,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+21,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+22,13: /obj/machinery/light/directional/south | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+23,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+24,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+25,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+26,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+27,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+28,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+29,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+30,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+31,13: /obj/machinery/light/directional/south | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+32,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+1,12: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,12: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+3,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+4,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+5,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+6,12: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+7,12: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/machinery/door/airlock/wood{name = "Freezer"} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+8,12: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+9,12: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+10,12: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+11,12: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+12,12: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /obj/structure/closet/crate/bin{pixel_y = 6} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+13,12: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+14,12: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+15,12: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+16,12: /obj/machinery/light/warm/directional/east | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+17,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+18,12: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+19,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+20,12: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+21,12: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+22,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+23,12: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+24,12: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+25,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+26,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+27,12: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+28,12: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+29,12: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+30,12: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+31,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+32,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+1,11: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+2,11: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,11: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+4,11: /obj/structure/closet/secure_closet/freezer/fridge/open{name = "freezer"} | /obj/item/food/meat/slab/killertomato | /obj/item/food/meat/slab/killertomato | /obj/item/food/grown/tomato | /obj/item/food/grown/tomato | /obj/item/food/grown/tomato | /obj/item/food/grown/wheat | /obj/item/food/grown/wheat | /obj/item/food/grown/wheat | /obj/item/food/grown/berries | /obj/item/food/grown/berries | /obj/item/food/grown/cabbage | /obj/item/food/grown/cherries | /obj/item/food/grown/cherries | /obj/item/reagent_containers/condiment/enzyme | /obj/item/food/grown/redbeet | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+5,11: /obj/structure/closet/secure_closet/freezer/meat/open | /obj/item/food/fishmeat | /obj/item/food/fishmeat | /obj/item/food/fishmeat | /obj/item/food/fishmeat | /obj/item/food/fishmeat | /obj/item/food/meat/slab/rawcrab | /obj/item/food/meat/slab/rawcrab | /obj/item/food/meat/slab/rawcrab | /obj/item/food/meat/slab/rawcrab | /obj/item/food/meat/slab/rawcrab | /obj/item/food/meat/slab/synthmeat | /obj/item/food/meat/slab/synthmeat | /obj/item/food/meat/slab/synthmeat | /obj/item/food/meat/slab/synthmeat | /obj/item/food/meat/slab/synthmeat | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+6,11: /obj/item/food/meat/slab/chicken | /obj/item/food/meat/slab/chicken | /obj/item/food/meat/slab/chicken | /obj/item/food/meat/slab/chicken | /obj/item/food/meat/slab/chicken | /obj/item/food/meat/slab/bear | /obj/item/food/meat/slab/bear | /obj/item/food/meat/slab/bear | /obj/item/food/meat/slab/bear | /obj/item/food/meat/slab/bear | /obj/item/food/meat/slab/monkey | /obj/item/food/meat/slab/monkey | /obj/item/food/meat/slab/monkey | /obj/item/food/meat/slab/monkey | /obj/item/food/meat/slab/monkey | /obj/structure/closet/secure_closet/freezer/meat/open | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+7,11: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+8,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+9,11: /turf/open/water{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+10,11: /turf/open/water{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+11,11: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+12,11: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+13,11: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+14,11: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+15,11: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+16,11: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+17,11: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+18,11: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+19,11: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+20,11: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+21,11: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,11: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,11: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+24,11: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,11: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+26,11: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+27,11: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/vault/rock | /area/centcom/central_command_areas/holding
+28,11: /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+29,11: /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+30,11: /obj/structure/chair/pew/left{dir = 8} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+31,11: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+32,11: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+2,10: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,10: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+4,10: /obj/machinery/light/small/directional/west | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+5,10: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+6,10: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+7,10: /obj/machinery/light/small/directional/east | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+8,10: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+9,10: /obj/machinery/light/warm/directional/west | /turf/open/water{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+10,10: /turf/open/water{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+11,10: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+12,10: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+13,10: /obj/structure/flora/rock/pile/jungle/large/style_random | /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+14,10: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+15,10: /obj/structure/musician/piano | /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+16,10: /obj/structure/chair/stool/directional/west | /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+17,10: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+18,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+19,10: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+20,10: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+21,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+24,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,10: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+27,10: /obj/machinery/light/small/directional/south | /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/vault/rock | /area/centcom/central_command_areas/holding
+28,10: /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+29,10: /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+30,10: /obj/machinery/light/small/directional/south | /obj/structure/chair/pew/right{dir = 8} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+31,10: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+32,10: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+2,9: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+4,9: /obj/machinery/gibber | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+5,9: /obj/machinery/processor | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+6,9: /obj/machinery/icecream_vat | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+7,9: /obj/structure/kitchenspike | /obj/item/gun/magic/hook | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+8,9: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+9,9: /turf/open/water{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+10,9: /turf/open/water{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+11,9: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+12,9: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+13,9: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+14,9: /obj/machinery/light/directional/south | /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+15,9: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+16,9: /turf/open/misc/beach/sand | /area/centcom/central_command_areas/holding
+17,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+18,9: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+19,9: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+20,9: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+21,9: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,9: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+23,9: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+24,9: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+25,9: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+27,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+28,9: /turf/closed/indestructible/fakedoor{name = "Guest House Entrance"} | /area/centcom/central_command_areas/holding
+29,9: /turf/closed/indestructible/fakedoor{name = "Guest House Entrance"} | /area/centcom/central_command_areas/holding
+30,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+31,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+32,9: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+2,8: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+4,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+5,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+6,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+7,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+8,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+9,8: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+10,8: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+11,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+12,8: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+13,8: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+14,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+15,8: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+16,8: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+17,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+18,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+19,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+20,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+21,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,8: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+24,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,8: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,8: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+29,8: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,8: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+2,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+3,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+4,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+5,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+6,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+7,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+8,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+9,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+10,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+11,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+12,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+13,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+14,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+15,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+16,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+17,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+18,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+19,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+20,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+21,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+22,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+23,7: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,7: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,7: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,7: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,7: /obj/item/flashlight/lantern | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,7: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+29,7: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,7: /obj/item/flashlight/lantern | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,7: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,7: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,6: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,6: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,6: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+26,6: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,6: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,6: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+29,6: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,6: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,6: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,6: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,5: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,5: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,5: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,5: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,5: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,5: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+29,5: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,5: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,5: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,5: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+23,4: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,4: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,4: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+26,4: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,4: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,4: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+29,4: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,4: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,4: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,4: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,3: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,3: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+25,3: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,3: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,3: /obj/item/flashlight/lantern | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,3: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+29,3: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,3: /obj/item/flashlight/lantern | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,3: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,3: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+25,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+26,2: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,2: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,2: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+29,2: /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,2: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/ironsand{color = "#525252"; initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+31,2: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+32,2: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+25,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+26,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+27,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+28,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+29,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+30,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+31,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+32,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+
+[chunk 33 1 1]
+33,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+35,32: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+36,32: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+37,32: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+38,32: /turf/closed/indestructible/fakedoor{name = "Guest House Back Entrance"} | /area/centcom/central_command_areas/holding
+39,32: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,32: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,32: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Shrine"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,32: /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+43,32: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+44,32: /obj/effect/turf_decal/siding/wood/corner{dir = 4} | /obj/effect/turf_decal/siding/wood/corner | /obj/effect/turf_decal/siding/wood/corner{dir = 1} | /obj/effect/turf_decal/siding/wood/corner{dir = 8} | /obj/structure/beebox{name = "Shrine"} | /turf/open/floor/wood | /area/centcom/central_command_areas/holding
+45,32: /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+46,32: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+47,32: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+35,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+36,31: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,31: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+38,31: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,31: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,31: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,31: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,31: /obj/item/flashlight/lantern | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+43,31: /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+44,31: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+45,31: /obj/item/flashlight/lantern | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+46,31: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+47,31: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+48,31: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+49,31: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+50,31: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,30: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+35,30: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+36,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,30: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,30: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+39,30: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,30: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,30: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,30: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+43,30: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+44,30: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+45,30: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+46,30: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+47,30: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+48,30: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+49,30: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,30: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+34,29: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+35,29: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,29: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,29: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,29: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,29: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,29: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,29: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,29: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+43,29: /obj/machinery/light/directional/north | /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+44,29: /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+45,29: /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+46,29: /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+47,29: /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+48,29: /obj/machinery/vending/clothing | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,29: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+50,29: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,28: /obj/structure/chair/wood{dir = 8} | /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+34,28: /obj/structure/dresser | /obj/machinery/light/small/directional/east | /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+35,28: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,28: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,28: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,28: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,28: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,28: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,28: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Performance Room"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,28: /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+43,28: /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+44,28: /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+45,28: /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+46,28: /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+47,28: /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+48,28: /obj/structure/table/wood/fancy/royalblue | /obj/item/clothing/mask/animal/pig | /obj/item/clothing/mask/animal/horsehead | /obj/item/clothing/mask/animal/small/rat | /obj/item/clothing/mask/fakemoustache{pixel_y = 9} | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,28: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+50,28: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,27: /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+34,27: /obj/structure/bed | /obj/item/bedsheet/syndie | /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+35,27: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,27: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,27: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,27: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,27: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,27: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,27: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Performance Room"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,27: /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+43,27: /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+44,27: /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+45,27: /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+46,27: /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+47,27: /turf/open/floor/bamboo/tatami/purple{dir = 1} | /area/centcom/central_command_areas/holding
+48,27: /obj/structure/table/wood/fancy/royalblue | /obj/item/instrument/piano_synth | /obj/item/instrument/saxophone | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,27: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+50,27: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,26: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/mineral_door/paperframe{name = "Guest Suite *D"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+34,26: /obj/structure/window/paperframe{can_atmos_pass = 0} | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+35,26: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,26: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+37,26: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+38,26: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,26: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,26: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,26: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,26: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+43,26: /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+44,26: /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+45,26: /turf/open/floor/bamboo/tatami/purple{dir = 8} | /area/centcom/central_command_areas/holding
+46,26: /turf/open/floor/bamboo/tatami/purple{dir = 4} | /area/centcom/central_command_areas/holding
+47,26: /obj/machinery/light/directional/south | /turf/open/floor/bamboo/tatami/purple | /area/centcom/central_command_areas/holding
+48,26: /obj/machinery/vending/autodrobe | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,26: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+50,26: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+51,26: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,25: /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+34,25: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+35,25: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+36,25: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,25: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+38,25: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+39,25: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,25: /obj/machinery/light/directional/east | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+43,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+44,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+45,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+46,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+47,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+48,25: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+49,25: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,25: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+51,25: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,24: /obj/effect/landmark/holding_facility | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+34,24: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+35,24: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+36,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,24: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,24: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,24: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,24: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,24: /obj/structure/closet | /obj/effect/spawner/surgery_tray/full | /obj/machinery/iv_drip | /obj/item/emergency_bed | /obj/item/storage/medkit/regular | /obj/item/reagent_containers/medigel/synthflesh | /obj/item/reagent_containers/medigel/synthflesh | /obj/item/reagent_containers/medigel/synthflesh | /obj/item/organ/heart/cybernetic/tier2 | /obj/item/organ/heart/cybernetic/tier2 | /obj/item/defibrillator | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+43,24: /obj/machinery/defibrillator_mount/directional/north | /obj/machinery/stasis | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,24: /obj/structure/closet/crate/freezer/blood | /obj/machinery/light/small/directional/north | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+45,24: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+46,24: /obj/structure/closet | /obj/item/clothing/under/costume/jabroni | /obj/item/clothing/under/costume/geisha | /obj/item/clothing/under/costume/kilt | /obj/item/clothing/under/costume/roman | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,24: /obj/structure/rack | /obj/item/nullrod/claymore{damtype = "stamina"; force = 30; pixel_x = 4; pixel_y = -1} | /obj/item/nullrod/claymore/darkblade{damtype = "stamina"; force = 30; pixel_x = -3; pixel_y = 3} | /obj/machinery/light/directional/north | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,24: /obj/structure/rack | /obj/item/melee/energy/sword/nullrod/red{damtype = "stamina"; active_force = 30} | /obj/item/nullrod/claymore/katana{damtype = "stamina"; force = 30; pixel_x = -8; pixel_y = -1} | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,24: /obj/structure/table/wood/fancy/red | /obj/item/toy/spinningtoy | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,24: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+51,24: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,23: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+34,23: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+35,23: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,23: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,23: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,23: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,23: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,23: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,23: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Dojo"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,23: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+43,23: /mob/living/basic/bot/medbot/stationary{desc = "When engaged in combat, the vanquishing of thine enemy can be the warrior's only concern."; name = "Momo"; radio_key = null} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,23: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+45,23: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Red"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+46,23: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,23: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,23: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,23: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,23: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+51,23: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,22: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+34,22: /obj/structure/toilet/greyscale{dir = 4} | /obj/structure/sink/directional/west | /obj/structure/mirror/directional/east | /obj/machinery/light/small/directional/north | /turf/open/floor/iron/showroomfloor | /area/centcom/central_command_areas/holding
+35,22: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,22: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+37,22: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,22: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,22: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,22: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,22: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,22: /obj/item/kirbyplants/organic/plant10 | /obj/machinery/light/small/directional/south | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+43,22: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,22: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+45,22: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+46,22: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,22: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,22: /obj/structure/chair/stool/directional/south | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,22: /obj/structure/chair/stool/directional/south | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,22: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+51,22: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+34,21: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/machinery/door/airlock/wood{name = "Toilet"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+35,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,21: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+37,21: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+38,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+39,21: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,21: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+43,21: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /obj/structure/mineral_door/paperframe{name = "Spectator's Lounge"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+45,21: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+46,21: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,21: /obj/machinery/door/airlock/wood{name = "Red Team"} | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,21: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,21: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+51,21: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+33,20: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "East Wing"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+34,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+35,20: /obj/machinery/light/directional/north | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+36,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+37,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+38,20: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+39,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,20: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,20: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+42,20: /obj/item/kirbyplants/organic/plant10 | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+43,20: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,20: /obj/structure/chair/wood{dir = 4} | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+45,20: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+46,20: /turf/open/floor/bamboo/tatami/black{dir = 8} | /area/centcom/central_command_areas/holding
+47,20: /turf/open/floor/bamboo/tatami/black{dir = 4} | /area/centcom/central_command_areas/holding
+48,20: /turf/open/floor/bamboo/tatami/black{dir = 8} | /area/centcom/central_command_areas/holding
+49,20: /turf/open/floor/bamboo/tatami/black{dir = 4} | /area/centcom/central_command_areas/holding
+50,20: /obj/machinery/light/small/directional/north | /turf/open/floor/bamboo/tatami/black{dir = 1} | /area/centcom/central_command_areas/holding
+51,20: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,19: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "East Wing"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+34,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+35,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+36,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+37,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+38,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+39,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,19: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,19: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+42,19: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+43,19: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,19: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+45,19: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+46,19: /turf/open/floor/bamboo/tatami/black{dir = 1} | /area/centcom/central_command_areas/holding
+47,19: /turf/open/floor/bamboo/tatami/black{dir = 8} | /area/centcom/central_command_areas/holding
+48,19: /turf/open/floor/bamboo/tatami/black{dir = 4} | /area/centcom/central_command_areas/holding
+49,19: /turf/open/floor/bamboo/tatami/black{dir = 1} | /area/centcom/central_command_areas/holding
+50,19: /turf/open/floor/bamboo/tatami/black | /area/centcom/central_command_areas/holding
+51,19: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,18: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+34,18: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+35,18: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+36,18: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+37,18: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+38,18: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+39,18: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,18: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,18: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,18: /obj/structure/chair/wood{dir = 4} | /obj/machinery/light/directional/west | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+43,18: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,18: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+45,18: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+46,18: /turf/open/floor/bamboo/tatami/black | /area/centcom/central_command_areas/holding
+47,18: /turf/open/floor/bamboo/tatami/black{dir = 1} | /area/centcom/central_command_areas/holding
+48,18: /turf/open/floor/bamboo/tatami/black | /area/centcom/central_command_areas/holding
+49,18: /turf/open/floor/bamboo/tatami/black | /area/centcom/central_command_areas/holding
+50,18: /turf/open/floor/bamboo/tatami/black{dir = 1} | /area/centcom/central_command_areas/holding
+51,18: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,17: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+34,17: /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+35,17: /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+36,17: /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+37,17: /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+38,17: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+39,17: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,17: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,17: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+42,17: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+43,17: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,17: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+45,17: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+46,17: /turf/open/floor/bamboo/tatami/black{dir = 1} | /area/centcom/central_command_areas/holding
+47,17: /turf/open/floor/bamboo/tatami/black | /area/centcom/central_command_areas/holding
+48,17: /turf/open/floor/bamboo/tatami/black{dir = 8} | /area/centcom/central_command_areas/holding
+49,17: /turf/open/floor/bamboo/tatami/black{dir = 4} | /area/centcom/central_command_areas/holding
+50,17: /turf/open/floor/bamboo/tatami/black | /area/centcom/central_command_areas/holding
+51,17: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,16: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+34,16: /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+35,16: /obj/structure/flora/rock/pile/jungle/large/style_random{pixel_y = -3} | /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+36,16: /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+37,16: /obj/structure/flora/rock/pile/jungle/style_random{pixel_x = -12; pixel_y = 15} | /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+38,16: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+39,16: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,16: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,16: /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+42,16: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+43,16: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,16: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+45,16: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+46,16: /turf/open/floor/bamboo/tatami/black | /area/centcom/central_command_areas/holding
+47,16: /turf/open/floor/bamboo/tatami/black{dir = 8} | /area/centcom/central_command_areas/holding
+48,16: /turf/open/floor/bamboo/tatami/black{dir = 4} | /area/centcom/central_command_areas/holding
+49,16: /turf/open/floor/bamboo/tatami/black{dir = 8} | /area/centcom/central_command_areas/holding
+50,16: /obj/machinery/light/small/directional/south | /turf/open/floor/bamboo/tatami/black{dir = 4} | /area/centcom/central_command_areas/holding
+51,16: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+34,15: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+35,15: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+36,15: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+37,15: /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/pale/style_random | /obj/structure/window/reinforced/fulltile | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+38,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+39,15: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,15: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+43,15: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /obj/structure/mineral_door/paperframe{name = "Spectator's Lounge"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+45,15: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+46,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,15: /obj/machinery/door/airlock/wood{name = "Blue Team"} | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,15: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+51,15: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+33,14: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "East Wing"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+34,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+35,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+36,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+37,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+38,14: /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+39,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,14: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,14: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,14: /obj/item/kirbyplants/organic/plant10 | /obj/machinery/light/small/directional/north | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+43,14: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,14: /obj/item/kirbyplants/organic/plant10 | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+45,14: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+46,14: /obj/item/kirbyplants/organic/plant10 | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,14: /obj/structure/chair/stool/directional/south | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,14: /obj/structure/chair/stool/directional/south | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,14: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,14: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+51,14: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,13: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "East Wing"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+34,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+35,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+36,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+37,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+38,13: /obj/machinery/light/directional/south | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+39,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,13: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,13: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Dojo"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,13: /mob/living/basic/bot/medbot/stationary{desc = "When engaged in combat, the vanquishing of thine enemy can be the warrior's only concern."; name = "Hattori"; radio_key = null} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+43,13: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,13: /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+45,13: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Blue"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+46,13: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,13: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,13: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,13: /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,13: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+51,13: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+34,12: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+35,12: /turf/closed/indestructible/opsglass | /area/centcom/central_command_areas/holding
+36,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+37,12: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+38,12: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+39,12: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,12: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,12: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,12: /obj/structure/closet | /obj/effect/spawner/surgery_tray/full | /obj/machinery/iv_drip | /obj/item/emergency_bed | /obj/item/storage/medkit/regular | /obj/item/reagent_containers/medigel/synthflesh | /obj/item/reagent_containers/medigel/synthflesh | /obj/item/reagent_containers/medigel/synthflesh | /obj/item/organ/heart/cybernetic/tier2 | /obj/item/organ/heart/cybernetic/tier2 | /obj/item/defibrillator | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+43,12: /obj/machinery/defibrillator_mount/directional/south | /obj/machinery/stasis | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+44,12: /obj/structure/closet/crate/freezer/blood | /obj/machinery/light/small/directional/south | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+45,12: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+46,12: /obj/structure/closet | /obj/item/clothing/under/costume/jabroni | /obj/item/clothing/under/costume/geisha | /obj/item/clothing/under/costume/kilt | /obj/item/clothing/under/costume/roman | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+47,12: /obj/machinery/light/directional/south | /obj/structure/rack | /obj/item/nullrod/vibro{damtype = "stamina"; force = 30; pixel_x = 5; pixel_y = -2} | /obj/item/nullrod/claymore/glowing{damtype = "stamina"; force = 30} | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+48,12: /obj/structure/rack | /obj/item/melee/energy/sword/nullrod{damtype = "stamina"; active_force = 30; pixel_x = 5; pixel_y = -3} | /obj/item/nullrod/claymore/katana{damtype = "stamina"; force = 30} | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+49,12: /obj/structure/table/wood/fancy/royalblue | /obj/item/toy/toy_xeno | /turf/open/floor/wood/parquet | /area/centcom/central_command_areas/holding
+50,12: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+51,12: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,11: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+34,11: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+35,11: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+36,11: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,11: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+38,11: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/chair/sofa/corp/left{dir = 4; pixel_x = -4} | /obj/machinery/light/small/directional/north | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+39,11: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,11: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+43,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+44,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+45,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+46,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+47,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+48,11: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+49,11: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,11: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+51,11: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,10: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+35,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+36,10: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+37,10: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+38,10: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/chair/sofa/corp/right{dir = 4; pixel_x = -4; pixel_y = 8} | /turf/open/floor/carpet/black | /area/centcom/central_command_areas/holding
+39,10: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,10: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,10: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,10: /obj/structure/closet/crate/bin | /obj/item/clothing/suit/costume/xenos | /obj/item/clothing/head/costume/xenos | /obj/item/xenos_claw | /obj/item/grown/log/bamboo | /obj/item/grown/log/bamboo | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+43,10: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/machinery/chem_master/condimaster{desc = "Used to separate out liquids - useful for purifying botanical extracts. Also dispenses condiments."; name = "BrewMaster 2199"; pixel_x = -4} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+44,10: /obj/structure/flora/tree/jungle/small/style_random | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+45,10: /obj/structure/flora/bush/flowers_yw/style_random | /obj/machinery/light/directional/north | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+46,10: /mob/living/basic/cow{name = "Yuna"} | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+47,10: /obj/machinery/hydroponics/constructable | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+48,10: /obj/structure/flora/rock/pile/style_random | /obj/structure/flora/bush/grassy/style_random | /obj/structure/flora/bush/lavendergrass/style_random | /obj/structure/railing{dir = 8} | /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+49,10: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,10: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+51,10: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,9: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+35,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+37,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+38,9: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+39,9: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,9: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,9: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,9: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+43,9: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+44,9: /obj/machinery/hydroponics/constructable | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+45,9: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+46,9: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+47,9: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+48,9: /obj/structure/flora/rock/pile/style_random | /obj/structure/flora/bush/grassy/style_random | /obj/structure/flora/bush/lavendergrass/style_random | /obj/structure/railing{dir = 8} | /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+49,9: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,9: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+51,9: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+35,8: /obj/machinery/photocopier/prebuilt | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+36,8: /obj/structure/closet/crate | /obj/item/vending_refill/autodrobe | /obj/item/stack/sheet/paperframes/fifty | /obj/item/stack/sheet/paperframes/fifty | /obj/item/storage/fancy/candle_box | /obj/item/storage/fancy/candle_box | /obj/item/storage/fancy/candle_box | /obj/item/storage/box/lights/mixed | /obj/structure/sign/painting/library{pixel_y = 32} | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+37,8: /obj/structure/closet/crate | /obj/item/storage/toolbox/mechanical | /obj/item/stack/sheet/iron/fifty | /obj/item/stack/sheet/iron/fifty | /obj/item/stack/sheet/glass/fifty | /obj/item/stack/sheet/glass/fifty | /obj/item/multitool | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+38,8: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+39,8: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,8: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,8: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Botanical Garden"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,8: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+43,8: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+44,8: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+45,8: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+46,8: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+47,8: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+48,8: /obj/structure/flora/rock/pile/style_random | /obj/structure/flora/bush/grassy/style_random | /obj/structure/flora/bush/lavendergrass/style_random | /obj/structure/railing{dir = 8} | /turf/open/misc/ashplanet/wateryrock{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"} | /area/centcom/central_command_areas/holding
+49,8: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,8: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+51,8: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,7: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+34,7: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+35,7: /obj/machinery/recharge_station | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+36,7: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+37,7: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+38,7: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Electrical Room"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+39,7: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,7: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,7: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/mineral_door/paperframe{name = "Botanical Garden"} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,7: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+43,7: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+44,7: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+45,7: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+46,7: /obj/structure/flora/bush/flowers_yw/style_random | /obj/structure/flora/tree/jungle/small/style_random | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+47,7: /obj/machinery/hydroponics/constructable | /obj/machinery/light/directional/east | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+48,7: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+49,7: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,7: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+51,7: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+33,6: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,6: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+35,6: /obj/machinery/modular_computer/preset/research{dir = 4} | /obj/machinery/light/directional/west | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+36,6: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+37,6: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+38,6: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+39,6: /obj/item/kirbyplants/organic/plant10 | /obj/machinery/light/directional/south | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,6: /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,6: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,6: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+43,6: /obj/effect/turf_decal/siding/wood{dir = 4} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+44,6: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+45,6: /obj/machinery/hydroponics/constructable | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+46,6: /obj/structure/flora/bush/flowers_yw/style_random | /obj/structure/flora/bush/flowers_br/style_random | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+47,6: /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+48,6: /obj/effect/turf_decal/siding/wood{dir = 10} | /obj/structure/reagent_dispensers/plumbed{pixel_x = 5; pixel_y = 4} | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+49,6: /obj/effect/turf_decal/siding/wood | /obj/machinery/duct | /obj/item/clothing/suit/apron | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+50,6: /obj/structure/sink/kitchen/directional/west | /obj/item/reagent_containers/cup/bucket | /obj/effect/turf_decal/siding/wood | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+51,6: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,5: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,5: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+35,5: /obj/structure/table/reinforced/plastitaniumglass | /obj/item/paper_bin | /obj/item/pen/fountain | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+36,5: /obj/structure/chair/office/light{dir = 8} | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+37,5: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+38,5: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+39,5: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+40,5: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/machinery/door/airlock/wood{name = "Custodial Closet"} | /turf/open/floor/stone | /area/centcom/central_command_areas/holding
+41,5: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,5: /obj/machinery/light/small/directional/west | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+43,5: /obj/effect/turf_decal/siding/wood/corner{dir = 4} | /obj/effect/turf_decal/siding/wood/corner | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+44,5: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+45,5: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+46,5: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+47,5: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+48,5: /obj/effect/turf_decal/siding/wood/corner{dir = 1} | /obj/effect/turf_decal/siding/wood/corner{dir = 8} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+49,5: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+50,5: /obj/structure/table/reinforced/rglass | /obj/item/wrench{pixel_y = -16} | /obj/item/wirecutters{pixel_y = 3} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+51,5: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,4: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+34,4: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+35,4: /obj/structure/table/reinforced/plastitaniumglass | /obj/item/storage/crayons | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+36,4: /obj/structure/table/reinforced/plastitaniumglass | /obj/item/rcl/pre_loaded | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+37,4: /obj/machinery/autolathe | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+38,4: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+39,4: /obj/machinery/light/small/directional/north | /obj/structure/easel | /obj/item/canvas/twentythree_twentythree | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+40,4: /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+41,4: /turf/closed/wall/mineral/wood | /area/centcom/central_command_areas/holding
+42,4: /obj/machinery/seed_extractor | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+43,4: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/machinery/biogenerator | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+44,4: /obj/machinery/hydroponics/constructable | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+45,4: /obj/machinery/hydroponics/constructable | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+46,4: /obj/machinery/hydroponics/constructable | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+47,4: /obj/machinery/hydroponics/constructable | /turf/open/floor/grass | /area/centcom/central_command_areas/holding
+48,4: /obj/effect/turf_decal/siding/wood{dir = 8} | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+49,4: /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+50,4: /obj/structure/table/reinforced/rglass | /obj/item/shovel/spade{pixel_y = -14} | /obj/item/cultivator | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+51,4: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,3: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+34,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+35,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+36,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+37,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+38,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+39,3: /obj/item/clothing/shoes/galoshes{pixel_y = -8} | /obj/item/storage/belt/janitor{pixel_x = 2; pixel_y = -4} | /obj/item/watertank/janitor{pixel_x = 1; pixel_y = 3} | /obj/item/pushbroom{pixel_x = -5; pixel_y = -3} | /obj/machinery/duct | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+40,3: /obj/item/mop | /obj/structure/sink/kitchen/directional/west | /obj/item/reagent_containers/cup/bucket | /turf/open/floor/catwalk_floor | /area/centcom/central_command_areas/holding
+41,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+42,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+43,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+44,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+45,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+46,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+47,3: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+48,3: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/machinery/vending/hydronutrients | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+49,3: /obj/machinery/vending/hydroseeds | /obj/machinery/light/small/directional/south | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+50,3: /obj/structure/table/reinforced/rglass | /obj/item/book/manual/hydroponics_pod_people | /obj/item/paper/guides/jobs/hydroponics | /turf/open/floor/wood/tile | /area/centcom/central_command_areas/holding
+51,3: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+33,2: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+34,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+35,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+36,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+37,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+38,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+39,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+40,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+41,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+42,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+43,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+44,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+45,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+46,2: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+47,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+48,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+49,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+50,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+51,2: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+33,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+34,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+35,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+36,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+37,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+38,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+39,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+40,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+41,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+42,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+43,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+44,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+45,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+46,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+47,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+48,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+49,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+50,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+51,1: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+
+[chunk 1 33 1]
+17,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+18,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+19,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+20,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+21,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+22,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+23,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+24,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+25,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+26,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+27,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+28,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+29,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+30,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+10,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+11,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+12,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+13,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+14,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+15,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+16,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+17,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+18,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+19,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+20,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+21,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,34: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+24,34: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+25,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+26,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+28,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+29,34: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+30,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+31,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+32,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+10,33: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+11,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+12,33: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+13,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+14,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+15,33: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+16,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+17,33: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+18,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+19,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+20,33: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+21,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+22,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+23,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+24,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+25,33: /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+26,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+27,33: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+28,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+29,33: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+30,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+31,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+32,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+
+[chunk 33 33 1]
+34,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+35,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+36,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+37,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+38,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+39,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+40,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+41,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+42,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+43,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+44,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+45,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+46,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+47,35: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+34,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+35,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+36,34: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+37,34: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+39,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+40,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+41,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+42,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+43,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+44,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+45,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+46,34: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+47,34: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding
+33,33: /obj/structure/flora/tree/dead/style_random | /turf/open/misc/asteroid/basalt/wasteland{initial_gas_mix = "TEMP=2.7"} | /area/centcom/central_command_areas/holding
+34,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+35,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+36,33: /obj/structure/flora/rock/pile/style_random | /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+37,33: /turf/open/misc/asteroid/basalt/airless | /area/centcom/central_command_areas/holding
+38,33: /turf/closed/indestructible/weeb | /area/centcom/central_command_areas/holding
+39,33: /obj/structure/table/wood/fancy/royalblack | /obj/item/book/bible | /obj/machinery/light/directional/north | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+40,33: /obj/structure/table/wood/fancy/royalblack | /obj/item/storage/box/holy/follower | /turf/open/floor/wood/large | /area/centcom/central_command_areas/holding
+41,33: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/structure/window/paperframe{can_atmos_pass = 0} | /turf/open/floor/iron/sepia | /area/centcom/central_command_areas/holding
+42,33: /obj/item/flashlight/lantern | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+43,33: /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+44,33: /obj/effect/turf_decal/siding/wood | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+45,33: /obj/item/flashlight/lantern | /turf/open/misc/sandy_dirt | /area/centcom/central_command_areas/holding
+46,33: /turf/closed/indestructible/wood | /area/centcom/central_command_areas/holding
+47,33: /turf/closed/indestructible/rock | /area/centcom/central_command_areas/holding

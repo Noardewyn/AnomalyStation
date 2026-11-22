@@ -1,0 +1,34 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: a map with Assistant start landmarks and no late-join landmark (DV26) (M3 T2, LandmarkTests.cs)
+"f" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"j" = (
+/obj/effect/landmark/start/janitor,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"A" = (
+/obj/effect/landmark/start/assistant,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+
+(1,1,1) = {"
+f
+A
+j
+"}
+(2,1,1) = {"
+A
+f
+f
+"}
+(3,1,1) = {"
+f
+f
+A
+"}
+(4,1,1) = {"
+f
+f
+f
+"}

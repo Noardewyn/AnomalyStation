@@ -1,0 +1,169 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/lighting.png",
+  "png_sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+  "rgba_matches_dmi": true,
+  "tile_size": [
+    32,
+    32
+  ],
+  "states": [
+    {
+      "name": "tube-construct-stage1",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 51,
+      "rects": [
+        [
+          0,
+          96,
+          32,
+          32
+        ],
+        [
+          32,
+          96,
+          32,
+          32
+        ],
+        [
+          64,
+          96,
+          32,
+          32
+        ],
+        [
+          96,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bulb-construct-stage1",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 55,
+      "rects": [
+        [
+          128,
+          96,
+          32,
+          32
+        ],
+        [
+          160,
+          96,
+          32,
+          32
+        ],
+        [
+          192,
+          96,
+          32,
+          32
+        ],
+        [
+          224,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tube-construct-stage2",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 59,
+      "rects": [
+        [
+          256,
+          96,
+          32,
+          32
+        ],
+        [
+          288,
+          96,
+          32,
+          32
+        ],
+        [
+          320,
+          96,
+          32,
+          32
+        ],
+        [
+          352,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bulb-construct-stage2",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 63,
+      "rects": [
+        [
+          384,
+          96,
+          32,
+          32
+        ],
+        [
+          416,
+          96,
+          32,
+          32
+        ],
+        [
+          448,
+          96,
+          32,
+          32
+        ],
+        [
+          480,
+          96,
+          32,
+          32
+        ]
+      ]
+    }
+  ],
+  "source": "code/modules/power/lighting/light_construct.dm",
+  "duplicate_audit": "Existing lighting family contains finished empty fixtures and replacement lamps, but no construction stages. Existing geometry dimensions reused; no finished fixture duplicates exported.",
+  "visual_review": [
+    "front",
+    "back",
+    "right",
+    "top",
+    "three_quarter"
+  ],
+  "opaque_uv_samples": 3120
+}

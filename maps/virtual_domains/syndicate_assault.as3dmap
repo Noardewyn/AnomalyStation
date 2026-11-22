@@ -1,0 +1,1007 @@
+anomaly-map 1
+source _maps/virtual_domains/syndicate_assault.dmm tg 1d99bd7f
+size 52 56 1
+chunk 32
+default /turf/open/space/basic | /area/space/virtual_domain
+
+[chunk 1 1 1]
+1,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,32: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+13,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+15,32: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,32: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+18,32: /obj/machinery/light/small/directional/south | /obj/effect/mob_spawn/ghost_role/human/virtual_domain/syndie | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+19,32: /obj/structure/table/reinforced | /obj/item/paper/fluff/ruins/forgottenship/missionobj | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+20,32: /obj/structure/table/reinforced | /obj/item/ammo_box/c9mm | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+21,32: /obj/effect/mob_spawn/ghost_role/human/virtual_domain/syndie | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+22,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+23,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+25,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+26,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+27,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,32: /obj/machinery/suit_storage_unit/syndicate{helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black; suit_type = /obj/item/clothing/suit/space/syndicate/black} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,32: /obj/machinery/suit_storage_unit/syndicate{helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black; suit_type = /obj/item/clothing/suit/space/syndicate/black} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,32: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,32: /obj/machinery/suit_storage_unit/syndicate{helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black; suit_type = /obj/item/clothing/suit/space/syndicate/black} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,32: /obj/structure/tank_dispenser/oxygen | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,31: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+15,31: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+16,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+18,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+19,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+20,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+21,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+22,31: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+27,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+29,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+30,31: /obj/structure/cable | /obj/structure/fans/tiny | /obj/machinery/door/airlock/external/ruin{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+32,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+1,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,30: /obj/structure/lattice/catwalk | /obj/structure/cable | /turf/open/space/basic | /area/space/virtual_domain
+1,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,29: /obj/structure/lattice/catwalk | /obj/structure/cable | /turf/open/space/basic | /area/space/virtual_domain
+1,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,28: /obj/structure/lattice/catwalk | /obj/structure/cable | /turf/open/space/basic | /area/space/virtual_domain
+1,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,27: /obj/structure/lattice/catwalk | /obj/structure/cable | /turf/open/space/basic | /area/space/virtual_domain
+1,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,26: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+22,26: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+24,26: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+25,26: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+30,26: /obj/structure/lattice/catwalk | /obj/structure/cable | /turf/open/space/basic | /area/space/virtual_domain
+1,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,25: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+21,25: /obj/structure/tank_dispenser/oxygen | /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+22,25: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+23,25: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+24,25: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+25,25: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+26,25: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+27,25: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+30,25: /obj/structure/lattice/catwalk | /obj/structure/cable | /turf/open/space/basic | /area/space/virtual_domain
+1,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+20,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+21,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+22,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+23,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+24,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+25,24: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+26,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+27,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+28,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+30,24: /obj/structure/lattice/catwalk | /obj/structure/cable | /turf/open/space/basic | /area/space/virtual_domain
+32,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+1,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,23: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+8,23: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+18,23: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+19,23: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+20,23: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+21,23: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+22,23: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+23,23: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+24,23: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+25,23: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+26,23: /obj/structure/sign/poster/contraband/c20r | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+27,23: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+28,23: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+29,23: /obj/structure/sign/poster/contraband/tools | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+30,23: /obj/machinery/door/airlock/external/ruin{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/structure/cable | /obj/structure/fans/tiny | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+31,23: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+32,23: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+1,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,22: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+8,22: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+9,22: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+18,22: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+19,22: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+20,22: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+21,22: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/stack/sheet/iron/fifty | /obj/item/stack/sheet/iron/fifty | /obj/item/stack/sheet/iron/fifty | /obj/item/stack/sheet/plasteel/twenty | /obj/item/stack/sheet/mineral/plastitanium{amount = 50} | /obj/item/stack/sheet/glass/fifty | /obj/item/stack/rods/fifty | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+22,22: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/melee/energy/sword/saber/red | /obj/machinery/light/small/directional/north | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+23,22: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+24,22: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+25,22: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+26,22: /obj/structure/tank_dispenser/oxygen | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+27,22: /obj/machinery/camera/xray{c_tag = "Cargo pod"; dir = 9; network = list("fsci"); screen_loc = ""} | /obj/structure/closet | /obj/item/clothing/under/syndicate/tacticool | /obj/item/clothing/under/syndicate/tacticool | /obj/item/clothing/under/syndicate/tacticool | /obj/item/card/id/advanced/black/syndicate_command/crew_id | /obj/item/card/id/advanced/black/syndicate_command/crew_id | /obj/item/card/id/advanced/black/syndicate_command/crew_id | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+28,22: /obj/structure/table/reinforced | /obj/item/storage/medkit/regular | /obj/machinery/light/small/directional/north | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+29,22: /obj/structure/cable | /obj/structure/table/reinforced | /obj/item/storage/toolbox/syndicate | /obj/item/storage/toolbox/syndicate | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+30,22: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+31,22: /obj/structure/table/reinforced | /obj/item/gun/ballistic/automatic/l6_saw/unrestricted | /obj/item/ammo_box/magazine/m7mm | /obj/structure/sign/departments/cargo/directional/north | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+32,22: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+1,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,21: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+9,21: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+17,21: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+18,21: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+19,21: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+20,21: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/clothing/head/helmet/space/syndicate/black/engie | /obj/item/clothing/suit/space/syndicate/black/engie | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+21,21: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+22,21: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+23,21: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+24,21: /obj/machinery/door/password/voice/sfc{password = null} | /obj/structure/fans/tiny | /obj/machinery/door/airlock/grunge{desc = "Vault airlock preventing air from going out."; name = "Syndicate Vault Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+25,21: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+26,21: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+27,21: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+28,21: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+29,21: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+30,21: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+31,21: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+32,21: /obj/structure/table/reinforced | /obj/item/ammo_box/magazine/smgm45 | /obj/item/ammo_box/magazine/smgm45 | /obj/item/ammo_box/magazine/smgm45 | /obj/item/gun/ballistic/automatic/c20r/unrestricted | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+1,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,20: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+18,20: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+19,20: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+20,20: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/clothing/head/helmet/space/syndicate/black/engie | /obj/item/clothing/suit/space/syndicate/black/engie | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+21,20: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+22,20: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+23,20: /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+24,20: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+25,20: /obj/machinery/ore_silo | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+26,20: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+27,20: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+28,20: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+29,20: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+30,20: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+31,20: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+32,20: /obj/structure/table/reinforced | /obj/item/dualsaber/green | /obj/machinery/light/small/directional/east | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+1,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,19: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+18,19: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+19,19: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+20,19: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+21,19: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/stack/sheet/mineral/titanium{amount = 40} | /obj/item/stack/sheet/mineral/uranium{amount = 15} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+22,19: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/stack/sheet/mineral/gold{amount = 30} | /obj/item/stack/sheet/mineral/silver{amount = 30} | /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+23,19: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/disk/surgery/forgottenship | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain/protected_space
+24,19: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+25,19: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+26,19: /obj/structure/transit_tube/station/dispenser/reverse{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+27,19: /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+28,19: /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+29,19: /obj/machinery/suit_storage_unit/syndicate | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+30,19: /obj/machinery/suit_storage_unit/syndicate | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+31,19: /obj/machinery/suit_storage_unit/syndicate | /turf/open/floor/mineral/plastitanium | /area/virtual_domain/protected_space
+32,19: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+1,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,18: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+19,18: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+20,18: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+21,18: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+22,18: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+23,18: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+24,18: /turf/closed/indestructible/syndicate | /area/virtual_domain/protected_space
+25,18: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+26,18: /obj/structure/transit_tube/crossing | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+27,18: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+28,18: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+29,18: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+30,18: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+31,18: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+32,18: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+1,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+20,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+21,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+22,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+23,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+24,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+25,17: /turf/closed/mineral/random | /area/virtual_domain/protected_space
+26,17: /obj/structure/transit_tube/crossing | /turf/closed/mineral/random | /area/virtual_domain/protected_space
+27,17: /turf/closed/mineral/random | /area/virtual_domain/protected_space
+28,17: /turf/closed/mineral | /area/ruin/space/virtual_domain
+29,17: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+30,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+31,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+32,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+1,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,16: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+23,16: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+24,16: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+25,16: /turf/closed/mineral/random | /area/virtual_domain/protected_space
+26,16: /obj/structure/transit_tube/crossing | /turf/closed/mineral/random | /area/virtual_domain/protected_space
+27,16: /turf/open/space/basic | /area/virtual_domain/protected_space
+28,16: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+29,16: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+30,16: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+31,16: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+32,16: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+1,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,15: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+25,15: /turf/closed/mineral/random | /area/virtual_domain/protected_space
+26,15: /obj/structure/transit_tube/crossing | /turf/open/space/basic | /area/virtual_domain/protected_space
+27,15: /turf/open/space/basic | /area/virtual_domain/protected_space
+28,15: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+29,15: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+1,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,14: /turf/closed/mineral/random | /area/virtual_domain/protected_space
+26,14: /obj/structure/transit_tube/crossing | /turf/open/space/basic | /area/virtual_domain/protected_space
+27,14: /turf/open/space/basic | /area/virtual_domain/protected_space
+28,14: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+1,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,13: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+25,13: /turf/open/space/basic | /area/virtual_domain/protected_space
+26,13: /obj/structure/transit_tube/crossing | /turf/open/space/basic | /area/virtual_domain/protected_space
+27,13: /turf/open/space/basic | /area/virtual_domain/protected_space
+1,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,12: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+13,12: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+25,12: /turf/open/space/basic | /area/virtual_domain/protected_space
+26,12: /obj/structure/transit_tube/crossing | /turf/open/space/basic | /area/virtual_domain/protected_space
+27,12: /turf/open/space/basic | /area/virtual_domain/protected_space
+1,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,11: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+13,11: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+25,11: /turf/open/space/basic | /area/virtual_domain/protected_space
+26,11: /obj/structure/transit_tube/crossing | /turf/open/space/basic | /area/virtual_domain/protected_space
+27,11: /turf/open/space/basic | /area/virtual_domain/protected_space
+1,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,10: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+25,10: /turf/open/space/basic | /area/virtual_domain/protected_space
+26,10: /obj/structure/transit_tube/crossing | /turf/open/space/basic | /area/virtual_domain/protected_space
+27,10: /turf/open/space/basic | /area/virtual_domain/protected_space
+1,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,9: /turf/open/space/basic | /area/virtual_domain/protected_space
+26,9: /obj/structure/transit_tube/crossing | /turf/open/space/basic | /area/virtual_domain/protected_space
+27,9: /turf/open/space/basic | /area/virtual_domain/protected_space
+1,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,8: /turf/template_noop | /area/virtual_domain/safehouse
+24,8: /turf/template_noop | /area/virtual_domain/safehouse
+25,8: /turf/template_noop | /area/virtual_domain/safehouse
+26,8: /obj/structure/transit_tube/crossing | /turf/template_noop | /area/virtual_domain/safehouse
+27,8: /turf/template_noop | /area/virtual_domain/safehouse
+28,8: /turf/template_noop | /area/virtual_domain/safehouse
+29,8: /turf/template_noop | /area/virtual_domain/safehouse
+1,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,7: /turf/template_noop | /area/virtual_domain/safehouse
+24,7: /turf/template_noop | /area/virtual_domain/safehouse
+25,7: /turf/template_noop | /area/virtual_domain/safehouse
+26,7: /obj/structure/transit_tube/station/dispenser/reverse{dir = 8} | /turf/template_noop | /area/virtual_domain/safehouse
+27,7: /turf/template_noop | /area/virtual_domain/safehouse
+28,7: /turf/template_noop | /area/virtual_domain/safehouse
+29,7: /turf/template_noop | /area/virtual_domain/safehouse
+1,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,6: /turf/template_noop | /area/virtual_domain/safehouse
+24,6: /turf/template_noop | /area/virtual_domain/safehouse
+25,6: /turf/template_noop | /area/virtual_domain/safehouse
+26,6: /turf/template_noop | /area/virtual_domain/safehouse
+27,6: /turf/template_noop | /area/virtual_domain/safehouse
+28,6: /turf/template_noop | /area/virtual_domain/safehouse
+29,6: /turf/template_noop | /area/virtual_domain/safehouse
+1,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,5: /turf/template_noop | /area/virtual_domain/safehouse
+24,5: /turf/template_noop | /area/virtual_domain/safehouse
+25,5: /turf/template_noop | /area/virtual_domain/safehouse
+26,5: /turf/template_noop | /area/virtual_domain/safehouse
+27,5: /turf/template_noop | /area/virtual_domain/safehouse
+28,5: /turf/template_noop | /area/virtual_domain/safehouse
+29,5: /turf/template_noop | /area/virtual_domain/safehouse
+1,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,4: /turf/template_noop | /area/virtual_domain/safehouse
+24,4: /turf/template_noop | /area/virtual_domain/safehouse
+25,4: /turf/template_noop | /area/virtual_domain/safehouse
+26,4: /turf/template_noop | /area/virtual_domain/safehouse
+27,4: /turf/template_noop | /area/virtual_domain/safehouse
+28,4: /turf/template_noop | /area/virtual_domain/safehouse
+29,4: /turf/template_noop | /area/virtual_domain/safehouse
+1,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,3: /obj/modular_map_root/safehouse{key = "shuttle_space"} | /turf/template_noop | /area/virtual_domain/safehouse
+24,3: /turf/template_noop | /area/virtual_domain/safehouse
+25,3: /turf/template_noop | /area/virtual_domain/safehouse
+26,3: /turf/template_noop | /area/virtual_domain/safehouse
+27,3: /turf/template_noop | /area/virtual_domain/safehouse
+28,3: /turf/template_noop | /area/virtual_domain/safehouse
+29,3: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+1,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 33 1 1]
+33,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+34,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+36,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,32: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/clothing/under/syndicate/combat | /obj/item/clothing/gloves/combat | /obj/item/clothing/shoes/combat | /obj/item/clothing/mask/gas/syndicate | /obj/item/clothing/under/syndicate/skirt | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,32: /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+40,32: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+52,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,31: /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+36,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+38,31: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+39,31: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+52,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+45,28: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+46,28: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+44,27: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+45,27: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+46,27: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+47,27: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+45,26: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+46,26: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,25: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+46,25: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+34,24: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+52,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,23: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+34,23: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+35,23: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,22: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+34,22: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+35,22: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+52,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,21: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+34,21: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+35,21: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+52,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,20: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+34,20: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+35,20: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+52,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,19: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain/protected_space
+34,19: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+35,19: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+52,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,18: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+34,18: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+35,18: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+42,18: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+43,18: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+34,17: /turf/closed/mineral/random | /area/ruin/space/virtual_domain
+42,17: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+43,17: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,16: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+41,16: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+42,16: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+43,16: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+42,15: /turf/closed/mineral/random/high_chance | /area/ruin/space/virtual_domain
+52,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+39,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+40,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+41,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+42,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+43,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+44,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+45,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+46,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+47,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+48,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+49,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+50,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+51,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 1 33 1]
+1,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,55: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,54: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,53: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,52: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,51: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,50: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,49: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,47: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+15,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+16,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+18,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+19,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+20,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+21,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+22,47: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+27,47: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+29,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+30,47: /obj/structure/fans/tiny | /obj/machinery/door/airlock/external/ruin{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+32,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+1,46: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,46: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+13,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+15,46: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+18,46: /obj/structure/table/reinforced | /obj/item/reagent_containers/cup/glass/trophy/silver_cup | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+19,46: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+20,46: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/coin/antagtoken | /obj/item/dnainjector/thermal | /obj/item/storage/box/firingpins/syndicate | /obj/item/storage/box/firingpins/syndicate | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+21,46: /obj/item/ai_module/law/core/full/cybersun | /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+22,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+23,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+25,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+26,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+27,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,46: /obj/structure/bodycontainer/crematorium{id = "fscremate"} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,46: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,46: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,46: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,46: /obj/machinery/recharge_station | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,45: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,45: /turf/open/space/basic | /area/virtual_domain
+11,45: /turf/open/space/basic | /area/virtual_domain
+12,45: /turf/open/space/basic | /area/virtual_domain
+13,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,45: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/effect/spawner/random/food_or_drink/donkpockets | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,45: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,45: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+18,45: /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+19,45: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+20,45: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+21,45: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+22,45: /obj/structure/filingcabinet | /obj/machinery/door/window/left/directional/west{name = "Syndicate Interior Door"; req_access = list("syndicate")} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+23,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,45: /obj/machinery/computer/operating | /turf/open/floor/plastic | /area/virtual_domain
+25,45: /obj/structure/table/optable | /obj/machinery/light/small/directional/north | /turf/open/floor/plastic | /area/virtual_domain
+26,45: /obj/item/storage/backpack/duffelbag/syndie/surgery | /obj/structure/table/reinforced | /turf/open/floor/plastic | /area/virtual_domain
+27,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,45: /obj/machinery/button/crematorium{id = "fscremate"; pixel_x = -32} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,45: /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,45: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,45: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,45: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,44: /turf/open/space/basic | /area/virtual_domain
+11,44: /turf/open/space/basic | /area/virtual_domain
+12,44: /turf/open/space/basic | /area/virtual_domain
+13,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,44: /obj/machinery/portable_atmospherics/canister/oxygen | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,44: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+18,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+19,44: /obj/machinery/door/airlock/grunge{name = "Captain's Room"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/machinery/door/poddoor{id = "fscaproom"; name = "Captain's Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+20,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+21,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+22,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+23,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,44: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/plastic | /area/virtual_domain
+25,44: /turf/open/floor/plastic | /area/virtual_domain
+26,44: /obj/machinery/camera/xray{c_tag = "Medbay"; dir = 6; network = list("fsci"); screen_loc = ""} | /turf/open/floor/plastic | /area/virtual_domain
+27,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+29,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+30,44: /obj/machinery/door/airlock/external/ruin{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+32,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+1,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,43: /obj/machinery/power/shuttle_engine/huge{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+11,43: /turf/open/space/basic | /area/virtual_domain
+12,43: /turf/open/space/basic | /area/virtual_domain
+13,43: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,43: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,43: /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,43: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,43: /obj/effect/mob_spawn/ghost_role/human/virtual_domain/syndie | /turf/open/floor/carpet/royalblack | /area/virtual_domain
+18,43: /turf/open/floor/carpet/royalblack | /area/virtual_domain
+19,43: /turf/open/floor/carpet/royalblack | /area/virtual_domain
+20,43: /turf/open/floor/carpet/royalblack | /area/virtual_domain
+21,43: /obj/structure/chair/comfy/black | /turf/open/floor/carpet/royalblack | /area/virtual_domain
+22,43: /obj/structure/table/reinforced | /obj/machinery/button/door{id = "fscaproom"; name = "Room shutters control"; req_access = list("syndicate")} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+23,43: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,43: /turf/open/floor/plastic | /area/virtual_domain
+25,43: /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/plastic | /area/virtual_domain
+26,43: /turf/open/floor/plastic | /area/virtual_domain
+27,43: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,43: /obj/machinery/power/apc/auto_name/directional/north | /obj/effect/mapping_helpers/apc/syndicate_access | /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,43: /obj/machinery/airalarm/directional/north | /obj/effect/mapping_helpers/airalarm/syndicate_access | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,43: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,43: /obj/structure/sign/warning/vacuum/external/directional/north | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,43: /obj/machinery/light/directional/north | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,42: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+13,42: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,42: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,42: /obj/machinery/light/small/directional/east | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,42: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,42: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/crowbar/red | /obj/item/ammo_box/magazine/m9mm_aps | /obj/item/ammo_box/magazine/m9mm_aps | /obj/item/gun/ballistic/automatic/pistol/aps | /turf/open/floor/carpet/royalblack | /area/virtual_domain
+18,42: /obj/machinery/light/small/directional/south | /turf/open/floor/carpet/royalblack | /area/virtual_domain
+19,42: /turf/open/floor/carpet/royalblack | /area/virtual_domain
+20,42: /turf/open/floor/carpet/royalblack | /area/virtual_domain
+21,42: /obj/structure/table/reinforced | /obj/item/paper | /obj/item/pen | /obj/machinery/computer/security/telescreen/forgotten_ship/sci/directional/south | /turf/open/floor/carpet/royalblack | /area/virtual_domain
+22,42: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+23,42: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,42: /obj/machinery/vending/medical/syndicate/cybersun | /turf/open/floor/plastic | /area/virtual_domain
+25,42: /obj/machinery/stasis | /turf/open/floor/plastic | /area/virtual_domain
+26,42: /turf/open/floor/plastic | /area/virtual_domain
+27,42: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,42: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,42: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,42: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,42: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,42: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,41: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+13,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,41: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/stack/ore/diamond{amount = 3} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,41: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+18,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+19,41: /obj/machinery/door/airlock/grunge{name = "Captain's Room"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/machinery/door/poddoor{id = "fscaproom"; name = "Captain's Blast Door"; state_open = 1} | /turf/open/floor/carpet/royalblack | /area/virtual_domain
+20,41: /obj/machinery/door/airlock/grunge{name = "Captain's Room"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/machinery/door/poddoor{id = "fscaproom"; name = "Captain's Blast Door"; state_open = 1} | /turf/open/floor/carpet/royalblack | /area/virtual_domain
+21,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+22,41: /obj/structure/sign/poster/contraband/syndicate_pistol | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+23,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+25,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+26,41: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+27,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,41: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,41: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,41: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,41: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,41: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,40: /turf/open/space/basic | /area/virtual_domain
+11,40: /turf/open/space/basic | /area/virtual_domain
+12,40: /turf/open/space/basic | /area/virtual_domain
+13,40: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,40: /obj/machinery/portable_atmospherics/canister/oxygen | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,40: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,40: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,40: /obj/machinery/power/smes | /obj/structure/cable | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+18,40: /obj/item/stack/sheet/mineral/uranium{amount = 15} | /obj/structure/cable | /obj/machinery/light/small/directional/north | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+19,40: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 6} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+20,40: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+21,40: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 10} | /obj/item/wrench | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+22,40: /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2 | /obj/machinery/portable_atmospherics/scrubber{anchored = 1} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+23,40: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,40: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+25,40: /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2 | /obj/machinery/light/small/directional/north | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+26,40: /obj/machinery/atmospherics/components/unary/vent_pump | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+27,40: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,40: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,40: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,40: /obj/structure/table/reinforced | /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2 | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,40: /obj/machinery/atmospherics/components/unary/vent_pump | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,40: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,39: /turf/open/space/basic | /area/virtual_domain
+11,39: /turf/open/space/basic | /area/virtual_domain
+12,39: /turf/open/space/basic | /area/virtual_domain
+13,39: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,39: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,39: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,39: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+17,39: /obj/machinery/power/terminal{dir = 1} | /obj/structure/cable | /obj/item/paper/fluff/ruins/forgottenship/powerissues | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+18,39: /obj/machinery/atmospherics/components/unary/vent_pump{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+19,39: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+20,39: /obj/structure/cable | /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+21,39: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 5} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+22,39: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2 | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+23,39: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 8} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+24,39: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+25,39: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2 | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+26,39: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+27,39: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+28,39: /obj/structure/cable | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,39: /obj/structure/chair/comfy/shuttle{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,39: /obj/structure/table/reinforced | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2 | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,39: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,39: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,38: /obj/machinery/power/shuttle_engine/huge{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+11,38: /turf/open/space/basic | /area/virtual_domain
+12,38: /turf/open/space/basic | /area/virtual_domain
+13,38: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,38: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/item/stack/ore/plasma{amount = 19} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,38: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,38: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,38: /obj/machinery/power/port_gen/pacman/super{anchored = 1} | /obj/structure/cable | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+18,38: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+19,38: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 5} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+20,38: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+21,38: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+22,38: /obj/machinery/atmospherics/components/tank/air{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+23,38: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,38: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+25,38: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+26,38: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+27,38: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,38: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,38: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,38: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,38: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,38: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,37: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+13,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,37: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/effect/spawner/random/maintenance | /obj/effect/spawner/random/maintenance | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,37: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+18,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+19,37: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+20,37: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+21,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+22,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+23,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+25,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+26,37: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/iron/dark | /area/virtual_domain
+27,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,37: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,37: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,37: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,37: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,37: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,36: /obj/machinery/power/shuttle_engine/propulsion{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+13,36: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,36: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,36: /obj/machinery/light/small/directional/east | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,36: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,36: /obj/structure/table/reinforced | /obj/item/assembly/prox_sensor | /obj/item/assembly/prox_sensor | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+18,36: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/crowbar/red | /obj/item/ammo_box/magazine/m9mm | /obj/item/ammo_box/magazine/m9mm | /obj/item/gun/ballistic/automatic/pistol | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+19,36: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+20,36: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+21,36: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/crowbar/red | /obj/item/ammo_box/magazine/m9mm | /obj/item/ammo_box/magazine/m9mm | /obj/machinery/light/small/directional/north | /obj/item/gun/ballistic/automatic/pistol | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+22,36: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+23,36: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,36: /obj/structure/sink/directional/south | /obj/structure/mirror/directional/west | /turf/open/floor/iron/dark | /area/virtual_domain
+25,36: /obj/structure/sink/directional/south | /turf/open/floor/iron/dark | /area/virtual_domain
+26,36: /turf/open/floor/iron/dark | /area/virtual_domain
+27,36: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,36: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,36: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,36: /obj/structure/chair/comfy/shuttle{dir = 1} | /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,36: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,36: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,35: /turf/open/space/basic | /area/virtual_domain
+11,35: /turf/open/space/basic | /area/virtual_domain
+12,35: /turf/open/space/basic | /area/virtual_domain
+13,35: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,35: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+17,35: /obj/structure/chair/comfy{dir = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+18,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+19,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+20,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+21,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+22,35: /obj/structure/chair/comfy{dir = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+23,35: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,35: /turf/open/floor/iron/dark | /area/virtual_domain
+25,35: /obj/machinery/light/small/directional/south | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/iron/dark | /area/virtual_domain
+26,35: /turf/open/floor/iron/dark | /area/virtual_domain
+27,35: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,35: /obj/structure/cable | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,35: /obj/structure/sign/warning/vacuum/external/directional/south | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,35: /obj/machinery/light/directional/south | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+1,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,34: /turf/open/space/basic | /area/virtual_domain
+11,34: /turf/open/space/basic | /area/virtual_domain
+12,34: /turf/open/space/basic | /area/virtual_domain
+13,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,34: /obj/machinery/portable_atmospherics/canister/oxygen | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,34: /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,34: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+18,34: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+19,34: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+20,34: /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+21,34: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+22,34: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+23,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,34: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/iron/dark/side{dir = 1} | /area/virtual_domain
+25,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+26,34: /obj/machinery/door/airlock/grunge{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/iron/dark/side{dir = 1} | /area/virtual_domain
+27,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+29,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+30,34: /obj/structure/cable | /obj/machinery/door/airlock/external/ruin{name = "Syndicate Ship Airlock"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+32,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+1,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,33: /obj/machinery/power/shuttle_engine/huge{dir = 8} | /turf/open/space/basic | /area/virtual_domain
+11,33: /turf/open/space/basic | /area/virtual_domain
+12,33: /turf/open/space/basic | /area/virtual_domain
+13,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+14,33: /obj/structure/closet/crate/secure/gear{req_access = list("syndicate")} | /obj/effect/spawner/random/clothing/costume | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+15,33: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+16,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+17,33: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/crowbar/red | /obj/item/ammo_box/magazine/m9mm | /obj/item/ammo_box/magazine/m9mm | /obj/item/gun/ballistic/automatic/pistol | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+18,33: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+19,33: /obj/structure/chair/comfy | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+20,33: /obj/structure/chair/comfy | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+21,33: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+22,33: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/crowbar/red | /obj/item/ammo_box/magazine/m9mm | /obj/item/ammo_box/magazine/m9mm | /obj/item/gun/ballistic/automatic/pistol | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+23,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+24,33: /obj/structure/toilet{dir = 1} | /obj/machinery/light/directional/south | /turf/open/floor/iron | /area/virtual_domain
+25,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+26,33: /obj/machinery/shower/directional/north | /obj/machinery/light/directional/south | /turf/open/floor/iron | /area/virtual_domain
+27,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+28,33: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+29,33: /obj/machinery/light/small/directional/north | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+30,33: /obj/structure/cable | /mob/living/basic/trooper/syndicate/melee/space/stormtrooper | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+31,33: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+32,33: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+
+[chunk 33 33 1]
+33,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+38,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+39,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+40,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+41,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+42,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+43,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+44,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+45,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+46,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+47,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+48,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+49,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+50,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+51,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,56: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,55: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,54: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,53: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,52: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,51: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,50: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,49: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+52,48: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,47: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+36,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+38,47: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+39,47: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+52,47: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+34,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+36,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,46: /obj/machinery/turretid{control_area = "/area/ruin/space/has_grav/syndicate_forgotten_ship"; enabled = 0; lethal = 1; name = "Ship turret control panel"; pixel_y = 32; req_access = list("syndicate")} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,46: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+40,46: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+52,46: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,45: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+36,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,45: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,45: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,45: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+41,45: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+52,45: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+34,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,44: /obj/structure/sign/poster/contraband/syndicate_recruitment | /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+36,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+38,44: /obj/machinery/door/window/left/directional/south{name = "Control Room"; req_access = list("syndicate")} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+40,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+41,44: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+42,44: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+52,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,43: /obj/machinery/vending/cigarette/syndicate | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,43: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,43: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/effect/spawner/random/contraband/armory | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,43: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,43: /obj/machinery/light/directional/north | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,43: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,43: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,43: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,43: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,43: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,42: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,42: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,42: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/ammo_box/c9mm | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,42: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,42: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,42: /obj/structure/chair/comfy/shuttle{dir = 4} | /mob/living/basic/trooper/syndicate/ranged/smg/pilot | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,42: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,42: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,42: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,42: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,41: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,41: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,41: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,41: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,41: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,41: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,41: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,41: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,41: /obj/structure/table/reinforced | /obj/item/toy/plush/nukeplushie | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,41: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,40: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,40: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,40: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,40: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,40: /obj/machinery/atmospherics/components/unary/vent_pump | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,40: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,40: /obj/machinery/computer/security{desc = "Used to access interrogation room camera."; dir = 8; name = "Ship cameras console"; network = list("fsc","fsci"); screen_loc = ""} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,40: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,40: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,40: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,39: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,39: /obj/machinery/door/airlock/grunge{name = "Bridge"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+35,39: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,39: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,39: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{dir = 4} | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 9} | /obj/effect/landmark/bitrunning/mob_segment | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,39: /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,39: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,39: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,39: /obj/structure/table/reinforced | /obj/machinery/button/door{id = "fslockdown"; name = "Window shutters"; req_access = list("syndicate")} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,39: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,38: /obj/machinery/camera/xray/directional/east{c_tag = "Conference room"; network = list("fsc"); screen_loc = ""} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,38: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,38: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,38: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,38: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,38: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,38: /obj/machinery/computer/atmos_alert{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,38: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,38: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,38: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,37: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,37: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,37: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,37: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,37: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,37: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,37: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,37: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,37: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,37: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,36: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,36: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,36: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/gun/ballistic/automatic/pistol | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,36: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,36: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,36: /obj/structure/chair/comfy/shuttle{dir = 4} | /mob/living/basic/trooper/syndicate/ranged/smg/pilot | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,36: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,36: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,36: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,36: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,35: /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,35: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,35: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/ammo_box/c9mm | /obj/item/gun/ballistic/automatic/pistol | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+36,35: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+37,35: /obj/machinery/light/directional/south | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,35: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,35: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,35: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+41,35: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+42,35: /obj/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/poddoor{id = "fslockdown"; name = "Ship Blast Door"; state_open = 1} | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+52,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+34,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+35,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+36,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+38,34: /obj/machinery/door/window/left/directional/north{name = "Spare Equipment"; req_access = list("syndicate")} | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+40,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+41,34: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+42,34: /obj/machinery/porta_turret/syndicate/energy{dir = 4; name = "Syndicate Ship Turret"; on = 0; shot_delay = 10} | /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal | /area/virtual_domain
+52,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,33: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/virtual_domain
+34,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+36,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+37,33: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/clothing/under/syndicate/combat | /obj/item/clothing/gloves/combat | /obj/item/clothing/shoes/combat | /obj/item/clothing/mask/gas/syndicate | /obj/item/clothing/under/syndicate/skirt | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+38,33: /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+39,33: /obj/structure/closet/syndicate{anchored = 1; desc = "A basic closet for all your villainous needs."; locked = 1; name = "Closet"; req_access = list("syndicate"); secure = 1} | /obj/item/clothing/head/hats/hos/beret/syndicate | /obj/item/clothing/suit/armor/vest/capcarapace/syndicate | /obj/item/clothing/mask/gas/syndicate | /obj/item/clothing/under/syndicate | /obj/item/clothing/under/syndicate/skirt | /obj/item/clothing/gloves/combat | /obj/item/clothing/shoes/combat | /turf/open/floor/mineral/plastitanium/red | /area/virtual_domain
+40,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+41,33: /turf/closed/wall/r_wall/plastitanium/syndicate | /area/virtual_domain
+52,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright

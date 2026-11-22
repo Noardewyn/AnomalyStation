@@ -1,0 +1,230 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/turret_control.png",
+  "original_dmi": "..\\tgstation\\icons\\obj\\machines\\turret_control.dmi",
+  "size": [
+    128,
+    128
+  ],
+  "png_sha256": "dcf9069e1fe23b3587bcdfec42290954db1fec2871cb52162eb43c0e6e671c2e",
+  "dmi_rgba_matches": true,
+  "states": [
+    {
+      "name": "control_frame",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "control",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "standby",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ],
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "stun",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          0,
+          32,
+          32,
+          32
+        ],
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "kill",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 6,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ],
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_screen",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button_left",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button_right",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 10,
+      "rects": [
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_button_left",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 11,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_button_right",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 12,
+      "rects": [
+        [
+          0,
+          96,
+          32,
+          32
+        ]
+      ]
+    }
+  ],
+  "source_code": "code/game/machinery/porta_turret/turret_control.dm"
+}

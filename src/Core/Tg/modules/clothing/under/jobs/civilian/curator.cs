@@ -1,0 +1,25 @@
+// Translated from tgstation (snapshot 1d99bd7f): code/modules/clothing/under/jobs/civilian/curator.dm
+// Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
+using Anomaly.Core.DmShim;
+using Anomaly.Core.Kernel;
+using static Anomaly.Core.DmShim.Dm;
+using static Anomaly.Core.Tg.Builtins;
+using static Anomaly.Core.Tg.Defines;
+using static Anomaly.Core.Tg.GlobalProcs;
+
+namespace Anomaly.Core.Tg;
+
+// PARTIAL (gaps CL1, D333): the treasure hunter's suit (its fishing difficulty waits for fishing); the rest of the file is var-only.
+// The var blocks are generated (D111).
+
+// tg: code/modules/clothing/under/jobs/civilian/curator.dm:24
+public partial class obj_item_clothing_under_rank_civilian_curator_treasure_hunter : obj_item_clothing_under_rank_civilian_curator
+{
+    // tg: code/modules/clothing/under/jobs/civilian/curator.dm:32
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Dm.Deferred("code/modules/clothing/under/jobs/civilian/curator.dm:34", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        return dot;
+    }
+}

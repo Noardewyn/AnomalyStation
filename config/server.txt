@@ -1,0 +1,151 @@
+## The M1 server's configuration (docs/ai/specs/apps.md section 1). The style is tg's config files (config/*.txt in
+## tgstation): one setting per line, KEY value, keys in any case, a line starting with # is a comment, a key alone is an
+## enabled flag (or KEY 0 / KEY 1). The command line overrides every setting here (--port 7778, --hash-every=20, ...);
+## run the server with --help for the list. An unknown key is reported and skipped, as tg does.
+
+## Network
+## The UDP port, and the address to bind: loopback by default; 0.0.0.0 for LAN play.
+PORT 7777
+BIND_ADDRESS 127.0.0.1
+
+## Sessions at once (tg's max_players); more connection requests are refused.
+MAX_PLAYERS 200
+
+## The world
+## The seed of the world's random numbers (D31): the same seed and commands give the same world.
+## Left out, each start draws a random seed and prints it (seed=... in the start line) to reproduce a round.
+# SEED 1
+
+## The test room, rim included (3 to 64 turfs; the boot slows down sharply above 64 until M3).
+ROOM_WIDTH 48
+ROOM_HEIGHT 48
+
+## Uncomment to run the bare kernel world (no tg boot, no room, no joins), for loop tests.
+#EMPTY
+
+## M3 (D108, D109): uncomment to load a converted tg map instead of the test room: the name of its tg map json (tg's
+## _maps/map_jsons/<name>.json). The maps are the repository's maps/ (MAPS_FOLDER), edited with the map editor.
+## Its station level only; players join at its late-join spawns (the Assistant start landmarks on Meta).
+#MAP metastation
+#MAPS_FOLDER maps
+
+
+## M10 slice F (D270): tg's lobby: a join waits in tg's lobby, the round starts after tg's countdown (tg's LOBBY_COUNTDOWN,
+## 120 seconds) and the station engineer is the only open job. Without it the round starts at once and every join late-joins
+## as an assistant at a spawn point (the tests and the test room). --no-lobby on the command line turns it off for one run.
+LOBBY
+
+## With LOBBY: tg's jobs open with tg's own slots; the cyborg's three also take late joins (DV426). The round start gives
+## the ready players jobs by the priorities of the character setup's Occupations page, the assistant when none is free (D278).
+## Comment it out for rounds of station engineers only.
+OPEN_JOBS
+
+## Gaps R2: tg's station traits: the round rolls its positive, neutral and negative traits, reported in the round-start command
+## report, and the lobby shows the sign-up buttons of the traits that have one. Comment it out for rounds without them
+## (--no-station-traits on the command line turns them off for one run). An admin plans the next round's with station-traits.
+STATION_TRAITS
+
+## Gaps R6 (D332): the round's clock at the real date (UTC), so tg's holidays come by the calendar (the host turns on ALLOW_HOLIDAYS)
+## and the commendations' hearts last a real day. Comment it out for the fixed 2000-01-01 clock without holidays (--no-real-date on
+## the command line turns it off for one run).
+REAL_DATE
+
+## The 3D model catalog, whose "dir" rules the server applies to the things the models draw (DV49): a closet faces away from the wall
+## behind it and keeps its way when pushed. Default: the repository's godot/assets/models/models.json, found upward.
+#MODELS_CATALOG godot/assets/models/models.json
+
+## The test room's map: rooms (four rooms of about 10 x 10 with doorways, a 1-tile and a 2-tile corridor, a dead end and
+## pillars; the default) or classic (M1's room: a rim, four wall runs and a lattice of pillars). The floors carry tg's own
+## initial_gas_mix (breathable air).
+ROOM_LAYOUT rooms
+
+## The height of every level's walls and ceiling in metres, 2 to 4 (2, the default, is as high as a tile is wide). The clients
+## build their world with it, and the server's shots, throws and pointers meet the ceiling there.
+#WALL_HEIGHT 2
+
+## The share of tg's gun spread an aimed shot keeps, 0 to 2 (1 is tg's own). First person shows the spread's angle as it is and a
+## body is narrower than a tile, so tg's spread misses far more than in 2D; the default halves it.
+#SPREAD_SCALE 0.5
+
+## Locomotion (M2). The scale of every capsule's speed (D106, a D74 row): 1 is tg's tiles per second (running is 13.3 m/s at
+## 2 m per tile); 0.5, the default, is the owner's (DV70: running 6.7 m/s). The dev command speedscale changes it at run time.
+MOVE_SPEED_SCALE 0.5
+
+## tg's walk and run speeds (tgstation's config/game_options.txt keys; the host hands them to tg's own configuration): the
+## move delay in deciseconds of a running (RUN_DELAY) and a walking (WALK_DELAY) mob. tg ships 1.5 and 4.
+RUN_DELAY 1.5
+WALK_DELAY 4
+
+## Dev commands from a player's dev console (damage, heal, kill, gas, analyze, speedscale, ...; each calls tg's own proc,
+## docs/ai/specs/apps.md 1.6a). Left out, they are on only when BIND_ADDRESS is a loopback address; 1 or 0 decides. The
+## console's own are always allowed. The command line has --dev-commands and --no-dev-commands.
+#DEV_COMMANDS 1
+
+## Let players also type the server console's own commands in their dev console (spawn of any type, teleport, list, kick,
+## status, hash, quit; docs/ai/specs/apps.md 1.6b), with the reply sent back to them. Off by default whatever the bind: every
+## player becomes an admin. The command line has --client-console.
+#CLIENT_CONSOLE
+
+## Running
+## Pace ticks at 20 per second of wall time. Without it the server runs ticks back to back (tests, replays).
+#REALTIME
+
+## Ticks to run, then shut down cleanly. Leave it out to run until Ctrl+C, SIGTERM or the console's quit.
+#TICKS 72000
+
+## Read console commands from standard input (1) or not (0).
+CONSOLE 1
+
+## Logs and metrics
+## Ticks between status lines (200 = 10 seconds).
+STATUS_EVERY_TICKS 200
+
+## A state hash every N ticks; 0 is off. A hash forces two full GCs and costs about 200 ms at 1.5k objects.
+HASH_EVERY 0
+
+## A CSV row of metrics per tick.
+#METRICS_FILE logs/metrics.csv
+
+## The applied command stream, for --replay.
+#RECORD_PATH logs/commands.log
+
+## M10 slice I (D76, D275): the SQLite file of the keys (a name with its client's token, claimed by its first connection), the bans,
+## the notes and the round ids. Without it they live in memory and are gone when the server stops. The admins are tg's
+## config/admins.txt with the ranks of config/admin_ranks.txt.
+DATABASE data/anomaly.sqlite
+
+## tg's character savefiles (each player's slots and game preferences, data/player_saves/C/CKEY/preferences.json in tg). Without it
+## they live in memory and are gone when the server stops.
+PLAYER_SAVES data/player_saves
+
+## tg's pets' memories between rounds (Ian's age, Poly's phrases, Runtime's kittens, data/npc_saves/ in tg). Without it they live in
+## memory and every round's Ian is a puppy.
+NPC_SAVES data/npc_saves
+
+## tg's round counters between rounds (the shifts since the last delamination on the incident displays, data/ in tg). Without it
+## they live in memory and every round starts at 0 shifts.
+PERSISTENCE_SAVES data/persistence
+
+## M10x slice G5: the Esc menu's bug reports, saved as DATE/ROUND-N/ (report.txt and screenshot.webp) in this folder, and posted with
+## the screenshot to a Discord webhook when one is set (Server Settings > Integrations > Webhooks).
+BUG_REPORTS data/bug_reports
+#BUG_REPORT_WEBHOOK_URL https://discord.com/api/webhooks/...
+
+## M10x slice G6: tg's admin help relay. An admin help sent while no admin is online (or every admin is away) is posted to this Discord
+## webhook, as tg's REGULAR_ADMINHELP_WEBHOOK_URL.
+#ADMINHELP_WEBHOOK_URL https://discord.com/api/webhooks/...
+
+## D335: the launcher. The name, the text and the mode its server list shows (with the map the server has loaded), and the status
+## answer the list is made from: GET /status over TCP on the game's port number (open that TCP port too).
+#SERVER_NAME Anomaly Station
+#SERVER_DESCRIPTION A few words about this server.
+#SERVER_MODE Roleplay, medium
+#STATUS
+
+## The game client this server's players run: the file tools/make-client-manifest.sh writes after a release build (docs/hosting.md).
+#CLIENT_BUILD config/client-build.json
+
+## Players join through the launcher's login only, and a player's name is the account's: the hub's public key
+## (https://<hub>/auth/game-token-key, saved as a file) and the address or addresses players reach this server at.
+#HUB_KEY config/hub-key.pem
+#PUBLIC_ADDRESS play.example.org:7777

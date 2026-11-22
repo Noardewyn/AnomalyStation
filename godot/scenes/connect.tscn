@@ -1,0 +1,99 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ConnectScreen.cs" id="1_connect"]
+
+[node name="Connect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_connect")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.055, 0.065, 0.085, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box" type="VBoxContainer" parent="Center"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Center/Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Anomaly Station"
+horizontal_alignment = 1
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/Box"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Form" type="GridContainer" parent="Center/Box"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="HostLabel" type="Label" parent="Center/Box/Form"]
+layout_mode = 2
+text = "Host"
+
+[node name="Host" type="LineEdit" parent="Center/Box/Form"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "127.0.0.1"
+placeholder_text = "server address"
+
+[node name="PortLabel" type="Label" parent="Center/Box/Form"]
+layout_mode = 2
+text = "Port"
+
+[node name="Port" type="LineEdit" parent="Center/Box/Form"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "7777"
+placeholder_text = "7777"
+
+[node name="NameLabel" type="Label" parent="Center/Box/Form"]
+layout_mode = 2
+text = "Name"
+
+[node name="Name" type="LineEdit" parent="Center/Box/Form"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player"
+placeholder_text = "your name"
+max_length = 42
+
+[node name="ConnectButton" type="Button" parent="Center/Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Connect"
+
+[node name="Status" type="Label" parent="Center/Box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.95, 1)
+autowrap_mode = 3
+horizontal_alignment = 1

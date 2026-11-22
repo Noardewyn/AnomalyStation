@@ -1,0 +1,1085 @@
+anomaly-map 1
+source _maps/virtual_domains/pirates.dmm tg 1d99bd7f
+size 37 42 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+4,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,32: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+8,32: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+9,32: /obj/structure/fermenting_barrel/gunpowder{pixel_x = -4; pixel_y = 17} | /obj/structure/fermenting_barrel/gunpowder{pixel_x = 4} | /obj/item/stack/cannonball/four{pixel_x = -9; pixel_y = -10} | /obj/item/stack/cannonball{pixel_x = 3; pixel_y = 8} | /obj/item/reagent_containers/cup/bucket/wooden{pixel_y = -10} | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+10,32: /obj/effect/turf_decal/weather/sand | /turf/open/floor/wood | /area/virtual_domain/fullbright
+11,32: /obj/effect/turf_decal/weather/sand{dir = 6} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+12,32: /obj/structure/barricade/wooden | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+13,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+14,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+15,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+16,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+17,32: /obj/effect/turf_decal/weather/sand{dir = 10} | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+18,32: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+19,32: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+20,32: /obj/effect/mapping_helpers/burnt_floor | /mob/living/basic/trooper/pirate/ranged | /obj/structure/chair/wood | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+21,32: /obj/structure/barricade/sandbags | /obj/effect/turf_decal/weather/sand{dir = 4} | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+22,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+23,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+25,32: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,32: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,32: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,32: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,31: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,31: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+7,31: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+8,31: /obj/structure/flora/bush/jungle | /turf/open/misc/grass | /area/virtual_domain/fullbright
+9,31: /obj/structure/barricade/sandbags | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+10,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+11,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+12,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+13,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+14,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+15,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+16,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+17,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+18,31: /obj/structure/barricade/sandbags | /obj/effect/turf_decal/weather/sand{dir = 10} | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+19,31: /obj/structure/barricade/sandbags | /obj/effect/turf_decal/weather/sand | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+20,31: /obj/structure/barricade/sandbags | /obj/effect/turf_decal/weather/sand | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+21,31: /obj/structure/barricade/sandbags | /obj/effect/turf_decal/weather/sand{dir = 6} | /obj/item/binoculars{pixel_x = -1; pixel_y = 1} | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+22,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+23,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+25,31: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,31: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,31: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,31: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+7,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+8,30: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass | /area/virtual_domain/fullbright
+9,30: /obj/structure/barricade/sandbags | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+10,30: /obj/structure/barricade/sandbags | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+11,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+12,30: /obj/structure/railing{color = "#4C3117"; name = "wooden railing"} | /obj/effect/turf_decal/weather/sand{dir = 9} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+13,30: /obj/item/stack/cannonball{pixel_x = 7; pixel_y = 8} | /obj/item/stack/cannonball{pixel_x = 11; pixel_y = -4} | /obj/effect/turf_decal/weather/sand{dir = 1} | /obj/effect/decal/cleanable/blood/splatter/oil | /turf/open/floor/wood | /area/virtual_domain/fullbright
+14,30: /obj/structure/railing{color = "#4C3117"; name = "wooden railing"} | /obj/effect/decal/cleanable/vomit/old | /obj/effect/turf_decal/weather/sand{dir = 1} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+15,30: /obj/effect/turf_decal/weather/sand{dir = 5} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+16,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+17,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+18,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+19,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+20,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+21,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+22,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+23,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+25,30: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+30,30: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+31,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+7,29: /obj/structure/flora/bush/sparsegrass | /obj/structure/flora/bush/lavendergrass | /turf/open/misc/grass | /area/virtual_domain/fullbright
+8,29: /obj/structure/flora/bush/fullgrass | /turf/open/misc/grass | /area/virtual_domain/fullbright
+9,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+10,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+11,29: /obj/effect/turf_decal/siding/wood | /obj/effect/turf_decal/weather/sand{dir = 10} | /obj/effect/turf_decal/weather/sand{dir = 9} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+12,29: /obj/structure/barricade/wooden/crude | /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+13,29: /obj/structure/cannon | /obj/effect/turf_decal/siding/wood | /obj/effect/decal/cleanable/ash/large{pixel_y = -5; pixel_x = 8} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+14,29: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+15,29: /obj/effect/turf_decal/siding/wood | /mob/living/basic/trooper/pirate/ranged | /turf/open/floor/wood | /area/virtual_domain/fullbright
+16,29: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+17,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+18,29: /obj/structure/flora/coconuts{pixel_x = 12} | /obj/structure/flora/tree/palm | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+19,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+20,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+21,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+22,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+23,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+25,29: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+30,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+31,29: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+32,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,28: /obj/structure/flora/tree/jungle | /obj/structure/flora/bush/fullgrass/style_random | /turf/open/misc/grass | /area/virtual_domain/fullbright
+7,28: /obj/structure/flora/bush/flowers_pp | /turf/open/misc/grass | /area/virtual_domain/fullbright
+8,28: /mob/living/basic/trooper/pirate/melee | /turf/open/misc/grass | /area/virtual_domain/fullbright
+9,28: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+10,28: /obj/effect/mob_spawn/corpse/human/pirate | /obj/effect/decal/cleanable/blood/gibs/old | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+11,28: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+12,28: /turf/open/misc/beach/coast/corner | /area/virtual_domain/fullbright
+13,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+14,28: /obj/structure/headpike/bone{pixel_y = 24} | /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+15,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+16,28: /obj/structure/headpike/bone{pixel_y = 24} | /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+17,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+18,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+19,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+20,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+21,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+22,28: /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+23,28: /turf/open/misc/beach/coast/corner{dir = 1} | /area/virtual_domain/fullbright
+24,28: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+25,28: /mob/living/basic/trooper/pirate/melee | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+30,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+31,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+32,28: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+1,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+3,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,27: /obj/structure/flora/bush/sparsegrass/style_random | /turf/open/misc/grass | /area/virtual_domain/fullbright
+7,27: /obj/structure/flora/bush/sunny | /turf/open/misc/grass | /area/virtual_domain/fullbright
+8,27: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,27: /turf/open/misc/beach/coast/corner | /area/virtual_domain/fullbright
+10,27: /obj/structure/flora/bush/stalky | /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+11,27: /obj/structure/headpike/bone | /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+12,27: /turf/open/misc/beach/coast{dir = 6} | /area/virtual_domain/fullbright
+13,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,27: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,27: /turf/open/misc/beach/coast{dir = 10} | /area/virtual_domain/fullbright
+24,27: /turf/open/misc/beach/coast/corner{dir = 1} | /area/virtual_domain/fullbright
+25,27: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+27,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+30,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+31,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+32,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+1,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+3,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,26: /obj/structure/flora/bush/grassy{pixel_y = 8} | /obj/structure/flora/bush/lavendergrass{pixel_y = -10} | /turf/open/misc/grass | /area/virtual_domain/fullbright
+7,26: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+8,26: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,26: /turf/open/misc/beach/coast{dir = 4} | /area/virtual_domain/fullbright
+10,26: /obj/structure/flora/bush/stalky{pixel_y = 13; pixel_x = -8} | /turf/open/water/beach | /area/virtual_domain/fullbright
+11,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,26: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,26: /obj/effect/mob_spawn/corpse/human/pirate | /turf/open/misc/beach/coast{dir = 8} | /area/virtual_domain/fullbright
+25,26: /obj/item/flashlight/flare/torch | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+27,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+28,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+29,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+30,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+31,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+32,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+1,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,25: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+3,25: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,25: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,25: /obj/structure/flora/bush/flowers_br/style_random | /obj/structure/flora/bush/ferny | /turf/open/misc/grass | /area/virtual_domain/fullbright
+6,25: /obj/effect/decal/cleanable/ants | /turf/open/misc/grass | /area/virtual_domain/fullbright
+7,25: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+8,25: /obj/effect/mine/explosive/light | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,25: /turf/open/misc/beach/coast{dir = 4} | /area/virtual_domain/fullbright
+10,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,25: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,25: /turf/open/misc/beach/coast{dir = 10} | /area/virtual_domain/fullbright
+25,25: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/misc/beach/coast | /area/virtual_domain/fullbright
+26,25: /obj/effect/turf_decal/weather/dirt{dir = 4} | /turf/open/misc/beach/coast{dir = 6} | /area/virtual_domain/protected_space
+27,25: /obj/structure/flora/grass/jungle/b | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+28,25: /obj/structure/flora/rock/pile/jungle/style_3{pixel_x = -15; pixel_y = -4} | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+29,25: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+30,25: /obj/structure/flora/rock/pile/style_3 | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+31,25: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+32,25: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+1,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+3,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,24: /obj/structure/flora/bush/sparsegrass | /turf/open/misc/grass | /area/virtual_domain/fullbright
+6,24: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+7,24: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+8,24: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,24: /turf/open/misc/beach/coast{dir = 4} | /area/virtual_domain/fullbright
+10,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,24: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,24: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/water/beach | /area/virtual_domain/fullbright
+26,24: /turf/open/water/beach | /area/virtual_domain/protected_space
+27,24: /obj/effect/turf_decal/weather/dirt{dir = 1} | /turf/open/water/beach | /area/virtual_domain/protected_space
+28,24: /obj/effect/turf_decal/weather/dirt{dir = 1} | /turf/open/water/beach | /area/virtual_domain/protected_space
+29,24: /obj/effect/turf_decal/weather/dirt{dir = 5} | /turf/open/water/beach | /area/virtual_domain/protected_space
+30,24: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+31,24: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+32,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+1,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+3,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,23: /obj/effect/mine/explosive/light | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+6,23: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+7,23: /obj/structure/flora/tree/palm | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+8,23: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,23: /turf/open/misc/beach/coast{dir = 4} | /area/virtual_domain/fullbright
+10,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,23: /obj/structure/flora/rock{pixel_x = 7} | /turf/open/water/beach | /area/virtual_domain/fullbright
+17,23: /obj/structure/flora/rock/style_3 | /turf/open/water/beach | /area/virtual_domain/fullbright
+18,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,23: /turf/open/water/beach | /area/virtual_domain/fullbright
+26,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+27,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+28,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+29,23: /turf/open/water/beach | /area/virtual_domain/protected_space
+30,23: /obj/effect/turf_decal/weather/dirt{dir = 5} | /turf/open/water/beach | /area/virtual_domain/protected_space
+31,23: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+32,23: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+1,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+3,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,22: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+7,22: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+8,22: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,22: /turf/open/misc/beach/coast{dir = 4} | /area/virtual_domain/fullbright
+10,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,22: /turf/open/water/beach | /area/virtual_domain/fullbright
+26,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+27,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+29,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+30,22: /obj/effect/turf_decal/weather/dirt{dir = 4} | /turf/open/water/beach | /area/virtual_domain/protected_space
+31,22: /obj/effect/mob_spawn/corpse/human/pirate | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+32,22: /obj/structure/flora/rock/pile/jungle/large | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+1,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+7,21: /obj/effect/mob_spawn/corpse/human/pirate | /obj/effect/decal/cleanable/blood/gibs/old | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+8,21: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,21: /turf/open/misc/beach/coast{dir = 4} | /area/virtual_domain/fullbright
+10,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,21: /obj/effect/mob_spawn/corpse/human/pirate/melee | /turf/open/water/beach | /area/virtual_domain/fullbright
+14,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,21: /obj/structure/flora/rock/style_4 | /turf/open/water/beach | /area/virtual_domain/fullbright
+23,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,21: /turf/open/water/beach | /area/virtual_domain/fullbright
+26,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+30,21: /turf/open/water/beach | /area/virtual_domain/protected_space
+31,21: /obj/effect/turf_decal/weather/dirt{dir = 1} | /turf/open/water/beach | /area/virtual_domain/protected_space
+32,21: /obj/effect/turf_decal/weather/dirt{dir = 5} | /turf/open/water/beach | /area/virtual_domain/protected_space
+2,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+4,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+5,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+7,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+8,20: /obj/effect/mine/explosive/light | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+9,20: /turf/open/misc/beach/coast{dir = 4} | /area/virtual_domain/fullbright
+10,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,20: /turf/open/water/beach | /area/virtual_domain/fullbright
+26,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+30,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+31,20: /turf/open/water/beach | /area/virtual_domain/protected_space
+32,20: /turf/open/water/beach | /area/virtual_domain/protected_space
+2,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,19: /turf/open/misc/beach/coast{dir = 6} | /area/virtual_domain/fullbright
+10,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+26,19: /turf/open/water/beach | /area/virtual_domain/fullbright
+27,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,19: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+30,19: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+31,19: /obj/effect/turf_decal/weather/dirt | /obj/structure/flora/rock/pile | /turf/open/water/beach | /area/virtual_domain/protected_space
+32,19: /obj/effect/turf_decal/weather/dirt | /obj/effect/turf_decal/weather/dirt | /turf/open/water/beach | /area/virtual_domain/protected_space
+6,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+10,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+11,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+12,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+26,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+27,18: /turf/open/water/beach | /area/virtual_domain/fullbright
+28,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,18: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+30,18: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+31,18: /obj/structure/flora/rock/pile/jungle/style_2 | /obj/effect/baseturf_helper/virtual_domain | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+32,18: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+6,17: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,17: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+8,17: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+9,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+10,17: /obj/effect/mob_spawn/corpse/human/damaged | /turf/open/water/beach | /area/virtual_domain/fullbright
+11,17: /obj/structure/flora/rock/style_2 | /turf/open/water/beach | /area/virtual_domain/fullbright
+12,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+13,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+14,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+15,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+16,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+17,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+18,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+19,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+20,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+21,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+22,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+23,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+24,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+25,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+26,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+27,17: /turf/open/water/beach | /area/virtual_domain/fullbright
+28,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,17: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+30,17: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+31,17: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+32,17: /obj/structure/closet/crate/goldcrate/stocked | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+6,16: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+7,16: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+8,16: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+9,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+10,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+11,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+12,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+13,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+14,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+15,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,16: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,16: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+29,16: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+30,16: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+31,16: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+32,16: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+6,15: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+7,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+8,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+9,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+10,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+11,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+12,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+13,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+14,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+15,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,15: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+29,15: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+30,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+32,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+6,14: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+7,14: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+8,14: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+9,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+10,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+11,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+12,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+13,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+14,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+15,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,14: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+29,14: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+30,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,14: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+6,13: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+7,13: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+8,13: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+9,13: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+10,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+11,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+12,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+13,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+14,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+15,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,13: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+29,13: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+31,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,12: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+10,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+11,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+12,12: /obj/structure/flora/rock | /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+13,12: /obj/structure/flora/rock/style_3 | /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+14,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+15,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,12: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+29,12: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+9,11: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+10,11: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+11,11: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+12,11: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+13,11: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+14,11: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+15,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,11: /obj/structure/flora/rock/pile/style_2 | /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,11: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+29,11: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+9,10: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+10,10: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,10: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/table/wood | /obj/item/gun/energy/laser/musket{pixel_y = 7} | /obj/item/gun/energy/laser/musket{pixel_y = 2} | /obj/item/gun/energy/laser/musket{pixel_y = -3} | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+12,10: /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/structure/table/wood | /obj/item/flashlight/flare/torch{pixel_y = 10; pixel_x = 7} | /obj/item/reagent_containers/cup/bucket/wooden{pixel_y = -16; pixel_x = 12} | /obj/machinery/recharger{pixel_y = 6; pixel_x = -5} | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+13,10: /obj/item/clothing/suit/armor/militia{pixel_x = -5; pixel_y = 12} | /obj/effect/turf_decal/siding/wood{dir = 1} | /obj/item/clothing/suit/armor/militia{pixel_x = -5; pixel_y = 6} | /obj/item/clothing/suit/armor/militia{pixel_x = -5; pixel_y = -3} | /obj/item/clothing/head/costume/fancy{pixel_x = 6; pixel_y = 12} | /obj/item/clothing/head/costume/fancy{pixel_x = 6; pixel_y = 6} | /obj/item/clothing/head/hats/coordinator{pixel_x = 8; pixel_y = -5} | /obj/structure/closet/cabinet | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+14,10: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+15,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,10: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+20,10: /obj/structure/cannon{dir = 1} | /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+21,10: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/protected_space/fullbright
+22,10: /obj/effect/turf_decal/siding/wood{dir = 1} | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+23,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,10: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+29,10: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+10,9: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,9: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+12,9: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+13,9: /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+14,9: /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+15,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+16,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,9: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+19,9: /obj/effect/turf_decal/siding/wood | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+20,9: /obj/item/stack/cannonball/shellball{pixel_x = 13; pixel_y = 11} | /obj/item/stack/cannonball{pixel_x = 9; pixel_y = 9} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+21,9: /obj/structure/fermenting_barrel/gunpowder{pixel_x = -4; pixel_y = 17} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+22,9: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+23,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,9: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+28,9: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+29,9: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+10,8: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,8: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,8: /obj/effect/turf_decal/siding/wood | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+13,8: /obj/effect/turf_decal/siding/wood | /obj/item/melee/sabre{pixel_y = 12; pixel_x = -10} | /obj/item/gun/energy/laser/retro | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+14,8: /obj/effect/turf_decal/siding/wood | /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+15,8: /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+16,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+17,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+18,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+19,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,8: /obj/effect/turf_decal/siding/wood{dir = 10} | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+21,8: /obj/effect/turf_decal/siding/wood | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood | /area/virtual_domain/protected_space/fullbright
+22,8: /obj/structure/flora/rock/pile | /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,8: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+27,8: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+28,8: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,7: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,7: /turf/template_noop | /area/virtual_domain/safehouse
+13,7: /turf/template_noop | /area/virtual_domain/safehouse
+14,7: /turf/template_noop | /area/virtual_domain/safehouse
+15,7: /turf/template_noop | /area/virtual_domain/safehouse
+16,7: /turf/template_noop | /area/virtual_domain/safehouse
+17,7: /turf/template_noop | /area/virtual_domain/safehouse
+18,7: /turf/template_noop | /area/virtual_domain/safehouse
+19,7: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,7: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,7: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,7: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,7: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,7: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,7: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,7: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+27,7: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+28,7: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,6: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,6: /turf/template_noop | /area/virtual_domain/safehouse
+13,6: /turf/template_noop | /area/virtual_domain/safehouse
+14,6: /turf/template_noop | /area/virtual_domain/safehouse
+15,6: /turf/template_noop | /area/virtual_domain/safehouse
+16,6: /turf/template_noop | /area/virtual_domain/safehouse
+17,6: /turf/template_noop | /area/virtual_domain/safehouse
+18,6: /turf/template_noop | /area/virtual_domain/safehouse
+19,6: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,6: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,6: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,6: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,6: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,6: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,6: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+26,6: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+27,6: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+28,6: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,5: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,5: /turf/template_noop | /area/virtual_domain/safehouse
+13,5: /turf/template_noop | /area/virtual_domain/safehouse
+14,5: /turf/template_noop | /area/virtual_domain/safehouse
+15,5: /turf/template_noop | /area/virtual_domain/safehouse
+16,5: /turf/template_noop | /area/virtual_domain/safehouse
+17,5: /turf/template_noop | /area/virtual_domain/safehouse
+18,5: /turf/template_noop | /area/virtual_domain/safehouse
+19,5: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,5: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,5: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,5: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,5: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+24,5: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+25,5: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+26,5: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+27,5: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+28,5: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,4: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,4: /turf/template_noop | /area/virtual_domain/safehouse
+13,4: /turf/template_noop | /area/virtual_domain/safehouse
+14,4: /turf/template_noop | /area/virtual_domain/safehouse
+15,4: /turf/template_noop | /area/virtual_domain/safehouse
+16,4: /turf/template_noop | /area/virtual_domain/safehouse
+17,4: /turf/template_noop | /area/virtual_domain/safehouse
+18,4: /turf/template_noop | /area/virtual_domain/safehouse
+19,4: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,4: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,4: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,4: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,4: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+24,4: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+25,4: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+26,4: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+27,4: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+28,4: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,3: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,3: /turf/template_noop | /area/virtual_domain/safehouse
+13,3: /turf/template_noop | /area/virtual_domain/safehouse
+14,3: /turf/template_noop | /area/virtual_domain/safehouse
+15,3: /turf/template_noop | /area/virtual_domain/safehouse
+16,3: /turf/template_noop | /area/virtual_domain/safehouse
+17,3: /turf/template_noop | /area/virtual_domain/safehouse
+18,3: /turf/template_noop | /area/virtual_domain/safehouse
+19,3: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+20,3: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+21,3: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+22,3: /turf/open/water/beach | /area/virtual_domain/protected_space/fullbright
+23,3: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+24,3: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+25,3: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+26,3: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space/fullbright
+27,3: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+28,3: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,2: /obj/modular_map_root/safehouse{key = "wood"} | /turf/template_noop | /area/virtual_domain/safehouse
+13,2: /turf/template_noop | /area/virtual_domain/safehouse
+14,2: /turf/template_noop | /area/virtual_domain/safehouse
+15,2: /turf/template_noop | /area/virtual_domain/safehouse
+16,2: /turf/template_noop | /area/virtual_domain/safehouse
+17,2: /turf/template_noop | /area/virtual_domain/safehouse
+18,2: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+19,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+20,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+21,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+22,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+23,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+24,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+25,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+26,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+27,2: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+11,1: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+12,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+13,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+14,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+15,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+16,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+17,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+18,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+19,1: /turf/closed/indestructible/binary | /area/virtual_domain/protected_space/fullbright
+
+[chunk 33 1 1]
+33,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,27: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+34,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+34,26: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+35,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,25: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+34,25: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+35,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+34,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+35,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+36,24: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,23: /obj/structure/flora/grass/jungle | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+34,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+35,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,23: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,22: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+34,22: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+35,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,22: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,21: /obj/structure/flora/grass/jungle/b{pixel_x = -15; pixel_y = 9} | /obj/structure/flora/rock/pile/jungle/large/style_2{pixel_x = -3; pixel_y = -1} | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+34,21: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+35,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,21: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,20: /obj/effect/turf_decal/weather/dirt{dir = 5} | /turf/open/water/beach | /area/virtual_domain/protected_space
+34,20: /obj/structure/flora/grass/jungle/b/style_random{pixel_x = -13; pixel_y = 18} | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+35,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,20: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,19: /obj/effect/turf_decal/weather/dirt | /turf/open/water/beach | /area/virtual_domain/protected_space
+34,19: /obj/effect/turf_decal/weather/dirt{dir = 1} | /obj/effect/turf_decal/weather/dirt | /turf/open/water/beach | /area/virtual_domain/protected_space
+35,19: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,19: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,18: /obj/structure/flora/bush/sunny/style_3{pixel_y = 22} | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+34,18: /obj/structure/closet/crate/grave | /obj/structure/flora/grass/jungle/b | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+35,18: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,18: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,17: /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+34,17: /obj/item/gun/energy/laser/hellgun{pixel_y = 10} | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+35,17: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,17: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,16: /obj/structure/closet/crate/goldcrate/stocked | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+34,16: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/dirt/jungle | /area/virtual_domain/protected_space
+35,16: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,16: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+34,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+35,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/protected_space
+36,15: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,14: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+34,14: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+35,14: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+36,14: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+37,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+34,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+35,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+36,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+37,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 1 33 1]
+13,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,41: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+15,41: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+16,41: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+17,41: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+18,41: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+19,41: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+20,41: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+21,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,40: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+15,40: /obj/structure/bookcase/random/adult | /obj/effect/decal/cleanable/cobweb | /turf/open/floor/wood/parquet | /area/virtual_domain
+16,40: /obj/item/kirbyplants/organic/plant21{pixel_x = -8} | /obj/structure/filingcabinet{pixel_x = 11} | /turf/open/floor/wood/parquet | /area/virtual_domain
+17,40: /obj/structure/table/wood | /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/item/reagent_containers/cup/glass/bottle/rum{desc = "Rum with ghostly properties that can help the drinker enter the spirit realm. It has fermented under the sea of space for ages."; name = "Ghost Pirate Rum"; pixel_x = -4; pixel_y = 12} | /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{pixel_x = -7; pixel_y = 5} | /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{pixel_x = 3; pixel_y = 7} | /turf/open/floor/carpet/blue | /area/virtual_domain
+18,40: /obj/structure/table/wood | /obj/item/book/manual/wiki/ordnance | /turf/open/floor/carpet/blue | /area/virtual_domain
+19,40: /obj/structure/table/wood | /obj/item/melee/energy/sword/pirate{pixel_y = 10} | /obj/item/cigarette/cigar{pixel_x = 4} | /obj/item/lighter{pixel_x = 10; pixel_y = -8} | /obj/machinery/light/small/directional/north | /turf/open/floor/carpet/blue | /area/virtual_domain
+20,40: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+21,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,39: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+13,39: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+14,39: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+15,39: /obj/structure/bookcase/random/fiction | /turf/open/floor/wood/parquet | /area/virtual_domain
+16,39: /turf/open/floor/wood/parquet | /area/virtual_domain
+17,39: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/decal/cleanable/dirt/dust | /mob/living/basic/trooper/pirate/ranged/space | /turf/open/floor/carpet/blue | /area/virtual_domain
+18,39: /obj/structure/chair/comfy/carp{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/carpet/blue | /area/virtual_domain
+19,39: /obj/structure/table/wood | /mob/living/basic/parrot{name = "pepper"; faction = list("pirate")} | /turf/open/floor/carpet/blue | /area/virtual_domain
+20,39: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+21,39: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+22,39: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+23,39: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+24,39: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+25,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+11,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+12,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+13,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+14,38: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+15,38: /obj/effect/mapping_helpers/burnt_floor | /obj/item/storage/bag/money/dutchmen{pixel_y = 13} | /obj/structure/rack/skeletal | /turf/open/floor/wood/parquet | /area/virtual_domain
+16,38: /obj/effect/decal/cleanable/dirt/dust | /mob/living/basic/trooper/pirate/melee/space | /turf/open/floor/wood/parquet | /area/virtual_domain
+17,38: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/carpet/blue | /area/virtual_domain
+18,38: /turf/open/floor/carpet/blue | /area/virtual_domain
+19,38: /obj/machinery/loot_locator | /turf/open/floor/carpet/blue | /area/virtual_domain
+20,38: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+21,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+22,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+23,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+24,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+25,38: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+26,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,37: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+10,37: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+11,37: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+12,37: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+13,37: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+14,37: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+15,37: /obj/structure/closet/cabinet | /obj/item/clothing/head/costume/pirate/armored | /obj/item/clothing/suit/costume/pirate/captain/armored | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood/parquet | /area/virtual_domain
+16,37: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood/parquet | /area/virtual_domain
+17,37: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/machinery/light/small/directional/south | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/carpet/blue | /area/virtual_domain
+18,37: /obj/effect/decal/cleanable/dirt/dust | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/carpet/blue | /area/virtual_domain
+19,37: /obj/item/bedsheet/rainbow/double | /obj/structure/bed/double | /turf/open/floor/carpet/blue | /area/virtual_domain
+20,37: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+21,37: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+22,37: /obj/structure/fluff/beach_umbrella{pixel_x = -7; pixel_y = -10} | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+23,37: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+24,37: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+25,37: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+26,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,36: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+9,36: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+10,36: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+11,36: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt/dust | /obj/structure/bed/maint{pixel_x = 2; pixel_y = 1} | /obj/effect/decal/cleanable/cobweb | /obj/item/toy/plush/beeplushie | /turf/open/floor/wood | /area/virtual_domain/fullbright
+12,36: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+13,36: /obj/structure/barricade/wooden | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+14,36: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+15,36: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+16,36: /obj/machinery/door/airlock/vault{color = "#825427"; name = "Ye Olde Strong Door"} | /turf/open/floor/wood/parquet | /area/virtual_domain
+17,36: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+18,36: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+19,36: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+20,36: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain
+21,36: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+22,36: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+23,36: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,36: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+25,36: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+26,36: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,36: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,35: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+9,35: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+10,35: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt/dust | /obj/structure/bed/maint{pixel_x = 2; pixel_y = 13} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+11,35: /obj/effect/decal/cleanable/dirt/dust | /obj/structure/bed/maint | /turf/open/floor/wood | /area/virtual_domain/fullbright
+12,35: /obj/effect/turf_decal/weather/sand{dir = 5} | /obj/effect/decal/cleanable/glass | /turf/open/floor/wood | /area/virtual_domain/fullbright
+13,35: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+14,35: /obj/machinery/smartfridge/drying/rack | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+15,35: /mob/living/basic/trooper/pirate/melee | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+16,35: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+17,35: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+18,35: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+19,35: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+20,35: /obj/structure/barricade/wooden/crude | /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+21,35: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+22,35: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+23,35: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,35: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+25,35: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+26,35: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,35: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,35: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,34: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+9,34: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+10,34: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt/dust | /mob/living/basic/trooper/pirate/ranged | /turf/open/floor/wood | /area/virtual_domain/fullbright
+11,34: /obj/effect/mapping_helpers/burnt_floor | /obj/structure/bed/maint{pixel_x = -10; pixel_y = 9} | /obj/effect/decal/cleanable/wrapping | /turf/open/floor/wood | /area/virtual_domain/fullbright
+12,34: /obj/effect/turf_decal/weather/sand{dir = 4} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+13,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+14,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+15,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+16,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+17,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+18,34: /obj/structure/fermenting_barrel{pixel_x = 6; pixel_y = 11} | /obj/effect/turf_decal/weather/sand{dir = 9} | /obj/effect/mob_spawn/ghost_role/human/virtual_domain/pirate | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+19,34: /obj/effect/decal/cleanable/dirt/dust | /obj/structure/table/wood | /obj/item/flashlight/flare/torch{pixel_y = 10} | /obj/item/flashlight/flare/torch{pixel_x = 8; pixel_y = 6} | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+20,34: /obj/effect/decal/cleanable/dirt/dust | /obj/item/claymore/cutlass | /obj/item/clothing/head/costume/pirate/bandana/armored{pixel_x = -9; pixel_y = 7} | /obj/structure/table/wood | /obj/item/gun/energy/laser{pixel_y = -3} | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+21,34: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+22,34: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+23,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+25,34: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,34: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,34: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,34: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,33: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+8,33: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+9,33: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+10,33: /obj/effect/turf_decal/siding/wood{dir = 8} | /obj/effect/decal/cleanable/dirt/dust | /obj/effect/decal/cleanable/blood/oil | /turf/open/floor/wood | /area/virtual_domain/fullbright
+11,33: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/garbage | /turf/open/floor/wood | /area/virtual_domain/fullbright
+12,33: /obj/structure/bed/maint{pixel_x = -5; pixel_y = 9} | /obj/effect/turf_decal/weather/sand{dir = 6} | /turf/open/floor/wood | /area/virtual_domain/fullbright
+13,33: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+14,33: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+15,33: /obj/structure/bonfire/prelit | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+16,33: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+17,33: /obj/effect/turf_decal/weather/sand{dir = 9} | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+18,33: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+19,33: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+20,33: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+21,33: /obj/effect/turf_decal/weather/sand{dir = 4} | /obj/effect/decal/cleanable/cobweb/cobweb2 | /obj/machinery/jukebox | /turf/open/floor/wood{icon_state = "wood_large"} | /area/virtual_domain/fullbright
+22,33: /turf/closed/wall/mineral/wood/nonmetal | /area/virtual_domain/fullbright
+23,33: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+24,33: /obj/structure/flora/coconuts{pixel_x = 9; pixel_y = -14} | /obj/structure/flora/tree/palm/style_2 | /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+25,33: /turf/open/misc/beach/sand | /area/virtual_domain/fullbright
+26,33: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+27,33: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+28,33: /turf/closed/mineral/random/jungle | /area/virtual_domain/fullbright
+29,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright

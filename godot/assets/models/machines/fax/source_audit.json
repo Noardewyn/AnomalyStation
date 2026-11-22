@@ -1,0 +1,34 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/fax.png",
+  "sha256": "c1824a5fddbf701fe66c64cf50cd8dc0775bea9f6b25920f53942ff23b21bdcc",
+  "rgba_matches_dmi": true,
+  "tile": [
+    32,
+    32
+  ],
+  "atlas_size": [
+    480,
+    448
+  ],
+  "source": "code/modules/paperwork/fax.dm",
+  "mount_evidence": "anchored_tabletop_offset=6, PASSTABLE",
+  "duplicate_audit": "No existing fax model before this batch.",
+  "preset_count": 13,
+  "opaque_uv_samples": 28920,
+  "visual_review": [
+    "front",
+    "back",
+    "right",
+    "top",
+    "three_quarter",
+    "underside"
+  ],
+  "frame_choices": {
+    "idle": 0,
+    "idle_alternate": 1,
+    "fax_receive": 12,
+    "send_paper": 5,
+    "receive_paper": 5
+  },
+  "scope": "Static appearances; all eight contain overlays. Send/receive effects sampled for paper only; other transition frames remain in atlas metadata."
+}

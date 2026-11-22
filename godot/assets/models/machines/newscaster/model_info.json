@@ -1,0 +1,676 @@
+{
+  "newscaster_off": {
+    "base_state": "newscaster_off",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "newscaster_normal": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "newscaster_normal"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.022",
+        "materials": [
+          "Newscaster_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "newscaster_normal"
+      }
+    ],
+    "triangles": 178
+  },
+  "newscaster_wanted": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "newscaster_wanted"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Screen_Overlay.023",
+        "materials": [
+          "Newscaster_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "newscaster_wanted"
+      }
+    ],
+    "triangles": 180
+  },
+  "newscaster_wanted_alert": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "newscaster_wanted",
+      "newscaster_alert"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Screen_Overlay.023",
+        "materials": [
+          "Newscaster_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "newscaster_wanted"
+      },
+      {
+        "name": "Alert_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Alert_Overlay.002",
+        "materials": [
+          "Newscaster_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "newscaster_alert"
+      }
+    ],
+    "triangles": 182
+  },
+  "newscaster_normal_crack_1": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "newscaster_normal",
+      "crack1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.022",
+        "materials": [
+          "Newscaster_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "newscaster_normal"
+      },
+      {
+        "name": "Damage_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Damage_Overlay.003",
+        "materials": [
+          "Newscaster_Overlay_Unlit.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "crack1"
+      }
+    ],
+    "triangles": 194
+  },
+  "newscaster_off_crack_1": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "crack1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Damage_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Damage_Overlay.003",
+        "materials": [
+          "Newscaster_Overlay_Unlit.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "crack1"
+      }
+    ],
+    "triangles": 192
+  },
+  "newscaster_normal_crack_2": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "newscaster_normal",
+      "crack2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.022",
+        "materials": [
+          "Newscaster_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "newscaster_normal"
+      },
+      {
+        "name": "Damage_Overlay",
+        "triangles": 50,
+        "shared_mesh": "Damage_Overlay.008",
+        "materials": [
+          "Newscaster_Overlay_Unlit.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "crack2"
+      }
+    ],
+    "triangles": 228
+  },
+  "newscaster_off_crack_2": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "crack2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Damage_Overlay",
+        "triangles": 50,
+        "shared_mesh": "Damage_Overlay.008",
+        "materials": [
+          "Newscaster_Overlay_Unlit.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "crack2"
+      }
+    ],
+    "triangles": 226
+  },
+  "newscaster_off_crack_3": {
+    "base_state": "newscaster_off",
+    "overlays": [
+      "crack3"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 152,
+        "shared_mesh": "Continuous_Housing.068",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Glass.002",
+        "materials": [
+          "Newscaster_Glass_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Keyboard_Panel",
+        "triangles": 12,
+        "shared_mesh": "Keyboard_Panel.002",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Damage_Overlay",
+        "triangles": 102,
+        "shared_mesh": "Damage_Overlay.010",
+        "materials": [
+          "Newscaster_Overlay_Unlit.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "crack3"
+      }
+    ],
+    "triangles": 278
+  },
+  "newscaster_assembly": {
+    "base_state": "newscaster_assembly",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 98,
+        "shared_mesh": "Continuous_Housing.079",
+        "materials": [
+          "Newscaster_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 98
+  }
+}

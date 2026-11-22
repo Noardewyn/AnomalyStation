@@ -1,0 +1,11 @@
+anomaly-map 1
+source _maps/safehouses/test_only_safehouse.dmm tg 1d99bd7f
+size 4 2 1
+chunk 32
+default /turf/open/floor/plating | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+1,1: /obj/effect/landmark/bitrunning/hololadder_spawn | /obj/modular_map_connector | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,1: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/plating | /area/virtual_domain/safehouse
+3,1: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,1: /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/floor/plating | /area/virtual_domain/safehouse

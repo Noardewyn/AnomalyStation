@@ -1,0 +1,13 @@
+"a" = (/turf/open/space/basic,/area/space)
+"b" = (/turf/closed/wall,/area/station/hallway)
+"c" = (/obj/machinery/camera/directional/east{c_tag = "Hall; North | East"; network = list("ss13","rd")},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/iron,/area/station/hallway)
+"d" = (/obj/item/crowbar{name = "\improper Bob's \"bar\""; pixel_x = -4; pixel_y = 2e+005},/turf/open/floor/iron,/area/station/hallway)
+"e" = (/turf/open/floor/iron,/area/station/hallway)
+"f" = (/obj/effect/landmark/latejoin,/turf/open/floor/iron,/area/station/hallway)
+
+(1,1,1) = {"
+abbba
+acdea
+aefea
+abbba
+"}

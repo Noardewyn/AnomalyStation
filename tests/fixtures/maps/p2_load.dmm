@@ -1,0 +1,91 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"b" = (
+/turf/closed/indestructible,
+/area/station/hallway/primary/central)
+"c" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"d" = (
+/obj/effect/landmark/latejoin,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"e" = (
+/obj/effect/landmark/start/assistant,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"f" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+"g" = (
+/obj/item/crowbar{
+	name = "\improper Bob's bar";
+	pixel_x = -4
+	},
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"h" = (
+/obj/effect/landmark/latejoin,
+/obj/effect/landmark/start/assistant,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+f
+b
+b
+b
+b
+f
+"}
+(3,1,1) = {"
+a
+b
+c
+d
+b
+a
+"}
+(4,1,1) = {"
+a
+b
+e
+g
+b
+a
+"}
+(5,1,1) = {"
+a
+b
+h
+c
+b
+a
+"}
+(6,1,1) = {"
+a
+b
+b
+b
+b
+a
+"}
+(7,1,1) = {"
+a
+a
+a
+a
+a
+a
+"}

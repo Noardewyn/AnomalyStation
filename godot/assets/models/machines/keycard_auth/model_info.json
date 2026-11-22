@@ -1,0 +1,63 @@
+{
+  "keycard_auth_wall_idle": {
+    "base_state": "auth_off",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Reader_Housing",
+        "triangles": 56,
+        "shared_mesh": "Continuous_Reader_Housing",
+        "materials": [
+          "Keycard_Reader_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "auth_off"
+      }
+    ],
+    "triangles": 56
+  },
+  "keycard_auth_wall_confirmation": {
+    "base_state": "auth_off",
+    "overlays": [
+      "auth_on frame 1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Reader_Housing",
+        "triangles": 56,
+        "shared_mesh": "Continuous_Reader_Housing",
+        "materials": [
+          "Keycard_Reader_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "auth_off"
+      },
+      {
+        "name": "Confirmation_Overlay",
+        "triangles": 82,
+        "shared_mesh": "Confirmation_Overlay",
+        "materials": [
+          "Keycard_Confirmation_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "auth_on"
+      }
+    ],
+    "triangles": 138
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source": "code/modules/paperwork/ticketmachine.dm",
+  "scope": "Three original states: ticketmachine, ticketmachine_empty and ticketmachine_off (wallframe artwork). Source ready/empty differs in exactly two indicator pixels. Lower bracket remains present in all three states; it is not a removable paper ticket. Separate display enclosure, recessed display, dispenser with lined outlet, rear mounting rail and lower bracket. Queue_Number_Overlay_Slot preserves space for MAPTEXT(current_number); numbers are runtime-generated text, absent from atlas and intentionally not fabricated. Off is supplied atlas artwork, not asserted to be automatically selected by runtime power handling. Existing door_button assets cover remote control button; no duplicate button added.",
+  "map_placements": 1,
+  "atlas": "godot\\assets\\tg\\icons\\obj\\service\\bureaucracy.png",
+  "atlas_sha256": "156444ff9458296b85c7a87a0c1edfff61e66743fec7c27436f1855719c18b74",
+  "source_dmi_rgba_verified": true,
+  "tile_size": [
+    32,
+    32
+  ],
+  "states": {
+    "ticketmachine": {
+      "name": "ticketmachine",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 183,
+      "rects": [
+        [
+          224,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    "ticketmachine_empty": {
+      "name": "ticketmachine_empty",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 184,
+      "rects": [
+        [
+          256,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    "ticketmachine_off": {
+      "name": "ticketmachine_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 185,
+      "rects": [
+        [
+          288,
+          352,
+          32,
+          32
+        ]
+      ]
+    }
+  },
+  "original_atlas_unmodified": true
+}

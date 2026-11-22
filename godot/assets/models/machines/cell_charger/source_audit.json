@@ -1,0 +1,31 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/cell_charger.png",
+  "reference": "..\\tgstation\\icons\\obj\\machines\\cell_charger.dmi",
+  "image_size": [
+    224,
+    192
+  ],
+  "tile_size": [
+    32,
+    32
+  ],
+  "png_sha256": "910291c6c5fc4dda019a1daec6c3f9fbc474c4cf8e122f5de2ca2722666963a7",
+  "rgba_matches_original_dmi": true,
+  "source_code": [
+    "code/game/machinery/cell_charger.dm",
+    "code/modules/power/cell.dm"
+  ],
+  "map_audit": "docs/ai/art/cell_charger_map_audit.json",
+  "duplicate_audit": "No pre-existing charger family. APC internal removable cell uses a different depiction (apc2-nocover); it was not modified.",
+  "visual_review": [
+    "front",
+    "back",
+    "right",
+    "top",
+    "three_quarter",
+    "underside"
+  ],
+  "opaque_uv_samples": 24040,
+  "godot_runtime_test": "not run",
+  "scope": "standard connectors; six standard-size cell skins; first static frame per animated state"
+}

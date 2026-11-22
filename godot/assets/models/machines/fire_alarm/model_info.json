@@ -1,0 +1,1167 @@
+{
+  "fire_alarm_unpowered": {
+    "base_state": "fire0",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 86
+  },
+  "fire_alarm_level_0": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_0"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.032",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_0"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_level_1": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.033",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_1"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_level_2": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.034",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_2"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_level_3": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_3"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.035",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_3"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_alerting": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_alerting"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.036",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_alerting"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_detection_disabled": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_disabled"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.037",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_disabled"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_offstation": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_offstation"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.038",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_offstation"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_emagged": {
+    "base_state": "fire0",
+    "overlays": [
+      "fire_emag"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 32,
+        "shared_mesh": "Status_Overlay.039",
+        "materials": [
+          "Fire_Alarm_Overlay_Original.004",
+          "Fire_Alarm_Overlay_Unlit_Original.003"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_emag"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.052",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 118
+  },
+  "fire_alarm_broken": {
+    "base_state": "firex",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Housing.061",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 20,
+        "shared_mesh": "Pull_Handle.061",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 106
+  },
+  "fire_alarm_frame": {
+    "base_state": "fire_b0",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.062",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.062",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 50
+  },
+  "fire_alarm_circuit_unwired": {
+    "base_state": "fire_b1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.063",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.063",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 62
+  },
+  "fire_alarm_panel_open": {
+    "base_state": "fire_b2",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 38,
+        "shared_mesh": "Continuous_Housing.064",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.048",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b1"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.044",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Indicator_Glass",
+        "triangles": 12,
+        "shared_mesh": "Indicator_Glass.044",
+        "materials": [
+          "Fire_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Pull_Handle",
+        "triangles": 12,
+        "shared_mesh": "Pull_Handle.064",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wire_Left",
+        "triangles": 44,
+        "shared_mesh": "Service_Wire_Left.002",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b2"
+      },
+      {
+        "name": "Service_Wire_Right",
+        "triangles": 52,
+        "shared_mesh": "Service_Wire_Right.002",
+        "materials": [
+          "Fire_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire_b2"
+      }
+    ],
+    "triangles": 182
+  }
+}

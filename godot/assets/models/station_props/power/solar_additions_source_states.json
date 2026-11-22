@@ -1,0 +1,101 @@
+{
+  "width": 32,
+  "height": 32,
+  "states": [
+    {
+      "name": "solar_panel_glass-b",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "sp_base",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 6,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tracker",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 7,
+      "rects": [
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tracker_edge",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tracker_base",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

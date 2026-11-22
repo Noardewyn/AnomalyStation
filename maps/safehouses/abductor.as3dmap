@@ -1,0 +1,33 @@
+anomaly-map 1
+source _maps/safehouses/abductor.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/closed/wall/mineral/abductor | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+1,6: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+4,6: /obj/machinery/door/airlock/abductor | /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+7,6: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+2,5: /obj/machinery/abductor/pad{desc = "A funky looking disc, built into the floor."} | /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+3,5: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+4,5: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+5,5: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+6,5: /obj/machinery/abductor/console | /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+2,4: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/plating/abductor2 | /area/virtual_domain/safehouse
+3,4: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+4,4: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+5,4: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+6,4: /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/floor/plating/abductor2 | /area/virtual_domain/safehouse
+2,3: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/plating/abductor2 | /area/virtual_domain/safehouse
+3,3: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+4,3: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+5,3: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+6,3: /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/floor/plating/abductor2 | /area/virtual_domain/safehouse
+2,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+3,2: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+4,2: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+5,2: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+6,2: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+1,1: /obj/modular_map_connector | /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+4,1: /obj/machinery/door/airlock/abductor | /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse
+7,1: /turf/open/floor/plating/abductor | /area/virtual_domain/safehouse

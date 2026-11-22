@@ -1,0 +1,3482 @@
+{
+  "parts": {
+    "key": "vending_parts",
+    "family": "compact_product",
+    "source_rect": [
+      704,
+      640,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      19,
+      24
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      18,
+      29
+    ],
+    "triangles": 128,
+    "parts": [
+      "vending_parts_Cabinet",
+      "vending_parts_Display_Insert",
+      "vending_parts_Display_Glass",
+      "vending_parts_Delivery_Flap",
+      "vending_parts_Light_Overlay_8_10",
+      "vending_parts_Light_Overlay_18_10",
+      "vending_parts_Light_Overlay_19_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "theater": {
+    "key": "vending_theater",
+    "family": "theater",
+    "source_rect": [
+      512,
+      352,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 180,
+    "parts": [
+      "vending_theater_Cabinet",
+      "vending_theater_Display_Insert",
+      "vending_theater_Display_Glass",
+      "vending_theater_Delivery_Flap",
+      "vending_theater_Light_Overlay_8_10",
+      "vending_theater_Light_Overlay_9_5",
+      "vending_theater_Light_Overlay_9_10",
+      "vending_theater_Light_Overlay_20_5",
+      "vending_theater_Light_Overlay_20_10",
+      "vending_theater_Light_Overlay_23_5",
+      "vending_theater_Light_Overlay_23_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "boozeomat": {
+    "key": "vending_boozeomat",
+    "family": "boozeomat",
+    "source_rect": [
+      672,
+      224,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      0,
+      5,
+      30,
+      32
+    ],
+    "depth_m": 0.84,
+    "width_m": 1.7999999999999998,
+    "height_m": 1.6199999999999999,
+    "mount_height_m": 0,
+    "display_rect": [
+      2,
+      12,
+      18,
+      29
+    ],
+    "delivery_rect": [
+      21,
+      23,
+      27,
+      29
+    ],
+    "triangles": 200,
+    "parts": [
+      "vending_boozeomat_Cabinet",
+      "vending_boozeomat_Display_Insert",
+      "vending_boozeomat_Display_Glass",
+      "vending_boozeomat_Delivery_Flap",
+      "vending_boozeomat_Light_Overlay_2_5",
+      "vending_boozeomat_Light_Overlay_2_12",
+      "vending_boozeomat_Light_Overlay_2_23",
+      "vending_boozeomat_Light_Overlay_18_5",
+      "vending_boozeomat_Light_Overlay_18_12",
+      "vending_boozeomat_Light_Overlay_21_5",
+      "vending_boozeomat_Light_Overlay_21_12",
+      "vending_boozeomat_Light_Overlay_27_5",
+      "vending_boozeomat_Light_Overlay_27_12"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.800000011920929,
+      0.8419999778270721,
+      1.6200000047683716
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "cart": {
+    "key": "vending_cart",
+    "family": "wide_service",
+    "source_rect": [
+      288,
+      352,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.5,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      5,
+      9,
+      20,
+      28
+    ],
+    "delivery_rect": [
+      21,
+      26,
+      27,
+      29
+    ],
+    "triangles": 132,
+    "parts": [
+      "vending_cart_Cabinet",
+      "vending_cart_Display_Insert",
+      "vending_cart_Display_Glass",
+      "vending_cart_Delivery_Flap",
+      "vending_cart_Light_Overlay_5_9",
+      "vending_cart_Light_Overlay_5_26",
+      "vending_cart_Light_Overlay_21_9"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "cigs": {
+    "key": "vending_cigs",
+    "family": "compact_product",
+    "source_rect": [
+      64,
+      96,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      21
+    ],
+    "delivery_rect": [
+      7,
+      25,
+      15,
+      27
+    ],
+    "triangles": 128,
+    "parts": [
+      "vending_cigs_Cabinet",
+      "vending_cigs_Display_Insert",
+      "vending_cigs_Display_Glass",
+      "vending_cigs_Delivery_Flap",
+      "vending_cigs_Light_Overlay_7_10",
+      "vending_cigs_Light_Overlay_15_10",
+      "vending_cigs_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "clothes": {
+    "key": "vending_clothes",
+    "family": "wardrobe",
+    "source_rect": [
+      0,
+      384,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_clothes_Cabinet",
+      "vending_clothes_Display_Insert",
+      "vending_clothes_Display_Glass",
+      "vending_clothes_Delivery_Flap",
+      "vending_clothes_Light_Overlay_8_10",
+      "vending_clothes_Light_Overlay_9_5",
+      "vending_clothes_Light_Overlay_9_10",
+      "vending_clothes_Light_Overlay_20_5",
+      "vending_clothes_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "coffee": {
+    "key": "vending_coffee",
+    "family": "coffee",
+    "source_rect": [
+      256,
+      224,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      9,
+      12,
+      22,
+      22
+    ],
+    "delivery_rect": [
+      11,
+      25,
+      20,
+      28
+    ],
+    "triangles": 168,
+    "parts": [
+      "vending_coffee_Cabinet",
+      "vending_coffee_Display_Insert",
+      "vending_coffee_Display_Glass",
+      "vending_coffee_Delivery_Flap",
+      "vending_coffee_Light_Overlay_9_5",
+      "vending_coffee_Light_Overlay_9_12",
+      "vending_coffee_Light_Overlay_11_5",
+      "vending_coffee_Light_Overlay_11_12",
+      "vending_coffee_Light_Overlay_20_5",
+      "vending_coffee_Light_Overlay_20_12"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "Cola_Machine": {
+    "key": "vending_cola_machine",
+    "family": "branded_drink",
+    "source_rect": [
+      544,
+      128,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      8,
+      27,
+      19,
+      29
+    ],
+    "triangles": 84,
+    "parts": [
+      "vending_cola_machine_Cabinet",
+      "vending_cola_machine_Delivery_Flap",
+      "vending_cola_machine_Light_Overlay_5_5",
+      "vending_cola_machine_Light_Overlay_8_5",
+      "vending_cola_machine_Light_Overlay_19_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "cola_black": {
+    "key": "vending_cola_black",
+    "family": "branded_drink",
+    "source_rect": [
+      736,
+      128,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      8,
+      27,
+      19,
+      29
+    ],
+    "triangles": 84,
+    "parts": [
+      "vending_cola_black_Cabinet",
+      "vending_cola_black_Delivery_Flap",
+      "vending_cola_black_Light_Overlay_5_5",
+      "vending_cola_black_Light_Overlay_8_5",
+      "vending_cola_black_Light_Overlay_19_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "red_cola": {
+    "key": "vending_red_cola",
+    "family": "branded_drink",
+    "source_rect": [
+      384,
+      160,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      8,
+      27,
+      19,
+      29
+    ],
+    "triangles": 84,
+    "parts": [
+      "vending_red_cola_Cabinet",
+      "vending_red_cola_Delivery_Flap",
+      "vending_red_cola_Light_Overlay_5_5",
+      "vending_red_cola_Light_Overlay_8_5",
+      "vending_red_cola_Light_Overlay_19_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "space_up": {
+    "key": "vending_space_up",
+    "family": "branded_drink",
+    "source_rect": [
+      608,
+      160,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      8,
+      27,
+      19,
+      29
+    ],
+    "triangles": 84,
+    "parts": [
+      "vending_space_up_Cabinet",
+      "vending_space_up_Delivery_Flap",
+      "vending_space_up_Light_Overlay_5_5",
+      "vending_space_up_Light_Overlay_8_5",
+      "vending_space_up_Light_Overlay_19_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "starkist": {
+    "key": "vending_starkist",
+    "family": "drink_display",
+    "source_rect": [
+      256,
+      192,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      9,
+      11,
+      19,
+      24
+    ],
+    "delivery_rect": [
+      9,
+      26,
+      21,
+      28
+    ],
+    "triangles": 128,
+    "parts": [
+      "vending_starkist_Cabinet",
+      "vending_starkist_Display_Insert",
+      "vending_starkist_Display_Glass",
+      "vending_starkist_Delivery_Flap",
+      "vending_starkist_Light_Overlay_9_11",
+      "vending_starkist_Light_Overlay_19_11",
+      "vending_starkist_Light_Overlay_21_11"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "soda": {
+    "key": "vending_soda",
+    "family": "drink_display",
+    "source_rect": [
+      480,
+      192,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      9,
+      13,
+      16,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      20,
+      29
+    ],
+    "triangles": 164,
+    "parts": [
+      "vending_soda_Cabinet",
+      "vending_soda_Display_Insert",
+      "vending_soda_Display_Glass",
+      "vending_soda_Delivery_Flap",
+      "vending_soda_Light_Overlay_9_5",
+      "vending_soda_Light_Overlay_9_13",
+      "vending_soda_Light_Overlay_16_5",
+      "vending_soda_Light_Overlay_16_13",
+      "vending_soda_Light_Overlay_20_5",
+      "vending_soda_Light_Overlay_20_13"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "pwr_game": {
+    "key": "vending_pwr_game",
+    "family": "branded_drink",
+    "source_rect": [
+      32,
+      192,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      8,
+      27,
+      19,
+      29
+    ],
+    "triangles": 84,
+    "parts": [
+      "vending_pwr_game_Cabinet",
+      "vending_pwr_game_Delivery_Flap",
+      "vending_pwr_game_Light_Overlay_5_5",
+      "vending_pwr_game_Light_Overlay_8_5",
+      "vending_pwr_game_Light_Overlay_19_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "shamblers_juice": {
+    "key": "vending_shamblers_juice",
+    "family": "branded_drink",
+    "source_rect": [
+      160,
+      160,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      8,
+      27,
+      19,
+      29
+    ],
+    "triangles": 84,
+    "parts": [
+      "vending_shamblers_juice_Cabinet",
+      "vending_shamblers_juice_Delivery_Flap",
+      "vending_shamblers_juice_Light_Overlay_5_5",
+      "vending_shamblers_juice_Light_Overlay_8_5",
+      "vending_shamblers_juice_Light_Overlay_19_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "custom": {
+    "key": "vending_custom",
+    "family": "custom",
+    "source_rect": [
+      192,
+      672,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      27,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.44,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      11,
+      23,
+      22
+    ],
+    "delivery_rect": [
+      7,
+      26,
+      22,
+      28
+    ],
+    "triangles": 128,
+    "parts": [
+      "vending_custom_Cabinet",
+      "vending_custom_Display_Insert",
+      "vending_custom_Display_Glass",
+      "vending_custom_Delivery_Flap",
+      "vending_custom_Light_Overlay_7_11",
+      "vending_custom_Light_Overlay_23_5",
+      "vending_custom_Light_Overlay_23_11"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.440000057220459,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "greed": {
+    "key": "vending_greed",
+    "family": "custom",
+    "source_rect": [
+      672,
+      672,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      27,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.44,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      6,
+      9,
+      23,
+      23
+    ],
+    "delivery_rect": [
+      16,
+      26,
+      26,
+      29
+    ],
+    "triangles": 132,
+    "parts": [
+      "vending_greed_Cabinet",
+      "vending_greed_Display_Insert",
+      "vending_greed_Display_Glass",
+      "vending_greed_Delivery_Flap",
+      "vending_greed_Light_Overlay_6_9",
+      "vending_greed_Light_Overlay_16_9",
+      "vending_greed_Light_Overlay_23_9"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.440000057220459,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "cytopro": {
+    "key": "vending_cytopro",
+    "family": "cytopro",
+    "source_rect": [
+      0,
+      768,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      21,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      21,
+      29
+    ],
+    "triangles": 132,
+    "parts": [
+      "vending_cytopro_Cabinet",
+      "vending_cytopro_Display_Insert",
+      "vending_cytopro_Display_Glass",
+      "vending_cytopro_Delivery_Flap",
+      "vending_cytopro_Light_Overlay_8_10",
+      "vending_cytopro_Light_Overlay_9_10",
+      "vending_cytopro_Light_Overlay_21_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "snackdonk": {
+    "key": "vending_snackdonk",
+    "family": "wide_food",
+    "source_rect": [
+      640,
+      384,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      2,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.56,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      5,
+      27,
+      25,
+      29
+    ],
+    "triangles": 72,
+    "parts": [
+      "vending_snackdonk_Cabinet",
+      "vending_snackdonk_Delivery_Flap",
+      "vending_snackdonk_Light_Overlay_5_5",
+      "vending_snackdonk_Light_Overlay_25_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "dinnerware": {
+    "key": "vending_dinnerware",
+    "family": "dinnerware",
+    "source_rect": [
+      640,
+      64,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      21,
+      26
+    ],
+    "delivery_rect": [
+      8,
+      28,
+      21,
+      30
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_dinnerware_Cabinet",
+      "vending_dinnerware_Display_Insert",
+      "vending_dinnerware_Display_Glass",
+      "vending_dinnerware_Delivery_Flap",
+      "vending_dinnerware_Light_Overlay_8_5",
+      "vending_dinnerware_Light_Overlay_8_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "engi": {
+    "key": "vending_engi",
+    "family": "engi",
+    "source_rect": [
+      512,
+      320,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.5,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      6,
+      17,
+      27,
+      24
+    ],
+    "delivery_rect": [
+      6,
+      27,
+      19,
+      29
+    ],
+    "triangles": 152,
+    "parts": [
+      "vending_engi_Cabinet",
+      "vending_engi_Display_Insert",
+      "vending_engi_Display_Glass",
+      "vending_engi_Delivery_Flap",
+      "vending_engi_Light_Overlay_6_5",
+      "vending_engi_Light_Overlay_6_17",
+      "vending_engi_Light_Overlay_19_5",
+      "vending_engi_Light_Overlay_19_17",
+      "vending_engi_Light_Overlay_19_24"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "engivend": {
+    "key": "vending_engivend",
+    "family": "industrial",
+    "source_rect": [
+      224,
+      320,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      14,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      19,
+      29
+    ],
+    "triangles": 132,
+    "parts": [
+      "vending_engivend_Cabinet",
+      "vending_engivend_Display_Insert",
+      "vending_engivend_Display_Glass",
+      "vending_engivend_Delivery_Flap",
+      "vending_engivend_Light_Overlay_9_10",
+      "vending_engivend_Light_Overlay_14_10",
+      "vending_engivend_Light_Overlay_19_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "games": {
+    "key": "vending_games",
+    "family": "compact_product",
+    "source_rect": [
+      224,
+      448,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      16,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      16,
+      29
+    ],
+    "triangles": 192,
+    "parts": [
+      "vending_games_Cabinet",
+      "vending_games_Display_Insert",
+      "vending_games_Display_Glass",
+      "vending_games_Delivery_Flap",
+      "vending_games_Light_Overlay_7_5",
+      "vending_games_Light_Overlay_7_16",
+      "vending_games_Light_Overlay_9_5",
+      "vending_games_Light_Overlay_9_16",
+      "vending_games_Light_Overlay_16_5",
+      "vending_games_Light_Overlay_16_16",
+      "vending_games_Light_Overlay_20_5",
+      "vending_games_Light_Overlay_20_16"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "hotdog-vendor": {
+    "key": "vending_hotdog_vendor",
+    "family": "hotdog",
+    "source_rect": [
+      32,
+      736,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      4,
+      5,
+      26,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.3199999999999998,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      10,
+      14,
+      21,
+      25
+    ],
+    "delivery_rect": [
+      11,
+      26,
+      20,
+      28
+    ],
+    "triangles": 212,
+    "parts": [
+      "vending_hotdog_vendor_Cabinet",
+      "vending_hotdog_vendor_Display_Insert",
+      "vending_hotdog_vendor_Delivery_Flap",
+      "vending_hotdog_vendor_Projecting_Center_Housing",
+      "vending_hotdog_vendor_Light_Overlay_10_5",
+      "vending_hotdog_vendor_Light_Overlay_10_14",
+      "vending_hotdog_vendor_Light_Overlay_11_5",
+      "vending_hotdog_vendor_Light_Overlay_11_14",
+      "vending_hotdog_vendor_Light_Overlay_20_5",
+      "vending_hotdog_vendor_Light_Overlay_20_14",
+      "vending_hotdog_vendor_Light_Overlay_21_5",
+      "vending_hotdog_vendor_Light_Overlay_21_14"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.3200000524520874,
+      0.7299999892711639,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "liberationstation": {
+    "key": "vending_liberationstation",
+    "family": "wide_food",
+    "source_rect": [
+      416,
+      384,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      2,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.56,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      5,
+      27,
+      25,
+      29
+    ],
+    "triangles": 84,
+    "parts": [
+      "vending_liberationstation_Cabinet",
+      "vending_liberationstation_Delivery_Flap",
+      "vending_liberationstation_Light_Overlay_2_5",
+      "vending_liberationstation_Light_Overlay_5_5",
+      "vending_liberationstation_Light_Overlay_25_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "syndi": {
+    "key": "vending_syndi",
+    "family": "wide_food",
+    "source_rect": [
+      224,
+      416,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      2,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.56,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      5,
+      27,
+      25,
+      29
+    ],
+    "triangles": 72,
+    "parts": [
+      "vending_syndi_Cabinet",
+      "vending_syndi_Delivery_Flap",
+      "vending_syndi_Light_Overlay_5_5",
+      "vending_syndi_Light_Overlay_25_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "MagiVend": {
+    "key": "vending_magivend",
+    "family": "magic",
+    "source_rect": [
+      480,
+      256,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      19,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      22,
+      29
+    ],
+    "triangles": 144,
+    "parts": [
+      "vending_magivend_Cabinet",
+      "vending_magivend_Display_Insert",
+      "vending_magivend_Display_Glass",
+      "vending_magivend_Delivery_Flap",
+      "vending_magivend_Light_Overlay_8_10",
+      "vending_magivend_Light_Overlay_9_10",
+      "vending_magivend_Light_Overlay_19_10",
+      "vending_magivend_Light_Overlay_22_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "med": {
+    "key": "vending_med",
+    "family": "wide_medical",
+    "source_rect": [
+      672,
+      256,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.5,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      5,
+      9,
+      20,
+      28
+    ],
+    "delivery_rect": [
+      21,
+      26,
+      27,
+      29
+    ],
+    "triangles": 132,
+    "parts": [
+      "vending_med_Cabinet",
+      "vending_med_Display_Insert",
+      "vending_med_Display_Glass",
+      "vending_med_Delivery_Flap",
+      "vending_med_Light_Overlay_5_9",
+      "vending_med_Light_Overlay_5_26",
+      "vending_med_Light_Overlay_21_9"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "drug": {
+    "key": "vending_drug",
+    "family": "wide_medical",
+    "source_rect": [
+      96,
+      288,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.5,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      5,
+      9,
+      20,
+      28
+    ],
+    "delivery_rect": [
+      21,
+      26,
+      27,
+      29
+    ],
+    "triangles": 96,
+    "parts": [
+      "vending_drug_Cabinet",
+      "vending_drug_Display_Insert",
+      "vending_drug_Display_Glass",
+      "vending_drug_Delivery_Flap"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5,
+      0.6600000262260437,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "wallmed": {
+    "key": "vending_wallmed",
+    "family": "wall_medical",
+    "source_rect": [
+      352,
+      288,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      9,
+      10,
+      21,
+      28
+    ],
+    "depth_m": 0.3,
+    "width_m": 0.72,
+    "height_m": 1.08,
+    "mount_height_m": 0.9,
+    "display_rect": [
+      11,
+      12,
+      20,
+      20
+    ],
+    "delivery_rect": [
+      11,
+      25,
+      14,
+      26
+    ],
+    "triangles": 164,
+    "parts": [
+      "vending_wallmed_Cabinet",
+      "vending_wallmed_Display_Insert",
+      "vending_wallmed_Display_Glass",
+      "vending_wallmed_Delivery_Flap",
+      "vending_wallmed_Light_Overlay_11_12",
+      "vending_wallmed_Light_Overlay_11_20",
+      "vending_wallmed_Light_Overlay_14_12",
+      "vending_wallmed_Light_Overlay_14_20",
+      "vending_wallmed_Light_Overlay_20_12",
+      "vending_wallmed_Light_Overlay_20_20"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      0.7200000286102295,
+      0.3020000010728836,
+      1.0800000429153442
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "seeds": {
+    "key": "vending_seeds",
+    "family": "snack",
+    "source_rect": [
+      288,
+      128,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 108,
+    "parts": [
+      "vending_seeds_Cabinet",
+      "vending_seeds_Display_Insert",
+      "vending_seeds_Display_Glass",
+      "vending_seeds_Delivery_Flap",
+      "vending_seeds_Light_Overlay_8_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6600000262260437,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "modularpc": {
+    "key": "vending_modularpc",
+    "family": "wide_electronics",
+    "source_rect": [
+      160,
+      608,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.5,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      6,
+      16,
+      24,
+      22
+    ],
+    "delivery_rect": [
+      14,
+      26,
+      26,
+      29
+    ],
+    "triangles": 192,
+    "parts": [
+      "vending_modularpc_Cabinet",
+      "vending_modularpc_Display_Insert",
+      "vending_modularpc_Display_Glass",
+      "vending_modularpc_Delivery_Flap",
+      "vending_modularpc_Light_Overlay_6_5",
+      "vending_modularpc_Light_Overlay_6_16",
+      "vending_modularpc_Light_Overlay_14_5",
+      "vending_modularpc_Light_Overlay_14_16",
+      "vending_modularpc_Light_Overlay_24_5",
+      "vending_modularpc_Light_Overlay_24_16",
+      "vending_modularpc_Light_Overlay_26_5",
+      "vending_modularpc_Light_Overlay_26_16"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "nutri": {
+    "key": "vending_nutri",
+    "family": "snack",
+    "source_rect": [
+      0,
+      128,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_nutri_Cabinet",
+      "vending_nutri_Display_Insert",
+      "vending_nutri_Display_Glass",
+      "vending_nutri_Delivery_Flap",
+      "vending_nutri_Light_Overlay_8_10",
+      "vending_nutri_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "generic": {
+    "key": "vending_generic",
+    "family": "compact_product",
+    "source_rect": [
+      288,
+      96,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      24
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      21,
+      29
+    ],
+    "triangles": 168,
+    "parts": [
+      "vending_generic_Cabinet",
+      "vending_generic_Display_Insert",
+      "vending_generic_Display_Glass",
+      "vending_generic_Delivery_Flap",
+      "vending_generic_Light_Overlay_7_10",
+      "vending_generic_Light_Overlay_9_5",
+      "vending_generic_Light_Overlay_9_10",
+      "vending_generic_Light_Overlay_20_10",
+      "vending_generic_Light_Overlay_21_5",
+      "vending_generic_Light_Overlay_21_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "robotics": {
+    "key": "vending_robotics",
+    "family": "wide_electronics",
+    "source_rect": [
+      0,
+      352,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      27,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.44,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      6,
+      11,
+      22,
+      22
+    ],
+    "delivery_rect": [
+      14,
+      26,
+      26,
+      29
+    ],
+    "triangles": 168,
+    "parts": [
+      "vending_robotics_Cabinet",
+      "vending_robotics_Display_Insert",
+      "vending_robotics_Display_Glass",
+      "vending_robotics_Delivery_Flap",
+      "vending_robotics_Light_Overlay_6_5",
+      "vending_robotics_Light_Overlay_6_11",
+      "vending_robotics_Light_Overlay_14_5",
+      "vending_robotics_Light_Overlay_14_11",
+      "vending_robotics_Light_Overlay_22_5",
+      "vending_robotics_Light_Overlay_22_11"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.440000057220459,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "RunicVendor": {
+    "key": "vending_runicvendor",
+    "family": "magic",
+    "source_rect": [
+      640,
+      704,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      19,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      22,
+      29
+    ],
+    "triangles": 168,
+    "parts": [
+      "vending_runicvendor_Cabinet",
+      "vending_runicvendor_Display_Insert",
+      "vending_runicvendor_Display_Glass",
+      "vending_runicvendor_Delivery_Flap",
+      "vending_runicvendor_Light_Overlay_8_10",
+      "vending_runicvendor_Light_Overlay_9_10",
+      "vending_runicvendor_Light_Overlay_9_25",
+      "vending_runicvendor_Light_Overlay_9_27",
+      "vending_runicvendor_Light_Overlay_19_10",
+      "vending_runicvendor_Light_Overlay_22_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "sec": {
+    "key": "vending_sec",
+    "family": "wide_service",
+    "source_rect": [
+      512,
+      96,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      3,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.5,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      5,
+      9,
+      20,
+      28
+    ],
+    "delivery_rect": [
+      21,
+      26,
+      27,
+      29
+    ],
+    "triangles": 132,
+    "parts": [
+      "vending_sec_Cabinet",
+      "vending_sec_Display_Insert",
+      "vending_sec_Display_Glass",
+      "vending_sec_Delivery_Flap",
+      "vending_sec_Light_Overlay_5_9",
+      "vending_sec_Light_Overlay_5_26",
+      "vending_sec_Light_Overlay_21_9"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "snack": {
+    "key": "vending_snack",
+    "family": "snack",
+    "source_rect": [
+      736,
+      0,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_snack_Cabinet",
+      "vending_snack_Display_Insert",
+      "vending_snack_Display_Glass",
+      "vending_snack_Delivery_Flap",
+      "vending_snack_Light_Overlay_8_10",
+      "vending_snack_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "snackblue": {
+    "key": "vending_snackblue",
+    "family": "snack",
+    "source_rect": [
+      256,
+      32,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_snackblue_Cabinet",
+      "vending_snackblue_Display_Insert",
+      "vending_snackblue_Display_Glass",
+      "vending_snackblue_Delivery_Flap",
+      "vending_snackblue_Light_Overlay_8_10",
+      "vending_snackblue_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "snackorange": {
+    "key": "vending_snackorange",
+    "family": "snack",
+    "source_rect": [
+      448,
+      32,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_snackorange_Cabinet",
+      "vending_snackorange_Display_Insert",
+      "vending_snackorange_Display_Glass",
+      "vending_snackorange_Delivery_Flap",
+      "vending_snackorange_Light_Overlay_8_10",
+      "vending_snackorange_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "snackgreen": {
+    "key": "vending_snackgreen",
+    "family": "snack",
+    "source_rect": [
+      640,
+      32,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_snackgreen_Cabinet",
+      "vending_snackgreen_Display_Insert",
+      "vending_snackgreen_Display_Glass",
+      "vending_snackgreen_Delivery_Flap",
+      "vending_snackgreen_Light_Overlay_8_10",
+      "vending_snackgreen_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "snackteal": {
+    "key": "vending_snackteal",
+    "family": "snack",
+    "source_rect": [
+      32,
+      64,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_snackteal_Cabinet",
+      "vending_snackteal_Display_Insert",
+      "vending_snackteal_Display_Glass",
+      "vending_snackteal_Delivery_Flap",
+      "vending_snackteal_Light_Overlay_8_10",
+      "vending_snackteal_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "sovietsoda": {
+    "key": "vending_sovietsoda",
+    "family": "sovietsoda",
+    "source_rect": [
+      704,
+      192,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      8,
+      22,
+      16
+    ],
+    "delivery_rect": [
+      10,
+      25,
+      21,
+      28
+    ],
+    "triangles": 180,
+    "parts": [
+      "vending_sovietsoda_Cabinet",
+      "vending_sovietsoda_Display_Insert",
+      "vending_sovietsoda_Delivery_Flap",
+      "vending_sovietsoda_Raised_Sign",
+      "vending_sovietsoda_Light_Overlay_5_8",
+      "vending_sovietsoda_Light_Overlay_8_8",
+      "vending_sovietsoda_Light_Overlay_8_16",
+      "vending_sovietsoda_Light_Overlay_10_8",
+      "vending_sovietsoda_Light_Overlay_10_16",
+      "vending_sovietsoda_Light_Overlay_21_8",
+      "vending_sovietsoda_Light_Overlay_22_8"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.7000000178813934,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "sustenance": {
+    "key": "vending_sustenance",
+    "family": "snack",
+    "source_rect": [
+      224,
+      64,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_sustenance_Cabinet",
+      "vending_sustenance_Display_Insert",
+      "vending_sustenance_Display_Glass",
+      "vending_sustenance_Delivery_Flap",
+      "vending_sustenance_Light_Overlay_8_10",
+      "vending_sustenance_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "sustenance_labor": {
+    "key": "vending_sustenance_labor",
+    "family": "snack",
+    "source_rect": [
+      416,
+      64,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      8,
+      27,
+      20,
+      29
+    ],
+    "triangles": 120,
+    "parts": [
+      "vending_sustenance_labor_Cabinet",
+      "vending_sustenance_labor_Display_Insert",
+      "vending_sustenance_labor_Display_Glass",
+      "vending_sustenance_labor_Delivery_Flap",
+      "vending_sustenance_labor_Light_Overlay_8_10",
+      "vending_sustenance_labor_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "nt-donk": {
+    "key": "vending_nt_donk",
+    "family": "wide_food",
+    "source_rect": [
+      608,
+      416,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      2,
+      5,
+      28,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.56,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      5,
+      27,
+      25,
+      29
+    ],
+    "triangles": 72,
+    "parts": [
+      "vending_nt_donk_Cabinet",
+      "vending_nt_donk_Delivery_Flap",
+      "vending_nt_donk_Light_Overlay_5_5",
+      "vending_nt_donk_Light_Overlay_25_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.5600000023841858,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "secdrobe": {
+    "key": "vending_secdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      736,
+      448,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_secdrobe_Cabinet",
+      "vending_secdrobe_Display_Insert",
+      "vending_secdrobe_Display_Glass",
+      "vending_secdrobe_Delivery_Flap",
+      "vending_secdrobe_Light_Overlay_8_10",
+      "vending_secdrobe_Light_Overlay_9_5",
+      "vending_secdrobe_Light_Overlay_9_10",
+      "vending_secdrobe_Light_Overlay_20_5",
+      "vending_secdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "medidrobe": {
+    "key": "vending_medidrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      384,
+      480,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_medidrobe_Cabinet",
+      "vending_medidrobe_Display_Insert",
+      "vending_medidrobe_Display_Glass",
+      "vending_medidrobe_Delivery_Flap",
+      "vending_medidrobe_Light_Overlay_8_10",
+      "vending_medidrobe_Light_Overlay_9_5",
+      "vending_medidrobe_Light_Overlay_9_10",
+      "vending_medidrobe_Light_Overlay_20_5",
+      "vending_medidrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "engidrobe": {
+    "key": "vending_engidrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      192,
+      544,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_engidrobe_Cabinet",
+      "vending_engidrobe_Display_Insert",
+      "vending_engidrobe_Display_Glass",
+      "vending_engidrobe_Delivery_Flap",
+      "vending_engidrobe_Light_Overlay_8_10",
+      "vending_engidrobe_Light_Overlay_9_5",
+      "vending_engidrobe_Light_Overlay_9_10",
+      "vending_engidrobe_Light_Overlay_20_5",
+      "vending_engidrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "atmosdrobe": {
+    "key": "vending_atmosdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      448,
+      544,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_atmosdrobe_Cabinet",
+      "vending_atmosdrobe_Display_Insert",
+      "vending_atmosdrobe_Display_Glass",
+      "vending_atmosdrobe_Delivery_Flap",
+      "vending_atmosdrobe_Light_Overlay_8_10",
+      "vending_atmosdrobe_Light_Overlay_9_5",
+      "vending_atmosdrobe_Light_Overlay_9_10",
+      "vending_atmosdrobe_Light_Overlay_20_5",
+      "vending_atmosdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "cargodrobe": {
+    "key": "vending_cargodrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      160,
+      576,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_cargodrobe_Cabinet",
+      "vending_cargodrobe_Display_Insert",
+      "vending_cargodrobe_Display_Glass",
+      "vending_cargodrobe_Delivery_Flap",
+      "vending_cargodrobe_Light_Overlay_8_10",
+      "vending_cargodrobe_Light_Overlay_9_5",
+      "vending_cargodrobe_Light_Overlay_9_10",
+      "vending_cargodrobe_Light_Overlay_20_5",
+      "vending_cargodrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "robodrobe": {
+    "key": "vending_robodrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      608,
+      512,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_robodrobe_Cabinet",
+      "vending_robodrobe_Display_Insert",
+      "vending_robodrobe_Display_Glass",
+      "vending_robodrobe_Delivery_Flap",
+      "vending_robodrobe_Light_Overlay_8_10",
+      "vending_robodrobe_Light_Overlay_9_5",
+      "vending_robodrobe_Light_Overlay_9_10",
+      "vending_robodrobe_Light_Overlay_20_5",
+      "vending_robodrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "scidrobe": {
+    "key": "vending_scidrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      416,
+      512,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_scidrobe_Cabinet",
+      "vending_scidrobe_Display_Insert",
+      "vending_scidrobe_Display_Glass",
+      "vending_scidrobe_Delivery_Flap",
+      "vending_scidrobe_Light_Overlay_8_10",
+      "vending_scidrobe_Light_Overlay_9_5",
+      "vending_scidrobe_Light_Overlay_9_10",
+      "vending_scidrobe_Light_Overlay_20_5",
+      "vending_scidrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "hydrobe": {
+    "key": "vending_hydrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      704,
+      544,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_hydrobe_Cabinet",
+      "vending_hydrobe_Display_Insert",
+      "vending_hydrobe_Display_Glass",
+      "vending_hydrobe_Delivery_Flap",
+      "vending_hydrobe_Light_Overlay_8_10",
+      "vending_hydrobe_Light_Overlay_9_5",
+      "vending_hydrobe_Light_Overlay_9_10",
+      "vending_hydrobe_Light_Overlay_20_5",
+      "vending_hydrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "curadrobe": {
+    "key": "vending_curadrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      352,
+      576,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_curadrobe_Cabinet",
+      "vending_curadrobe_Display_Insert",
+      "vending_curadrobe_Display_Glass",
+      "vending_curadrobe_Delivery_Flap",
+      "vending_curadrobe_Light_Overlay_8_10",
+      "vending_curadrobe_Light_Overlay_9_5",
+      "vending_curadrobe_Light_Overlay_9_10",
+      "vending_curadrobe_Light_Overlay_20_5",
+      "vending_curadrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "coroner_drobe": {
+    "key": "vending_coroner_drobe",
+    "family": "wardrobe",
+    "source_rect": [
+      416,
+      704,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_coroner_drobe_Cabinet",
+      "vending_coroner_drobe_Display_Insert",
+      "vending_coroner_drobe_Display_Glass",
+      "vending_coroner_drobe_Delivery_Flap",
+      "vending_coroner_drobe_Light_Overlay_8_10",
+      "vending_coroner_drobe_Light_Overlay_9_5",
+      "vending_coroner_drobe_Light_Overlay_9_10",
+      "vending_coroner_drobe_Light_Overlay_20_5",
+      "vending_coroner_drobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "bardrobe": {
+    "key": "vending_bardrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      416,
+      448,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_bardrobe_Cabinet",
+      "vending_bardrobe_Display_Insert",
+      "vending_bardrobe_Display_Glass",
+      "vending_bardrobe_Delivery_Flap",
+      "vending_bardrobe_Light_Overlay_8_10",
+      "vending_bardrobe_Light_Overlay_9_5",
+      "vending_bardrobe_Light_Overlay_9_10",
+      "vending_bardrobe_Light_Overlay_20_5",
+      "vending_bardrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "chefdrobe": {
+    "key": "vending_chefdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      192,
+      480,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_chefdrobe_Cabinet",
+      "vending_chefdrobe_Display_Insert",
+      "vending_chefdrobe_Display_Glass",
+      "vending_chefdrobe_Delivery_Flap",
+      "vending_chefdrobe_Light_Overlay_8_10",
+      "vending_chefdrobe_Light_Overlay_9_5",
+      "vending_chefdrobe_Light_Overlay_9_10",
+      "vending_chefdrobe_Light_Overlay_20_5",
+      "vending_chefdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "janidrobe": {
+    "key": "vending_janidrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      544,
+      576,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_janidrobe_Cabinet",
+      "vending_janidrobe_Display_Insert",
+      "vending_janidrobe_Display_Glass",
+      "vending_janidrobe_Delivery_Flap",
+      "vending_janidrobe_Light_Overlay_8_10",
+      "vending_janidrobe_Light_Overlay_9_5",
+      "vending_janidrobe_Light_Overlay_9_10",
+      "vending_janidrobe_Light_Overlay_20_5",
+      "vending_janidrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "lawdrobe": {
+    "key": "vending_lawdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      736,
+      576,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_lawdrobe_Cabinet",
+      "vending_lawdrobe_Display_Insert",
+      "vending_lawdrobe_Display_Glass",
+      "vending_lawdrobe_Delivery_Flap",
+      "vending_lawdrobe_Light_Overlay_8_10",
+      "vending_lawdrobe_Light_Overlay_9_5",
+      "vending_lawdrobe_Light_Overlay_9_10",
+      "vending_lawdrobe_Light_Overlay_20_5",
+      "vending_lawdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "chapdrobe": {
+    "key": "vending_chapdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      0,
+      544,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_chapdrobe_Cabinet",
+      "vending_chapdrobe_Display_Insert",
+      "vending_chapdrobe_Display_Glass",
+      "vending_chapdrobe_Delivery_Flap",
+      "vending_chapdrobe_Light_Overlay_8_10",
+      "vending_chapdrobe_Light_Overlay_9_5",
+      "vending_chapdrobe_Light_Overlay_9_10",
+      "vending_chapdrobe_Light_Overlay_20_5",
+      "vending_chapdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "chemdrobe": {
+    "key": "vending_chemdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      640,
+      480,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_chemdrobe_Cabinet",
+      "vending_chemdrobe_Display_Insert",
+      "vending_chemdrobe_Display_Glass",
+      "vending_chemdrobe_Delivery_Flap",
+      "vending_chemdrobe_Light_Overlay_8_10",
+      "vending_chemdrobe_Light_Overlay_9_5",
+      "vending_chemdrobe_Light_Overlay_9_10",
+      "vending_chemdrobe_Light_Overlay_20_5",
+      "vending_chemdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "genedrobe": {
+    "key": "vending_genedrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      32,
+      512,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_genedrobe_Cabinet",
+      "vending_genedrobe_Display_Insert",
+      "vending_genedrobe_Display_Glass",
+      "vending_genedrobe_Delivery_Flap",
+      "vending_genedrobe_Light_Overlay_8_10",
+      "vending_genedrobe_Light_Overlay_9_5",
+      "vending_genedrobe_Light_Overlay_9_10",
+      "vending_genedrobe_Light_Overlay_20_5",
+      "vending_genedrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "virodrobe": {
+    "key": "vending_virodrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      224,
+      512,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_virodrobe_Cabinet",
+      "vending_virodrobe_Display_Insert",
+      "vending_virodrobe_Display_Glass",
+      "vending_virodrobe_Delivery_Flap",
+      "vending_virodrobe_Light_Overlay_8_10",
+      "vending_virodrobe_Light_Overlay_9_5",
+      "vending_virodrobe_Light_Overlay_9_10",
+      "vending_virodrobe_Light_Overlay_20_5",
+      "vending_virodrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "detdrobe": {
+    "key": "vending_detdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      512,
+      640,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      8,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      23,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_detdrobe_Cabinet",
+      "vending_detdrobe_Display_Insert",
+      "vending_detdrobe_Display_Glass",
+      "vending_detdrobe_Delivery_Flap",
+      "vending_detdrobe_Light_Overlay_8_10",
+      "vending_detdrobe_Light_Overlay_9_5",
+      "vending_detdrobe_Light_Overlay_9_10",
+      "vending_detdrobe_Light_Overlay_20_5",
+      "vending_detdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "centdrobe": {
+    "key": "vending_centdrobe",
+    "family": "wardrobe",
+    "source_rect": [
+      160,
+      704,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": [
+      7,
+      10,
+      20,
+      25
+    ],
+    "delivery_rect": [
+      9,
+      27,
+      20,
+      29
+    ],
+    "triangles": 156,
+    "parts": [
+      "vending_centdrobe_Cabinet",
+      "vending_centdrobe_Display_Insert",
+      "vending_centdrobe_Display_Glass",
+      "vending_centdrobe_Delivery_Flap",
+      "vending_centdrobe_Light_Overlay_7_10",
+      "vending_centdrobe_Light_Overlay_9_5",
+      "vending_centdrobe_Light_Overlay_9_10",
+      "vending_centdrobe_Light_Overlay_20_5",
+      "vending_centdrobe_Light_Overlay_20_10"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  },
+  "tool": {
+    "key": "vending_tool",
+    "family": "industrial",
+    "source_rect": [
+      736,
+      288,
+      32,
+      32
+    ],
+    "front_source_rect": [
+      5,
+      5,
+      25,
+      31
+    ],
+    "depth_m": 0.6599999999999999,
+    "width_m": 1.2,
+    "height_m": 1.56,
+    "mount_height_m": 0,
+    "display_rect": null,
+    "delivery_rect": [
+      9,
+      27,
+      20,
+      29
+    ],
+    "triangles": 60,
+    "parts": [
+      "vending_tool_Cabinet",
+      "vending_tool_Delivery_Flap",
+      "vending_tool_Light_Overlay_9_5"
+    ],
+    "side_texture": "res://assets/tg/icons/obj/machines/vending.png",
+    "closed_manifold": true,
+    "positive_volume": true,
+    "flat_shading": true,
+    "dimensions_m": [
+      1.2000000476837158,
+      0.6620000004768372,
+      1.559999942779541
+    ],
+    "texture_policy": "Original atlas only; side/back UVs sample source sprite regions."
+  }
+}

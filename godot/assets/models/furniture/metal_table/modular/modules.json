@@ -1,0 +1,277 @@
+{
+  "pitch_m": 0.9,
+  "height_m": 0.75,
+  "mask_bits_godot": {
+    "north_-Z": 1,
+    "east_+X": 2,
+    "south_+Z": 4,
+    "west_-X": 8
+  },
+  "modules": [
+    {
+      "file": "table_single_4legs.glb",
+      "neighbor_mask": 0,
+      "legs": 4,
+      "leg_positions_blender": [
+        [
+          -0.385,
+          -0.385
+        ],
+        [
+          0.385,
+          -0.385
+        ],
+        [
+          0.385,
+          0.385
+        ],
+        [
+          -0.385,
+          0.385
+        ]
+      ],
+      "triangles": 60
+    },
+    {
+      "file": "table_end_2legs.glb",
+      "neighbor_mask": 2,
+      "legs": 2,
+      "leg_positions_blender": [
+        [
+          -0.385,
+          -0.385
+        ],
+        [
+          -0.385,
+          0.385
+        ]
+      ],
+      "triangles": 34
+    },
+    {
+      "file": "table_top_straight.glb",
+      "neighbor_mask": 10,
+      "legs": 0,
+      "leg_positions_blender": [],
+      "triangles": 8
+    },
+    {
+      "file": "table_corner_1leg.glb",
+      "neighbor_mask": 3,
+      "legs": 1,
+      "leg_positions_blender": [
+        [
+          -0.385,
+          -0.385
+        ]
+      ],
+      "triangles": 20
+    },
+    {
+      "file": "table_corner_2legs.glb",
+      "neighbor_mask": 3,
+      "legs": 2,
+      "leg_positions_blender": [
+        [
+          -0.385,
+          -0.385
+        ],
+        [
+          0.385,
+          0.385
+        ]
+      ],
+      "triangles": 32
+    },
+    {
+      "file": "table_top_tee.glb",
+      "neighbor_mask": 11,
+      "legs": 0,
+      "leg_positions_blender": [],
+      "triangles": 6
+    },
+    {
+      "file": "table_top_center.glb",
+      "neighbor_mask": 15,
+      "legs": 0,
+      "leg_positions_blender": [],
+      "triangles": 4
+    }
+  ],
+  "examples": {
+    "Single": {
+      "modules": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "file": "table_single_4legs.glb",
+          "godot_y_degrees": 0
+        }
+      ],
+      "legs": 4,
+      "triangles": 60
+    },
+    "Two": {
+      "modules": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 0
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 180
+        }
+      ],
+      "legs": 4,
+      "triangles": 68
+    },
+    "Three": {
+      "modules": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 0
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "file": "table_top_straight.glb",
+          "godot_y_degrees": 0
+        },
+        {
+          "cell": [
+            2,
+            0
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 180
+        }
+      ],
+      "legs": 4,
+      "triangles": 76
+    },
+    "Corner": {
+      "modules": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "file": "table_corner_2legs.glb",
+          "godot_y_degrees": 0
+        },
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 270
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 180
+        }
+      ],
+      "legs": 6,
+      "triangles": 100
+    },
+    "Square": {
+      "modules": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "file": "table_corner_1leg.glb",
+          "godot_y_degrees": 0
+        },
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "file": "table_corner_1leg.glb",
+          "godot_y_degrees": 270
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "file": "table_corner_1leg.glb",
+          "godot_y_degrees": 90
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "file": "table_corner_1leg.glb",
+          "godot_y_degrees": 180
+        }
+      ],
+      "legs": 4,
+      "triangles": 80
+    },
+    "Tee": {
+      "modules": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 0
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "file": "table_top_tee.glb",
+          "godot_y_degrees": 0
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 270
+        },
+        {
+          "cell": [
+            2,
+            0
+          ],
+          "file": "table_end_2legs.glb",
+          "godot_y_degrees": 180
+        }
+      ],
+      "legs": 6,
+      "triangles": 108
+    }
+  },
+  "top_thickness_m": 0.09,
+  "leg_section_m": 0.1
+}

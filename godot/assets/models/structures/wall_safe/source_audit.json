@@ -1,0 +1,72 @@
+{
+  "source": "code/game/objects/structures/secure_safe.dm; code/datums/components/lockable_storage.dm",
+  "scope": "Common wall_safe mesh covers /obj/structure/secure_safe and /hos (7+1 Meta placements). Captain spare safe has density TRUE and tabletop offset: excluded. Three source states: wall_safe (unlocked), wall_safe_locked, wall_safe_broken. Open is an additional static inspection pose, not a separate source state. Panel_open in source is a service-access flag without separate artwork. Door hinge on left edge opens outward by -105 degrees about Blender Z; rotating pixel-stepped dial uses local Y; nine keys are separate. Shell is recessed with closed back and lined walls.",
+  "map_placements": 8,
+  "atlas": "godot\\assets\\tg\\icons\\obj\\storage\\storage.png",
+  "atlas_sha256": "e5cb389fb681e66837a093d5402e3912a3cb1526964352435e54292ca98de9f2",
+  "source_dmi_rgba_verified": true,
+  "tile_size": [
+    32,
+    32
+  ],
+  "states": {
+    "wall_safe": {
+      "name": "wall_safe",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    "wall_safe_locked": {
+      "name": "wall_safe_locked",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    "wall_safe_broken": {
+      "name": "wall_safe_broken",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ]
+      ]
+    }
+  },
+  "original_atlas_unmodified": true
+}

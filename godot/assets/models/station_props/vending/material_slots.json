@@ -1,0 +1,6737 @@
+{
+  "parts": [
+    {
+      "name": "vending_parts_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_parts.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_parts.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_parts_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_parts.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_parts_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.074",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_parts_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_parts.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_parts_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_parts.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_parts_Light_Overlay_18_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_parts.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_parts_Light_Overlay_19_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_parts.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "theater": [
+    {
+      "name": "vending_theater_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.108",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Light_Overlay_23_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_theater_Light_Overlay_23_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_theater.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "boozeomat": [
+    {
+      "name": "vending_boozeomat_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.010",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_2_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_2_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_2_23",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_18_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_18_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_21_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_21_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_27_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_boozeomat_Light_Overlay_27_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_boozeomat.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "cart": [
+    {
+      "name": "vending_cart_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cart.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_cart.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cart_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cart.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cart_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.015",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_cart_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cart.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cart_Light_Overlay_5_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cart.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cart_Light_Overlay_5_26",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cart.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cart_Light_Overlay_21_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cart.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "cigs": [
+    {
+      "name": "vending_cigs_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cigs.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_cigs.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cigs_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cigs.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cigs_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.026",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_cigs_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cigs.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cigs_Light_Overlay_7_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cigs.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cigs_Light_Overlay_15_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cigs.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cigs_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cigs.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "clothes": [
+    {
+      "name": "vending_clothes_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_clothes.015",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_clothes.015",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_clothes.015",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.028",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_clothes.015",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_clothes.017",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_clothes.017",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_clothes.017",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_clothes.017",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_clothes_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_clothes.017",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "coffee": [
+    {
+      "name": "vending_coffee_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.030",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Light_Overlay_9_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Light_Overlay_11_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Light_Overlay_11_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coffee_Light_Overlay_20_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coffee.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "Cola_Machine": [
+    {
+      "name": "vending_cola_machine_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_Cola_Machine.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_Cola_Machine.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_machine_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_Cola_Machine.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_machine_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_Cola_Machine.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_machine_Light_Overlay_8_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_Cola_Machine.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_machine_Light_Overlay_19_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_Cola_Machine.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "cola_black": [
+    {
+      "name": "vending_cola_black_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cola_black.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_cola_black.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_black_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cola_black.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_black_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cola_black.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_black_Light_Overlay_8_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cola_black.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cola_black_Light_Overlay_19_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cola_black.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "red_cola": [
+    {
+      "name": "vending_red_cola_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_red_cola.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_red_cola.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_red_cola_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_red_cola.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_red_cola_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_red_cola.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_red_cola_Light_Overlay_8_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_red_cola.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_red_cola_Light_Overlay_19_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_red_cola.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "space_up": [
+    {
+      "name": "vending_space_up_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_space_up.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_space_up.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_space_up_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_space_up.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_space_up_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_space_up.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_space_up_Light_Overlay_8_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_space_up.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_space_up_Light_Overlay_19_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_space_up.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "starkist": [
+    {
+      "name": "vending_starkist_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_starkist.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_starkist.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_starkist_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_starkist.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_starkist_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.102",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_starkist_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_starkist.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_starkist_Light_Overlay_9_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_starkist.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_starkist_Light_Overlay_19_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_starkist.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_starkist_Light_Overlay_21_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_starkist.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "soda": [
+    {
+      "name": "vending_soda_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.100",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Light_Overlay_9_13",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Light_Overlay_16_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Light_Overlay_16_13",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_soda_Light_Overlay_20_13",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_soda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "pwr_game": [
+    {
+      "name": "vending_pwr_game_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_pwr_game.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_pwr_game.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_pwr_game_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_pwr_game.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_pwr_game_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_pwr_game.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_pwr_game_Light_Overlay_8_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_pwr_game.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_pwr_game_Light_Overlay_19_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_pwr_game.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "shamblers_juice": [
+    {
+      "name": "vending_shamblers_juice_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_shamblers_juice.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_shamblers_juice.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_shamblers_juice_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_shamblers_juice.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_shamblers_juice_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_shamblers_juice.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_shamblers_juice_Light_Overlay_8_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_shamblers_juice.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_shamblers_juice_Light_Overlay_19_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_shamblers_juice.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "custom": [
+    {
+      "name": "vending_custom_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_custom.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_custom.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_custom_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_custom.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_custom_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.036",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_custom_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_custom.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_custom_Light_Overlay_7_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_custom.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_custom_Light_Overlay_23_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_custom.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_custom_Light_Overlay_23_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_custom.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "greed": [
+    {
+      "name": "vending_greed_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_greed.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_greed.003",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_greed_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_greed.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_greed_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.058",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_greed_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_greed.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_greed_Light_Overlay_6_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_greed.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_greed_Light_Overlay_16_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_greed.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_greed_Light_Overlay_23_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_greed.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "cytopro": [
+    {
+      "name": "vending_cytopro_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cytopro.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_cytopro.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cytopro_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cytopro.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cytopro_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.038",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_cytopro_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cytopro.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cytopro_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cytopro.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cytopro_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cytopro.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cytopro_Light_Overlay_21_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cytopro.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "snackdonk": [
+    {
+      "name": "vending_snackdonk_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackdonk.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_snackdonk.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackdonk_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackdonk.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackdonk_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackdonk.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackdonk_Light_Overlay_25_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackdonk.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "dinnerware": [
+    {
+      "name": "vending_dinnerware_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_dinnerware.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_dinnerware.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_dinnerware_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_dinnerware.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_dinnerware_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.042",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_dinnerware_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_dinnerware.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_dinnerware_Light_Overlay_8_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_dinnerware.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_dinnerware_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_dinnerware.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "engi": [
+    {
+      "name": "vending_engi_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.046",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Light_Overlay_6_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Light_Overlay_6_17",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Light_Overlay_19_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Light_Overlay_19_17",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engi_Light_Overlay_19_24",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "engivend": [
+    {
+      "name": "vending_engivend_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engivend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_engivend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engivend_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engivend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engivend_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.050",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_engivend_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engivend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engivend_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engivend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engivend_Light_Overlay_14_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engivend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engivend_Light_Overlay_19_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engivend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "name": "vending_games_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.052",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_7_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_7_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_9_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_16_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_16_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_games_Light_Overlay_20_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_games.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "hotdog-vendor": [
+    {
+      "name": "vending_hotdog_vendor_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Projecting_Center_Housing",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_10_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_10_14",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_11_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_11_14",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_20_14",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_21_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hotdog_vendor_Light_Overlay_21_14",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hotdog-vendor.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "liberationstation": [
+    {
+      "name": "vending_liberationstation_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_liberationstation.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_liberationstation.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_liberationstation_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_liberationstation.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_liberationstation_Light_Overlay_2_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_liberationstation.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_liberationstation_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_liberationstation.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_liberationstation_Light_Overlay_25_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_liberationstation.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "syndi": [
+    {
+      "name": "vending_syndi_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_syndi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_syndi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_syndi_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_syndi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_syndi_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_syndi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_syndi_Light_Overlay_25_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_syndi.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "MagiVend": [
+    {
+      "name": "vending_magivend_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_magivend_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_magivend_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.066",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_magivend_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_magivend_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_magivend_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_magivend_Light_Overlay_19_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_magivend_Light_Overlay_22_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_MagiVend.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "med": [
+    {
+      "name": "vending_med_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_med.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_med.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_med_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_med.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_med_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.068",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_med_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_med.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_med_Light_Overlay_5_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_med.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_med_Light_Overlay_5_26",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_med.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_med_Light_Overlay_21_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_med.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "drug": [
+    {
+      "name": "vending_drug_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_drug.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_drug.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_drug_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_drug.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_drug_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.044",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_drug_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_drug.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "wallmed": [
+    {
+      "name": "vending_wallmed_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_wallmed.005",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.112",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Light_Overlay_11_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Light_Overlay_11_20",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Light_Overlay_14_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Light_Overlay_14_20",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Light_Overlay_20_12",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_wallmed_Light_Overlay_20_20",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_wallmed.006",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "seeds": [
+    {
+      "name": "vending_seeds_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_seeds.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_seeds.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_seeds_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_seeds.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_seeds_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.088",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_seeds_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_seeds.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_seeds_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_seeds.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "modularpc": [
+    {
+      "name": "vending_modularpc_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.070",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_6_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_6_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_14_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_14_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_24_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_24_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_26_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_modularpc_Light_Overlay_26_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_modularpc.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "nutri": [
+    {
+      "name": "vending_nutri_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_nutri.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_nutri.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_nutri_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_nutri.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_nutri_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.072",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_nutri_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_nutri.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_nutri_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_nutri.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_nutri_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_nutri.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "generic": [
+    {
+      "name": "vending_generic_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.056",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Light_Overlay_7_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Light_Overlay_21_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_generic_Light_Overlay_21_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_generic.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "robotics": [
+    {
+      "name": "vending_robotics_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.078",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Light_Overlay_6_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Light_Overlay_6_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Light_Overlay_14_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Light_Overlay_14_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Light_Overlay_22_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robotics_Light_Overlay_22_11",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robotics.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "RunicVendor": [
+    {
+      "name": "vending_runicvendor_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.080",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Light_Overlay_9_25",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Light_Overlay_9_27",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Light_Overlay_19_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_runicvendor_Light_Overlay_22_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_RunicVendor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "sec": [
+    {
+      "name": "vending_sec_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sec.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_sec.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sec_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sec.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sec_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.084",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_sec_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sec.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sec_Light_Overlay_5_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sec.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sec_Light_Overlay_5_26",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sec.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sec_Light_Overlay_21_9",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sec.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "snack": [
+    {
+      "name": "vending_snack_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snack.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_snack.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snack_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snack.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snack_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.090",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_snack_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snack.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snack_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snack.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snack_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snack.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "snackblue": [
+    {
+      "name": "vending_snackblue_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackblue.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_snackblue.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackblue_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackblue.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackblue_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.092",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_snackblue_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackblue.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackblue_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackblue.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackblue_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackblue.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "snackorange": [
+    {
+      "name": "vending_snackorange_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackorange.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_snackorange.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackorange_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackorange.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackorange_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.096",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_snackorange_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackorange.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackorange_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackorange.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackorange_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackorange.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "snackgreen": [
+    {
+      "name": "vending_snackgreen_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackgreen.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_snackgreen.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackgreen_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackgreen.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackgreen_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.094",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_snackgreen_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackgreen.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackgreen_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackgreen.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackgreen_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackgreen.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "snackteal": [
+    {
+      "name": "vending_snackteal_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackteal.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_snackteal.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackteal_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackteal.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackteal_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.098",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_snackteal_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_snackteal.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackteal_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackteal.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_snackteal_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_snackteal.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "sovietsoda": [
+    {
+      "name": "vending_sovietsoda_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Raised_Sign",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Light_Overlay_5_8",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Light_Overlay_8_8",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Light_Overlay_8_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Light_Overlay_10_8",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Light_Overlay_10_16",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Light_Overlay_21_8",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sovietsoda_Light_Overlay_22_8",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sovietsoda.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "sustenance": [
+    {
+      "name": "vending_sustenance_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sustenance.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_sustenance.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sustenance.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.104",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sustenance.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sustenance.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sustenance.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "sustenance_labor": [
+    {
+      "name": "vending_sustenance_labor_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sustenance_labor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_sustenance_labor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_labor_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sustenance_labor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_labor_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.106",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_labor_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_sustenance_labor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_labor_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sustenance_labor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_sustenance_labor_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_sustenance_labor.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "nt-donk": [
+    {
+      "name": "vending_nt_donk_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_nt-donk.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_nt-donk.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_nt_donk_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_nt-donk.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_nt_donk_Light_Overlay_5_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_nt-donk.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_nt_donk_Light_Overlay_25_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_nt-donk.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "secdrobe": [
+    {
+      "name": "vending_secdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.086",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_secdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_secdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "medidrobe": [
+    {
+      "name": "vending_medidrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.004",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_medidrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_medidrobe.004",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "engidrobe": [
+    {
+      "name": "vending_engidrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.048",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_engidrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_engidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "atmosdrobe": [
+    {
+      "name": "vending_atmosdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.006",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_atmosdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_atmosdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "cargodrobe": [
+    {
+      "name": "vending_cargodrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.013",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_cargodrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_cargodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "robodrobe": [
+    {
+      "name": "vending_robodrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.076",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_robodrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_robodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "scidrobe": [
+    {
+      "name": "vending_scidrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.082",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_scidrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_scidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "hydrobe": [
+    {
+      "name": "vending_hydrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.060",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_hydrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_hydrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "curadrobe": [
+    {
+      "name": "vending_curadrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.034",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_curadrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_curadrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "coroner_drobe": [
+    {
+      "name": "vending_coroner_drobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.032",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_coroner_drobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_coroner_drobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "bardrobe": [
+    {
+      "name": "vending_bardrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.008",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_bardrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_bardrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "chefdrobe": [
+    {
+      "name": "vending_chefdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.022",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chefdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chefdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "janidrobe": [
+    {
+      "name": "vending_janidrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.062",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_janidrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_janidrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "lawdrobe": [
+    {
+      "name": "vending_lawdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.064",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_lawdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_lawdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "chapdrobe": [
+    {
+      "name": "vending_chapdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.020",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chapdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chapdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "chemdrobe": [
+    {
+      "name": "vending_chemdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.024",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_chemdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_chemdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "genedrobe": [
+    {
+      "name": "vending_genedrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.054",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_genedrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_genedrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "virodrobe": [
+    {
+      "name": "vending_virodrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.110",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_virodrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_virodrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "detdrobe": [
+    {
+      "name": "vending_detdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.040",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Light_Overlay_8_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_detdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_detdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "centdrobe": [
+    {
+      "name": "vending_centdrobe_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Display_Insert",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Display_Glass",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Glass_Closed_Cyan.018",
+          "original_atlases": []
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Light_Overlay_7_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Light_Overlay_9_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Light_Overlay_20_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_centdrobe_Light_Overlay_20_10",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_centdrobe.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ],
+  "tool": [
+    {
+      "name": "vending_tool_Cabinet",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_tool.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        },
+        {
+          "slot": 1,
+          "name": "Original_Vending_Service_tool.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_tool_Delivery_Flap",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Vending_Front_tool.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vending_tool_Light_Overlay_9_5",
+      "materials": [
+        {
+          "slot": 0,
+          "name": "Original_Vending_Light_tool.002",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "telecomms_dish": {
+    "triangles": 352,
+    "meshes": 5,
+    "notes": "Shared receiver/broadcaster geometry, receiver/transmitter/off states; open receiving dish and original colored signal-strut texels. broadcaster_send beam is a runtime effect at Signal_Origin, not a solid obstruction.",
+    "parts": [
+      "Dish_Frame",
+      "receiver_Indicator",
+      "transmitter_Indicator",
+      "Exposed_Wiring",
+      "Service_Hatch"
+    ]
+  },
+  "telecomms_processor": {
+    "triangles": 120,
+    "meshes": 7,
+    "notes": "Source processor/processor_off with separate service flap and source open wiring. Raised processor screen and vented lower chassis.",
+    "parts": [
+      "Controller_Body",
+      "Face_State_processor",
+      "Face_State_processor_off",
+      "Upper_Screen_processor",
+      "Upper_Screen_processor_off",
+      "Exposed_Wiring",
+      "Service_Hatch"
+    ]
+  },
+  "telecomms_bus_ntnet": {
+    "triangles": 120,
+    "meshes": 5,
+    "notes": "Source bus/bus_off with separate service flap and source open wiring. NTNet uses bus/bus_off exactly; same geometry, no duplicate relay model.",
+    "parts": [
+      "Controller_Body",
+      "Face_State_bus",
+      "Face_State_bus_off",
+      "Exposed_Wiring",
+      "Service_Hatch"
+    ]
+  },
+  "telecomms_hub": {
+    "triangles": 60,
+    "meshes": 5,
+    "notes": "Tall five-row telecomms hub with source on/off panels and side service flap. One tile; no separate per-direction models.",
+    "parts": [
+      "Rack_Frame",
+      "Rack_Status_hub",
+      "Rack_Status_hub_off",
+      "Exposed_Wiring",
+      "Service_Hatch"
+    ]
+  },
+  "telecomms_server": {
+    "triangles": 72,
+    "meshes": 5,
+    "notes": "Shared chassis proportions, original comm_server atlas; source status variants and service wiring. Research master-server theft stages are not part of the ordinary server type; no objective stripes baked in.",
+    "parts": [
+      "Server_Chassis",
+      "Status_comm_server",
+      "Status_comm_server_off",
+      "Exposed_Wiring",
+      "Service_Hatch"
+    ]
+  },
+  "research_server": {
+    "triangles": 84,
+    "meshes": 6,
+    "notes": "Shared chassis proportions, original RD-server-on atlas; source status variants and service wiring. Research master-server theft stages are not part of the ordinary server type; no objective stripes baked in.",
+    "parts": [
+      "Server_Chassis",
+      "Status_RD-server-on",
+      "Status_RD-server-halt",
+      "Status_RD-server-off",
+      "Exposed_Wiring",
+      "Service_Hatch"
+    ]
+  },
+  "announcement_system": {
+    "triangles": 126,
+    "meshes": 8,
+    "notes": "Separate tower, red cabling and terminal, on/off screen and original independently controlled arrival/head/error indicators. EMP and configuration dispatch remain gameplay.",
+    "parts": [
+      "Announcement_Body",
+      "Terminal_AAS_On",
+      "Terminal_AAS_Off",
+      "Exposed_Wiring",
+      "Service_Hatch",
+      "Light_Green_Frame_0",
+      "Light_Pink_Frame_0",
+      "Error_Red_Frame_0"
+    ]
+  },
+  "blackbox_recorder": {
+    "triangles": 124,
+    "meshes": 4,
+    "notes": "Two independent rotating reels and removable blackbox block, recording/empty clips. Source removal stops tapes. Runtime item ownership/transfer is separate.",
+    "parts": [
+      "Recorder_Housing",
+      "Tape_Reel_5",
+      "Tape_Reel_18",
+      "Removable_Blackbox"
+    ]
+  }
+}

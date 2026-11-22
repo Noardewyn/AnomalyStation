@@ -1,0 +1,205 @@
+{
+  "entertainment_monitor_unpowered": {
+    "base_state": "entertainment_frame",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Entertainment_Monitor_Housing",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Entertainment_Monitor_Housing.001",
+        "materials": [
+          "Entertainment_Monitor_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      },
+      {
+        "name": "Closed_Screen_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Screen_Glass.002",
+        "materials": [
+          "Entertainment_Monitor_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      }
+    ],
+    "triangles": 64
+  },
+  "entertainment_monitor_standby": {
+    "base_state": "entertainment_frame",
+    "frame": 0,
+    "overlays": [
+      "entertainment_blank"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Entertainment_Monitor_Housing",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Entertainment_Monitor_Housing.001",
+        "materials": [
+          "Entertainment_Monitor_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      },
+      {
+        "name": "Closed_Screen_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Screen_Glass.002",
+        "materials": [
+          "Entertainment_Monitor_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.003",
+        "materials": [
+          "Entertainment_Monitor_standby_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_blank"
+      }
+    ],
+    "triangles": 66
+  },
+  "entertainment_monitor_broadcast": {
+    "base_state": "entertainment_frame",
+    "frame": 0,
+    "overlays": [
+      "entertainment"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Entertainment_Monitor_Housing",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Entertainment_Monitor_Housing.001",
+        "materials": [
+          "Entertainment_Monitor_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      },
+      {
+        "name": "Closed_Screen_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Screen_Glass.002",
+        "materials": [
+          "Entertainment_Monitor_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.003",
+        "materials": [
+          "Entertainment_Monitor_broadcast_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment"
+      }
+    ],
+    "triangles": 66
+  },
+  "entertainment_monitor_holiday": {
+    "base_state": "entertainment_frame",
+    "frame": 0,
+    "overlays": [
+      "entertainment_xmas"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Entertainment_Monitor_Housing",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Entertainment_Monitor_Housing.001",
+        "materials": [
+          "Entertainment_Monitor_Housing_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      },
+      {
+        "name": "Closed_Screen_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Screen_Glass.002",
+        "materials": [
+          "Entertainment_Monitor_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_frame"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.003",
+        "materials": [
+          "Entertainment_Monitor_holiday_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "entertainment_xmas"
+      }
+    ],
+    "triangles": 66
+  }
+}

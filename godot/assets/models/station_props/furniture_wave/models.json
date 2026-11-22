@@ -1,0 +1,240 @@
+{
+  "filing_cabinet": {
+    "triangles": 240,
+    "meshes": 4,
+    "notes": "Three separate hollow drawers; interact is a 0.5s open/close cycle on middle drawer, matching filingcabinet.dm. Other drawers can be moved directly. Same mesh layout for grey/white/employment versions.",
+    "parts": [
+      "Cabinet_Shell",
+      "Drawer_1",
+      "Drawer_2",
+      "Drawer_3"
+    ]
+  },
+  "employment_cabinet": {
+    "triangles": 240,
+    "meshes": 4,
+    "notes": "Three separate hollow drawers; interact is a 0.5s open/close cycle on middle drawer, matching filingcabinet.dm. Other drawers can be moved directly. Same mesh layout for grey/white/employment versions.",
+    "parts": [
+      "Cabinet_Shell",
+      "Drawer_1",
+      "Drawer_2",
+      "Drawer_3"
+    ]
+  },
+  "filing_cabinet_white": {
+    "triangles": 240,
+    "meshes": 4,
+    "notes": "Three separate hollow drawers; interact is a 0.5s open/close cycle on middle drawer, matching filingcabinet.dm. Other drawers can be moved directly. Same mesh layout for grey/white/employment versions.",
+    "parts": [
+      "Cabinet_Shell",
+      "Drawer_1",
+      "Drawer_2",
+      "Drawer_3"
+    ]
+  },
+  "drawer_cabinet": {
+    "triangles": 240,
+    "meshes": 4,
+    "notes": "Three separate hollow drawers; interact is a 0.5s open/close cycle on middle drawer, matching filingcabinet.dm. Other drawers can be moved directly. Same mesh layout for grey/white/employment versions.",
+    "parts": [
+      "Cabinet_Shell",
+      "Drawer_1",
+      "Drawer_2",
+      "Drawer_3"
+    ]
+  },
+  "wooden_dresser": {
+    "triangles": 84,
+    "meshes": 1,
+    "notes": "Static source dresser used for clothing/customisation; no drawer animation in original gameplay.",
+    "parts": [
+      "Dresser"
+    ]
+  },
+  "display_case": {
+    "triangles": 168,
+    "meshes": 3,
+    "notes": "Separate transparent hinged hood and Showpiece attachment. Broken hides hood; contents stay independent. Sale case uses original laserbox base. Runtime permission/stock states remain gameplay controlled.",
+    "parts": [
+      "Display_Base",
+      "Glass_Hood",
+      "Broken_Glass"
+    ]
+  },
+  "food_display_case": {
+    "triangles": 156,
+    "meshes": 3,
+    "notes": "Separate transparent hinged hood and Showpiece attachment. Broken hides hood; contents stay independent. Sale case uses original laserbox base. Runtime permission/stock states remain gameplay controlled.",
+    "parts": [
+      "Display_Base",
+      "Glass_Hood",
+      "Broken_Glass"
+    ]
+  },
+  "pet_bed": {
+    "triangles": 92,
+    "meshes": 2,
+    "notes": "Low octagonal woven pet bed; 1.44m footprint.",
+    "parts": [
+      "Woven_Rim",
+      "Cushion"
+    ]
+  },
+  "linen_bin": {
+    "triangles": 72,
+    "meshes": 2,
+    "notes": "Full/half/empty clips change linen level; shell is hollow and uses linenbin-empty.",
+    "parts": [
+      "Bin",
+      "Linen"
+    ]
+  },
+  "bench_middle": {
+    "triangles": 96,
+    "meshes": 2,
+    "notes": "2m modular bench. Neutral original GAGS cover is independently tintable. Join ends at X +/-1; rotate corner 90 degrees. No baked rainbow mapping sprite.",
+    "parts": [
+      "Metal_Frame",
+      "Tintable_Cover"
+    ]
+  },
+  "bench_left": {
+    "triangles": 108,
+    "meshes": 3,
+    "notes": "2m modular bench. Neutral original GAGS cover is independently tintable. Join ends at X +/-1; rotate corner 90 degrees. No baked rainbow mapping sprite.",
+    "parts": [
+      "Metal_Frame",
+      "Tintable_Cover",
+      "End_Arms"
+    ]
+  },
+  "bench_right": {
+    "triangles": 108,
+    "meshes": 3,
+    "notes": "2m modular bench. Neutral original GAGS cover is independently tintable. Join ends at X +/-1; rotate corner 90 degrees. No baked rainbow mapping sprite.",
+    "parts": [
+      "Metal_Frame",
+      "Tintable_Cover",
+      "End_Arms"
+    ]
+  },
+  "bench_solo": {
+    "triangles": 120,
+    "meshes": 3,
+    "notes": "2m modular bench. Neutral original GAGS cover is independently tintable. Join ends at X +/-1; rotate corner 90 degrees. No baked rainbow mapping sprite.",
+    "parts": [
+      "Metal_Frame",
+      "Tintable_Cover",
+      "End_Arms"
+    ]
+  },
+  "bench_corner": {
+    "triangles": 144,
+    "meshes": 2,
+    "notes": "2m modular bench. Neutral original GAGS cover is independently tintable. Join ends at X +/-1; rotate corner 90 degrees. No baked rainbow mapping sprite.",
+    "parts": [
+      "Metal_Frame",
+      "Tintable_Cover"
+    ]
+  },
+  "easel": {
+    "triangles": 60,
+    "meshes": 1,
+    "notes": "Tripod easel with empty Canvas attachment; paintings are separate content, not baked into the texture.",
+    "parts": [
+      "Easel"
+    ]
+  },
+  "desk_bell": {
+    "triangles": 88,
+    "meshes": 2,
+    "notes": "Small tabletop prop with local floor origin; ring clip, sound supplied by gameplay.",
+    "parts": [
+      "Bell_Base",
+      "Bell_Dome"
+    ]
+  },
+  "water_cooler": {
+    "triangles": 124,
+    "meshes": 3,
+    "notes": "Removable jug, independent reagent tint/level and cup attachment. Tipped gameplay state can rotate entire root onto its side; no texture repaint.",
+    "parts": [
+      "Dispenser",
+      "Removable_Jug",
+      "Liquid"
+    ]
+  },
+  "mop_bucket": {
+    "triangles": 132,
+    "meshes": 3,
+    "notes": "Hollow container, independent original water overlay with empty/filled clips. Cart equipment uses named attachments and is not permanently baked into cart mesh.",
+    "parts": [
+      "Bucket",
+      "Wheels",
+      "Water_Surface"
+    ]
+  },
+  "janitorial_cart": {
+    "triangles": 156,
+    "meshes": 3,
+    "notes": "Hollow container, independent original water overlay with empty/filled clips. Cart equipment uses named attachments and is not permanently baked into cart mesh.",
+    "parts": [
+      "Cart_Frame",
+      "Wheels",
+      "Water_Surface"
+    ]
+  },
+  "vault_safe": {
+    "triangles": 72,
+    "meshes": 2,
+    "notes": "Separate side-hinged door, real interior, Contents anchor. Locked/unlocked share closed appearance in source; open/close clips.",
+    "parts": [
+      "Safe_Shell",
+      "Safe_Door"
+    ]
+  },
+  "punching_bag": {
+    "triangles": 84,
+    "meshes": 2,
+    "notes": "Ceiling suspension fits below 2m. Bag pivots at hanger; punch reaction clip.",
+    "parts": [
+      "Bag",
+      "Hanger"
+    ]
+  },
+  "chest_press": {
+    "triangles": 486,
+    "meshes": 2,
+    "notes": "Source workout flick lasts 0.8s. Moving exercise component separated from frame, User_Seat attachment. Runtime controls repetitions. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Frame_And_Seat",
+      "Press_Arms"
+    ]
+  },
+  "bench_press": {
+    "triangles": 484,
+    "meshes": 2,
+    "notes": "Source workout flick lasts 0.8s. Moving exercise component separated from frame, User_Seat attachment. Runtime controls repetitions. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Frame_And_Seat",
+      "Barbell"
+    ]
+  },
+  "training_machine": {
+    "triangles": 48,
+    "meshes": 1,
+    "notes": "Mobile platform; target/toolbox/rider are separate gameplay attachments. Movement across cells is runtime controlled, not baked into idle model.",
+    "parts": [
+      "Training_Platform"
+    ]
+  },
+  "altar": {
+    "triangles": 84,
+    "meshes": 2,
+    "notes": "Original convertaltar wood/cloth, separate cloth for sect-state UV switching. Candle anchors; flame effects belong to gameplay.",
+    "parts": [
+      "Altar_Table",
+      "Sect_Cloth"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "photocopier.001": [
+    "maintenance_open",
+    "maintenance_close",
+    "idle",
+    "working"
+  ],
+  "library_scanner.001": [
+    "idle",
+    "working"
+  ],
+  "bookbinder.001": [
+    "maintenance_open",
+    "maintenance_close",
+    "idle",
+    "working"
+  ],
+  "pda_painter.001": [
+    "pdapainter",
+    "pdapainter-off",
+    "pdapainter-broken",
+    "open",
+    "close"
+  ],
+  "photobooth.001": [
+    "curtain_open",
+    "curtain_closed",
+    "booth_open",
+    "booth_off"
+  ],
+  "biogenerator.001": [
+    "empty",
+    "biomass_2",
+    "biomass_3",
+    "biomass_4",
+    "biomass_5",
+    "biomass_6",
+    "biomass_7",
+    "biomass_1",
+    "biomass_2",
+    "biomass_3",
+    "biomass_4",
+    "biomass_5",
+    "biomass_6",
+    "biomass_7",
+    "unpowered",
+    "powered",
+    "idle",
+    "working",
+    "no_container",
+    "container",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "seed_extractor.001": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "washing_machine.001": [
+    "running",
+    "stopped",
+    "open",
+    "close",
+    "wm_0_1",
+    "wm_0_blood",
+    "wm_0_0",
+    "wm_0_1",
+    "wm_0_blood"
+  ],
+  "kitchen_oven.001": [
+    "open",
+    "close",
+    "interact",
+    "oven_off",
+    "oven_on"
+  ],
+  "kitchen_range.001": [
+    "open",
+    "close",
+    "interact",
+    "range_off",
+    "range_on"
+  ],
+  "griddle.001": [
+    "griddle1_off",
+    "griddle1_on",
+    "griddle2_off",
+    "griddle2_on",
+    "griddle3_off",
+    "griddle3_on"
+  ],
+  "deep_fryer.001": [
+    "lower",
+    "raise",
+    "fryer_off",
+    "fryer_on"
+  ],
+  "food_processor.001": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "slime_processor.001": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "gibber.001": [
+    "working",
+    "idle",
+    "grinder_loaded",
+    "grinder_active",
+    "grinder_empty",
+    "grinder_loaded",
+    "grinder_active"
+  ]
+}

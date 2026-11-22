@@ -1,0 +1,848 @@
+anomaly-map 1
+source _maps/virtual_domains/fredingtonfastingbear.dmm tg 1d99bd7f
+size 33 45 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+6,32: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,32: /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,32: /obj/effect/spawner/random/trash/graffiti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,32: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,32: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,32: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,32: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /obj/item/food/pizza/energy/raw{pixel_x = 3; pixel_y = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,32: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,32: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,32: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,32: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,32: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /obj/item/pizzabox/bomb/armed{pixel_x = 3; pixel_y = 6} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,32: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /obj/effect/decal/cleanable/blood/gibs/up | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,32: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,32: /turf/closed/indestructible/reinforced | /area/virtual_domain
+29,32: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,32: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,32: /turf/open/floor/iron/kitchen | /area/virtual_domain
+6,31: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,31: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,31: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/item/toy/balloon/heart | /obj/machinery/light/empty/directional/west | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,31: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/item/toy/balloon{pixel_x = 7; pixel_y = 2} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,31: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,31: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,31: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,31: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,31: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,31: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /mob/living/basic/bear/snow | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,31: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/machinery/light/empty/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,31: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+29,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+30,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+31,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,31: /turf/open/floor/iron/kitchen | /area/virtual_domain
+2,30: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,30: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,30: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,30: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,30: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,30: /obj/structure/sign/poster/abductor/ayy_cops/directional/north | /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,30: /turf/closed/indestructible/reinforced | /area/virtual_domain
+14,30: /turf/closed/indestructible/reinforced | /area/virtual_domain
+15,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,30: /obj/effect/spawner/random/trash | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,30: /turf/closed/indestructible/reinforced | /area/virtual_domain
+21,30: /turf/closed/indestructible/reinforced | /area/virtual_domain
+22,30: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,30: /obj/effect/decal/cleanable/blood/drip | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,30: /obj/effect/decal/cleanable/blood/footprints{dir = 4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+29,30: /obj/effect/decal/cleanable/blood/footprints{dir = 4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+30,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+31,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,30: /turf/open/floor/iron/kitchen | /area/virtual_domain
+2,29: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,29: /obj/effect/decal/cleanable/cobweb | /turf/open/floor/wood | /area/virtual_domain
+4,29: /turf/open/floor/wood | /area/virtual_domain
+5,29: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/wood | /area/virtual_domain
+6,29: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,29: /obj/effect/decal/cleanable/confetti | /obj/machinery/light/empty/directional/west | /obj/structure/fake_stairs/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,29: /obj/item/trash/popcorn | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,29: /mob/living/basic/bear/fightpit | /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,29: /obj/effect/decal/cleanable/blood/footprints | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,29: /turf/closed/indestructible/reinforced | /area/virtual_domain
+29,29: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,29: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,29: /turf/open/floor/iron/kitchen | /area/virtual_domain
+2,28: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,28: /turf/open/floor/wood | /area/virtual_domain
+4,28: /turf/open/floor/wood | /area/virtual_domain
+5,28: /turf/open/floor/wood | /area/virtual_domain
+6,28: /turf/open/floor/wood | /area/virtual_domain
+7,28: /obj/structure/railing{dir = 4} | /obj/effect/decal/cleanable/leaper_sludge | /turf/open/floor/wood | /area/virtual_domain
+8,28: /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,28: /obj/structure/chair/comfy/black{dir = 8} | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,28: /obj/structure/chair/comfy/black{dir = 8} | /obj/item/trash/pistachios | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,28: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,28: /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,28: /obj/effect/decal/cleanable/insectguts | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,28: /obj/machinery/roulette | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,28: /obj/structure/table/wood/poker | /obj/item/toy/cards/deck | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,28: /obj/structure/table/wood/poker | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,28: /obj/structure/table/wood/poker | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,28: /obj/structure/table/wood/poker | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,28: /obj/structure/table/wood/poker | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,28: /obj/machinery/roulette | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,28: /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,28: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,28: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,28: /obj/structure/chair/sofa/corp/right | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,28: /obj/structure/chair/sofa/corp | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,28: /obj/structure/chair/sofa/corp/left | /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,28: /obj/effect/decal/cleanable/blood/footprints | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,28: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,28: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,28: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,28: /turf/open/floor/iron/kitchen | /area/virtual_domain
+2,27: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,27: /turf/open/floor/wood | /area/virtual_domain
+4,27: /turf/open/floor/wood | /area/virtual_domain
+5,27: /turf/open/floor/wood | /area/virtual_domain
+6,27: /turf/open/floor/wood | /area/virtual_domain
+7,27: /obj/structure/railing{dir = 4} | /turf/open/floor/wood | /area/virtual_domain
+8,27: /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,27: /obj/structure/chair/comfy/black{dir = 8} | /obj/effect/decal/cleanable/blood/splatter | /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,27: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,27: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,27: /obj/machinery/roulette | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,27: /obj/structure/table/wood/poker | /obj/item/trash/ready_donk | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,27: /obj/structure/table/wood/poker | /obj/item/toy/cards/deck/syndicate | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,27: /obj/machinery/roulette | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,27: /obj/structure/table/glass | /obj/item/reagent_containers/cup/soda_cans/grey_bull | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,27: /obj/structure/table/glass | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,27: /obj/structure/table/glass | /obj/item/reagent_containers/cup/glass/drinkingglass/filled/soda{pixel_x = 3; pixel_y = 6} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,27: /obj/machinery/light/empty/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,27: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,27: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,27: /turf/open/floor/iron/kitchen | /area/virtual_domain
+2,26: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,26: /turf/open/floor/wood | /area/virtual_domain
+4,26: /turf/open/floor/wood | /area/virtual_domain
+5,26: /turf/open/floor/wood | /area/virtual_domain
+6,26: /turf/open/floor/wood | /area/virtual_domain
+7,26: /obj/structure/railing{dir = 4} | /turf/open/floor/wood | /area/virtual_domain
+8,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,26: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,26: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,26: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,26: /obj/structure/chair/sofa/corp/left{dir = 1} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,26: /obj/structure/chair/sofa/corp{dir = 1} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,26: /obj/structure/chair/sofa/corp/right{dir = 1} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,26: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,26: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,26: /turf/open/floor/iron/kitchen | /area/virtual_domain
+2,25: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,25: /turf/open/floor/wood | /area/virtual_domain
+4,25: /mob/living/basic/bear/fightpit | /turf/open/floor/wood | /area/virtual_domain
+5,25: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/wood | /area/virtual_domain
+6,25: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,25: /obj/item/toy/balloon/heart | /obj/machinery/light/empty/directional/west | /obj/structure/fake_stairs/wood{dir = 1} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,25: /obj/effect/decal/cleanable/fuel_pool/hivis | /mob/living/basic/bear/fightpit | /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/ants/fire | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,25: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /mob/living/basic/bear/snow | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,25: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,25: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,25: /turf/open/floor/iron/kitchen | /area/virtual_domain
+2,24: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,24: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,24: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,24: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+10,24: /obj/structure/sign/poster/official/soft_cap_pop_art | /turf/closed/indestructible/reinforced | /area/virtual_domain
+11,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,24: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,24: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/item/restraints/legcuffs/beartrap/prearmed | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,24: /obj/effect/spawner/structure/window/reinforced/plasma | /turf/open/floor/iron | /area/virtual_domain
+17,24: /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,24: /obj/effect/spawner/structure/window/reinforced/plasma | /turf/open/floor/iron | /area/virtual_domain
+19,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,24: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,24: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+24,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,24: /obj/machinery/door/airlock | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+26,24: /obj/machinery/door/airlock | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+27,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+28,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+32,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,23: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,23: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,23: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,23: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,23: /obj/item/trash/can | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,23: /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,23: /obj/item/trash/shrimp_chips | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,23: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,23: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,23: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,23: /turf/closed/indestructible/reinforced | /area/virtual_domain
+24,23: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,23: /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+26,23: /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+27,23: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,22: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,22: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,22: /obj/structure/reagent_dispensers/water_cooler | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,22: /obj/machinery/vending/sovietsoda | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,22: /obj/machinery/vending/boozeomat | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,22: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,22: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+24,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,22: /obj/effect/decal/cleanable/food/salt | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+26,22: /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+27,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+28,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+29,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,22: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+10,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+11,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,21: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/machinery/light/empty/directional/west | /obj/effect/decal/cleanable/glass/plastitanium | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,21: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+17,21: /turf/closed/indestructible/fakedoor | /area/virtual_domain
+18,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+19,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,21: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,21: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/machinery/light/empty/directional/east | /obj/effect/decal/cleanable/glass/plastitanium | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+24,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,21: /mob/living/basic/bear/fightpit | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+26,21: /obj/effect/decal/cleanable/food/flour | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+27,21: /obj/structure/closet/secure_closet/freezer/kitchen | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+28,21: /obj/structure/closet/secure_closet/freezer/kitchen | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+29,21: /obj/structure/closet/secure_closet/freezer/cream_pie | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+30,21: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,20: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,20: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,20: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,20: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,20: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,20: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,20: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,20: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,20: /turf/template_noop | /area/virtual_domain
+17,20: /turf/template_noop | /area/virtual_domain
+18,20: /turf/template_noop | /area/virtual_domain
+19,20: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,20: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,20: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,20: /turf/closed/indestructible/reinforced | /area/virtual_domain
+24,20: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,20: /obj/structure/table | /obj/item/kitchen/tongs | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+26,20: /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+27,20: /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+28,20: /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+29,20: /obj/machinery/light/empty/directional/east | /obj/effect/decal/cleanable/food/tomato_smudge | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+30,20: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,19: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,19: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,19: /mob/living/basic/bear/butter | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,19: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,19: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,19: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,19: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,19: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,19: /turf/template_noop | /area/virtual_domain
+17,19: /turf/template_noop | /area/virtual_domain
+18,19: /turf/template_noop | /area/virtual_domain
+19,19: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,19: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,19: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,19: /turf/closed/indestructible/reinforced | /area/virtual_domain
+24,19: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,19: /obj/structure/table | /obj/item/kitchen/rollingpin/illegal | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+26,19: /obj/structure/table | /obj/effect/decal/cleanable/food/salt | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+27,19: /obj/machinery/deepfryer | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+28,19: /obj/machinery/stove | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+29,19: /obj/machinery/oven/range | /turf/open/floor/iron/kitchen/small | /area/virtual_domain
+30,19: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,18: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,18: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,18: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,18: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,18: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,18: /turf/template_noop | /area/virtual_domain
+17,18: /obj/structure/sign/poster/contraband/bountyhunters/directional/south | /turf/template_noop | /area/virtual_domain
+18,18: /turf/template_noop | /area/virtual_domain
+19,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,18: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/structure/sign/poster/official/moth_hardhat/directional/west | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,18: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/blood/gibs/down | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,18: /turf/closed/indestructible/fakedoor | /area/virtual_domain
+24,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+26,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+27,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+28,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+29,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,18: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,17: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,17: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,17: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,17: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,17: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,17: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,17: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,17: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+16,17: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+17,17: /obj/structure/sign/poster/abductor/ayy_over_tizira | /obj/structure/sign/poster/official/the_owl | /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+18,17: /obj/structure/sign/poster/official/the_owl | /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+19,17: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+20,17: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,17: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,17: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,16: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,16: /turf/closed/indestructible/reinforced | /area/virtual_domain
+10,16: /turf/closed/indestructible/reinforced | /area/virtual_domain
+11,16: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,16: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,16: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,16: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,16: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+16,16: /obj/structure/table/reinforced | /obj/item/flashlight/seclite{pixel_y = 9} | /obj/item/flashlight/seclite | /obj/item/flashlight/seclite{pixel_y = 6} | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+17,16: /obj/structure/table/reinforced | /obj/item/modular_computer/laptop/preset/civilian | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+18,16: /obj/structure/table/reinforced | /obj/item/toy/plush/nukeplushie{pixel_x = 5; pixel_y = 6} | /obj/item/phone{base_pixel_w = 4; pixel_x = -6} | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+19,16: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+20,16: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,16: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,16: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,15: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,15: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,15: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/chempuff | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,15: /obj/effect/spawner/structure/window/reinforced/indestructible | /obj/structure/sign/poster/contraband/space_cola/directional/north | /turf/open/floor/iron | /area/virtual_domain/protected_space/fullbright
+16,15: /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+17,15: /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+18,15: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+19,15: /obj/effect/spawner/structure/window/reinforced/indestructible | /turf/open/floor/iron | /area/virtual_domain/protected_space/fullbright
+20,15: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,15: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,15: /obj/structure/sign/poster/official/pda_ad/directional/north | /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,14: /obj/structure/sign/poster/official/no_erp/directional/north | /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,14: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,14: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,14: /obj/machinery/door/poddoor{id = "door1"} | /turf/open/floor/iron/kitchen | /area/virtual_domain/protected_space/fullbright
+16,14: /obj/effect/decal/cleanable/fuel_pool | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+17,14: /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+18,14: /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+19,14: /obj/machinery/door/poddoor{id = "door2"} | /turf/open/floor/iron/kitchen | /area/virtual_domain/protected_space/fullbright
+20,14: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,14: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,14: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,13: /obj/structure/sign/poster/official/no_erp/directional/north | /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,13: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,13: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/machinery/button/door/directional/east{id = "door1"} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,13: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+16,13: /obj/machinery/button/door/directional/west{id = "door1"} | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+17,13: /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+18,13: /obj/structure/table/reinforced | /obj/item/gun/energy/laser{pixel_x = -4} | /obj/item/gun/energy/laser{pixel_y = 2} | /obj/item/gun/energy/laser{pixel_x = 4; pixel_y = 4} | /obj/machinery/recharger{pixel_x = 7; pixel_y = -1} | /obj/machinery/button/door/directional/east{id = "door2"} | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+19,13: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+20,13: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/machinery/button/door/directional/west{id = "door2"} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,13: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,13: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,12: /obj/structure/sign/poster/official/no_erp/directional/north | /obj/structure/sign/poster/official/no_erp/directional/north | /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,12: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,12: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,12: /obj/structure/sign/poster/contraband/free_key/directional | /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+16,12: /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+17,12: /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+18,12: /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+19,12: /obj/structure/sign/poster/official/report_crimes | /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+20,12: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,12: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,12: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,11: /obj/structure/sign/poster/official/no_erp/directional/north | /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,11: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,11: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/greenglow | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,11: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+16,11: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+17,11: /obj/machinery/door/airlock | /turf/open/floor/iron/cafeteria | /area/virtual_domain/protected_space/fullbright
+18,11: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+19,11: /turf/closed/indestructible/reinforced | /area/virtual_domain/protected_space/fullbright
+20,11: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,11: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,11: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,10: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,10: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/structure/closet/gmcloset | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/item/clothing/mask/animal/small/bear | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,10: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/structure/mop_bucket/janitorialcart | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/greenglow | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,10: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,10: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+17,10: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+18,10: /obj/structure/closet/crate/trashcart/filled | /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+19,10: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,10: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/structure/closet/gmcloset | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,10: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/structure/closet/gmcloset | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,10: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+14,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+15,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,9: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+17,9: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+18,9: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+19,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+21,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+22,9: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,8: /turf/closed/indestructible/reinforced | /area/virtual_domain
+16,8: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+17,8: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+18,8: /turf/open/misc/dirt/jungle | /area/virtual_domain/fullbright
+19,8: /turf/closed/indestructible/reinforced | /area/virtual_domain
+20,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,7: /turf/template_noop | /area/virtual_domain/safehouse
+15,7: /turf/template_noop | /area/virtual_domain/safehouse
+16,7: /turf/template_noop | /area/virtual_domain/safehouse
+17,7: /turf/template_noop | /area/virtual_domain/safehouse
+18,7: /turf/template_noop | /area/virtual_domain/safehouse
+19,7: /turf/template_noop | /area/virtual_domain/safehouse
+20,7: /turf/template_noop | /area/virtual_domain/safehouse
+21,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,6: /turf/template_noop | /area/virtual_domain/safehouse
+15,6: /turf/template_noop | /area/virtual_domain/safehouse
+16,6: /turf/template_noop | /area/virtual_domain/safehouse
+17,6: /turf/template_noop | /area/virtual_domain/safehouse
+18,6: /turf/template_noop | /area/virtual_domain/safehouse
+19,6: /turf/template_noop | /area/virtual_domain/safehouse
+20,6: /turf/template_noop | /area/virtual_domain/safehouse
+21,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,5: /turf/template_noop | /area/virtual_domain/safehouse
+15,5: /turf/template_noop | /area/virtual_domain/safehouse
+16,5: /turf/template_noop | /area/virtual_domain/safehouse
+17,5: /turf/template_noop | /area/virtual_domain/safehouse
+18,5: /turf/template_noop | /area/virtual_domain/safehouse
+19,5: /turf/template_noop | /area/virtual_domain/safehouse
+20,5: /turf/template_noop | /area/virtual_domain/safehouse
+21,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,4: /turf/template_noop | /area/virtual_domain/safehouse
+15,4: /turf/template_noop | /area/virtual_domain/safehouse
+16,4: /turf/template_noop | /area/virtual_domain/safehouse
+17,4: /turf/template_noop | /area/virtual_domain/safehouse
+18,4: /turf/template_noop | /area/virtual_domain/safehouse
+19,4: /turf/template_noop | /area/virtual_domain/safehouse
+20,4: /turf/template_noop | /area/virtual_domain/safehouse
+21,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,3: /turf/template_noop | /area/virtual_domain/safehouse
+15,3: /turf/template_noop | /area/virtual_domain/safehouse
+16,3: /turf/template_noop | /area/virtual_domain/safehouse
+17,3: /turf/template_noop | /area/virtual_domain/safehouse
+18,3: /turf/template_noop | /area/virtual_domain/safehouse
+19,3: /turf/template_noop | /area/virtual_domain/safehouse
+20,3: /turf/template_noop | /area/virtual_domain/safehouse
+21,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,2: /obj/modular_map_root/safehouse{key = "wood"} | /turf/template_noop | /area/virtual_domain/safehouse
+15,2: /turf/template_noop | /area/virtual_domain/safehouse
+16,2: /turf/template_noop | /area/virtual_domain/safehouse
+17,2: /turf/template_noop | /area/virtual_domain/safehouse
+18,2: /turf/template_noop | /area/virtual_domain/safehouse
+19,2: /turf/template_noop | /area/virtual_domain/safehouse
+20,2: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+21,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 33 1 1]
+33,32: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,31: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,30: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,29: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,28: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,27: /turf/closed/indestructible/fakedoor | /area/virtual_domain
+33,26: /turf/closed/indestructible/fakedoor | /area/virtual_domain
+33,25: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,24: /turf/closed/indestructible/reinforced | /area/virtual_domain
+
+[chunk 1 33 1]
+12,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,44: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,43: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,43: /turf/open/floor/wood | /area/virtual_domain
+14,43: /turf/open/floor/wood | /area/virtual_domain
+15,43: /turf/open/floor/wood | /area/virtual_domain
+16,43: /turf/open/floor/wood | /area/virtual_domain
+17,43: /turf/open/floor/wood | /area/virtual_domain
+18,43: /turf/open/floor/wood | /area/virtual_domain
+19,43: /turf/open/floor/wood | /area/virtual_domain
+20,43: /turf/open/floor/wood | /area/virtual_domain
+21,43: /turf/open/floor/wood | /area/virtual_domain
+22,43: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,42: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,42: /turf/open/floor/wood | /area/virtual_domain
+14,42: /turf/open/floor/wood | /area/virtual_domain
+15,42: /turf/open/floor/wood | /area/virtual_domain
+16,42: /turf/open/floor/wood | /area/virtual_domain
+17,42: /turf/open/floor/wood | /area/virtual_domain
+18,42: /turf/open/floor/wood | /area/virtual_domain
+19,42: /turf/open/floor/wood | /area/virtual_domain
+20,42: /turf/open/floor/wood | /area/virtual_domain
+21,42: /turf/open/floor/wood | /area/virtual_domain
+22,42: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,41: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,41: /obj/structure/sign/poster/contraband/blood_geometer/directional/south | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/wood | /area/virtual_domain
+14,41: /turf/open/floor/wood | /area/virtual_domain
+15,41: /turf/open/floor/wood | /area/virtual_domain
+16,41: /turf/open/floor/wood | /area/virtual_domain
+17,41: /turf/open/floor/wood | /area/virtual_domain
+18,41: /obj/effect/decal/cleanable/blood/tracks{dir = 4} | /turf/open/floor/wood | /area/virtual_domain
+19,41: /obj/effect/decal/cleanable/blood/tracks{dir = 4} | /turf/open/floor/wood | /area/virtual_domain
+20,41: /mob/living/basic/bear/russian | /turf/open/floor/wood | /area/virtual_domain
+21,41: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/wood | /area/virtual_domain
+22,41: /obj/structure/curtain/bounty/start_closed | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+8,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+9,40: /obj/structure/sign/poster/contraband/blasto_detergent | /turf/closed/indestructible/reinforced | /area/virtual_domain
+10,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+11,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+12,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,40: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/closed/indestructible/reinforced | /area/virtual_domain
+14,40: /obj/structure/railing | /obj/structure/curtain/cloth/fancy/mechanical/start_closed | /turf/open/floor/wood | /area/virtual_domain
+15,40: /obj/structure/curtain/cloth/fancy/mechanical | /turf/open/floor/wood | /area/virtual_domain
+16,40: /obj/structure/curtain/cloth/fancy/mechanical | /turf/open/floor/wood | /area/virtual_domain
+17,40: /obj/structure/curtain/cloth/fancy/mechanical | /turf/open/floor/wood | /area/virtual_domain
+18,40: /obj/structure/curtain/cloth/fancy/mechanical | /obj/effect/decal/cleanable/blood/tracks | /turf/open/floor/wood | /area/virtual_domain
+19,40: /obj/structure/railing | /obj/structure/curtain/cloth/fancy/mechanical/start_closed | /turf/open/floor/wood | /area/virtual_domain
+20,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+21,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+22,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+24,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+25,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+26,40: /obj/structure/sign/poster/contraband/ambrosia_vulgaris/directional/west | /turf/closed/indestructible/reinforced | /area/virtual_domain
+27,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+28,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+32,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+6,39: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,39: /obj/effect/spawner/random/entertainment/slot_machine | /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,39: /obj/structure/closet/crate/trashcart/filled | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,39: /obj/structure/closet/crate/trashcart/filled | /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,39: /obj/structure/closet/crate/trashcart/filled | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,39: /obj/effect/spawner/random/entertainment/slot_machine | /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,39: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,39: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,39: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/caution/stand_clear | /obj/structure/fake_stairs/wood{dir = 4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,39: /obj/structure/railing | /obj/effect/decal/cleanable/fuel_pool/hivis | /turf/open/floor/wood | /area/virtual_domain
+16,39: /obj/structure/railing | /turf/open/floor/wood | /area/virtual_domain
+17,39: /obj/structure/railing | /turf/open/floor/wood | /area/virtual_domain
+18,39: /obj/structure/railing | /obj/effect/decal/cleanable/blood/tracks | /turf/open/floor/wood | /area/virtual_domain
+19,39: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/blood/tracks{dir = 4} | /obj/effect/turf_decal/caution/stand_clear | /obj/structure/fake_stairs/wood{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,39: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,39: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/cobweb/cobweb2 | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,39: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,39: /mob/living/basic/bear/russian | /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,39: /obj/structure/chair/stool/bar/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,39: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,39: /obj/machinery/chem_dispenser/drinks/beer | /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,39: /obj/machinery/vending/boozeomat | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,39: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,39: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,39: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,39: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/floor/iron/kitchen | /area/virtual_domain
+6,38: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,38: /obj/item/trash/peanuts | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,38: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,38: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/decal/cleanable/blood/gibs/old | /obj/machinery/light/empty/directional/west | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,38: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,38: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,38: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,38: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,38: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,38: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/decal/cleanable/blood/tracks | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,38: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/blood/tracks{dir = 4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,38: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/item/toy/balloon/heart | /obj/effect/decal/cleanable/blood/tracks{dir = 4} | /obj/machinery/light/empty/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,38: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,38: /obj/structure/chair/stool/bar/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,38: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,38: /turf/closed/indestructible/fakedoor | /area/virtual_domain
+30,38: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,38: /turf/open/floor/iron/kitchen | /area/virtual_domain
+6,37: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,37: /turf/closed/indestructible/reinforced | /area/virtual_domain
+13,37: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/blood/tracks/xeno | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,37: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,37: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,37: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,37: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,37: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,37: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,37: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,37: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/decal/cleanable/blood/tracks | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,37: /turf/closed/indestructible/reinforced | /area/virtual_domain
+23,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,37: /obj/structure/chair/stool/bar/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,37: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,37: /obj/structure/table/wood | /obj/item/reagent_containers/cup/glass/shaker{pixel_x = 5} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,37: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,37: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,37: /turf/open/floor/iron/kitchen | /area/virtual_domain
+6,36: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,36: /obj/machinery/light/empty/directional/west | /obj/item/light/tube/broken | /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,36: /obj/machinery/computer/arcade/amputation | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,36: /obj/machinery/computer/arcade/amputation | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,36: /obj/machinery/computer/arcade/amputation | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,36: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,36: /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,36: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /obj/effect/decal/cleanable/insectguts | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,36: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /obj/item/food/pizza/margherita{pixel_y = 6} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,36: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /obj/item/food/pizza/margherita | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,36: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,36: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,36: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,36: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,36: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,36: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /obj/effect/decal/cleanable/blood/tracks | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,36: /obj/effect/decal/cleanable/blood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,36: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,36: /obj/structure/chair/stool/bar/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,36: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,36: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,36: /obj/structure/table/wood | /obj/item/reagent_containers/cup/glass/bottle/goldschlager{pixel_y = 11; pixel_x = 7} | /obj/item/reagent_containers/cup/glass/bottle/cognac{pixel_x = -4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,36: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,36: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,36: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,36: /turf/open/floor/iron/kitchen | /area/virtual_domain
+6,35: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,35: /obj/item/trash/boritos/green{pixel_x = 4; pixel_y = 11} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,35: /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,35: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,35: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,35: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /obj/item/trash/tray | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,35: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,35: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/item/toy/balloon{pixel_x = 7; pixel_y = 2} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,35: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,35: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,35: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /obj/item/food/pizza/energy/raw{pixel_x = 3; pixel_y = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,35: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /obj/effect/decal/cleanable/insectguts | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,35: /obj/structure/chair/stool/bar/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,35: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,35: /obj/machinery/light/empty/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,35: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,35: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,35: /turf/open/floor/iron/kitchen | /area/virtual_domain
+6,34: /obj/structure/sign/poster/official/the_owl | /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,34: /obj/item/trash/raisins | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,34: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,34: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,34: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,34: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,34: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,34: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,34: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,34: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,34: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,34: /obj/structure/chair/stool/bar/directional/east | /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,34: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,34: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,34: /obj/structure/table/wood | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,34: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,34: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,34: /mob/living/basic/bear/fightpit | /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,34: /turf/open/floor/iron/kitchen | /area/virtual_domain
+6,33: /turf/closed/indestructible/reinforced | /area/virtual_domain
+7,33: /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+8,33: /obj/machinery/computer/arcade/amputation{dir = 1} | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+9,33: /obj/machinery/computer/arcade/amputation{dir = 1} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+10,33: /obj/machinery/computer/arcade/amputation{dir = 1} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+11,33: /turf/open/floor/iron/kitchen | /area/virtual_domain
+12,33: /obj/effect/decal/cleanable/molten_object/large | /turf/open/floor/iron/kitchen | /area/virtual_domain
+13,33: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /obj/effect/decal/cleanable/confetti | /turf/open/floor/iron/kitchen | /area/virtual_domain
+14,33: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /obj/item/food/pizzaslice/mothic_margherita | /obj/effect/decal/cleanable/confetti | /obj/effect/decal/cleanable/insectguts | /turf/open/floor/iron/kitchen | /area/virtual_domain
+15,33: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /turf/open/floor/iron/kitchen | /area/virtual_domain
+16,33: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+17,33: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /turf/open/floor/iron/kitchen | /area/virtual_domain
+18,33: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/chair/greyscale{dir = 4} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+19,33: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/table | /obj/item/balloon_mallet | /turf/open/floor/iron/kitchen | /area/virtual_domain
+20,33: /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/effect/turf_decal/tile/dark_red/opposingcorners | /obj/structure/table | /turf/open/floor/iron/kitchen | /area/virtual_domain
+21,33: /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/effect/turf_decal/tile/blue/opposingcorners | /obj/structure/chair/greyscale{dir = 8} | /turf/open/floor/iron/kitchen | /area/virtual_domain
+22,33: /turf/open/floor/iron/kitchen | /area/virtual_domain
+23,33: /turf/open/floor/iron/kitchen | /area/virtual_domain
+24,33: /turf/open/floor/iron/kitchen | /area/virtual_domain
+25,33: /obj/structure/chair/stool/bar/directional/north | /turf/open/floor/iron/kitchen | /area/virtual_domain
+26,33: /obj/structure/chair/stool/bar/directional/north | /turf/open/floor/iron/kitchen | /area/virtual_domain
+27,33: /obj/structure/chair/stool/bar/directional/north | /turf/open/floor/iron/kitchen | /area/virtual_domain
+28,33: /turf/closed/indestructible/reinforced | /area/virtual_domain
+30,33: /turf/closed/indestructible/reinforced | /area/virtual_domain
+31,33: /turf/open/floor/iron/kitchen | /area/virtual_domain
+32,33: /turf/open/floor/iron/kitchen | /area/virtual_domain
+
+[chunk 33 33 1]
+33,40: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,39: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,38: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,37: /turf/closed/indestructible/fakedoor | /area/virtual_domain
+33,36: /turf/closed/indestructible/fakedoor | /area/virtual_domain
+33,35: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,34: /turf/closed/indestructible/reinforced | /area/virtual_domain
+33,33: /turf/closed/indestructible/reinforced | /area/virtual_domain

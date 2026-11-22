@@ -1,0 +1,91 @@
+{
+  "ore_redemption": {
+    "triangles": 120,
+    "meshes": 6,
+    "notes": "Original powered/off/panel-open console. Hinged upper maintenance cover and stepped output ramp. Source default input north/output south; anchors are adjacent tile centers, directions configurable in game.",
+    "parts": [
+      "Machine_Housing",
+      "Lower_Console_ore_redemption",
+      "Lower_Console_ore_redemption-open",
+      "Lower_Console_ore_redemption-off",
+      "Ore_Output_Ramp",
+      "Service_Hatch"
+    ]
+  },
+  "mineral_stacker_refinery": {
+    "triangles": 60,
+    "meshes": 3,
+    "notes": "Shared base geometry and original stacker atlas for stacking machine and boulder refinery. Source uses same appearance. Stacker input east/output west; refinery directions follow machine rotation. Off state also covers open panel, unanchored and power failure; no invented moving assembly.",
+    "parts": [
+      "Machine_Housing",
+      "Stacker_Control_stacker",
+      "Stacker_Control_stacker-off"
+    ]
+  },
+  "boulder_smelter": {
+    "triangles": 84,
+    "meshes": 4,
+    "notes": "Two source furnace windows and dark upper/lower lips. On/off follows anchored, panel and power state. Input/output anchors; no underfloor plumbing geometry.",
+    "parts": [
+      "Machine_Housing",
+      "Furnace_Windows_smelter",
+      "Furnace_Windows_smelter-off",
+      "Furnace_Rims"
+    ]
+  },
+  "boulder_retrieval_matrix": {
+    "triangles": 132,
+    "meshes": 10,
+    "notes": "Low landing platform with M-shaped rear support, off/manual/automatic indicators and original retrieval flash timing. Boulders remain runtime attachments; teleport effect is a separate alpha plane.",
+    "parts": [
+      "Retrieval_Platform",
+      "Matrix_Status_brm-off",
+      "Matrix_Status_brm",
+      "Matrix_Status_brm-toggled",
+      "Retrieval_Flash_Frame_0",
+      "Retrieval_Flash_Frame_1",
+      "Retrieval_Flash_Frame_2",
+      "Retrieval_Flash_Frame_3",
+      "Retrieval_Flash_Frame_4",
+      "Retrieval_Flash_Frame_5"
+    ]
+  },
+  "ore_silo": {
+    "triangles": 152,
+    "meshes": 3,
+    "notes": "Ten-sided domed material silo with separate side controller. Original idle/active status panel; gameplay controls brief activity and remote material storage. No pipes or contents baked into mesh.",
+    "parts": [
+      "Silo_And_Controller",
+      "Silo_Display_silo",
+      "Silo_Display_silo_active"
+    ]
+  },
+  "plate_press": {
+    "triangles": 124,
+    "meshes": 5,
+    "notes": "Open work bay with separate descending ram and four-second press cycle matching source interaction duration. Off/online/loaded indicators. Plate is a runtime attachment; original empty/filled plate sprites retained in atlas.",
+    "parts": [
+      "Press_Frame_And_Motor",
+      "Press_Ram",
+      "Power_Light_offline",
+      "Power_Light_online",
+      "Power_Light_online_loaded"
+    ]
+  },
+  "recycler": {
+    "triangles": 196,
+    "meshes": 9,
+    "notes": "Overhead gantry with open intake and five low-poly rollers, original powered/safety-off/panel-open status. Conveyor and blood tint are runtime state outside base mesh; no underfloor belt geometry.",
+    "parts": [
+      "Recycler_Gantry",
+      "Intake_Roller_0",
+      "Intake_Roller_1",
+      "Intake_Roller_2",
+      "Intake_Roller_3",
+      "Intake_Roller_4",
+      "Recycler_Status_grinder-o0",
+      "Recycler_Status_grinder-o1",
+      "Recycler_Status_grinder-oOpen"
+    ]
+  }
+}

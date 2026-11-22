@@ -1,0 +1,297 @@
+{
+  "tube_straight": [
+    {
+      "direction": "S",
+      "position_blender": [
+        0,
+        -1,
+        0.94
+      ],
+      "outward_blender": [
+        -0.0,
+        -1.0,
+        -0.0
+      ]
+    },
+    {
+      "direction": "N",
+      "position_blender": [
+        0,
+        1,
+        0.94
+      ],
+      "outward_blender": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "tube_straight_crossing": [
+    {
+      "direction": "S",
+      "position_blender": [
+        0,
+        -1,
+        0.94
+      ],
+      "outward_blender": [
+        -0.0,
+        -1.0,
+        -0.0
+      ]
+    },
+    {
+      "direction": "N",
+      "position_blender": [
+        0,
+        1,
+        0.94
+      ],
+      "outward_blender": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "tube_diagonal": [
+    {
+      "direction": "SW",
+      "position_blender": [
+        -1,
+        -1,
+        0.94
+      ],
+      "outward_blender": [
+        -0.7071067690849304,
+        -0.7071067690849304,
+        -0.0
+      ]
+    },
+    {
+      "direction": "NE",
+      "position_blender": [
+        1,
+        1,
+        0.94
+      ],
+      "outward_blender": [
+        0.7071067690849304,
+        0.7071067690849304,
+        0.0
+      ]
+    }
+  ],
+  "tube_diagonal_crossing": [
+    {
+      "direction": "SW",
+      "position_blender": [
+        -1,
+        -1,
+        0.94
+      ],
+      "outward_blender": [
+        -0.7071067690849304,
+        -0.7071067690849304,
+        -0.0
+      ]
+    },
+    {
+      "direction": "NE",
+      "position_blender": [
+        1,
+        1,
+        0.94
+      ],
+      "outward_blender": [
+        0.7071067690849304,
+        0.7071067690849304,
+        0.0
+      ]
+    }
+  ],
+  "tube_curve_left": [
+    {
+      "direction": "SW",
+      "position_blender": [
+        -1.0,
+        -1.0,
+        0.9399999976158142
+      ],
+      "outward_blender": [
+        -0.7071067811865475,
+        -0.7071067811865475,
+        0
+      ]
+    },
+    {
+      "direction": "N",
+      "position_blender": [
+        0.0,
+        1.0,
+        0.9399999976158142
+      ],
+      "outward_blender": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "tube_curve_right": [
+    {
+      "direction": "SE",
+      "position_blender": [
+        1.0,
+        -1.0,
+        0.9399999976158142
+      ],
+      "outward_blender": [
+        0.7071067811865475,
+        -0.7071067811865475,
+        0
+      ]
+    },
+    {
+      "direction": "N",
+      "position_blender": [
+        0.0,
+        1.0,
+        0.9399999976158142
+      ],
+      "outward_blender": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "tube_junction": [
+    {
+      "direction": "N",
+      "position_blender": [
+        0,
+        1,
+        0.94
+      ],
+      "outward_blender": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "direction": "SW",
+      "position_blender": [
+        -1,
+        -1,
+        0.94
+      ],
+      "outward_blender": [
+        -0.70710678,
+        -0.70710678,
+        0
+      ]
+    },
+    {
+      "direction": "SE",
+      "position_blender": [
+        1,
+        -1,
+        0.94
+      ],
+      "outward_blender": [
+        0.70710678,
+        -0.70710678,
+        0
+      ]
+    }
+  ],
+  "tube_station": [
+    {
+      "direction": "E",
+      "position_blender": [
+        1,
+        0,
+        0.94
+      ],
+      "outward_blender": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "direction": "W",
+      "position_blender": [
+        -1,
+        0,
+        0.94
+      ],
+      "outward_blender": [
+        -1,
+        0,
+        0
+      ]
+    }
+  ],
+  "tube_station_dispenser": [
+    {
+      "direction": "E",
+      "position_blender": [
+        1,
+        0,
+        0.94
+      ],
+      "outward_blender": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "direction": "W",
+      "position_blender": [
+        -1,
+        0,
+        0.94
+      ],
+      "outward_blender": [
+        -1,
+        0,
+        0
+      ]
+    }
+  ],
+  "tube_terminus": [
+    {
+      "direction": "E",
+      "position_blender": [
+        1,
+        0,
+        0.94
+      ],
+      "outward_blender": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "tube_terminus_dispenser": [
+    {
+      "direction": "E",
+      "position_blender": [
+        1,
+        0,
+        0.94
+      ],
+      "outward_blender": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

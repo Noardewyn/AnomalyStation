@@ -1,0 +1,718 @@
+{
+  "railing_straight": {
+    "family": "railing",
+    "description": "Reusable border railing; rotate modules in 90 degree increments.",
+    "parts": [
+      {
+        "name": "Continuous_Railing",
+        "shared_mesh": "Continuous_Railing",
+        "triangles": 252,
+        "materials": [
+          "Railing_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 252
+  },
+  "railing_corner": {
+    "family": "railing",
+    "description": "Reusable border railing; rotate modules in 90 degree increments.",
+    "parts": [
+      {
+        "name": "Continuous_Railing",
+        "shared_mesh": "Continuous_Railing.001",
+        "triangles": 450,
+        "materials": [
+          "Railing_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 450
+  },
+  "railing_corner_connector": {
+    "family": "railing",
+    "description": "Reusable border railing; rotate modules in 90 degree increments.",
+    "parts": [
+      {
+        "name": "Continuous_Railing",
+        "shared_mesh": "Continuous_Railing.002",
+        "triangles": 64,
+        "materials": [
+          "Railing_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 64
+  },
+  "railing_end_cap": {
+    "family": "railing",
+    "description": "Reusable border railing; rotate modules in 90 degree increments.",
+    "parts": [
+      {
+        "name": "Continuous_Railing",
+        "shared_mesh": "Continuous_Railing.003",
+        "triangles": 48,
+        "materials": [
+          "Railing_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 48
+  },
+  "conveyor_straight_stopped": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt",
+        "triangles": 12,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 40,
+    "source_state": "conveyor0",
+    "source_direction_index": 0
+  },
+  "conveyor_straight_forward": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.001",
+        "triangles": 12,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 40,
+    "source_state": "conveyor1",
+    "source_direction_index": 0
+  },
+  "conveyor_straight_reverse": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.002",
+        "triangles": 12,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 40,
+    "source_state": "conveyor-1",
+    "source_direction_index": 0
+  },
+  "conveyor_straight_flipped_stopped": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.003",
+        "triangles": 12,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 40,
+    "source_state": "conveyor0-flipped",
+    "source_direction_index": 0
+  },
+  "conveyor_straight_flipped_forward": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.004",
+        "triangles": 12,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 40,
+    "source_state": "conveyor1-flipped",
+    "source_direction_index": 0
+  },
+  "conveyor_straight_flipped_reverse": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.005",
+        "triangles": 12,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 40,
+    "source_state": "conveyor-1-flipped",
+    "source_direction_index": 0
+  },
+  "conveyor_corner_stopped": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails.006",
+        "triangles": 92,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.006",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 120,
+    "source_state": "conveyor0",
+    "source_direction_index": 4
+  },
+  "conveyor_corner_forward": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails.006",
+        "triangles": 92,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.007",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 120,
+    "source_state": "conveyor1",
+    "source_direction_index": 4
+  },
+  "conveyor_corner_reverse": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails.006",
+        "triangles": 92,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.008",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 120,
+    "source_state": "conveyor-1",
+    "source_direction_index": 4
+  },
+  "conveyor_corner_flipped_stopped": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails.006",
+        "triangles": 92,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.009",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 120,
+    "source_state": "conveyor0-flipped",
+    "source_direction_index": 4
+  },
+  "conveyor_corner_flipped_forward": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails.006",
+        "triangles": 92,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.010",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 120,
+    "source_state": "conveyor1-flipped",
+    "source_direction_index": 4
+  },
+  "conveyor_corner_flipped_reverse": {
+    "family": "conveyor",
+    "description": "Separate belt and chassis; every belt face lies in the first frame of its state, so the client plays the state on it.",
+    "parts": [
+      {
+        "name": "Chassis_and_Guide_Rails",
+        "shared_mesh": "Chassis_and_Guide_Rails.006",
+        "triangles": 92,
+        "materials": [
+          "Conveyor_Chassis_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Replaceable_Belt",
+        "shared_mesh": "Replaceable_Belt.011",
+        "triangles": 28,
+        "materials": [
+          "Conveyor_Belt_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 120,
+    "source_state": "conveyor-1-flipped",
+    "source_direction_index": 4
+  },
+  "plastic_flaps_standard": {
+    "family": "plastic_flaps",
+    "description": "Four independently hinged strips; original image on front and back.",
+    "parts": [
+      {
+        "name": "Mounting_Frame",
+        "shared_mesh": "Mounting_Frame",
+        "triangles": 48,
+        "materials": [
+          "Flaps_Frame_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Hinged_Strip_1",
+        "shared_mesh": "Hinged_Strip_1",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          -0.2953124940395355,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_2",
+        "shared_mesh": "Hinged_Strip_2",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          -0.11249999701976776,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_3",
+        "shared_mesh": "Hinged_Strip_3",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0703125,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_4",
+        "shared_mesh": "Hinged_Strip_4",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.28125,
+          0.0,
+          1.631250023841858
+        ]
+      }
+    ],
+    "triangles": 96
+  },
+  "plastic_flaps_opaque": {
+    "family": "plastic_flaps",
+    "description": "Four independently hinged strips; original image on front and back.",
+    "parts": [
+      {
+        "name": "Mounting_Frame",
+        "shared_mesh": "Mounting_Frame",
+        "triangles": 48,
+        "materials": [
+          "Flaps_Frame_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Hinged_Strip_1",
+        "shared_mesh": "Hinged_Strip_1",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          -0.2953124940395355,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_2",
+        "shared_mesh": "Hinged_Strip_2",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          -0.11249999701976776,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_3",
+        "shared_mesh": "Hinged_Strip_3",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0703125,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_4",
+        "shared_mesh": "Hinged_Strip_4",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.28125,
+          0.0,
+          1.631250023841858
+        ]
+      }
+    ],
+    "triangles": 96
+  },
+  "plastic_flaps_kitchen": {
+    "family": "plastic_flaps",
+    "description": "Four independently hinged strips; original image on front and back.",
+    "parts": [
+      {
+        "name": "Mounting_Frame",
+        "shared_mesh": "Mounting_Frame",
+        "triangles": 48,
+        "materials": [
+          "Flaps_Frame_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "Hinged_Strip_1",
+        "shared_mesh": "Hinged_Strip_1.002",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Kitchen_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          -0.2953124940395355,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_2",
+        "shared_mesh": "Hinged_Strip_2.002",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Kitchen_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          -0.11249999701976776,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_3",
+        "shared_mesh": "Hinged_Strip_3.002",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Kitchen_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.0703125,
+          0.0,
+          1.631250023841858
+        ]
+      },
+      {
+        "name": "Hinged_Strip_4",
+        "shared_mesh": "Hinged_Strip_4.002",
+        "triangles": 12,
+        "materials": [
+          "Flaps_Kitchen_Original_Atlas"
+        ],
+        "pivot_blender_m": [
+          0.28125,
+          0.0,
+          1.631250023841858
+        ]
+      }
+    ],
+    "triangles": 96
+  }
+}

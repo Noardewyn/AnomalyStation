@@ -1,0 +1,305 @@
+{
+  "iv_drip": {
+    "triangles": 184,
+    "meshes": 5,
+    "notes": "Mobile stand, independent injection/donation indicator and reagent-container socket. Tube endpoint follows the patient in gameplay; no permanently attached fake patient or bag.",
+    "parts": [
+      "IV_Stand",
+      "Pump_Status_iv_drip_injectidle",
+      "Pump_Status_iv_drip_donateidle",
+      "Pump_Status_iv_drip_injecting",
+      "Pump_Status_iv_drip_donating"
+    ]
+  },
+  "cryo_cell": {
+    "triangles": 232,
+    "meshes": 12,
+    "notes": "32x64 source. Hollow chamber and curved transparent door rotate around vertical centre, below 2m ceiling. Separate original cooling overlay; patient is an attachment.",
+    "parts": [
+      "Chamber_Frame",
+      "Chamber_Door",
+      "Cryo_Base",
+      "Service_Hatch",
+      "Cooling_Effect_Frame_0",
+      "Cooling_Effect_Frame_1",
+      "Cooling_Effect_Frame_2",
+      "Cooling_Effect_Frame_3",
+      "Cooling_Effect_Frame_4",
+      "Cooling_Effect_Frame_5",
+      "Cooling_Effect_Frame_6",
+      "Cooling_Effect_Frame_7"
+    ]
+  },
+  "dna_scanner": {
+    "triangles": 264,
+    "meshes": 7,
+    "notes": "Separate green control tower and hollow patient chamber. Occupied/unpowered/maintenance indicators, rotating glass door and Patient socket. Occupant mesh is supplied by gameplay.",
+    "parts": [
+      "Chamber_Frame",
+      "Chamber_Door",
+      "DNA_Control_Tower",
+      "DNA_Status_scanner",
+      "DNA_Status_scanner_occupied",
+      "DNA_Status_scanner_unpowered",
+      "DNA_Status_scanner_maintenance"
+    ]
+  },
+  "dna_infuser": {
+    "triangles": 208,
+    "meshes": 6,
+    "notes": "Opaque segmented chamber with separate opening door and control console; source marks this machinery obsolete, preserved as an asset.",
+    "parts": [
+      "Chamber_Frame",
+      "Chamber_Door",
+      "Infuser_Console",
+      "Infuser_Status_infuser",
+      "Infuser_Status_infuser_on",
+      "Infuser_Status_infuser_panel"
+    ]
+  },
+  "bci_implanter": {
+    "triangles": 48,
+    "meshes": 2,
+    "notes": "32x64 atlas body occupies rows 33-63. Hood retracts within frame to respect single-floor height. Patient/implant sockets; machine operation stays in gameplay.",
+    "parts": [
+      "Implanter_Frame",
+      "Sliding_Hood"
+    ]
+  },
+  "chemical_dispenser": {
+    "triangles": 68,
+    "meshes": 8,
+    "notes": "Original dispenser family shape; beaker/cup is a separate attachment. Chemistry version includes power/display and dispensing sprite frames; drink taps are geometry.",
+    "parts": [
+      "Dispenser",
+      "Screen_dispenser_nopower",
+      "Screen_dispenser",
+      "Dispensing_Display_Frame_0",
+      "Dispensing_Display_Frame_1",
+      "Dispensing_Display_Frame_2",
+      "Dispensing_Display_Frame_3",
+      "Service_Hatch"
+    ]
+  },
+  "soda_dispenser": {
+    "triangles": 96,
+    "meshes": 1,
+    "notes": "Original dispenser family shape; beaker/cup is a separate attachment. Chemistry version includes power/display and dispensing sprite frames; drink taps are geometry.",
+    "parts": [
+      "Drink_Dispenser"
+    ]
+  },
+  "alcohol_dispenser": {
+    "triangles": 384,
+    "meshes": 1,
+    "notes": "Original dispenser family shape; beaker/cup is a separate attachment. Chemistry version includes power/display and dispensing sprite frames; drink taps are geometry.",
+    "parts": [
+      "Drink_Dispenser"
+    ]
+  },
+  "chem_master": {
+    "triangles": 100,
+    "meshes": 22,
+    "notes": "Separate reagent/container output sockets and source idle/loaded/printing screen frames; maintenance panel. CondiMaster shares the ChemMaster screen overlays in source.",
+    "parts": [
+      "Master_Chassis",
+      "Screen_idle_Frame_0",
+      "Screen_loaded_Frame_0",
+      "Screen_loaded_Frame_1",
+      "Screen_loaded_Frame_2",
+      "Screen_loaded_Frame_3",
+      "Screen_printing_Frame_0",
+      "Screen_printing_Frame_1",
+      "Screen_printing_Frame_2",
+      "Screen_printing_Frame_3",
+      "Screen_printing_Frame_4",
+      "Screen_printing_Frame_5",
+      "Screen_printing_Frame_6",
+      "Screen_printing_Frame_7",
+      "Screen_printing_Frame_8",
+      "Screen_printing_Frame_9",
+      "Screen_printing_Frame_10",
+      "Screen_printing_Frame_11",
+      "Screen_printing_Frame_12",
+      "Screen_printing_Frame_13",
+      "Screen_printing_Frame_14",
+      "Service_Hatch"
+    ]
+  },
+  "condiment_master": {
+    "triangles": 100,
+    "meshes": 22,
+    "notes": "Separate reagent/container output sockets and source idle/loaded/printing screen frames; maintenance panel. CondiMaster shares the ChemMaster screen overlays in source.",
+    "parts": [
+      "Master_Chassis",
+      "Screen_idle_Frame_0",
+      "Screen_loaded_Frame_0",
+      "Screen_loaded_Frame_1",
+      "Screen_loaded_Frame_2",
+      "Screen_loaded_Frame_3",
+      "Screen_printing_Frame_0",
+      "Screen_printing_Frame_1",
+      "Screen_printing_Frame_2",
+      "Screen_printing_Frame_3",
+      "Screen_printing_Frame_4",
+      "Screen_printing_Frame_5",
+      "Screen_printing_Frame_6",
+      "Screen_printing_Frame_7",
+      "Screen_printing_Frame_8",
+      "Screen_printing_Frame_9",
+      "Screen_printing_Frame_10",
+      "Screen_printing_Frame_11",
+      "Screen_printing_Frame_12",
+      "Screen_printing_Frame_13",
+      "Screen_printing_Frame_14",
+      "Service_Hatch"
+    ]
+  },
+  "reaction_chamber": {
+    "triangles": 72,
+    "meshes": 2,
+    "notes": "Uses actual runtime mixer0b/mixer1b chamber family, not unrelated mixer0 console. Hollow beaker compartment and hinged glass; beaker contents remain separate.",
+    "parts": [
+      "Reaction_Frame",
+      "Chamber_Door"
+    ]
+  },
+  "hplc_chromatograph": {
+    "triangles": 86,
+    "meshes": 11,
+    "notes": "Two beaker sockets, independent monitor/power states, actual HPLC idle/analysis graphs, maintenance hatch.",
+    "parts": [
+      "HPLC_Body",
+      "Monitor_HPLC",
+      "Monitor_HPLC_on",
+      "Graph_idle_Frame_0",
+      "Graph_analysing_Frame_0",
+      "Graph_analysing_Frame_1",
+      "Graph_analysing_Frame_2",
+      "Graph_analysing_Frame_3",
+      "Graph_analysing_Frame_4",
+      "Graph_analysing_Frame_5",
+      "Service_Hatch"
+    ]
+  },
+  "medical_kiosk": {
+    "triangles": 60,
+    "meshes": 5,
+    "notes": "Full-size medical kiosk; off/idle/active display and separate tall service hatch.",
+    "parts": [
+      "Kiosk",
+      "Screen_kiosk_off",
+      "Screen_kiosk",
+      "Screen_kiosk_active",
+      "Service_Hatch"
+    ]
+  },
+  "smart_fridge": {
+    "triangles": 180,
+    "meshes": 27,
+    "notes": "Shared refrigerator geometry; original content overlays are selectable clips for eight item families and three fill levels. Glass and shelves are independent. Dryer has separate geometry. Contents planes preserve source atlas pixels.",
+    "parts": [
+      "Cabinet_And_Shelves",
+      "Glass_Door",
+      "Contents_smartfridge-food-1_Frame_0",
+      "Contents_smartfridge-food-2_Frame_0",
+      "Contents_smartfridge-food-3_Frame_0",
+      "Contents_smartfridge-plant-1_Frame_0",
+      "Contents_smartfridge-plant-2_Frame_0",
+      "Contents_smartfridge-plant-3_Frame_0",
+      "Contents_smartfridge-slime-1_Frame_0",
+      "Contents_smartfridge-slime-2_Frame_0",
+      "Contents_smartfridge-slime-3_Frame_0",
+      "Contents_smartfridge-drink-1_Frame_0",
+      "Contents_smartfridge-drink-2_Frame_0",
+      "Contents_smartfridge-drink-3_Frame_0",
+      "Contents_smartfridge-organ-1_Frame_0",
+      "Contents_smartfridge-organ-2_Frame_0",
+      "Contents_smartfridge-organ-3_Frame_0",
+      "Contents_smartfridge-petri-1_Frame_0",
+      "Contents_smartfridge-petri-2_Frame_0",
+      "Contents_smartfridge-petri-3_Frame_0",
+      "Contents_smartfridge-chem-1_Frame_0",
+      "Contents_smartfridge-chem-2_Frame_0",
+      "Contents_smartfridge-chem-3_Frame_0",
+      "Contents_smartfridge-viro-1_Frame_0",
+      "Contents_smartfridge-viro-2_Frame_0",
+      "Contents_smartfridge-viro-3_Frame_0",
+      "Service_Hatch"
+    ]
+  },
+  "dehydrator": {
+    "triangles": 144,
+    "meshes": 4,
+    "notes": "Shared refrigerator geometry; original content overlays are selectable clips for eight item families and three fill levels. Glass and shelves are independent. Dryer has separate geometry. Contents planes preserve source atlas pixels.",
+    "parts": [
+      "Cabinet_And_Shelves",
+      "Glass_Door",
+      "Dryer_Status_dehydrator-off",
+      "Dryer_Status_dehydrator-on"
+    ]
+  },
+  "biological_growing_vat": {
+    "triangles": 160,
+    "meshes": 5,
+    "notes": "Low open-top vat with independent tintable reagent surface, controller and product attachment. Growth output is supplied at runtime.",
+    "parts": [
+      "Vat_Shell",
+      "Reagent_Surface",
+      "Growth_Controller",
+      "Status_growing_vat_off",
+      "Status_growing_vat_on"
+    ]
+  },
+  "chemical_synthesizer": {
+    "triangles": 140,
+    "meshes": 1,
+    "notes": "Blue synthesizer vessel and frame; reagent output socket only. Underfloor plumbing deliberately omitted.",
+    "parts": [
+      "Synthesizer"
+    ]
+  },
+  "operating_table": {
+    "triangles": 100,
+    "meshes": 2,
+    "notes": "One-cell operating table with patient anchor. Table surface 1.8m long; linked computer status is a gameplay indicator, not a second table model.",
+    "parts": [
+      "Surgical_Table",
+      "Headrest"
+    ]
+  },
+  "morgue_section": {
+    "triangles": 84,
+    "meshes": 2,
+    "notes": "Hollow body container; tray and front move into adjacent tile on open. Body anchor follows tray. Reserve one clear front cell. Cremation/medical status indications remain source states in metadata.",
+    "parts": [
+      "Body_Container_Shell",
+      "Sliding_Tray"
+    ]
+  },
+  "crematorium": {
+    "triangles": 84,
+    "meshes": 2,
+    "notes": "Hollow body container; tray and front move into adjacent tile on open. Body anchor follows tray. Reserve one clear front cell. Cremation/medical status indications remain source states in metadata.",
+    "parts": [
+      "Body_Container_Shell",
+      "Sliding_Tray"
+    ]
+  },
+  "manual_chemical_separator": {
+    "triangles": 80,
+    "meshes": 1,
+    "notes": "Small tabletop separator and beaker socket. Original blue glass and wooden base regions; heat/reagent behaviour remains gameplay.",
+    "parts": [
+      "Separator"
+    ]
+  },
+  "microscope": {
+    "triangles": 60,
+    "meshes": 1,
+    "notes": "Small tabletop instrument with specimen-slide attachment.",
+    "parts": [
+      "Microscope"
+    ]
+  }
+}

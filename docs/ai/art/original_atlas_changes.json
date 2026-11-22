@@ -1,0 +1,370 @@
+{
+  "station_props/vending/vending_medidrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_oxygen.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/power/pacman_generator.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "furniture/metal_table/modular/modular_table_examples.blend": {
+    "changed_objects": 17,
+    "exported_paired_glb": false
+  },
+  "station_props/utility/disposal_unit.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "furniture/metal_chair/metal_chair.blend": {
+    "changed_objects": 1,
+    "exported_paired_glb": true
+  },
+  "furniture/metal_table/metal_table.blend": {
+    "changed_objects": 1,
+    "exported_paired_glb": true
+  },
+  "furniture/metal_table/modular/modular_table_kit.blend": {
+    "changed_objects": 7,
+    "exported_paired_glb": false
+  },
+  "furniture/table_kits/all_table_variants.blend": {
+    "changed_objects": 24,
+    "exported_paired_glb": false
+  },
+  "furniture/table_kits/table_families_kit.blend": {
+    "changed_objects": 36,
+    "exported_paired_glb": false
+  },
+  "furniture/table_kits/table_family_examples.blend": {
+    "changed_objects": 75,
+    "exported_paired_glb": false
+  },
+  "furniture/table_kits/table_seams_verification.blend": {
+    "changed_objects": 24,
+    "exported_paired_glb": false
+  },
+  "station_props/machinery_and_tanks_library.blend": {
+    "changed_objects": 56,
+    "exported_paired_glb": false
+  },
+  "station_props/machinery_and_tanks_preview.blend": {
+    "changed_objects": 28,
+    "exported_paired_glb": false
+  },
+  "station_props/tanks/fuel_tank.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_air.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_anesthetic_mix.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_carbon_dioxide.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_generic.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_nitrogen.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_nitrous_oxide.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_plasma.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/portable_canister_water_vapor.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/tanks/water_tank.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_atmosdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_bardrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_boozeomat.blend": {
+    "changed_objects": 10,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_cargodrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_cart.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_centdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_chapdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_chefdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_chemdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_cigs.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_clothes.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_coffee.blend": {
+    "changed_objects": 7,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_cola_black.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_cola_machine.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_coroner_drobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_curadrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_custom.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_cytopro.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_detdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_dinnerware.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_drug.blend": {
+    "changed_objects": 1,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_engi.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_engidrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_engivend.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_games.blend": {
+    "changed_objects": 9,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_genedrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_generic.blend": {
+    "changed_objects": 7,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_greed.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_hotdog_vendor.blend": {
+    "changed_objects": 9,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_hydrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_janidrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_lawdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_liberationstation.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_magivend.blend": {
+    "changed_objects": 5,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_med.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_modularpc.blend": {
+    "changed_objects": 9,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_nt_donk.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_nutri.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_parts.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_pwr_game.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_red_cola.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_robodrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_robotics.blend": {
+    "changed_objects": 7,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_runicvendor.blend": {
+    "changed_objects": 7,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_scidrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_sec.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_secdrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_seeds.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_shamblers_juice.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_snack.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_snackblue.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_snackdonk.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_snackgreen.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_snackorange.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_snackteal.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_soda.blend": {
+    "changed_objects": 7,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_sovietsoda.blend": {
+    "changed_objects": 8,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_space_up.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_starkist.blend": {
+    "changed_objects": 4,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_sustenance.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_sustenance_labor.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_syndi.blend": {
+    "changed_objects": 3,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_theater.blend": {
+    "changed_objects": 8,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_tool.blend": {
+    "changed_objects": 2,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_virodrobe.blend": {
+    "changed_objects": 6,
+    "exported_paired_glb": true
+  },
+  "station_props/vending/vending_wallmed.blend": {
+    "changed_objects": 7,
+    "exported_paired_glb": true
+  },
+  "station_props/vending_catalog.blend": {
+    "changed_objects": 341,
+    "exported_paired_glb": false
+  },
+  "station_props/vending_machines_preview.blend": {
+    "changed_objects": 341,
+    "exported_paired_glb": false
+  }
+}

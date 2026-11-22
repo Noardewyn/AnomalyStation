@@ -1,0 +1,231 @@
+{
+  "industrial_suit_storage": {
+    "triangles": 84,
+    "meshes": 5,
+    "notes": "Orange reinforced side posts, deep cabinet and separately retracting shutter. Original industrial interior, status UV variants, hatch and content sockets. Suit/helmet/items remain separate gameplay content. UV and sterilisation duration are runtime controlled.",
+    "parts": [
+      "Industrial_Cabinet",
+      "Cabinet_Interior",
+      "Retracting_Shutter",
+      "Service_Hatch",
+      "Status_Lamp"
+    ]
+  },
+  "drone_shell_dispenser": {
+    "triangles": 80,
+    "meshes": 4,
+    "notes": "Correct drone_dispenser atlas (not the incorrect fax fallback in old inventory). Low production housing and real recessed output tray. off/on/make/recharge bindings retain all original frames and timing; output shells and 3s manufacture/3min recharge handled by game.",
+    "parts": [
+      "Dispenser_Housing",
+      "Output_Tray",
+      "Production_Display",
+      "Material_Hatch"
+    ]
+  },
+  "weapon_scanner_gate": {
+    "triangles": 62,
+    "meshes": 3,
+    "notes": "Open 1.64m passage, finished arch, separate service hatch. Transparent scan plane is intentionally not a solid wall. Set scanning/alarm UV state plus visibility clip; detection is runtime.",
+    "parts": [
+      "Scanner_Arch",
+      "Service_Hatch",
+      "Scan_Field"
+    ]
+  },
+  "training_bomb": {
+    "triangles": 210,
+    "meshes": 2,
+    "notes": "Small source training device with radiating fins and replaceable inactive/active/wires artwork. Gameplay timer and reset are external; no invented explosion animation.",
+    "parts": [
+      "Training_Device",
+      "Training_Display"
+    ]
+  },
+  "gulag_teleporter": {
+    "triangles": 288,
+    "meshes": 4,
+    "notes": "Vertical implant-chair enclosure with actual seat, control pedestal and connected overhead frame; separate telescoping transparent canopy. Original powered/unpowered controls, maintenance hatch and Occupant socket; prisoner and teleport effects remain dynamic.",
+    "parts": [
+      "Teleporter_Chair_And_Frame",
+      "Control_Screen",
+      "Transparent_Canopy",
+      "Service_Hatch"
+    ]
+  },
+  "gulag_item_reclaimer": {
+    "triangles": 34,
+    "meshes": 2,
+    "notes": "Wall terminal with projecting item slot and keyboard ledge. Off/on screen binding; reclaimed items attach at output, not baked.",
+    "parts": [
+      "Wall_Terminal",
+      "Reclaimer_Screen"
+    ]
+  },
+  "monkey_recycler": {
+    "triangles": 136,
+    "meshes": 4,
+    "notes": "Open recessed grinding hopper, rollers and service hatch. Source grinder_monkey decoration and input/output anchors; input monkeys/cubes are gameplay content. Roller cycle is a suggested mechanical loop.",
+    "parts": [
+      "Recycler_Housing",
+      "Grinding_Roller_0",
+      "Grinding_Roller_1",
+      "Maintenance_Hatch"
+    ]
+  },
+  "basketball_hoop": {
+    "triangles": 1078,
+    "meshes": 3,
+    "notes": "Source 32x64 standing hoop, adapted below the station 2m ceiling. Real circular rim and open low-poly net. Score is runtime text; basketball separate.",
+    "parts": [
+      "Stand_And_Backboard",
+      "Hoop_Rim",
+      "Open_Net"
+    ]
+  },
+  "skeleton_model": {
+    "triangles": 1016,
+    "meshes": 2,
+    "notes": "Actual skeletal mannequin atlas, not inherited wooden placeholder. Rounded skull, ribs, pelvis and jointed limb bones. Eyepatch/Hawaiian shirt are source starting equipment and remain independent attachments.",
+    "parts": [
+      "Skeleton",
+      "Skull_Face"
+    ]
+  },
+  "quartermaster_statue": {
+    "triangles": 288,
+    "meshes": 1,
+    "notes": "Golden clothed quartermaster with hat, briefcase and stepped octagonal pedestal. Palette and face/coat UVs come from qm sprite; static statue.",
+    "parts": [
+      "Gold_Statue"
+    ]
+  },
+  "snowman": {
+    "triangles": 580,
+    "meshes": 2,
+    "notes": "Three rounded low-poly snow volumes, coal and projecting carrot, palette sampled from original snowman sprite. No melting behaviour baked into asset.",
+    "parts": [
+      "Snow_Body",
+      "Coal_And_Carrot"
+    ]
+  },
+  "cloning_pod_exhibit": {
+    "triangles": 304,
+    "meshes": 3,
+    "notes": "Static retired cloning exhibit, not a functional cloning machine. Rounded translucent capsule and low radial pedestal; pod_0 original atlas.",
+    "parts": [
+      "Exhibit_Base",
+      "Exhibit_Glass",
+      "Rear_Supports"
+    ]
+  },
+  "damaged_cryo_exhibit": {
+    "triangles": 80,
+    "meshes": 3,
+    "notes": "Horizontal old sleeper exhibit, with its source permanently raised glass lid, deep mattress cavity and finished side walls. Static museum prop; no functional treatment loop.",
+    "parts": [
+      "Open_Sleeper_Base",
+      "Recessed_Mattress",
+      "Raised_Glass_Lid"
+    ]
+  },
+  "fermenting_barrel": {
+    "triangles": 400,
+    "meshes": 3,
+    "notes": "12-sided bulging wooden barrel with real hollow interior, two hoops and removable lid. Labels, fruit and liquid level remain independent content.",
+    "parts": [
+      "Hollow_Barrel",
+      "Metal_Hoops",
+      "Removable_Lid"
+    ]
+  },
+  "meat_spike": {
+    "triangles": 292,
+    "meshes": 2,
+    "notes": "Shared open frame for all three placements. frame/assembled clips toggle actual metal hooks. Attached animals and bloody corpse variants are content, not permanently baked sprites.",
+    "parts": [
+      "Spike_Frame",
+      "Installed_Spikes"
+    ]
+  },
+  "ripley_wreckage": {
+    "triangles": 254,
+    "meshes": 2,
+    "notes": "Collapsed yellow loader with splayed feet, hanging arms and open/dark cockpit. Uses current ripley-broken, not obsolete ripley-broken-old; static salvage prop.",
+    "parts": [
+      "Collapsed_Ripley",
+      "Broken_Cockpit"
+    ]
+  },
+  "tachyon_doppler_array": {
+    "triangles": 152,
+    "meshes": 4,
+    "notes": "Directional sensor and monitor stand beside each other on a common base, reconstructed from four directional sprites. Power/broken display variants and maintenance hatch. Explosion measurement is runtime.",
+    "parts": [
+      "Doppler_Base",
+      "Directional_Sensor",
+      "Monitor",
+      "Service_Hatch"
+    ]
+  },
+  "ectoscopic_sniffer": {
+    "triangles": 90,
+    "meshes": 3,
+    "notes": "Small upright detector on a low base; glass sensor window keeps original working/off/measurement frames. No enlargement to a human-sized cabinet.",
+    "parts": [
+      "Sniffer_Body",
+      "Sensor_Window",
+      "Service_Hatch"
+    ]
+  },
+  "exploration_scanner": {
+    "triangles": 210,
+    "meshes": 4,
+    "notes": "Tilted concave 12-sided dish on equipment base, not a flat circular sprite. Original off/ready/on bindings and maintenance panel; interfered/readiness mechanics remain runtime.",
+    "parts": [
+      "Scanner_Pedestal",
+      "Dish",
+      "Status_Lamp",
+      "Service_Hatch"
+    ]
+  },
+  "fishing_portal_generator": {
+    "triangles": 154,
+    "meshes": 3,
+    "notes": "Low oval basin-shaped device with finished inner rim. Separate original destination surface supports water/lava/other source variants via UV bindings; off hides surface. Fishing content is runtime.",
+    "parts": [
+      "Fishing_Portal_Rim",
+      "Destination_Surface",
+      "Service_Hatch"
+    ]
+  },
+  "broadcast_camera": {
+    "triangles": 168,
+    "meshes": 3,
+    "notes": "Directional captain-caster on a connected wooden tripod. Low-poly lens projects forward; on/off lamp binds original sprites. Video feed is runtime content.",
+    "parts": [
+      "Tripod",
+      "Camera_Head",
+      "Recording_Lamp"
+    ]
+  },
+  "restaurant_portal": {
+    "triangles": 196,
+    "meshes": 4,
+    "notes": "Shared bar/restaurant robot gate with source blue portal and slatted closed-venue overlay as separate geometry. Venue opening toggles shutter; robot routing and access remain runtime.",
+    "parts": [
+      "Portal_Frame",
+      "Portal_Surface",
+      "Closed_Venue_Shutter",
+      "Service_Hatch"
+    ]
+  },
+  "television_exhibit": {
+    "triangles": 82,
+    "meshes": 2,
+    "notes": "Small vintage wooden television with side knobs, legs and antenna. Original screen/broken-screen binding; moving newsfeed is optional runtime content.",
+    "parts": [
+      "Wooden_TV",
+      "TV_Screen"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Anomaly.Tools.Maps</RootNamespace>
+    <AssemblyName>Anomaly.Tools.Maps</AssemblyName>
+  </PropertyGroup>
+  <!--
+    M3 P2 (D46, D109, docs/ai/specs/map-format.md 3): converts tg's maps (.dmm in TGM or DMM syntax, from the read-only tg
+    clone) into our .as3dmap format, in the git-ignored maps/ that mirrors tg's _maps/. It validates against the type index
+    (types-index.tsv, or OpenDream's compiled JSON for the vars) and asserts the round trip with the engine reader
+    (MapText.Parse of Anomaly.Core.Tg). The lead adds it to the solution at merge.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\Tg\Anomaly.Core.Tg.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Tests/**" />
+    <None Remove="Tests/**" />
+  </ItemGroup>
+</Project>

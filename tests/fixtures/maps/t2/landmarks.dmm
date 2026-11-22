@@ -1,0 +1,79 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: the landmarks, in tg's creation order (x ascending, y descending, members in model order) (M3 T2, LandmarkTests.cs)
+"f" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"j" = (
+/obj/effect/landmark/start/janitor,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"A" = (
+/obj/effect/landmark/start/assistant,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"O" = (
+/obj/effect/landmark/start/assistant/override,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"l" = (
+/obj/effect/landmark/latejoin,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"b" = (
+/obj/effect/landmark{
+	name = "marker"
+	},
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"B" = (
+/obj/effect/landmark/start/assistant,
+/obj/effect/landmark/latejoin,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"c" = (
+/obj/effect/landmark/start{
+	name = "Clown"
+	},
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"s" = (
+/obj/effect/landmark/start,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+
+(1,1,1) = {"
+f
+j
+f
+A
+"}
+(2,1,1) = {"
+O
+f
+l
+f
+"}
+(3,1,1) = {"
+b
+f
+f
+B
+"}
+(4,1,1) = {"
+f
+f
+c
+f
+"}
+(5,1,1) = {"
+f
+f
+f
+s
+"}
+(6,1,1) = {"
+f
+f
+f
+f
+"}

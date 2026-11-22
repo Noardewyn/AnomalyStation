@@ -1,0 +1,1605 @@
+{
+  "portable_air_scrubber": {
+    "atlas": "assets/tg/icons/obj/pipes_n_cables/atmos.png",
+    "default": "scrubber_0",
+    "states": {
+      "scrubber_0": {
+        "name": "scrubber_0",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 5,
+        "rects": [
+          [
+            160,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "scrubber_1": {
+        "name": "scrubber_1",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 6,
+        "rects": [
+          [
+            192,
+            0,
+            32,
+            32
+          ],
+          [
+            224,
+            0,
+            32,
+            32
+          ],
+          [
+            256,
+            0,
+            32,
+            32
+          ],
+          [
+            288,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "scrubber-open": {
+        "name": "scrubber-open",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 68,
+        "rects": [
+          [
+            64,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "scrubber-connector": {
+        "name": "scrubber-connector",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 70,
+        "rects": [
+          [
+            128,
+            192,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "receive_only_intercom": {
+    "atlas": "assets/tg/icons/obj/machines/wallmounts.png",
+    "default": "intercom_prison",
+    "states": {
+      "intercom_prison": {
+        "name": "intercom_prison",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 65,
+        "rects": [
+          [
+            160,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "intercom_prison-p": {
+        "name": "intercom_prison-p",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 66,
+        "rects": [
+          [
+            192,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "intercom_s": {
+        "name": "intercom_s",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 70,
+        "rects": [
+          [
+            320,
+            96,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "civilian_bounty_pad": {
+    "atlas": "assets/tg/icons/obj/machines/telepad.png",
+    "default": "lpad-off",
+    "states": {
+      "lpad-off": {
+        "name": "lpad-off",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 32,
+        "rects": [
+          [
+            0,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "lpad": {
+        "name": "lpad",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 42,
+        "rects": [
+          [
+            64,
+            160,
+            32,
+            32
+          ],
+          [
+            96,
+            160,
+            32,
+            32
+          ],
+          [
+            128,
+            160,
+            32,
+            32
+          ],
+          [
+            160,
+            160,
+            32,
+            32
+          ],
+          [
+            192,
+            160,
+            32,
+            32
+          ],
+          [
+            224,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "lpad-open": {
+        "name": "lpad-open",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 31,
+        "rects": [
+          [
+            224,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "lpad-beam": {
+        "name": "lpad-beam",
+        "dirs": 1,
+        "frames": 9,
+        "delays": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 33,
+        "rects": [
+          [
+            32,
+            128,
+            32,
+            32
+          ],
+          [
+            64,
+            128,
+            32,
+            32
+          ],
+          [
+            96,
+            128,
+            32,
+            32
+          ],
+          [
+            128,
+            128,
+            32,
+            32
+          ],
+          [
+            160,
+            128,
+            32,
+            32
+          ],
+          [
+            192,
+            128,
+            32,
+            32
+          ],
+          [
+            224,
+            128,
+            32,
+            32
+          ],
+          [
+            0,
+            160,
+            32,
+            32
+          ],
+          [
+            32,
+            160,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "disposal_outlet": {
+    "atlas": "assets/tg/icons/obj/pipes_n_cables/disposal.png",
+    "default": "outlet",
+    "states": {
+      "outlet": {
+        "name": "outlet",
+        "dirs": 4,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 20,
+        "rects": [
+          [
+            96,
+            32,
+            32,
+            32
+          ],
+          [
+            128,
+            32,
+            32,
+            32
+          ],
+          [
+            160,
+            32,
+            32,
+            32
+          ],
+          [
+            192,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "outlet-open": {
+        "name": "outlet-open",
+        "dirs": 4,
+        "frames": 8,
+        "delays": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          1,
+          15,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 24,
+        "rects": [
+          [
+            224,
+            32,
+            32,
+            32
+          ],
+          [
+            352,
+            32,
+            32,
+            32
+          ],
+          [
+            480,
+            32,
+            32,
+            32
+          ],
+          [
+            64,
+            64,
+            32,
+            32
+          ],
+          [
+            192,
+            64,
+            32,
+            32
+          ],
+          [
+            320,
+            64,
+            32,
+            32
+          ],
+          [
+            448,
+            64,
+            32,
+            32
+          ],
+          [
+            32,
+            96,
+            32,
+            32
+          ],
+          [
+            256,
+            32,
+            32,
+            32
+          ],
+          [
+            384,
+            32,
+            32,
+            32
+          ],
+          [
+            512,
+            32,
+            32,
+            32
+          ],
+          [
+            96,
+            64,
+            32,
+            32
+          ],
+          [
+            224,
+            64,
+            32,
+            32
+          ],
+          [
+            352,
+            64,
+            32,
+            32
+          ],
+          [
+            480,
+            64,
+            32,
+            32
+          ],
+          [
+            64,
+            96,
+            32,
+            32
+          ],
+          [
+            288,
+            32,
+            32,
+            32
+          ],
+          [
+            416,
+            32,
+            32,
+            32
+          ],
+          [
+            0,
+            64,
+            32,
+            32
+          ],
+          [
+            128,
+            64,
+            32,
+            32
+          ],
+          [
+            256,
+            64,
+            32,
+            32
+          ],
+          [
+            384,
+            64,
+            32,
+            32
+          ],
+          [
+            512,
+            64,
+            32,
+            32
+          ],
+          [
+            96,
+            96,
+            32,
+            32
+          ],
+          [
+            320,
+            32,
+            32,
+            32
+          ],
+          [
+            448,
+            32,
+            32,
+            32
+          ],
+          [
+            32,
+            64,
+            32,
+            32
+          ],
+          [
+            160,
+            64,
+            32,
+            32
+          ],
+          [
+            288,
+            64,
+            32,
+            32
+          ],
+          [
+            416,
+            64,
+            32,
+            32
+          ],
+          [
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            128,
+            96,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "mining_equipment_order_console": {
+    "atlas": "assets/tg/icons/obj/machines/mining_machines.png",
+    "default": "mining",
+    "states": {
+      "mining": {
+        "name": "mining",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          47,
+          1,
+          0.8,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 8,
+        "rects": [
+          [
+            256,
+            0,
+            32,
+            32
+          ],
+          [
+            288,
+            0,
+            32,
+            32
+          ],
+          [
+            0,
+            32,
+            32,
+            32
+          ],
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "mining-off": {
+        "name": "mining-off",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 14,
+        "rects": [
+          [
+            128,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "mining-deny": {
+        "name": "mining-deny",
+        "dirs": 1,
+        "frames": 2,
+        "delays": [
+          1.3,
+          1.3
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 12,
+        "rects": [
+          [
+            64,
+            32,
+            32,
+            32
+          ],
+          [
+            96,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "mining-open": {
+        "name": "mining-open",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 16,
+        "rects": [
+          [
+            192,
+            32,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "bitrunning_supplies_order_console": {
+    "atlas": "assets/tg/icons/obj/machines/bitrunning.png",
+    "default": "vendor",
+    "states": {
+      "vendor": {
+        "name": "vendor",
+        "dirs": 4,
+        "frames": 12,
+        "delays": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 78,
+        "rects": [
+          [
+            256,
+            160,
+            32,
+            32
+          ],
+          [
+            384,
+            160,
+            32,
+            32
+          ],
+          [
+            64,
+            192,
+            32,
+            32
+          ],
+          [
+            192,
+            192,
+            32,
+            32
+          ],
+          [
+            320,
+            192,
+            32,
+            32
+          ],
+          [
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            128,
+            224,
+            32,
+            32
+          ],
+          [
+            256,
+            224,
+            32,
+            32
+          ],
+          [
+            384,
+            224,
+            32,
+            32
+          ],
+          [
+            64,
+            256,
+            32,
+            32
+          ],
+          [
+            192,
+            256,
+            32,
+            32
+          ],
+          [
+            320,
+            256,
+            32,
+            32
+          ],
+          [
+            288,
+            160,
+            32,
+            32
+          ],
+          [
+            416,
+            160,
+            32,
+            32
+          ],
+          [
+            96,
+            192,
+            32,
+            32
+          ],
+          [
+            224,
+            192,
+            32,
+            32
+          ],
+          [
+            352,
+            192,
+            32,
+            32
+          ],
+          [
+            32,
+            224,
+            32,
+            32
+          ],
+          [
+            160,
+            224,
+            32,
+            32
+          ],
+          [
+            288,
+            224,
+            32,
+            32
+          ],
+          [
+            416,
+            224,
+            32,
+            32
+          ],
+          [
+            96,
+            256,
+            32,
+            32
+          ],
+          [
+            224,
+            256,
+            32,
+            32
+          ],
+          [
+            352,
+            256,
+            32,
+            32
+          ],
+          [
+            320,
+            160,
+            32,
+            32
+          ],
+          [
+            0,
+            192,
+            32,
+            32
+          ],
+          [
+            128,
+            192,
+            32,
+            32
+          ],
+          [
+            256,
+            192,
+            32,
+            32
+          ],
+          [
+            384,
+            192,
+            32,
+            32
+          ],
+          [
+            64,
+            224,
+            32,
+            32
+          ],
+          [
+            192,
+            224,
+            32,
+            32
+          ],
+          [
+            320,
+            224,
+            32,
+            32
+          ],
+          [
+            0,
+            256,
+            32,
+            32
+          ],
+          [
+            128,
+            256,
+            32,
+            32
+          ],
+          [
+            256,
+            256,
+            32,
+            32
+          ],
+          [
+            384,
+            256,
+            32,
+            32
+          ],
+          [
+            352,
+            160,
+            32,
+            32
+          ],
+          [
+            32,
+            192,
+            32,
+            32
+          ],
+          [
+            160,
+            192,
+            32,
+            32
+          ],
+          [
+            288,
+            192,
+            32,
+            32
+          ],
+          [
+            416,
+            192,
+            32,
+            32
+          ],
+          [
+            96,
+            224,
+            32,
+            32
+          ],
+          [
+            224,
+            224,
+            32,
+            32
+          ],
+          [
+            352,
+            224,
+            32,
+            32
+          ],
+          [
+            32,
+            256,
+            32,
+            32
+          ],
+          [
+            160,
+            256,
+            32,
+            32
+          ],
+          [
+            288,
+            256,
+            32,
+            32
+          ],
+          [
+            416,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "vendor_off": {
+        "name": "vendor_off",
+        "dirs": 4,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 126,
+        "rects": [
+          [
+            0,
+            288,
+            32,
+            32
+          ],
+          [
+            32,
+            288,
+            32,
+            32
+          ],
+          [
+            64,
+            288,
+            32,
+            32
+          ],
+          [
+            96,
+            288,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "coffee_machine_impressa": {
+    "atlas": "assets/tg/icons/obj/machines/coffeemaker.png",
+    "default": "coffeemaker_impressa",
+    "states": {
+      "coffeemaker_impressa": {
+        "name": "coffeemaker_impressa",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 5,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot_empty": {
+        "name": "pot_empty",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 6,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot_full": {
+        "name": "pot_full",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 7,
+        "rects": [
+          [
+            64,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot_bluespace": {
+        "name": "pot_bluespace",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 8,
+        "rects": [
+          [
+            96,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_half": {
+        "name": "grinder_half",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 10,
+        "rects": [
+          [
+            0,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_full": {
+        "name": "grinder_full",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 9,
+        "rects": [
+          [
+            128,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "cups_1": {
+        "name": "cups_1",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 13,
+        "rects": [
+          [
+            96,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "cups_2": {
+        "name": "cups_2",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 12,
+        "rects": [
+          [
+            64,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "cups_3": {
+        "name": "cups_3",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 11,
+        "rects": [
+          [
+            32,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "extras_1": {
+        "name": "extras_1",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 14,
+        "rects": [
+          [
+            128,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "extras_2": {
+        "name": "extras_2",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 15,
+        "rects": [
+          [
+            0,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "extras_3": {
+        "name": "extras_3",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 16,
+        "rects": [
+          [
+            32,
+            96,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "boulder_smelter": {
+    "atlas": "assets/tg/icons/obj/machines/mining_machines.png",
+    "default": "smelter",
+    "states": {
+      "smelter": {
+        "name": "smelter",
+        "dirs": 4,
+        "frames": 4,
+        "delays": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 70,
+        "rects": [
+          [
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            128,
+            224,
+            32,
+            32
+          ],
+          [
+            256,
+            224,
+            32,
+            32
+          ],
+          [
+            64,
+            256,
+            32,
+            32
+          ],
+          [
+            32,
+            224,
+            32,
+            32
+          ],
+          [
+            160,
+            224,
+            32,
+            32
+          ],
+          [
+            288,
+            224,
+            32,
+            32
+          ],
+          [
+            96,
+            256,
+            32,
+            32
+          ],
+          [
+            64,
+            224,
+            32,
+            32
+          ],
+          [
+            192,
+            224,
+            32,
+            32
+          ],
+          [
+            0,
+            256,
+            32,
+            32
+          ],
+          [
+            128,
+            256,
+            32,
+            32
+          ],
+          [
+            96,
+            224,
+            32,
+            32
+          ],
+          [
+            224,
+            224,
+            32,
+            32
+          ],
+          [
+            32,
+            256,
+            32,
+            32
+          ],
+          [
+            160,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "smelter-off": {
+        "name": "smelter-off",
+        "dirs": 4,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 66,
+        "rects": [
+          [
+            192,
+            192,
+            32,
+            32
+          ],
+          [
+            224,
+            192,
+            32,
+            32
+          ],
+          [
+            256,
+            192,
+            32,
+            32
+          ],
+          [
+            288,
+            192,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "bookcase": {
+    "atlas": "assets/tg/icons/obj/service/library.png",
+    "default": "book-0",
+    "states": {
+      "book-0": {
+        "name": "book-0",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 1,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-1": {
+        "name": "book-1",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 2,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-2": {
+        "name": "book-2",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 3,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-3": {
+        "name": "book-3",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 4,
+        "rects": [
+          [
+            128,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-4": {
+        "name": "book-4",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 5,
+        "rects": [
+          [
+            160,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-5": {
+        "name": "book-5",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 6,
+        "rects": [
+          [
+            192,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookempty": {
+        "name": "bookempty",
+        "dirs": 1,
+        "frames": 1,
+        "delays": null,
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 7,
+        "rects": [
+          [
+            224,
+            0,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  }
+}

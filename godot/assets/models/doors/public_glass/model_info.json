@@ -1,0 +1,22 @@
+{
+  "parts": {
+    "Door_Left": {
+      "triangles": 438,
+      "vertices": 221
+    },
+    "Door_Right": {
+      "triangles": 416,
+      "vertices": 210
+    }
+  },
+  "atlas_sha256": "42481f22062ae028e1d76f9d84831ae9d0ea35c11ef47b12854f4309dec6d348",
+  "glass_alpha": 0.35,
+  "glass_thickness_m": 0.05333333333333334,
+  "leaf_thickness_m": 0.16,
+  "opening_offsets_godot_x": [
+    -1.125,
+    1.125
+  ],
+  "nearest": true,
+  "original_png_embedded": true
+}

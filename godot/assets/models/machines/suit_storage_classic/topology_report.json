@@ -1,0 +1,23 @@
+{
+  "Suit_Storage_Shell": {
+    "vertices": 210,
+    "faces": 199,
+    "components": 1,
+    "non_manifold_edges": 0,
+    "triangles": 420
+  },
+  "Suit_Storage_Door": {
+    "vertices": 172,
+    "faces": 154,
+    "components": 1,
+    "non_manifold_edges": 0,
+    "triangles": 340
+  },
+  "Suit_Storage_Service_Hatch": {
+    "vertices": 12,
+    "faces": 10,
+    "components": 1,
+    "non_manifold_edges": 0,
+    "triangles": 20
+  }
+}

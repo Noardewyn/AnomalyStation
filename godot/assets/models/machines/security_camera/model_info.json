@@ -1,0 +1,915 @@
+{
+  "security_camera_on": {
+    "base_state": "camera",
+    "overlays": [
+      "camera_on"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Emission_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Status_Emission_Overlay.024",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "camera_on"
+      }
+    ],
+    "triangles": 166
+  },
+  "security_camera_in_use": {
+    "base_state": "camera",
+    "overlays": [
+      "camera_in_use"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Emission_Overlay",
+        "triangles": 8,
+        "shared_mesh": "Status_Emission_Overlay.025",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "camera_in_use"
+      }
+    ],
+    "triangles": 172
+  },
+  "security_camera_off": {
+    "base_state": "camera_off",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 164
+  },
+  "security_camera_emp": {
+    "base_state": "camera_off",
+    "overlays": [
+      "camera_emp"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "EMP_Discharge_Overlay",
+        "triangles": 46,
+        "shared_mesh": "EMP_Discharge_Overlay.008",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "camera_emp"
+      }
+    ],
+    "triangles": 210
+  },
+  "security_camera_panel_open": {
+    "base_state": "camera",
+    "overlays": [
+      "camera_panel",
+      "camera_on"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel_State_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Service_Panel_State_Overlay.008",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Service_Panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "camera_panel"
+      },
+      {
+        "name": "Status_Emission_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Status_Emission_Overlay.024",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "camera_on"
+      }
+    ],
+    "triangles": 168
+  },
+  "security_camera_xray_on": {
+    "base_state": "xraycamera",
+    "overlays": [
+      "xraycamera_on"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Xray_Module_Dock",
+        "triangles": 12,
+        "shared_mesh": "Xray_Module_Dock",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Emission_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Status_Emission_Overlay.027",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "xraycamera_on"
+      }
+    ],
+    "triangles": 180
+  },
+  "security_camera_xray_in_use": {
+    "base_state": "xraycamera",
+    "overlays": [
+      "xraycamera_in_use"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Xray_Module_Dock",
+        "triangles": 12,
+        "shared_mesh": "Xray_Module_Dock",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Emission_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Status_Emission_Overlay.028",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "xraycamera_in_use"
+      }
+    ],
+    "triangles": 186
+  },
+  "security_camera_xray_off": {
+    "base_state": "xraycamera_off",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Xray_Module_Dock",
+        "triangles": 12,
+        "shared_mesh": "Xray_Module_Dock",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "security_camera_xray_emp": {
+    "base_state": "xraycamera_off",
+    "overlays": [
+      "xraycamera_emp"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Xray_Module_Dock",
+        "triangles": 12,
+        "shared_mesh": "Xray_Module_Dock",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "EMP_Discharge_Overlay",
+        "triangles": 48,
+        "shared_mesh": "EMP_Discharge_Overlay.009",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "xraycamera_emp"
+      }
+    ],
+    "triangles": 224
+  },
+  "security_camera_xray_panel_open": {
+    "base_state": "xraycamera",
+    "overlays": [
+      "camera_panel",
+      "xraycamera_on"
+    ],
+    "parts": [
+      {
+        "name": "Wall_Plate_and_Stepped_Arm",
+        "triangles": 76,
+        "shared_mesh": "Wall_Plate_and_Stepped_Arm.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Camera_Head",
+        "triangles": 64,
+        "shared_mesh": "Stepped_Camera_Head.041",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Xray_Module_Dock",
+        "triangles": 12,
+        "shared_mesh": "Xray_Module_Dock",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Lens_Glass",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Lens_Glass.040",
+        "materials": [
+          "Camera_Lens_Glass_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.040",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          -0.08437500149011612,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel_State_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Service_Panel_State_Overlay.008",
+        "materials": [
+          "Camera_Housing_Original.005"
+        ],
+        "parent": "Service_Panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "camera_panel"
+      },
+      {
+        "name": "Status_Emission_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Status_Emission_Overlay.027",
+        "materials": [
+          "Camera_State_Overlay_Original.005"
+        ],
+        "parent": "Head_Pan_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "xraycamera_on"
+      }
+    ],
+    "triangles": 182
+  }
+}

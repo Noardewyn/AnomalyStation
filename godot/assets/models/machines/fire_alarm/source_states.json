@@ -1,0 +1,4349 @@
+{
+  "version": "4.0",
+  "width": 32,
+  "height": 32,
+  "sheetWidth": 640,
+  "sheetHeight": 608,
+  "states": [
+    {
+      "name": "airlock_sensor_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_sensor_standby",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_sensor_cycle",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        5,
+        5
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ],
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_sensor_alert",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        3,
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          128,
+          0,
+          32,
+          32
+        ],
+        [
+          160,
+          0,
+          32,
+          32
+        ],
+        [
+          192,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_control_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 7,
+      "rects": [
+        [
+          224,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_control_standby",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          256,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_control_process",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          288,
+          0,
+          32,
+          32
+        ],
+        [
+          320,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "access_button_standby",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 11,
+      "rects": [
+        [
+          352,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "access_button_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 12,
+      "rects": [
+        [
+          384,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "access_button_cycle",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        5,
+        5
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 13,
+      "rects": [
+        [
+          416,
+          0,
+          32,
+          32
+        ],
+        [
+          448,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "access_control_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 15,
+      "rects": [
+        [
+          480,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "access_control_standby",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 16,
+      "rects": [
+        [
+          512,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "access_control_process",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 17,
+      "rects": [
+        [
+          544,
+          0,
+          32,
+          32
+        ],
+        [
+          576,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "crema_switch",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 19,
+      "rects": [
+        [
+          608,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "pneumatic_seal",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 20,
+      "rects": [
+        [
+          0,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 21,
+      "rects": [
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-overlay-success",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 22,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-overlay-error",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 23,
+      "rects": [
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-light-mask",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 24,
+      "rects": [
+        [
+          128,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-nopower",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 25,
+      "rects": [
+        [
+          160,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 26,
+      "rects": [
+        [
+          192,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-overlay-board",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 27,
+      "rects": [
+        [
+          224,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-overlay-device",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 28,
+      "rects": [
+        [
+          256,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "tram-overlay-signaler",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 29,
+      "rects": [
+        [
+          288,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button_assembly",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 30,
+      "rects": [
+        [
+          320,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 31,
+      "rects": [
+        [
+          352,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-warning-open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 32,
+      "rects": [
+        [
+          384,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 33,
+      "rects": [
+        [
+          416,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-warning",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 34,
+      "rects": [
+        [
+          448,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-nopower",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 35,
+      "rects": [
+        [
+          480,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-warning-nopower",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 36,
+      "rects": [
+        [
+          512,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-light-mask",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 37,
+      "rects": [
+        [
+          544,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-board",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 38,
+      "rects": [
+        [
+          576,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-device",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 39,
+      "rects": [
+        [
+          608,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-signaler",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 40,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-success",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        2,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 41,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ],
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-error",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        2,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 43,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ],
+        [
+          128,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarm_b1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 45,
+      "rects": [
+        [
+          160,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarm_b2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 46,
+      "rects": [
+        [
+          192,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarmx",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 47,
+      "rects": [
+        [
+          224,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarmp_remote",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 48,
+      "rects": [
+        [
+          256,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarmp",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 49,
+      "rects": [
+        [
+          288,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarm_bitem",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 50,
+      "rects": [
+        [
+          320,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarm0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 51,
+      "rects": [
+        [
+          352,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarm1",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 52,
+      "rects": [
+        [
+          384,
+          64,
+          32,
+          32
+        ],
+        [
+          416,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "alarm2",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        2,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 54,
+      "rects": [
+        [
+          448,
+          64,
+          32,
+          32
+        ],
+        [
+          480,
+          64,
+          32,
+          32
+        ],
+        [
+          512,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "auth_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 57,
+      "rects": [
+        [
+          544,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "auth_on",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 58,
+      "rects": [
+        [
+          576,
+          64,
+          32,
+          32
+        ],
+        [
+          608,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_assembly",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 60,
+      "rects": [
+        [
+          0,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 61,
+      "rects": [
+        [
+          32,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom-p",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 62,
+      "rects": [
+        [
+          64,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_command",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 63,
+      "rects": [
+        [
+          96,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_command-p",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 64,
+      "rects": [
+        [
+          128,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_prison",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 65,
+      "rects": [
+        [
+          160,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_prison-p",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 66,
+      "rects": [
+        [
+          192,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_syndicate",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 67,
+      "rects": [
+        [
+          224,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_syndicate-p",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 68,
+      "rects": [
+        [
+          256,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_stripe",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 69,
+      "rects": [
+        [
+          288,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_s",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 70,
+      "rects": [
+        [
+          320,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_m",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 71,
+      "rects": [
+        [
+          352,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "intercom_receive_syndicate",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1,
+        3,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 72,
+      "rects": [
+        [
+          384,
+          96,
+          32,
+          32
+        ],
+        [
+          416,
+          96,
+          32,
+          32
+        ],
+        [
+          448,
+          96,
+          32,
+          32
+        ],
+        [
+          480,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "unanchoredstatusdisplay",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 76,
+      "rects": [
+        [
+          512,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "production_console_old",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 77,
+      "rects": [
+        [
+          544,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "newscaster_assembly",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 78,
+      "rects": [
+        [
+          576,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "newscaster_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 79,
+      "rects": [
+        [
+          608,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "crack1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 80,
+      "rects": [
+        [
+          0,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "crack2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 81,
+      "rects": [
+        [
+          32,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "crack3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 82,
+      "rects": [
+        [
+          64,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "newscaster_alert",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        2,
+        2,
+        2
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 83,
+      "rects": [
+        [
+          96,
+          128,
+          32,
+          32
+        ],
+        [
+          128,
+          128,
+          32,
+          32
+        ],
+        [
+          160,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "newscaster_wanted",
+      "dirs": 1,
+      "frames": 9,
+      "delays": [
+        10,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 86,
+      "rects": [
+        [
+          192,
+          128,
+          32,
+          32
+        ],
+        [
+          224,
+          128,
+          32,
+          32
+        ],
+        [
+          256,
+          128,
+          32,
+          32
+        ],
+        [
+          288,
+          128,
+          32,
+          32
+        ],
+        [
+          320,
+          128,
+          32,
+          32
+        ],
+        [
+          352,
+          128,
+          32,
+          32
+        ],
+        [
+          384,
+          128,
+          32,
+          32
+        ],
+        [
+          416,
+          128,
+          32,
+          32
+        ],
+        [
+          448,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "newscaster_normal",
+      "dirs": 1,
+      "frames": 19,
+      "delays": [
+        60,
+        20,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        2,
+        20,
+        15,
+        20,
+        10
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 95,
+      "rects": [
+        [
+          480,
+          128,
+          32,
+          32
+        ],
+        [
+          512,
+          128,
+          32,
+          32
+        ],
+        [
+          544,
+          128,
+          32,
+          32
+        ],
+        [
+          576,
+          128,
+          32,
+          32
+        ],
+        [
+          608,
+          128,
+          32,
+          32
+        ],
+        [
+          0,
+          160,
+          32,
+          32
+        ],
+        [
+          32,
+          160,
+          32,
+          32
+        ],
+        [
+          64,
+          160,
+          32,
+          32
+        ],
+        [
+          96,
+          160,
+          32,
+          32
+        ],
+        [
+          128,
+          160,
+          32,
+          32
+        ],
+        [
+          160,
+          160,
+          32,
+          32
+        ],
+        [
+          192,
+          160,
+          32,
+          32
+        ],
+        [
+          224,
+          160,
+          32,
+          32
+        ],
+        [
+          256,
+          160,
+          32,
+          32
+        ],
+        [
+          288,
+          160,
+          32,
+          32
+        ],
+        [
+          320,
+          160,
+          32,
+          32
+        ],
+        [
+          352,
+          160,
+          32,
+          32
+        ],
+        [
+          384,
+          160,
+          32,
+          32
+        ],
+        [
+          416,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "newscaster_bounty",
+      "dirs": 1,
+      "frames": 20,
+      "delays": [
+        20,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        8,
+        2,
+        1,
+        2,
+        5.5,
+        1,
+        1,
+        1,
+        1,
+        8
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 114,
+      "rects": [
+        [
+          448,
+          160,
+          32,
+          32
+        ],
+        [
+          480,
+          160,
+          32,
+          32
+        ],
+        [
+          512,
+          160,
+          32,
+          32
+        ],
+        [
+          544,
+          160,
+          32,
+          32
+        ],
+        [
+          576,
+          160,
+          32,
+          32
+        ],
+        [
+          608,
+          160,
+          32,
+          32
+        ],
+        [
+          0,
+          192,
+          32,
+          32
+        ],
+        [
+          32,
+          192,
+          32,
+          32
+        ],
+        [
+          64,
+          192,
+          32,
+          32
+        ],
+        [
+          96,
+          192,
+          32,
+          32
+        ],
+        [
+          128,
+          192,
+          32,
+          32
+        ],
+        [
+          160,
+          192,
+          32,
+          32
+        ],
+        [
+          192,
+          192,
+          32,
+          32
+        ],
+        [
+          224,
+          192,
+          32,
+          32
+        ],
+        [
+          256,
+          192,
+          32,
+          32
+        ],
+        [
+          288,
+          192,
+          32,
+          32
+        ],
+        [
+          320,
+          192,
+          32,
+          32
+        ],
+        [
+          352,
+          192,
+          32,
+          32
+        ],
+        [
+          384,
+          192,
+          32,
+          32
+        ],
+        [
+          416,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "request_kiosk_assembly",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 134,
+      "rects": [
+        [
+          448,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "req_comp_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 135,
+      "rects": [
+        [
+          480,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "req_comp0",
+      "dirs": 1,
+      "frames": 14,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 136,
+      "rects": [
+        [
+          512,
+          192,
+          32,
+          32
+        ],
+        [
+          544,
+          192,
+          32,
+          32
+        ],
+        [
+          576,
+          192,
+          32,
+          32
+        ],
+        [
+          608,
+          192,
+          32,
+          32
+        ],
+        [
+          0,
+          224,
+          32,
+          32
+        ],
+        [
+          32,
+          224,
+          32,
+          32
+        ],
+        [
+          64,
+          224,
+          32,
+          32
+        ],
+        [
+          96,
+          224,
+          32,
+          32
+        ],
+        [
+          128,
+          224,
+          32,
+          32
+        ],
+        [
+          160,
+          224,
+          32,
+          32
+        ],
+        [
+          192,
+          224,
+          32,
+          32
+        ],
+        [
+          224,
+          224,
+          32,
+          32
+        ],
+        [
+          256,
+          224,
+          32,
+          32
+        ],
+        [
+          288,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "req_comp1",
+      "dirs": 1,
+      "frames": 8,
+      "delays": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        20,
+        20
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 150,
+      "rects": [
+        [
+          320,
+          224,
+          32,
+          32
+        ],
+        [
+          352,
+          224,
+          32,
+          32
+        ],
+        [
+          384,
+          224,
+          32,
+          32
+        ],
+        [
+          416,
+          224,
+          32,
+          32
+        ],
+        [
+          448,
+          224,
+          32,
+          32
+        ],
+        [
+          480,
+          224,
+          32,
+          32
+        ],
+        [
+          512,
+          224,
+          32,
+          32
+        ],
+        [
+          544,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "req_comp2",
+      "dirs": 1,
+      "frames": 8,
+      "delays": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        20,
+        20
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 158,
+      "rects": [
+        [
+          576,
+          224,
+          32,
+          32
+        ],
+        [
+          608,
+          224,
+          32,
+          32
+        ],
+        [
+          0,
+          256,
+          32,
+          32
+        ],
+        [
+          32,
+          256,
+          32,
+          32
+        ],
+        [
+          64,
+          256,
+          32,
+          32
+        ],
+        [
+          96,
+          256,
+          32,
+          32
+        ],
+        [
+          128,
+          256,
+          32,
+          32
+        ],
+        [
+          160,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "req_comp3",
+      "dirs": 1,
+      "frames": 8,
+      "delays": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        20,
+        20
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 166,
+      "rects": [
+        [
+          192,
+          256,
+          32,
+          32
+        ],
+        [
+          224,
+          256,
+          32,
+          32
+        ],
+        [
+          256,
+          256,
+          32,
+          32
+        ],
+        [
+          288,
+          256,
+          32,
+          32
+        ],
+        [
+          320,
+          256,
+          32,
+          32
+        ],
+        [
+          352,
+          256,
+          32,
+          32
+        ],
+        [
+          384,
+          256,
+          32,
+          32
+        ],
+        [
+          416,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "req_comp_open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 174,
+      "rects": [
+        [
+          448,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "pod_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 175,
+      "rects": [
+        [
+          480,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "pod_on",
+      "dirs": 1,
+      "frames": 21,
+      "delays": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 176,
+      "rects": [
+        [
+          512,
+          256,
+          32,
+          32
+        ],
+        [
+          544,
+          256,
+          32,
+          32
+        ],
+        [
+          576,
+          256,
+          32,
+          32
+        ],
+        [
+          608,
+          256,
+          32,
+          32
+        ],
+        [
+          0,
+          288,
+          32,
+          32
+        ],
+        [
+          32,
+          288,
+          32,
+          32
+        ],
+        [
+          64,
+          288,
+          32,
+          32
+        ],
+        [
+          96,
+          288,
+          32,
+          32
+        ],
+        [
+          128,
+          288,
+          32,
+          32
+        ],
+        [
+          160,
+          288,
+          32,
+          32
+        ],
+        [
+          192,
+          288,
+          32,
+          32
+        ],
+        [
+          224,
+          288,
+          32,
+          32
+        ],
+        [
+          256,
+          288,
+          32,
+          32
+        ],
+        [
+          288,
+          288,
+          32,
+          32
+        ],
+        [
+          320,
+          288,
+          32,
+          32
+        ],
+        [
+          352,
+          288,
+          32,
+          32
+        ],
+        [
+          384,
+          288,
+          32,
+          32
+        ],
+        [
+          416,
+          288,
+          32,
+          32
+        ],
+        [
+          448,
+          288,
+          32,
+          32
+        ],
+        [
+          480,
+          288,
+          32,
+          32
+        ],
+        [
+          512,
+          288,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gulag_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 197,
+      "rects": [
+        [
+          544,
+          288,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "gulag_on",
+      "dirs": 1,
+      "frames": 8,
+      "delays": [
+        10,
+        2,
+        10,
+        2,
+        10,
+        2,
+        10,
+        2
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 198,
+      "rects": [
+        [
+          576,
+          288,
+          32,
+          32
+        ],
+        [
+          608,
+          288,
+          32,
+          32
+        ],
+        [
+          0,
+          320,
+          32,
+          32
+        ],
+        [
+          32,
+          320,
+          32,
+          32
+        ],
+        [
+          64,
+          320,
+          32,
+          32
+        ],
+        [
+          96,
+          320,
+          32,
+          32
+        ],
+        [
+          128,
+          320,
+          32,
+          32
+        ],
+        [
+          160,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emagged_general",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        20,
+        5
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 206,
+      "rects": [
+        [
+          192,
+          320,
+          32,
+          32
+        ],
+        [
+          224,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 208,
+      "rects": [
+        [
+          256,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 209,
+      "rects": [
+        [
+          288,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco3-1",
+      "dirs": 1,
+      "frames": 6,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 210,
+      "rects": [
+        [
+          320,
+          320,
+          32,
+          32
+        ],
+        [
+          352,
+          320,
+          32,
+          32
+        ],
+        [
+          384,
+          320,
+          32,
+          32
+        ],
+        [
+          416,
+          320,
+          32,
+          32
+        ],
+        [
+          448,
+          320,
+          32,
+          32
+        ],
+        [
+          480,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco3-0",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        10,
+        20,
+        20
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 216,
+      "rects": [
+        [
+          512,
+          320,
+          32,
+          32
+        ],
+        [
+          544,
+          320,
+          32,
+          32
+        ],
+        [
+          576,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco3-2",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 219,
+      "rects": [
+        [
+          608,
+          320,
+          32,
+          32
+        ],
+        [
+          0,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc-spark",
+      "dirs": 1,
+      "frames": 7,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 221,
+      "rects": [
+        [
+          32,
+          352,
+          32,
+          32
+        ],
+        [
+          64,
+          352,
+          32,
+          32
+        ],
+        [
+          96,
+          352,
+          32,
+          32
+        ],
+        [
+          128,
+          352,
+          32,
+          32
+        ],
+        [
+          160,
+          352,
+          32,
+          32
+        ],
+        [
+          192,
+          352,
+          32,
+          32
+        ],
+        [
+          224,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcewires",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 228,
+      "rects": [
+        [
+          256,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcemag",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        5,
+        5
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 229,
+      "rects": [
+        [
+          288,
+          352,
+          32,
+          32
+        ],
+        [
+          320,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 231,
+      "rects": [
+        [
+          352,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc1-b-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 232,
+      "rects": [
+        [
+          384,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc1-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 233,
+      "rects": [
+        [
+          416,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 234,
+      "rects": [
+        [
+          448,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc2-b-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 235,
+      "rects": [
+        [
+          480,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc2-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 236,
+      "rects": [
+        [
+          512,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc-b",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 237,
+      "rects": [
+        [
+          544,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcmaint",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 238,
+      "rects": [
+        [
+          576,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcox-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 239,
+      "rects": [
+        [
+          608,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcox-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 240,
+      "rects": [
+        [
+          0,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 241,
+      "rects": [
+        [
+          32,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 242,
+      "rects": [
+        [
+          64,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 243,
+      "rects": [
+        [
+          96,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 244,
+      "rects": [
+        [
+          128,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 245,
+      "rects": [
+        [
+          160,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 246,
+      "rects": [
+        [
+          192,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 247,
+      "rects": [
+        [
+          224,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 248,
+      "rects": [
+        [
+          256,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 249,
+      "rects": [
+        [
+          288,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 250,
+      "rects": [
+        [
+          320,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 251,
+      "rects": [
+        [
+          352,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 252,
+      "rects": [
+        [
+          384,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-nopower",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 253,
+      "rects": [
+        [
+          416,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-off",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 254,
+      "rects": [
+        [
+          448,
+          384,
+          32,
+          32
+        ],
+        [
+          480,
+          384,
+          32,
+          32
+        ],
+        [
+          512,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-on",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 257,
+      "rects": [
+        [
+          544,
+          384,
+          32,
+          32
+        ],
+        [
+          576,
+          384,
+          32,
+          32
+        ],
+        [
+          608,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-emissive-off",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 260,
+      "rects": [
+        [
+          0,
+          416,
+          32,
+          32
+        ],
+        [
+          32,
+          416,
+          32,
+          32
+        ],
+        [
+          64,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "light-emissive-on",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 263,
+      "rects": [
+        [
+          96,
+          416,
+          32,
+          32
+        ],
+        [
+          128,
+          416,
+          32,
+          32
+        ],
+        [
+          160,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire0",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 266,
+      "rects": [
+        [
+          192,
+          416,
+          32,
+          32
+        ],
+        [
+          224,
+          416,
+          32,
+          32
+        ],
+        [
+          256,
+          416,
+          32,
+          32
+        ],
+        [
+          288,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_b2",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 270,
+      "rects": [
+        [
+          320,
+          416,
+          32,
+          32
+        ],
+        [
+          352,
+          416,
+          32,
+          32
+        ],
+        [
+          384,
+          416,
+          32,
+          32
+        ],
+        [
+          416,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_b1",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 274,
+      "rects": [
+        [
+          448,
+          416,
+          32,
+          32
+        ],
+        [
+          480,
+          416,
+          32,
+          32
+        ],
+        [
+          512,
+          416,
+          32,
+          32
+        ],
+        [
+          544,
+          416,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_b0",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 278,
+      "rects": [
+        [
+          576,
+          416,
+          32,
+          32
+        ],
+        [
+          608,
+          416,
+          32,
+          32
+        ],
+        [
+          0,
+          448,
+          32,
+          32
+        ],
+        [
+          32,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_bitem",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 282,
+      "rects": [
+        [
+          64,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "firex",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 283,
+      "rects": [
+        [
+          96,
+          448,
+          32,
+          32
+        ],
+        [
+          128,
+          448,
+          32,
+          32
+        ],
+        [
+          160,
+          448,
+          32,
+          32
+        ],
+        [
+          192,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_level_e",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 287,
+      "rects": [
+        [
+          224,
+          448,
+          32,
+          32
+        ],
+        [
+          256,
+          448,
+          32,
+          32
+        ],
+        [
+          288,
+          448,
+          32,
+          32
+        ],
+        [
+          320,
+          448,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_emag_e",
+      "dirs": 4,
+      "frames": 4,
+      "delays": [
+        21,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 291,
+      "rects": [
+        [
+          352,
+          448,
+          32,
+          32
+        ],
+        [
+          480,
+          448,
+          32,
+          32
+        ],
+        [
+          608,
+          448,
+          32,
+          32
+        ],
+        [
+          96,
+          480,
+          32,
+          32
+        ],
+        [
+          384,
+          448,
+          32,
+          32
+        ],
+        [
+          512,
+          448,
+          32,
+          32
+        ],
+        [
+          0,
+          480,
+          32,
+          32
+        ],
+        [
+          128,
+          480,
+          32,
+          32
+        ],
+        [
+          416,
+          448,
+          32,
+          32
+        ],
+        [
+          544,
+          448,
+          32,
+          32
+        ],
+        [
+          32,
+          480,
+          32,
+          32
+        ],
+        [
+          160,
+          480,
+          32,
+          32
+        ],
+        [
+          448,
+          448,
+          32,
+          32
+        ],
+        [
+          576,
+          448,
+          32,
+          32
+        ],
+        [
+          64,
+          480,
+          32,
+          32
+        ],
+        [
+          192,
+          480,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_alerting_e",
+      "dirs": 4,
+      "frames": 2,
+      "delays": [
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 307,
+      "rects": [
+        [
+          224,
+          480,
+          32,
+          32
+        ],
+        [
+          352,
+          480,
+          32,
+          32
+        ],
+        [
+          256,
+          480,
+          32,
+          32
+        ],
+        [
+          384,
+          480,
+          32,
+          32
+        ],
+        [
+          288,
+          480,
+          32,
+          32
+        ],
+        [
+          416,
+          480,
+          32,
+          32
+        ],
+        [
+          320,
+          480,
+          32,
+          32
+        ],
+        [
+          448,
+          480,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_disabled",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 315,
+      "rects": [
+        [
+          480,
+          480,
+          32,
+          32
+        ],
+        [
+          512,
+          480,
+          32,
+          32
+        ],
+        [
+          544,
+          480,
+          32,
+          32
+        ],
+        [
+          576,
+          480,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_emag",
+      "dirs": 4,
+      "frames": 4,
+      "delays": [
+        21,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 319,
+      "rects": [
+        [
+          608,
+          480,
+          32,
+          32
+        ],
+        [
+          96,
+          512,
+          32,
+          32
+        ],
+        [
+          224,
+          512,
+          32,
+          32
+        ],
+        [
+          352,
+          512,
+          32,
+          32
+        ],
+        [
+          0,
+          512,
+          32,
+          32
+        ],
+        [
+          128,
+          512,
+          32,
+          32
+        ],
+        [
+          256,
+          512,
+          32,
+          32
+        ],
+        [
+          384,
+          512,
+          32,
+          32
+        ],
+        [
+          32,
+          512,
+          32,
+          32
+        ],
+        [
+          160,
+          512,
+          32,
+          32
+        ],
+        [
+          288,
+          512,
+          32,
+          32
+        ],
+        [
+          416,
+          512,
+          32,
+          32
+        ],
+        [
+          64,
+          512,
+          32,
+          32
+        ],
+        [
+          192,
+          512,
+          32,
+          32
+        ],
+        [
+          320,
+          512,
+          32,
+          32
+        ],
+        [
+          448,
+          512,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_offstation",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 335,
+      "rects": [
+        [
+          480,
+          512,
+          32,
+          32
+        ],
+        [
+          512,
+          512,
+          32,
+          32
+        ],
+        [
+          544,
+          512,
+          32,
+          32
+        ],
+        [
+          576,
+          512,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_0",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 339,
+      "rects": [
+        [
+          608,
+          512,
+          32,
+          32
+        ],
+        [
+          0,
+          544,
+          32,
+          32
+        ],
+        [
+          32,
+          544,
+          32,
+          32
+        ],
+        [
+          64,
+          544,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_1",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 343,
+      "rects": [
+        [
+          96,
+          544,
+          32,
+          32
+        ],
+        [
+          128,
+          544,
+          32,
+          32
+        ],
+        [
+          160,
+          544,
+          32,
+          32
+        ],
+        [
+          192,
+          544,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_2",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 347,
+      "rects": [
+        [
+          224,
+          544,
+          32,
+          32
+        ],
+        [
+          256,
+          544,
+          32,
+          32
+        ],
+        [
+          288,
+          544,
+          32,
+          32
+        ],
+        [
+          320,
+          544,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_3",
+      "dirs": 4,
+      "frames": 2,
+      "delays": [
+        6,
+        6
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 351,
+      "rects": [
+        [
+          352,
+          544,
+          32,
+          32
+        ],
+        [
+          480,
+          544,
+          32,
+          32
+        ],
+        [
+          384,
+          544,
+          32,
+          32
+        ],
+        [
+          512,
+          544,
+          32,
+          32
+        ],
+        [
+          416,
+          544,
+          32,
+          32
+        ],
+        [
+          544,
+          544,
+          32,
+          32
+        ],
+        [
+          448,
+          544,
+          32,
+          32
+        ],
+        [
+          576,
+          544,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "fire_alerting",
+      "dirs": 4,
+      "frames": 2,
+      "delays": [
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 359,
+      "rects": [
+        [
+          608,
+          544,
+          32,
+          32
+        ],
+        [
+          96,
+          576,
+          32,
+          32
+        ],
+        [
+          0,
+          576,
+          32,
+          32
+        ],
+        [
+          128,
+          576,
+          32,
+          32
+        ],
+        [
+          32,
+          576,
+          32,
+          32
+        ],
+        [
+          160,
+          576,
+          32,
+          32
+        ],
+        [
+          64,
+          576,
+          32,
+          32
+        ],
+        [
+          192,
+          576,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "lockdown0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 367,
+      "rects": [
+        [
+          224,
+          576,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "lockdown1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 368,
+      "rects": [
+        [
+          256,
+          576,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "keycardpad0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 369,
+      "rects": [
+        [
+          288,
+          576,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "keycardpad1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 370,
+      "rects": [
+        [
+          320,
+          576,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "passpad0",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        15,
+        15
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 371,
+      "rects": [
+        [
+          352,
+          576,
+          32,
+          32
+        ],
+        [
+          384,
+          576,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "passpad1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 373,
+      "rects": [
+        [
+          416,
+          576,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "barsign",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 374,
+      "rects": [
+        [
+          448,
+          576,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

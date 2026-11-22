@@ -1,0 +1,26 @@
+<Project>
+  <!--
+    The Godot client's own build settings. Because MSBuild imports only the nearest Directory.Build.props, this file
+    stops the inheritance of the repository-wide ../Directory.Build.props, whose settings are for the core libraries,
+    the server, the tools and the tests. The core projects that Anomaly.Client references still build with the
+    repository-wide file, which sits above them.
+
+    TargetFramework is deliberately not set here: the Godot editor checks the TargetFramework written in the .csproj
+    itself and adds net8.0 to the .csproj when it finds none (GodotTools ProjectUtils.EnsureTargetFrameworkMatchesMinimumRequirement).
+  -->
+  <!-- The game's version, the same as the server's and the core's (docs/versioning.md). -->
+  <Import Project="$(MSBuildThisFileDirectory)../Version.props" />
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <!-- Same conventions as the core: DM semantics make null an ordinary value (docs/ai/translation-rules.md). -->
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <!-- Waiting model (docs/ai/specs/waiting-model.md): a DmTask that is neither awaited nor detached is a bug here too. -->
+    <WarningsAsErrors>$(WarningsAsErrors);CS4014</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Collections.Generic" />
+  </ItemGroup>
+</Project>

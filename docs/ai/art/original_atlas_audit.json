@@ -1,0 +1,3686 @@
+{
+  "models": {
+    "doors\\blastdoor\\blastdoor.glb": {
+      "images": [
+        {
+          "name": "blastdoor",
+          "sha256": "812424b7a564ec37a89d288f0a58d0af1afd76be9e93cf0af337f0b6bd729a37",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\blastdoor.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "blastdoor_Dark_Edges"
+      ]
+    },
+    "doors\\centcom\\centcom.glb": {
+      "images": [
+        {
+          "name": "centcom",
+          "sha256": "9ae1728734b64ce00fef19f2847481ada8bfb3d1593b0c1bcb552a78ff39a6a8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\centcom\\centcom.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "centcom_Dark_Edges.002"
+      ]
+    },
+    "doors\\external\\external_airlock.glb": {
+      "images": [
+        {
+          "name": "external",
+          "sha256": "f75b110aba5af0106bdddaf279c332efbacdc606cc8f00240f0940eaf2ecbd1d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\external\\external.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "External_Red_Edge.003",
+        "External_Dark_Edge.003",
+        "External_Tinted_Glass.003"
+      ]
+    },
+    "doors\\firelock_glass\\firelock_glass.glb": {
+      "images": [
+        {
+          "name": "doorfireglass",
+          "sha256": "5b11c7ae1d98eae656219918760f82dfadf988857dca6c31b843c698d41940ca",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\doorfireglass.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "firelock_glass_Dark_Edges.002"
+      ]
+    },
+    "doors\\firelock_heavy\\firelock_heavy.glb": {
+      "images": [
+        {
+          "name": "doorfire",
+          "sha256": "7d6bcda0a75543a7668a727089414a43cae48106a492b6eb884939a789910952",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\doorfire.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "firelock_heavy_Dark_Edges.002"
+      ]
+    },
+    "doors\\hatch\\hatch_airlock.glb": {
+      "images": [
+        {
+          "name": "centcom",
+          "sha256": "ee3370095350be7eae1b585872cd2d8410812b3a58f58018297f3a3158475548",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\hatch\\centcom.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "doors\\highsec\\highsec.glb": {
+      "images": [
+        {
+          "name": "highsec",
+          "sha256": "14f4e75b418c9f8ef52faa34ee254b55e095c93afd3dfc7ed145f98d78360c6f",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\highsec\\highsec.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "highsec_Dark_Edges.002"
+      ]
+    },
+    "doors\\maintenance\\maintenance_airlock.glb": {
+      "images": [
+        {
+          "name": "maintenance",
+          "sha256": "be4e9f3763ed54422898bd55dc365e7a14ac7c2a0c284c05e998bb7cfce4ab90",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\station\\maintenance.png"
+          ],
+          "local_files": [
+            "godot\\assets\\models\\doors\\maintenance\\textures\\maintenance.png"
+          ]
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Maintenance_Dark_Steel_Edges",
+        "Maintenance_Ochre_Edges",
+        "Maintenance_Translucent_Inserts"
+      ]
+    },
+    "doors\\morgue\\morgue.glb": {
+      "images": [
+        {
+          "name": "doormorgue",
+          "sha256": "f63141dee32fae1de7d91001b1478258be30bbac4f29437fb9fe2bfc9a43533d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\doormorgue.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "morgue_Dark_Edges"
+      ]
+    },
+    "doors\\public_glass\\public_glass_airlock.glb": {
+      "images": [
+        {
+          "name": "glass",
+          "sha256": "42481f22062ae028e1d76f9d84831ae9d0ea35c11ef47b12854f4309dec6d348",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\public\\glass.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Public_Glass_Dark_Edge",
+        "Public_Glass_Steel_Edge",
+        "Public_Glass_Tinted_Glass"
+      ]
+    },
+    "doors\\shutters\\shutters.glb": {
+      "images": [
+        {
+          "name": "shutters",
+          "sha256": "71117d235a2dd71487290fdb78067f22577be16e0367ca745350f11fe6535130",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\shutters.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "shutters_Dark_Edges"
+      ]
+    },
+    "doors\\shutters_radiation\\shutters_radiation.glb": {
+      "images": [
+        {
+          "name": "shutters_radiation",
+          "sha256": "ee64369cbe62b8b4a18ebbc8f9551ae9d013843800a5fd1d881e21bff95d3707",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\shutters_radiation.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "shutters_radiation_Dark_Edges"
+      ]
+    },
+    "doors\\shutters_window\\shutters_window.glb": {
+      "images": [
+        {
+          "name": "shutters_window",
+          "sha256": "c42622c988b53636546adeb8f889242339618cf658c1200fa632eafd2ba5bde1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\shutters_window.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "shutters_window_Dark_Edges"
+      ]
+    },
+    "doors\\vault\\vault_airlock.glb": {
+      "images": [
+        {
+          "name": "vault",
+          "sha256": "c18b23f69d43122b2e210614c20fa519ac14f8224d9d752c428efba33a59fc52",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\vault\\vault.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "doors\\windoor\\windoor.glb": {
+      "images": [
+        {
+          "name": "windoor",
+          "sha256": "e677d1f5f1716bd3d0b5588743ff92f9bb128bffb6e8f57f4115423e32a12f46",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\doors\\windoor.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "windoor_Glass",
+        "windoor_Dark_Edges"
+      ]
+    },
+    "furniture\\chair_family\\bar_stool.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\chair_family\\comfy_chair.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\chair_family\\metal_stool.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\chair_family\\office_chair_dark.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\chair_family\\office_chair_white.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\chair_family\\wooden_chair.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\chair_family\\wooden_chair_wings.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\ancient_sarcophagus.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\animal_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\cardboard_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\coffin.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\freezer_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\large_wooden_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\laundry_cart.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\mail_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\metal_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\mining_cart.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\necropolis_chest.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\ribbed_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\trash_bin.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\trash_cart.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\treasure_chest.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\crates\\wooden_crate.glb": {
+      "images": [
+        {
+          "name": "crates",
+          "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\crates.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_chair\\metal_chair.glb": {
+      "images": [
+        {
+          "name": "chairs",
+          "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\chairs.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\abductor_locker.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\cardboard_box.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\gun_cabinet.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\locker_freezer.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\locker_rack.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\locker_shelves.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\locker_wardrobe.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\magic_locker.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\metal_box.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\metal_locker.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\mini_fridge.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\old_locker.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_locker\\wood_cabinet.glb": {
+      "images": [
+        {
+          "name": "closet",
+          "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\storage\\closet.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\metal_table.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\modular\\table_corner_1leg.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\modular\\table_corner_2legs.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\modular\\table_end_2legs.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\modular\\table_single_4legs.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\modular\\table_top_center.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\modular\\table_top_straight.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\metal_table\\modular\\table_top_tee.glb": {
+      "images": [
+        {
+          "name": "table",
+          "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\storage_rack\\storage_rack.glb": {
+      "images": [
+        {
+          "name": "structures",
+          "sha256": "e7d166af2ca0e9bb30d2a613036ccebe47b19142312a5ec8ec375feb0d4ee2f7",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\structures.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\cloth_table_corner_1leg.glb": {
+      "images": [
+        {
+          "name": "fancy_table",
+          "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\cloth_table_corner_2legs.glb": {
+      "images": [
+        {
+          "name": "fancy_table",
+          "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\cloth_table_end_2legs.glb": {
+      "images": [
+        {
+          "name": "fancy_table",
+          "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\cloth_table_single_4legs.glb": {
+      "images": [
+        {
+          "name": "fancy_table",
+          "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\cloth_table_top_center.glb": {
+      "images": [
+        {
+          "name": "fancy_table",
+          "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\cloth_table_top_straight.glb": {
+      "images": [
+        {
+          "name": "fancy_table",
+          "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\cloth_table_top_tee.glb": {
+      "images": [
+        {
+          "name": "fancy_table",
+          "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\framed_glass_table_corner_1leg.glb": {
+      "images": [
+        {
+          "name": "rglass_table",
+          "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\framed_glass_table_corner_2legs.glb": {
+      "images": [
+        {
+          "name": "rglass_table",
+          "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\framed_glass_table_end_2legs.glb": {
+      "images": [
+        {
+          "name": "rglass_table",
+          "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\framed_glass_table_single_4legs.glb": {
+      "images": [
+        {
+          "name": "rglass_table",
+          "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\framed_glass_table_top_center.glb": {
+      "images": [
+        {
+          "name": "rglass_table",
+          "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\framed_glass_table_top_straight.glb": {
+      "images": [
+        {
+          "name": "rglass_table",
+          "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\framed_glass_table_top_tee.glb": {
+      "images": [
+        {
+          "name": "rglass_table",
+          "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\glass_table_corner_1leg.glb": {
+      "images": [
+        {
+          "name": "glass_table",
+          "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\glass_table_corner_2legs.glb": {
+      "images": [
+        {
+          "name": "glass_table",
+          "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\glass_table_end_2legs.glb": {
+      "images": [
+        {
+          "name": "glass_table",
+          "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\glass_table_single_4legs.glb": {
+      "images": [
+        {
+          "name": "glass_table",
+          "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\glass_table_top_center.glb": {
+      "images": [
+        {
+          "name": "glass_table",
+          "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\glass_table_top_straight.glb": {
+      "images": [
+        {
+          "name": "glass_table",
+          "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\glass_table_top_tee.glb": {
+      "images": [
+        {
+          "name": "glass_table",
+          "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\reinforced_table_corner_1leg.glb": {
+      "images": [
+        {
+          "name": "reinforced_table",
+          "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\reinforced_table_corner_2legs.glb": {
+      "images": [
+        {
+          "name": "reinforced_table",
+          "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\reinforced_table_end_2legs.glb": {
+      "images": [
+        {
+          "name": "reinforced_table",
+          "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\reinforced_table_single_4legs.glb": {
+      "images": [
+        {
+          "name": "reinforced_table",
+          "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\reinforced_table_top_center.glb": {
+      "images": [
+        {
+          "name": "reinforced_table",
+          "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\reinforced_table_top_straight.glb": {
+      "images": [
+        {
+          "name": "reinforced_table",
+          "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\reinforced_table_top_tee.glb": {
+      "images": [
+        {
+          "name": "reinforced_table",
+          "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\rolling_table_single_4legs.glb": {
+      "images": [
+        {
+          "name": "rollingtable",
+          "sha256": "9114fe80d49264f58b0b6d2477035dcc8cbfa062aa905afe7c6b58f1484ff2af",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rollingtable.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\wood_table_corner_1leg.glb": {
+      "images": [
+        {
+          "name": "wood_table",
+          "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\wood_table_corner_2legs.glb": {
+      "images": [
+        {
+          "name": "wood_table",
+          "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\wood_table_end_2legs.glb": {
+      "images": [
+        {
+          "name": "wood_table",
+          "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\wood_table_single_4legs.glb": {
+      "images": [
+        {
+          "name": "wood_table",
+          "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\wood_table_top_center.glb": {
+      "images": [
+        {
+          "name": "wood_table",
+          "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\wood_table_top_straight.glb": {
+      "images": [
+        {
+          "name": "wood_table",
+          "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "furniture\\table_kits\\wood_table_top_tee.glb": {
+      "images": [
+        {
+          "name": "wood_table",
+          "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\consoles\\console_bronze.glb": {
+      "images": [
+        {
+          "name": "computer",
+          "sha256": "03845daf2e8105b09c9d155d330d99e8b4d8e798033b9f036bbb5ce96a78b825",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\computer.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\consoles\\console_standard.glb": {
+      "images": [
+        {
+          "name": "computer",
+          "sha256": "03845daf2e8105b09c9d155d330d99e8b4d8e798033b9f036bbb5ce96a78b825",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\computer.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_bulb_broken.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_bulb_burned.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_bulb_emergency.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_bulb_empty.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_bulb_nightshift.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_bulb_off.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_bulb_on.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_floor_broken.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_floor_burned.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_floor_emergency.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_floor_empty.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_floor_nightshift.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_floor_off.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_floor_on.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_tube_broken.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_tube_burned.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_tube_emergency.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_tube_empty.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_tube_nightshift.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_tube_off.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\light_tube_on.glb": {
+      "images": [
+        {
+          "name": "lighting_overlay",
+          "sha256": "cbb1626fbd24a5770c0ab833b429922ec3349767d7ef83a3ee5707522b09aae8",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting_overlay.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\replacement_bulb.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\replacement_bulb_broken.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\replacement_bulb_burned.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\replacement_tube.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\replacement_tube_broken.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "machines\\lighting\\replacement_tube_burned.glb": {
+      "images": [
+        {
+          "name": "lighting",
+          "sha256": "4f22d51c52aa1d69ebd7fc50a84c68660162ab28dd676e14cd146ad99b031c7d",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\lighting.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\bathroom\\kitchen_sink.glb": {
+      "images": [
+        {
+          "name": "watercloset",
+          "sha256": "1db8ebf32103a759e047f566ddf5f17bc224f883b4ce3d174235ea7438682fee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\watercloset.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\bathroom\\toilet.glb": {
+      "images": [
+        {
+          "name": "watercloset",
+          "sha256": "1db8ebf32103a759e047f566ddf5f17bc224f883b4ce3d174235ea7438682fee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\watercloset.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Water_Slight_Blue_Closed"
+      ]
+    },
+    "station_props\\bathroom\\urinal.glb": {
+      "images": [
+        {
+          "name": "watercloset",
+          "sha256": "1db8ebf32103a759e047f566ddf5f17bc224f883b4ce3d174235ea7438682fee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\watercloset.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\bathroom\\wall_mirror.glb": {
+      "images": [
+        {
+          "name": "watercloset",
+          "sha256": "1db8ebf32103a759e047f566ddf5f17bc224f883b4ce3d174235ea7438682fee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\watercloset.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\bathroom\\wall_shower.glb": {
+      "images": [
+        {
+          "name": "watercloset",
+          "sha256": "1db8ebf32103a759e047f566ddf5f17bc224f883b4ce3d174235ea7438682fee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\watercloset.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\bathroom\\washbasin.glb": {
+      "images": [
+        {
+          "name": "watercloset",
+          "sha256": "1db8ebf32103a759e047f566ddf5f17bc224f883b4ce3d174235ea7438682fee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\watercloset.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\hydroponics\\hydroponics_tray.glb": {
+      "images": [
+        {
+          "name": "equipment",
+          "sha256": "e82ea969f5b806d9b135e1ec70d329a6fd40aa7a5be6c86263946182f10aa7ee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\service\\hydroponics\\equipment.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\hydroponics\\soil_bed.glb": {
+      "images": [
+        {
+          "name": "equipment",
+          "sha256": "e82ea969f5b806d9b135e1ec70d329a6fd40aa7a5be6c86263946182f10aa7ee",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\service\\hydroponics\\equipment.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\machines\\holopad.glb": {
+      "images": [
+        {
+          "name": "floor",
+          "sha256": "ad09b731ed4191b2134cd5d6ae73e81d20bdb1e180df970920af748e14d9042f",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\floor.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\machines\\holopad_active.glb": {
+      "images": [
+        {
+          "name": "floor",
+          "sha256": "ad09b731ed4191b2134cd5d6ae73e81d20bdb1e180df970920af748e14d9042f",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\floor.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\machines\\suit_storage_classic.glb": {
+      "images": [
+        {
+          "name": "suit_storage",
+          "sha256": "d6e02552b13d7b2062dd4af17cb165588a169cbc49e14fd1b3a75df623df6733",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\suit_storage.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Glass_Slight_Cyan_Closed"
+      ]
+    },
+    "station_props\\medical\\emergency_stretcher.glb": {
+      "images": [
+        {
+          "name": "medical_bed",
+          "sha256": "2d75fafc9b0e1a87a5fae224334d6eaab767310fb573cbfa042d0c18fa43c4da",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\medical\\medical_bed.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\medical\\station_bed.glb": {
+      "images": [
+        {
+          "name": "bed",
+          "sha256": "de4bea42f897c5870a295cdbdd9acc340df564a81765cec338945345d6026357",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\bed.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\power\\pacman_generator.glb": {
+      "images": [
+        {
+          "name": "other",
+          "sha256": "43d1e04e94647e806f5a0f6a9930e43baa9831426e231a32bd91c49084713e42",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\engine\\other.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\power\\solar_panel.glb": {
+      "images": [
+        {
+          "name": "solar",
+          "sha256": "8512b66e03c9fad4b007bba07314791139b341dd3fb1ed2f090590e080892af1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\solar.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Glass_Slight_Cyan_Closed"
+      ]
+    },
+    "station_props\\power\\solar_panel_frame.glb": {
+      "images": [
+        {
+          "name": "solar",
+          "sha256": "8512b66e03c9fad4b007bba07314791139b341dd3fb1ed2f090590e080892af1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\solar.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\showcase\\old_cyborg_showcase.glb": {
+      "images": [
+        {
+          "name": "robots",
+          "sha256": "277a78201a6bf76d94e3a09ea0febfbf9c48c97d9c542bf457adb8b8b475d8f1",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\mob\\silicon\\robots.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\stationary_tanks\\stationary_tank_center.glb": {
+      "images": [
+        {
+          "name": "stationary_canisters",
+          "sha256": "e56fc019f36d94d263a1c6c512a29661d58aa06065ccef586cb0170c91cdfa1c",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\stationary_tanks\\stationary_tank_corner.glb": {
+      "images": [
+        {
+          "name": "stationary_canisters",
+          "sha256": "e56fc019f36d94d263a1c6c512a29661d58aa06065ccef586cb0170c91cdfa1c",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "stationary_canisters_misc",
+          "sha256": "549546c822382e7d6053f9fded4df2f09f8d7271c57c362c40fb85caf3636880",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters_misc.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "station_props\\stationary_tanks\\stationary_tank_end.glb": {
+      "images": [
+        {
+          "name": "stationary_canisters",
+          "sha256": "e56fc019f36d94d263a1c6c512a29661d58aa06065ccef586cb0170c91cdfa1c",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "stationary_canisters_misc",
+          "sha256": "549546c822382e7d6053f9fded4df2f09f8d7271c57c362c40fb85caf3636880",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters_misc.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "station_props\\stationary_tanks\\stationary_tank_single.glb": {
+      "images": [
+        {
+          "name": "stationary_canisters",
+          "sha256": "e56fc019f36d94d263a1c6c512a29661d58aa06065ccef586cb0170c91cdfa1c",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "stationary_canisters_misc",
+          "sha256": "549546c822382e7d6053f9fded4df2f09f8d7271c57c362c40fb85caf3636880",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters_misc.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "station_props\\stationary_tanks\\stationary_tank_straight.glb": {
+      "images": [
+        {
+          "name": "stationary_canisters",
+          "sha256": "e56fc019f36d94d263a1c6c512a29661d58aa06065ccef586cb0170c91cdfa1c",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "stationary_canisters_misc",
+          "sha256": "549546c822382e7d6053f9fded4df2f09f8d7271c57c362c40fb85caf3636880",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters_misc.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "station_props\\stationary_tanks\\stationary_tank_tee.glb": {
+      "images": [
+        {
+          "name": "stationary_canisters",
+          "sha256": "e56fc019f36d94d263a1c6c512a29661d58aa06065ccef586cb0170c91cdfa1c",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters.png"
+          ],
+          "local_files": []
+        },
+        {
+          "name": "stationary_canisters_misc",
+          "sha256": "549546c822382e7d6053f9fded4df2f09f8d7271c57c362c40fb85caf3636880",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters_misc.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 2,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\fuel_tank.glb": {
+      "images": [
+        {
+          "name": "chemical_tanks",
+          "sha256": "f2f4c3bde8a9db11c38cb5b7f1fcd97a1a14e29e82a8872ff10b1f9c4f2cf1bb",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\medical\\chemical_tanks.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_air.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_anesthetic_mix.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_carbon_dioxide.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_generic.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_nitrogen.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_nitrous_oxide.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_oxygen.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_plasma.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\portable_canister_water_vapor.glb": {
+      "images": [
+        {
+          "name": "objects",
+          "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\map_icons\\objects.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\tanks\\water_tank.glb": {
+      "images": [
+        {
+          "name": "chemical_tanks",
+          "sha256": "f2f4c3bde8a9db11c38cb5b7f1fcd97a1a14e29e82a8872ff10b1f9c4f2cf1bb",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\medical\\chemical_tanks.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\utility\\disposal_unit.glb": {
+      "images": [
+        {
+          "name": "disposal",
+          "sha256": "e0e26032948941c65710d95cd12772178aa972273c47e5a46d938695d540f2bc",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\disposal.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_atmosdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.006"
+      ]
+    },
+    "station_props\\vending\\vending_bardrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.008"
+      ]
+    },
+    "station_props\\vending\\vending_boozeomat.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.010"
+      ]
+    },
+    "station_props\\vending\\vending_cargodrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.013"
+      ]
+    },
+    "station_props\\vending\\vending_cart.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.015"
+      ]
+    },
+    "station_props\\vending\\vending_centdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.018"
+      ]
+    },
+    "station_props\\vending\\vending_chapdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.020"
+      ]
+    },
+    "station_props\\vending\\vending_chefdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.022"
+      ]
+    },
+    "station_props\\vending\\vending_chemdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.024"
+      ]
+    },
+    "station_props\\vending\\vending_cigs.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.026"
+      ]
+    },
+    "station_props\\vending\\vending_clothes.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.028"
+      ]
+    },
+    "station_props\\vending\\vending_coffee.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.030"
+      ]
+    },
+    "station_props\\vending\\vending_cola_black.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_cola_machine.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_coroner_drobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.032"
+      ]
+    },
+    "station_props\\vending\\vending_curadrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.034"
+      ]
+    },
+    "station_props\\vending\\vending_custom.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.036"
+      ]
+    },
+    "station_props\\vending\\vending_cytopro.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.038"
+      ]
+    },
+    "station_props\\vending\\vending_detdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.040"
+      ]
+    },
+    "station_props\\vending\\vending_dinnerware.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.042"
+      ]
+    },
+    "station_props\\vending\\vending_drug.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.044"
+      ]
+    },
+    "station_props\\vending\\vending_engi.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.046"
+      ]
+    },
+    "station_props\\vending\\vending_engidrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.048"
+      ]
+    },
+    "station_props\\vending\\vending_engivend.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.050"
+      ]
+    },
+    "station_props\\vending\\vending_games.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.052"
+      ]
+    },
+    "station_props\\vending\\vending_genedrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.054"
+      ]
+    },
+    "station_props\\vending\\vending_generic.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.056"
+      ]
+    },
+    "station_props\\vending\\vending_greed.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.058"
+      ]
+    },
+    "station_props\\vending\\vending_hotdog_vendor.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_hydrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.060"
+      ]
+    },
+    "station_props\\vending\\vending_janidrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.062"
+      ]
+    },
+    "station_props\\vending\\vending_lawdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.064"
+      ]
+    },
+    "station_props\\vending\\vending_liberationstation.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_magivend.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.066"
+      ]
+    },
+    "station_props\\vending\\vending_med.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.068"
+      ]
+    },
+    "station_props\\vending\\vending_medidrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.004"
+      ]
+    },
+    "station_props\\vending\\vending_modularpc.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.070"
+      ]
+    },
+    "station_props\\vending\\vending_nt_donk.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_nutri.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.072"
+      ]
+    },
+    "station_props\\vending\\vending_parts.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.074"
+      ]
+    },
+    "station_props\\vending\\vending_pwr_game.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_red_cola.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_robodrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.076"
+      ]
+    },
+    "station_props\\vending\\vending_robotics.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.078"
+      ]
+    },
+    "station_props\\vending\\vending_runicvendor.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.080"
+      ]
+    },
+    "station_props\\vending\\vending_scidrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.082"
+      ]
+    },
+    "station_props\\vending\\vending_sec.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.084"
+      ]
+    },
+    "station_props\\vending\\vending_secdrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.086"
+      ]
+    },
+    "station_props\\vending\\vending_seeds.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.088"
+      ]
+    },
+    "station_props\\vending\\vending_shamblers_juice.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_snack.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.090"
+      ]
+    },
+    "station_props\\vending\\vending_snackblue.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.092"
+      ]
+    },
+    "station_props\\vending\\vending_snackdonk.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_snackgreen.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.094"
+      ]
+    },
+    "station_props\\vending\\vending_snackorange.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.096"
+      ]
+    },
+    "station_props\\vending\\vending_snackteal.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.098"
+      ]
+    },
+    "station_props\\vending\\vending_soda.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.100"
+      ]
+    },
+    "station_props\\vending\\vending_sovietsoda.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_space_up.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_starkist.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.102"
+      ]
+    },
+    "station_props\\vending\\vending_sustenance.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.104"
+      ]
+    },
+    "station_props\\vending\\vending_sustenance_labor.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.106"
+      ]
+    },
+    "station_props\\vending\\vending_syndi.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_theater.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.108"
+      ]
+    },
+    "station_props\\vending\\vending_tool.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": []
+    },
+    "station_props\\vending\\vending_virodrobe.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.110"
+      ]
+    },
+    "station_props\\vending\\vending_wallmed.glb": {
+      "images": [
+        {
+          "name": "vending",
+          "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+          "original_atlases": [
+            "godot\\assets\\tg\\icons\\obj\\machines\\vending.png"
+          ],
+          "local_files": []
+        }
+      ],
+      "original_only": true,
+      "image_count": 1,
+      "textureless_materials": [
+        "Vending_Glass_Closed_Cyan.112"
+      ]
+    }
+  },
+  "unmatched_images": {}
+}

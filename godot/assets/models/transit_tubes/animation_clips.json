@@ -1,0 +1,36 @@
+{
+  "tube_junction.003": [
+    "prefer_left",
+    "prefer_right"
+  ],
+  "tube_station.003": [
+    "open_front",
+    "close_front",
+    "open_back",
+    "close_back"
+  ],
+  "tube_station_dispenser.003": [
+    "boarding_front",
+    "boarding_back"
+  ],
+  "tube_terminus.003": [
+    "open_front",
+    "close_front",
+    "open_back",
+    "close_back"
+  ],
+  "tube_terminus_dispenser.003": [
+    "boarding_front",
+    "boarding_back"
+  ],
+  "transit_pod.003": [
+    "pod",
+    "pod_occupied"
+  ],
+  "transit_pod_temporary.003": [
+    "temppod",
+    "temppod_occupied",
+    "materialized",
+    "dissolved"
+  ]
+}

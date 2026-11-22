@@ -1,0 +1,1548 @@
+{
+  "door_button_normal": {
+    "base_state": "button",
+    "overlays": [
+      "button-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.076",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.021",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Glow_Mask_Overlay",
+        "triangles": 88,
+        "shared_mesh": "Glow_Mask_Overlay.006",
+        "materials": [
+          "Door_Button_Mask_Emission.060",
+          "Door_Button_Mask_Emission.061",
+          "Door_Button_Mask_Emission.062",
+          "Door_Button_Mask_Emission.063",
+          "Door_Button_Mask_Emission.064",
+          "Door_Button_Mask_Emission.065",
+          "Door_Button_Mask_Emission.066",
+          "Door_Button_Mask_Emission.067",
+          "Door_Button_Mask_Emission.068",
+          "Door_Button_Mask_Emission.069"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-light-mask"
+      }
+    ],
+    "triangles": 146
+  },
+  "door_button_nopower": {
+    "base_state": "button-nopower",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 58
+  },
+  "door_button_success": {
+    "base_state": "button",
+    "overlays": [
+      "button-light-mask",
+      "button-overlay-success"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.076",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.021",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Glow_Mask_Overlay",
+        "triangles": 88,
+        "shared_mesh": "Glow_Mask_Overlay.007",
+        "materials": [
+          "Door_Button_Mask_Emission.070",
+          "Door_Button_Mask_Emission.071",
+          "Door_Button_Mask_Emission.072",
+          "Door_Button_Mask_Emission.073",
+          "Door_Button_Mask_Emission.074",
+          "Door_Button_Mask_Emission.075",
+          "Door_Button_Mask_Emission.076",
+          "Door_Button_Mask_Emission.077",
+          "Door_Button_Mask_Emission.078",
+          "Door_Button_Mask_Emission.079"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-light-mask"
+      },
+      {
+        "name": "Feedback_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Feedback_Overlay.004",
+        "materials": [
+          "Door_Button_Feedback_Overlay.004"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-overlay-success"
+      }
+    ],
+    "triangles": 186
+  },
+  "door_button_error": {
+    "base_state": "button",
+    "overlays": [
+      "button-light-mask",
+      "button-overlay-error"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.076",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.021",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Glow_Mask_Overlay",
+        "triangles": 88,
+        "shared_mesh": "Glow_Mask_Overlay.008",
+        "materials": [
+          "Door_Button_Mask_Emission.080",
+          "Door_Button_Mask_Emission.081",
+          "Door_Button_Mask_Emission.082",
+          "Door_Button_Mask_Emission.083",
+          "Door_Button_Mask_Emission.084",
+          "Door_Button_Mask_Emission.085",
+          "Door_Button_Mask_Emission.086",
+          "Door_Button_Mask_Emission.087",
+          "Door_Button_Mask_Emission.088",
+          "Door_Button_Mask_Emission.089"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-light-mask"
+      },
+      {
+        "name": "Feedback_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Feedback_Overlay.005",
+        "materials": [
+          "Door_Button_Feedback_Overlay.005"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-overlay-error"
+      }
+    ],
+    "triangles": 186
+  },
+  "door_button_open_empty": {
+    "base_state": "button-open",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 58
+  },
+  "door_button_open_board": {
+    "base_state": "button-open",
+    "overlays": [
+      "button-overlay-board"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Board_Module",
+        "triangles": 12,
+        "shared_mesh": "Board_Module.006",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 70
+  },
+  "door_button_open_device": {
+    "base_state": "button-open",
+    "overlays": [
+      "button-overlay-device"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Device_Module",
+        "triangles": 12,
+        "shared_mesh": "Device_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 70
+  },
+  "door_button_open_signaler": {
+    "base_state": "button-open",
+    "overlays": [
+      "button-overlay-signaler"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Signaler_Module",
+        "triangles": 12,
+        "shared_mesh": "Signaler_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 70
+  },
+  "door_button_open_board_device": {
+    "base_state": "button-open",
+    "overlays": [
+      "button-overlay-board",
+      "button-overlay-device"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Board_Module",
+        "triangles": 12,
+        "shared_mesh": "Board_Module.006",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Device_Module",
+        "triangles": 12,
+        "shared_mesh": "Device_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 82
+  },
+  "door_button_open_board_signaler": {
+    "base_state": "button-open",
+    "overlays": [
+      "button-overlay-board",
+      "button-overlay-signaler"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Board_Module",
+        "triangles": 12,
+        "shared_mesh": "Board_Module.006",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Signaler_Module",
+        "triangles": 12,
+        "shared_mesh": "Signaler_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 82
+  },
+  "door_button_warning_normal": {
+    "base_state": "button-warning",
+    "overlays": [
+      "button-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.086",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.031",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Glow_Mask_Overlay",
+        "triangles": 88,
+        "shared_mesh": "Glow_Mask_Overlay.009",
+        "materials": [
+          "Door_Button_Mask_Emission.090",
+          "Door_Button_Mask_Emission.091",
+          "Door_Button_Mask_Emission.092",
+          "Door_Button_Mask_Emission.093",
+          "Door_Button_Mask_Emission.094",
+          "Door_Button_Mask_Emission.095",
+          "Door_Button_Mask_Emission.096",
+          "Door_Button_Mask_Emission.097",
+          "Door_Button_Mask_Emission.098",
+          "Door_Button_Mask_Emission.099"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-light-mask"
+      }
+    ],
+    "triangles": 146
+  },
+  "door_button_warning_nopower": {
+    "base_state": "button-warning-nopower",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.087",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.032",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 58
+  },
+  "door_button_warning_success": {
+    "base_state": "button-warning",
+    "overlays": [
+      "button-light-mask",
+      "button-overlay-success"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.086",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.031",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Glow_Mask_Overlay",
+        "triangles": 88,
+        "shared_mesh": "Glow_Mask_Overlay.010",
+        "materials": [
+          "Door_Button_Mask_Emission.100",
+          "Door_Button_Mask_Emission.101",
+          "Door_Button_Mask_Emission.102",
+          "Door_Button_Mask_Emission.103",
+          "Door_Button_Mask_Emission.104",
+          "Door_Button_Mask_Emission.105",
+          "Door_Button_Mask_Emission.106",
+          "Door_Button_Mask_Emission.107",
+          "Door_Button_Mask_Emission.108",
+          "Door_Button_Mask_Emission.109"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-light-mask"
+      },
+      {
+        "name": "Feedback_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Feedback_Overlay.006",
+        "materials": [
+          "Door_Button_Feedback_Overlay.006"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-overlay-success"
+      }
+    ],
+    "triangles": 186
+  },
+  "door_button_warning_error": {
+    "base_state": "button-warning",
+    "overlays": [
+      "button-light-mask",
+      "button-overlay-error"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.086",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.031",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Glow_Mask_Overlay",
+        "triangles": 88,
+        "shared_mesh": "Glow_Mask_Overlay.011",
+        "materials": [
+          "Door_Button_Mask_Emission.110",
+          "Door_Button_Mask_Emission.111",
+          "Door_Button_Mask_Emission.112",
+          "Door_Button_Mask_Emission.113",
+          "Door_Button_Mask_Emission.114",
+          "Door_Button_Mask_Emission.115",
+          "Door_Button_Mask_Emission.116",
+          "Door_Button_Mask_Emission.117",
+          "Door_Button_Mask_Emission.118",
+          "Door_Button_Mask_Emission.119"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-light-mask"
+      },
+      {
+        "name": "Feedback_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Feedback_Overlay.007",
+        "materials": [
+          "Door_Button_Feedback_Overlay.007"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "button-overlay-error"
+      }
+    ],
+    "triangles": 186
+  },
+  "door_button_warning_open_empty": {
+    "base_state": "button-warning-open",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.087",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.032",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 58
+  },
+  "door_button_warning_open_board": {
+    "base_state": "button-warning-open",
+    "overlays": [
+      "button-overlay-board"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.087",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.032",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Board_Module",
+        "triangles": 12,
+        "shared_mesh": "Board_Module.006",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 70
+  },
+  "door_button_warning_open_device": {
+    "base_state": "button-warning-open",
+    "overlays": [
+      "button-overlay-device"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.087",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.032",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Device_Module",
+        "triangles": 12,
+        "shared_mesh": "Device_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 70
+  },
+  "door_button_warning_open_signaler": {
+    "base_state": "button-warning-open",
+    "overlays": [
+      "button-overlay-signaler"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.087",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.032",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Signaler_Module",
+        "triangles": 12,
+        "shared_mesh": "Signaler_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 70
+  },
+  "door_button_warning_open_board_device": {
+    "base_state": "button-warning-open",
+    "overlays": [
+      "button-overlay-board",
+      "button-overlay-device"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.087",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.032",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Board_Module",
+        "triangles": 12,
+        "shared_mesh": "Board_Module.006",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Device_Module",
+        "triangles": 12,
+        "shared_mesh": "Device_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 82
+  },
+  "door_button_warning_open_board_signaler": {
+    "base_state": "button-warning-open",
+    "overlays": [
+      "button-overlay-board",
+      "button-overlay-signaler"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.124",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.087",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.032",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Board_Module",
+        "triangles": 12,
+        "shared_mesh": "Board_Module.006",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Signaler_Module",
+        "triangles": 12,
+        "shared_mesh": "Signaler_Module.004",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 82
+  },
+  "door_button_assembly": {
+    "base_state": "button_assembly",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Housing.114",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.077",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Push_Button",
+        "triangles": 12,
+        "shared_mesh": "Push_Button.022",
+        "materials": [
+          "Door_Button_Original.001"
+        ],
+        "parent": "Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 58
+  }
+}

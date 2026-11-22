@@ -1,0 +1,1298 @@
+{
+  "/obj/structure/closet": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets.dm",
+    "line": 7,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/preopen": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets.dm",
+    "line": 1303,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/body_bag": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 1,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "bodybag",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/bluespace": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 122,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "bluebodybag",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/environmental": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 251,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "envirobag",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/environmental/nanotrasen": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 301,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "ntenvirobag",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/environmental/prisoner": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 313,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "prisonerenvirobag",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/environmental/prisoner/syndicate": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 410,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "syndieenvirobag",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/environmental/hardlight": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 431,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "holobag_med",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/environmental/prisoner/hardlight": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 444,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "holobag_sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cloth"
+  },
+  "/obj/structure/closet/body_bag/environmental/stasis": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\bodybag.dm",
+    "line": 457,
+    "icon": "icons/obj/medical/bodybag.dmi",
+    "icon_state": "holobag_med",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/plastic"
+  },
+  "/obj/structure/closet/cardboard": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\cardboardbox.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cardboard",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/cardboard"
+  },
+  "/obj/structure/closet/cardboard/metal": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\cardboardbox.dm",
+    "line": 112,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "metalbox",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/plasteel"
+  },
+  "/obj/structure/closet/athletic_mixed": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\fitness.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "mixed",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/boxinggloves": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\fitness.dm",
+    "line": 16,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "mixed",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/masks": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\fitness.dm",
+    "line": 28,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/lasertag/red": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\fitness.dm",
+    "line": 38,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "rack",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "red",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/lasertag/blue": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\fitness.dm",
+    "line": 53,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "rack",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "blue",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/cabinet": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cabinet",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/mineral/wood"
+  },
+  "/obj/structure/closet/acloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 15,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "alien",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/mineral/abductor"
+  },
+  "/obj/structure/closet/gimmick": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 22,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/gimmick/russian": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 27,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/gimmick/tacticool": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 38,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/thunderdome": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 61,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/thunderdome/tdred": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 66,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "red",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/thunderdome/tdgreen": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 87,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "green",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/malf/suits": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 108,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/mini_fridge": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 122,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "mini_fridge",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/mini_fridge/grimy": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\gimmick.dm",
+    "line": 142,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "mini_fridge",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/infinite": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\infinite.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/gmcloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 3,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "bar_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/chefcloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 26,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "chef_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/jcloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 47,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "jani_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/lawcloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 71,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "law_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/chaplain_black": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 98,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "chap_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/red": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 117,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "sec_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/cargotech": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 137,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "cargo_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/atmospherics_yellow": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 151,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "atmos_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/engineering_yellow": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 169,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "engi_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/white/medical": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 188,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "med_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/robotics_black": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 211,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "robo_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/chemistry_white": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 231,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "chem_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/genetics_white": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 249,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "gen_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/virology_white": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 266,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "viro_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/science_white": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 283,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "sci_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/botanist": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 302,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "botany_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/curator": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\job_closets.dm",
+    "line": 319,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "curator_wardrobe",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/l3closet": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\l3closet.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "bio",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/l3closet/scientist": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\l3closet.dm",
+    "line": 14,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "bio",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "bio_sci",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/l3closet/virology": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\l3closet.dm",
+    "line": 25,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "bio",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "bio_viro",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/l3closet/security": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\l3closet.dm",
+    "line": 37,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "bio",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "bio_sec",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/l3closet/janitor": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\l3closet.dm",
+    "line": 48,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "bio",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "bio_jan",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/syndicate": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\syndicate.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/syndicate/personal": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\syndicate.dm",
+    "line": 17,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/syndicate/nuclear": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\syndicate.dm",
+    "line": 36,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/syndicate/chemical": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\syndicate.dm",
+    "line": 47,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate_chemical",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/syndicate/resources": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\syndicate.dm",
+    "line": 64,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/syndicate/resources/everything": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\syndicate.dm",
+    "line": 129,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "syndicate",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/emcloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\utility_closets.dm",
+    "line": 15,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "emergency",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/emcloset/anchored": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\utility_closets.dm",
+    "line": 20,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "emergency",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/firecloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\utility_closets.dm",
+    "line": 66,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "fire",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/toolcloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\utility_closets.dm",
+    "line": 93,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "eng",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "eng_tool",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/radiation": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\utility_closets.dm",
+    "line": 142,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "eng",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "eng_rad",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/bombcloset": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\utility_closets.dm",
+    "line": 157,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "bomb",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "blue",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/pink": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 16,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "pink",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/black": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 29,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "black",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/green": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 54,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "green",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/orange": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 69,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "orange",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/yellow": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 83,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "yellow",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/white": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 98,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "white",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/pjs": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 115,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "white",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/grey": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 132,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "grey",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/wardrobe/mixed": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\wardrobe.dm",
+    "line": 161,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "generic",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "mixed",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/bar": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\bar.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cabinet",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/bar/all_access": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\bar.dm",
+    "line": 21,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cabinet",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/bar/lavaland_bartender_clothes": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\bar.dm",
+    "line": 34,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cabinet",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/quartermaster": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\cargo.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "qm",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/engineering_chief": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\engineering.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "ce",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/engineering_electrical": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\engineering.dm",
+    "line": 31,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "eng",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "eng_elec",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/engineering_welding": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\engineering.dm",
+    "line": 52,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "eng",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "eng_weld",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/engineering_personal": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\engineering.dm",
+    "line": 65,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "eng_secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/atmospherics": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\engineering.dm",
+    "line": 82,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "atmos",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/empty": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 43,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/empty/open": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 46,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/kitchen": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 50,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/kitchen/all_access": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 62,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/kitchen/maintenance": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 65,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/kitchen/mining": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 79,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/meat": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 82,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/meat/open": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 97,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/meat/all_access": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 101,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/gulag_fridge": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 104,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/fridge": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 112,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/fridge/all_access": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 125,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/fridge/open": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 128,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/fridge/preopen": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 132,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/money": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 137,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/freezer/cream_pie": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\freezer.dm",
+    "line": 151,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "freezer",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/hydroponics": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\hydroponics.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "hydro",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/medical1": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "med",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/medical2": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 21,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "med_secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/medical3": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 34,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "med_secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/psychology": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 48,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cabinet",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/chief_medical": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 72,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cmo",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/animal": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 103,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "chemical",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/chemical": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 114,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "chem_secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/chemical/heisenberg": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 130,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "chem_secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/paramedic": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\medical.dm",
+    "line": 142,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "paramed_secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/ert_com": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\misc.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cap",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/ert_sec": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\misc.dm",
+    "line": 27,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "hos",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/ert_med": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\misc.dm",
+    "line": 41,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cmo",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/ert_engi": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\misc.dm",
+    "line": 57,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "ce",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/personal": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\personal.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/personal/patient": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\personal.dm",
+    "line": 32,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/personal/cabinet": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\personal.dm",
+    "line": 39,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cabinet",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/mineral/wood"
+  },
+  "/obj/structure/closet/secure_closet/research_director": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\scientist.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "rd",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/cytology": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\scientist.dm",
+    "line": 30,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "science",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\secure_closets.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/captains": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 1,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cap",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/hop": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 23,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "hop",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/hos": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 51,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "hos",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/warden": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 81,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "warden",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/security": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 106,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/security/sec": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 121,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/security/cargo": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 127,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/security/engine": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 134,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/security/science": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 141,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/security/med": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 148,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/detective": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 155,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "cabinet",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/injection": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 180,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/brig": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 189,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/brig/holodeck": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 195,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/brig/genpop": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 198,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/evidence": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 235,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/courtroom": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 247,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/contraband/armory": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 263,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/contraband/heads": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 268,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "secure",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/armory1": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 273,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "armory",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/armory2": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 293,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "tac",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "armory_shotgun",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/armory3": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 309,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "tac",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "armory_energy",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/tac": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 328,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "tac",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  },
+  "/obj/structure/closet/secure_closet/labor_camp_security": {
+    "source": "code\\game\\objects\\structures\\crates_lockers\\closets\\secure\\security.dm",
+    "line": 340,
+    "icon": "icons/obj/storage/closet.dmi",
+    "icon_state": "sec",
+    "enable_door_overlay": "TRUE",
+    "icon_door": "null",
+    "material_drop": "/obj/item/stack/sheet/iron"
+  }
+}

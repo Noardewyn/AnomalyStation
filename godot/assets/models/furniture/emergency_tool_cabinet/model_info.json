@@ -1,0 +1,2507 @@
+{
+  "fire_axe_cabinet_empty": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "glass",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.010"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.015"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.030"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.018"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "fire_axe_cabinet_loaded": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.011"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.008"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.016"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.031"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.019"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 416
+  },
+  "fire_axe_cabinet_unlocked": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass",
+      "unlocked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.012"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.009"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.017"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.032"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.012"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 416
+  },
+  "fire_axe_cabinet_open": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.013"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.010"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.018"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.033"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.013"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 416
+  },
+  "fire_axe_cabinet_open_empty": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "glass_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.014"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.019"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.034"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.014"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "fire_axe_cabinet_damage_1": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass1",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.015"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.011"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.006",
+        "materials": [
+          "Cabinet_glass1_Glass_Original.003"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.035"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.020"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 416
+  },
+  "fire_axe_cabinet_damage_2": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass2",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.016"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.012"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.007",
+        "materials": [
+          "Cabinet_glass2_Glass_Original.003"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.036"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.021"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 416
+  },
+  "fire_axe_cabinet_damage_3": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass3",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.017"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.013"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 212,
+        "shared_mesh": "Closed_Thickness_Door_Glass.008",
+        "materials": [
+          "Cabinet_glass3_Glass_Original.003"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.037"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.022"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 482
+  },
+  "fire_axe_cabinet_broken": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass4",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.018"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.014"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 500,
+        "shared_mesh": "Closed_Thickness_Door_Glass.009",
+        "materials": [
+          "Cabinet_glass4_Glass_Original.006"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.038"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.023"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 770
+  },
+  "fire_axe_cabinet_broken_open": {
+    "base_state": "fireaxe",
+    "frame": 0,
+    "overlays": [
+      "axe",
+      "glass4_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_fire_axe_Original.019"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_axe",
+        "triangles": 204,
+        "shared_mesh": "Removable_axe.001",
+        "materials": [
+          "Cabinet_axe_Original.015"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 500,
+        "shared_mesh": "Closed_Thickness_Door_Glass.009",
+        "materials": [
+          "Cabinet_glass4_Glass_Original.007"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.039"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.015"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 770
+  },
+  "mech_removal_cabinet_empty": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "glass",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.010"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.020"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.040"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.024"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "mech_removal_cabinet_loaded": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.011"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.008"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.021"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.041"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.025"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 324
+  },
+  "mech_removal_cabinet_unlocked": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass",
+      "unlocked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.012"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.009"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.022"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.042"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.016"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 324
+  },
+  "mech_removal_cabinet_open": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.013"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.010"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.023"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.043"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.017"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 324
+  },
+  "mech_removal_cabinet_open_empty": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "glass_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.014"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.024"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.044"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.018"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "mech_removal_cabinet_damage_1": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass1",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.015"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.011"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.006",
+        "materials": [
+          "Cabinet_glass1_Glass_Original.004"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.045"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.026"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 324
+  },
+  "mech_removal_cabinet_damage_2": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass2",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.016"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.012"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.007",
+        "materials": [
+          "Cabinet_glass2_Glass_Original.004"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.046"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.027"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 324
+  },
+  "mech_removal_cabinet_damage_3": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass3",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.017"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.013"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 212,
+        "shared_mesh": "Closed_Thickness_Door_Glass.008",
+        "materials": [
+          "Cabinet_glass3_Glass_Original.004"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.047"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.028"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 390
+  },
+  "mech_removal_cabinet_broken": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass4",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.018"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.014"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 500,
+        "shared_mesh": "Closed_Thickness_Door_Glass.009",
+        "materials": [
+          "Cabinet_glass4_Glass_Original.008"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.048"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.029"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 678
+  },
+  "mech_removal_cabinet_broken_open": {
+    "base_state": "mechremoval",
+    "frame": 0,
+    "overlays": [
+      "crowbar",
+      "glass4_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_mech_removal_Original.019"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_crowbar",
+        "triangles": 112,
+        "shared_mesh": "Removable_crowbar.001",
+        "materials": [
+          "Cabinet_crowbar_Original.015"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 500,
+        "shared_mesh": "Closed_Thickness_Door_Glass.009",
+        "materials": [
+          "Cabinet_glass4_Glass_Original.009"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.049"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.019"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 678
+  },
+  "rescue_jaws_cabinet_empty": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "glass",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.010"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.025"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.050"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.030"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "rescue_jaws_cabinet_loaded": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.011"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.008"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.026"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.051"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.031"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 398
+  },
+  "rescue_jaws_cabinet_unlocked": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass",
+      "unlocked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.012"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.009"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.027"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.052"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.020"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 398
+  },
+  "rescue_jaws_cabinet_open": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.013"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.010"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.028"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.053"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.021"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 398
+  },
+  "rescue_jaws_cabinet_open_empty": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "glass_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.014"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.005",
+        "materials": [
+          "Cabinet_glass_Glass_Original.029"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.054"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.022"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "rescue_jaws_cabinet_damage_1": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass1",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.015"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.011"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.006",
+        "materials": [
+          "Cabinet_glass1_Glass_Original.005"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.055"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.032"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 398
+  },
+  "rescue_jaws_cabinet_damage_2": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass2",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.016"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.012"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 146,
+        "shared_mesh": "Closed_Thickness_Door_Glass.007",
+        "materials": [
+          "Cabinet_glass2_Glass_Original.005"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.056"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.033"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 398
+  },
+  "rescue_jaws_cabinet_damage_3": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass3",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.017"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.013"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 212,
+        "shared_mesh": "Closed_Thickness_Door_Glass.008",
+        "materials": [
+          "Cabinet_glass3_Glass_Original.005"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.057"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.034"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 464
+  },
+  "rescue_jaws_cabinet_broken": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass4",
+      "locked"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.018"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.014"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 500,
+        "shared_mesh": "Closed_Thickness_Door_Glass.009",
+        "materials": [
+          "Cabinet_glass4_Glass_Original.010"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.058"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.002",
+        "materials": [
+          "Cabinet_locked_Overlay.035"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 752
+  },
+  "rescue_jaws_cabinet_broken_open": {
+    "base_state": "jaws_of_recovery",
+    "frame": 0,
+    "overlays": [
+      "jaws",
+      "glass4_raised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_Shell",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Cabinet_Shell.003",
+        "materials": [
+          "Cabinet_rescue_jaws_Original.019"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_jaws",
+        "triangles": 186,
+        "shared_mesh": "Removable_jaws.001",
+        "materials": [
+          "Cabinet_jaws_Original.015"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.03656249865889549,
+          -0.01406249962747097
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Thickness_Door_Glass",
+        "triangles": 500,
+        "shared_mesh": "Closed_Thickness_Door_Glass.009",
+        "materials": [
+          "Cabinet_glass4_Glass_Original.011"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.001",
+        "materials": [
+          "Cabinet_Handle_Original.059"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lock_Overlay.003",
+        "materials": [
+          "Cabinet_unlocked_Overlay.023"
+        ],
+        "parent": "Upper_Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 752
+  }
+}

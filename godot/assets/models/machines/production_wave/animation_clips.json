@@ -1,0 +1,44 @@
+{
+  "autolathe.001": [
+    "maintenance_open",
+    "maintenance_close",
+    "idle",
+    "working"
+  ],
+  "protolathe_techfab.001": [
+    "maintenance_open",
+    "maintenance_close",
+    "idle",
+    "working",
+    "no_stripe",
+    "department_stripe"
+  ],
+  "circuit_imprinter.001": [
+    "maintenance_open",
+    "maintenance_close",
+    "idle",
+    "working"
+  ],
+  "mecha_fabricator.001": [
+    "working",
+    "idle",
+    "maintenance_open",
+    "maintenance_close",
+    "working"
+  ],
+  "component_printer.001": [
+    "working",
+    "idle",
+    "maintenance_open",
+    "maintenance_close",
+    "working"
+  ],
+  "module_duplicator.001": [
+    "maintenance_open",
+    "maintenance_close",
+    "idle",
+    "print",
+    "scan",
+    "print"
+  ]
+}

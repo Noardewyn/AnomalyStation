@@ -1,0 +1,28 @@
+anomaly-map 1
+source _maps/safehouses/maintsafe.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/closed/wall | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+4,6: /obj/machinery/door/airlock/maintenance_hatch | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,5: /obj/effect/decal/cleanable/cobweb | /turf/open/floor/plating | /area/virtual_domain/safehouse
+3,5: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,5: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+5,5: /turf/open/floor/plating | /area/virtual_domain/safehouse
+6,5: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,4: /obj/machinery/light/red/dim/directional/west | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+3,4: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,4: /turf/open/floor/plating | /area/virtual_domain/safehouse
+5,4: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+6,4: /obj/machinery/light/red/dim/directional/east | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,3: /obj/structure/broken_flooring/corner/directional/north | /turf/open/floor/plating | /area/virtual_domain/safehouse
+3,3: /obj/structure/broken_flooring/side/directional/north | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,3: /obj/structure/broken_flooring/singular/directional/north | /obj/structure/railing/corner/end/flip | /turf/open/floor/plating | /area/virtual_domain/safehouse
+5,3: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+6,3: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/iron | /area/virtual_domain/safehouse
+4,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt/dust | /obj/structure/railing{dir = 4} | /turf/open/floor/iron | /area/virtual_domain/safehouse
+5,2: /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+6,2: /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse

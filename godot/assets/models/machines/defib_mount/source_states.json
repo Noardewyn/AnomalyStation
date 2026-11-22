@@ -1,0 +1,227 @@
+{
+  "version": "4.0",
+  "width": 32,
+  "height": 32,
+  "sheetWidth": 128,
+  "sheetHeight": 96,
+  "states": [
+    {
+      "name": "defibrillator_mount",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "clamps",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "defib",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "online",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 3,
+      "rects": [
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emagged",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          0,
+          32,
+          32,
+          32
+        ],
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "charge25",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 6,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "charge50",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 7,
+      "rects": [
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "charge75",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "charge100",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "penlite_mount",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 10,
+      "rects": [
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mobile",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 11,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "telecomms_dish": [
+    "receiver",
+    "transmitter",
+    "off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "telecomms_processor": [
+    "processor",
+    "processor_off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "telecomms_bus_ntnet": [
+    "bus",
+    "bus_off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "telecomms_hub": [
+    "hub",
+    "hub_off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "telecomms_server": [
+    "comm_server",
+    "comm_server_off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "research_server": [
+    "RD-server-on",
+    "RD-server-halt",
+    "RD-server-off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "announcement_system": [
+    "AAS_On",
+    "AAS_Off",
+    "maintenance_open",
+    "maintenance_close",
+    "Light_Green_off",
+    "Light_Green",
+    "Light_Pink_off",
+    "Light_Pink",
+    "Error_Red_off",
+    "Error_Red"
+  ],
+  "blackbox_recorder": [
+    "recording",
+    "empty"
+  ]
+}

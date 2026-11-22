@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Tests of the waiting-model analyzer (tools/Anomaly.Analyzers): C# snippets compiled with plain Roslyn
+    (CSharpCompilation) against the real Kernel and DmShim assemblies and analyzed through CompilationWithAnalyzers.
+    Directory.Build.props does not attach the analyzer to this project; it references it as a library instead.
+  -->
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>Anomaly.Analyzers.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <!-- The same Roslyn as the analyzer (see tools/Anomaly.Analyzers/Anomaly.Analyzers.csproj). -->
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\tools\Anomaly.Analyzers\Anomaly.Analyzers.csproj" />
+    <!-- The snippets compile against these assemblies (their paths are read from the loaded types). -->
+    <ProjectReference Include="..\..\src\Core\Kernel\Anomaly.Core.Kernel.csproj" />
+    <ProjectReference Include="..\..\src\Core\DmShim\Anomaly.Core.DmShim.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="System.Linq" />
+  </ItemGroup>
+</Project>

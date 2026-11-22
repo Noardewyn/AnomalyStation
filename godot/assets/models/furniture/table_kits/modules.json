@@ -1,0 +1,296 @@
+{
+  "pitch_m": 0.9,
+  "height_m": 0.75,
+  "top_thickness_m": 0.09,
+  "leg_section_m": 0.1,
+  "modules": [
+    {
+      "file": "wood_table_single_4legs.glb",
+      "family": "wood",
+      "mask": 0,
+      "legs": 4,
+      "triangles": 76,
+      "default_variant": "wood_table"
+    },
+    {
+      "file": "wood_table_end_2legs.glb",
+      "family": "wood",
+      "mask": 2,
+      "legs": 2,
+      "triangles": 44,
+      "default_variant": "wood_table"
+    },
+    {
+      "file": "wood_table_top_straight.glb",
+      "family": "wood",
+      "mask": 10,
+      "legs": 0,
+      "triangles": 12,
+      "default_variant": "wood_table"
+    },
+    {
+      "file": "wood_table_corner_1leg.glb",
+      "family": "wood",
+      "mask": 3,
+      "legs": 1,
+      "triangles": 28,
+      "default_variant": "wood_table"
+    },
+    {
+      "file": "wood_table_corner_2legs.glb",
+      "family": "wood",
+      "mask": 3,
+      "legs": 2,
+      "triangles": 40,
+      "default_variant": "wood_table"
+    },
+    {
+      "file": "wood_table_top_tee.glb",
+      "family": "wood",
+      "mask": 11,
+      "legs": 0,
+      "triangles": 12,
+      "default_variant": "wood_table"
+    },
+    {
+      "file": "wood_table_top_center.glb",
+      "family": "wood",
+      "mask": 15,
+      "legs": 0,
+      "triangles": 12,
+      "default_variant": "wood_table"
+    },
+    {
+      "file": "cloth_table_single_4legs.glb",
+      "family": "cloth",
+      "mask": 0,
+      "legs": 4,
+      "triangles": 108,
+      "default_variant": "fancy_table"
+    },
+    {
+      "file": "cloth_table_end_2legs.glb",
+      "family": "cloth",
+      "mask": 2,
+      "legs": 2,
+      "triangles": 72,
+      "default_variant": "fancy_table"
+    },
+    {
+      "file": "cloth_table_top_straight.glb",
+      "family": "cloth",
+      "mask": 10,
+      "legs": 0,
+      "triangles": 36,
+      "default_variant": "fancy_table"
+    },
+    {
+      "file": "cloth_table_corner_1leg.glb",
+      "family": "cloth",
+      "mask": 3,
+      "legs": 1,
+      "triangles": 48,
+      "default_variant": "fancy_table"
+    },
+    {
+      "file": "cloth_table_corner_2legs.glb",
+      "family": "cloth",
+      "mask": 3,
+      "legs": 2,
+      "triangles": 60,
+      "default_variant": "fancy_table"
+    },
+    {
+      "file": "cloth_table_top_tee.glb",
+      "family": "cloth",
+      "mask": 11,
+      "legs": 0,
+      "triangles": 24,
+      "default_variant": "fancy_table"
+    },
+    {
+      "file": "cloth_table_top_center.glb",
+      "family": "cloth",
+      "mask": 15,
+      "legs": 0,
+      "triangles": 12,
+      "default_variant": "fancy_table"
+    },
+    {
+      "file": "glass_table_single_4legs.glb",
+      "family": "glass",
+      "mask": 0,
+      "legs": 4,
+      "triangles": 108,
+      "default_variant": "glass_table"
+    },
+    {
+      "file": "glass_table_end_2legs.glb",
+      "family": "glass",
+      "mask": 2,
+      "legs": 2,
+      "triangles": 72,
+      "default_variant": "glass_table"
+    },
+    {
+      "file": "glass_table_top_straight.glb",
+      "family": "glass",
+      "mask": 10,
+      "legs": 0,
+      "triangles": 36,
+      "default_variant": "glass_table"
+    },
+    {
+      "file": "glass_table_corner_1leg.glb",
+      "family": "glass",
+      "mask": 3,
+      "legs": 1,
+      "triangles": 48,
+      "default_variant": "glass_table"
+    },
+    {
+      "file": "glass_table_corner_2legs.glb",
+      "family": "glass",
+      "mask": 3,
+      "legs": 2,
+      "triangles": 62,
+      "default_variant": "glass_table"
+    },
+    {
+      "file": "glass_table_top_tee.glb",
+      "family": "glass",
+      "mask": 11,
+      "legs": 0,
+      "triangles": 24,
+      "default_variant": "glass_table"
+    },
+    {
+      "file": "glass_table_top_center.glb",
+      "family": "glass",
+      "mask": 15,
+      "legs": 0,
+      "triangles": 12,
+      "default_variant": "glass_table"
+    },
+    {
+      "file": "framed_glass_table_single_4legs.glb",
+      "family": "framed_glass",
+      "mask": 0,
+      "legs": 4,
+      "triangles": 156,
+      "default_variant": "rglass_table"
+    },
+    {
+      "file": "framed_glass_table_end_2legs.glb",
+      "family": "framed_glass",
+      "mask": 2,
+      "legs": 2,
+      "triangles": 96,
+      "default_variant": "rglass_table"
+    },
+    {
+      "file": "framed_glass_table_top_straight.glb",
+      "family": "framed_glass",
+      "mask": 10,
+      "legs": 0,
+      "triangles": 36,
+      "default_variant": "rglass_table"
+    },
+    {
+      "file": "framed_glass_table_corner_1leg.glb",
+      "family": "framed_glass",
+      "mask": 3,
+      "legs": 1,
+      "triangles": 60,
+      "default_variant": "rglass_table"
+    },
+    {
+      "file": "framed_glass_table_corner_2legs.glb",
+      "family": "framed_glass",
+      "mask": 3,
+      "legs": 2,
+      "triangles": 86,
+      "default_variant": "rglass_table"
+    },
+    {
+      "file": "framed_glass_table_top_tee.glb",
+      "family": "framed_glass",
+      "mask": 11,
+      "legs": 0,
+      "triangles": 24,
+      "default_variant": "rglass_table"
+    },
+    {
+      "file": "framed_glass_table_top_center.glb",
+      "family": "framed_glass",
+      "mask": 15,
+      "legs": 0,
+      "triangles": 12,
+      "default_variant": "rglass_table"
+    },
+    {
+      "file": "reinforced_table_single_4legs.glb",
+      "family": "reinforced",
+      "mask": 0,
+      "legs": 4,
+      "triangles": 156,
+      "default_variant": "reinforced_table"
+    },
+    {
+      "file": "reinforced_table_end_2legs.glb",
+      "family": "reinforced",
+      "mask": 2,
+      "legs": 2,
+      "triangles": 96,
+      "default_variant": "reinforced_table"
+    },
+    {
+      "file": "reinforced_table_top_straight.glb",
+      "family": "reinforced",
+      "mask": 10,
+      "legs": 0,
+      "triangles": 36,
+      "default_variant": "reinforced_table"
+    },
+    {
+      "file": "reinforced_table_corner_1leg.glb",
+      "family": "reinforced",
+      "mask": 3,
+      "legs": 1,
+      "triangles": 60,
+      "default_variant": "reinforced_table"
+    },
+    {
+      "file": "reinforced_table_corner_2legs.glb",
+      "family": "reinforced",
+      "mask": 3,
+      "legs": 2,
+      "triangles": 84,
+      "default_variant": "reinforced_table"
+    },
+    {
+      "file": "reinforced_table_top_tee.glb",
+      "family": "reinforced",
+      "mask": 11,
+      "legs": 0,
+      "triangles": 24,
+      "default_variant": "reinforced_table"
+    },
+    {
+      "file": "reinforced_table_top_center.glb",
+      "family": "reinforced",
+      "mask": 15,
+      "legs": 0,
+      "triangles": 12,
+      "default_variant": "reinforced_table"
+    },
+    {
+      "file": "rolling_table_single_4legs.glb",
+      "family": "rolling",
+      "mask": 0,
+      "legs": 4,
+      "triangles": 236,
+      "default_variant": "rollingtable"
+    }
+  ]
+}

@@ -1,0 +1,631 @@
+anomaly-map 1
+source _maps/virtual_domains/psyker_zombies.dmm tg 1d99bd7f
+size 36 25 1
+chunk 32
+default /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 1 1 1]
+1,25: /turf/template_noop | /area/template_noop
+2,25: /turf/template_noop | /area/template_noop
+1,24: /turf/template_noop | /area/template_noop
+2,24: /turf/template_noop | /area/template_noop
+4,24: /obj/effect/mob_spawn/corpse/human/cyber_police | /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/indestructible/dark | /area/virtual_domain
+5,24: /obj/item/pizzabox/bomb/armed | /obj/structure/rack | /turf/open/indestructible/dark | /area/virtual_domain
+11,24: /turf/open/indestructible/dark | /area/virtual_domain
+12,24: /turf/open/indestructible/dark | /area/virtual_domain
+13,24: /turf/open/indestructible/dark | /area/virtual_domain
+14,24: /turf/open/indestructible/dark | /area/virtual_domain
+15,24: /turf/open/indestructible/dark | /area/virtual_domain
+16,24: /turf/open/indestructible/dark | /area/virtual_domain
+17,24: /turf/open/indestructible/dark | /area/virtual_domain
+18,24: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/indestructible/dark | /area/virtual_domain
+19,24: /turf/open/chasm | /area/virtual_domain
+20,24: /turf/open/chasm | /area/virtual_domain
+25,24: /obj/structure/sign/warning/directional/west | /turf/open/chasm | /area/virtual_domain
+26,24: /turf/open/chasm | /area/virtual_domain
+27,24: /turf/open/indestructible/dark | /area/virtual_domain
+28,24: /turf/open/indestructible/dark | /area/virtual_domain
+29,24: /turf/open/indestructible/dark | /area/virtual_domain
+30,24: /turf/open/indestructible/dark | /area/virtual_domain
+31,24: /turf/open/indestructible/dark | /area/virtual_domain
+32,24: /turf/open/indestructible/dark | /area/virtual_domain
+1,23: /turf/template_noop | /area/template_noop
+2,23: /turf/template_noop | /area/template_noop
+4,23: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+5,23: /obj/item/pizzabox/bomb/armed | /obj/structure/rack | /turf/open/indestructible/dark | /area/virtual_domain
+8,23: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+9,23: /obj/effect/mob_spawn/corpse/human/cyber_police | /turf/open/indestructible/dark | /area/virtual_domain
+10,23: /turf/open/indestructible/dark | /area/virtual_domain
+11,23: /turf/open/indestructible/dark | /area/virtual_domain
+12,23: /turf/open/indestructible/dark | /area/virtual_domain
+13,23: /turf/open/indestructible/dark | /area/virtual_domain
+14,23: /turf/open/indestructible/dark | /area/virtual_domain
+15,23: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+16,23: /turf/open/indestructible/dark | /area/virtual_domain
+17,23: /obj/structure/sign/warning/directional/east | /turf/open/indestructible/dark | /area/virtual_domain
+19,23: /turf/open/chasm | /area/virtual_domain
+20,23: /turf/open/chasm | /area/virtual_domain
+21,23: /turf/open/chasm | /area/virtual_domain
+22,23: /turf/open/chasm | /area/virtual_domain
+23,23: /turf/open/chasm | /area/virtual_domain
+24,23: /turf/open/chasm | /area/virtual_domain
+25,23: /turf/open/chasm | /area/virtual_domain
+26,23: /turf/open/chasm | /area/virtual_domain
+27,23: /turf/open/indestructible/dark | /area/virtual_domain
+28,23: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+30,23: /turf/open/indestructible/dark | /area/virtual_domain
+31,23: /turf/open/indestructible/dark | /area/virtual_domain
+32,23: /turf/open/indestructible/dark | /area/virtual_domain
+1,22: /turf/template_noop | /area/template_noop
+2,22: /turf/template_noop | /area/template_noop
+4,22: /turf/open/indestructible/dark | /area/virtual_domain
+5,22: /obj/structure/rack | /obj/item/reagent_containers/cup/glass/bottle/rootbeer{pixel_x = 3} | /obj/item/reagent_containers/cup/glass/bottle/rootbeer{pixel_x = -3} | /obj/item/reagent_containers/cup/glass/bottle/rootbeer{pixel_y = 1} | /turf/open/indestructible/dark | /area/virtual_domain
+8,22: /turf/open/indestructible/dark | /area/virtual_domain
+9,22: /turf/open/indestructible/dark | /area/virtual_domain
+10,22: /turf/open/chasm | /area/virtual_domain
+11,22: /turf/open/chasm | /area/virtual_domain
+12,22: /turf/open/indestructible/dark | /area/virtual_domain
+13,22: /turf/open/indestructible/dark | /area/virtual_domain
+14,22: /turf/open/indestructible/dark | /area/virtual_domain
+15,22: /turf/open/indestructible/dark | /area/virtual_domain
+16,22: /turf/open/indestructible/dark | /area/virtual_domain
+17,22: /turf/open/indestructible/dark | /area/virtual_domain
+18,22: /turf/open/chasm | /area/virtual_domain
+19,22: /turf/open/chasm | /area/virtual_domain
+20,22: /turf/open/chasm | /area/virtual_domain
+21,22: /turf/open/chasm | /area/virtual_domain
+27,22: /obj/machinery/door/airlock/abductor | /turf/open/indestructible/dark | /area/virtual_domain
+30,22: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+31,22: /turf/open/indestructible/dark | /area/virtual_domain
+32,22: /turf/open/indestructible/dark | /area/virtual_domain
+1,21: /turf/template_noop | /area/template_noop
+2,21: /turf/template_noop | /area/template_noop
+4,21: /obj/machinery/door/airlock/abductor | /obj/effect/mapping_helpers/airlock/abandoned | /turf/open/indestructible/dark | /area/virtual_domain
+8,21: /turf/open/indestructible/dark | /area/virtual_domain
+9,21: /turf/open/indestructible/dark | /area/virtual_domain
+10,21: /turf/open/chasm | /area/virtual_domain
+11,21: /turf/open/chasm | /area/virtual_domain
+12,21: /turf/open/indestructible/dark | /area/virtual_domain
+14,21: /turf/open/indestructible/dark | /area/virtual_domain
+16,21: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+27,21: /turf/open/indestructible/dark | /area/virtual_domain
+28,21: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/indestructible/dark | /area/virtual_domain
+1,20: /turf/template_noop | /area/template_noop
+2,20: /turf/template_noop | /area/template_noop
+4,20: /turf/open/indestructible/dark | /area/virtual_domain
+5,20: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+6,20: /turf/open/indestructible/dark | /area/virtual_domain
+8,20: /turf/open/indestructible/dark | /area/virtual_domain
+9,20: /turf/open/indestructible/dark | /area/virtual_domain
+10,20: /turf/open/chasm | /area/virtual_domain
+11,20: /turf/open/chasm | /area/virtual_domain
+12,20: /turf/open/indestructible/dark | /area/virtual_domain
+19,20: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+20,20: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/indestructible/dark | /area/virtual_domain
+26,20: /obj/effect/mob_spawn/corpse/human/cyber_police | /turf/open/indestructible/dark | /area/virtual_domain
+27,20: /turf/open/indestructible/dark | /area/virtual_domain
+28,20: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+31,20: /turf/open/indestructible/dark | /area/virtual_domain
+32,20: /turf/open/indestructible/dark | /area/virtual_domain
+1,19: /turf/template_noop | /area/template_noop
+4,19: /turf/open/indestructible/dark | /area/virtual_domain
+5,19: /turf/open/indestructible/dark | /area/virtual_domain
+6,19: /turf/open/indestructible/dark | /area/virtual_domain
+7,19: /turf/open/indestructible/dark | /area/virtual_domain
+8,19: /turf/open/indestructible/dark | /area/virtual_domain
+9,19: /obj/effect/spawner/random/trash/caution_sign | /turf/open/indestructible/dark | /area/virtual_domain
+10,19: /turf/open/chasm | /area/virtual_domain
+11,19: /turf/open/chasm | /area/virtual_domain
+12,19: /turf/open/indestructible/dark | /area/virtual_domain
+13,19: /turf/open/indestructible/dark | /area/virtual_domain
+14,19: /turf/open/indestructible/dark | /area/virtual_domain
+15,19: /turf/open/indestructible/dark | /area/virtual_domain
+16,19: /turf/open/indestructible/dark | /area/virtual_domain
+17,19: /turf/open/indestructible/dark | /area/virtual_domain
+18,19: /turf/open/indestructible/dark | /area/virtual_domain
+19,19: /turf/open/indestructible/dark | /area/virtual_domain
+20,19: /turf/open/indestructible/dark | /area/virtual_domain
+21,19: /turf/open/indestructible/dark | /area/virtual_domain
+22,19: /turf/open/indestructible/dark | /area/virtual_domain
+23,19: /turf/open/indestructible/dark | /area/virtual_domain
+24,19: /turf/open/indestructible/dark | /area/virtual_domain
+25,19: /obj/machinery/door/airlock/abductor | /turf/open/indestructible/dark | /area/virtual_domain
+26,19: /turf/open/indestructible/dark | /area/virtual_domain
+27,19: /turf/open/indestructible/dark | /area/virtual_domain
+28,19: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+30,19: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+31,19: /turf/open/indestructible/dark | /area/virtual_domain
+32,19: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+1,18: /turf/template_noop | /area/template_noop
+3,18: /turf/open/indestructible/dark | /area/virtual_domain
+4,18: /turf/open/indestructible/dark | /area/virtual_domain
+5,18: /turf/open/indestructible/dark | /area/virtual_domain
+6,18: /turf/open/indestructible/dark | /area/virtual_domain
+7,18: /turf/open/indestructible/dark | /area/virtual_domain
+8,18: /turf/open/indestructible/dark | /area/virtual_domain
+9,18: /turf/open/indestructible/dark | /area/virtual_domain
+10,18: /turf/open/indestructible/dark | /area/virtual_domain
+11,18: /turf/open/indestructible/dark | /area/virtual_domain
+12,18: /turf/open/indestructible/dark | /area/virtual_domain
+13,18: /turf/open/indestructible/dark | /area/virtual_domain
+14,18: /turf/open/indestructible/dark | /area/virtual_domain
+15,18: /turf/open/indestructible/dark | /area/virtual_domain
+16,18: /turf/open/indestructible/dark | /area/virtual_domain
+17,18: /turf/open/indestructible/dark | /area/virtual_domain
+18,18: /turf/open/indestructible/dark | /area/virtual_domain
+19,18: /turf/open/indestructible/dark | /area/virtual_domain
+20,18: /turf/open/indestructible/dark | /area/virtual_domain
+21,18: /turf/open/indestructible/dark | /area/virtual_domain
+22,18: /turf/open/indestructible/dark | /area/virtual_domain
+23,18: /turf/open/indestructible/dark | /area/virtual_domain
+24,18: /turf/open/indestructible/dark | /area/virtual_domain
+26,18: /obj/effect/mob_spawn/corpse/human/cyber_police | /turf/open/indestructible/dark | /area/virtual_domain
+30,18: /turf/open/indestructible/dark | /area/virtual_domain
+31,18: /turf/open/indestructible/dark | /area/virtual_domain
+3,17: /turf/open/indestructible/dark | /area/virtual_domain
+4,17: /turf/open/indestructible/dark | /area/virtual_domain
+5,17: /turf/open/indestructible/dark | /area/virtual_domain
+11,17: /turf/open/indestructible/dark | /area/virtual_domain
+12,17: /turf/open/indestructible/dark | /area/virtual_domain
+13,17: /turf/open/indestructible/dark | /area/virtual_domain
+16,17: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+17,17: /turf/open/indestructible/dark | /area/virtual_domain
+28,17: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+29,17: /turf/open/indestructible/dark | /area/virtual_domain
+30,17: /turf/open/indestructible/dark | /area/virtual_domain
+2,16: /turf/open/indestructible/dark | /area/virtual_domain
+3,16: /turf/open/indestructible/dark | /area/virtual_domain
+4,16: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+7,16: /turf/open/indestructible/dark | /area/virtual_domain
+8,16: /turf/open/indestructible/dark | /area/virtual_domain
+9,16: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+17,16: /obj/effect/mapping_helpers/airlock/locked | /obj/machinery/door/airlock/abductor | /turf/open/indestructible/dark | /area/virtual_domain
+20,16: /turf/open/indestructible/dark | /area/virtual_domain
+29,16: /turf/open/indestructible/dark | /area/virtual_domain
+30,16: /turf/open/indestructible/dark | /area/virtual_domain
+2,15: /turf/open/indestructible/dark | /area/virtual_domain
+3,15: /turf/open/indestructible/dark | /area/virtual_domain
+6,15: /turf/open/indestructible/dark | /area/virtual_domain
+7,15: /turf/open/indestructible/dark | /area/virtual_domain
+8,15: /turf/open/indestructible/dark | /area/virtual_domain
+9,15: /turf/open/indestructible/dark | /area/virtual_domain
+10,15: /turf/open/indestructible/dark | /area/virtual_domain
+11,15: /turf/open/indestructible/dark | /area/virtual_domain
+12,15: /turf/open/indestructible/dark | /area/virtual_domain
+13,15: /turf/open/indestructible/dark | /area/virtual_domain
+14,15: /turf/open/indestructible/dark | /area/virtual_domain
+15,15: /turf/open/indestructible/dark | /area/virtual_domain
+16,15: /turf/open/indestructible/dark | /area/virtual_domain
+17,15: /turf/open/indestructible/dark | /area/virtual_domain
+18,15: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+20,15: /turf/open/indestructible/dark | /area/virtual_domain
+21,15: /turf/open/indestructible/dark | /area/virtual_domain
+22,15: /turf/open/indestructible/dark | /area/virtual_domain
+27,15: /turf/open/indestructible/dark | /area/virtual_domain
+28,15: /turf/open/indestructible/dark | /area/virtual_domain
+29,15: /turf/open/indestructible/dark | /area/virtual_domain
+30,15: /turf/open/indestructible/dark | /area/virtual_domain
+31,15: /turf/open/indestructible/dark | /area/virtual_domain
+2,14: /turf/open/indestructible/dark | /area/virtual_domain
+3,14: /turf/open/indestructible/dark | /area/virtual_domain
+6,14: /turf/open/indestructible/dark | /area/virtual_domain
+7,14: /turf/open/indestructible/dark | /area/virtual_domain
+8,14: /turf/open/indestructible/dark | /area/virtual_domain
+9,14: /turf/open/indestructible/dark | /area/virtual_domain
+10,14: /turf/open/chasm | /area/virtual_domain
+11,14: /turf/open/chasm | /area/virtual_domain
+12,14: /turf/open/indestructible/dark | /area/virtual_domain
+16,14: /turf/open/indestructible/dark | /area/virtual_domain
+17,14: /turf/open/indestructible/dark | /area/virtual_domain
+18,14: /turf/open/indestructible/dark | /area/virtual_domain
+19,14: /turf/open/indestructible/dark | /area/virtual_domain
+20,14: /turf/open/indestructible/dark | /area/virtual_domain
+21,14: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+22,14: /turf/open/indestructible/dark | /area/virtual_domain
+26,14: /turf/open/indestructible/dark | /area/virtual_domain
+27,14: /turf/open/indestructible/dark | /area/virtual_domain
+28,14: /turf/open/indestructible/dark | /area/virtual_domain
+29,14: /turf/open/indestructible/dark | /area/virtual_domain
+30,14: /turf/open/indestructible/dark | /area/virtual_domain
+31,14: /turf/open/indestructible/dark | /area/virtual_domain
+32,14: /turf/open/indestructible/dark | /area/virtual_domain
+2,13: /turf/open/indestructible/dark | /area/virtual_domain
+3,13: /turf/open/indestructible/dark | /area/virtual_domain
+4,13: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+8,13: /turf/open/indestructible/dark | /area/virtual_domain
+9,13: /turf/open/indestructible/dark | /area/virtual_domain
+10,13: /turf/open/chasm | /area/virtual_domain
+11,13: /turf/open/chasm | /area/virtual_domain
+12,13: /turf/open/indestructible/dark | /area/virtual_domain
+13,13: /turf/open/indestructible/dark | /area/virtual_domain
+14,13: /turf/open/indestructible/dark | /area/virtual_domain
+17,13: /turf/open/indestructible/dark | /area/virtual_domain
+18,13: /turf/open/indestructible/dark | /area/virtual_domain
+19,13: /turf/open/indestructible/dark | /area/virtual_domain
+20,13: /turf/open/indestructible/dark | /area/virtual_domain
+21,13: /turf/open/indestructible/dark | /area/virtual_domain
+22,13: /turf/open/indestructible/dark | /area/virtual_domain
+23,13: /turf/open/indestructible/dark | /area/virtual_domain
+26,13: /turf/open/indestructible/dark | /area/virtual_domain
+27,13: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+28,13: /turf/open/indestructible/dark | /area/virtual_domain
+30,13: /turf/open/indestructible/dark | /area/virtual_domain
+31,13: /turf/open/indestructible/dark | /area/virtual_domain
+32,13: /turf/open/indestructible/dark | /area/virtual_domain
+2,12: /turf/open/indestructible/dark | /area/virtual_domain
+3,12: /turf/open/indestructible/dark | /area/virtual_domain
+4,12: /turf/open/indestructible/dark | /area/virtual_domain
+5,12: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+8,12: /turf/open/indestructible/dark | /area/virtual_domain
+9,12: /turf/open/indestructible/dark | /area/virtual_domain
+10,12: /turf/open/chasm | /area/virtual_domain
+11,12: /turf/open/chasm | /area/virtual_domain
+12,12: /turf/open/indestructible/dark | /area/virtual_domain
+13,12: /turf/open/indestructible/dark | /area/virtual_domain
+14,12: /turf/open/indestructible/dark | /area/virtual_domain
+15,12: /turf/open/indestructible/dark | /area/virtual_domain
+16,12: /turf/open/indestructible/dark | /area/virtual_domain
+17,12: /turf/open/indestructible/dark | /area/virtual_domain
+18,12: /turf/open/indestructible/dark | /area/virtual_domain
+19,12: /turf/open/indestructible/dark | /area/virtual_domain
+20,12: /turf/open/indestructible/dark | /area/virtual_domain
+21,12: /turf/open/indestructible/dark | /area/virtual_domain
+22,12: /turf/open/indestructible/dark | /area/virtual_domain
+23,12: /turf/open/indestructible/dark | /area/virtual_domain
+24,12: /turf/open/indestructible/dark | /area/virtual_domain
+25,12: /turf/open/indestructible/dark | /area/virtual_domain
+26,12: /turf/open/indestructible/dark | /area/virtual_domain
+27,12: /turf/open/indestructible/dark | /area/virtual_domain
+28,12: /turf/open/indestructible/dark | /area/virtual_domain
+30,12: /turf/open/indestructible/dark | /area/virtual_domain
+31,12: /obj/effect/mob_spawn/corpse/human/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+32,12: /turf/open/indestructible/dark | /area/virtual_domain
+2,11: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/indestructible/dark | /area/virtual_domain
+3,11: /turf/open/indestructible/dark | /area/virtual_domain
+4,11: /turf/open/indestructible/dark | /area/virtual_domain
+5,11: /turf/open/indestructible/dark | /area/virtual_domain
+8,11: /turf/open/indestructible/dark | /area/virtual_domain
+9,11: /turf/open/indestructible/dark | /area/virtual_domain
+10,11: /turf/open/chasm | /area/virtual_domain
+11,11: /turf/open/chasm | /area/virtual_domain
+12,11: /obj/effect/spawner/random/trash/caution_sign | /turf/open/indestructible/dark | /area/virtual_domain
+13,11: /turf/open/indestructible/dark | /area/virtual_domain
+14,11: /turf/open/indestructible/dark | /area/virtual_domain
+15,11: /turf/open/indestructible/dark | /area/virtual_domain
+20,11: /obj/machinery/door/airlock/abductor | /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+25,11: /turf/open/indestructible/dark | /area/virtual_domain
+26,11: /turf/open/indestructible/dark | /area/virtual_domain
+27,11: /turf/open/indestructible/dark | /area/virtual_domain
+28,11: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+30,11: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+3,10: /turf/open/indestructible/dark | /area/virtual_domain
+4,10: /turf/open/indestructible/dark | /area/virtual_domain
+5,10: /turf/open/indestructible/dark | /area/virtual_domain
+7,10: /turf/open/indestructible/dark | /area/virtual_domain
+8,10: /turf/open/indestructible/dark | /area/virtual_domain
+9,10: /turf/open/indestructible/dark | /area/virtual_domain
+10,10: /turf/open/chasm | /area/virtual_domain
+11,10: /turf/open/chasm | /area/virtual_domain
+12,10: /turf/open/indestructible/dark | /area/virtual_domain
+13,10: /turf/open/indestructible/dark | /area/virtual_domain
+14,10: /turf/open/indestructible/dark | /area/virtual_domain
+15,10: /turf/open/indestructible/dark | /area/virtual_domain
+17,10: /obj/structure/rack | /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+18,10: /obj/structure/mystery_box/guns | /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+19,10: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+20,10: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+21,10: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+22,10: /obj/structure/mystery_box/guns | /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+23,10: /obj/structure/rack | /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+25,10: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+26,10: /turf/open/indestructible/dark | /area/virtual_domain
+1,9: /turf/template_noop | /area/template_noop
+4,9: /turf/open/indestructible/dark | /area/virtual_domain
+5,9: /turf/open/indestructible/dark | /area/virtual_domain
+6,9: /turf/open/indestructible/dark | /area/virtual_domain
+7,9: /turf/open/indestructible/dark | /area/virtual_domain
+8,9: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+9,9: /turf/open/indestructible/dark | /area/virtual_domain
+10,9: /turf/open/indestructible/dark | /area/virtual_domain
+11,9: /turf/open/indestructible/dark | /area/virtual_domain
+12,9: /turf/open/indestructible/dark | /area/virtual_domain
+13,9: /turf/open/indestructible/dark | /area/virtual_domain
+14,9: /turf/open/indestructible/dark | /area/virtual_domain
+15,9: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+17,9: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+18,9: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+19,9: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+20,9: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+21,9: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+22,9: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+23,9: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+28,9: /turf/template_noop | /area/template_noop
+29,9: /turf/template_noop | /area/template_noop
+30,9: /turf/template_noop | /area/template_noop
+31,9: /turf/template_noop | /area/template_noop
+1,8: /turf/template_noop | /area/template_noop
+2,8: /turf/template_noop | /area/template_noop
+5,8: /turf/open/indestructible/dark | /area/virtual_domain
+6,8: /turf/open/indestructible/dark | /area/virtual_domain
+7,8: /turf/open/indestructible/dark | /area/virtual_domain
+17,8: /obj/effect/baseturf_helper/virtual_domain | /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+18,8: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+19,8: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+20,8: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+21,8: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+22,8: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+23,8: /turf/open/indestructible/dark | /area/virtual_domain/protected_space
+26,8: /turf/template_noop | /area/template_noop
+27,8: /turf/template_noop | /area/template_noop
+28,8: /turf/template_noop | /area/template_noop
+29,8: /turf/template_noop | /area/template_noop
+30,8: /turf/template_noop | /area/template_noop
+31,8: /turf/template_noop | /area/template_noop
+1,7: /turf/template_noop | /area/template_noop
+2,7: /turf/template_noop | /area/template_noop
+3,7: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,7: /turf/template_noop | /area/template_noop
+10,7: /turf/template_noop | /area/template_noop
+11,7: /turf/template_noop | /area/template_noop
+12,7: /turf/template_noop | /area/template_noop
+13,7: /turf/template_noop | /area/template_noop
+14,7: /turf/template_noop | /area/template_noop
+15,7: /turf/template_noop | /area/template_noop
+17,7: /turf/template_noop | /area/virtual_domain/safehouse
+18,7: /turf/template_noop | /area/virtual_domain/safehouse
+19,7: /turf/template_noop | /area/virtual_domain/safehouse
+20,7: /turf/template_noop | /area/virtual_domain/safehouse
+21,7: /turf/template_noop | /area/virtual_domain/safehouse
+22,7: /turf/template_noop | /area/virtual_domain/safehouse
+23,7: /turf/template_noop | /area/virtual_domain/safehouse
+25,7: /turf/template_noop | /area/template_noop
+26,7: /turf/template_noop | /area/template_noop
+27,7: /turf/template_noop | /area/template_noop
+28,7: /turf/template_noop | /area/template_noop
+29,7: /turf/template_noop | /area/template_noop
+30,7: /turf/template_noop | /area/template_noop
+31,7: /turf/template_noop | /area/template_noop
+1,6: /turf/template_noop | /area/template_noop
+2,6: /turf/template_noop | /area/template_noop
+3,6: /turf/template_noop | /area/template_noop
+4,6: /turf/template_noop | /area/template_noop
+5,6: /turf/template_noop | /area/template_noop
+6,6: /turf/template_noop | /area/template_noop
+7,6: /turf/template_noop | /area/template_noop
+8,6: /turf/template_noop | /area/template_noop
+9,6: /turf/template_noop | /area/template_noop
+10,6: /turf/template_noop | /area/template_noop
+11,6: /turf/template_noop | /area/template_noop
+12,6: /turf/template_noop | /area/template_noop
+13,6: /turf/template_noop | /area/template_noop
+14,6: /turf/template_noop | /area/template_noop
+15,6: /turf/template_noop | /area/template_noop
+17,6: /turf/template_noop | /area/virtual_domain/safehouse
+18,6: /turf/template_noop | /area/virtual_domain/safehouse
+19,6: /turf/template_noop | /area/virtual_domain/safehouse
+20,6: /turf/template_noop | /area/virtual_domain/safehouse
+21,6: /turf/template_noop | /area/virtual_domain/safehouse
+22,6: /turf/template_noop | /area/virtual_domain/safehouse
+23,6: /turf/template_noop | /area/virtual_domain/safehouse
+25,6: /turf/template_noop | /area/template_noop
+26,6: /turf/template_noop | /area/template_noop
+27,6: /turf/template_noop | /area/template_noop
+28,6: /turf/template_noop | /area/template_noop
+29,6: /turf/template_noop | /area/template_noop
+30,6: /turf/template_noop | /area/template_noop
+31,6: /turf/template_noop | /area/template_noop
+32,6: /turf/template_noop | /area/template_noop
+1,5: /turf/template_noop | /area/template_noop
+2,5: /turf/template_noop | /area/template_noop
+3,5: /turf/template_noop | /area/template_noop
+4,5: /turf/template_noop | /area/template_noop
+5,5: /turf/template_noop | /area/template_noop
+6,5: /turf/template_noop | /area/template_noop
+7,5: /turf/template_noop | /area/template_noop
+8,5: /turf/template_noop | /area/template_noop
+9,5: /turf/template_noop | /area/template_noop
+10,5: /turf/template_noop | /area/template_noop
+11,5: /turf/template_noop | /area/template_noop
+12,5: /turf/template_noop | /area/template_noop
+13,5: /turf/template_noop | /area/template_noop
+14,5: /turf/template_noop | /area/template_noop
+15,5: /turf/template_noop | /area/template_noop
+17,5: /turf/template_noop | /area/virtual_domain/safehouse
+18,5: /turf/template_noop | /area/virtual_domain/safehouse
+19,5: /turf/template_noop | /area/virtual_domain/safehouse
+20,5: /turf/template_noop | /area/virtual_domain/safehouse
+21,5: /turf/template_noop | /area/virtual_domain/safehouse
+22,5: /turf/template_noop | /area/virtual_domain/safehouse
+23,5: /turf/template_noop | /area/virtual_domain/safehouse
+25,5: /turf/template_noop | /area/template_noop
+26,5: /turf/template_noop | /area/template_noop
+27,5: /turf/template_noop | /area/template_noop
+28,5: /turf/template_noop | /area/template_noop
+29,5: /turf/template_noop | /area/template_noop
+30,5: /turf/template_noop | /area/template_noop
+31,5: /turf/template_noop | /area/template_noop
+32,5: /turf/template_noop | /area/template_noop
+1,4: /turf/template_noop | /area/template_noop
+2,4: /turf/template_noop | /area/template_noop
+3,4: /turf/template_noop | /area/template_noop
+4,4: /turf/template_noop | /area/template_noop
+5,4: /turf/template_noop | /area/template_noop
+6,4: /turf/template_noop | /area/template_noop
+7,4: /turf/template_noop | /area/template_noop
+8,4: /turf/template_noop | /area/template_noop
+9,4: /turf/template_noop | /area/template_noop
+10,4: /turf/template_noop | /area/template_noop
+11,4: /turf/template_noop | /area/template_noop
+12,4: /turf/template_noop | /area/template_noop
+13,4: /turf/template_noop | /area/template_noop
+14,4: /turf/template_noop | /area/template_noop
+15,4: /turf/template_noop | /area/template_noop
+17,4: /turf/template_noop | /area/virtual_domain/safehouse
+18,4: /turf/template_noop | /area/virtual_domain/safehouse
+19,4: /turf/template_noop | /area/virtual_domain/safehouse
+20,4: /turf/template_noop | /area/virtual_domain/safehouse
+21,4: /turf/template_noop | /area/virtual_domain/safehouse
+22,4: /turf/template_noop | /area/virtual_domain/safehouse
+23,4: /turf/template_noop | /area/virtual_domain/safehouse
+25,4: /turf/template_noop | /area/template_noop
+26,4: /turf/template_noop | /area/template_noop
+27,4: /turf/template_noop | /area/template_noop
+28,4: /turf/template_noop | /area/template_noop
+29,4: /turf/template_noop | /area/template_noop
+30,4: /turf/template_noop | /area/template_noop
+31,4: /turf/template_noop | /area/template_noop
+32,4: /turf/template_noop | /area/template_noop
+1,3: /turf/template_noop | /area/template_noop
+2,3: /turf/template_noop | /area/template_noop
+3,3: /turf/template_noop | /area/template_noop
+4,3: /turf/template_noop | /area/template_noop
+5,3: /turf/template_noop | /area/template_noop
+6,3: /turf/template_noop | /area/template_noop
+7,3: /turf/template_noop | /area/template_noop
+8,3: /turf/template_noop | /area/template_noop
+9,3: /turf/template_noop | /area/template_noop
+10,3: /turf/template_noop | /area/template_noop
+11,3: /turf/template_noop | /area/template_noop
+12,3: /turf/template_noop | /area/template_noop
+13,3: /turf/template_noop | /area/template_noop
+14,3: /turf/template_noop | /area/template_noop
+15,3: /turf/template_noop | /area/template_noop
+17,3: /turf/template_noop | /area/virtual_domain/safehouse
+18,3: /turf/template_noop | /area/virtual_domain/safehouse
+19,3: /turf/template_noop | /area/virtual_domain/safehouse
+20,3: /turf/template_noop | /area/virtual_domain/safehouse
+21,3: /turf/template_noop | /area/virtual_domain/safehouse
+22,3: /turf/template_noop | /area/virtual_domain/safehouse
+23,3: /turf/template_noop | /area/virtual_domain/safehouse
+25,3: /turf/template_noop | /area/template_noop
+26,3: /turf/template_noop | /area/template_noop
+27,3: /turf/template_noop | /area/template_noop
+28,3: /turf/template_noop | /area/template_noop
+29,3: /turf/template_noop | /area/template_noop
+30,3: /turf/template_noop | /area/template_noop
+31,3: /turf/template_noop | /area/template_noop
+32,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/template_noop | /area/template_noop
+3,2: /turf/template_noop | /area/template_noop
+4,2: /turf/template_noop | /area/template_noop
+5,2: /turf/template_noop | /area/template_noop
+6,2: /turf/template_noop | /area/template_noop
+7,2: /turf/template_noop | /area/template_noop
+8,2: /turf/template_noop | /area/template_noop
+9,2: /turf/template_noop | /area/template_noop
+10,2: /turf/template_noop | /area/template_noop
+11,2: /turf/template_noop | /area/template_noop
+12,2: /turf/template_noop | /area/template_noop
+13,2: /turf/template_noop | /area/template_noop
+14,2: /turf/template_noop | /area/template_noop
+15,2: /turf/template_noop | /area/template_noop
+17,2: /obj/modular_map_root/safehouse{key = "bathroom"} | /turf/template_noop | /area/virtual_domain/safehouse
+18,2: /turf/template_noop | /area/virtual_domain/safehouse
+19,2: /turf/template_noop | /area/virtual_domain/safehouse
+20,2: /turf/template_noop | /area/virtual_domain/safehouse
+21,2: /turf/template_noop | /area/virtual_domain/safehouse
+22,2: /turf/template_noop | /area/virtual_domain/safehouse
+23,2: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+25,2: /turf/template_noop | /area/template_noop
+26,2: /turf/template_noop | /area/template_noop
+27,2: /turf/template_noop | /area/template_noop
+28,2: /turf/template_noop | /area/template_noop
+29,2: /turf/template_noop | /area/template_noop
+30,2: /turf/template_noop | /area/template_noop
+31,2: /turf/template_noop | /area/template_noop
+32,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+5,1: /turf/template_noop | /area/template_noop
+6,1: /turf/template_noop | /area/template_noop
+7,1: /turf/template_noop | /area/template_noop
+8,1: /turf/template_noop | /area/template_noop
+9,1: /turf/template_noop | /area/template_noop
+10,1: /turf/template_noop | /area/template_noop
+11,1: /turf/template_noop | /area/template_noop
+12,1: /turf/template_noop | /area/template_noop
+13,1: /turf/template_noop | /area/template_noop
+14,1: /turf/template_noop | /area/template_noop
+15,1: /turf/template_noop | /area/template_noop
+25,1: /turf/template_noop | /area/template_noop
+26,1: /turf/template_noop | /area/template_noop
+27,1: /turf/template_noop | /area/template_noop
+28,1: /turf/template_noop | /area/template_noop
+29,1: /turf/template_noop | /area/template_noop
+30,1: /turf/template_noop | /area/template_noop
+31,1: /turf/template_noop | /area/template_noop
+32,1: /turf/template_noop | /area/template_noop
+
+[chunk 33 1 1]
+34,25: /turf/template_noop | /area/template_noop
+35,25: /turf/template_noop | /area/template_noop
+36,25: /turf/template_noop | /area/template_noop
+33,23: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+34,23: /turf/open/indestructible/dark | /area/virtual_domain
+35,23: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/indestructible/dark | /area/virtual_domain
+33,22: /turf/open/indestructible/dark | /area/virtual_domain
+34,22: /turf/open/indestructible/dark | /area/virtual_domain
+35,22: /turf/open/indestructible/dark | /area/virtual_domain
+34,21: /turf/open/indestructible/dark | /area/virtual_domain
+35,21: /turf/open/indestructible/dark | /area/virtual_domain
+33,20: /turf/open/indestructible/dark | /area/virtual_domain
+34,20: /turf/open/indestructible/dark | /area/virtual_domain
+35,20: /turf/open/indestructible/dark | /area/virtual_domain
+34,19: /turf/open/indestructible/dark | /area/virtual_domain
+35,19: /mob/living/basic/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+34,18: /turf/open/indestructible/dark | /area/virtual_domain
+33,17: /turf/open/indestructible/dark | /area/virtual_domain
+34,17: /turf/open/indestructible/dark | /area/virtual_domain
+36,17: /turf/template_noop | /area/template_noop
+33,16: /turf/open/indestructible/dark | /area/virtual_domain
+36,16: /turf/template_noop | /area/template_noop
+33,15: /obj/effect/mine/explosive/light | /turf/open/indestructible/dark | /area/virtual_domain
+36,15: /turf/template_noop | /area/template_noop
+33,14: /turf/open/indestructible/dark | /area/virtual_domain
+36,14: /turf/template_noop | /area/template_noop
+33,13: /turf/open/indestructible/dark | /area/virtual_domain
+34,13: /turf/open/indestructible/dark | /area/virtual_domain
+36,13: /turf/template_noop | /area/template_noop
+33,12: /turf/open/indestructible/dark | /area/virtual_domain
+34,12: /obj/effect/mob_spawn/corpse/human/zombie | /turf/open/indestructible/dark | /area/virtual_domain
+36,12: /turf/template_noop | /area/template_noop
+33,11: /turf/open/indestructible/dark | /area/virtual_domain
+34,11: /obj/effect/landmark/bitrunning/cache_spawn | /turf/open/indestructible/dark | /area/virtual_domain
+36,11: /turf/template_noop | /area/template_noop
+33,10: /turf/open/indestructible/dark | /area/virtual_domain
+34,10: /obj/effect/mob_spawn/corpse/human/cyber_police | /turf/open/indestructible/dark | /area/virtual_domain
+36,10: /turf/template_noop | /area/template_noop
+33,9: /turf/open/chasm | /area/virtual_domain
+34,9: /obj/structure/sign/warning/directional/east | /turf/open/chasm | /area/virtual_domain
+36,9: /turf/template_noop | /area/template_noop
+33,8: /turf/open/chasm | /area/virtual_domain
+34,8: /turf/open/chasm | /area/virtual_domain
+36,8: /turf/template_noop | /area/template_noop
+36,7: /turf/template_noop | /area/template_noop
+33,6: /turf/template_noop | /area/template_noop
+34,6: /turf/template_noop | /area/template_noop
+35,6: /turf/template_noop | /area/template_noop
+36,6: /turf/template_noop | /area/template_noop
+33,5: /turf/template_noop | /area/template_noop
+34,5: /turf/template_noop | /area/template_noop
+35,5: /turf/template_noop | /area/template_noop
+36,5: /turf/template_noop | /area/template_noop
+33,4: /turf/template_noop | /area/template_noop
+34,4: /turf/template_noop | /area/template_noop
+35,4: /turf/template_noop | /area/template_noop
+36,4: /turf/template_noop | /area/template_noop
+33,3: /turf/template_noop | /area/template_noop
+34,3: /turf/template_noop | /area/template_noop
+35,3: /turf/template_noop | /area/template_noop
+36,3: /turf/template_noop | /area/template_noop
+33,2: /turf/template_noop | /area/template_noop
+34,2: /turf/template_noop | /area/template_noop
+35,2: /turf/template_noop | /area/template_noop
+36,2: /turf/template_noop | /area/template_noop
+33,1: /turf/template_noop | /area/template_noop
+34,1: /turf/template_noop | /area/template_noop
+35,1: /turf/template_noop | /area/template_noop
+36,1: /turf/template_noop | /area/template_noop

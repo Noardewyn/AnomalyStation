@@ -1,0 +1,15 @@
+anomaly-map 1
+source _maps/map_files/T2Landmarks/T2Landmarks.dmm tg 1d99bd7f
+size 6 4 1
+chunk 32
+default /turf/open/indestructible | /area/station/hallway/primary/central
+
+[chunk 1 1 1]
+2,4: /obj/effect/landmark/start/assistant/override | /turf/open/indestructible | /area/station/hallway/primary/central
+3,4: /obj/effect/landmark{name = "marker"} | /turf/open/indestructible | /area/station/hallway/primary/central
+1,3: /obj/effect/landmark/start/janitor | /turf/open/indestructible | /area/station/hallway/primary/central
+2,2: /obj/effect/landmark/latejoin | /turf/open/indestructible | /area/station/hallway/primary/central
+4,2: /obj/effect/landmark/start{name = "Clown"} | /turf/open/indestructible | /area/station/hallway/primary/central
+1,1: /obj/effect/landmark/start/assistant | /turf/open/indestructible | /area/station/hallway/primary/central
+3,1: /obj/effect/landmark/start/assistant | /obj/effect/landmark/latejoin | /turf/open/indestructible | /area/station/hallway/primary/central
+5,1: /obj/effect/landmark/start | /turf/open/indestructible | /area/station/hallway/primary/central

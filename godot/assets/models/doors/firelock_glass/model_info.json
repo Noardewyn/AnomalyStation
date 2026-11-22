@@ -1,0 +1,42 @@
+{
+  "source": "assets/tg/icons/obj/doors/doorfireglass.png",
+  "state": "door_closed",
+  "rect": [
+    0,
+    0,
+    32,
+    32
+  ],
+  "source_sha256": "5b11c7ae1d98eae656219918760f82dfadf988857dca6c31b843c698d41940ca",
+  "parts": {
+    "Frame": {
+      "triangles": 176,
+      "open_offset_godot": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Door_Upper": {
+      "triangles": 356,
+      "open_offset_godot": [
+        0.0,
+        0.95,
+        0.0
+      ]
+    },
+    "Door_Lower": {
+      "triangles": 108,
+      "open_offset_godot": [
+        0.0,
+        -0.85,
+        0.0
+      ]
+    }
+  },
+  "triangles": 640,
+  "nearest": true,
+  "original_png_embedded": true,
+  "glass_alpha": 0.35,
+  "notes": "Closed tile; source direction 0. Rotate whole model for other cardinal directions."
+}

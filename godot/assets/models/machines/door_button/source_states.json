@@ -1,0 +1,271 @@
+{
+  "width": 32,
+  "height": 32,
+  "states": [
+    {
+      "name": "button_assembly",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 30,
+      "rects": [
+        [
+          320,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 31,
+      "rects": [
+        [
+          352,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-warning-open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 32,
+      "rects": [
+        [
+          384,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 33,
+      "rects": [
+        [
+          416,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-warning",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 34,
+      "rects": [
+        [
+          448,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-nopower",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 35,
+      "rects": [
+        [
+          480,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-warning-nopower",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 36,
+      "rects": [
+        [
+          512,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-light-mask",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 37,
+      "rects": [
+        [
+          544,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-board",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 38,
+      "rects": [
+        [
+          576,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-device",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 39,
+      "rects": [
+        [
+          608,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-signaler",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 40,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-success",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        2,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 41,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ],
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "button-overlay-error",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        2,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 43,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ],
+        [
+          128,
+          64,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

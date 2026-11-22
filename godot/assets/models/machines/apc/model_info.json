@@ -1,0 +1,3167 @@
+{
+  "apc_closed_base": {
+    "base_state": "apc0",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 218
+  },
+  "apc_charging": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-1",
+      "apco3-1",
+      "apco0-3",
+      "apco1-3",
+      "apco2-3"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.004",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-1"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.009",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-1"
+      },
+      {
+        "name": "Equipment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Equipment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco0-3"
+      },
+      {
+        "name": "Lighting_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lighting_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco1-3"
+      },
+      {
+        "name": "Environment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Environment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco2-3"
+      }
+    ],
+    "triangles": 230
+  },
+  "apc_charged": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-1",
+      "apco3-2",
+      "apco0-3",
+      "apco1-3",
+      "apco2-3"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.004",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-1"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.010",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-2"
+      },
+      {
+        "name": "Equipment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Equipment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco0-3"
+      },
+      {
+        "name": "Lighting_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lighting_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco1-3"
+      },
+      {
+        "name": "Environment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Environment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco2-3"
+      }
+    ],
+    "triangles": 230
+  },
+  "apc_not_charging": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-1",
+      "apco3-0",
+      "apco0-3",
+      "apco1-3",
+      "apco2-3"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.004",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-1"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.011",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-0"
+      },
+      {
+        "name": "Equipment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Equipment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco0-3"
+      },
+      {
+        "name": "Lighting_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lighting_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco1-3"
+      },
+      {
+        "name": "Environment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Environment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco2-3"
+      }
+    ],
+    "triangles": 230
+  },
+  "apc_unlocked": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-0",
+      "apco3-2",
+      "apco0-3",
+      "apco1-3",
+      "apco2-3"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.009",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-0"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.010",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-2"
+      },
+      {
+        "name": "Equipment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Equipment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco0-3"
+      },
+      {
+        "name": "Lighting_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lighting_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco1-3"
+      },
+      {
+        "name": "Environment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Environment_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco2-3"
+      }
+    ],
+    "triangles": 230
+  },
+  "apc_channels_off": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-1",
+      "apco3-0",
+      "apco0-0",
+      "apco1-0",
+      "apco2-0"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.004",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-1"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.011",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-0"
+      },
+      {
+        "name": "Equipment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Equipment_Overlay.016",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco0-0"
+      },
+      {
+        "name": "Lighting_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lighting_Overlay.016",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco1-0"
+      },
+      {
+        "name": "Environment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Environment_Overlay.016",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco2-0"
+      }
+    ],
+    "triangles": 230
+  },
+  "apc_channels_auto_off": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-1",
+      "apco3-0",
+      "apco0-1",
+      "apco1-1",
+      "apco2-1"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.004",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-1"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.011",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-0"
+      },
+      {
+        "name": "Equipment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Equipment_Overlay.017",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco0-1"
+      },
+      {
+        "name": "Lighting_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lighting_Overlay.017",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco1-1"
+      },
+      {
+        "name": "Environment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Environment_Overlay.017",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco2-1"
+      }
+    ],
+    "triangles": 230
+  },
+  "apc_channels_manual_on": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-1",
+      "apco3-2",
+      "apco0-2",
+      "apco1-2",
+      "apco2-2"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.004",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-1"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.010",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-2"
+      },
+      {
+        "name": "Equipment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Equipment_Overlay.018",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco0-2"
+      },
+      {
+        "name": "Lighting_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Lighting_Overlay.018",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco1-2"
+      },
+      {
+        "name": "Environment_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Environment_Overlay.018",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco2-2"
+      }
+    ],
+    "triangles": 230
+  },
+  "apc_breaker_off": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcox-1",
+      "apco3-0"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lock_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Lock_Overlay.004",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcox-1"
+      },
+      {
+        "name": "Charge_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Charge_Overlay.011",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apco3-0"
+      }
+    ],
+    "triangles": 224
+  },
+  "apc_open_cell": {
+    "base_state": "apc2",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 218
+  },
+  "apc_open_empty": {
+    "base_state": "apc1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 206
+  },
+  "apc_cover_removed_cell": {
+    "base_state": "apc2-nocover",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 36,
+        "shared_mesh": "Lined_Enclosure.015",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 72
+  },
+  "apc_cover_removed_empty": {
+    "base_state": "apc1-nocover",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 36,
+        "shared_mesh": "Lined_Enclosure.015",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 60
+  },
+  "apc_maintenance": {
+    "base_state": "apcmaint",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.022",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.017",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 194
+  },
+  "apc_wiring_open": {
+    "base_state": "apcewires",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 218
+  },
+  "apc_broken": {
+    "base_state": "apc-b",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.024",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Damaged_Wiring",
+        "triangles": 44,
+        "shared_mesh": "Damaged_Wiring.002",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 64,
+        "shared_mesh": "Main_Cover.019",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.019",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.063",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 266
+  },
+  "apc_broken_removed_cell": {
+    "base_state": "apc2-b-nocover",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 36,
+        "shared_mesh": "Lined_Enclosure.015",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.024",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 72
+  },
+  "apc_broken_removed_empty": {
+    "base_state": "apc1-b-nocover",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 36,
+        "shared_mesh": "Lined_Enclosure.015",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.024",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 60
+  },
+  "apc_hacked_flicker": {
+    "base_state": "apc0",
+    "overlays": [
+      "apcemag"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Enclosure",
+        "triangles": 58,
+        "shared_mesh": "Lined_Enclosure.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Interior_Backplate",
+        "triangles": 12,
+        "shared_mesh": "Interior_Backplate.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Control_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Control_Board.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Control_Housing",
+        "triangles": 28,
+        "shared_mesh": "Lower_Control_Housing.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wire_Terminal_Block",
+        "triangles": 12,
+        "shared_mesh": "Wire_Terminal_Block.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Wiring_Cover",
+        "triangles": 12,
+        "shared_mesh": "Wiring_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Wiring_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Main_Cover",
+        "triangles": 48,
+        "shared_mesh": "Main_Cover.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Back",
+        "triangles": 12,
+        "shared_mesh": "Display_Back.003",
+        "materials": [
+          "APC_Housing_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.047",
+        "materials": [
+          "APC_Display_Glass_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Hacked_Overlay",
+        "triangles": 12,
+        "shared_mesh": "Hacked_Overlay.003",
+        "materials": [
+          "APC_Overlay_Original.003"
+        ],
+        "parent": "Main_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "apcemag"
+      }
+    ],
+    "triangles": 230
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "source": "assets/tg/icons/obj/doors/blastdoor.png",
+  "state": "closed",
+  "rect": [
+    64,
+    96,
+    32,
+    32
+  ],
+  "source_sha256": "812424b7a564ec37a89d288f0a58d0af1afd76be9e93cf0af337f0b6bd729a37",
+  "parts": {
+    "Door_Left": {
+      "triangles": 12,
+      "open_offset_godot": [
+        -1.05,
+        0.0,
+        0.0
+      ]
+    },
+    "Door_Right": {
+      "triangles": 12,
+      "open_offset_godot": [
+        1.05,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "triangles": 24,
+  "nearest": true,
+  "original_png_embedded": true,
+  "glass_alpha": null,
+  "notes": "Closed tile; source direction 0. Rotate whole model for other cardinal directions."
+}

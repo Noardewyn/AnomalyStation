@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="548" viewBox="0 0 680 548" role="img"><title>Deathmatch arena: the floor plan</title><desc>Top-down plan of the 76 by 54 tile deathmatch arena in space: two-tile reinforced walls, eight rooms with distinct floor materials, cover partitions, reinforced and colored doors, the maintenance ring, spawns, weapon pads, mech bays and healing stations. One square is 8 px = 1 tile; north is up.</desc>
+<style>
+svg{--surface-2:#ffffff;--border-strong:#b4b2a9;--border-stronger:#5f5e5a;--bg-warning:#faeeda;background:#ffffff;font-family:sans-serif}
+.th{font-size:14px;font-weight:500;fill:#2c2c2a}.ts{font-size:12px;fill:#5f5e5a}
+</style>
+<rect x="36" y="16" width="608" height="432" fill="#378ADD" opacity="0.12"/>
+<text class="ts" x="636" y="32" text-anchor="end">Space</text>
+<g fill="#888780" opacity="0.6">
+<rect x="52" y="32" width="40" height="392"/><rect x="52" y="384" width="568" height="40"/><rect x="580" y="32" width="40" height="392"/>
+<rect x="60" y="56" width="48" height="40"/><rect x="60" y="128" width="48" height="40"/><rect x="236" y="368" width="40" height="40"/><rect x="428" y="368" width="40" height="40"/><rect x="564" y="200" width="48" height="40"/><rect x="508" y="56" width="104" height="40"/>
+<rect x="172" y="160" width="40" height="224"/><rect x="180" y="344" width="72" height="40"/>
+<rect x="76" y="32" width="104" height="88"/><rect x="252" y="32" width="144" height="64"/><rect x="284" y="64" width="80" height="64"/><rect x="428" y="32" width="112" height="96"/><rect x="76" y="104" width="88" height="96"/>
+<polygon points="285,128 411,128 444,161 444,255 411,288 285,288 252,255 252,161"/>
+<circle cx="532" cy="216" r="64"/>
+<rect x="364" y="320" width="192" height="80"/><rect x="476" y="264" width="80" height="88"/><rect x="220" y="328" width="80" height="72"/>
+<rect x="148" y="40" width="136" height="56"/><rect x="300" y="96" width="48" height="64"/><rect x="364" y="48" width="96" height="40"/><rect x="492" y="96" width="48" height="88"/><rect x="412" y="192" width="91" height="56"/><rect x="364" y="256" width="48" height="96"/><rect x="132" y="152" width="152" height="40"/><rect x="316" y="256" width="40" height="112"/><rect x="268" y="336" width="128" height="48"/><rect x="100" y="96" width="40" height="32"/><rect x="492" y="256" width="40" height="32"/>
+</g>
+<g fill="var(--bg-warning)" stroke="#BA7517" stroke-width="0.8" stroke-dasharray="3 2">
+<rect x="68" y="48" width="8" height="360"/><rect x="68" y="400" width="536" height="8"/><rect x="596" y="48" width="8" height="360"/>
+<rect x="76" y="72" width="16" height="8"/><rect x="76" y="144" width="16" height="8"/><rect x="252" y="384" width="8" height="16"/><rect x="444" y="384" width="8" height="16"/><rect x="580" y="216" width="16" height="8"/><rect x="524" y="72" width="72" height="8"/>
+<rect x="188" y="176" width="8" height="192"/><rect x="196" y="360" width="40" height="8"/>
+</g>
+<g fill="var(--surface-2)" stroke="var(--border-strong)" stroke-width="0.5">
+<rect x="164" y="56" width="104" height="24"/><rect x="316" y="112" width="16" height="32"/><rect x="380" y="64" width="64" height="8"/><rect x="508" y="112" width="16" height="56"/><rect x="428" y="208" width="59" height="24"/><rect x="380" y="272" width="16" height="64"/><rect x="148" y="168" width="120" height="8"/><rect x="332" y="272" width="8" height="80"/><rect x="284" y="352" width="96" height="16"/><rect x="116" y="104" width="8" height="16"/><rect x="508" y="264" width="8" height="16"/>
+</g>
+<g stroke="var(--border-stronger)" stroke-width="0.5">
+<rect x="92" y="48" width="72" height="56" fill="#97C459" fill-opacity="0.45"/>
+<polygon points="268,48 380,48 380,80 348,80 348,112 300,112 300,80 268,80" fill="#85B7EB" fill-opacity="0.45"/>
+<rect x="444" y="48" width="80" height="64" fill="#EF9F27" fill-opacity="0.45"/>
+<rect x="92" y="120" width="56" height="64" fill="#9FE1CB" fill-opacity="0.5"/>
+<polygon points="292,144 404,144 428,168 428,248 404,272 292,272 268,248 268,168" fill="#B4B2A9" fill-opacity="0.45"/>
+<circle cx="532" cy="216" r="48" fill="#F0997B" fill-opacity="0.45"/>
+<polygon points="492,280 540,280 540,384 380,384 380,336 492,336" fill="#AFA9EC" fill-opacity="0.45"/>
+<rect x="236" y="344" width="48" height="40" fill="#5DCAA5" fill-opacity="0.45"/>
+</g>
+<g fill="#444441"><rect x="300" y="176" width="32" height="8"/><rect x="340" y="200" width="16" height="16"/><rect x="468" y="360" width="16" height="24"/></g>
+<g fill="#888780" stroke="#444441" stroke-width="0.5"><rect x="300" y="232" width="32" height="8"/><rect x="388" y="376" width="32" height="8"/><rect x="508" y="184" width="16" height="8"/><rect x="108" y="96" width="40" height="8"/></g>
+<g fill="#378ADD"><rect x="364" y="176" width="32" height="8"/><rect x="364" y="232" width="32" height="8"/><rect x="492" y="304" width="32" height="8"/><rect x="540" y="232" width="16" height="8"/><rect x="316" y="96" width="32" height="8"/><rect x="100" y="144" width="32" height="8"/></g>
+<g fill="#5F5E5A"><rect x="458" y="58" width="6" height="6"/><rect x="502" y="58" width="6" height="6"/><rect x="458" y="96" width="6" height="6"/><rect x="502" y="96" width="6" height="6"/></g>
+<g fill="#A32D2D"><rect x="164" y="56" width="8" height="24"/><rect x="316" y="136" width="16" height="8"/><rect x="508" y="160" width="16" height="8"/><rect x="428" y="208" width="8" height="24"/><rect x="380" y="328" width="16" height="8"/><rect x="372" y="352" width="8" height="16"/><rect x="116" y="104" width="8" height="16"/><rect x="508" y="264" width="8" height="16"/></g>
+<g fill="var(--surface-2)" stroke="#185FA5" stroke-width="1.5"><rect x="261" y="57" width="6" height="22"/><rect x="317" y="113" width="14" height="6"/><rect x="381" y="65" width="6" height="6"/><rect x="437" y="65" width="6" height="6"/><rect x="509" y="113" width="14" height="6"/><rect x="480" y="209" width="6" height="22"/><rect x="381" y="273" width="14" height="6"/><rect x="149" y="169" width="6" height="6"/><rect x="261" y="169" width="6" height="6"/><rect x="333" y="273" width="6" height="6"/><rect x="285" y="353" width="6" height="14"/></g>
+<text class="th" x="128" y="88" text-anchor="middle">Spawn</text>
+<text class="th" x="324" y="61" text-anchor="middle">Bridge</text><text class="ts" x="324" y="75" text-anchor="middle">14x8 · h2</text>
+<text class="th" x="484" y="78" text-anchor="middle">Bar</text><text class="ts" x="484" y="91" text-anchor="middle">10x8 · h2</text>
+<text class="th" x="120" y="134" text-anchor="middle">Medbay</text><text class="ts" x="120" y="168" text-anchor="middle">7x8 · h2</text>
+<text class="th" x="348" y="157" text-anchor="middle">Atrium</text><text class="ts" x="348" y="170" text-anchor="middle">20x16 · h5</text>
+<text class="th" x="526" y="210" text-anchor="middle">Engineering</text><text class="ts" x="526" y="225" text-anchor="middle">12x12 · h3</text>
+<text class="th" x="440" y="352" text-anchor="middle">Cargo</text><text class="ts" x="440" y="366" text-anchor="middle">20x13 · h4</text>
+<text class="th" x="260" y="360" text-anchor="middle">Server</text><text class="ts" x="260" y="375" text-anchor="middle">6x5 · h2</text>
+<g fill="#639922"><circle cx="100" cy="57" r="3"/><circle cx="114" cy="57" r="3"/><circle cx="128" cy="57" r="3"/><circle cx="142" cy="57" r="3"/><circle cx="156" cy="57" r="3"/><circle cx="100" cy="69" r="3"/><circle cx="114" cy="69" r="3"/><circle cx="128" cy="69" r="3"/><circle cx="142" cy="69" r="3"/><circle cx="156" cy="69" r="3"/></g>
+<g fill="#D85A30"><circle cx="284" cy="200" r="4"/><circle cx="412" cy="200" r="4"/><circle cx="284" cy="256" r="4"/><circle cx="412" cy="256" r="4"/><circle cx="348" cy="256" r="4"/><circle cx="392" cy="348" r="4"/><circle cx="456" cy="378" r="4"/><circle cx="528" cy="292" r="4"/><circle cx="540" cy="190" r="4"/><circle cx="510" cy="250" r="4"/><circle cx="280" cy="64" r="4"/><circle cx="368" cy="64" r="4"/><circle cx="472" cy="54" r="4"/><circle cx="516" cy="105" r="4"/><circle cx="100" cy="176" r="4"/><circle cx="330" cy="360" r="4"/><circle cx="72" cy="260" r="4"/><circle cx="300" cy="404" r="4"/><circle cx="600" cy="140" r="4"/><circle cx="192" cy="280" r="4"/></g>
+<g fill="#1D9E75"><rect x="494" y="343" width="14" height="14" rx="2"/><rect x="544" y="244" width="14" height="14" rx="2"/></g>
+<g fill="#D4537E"><rect x="155" y="96" width="6" height="6"/><rect x="270" y="71" width="6" height="6"/><rect x="514" y="50" width="6" height="6"/><rect x="398" y="148" width="6" height="6"/><rect x="292" y="262" width="6" height="6"/><rect x="556" y="190" width="6" height="6"/><rect x="384" y="340" width="6" height="6"/><rect x="95" y="123" width="6" height="6"/><rect x="139" y="123" width="6" height="6"/><rect x="95" y="160" width="6" height="6"/><rect x="274" y="376" width="6" height="6"/><rect x="210" y="58" width="6" height="6"/><rect x="511" y="140" width="6" height="6"/><rect x="300" y="355" width="6" height="6"/><rect x="69" y="330" width="6" height="6"/></g>
+<rect x="36" y="462" width="14" height="10" fill="#378ADD" opacity="0.25"/><text class="ts" x="56" y="471">Space</text>
+<rect x="190" y="462" width="14" height="10" fill="#888780" opacity="0.6"/><text class="ts" x="210" y="471">Reinforced wall, 2 thick</text>
+<rect x="374" y="462" width="14" height="10" fill="#EF9F27" fill-opacity="0.45" stroke="var(--border-stronger)" stroke-width="0.5"/><text class="ts" x="394" y="471">Floor color = material</text>
+<rect x="540" y="462" width="14" height="10" fill="var(--bg-warning)" stroke="#BA7517" stroke-width="0.8" stroke-dasharray="3 2"/><text class="ts" x="560" y="471">Maint (h1)</text>
+<rect x="36" y="485" width="14" height="8" fill="#444441"/><text class="ts" x="56" y="493">Partition, tall</text>
+<rect x="190" y="485" width="14" height="8" fill="#888780" stroke="#444441" stroke-width="0.5"/><text class="ts" x="210" y="493">Partition, 1 level</text>
+<rect x="374" y="485" width="14" height="8" fill="#378ADD"/><text class="ts" x="394" y="493">Window partition</text>
+<rect x="540" y="484" width="10" height="10" fill="#A32D2D"/><text class="ts" x="560" y="493">Reinforced door</text>
+<rect x="37" y="507" width="8" height="8" fill="var(--surface-2)" stroke="#185FA5" stroke-width="1.5"/><text class="ts" x="56" y="515">Colored airlock</text>
+<circle cx="197" cy="511" r="4" fill="#639922"/><text class="ts" x="210" y="515">Player spawn</text>
+<circle cx="381" cy="511" r="4" fill="#D85A30"/><text class="ts" x="394" y="515">Weapon pad</text>
+<rect x="540" y="505" width="12" height="12" rx="2" fill="#1D9E75"/><text class="ts" x="560" y="515">Mech bay</text>
+<rect x="41" y="530" width="6" height="6" fill="#D4537E"/><text class="ts" x="56" y="537">Healing station</text>
+<rect x="190" y="531" width="14" height="4" fill="var(--surface-2)" stroke="var(--border-strong)" stroke-width="0.5"/><text class="ts" x="210" y="537">Corridor (h2)</text>
+</svg>

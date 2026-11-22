@@ -1,0 +1,56 @@
+anomaly-map 1
+source _maps/shuttles/ferry/ferry_fancy.dmm tg 1d99bd7f
+size 13 5 1
+chunk 32
+default /turf/closed/wall/mineral/titanium | /area/shuttle/transport
+
+[chunk 1 1 1]
+1,5: /turf/template_noop | /area/template_noop
+2,5: /turf/template_noop | /area/template_noop
+3,5: /turf/template_noop | /area/template_noop
+4,5: /turf/template_noop | /area/template_noop
+6,5: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/transport
+9,5: /obj/machinery/door/airlock/external/ruin | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+12,5: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/transport
+1,4: /turf/template_noop | /area/template_noop
+2,4: /obj/machinery/power/shuttle_engine/propulsion/left{dir = 8} | /turf/open/floor/plating/airless | /area/shuttle/transport
+3,4: /obj/machinery/power/shuttle_engine/heater{dir = 8} | /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/plating/airless | /area/shuttle/transport
+6,4: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+7,4: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+8,4: /obj/machinery/light/directional/north | /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+9,4: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+10,4: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+11,4: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+12,4: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+13,4: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/transport
+1,3: /obj/machinery/power/shuttle_engine/propulsion/left{dir = 8} | /turf/open/floor/plating/airless | /area/shuttle/transport
+2,3: /obj/machinery/power/shuttle_engine/heater{dir = 8} | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/plating/airless | /area/shuttle/transport
+3,3: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+4,3: /obj/machinery/light/small/directional/south | /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+5,3: /obj/machinery/door/airlock/titanium | /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+6,3: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+7,3: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+8,3: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+9,3: /obj/machinery/computer/shuttle/ferry/request{dir = 8} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+10,3: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+11,3: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+12,3: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+13,3: /obj/machinery/door/airlock/titanium | /obj/docking_port/mobile{dir = 8; shuttle_id = "ferry"; name = "ferry shuttle"; preferred_direction = 4} | /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+1,2: /turf/template_noop | /area/template_noop
+2,2: /obj/machinery/power/shuttle_engine/propulsion/left{dir = 8} | /turf/open/floor/plating/airless | /area/shuttle/transport
+3,2: /obj/machinery/power/shuttle_engine/heater{dir = 8} | /obj/structure/window/reinforced/spawner/directional/north{pixel_y = 1} | /turf/open/floor/plating/airless | /area/shuttle/transport
+6,2: /obj/structure/chair/comfy/shuttle{dir = 1} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+7,2: /obj/structure/chair/comfy/shuttle{dir = 1} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+8,2: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+9,2: /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+10,2: /obj/machinery/light/directional/south | /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+11,2: /obj/structure/chair/comfy/shuttle{dir = 1} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+12,2: /obj/structure/chair/comfy/shuttle{dir = 1} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/shuttle/transport
+13,2: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/transport
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+6,1: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/transport
+9,1: /obj/machinery/door/airlock/external/ruin | /turf/open/floor/mineral/plastitanium/pod/light | /area/shuttle/transport
+12,1: /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/shuttle/transport

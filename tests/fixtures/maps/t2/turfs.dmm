@@ -1,0 +1,84 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: ChangeTurf, ScrapeAway and the baseturfs stacks of the loaded turfs (M3 T2, ChangeTurfTests.cs)
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"f" = (
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+"p" = (
+/turf/open/floor/plating,
+/area/station/hallway/primary/central)
+"w" = (
+/turf/closed/wall,
+/area/station/hallway/primary/central)
+"r" = (
+/turf/closed/wall/r_wall,
+/area/station/hallway/primary/central)
+"s" = (
+/turf/open/space/basic,
+/area/station/hallway/primary/central)
+"n" = (
+/turf/open/floor/iron,
+/area/space/nearstation)
+"m" = (
+/obj/item/crowbar,
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+"x" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"l" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+
+(1,1,1) = {"
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+f
+m
+a
+a
+"}
+(3,1,1) = {"
+p
+x
+a
+a
+"}
+(4,1,1) = {"
+r
+l
+a
+a
+"}
+(5,1,1) = {"
+w
+a
+a
+a
+"}
+(6,1,1) = {"
+s
+f
+a
+a
+"}
+(7,1,1) = {"
+n
+f
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+a
+"}

@@ -1,0 +1,259 @@
+[
+  {
+    "file": "docs\\art\\quality\\asset_quality_09.png",
+    "models": [
+      "washbasin",
+      "kitchen_sink",
+      "wall_shower",
+      "toilet",
+      "urinal"
+    ],
+    "views": [
+      "front",
+      "right",
+      "back",
+      "three_quarter"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\asset_quality_15.png",
+    "models": [
+      "metal_stool",
+      "office_chair_dark",
+      "office_chair_white",
+      "comfy_chair",
+      "bar_stool"
+    ],
+    "views": [
+      "front",
+      "right",
+      "back",
+      "three_quarter"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\asset_quality_16.png",
+    "models": [
+      "wooden_chair",
+      "wooden_chair_wings"
+    ],
+    "views": [
+      "front",
+      "right",
+      "back",
+      "three_quarter"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\machinery_and_tanks.png",
+    "models": [
+      "pacman_generator",
+      "disposal_unit",
+      "water_tank",
+      "portable_canister_generic"
+    ],
+    "views": [
+      "front",
+      "right",
+      "back",
+      "three_quarter"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\tank_variants_1.png",
+    "models": [
+      "fuel_tank",
+      "portable_canister_air",
+      "portable_canister_oxygen",
+      "portable_canister_plasma"
+    ],
+    "views": [
+      "front",
+      "right",
+      "back",
+      "three_quarter"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\tank_variants_2.png",
+    "models": [
+      "portable_canister_anesthetic_mix",
+      "portable_canister_carbon_dioxide",
+      "portable_canister_nitrogen",
+      "portable_canister_nitrous_oxide",
+      "portable_canister_water_vapor"
+    ],
+    "views": [
+      "front",
+      "right",
+      "back",
+      "three_quarter"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_01.png",
+    "models": [
+      "vending_cola_machine",
+      "vending_magivend",
+      "vending_runicvendor",
+      "vending_atmosdrobe",
+      "vending_bardrobe",
+      "vending_boozeomat",
+      "vending_cargodrobe",
+      "vending_cart"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_02.png",
+    "models": [
+      "vending_centdrobe",
+      "vending_chapdrobe",
+      "vending_chefdrobe",
+      "vending_chemdrobe",
+      "vending_cigs",
+      "vending_clothes",
+      "vending_coffee",
+      "vending_cola_black"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_03.png",
+    "models": [
+      "vending_coroner_drobe",
+      "vending_curadrobe",
+      "vending_custom",
+      "vending_cytopro",
+      "vending_detdrobe",
+      "vending_dinnerware",
+      "vending_drug",
+      "vending_engi"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_04.png",
+    "models": [
+      "vending_engidrobe",
+      "vending_engivend",
+      "vending_games",
+      "vending_genedrobe",
+      "vending_generic",
+      "vending_greed",
+      "vending_hotdog_vendor",
+      "vending_hydrobe"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_05.png",
+    "models": [
+      "vending_janidrobe",
+      "vending_lawdrobe",
+      "vending_liberationstation",
+      "vending_med",
+      "vending_medidrobe",
+      "vending_modularpc",
+      "vending_nt_donk",
+      "vending_nutri"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_06.png",
+    "models": [
+      "vending_parts",
+      "vending_pwr_game",
+      "vending_red_cola",
+      "vending_robodrobe",
+      "vending_robotics",
+      "vending_scidrobe",
+      "vending_sec",
+      "vending_secdrobe"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_07.png",
+    "models": [
+      "vending_seeds",
+      "vending_shamblers_juice",
+      "vending_snack",
+      "vending_snackblue",
+      "vending_snackdonk",
+      "vending_snackgreen",
+      "vending_snackorange",
+      "vending_snackteal"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_08.png",
+    "models": [
+      "vending_soda",
+      "vending_sovietsoda",
+      "vending_space_up",
+      "vending_starkist",
+      "vending_sustenance",
+      "vending_sustenance_labor",
+      "vending_syndi",
+      "vending_theater"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  },
+  {
+    "file": "docs\\art\\quality\\vending\\vending_views_09.png",
+    "models": [
+      "vending_tool",
+      "vending_virodrobe",
+      "vending_wallmed"
+    ],
+    "views": [
+      "front",
+      "front_right",
+      "rear",
+      "left"
+    ]
+  }
+]

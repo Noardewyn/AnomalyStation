@@ -1,0 +1,163 @@
+{
+  "light_switch_nopower": {
+    "base_state": "light-nopower",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 328,
+        "shared_mesh": "Continuous_Housing.090",
+        "materials": [
+          "Light_Switch_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rocker",
+        "triangles": 12,
+        "shared_mesh": "Rocker.015",
+        "materials": [
+          "Light_Switch_Housing_Original.005"
+        ],
+        "parent": "Rocker_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 340
+  },
+  "light_switch_off": {
+    "base_state": "light-off",
+    "overlays": [
+      "light-emissive-off"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 328,
+        "shared_mesh": "Continuous_Housing.090",
+        "materials": [
+          "Light_Switch_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rocker",
+        "triangles": 12,
+        "shared_mesh": "Rocker.016",
+        "materials": [
+          "Light_Switch_Housing_Original.005"
+        ],
+        "parent": "Rocker_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rocker_Emission_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Emission_Overlay.072",
+        "materials": [
+          "Light_Switch_Emission_Overlay_light-off.010"
+        ],
+        "parent": "Rocker_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 356
+  },
+  "light_switch_on": {
+    "base_state": "light-on",
+    "overlays": [
+      "light-emissive-on"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Housing",
+        "triangles": 328,
+        "shared_mesh": "Continuous_Housing.090",
+        "materials": [
+          "Light_Switch_Housing_Original.005"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rocker",
+        "triangles": 12,
+        "shared_mesh": "Rocker.017",
+        "materials": [
+          "Light_Switch_Housing_Original.005"
+        ],
+        "parent": "Rocker_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Frame_Emission_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Emission_Overlay.073",
+        "materials": [
+          "Light_Switch_Emission_Overlay_light-on.023",
+          "Light_Switch_Emission_Overlay_light-on.024"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rocker_Emission_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Emission_Overlay.074",
+        "materials": [
+          "Light_Switch_Emission_Overlay_light-on.026"
+        ],
+        "parent": "Rocker_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 380
+  }
+}

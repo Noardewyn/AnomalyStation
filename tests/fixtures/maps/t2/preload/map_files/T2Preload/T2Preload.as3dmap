@@ -1,0 +1,18 @@
+anomaly-map 1
+source _maps/map_files/T2Preload/T2Preload.dmm tg 1d99bd7f
+size 5 3 1
+chunk 32
+default /turf/open/indestructible | /area/station/hallway/primary/central
+
+[chunk 1 1 1]
+2,3: /obj/t2_probe{text_var = "hello world"; num_var = 42; list_var = list("a", 2, list("n" = 1)); any_var = null; path_var = /obj/item/crowbar} | /turf/open/indestructible | /area/station/hallway/primary/central
+3,3: /obj/t2_probe{text_var = "hello world"; num_var = 42; list_var = list("a", 2, list("n" = 1)); any_var = null; path_var = /obj/item/crowbar} | /turf/open/indestructible | /area/station/hallway/primary/central
+4,3: /obj/t2_probe | /turf/open/indestructible | /area/station/hallway/primary/central
+5,3: /obj/t2_probe_nonew{text_var = "hello world"; num_var = 42; list_var = list("a", 2, list("n" = 1)); any_var = null; path_var = /obj/item/crowbar} | /turf/open/indestructible | /area/station/hallway/primary/central
+2,2: /obj/t2_probe{num_var = 1} | /obj/t2_probe | /turf/open/indestructible | /area/station/hallway/primary/central
+3,2: /obj/t2_probe{num_var = -1.5; text_var = ""; any_var = null; list_var = list("k" = list(3, 4), "j" = "v")} | /turf/open/indestructible | /area/station/hallway/primary/central
+5,2: /obj/item/crowbar{name = "mapped crowbar"; desc = "A mapped description."; pixel_x = -4; pixel_y = 3; dir = 4; color = "#aa0000"; alpha = 128; layer = 5.5} | /turf/open/indestructible | /area/station/hallway/primary/central
+2,1: /turf/open/space/basic | /area/space
+3,1: /obj/t2_probe{num_var = 1e+006} | /turf/open/indestructible | /area/station/hallway/primary/central
+4,1: /turf/open/space/basic | /area/space
+5,1: /turf/open/space/basic | /area/space

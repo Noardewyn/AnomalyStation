@@ -1,0 +1,47 @@
+{
+  "gravity_generator": {
+    "triangles": 996,
+    "meshes": 6,
+    "notes": "Fixed 3x3 tile assembly; separate active field ring. Source off_1..off_9 and activated.",
+    "parts": [
+      "Generator_Left_Coil",
+      "Generator_Left_Brace",
+      "Generator_Right_Coil",
+      "Generator_Right_Brace",
+      "Generator_Center",
+      "Active_Field_Ring"
+    ]
+  },
+  "tank_dispenser": {
+    "triangles": 840,
+    "meshes": 14,
+    "notes": "Separate inventory meshes. Show min(oxygen,4) and min(plasma,5) cans; capacity 10 each. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Dispenser_Cabinet",
+      "Plasma_Fixed_Reservoir",
+      "Plasma_Retaining_Bands",
+      "Oxygen_Fixed_Reservoir",
+      "Oxygen_Retaining_Bands",
+      "Oxygen_Tank_1",
+      "Oxygen_Tank_2",
+      "Oxygen_Tank_3",
+      "Oxygen_Tank_4",
+      "Plasma_Tank_1",
+      "Plasma_Tank_2",
+      "Plasma_Tank_3",
+      "Plasma_Tank_4",
+      "Plasma_Tank_5"
+    ]
+  },
+  "temperature_control_unit": {
+    "triangles": 100,
+    "meshes": 4,
+    "notes": "Unary gas heater/cooler, not a power generator or pressure pump. Separate tintable meter and pipe.",
+    "parts": [
+      "Thermomachine_Body",
+      "Front_Conduit",
+      "Temperature_Indicator",
+      "Network_Pipe"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "png": "godot/assets/tg/icons/obj/machines/atmospherics/unary_devices.png",
+  "dmi": "..\\tgstation\\icons\\obj\\machines\\atmospherics\\unary_devices.dmi",
+  "png_sha256": "d2e14b60bd48d4d5ded93646684dec9da1d7830ef63fb1fa7bbf0dd10342ab7d",
+  "pixels_match_dmi": true,
+  "tile_size": [
+    32,
+    32
+  ]
+}

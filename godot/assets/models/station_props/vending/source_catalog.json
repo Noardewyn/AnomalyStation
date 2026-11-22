@@ -1,0 +1,4472 @@
+{
+  "source_png": "godot\\assets\\tg\\icons\\obj\\machines\\vending.png",
+  "png_sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66",
+  "pixels_equal_original_dmi": true,
+  "tile_px": [
+    32,
+    32
+  ],
+  "sheet_px": [
+    800,
+    800
+  ],
+  "state_count": 287,
+  "vendors": {
+    "parts": {
+      "state": "parts",
+      "metadata": {
+        "name": "parts",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          28,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 522,
+        "rects": [
+          [
+            704,
+            640,
+            32,
+            32
+          ],
+          [
+            736,
+            640,
+            32,
+            32
+          ],
+          [
+            768,
+            640,
+            32,
+            32
+          ],
+          [
+            0,
+            672,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/assist",
+          "light_mask": "parts-light-mask",
+          "panel_type": "panel10"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "theater": {
+      "state": "theater",
+      "metadata": {
+        "name": "theater",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          45,
+          1,
+          4,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 291,
+        "rects": [
+          [
+            512,
+            352,
+            32,
+            32
+          ],
+          [
+            544,
+            352,
+            32,
+            32
+          ],
+          [
+            576,
+            352,
+            32,
+            32
+          ],
+          [
+            608,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/autodrobe",
+          "light_mask": "theater-light-mask",
+          "panel_type": "panel16"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "boozeomat": {
+      "state": "boozeomat",
+      "metadata": {
+        "name": "boozeomat",
+        "dirs": 1,
+        "frames": 8,
+        "delays": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 196,
+        "rects": [
+          [
+            672,
+            224,
+            32,
+            32
+          ],
+          [
+            704,
+            224,
+            32,
+            32
+          ],
+          [
+            736,
+            224,
+            32,
+            32
+          ],
+          [
+            768,
+            224,
+            32,
+            32
+          ],
+          [
+            0,
+            256,
+            32,
+            32
+          ],
+          [
+            32,
+            256,
+            32,
+            32
+          ],
+          [
+            64,
+            256,
+            32,
+            32
+          ],
+          [
+            96,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/boozeomat",
+          "light_mask": "boozeomat-light-mask",
+          "panel_type": "panel22"
+        },
+        {
+          "type": "/obj/machinery/vending/boozeomat/syndicate",
+          "light_mask": "boozeomat-light-mask",
+          "panel_type": "panel22"
+        }
+      ],
+      "opaque_bbox": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    "cart": {
+      "state": "cart",
+      "metadata": {
+        "name": "cart",
+        "dirs": 1,
+        "frames": 2,
+        "delays": [
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 284,
+        "rects": [
+          [
+            288,
+            352,
+            32,
+            32
+          ],
+          [
+            320,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cart",
+          "light_mask": "cart-light-mask",
+          "panel_type": "panel6"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        30,
+        31
+      ]
+    },
+    "cigs": {
+      "state": "cigs",
+      "metadata": {
+        "name": "cigs",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          36,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 77,
+        "rects": [
+          [
+            64,
+            96,
+            32,
+            32
+          ],
+          [
+            96,
+            96,
+            32,
+            32
+          ],
+          [
+            128,
+            96,
+            32,
+            32
+          ],
+          [
+            160,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cigarette",
+          "light_mask": "cigs-light-mask",
+          "panel_type": "panel5"
+        },
+        {
+          "type": "/obj/machinery/vending/cigarette/syndicate",
+          "light_mask": "cigs-light-mask",
+          "panel_type": "panel5"
+        },
+        {
+          "type": "/obj/machinery/vending/cigarette/beach",
+          "light_mask": "cigs-light-mask",
+          "panel_type": "panel5"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "clothes": {
+      "state": "clothes",
+      "metadata": {
+        "name": "clothes",
+        "dirs": 1,
+        "frames": 8,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 300,
+        "rects": [
+          [
+            0,
+            384,
+            32,
+            32
+          ],
+          [
+            32,
+            384,
+            32,
+            32
+          ],
+          [
+            64,
+            384,
+            32,
+            32
+          ],
+          [
+            96,
+            384,
+            32,
+            32
+          ],
+          [
+            128,
+            384,
+            32,
+            32
+          ],
+          [
+            160,
+            384,
+            32,
+            32
+          ],
+          [
+            192,
+            384,
+            32,
+            32
+          ],
+          [
+            224,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/clothing",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel15"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "coffee": {
+      "state": "coffee",
+      "metadata": {
+        "name": "coffee",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          25,
+          1,
+          2,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 183,
+        "rects": [
+          [
+            256,
+            224,
+            32,
+            32
+          ],
+          [
+            288,
+            224,
+            32,
+            32
+          ],
+          [
+            320,
+            224,
+            32,
+            32
+          ],
+          [
+            352,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/coffee",
+          "light_mask": "coffee-light-mask",
+          "panel_type": "panel9"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "Cola_Machine": {
+      "state": "Cola_Machine",
+      "metadata": {
+        "name": "Cola_Machine",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          30,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 117,
+        "rects": [
+          [
+            544,
+            128,
+            32,
+            32
+          ],
+          [
+            576,
+            128,
+            32,
+            32
+          ],
+          [
+            608,
+            128,
+            32,
+            32
+          ],
+          [
+            640,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola",
+          "light_mask": null,
+          "panel_type": "panel2"
+        },
+        {
+          "type": "/obj/machinery/vending/cola/blue",
+          "light_mask": "cola-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "cola_black": {
+      "state": "cola_black",
+      "metadata": {
+        "name": "cola_black",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          36,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 123,
+        "rects": [
+          [
+            736,
+            128,
+            32,
+            32
+          ],
+          [
+            768,
+            128,
+            32,
+            32
+          ],
+          [
+            0,
+            160,
+            32,
+            32
+          ],
+          [
+            32,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola/black",
+          "light_mask": "cola-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "red_cola": {
+      "state": "red_cola",
+      "metadata": {
+        "name": "red_cola",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          16,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 137,
+        "rects": [
+          [
+            384,
+            160,
+            32,
+            32
+          ],
+          [
+            416,
+            160,
+            32,
+            32
+          ],
+          [
+            448,
+            160,
+            32,
+            32
+          ],
+          [
+            480,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola/red",
+          "light_mask": "red_cola-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "space_up": {
+      "state": "space_up",
+      "metadata": {
+        "name": "space_up",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          12,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 144,
+        "rects": [
+          [
+            608,
+            160,
+            32,
+            32
+          ],
+          [
+            640,
+            160,
+            32,
+            32
+          ],
+          [
+            672,
+            160,
+            32,
+            32
+          ],
+          [
+            704,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola/space_up",
+          "light_mask": "space_up-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "starkist": {
+      "state": "starkist",
+      "metadata": {
+        "name": "starkist",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          49,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 158,
+        "rects": [
+          [
+            256,
+            192,
+            32,
+            32
+          ],
+          [
+            288,
+            192,
+            32,
+            32
+          ],
+          [
+            320,
+            192,
+            32,
+            32
+          ],
+          [
+            352,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola/starkist",
+          "light_mask": "starkist-light-mask",
+          "panel_type": "panel7"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "soda": {
+      "state": "soda",
+      "metadata": {
+        "name": "soda",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          40,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 165,
+        "rects": [
+          [
+            480,
+            192,
+            32,
+            32
+          ],
+          [
+            512,
+            192,
+            32,
+            32
+          ],
+          [
+            544,
+            192,
+            32,
+            32
+          ],
+          [
+            576,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola/sodie",
+          "light_mask": "soda-light-mask",
+          "panel_type": "panel7"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "pwr_game": {
+      "state": "pwr_game",
+      "metadata": {
+        "name": "pwr_game",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          14,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 151,
+        "rects": [
+          [
+            32,
+            192,
+            32,
+            32
+          ],
+          [
+            64,
+            192,
+            32,
+            32
+          ],
+          [
+            96,
+            192,
+            32,
+            32
+          ],
+          [
+            128,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola/pwr_game",
+          "light_mask": "pwr_game-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "shamblers_juice": {
+      "state": "shamblers_juice",
+      "metadata": {
+        "name": "shamblers_juice",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          50,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 130,
+        "rects": [
+          [
+            160,
+            160,
+            32,
+            32
+          ],
+          [
+            192,
+            160,
+            32,
+            32
+          ],
+          [
+            224,
+            160,
+            32,
+            32
+          ],
+          [
+            256,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cola/shamblers",
+          "light_mask": "shamblers-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "custom": {
+      "state": "custom",
+      "metadata": {
+        "name": "custom",
+        "dirs": 1,
+        "frames": 10,
+        "delays": [
+          8,
+          7,
+          3,
+          1,
+          4,
+          6,
+          8,
+          5,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 531,
+        "rects": [
+          [
+            192,
+            672,
+            32,
+            32
+          ],
+          [
+            224,
+            672,
+            32,
+            32
+          ],
+          [
+            256,
+            672,
+            32,
+            32
+          ],
+          [
+            288,
+            672,
+            32,
+            32
+          ],
+          [
+            320,
+            672,
+            32,
+            32
+          ],
+          [
+            352,
+            672,
+            32,
+            32
+          ],
+          [
+            384,
+            672,
+            32,
+            32
+          ],
+          [
+            416,
+            672,
+            32,
+            32
+          ],
+          [
+            448,
+            672,
+            32,
+            32
+          ],
+          [
+            480,
+            672,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/custom",
+          "light_mask": "custom-light-mask",
+          "panel_type": "panel20"
+        },
+        {
+          "type": "/obj/machinery/vending/custom/VAR_PRIVATE/datum/bank_account/linked_account",
+          "light_mask": "custom-light-mask",
+          "panel_type": "panel20"
+        },
+        {
+          "type": "/obj/machinery/vending/custom/unbreakable",
+          "light_mask": "custom-light-mask",
+          "panel_type": "panel20"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        29,
+        31
+      ]
+    },
+    "greed": {
+      "state": "greed",
+      "metadata": {
+        "name": "greed",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          25,
+          1,
+          4,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 546,
+        "rects": [
+          [
+            672,
+            672,
+            32,
+            32
+          ],
+          [
+            704,
+            672,
+            32,
+            32
+          ],
+          [
+            736,
+            672,
+            32,
+            32
+          ],
+          [
+            768,
+            672,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/custom/greed",
+          "light_mask": "greed-light-mask",
+          "panel_type": "panel4"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        29,
+        31
+      ]
+    },
+    "cytopro": {
+      "state": "cytopro",
+      "metadata": {
+        "name": "cytopro",
+        "dirs": 1,
+        "frames": 2,
+        "delays": [
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 600,
+        "rects": [
+          [
+            0,
+            768,
+            32,
+            32
+          ],
+          [
+            32,
+            768,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/cytopro",
+          "light_mask": "cytopro-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "snackdonk": {
+      "state": "snackdonk",
+      "metadata": {
+        "name": "snackdonk",
+        "dirs": 1,
+        "frames": 8,
+        "delays": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          8
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 320,
+        "rects": [
+          [
+            640,
+            384,
+            32,
+            32
+          ],
+          [
+            672,
+            384,
+            32,
+            32
+          ],
+          [
+            704,
+            384,
+            32,
+            32
+          ],
+          [
+            736,
+            384,
+            32,
+            32
+          ],
+          [
+            768,
+            384,
+            32,
+            32
+          ],
+          [
+            0,
+            416,
+            32,
+            32
+          ],
+          [
+            32,
+            416,
+            32,
+            32
+          ],
+          [
+            64,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/donksnack",
+          "light_mask": "donksoft-light-mask",
+          "panel_type": "panel18"
+        }
+      ],
+      "opaque_bbox": [
+        2,
+        0,
+        30,
+        31
+      ]
+    },
+    "dinnerware": {
+      "state": "dinnerware",
+      "metadata": {
+        "name": "dinnerware",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          12,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 70,
+        "rects": [
+          [
+            640,
+            64,
+            32,
+            32
+          ],
+          [
+            672,
+            64,
+            32,
+            32
+          ],
+          [
+            704,
+            64,
+            32,
+            32
+          ],
+          [
+            736,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/dinnerware",
+          "light_mask": "dinnerware-light-mask",
+          "panel_type": "panel4"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "engi": {
+      "state": "engi",
+      "metadata": {
+        "name": "engi",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          46,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 266,
+        "rects": [
+          [
+            512,
+            320,
+            32,
+            32
+          ],
+          [
+            544,
+            320,
+            32,
+            32
+          ],
+          [
+            576,
+            320,
+            32,
+            32
+          ],
+          [
+            608,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/engineering",
+          "light_mask": "engi-light-mask",
+          "panel_type": "panel10"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        30,
+        31
+      ]
+    },
+    "engivend": {
+      "state": "engivend",
+      "metadata": {
+        "name": "engivend",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          28,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 257,
+        "rects": [
+          [
+            224,
+            320,
+            32,
+            32
+          ],
+          [
+            256,
+            320,
+            32,
+            32
+          ],
+          [
+            288,
+            320,
+            32,
+            32
+          ],
+          [
+            320,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/engivend",
+          "light_mask": "engivend-light-mask",
+          "panel_type": "panel10"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "games": {
+      "state": "games",
+      "metadata": {
+        "name": "games",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          17,
+          1,
+          2,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 357,
+        "rects": [
+          [
+            224,
+            448,
+            32,
+            32
+          ],
+          [
+            256,
+            448,
+            32,
+            32
+          ],
+          [
+            288,
+            448,
+            32,
+            32
+          ],
+          [
+            320,
+            448,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/games",
+          "light_mask": "games-light-mask",
+          "panel_type": "panel4"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "hotdog-vendor": {
+      "state": "hotdog-vendor",
+      "metadata": {
+        "name": "hotdog-vendor",
+        "dirs": 1,
+        "frames": 10,
+        "delays": [
+          1.1,
+          1.1,
+          1.1,
+          1.1,
+          1.1,
+          1.1,
+          1.1,
+          1.1,
+          1.1,
+          1.1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 576,
+        "rects": [
+          [
+            32,
+            736,
+            32,
+            32
+          ],
+          [
+            64,
+            736,
+            32,
+            32
+          ],
+          [
+            96,
+            736,
+            32,
+            32
+          ],
+          [
+            128,
+            736,
+            32,
+            32
+          ],
+          [
+            160,
+            736,
+            32,
+            32
+          ],
+          [
+            192,
+            736,
+            32,
+            32
+          ],
+          [
+            224,
+            736,
+            32,
+            32
+          ],
+          [
+            256,
+            736,
+            32,
+            32
+          ],
+          [
+            288,
+            736,
+            32,
+            32
+          ],
+          [
+            320,
+            736,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/hotdog",
+          "light_mask": "hotdog-vendor-light-mask",
+          "panel_type": "panel17"
+        }
+      ],
+      "opaque_bbox": [
+        4,
+        0,
+        28,
+        31
+      ]
+    },
+    "liberationstation": {
+      "state": "liberationstation",
+      "metadata": {
+        "name": "liberationstation",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          16,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 313,
+        "rects": [
+          [
+            416,
+            384,
+            32,
+            32
+          ],
+          [
+            448,
+            384,
+            32,
+            32
+          ],
+          [
+            480,
+            384,
+            32,
+            32
+          ],
+          [
+            512,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/liberationstation",
+          "light_mask": "liberation-light-mask",
+          "panel_type": "panel17"
+        }
+      ],
+      "opaque_bbox": [
+        2,
+        0,
+        30,
+        31
+      ]
+    },
+    "syndi": {
+      "state": "syndi",
+      "metadata": {
+        "name": "syndi",
+        "dirs": 1,
+        "frames": 8,
+        "delays": [
+          5,
+          1,
+          5,
+          1,
+          5,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 332,
+        "rects": [
+          [
+            224,
+            416,
+            32,
+            32
+          ],
+          [
+            256,
+            416,
+            32,
+            32
+          ],
+          [
+            288,
+            416,
+            32,
+            32
+          ],
+          [
+            320,
+            416,
+            32,
+            32
+          ],
+          [
+            352,
+            416,
+            32,
+            32
+          ],
+          [
+            384,
+            416,
+            32,
+            32
+          ],
+          [
+            416,
+            416,
+            32,
+            32
+          ],
+          [
+            448,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/toyliberationstation",
+          "light_mask": "donksoft-light-mask",
+          "panel_type": "panel18"
+        }
+      ],
+      "opaque_bbox": [
+        2,
+        0,
+        30,
+        31
+      ]
+    },
+    "MagiVend": {
+      "state": "MagiVend",
+      "metadata": {
+        "name": "MagiVend",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          39,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 215,
+        "rects": [
+          [
+            480,
+            256,
+            32,
+            32
+          ],
+          [
+            512,
+            256,
+            32,
+            32
+          ],
+          [
+            544,
+            256,
+            32,
+            32
+          ],
+          [
+            576,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/magivend",
+          "light_mask": "magivend-light-mask",
+          "panel_type": "panel10"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "med": {
+      "state": "med",
+      "metadata": {
+        "name": "med",
+        "dirs": 1,
+        "frames": 2,
+        "delays": [
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 221,
+        "rects": [
+          [
+            672,
+            256,
+            32,
+            32
+          ],
+          [
+            704,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/medical",
+          "light_mask": "med-light-mask",
+          "panel_type": "panel11"
+        },
+        {
+          "type": "/obj/machinery/vending/medical/syndicate",
+          "light_mask": "med-light-mask",
+          "panel_type": "panel11"
+        },
+        {
+          "type": "/obj/machinery/vending/medical/infested_frigate",
+          "light_mask": "med-light-mask",
+          "panel_type": "panel11"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        30,
+        31
+      ]
+    },
+    "drug": {
+      "state": "drug",
+      "metadata": {
+        "name": "drug",
+        "dirs": 1,
+        "frames": 2,
+        "delays": [
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 228,
+        "rects": [
+          [
+            96,
+            288,
+            32,
+            32
+          ],
+          [
+            128,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/drugs",
+          "light_mask": null,
+          "panel_type": "panel11"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        30,
+        31
+      ]
+    },
+    "wallmed": {
+      "state": "wallmed",
+      "metadata": {
+        "name": "wallmed",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 236,
+        "rects": [
+          [
+            352,
+            288,
+            32,
+            32
+          ],
+          [
+            384,
+            288,
+            32,
+            32
+          ],
+          [
+            416,
+            288,
+            32,
+            32
+          ],
+          [
+            448,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wallmed",
+          "light_mask": "wallmed-light-mask",
+          "panel_type": "wallmed-panel"
+        },
+        {
+          "type": "/obj/machinery/vending/wallmed/directional",
+          "light_mask": "wallmed-light-mask",
+          "panel_type": "wallmed-panel"
+        }
+      ],
+      "opaque_bbox": [
+        9,
+        7,
+        23,
+        28
+      ]
+    },
+    "seeds": {
+      "state": "seeds",
+      "metadata": {
+        "name": "seeds",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          39,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 109,
+        "rects": [
+          [
+            288,
+            128,
+            32,
+            32
+          ],
+          [
+            320,
+            128,
+            32,
+            32
+          ],
+          [
+            352,
+            128,
+            32,
+            32
+          ],
+          [
+            384,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/hydroseeds",
+          "light_mask": "seeds-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "modularpc": {
+      "state": "modularpc",
+      "metadata": {
+        "name": "modularpc",
+        "dirs": 1,
+        "frames": 32,
+        "delays": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 480,
+        "rects": [
+          [
+            160,
+            608,
+            32,
+            32
+          ],
+          [
+            192,
+            608,
+            32,
+            32
+          ],
+          [
+            224,
+            608,
+            32,
+            32
+          ],
+          [
+            256,
+            608,
+            32,
+            32
+          ],
+          [
+            288,
+            608,
+            32,
+            32
+          ],
+          [
+            320,
+            608,
+            32,
+            32
+          ],
+          [
+            352,
+            608,
+            32,
+            32
+          ],
+          [
+            384,
+            608,
+            32,
+            32
+          ],
+          [
+            416,
+            608,
+            32,
+            32
+          ],
+          [
+            448,
+            608,
+            32,
+            32
+          ],
+          [
+            480,
+            608,
+            32,
+            32
+          ],
+          [
+            512,
+            608,
+            32,
+            32
+          ],
+          [
+            544,
+            608,
+            32,
+            32
+          ],
+          [
+            576,
+            608,
+            32,
+            32
+          ],
+          [
+            608,
+            608,
+            32,
+            32
+          ],
+          [
+            640,
+            608,
+            32,
+            32
+          ],
+          [
+            672,
+            608,
+            32,
+            32
+          ],
+          [
+            704,
+            608,
+            32,
+            32
+          ],
+          [
+            736,
+            608,
+            32,
+            32
+          ],
+          [
+            768,
+            608,
+            32,
+            32
+          ],
+          [
+            0,
+            640,
+            32,
+            32
+          ],
+          [
+            32,
+            640,
+            32,
+            32
+          ],
+          [
+            64,
+            640,
+            32,
+            32
+          ],
+          [
+            96,
+            640,
+            32,
+            32
+          ],
+          [
+            128,
+            640,
+            32,
+            32
+          ],
+          [
+            160,
+            640,
+            32,
+            32
+          ],
+          [
+            192,
+            640,
+            32,
+            32
+          ],
+          [
+            224,
+            640,
+            32,
+            32
+          ],
+          [
+            256,
+            640,
+            32,
+            32
+          ],
+          [
+            288,
+            640,
+            32,
+            32
+          ],
+          [
+            320,
+            640,
+            32,
+            32
+          ],
+          [
+            352,
+            640,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/modularpc",
+          "light_mask": "modular-light-mask",
+          "panel_type": "panel21"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        30,
+        31
+      ]
+    },
+    "nutri": {
+      "state": "nutri",
+      "metadata": {
+        "name": "nutri",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          11,
+          1,
+          4,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 100,
+        "rects": [
+          [
+            0,
+            128,
+            32,
+            32
+          ],
+          [
+            32,
+            128,
+            32,
+            32
+          ],
+          [
+            64,
+            128,
+            32,
+            32
+          ],
+          [
+            96,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/hydronutrients",
+          "light_mask": "nutri-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "generic": {
+      "state": "generic",
+      "metadata": {
+        "name": "generic",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          33,
+          1,
+          4,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 84,
+        "rects": [
+          [
+            288,
+            96,
+            32,
+            32
+          ],
+          [
+            320,
+            96,
+            32,
+            32
+          ],
+          [
+            352,
+            96,
+            32,
+            32
+          ],
+          [
+            384,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/plasmaresearch",
+          "light_mask": null,
+          "panel_type": null
+        },
+        {
+          "type": "/obj/machinery/vending/subtype_vendor",
+          "light_mask": null,
+          "panel_type": null
+        },
+        {
+          "type": "/obj/machinery/vending/syndichem",
+          "light_mask": null,
+          "panel_type": null
+        },
+        {
+          "type": "/obj/machinery/vending",
+          "light_mask": null,
+          "panel_type": null
+        },
+        {
+          "type": "/obj/machinery/vending/wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "robotics": {
+      "state": "robotics",
+      "metadata": {
+        "name": "robotics",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          23,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 275,
+        "rects": [
+          [
+            0,
+            352,
+            32,
+            32
+          ],
+          [
+            32,
+            352,
+            32,
+            32
+          ],
+          [
+            64,
+            352,
+            32,
+            32
+          ],
+          [
+            96,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/robotics",
+          "light_mask": "robotics-light-mask",
+          "panel_type": "panel14"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        29,
+        31
+      ]
+    },
+    "RunicVendor": {
+      "state": "RunicVendor",
+      "metadata": {
+        "name": "RunicVendor",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          39,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 570,
+        "rects": [
+          [
+            640,
+            704,
+            32,
+            32
+          ],
+          [
+            672,
+            704,
+            32,
+            32
+          ],
+          [
+            704,
+            704,
+            32,
+            32
+          ],
+          [
+            736,
+            704,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/runic_vendor",
+          "light_mask": "RunicVendor-light-mask",
+          "panel_type": "panel10"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "sec": {
+      "state": "sec",
+      "metadata": {
+        "name": "sec",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          37,
+          1,
+          4,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 91,
+        "rects": [
+          [
+            512,
+            96,
+            32,
+            32
+          ],
+          [
+            544,
+            96,
+            32,
+            32
+          ],
+          [
+            576,
+            96,
+            32,
+            32
+          ],
+          [
+            608,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/security",
+          "light_mask": "sec-light-mask",
+          "panel_type": "panel6"
+        }
+      ],
+      "opaque_bbox": [
+        3,
+        0,
+        30,
+        31
+      ]
+    },
+    "snack": {
+      "state": "snack",
+      "metadata": {
+        "name": "snack",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          4,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 23,
+        "rects": [
+          [
+            736,
+            0,
+            32,
+            32
+          ],
+          [
+            768,
+            0,
+            32,
+            32
+          ],
+          [
+            0,
+            32,
+            32,
+            32
+          ],
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/snack",
+          "light_mask": "snack-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "snackblue": {
+      "state": "snackblue",
+      "metadata": {
+        "name": "snackblue",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          15,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 33,
+        "rects": [
+          [
+            256,
+            32,
+            32,
+            32
+          ],
+          [
+            288,
+            32,
+            32,
+            32
+          ],
+          [
+            320,
+            32,
+            32,
+            32
+          ],
+          [
+            352,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/snack/blue",
+          "light_mask": "snack-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "snackorange": {
+      "state": "snackorange",
+      "metadata": {
+        "name": "snackorange",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          43,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 39,
+        "rects": [
+          [
+            448,
+            32,
+            32,
+            32
+          ],
+          [
+            480,
+            32,
+            32,
+            32
+          ],
+          [
+            512,
+            32,
+            32,
+            32
+          ],
+          [
+            544,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/snack/orange",
+          "light_mask": "snack-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "snackgreen": {
+      "state": "snackgreen",
+      "metadata": {
+        "name": "snackgreen",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          17,
+          1,
+          3,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 45,
+        "rects": [
+          [
+            640,
+            32,
+            32,
+            32
+          ],
+          [
+            672,
+            32,
+            32,
+            32
+          ],
+          [
+            704,
+            32,
+            32,
+            32
+          ],
+          [
+            736,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/snack/green",
+          "light_mask": "snack-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "snackteal": {
+      "state": "snackteal",
+      "metadata": {
+        "name": "snackteal",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          24,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 51,
+        "rects": [
+          [
+            32,
+            64,
+            32,
+            32
+          ],
+          [
+            64,
+            64,
+            32,
+            32
+          ],
+          [
+            96,
+            64,
+            32,
+            32
+          ],
+          [
+            128,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/snack/teal",
+          "light_mask": "snack-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "sovietsoda": {
+      "state": "sovietsoda",
+      "metadata": {
+        "name": "sovietsoda",
+        "dirs": 1,
+        "frames": 8,
+        "delays": [
+          3,
+          1,
+          1,
+          2,
+          1,
+          3,
+          1,
+          2
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 172,
+        "rects": [
+          [
+            704,
+            192,
+            32,
+            32
+          ],
+          [
+            736,
+            192,
+            32,
+            32
+          ],
+          [
+            768,
+            192,
+            32,
+            32
+          ],
+          [
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            32,
+            224,
+            32,
+            32
+          ],
+          [
+            64,
+            224,
+            32,
+            32
+          ],
+          [
+            96,
+            224,
+            32,
+            32
+          ],
+          [
+            128,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/sovietsoda",
+          "light_mask": "soviet-light-mask",
+          "panel_type": "panel8"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "sustenance": {
+      "state": "sustenance",
+      "metadata": {
+        "name": "sustenance",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          40,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 57,
+        "rects": [
+          [
+            224,
+            64,
+            32,
+            32
+          ],
+          [
+            256,
+            64,
+            32,
+            32
+          ],
+          [
+            288,
+            64,
+            32,
+            32
+          ],
+          [
+            320,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/sustenance",
+          "light_mask": "snack-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "sustenance_labor": {
+      "state": "sustenance_labor",
+      "metadata": {
+        "name": "sustenance_labor",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          40,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 63,
+        "rects": [
+          [
+            416,
+            64,
+            32,
+            32
+          ],
+          [
+            448,
+            64,
+            32,
+            32
+          ],
+          [
+            480,
+            64,
+            32,
+            32
+          ],
+          [
+            512,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/sustenance/labor_camp",
+          "light_mask": "snack-light-mask",
+          "panel_type": "panel2"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "nt-donk": {
+      "state": "nt-donk",
+      "metadata": {
+        "name": "nt-donk",
+        "dirs": 1,
+        "frames": 8,
+        "delays": [
+          5,
+          1,
+          5,
+          1,
+          5,
+          1,
+          5,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 344,
+        "rects": [
+          [
+            608,
+            416,
+            32,
+            32
+          ],
+          [
+            640,
+            416,
+            32,
+            32
+          ],
+          [
+            672,
+            416,
+            32,
+            32
+          ],
+          [
+            704,
+            416,
+            32,
+            32
+          ],
+          [
+            736,
+            416,
+            32,
+            32
+          ],
+          [
+            768,
+            416,
+            32,
+            32
+          ],
+          [
+            0,
+            448,
+            32,
+            32
+          ],
+          [
+            32,
+            448,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/donksofttoyvendor",
+          "light_mask": "donksoft-light-mask",
+          "panel_type": "panel18"
+        }
+      ],
+      "opaque_bbox": [
+        2,
+        0,
+        30,
+        31
+      ]
+    },
+    "secdrobe": {
+      "state": "secdrobe",
+      "metadata": {
+        "name": "secdrobe",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 373,
+        "rects": [
+          [
+            736,
+            448,
+            32,
+            32
+          ],
+          [
+            768,
+            448,
+            32,
+            32
+          ],
+          [
+            0,
+            480,
+            32,
+            32
+          ],
+          [
+            32,
+            480,
+            32,
+            32
+          ],
+          [
+            64,
+            480,
+            32,
+            32
+          ],
+          [
+            96,
+            480,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/sec_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "medidrobe": {
+      "state": "medidrobe",
+      "metadata": {
+        "name": "medidrobe",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 387,
+        "rects": [
+          [
+            384,
+            480,
+            32,
+            32
+          ],
+          [
+            416,
+            480,
+            32,
+            32
+          ],
+          [
+            448,
+            480,
+            32,
+            32
+          ],
+          [
+            480,
+            480,
+            32,
+            32
+          ],
+          [
+            512,
+            480,
+            32,
+            32
+          ],
+          [
+            544,
+            480,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/medi_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "engidrobe": {
+      "state": "engidrobe",
+      "metadata": {
+        "name": "engidrobe",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 431,
+        "rects": [
+          [
+            192,
+            544,
+            32,
+            32
+          ],
+          [
+            224,
+            544,
+            32,
+            32
+          ],
+          [
+            256,
+            544,
+            32,
+            32
+          ],
+          [
+            288,
+            544,
+            32,
+            32
+          ],
+          [
+            320,
+            544,
+            32,
+            32
+          ],
+          [
+            352,
+            544,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/engi_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "atmosdrobe": {
+      "state": "atmosdrobe",
+      "metadata": {
+        "name": "atmosdrobe",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 439,
+        "rects": [
+          [
+            448,
+            544,
+            32,
+            32
+          ],
+          [
+            480,
+            544,
+            32,
+            32
+          ],
+          [
+            512,
+            544,
+            32,
+            32
+          ],
+          [
+            544,
+            544,
+            32,
+            32
+          ],
+          [
+            576,
+            544,
+            32,
+            32
+          ],
+          [
+            608,
+            544,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/atmos_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "cargodrobe": {
+      "state": "cargodrobe",
+      "metadata": {
+        "name": "cargodrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 455,
+        "rects": [
+          [
+            160,
+            576,
+            32,
+            32
+          ],
+          [
+            192,
+            576,
+            32,
+            32
+          ],
+          [
+            224,
+            576,
+            32,
+            32
+          ],
+          [
+            256,
+            576,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/cargo_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "robodrobe": {
+      "state": "robodrobe",
+      "metadata": {
+        "name": "robodrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 419,
+        "rects": [
+          [
+            608,
+            512,
+            32,
+            32
+          ],
+          [
+            640,
+            512,
+            32,
+            32
+          ],
+          [
+            672,
+            512,
+            32,
+            32
+          ],
+          [
+            704,
+            512,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/robo_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "scidrobe": {
+      "state": "scidrobe",
+      "metadata": {
+        "name": "scidrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 413,
+        "rects": [
+          [
+            416,
+            512,
+            32,
+            32
+          ],
+          [
+            448,
+            512,
+            32,
+            32
+          ],
+          [
+            480,
+            512,
+            32,
+            32
+          ],
+          [
+            512,
+            512,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/science_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "hydrobe": {
+      "state": "hydrobe",
+      "metadata": {
+        "name": "hydrobe",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 447,
+        "rects": [
+          [
+            704,
+            544,
+            32,
+            32
+          ],
+          [
+            736,
+            544,
+            32,
+            32
+          ],
+          [
+            768,
+            544,
+            32,
+            32
+          ],
+          [
+            0,
+            576,
+            32,
+            32
+          ],
+          [
+            32,
+            576,
+            32,
+            32
+          ],
+          [
+            64,
+            576,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/hydro_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "curadrobe": {
+      "state": "curadrobe",
+      "metadata": {
+        "name": "curadrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 461,
+        "rects": [
+          [
+            352,
+            576,
+            32,
+            32
+          ],
+          [
+            384,
+            576,
+            32,
+            32
+          ],
+          [
+            416,
+            576,
+            32,
+            32
+          ],
+          [
+            448,
+            576,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/curator_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "coroner_drobe": {
+      "state": "coroner_drobe",
+      "metadata": {
+        "name": "coroner_drobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 563,
+        "rects": [
+          [
+            416,
+            704,
+            32,
+            32
+          ],
+          [
+            448,
+            704,
+            32,
+            32
+          ],
+          [
+            480,
+            704,
+            32,
+            32
+          ],
+          [
+            512,
+            704,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/coroner_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "bardrobe": {
+      "state": "bardrobe",
+      "metadata": {
+        "name": "bardrobe",
+        "dirs": 1,
+        "frames": 8,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 363,
+        "rects": [
+          [
+            416,
+            448,
+            32,
+            32
+          ],
+          [
+            448,
+            448,
+            32,
+            32
+          ],
+          [
+            480,
+            448,
+            32,
+            32
+          ],
+          [
+            512,
+            448,
+            32,
+            32
+          ],
+          [
+            544,
+            448,
+            32,
+            32
+          ],
+          [
+            576,
+            448,
+            32,
+            32
+          ],
+          [
+            608,
+            448,
+            32,
+            32
+          ],
+          [
+            640,
+            448,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/bar_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "chefdrobe": {
+      "state": "chefdrobe",
+      "metadata": {
+        "name": "chefdrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 381,
+        "rects": [
+          [
+            192,
+            480,
+            32,
+            32
+          ],
+          [
+            224,
+            480,
+            32,
+            32
+          ],
+          [
+            256,
+            480,
+            32,
+            32
+          ],
+          [
+            288,
+            480,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/chef_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "janidrobe": {
+      "state": "janidrobe",
+      "metadata": {
+        "name": "janidrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 467,
+        "rects": [
+          [
+            544,
+            576,
+            32,
+            32
+          ],
+          [
+            576,
+            576,
+            32,
+            32
+          ],
+          [
+            608,
+            576,
+            32,
+            32
+          ],
+          [
+            640,
+            576,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/jani_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "lawdrobe": {
+      "state": "lawdrobe",
+      "metadata": {
+        "name": "lawdrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 473,
+        "rects": [
+          [
+            736,
+            576,
+            32,
+            32
+          ],
+          [
+            768,
+            576,
+            32,
+            32
+          ],
+          [
+            0,
+            608,
+            32,
+            32
+          ],
+          [
+            32,
+            608,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/law_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "chapdrobe": {
+      "state": "chapdrobe",
+      "metadata": {
+        "name": "chapdrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 425,
+        "rects": [
+          [
+            0,
+            544,
+            32,
+            32
+          ],
+          [
+            32,
+            544,
+            32,
+            32
+          ],
+          [
+            64,
+            544,
+            32,
+            32
+          ],
+          [
+            96,
+            544,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/chap_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "chemdrobe": {
+      "state": "chemdrobe",
+      "metadata": {
+        "name": "chemdrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 395,
+        "rects": [
+          [
+            640,
+            480,
+            32,
+            32
+          ],
+          [
+            672,
+            480,
+            32,
+            32
+          ],
+          [
+            704,
+            480,
+            32,
+            32
+          ],
+          [
+            736,
+            480,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/chem_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "genedrobe": {
+      "state": "genedrobe",
+      "metadata": {
+        "name": "genedrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 401,
+        "rects": [
+          [
+            32,
+            512,
+            32,
+            32
+          ],
+          [
+            64,
+            512,
+            32,
+            32
+          ],
+          [
+            96,
+            512,
+            32,
+            32
+          ],
+          [
+            128,
+            512,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/gene_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "virodrobe": {
+      "state": "virodrobe",
+      "metadata": {
+        "name": "virodrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 407,
+        "rects": [
+          [
+            224,
+            512,
+            32,
+            32
+          ],
+          [
+            256,
+            512,
+            32,
+            32
+          ],
+          [
+            288,
+            512,
+            32,
+            32
+          ],
+          [
+            320,
+            512,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/viro_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "detdrobe": {
+      "state": "detdrobe",
+      "metadata": {
+        "name": "detdrobe",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 516,
+        "rects": [
+          [
+            512,
+            640,
+            32,
+            32
+          ],
+          [
+            544,
+            640,
+            32,
+            32
+          ],
+          [
+            576,
+            640,
+            32,
+            32
+          ],
+          [
+            608,
+            640,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/det_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "centdrobe": {
+      "state": "centdrobe",
+      "metadata": {
+        "name": "centdrobe",
+        "dirs": 1,
+        "frames": 6,
+        "delays": [
+          10,
+          1,
+          10,
+          1,
+          10,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 555,
+        "rects": [
+          [
+            160,
+            704,
+            32,
+            32
+          ],
+          [
+            192,
+            704,
+            32,
+            32
+          ],
+          [
+            224,
+            704,
+            32,
+            32
+          ],
+          [
+            256,
+            704,
+            32,
+            32
+          ],
+          [
+            288,
+            704,
+            32,
+            32
+          ],
+          [
+            320,
+            704,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/wardrobe/cent_wardrobe",
+          "light_mask": "wardrobe-light-mask",
+          "panel_type": "panel19"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    },
+    "tool": {
+      "state": "tool",
+      "metadata": {
+        "name": "tool",
+        "dirs": 1,
+        "frames": 4,
+        "delays": [
+          44,
+          1,
+          1,
+          1
+        ],
+        "loop": 0,
+        "rewind": false,
+        "movement": false,
+        "hotspot": null,
+        "first": 248,
+        "rects": [
+          [
+            736,
+            288,
+            32,
+            32
+          ],
+          [
+            768,
+            288,
+            32,
+            32
+          ],
+          [
+            0,
+            320,
+            32,
+            32
+          ],
+          [
+            32,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "types": [
+        {
+          "type": "/obj/machinery/vending/tool",
+          "light_mask": "tool-light-mask",
+          "panel_type": "panel11"
+        }
+      ],
+      "opaque_bbox": [
+        5,
+        0,
+        27,
+        31
+      ]
+    }
+  },
+  "other_atlases": []
+}

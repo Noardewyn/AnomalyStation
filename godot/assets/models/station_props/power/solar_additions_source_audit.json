@@ -1,0 +1,15 @@
+{
+  "png": "godot/assets/tg/icons/obj/machines/solar.png",
+  "dmi": "..\\tgstation\\icons\\obj\\machines\\solar.dmi",
+  "png_sha256": "8512b66e03c9fad4b007bba07314791139b341dd3fb1ed2f090590e080892af1",
+  "pixels_match_dmi": true,
+  "existing_assets_reused": [
+    "solar_panel",
+    "solar_panel_frame"
+  ],
+  "new_assets": [
+    "solar_panel_broken",
+    "solar_tracker",
+    "solar_tracker_frame"
+  ]
+}

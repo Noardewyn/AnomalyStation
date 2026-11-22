@@ -1,0 +1,337 @@
+{
+  "c4_charge_idle": {
+    "base_state": "plastic-explosive0",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Charge_Casing",
+        "triangles": 84,
+        "shared_mesh": "Continuous_Charge_Casing.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Module",
+        "triangles": 12,
+        "shared_mesh": "Timer_Module.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cable_Loop",
+        "triangles": 144,
+        "shared_mesh": "Stepped_Cable_Loop.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Display",
+        "triangles": 12,
+        "shared_mesh": "Timer_Display.005",
+        "materials": [
+          "C4_Display_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "plastic-explosive0"
+      }
+    ],
+    "triangles": 252
+  },
+  "c4_charge_active": {
+    "base_state": "plastic-explosive0_active",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Charge_Casing",
+        "triangles": 84,
+        "shared_mesh": "Continuous_Charge_Casing.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Module",
+        "triangles": 12,
+        "shared_mesh": "Timer_Module.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cable_Loop",
+        "triangles": 144,
+        "shared_mesh": "Stepped_Cable_Loop.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Display",
+        "triangles": 12,
+        "shared_mesh": "Timer_Display.006",
+        "materials": [
+          "C4_Display_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "plastic-explosive0_active"
+      }
+    ],
+    "triangles": 252
+  },
+  "c4_charge_active_bright": {
+    "base_state": "plastic-explosive0_active",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Charge_Casing",
+        "triangles": 84,
+        "shared_mesh": "Continuous_Charge_Casing.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Module",
+        "triangles": 12,
+        "shared_mesh": "Timer_Module.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cable_Loop",
+        "triangles": 144,
+        "shared_mesh": "Stepped_Cable_Loop.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Display",
+        "triangles": 12,
+        "shared_mesh": "Timer_Display.007",
+        "materials": [
+          "C4_Display_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "plastic-explosive0_active"
+      }
+    ],
+    "triangles": 252
+  },
+  "c4_charge_legacy_green": {
+    "base_state": "plastic-explosive1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Charge_Casing",
+        "triangles": 84,
+        "shared_mesh": "Continuous_Charge_Casing.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Module",
+        "triangles": 12,
+        "shared_mesh": "Timer_Module.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cable_Loop",
+        "triangles": 144,
+        "shared_mesh": "Stepped_Cable_Loop.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Display",
+        "triangles": 12,
+        "shared_mesh": "Timer_Display.008",
+        "materials": [
+          "C4_Display_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "plastic-explosive1"
+      }
+    ],
+    "triangles": 252
+  },
+  "c4_charge_legacy_white": {
+    "base_state": "plastic-explosive1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Charge_Casing",
+        "triangles": 84,
+        "shared_mesh": "Continuous_Charge_Casing.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Module",
+        "triangles": 12,
+        "shared_mesh": "Timer_Module.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cable_Loop",
+        "triangles": 144,
+        "shared_mesh": "Stepped_Cable_Loop.005",
+        "materials": [
+          "C4_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Timer_Display",
+        "triangles": 12,
+        "shared_mesh": "Timer_Display.009",
+        "materials": [
+          "C4_Display_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "plastic-explosive1"
+      }
+    ],
+    "triangles": 252
+  }
+}

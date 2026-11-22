@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Determinism (docs/ai/specs/object-model.md section 8): the core compiles optimized in every configuration, so the
+         locals an async method keeps across an await, and with them the objects alive at a state hash, are the same in
+         Debug and Release builds. -->
+    <Optimize>true</Optimize>
+    <RootNamespace>Anomaly.Core.Tg</RootNamespace>
+    <AssemblyName>Anomaly.Core.Tg</AssemblyName>
+    <!-- translation-rules.md 4.2: reference comparison of object operands (CS0252, CS0253) and a null test of a
+         non-nullable number (CS0472) are always translation bugs in tg code. -->
+    <WarningsAsErrors>$(WarningsAsErrors);CS0252;CS0253;CS0472</WarningsAsErrors>
+    <!-- Translated tg code: the waiting-model analyzer adds its translated-code rules ANOM0002 (stored task) and
+         ANOM0003 (blocking read) here (docs/ai/specs/waiting-model.md section 5.6). -->
+    <AnomalyTranslatedCode>true</AnomalyTranslatedCode>
+    <!-- Gaps S3: tg's text outgrew the 16 MB of string literals one assembly's metadata holds (CS8103). Literals of 100 characters
+         and more (messages, descriptions, the deferred leaves' notes) go to a data section, read once into a cached string; the
+         shorter ones (keys, signals, traits) stay in the metadata as before. Object operands are never compared by reference
+         here (CS0252/CS0253 above), so a string's instance does not matter. -->
+    <Features>$(Features);experimental-data-section-string-literals=100</Features>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- M7x slice A (D177, D179): the body-part mask table, made by tools/Anomaly.Tools.Icons with its masks option (ShotGeometry.cs). -->
+    <EmbeddedResource Include="Generated/BodyMasks.bin" LogicalName="Anomaly.Core.Tg.BodyMasks.bin" />
+    <EmbeddedResource Include="Generated/IconStates.bin" LogicalName="Anomaly.Core.Tg.IconStates.bin" />
+    <!-- Gaps C1 (DV251): tg's compiled behaviour trees (tools/build-behavior-trees.sh), named by BT_COMPILED_PATH (BehaviorTreeFiles). -->
+    <EmbeddedResource Include="BehaviorTrees/**/*.json" LogicalName="build/behavior_trees/$([System.String]::Copy('%(RecursiveDir)').Replace('\','/'))%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DmShim\Anomaly.Core.DmShim.csproj" />
+    <ProjectReference Include="..\Kernel\Anomaly.Core.Kernel.csproj" />
+    <!-- M2: the motion core (the locomotion bridge in Infrastructure/Locomotion steps capsules with it). -->
+    <ProjectReference Include="..\Motion\Anomaly.Core.Motion.csproj" />
+  </ItemGroup>
+</Project>

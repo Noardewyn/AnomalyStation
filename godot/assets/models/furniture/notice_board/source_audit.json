@@ -1,0 +1,184 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/wallmounts.png",
+  "original_dmi": "..\\tgstation\\icons\\obj\\wallmounts.dmi",
+  "size": [
+    288,
+    288
+  ],
+  "png_sha256": "47b9bd1b32599058f9b31c8d20ce22f9b15c5d7e15a7d46794c72be4099ec19a",
+  "dmi_rgba_matches": true,
+  "states": [
+    {
+      "name": "noticeboard",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 42,
+      "rects": [
+        [
+          192,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 43,
+      "rects": [
+        [
+          224,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 44,
+      "rects": [
+        [
+          256,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 45,
+      "rects": [
+        [
+          0,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_4",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 46,
+      "rects": [
+        [
+          32,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_5",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 47,
+      "rects": [
+        [
+          64,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_6",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 48,
+      "rects": [
+        [
+          96,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_7",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 49,
+      "rects": [
+        [
+          128,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "notices_8",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 50,
+      "rects": [
+        [
+          160,
+          160,
+          32,
+          32
+        ]
+      ]
+    }
+  ],
+  "source_code": "code/game/objects/structures/noticeboard.dm"
+}

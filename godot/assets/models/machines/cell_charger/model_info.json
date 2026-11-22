@@ -1,0 +1,1433 @@
+{
+  "cell_charger_empty": {
+    "base_state": "ccharger",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 28
+  },
+  "cell_charger_level_0": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o0"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.037",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "cell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.066",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.067",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 0,
+        "shared_mesh": "Dock_Status_Overlay.030",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 216
+  },
+  "cell_charger_level_1": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o1",
+      "cell-standard-o1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.037",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "cell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.066",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.067",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Dock_Status_Overlay.031",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.030",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 256
+  },
+  "cell_charger_level_2": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o2",
+      "cell-standard-o1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.037",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "cell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.066",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.067",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 28,
+        "shared_mesh": "Dock_Status_Overlay.032",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.030",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 268
+  },
+  "cell_charger_level_3": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o3",
+      "cell-standard-o1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.037",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "cell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.066",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.067",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Dock_Status_Overlay.033",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.030",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 280
+  },
+  "cell_charger_level_4": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o4",
+      "cell-standard-o2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.037",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "cell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.066",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.067",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 52,
+        "shared_mesh": "Dock_Status_Overlay.034",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.033",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 292
+  },
+  "cell_charger_off": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "cell-standard-o1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.037",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "cell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.066",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.067",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.030",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 240
+  },
+  "cell_charger_hcell": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o4",
+      "cell-standard-o2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.043",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "hcell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.078",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.079",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 52,
+        "shared_mesh": "Dock_Status_Overlay.034",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.033",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 292
+  },
+  "cell_charger_scell": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o4",
+      "cell-standard-o2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.044",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "scell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.080",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.081",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 52,
+        "shared_mesh": "Dock_Status_Overlay.034",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.033",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 292
+  },
+  "cell_charger_hpcell": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o4",
+      "cell-standard-o2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.045",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "hpcell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.082",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.083",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 52,
+        "shared_mesh": "Dock_Status_Overlay.034",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.033",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 292
+  },
+  "cell_charger_icell": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o4",
+      "cell-standard-o2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.046",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "icell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.084",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.085",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 52,
+        "shared_mesh": "Dock_Status_Overlay.034",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.033",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 292
+  },
+  "cell_charger_bscell": {
+    "base_state": "ccharger",
+    "overlays": [
+      "ccharger-standard-on",
+      "ccharger-o4",
+      "cell-standard-o2"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charger_Dock",
+        "triangles": 28,
+        "shared_mesh": "Continuous_Charger_Dock.036",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Power_Cell",
+        "triangles": 12,
+        "shared_mesh": "Removable_Power_Cell.047",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.04218750074505806,
+          0.04218750074505806,
+          0.08437500149011612
+        ],
+        "source_state": "bscell"
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.086",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Terminal",
+        "triangles": 12,
+        "shared_mesh": "Cell_Terminal.087",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blue_Connector_Lead",
+        "triangles": 60,
+        "shared_mesh": "Blue_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Red_Connector_Lead",
+        "triangles": 92,
+        "shared_mesh": "Red_Connector_Lead.022",
+        "materials": [
+          "Cell_Charger_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Dock_Status_Overlay",
+        "triangles": 52,
+        "shared_mesh": "Dock_Status_Overlay.034",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Cell_Status_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Cell_Status_Overlay.033",
+        "materials": [
+          "Cell_Charger_Indicator_Overlay.003"
+        ],
+        "parent": "Removable_Power_Cell",
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.04218750074505806,
+          -0.08437500149011612
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 292
+  }
+}

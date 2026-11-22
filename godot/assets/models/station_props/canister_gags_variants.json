@@ -1,0 +1,146 @@
+{
+  "variants": [
+    {
+      "name": "generic",
+      "type": "/obj/machinery/portable_atmospherics/canister",
+      "config": "canister",
+      "colors": [
+        "#6b6b80"
+      ],
+      "rect": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "air",
+      "type": "/obj/machinery/portable_atmospherics/canister/air",
+      "config": "canister",
+      "colors": [
+        "#c6c0b5"
+      ],
+      "rect": [
+        0,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "anesthetic_mix",
+      "type": "/obj/machinery/portable_atmospherics/canister/anesthetic_mix",
+      "config": "canister/double_stripe",
+      "colors": [
+        "#9fba6c",
+        "#3d4680"
+      ],
+      "rect": [
+        0,
+        64,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "carbon_dioxide",
+      "type": "/obj/machinery/portable_atmospherics/canister/carbon_dioxide",
+      "config": "canister/double_stripe",
+      "colors": [
+        "#4e4c48",
+        "#eaeaea"
+      ],
+      "rect": [
+        0,
+        96,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "nitrogen",
+      "type": "/obj/machinery/portable_atmospherics/canister/nitrogen",
+      "config": "canister/double_stripe",
+      "colors": [
+        "#e9ff5c",
+        "#f4fce8"
+      ],
+      "rect": [
+        0,
+        128,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "nitrous_oxide",
+      "type": "/obj/machinery/portable_atmospherics/canister/nitrous_oxide",
+      "config": "canister/double_stripe",
+      "colors": [
+        "#c63e3b",
+        "#f7d5d3"
+      ],
+      "rect": [
+        0,
+        160,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "oxygen",
+      "type": "/obj/machinery/portable_atmospherics/canister/oxygen",
+      "config": "canister/stripe",
+      "colors": [
+        "#2786e5",
+        "#e8fefe"
+      ],
+      "rect": [
+        0,
+        192,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "plasma",
+      "type": "/obj/machinery/portable_atmospherics/canister/plasma",
+      "config": "canister/hazard",
+      "colors": [
+        "#f62800",
+        "#000000"
+      ],
+      "rect": [
+        0,
+        224,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "water_vapor",
+      "type": "/obj/machinery/portable_atmospherics/canister/water_vapor",
+      "config": "canister/double_stripe",
+      "colors": [
+        "#4c4e4d",
+        "#f7d5d3"
+      ],
+      "rect": [
+        0,
+        256,
+        32,
+        32
+      ]
+    }
+  ],
+  "source_configs": {
+    "canister": "canister_default.json",
+    "canister/base": "canister_base.json",
+    "canister/post_effects": "canister_post_effects.json",
+    "canister/stripe": "canister_stripe.json",
+    "canister/double_stripe": "canister_double_stripe.json",
+    "canister/hazard": "canister_hazard.json"
+  },
+  "recipe": "Original GAGS states; byte-domain tint, overlay, add and multiply. No resampling."
+}

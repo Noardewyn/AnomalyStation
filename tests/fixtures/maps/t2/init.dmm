@@ -1,0 +1,45 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: the SSatoms initialization of a loaded map (order, hints, immediate, inert) (M3 T2, InitOrderTests.cs)
+// uses the test-assembly types of T2Probes.cs
+"f" = (
+/turf/open/indestructible/t2_init,
+/area/t2_init)
+"a" = (
+/obj/t2_init/late{
+	name = "L1"
+	},
+/obj/t2_init{
+	name = "N1"
+	},
+/obj/t2_init/qdel{
+	name = "Q1"
+	},
+/turf/open/indestructible/t2_init,
+/area/t2_init)
+"b" = (
+/mob/t2_init{
+	name = "M"
+	},
+/obj/t2_init{
+	name = "N2"
+	},
+/turf/open/indestructible/t2_init,
+/area/t2_init)
+"c" = (
+/obj/t2_init/immediate{
+	name = "I1"
+	},
+/obj/t2_inert{
+	name = "X1"
+	},
+/turf/open/indestructible/t2_init,
+/area/t2_init)
+
+(1,1,1) = {"
+a
+f
+"}
+(2,1,1) = {"
+b
+c
+"}

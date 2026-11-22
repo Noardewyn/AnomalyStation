@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "map_name": "Deathmatch Arena",
+  "map_path": "map_files/deathmatch",
+  "map_file": "arena.dmm",
+  "traits": [
+    {
+      "Linkage": "Self"
+    },
+    {
+      "Baseturf": "/turf/open/space/openspace",
+      "Linkage": "Self"
+    },
+    {
+      "Baseturf": "/turf/open/space/openspace",
+      "Linkage": "Self"
+    },
+    {
+      "Baseturf": "/turf/open/space/openspace",
+      "Linkage": "Self"
+    },
+    {
+      "Baseturf": "/turf/open/space/openspace",
+      "Linkage": "Self"
+    },
+    {
+      "Baseturf": "/turf/open/space/openspace",
+      "Linkage": "Self"
+    }
+  ],
+  "deathmatch": {
+    "autorespawn_seconds": 10,
+    "scoreboard": 1
+  }
+}

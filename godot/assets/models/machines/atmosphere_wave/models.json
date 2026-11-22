@@ -1,0 +1,130 @@
+{
+  "portable_air_pump": {
+    "triangles": 72,
+    "meshes": 3,
+    "notes": "siphon_0/off and siphon_1/on panels. Inserted_Tank and connector sockets; attached tank is separate. Pump-in/out uses same source appearance. No underfloor connection mesh.",
+    "parts": [
+      "Pump_Body",
+      "Control_siphon_0",
+      "Control_siphon_1"
+    ]
+  },
+  "space_heater": {
+    "triangles": 312,
+    "meshes": 18,
+    "notes": "Five radiator fins, heat/cool/standby/off source-state core panels; maintenance hinge. Improvised variant retains beaker socket and wiring. Geometry fits one 2m tile.",
+    "parts": [
+      "Radiator",
+      "Thermal_Core_0_sheater-off",
+      "Thermal_Core_0_sheater-heat",
+      "Thermal_Core_0_sheater-cool",
+      "Thermal_Core_0_sheater-standby",
+      "Thermal_Core_1_sheater-off",
+      "Thermal_Core_1_sheater-heat",
+      "Thermal_Core_1_sheater-cool",
+      "Thermal_Core_1_sheater-standby",
+      "Thermal_Core_2_sheater-off",
+      "Thermal_Core_2_sheater-heat",
+      "Thermal_Core_2_sheater-cool",
+      "Thermal_Core_2_sheater-standby",
+      "Thermal_Core_3_sheater-off",
+      "Thermal_Core_3_sheater-heat",
+      "Thermal_Core_3_sheater-cool",
+      "Thermal_Core_3_sheater-standby",
+      "Service_Hatch"
+    ]
+  },
+  "improvised_chemical_heater": {
+    "triangles": 364,
+    "meshes": 20,
+    "notes": "Five radiator fins, heat/cool/standby/off source-state core panels; maintenance hinge. Improvised variant retains beaker socket and wiring. Geometry fits one 2m tile.",
+    "parts": [
+      "Radiator",
+      "Thermal_Core_0_sheater-off",
+      "Thermal_Core_0_sheater-heat",
+      "Thermal_Core_0_sheater-cool",
+      "Thermal_Core_0_sheater-standby",
+      "Thermal_Core_1_sheater-off",
+      "Thermal_Core_1_sheater-heat",
+      "Thermal_Core_1_sheater-cool",
+      "Thermal_Core_1_sheater-standby",
+      "Thermal_Core_2_sheater-off",
+      "Thermal_Core_2_sheater-heat",
+      "Thermal_Core_2_sheater-cool",
+      "Thermal_Core_2_sheater-standby",
+      "Thermal_Core_3_sheater-off",
+      "Thermal_Core_3_sheater-heat",
+      "Thermal_Core_3_sheater-cool",
+      "Thermal_Core_3_sheater-standby",
+      "Service_Hatch",
+      "Improvised_Wiring",
+      "Beaker"
+    ]
+  },
+  "electrolyzer": {
+    "triangles": 480,
+    "meshes": 7,
+    "notes": "Separate side electrodes, maintenance panel and source off/standby/working states. Working effect uses original sprite frames/timing, not a repainted texture; gameplay controls power and processing.",
+    "parts": [
+      "Body_And_Electrodes",
+      "Status_electrolyzer-off",
+      "Status_electrolyzer-standby",
+      "Status_electrolyzer-working",
+      "Service_Hatch",
+      "Working_Arcs_Frame_0",
+      "Working_Arcs_Frame_1"
+    ]
+  },
+  "gas_crystallizer": {
+    "triangles": 180,
+    "meshes": 6,
+    "notes": "Tall transparent reaction chamber, product socket, maintenance panel and on/off source control. Gas connections are anchors only; pipe network excluded.",
+    "parts": [
+      "Crystallizer_Base",
+      "Reaction_Chamber",
+      "Chamber_Rim",
+      "Control_crystallizer-off",
+      "Control_crystallizer-on",
+      "Service_Hatch"
+    ]
+  },
+  "tank_compressor": {
+    "triangles": 96,
+    "meshes": 3,
+    "notes": "Hollow tank chamber, separate compression door and maintenance hatch. Source closes chamber when tank inserted; no tank is baked into mesh. Input/output ports remain sockets only.",
+    "parts": [
+      "Compressor_Housing",
+      "Compression_Door",
+      "Service_Hatch"
+    ]
+  },
+  "breach_shield_generator": {
+    "triangles": 336,
+    "meshes": 9,
+    "notes": "Portable breach shield column. Original off/on/broken states on energy bands. Generated shields are separate gameplay objects, not baked geometry.",
+    "parts": [
+      "Shield_Column",
+      "Energy_Band_0_shieldoff",
+      "Energy_Band_0_shieldon",
+      "Energy_Band_0_shieldoffbr",
+      "Energy_Band_0_shieldonbr",
+      "Energy_Band_1_shieldoff",
+      "Energy_Band_1_shieldon",
+      "Energy_Band_1_shieldoffbr",
+      "Energy_Band_1_shieldonbr"
+    ]
+  },
+  "atmospheric_shield_generator": {
+    "triangles": 22,
+    "meshes": 6,
+    "notes": "Source is a thin non-solid rail, not a bulky tower. Place/rotate on the 2m grid; opposing generators create the field at runtime. Active/waiting/inactive lamp clips.",
+    "parts": [
+      "Emitter_Rail",
+      "Active_Lamps_Frame_0",
+      "Waiting_Lamps_Frame_0",
+      "Waiting_Lamps_Frame_1",
+      "Waiting_Lamps_Frame_2",
+      "Waiting_Lamps_Frame_3"
+    ]
+  }
+}

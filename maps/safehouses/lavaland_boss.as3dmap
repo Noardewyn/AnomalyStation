@@ -1,0 +1,38 @@
+anomaly-map 1
+source _maps/safehouses/lavaland_boss.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/closed/wall | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+2,6: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,6: /obj/machinery/door/airlock/external/glass{name = "Mining External Airlock"} | /obj/effect/mapping_helpers/airlock/access/all | /obj/structure/fans/tiny | /turf/open/floor/iron/dark/textured_large | /area/virtual_domain/safehouse
+6,6: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,5: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 9} | /obj/machinery/suit_storage_unit/mining | /turf/open/floor/iron/dark | /area/virtual_domain/safehouse
+3,5: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /obj/structure/extinguisher_cabinet/directional/north | /turf/open/floor/iron/dark/smooth_edge | /area/virtual_domain/safehouse
+4,5: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /turf/open/floor/iron/dark/smooth_edge | /area/virtual_domain/safehouse
+5,5: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /obj/structure/extinguisher_cabinet/directional/north | /turf/open/floor/iron/dark/smooth_edge | /area/virtual_domain/safehouse
+6,5: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 5} | /obj/structure/tank_dispenser/oxygen | /turf/open/floor/iron/dark | /area/virtual_domain/safehouse
+2,4: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 8} | /obj/machinery/suit_storage_unit/mining | /obj/machinery/light/directional/west | /turf/open/floor/iron/dark/smooth_edge{dir = 4} | /area/virtual_domain/safehouse
+3,4: /turf/open/floor/iron/dark/textured_large | /area/virtual_domain/safehouse
+4,4: /obj/item/gun/energy/recharge/kinetic_accelerator{pixel_x = -6; pixel_y = 6} | /obj/item/gun/energy/recharge/kinetic_accelerator{pixel_x = -1; pixel_y = 1} | /obj/item/gun/energy/recharge/kinetic_accelerator{pixel_x = 4; pixel_y = -4} | /obj/structure/closet | /obj/item/kinetic_crusher | /obj/item/kinetic_crusher | /turf/open/floor/iron/dark/textured_large | /area/virtual_domain/safehouse
+5,4: /turf/open/floor/iron/dark/textured_large | /area/virtual_domain/safehouse
+6,4: /obj/effect/turf_decal/loading_area{dir = 4} | /obj/machinery/light/directional/east | /obj/structure/railing | /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+1,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,3: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 8} | /obj/machinery/suit_storage_unit/mining | /turf/open/floor/iron/dark/smooth_edge{dir = 4} | /area/virtual_domain/safehouse
+3,3: /turf/open/floor/iron/dark/textured_large | /area/virtual_domain/safehouse
+4,3: /obj/structure/table | /obj/item/borg/upgrade/modkit/damage{pixel_x = 8; pixel_y = 8} | /obj/item/borg/upgrade/modkit/damage{pixel_y = 4; pixel_x = 8} | /obj/item/borg/upgrade/modkit/damage{pixel_x = 8} | /obj/item/borg/upgrade/modkit/range{pixel_y = 8} | /obj/item/borg/upgrade/modkit/range{pixel_y = 4} | /obj/item/borg/upgrade/modkit/range | /obj/item/borg/upgrade/modkit/cooldown{pixel_x = -8; pixel_y = 8} | /obj/item/borg/upgrade/modkit/cooldown{pixel_x = -8; pixel_y = 4} | /obj/item/borg/upgrade/modkit/cooldown{pixel_x = -8} | /obj/item/reagent_containers/hypospray/medipen/survival/luxury{pixel_x = 6; pixel_y = 6} | /obj/item/reagent_containers/hypospray/medipen/survival/luxury{pixel_x = 6} | /turf/open/floor/iron/dark/textured_large | /area/virtual_domain/safehouse
+5,3: /turf/open/floor/iron/dark/textured_large | /area/virtual_domain/safehouse
+6,3: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 4} | /obj/structure/closet | /obj/item/gun/ballistic/rocketlauncher/unrestricted | /obj/item/ammo_casing/rocket | /obj/item/ammo_casing/rocket | /obj/item/ammo_casing/rocket | /obj/item/energy_katana | /obj/item/ammo_box/magazine/m7mm | /turf/open/floor/iron/dark/smooth_edge{dir = 8} | /area/virtual_domain/safehouse
+7,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+1,2: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,2: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 10} | /obj/structure/table | /obj/item/flashlight/lantern{pixel_x = 8; pixel_y = null} | /obj/item/flashlight/lantern{pixel_y = 4} | /obj/item/flashlight/lantern{pixel_x = -8; pixel_y = 8} | /obj/item/clothing/glasses/meson/night | /obj/item/clothing/glasses/meson/night | /obj/item/clothing/glasses/meson/night | /turf/open/floor/iron/dark | /area/virtual_domain/safehouse
+3,2: /obj/effect/turf_decal/trimline/brown/filled/line | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/iron/dark/smooth_edge{dir = 1} | /area/virtual_domain/safehouse
+4,2: /obj/effect/turf_decal/trimline/brown/filled/line | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/iron/dark/smooth_edge{dir = 1} | /area/virtual_domain/safehouse
+5,2: /obj/effect/turf_decal/trimline/brown/filled/line | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/iron/dark/smooth_edge{dir = 1} | /area/virtual_domain/safehouse
+6,2: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 6} | /obj/structure/sign/departments/cargo/directional/south | /obj/structure/closet | /obj/item/gun/ballistic/automatic/l6_saw/unrestricted | /obj/item/ammo_box/magazine/sniper_rounds | /obj/item/gun/ballistic/rifle/sniper_rifle | /turf/open/floor/iron/dark | /area/virtual_domain/safehouse
+7,2: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+1,1: /obj/modular_map_connector | /turf/closed/wall | /area/virtual_domain/safehouse
+3,1: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,1: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse
+5,1: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/virtual_domain/safehouse

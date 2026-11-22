@@ -1,0 +1,25 @@
+{
+  "parts": {
+    "Vault_Left": {
+      "triangles": 60,
+      "open_offset_godot": [
+        -1.5,
+        0.0,
+        0.0
+      ]
+    },
+    "Vault_Right": {
+      "triangles": 180,
+      "open_offset_godot": [
+        1.5,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "triangles": 240,
+  "source_sha256": "c18b23f69d43122b2e210614c20fa519ac14f8224d9d752c428efba33a59fc52",
+  "source_texture": "assets\\tg\\icons\\obj\\doors\\airlocks\\vault\\vault.png",
+  "nearest": true,
+  "original_png_embedded": true
+}

@@ -1,0 +1,1180 @@
+{
+  "defib_mount_standard_empty": {
+    "base_state": "defibrillator_mount",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 44
+  },
+  "defib_mount_standard_unpowered": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 56
+  },
+  "defib_mount_standard_ready": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge100"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      }
+    ],
+    "triangles": 80
+  },
+  "defib_mount_standard_locked": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge100",
+      "clamps"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      },
+      {
+        "name": "Left_Locking_Clamps",
+        "triangles": 40,
+        "shared_mesh": "Left_Locking_Clamps.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.02812499925494194,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Right_Locking_Clamps",
+        "triangles": 40,
+        "shared_mesh": "Right_Locking_Clamps.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.02812499925494194,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 160
+  },
+  "defib_mount_standard_charge25": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge25"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge25_Overlay",
+        "triangles": 4,
+        "shared_mesh": "charge25_Overlay.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge25"
+      }
+    ],
+    "triangles": 68
+  },
+  "defib_mount_standard_charge50": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge50"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge50_Overlay",
+        "triangles": 8,
+        "shared_mesh": "charge50_Overlay.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge50"
+      }
+    ],
+    "triangles": 72
+  },
+  "defib_mount_standard_charge75": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge75"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge75_Overlay",
+        "triangles": 12,
+        "shared_mesh": "charge75_Overlay.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge75"
+      }
+    ],
+    "triangles": 76
+  },
+  "defib_mount_standard_emagged_0": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib",
+      "emagged frame 0",
+      "charge100"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "emagged_Overlay",
+        "triangles": 8,
+        "shared_mesh": "emagged_Overlay.024",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "emagged"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      }
+    ],
+    "triangles": 80
+  },
+  "defib_mount_standard_emagged_1": {
+    "base_state": "defibrillator_mount",
+    "overlays": [
+      "defib",
+      "emagged frame 1",
+      "charge100"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "emagged_Overlay",
+        "triangles": 8,
+        "shared_mesh": "emagged_Overlay.025",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "emagged"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      }
+    ],
+    "triangles": 80
+  },
+  "defib_mount_penlite_empty": {
+    "base_state": "penlite_mount",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 44
+  },
+  "defib_mount_penlite_unpowered": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 56
+  },
+  "defib_mount_penlite_ready": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge100"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      }
+    ],
+    "triangles": 80
+  },
+  "defib_mount_penlite_locked": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge100",
+      "clamps"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      },
+      {
+        "name": "Left_Locking_Clamps",
+        "triangles": 40,
+        "shared_mesh": "Left_Locking_Clamps.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.19687500596046448,
+          -0.02812499925494194,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Right_Locking_Clamps",
+        "triangles": 40,
+        "shared_mesh": "Right_Locking_Clamps.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.19687500596046448,
+          -0.02812499925494194,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 160
+  },
+  "defib_mount_penlite_charge25": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge25"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge25_Overlay",
+        "triangles": 4,
+        "shared_mesh": "charge25_Overlay.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge25"
+      }
+    ],
+    "triangles": 68
+  },
+  "defib_mount_penlite_charge50": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge50"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge50_Overlay",
+        "triangles": 8,
+        "shared_mesh": "charge50_Overlay.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge50"
+      }
+    ],
+    "triangles": 72
+  },
+  "defib_mount_penlite_charge75": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib",
+      "online",
+      "charge75"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "online_Overlay",
+        "triangles": 8,
+        "shared_mesh": "online_Overlay.060",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "online"
+      },
+      {
+        "name": "charge75_Overlay",
+        "triangles": 12,
+        "shared_mesh": "charge75_Overlay.012",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge75"
+      }
+    ],
+    "triangles": 76
+  },
+  "defib_mount_penlite_emagged_0": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib",
+      "emagged frame 0",
+      "charge100"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "emagged_Overlay",
+        "triangles": 8,
+        "shared_mesh": "emagged_Overlay.024",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "emagged"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      }
+    ],
+    "triangles": 80
+  },
+  "defib_mount_penlite_emagged_1": {
+    "base_state": "penlite_mount",
+    "overlays": [
+      "defib",
+      "emagged frame 1",
+      "charge100"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Mount",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Wall_Mount.108",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Defibrillator",
+        "triangles": 12,
+        "shared_mesh": "Removable_Defibrillator.096",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.05624999850988388,
+          -0.12656250596046448
+        ],
+        "source_state": null
+      },
+      {
+        "name": "emagged_Overlay",
+        "triangles": 8,
+        "shared_mesh": "emagged_Overlay.025",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "emagged"
+      },
+      {
+        "name": "charge100_Overlay",
+        "triangles": 16,
+        "shared_mesh": "charge100_Overlay.048",
+        "materials": [
+          "Defib_Mount_Original_Atlas.006"
+        ],
+        "parent": "Removable_Defibrillator",
+        "pivot_blender_m": [
+          -0.0,
+          0.05624999850988388,
+          0.12656250596046448
+        ],
+        "source_state": "charge100"
+      }
+    ],
+    "triangles": 80
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"version": 1,
+	"map_name": "Outpost",
+	"map_path": "map_files/Outpost",
+	"map_file": "Outpost.dmm",
+	"shuttles": {
+		"emergency": "emergency_outpost"
+	},
+	"traits": [
+		{
+			"Linkage": "Cross"
+		},
+		{
+			"Linkage": "Cross",
+			"Baseturf": "/turf/open/space/openspace"
+		},
+		{
+			"Linkage": "Cross",
+			"Baseturf": "/turf/open/space/openspace"
+		},
+		{
+			"Linkage": "Cross",
+			"Baseturf": "/turf/open/space/openspace"
+		}
+	],
+	"minetype": "none"
+}

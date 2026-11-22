@@ -1,0 +1,1331 @@
+{
+  "version": "4.0",
+  "width": 32,
+  "height": 32,
+  "sheetWidth": 288,
+  "sheetHeight": 288,
+  "states": [
+    {
+      "name": "wall_safe",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "wall_safe_locked",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "wall_safe_broken",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "moneybag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 3,
+      "rects": [
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "moneybagalt",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          128,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "bag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 5,
+      "rects": [
+        [
+          160,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverycrate_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 6,
+      "rects": [
+        [
+          192,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverycloset_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 7,
+      "rects": [
+        [
+          224,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverybox_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          256,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage5_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          0,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage4_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 10,
+      "rects": [
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage3_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 11,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage2_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 12,
+      "rects": [
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage1_note",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 13,
+      "rects": [
+        [
+          128,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "trashbag_empty",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 14,
+      "rects": [
+        [
+          160,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "trashbag_small",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 15,
+      "rects": [
+        [
+          192,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "trashbag_mid",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 16,
+      "rects": [
+        [
+          224,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "trashbag_full",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 17,
+      "rects": [
+        [
+          256,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "trashbag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 18,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "random_wallet",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 19,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "wallet",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 20,
+      "rects": [
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "wallet_overlay",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 21,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "evidence",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 22,
+      "rects": [
+        [
+          128,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "evidenceobj",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 23,
+      "rects": [
+        [
+          160,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "welderpack",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 24,
+      "rects": [
+        [
+          192,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "RPED",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 25,
+      "rects": [
+        [
+          224,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "RPED_active",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1,
+        0.5,
+        1,
+        0.5
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 26,
+      "rects": [
+        [
+          256,
+          64,
+          32,
+          32
+        ],
+        [
+          0,
+          96,
+          32,
+          32
+        ],
+        [
+          32,
+          96,
+          32,
+          32
+        ],
+        [
+          64,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "BS_RPED",
+      "dirs": 1,
+      "frames": 6,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 30,
+      "rects": [
+        [
+          96,
+          96,
+          32,
+          32
+        ],
+        [
+          128,
+          96,
+          32,
+          32
+        ],
+        [
+          160,
+          96,
+          32,
+          32
+        ],
+        [
+          192,
+          96,
+          32,
+          32
+        ],
+        [
+          224,
+          96,
+          32,
+          32
+        ],
+        [
+          256,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "BS_RPED_active",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 36,
+      "rects": [
+        [
+          0,
+          128,
+          32,
+          32
+        ],
+        [
+          32,
+          128,
+          32,
+          32
+        ],
+        [
+          64,
+          128,
+          32,
+          32
+        ],
+        [
+          96,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "brassbox",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 40,
+      "rects": [
+        [
+          128,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "hlquiver0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 41,
+      "rects": [
+        [
+          160,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "hlquiver1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 42,
+      "rects": [
+        [
+          192,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "hlquiver2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 43,
+      "rects": [
+        [
+          224,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "hlquiver3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 44,
+      "rects": [
+        [
+          256,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "borgrped",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 45,
+      "rects": [
+        [
+          0,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "borgrped_active",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1,
+        0.5,
+        1,
+        0.5
+      ],
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 46,
+      "rects": [
+        [
+          32,
+          160,
+          32,
+          32
+        ],
+        [
+          64,
+          160,
+          32,
+          32
+        ],
+        [
+          96,
+          160,
+          32,
+          32
+        ],
+        [
+          128,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 50,
+      "rects": [
+        [
+          160,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 51,
+      "rects": [
+        [
+          192,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 52,
+      "rects": [
+        [
+          224,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 53,
+      "rects": [
+        [
+          256,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 54,
+      "rects": [
+        [
+          0,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder4",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 55,
+      "rects": [
+        [
+          32,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder5",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 56,
+      "rects": [
+        [
+          64,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "canholder6",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 57,
+      "rects": [
+        [
+          96,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverycrate_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 58,
+      "rects": [
+        [
+          128,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverycloset_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 59,
+      "rects": [
+        [
+          160,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverybox_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 60,
+      "rects": [
+        [
+          192,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage5_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 61,
+      "rects": [
+        [
+          224,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage4_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 62,
+      "rects": [
+        [
+          256,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage3_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 63,
+      "rects": [
+        [
+          0,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage2_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 64,
+      "rects": [
+        [
+          32,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage1_tag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 65,
+      "rects": [
+        [
+          64,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "garment_bag",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 66,
+      "rects": [
+        [
+          96,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverycrate_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 67,
+      "rects": [
+        [
+          128,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverycloset_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 68,
+      "rects": [
+        [
+          160,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverybox_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 69,
+      "rects": [
+        [
+          192,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage5_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 70,
+      "rects": [
+        [
+          224,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage4_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 71,
+      "rects": [
+        [
+          256,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage3_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 72,
+      "rects": [
+        [
+          0,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage2_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 73,
+      "rects": [
+        [
+          32,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "deliverypackage1_sort",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 74,
+      "rects": [
+        [
+          64,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "spare_safe",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 75,
+      "rects": [
+        [
+          96,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "spare_safe_locked",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 76,
+      "rects": [
+        [
+          128,
+          256,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "spare_safe_broken",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 77,
+      "rects": [
+        [
+          160,
+          256,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

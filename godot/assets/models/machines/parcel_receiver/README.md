@@ -1,0 +1,1 @@
+Delivery chute: original intake state, all four directions studied. 1.2 x 1.0 m footprint, 1.45 m high. Front is -Y in Blender. Always open, no invented door. Original atlas unchanged, nearest sampling. Models only; no integration changes.

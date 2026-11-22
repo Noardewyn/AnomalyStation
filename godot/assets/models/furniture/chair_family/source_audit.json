@@ -1,0 +1,330 @@
+{
+  "dmi_source": "..\\tgstation\\icons\\obj\\chairs.dmi",
+  "png_source": "godot\\assets\\tg\\icons\\obj\\chairs.png",
+  "png_sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+  "dmi_sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05",
+  "png_pixels_equal_original_dmi": true,
+  "atlas_px": [
+    416,
+    384
+  ],
+  "tile_px": [
+    32,
+    32
+  ],
+  "direction_order": [
+    "S",
+    "N",
+    "E",
+    "W"
+  ],
+  "dm_source": "../tgstation/code/game/objects/structures/beds_chairs/chair.dm",
+  "dm_usage": {
+    "wooden_chair": "/obj/structure/chair/wood; line 181",
+    "wooden_chair_wings": "/obj/structure/chair/wood/wings; line 196",
+    "comfychair": "/obj/structure/chair/comfy; line 200; has_armrest=TRUE; tint variants at lines 215-228",
+    "comfychair_armrest": "update_overlays at lines 110-121; ABOVE_MOB_LAYER when occupied",
+    "officechair_dark": "/obj/structure/chair/office; line 297; unanchored, noisy movement",
+    "officechair_white": "/obj/structure/chair/office/light; line 321",
+    "stool": "/obj/structure/chair/stool; line 327",
+    "bar": "/obj/structure/chair/stool/bar; line 368"
+  },
+  "states": {
+    "stool": {
+      "name": "stool",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ],
+        [
+          32,
+          0,
+          32,
+          32
+        ],
+        [
+          64,
+          0,
+          32,
+          32
+        ],
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    "officechair_dark": {
+      "name": "officechair_dark",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 36,
+      "rects": [
+        [
+          320,
+          64,
+          32,
+          32
+        ],
+        [
+          352,
+          64,
+          32,
+          32
+        ],
+        [
+          384,
+          64,
+          32,
+          32
+        ],
+        [
+          0,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    "officechair_white": {
+      "name": "officechair_white",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 40,
+      "rects": [
+        [
+          32,
+          96,
+          32,
+          32
+        ],
+        [
+          64,
+          96,
+          32,
+          32
+        ],
+        [
+          96,
+          96,
+          32,
+          32
+        ],
+        [
+          128,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    "wooden_chair": {
+      "name": "wooden_chair",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 44,
+      "rects": [
+        [
+          160,
+          96,
+          32,
+          32
+        ],
+        [
+          192,
+          96,
+          32,
+          32
+        ],
+        [
+          224,
+          96,
+          32,
+          32
+        ],
+        [
+          256,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    "wooden_chair_wings": {
+      "name": "wooden_chair_wings",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 52,
+      "rects": [
+        [
+          0,
+          128,
+          32,
+          32
+        ],
+        [
+          32,
+          128,
+          32,
+          32
+        ],
+        [
+          64,
+          128,
+          32,
+          32
+        ],
+        [
+          96,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    "comfychair": {
+      "name": "comfychair",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 60,
+      "rects": [
+        [
+          256,
+          128,
+          32,
+          32
+        ],
+        [
+          288,
+          128,
+          32,
+          32
+        ],
+        [
+          320,
+          128,
+          32,
+          32
+        ],
+        [
+          352,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    "comfychair_armrest": {
+      "name": "comfychair_armrest",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 64,
+      "rects": [
+        [
+          384,
+          128,
+          32,
+          32
+        ],
+        [
+          0,
+          160,
+          32,
+          32
+        ],
+        [
+          32,
+          160,
+          32,
+          32
+        ],
+        [
+          64,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    "bar": {
+      "name": "bar",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 84,
+      "rects": [
+        [
+          192,
+          192,
+          32,
+          32
+        ],
+        [
+          224,
+          192,
+          32,
+          32
+        ],
+        [
+          256,
+          192,
+          32,
+          32
+        ],
+        [
+          288,
+          192,
+          32,
+          32
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "atlas": "godot\\assets\\tg\\icons\\obj\\wallmounts.png",
+  "size": [
+    288,
+    288
+  ],
+  "tile_size": [
+    32,
+    32
+  ],
+  "sha256": "47b9bd1b32599058f9b31c8d20ce22f9b15c5d7e15a7d46794c72be4099ec19a",
+  "rgba_matches_dmi": true,
+  "duplicate_audit": "No existing mounted flash asset/build found."
+}

@@ -1,0 +1,28 @@
+// Translated from tgstation (snapshot 1d99bd7f): code/_onclick/hud/screen_objects/alien.dm
+// Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
+using Anomaly.Core.DmShim;
+using Anomaly.Core.Kernel;
+using static Anomaly.Core.DmShim.Dm;
+using static Anomaly.Core.Tg.Builtins;
+using static Anomaly.Core.Tg.Defines;
+using static Anomaly.Core.Tg.GlobalProcs;
+
+namespace Anomaly.Core.Tg;
+
+// Gaps X5 (D333): the whole file, the alien HUD's screen objects (the hunter's leap toggle; the plasma display and the queen sense
+// are var-only). The var blocks are generated (D111).
+
+// tg: code/_onclick/hud/screen_objects/alien.dm:4
+public partial class atom_movable_screen_alien_leap : atom_movable_screen_alien
+{
+    // tg: code/_onclick/hud/screen_objects/alien.dm:9
+    [DmParams()]
+    public override async DmTask<object> Click(object location = null, object control = null, object @params = null)
+    {
+        if (!isalienhunter(usr))
+            return null;
+        mob_living_carbon_alien_adult_hunter AH = usr as mob_living_carbon_alien_adult_hunter;
+        await AH.toggle_leap();
+        return null;
+    }
+}

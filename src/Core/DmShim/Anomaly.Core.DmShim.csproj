@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Determinism (docs/ai/specs/object-model.md section 8): the core compiles optimized in every configuration, so the
+         locals an async method keeps across an await, and with them the objects alive at a state hash, are the same in
+         Debug and Release builds. -->
+    <Optimize>true</Optimize>
+    <!-- The namespace must not end in "Dm": translated code calls the static class Dm (Dm.str, Dm.@new), and a
+         namespace segment named Dm would shadow it (C# simple-name lookup finds Anomaly.Core.Dm before using-static). -->
+    <RootNamespace>Anomaly.Core.DmShim</RootNamespace>
+    <AssemblyName>Anomaly.Core.DmShim</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kernel\Anomaly.Core.Kernel.csproj" />
+  </ItemGroup>
+</Project>

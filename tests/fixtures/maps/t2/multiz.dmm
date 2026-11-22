@@ -1,0 +1,86 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture (D325): two linked levels, a 3 x 3 room on each; the upper one has open space over the middle of the lower one; a late-join landmark west of it
+"w" = (
+/turf/closed/indestructible,
+/area/station/hallway/primary/central)
+"f" = (
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+"l" = (
+/obj/effect/landmark/latejoin,
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+"o" = (
+/turf/open/openspace,
+/area/station/hallway/primary/central)
+
+(1,1,1) = {"
+w
+w
+w
+w
+w
+"}
+(2,1,1) = {"
+w
+f
+f
+f
+w
+"}
+(3,1,1) = {"
+w
+f
+f
+f
+w
+"}
+(4,1,1) = {"
+w
+f
+f
+f
+w
+"}
+(5,1,1) = {"
+w
+w
+w
+w
+w
+"}
+(1,1,2) = {"
+w
+w
+w
+w
+w
+"}
+(2,1,2) = {"
+w
+f
+l
+f
+w
+"}
+(3,1,2) = {"
+w
+f
+o
+f
+w
+"}
+(4,1,2) = {"
+w
+f
+f
+f
+w
+"}
+(5,1,2) = {"
+w
+w
+w
+w
+w
+"}

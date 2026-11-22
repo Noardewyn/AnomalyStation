@@ -1,0 +1,1668 @@
+{
+  "bar_sign_empty": {
+    "base_state": "empty",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "empty"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_thegreytide": {
+    "base_state": "thegreytide",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_thegreytide_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thegreytide"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_honkednloaded": {
+    "base_state": "honkednloaded",
+    "frame": 0,
+    "overlays": [
+      "honkednloaded-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_honkednloaded_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "honkednloaded"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 132,
+        "shared_mesh": "Light_Overlay.040",
+        "materials": [
+          "Bar_Sign_honkednloaded_Light_Overlay.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "honkednloaded"
+      }
+    ],
+    "triangles": 144
+  },
+  "bar_sign_slipperyshots": {
+    "base_state": "slipperyshots",
+    "frame": 0,
+    "overlays": [
+      "slipperyshots-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_slipperyshots_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "slipperyshots"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Light_Overlay.041",
+        "materials": [
+          "Bar_Sign_slipperyshots_Light_Overlay.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "slipperyshots"
+      }
+    ],
+    "triangles": 28
+  },
+  "bar_sign_thecavern": {
+    "base_state": "thecavern",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_thecavern_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thecavern"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_theouterspess": {
+    "base_state": "theouterspess",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_theouterspess_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "theouterspess"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_syndibarsign": {
+    "base_state": "syndibarsign",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_syndibarsign_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "syndibarsign"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_maidcafe": {
+    "base_state": "maidcafe",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_maidcafe_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "maidcafe"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_the_lightbulb": {
+    "base_state": "the_lightbulb",
+    "frame": 0,
+    "overlays": [
+      "the_lightbulb-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_the_lightbulb_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the_lightbulb"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 14,
+        "shared_mesh": "Light_Overlay.042",
+        "materials": [
+          "Bar_Sign_the_lightbulb_Light_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the_lightbulb"
+      }
+    ],
+    "triangles": 26
+  },
+  "bar_sign_goose": {
+    "base_state": "goose",
+    "frame": 0,
+    "overlays": [
+      "goose-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_goose_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "goose"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 60,
+        "shared_mesh": "Light_Overlay.043",
+        "materials": [
+          "Bar_Sign_goose_Light_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "goose"
+      }
+    ],
+    "triangles": 72
+  },
+  "bar_sign_chalkboard_menu": {
+    "base_state": "chalkboard_menu",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_chalkboard_menu_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "chalkboard_menu"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_le_cafe_silencieux": {
+    "base_state": "le_cafe_silencieux",
+    "frame": 0,
+    "overlays": [
+      "le_cafe_silencieux-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_le_cafe_silencieux_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "le_cafe_silencieux"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 346,
+        "shared_mesh": "Light_Overlay.044",
+        "materials": [
+          "Bar_Sign_le_cafe_silencieux_Light_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "le_cafe_silencieux"
+      }
+    ],
+    "triangles": 358
+  },
+  "bar_sign_rock-bottom": {
+    "base_state": "rock-bottom",
+    "frame": 0,
+    "overlays": [
+      "rock-bottom-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_rock-bottom_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "rock-bottom"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 108,
+        "shared_mesh": "Light_Overlay.045",
+        "materials": [
+          "Bar_Sign_rock-bottom_Light_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "rock-bottom"
+      }
+    ],
+    "triangles": 120
+  },
+  "bar_sign_the-red-mons": {
+    "base_state": "the-red-mons",
+    "frame": 0,
+    "overlays": [
+      "the-red-mons-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_the-red-mons_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the-red-mons"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 178,
+        "shared_mesh": "Light_Overlay.046",
+        "materials": [
+          "Bar_Sign_the-red-mons_Light_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the-red-mons"
+      }
+    ],
+    "triangles": 190
+  },
+  "bar_sign_the-wizard": {
+    "base_state": "the-wizard",
+    "frame": 0,
+    "overlays": [
+      "the-wizard-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_the-wizard_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the-wizard"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 160,
+        "shared_mesh": "Light_Overlay.047",
+        "materials": [
+          "Bar_Sign_the-wizard_Light_Overlay.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the-wizard"
+      }
+    ],
+    "triangles": 172
+  },
+  "bar_sign_thesmallrounyinn": {
+    "base_state": "thesmallrounyinn",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_thesmallrounyinn_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thesmallrounyinn"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_cold-ones": {
+    "base_state": "cold-ones",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_cold-ones_Original.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "cold-ones"
+      }
+    ],
+    "triangles": 12
+  },
+  "bar_sign_thesingulo": {
+    "base_state": "thesingulo",
+    "frame": 0,
+    "overlays": [
+      "thesingulo-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_thesingulo_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thesingulo"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 82,
+        "shared_mesh": "Light_Overlay.048",
+        "materials": [
+          "Bar_Sign_thesingulo_Light_Overlay.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thesingulo"
+      }
+    ],
+    "triangles": 94
+  },
+  "bar_sign_officerbeersky": {
+    "base_state": "officerbeersky",
+    "frame": 0,
+    "overlays": [
+      "officerbeersky-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Bar_Sign_Housing.004",
+        "materials": [
+          "Bar_Sign_officerbeersky_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "officerbeersky"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 198,
+        "shared_mesh": "Light_Overlay.049",
+        "materials": [
+          "Bar_Sign_officerbeersky_Light_Overlay.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "officerbeersky"
+      }
+    ],
+    "triangles": 210
+  },
+  "bar_sign_maltesefalcon": {
+    "base_state": "maltesefalcon",
+    "frame": 0,
+    "overlays": [
+      "maltesefalcon-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 92,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.016",
+        "materials": [
+          "Bar_Sign_maltesefalcon_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "maltesefalcon"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 172,
+        "shared_mesh": "Light_Overlay.050",
+        "materials": [
+          "Bar_Sign_maltesefalcon_Light_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "maltesefalcon"
+      }
+    ],
+    "triangles": 264
+  },
+  "bar_sign_oldcockinn": {
+    "base_state": "oldcockinn",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 244,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.017",
+        "materials": [
+          "Bar_Sign_oldcockinn_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "oldcockinn"
+      }
+    ],
+    "triangles": 244
+  },
+  "bar_sign_alohasnackbar": {
+    "base_state": "alohasnackbar",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 108,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.018",
+        "materials": [
+          "Bar_Sign_alohasnackbar_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alohasnackbar"
+      }
+    ],
+    "triangles": 108
+  },
+  "bar_sign_maltroach": {
+    "base_state": "maltroach",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 268,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.019",
+        "materials": [
+          "Bar_Sign_maltroach_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "maltroach"
+      }
+    ],
+    "triangles": 268
+  },
+  "bar_sign_neon-flamingo": {
+    "base_state": "neon-flamingo",
+    "frame": 0,
+    "overlays": [
+      "neon-flamingo-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 140,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.020",
+        "materials": [
+          "Bar_Sign_neon-flamingo_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "neon-flamingo"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 477,
+        "shared_mesh": "Light_Overlay.051",
+        "materials": [
+          "Bar_Sign_neon-flamingo_Light_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "neon-flamingo"
+      }
+    ],
+    "triangles": 617
+  },
+  "bar_sign_wrong-turn": {
+    "base_state": "wrong-turn",
+    "frame": 0,
+    "overlays": [
+      "wrong-turn-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 196,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.021",
+        "materials": [
+          "Bar_Sign_wrong-turn_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wrong-turn"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 18,
+        "shared_mesh": "Light_Overlay.052",
+        "materials": [
+          "Bar_Sign_wrong-turn_Light_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "wrong-turn"
+      }
+    ],
+    "triangles": 214
+  },
+  "bar_sign_pun-puns-pub": {
+    "base_state": "pun-puns-pub",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 60,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.022",
+        "materials": [
+          "Bar_Sign_pun-puns-pub_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "pun-puns-pub"
+      }
+    ],
+    "triangles": 60
+  },
+  "bar_sign_doctors-orders": {
+    "base_state": "doctors-orders",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 76,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.023",
+        "materials": [
+          "Bar_Sign_doctors-orders_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "doctors-orders"
+      }
+    ],
+    "triangles": 76
+  },
+  "bar_sign_scotchservinwill": {
+    "base_state": "scotchservinwill",
+    "frame": 0,
+    "overlays": [
+      "scotchservinwill-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_scotchservinwill_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "scotchservinwill"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 184,
+        "shared_mesh": "Light_Overlay.053",
+        "materials": [
+          "Bar_Sign_scotchservinwill_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "scotchservinwill"
+      }
+    ],
+    "triangles": 220
+  },
+  "bar_sign_thebark": {
+    "base_state": "thebark",
+    "frame": 0,
+    "overlays": [
+      "thebark-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_thebark_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thebark"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 110,
+        "shared_mesh": "Light_Overlay.054",
+        "materials": [
+          "Bar_Sign_thebark_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thebark"
+      }
+    ],
+    "triangles": 146
+  },
+  "bar_sign_thedrunkcarp": {
+    "base_state": "thedrunkcarp",
+    "frame": 0,
+    "overlays": [
+      "thedrunkcarp-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_thedrunkcarp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thedrunkcarp"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 210,
+        "shared_mesh": "Light_Overlay.055",
+        "materials": [
+          "Bar_Sign_thedrunkcarp_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thedrunkcarp"
+      }
+    ],
+    "triangles": 246
+  },
+  "bar_sign_theharmbaton": {
+    "base_state": "theharmbaton",
+    "frame": 0,
+    "overlays": [
+      "theharmbaton-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_theharmbaton_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "theharmbaton"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 174,
+        "shared_mesh": "Light_Overlay.056",
+        "materials": [
+          "Bar_Sign_theharmbaton_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "theharmbaton"
+      }
+    ],
+    "triangles": 210
+  },
+  "bar_sign_empbarsign": {
+    "base_state": "empbarsign",
+    "frame": 0,
+    "overlays": [
+      "empbarsign-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 20,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.025",
+        "materials": [
+          "Bar_Sign_empbarsign_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "empbarsign"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Light_Overlay.057",
+        "materials": [
+          "Bar_Sign_empbarsign_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "empbarsign"
+      }
+    ],
+    "triangles": 22
+  },
+  "bar_sign_thenest": {
+    "base_state": "thenest",
+    "frame": 0,
+    "overlays": [
+      "thenest-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 28,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.026",
+        "materials": [
+          "Bar_Sign_thenest_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thenest"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 138,
+        "shared_mesh": "Light_Overlay.058",
+        "materials": [
+          "Bar_Sign_thenest_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thenest"
+      }
+    ],
+    "triangles": 166
+  },
+  "bar_sign_thecoderbus": {
+    "base_state": "thecoderbus",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_thecoderbus_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thecoderbus"
+      }
+    ],
+    "triangles": 36
+  },
+  "bar_sign_theadminbus": {
+    "base_state": "theadminbus",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_theadminbus_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "theadminbus"
+      }
+    ],
+    "triangles": 36
+  },
+  "bar_sign_thewretchedhive": {
+    "base_state": "thewretchedhive",
+    "frame": 0,
+    "overlays": [
+      "thewretchedhive-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_thewretchedhive_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thewretchedhive"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 173,
+        "shared_mesh": "Light_Overlay.059",
+        "materials": [
+          "Bar_Sign_thewretchedhive_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thewretchedhive"
+      }
+    ],
+    "triangles": 209
+  },
+  "bar_sign_robustacafe": {
+    "base_state": "robustacafe",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_robustacafe_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "robustacafe"
+      }
+    ],
+    "triangles": 36
+  },
+  "bar_sign_emergencyrumparty": {
+    "base_state": "emergencyrumparty",
+    "frame": 0,
+    "overlays": [
+      "emergencyrumparty-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_emergencyrumparty_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emergencyrumparty"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 87,
+        "shared_mesh": "Light_Overlay.060",
+        "materials": [
+          "Bar_Sign_emergencyrumparty_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emergencyrumparty"
+      }
+    ],
+    "triangles": 123
+  },
+  "bar_sign_combocafe": {
+    "base_state": "combocafe",
+    "frame": 0,
+    "overlays": [
+      "combocafe-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_combocafe_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "combocafe"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 156,
+        "shared_mesh": "Light_Overlay.061",
+        "materials": [
+          "Bar_Sign_combocafe_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "combocafe"
+      }
+    ],
+    "triangles": 192
+  },
+  "bar_sign_vladssaladbar": {
+    "base_state": "vladssaladbar",
+    "frame": 0,
+    "overlays": [
+      "vladssaladbar-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_vladssaladbar_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vladssaladbar"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 178,
+        "shared_mesh": "Light_Overlay.062",
+        "materials": [
+          "Bar_Sign_vladssaladbar_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vladssaladbar"
+      }
+    ],
+    "triangles": 214
+  },
+  "bar_sign_theshaken": {
+    "base_state": "theshaken",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_theshaken_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "theshaken"
+      }
+    ],
+    "triangles": 36
+  },
+  "bar_sign_thealenath": {
+    "base_state": "thealenath",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.024",
+        "materials": [
+          "Bar_Sign_thealenath_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thealenath"
+      }
+    ],
+    "triangles": 36
+  },
+  "bar_sign_thenet": {
+    "base_state": "thenet",
+    "frame": 0,
+    "overlays": [
+      "thenet-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 36,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.027",
+        "materials": [
+          "Bar_Sign_thenet_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thenet"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Light_Overlay.063",
+        "materials": [
+          "Bar_Sign_thenet_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "thenet"
+      }
+    ],
+    "triangles": 38
+  },
+  "bar_sign_orangejuice": {
+    "base_state": "orangejuice",
+    "frame": 0,
+    "overlays": [
+      "orangejuice-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 76,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.028",
+        "materials": [
+          "Bar_Sign_orangejuice_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "orangejuice"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 134,
+        "shared_mesh": "Light_Overlay.064",
+        "materials": [
+          "Bar_Sign_orangejuice_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "orangejuice"
+      }
+    ],
+    "triangles": 210
+  },
+  "bar_sign_the-assembly-line": {
+    "base_state": "the-assembly-line",
+    "frame": 0,
+    "overlays": [
+      "the-assembly-line-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 76,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.029",
+        "materials": [
+          "Bar_Sign_the-assembly-line_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the-assembly-line"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 138,
+        "shared_mesh": "Light_Overlay.065",
+        "materials": [
+          "Bar_Sign_the-assembly-line_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "the-assembly-line"
+      }
+    ],
+    "triangles": 214
+  },
+  "bar_sign_little_treats": {
+    "base_state": "little_treats",
+    "frame": 0,
+    "overlays": [
+      "little_treats-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 362,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.030",
+        "materials": [
+          "Bar_Sign_little_treats_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "little_treats"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 139,
+        "shared_mesh": "Light_Overlay.066",
+        "materials": [
+          "Bar_Sign_little_treats_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "little_treats"
+      }
+    ],
+    "triangles": 501
+  },
+  "bar_sign_bargonia": {
+    "base_state": "bargonia",
+    "frame": 0,
+    "overlays": [
+      "bargonia-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 44,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.031",
+        "materials": [
+          "Bar_Sign_bargonia_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bargonia"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 6,
+        "shared_mesh": "Light_Overlay.067",
+        "materials": [
+          "Bar_Sign_bargonia_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bargonia"
+      }
+    ],
+    "triangles": 50
+  },
+  "bar_sign_cult-cove": {
+    "base_state": "cult-cove",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 44,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.032",
+        "materials": [
+          "Bar_Sign_cult-cove_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "cult-cove"
+      }
+    ],
+    "triangles": 44
+  },
+  "bar_sign_slowdive": {
+    "base_state": "slowdive",
+    "frame": 0,
+    "overlays": [
+      "slowdive-light-mask"
+    ],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 12,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.033",
+        "materials": [
+          "Bar_Sign_slowdive_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "slowdive"
+      },
+      {
+        "name": "Light_Overlay",
+        "triangles": 202,
+        "shared_mesh": "Light_Overlay.068",
+        "materials": [
+          "Bar_Sign_slowdive_Light_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "slowdive"
+      }
+    ],
+    "triangles": 214
+  },
+  "bar_sign_therune": {
+    "base_state": "therune",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 92,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.034",
+        "materials": [
+          "Bar_Sign_therune_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "therune"
+      }
+    ],
+    "triangles": 92
+  },
+  "bar_sign_moths-moths-moths": {
+    "base_state": "moths-moths-moths",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Shaped_Bar_Sign_Housing",
+        "triangles": 28,
+        "shared_mesh": "Shaped_Bar_Sign_Housing.026",
+        "materials": [
+          "Bar_Sign_moths-moths-moths_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "moths-moths-moths"
+      }
+    ],
+    "triangles": 28
+  }
+}

@@ -1,0 +1,21 @@
+name: Feature request
+description: An idea for the game or the tools. For big changes, talk to us on Discord first.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What you want
+      description: What should be added or changed, and why.
+    validations:
+      required: true
+  - type: textarea
+    id: tg
+    attributes:
+      label: How /tg/station does it
+      description: If the mechanic exists in /tg/station, how it works there (a link to the code or the wiki helps). Anomaly Station follows tg unless 3D needs something else.
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Sketches, references, other games.

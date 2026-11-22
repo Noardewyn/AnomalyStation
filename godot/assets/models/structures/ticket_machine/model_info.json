@@ -1,0 +1,296 @@
+{
+  "ticket_machine_ready": {
+    "base_state": "ticketmachine",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Display_Housing",
+        "triangles": 36,
+        "shared_mesh": "Continuous_Display_Housing.004",
+        "materials": [
+          "Ticket_Machine_ready_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine"
+      },
+      {
+        "name": "Recessed_Display_Surface",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Surface.004",
+        "materials": [
+          "Ticket_Display_ready_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine"
+      },
+      {
+        "name": "Shared_Wall_Mounting_Rail",
+        "triangles": 12,
+        "shared_mesh": "Shared_Wall_Mounting_Rail.004",
+        "materials": [
+          "Ticket_Machine_ready_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine"
+      },
+      {
+        "name": "Continuous_Ticket_Dispenser",
+        "triangles": 42,
+        "shared_mesh": "Continuous_Ticket_Dispenser.004",
+        "materials": [
+          "Ticket_Machine_ready_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine"
+      },
+      {
+        "name": "Lined_Ticket_Outlet",
+        "triangles": 12,
+        "shared_mesh": "Lined_Ticket_Outlet.004",
+        "materials": [
+          "Ticket_Machine_ready_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine"
+      },
+      {
+        "name": "Lower_Dispenser_Bracket",
+        "triangles": 68,
+        "shared_mesh": "Lower_Dispenser_Bracket.003",
+        "materials": [
+          "Ticket_Machine_ready_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine"
+      }
+    ],
+    "triangles": 182
+  },
+  "ticket_machine_empty": {
+    "base_state": "ticketmachine_empty",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Display_Housing",
+        "triangles": 36,
+        "shared_mesh": "Continuous_Display_Housing.004",
+        "materials": [
+          "Ticket_Machine_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_empty"
+      },
+      {
+        "name": "Recessed_Display_Surface",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Surface.004",
+        "materials": [
+          "Ticket_Display_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_empty"
+      },
+      {
+        "name": "Shared_Wall_Mounting_Rail",
+        "triangles": 12,
+        "shared_mesh": "Shared_Wall_Mounting_Rail.004",
+        "materials": [
+          "Ticket_Machine_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_empty"
+      },
+      {
+        "name": "Continuous_Ticket_Dispenser",
+        "triangles": 42,
+        "shared_mesh": "Continuous_Ticket_Dispenser.004",
+        "materials": [
+          "Ticket_Machine_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_empty"
+      },
+      {
+        "name": "Lined_Ticket_Outlet",
+        "triangles": 12,
+        "shared_mesh": "Lined_Ticket_Outlet.004",
+        "materials": [
+          "Ticket_Machine_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_empty"
+      },
+      {
+        "name": "Lower_Dispenser_Bracket",
+        "triangles": 68,
+        "shared_mesh": "Lower_Dispenser_Bracket.003",
+        "materials": [
+          "Ticket_Machine_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_empty"
+      }
+    ],
+    "triangles": 182
+  },
+  "ticket_machine_off": {
+    "base_state": "ticketmachine_off",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Display_Housing",
+        "triangles": 36,
+        "shared_mesh": "Continuous_Display_Housing.004",
+        "materials": [
+          "Ticket_Machine_off_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_off"
+      },
+      {
+        "name": "Recessed_Display_Surface",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display_Surface.004",
+        "materials": [
+          "Ticket_Display_off_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_off"
+      },
+      {
+        "name": "Shared_Wall_Mounting_Rail",
+        "triangles": 12,
+        "shared_mesh": "Shared_Wall_Mounting_Rail.004",
+        "materials": [
+          "Ticket_Machine_off_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_off"
+      },
+      {
+        "name": "Continuous_Ticket_Dispenser",
+        "triangles": 42,
+        "shared_mesh": "Continuous_Ticket_Dispenser.004",
+        "materials": [
+          "Ticket_Machine_off_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_off"
+      },
+      {
+        "name": "Lined_Ticket_Outlet",
+        "triangles": 12,
+        "shared_mesh": "Lined_Ticket_Outlet.004",
+        "materials": [
+          "Ticket_Machine_off_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_off"
+      },
+      {
+        "name": "Lower_Dispenser_Bracket",
+        "triangles": 68,
+        "shared_mesh": "Lower_Dispenser_Bracket.003",
+        "materials": [
+          "Ticket_Machine_off_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ticketmachine_off"
+      }
+    ],
+    "triangles": 182
+  }
+}

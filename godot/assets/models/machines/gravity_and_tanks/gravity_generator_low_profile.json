@@ -1,0 +1,27 @@
+{
+  "bounds_min_blender": [
+    -2.8940000534057617,
+    -2.8940000534057617,
+    0.0
+  ],
+  "bounds_max_blender": [
+    2.8940000534057617,
+    2.8940000534057617,
+    1.7799999713897705
+  ],
+  "ceiling_clearance_m": 0.2200000286102295,
+  "triangles": 1924,
+  "meshes": 9,
+  "notes": "Five equipment cells in a cross on a 3x3 base, 5.788m square, 1.78m height. Includes rear stabilizer.",
+  "parts": [
+    "Generator_Left_Coil",
+    "Generator_Left_Brace",
+    "Generator_Right_Coil",
+    "Generator_Right_Brace",
+    "Generator_Center",
+    "Active_Field_Ring",
+    "Installation_Base_3x3",
+    "Floor_Conduits",
+    "Rear_Field_Stabilizer"
+  ]
+}

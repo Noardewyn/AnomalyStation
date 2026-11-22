@@ -1,0 +1,26 @@
+{
+  "source": "assets/tg/icons/obj/doors/shutters_radiation.png",
+  "state": "closed",
+  "rect": [
+    0,
+    0,
+    32,
+    32
+  ],
+  "source_sha256": "ee64369cbe62b8b4a18ebbc8f9551ae9d013843800a5fd1d881e21bff95d3707",
+  "parts": {
+    "Shutter": {
+      "triangles": 12,
+      "open_offset_godot": [
+        0.0,
+        2.05,
+        0.0
+      ]
+    }
+  },
+  "triangles": 12,
+  "nearest": true,
+  "original_png_embedded": true,
+  "glass_alpha": null,
+  "notes": "Closed tile; source direction 0. Rotate whole model for other cardinal directions."
+}

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>Anomaly.Tools.Maps.Tests</RootNamespace>
+  </PropertyGroup>
+  <!--
+    M3 P2: the converter's tests (docs/ai/specs/map-format.md 7) with the fixtures of tests/fixtures/maps. They live beside the
+    tool because Anomaly.Core.Tests does not reference it (its csproj is the lead's); the lead adds this project to the solution
+    at merge, or moves these files to tests/Anomaly.Core.Tests/Tools/Maps with a reference to the tool.
+  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Anomaly.Tools.Maps.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="System.IO" />
+    <Using Include="System.Linq" />
+  </ItemGroup>
+</Project>

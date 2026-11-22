@@ -1,0 +1,162 @@
+{
+  "sofa_middle": {
+    "triangles": 84,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "sofa_left": {
+    "triangles": 96,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "sofa_right": {
+    "triangles": 96,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "sofa_corner": {
+    "triangles": 96,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "corporate_sofa_middle": {
+    "triangles": 84,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "corporate_sofa_left": {
+    "triangles": 96,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "corporate_sofa_right": {
+    "triangles": 96,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "corporate_sofa_corner": {
+    "triangles": 96,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "wooden_pew_middle": {
+    "triangles": 72,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "wooden_pew_left": {
+    "triangles": 84,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "wooden_pew_right": {
+    "triangles": 84,
+    "meshes": 1,
+    "notes": "Module; pitch 0.90m. Ends join along X; corner turns 90 degrees.",
+    "parts": [
+      "Body"
+    ]
+  },
+  "shuttle_seat": {
+    "triangles": 354,
+    "meshes": 2,
+    "notes": "Perspective correction: connected overhead restraint, separate Safety_Restraint mesh, pivot at top hinge brackets. Open/close rotates 110 degrees upwards; 2m ceiling clearance. Original atlas unchanged. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Seat_And_Hinge_Brackets",
+      "Safety_Restraint"
+    ]
+  },
+  "bookcase": {
+    "triangles": 384,
+    "meshes": 4,
+    "notes": "Real shelves, separate book rows. Game fill states book-0 through book-5; no joining behaviour in current code.",
+    "parts": [
+      "Cabinet",
+      "Books_Row_1",
+      "Books_Row_2",
+      "Books_Row_3"
+    ]
+  },
+  "engine_heater": {
+    "triangles": 84,
+    "meshes": 1,
+    "notes": "Standalone heater; code explicitly sets engine_power=0. No automatic heater connection in current source.",
+    "parts": [
+      "Heater"
+    ]
+  },
+  "propulsion_engine": {
+    "triangles": 196,
+    "meshes": 1,
+    "notes": "Directional propulsion variant. Source has explicit left/centre/right appearances, not automatic smoothing.",
+    "parts": [
+      "Engine"
+    ]
+  },
+  "propulsion_engine_left": {
+    "triangles": 196,
+    "meshes": 1,
+    "notes": "Directional propulsion variant. Source has explicit left/centre/right appearances, not automatic smoothing.",
+    "parts": [
+      "Engine"
+    ]
+  },
+  "propulsion_engine_right": {
+    "triangles": 196,
+    "meshes": 1,
+    "notes": "Directional propulsion variant. Source has explicit left/centre/right appearances, not automatic smoothing.",
+    "parts": [
+      "Engine"
+    ]
+  },
+  "escape_pod_airlock": {
+    "triangles": 684,
+    "meshes": 3,
+    "notes": "/airlock/titanium, opaque fill_closed layer. Same type as named Emergency Shuttle Airlock.",
+    "parts": [
+      "Frame",
+      "Door_Left",
+      "Door_Right"
+    ]
+  },
+  "escape_shuttle_airlock": {
+    "triangles": 684,
+    "meshes": 3,
+    "notes": "Alias of escape_pod_airlock; same titanium door and shared geometry.",
+    "parts": [
+      "Frame",
+      "Door_Left",
+      "Door_Right"
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "tube_straight": {
+    "triangles": 288,
+    "meshes": 3,
+    "notes": "12-sided round, thick transparent shell; exact 2m cardinal or 2sqrt(2)m diagonal pitch. Rotate cardinal directions; diagonal end centers lie on cell corners and use diagonal neighbour spacing.",
+    "parts": [
+      "Round_Glass_Shell",
+      "Start_Collar",
+      "End_Collar"
+    ]
+  },
+  "tube_straight_crossing": {
+    "triangles": 480,
+    "meshes": 5,
+    "notes": "12-sided round, thick transparent shell; exact 2m cardinal or 2sqrt(2)m diagonal pitch. Source crossing is walkable density=FALSE with two ports, not a four-way routing junction. Collision handling must honour source passability.",
+    "parts": [
+      "Round_Glass_Shell",
+      "Start_Collar",
+      "End_Collar",
+      "Crossing_Marker_-0",
+      "Crossing_Marker_0"
+    ]
+  },
+  "tube_diagonal": {
+    "triangles": 288,
+    "meshes": 3,
+    "notes": "12-sided round, thick transparent shell; exact 2m cardinal or 2sqrt(2)m diagonal pitch. Rotate cardinal directions; diagonal end centers lie on cell corners and use diagonal neighbour spacing.",
+    "parts": [
+      "Round_Glass_Shell",
+      "Start_Collar",
+      "End_Collar"
+    ]
+  },
+  "tube_diagonal_crossing": {
+    "triangles": 480,
+    "meshes": 5,
+    "notes": "12-sided round, thick transparent shell; exact 2m cardinal or 2sqrt(2)m diagonal pitch. Source crossing is walkable density=FALSE with two ports, not a four-way routing junction. Collision handling must honour source passability.",
+    "parts": [
+      "Round_Glass_Shell",
+      "Start_Collar",
+      "End_Collar",
+      "Crossing_Marker_-0",
+      "Crossing_Marker_0"
+    ]
+  },
+  "tube_curve_left": {
+    "triangles": 528,
+    "meshes": 3,
+    "notes": "45-degree cardinal-to-diagonal transition reconstructed as a curved round shell. Mirrored curves have different connection handedness; each may be rotated. No stepped square pixel outline.",
+    "parts": [
+      "Curved_Glass_Shell",
+      "Diagonal_Collar",
+      "North_Collar"
+    ]
+  },
+  "tube_curve_right": {
+    "triangles": 528,
+    "meshes": 3,
+    "notes": "45-degree cardinal-to-diagonal transition reconstructed as a curved round shell. Mirrored curves have different connection handedness; each may be rotated. No stepped square pixel outline.",
+    "parts": [
+      "Curved_Glass_Shell",
+      "Diagonal_Collar",
+      "North_Collar"
+    ]
+  },
+  "tube_junction": {
+    "triangles": 896,
+    "meshes": 6,
+    "notes": "True three-way connected hollow Y-shell with Boolean-united walls, no intersecting glass inside the fork. N/SW/SE ports. Source junction0/1 use the same geometry and opposite preferred exits, exposed as prefer_left/right state clips; gameplay selects exit direction.",
+    "parts": [
+      "Y_Junction_Glass",
+      "N_Collar",
+      "SW_Collar",
+      "SE_Collar",
+      "Route_Arrow_left",
+      "Route_Arrow_right"
+    ]
+  },
+  "tube_station": {
+    "triangles": 520,
+    "meshes": 9,
+    "notes": "Two separately animated boarding-side covers for normal/flipped placement. Original open/close duration .6 seconds; runtime selects boarding side and five-second departure cooldown. Through station, east/west ports. Round 12-sided bore; geometry floor origin and Pod_Dock at tube axis.",
+    "parts": [
+      "Left_End_Sleeve",
+      "Right_End_Sleeve",
+      "Upper_Shell",
+      "Lower_Shell",
+      "End_Rim_-0",
+      "End_Rim_0",
+      "Station_Supports",
+      "Boarding_Door_front",
+      "Boarding_Door_back"
+    ]
+  },
+  "tube_station_dispenser": {
+    "triangles": 532,
+    "meshes": 10,
+    "notes": "Source dispenser stays open, spawns temporary pod on boarding and deletes arriving pod. Two boarding-side state choices, no invented closing cycle. Through station, east/west ports. Round 12-sided bore; geometry floor origin and Pod_Dock at tube axis.",
+    "parts": [
+      "Left_End_Sleeve",
+      "Right_End_Sleeve",
+      "Upper_Shell",
+      "Lower_Shell",
+      "End_Rim_-0",
+      "End_Rim_0",
+      "Station_Supports",
+      "Boarding_Door_front",
+      "Boarding_Door_back",
+      "Pod_Materializer"
+    ]
+  },
+  "tube_terminus": {
+    "triangles": 564,
+    "meshes": 10,
+    "notes": "Two separately animated boarding-side covers for normal/flipped placement. Original open/close duration .6 seconds; runtime selects boarding side and five-second departure cooldown. Single east port and physical end cap; reverse-launch terminus. Round 12-sided bore; geometry floor origin and Pod_Dock at tube axis.",
+    "parts": [
+      "Left_End_Sleeve",
+      "Right_End_Sleeve",
+      "Upper_Shell",
+      "Lower_Shell",
+      "End_Rim_-0",
+      "End_Rim_0",
+      "Station_Supports",
+      "Boarding_Door_front",
+      "Boarding_Door_back",
+      "Terminal_End_Cap"
+    ]
+  },
+  "tube_terminus_dispenser": {
+    "triangles": 576,
+    "meshes": 11,
+    "notes": "Source dispenser stays open, spawns temporary pod on boarding and deletes arriving pod. Two boarding-side state choices, no invented closing cycle. Single east port and physical end cap; reverse-launch terminus. Round 12-sided bore; geometry floor origin and Pod_Dock at tube axis.",
+    "parts": [
+      "Left_End_Sleeve",
+      "Right_End_Sleeve",
+      "Upper_Shell",
+      "Lower_Shell",
+      "End_Rim_-0",
+      "End_Rim_0",
+      "Station_Supports",
+      "Boarding_Door_front",
+      "Boarding_Door_back",
+      "Terminal_End_Cap",
+      "Pod_Materializer"
+    ]
+  },
+  "transit_pod": {
+    "triangles": 232,
+    "meshes": 6,
+    "notes": "Round capsule fits tube bore; separate occupant socket and original empty/occupied indicator states. Move the root along the network at floor-origin height, orient +Y along travel. Reusable pod, deconstructed into the same unattached model; contents are runtime actors, not painted onto glass.",
+    "parts": [
+      "Pod_Glass_Capsule",
+      "Pod_End_-0",
+      "Pod_End_0",
+      "Pod_Seat",
+      "Occupancy_Light_pod",
+      "Occupancy_Light_pod_occupied"
+    ]
+  },
+  "transit_pod_temporary": {
+    "triangles": 244,
+    "meshes": 7,
+    "notes": "Round capsule fits tube bore; separate occupant socket and original empty/occupied indicator states. Move the root along the network at floor-origin height, orient +Y along travel. Source temporary pod materializes at dispenser and is deleted on station arrival: materialized/dissolved visibility clips supplied.",
+    "parts": [
+      "Pod_Glass_Capsule",
+      "Pod_End_-0",
+      "Pod_End_0",
+      "Pod_Seat",
+      "Occupancy_Light_temppod",
+      "Occupancy_Light_temppod_occupied",
+      "Hazard_Seam"
+    ]
+  }
+}

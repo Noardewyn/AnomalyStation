@@ -1,0 +1,454 @@
+{
+  "airlock_controller_standby": {
+    "base_state": "access_control_standby",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Console_Housing",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_control_standby"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.01406249962747097
+        ],
+        "source_state": "access_control_standby"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.001",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.0703125
+        ],
+        "source_state": "access_control_standby"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_standby"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_standby"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_standby"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_standby"
+      }
+    ],
+    "triangles": 84
+  },
+  "airlock_controller_off": {
+    "base_state": "access_control_off",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Console_Housing",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_control_off"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.01406249962747097
+        ],
+        "source_state": "access_control_off"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.001",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.0703125
+        ],
+        "source_state": "access_control_off"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_off"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_off"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_off"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_off"
+      }
+    ],
+    "triangles": 84
+  },
+  "airlock_controller_process_0": {
+    "base_state": "access_control_process",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Console_Housing",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.01406249962747097
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.001",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.0703125
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      }
+    ],
+    "triangles": 84
+  },
+  "airlock_controller_process_1": {
+    "base_state": "access_control_process",
+    "frame": 1,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Console_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Console_Housing",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Screen",
+        "triangles": 12,
+        "shared_mesh": "Screen",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.08437500149011612,
+          0.01406249962747097
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.001",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0703125,
+          -0.08437500149011612,
+          0.0703125
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_1",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_2",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_3",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_3",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      },
+      {
+        "name": "Push_Button_4",
+        "triangles": 12,
+        "shared_mesh": "Push_Button_4",
+        "materials": [
+          "Airlock_Controller_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.08437500149011612,
+          -0.05624999850988388
+        ],
+        "source_state": "access_control_process"
+      }
+    ],
+    "triangles": 84
+  }
+}

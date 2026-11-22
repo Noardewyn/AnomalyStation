@@ -1,0 +1,114 @@
+{
+  "normal": {
+    "vertices": 592,
+    "triangles": 1052,
+    "emission": 0.0,
+    "morph_weights": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  "powered": {
+    "vertices": 592,
+    "triangles": 1052,
+    "emission": 1.7999999523162842,
+    "morph_weights": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  "maintenance": {
+    "vertices": 592,
+    "triangles": 1052,
+    "emission": 0.0,
+    "morph_weights": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  "broken": {
+    "vertices": 616,
+    "triangles": 1070,
+    "emission": 0.0,
+    "morph_weights": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ]
+  }
+}

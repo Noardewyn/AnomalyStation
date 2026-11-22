@@ -1,0 +1,72 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: map digest pairs (M3 T2, DigestTests.cs): digesta, and digestb with one object edited
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"f" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"g" = (
+/turf/open/indestructible,
+/area/station/command/bridge)
+"w" = (
+/turf/closed/indestructible,
+/area/station/hallway/primary/central)
+"c" = (
+/obj/item/crowbar,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"l" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+"s" = (
+/obj/effect/landmark/start/assistant,
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"i" = (
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+
+(1,1,1) = {"
+w
+w
+w
+w
+"}
+(2,1,1) = {"
+w
+f
+f
+w
+"}
+(3,1,1) = {"
+w
+c
+i
+w
+"}
+(4,1,1) = {"
+w
+f
+f
+w
+"}
+(5,1,1) = {"
+w
+s
+f
+w
+"}
+(6,1,1) = {"
+w
+g
+f
+w
+"}
+(7,1,1) = {"
+a
+l
+a
+a
+"}

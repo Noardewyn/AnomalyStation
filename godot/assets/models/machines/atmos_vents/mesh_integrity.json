@@ -1,0 +1,90 @@
+{
+  "vent_pump_broken": [
+    {
+      "part": "vent_pump_broken_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "vent_out"
+    }
+  ],
+  "vent_pump_in": [
+    {
+      "part": "vent_pump_in_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "vent_in"
+    }
+  ],
+  "vent_pump_off": [
+    {
+      "part": "vent_pump_off_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "vent_off"
+    }
+  ],
+  "vent_pump_out": [
+    {
+      "part": "vent_pump_out_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "vent_out"
+    }
+  ],
+  "vent_pump_overclocked": [
+    {
+      "part": "vent_pump_overclocked_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "vent_out"
+    }
+  ],
+  "vent_pump_welded": [
+    {
+      "part": "vent_pump_welded_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "vent_welded"
+    }
+  ],
+  "vent_scrubber_off": [
+    {
+      "part": "vent_scrubber_off_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "scrub_off"
+    }
+  ],
+  "vent_scrubber_on": [
+    {
+      "part": "vent_scrubber_on_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "scrub_on"
+    }
+  ],
+  "vent_scrubber_purge": [
+    {
+      "part": "vent_scrubber_purge_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "scrub_purge"
+    }
+  ],
+  "vent_scrubber_welded": [
+    {
+      "part": "vent_scrubber_welded_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "scrub_welded"
+    }
+  ],
+  "vent_scrubber_wide": [
+    {
+      "part": "vent_scrubber_wide_Sprite_Extrusion",
+      "nonmanifold_edges": 0,
+      "closed": true,
+      "source_state": "scrub_wide"
+    }
+  ]
+}

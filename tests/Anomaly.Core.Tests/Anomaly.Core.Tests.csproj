@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>Anomaly.Core.Tests</RootNamespace>
+    <!-- The parallel tests share one heap of many worlds: the server GC collects it on every core (the state hash forces full collections). -->
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\Tg\Anomaly.Core.Tg.csproj" />
+    <ProjectReference Include="..\..\src\Core\DmShim\Anomaly.Core.DmShim.csproj" />
+    <ProjectReference Include="..\..\src\Core\Kernel\Anomaly.Core.Kernel.csproj" />
+    <ProjectReference Include="..\..\src\Core\Motion\Anomaly.Core.Motion.csproj" />
+    <ProjectReference Include="..\..\tools\Anomaly.Tools.Defines\Anomaly.Tools.Defines.csproj" />
+    <!-- The toy world runner's command line is tested in-process (tests/Anomaly.Core.Tests/ToyWorld). -->
+    <ProjectReference Include="..\..\tools\Anomaly.Tools.ToyWorld\Anomaly.Tools.ToyWorld.csproj" />
+    <!-- M2: the icon tool (M2 P7) and its command line (contracts). -->
+    <ProjectReference Include="..\..\tools\Anomaly.Tools.Icons\Anomaly.Tools.Icons.csproj" />
+    <!-- M4b: the sound tool (the audio plan, section 4.3). -->
+    <ProjectReference Include="..\..\tools\Anomaly.Tools.Sounds\Anomaly.Tools.Sounds.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Threading" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,117 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/wallmounts.png",
+  "original_dmi": "..\\tgstation\\icons\\obj\\wallmounts.dmi",
+  "size": [
+    288,
+    288
+  ],
+  "png_sha256": "47b9bd1b32599058f9b31c8d20ce22f9b15c5d7e15a7d46794c72be4099ec19a",
+  "dmi_rgba_matches": true,
+  "states": [
+    {
+      "name": "telescreen",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 27,
+      "rects": [
+        [
+          0,
+          96,
+          32,
+          32
+        ],
+        [
+          32,
+          96,
+          32,
+          32
+        ],
+        [
+          64,
+          96,
+          32,
+          32
+        ],
+        [
+          96,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "telescreenb",
+      "dirs": 4,
+      "frames": 1,
+      "delays": null,
+      "loop": 1,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 31,
+      "rects": [
+        [
+          128,
+          96,
+          32,
+          32
+        ],
+        [
+          160,
+          96,
+          32,
+          32
+        ],
+        [
+          192,
+          96,
+          32,
+          32
+        ],
+        [
+          224,
+          96,
+          32,
+          32
+        ]
+      ]
+    }
+  ],
+  "source_code": "code/game/machinery/computer/telescreen.dm",
+  "map_definition_records": [
+    "/obj/machinery/computer/security/telescreen/normal/directional/north",
+    "/obj/machinery/computer/security/telescreen/isolation/directional/north",
+    "/obj/machinery/computer/security/telescreen/minisat/directional/east",
+    "/obj/machinery/computer/security/telescreen/med_sec/directional/west",
+    "/obj/machinery/computer/security/telescreen/prison/directional/north",
+    "/obj/machinery/computer/security/telescreen/ordnance/directional/east",
+    "/obj/machinery/computer/security/telescreen/cmo/directional/west",
+    "/obj/machinery/computer/security/telescreen/prison/directional/south",
+    "/obj/machinery/computer/security/telescreen/minisat/directional/south",
+    "/obj/machinery/computer/security/telescreen/engine/directional/east",
+    "/obj/machinery/computer/security/telescreen/test_chamber/directional/north",
+    "/obj/machinery/computer/security/telescreen/tcomms/directional/east",
+    "/obj/machinery/computer/security/telescreen/aiupload/directional/west",
+    "/obj/machinery/computer/security/telescreen/interrogation/directional/west",
+    "/obj/machinery/computer/security/telescreen/research/directional/west",
+    "/obj/machinery/computer/security/telescreen/ordnance/directional/south",
+    "/obj/machinery/computer/security/telescreen/prison/directional/east",
+    "/obj/machinery/computer/security/telescreen/minisat/directional/east",
+    "/obj/machinery/computer/security/telescreen/engine/directional/east",
+    "/obj/machinery/computer/security/telescreen/minisat/directional/south",
+    "/obj/machinery/computer/security/telescreen/minisat/directional/south",
+    "/obj/machinery/computer/security/telescreen/ce/directional/south",
+    "/obj/machinery/computer/security/telescreen/minisat/directional/south",
+    "/obj/machinery/computer/security/telescreen/prison/directional/north",
+    "/obj/machinery/computer/security/telescreen/rd/directional/north",
+    "/obj/machinery/computer/security/telescreen/turbine/directional/east",
+    "/obj/machinery/computer/security/telescreen/auxbase/directional/south",
+    "/obj/machinery/computer/security/telescreen/interrogation/directional/east"
+  ]
+}

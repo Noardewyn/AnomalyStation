@@ -1,0 +1,12 @@
+anomaly-map 1
+source _maps/map_files/T2Nearstation/T2Nearstation.dmm tg 1d99bd7f
+size 6 1 1
+chunk 32
+default /obj/effect/landmark/start/assistant | /turf/open/space/basic | /area/space
+
+[chunk 1 1 1]
+1,1: /obj/item/crowbar | /turf/open/space/basic | /area/space
+2,1: /turf/open/floor/plating | /area/space
+3,1: /obj/structure/lattice | /turf/open/space/basic | /area/space/nearstation
+5,1: /turf/open/space/basic | /area/station/hallway/primary/central
+6,1: /turf/open/indestructible | /area/station/hallway/primary/central

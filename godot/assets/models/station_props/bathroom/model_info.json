@@ -1,0 +1,70 @@
+{
+  "urinal": {
+    "base_state": "urinal",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Lined_Ceramic_Bowl",
+        "triangles": 108,
+        "shared_mesh": "Continuous_Lined_Ceramic_Bowl",
+        "materials": [
+          "Urinal_Porcelain_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "urinal"
+      },
+      {
+        "name": "Flush_Riser_Pipe",
+        "triangles": 12,
+        "shared_mesh": "Flush_Riser_Pipe",
+        "materials": [
+          "Urinal_Porcelain_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "urinal"
+      },
+      {
+        "name": "Flush_Valve_Head",
+        "triangles": 28,
+        "shared_mesh": "Flush_Valve_Head",
+        "materials": [
+          "Urinal_Porcelain_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "urinal"
+      },
+      {
+        "name": "Removable_Drain_Protector",
+        "triangles": 12,
+        "shared_mesh": "Removable_Drain_Protector",
+        "materials": [
+          "Urinal_Porcelain_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.140625,
+          0.5406249761581421
+        ],
+        "source_state": "urinal"
+      }
+    ],
+    "triangles": 160
+  }
+}

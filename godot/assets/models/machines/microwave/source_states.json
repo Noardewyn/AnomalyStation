@@ -1,0 +1,984 @@
+{
+  "version": "4.0",
+  "width": 32,
+  "height": 32,
+  "sheetWidth": 288,
+  "sheetHeight": 256,
+  "states": [
+    {
+      "name": "mw_complete",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mw",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mwo",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        5,
+        5
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ],
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mw1",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          128,
+          0,
+          32,
+          32
+        ],
+        [
+          160,
+          0,
+          32,
+          32
+        ],
+        [
+          192,
+          0,
+          32,
+          32
+        ],
+        [
+          224,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mw-o",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          256,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mwb",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          0,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mwbloody",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 10,
+      "rects": [
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mwbloodyo",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        5,
+        5
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 11,
+      "rects": [
+        [
+          64,
+          32,
+          32,
+          32
+        ],
+        [
+          96,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mwbloody1",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 13,
+      "rects": [
+        [
+          128,
+          32,
+          32,
+          32
+        ],
+        [
+          160,
+          32,
+          32,
+          32
+        ],
+        [
+          192,
+          32,
+          32,
+          32
+        ],
+        [
+          224,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "door_handle",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 17,
+      "rects": [
+        [
+          256,
+          32,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "back_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 18,
+      "rects": [
+        [
+          0,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "back_open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 19,
+      "rects": [
+        [
+          32,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "back_on",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 20,
+      "rects": [
+        [
+          64,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "door_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 21,
+      "rects": [
+        [
+          96,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "door_on",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 22,
+      "rects": [
+        [
+          128,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "door_charge",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 23,
+      "rects": [
+        [
+          160,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_mwo",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 24,
+      "rects": [
+        [
+          192,
+          64,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_mw1",
+      "dirs": 1,
+      "frames": 4,
+      "delays": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 25,
+      "rects": [
+        [
+          224,
+          64,
+          32,
+          32
+        ],
+        [
+          256,
+          64,
+          32,
+          32
+        ],
+        [
+          0,
+          96,
+          32,
+          32
+        ],
+        [
+          32,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_mw",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 29,
+      "rects": [
+        [
+          64,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mw_complete",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 30,
+      "rects": [
+        [
+          96,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mw",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 31,
+      "rects": [
+        [
+          128,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mwo",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 32,
+      "rects": [
+        [
+          160,
+          96,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mw1",
+      "dirs": 1,
+      "frames": 5,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        8
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 33,
+      "rects": [
+        [
+          192,
+          96,
+          32,
+          32
+        ],
+        [
+          224,
+          96,
+          32,
+          32
+        ],
+        [
+          256,
+          96,
+          32,
+          32
+        ],
+        [
+          0,
+          128,
+          32,
+          32
+        ],
+        [
+          32,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mw-o",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 38,
+      "rects": [
+        [
+          64,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mwb",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 39,
+      "rects": [
+        [
+          96,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mwbloody",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 40,
+      "rects": [
+        [
+          128,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mwbloodyo",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 41,
+      "rects": [
+        [
+          160,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_mwbloody1",
+      "dirs": 1,
+      "frames": 5,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        8
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 42,
+      "rects": [
+        [
+          192,
+          128,
+          32,
+          32
+        ],
+        [
+          224,
+          128,
+          32,
+          32
+        ],
+        [
+          256,
+          128,
+          32,
+          32
+        ],
+        [
+          0,
+          160,
+          32,
+          32
+        ],
+        [
+          32,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_door_handle",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 47,
+      "rects": [
+        [
+          64,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_back_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 48,
+      "rects": [
+        [
+          96,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_back_open",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 49,
+      "rects": [
+        [
+          128,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_back_on",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 50,
+      "rects": [
+        [
+          160,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_door_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 51,
+      "rects": [
+        [
+          192,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_door_on",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 52,
+      "rects": [
+        [
+          224,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_door_charge",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 53,
+      "rects": [
+        [
+          256,
+          160,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_cell_0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 54,
+      "rects": [
+        [
+          0,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_cell_25",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 55,
+      "rects": [
+        [
+          32,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_cell_75",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 56,
+      "rects": [
+        [
+          64,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "engi_cell_100",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 57,
+      "rects": [
+        [
+          96,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_engi_mwo",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 58,
+      "rects": [
+        [
+          128,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_engi_mw1",
+      "dirs": 1,
+      "frames": 5,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        8
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 59,
+      "rects": [
+        [
+          160,
+          192,
+          32,
+          32
+        ],
+        [
+          192,
+          192,
+          32,
+          32
+        ],
+        [
+          224,
+          192,
+          32,
+          32
+        ],
+        [
+          256,
+          192,
+          32,
+          32
+        ],
+        [
+          0,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "emissive_engi_mw",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 64,
+      "rects": [
+        [
+          32,
+          224,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

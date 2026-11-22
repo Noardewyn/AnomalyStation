@@ -1,0 +1,2612 @@
+{
+  "atlas": "res://assets/tg/icons/obj/storage/crates.png",
+  "source_sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44",
+  "models": {
+    "metal_crate": {
+      "file": "metal_crate.glb",
+      "triangles": 72,
+      "parts": [
+        "metal_crate_Body",
+        "metal_crate_Lid"
+      ],
+      "base_states": [
+        "crate",
+        "crateopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "ribbed_crate": {
+      "file": "ribbed_crate.glb",
+      "triangles": 108,
+      "parts": [
+        "ribbed_crate_Body",
+        "ribbed_crate_Lid"
+      ],
+      "base_states": [
+        "weaponcrate",
+        "weaponcrateopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "wooden_crate": {
+      "file": "wooden_crate.glb",
+      "triangles": 72,
+      "parts": [
+        "wooden_crate_Body",
+        "wooden_crate_Lid"
+      ],
+      "base_states": [
+        "wooden",
+        "woodenopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "freezer_crate": {
+      "file": "freezer_crate.glb",
+      "triangles": 96,
+      "parts": [
+        "freezer_crate_Body",
+        "freezer_crate_Lid"
+      ],
+      "base_states": [
+        "freezer",
+        "freezeropen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "mining_cart": {
+      "file": "mining_cart.glb",
+      "triangles": 184,
+      "parts": [
+        "mining_cart_Body",
+        "mining_cart_Lid"
+      ],
+      "base_states": [
+        "miningcar",
+        "miningcaropen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "trash_cart": {
+      "file": "trash_cart.glb",
+      "triangles": 268,
+      "parts": [
+        "trash_cart_Body",
+        "trash_cart_Lid_1",
+        "trash_cart_Lid_2"
+      ],
+      "base_states": [
+        "trashcart",
+        "trashcartopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "laundry_cart": {
+      "file": "laundry_cart.glb",
+      "triangles": 184,
+      "parts": [
+        "laundry_cart_Body",
+        "laundry_cart_Lid"
+      ],
+      "base_states": [
+        "laundry",
+        "laundryopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "large_wooden_crate": {
+      "file": "large_wooden_crate.glb",
+      "triangles": 132,
+      "parts": [
+        "large_wooden_crate_Body",
+        "large_wooden_crate_Lid"
+      ],
+      "base_states": [
+        "largecrate",
+        "largecrate"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "animal_crate": {
+      "file": "animal_crate.glb",
+      "triangles": 108,
+      "parts": [
+        "animal_crate_Body",
+        "animal_crate_Door"
+      ],
+      "base_states": [
+        "crittercrate",
+        "crittercrate_door"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "necropolis_chest": {
+      "file": "necropolis_chest.glb",
+      "triangles": 96,
+      "parts": [
+        "necropolis_chest_Body",
+        "necropolis_chest_Lid"
+      ],
+      "base_states": [
+        "necrocrate",
+        "necrocrateopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "coffin": {
+      "file": "coffin.glb",
+      "triangles": 88,
+      "parts": [
+        "coffin_Body",
+        "coffin_Lid"
+      ],
+      "base_states": [
+        "coffin",
+        "coffinopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "treasure_chest": {
+      "file": "treasure_chest.glb",
+      "triangles": 108,
+      "parts": [
+        "treasure_chest_Body",
+        "treasure_chest_Lid"
+      ],
+      "base_states": [
+        "treasure",
+        "treasureopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "mail_crate": {
+      "file": "mail_crate.glb",
+      "triangles": 72,
+      "parts": [
+        "mail_crate_Body",
+        "mail_crate_Lid"
+      ],
+      "base_states": [
+        "mailsealed",
+        "mailopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "cardboard_crate": {
+      "file": "cardboard_crate.glb",
+      "triangles": 108,
+      "parts": [
+        "cardboard_crate_Body",
+        "cardboard_crate_Lid_1",
+        "cardboard_crate_Lid_2",
+        "cardboard_crate_Lid_3",
+        "cardboard_crate_Lid_4"
+      ],
+      "base_states": [
+        "cardboard",
+        "cardboardopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "ancient_sarcophagus": {
+      "file": "ancient_sarcophagus.glb",
+      "triangles": 72,
+      "parts": [
+        "ancient_sarcophagus_Body",
+        "ancient_sarcophagus_Lid"
+      ],
+      "base_states": [
+        "necro_bubblegum",
+        "necro_bubblegumopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    },
+    "trash_bin": {
+      "file": "trash_bin.glb",
+      "triangles": 88,
+      "parts": [
+        "trash_bin_Body",
+        "trash_bin_Lid"
+      ],
+      "base_states": [
+        "trashbin",
+        "trashbinopen"
+      ],
+      "png_byte_identical": true,
+      "nearest": true
+    }
+  },
+  "variants": [
+    {
+      "id": "crate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "crate",
+      "open_state": "crateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 5
+        },
+        {
+          "type": "/obj/structure/closet/crate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 6
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "securecrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "securecrate",
+      "open_state": "securecrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.11764705882352941,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.11764705882352941,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 4
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 5
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/loot",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\abandoned_crates\\abandoned_crates.dm",
+          "line": 6
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/loot",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\abandoned_crates\\abandoned_crates.dm",
+          "line": 7
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "medicalcrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "medicalcrate",
+      "open_state": "medicalcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.23529411764705882,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.23529411764705882,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/medical",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 235
+        },
+        {
+          "type": "/obj/structure/closet/crate/medical",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 236
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "radiation",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "radiation",
+      "open_state": "radiationopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.35294117647058826,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.35294117647058826,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/radiation",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 349
+        },
+        {
+          "type": "/obj/structure/closet/crate/radiation",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 350
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "engi_e_crate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "engi_e_crate",
+      "open_state": "engi_e_crateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.5294117647058824,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          -0.5294117647058824,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/engineering/electrical",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 391
+        },
+        {
+          "type": "/obj/structure/closet/crate/engineering/electrical",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 392
+        },
+        {
+          "type": "/obj/structure/closet/crate/solarpanel_small",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 436
+        },
+        {
+          "type": "/obj/structure/closet/crate/solarpanel_small",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 437
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "engi_crate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "engi_crate",
+      "open_state": "engi_crateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.4117647058823529,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          -0.4117647058823529,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/engineering",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 381
+        },
+        {
+          "type": "/obj/structure/closet/crate/engineering",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 382
+        },
+        {
+          "type": "/obj/structure/closet/crate/rcd",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 402
+        },
+        {
+          "type": "/obj/structure/closet/crate/rcd",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 403
+        },
+        {
+          "type": "/obj/structure/closet/crate/decorations",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 475
+        },
+        {
+          "type": "/obj/structure/closet/crate/decorations",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 476
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "engi_secure_crate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "engi_secure_crate",
+      "open_state": "engi_secure_crateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.29411764705882354,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          -0.29411764705882354,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/engineering",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 105
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/engineering",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 106
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "secgearcrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "secgearcrate",
+      "open_state": "secgearcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.17647058823529413,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          -0.17647058823529413,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/gear",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 56
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/gear",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 57
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "o2crate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "o2crate",
+      "open_state": "o2crateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.058823529411764705,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          -0.058823529411764705,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/internals",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 229
+        },
+        {
+          "type": "/obj/structure/closet/crate/internals",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 230
+        },
+        {
+          "type": "/obj/structure/closet/crate/eva",
+          "file": "modules\\antagonists\\fugitive\\hunters\\hunter_gear.dm",
+          "line": 53
+        },
+        {
+          "type": "/obj/structure/closet/crate/eva",
+          "file": "modules\\antagonists\\fugitive\\hunters\\hunter_gear.dm",
+          "line": 54
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "freezer",
+      "model": "freezer_crate",
+      "file": "freezer_crate.glb",
+      "closed_state": "freezer",
+      "open_state": "freezeropen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/freezer",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 257
+        },
+        {
+          "type": "/obj/structure/closet/crate/freezer",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 258
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "kitchen_secure_crate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "kitchen_secure_crate",
+      "open_state": "kitchen_secure_crateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.17647058823529413,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          0.17647058823529413,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/freezer //for consistency with other \"freezer\" closets/crates",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 68
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/freezer //for consistency with other \"freezer\" closets/crates",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 69
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "scicrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "scicrate",
+      "open_state": "scicrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.29411764705882354,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          0.29411764705882354,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/science",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 414
+        },
+        {
+          "type": "/obj/structure/closet/crate/science",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 415
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "scisecurecrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "scisecurecrate",
+      "open_state": "scisecurecrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.4117647058823529,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          -0.5882352941176471,
+          0.16666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/science",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 118
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/science",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 119
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "weaponcrate",
+      "model": "ribbed_crate",
+      "file": "ribbed_crate.glb",
+      "closed_state": "weaponcrate",
+      "open_state": "weaponcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/weapon",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 44
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/weapon",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 45
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "plasmacrate",
+      "model": "ribbed_crate",
+      "file": "ribbed_crate.glb",
+      "closed_state": "plasmacrate",
+      "open_state": "plasmacrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.11764705882352941,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.11764705882352941,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/plasma",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 50
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/plasma",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 51
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "wooden",
+      "model": "wooden_crate",
+      "file": "wooden_crate.glb",
+      "closed_state": "wooden",
+      "open_state": "woodenopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/wooden",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\wooden.dm",
+          "line": 7
+        },
+        {
+          "type": "/obj/structure/closet/crate/wooden",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\wooden.dm",
+          "line": 8
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "privatecrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "privatecrate",
+      "open_state": "privatecrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.11764705882352941,
+          0.16666666666666666,
+          0
+        ],
+        "interior": [
+          -0.11764705882352941,
+          0.16666666666666666,
+          0
+        ]
+      },
+      "source_uses": [],
+      "atlas_only": true
+    },
+    {
+      "id": "hydrocrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "hydrocrate",
+      "open_state": "hydrocrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.16666666666666666,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.16666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/hydroponics",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 355
+        },
+        {
+          "type": "/obj/structure/closet/crate/hydroponics",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 356
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "hydrosecurecrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "hydrosecurecrate",
+      "open_state": "hydrosecurecrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.11764705882352941,
+          0.16666666666666666,
+          0
+        ],
+        "interior": [
+          0.11764705882352941,
+          0.16666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/hydroponics",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 62
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/hydroponics",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 63
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "miningcar",
+      "model": "mining_cart",
+      "file": "mining_cart.glb",
+      "closed_state": "miningcar",
+      "open_state": "miningcaropen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/miningcar",
+          "file": "modules\\mining\\mine_items.dm",
+          "line": 160
+        },
+        {
+          "type": "/obj/structure/closet/crate/miningcar",
+          "file": "modules\\mining\\mine_items.dm",
+          "line": 161
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "trashcart",
+      "model": "trash_cart",
+      "file": "trash_cart.glb",
+      "closed_state": "trashcart",
+      "open_state": "trashcartopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/trashcart //please make this a generic cart path later after things calm down a little",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 192
+        },
+        {
+          "type": "/obj/structure/closet/crate/trashcart //please make this a generic cart path later after things calm down a little",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 193
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "securetrashcart",
+      "model": "trash_cart",
+      "file": "trash_cart.glb",
+      "closed_state": "securetrashcart",
+      "open_state": "securetrashcartopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.8823529411764706,
+          0.08333333333333333,
+          0
+        ],
+        "interior": [
+          -0.8823529411764706,
+          0.08333333333333333,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/trashcart",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 131
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/trashcart",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 132
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "largecrate",
+      "model": "large_wooden_crate",
+      "file": "large_wooden_crate.glb",
+      "closed_state": "largecrate",
+      "open_state": "largecrate",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/large",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\large.dm",
+          "line": 4
+        },
+        {
+          "type": "/obj/structure/closet/crate/large",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\large.dm",
+          "line": 5
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "crittercrate",
+      "model": "animal_crate",
+      "file": "animal_crate.glb",
+      "closed_state": "crittercrate",
+      "open_state": "crittercrate_door",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/critter",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\critter.dm",
+          "line": 4
+        },
+        {
+          "type": "/obj/structure/closet/crate/critter",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\critter.dm",
+          "line": 5
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "necrocrate",
+      "model": "necropolis_chest",
+      "file": "necropolis_chest.glb",
+      "closed_state": "necrocrate",
+      "open_state": "necrocrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/necropolis",
+          "file": "modules\\mining\\lavaland\\necropolis_chests.dm",
+          "line": 6
+        },
+        {
+          "type": "/obj/structure/closet/crate/necropolis",
+          "file": "modules\\mining\\lavaland\\necropolis_chests.dm",
+          "line": 7
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "coffin",
+      "model": "coffin",
+      "file": "coffin.glb",
+      "closed_state": "coffin",
+      "open_state": "coffinopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/coffin",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 173
+        },
+        {
+          "type": "/obj/structure/closet/crate/coffin",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 174
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "laundry",
+      "model": "laundry_cart",
+      "file": "laundry_cart.glb",
+      "closed_state": "laundry",
+      "open_state": "laundryopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/trashcart/laundry",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 201
+        },
+        {
+          "type": "/obj/structure/closet/crate/trashcart/laundry",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 202
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "mailsealed",
+      "model": "mail_crate",
+      "file": "mail_crate.glb",
+      "closed_state": "mailsealed",
+      "open_state": "mailopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/mail",
+          "file": "game\\objects\\items\\mail.dm",
+          "line": 258
+        },
+        {
+          "type": "/obj/structure/closet/crate/mail",
+          "file": "game\\objects\\items\\mail.dm",
+          "line": 259
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cardboard",
+      "model": "cardboard_crate",
+      "file": "cardboard_crate.glb",
+      "closed_state": "cardboard",
+      "open_state": "cardboardopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/cardboard",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\cardboard.dm",
+          "line": 7
+        },
+        {
+          "type": "/obj/structure/closet/crate/cardboard",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\cardboard.dm",
+          "line": 8
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cardboard_moth",
+      "model": "cardboard_crate",
+      "file": "cardboard_crate.glb",
+      "closed_state": "cardboard_moth",
+      "open_state": "cardboardopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.058823529411764705,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/cardboard/mothic",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\cardboard.dm",
+          "line": 21
+        },
+        {
+          "type": "/obj/structure/closet/crate/cardboard/mothic",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\cardboard.dm",
+          "line": 22
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cardboard_tiziran",
+      "model": "cardboard_crate",
+      "file": "cardboard_crate.glb",
+      "closed_state": "cardboard_tiziran",
+      "open_state": "cardboardopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.11764705882352941,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/cardboard/tiziran",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\cardboard.dm",
+          "line": 27
+        },
+        {
+          "type": "/obj/structure/closet/crate/cardboard/tiziran",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\cardboard.dm",
+          "line": 28
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "syndicrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "syndicrate",
+      "open_state": "syndicrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.5294117647058824,
+          0.4166666666666667,
+          0
+        ],
+        "interior": [
+          -0.5294117647058824,
+          0.4166666666666667,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 175
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 176
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicrate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\syndicrate.dm",
+          "line": 4
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicrate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\syndicrate.dm",
+          "line": 5
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "necro_bubblegum",
+      "model": "ancient_sarcophagus",
+      "file": "ancient_sarcophagus.glb",
+      "closed_state": "necro_bubblegum",
+      "open_state": "necro_bubblegumopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/necropolis/bubblegum",
+          "file": "modules\\mining\\lavaland\\necropolis_chests.dm",
+          "line": 73
+        },
+        {
+          "type": "/obj/structure/closet/crate/necropolis/bubblegum",
+          "file": "modules\\mining\\lavaland\\necropolis_chests.dm",
+          "line": 74
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "trashbin",
+      "model": "trash_bin",
+      "file": "trash_bin.glb",
+      "closed_state": "trashbin",
+      "open_state": "trashbinopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/bin",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\bins.dm",
+          "line": 4
+        },
+        {
+          "type": "/obj/structure/closet/crate/bin",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\bins.dm",
+          "line": 5
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "gold",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "gold",
+      "open_state": "goldopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.11764705882352941,
+          0.5,
+          0
+        ],
+        "interior": [
+          -0.11764705882352941,
+          0.5,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/goldcrate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 450
+        },
+        {
+          "type": "/obj/structure/closet/crate/goldcrate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 451
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "silver",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "silver",
+      "open_state": "silveropen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.5,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.5,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/silvercrate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 466
+        },
+        {
+          "type": "/obj/structure/closet/crate/silvercrate",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 467
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "medical",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "medical",
+      "open_state": "medicalopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.11764705882352941,
+          0.5,
+          0
+        ],
+        "interior": [
+          0.11764705882352941,
+          0.5,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/medical/department",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 251
+        },
+        {
+          "type": "/obj/structure/closet/crate/medical/department",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 252
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "robo",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "robo",
+      "open_state": "roboopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.23529411764705882,
+          0.5,
+          0
+        ],
+        "interior": [
+          0.23529411764705882,
+          0.5,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/science/robo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 419
+        },
+        {
+          "type": "/obj/structure/closet/crate/science/robo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 420
+        },
+        {
+          "type": "/obj/structure/closet/crate/mod",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 424
+        },
+        {
+          "type": "/obj/structure/closet/crate/mod",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 425
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "robo_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "robo_secure",
+      "open_state": "robo_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.35294117647058826,
+          0.5,
+          0
+        ],
+        "interior": [
+          0.35294117647058826,
+          0.5,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/science/robo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 123
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/science/robo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 124
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "atmos",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "atmos",
+      "open_state": "atmosopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.5294117647058824,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          -0.5294117647058824,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/engineering/atmos",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 396
+        },
+        {
+          "type": "/obj/structure/closet/crate/engineering/atmos",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 397
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "atmos_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "atmos_secure",
+      "open_state": "atmos_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.4117647058823529,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          -0.4117647058823529,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/engineering/atmos",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 111
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/engineering/atmos",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 112
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cargo",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "cargo",
+      "open_state": "cargoopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.29411764705882354,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          -0.29411764705882354,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/cargo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 365
+        },
+        {
+          "type": "/obj/structure/closet/crate/cargo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 366
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "bitrunning",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "bitrunning",
+      "open_state": "bitrunningopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.17647058823529413,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          -0.17647058823529413,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/bitrunning // Base class. Do not spawn this.",
+          "file": "modules\\bitrunning\\objects\\loot_crate.dm",
+          "line": 14
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/bitrunning // Base class. Do not spawn this.",
+          "file": "modules\\bitrunning\\objects\\loot_crate.dm",
+          "line": 15
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "centcom_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "centcom_secure",
+      "open_state": "centcom_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.058823529411764705,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          -0.058823529411764705,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/centcom",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 84
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/centcom",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 85
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "food",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "food",
+      "open_state": "foodopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.058823529411764705,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          0.058823529411764705,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/freezer/food",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 331
+        },
+        {
+          "type": "/obj/structure/closet/crate/freezer/food",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 332
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "radiation_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "radiation_secure",
+      "open_state": "radiation_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.17647058823529413,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          0.17647058823529413,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/radiation",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 99
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/radiation",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 100
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cargo_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "cargo_secure",
+      "open_state": "cargo_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.29411764705882354,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          0.29411764705882354,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/cargo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 89
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/cargo",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 90
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "mining",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "mining",
+      "open_state": "miningopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.4117647058823529,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          -0.5882352941176471,
+          0.6666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/cargo/mining",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 376
+        },
+        {
+          "type": "/obj/structure/closet/crate/cargo/mining",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 377
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "mining_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "mining_secure",
+      "open_state": "mining_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.47058823529411764,
+          0.6666666666666666,
+          0
+        ],
+        "interior": [
+          -0.47058823529411764,
+          0.6666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/cargo/mining",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 94
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/cargo/mining",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 95
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "centcom",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "centcom",
+      "open_state": "centcomopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.35294117647058826,
+          0.6666666666666666,
+          0
+        ],
+        "interior": [
+          -0.35294117647058826,
+          0.6666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/centcom",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 360
+        },
+        {
+          "type": "/obj/structure/closet/crate/centcom",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 361
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "treasure",
+      "model": "treasure_chest",
+      "file": "treasure_chest.glb",
+      "closed_state": "treasure",
+      "open_state": "treasureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.0,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.0,
+          0
+        ]
+      },
+      "source_uses": [],
+      "atlas_only": true
+    },
+    {
+      "id": "interdynecrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "interdynecrate",
+      "open_state": "interdynecrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.11764705882352941,
+          0.6666666666666666,
+          0
+        ],
+        "interior": [
+          -0.11764705882352941,
+          0.6666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/interdyne_normal",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 247
+        },
+        {
+          "type": "/obj/structure/closet/crate/interdyne_normal",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 248
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/interdyne",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 182
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/interdyne",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 183
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "interdynefreezer",
+      "model": "freezer_crate",
+      "file": "freezer_crate.glb",
+      "closed_state": "interdynefreezer",
+      "open_state": "interdynefreezeropen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.058823529411764705,
+          0.5833333333333334,
+          0
+        ],
+        "interior": [
+          -0.058823529411764705,
+          0.5833333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/freezer/interdyne",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 152
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/freezer/interdyne",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 153
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "tigercrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "tigercrate",
+      "open_state": "tigercrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.11764705882352941,
+          0.6666666666666666,
+          0
+        ],
+        "interior": [
+          0.11764705882352941,
+          0.6666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/tiger",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 187
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/tiger",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 188
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "selfcrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "selfcrate",
+      "open_state": "selfcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.23529411764705882,
+          0.6666666666666666,
+          0
+        ],
+        "interior": [
+          0.23529411764705882,
+          0.6666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/self",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 343
+        },
+        {
+          "type": "/obj/structure/closet/crate/self",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 344
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "selfcrate_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "selfcrate_secure",
+      "open_state": "selfcrate_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.35294117647058826,
+          0.6666666666666666,
+          0
+        ],
+        "interior": [
+          0.35294117647058826,
+          0.6666666666666666,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/self",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 193
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/self",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 194
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "mithirteencrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "mithirteencrate",
+      "open_state": "mithirteencrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.5294117647058824,
+          0.75,
+          0
+        ],
+        "interior": [
+          -0.5294117647058824,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/mi13",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 199
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/mi13",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 200
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "arccrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "arccrate",
+      "open_state": "arccrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.4117647058823529,
+          0.75,
+          0
+        ],
+        "interior": [
+          -0.4117647058823529,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/arc",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 206
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/arc",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 207
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cyber_dawncrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "cyber_dawncrate",
+      "open_state": "cyber_dawncrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.29411764705882354,
+          0.75,
+          0
+        ],
+        "interior": [
+          -0.29411764705882354,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/dawn",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 214
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/dawn",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 215
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cyber_nooncrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "cyber_nooncrate",
+      "open_state": "cyber_nooncrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.17647058823529413,
+          0.75,
+          0
+        ],
+        "interior": [
+          -0.17647058823529413,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/noon",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 219
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/noon",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 220
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cyber_duskcrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "cyber_duskcrate",
+      "open_state": "cyber_duskcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.058823529411764705,
+          0.75,
+          0
+        ],
+        "interior": [
+          -0.058823529411764705,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/dusk",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 224
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/dusk",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 225
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "cyber_nightcrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "cyber_nightcrate",
+      "open_state": "cyber_nightcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.058823529411764705,
+          0.75,
+          0
+        ],
+        "interior": [
+          0.058823529411764705,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/night",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 229
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/cybersun/night",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 230
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "wafflecrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "wafflecrate",
+      "open_state": "wafflecrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.17647058823529413,
+          0.75,
+          0
+        ],
+        "interior": [
+          0.17647058823529413,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/wafflecorp",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 235
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/wafflecorp",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 236
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "donkcocrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "donkcocrate",
+      "open_state": "donkcocrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.29411764705882354,
+          0.75,
+          0
+        ],
+        "interior": [
+          0.29411764705882354,
+          0.75,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/freezer/donk",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 337
+        },
+        {
+          "type": "/obj/structure/closet/crate/freezer/donk",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 338
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "donkcocrate_secure",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "donkcocrate_secure",
+      "open_state": "donkcocrate_secureopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.4117647058823529,
+          0.75,
+          0
+        ],
+        "interior": [
+          -0.5882352941176471,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/freezer/donk",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 168
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/freezer/donk",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 169
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "gorlexcrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "gorlexcrate",
+      "open_state": "gorlexcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.47058823529411764,
+          0.8333333333333334,
+          0
+        ],
+        "interior": [
+          -0.47058823529411764,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/gorlex",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 240
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/gorlex",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 241
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "gorlex_weaponcrate",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "gorlex_weaponcrate",
+      "open_state": "gorlex_weaponcrateopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.35294117647058826,
+          0.8333333333333334,
+          0
+        ],
+        "interior": [
+          -0.35294117647058826,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/gorlex/weapons",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 246
+        },
+        {
+          "type": "/obj/structure/closet/crate/secure/syndicate/gorlex/weapons",
+          "file": "game\\objects\\structures\\crates_lockers\\crates\\secure.dm",
+          "line": 247
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "deforest",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "deforest",
+      "open_state": "deforestopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.23529411764705882,
+          0.8333333333333334,
+          0
+        ],
+        "interior": [
+          -0.23529411764705882,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/deforest",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 241
+        },
+        {
+          "type": "/obj/structure/closet/crate/deforest",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 242
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "nakamura",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "nakamura",
+      "open_state": "nakamuraopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          -0.11764705882352941,
+          0.8333333333333334,
+          0
+        ],
+        "interior": [
+          -0.11764705882352941,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/nakamura",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 387
+        },
+        {
+          "type": "/obj/structure/closet/crate/nakamura",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 388
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "robust",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "robust",
+      "open_state": "robustopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.0,
+          0.8333333333333334,
+          0
+        ],
+        "interior": [
+          0.0,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/robust",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 371
+        },
+        {
+          "type": "/obj/structure/closet/crate/robust",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 372
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "pink",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "pink",
+      "open_state": "pinkopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.17647058823529413,
+          0.8333333333333334,
+          0
+        ],
+        "interior": [
+          0.17647058823529413,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/glitter",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 489
+        },
+        {
+          "type": "/obj/structure/closet/crate/glitter",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 490
+        }
+      ],
+      "atlas_only": false
+    },
+    {
+      "id": "lavender",
+      "model": "metal_crate",
+      "file": "metal_crate.glb",
+      "closed_state": "lavender",
+      "open_state": "lavenderopen",
+      "godot_uv_offsets": {
+        "exterior": [
+          0.29411764705882354,
+          0.8333333333333334,
+          0
+        ],
+        "interior": [
+          0.29411764705882354,
+          0.8333333333333334,
+          0
+        ]
+      },
+      "source_uses": [
+        {
+          "type": "/obj/structure/closet/crate/glitter/lavender",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 506
+        },
+        {
+          "type": "/obj/structure/closet/crate/glitter/lavender",
+          "file": "game\\objects\\structures\\crates_lockers\\crates.dm",
+          "line": 507
+        }
+      ],
+      "atlas_only": false
+    }
+  ],
+  "excluded_non_crates": [
+    "grave",
+    "grave_lead",
+    "grave_fresh"
+  ],
+  "notes": [
+    "Ordinary crates: base_icon_state + open suffix. Lock lamps, manifest, welded marks are independent overlays.",
+    "Mail: mailsealed closed; mailopen empty; mail filled with contents; separate maillid overlay.",
+    "Animal carrier: crittercrate body plus crittercrate_door. Cardboard: unchanged body plus cardboardopen overlay.",
+    "Large crate is dismantled on opening in game. Its separate top is supplied for optional debris, not a hinged game lid.",
+    "Mail and ancient sarcophagus have removable lids. Grave terrain, keys, effects and contents overlays are excluded.",
+    "Coffin directional frames and bubblegum animated frames are represented by the first frame; original geometry is shared.",
+    "Hidden surfaces and depth are reconstructed. No source atlas was repainted. No runtime integration or baked animation."
+  ]
+}

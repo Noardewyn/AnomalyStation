@@ -1,0 +1,7 @@
+# Every text file is checked out with LF on every OS. Generated tables are embedded as raw string literals and split on
+# '\n' (src/Core/Tg/Generated/Types/TypeConstants.g.cs and others), so a CRLF checkout (core.autocrlf on Windows) leaves
+# a '\r' on every row and breaks them.
+* text=auto eol=lf
+
+# Blender sources are large binaries: Git LFS keeps them out of the history (clone with git-lfs installed, docs/building.md).
+*.blend filter=lfs diff=lfs merge=lfs -text

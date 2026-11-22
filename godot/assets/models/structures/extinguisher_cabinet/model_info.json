@@ -1,0 +1,1689 @@
+{
+  "extinguisher_cabinet_empty_closed": {
+    "base_state": "extinguisher",
+    "overlays": [
+      "door"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 144
+  },
+  "extinguisher_cabinet_empty_open": {
+    "base_state": "extinguisher",
+    "overlays": [
+      "door_open"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 144
+  },
+  "extinguisher_cabinet_default_closed": {
+    "base_state": "extinguisher_default",
+    "overlays": [
+      "door"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.3656250238418579
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_default_open": {
+    "base_state": "extinguisher_default",
+    "overlays": [
+      "door_open"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.3656250238418579
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.003",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_advanced_closed": {
+    "base_state": "extinguisher_advanced",
+    "overlays": [
+      "door"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.3656250238418579
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_advanced_open": {
+    "base_state": "extinguisher_advanced",
+    "overlays": [
+      "door_open"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.3656250238418579
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.009",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_mini_closed": {
+    "base_state": "extinguisher_mini",
+    "overlays": [
+      "door"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.28125
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_mini_open": {
+    "base_state": "extinguisher_mini",
+    "overlays": [
+      "door_open"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.28125
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.012",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_crafted_closed": {
+    "base_state": "extinguisher_crafted",
+    "overlays": [
+      "door"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.3656250238418579
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_crafted_open": {
+    "base_state": "extinguisher_crafted",
+    "overlays": [
+      "door_open"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Cylinder",
+        "triangles": 60,
+        "shared_mesh": "Stepped_Cylinder.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Valve_Neck",
+        "triangles": 12,
+        "shared_mesh": "Valve_Neck.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Trigger_Handle",
+        "triangles": 28,
+        "shared_mesh": "Trigger_Handle.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.3656250238418579
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Stepped_Hose",
+        "triangles": 20,
+        "shared_mesh": "Stepped_Hose.014",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Removable_Extinguisher",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Door_Frame.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Window_Glass",
+        "triangles": 12,
+        "shared_mesh": "Window_Glass.002",
+        "materials": [
+          "Cabinet_Glass_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Door_Handle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 264
+  },
+  "extinguisher_cabinet_frame": {
+    "base_state": "extinguisher",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Cabinet",
+        "triangles": 36,
+        "shared_mesh": "Lined_Cabinet.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bottom_Cradle",
+        "triangles": 12,
+        "shared_mesh": "Bottom_Cradle.002",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.004",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Mounting_Clip",
+        "triangles": 12,
+        "shared_mesh": "Mounting_Clip.005",
+        "materials": [
+          "Cabinet_Original.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 72
+  }
+}

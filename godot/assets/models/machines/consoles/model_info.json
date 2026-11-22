@@ -1,0 +1,42 @@
+{
+  "console_standard": {
+    "base_state": "computer",
+    "screen_state": "generic",
+    "keyboard_state": "generic_key",
+    "height_m": 1.7,
+    "pedestal_height_m": 0.86,
+    "width_m": 1.56,
+    "triangles": 80,
+    "body_triangles": 76,
+    "connected_body_components": 1,
+    "screen_recess_m": 0,
+    "original_png_sha256": "03845daf2e8105b09c9d155d330d99e8b4d8e798033b9f036bbb5ce96a78b825",
+    "surface_texture": "Original atlas on front, top, sides, rear, underside and opening liners",
+    "material_slots": {
+      "Body": "Console_Original_Atlas",
+      "Screen_Overlay": "Console_Overlay_Original_Atlas",
+      "Keyboard_Overlay": "Console_Overlay_Original_Atlas"
+    },
+    "shared_chassis": "standard_console_v2"
+  },
+  "console_bronze": {
+    "base_state": "ratvarcomputer1",
+    "screen_state": "ratvar1",
+    "keyboard_state": "ratvar_key1",
+    "height_m": 1.7,
+    "pedestal_height_m": 0.8,
+    "width_m": 1.68,
+    "triangles": 1078,
+    "body_triangles": 1074,
+    "connected_body_components": 1,
+    "screen_recess_m": 0,
+    "original_png_sha256": "03845daf2e8105b09c9d155d330d99e8b4d8e798033b9f036bbb5ce96a78b825",
+    "surface_texture": "Original atlas on front, top, sides, rear, underside and opening liners",
+    "material_slots": {
+      "Body": "Console_Original_Atlas",
+      "Screen_Overlay": "Console_Overlay_Original_Atlas",
+      "Keyboard_Overlay": "Console_Overlay_Original_Atlas"
+    },
+    "shared_chassis": "bronze_console_v2"
+  }
+}

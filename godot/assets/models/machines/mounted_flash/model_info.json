@@ -1,0 +1,433 @@
+{
+  "mounted_flash_ready": {
+    "source_frame": 0,
+    "base_state": "mflash1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Wall_Housing",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Replaceable_Flashbulb",
+        "triangles": 44,
+        "shared_mesh": "Replaceable_Flashbulb",
+        "materials": [
+          "Mounted_Flash_Lamp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.029531249776482582,
+          0.04218750074505806
+        ],
+        "source_state": "mflash1"
+      },
+      {
+        "name": "Closed_Glass_Lens",
+        "triangles": 44,
+        "shared_mesh": "Closed_Glass_Lens",
+        "materials": [
+          "Mounted_Flash_Glass_Original"
+        ],
+        "parent": "Replaceable_Flashbulb",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator",
+        "materials": [
+          "Mounted_Flash_Lamp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "mounted_flash_ready_alternate": {
+    "source_frame": 1,
+    "base_state": "mflash1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Wall_Housing",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Replaceable_Flashbulb",
+        "triangles": 44,
+        "shared_mesh": "Replaceable_Flashbulb.001",
+        "materials": [
+          "Mounted_Flash_Lamp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.029531249776482582,
+          0.04218750074505806
+        ],
+        "source_state": "mflash1"
+      },
+      {
+        "name": "Closed_Glass_Lens",
+        "triangles": 44,
+        "shared_mesh": "Closed_Glass_Lens.001",
+        "materials": [
+          "Mounted_Flash_Glass_Original"
+        ],
+        "parent": "Replaceable_Flashbulb",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.001",
+        "materials": [
+          "Mounted_Flash_Lamp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "mounted_flash_flash_start": {
+    "source_frame": 0,
+    "base_state": "mflash_flash",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Wall_Housing",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Replaceable_Flashbulb",
+        "triangles": 44,
+        "shared_mesh": "Replaceable_Flashbulb.002",
+        "materials": [
+          "Mounted_Flash_Burst_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.029531249776482582,
+          0.04218750074505806
+        ],
+        "source_state": "mflash_flash"
+      },
+      {
+        "name": "Closed_Glass_Lens",
+        "triangles": 44,
+        "shared_mesh": "Closed_Glass_Lens.002",
+        "materials": [
+          "Mounted_Flash_Glass_Original"
+        ],
+        "parent": "Replaceable_Flashbulb",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.002",
+        "materials": [
+          "Mounted_Flash_Lamp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "mounted_flash_flash_yellow": {
+    "source_frame": 1,
+    "base_state": "mflash_flash",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Wall_Housing",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Replaceable_Flashbulb",
+        "triangles": 44,
+        "shared_mesh": "Replaceable_Flashbulb.003",
+        "materials": [
+          "Mounted_Flash_Burst_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.029531249776482582,
+          0.04218750074505806
+        ],
+        "source_state": "mflash_flash"
+      },
+      {
+        "name": "Closed_Glass_Lens",
+        "triangles": 44,
+        "shared_mesh": "Closed_Glass_Lens.003",
+        "materials": [
+          "Mounted_Flash_Glass_Original"
+        ],
+        "parent": "Replaceable_Flashbulb",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.003",
+        "materials": [
+          "Mounted_Flash_Lamp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "mounted_flash_flash_white": {
+    "source_frame": 2,
+    "base_state": "mflash_flash",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Wall_Housing",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Replaceable_Flashbulb",
+        "triangles": 44,
+        "shared_mesh": "Replaceable_Flashbulb.004",
+        "materials": [
+          "Mounted_Flash_Burst_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.029531249776482582,
+          0.04218750074505806
+        ],
+        "source_state": "mflash_flash"
+      },
+      {
+        "name": "Closed_Glass_Lens",
+        "triangles": 44,
+        "shared_mesh": "Closed_Glass_Lens.004",
+        "materials": [
+          "Mounted_Flash_Glass_Original"
+        ],
+        "parent": "Replaceable_Flashbulb",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Mounted_Flash_Lamp_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "mounted_flash_off": {
+    "source_frame": 0,
+    "base_state": "mflash1-p",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Wall_Housing",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Replaceable_Flashbulb",
+        "triangles": 44,
+        "shared_mesh": "Replaceable_Flashbulb.005",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.029531249776482582,
+          0.04218750074505806
+        ],
+        "source_state": "mflash1-p"
+      },
+      {
+        "name": "Closed_Glass_Lens",
+        "triangles": 44,
+        "shared_mesh": "Closed_Glass_Lens.005",
+        "materials": [
+          "Mounted_Flash_Glass_Original"
+        ],
+        "parent": "Replaceable_Flashbulb",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.005",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "mounted_flash_frame": {
+    "source_frame": 0,
+    "base_state": "mflash_frame",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Wall_Housing",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Wall_Housing",
+        "materials": [
+          "Mounted_Flash_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 76
+  }
+}

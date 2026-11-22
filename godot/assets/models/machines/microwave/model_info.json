@@ -1,0 +1,2156 @@
+{
+  "microwave_idle": {
+    "base_state": "mw",
+    "overlays": [
+      "back_off",
+      "door_off",
+      "door_handle",
+      "emissive_mw"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.021",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.027",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 18,
+        "shared_mesh": "Emission_Overlay.086",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_mw"
+      }
+    ],
+    "triangles": 154
+  },
+  "microwave_open": {
+    "base_state": "mwo",
+    "overlays": [
+      "back_open",
+      "door_off",
+      "door_handle",
+      "emissive_mwo"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.028",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.022",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.027",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 330,
+        "shared_mesh": "Emission_Overlay.087",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_mwo"
+      }
+    ],
+    "triangles": 466
+  },
+  "microwave_cooking": {
+    "base_state": "mw1",
+    "overlays": [
+      "back_on",
+      "door_on",
+      "door_handle",
+      "emissive_mw1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.029",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.023",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.029",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 308,
+        "shared_mesh": "Emission_Overlay.088",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_mw1"
+      }
+    ],
+    "triangles": 444
+  },
+  "microwave_charging": {
+    "base_state": "mw1",
+    "overlays": [
+      "back_on",
+      "door_charge",
+      "door_handle",
+      "emissive_mw1"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.029",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.023",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.030",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 308,
+        "shared_mesh": "Emission_Overlay.088",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_mw1"
+      }
+    ],
+    "triangles": 444
+  },
+  "microwave_dirty": {
+    "base_state": "mwbloody",
+    "overlays": [
+      "back_off",
+      "door_off",
+      "door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.031",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.021",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.031",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 136
+  },
+  "microwave_broken": {
+    "base_state": "mwb",
+    "overlays": [
+      "back_off",
+      "door_off",
+      "door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.032",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.021",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 28,
+        "shared_mesh": "Closed_Tinted_Door_Glass.032",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 152
+  },
+  "microwave_service": {
+    "base_state": "mw-o",
+    "overlays": [
+      "back_off",
+      "door_off",
+      "door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 60,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.033",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.021",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.027",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring_Board",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring_Board.001",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.120",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          -0.32343751192092896,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 186
+  },
+  "microwave_dirty_open": {
+    "base_state": "mwbloodyo",
+    "overlays": [
+      "back_open",
+      "door_off",
+      "door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.034",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.022",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.031",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 136
+  },
+  "microwave_dirty_operating": {
+    "base_state": "mwbloody1",
+    "overlays": [
+      "back_on",
+      "door_on",
+      "door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Cabinet_With_Lined_Chamber",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Cabinet_With_Lined_Chamber.035",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Chamber_Back_Layer",
+        "triangles": 12,
+        "shared_mesh": "Chamber_Back_Layer.023",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Closed_Door_Frame.027",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Door_Glass.035",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Door_Handle",
+        "triangles": 30,
+        "shared_mesh": "Door_Handle.030",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Door_Hinge",
+        "pivot_blender_m": [
+          0.2953124940395355,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 136
+  },
+  "microwave_engineering_idle": {
+    "base_state": "engi_mw",
+    "overlays": [
+      "engi_back_off",
+      "engi_door_off",
+      "engi_door_handle",
+      "emissive_engi_mw",
+      "engi_cell_100"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 32,
+        "shared_mesh": "Engineering_Continuous_Cabinet.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.012",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 54,
+        "shared_mesh": "Emission_Overlay.090",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_engi_mw"
+      },
+      {
+        "name": "Battery_Level_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Battery_Level_Overlay.007",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "engi_cell_100"
+      }
+    ],
+    "triangles": 186
+  },
+  "microwave_engineering_open": {
+    "base_state": "engi_mwo",
+    "overlays": [
+      "engi_back_open",
+      "engi_door_off",
+      "engi_door_handle",
+      "emissive_engi_mwo",
+      "engi_cell_100"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 44,
+        "shared_mesh": "Engineering_Continuous_Cabinet.013",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.013",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.012",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 246,
+        "shared_mesh": "Emission_Overlay.091",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_engi_mwo"
+      },
+      {
+        "name": "Battery_Level_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Battery_Level_Overlay.007",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "engi_cell_100"
+      }
+    ],
+    "triangles": 390
+  },
+  "microwave_engineering_cooking": {
+    "base_state": "engi_mw1",
+    "overlays": [
+      "engi_back_on",
+      "engi_door_on",
+      "engi_door_handle",
+      "emissive_engi_mw1",
+      "engi_cell_100"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 44,
+        "shared_mesh": "Engineering_Continuous_Cabinet.014",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.014",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.014",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 234,
+        "shared_mesh": "Emission_Overlay.092",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_engi_mw1"
+      },
+      {
+        "name": "Battery_Level_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Battery_Level_Overlay.007",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "engi_cell_100"
+      }
+    ],
+    "triangles": 378
+  },
+  "microwave_engineering_charging": {
+    "base_state": "engi_mw1",
+    "overlays": [
+      "engi_back_on",
+      "engi_door_charge",
+      "engi_door_handle",
+      "emissive_engi_mw1",
+      "engi_cell_100"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 44,
+        "shared_mesh": "Engineering_Continuous_Cabinet.014",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.014",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.015",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 234,
+        "shared_mesh": "Emission_Overlay.092",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_engi_mw1"
+      },
+      {
+        "name": "Battery_Level_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Battery_Level_Overlay.007",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "engi_cell_100"
+      }
+    ],
+    "triangles": 378
+  },
+  "microwave_engineering_dirty": {
+    "base_state": "engi_mwbloody",
+    "overlays": [
+      "engi_back_off",
+      "engi_door_off",
+      "engi_door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Continuous_Cabinet.016",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.016",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 132
+  },
+  "microwave_engineering_broken": {
+    "base_state": "engi_mwb",
+    "overlays": [
+      "engi_back_off",
+      "engi_door_off",
+      "engi_door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Continuous_Cabinet.017",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 28,
+        "shared_mesh": "Engineering_Door_Glass.017",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 148
+  },
+  "microwave_engineering_service": {
+    "base_state": "engi_mw-o",
+    "overlays": [
+      "engi_back_off",
+      "engi_door_off",
+      "engi_door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 70,
+        "shared_mesh": "Engineering_Continuous_Cabinet.018",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.012",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Wiring_Board",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Wiring_Board.001",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Service_Cover.001",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Lower_Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0703125,
+          0.25312501192092896,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 178
+  },
+  "microwave_engineering_dirty_open": {
+    "base_state": "engi_mwbloodyo",
+    "overlays": [
+      "engi_back_open",
+      "engi_door_off",
+      "engi_door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Continuous_Cabinet.019",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.013",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.016",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 132
+  },
+  "microwave_engineering_dirty_operating": {
+    "base_state": "engi_mwbloody1",
+    "overlays": [
+      "engi_back_on",
+      "engi_door_on",
+      "engi_door_handle"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Continuous_Cabinet.020",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.014",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.020",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 132
+  },
+  "microwave_engineering_cell_0": {
+    "base_state": "engi_mw",
+    "overlays": [
+      "engi_back_off",
+      "engi_door_off",
+      "engi_door_handle",
+      "emissive_engi_mw",
+      "engi_cell_0"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 32,
+        "shared_mesh": "Engineering_Continuous_Cabinet.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.012",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 54,
+        "shared_mesh": "Emission_Overlay.090",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_engi_mw"
+      },
+      {
+        "name": "Battery_Level_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Battery_Level_Overlay.011",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "engi_cell_0"
+      }
+    ],
+    "triangles": 174
+  },
+  "microwave_engineering_cell_25": {
+    "base_state": "engi_mw",
+    "overlays": [
+      "engi_back_off",
+      "engi_door_off",
+      "engi_door_handle",
+      "emissive_engi_mw",
+      "engi_cell_25"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 32,
+        "shared_mesh": "Engineering_Continuous_Cabinet.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.012",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 54,
+        "shared_mesh": "Emission_Overlay.090",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_engi_mw"
+      },
+      {
+        "name": "Battery_Level_Overlay",
+        "triangles": 8,
+        "shared_mesh": "Battery_Level_Overlay.012",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "engi_cell_25"
+      }
+    ],
+    "triangles": 178
+  },
+  "microwave_engineering_cell_75": {
+    "base_state": "engi_mw",
+    "overlays": [
+      "engi_back_off",
+      "engi_door_off",
+      "engi_door_handle",
+      "emissive_engi_mw",
+      "engi_cell_75"
+    ],
+    "parts": [
+      {
+        "name": "Engineering_Continuous_Cabinet",
+        "triangles": 32,
+        "shared_mesh": "Engineering_Continuous_Cabinet.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Chamber_Back",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Chamber_Back.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Frame",
+        "triangles": 48,
+        "shared_mesh": "Engineering_Door_Frame.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Glass",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Glass.012",
+        "materials": [
+          "Microwave_Door_Glass.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Engineering_Door_Handle",
+        "triangles": 12,
+        "shared_mesh": "Engineering_Door_Handle.012",
+        "materials": [
+          "Microwave_Original_Atlas.004"
+        ],
+        "parent": "Engineering_Door_Hinge",
+        "pivot_blender_m": [
+          0.01406249962747097,
+          0.25312501192092896,
+          -0.4781250059604645
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Emission_Overlay",
+        "triangles": 54,
+        "shared_mesh": "Emission_Overlay.090",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "emissive_engi_mw"
+      },
+      {
+        "name": "Battery_Level_Overlay",
+        "triangles": 12,
+        "shared_mesh": "Battery_Level_Overlay.013",
+        "materials": [
+          "Microwave_Emission_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "engi_cell_75"
+      }
+    ],
+    "triangles": 182
+  }
+}

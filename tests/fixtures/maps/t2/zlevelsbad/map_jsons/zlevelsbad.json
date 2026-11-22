@@ -1,0 +1,11 @@
+{
+	"version": 1,
+	"map_name": "T2 zlevelsbad",
+	"map_path": "map_files/T2Zlevelsbad",
+	"map_file": "T2Zlevelsbad.dmm",
+	"traits": [
+		{
+			"Baseturf": "/turf/no/such/turf"
+		}
+	]
+}

@@ -1,0 +1,1564 @@
+{
+  "status_display_blank": {
+    "base_state": "frame",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 176
+  },
+  "status_display_text_ready": {
+    "base_state": "frame",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Text_Line_1_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Text_Line_1",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Text_Line_2_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Text_Line_2",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 180
+  },
+  "status_display_default": {
+    "base_state": "frame",
+    "overlays": [
+      "default"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "default"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_greenalert": {
+    "base_state": "frame",
+    "overlays": [
+      "greenalert"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.001",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "greenalert"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_bluealert": {
+    "base_state": "frame",
+    "overlays": [
+      "bluealert"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.002",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bluealert"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_redalert": {
+    "base_state": "frame",
+    "overlays": [
+      "redalert"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.003",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "redalert"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_deltaalert": {
+    "base_state": "frame",
+    "overlays": [
+      "deltaalert"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.004",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "deltaalert"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_biohazard": {
+    "base_state": "frame",
+    "overlays": [
+      "biohazard"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.005",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "biohazard"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_lockdown": {
+    "base_state": "frame",
+    "overlays": [
+      "lockdown"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.006",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "lockdown"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_radiation": {
+    "base_state": "frame",
+    "overlays": [
+      "radiation"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.007",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "radiation"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_happy": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_happy"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.008",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_happy"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_neutral": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_neutral"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.009",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_neutral"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_veryhappy": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_veryhappy"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.010",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_veryhappy"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_sad": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_sad"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.011",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_sad"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_unsure": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_unsure"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.012",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_unsure"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_confused": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_confused"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.013",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_confused"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_bsod": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_bsod"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.014",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_bsod"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_off": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_off"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.015",
+        "materials": [
+          "Status_Display_Overlay_Unlit"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_off"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_surprised": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_surprised"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.016",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_surprised"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_trollface": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_trollface"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.017",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_trollface"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_friend": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_friend"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.018",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_friend"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_facepalm": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_facepalm"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.019",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_facepalm"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_awesome": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_awesome"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.020",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_awesome"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_download": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_download"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.021",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_download"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_urist": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_urist"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.022",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_urist"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_sal": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_sal"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.023",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_sal"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_hal": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_hal"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.024",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_hal"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_thinking": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_thinking"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.025",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_thinking"
+      }
+    ],
+    "triangles": 186
+  },
+  "status_display_ai_dead": {
+    "base_state": "frame",
+    "overlays": [
+      "ai_dead"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Frame",
+        "triangles": 132,
+        "shared_mesh": "Continuous_Frame",
+        "materials": [
+          "Status_Display_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Glass",
+        "triangles": 44,
+        "shared_mesh": "Recessed_Glass",
+        "materials": [
+          "Status_Display_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Picture_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Picture_Overlay.026",
+        "materials": [
+          "Status_Display_Overlay_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "ai_dead"
+      }
+    ],
+    "triangles": 186
+  }
+}

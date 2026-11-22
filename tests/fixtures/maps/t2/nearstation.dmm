@@ -1,0 +1,45 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: positive controls for the ported tg map tests nearstation and mapload_space_verification (M3 T2, PortedTgTests.cs)
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"c" = (
+/obj/item/crowbar,
+/turf/open/space/basic,
+/area/space)
+"f" = (
+/turf/open/floor/plating,
+/area/space)
+"l" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+"m" = (
+/obj/effect/landmark/start/assistant,
+/turf/open/space/basic,
+/area/space)
+"s" = (
+/turf/open/space/basic,
+/area/station/hallway/primary/central)
+"h" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+
+(1,1,1) = {"
+c
+"}
+(2,1,1) = {"
+f
+"}
+(3,1,1) = {"
+l
+"}
+(4,1,1) = {"
+m
+"}
+(5,1,1) = {"
+s
+"}
+(6,1,1) = {"
+h
+"}

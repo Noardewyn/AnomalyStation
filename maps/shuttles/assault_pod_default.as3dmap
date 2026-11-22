@@ -1,0 +1,44 @@
+anomaly-map 1
+source _maps/shuttles/assault_pod_default.dmm tg 1d99bd7f
+size 7 7 1
+chunk 32
+default /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+
+[chunk 1 1 1]
+1,7: /turf/template_noop | /area/template_noop
+2,7: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+4,7: /obj/machinery/door/airlock/centcom{name = "Assault Pod"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+6,7: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+7,7: /turf/template_noop | /area/template_noop
+1,6: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+3,6: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+4,6: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+5,6: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+7,6: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+2,5: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+3,5: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+4,5: /obj/structure/chair/comfy/shuttle{dir = 1} | /obj/machinery/light/directional/south | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+5,5: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+6,5: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+1,4: /obj/machinery/door/airlock/centcom{aiControlDisabled = 1; name = "Assault Pod"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+2,4: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+3,4: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+4,4: /obj/machinery/computer/shuttle/syndicate/drop_pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+5,4: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+6,4: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+7,4: /obj/machinery/door/airlock/centcom{aiControlDisabled = 1; name = "Assault Pod"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+2,3: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+3,3: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+4,3: /obj/structure/chair/comfy/shuttle | /obj/machinery/light/directional/north | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+5,3: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+6,3: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+1,2: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+3,2: /obj/structure/chair/comfy/shuttle{dir = 4} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+4,2: /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+5,2: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+7,2: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+1,1: /turf/template_noop | /area/template_noop
+2,1: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+4,1: /obj/machinery/door/airlock/centcom{aiControlDisabled = 1; name = "Assault Pod"} | /obj/docking_port/mobile/assault_pod{name = "steel rain"; port_direction = 4; preferred_direction = 4} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /turf/open/floor/mineral/plastitanium/red | /area/shuttle/assault_pod
+6,1: /obj/machinery/porta_turret/syndicate/pod | /turf/closed/wall/mineral/plastitanium | /area/shuttle/assault_pod
+7,1: /turf/template_noop | /area/template_noop

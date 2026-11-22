@@ -1,0 +1,19 @@
+anomaly-map 1
+source _maps/test/p2_small.dmm tg 1d99bd7f
+size 5 4 1
+chunk 32
+default /turf/open/space/basic | /area/space
+
+[chunk 1 1 1]
+2,4: /turf/closed/wall | /area/station/hallway
+3,4: /turf/closed/wall | /area/station/hallway
+4,4: /turf/closed/wall | /area/station/hallway
+2,3: /obj/machinery/camera/directional/east{c_tag = "Hall; North | East"; network = list("ss13","rd")} | /obj/effect/turf_decal/stripes/line{dir = 1} | /turf/open/floor/iron | /area/station/hallway
+3,3: /obj/item/crowbar{name = "\improper Bob's \"bar\""; pixel_x = -4; pixel_y = 2e+005} | /turf/open/floor/iron | /area/station/hallway
+4,3: /turf/open/floor/iron | /area/station/hallway
+2,2: /turf/open/floor/iron | /area/station/hallway
+3,2: /obj/effect/landmark/latejoin | /turf/open/floor/iron | /area/station/hallway
+4,2: /turf/open/floor/iron | /area/station/hallway
+2,1: /turf/closed/wall | /area/station/hallway
+3,1: /turf/closed/wall | /area/station/hallway
+4,1: /turf/closed/wall | /area/station/hallway

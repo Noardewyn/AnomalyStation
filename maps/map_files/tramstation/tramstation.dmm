@@ -1,0 +1,4 @@
+anomaly-map 1
+size 64 64 1
+chunk 32
+default /turf/open/space/basic | /area/space

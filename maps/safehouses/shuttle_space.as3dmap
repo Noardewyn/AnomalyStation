@@ -1,0 +1,41 @@
+anomaly-map 1
+source _maps/safehouses/shuttle_space.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /obj/effect/spawner/structure/window/reinforced/shuttle | /turf/open/floor/plating | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+1,6: /turf/closed/wall/mineral/titanium/overspace | /area/virtual_domain/safehouse
+3,6: /turf/closed/wall/mineral/titanium | /area/virtual_domain/safehouse
+4,6: /obj/effect/turf_decal/stripes/line{dir = 1} | /obj/machinery/door/airlock/shuttle/glass | /obj/effect/turf_decal/stripes/line | /obj/effect/turf_decal/sand/volcanic | /obj/structure/fans/tiny | /turf/open/floor/iron/white | /area/virtual_domain/safehouse
+5,6: /turf/closed/wall/mineral/titanium | /area/virtual_domain/safehouse
+7,6: /turf/closed/wall/mineral/titanium/overspace | /area/virtual_domain/safehouse
+1,5: /obj/machinery/power/shuttle_engine/propulsion/burst{dir = 8} | /obj/structure/window/reinforced/spawner/directional/east | /obj/effect/turf_decal/stripes/line{dir = 8} | /turf/open/floor/plating/airless | /area/virtual_domain/safehouse
+2,5: /obj/effect/turf_decal/stripes/end{dir = 1} | /obj/effect/turf_decal/sand/volcanic | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,5: /obj/effect/turf_decal/tile/neutral/half/contrasted | /obj/effect/turf_decal/stripes/line{dir = 1} | /obj/machinery/light/small/directional/north | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain/safehouse
+4,5: /obj/effect/turf_decal/stripes/line{dir = 1} | /turf/open/floor/iron | /area/virtual_domain/safehouse
+5,5: /obj/effect/turf_decal/tile/neutral/half/contrasted | /obj/effect/turf_decal/stripes/line{dir = 1} | /obj/machinery/light/small/directional/north | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron | /area/virtual_domain/safehouse
+6,5: /obj/effect/turf_decal/tile/neutral | /obj/effect/turf_decal/stripes/line{dir = 5} | /obj/structure/table/reinforced | /obj/effect/decal/cleanable/dirt | /obj/item/storage/toolbox/emergency | /turf/open/floor/iron | /area/virtual_domain/safehouse
+7,5: /turf/closed/wall/mineral/titanium | /area/virtual_domain/safehouse
+2,4: /obj/effect/turf_decal/stripes/line{dir = 8} | /obj/effect/turf_decal/stripes/line{dir = 4} | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,4: /obj/effect/turf_decal/tile/neutral/fourcorners | /turf/open/floor/iron | /area/virtual_domain/safehouse
+4,4: /obj/effect/turf_decal/tile/neutral/fourcorners | /turf/open/floor/iron | /area/virtual_domain/safehouse
+5,4: /obj/effect/turf_decal/tile/neutral/fourcorners | /obj/structure/chair/comfy/shuttle{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain/safehouse
+6,4: /obj/effect/turf_decal/tile/neutral/fourcorners | /obj/effect/turf_decal/stripes/line{dir = 4} | /obj/machinery/computer{dir = 8; name = "shuttle console"; icon_screen = "shuttle"} | /turf/open/floor/iron | /area/virtual_domain/safehouse
+2,3: /obj/effect/turf_decal/stripes/end | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain/safehouse
+3,3: /obj/effect/turf_decal/tile/neutral/fourcorners | /obj/effect/turf_decal/stripes/line | /obj/effect/decal/cleanable/blood/old | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron | /area/virtual_domain/safehouse
+4,3: /obj/effect/turf_decal/tile/neutral/fourcorners | /obj/effect/turf_decal/stripes/line | /turf/open/floor/iron | /area/virtual_domain/safehouse
+5,3: /obj/effect/turf_decal/tile/neutral/fourcorners | /obj/effect/turf_decal/stripes/line | /turf/open/floor/iron | /area/virtual_domain/safehouse
+6,3: /obj/effect/turf_decal/tile/neutral/fourcorners | /obj/effect/turf_decal/stripes/line{dir = 6} | /obj/structure/table/reinforced | /obj/item/tank/internals/emergency_oxygen{pixel_x = 3} | /obj/item/clothing/mask/gas | /turf/open/floor/iron | /area/virtual_domain/safehouse
+1,2: /obj/machinery/power/shuttle_engine/propulsion/burst{dir = 8} | /obj/structure/window/reinforced/spawner/directional/east | /obj/effect/turf_decal/stripes/line{dir = 8} | /turf/open/floor/plating/airless | /area/virtual_domain/safehouse
+2,2: /obj/machinery/light/small/directional/south | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+3,2: /obj/effect/decal/cleanable/dirt | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+4,2: /obj/effect/turf_decal/stripes/line{dir = 10} | /obj/effect/decal/cleanable/generic | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/iron | /area/virtual_domain/safehouse
+5,2: /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /obj/effect/turf_decal/stripes/line | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/iron | /area/virtual_domain/safehouse
+6,2: /obj/effect/turf_decal/tile/neutral{dir = 4} | /obj/effect/turf_decal/stripes/line{dir = 6} | /obj/machinery/light/small/directional/south | /obj/effect/decal/cleanable/dirt | /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/floor/iron | /area/virtual_domain/safehouse
+7,2: /turf/closed/wall/mineral/titanium | /area/virtual_domain/safehouse
+1,1: /obj/modular_map_connector | /turf/closed/wall/mineral/titanium/overspace | /area/virtual_domain/safehouse
+2,1: /turf/closed/wall/mineral/titanium | /area/virtual_domain/safehouse
+4,1: /turf/closed/wall/mineral/titanium | /area/virtual_domain/safehouse
+6,1: /turf/closed/wall/mineral/titanium | /area/virtual_domain/safehouse
+7,1: /turf/closed/wall/mineral/titanium/overspace | /area/virtual_domain/safehouse

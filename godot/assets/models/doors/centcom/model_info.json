@@ -1,0 +1,34 @@
+{
+  "source": "assets/tg/icons/obj/doors/airlocks/centcom/centcom.png",
+  "state": "closed",
+  "rect": [
+    0,
+    0,
+    32,
+    32
+  ],
+  "source_sha256": "9ae1728734b64ce00fef19f2847481ada8bfb3d1593b0c1bcb552a78ff39a6a8",
+  "parts": {
+    "Door_Left": {
+      "triangles": 76,
+      "open_offset_godot": [
+        -1.3,
+        0.0,
+        0.0
+      ]
+    },
+    "Door_Right": {
+      "triangles": 76,
+      "open_offset_godot": [
+        1.3,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "triangles": 152,
+  "nearest": true,
+  "original_png_embedded": true,
+  "glass_alpha": null,
+  "notes": "Closed tile; source direction 0. Rotate whole model for other cardinal directions."
+}

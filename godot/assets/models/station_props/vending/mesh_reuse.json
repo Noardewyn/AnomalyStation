@@ -1,0 +1,3805 @@
+{
+  "vending_cola_machine_Body.006": [
+    {
+      "part": "vending_cola_machine_Cabinet.007",
+      "slots": [
+        "Vending_Front_Cola_Machine.004",
+        "Original_Vending_Service_Cola_Machine.004"
+      ]
+    }
+  ],
+  "vending_cola_machine_Delivery_Flap_Mesh.004": [
+    {
+      "part": "vending_cola_machine_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_Cola_Machine.004"
+      ]
+    },
+    {
+      "part": "vending_cola_black_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_cola_black.002"
+      ]
+    },
+    {
+      "part": "vending_pwr_game_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_pwr_game.002"
+      ]
+    },
+    {
+      "part": "vending_red_cola_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_red_cola.002"
+      ]
+    },
+    {
+      "part": "vending_shamblers_juice_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_shamblers_juice.002"
+      ]
+    },
+    {
+      "part": "vending_space_up_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_space_up.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_5_5_Mesh.006": [
+    {
+      "part": "vending_cola_machine_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_Cola_Machine.004"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_8_5_Mesh.006": [
+    {
+      "part": "vending_cola_machine_Light_Overlay_8_5.007",
+      "slots": [
+        "Original_Vending_Light_Cola_Machine.004"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_19_5_Mesh.006": [
+    {
+      "part": "vending_cola_machine_Light_Overlay_19_5.007",
+      "slots": [
+        "Original_Vending_Light_Cola_Machine.004"
+      ]
+    }
+  ],
+  "vending_magivend_Body.003": [
+    {
+      "part": "vending_magivend_Cabinet.007",
+      "slots": [
+        "Vending_Front_MagiVend.002",
+        "Original_Vending_Service_MagiVend.002"
+      ]
+    }
+  ],
+  "vending_magivend_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_magivend_Display_Insert.007",
+      "slots": [
+        "Vending_Front_MagiVend.002"
+      ]
+    },
+    {
+      "part": "vending_runicvendor_Display_Insert.007",
+      "slots": [
+        "Vending_Front_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_magivend_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_magivend_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.066"
+      ]
+    },
+    {
+      "part": "vending_runicvendor_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.080"
+      ]
+    }
+  ],
+  "vending_magivend_Delivery_Flap_Mesh.002": [
+    {
+      "part": "vending_magivend_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_MagiVend.002"
+      ]
+    },
+    {
+      "part": "vending_runicvendor_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_8_10_Mesh.024": [
+    {
+      "part": "vending_magivend_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_MagiVend.002"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_cargodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_chapdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_chefdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_clothes_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_clothes.017"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_curadrobe.002"
+      ]
+    },
+    {
+      "part": "vending_cytopro_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_cytopro.002"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_engidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_genedrobe.002"
+      ]
+    },
+    {
+      "part": "vending_hydrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_hydrobe.002"
+      ]
+    },
+    {
+      "part": "vending_medidrobe_Light_Overlay_8_10.006",
+      "slots": [
+        "Original_Vending_Light_medidrobe.004"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_robodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_magivend_Light_Overlay_9_10_Mesh.003": [
+    {
+      "part": "vending_magivend_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_MagiVend.002"
+      ]
+    }
+  ],
+  "vending_magivend_Light_Overlay_19_10_Mesh.003": [
+    {
+      "part": "vending_magivend_Light_Overlay_19_10.007",
+      "slots": [
+        "Original_Vending_Light_MagiVend.002"
+      ]
+    }
+  ],
+  "vending_magivend_Light_Overlay_22_10_Mesh.003": [
+    {
+      "part": "vending_magivend_Light_Overlay_22_10.007",
+      "slots": [
+        "Original_Vending_Light_MagiVend.002"
+      ]
+    }
+  ],
+  "vending_magivend_Body.006": [
+    {
+      "part": "vending_runicvendor_Cabinet.007",
+      "slots": [
+        "Vending_Front_RunicVendor.002",
+        "Original_Vending_Service_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_magivend_Light_Overlay_8_10_Mesh.006": [
+    {
+      "part": "vending_runicvendor_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_RunicVendor.002"
+      ]
+    },
+    {
+      "part": "vending_chemdrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_chemdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_lawdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_secdrobe.002"
+      ]
+    }
+  ],
+  "vending_magivend_Light_Overlay_9_10_Mesh.006": [
+    {
+      "part": "vending_runicvendor_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_runicvendor_Light_Overlay_9_25_Mesh.003": [
+    {
+      "part": "vending_runicvendor_Light_Overlay_9_25.007",
+      "slots": [
+        "Original_Vending_Light_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_runicvendor_Light_Overlay_9_27_Mesh.003": [
+    {
+      "part": "vending_runicvendor_Light_Overlay_9_27.007",
+      "slots": [
+        "Original_Vending_Light_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_magivend_Light_Overlay_19_10_Mesh.006": [
+    {
+      "part": "vending_runicvendor_Light_Overlay_19_10.007",
+      "slots": [
+        "Original_Vending_Light_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_magivend_Light_Overlay_22_10_Mesh.006": [
+    {
+      "part": "vending_runicvendor_Light_Overlay_22_10.007",
+      "slots": [
+        "Original_Vending_Light_RunicVendor.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.006": [
+    {
+      "part": "vending_atmosdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_atmosdrobe.002",
+        "Original_Vending_Service_atmosdrobe.002"
+      ]
+    }
+  ],
+  "vending_theater_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_atmosdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_atmosdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_bardrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_bardrobe.002"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_cargodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_chapdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_chefdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chemdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_chemdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_clothes_Display_Insert.007",
+      "slots": [
+        "Vending_Front_clothes.015"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_coroner_drobe.002"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_curadrobe.002"
+      ]
+    },
+    {
+      "part": "vending_detdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_detdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_engidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_genedrobe.002"
+      ]
+    },
+    {
+      "part": "vending_hydrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_hydrobe.002"
+      ]
+    },
+    {
+      "part": "vending_janidrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_janidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_lawdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_medidrobe_Display_Insert.006",
+      "slots": [
+        "Vending_Front_medidrobe.004"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_robodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_scidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_secdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_theater_Display_Insert.007",
+      "slots": [
+        "Vending_Front_theater.002"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_theater_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_atmosdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.006"
+      ]
+    },
+    {
+      "part": "vending_bardrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.008"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.013"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.020"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.022"
+      ]
+    },
+    {
+      "part": "vending_chemdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.024"
+      ]
+    },
+    {
+      "part": "vending_clothes_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.028"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.032"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.034"
+      ]
+    },
+    {
+      "part": "vending_detdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.040"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.048"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.054"
+      ]
+    },
+    {
+      "part": "vending_hydrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.060"
+      ]
+    },
+    {
+      "part": "vending_janidrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.062"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.064"
+      ]
+    },
+    {
+      "part": "vending_medidrobe_Display_Glass.006",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.004"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.076"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.082"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.086"
+      ]
+    },
+    {
+      "part": "vending_theater_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.108"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.110"
+      ]
+    }
+  ],
+  "vending_theater_Delivery_Flap_Mesh.002": [
+    {
+      "part": "vending_atmosdrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_atmosdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_bardrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_bardrobe.002"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_cargodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_chapdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_chefdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chemdrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_chemdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_clothes_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_clothes.015"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_coroner_drobe.002"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_curadrobe.002"
+      ]
+    },
+    {
+      "part": "vending_detdrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_detdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_engidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_genedrobe.002"
+      ]
+    },
+    {
+      "part": "vending_hydrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_hydrobe.002"
+      ]
+    },
+    {
+      "part": "vending_janidrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_janidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_lawdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_medidrobe_Delivery_Flap.015",
+      "slots": [
+        "Vending_Front_medidrobe.004"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_robodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_scidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_secdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_theater_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_theater.002"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_8_10_Mesh.006": [
+    {
+      "part": "vending_atmosdrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_atmosdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_janidrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_janidrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_5_Mesh.006": [
+    {
+      "part": "vending_atmosdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_atmosdrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_10_Mesh.006": [
+    {
+      "part": "vending_atmosdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_atmosdrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_20_5_Mesh.006": [
+    {
+      "part": "vending_atmosdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_atmosdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_hydrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_hydrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_20_10_Mesh.006": [
+    {
+      "part": "vending_atmosdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_atmosdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_hydrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_hydrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.009": [
+    {
+      "part": "vending_bardrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_bardrobe.002",
+        "Original_Vending_Service_bardrobe.002"
+      ]
+    }
+  ],
+  "vending_theater_Light_Overlay_8_10_Mesh.003": [
+    {
+      "part": "vending_bardrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_bardrobe.002"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_coroner_drobe.002"
+      ]
+    },
+    {
+      "part": "vending_detdrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_detdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_scidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_theater_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_theater.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_5_Mesh.027": [
+    {
+      "part": "vending_bardrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_bardrobe.002"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_cargodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_centdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_centdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_chapdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_chefdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_clothes_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_clothes.017"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_coroner_drobe.002"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_curadrobe.002"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_engidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_genedrobe.002"
+      ]
+    },
+    {
+      "part": "vending_medidrobe_Light_Overlay_9_5.006",
+      "slots": [
+        "Original_Vending_Light_medidrobe.004"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_scidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_10_Mesh.027": [
+    {
+      "part": "vending_bardrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_bardrobe.002"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_cargodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_centdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_centdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_chapdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_chefdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_clothes_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_clothes.017"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_coroner_drobe.002"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_curadrobe.002"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_engidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_genedrobe.002"
+      ]
+    },
+    {
+      "part": "vending_medidrobe_Light_Overlay_9_10.006",
+      "slots": [
+        "Original_Vending_Light_medidrobe.004"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_scidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_20_5_Mesh.024": [
+    {
+      "part": "vending_bardrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_bardrobe.002"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_cargodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_chapdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_chefdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chemdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_chemdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_clothes_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_clothes.017"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_coroner_drobe.002"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_curadrobe.002"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_engidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_genedrobe.002"
+      ]
+    },
+    {
+      "part": "vending_janidrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_janidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_lawdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_scidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_secdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_20_10_Mesh.024": [
+    {
+      "part": "vending_bardrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_bardrobe.002"
+      ]
+    },
+    {
+      "part": "vending_cargodrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_cargodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chapdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_chapdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chefdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_chefdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_chemdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_chemdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_clothes_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_clothes.017"
+      ]
+    },
+    {
+      "part": "vending_coroner_drobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_coroner_drobe.002"
+      ]
+    },
+    {
+      "part": "vending_curadrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_curadrobe.002"
+      ]
+    },
+    {
+      "part": "vending_engidrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_engidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_genedrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_genedrobe.002"
+      ]
+    },
+    {
+      "part": "vending_janidrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_janidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_lawdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_scidrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_scidrobe.002"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_secdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_virodrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_boozeomat_Body.005": [
+    {
+      "part": "vending_boozeomat_Cabinet.008",
+      "slots": [
+        "Vending_Front_boozeomat.004",
+        "Original_Vending_Service_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Display_Insert_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Display_Insert.008",
+      "slots": [
+        "Vending_Front_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Display_Glass_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Display_Glass.008",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.010"
+      ]
+    }
+  ],
+  "vending_boozeomat_Delivery_Flap_Mesh.014": [
+    {
+      "part": "vending_boozeomat_Delivery_Flap.017",
+      "slots": [
+        "Vending_Front_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_2_5_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_2_5.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_2_12_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_2_12.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_2_23_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_2_23.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_18_5_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_18_5.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_18_12_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_18_12.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_21_5_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_21_5.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_21_12_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_21_12.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_27_5_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_27_5.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_boozeomat_Light_Overlay_27_12_Mesh.004": [
+    {
+      "part": "vending_boozeomat_Light_Overlay_27_12.008",
+      "slots": [
+        "Original_Vending_Light_boozeomat.004"
+      ]
+    }
+  ],
+  "vending_clothes_Body.012": [
+    {
+      "part": "vending_cargodrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_cargodrobe.002",
+        "Original_Vending_Service_cargodrobe.002"
+      ]
+    }
+  ],
+  "vending_cart_Body.003": [
+    {
+      "part": "vending_cart_Cabinet.008",
+      "slots": [
+        "Vending_Front_cart.002",
+        "Original_Vending_Service_cart.002"
+      ]
+    }
+  ],
+  "vending_cart_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_cart_Display_Insert.008",
+      "slots": [
+        "Vending_Front_cart.002"
+      ]
+    },
+    {
+      "part": "vending_drug_Display_Insert.007",
+      "slots": [
+        "Vending_Front_drug.002"
+      ]
+    },
+    {
+      "part": "vending_med_Display_Insert.007",
+      "slots": [
+        "Vending_Front_med.006"
+      ]
+    },
+    {
+      "part": "vending_sec_Display_Insert.007",
+      "slots": [
+        "Vending_Front_sec.002"
+      ]
+    }
+  ],
+  "vending_cart_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_cart_Display_Glass.008",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.015"
+      ]
+    },
+    {
+      "part": "vending_drug_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.044"
+      ]
+    },
+    {
+      "part": "vending_med_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.068"
+      ]
+    },
+    {
+      "part": "vending_sec_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.084"
+      ]
+    }
+  ],
+  "vending_cart_Delivery_Flap_Mesh.012": [
+    {
+      "part": "vending_cart_Delivery_Flap.017",
+      "slots": [
+        "Vending_Front_cart.002"
+      ]
+    },
+    {
+      "part": "vending_drug_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_drug.002"
+      ]
+    },
+    {
+      "part": "vending_med_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_med.006"
+      ]
+    },
+    {
+      "part": "vending_sec_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_sec.002"
+      ]
+    }
+  ],
+  "vending_cart_Light_Overlay_5_9_Mesh.003": [
+    {
+      "part": "vending_cart_Light_Overlay_5_9.008",
+      "slots": [
+        "Original_Vending_Light_cart.002"
+      ]
+    },
+    {
+      "part": "vending_med_Light_Overlay_5_9.007",
+      "slots": [
+        "Original_Vending_Light_med.004"
+      ]
+    }
+  ],
+  "vending_cart_Light_Overlay_5_26_Mesh.003": [
+    {
+      "part": "vending_cart_Light_Overlay_5_26.008",
+      "slots": [
+        "Original_Vending_Light_cart.002"
+      ]
+    }
+  ],
+  "vending_cart_Light_Overlay_21_9_Mesh.003": [
+    {
+      "part": "vending_cart_Light_Overlay_21_9.008",
+      "slots": [
+        "Original_Vending_Light_cart.002"
+      ]
+    }
+  ],
+  "vending_centdrobe_Body.003": [
+    {
+      "part": "vending_centdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_centdrobe.002",
+        "Original_Vending_Service_centdrobe.002"
+      ]
+    }
+  ],
+  "vending_seeds_Display_Insert_Mesh.004": [
+    {
+      "part": "vending_centdrobe_Display_Insert.007",
+      "slots": [
+        "Vending_Front_centdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_nutri_Display_Insert.007",
+      "slots": [
+        "Vending_Front_nutri.002"
+      ]
+    },
+    {
+      "part": "vending_seeds_Display_Insert.007",
+      "slots": [
+        "Vending_Front_seeds.004"
+      ]
+    },
+    {
+      "part": "vending_snack_Display_Insert.007",
+      "slots": [
+        "Vending_Front_snack.004"
+      ]
+    },
+    {
+      "part": "vending_snackblue_Display_Insert.007",
+      "slots": [
+        "Vending_Front_snackblue.002"
+      ]
+    },
+    {
+      "part": "vending_snackgreen_Display_Insert.007",
+      "slots": [
+        "Vending_Front_snackgreen.002"
+      ]
+    },
+    {
+      "part": "vending_snackorange_Display_Insert.007",
+      "slots": [
+        "Vending_Front_snackorange.002"
+      ]
+    },
+    {
+      "part": "vending_snackteal_Display_Insert.007",
+      "slots": [
+        "Vending_Front_snackteal.002"
+      ]
+    },
+    {
+      "part": "vending_sustenance_Display_Insert.007",
+      "slots": [
+        "Vending_Front_sustenance.002"
+      ]
+    },
+    {
+      "part": "vending_sustenance_labor_Display_Insert.007",
+      "slots": [
+        "Vending_Front_sustenance_labor.002"
+      ]
+    }
+  ],
+  "vending_seeds_Display_Glass_Mesh.004": [
+    {
+      "part": "vending_centdrobe_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.018"
+      ]
+    },
+    {
+      "part": "vending_nutri_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.072"
+      ]
+    },
+    {
+      "part": "vending_seeds_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.088"
+      ]
+    },
+    {
+      "part": "vending_snack_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.090"
+      ]
+    },
+    {
+      "part": "vending_snackblue_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.092"
+      ]
+    },
+    {
+      "part": "vending_snackgreen_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.094"
+      ]
+    },
+    {
+      "part": "vending_snackorange_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.096"
+      ]
+    },
+    {
+      "part": "vending_snackteal_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.098"
+      ]
+    },
+    {
+      "part": "vending_sustenance_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.104"
+      ]
+    },
+    {
+      "part": "vending_sustenance_labor_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.106"
+      ]
+    }
+  ],
+  "vending_soda_Delivery_Flap_Mesh.002": [
+    {
+      "part": "vending_centdrobe_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_centdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_soda_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_soda.002"
+      ]
+    },
+    {
+      "part": "vending_tool_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_tool.002"
+      ]
+    }
+  ],
+  "vending_centdrobe_Light_Overlay_7_10_Mesh.003": [
+    {
+      "part": "vending_centdrobe_Light_Overlay_7_10.007",
+      "slots": [
+        "Original_Vending_Light_centdrobe.002"
+      ]
+    }
+  ],
+  "vending_centdrobe_Light_Overlay_20_5_Mesh.003": [
+    {
+      "part": "vending_centdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_centdrobe.002"
+      ]
+    }
+  ],
+  "vending_nutri_Light_Overlay_20_10_Mesh.006": [
+    {
+      "part": "vending_centdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_centdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_snack_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_snack.004"
+      ]
+    }
+  ],
+  "vending_clothes_Body.015": [
+    {
+      "part": "vending_chapdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_chapdrobe.002",
+        "Original_Vending_Service_chapdrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.018": [
+    {
+      "part": "vending_chefdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_chefdrobe.002",
+        "Original_Vending_Service_chefdrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.021": [
+    {
+      "part": "vending_chemdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_chemdrobe.002",
+        "Original_Vending_Service_chemdrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_5_Mesh.060": [
+    {
+      "part": "vending_chemdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_chemdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_lawdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_secdrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_10_Mesh.060": [
+    {
+      "part": "vending_chemdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_chemdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_lawdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_lawdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_secdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_secdrobe.002"
+      ]
+    }
+  ],
+  "vending_cigs_Body.003": [
+    {
+      "part": "vending_cigs_Cabinet.007",
+      "slots": [
+        "Vending_Front_cigs.002",
+        "Original_Vending_Service_cigs.002"
+      ]
+    }
+  ],
+  "vending_cigs_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_cigs_Display_Insert.007",
+      "slots": [
+        "Vending_Front_cigs.002"
+      ]
+    }
+  ],
+  "vending_cigs_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_cigs_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.026"
+      ]
+    }
+  ],
+  "vending_cigs_Delivery_Flap_Mesh.007": [
+    {
+      "part": "vending_cigs_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_cigs.002"
+      ]
+    }
+  ],
+  "vending_cigs_Light_Overlay_7_10_Mesh.003": [
+    {
+      "part": "vending_cigs_Light_Overlay_7_10.007",
+      "slots": [
+        "Original_Vending_Light_cigs.002"
+      ]
+    }
+  ],
+  "vending_cigs_Light_Overlay_15_10_Mesh.003": [
+    {
+      "part": "vending_cigs_Light_Overlay_15_10.007",
+      "slots": [
+        "Original_Vending_Light_cigs.002"
+      ]
+    }
+  ],
+  "vending_cigs_Light_Overlay_20_10_Mesh.003": [
+    {
+      "part": "vending_cigs_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_cigs.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.024": [
+    {
+      "part": "vending_clothes_Cabinet.007",
+      "slots": [
+        "Vending_Front_clothes.015",
+        "Original_Vending_Service_clothes.015"
+      ]
+    }
+  ],
+  "vending_coffee_Body.003": [
+    {
+      "part": "vending_coffee_Cabinet.007",
+      "slots": [
+        "Vending_Front_coffee.002",
+        "Original_Vending_Service_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_coffee_Display_Insert.007",
+      "slots": [
+        "Vending_Front_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_coffee_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.030"
+      ]
+    }
+  ],
+  "vending_coffee_Delivery_Flap_Mesh.007": [
+    {
+      "part": "vending_coffee_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Light_Overlay_9_5_Mesh.003": [
+    {
+      "part": "vending_coffee_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Light_Overlay_9_12_Mesh.003": [
+    {
+      "part": "vending_coffee_Light_Overlay_9_12.007",
+      "slots": [
+        "Original_Vending_Light_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Light_Overlay_11_5_Mesh.003": [
+    {
+      "part": "vending_coffee_Light_Overlay_11_5.007",
+      "slots": [
+        "Original_Vending_Light_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Light_Overlay_11_12_Mesh.003": [
+    {
+      "part": "vending_coffee_Light_Overlay_11_12.007",
+      "slots": [
+        "Original_Vending_Light_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Light_Overlay_20_5_Mesh.003": [
+    {
+      "part": "vending_coffee_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_coffee.002"
+      ]
+    }
+  ],
+  "vending_coffee_Light_Overlay_20_12_Mesh.003": [
+    {
+      "part": "vending_coffee_Light_Overlay_20_12.007",
+      "slots": [
+        "Original_Vending_Light_coffee.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Body.003": [
+    {
+      "part": "vending_cola_black_Cabinet.007",
+      "slots": [
+        "Vending_Front_cola_black.002",
+        "Original_Vending_Service_cola_black.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_5_5_Mesh.003": [
+    {
+      "part": "vending_cola_black_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_cola_black.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_8_5_Mesh.003": [
+    {
+      "part": "vending_cola_black_Light_Overlay_8_5.007",
+      "slots": [
+        "Original_Vending_Light_cola_black.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_19_5_Mesh.003": [
+    {
+      "part": "vending_cola_black_Light_Overlay_19_5.007",
+      "slots": [
+        "Original_Vending_Light_cola_black.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.027": [
+    {
+      "part": "vending_coroner_drobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_coroner_drobe.002",
+        "Original_Vending_Service_coroner_drobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.030": [
+    {
+      "part": "vending_curadrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_curadrobe.002",
+        "Original_Vending_Service_curadrobe.002"
+      ]
+    }
+  ],
+  "vending_custom_Body.003": [
+    {
+      "part": "vending_custom_Cabinet.007",
+      "slots": [
+        "Vending_Front_custom.002",
+        "Original_Vending_Service_custom.002"
+      ]
+    }
+  ],
+  "vending_custom_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_custom_Display_Insert.007",
+      "slots": [
+        "Vending_Front_custom.002"
+      ]
+    }
+  ],
+  "vending_custom_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_custom_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.036"
+      ]
+    }
+  ],
+  "vending_custom_Delivery_Flap_Mesh.002": [
+    {
+      "part": "vending_custom_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_custom.002"
+      ]
+    }
+  ],
+  "vending_custom_Light_Overlay_7_11_Mesh.003": [
+    {
+      "part": "vending_custom_Light_Overlay_7_11.007",
+      "slots": [
+        "Original_Vending_Light_custom.002"
+      ]
+    }
+  ],
+  "vending_custom_Light_Overlay_23_5_Mesh.003": [
+    {
+      "part": "vending_custom_Light_Overlay_23_5.007",
+      "slots": [
+        "Original_Vending_Light_custom.002"
+      ]
+    }
+  ],
+  "vending_custom_Light_Overlay_23_11_Mesh.003": [
+    {
+      "part": "vending_custom_Light_Overlay_23_11.007",
+      "slots": [
+        "Original_Vending_Light_custom.002"
+      ]
+    }
+  ],
+  "vending_cytopro_Body.003": [
+    {
+      "part": "vending_cytopro_Cabinet.007",
+      "slots": [
+        "Vending_Front_cytopro.002",
+        "Original_Vending_Service_cytopro.002"
+      ]
+    }
+  ],
+  "vending_cytopro_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_cytopro_Display_Insert.007",
+      "slots": [
+        "Vending_Front_cytopro.002"
+      ]
+    }
+  ],
+  "vending_cytopro_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_cytopro_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.038"
+      ]
+    }
+  ],
+  "vending_cytopro_Delivery_Flap_Mesh.012": [
+    {
+      "part": "vending_cytopro_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_cytopro.002"
+      ]
+    },
+    {
+      "part": "vending_generic_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_generic.002"
+      ]
+    }
+  ],
+  "vending_cytopro_Light_Overlay_9_10_Mesh.003": [
+    {
+      "part": "vending_cytopro_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_cytopro.002"
+      ]
+    }
+  ],
+  "vending_cytopro_Light_Overlay_21_10_Mesh.003": [
+    {
+      "part": "vending_cytopro_Light_Overlay_21_10.007",
+      "slots": [
+        "Original_Vending_Light_cytopro.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.033": [
+    {
+      "part": "vending_detdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_detdrobe.002",
+        "Original_Vending_Service_detdrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_5_Mesh.054": [
+    {
+      "part": "vending_detdrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_detdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_robodrobe.002"
+      ]
+    }
+  ],
+  "vending_theater_Light_Overlay_9_10_Mesh.003": [
+    {
+      "part": "vending_detdrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_detdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_robodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_theater_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_theater.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_20_5_Mesh.051": [
+    {
+      "part": "vending_detdrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_detdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_robodrobe.002"
+      ]
+    }
+  ],
+  "vending_theater_Light_Overlay_20_10_Mesh.003": [
+    {
+      "part": "vending_detdrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_detdrobe.002"
+      ]
+    },
+    {
+      "part": "vending_robodrobe_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_robodrobe.002"
+      ]
+    },
+    {
+      "part": "vending_theater_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_theater.002"
+      ]
+    }
+  ],
+  "vending_dinnerware_Body.003": [
+    {
+      "part": "vending_dinnerware_Cabinet.007",
+      "slots": [
+        "Vending_Front_dinnerware.002",
+        "Original_Vending_Service_dinnerware.002"
+      ]
+    }
+  ],
+  "vending_dinnerware_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_dinnerware_Display_Insert.007",
+      "slots": [
+        "Vending_Front_dinnerware.002"
+      ]
+    }
+  ],
+  "vending_dinnerware_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_dinnerware_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.042"
+      ]
+    }
+  ],
+  "vending_dinnerware_Delivery_Flap_Mesh.007": [
+    {
+      "part": "vending_dinnerware_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_dinnerware.002"
+      ]
+    }
+  ],
+  "vending_dinnerware_Light_Overlay_8_5_Mesh.003": [
+    {
+      "part": "vending_dinnerware_Light_Overlay_8_5.007",
+      "slots": [
+        "Original_Vending_Light_dinnerware.002"
+      ]
+    }
+  ],
+  "vending_dinnerware_Light_Overlay_8_10_Mesh.003": [
+    {
+      "part": "vending_dinnerware_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_dinnerware.002"
+      ]
+    }
+  ],
+  "vending_med_Body.005": [
+    {
+      "part": "vending_drug_Cabinet.007",
+      "slots": [
+        "Vending_Front_drug.002",
+        "Original_Vending_Service_drug.002"
+      ]
+    }
+  ],
+  "vending_engi_Body.003": [
+    {
+      "part": "vending_engi_Cabinet.007",
+      "slots": [
+        "Vending_Front_engi.002",
+        "Original_Vending_Service_engi.002"
+      ]
+    }
+  ],
+  "vending_engi_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_engi_Display_Insert.007",
+      "slots": [
+        "Vending_Front_engi.002"
+      ]
+    }
+  ],
+  "vending_engi_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_engi_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.046"
+      ]
+    }
+  ],
+  "vending_engi_Delivery_Flap_Mesh.002": [
+    {
+      "part": "vending_engi_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_engi.002"
+      ]
+    }
+  ],
+  "vending_engi_Light_Overlay_6_5_Mesh.003": [
+    {
+      "part": "vending_engi_Light_Overlay_6_5.007",
+      "slots": [
+        "Original_Vending_Light_engi.002"
+      ]
+    }
+  ],
+  "vending_engi_Light_Overlay_6_17_Mesh.003": [
+    {
+      "part": "vending_engi_Light_Overlay_6_17.007",
+      "slots": [
+        "Original_Vending_Light_engi.002"
+      ]
+    }
+  ],
+  "vending_engi_Light_Overlay_19_5_Mesh.003": [
+    {
+      "part": "vending_engi_Light_Overlay_19_5.007",
+      "slots": [
+        "Original_Vending_Light_engi.002"
+      ]
+    }
+  ],
+  "vending_engi_Light_Overlay_19_17_Mesh.003": [
+    {
+      "part": "vending_engi_Light_Overlay_19_17.007",
+      "slots": [
+        "Original_Vending_Light_engi.002"
+      ]
+    }
+  ],
+  "vending_engi_Light_Overlay_19_24_Mesh.003": [
+    {
+      "part": "vending_engi_Light_Overlay_19_24.007",
+      "slots": [
+        "Original_Vending_Light_engi.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.036": [
+    {
+      "part": "vending_engidrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_engidrobe.002",
+        "Original_Vending_Service_engidrobe.002"
+      ]
+    }
+  ],
+  "vending_engivend_Body.003": [
+    {
+      "part": "vending_engivend_Cabinet.007",
+      "slots": [
+        "Vending_Front_engivend.002",
+        "Original_Vending_Service_engivend.002"
+      ]
+    }
+  ],
+  "vending_engivend_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_engivend_Display_Insert.007",
+      "slots": [
+        "Vending_Front_engivend.002"
+      ]
+    }
+  ],
+  "vending_engivend_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_engivend_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.050"
+      ]
+    }
+  ],
+  "vending_engivend_Delivery_Flap_Mesh.007": [
+    {
+      "part": "vending_engivend_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_engivend.002"
+      ]
+    }
+  ],
+  "vending_engivend_Light_Overlay_9_10_Mesh.003": [
+    {
+      "part": "vending_engivend_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_engivend.002"
+      ]
+    }
+  ],
+  "vending_engivend_Light_Overlay_14_10_Mesh.003": [
+    {
+      "part": "vending_engivend_Light_Overlay_14_10.007",
+      "slots": [
+        "Original_Vending_Light_engivend.002"
+      ]
+    }
+  ],
+  "vending_engivend_Light_Overlay_19_10_Mesh.003": [
+    {
+      "part": "vending_engivend_Light_Overlay_19_10.007",
+      "slots": [
+        "Original_Vending_Light_engivend.002"
+      ]
+    }
+  ],
+  "vending_games_Body.003": [
+    {
+      "part": "vending_games_Cabinet.007",
+      "slots": [
+        "Vending_Front_games.002",
+        "Original_Vending_Service_games.002"
+      ]
+    }
+  ],
+  "vending_games_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_games_Display_Insert.007",
+      "slots": [
+        "Vending_Front_games.002"
+      ]
+    }
+  ],
+  "vending_games_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_games_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.052"
+      ]
+    }
+  ],
+  "vending_games_Delivery_Flap_Mesh.007": [
+    {
+      "part": "vending_games_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_7_5_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_7_5.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_7_16_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_7_16.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_9_5_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_9_16_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_9_16.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_16_5_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_16_5.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_16_16_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_16_16.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_20_5_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_games_Light_Overlay_20_16_Mesh.003": [
+    {
+      "part": "vending_games_Light_Overlay_20_16.007",
+      "slots": [
+        "Original_Vending_Light_games.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.039": [
+    {
+      "part": "vending_genedrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_genedrobe.002",
+        "Original_Vending_Service_genedrobe.002"
+      ]
+    }
+  ],
+  "vending_generic_Body.003": [
+    {
+      "part": "vending_generic_Cabinet.007",
+      "slots": [
+        "Vending_Front_generic.002",
+        "Original_Vending_Service_generic.002"
+      ]
+    }
+  ],
+  "vending_generic_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_generic_Display_Insert.007",
+      "slots": [
+        "Vending_Front_generic.002"
+      ]
+    }
+  ],
+  "vending_generic_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_generic_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.056"
+      ]
+    }
+  ],
+  "vending_generic_Light_Overlay_7_10_Mesh.003": [
+    {
+      "part": "vending_generic_Light_Overlay_7_10.007",
+      "slots": [
+        "Original_Vending_Light_generic.002"
+      ]
+    }
+  ],
+  "vending_generic_Light_Overlay_9_5_Mesh.003": [
+    {
+      "part": "vending_generic_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_generic.002"
+      ]
+    }
+  ],
+  "vending_generic_Light_Overlay_9_10_Mesh.003": [
+    {
+      "part": "vending_generic_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_generic.002"
+      ]
+    }
+  ],
+  "vending_generic_Light_Overlay_20_10_Mesh.003": [
+    {
+      "part": "vending_generic_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_generic.002"
+      ]
+    }
+  ],
+  "vending_generic_Light_Overlay_21_5_Mesh.003": [
+    {
+      "part": "vending_generic_Light_Overlay_21_5.007",
+      "slots": [
+        "Original_Vending_Light_generic.002"
+      ]
+    }
+  ],
+  "vending_generic_Light_Overlay_21_10_Mesh.003": [
+    {
+      "part": "vending_generic_Light_Overlay_21_10.007",
+      "slots": [
+        "Original_Vending_Light_generic.002"
+      ]
+    }
+  ],
+  "vending_greed_Body.004": [
+    {
+      "part": "vending_greed_Cabinet.007",
+      "slots": [
+        "Vending_Front_greed.004",
+        "Original_Vending_Service_greed.003"
+      ]
+    }
+  ],
+  "vending_greed_Display_Insert_Mesh.003": [
+    {
+      "part": "vending_greed_Display_Insert.007",
+      "slots": [
+        "Vending_Front_greed.004"
+      ]
+    }
+  ],
+  "vending_greed_Display_Glass_Mesh.003": [
+    {
+      "part": "vending_greed_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.058"
+      ]
+    }
+  ],
+  "vending_greed_Delivery_Flap_Mesh.003": [
+    {
+      "part": "vending_greed_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_greed.004"
+      ]
+    }
+  ],
+  "vending_greed_Light_Overlay_6_9_Mesh.004": [
+    {
+      "part": "vending_greed_Light_Overlay_6_9.007",
+      "slots": [
+        "Original_Vending_Light_greed.004"
+      ]
+    }
+  ],
+  "vending_greed_Light_Overlay_16_9_Mesh.004": [
+    {
+      "part": "vending_greed_Light_Overlay_16_9.007",
+      "slots": [
+        "Original_Vending_Light_greed.004"
+      ]
+    }
+  ],
+  "vending_greed_Light_Overlay_23_9_Mesh.004": [
+    {
+      "part": "vending_greed_Light_Overlay_23_9.007",
+      "slots": [
+        "Original_Vending_Light_greed.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Body.005": [
+    {
+      "part": "vending_hotdog_vendor_Cabinet.007",
+      "slots": [
+        "Vending_Front_hotdog-vendor.004",
+        "Original_Vending_Service_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Display_Insert_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Display_Insert.007",
+      "slots": [
+        "Vending_Front_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Delivery_Flap_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Projecting_Center_Housing_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Projecting_Center_Housing.007",
+      "slots": [
+        "Vending_Front_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_10_5_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_10_5.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_10_14_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_10_14.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_11_5_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_11_5.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_11_14_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_11_14.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_20_5_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_20_14_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_20_14.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_21_5_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_21_5.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_hotdog_vendor_Light_Overlay_21_14_Mesh.004": [
+    {
+      "part": "vending_hotdog_vendor_Light_Overlay_21_14.007",
+      "slots": [
+        "Original_Vending_Light_hotdog-vendor.004"
+      ]
+    }
+  ],
+  "vending_clothes_Body.042": [
+    {
+      "part": "vending_hydrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_hydrobe.002",
+        "Original_Vending_Service_hydrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_5_Mesh.045": [
+    {
+      "part": "vending_hydrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_hydrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_10_Mesh.045": [
+    {
+      "part": "vending_hydrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_hydrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.045": [
+    {
+      "part": "vending_janidrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_janidrobe.002",
+        "Original_Vending_Service_janidrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_5_Mesh.048": [
+    {
+      "part": "vending_janidrobe_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_janidrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_9_10_Mesh.048": [
+    {
+      "part": "vending_janidrobe_Light_Overlay_9_10.007",
+      "slots": [
+        "Original_Vending_Light_janidrobe.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.048": [
+    {
+      "part": "vending_lawdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_lawdrobe.002",
+        "Original_Vending_Service_lawdrobe.002"
+      ]
+    }
+  ],
+  "vending_snackdonk_Body.003": [
+    {
+      "part": "vending_liberationstation_Cabinet.007",
+      "slots": [
+        "Vending_Front_liberationstation.002",
+        "Original_Vending_Service_liberationstation.002"
+      ]
+    }
+  ],
+  "vending_snackdonk_Delivery_Flap_Mesh.006": [
+    {
+      "part": "vending_liberationstation_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_liberationstation.002"
+      ]
+    },
+    {
+      "part": "vending_nt_donk_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_nt-donk.002"
+      ]
+    },
+    {
+      "part": "vending_snackdonk_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_snackdonk.006"
+      ]
+    },
+    {
+      "part": "vending_syndi_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_syndi.002"
+      ]
+    }
+  ],
+  "vending_liberationstation_Light_Overlay_2_5_Mesh.003": [
+    {
+      "part": "vending_liberationstation_Light_Overlay_2_5.007",
+      "slots": [
+        "Original_Vending_Light_liberationstation.002"
+      ]
+    }
+  ],
+  "vending_snackdonk_Light_Overlay_5_5_Mesh.003": [
+    {
+      "part": "vending_liberationstation_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_liberationstation.002"
+      ]
+    },
+    {
+      "part": "vending_nt_donk_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_nt-donk.002"
+      ]
+    },
+    {
+      "part": "vending_syndi_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_syndi.002"
+      ]
+    }
+  ],
+  "vending_snackdonk_Light_Overlay_25_5_Mesh.003": [
+    {
+      "part": "vending_liberationstation_Light_Overlay_25_5.007",
+      "slots": [
+        "Original_Vending_Light_liberationstation.002"
+      ]
+    },
+    {
+      "part": "vending_nt_donk_Light_Overlay_25_5.007",
+      "slots": [
+        "Original_Vending_Light_nt-donk.002"
+      ]
+    },
+    {
+      "part": "vending_syndi_Light_Overlay_25_5.007",
+      "slots": [
+        "Original_Vending_Light_syndi.002"
+      ]
+    }
+  ],
+  "vending_med_Body.008": [
+    {
+      "part": "vending_med_Cabinet.007",
+      "slots": [
+        "Vending_Front_med.006",
+        "Original_Vending_Service_med.006"
+      ]
+    }
+  ],
+  "vending_med_Light_Overlay_5_26_Mesh.004": [
+    {
+      "part": "vending_med_Light_Overlay_5_26.007",
+      "slots": [
+        "Original_Vending_Light_med.004"
+      ]
+    }
+  ],
+  "vending_med_Light_Overlay_21_9_Mesh.004": [
+    {
+      "part": "vending_med_Light_Overlay_21_9.007",
+      "slots": [
+        "Original_Vending_Light_med.004"
+      ]
+    }
+  ],
+  "vending_clothes_Body.003": [
+    {
+      "part": "vending_medidrobe_Cabinet.006",
+      "slots": [
+        "Vending_Front_medidrobe.004",
+        "Original_Vending_Service_medidrobe.004"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_20_5_Mesh.003": [
+    {
+      "part": "vending_medidrobe_Light_Overlay_20_5.006",
+      "slots": [
+        "Original_Vending_Light_medidrobe.004"
+      ]
+    }
+  ],
+  "vending_clothes_Light_Overlay_20_10_Mesh.003": [
+    {
+      "part": "vending_medidrobe_Light_Overlay_20_10.006",
+      "slots": [
+        "Original_Vending_Light_medidrobe.004"
+      ]
+    }
+  ],
+  "vending_modularpc_Body.003": [
+    {
+      "part": "vending_modularpc_Cabinet.007",
+      "slots": [
+        "Vending_Front_modularpc.002",
+        "Original_Vending_Service_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_modularpc_Display_Insert.007",
+      "slots": [
+        "Vending_Front_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_modularpc_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.070"
+      ]
+    }
+  ],
+  "vending_modularpc_Delivery_Flap_Mesh.007": [
+    {
+      "part": "vending_modularpc_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_modularpc.002"
+      ]
+    },
+    {
+      "part": "vending_robotics_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_robotics.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_6_5_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_6_5.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_6_16_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_6_16.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_14_5_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_14_5.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_14_16_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_14_16.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_24_5_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_24_5.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_24_16_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_24_16.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_26_5_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_26_5.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_modularpc_Light_Overlay_26_16_Mesh.003": [
+    {
+      "part": "vending_modularpc_Light_Overlay_26_16.007",
+      "slots": [
+        "Original_Vending_Light_modularpc.002"
+      ]
+    }
+  ],
+  "vending_snackdonk_Body.006": [
+    {
+      "part": "vending_nt_donk_Cabinet.007",
+      "slots": [
+        "Vending_Front_nt-donk.002",
+        "Original_Vending_Service_nt-donk.002"
+      ]
+    }
+  ],
+  "vending_seeds_Body.003": [
+    {
+      "part": "vending_nutri_Cabinet.007",
+      "slots": [
+        "Vending_Front_nutri.002",
+        "Original_Vending_Service_nutri.002"
+      ]
+    }
+  ],
+  "vending_seeds_Delivery_Flap_Mesh.004": [
+    {
+      "part": "vending_nutri_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_nutri.002"
+      ]
+    },
+    {
+      "part": "vending_seeds_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_seeds.004"
+      ]
+    },
+    {
+      "part": "vending_snack_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_snack.004"
+      ]
+    },
+    {
+      "part": "vending_snackblue_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_snackblue.002"
+      ]
+    },
+    {
+      "part": "vending_snackgreen_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_snackgreen.002"
+      ]
+    },
+    {
+      "part": "vending_snackorange_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_snackorange.002"
+      ]
+    },
+    {
+      "part": "vending_snackteal_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_snackteal.002"
+      ]
+    },
+    {
+      "part": "vending_sustenance_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_sustenance.002"
+      ]
+    },
+    {
+      "part": "vending_sustenance_labor_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_sustenance_labor.002"
+      ]
+    }
+  ],
+  "vending_seeds_Light_Overlay_8_10_Mesh.006": [
+    {
+      "part": "vending_nutri_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_nutri.002"
+      ]
+    },
+    {
+      "part": "vending_seeds_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_seeds.004"
+      ]
+    },
+    {
+      "part": "vending_snackblue_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_snackblue.002"
+      ]
+    },
+    {
+      "part": "vending_snackgreen_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_snackgreen.002"
+      ]
+    }
+  ],
+  "vending_nutri_Light_Overlay_20_10_Mesh.003": [
+    {
+      "part": "vending_nutri_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_nutri.002"
+      ]
+    },
+    {
+      "part": "vending_snackblue_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_snackblue.002"
+      ]
+    },
+    {
+      "part": "vending_snackgreen_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_snackgreen.002"
+      ]
+    }
+  ],
+  "vending_parts_Body.003": [
+    {
+      "part": "vending_parts_Cabinet.007",
+      "slots": [
+        "Vending_Front_parts.002",
+        "Original_Vending_Service_parts.002"
+      ]
+    }
+  ],
+  "vending_parts_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_parts_Display_Insert.007",
+      "slots": [
+        "Vending_Front_parts.002"
+      ]
+    }
+  ],
+  "vending_parts_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_parts_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.074"
+      ]
+    }
+  ],
+  "vending_parts_Delivery_Flap_Mesh.007": [
+    {
+      "part": "vending_parts_Delivery_Flap.016",
+      "slots": [
+        "Vending_Front_parts.002"
+      ]
+    }
+  ],
+  "vending_parts_Light_Overlay_8_10_Mesh.003": [
+    {
+      "part": "vending_parts_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_parts.002"
+      ]
+    }
+  ],
+  "vending_parts_Light_Overlay_18_10_Mesh.003": [
+    {
+      "part": "vending_parts_Light_Overlay_18_10.007",
+      "slots": [
+        "Original_Vending_Light_parts.002"
+      ]
+    }
+  ],
+  "vending_parts_Light_Overlay_19_10_Mesh.003": [
+    {
+      "part": "vending_parts_Light_Overlay_19_10.007",
+      "slots": [
+        "Original_Vending_Light_parts.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Body.009": [
+    {
+      "part": "vending_pwr_game_Cabinet.007",
+      "slots": [
+        "Vending_Front_pwr_game.002",
+        "Original_Vending_Service_pwr_game.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_5_5_Mesh.009": [
+    {
+      "part": "vending_pwr_game_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_pwr_game.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_8_5_Mesh.009": [
+    {
+      "part": "vending_pwr_game_Light_Overlay_8_5.007",
+      "slots": [
+        "Original_Vending_Light_pwr_game.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_19_5_Mesh.009": [
+    {
+      "part": "vending_pwr_game_Light_Overlay_19_5.007",
+      "slots": [
+        "Original_Vending_Light_pwr_game.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Body.012": [
+    {
+      "part": "vending_red_cola_Cabinet.007",
+      "slots": [
+        "Vending_Front_red_cola.002",
+        "Original_Vending_Service_red_cola.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_5_5_Mesh.012": [
+    {
+      "part": "vending_red_cola_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_red_cola.002"
+      ]
+    },
+    {
+      "part": "vending_shamblers_juice_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_shamblers_juice.002"
+      ]
+    },
+    {
+      "part": "vending_space_up_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_space_up.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_8_5_Mesh.012": [
+    {
+      "part": "vending_red_cola_Light_Overlay_8_5.007",
+      "slots": [
+        "Original_Vending_Light_red_cola.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_19_5_Mesh.012": [
+    {
+      "part": "vending_red_cola_Light_Overlay_19_5.007",
+      "slots": [
+        "Original_Vending_Light_red_cola.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.051": [
+    {
+      "part": "vending_robodrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_robodrobe.002",
+        "Original_Vending_Service_robodrobe.002"
+      ]
+    }
+  ],
+  "vending_robotics_Body.003": [
+    {
+      "part": "vending_robotics_Cabinet.007",
+      "slots": [
+        "Vending_Front_robotics.002",
+        "Original_Vending_Service_robotics.002"
+      ]
+    }
+  ],
+  "vending_robotics_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_robotics_Display_Insert.007",
+      "slots": [
+        "Vending_Front_robotics.002"
+      ]
+    }
+  ],
+  "vending_robotics_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_robotics_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.078"
+      ]
+    }
+  ],
+  "vending_robotics_Light_Overlay_6_5_Mesh.003": [
+    {
+      "part": "vending_robotics_Light_Overlay_6_5.007",
+      "slots": [
+        "Original_Vending_Light_robotics.002"
+      ]
+    }
+  ],
+  "vending_robotics_Light_Overlay_6_11_Mesh.003": [
+    {
+      "part": "vending_robotics_Light_Overlay_6_11.007",
+      "slots": [
+        "Original_Vending_Light_robotics.002"
+      ]
+    }
+  ],
+  "vending_robotics_Light_Overlay_14_5_Mesh.003": [
+    {
+      "part": "vending_robotics_Light_Overlay_14_5.007",
+      "slots": [
+        "Original_Vending_Light_robotics.002"
+      ]
+    }
+  ],
+  "vending_robotics_Light_Overlay_14_11_Mesh.003": [
+    {
+      "part": "vending_robotics_Light_Overlay_14_11.007",
+      "slots": [
+        "Original_Vending_Light_robotics.002"
+      ]
+    }
+  ],
+  "vending_robotics_Light_Overlay_22_5_Mesh.003": [
+    {
+      "part": "vending_robotics_Light_Overlay_22_5.007",
+      "slots": [
+        "Original_Vending_Light_robotics.002"
+      ]
+    }
+  ],
+  "vending_robotics_Light_Overlay_22_11_Mesh.003": [
+    {
+      "part": "vending_robotics_Light_Overlay_22_11.007",
+      "slots": [
+        "Original_Vending_Light_robotics.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.054": [
+    {
+      "part": "vending_scidrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_scidrobe.002",
+        "Original_Vending_Service_scidrobe.002"
+      ]
+    }
+  ],
+  "vending_cart_Body.007": [
+    {
+      "part": "vending_sec_Cabinet.007",
+      "slots": [
+        "Vending_Front_sec.002",
+        "Original_Vending_Service_sec.002"
+      ]
+    }
+  ],
+  "vending_cart_Light_Overlay_5_9_Mesh.007": [
+    {
+      "part": "vending_sec_Light_Overlay_5_9.007",
+      "slots": [
+        "Original_Vending_Light_sec.002"
+      ]
+    }
+  ],
+  "vending_cart_Light_Overlay_5_26_Mesh.007": [
+    {
+      "part": "vending_sec_Light_Overlay_5_26.007",
+      "slots": [
+        "Original_Vending_Light_sec.002"
+      ]
+    }
+  ],
+  "vending_cart_Light_Overlay_21_9_Mesh.007": [
+    {
+      "part": "vending_sec_Light_Overlay_21_9.007",
+      "slots": [
+        "Original_Vending_Light_sec.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.057": [
+    {
+      "part": "vending_secdrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_secdrobe.002",
+        "Original_Vending_Service_secdrobe.002"
+      ]
+    }
+  ],
+  "vending_seeds_Body.006": [
+    {
+      "part": "vending_seeds_Cabinet.007",
+      "slots": [
+        "Vending_Front_seeds.004",
+        "Original_Vending_Service_seeds.004"
+      ]
+    }
+  ],
+  "vending_cola_machine_Body.015": [
+    {
+      "part": "vending_shamblers_juice_Cabinet.007",
+      "slots": [
+        "Vending_Front_shamblers_juice.002",
+        "Original_Vending_Service_shamblers_juice.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_8_5_Mesh.018": [
+    {
+      "part": "vending_shamblers_juice_Light_Overlay_8_5.007",
+      "slots": [
+        "Original_Vending_Light_shamblers_juice.002"
+      ]
+    },
+    {
+      "part": "vending_space_up_Light_Overlay_8_5.007",
+      "slots": [
+        "Original_Vending_Light_space_up.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Light_Overlay_19_5_Mesh.018": [
+    {
+      "part": "vending_shamblers_juice_Light_Overlay_19_5.007",
+      "slots": [
+        "Original_Vending_Light_shamblers_juice.002"
+      ]
+    },
+    {
+      "part": "vending_space_up_Light_Overlay_19_5.007",
+      "slots": [
+        "Original_Vending_Light_space_up.002"
+      ]
+    }
+  ],
+  "vending_seeds_Body.009": [
+    {
+      "part": "vending_snack_Cabinet.007",
+      "slots": [
+        "Vending_Front_snack.004",
+        "Original_Vending_Service_snack.004"
+      ]
+    }
+  ],
+  "vending_seeds_Light_Overlay_8_10_Mesh.009": [
+    {
+      "part": "vending_snack_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_snack.004"
+      ]
+    }
+  ],
+  "vending_seeds_Body.012": [
+    {
+      "part": "vending_snackblue_Cabinet.007",
+      "slots": [
+        "Vending_Front_snackblue.002",
+        "Original_Vending_Service_snackblue.002"
+      ]
+    }
+  ],
+  "vending_snackdonk_Body.009": [
+    {
+      "part": "vending_snackdonk_Cabinet.007",
+      "slots": [
+        "Vending_Front_snackdonk.006",
+        "Original_Vending_Service_snackdonk.006"
+      ]
+    }
+  ],
+  "vending_snackdonk_Light_Overlay_5_5_Mesh.009": [
+    {
+      "part": "vending_snackdonk_Light_Overlay_5_5.007",
+      "slots": [
+        "Original_Vending_Light_snackdonk.006"
+      ]
+    }
+  ],
+  "vending_snackdonk_Light_Overlay_25_5_Mesh.009": [
+    {
+      "part": "vending_snackdonk_Light_Overlay_25_5.007",
+      "slots": [
+        "Original_Vending_Light_snackdonk.006"
+      ]
+    }
+  ],
+  "vending_seeds_Body.015": [
+    {
+      "part": "vending_snackgreen_Cabinet.007",
+      "slots": [
+        "Vending_Front_snackgreen.002",
+        "Original_Vending_Service_snackgreen.002"
+      ]
+    }
+  ],
+  "vending_seeds_Body.018": [
+    {
+      "part": "vending_snackorange_Cabinet.007",
+      "slots": [
+        "Vending_Front_snackorange.002",
+        "Original_Vending_Service_snackorange.002"
+      ]
+    }
+  ],
+  "vending_seeds_Light_Overlay_8_10_Mesh.018": [
+    {
+      "part": "vending_snackorange_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_snackorange.002"
+      ]
+    }
+  ],
+  "vending_nutri_Light_Overlay_20_10_Mesh.015": [
+    {
+      "part": "vending_snackorange_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_snackorange.002"
+      ]
+    }
+  ],
+  "vending_seeds_Body.021": [
+    {
+      "part": "vending_snackteal_Cabinet.007",
+      "slots": [
+        "Vending_Front_snackteal.002",
+        "Original_Vending_Service_snackteal.002"
+      ]
+    }
+  ],
+  "vending_seeds_Light_Overlay_8_10_Mesh.021": [
+    {
+      "part": "vending_snackteal_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_snackteal.002"
+      ]
+    },
+    {
+      "part": "vending_sustenance_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_sustenance.002"
+      ]
+    }
+  ],
+  "vending_nutri_Light_Overlay_20_10_Mesh.018": [
+    {
+      "part": "vending_snackteal_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_snackteal.002"
+      ]
+    },
+    {
+      "part": "vending_sustenance_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_sustenance.002"
+      ]
+    },
+    {
+      "part": "vending_sustenance_labor_Light_Overlay_20_10.007",
+      "slots": [
+        "Original_Vending_Light_sustenance_labor.002"
+      ]
+    }
+  ],
+  "vending_soda_Body.003": [
+    {
+      "part": "vending_soda_Cabinet.007",
+      "slots": [
+        "Vending_Front_soda.002",
+        "Original_Vending_Service_soda.002"
+      ]
+    }
+  ],
+  "vending_soda_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_soda_Display_Insert.007",
+      "slots": [
+        "Vending_Front_soda.002"
+      ]
+    }
+  ],
+  "vending_soda_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_soda_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.100"
+      ]
+    }
+  ],
+  "vending_soda_Light_Overlay_9_5_Mesh.003": [
+    {
+      "part": "vending_soda_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_soda.002"
+      ]
+    }
+  ],
+  "vending_soda_Light_Overlay_9_13_Mesh.003": [
+    {
+      "part": "vending_soda_Light_Overlay_9_13.007",
+      "slots": [
+        "Original_Vending_Light_soda.002"
+      ]
+    }
+  ],
+  "vending_soda_Light_Overlay_16_5_Mesh.003": [
+    {
+      "part": "vending_soda_Light_Overlay_16_5.007",
+      "slots": [
+        "Original_Vending_Light_soda.002"
+      ]
+    }
+  ],
+  "vending_soda_Light_Overlay_16_13_Mesh.003": [
+    {
+      "part": "vending_soda_Light_Overlay_16_13.007",
+      "slots": [
+        "Original_Vending_Light_soda.002"
+      ]
+    }
+  ],
+  "vending_soda_Light_Overlay_20_5_Mesh.003": [
+    {
+      "part": "vending_soda_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_soda.002"
+      ]
+    }
+  ],
+  "vending_soda_Light_Overlay_20_13_Mesh.003": [
+    {
+      "part": "vending_soda_Light_Overlay_20_13.007",
+      "slots": [
+        "Original_Vending_Light_soda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Body.003": [
+    {
+      "part": "vending_sovietsoda_Cabinet.007",
+      "slots": [
+        "Vending_Front_sovietsoda.002",
+        "Original_Vending_Service_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_sovietsoda_Display_Insert.007",
+      "slots": [
+        "Vending_Front_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Delivery_Flap_Mesh.002": [
+    {
+      "part": "vending_sovietsoda_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Raised_Sign_Mesh.002": [
+    {
+      "part": "vending_sovietsoda_Raised_Sign.007",
+      "slots": [
+        "Vending_Front_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Light_Overlay_5_8_Mesh.003": [
+    {
+      "part": "vending_sovietsoda_Light_Overlay_5_8.007",
+      "slots": [
+        "Original_Vending_Light_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Light_Overlay_8_8_Mesh.003": [
+    {
+      "part": "vending_sovietsoda_Light_Overlay_8_8.007",
+      "slots": [
+        "Original_Vending_Light_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Light_Overlay_8_16_Mesh.003": [
+    {
+      "part": "vending_sovietsoda_Light_Overlay_8_16.007",
+      "slots": [
+        "Original_Vending_Light_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Light_Overlay_10_8_Mesh.003": [
+    {
+      "part": "vending_sovietsoda_Light_Overlay_10_8.007",
+      "slots": [
+        "Original_Vending_Light_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Light_Overlay_10_16_Mesh.003": [
+    {
+      "part": "vending_sovietsoda_Light_Overlay_10_16.007",
+      "slots": [
+        "Original_Vending_Light_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Light_Overlay_21_8_Mesh.003": [
+    {
+      "part": "vending_sovietsoda_Light_Overlay_21_8.007",
+      "slots": [
+        "Original_Vending_Light_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_sovietsoda_Light_Overlay_22_8_Mesh.003": [
+    {
+      "part": "vending_sovietsoda_Light_Overlay_22_8.007",
+      "slots": [
+        "Original_Vending_Light_sovietsoda.002"
+      ]
+    }
+  ],
+  "vending_cola_machine_Body.018": [
+    {
+      "part": "vending_space_up_Cabinet.007",
+      "slots": [
+        "Vending_Front_space_up.002",
+        "Original_Vending_Service_space_up.002"
+      ]
+    }
+  ],
+  "vending_starkist_Body.003": [
+    {
+      "part": "vending_starkist_Cabinet.007",
+      "slots": [
+        "Vending_Front_starkist.002",
+        "Original_Vending_Service_starkist.002"
+      ]
+    }
+  ],
+  "vending_starkist_Display_Insert_Mesh.002": [
+    {
+      "part": "vending_starkist_Display_Insert.007",
+      "slots": [
+        "Vending_Front_starkist.002"
+      ]
+    }
+  ],
+  "vending_starkist_Display_Glass_Mesh.002": [
+    {
+      "part": "vending_starkist_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.102"
+      ]
+    }
+  ],
+  "vending_starkist_Delivery_Flap_Mesh.002": [
+    {
+      "part": "vending_starkist_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_starkist.002"
+      ]
+    }
+  ],
+  "vending_starkist_Light_Overlay_9_11_Mesh.003": [
+    {
+      "part": "vending_starkist_Light_Overlay_9_11.007",
+      "slots": [
+        "Original_Vending_Light_starkist.002"
+      ]
+    }
+  ],
+  "vending_starkist_Light_Overlay_19_11_Mesh.003": [
+    {
+      "part": "vending_starkist_Light_Overlay_19_11.007",
+      "slots": [
+        "Original_Vending_Light_starkist.002"
+      ]
+    }
+  ],
+  "vending_starkist_Light_Overlay_21_11_Mesh.003": [
+    {
+      "part": "vending_starkist_Light_Overlay_21_11.007",
+      "slots": [
+        "Original_Vending_Light_starkist.002"
+      ]
+    }
+  ],
+  "vending_seeds_Body.024": [
+    {
+      "part": "vending_sustenance_Cabinet.007",
+      "slots": [
+        "Vending_Front_sustenance.002",
+        "Original_Vending_Service_sustenance.002"
+      ]
+    }
+  ],
+  "vending_seeds_Body.027": [
+    {
+      "part": "vending_sustenance_labor_Cabinet.007",
+      "slots": [
+        "Vending_Front_sustenance_labor.002",
+        "Original_Vending_Service_sustenance_labor.002"
+      ]
+    }
+  ],
+  "vending_seeds_Light_Overlay_8_10_Mesh.027": [
+    {
+      "part": "vending_sustenance_labor_Light_Overlay_8_10.007",
+      "slots": [
+        "Original_Vending_Light_sustenance_labor.002"
+      ]
+    }
+  ],
+  "vending_snackdonk_Body.012": [
+    {
+      "part": "vending_syndi_Cabinet.007",
+      "slots": [
+        "Vending_Front_syndi.002",
+        "Original_Vending_Service_syndi.002"
+      ]
+    }
+  ],
+  "vending_theater_Body.003": [
+    {
+      "part": "vending_theater_Cabinet.007",
+      "slots": [
+        "Vending_Front_theater.002",
+        "Original_Vending_Service_theater.002"
+      ]
+    }
+  ],
+  "vending_theater_Light_Overlay_9_5_Mesh.003": [
+    {
+      "part": "vending_theater_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_theater.002"
+      ]
+    }
+  ],
+  "vending_theater_Light_Overlay_20_5_Mesh.003": [
+    {
+      "part": "vending_theater_Light_Overlay_20_5.007",
+      "slots": [
+        "Original_Vending_Light_theater.002"
+      ]
+    }
+  ],
+  "vending_theater_Light_Overlay_23_5_Mesh.003": [
+    {
+      "part": "vending_theater_Light_Overlay_23_5.007",
+      "slots": [
+        "Original_Vending_Light_theater.002"
+      ]
+    }
+  ],
+  "vending_theater_Light_Overlay_23_10_Mesh.003": [
+    {
+      "part": "vending_theater_Light_Overlay_23_10.007",
+      "slots": [
+        "Original_Vending_Light_theater.002"
+      ]
+    }
+  ],
+  "vending_tool_Body.003": [
+    {
+      "part": "vending_tool_Cabinet.007",
+      "slots": [
+        "Vending_Front_tool.002",
+        "Original_Vending_Service_tool.002"
+      ]
+    }
+  ],
+  "vending_tool_Light_Overlay_9_5_Mesh.003": [
+    {
+      "part": "vending_tool_Light_Overlay_9_5.007",
+      "slots": [
+        "Original_Vending_Light_tool.002"
+      ]
+    }
+  ],
+  "vending_clothes_Body.060": [
+    {
+      "part": "vending_virodrobe_Cabinet.007",
+      "slots": [
+        "Vending_Front_virodrobe.002",
+        "Original_Vending_Service_virodrobe.002"
+      ]
+    }
+  ],
+  "vending_wallmed_Body.006": [
+    {
+      "part": "vending_wallmed_Cabinet.007",
+      "slots": [
+        "Vending_Front_wallmed.006",
+        "Original_Vending_Service_wallmed.005"
+      ]
+    }
+  ],
+  "vending_wallmed_Display_Insert_Mesh.005": [
+    {
+      "part": "vending_wallmed_Display_Insert.007",
+      "slots": [
+        "Vending_Front_wallmed.006"
+      ]
+    }
+  ],
+  "vending_wallmed_Display_Glass_Mesh.005": [
+    {
+      "part": "vending_wallmed_Display_Glass.007",
+      "slots": [
+        "Vending_Glass_Closed_Cyan.112"
+      ]
+    }
+  ],
+  "vending_wallmed_Delivery_Flap_Mesh.005": [
+    {
+      "part": "vending_wallmed_Delivery_Flap.007",
+      "slots": [
+        "Vending_Front_wallmed.006"
+      ]
+    }
+  ],
+  "vending_wallmed_Light_Overlay_11_12_Mesh.005": [
+    {
+      "part": "vending_wallmed_Light_Overlay_11_12.007",
+      "slots": [
+        "Original_Vending_Light_wallmed.006"
+      ]
+    }
+  ],
+  "vending_wallmed_Light_Overlay_11_20_Mesh.005": [
+    {
+      "part": "vending_wallmed_Light_Overlay_11_20.007",
+      "slots": [
+        "Original_Vending_Light_wallmed.006"
+      ]
+    }
+  ],
+  "vending_wallmed_Light_Overlay_14_12_Mesh.005": [
+    {
+      "part": "vending_wallmed_Light_Overlay_14_12.007",
+      "slots": [
+        "Original_Vending_Light_wallmed.006"
+      ]
+    }
+  ],
+  "vending_wallmed_Light_Overlay_14_20_Mesh.005": [
+    {
+      "part": "vending_wallmed_Light_Overlay_14_20.007",
+      "slots": [
+        "Original_Vending_Light_wallmed.006"
+      ]
+    }
+  ],
+  "vending_wallmed_Light_Overlay_20_12_Mesh.003": [
+    {
+      "part": "vending_wallmed_Light_Overlay_20_12.007",
+      "slots": [
+        "Original_Vending_Light_wallmed.006"
+      ]
+    }
+  ],
+  "vending_wallmed_Light_Overlay_20_20_Mesh.003": [
+    {
+      "part": "vending_wallmed_Light_Overlay_20_20.007",
+      "slots": [
+        "Original_Vending_Light_wallmed.006"
+      ]
+    }
+  ]
+}

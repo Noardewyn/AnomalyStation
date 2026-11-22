@@ -1,0 +1,25 @@
+{
+  "/obj/effect/decal/cleanable/ash": {
+    "mode": "billboard",
+    "scale": 0.9,
+    "y": -0.342
+  },
+  "/obj/item/ammo_box/magazine/napad": {
+    "scale": 0.72
+  },
+  "/obj/item/bodypart/arm/left": {
+    "scale": 1.2
+  },
+  "/obj/item/bodypart/arm/right": {
+    "scale": 1.2
+  },
+  "/obj/item/bodypart/head": {
+    "scale": 1.6
+  },
+  "/obj/item/bodypart/leg/left": {
+    "scale": 1.3
+  },
+  "/obj/item/bodypart/leg/right": {
+    "scale": 1.2
+  }
+}

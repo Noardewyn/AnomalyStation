@@ -1,0 +1,10 @@
+anomaly-map 1
+source _maps/map_files/T2Init/T2Init.dmm tg 1d99bd7f
+size 2 2 1
+chunk 32
+default /mob/t2_init{name = "M"} | /obj/t2_init{name = "N2"} | /turf/open/indestructible/t2_init | /area/t2_init
+
+[chunk 1 1 1]
+1,2: /obj/t2_init/late{name = "L1"} | /obj/t2_init{name = "N1"} | /obj/t2_init/qdel{name = "Q1"} | /turf/open/indestructible/t2_init | /area/t2_init
+1,1: /turf/open/indestructible/t2_init | /area/t2_init
+2,1: /obj/t2_init/immediate{name = "I1"} | /obj/t2_inert{name = "X1"} | /turf/open/indestructible/t2_init | /area/t2_init

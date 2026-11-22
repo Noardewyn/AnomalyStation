@@ -1,0 +1,10 @@
+{
+  "png": "godot/assets/tg/icons/obj/machines/status_display.png",
+  "dmi": "..\\tgstation\\icons\\obj\\machines\\status_display.dmi",
+  "png_sha256": "bab3eca3162b0b4b01a3fd48a0cc94238c70ee44785471219d1b54e966a0b805",
+  "pixels_match_dmi": true,
+  "tile_size": [
+    32,
+    32
+  ]
+}

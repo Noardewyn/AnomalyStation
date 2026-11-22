@@ -1,0 +1,90 @@
+anomaly-map 1
+source _maps/shuttles/arrival/arrival_box.dmm tg 1d99bd7f
+size 15 7 1
+chunk 32
+default /turf/closed/wall/mineral/titanium | /area/shuttle/arrival
+
+[chunk 1 1 1]
+1,7: /turf/template_noop | /area/template_noop
+2,7: /turf/template_noop | /area/template_noop
+3,7: /turf/template_noop | /area/template_noop
+6,7: /obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"} | /obj/structure/fans/tiny | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+8,7: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+9,7: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+10,7: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+11,7: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+13,7: /obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"} | /obj/structure/fans/tiny | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+5,6: /obj/structure/table | /obj/item/storage/medkit/regular | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+6,6: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+7,6: /obj/effect/spawner/random/entertainment/arcade | /obj/machinery/light/directional/north | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+8,6: /obj/structure/closet/wardrobe/green | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+9,6: /obj/structure/closet/wardrobe/black | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+10,6: /obj/structure/closet/wardrobe/mixed | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+11,6: /obj/structure/closet/wardrobe/grey | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+12,6: /obj/machinery/requests_console/directional/north{department = "Arrival shuttle"; name = "Arrival Shuttle Requests Console"} | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+13,6: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+14,6: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating/airless | /area/shuttle/arrival
+15,6: /obj/machinery/power/shuttle_engine/propulsion/burst/right{dir = 4} | /turf/open/floor/plating/airless | /area/shuttle/arrival
+1,5: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+2,5: /obj/structure/chair/comfy/shuttle | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+3,5: /obj/structure/chair/comfy/shuttle | /obj/machinery/light/small/directional/east | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+5,5: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+6,5: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+7,5: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+8,5: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+9,5: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+10,5: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+11,5: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+12,5: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+13,5: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+14,5: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating/airless | /area/shuttle/arrival
+15,5: /obj/machinery/power/shuttle_engine/propulsion{dir = 4} | /turf/open/floor/plating/airless | /area/shuttle/arrival
+1,4: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+2,4: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+3,4: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+4,4: /obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+5,4: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+6,4: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+7,4: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+8,4: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+9,4: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+10,4: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+11,4: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+12,4: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+13,4: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+14,4: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating/airless | /area/shuttle/arrival
+15,4: /obj/machinery/power/shuttle_engine/propulsion{dir = 4} | /obj/docking_port/mobile/arrivals | /turf/open/floor/plating/airless | /area/shuttle/arrival
+1,3: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+2,3: /obj/structure/chair/comfy/shuttle{dir = 1} | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+3,3: /obj/structure/chair/comfy/shuttle{dir = 1} | /obj/machinery/light/small/directional/east | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+5,3: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+6,3: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+7,3: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+8,3: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+9,3: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+10,3: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+11,3: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+12,3: /obj/structure/chair/comfy/shuttle{dir = 8} | /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+13,3: /turf/open/floor/mineral/titanium | /area/shuttle/arrival
+14,3: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating/airless | /area/shuttle/arrival
+15,3: /obj/machinery/power/shuttle_engine/propulsion{dir = 4} | /turf/open/floor/plating/airless | /area/shuttle/arrival
+5,2: /obj/structure/closet/emcloset | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+6,2: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+7,2: /obj/item/radio/intercom/directional/south | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+8,2: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+9,2: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+10,2: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+11,2: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+12,2: /obj/machinery/light/directional/south | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+13,2: /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+14,2: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating/airless | /area/shuttle/arrival
+15,2: /obj/machinery/power/shuttle_engine/propulsion/burst/left{dir = 4} | /turf/open/floor/plating/airless | /area/shuttle/arrival
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+6,1: /obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"} | /obj/structure/fans/tiny | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival
+8,1: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+9,1: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+10,1: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+11,1: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/structure/fans/tiny/invisible | /turf/open/floor/plating | /area/shuttle/arrival
+13,1: /obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"} | /obj/structure/fans/tiny | /turf/open/floor/mineral/titanium/blue | /area/shuttle/arrival

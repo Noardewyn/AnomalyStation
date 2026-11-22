@@ -1,0 +1,18 @@
+{
+	"version": 1,
+	"map_name": "T2 multiz",
+	"map_path": "map_files/T2Multiz",
+	"map_file": "T2Multiz.dmm",
+	"traits": [
+		{
+			"Linkage": "Cross",
+			"Gravity": 1,
+			"Baseturf": "/turf/open/floor/plating"
+		},
+		{
+			"Linkage": "Cross",
+			"Gravity": 1,
+			"Baseturf": "/turf/open/openspace"
+		}
+	]
+}

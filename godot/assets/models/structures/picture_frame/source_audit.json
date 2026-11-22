@@ -1,0 +1,110 @@
+{
+  "source": "code/modules/photography/photos/frame.dm",
+  "scope": "Four persistent showroom photo frames share one empty frame. Bar portrait randomly selects monkey, fruit, rat or Ratvar. Five presets cover those appearances. Continuous stepped wood frame, removable rear board, independent portrait insert; photo variant additionally preserves the white source mat. Photo_Overlay_Slot marks the runtime photo placement; no fabricated photograph provided. Source portraits are described as glued; separate inserts support texture replacement, not a claimed gameplay action. No glass is invented because these source frames do not define a glass overlay.",
+  "map_placements": 5,
+  "atlas": "godot\\assets\\tg\\icons\\obj\\signs.png",
+  "atlas_sha256": "e8d2c3f9fa870bc3c607293544f4d7c2abc671210348abfc04e3d65fa67b1307",
+  "source_dmi_rgba_verified": true,
+  "tile_size": [
+    32,
+    32
+  ],
+  "states": {
+    "frame-fruit": {
+      "name": "frame-fruit",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 190,
+      "rects": [
+        [
+          448,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    "frame-monkey": {
+      "name": "frame-monkey",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 191,
+      "rects": [
+        [
+          480,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    "frame-rat": {
+      "name": "frame-rat",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 192,
+      "rects": [
+        [
+          0,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    "frame-ratvar": {
+      "name": "frame-ratvar",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 193,
+      "rects": [
+        [
+          32,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    "frame-overlay": {
+      "name": "frame-overlay",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 194,
+      "rects": [
+        [
+          64,
+          384,
+          32,
+          32
+        ]
+      ]
+    }
+  },
+  "original_atlas_unmodified": true
+}

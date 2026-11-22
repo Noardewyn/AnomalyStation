@@ -1,0 +1,128 @@
+{
+  "cyborg_recharge_station": {
+    "triangles": 228,
+    "meshes": 6,
+    "notes": "Rebuilt as open round-shouldered charging alcove with connected side feet and rear charge ribs. Opaque retracting shutter, no glass. Source 0=open,1=occupied charging,2=closed empty; state dispatch controlled by gameplay. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Rounded_Charger_Housing",
+      "Interior_Charge_Ribs",
+      "Charger_Solid_Shutter",
+      "Charge_Status_borgcharger0",
+      "Charge_Status_borgcharger1",
+      "Charge_Status_borgcharger2"
+    ]
+  },
+  "mech_bay_power_port": {
+    "triangles": 60,
+    "meshes": 2,
+    "notes": "Charges adjacent front tile, not its own tile. Service hatch and charging-cell anchor.",
+    "parts": [
+      "Power_Port",
+      "Service_Hatch"
+    ]
+  },
+  "emitter": {
+    "triangles": 188,
+    "meshes": 4,
+    "notes": "Reconstructed from all four directional sprites: narrow flat emitter hood, short muzzle, upright front support, diagonal rear brace and red side conduits. Original side-direction UVs; no rounded capsule head. Beam is runtime attachment. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Emitter_Stand_And_Brace",
+      "Emitter_Flat_Head",
+      "Red_Conduits",
+      "Service_Hatch"
+    ]
+  },
+  "tesla_coil": {
+    "triangles": 292,
+    "meshes": 2,
+    "notes": "One tile. Anchored operating form; panel hinge. Electrical arcs are runtime effects, not baked geometry.",
+    "parts": [
+      "Accumulator_Body",
+      "Service_Hatch"
+    ]
+  },
+  "grounding_rod": {
+    "triangles": 276,
+    "meshes": 2,
+    "notes": "One tile. Anchored operating form; panel hinge. Electrical arcs are runtime effects, not baked geometry.",
+    "parts": [
+      "Accumulator_Body",
+      "Service_Hatch"
+    ]
+  },
+  "containment_field_generator": {
+    "triangles": 132,
+    "meshes": 2,
+    "notes": "One tile. Power and warmup overlays are source states; external containment spans generated at runtime.",
+    "parts": [
+      "Generator_Body",
+      "Field_Head_Glow"
+    ]
+  },
+  "shield_wall_generator": {
+    "triangles": 160,
+    "meshes": 2,
+    "notes": "One tile, cardinal field connections. Animated power-state indicator; field wall is a runtime span.",
+    "parts": [
+      "Shield_Generator_Body",
+      "Shield_Indicator"
+    ]
+  },
+  "gas_turbine_inlet": {
+    "triangles": 268,
+    "meshes": 3,
+    "notes": "One 2m module. Assemble inlet at Y=+2, core=0, outlet=-2 (Blender). Rotor animation is illustrative; speed driven by game.",
+    "parts": [
+      "Turbine_Casing",
+      "Rotor",
+      "Service_Hatch"
+    ]
+  },
+  "gas_turbine_core": {
+    "triangles": 220,
+    "meshes": 3,
+    "notes": "One 2m module. Assemble inlet at Y=+2, core=0, outlet=-2 (Blender). Rotor animation is illustrative; speed driven by game.",
+    "parts": [
+      "Turbine_Casing",
+      "Rotor",
+      "Service_Hatch"
+    ]
+  },
+  "gas_turbine_outlet": {
+    "triangles": 268,
+    "meshes": 3,
+    "notes": "One 2m module. Assemble inlet at Y=+2, core=0, outlet=-2 (Blender). Rotor animation is illustrative; speed driven by game.",
+    "parts": [
+      "Turbine_Casing",
+      "Rotor",
+      "Service_Hatch"
+    ]
+  },
+  "beam_reflector_single": {
+    "triangles": 88,
+    "meshes": 2,
+    "notes": "Separate fixed base and Z-axis rotating head (Godot Y). Source deflector overlay is rotated independently.",
+    "parts": [
+      "Fixed_Base",
+      "Rotating_Head"
+    ]
+  },
+  "beam_reflector_double": {
+    "triangles": 100,
+    "meshes": 2,
+    "notes": "Separate fixed base and Z-axis rotating head (Godot Y). Source deflector overlay is rotated independently.",
+    "parts": [
+      "Fixed_Base",
+      "Rotating_Head"
+    ]
+  },
+  "beam_reflector_box": {
+    "triangles": 112,
+    "meshes": 2,
+    "notes": "Separate fixed base and Z-axis rotating head (Godot Y). Source deflector overlay is rotated independently.",
+    "parts": [
+      "Fixed_Base",
+      "Rotating_Head"
+    ]
+  }
+}

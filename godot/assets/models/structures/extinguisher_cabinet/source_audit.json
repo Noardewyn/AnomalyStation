@@ -1,0 +1,10 @@
+{
+  "png": "godot/assets/tg/icons/obj/wallmounts.png",
+  "dmi": "..\\tgstation\\icons\\obj\\wallmounts.dmi",
+  "png_sha256": "47b9bd1b32599058f9b31c8d20ce22f9b15c5d7e15a7d46794c72be4099ec19a",
+  "pixels_match_dmi": true,
+  "tile_size": [
+    32,
+    32
+  ]
+}

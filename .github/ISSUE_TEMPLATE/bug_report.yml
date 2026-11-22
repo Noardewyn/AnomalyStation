@@ -1,0 +1,50 @@
+name: Bug report
+description: Something in the game, the server or the tools does not work as it should.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What went wrong, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to reproduce
+      description: The steps, as exact as you can (the map, your job, what you clicked or typed).
+      placeholder: |
+        1. Start a server on MetaStation
+        2. Join as an engineer
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The game's version from the main menu, or the commit you built.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - A public server
+        - A local server or a build from source
+        - The map editor
+        - The build or the tools
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and GPU
+      placeholder: Windows 11, RTX 3060
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and screenshots
+      description: The client's or the server's log around the problem, screenshots or a video. On Windows the client log is in %APPDATA%\AnomalyStation\logs.

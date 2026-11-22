@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    M3 P1 (D110, D111, D112): the types converter. It compiles OpenDream's DMCompiler front end from a local clone
+    (pinned at 1362abc5, RobustToolbox af2a7d04; never shipped, D96) into this tool, compiles tg with it, and writes the
+    checked-in outputs: src/Core/Tg/Generated/Types/**, src/Core/Tg/Generated/TypeOrder.g.cs,
+    docs/ai/specs/generated/types-index.tsv and the conformance data under tests/Anomaly.Core.Tests/Tools/Types/.
+    It is not in AnomalyStation.sln: the default build needs no clone. How to run it: docs/ai/specs/types-converter.md,
+    section 1 (the generate, check, model and summary commands).
+
+    The OpenDream clone is $(ANOMALY_OPENDREAM) when set, else the nearest OpenDream/ folder above this project (the
+    clone next to the repository, which the main checkout and its worktrees share). Without it the tool still builds,
+    and only the commands that need OpenDream ("generate", "check") refuse to run.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Anomaly.Tools.Types</RootNamespace>
+    <AssemblyName>Anomaly.Tools.Types</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <!-- OpenDream's sources are nullable-annotated; this tool compiles them without a nullable context. -->
+    <NoWarn>$(NoWarn);CS8618;CS8604;CS8602;CS8625;CS8600;CS8603;CS8601;CS8619;CS8620;CS8629;CS8765;CS8767;CS8769;CS8774;CS0618;CS8632;CS8714;CS8777;CS8762;CS0162;CS0168;CS0219;CS0414;CS0649;CS0169;CS9113;CS8524;CS8509</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AnomalyOpenDream Condition=" '$(AnomalyOpenDream)' == '' ">$(ANOMALY_OPENDREAM)</AnomalyOpenDream>
+    <AnomalyOpenDreamAbove>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'OpenDream/DMCompiler/DMCompiler.csproj'))</AnomalyOpenDreamAbove>
+    <AnomalyOpenDream Condition=" '$(AnomalyOpenDream)' == '' and '$(AnomalyOpenDreamAbove)' != '' ">$(AnomalyOpenDreamAbove)/OpenDream</AnomalyOpenDream>
+    <AnomalyOpenDreamFound Condition=" '$(AnomalyOpenDream)' != '' and Exists('$(AnomalyOpenDream)/DMCompiler/DMCompiler.csproj') ">true</AnomalyOpenDreamFound>
+    <DefineConstants Condition=" '$(AnomalyOpenDreamFound)' == 'true' ">$(DefineConstants);ANOMALY_OPENDREAM</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(AnomalyOpenDreamFound)' == 'true' ">
+    <Compile Include="$(AnomalyOpenDream)/DMCompiler/**/*.cs" Exclude="$(AnomalyOpenDream)/DMCompiler/Program.cs;$(AnomalyOpenDream)/DMCompiler/obj/**;$(AnomalyOpenDream)/DMCompiler/bin/**" LinkBase="OpenDream" />
+    <ProjectReference Include="$(AnomalyOpenDream)/RobustToolbox/Robust.Shared.Maths/Robust.Shared.Maths.csproj" />
+    <AnomalyDmStandard Include="$(AnomalyOpenDream)/DMCompiler/DMStandard/**" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Reflection over the Tg assembly decides the "translated" column and [DmInert] (types-converter.md, section 5). -->
+    <ProjectReference Include="..\..\src\Core\Tg\Anomaly.Core.Tg.csproj" />
+    <ProjectReference Include="..\..\src\Core\DmShim\Anomaly.Core.DmShim.csproj" />
+    <!-- The hand-written parts of the Tg classes are read as C# syntax (types-converter.md, section 3). -->
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
+    <!-- The var-block conformance check, shared with its test (types-converter.md 3.4). -->
+    <Compile Include="..\..\tests\Anomaly.Core.Tests\Tools\Types\VarBlockConformance.cs" Link="Shared\VarBlockConformance.cs" />
+    <!-- The map converter's .dmm reader, for the station maps' var edits in the var typing (types-converter.md 3.5). -->
+    <Compile Include="..\Anomaly.Tools.Maps\DmmFile.cs" Link="Shared\DmmFile.cs" />
+  </ItemGroup>
+  <Target Name="AnomalyCopyDmStandard" AfterTargets="Build" Condition=" '$(AnomalyOpenDreamFound)' == 'true' ">
+    <Copy SourceFiles="@(AnomalyDmStandard)" DestinationFiles="@(AnomalyDmStandard->'$(OutDir)DMStandard/%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+  <ItemGroup Condition=" '$(AnomalyOpenDreamFound)' == 'true' ">
+    <!-- The clone the front end was compiled from: the tool checks that it is the opendream argument and logs its commit. -->
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>AnomalyOpenDream</_Parameter1>
+      <_Parameter2>$(AnomalyOpenDream)</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+</Project>

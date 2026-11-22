@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Anomaly.Net</RootNamespace>
+    <AssemblyName>Anomaly.Net</AssemblyName>
+  </PropertyGroup>
+  <!--
+    The transports of M1 (D37): the transport interfaces, the LiteNetLib server and client, and an in-memory loopback
+    with seeded latency, loss and reorder for tests. LiteNetLib 2.1.4 (nuget.org, MIT) moves bytes on its own threads;
+    events reach the host only through Poll() on the host thread (D31).
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Protocol\Anomaly.Protocol.csproj" />
+    <PackageReference Include="LiteNetLib" Version="2.1.4" />
+  </ItemGroup>
+</Project>

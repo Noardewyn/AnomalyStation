@@ -1,0 +1,130 @@
+{
+  "source": "..\\tgstation\\icons\\obj\\machines\\engine\\other.dmi",
+  "size": [
+    480,
+    448
+  ],
+  "states": [
+    {
+      "name": "smes",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 91,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-o",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 92,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-emissive",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 93,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-og1",
+      "dirs": 1,
+      "frames": 2,
+      "first_tile": 94,
+      "delay_deciseconds": [
+        10.0,
+        10.0
+      ]
+    },
+    {
+      "name": "smes-og2",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 96,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-og3",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 97,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-og4",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 98,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-og5",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 99,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-op0",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 100,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-op1",
+      "dirs": 1,
+      "frames": 1,
+      "first_tile": 101,
+      "delay_deciseconds": null
+    },
+    {
+      "name": "smes-oc1",
+      "dirs": 1,
+      "frames": 2,
+      "first_tile": 102,
+      "delay_deciseconds": [
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "name": "smes-oc0",
+      "dirs": 1,
+      "frames": 2,
+      "first_tile": 104,
+      "delay_deciseconds": [
+        5.0,
+        5.0
+      ]
+    }
+  ],
+  "charge_palette": [
+    {
+      "level": 1,
+      "color": "#CC0000",
+      "inactive_color": "#520000"
+    },
+    {
+      "level": 2,
+      "color": "#FF6600",
+      "inactive_color": "#520000"
+    },
+    {
+      "level": 3,
+      "color": "#FFCC00",
+      "inactive_color": "#521F00"
+    },
+    {
+      "level": 4,
+      "color": "#83D316",
+      "inactive_color": "#002600"
+    },
+    {
+      "level": 5,
+      "color": "#00CC00",
+      "inactive_color": "#001F00"
+    }
+  ],
+  "charge_formula": "clamp(floor(5 * total_charge / total_capacity), 0, 5)"
+}

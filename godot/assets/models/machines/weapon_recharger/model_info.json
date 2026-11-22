@@ -1,0 +1,309 @@
+{
+  "weapon_recharger_off": {
+    "base_state": "recharger",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Charging_Dock",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Charging_Dock.006",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.058",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 80
+  },
+  "weapon_recharger_empty": {
+    "base_state": "recharger",
+    "overlays": [
+      "recharger-empty"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charging_Dock",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Charging_Dock.006",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.058",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Status_Overlay.092",
+        "materials": [
+          "Recharger_Indicator_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "recharger-empty"
+      }
+    ],
+    "triangles": 84
+  },
+  "weapon_recharger_charging": {
+    "base_state": "recharger",
+    "overlays": [
+      "recharger-charging"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charging_Dock",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Charging_Dock.006",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.058",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 6,
+        "shared_mesh": "Status_Overlay.093",
+        "materials": [
+          "Recharger_Indicator_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "recharger-charging"
+      }
+    ],
+    "triangles": 86
+  },
+  "weapon_recharger_full": {
+    "base_state": "recharger",
+    "overlays": [
+      "recharger-full"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charging_Dock",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Charging_Dock.006",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.058",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 20,
+        "shared_mesh": "Status_Overlay.094",
+        "materials": [
+          "Recharger_Indicator_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "recharger-full"
+      }
+    ],
+    "triangles": 100
+  },
+  "weapon_recharger_open": {
+    "base_state": "recharger",
+    "overlays": [
+      "recharger-open"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charging_Dock",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Charging_Dock.006",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.058",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Electronics",
+        "triangles": 12,
+        "shared_mesh": "Service_Electronics.001",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 92
+  },
+  "weapon_recharger_fail": {
+    "base_state": "recharger",
+    "overlays": [
+      "recharger-fail"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Charging_Dock",
+        "triangles": 68,
+        "shared_mesh": "Continuous_Charging_Dock.006",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Panel",
+        "triangles": 12,
+        "shared_mesh": "Service_Panel.058",
+        "materials": [
+          "Recharger_Original_Atlas.001"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Status_Overlay",
+        "triangles": 12,
+        "shared_mesh": "Status_Overlay.095",
+        "materials": [
+          "Recharger_Indicator_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "recharger-fail"
+      }
+    ],
+    "triangles": 92
+  }
+}

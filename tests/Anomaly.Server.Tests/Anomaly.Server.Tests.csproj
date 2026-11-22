@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>Anomaly.Server.Tests</RootNamespace>
+    <!-- The parallel tests share one heap of many worlds: the server GC collects it on every core (the state hash forces full collections). -->
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <!-- the client's Shared code below is built as Anomaly Editor's (its editor arguments and its editor; map-editor.md 5.13) -->
+    <DefineConstants>$(DefineConstants);ANOMALY_EDITOR</DefineConstants>
+  </PropertyGroup>
+  <!--
+    The tests of M1's new logic (lead plan): protocol and codec (P2), transports (P2), the server host (P3), replication
+    (P4) and the bots (P5), in folders Protocol/, Net/, Server/, Replication/, Bots/. The translated client layer (P1) is
+    tested in tests/Anomaly.Core.Tests/Tg/M1Client/. Same packages and settings as tests/Anomaly.Core.Tests.
+  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Server\Anomaly.Server.csproj" />
+    <ProjectReference Include="..\..\src\Protocol\Anomaly.Protocol.csproj" />
+    <ProjectReference Include="..\..\src\Net\Anomaly.Net.csproj" />
+    <ProjectReference Include="..\..\tools\Anomaly.Tools.Bots\Anomaly.Tools.Bots.csproj" />
+    <ProjectReference Include="..\..\src\Core\Tg\Anomaly.Core.Tg.csproj" />
+    <ProjectReference Include="..\..\src\Core\Motion\Anomaly.Core.Motion.csproj" />
+  </ItemGroup>
+  <!--
+    The Godot client's engine-free logic (P6: input mapping, interpolation helpers) lives in godot/scripts/Shared/. Those
+    files use no Godot API; they are compiled into the client and, linked here, into these tests (Client/).
+  -->
+  <ItemGroup>
+    <Compile Include="..\..\godot\scripts\Shared\**\*.cs" LinkBase="ClientShared" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Threading" />
+  </ItemGroup>
+</Project>

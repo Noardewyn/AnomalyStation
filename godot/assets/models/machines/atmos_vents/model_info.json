@@ -1,0 +1,332 @@
+{
+  "vent_pump_broken": {
+    "base_state": "vent_out",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_pump_broken_Sprite_Extrusion",
+        "triangles": 44,
+        "shared_mesh": "vent_pump_broken_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vent_out",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 24,
+        "faces": 14
+      }
+    ],
+    "triangles": 44
+  },
+  "vent_pump_in": {
+    "base_state": "vent_in",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_pump_in_Sprite_Extrusion",
+        "triangles": 44,
+        "shared_mesh": "vent_pump_in_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vent_in",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 24,
+        "faces": 14
+      }
+    ],
+    "triangles": 44
+  },
+  "vent_pump_off": {
+    "base_state": "vent_off",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_pump_off_Sprite_Extrusion",
+        "triangles": 44,
+        "shared_mesh": "vent_pump_off_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vent_off",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 24,
+        "faces": 14
+      }
+    ],
+    "triangles": 44
+  },
+  "vent_pump_out": {
+    "base_state": "vent_out",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_pump_out_Sprite_Extrusion",
+        "triangles": 44,
+        "shared_mesh": "vent_pump_out_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vent_out",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 24,
+        "faces": 14
+      }
+    ],
+    "triangles": 44
+  },
+  "vent_pump_overclocked": {
+    "base_state": "vent_out",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_pump_overclocked_Sprite_Extrusion",
+        "triangles": 44,
+        "shared_mesh": "vent_pump_overclocked_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vent_out",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 24,
+        "faces": 14
+      }
+    ],
+    "triangles": 44
+  },
+  "vent_pump_welded": {
+    "base_state": "vent_welded",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_pump_welded_Sprite_Extrusion",
+        "triangles": 44,
+        "shared_mesh": "vent_pump_welded_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "vent_welded",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 24,
+        "faces": 14
+      }
+    ],
+    "triangles": 44
+  },
+  "vent_scrubber_off": {
+    "base_state": "scrub_off",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_scrubber_off_Sprite_Extrusion",
+        "triangles": 172,
+        "shared_mesh": "vent_scrubber_off_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "scrub_off",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 88,
+        "faces": 46
+      }
+    ],
+    "triangles": 172
+  },
+  "vent_scrubber_on": {
+    "base_state": "scrub_on",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_scrubber_on_Sprite_Extrusion",
+        "triangles": 172,
+        "shared_mesh": "vent_scrubber_on_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "scrub_on",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 88,
+        "faces": 46
+      }
+    ],
+    "triangles": 172
+  },
+  "vent_scrubber_purge": {
+    "base_state": "scrub_purge",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_scrubber_purge_Sprite_Extrusion",
+        "triangles": 172,
+        "shared_mesh": "vent_scrubber_purge_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "scrub_purge",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 88,
+        "faces": 46
+      }
+    ],
+    "triangles": 172
+  },
+  "vent_scrubber_welded": {
+    "base_state": "scrub_welded",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_scrubber_welded_Sprite_Extrusion",
+        "triangles": 172,
+        "shared_mesh": "vent_scrubber_welded_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "scrub_welded",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 88,
+        "faces": 46
+      }
+    ],
+    "triangles": 172
+  },
+  "vent_scrubber_wide": {
+    "base_state": "scrub_wide",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "vent_scrubber_wide_Sprite_Extrusion",
+        "triangles": 172,
+        "shared_mesh": "vent_scrubber_wide_Sprite_Extrusion_Mesh",
+        "materials": [
+          "Atmos_Vent_Original_Atlas.003"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "scrub_wide",
+        "geometry": "single thin sprite slab",
+        "dimensions_m": [
+          0.534375011920929,
+          0.534375011920929,
+          0.054999999701976776
+        ],
+        "vertices": 88,
+        "faces": 46
+      }
+    ],
+    "triangles": 172
+  }
+}

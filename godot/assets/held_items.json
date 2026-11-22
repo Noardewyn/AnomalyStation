@@ -1,0 +1,808 @@
+{
+  "_all": {
+    "fov": 62,
+    "scale": 1.07,
+    "x": 0.118,
+    "y": -0.113,
+    "z": -0.176
+  },
+  "gags:/datum/greyscale_config/cleric_mace|#B6BEC2#855932:default": {
+    "pitch": 9,
+    "roll": 13
+  },
+  "icons/obj/antags/syndicate_tools.dmi:powerfist": {
+    "yaw": -162,
+    "pitch": -37,
+    "roll": 20
+  },
+  "icons/obj/chronos.dmi:chronogun": {
+    "yaw": 15,
+    "pitch": 36,
+    "roll": -32,
+    "scale": 1.56,
+    "y": 0.041
+  },
+  "icons/obj/devices/mecha_equipment.dmi:mecha_disabler": {
+    "yaw": -12,
+    "pitch": -138,
+    "roll": 70,
+    "scale": 1.07,
+    "x": -0.059,
+    "y": 0.027,
+    "z": 0.142
+  },
+  "icons/obj/devices/mecha_equipment.dmi:mecha_grenadelnchr": {
+    "pitch": 41,
+    "roll": -54,
+    "scale": 1.92,
+    "x": -0.043,
+    "y": 0.075
+  },
+  "icons/obj/devices/mecha_equipment.dmi:mecha_missilerack": {
+    "yaw": 2,
+    "pitch": -4,
+    "roll": -6,
+    "scale": 0.79,
+    "x": -0.017,
+    "y": -0.007,
+    "z": 0.039
+  },
+  "icons/obj/devices/mecha_equipment.dmi:mecha_pulse": {
+    "pitch": 38,
+    "roll": -53,
+    "scale": 1.3,
+    "x": -0.036,
+    "y": 0.058,
+    "z": 0.097
+  },
+  "icons/obj/devices/mecha_equipment.dmi:mecha_uac2": {
+    "yaw": 2,
+    "pitch": 44,
+    "roll": -49,
+    "scale": 2,
+    "x": -0.041,
+    "y": 0.041
+  },
+  "icons/obj/devices/mecha_equipment.dmi:paddy_claw": {
+    "yaw": -10,
+    "pitch": 39,
+    "roll": -68,
+    "x": -0.077,
+    "y": 0.13,
+    "z": 0.154
+  },
+  "icons/obj/devices/scanner.dmi:analyzer": {
+    "roll": -41,
+    "z": -0.01
+  },
+  "icons/obj/devices/tool.dmi:multitool": {
+    "z": -0.086
+  },
+  "icons/obj/holiday/holiday_misc.dmi:firecracker": {
+    "scale": 0.99,
+    "x": -0.082,
+    "y": 0.055
+  },
+  "icons/obj/lighting.dmi:flashlight": {
+    "pitch": 100
+  },
+  "icons/obj/lighting.dmi:penlight": {
+    "pitch": 100
+  },
+  "icons/obj/lighting.dmi:penlight_surgical": {
+    "pitch": 100
+  },
+  "icons/obj/lighting.dmi:seclite": {
+    "pitch": 100
+  },
+  "icons/obj/service/bureaucracy.dmi:cutterblade": {
+    "scale": 1.45
+  },
+  "icons/obj/service/hydroponics/equipment.dmi:hatchet": {
+    "yaw": 164,
+    "pitch": -29,
+    "roll": 61,
+    "x": -0.11,
+    "y": 0.308
+  },
+  "icons/obj/service/hydroponics/equipment.dmi:scythe0": {
+    "yaw": -9,
+    "pitch": 9,
+    "roll": 26,
+    "scale": 1.6,
+    "x": -0.1
+  },
+  "icons/obj/service/hydroponics/equipment.dmi:woodhatchet": {
+    "yaw": -20,
+    "pitch": -146,
+    "roll": -118,
+    "scale": 1.3,
+    "y": 0.26,
+    "z": -0.15
+  },
+  "icons/obj/service/kitchen.dmi:butch": {
+    "yaw": 14,
+    "pitch": 20,
+    "roll": 4
+  },
+  "icons/obj/service/kitchen.dmi:knife": {
+    "yaw": -137
+  },
+  "icons/obj/tools.dmi:cercd": {
+    "yaw": -16,
+    "pitch": -140,
+    "roll": -96,
+    "scale": 1.51,
+    "x": -0.026,
+    "y": 0.199,
+    "z": -0.3
+  },
+  "icons/obj/tools.dmi:drill": {
+    "yaw": -4,
+    "pitch": -140,
+    "roll": -111,
+    "x": -0.041,
+    "y": 0.141,
+    "z": -0.284
+  },
+  "icons/obj/tools.dmi:exwelder": {
+    "yaw": -14,
+    "pitch": 39,
+    "roll": -80,
+    "scale": 1.4,
+    "x": 0.004,
+    "y": 0.086,
+    "z": -0.037
+  },
+  "icons/obj/tools.dmi:jaws": {
+    "yaw": 180,
+    "pitch": 146,
+    "roll": -42,
+    "scale": 1.2,
+    "x": -0.1,
+    "y": 0.113,
+    "z": -0.3
+  },
+  "icons/obj/tools.dmi:rpd": {
+    "yaw": 8,
+    "pitch": -140,
+    "roll": 49,
+    "scale": 1.64,
+    "x": -0.037,
+    "y": 0.059,
+    "z": 0.028
+  },
+  "icons/obj/tools.dmi:wrench": {
+    "yaw": 151,
+    "pitch": -23,
+    "roll": 108,
+    "scale": 1.27,
+    "x": -0.048,
+    "y": 0.25,
+    "z": -0.153
+  },
+  "icons/obj/weapons/bat.dmi:baseball_bat": {
+    "yaw": 14,
+    "pitch": 22,
+    "roll": 22,
+    "scale": 1.11
+  },
+  "icons/obj/weapons/bat.dmi:baseball_bat_home": {
+    "yaw": 14,
+    "pitch": 27,
+    "roll": 22
+  },
+  "icons/obj/weapons/baton.dmi:classic_baton": {
+    "yaw": 14,
+    "pitch": 9,
+    "roll": 9,
+    "x": -0.038,
+    "y": 0.075
+  },
+  "icons/obj/weapons/baton.dmi:nunchaku": {
+    "pitch": 22
+  },
+  "icons/obj/weapons/baton.dmi:stunbaton_nocell": {
+    "yaw": 37,
+    "pitch": 21,
+    "roll": 36,
+    "scale": 1.24,
+    "x": -0.037
+  },
+  "icons/obj/weapons/baton.dmi:stunsword": {
+    "yaw": 36,
+    "pitch": 21,
+    "roll": 31,
+    "scale": 1.15,
+    "x": -0.09,
+    "y": 0.042,
+    "z": 0.041
+  },
+  "icons/obj/weapons/baton.dmi:stunsword_active": {
+    "yaw": 36,
+    "pitch": 21,
+    "roll": 31,
+    "scale": 1.34,
+    "x": -0.09,
+    "y": 0.042,
+    "z": 0.041
+  },
+  "icons/obj/weapons/baton.dmi:stunsword_nocell": {
+    "yaw": 36,
+    "pitch": 16,
+    "roll": 31,
+    "scale": 1.34,
+    "x": -0.027
+  },
+  "icons/obj/weapons/baton.dmi:telebaton_silver": {
+    "yaw": 123,
+    "pitch": -10,
+    "roll": -6,
+    "x": -0.034,
+    "y": 0.007,
+    "z": -0.031
+  },
+  "icons/obj/weapons/baton.dmi:telebaton_silver_on": {
+    "yaw": 2,
+    "pitch": 17,
+    "roll": 6,
+    "x": 0.014,
+    "y": -0.034,
+    "z": 0.038
+  },
+  "icons/obj/weapons/bows/bows.dmi:ashenbow": {
+    "yaw": -19,
+    "pitch": -154,
+    "roll": 39,
+    "scale": 1.16,
+    "x": -0.075
+  },
+  "icons/obj/weapons/bows/bows.dmi:bow": {
+    "yaw": -31,
+    "pitch": -143,
+    "roll": 45,
+    "x": 0.006,
+    "y": 0.013
+  },
+  "icons/obj/weapons/bows/bows.dmi:holybow": {
+    "yaw": -19,
+    "pitch": -146,
+    "roll": 45,
+    "scale": 1.18,
+    "x": -0.074
+  },
+  "icons/obj/weapons/chainsaw.dmi:chainsaw": {
+    "yaw": -4,
+    "pitch": -142,
+    "roll": -147,
+    "scale": 1.32,
+    "x": -0.025,
+    "y": 0.373,
+    "z": -0.075
+  },
+  "icons/obj/weapons/chainsaw.dmi:chainsaw_on": {
+    "yaw": -4,
+    "pitch": -142,
+    "roll": -147,
+    "scale": 1.11,
+    "x": -0.025,
+    "y": 0.4,
+    "z": -0.075
+  },
+  "icons/obj/weapons/chainsaw.dmi:chainsawdual": {
+    "yaw": 10,
+    "pitch": 24,
+    "roll": -11,
+    "scale": 1.24,
+    "x": 0.155,
+    "y": -0.038,
+    "z": -0.071
+  },
+  "icons/obj/weapons/fireaxe.dmi:boarding_axe": {
+    "pitch": 180
+  },
+  "icons/obj/weapons/fireaxe.dmi:fireaxe": {
+    "pitch": 180
+  },
+  "icons/obj/weapons/fireaxe.dmi:fireaxe0": {
+    "pitch": -140,
+    "roll": -27,
+    "scale": 1.28
+  },
+  "icons/obj/weapons/grenade.dmi:chemg_locked": {
+    "scale": 1.18,
+    "x": -0.027,
+    "y": 0.055,
+    "z": 0.014
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38mag-ammo": {
+    "yaw": -2,
+    "roll": -11,
+    "scale": 0.56,
+    "x": -0.025
+  },
+  "icons/obj/weapons/guns/ammo.dmi:40mm-0": {
+    "scale": 0.4
+  },
+  "icons/obj/weapons/guns/ammo.dmi:40mm-1": {
+    "scale": 0.4
+  },
+  "icons/obj/weapons/guns/ammo.dmi:40mm-2": {
+    "scale": 0.4
+  },
+  "icons/obj/weapons/guns/ammo.dmi:40mm-3": {
+    "scale": 0.4
+  },
+  "icons/obj/weapons/guns/ammo.dmi:40mm-4": {
+    "scale": 0.4
+  },
+  "icons/obj/weapons/guns/ammo.dmi:napad_mag-full": {
+    "scale": 0.44,
+    "y": 0.226
+  },
+  "icons/obj/weapons/guns/ammo.dmi:rocketbundle-1": {
+    "scale": 0.6
+  },
+  "icons/obj/weapons/guns/ammo.dmi:rocketbundle-2": {
+    "scale": 0.6
+  },
+  "icons/obj/weapons/guns/ammo.dmi:rocketbundle-3": {
+    "scale": 0.6
+  },
+  "icons/obj/weapons/guns/ammo.dmi:srm-8": {
+    "pitch": 4,
+    "roll": -20,
+    "scale": 0.6,
+    "x": -0.025,
+    "z": 0.037
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:aps": {
+    "scale": 0.58
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:arg": {
+    "scale": 1.11,
+    "x": 0.137,
+    "y": 0.087,
+    "z": -0.05
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:c20r": {
+    "scale": 1.12,
+    "x": 0.138,
+    "y": 0.075,
+    "z": -0.012
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:c38": {
+    "scale": 0.68
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:chemgun": {
+    "scale": 0.66,
+    "y": 0.068
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:cshotgun": {
+    "scale": 1.36,
+    "x": 0.1
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:deaglecamo": {
+    "scale": 0.69
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:deagleg": {
+    "scale": 0.71
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:doorhickey": {
+    "scale": 0.8
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:goldrevolver": {
+    "scale": 0.71,
+    "x": 0.038,
+    "z": -0.05
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:grenade_launcher": {
+    "scale": 1.27,
+    "x": 0.15,
+    "y": -0.087
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:l6_cyborg": {
+    "scale": 1.26,
+    "x": 0.125
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:lucky": {
+    "scale": 0.83
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:m1911": {
+    "scale": 0.58
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:m90": {
+    "scale": 1.14,
+    "x": 0.163
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:mateba": {
+    "scale": 0.83,
+    "x": 0.025
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:miniuzi": {
+    "yaw": -4,
+    "pitch": 2,
+    "x": 0.05,
+    "y": 0.15,
+    "z": -0.05
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:nagant": {
+    "scale": 0.68
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:peashooter": {
+    "scale": 0.68
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:pistol": {
+    "scale": 0.6
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:reagle": {
+    "scale": 0.65
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:rebarxbowsyndie": {
+    "pitch": 11,
+    "scale": 1.22,
+    "x": 0.1
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:revolver": {
+    "scale": 0.73
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:revolversyndie": {
+    "scale": 0.85
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:riotgun": {
+    "scale": 1.44,
+    "x": 0.224,
+    "y": 0.075
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:russianrevolver": {
+    "scale": 0.73
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:saber": {
+    "scale": 0.66,
+    "x": -0.012,
+    "y": -0.05
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:sniper": {
+    "yaw": 4,
+    "pitch": 2,
+    "roll": -43,
+    "scale": 1.24,
+    "x": 0.225,
+    "y": 0.025
+  },
+  "icons/obj/weapons/guns/ballistic.dmi:tommygun": {
+    "scale": 1.27,
+    "x": 0.15
+  },
+  "icons/obj/weapons/guns/energy.dmi:advtaser": {
+    "scale": 0.82
+  },
+  "icons/obj/weapons/guns/energy.dmi:alienpistol": {
+    "scale": 0.76,
+    "x": 0.025,
+    "y": 0.112
+  },
+  "icons/obj/weapons/guns/energy.dmi:bluetag": {
+    "scale": 0.89,
+    "x": 0.087,
+    "y": 0.175
+  },
+  "icons/obj/weapons/guns/energy.dmi:caplaser": {
+    "yaw": -2,
+    "roll": 4,
+    "scale": 0.77,
+    "x": 0.124,
+    "y": 0.2
+  },
+  "icons/obj/weapons/guns/energy.dmi:cybersun_s120": {
+    "scale": 1.07,
+    "x": 0.087,
+    "y": 0.1
+  },
+  "icons/obj/weapons/guns/energy.dmi:decloner": {
+    "scale": 0.68,
+    "x": 0.062,
+    "y": 0.175
+  },
+  "icons/obj/weapons/guns/energy.dmi:disabler": {
+    "scale": 0.68,
+    "x": 0.087,
+    "y": 0.075
+  },
+  "icons/obj/weapons/guns/energy.dmi:disabler_smg": {
+    "scale": 1.1,
+    "x": 0.062,
+    "y": 0.025
+  },
+  "icons/obj/weapons/guns/energy.dmi:dragnet": {
+    "scale": 1.31,
+    "x": 0.038
+  },
+  "icons/obj/weapons/guns/energy.dmi:dueling_pistol": {
+    "scale": 0.73,
+    "y": 0.15
+  },
+  "icons/obj/weapons/guns/energy.dmi:energy": {
+    "scale": 1.22,
+    "x": 0.1,
+    "z": -0.062
+  },
+  "icons/obj/weapons/guns/energy.dmi:energytac": {
+    "scale": 1.13,
+    "x": 0.125
+  },
+  "icons/obj/weapons/guns/energy.dmi:esniper": {
+    "roll": -42,
+    "scale": 1.46,
+    "x": 0.225
+  },
+  "icons/obj/weapons/guns/energy.dmi:flora": {
+    "scale": 0.54
+  },
+  "icons/obj/weapons/guns/energy.dmi:freezegun": {
+    "scale": 1.42,
+    "x": 0.15
+  },
+  "icons/obj/weapons/guns/energy.dmi:hoslaser": {
+    "scale": 0.71,
+    "y": 0.138
+  },
+  "icons/obj/weapons/guns/energy.dmi:infernopistol": {
+    "scale": 0.63
+  },
+  "icons/obj/weapons/guns/energy.dmi:ioncarbine": {
+    "scale": 1.1
+  },
+  "icons/obj/weapons/guns/energy.dmi:ionrifle": {
+    "scale": 1.18,
+    "x": 0.075
+  },
+  "icons/obj/weapons/guns/energy.dmi:laser": {
+    "scale": 1.11,
+    "x": 0.112
+  },
+  "icons/obj/weapons/guns/energy.dmi:laser_carbine": {
+    "scale": 1.2,
+    "x": 0.112
+  },
+  "icons/obj/weapons/guns/energy.dmi:laser_pistol": {
+    "scale": 0.69,
+    "x": -0.013
+  },
+  "icons/obj/weapons/guns/energy.dmi:lasercannon": {
+    "scale": 1.34,
+    "x": 0.112
+  },
+  "icons/obj/weapons/guns/energy.dmi:m1911": {
+    "scale": 0.55
+  },
+  "icons/obj/weapons/guns/energy.dmi:mini": {
+    "scale": 0.71,
+    "x": -0.038,
+    "y": 0.112
+  },
+  "icons/obj/weapons/guns/energy.dmi:musket_prime": {
+    "scale": 1.33
+  },
+  "icons/obj/weapons/guns/energy.dmi:nucgun": {
+    "scale": 0.68,
+    "x": 0.013,
+    "y": 0.05
+  },
+  "icons/obj/weapons/guns/energy.dmi:photon": {
+    "scale": 0.82,
+    "y": 0.075
+  },
+  "icons/obj/weapons/guns/energy.dmi:plasmacutter": {
+    "scale": 0.77
+  },
+  "icons/obj/weapons/guns/energy.dmi:protolaser": {
+    "scale": 0.72
+  },
+  "icons/obj/weapons/guns/energy.dmi:pulse": {
+    "scale": 1.19,
+    "x": 0.075
+  },
+  "icons/obj/weapons/guns/energy.dmi:pulse_carbine": {
+    "scale": 1.09,
+    "x": 0.094,
+    "y": 0.062
+  },
+  "icons/obj/weapons/guns/energy.dmi:pulse_pistol": {
+    "scale": 0.68,
+    "x": 0.075
+  },
+  "icons/obj/weapons/guns/energy.dmi:redtag": {
+    "scale": 0.74,
+    "y": 0.175
+  },
+  "icons/obj/weapons/guns/energy.dmi:repeater": {
+    "scale": 1.23,
+    "x": 0.163
+  },
+  "icons/obj/weapons/guns/energy.dmi:retro": {
+    "scale": 0.77,
+    "x": -0.012,
+    "y": 0.163
+  },
+  "icons/obj/weapons/guns/energy.dmi:taser": {
+    "scale": 0.77
+  },
+  "icons/obj/weapons/guns/energy.dmi:xray": {
+    "roll": 2,
+    "scale": 1.62,
+    "x": 0.075
+  },
+  "icons/obj/weapons/guns/lahtil39.dmi:lahtil": {
+    "yaw": -2,
+    "scale": 1.29,
+    "x": 0.337,
+    "y": -0.113,
+    "z": -0.012
+  },
+  "icons/obj/weapons/guns/ninemmsmg/napad_item.dmi:napad": {
+    "scale": 1.07,
+    "x": 0.225,
+    "y": -0.087
+  },
+  "icons/obj/weapons/guns/syringegun.dmi:dartsyringegun": {
+    "scale": 1.3,
+    "x": 0.075
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:assault_laser": {
+    "scale": 1.32,
+    "x": 0.25
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:battle_rifle": {
+    "yaw": -4,
+    "scale": 1.3,
+    "x": 0.263
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:jezail": {
+    "scale": 1.22,
+    "x": 0.1
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:pipegun": {
+    "scale": 1.24,
+    "x": 0.188
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:regal_pipegun": {
+    "scale": 1.27,
+    "x": 0.175,
+    "y": -0.044
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:rocketlauncher": {
+    "yaw": -180,
+    "scale": 1.27,
+    "x": 0.062,
+    "y": 0.3,
+    "z": -1
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:sakhno_tactifucked": {
+    "scale": 1.13,
+    "x": 0.212,
+    "y": -0.075,
+    "z": 0.05
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:sks": {
+    "scale": 1.28,
+    "x": 0.218,
+    "y": -0.099
+  },
+  "icons/obj/weapons/guns/wide_guns.dmi:zhihao": {
+    "scale": 1.11,
+    "x": 0.112,
+    "y": -0.113,
+    "z": -0.149
+  },
+  "icons/obj/weapons/hammer.dmi:hammeron": {
+    "yaw": 22,
+    "pitch": 27,
+    "roll": 31,
+    "scale": 1.45,
+    "x": -0.062,
+    "z": 0.025
+  },
+  "icons/obj/weapons/spear.dmi:bone_spear0": {
+    "yaw": 27,
+    "pitch": 24,
+    "roll": 20,
+    "scale": 1.22
+  },
+  "icons/obj/weapons/spear.dmi:dragoonpole0": {
+    "yaw": -14,
+    "pitch": -4,
+    "roll": 10,
+    "scale": 1.01
+  },
+  "icons/obj/weapons/spear.dmi:pillow_lance0": {
+    "yaw": 30,
+    "pitch": 22,
+    "roll": 10,
+    "scale": 1.25
+  },
+  "icons/obj/weapons/spear.dmi:spearbomb0": {
+    "yaw": 36,
+    "pitch": 30,
+    "roll": 25,
+    "scale": 1.32
+  },
+  "icons/obj/weapons/stabby.dmi:buckknife": {
+    "yaw": 14,
+    "pitch": -163,
+    "roll": -93,
+    "scale": 0.85,
+    "x": -0.038,
+    "y": 0.05
+  },
+  "icons/obj/weapons/stabby.dmi:huntingknife": {
+    "yaw": -1,
+    "pitch": -152,
+    "roll": -180
+  },
+  "icons/obj/weapons/sword.dmi:chainswordon": {
+    "yaw": 35,
+    "pitch": 19,
+    "roll": 15,
+    "scale": 1.21,
+    "x": -0.05
+  },
+  "icons/obj/weapons/sword.dmi:claymore_gold": {
+    "yaw": 30,
+    "pitch": 20,
+    "roll": 27,
+    "scale": 1.12,
+    "x": -0.075
+  },
+  "icons/obj/weapons/sword.dmi:claymore_old": {
+    "yaw": 34,
+    "pitch": 27,
+    "roll": 34,
+    "scale": 1.35,
+    "x": -0.019
+  },
+  "icons/obj/weapons/sword.dmi:cultblade": {
+    "yaw": 22,
+    "pitch": 20,
+    "roll": 22
+  },
+  "icons/obj/weapons/sword.dmi:hfrequency0": {
+    "yaw": 25,
+    "pitch": 26,
+    "roll": 24,
+    "scale": 1.24
+  },
+  "icons/obj/weapons/sword.dmi:katana": {
+    "yaw": 14,
+    "pitch": 25,
+    "roll": 25,
+    "scale": 1.27,
+    "y": 0.038,
+    "z": -0.075
+  },
+  "icons/obj/weapons/sword.dmi:swordon": {
+    "yaw": 27,
+    "pitch": 25,
+    "roll": 29,
+    "scale": 1.17,
+    "x": -0.025
+  },
+  "icons/obj/weapons/transforming_energy.dmi:axe": {
+    "yaw": 4,
+    "pitch": 9,
+    "roll": 18
+  },
+  "icons/obj/weapons/transforming_energy.dmi:blade": {
+    "yaw": 22,
+    "pitch": 22,
+    "roll": 22
+  },
+  "mech:icons/obj/devices/mecha_equipment.dmi:mecha_missilerack": {
+    "x": 0.26,
+    "y": -0.336
+  },
+  "mech:icons/obj/devices/mecha_equipment.dmi:mecha_pulse": {
+    "scale": 1.17,
+    "x": 0.137
+  }
+}

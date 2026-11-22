@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Anomaly.Tools.Sounds</RootNamespace>
+    <AssemblyName>Anomaly.Tools.Sounds</AssemblyName>
+  </PropertyGroup>
+  <!--
+    M4b (the audio plan, section 4.3): copies tg's sounds (../tgstation/sound/**/*.ogg, Ogg Vorbis, which Godot plays as they are) into
+    the git-ignored godot/assets/tg/sound/ and writes sound/index.json: per file its length in deciseconds (read from the Ogg pages),
+    sample rate, channels and licence label (D35: a label, not a block). Files whose attribution names a non-commercial licence go to
+    sound-nc/ with a NOTICE (the skip-nc option leaves them out). It references nothing: a .NET tool with its own Ogg/Vorbis header reader,
+    run before the smoke and export scripts, like tools/Anomaly.Tools.Icons.
+  -->
+  <ItemGroup>
+    <!-- D344: the licence facts tg's attribution files leave out, shared with the server (plain BCL, no Core reference) -->
+    <Compile Include="../../src/Core/Tg/Infrastructure/SoundLicences.cs" Link="SoundLicences.cs" />
+  </ItemGroup>
+</Project>

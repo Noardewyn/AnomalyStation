@@ -1,0 +1,592 @@
+{
+  "turret_controller_standby_0": {
+    "base_state": "control",
+    "frame": 0,
+    "overlays": [
+      "standby"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1",
+        "materials": [
+          "Turret_Controller_standby_0_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2",
+        "materials": [
+          "Turret_Controller_standby_0_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.004",
+        "materials": [
+          "Turret_Controller_standby_0_Screen_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "standby"
+      }
+    ],
+    "triangles": 38
+  },
+  "turret_controller_standby_1": {
+    "base_state": "control",
+    "frame": 1,
+    "overlays": [
+      "standby"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1",
+        "materials": [
+          "Turret_Controller_standby_1_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2",
+        "materials": [
+          "Turret_Controller_standby_1_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.004",
+        "materials": [
+          "Turret_Controller_standby_1_Screen_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "standby"
+      }
+    ],
+    "triangles": 38
+  },
+  "turret_controller_stun_0": {
+    "base_state": "control",
+    "frame": 0,
+    "overlays": [
+      "button_left",
+      "stun"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1.001",
+        "materials": [
+          "Turret_Controller_stun_0_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_left"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2",
+        "materials": [
+          "Turret_Controller_stun_0_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.004",
+        "materials": [
+          "Turret_Controller_stun_0_Screen_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "stun"
+      }
+    ],
+    "triangles": 38
+  },
+  "turret_controller_stun_1": {
+    "base_state": "control",
+    "frame": 1,
+    "overlays": [
+      "button_left",
+      "stun"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1.001",
+        "materials": [
+          "Turret_Controller_stun_1_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_left"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2",
+        "materials": [
+          "Turret_Controller_stun_1_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.004",
+        "materials": [
+          "Turret_Controller_stun_1_Screen_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "stun"
+      }
+    ],
+    "triangles": 38
+  },
+  "turret_controller_kill_0": {
+    "base_state": "control",
+    "frame": 0,
+    "overlays": [
+      "button_left",
+      "button_right",
+      "kill"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1.001",
+        "materials": [
+          "Turret_Controller_kill_0_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_left"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2.001",
+        "materials": [
+          "Turret_Controller_kill_0_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_right"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.004",
+        "materials": [
+          "Turret_Controller_kill_0_Screen_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "kill"
+      }
+    ],
+    "triangles": 38
+  },
+  "turret_controller_kill_1": {
+    "base_state": "control",
+    "frame": 1,
+    "overlays": [
+      "button_left",
+      "button_right",
+      "kill"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1.001",
+        "materials": [
+          "Turret_Controller_kill_1_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_left"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2.001",
+        "materials": [
+          "Turret_Controller_kill_1_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_right"
+      },
+      {
+        "name": "Screen_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Screen_Overlay.004",
+        "materials": [
+          "Turret_Controller_kill_1_Screen_Overlay"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "kill"
+      }
+    ],
+    "triangles": 38
+  },
+  "turret_controller_unpowered_standby": {
+    "base_state": "control",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1",
+        "materials": [
+          "Turret_Controller_unpowered_standby_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2",
+        "materials": [
+          "Turret_Controller_unpowered_standby_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      }
+    ],
+    "triangles": 36
+  },
+  "turret_controller_unpowered_stun": {
+    "base_state": "control",
+    "frame": 0,
+    "overlays": [
+      "button_left"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1.001",
+        "materials": [
+          "Turret_Controller_unpowered_stun_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_left"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2",
+        "materials": [
+          "Turret_Controller_unpowered_stun_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "control"
+      }
+    ],
+    "triangles": 36
+  },
+  "turret_controller_unpowered_kill": {
+    "base_state": "control",
+    "frame": 0,
+    "overlays": [
+      "button_left",
+      "button_right"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Turret_Controller_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Turret_Controller_Housing",
+        "materials": [
+          "Turret_Controller_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "control"
+      },
+      {
+        "name": "Button_1",
+        "triangles": 12,
+        "shared_mesh": "Button_1.001",
+        "materials": [
+          "Turret_Controller_unpowered_kill_Button_1"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.08437500149011612,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_left"
+      },
+      {
+        "name": "Button_2",
+        "triangles": 12,
+        "shared_mesh": "Button_2.001",
+        "materials": [
+          "Turret_Controller_unpowered_kill_Button_2"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.16875000298023224,
+          -0.05624999850988388,
+          -0.0703125
+        ],
+        "source_state": "button_right"
+      }
+    ],
+    "triangles": 36
+  }
+}

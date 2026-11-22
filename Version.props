@@ -1,0 +1,45 @@
+<Project>
+  <!--
+    The game's version, one number for every assembly of a build: the core, the server, the client, the tools
+    (docs/versioning.md). Bump it with tools/release.sh, which also moves CHANGELOG.md's Unreleased section under it.
+
+    MAJOR.MINOR.PATCH-phase (D280, D330): the phase label is pre-alpha from the core version, then alpha, then beta, each
+    phase counting again from 0.0.0; the numbers say what a release brings: PATCH bug fixes and config changes, MINOR new
+    features or reworks of old ones, MAJOR many big features, when the owner declares it (0.5.0 to 0.9.7 came before).
+
+    AnomalyProtocolVersion is the wire protocol this version speaks (ProtocolVersion.Current). Clients and servers of two
+    protocols cannot talk, so they must never share a version: a protocol change raises the version too (PATCH at least),
+    and until it does Anomaly.Protocol builds with warning ANOMVER01. tools/release.sh writes both numbers.
+  -->
+  <PropertyGroup>
+    <Version>1.11.1-pre-alpha</Version>
+    <AnomalyProtocolVersion>94</AnomalyProtocolVersion>
+  </PropertyGroup>
+
+  <Target Name="AnomalyCheckProtocolVersion" BeforeTargets="CoreCompile" Condition=" '$(MSBuildProjectName)' == 'Anomaly.Protocol' ">
+    <PropertyGroup>
+      <_AnomalyProtocolSource>$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)/ProtocolVersion.cs'))</_AnomalyProtocolSource>
+      <_AnomalyProtocolCurrent>$([System.Text.RegularExpressions.Regex]::Match($(_AnomalyProtocolSource), 'const ushort Current = (\d+);').Groups[1].Value)</_AnomalyProtocolCurrent>
+    </PropertyGroup>
+    <Warning Code="ANOMVER01" File="$(MSBuildThisFileFullPath)"
+             Condition=" '$(_AnomalyProtocolCurrent)' != '$(AnomalyProtocolVersion)' "
+             Text="The wire protocol is version $(_AnomalyProtocolCurrent) but Version.props says version $(Version) speaks protocol $(AnomalyProtocolVersion): an incompatible client would carry the same version. Raise the version with tools/release.sh (docs/versioning.md)." />
+  </Target>
+
+  <!--
+    The build's identity: the .NET SDK's source control information already appends the commit to the informational
+    version (0.5.0+<full sha>); a build from a working tree with uncommitted changes to tracked files appends ".dirty",
+    so a play-test build made from local edits never passes for the commit. Untracked files do not count. Without git
+    (a source archive) the version is the bare number.
+  -->
+  <Target Name="AnomalyMarkDirtyBuild" AfterTargets="InitializeSourceControlInformation"
+          BeforeTargets="AddSourceRevisionToInformationalVersion" Condition=" '$(SourceRevisionId)' != '' ">
+    <Exec Command="git status --porcelain --untracked-files=no" WorkingDirectory="$(MSBuildThisFileDirectory)"
+          ConsoleToMSBuild="true" StandardOutputImportance="low" IgnoreExitCode="true" EchoOff="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="_AnomalyGitChanges" />
+    </Exec>
+    <PropertyGroup Condition=" '$(_AnomalyGitChanges)' != '' ">
+      <SourceRevisionId>$(SourceRevisionId).dirty</SourceRevisionId>
+    </PropertyGroup>
+  </Target>
+</Project>

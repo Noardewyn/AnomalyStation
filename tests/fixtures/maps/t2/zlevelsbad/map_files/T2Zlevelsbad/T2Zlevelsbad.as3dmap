@@ -1,0 +1,15 @@
+anomaly-map 1
+source _maps/map_files/T2Zlevelsbad/T2Zlevelsbad.dmm tg 1d99bd7f
+size 6 4 1
+chunk 32
+default /turf/closed/indestructible | /area/station/hallway/primary/central
+
+[chunk 1 1 1]
+2,3: /turf/open/indestructible | /area/station/hallway/primary/central
+3,3: /turf/open/indestructible | /area/station/hallway/primary/central
+4,3: /turf/open/indestructible | /area/station/hallway/primary/central
+5,3: /turf/open/indestructible | /area/station/hallway/primary/central
+2,2: /turf/open/indestructible | /area/station/hallway/primary/central
+3,2: /turf/open/indestructible | /area/station/hallway/primary/central
+4,2: /turf/open/indestructible | /area/station/hallway/primary/central
+5,2: /turf/open/indestructible | /area/station/hallway/primary/central

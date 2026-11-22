@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Anomaly.Tools.Icons</RootNamespace>
+    <AssemblyName>Anomaly.Tools.Icons</AssemblyName>
+  </PropertyGroup>
+  <!--
+    M2 (the lead's Q10, D104): converts tg's icons (../tgstation/icons, .dmi files: PNG plus a zTXt "Description") into a
+    git-ignored godot/assets/tg/: each .dmi as a .png with the same pixels and a .json of its states (frames, dirs, delays,
+    loop, rewind), plus tg's GAGS configs (code/datums/greyscale/json_configs) as data. The client's IconAtlas loads them
+    (M2 P7). It references nothing: a .NET tool with its own PNG reader, run before the smoke and soak scripts. The
+    bodies are M2 P7's; the command line is the M2 contracts step's.
+  -->
+  <ItemGroup>
+    <!-- M7x slice A: the body-part mask table (the masks option) decodes the sheets and picks pixels as the client does. -->
+    <Compile Include="..\..\godot\scripts\Shared\Icons\PngDecoder.cs" Link="ClientShared\PngDecoder.cs" />
+    <Compile Include="..\..\godot\scripts\Shared\Icons\Raster.cs" Link="ClientShared\Raster.cs" />
+    <Compile Include="..\..\godot\scripts\Shared\Icons\IconSheet.cs" Link="ClientShared\IconSheet.cs" />
+    <Compile Include="..\..\godot\scripts\Shared\Icons\BillboardMath.cs" Link="ClientShared\BillboardMath.cs" />
+  </ItemGroup>
+</Project>

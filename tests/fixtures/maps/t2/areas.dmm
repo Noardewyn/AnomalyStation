@@ -1,0 +1,91 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+// T2 fixture: the area cache of build_coordinate, one area object per area type (M3 T2, AreaTests.cs)
+// the hall area is in 3 separate groups, the non-unique shuttle area (/area/shuttle/escape) in 2
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"b" = (
+/turf/open/indestructible,
+/area/station/hallway/primary/central)
+"c" = (
+/turf/open/indestructible,
+/area/station/command/bridge)
+"d" = (
+/turf/open/indestructible,
+/area/shuttle/escape)
+"e" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+"g" = (
+/turf/closed/indestructible,
+/area/station/hallway/primary/central)
+"h" = (
+/obj/item/crowbar,
+/turf/open/indestructible,
+/area/shuttle/escape)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+b
+b
+a
+c
+a
+"}
+(3,1,1) = {"
+a
+b
+g
+g
+c
+a
+"}
+(4,1,1) = {"
+a
+a
+g
+b
+e
+a
+"}
+(5,1,1) = {"
+a
+a
+a
+a
+a
+a
+"}
+(6,1,1) = {"
+a
+d
+d
+a
+a
+a
+"}
+(7,1,1) = {"
+a
+d
+d
+a
+b
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+a
+a
+h
+"}

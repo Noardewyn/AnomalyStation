@@ -1,0 +1,453 @@
+{
+  "digital_clock_off": {
+    "base_state": "digital_clock_base",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Stepped_Housing.008",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.018",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Glass.008",
+        "materials": [
+          "Digital_Clock_Glass.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 90
+  },
+  "digital_clock_1256": {
+    "base_state": "digital_clock_base",
+    "overlays": [
+      "+1",
+      "+2",
+      "+5",
+      "+6",
+      "+separator"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Stepped_Housing.008",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.018",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Glass.008",
+        "materials": [
+          "Digital_Clock_Glass.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Hours_Tens_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Hours_Tens_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.39375001192092896,
+          0.0,
+          0.0
+        ],
+        "source_state": "+1"
+      },
+      {
+        "name": "Hours_Ones_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Hours_Ones_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.28125,
+          0.0,
+          0.0
+        ],
+        "source_state": "+2"
+      },
+      {
+        "name": "Minutes_Tens_Overlay",
+        "triangles": 20,
+        "shared_mesh": "Minutes_Tens_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.11249999701976776,
+          0.0,
+          0.0
+        ],
+        "source_state": "+5"
+      },
+      {
+        "name": "Minutes_Ones_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Minutes_Ones_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "+6"
+      },
+      {
+        "name": "Separator_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Separator_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "+separator"
+      }
+    ],
+    "triangles": 170
+  },
+  "digital_clock_0347": {
+    "base_state": "digital_clock_base",
+    "overlays": [
+      "+0",
+      "+3",
+      "+4",
+      "+7",
+      "+separator"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Stepped_Housing.008",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.018",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Glass.008",
+        "materials": [
+          "Digital_Clock_Glass.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Hours_Tens_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Hours_Tens_Overlay.007",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.39375001192092896,
+          0.0,
+          0.0
+        ],
+        "source_state": "+0"
+      },
+      {
+        "name": "Hours_Ones_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Hours_Ones_Overlay.007",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.28125,
+          0.0,
+          0.0
+        ],
+        "source_state": "+3"
+      },
+      {
+        "name": "Minutes_Tens_Overlay",
+        "triangles": 18,
+        "shared_mesh": "Minutes_Tens_Overlay.007",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.11249999701976776,
+          0.0,
+          0.0
+        ],
+        "source_state": "+4"
+      },
+      {
+        "name": "Minutes_Ones_Overlay",
+        "triangles": 14,
+        "shared_mesh": "Minutes_Ones_Overlay.007",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "+7"
+      },
+      {
+        "name": "Separator_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Separator_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "+separator"
+      }
+    ],
+    "triangles": 158
+  },
+  "digital_clock_8901": {
+    "base_state": "digital_clock_base",
+    "overlays": [
+      "+8",
+      "+9",
+      "+0",
+      "+1",
+      "+separator"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Housing",
+        "triangles": 66,
+        "shared_mesh": "Continuous_Stepped_Housing.008",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Recessed_Display",
+        "triangles": 12,
+        "shared_mesh": "Recessed_Display.018",
+        "materials": [
+          "Digital_Clock_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Closed_Tinted_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Tinted_Glass.008",
+        "materials": [
+          "Digital_Clock_Glass.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Hours_Tens_Overlay",
+        "triangles": 22,
+        "shared_mesh": "Hours_Tens_Overlay.008",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.39375001192092896,
+          0.0,
+          0.0
+        ],
+        "source_state": "+8"
+      },
+      {
+        "name": "Hours_Ones_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Hours_Ones_Overlay.008",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.28125,
+          0.0,
+          0.0
+        ],
+        "source_state": "+9"
+      },
+      {
+        "name": "Minutes_Tens_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Hours_Tens_Overlay.007",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.11249999701976776,
+          0.0,
+          0.0
+        ],
+        "source_state": "+0"
+      },
+      {
+        "name": "Minutes_Ones_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Hours_Tens_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "+1"
+      },
+      {
+        "name": "Separator_Overlay",
+        "triangles": 4,
+        "shared_mesh": "Separator_Overlay.006",
+        "materials": [
+          "Digital_Clock_Digit_Overlay.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "+separator"
+      }
+    ],
+    "triangles": 172
+  }
+}

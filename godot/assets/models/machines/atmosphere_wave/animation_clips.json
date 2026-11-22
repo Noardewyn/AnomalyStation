@@ -1,0 +1,54 @@
+{
+  "portable_air_pump.001": [
+    "siphon_0",
+    "siphon_1"
+  ],
+  "space_heater.001": [
+    "sheater-off",
+    "sheater-heat",
+    "sheater-cool",
+    "sheater-standby",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "improvised_chemical_heater.001": [
+    "sheater-off",
+    "sheater-heat",
+    "sheater-cool",
+    "sheater-standby",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "electrolyzer.001": [
+    "electrolyzer-off",
+    "electrolyzer-standby",
+    "electrolyzer-working",
+    "maintenance_open",
+    "maintenance_close",
+    "electrolyzer-working"
+  ],
+  "gas_crystallizer.001": [
+    "crystallizer-off",
+    "crystallizer-on",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "tank_compressor.001": [
+    "open",
+    "close",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "breach_shield_generator.001": [
+    "shieldoff",
+    "shieldon",
+    "shieldoffbr",
+    "shieldonbr"
+  ],
+  "atmospheric_shield_generator.001": [
+    "inactive",
+    "wantpower",
+    "active",
+    "wantpower"
+  ]
+}

@@ -1,0 +1,8131 @@
+{
+  "library": {
+    "source": "icons/obj/service/library.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      480,
+      448
+    ],
+    "states": {
+      "scanner": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-0": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-3": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-4": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book-5": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookempty": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "book_connect": {
+        "dirs": 4,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            0,
+            32,
+            32
+          ],
+          [
+            288,
+            0,
+            32,
+            32
+          ],
+          [
+            320,
+            0,
+            32,
+            32
+          ],
+          [
+            352,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "random_bookcase": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookbag": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "bigscanner": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "bigscanner1": {
+        "dirs": 1,
+        "frames": 35,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 1,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ],
+          [
+            32,
+            32,
+            32,
+            32
+          ],
+          [
+            64,
+            32,
+            32,
+            32
+          ],
+          [
+            96,
+            32,
+            32,
+            32
+          ],
+          [
+            128,
+            32,
+            32,
+            32
+          ],
+          [
+            160,
+            32,
+            32,
+            32
+          ],
+          [
+            192,
+            32,
+            32,
+            32
+          ],
+          [
+            224,
+            32,
+            32,
+            32
+          ],
+          [
+            256,
+            32,
+            32,
+            32
+          ],
+          [
+            288,
+            32,
+            32,
+            32
+          ],
+          [
+            320,
+            32,
+            32,
+            32
+          ],
+          [
+            352,
+            32,
+            32,
+            32
+          ],
+          [
+            384,
+            32,
+            32,
+            32
+          ],
+          [
+            416,
+            32,
+            32,
+            32
+          ],
+          [
+            448,
+            32,
+            32,
+            32
+          ],
+          [
+            0,
+            64,
+            32,
+            32
+          ],
+          [
+            32,
+            64,
+            32,
+            32
+          ],
+          [
+            64,
+            64,
+            32,
+            32
+          ],
+          [
+            96,
+            64,
+            32,
+            32
+          ],
+          [
+            128,
+            64,
+            32,
+            32
+          ],
+          [
+            160,
+            64,
+            32,
+            32
+          ],
+          [
+            192,
+            64,
+            32,
+            32
+          ],
+          [
+            224,
+            64,
+            32,
+            32
+          ],
+          [
+            256,
+            64,
+            32,
+            32
+          ],
+          [
+            288,
+            64,
+            32,
+            32
+          ],
+          [
+            320,
+            64,
+            32,
+            32
+          ],
+          [
+            352,
+            64,
+            32,
+            32
+          ],
+          [
+            384,
+            64,
+            32,
+            32
+          ],
+          [
+            416,
+            64,
+            32,
+            32
+          ],
+          [
+            448,
+            64,
+            32,
+            32
+          ],
+          [
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            32,
+            96,
+            32,
+            32
+          ],
+          [
+            64,
+            96,
+            32,
+            32
+          ],
+          [
+            96,
+            96,
+            32,
+            32
+          ],
+          [
+            128,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "bigscanner2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "photocopier": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "photocopier2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "photocopier1": {
+        "dirs": 1,
+        "frames": 40,
+        "delay_deciseconds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            96,
+            32,
+            32
+          ],
+          [
+            288,
+            96,
+            32,
+            32
+          ],
+          [
+            320,
+            96,
+            32,
+            32
+          ],
+          [
+            352,
+            96,
+            32,
+            32
+          ],
+          [
+            384,
+            96,
+            32,
+            32
+          ],
+          [
+            416,
+            96,
+            32,
+            32
+          ],
+          [
+            448,
+            96,
+            32,
+            32
+          ],
+          [
+            0,
+            128,
+            32,
+            32
+          ],
+          [
+            32,
+            128,
+            32,
+            32
+          ],
+          [
+            64,
+            128,
+            32,
+            32
+          ],
+          [
+            96,
+            128,
+            32,
+            32
+          ],
+          [
+            128,
+            128,
+            32,
+            32
+          ],
+          [
+            160,
+            128,
+            32,
+            32
+          ],
+          [
+            192,
+            128,
+            32,
+            32
+          ],
+          [
+            224,
+            128,
+            32,
+            32
+          ],
+          [
+            256,
+            128,
+            32,
+            32
+          ],
+          [
+            288,
+            128,
+            32,
+            32
+          ],
+          [
+            320,
+            128,
+            32,
+            32
+          ],
+          [
+            352,
+            128,
+            32,
+            32
+          ],
+          [
+            384,
+            128,
+            32,
+            32
+          ],
+          [
+            416,
+            128,
+            32,
+            32
+          ],
+          [
+            448,
+            128,
+            32,
+            32
+          ],
+          [
+            0,
+            160,
+            32,
+            32
+          ],
+          [
+            32,
+            160,
+            32,
+            32
+          ],
+          [
+            64,
+            160,
+            32,
+            32
+          ],
+          [
+            96,
+            160,
+            32,
+            32
+          ],
+          [
+            128,
+            160,
+            32,
+            32
+          ],
+          [
+            160,
+            160,
+            32,
+            32
+          ],
+          [
+            192,
+            160,
+            32,
+            32
+          ],
+          [
+            224,
+            160,
+            32,
+            32
+          ],
+          [
+            256,
+            160,
+            32,
+            32
+          ],
+          [
+            288,
+            160,
+            32,
+            32
+          ],
+          [
+            320,
+            160,
+            32,
+            32
+          ],
+          [
+            352,
+            160,
+            32,
+            32
+          ],
+          [
+            384,
+            160,
+            32,
+            32
+          ],
+          [
+            416,
+            160,
+            32,
+            32
+          ],
+          [
+            448,
+            160,
+            32,
+            32
+          ],
+          [
+            0,
+            192,
+            32,
+            32
+          ],
+          [
+            32,
+            192,
+            32,
+            32
+          ],
+          [
+            64,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "binder": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "binder1": {
+        "dirs": 1,
+        "frames": 9,
+        "delay_deciseconds": [
+          0.7,
+          0.7,
+          0.8,
+          0.8,
+          0.9,
+          0.9,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            192,
+            32,
+            32
+          ],
+          [
+            160,
+            192,
+            32,
+            32
+          ],
+          [
+            192,
+            192,
+            32,
+            32
+          ],
+          [
+            224,
+            192,
+            32,
+            32
+          ],
+          [
+            256,
+            192,
+            32,
+            32
+          ],
+          [
+            288,
+            192,
+            32,
+            32
+          ],
+          [
+            320,
+            192,
+            32,
+            32
+          ],
+          [
+            352,
+            192,
+            32,
+            32
+          ],
+          [
+            384,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "binder2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "demonomicon": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          30.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "loop": 0,
+        "rewind": 1,
+        "rects": [
+          [
+            448,
+            192,
+            32,
+            32
+          ],
+          [
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            32,
+            224,
+            32,
+            32
+          ],
+          [
+            64,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookmime": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookfireball": {
+        "dirs": 1,
+        "frames": 5,
+        "delay_deciseconds": [
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            224,
+            32,
+            32
+          ],
+          [
+            160,
+            224,
+            32,
+            32
+          ],
+          [
+            192,
+            224,
+            32,
+            32
+          ],
+          [
+            224,
+            224,
+            32,
+            32
+          ],
+          [
+            256,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "booksmoke": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            224,
+            32,
+            32
+          ],
+          [
+            320,
+            224,
+            32,
+            32
+          ],
+          [
+            352,
+            224,
+            32,
+            32
+          ],
+          [
+            384,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookblind": {
+        "dirs": 1,
+        "frames": 3,
+        "delay_deciseconds": [
+          6.0,
+          2.0,
+          4.0
+        ],
+        "loop": 0,
+        "rewind": 1,
+        "rects": [
+          [
+            416,
+            224,
+            32,
+            32
+          ],
+          [
+            448,
+            224,
+            32,
+            32
+          ],
+          [
+            0,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookmindswap": {
+        "dirs": 1,
+        "frames": 11,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            256,
+            32,
+            32
+          ],
+          [
+            64,
+            256,
+            32,
+            32
+          ],
+          [
+            96,
+            256,
+            32,
+            32
+          ],
+          [
+            128,
+            256,
+            32,
+            32
+          ],
+          [
+            160,
+            256,
+            32,
+            32
+          ],
+          [
+            192,
+            256,
+            32,
+            32
+          ],
+          [
+            224,
+            256,
+            32,
+            32
+          ],
+          [
+            256,
+            256,
+            32,
+            32
+          ],
+          [
+            288,
+            256,
+            32,
+            32
+          ],
+          [
+            320,
+            256,
+            32,
+            32
+          ],
+          [
+            352,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookforcewall": {
+        "dirs": 1,
+        "frames": 3,
+        "delay_deciseconds": [
+          4.0,
+          2.0,
+          6.0
+        ],
+        "loop": 0,
+        "rewind": 1,
+        "rects": [
+          [
+            384,
+            256,
+            32,
+            32
+          ],
+          [
+            416,
+            256,
+            32,
+            32
+          ],
+          [
+            448,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookknock": {
+        "dirs": 1,
+        "frames": 3,
+        "delay_deciseconds": [
+          4.0,
+          2.0,
+          4.0
+        ],
+        "loop": 0,
+        "rewind": 1,
+        "rects": [
+          [
+            0,
+            288,
+            32,
+            32
+          ],
+          [
+            32,
+            288,
+            32,
+            32
+          ],
+          [
+            64,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookhorses": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookcharge": {
+        "dirs": 1,
+        "frames": 2,
+        "delay_deciseconds": [
+          4.0,
+          4.0
+        ],
+        "loop": 0,
+        "rewind": 1,
+        "rects": [
+          [
+            128,
+            288,
+            32,
+            32
+          ],
+          [
+            160,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "booksummons": {
+        "dirs": 1,
+        "frames": 3,
+        "delay_deciseconds": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "loop": 0,
+        "rewind": 1,
+        "rects": [
+          [
+            192,
+            288,
+            32,
+            32
+          ],
+          [
+            224,
+            288,
+            32,
+            32
+          ],
+          [
+            256,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "booksacredflame": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            288,
+            32,
+            32
+          ],
+          [
+            320,
+            288,
+            32,
+            32
+          ],
+          [
+            352,
+            288,
+            32,
+            32
+          ],
+          [
+            384,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "random_book": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "book": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "book1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "book2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "book3": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "book4": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "book5": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "book6": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "book7": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "book8": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookInfections": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "cooked_book": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookEngineering": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookEngineering2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookHacking": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookDetective": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookNuclear": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            320,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookParticleAccelerator": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookCloning": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "rdbook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookHydroponicsPodPeople": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "borgbook": {
+        "dirs": 1,
+        "frames": 2,
+        "delay_deciseconds": [
+          60.0,
+          3.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            352,
+            32,
+            32
+          ],
+          [
+            160,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "chemistrybook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "barbook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookSpaceLaw": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "plumbingbook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "cqcmanual": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "stealthmanual": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "origamibook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "cooking_learing_sweets": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "cooking_learing_ice": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "cooking_learing_illegal": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "boneworking_learing": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "cytologybook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "fishbook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "booklightning": {
+        "dirs": 1,
+        "frames": 12,
+        "delay_deciseconds": [
+          6.0,
+          2.0,
+          1.0,
+          1.0,
+          1.0,
+          8.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            384,
+            32,
+            32
+          ],
+          [
+            160,
+            384,
+            32,
+            32
+          ],
+          [
+            192,
+            384,
+            32,
+            32
+          ],
+          [
+            224,
+            384,
+            32,
+            32
+          ],
+          [
+            256,
+            384,
+            32,
+            32
+          ],
+          [
+            288,
+            384,
+            32,
+            32
+          ],
+          [
+            320,
+            384,
+            32,
+            32
+          ],
+          [
+            352,
+            384,
+            32,
+            32
+          ],
+          [
+            384,
+            384,
+            32,
+            32
+          ],
+          [
+            416,
+            384,
+            32,
+            32
+          ],
+          [
+            448,
+            384,
+            32,
+            32
+          ],
+          [
+            0,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "tgcbook": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "chuuni_manga": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "cooking_learning_sandwich": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "heretichandbook": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            416,
+            32,
+            32
+          ],
+          [
+            160,
+            416,
+            32,
+            32
+          ],
+          [
+            192,
+            416,
+            32,
+            32
+          ],
+          [
+            224,
+            416,
+            32,
+            32
+          ],
+          [
+            256,
+            416,
+            32,
+            32
+          ],
+          [
+            288,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "bookcheese": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "book_pirate": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            416,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "pda": {
+    "source": "icons/obj/machines/pda.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      64,
+      64
+    ],
+    "states": {
+      "pdapainter": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "pdapainter-off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "pdapainter-broken": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "pdapainter-closed": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "photobooth": {
+    "source": "icons/obj/machines/photobooth.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      96,
+      64
+    ],
+    "states": {
+      "height_chart": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "booth_closed": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "booth_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "booth_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "booth_panel": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "biogenerator": {
+    "source": "icons/obj/machines/biogenerator.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      256,
+      256
+    ],
+    "states": {
+      "biogenerator": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_panel": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_screen": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ],
+          [
+            96,
+            0,
+            32,
+            32
+          ],
+          [
+            128,
+            0,
+            32,
+            32
+          ],
+          [
+            160,
+            0,
+            32,
+            32
+          ],
+          [
+            192,
+            0,
+            32,
+            32
+          ],
+          [
+            224,
+            0,
+            32,
+            32
+          ],
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_process": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ],
+          [
+            64,
+            32,
+            32,
+            32
+          ],
+          [
+            96,
+            32,
+            32,
+            32
+          ],
+          [
+            128,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_container": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_biomass_1": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            32,
+            32,
+            32
+          ],
+          [
+            224,
+            32,
+            32,
+            32
+          ],
+          [
+            0,
+            64,
+            32,
+            32
+          ],
+          [
+            32,
+            64,
+            32,
+            32
+          ],
+          [
+            64,
+            64,
+            32,
+            32
+          ],
+          [
+            96,
+            64,
+            32,
+            32
+          ],
+          [
+            128,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_biomass_2": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            64,
+            32,
+            32
+          ],
+          [
+            192,
+            64,
+            32,
+            32
+          ],
+          [
+            224,
+            64,
+            32,
+            32
+          ],
+          [
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            32,
+            96,
+            32,
+            32
+          ],
+          [
+            64,
+            96,
+            32,
+            32
+          ],
+          [
+            96,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_biomass_3": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            96,
+            32,
+            32
+          ],
+          [
+            160,
+            96,
+            32,
+            32
+          ],
+          [
+            192,
+            96,
+            32,
+            32
+          ],
+          [
+            224,
+            96,
+            32,
+            32
+          ],
+          [
+            0,
+            128,
+            32,
+            32
+          ],
+          [
+            32,
+            128,
+            32,
+            32
+          ],
+          [
+            64,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_biomass_4": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            128,
+            32,
+            32
+          ],
+          [
+            128,
+            128,
+            32,
+            32
+          ],
+          [
+            160,
+            128,
+            32,
+            32
+          ],
+          [
+            192,
+            128,
+            32,
+            32
+          ],
+          [
+            224,
+            128,
+            32,
+            32
+          ],
+          [
+            0,
+            160,
+            32,
+            32
+          ],
+          [
+            32,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_biomass_5": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            160,
+            32,
+            32
+          ],
+          [
+            96,
+            160,
+            32,
+            32
+          ],
+          [
+            128,
+            160,
+            32,
+            32
+          ],
+          [
+            160,
+            160,
+            32,
+            32
+          ],
+          [
+            192,
+            160,
+            32,
+            32
+          ],
+          [
+            224,
+            160,
+            32,
+            32
+          ],
+          [
+            0,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_biomass_6": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            192,
+            32,
+            32
+          ],
+          [
+            64,
+            192,
+            32,
+            32
+          ],
+          [
+            96,
+            192,
+            32,
+            32
+          ],
+          [
+            128,
+            192,
+            32,
+            32
+          ],
+          [
+            160,
+            192,
+            32,
+            32
+          ],
+          [
+            192,
+            192,
+            32,
+            32
+          ],
+          [
+            224,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "biogenerator_o_biomass_7": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            32,
+            224,
+            32,
+            32
+          ],
+          [
+            64,
+            224,
+            32,
+            32
+          ],
+          [
+            96,
+            224,
+            32,
+            32
+          ],
+          [
+            128,
+            224,
+            32,
+            32
+          ],
+          [
+            160,
+            224,
+            32,
+            32
+          ],
+          [
+            192,
+            224,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "equipment": {
+    "source": "icons/obj/service/hydroponics/equipment.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      480,
+      480
+    ],
+    "states": {
+      "waterbackpackatmos_2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "waterbackpackatmos_0": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "waterbackpackatmos_1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "atmos_nozzle": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "waterbackpackatmos": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "mistersec": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "pepperbackpacksec": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "misterjani": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "waterbackpackjani": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "misteratmos": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "mister": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "waterbackpack": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "hydrotray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "hydrotray2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "hydrotray3-alt": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "plantbag": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "portaseeder": {
+        "dirs": 1,
+        "frames": 7,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ],
+          [
+            64,
+            32,
+            32,
+            32
+          ],
+          [
+            96,
+            32,
+            32,
+            32
+          ],
+          [
+            128,
+            32,
+            32,
+            32
+          ],
+          [
+            160,
+            32,
+            32,
+            32
+          ],
+          [
+            192,
+            32,
+            32,
+            32
+          ],
+          [
+            224,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_lownutri3-alt": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            32,
+            32,
+            32
+          ],
+          [
+            288,
+            32,
+            32,
+            32
+          ],
+          [
+            320,
+            32,
+            32,
+            32
+          ],
+          [
+            352,
+            32,
+            32,
+            32
+          ],
+          [
+            384,
+            32,
+            32,
+            32
+          ],
+          [
+            416,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_lowwater3-alt": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            32,
+            32,
+            32
+          ],
+          [
+            0,
+            64,
+            32,
+            32
+          ],
+          [
+            32,
+            64,
+            32,
+            32
+          ],
+          [
+            64,
+            64,
+            32,
+            32
+          ],
+          [
+            96,
+            64,
+            32,
+            32
+          ],
+          [
+            128,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_harvest3-alt": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            64,
+            32,
+            32
+          ],
+          [
+            192,
+            64,
+            32,
+            32
+          ],
+          [
+            224,
+            64,
+            32,
+            32
+          ],
+          [
+            256,
+            64,
+            32,
+            32
+          ],
+          [
+            288,
+            64,
+            32,
+            32
+          ],
+          [
+            320,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_lowhealth3-alt": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            64,
+            32,
+            32
+          ],
+          [
+            384,
+            64,
+            32,
+            32
+          ],
+          [
+            416,
+            64,
+            32,
+            32
+          ],
+          [
+            448,
+            64,
+            32,
+            32
+          ],
+          [
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            32,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_alert3-alt": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            96,
+            32,
+            32
+          ],
+          [
+            96,
+            96,
+            32,
+            32
+          ],
+          [
+            128,
+            96,
+            32,
+            32
+          ],
+          [
+            160,
+            96,
+            32,
+            32
+          ],
+          [
+            192,
+            96,
+            32,
+            32
+          ],
+          [
+            224,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "gaia_blessing": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "plantbgone": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "pestspray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "weedspray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "nolabelspray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "dnamod": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            96,
+            32,
+            32
+          ],
+          [
+            448,
+            96,
+            32,
+            32
+          ],
+          [
+            0,
+            128,
+            32,
+            32
+          ],
+          [
+            32,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "dnamod-off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "dnamod-open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "dnamod-dna": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "random_beebox": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "beebox": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "honey_frame": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "bonfire": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "bonfire_warm": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "bonfire_on_fire": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            128,
+            32,
+            32
+          ],
+          [
+            352,
+            128,
+            32,
+            32
+          ],
+          [
+            384,
+            128,
+            32,
+            32
+          ],
+          [
+            416,
+            128,
+            32,
+            32
+          ],
+          [
+            448,
+            128,
+            32,
+            32
+          ],
+          [
+            0,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "bonfire_on_fire_intense": {
+        "dirs": 1,
+        "frames": 5,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            160,
+            32,
+            32
+          ],
+          [
+            64,
+            160,
+            32,
+            32
+          ],
+          [
+            96,
+            160,
+            32,
+            32
+          ],
+          [
+            128,
+            160,
+            32,
+            32
+          ],
+          [
+            160,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "bonfire_rod": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "bonfire_grill": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "sextractor": {
+        "dirs": 1,
+        "frames": 8,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            160,
+            32,
+            32
+          ],
+          [
+            288,
+            160,
+            32,
+            32
+          ],
+          [
+            320,
+            160,
+            32,
+            32
+          ],
+          [
+            352,
+            160,
+            32,
+            32
+          ],
+          [
+            384,
+            160,
+            32,
+            32
+          ],
+          [
+            416,
+            160,
+            32,
+            32
+          ],
+          [
+            448,
+            160,
+            32,
+            32
+          ],
+          [
+            0,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "sextractor_open": {
+        "dirs": 1,
+        "frames": 2,
+        "delay_deciseconds": [
+          2.0,
+          2.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            192,
+            32,
+            32
+          ],
+          [
+            64,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "loom": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "punji": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "punji_stab": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "woodspike": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "woodspike_stab": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "waterbackpackchem": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "secateurs": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "graft_plant": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "graft_flower": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "graft_doom": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "graft_mushroom": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "genesheers": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            192,
+            32,
+            32
+          ],
+          [
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            32,
+            224,
+            32,
+            32
+          ],
+          [
+            64,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "watering_can": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "adv_watering_can": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            224,
+            32,
+            32
+          ],
+          [
+            160,
+            224,
+            32,
+            32
+          ],
+          [
+            192,
+            224,
+            32,
+            32
+          ],
+          [
+            224,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "watering_can_wood": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "cultivator": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "hatchet": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "flyswatter": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "woodhatchet": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "rake": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "scythe0": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "scythe1": {
+        "dirs": 1,
+        "frames": 2,
+        "delay_deciseconds": [
+          2.0,
+          2.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            256,
+            32,
+            32
+          ],
+          [
+            32,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "bee_smoker": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "snail_hydrotray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_verm": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_gel": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_coir": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_worm": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_worm_wiggle": {
+        "dirs": 1,
+        "frames": 39,
+        "delay_deciseconds": [
+          1.0,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            256,
+            32,
+            32
+          ],
+          [
+            320,
+            256,
+            32,
+            32
+          ],
+          [
+            352,
+            256,
+            32,
+            32
+          ],
+          [
+            384,
+            256,
+            32,
+            32
+          ],
+          [
+            416,
+            256,
+            32,
+            32
+          ],
+          [
+            448,
+            256,
+            32,
+            32
+          ],
+          [
+            0,
+            288,
+            32,
+            32
+          ],
+          [
+            32,
+            288,
+            32,
+            32
+          ],
+          [
+            64,
+            288,
+            32,
+            32
+          ],
+          [
+            96,
+            288,
+            32,
+            32
+          ],
+          [
+            128,
+            288,
+            32,
+            32
+          ],
+          [
+            160,
+            288,
+            32,
+            32
+          ],
+          [
+            192,
+            288,
+            32,
+            32
+          ],
+          [
+            224,
+            288,
+            32,
+            32
+          ],
+          [
+            256,
+            288,
+            32,
+            32
+          ],
+          [
+            288,
+            288,
+            32,
+            32
+          ],
+          [
+            320,
+            288,
+            32,
+            32
+          ],
+          [
+            352,
+            288,
+            32,
+            32
+          ],
+          [
+            384,
+            288,
+            32,
+            32
+          ],
+          [
+            416,
+            288,
+            32,
+            32
+          ],
+          [
+            448,
+            288,
+            32,
+            32
+          ],
+          [
+            0,
+            320,
+            32,
+            32
+          ],
+          [
+            32,
+            320,
+            32,
+            32
+          ],
+          [
+            64,
+            320,
+            32,
+            32
+          ],
+          [
+            96,
+            320,
+            32,
+            32
+          ],
+          [
+            128,
+            320,
+            32,
+            32
+          ],
+          [
+            160,
+            320,
+            32,
+            32
+          ],
+          [
+            192,
+            320,
+            32,
+            32
+          ],
+          [
+            224,
+            320,
+            32,
+            32
+          ],
+          [
+            256,
+            320,
+            32,
+            32
+          ],
+          [
+            288,
+            320,
+            32,
+            32
+          ],
+          [
+            320,
+            320,
+            32,
+            32
+          ],
+          [
+            352,
+            320,
+            32,
+            32
+          ],
+          [
+            384,
+            320,
+            32,
+            32
+          ],
+          [
+            416,
+            320,
+            32,
+            32
+          ],
+          [
+            448,
+            320,
+            32,
+            32
+          ],
+          [
+            0,
+            352,
+            32,
+            32
+          ],
+          [
+            32,
+            352,
+            32,
+            32
+          ],
+          [
+            64,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_sack": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_sack_verm": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_sack_gel": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_sack_coir": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_sack_worm": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "rich_soil": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "hydrotray3": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            352,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_harvest3": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            352,
+            32,
+            32
+          ],
+          [
+            352,
+            352,
+            32,
+            32
+          ],
+          [
+            384,
+            352,
+            32,
+            32
+          ],
+          [
+            416,
+            352,
+            32,
+            32
+          ],
+          [
+            448,
+            352,
+            32,
+            32
+          ],
+          [
+            0,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_lownutri3": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            384,
+            32,
+            32
+          ],
+          [
+            64,
+            384,
+            32,
+            32
+          ],
+          [
+            96,
+            384,
+            32,
+            32
+          ],
+          [
+            128,
+            384,
+            32,
+            32
+          ],
+          [
+            160,
+            384,
+            32,
+            32
+          ],
+          [
+            192,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_lowwater3": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            384,
+            32,
+            32
+          ],
+          [
+            256,
+            384,
+            32,
+            32
+          ],
+          [
+            288,
+            384,
+            32,
+            32
+          ],
+          [
+            320,
+            384,
+            32,
+            32
+          ],
+          [
+            352,
+            384,
+            32,
+            32
+          ],
+          [
+            384,
+            384,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_lowhealth3": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            384,
+            32,
+            32
+          ],
+          [
+            448,
+            384,
+            32,
+            32
+          ],
+          [
+            0,
+            416,
+            32,
+            32
+          ],
+          [
+            32,
+            416,
+            32,
+            32
+          ],
+          [
+            64,
+            416,
+            32,
+            32
+          ],
+          [
+            96,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "over_alert3": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            416,
+            32,
+            32
+          ],
+          [
+            160,
+            416,
+            32,
+            32
+          ],
+          [
+            192,
+            416,
+            32,
+            32
+          ],
+          [
+            224,
+            416,
+            32,
+            32
+          ],
+          [
+            256,
+            416,
+            32,
+            32
+          ],
+          [
+            288,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_tray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_verm_tray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            352,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_gel_tray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            384,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_coir_tray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            416,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "soil_worm_tray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            448,
+            416,
+            32,
+            32
+          ]
+        ]
+      },
+      "rich_soil_tray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            448,
+            32,
+            32
+          ]
+        ]
+      },
+      "pitchfork": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            448,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "washing": {
+    "source": "icons/obj/machines/washing_machine.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      160,
+      128
+    ],
+    "states": {
+      "wm_1_0": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_0_0": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_1_1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_0_1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_running_0": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            0,
+            32,
+            32
+          ],
+          [
+            0,
+            32,
+            32,
+            32
+          ],
+          [
+            32,
+            32,
+            32,
+            32
+          ],
+          [
+            64,
+            32,
+            32,
+            32
+          ],
+          [
+            96,
+            32,
+            32,
+            32
+          ],
+          [
+            128,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_1_blood": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_0_blood": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_running_1": {
+        "dirs": 1,
+        "frames": 6,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            64,
+            32,
+            32
+          ],
+          [
+            96,
+            64,
+            32,
+            32
+          ],
+          [
+            128,
+            64,
+            32,
+            32
+          ],
+          [
+            0,
+            96,
+            32,
+            32
+          ],
+          [
+            32,
+            96,
+            32,
+            32
+          ],
+          [
+            64,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "wm_panel": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            96,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "coffee": {
+    "source": "icons/obj/machines/coffeemaker.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      160,
+      128
+    ],
+    "states": {
+      "coffeemaker_nopot_nocart": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "coffeemaker_pot_empty": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "coffeemaker_pot_full": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "coffeemaker_pot_bluespace": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "coffeemaker_cartidge": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "coffeemaker_impressa": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot_empty": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot_full": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot_bluespace": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_full": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_half": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "cups_3": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "cups_2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "cups_1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "extras_1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "extras_2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "extras_3": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            96,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "kitchen": {
+    "source": "icons/obj/machines/kitchen.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      352,
+      320
+    ],
+    "states": {
+      "griddle1_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "griddle1_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "griddle2_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "griddle2_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "griddle3_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 1,
+        "rects": [
+          [
+            128,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "griddle3_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "griddlestand_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "griddlestand_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "front_bar": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "oven_lid_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "oven_lid_closed": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "oven_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "oven_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "oven_light_mask": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_lid_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_lid_closed": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_light_mask": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_on_overlay": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_on_flame": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            32,
+            32,
+            32
+          ],
+          [
+            320,
+            32,
+            32,
+            32
+          ],
+          [
+            0,
+            64,
+            32,
+            32
+          ],
+          [
+            32,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_alt_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "range_alt_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "fridge": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "fridgeopen": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "fridgeg": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "fridger": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_d": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_e": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_jug_e": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_h": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_f": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_jug_h": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_jug_f": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_h_tan": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_f_tan": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_jug_h_tan": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_jug_f_tan": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_jug_f_red": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_h_red": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_f_red": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "blender_jug_h_red": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "juicer": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "juicer-on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "juicer-beaker": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "grillmarks": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "grill": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "grill_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "grill_on": {
+        "dirs": 1,
+        "frames": 9,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            128,
+            32,
+            32
+          ],
+          [
+            256,
+            128,
+            32,
+            32
+          ],
+          [
+            288,
+            128,
+            32,
+            32
+          ],
+          [
+            320,
+            128,
+            32,
+            32
+          ],
+          [
+            0,
+            160,
+            32,
+            32
+          ],
+          [
+            32,
+            160,
+            32,
+            32
+          ],
+          [
+            64,
+            160,
+            32,
+            32
+          ],
+          [
+            96,
+            160,
+            32,
+            32
+          ],
+          [
+            128,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "synthesizer": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            160,
+            32,
+            32
+          ],
+          [
+            192,
+            160,
+            32,
+            32
+          ],
+          [
+            224,
+            160,
+            32,
+            32
+          ],
+          [
+            256,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "synthesizer-o": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "synthesizer_beam": {
+        "dirs": 1,
+        "frames": 2,
+        "delay_deciseconds": [
+          1.4,
+          1.4
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            160,
+            32,
+            32
+          ],
+          [
+            0,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_jaws_active": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            192,
+            32,
+            32
+          ],
+          [
+            128,
+            192,
+            32,
+            32
+          ],
+          [
+            160,
+            192,
+            32,
+            32
+          ],
+          [
+            192,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_loaded": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            224,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_active": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_empty": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_bloody": {
+        "dirs": 1,
+        "frames": 9,
+        "delay_deciseconds": [
+          10.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            192,
+            32,
+            32
+          ],
+          [
+            0,
+            224,
+            32,
+            32
+          ],
+          [
+            32,
+            224,
+            32,
+            32
+          ],
+          [
+            64,
+            224,
+            32,
+            32
+          ],
+          [
+            96,
+            224,
+            32,
+            32
+          ],
+          [
+            128,
+            224,
+            32,
+            32
+          ],
+          [
+            160,
+            224,
+            32,
+            32
+          ],
+          [
+            192,
+            224,
+            32,
+            32
+          ],
+          [
+            224,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "processor": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "processor_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            288,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "processor_slime": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            320,
+            224,
+            32,
+            32
+          ]
+        ]
+      },
+      "processor_slime_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "fryer_off": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "fryer_open": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "fryer_on": {
+        "dirs": 1,
+        "frames": 5,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            256,
+            32,
+            32
+          ],
+          [
+            128,
+            256,
+            32,
+            32
+          ],
+          [
+            160,
+            256,
+            32,
+            32
+          ],
+          [
+            192,
+            256,
+            32,
+            32
+          ],
+          [
+            224,
+            256,
+            32,
+            32
+          ]
+        ]
+      },
+      "fryer_start": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 1,
+        "rewind": 0,
+        "rects": [
+          [
+            256,
+            256,
+            32,
+            32
+          ],
+          [
+            288,
+            256,
+            32,
+            32
+          ],
+          [
+            320,
+            256,
+            32,
+            32
+          ],
+          [
+            0,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "fryer_stop": {
+        "dirs": 1,
+        "frames": 4,
+        "delay_deciseconds": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "loop": 1,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            288,
+            32,
+            32
+          ],
+          [
+            64,
+            288,
+            32,
+            32
+          ],
+          [
+            96,
+            288,
+            32,
+            32
+          ],
+          [
+            128,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "fryer_greasy": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            288,
+            32,
+            32
+          ]
+        ]
+      },
+      "grinder_monkey": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            288,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  },
+  "food": {
+    "source": "icons/obj/service/kitchen.dmi",
+    "width": 32,
+    "height": 32,
+    "sheet": [
+      224,
+      224
+    ],
+    "states": {
+      "spikeframe": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "spike": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "spikebloodycorgi": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "spikebloodyalien": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "spikebloodymonkey": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "spikebloodybear": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "rolling_pin": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            0,
+            32,
+            32
+          ]
+        ]
+      },
+      "metal_rolling_pin": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "spoon": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "spoon_back": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "spoon_filled": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "ladle": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "ladle_filled": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "fork": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      "plastic_fork": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "plastic_spoon": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "plastic_knife": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "forkloaded": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "knife": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "butch": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "cleaver": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            64,
+            32,
+            32
+          ]
+        ]
+      },
+      "sharpener": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "roastingstick_on": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "roastingstick": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "roastingstick_sausage": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "serving": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "foodcart": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "icecream_vat": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            96,
+            32,
+            32
+          ]
+        ]
+      },
+      "icecream_cone_waffle": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "icecream_cone_chocolate": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "icecream_custom": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "pot_filling_overlay": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "oven_tray": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_small": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            128,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_large": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_metal": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_shard1": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_shard2": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            128,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_shard3": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            160,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_shard4": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            192,
+            160,
+            32,
+            32
+          ]
+        ]
+      },
+      "plate_shard5": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            0,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "carptooth": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            32,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "tongs": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            64,
+            192,
+            32,
+            32
+          ]
+        ]
+      },
+      "tongs_closed": {
+        "dirs": 1,
+        "frames": 1,
+        "delay_deciseconds": [
+          1.0
+        ],
+        "loop": 0,
+        "rewind": 0,
+        "rects": [
+          [
+            96,
+            192,
+            32,
+            32
+          ]
+        ]
+      }
+    }
+  }
+}

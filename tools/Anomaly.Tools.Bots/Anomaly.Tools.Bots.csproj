@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Anomaly.Tools.Bots</RootNamespace>
+    <AssemblyName>Anomaly.Tools.Bots</AssemblyName>
+  </PropertyGroup>
+  <!--
+    The bot client (ROADMAP M1 "tools/Bots", D55): N headless protocol clients in one process (LiteNetLib manual mode),
+    wander/idle/churn behaviours and abusive modes for tests. A protocol client only: it never references the core.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Protocol\Anomaly.Protocol.csproj" />
+    <ProjectReference Include="..\..\src\Net\Anomaly.Net.csproj" />
+    <!-- M2: the bots move capsules and predict their own with the motion core (scope 2l). -->
+    <ProjectReference Include="..\..\src\Core\Motion\Anomaly.Core.Motion.csproj" />
+  </ItemGroup>
+</Project>

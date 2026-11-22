@@ -1,0 +1,23 @@
+// Translated from tgstation (snapshot 1d99bd7f): code/modules/uplink/uplink_items/clownops.dm
+// Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
+using Anomaly.Core.DmShim;
+using Anomaly.Core.Kernel;
+using static Anomaly.Core.DmShim.Dm;
+using static Anomaly.Core.Tg.Builtins;
+using static Anomaly.Core.Tg.Defines;
+using static Anomaly.Core.Tg.GlobalProcs;
+
+namespace Anomaly.Core.Tg;
+
+// Syndicate package A2 (D316): the entries' procs (the entries and their categories are the generated var blocks).
+
+// tg: code/modules/uplink/uplink_items/clownops.dm:75
+public partial class datum_uplink_item_explosives_clown_bomb_clownops : datum_uplink_item_explosives
+{
+    // tg: code/modules/uplink/uplink_items/clownops.dm:86
+    public override async DmTask New(params object[] __extra)
+    {
+        await base.New(__extra);
+        desc = replacetext(desc, "%MIN_BOMB_TIMER", SYNDIEBOMB_MIN_TIMER_SECONDS);
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "atlas": "godot\\assets\\tg\\icons\\obj\\machines\\wallmounts.png",
+  "sha256": "36a08a447b460fd028e160d56d4514edbf13c4da5be182c9feaeebaeba46abb8",
+  "rgba_matches_dmi": true,
+  "atlas_dimensions": [
+    640,
+    608
+  ],
+  "tile": [
+    32,
+    32
+  ],
+  "source": "code/modules/security_levels/keycard_authentication.dm",
+  "map": "_maps/map_files/MetaStation/MetaStation.dmm",
+  "map_wall_records": 8,
+  "duplicate_audit": "No existing keycard_auth/auth model found before build",
+  "states": {
+    "base": "auth_off",
+    "confirmation": "auth_on frame 1",
+    "confirmation_dark_frame": "auth_on frame 0 empty; same appearance as idle"
+  },
+  "appearance_rule": "event_source and not NOPOWER/BROKEN; separate emissive overlay; no animation exported"
+}

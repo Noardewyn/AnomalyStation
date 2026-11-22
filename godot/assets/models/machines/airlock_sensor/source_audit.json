@@ -1,0 +1,115 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/wallmounts.png",
+  "original_dmi": "..\\tgstation\\icons\\obj\\machines\\wallmounts.dmi",
+  "size": [
+    640,
+    608
+  ],
+  "png_sha256": "36a08a447b460fd028e160d56d4514edbf13c4da5be182c9feaeebaeba46abb8",
+  "dmi_rgba_matches": true,
+  "states": [
+    {
+      "name": "airlock_sensor_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 0,
+      "rects": [
+        [
+          0,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_sensor_standby",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 1,
+      "rects": [
+        [
+          32,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_sensor_cycle",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        5,
+        5
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 2,
+      "rects": [
+        [
+          64,
+          0,
+          32,
+          32
+        ],
+        [
+          96,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_sensor_alert",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        3,
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": true,
+      "movement": false,
+      "hotspot": null,
+      "first": 4,
+      "rects": [
+        [
+          128,
+          0,
+          32,
+          32
+        ],
+        [
+          160,
+          0,
+          32,
+          32
+        ],
+        [
+          192,
+          0,
+          32,
+          32
+        ]
+      ]
+    }
+  ],
+  "source_code": "code/game/machinery/airlock_control.dm",
+  "map_definition_records": 2
+}

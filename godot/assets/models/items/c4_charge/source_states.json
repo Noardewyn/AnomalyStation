@@ -1,0 +1,109 @@
+{
+  "width": 32,
+  "height": 32,
+  "states": [
+    {
+      "name": "plastic-explosive0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 104,
+      "rects": [
+        [
+          448,
+          192,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "plastic-explosive1",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        9,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 105,
+      "rects": [
+        [
+          0,
+          224,
+          32,
+          32
+        ],
+        [
+          32,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "plastic-explosive2",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 107,
+      "rects": [
+        [
+          64,
+          224,
+          32,
+          32
+        ],
+        [
+          96,
+          224,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "plastic-explosive0_active",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 109,
+      "rects": [
+        [
+          128,
+          224,
+          32,
+          32
+        ],
+        [
+          160,
+          224,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

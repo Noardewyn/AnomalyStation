@@ -1,0 +1,271 @@
+{
+  "appearance_count": 67,
+  "family_count": 21,
+  "families": [
+    {
+      "family": "wardrobe",
+      "states": [
+        "atmosdrobe",
+        "bardrobe",
+        "cargodrobe",
+        "centdrobe",
+        "chapdrobe",
+        "chefdrobe",
+        "chemdrobe",
+        "clothes",
+        "coroner_drobe",
+        "curadrobe",
+        "detdrobe",
+        "engidrobe",
+        "genedrobe",
+        "hydrobe",
+        "janidrobe",
+        "lawdrobe",
+        "medidrobe",
+        "robodrobe",
+        "scidrobe",
+        "secdrobe",
+        "virodrobe"
+      ],
+      "reuse": "Shared tall display and full-width delivery slot"
+    },
+    {
+      "family": "snack",
+      "states": [
+        "snack",
+        "snackblue",
+        "snackorange",
+        "snackgreen",
+        "snackteal",
+        "sustenance",
+        "sustenance_labor",
+        "nutri",
+        "seeds"
+      ],
+      "reuse": "Shared product window, right keypad and lower dispenser"
+    },
+    {
+      "family": "branded_drink",
+      "states": [
+        "Cola_Machine",
+        "cola_black",
+        "red_cola",
+        "space_up",
+        "pwr_game",
+        "shamblers_juice"
+      ],
+      "reuse": "Shared solid graphic front, side controls and recessed delivery slot"
+    },
+    {
+      "family": "drink_display",
+      "states": [
+        "soda",
+        "starkist"
+      ],
+      "reuse": "Large inset graphic display, centered delivery slot"
+    },
+    {
+      "family": "magic",
+      "states": [
+        "MagiVend",
+        "RunicVendor"
+      ],
+      "reuse": "Same display and delivery geometry; distinct magical artwork"
+    },
+    {
+      "family": "wide_medical",
+      "states": [
+        "med",
+        "drug"
+      ],
+      "reuse": "Wide upright cabinet, tall left display and lower-right dispenser"
+    },
+    {
+      "family": "wide_service",
+      "states": [
+        "cart",
+        "sec"
+      ],
+      "reuse": "Wide cabinet with left service display, right keypad and small dispenser"
+    },
+    {
+      "family": "wide_electronics",
+      "states": [
+        "robotics",
+        "modularpc"
+      ],
+      "reuse": "Wide horizontal display with broad lower dispenser; widths differ by source"
+    },
+    {
+      "family": "wide_food",
+      "states": [
+        "snackdonk",
+        "syndi",
+        "nt-donk",
+        "liberationstation"
+      ],
+      "reuse": "Wide solid advertising panel, right keypad and broad dispenser"
+    },
+    {
+      "family": "compact_product",
+      "states": [
+        "cigs",
+        "generic",
+        "parts",
+        "games"
+      ],
+      "reuse": "Compact centered product display; exact recess sizes selected per sprite"
+    },
+    {
+      "family": "industrial",
+      "states": [
+        "tool",
+        "engivend"
+      ],
+      "reuse": "Tall industrial body, lower panel and asymmetric control recess"
+    },
+    {
+      "family": "custom",
+      "states": [
+        "custom",
+        "greed"
+      ],
+      "reuse": "Wide custom product display and broad lower tray"
+    },
+    {
+      "family": "coffee",
+      "states": [
+        "coffee"
+      ],
+      "reuse": "Coffee panel above a centered cup recess"
+    },
+    {
+      "family": "dinnerware",
+      "states": [
+        "dinnerware"
+      ],
+      "reuse": "Tall open-looking shelf display and right controls"
+    },
+    {
+      "family": "engi",
+      "states": [
+        "engi"
+      ],
+      "reuse": "Wide industrial panel with lower horizontal item display"
+    },
+    {
+      "family": "sovietsoda",
+      "states": [
+        "sovietsoda"
+      ],
+      "reuse": "Separate protruding upper sign and lower dispensing cavity"
+    },
+    {
+      "family": "boozeomat",
+      "states": [
+        "boozeomat"
+      ],
+      "reuse": "Extra-wide cabinet: bottle window, separate keypad and delivery recess"
+    },
+    {
+      "family": "hotdog",
+      "states": [
+        "hotdog-vendor"
+      ],
+      "reuse": "Protruding central dispenser between deep side casings"
+    },
+    {
+      "family": "wall_medical",
+      "states": [
+        "wallmed"
+      ],
+      "reuse": "Shallow wall-mounted compact dispenser, not a shortened floor cabinet"
+    },
+    {
+      "family": "theater",
+      "states": [
+        "theater"
+      ],
+      "reuse": "Large costume display, small delivery opening"
+    },
+    {
+      "family": "cytopro",
+      "states": [
+        "cytopro"
+      ],
+      "reuse": "Narrow portrait display, side controls and lower delivery opening"
+    }
+  ],
+  "state_to_family": {
+    "atmosdrobe": "wardrobe",
+    "bardrobe": "wardrobe",
+    "cargodrobe": "wardrobe",
+    "centdrobe": "wardrobe",
+    "chapdrobe": "wardrobe",
+    "chefdrobe": "wardrobe",
+    "chemdrobe": "wardrobe",
+    "clothes": "wardrobe",
+    "coroner_drobe": "wardrobe",
+    "curadrobe": "wardrobe",
+    "detdrobe": "wardrobe",
+    "engidrobe": "wardrobe",
+    "genedrobe": "wardrobe",
+    "hydrobe": "wardrobe",
+    "janidrobe": "wardrobe",
+    "lawdrobe": "wardrobe",
+    "medidrobe": "wardrobe",
+    "robodrobe": "wardrobe",
+    "scidrobe": "wardrobe",
+    "secdrobe": "wardrobe",
+    "virodrobe": "wardrobe",
+    "snack": "snack",
+    "snackblue": "snack",
+    "snackorange": "snack",
+    "snackgreen": "snack",
+    "snackteal": "snack",
+    "sustenance": "snack",
+    "sustenance_labor": "snack",
+    "nutri": "snack",
+    "seeds": "snack",
+    "Cola_Machine": "branded_drink",
+    "cola_black": "branded_drink",
+    "red_cola": "branded_drink",
+    "space_up": "branded_drink",
+    "pwr_game": "branded_drink",
+    "shamblers_juice": "branded_drink",
+    "soda": "drink_display",
+    "starkist": "drink_display",
+    "MagiVend": "magic",
+    "RunicVendor": "magic",
+    "med": "wide_medical",
+    "drug": "wide_medical",
+    "cart": "wide_service",
+    "sec": "wide_service",
+    "robotics": "wide_electronics",
+    "modularpc": "wide_electronics",
+    "snackdonk": "wide_food",
+    "syndi": "wide_food",
+    "nt-donk": "wide_food",
+    "liberationstation": "wide_food",
+    "cigs": "compact_product",
+    "generic": "compact_product",
+    "parts": "compact_product",
+    "games": "compact_product",
+    "tool": "industrial",
+    "engivend": "industrial",
+    "custom": "custom",
+    "greed": "custom",
+    "coffee": "coffee",
+    "dinnerware": "dinnerware",
+    "engi": "engi",
+    "sovietsoda": "sovietsoda",
+    "boozeomat": "boozeomat",
+    "hotdog-vendor": "hotdog",
+    "wallmed": "wall_medical",
+    "theater": "theater",
+    "cytopro": "cytopro"
+  },
+  "sharing_rule": "Same family plus exact source silhouette, width and recess layout. Geometry and UV data are linked; per-state material selects atlas tile. Different silhouettes/layouts keep separate meshes.",
+  "source_interpretation": "Upper horizontal cap and edge bands are mapped to physical roof and stepped side edges. The front begins below the roof band. Side and rear service textures are derived separately from source colours and trim, never a repeated full frontal sprite.",
+  "state_policy": "67 declared appearance states, not 287 independent machines. Off/broken/deny/animation frames are state variants; frame metadata is preserved, no animations are added."
+}

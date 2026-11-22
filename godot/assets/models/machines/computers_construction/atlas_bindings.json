@@ -1,0 +1,2201 @@
+{
+  "medical_laptop": {
+    "Medical_Screen": {
+      "material": "Medical_Screen_Atlas.005",
+      "atlas": "textures/computer.png",
+      "default_state": "medlaptop",
+      "crop": [
+        8,
+        5,
+        16,
+        10
+      ],
+      "states": {
+        "medlaptop": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0975609756097561,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.1951219512195122,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.2926829268292683,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.3902439024390244,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.4878048780487805,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.4146341463414634,
+                0.025
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.3170731707317073,
+                0.025
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  "modular_computer": {
+    "Program_Screen": {
+      "material": "Program_Screen_Atlas.022",
+      "atlas": "textures/modular.png",
+      "default_state": "menu",
+      "crop": [
+        5,
+        8,
+        22,
+        9
+      ],
+      "states": {
+        "command": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.71875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.71875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0
+          ]
+        },
+        "ai-fixer-empty": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.71875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.71875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            7.0,
+            7.0
+          ]
+        },
+        "ai-fixer-full": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.6875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "upload": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.6875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.6875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0
+          ]
+        },
+        "alert-green": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.6875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "alert-red": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.6875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.6875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0
+          ]
+        },
+        "comm": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.6875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.6875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0
+          ]
+        },
+        "medical": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.65625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "dna": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.59375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.5625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.53125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.53125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.53125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.53125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.53125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            8.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "engine": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.53125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "id": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.53125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.53125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0
+          ]
+        },
+        "medcomp": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.5
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.46875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.46875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.46875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.46875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.46875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.46875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.46875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "shuttle": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.46875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.4375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.4375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "solar": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.4375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.4375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.4375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.4375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "teleport": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.4375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.4375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.40625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.40625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "security": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.40625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "cameras": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.40625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.40625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.40625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.40625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.40625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            18.0,
+            1.0,
+            18.0,
+            1.0,
+            18.0,
+            1.0,
+            18.0,
+            1.0
+          ]
+        },
+        "explosive": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.34375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.34375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.34375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.34375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            10.0,
+            1.0,
+            1.0,
+            10.0,
+            1.0,
+            1.0,
+            10.0,
+            1.0,
+            1.0
+          ]
+        },
+        "hostile": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.34375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "supply": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.34375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "request": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.34375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.34375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.3125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.3125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.3125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.3125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ]
+        },
+        "mafia": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.3125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "research": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.3125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "robot": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.3125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "dummy": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.3125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.28125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.28125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.28125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.28125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.28125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.28125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.28125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            10.0,
+            1.0,
+            10.0,
+            1.0,
+            10.0,
+            1.0,
+            10.0,
+            1.0
+          ]
+        },
+        "mecha": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.28125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.25
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "comm_monitor": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.25
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            4.0,
+            4.0,
+            4.0
+          ]
+        },
+        "comm_logs": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.21875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            2.0,
+            1.0,
+            2.0,
+            1.0,
+            2.0,
+            1.0,
+            2.0
+          ]
+        },
+        "forensic": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.15625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "holocontrol": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            10.0,
+            1.0,
+            10.0,
+            1.0,
+            10.0,
+            1.0,
+            10.0,
+            1.0
+          ]
+        },
+        "entertainment": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.09375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            4.0,
+            4.0,
+            4.0
+          ]
+        },
+        "game": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.09375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "crew": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                -0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                -0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                -0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                -0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                -0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                -0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                -0.03125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "generic": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                -0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.0
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0
+          ]
+        },
+        "menu": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "power_monitor": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.0
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ]
+        },
+        "power_monitor_warn": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.0
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.0
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0
+          ]
+        },
+        "alarm_monitor": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.03125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            10.0,
+            10.0
+          ]
+        },
+        "atmos_control": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.03125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "standby": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.03125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.0625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.0625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            60.0
+          ]
+        },
+        "bsod": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.0625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "smmon_0": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.0625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "smmon_1": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.0625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "smmon_2": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.0625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "smmon_3": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.0625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "smmon_4": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.0625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "smmon_5": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.09375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "smmon_6": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.09375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            3.0,
+            3.0
+          ]
+        },
+        "arcade": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.09375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            3.0,
+            4.0
+          ]
+        },
+        "arcade_off": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.09375
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            3.0,
+            4.0
+          ]
+        },
+        "air": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.09375
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.125
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "shipping": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.125
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.15625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "bountyboard": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.15625
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "bounty": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.15625
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.1875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.1875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "modsuit_control": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.1875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        },
+        "restock": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.21875
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "text": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.75,
+                0.21875
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                -0.125,
+                0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.0,
+                0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.125,
+                0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.25,
+                0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.375,
+                0.25
+              ]
+            },
+            {
+              "godot_uv1_offset": [
+                0.5,
+                0.25
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "accounting": {
+          "frames": [
+            {
+              "godot_uv1_offset": [
+                0.625,
+                0.25
+              ]
+            }
+          ],
+          "delay_deciseconds": [
+            1.0
+          ]
+        }
+      }
+    }
+  }
+}

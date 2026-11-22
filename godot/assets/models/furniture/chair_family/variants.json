@@ -1,0 +1,35 @@
+{
+  "atlas": "res://assets/tg/icons/obj/chairs.png",
+  "texture_filter": "nearest",
+  "direction_yaw_degrees_godot": {"south": 0, "north": 180, "east": 90, "west": 270},
+  "office": {
+    "geometry_shared_in_blender_library": true,
+    "dark": {"model": "office_chair_dark.glb", "state": "officechair_dark"},
+    "white": {
+      "model": "office_chair_white.glb",
+      "state": "officechair_white",
+      "material": "Office_White_Original_Atlas",
+      "gltf_uv_offset": [-0.6923076923076923, 0.08333333333333333]
+    }
+  },
+  "comfy": {
+    "model": "comfy_chair.glb",
+    "state": "comfychair",
+    "overlay_state": "comfychair_armrest",
+    "material_slots_to_tint": ["Comfy_Upholstery_Tint", "Comfy_Armrest_Overlay_Tint"],
+    "tint_semantics": "Multiply original grayscale sprite by the source sRGB color; color variants reuse geometry and atlas",
+    "tint_srgb8": {
+      "white": [255, 255, 255],
+      "brown": [70, 47, 28],
+      "beige": [240, 238, 198],
+      "teal": [117, 214, 214],
+      "black": [61, 60, 56],
+      "lime": [193, 248, 104]
+    }
+  },
+  "wood": {
+    "common_meshes": ["Seat", "Leg_-1_-1", "Leg_-1_1", "Leg_1_-1", "Leg_1_1", "Front_Apron", "Side_Apron_-1", "Side_Apron_1"],
+    "standard": {"model": "wooden_chair.glb", "backrest_state": "wooden_chair"},
+    "wings": {"model": "wooden_chair_wings.glb", "backrest_state": "wooden_chair_wings"}
+  }
+}

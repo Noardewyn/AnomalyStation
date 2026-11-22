@@ -1,0 +1,79 @@
+{
+  "vertices": 552,
+  "limit": 600,
+  "dimensions_m": [
+    0.98,
+    0.98,
+    0.973
+  ],
+  "palette": [
+    "EFEFEF",
+    "BBBBBB",
+    "888888",
+    "444444",
+    "33CC33",
+    "CC3333"
+  ],
+  "parts": {
+    "Octagonal_Core": 16,
+    "Beveled_Foot": 24,
+    "Cooling_Rib_01": 32,
+    "Cooling_Rib_02": 32,
+    "Cooling_Rib_03": 32,
+    "Cooling_Rib_04": 32,
+    "Cooling_Rib_05": 32,
+    "Recessed_Top_Rim": 40,
+    "Top_Well": 16,
+    "Top_Octagonal_Plug": 24,
+    "Service_Cavity_Frame": 12,
+    "Internal_Control_Board": 8,
+    "Internal_Bus_Rail_1": 8,
+    "Internal_Bus_Rail_2": 8,
+    "Internal_Bus_Rail_3": 8,
+    "Internal_Cell_1": 16,
+    "Internal_Cell_2": 16,
+    "Internal_Terminal_Block": 8,
+    "Terminal_Contact_1": 8,
+    "Terminal_Contact_2": 8,
+    "Terminal_Contact_3": 8,
+    "Service_Door": 8,
+    "Control_Recess_Bevel": 8,
+    "Control_Recess": 8,
+    "Charge_Gauge_Bezel": 8,
+    "Charge_Level_1": 4,
+    "Charge_Level_2": 4,
+    "Charge_Level_3": 4,
+    "Charge_Level_4": 4,
+    "Charge_Level_5": 4,
+    "Upper_Green_Socket": 8,
+    "Upper_Green_Lens": 8,
+    "Upper_Green_Output_Highlight": 8,
+    "Upper_Green_Input_Pulse": 8,
+    "Lower_Red_Socket": 8,
+    "Lower_Red_Lens": 8,
+    "Lower_Red_Output_Highlight": 8,
+    "Lower_Red_Input_Pulse": 8,
+    "Captive_Screw_1": 8,
+    "Captive_Screw_2": 8,
+    "Captive_Screw_3": 8,
+    "Captive_Screw_4": 8,
+    "Door_Hinge_Mount_1": 8,
+    "Door_Hinge_Mount_2": 8
+  },
+  "source_animations": {
+    "smes-og1": [
+      1,
+      1
+    ],
+    "smes-oc0": [
+      0.5,
+      0.5
+    ],
+    "smes-oc1": [
+      0.5,
+      0.5
+    ]
+  },
+  "lights": 3,
+  "emissive_materials": 3
+}

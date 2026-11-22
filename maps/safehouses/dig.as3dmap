@@ -1,0 +1,35 @@
+anomaly-map 1
+source _maps/safehouses/dig.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/closed/wall/rock | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+1,6: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+4,6: /obj/machinery/door/airlock/maintenance/glass | /obj/structure/fans/tiny | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating | /area/virtual_domain/safehouse
+7,6: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+1,5: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+2,5: /obj/effect/turf_decal/sand/plating | /obj/effect/turf_decal/sand/plating | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/virtual_domain/safehouse
+3,5: /obj/effect/turf_decal/siding/yellow{dir = 8} | /obj/effect/decal/remains/xeno/larva | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+4,5: /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+5,5: /obj/structure/table | /obj/item/coin/gold{pixel_x = -6; pixel_y = 2} | /obj/item/flashlight/lantern{pixel_y = 8; pixel_x = 4; start_on = 1} | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+2,4: /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating | /area/virtual_domain/safehouse
+3,4: /obj/effect/turf_decal/siding/yellow{dir = 8} | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+4,4: /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+5,4: /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+6,4: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+7,4: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+2,3: /obj/effect/turf_decal/sand/plating | /obj/effect/turf_decal/siding/yellow/corner | /obj/effect/turf_decal/sand/plating | /obj/item/flashlight/glowstick{start_on = 1} | /turf/open/floor/plating | /area/virtual_domain/safehouse
+3,3: /obj/effect/turf_decal/siding/yellow{dir = 8} | /obj/effect/turf_decal/siding/yellow | /obj/effect/decal/cleanable/blood/splatter/oil | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+4,3: /obj/effect/turf_decal/siding/yellow | /obj/effect/decal/remains/xeno | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+5,3: /obj/effect/turf_decal/siding/yellow/corner{dir = 8} | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+6,3: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+7,3: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+1,2: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+2,2: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+3,2: /obj/effect/turf_decal/loading_area | /obj/effect/turf_decal/box/corners{dir = 8} | /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+4,2: /obj/structure/railing{dir = 4} | /obj/effect/turf_decal/loading_area | /obj/effect/turf_decal/box/corners | /obj/effect/landmark/bitrunning/cache_goal_turf | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+5,2: /obj/effect/turf_decal/siding/yellow{dir = 8} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+6,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/misc/asteroid | /area/virtual_domain/safehouse
+1,1: /obj/modular_map_connector | /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse
+5,1: /turf/closed/mineral/asteroid | /area/virtual_domain/safehouse

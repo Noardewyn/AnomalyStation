@@ -1,0 +1,18 @@
+anomaly-map 1
+source _maps/map_files/T2Turfs/T2Turfs.dmm tg 1d99bd7f
+size 8 4 1
+chunk 32
+default /turf/open/space/basic | /area/space
+
+[chunk 1 1 1]
+2,4: /turf/open/floor/iron | /area/station/hallway/primary/central
+3,4: /turf/open/floor/plating | /area/station/hallway/primary/central
+4,4: /turf/closed/wall/r_wall | /area/station/hallway/primary/central
+5,4: /turf/closed/wall | /area/station/hallway/primary/central
+6,4: /turf/open/space/basic | /area/station/hallway/primary/central
+7,4: /turf/open/floor/iron | /area/space/nearstation
+2,3: /obj/item/crowbar | /obj/effect/landmark/start/assistant | /turf/open/floor/iron | /area/station/hallway/primary/central
+3,3: /turf/open/indestructible | /area/station/hallway/primary/central
+4,3: /obj/structure/lattice | /turf/open/space/basic | /area/space/nearstation
+6,3: /turf/open/floor/iron | /area/station/hallway/primary/central
+7,3: /turf/open/floor/iron | /area/station/hallway/primary/central

@@ -1,0 +1,1986 @@
+{
+  "wall_healer_level_0": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar0",
+      "bar0",
+      "bar0",
+      "bar0",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_level_1": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar1",
+      "bar1",
+      "bar1",
+      "bar1",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.012",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar1"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.012",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar1"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.012",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar1"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.012",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar1"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_level_2": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar2",
+      "bar2",
+      "bar2",
+      "bar2",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.013",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar2"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.013",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar2"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.013",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar2"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.013",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar2"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_level_3": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar3",
+      "bar3",
+      "bar3",
+      "bar3",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.014",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar3"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.014",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar3"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.014",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar3"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.014",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar3"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_level_4": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar4",
+      "bar4",
+      "bar4",
+      "bar4",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.015",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar4"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.015",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar4"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.015",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar4"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.015",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar4"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_level_5": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar5",
+      "bar5",
+      "bar5",
+      "bar5",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.016",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar5"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.016",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar5"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.016",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar5"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.016",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar5"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_level_6": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar6",
+      "bar6",
+      "bar6",
+      "bar6",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.017",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar6"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.017",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar6"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.017",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar6"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.017",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar6"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_level_7": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar7",
+      "bar7",
+      "bar7",
+      "bar7",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.018",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar7"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.018",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar7"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.018",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar7"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.018",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar7"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_mixed": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar0",
+      "bar2",
+      "bar4",
+      "bar6",
+      "bar_shadow",
+      "bar_emissive"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.013",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar2"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.015",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar4"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.017",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar6"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_off": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar0",
+      "bar0",
+      "bar0",
+      "bar0",
+      "bar_shadow"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.020",
+        "materials": [
+          "Wall_Healer_Libital_Unlit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.020",
+        "materials": [
+          "Wall_Healer_Aiuri_Unlit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.020",
+        "materials": [
+          "Wall_Healer_Syriniver_Unlit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.020",
+        "materials": [
+          "Wall_Healer_Blood_Unlit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 258
+  },
+  "wall_healer_open": {
+    "base_state": "wall_healer",
+    "overlays": [
+      "bar0",
+      "bar0",
+      "bar0",
+      "bar0",
+      "bar_shadow",
+      "bar_emissive",
+      "open"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Medical_Housing",
+        "triangles": 148,
+        "shared_mesh": "Continuous_Medical_Housing.011",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Libital_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Libital_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Libital_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Libital_Glass",
+        "triangles": 12,
+        "shared_mesh": "Libital_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Aiuri_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Aiuri_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Aiuri_Glass",
+        "triangles": 12,
+        "shared_mesh": "Aiuri_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Syriniver_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Syriniver_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Syriniver_Glass",
+        "triangles": 12,
+        "shared_mesh": "Syriniver_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Blood_Reservoir",
+        "triangles": 12,
+        "shared_mesh": "Blood_Reservoir.011",
+        "materials": [
+          "Wall_Healer_Blood_Lit.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bar0"
+      },
+      {
+        "name": "Blood_Glass",
+        "triangles": 12,
+        "shared_mesh": "Blood_Glass.011",
+        "materials": [
+          "Wall_Healer_Glass_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Bar_Shadow_Overlay",
+        "triangles": 2,
+        "shared_mesh": "Bar_Shadow_Overlay.011",
+        "materials": [
+          "Wall_Healer_Shadow_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover.108",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Contacts",
+        "triangles": 12,
+        "shared_mesh": "Service_Contacts.001",
+        "materials": [
+          "Wall_Healer_Original_Atlas.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 270
+  }
+}

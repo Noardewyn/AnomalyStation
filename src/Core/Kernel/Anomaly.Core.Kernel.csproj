@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Determinism (docs/ai/specs/object-model.md section 8): the core compiles optimized in every configuration, so the
+         locals an async method keeps across an await, and with them the objects alive at a state hash, are the same in
+         Debug and Release builds. -->
+    <Optimize>true</Optimize>
+    <RootNamespace>Anomaly.Core.Kernel</RootNamespace>
+    <AssemblyName>Anomaly.Core.Kernel</AssemblyName>
+  </PropertyGroup>
+</Project>

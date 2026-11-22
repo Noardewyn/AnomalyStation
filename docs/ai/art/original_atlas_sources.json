@@ -1,0 +1,576 @@
+{
+  "sources": {
+    "godot\\assets\\tg\\icons\\map_icons\\objects.png": {
+      "source_dmi": "..\\tgstation\\icons\\map_icons\\objects.dmi",
+      "size": [
+        320,
+        320
+      ],
+      "pixels_identical": true,
+      "sha256": "a7937529421ab67cd2b396b59fdc33ba7053d7281ce97aa0f92204d71706ccbf"
+    },
+    "godot\\assets\\tg\\icons\\mob\\silicon\\robots.png": {
+      "source_dmi": "..\\tgstation\\icons\\mob\\silicon\\robots.dmi",
+      "size": [
+        1024,
+        992
+      ],
+      "pixels_identical": true,
+      "sha256": "277a78201a6bf76d94e3a09ea0febfbf9c48c97d9c542bf457adb8b8b475d8f1"
+    },
+    "godot\\assets\\tg\\icons\\obj\\bed.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\bed.dmi",
+      "size": [
+        192,
+        160
+      ],
+      "pixels_identical": true,
+      "sha256": "de4bea42f897c5870a295cdbdd9acc340df564a81765cec338945345d6026357"
+    },
+    "godot\\assets\\tg\\icons\\obj\\chairs.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\chairs.dmi",
+      "size": [
+        416,
+        384
+      ],
+      "pixels_identical": true,
+      "sha256": "2e96412e8b8da11d0e958a6a91922b9f5f1324199139cd86b26204d5390d0c05"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\centcom\\centcom.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\airlocks\\centcom\\centcom.dmi",
+      "size": [
+        128,
+        128
+      ],
+      "pixels_identical": true,
+      "sha256": "9ae1728734b64ce00fef19f2847481ada8bfb3d1593b0c1bcb552a78ff39a6a8"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\external\\external.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\airlocks\\external\\external.dmi",
+      "size": [
+        192,
+        192
+      ],
+      "pixels_identical": true,
+      "sha256": "f75b110aba5af0106bdddaf279c332efbacdc606cc8f00240f0940eaf2ecbd1d"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\hatch\\centcom.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\airlocks\\hatch\\centcom.dmi",
+      "size": [
+        128,
+        128
+      ],
+      "pixels_identical": true,
+      "sha256": "ee3370095350be7eae1b585872cd2d8410812b3a58f58018297f3a3158475548"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\highsec\\highsec.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\airlocks\\highsec\\highsec.dmi",
+      "size": [
+        160,
+        128
+      ],
+      "pixels_identical": true,
+      "sha256": "14f4e75b418c9f8ef52faa34ee254b55e095c93afd3dfc7ed145f98d78360c6f"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\public\\glass.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\airlocks\\public\\glass.dmi",
+      "size": [
+        192,
+        160
+      ],
+      "pixels_identical": true,
+      "sha256": "42481f22062ae028e1d76f9d84831ae9d0ea35c11ef47b12854f4309dec6d348"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\station\\maintenance.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\airlocks\\station\\maintenance.dmi",
+      "size": [
+        192,
+        160
+      ],
+      "pixels_identical": true,
+      "sha256": "be4e9f3763ed54422898bd55dc365e7a14ac7c2a0c284c05e998bb7cfce4ab90"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\airlocks\\vault\\vault.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\airlocks\\vault\\vault.dmi",
+      "size": [
+        128,
+        128
+      ],
+      "pixels_identical": true,
+      "sha256": "c18b23f69d43122b2e210614c20fa519ac14f8224d9d752c428efba33a59fc52"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\blastdoor.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\blastdoor.dmi",
+      "size": [
+        160,
+        128
+      ],
+      "pixels_identical": true,
+      "sha256": "812424b7a564ec37a89d288f0a58d0af1afd76be9e93cf0af337f0b6bd729a37"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\doorfire.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\doorfire.dmi",
+      "size": [
+        224,
+        192
+      ],
+      "pixels_identical": true,
+      "sha256": "7d6bcda0a75543a7668a727089414a43cae48106a492b6eb884939a789910952"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\doorfireglass.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\doorfireglass.dmi",
+      "size": [
+        256,
+        224
+      ],
+      "pixels_identical": true,
+      "sha256": "5b11c7ae1d98eae656219918760f82dfadf988857dca6c31b843c698d41940ca"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\doormorgue.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\doormorgue.dmi",
+      "size": [
+        384,
+        384
+      ],
+      "pixels_identical": true,
+      "sha256": "f63141dee32fae1de7d91001b1478258be30bbac4f29437fb9fe2bfc9a43533d"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\shutters.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\shutters.dmi",
+      "size": [
+        480,
+        480
+      ],
+      "pixels_identical": true,
+      "sha256": "71117d235a2dd71487290fdb78067f22577be16e0367ca745350f11fe6535130"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\shutters_radiation.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\shutters_radiation.dmi",
+      "size": [
+        480,
+        480
+      ],
+      "pixels_identical": true,
+      "sha256": "ee64369cbe62b8b4a18ebbc8f9551ae9d013843800a5fd1d881e21bff95d3707"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\shutters_window.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\shutters_window.dmi",
+      "size": [
+        480,
+        480
+      ],
+      "pixels_identical": true,
+      "sha256": "c42622c988b53636546adeb8f889242339618cf658c1200fa632eafd2ba5bde1"
+    },
+    "godot\\assets\\tg\\icons\\obj\\doors\\windoor.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\doors\\windoor.dmi",
+      "size": [
+        768,
+        768
+      ],
+      "pixels_identical": true,
+      "sha256": "e677d1f5f1716bd3d0b5588743ff92f9bb128bffb6e8f57f4115423e32a12f46"
+    },
+    "godot\\assets\\tg\\icons\\obj\\machines\\computer.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\machines\\computer.dmi",
+      "size": [
+        1312,
+        1280
+      ],
+      "pixels_identical": true,
+      "sha256": "03845daf2e8105b09c9d155d330d99e8b4d8e798033b9f036bbb5ce96a78b825"
+    },
+    "godot\\assets\\tg\\icons\\obj\\machines\\engine\\other.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\machines\\engine\\other.dmi",
+      "size": [
+        480,
+        448
+      ],
+      "pixels_identical": true,
+      "sha256": "43d1e04e94647e806f5a0f6a9930e43baa9831426e231a32bd91c49084713e42"
+    },
+    "godot\\assets\\tg\\icons\\obj\\machines\\floor.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\machines\\floor.dmi",
+      "size": [
+        352,
+        352
+      ],
+      "pixels_identical": true,
+      "sha256": "ad09b731ed4191b2134cd5d6ae73e81d20bdb1e180df970920af748e14d9042f"
+    },
+    "godot\\assets\\tg\\icons\\obj\\machines\\solar.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\machines\\solar.dmi",
+      "size": [
+        128,
+        128
+      ],
+      "pixels_identical": true,
+      "sha256": "8512b66e03c9fad4b007bba07314791139b341dd3fb1ed2f090590e080892af1"
+    },
+    "godot\\assets\\tg\\icons\\obj\\machines\\suit_storage.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\machines\\suit_storage.dmi",
+      "size": [
+        224,
+        192
+      ],
+      "pixels_identical": true,
+      "sha256": "d6e02552b13d7b2062dd4af17cb165588a169cbc49e14fd1b3a75df623df6733"
+    },
+    "godot\\assets\\tg\\icons\\obj\\machines\\vending.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\machines\\vending.dmi",
+      "size": [
+        800,
+        800
+      ],
+      "pixels_identical": true,
+      "sha256": "c020c223ff8941973d75d600c8a6b0cfcedb8e140765906d4704d0f066a87b66"
+    },
+    "godot\\assets\\tg\\icons\\obj\\medical\\chemical_tanks.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\medical\\chemical_tanks.dmi",
+      "size": [
+        192,
+        160
+      ],
+      "pixels_identical": true,
+      "sha256": "f2f4c3bde8a9db11c38cb5b7f1fcd97a1a14e29e82a8872ff10b1f9c4f2cf1bb"
+    },
+    "godot\\assets\\tg\\icons\\obj\\medical\\medical_bed.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\medical\\medical_bed.dmi",
+      "size": [
+        160,
+        160
+      ],
+      "pixels_identical": true,
+      "sha256": "2d75fafc9b0e1a87a5fae224334d6eaab767310fb573cbfa042d0c18fa43c4da"
+    },
+    "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\disposal.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\pipes_n_cables\\disposal.dmi",
+      "size": [
+        544,
+        512
+      ],
+      "pixels_identical": true,
+      "sha256": "e0e26032948941c65710d95cd12772178aa972273c47e5a46d938695d540f2bc"
+    },
+    "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\pipes_n_cables\\stationary_canisters.dmi",
+      "size": [
+        224,
+        224
+      ],
+      "pixels_identical": true,
+      "sha256": "e56fc019f36d94d263a1c6c512a29661d58aa06065ccef586cb0170c91cdfa1c"
+    },
+    "godot\\assets\\tg\\icons\\obj\\pipes_n_cables\\stationary_canisters_misc.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\pipes_n_cables\\stationary_canisters_misc.dmi",
+      "size": [
+        160,
+        128
+      ],
+      "pixels_identical": true,
+      "sha256": "549546c822382e7d6053f9fded4df2f09f8d7271c57c362c40fb85caf3636880"
+    },
+    "godot\\assets\\tg\\icons\\obj\\service\\hydroponics\\equipment.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\service\\hydroponics\\equipment.dmi",
+      "size": [
+        480,
+        480
+      ],
+      "pixels_identical": true,
+      "sha256": "e82ea969f5b806d9b135e1ec70d329a6fd40aa7a5be6c86263946182f10aa7ee"
+    },
+    "godot\\assets\\tg\\icons\\obj\\smooth_structures\\fancy_table.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\smooth_structures\\fancy_table.dmi",
+      "size": [
+        224,
+        238
+      ],
+      "pixels_identical": true,
+      "sha256": "cd9bd047cba7b51843c551b228fa293f9c8a318f4eee0d017a669099b4f5ae53"
+    },
+    "godot\\assets\\tg\\icons\\obj\\smooth_structures\\glass_table.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\smooth_structures\\glass_table.dmi",
+      "size": [
+        224,
+        224
+      ],
+      "pixels_identical": true,
+      "sha256": "74582fe35a3f113d831ed1c6eae435444e32620e49834db52efe3a099ab89cd9"
+    },
+    "godot\\assets\\tg\\icons\\obj\\smooth_structures\\reinforced_table.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\smooth_structures\\reinforced_table.dmi",
+      "size": [
+        224,
+        224
+      ],
+      "pixels_identical": true,
+      "sha256": "981bd21fe9e3fb7120548243cb3a2bb66b5e1ff255ee49a6c9b7884a744f0974"
+    },
+    "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rglass_table.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\smooth_structures\\rglass_table.dmi",
+      "size": [
+        224,
+        224
+      ],
+      "pixels_identical": true,
+      "sha256": "8c85b8d71c68104bc9e48eda3d954b0520daecaa2b5b8d888748a942e28a29ce"
+    },
+    "godot\\assets\\tg\\icons\\obj\\smooth_structures\\rollingtable.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\smooth_structures\\rollingtable.dmi",
+      "size": [
+        64,
+        64
+      ],
+      "pixels_identical": true,
+      "sha256": "9114fe80d49264f58b0b6d2477035dcc8cbfa062aa905afe7c6b58f1484ff2af"
+    },
+    "godot\\assets\\tg\\icons\\obj\\smooth_structures\\table.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\smooth_structures\\table.dmi",
+      "size": [
+        224,
+        224
+      ],
+      "pixels_identical": true,
+      "sha256": "828cc1f4ee36ee2e3745f4db8b01871dd088282789faee17da97c60e67f87f9e"
+    },
+    "godot\\assets\\tg\\icons\\obj\\smooth_structures\\wood_table.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\smooth_structures\\wood_table.dmi",
+      "size": [
+        224,
+        224
+      ],
+      "pixels_identical": true,
+      "sha256": "ab11598bb1215e7580af5eb47ca70725abaac483ca2ad6bc6b80caecb4a6d271"
+    },
+    "godot\\assets\\tg\\icons\\obj\\storage\\closet.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\storage\\closet.dmi",
+      "size": [
+        640,
+        624
+      ],
+      "pixels_identical": true,
+      "sha256": "1b55c336e0d1a9619ef386e278e2853eae5435aa6e640408d7d4421c806011d1"
+    },
+    "godot\\assets\\tg\\icons\\obj\\storage\\crates.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\storage\\crates.dmi",
+      "size": [
+        544,
+        576
+      ],
+      "pixels_identical": true,
+      "sha256": "fc484ed004edc6da074641d3c00a87a8c323b9243f628e135b6ac7a3d573ae44"
+    },
+    "godot\\assets\\tg\\icons\\obj\\structures.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\structures.dmi",
+      "size": [
+        576,
+        576
+      ],
+      "pixels_identical": true,
+      "sha256": "e7d166af2ca0e9bb30d2a613036ccebe47b19142312a5ec8ec375feb0d4ee2f7"
+    },
+    "godot\\assets\\tg\\icons\\obj\\watercloset.png": {
+      "source_dmi": "..\\tgstation\\icons\\obj\\watercloset.dmi",
+      "size": [
+        416,
+        384
+      ],
+      "pixels_identical": true,
+      "sha256": "1db8ebf32103a759e047f566ddf5f17bc224f883b4ce3d174235ea7438682fee"
+    }
+  },
+  "material_overrides": [
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\alien_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/alien_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\alien_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/alien_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\brass_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/brass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\brass_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/brass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_black_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_black.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_black_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_black.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_blue_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_blue.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_blue_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_blue.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_cyan_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_cyan.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_cyan_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_cyan.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_green_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_green.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_green_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_green.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_orange_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_orange.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_orange_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_orange.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_purple_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_purple.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_purple_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_purple.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_red_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_red.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_red_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_red.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_royalblack_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_royalblack.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_royalblack_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_royalblack.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_royalblue_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_royalblue.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\fancy_table_royalblue_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/fancy_table_royalblue.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\glass_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/glass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\glass_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/glass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\plasmaglass_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/plasmaglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\plasmaglass_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/plasmaglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\plastitaniumglass_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/plastitaniumglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\plastitaniumglass_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/plastitaniumglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\poker_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/poker_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\poker_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/poker_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\reinforced_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/reinforced_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\reinforced_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/reinforced_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\rglass_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/rglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\rglass_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/rglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\rollingtable_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/rollingtable.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\rollingtable_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/rollingtable.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\rplasmaglass_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/rplasmaglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\rplasmaglass_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/rplasmaglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\table_greyscale_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/table_greyscale.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\table_greyscale_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/table_greyscale.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\titaniumglass_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/titaniumglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\titaniumglass_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/titaniumglass_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\wood_table_frame.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/wood_table.png"
+    },
+    {
+      "file": "godot\\assets\\models\\furniture\\table_kits\\wood_table_glass.tres",
+      "atlas": "res://assets/tg/icons/obj/smooth_structures/wood_table.png"
+    }
+  ]
+}

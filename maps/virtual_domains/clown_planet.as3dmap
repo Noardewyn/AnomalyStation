@@ -1,0 +1,1227 @@
+anomaly-map 1
+source _maps/virtual_domains/clown_planet.dmm tg 1d99bd7f
+size 33 44 1
+chunk 32
+default /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+
+[chunk 1 1 1]
+1,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,32: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,32: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,32: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+6,32: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+7,32: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+8,32: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+9,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+10,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+11,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+12,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+13,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+14,32: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,32: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,32: /obj/effect/decal/cleanable/food/pie_smudge | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,32: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,32: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+20,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+21,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+22,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/structure/table | /obj/item/paper/crumpled/bloody/ruins/lavaland/clown_planet/escape | /obj/item/pen/fourcolor | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+23,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/structure/table | /obj/item/flashlight/lamp/bananalamp | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+24,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+25,32: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+26,32: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+27,32: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+28,32: /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+29,32: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+30,32: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,32: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,31: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,31: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,31: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+6,31: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+7,31: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+8,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+9,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+10,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+11,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+12,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/item/pickaxe | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+13,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+14,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+15,31: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,31: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,31: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,31: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,31: /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,31: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+22,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+23,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+24,31: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+25,31: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+26,31: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+27,31: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+28,31: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+30,31: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,31: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,30: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,30: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,30: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+7,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+8,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+9,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/machinery/light/small/directional/west | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+10,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+11,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+12,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+13,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/machinery/light/small/directional/east | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+14,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+15,30: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,30: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,30: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+18,30: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,30: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,30: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/machinery/light/small/directional/west | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+22,30: /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+23,30: /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+24,30: /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+25,30: /obj/structure/disposalpipe/segment{dir = 9} | /obj/machinery/light/small/directional/east | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+29,30: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,30: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,29: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,29: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+7,29: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+9,29: /turf/closed/mineral/bananium | /area/lavaland/surface/outdoors/virtual_domain
+10,29: /obj/item/pickaxe | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+11,29: /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+12,29: /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+13,29: /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+14,29: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,29: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,29: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,29: /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+18,29: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,29: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+20,29: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,29: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+22,29: /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+23,29: /turf/open/indestructible/light | /area/lavaland/surface/outdoors/virtual_domain
+24,29: /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+25,29: /turf/closed/mineral/bananium | /area/lavaland/surface/outdoors/virtual_domain
+27,29: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+28,29: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+31,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,29: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,28: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,28: /obj/effect/decal/cleanable/cobweb | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+10,28: /turf/closed/mineral/bananium | /area/lavaland/surface/outdoors/virtual_domain
+11,28: /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+12,28: /turf/closed/mineral/bananium | /area/lavaland/surface/outdoors/virtual_domain
+14,28: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+15,28: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,28: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,28: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,28: /obj/structure/disposalpipe/segment | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,28: /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+22,28: /turf/closed/mineral/bananium | /area/lavaland/surface/outdoors/virtual_domain
+23,28: /obj/machinery/disposal/delivery_chute{dir = 1} | /obj/structure/disposalpipe/trunk | /turf/open/indestructible/white | /area/lavaland/surface/outdoors/virtual_domain
+24,28: /turf/closed/mineral/bananium | /area/lavaland/surface/outdoors/virtual_domain
+26,28: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+30,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,28: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,27: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,27: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+8,27: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+9,27: /obj/machinery/light/directional/north | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,27: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+14,27: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+15,27: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,27: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,27: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,27: /obj/structure/disposalpipe/junction/yjunction{dir = 1; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,27: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+20,27: /obj/structure/mecha_wreckage/honker | /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+21,27: /obj/effect/decal/cleanable/blood/oil | /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+23,27: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+25,27: /obj/machinery/light/directional/north | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+26,27: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+27,27: /obj/effect/decal/cleanable/cobweb/cobweb2 | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+29,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,27: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,26: /turf/template_noop | /area/template_noop
+5,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,26: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+8,26: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+9,26: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,26: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+12,26: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+13,26: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,26: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,26: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,26: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,26: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,26: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+22,26: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+23,26: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+24,26: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+25,26: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+26,26: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+27,26: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+29,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,26: /turf/template_noop | /area/template_noop
+31,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,25: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+8,25: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+9,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,25: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,25: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+12,25: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+13,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+17,25: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+20,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+21,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+22,25: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+24,25: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+25,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+26,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+27,25: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+29,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,25: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,24: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,24: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+11,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+12,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+13,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+15,24: /obj/item/reagent_containers/cup/glass/trophy/gold_cup | /obj/structure/table/glass | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+16,24: /obj/machinery/light/small/directional/north | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+17,24: /obj/machinery/disposal/delivery_chute | /obj/structure/disposalpipe/trunk{dir = 1} | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+18,24: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+19,24: /obj/item/reagent_containers/cup/glass/trophy/gold_cup | /obj/structure/table/glass | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+21,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+22,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+23,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+24,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+25,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+26,24: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+30,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,24: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,23: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,23: /obj/effect/decal/cleanable/cobweb | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+7,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+8,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+12,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+14,23: /obj/structure/statue/bananium/clown | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+15,23: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+16,23: /obj/structure/table/glass | /obj/item/grown/bananapeel/bluespace | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+17,23: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+18,23: /obj/structure/table/glass | /obj/item/clothing/shoes/clown_shoes/banana_shoes | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+19,23: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+20,23: /obj/structure/statue/bananium/clown | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+22,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+23,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+24,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+25,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+26,23: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+27,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+28,23: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+31,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,23: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,22: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,22: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,22: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+7,22: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+8,22: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+9,22: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,22: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+11,22: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+14,22: /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/machinery/light/small/directional/west | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+15,22: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+16,22: /obj/structure/table/glass | /obj/item/reagent_containers/spray/waterflower/superlube | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+17,22: /obj/item/bikehorn/airhorn | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+18,22: /obj/structure/table/glass | /obj/item/gun/magic/staff/honk | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+19,22: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+20,22: /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/machinery/light/small/directional/east | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+23,22: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+24,22: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+25,22: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+26,22: /obj/item/bikehorn | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+27,22: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+28,22: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+29,22: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,22: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,21: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,21: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,21: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,21: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+7,21: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+8,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+11,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+12,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+13,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+15,21: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+16,21: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+17,21: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+18,21: /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+19,21: /obj/structure/closet/crate/secure/bitrunning/encrypted | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+21,21: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+22,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+23,21: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+24,21: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+25,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+26,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+28,21: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+29,21: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+30,21: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,21: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,20: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,20: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,20: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+6,20: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+7,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+8,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+9,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+11,20: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+12,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+13,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+14,20: /obj/machinery/light/directional/north | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+17,20: /obj/machinery/door/airlock/bananium{use_power = 0} | /turf/open/floor/carpet | /area/lavaland/surface/outdoors/virtual_domain
+20,20: /obj/machinery/light/directional/north | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+21,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+22,20: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+23,20: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+24,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+26,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+27,20: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+28,20: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+29,20: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+30,20: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,20: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,19: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,19: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,19: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+6,19: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+7,19: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+8,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+9,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,19: /obj/item/bikehorn | /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+11,19: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+12,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+14,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+15,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+17,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+18,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+19,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+20,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+21,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+22,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+23,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+24,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+25,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+26,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+27,19: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+28,19: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+29,19: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+30,19: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,19: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,18: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,18: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,18: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+7,18: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+9,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+10,18: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+11,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+12,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+13,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+14,18: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+15,18: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+16,18: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+17,18: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+18,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+19,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+20,18: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+21,18: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+22,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+23,18: /obj/item/bikehorn | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+25,18: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+27,18: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+28,18: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+29,18: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,18: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,17: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,17: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,17: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+7,17: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+8,17: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+9,17: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+10,17: /obj/machinery/light/directional/south | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+11,17: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+12,17: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+13,17: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+14,17: /obj/item/bikehorn | /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+15,17: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+16,17: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+17,17: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+18,17: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+19,17: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+20,17: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+21,17: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+22,17: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+23,17: /obj/machinery/light/directional/south | /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+25,17: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+26,17: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+27,17: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+28,17: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+29,17: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+31,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,17: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,16: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+7,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+8,16: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+9,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+11,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+12,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+13,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+14,16: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+15,16: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+16,16: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+18,16: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+19,16: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+20,16: /turf/open/indestructible/honk | /area/lavaland/surface/outdoors/virtual_domain
+21,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+22,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+24,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+25,16: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+26,16: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+27,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+28,16: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+31,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,16: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,15: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+8,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+9,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+10,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+11,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+12,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+13,15: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+14,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+15,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+16,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+17,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+18,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+19,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+20,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+21,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+22,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+23,15: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+24,15: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+25,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+26,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+27,15: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+30,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,15: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,14: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+10,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+11,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+12,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+13,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+14,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+15,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+16,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+17,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+18,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+19,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+20,14: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+21,14: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+22,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+23,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+24,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+25,14: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+29,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,14: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,13: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,13: /turf/template_noop | /area/template_noop
+5,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+13,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+14,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+15,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+16,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+17,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+18,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+19,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+20,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+21,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+22,13: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+27,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,13: /turf/template_noop | /area/template_noop
+31,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,13: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,12: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,12: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,11: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+11,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+15,11: /obj/structure/disposalpipe/trunk{dir = 8} | /obj/structure/disposaloutlet{dir = 4} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+16,11: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+17,11: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+18,11: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+19,11: /obj/structure/disposalpipe/trunk{dir = 4} | /obj/machinery/disposal/delivery_chute{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+20,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+21,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+24,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+25,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,11: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,11: /obj/structure/disposalpipe/segment{dir = 9} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,10: /obj/structure/marker_beacon/yellow | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+15,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+16,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+17,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+18,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+19,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+20,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+21,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,10: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,9: /turf/template_noop | /area/template_noop
+2,9: /turf/template_noop | /area/template_noop
+3,9: /turf/template_noop | /area/template_noop
+4,9: /turf/template_noop | /area/template_noop
+5,9: /turf/template_noop | /area/template_noop
+6,9: /turf/template_noop | /area/template_noop
+7,9: /turf/template_noop | /area/template_noop
+8,9: /turf/template_noop | /area/template_noop
+9,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,9: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,9: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,9: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,9: /turf/template_noop | /area/virtual_domain/safehouse
+15,9: /turf/template_noop | /area/virtual_domain/safehouse
+16,9: /turf/template_noop | /area/virtual_domain/safehouse
+17,9: /turf/template_noop | /area/virtual_domain/safehouse
+18,9: /turf/template_noop | /area/virtual_domain/safehouse
+19,9: /turf/template_noop | /area/virtual_domain/safehouse
+20,9: /turf/template_noop | /area/virtual_domain/safehouse
+21,9: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,9: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,9: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,9: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,9: /turf/template_noop | /area/template_noop
+27,9: /turf/template_noop | /area/template_noop
+28,9: /turf/template_noop | /area/template_noop
+29,9: /turf/template_noop | /area/template_noop
+30,9: /turf/template_noop | /area/template_noop
+31,9: /turf/template_noop | /area/template_noop
+32,9: /turf/template_noop | /area/template_noop
+1,8: /turf/template_noop | /area/template_noop
+2,8: /turf/template_noop | /area/template_noop
+3,8: /turf/template_noop | /area/template_noop
+4,8: /turf/template_noop | /area/template_noop
+5,8: /turf/template_noop | /area/template_noop
+6,8: /turf/template_noop | /area/template_noop
+7,8: /turf/template_noop | /area/template_noop
+8,8: /turf/template_noop | /area/template_noop
+9,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,8: /turf/template_noop | /area/virtual_domain/safehouse
+15,8: /turf/template_noop | /area/virtual_domain/safehouse
+16,8: /turf/template_noop | /area/virtual_domain/safehouse
+17,8: /turf/template_noop | /area/virtual_domain/safehouse
+18,8: /turf/template_noop | /area/virtual_domain/safehouse
+19,8: /turf/template_noop | /area/virtual_domain/safehouse
+20,8: /turf/template_noop | /area/virtual_domain/safehouse
+21,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,8: /obj/structure/marker_beacon/yellow | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,8: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,8: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,8: /turf/template_noop | /area/template_noop
+27,8: /turf/template_noop | /area/template_noop
+28,8: /turf/template_noop | /area/template_noop
+29,8: /turf/template_noop | /area/template_noop
+30,8: /turf/template_noop | /area/template_noop
+31,8: /turf/template_noop | /area/template_noop
+32,8: /turf/template_noop | /area/template_noop
+1,7: /turf/template_noop | /area/template_noop
+2,7: /turf/template_noop | /area/template_noop
+3,7: /turf/template_noop | /area/template_noop
+4,7: /turf/template_noop | /area/template_noop
+5,7: /turf/template_noop | /area/template_noop
+6,7: /turf/template_noop | /area/template_noop
+7,7: /turf/template_noop | /area/template_noop
+8,7: /turf/template_noop | /area/template_noop
+9,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,7: /turf/template_noop | /area/virtual_domain/safehouse
+15,7: /turf/template_noop | /area/virtual_domain/safehouse
+16,7: /turf/template_noop | /area/virtual_domain/safehouse
+17,7: /turf/template_noop | /area/virtual_domain/safehouse
+18,7: /turf/template_noop | /area/virtual_domain/safehouse
+19,7: /turf/template_noop | /area/virtual_domain/safehouse
+20,7: /turf/template_noop | /area/virtual_domain/safehouse
+21,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,7: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,7: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,7: /turf/template_noop | /area/template_noop
+27,7: /turf/template_noop | /area/template_noop
+28,7: /turf/template_noop | /area/template_noop
+29,7: /turf/template_noop | /area/template_noop
+30,7: /turf/template_noop | /area/template_noop
+31,7: /turf/template_noop | /area/template_noop
+32,7: /turf/template_noop | /area/template_noop
+1,6: /turf/template_noop | /area/template_noop
+2,6: /turf/template_noop | /area/template_noop
+3,6: /turf/template_noop | /area/template_noop
+4,6: /turf/template_noop | /area/template_noop
+5,6: /turf/template_noop | /area/template_noop
+6,6: /turf/template_noop | /area/template_noop
+7,6: /turf/template_noop | /area/template_noop
+8,6: /turf/template_noop | /area/template_noop
+9,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,6: /turf/template_noop | /area/virtual_domain/safehouse
+15,6: /turf/template_noop | /area/virtual_domain/safehouse
+16,6: /turf/template_noop | /area/virtual_domain/safehouse
+17,6: /turf/template_noop | /area/virtual_domain/safehouse
+18,6: /turf/template_noop | /area/virtual_domain/safehouse
+19,6: /turf/template_noop | /area/virtual_domain/safehouse
+20,6: /turf/template_noop | /area/virtual_domain/safehouse
+21,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,6: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,6: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,6: /turf/template_noop | /area/template_noop
+27,6: /turf/template_noop | /area/template_noop
+28,6: /turf/template_noop | /area/template_noop
+29,6: /turf/template_noop | /area/template_noop
+30,6: /turf/template_noop | /area/template_noop
+31,6: /turf/template_noop | /area/template_noop
+32,6: /turf/template_noop | /area/template_noop
+1,5: /turf/template_noop | /area/template_noop
+2,5: /turf/template_noop | /area/template_noop
+3,5: /turf/template_noop | /area/template_noop
+4,5: /turf/template_noop | /area/template_noop
+5,5: /turf/template_noop | /area/template_noop
+6,5: /turf/template_noop | /area/template_noop
+7,5: /turf/template_noop | /area/template_noop
+8,5: /turf/template_noop | /area/template_noop
+9,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,5: /turf/template_noop | /area/virtual_domain/safehouse
+15,5: /turf/template_noop | /area/virtual_domain/safehouse
+16,5: /turf/template_noop | /area/virtual_domain/safehouse
+17,5: /turf/template_noop | /area/virtual_domain/safehouse
+18,5: /turf/template_noop | /area/virtual_domain/safehouse
+19,5: /turf/template_noop | /area/virtual_domain/safehouse
+20,5: /turf/template_noop | /area/virtual_domain/safehouse
+21,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,5: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,5: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,5: /turf/template_noop | /area/template_noop
+27,5: /turf/template_noop | /area/template_noop
+28,5: /turf/template_noop | /area/template_noop
+29,5: /turf/template_noop | /area/template_noop
+30,5: /turf/template_noop | /area/template_noop
+31,5: /turf/template_noop | /area/template_noop
+32,5: /turf/template_noop | /area/template_noop
+1,4: /turf/template_noop | /area/template_noop
+2,4: /turf/template_noop | /area/template_noop
+3,4: /turf/template_noop | /area/template_noop
+4,4: /turf/template_noop | /area/template_noop
+5,4: /turf/template_noop | /area/template_noop
+6,4: /turf/template_noop | /area/template_noop
+7,4: /turf/template_noop | /area/template_noop
+8,4: /turf/template_noop | /area/template_noop
+9,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,4: /obj/structure/marker_beacon/yellow | /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,4: /obj/modular_map_root/safehouse{key = "mine"} | /turf/template_noop | /area/virtual_domain/safehouse
+15,4: /turf/template_noop | /area/virtual_domain/safehouse
+16,4: /turf/template_noop | /area/virtual_domain/safehouse
+17,4: /turf/template_noop | /area/virtual_domain/safehouse
+18,4: /turf/template_noop | /area/virtual_domain/safehouse
+19,4: /turf/template_noop | /area/virtual_domain/safehouse
+20,4: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+21,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,4: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,4: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,4: /turf/template_noop | /area/template_noop
+27,4: /turf/template_noop | /area/template_noop
+28,4: /turf/template_noop | /area/template_noop
+29,4: /turf/template_noop | /area/template_noop
+30,4: /turf/template_noop | /area/template_noop
+31,4: /turf/template_noop | /area/template_noop
+32,4: /turf/template_noop | /area/template_noop
+1,3: /turf/template_noop | /area/template_noop
+2,3: /turf/template_noop | /area/template_noop
+3,3: /turf/template_noop | /area/template_noop
+4,3: /turf/template_noop | /area/template_noop
+5,3: /turf/template_noop | /area/template_noop
+6,3: /turf/template_noop | /area/template_noop
+7,3: /turf/template_noop | /area/template_noop
+8,3: /turf/template_noop | /area/template_noop
+9,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+12,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+13,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+14,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+15,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+16,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+17,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+18,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+19,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+20,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+21,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+22,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+23,3: /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins | /area/lavaland/surface/outdoors/virtual_domain
+25,3: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,3: /turf/template_noop | /area/template_noop
+27,3: /turf/template_noop | /area/template_noop
+28,3: /turf/template_noop | /area/template_noop
+29,3: /turf/template_noop | /area/template_noop
+30,3: /turf/template_noop | /area/template_noop
+31,3: /turf/template_noop | /area/template_noop
+32,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/template_noop | /area/template_noop
+3,2: /turf/template_noop | /area/template_noop
+4,2: /turf/template_noop | /area/template_noop
+5,2: /turf/template_noop | /area/template_noop
+6,2: /turf/template_noop | /area/template_noop
+7,2: /turf/template_noop | /area/template_noop
+8,2: /turf/template_noop | /area/template_noop
+9,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,2: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+25,2: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,2: /turf/template_noop | /area/template_noop
+27,2: /turf/template_noop | /area/template_noop
+28,2: /turf/template_noop | /area/template_noop
+29,2: /turf/template_noop | /area/template_noop
+30,2: /turf/template_noop | /area/template_noop
+31,2: /turf/template_noop | /area/template_noop
+32,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+5,1: /turf/template_noop | /area/template_noop
+6,1: /turf/template_noop | /area/template_noop
+7,1: /turf/template_noop | /area/template_noop
+8,1: /turf/template_noop | /area/template_noop
+9,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,1: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,1: /turf/template_noop | /area/template_noop
+27,1: /turf/template_noop | /area/template_noop
+28,1: /turf/template_noop | /area/template_noop
+29,1: /turf/template_noop | /area/template_noop
+30,1: /turf/template_noop | /area/template_noop
+31,1: /turf/template_noop | /area/template_noop
+32,1: /turf/template_noop | /area/template_noop
+
+[chunk 33 1 1]
+33,32: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,31: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,30: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,29: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,28: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,27: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,26: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,25: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,24: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,23: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,22: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,21: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,20: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,19: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,18: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,17: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,16: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,15: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,14: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,13: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,12: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,11: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,10: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,9: /turf/template_noop | /area/template_noop
+33,8: /turf/template_noop | /area/template_noop
+33,7: /turf/template_noop | /area/template_noop
+33,6: /turf/template_noop | /area/template_noop
+33,5: /turf/template_noop | /area/template_noop
+33,4: /turf/template_noop | /area/template_noop
+33,3: /turf/template_noop | /area/template_noop
+33,2: /turf/template_noop | /area/template_noop
+33,1: /turf/template_noop | /area/template_noop
+
+[chunk 1 33 1]
+1,44: /turf/template_noop | /area/template_noop
+2,44: /turf/template_noop | /area/template_noop
+3,44: /turf/template_noop | /area/template_noop
+4,44: /turf/template_noop | /area/template_noop
+5,44: /turf/template_noop | /area/template_noop
+6,44: /turf/template_noop | /area/template_noop
+7,44: /turf/template_noop | /area/template_noop
+8,44: /turf/template_noop | /area/template_noop
+9,44: /turf/template_noop | /area/template_noop
+10,44: /turf/template_noop | /area/template_noop
+11,44: /turf/template_noop | /area/template_noop
+12,44: /turf/template_noop | /area/template_noop
+13,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+15,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+16,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+17,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+18,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+19,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+20,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,44: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,44: /turf/template_noop | /area/template_noop
+23,44: /turf/template_noop | /area/template_noop
+24,44: /turf/template_noop | /area/template_noop
+25,44: /turf/template_noop | /area/template_noop
+26,44: /turf/template_noop | /area/template_noop
+27,44: /turf/template_noop | /area/template_noop
+28,44: /turf/template_noop | /area/template_noop
+29,44: /turf/template_noop | /area/template_noop
+30,44: /turf/template_noop | /area/template_noop
+31,44: /turf/template_noop | /area/template_noop
+32,44: /turf/template_noop | /area/template_noop
+1,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+21,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,42: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+8,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+10,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+11,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+12,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+13,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+15,42: /obj/structure/disposalpipe/trunk{dir = 8} | /obj/machinery/disposal/delivery_chute{dir = 4} | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+16,42: /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+17,42: /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+18,42: /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+19,42: /obj/structure/disposalpipe/trunk{dir = 4} | /obj/structure/disposaloutlet{dir = 8} | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+20,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+21,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+22,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+23,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+24,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+25,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+26,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+27,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+28,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,42: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,42: /obj/structure/disposalpipe/segment{dir = 10} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,41: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+14,41: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+15,41: /obj/item/clothing/head/cone | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+16,41: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+17,41: /obj/item/paper/crumpled/bloody/ruins/lavaland/clown_planet/hope | /obj/effect/decal/cleanable/blood/old | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+18,41: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+19,41: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+20,41: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+28,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+29,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,41: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,40: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+9,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+10,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+11,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+12,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+13,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+14,40: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+15,40: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+16,40: /obj/machinery/disposal/delivery_chute{desc = "The following is engraved upon the chute: A FATE WORSE THAN DEATH LIES WITHIN"; dir = 1; name = "THE TRIAL OF HONKITUDE"} | /obj/structure/disposalpipe/trunk | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+17,40: /obj/machinery/light/small/directional/south | /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+18,40: /obj/structure/disposalpipe/trunk | /obj/structure/disposaloutlet{dir = 1} | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/lavaland/surface/outdoors/virtual_domain
+19,40: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+20,40: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+21,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+22,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+23,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+24,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+25,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+26,40: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+29,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+30,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,40: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,39: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+7,39: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+8,39: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+9,39: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+10,39: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+11,39: /obj/structure/disposalpipe/segment{dir = 10} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+12,39: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+13,39: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+14,39: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+16,39: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+18,39: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+20,39: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+23,39: /obj/structure/disposalpipe/trunk{dir = 8} | /obj/structure/disposaloutlet{dir = 1} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+26,39: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+27,39: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+30,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+31,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,39: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,38: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+6,38: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+7,38: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+8,38: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+9,38: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+10,38: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,38: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+12,38: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+13,38: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+14,38: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,38: /obj/structure/disposalpipe/segment{dir = 10} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+16,38: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+17,38: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+18,38: /obj/structure/disposalpipe/sorting/mail/flip{dir = 1} | /obj/effect/mapping_helpers/mail_sorting/supply/qm_office | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+23,38: /obj/structure/window/reinforced/spawner/directional/south | /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+28,38: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+31,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,38: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+3,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,37: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,37: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+8,37: /obj/effect/decal/cleanable/food/pie_smudge | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+9,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+10,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+12,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/machinery/light/small/directional/north | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+13,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+14,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,37: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,37: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+20,37: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,37: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+22,37: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/machinery/light/small/directional/north | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+23,37: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+24,37: /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+25,37: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+26,37: /obj/effect/decal/cleanable/cobweb/cobweb2 | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+28,37: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+29,37: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+31,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+32,37: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,36: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+5,36: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,36: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+7,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/cobweb | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+8,36: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+9,36: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+10,36: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,36: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+12,36: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+13,36: /obj/structure/disposalpipe/segment{dir = 5} | /obj/item/bikehorn | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+14,36: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,36: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,36: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+17,36: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+18,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+20,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+22,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+23,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+24,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+25,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+26,36: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+27,36: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+29,36: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,36: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,35: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,35: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,35: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+6,35: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+7,35: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+8,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+9,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+10,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+12,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+13,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+14,35: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,35: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,35: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,35: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+20,35: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+22,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+23,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+24,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+25,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+26,35: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+27,35: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+28,35: /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+29,35: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+30,35: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,35: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,34: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,34: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,34: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+6,34: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+7,34: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+8,34: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+9,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+10,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+11,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+12,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+13,34: /obj/structure/disposalpipe/segment{dir = 10} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+14,34: /obj/effect/decal/cleanable/food/pie_smudge | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,34: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,34: /obj/effect/decal/cleanable/dirt | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+17,34: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+19,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+20,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+22,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+23,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+24,34: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+25,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+26,34: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+27,34: /obj/structure/disposalpipe/segment{dir = 10} | /obj/machinery/light/small/directional/east | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+29,34: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+30,34: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,34: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+1,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+2,33: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+4,33: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+5,33: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+6,33: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/directional/west | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+7,33: /obj/item/bikehorn | /obj/effect/decal/cleanable/dirt | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+8,33: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+9,33: /obj/structure/disposalpipe/trunk{dir = 4} | /obj/structure/disposaloutlet{dir = 8} | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+10,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+11,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+12,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+13,33: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+14,33: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+15,33: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+16,33: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+17,33: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+18,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+19,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+20,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+21,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+22,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+23,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+24,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+25,33: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/lavaland/surface/outdoors/virtual_domain
+26,33: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+27,33: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+28,33: /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/lavaland/surface/outdoors/virtual_domain
+29,33: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/lavaland/surface/outdoors/virtual_domain
+30,33: /turf/open/lava/smooth | /area/lavaland/surface/outdoors/virtual_domain
+32,33: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+
+[chunk 33 33 1]
+33,44: /turf/template_noop | /area/template_noop
+33,43: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,42: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,41: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,40: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,39: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,38: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,37: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,36: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,35: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,34: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright
+33,33: /turf/closed/indestructible/binary | /area/virtual_domain/fullbright

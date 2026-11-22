@@ -1,0 +1,330 @@
+{
+  "modules": [
+    {
+      "canonical": 0,
+      "states": [
+        0
+      ],
+      "part": "single",
+      "vertices": 460,
+      "triangles": 684,
+      "file": "pressure_000.glb"
+    },
+    {
+      "canonical": 4,
+      "states": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "part": "end",
+      "vertices": 324,
+      "triangles": 458,
+      "file": "pressure_004.glb"
+    },
+    {
+      "canonical": 5,
+      "states": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "part": "cornerOpen",
+      "vertices": 244,
+      "triangles": 344,
+      "file": "pressure_005.glb"
+    },
+    {
+      "canonical": 12,
+      "states": [
+        3,
+        12
+      ],
+      "part": "straight",
+      "vertices": 188,
+      "triangles": 232,
+      "file": "pressure_012.glb"
+    },
+    {
+      "canonical": 13,
+      "states": [
+        7,
+        11,
+        13,
+        14
+      ],
+      "part": "tee",
+      "vertices": 164,
+      "triangles": 230,
+      "file": "pressure_013.glb"
+    },
+    {
+      "canonical": 15,
+      "states": [
+        15
+      ],
+      "part": "center",
+      "vertices": 140,
+      "triangles": 228,
+      "file": "pressure_015.glb"
+    },
+    {
+      "canonical": 21,
+      "states": [
+        21,
+        38,
+        74,
+        137
+      ],
+      "part": "corner",
+      "vertices": 216,
+      "triangles": 288,
+      "file": "pressure_021.glb"
+    },
+    {
+      "canonical": 29,
+      "states": [
+        29,
+        39,
+        78,
+        139
+      ],
+      "part": "tee",
+      "vertices": 136,
+      "triangles": 174,
+      "file": "pressure_029.glb"
+    },
+    {
+      "canonical": 31,
+      "states": [
+        31
+      ],
+      "part": "center",
+      "vertices": 112,
+      "triangles": 172,
+      "file": "pressure_031.glb"
+    },
+    {
+      "canonical": 47,
+      "states": [
+        47
+      ],
+      "part": "center",
+      "vertices": 112,
+      "triangles": 172,
+      "file": "pressure_047.glb"
+    },
+    {
+      "canonical": 63,
+      "states": [
+        63
+      ],
+      "part": "center",
+      "vertices": 84,
+      "triangles": 116,
+      "file": "pressure_063.glb"
+    },
+    {
+      "canonical": 79,
+      "states": [
+        79
+      ],
+      "part": "center",
+      "vertices": 112,
+      "triangles": 172,
+      "file": "pressure_079.glb"
+    },
+    {
+      "canonical": 95,
+      "states": [
+        95
+      ],
+      "part": "center",
+      "vertices": 84,
+      "triangles": 116,
+      "file": "pressure_095.glb"
+    },
+    {
+      "canonical": 111,
+      "states": [
+        111
+      ],
+      "part": "center",
+      "vertices": 84,
+      "triangles": 116,
+      "file": "pressure_111.glb"
+    },
+    {
+      "canonical": 127,
+      "states": [
+        127
+      ],
+      "part": "center",
+      "vertices": 56,
+      "triangles": 60,
+      "file": "pressure_127.glb"
+    },
+    {
+      "canonical": 141,
+      "states": [
+        23,
+        46,
+        75,
+        141
+      ],
+      "part": "tee",
+      "vertices": 136,
+      "triangles": 174,
+      "file": "pressure_141.glb"
+    },
+    {
+      "canonical": 143,
+      "states": [
+        143
+      ],
+      "part": "center",
+      "vertices": 112,
+      "triangles": 172,
+      "file": "pressure_143.glb"
+    },
+    {
+      "canonical": 157,
+      "states": [
+        55,
+        110,
+        157,
+        203
+      ],
+      "part": "tee",
+      "vertices": 108,
+      "triangles": 118,
+      "file": "pressure_157.glb"
+    },
+    {
+      "canonical": 159,
+      "states": [
+        159
+      ],
+      "part": "center",
+      "vertices": 84,
+      "triangles": 116,
+      "file": "pressure_159.glb"
+    },
+    {
+      "canonical": 175,
+      "states": [
+        175
+      ],
+      "part": "center",
+      "vertices": 84,
+      "triangles": 116,
+      "file": "pressure_175.glb"
+    },
+    {
+      "canonical": 191,
+      "states": [
+        191
+      ],
+      "part": "center",
+      "vertices": 56,
+      "triangles": 60,
+      "file": "pressure_191.glb"
+    },
+    {
+      "canonical": 207,
+      "states": [
+        207
+      ],
+      "part": "center",
+      "vertices": 84,
+      "triangles": 116,
+      "file": "pressure_207.glb"
+    },
+    {
+      "canonical": 223,
+      "states": [
+        223
+      ],
+      "part": "center",
+      "vertices": 56,
+      "triangles": 60,
+      "file": "pressure_223.glb"
+    },
+    {
+      "canonical": 239,
+      "states": [
+        239
+      ],
+      "part": "center",
+      "vertices": 56,
+      "triangles": 60,
+      "file": "pressure_239.glb"
+    },
+    {
+      "canonical": 255,
+      "states": [
+        255
+      ],
+      "part": "center",
+      "vertices": 28,
+      "triangles": 4,
+      "file": "pressure_255.glb"
+    }
+  ],
+  "source_states": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    21,
+    23,
+    29,
+    31,
+    38,
+    39,
+    46,
+    47,
+    55,
+    63,
+    74,
+    75,
+    78,
+    79,
+    95,
+    110,
+    111,
+    127,
+    137,
+    139,
+    141,
+    143,
+    157,
+    159,
+    175,
+    191,
+    203,
+    207,
+    223,
+    239,
+    255
+  ],
+  "tile_m": 2,
+  "height_m": 1.83,
+  "source": "tgstation/code/modules/atmospherics/machinery/components/tank.dm",
+  "runtime": "DmInert: ports, gas visuals and cracks require simulation port; gas material is separate",
+  "gas_material": "Pressure_Flat_Tint_Gas"
+}

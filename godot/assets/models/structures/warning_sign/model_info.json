@@ -1,0 +1,554 @@
+{
+  "warning_sign_securearea": {
+    "base_state": "securearea",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 156,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.014",
+        "materials": [
+          "Warning_Sign_securearea_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "securearea"
+      }
+    ],
+    "triangles": 156
+  },
+  "warning_sign_space": {
+    "base_state": "space",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_space_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "space"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_shock": {
+    "base_state": "shock",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 236,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.016",
+        "materials": [
+          "Warning_Sign_shock_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "shock"
+      }
+    ],
+    "triangles": 236
+  },
+  "warning_sign_bio": {
+    "base_state": "bio",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.017",
+        "materials": [
+          "Warning_Sign_bio_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bio"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_pods": {
+    "base_state": "pods",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_pods_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "pods"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_radiation": {
+    "base_state": "radiation",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 172,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.018",
+        "materials": [
+          "Warning_Sign_radiation_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "radiation"
+      }
+    ],
+    "triangles": 172
+  },
+  "warning_sign_nosmoking2": {
+    "base_state": "nosmoking2",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.019",
+        "materials": [
+          "Warning_Sign_nosmoking2_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "nosmoking2"
+      }
+    ],
+    "triangles": 76
+  },
+  "warning_sign_cold": {
+    "base_state": "cold",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.020",
+        "materials": [
+          "Warning_Sign_cold_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "cold"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_fire": {
+    "base_state": "fire",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 220,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.021",
+        "materials": [
+          "Warning_Sign_fire_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "fire"
+      }
+    ],
+    "triangles": 220
+  },
+  "warning_sign_testchamber": {
+    "base_state": "testchamber",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_testchamber_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "testchamber"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_deathsposal": {
+    "base_state": "deathsposal",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_deathsposal_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "deathsposal"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_bodysposal": {
+    "base_state": "bodysposal",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_bodysposal_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bodysposal"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_heat": {
+    "base_state": "heat",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.017",
+        "materials": [
+          "Warning_Sign_heat_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "heat"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_gasmask": {
+    "base_state": "gasmask",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.022",
+        "materials": [
+          "Warning_Sign_gasmask_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "gasmask"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_chemdiamond": {
+    "base_state": "chemdiamond",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 428,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.023",
+        "materials": [
+          "Warning_Sign_chemdiamond_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "chemdiamond"
+      }
+    ],
+    "triangles": 428
+  },
+  "warning_sign_nosmoking": {
+    "base_state": "nosmoking",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 172,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.024",
+        "materials": [
+          "Warning_Sign_nosmoking_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "nosmoking"
+      }
+    ],
+    "triangles": 172
+  },
+  "warning_sign_yessmoking": {
+    "base_state": "yessmoking",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 172,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.024",
+        "materials": [
+          "Warning_Sign_yessmoking_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "yessmoking"
+      }
+    ],
+    "triangles": 172
+  },
+  "warning_sign_xeno_warning": {
+    "base_state": "xeno_warning",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.017",
+        "materials": [
+          "Warning_Sign_xeno_warning_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "xeno_warning"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_safety": {
+    "base_state": "safety",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.025",
+        "materials": [
+          "Warning_Sign_safety_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "safety"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_explosives": {
+    "base_state": "explosives",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 236,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.026",
+        "materials": [
+          "Warning_Sign_explosives_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "explosives"
+      }
+    ],
+    "triangles": 236
+  },
+  "warning_sign_explosives2": {
+    "base_state": "explosives2",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 76,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.027",
+        "materials": [
+          "Warning_Sign_explosives2_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "explosives2"
+      }
+    ],
+    "triangles": 76
+  },
+  "warning_sign_firingrange": {
+    "base_state": "firingrange",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_firingrange_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "firingrange"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_doors": {
+    "base_state": "doors",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_doors_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "doors"
+      }
+    ],
+    "triangles": 44
+  },
+  "warning_sign_radshelter": {
+    "base_state": "radshelter",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Sign_Plate",
+        "triangles": 44,
+        "shared_mesh": "Continuous_Stepped_Sign_Plate.015",
+        "materials": [
+          "Warning_Sign_radshelter_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "radshelter"
+      }
+    ],
+    "triangles": 44
+  }
+}

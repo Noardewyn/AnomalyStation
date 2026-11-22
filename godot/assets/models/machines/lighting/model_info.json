@@ -1,0 +1,1213 @@
+{
+  "light_tube_off": {
+    "family": "tube",
+    "status": "off",
+    "insert_blender_m": [
+      0,
+      -0.0703125,
+      0.0421875
+    ],
+    "insert_godot_m": [
+      0,
+      0.0421875,
+      0.0703125
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Sockets",
+        "mesh": "Housing_and_Sockets.042",
+        "triangles": 84,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "tube-empty"
+      },
+      {
+        "name": "Removable_Tube",
+        "mesh": "Removable_Tube.036",
+        "triangles": 44,
+        "pivot_blender_m": [
+          0.0,
+          -0.0703125,
+          0.04218750074505806
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "tube"
+      }
+    ],
+    "triangles": 128
+  },
+  "light_tube_on": {
+    "family": "tube",
+    "status": "on",
+    "insert_blender_m": [
+      0,
+      -0.0703125,
+      0.0421875
+    ],
+    "insert_godot_m": [
+      0,
+      0.0421875,
+      0.0703125
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Sockets",
+        "mesh": "Housing_and_Sockets.042",
+        "triangles": 84,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "tube-empty"
+      },
+      {
+        "name": "Removable_Tube",
+        "mesh": "Removable_Tube.036",
+        "triangles": 44,
+        "pivot_blender_m": [
+          0.0,
+          -0.0703125,
+          0.04218750074505806
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "tube"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.048",
+        "triangles": 6,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "tube"
+      }
+    ],
+    "triangles": 134
+  },
+  "light_tube_empty": {
+    "family": "tube",
+    "status": "empty",
+    "insert_blender_m": [
+      0,
+      -0.0703125,
+      0.0421875
+    ],
+    "insert_godot_m": [
+      0,
+      0.0421875,
+      0.0703125
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Sockets",
+        "mesh": "Housing_and_Sockets.042",
+        "triangles": 84,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "tube-empty"
+      }
+    ],
+    "triangles": 84
+  },
+  "light_tube_burned": {
+    "family": "tube",
+    "status": "burned",
+    "insert_blender_m": [
+      0,
+      -0.0703125,
+      0.0421875
+    ],
+    "insert_godot_m": [
+      0,
+      0.0421875,
+      0.0703125
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Sockets",
+        "mesh": "Housing_and_Sockets.042",
+        "triangles": 84,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "tube-empty"
+      },
+      {
+        "name": "Removable_Tube",
+        "mesh": "Removable_Tube.038",
+        "triangles": 44,
+        "pivot_blender_m": [
+          0.0,
+          -0.0703125,
+          0.04218750074505806
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "tube-burned"
+      }
+    ],
+    "triangles": 128
+  },
+  "light_tube_broken": {
+    "family": "tube",
+    "status": "broken",
+    "insert_blender_m": [
+      0,
+      -0.0703125,
+      0.0421875
+    ],
+    "insert_godot_m": [
+      0,
+      0.0421875,
+      0.0703125
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Sockets",
+        "mesh": "Housing_and_Sockets.042",
+        "triangles": 84,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "tube-empty"
+      },
+      {
+        "name": "Removable_Tube",
+        "mesh": "Removable_Tube.039",
+        "triangles": 104,
+        "pivot_blender_m": [
+          0.0,
+          -0.0703125,
+          0.04218750074505806
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "tube-broken"
+      }
+    ],
+    "triangles": 188
+  },
+  "light_tube_nightshift": {
+    "family": "tube",
+    "status": "nightshift",
+    "insert_blender_m": [
+      0,
+      -0.0703125,
+      0.0421875
+    ],
+    "insert_godot_m": [
+      0,
+      0.0421875,
+      0.0703125
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Sockets",
+        "mesh": "Housing_and_Sockets.042",
+        "triangles": 84,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "tube-empty"
+      },
+      {
+        "name": "Removable_Tube",
+        "mesh": "Removable_Tube.036",
+        "triangles": 44,
+        "pivot_blender_m": [
+          0.0,
+          -0.0703125,
+          0.04218750074505806
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "tube"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.049",
+        "triangles": 6,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "tube_nightshift"
+      }
+    ],
+    "triangles": 134
+  },
+  "light_tube_emergency": {
+    "family": "tube",
+    "status": "emergency",
+    "insert_blender_m": [
+      0,
+      -0.0703125,
+      0.0421875
+    ],
+    "insert_godot_m": [
+      0,
+      0.0421875,
+      0.0703125
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Sockets",
+        "mesh": "Housing_and_Sockets.042",
+        "triangles": 84,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "tube-empty"
+      },
+      {
+        "name": "Removable_Tube",
+        "mesh": "Removable_Tube.041",
+        "triangles": 44,
+        "pivot_blender_m": [
+          0.0,
+          -0.0703125,
+          0.04218750074505806
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "tube_emergency"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.050",
+        "triangles": 6,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "tube_emergency"
+      }
+    ],
+    "triangles": 134
+  },
+  "light_bulb_off": {
+    "family": "bulb",
+    "status": "off",
+    "insert_blender_m": [
+      0,
+      -0.084375,
+      0.05625
+    ],
+    "insert_godot_m": [
+      0,
+      0.05625,
+      0.084375
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.060",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          0.05624999850988388
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb"
+      }
+    ],
+    "triangles": 112
+  },
+  "light_bulb_on": {
+    "family": "bulb",
+    "status": "on",
+    "insert_blender_m": [
+      0,
+      -0.084375,
+      0.05625
+    ],
+    "insert_godot_m": [
+      0,
+      0.05625,
+      0.084375
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.060",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          0.05624999850988388
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.051",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "bulb"
+      }
+    ],
+    "triangles": 124
+  },
+  "light_bulb_empty": {
+    "family": "bulb",
+    "status": "empty",
+    "insert_blender_m": [
+      0,
+      -0.084375,
+      0.05625
+    ],
+    "insert_godot_m": [
+      0,
+      0.05625,
+      0.084375
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      }
+    ],
+    "triangles": 34
+  },
+  "light_bulb_burned": {
+    "family": "bulb",
+    "status": "burned",
+    "insert_blender_m": [
+      0,
+      -0.084375,
+      0.05625
+    ],
+    "insert_godot_m": [
+      0,
+      0.05625,
+      0.084375
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.062",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          0.05624999850988388
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "bulb-burned"
+      }
+    ],
+    "triangles": 112
+  },
+  "light_bulb_broken": {
+    "family": "bulb",
+    "status": "broken",
+    "insert_blender_m": [
+      0,
+      -0.084375,
+      0.05625
+    ],
+    "insert_godot_m": [
+      0,
+      0.05625,
+      0.084375
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.063",
+        "triangles": 54,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          0.05624999850988388
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "bulb-broken"
+      }
+    ],
+    "triangles": 88
+  },
+  "light_bulb_nightshift": {
+    "family": "bulb",
+    "status": "nightshift",
+    "insert_blender_m": [
+      0,
+      -0.084375,
+      0.05625
+    ],
+    "insert_godot_m": [
+      0,
+      0.05625,
+      0.084375
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.060",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          0.05624999850988388
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.052",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "bulb_nightshift"
+      }
+    ],
+    "triangles": 124
+  },
+  "light_bulb_emergency": {
+    "family": "bulb",
+    "status": "emergency",
+    "insert_blender_m": [
+      0,
+      -0.084375,
+      0.05625
+    ],
+    "insert_godot_m": [
+      0,
+      0.05625,
+      0.084375
+    ],
+    "parts": [
+      {
+        "name": "Housing_and_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.065",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          -0.08437500149011612,
+          0.05624999850988388
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb_emergency"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.053",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "bulb_emergency"
+      }
+    ],
+    "triangles": 124
+  },
+  "light_floor_off": {
+    "family": "floor",
+    "status": "off",
+    "insert_blender_m": [
+      0,
+      0.0,
+      -0.196875
+    ],
+    "insert_godot_m": [
+      0,
+      -0.196875,
+      -0.0
+    ],
+    "parts": [
+      {
+        "name": "Recessed_Housing",
+        "mesh": "Recessed_Housing.030",
+        "triangles": 130,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "floor-empty"
+      },
+      {
+        "name": "Internal_Bulb_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.08437500894069672,
+          -0.25312501192092896
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.066",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          1.1920929132713809e-08,
+          -0.19687500596046448
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb"
+      },
+      {
+        "name": "Removable_Protective_Lens",
+        "mesh": "Removable_Protective_Lens.024",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "floor"
+      }
+    ],
+    "triangles": 254
+  },
+  "light_floor_on": {
+    "family": "floor",
+    "status": "on",
+    "insert_blender_m": [
+      0,
+      0.0,
+      -0.196875
+    ],
+    "insert_godot_m": [
+      0,
+      -0.196875,
+      -0.0
+    ],
+    "parts": [
+      {
+        "name": "Recessed_Housing",
+        "mesh": "Recessed_Housing.030",
+        "triangles": 130,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "floor-empty"
+      },
+      {
+        "name": "Internal_Bulb_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.08437500894069672,
+          -0.25312501192092896
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.066",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          1.1920929132713809e-08,
+          -0.19687500596046448
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb"
+      },
+      {
+        "name": "Removable_Protective_Lens",
+        "mesh": "Removable_Protective_Lens.024",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "floor"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.054",
+        "triangles": 18,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "floor"
+      }
+    ],
+    "triangles": 272
+  },
+  "light_floor_empty": {
+    "family": "floor",
+    "status": "empty",
+    "insert_blender_m": [
+      0,
+      0.0,
+      -0.196875
+    ],
+    "insert_godot_m": [
+      0,
+      -0.196875,
+      -0.0
+    ],
+    "parts": [
+      {
+        "name": "Recessed_Housing",
+        "mesh": "Recessed_Housing.030",
+        "triangles": 130,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "floor-empty"
+      },
+      {
+        "name": "Internal_Bulb_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.08437500894069672,
+          -0.25312501192092896
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      }
+    ],
+    "triangles": 164
+  },
+  "light_floor_burned": {
+    "family": "floor",
+    "status": "burned",
+    "insert_blender_m": [
+      0,
+      0.0,
+      -0.196875
+    ],
+    "insert_godot_m": [
+      0,
+      -0.196875,
+      -0.0
+    ],
+    "parts": [
+      {
+        "name": "Recessed_Housing",
+        "mesh": "Recessed_Housing.030",
+        "triangles": 130,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "floor-empty"
+      },
+      {
+        "name": "Internal_Bulb_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.08437500894069672,
+          -0.25312501192092896
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.068",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          1.1920929132713809e-08,
+          -0.19687500596046448
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "bulb-burned"
+      },
+      {
+        "name": "Removable_Protective_Lens",
+        "mesh": "Removable_Protective_Lens.026",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "floor-burned"
+      }
+    ],
+    "triangles": 254
+  },
+  "light_floor_broken": {
+    "family": "floor",
+    "status": "broken",
+    "insert_blender_m": [
+      0,
+      0.0,
+      -0.196875
+    ],
+    "insert_godot_m": [
+      0,
+      -0.196875,
+      -0.0
+    ],
+    "parts": [
+      {
+        "name": "Recessed_Housing",
+        "mesh": "Recessed_Housing.030",
+        "triangles": 130,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "floor-empty"
+      },
+      {
+        "name": "Internal_Bulb_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.08437500894069672,
+          -0.25312501192092896
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.069",
+        "triangles": 54,
+        "pivot_blender_m": [
+          0.0,
+          1.1920929132713809e-08,
+          -0.19687500596046448
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "bulb-broken"
+      },
+      {
+        "name": "Removable_Protective_Lens",
+        "mesh": "Removable_Protective_Lens.027",
+        "triangles": 28,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Damaged_Glass_Original.006"
+        ],
+        "source_state": "floor-broken"
+      }
+    ],
+    "triangles": 246
+  },
+  "light_floor_nightshift": {
+    "family": "floor",
+    "status": "nightshift",
+    "insert_blender_m": [
+      0,
+      0.0,
+      -0.196875
+    ],
+    "insert_godot_m": [
+      0,
+      -0.196875,
+      -0.0
+    ],
+    "parts": [
+      {
+        "name": "Recessed_Housing",
+        "mesh": "Recessed_Housing.030",
+        "triangles": 130,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "floor-empty"
+      },
+      {
+        "name": "Internal_Bulb_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.08437500894069672,
+          -0.25312501192092896
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.066",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          1.1920929132713809e-08,
+          -0.19687500596046448
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb"
+      },
+      {
+        "name": "Removable_Protective_Lens",
+        "mesh": "Removable_Protective_Lens.024",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "floor"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.055",
+        "triangles": 18,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "floor_nightshift"
+      }
+    ],
+    "triangles": 272
+  },
+  "light_floor_emergency": {
+    "family": "floor",
+    "status": "emergency",
+    "insert_blender_m": [
+      0,
+      0.0,
+      -0.196875
+    ],
+    "insert_godot_m": [
+      0,
+      -0.196875,
+      -0.0
+    ],
+    "parts": [
+      {
+        "name": "Recessed_Housing",
+        "mesh": "Recessed_Housing.030",
+        "triangles": 130,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "floor-empty"
+      },
+      {
+        "name": "Internal_Bulb_Socket",
+        "mesh": "Housing_and_Socket.042",
+        "triangles": 34,
+        "pivot_blender_m": [
+          0.0,
+          0.08437500894069672,
+          -0.25312501192092896
+        ],
+        "materials": [
+          "Light_Housing_Original.006"
+        ],
+        "source_state": "bulb-empty"
+      },
+      {
+        "name": "Removable_Bulb",
+        "mesh": "Removable_Bulb.066",
+        "triangles": 78,
+        "pivot_blender_m": [
+          0.0,
+          1.1920929132713809e-08,
+          -0.19687500596046448
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "bulb"
+      },
+      {
+        "name": "Removable_Protective_Lens",
+        "mesh": "Removable_Protective_Lens.029",
+        "triangles": 12,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Frosted_Glass_Original.006"
+        ],
+        "source_state": "floor_emergency"
+      },
+      {
+        "name": "Emission_Overlay",
+        "mesh": "Emission_Overlay.056",
+        "triangles": 18,
+        "pivot_blender_m": [
+          0.0,
+          0.44999998807907104,
+          0.0
+        ],
+        "materials": [
+          "Light_Overlay_Original.006"
+        ],
+        "source_state": "floor_emergency"
+      }
+    ],
+    "triangles": 272
+  }
+}

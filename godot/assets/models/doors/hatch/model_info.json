@@ -1,0 +1,47 @@
+{
+  "parts": {
+    "Hatch_Upper_Left": {
+      "triangles": 52,
+      "open_offset_godot": [
+        -1.05,
+        1.05,
+        0.0
+      ]
+    },
+    "Hatch_Upper_Right": {
+      "triangles": 60,
+      "open_offset_godot": [
+        1.05,
+        1.05,
+        0.0
+      ]
+    },
+    "Hatch_Lower_Left": {
+      "triangles": 44,
+      "open_offset_godot": [
+        -1.05,
+        -1.05,
+        0.0
+      ]
+    },
+    "Hatch_Lower_Right": {
+      "triangles": 52,
+      "open_offset_godot": [
+        1.05,
+        -1.05,
+        0.0
+      ]
+    }
+  },
+  "triangles": 208,
+  "source_sha256": "ee3370095350be7eae1b585872cd2d8410812b3a58f58018297f3a3158475548",
+  "source_texture": "assets\\tg\\icons\\obj\\doors\\airlocks\\hatch\\centcom.png",
+  "nearest": true,
+  "original_png_embedded": true,
+  "appearances": {
+    "centcom": "assets\\tg\\icons\\obj\\doors\\airlocks\\hatch\\centcom.png",
+    "maintenance": "assets\\tg\\icons\\obj\\doors\\airlocks\\hatch\\maintenance.png"
+  },
+  "maintenance_sha256": "16e245d30cf73e911be53c2dd06454dca95c9cf357559c3e533ab02fb1214691",
+  "shared_meshes": 4
+}

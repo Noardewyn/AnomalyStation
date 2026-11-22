@@ -1,0 +1,267 @@
+{
+  "picture_frame_photo_empty": {
+    "base_state": "frame-overlay",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Wood_Frame",
+        "triangles": 96,
+        "shared_mesh": "Continuous_Stepped_Wood_Frame.004",
+        "materials": [
+          "Frame_photo_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-overlay"
+      },
+      {
+        "name": "Removable_Rear_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Rear_Board.004",
+        "materials": [
+          "Frame_Backboard_Original.020"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-overlay"
+      },
+      {
+        "name": "Photo_White_Mat",
+        "triangles": 46,
+        "shared_mesh": "Photo_White_Mat.003",
+        "materials": [
+          "Frame_photo_empty_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-overlay"
+      }
+    ],
+    "triangles": 154
+  },
+  "picture_frame_portrait_monkey": {
+    "base_state": "frame-monkey",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Wood_Frame",
+        "triangles": 96,
+        "shared_mesh": "Continuous_Stepped_Wood_Frame.004",
+        "materials": [
+          "Frame_portrait_monkey_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-monkey"
+      },
+      {
+        "name": "Removable_Rear_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Rear_Board.004",
+        "materials": [
+          "Frame_Backboard_Original.021"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-monkey"
+      },
+      {
+        "name": "Replaceable_Portrait_Insert",
+        "triangles": 12,
+        "shared_mesh": "Replaceable_Portrait_Insert.004",
+        "materials": [
+          "Frame_portrait_monkey_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.005625000223517418,
+          0.0
+        ],
+        "source_state": "frame-monkey"
+      }
+    ],
+    "triangles": 120
+  },
+  "picture_frame_portrait_fruit": {
+    "base_state": "frame-fruit",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Wood_Frame",
+        "triangles": 96,
+        "shared_mesh": "Continuous_Stepped_Wood_Frame.004",
+        "materials": [
+          "Frame_portrait_fruit_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-fruit"
+      },
+      {
+        "name": "Removable_Rear_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Rear_Board.004",
+        "materials": [
+          "Frame_Backboard_Original.022"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-fruit"
+      },
+      {
+        "name": "Replaceable_Portrait_Insert",
+        "triangles": 12,
+        "shared_mesh": "Replaceable_Portrait_Insert.004",
+        "materials": [
+          "Frame_portrait_fruit_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.005625000223517418,
+          0.0
+        ],
+        "source_state": "frame-fruit"
+      }
+    ],
+    "triangles": 120
+  },
+  "picture_frame_portrait_rat": {
+    "base_state": "frame-rat",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Wood_Frame",
+        "triangles": 96,
+        "shared_mesh": "Continuous_Stepped_Wood_Frame.004",
+        "materials": [
+          "Frame_portrait_rat_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-rat"
+      },
+      {
+        "name": "Removable_Rear_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Rear_Board.004",
+        "materials": [
+          "Frame_Backboard_Original.023"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-rat"
+      },
+      {
+        "name": "Replaceable_Portrait_Insert",
+        "triangles": 12,
+        "shared_mesh": "Replaceable_Portrait_Insert.004",
+        "materials": [
+          "Frame_portrait_rat_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.005625000223517418,
+          0.0
+        ],
+        "source_state": "frame-rat"
+      }
+    ],
+    "triangles": 120
+  },
+  "picture_frame_portrait_ratvar": {
+    "base_state": "frame-ratvar",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Stepped_Wood_Frame",
+        "triangles": 96,
+        "shared_mesh": "Continuous_Stepped_Wood_Frame.004",
+        "materials": [
+          "Frame_portrait_ratvar_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-ratvar"
+      },
+      {
+        "name": "Removable_Rear_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Rear_Board.004",
+        "materials": [
+          "Frame_Backboard_Original.024"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "frame-ratvar"
+      },
+      {
+        "name": "Replaceable_Portrait_Insert",
+        "triangles": 12,
+        "shared_mesh": "Replaceable_Portrait_Insert.004",
+        "materials": [
+          "Frame_portrait_ratvar_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          -0.005625000223517418,
+          0.0
+        ],
+        "source_state": "frame-ratvar"
+      }
+    ],
+    "triangles": 120
+  }
+}

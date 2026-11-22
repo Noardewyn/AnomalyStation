@@ -1,0 +1,18 @@
+{
+  "atlas": "godot/assets/tg/icons/obj/machines/defib_mount.png",
+  "sha256": "79d4726bbf605c251775d6c98028267a5bd178bca6556feb2304ed30e1920199",
+  "rgba_matches_dmi": true,
+  "tile": [
+    32,
+    32
+  ],
+  "atlas_size": [
+    128,
+    96
+  ],
+  "source": "code/game/machinery/defibrillator_mount.dm",
+  "duplicate_audit": "No previous model found",
+  "scope": "Wall standard and PENLITE only; mobile excluded; 18 representative presets, not every combination",
+  "charge_rule": "CEILING(charge/maxcharge*4,1)*25 when powered; charge0 absent in atlas",
+  "paddles": "No dedicated mount overlay for removed paddles"
+}

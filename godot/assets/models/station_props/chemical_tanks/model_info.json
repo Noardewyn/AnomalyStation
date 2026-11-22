@@ -1,0 +1,95 @@
+{
+  "states": [
+    {
+      "state": "water",
+      "capacity_units": 1000,
+      "reagent": "water",
+      "anchored": false,
+      "vertices": 395,
+      "triangles": 632,
+      "file": "water.glb"
+    },
+    {
+      "state": "fuel",
+      "capacity_units": 1000,
+      "reagent": "fuel",
+      "anchored": false,
+      "vertices": 395,
+      "triangles": 632,
+      "file": "fuel.glb"
+    },
+    {
+      "state": "water_high",
+      "capacity_units": 100000,
+      "reagent": "water",
+      "anchored": false,
+      "vertices": 395,
+      "triangles": 632,
+      "file": "water_high.glb"
+    },
+    {
+      "state": "fuel_high",
+      "capacity_units": 5000,
+      "reagent": "fuel",
+      "anchored": false,
+      "vertices": 395,
+      "triangles": 632,
+      "file": "fuel_high.glb"
+    },
+    {
+      "state": "foam",
+      "capacity_units": 500,
+      "reagent": "firefighting_foam",
+      "anchored": false,
+      "vertices": 395,
+      "triangles": 632,
+      "file": "foam.glb"
+    },
+    {
+      "state": "fuel_stationary",
+      "capacity_units": 1000,
+      "reagent": "fuel",
+      "anchored": true,
+      "vertices": 411,
+      "triangles": 656,
+      "file": "fuel_stationary.glb"
+    },
+    {
+      "state": "water_stationary",
+      "capacity_units": 1000,
+      "reagent": "water",
+      "anchored": true,
+      "vertices": 411,
+      "triangles": 656,
+      "file": "water_stationary.glb"
+    },
+    {
+      "state": "tank_stationary",
+      "capacity_units": 1000,
+      "reagent": null,
+      "anchored": true,
+      "vertices": 411,
+      "triangles": 656,
+      "file": "tank_stationary.glb"
+    },
+    {
+      "state": "tank_chem_overlay",
+      "is_overlay": true,
+      "vertices": 32,
+      "triangles": 60,
+      "base_state": "tank_stationary",
+      "file": "tank_chem_overlay.glb"
+    }
+  ],
+  "vertex_budget": 500,
+  "scale": "meters",
+  "height": 1.53,
+  "source": "src/Core/Tg/Generated/Types/obj.structure.g.cs; src/Core/Tg/modules/reagents/reagent_dispenser.cs",
+  "runtime_limitation": "plumbed classes are DmInert; reagent overlay update not ported",
+  "overlay_contract": {
+    "visible": "total_volume > 0",
+    "color": "mix_color_from_reagents",
+    "alpha": 0.62
+  },
+  "frame_revision": "Continuous union, 2026-10-29: no coplanar overlaps, rear uprights connected to chassis."
+}

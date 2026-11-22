@@ -1,0 +1,21 @@
+anomaly-map 1
+source _maps/map_files/T2Digesta/T2Digesta.dmm tg 1d99bd7f
+size 7 4 1
+chunk 32
+default /turf/closed/indestructible | /area/station/hallway/primary/central
+
+[chunk 1 1 1]
+7,4: /turf/open/space/basic | /area/space
+2,3: /turf/open/indestructible | /area/station/hallway/primary/central
+3,3: /obj/item/crowbar | /turf/open/indestructible | /area/station/hallway/primary/central
+4,3: /turf/open/indestructible | /area/station/hallway/primary/central
+5,3: /obj/effect/landmark/start/assistant | /turf/open/indestructible | /area/station/hallway/primary/central
+6,3: /turf/open/indestructible | /area/station/command/bridge
+7,3: /obj/structure/lattice | /turf/open/space/basic | /area/space/nearstation
+2,2: /turf/open/indestructible | /area/station/hallway/primary/central
+3,2: /turf/open/floor/iron | /area/station/hallway/primary/central
+4,2: /turf/open/indestructible | /area/station/hallway/primary/central
+5,2: /turf/open/indestructible | /area/station/hallway/primary/central
+6,2: /turf/open/indestructible | /area/station/hallway/primary/central
+7,2: /turf/open/space/basic | /area/space
+7,1: /turf/open/space/basic | /area/space

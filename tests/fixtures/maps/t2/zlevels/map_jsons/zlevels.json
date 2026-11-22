@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"map_name": "T2 zlevels",
+	"map_path": "map_files/T2Zlevels",
+	"map_file": "T2Zlevels.dmm",
+	"traits": [
+		{
+			"Linkage": "Cross",
+			"Gravity": 1,
+			"Baseturf": "/turf/open/floor/plating",
+			"Bombcap Multiplier": 2
+		}
+	]
+}

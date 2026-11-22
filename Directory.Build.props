@@ -1,0 +1,35 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)Version.props" />
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <!-- DM semantics: any reference may be null and null is an ordinary value (see docs/ai/translation-rules.md). -->
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;CS8981</NoWarn>
+    <!-- Waiting model (docs/ai/specs/waiting-model.md): a DmTask that is neither awaited nor explicitly detached is a
+         translation bug, in every project, not only in Anomaly.Core.Tg. -->
+    <WarningsAsErrors>$(WarningsAsErrors);CS4014</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Collections.Generic" />
+  </ItemGroup>
+  <!--
+    The waiting-model analyzer (D97, docs/ai/specs/waiting-model.md section 5.6) runs in every project that builds with
+    this file, the core tests included, except itself and its own tests: ANOM0001, ANOM0004 and ANOM0005 wherever the
+    kernel is referenced, ANOM0002 and ANOM0003 only where the project sets AnomalyTranslatedCode to true (Anomaly.Core.Tg).
+    Its diagnostics are errors; a deliberate exception is a local, commented #pragma. The Godot client has its own
+    Directory.Build.props and is not analyzed (the core it references is).
+  -->
+  <PropertyGroup>
+    <AnomalyAnalyzersProject>$(MSBuildThisFileDirectory)tools/Anomaly.Analyzers/Anomaly.Analyzers.csproj</AnomalyAnalyzersProject>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(MSBuildProjectName)' != 'Anomaly.Analyzers' and '$(MSBuildProjectName)' != 'Anomaly.Analyzers.Tests' ">
+    <ProjectReference Include="$(AnomalyAnalyzersProject)" OutputItemType="Analyzer" ReferenceOutputAssembly="false" PrivateAssets="all" />
+    <CompilerVisibleProperty Include="AnomalyTranslatedCode" />
+  </ItemGroup>
+</Project>

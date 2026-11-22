@@ -1,0 +1,14 @@
+{
+  "atlas": "godot\\assets\\tg\\icons\\obj\\machines\\wallmounts.png",
+  "sha256": "36a08a447b460fd028e160d56d4514edbf13c4da5be182c9feaeebaeba46abb8",
+  "size": [
+    640,
+    608
+  ],
+  "tile_size": [
+    32,
+    32
+  ],
+  "rgba_matches_reference_dmi": true,
+  "duplicate_audit": "No existing intercom model/build script found; earlier references were atlas metadata only."
+}

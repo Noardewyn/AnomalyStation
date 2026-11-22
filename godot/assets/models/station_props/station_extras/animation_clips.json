@@ -1,0 +1,62 @@
+{
+  "industrial_suit_storage.002": [
+    "open",
+    "close",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "drone_shell_dispenser.002": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "weapon_scanner_gate.002": [
+    "maintenance_open",
+    "maintenance_close",
+    "idle",
+    "scanning",
+    "alarm"
+  ],
+  "gulag_teleporter.002": [
+    "open",
+    "close",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "monkey_recycler.002": [
+    "working",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "fermenting_barrel.002": [
+    "open",
+    "close"
+  ],
+  "meat_spike.002": [
+    "frame",
+    "assembled"
+  ],
+  "tachyon_doppler_array.002": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "ectoscopic_sniffer.002": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "exploration_scanner.002": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "fishing_portal_generator.002": [
+    "off",
+    "on",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "restaurant_portal.002": [
+    "venue_open",
+    "venue_closed",
+    "maintenance_open",
+    "maintenance_close"
+  ]
+}

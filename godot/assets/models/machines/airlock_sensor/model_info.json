@@ -1,0 +1,546 @@
+{
+  "airlock_sensor_standby": {
+    "base_state": "airlock_sensor_standby",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Sensor_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Sensor_Housing.001",
+        "materials": [
+          "Airlock_Sensor_standby_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_standby"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Airlock_Sensor_standby_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_standby"
+      },
+      {
+        "name": "Press_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_1.001",
+        "materials": [
+          "Airlock_Sensor_standby_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_standby"
+      },
+      {
+        "name": "Press_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_2.001",
+        "materials": [
+          "Airlock_Sensor_standby_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.01406249962747097,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_standby"
+      }
+    ],
+    "triangles": 48
+  },
+  "airlock_sensor_off": {
+    "base_state": "airlock_sensor_off",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Sensor_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Sensor_Housing.001",
+        "materials": [
+          "Airlock_Sensor_off_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_off"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Airlock_Sensor_off_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_off"
+      },
+      {
+        "name": "Press_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_1.001",
+        "materials": [
+          "Airlock_Sensor_off_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_off"
+      },
+      {
+        "name": "Press_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_2.001",
+        "materials": [
+          "Airlock_Sensor_off_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.01406249962747097,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_off"
+      }
+    ],
+    "triangles": 48
+  },
+  "airlock_sensor_cycle_0": {
+    "base_state": "airlock_sensor_cycle",
+    "frame": 0,
+    "overlays": [
+      "airlock_sensor_cycle (external halo pixels)"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Sensor_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Sensor_Housing.001",
+        "materials": [
+          "Airlock_Sensor_cycle_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Airlock_Sensor_cycle_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Press_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_1.001",
+        "materials": [
+          "Airlock_Sensor_cycle_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Press_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_2.001",
+        "materials": [
+          "Airlock_Sensor_cycle_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.01406249962747097,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Halo_Overlay",
+        "triangles": 8,
+        "shared_mesh": "Halo_Overlay.004",
+        "materials": [
+          "Airlock_Sensor_cycle_0_Halo_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_cycle"
+      }
+    ],
+    "triangles": 56
+  },
+  "airlock_sensor_cycle_1": {
+    "base_state": "airlock_sensor_cycle",
+    "frame": 1,
+    "overlays": [
+      "airlock_sensor_cycle (external halo pixels)"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Sensor_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Sensor_Housing.001",
+        "materials": [
+          "Airlock_Sensor_cycle_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Airlock_Sensor_cycle_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Press_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_1.001",
+        "materials": [
+          "Airlock_Sensor_cycle_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Press_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_2.001",
+        "materials": [
+          "Airlock_Sensor_cycle_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.01406249962747097,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_cycle"
+      },
+      {
+        "name": "Halo_Overlay",
+        "triangles": 60,
+        "shared_mesh": "Halo_Overlay.005",
+        "materials": [
+          "Airlock_Sensor_cycle_1_Halo_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_cycle"
+      }
+    ],
+    "triangles": 108
+  },
+  "airlock_sensor_alert_0": {
+    "base_state": "airlock_sensor_alert",
+    "frame": 0,
+    "overlays": [
+      "airlock_sensor_alert (external halo pixels)"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Sensor_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Sensor_Housing.001",
+        "materials": [
+          "Airlock_Sensor_alert_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Airlock_Sensor_alert_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Press_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_1.001",
+        "materials": [
+          "Airlock_Sensor_alert_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Press_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_2.001",
+        "materials": [
+          "Airlock_Sensor_alert_0_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.01406249962747097,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Halo_Overlay",
+        "triangles": 60,
+        "shared_mesh": "Halo_Overlay.006",
+        "materials": [
+          "Airlock_Sensor_alert_0_Halo_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_alert"
+      }
+    ],
+    "triangles": 108
+  },
+  "airlock_sensor_alert_1": {
+    "base_state": "airlock_sensor_alert",
+    "frame": 1,
+    "overlays": [
+      "airlock_sensor_alert (external halo pixels)"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Sensor_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Sensor_Housing.001",
+        "materials": [
+          "Airlock_Sensor_alert_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Airlock_Sensor_alert_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Press_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_1.001",
+        "materials": [
+          "Airlock_Sensor_alert_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Press_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_2.001",
+        "materials": [
+          "Airlock_Sensor_alert_1_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.01406249962747097,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Halo_Overlay",
+        "triangles": 8,
+        "shared_mesh": "Halo_Overlay.007",
+        "materials": [
+          "Airlock_Sensor_alert_1_Halo_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_alert"
+      }
+    ],
+    "triangles": 56
+  },
+  "airlock_sensor_alert_2": {
+    "base_state": "airlock_sensor_alert",
+    "frame": 2,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Sensor_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Sensor_Housing.001",
+        "materials": [
+          "Airlock_Sensor_alert_2_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator.004",
+        "materials": [
+          "Airlock_Sensor_alert_2_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.05624999850988388,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Press_Button_1",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_1.001",
+        "materials": [
+          "Airlock_Sensor_alert_2_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.0703125,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      },
+      {
+        "name": "Press_Button_2",
+        "triangles": 12,
+        "shared_mesh": "Press_Button_2.001",
+        "materials": [
+          "Airlock_Sensor_alert_2_Original.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.01406249962747097,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "airlock_sensor_alert"
+      }
+    ],
+    "triangles": 48
+  }
+}

@@ -1,0 +1,1441 @@
+{
+  "air_alarm_normal": {
+    "base_state": "alarmp",
+    "overlays": [
+      "alarm0"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Connector",
+        "triangles": 12,
+        "shared_mesh": "Upper_Connector.021",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Status_Overlay.076",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm0"
+      },
+      {
+        "name": "Terminal_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Status_Overlay.077",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm0"
+      }
+    ],
+    "triangles": 400
+  },
+  "air_alarm_warning": {
+    "base_state": "alarmp",
+    "overlays": [
+      "alarm2"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Connector",
+        "triangles": 12,
+        "shared_mesh": "Upper_Connector.021",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Status_Overlay.078",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm2"
+      },
+      {
+        "name": "Terminal_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Status_Overlay.079",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm2"
+      }
+    ],
+    "triangles": 400
+  },
+  "air_alarm_hazard": {
+    "base_state": "alarmp",
+    "overlays": [
+      "alarm1"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Connector",
+        "triangles": 12,
+        "shared_mesh": "Upper_Connector.021",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Status_Overlay.080",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm1"
+      },
+      {
+        "name": "Terminal_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Status_Overlay.081",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm1"
+      }
+    ],
+    "triangles": 400
+  },
+  "air_alarm_unpowered": {
+    "base_state": "alarmp",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Connector",
+        "triangles": 12,
+        "shared_mesh": "Upper_Connector.021",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 336
+  },
+  "air_alarm_remote_normal": {
+    "base_state": "alarmp_remote",
+    "overlays": [
+      "alarm0"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Remote_Connector",
+        "triangles": 60,
+        "shared_mesh": "Remote_Connector.012",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Status_Overlay.076",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm0"
+      },
+      {
+        "name": "Terminal_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Status_Overlay.077",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm0"
+      }
+    ],
+    "triangles": 448
+  },
+  "air_alarm_remote_warning": {
+    "base_state": "alarmp_remote",
+    "overlays": [
+      "alarm2"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Remote_Connector",
+        "triangles": 60,
+        "shared_mesh": "Remote_Connector.012",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Status_Overlay.078",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm2"
+      },
+      {
+        "name": "Terminal_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Status_Overlay.079",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm2"
+      }
+    ],
+    "triangles": 448
+  },
+  "air_alarm_remote_hazard": {
+    "base_state": "alarmp_remote",
+    "overlays": [
+      "alarm1"
+    ],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Remote_Connector",
+        "triangles": 60,
+        "shared_mesh": "Remote_Connector.012",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Overlay",
+        "triangles": 40,
+        "shared_mesh": "Status_Overlay.080",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm1"
+      },
+      {
+        "name": "Terminal_Overlay",
+        "triangles": 24,
+        "shared_mesh": "Status_Overlay.081",
+        "materials": [
+          "Air_Alarm_Overlay_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "alarm1"
+      }
+    ],
+    "triangles": 448
+  },
+  "air_alarm_remote_unpowered": {
+    "base_state": "alarmp_remote",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Remote_Connector",
+        "triangles": 60,
+        "shared_mesh": "Remote_Connector.012",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 384
+  },
+  "air_alarm_frame": {
+    "base_state": "alarm_b1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Connector",
+        "triangles": 12,
+        "shared_mesh": "Upper_Connector.021",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.041",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 324
+  },
+  "air_alarm_circuit_unwired": {
+    "base_state": "alarm_b2",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Connector",
+        "triangles": 12,
+        "shared_mesh": "Upper_Connector.021",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.090",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 336
+  },
+  "air_alarm_panel_open": {
+    "base_state": "alarmx",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Lined_Housing",
+        "triangles": 44,
+        "shared_mesh": "Lined_Housing.034",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lower_Vent_Fins",
+        "triangles": 172,
+        "shared_mesh": "Lower_Vent_Fins.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Sensor_Terminals",
+        "triangles": 28,
+        "shared_mesh": "Upper_Sensor_Terminals.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Upper_Connector",
+        "triangles": 12,
+        "shared_mesh": "Upper_Connector.021",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Circuit_Board",
+        "triangles": 12,
+        "shared_mesh": "Removable_Circuit_Board.099",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "AIR_Front_Cover",
+        "triangles": 56,
+        "shared_mesh": "AIR_Front_Cover.033",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Display_Glass",
+        "triangles": 12,
+        "shared_mesh": "Display_Glass.033",
+        "materials": [
+          "Air_Alarm_Glass_Original.004"
+        ],
+        "parent": "Service_Cover_Hinge",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wire_Left",
+        "triangles": 132,
+        "shared_mesh": "Service_Wire_Left.006",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wire_Right",
+        "triangles": 164,
+        "shared_mesh": "Service_Wire_Right.005",
+        "materials": [
+          "Air_Alarm_Housing_Original.004"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 632
+  }
+}

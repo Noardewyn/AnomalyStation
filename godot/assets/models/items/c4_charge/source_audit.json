@@ -1,0 +1,11 @@
+{
+  "png": "godot/assets/tg/icons/obj/weapons/grenade.png",
+  "dmi": "..\\tgstation\\icons\\obj\\weapons\\grenade.dmi",
+  "png_sha256": "0585203d2863b461444a9e2cc0e1c9ddcf53dbf5f12de9faf744f94d6368e315",
+  "pixels_match_dmi": true,
+  "tile_size": [
+    32,
+    32
+  ],
+  "attached_state_reuses_active_frames": true
+}

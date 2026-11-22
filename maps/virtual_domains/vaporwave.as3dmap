@@ -1,0 +1,334 @@
+anomaly-map 1
+source _maps/virtual_domains/vaporwave.dmm tg 1d99bd7f
+size 25 28 1
+chunk 32
+default /turf/open/space/basic | /area/space/virtual_domain
+
+[chunk 1 1 1]
+1,28: /turf/closed/indestructible/binary | /area/space
+2,28: /turf/closed/indestructible/binary | /area/space
+3,28: /turf/closed/indestructible/binary | /area/space
+4,28: /turf/closed/indestructible/binary | /area/space
+5,28: /turf/closed/indestructible/binary | /area/space
+6,28: /turf/closed/indestructible/binary | /area/space
+7,28: /turf/closed/indestructible/binary | /area/space
+8,28: /turf/closed/indestructible/binary | /area/space
+9,28: /turf/closed/indestructible/binary | /area/space
+10,28: /turf/closed/indestructible/binary | /area/space
+11,28: /turf/closed/indestructible/binary | /area/space
+12,28: /turf/closed/indestructible/binary | /area/space
+13,28: /turf/closed/indestructible/binary | /area/space
+14,28: /turf/closed/indestructible/binary | /area/space
+15,28: /turf/closed/indestructible/binary | /area/space
+16,28: /turf/closed/indestructible/binary | /area/space
+17,28: /turf/closed/indestructible/binary | /area/space
+18,28: /turf/closed/indestructible/binary | /area/space
+19,28: /turf/closed/indestructible/binary | /area/space
+20,28: /turf/closed/indestructible/binary | /area/space
+21,28: /turf/closed/indestructible/binary | /area/space
+22,28: /turf/closed/indestructible/binary | /area/space
+23,28: /turf/closed/indestructible/binary | /area/space
+24,28: /turf/closed/indestructible/binary | /area/space
+25,28: /turf/closed/indestructible/binary | /area/space
+1,27: /turf/closed/indestructible/binary | /area/space
+25,27: /turf/closed/indestructible/binary | /area/space
+1,26: /turf/closed/indestructible/binary | /area/space
+25,26: /turf/closed/indestructible/binary | /area/space
+1,25: /turf/closed/indestructible/binary | /area/space
+25,25: /turf/closed/indestructible/binary | /area/space
+1,24: /turf/closed/indestructible/binary | /area/space
+9,24: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+10,24: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+11,24: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+12,24: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+13,24: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+14,24: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+15,24: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+16,24: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+17,24: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+18,24: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,24: /turf/closed/indestructible/binary | /area/space
+1,23: /turf/closed/indestructible/binary | /area/space
+7,23: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,23: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+9,23: /obj/structure/closet/crate/bin | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+10,23: /obj/structure/lattice | /turf/open/floor/plating/airless | /area/ruin/space/virtual_domain
+11,23: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+12,23: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+13,23: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+14,23: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+15,23: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+16,23: /obj/structure/lattice | /turf/open/floor/plating/airless | /area/ruin/space/virtual_domain
+17,23: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+18,23: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+19,23: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,23: /turf/closed/indestructible/binary | /area/space
+1,22: /turf/closed/indestructible/binary | /area/space
+6,22: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,22: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,22: /turf/closed/wall | /area/virtual_domain
+9,22: /turf/closed/wall | /area/virtual_domain
+10,22: /turf/closed/wall/rust | /area/virtual_domain
+11,22: /turf/closed/wall | /area/virtual_domain
+12,22: /turf/closed/wall | /area/virtual_domain
+13,22: /turf/closed/wall | /area/virtual_domain
+14,22: /turf/closed/wall/rust | /area/virtual_domain
+15,22: /turf/closed/wall/rust | /area/virtual_domain
+16,22: /turf/closed/wall | /area/virtual_domain
+17,22: /turf/closed/wall/rust | /area/virtual_domain
+18,22: /turf/closed/wall | /area/virtual_domain
+19,22: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,22: /turf/closed/indestructible/binary | /area/space
+1,21: /turf/closed/indestructible/binary | /area/space
+5,21: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+6,21: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,21: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,21: /turf/closed/wall | /area/virtual_domain
+9,21: /obj/structure/flora/tree/palm | /turf/open/floor/holofloor/beach | /area/virtual_domain
+10,21: /obj/effect/spawner/random/structure/musician/piano/random_piano | /obj/structure/window/spawner/directional/west | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+11,21: /obj/structure/chair/stool/directional/west | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+12,21: /obj/structure/sign/poster/contraband/clown/directional/north | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+13,21: /obj/structure/chair/comfy/black{dir = 4} | /obj/machinery/light/small/directional/north | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+14,21: /obj/structure/table/reinforced | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+15,21: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+16,21: /obj/structure/window/spawner/directional/east | /obj/structure/closet/crate/secure/bitrunning/encrypted | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+17,21: /obj/structure/flora/tree/palm | /turf/open/floor/holofloor/beach | /area/virtual_domain
+18,21: /turf/closed/wall | /area/virtual_domain
+19,21: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+20,21: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,21: /turf/closed/indestructible/binary | /area/space
+1,20: /turf/closed/indestructible/binary | /area/space
+5,20: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+6,20: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,20: /obj/structure/lattice | /turf/open/floor/plating/airless | /area/ruin/space/virtual_domain
+8,20: /turf/closed/wall/rust | /area/virtual_domain
+9,20: /turf/open/floor/holofloor/beach | /area/virtual_domain
+10,20: /obj/structure/window/spawner/directional/west | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+11,20: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+12,20: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+13,20: /obj/structure/chair/comfy/black{dir = 4} | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+14,20: /obj/structure/table/reinforced | /obj/item/clothing/glasses/sunglasses/big{name = "aesthetic sunglasses"} | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+15,20: /obj/structure/chair/comfy/black{dir = 8} | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+16,20: /obj/structure/window/spawner/directional/east | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+17,20: /obj/item/instrument/eguitar | /turf/open/floor/holofloor/beach | /area/virtual_domain
+18,20: /turf/closed/wall/rust | /area/virtual_domain
+19,20: /obj/structure/lattice | /turf/open/floor/plating/airless | /area/ruin/space/virtual_domain
+20,20: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+21,20: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,20: /turf/closed/indestructible/binary | /area/space
+1,19: /turf/closed/indestructible/binary | /area/space
+5,19: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+6,19: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,19: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,19: /turf/closed/wall/rust | /area/virtual_domain
+9,19: /obj/structure/flora/tree/palm | /obj/machinery/light/directional/west | /turf/open/floor/holofloor/beach | /area/virtual_domain
+10,19: /obj/structure/window/spawner/directional/west | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+11,19: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+12,19: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+13,19: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+14,19: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+15,19: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+16,19: /obj/structure/window/spawner/directional/east | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+17,19: /obj/structure/flora/tree/palm | /obj/machinery/light/directional/east | /turf/open/floor/holofloor/beach | /area/virtual_domain
+18,19: /turf/closed/wall | /area/virtual_domain
+19,19: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+20,19: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+21,19: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,19: /turf/closed/indestructible/binary | /area/space
+1,18: /turf/closed/indestructible/binary | /area/space
+6,18: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,18: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,18: /turf/closed/wall/rust | /area/virtual_domain
+9,18: /turf/open/floor/holofloor/beach/coast | /area/virtual_domain
+10,18: /obj/structure/window/spawner/directional/west | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+11,18: /obj/item/statuebust | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+12,18: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+13,18: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+14,18: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+15,18: /mob/living/basic/butterfly | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+16,18: /obj/structure/window/spawner/directional/east | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+17,18: /turf/open/floor/holofloor/beach/coast | /area/virtual_domain
+18,18: /turf/closed/wall/rust | /area/virtual_domain
+19,18: /obj/structure/closet/crate/bin | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+20,18: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+21,18: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,18: /turf/closed/indestructible/binary | /area/space
+1,17: /turf/closed/indestructible/binary | /area/space
+6,17: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,17: /obj/structure/lattice | /turf/open/floor/plating/airless | /area/ruin/space/virtual_domain
+8,17: /turf/closed/wall | /area/virtual_domain
+9,17: /turf/open/floor/holofloor/beach/water | /area/virtual_domain
+10,17: /obj/structure/window/spawner/directional/west | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+11,17: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+12,17: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+13,17: /turf/open/floor/iron/vaporwave | /area/virtual_domain
+14,17: /obj/structure/table/reinforced | /obj/item/reagent_containers/cup/glass/drinkingglass{pixel_x = 6; pixel_y = 4} | /obj/item/reagent_containers/cup/glass/drinkingglass | /obj/item/reagent_containers/cup/glass/drinkingglass{pixel_x = -6; pixel_y = 8} | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+15,17: /obj/structure/table/reinforced | /obj/machinery/chem_dispenser/drinks/beer/fullupgrade | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+16,17: /obj/structure/window/spawner/directional/east | /obj/structure/table/reinforced | /obj/item/storage/fancy/cigarettes/cigars/havana | /obj/effect/spawner/random/entertainment/lighter | /turf/open/floor/iron/vaporwave | /area/virtual_domain
+17,17: /turf/open/floor/holofloor/beach/water | /area/virtual_domain
+18,17: /turf/closed/wall/rust | /area/virtual_domain
+19,17: /obj/structure/lattice | /turf/open/floor/plating/airless | /area/ruin/space/virtual_domain
+20,17: /obj/structure/lattice | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+21,17: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,17: /turf/closed/indestructible/binary | /area/space
+1,16: /turf/closed/indestructible/binary | /area/space
+6,16: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,16: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,16: /obj/effect/baseturf_helper/virtual_domain | /turf/closed/wall/rust | /area/virtual_domain
+9,16: /turf/closed/wall | /area/virtual_domain
+10,16: /turf/closed/wall | /area/virtual_domain
+11,16: /turf/closed/wall | /area/virtual_domain
+12,16: /turf/closed/wall | /area/virtual_domain
+13,16: /obj/structure/fans/tiny | /obj/machinery/door/airlock/hatch | /turf/open/floor/mineral/plastitanium/pod/dark | /area/virtual_domain
+14,16: /turf/closed/wall | /area/virtual_domain
+15,16: /turf/closed/wall/rust | /area/virtual_domain
+16,16: /turf/closed/wall | /area/virtual_domain
+17,16: /turf/closed/wall/rust | /area/virtual_domain
+18,16: /turf/closed/wall/rust | /area/virtual_domain
+19,16: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+20,16: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+21,16: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,16: /turf/closed/indestructible/binary | /area/space
+1,15: /turf/closed/indestructible/binary | /area/space
+6,15: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+7,15: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,15: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+9,15: /obj/machinery/light/small/directional/north | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/virtual_domain
+10,15: /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+11,15: /obj/structure/statue/sandstone/venus{anchored = 1; desc = "Ugh, this is merely an ugly amateurish replica of the other statue! The letters RIPGOAT are scribbled onto the base."; dir = 8} | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+12,15: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless{icon_state = "recharge_floor_asteroid"} | /area/ruin/space/virtual_domain
+13,15: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+14,15: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless{icon_state = "recharge_floor_asteroid"} | /area/ruin/space/virtual_domain
+15,15: /obj/structure/statue/sandstone/venus{anchored = 1; dir = 4} | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+16,15: /obj/effect/turf_decal/stripes/asteroid/line | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+17,15: /obj/machinery/light/small/directional/north | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/virtual_domain
+18,15: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+19,15: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+20,15: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,15: /turf/closed/indestructible/binary | /area/space
+1,14: /turf/closed/indestructible/binary | /area/space
+7,14: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+8,14: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+9,14: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+10,14: /obj/structure/flora/tree/palm | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+11,14: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+12,14: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless{icon_state = "stairs-l"} | /area/ruin/space/virtual_domain
+13,14: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless{icon_state = "stairs-m"} | /area/ruin/space/virtual_domain
+14,14: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless{icon_state = "stairs-r"} | /area/ruin/space/virtual_domain
+15,14: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+16,14: /obj/structure/flora/tree/palm | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+17,14: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+18,14: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+19,14: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+20,14: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,14: /turf/closed/indestructible/binary | /area/space
+1,13: /turf/closed/indestructible/binary | /area/space
+8,13: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+9,13: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+10,13: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+11,13: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+12,13: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+13,13: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+14,13: /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+15,13: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+16,13: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+17,13: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+18,13: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,13: /turf/closed/indestructible/binary | /area/space
+1,12: /turf/closed/indestructible/binary | /area/space
+10,12: /obj/effect/baseturf_helper/virtual_domain | /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+11,12: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+12,12: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+13,12: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+14,12: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand | /turf/open/floor/iron/airless | /area/ruin/space/virtual_domain
+15,12: /obj/effect/turf_decal/sand | /obj/effect/turf_decal/sand/plating | /turf/open/floor/plating{initial_gas_mix = "TEMP=2.7"} | /area/ruin/space/virtual_domain
+16,12: /turf/open/misc/asteroid/airless | /area/ruin/space/virtual_domain
+25,12: /turf/closed/indestructible/binary | /area/space
+1,11: /turf/closed/indestructible/binary | /area/space
+25,11: /turf/closed/indestructible/binary | /area/space
+1,10: /turf/closed/indestructible/binary | /area/space
+25,10: /turf/closed/indestructible/binary | /area/space
+1,9: /turf/closed/indestructible/binary | /area/space
+25,9: /turf/closed/indestructible/binary | /area/space
+1,8: /turf/closed/indestructible/binary | /area/space
+10,8: /turf/template_noop | /area/virtual_domain/safehouse
+11,8: /turf/template_noop | /area/virtual_domain/safehouse
+12,8: /turf/template_noop | /area/virtual_domain/safehouse
+13,8: /turf/template_noop | /area/virtual_domain/safehouse
+14,8: /turf/template_noop | /area/virtual_domain/safehouse
+15,8: /turf/template_noop | /area/virtual_domain/safehouse
+16,8: /turf/template_noop | /area/virtual_domain/safehouse
+25,8: /turf/closed/indestructible/binary | /area/space
+1,7: /turf/closed/indestructible/binary | /area/space
+10,7: /turf/template_noop | /area/virtual_domain/safehouse
+11,7: /obj/machinery/suit_storage_unit/standard_unit | /turf/template_noop | /area/virtual_domain/safehouse
+12,7: /turf/template_noop | /area/virtual_domain/safehouse
+13,7: /turf/template_noop | /area/virtual_domain/safehouse
+14,7: /turf/template_noop | /area/virtual_domain/safehouse
+15,7: /turf/template_noop | /area/virtual_domain/safehouse
+16,7: /turf/template_noop | /area/virtual_domain/safehouse
+25,7: /turf/closed/indestructible/binary | /area/space
+1,6: /turf/closed/indestructible/binary | /area/space
+10,6: /turf/template_noop | /area/virtual_domain/safehouse
+11,6: /obj/machinery/suit_storage_unit/standard_unit | /turf/template_noop | /area/virtual_domain/safehouse
+12,6: /turf/template_noop | /area/virtual_domain/safehouse
+13,6: /turf/template_noop | /area/virtual_domain/safehouse
+14,6: /turf/template_noop | /area/virtual_domain/safehouse
+15,6: /turf/template_noop | /area/virtual_domain/safehouse
+16,6: /turf/template_noop | /area/virtual_domain/safehouse
+25,6: /turf/closed/indestructible/binary | /area/space
+1,5: /turf/closed/indestructible/binary | /area/space
+10,5: /turf/template_noop | /area/virtual_domain/safehouse
+11,5: /obj/machinery/suit_storage_unit/standard_unit | /turf/template_noop | /area/virtual_domain/safehouse
+12,5: /turf/template_noop | /area/virtual_domain/safehouse
+13,5: /turf/template_noop | /area/virtual_domain/safehouse
+14,5: /turf/template_noop | /area/virtual_domain/safehouse
+15,5: /turf/template_noop | /area/virtual_domain/safehouse
+16,5: /turf/template_noop | /area/virtual_domain/safehouse
+25,5: /turf/closed/indestructible/binary | /area/space
+1,4: /turf/closed/indestructible/binary | /area/space
+10,4: /turf/template_noop | /area/virtual_domain/safehouse
+11,4: /turf/template_noop | /area/virtual_domain/safehouse
+12,4: /turf/template_noop | /area/virtual_domain/safehouse
+13,4: /turf/template_noop | /area/virtual_domain/safehouse
+14,4: /turf/template_noop | /area/virtual_domain/safehouse
+15,4: /obj/item/tank/internals/emergency_oxygen | /obj/item/tank/internals/emergency_oxygen | /obj/item/tank/internals/emergency_oxygen | /turf/template_noop | /area/virtual_domain/safehouse
+16,4: /turf/template_noop | /area/virtual_domain/safehouse
+25,4: /turf/closed/indestructible/binary | /area/space
+1,3: /turf/closed/indestructible/binary | /area/space
+10,3: /obj/modular_map_root/safehouse{key = "shuttle_space"} | /turf/template_noop | /area/virtual_domain/safehouse
+11,3: /turf/template_noop | /area/virtual_domain/safehouse
+12,3: /turf/template_noop | /area/virtual_domain/safehouse
+13,3: /turf/template_noop | /area/virtual_domain/safehouse
+14,3: /turf/template_noop | /area/virtual_domain/safehouse
+15,3: /turf/template_noop | /area/virtual_domain/safehouse
+16,3: /obj/effect/baseturf_helper/virtual_domain | /turf/template_noop | /area/virtual_domain/safehouse
+25,3: /turf/closed/indestructible/binary | /area/space
+1,2: /turf/closed/indestructible/binary | /area/space
+2,2: /obj/effect/baseturf_helper/virtual_domain | /turf/open/space/basic | /area/space/virtual_domain
+25,2: /turf/closed/indestructible/binary | /area/space
+1,1: /turf/closed/indestructible/binary | /area/space
+2,1: /turf/closed/indestructible/binary | /area/space
+3,1: /turf/closed/indestructible/binary | /area/space
+4,1: /turf/closed/indestructible/binary | /area/space
+5,1: /turf/closed/indestructible/binary | /area/space
+6,1: /turf/closed/indestructible/binary | /area/space
+7,1: /turf/closed/indestructible/binary | /area/space
+8,1: /turf/closed/indestructible/binary | /area/space
+9,1: /turf/closed/indestructible/binary | /area/space
+10,1: /turf/closed/indestructible/binary | /area/space
+11,1: /turf/closed/indestructible/binary | /area/space
+12,1: /turf/closed/indestructible/binary | /area/space
+13,1: /turf/closed/indestructible/binary | /area/space
+14,1: /turf/closed/indestructible/binary | /area/space
+15,1: /turf/closed/indestructible/binary | /area/space
+16,1: /turf/closed/indestructible/binary | /area/space
+17,1: /turf/closed/indestructible/binary | /area/space
+18,1: /turf/closed/indestructible/binary | /area/space
+19,1: /turf/closed/indestructible/binary | /area/space
+20,1: /turf/closed/indestructible/binary | /area/space
+21,1: /turf/closed/indestructible/binary | /area/space
+22,1: /turf/closed/indestructible/binary | /area/space
+23,1: /turf/closed/indestructible/binary | /area/space
+24,1: /turf/closed/indestructible/binary | /area/space
+25,1: /turf/closed/indestructible/binary | /area/space

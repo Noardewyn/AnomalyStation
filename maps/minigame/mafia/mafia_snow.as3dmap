@@ -1,0 +1,448 @@
+anomaly-map 1
+source _maps/minigame/mafia/mafia_snow.dmm tg 1d99bd7f
+size 23 23 1
+chunk 32
+default /turf/closed/indestructible/riveted | /area/centcom/mafia
+
+[chunk 1 1 1]
+1,23: /turf/template_noop | /area/template_noop
+2,23: /turf/template_noop | /area/template_noop
+3,23: /turf/template_noop | /area/template_noop
+4,23: /turf/template_noop | /area/template_noop
+20,23: /turf/template_noop | /area/template_noop
+21,23: /turf/template_noop | /area/template_noop
+22,23: /turf/template_noop | /area/template_noop
+23,23: /turf/template_noop | /area/template_noop
+6,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+7,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+8,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+9,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+10,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+11,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+12,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+13,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+14,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+15,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+16,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+17,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+18,22: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+4,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+5,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+6,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+7,21: /turf/closed/wall/ice | /area/centcom/mafia
+8,21: /turf/closed/wall/ice | /area/centcom/mafia
+9,21: /turf/closed/wall/ice | /area/centcom/mafia
+10,21: /turf/closed/wall/ice | /area/centcom/mafia
+11,21: /turf/closed/wall/ice | /area/centcom/mafia
+12,21: /turf/closed/wall/ice | /area/centcom/mafia
+13,21: /turf/closed/wall/ice | /area/centcom/mafia
+14,21: /turf/closed/wall/ice | /area/centcom/mafia
+15,21: /turf/closed/wall/ice | /area/centcom/mafia
+16,21: /turf/closed/wall/ice | /area/centcom/mafia
+17,21: /turf/closed/wall/ice | /area/centcom/mafia
+18,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+19,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+20,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+21,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+22,21: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,20: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,20: /turf/closed/wall/ice | /area/centcom/mafia
+4,20: /turf/closed/wall/ice | /area/centcom/mafia
+5,20: /turf/closed/wall/ice | /area/centcom/mafia
+6,20: /turf/closed/wall/ice | /area/centcom/mafia
+7,20: /turf/closed/wall/ice | /area/centcom/mafia
+8,20: /turf/open/floor/plating | /area/centcom/mafia
+9,20: /turf/open/floor/plating | /area/centcom/mafia
+10,20: /turf/open/floor/plating | /area/centcom/mafia
+11,20: /turf/open/floor/plating | /area/centcom/mafia
+12,20: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/plating | /area/centcom/mafia
+13,20: /turf/open/floor/plating | /area/centcom/mafia
+14,20: /turf/open/floor/plating | /area/centcom/mafia
+15,20: /turf/open/floor/plating | /area/centcom/mafia
+16,20: /obj/effect/mapping_helpers/burnt_floor | /turf/open/floor/plating | /area/centcom/mafia
+17,20: /turf/closed/wall/ice | /area/centcom/mafia
+18,20: /turf/closed/wall/ice | /area/centcom/mafia
+19,20: /turf/closed/wall/ice | /area/centcom/mafia
+20,20: /turf/closed/wall/ice | /area/centcom/mafia
+21,20: /turf/closed/wall/ice | /area/centcom/mafia
+22,20: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,19: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,19: /turf/closed/wall/ice | /area/centcom/mafia
+4,19: /obj/mafia_game_board | /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/plating | /area/centcom/mafia
+5,19: /obj/structure/grille/indestructible | /turf/open/floor/plating | /area/centcom/mafia
+6,19: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/plating | /area/centcom/mafia
+7,19: /turf/open/floor/plating | /area/centcom/mafia
+8,19: /turf/open/floor/plating | /area/centcom/mafia
+9,19: /turf/closed/wall/ice | /area/centcom/mafia
+10,19: /turf/closed/wall/ice | /area/centcom/mafia
+11,19: /obj/machinery/door/airlock/maintenance_hatch{max_integrity = 99999; name = "Maintenance"} | /obj/effect/mapping_helpers/airlock/locked | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+12,19: /turf/closed/wall/ice | /area/centcom/mafia
+13,19: /obj/machinery/door/airlock/maintenance_hatch{max_integrity = 99999; name = "Maintenance"} | /obj/effect/mapping_helpers/airlock/locked | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+14,19: /turf/closed/wall/ice | /area/centcom/mafia
+15,19: /turf/closed/wall/ice | /area/centcom/mafia
+16,19: /turf/open/floor/plating | /area/centcom/mafia
+17,19: /turf/open/floor/plating | /area/centcom/mafia
+18,19: /turf/open/floor/plating | /area/centcom/mafia
+19,19: /obj/structure/grille/indestructible | /turf/open/floor/plating | /area/centcom/mafia
+20,19: /obj/mafia_game_board | /turf/open/floor/plating | /area/centcom/mafia
+21,19: /turf/closed/wall/ice | /area/centcom/mafia
+22,19: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,18: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,18: /turf/closed/wall/ice | /area/centcom/mafia
+4,18: /obj/structure/grille/indestructible | /turf/open/floor/plating | /area/centcom/mafia
+5,18: /turf/open/floor/plating | /area/centcom/mafia
+6,18: /turf/closed/wall/ice | /area/centcom/mafia
+7,18: /turf/closed/wall/ice | /area/centcom/mafia
+8,18: /turf/closed/wall/ice | /area/centcom/mafia
+9,18: /turf/closed/wall/ice | /area/centcom/mafia
+10,18: /obj/item/bedsheet/brown{dir = 4} | /obj/structure/bed{dir = 4} | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+11,18: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+12,18: /turf/closed/wall/ice | /area/centcom/mafia
+13,18: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+14,18: /obj/item/bedsheet/green | /obj/structure/bed | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+15,18: /turf/closed/wall/ice | /area/centcom/mafia
+16,18: /turf/closed/wall/ice | /area/centcom/mafia
+17,18: /turf/closed/wall/ice | /area/centcom/mafia
+18,18: /turf/closed/wall/ice | /area/centcom/mafia
+19,18: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/plating | /area/centcom/mafia
+20,18: /obj/structure/grille/indestructible | /turf/open/floor/plating | /area/centcom/mafia
+21,18: /turf/closed/wall/ice | /area/centcom/mafia
+22,18: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,17: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,17: /turf/closed/wall/ice | /area/centcom/mafia
+4,17: /turf/open/floor/plating | /area/centcom/mafia
+5,17: /turf/open/floor/plating | /area/centcom/mafia
+6,17: /turf/closed/wall/ice | /area/centcom/mafia
+7,17: /obj/item/bedsheet/blue{dir = 4} | /obj/structure/bed{dir = 4} | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+8,17: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+9,17: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+10,17: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,17: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+12,17: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+13,17: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+14,17: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,17: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+16,17: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+17,17: /obj/item/bedsheet/orange | /obj/structure/bed | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+18,17: /turf/closed/wall/ice | /area/centcom/mafia
+19,17: /turf/open/floor/plating | /area/centcom/mafia
+20,17: /turf/open/floor/plating | /area/centcom/mafia
+21,17: /turf/closed/wall/ice | /area/centcom/mafia
+22,17: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,16: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,16: /turf/closed/wall/ice | /area/centcom/mafia
+4,16: /turf/open/floor/plating | /area/centcom/mafia
+5,16: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/plating | /area/centcom/mafia
+6,16: /obj/machinery/door/airlock/maintenance_hatch{max_integrity = 99999; name = "Maintenance"} | /obj/effect/mapping_helpers/airlock/locked | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+7,16: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+8,16: /turf/open/floor/iron | /area/centcom/mafia
+9,16: /turf/open/floor/iron | /area/centcom/mafia
+10,16: /turf/closed/wall/ice | /area/centcom/mafia
+11,16: /turf/open/floor/iron/dark | /area/centcom/mafia
+12,16: /turf/closed/wall/ice | /area/centcom/mafia
+13,16: /turf/open/floor/iron | /area/centcom/mafia
+14,16: /turf/closed/wall/ice | /area/centcom/mafia
+15,16: /turf/open/floor/iron/dark | /area/centcom/mafia
+16,16: /turf/open/floor/iron/dark | /area/centcom/mafia
+17,16: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+18,16: /obj/machinery/door/airlock/maintenance_hatch{max_integrity = 99999; name = "Maintenance"} | /obj/effect/mapping_helpers/airlock/locked | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+19,16: /turf/open/floor/plating | /area/centcom/mafia
+20,16: /turf/open/floor/plating | /area/centcom/mafia
+21,16: /turf/closed/wall/ice | /area/centcom/mafia
+22,16: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,15: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,15: /turf/closed/wall/ice | /area/centcom/mafia
+4,15: /turf/open/floor/plating | /area/centcom/mafia
+5,15: /turf/closed/wall/ice | /area/centcom/mafia
+6,15: /turf/closed/wall/ice | /area/centcom/mafia
+7,15: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+8,15: /turf/closed/wall/ice | /area/centcom/mafia
+9,15: /obj/effect/landmark/mafia | /turf/open/floor/iron | /area/centcom/mafia
+10,15: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,15: /obj/effect/landmark/mafia | /turf/open/floor/iron/dark | /area/centcom/mafia
+12,15: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+13,15: /obj/effect/landmark/mafia | /turf/open/floor/iron | /area/centcom/mafia
+14,15: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,15: /obj/effect/landmark/mafia | /turf/open/floor/iron/dark | /area/centcom/mafia
+16,15: /turf/closed/wall/ice | /area/centcom/mafia
+17,15: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+18,15: /turf/closed/wall/ice | /area/centcom/mafia
+19,15: /turf/closed/wall/ice | /area/centcom/mafia
+20,15: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/plating | /area/centcom/mafia
+21,15: /turf/closed/wall/ice | /area/centcom/mafia
+22,15: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,14: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,14: /turf/closed/wall/ice | /area/centcom/mafia
+4,14: /turf/open/floor/plating | /area/centcom/mafia
+5,14: /turf/closed/wall/ice | /area/centcom/mafia
+6,14: /obj/item/bedsheet/black{dir = 4} | /obj/structure/bed{dir = 4} | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+7,14: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+8,14: /turf/closed/wall/ice | /area/centcom/mafia
+9,14: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+10,14: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,14: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/mapping_helpers/airlock/locked | /obj/machinery/door/airlock/external/glass/ruin{max_integrity = 9999} | /turf/open/floor/iron/dark | /area/centcom/mafia
+12,14: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+13,14: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/mapping_helpers/airlock/locked | /obj/machinery/door/airlock/external/glass/ruin{max_integrity = 9999} | /turf/open/floor/iron | /area/centcom/mafia
+14,14: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,14: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+16,14: /turf/closed/wall/ice | /area/centcom/mafia
+17,14: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+18,14: /obj/item/bedsheet/red | /obj/structure/bed | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+19,14: /turf/closed/wall/ice | /area/centcom/mafia
+20,14: /turf/open/floor/plating | /area/centcom/mafia
+21,14: /turf/closed/wall/ice | /area/centcom/mafia
+22,14: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,13: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+3,13: /turf/closed/wall/ice | /area/centcom/mafia
+4,13: /turf/open/floor/plating | /area/centcom/mafia
+5,13: /obj/machinery/door/airlock/maintenance_hatch{max_integrity = 99999; name = "Maintenance"} | /obj/effect/mapping_helpers/airlock/locked | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+6,13: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+7,13: /turf/open/floor/iron/dark | /area/centcom/mafia
+8,13: /turf/open/floor/iron/dark | /area/centcom/mafia
+9,13: /obj/effect/landmark/mafia | /turf/open/floor/iron/dark | /area/centcom/mafia
+10,13: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,13: /turf/open/floor/plating/snowed/smoothed | /area/centcom/mafia
+12,13: /obj/structure/statue/plasma/scientist{anchored = 1} | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+13,13: /turf/open/floor/plating/snowed/smoothed | /area/centcom/mafia
+14,13: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,13: /obj/effect/landmark/mafia | /turf/open/floor/iron | /area/centcom/mafia
+16,13: /turf/open/floor/iron | /area/centcom/mafia
+17,13: /turf/open/floor/iron | /area/centcom/mafia
+18,13: /turf/open/floor/holofloor/wood | /area/centcom/mafia
+19,13: /obj/machinery/door/airlock/maintenance_hatch{max_integrity = 99999; name = "Maintenance"} | /obj/effect/mapping_helpers/airlock/locked | /turf/open/floor/holofloor/wood | /area/centcom/mafia
+20,13: /turf/open/floor/plating | /area/centcom/mafia
+21,13: /turf/closed/wall/ice | /area/centcom/mafia
+22,13: /turf/closed/indestructible/riveted/plastinum | /area/centcom/mafia
+2,12: /turf/closed/wall/ice | /area/centcom/mafia
+3,12: /turf/closed/wall/ice | /area/centcom/mafia
+4,12: /turf/closed/wall/ice | /area/centcom/mafia
+5,12: /turf/closed/wall/ice | /area/centcom/mafia
+6,12: /turf/closed/wall/ice | /area/centcom/mafia
+7,12: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+8,12: /turf/closed/wall/ice | /area/centcom/mafia
+9,12: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+10,12: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,12: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+12,12: /obj/effect/baseturf_helper/asteroid | /obj/effect/landmark/mafia/town_center | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+13,12: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+14,12: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,12: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+16,12: /turf/closed/wall/ice | /area/centcom/mafia
+17,12: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+18,12: /turf/closed/wall/ice | /area/centcom/mafia
+19,12: /turf/closed/wall/ice | /area/centcom/mafia
+20,12: /turf/closed/wall/ice | /area/centcom/mafia
+21,12: /turf/closed/wall/ice | /area/centcom/mafia
+22,12: /turf/closed/wall/ice | /area/centcom/mafia
+2,11: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,11: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+5,11: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+6,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+7,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+8,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+9,11: /obj/effect/landmark/mafia | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+10,11: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+12,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+13,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+14,11: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,11: /obj/effect/landmark/mafia | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+16,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+17,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+18,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+19,11: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+20,11: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+21,11: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,11: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,10: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,10: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,10: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+5,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+6,10: /obj/structure/closet/crate/science | /obj/item/clothing/suit/hooded/wintercoat/miner | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+7,10: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+8,10: /turf/closed/wall/ice | /area/centcom/mafia
+9,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+10,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+12,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+13,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+14,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+16,10: /turf/closed/wall/ice | /area/centcom/mafia
+17,10: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+18,10: /obj/structure/closet/crate/science | /obj/item/clothing/suit/hooded/wintercoat/miner | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+19,10: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+20,10: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+21,10: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,10: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,9: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,9: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+4,9: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+5,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+6,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+7,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+8,9: /turf/closed/wall/ice | /area/centcom/mafia
+9,9: /obj/structure/lattice/catwalk | /obj/effect/landmark/mafia | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+10,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,9: /obj/effect/landmark/mafia | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+12,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+13,9: /obj/effect/landmark/mafia | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+14,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,9: /obj/structure/lattice/catwalk | /obj/effect/landmark/mafia | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+16,9: /turf/closed/wall/ice | /area/centcom/mafia
+17,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+18,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+19,9: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+20,9: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+21,9: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,9: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,8: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,8: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,8: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+5,8: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+6,8: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+7,8: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+8,8: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+9,8: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+10,8: /turf/closed/wall/ice | /area/centcom/mafia
+11,8: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+12,8: /turf/closed/wall/ice | /area/centcom/mafia
+13,8: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+14,8: /turf/closed/wall/ice | /area/centcom/mafia
+15,8: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+16,8: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+17,8: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+18,8: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+19,8: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+20,8: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+21,8: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,8: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,7: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,7: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,7: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+5,7: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+6,7: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+7,7: /obj/structure/lattice/catwalk | /obj/structure/closet/crate/critter | /obj/item/clothing/suit/hooded/wintercoat/miner | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+8,7: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+9,7: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+10,7: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,7: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+12,7: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+13,7: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+14,7: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,7: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+16,7: /obj/structure/lattice/catwalk | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+17,7: /obj/structure/lattice/catwalk | /obj/structure/closet/crate/critter | /obj/item/clothing/suit/hooded/wintercoat/miner | /turf/open/lava/plasma/mafia | /area/centcom/mafia
+18,7: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+19,7: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+20,7: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+21,7: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,7: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,6: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,6: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,6: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+5,6: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+6,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+7,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+8,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+9,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+10,6: /obj/structure/closet/crate/science | /obj/item/clothing/suit/hooded/wintercoat/miner | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+11,6: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+12,6: /turf/closed/wall/ice | /area/centcom/mafia
+13,6: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+14,6: /obj/structure/closet/crate/science | /obj/item/clothing/suit/hooded/wintercoat/miner | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+15,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+16,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+17,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+18,6: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+19,6: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+20,6: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+21,6: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,6: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,5: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,5: /obj/mafia_game_board | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+5,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+6,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+7,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+8,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+9,5: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+10,5: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+11,5: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+12,5: /turf/closed/wall/ice | /area/centcom/mafia
+13,5: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+14,5: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+15,5: /obj/machinery/door/poddoor/preopen{desc = "When it's time to sleep, the lights will go out. Remember - no one in space can hear you scream."; id = "mafia"; max_integrity = 99999; name = "Station Night Shutters"} | /obj/effect/spawner/structure/window/ice | /turf/open/space/basic | /area/centcom/mafia
+16,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+17,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+18,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+19,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+20,5: /obj/mafia_game_board | /turf/open/floor/holofloor/snow | /area/centcom/mafia
+21,5: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,5: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,4: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+5,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+6,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+7,4: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+8,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+9,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+10,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+11,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+12,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+13,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+14,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+15,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+16,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+17,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+18,4: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+19,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+20,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+21,4: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,4: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,3: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+4,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+5,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+6,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+7,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+8,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+9,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+10,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+11,3: /turf/open/floor/holofloor/snow | /area/centcom/mafia
+12,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+13,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+14,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+15,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+16,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+17,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+18,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+19,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+20,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+21,3: /turf/open/lava/plasma/mafia | /area/centcom/mafia
+22,3: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+2,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+3,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+4,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+5,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+6,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+7,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+8,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+9,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+10,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+11,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+12,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+13,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+14,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+15,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+16,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+17,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+18,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+19,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+20,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+21,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia
+22,2: /turf/closed/indestructible/rock/snow | /area/centcom/mafia

@@ -1,0 +1,150 @@
+{
+  "light_tube_construction_stage_1": {
+    "base_state": "tube-construct-stage1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Frame_With_Lined_Socket",
+        "triangles": 84,
+        "shared_mesh": "Continuous_Frame_With_Lined_Socket.008",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "tube-construct-stage1"
+      }
+    ],
+    "triangles": 84
+  },
+  "light_tube_construction_stage_2": {
+    "base_state": "tube-construct-stage2",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Frame_With_Lined_Socket",
+        "triangles": 96,
+        "shared_mesh": "Continuous_Frame_With_Lined_Socket.009",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "tube-construct-stage2"
+      },
+      {
+        "name": "Removable_Live_Wire",
+        "triangles": 20,
+        "shared_mesh": "Removable_Live_Wire.004",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "tube-construct-stage2"
+      },
+      {
+        "name": "Removable_Neutral_Wire",
+        "triangles": 12,
+        "shared_mesh": "Removable_Neutral_Wire.004",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "tube-construct-stage2"
+      }
+    ],
+    "triangles": 128
+  },
+  "light_bulb_construction_stage_1": {
+    "base_state": "bulb-construct-stage1",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Frame_With_Lined_Socket",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Frame_With_Lined_Socket.010",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bulb-construct-stage1"
+      }
+    ],
+    "triangles": 34
+  },
+  "light_bulb_construction_stage_2": {
+    "base_state": "bulb-construct-stage2",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Frame_With_Lined_Socket",
+        "triangles": 34,
+        "shared_mesh": "Continuous_Frame_With_Lined_Socket.011",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bulb-construct-stage2"
+      },
+      {
+        "name": "Removable_Live_Wire",
+        "triangles": 20,
+        "shared_mesh": "Removable_Live_Wire.005",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bulb-construct-stage2"
+      },
+      {
+        "name": "Removable_Neutral_Wire",
+        "triangles": 12,
+        "shared_mesh": "Removable_Neutral_Wire.005",
+        "materials": [
+          "Light_Construction_Original_Atlas.002"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "bulb-construct-stage2"
+      }
+    ],
+    "triangles": 66
+  }
+}

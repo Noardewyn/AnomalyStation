@@ -1,0 +1,245 @@
+{
+  "medical_laptop.005": [
+    "powered",
+    "unpowered",
+    "broken"
+  ],
+  "modular_computer.005": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.004": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "machine_frame.004": [
+    "empty",
+    "wired",
+    "board_installed"
+  ],
+  "airlock_assembly.004": [
+    "solid",
+    "glass",
+    "needs_wires",
+    "needs_electronics",
+    "needs_screwdriver"
+  ],
+  "modular_computer.006": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.005": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.007": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.006": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.008": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.007": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.009": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.008": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.011": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.009": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.012": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.010": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.013": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.011": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.014": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.012": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.015": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.013": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.016": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.014": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.017": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.015": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.018": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.016": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.019": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.017": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.020": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.018": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.021": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.019": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "modular_computer.022": [
+    "powered",
+    "standby",
+    "unpowered",
+    "broken"
+  ],
+  "computer_frame.020": [
+    "empty",
+    "board_installed",
+    "board_secured",
+    "wired",
+    "glassed"
+  ],
+  "machine_frame.005": [
+    "empty",
+    "wired",
+    "board_installed"
+  ]
+}

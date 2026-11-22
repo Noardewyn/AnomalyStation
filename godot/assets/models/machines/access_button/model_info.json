@@ -1,0 +1,214 @@
+{
+  "access_button_standby": {
+    "base_state": "access_button_standby",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Button_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Button_Housing",
+        "materials": [
+          "Access_Button_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_button_standby"
+      },
+      {
+        "name": "Press_Button",
+        "triangles": 12,
+        "shared_mesh": "Press_Button",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_standby"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_standby"
+      }
+    ],
+    "triangles": 36
+  },
+  "access_button_off": {
+    "base_state": "access_button_off",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Button_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Button_Housing",
+        "materials": [
+          "Access_Button_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_button_off"
+      },
+      {
+        "name": "Press_Button",
+        "triangles": 12,
+        "shared_mesh": "Press_Button",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_off"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_off"
+      }
+    ],
+    "triangles": 36
+  },
+  "access_button_cycle_green": {
+    "base_state": "access_button_cycle",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Button_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Button_Housing",
+        "materials": [
+          "Access_Button_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_button_cycle"
+      },
+      {
+        "name": "Press_Button",
+        "triangles": 12,
+        "shared_mesh": "Press_Button",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_cycle"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_cycle"
+      }
+    ],
+    "triangles": 36
+  },
+  "access_button_cycle_red": {
+    "base_state": "access_button_cycle",
+    "frame": 1,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Access_Button_Housing",
+        "triangles": 12,
+        "shared_mesh": "Continuous_Access_Button_Housing",
+        "materials": [
+          "Access_Button_Housing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "access_button_cycle"
+      },
+      {
+        "name": "Press_Button",
+        "triangles": 12,
+        "shared_mesh": "Press_Button",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.04218750074505806,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_cycle"
+      },
+      {
+        "name": "Status_Indicator",
+        "triangles": 12,
+        "shared_mesh": "Status_Indicator",
+        "materials": [
+          "Access_Button_standby_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.02812499925494194,
+          -0.05624999850988388,
+          0.01406249962747097
+        ],
+        "source_state": "access_button_cycle"
+      }
+    ],
+    "triangles": 36
+  }
+}

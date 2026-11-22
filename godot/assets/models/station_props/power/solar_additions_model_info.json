@@ -1,0 +1,223 @@
+{
+  "solar_panel_broken": {
+    "base_state": "sp_base",
+    "overlays": [
+      "solar_panel_glass-b"
+    ],
+    "parts": [
+      {
+        "name": "solar_panel_broken_Pedestal_Assembly",
+        "triangles": 60,
+        "shared_mesh": "solar_panel_North_South_Foot_Mesh.022",
+        "materials": [
+          "Atlas_solar_sp_base.008"
+        ],
+        "parent": "solar_panel_broken_solar_panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "solar_panel_broken_Power_Cable",
+        "triangles": 132,
+        "shared_mesh": "solar_panel_Power_Cable_Mesh.012",
+        "materials": [
+          "Atlas_solar_sp_base.008"
+        ],
+        "parent": "solar_panel_broken_solar_panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "solar_panel_broken_Panel_Swivel_Hub",
+        "triangles": 12,
+        "shared_mesh": "solar_panel_Panel_Swivel_Hub_Mesh.012",
+        "materials": [
+          "Atlas_solar_sp_base.008"
+        ],
+        "parent": "solar_panel_broken_Panel_Yaw_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          -0.6100000143051147
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Broken_Backplate",
+        "triangles": 248,
+        "shared_mesh": "Broken_Backplate.002",
+        "materials": [
+          "Solar_Additions_Original.002"
+        ],
+        "parent": "solar_panel_broken_Panel_Tilt_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "solar_panel_glass-b"
+      },
+      {
+        "name": "Broken_Photovoltaic_Layer",
+        "triangles": 248,
+        "shared_mesh": "Broken_Photovoltaic_Layer.002",
+        "materials": [
+          "Solar_Additions_Original.002"
+        ],
+        "parent": "solar_panel_broken_Panel_Tilt_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "solar_panel_glass-b"
+      },
+      {
+        "name": "Broken_Glass_Cover",
+        "triangles": 248,
+        "shared_mesh": "Broken_Glass_Cover.002",
+        "materials": [
+          "Solar_Additions_Tinted_Glass.002"
+        ],
+        "parent": "solar_panel_broken_Panel_Tilt_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "solar_panel_glass-b"
+      }
+    ],
+    "triangles": 948
+  },
+  "solar_tracker": {
+    "base_state": "tracker_base",
+    "overlays": [
+      "tracker_edge",
+      "tracker"
+    ],
+    "parts": [
+      {
+        "name": "solar_tracker_Pedestal_Assembly",
+        "triangles": 60,
+        "shared_mesh": "solar_panel_North_South_Foot_Mesh.023",
+        "materials": [
+          "Solar_Additions_Original.002"
+        ],
+        "parent": "solar_tracker_solar_panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "solar_tracker_Power_Cable",
+        "triangles": 132,
+        "shared_mesh": "solar_panel_Power_Cable_Mesh.013",
+        "materials": [
+          "Solar_Tracker_Base_Original.004"
+        ],
+        "parent": "solar_tracker_solar_panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "solar_tracker_Panel_Swivel_Hub",
+        "triangles": 12,
+        "shared_mesh": "solar_panel_Panel_Swivel_Hub_Mesh.013",
+        "materials": [
+          "Solar_Additions_Original.002"
+        ],
+        "parent": "solar_tracker_Panel_Yaw_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          -0.6100000143051147
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Tracker_Edge",
+        "triangles": 360,
+        "shared_mesh": "Tracker_Edge.002",
+        "materials": [
+          "Solar_Additions_Original.002"
+        ],
+        "parent": "solar_tracker_Panel_Tilt_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "tracker_edge"
+      },
+      {
+        "name": "Tracker_Surface",
+        "triangles": 426,
+        "shared_mesh": "Tracker_Surface.002",
+        "materials": [
+          "Solar_Additions_Original.002"
+        ],
+        "parent": "solar_tracker_Panel_Tilt_Pivot",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "tracker"
+      }
+    ],
+    "triangles": 990
+  },
+  "solar_tracker_frame": {
+    "base_state": "tracker_base",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "solar_tracker_frame_Pedestal_Assembly",
+        "triangles": 60,
+        "shared_mesh": "solar_panel_North_South_Foot_Mesh.023",
+        "materials": [
+          "Solar_Additions_Original.002"
+        ],
+        "parent": "solar_tracker_frame_solar_panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "solar_tracker_frame_Power_Cable",
+        "triangles": 132,
+        "shared_mesh": "solar_panel_Power_Cable_Mesh.014",
+        "materials": [
+          "Solar_Tracker_Base_Original.005"
+        ],
+        "parent": "solar_tracker_frame_solar_panel",
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 192
+  }
+}

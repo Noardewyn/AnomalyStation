@@ -1,0 +1,812 @@
+{
+  "source": "vending/source_catalog.json",
+  "variants": [
+    {
+      "name": "Cola_Machine",
+      "masks": [
+        "cola-light-mask"
+      ],
+      "parts": [
+        "vending_cola_machine_Light_Overlay_5_5",
+        "vending_cola_machine_Light_Overlay_8_5",
+        "vending_cola_machine_Light_Overlay_19_5"
+      ]
+    },
+    {
+      "name": "MagiVend",
+      "masks": [
+        "magivend-light-mask"
+      ],
+      "parts": [
+        "vending_magivend_Light_Overlay_8_10",
+        "vending_magivend_Light_Overlay_9_10",
+        "vending_magivend_Light_Overlay_19_10",
+        "vending_magivend_Light_Overlay_22_10"
+      ]
+    },
+    {
+      "name": "RunicVendor",
+      "masks": [
+        "RunicVendor-light-mask"
+      ],
+      "parts": [
+        "vending_runicvendor_Light_Overlay_8_10",
+        "vending_runicvendor_Light_Overlay_9_10",
+        "vending_runicvendor_Light_Overlay_9_25",
+        "vending_runicvendor_Light_Overlay_9_27",
+        "vending_runicvendor_Light_Overlay_19_10",
+        "vending_runicvendor_Light_Overlay_22_10"
+      ]
+    },
+    {
+      "name": "atmosdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_atmosdrobe_Light_Overlay_8_10",
+        "vending_atmosdrobe_Light_Overlay_9_5",
+        "vending_atmosdrobe_Light_Overlay_9_10",
+        "vending_atmosdrobe_Light_Overlay_20_5",
+        "vending_atmosdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "bardrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_bardrobe_Light_Overlay_8_10",
+        "vending_bardrobe_Light_Overlay_9_5",
+        "vending_bardrobe_Light_Overlay_9_10",
+        "vending_bardrobe_Light_Overlay_20_5",
+        "vending_bardrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "boozeomat",
+      "masks": [
+        "boozeomat-light-mask"
+      ],
+      "parts": [
+        "vending_boozeomat_Light_Overlay_2_5",
+        "vending_boozeomat_Light_Overlay_2_12",
+        "vending_boozeomat_Light_Overlay_2_23",
+        "vending_boozeomat_Light_Overlay_18_5",
+        "vending_boozeomat_Light_Overlay_18_12",
+        "vending_boozeomat_Light_Overlay_21_5",
+        "vending_boozeomat_Light_Overlay_21_12",
+        "vending_boozeomat_Light_Overlay_27_5",
+        "vending_boozeomat_Light_Overlay_27_12"
+      ]
+    },
+    {
+      "name": "cargodrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_cargodrobe_Light_Overlay_8_10",
+        "vending_cargodrobe_Light_Overlay_9_5",
+        "vending_cargodrobe_Light_Overlay_9_10",
+        "vending_cargodrobe_Light_Overlay_20_5",
+        "vending_cargodrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "cart",
+      "masks": [
+        "cart-light-mask"
+      ],
+      "parts": [
+        "vending_cart_Light_Overlay_5_9",
+        "vending_cart_Light_Overlay_5_26",
+        "vending_cart_Light_Overlay_21_9"
+      ]
+    },
+    {
+      "name": "centdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_centdrobe_Light_Overlay_7_10",
+        "vending_centdrobe_Light_Overlay_9_5",
+        "vending_centdrobe_Light_Overlay_9_10",
+        "vending_centdrobe_Light_Overlay_20_5",
+        "vending_centdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "chapdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_chapdrobe_Light_Overlay_8_10",
+        "vending_chapdrobe_Light_Overlay_9_5",
+        "vending_chapdrobe_Light_Overlay_9_10",
+        "vending_chapdrobe_Light_Overlay_20_5",
+        "vending_chapdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "chefdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_chefdrobe_Light_Overlay_8_10",
+        "vending_chefdrobe_Light_Overlay_9_5",
+        "vending_chefdrobe_Light_Overlay_9_10",
+        "vending_chefdrobe_Light_Overlay_20_5",
+        "vending_chefdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "chemdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_chemdrobe_Light_Overlay_8_10",
+        "vending_chemdrobe_Light_Overlay_9_5",
+        "vending_chemdrobe_Light_Overlay_9_10",
+        "vending_chemdrobe_Light_Overlay_20_5",
+        "vending_chemdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "cigs",
+      "masks": [
+        "cigs-light-mask"
+      ],
+      "parts": [
+        "vending_cigs_Light_Overlay_7_10",
+        "vending_cigs_Light_Overlay_15_10",
+        "vending_cigs_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "clothes",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_clothes_Light_Overlay_8_10",
+        "vending_clothes_Light_Overlay_9_5",
+        "vending_clothes_Light_Overlay_9_10",
+        "vending_clothes_Light_Overlay_20_5",
+        "vending_clothes_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "coffee",
+      "masks": [
+        "coffee-light-mask"
+      ],
+      "parts": [
+        "vending_coffee_Light_Overlay_9_5",
+        "vending_coffee_Light_Overlay_9_12",
+        "vending_coffee_Light_Overlay_11_5",
+        "vending_coffee_Light_Overlay_11_12",
+        "vending_coffee_Light_Overlay_20_5",
+        "vending_coffee_Light_Overlay_20_12"
+      ]
+    },
+    {
+      "name": "cola_black",
+      "masks": [
+        "cola-light-mask"
+      ],
+      "parts": [
+        "vending_cola_black_Light_Overlay_5_5",
+        "vending_cola_black_Light_Overlay_8_5",
+        "vending_cola_black_Light_Overlay_19_5"
+      ]
+    },
+    {
+      "name": "coroner_drobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_coroner_drobe_Light_Overlay_8_10",
+        "vending_coroner_drobe_Light_Overlay_9_5",
+        "vending_coroner_drobe_Light_Overlay_9_10",
+        "vending_coroner_drobe_Light_Overlay_20_5",
+        "vending_coroner_drobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "curadrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_curadrobe_Light_Overlay_8_10",
+        "vending_curadrobe_Light_Overlay_9_5",
+        "vending_curadrobe_Light_Overlay_9_10",
+        "vending_curadrobe_Light_Overlay_20_5",
+        "vending_curadrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "custom",
+      "masks": [
+        "custom-light-mask"
+      ],
+      "parts": [
+        "vending_custom_Light_Overlay_7_11",
+        "vending_custom_Light_Overlay_23_5",
+        "vending_custom_Light_Overlay_23_11"
+      ]
+    },
+    {
+      "name": "cytopro",
+      "masks": [
+        "cytopro-light-mask"
+      ],
+      "parts": [
+        "vending_cytopro_Light_Overlay_8_10",
+        "vending_cytopro_Light_Overlay_9_10",
+        "vending_cytopro_Light_Overlay_21_10"
+      ]
+    },
+    {
+      "name": "detdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_detdrobe_Light_Overlay_8_10",
+        "vending_detdrobe_Light_Overlay_9_5",
+        "vending_detdrobe_Light_Overlay_9_10",
+        "vending_detdrobe_Light_Overlay_20_5",
+        "vending_detdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "dinnerware",
+      "masks": [
+        "dinnerware-light-mask"
+      ],
+      "parts": [
+        "vending_dinnerware_Light_Overlay_8_5",
+        "vending_dinnerware_Light_Overlay_8_10"
+      ]
+    },
+    {
+      "name": "drug",
+      "masks": [],
+      "parts": []
+    },
+    {
+      "name": "engi",
+      "masks": [
+        "engi-light-mask"
+      ],
+      "parts": [
+        "vending_engi_Light_Overlay_6_5",
+        "vending_engi_Light_Overlay_6_17",
+        "vending_engi_Light_Overlay_19_5",
+        "vending_engi_Light_Overlay_19_17",
+        "vending_engi_Light_Overlay_19_24"
+      ]
+    },
+    {
+      "name": "engidrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_engidrobe_Light_Overlay_8_10",
+        "vending_engidrobe_Light_Overlay_9_5",
+        "vending_engidrobe_Light_Overlay_9_10",
+        "vending_engidrobe_Light_Overlay_20_5",
+        "vending_engidrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "engivend",
+      "masks": [
+        "engivend-light-mask"
+      ],
+      "parts": [
+        "vending_engivend_Light_Overlay_9_10",
+        "vending_engivend_Light_Overlay_14_10",
+        "vending_engivend_Light_Overlay_19_10"
+      ]
+    },
+    {
+      "name": "games",
+      "masks": [
+        "games-light-mask"
+      ],
+      "parts": [
+        "vending_games_Light_Overlay_7_5",
+        "vending_games_Light_Overlay_7_16",
+        "vending_games_Light_Overlay_9_5",
+        "vending_games_Light_Overlay_9_16",
+        "vending_games_Light_Overlay_16_5",
+        "vending_games_Light_Overlay_16_16",
+        "vending_games_Light_Overlay_20_5",
+        "vending_games_Light_Overlay_20_16"
+      ]
+    },
+    {
+      "name": "genedrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_genedrobe_Light_Overlay_8_10",
+        "vending_genedrobe_Light_Overlay_9_5",
+        "vending_genedrobe_Light_Overlay_9_10",
+        "vending_genedrobe_Light_Overlay_20_5",
+        "vending_genedrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "generic",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_generic_Light_Overlay_7_10",
+        "vending_generic_Light_Overlay_9_5",
+        "vending_generic_Light_Overlay_9_10",
+        "vending_generic_Light_Overlay_20_10",
+        "vending_generic_Light_Overlay_21_5",
+        "vending_generic_Light_Overlay_21_10"
+      ]
+    },
+    {
+      "name": "greed",
+      "masks": [
+        "greed-light-mask"
+      ],
+      "parts": [
+        "vending_greed_Light_Overlay_6_9",
+        "vending_greed_Light_Overlay_16_9",
+        "vending_greed_Light_Overlay_23_9"
+      ]
+    },
+    {
+      "name": "hotdog-vendor",
+      "masks": [
+        "hotdog-vendor-light-mask"
+      ],
+      "parts": [
+        "vending_hotdog_vendor_Light_Overlay_10_5",
+        "vending_hotdog_vendor_Light_Overlay_10_14",
+        "vending_hotdog_vendor_Light_Overlay_11_5",
+        "vending_hotdog_vendor_Light_Overlay_11_14",
+        "vending_hotdog_vendor_Light_Overlay_20_5",
+        "vending_hotdog_vendor_Light_Overlay_20_14",
+        "vending_hotdog_vendor_Light_Overlay_21_5",
+        "vending_hotdog_vendor_Light_Overlay_21_14"
+      ]
+    },
+    {
+      "name": "hydrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_hydrobe_Light_Overlay_8_10",
+        "vending_hydrobe_Light_Overlay_9_5",
+        "vending_hydrobe_Light_Overlay_9_10",
+        "vending_hydrobe_Light_Overlay_20_5",
+        "vending_hydrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "janidrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_janidrobe_Light_Overlay_8_10",
+        "vending_janidrobe_Light_Overlay_9_5",
+        "vending_janidrobe_Light_Overlay_9_10",
+        "vending_janidrobe_Light_Overlay_20_5",
+        "vending_janidrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "lawdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_lawdrobe_Light_Overlay_8_10",
+        "vending_lawdrobe_Light_Overlay_9_5",
+        "vending_lawdrobe_Light_Overlay_9_10",
+        "vending_lawdrobe_Light_Overlay_20_5",
+        "vending_lawdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "liberationstation",
+      "masks": [
+        "liberation-light-mask"
+      ],
+      "parts": [
+        "vending_liberationstation_Light_Overlay_2_5",
+        "vending_liberationstation_Light_Overlay_5_5",
+        "vending_liberationstation_Light_Overlay_25_5"
+      ]
+    },
+    {
+      "name": "med",
+      "masks": [
+        "med-light-mask"
+      ],
+      "parts": [
+        "vending_med_Light_Overlay_5_9",
+        "vending_med_Light_Overlay_5_26",
+        "vending_med_Light_Overlay_21_9"
+      ]
+    },
+    {
+      "name": "medidrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_medidrobe_Light_Overlay_8_10",
+        "vending_medidrobe_Light_Overlay_9_5",
+        "vending_medidrobe_Light_Overlay_9_10",
+        "vending_medidrobe_Light_Overlay_20_5",
+        "vending_medidrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "modularpc",
+      "masks": [
+        "modular-light-mask"
+      ],
+      "parts": [
+        "vending_modularpc_Light_Overlay_6_5",
+        "vending_modularpc_Light_Overlay_6_16",
+        "vending_modularpc_Light_Overlay_14_5",
+        "vending_modularpc_Light_Overlay_14_16",
+        "vending_modularpc_Light_Overlay_24_5",
+        "vending_modularpc_Light_Overlay_24_16",
+        "vending_modularpc_Light_Overlay_26_5",
+        "vending_modularpc_Light_Overlay_26_16"
+      ]
+    },
+    {
+      "name": "nt-donk",
+      "masks": [
+        "donksoft-light-mask"
+      ],
+      "parts": [
+        "vending_nt_donk_Light_Overlay_5_5",
+        "vending_nt_donk_Light_Overlay_25_5"
+      ]
+    },
+    {
+      "name": "nutri",
+      "masks": [
+        "nutri-light-mask"
+      ],
+      "parts": [
+        "vending_nutri_Light_Overlay_8_10",
+        "vending_nutri_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "parts",
+      "masks": [
+        "parts-light-mask"
+      ],
+      "parts": [
+        "vending_parts_Light_Overlay_8_10",
+        "vending_parts_Light_Overlay_18_10",
+        "vending_parts_Light_Overlay_19_10"
+      ]
+    },
+    {
+      "name": "pwr_game",
+      "masks": [
+        "pwr_game-light-mask"
+      ],
+      "parts": [
+        "vending_pwr_game_Light_Overlay_5_5",
+        "vending_pwr_game_Light_Overlay_8_5",
+        "vending_pwr_game_Light_Overlay_19_5"
+      ]
+    },
+    {
+      "name": "red_cola",
+      "masks": [
+        "red_cola-light-mask"
+      ],
+      "parts": [
+        "vending_red_cola_Light_Overlay_5_5",
+        "vending_red_cola_Light_Overlay_8_5",
+        "vending_red_cola_Light_Overlay_19_5"
+      ]
+    },
+    {
+      "name": "robodrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_robodrobe_Light_Overlay_8_10",
+        "vending_robodrobe_Light_Overlay_9_5",
+        "vending_robodrobe_Light_Overlay_9_10",
+        "vending_robodrobe_Light_Overlay_20_5",
+        "vending_robodrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "robotics",
+      "masks": [
+        "robotics-light-mask"
+      ],
+      "parts": [
+        "vending_robotics_Light_Overlay_6_5",
+        "vending_robotics_Light_Overlay_6_11",
+        "vending_robotics_Light_Overlay_14_5",
+        "vending_robotics_Light_Overlay_14_11",
+        "vending_robotics_Light_Overlay_22_5",
+        "vending_robotics_Light_Overlay_22_11"
+      ]
+    },
+    {
+      "name": "scidrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_scidrobe_Light_Overlay_8_10",
+        "vending_scidrobe_Light_Overlay_9_5",
+        "vending_scidrobe_Light_Overlay_9_10",
+        "vending_scidrobe_Light_Overlay_20_5",
+        "vending_scidrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "sec",
+      "masks": [
+        "sec-light-mask"
+      ],
+      "parts": [
+        "vending_sec_Light_Overlay_5_9",
+        "vending_sec_Light_Overlay_5_26",
+        "vending_sec_Light_Overlay_21_9"
+      ]
+    },
+    {
+      "name": "secdrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_secdrobe_Light_Overlay_8_10",
+        "vending_secdrobe_Light_Overlay_9_5",
+        "vending_secdrobe_Light_Overlay_9_10",
+        "vending_secdrobe_Light_Overlay_20_5",
+        "vending_secdrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "seeds",
+      "masks": [
+        "seeds-light-mask"
+      ],
+      "parts": [
+        "vending_seeds_Light_Overlay_8_10"
+      ]
+    },
+    {
+      "name": "shamblers_juice",
+      "masks": [
+        "shamblers-light-mask"
+      ],
+      "parts": [
+        "vending_shamblers_juice_Light_Overlay_5_5",
+        "vending_shamblers_juice_Light_Overlay_8_5",
+        "vending_shamblers_juice_Light_Overlay_19_5"
+      ]
+    },
+    {
+      "name": "snack",
+      "masks": [
+        "snack-light-mask"
+      ],
+      "parts": [
+        "vending_snack_Light_Overlay_8_10",
+        "vending_snack_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "snackblue",
+      "masks": [
+        "snack-light-mask"
+      ],
+      "parts": [
+        "vending_snackblue_Light_Overlay_8_10",
+        "vending_snackblue_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "snackdonk",
+      "masks": [
+        "donksoft-light-mask"
+      ],
+      "parts": [
+        "vending_snackdonk_Light_Overlay_5_5",
+        "vending_snackdonk_Light_Overlay_25_5"
+      ]
+    },
+    {
+      "name": "snackgreen",
+      "masks": [
+        "snack-light-mask"
+      ],
+      "parts": [
+        "vending_snackgreen_Light_Overlay_8_10",
+        "vending_snackgreen_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "snackorange",
+      "masks": [
+        "snack-light-mask"
+      ],
+      "parts": [
+        "vending_snackorange_Light_Overlay_8_10",
+        "vending_snackorange_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "snackteal",
+      "masks": [
+        "snack-light-mask"
+      ],
+      "parts": [
+        "vending_snackteal_Light_Overlay_8_10",
+        "vending_snackteal_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "soda",
+      "masks": [
+        "soda-light-mask"
+      ],
+      "parts": [
+        "vending_soda_Light_Overlay_9_5",
+        "vending_soda_Light_Overlay_9_13",
+        "vending_soda_Light_Overlay_16_5",
+        "vending_soda_Light_Overlay_16_13",
+        "vending_soda_Light_Overlay_20_5",
+        "vending_soda_Light_Overlay_20_13"
+      ]
+    },
+    {
+      "name": "sovietsoda",
+      "masks": [
+        "soviet-light-mask"
+      ],
+      "parts": [
+        "vending_sovietsoda_Light_Overlay_5_8",
+        "vending_sovietsoda_Light_Overlay_8_8",
+        "vending_sovietsoda_Light_Overlay_8_16",
+        "vending_sovietsoda_Light_Overlay_10_8",
+        "vending_sovietsoda_Light_Overlay_10_16",
+        "vending_sovietsoda_Light_Overlay_21_8",
+        "vending_sovietsoda_Light_Overlay_22_8"
+      ]
+    },
+    {
+      "name": "space_up",
+      "masks": [
+        "space_up-light-mask"
+      ],
+      "parts": [
+        "vending_space_up_Light_Overlay_5_5",
+        "vending_space_up_Light_Overlay_8_5",
+        "vending_space_up_Light_Overlay_19_5"
+      ]
+    },
+    {
+      "name": "starkist",
+      "masks": [
+        "starkist-light-mask"
+      ],
+      "parts": [
+        "vending_starkist_Light_Overlay_9_11",
+        "vending_starkist_Light_Overlay_19_11",
+        "vending_starkist_Light_Overlay_21_11"
+      ]
+    },
+    {
+      "name": "sustenance",
+      "masks": [
+        "snack-light-mask"
+      ],
+      "parts": [
+        "vending_sustenance_Light_Overlay_8_10",
+        "vending_sustenance_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "sustenance_labor",
+      "masks": [
+        "snack-light-mask"
+      ],
+      "parts": [
+        "vending_sustenance_labor_Light_Overlay_8_10",
+        "vending_sustenance_labor_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "syndi",
+      "masks": [
+        "donksoft-light-mask"
+      ],
+      "parts": [
+        "vending_syndi_Light_Overlay_5_5",
+        "vending_syndi_Light_Overlay_25_5"
+      ]
+    },
+    {
+      "name": "theater",
+      "masks": [
+        "theater-light-mask"
+      ],
+      "parts": [
+        "vending_theater_Light_Overlay_8_10",
+        "vending_theater_Light_Overlay_9_5",
+        "vending_theater_Light_Overlay_9_10",
+        "vending_theater_Light_Overlay_20_5",
+        "vending_theater_Light_Overlay_20_10",
+        "vending_theater_Light_Overlay_23_5",
+        "vending_theater_Light_Overlay_23_10"
+      ]
+    },
+    {
+      "name": "tool",
+      "masks": [
+        "tool-light-mask"
+      ],
+      "parts": [
+        "vending_tool_Light_Overlay_9_5"
+      ]
+    },
+    {
+      "name": "virodrobe",
+      "masks": [
+        "wardrobe-light-mask"
+      ],
+      "parts": [
+        "vending_virodrobe_Light_Overlay_8_10",
+        "vending_virodrobe_Light_Overlay_9_5",
+        "vending_virodrobe_Light_Overlay_9_10",
+        "vending_virodrobe_Light_Overlay_20_5",
+        "vending_virodrobe_Light_Overlay_20_10"
+      ]
+    },
+    {
+      "name": "wallmed",
+      "masks": [
+        "wallmed-light-mask"
+      ],
+      "parts": [
+        "vending_wallmed_Light_Overlay_11_12",
+        "vending_wallmed_Light_Overlay_11_20",
+        "vending_wallmed_Light_Overlay_14_12",
+        "vending_wallmed_Light_Overlay_14_20",
+        "vending_wallmed_Light_Overlay_20_12",
+        "vending_wallmed_Light_Overlay_20_20"
+      ]
+    }
+  ]
+}

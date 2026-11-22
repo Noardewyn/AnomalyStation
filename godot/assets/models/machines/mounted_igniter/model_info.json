@@ -1,0 +1,333 @@
+{
+  "mounted_igniter_ready": {
+    "base_state": "migniter",
+    "frame": 0,
+    "overlays": [
+      "migniter translucent effect pixels"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Igniter_Body",
+        "triangles": 92,
+        "shared_mesh": "Continuous_Igniter_Body.003",
+        "materials": [
+          "Mounted_Igniter_ready_Original.002",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 52,
+        "shared_mesh": "Service_Cover.003",
+        "materials": [
+          "Mounted_Igniter_ready_Original.002",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          0.0,
+          0.11249999701976776
+        ],
+        "source_state": "migniter"
+      },
+      {
+        "name": "Effect_Overlay",
+        "triangles": 30,
+        "shared_mesh": "Effect_Overlay.003",
+        "materials": [
+          "Mounted_Igniter_ready_Effect_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter"
+      }
+    ],
+    "triangles": 174
+  },
+  "mounted_igniter_unpowered": {
+    "base_state": "migniter-p",
+    "frame": 0,
+    "overlays": [
+      "migniter-p translucent effect pixels"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Igniter_Body",
+        "triangles": 92,
+        "shared_mesh": "Continuous_Igniter_Body.003",
+        "materials": [
+          "Mounted_Igniter_unpowered_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-p"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 52,
+        "shared_mesh": "Service_Cover.003",
+        "materials": [
+          "Mounted_Igniter_unpowered_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          0.0,
+          0.11249999701976776
+        ],
+        "source_state": "migniter-p"
+      },
+      {
+        "name": "Effect_Overlay",
+        "triangles": 16,
+        "shared_mesh": "Effect_Overlay.004",
+        "materials": [
+          "Mounted_Igniter_unpowered_Effect_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-p"
+      }
+    ],
+    "triangles": 160
+  },
+  "mounted_igniter_disabled": {
+    "base_state": "migniter-d",
+    "frame": 0,
+    "overlays": [
+      "migniter-d translucent effect pixels"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Igniter_Body",
+        "triangles": 140,
+        "shared_mesh": "Continuous_Igniter_Body.004",
+        "materials": [
+          "Mounted_Igniter_disabled_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-d"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 20,
+        "shared_mesh": "Service_Cover.004",
+        "materials": [
+          "Mounted_Igniter_disabled_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          0.0,
+          0.11249999701976776
+        ],
+        "source_state": "migniter-d"
+      },
+      {
+        "name": "Effect_Overlay",
+        "triangles": 10,
+        "shared_mesh": "Effect_Overlay.005",
+        "materials": [
+          "Mounted_Igniter_disabled_Effect_Overlay.001"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-d"
+      }
+    ],
+    "triangles": 170
+  },
+  "mounted_igniter_spark_0": {
+    "base_state": "migniter-spark",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Igniter_Body",
+        "triangles": 92,
+        "shared_mesh": "Continuous_Igniter_Body.003",
+        "materials": [
+          "Mounted_Igniter_spark_0_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-spark"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 52,
+        "shared_mesh": "Service_Cover.003",
+        "materials": [
+          "Mounted_Igniter_spark_0_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          0.0,
+          0.11249999701976776
+        ],
+        "source_state": "migniter-spark"
+      }
+    ],
+    "triangles": 144
+  },
+  "mounted_igniter_spark_1": {
+    "base_state": "migniter-spark",
+    "frame": 1,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Igniter_Body",
+        "triangles": 92,
+        "shared_mesh": "Continuous_Igniter_Body.003",
+        "materials": [
+          "Mounted_Igniter_spark_1_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-spark"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 52,
+        "shared_mesh": "Service_Cover.003",
+        "materials": [
+          "Mounted_Igniter_spark_1_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          0.0,
+          0.11249999701976776
+        ],
+        "source_state": "migniter-spark"
+      }
+    ],
+    "triangles": 144
+  },
+  "mounted_igniter_spark_2": {
+    "base_state": "migniter-spark",
+    "frame": 2,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Igniter_Body",
+        "triangles": 92,
+        "shared_mesh": "Continuous_Igniter_Body.003",
+        "materials": [
+          "Mounted_Igniter_spark_2_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-spark"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 52,
+        "shared_mesh": "Service_Cover.003",
+        "materials": [
+          "Mounted_Igniter_spark_2_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          0.0,
+          0.11249999701976776
+        ],
+        "source_state": "migniter-spark"
+      }
+    ],
+    "triangles": 144
+  },
+  "mounted_igniter_spark_3": {
+    "base_state": "migniter-spark",
+    "frame": 3,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Igniter_Body",
+        "triangles": 92,
+        "shared_mesh": "Continuous_Igniter_Body.003",
+        "materials": [
+          "Mounted_Igniter_spark_3_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "migniter-spark"
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 52,
+        "shared_mesh": "Service_Cover.003",
+        "materials": [
+          "Mounted_Igniter_spark_3_Original.001",
+          "Mounted_Igniter_Casing_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.08437500149011612,
+          0.0,
+          0.11249999701976776
+        ],
+        "source_state": "migniter-spark"
+      }
+    ],
+    "triangles": 144
+  }
+}

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Determinism (WORKLOG C0, docs/ai/specs/object-model.md section 8): like the core, the motion core compiles optimized
+         in every configuration, so the server's controller, the Godot client's predictor and the bots run the same
+         machine code for the same input in Debug and Release (M2 scope 2d: no FMA contraction on .NET 10, bit-identical
+         across tiers). -->
+    <Optimize>true</Optimize>
+    <RootNamespace>Anomaly.Core.Motion</RootNamespace>
+    <AssemblyName>Anomaly.Core.Motion</AssemblyName>
+  </PropertyGroup>
+  <!--
+    The M2 motion core (docs/ai/specs/locomotion.md, written by M2 P4): the kinematic capsule controller and the client-side
+    predictor. It references nothing (no tg code, no DM shim, no Godot, no protocol): the server's locomotion bridge
+    (src/Core/Tg/Infrastructure/Locomotion), the wire protocol (it embeds the motion structs), the Godot client and the bots
+    all use the same code, so a client's replay of its own inputs equals the server's step bit for bit on one machine.
+  -->
+</Project>

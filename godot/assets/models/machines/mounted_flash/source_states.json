@@ -1,0 +1,107 @@
+{
+  "width": 32,
+  "height": 32,
+  "states": [
+    {
+      "name": "mflash1",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        2,
+        2
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 35,
+      "rects": [
+        [
+          256,
+          96,
+          32,
+          32
+        ],
+        [
+          0,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mflash_flash",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        1,
+        1,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 37,
+      "rects": [
+        [
+          32,
+          128,
+          32,
+          32
+        ],
+        [
+          64,
+          128,
+          32,
+          32
+        ],
+        [
+          96,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mflash1-p",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 40,
+      "rects": [
+        [
+          128,
+          128,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "mflash_frame",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 41,
+      "rects": [
+        [
+          160,
+          128,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+anomaly-map 1
+source _maps/safehouses/wood.dmm tg 1d99bd7f
+size 7 6 1
+chunk 32
+default /turf/closed/wall/mineral/wood | /area/virtual_domain/safehouse
+
+[chunk 1 1 1]
+2,6: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/virtual_domain/safehouse
+4,6: /obj/machinery/door/airlock/wood/glass | /obj/structure/fans/tiny | /turf/open/floor/plating | /area/virtual_domain/safehouse
+6,6: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,5: /obj/machinery/light/small/directional/west | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+3,5: /obj/item/kirbyplants/random/fullysynthetic | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+4,5: /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+5,5: /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+6,5: /obj/machinery/light/small/directional/east | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+1,4: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,4: /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+3,4: /turf/open/floor/carpet/green | /area/virtual_domain/safehouse
+4,4: /turf/open/floor/carpet/green | /area/virtual_domain/safehouse
+5,4: /obj/structure/railing/corner/end{dir = 4} | /turf/open/floor/carpet/green | /area/virtual_domain/safehouse
+6,4: /obj/structure/railing | /obj/effect/landmark/bitrunning/cache_goal_turf | /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/indestructible/bitrunning_transport | /area/virtual_domain/safehouse
+7,4: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/virtual_domain/safehouse
+2,3: /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+3,3: /turf/open/floor/carpet/green | /area/virtual_domain/safehouse
+4,3: /turf/open/floor/carpet/green | /area/virtual_domain/safehouse
+5,3: /turf/open/floor/carpet/green | /area/virtual_domain/safehouse
+6,3: /obj/structure/sign/poster/random/directional/east | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+2,2: /obj/machinery/light/small/directional/west | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+3,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+4,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+5,2: /obj/effect/landmark/bitrunning/hololadder_spawn | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+6,2: /obj/machinery/light/small/directional/east | /obj/structure/table/wood | /obj/item/newspaper | /turf/open/indestructible/hotelwood | /area/virtual_domain/safehouse
+1,1: /obj/modular_map_connector | /turf/closed/wall/mineral/wood | /area/virtual_domain/safehouse
+2,1: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/virtual_domain/safehouse
+6,1: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/virtual_domain/safehouse

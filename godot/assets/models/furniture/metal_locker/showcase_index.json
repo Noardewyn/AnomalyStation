@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "alien__alien",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      0.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      0.0,
+      0
+    ]
+  },
+  {
+    "id": "armory__armory",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      0.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      0.0,
+      0
+    ]
+  },
+  {
+    "id": "atmos__atmos",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      0.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      0.0,
+      0
+    ]
+  },
+  {
+    "id": "bio__bio",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      0.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      0.0,
+      0
+    ]
+  },
+  {
+    "id": "bio__bio_jan",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      0.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      0.0,
+      0
+    ]
+  },
+  {
+    "id": "bio__bio_sci",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      0.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      0.0,
+      0
+    ]
+  },
+  {
+    "id": "bio__bio_sec",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      3.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      3.0,
+      0
+    ]
+  },
+  {
+    "id": "bio__bio_viro",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      3.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      3.0,
+      0
+    ]
+  },
+  {
+    "id": "bomb__bomb",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      3.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      3.0,
+      0
+    ]
+  },
+  {
+    "id": "cap__cap",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      3.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      3.0,
+      0
+    ]
+  },
+  {
+    "id": "cargo__cargo",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      3.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      3.0,
+      0
+    ]
+  },
+  {
+    "id": "ce__ce",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      3.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      3.0,
+      0
+    ]
+  },
+  {
+    "id": "cmo__cmo",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      6.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      6.0,
+      0
+    ]
+  },
+  {
+    "id": "emergency__emergency",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      6.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      6.0,
+      0
+    ]
+  },
+  {
+    "id": "eng__eng_elec",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      6.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      6.0,
+      0
+    ]
+  },
+  {
+    "id": "eng__eng_rad",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      6.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      6.0,
+      0
+    ]
+  },
+  {
+    "id": "eng__eng_tool",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      6.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      6.0,
+      0
+    ]
+  },
+  {
+    "id": "eng__eng_weld",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      6.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      6.0,
+      0
+    ]
+  },
+  {
+    "id": "eng__generic",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      9.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      9.0,
+      0
+    ]
+  },
+  {
+    "id": "eng_secure__eng_secure",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      9.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      9.0,
+      0
+    ]
+  },
+  {
+    "id": "fire__fire",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      9.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      9.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__atmos_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      9.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      9.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__bar_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      9.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      9.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__black",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      9.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      9.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__blue",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      12.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      12.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__botany_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      12.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      12.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__cargo_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      12.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      12.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__chap_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      12.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      12.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__chef_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      12.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      12.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__chem_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      12.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      12.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__curator_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      15.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      15.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__engi_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      15.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      15.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__gen_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      15.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      15.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__generic",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      15.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      15.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__green",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      15.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      15.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__grey",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      15.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      15.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__jani_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      18.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      18.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__law_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      18.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      18.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__med_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      18.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      18.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__mining_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      18.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      18.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__mixed",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      18.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      18.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__orange",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      18.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      18.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__pink",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      21.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      21.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__red",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      21.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      21.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__robo_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      21.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      21.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__sci_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      21.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      21.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__sec_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      21.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      21.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__viro_wardrobe",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      21.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      21.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__white",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      24.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      24.0,
+      0
+    ]
+  },
+  {
+    "id": "generic__yellow",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      24.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      24.0,
+      0
+    ]
+  },
+  {
+    "id": "hop__hop",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      24.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      24.0,
+      0
+    ]
+  },
+  {
+    "id": "hos__hos",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      24.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      24.0,
+      0
+    ]
+  },
+  {
+    "id": "hydro__hydro",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      24.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      24.0,
+      0
+    ]
+  },
+  {
+    "id": "med_secure__med_secure",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      24.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      24.0,
+      0
+    ]
+  },
+  {
+    "id": "mining__mining",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      27.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      27.0,
+      0
+    ]
+  },
+  {
+    "id": "paramed_secure__paramed_secure",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      27.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      27.0,
+      0
+    ]
+  },
+  {
+    "id": "qm__qm",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      27.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      27.0,
+      0
+    ]
+  },
+  {
+    "id": "rd__rd",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      27.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      27.0,
+      0
+    ]
+  },
+  {
+    "id": "science__science",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      27.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      27.0,
+      0
+    ]
+  },
+  {
+    "id": "sec__sec",
+    "family": "wardrobe",
+    "closed_position": [
+      18.0,
+      27.0,
+      0
+    ],
+    "open_position": [
+      19.8,
+      27.0,
+      0
+    ]
+  },
+  {
+    "id": "secure__chemical",
+    "family": "wardrobe",
+    "closed_position": [
+      0.0,
+      30.0,
+      0
+    ],
+    "open_position": [
+      1.8,
+      30.0,
+      0
+    ]
+  },
+  {
+    "id": "secure__secure",
+    "family": "wardrobe",
+    "closed_position": [
+      3.6,
+      30.0,
+      0
+    ],
+    "open_position": [
+      5.4,
+      30.0,
+      0
+    ]
+  },
+  {
+    "id": "syndicate__syndicate",
+    "family": "wardrobe",
+    "closed_position": [
+      7.2,
+      30.0,
+      0
+    ],
+    "open_position": [
+      9.0,
+      30.0,
+      0
+    ]
+  },
+  {
+    "id": "syndicate_chemical__syndicate_chemical",
+    "family": "wardrobe",
+    "closed_position": [
+      10.8,
+      30.0,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      30.0,
+      0
+    ]
+  },
+  {
+    "id": "warden__warden",
+    "family": "wardrobe",
+    "closed_position": [
+      14.4,
+      30.0,
+      0
+    ],
+    "open_position": [
+      16.2,
+      30.0,
+      0
+    ]
+  },
+  {
+    "id": "chem_secure__chem_secure",
+    "family": "shelves",
+    "closed_position": [
+      0.0,
+      34.8,
+      0
+    ],
+    "open_position": [
+      1.8,
+      34.8,
+      0
+    ]
+  },
+  {
+    "id": "med__med",
+    "family": "shelves",
+    "closed_position": [
+      3.6,
+      34.8,
+      0
+    ],
+    "open_position": [
+      5.4,
+      34.8,
+      0
+    ]
+  },
+  {
+    "id": "shelves__generic",
+    "family": "shelves",
+    "closed_position": [
+      7.2,
+      34.8,
+      0
+    ],
+    "open_position": [
+      9.0,
+      34.8,
+      0
+    ]
+  },
+  {
+    "id": "rack__blue",
+    "family": "rack",
+    "closed_position": [
+      0.0,
+      39.599999999999994,
+      0
+    ],
+    "open_position": [
+      1.8,
+      39.599999999999994,
+      0
+    ]
+  },
+  {
+    "id": "rack__generic",
+    "family": "rack",
+    "closed_position": [
+      3.6,
+      39.599999999999994,
+      0
+    ],
+    "open_position": [
+      5.4,
+      39.599999999999994,
+      0
+    ]
+  },
+  {
+    "id": "rack__red",
+    "family": "rack",
+    "closed_position": [
+      7.2,
+      39.599999999999994,
+      0
+    ],
+    "open_position": [
+      9.0,
+      39.599999999999994,
+      0
+    ]
+  },
+  {
+    "id": "tac__armory_energy",
+    "family": "rack",
+    "closed_position": [
+      10.8,
+      39.599999999999994,
+      0
+    ],
+    "open_position": [
+      12.600000000000001,
+      39.599999999999994,
+      0
+    ]
+  },
+  {
+    "id": "tac__armory_shotgun",
+    "family": "rack",
+    "closed_position": [
+      14.4,
+      39.599999999999994,
+      0
+    ],
+    "open_position": [
+      16.2,
+      39.599999999999994,
+      0
+    ]
+  },
+  {
+    "id": "tac__tac",
+    "family": "rack",
+    "closed_position": [
+      18.0,
+      39.599999999999994,
+      0
+    ],
+    "open_position": [
+      19.8,
+      39.599999999999994,
+      0
+    ]
+  },
+  {
+    "id": "freezer__freezer",
+    "family": "freezer",
+    "closed_position": [
+      0.0,
+      44.39999999999999,
+      0
+    ],
+    "open_position": [
+      1.8,
+      44.39999999999999,
+      0
+    ]
+  }
+]

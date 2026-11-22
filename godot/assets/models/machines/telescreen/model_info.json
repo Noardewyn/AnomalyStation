@@ -1,0 +1,108 @@
+{
+  "telescreen_normal": {
+    "base_state": "telescreen",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Telescreen_Housing",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Telescreen_Housing",
+        "materials": [
+          "Telescreen_normal_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "telescreen"
+      },
+      {
+        "name": "Screen_Panel",
+        "triangles": 12,
+        "shared_mesh": "Screen_Panel",
+        "materials": [
+          "Telescreen_normal_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "telescreen"
+      },
+      {
+        "name": "Closed_Screen_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Screen_Glass",
+        "materials": [
+          "Telescreen_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "telescreen"
+      }
+    ],
+    "triangles": 76
+  },
+  "telescreen_broken": {
+    "base_state": "telescreenb",
+    "frame": 0,
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Telescreen_Housing",
+        "triangles": 52,
+        "shared_mesh": "Continuous_Telescreen_Housing",
+        "materials": [
+          "Telescreen_broken_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "telescreenb"
+      },
+      {
+        "name": "Screen_Panel",
+        "triangles": 12,
+        "shared_mesh": "Screen_Panel",
+        "materials": [
+          "Telescreen_broken_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "telescreenb"
+      },
+      {
+        "name": "Closed_Screen_Glass",
+        "triangles": 12,
+        "shared_mesh": "Closed_Screen_Glass",
+        "materials": [
+          "Telescreen_Glass_Original"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": "telescreenb"
+      }
+    ],
+    "triangles": 76
+  }
+}

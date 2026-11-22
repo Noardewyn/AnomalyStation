@@ -1,0 +1,168 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Anomaly Station"
+config/description="Anomaly Station client (Godot 4.7.2 mono). Presentation, input, UI and audio only; the simulation is the C# core (docs/ai/specs/apps.md)."
+run/main_scene="res://scenes/connect.tscn"
+config/project_settings_override="user://first_window.cfg"
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
+boot_splash/bg_color=Color(0.055, 0.065, 0.085, 1)
+boot_splash/show_image=false
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="AnomalyStation"
+
+[audio]
+
+driver/enable_input=true
+
+[autoload]
+
+App="*res://scripts/App.cs"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="Anomaly.Client"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+occlusion_culling/use_occlusion_culling=true
+
+[shader_globals]
+
+anomaly_light_grid={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_light_grid_size={
+"type": "vec2",
+"value": Vector2(1, 1)
+}
+anomaly_light_grid_origin={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+anomaly_light_tile_metres={
+"type": "float",
+"value": 2.0
+}
+anomaly_light_ambient={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+anomaly_light_strength={
+"type": "float",
+"value": 1.0
+}
+anomaly_self_south={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_self_east={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_self_north={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_self_west={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_self_yaw={
+"type": "float",
+"value": 0.0
+}
+anomaly_self_sway={
+"type": "float",
+"value": 0.0
+}
+anomaly_self_at={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+anomaly_self_rect={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+anomaly_lamp_glow={
+"type": "float",
+"value": 4.0
+}
+anomaly_model_glow={
+"type": "float",
+"value": 0.5
+}
+anomaly_light_cap={
+"type": "float",
+"value": 1.5
+}
+anomaly_light_floor={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+anomaly_light_cells={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_exterior={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_sky_up={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+anomaly_sky_side={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+anomaly_sky_down={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+anomaly_sun_reach={
+"type": "float",
+"value": 0.0
+}
+anomaly_level_height={
+"type": "float",
+"value": 2.0
+}
+anomaly_light_grid_levels={
+"type": "float",
+"value": 1.0
+}
+anomaly_preview_boxes={
+"type": "sampler2D",
+"value": ""
+}
+anomaly_preview_count={
+"type": "float",
+"value": 0.0
+}
+anomaly_preview_min={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+anomaly_preview_max={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}

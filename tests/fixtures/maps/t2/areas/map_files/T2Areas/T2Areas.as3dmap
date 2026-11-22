@@ -1,0 +1,23 @@
+anomaly-map 1
+source _maps/map_files/T2Areas/T2Areas.dmm tg 1d99bd7f
+size 8 6 1
+chunk 32
+default /turf/open/space/basic | /area/space
+
+[chunk 1 1 1]
+2,5: /turf/open/indestructible | /area/station/hallway/primary/central
+3,5: /turf/open/indestructible | /area/station/hallway/primary/central
+6,5: /turf/open/indestructible | /area/shuttle/escape
+7,5: /turf/open/indestructible | /area/shuttle/escape
+2,4: /turf/open/indestructible | /area/station/hallway/primary/central
+3,4: /turf/closed/indestructible | /area/station/hallway/primary/central
+4,4: /turf/closed/indestructible | /area/station/hallway/primary/central
+6,4: /turf/open/indestructible | /area/shuttle/escape
+7,4: /turf/open/indestructible | /area/shuttle/escape
+3,3: /turf/closed/indestructible | /area/station/hallway/primary/central
+4,3: /turf/open/indestructible | /area/station/hallway/primary/central
+2,2: /turf/open/indestructible | /area/station/command/bridge
+3,2: /turf/open/indestructible | /area/station/command/bridge
+4,2: /obj/structure/lattice | /turf/open/space/basic | /area/space/nearstation
+7,2: /turf/open/indestructible | /area/station/hallway/primary/central
+8,1: /obj/item/crowbar | /turf/open/indestructible | /area/shuttle/escape

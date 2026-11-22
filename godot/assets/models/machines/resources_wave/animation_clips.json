@@ -1,0 +1,39 @@
+{
+  "ore_redemption": [
+    "ore_redemption",
+    "ore_redemption-open",
+    "ore_redemption-off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "mineral_stacker_refinery": [
+    "stacker",
+    "stacker-off"
+  ],
+  "boulder_smelter": [
+    "smelter",
+    "smelter-off"
+  ],
+  "boulder_retrieval_matrix": [
+    "brm-off",
+    "brm",
+    "brm-toggled",
+    "idle",
+    "retrieval"
+  ],
+  "ore_silo": [
+    "silo",
+    "silo_active"
+  ],
+  "plate_press": [
+    "press_cycle",
+    "offline",
+    "online",
+    "online_loaded"
+  ],
+  "recycler": [
+    "grinder-o0",
+    "grinder-o1",
+    "grinder-oOpen"
+  ]
+}

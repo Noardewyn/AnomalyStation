@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Anomaly.Protocol</RootNamespace>
+    <AssemblyName>Anomaly.Protocol</AssemblyName>
+    <!-- XML doc comments are the contract text of the messages (docs/ai/specs/m1-ownership.md); CS1591 stays off. -->
+  </PropertyGroup>
+  <!--
+    The wire protocol (docs/ai/specs/protocol.md, written by M1 P2, version 2 by M2 P5): message types and ids, limits, the
+    hand-written codec and the client-side replica. It references only the motion core (M2 contracts decision: the input
+    frames and the own block of a Delta carry Anomaly.Core.Motion's MotionInput, MotionState and MotionParams as they are, so
+    the client's predictor, the bots and the server's bridge share one definition), never the world or tg types: the server,
+    the bots and the Godot client share it, and the codec and fuzz tests need no transport (M1 scope 2e).
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Motion\Anomaly.Core.Motion.csproj" />
+  </ItemGroup>
+</Project>

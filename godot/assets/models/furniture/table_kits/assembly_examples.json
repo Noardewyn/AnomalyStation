@@ -1,0 +1,707 @@
+[
+  {
+    "family": "wood",
+    "shape": "Row",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "wood_table_end_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "wood_table_top_straight.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "wood_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "wood",
+    "shape": "L",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "wood_table_corner_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "wood_table_end_2legs.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "wood_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 6
+  },
+  {
+    "family": "wood",
+    "shape": "Square",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "wood_table_corner_1leg.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "wood_table_top_tee.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          0,
+          2
+        ],
+        "file": "wood_table_corner_1leg.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "wood_table_top_tee.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          1
+        ],
+        "file": "wood_table_top_center.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          2
+        ],
+        "file": "wood_table_top_tee.glb",
+        "godot_y_degrees": 180
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "wood_table_corner_1leg.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          1
+        ],
+        "file": "wood_table_top_tee.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          2
+        ],
+        "file": "wood_table_corner_1leg.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "cloth",
+    "shape": "Row",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "cloth_table_end_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "cloth_table_top_straight.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "cloth_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "cloth",
+    "shape": "L",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "cloth_table_corner_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "cloth_table_end_2legs.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "cloth_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 6
+  },
+  {
+    "family": "cloth",
+    "shape": "Square",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "cloth_table_corner_1leg.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "cloth_table_top_tee.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          0,
+          2
+        ],
+        "file": "cloth_table_corner_1leg.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "cloth_table_top_tee.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          1
+        ],
+        "file": "cloth_table_top_center.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          2
+        ],
+        "file": "cloth_table_top_tee.glb",
+        "godot_y_degrees": 180
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "cloth_table_corner_1leg.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          1
+        ],
+        "file": "cloth_table_top_tee.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          2
+        ],
+        "file": "cloth_table_corner_1leg.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "glass",
+    "shape": "Row",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "glass_table_end_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "glass_table_top_straight.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "glass_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "glass",
+    "shape": "L",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "glass_table_corner_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "glass_table_end_2legs.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "glass_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 6
+  },
+  {
+    "family": "glass",
+    "shape": "Square",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "glass_table_corner_1leg.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "glass_table_top_tee.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          0,
+          2
+        ],
+        "file": "glass_table_corner_1leg.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "glass_table_top_tee.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          1
+        ],
+        "file": "glass_table_top_center.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          2
+        ],
+        "file": "glass_table_top_tee.glb",
+        "godot_y_degrees": 180
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "glass_table_corner_1leg.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          1
+        ],
+        "file": "glass_table_top_tee.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          2
+        ],
+        "file": "glass_table_corner_1leg.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "framed_glass",
+    "shape": "Row",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "framed_glass_table_end_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "framed_glass_table_top_straight.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "framed_glass_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "framed_glass",
+    "shape": "L",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "framed_glass_table_corner_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "framed_glass_table_end_2legs.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "framed_glass_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 6
+  },
+  {
+    "family": "framed_glass",
+    "shape": "Square",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "framed_glass_table_corner_1leg.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "framed_glass_table_top_tee.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          0,
+          2
+        ],
+        "file": "framed_glass_table_corner_1leg.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "framed_glass_table_top_tee.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          1
+        ],
+        "file": "framed_glass_table_top_center.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          2
+        ],
+        "file": "framed_glass_table_top_tee.glb",
+        "godot_y_degrees": 180
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "framed_glass_table_corner_1leg.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          1
+        ],
+        "file": "framed_glass_table_top_tee.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          2
+        ],
+        "file": "framed_glass_table_corner_1leg.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "reinforced",
+    "shape": "Row",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "reinforced_table_end_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "reinforced_table_top_straight.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "reinforced_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  },
+  {
+    "family": "reinforced",
+    "shape": "L",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "reinforced_table_corner_2legs.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "reinforced_table_end_2legs.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "reinforced_table_end_2legs.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 6
+  },
+  {
+    "family": "reinforced",
+    "shape": "Square",
+    "modules": [
+      {
+        "cell": [
+          0,
+          0
+        ],
+        "file": "reinforced_table_corner_1leg.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          0,
+          1
+        ],
+        "file": "reinforced_table_top_tee.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          0,
+          2
+        ],
+        "file": "reinforced_table_corner_1leg.glb",
+        "godot_y_degrees": 270
+      },
+      {
+        "cell": [
+          1,
+          0
+        ],
+        "file": "reinforced_table_top_tee.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          1
+        ],
+        "file": "reinforced_table_top_center.glb",
+        "godot_y_degrees": 0
+      },
+      {
+        "cell": [
+          1,
+          2
+        ],
+        "file": "reinforced_table_top_tee.glb",
+        "godot_y_degrees": 180
+      },
+      {
+        "cell": [
+          2,
+          0
+        ],
+        "file": "reinforced_table_corner_1leg.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          1
+        ],
+        "file": "reinforced_table_top_tee.glb",
+        "godot_y_degrees": 90
+      },
+      {
+        "cell": [
+          2,
+          2
+        ],
+        "file": "reinforced_table_corner_1leg.glb",
+        "godot_y_degrees": 180
+      }
+    ],
+    "legs": 4
+  }
+]

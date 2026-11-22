@@ -1,0 +1,193 @@
+{
+  "netpod.002": [
+    "open",
+    "close",
+    "netpod",
+    "netpod_open_active",
+    "netpod_closed_active",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "quantum_server.002": [
+    "qserver",
+    "qserver_on",
+    "qserver_off",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "byteforge.002": [
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "destructive_scanner.002": [
+    "close",
+    "open"
+  ],
+  "destructive_analyzer.002": [
+    "open",
+    "close",
+    "idle",
+    "working"
+  ],
+  "experimentor.002": [
+    "idle",
+    "working",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "anomaly_refinery.002": [
+    "explosive_compressor",
+    "explosive_compressor-off"
+  ],
+  "skillsoft_station.002": [
+    "open",
+    "close",
+    "implantchair",
+    "implantchair_unpowered"
+  ],
+  "ai_defense_turret.002": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.002": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "station_selfdestruct_terminal.002": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding",
+    "maintenance_open",
+    "maintenance_close"
+  ],
+  "ai_defense_turret.003": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.003": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ],
+  "ai_defense_turret.004": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.004": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ],
+  "ai_defense_turret.005": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.005": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ],
+  "ai_defense_turret.006": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.006": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ],
+  "ai_defense_turret.007": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.007": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ],
+  "ai_defense_turret.008": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.008": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ],
+  "ai_defense_turret.009": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.009": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ],
+  "ai_defense_turret.010": [
+    "deploy",
+    "retract",
+    "rotate_90",
+    "standard_off",
+    "standard_stun",
+    "standard_lethal",
+    "standard_broken"
+  ],
+  "beer_nuclear_device.010": [
+    "nuclearbomb_base",
+    "nuclearbomb_safetyoff",
+    "nuclearbomb_timing",
+    "nuclearbomb_exploding"
+  ]
+}

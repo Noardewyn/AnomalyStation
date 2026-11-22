@@ -1,0 +1,79 @@
+{
+  "atlas": "godot\\assets\\tg\\icons\\obj\\machines\\wallmounts.png",
+  "original_dmi": "..\\tgstation\\icons\\obj\\machines\\wallmounts.dmi",
+  "size": [
+    640,
+    608
+  ],
+  "png_sha256": "36a08a447b460fd028e160d56d4514edbf13c4da5be182c9feaeebaeba46abb8",
+  "dmi_rgba_matches": true,
+  "states": [
+    {
+      "name": "airlock_control_off",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 7,
+      "rects": [
+        [
+          224,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_control_standby",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 8,
+      "rects": [
+        [
+          256,
+          0,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "airlock_control_process",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        3,
+        3
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 9,
+      "rects": [
+        [
+          288,
+          0,
+          32,
+          32
+        ],
+        [
+          320,
+          0,
+          32,
+          32
+        ]
+      ]
+    }
+  ],
+  "source_code": "code/game/machinery/embedded_controller/airlock_controller.dm"
+}

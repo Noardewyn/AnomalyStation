@@ -1,0 +1,140 @@
+{
+  "source": "code/game/objects/structures/signs/signs_warning.dm",
+  "mounting": "_signs.dm Initialize calls find_and_mount_on_atom; directional helpers offset 32 pixels",
+  "type_to_state": {
+    "/obj/structure/sign/warning": "securearea",
+    "/obj/structure/sign/warning/secure_area": "securearea",
+    "/obj/structure/sign/warning/docking": "securearea",
+    "/obj/structure/sign/warning/biohazard": "bio",
+    "/obj/structure/sign/warning/electric_shock": "shock",
+    "/obj/structure/sign/warning/vacuum": "space",
+    "/obj/structure/sign/warning/vacuum/external": "space",
+    "/obj/structure/sign/warning/deathsposal": "deathsposal",
+    "/obj/structure/sign/warning/bodysposal": "bodysposal",
+    "/obj/structure/sign/warning/fire": "fire",
+    "/obj/structure/sign/warning/no_smoking": "nosmoking2",
+    "/obj/structure/sign/warning/no_smoking/circle": "nosmoking",
+    "/obj/structure/sign/warning/yes_smoking/circle": "yessmoking",
+    "/obj/structure/sign/warning/radiation": "radiation",
+    "/obj/structure/sign/warning/radiation/rad_area": "radiation",
+    "/obj/structure/sign/warning/xeno_mining": "xeno_warning",
+    "/obj/structure/sign/warning/engine_safety": "safety",
+    "/obj/structure/sign/warning/explosives": "explosives",
+    "/obj/structure/sign/warning/explosives/alt": "explosives2",
+    "/obj/structure/sign/warning/test_chamber": "testchamber",
+    "/obj/structure/sign/warning/firing_range": "firingrange",
+    "/obj/structure/sign/warning/cold_temp": "cold",
+    "/obj/structure/sign/warning/hot_temp": "heat",
+    "/obj/structure/sign/warning/gas_mask": "gasmask",
+    "/obj/structure/sign/warning/chem_diamond": "chemdiamond",
+    "/obj/structure/sign/warning/doors": "doors",
+    "/obj/structure/sign/warning/pods": "pods",
+    "/obj/structure/sign/warning/rad_shelter": "radshelter"
+  },
+  "map_state_counts": {
+    "pods": 9,
+    "securearea": 57,
+    "space": 36,
+    "shock": 27,
+    "deathsposal": 1,
+    "cold": 3,
+    "bodysposal": 1,
+    "chemdiamond": 1,
+    "nosmoking2": 3,
+    "testchamber": 2,
+    "bio": 11,
+    "heat": 1,
+    "fire": 2,
+    "radiation": 7,
+    "gasmask": 1
+  },
+  "variants": [
+    "securearea",
+    "space",
+    "shock",
+    "bio",
+    "pods",
+    "radiation",
+    "nosmoking2",
+    "cold",
+    "fire",
+    "testchamber",
+    "deathsposal",
+    "bodysposal",
+    "heat",
+    "gasmask",
+    "chemdiamond",
+    "nosmoking",
+    "yessmoking",
+    "xeno_warning",
+    "safety",
+    "explosives",
+    "explosives2",
+    "firingrange",
+    "doors",
+    "radshelter"
+  ],
+  "tile_size": [
+    32,
+    32
+  ],
+  "duplicates_checked": true,
+  "overlays": [],
+  "rear_interpretation": "Original opaque border strip reused across back; front artwork is not repeated.",
+  "mesh_groups": [
+    [
+      "securearea"
+    ],
+    [
+      "space",
+      "pods",
+      "testchamber",
+      "deathsposal",
+      "bodysposal",
+      "firingrange",
+      "doors",
+      "radshelter"
+    ],
+    [
+      "shock"
+    ],
+    [
+      "bio",
+      "heat",
+      "xeno_warning"
+    ],
+    [
+      "radiation"
+    ],
+    [
+      "nosmoking2"
+    ],
+    [
+      "cold"
+    ],
+    [
+      "fire"
+    ],
+    [
+      "gasmask"
+    ],
+    [
+      "chemdiamond"
+    ],
+    [
+      "nosmoking",
+      "yessmoking"
+    ],
+    [
+      "safety"
+    ],
+    [
+      "explosives"
+    ],
+    [
+      "explosives2"
+    ]
+  ],
+  "source_rgba_verified": true,
+  "map_total": 162
+}

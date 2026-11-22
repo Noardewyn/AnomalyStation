@@ -1,0 +1,172 @@
+{
+  "netpod": {
+    "triangles": 232,
+    "meshes": 7,
+    "notes": "Hollow capsule with rotating opaque door and separate session console. Source unpowered/open/occupied activity screen variants. Patient supplied at anchor, never baked into glass.",
+    "parts": [
+      "Chamber_Frame",
+      "Chamber_Door",
+      "Netpod_Console",
+      "Session_netpod",
+      "Session_netpod_open_active",
+      "Session_netpod_closed_active",
+      "Service_Hatch"
+    ]
+  },
+  "quantum_server": {
+    "triangles": 60,
+    "meshes": 5,
+    "notes": "Source unloaded/ready/not-ready states qserver/on/off, independent service flap. Virtual domain loading and cooldown handled by gameplay.",
+    "parts": [
+      "Quantum_Server",
+      "Server_Status_qserver",
+      "Server_Status_qserver_on",
+      "Server_Status_qserver_off",
+      "Service_Hatch"
+    ]
+  },
+  "byteforge": {
+    "triangles": 92,
+    "meshes": 3,
+    "notes": "Octagonal printing platform with raised side prongs and original grid UV. Product materialisation remains a runtime effect; maintenance hatch separate.",
+    "parts": [
+      "Byteforge_Frame",
+      "Product_Grid",
+      "Service_Hatch"
+    ]
+  },
+  "destructive_scanner": {
+    "triangles": 192,
+    "meshes": 3,
+    "notes": "32x64 source. Hollow tube telescopes into base during 1.2s source closing cycle; source tube_on is a collapsed state. Specimen stays separate; destruction/scan effects are gameplay.",
+    "parts": [
+      "Scanner_Base",
+      "Telescoping_Tube",
+      "Scanner_Glass"
+    ]
+  },
+  "destructive_analyzer": {
+    "triangles": 126,
+    "meshes": 29,
+    "notes": "Hollow analysis bay, retracting red shield and source processing display. Source loading item remains a runtime attachment.",
+    "parts": [
+      "Analyzer_Frame",
+      "Red_Analysis_Shield",
+      "Processing_Display_Frame_0",
+      "Processing_Display_Frame_1",
+      "Processing_Display_Frame_2",
+      "Processing_Display_Frame_3",
+      "Processing_Display_Frame_4",
+      "Processing_Display_Frame_5",
+      "Processing_Display_Frame_6",
+      "Processing_Display_Frame_7",
+      "Processing_Display_Frame_8",
+      "Processing_Display_Frame_9",
+      "Processing_Display_Frame_10",
+      "Processing_Display_Frame_11",
+      "Processing_Display_Frame_12",
+      "Processing_Display_Frame_13",
+      "Processing_Display_Frame_14",
+      "Processing_Display_Frame_15",
+      "Processing_Display_Frame_16",
+      "Processing_Display_Frame_17",
+      "Processing_Display_Frame_18",
+      "Processing_Display_Frame_19",
+      "Processing_Display_Frame_20",
+      "Processing_Display_Frame_21",
+      "Processing_Display_Frame_22",
+      "Processing_Display_Frame_23",
+      "Processing_Display_Frame_24",
+      "Processing_Display_Frame_25",
+      "Processing_Display_Frame_26"
+    ]
+  },
+  "experimentor": {
+    "triangles": 66,
+    "meshes": 11,
+    "notes": "Original 64x32 atlas and two-cell width, tall lab section and lower side output. Source work-loop window and service hatch; unpredictable gameplay experiments not baked into model.",
+    "parts": [
+      "Experimentor_Body",
+      "Experiment_Display_Frame_0",
+      "Experiment_Display_Frame_1",
+      "Experiment_Display_Frame_2",
+      "Experiment_Display_Frame_3",
+      "Experiment_Display_Frame_4",
+      "Experiment_Display_Frame_5",
+      "Experiment_Display_Frame_6",
+      "Experiment_Display_Frame_7",
+      "Experiment_Display_Frame_8",
+      "Service_Hatch"
+    ]
+  },
+  "anomaly_refinery": {
+    "triangles": 156,
+    "meshes": 3,
+    "notes": "Small console and raised core cradle, operational/service states. Core is an attachment, not a permanently embedded item.",
+    "parts": [
+      "Refinery",
+      "Console_explosive_compressor",
+      "Console_explosive_compressor-off"
+    ]
+  },
+  "skillsoft_station": {
+    "triangles": 268,
+    "meshes": 5,
+    "notes": "Glass patient capsule with opening shell, side controller, chip socket and original wiring silhouette. Occupied state uses actual character, no source human painted on glass.",
+    "parts": [
+      "Chamber_Frame",
+      "Chamber_Door",
+      "Implant_Controller",
+      "Power_implantchair",
+      "Power_implantchair_unpowered"
+    ]
+  },
+  "ai_defense_turret": {
+    "triangles": 520,
+    "meshes": 9,
+    "notes": "Round 16-sided base and two semicircular retracting covers; low box-shaped rotating head, short barrel and orange side hoses reconstructed from eight directional sprites. Deployed default, retract/deploy and rotate clips. Covered lifting well has a bottom and central support. Cover retraction uses scale animation as source sprite transition adaptation. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Circular_Base",
+      "Lifting_Well_Floor_And_Support",
+      "Circular_Lid_-1",
+      "Circular_Lid_1",
+      "Rotating_Head",
+      "Mode_standard_off",
+      "Mode_standard_stun",
+      "Mode_standard_lethal",
+      "Mode_standard_broken"
+    ]
+  },
+  "beer_nuclear_device": {
+    "triangles": 296,
+    "meshes": 12,
+    "notes": "Corrected original game silhouette: orange nose points sideways, silver housing with original radiation trefoil, rear rim and small trolley with four separate wheels. Source fake beer nuke shares ordinary bomb artwork. State control panel remains separate; no functional internals. Rear/side fallback surfaces use calm original-palette texels; rigid contact assemblies united to remove coplanar overlaps.",
+    "parts": [
+      "Wheeled_Trolley",
+      "Wheel_-0",
+      "Wheel_-0",
+      "Wheel_0",
+      "Wheel_0",
+      "Orange_Nose",
+      "Bomb_Housing_With_Trefoil",
+      "Rear_Rim",
+      "Device_State_nuclearbomb_base",
+      "Device_State_nuclearbomb_safetyoff",
+      "Device_State_nuclearbomb_timing",
+      "Device_State_nuclearbomb_exploding"
+    ]
+  },
+  "station_selfdestruct_terminal": {
+    "triangles": 72,
+    "meshes": 6,
+    "notes": "Original fictional game device atlas: base/safety-off/countdown/final appearance clips and independent service panel. Station terminal uses a distinct upright source silhouette.",
+    "parts": [
+      "Terminal_Body",
+      "Device_State_nuclearbomb_base",
+      "Device_State_nuclearbomb_safetyoff",
+      "Device_State_nuclearbomb_timing",
+      "Device_State_nuclearbomb_exploding",
+      "Service_Hatch"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    The waiting-model analyzer (D97, docs/ai/specs/waiting-model.md section 5.6). Roslyn loads analyzers into the
+    compiler, so the project targets netstandard2.0 and references a Roslyn no newer than the one the SDK runs:
+    5.0.0 is the Roslyn of the .NET 10.0.1xx SDK band, older than the 5.9 of the pinned SDK 10.0.401, so every
+    .NET 10 SDK loads it. The projects consume it through Directory.Build.props as an analyzer only
+    (OutputItemType="Analyzer", ReferenceOutputAssembly="false").
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Anomaly.Analyzers</RootNamespace>
+    <AssemblyName>Anomaly.Analyzers</AssemblyName>
+    <IsRoslynComponent>true</IsRoslynComponent>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <!-- RS2008 (analyzer release tracking) is for analyzers shipped as packages; this one is a local build step and
+         its rules are listed in docs/ai/specs/waiting-model.md section 5.6. -->
+    <NoWarn>$(NoWarn);RS2008</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

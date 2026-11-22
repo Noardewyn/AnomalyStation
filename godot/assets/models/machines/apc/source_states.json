@@ -1,0 +1,691 @@
+{
+  "width": 32,
+  "height": 32,
+  "states": [
+    {
+      "name": "apc",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 208,
+      "rects": [
+        [
+          256,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 209,
+      "rects": [
+        [
+          288,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco3-1",
+      "dirs": 1,
+      "frames": 6,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 210,
+      "rects": [
+        [
+          320,
+          320,
+          32,
+          32
+        ],
+        [
+          352,
+          320,
+          32,
+          32
+        ],
+        [
+          384,
+          320,
+          32,
+          32
+        ],
+        [
+          416,
+          320,
+          32,
+          32
+        ],
+        [
+          448,
+          320,
+          32,
+          32
+        ],
+        [
+          480,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco3-0",
+      "dirs": 1,
+      "frames": 3,
+      "delays": [
+        10,
+        20,
+        20
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 216,
+      "rects": [
+        [
+          512,
+          320,
+          32,
+          32
+        ],
+        [
+          544,
+          320,
+          32,
+          32
+        ],
+        [
+          576,
+          320,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco3-2",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        10,
+        10
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 219,
+      "rects": [
+        [
+          608,
+          320,
+          32,
+          32
+        ],
+        [
+          0,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc-spark",
+      "dirs": 1,
+      "frames": 7,
+      "delays": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 221,
+      "rects": [
+        [
+          32,
+          352,
+          32,
+          32
+        ],
+        [
+          64,
+          352,
+          32,
+          32
+        ],
+        [
+          96,
+          352,
+          32,
+          32
+        ],
+        [
+          128,
+          352,
+          32,
+          32
+        ],
+        [
+          160,
+          352,
+          32,
+          32
+        ],
+        [
+          192,
+          352,
+          32,
+          32
+        ],
+        [
+          224,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcewires",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 228,
+      "rects": [
+        [
+          256,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcemag",
+      "dirs": 1,
+      "frames": 2,
+      "delays": [
+        5,
+        5
+      ],
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 229,
+      "rects": [
+        [
+          288,
+          352,
+          32,
+          32
+        ],
+        [
+          320,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 231,
+      "rects": [
+        [
+          352,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc1-b-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 232,
+      "rects": [
+        [
+          384,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc1-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 233,
+      "rects": [
+        [
+          416,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 234,
+      "rects": [
+        [
+          448,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc2-b-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 235,
+      "rects": [
+        [
+          480,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc2-nocover",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 236,
+      "rects": [
+        [
+          512,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apc-b",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 237,
+      "rects": [
+        [
+          544,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcmaint",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 238,
+      "rects": [
+        [
+          576,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcox-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 239,
+      "rects": [
+        [
+          608,
+          352,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apcox-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 240,
+      "rects": [
+        [
+          0,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 241,
+      "rects": [
+        [
+          32,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 242,
+      "rects": [
+        [
+          64,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 243,
+      "rects": [
+        [
+          96,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco0-3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 244,
+      "rects": [
+        [
+          128,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 245,
+      "rects": [
+        [
+          160,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 246,
+      "rects": [
+        [
+          192,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 247,
+      "rects": [
+        [
+          224,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco1-3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 248,
+      "rects": [
+        [
+          256,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-0",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 249,
+      "rects": [
+        [
+          288,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-1",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 250,
+      "rects": [
+        [
+          320,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-2",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 251,
+      "rects": [
+        [
+          352,
+          384,
+          32,
+          32
+        ]
+      ]
+    },
+    {
+      "name": "apco2-3",
+      "dirs": 1,
+      "frames": 1,
+      "delays": null,
+      "loop": 0,
+      "rewind": false,
+      "movement": false,
+      "hotspot": null,
+      "first": 252,
+      "rects": [
+        [
+          384,
+          384,
+          32,
+          32
+        ]
+      ]
+    }
+  ]
+}

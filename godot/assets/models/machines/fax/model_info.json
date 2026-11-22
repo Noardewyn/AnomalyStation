@@ -1,0 +1,1075 @@
+{
+  "fax_idle": {
+    "base_state": "fax",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 192
+  },
+  "fax_idle_alternate": {
+    "base_state": "fax",
+    "overlays": [],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing.001",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support.001",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset.001",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray.001",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 192
+  },
+  "fax_service": {
+    "base_state": "fax",
+    "overlays": [
+      "fax_panel"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 74,
+        "shared_mesh": "Continuous_Fax_Housing.002",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Wiring_Board",
+        "triangles": 12,
+        "shared_mesh": "Service_Wiring_Board",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Service_Cover",
+        "triangles": 12,
+        "shared_mesh": "Service_Cover",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": "Service_Panel_Hinge",
+        "pivot_blender_m": [
+          -0.3375000059604645,
+          0.3375000059604645,
+          -0.05624999850988388
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 240
+  },
+  "fax_sending_paper": {
+    "base_state": "fax_receive",
+    "overlays": [
+      "send_paper"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_send_paper",
+        "triangles": 20,
+        "shared_mesh": "Loaded_Item_send_paper",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "fax_receiving_paper": {
+    "base_state": "fax_receive",
+    "overlays": [
+      "receive_paper"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray.003",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_receive_paper",
+        "triangles": 12,
+        "shared_mesh": "Loaded_Item_receive_paper",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 204
+  },
+  "fax_loaded_paper": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_paper"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_paper",
+        "triangles": 20,
+        "shared_mesh": "Loaded_Item_contain_paper",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "fax_loaded_photo": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_photo"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_photo",
+        "triangles": 20,
+        "shared_mesh": "Loaded_Item_contain_photo",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 212
+  },
+  "fax_loaded_food": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_food"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_food",
+        "triangles": 52,
+        "shared_mesh": "Loaded_Item_contain_food",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 244
+  },
+  "fax_loaded_star": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_star"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_star",
+        "triangles": 76,
+        "shared_mesh": "Loaded_Item_contain_star",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 268
+  },
+  "fax_loaded_id": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_id"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_id",
+        "triangles": 28,
+        "shared_mesh": "Loaded_Item_contain_id",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 220
+  },
+  "fax_loaded_tcg": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_tcg"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_tcg",
+        "triangles": 28,
+        "shared_mesh": "Loaded_Item_contain_tcg",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 220
+  },
+  "fax_loaded_cash": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_cash"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_cash",
+        "triangles": 12,
+        "shared_mesh": "Loaded_Item_contain_cash",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 204
+  },
+  "fax_loaded_pbiscuit": {
+    "base_state": "fax",
+    "overlays": [
+      "contain_pbiscuit"
+    ],
+    "parts": [
+      {
+        "name": "Continuous_Fax_Housing",
+        "triangles": 50,
+        "shared_mesh": "Continuous_Fax_Housing",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Rear_Paper_Support",
+        "triangles": 86,
+        "shared_mesh": "Rear_Paper_Support",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Removable_Handset",
+        "triangles": 28,
+        "shared_mesh": "Removable_Handset",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          -0.25312501192092896,
+          0.0,
+          0.16875000298023224
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Lined_Output_Tray",
+        "triangles": 28,
+        "shared_mesh": "Lined_Output_Tray",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      },
+      {
+        "name": "Loaded_Item_contain_pbiscuit",
+        "triangles": 28,
+        "shared_mesh": "Loaded_Item_contain_pbiscuit",
+        "materials": [
+          "Fax_Original_Atlas"
+        ],
+        "parent": null,
+        "pivot_blender_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "source_state": null
+      }
+    ],
+    "triangles": 220
+  }
+}

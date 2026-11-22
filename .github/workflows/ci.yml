@@ -1,4 +1,5 @@
-# The build and the quick tests (docs/testing.md) on every push to main and every pull request.
+# The build and the quick tests (docs/testing.md) on every push to main and every pull request. The quick tests are split into
+# shards that run side by side: one hosted runner would take hours over them.
 name: CI
 
 on:
@@ -20,64 +21,64 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
-  build-and-test:
+  build:
+    name: Build, client, analyzers and map tools
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 60
     steps:
       # The .blend sources in LFS are not needed to build or test, so they are not downloaded.
       - uses: actions/checkout@v4
         with:
           path: AnomalyStation
           lfs: false
-
-      - uses: actions/setup-dotnet@v4
-        with:
-          global-json-file: AnomalyStation/global.json
-
-      # The tools and tests read tg from ../tgstation at the pinned commit (docs/building.md#getting-tgstation).
-      - name: Cache tgstation
-        id: tg-cache
-        uses: actions/cache@v4
-        with:
-          path: tgstation
-          key: tgstation-${{ env.TG_COMMIT }}
-
-      - name: Fetch tgstation
-        if: steps.tg-cache.outputs.cache-hit != 'true'
-        run: |
-          git init tgstation
-          git -C tgstation fetch --depth 1 https://github.com/tgstation/tgstation.git "$TG_COMMIT"
-          git -C tgstation checkout FETCH_HEAD
-          rm -rf tgstation/.git
-
-      - name: Cache NuGet packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          key: nuget-${{ hashFiles('AnomalyStation/**/*.csproj', 'AnomalyStation/**/*.props', 'AnomalyStation/global.json') }}
-          restore-keys: nuget-
-
+      - uses: ./AnomalyStation/.github/actions/setup
       - name: Build
         working-directory: AnomalyStation
         run: dotnet build AnomalyStation.sln -warnaserror
-
       - name: Build the client as its export is
         working-directory: AnomalyStation
         run: dotnet build godot/Anomaly.Client.csproj -c ExportDebug -warnaserror
-
-      # One project at a time: a hosted runner has less memory than the 32 GB the parallel quick run wants.
-      - name: Test (analyzers)
+      - name: Test
         working-directory: AnomalyStation
-        run: dotnet test tests/Anomaly.Analyzers.Tests --no-build --filter "Category!=Meta"
+        run: |
+          dotnet test tests/Anomaly.Analyzers.Tests --no-build --filter "Category!=Meta"
+          dotnet test tools/Anomaly.Tools.Maps/Tests --no-build --filter "Category!=Meta"
 
-      - name: Test (server)
+  test:
+    name: Test ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: server (gameplay)
+            project: tests/Anomaly.Server.Tests
+            filter: FullyQualifiedName~Anomaly.Server.Tests.Integration.
+          - name: server (the rest)
+            project: tests/Anomaly.Server.Tests
+            filter: FullyQualifiedName!~Anomaly.Server.Tests.Integration.
+          - name: core (tg)
+            project: tests/Anomaly.Core.Tests
+            filter: FullyQualifiedName~Anomaly.Core.Tests.Tg.
+          - name: core (gaps)
+            project: tests/Anomaly.Core.Tests
+            filter: FullyQualifiedName~Anomaly.Core.Tests.Gaps.
+          - name: core (the rest)
+            project: tests/Anomaly.Core.Tests
+            filter: FullyQualifiedName!~Anomaly.Core.Tests.Tg.&FullyQualifiedName!~Anomaly.Core.Tests.Gaps.
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: AnomalyStation
+          lfs: false
+      - uses: ./AnomalyStation/.github/actions/setup
+      - name: Build
+        working-directory: AnomalyStation
+        run: dotnet build ${{ matrix.project }}
+      - name: Test
         working-directory: AnomalyStation
         env:
-          DOTNET_GCHeapHardLimit: "0x300000000"
-        run: dotnet test tests/Anomaly.Server.Tests --no-build --filter "Category!=Meta"
-
-      - name: Test (core)
-        working-directory: AnomalyStation
-        env:
-          DOTNET_GCHeapHardLimit: "0x300000000"
-        run: dotnet test tests/Anomaly.Core.Tests --no-build --filter "Category!=Meta"
+          # A hosted runner has far less memory than the 32 GB the full parallel quick run wants (docs/testing.md#memory).
+          DOTNET_GCHeapHardLimit: "0x180000000"
+        run: dotnet test ${{ matrix.project }} --no-build --filter "Category!=Meta&${{ matrix.filter }}"

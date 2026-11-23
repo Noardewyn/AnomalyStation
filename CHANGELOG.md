@@ -7,6 +7,10 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Changed
+
+- New default keys follow Space Station 14: Shift switches walk and run, C lies down, Ctrl+Q throws, Shift+click examines; saved keys stay as they were.
+
 ## [1.12.0-pre-alpha] - 2026-11-23
 
 ### Added

@@ -263,7 +263,7 @@ public class FakeInventoryTests
         // A file written by M2 holds no key for the new actions: their tg defaults stand.
         PlayOptions m2 = PlayOptions.Parse("bind.help=MouseLeft\nbind.shove=MouseRight\n");
         Assert.Equal(new[] { "Q" }, m2.Bindings.KeysOf(PlayAction.DropItem));
-        Assert.Equal(new[] { "R" }, m2.Bindings.KeysOf(PlayAction.ThrowMode));
+        Assert.Equal(new[] { "Ctrl_Q" }, m2.Bindings.KeysOf(PlayAction.ThrowMode)); // ui-overhaul.md section 3 (R before)
         Assert.Equal(new[] { "X" }, m2.Bindings.KeysOf(PlayAction.SwapHand));
         Assert.Equal(new[] { "Z" }, m2.Bindings.KeysOf(PlayAction.ActivateInHand));
         Assert.Equal(new[] { "E" }, m2.Bindings.KeysOf(PlayAction.QuickEquip));

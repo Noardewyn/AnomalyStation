@@ -7,7 +7,7 @@ namespace Anomaly.Client.Shared;
 /// <summary>
 /// The dev menu's settings (the owner, 2026-10-14: "save the streams' settings and the other settings in the options file"):
 /// the airflow streams (D141), the audio (M4b), the gas haze and the gas overlay, the cell coordinates, the ceiling (F2) and the names overlay
-/// (F3), and the spawn and gas tools' choices. In the options file as <c>dev.NAME=VALUE</c> lines (<see cref="PlayOptions"/>);
+/// (F4), and the spawn and gas tools' choices. In the options file as <c>dev.NAME=VALUE</c> lines (<see cref="PlayOptions"/>);
 /// the menu saves them when a control is let go. What a tool aims at (the selected type, the armed tool) is not a setting.
 /// </summary>
 public sealed class DevMenuOptions

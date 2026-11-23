@@ -19,7 +19,7 @@ shot() {
     at=$2
     echo "== $name to $out/$name.png (opens a window)"
     ANOMALY_FAKE_INVENTORY=1 ANOMALY_SHOT=$name ANOMALY_FAKE_THROW_TICKS=${THROW_TICKS:-1} "$GODOT" --path "$project" --resolution 1280x720 -- --fake-server --fake-bots=0 --seed=3 \
-        --keys=1:F4+,1.1:F4- --screenshot-after="$at","$out/$name.png"
+        --keys=1:F3+,1.1:F3- --screenshot-after="$at","$out/$name.png"
     test -s "$out/$name.png" || { echo "interaction-shots: no screenshot written" >&2; exit 1; }
 }
 shot hover 2.6

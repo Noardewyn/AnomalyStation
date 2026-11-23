@@ -275,7 +275,15 @@ public sealed partial class ChatWindow : Control
     }
 
     /// <summary>Puts the caret in the input.</summary>
-    public void FocusInput() => _edit.GrabFocus();
+    /// <summary>Focuses the input; with <paramref name="channel"/> (a speech key's, ui-overhaul.md section 5) it is selected first, as its action button does.</summary>
+    public void FocusInput(string channel = null)
+    {
+        if (channel != null)
+            _input?.SetChannel(channel);
+        _edit.GrabFocus();
+        if (channel != null)
+            SyncInput();
+    }
 
     /// <summary>D307: speech to text's words after what is typed, for the player to send or fix.</summary>
     public void AppendInput(string text)

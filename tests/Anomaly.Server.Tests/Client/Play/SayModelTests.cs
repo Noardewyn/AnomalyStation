@@ -51,6 +51,30 @@ public class SayModelTests
     }
 
     [Fact]
+    public void EachSpeechKeySelectsItsChannelInTheOpenChatWindowsInput()
+    {
+        // ui-overhaul.md section 5 (playtest 2026-11-23): with the chat window open the radio, OOC and me keys only focused its input, left on Say
+        Assert.Equal(SayChannels.Radio, ChatInputModel.ChannelOfKey(PlayAction.Radio));
+        Assert.Equal(SayChannels.Ooc, ChatInputModel.ChannelOfKey(PlayAction.Ooc));
+        Assert.Equal(SayChannels.Me, ChatInputModel.ChannelOfKey(PlayAction.Me));
+        Assert.Equal(SayChannels.Say, ChatInputModel.ChannelOfKey(PlayAction.Say));
+        Assert.Equal(SayChannels.Pray, ChatInputModel.ChannelOfKey(PlayAction.Pray));
+        Assert.Null(ChatInputModel.ChannelOfKey(PlayAction.DropItem));
+        Assert.Null(ChatInputModel.ChannelOfKey(null));
+        var input = new ChatInputModel(_sent.Add);
+        foreach (PlayAction key in new[] { PlayAction.Radio, PlayAction.Ooc, PlayAction.Me, PlayAction.Say, PlayAction.Pray, PlayAction.Say })
+        {
+            input.SetChannel(ChatInputModel.ChannelOfKey(key)); // what ChatWindow.FocusInput(channel) does before it focuses
+            Assert.Equal(ChatInputModel.ChannelOfKey(key), input.Channel);
+        }
+        // the default keys reach them: ;, [ and Shift+'
+        KeyBindings keys = KeyBindings.Defaults();
+        Assert.Equal(SayChannels.Radio, ChatInputModel.ChannelOfKey(keys.ActionOfPress("Semicolon", shift: false)));
+        Assert.Equal(SayChannels.Ooc, ChatInputModel.ChannelOfKey(keys.ActionOfPress("Bracketleft", shift: false)));
+        Assert.Equal(SayChannels.Me, ChatInputModel.ChannelOfKey(keys.ActionOfPress("Apostrophe", shift: true)));
+    }
+
+    [Fact]
     public void TheHistoryKeepsFiveAndWalksBothWays()
     {
         var history = new SayChatHistory();

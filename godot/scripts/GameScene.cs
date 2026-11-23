@@ -22,9 +22,10 @@ namespace Anomaly.Client;
 /// camera layer; this scene reads the keys, draws, and turns the player's actions into the messages the server takes.
 /// <para>
 /// Controls (all remappable, D53 and D70; the defaults): mouse look (captured; Esc releases, a click captures again), WASD or
-/// the arrows move relative to the view, U rest or get up, C walk or run, F combat mode, the left mouse button the help click and
-/// the right button the shove on the mob under the crosshair, ` the dev console, F9 the analyzer, F10 the options, F1 camera
-/// (first person, free fly, orbit), F2 ceiling, F3 names overlay, F4 debug HUD, F8 the dev menu (GameScene.Dev.cs). In the free camera WASD (Shift faster), Q and E
+/// the arrows move relative to the view, C rest or get up, Shift (tapped alone) walk or run, F combat mode, the left mouse button tg's left click and
+/// the right button tg's right click (held: the radial), ` the dev console, F9 the analyzer, F10 the options, F1 camera
+/// (first person, free fly, orbit), F2 ceiling, F3 debug HUD, F4 names overlay, \ the dev menu (GameScene.Dev.cs); the rest is
+/// docs/running.md's table (ui-overhaul.md section 3). In the free camera WASD (Shift faster), Q and E
 /// fly the camera and the avatar stands still. The orbit is the third-person play view (DV53): the keys, the clicks and the crosshair
 /// work as in the first person, the mouse wheel zooms, cursor mode's pointer clicks the world, and what the mob cannot see is shaded.
 /// </para>
@@ -533,6 +534,8 @@ public partial class GameScene : Node3D
         _frames++;
 
         RunScript(now);
+        // a mouse press another part of the interface took (the dev menu) cancels a lone modifier too; one whose release went elsewhere is dropped
+        _modifierTap.Frame((long)Input.GetMouseButtonMask(), _modifierTap.Waiting is string waiting && Enum.TryParse(waiting, out Key held) && Input.IsPhysicalKeyPressed(held));
         // the keys are polled, so a field of the dev menu being typed in (ImGui's) is a UI that holds them too
         bool uiOpen = PanelsOpen || _imgui?.WantsText == true || _tguiHost?.Typing == true || SayOpen || ChatTyping;
         MoveKeys keys = _rig.Mode == CameraMode.Free || uiOpen ? MoveKeys.None : (_walker != null ? WalkerKeys(now) : ReadMoveKeys());
@@ -916,7 +919,7 @@ public partial class GameScene : Node3D
         if (key.PhysicalKeycode == Key.Escape)
         {
             // D282, D292: a focused text field lets the keyboard go, else the top window closes, else Esc opens and closes the menu
-            if (_options.Bindings.ActionOfPress(key.PhysicalKeycode.ToString(), key.ShiftPressed) == PlayAction.CloseWindows)
+            if (_options.Bindings.ActionOfPress(key.PhysicalKeycode.ToString(), key.ShiftPressed, key.CtrlPressed) == PlayAction.CloseWindows)
                 CloseAllWindows();
             else if (GetViewport().GuiGetFocusOwner() is LineEdit or TextEdit)
                 GetViewport().GuiReleaseFocus();
@@ -940,7 +943,22 @@ public partial class GameScene : Node3D
                 _optionsPanel.Visible = false;
             return;
         }
-        PlayAction? action = _options.Bindings.ActionOfPress(key.PhysicalKeycode.ToString(), key.ShiftPressed);
+        // ui-overhaul.md section 5, a press does one thing: Ctrl+Q throws and does not also drop (the pair's action first, else the key's), and
+        // Ctrl alone (down a level) waits for its release with nothing else pressed, and does nothing while a text field has the keyboard (ModifierTap)
+        string name = key.PhysicalKeycode.ToString();
+        (PlayAction? action, bool ownShift, bool ownCtrl) = _options.Bindings.MatchPress(name, key.ShiftPressed, key.CtrlPressed);
+        // a key bound to Pull or Examine: only a modifier held on top of its binding goes with tg's click (KeyBindings.ModifiedClick)
+        (_pressExtraShift, _pressExtraCtrl) = (key.ShiftPressed && !ownShift, key.CtrlPressed && !ownCtrl);
+        if (!_modifierTap.Wait(name, action, KeyboardTaken || _rig.Mode == CameraMode.Free, ModifierTap.OtherModifiers(name, key.ShiftPressed, key.CtrlPressed, key.AltPressed, key.MetaPressed), (long)Input.GetMouseButtonMask()))
+            RunKeyAction(action, name);
+    }
+
+    private readonly ModifierTap _modifierTap = new();
+    private bool _pressExtraShift, _pressExtraCtrl;
+
+    // The action of a key press (key: the physical key's name), or of a lone Ctrl or Shift let go (ModifierTap).
+    private void RunKeyAction(PlayAction? action, string key)
+    {
         switch (action)
         {
             case PlayAction.Rest:
@@ -1117,13 +1135,7 @@ public partial class GameScene : Node3D
     private bool WindowScaleKey(Key key)
     {
         int now = _options.WindowScalePercent;
-        int next = key switch
-        {
-            Key.Equal or Key.KpAdd => now + PlayOptions.WindowScaleStep,
-            Key.Minus or Key.KpSubtract => now - PlayOptions.WindowScaleStep,
-            Key.Key0 or Key.Kp0 => 100,
-            _ => -1,
-        };
+        int next = PlayOptions.WindowScaleAfterKey(key.ToString(), now);
         if (next < 0)
             return false;
         _options.WindowScalePercent = Math.Clamp(next, PlayOptions.MinWindowScale, PlayOptions.MaxWindowScale);
@@ -1152,7 +1164,7 @@ public partial class GameScene : Node3D
         _readoutPanel.ApplyScale(scale);
     }
 
-    // D137: F12 switches the window between fullscreen and windowed.
+    // D137: the fullscreen key (F11) switches the window between fullscreen and windowed.
     private void ToggleFullscreen()
     {
         DisplayServer.WindowSetMode(IsFullscreen() ? DisplayServer.WindowMode.Windowed : DisplayServer.WindowMode.Fullscreen);
@@ -1376,12 +1388,12 @@ public partial class GameScene : Node3D
         _rateAt = now;
     }
 
-    // D137: the debug HUD's numbers, which the dev menu's Stats tab shows (and F4's pinned window): the connection, the
+    // D137: the debug HUD's numbers, which the dev menu's Stats tab shows (and the debug HUD key's (F3) pinned window): the connection, the
     // prediction, the player and the server's last text.
     private RenderPose _statsPose;
     private bool _statsHasOwn;
 
-    // D138: F4's corner, drawn by the game's UI: the FPS, then the server's numbers as this client sees them.
+    // D138: the debug HUD key's (F3) corner, drawn by the game's UI: the FPS, then the server's numbers as this client sees them.
     private void UpdateStatsCorner()
     {
         // the HUD's text size (HudMetrics.TextScale), for the version tag as well, which the App draws on every screen
@@ -1429,7 +1441,7 @@ public partial class GameScene : Node3D
         yield return string.Create(c, $"seq sent {_feed.LastSentSeq} acked {_feed.LastAppliedSeq}");
     }
 
-    // the owner (2026-10-28): the prediction in brief in F4's corner (the dev menu's Stats tab has it all, PredictionLines)
+    // the owner (2026-10-28): the prediction in brief in the debug HUD's (F3) corner (the dev menu's Stats tab has it all, PredictionLines)
     private string PredictionLine(CultureInfo c)
     {
         OwnPrediction p = _session.Prediction;

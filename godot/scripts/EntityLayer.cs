@@ -21,7 +21,7 @@ public readonly record struct EntityPick(long EntityId, float Distance, Vector3 
 /// (the replicated yaw), or tg's rotated sprite on a floor quad when it lies (<c>Posture</c>). An entity that has no appearance (or whose icons
 /// are not converted) keeps M1's placeholder: a capsule with a nose for a mob, a box for anything else. Poses come from <see cref="Poses"/>
 /// (M2 P8's source: the interpolated samples, the predicted own capsule) or, until one is set, from the replica's own samples. The own
-/// capsule can be hidden (first person, D101). Names are never drawn above heads (D56); a debug overlay can show them (F3).
+/// capsule can be hidden (first person, D101). Names are never drawn above heads (D56); a debug overlay can show them (F4).
 /// <para>
 /// <see cref="TryPick"/> is the pick interface of the click ray (M2 P8): the entity whose picture the ray hits, walls in front of it hiding it.
 /// </para>
@@ -2242,7 +2242,7 @@ public partial class EntityLayer : Node3D
     /// <summary>DV374: the own mob sees the other mobs through the walls (its SEE_MOBS: <see cref="ObserverVision.SeesMobs"/>).</summary>
     public bool SeeMobs { get; set; }
 
-    // A mob's name tag: its replicated name over the head, hidden behind walls (unlike the F3 overlay's labels). It sits above
+    // A mob's name tag: its replicated name over the head, hidden behind walls (unlike the names overlay's labels, F4). It sits above
     // the top of the drawn picture (the owner's play test, 2026-10-10: at the eye height it covered the head), low over a
     // lying mob, at the old height over a placeholder.
     private static void UpdateNameTag(Entry e, bool show)

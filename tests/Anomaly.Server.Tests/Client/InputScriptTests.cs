@@ -22,8 +22,24 @@ public class InputScriptTests
     [Fact]
     public void TheDebugHudKeyCanBeScriptedToHideItForAScreenshot()
     {
-        Assert.True(InputScript.TryParse("1:F4+,1.1:F4-", out List<ScriptedInput> steps, out _));
-        Assert.Equal(new[] { new ScriptedInput(1, ScriptAction.Press, "F4", 0), new ScriptedInput(1.1, ScriptAction.Release, "F4", 0) }, steps);
+        // ui-overhaul.md section 3: the debug HUD is on F3 (SS14's ShowDebugMonitors); F4, the names overlay's now, still parses
+        Assert.True(InputScript.TryParse("1:F3+,1.1:F3-", out List<ScriptedInput> steps, out _));
+        Assert.Equal(new[] { new ScriptedInput(1, ScriptAction.Press, "F3", 0), new ScriptedInput(1.1, ScriptAction.Release, "F3", 0) }, steps);
+        Assert.True(InputScript.TryParse("1:F4+,1.1:F4-", out _, out _));
+    }
+
+    [Fact]
+    public void TheRadioOocMeAndFullscreenKeysCanBeScripted()
+    {
+        // ui-overhaul.md section 5: ;, [, ' (Shift+' is me) and F11 for a playtest without the operating system's key events
+        Assert.True(InputScript.TryParse("1:SEMICOLON+,1.1:SEMICOLON-,2:BRACKETLEFT+,2.1:BRACKETLEFT-,3:SHIFT+,3.1:APOSTROPHE+,3.2:APOSTROPHE-,3.3:SHIFT-,4:F11+,4.1:F11-",
+            out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(new[] { "SEMICOLON", "BRACKETLEFT", "SHIFT", "APOSTROPHE", "F11" }, steps.Where(s => s.Action == ScriptAction.Press).Select(s => s.Key));
+        // the engine's names of the keys (GameScene.ScriptKey parses them so), which the default bindings name
+        foreach (string key in new[] { "SEMICOLON", "BRACKETLEFT", "APOSTROPHE", "F11" })
+            Assert.Contains(KeyBindings.Defaults().ActionOfPress(key == "F11" ? "F11" : char.ToUpperInvariant(key[0]) + key.Substring(1).ToLowerInvariant(), shift: key == "APOSTROPHE"),
+                new PlayAction?[] { PlayAction.Radio, PlayAction.Ooc, PlayAction.Me, PlayAction.Fullscreen });
+        Assert.False(InputScript.TryParse("1:COLON+", out _, out _));
     }
 
     [Fact]

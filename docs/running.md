@@ -51,21 +51,25 @@ Unzip it anywhere and keep its folders together.
 
 ## Controls
 
-The defaults; F10 rebinds them.
+The defaults, Space Station 14's where it has the same function; F10 rebinds them. A settings file saved before keeps its
+own keys.
 
 | Input | Action |
 |---|---|
 | WASD, mouse | move, look |
-| C / U / F | walk or run / lie down and get up / combat mode |
+| Shift / C / F | switch walk and run (tap Shift alone; Shift with a click or a key does not switch) / lie down and get up / combat mode |
 | Left click / right tap / right hold | tg's left click / tg's right click / the radial menu |
 | Middle click, X | swap hands |
-| Q / E / Z | drop / quick equip / use the held item (tg's activate in hand) |
-| R, or hold Space | throw mode |
+| Q / Ctrl+Q / E / Z | drop / throw the held item at the crosshair / quick equip / use the held item (tg's activate in hand) |
+| Space / Ctrl | up a level / down a level (a ghost, a flyer, one on a ladder or without gravity); Ctrl acts when it is let go with nothing else pressed, so Ctrl+Q and Ctrl+click do not also go down. Any other mob holds throw mode while Space is held |
 | Tab | cursor mode: the mouse is free for the HUD, the inventory slots and open storage |
 | Shift+left click | examine |
 | Ctrl+left click / H or Delete | pull what is under the crosshair (or the pointer in cursor mode) / stop pulling (also the HUD's pull button) |
+| T / ; / Shift+' / [ / Y | say / radio / me (an emote) / OOC / the emote wheel |
+| hold J | pet commands (hover a friendly pet) |
 | ` (backtick) | the dev console (the commands below) |
-| F1 / F2 / F3 / F4 | camera (first person, free fly, orbit) / ceiling / names / debug HUD |
+| F1 / F2 / F3 / F4 | camera (first person, free fly, orbit) / ceiling / debug HUD / names |
+| Shift+F4 / F11 | hide the interface / fullscreen |
 | F9 / F10 | the health analyzer panel / options |
 
 ## Commands

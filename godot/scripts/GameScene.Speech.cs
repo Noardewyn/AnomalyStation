@@ -77,21 +77,13 @@ public partial class GameScene
     /// <summary>tg's communication keybindings: the say window opens on the key's channel.</summary>
     private bool OnSpeechKey(PlayAction? action)
     {
-        string channel = action switch
-        {
-            PlayAction.Say => SayChannels.Say,
-            PlayAction.Radio => SayChannels.Radio,
-            PlayAction.Me => SayChannels.Me,
-            PlayAction.Ooc => SayChannels.Ooc,
-            PlayAction.Pray => SayChannels.Pray,
-            _ => null,
-        };
+        string channel = ChatInputModel.ChannelOfKey(action);
         if (channel == null || _sayWindow == null)
             return false;
         if (ChatWindowOpen)
         {
-            // the owner (2026-10-26): the chat window stays open while playing; the speech keys type into it
-            _chatWindow.FocusInput();
+            // the owner (2026-10-26): the chat window stays open while playing; the speech keys type into it, on their channel (ui-overhaul.md 5)
+            _chatWindow.FocusInput(channel);
             GetViewport().SetInputAsHandled();
             return true;
         }

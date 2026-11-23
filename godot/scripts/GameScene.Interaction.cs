@@ -207,6 +207,10 @@ public partial class GameScene
     {
     }
 
+    // ui-overhaul.md section 5: Godot sends no key release for keys let go while the window has no focus (Input.release_pressed_events clears the
+    // key state only), so a lost focus drops a lone Ctrl's or Shift's waiting action
+    private void OnFocusLost() => _modifierTap.Drop();
+
     // The hints that belong to what is hovered now (the answer to an older hover is dropped).
     // DV382: what the own view looks from: a camera eye's drawn place (the AI's eye far from its core), else the own predicted mob
     private (float X, float Y, int Z) ViewerPosition() => _cameraEye ? (_eyePose.X, _eyePose.Y, (int)_eyePose.Z) : _session.Prediction.RenderPosition();
@@ -494,10 +498,9 @@ public partial class GameScene
     private static ClickModifiers HeldModifiers()
     {
         var modifiers = ClickModifiers.None;
-        // DV422: Ctrl is no click modifier (it goes down a level); tg's Ctrl-click is the Pull key's (H) on what the crosshair points at
+        // Ctrl and Shift with a click are bindings of their own (ui-overhaul.md section 3: Ctrl+left click is the Pull action's, Shift+left
+        // click the Examine action's; OnMouseButton adds their modifier); only tg's Alt and Alt-Shift go with any click.
         if (Input.IsPhysicalKeyPressed(Key.Alt)) modifiers |= ClickModifiers.Alt;
-        // The owner (2026-10-09): a plain Shift-click is not tg's examine here (Examine has its own key, V; players hold
-        // Shift out of habit), only tg's Ctrl-Shift and Alt-Shift combinations keep it.
         if (modifiers != ClickModifiers.None && Input.IsPhysicalKeyPressed(Key.Shift)) modifiers |= ClickModifiers.Shift;
         return modifiers;
     }
@@ -672,6 +675,15 @@ public partial class GameScene
         };
         PlayAction? action = name == null ? null : _options.Bindings.ActionOf(name);
         ClickModifiers modifiers = HeldModifiers();
+        // ui-overhaul.md section 3 (SS14's ExamineEntity and TryPullObject): a button bound to Examine (Shift+left click) or Pull (Ctrl+left click)
+        // is tg's left click with Shift or Ctrl, and with a modifier held on top of the binding (KeyBindings.ModifiedClick: Pull bound to Shift+left
+        // click is tg's Ctrl-click), so it takes the left click's ways (cursor mode, the radial)
+        (PlayAction? modified, bool ownShift, bool ownCtrl) = name == null || modifiers != ClickModifiers.None ? (null, false, false) : _options.Bindings.MatchPress(name, button.ShiftPressed, button.CtrlPressed);
+        if (KeyBindings.TakesModifiedMouse(modified))
+        {
+            modifiers = KeyBindings.ModifiedClick(modified.Value, button.ShiftPressed && !ownShift, button.CtrlPressed && !ownCtrl);
+            action = PlayAction.PrimaryClick;
+        }
         // M8z (D245): Shift alone counts with the middle button, tg's shift-middle-click (pointing); Shift does not run with it
         if (action == PlayAction.MiddleClick && Input.IsPhysicalKeyPressed(Key.Shift))
             modifiers |= ClickModifiers.Shift;
@@ -1076,9 +1088,9 @@ public partial class GameScene
                 _session.Keybinding(KeybindingCode.StopPulling);
                 break;
             case PlayAction.Pull:
-                // DV422: tg's Ctrl-click (Ctrl-Shift with Shift) on what the crosshair points at, else stop pulling
+                // tg's Ctrl-click on what the crosshair points at, with a modifier held on top of the binding (KeyBindings.ModifiedClick), else stop pulling
                 if (_target.IsSet)
-                    SendClick(_target, ClickButton.Left, ClickModifiers.Ctrl | (Input.IsPhysicalKeyPressed(Key.Shift) ? ClickModifiers.Shift : ClickModifiers.None));
+                    SendClick(_target, ClickButton.Left, KeyBindings.ModifiedClick(PlayAction.Pull, _pressExtraShift, _pressExtraCtrl));
                 else
                     _session.Keybinding(KeybindingCode.StopPulling);
                 break;
@@ -1101,14 +1113,21 @@ public partial class GameScene
                     _session.Click(new ClickTarget(TargetKind.Screen, button, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
                 break;
             case PlayAction.Examine:
-                // tg's shift-click on what is under the crosshair (ShiftClickOn -> examinate)
-                ClickAtCrosshair(ClickButton.Left, ClickModifiers.Shift);
+                // tg's shift-click on what is under the crosshair (ShiftClickOn -> examinate), with a modifier held on top of the binding
+                ClickAtCrosshair(ClickButton.Left, KeyBindings.ModifiedClick(PlayAction.Examine, _pressExtraShift, _pressExtraCtrl));
                 break;
         }
     }
 
     private void OnKeyUp(InputEventKey key)
     {
+        string name = key.PhysicalKeycode.ToString();
+        // a lone Ctrl or Shift let go with nothing else pressed: its press's action now (ModifierTap), unless a panel took the keys meanwhile
+        if (_modifierTap.Release(name, KeyboardTaken || _rig.Mode == CameraMode.Free) is PlayAction tapped && !_console.IsOpen && !_optionsPanel.IsOpen && !SayOpen && !_escMenu.IsOpen)
+        {
+            (_pressExtraShift, _pressExtraCtrl) = (false, false); // the lone modifier is the binding itself
+            RunKeyAction(tapped, name);
+        }
         if (_console.IsOpen || _optionsPanel.IsOpen || _rig.Mode == CameraMode.Free)
             return;
         OnEmoteWheelKeyUp(key);
@@ -1127,6 +1146,10 @@ public partial class GameScene
     // D292: the chat window's input or a text field of a tgui window has the keyboard
     private bool TextFieldTyping => (ChatTyping || _tguiHost?.Typing == true) && GetViewport().GuiGetFocusOwner() is LineEdit or TextEdit;
 
+    // ui-overhaul.md section 5: a text field has the keyboard (the say window, the chat input, a tgui window's field, any LineEdit or TextEdit, the
+    // dev menu's ImGui field): a lone Shift or Ctrl does nothing in the game (ModifierTap)
+    private bool KeyboardTaken => SayOpen || _imgui?.WantsText == true || GetViewport().GuiGetFocusOwner() is LineEdit or TextEdit;
+
     // D292: the text field lets the keyboard go and the view takes the mouse; the windows stay open
     private void BackToGame()
     {
@@ -1138,6 +1161,11 @@ public partial class GameScene
     // chat switches its channel with Shift+Tab, DV224)
     public override void _Input(InputEvent @event)
     {
+        // ModifierTap: any key or button pressed while a lone Ctrl or Shift waits cancels its action (seen here, before a window or field takes it)
+        if (@event is InputEventKey { Pressed: true, Echo: false } pressed)
+            _modifierTap.AnyPress(pressed.PhysicalKeycode.ToString());
+        else if (@event is InputEventMouseButton { Pressed: true } clicked)
+            _modifierTap.AnyPress("Mouse" + clicked.ButtonIndex);
         if (!_leaving && App.Instance.Playing && @event is InputEventKey { Pressed: true, Echo: false, PhysicalKeycode: Key.F8 })
         {
             StopPlay(null); // the map editor's Play: F8 goes back to the editor, over every window and menu
@@ -1147,9 +1175,9 @@ public partial class GameScene
         // (in the map editor every key is the editor's: the push-to-talk key, N, was taken from its text fields, and the microphone started)
         if (!_leaving && !EditorOn && @event is InputEventKey talk && PushToTalkInput(talk))
             return; // D307
-        // F12 works over every window and menu (a player's report: not in the options): taken here before the GUI and OnKey's early returns;
+        // the fullscreen key (F11) works over every window and menu (a player's report: not in the options): taken here before the GUI and OnKey's early returns;
         // the options panel's key capture (a child, its _Input runs first) has already taken a key being bound
-        if (!_leaving && @event is InputEventKey { Pressed: true, Echo: false } full && _options.Bindings.ActionOfPress(full.PhysicalKeycode.ToString(), full.ShiftPressed) == PlayAction.Fullscreen)
+        if (!_leaving && @event is InputEventKey { Pressed: true, Echo: false } full && _options.Bindings.ActionOfPress(full.PhysicalKeycode.ToString(), full.ShiftPressed, full.CtrlPressed) == PlayAction.Fullscreen)
         {
             ToggleFullscreen();
             GetViewport().SetInputAsHandled();

@@ -32,7 +32,7 @@ public readonly record struct DevCommandRequest(double AfterSeconds, string Text
 /// <item><term><c>--fake-server</c></term><description>play against the scripted world in the client (development; no server needed)</description></item>
 /// <item><term><c>--camera=first|free|orbit</c>, <c>--yaw=DEG</c>, <c>--pitch=DEG</c></term><description>the starting camera mode and view (for screenshots)</description></item>
 /// <item><term><c>--keys=SCRIPT</c></term><description>scripted key presses and view turns (see <see cref="InputScript"/>), for input tests without a keyboard</description></item>
-/// <item><term><c>--names</c></term><description>start with the names overlay (F3) on</description></item>
+/// <item><term><c>--names</c></term><description>start with the names overlay (F4) on</description></item>
 /// <item><term><c>--fake-bots=N</c></term><description>the number of wandering bots of the fake world (default 8, at most 1000; the room grows with them)</description></item>
 /// <item><term><c>--sim-latency=MS</c>, <c>--sim-loss=PERCENT</c></term><description>M2: a network that is not instant: every message is held back MS milliseconds in total (half each way, so the ping grows by MS), and PERCENT of the Input messages sent are lost (the reliable channels lose nothing); for feeling prediction on localhost</description></item>
 /// <item><term><c>--bind=ACTION=KEY</c></term><description>M2: bind a key or mouse button (<c>--bind=rest=Z</c>; <c>KeyBindings.IdOf</c> names the actions, <c>Godot.Key</c> the keys), repeatable; on top of the options file</description></item>

@@ -516,7 +516,7 @@ public partial class GameScene
         bool markers = _playerMarkersOn;
         if (ImGui.Checkbox("Markers over every player of the level (through walls)", ref markers))
             SetPlayerMarkers(markers);
-        ImGui.Checkbox("Names overlay (F3)", ref _names);
+        ImGui.Checkbox("Names overlay (" + KeyLabel(PlayAction.Names) + ")", ref _names);
         if (_light != null)
         {
             // D288: the Godot lights or, for comparison, the old light grid
@@ -566,7 +566,7 @@ public partial class GameScene
         }
         StatsCornerCheckbox();
         bool full = DisplayServer.WindowGetMode() is DisplayServer.WindowMode.Fullscreen or DisplayServer.WindowMode.ExclusiveFullscreen;
-        if (ImGui.Checkbox("Fullscreen (F12)", ref full))
+        if (ImGui.Checkbox("Fullscreen (" + KeyLabel(PlayAction.Fullscreen) + ")", ref full))
             ToggleFullscreen();
         bool changed = false;
         bool playerNames = _options.PlayerNames, tile = _options.HighlightTile, thing = _options.HighlightThing, fov = _options.ThirdPersonFov;

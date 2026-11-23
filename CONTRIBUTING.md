@@ -29,6 +29,11 @@ as [SECURITY.md](SECURITY.md) explains, not in a public issue.
 ## AI
 
 - **AI-written code is welcome.** Most of this project was written with AI, and it would not exist without it.
+- **AI-generated art is not accepted.** This covers images, sprites, textures, 3D models, sounds,
+  voices and music made by generative AI.
+- **Some current models and sounds were made with AI.** Early in development they were made that way
+  for fast prototyping. Our goal is to replace them with models and sounds made by people, and
+  contributions that do so are very welcome.
 - **Every pull request is reviewed by people and AI reviewers** before it is merged, whoever or whatever
   wrote it. You are responsible for what you submit: read it, test it and be ready to explain it.
 

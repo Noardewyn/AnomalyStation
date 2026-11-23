@@ -6,6 +6,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Noardewyn/AnomalyStation/actions/workflows/ci.yml?query=branch%3Amain"><img src="https://img.shields.io/github/actions/workflow/status/Noardewyn/AnomalyStation/ci.yml?branch=main&label=CI&logo=github" alt="CI status"></a>
   <a href="https://discord.com/invite/3QYKDaWVX3"><img src="https://img.shields.io/badge/Discord-join%20us-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-AGPL--3.0-blue" alt="Code license: AGPL-3.0"></a>
   <a href="LICENSE-ASSETS"><img src="https://img.shields.io/badge/assets-CC%20BY--SA%203.0-lightgrey" alt="Asset license: CC BY-SA 3.0"></a>

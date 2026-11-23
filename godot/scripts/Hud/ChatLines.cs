@@ -5,8 +5,9 @@ namespace Anomaly.Client.Hud;
 
 /// <summary>
 /// M4a P7 (D128, interaction.md 9): the feedback until M9, one overlay: tg's last chat lines at the lower left (<see cref="ChatFeed"/>), a balloon alert under the crosshair
-/// (<see cref="BalloonModel"/>), tg's progress bars at the top middle, labelled, or an item's under its action button (the owner, 2026-10-18: over its target or under the crosshair it covered the mobs and items in the middle of the view; <see cref="ProgressBarLayout"/>), and the screentip line of the hovered thing (its name and the left and right
-/// labels the server sent) at the top right, out of the view's middle (the owner, 2026-10-16). The scene fills the fields each frame.
+/// (<see cref="BalloonModel"/>), tg's progress bars at the top middle, labelled, or an item's under its action button (the owner, 2026-10-18: over its target or under the crosshair it covered the mobs and items in the middle of the view; <see cref="ProgressBarLayout"/>), and the hovered thing's
+/// name with its prompts (a key chip and the server's hint each, <see cref="KeyChips.Prompts"/>) at the crosshair's lower right (ui-overhaul.md section 6; the top right
+/// before). The scene fills the fields each frame.
 /// </summary>
 public partial class ChatLines : Control
 {
@@ -16,10 +17,20 @@ public partial class ChatLines : Control
 
     public float BalloonAlpha { get; set; }
 
-    public string Screentip { get; set; }
+    /// <summary>The hovered thing's name over its prompts, or null when nothing is hovered.</summary>
+    public string PromptName { get; set; }
 
-    /// <summary>How many lines of the stats corner (<see cref="StatsCorner"/>) stand at the top right now (0: it is off): the screentip goes under them.</summary>
-    public int StatsLines { get; set; }
+    /// <summary>The hovered thing's prompt lines (<see cref="KeyChips.Prompts"/>).</summary>
+    public List<PromptLine> Prompts { get; set; } = new();
+
+    /// <summary>The screen the HUD is drawn on, with the options' HUD scale (the prompts' and the balloon's sizes, <see cref="UiTokens.Unit"/>), set by the scene every frame.</summary>
+    public HudMetrics Metrics { get; set; } = new(1920, 1080, 1f);
+
+    /// <summary>What the prompts stand beside, screen pixels: the screen's middle (the crosshair), or the free pointer in cursor mode.</summary>
+    public Vector2 PromptAnchor { get; set; }
+
+    /// <summary>How far right of <see cref="PromptAnchor"/> what is drawn there reaches (<see cref="Crosshair.Extent"/>, <see cref="KeyChips.PointerReach"/>): the prompts start past it.</summary>
+    public float PromptReach { get; set; }
 
     /// <summary>The progress bars placed this frame (<see cref="PlaceBars"/>).</summary>
     public List<PlacedBar> Bars { get; } = new();
@@ -47,7 +58,7 @@ public partial class ChatLines : Control
     // Redraws while there is something to show (and once more when it is gone).
     public override void _Process(double delta)
     {
-        bool something = Lines.Count > 0 || !string.IsNullOrEmpty(Balloon) || !string.IsNullOrEmpty(Screentip) || Bars.Count > 0;
+        bool something = Lines.Count > 0 || !string.IsNullOrEmpty(Balloon) || PromptName != null || Bars.Count > 0;
         if (something || _drewSomething)
             QueueRedraw();
         _drewSomething = something;
@@ -92,20 +103,13 @@ public partial class ChatLines : Control
             }
             y = top - 20f * kc;
         }
-        if (!string.IsNullOrEmpty(Screentip))
-        {
-            // The top right, right aligned where the stats corner's lines end (left of tg's alert column), under those lines when they are on.
-            float right = size.X - 48 * k;
-            int statsSize = Px(11);
-            float top = StatsCorner.Top(k) + StatsLines * (font.GetHeight(statsSize) + 2 * k) + (StatsLines > 0 ? 6 * k : 0);
-            float width = Math.Min(520 * k, right - 16);
-            int tipSize = Px(12); // a little over the stats' 11: smaller than the chat now that it sits in the corner (the owner, 2026-10-16)
-            Text(font, new Vector2(right - width, top + font.GetAscent(tipSize)), Screentip, tipSize, new Color(1f, 0.97f, 0.8f, StatsCorner.TextAlpha), width, StatsCorner.TextAlpha, align: HorizontalAlignment.Right);
-        }
+        float u = UiTokens.Unit(Metrics);
+        if (PromptName != null)
+            DrawPrompts(font, u);
         if (!string.IsNullOrEmpty(Balloon))
         {
-            float width = Math.Min(400 * k, size.X - 32);
-            Text(font, new Vector2(centre.X - width / 2, centre.Y + 78 * k), Balloon, Px(17), new Color(1f, 1f, 1f, BalloonAlpha), width, BalloonAlpha, center: true);
+            HudRect row = KeyChips.BalloonRow(Metrics);
+            Text(font, new Vector2(row.Left, centre.Y + UiTokens.BalloonBaseline * u), Balloon, FontPx(UiTokens.BalloonFont, u), new Color(1f, 1f, 1f, BalloonAlpha), row.Width, BalloonAlpha, center: true);
         }
         // The bars (ProgressBarLayout, the owner, 2026-10-18): an item's under its action button at the top left, the others in a column at
         // the top edge's middle with a label and the percent above each, out of the view's middle.
@@ -134,6 +138,62 @@ public partial class ChatLines : Control
             }
         }
     }
+
+    private static int FontPx(float referencePixels, float u) => Math.Max(1, (int)Math.Round(referencePixels * u));
+
+    // The hovered thing's name, then a key chip and the server's hint per line, at the crosshair's lower right (KeyChips.PromptBlock), with the
+    // HUD text's opacity (the options' HudTextOpacity, as the screentip had in the corner).
+    private void DrawPrompts(Font font, float u)
+    {
+        float alpha = StatsCorner.TextAlpha;
+        int nameSize = FontPx(UiTokens.PromptNameFont, u), textSize = FontPx(UiTokens.PromptFont, u), chipSize = FontPx(UiTokens.ChipFont, u);
+        float width = font.GetStringSize(PromptName, HorizontalAlignment.Left, -1, nameSize).X;
+        foreach (PromptLine line in Prompts)
+            width = Math.Max(width, ChipWidth(font, line.Key, chipSize, u) + UiTokens.PromptChipGap * u + font.GetStringSize(line.Text, HorizontalAlignment.Left, -1, textSize).X);
+        HudRect block = KeyChips.PromptBlock(Metrics, Prompts.Count, width, PromptAnchor.X, PromptAnchor.Y, PromptReach);
+        float nameLine = UiTokens.PromptNameLine * u;
+        Outlined(font, new Vector2(block.Left, block.Top + (nameLine + font.GetAscent(nameSize) - font.GetDescent(nameSize)) / 2f), PromptName, nameSize, block.Width, alpha, u);
+        float y = block.Top + nameLine;
+        foreach (PromptLine line in Prompts)
+        {
+            float chipWidth = ChipWidth(font, line.Key, chipSize, u);
+            DrawChip(this, font, new Rect2(block.Left, y, chipWidth, UiTokens.ChipHeight * u), line.Key, chipSize, u, alpha);
+            float textLeft = block.Left + chipWidth + UiTokens.PromptChipGap * u;
+            float baseline = y + (UiTokens.ChipHeight * u + font.GetAscent(textSize) - font.GetDescent(textSize)) / 2f;
+            Outlined(font, new Vector2(textLeft, baseline), line.Text, textSize, Math.Max(1f, block.Right - textLeft), alpha, u);
+            y += UiTokens.PromptLine * u;
+        }
+    }
+
+    // The prompts' text: white at the HUD text's opacity over a dark outline (UiTokens) that keeps it readable over bright scenery; the outline
+    // fades only below half that opacity, so the text stays dark-edged at the default 60 per cent.
+    private void Outlined(Font font, Vector2 at, string text, int fontSize, float width, float alpha, float u)
+    {
+        int outline = Math.Max(1, (int)Math.Round(UiTokens.TextOutlineWidth * u));
+        DrawStringOutline(font, at, text, HorizontalAlignment.Left, width, fontSize, outline, Rgba(UiTokens.TextOutline, Math.Min(1f, 2f * alpha)));
+        DrawString(font, at, text, HorizontalAlignment.Left, width, fontSize, Rgba(UiTokens.LocalText, alpha));
+    }
+
+    private static float ChipWidth(Font font, string text, int fontSize, float u) =>
+        font.GetStringSize(text, HorizontalAlignment.Left, -1, fontSize).X + 2 * UiTokens.ChipPadX * u;
+
+    private static StyleBoxFlat _chipStyle;
+
+    /// <summary>A chip (UiTokens): a small rounded box, the local pill's slate with a white rim, and its text centred in it, at <paramref name="alpha"/>.</summary>
+    public static void DrawChip(CanvasItem canvas, Font font, Rect2 rect, string text, int fontSize, float u, float alpha)
+    {
+        _chipStyle ??= new StyleBoxFlat();
+        _chipStyle.BgColor = Rgba(UiTokens.ChipBack, alpha);
+        _chipStyle.BorderColor = Rgba(UiTokens.ChipRim, alpha);
+        _chipStyle.SetBorderWidthAll(Math.Max(1, (int)Math.Round(UiTokens.ChipRimWidth * u)));
+        _chipStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.ChipRadius * u)));
+        canvas.DrawStyleBox(_chipStyle, rect);
+        float baseline = rect.Position.Y + (rect.Size.Y + font.GetAscent(fontSize) - font.GetDescent(fontSize)) / 2f;
+        canvas.DrawString(font, new Vector2(rect.Position.X, baseline), text, HorizontalAlignment.Center, rect.Size.X, fontSize, Rgba(UiTokens.LocalText, alpha));
+    }
+
+    /// <summary>A token's colour (0xRRGGBBAA) with its alpha times <paramref name="alpha"/>.</summary>
+    public static Color Rgba(uint rgba, float alpha = 1f) => ToColor(rgba, alpha);
 
     /// <summary>Places this frame's bars (<see cref="ProgressBarLayout.Place"/>) with this overlay's font at its text scale.</summary>
     public void PlaceBars(IReadOnlyList<ProgressBarInfo> bars, long ownEntity, Func<long, (bool Found, HudRect Rect)> buttonOf)

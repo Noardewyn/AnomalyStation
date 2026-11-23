@@ -224,10 +224,8 @@ public partial class GameScene
     {
         if (!_hudHover.IsSet || HintsFor(_hudHover) is not ContextHintsMessage h || string.IsNullOrEmpty(h.Name))
             return null;
-        string lmb = HintLabel(h, ClickButton.Left), rmb = HintLabel(h, ClickButton.Right);
         string text = "<p>" + System.Net.WebUtility.HtmlEncode(h.Name) + "</p>"
-            + (lmb != null ? "<p>[LMB] " + System.Net.WebUtility.HtmlEncode(lmb) + "</p>" : string.Empty)
-            + (rmb != null ? "<p>[RMB] " + System.Net.WebUtility.HtmlEncode(rmb) + "</p>" : string.Empty);
+            + string.Concat(KeyChips.Prompts(h, _options.Bindings).Select(line => "<p>[" + System.Net.WebUtility.HtmlEncode(line.Key) + "] " + System.Net.WebUtility.HtmlEncode(line.Text) + "</p>"));
         if (_hudTip?.Text != text)
             _hudTip = new TooltipMessage { Kind = TooltipKind.Show, Text = text, Theme = "default" };
         return _hudTip;
@@ -243,16 +241,6 @@ public partial class GameScene
             TargetKind.Ceiling or TargetKind.Turf => h.TurfX == target.X && h.TurfY == target.Y && h.TurfZ == target.Z ? h : null,
             _ => h.Target == target.Id ? h : null,
         };
-    }
-
-    private static string HintLabel(ContextHintsMessage h, ClickButton button)
-    {
-        foreach (ContextHint hint in h.Hints)
-        {
-            if (hint.Button == button && hint.Modifiers == ClickModifiers.None)
-                return hint.Label;
-        }
-        return null;
     }
 
     private string TargetName(in ClickTarget target)
@@ -406,7 +394,7 @@ public partial class GameScene
         _hudHover = hover.Kind == TargetKind.Screen ? hover : default;
         _crosshair.Visible = (firstPerson || thirdPerson) && !PanelsOpen && !_mouse.CursorMode;
         _crosshair.Set(_hit.Kind == TargetKind.Entity, reach);
-        GunSightMessage sight = _feed.GunSight; // DV96: the shooter's crosshair while a gun is held
+        GunSightMessage sight = _shotGunSight ?? _feed.GunSight; // DV96: the shooter's crosshair while a gun is held (a shot scenario's own, below)
         _crosshair.SetGun(sight.Gun, sight.ConeDegrees, _rig.FovDegrees);
         if (_feed.GunSightHits != _gunSightHits)
         {
@@ -450,7 +438,7 @@ public partial class GameScene
         _radial.UiScale = _options.UiScale;
         _radial.Opacity = _options.RadialOpacity;
         _radial.Refresh();
-        UpdateFeedback(now, camera, aiming);
+        UpdateFeedback(now, camera, aiming, pointerAim);
         RunShotScript(now);
         while (_pendingMoves.Count > 0 && _pendingMoves.Peek().At <= now)
         {
@@ -470,25 +458,32 @@ public partial class GameScene
     }
 
     private static readonly List<ProgressBarInfo> NoBars = new();
+    private static readonly List<PromptLine> NoPrompts = new();
 
-    private void UpdateFeedback(double now, Camera3D camera, bool aiming)
+    private void UpdateFeedback(double now, Camera3D camera, bool aiming, bool pointerAim)
     {
         Vector2 view = GetViewport().GetVisibleRect().Size;
-        _chatLines.TextScale = new HudMetrics(view.X, view.Y, _options.UiScale).TextScale; // scales with the HUD (the owner, 2026-10-18)
+        var metrics = new HudMetrics(view.X, view.Y, _options.UiScale);
+        _chatLines.Metrics = metrics;
+        // ui-overhaul.md section 6: the prompts stand beside the crosshair, or beside the free pointer when it aims at the world (cursor mode)
+        _chatLines.PromptAnchor = pointerAim ? GetViewport().GetMousePosition() : view / 2f;
+        _chatLines.PromptReach = pointerAim ? KeyChips.PointerReach : _crosshair.Extent;
+        _chatLines.TextScale = metrics.TextScale; // scales with the HUD (the owner, 2026-10-18)
         _chatLines.ChatScale = _options.ChatLinesScale; // and its chat lines by their own share (the owner, 2026-11-19)
         _chatLines.Lines = ChatWindowOpen ? new List<ChatLine>() : _chat.Visible(now); // D252: the feed is hidden while the chat window is open
         _chatLines.Balloon = _balloon.Current(now, out float alpha);
         _chatLines.BalloonAlpha = alpha;
-        string tip = null;
+        string name = null;
+        List<PromptLine> prompts = NoPrompts;
         if (aiming && _target.IsSet && _target.Kind != TargetKind.Screen && _radialModel.Phase != RadialPhase.Open)
         {
-            string name = TargetName(_target);
-            ContextHintsMessage h = HintsFor(_target);
-            string lmb = h == null ? null : HintLabel(h, ClickButton.Left), rmb = h == null ? null : HintLabel(h, ClickButton.Right);
-            if (name.Length > 0 || lmb != null || rmb != null)
-                tip = name + (lmb != null ? "    [LMB] " + lmb : string.Empty) + (rmb != null ? "    [RMB] " + rmb : string.Empty);
+            string targetName = TargetName(_target);
+            List<PromptLine> lines = KeyChips.Prompts(HintsFor(_target), _options.Bindings);
+            if (targetName.Length > 0 || lines.Count > 0)
+                (name, prompts) = (targetName, lines);
         }
-        _chatLines.Screentip = tip;
+        _chatLines.PromptName = name;
+        _chatLines.Prompts = prompts;
         List<ProgressBarInfo> bars = _feed.Replica.Images.Count > 0 ? ProgressBars.Of(_feed.Replica) : NoBars;
         _chatLines.PlaceBars(bars, _feed.Replica.OwnEntity, _hudLayer.ActionButtonOf);
     }
@@ -1242,9 +1237,11 @@ public partial class GameScene
             _dragIcon.Visible = false;
     }
 
-    // ---- the scripted shot scenarios (ANOMALY_SHOT=hover|radial|hud|container|throw, with --fake-server; see godot/tools/README) ----
+    // ---- the scripted shot scenarios (ANOMALY_SHOT=hover|radial|hud|container|throw|gun|pointer, with --fake-server; see godot/tools/README) ----
 
     private FakeServer FakeServerOrNull => (_feed as FakeFeed)?.Server;
+
+    private GunSightMessage _shotGunSight; // the "gun" scenario's sight in place of the server's
 
     private void BuildShotScript()
     {
@@ -1275,6 +1272,17 @@ public partial class GameScene
             case "container":
                 Pick(server.ToolboxId, 0.8);
                 At(2.0, () => _session.Click(new ClickTarget(TargetKind.Screen, 2001, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None));
+                break;
+            case "gun":
+                // the fake server holds no gun: the sight of a buckshot-wide cone is set here, and fired once for the bloom (ui-overhaul.md 6)
+                At(0.8, () => { AimAtEntity(server.ToolboxId); _shotGunSight = new GunSightMessage(true, 4f, 0); });
+                At(2.5, () => _crosshair.Fired(App.NowSeconds));
+                break;
+            case "pointer":
+                // cursor mode with the pointer on the floor right of the middle, clear of the inventory window: the prompts stand beside the pointer
+                At(0.8, () => AimAtEntity(server.ToolboxId));
+                At(1.5, () => SetCursorMode(true));
+                At(1.8, () => Input.WarpMouse(GetViewport().GetVisibleRect().Size * new Vector2(0.7f, 0.45f)));
                 break;
             case "throw":
                 Pick(server.WelderId, 0.8);

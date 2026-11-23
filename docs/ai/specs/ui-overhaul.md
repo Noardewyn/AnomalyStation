@@ -210,7 +210,10 @@ dropped (F1 is the camera mode and there is no traits data). The wireframes' "[C
   the entry's id. `zone_sel`, swap, drop, throw, resist, pull and the move intent button stay at tg's places.
 - Godot-free logic in `Shared/Play/`: `UiTokens` (sizes in reference pixels at 1080 lines, colours from wireframes
   section 7, the Tab overlay's shares 0.28 and 0.64), `KeyChips` (a binding name as a chip label; the prompt lines of
-  a `ContextHintsMessage` from the player's bindings, at most three), `LiveHud` (which widget a screen entry is,
+  a `ContextHintsMessage` from the player's bindings: at most three, plus the stop-pulling line when the server sends
+  one, so it is never the line that is cut; a click line shows the mouse button bound to that click, since the game
+  acts on a click only from the mouse; the block sits past whichever sight is drawn, the gun sight included, and in
+  cursor mode beside the pointer; the text has a dark outline so it reads over bright scenery), `LiveHud` (which widget a screen entry is,
   by hand index or icon state and never by position; the selected target zone from `zone_sel`'s overlay; the layout
   of every box from `HudMetrics`). Nodes in `Hud/`: a new `LiveHudView` drawn under tg's pictures inside
   `HudLayer`'s root, and changes to `HudLayer`, `ChatLines` and `StatsCorner`.

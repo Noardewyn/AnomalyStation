@@ -254,8 +254,7 @@ void fragment() {
             }
             item.KeyHint ??= NewLabel(item.Container);
             Label hint = item.KeyHint;
-            string key = keys[0];
-            hint.Text = key.StartsWith("Key", StringComparison.Ordinal) ? key[3..] : key.StartsWith("Kp", StringComparison.Ordinal) ? key[2..] : key;
+            hint.Text = KeyChips.Label(keys[0]);
             hint.HorizontalAlignment = HorizontalAlignment.Right;
             hint.VerticalAlignment = VerticalAlignment.Bottom;
             hint.AddThemeFontSizeOverride("font_size", Math.Max(10, (int)(item.LastRect.Height * 0.3f)));

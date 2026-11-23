@@ -9,6 +9,12 @@ public static class GunSightGap
     /// <summary>The nearest the lines come to the middle (a gun with no spread), and how far a shot opens them, pixels.</summary>
     public const float MinPixels = 5f, BloomPixels = 10f;
 
+    /// <summary>
+    /// The crosshair's drawing (Hud/OptionsPanel.cs, Crosshair), before the options' crosshair size: how long a gun sight's line is, where the
+    /// target crosshair's arms end, and how far a line's shadow reaches past its end (KeyChips.SightReach).
+    /// </summary>
+    public const float LinePixels = 8f, ArmEndPixels = 15f, ShadowPixels = 2f;
+
     /// <summary>How long a shot keeps the lines open, seconds (they close linearly).</summary>
     public const double BloomSeconds = 0.25;
 

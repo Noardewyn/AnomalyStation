@@ -1398,24 +1398,23 @@ public partial class GameScene : Node3D
     {
         // the HUD's text size (HudMetrics.TextScale), for the version tag as well, which the App draws on every screen
         Vector2 view = GetViewport().GetVisibleRect().Size;
-        App.Instance.HudTextScale = new HudMetrics(view.X, view.Y, _options.UiScale).TextScale;
+        var metrics = new HudMetrics(view.X, view.Y, _options.UiScale);
+        App.Instance.HudTextScale = metrics.TextScale;
         StatsCorner.TextAlpha = _options.HudTextOpacity;
         _statsCorner.Visible = _options.ShowStats;
-        if (_chatLines != null)
-            _chatLines.StatsLines = 0; // the screentip stands under the corner's lines, when they are on
         if (!_statsCorner.Visible) return;
         CultureInfo c = CultureInfo.InvariantCulture;
-        _statsCorner.TextScale = App.Instance.HudTextScale.Value;
+        _statsCorner.TextScale = metrics.TextScale;
+        _statsCorner.Unit = UiTokens.Unit(metrics);
+        // ui-overhaul.md section 6: the ping and the FPS in one chip, the numbers as the template's arguments
+        _statsCorner.Chip = Anomaly.Core.DmShim.I18n.T("Ping [] ms | [] FPS", _feed.RoundTripMs, (int)Math.Round(Engine.GetFramesPerSecond()));
         _statsCorner.Lines = new[]
         {
-            string.Create(c, $"{Engine.GetFramesPerSecond():0} fps"),
-            string.Create(c, $"ping {_feed.RoundTripMs} ms   tick {_feed.Tick} (lag {_session.Clock.LagTicks:0.0})"),
+            string.Create(c, $"tick {_feed.Tick} (lag {_session.Clock.LagTicks:0.0})"),
             PredictionLine(c),
             string.Create(c, $"in {Bytes(_receivedPerSecond)}/s   out {Bytes(_sentPerSecond)}/s"),
             WhereLine(c),
         };
-        if (_chatLines != null)
-            _chatLines.StatsLines = _statsCorner.Lines.Length;
     }
 
     // The owner (2026-10-15): where the player stands (tg's tile x, y, z) and where the camera looks (a compass bearing, clockwise from north, and

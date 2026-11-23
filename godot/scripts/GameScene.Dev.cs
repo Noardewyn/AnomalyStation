@@ -687,20 +687,12 @@ public partial class GameScene
         ImGui.EndTable();
     }
 
-    // The keys of an action as a player reads them (Backslash is the | key).
+    // The keys of an action as a player reads them (KeyChips.Label).
     private string KeyLabel(PlayAction action)
     {
         IReadOnlyList<string> keys = _options.Bindings.KeysOf(action);
         if (keys.Count == 0) return "unbound";
-        return string.Join(", ", keys.Select(k => k switch
-        {
-            "Backslash" => "|",
-            "Quoteleft" => "`",
-            "MouseLeft" => "LMB",
-            "MouseRight" => "RMB",
-            "MouseMiddle" => "MMB",
-            _ => k,
-        }));
+        return string.Join(", ", keys.Select(KeyChips.Label));
     }
 
     private void DrawLegend(DevGasReport report)

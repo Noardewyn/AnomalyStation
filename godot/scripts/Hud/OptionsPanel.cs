@@ -559,6 +559,9 @@ public partial class Crosshair : Control
     private double _pulseUntil = -1, _now;
     private float _scale = 1f;
 
+    /// <summary>How far right of the middle the crosshair or the gun sight reaches on the screen, a shot's bloom and the shadow included (KeyChips.SightReach): the prompts start past it.</summary>
+    public float Extent => KeyChips.SightReach(_gun, _cone, _fov, GetViewportRect().Size.Y, _scale);
+
     /// <summary>The crosshair's size as a multiple of its default (the options' crosshair size).</summary>
     public void SetScale(float scale)
     {
@@ -647,8 +650,8 @@ public partial class Crosshair : Control
         {
             foreach (Vector2 d in new[] { Vector2.Left, Vector2.Right, Vector2.Up, Vector2.Down })
             {
-                DrawLine(c + d * 8f, c + d * 15f, shadow, 4f);
-                DrawLine(c + d * 8f, c + d * 15f, color, 2f);
+                DrawLine(c + d * 8f, c + d * GunSightGap.ArmEndPixels, shadow, 4f);
+                DrawLine(c + d * 8f, c + d * GunSightGap.ArmEndPixels, color, 2f);
             }
         }
     }
@@ -658,7 +661,7 @@ public partial class Crosshair : Control
     private void DrawGun(Color color, Color shadow)
     {
         float gap = GunSightGap.Pixels(_cone, _fov, GetViewportRect().Size.Y, _now - _firedAt) / _scale;
-        const float length = 8f;
+        const float length = GunSightGap.LinePixels;
         foreach (Vector2 d in new[] { Vector2.Left, Vector2.Right, Vector2.Up, Vector2.Down })
         {
             DrawLine(d * gap, d * (gap + length), shadow, 4f);

@@ -1,0 +1,230 @@
+Note: the links and images in this document may point to external sources. Please review them before opening.
+First-Person /tg/station SS13 — Example UI Wireframes & Component Mockups
+1. Choosing the Right Medium: Wireframes vs. Concept Images
+When translating a system-heavy game like /tg/station into first-person 3D, keeping the live HUD minimal while tucking complex item management behind an overlay reduces visual fatigue over long rounds [1]. Using two stages of visual prototyping keeps engineering and art aligned:
+Stage 1 — Functional Wireframes (This Document): Best for defining exact screen-space percentages, slot counts, contextual prompt syntax, and dual-inventory ergonomics so chat is never covered.
+Stage 2 — Visual Concept Renders (Regular Chat with Canvas Off): Best for establishing material shaders, diegetic screen glow on handheld scanners, blood/frost screen vignettes, and industrial Nanotrasen styling. Section 7 provides tailored prompts you can paste into regular chat once Canvas is turned off.
+
+
+2. Mockup 1: Live First-Person HUD (Closed Tab State)
+When Tab is closed, the center 3D viewport stays clear so players can track threats, hull breaches, and projectiles [1]. Dynamic hover prompts surface context-sensitive verbs right next to the crosshair, while modern /tg/station Combat Mode replaces the legacy four-intent wheel with a binary state toggle [1][2]. Off-screen local speakers clamp to the left or right screen edges as directional pills so players still catch conversations happening behind them.
++--------------------------------------------------------------------------------------------------+
+| [ALERT: INTERNALS OFF] [GRAV: 1.0G] [293K]                                  [PING: 34ms | 90 FPS]|
+|                                                                                                  |
+|                                                                                +---------------+ |
+|   +------------------------------------+                                       |  TARGET: HEAD | |
+|   | <-- Assistant (4m, Behind Left):   |                                       |    *( G )*    | |
+|   |     "Hey engi, maint airlock is    |                                       |   [G][G][Y]   | |
+|   |      welded shut!"                 |                                       |      [G]      | |
+|   +------------------------------------+                                       |    [G] [O]    | |
+|                                                                                | [G/Y/O/R ONLY]| |
+|                                            ( + )                               +---------------+ |
+|                                              |                                 | [C] COMBAT:   | |
+|                                              +--> [LMB] Pry Airlock (Crowbar)  |     PEACEFUL  | |
+|                                                   [RMB] Shove / Secondary      | [ALT] V.A.T.S.| |
+|                                                   [E]   Open / Strip           +---------------+ |
+|                                                                                                  |
+| +--------------------------------------+                                      __________________ |
+| | [ENG] CE Vance: Singulo field stable |                                     /  CROWBAR (HELD) \ |
+| | [COMMON] Mime: ...                   |                                    |  [F1] Show Traits ||
+| | [SEC] Warden: Brig timer set on #4   |                                    |  Prying / Melee   ||
+| | [MED] CMO: Need [Lucas] in Chemistry!|                                     \__________________/|
+| | Local | Urist says, "Pass the cable" |                                                         |
+| | [Say / ;Radio] Press T to talk...    |                                                         |
+| +--------------------------------------+                                                         |
+|          +----------+  +---+---+---+---+---+---+---+---+---+  +------------------+               |
+|          | [L-HAND] |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |  |*[R-HAND ACTIVE]* |               |
+|          |  Cable   |  |Wld|Wrn|Scr|WCr|Mlt|Glv|PDA|Med|Fls|  |  Red Crowbar     |               |
+|          |  Coil(30)|  |[Belt Rig Slots 1-6]   [Pockets/ID]|  |  [X] Swap Hand   |               |
+|          +----------+  +---+---+---+---+---+---+---+---+---+  +------------------+               |
++--------------------------------------------------------------------------------------------------+
+Key Interaction Callouts (Live HUD)
+Zero-Percentage Color-Coded Health Doll: True to /tg/station, the HUD never exposes exact HP percentages. Instead, the segmented anatomical doll (Head, Chest, Groin, L-Arm, R-Arm, L-Leg, R-Leg) communicates injury severity strictly through color states—Green ([G] Unharmed), Yellow ([Y] Minor), Orange ([O] Moderate), Red ([R] Severe/Critical), and Dark Grey ([X] Missing/Prosthetic)—preserving the gameplay need for Health Analyzers and close inspection.
+Active Hand Emphasis: [R-HAND ACTIVE] uses a high-contrast border (2px solid amber or cyan) and slightly enlarged slot dimensions (72x72 px vs. 48x48 px hotbar slots). Pressing X swaps the active border instantly to [L-HAND].
+Physicalized Rig Binding (1 to 9): Slots 1 through 6 mirror items currently stored inside an equipped Toolbelt/Rig, while 7 through 9 map to Left Pocket, Right Pocket, and ID/PDA. Pressing 3 pulls the Screwdriver from the belt into the Active Hand; pressing 3 again returns it to the belt.
+Keyword Pill Highlighting: Borrowing from Space Station 14 community patterns, character names ([Lucas]), job titles, and Syndicate codewords automatically render inside high-contrast pill badges in the chat box accompanied by a subtle audio tick [4].
+
+
+3. Mockup 2: Three-Column Tab Overlay & Dual-Inventory Stripping
+Pressing Tab unlocks the cursor and divides the 16:9 viewport into three non-overlapping vertical zones (0%--28%, 28%--64%, and 64%--100%). Docking both your open backpack and any external container or stripped player exclusively in the right column guarantees the full-height chat log on the left is never blocked.
++---------------------------+------------------------------------+---------------------------------+
+| LEFT ZONE (0% - 28% W)    | CENTER ZONE (28% - 64% W)          | RIGHT ZONE (64% - 100% W)       |
+| FULL CHAT & RADIO LOG     | CHARACTER DOLL & EQUIPPED GEAR     | DUAL STACKED CONTAINERS         |
++---------------------------+------------------------------------+---------------------------------+
+| [ALL][LOCAL][ENG][COMMON] |        [HEAD: Hardhat]             | YOUR STORAGE: Engi Satchel      |
+|                           |   [EYES: Meson] [EARS: Engibow]    | [Cap: 14 / 21 Bulk]   [Sort][X] |
+| 12:01 [COMMON] Janitor:   |        [MASK: Gas Mask]            | +-----+-----+-----+-----+-----+ |
+|   Blood trail near dorms. |                                    | |RCD  |Cell |Cell |Tape |Flux | |
+|                           |   +----+    +-------+    +----+    | +-----+-----+-----+-----+-----+ |
+| 12:02 [ENG] Atmos Tech:   |   |SUIT|    |  [G]  |    |BACK|    | |Iron |Glas |Plas |Snacks|Box | |
+|   N2O leak indistro!      |   |Haz |    |[G|G|Y]|    |Satc|    | |x50  |x50  |x20  |      |    | |
+|                           |   +----+    |  [G]  |    +----+    | +-----+-----+-----+-----+-----+ |
+| 12:02 Local | Greyshirt   |   +----+    | [G|O] |    +----+    |                                 |
+|   gasps, "Wait, don't     |   |UNIF|    +-------+    |GLOV|    |---------------------------------|
+|   take my insuls!"        |   |Engi|  DOLL: G/Y/O/R  |Insl|    | EXTERNAL: Stripping "Greyshirt" |
+|                           |   +----+                 +----+    | [Dist: 1.1m / Max 1.8m] [Close] |
+| 12:03 [SEC] Officer:      |        [BELT: Full Toolbelt]       | +---------+---------+---------+ |
+|   On my way to [Engi]     |        [SHOES: Magboots ON]        | |HEAD:None|MASK:Gas |BACK:Pack| |
+|   foyer now.              |                                    | +---------+---------+---------+ |
+|                           |  ON-PERSON QUICK POCKETS:          | |JUMPSUIT |GLOVES   |POCKET-L | |
+| 12:03 * Greyshirt tries   |  [ID: Eng] [PKT-L:TScanner] [PKT-R]| |[####--] |Insuls   |[Hidden] | |
+|   to squirm away! *       |                                    | | 2.6s... |Drag->Me |Click 2s | |
+|                           |  BELT CONTENTS (Slots 1-6):        | +---------+---------+---------+ |
+|                           |  [1:Wld][2:Wrn][3:Scr][4:Cut][5:Mt]|---------------------------------|
+| +-----------------------+ |                                    | NEARBY FLOOR / TABLE (<1.2m):   |
+| | Ch:[Local v] Type...  | |  [L-HAND: Coil]  [*R-HAND: Crowbar]| [Syringe] [Spent Casing] [ID]   |
+| +-----------------------+ +------------------------------------+---------------------------------+
+Ergonomic & Interaction Rules (Tab Screen)
+Universal Drag-and-Drop + Quick Transfer: Every item icon across Center and Right zones supports direct drag-and-drop. Holding Shift + LMB transfers an item immediately between your Active Hand, open Backpack, and the open External panel.
+In-Slot Radial Timers for Stripping: Instead of spawning center-screen progress popups that block vision, stripping another crewmate displays a progress bar ([####--] 2.6s) directly inside the target's equipment slot. Moving beyond 1.8 m automatically closes the bottom-right External panel.
+Nearby Floor Clutter Strip: Located at the very bottom-right, this strip lists small 3D objects within reach (scalpels, syringes, ID cards) so medics and engineers never have to pixel-hunt tiny meshes on tables.
+
+
+4. Mockup 3: Real-Time "Anatomical Focus" (V.A.T.S.-Style Limb Selector)
+Non-humanoid silhouettes in /tg/station—such as Xenomorphs, Space Carp, Golems, or Megafauna—make limb targeting ambiguous in real-time 3D. Holding Alt (or MMB) activates an immediate raycast sub-mesh overlay without pausing multiplayer gameplay.
++--------------------------------------------------------------------------------------------------+
+|  ANATOMICAL FOCUS ACTIVE (HOLD [ALT] — RELEASE ON PART TO LOCK TARGET)      CURRENT LOCK: TORSO  |
+|                                                                                                  |
+|                                     +------------------------+                                   |
+|                                     | [HEAD / ARMORED CREST] |                                   |
+|                                     | Armor: High | Vital    |                                   |
+|                                     +-----------+------------+                                   |
+|                                                 |                                                |
+|                        ,========================v=======,                                        |
+|                       /     _..---.._   (XENOMORPH)      \      +-------------------------+      |
+|                      |    .'  _   _  '.                   +---->| [R-APPENDAGE / SCYTHE]  |      |
+|   +---------------+  |   /   (o) (o)   \  [TORSO / CHITIN]|     | Disarm / Cripple Attack |      |
+|   | [L-APPENDAGE] |<-+--+   \  ===  /   |  **(AIMING)**   |     +-------------------------+      |
+|   +---------------+      \   '-----'   /        ( + )     |                                      |
+|                           '.         .'                   /                                      |
+|                             |  | |  |===================='                                       |
+|                             |  | |  |                           +-------------------------+      |
+|                            /_ /   \_ \------------------------->| [LOCOMOTION / HIND LEG] |      |
+|                                                                 | Slows Move Speed -45%   |      |
+|                                                                 +-------------------------+      |
+|                                                                                                  |
+|                        [RELEASE ALT] Lock "TORSO / CHITIN" for Combat & Surgery                  |
++--------------------------------------------------------------------------------------------------+
+How It Bridges Combat & Surgery
+Sub-Mesh Fresnel Outline: Each anatomical group mapped on the entity's rig receives a translucent rim shader: Cyan for hovered limb, Amber for currently locked limb, and Red-Dashed if severed or damaged.
+Unified Target State: Releasing Alt while aiming at [LOCOMOTION / HIND LEG] updates your middle-right HUD Health Doll target immediately. Subsequent melee swings, aimed shots, or surgical incisions with a scalpel automatically target that exact anatomical zone.
+
+
+5. Mockup 4: 3-Tier Item, Radio & Machine UI Examples
+In /tg/station, hundreds of machines communicate via TGUI by sending structured JSON state payloads from the server to a decoupled UI renderer [3]. Splitting 3D interfaces into three tiers prevents engineering bottlenecks while keeping urgent handheld tools immersive.
+Tier 1: Diegetic 3D Handhelds (Health Analyzer & Bounced Radio)
+Zero cursor-lock popups; rendered directly onto viewmodel screens or floating 3D world text:
+  [1P VIEWMODEL: HEALTH ANALYZER (HOLD 'I' TO INSPECT)]        [3D WORLD PROP: HANDHELD RADIO ON TABLE]
+  +---------------------------------------------------+
+  |  NANOTRASEN MED-SCAN v4.2          [MODE: WOUNDS] |              [145.9] "AI rogue in upload,
+  |  SUBJECT: Greyshirt (Human)        TEMP: 310.1K   |                       bolt the doors!"
+  |  PULSE:   118 BPM (Tachycardia)    O2:   98%      |                         |
+  |  -----------------------------------------------  |                         v
+  |  BRUTE: [#######---] 68   BURN:  [##--------] 18  |                     +-------+
+  |  TOXIN: [----------] 00   OXY:   [#---------] 06  |                     | |:::| |  <-- Physical
+  |  ALERT: Severe Bleeding (R-Arm), Fractured Ribs   |                     | [1459]|      Radio Mesh
+  |  CHEM:  Epinephrine (8.2u), Bicardine (4.0u)      |                     +-------+      (< 4m Range)
+  +---------------------------------------------------+
+  [LMB] Scan Target   [RMB] Toggle Chem/Wound Readout
+Tier 2: Metadata-Driven Schema UI (65% of Station Machines)
+Game code emits a simple JSON state payload (mirroring TGUI's architecture [3]), and a single universal UI builder lays out standardized widgets automatically—requiring zero custom UI art per machine:
+{
+  "machine_title": "Atmospherics Air Alarm — Engineering Hallway",
+  "theme": "nanotrasen_atmos",
+  "status_level": "warning",
+  "widgets": [
+    { "type": "gauge", "label": "Pressure", "value": 84.2, "unit": "kPa", "min": 0, "max": 200, "warn_below": 90 },
+    { "type": "bar_list", "label": "Gas Mix", "items": [{"k": "O2", "pct": 19}, {"k": "N2", "pct": 78}, {"k": "N2O", "pct": 3, "alert": true}] },
+    { "type": "segmented_toggle", "id": "mode", "label": "Operating Mode", "options": ["Filtering", "Contaminated", "Panic Siphon"], "active": "Filtering" },
+    { "type": "button", "id": "vents_toggle", "label": "Cycle Scrubber Pumps", "style": "primary" }
+  ]
+}
+Resulting Auto-Generated Floating Panel (Leaves Peripheral 3D View Unblurred):
+          +---------------------------------------------------------------+
+          | ATMOSPHERICS AIR ALARM — ENGINEERING HALLWAY    [WARN]  [ESC] |
+          +---------------------------------------------------------------+
+          | PRESSURE: [########------------]  84.2 kPa  (LOW WARNING!)    |
+          |                                                               |
+          | GAS MIXTURE:                                                  |
+          |   O2  [####----------------]  19%                             |
+          |   N2  [###############-----]  78%                             |
+          |   N2O [#-------------------]   3%  [!! TOXIN DETECTED !!]     |
+          |                                                               |
+          | OPERATING MODE:                                               |
+          |   ( * Filtering * )  (  Contaminated  )  (  Panic Siphon  )   |
+          |                                                               |
+          | [        CYCLE SCRUBBER PUMPS        ]   Auto-close > 1.5m    |
+          +---------------------------------------------------------------+
+
+
+6. Mockup 5: First-Person Grabs, Wrestling & Client Hallucinations
+/tg/station combat depends heavily on grab escalation (Passive  Aggressive  Neck/Kill) and client-side hallucination hooks (hud_screw, screwy_health_doll, fake_alert, inhand_fake_item) [2][3]. Because first-person players cannot see their own sprite being grappled from above, edge brackets and client-authoritative UI overrides convey status without inducing motion sickness.
++--------------------------------------------------------------------------------------------------+
+| ///////////////////////// [!! AGGRESSIVE GRAB — TRAITOR !!] //////////////////////////////////// |
+| //                                                                                            // |
+| //   (Camera horizon stays level to prevent nausea; subtle edge sway + orange vignette)       // |
+| //                                                                                            // |
+| //                          +------------------------------------+                            // |
+| //                          | GRABBED BY: Masked Figure (0.6m)   |                            // |
+| //                          | STATE:      AGGRESSIVE (Restrained)|                            // |
+| //                          |                                    |                            // |
+| //                          | [SPACE / WASD] BREAK FREE:         |                            // |
+| //                          | [############--------] 62% Stamina |                            // |
+| //                          +------------------------------------+                            // |
+| //                                                                                            // |
+| //   [HALLUCINATION HOOK EXAMPLE — CLIENT-ONLY OVERRIDE FOR 3.0 SECONDS]:                     // |
+| //   - Health Doll flashes fake severed head/limbs (`screwy_health_doll`)                     // |
+| //   - R-Hand icon & viewmodel briefly swap Crowbar -> Energy Sword (`inhand_fake_item`)      // |
+| //////////////////////////////////////////////////////////////////////////////////////////////// |
++--------------------------------------------------------------------------------------------------+
+
+
+7. Colorblind-Safe Palette & Ready-to-Use Concept Image Prompts
+Department Radio & UI Palette Tokens
+Using distinct luminance values alongside hue shifts ensures players with red-green color vision deficiency can distinguish [SEC] from [ENG] or [CMD] at a glance:
+Channel / State
+Prefix Tag
+Hex Color
+Visual Badge Shape
+Common Radio
+[COMMON]
+#8FD694 (Soft Mint)
+Rounded Square
+Security
+[SEC]
+#FF4D4D (Crimson Red)
+Angled Octagon
+Engineering
+[ENG]
+#FFA62B (Safety Amber)
+Striped Header Pill
+Medical
+[MED]
+#38D9F5 (Clinical Cyan)
+Cross-Notched Pill
+Science
+[SCI]
+#C77DFF (Violet)
+Diamond-Edged Pill
+Command
+[CMD]
+#FFE156 (High-Lum Gold)
+Bold Double-Border Pill
+Local Speech
+Local
+#FFFFFF on #1E242B
+Solid Dark Pill + White Rim
+
+Concept Art Prompts (For Regular Chat with Canvas Turned Off)
+If you want high-fidelity visual mockups to establish your art direction, turn Canvas off in the chat input bar and run any of these prompts:
+Live First-Person HUD Concept:
+"First-person 3D sci-fi immersive sim game screenshot inspired by Space Station 13 and Prey, standing inside an industrial retro-futuristic maintenance corridor. Minimalist dark semi-transparent UI HUD: bottom-center 9-slot utility belt hotbar flanked by oversized Left Hand (holding yellow cable coil) and active glowing Right Hand (holding red crowbar) slots; bottom-left compact chat log with color-coded department tags; middle-right minimalist color-coded anatomical limb health doll (green healthy torso, yellow bruised right arm, orange injured leg, zero numerical HP text or percentages); center crosshair hovering over an airlock with crisp prompt '[LMB] Pry Airlock'. Clean typography, gritty industrial lighting, 16:9."
+Diegetic Handheld Health Analyzer Concept:
+"First-person viewmodel holding a chunky retro-futuristic Nanotrasen medical health analyzer scanner up toward an injured crewmate in a sci-fi medbay. The handheld scanner features a crisp, high-contrast backlit OLED screen showing brute and burn damage bars, heart rate BPM, and bloodstream reagents, with subtle scanlines and zero intrusive pop-up menus. 16:9 game UI concept art."
+Three-Column Tab Inventory & Stripping Concept:
+"Sci-fi first-person RPG inventory UI overlay divided into three clean columns over an unblurred 3D space station hallway: left column shows a scrollable multiplayer chat feed with highlighted keywords; center column shows a Barotrauma-style color-coded limb health doll (no numerical HP percentages) surrounded by jumpsuit, gas mask, insulated gloves, and toolbelt slots; right column shows two stacked grid containers for a backpack and external crate transfer. Clean dark-slate industrial UI design, crisp icons, 16:9."
+Sources
+[1]UI and UX design | Documentation - Roblox Creator Hub
+[2]Space Station 13 - Wikipedia
+[3]tg/ Station 13
+[4]Syndicate codewords are not useful/used · Issue #17790 · space-wizards/space-station-14

@@ -21,7 +21,7 @@ test -s "$zip" || { echo "publish-server: $zip is missing (run without --no-buil
 if gh release view "$tag" >/dev/null 2>&1; then
     gh release upload "$tag" "$zip" tools/hosting/install-server.sh --clobber
 else
-    gh release create "$tag" "$zip" tools/hosting/install-server.sh --verify-tag --title "Anomaly Station server $tag" \
+    gh release create "$tag" "$zip" tools/hosting/install-server.sh --verify-tag --title "Server $tag" \
         --notes "Anomaly Station server release"
 fi
 echo "publish-server: OK, $tag"

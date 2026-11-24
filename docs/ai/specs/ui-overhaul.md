@@ -487,3 +487,45 @@ Seen in the playtest, older than this package:
 - A bare-hand punch names no body part in chat.
 - The server logs a `NullReferenceException` in `datum._SendSignal` (`signals.cs:175`) after mobs are spawned on wall
   tiles, and setting the cerulean or mushroom species throws.
+
+### T2 as built (2026-11-24)
+
+Committed as `5d1449c`. Playtested against the real server: from the left side the near leg took 8 of 8 hits and the
+far leg's sliver 8 of 8; 70 pistol shots at a standing person from the front and both sides each hit the part under
+the crosshair, as did shots at a lying person, a bar-stool sitter and a giant's head; 20 of 20 quick attacks and 6
+of 6 quick shots stayed on the person (before, 2 or 3 in 6 went to a short-lived effect).
+
+### T4 design: the finer zones and the look-following prompt
+
+A protocol change (the click, the throw and the hover gain what is described here), so it needs the owner's release
+(`tools/release.sh`); until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks`
+fails by design. Built in two parts, T4a then T4b, for one release.
+
+T4a, the finer zones by look:
+- `AimZone` gains Eyes, Mouth and Groin (7, 8, 9; the spare bit of the modifiers byte is the zone's high bit, so
+  every byte sent today keeps its meaning). The server's `AimAt` maps them to tg's `BODY_ZONE_PRECISE_EYES`,
+  `_MOUTH` and `_GROIN`, which tg's own code already handles everywhere a selected zone is read. The server refuses
+  any other value, as today.
+- The regions are tg's own, from the zone selector's `get_zone_at`, whose doll is the human sprite seen from the
+  front, placed relative to the head and the chest as they are drawn so that a short, a tall or a non-human body
+  keeps them on its face and hips:
+  - front view: with the head's top row `t` and middle column `c`, the eyes are rows `t-4` to `t-2`, columns `c-1`
+    to `c+1`, plus columns `c-2` and `c+2` on row `t-3`; the mouth is rows `t-6` and `t-5`, columns `c-1` to `c+1`
+    (on the human sprite: tg's rows 25 to 27 and 23 to 24, columns 15 to 17);
+  - side views: the same rows, the three head columns nearest the face's front edge on each row;
+  - from behind: no eyes and no mouth (they cannot be seen);
+  - the groin, in every view: the chest's lowest four rows (tg's rows 10 to 13);
+  - a region applies only on a pixel whose part on top is the head (eyes, mouth) or the chest (groin).
+- Only real zones are regions: hands and feet stay part of the arm and the leg.
+- A shot still reads six zones on the server (DV95): a shot aimed at the eyes hits the head.
+- The zone map is computed once per picture and direction and cached (slice T3 folds in here).
+
+T4b, the look-following prompt:
+- The hover carries the zone looked at and is sent again when the zone changes on the same mob. The server sets
+  tg's `zone_selected` from it without logging (`set_selected_zone(..., should_log = FALSE)`), then runs tg's hover,
+  so the prompt names what a click will do (Headpat on the head, Hug on the chest).
+- Not while the mob is in a timed action: while any of tg's do-afters runs for that mob the hover's zone is ignored,
+  so surgery, a gun held in the mouth and the like keep the zone they started with. The server decides.
+- A click still sets the zone itself, as today, so nothing depends on the hover having arrived.
+- Bounded: a hover with a zone is rate-limited like any hover; the server validates the zone and the target as for
+  a click.

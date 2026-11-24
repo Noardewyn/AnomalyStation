@@ -549,7 +549,7 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     /// <summary>Version 4: tg's <c>icon-y</c>, 1 to 32 (0: absent): north (or up on a billboard) is y.</summary>
     public byte IconY { get; init; }
 
-    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 95: bit 3 its high bit); None otherwise.</summary>
+    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 95: bit 3 its high bit); version 95 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
     public AimZone AimZone { get; init; }
 
     /// <summary>Version 4: the keybinding of a <see cref="ActionKind.Keybinding"/> (<see cref="KeybindingCode"/>), else None.</summary>

@@ -7,6 +7,10 @@ namespace Anomaly.Protocol;
 //   zone = ((mods >> 4) & 7) | (mods & 8), 0..9 (10 to 15 refused)
 //
 // so every byte version 94 sent (bit 3 zero, a zone of 0 to 6) keeps its meaning.
+//
+// Version 95 also (slice T4b, section 91): a hover on an entity may end with the zone looked at, one byte of 1 to 9 after its target; a
+// hover without a zone has no such byte, so it is the bytes of version 94. A zone byte of 0 or above AimZone.Last, or after a turf, a
+// ceiling or a screen target, is refused (BadValue).
 
 public static partial class Codec
 {
@@ -17,4 +21,29 @@ public static partial class Codec
 
     // The zone a click's modifiers byte names (0 to 15; the caller refuses one above AimZone.Last).
     private static int ZoneOfModifiers(byte mods) => ((mods >> 4) & 7) | (mods & ModifierZoneHighBit);
+
+    // Slice T4b: a hover's zone, written after its target only when there is one.
+    private static void WriteHoverZone(ref WireWriter w, AimZone zone, TargetKind targetKind)
+    {
+        if (zone == AimZone.None)
+            return;
+        if (zone > AimZone.Last)
+            throw Bad("a hover with an unknown aim zone");
+        if (targetKind != TargetKind.Entity)
+            throw Bad("an aim zone on a hover whose target is not an entity");
+        w.WriteByte((byte)zone);
+    }
+
+    // Slice T4b: the zone byte that may end a hover (none when the message ends after the target).
+    private static AimZone ReadHoverZone(ref WireReader r, TargetKind targetKind)
+    {
+        if (r.End)
+            return AimZone.None;
+        byte zone = r.ReadByte();
+        if (zone == (byte)AimZone.None || zone > (byte)AimZone.Last)
+            throw Bad("a hover with an unknown aim zone");
+        if (targetKind != TargetKind.Entity)
+            throw Bad("an aim zone on a hover whose target is not an entity");
+        return (AimZone)zone;
+    }
 }

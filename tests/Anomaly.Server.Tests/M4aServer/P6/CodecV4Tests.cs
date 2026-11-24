@@ -125,7 +125,9 @@ public class CodecV4Tests
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0).Byte(33).Byte(1)),                 // icon-x 33
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0).Byte(1).Byte(255)),                // icon-y 255
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0).Byte(1)),                          // icon-y missing
-                     Craft(r => r.VarUInt(1).Byte(7).Byte(1).VarUInt(5).Byte(1)),                                          // a hover with a button
+                     // corrected by protocol 95's slice T4b: one byte after an entity hover's target is its zone now (1 the head), so a
+                     // click's button and modifiers after it are what stays refused (the 0 trails the zone)
+                     Craft(r => r.VarUInt(1).Byte(7).Byte(1).VarUInt(5).Byte(1).Byte(0)),                                  // a hover with a button and modifiers
                      Craft(r => r.VarUInt(1).Byte(7).Byte(2).Byte(5).Byte(5)),                                             // a turf hover cut short
                      Craft(r => r.VarUInt(1).Byte(6).Byte(0).Byte(0)),                                                     // keybinding code 0
                      Craft(r => r.VarUInt(1).Byte(6).Byte(20).Byte(0)),                                                    // past the last (19 since version 93)

@@ -81,6 +81,8 @@ public sealed partial class ServerHost
             }
         }
         _due.Clear();
+        if (_frozenLooks.Count > 0)
+            CatchUpLooks(world); // version 95 also (slice T4b): the looks skipped during do-afters that are over now
         AutoRespawns(world); // DV580: before the direct joins, which late-join the respawned players
         DirectJoins(world);
     }
@@ -399,6 +401,8 @@ public sealed partial class ServerHost
     {
         if (s == null || s.Client == null) return;
         world.usr = MobOf(s);
+        if (command.Action is ActionKind.Hover or ActionKind.Unhover or ActionKind.Click or ActionKind.Throw)
+            s.FrozenLook = null; // version 95 also (slice T4b): a newer look, or a click's or a throw's own zone, replaces a skipped look
         switch (command.Action)
         {
             case ActionKind.Rest:
@@ -759,7 +763,8 @@ public sealed partial class ServerHost
 
     // DEVIATION(DV30): a click on a carbon's picture selects the body zone under the crosshair before tg's Click, through tg's
     // own zone selector (set_selected_zone, so the HUD's doll shows it), where tg selects it on the zone selector alone.
-    private static void AimAt(mob aimer, AimZone aim)
+    // Version 95 also (slice T4b): a hover selects the zone looked at with tg's should_log = FALSE (a look is no choice to log).
+    private static void AimAt(mob aimer, AimZone aim, bool log = true)
     {
         string zone = aim switch
         {
@@ -778,7 +783,7 @@ public sealed partial class ServerHost
         if (zone == null)
             return;
         if (aimer.hud_used?.screen_objects?[HUD_MOB_ZONE_SELECTOR] is atom_movable_screen_zone_sel selector)
-            selector.set_selected_zone(zone, aimer);
+            selector.set_selected_zone(zone, aimer, log ? Dm.TRUE : Dm.FALSE);
         else
             aimer.zone_selected = zone;
     }
@@ -849,8 +854,69 @@ public sealed partial class ServerHost
             s.ControlOutbox.Enqueue(Codec.Encode(hint));
             return;
         }
+        // DEVIATION(DV30), version 95 also (slice T4b): the zone looked at on a carbon becomes tg's zone_selected before tg's hover, so the
+        // screentip is built from it (carbon_context's Headpat, Hug, Pull tail). Not while any of tg's do-afters runs for the mob (the
+        // designer, 2026-11-24): a surgery step or the gun at the mouth keeps the zone it started with, and the look is applied once the
+        // do-afters are over (CatchUpLooks); a click still sets it (ApplyClick). tg's MouseEntered of the same atom runs on_mouse_enter
+        // again, so a zone change on the same mob rebuilds the hints too.
+        if (command.AimZone != AimZone.None && command.TargetKind == TargetKind.Entity && target is mob_living_carbon && s.Client.mob is mob looker)
+        {
+            if (LAZYLEN(looker.do_afters) == 0)
+                AimAt(looker, command.AimZone, log: false);
+            else
+                RememberFrozenLook(s, command);
+        }
         _clients.Hover(s.Client, target);
         s.HoversApplied++;
+    }
+
+    // Version 95 also (slice T4b): the sessions holding a look skipped during a do-after, in the order the looks were applied (a list, so
+    // the catch-up's order is the commands' order in a replay too).
+    private readonly List<Session> _frozenLooks = new();
+
+    private void RememberFrozenLook(Session s, in QueuedCommand command)
+    {
+        s.FrozenLook = command;
+        if (!_frozenLooks.Contains(s))
+            _frozenLooks.Add(s);
+    }
+
+    // The command phase, after the tick's commands: a skipped look is applied once the looker's mob has no do-after left (tg's zone selected
+    // without logging, then tg's hover of the same target again, so its hints are built from it). The target must still resolve as a hover's
+    // does (exists, in view) and be a carbon. It is the session's hovered thing by construction: any later hover, unhover, click or throw
+    // cleared the look (ApplyAction). Only the sessions in _frozenLooks are looked at.
+    private void CatchUpLooks(World world)
+    {
+        for (int i = 0; i < _frozenLooks.Count; i++)
+        {
+            Session s = _frozenLooks[i];
+            if (s.FrozenLook.HasValue && s.Client?.mob is mob looker && LAZYLEN(looker.do_afters) != 0)
+                continue; // still busy: kept for a later tick
+            _frozenLooks.RemoveAt(i--);
+            if (s.FrozenLook is not QueuedCommand due || s.Client?.mob is not mob mob)
+            {
+                s.FrozenLook = null;
+                continue;
+            }
+            s.FrozenLook = null;
+            try
+            {
+                world.usr = mob;
+                if (TryResolveTarget(s, due, out atom target) && target is mob_living_carbon)
+                {
+                    AimAt(mob, due.AimZone, log: false);
+                    _clients.Hover(s.Client, target);
+                }
+            }
+            catch (Exception e)
+            {
+                world.ReportRuntime(e); // an isolation boundary, as each command is
+            }
+            finally
+            {
+                world.usr = null;
+            }
+        }
     }
 
     // ---- screentips (D125): tg's on_mouse_enter publishes the hovered target's name and context; the router turns it into a

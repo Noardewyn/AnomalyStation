@@ -383,7 +383,7 @@ public sealed partial class ServerHost
         if (!clicked && !dropped && !mouse && (action.Button != ClickButton.None || action.Modifiers != ClickModifiers.None || action.IconX != 0 || action.IconY != 0)) { why = "fields that this kind does not use"; return false; }
         if (!clicked && !mouse && action.Aim.HasValue) { why = "an aim on an action that is not a click or a mouse action"; return false; }
         if (action.Aim is ShotAim aim && !aim.InRange) { why = "an aim out of range"; return false; }
-        if (!clicked && action.AimZone != AimZone.None) { why = "an aim zone on an action that is not a click"; return false; }
+        if (!clicked && action.Kind != ActionKind.Hover && action.AimZone != AimZone.None) { why = "an aim zone on an action that is not a click or a hover"; return false; }
         if (!dropped && (action.OverKind != TargetKind.None || action.OverTarget != 0 || action.OverX != 0 || action.OverY != 0 || action.OverZ != 0 || action.DragTime != 0)) { why = "a drop's fields on another action"; return false; }
         if (!keyed && (action.Keybinding != KeybindingCode.None || action.KeyUp)) { why = "a keybinding on an action that is not one"; return false; }
         if (action.Kind is not (ActionKind.DevCommand or ActionKind.Topic or ActionKind.Say or ActionKind.Emote or ActionKind.Verb or ActionKind.PopupClose or ActionKind.ContextPick) && action.Text != null) { why = "text on an action that has none"; return false; }
@@ -439,11 +439,16 @@ public sealed partial class ServerHost
                         why = "a click or hover without a target";
                         return false;
                 }
-                if (action.Kind == ActionKind.Hover) return true;
+                if (action.AimZone > AimZone.Last) { why = "an unknown aim zone"; return false; }
+                if (action.Kind == ActionKind.Hover)
+                {
+                    // version 95 (slice T4b): the zone looked at, on an entity only
+                    if (action.AimZone != AimZone.None && action.EffectiveTargetKind != TargetKind.Entity) { why = "an aim zone on a hover that is not on an entity"; return false; }
+                    return true;
+                }
                 if (action.Button is not (ClickButton.Left or ClickButton.Right or ClickButton.Middle)) { why = "a click without a button"; return false; }
                 if ((action.Modifiers & ~ClickModifiers.All) != 0) { why = "unknown click modifiers"; return false; }
                 if (action.IconX > Limits.MaxIconPixel || action.IconY > Limits.MaxIconPixel) { why = "an icon pixel over " + Limits.MaxIconPixel; return false; }
-                if (action.AimZone > AimZone.Last) { why = "an unknown aim zone"; return false; }
                 return true;
             case ActionKind.MouseDown: // version 34: a target or none, a button, modifiers, an icon pixel, an aim
             case ActionKind.MouseDrag:

@@ -578,3 +578,104 @@ selector goes.
 
 Seen in that playtest, not looked into: the face of the lying face-up body was drawn as a bright white patch (the
 clicks on it still found the eyes and the mouth), and red cubes and streaks appeared around the body while clicking.
+
+### T4c: a patient's face (asked for by the contributor, 2026-11-24)
+
+"The eyes and mouth of a conscious patient cannot be picked by looking, including a conscious patient on an
+operating table - this needs to be fixed." The cause is the rule for which side of a lying body is drawn
+(`BillboardMath.ChooseLyingDir`, from the owner's play test of 2026-10-13): a conscious lying body is always drawn
+back up (knocked down or crawling, it lies face down), and a limp one front or back by the side the viewer stands
+on. Planned, after T4b, client only: a body lying buckled to furniture that lays people down (a bed, an operating
+table, a roller bed, a stasis bed; the posture byte already carries the buckled bit, DV573) is drawn face up from
+every side, conscious or not, so a surgeon can aim at the eyes and the mouth from any side of the table. A conscious
+person lying on the floor keeps the owner's face-down picture. This narrows a rule the owner set, so the owner is
+told with the change; `DECISIONS.md` is not edited by us.
+
+T4c, extended the same day at the contributor's suggestion ("maybe there should be an option to flip over someone
+laying down, via the context interaction wheel"): besides the furniture rule, the hold-right-click radial on a lying
+person offers "Turn over". It is not in tg (a deviation row with the change). As planned:
+- the server keeps which side is up for a lying mob once someone has turned it; the posture byte carries it in a
+  spare bit (bits 6 and 7 are free), so every client draws the same side from every position; it is forgotten when
+  the mob stands up;
+- without a turn the defaults stay: buckled to lying furniture face up; otherwise the owner's rule (conscious back
+  up, limp by the viewer's side);
+- the radial entry is one more `RadialExtra` through the existing `ContextPick` (protocol version 86's mechanism);
+  the server checks the actor is adjacent, able to act and has a free hand, and that the target is lying; one line of
+  visible text ("X turns Y over."); no do-after;
+- server and protocol, in the same unreleased protocol version as T4a and T4b.
+
+Corrected by the contributor (2026-11-24): turning someone over is a timed action, "short like 1-2 seconds, how
+long it takes to turn someone around". So: a do-after of 1.5 seconds on the target with tg's progress bar and tg's
+usual interruptions (the actor or the target moves away, the actor is stunned or loses the free hand, the target
+stands up); "X starts turning Y over." when it begins and "X turns Y over." when it ends; nothing changes if it is
+interrupted. This replaces "no do-after" above.
+
+### T5: targeting oneself by looking down (asked for by the contributor, 2026-11-24)
+
+"For self targeting I'd like the player to be able to look down at themselves. The perspective should shift
+forwards slightly so they can see their body like how when you look down at your chest your eyes are forwards so
+you can see all your body." This replaces the earlier plan for T5 (finer zones on the health doll): the player's own
+body is seen below when the view pitches down, the eye moving forward a little, and the part of it under the
+crosshair is what a click targets, with the same zone map as for others. Under investigation (how the camera and the
+own mob's picture work today); the design is written here before anything is built. Open from the start: one's own
+head, eyes and mouth cannot be seen by looking down, so they need another way (the health doll, or something else).
+
+T5, settled so far (the contributor, 2026-11-24): one's own head, eyes and mouth are targeted through tg's zone
+selector in cursor mode ("the zone selector under tab I think is best"), not through regions on the health doll.
+To work out in the design: today a click on the doll's head with an item sends Head and would overwrite an eyes or
+mouth just picked on the selector (DV102). And the opposite of today's safety must hold: today the own body is never
+under the crosshair, so a click in the world can only reach others; once the own body can be looked at, it must not
+get in the way of an item, a body or a person at one's feet.
+
+T5, settled (the contributor, 2026-11-24): "Your body should count as a target when you're looking at it, same as
+targeting other people (with the exception of what we have said for head etc)." So no special rule for the own
+body: its hit shape is its body parts alone, the nearest thing under the crosshair wins, and the part under the
+crosshair is the part targeted, in every mode, combat mode included (a weapon swung at one's own body hits oneself,
+as a click on one's own sprite does in tg). The design places the own body's picture so it hides as little of the
+floor at the player's feet as it honestly can, and states what it does hide.
+
+T5, settled (the contributor, 2026-11-24): the own body is drawn exactly as every other player's sprite is, the
+standing vertical billboard; nothing about how it is drawn changes. Only the view shifts: "forwards and down so that
+you're looking back at your body. Exactly like a human looking down as the eyes are on the neck so looking down also
+shifts the eyes forwards". So the eye turns about a neck pivot as the view pitches down. No laid-down or tilted
+picture of the own body.
+
+Read from the code for T5 (2026-11-24, not run): the eye sits straight above the centre of the player's collision
+capsule at 1.3 m with no forward offset (`CameraRig.cs`); the pitch already reaches 89 degrees down; nothing on the
+camera's side keeps the eye out of a wall, only the capsule's 0.4 m radius does (near plane 0.05 m); in first person
+the own billboard is drawn as a shadow only (D288) and the crosshair's pick always excludes the own mob; the server
+already accepts a click whose target is the sender's own mob and applies its zone, so aiming at oneself needs no
+server or protocol change; in tg an item with force clicked on oneself hits oneself in any mode unless an
+interaction claims the click first. Also read: a click on the health doll's head with an item sends Head, which
+overwrites an eyes or mouth picked on the selector just before, so a penlight on one's own eyes or mouth probably
+cannot work today.
+
+### T4b as built (2026-11-24)
+
+Still protocol 95 (a second wire change inside the unreleased version, as version 89 did): a hover on an entity may
+carry the zone as one byte after the target; a hover without one keeps its old bytes. Beyond the design above:
+- the server remembers the last look it skipped during a do-after and applies it, with fresh hints, in the tick the
+  mob's last do-after ends; any later hover, unhover, click or throw clears what was remembered;
+- in cursor mode a hover carries no zone, so a zone picked on tg's selector is not overwritten by the pointer
+  passing over a person;
+- the client sends zone changes no faster than the server's hover limiter refills (10 a second, bucket 5).
+
+Playtested against the real server: with empty hands the prompt reads Headpat on the head, eyes and mouth and Hug
+elsewhere as the crosshair moves with no click, and Pull tail on a lizard's groin; looking around during the gun's
+twelve seconds neither changes the prompt nor spares the target, and afterwards the selector shows the part looked
+at; a click during the wait still spares; in cursor mode the selector kept the left arm while the pointer crossed a
+person. While the crosshair is moving the prompt trails it by a moment; after half a second's rest it was always
+right.
+
+Known, tg's own or for later:
+- with most items in hand tg's hint for a person does not depend on the zone;
+- tg does not list a do-after without a target in `do_afters`, so such an action does not freeze the zone;
+- the ctrl-click grasp on the health doll (DV72) takes the zone last looked at on someone else (measured: a look at
+  another's right leg, then the grasp, grasps one's own right leg); slice T5 changes how oneself is targeted;
+- not playtested: a surgery step with looks during it (the automated test covers it: the step stays on the chest).
+
+T5, added by the contributor (2026-11-24): "Add eyes and mouth to the health doll." So one's own eyes and mouth have
+two ways: tg's zone selector under Tab, as it is, and the health doll, whose head gains the eyes and the mouth as
+regions: an item used on the doll's eyes or mouth is used on one's own eyes or mouth, and elsewhere on the head on
+the head. This also removes the fault read from the code, where a click on the doll's head overwrote an eyes or
+mouth picked on the selector.

@@ -382,7 +382,9 @@ public class CodecV2Tests
         Assert.False(Codec.TryDecode(bytes, out ActionMessage _, out _));
         bytes[6] = 0x79; // zone 15
         Assert.False(Codec.TryDecode(bytes, out ActionMessage _, out _));
-        Assert.ThrowsAny<Exception>(() => Codec.Encode(new ActionMessage(5, ActionKind.Hover, 7, ClickButton.None, ClickModifiers.None, null) { TargetKind = TargetKind.Entity, AimZone = AimZone.Head }));
+        // corrected by slice T4b (version 95 also): a hover on an entity carries a zone now; a turf hover's zone is still refused, as is one on a keybinding
+        Assert.ThrowsAny<Exception>(() => Codec.Encode(new ActionMessage(5, ActionKind.Hover, 0, ClickButton.None, ClickModifiers.None, null) { TargetKind = TargetKind.Turf, TurfX = 3, TurfY = 3, TurfZ = 1, AimZone = AimZone.Head }));
+        Assert.ThrowsAny<Exception>(() => Codec.Encode(new ActionMessage(5, ActionKind.Keybinding, 0, ClickButton.None, ClickModifiers.None, null) { Keybinding = KeybindingCode.SwapHands, AimZone = AimZone.Head }));
     }
 
     // The owner's play test (2026-10-09): the dev noclip reaches the predictor as the motion byte's bit 32 (DV29).

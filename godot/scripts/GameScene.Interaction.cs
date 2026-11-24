@@ -386,6 +386,10 @@ public partial class GameScene
         // The hover: a thing or a cell under the crosshair (tg's screentip names a turf too: its hints carry the wall's or floor's name; while
         // throwing, a cell's hint is the throw).
         ClickTarget hover = _hit.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling ? _target : ClickTarget.None;
+        // version 95 also (slice T4b): the hover on a mob carries the body zone looked at (the cached zone map), so the hints name what a click does;
+        // not in cursor mode, where tg's zone selector holds the player's choice
+        if (PlaySession.HoverCarriesZone(hover, _mouse.CursorMode))
+            hover = hover with { Aim = _entities.AimZoneAt(hover.Id, hover.IconX, hover.IconY, hover.Picture) };
         // Protocol version 14: in cursor mode the pointer hovers the HUD entry under it, as BYOND's mouse over the screen does (tg's hover
         // states: the suit display's percentage, an inventory slot's outline, the action buttons' names), and leaving it is an unhover.
         if (_mouse.CursorMode && _session.Predicting && !PanelsOpen && !pointerAim)

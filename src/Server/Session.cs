@@ -280,6 +280,10 @@ public sealed class Session
     internal uint LastFrameSeq;
     internal ushort LastYaw;
 
+    // Version 95 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
+    // none left (ServerHost.CatchUpLooks); set and cleared only by applied commands and the world, so a replay holds the same.
+    internal QueuedCommand? FrozenLook;
+
     // The close the host does after the tick (set inside the world, done outside it).
     internal bool CloseAfterTick;
 

@@ -17,6 +17,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - Attack and hit effects no longer take the next click, so a quick second attack lands on the person instead of the effect.
 - Looking at someone's eyes, mouth or groin now targets it, as on tg's targeting doll: a screwdriver aimed at the eyes stabs them.
 - A gun held to someone's mouth from the next tile is tg's twelve-second execution shot; from further away it is an ordinary shot at the head.
+- The prompt beside the crosshair follows the body part you look at (Headpat on the head, Hug on the chest), except during a timed action.
 
 ## [1.12.0-pre-alpha] - 2026-11-23
 

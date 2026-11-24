@@ -355,7 +355,7 @@ public sealed class PlaySession
             TurfZ = target.Kind is TargetKind.Turf or TargetKind.Ceiling ? target.Z : 0,
             IconX = pixel ? target.IconX : (byte)0,
             IconY = pixel ? target.IconY : (byte)0,
-            AimZone = kind is ActionKind.Click or ActionKind.Throw && target.Kind == TargetKind.Entity ? target.Aim : AimZone.None,
+            AimZone = kind is ActionKind.Click or ActionKind.Throw or ActionKind.Hover && target.Kind == TargetKind.Entity ? target.Aim : AimZone.None, // version 95 also: a hover's zone
             // version 88 (DV527): the tick the world was drawn at, for the server's lag compensation
             Aim = pixel && kind != ActionKind.DblClick && aim is ShotAim a ? a with { Seen = (long)Math.Round(Math.Max(0, RenderTick) * 16) } : null,
         };
@@ -487,6 +487,21 @@ public sealed class PlaySession
     /// <summary>The shortest time between two hovers (the server's bucket lets 10 a second through, ActionLimits.Hover).</summary>
     public const double HoverInterval = 0.1;
 
+    /// <summary>
+    /// Version 95 also (slice T4b): the shortest time between two hovers of the same thing whose zone changed: 8 a second. It mirrors the server's
+    /// <c>ActionLimits.Hover</c> (a bucket of 5 hovers refilled at 10 a second, <see cref="HoverInterval"/>): the zone's resends share
+    /// <see cref="HoverInterval"/>'s clock, so a sweep, however long, never sends faster than the refill and the server never drops its newest zone;
+    /// the quarter below the refill leaves the bucket's burst for the arrival jitter.
+    /// </summary>
+    public const double ZoneHoverInterval = HoverInterval * 1.25;
+
+    /// <summary>
+    /// Version 95 also (slice T4b): whether a hover on <paramref name="target"/> carries the body zone looked at: a picked entity pixel seen through
+    /// the crosshair. In cursor mode (Tab) it carries none: the free pointer passing over a person must not overwrite the zone chosen on tg's zone
+    /// selector, which shows there and which the doll's ctrl-click grasp reads (DV72); a click there still carries its zone.
+    /// </summary>
+    public static bool HoverCarriesZone(in ClickTarget target, bool cursorMode) => !cursorMode && target.Kind == TargetKind.Entity && target.IconX != 0;
+
     private ClickTarget _hovered;
     private ClickTarget _pendingHover;
     private bool _hasPendingHover;
@@ -515,7 +530,8 @@ public sealed class PlaySession
     /// M4a (D125): the crosshair's target (or, in cursor mode, the HUD entry under the pointer) is <paramref name="target"/> now. A hover goes
     /// out when the thing changed, at most once per <see cref="HoverInterval"/> (the newest change waits for the interval). Version 14: nothing
     /// under it clears the hints at once and, when the server was told of a thing, sends an <see cref="ActionKind.Unhover"/> (BYOND's
-    /// <c>MouseExited</c>), on the same interval. Returns true when a hover or an unhover was sent.
+    /// <c>MouseExited</c>), on the same interval. Version 95 also (slice T4b): the hover carries the target's <see cref="ClickTarget.Aim"/>, the zone looked
+    /// at, and goes out again when only that zone changed, at most once per <see cref="ZoneHoverInterval"/>. Returns true when a hover or an unhover was sent.
     /// </summary>
     public bool Hover(in ClickTarget target, double now)
     {
@@ -528,11 +544,12 @@ public sealed class PlaySession
                 return false;
             }
         }
-        else if (!_hasPendingHover && target.SameThing(_hovered) && target.SameThing(_serverHovered))
+        else if (!_hasPendingHover && target.SameThing(_hovered) && target.SameThing(_serverHovered) && target.Aim == _serverHovered.Aim)
             return false;
         _pendingHover = target;
         _hasPendingHover = true;
-        if (now - _lastHoverAt < HoverInterval)
+        // version 95 also: a new zone on the same thing goes out too, at most ZoneHoverInterval apart (the newest waits for it)
+        if (now - _lastHoverAt < (_pendingHover.IsSet && _pendingHover.SameThing(_serverHovered) ? ZoneHoverInterval : HoverInterval))
             return false;
         _lastHoverAt = now;
         _hasPendingHover = false;
@@ -543,7 +560,7 @@ public sealed class PlaySession
             Send(Make(ActionKind.Unhover));
             return true;
         }
-        if (_pendingHover.SameThing(_serverHovered))
+        if (_pendingHover.SameThing(_serverHovered) && _pendingHover.Aim == _serverHovered.Aim)
         {
             _hovered = _pendingHover; // back on what the server still has: nothing to send
             return false;

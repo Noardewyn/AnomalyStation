@@ -116,7 +116,7 @@ public static partial class Codec
 
     // [u8 id = 10] [varuint frameSeq] [u8 kind] then by kind:
     //   Click (4):      [u8 target kind 1..3] [target] [u8 button] [u8 modifiers] [u8 icon-x 0..32] [u8 icon-y 0..32]
-    //   Hover (7):      [u8 target kind 1..3] [target]
+    //   Hover (7):      [u8 target kind 1..3] [target] [version 95: u8 aim zone 1..9 on an entity, absent for none (Codec.V95.cs)]
     //                   target: Entity and Screen [varuint id >= 1]; Turf [u8 x 1..255] [u8 y 1..255] [varuint z 1..16]
     //   DevGasProbe (8, version 5): [target: a turf]
     //   Unhover (9, version 14): nothing
@@ -155,8 +155,8 @@ public static partial class Codec
             throw Bad("a button, modifiers or an icon pixel on an action that is not a click, a drop or a mouse action");
         if (message.Kind is not (ActionKind.Click or ActionKind.Throw or ActionKind.PutDown) && !message.IsMouse && message.Aim.HasValue)
             throw Bad("an aim on an action that is not a click or a mouse action");
-        if (message.Kind is not (ActionKind.Click or ActionKind.Throw or ActionKind.PutDown) && message.AimZone != AimZone.None)
-            throw Bad("an aim zone on an action that is not a click");
+        if (message.Kind is not (ActionKind.Click or ActionKind.Throw or ActionKind.PutDown or ActionKind.Hover) && message.AimZone != AimZone.None)
+            throw Bad("an aim zone on an action that is not a click or a hover");
         if (message.Kind != ActionKind.Drop && (message.OverKind != TargetKind.None || message.OverTarget != 0 || message.OverX != 0 || message.OverY != 0 || message.OverZ != 0 || message.DragTime != 0))
             throw Bad("a drop's fields on an action that is not a drop");
         if (message.Kind != ActionKind.Keybinding && (message.Keybinding != KeybindingCode.None || message.KeyUp))
@@ -210,7 +210,10 @@ public static partial class Codec
             case ActionKind.Hover:
                 WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a click or hover");
                 if (message.Kind == ActionKind.Hover)
+                {
+                    WriteHoverZone(ref w, message.AimZone, targetKind); // version 95 (slice T4b)
                     break;
+                }
                 if (message.Button < ClickButton.Left || message.Button > ClickButton.Middle)
                     throw Bad("a click with an unknown button");
                 if (message.Kind is ActionKind.Throw or ActionKind.PutDown && (message.Button != ClickButton.Left || message.Modifiers != ClickModifiers.None))
@@ -386,7 +389,10 @@ public static partial class Codec
                 case ActionKind.Hover:
                     ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a click or hover");
                     if (kind == ActionKind.Hover)
+                    {
+                        aimZone = ReadHoverZone(ref r, targetKind); // version 95 (slice T4b)
                         break;
+                    }
                     byte buttonByte = r.ReadByte();
                     if (buttonByte < (byte)ClickButton.Left || buttonByte > (byte)ClickButton.Middle)
                         throw Bad("a click with an unknown button");

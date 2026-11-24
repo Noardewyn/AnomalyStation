@@ -59,20 +59,19 @@ public class ProtocolV95AimZoneTests
         }
     }
 
+    // Corrected by slice T4b (version 95 also): a hover on an entity now carries a zone (ProtocolV95HoverZoneTests); what stays is that a hover has no
+    // modifiers byte, so a byte after its target is no zone of the modifiers' layout: 0x78 is refused as a zone of 120.
     [Fact]
-    public void AHoverStillCarriesNoZone()
+    public void AHoverCarriesNoModifiersByte()
     {
-        foreach (AimZone zone in new[] { AimZone.Head, AimZone.Eyes, AimZone.Mouth, AimZone.Groin })
-            Assert.Throws<ProtocolException>(() => Codec.Encode(new ActionMessage(5, ActionKind.Hover, 7, ClickButton.None, ClickModifiers.None, null) { TargetKind = TargetKind.Entity, AimZone = zone }));
-        // a hover has no modifiers byte: whatever follows its target is a trailing byte
         byte[] hover = Codec.Encode(new ActionMessage(5, ActionKind.Hover, 7, ClickButton.None, ClickModifiers.None, null) { TargetKind = TargetKind.Entity });
         Assert.True(Codec.TryDecode(hover, out ActionMessage back, out ProtocolError error), error.ToString());
         Assert.Equal(AimZone.None, back.AimZone);
         Assert.False(Codec.TryDecode(hover.Concat(new byte[] { 0x78 }).ToArray(), out ActionMessage _, out _));
     }
 
-    // The host's own checks (ServerHost.ValidAction, which does not rely on the codec): a click or a throw takes zones 1 to 9; zone 10 and above, or a
-    // zone on a hover, is refused.
+    // The host's own checks (ServerHost.ValidAction, which does not rely on the codec): a click or a throw takes zones 1 to 9; zone 10 and above is
+    // refused. Corrected by slice T4b: a hover on an entity takes them too (it was refused before).
     [Theory]
     [InlineData(ActionKind.Click, AimZone.Eyes, true)]
     [InlineData(ActionKind.Click, AimZone.Mouth, true)]
@@ -81,8 +80,9 @@ public class ProtocolV95AimZoneTests
     [InlineData(ActionKind.Click, (AimZone)10, false)]
     [InlineData(ActionKind.Click, (AimZone)255, false)]
     [InlineData(ActionKind.Throw, (AimZone)10, false)]
-    [InlineData(ActionKind.Hover, AimZone.Eyes, false)]
-    public void TheHostTakesZonesUpToTheGroinOnAClickOrAThrowOnly(ActionKind kind, AimZone zone, bool taken)
+    [InlineData(ActionKind.Hover, AimZone.Eyes, true)]
+    [InlineData(ActionKind.Hover, (AimZone)10, false)]
+    public void TheHostTakesZonesUpToTheGroinOnAClickAThrowOrAHover(ActionKind kind, AimZone zone, bool taken)
     {
         bool clicked = kind != ActionKind.Hover;
         var action = new ActionMessage(1, kind, 5, clicked ? ClickButton.Left : ClickButton.None, ClickModifiers.None, null)

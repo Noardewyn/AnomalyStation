@@ -250,7 +250,7 @@ in its place, so a client that went silent stops instead of walking on until its
 ```
 [u8 id = 10] [varuint frameSeq] [u8 kind]  then by kind:
     Click (4):        [u8 target kind] [target] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y]
-    Hover (7):        [u8 target kind] [target]
+    Hover (7):        [u8 target kind] [target] [u8 aim zone 1..9, an entity's only, absent for none]   (version 95, section 91)
     Drop (13):        [u8 target kind] [target] [u8 target kind] [over] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y] [u8 drag time]   (version 17, section 26)
     Keybinding (6):   [u8 code] [u8 key up]
     DevCommand (5):   [str(200) text]
@@ -795,7 +795,7 @@ tree keep working.
 
 ```
 Click (kind 4):      [u8 target kind] [target] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y]
-Hover (kind 7):      [u8 target kind] [target]
+Hover (kind 7):      [u8 target kind] [target] [version 95: u8 aim zone 1..9 on an entity, absent for none (section 91)]
 Keybinding (kind 6): [u8 code] [u8 key up]
 target:              Entity (1) and Screen (3): [varuint id >= 1]       Turf (2): [u8 x 1..255] [u8 y 1..255] [varuint z 1..80]
 ```
@@ -3191,9 +3191,28 @@ Tests: `Protocol/ProtocolV92GunSightTests` (server), `M7x/GunSightTests` (core).
 A Click's, a Throw's and a PutDown's modifiers byte: `[shift 1, ctrl 2, alt 4] [bit 3: the zone's high bit] [bits 4-6: the zone's low bits]
 [bit 7: an aim follows]`, the zone `((mods >> 4) & 7) | (mods & 8)`: `AimZone` gains 7 eyes, 8 mouth and 9 groin (tg's
 `BODY_ZONE_PRECISE_EYES`, `_MOUTH`, `_GROIN`); 10 to 15 are refused (`BadValue`). Every byte of version 94 (bit 3 zero, a zone of 0 to 6) keeps
-its meaning, so an older recording replays as it was. A hover still carries no zone, a mouse action none either (its bit 3 stays refused).
+its meaning, so an older recording replays as it was. A mouse action carries no zone (its bit 3 stays refused); a hover's zone came with slice T4b in the same version (section 91).
 The server checks the zone again (`ValidAction`, 0 to 9) and selects it through tg's zone selector before the click or throw on a carbon, as any
 other zone (DV30). Examples: `0x71` shift and the eyes, `0x09` shift and the mouth, `0x98` an aim and the groin, `0x29` refused (zone 10).
 
 Tests: `Protocol/ProtocolV95AimZoneTests`, `Protocol/CodecV2Tests` (server), `Integration/BodyZoneRegionTests`, `Integration/MeleeAimTests`,
 `Integration/PreciseZoneReplayTests`.
+
+## 91. Version 95, also (package T, slice T4b: the hover's zone)
+
+A **Hover** on an entity may end with `[u8 aim zone 1..9]` after its target: the body zone the crosshair is on (`ActionMessage.AimZone`, the
+values of section 90). A hover without a zone has no such byte, so its bytes are version 94's and an older recording replays as it was. A zone
+byte of 0 or above 9, a zone after a turf, ceiling or screen target, and any byte after the zone are refused (`BadValue`, `TrailingBytes`).
+Examples: `0A 05 07 01 2C` a hover on entity 44 (no zone), `0A 05 07 01 2C 01` the same with the head, `0A 05 07 01 2C 09` the groin,
+`0A 05 07 02 0C C8 03 01` refused (a zone on a turf).
+
+The client sends the zone its cached zone map finds under the crosshair (`EntityLayer.AimZoneAt`; none for a thing without body parts) and
+sends the hover again when only the zone changed on the same thing, at most `PlaySession.ZoneHoverInterval` (0.125 s) apart, the newest zone
+waiting for the interval. The server checks the zone again (`ValidAction`: 0 to 9, an entity target only) and, on a carbon, selects it as tg's
+`zone_selected` with `should_log = FALSE` before tg's hover runs, so the ContextHints of the same mob are built again from it; not while any of
+tg's do-afters runs for the looker (DV30), when the server keeps the skipped hover and applies it in the first command phase after the do-afters
+end (`ServerHost.CatchUpLooks`). In cursor mode the client's hovers carry no zone (`PlaySession.HoverCarriesZone`). The hover keeps its rate limit (`ActionLimits.Hover`, one applied a tick). The command log keeps
+the zone as an action's zone field, as a click's.
+
+Tests: `Protocol/ProtocolV95HoverZoneTests`, `Protocol/ProtocolV95AimZoneTests`, `Protocol/CodecV2Tests` (server),
+`Integration/HoverZoneGameplayTests`.

@@ -7,7 +7,7 @@ namespace Anomaly.Client.Shared;
 // The owner's play test (2026-10-09), DV30: a click on a carbon's picture aims at the body part under the crosshair. tg draws a
 // carbon from one image per body part (bodypart.dm's get_limb_icon: icon states "<limb id>_<zone>[_<gender>]", the hands
 // "<limb id>_l_hand" and "_r_hand", from one of tg's limb files, LimbIcons); the part whose own image is opaque at tg's icon-x/icon-y
-// of the click, the topmost first, is the aimed zone. Clothing covers the parts but does not change which one is under the point.
+// of the click, the one drawn on top in the compositor's order (package T, slice T2), is the aimed zone. Clothing covers the parts but does not change which one is under the point.
 
 /// <summary>Which body zone of a carbon's picture lies under a pixel of it.</summary>
 public static class BodyZoneAim
@@ -34,7 +34,7 @@ public static class BodyZoneAim
         if (tables == null || compositor == null || root.IsNone || !tables.TryGetAppearance(root, out AppearanceEntry entry)
             || !TryBack(tables, compositor, root, out Affine back) || !TrySource(back, iconX, iconY, out int sourceX, out int sourceY))
             return AimZone.None;
-        return Search(tables, compositor, entry, dir, sourceX, sourceY, 0, LimbZone);
+        return Search(tables, compositor, entry, dir, sourceX, sourceY, LimbZone);
     }
 
     /// <summary>
@@ -50,17 +50,20 @@ public static class BodyZoneAim
         if (tables == null || compositor == null || root.IsNone || picture?.Image == null || !tables.TryGetAppearance(root, out AppearanceEntry entry)
             || !TryBack(tables, compositor, root, out Affine back))
             return null;
-        var limbs = new List<ComposedRaster>();
-        CollectLimbs(tables, compositor, entry, dir, 0, limbs);
+        List<TableRef> limbs = Parts(tables, entry, LimbZone);
         if (limbs.Count == 0)
             return null;
         const int side = AppearanceCompositor.DefaultIconSize;
         var body = new bool[side * side]; // the untransformed icon square, (x - 1) + (y - 1) * side
-        foreach (ComposedRaster limb in limbs)
+        foreach (TableRef reference in limbs)
+        {
+            if (!compositor.TryCompose(tables, reference, dir, 0, out ComposedRaster limb) || limb.Image == null)
+                continue;
             for (int y = 1; y <= side; y++)
                 for (int x = 1; x <= side; x++)
                     if (OpaqueAt(limb, x, y))
                         body[x - 1 + (y - 1) * side] = true;
+        }
         Raster image = picture.Image;
         var mask = new Raster(image.Width, image.Height);
         for (int fromBottom = 0; fromBottom < image.Height; fromBottom++)
@@ -94,24 +97,10 @@ public static class BodyZoneAim
         return sourceX >= 1 && sourceX <= AppearanceCompositor.DefaultIconSize && sourceY >= 1 && sourceY <= AppearanceCompositor.DefaultIconSize;
     }
 
-    // The composed body-part overlays Search would test, in any order (the same walk: a body part is not looked into, anything else is).
-    private static void CollectLimbs(IAppearanceSource tables, AppearanceCompositor compositor, AppearanceEntry entry, byte dir, int depth, List<ComposedRaster> into)
-    {
-        if (depth > 4 || entry.OverlayCount == 0)
-            return;
-        foreach (TableRef reference in entry.Overlays)
-        {
-            if (!tables.TryGetAppearance(reference, out AppearanceEntry overlay))
-                continue;
-            if (LimbZone(tables.ResolveResource(overlay.Icon), tables.ResolveString(overlay.IconState)) != AimZone.None)
-            {
-                if (compositor.TryCompose(tables, reference, dir, 0, out ComposedRaster composed) && composed.Image != null)
-                    into.Add(composed);
-                continue;
-            }
-            CollectLimbs(tables, compositor, overlay, dir, depth + 1, into);
-        }
-    }
+    // The body-part overlays (zoneOf names a zone for them) of the picture, the one drawn on top first (package T, slice T2: the compositor's own order,
+    // so where the legs overlap seen from the side the near leg tg draws over the far one is found; the list order alone found the far one).
+    private static List<TableRef> Parts(IAppearanceSource tables, AppearanceEntry entry, Func<string, string, AimZone> zoneOf)
+        => AppearanceCompositor.OverlaysOnTopFirst(tables, entry, overlay => zoneOf(tables.ResolveResource(overlay.Icon), tables.ResolveString(overlay.IconState)) != AimZone.None);
 
     // A body part: a picture from one of tg's limb files whose state names a zone (an item's "screwdriver_head" is not one).
     private static AimZone LimbZone(string resource, string state) => LimbIcons.IsLimbFile(resource) ? ZoneOfState(state) : AimZone.None;
@@ -125,7 +114,7 @@ public static class BodyZoneAim
     {
         if (tables == null || compositor == null || doll.IsNone || iconX == 0 || iconY == 0 || !tables.TryGetAppearance(doll, out AppearanceEntry entry))
             return AimZone.None;
-        return Search(tables, compositor, entry, 2, iconX, iconY, 0, (_, state) => DollZoneOfState(state));
+        return Search(tables, compositor, entry, 2, iconX, iconY, (_, state) => DollZoneOfState(state));
     }
 
     /// <summary>The zone a health doll limb state names (<c>"head3"</c>, <c>"r_legDEAD"</c>, <see cref="HealthZones.TryParseState"/>), None for any other state.</summary>
@@ -141,27 +130,15 @@ public static class BodyZoneAim
             _ => AimZone.None,
         } : AimZone.None;
 
-    // zoneOf: the zone of an overlay from its icon resource and its state, None for a picture that is no body part
-    private static AimZone Search(IAppearanceSource tables, AppearanceCompositor compositor, AppearanceEntry entry, byte dir, int iconX, int iconY, int depth, Func<string, string, AimZone> zoneOf)
+    // zoneOf: the zone of an overlay from its icon resource and its state, None for a picture that is no body part. The part drawn on top at the pixel wins.
+    private static AimZone Search(IAppearanceSource tables, AppearanceCompositor compositor, AppearanceEntry entry, byte dir, int iconX, int iconY, Func<string, string, AimZone> zoneOf)
     {
-        if (depth > 4 || entry.OverlayCount == 0)
+        if (entry.OverlayCount == 0)
             return AimZone.None;
-        // BYOND draws the list in order, so the last one is on top
-        for (int i = entry.Overlays.Count - 1; i >= 0; i--)
+        foreach (TableRef reference in Parts(tables, entry, zoneOf))
         {
-            TableRef reference = entry.Overlays[i];
-            if (!tables.TryGetAppearance(reference, out AppearanceEntry overlay))
-                continue;
-            AimZone zone = zoneOf(tables.ResolveResource(overlay.Icon), tables.ResolveString(overlay.IconState));
-            if (zone != AimZone.None)
-            {
-                if (Opaque(tables, compositor, reference, dir, iconX, iconY))
-                    return zone;
-                continue;
-            }
-            AimZone inner = Search(tables, compositor, overlay, dir, iconX, iconY, depth + 1, zoneOf);
-            if (inner != AimZone.None)
-                return inner;
+            if (Opaque(tables, compositor, reference, dir, iconX, iconY) && tables.TryGetAppearance(reference, out AppearanceEntry part))
+                return zoneOf(tables.ResolveResource(part.Icon), tables.ResolveString(part.IconState));
         }
         return AimZone.None;
     }

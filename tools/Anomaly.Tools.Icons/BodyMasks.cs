@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq;
 using System.Text;
 using Anomaly.Client.Shared.Icons;
 
@@ -19,13 +20,19 @@ public static class BodyMaskTable
     /// <summary>The icon files read: tg's human body parts and every species' and augment's (paths under the tg clone), the client's list.</summary>
     public static readonly string[] Roots = LimbIcons.Roots;
 
+    /// <summary>
+    /// Package T, slice T2: the masks tg cuts body parts with, every state kept: a leg's two images are its icon Blended (ICON_MULTIPLY) with
+    /// <c>right_leg</c>/<c>left_leg</c> and the <c>_lower</c> states (carbon_update_icons.dm handle_masking).
+    /// </summary>
+    public static readonly string[] Cuts = { "icons/mob/leg_masks.dmi" };
+
     public const string Magic = "ANOMBM1\n";
 
     /// <summary>Writes the table for the tg clone at <paramref name="tgRoot"/> to <paramref name="outputFile"/>; 0 on success.</summary>
     public static int Run(string tgRoot, string outputFile, TextWriter output, TextWriter error)
     {
         var files = new List<string>();
-        foreach (string root in Roots)
+        foreach (string root in Roots.Concat(Cuts))
         {
             string full = Path.Combine(tgRoot, root);
             if (File.Exists(full))
@@ -49,9 +56,10 @@ public static class BodyMaskTable
             Raster sheet = PngDecoder.Decode(bytes);
             string relative = Path.GetRelativePath(tgRoot, file).Replace('\\', '/');
             var seen = new HashSet<string>(StringComparer.Ordinal);
+            bool cut = Cuts.Contains(relative);
             foreach (DmiState state in dmi.States)
             {
-                if (!IsLimbState(state.Name) || !seen.Add(state.Name))
+                if (!(cut || IsLimbState(state.Name)) || !seen.Add(state.Name))
                     continue; // the first state of a name is the one BYOND shows
                 var dirs = new List<(byte, uint[])>();
                 for (int d = 0; d < state.Dirs; d++)

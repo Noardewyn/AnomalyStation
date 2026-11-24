@@ -2806,6 +2806,9 @@ public partial class MapRenderer : Node3D, IStaticPropHost
             ? ModelRules.SlidesOpen(firelock) : !_replica.IsSolid(p.X, p.Y, p.Z));
     }
 
+    /// <summary>As <see cref="EntityLayer.EffectsClickThrough"/>, for the batched things.</summary>
+    public bool EffectsClickThrough { get; set; } = true;
+
     /// <summary>
     /// M4a P7 (interaction.md 4.1): the pick shapes of the static things in cell (<paramref name="x"/>, <paramref name="y"/>, <paramref name="z"/>):
     /// a prop's picture as a standing quad at its scale on its support (the picture's alpha decides a hit), a wall decal as a thin slab on its face, a
@@ -2817,6 +2820,8 @@ public partial class MapRenderer : Node3D, IStaticPropHost
             return;
         foreach (StaticRecord record in here)
         {
+            if (EffectsClickThrough && ClickThrough.IsType(record.Entity?.TypePath))
+                continue; // a temp visual that stands still is batched here: as mouse-transparent as in the entity layer
             Placed p = record.Placed;
             // a model-drawn thing being moved is picked where it is drawn (StepCarried)
             double cx = (p.X - 0.5) * TileSpace.TileSize + record.CarryOffset.X, cy = (p.Y - 0.5) * TileSpace.TileSize - record.CarryOffset.Z;

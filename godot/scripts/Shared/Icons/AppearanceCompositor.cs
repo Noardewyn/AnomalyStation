@@ -363,6 +363,61 @@ public sealed partial class AppearanceCompositor
         return true;
     }
 
+    /// <summary>
+    /// Package T, slice T2: the overlays of <paramref name="root"/> that <paramref name="isPart"/> picks (and those nested in the overlays it does not
+    /// pick; a picked one is not looked into), the one drawn on top first: the order <see cref="TryCompose(IAppearanceSource, TableRef, byte, double, out ComposedRaster, bool, bool)"/>
+    /// draws them in (their layers relative to their parents, a float layer by its value, then list order). Nothing is composed.
+    /// </summary>
+    public static List<TableRef> OverlaysOnTopFirst(IAppearanceSource tables, AppearanceEntry root, Func<AppearanceEntry, bool> isPart)
+    {
+        var found = new List<(double[] Path, int Seq, TableRef Reference)>();
+        Collect(root, Array.Empty<double>(), 0);
+        found.Sort((a, b) => DrawOrder(a.Path, a.Seq, b.Path, b.Seq));
+        var result = new List<TableRef>(found.Count);
+        for (int i = found.Count - 1; i >= 0; i--)
+            result.Add(found[i].Reference);
+        return result;
+
+        void Collect(AppearanceEntry e, double[] path, int depth)
+        {
+            if (depth > MaxDepth)
+                return;
+            foreach ((TableRef reference, AppearanceEntry child, double relative) in OverlaysOf(tables, e))
+            {
+                double[] at = Run.Append(path, relative);
+                if (isPart(child))
+                    found.Add((Run.Append(at, 0.0), found.Count, reference)); // its own picture's path, as Run.EmitOwn gives it
+                else
+                    Collect(child, at, depth + 1);
+            }
+        }
+    }
+
+    // The overlays of an entry with their layer relative to it, in list order (Run.Children's overlays).
+    private static IEnumerable<(TableRef Reference, AppearanceEntry Child, double Relative)> OverlaysOf(IAppearanceSource tables, AppearanceEntry e)
+    {
+        double basis = Math.Max(0, e.Layer);
+        foreach (TableRef reference in e.Overlays)
+        {
+            if (tables.TryGetAppearance(reference, out AppearanceEntry child))
+                yield return (reference, child, Run.Relative(child, basis, false, child.Plane != FloorLayers.FloatPlane && child.Plane < e.Plane));
+        }
+    }
+
+    // Render's order: the sort paths level by level, then the shorter path, then the walk's order; the later one is drawn over the earlier.
+    private static int DrawOrder(double[] a, int aSeq, double[] b, int bSeq)
+    {
+        int n = Math.Min(a.Length, b.Length);
+        for (int i = 0; i < n; i++)
+        {
+            int c = a[i].CompareTo(b[i]);
+            if (c != 0)
+                return c;
+        }
+        int byLength = a.Length.CompareTo(b.Length);
+        return byLength != 0 ? byLength : aSeq.CompareTo(bSeq);
+    }
+
     private sealed class Run
     {
         private readonly AppearanceCompositor _owner;
@@ -510,16 +565,13 @@ public sealed partial class AppearanceCompositor
                 if (_tables.TryGetAppearance(reference, out AppearanceEntry child))
                     yield return (child, Relative(child, basis, true, child.Plane < e.Plane));
             }
-            foreach (TableRef reference in e.Overlays)
-            {
-                if (_tables.TryGetAppearance(reference, out AppearanceEntry child))
-                    yield return (child, Relative(child, basis, false, child.Plane != FloorLayers.FloatPlane && child.Plane < e.Plane));
-            }
+            foreach ((_, AppearanceEntry child, double relative) in OverlaysOf(_tables, e))
+                yield return (child, relative);
         }
 
         // belowPlane: an underlay or overlay on a lower plane than its parent is under it whatever its layer (a diagonal wall's space underlay is on tg's floor plane at layer 10002, over the wall's 2.058 by layer alone;
         // a rock's wall-plane copy, add_large_wall_overlay, is under its smoothed game-plane picture)
-        private static double Relative(AppearanceEntry child, double basis, bool underlay, bool belowPlane)
+        public static double Relative(AppearanceEntry child, double basis, bool underlay, bool belowPlane)
         {
             if (belowPlane)
                 return -1e-9;
@@ -551,7 +603,7 @@ public sealed partial class AppearanceCompositor
             });
         }
 
-        private static double[] Append(double[] path, double value)
+        public static double[] Append(double[] path, double value)
         {
             var result = new double[path.Length + 1];
             Array.Copy(path, result, path.Length);
@@ -564,18 +616,7 @@ public sealed partial class AppearanceCompositor
 
     private ComposedRaster Render(List<Sprite> sprites, int squareWidth, int squareHeight, bool animated)
     {
-        sprites.Sort(static (a, b) =>
-        {
-            int n = Math.Min(a.Path.Length, b.Path.Length);
-            for (int i = 0; i < n; i++)
-            {
-                int c = a.Path[i].CompareTo(b.Path[i]);
-                if (c != 0)
-                    return c;
-            }
-            int byLength = a.Path.Length.CompareTo(b.Path.Length);
-            return byLength != 0 ? byLength : a.Seq.CompareTo(b.Seq);
-        });
+        sprites.Sort(static (a, b) => DrawOrder(a.Path, a.Seq, b.Path, b.Seq));
 
         // The union of the transformed sprites and the icon square (so that the square's origin is stable).
         double minX = 0, minY = 0, maxX = squareWidth, maxY = squareHeight;

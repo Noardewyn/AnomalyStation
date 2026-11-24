@@ -60,21 +60,95 @@ public class BodyZoneProbeTests(ITestOutputHelper output)
         AssertZone(AimZone.RightArm, 1, 24, 13); // the right hand
         AssertZone(AimZone.LeftLeg, 1, 13, 5);
         AssertZone(AimZone.RightLeg, 1, 19, 5);
-        // W: the mob faces the viewer's left, its right side away. Slice T2 fixes the legs where they overlap (W 17,5; E's overlap
-        // columns): the lookup picks the wrong leg there, so those pixels are not asserted here.
+        // W: the mob faces the viewer's left, its right side away. Where the legs overlap (columns 16 to 18, rows 1 to 9) tg draws the near
+        // (left) leg over the far one (handle_masking: the right leg is there only on the low layer); column 15 is the right leg alone
         AssertZone(AimZone.RightLeg, 8, 15, 5);
+        AssertZone(AimZone.LeftLeg, 8, 16, 5);
+        AssertZone(AimZone.LeftLeg, 8, 17, 5);
+        AssertZone(AimZone.LeftLeg, 8, 18, 1);
+        AssertZone(AimZone.LeftLeg, 8, 19, 5);
         AssertZone(AimZone.RightArm, 8, 12, 13); // the far hand
         AssertZone(AimZone.LeftArm, 8, 18, 13); // the near hand
         AssertZone(AimZone.LeftArm, 8, 19, 17);
-        // E
+        // E, the mirror: the right leg is near; it is over the left one in columns 15 to 17, column 18 is the left leg alone
+        AssertZone(AimZone.RightLeg, 4, 14, 5);
+        AssertZone(AimZone.RightLeg, 4, 15, 5);
         AssertZone(AimZone.RightLeg, 4, 16, 5);
+        AssertZone(AimZone.RightLeg, 4, 17, 9);
+        AssertZone(AimZone.LeftLeg, 4, 18, 5);
         AssertZone(AimZone.RightArm, 4, 14, 13);
         AssertZone(AimZone.LeftArm, 4, 21, 13);
         AssertZone(AimZone.RightArm, 4, 13, 17);
 
+        // slice T2: at every pixel of every frame the lookup names the body part the compositor draws on top there
+        foreach (byte dir in Frames)
+        {
+            Func<int, int, AimZone> top = TopPart(tables, look, dir);
+            for (int y = 1; y <= 32; y++)
+                for (int x = 1; x <= 32; x++)
+                    Assert.True(top(x, y) == BodyZoneAim.ZoneAt(tables, compositor, look, dir, (byte)x, (byte)y),
+                        $"dir {dir} at {x},{y}: drawn on top {top(x, y)}, found {BodyZoneAim.ZoneAt(tables, compositor, look, dir, (byte)x, (byte)y)}");
+        }
+
         void AssertZone(AimZone expected, byte dir, byte x, byte y)
-            => Assert.True(expected == BodyZoneAim.ZoneAt(tables, compositor, look, dir, x, y),
+        {
+            Assert.True(expected == TopPart(tables, look, dir)(x, y), $"dir {dir} at {x},{y}: expected {expected} on top, tg's sprite draws {TopPart(tables, look, dir)(x, y)}");
+            Assert.True(expected == BodyZoneAim.ZoneAt(tables, compositor, look, dir, x, y),
                 $"dir {dir} at {x},{y}: expected {expected}, found {BodyZoneAim.ZoneAt(tables, compositor, look, dir, x, y)}");
+        }
+    }
+
+    /// <summary>
+    /// Slice T2: the truth from the compositor's own composition, not from <see cref="BodyZoneAim"/>: the root drawn with its body-part overlays alone,
+    /// each painted a flat colour of its own, so the colour of a pixel (tg's icon coordinates, the root's placement as drawn) names the part drawn on top
+    /// there; None where no part is drawn.
+    /// </summary>
+    internal static Func<int, int, AimZone> TopPart(IAppearanceSource tables, TableRef root, byte dir)
+    {
+        Assert.True(tables.TryGetAppearance(root, out AppearanceEntry entry));
+        List<(TableRef Reference, AimZone Zone)> parts = entry.Overlays
+            .Select(o => (o, tables.TryGetAppearance(o, out AppearanceEntry part) && LimbIcons.IsLimbFile(tables.ResolveResource(part.Icon))
+                ? BodyZoneAim.ZoneOfState(tables.ResolveString(part.IconState)) : AimZone.None))
+            .Where(p => p.Item2 != AimZone.None).ToList();
+        Assert.InRange(parts.Count, 1, 12);
+        var painted = new Painted(tables, root, parts.Select(p => p.Reference).ToList());
+        string icons = Anomaly.Server.Tests.M3Maps.I1d.MetaPictureTests.IconRoot();
+        Assert.True(new AppearanceCompositor(new IconLibrary(new DirectoryIconFiles(icons))).TryCompose(painted, root, dir, 0, out ComposedRaster body));
+        return (x, y) =>
+        {
+            int col = body.OriginX + x - 1, fromBottom = body.OriginY + y - 1;
+            if (col < 0 || col >= body.Image.Width || fromBottom < 0 || fromBottom >= body.Image.Height)
+                return AimZone.None;
+            int at = ((body.Image.Height - 1 - fromBottom) * body.Image.Width + col) * 4;
+            if (body.Image.Pixels[at + 3] < BillboardMath.PickAlpha)
+                return AimZone.None;
+            int index = (int)Math.Round(body.Image.Pixels[at] / (double)Painted.Step) - 1;
+            return index >= 0 && index < parts.Count ? parts[index].Zone : AimZone.None;
+        };
+    }
+
+    // The root with only the given overlays, the n-th painted red n x Step (its alpha kept).
+    private sealed class Painted(IAppearanceSource inner, TableRef root, List<TableRef> parts) : IAppearanceSource
+    {
+        public const int Step = 20;
+
+        public bool TryGetAppearance(TableRef reference, out AppearanceEntry entry)
+        {
+            if (!inner.TryGetAppearance(reference, out entry))
+                return false;
+            if (reference == root)
+                entry = entry.WithOverlays(parts.Contains);
+            else if (parts.IndexOf(reference) is int index and >= 0)
+            {
+                entry = entry.WithOverlays(_ => true);
+                entry.ColorMatrix = new[] { 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 1f, (index + 1) * Step / 255f, 0f, 0f, 0f };
+            }
+            return true;
+        }
+
+        public string ResolveString(TableRef reference) => inner.ResolveString(reference);
+
+        public string ResolveResource(TableRef reference) => inner.ResolveResource(reference);
     }
 
     [Fact]
@@ -358,6 +432,7 @@ public class BodyZoneProbeTests(ITestOutputHelper output)
             ComposedRaster body = Only(tables, look, dir, limbs.Contains);
             var parts = limbs.Select(l => (Zone: ZoneOf(tables, l), Picture: Only(tables, look, dir, o => o == l))).ToList();
             PickShape shape = ShapeOf(picture, mask, lying);
+            Func<int, int, AimZone> onTop = TopPart(tables, look, dir);
             int bodyPixels = 0, missing = 0, extra = 0;
             foreach ((int x, int y) in Pixels(picture))
             {
@@ -370,13 +445,26 @@ public class BodyZoneProbeTests(ITestOutputHelper output)
                     extra++;
                 if (!inMask)
                     continue;
-                // the click there names a part drawn at that pixel (two where the legs overlap in a side frame: which one wins is slice T2's)
+                // the click there names the part drawn on top at that pixel (slice T2: the near leg where the legs overlap in a side frame)
                 AimZone clicked = Clicked(tables, compositor, shape, look, dir, x, y);
-                List<AimZone> drawnThere = parts.Where(p => Drawn(p.Picture.Image, p.Picture, x, y)).Select(p => p.Zone).ToList();
-                Assert.True(drawnThere.Contains(clicked), $"dir {dir} at {x},{y}: the click names {clicked}, drawn there: {string.Join(" ", drawnThere)}");
+                Assert.True(onTop(x, y) == clicked, $"dir {dir} at {x},{y}: the click names {clicked}, drawn on top there: {onTop(x, y)}");
             }
             output.WriteLine($"  dir {dir}: picture {picture.Image.Width}x{picture.Image.Height} at {picture.OriginX},{picture.OriginY}: body {bodyPixels}, missing {missing}, not on the body {extra}");
             Assert.Equal((0, 0), (missing, extra));
+
+            // slice T2: a shot crossing the billboard at the centre of a body pixel (the mob-scaled picture standing on its lowest drawn row, its x
+            // from the mob's centre) reads on the server (ShotGeometry, the committed masks) the part drawn on top there, which the click names too.
+            // Not for a dressed lying body: its hair and clothes reach 2 rows below its body and the client stands the picture on them, which the
+            // server, knowing no clothes' pixels (D104), cannot (a known limit, older than slice T2).
+            AtlasBuilder.PictureRect(picture, lying, WorldScale.MobScale, null, out int trim);
+            var inBody = dressed && lying ? new List<(int X, int Y)>() : Pixels(picture).Where(p => Drawn(mask, picture, p.X, p.Y)).ToList();
+            List<string> shot;
+            using (w.World.Enter())
+                shot = inBody.Select(p => ShotGeometry.ZoneAtPoint(bobMob, dir, p.X - 0.5 - 16, picture.OriginY + p.Y - 0.5 - trim)).ToList();
+            Assert.True(dressed && lying || inBody.Count > 100, "the body's pixels are compared");
+            for (int i = 0; i < inBody.Count; i++)
+                Assert.True(AimedShotGameplayTests.Same(onTop(inBody[i].X, inBody[i].Y), shot[i]),
+                    $"dir {dir} at {inBody[i].X},{inBody[i].Y}: drawn on top {onTop(inBody[i].X, inBody[i].Y)}, the shot reads {shot[i] ?? "none"}");
             if (state.Contains("bar stool", StringComparison.Ordinal))
             {
                 // the top of the seated head

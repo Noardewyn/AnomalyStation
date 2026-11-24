@@ -453,9 +453,23 @@ cover the drawn body; for the raised body the zone read was also several pixels 
 package. The hitbox and the zone now take the body's placement from the compositor.
 
 Known limits and open points:
-- Where the legs overlap seen from the side, the far leg wins (slice T2).
-- The server's mirror for shots (`ShotGeometry.Cross`) does not undo the root's `pixel_w`/`pixel_z` either, so a shot
-  at a person on a stool or an operating table reads its part several pixels off (slice T2, with the legs).
+- Where the legs overlap seen from the mob's left side, the far leg won; slice T2 makes the leg drawn in front win,
+  on the client and in the server's mirror (the view from the right side was already correct).
+- The server's mirror for shots (`ShotGeometry.Cross`) did not apply the root's `pixel_w`/`pixel_z`. Measured in
+  slice T2: a vertical shift (a stool, an operating table, a bed) never put a shot off, because the picture stands on
+  its lowest drawn row on both sides; a sideways shift (a handrail) and a giant's body past the icon square did, and
+  T2 fixes those. An earlier note here said shots at a seated person read several pixels off; that was a reviewer's
+  reading, not a measurement, and it was wrong.
+- `mouse_opacity` is not replicated, so the client cannot tell from data which entities BYOND would click through.
+- Shots only (the server's mirror; melee and throws read the client's picture and are right), measured by the stress
+  test of slice T2 and older than this package:
+  - a monkey: tg moves its torso, arms and head down with height filters, which the client draws and the server's
+    table does not know, so about half of a monkey's body pixels read as another part for a shot (dwarf and tall
+    humans probably likewise; not measured);
+  - a lying moth or lizard: wings and tails reach below the body; the client stands the picture on its lowest drawn
+    row and the server on the lowest body row, so the server's picture sits 3 rows (moth) or 7 rows (lizard) off; the
+    same cause as the dressed lying body whose clothes reach below it;
+  - a golem's hands (7 to 19 pixels) and a husk seen from the east (8 pixels) differ between the two sides.
 - Not undone by the mapping: a root filter that moves pixels (displacement, wave), a limb nested in a non-limb
   overlay with its own offset, and a flick or inset drawn in place of the mob's own appearance.
 - Body pictures that are not limbs (a lizard's snout, horns, frills, tail and spines, a moth's wings and antennae, a

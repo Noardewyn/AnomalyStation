@@ -209,6 +209,8 @@ public partial class GameScene
         _pickWorld.IgnoreCeilings = true; // a map is edited from above: a click goes through a room's ceiling
         // (the preview of what the place tool places is drawn by the world and is not there for a pick: 5.9)
         _pickWorld.PickSkips = id => _editor.Feed.IsPreview(id);
+        // a mapper selects what a map places, a temp visual too (a heretic rune drawing on heretic.dmm): only the game's clicks pass through them
+        _entities.EffectsClickThrough = _map.EffectsClickThrough = false;
         _pickWorld.WallOverride = (x, y, z) => _editor.Feed.Previewed(x, y, z) ? MapEdits.TurfOf(_editor.Document[x, y, z])?.StartsWith("/turf/closed", StringComparison.Ordinal) == true : null;
         _pickWorld.VoidOverride = (x, y, z) => _editor.Feed.Previewed(x, y, z) ? TurfStyle.Classify(MapEdits.TurfOf(_editor.Document[x, y, z])) == TurfKind.Void : null;
         _spawnMapping = true; // a mapper places the landmarks, the spawners and the helpers

@@ -205,9 +205,21 @@ public class AimedShotGameplayTests(ITestOutputHelper output)
                     compared++;
                 }
         Assert.Equal(4 * 32 * 32, compared);
+        // slice T2: where the legs overlap seen from the side, both name the near leg tg draws on top (handle_masking's leg masks): in W the left
+        // leg over the right one in columns 16 to 18 (15 is the right leg alone), in E the mirror (columns 15 to 17 the right leg, 18 the left)
+        foreach ((byte dir, int x, int y, AimZone near) in new (byte, int, int, AimZone)[]
+        {
+            (8, 15, 5, AimZone.RightLeg), (8, 16, 5, AimZone.LeftLeg), (8, 17, 5, AimZone.LeftLeg), (8, 18, 2, AimZone.LeftLeg),
+            (4, 15, 5, AimZone.RightLeg), (4, 16, 5, AimZone.RightLeg), (4, 17, 2, AimZone.RightLeg), (4, 18, 5, AimZone.LeftLeg),
+        })
+        {
+            Assert.Equal(near, BodyZoneProbeTests.TopPart(tables, seen.State.Appearance, dir)(x, y));
+            Assert.Equal(near, BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, dir, (byte)x, (byte)y));
+            Assert.True(Same(near, In(w, () => ShotGeometry.ZoneAt(bobMob, dir, x, y))), $"dir {dir} at {x},{y}: the server reads {In(w, () => ShotGeometry.ZoneAt(bobMob, dir, x, y))}");
+        }
     }
 
-    private static bool Same(AimZone client, string server) => client switch
+    internal static bool Same(AimZone client, string server) => client switch
     {
         AimZone.Head => server == BODY_ZONE_HEAD,
         AimZone.Chest => server == BODY_ZONE_CHEST,

@@ -1999,6 +1999,9 @@ public partial class EntityLayer : Node3D
     /// M4a P7 (interaction.md 4.1): the pick shapes of everything this layer draws as a node (mobs, items that moved, thrown things): a picture as a
     /// standing or flat quad on its opaque pixels, a placeholder as a box. <paramref name="exclude"/> is the own mob.
     /// </summary>
+    /// <summary>Whether <see cref="ClickThrough"/>'s types are left out of the pick shapes (the game: yes; the map editor, which places and selects them: no).</summary>
+    public bool EffectsClickThrough { get; set; } = true;
+
     public void CollectPickShapes(List<PickShape> into, long exclude)
     {
         foreach (Entry e in _list)
@@ -2008,6 +2011,9 @@ public partial class EntityLayer : Node3D
             // tg's particle effects are mouse-transparent (effect_system.dm:13, effects_water.dm:7: MOUSE_OPACITY_TRANSPARENT): a click goes
             // through a water puff or a trail to what is behind it.
             if (NearEyeFade.Applies(e.Entity.TypePath))
+                continue;
+            // tg's short-lived visuals (the attack's flick visual, temp visuals, a shot's effects) are mouse-transparent too (ClickThrough); not for the map editor
+            if (EffectsClickThrough && ClickThrough.IsType(e.Entity.TypePath))
                 continue;
             int z = e.Pose.Z;
             double floor = TileSpace.WorldY(z);

@@ -218,6 +218,24 @@ public class ModelTests
     }
 
     [Fact]
+    public void AnEntryWithNoPictureGivesTheIconPixelUnderEveryScreenPixelOnBothAxes()
+    {
+        // a window cell (ContainerWindow) or the live HUD's doll square: no picture, the rectangle is the icon square, here at 2 screen pixels per
+        // tg pixel; a screen pixel on the top line of a row is in that row (it came back as the row above)
+        var surface = new Surface();
+        surface.Drawn.Add(new HudDrawn(2014, new HudRect(10, 20, 64, 64), null, 0, 0));
+        var picker = new HudPicker(surface);
+        for (int y = 0; y < 64; y++)
+        {
+            for (int x = 0; x < 64; x++)
+            {
+                PickHit hit = picker.PickScreen(10 + x, 20 + y);
+                Assert.Equal(((byte)(x / 2 + 1), (byte)(32 - y / 2)), (hit.IconX, hit.IconY));
+            }
+        }
+    }
+
+    [Fact]
     public void AnItemTooBigForItsSlotIsClickedWhereItIsDrawnFittedIntoTheSquare()
     {
         // DV575: a 64 x 64 item drawn at half its size in the slot's square; only its top right quarter has pixels

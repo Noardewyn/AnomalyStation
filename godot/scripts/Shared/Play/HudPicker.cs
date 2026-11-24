@@ -80,7 +80,7 @@ public sealed class HudPicker : IHudPicker
             else
             {
                 ix = (int)(fx * 32) + 1;
-                iy = (int)((1 - fy) * 32) + 1;
+                iy = 32 - (int)(fy * 32); // the row counted from the top as the column is from the left: a point on a row's top line is in that row
             }
             // Version 12: the topmost child with a pixel at this point of the holder's icon square takes the click.
             if (d.Children != null)

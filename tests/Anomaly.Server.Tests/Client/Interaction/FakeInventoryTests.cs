@@ -39,7 +39,9 @@ public class FakeInventoryTests
     {
         (PlayRig rig, FakeFeed feed, _) = Start();
         ReplicaWorld world = feed.Replica;
-        Assert.Equal(new long[] { 2001, 2002, 2003, 2004 }, world.ScreenGroup(HudGroup.Static).Select(e => e.Id));
+        // tg's zone selector (HUD_GROUP_STATIC), then the hands, drop and swap; the combat toggle is in HUD_GROUP_INFO (hud/human.dm)
+        Assert.Equal(new long[] { FakeServer.ZoneSelId, 2001, 2002, 2003, 2004 }, world.ScreenGroup(HudGroup.Static).Select(e => e.Id));
+        Assert.Equal(new long[] { FakeServer.CombatId }, world.ScreenGroup(HudGroup.Info).Select(e => e.Id));
         Assert.Equal(new long[] { 2005 }, world.ScreenGroup(HudGroup.Hotkeys).Select(e => e.Id));
         IReadOnlyList<ScreenEntry> slots = world.ScreenGroup(HudGroup.ToggleableInventory);
         Assert.Equal(15, slots.Count);

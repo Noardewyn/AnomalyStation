@@ -1,6 +1,7 @@
 #!/bin/sh
 # M4a P7: the interaction shots (docs/ai/specs/apps.md 2.12): the hover highlight with its screentip, the radial open, the HUD hands and the
-# 15 slots in cursor mode, an open container, a thrown item in flight. Each opens a window for a few seconds.
+# 15 slots in cursor mode, an open container, a thrown item in flight, the doll panel with each damage level and a wound, and the combat pill
+# (livehud). Each opens a window for a few seconds.
 #
 #   godot/tools/interaction-shots.sh OUTDIR
 #
@@ -27,4 +28,5 @@ shot radial 3.2
 shot hud 3.4
 shot container 3.8
 THROW_TICKS=6 shot throw 4.1
+shot livehud 3.0
 echo "interaction-shots: OK"

@@ -468,6 +468,8 @@ public partial class GameScene
         // ui-overhaul.md section 6: the prompts stand beside the crosshair, or beside the free pointer when it aims at the world (cursor mode)
         _chatLines.PromptAnchor = pointerAim ? GetViewport().GetMousePosition() : view / 2f;
         _chatLines.PromptReach = pointerAim ? KeyChips.PointerReach : _crosshair.Extent;
+        // beside the crosshair they end before the doll panel and its pill, their text cut (the free pointer's block keeps its own room)
+        _chatLines.PromptRightEdge = pointerAim || _hudLayer == null ? float.PositiveInfinity : _hudLayer.PanelLeftEdge;
         _chatLines.TextScale = metrics.TextScale; // scales with the HUD (the owner, 2026-10-18)
         _chatLines.ChatScale = _options.ChatLinesScale; // and its chat lines by their own share (the owner, 2026-11-19)
         _chatLines.Lines = ChatWindowOpen ? new List<ChatLine>() : _chat.Visible(now); // D252: the feed is hidden while the chat window is open
@@ -1237,7 +1239,7 @@ public partial class GameScene
             _dragIcon.Visible = false;
     }
 
-    // ---- the scripted shot scenarios (ANOMALY_SHOT=hover|radial|hud|container|throw|gun|pointer, with --fake-server; see godot/tools/README) ----
+    // ---- the scripted shot scenarios (ANOMALY_SHOT=hover|radial|hud|container|throw|livehud|gun|pointer, with --fake-server; see godot/tools/README) ----
 
     private FakeServer FakeServerOrNull => (_feed as FakeFeed)?.Server;
 
@@ -1283,6 +1285,21 @@ public partial class GameScene
                 At(0.8, () => AimAtEntity(server.ToolboxId));
                 At(1.5, () => SetCursorMode(true));
                 At(1.8, () => Input.WarpMouse(GetViewport().GetVisibleRect().Size * new Vector2(0.7f, 0.45f)));
+                break;
+            case "livehud":
+                // the doll panel coloured by damage, one level per part (head 1, chest 2, left arm 3, right arm 4, left leg 5, right leg none), a
+                // wound outline on the right arm, and the combat pill on (ui-overhaul.md 6); tg's zone selector is not shown
+                At(0.5, () => _session.DevCommand("damage me brute 40 head"));
+                At(0.55, () => _session.DevCommand("damage me brute 80 chest"));
+                At(0.6, () => _session.DevCommand("damage me brute 30 l_arm"));
+                At(0.65, () => _session.DevCommand("damage me brute 40 r_arm"));
+                At(0.7, () => _session.DevCommand("damage me brute 50 l_leg"));
+                At(0.75, () => _session.DevCommand("wound me r_arm slash severe"));
+                if (System.Environment.GetEnvironmentVariable("ANOMALY_SHOT_DISABLED") == "1")
+                    At(0.8, () => _session.DevCommand("wound me l_arm blunt critical")); // tg's compound fracture disables the left arm (doll key 7)
+                At(1.0, () => _session.ToggleCombatMode());
+                if (System.Environment.GetEnvironmentVariable("ANOMALY_SHOT_CURSOR") == "1")
+                    At(2.0, () => SetCursorMode(true)); // the cursor freed: tg's zone selector shows at its place
                 break;
             case "throw":
                 Pick(server.WelderId, 0.8);

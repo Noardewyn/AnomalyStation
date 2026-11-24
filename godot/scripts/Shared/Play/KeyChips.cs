@@ -149,8 +149,11 @@ public static class KeyChips
     /// <see cref="UiTokens.PromptMaxWidth"/>. It stays on the screen: where the right side has no room it goes to the anchor's left, mirrored,
     /// else it is narrowed; it is moved up or down to fit the screen's height. At the screen's middle its bottom stays above the balloon
     /// alert's row (<see cref="BalloonRow"/>) at every HUD scale.
+    /// <paramref name="rightEdge"/> (the doll panel's left edge less its gap, in the captured view; ui-overhaul.md section 6): the block never
+    /// reaches past it; one wider is narrowed to end there, not moved (the caller cuts its text, <see cref="Ellipsize"/>), unless less than
+    /// <see cref="UiTokens.PromptMinWidth"/> is left there (a very large HUD scale on a small screen), when it is placed as without the panel.
     /// </summary>
-    public static HudRect PromptBlock(HudMetrics metrics, int lines, float width, float anchorX, float anchorY, float reach)
+    public static HudRect PromptBlock(HudMetrics metrics, int lines, float width, float anchorX, float anchorY, float reach, float rightEdge = float.PositiveInfinity)
     {
         float u = UiTokens.Unit(metrics);
         float margin = UiTokens.ScreenMargin * u;
@@ -158,8 +161,12 @@ public static class KeyChips
         float gap = Math.Max(0f, reach) + UiTokens.PromptOffsetX * u;
         float w = Math.Clamp(width, 0f, Math.Min(UiTokens.PromptMaxWidth * u, Math.Max(0f, metrics.Width - 2 * margin)));
         float left = anchorX + gap;
-        float rightRoom = metrics.Width - margin - left, leftRoom = anchorX - gap - margin;
-        if (w > rightRoom)
+        float rightRoom = Math.Min(metrics.Width - margin, rightEdge) - left, leftRoom = anchorX - gap - margin;
+        if (w > rightRoom && !float.IsPositiveInfinity(rightEdge) && rightRoom >= UiTokens.PromptMinWidth * u)
+        {
+            w = rightRoom;
+        }
+        else if (w > rightRoom)
         {
             if (w <= leftRoom)
                 left = anchorX - gap - w;
@@ -171,6 +178,31 @@ public static class KeyChips
         left = Math.Clamp(left, 0f, Math.Max(0f, metrics.Width - margin - w)); // only a screen narrower than the sight moves it over the anchor
         float top = Math.Max(margin, Math.Min(anchorY + UiTokens.PromptOffsetY * u, metrics.Height - margin - height));
         return new HudRect(left, top, w, height);
+    }
+
+    /// <summary>The mark a cut text ends with.</summary>
+    public const string Ellipsis = "…";
+
+    /// <summary>
+    /// <paramref name="text"/> as it fits in <paramref name="width"/> pixels by <paramref name="measure"/>: whole, or its longest start that fits
+    /// with <see cref="Ellipsis"/> after it (just the mark, or nothing, when even that does not fit).
+    /// </summary>
+    public static string Ellipsize(string text, float width, Func<string, float> measure)
+    {
+        if (string.IsNullOrEmpty(text) || measure(text) <= width)
+            return text ?? string.Empty;
+        int low = 0, high = text.Length - 1; // the longest start (low characters) that fits with the mark
+        while (low < high)
+        {
+            int mid = (low + high + 1) / 2;
+            if (measure(text.Substring(0, mid).TrimEnd() + Ellipsis) <= width)
+                low = mid;
+            else
+                high = mid - 1;
+        }
+        if (low == 0)
+            return measure(Ellipsis) <= width ? Ellipsis : string.Empty;
+        return text.Substring(0, low).TrimEnd() + Ellipsis;
     }
 
     /// <summary>The row the balloon alert under the crosshair takes, in screen pixels (ChatLines draws it from the same tokens).</summary>

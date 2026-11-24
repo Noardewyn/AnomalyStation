@@ -32,6 +32,9 @@ public partial class ChatLines : Control
     /// <summary>How far right of <see cref="PromptAnchor"/> what is drawn there reaches (<see cref="Crosshair.Extent"/>, <see cref="KeyChips.PointerReach"/>): the prompts start past it.</summary>
     public float PromptReach { get; set; }
 
+    /// <summary>The prompts end before this, screen pixels from the left (the doll panel in the captured view; infinity: no limit), their text cut with an ellipsis.</summary>
+    public float PromptRightEdge { get; set; } = float.PositiveInfinity;
+
     /// <summary>The progress bars placed this frame (<see cref="PlaceBars"/>).</summary>
     public List<PlacedBar> Bars { get; } = new();
 
@@ -150,9 +153,10 @@ public partial class ChatLines : Control
         float width = font.GetStringSize(PromptName, HorizontalAlignment.Left, -1, nameSize).X;
         foreach (PromptLine line in Prompts)
             width = Math.Max(width, ChipWidth(font, line.Key, chipSize, u) + UiTokens.PromptChipGap * u + font.GetStringSize(line.Text, HorizontalAlignment.Left, -1, textSize).X);
-        HudRect block = KeyChips.PromptBlock(Metrics, Prompts.Count, width, PromptAnchor.X, PromptAnchor.Y, PromptReach);
+        HudRect block = KeyChips.PromptBlock(Metrics, Prompts.Count, width, PromptAnchor.X, PromptAnchor.Y, PromptReach, PromptRightEdge);
         float nameLine = UiTokens.PromptNameLine * u;
-        Outlined(font, new Vector2(block.Left, block.Top + (nameLine + font.GetAscent(nameSize) - font.GetDescent(nameSize)) / 2f), PromptName, nameSize, block.Width, alpha, u);
+        string name = KeyChips.Ellipsize(PromptName, block.Width, s => font.GetStringSize(s, HorizontalAlignment.Left, -1, nameSize).X);
+        Outlined(font, new Vector2(block.Left, block.Top + (nameLine + font.GetAscent(nameSize) - font.GetDescent(nameSize)) / 2f), name, nameSize, block.Width, alpha, u);
         float y = block.Top + nameLine;
         foreach (PromptLine line in Prompts)
         {
@@ -160,7 +164,9 @@ public partial class ChatLines : Control
             DrawChip(this, font, new Rect2(block.Left, y, chipWidth, UiTokens.ChipHeight * u), line.Key, chipSize, u, alpha);
             float textLeft = block.Left + chipWidth + UiTokens.PromptChipGap * u;
             float baseline = y + (UiTokens.ChipHeight * u + font.GetAscent(textSize) - font.GetDescent(textSize)) / 2f;
-            Outlined(font, new Vector2(textLeft, baseline), line.Text, textSize, Math.Max(1f, block.Right - textLeft), alpha, u);
+            float room = Math.Max(1f, block.Right - textLeft);
+            string text = KeyChips.Ellipsize(line.Text, room, s => font.GetStringSize(s, HorizontalAlignment.Left, -1, textSize).X);
+            Outlined(font, new Vector2(textLeft, baseline), text, textSize, room, alpha, u);
             y += UiTokens.PromptLine * u;
         }
     }

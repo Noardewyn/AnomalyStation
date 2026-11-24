@@ -834,6 +834,7 @@ public partial class GameScene : Node3D
         UpdateDev(now, hasOwn, pose);
         UpdateEditor();
         _hudLayer.RenderTick = _session.RenderTick; // M4v slice 4: the screen objects' flicks and animate() chains play at the entities' render tick
+        _hudLayer.CursorMode = _mouse.CursorMode; // ui-overhaul.md 6: tg's zone selector shows only while the cursor is free
         using (Dev.FrameProbe.Scope("GameScene/hud.Update"))
             _hudLayer.Update(now);
         UpdateRates(now);

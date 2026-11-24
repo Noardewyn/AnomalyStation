@@ -266,7 +266,7 @@ public partial class OptionsPanel : PanelContainer
 
         VBoxContainer access = Tab(tabs, "Accessibility");
         var palette = new OptionButton { SizeFlagsHorizontal = SizeFlags.ExpandFill };
-        palette.AddItem("tg's own", (int)ColorblindMode.Off);
+        palette.AddItem("Standard: green to red", (int)ColorblindMode.Off);
         palette.AddItem("Colourblind: red-green", (int)ColorblindMode.RedGreen);
         palette.AddItem("Colourblind: blue-yellow", (int)ColorblindMode.BlueYellow);
         palette.AddItem("Colourblind: grey", (int)ColorblindMode.Mono);

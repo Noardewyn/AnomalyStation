@@ -17,48 +17,61 @@ namespace Anomaly.Client.Hud;
 /// <para>
 /// D70's additions are made from the same replicated state, nothing more: when an entry's appearance holds the doll's zone
 /// states (<c>head3</c>, <c>l_arm0</c>, ...; <see cref="HudReader"/>), each zone is drawn on its own with a hatching by its level
-/// (the shape cue; a shader keyed by <see cref="HatchStyle"/>) and, under a colourblind palette, in the palette's colour for
-/// the level, and a text label per zone lists its name and level beside the doll. Fullscreen effects (the damage and crit
+/// (the shape cue; a shader keyed by <see cref="HatchStyle"/>) and in the palette's colour for the level (the standard ramp, or a
+/// colourblind one), and a text label per zone lists its name and level beside the doll. Fullscreen effects (the damage and crit
 /// overlays) are limited by the player's strength setting.
+/// </para>
+/// <para>
+/// The live HUD (ui-overhaul.md section 6, <see cref="LiveHud"/>): the doll is re-placed into a panel at the middle right (it shows injuries
+/// only; its wound outlines stay tg's), the combat toggle is drawn as a native pill under it (<see cref="LiveHudView"/>), both still taking
+/// tg's clicks, and tg's zone selector is shown only while the cursor is free.
 /// </para>
 /// </summary>
 public partial class HudLayer : CanvasLayer, IHudSurface
 {
     private const string ShaderCode = @"
 shader_type canvas_item;
-uniform int style = 0;
+uniform int shape = 0; // HealthZones.Pattern: HatchShape, its period and line width in cells
+uniform float period = 1.0;
+uniform float width = 0.0;
+uniform float cell = 2.0;
 uniform bool use_tint = false;
 uniform vec4 tint : source_color = vec4(1.0);
-uniform vec4 hatch_color : source_color = vec4(0.0, 0.0, 0.0, 0.8);
-uniform float cell = 2.0;
+uniform float tint_ref = 0.0; // the standard ramp: the limb's brightest channel (HealthZones.Brightest); 0 for a colourblind palette
+uniform vec4 hatch_color : source_color = vec4(0.0, 0.0, 0.0, 0.7);
+uniform sampler2D limb : filter_nearest; // the limb's own picture, without its filters (tg's wound outline)
+uniform vec4 limb_rect = vec4(0.0, 0.0, 1.0, 1.0); // where it lies in this picture: UV offset (xy) and size (zw)
 
-float diag(vec2 p, float dir, float period, float width) {
-    float v = mod(p.x + dir * p.y, period);
-    return v < width ? 1.0 : 0.0;
-}
+float line(float v, float per, float w) { return mod(v, per) < w ? 1.0 : 0.0; }
 
+// the same lines as HealthZones.Hatched
 float hatch(vec2 p) {
-    float c = cell;
-    if (style == 1) return diag(p, 1.0, 5.0 * c, 1.0 * c);
-    if (style == 2) return diag(p, 1.0, 3.0 * c, 1.0 * c);
-    if (style == 3) return max(diag(p, 1.0, 4.0 * c, 1.0 * c), diag(p, -1.0, 4.0 * c, 1.0 * c));
-    if (style == 4) return max(diag(p, 1.0, 3.0 * c, 1.2 * c), diag(p, -1.0, 3.0 * c, 1.2 * c));
-    if (style == 5) return max(diag(p, 1.0, 3.0 * c, 2.0 * c), diag(p, -1.0, 3.0 * c, 2.0 * c));
-    if (style == 6) { vec2 q = mod(p, 4.0 * c) - 2.0 * c; return length(q) < 0.9 * c ? 1.0 : 0.0; }
-    if (style == 7) return mod(p.x, 4.0 * c) < 1.6 * c ? 1.0 : 0.0;
-    if (style == 8) return mod(p.y, 3.0 * c) < 1.2 * c ? 1.0 : 0.0;
+    float per = period * cell, w = width * cell;
+    if (shape == 1) return line(p.x + p.y, per, w);
+    if (shape == 2) return max(line(p.x + p.y, per, w), line(p.x - p.y, per, w));
+    if (shape == 3) { vec2 q = mod(p, per) - per * 0.5; return dot(q, q) < w * w ? 1.0 : 0.0; }
+    if (shape == 4) return line(p.x, per, w);
+    if (shape == 5) return line(p.y, per, w);
+    if (shape == 6) return max(max(line(p.x + p.y, per, w), line(p.x - p.y, per, w)), line(p.x, per, w));
     return 0.0;
 }
 
 void fragment() {
-    vec4 tex = texture(TEXTURE, UV);
-    vec3 rgb = tex.rgb;
-    if (use_tint) {
-        float l = dot(rgb, vec3(0.299, 0.587, 0.114));
-        rgb = tint.rgb * (0.55 + 0.6 * l);
+    vec4 shown = texture(TEXTURE, UV);
+    vec2 luv = (UV - limb_rect.xy) / limb_rect.zw;
+    vec4 own = (luv.x >= 0.0 && luv.y >= 0.0 && luv.x <= 1.0 && luv.y <= 1.0) ? texture(limb, luv) : vec4(0.0);
+    if (own.a < 0.5) {
+        COLOR = shown; // around the limb: its filters as tg draws them (the wound outline's red), never tinted
+    } else {
+        vec3 rgb = own.rgb;
+        if (use_tint && tint_ref > 0.0) {
+            rgb = tint.rgb * clamp(max(rgb.r, max(rgb.g, rgb.b)) / tint_ref, 0.0, 1.0);
+        } else if (use_tint) {
+            float l = dot(rgb, vec3(0.299, 0.587, 0.114));
+            rgb = tint.rgb * (0.55 + 0.6 * l);
+        }
+        COLOR = vec4(mix(rgb, hatch_color.rgb, hatch(FRAGCOORD.xy) * hatch_color.a), own.a);
     }
-    float h = hatch(FRAGCOORD.xy);
-    COLOR = vec4(mix(rgb, hatch_color.rgb, h * hatch_color.a), tex.a);
 }
 ";
 
@@ -80,6 +93,14 @@ void fragment() {
     private Label _labels;
     private readonly List<ZoneState> _zoneStates = new();
     private readonly List<HudRect> _zoneRects = new();
+    private LiveHudView _view; // ui-overhaul.md section 6: the doll panel and the combat pill, under tg's pictures
+    private LiveHudLayout _layout;
+
+    /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
+    public bool CursorMode { get; set; }
+
+    /// <summary>Where what stands left of the doll panel and the combat pill must end (the prompts beside the crosshair), screen pixels; infinity while neither is shown.</summary>
+    public float PanelLeftEdge { get; private set; } = float.PositiveInfinity;
 
     /// <summary>Raised when the doll shows more damage than before (the camera shakes a little).</summary>
     public event Action DamageTaken;
@@ -142,6 +163,8 @@ void fragment() {
         _root = new Control { Name = "HudRoot", MouseFilter = Control.MouseFilterEnum.Ignore };
         _root.SetAnchorsPreset(Control.LayoutPreset.FullRect);
         AddChild(_root);
+        _view = new LiveHudView { Name = "LiveHud" };
+        _root.AddChild(_view); // the root's first child: tg's pictures are drawn over it (Update keeps it first)
         // tg draws the fullscreens (the damage, crit and death overlays) on FULLSCREEN_PLANE, below the HUD planes, so the HUD
         // stays visible over them: here they go on their own canvas layer under every UI layer (the debug HUD 1, this HUD
         // and the windows 2, the UI 3), above the 3D view (the owner, 2026-10-09).
@@ -184,16 +207,17 @@ void fragment() {
     {
         foreach (Item item in _order)
         {
-            if (!item.Container.Visible || !item.HasSpec || item.Hidden)
+            if (!item.Container.Visible || !item.HasSpec || item.Hidden || !LiveHud.Shown(item.Role, CursorMode))
                 continue;
             if (item.Zones.Count > 0)
             {
-                foreach (ZoneNode node in item.Zones)
-                {
-                    if (node.Rect.Visible)
-                        bottomToTop.Add(new HudDrawn(item.Entry.Id, new HudRect(node.Rect.Position.X, node.Rect.Position.Y, node.Rect.Size.X, node.Rect.Size.Y), null, 0, 0));
-                }
+                // the doll's own 32 x 32 icon square, once: a point on it is tg's icon pixel whatever size the zones' pictures are (a wound
+                // outline grows them), and BodyZoneAim.DollZoneAt finds the limb there
+                if (item.Zones.Any(node => node.Rect.Visible))
+                    bottomToTop.Add(item.Role == LiveHudRole.Doll ? LiveHud.DollDrawn(item.Entry.Id, _layout) : new HudDrawn(item.Entry.Id, item.IconSquare, null, 0, 0));
             }
+            else if (item.Role == LiveHudRole.CombatToggle)
+                bottomToTop.Add(LiveHud.PillDrawn(item.Entry.Id, _layout)); // the native pill takes tg's toggle's clicks
             else if (item.Whole != null && item.Whole.Visible && item.Whole.Texture != null && item.Fullscreen == false)
                 // Version 12: the item in a hand or a slot (the entry's vis_contents child) is hit on its own pixels before the slot.
                 bottomToTop.Add(new HudDrawn(item.Entry.Id, item.LastRect, HudPictures.RasterOf(item.Whole.Texture), item.OriginX, item.OriginY,
@@ -303,11 +327,12 @@ void fragment() {
         _lastNow = nowSeconds;
         Vector2 size = GetViewport().GetVisibleRect().Size;
         var metrics = new HudMetrics(size.X, size.Y, _options.UiScale);
+        _layout = LiveHud.Layout(metrics);
         if (_sortDirty)
         {
             _order.Sort((a, b) => a.Layer != b.Layer ? a.Layer.CompareTo(b.Layer) : a.Entry.Id.CompareTo(b.Entry.Id));
-            // tg's layer order within each root (the HUD's, the fullscreens' and the splash's canvas layers)
-            int hudIndex = 0, fullscreenIndex = 0, splashIndex = 0;
+            // tg's layer order within each root (the HUD's, the fullscreens' and the splash's canvas layers); the HUD's after the live HUD's view
+            int hudIndex = 1, fullscreenIndex = 0, splashIndex = 0;
             foreach (Item ordered in _order)
             {
                 Node parent = ordered.Container.GetParent();
@@ -317,6 +342,7 @@ void fragment() {
         }
         _zoneStates.Clear();
         _zoneRects.Clear();
+        UpdateLiveHud(metrics);
         MeasureAlertColumn(metrics);
         int total = 0;
         foreach (Item item in _order)
@@ -329,6 +355,30 @@ void fragment() {
                 DamageTaken?.Invoke();
             _lastDollTotal = total;
         }
+    }
+
+    private bool _dollShown;
+
+    // ui-overhaul.md section 6: what the live HUD's view shows (the doll panel when a doll is shown, the combat pill when a combat toggle is
+    // shown), and where what stands left of them must end.
+    private void UpdateLiveHud(in HudMetrics metrics)
+    {
+        bool doll = false;
+        bool? combat = null;
+        foreach (Item item in _order)
+        {
+            if (!item.HasSpec || item.Hidden)
+                continue;
+            if (item.Analyze)
+                Analyze(item);
+            if (item.Role == LiveHudRole.Doll)
+                doll = true;
+            else if (item.Role == LiveHudRole.CombatToggle)
+                combat ??= LiveHud.CombatOn(_replica, item.Entry);
+        }
+        _dollShown = doll;
+        PanelLeftEdge = doll || combat.HasValue ? LiveHud.LeftOfPanel(_layout, metrics) : float.PositiveInfinity;
+        _view.Show(_layout, UiTokens.Unit(metrics), doll, combat, KeyChips.KeyOf(_options.Bindings, PlayAction.ToggleCombatMode));
     }
 
     private int _alertSlots;
@@ -353,8 +403,14 @@ void fragment() {
     }
 
     // An item's rectangle: tg's screen_loc, or an alert's place in its column (DV82); the picture's own square is where the place puts a 32 x 32 icon.
+    // The health doll is re-placed into the live HUD's doll panel (ui-overhaul.md section 6), its icon pixels kept: its zones, Collect and a click go through here.
     private HudRect Place(Item item, in HudMetrics metrics, int width, int height, int originX, int originY, out bool fullscreen)
     {
+        if (item.Role == LiveHudRole.Doll)
+        {
+            fullscreen = false;
+            return ScreenLoc.FitIcon(_layout.Doll, width, height, originX, originY);
+        }
         int slot = ScreenLoc.AlertSlot(item.Spec);
         if (slot == 0 || width >= HudMetrics.GridTiles * 32)
             return ScreenLoc.Place(item.Spec, metrics, width, height, originX, originY, out fullscreen);
@@ -396,7 +452,14 @@ void fragment() {
         if (_labels.Text != lines)
             _labels.Text = lines;
         _labels.Size = new Vector2(metrics.Tile * 2.6f, Mathf.Max(bottom - top, 1f));
-        _labels.Position = new Vector2(left - _labels.Size.X - 6f, top);
+        // the doll's panel: the column ends a gap left of the panel and the pill under it (ui-overhaul.md 6)
+        float right = _dollShown ? LiveHud.LeftOfPanel(_layout, metrics) : left - 6f;
+        _labels.Position = new Vector2(right - _labels.Size.X, _dollShown ? _layout.Panel.Top : top);
+        if (_dollShown) // the prompts beside the crosshair end before the labels too
+        {
+            float textWidth = _labels.GetThemeFont("font").GetMultilineStringSize(lines, HorizontalAlignment.Right, -1, fontSize).X;
+            PanelLeftEdge = Math.Min(PanelLeftEdge, right - textWidth - UiTokens.DollPanelGap * UiTokens.Unit(metrics));
+        }
         _labels.HorizontalAlignment = HorizontalAlignment.Right;
         ZoneLabelText = lines;
     }
@@ -408,13 +471,23 @@ void fragment() {
             item.Container.Visible = false;
             return;
         }
-        item.Container.Visible = true;
         if (item.Analyze)
             Analyze(item);
+        // tg's zone selector only while the cursor is free (LiveHud.Shown): hidden, Collect leaves it out too
+        item.Container.Visible = LiveHud.Shown(item.Role, CursorMode);
+        if (!item.Container.Visible)
+            return;
         float pixelScale = metrics.PixelScale;
         if (item.Zones.Count > 0)
         {
             UpdateZones(item, metrics, now, ref total);
+            return;
+        }
+        if (item.Role == LiveHudRole.CombatToggle)
+        {
+            // drawn as the native pill (LiveHudView), which Collect reports under this entry
+            if (item.Whole != null)
+                item.Whole.Visible = false;
             return;
         }
         // M4v slice 4 (protocol version 11): the entry's flick plays over its picture, and its animate() chains move, turn, tint and fade it.
@@ -574,6 +647,7 @@ void fragment() {
     private void Analyze(Item item)
     {
         item.Analyze = false;
+        item.Role = LiveHud.RoleOf(_replica, item.Entry);
         var found = new List<FoundZone>();
         item.Indicator = HudReader.Collect(_replica, item.Entry.Appearance, found);
         // Rebuild the zone rects only when the set of zones changed.
@@ -602,40 +676,70 @@ void fragment() {
 
     private void UpdateZones(Item item, in HudMetrics metrics, double now, ref int total)
     {
-        float cell = Mathf.Max(2f, metrics.PixelScale * 1.1f);
+        float cell = Mathf.Max(2f, item.Role == LiveHudRole.Doll ? _layout.DollScale : metrics.PixelScale); // the hatching's cell: one of the doll's tg pixels
+        item.IconSquare = Place(item, metrics, 32, 32, 0, 0, out _);
         // Version 26 (D156): the doll's limbs' filter chains (tg's wound outline pulsing, screen_objects.dm:1023), carried in the doll's entry
         var real = _textures as AppearanceTextures;
+        ReplicaTables tables = real?.TablesOf(_replica);
         double tick = double.IsNaN(RenderTick) ? _replica.Tick : RenderTick;
         Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>> filterLooks = null;
         if (real != null && item.Entry.Animation != null)
-            FilterPlayback.TryEvaluate(real.TablesOf(_replica), item.Entry.Appearance, item.Entry.Animation, tick, Anomaly.Core.Motion.MotionMath.TicksPerSecond, out filterLooks);
+            FilterPlayback.TryEvaluate(tables, item.Entry.Appearance, item.Entry.Animation, tick, Anomaly.Core.Motion.MotionMath.TicksPerSecond, out filterLooks);
         foreach (ZoneNode node in item.Zones)
         {
             ZoneState state = node.Zone.Zone;
-            ComposedAppearance composed;
-            if (filterLooks != null && real.TryGet(real.TablesOf(_replica), node.Zone.Node, 2, now, out ComposedRaster raster, out GodotPicture picture, rootOffset: true, filterLooks: filterLooks))
+            // ui-overhaul.md 6: the limb alone, its filters left out, is what is tinted (a steady colour, its brightest channel the ramp's
+            // reference); tg's picture with its filters (the wound outline, pulsing) is drawn around it as tg draws it
+            ComposedAppearance limb, shown;
+            if (real != null && tables.TryGetAppearance(node.Zone.Node, out AppearanceEntry limbEntry))
             {
-                composed = new ComposedAppearance(picture.Texture, raster.Image.Width, raster.Image.Height, raster.OriginX, raster.OriginY);
+                bool filtered = limbEntry.Filters is { Count: > 0 } || filterLooks?.ContainsKey(limbEntry) == true;
+                if (!real.TryGet(tables, node.Zone.Node, 2, now, out ComposedRaster limbRaster, out GodotPicture limbPicture, rootOffset: true, filterLooks: filtered ? node.NoFilters(limbEntry) : null))
+                {
+                    node.Rect.Visible = false;
+                    continue;
+                }
+                limb = new ComposedAppearance(limbPicture.Texture, limbRaster.Image.Width, limbRaster.Image.Height, limbRaster.OriginX, limbRaster.OriginY);
+                if (!ReferenceEquals(node.BrightestOf, limbRaster.Image))
+                    (node.BrightestOf, node.Brightest) = (limbRaster.Image, HealthZones.Brightest(limbRaster.Image)); // once per picture, not per frame
+                shown = filtered && real.TryGet(tables, node.Zone.Node, 2, now, out ComposedRaster raster, out GodotPicture picture, rootOffset: true, filterLooks: filterLooks)
+                    ? new ComposedAppearance(picture.Texture, raster.Image.Width, raster.Image.Height, raster.OriginX, raster.OriginY)
+                    : limb;
             }
-            else if (!_textures.TryCompose(_replica, node.Zone.Node, 2, now, out composed))
+            else if (_textures.TryCompose(_replica, node.Zone.Node, 2, now, out limb))
+            {
+                shown = limb;
+                node.BrightestOf = null;
+                node.Brightest = 0f;
+            }
+            else
             {
                 node.Rect.Visible = false;
                 continue;
             }
-            HudRect rect = ScreenLoc.Place(item.Spec, metrics, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY, out _);
-            Apply(node.Rect, composed.Texture, rect);
+            HudRect rect = Place(item, metrics, shown.PixelWidth, shown.PixelHeight, shown.OriginX, shown.OriginY, out _);
+            HudRect own = Place(item, metrics, limb.PixelWidth, limb.PixelHeight, limb.OriginX, limb.OriginY, out _);
+            Apply(node.Rect, shown.Texture, rect);
             node.Rect.Visible = true;
+            node.Material.SetShaderParameter("limb", limb.Texture);
+            node.Material.SetShaderParameter("limb_rect", rect.Width > 0 && rect.Height > 0
+                ? new Vector4((own.Left - rect.Left) / rect.Width, (own.Top - rect.Top) / rect.Height, own.Width / rect.Width, own.Height / rect.Height)
+                : new Vector4(0, 0, 1, 1));
             _zoneStates.Add(state);
-            _zoneRects.Add(rect);
-            HatchStyle hatch = _options.HatchCues ? HealthZones.Hatch(state) : HatchStyle.None;
+            _zoneRects.Add(own);
+            HatchPattern hatch = HealthZones.Pattern(_options.HatchCues ? HealthZones.Hatch(state) : HatchStyle.None);
             Rgb? palette = HealthZones.PaletteColor(_options.Colorblind, state);
-            node.Material.SetShaderParameter("style", (int)hatch);
+            node.Material.SetShaderParameter("shape", (int)hatch.Shape);
+            node.Material.SetShaderParameter("period", hatch.Period);
+            node.Material.SetShaderParameter("width", hatch.Width);
             node.Material.SetShaderParameter("cell", cell);
             node.Material.SetShaderParameter("use_tint", palette.HasValue);
+            node.Material.SetShaderParameter("tint_ref", _options.Colorblind == ColorblindMode.Off ? node.Brightest : 0f);
             Color tint = palette.HasValue ? new Color(palette.Value.R, palette.Value.G, palette.Value.B) : Colors.White;
             node.Material.SetShaderParameter("tint", tint);
-            float light = palette.HasValue ? 0.299f * tint.R + 0.587f * tint.G + 0.114f * tint.B : 0.5f;
-            node.Material.SetShaderParameter("hatch_color", light > 0.45f ? new Color(0, 0, 0, 0.8f) : new Color(1, 1, 1, 0.85f));
+            // untinted (tg's own disabled picture, dark grey): the light lines show on it
+            float light = palette.HasValue ? 0.299f * tint.R + 0.587f * tint.G + 0.114f * tint.B : 0.3f;
+            node.Material.SetShaderParameter("hatch_color", ChatLines.Rgba(light > 0.45f ? UiTokens.HatchDark : UiTokens.HatchLight));
             if (state.Kind == ZoneKind.Level)
                 total += state.Level;
             else if (state.Kind == ZoneKind.Dead)
@@ -717,6 +821,8 @@ void fragment() {
         public bool Hidden;
         public bool Fullscreen;
         public int OriginX, OriginY;
+        public LiveHudRole Role; // ui-overhaul.md section 6: the doll and the combat toggle are re-placed, the zone selector shown in cursor mode only
+        public HudRect IconSquare; // a doll entry's own 32 x 32 icon square, where it is drawn (what Collect reports)
         public readonly List<ZoneNode> Zones = new();
     }
 
@@ -725,5 +831,20 @@ void fragment() {
         public TextureRect Rect;
         public ShaderMaterial Material;
         public FoundZone Zone;
+        public Anomaly.Client.Shared.Icons.Raster BrightestOf; // the limb's picture Brightest was measured on
+        public float Brightest;
+        private AppearanceEntry _noFiltersOf;
+        private Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>> _noFilters;
+
+        // the compositor's filter looks that draw the limb without its filters (one dictionary per limb, so its pictures are cached)
+        public Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>> NoFilters(AppearanceEntry limb)
+        {
+            if (!ReferenceEquals(_noFiltersOf, limb))
+            {
+                _noFiltersOf = limb;
+                _noFilters = new Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>>(ReferenceEqualityComparer.Instance) { [limb] = Array.Empty<FilterEntry>() };
+            }
+            return _noFilters;
+        }
     }
 }

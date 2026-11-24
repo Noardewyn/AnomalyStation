@@ -215,6 +215,21 @@ public static class ScreenLoc
     }
 
     /// <summary>
+    /// The rectangle of an element re-placed into <paramref name="box"/> instead of at its <c>screen_loc</c> (ui-overhaul.md section 6: the
+    /// doll in its panel): its own 32 x 32 icon square fills the box's shorter side, centred, with one uniform scale, and the picture
+    /// (<paramref name="pixelWidth"/> x <paramref name="pixelHeight"/> tg pixels, the icon square's lower left corner at
+    /// (<paramref name="originX"/>, <paramref name="originY"/>), as for <see cref="Place"/>) around it at that scale, so a point of the
+    /// square is the same tg icon pixel as at tg's place.
+    /// </summary>
+    public static HudRect FitIcon(in HudRect box, int pixelWidth, int pixelHeight, int originX, int originY)
+    {
+        float k = Math.Max(0f, Math.Min(box.Width, box.Height)) / HudMetrics.IconPixels;
+        float side = HudMetrics.IconPixels * k;
+        float left = box.Left + (box.Width - side) / 2f, bottom = box.Bottom - (box.Height - side) / 2f;
+        return new HudRect(left - originX * k, bottom - (pixelHeight - originY) * k, pixelWidth * k, pixelHeight * k);
+    }
+
+    /// <summary>
     /// The slot (1 to 5, tg's alert index) of one of tg's alert screen_locs, <c>EAST-1:28,CENTER+(6 - i):(29 - 2i)</c> (<c>alert.dm</c>
     /// get_ui_alert_placement); 0 for any other.
     /// </summary>

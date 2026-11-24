@@ -85,8 +85,8 @@ public sealed class FakeServerOptions
 /// <list type="bullet">
 /// <item><description>the player's frames go through a jitter buffer (one frame per tick, the last one repeated when none came, the oldest dropped above the cap, 4) and the private block carries the state after the last applied frame, the parameters and the buffer's depth;</description></item>
 /// <item><description>rest (lying at once, getting up takes 1 s), walk or run (tg's 4 and 1.5 deciseconds per tile, crawling adds 4), combat mode, a left click on a mob in reach (help) and a right click (the shove: one tile away, a knockdown against a wall or a mob, the click cooldown of 16 ticks);</description></item>
-/// <item><description>the player's HUD as private screen entries: the health doll (tg's <c>head3</c> style states per zone, level = <c>ceil(damage / max * 5)</c>), the health indicator, a damage fullscreen and the move intent;</description></item>
-/// <item><description>dev commands in the real server's syntax (<c>damage WHO brute|burn|tox|oxy N [ZONE]</c>, <c>heal</c>, <c>fullheal</c>, <c>kill</c>, <c>revive</c>, <c>knockdown WHO S</c>, <c>stun</c>, <c>analyze WHO</c>, <c>speedscale F</c>, <c>spawn /mob/living/carbon/human [X Y]</c>, <c>help</c>; WHO is <c>me</c>, the player's name or a world id), replies to the requester only.</description></item>
+/// <item><description>the player's HUD as private screen entries: the health doll (tg's <c>head3</c> style states per zone, level = <c>ceil(damage / max * 5)</c>), the health indicator, a damage fullscreen, the move intent, tg's zone selector (a click selects the zone under its pixel, tg's <c>get_zone_at</c>) and the combat toggle (a click switches combat mode); a wounded limb carries tg's wound outline filter, steady;</description></item>
+/// <item><description>dev commands in the real server's syntax (<c>damage WHO brute|burn|tox|oxy N [ZONE]</c>, <c>wound WHO ZONE [TYPE SEVERITY]</c>, <c>heal</c>, <c>fullheal</c>, <c>kill</c>, <c>revive</c>, <c>knockdown WHO S</c>, <c>stun</c>, <c>analyze WHO</c>, <c>speedscale F</c>, <c>spawn /mob/living/carbon/human [X Y]</c>, <c>help</c>; WHO is <c>me</c>, the player's name or a world id), replies to the requester only.</description></item>
 /// </list>
 /// Everything leaves as encoded messages, through <see cref="Step"/>'s callback; the owner (<see cref="FakeFeed"/>, a test
 /// harness) moves them to a client.
@@ -108,6 +108,9 @@ public sealed partial class FakeServer
     private const string ScreenGenIcon = "icons/hud/screen_gen.dmi";
     private const string ScreenFullIcon = "icons/hud/screen_full.dmi";
     private const long DollId = 1001, HealthId = 1002, FullscreenId = 1003, IntentId = 1004;
+
+    /// <summary>tg's target zone selector (<c>zone_sel</c>) and combat toggle on the player's screen.</summary>
+    public const long ZoneSelId = 1005, CombatId = 1006;
 
     private static readonly int[] ZoneMax = { 200, 200, 50, 50, 50, 50 };
 
@@ -542,6 +545,8 @@ public sealed partial class FakeServer
 
     private void Click(Mob player, ActionMessage a, List<string> replies)
     {
+        if (HudClick(player, a, replies))
+            return;
         if (InventoryOn && InventoryClick(player, a, replies))
             return;
         Mob target = Find(a.Target);
@@ -613,7 +618,7 @@ public sealed partial class FakeServer
         string verb = words[0].ToLowerInvariant();
         if (verb == "help")
         {
-            replies.Add("Commands (the real server's syntax, WHO is me, your name or #1): damage WHO brute|burn|tox|oxy N [ZONE], heal WHO, fullheal WHO, kill WHO, revive WHO, knockdown WHO S, stun WHO S, analyze WHO, speedscale F.");
+            replies.Add("Commands (the real server's syntax, WHO is me, your name or #1): damage WHO brute|burn|tox|oxy N [ZONE], wound WHO ZONE [TYPE SEVERITY], heal WHO, fullheal WHO, kill WHO, revive WHO, knockdown WHO S, stun WHO S, analyze WHO, speedscale F.");
             return;
         }
         if (verb == "speedscale")
@@ -744,8 +749,24 @@ public sealed partial class FakeServer
                 }
                 replies.Add("Dealt " + amount + " " + words[2] + " damage to " + target.Name + ".");
                 break;
+            case "wound":
+                // the real server's "wound WHO ZONE TYPE SEVERITY"; here only that the limb has a wound (tg's wound outline on the doll)
+                int woundZone = words.Length >= 3 ? Array.IndexOf(HealthZones.Zones, words[2]) : -1;
+                if (woundZone < 0 || words.Length > 5)
+                {
+                    replies.Add("Usage: wound WHO ZONE [TYPE SEVERITY] (zones: head chest l_arm r_arm l_leg r_leg).");
+                    break;
+                }
+                target.Wounded[woundZone] = true;
+                // tg's compound fracture (blunt critical, bones.dm: disabling = TRUE) paralyses an arm or a leg (can_be_disabled): doll key 7
+                if (words.Length == 5 && words[3] == "blunt" && words[4] == "critical" && woundZone >= 2)
+                    target.Disabled[woundZone] = true;
+                replies.Add(target.Name + "'s " + HealthZones.ZoneName(words[2]) + " is wounded.");
+                break;
             case "heal":
             case "fullheal":
+                Array.Clear(target.Wounded);
+                Array.Clear(target.Disabled);
                 Array.Clear(target.Damage);
                 target.Overall = 0;
                 replies.Add("You feel fine.");
@@ -809,14 +830,14 @@ public sealed partial class FakeServer
         Mob p = _mobs[0];
         var keys = new string[6];
         for (int i = 0; i < 6; i++)
-            keys[i] = HealthZones.Zones[i] + (p.Dead ? "DEAD" : Level(p.Damage[i], ZoneMax[i]).ToString(CultureInfo.InvariantCulture));
-        string signature = string.Join('|', keys);
+            keys[i] = HealthZones.Zones[i] + (p.Disabled[i] ? "7" : p.Dead ? "DEAD" : Level(p.Damage[i], ZoneMax[i]).ToString(CultureInfo.InvariantCulture));
+        string signature = string.Join('|', keys) + "|" + string.Join(',', p.Wounded);
         if (signature != _dollSignature || initial)
         {
             _dollSignature = signature;
             var root = new AppearanceEntry { Icon = PrivateResource(ScreenGenIcon), IconState = PrivateString("healthdoll"), Layer = 20f };
-            foreach (string key in keys)
-                root.Overlays.Add(Leaf(ScreenGenIcon, key, 255, 20.1f));
+            for (int i = 0; i < 6; i++)
+                root.Overlays.Add(p.Wounded[i] ? WoundedLimb(keys[i]) : Leaf(ScreenGenIcon, keys[i], 255, 20.1f));
             _screen[DollId] = new ScreenEntry(DollId, PrivateAppearance(root), "EAST-1:28,CENTER-2:17");
         }
         double frac = p.Dead ? 1.0 : (Enumerable.Range(0, 6).Sum(i => (double)p.Damage[i]) + p.Overall) / ZoneMax.Sum();
@@ -828,6 +849,61 @@ public sealed partial class FakeServer
         else
             _screen.Remove(FullscreenId);
         _screen[IntentId] = new ScreenEntry(IntentId, Leaf(ScreenGenIcon, p.Run ? "running" : "walking", 255, 20f), "EAST-2:26,SOUTH:5");
+        // tg's human HUD (hud/human.dm): the zone selector (HUD_GROUP_STATIC, ui_zonesel) with the selected zone as its overlay (the client shows it
+        // in cursor mode only), and the combat toggle (HUD_GROUP_INFO, ui_acti) whose icon state follows combat mode
+        if (p.ZoneSelected != _zoneShown || initial)
+        {
+            _zoneShown = p.ZoneSelected;
+            var selector = new AppearanceEntry { Icon = PrivateResource(HudIcon), IconState = PrivateString("zone_sel"), Layer = 20f };
+            selector.Overlays.Add(Leaf(ScreenGenIcon, p.ZoneSelected, 255, 20.1f));
+            _screen[ZoneSelId] = new ScreenEntry(ZoneSelId, PrivateAppearance(selector), "EAST-1:28,SOUTH:5") { Group = HudGroup.Static };
+        }
+        _screen[CombatId] = new ScreenEntry(CombatId, Leaf(HudIcon, p.Combat ? "combat" : "combat_off", 255, 20f), "EAST-3:24,SOUTH:5") { Group = HudGroup.Info };
+    }
+
+    // A wounded limb (tg's healthdoll/human, screen_objects.dm:1031): the "wound_outline" filter, a #FF0033 outline of size 1.2; tg pulses its
+    // alpha from 0 to 200 and back, the fake shows it steady at 200
+    private TableRef WoundedLimb(string state)
+    {
+        var limb = new AppearanceEntry { Icon = PrivateResource(ScreenGenIcon), IconState = PrivateString(state), Layer = 20.1f };
+        limb.Filters = new List<FilterEntry> { new() { Kind = FilterKind.Outline, Size = 1.2f, Rgba = 0xFF0033C8 } };
+        return PrivateAppearance(limb);
+    }
+
+    private string _zoneShown;
+
+    // tg's zone_sel/get_zone_at: the zone under a pixel of the selector's icon, or null
+    private static string ZoneSelAt(int x, int y) => y switch
+    {
+        >= 1 and <= 9 => x switch { >= 10 and <= 15 => "r_leg", >= 17 and <= 22 => "l_leg", _ => null },
+        >= 10 and <= 13 => x switch { >= 8 and <= 11 => "r_arm", >= 12 and <= 20 => "groin", >= 21 and <= 24 => "l_arm", _ => null },
+        >= 14 and <= 22 => x switch { >= 8 and <= 11 => "r_arm", >= 12 and <= 20 => "chest", >= 21 and <= 24 => "l_arm", _ => null },
+        >= 23 and <= 30 when x is >= 12 and <= 20 => y switch
+        {
+            >= 23 and <= 24 when x is >= 15 and <= 17 => "mouth",
+            26 when x is >= 14 and <= 18 => "eyes",
+            >= 25 and <= 27 when x is >= 15 and <= 17 => "eyes",
+            _ => "head",
+        },
+        _ => null,
+    };
+
+    // A click on the zone selector selects the zone under its pixel; one on the combat toggle switches combat mode (tg's Click procs).
+    private bool HudClick(Mob player, ActionMessage a, List<string> replies)
+    {
+        if (a.EffectiveTargetKind != TargetKind.Screen)
+            return false;
+        if (a.Target == ZoneSelId)
+        {
+            if (ZoneSelAt(a.IconX, a.IconY) is string zone)
+                player.ZoneSelected = zone;
+            return true;
+        }
+        if (a.Target != CombatId)
+            return false;
+        player.Combat = !player.Combat;
+        replies.Add(player.Combat ? "You are now in combat mode." : "You are no longer in combat mode.");
+        return true;
     }
 
     private TableRef Leaf(string icon, string state, byte alpha, float layer)
@@ -1531,6 +1607,15 @@ public sealed partial class FakeServer
         public bool IsStatic;
         public bool Run = true;
         public bool Combat;
+
+        /// <summary>The body zones (<see cref="HealthZones.Zones"/>) with a wound: their doll limb carries tg's wound outline.</summary>
+        public readonly bool[] Wounded = new bool[6];
+
+        /// <summary>The body zones disabled (paralysed by a compound fracture): their doll state is tg's key 7.</summary>
+        public readonly bool[] Disabled = new bool[6];
+
+        /// <summary>tg's <c>mob.zone_selected</c> (the chest by default).</summary>
+        public string ZoneSelected = "chest";
         public bool Dead;
         public readonly int[] Damage = new int[6];
 

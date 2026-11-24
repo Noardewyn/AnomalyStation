@@ -15,7 +15,7 @@ public class GameClientV2Tests
         Assert.Same(replica, world.Client.Replica);
         Assert.True(replica.Own.HasMotion);
         Assert.Equal(FakeServer.OwnId, world.Client.OwnEntity);
-        Assert.Equal(3, replica.Screen.Count);
+        Assert.Equal(5, replica.Screen.Count); // the doll, the indicator, the move intent, the zone selector and the combat toggle
         Assert.NotEmpty(replica.Appearances);
         Assert.True(replica.IsSolid(1, 1, 1));
         Assert.False(replica.IsSolid(5, 5, 1));

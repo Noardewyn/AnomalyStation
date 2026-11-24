@@ -202,7 +202,7 @@ public enum ZeroGLevel : byte
 
 public enum ColorblindMode : byte
 {
-    /// <summary>tg's own sprite colours.</summary>
+    /// <summary>No colourblind palette: the standard ramp, green to red (<see cref="HealthZones.StandardColor"/>).</summary>
     Off,
 
     /// <summary>For red-green deficiencies (deuteranopia, protanopia): blue to orange.</summary>

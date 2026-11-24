@@ -92,8 +92,8 @@ anatomical focus (package 6).
 ## 4. Packages, in order
 
 1. **Keys** (section 3). Client only.
-2. **Live HUD** (wireframes section 2, without the hotbar): `UiTokens`, native hands, health doll with target zone,
-   combat toggle, alert chips at the top left, ping and FPS at the top right, context prompts with key chips beside the
+2. **Live HUD** (wireframes section 2, without the hotbar): `UiTokens`, native hands, the health doll (injuries only,
+   see below), combat toggle, alert chips at the top left, ping and FPS at the top right, context prompts with key chips beside the
    crosshair, the held-item card. Client only: it re-places and re-draws the screen entries the server already sends.
 3. **Belt hotbar**: keys 1 to 6 for the worn belt's contents, 7 to 9 for the pockets and the ID slot; a press takes the
    item into the active hand and a second press puts it back. Needs a typed message and server checks.
@@ -102,7 +102,37 @@ anatomical focus (package 6).
    timers inside the slots, world interact on E.
 5. **Chat** (wireframes sections 2 and 7): the palette and badge shapes, keyword pills with a tick sound, direction
    pills for speakers out of view, department tabs.
-6. **Anatomical focus** (wireframes section 4): hold Alt, hover a body part, release to lock the target zone.
+6. **Anatomical focus** (wireframes section 4): while Alt is held, the mob under the crosshair shows where its head,
+   arms, legs and body are on its sprite, so the player knows where to aim, above all on non-humanoids. It locks
+   nothing (see "Targeting" below).
+
+**Targeting** (the contributor who owns the design, 2026-11-24, correcting the wireframes' `TARGET: HEAD` and "release
+to lock"): the zone a player targets is where they look on the other mob's sprite, as the game already works. The
+health doll is not used for targeting: it only shows where the player is injured. Anatomical focus only shows where
+the parts are; it does not select or lock a zone. tg's zone selector at the bottom right is hidden in the
+first-person view for the same reason. It still shows while the cursor is free (Tab), because looking can only pick
+six zones today (head, chest, arms, legs: the click carries one of `AimZone`'s values, set as tg's `zone_selected`
+by the server before tg's click runs, DV30): eyes, mouth and groin, which tg's surgeries need, can only be chosen on
+the selector, and a ctrl-click on the doll grasps the zone it holds (DV72). Once looking can pick those three (finer
+regions on the sprite, which needs a wider `AimZone` in the protocol), the selector goes entirely.
+
+Aiming by look is to be reworked to be more accurate (the contributor, 2026-11-24, with the lead developer's
+agreement as the contributor reports it from the project's Discord: a rework is fine as long as nothing downstream
+breaks). A part that cannot be seen from where the player stands need not be targetable. It is its own package,
+built after slice B of the live HUD; its design section is added when the investigation is in.
+
+Open points on aiming by look, seen in the playtest of 2026-11-24 against a real server and not yet looked into
+(none is caused by the HUD work; they matter more now that the selector is out of sight):
+
+- From the side and the front a head or a leg aimed at is the part hit (tg still rolls its own misses). From behind,
+  the crosshair on an arm gave "chest" four times out of four, and on the screen-left leg gave "right leg" twice out
+  of four: which part wins where two overlap, and left and right in the back view, need checking in
+  `BodyZoneAim` and its server mirror for shots.
+- The prompt beside the crosshair comes from the server's answer to the hover, which uses the zone selected before
+  the look: looking at a head it read "Hug" while the click patted the head. The hover should carry the zone looked
+  at (a server change).
+- The prompts refresh only when the target changes, so they can be stale after the held item or combat mode
+  changes.
 7. **Handheld screens and schema-driven machine panels** (wireframes section 5).
 8. **Grabs and hallucination hooks** (wireframes section 6).
 
@@ -214,8 +244,7 @@ dropped (F1 is the camera mode and there is no traits data). The wireframes' "[C
   one, so it is never the line that is cut; a click line shows the mouse button bound to that click, since the game
   acts on a click only from the mouse; the block sits past whichever sight is drawn, the gun sight included, and in
   cursor mode beside the pointer; the text has a dark outline so it reads over bright scenery), `LiveHud` (which widget a screen entry is,
-  by hand index or icon state and never by position; the selected target zone from `zone_sel`'s overlay; the layout
-  of every box from `HudMetrics`). Nodes in `Hud/`: a new `LiveHudView` drawn under tg's pictures inside
+  by hand index or icon state and never by position; the layout of every box from `HudMetrics`). Nodes in `Hud/`: a new `LiveHudView` drawn under tg's pictures inside
   `HudLayer`'s root, and changes to `HudLayer`, `ChatLines` and `StatsCorner`.
 - Layout: a gap for the nine-slot hotbar (9 x 48 + 8 x 4) at the bottom centre with the hands either side (active
   72, other 56, a 2 px border on the active one) and tg's bottom slots moved into the gap until package 3; the doll
@@ -223,9 +252,12 @@ dropped (F1 is the camera mode and there is no traits data). The wireframes' "[C
   right above tg's two-row menu; alert chips in a row at the top, right of the action buttons; one "Ping | FPS" chip
   at the top right.
 - The doll: one standard ramp when no colourblind palette is chosen (level 0 green `#8FD694`, 1 to 2 yellow
-  `#FFE156`, 3 to 4 orange `#FFA62B`, 5 red `#FF4D4D`, missing dark grey, disabled red); the hatching keeps all
-  levels apart (D70). The target zone is outlined in white (amber would vanish on an orange limb); groin, eyes and
-  mouth are named in the header and outlined on the chest or head, since tg's doll has six zones.
+  `#FFE156`, 3 to 4 orange `#FFA62B`, 5 red `#FF4D4D`, missing dark grey; a disabled part keeps tg's own picture, dark
+  grey with red marks); the hatching keeps all
+  levels apart (D70) without hiding the colour: at every level most of the part shows its colour. A wound's
+  outline stays tg's pulsing red. The doll shows injuries only: no target header and no target outline (see
+  "Targeting" in section 4). tg's zone selector (`zone_sel`) is hidden in the first-person view (not drawn, not
+  clickable) and shown at tg's place while the cursor is free.
 - Every key shown comes from the bindings. `I18n.T` takes key chips and server labels as arguments only, never as
   the template (`[]` is a slot in it).
 - The fake server gains a `zone_sel`, a combat toggle, one alert and hand indices, for tests and screenshots; a new
@@ -236,7 +268,7 @@ dropped (F1 is the camera mode and there is no traits data). The wireframes' "[C
 | Slice | What | Tests (classes under `tests/Anomaly.Server.Tests`, with `&Category!=Meta`) |
 |---|---|---|
 | A | `UiTokens`, `KeyChips`, prompts beside the crosshair, the ping and FPS chip | `Client.Play.KeyChipsTests`, `Client.Play.UiTokensTests`, `Client.Play.PlayOptionsTests` |
-| B | Doll colours and panel, target zone, combat pill, the fake server's `zone_sel` and combat toggle | `Client.Play.HudTests`, `Client.Play.LiveHudTests`, `Client.Interaction.FakeInventoryTests` |
+| B | Doll colours and panel, combat pill, the fake server's combat toggle | `Client.Play.HudTests`, `Client.Play.LiveHudTests`, `Client.Interaction.FakeInventoryTests` |
 | C | Native hands, the bottom row in the hotbar gap, the held-item card | `Client.Play.LiveHudTests`, `Client.Play.HeldPoseTests`, `Client.Interaction.FakeInventoryTests` |
 | D | Alert chips at the top, tg's alert column (DV82) removed | `Client.Play.HudTests`, `Client.Play.LiveHudTests` |
 
@@ -267,7 +299,7 @@ package starts. A package is not done while one of its rows is missing.
 | Alert chips at the top left (`[ALERT: INTERNALS OFF] [GRAV: 1.0G] [293K]`) | 2 (icons), 3 (text and numbers, with the server message) | tg's action buttons are at the top left |
 | `[PING | FPS]` at the top right | 2 | |
 | Health doll at the middle right: Head, Chest, Groin, both arms, both legs; green, yellow, orange, red, dark grey for missing or prosthetic; never a percentage | 2 | tg's doll has no groin part |
-| `TARGET: HEAD` on the doll | 2 | |
+| `TARGET: HEAD` on the doll | dropped | the doll shows injuries only; targeting is where the player looks (section 4, "Targeting") |
 | `[C] COMBAT: PEACEFUL` toggle under the doll | 2 | the key is the binding (F) |
 | `[ALT] V.A.T.S.` hint under the doll | 6 | |
 | Crosshair prompts: `[LMB] Pry Airlock (Crowbar)`, `[RMB] Shove / Secondary`, `[E] Open / Strip` | 2 (LMB, RMB from the hints sent today), 3 (the held item's name), 4 (E) | |
@@ -297,9 +329,9 @@ package starts. A package is not done while one of its rows is missing.
 | Element | Package | To settle |
 |---|---|---|
 | Hold Alt (or the middle button), without pausing | 6 | Alt is push to talk while typing; the middle button swaps hands |
-| Each body part of the looked-at mob outlined: cyan hovered, amber locked, red dashed severed or damaged | 6 | the mobs are 2D sprites today; there are no part meshes |
-| A label per part with what hitting it does | 6 | where that text comes from |
-| Header with the current lock; releasing Alt on a part locks it; the doll's target follows; attacks, shots and surgery use it | 6 | |
+| Each body part of the looked-at mob outlined on its sprite: the part under the crosshair in cyan, a severed or damaged one red dashed | 6 | the mobs are 2D sprites; the regions come from the same sprite-pixel rules the game aims by (`BodyZoneAim`), so the overlay shows exactly what a click would hit; non-humanoids need their regions defined |
+| A label per part (head, arms, legs, body) | 6 | what else the label says ("Armor: High", "Slows Move Speed") has no data source today |
+| Header with the current lock; releasing Alt on a part locks it; the doll's target follows | dropped | it only shows where to aim; nothing is locked (section 4, "Targeting"). The amber "locked" outline goes with it |
 
 ### Mockup 4: items, radio and machines
 

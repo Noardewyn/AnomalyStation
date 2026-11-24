@@ -276,4 +276,40 @@ public class KeyChipsTests
         Assert.Equal(1800f - gap, mirrored.Right, 3);
         Assert.Equal(300f, mirrored.Width);
     }
+
+    [Fact]
+    public void A_right_edge_narrows_a_wide_block_beside_the_crosshair_instead_of_mirroring_it()
+    {
+        var metrics = new HudMetrics(1920, 1080, 2f);
+        float reach = 30f;
+        // without an edge a block too wide for the right goes left of the crosshair; with the doll panel's edge it stays right and ends there
+        HudRect free = KeyChips.PromptBlock(metrics, 1, 1000f, 960f, 540f, reach);
+        HudRect limited = KeyChips.PromptBlock(metrics, 1, 1000f, 960f, 540f, reach, 1284f);
+        Assert.Equal(960f + reach + UiTokens.PromptOffsetX * 2f, limited.Left, 3);
+        Assert.Equal(1284f, limited.Right, 3);
+        Assert.True(free.Width > limited.Width);
+        // with less than the least width left before the edge, the block goes left of the crosshair as it would without the panel
+        HudRect noRoom = KeyChips.PromptBlock(metrics, 1, 300f, 960f, 540f, reach, 1010f + UiTokens.PromptMinWidth * 2f - 1f);
+        Assert.Equal(960f - reach - UiTokens.PromptOffsetX * 2f, noRoom.Right, 3);
+        Assert.Equal(300f, noRoom.Width);
+        HudRect justRoom = KeyChips.PromptBlock(metrics, 1, 300f, 960f, 540f, reach, 1010f + UiTokens.PromptMinWidth * 2f);
+        Assert.Equal(1010f, justRoom.Left, 3);
+        Assert.Equal(UiTokens.PromptMinWidth * 2f, justRoom.Width, 3);
+    }
+
+    // one pixel per character, the mark two
+    private static float Measure(string s) => s.Replace(KeyChips.Ellipsis, "..").Length;
+
+    [Fact]
+    public void A_text_too_long_for_its_room_is_cut_with_an_ellipsis()
+    {
+        Assert.Equal("reinforced wall", KeyChips.Ellipsize("reinforced wall", 15f, Measure));
+        Assert.Equal("reinforced" + KeyChips.Ellipsis, KeyChips.Ellipsize("reinforced wall (wall/r wall)", 13f, Measure));
+        Assert.True(Measure(KeyChips.Ellipsize("reinforced wall (wall/r wall)", 13f, Measure)) <= 13f);
+        // a space before the cut is not kept before the mark
+        Assert.Equal("reinforced" + KeyChips.Ellipsis, KeyChips.Ellipsize("reinforced wall", 12f, Measure));
+        Assert.Equal(KeyChips.Ellipsis, KeyChips.Ellipsize("reinforced", 2f, Measure));
+        Assert.Equal(string.Empty, KeyChips.Ellipsize("reinforced", 1f, Measure));
+        Assert.Equal(string.Empty, KeyChips.Ellipsize(null, 10f, Measure));
+    }
 }

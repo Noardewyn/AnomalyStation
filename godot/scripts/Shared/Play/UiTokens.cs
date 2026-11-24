@@ -15,6 +15,9 @@ public static class UiTokens
     /// </summary>
     public static float Unit(HudMetrics metrics) => metrics.TextScale / 2f;
 
+    /// <summary>A token's colour (<c>0xRRGGBBAA</c>) as red, green and blue from 0 to 1.</summary>
+    public static Rgb ToRgb(uint rgba) => new(((rgba >> 24) & 255) / 255f, ((rgba >> 16) & 255) / 255f, ((rgba >> 8) & 255) / 255f);
+
     // ---- the palette (wireframes section 7) ----
 
     /// <summary>Common radio, soft mint.</summary>
@@ -101,6 +104,9 @@ public static class UiTokens
     /// <summary>The gap between a chip and its text.</summary>
     public const float PromptChipGap = 8f;
 
+    /// <summary>The narrowest a prompt block beside the crosshair is cut to before the doll panel; with less room there it goes left of the crosshair.</summary>
+    public const float PromptMinWidth = 100f;
+
     /// <summary>The widest a prompt block grows.</summary>
     public const float PromptMaxWidth = 560f;
 
@@ -123,4 +129,62 @@ public static class UiTokens
 
     /// <summary>The widest the balloon's line is.</summary>
     public const float BalloonWidth = 800f;
+
+    // ---- the health doll's colours (ui-overhaul.md section 6): one standard ramp when no colourblind palette is chosen ----
+
+    /// <summary>Damage level 0: green.</summary>
+    public const uint DollUnharmed = Common;
+
+    /// <summary>Levels 1 and 2: yellow.</summary>
+    public const uint DollMinor = Command;
+
+    /// <summary>Levels 3 and 4: orange.</summary>
+    public const uint DollModerate = Engineering;
+
+    /// <summary>Level 5: red. (A disabled part keeps tg's own picture: HealthZones.StandardColor.)</summary>
+    public const uint DollSevere = Security;
+
+    /// <summary>A missing part: dark grey.</summary>
+    public const uint DollMissing = 0x4A4F55FF;
+
+    /// <summary>A dead mob: near black.</summary>
+    public const uint DollDead = 0x1A1A1AFF;
+
+    /// <summary>The hatching (D70) over a light part colour: black lines, a little see-through ...</summary>
+    public const uint HatchDark = 0x000000B3;
+
+    /// <summary>... and over a dark one (a colourblind palette's worst levels): white lines, more see-through.</summary>
+    public const uint HatchLight = 0xFFFFFF99;
+
+    // ---- the doll panel at the middle right and the combat pill under it (LiveHud.Layout) ----
+
+    /// <summary>The doll's picture is this many screen pixels per tg pixel at the reference size (an integer multiple at every size).</summary>
+    public const float DollPixels = 3f;
+
+    /// <summary>The room inside the panel's edges, around the doll.</summary>
+    public const float DollPanelPad = 10f;
+
+    /// <summary>The gap between the panel and tg's right-hand column of HUD entries, and between the panel and what stands left of it (the prompts, the zone labels).</summary>
+    public const float DollPanelGap = 12f;
+
+    /// <summary>The panel's fill.</summary>
+    public const uint DollPanelBack = 0x1E242BB3;
+
+    /// <summary>The panel's corner radius.</summary>
+    public const float DollPanelRadius = 6f;
+
+    /// <summary>The gap between the panel and the combat pill.</summary>
+    public const float PillGap = 6f;
+
+    /// <summary>The least width of the doll panel and the combat pill under it, one column (room for the pill's key chip and "Peaceful").</summary>
+    public const float PillWidth = 150f;
+
+    /// <summary>The combat pill's height.</summary>
+    public const float PillHeight = 32f;
+
+    /// <summary>The combat pill's text size.</summary>
+    public const float PillFont = 18f;
+
+    /// <summary>The combat pill's fill when combat mode is on.</summary>
+    public const uint PillCombat = Security;
 }

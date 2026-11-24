@@ -7,6 +7,10 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Fixed
+
+- The crosshair now opens for the spread of firing two light guns at once in combat mode.
+
 ## [1.12.0-pre-alpha] - 2026-11-23
 
 ### Added

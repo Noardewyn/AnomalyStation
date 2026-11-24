@@ -19,7 +19,8 @@ public static class GunSight
     /// The half angle in degrees of the held gun's widest shot, null without a gun in the active hand. tg's rolls (gun.dm process_fire,
     /// _firing.dm fire_casing): the gun's spread gives a deviation of at most 0.5 x 1.4 x spread; a casing with variance replaces it by at most
     /// 0.5 x variance (a pellet's). Times the server's share (<see cref="ShotSpread"/>), as <see cref="ShotGeometry.Scatter"/> takes it.
-    /// shortcut: the dual wield penalty and the signals' bonus spread are not shown; add them if the owner asks for them.
+    /// The dual wield penalty (gun.dm:426-433, in combat mode each other light gun held adds the gun's <c>dual_wield_spread</c>) widens it too.
+    /// shortcut: the signals' bonus spread (COMSIG_MOB_FIRED_GUN) is not shown; add it if the owner asks for it.
     /// </summary>
     public static float? ConeOf(mob user)
     {
@@ -27,10 +28,24 @@ public static class GunSight
             return MechConeOf(mech);
         if (user == null || user.gc_destroyed != null || user.get_active_held_item() is not obj_item_gun gun || gun.gc_destroyed != null)
             return null;
-        float rolled = 0.5f * SpreadRollMultiplier * gun.spread;
+        float rolled = 0.5f * SpreadRollMultiplier * (gun.spread + DualWieldBonus(user, gun));
         if (gun.chambered is obj_item_ammo_casing casing && casing.variance > 0)
             rolled = 0.5f * casing.variance;
         return Math.Clamp(rolled * ShotSpread.ScaleOf(World.CurrentOrNull), 0f, 90f);
+    }
+
+    // tg: gun.dm:426-433, without can_trigger_gun's checks (a pin, a hand that can pull), which the shot itself makes
+    private static float DualWieldBonus(mob user, obj_item_gun gun)
+    {
+        if (user is not mob_living living || !Dm.truthy(living.combat_mode) || HAS_TRAIT(living, TRAIT_NO_GUN_AKIMBO))
+            return 0;
+        float bonus = 0;
+        foreach (obj_item_gun other in Dm.each<obj_item_gun>(living.held_items))
+        {
+            if (other != gun && other.weapon_weight < WEAPON_MEDIUM)
+                bonus += gun.dual_wield_spread;
+        }
+        return bonus;
     }
 
     /// <summary>

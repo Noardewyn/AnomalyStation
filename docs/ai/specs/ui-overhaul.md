@@ -355,3 +355,121 @@ package starts. A package is not done while one of its rows is missing.
 |---|---|
 | Common `#8FD694` rounded square; Security `#FF4D4D` angled octagon; Engineering `#FFA62B` striped header pill; Medical `#38D9F5` cross-notched pill; Science `#C77DFF` diamond-edged pill; Command `#FFE156` bold double-border pill; Local white on `#1E242B`, solid dark pill with a white rim | 2 (tokens), 5 (badges) |
 | Shape as well as colour tells the channels apart | 5 |
+
+## 8. Package T: aiming by look, reworked
+
+Asked for by the contributor on 2026-11-24 with the lead developer's agreement (section 4, "Targeting"): the zone a
+player targets is the body part they look at on the other mob's picture; a part that cannot be seen from where the
+player stands need not be targetable; nothing downstream may break. Built before the rest of the live HUD.
+
+### How it works today (read 2026-11-24)
+
+The crosshair's ray hits a pixel of the mob's whole picture (`PickShapes`, any pixel with alpha of 40 or more, clothes
+and held items included). `BodyZoneAim.ZoneAt` looks for the limb picture that is opaque at that pixel in the frame
+drawn (`EntityLayer.DrawnDir`); the zone rides the click or throw (`AimZone`, six values, bits 4 to 6 of the modifiers
+byte); the server's `AimAt` (`ServerHost.World.cs`) sets tg's `zone_selected` before tg's click runs, for a carbon
+target only; tg then rolls its own miss (80% the zone chosen). An aimed shot recomputes its zone on the server from
+the committed mask table (`ShotGeometry`, `Generated/BodyMasks.bin`, DV95). A hover carries no zone.
+
+### What is wrong
+
+- A. The lookup takes the first limb found in list order, not the one drawn on top. Where the legs overlap in the
+  side frames the wrong leg wins (W frame, pixel 17,5: tg draws the left leg, the lookup says right). The server's
+  mirror for shots is wrong the same way (it ignores the leg masks of tg's `handle_masking`), so the test that
+  compares the two passes while both are wrong.
+- B. A pixel of the picture that no limb covers (hair, a hat, a backpack, a held item, a coat's edge) gives no zone,
+  the server then skips `AimAt`, and tg uses whatever zone was selected before, with nothing shown. This is the likely
+  cause of an arm aimed at from behind hitting the chest, and of a leg reading as the other leg, in the playtest;
+  the probe tests of slice T0 settle it.
+- C. The hover's hints (the prompts beside the crosshair) are built from the zone of the last click, not the look.
+- D. A limb is recognised by the end of its icon state alone (`screwdriver_head` would count as a head); a picture
+  with an eight-direction overlay picks diagonal frames the server's mirror never uses; DV30's note that a lying body
+  gives no zone is out of date.
+- Looking can pick six zones only; eyes, mouth and groin need tg's zone selector.
+- Xenomorphs have tg body parts but are drawn as one picture, so they give no zone at all.
+
+### Design
+
+One zone map per picture and direction, made by the same compositing that draws the picture, so what is seen is what
+is hit: body-part pictures paint their zone in draw order, every other picture paints nothing (clothes and held items
+never block). The hitbox of a limb-built mob is its naked body (the contributor, 2026-11-24): clothes, hair, hats,
+backpacks and held items are not part of what a click or a look hits, so a ray through a pixel no body part covers
+goes on to whatever is behind, and every hit lands on a body part and carries a zone. A mob drawn as one picture
+keeps its whole picture as its hitbox. The map is cached and is also what the anatomical focus overlay draws. The
+server keeps its own table for shots (already body parts only) and the two are compared by test.
+
+The finer regions (the contributor, 2026-11-24): only regions that are real zones in tg's rules are mapped and
+drawn. Those are the head, the chest, the two arms, the two legs, and the eyes, the mouth and the groin, each where
+it sits on tg's targeting doll, whose layout is the human sprite seen from the front. Hands and feet are not
+regions: in tg a hand is part of its arm and a foot part of its leg (nothing reads tg's precise hand and foot zones
+as a selected zone), so they belong to the arm and the leg and nothing separate is shown for them.
+
+### Slices
+
+| Slice | What | Touches |
+|---|---|---|
+| T0 | Probe tests with tg's real icons: the zone at set pixels of a naked and a dressed human in each frame, the pixels with no zone, and the whole chain from a ray behind the mob to the zone | tests only |
+| T1 | A body part is recognised by its icon file, not the end of its state; the hitbox of a limb-built mob is its body parts alone; the limb-only lookup stays as it is for the comparison with the server | client only |
+| T2 | The zone map from the compositor's draw order (fixes the legs); the server's mirror reads the leg masks and its table is regenerated | client and server, no protocol change |
+| T3 | The map cached per picture and direction and offered to the overlay | client only |
+| T4 | Eyes, mouth and groin by look (three more `AimZone` values, the spare modifier bit as the high bit); the hover carries the zone so the prompts name the right action | protocol change: a release by the owner |
+| T5 | Self-targeting without the selector: the ctrl-click grasp and finer zones on the doll; then tg's zone selector goes entirely | client, after T4 |
+| T6 | Authored zone pictures for xenomorphs, then the anatomical focus overlay (package 6) | art, tools, client and server |
+
+### To settle before T4
+
+- Settled: the finer regions follow tg's targeting doll (see "Design"), so the eyes are the doll's eye pixels and
+  looking there with a screwdriver or a pen in hand is tg's eye stab, as choosing the eyes on the selector is today.
+- Settled (the contributor, 2026-11-24): the zone follows the look between clicks, so the prompt names what a click
+  will do: the hover carries the part looked at and the server sets tg's `zone_selected` from it. It does not change
+  while the player is in a timed action (any of tg's do-afters is running for that mob): a surgery step, a gun held
+  in the mouth and the like keep the zone they started with, wherever the player looks meanwhile; the look applies
+  again once the action ends. The server decides this, not the client.
+- What mobs without tg zones (simple and basic mobs, silicons) show in the overlay.
+- Xenomorphs: tg gives an adult six body parts (head, chest, two arms, two legs) and a larva two (head, chest),
+  with damage by part, but draws each caste as one picture (`alien[caste]`), so their regions have to be drawn by
+  hand per caste and direction.
+
+### Downstream, guarded by tests
+
+tg's readers of `zone_selected` (attacks, help actions and their hints, surgery, throws, the projectile's first
+zone, the self-grasp); `MeleeAimTests`, `AimedShotGameplayTests` (the client and server grids must stay equal),
+`FirstAidGameplayTests`, `HeadTraumaGameplayTests`, `DragModelTests`, the codec and protocol tests for T4; record and
+replay (the zone is a plain byte in the log); the doll's self-click (DV102) and the grasp (DV72). DV30 is updated
+with T1 and T2, and a new deviation row is added for the hover in T4.
+
+### T0 and T1 as built (2026-11-24)
+
+The probes show the frame, the pixel and the limb lookup are right for an arm aimed at from directly behind; the
+playtest's "chest" came from pixels with no zone (hair, the backpack, a sleeve edge), which the body-only hitbox
+removes. Playtested against the real server: from behind, the arm aimed at took 6 of 9 and 10 of 10 hits (the rest
+tg's own miss roll); hair, a backpack and a held item are passed through to what is behind; clothing over a limb
+still counts; a lying body, animals, a borg and a xenomorph behave as before; twelve dressed people in view cost no
+measurable frame rate.
+
+Found in review and fixed before the commit: a body drawn outside the icon square (gigantism) and a body raised or
+shifted by furniture (a stool, a bar stool, an operating table, a bed's tile, a handrail) had a hitbox that did not
+cover the drawn body; for the raised body the zone read was also several pixels off, which is older than this
+package. The hitbox and the zone now take the body's placement from the compositor.
+
+Known limits and open points:
+- Where the legs overlap seen from the side, the far leg wins (slice T2).
+- The server's mirror for shots (`ShotGeometry.Cross`) does not undo the root's `pixel_w`/`pixel_z` either, so a shot
+  at a person on a stool or an operating table reads its part several pixels off (slice T2, with the legs).
+- Not undone by the mapping: a root filter that moves pixels (displacement, wave), a limb nested in a non-limb
+  overlay with its own offset, and a flick or inset drawn in place of the mob's own appearance.
+- Body pictures that are not limbs (a lizard's snout, horns, frills, tail and spines, a moth's wings and antennae, a
+  pod person's "hair") are not in the hitbox, up to about half of such a sprite. Settled by the contributor
+  2026-11-24: they do not count; only the limbs are hit.
+- A strap or a headset pixel beside the body is passed through like any clothing, which can look like a miss.
+- Not tried in the client: the hold-right-click radial, the hover outline option, a second mob behind the hair.
+
+Seen in the playtest, older than this package:
+- tg's short-lived effects (the hit flash) take clicks; in tg they are click-through
+  (`mouse_opacity = MOUSE_OPACITY_TRANSPARENT`). A quick second attack on the chest is often lost to it. To be fixed
+  with slice T2 (the contributor, 2026-11-24).
+- The prompt's lines for one target differ between runs (combat mode with an item shows "Hug / Shove" or only
+  "Pull"; a corgi shows only "Pull" although a click pets it).
+- A bare-hand punch names no body part in chat.
+- The server logs a `NullReferenceException` in `datum._SendSignal` (`signals.cs:175`) after mobs are spawned on wall
+  tiles, and setting the cerulean or mushroom species throws.

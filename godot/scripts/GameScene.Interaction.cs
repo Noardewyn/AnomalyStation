@@ -520,7 +520,7 @@ public partial class GameScene
     private void SendThrow(ClickTarget target)
     {
         if (target.Kind == TargetKind.Entity && target.IconX != 0)
-            target = target with { Aim = _entities.AimZoneAt(target.Id, target.IconX, target.IconY) };
+            target = target with { Aim = _entities.AimZoneAt(target.Id, target.IconX, target.IconY, target.Picture) };
         if (!_session.Throw(target, _aim))
             return;
         AimedAtWorld();
@@ -537,7 +537,7 @@ public partial class GameScene
         ClickTarget aimed = target;
         // DV30: a click on a mob's picture aims at the body part under the crosshair (the server selects it as tg's zone_selected)
         if (target.Kind == TargetKind.Entity && target.IconX != 0)
-            aimed = target with { Aim = _entities.AimZoneAt(target.Id, target.IconX, target.IconY) };
+            aimed = target with { Aim = _entities.AimZoneAt(target.Id, target.IconX, target.IconY, target.Picture) };
         // version 34 (DV94): a click on the world carries the camera's aim (a gun's shot flies along the crosshair)
         bool sent = _session.Click(aimed, button, modifiers, target.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling ? aim ?? _aim : null);
         if (sent)

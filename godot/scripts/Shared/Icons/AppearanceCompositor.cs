@@ -333,6 +333,36 @@ public sealed partial class AppearanceCompositor
         public int Seq;
     }
 
+    // An entry's own transform about the centre of its icon (width x height), then, with withOffset, its pixel_x and pixel_y.
+    private static Affine Own(AppearanceEntry e, int width, int height, bool withOffset)
+    {
+        Affine own = Affine.Identity;
+        if (e.Transform != null)
+            own = Affine.Translate(-width / 2.0, -height / 2.0).Then(Affine.FromMatrix(e.Transform)).Then(Affine.Translate(width / 2.0, height / 2.0));
+        return withOffset ? own.Then(Affine.Translate(e.PixelX, e.PixelY)) : own;
+    }
+
+    /// <summary>
+    /// Package T, slice T1: where a world picture (<see cref="TryCompose(IAppearanceSource, TableRef, byte, double, out ComposedRaster, bool, bool)"/>
+    /// without the root offset) puts a point of the root's icon square, in the icon square's pixels from its lower left: the root's transform about the
+    /// middle of its icon (its own state's size, the default square without one), then its <c>pixel_w</c> and <c>pixel_z</c>; its <c>pixel_x</c> and
+    /// <c>pixel_y</c> are the placement's, not the picture's. As the picture does, an icon still loading counts as the default square. False when
+    /// the root is unknown.
+    /// </summary>
+    public bool TryRootPlacement(IAppearanceSource tables, TableRef root, out Affine placement)
+    {
+        placement = Affine.Identity;
+        if (tables == null || !tables.TryGetAppearance(root, out AppearanceEntry e))
+            return false;
+        int width = DefaultIconSize, height = DefaultIconSize;
+        string icon = e.Icon.IsNone ? null : tables.ResolveResource(e.Icon);
+        if (icon != null && _library.TryGetIconNow(icon, out IIcon source, out _)
+            && source.TryGetShown(tables.ResolveString(e.IconState) ?? string.Empty, out IIconState state))
+            (width, height) = (state.Width, state.Height);
+        placement = Own(e, width, height, false).Then(Affine.Translate(e.PixelW, e.PixelZ));
+        return true;
+    }
+
     private sealed class Run
     {
         private readonly AppearanceCompositor _owner;
@@ -400,12 +430,8 @@ public sealed partial class AppearanceCompositor
             byte dir = isRoot ? parent.Dir : (e.Dir != 0 && e.Dir != ByondDir.South ? e.Dir : parent.Dir);
 
             // Own transform about the centre of the icon, then pixel_x and pixel_y; then the parent's transform.
-            Affine own = Affine.Identity;
-            if (e.Transform != null)
-                own = Affine.Translate(-width / 2.0, -height / 2.0).Then(Affine.FromMatrix(e.Transform)).Then(Affine.Translate(width / 2.0, height / 2.0));
             // The root's own offset is the placement's (M3 R2): only a caller with no placement asks for it in the picture.
-            if (!isRoot || _rootOffset)
-                own = own.Then(Affine.Translate(e.PixelX, e.PixelY));
+            Affine own = Own(e, width, height, !isRoot || _rootOffset);
             Affine parentTransform = (flags & AppearanceFlag.ResetTransform) != 0 ? Affine.Translate(parent.ToRoot.C, parent.ToRoot.F) : parent.ToRoot;
 
             ColorMatrix ownColor = e.ColorMatrix != null ? ColorMatrix.FromList(e.ColorMatrix) : ColorMatrix.Tint(e.Rgba);

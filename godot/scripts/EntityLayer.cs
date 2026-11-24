@@ -1974,9 +1974,10 @@ public partial class EntityLayer : Node3D
 
     /// <summary>
     /// DV30 (the owner's play test, 2026-10-09): the body zone of entity <paramref name="id"/>'s picture, as it is drawn now, under tg's
-    /// (<paramref name="iconX"/>, <paramref name="iconY"/>) of a click (<see cref="BodyZoneAim"/>); None for a thing that is not a mob or has no body part there.
+    /// (<paramref name="iconX"/>, <paramref name="iconY"/>) of a click (<see cref="BodyZoneAim"/>); None for a thing that is not a mob or has no body part there
+    /// (package T, slice T1: a mob built from body parts is picked on its body alone, <see cref="CollectPickShapes"/>, so a click on it has one).
     /// </summary>
-    public AimZone AimZoneAt(long id, byte iconX, byte iconY)
+    public AimZone AimZoneAt(long id, byte iconX, byte iconY, (int X, int Y)? picture = null)
     {
         if (Textures == null || _tables == null)
             return AimZone.None;
@@ -1986,7 +1987,10 @@ public partial class EntityLayer : Node3D
                 continue;
             if (!e.Entity.IsMob() || e.Billboard == null || !e.Billboard.Visible)
                 return AimZone.None;
-            return BodyZoneAim.ZoneAt(_tables, Textures.Compositor, e.Entity.State.Appearance, e.DrawnDir, iconX, iconY);
+            // the pick's unclamped pixel when it has one: a giant's or a lying body's parts reach past the icon square the click's pixel is clamped to
+            return picture is (int x, int y)
+                ? BodyZoneAim.ZoneAtPixel(_tables, Textures.Compositor, e.Entity.State.Appearance, e.DrawnDir, x, y)
+                : BodyZoneAim.ZoneAt(_tables, Textures.Compositor, e.Entity.State.Appearance, e.DrawnDir, iconX, iconY);
         }
         return AimZone.None;
     }
@@ -2023,6 +2027,7 @@ public partial class EntityLayer : Node3D
                 PickShape picture = PickShape.StandingPicture(e.Entity.Id, surface, tx, ty, z, at.X, -at.Z, at.Y - floor, e.Billboard.Rect, e.Billboard.Raster.Image, e.Billboard.Raster.OriginX, e.Billboard.Raster.OriginY);
                 picture.OnTop = e.OnSlot; // a thing put on a rack's shelf is clicked over the rack (PickShape.OnTop)
                 picture.FacesEye = e.Billboard.FacesEye;
+                picture.HitMask = e.Entity.IsMob() ? BodyMaskOf(e) : null; // package T, slice T1: a carbon is hit on its body, not its clothes or carried things
                 into.Add(picture);
                 continue;
             }
@@ -2047,6 +2052,22 @@ public partial class EntityLayer : Node3D
             into.Add(PickShape.StandingPicture(host, PickSurface.Billboard, (int)Math.Round(hidden.Pose.X), (int)Math.Round(hidden.Pose.Y), z, at.X, -at.Z, at.Y - TileSpace.WorldY(z),
                 o.Billboard.Rect, o.Billboard.Raster.Image, o.Billboard.Raster.OriginX, o.Billboard.Raster.OriginY));
         }
+    }
+
+    // Package T, slice T1: the body-only hit mask of a mob's drawn picture (BodyZoneAim.BodyMask; null: no body parts, the whole picture is hit), made
+    // again only when the picture, the appearance or the frame changed.
+    private Raster BodyMaskOf(Entry e)
+    {
+        if (Textures == null || _tables == null)
+            return null;
+        ComposedRaster raster = e.Billboard.Raster;
+        TableRef look = e.Entity.State.Appearance;
+        if (!ReferenceEquals(raster, e.MaskRaster) || look != e.MaskLook || e.DrawnDir != e.MaskDir)
+        {
+            e.Mask = BodyZoneAim.BodyMask(_tables, Textures.Compositor, look, e.DrawnDir, raster);
+            (e.MaskRaster, e.MaskLook, e.MaskDir) = (raster, look, e.DrawnDir);
+        }
+        return e.Mask;
     }
 
     /// <summary>D288: whether the mobs' pictures cast shadows (the preset's character shadows).</summary>
@@ -2333,6 +2354,10 @@ public partial class EntityLayer : Node3D
         public bool Spinning;
         public ShaderMaterial SpinMaterial;
         public byte DrawnDir;
+        public Raster Mask; // BodyMaskOf's cache and what it was made for
+        public ComposedRaster MaskRaster;
+        public TableRef MaskLook;
+        public byte MaskDir;
         public bool HitSeen;
         public double HitStart = double.NegativeInfinity;
         public WalkSway Walk;

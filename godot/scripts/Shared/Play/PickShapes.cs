@@ -72,6 +72,12 @@ public sealed class PickShape
     /// <summary>The picture (its alpha decides a hit); null: the whole rectangle counts.</summary>
     public Raster Image;
 
+    /// <summary>
+    /// Package T, slice T1: a raster of <see cref="Image"/>'s size whose alpha decides a hit instead of the picture's (a mob built from body parts: its
+    /// body alone, <see cref="BodyZoneAim.BodyMask"/>); null: the picture's. The picture still is what is drawn and highlighted.
+    /// </summary>
+    public Raster HitMask;
+
     /// <summary>Where the atom's own 32 x 32 icon square sits in <see cref="Image"/>, from the lower left (pixels): tg's icon-x and icon-y count from it.</summary>
     public int OriginX, OriginY;
 
@@ -116,26 +122,34 @@ public sealed class PickShape
     /// icon-y of it. A standing picture is turned to the viewer about the vertical axis (its plane is vertical and square to the ray's ground track).
     /// </summary>
     public bool TryHit(in PickRay ray, double maxT, out double t, out double east, out double north, out double up, out byte iconX, out byte iconY)
+        => TryHit(ray, maxT, out t, out east, out north, out up, out iconX, out iconY, out _, out _);
+
+    /// <summary>
+    /// <see cref="TryHit(in PickRay, double, out double, out double, out double, out double, out byte, out byte)"/>, with the picture's pixel in tg's
+    /// icon coordinates before they are clamped into the icon square (<paramref name="pictureX"/>, <paramref name="pictureY"/>: a giant's or a lying
+    /// body's picture reaches past it, package T slice T1); a box gives its icon pixel.
+    /// </summary>
+    public bool TryHit(in PickRay ray, double maxT, out double t, out double east, out double north, out double up, out byte iconX, out byte iconY, out int pictureX, out int pictureY)
     {
-        t = 0;
-        east = north = up = 0;
-        iconX = iconY = 0;
-        switch (Kind)
+        if (Kind != PickShapeKind.Standing && Kind != PickShapeKind.Flat)
         {
-            case PickShapeKind.Standing:
-                return HitStanding(ray, maxT, out t, out east, out north, out up, out iconX, out iconY);
-            case PickShapeKind.Flat:
-                return HitFlat(ray, maxT, out t, out east, out north, out up, out iconX, out iconY);
-            default:
-                return HitBox(ray, maxT, out t, out east, out north, out up, out iconX, out iconY);
+            bool box = HitBox(ray, maxT, out t, out east, out north, out up, out iconX, out iconY);
+            (pictureX, pictureY) = (iconX, iconY);
+            return box;
         }
+        bool hit = Kind == PickShapeKind.Standing
+            ? HitStanding(ray, maxT, out t, out east, out north, out up, out pictureX, out pictureY)
+            : HitFlat(ray, maxT, out t, out east, out north, out up, out pictureX, out pictureY);
+        iconX = hit ? (byte)Math.Clamp(pictureX, 1, 32) : (byte)0;
+        iconY = hit ? (byte)Math.Clamp(pictureY, 1, 32) : (byte)0;
+        return hit;
     }
 
-    private bool HitStanding(in PickRay ray, double maxT, out double t, out double east, out double north, out double up, out byte iconX, out byte iconY)
+    private bool HitStanding(in PickRay ray, double maxT, out double t, out double east, out double north, out double up, out int pictureX, out int pictureY)
     {
         t = 0;
         east = north = up = 0;
-        iconX = iconY = 0;
+        pictureX = pictureY = 0;
         if (FacesEye)
         {
             // An item faces the eye: its plane is square to the camera's forward f (the ray's view; none: the ray itself, through the screen's middle),
@@ -161,7 +175,7 @@ public sealed class PickShape
             north = ray.OriginNorth + ray.DirNorth * t;
             up = ray.OriginUp + ray.DirUp * t;
             double de = east - East + fe * FacingLift, dn = north - North + fn * FacingLift, du = up - Up + fu * FacingLift;
-            return Inside(de * re + dn * rn, (de * ue + dn * un + du * uu) / hu, out iconX, out iconY);
+            return Inside(de * re + dn * rn, (de * ue + dn * un + du * uu) / hu, out pictureX, out pictureY);
         }
         double h = Math.Sqrt(ray.DirEast * ray.DirEast + ray.DirNorth * ray.DirNorth);
         if (h < 1e-9)
@@ -176,14 +190,14 @@ public sealed class PickShape
         up = ray.OriginUp + ray.DirUp * t;
         double u = (east - East) * nn + (north - North) * -ne;
         double v = up - Up;
-        return Inside(u, v, out iconX, out iconY);
+        return Inside(u, v, out pictureX, out pictureY);
     }
 
-    private bool HitFlat(in PickRay ray, double maxT, out double t, out double east, out double north, out double up, out byte iconX, out byte iconY)
+    private bool HitFlat(in PickRay ray, double maxT, out double t, out double east, out double north, out double up, out int pictureX, out int pictureY)
     {
         t = 0;
         east = north = up = 0;
-        iconX = iconY = 0;
+        pictureX = pictureY = 0;
         if (Math.Abs(ray.DirUp) < 1e-9)
             return false;
         t = (Up - ray.OriginUp) / ray.DirUp;
@@ -192,30 +206,31 @@ public sealed class PickShape
         east = ray.OriginEast + ray.DirEast * t;
         north = ray.OriginNorth + ray.DirNorth * t;
         up = Up;
-        return Inside(east - East, north - North, out iconX, out iconY);
+        return Inside(east - East, north - North, out pictureX, out pictureY);
     }
 
     // (u, v) in metres in the picture's own frame: the rectangle and the picture's opaque pixel decide, and tg's pixel within the icon square follows.
-    private bool Inside(double u, double v, out byte iconX, out byte iconY)
+    private bool Inside(double u, double v, out int pictureX, out int pictureY)
     {
-        iconX = iconY = 0;
+        pictureX = pictureY = 0;
         if (u < Rect.Left || u >= Rect.Right || v < Rect.Bottom || v >= Rect.Top)
             return false;
         double pixel = Rect.PixelSize;
-        if (Image != null)
+        Raster test = HitMask ?? Image;
+        if (test != null)
         {
             int col = (int)Math.Floor((u - Rect.Left) / pixel);
             int fromBottom = (int)Math.Floor((v - Rect.Bottom) / pixel);
-            if (col < 0 || col >= Image.Width || fromBottom < 0 || fromBottom >= Image.Height)
+            if (col < 0 || col >= test.Width || fromBottom < 0 || fromBottom >= test.Height)
                 return false;
-            int row = Image.Height - 1 - fromBottom;
-            if (Image.Pixels[(row * Image.Width + col) * 4 + 3] < BillboardMath.PickAlpha)
+            int row = test.Height - 1 - fromBottom;
+            if (test.Pixels[(row * test.Width + col) * 4 + 3] < BillboardMath.PickAlpha)
                 return false;
         }
         // The icon square's lower left corner is OriginX, OriginY pixels in from the rectangle's.
         double squareLeft = Rect.Left + OriginX * pixel, squareBottom = Rect.Bottom + OriginY * pixel;
-        iconX = (byte)Math.Clamp((int)Math.Floor((u - squareLeft) / pixel) + 1, 1, 32);
-        iconY = (byte)Math.Clamp((int)Math.Floor((v - squareBottom) / pixel) + 1, 1, 32);
+        pictureX = (int)Math.Floor((u - squareLeft) / pixel) + 1;
+        pictureY = (int)Math.Floor((v - squareBottom) / pixel) + 1;
         return true;
     }
 

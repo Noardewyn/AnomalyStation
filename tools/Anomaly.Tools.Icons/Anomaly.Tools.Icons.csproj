@@ -17,5 +17,7 @@
     <Compile Include="..\..\godot\scripts\Shared\Icons\Raster.cs" Link="ClientShared\Raster.cs" />
     <Compile Include="..\..\godot\scripts\Shared\Icons\IconSheet.cs" Link="ClientShared\IconSheet.cs" />
     <Compile Include="..\..\godot\scripts\Shared\Icons\BillboardMath.cs" Link="ClientShared\BillboardMath.cs" />
+    <!-- Package T, slice T1: the limb files, one list for the client's aim and this table. -->
+    <Compile Include="..\..\godot\scripts\Shared\Icons\LimbIcons.cs" Link="ClientShared\LimbIcons.cs" />
   </ItemGroup>
 </Project>

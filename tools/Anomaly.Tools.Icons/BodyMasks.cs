@@ -16,8 +16,8 @@ namespace Anomaly.Tools.Icons;
 /// <summary>The body-part mask table (<c>--masks FILE</c>).</summary>
 public static class BodyMaskTable
 {
-    /// <summary>The icon files read: tg's human body parts and every species' and augment's (paths under the tg clone).</summary>
-    public static readonly string[] Roots = { "icons/mob/human/bodyparts.dmi", "icons/mob/human/bodyparts_greyscale.dmi", "icons/mob/human/species", "icons/mob/augmentation" };
+    /// <summary>The icon files read: tg's human body parts and every species' and augment's (paths under the tg clone), the client's list.</summary>
+    public static readonly string[] Roots = LimbIcons.Roots;
 
     public const string Magic = "ANOMBM1\n";
 

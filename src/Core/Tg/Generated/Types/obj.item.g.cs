@@ -3128,7 +3128,7 @@ public partial class obj_item_crowbar
 }
 
 // tg: code/game/objects/items/tools/engineering/crowbar.dm:354 (the var block of a hand-written class)
-[DmPath("/obj/item/crowbar/mechremoval"), DmInert]
+[DmPath("/obj/item/crowbar/mechremoval")]
 public partial class obj_item_crowbar_mechremoval
 {
     // tg: code/game/objects/items/tools/engineering/crowbar.dm:354

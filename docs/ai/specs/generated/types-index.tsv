@@ -67259,12 +67259,12 @@ type	/obj/item/fireaxe/boardingaxe	/obj/item/fireaxe	code/game/objects/items/wea
 type	/obj/item/crowbar	/obj/item	code/game/objects/items/tools/engineering/crowbar.dm:2	live	obj_item_crowbar	1	1
 proc	/obj/item/crowbar	Initialize	code/game/objects/items/tools/engineering/crowbar.dm:33	mapload	yes	full	proc
 proc	/obj/item/crowbar	suicide_act	code/game/objects/items/tools/engineering/crowbar.dm:37	user	stub	deferred	proc
-type	/obj/item/crowbar/mechremoval	/obj/item/crowbar	code/game/objects/items/tools/engineering/crowbar.dm:354	inert	obj_item_crowbar_mechremoval	1	0
-proc	/obj/item/crowbar/mechremoval	add_stealing_item_objective	code/game/gamemodes/objective_items.dm:181		no	-	proc
-proc	/obj/item/crowbar/mechremoval	Initialize	code/game/objects/items/tools/engineering/crowbar.dm:373	mapload	no	-	proc
-proc	/obj/item/crowbar/mechremoval	update_icon_state	code/game/objects/items/tools/engineering/crowbar.dm:378		no	-	proc
-proc	/obj/item/crowbar/mechremoval	empty_mech	code/game/objects/items/tools/engineering/crowbar.dm:382	mech,user	yes	skeleton	proc root
-proc	/obj/item/crowbar/mechremoval	extra_checks	code/game/objects/items/tools/engineering/crowbar.dm:411	mech,mech_dir,mech_sleeper	yes	skeleton	proc root
+type	/obj/item/crowbar/mechremoval	/obj/item/crowbar	code/game/objects/items/tools/engineering/crowbar.dm:354	live	obj_item_crowbar_mechremoval	1	0
+proc	/obj/item/crowbar/mechremoval	add_stealing_item_objective	code/game/gamemodes/objective_items.dm:181		yes	full	proc
+proc	/obj/item/crowbar/mechremoval	Initialize	code/game/objects/items/tools/engineering/crowbar.dm:373	mapload	yes	full	proc
+proc	/obj/item/crowbar/mechremoval	update_icon_state	code/game/objects/items/tools/engineering/crowbar.dm:378		yes	full	proc
+proc	/obj/item/crowbar/mechremoval	empty_mech	code/game/objects/items/tools/engineering/crowbar.dm:382	mech,user	yes	full	proc root
+proc	/obj/item/crowbar/mechremoval	extra_checks	code/game/objects/items/tools/engineering/crowbar.dm:411	mech,mech_dir,mech_sleeper	yes	full	proc root
 type	/obj/item/crowbar/red	/obj/item/crowbar	code/game/objects/items/tools/engineering/crowbar.dm:43	live	obj_item_crowbar_red	0	1
 type	/obj/item/crowbar/red/caravan	/obj/item/crowbar/red	code/modules/mapfluff/ruins/spaceruin_code/caravanambush.dm:33	live	obj_item_crowbar_red_caravan	0	0
 type	/obj/item/crowbar/abductor	/obj/item/crowbar	code/game/objects/items/tools/engineering/crowbar.dm:48	live	obj_item_crowbar_abductor	0	0

@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL: the base crowbar's and the old crowbar's Initialize (M4a P4a); suicide_act is a live-partial stub (M10);
-// the hammer and the mech removal crowbar come after the core version; the jaws of life are gaps J5's.
+// the hammer comes after the core version; the jaws of life are gaps J5's.
 
 // tg: code/game/objects/items/tools/engineering/crowbar.dm:1
 public partial class obj_item_crowbar : obj_item
@@ -170,19 +170,70 @@ public partial class obj_item_crowbar_power : obj_item_crowbar
     }
 }
 
-// tg: code/game/objects/items/tools/engineering/crowbar.dm:382
+// tg: code/game/objects/items/tools/engineering/crowbar.dm:353
 public partial class obj_item_crowbar_mechremoval : obj_item_crowbar
 {
+    // tg: code/game/objects/items/tools/engineering/crowbar.dm:373
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        transform = ((matrix)transform).Translate(0, -8);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_two_handed), Dm.named("force_unwielded", 5f), Dm.named("force_wielded", 19f), Dm.named("icon_wielded", Dm.text("[]1", base_icon_state))));
+        return dot;
+    }
+
+    // tg: code/game/objects/items/tools/engineering/crowbar.dm:378
+    public override async DmTask<object> update_icon_state(params object[] __extra)
+    {
+        icon_state = Dm.text("[]0", base_icon_state);
+        return await base.update_icon_state(__extra);
+    }
+
     // tg: code/game/objects/items/tools/engineering/crowbar.dm:382
     public virtual async DmTask empty_mech(obj_vehicle_sealed_mecha mech = null, mob user = null)
     {
-        Dm.NotTranslated("code/game/objects/items/tools/engineering/crowbar.dm:382", "empty_mech: mechs (after the core version)");
+        if (!HAS_TRAIT(this, TRAIT_WIELDED))
+        {
+            mech.balloon_alert(user, I18n.T("not wielded!"));
+            return;
+        }
+        obj_item_mecha_parts_mecha_equipment_sleeper mech_sleeper = Dm.locate<obj_item_mecha_parts_mecha_equipment_sleeper>(mech);
+        if ((!Dm.truthy(LAZYLEN(mech.occupants)) || (Dm.num(LAZYLEN(mech.occupants)) == 1 && Dm.truthy(Dm.bitand(mech.mecha_flags, SILICON_PILOT)))) && (mech_sleeper == null || mech_sleeper.patient == null)) //if no occupants, or only an ai
+        {
+            mech.balloon_alert(user, I18n.T("it's empty!"));
+            return;
+        }
+        DmList log_list_before = LAZYCOPY(mech.occupants);
+        if (mech_sleeper?.patient != null)
+            Dm.append(ref log_list_before, mech_sleeper.patient);
+        user.log_message(Dm.text("tried to pry open [], located at [], which is occupied by [].", mech, loc_name(mech), log_list_before.Join(", ")), LOG_ATTACK);
+        object mech_dir = mech.dir;
+        mech.balloon_alert(user, I18n.T("prying open..."));
+        playsound(mech, Dm.resource("sound/machines/airlock/airlock_alien_prying.ogg"), 100, TRUE);
+        if (!Dm.truthy(await use_tool(mech, user as mob_living, Dm.truthy(Dm.bitand(mech.mecha_flags, IS_ENCLOSED)) ? 5 * SECONDS : 3 * SECONDS, volume: 0, extra_checks: Dm.@new<datum_callback>(this, nameof(extra_checks), mech, mech_dir, mech_sleeper))))
+        {
+            mech.balloon_alert(user, I18n.T("interrupted!"));
+            return;
+        }
+        DmList log_list_after = LAZYCOPY(mech.occupants);
+        if (mech_sleeper?.patient != null)
+        {
+            Dm.append(ref log_list_after, mech_sleeper.patient);
+            await mech_sleeper.go_out();
+        }
+        user.log_message(Dm.text("pried open [], located at [], which was occupied by [].", mech, loc_name(mech), log_list_after.Join(", ")), LOG_ATTACK);
+        foreach (mob_living occupant in Dm.each<mob_living>(SANITIZE_LIST(mech.occupants)))
+        {
+            if (isAI(occupant) || isbrain(occupant))
+                continue;
+            await mech.mob_exit(occupant);
+        }
+        playsound(mech, Dm.resource("sound/machines/airlock/airlockforced.ogg"), 75, TRUE);
     }
 
     // tg: code/game/objects/items/tools/engineering/crowbar.dm:411
     public virtual object extra_checks(obj_vehicle_sealed_mecha mech = null, object mech_dir = null, obj_item_mecha_parts_mecha_equipment_sleeper mech_sleeper = null)
     {
-        Dm.NotTranslated("code/game/objects/items/tools/engineering/crowbar.dm:411", "extra_checks: mechs (after the core version)");
-        return default;
+        return HAS_TRAIT(this, TRAIT_WIELDED) && (Dm.truthy(LAZYLEN(mech.occupants)) || mech_sleeper?.patient != null) && Dm.eq(mech.dir, mech_dir) ? TRUE : FALSE;
     }
 }

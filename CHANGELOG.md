@@ -7,6 +7,10 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Added
+
+- The mech removal tool works: two-handed (5 force in one hand, 19 wielded), and wielded it pries the pilot out of a mech.
+
 ### Fixed
 
 - The crosshair now opens for the spread of firing two light guns at once in combat mode.

@@ -559,9 +559,8 @@ public static class ShotGeometry
 
     /// <summary>
     /// DEVIATION(DV400): a shot's hit on a living mob is shown on the mob, for everyone who sees it: its picture jolts 2 pixels to a side and
-    /// back (an animation beside whatever runs on it; fixed steps, so the world's RNG is not drawn from as tg's <c>Shake</c> would), and a
-    /// carbon's hit body part (<paramref name="zone"/>, tg's <c>check_hit_limb_zone_name</c>) is lit for <see cref="HitFlashDeciseconds"/>:
-    /// the part's own cached images as one overlay over the picture, bright red.
+    /// back (an animation beside whatever runs on it; fixed steps, so the world's RNG is not drawn from as tg's <c>Shake</c> would). The hit
+    /// body part lights up from its damage (<see cref="FlashLimb"/>).
     /// </summary>
     public static void ShowHit(mob_living victim, object zone)
     {
@@ -570,7 +569,16 @@ public static class ShotGeometry
         Dm.animate(victim, Dm.named("pixel_x", 2), Dm.named("time", 0.5f), Dm.named("flags", (int)ANIMATION_PARALLEL | (int)ANIMATION_RELATIVE));
         Dm.animate(Dm.named("pixel_x", -4), Dm.named("time", 1), Dm.named("flags", ANIMATION_RELATIVE));
         Dm.animate(Dm.named("pixel_x", 2), Dm.named("time", 0.5f), Dm.named("flags", ANIMATION_RELATIVE));
-        if (victim is not mob_living_carbon carbon || !Dm.truthy(zone) || !Dm.truthy(carbon.icon_render_keys?[zone]))
+    }
+
+    /// <summary>
+    /// DEVIATION(DV400): a carbon's body part that takes brute or burn damage (any: a shot, a blow, a fall, a burn; tg's
+    /// <c>receive_damage</c>) is lit for <see cref="HitFlashDeciseconds"/>, for everyone who sees the mob: the part's own cached images as
+    /// one overlay over the picture, bright red.
+    /// </summary>
+    public static void FlashLimb(mob_living_carbon carbon, object zone)
+    {
+        if (carbon == null || QDELETED(carbon) || !Dm.truthy(zone) || !Dm.truthy(carbon.icon_render_keys?[zone]))
             return;
         if (mob_living_carbon.limb_icon_cache[carbon.icon_render_keys[zone]] is not DmList parts || parts.len == 0)
             return;
@@ -584,8 +592,8 @@ public static class ShotGeometry
             0f, 0f, 0f, 0.85f,
             1f, 0.25f, 0.2f, 0f);
         Dm.combine(ref flash.overlays, parts);
-        victim.add_overlay(flash);
-        _addtimer(Dm.@new<datum_callback>(victim, nameof(atom.cut_overlay), flash), HitFlashDeciseconds, file: "anomaly/ShotGeometry.ShowHit", line: 0);
+        carbon.add_overlay(flash);
+        _addtimer(Dm.@new<datum_callback>(carbon, nameof(atom.cut_overlay), flash), HitFlashDeciseconds, file: "anomaly/ShotGeometry.FlashLimb", line: 0);
     }
 
     // ---- the crossing (DV95) ----

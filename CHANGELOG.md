@@ -17,6 +17,7 @@ client's top-right corner, in its window title and in the first line of the serv
 ### Changed
 
 - In first person your own attacks no longer show the flying, spinning weapon sprite; others and the third-person view still see it.
+- A body part flashes red, for everyone, on any damage it takes (a blow, a fall, a burn), not only on a shot's hit.
 
 ### Fixed
 

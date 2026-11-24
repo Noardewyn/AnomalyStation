@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M7x slice B: the gun core (D175). Whole but for the suicide (handle_suicide), the traitor mail (syndicate G4a, D316: translated),
+// M7x slice B: the gun core (D175). Whole (the suicide, handle_suicide, since package T slice T4a), the traitor mail (syndicate G4a, D316: translated),
 // the fantasy bonuses (gaps GU1: translated; the fantasy component that calls them is not), the seclight and bayonet attachment points
 // and the suppressor reset (clear_suppressor): those are
 // live-partial rows (docs/ai/specs/live-partial.txt, section M7x slice B) and docs/ai/specs/not-translated.md section 47. M7x slice D: the
@@ -931,10 +931,60 @@ public partial class obj_item_gun : obj_item
     }
 
     // tg: code/modules/projectiles/gun.dm:662
+    // Package T, slice T4a: translated (a click aimed at the mouth by look reaches it, DV30).
     public virtual async DmTask<object> handle_suicide(mob_living_carbon_human user = null, mob_living_carbon_human target = null, object @params = null, object bypass_timer = null)
     {
-        Dm.NotTranslated("code/modules/projectiles/gun.dm:662", "handle_suicide: pointing a gun at a head or mouth, the 12 second do_after and the x5 shot (docs/ai/specs/not-translated.md section 47)");
-        return default;
+        if (!ishuman(user) || !ishuman(target))
+            return NONE;
+
+        if (Dm.truthy(fire_cd))
+            return NONE;
+
+        if (user == target)
+            target.visible_message(span_warning(I18n.T("[] sticks [] in [] mouth, ready to pull the trigger...", user, this, user.p_their())),
+                span_userdanger(I18n.T("You stick [] in your mouth, ready to pull the trigger...", this)));
+        else
+            target.visible_message(span_warning(I18n.T("[] points [] at []'s head, ready to pull the trigger...", user, this, target)),
+                span_userdanger(I18n.T("[] points [] at your head, ready to pull the trigger...", user, this)));
+
+        fire_cd = TRUE;
+
+        if (!Dm.truthy(bypass_timer) && (!Dm.truthy(await do_after(user, 12 * SECONDS, target)) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+        {
+            if (user != null)
+            {
+                if (user == target)
+                    user.visible_message(span_notice(I18n.T("[] decided not to shoot.", user)));
+                else if (target != null && Dm.truthy(await target.Adjacent(user)))
+                    target.visible_message(span_notice(I18n.T("[] has decided to spare []", user, target)), span_notice(I18n.T("[] has decided to spare your life!", user)));
+            }
+            fire_cd = FALSE;
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        fire_cd = FALSE;
+
+        target.visible_message(span_warning(I18n.T("[] pulls the trigger!", user)), span_userdanger(user == target ? I18n.T("You pull the trigger!") : I18n.T("[] pulls the trigger!", user)));
+
+        if (chambered?.loaded_projectile == null)
+        {
+            await shoot_with_empty_chamber(user);
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        chambered.loaded_projectile.damage *= 5;
+        if (chambered.loaded_projectile.wound_bonus != CANT_WOUND)
+            chambered.loaded_projectile.wound_bonus += 5; // much more dramatic on multiple pellet'd projectiles really
+
+        object fired = await process_fire(target, user, TRUE, @params, BODY_ZONE_HEAD);
+        if (!Dm.truthy(fired) && chambered?.loaded_projectile != null)
+        {
+            chambered.loaded_projectile.damage /= 5;
+            if (chambered.loaded_projectile.wound_bonus != CANT_WOUND)
+                chambered.loaded_projectile.wound_bonus -= 5;
+            return NONE;
+        }
+        return ITEM_INTERACT_SUCCESS;
     }
 
     // tg: code/modules/projectiles/gun.dm:707

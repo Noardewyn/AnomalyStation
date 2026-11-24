@@ -36,15 +36,14 @@ public class MeleeAimTests(ITestOutputHelper output)
         for (int y = 32; y >= 1; y--)
         {
             for (int x = 1; x <= 32; x++)
-                zones.Append(BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, (byte)x, (byte)y) switch
-                {
-                    AimZone.Head => 'H', AimZone.Chest => 'C', AimZone.LeftArm => 'l', AimZone.RightArm => 'r',
-                    AimZone.LeftLeg => 'L', AimZone.RightLeg => 'R', _ => '.',
-                });
+                zones.Append(BodyZoneRegionTests.Letter(BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, (byte)x, (byte)y)));
             zones.Append('\n');
         }
         output.WriteLine(zones.ToString());
-        Assert.Equal(AimZone.Head, BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, 16, 27));
+        // package T, slice T4a: (16, 27) is tg's eyes (get_zone_at: rows 25 to 27, columns 15 to 17), the head above them (16, 29) and beside them
+        Assert.Equal(AimZone.Eyes, BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, 16, 27));
+        Assert.Equal(AimZone.Head, BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, 16, 29));
+        Assert.Equal(AimZone.Head, BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, 13, 26));
         Assert.Equal(AimZone.Chest, BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, 16, 18));
         // seen from the front (south), the mob's right side is on the viewer's left
         string text = zones.ToString();
@@ -73,7 +72,7 @@ public class MeleeAimTests(ITestOutputHelper output)
         int standingHead = 0;
         for (int y = 1; y <= 32; y++)
             for (int x = 1; x <= 32; x++)
-                if (BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, (byte)x, (byte)y) == AimZone.Head)
+                if (BodyZoneMap.LimbOf(BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, (byte)x, (byte)y)) == AimZone.Head) // slice T4a: its eyes and mouth too
                     standingHead++;
         using (w.World.Enter())
             Waiting.NoSleep(bobMob.set_resting(Dm.TRUE, Dm.TRUE));
@@ -87,12 +86,15 @@ public class MeleeAimTests(ITestOutputHelper output)
             {
                 AimZone zone = BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, 2, (byte)x, (byte)y);
                 zones.Add(zone);
-                if (zone == AimZone.Head)
+                if (BodyZoneMap.LimbOf(zone) == AimZone.Head)
                     lyingHead++;
             }
         // The turned picture still offers every zone, and the head is about as large as it was (nearest sampling of a quarter turn is exact).
         Assert.Contains(AimZone.Head, zones);
+        Assert.Contains(AimZone.Eyes, zones);
+        Assert.Contains(AimZone.Mouth, zones);
         Assert.Contains(AimZone.Chest, zones);
+        Assert.Contains(AimZone.Groin, zones);
         Assert.Contains(AimZone.LeftLeg, zones);
         Assert.InRange(lyingHead, standingHead * 3 / 4, standingHead * 5 / 4 + 1);
     }
@@ -142,6 +144,63 @@ public class MeleeAimTests(ITestOutputHelper output)
         Assert.Equal(BODY_ZONE_CHEST, aliceMob.zone_selected);
         Assert.True(Brute(w, bobMob) > beforePunches, "the punches hurt (tg's species harm)");
         output.WriteLine($"brute {before} -> {beforePunches} -> {Brute(w, bobMob)}");
+    }
+
+    /// <summary>
+    /// Package T, slice T4a (protocol 95): a click aimed at the eyes, the mouth or the groin selects tg's precise zone through tg's own zone selector,
+    /// which the clicker's HUD then draws; and tg's own branches read it: a screwdriver aimed at the head hits the head, aimed at the eyes it is tg's
+    /// eye stab (<c>/datum/element/eyestab</c>, COMSIG_ITEM_ATTACK when <c>zone_selected</c> is <c>BODY_ZONE_PRECISE_EYES</c>), which hurts the eyes.
+    /// </summary>
+    [Fact]
+    public void A_click_on_the_eyes_mouth_or_groin_selects_tgs_precise_zone_and_a_screwdriver_in_the_eyes_is_tgs_eye_stab()
+    {
+        using var w = new RealHeadlessWorld(new LoopbackOptions { Seed = 7, TimeoutSteps = 400 });
+        RealHeadlessWorld.Player alice = w.Join("Alice");
+        RealHeadlessWorld.Player bob = w.Join("Bob");
+        mob_living aliceMob = w.MobOf(alice);
+        var bobMob = (mob_living_carbon_human)w.MobOf(bob);
+        w.Run(10);
+        using (w.World.Enter())
+            Waiting.NoSleep(bobMob.forceMove(get_step(aliceMob, 4)));
+        w.Run(10);
+        Assert.False(Dm.truthy(aliceMob.combat_mode));
+        ScreenEntry selector = alice.Session.Replica.Screen.Values.Single(e => In(w, () => w.World.Objects.TryGet(e.Id, out object o) && o is atom_movable_screen_zone_sel));
+
+        // an empty hand, out of combat mode (tg's help): each precise zone is selected, and Alice's HUD selector draws it (tg's overlay of that state)
+        foreach ((AimZone zone, string tg) in new[] { (AimZone.Eyes, BODY_ZONE_PRECISE_EYES), (AimZone.Mouth, BODY_ZONE_PRECISE_MOUTH), (AimZone.Groin, BODY_ZONE_PRECISE_GROIN) })
+        {
+            Assert.True(alice.Session.Click(new ClickTarget(TargetKind.Entity, bobMob.dm_id, 0, 0, 0, 16, 26, zone), ClickButton.Left, ClickModifiers.None));
+            w.Run(20);
+            Assert.Equal(tg, In(w, () => aliceMob.zone_selected));
+            ScreenEntry shown = alice.Session.Replica.Screen[selector.Id];
+            Assert.True(alice.Session.Replica.TryGetAppearance(shown.Appearance, out AppearanceEntry look));
+            Assert.Contains(look.Overlays, o => alice.Session.Replica.TryGetAppearance(o, out AppearanceEntry overlay) && alice.Session.Replica.ResolveString(overlay.IconState) == tg);
+        }
+
+        // a screwdriver: at the head, tg's attack (no eye stab: the eyes are unhurt); at the eyes, tg's eye stab
+        using (w.World.Enter())
+            DevCommands.Give(aliceMob, "/obj/item/screwdriver");
+        w.Run(10);
+        Assert.IsType<obj_item_screwdriver>(In(w, () => aliceMob.get_active_held_item()));
+        var eyes = In(w, () => bobMob.get_organ_slot(ORGAN_SLOT_EYES) as obj_item_organ_eyes);
+        Assert.NotNull(eyes);
+        Assert.Equal(0f, In(w, () => Dm.num(eyes.damage)));
+        float before = Brute(w, bobMob);
+        Assert.True(alice.Session.Click(new ClickTarget(TargetKind.Entity, bobMob.dm_id, 0, 0, 0, 16, 29, AimZone.Head), ClickButton.Left, ClickModifiers.None));
+        w.Run(20);
+        Assert.Equal(BODY_ZONE_HEAD, In(w, () => aliceMob.zone_selected));
+        Assert.True(Brute(w, bobMob) > before, "the screwdriver hit him (tg's attacked_by)");
+        Assert.Equal(0f, In(w, () => Dm.num(eyes.damage)));
+        Assert.True(alice.Session.Click(new ClickTarget(TargetKind.Entity, bobMob.dm_id, 0, 0, 0, 16, 27, AimZone.Eyes), ClickButton.Left, ClickModifiers.None));
+        w.Run(20);
+        Assert.Equal(BODY_ZONE_PRECISE_EYES, In(w, () => aliceMob.zone_selected));
+        Assert.InRange(In(w, () => Dm.num(eyes.damage)), 2f, 4f); // eyestab.dm: apply_organ_damage(rand(2, 4))
+    }
+
+    private static T In<T>(RealHeadlessWorld w, Func<T> f)
+    {
+        using (w.World.Enter())
+            return f();
     }
 
     private static float Brute(RealHeadlessWorld w, mob_living mob)

@@ -14,7 +14,7 @@ namespace Anomaly.Server.Tests.Integration;
 /// <summary>
 /// Package T (docs/ai/specs/ui-overhaul.md section 8), slices T0 and T1: what aiming by look finds on tg's real human pictures, through a
 /// real headless world and tg's converted icons, and the body-only hit mask of a mob built from body parts. The zone grids are printed
-/// so a run's log shows them (H head, C chest, l/r left/right arm, L/R left/right leg, '.' none; '#' a drawn pixel no body part covers,
+/// so a run's log shows them (H head, E eyes, M mouth, C chest, G groin, l/r left/right arm, L/R left/right leg, '.' none; '#' a drawn pixel no body part covers,
 /// which the mask leaves out).
 /// </summary>
 public class BodyZoneProbeTests(ITestOutputHelper output)
@@ -86,7 +86,7 @@ public class BodyZoneProbeTests(ITestOutputHelper output)
             Func<int, int, AimZone> top = TopPart(tables, look, dir);
             for (int y = 1; y <= 32; y++)
                 for (int x = 1; x <= 32; x++)
-                    Assert.True(top(x, y) == BodyZoneAim.ZoneAt(tables, compositor, look, dir, (byte)x, (byte)y),
+                    Assert.True(top(x, y) == BodyZoneMap.LimbOf(BodyZoneAim.ZoneAt(tables, compositor, look, dir, (byte)x, (byte)y)), // slice T4a: eyes, mouth, groin are their limb's
                         $"dir {dir} at {x},{y}: drawn on top {top(x, y)}, found {BodyZoneAim.ZoneAt(tables, compositor, look, dir, (byte)x, (byte)y)}");
         }
 
@@ -447,7 +447,7 @@ public class BodyZoneProbeTests(ITestOutputHelper output)
                     continue;
                 // the click there names the part drawn on top at that pixel (slice T2: the near leg where the legs overlap in a side frame)
                 AimZone clicked = Clicked(tables, compositor, shape, look, dir, x, y);
-                Assert.True(onTop(x, y) == clicked, $"dir {dir} at {x},{y}: the click names {clicked}, drawn on top there: {onTop(x, y)}");
+                Assert.True(onTop(x, y) == BodyZoneMap.LimbOf(clicked), $"dir {dir} at {x},{y}: the click names {clicked}, drawn on top there: {onTop(x, y)}");
             }
             output.WriteLine($"  dir {dir}: picture {picture.Image.Width}x{picture.Image.Height} at {picture.OriginX},{picture.OriginY}: body {bodyPixels}, missing {missing}, not on the body {extra}");
             Assert.Equal((0, 0), (missing, extra));
@@ -631,11 +631,7 @@ public class BodyZoneProbeTests(ITestOutputHelper output)
         return text.ToString();
     }
 
-    private static char Letter(AimZone zone) => zone switch
-    {
-        AimZone.Head => 'H', AimZone.Chest => 'C', AimZone.LeftArm => 'l', AimZone.RightArm => 'r',
-        AimZone.LeftLeg => 'L', AimZone.RightLeg => 'R', _ => '.',
-    };
+    private static char Letter(AimZone zone) => BodyZoneRegionTests.Letter(zone); // slice T4a: E eyes, M mouth, G groin too
 
     private static (Tables, AppearanceCompositor, TableRef) Picture(RealHeadlessWorld.Player viewer, mob_living mob)
     {

@@ -190,7 +190,9 @@ public static class ProtocolVersion
     /// crosshair.
     /// Version 93 (DV585): the keybinding code <see cref="KeybindingCode.Scoreboard"/>, the deathmatch scoreboard held on a key.
     /// Version 94 (D347): the magic of <see cref="Hello"/> is <c>"ANOM"</c>, no longer <c>"SS3D"</c>.
-    public const ushort Current = 94;
+    /// Version 95 (package T, slice T4a, DV30; Codec.V95.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
+    /// <see cref="AimZone.Mouth"/> and <see cref="AimZone.Groin"/>, the modifiers byte's spare bit 3 its high bit.
+    public const ushort Current = 95;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

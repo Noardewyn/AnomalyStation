@@ -102,6 +102,30 @@ public class AimedShotGameplayTests(ITestOutputHelper output)
         }
     }
 
+    /// <summary>
+    /// Package T, slice T4a: a click aimed at the eyes selects tg's <c>BODY_ZONE_PRECISE_EYES</c>, which the shot's first <c>def_zone</c> takes (tg's
+    /// <c>zone_selected</c>); the line crosses Bob's head on the server's six-zone mirror (DV95, ShotGeometry.Nearest puts that zone in its place, and
+    /// tg's check_zone would read the eyes as the head too): the head burns and nothing else.
+    /// </summary>
+    [Fact]
+    public void A_shot_aimed_at_the_eyes_burns_the_head()
+    {
+        (RealHeadlessWorld w, RealHeadlessWorld.Player alice, _, mob_living_carbon_human bobMob) = Range(35);
+        using (w)
+        {
+            var aliceMob = (mob_living_carbon_human)w.MobOf(alice);
+            (double bx, double by) = In(w, () => LocomotionSeam.TryGetState(w.World, bobMob.dm_id, out Anomaly.Core.Motion.MotionState s, out _)
+                ? (s.X / 256.0, s.Y / 256.0) : (Dm.num(bobMob.x), Dm.num(bobMob.y)));
+            ShotAim aim = AimAt(alice, bx, by, 26.5 * 0.05); // the eyes' middle row, tg's icon-y 26
+            Assert.True(alice.Session.Click(new ClickTarget(TargetKind.Entity, bobMob.dm_id, 0, 0, 0, 16, 26, AimZone.Eyes), ClickButton.Left, ClickModifiers.None, aim));
+            w.Run(10);
+            Assert.Equal(BODY_ZONE_PRECISE_EYES, In(w, () => aliceMob.zone_selected));
+            Assert.True(Burn(w, bobMob, BODY_ZONE_HEAD) > 0, "the head burns");
+            foreach (string zone in new[] { BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG })
+                Assert.Equal(0f, Burn(w, bobMob, zone));
+        }
+    }
+
     [Fact]
     public void A_shot_aimed_beside_the_body_flies_past_it_to_the_wall_behind()
     {
@@ -199,7 +223,8 @@ public class AimedShotGameplayTests(ITestOutputHelper output)
             for (int y = 1; y <= 32; y++)
                 for (int x = 1; x <= 32; x++)
                 {
-                    AimZone client = BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, dir, (byte)x, (byte)y);
+                    // slice T4a: the client's eyes, mouth and groin are the head's and the chest's (tg's deprecise_zone); the server's shot reads limbs (DV95)
+                    AimZone client = BodyZoneMap.LimbOf(BodyZoneAim.ZoneAt(tables, compositor, seen.State.Appearance, dir, (byte)x, (byte)y));
                     string server = In(w, () => ShotGeometry.ZoneAt(bobMob, dir, x, y));
                     Assert.True(Same(client, server), $"dir {dir} at {x},{y}: the client finds {client}, the server {server ?? "none"}");
                     compared++;

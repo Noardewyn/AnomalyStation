@@ -1987,10 +1987,12 @@ public partial class EntityLayer : Node3D
                 continue;
             if (!e.Entity.IsMob() || e.Billboard == null || !e.Billboard.Visible)
                 return AimZone.None;
-            // the pick's unclamped pixel when it has one: a giant's or a lying body's parts reach past the icon square the click's pixel is clamped to
-            return picture is (int x, int y)
-                ? BodyZoneAim.ZoneAtPixel(_tables, Textures.Compositor, e.Entity.State.Appearance, e.DrawnDir, x, y)
-                : BodyZoneAim.ZoneAt(_tables, Textures.Compositor, e.Entity.State.Appearance, e.DrawnDir, iconX, iconY);
+            // the pick's unclamped pixel when it has one: a giant's or a lying body's parts reach past the icon square the click's pixel is clamped to;
+            // package T, slice T4a: a lookup in the frame's cached zone map (ZoneMapOf)
+            (int X, int Y)? at = picture;
+            if (at == null && iconX != 0 && iconY != 0)
+                at = (iconX, iconY);
+            return at is (int x, int y) ? BodyZoneAim.ZoneAtPixel(_tables, Textures.Compositor, e.Entity.State.Appearance, ZoneMapOf(e), x, y) : AimZone.None;
         }
         return AimZone.None;
     }
@@ -2065,15 +2067,26 @@ public partial class EntityLayer : Node3D
     private Raster BodyMaskOf(Entry e)
     {
         if (Textures == null || _tables == null)
+            return null; // as before slice T4a: no cached mask without the tables it was made from
+        ZoneMapOf(e);
+        return e.Mask;
+    }
+
+    // Package T, slice T4a: the zone map of a mob's drawn frame (BodyZoneAim.ZoneMap: the zone of each pixel, the eyes, mouth and groin included; null: no
+    // body parts) and the hit mask made from it, made again only when the picture, the appearance or the frame changed.
+    private BodyZoneMap ZoneMapOf(Entry e)
+    {
+        if (Textures == null || _tables == null)
             return null;
-        ComposedRaster raster = e.Billboard.Raster;
+        ComposedRaster raster = e.Billboard?.Raster;
         TableRef look = e.Entity.State.Appearance;
         if (!ReferenceEquals(raster, e.MaskRaster) || look != e.MaskLook || e.DrawnDir != e.MaskDir)
         {
-            e.Mask = BodyZoneAim.BodyMask(_tables, Textures.Compositor, look, e.DrawnDir, raster);
+            e.ZoneMap = BodyZoneAim.ZoneMap(_tables, Textures.Compositor, look, e.DrawnDir);
+            e.Mask = BodyZoneAim.BodyMask(_tables, Textures.Compositor, look, raster, e.ZoneMap);
             (e.MaskRaster, e.MaskLook, e.MaskDir) = (raster, look, e.DrawnDir);
         }
-        return e.Mask;
+        return e.ZoneMap;
     }
 
     /// <summary>D288: whether the mobs' pictures cast shadows (the preset's character shadows).</summary>
@@ -2360,7 +2373,8 @@ public partial class EntityLayer : Node3D
         public bool Spinning;
         public ShaderMaterial SpinMaterial;
         public byte DrawnDir;
-        public Raster Mask; // BodyMaskOf's cache and what it was made for
+        public BodyZoneMap ZoneMap; // ZoneMapOf's cache (with Mask) and what it was made for
+        public Raster Mask;
         public ComposedRaster MaskRaster;
         public TableRef MaskLook;
         public byte MaskDir;

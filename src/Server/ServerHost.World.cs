@@ -769,6 +769,10 @@ public sealed partial class ServerHost
             AimZone.RightArm => BODY_ZONE_R_ARM,
             AimZone.LeftLeg => BODY_ZONE_L_LEG,
             AimZone.RightLeg => BODY_ZONE_R_LEG,
+            // version 95 (package T, slice T4a): the precise zones of tg's doll (get_zone_at), which tg's readers of zone_selected handle as on tg
+            AimZone.Eyes => BODY_ZONE_PRECISE_EYES,
+            AimZone.Mouth => BODY_ZONE_PRECISE_MOUTH,
+            AimZone.Groin => BODY_ZONE_PRECISE_GROIN,
             _ => null,
         };
         if (zone == null)

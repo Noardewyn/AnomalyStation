@@ -62,7 +62,8 @@ public static class LiveHud
 
     /// <summary>
     /// Whether an entry of <paramref name="role"/> is drawn and takes clicks now: tg's zone selector only while the cursor is free (cursor mode, Tab),
-    /// since looking aims at six zones only and the eyes, mouth and groin (tg's surgeries, a ctrl-click on the doll) are chosen on it; every other
+    /// where any zone, the eyes, mouth and groin included (tg's surgeries, a ctrl-click on the doll), is still chosen on it (looking aims at them too since
+    /// package T, slice T4a, and the selector shows the zone the server selected); every other
     /// entry always.
     /// </summary>
     public static bool Shown(LiveHudRole role, bool cursorMode) => role != LiveHudRole.ZoneSelector || cursorMode;

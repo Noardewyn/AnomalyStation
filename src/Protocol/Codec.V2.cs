@@ -128,6 +128,7 @@ public static partial class Codec
     //   MouseDown (15), MouseDrag (16), MouseUp (17) (version 34), MouseWheel (21, version 70: the button 1 up, 2 down):
     //                   [u8 target kind 0..3] [target unless 0] [u8 button 1..3]
     //                   [u8 modifiers: shift 1, ctrl 2, alt 4, bit 7 aim] [u8 icon-x 0..32] [u8 icon-y 0..32] [aim if bit 7]
+    //   a Click's modifiers byte bits 4-6 are its aim zone (DV30); version 95: bit 3 is the zone's high bit (Codec.V95.cs)
     //   version 34: a Click's modifiers byte bit 7 says an aim follows its icon-y (Codec.V34.cs:
     //                   [varint east] [varint north] [u16 up mm] [u16 yaw] [i16 pitch -16384..16384])
     //   Keybinding (6): [u8 code 1..13] [u8 key up 0|1]
@@ -221,7 +222,7 @@ public static partial class Codec
                 if (message.AimZone > AimZone.Last)
                     throw Bad("a click with an unknown aim zone");
                 w.WriteByte((byte)message.Button);
-                w.WriteByte((byte)((byte)message.Modifiers | ((byte)message.AimZone << 4) | (message.Aim.HasValue ? ModifierAimBit : 0)));
+                w.WriteByte((byte)((byte)message.Modifiers | ZoneBits(message.AimZone) | (message.Aim.HasValue ? ModifierAimBit : 0))); // version 95: bit 3 the zone's high bit
                 w.WriteByte(message.IconX);
                 w.WriteByte(message.IconY);
                 if (message.Aim.HasValue)
@@ -391,12 +392,12 @@ public static partial class Codec
                         throw Bad("a click with an unknown button");
                     button = (ClickButton)buttonByte;
                     byte mods = r.ReadByte();
-                    if ((mods & 0x0F & ~(byte)ClickModifiers.All) != 0)
-                        throw Bad("a click with unknown modifier bits");
-                    if (((mods >> 4) & 7) > (byte)AimZone.Last)
+                    // version 95: bit 3 is the zone's high bit (Codec.V95.cs), no longer an unknown modifier
+                    int zone = ZoneOfModifiers(mods);
+                    if (zone > (byte)AimZone.Last)
                         throw Bad("a click with an unknown aim zone");
-                    modifiers = (ClickModifiers)(mods & 0x0F);
-                    aimZone = (AimZone)((mods >> 4) & 7);
+                    modifiers = (ClickModifiers)(mods & (byte)ClickModifiers.All);
+                    aimZone = (AimZone)zone;
                     iconX = r.ReadByte();
                     iconY = r.ReadByte();
                     if (iconX > Limits.MaxIconPixel || iconY > Limits.MaxIconPixel)

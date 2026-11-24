@@ -263,7 +263,7 @@ the frame was already applied. `kind` 1 to 7 (anything else is `BadValue`). The 
 are version 4's (section 14.1; version 2 and 3 clicked `[varuint target] [u8 button] [u8 modifiers]`). A click needs a `button` of
 1 left, 2 right or 3 middle and `modifiers` within `shift = 1, ctrl = 2, alt = 4` (bit 3 and bit 7 zero); bits 4-6 of the
 modifiers byte are the body zone a click on an entity aims at (`AimZone`: 0 none, 1 head, 2 chest, 3 left arm, 4 right arm,
-5 left leg, 6 right leg; DV30), which the server selects as tg's `zone_selected` before a click on a carbon; the server checks that the target exists, is
+5 left leg, 6 right leg; DV30; version 95 adds 7 eyes, 8 mouth, 9 groin with bit 3 as the zone's high bit, section 90), which the server selects as tg's `zone_selected` before a click on a carbon; the server checks that the target exists, is
 visible to the player and is in view (section 14.1), and reach is tg's own (`Adjacent`, `ClickOn`). A dev command carries a non-null
 text of at most 200 bytes, for the server's `DEV_COMMANDS` option. Every other field must be absent or zero. At most
 `Limits.MaxActionMessageBytes` (248 since version 15, section 24) bytes, within the 256 of an inbound message.
@@ -3185,3 +3185,15 @@ mob's own count. The client draws the shooter's crosshair while a gun is held: f
 view, opened by each shot and closing again, and a hit marker when `hits` changes.
 
 Tests: `Protocol/ProtocolV92GunSightTests` (server), `M7x/GunSightTests` (core).
+
+## 90. Version 95 (package T, slice T4a: the eyes, the mouth and the groin by look)
+
+A Click's, a Throw's and a PutDown's modifiers byte: `[shift 1, ctrl 2, alt 4] [bit 3: the zone's high bit] [bits 4-6: the zone's low bits]
+[bit 7: an aim follows]`, the zone `((mods >> 4) & 7) | (mods & 8)`: `AimZone` gains 7 eyes, 8 mouth and 9 groin (tg's
+`BODY_ZONE_PRECISE_EYES`, `_MOUTH`, `_GROIN`); 10 to 15 are refused (`BadValue`). Every byte of version 94 (bit 3 zero, a zone of 0 to 6) keeps
+its meaning, so an older recording replays as it was. A hover still carries no zone, a mouse action none either (its bit 3 stays refused).
+The server checks the zone again (`ValidAction`, 0 to 9) and selects it through tg's zone selector before the click or throw on a carbon, as any
+other zone (DV30). Examples: `0x71` shift and the eyes, `0x09` shift and the mouth, `0x98` an aim and the groin, `0x29` refused (zone 10).
+
+Tests: `Protocol/ProtocolV95AimZoneTests`, `Protocol/CodecV2Tests` (server), `Integration/BodyZoneRegionTests`, `Integration/MeleeAimTests`,
+`Integration/PreciseZoneReplayTests`.

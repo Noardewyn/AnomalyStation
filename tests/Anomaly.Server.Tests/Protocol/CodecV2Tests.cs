@@ -189,7 +189,7 @@ public class CodecV2Tests
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(0).Byte(1).Byte(0).Byte(0).Byte(0)), // a click on target 0
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(0).Byte(0).Byte(0).Byte(0)), // button none
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(4).Byte(0).Byte(0).Byte(0)),
-                     Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(8).Byte(0).Byte(0)),
+                     Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(5).Byte(1).Byte(0x28).Byte(0).Byte(0)), // zone 10 (version 95: bit 3 alone, 0x08, is the mouth)
                      Craft(r => r.VarUInt(1).Byte(4).Byte(1).VarUInt(1UL << 63).Byte(1).Byte(0).Byte(0).Byte(0)),
                      Craft(r => r.VarUInt(1).Byte(4).VarUInt(5).Byte(1).Byte(0)), // a version-3 click: no target kind
                      Craft(r => r.VarUInt(1).Byte(5).Byte(0)), // a null command
@@ -371,9 +371,16 @@ public class CodecV2Tests
         Assert.Equal(new byte[] { 10, 5, 4, 1, 7, 1, 0x11, 16, 27 }, bytes);
         Assert.True(Codec.TryDecode(bytes, out ActionMessage decoded, out ProtocolError error), error.ToString());
         Assert.Equal(click, decoded);
-        bytes[6] = 0x71; // zone 7
+        // version 95 (slice T4a): zone 7 is the eyes, and bit 3 is no modifier but the zone's high bit (0x09: shift, zone 8, the mouth)
+        bytes[6] = 0x71;
+        Assert.True(Codec.TryDecode(bytes, out decoded, out error), error.ToString());
+        Assert.Equal((ClickModifiers.Shift, AimZone.Eyes), (decoded.Modifiers, decoded.AimZone));
+        bytes[6] = 0x09;
+        Assert.True(Codec.TryDecode(bytes, out decoded, out error), error.ToString());
+        Assert.Equal((ClickModifiers.Shift, AimZone.Mouth), (decoded.Modifiers, decoded.AimZone));
+        bytes[6] = 0x29; // zone 10, past the last
         Assert.False(Codec.TryDecode(bytes, out ActionMessage _, out _));
-        bytes[6] = 0x09; // bit 3 is no modifier
+        bytes[6] = 0x79; // zone 15
         Assert.False(Codec.TryDecode(bytes, out ActionMessage _, out _));
         Assert.ThrowsAny<Exception>(() => Codec.Encode(new ActionMessage(5, ActionKind.Hover, 7, ClickButton.None, ClickModifiers.None, null) { TargetKind = TargetKind.Entity, AimZone = AimZone.Head }));
     }

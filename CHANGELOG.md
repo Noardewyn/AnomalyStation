@@ -15,6 +15,8 @@ client's top-right corner, in its window title and in the first line of the serv
 - Aiming at a person hits their body, not their clothes, hair, backpack or held items, so every click on them targets the body part you aim at.
 - Aiming or shooting at a person from the side hits the leg in front where the legs overlap; shots hit a giant's head and a body moved by a handrail.
 - Attack and hit effects no longer take the next click, so a quick second attack lands on the person instead of the effect.
+- Looking at someone's eyes, mouth or groin now targets it, as on tg's targeting doll: a screwdriver aimed at the eyes stabs them.
+- A gun held to someone's mouth from the next tile is tg's twelve-second execution shot; from further away it is an ordinary shot at the head.
 
 ## [1.12.0-pre-alpha] - 2026-11-23
 

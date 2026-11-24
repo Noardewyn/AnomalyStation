@@ -529,3 +529,52 @@ T4b, the look-following prompt:
 - A click still sets the zone itself, as today, so nothing depends on the hover having arrived.
 - Bounded: a hover with a zone is rate-limited like any hover; the server validates the zone and the target as for
   a click.
+
+Found in the review of T4a and settled by the contributor (2026-11-24): with the mouth targeted, a gun fired from the
+adjacent tile reaches tg's `handle_suicide` (`gun.dm:662`: the gun pointed at the head, a 12 second do-after, then a
+shot of five times the damage, or "decided to spare"), which the port had left untranslated (`not-translated.md`
+section 47), so the click did nothing. "The gun in mouth should only work at close range like melee range, otherwise
+it should just target the closest part of the body for damage": that is tg's own rule (the branch needs the target
+adjacent; from further away the shot is an ordinary one and the server reads the mouth as the head), so
+`handle_suicide` is translated as tg has it, with T4a.
+
+Known limit of that rule, noted at the contributor's request (2026-11-24): because looking picks the zone, a gun
+fired from the adjacent tile with the crosshair on the mouth's six pixels starts the 12 second action instead of
+firing at once. In tg the player chooses the mouth on the selector beforehand, so it cannot happen by a slip of
+aim; here it can in a point-blank fight. Left as tg's behaviour; if it proves a nuisance in play, the action can be
+tied to a deliberate input instead of the look.
+
+### T4a as built (2026-11-24)
+
+Protocol 95. Playtested against the real server: from the front the eyes, the mouth and the groin select tg's
+precise zones on exactly the pixels of tg's doll (read from the zone selector's picture and from a penlight's two
+answers); from each side they sit on the three columns at the front of the face; from behind there are none; a
+bar-stool sitter's and a giant's follow the drawn face; a screwdriver on the eyes is tg's eye stab; a help click on
+a lizard's groin pulls its tail; a shot at the eyes from two tiles hits the head. The gun at the mouth from the next
+tile: the "points ... at ...'s head" line, twelve seconds with no shot, "pulls the trigger!", then 150 brute to the
+head against 30 for an ordinary point-blank shot; a laser likewise (125 burn); an unloaded pistol clicks; from two
+tiles the same aim is an ordinary shot at the head.
+
+Seen in the playtest, tg's own behaviour:
+- When the target or the shooter moves away during the twelve seconds nothing is said (tg prints the "spare" line
+  only while the target is still adjacent).
+- A click on the target during the wait clubs it with the gun (tg's click falls through to the melee attack while
+  the gun is busy).
+
+Not playtested: the eyes and the mouth of a lying person. Three knocked-down people were all drawn back up, where
+there is no face to aim at; the automated tests cover a lying body's regions. Whether a knocked-down person should
+be drawn face up more often is a separate question about the lying picture, older than this package.
+
+Lying, playtested afterwards (2026-11-24): on a limp body lying face up, seen from the side it faces, the penlight
+answered "eyes" on exactly 11 pixels (the three by three patch and the two ends of the eye line) and "mouth" on
+exactly 6, and nothing on 16 spots of the head around them; seen back up, 33 clicks on the head gave neither, and
+the lower torso selects the groin.
+
+What decides it is older than this package: a lying body that is conscious (knocked down, resting) is always drawn
+back up (`BillboardMath.ChooseLyingDir`: only a limp body, `stat != 0`, shows its front, and only to a viewer on the
+side it faces). So the eyes and the mouth of a conscious lying person, including a conscious patient on an operating
+table, cannot be picked by looking; tg's zone selector in cursor mode still can. To settle with slice T5, before the
+selector goes.
+
+Seen in that playtest, not looked into: the face of the lying face-up body was drawn as a bright white patch (the
+clicks on it still found the eyes and the mouth), and red cubes and streaks appeared around the body while clicking.

@@ -7,7 +7,8 @@ namespace Anomaly.Client.Shared;
 // The owner's play test (2026-10-09), DV30: a click on a carbon's picture aims at the body part under the crosshair. tg draws a
 // carbon from one image per body part (bodypart.dm's get_limb_icon: icon states "<limb id>_<zone>[_<gender>]", the hands
 // "<limb id>_l_hand" and "_r_hand", from one of tg's limb files, LimbIcons); the part whose own image is opaque at tg's icon-x/icon-y
-// of the click, the one drawn on top in the compositor's order (package T, slice T2), is the aimed zone. Clothing covers the parts but does not change which one is under the point.
+// of the click, the one drawn on top in the compositor's order (package T, slice T2), is the aimed zone, refined by tg's eyes, mouth and groin
+// (slice T4a, BodyZoneMap). Clothing covers the parts but does not change which one is under the point.
 
 /// <summary>Which body zone of a carbon's picture lies under a pixel of it.</summary>
 public static class BodyZoneAim
@@ -27,43 +28,64 @@ public static class BodyZoneAim
 
     /// <summary>
     /// <see cref="ZoneAt"/> at any pixel of the picture, in tg's icon coordinates not clamped to the icon square (a giant's turned picture
-    /// reaches past it: icon-y 36 is the top of its head).
+    /// reaches past it: icon-y 36 is the top of its head). Package T, slice T4a: the nine zones of <see cref="BodyZoneMap"/> (the eyes, the
+    /// mouth and the groin included; <see cref="BodyZoneMap.LimbOf"/> gives the six-zone limb).
     /// </summary>
     public static AimZone ZoneAtPixel(IAppearanceSource tables, AppearanceCompositor compositor, TableRef root, byte dir, int iconX, int iconY)
+        => ZoneAtPixel(tables, compositor, root, ZoneMap(tables, compositor, root, dir), iconX, iconY);
+
+    /// <summary><see cref="ZoneAtPixel(IAppearanceSource, AppearanceCompositor, TableRef, byte, int, int)"/> with the frame's map already made (<see cref="ZoneMap"/>, a caller's cache).</summary>
+    public static AimZone ZoneAtPixel(IAppearanceSource tables, AppearanceCompositor compositor, TableRef root, BodyZoneMap map, int iconX, int iconY)
     {
-        if (tables == null || compositor == null || root.IsNone || !tables.TryGetAppearance(root, out AppearanceEntry entry)
-            || !TryBack(tables, compositor, root, out Affine back) || !TrySource(back, iconX, iconY, out int sourceX, out int sourceY))
+        if (map == null || tables == null || compositor == null || !TryBack(tables, compositor, root, out Affine back) || !TrySource(back, iconX, iconY, out int sourceX, out int sourceY))
             return AimZone.None;
-        return Search(tables, compositor, entry, dir, sourceX, sourceY, LimbZone);
+        return map.At(sourceX, sourceY);
+    }
+
+    /// <summary>
+    /// Package T, slice T4a: the zone map of <paramref name="root"/>'s picture in direction <paramref name="dir"/>: each body part composed once,
+    /// the one drawn on top at each pixel of the untransformed icon square (slice T2's order), refined by tg's eyes, mouth and groin
+    /// (<see cref="BodyZoneMap.Build"/>). Null when the picture has no body-part pictures (a simple mob, a silicon, a xenomorph). The caller keeps
+    /// it per picture and frame.
+    /// </summary>
+    public static BodyZoneMap ZoneMap(IAppearanceSource tables, AppearanceCompositor compositor, TableRef root, byte dir)
+    {
+        if (tables == null || compositor == null || root.IsNone || !tables.TryGetAppearance(root, out AppearanceEntry entry) || entry.OverlayCount == 0)
+            return null;
+        List<TableRef> limbs = Parts(tables, entry, LimbZone);
+        if (limbs.Count == 0)
+            return null;
+        const int side = BodyZoneMap.Side;
+        var onTop = new AimZone[side * side]; // the untransformed icon square, (x - 1) + (y - 1) * side
+        foreach (TableRef reference in limbs) // the one drawn on top first
+        {
+            if (!tables.TryGetAppearance(reference, out AppearanceEntry part) || !compositor.TryCompose(tables, reference, dir, 0, out ComposedRaster limb) || limb.Image == null)
+                continue;
+            AimZone zone = LimbZone(tables.ResolveResource(part.Icon), tables.ResolveString(part.IconState));
+            for (int y = 1; y <= side; y++)
+                for (int x = 1; x <= side; x++)
+                    if (onTop[x - 1 + (y - 1) * side] == AimZone.None && OpaqueAt(limb, x, y))
+                        onTop[x - 1 + (y - 1) * side] = zone;
+        }
+        return BodyZoneMap.Build(onTop, dir);
     }
 
     /// <summary>
     /// Package T, slice T1 (docs/ai/specs/ui-overhaul.md section 8): the hit mask of a mob built from body-part pictures, for the pick: a
     /// raster of <paramref name="picture"/>'s size and origin (the composed picture of <paramref name="root"/> in direction
-    /// <paramref name="dir"/>) whose alpha is 255 on the pixels that are drawn and where <see cref="ZoneAtPixel"/> finds a body part (the
+    /// <paramref name="dir"/>) whose alpha is 255 on the pixels that are drawn and where <see cref="ZoneAtPixel(IAppearanceSource, AppearanceCompositor, TableRef, byte, int, int)"/> finds a body part (the
     /// root's placement undone: a giant's or a lying body's parts reach past the icon square, a seated one's are raised), 0 elsewhere: clothes, hair, a backpack or a held item outside the body are not hit, a body part under clothes is. Null when
     /// the picture has no body-part pictures (a simple mob, a silicon, a xenomorph): the whole picture is hit. Each body part is composed
     /// once; the caller keeps the mask per picture.
     /// </summary>
     public static Raster BodyMask(IAppearanceSource tables, AppearanceCompositor compositor, TableRef root, byte dir, ComposedRaster picture)
+        => BodyMask(tables, compositor, root, picture, ZoneMap(tables, compositor, root, dir));
+
+    /// <summary><see cref="BodyMask(IAppearanceSource, AppearanceCompositor, TableRef, byte, ComposedRaster)"/> from the frame's map already made (<see cref="ZoneMap"/>); null when it is null.</summary>
+    public static Raster BodyMask(IAppearanceSource tables, AppearanceCompositor compositor, TableRef root, ComposedRaster picture, BodyZoneMap map)
     {
-        if (tables == null || compositor == null || root.IsNone || picture?.Image == null || !tables.TryGetAppearance(root, out AppearanceEntry entry)
-            || !TryBack(tables, compositor, root, out Affine back))
+        if (map == null || tables == null || compositor == null || picture?.Image == null || !TryBack(tables, compositor, root, out Affine back))
             return null;
-        List<TableRef> limbs = Parts(tables, entry, LimbZone);
-        if (limbs.Count == 0)
-            return null;
-        const int side = AppearanceCompositor.DefaultIconSize;
-        var body = new bool[side * side]; // the untransformed icon square, (x - 1) + (y - 1) * side
-        foreach (TableRef reference in limbs)
-        {
-            if (!compositor.TryCompose(tables, reference, dir, 0, out ComposedRaster limb) || limb.Image == null)
-                continue;
-            for (int y = 1; y <= side; y++)
-                for (int x = 1; x <= side; x++)
-                    if (OpaqueAt(limb, x, y))
-                        body[x - 1 + (y - 1) * side] = true;
-        }
         Raster image = picture.Image;
         var mask = new Raster(image.Width, image.Height);
         for (int fromBottom = 0; fromBottom < image.Height; fromBottom++)
@@ -72,7 +94,7 @@ public static class BodyZoneAim
                 int alpha = ((image.Height - 1 - fromBottom) * image.Width + col) * 4 + 3;
                 // a drawn pixel only: a mob drawn see-through (invisible) is not hit where its parts are
                 if (image.Pixels[alpha] >= BillboardMath.PickAlpha && TrySource(back, col - picture.OriginX + 1, fromBottom - picture.OriginY + 1, out int sx, out int sy)
-                    && body[sx - 1 + (sy - 1) * side])
+                    && map.At(sx, sy) != AimZone.None)
                     mask.Pixels[alpha] = 255;
             }
         return mask;

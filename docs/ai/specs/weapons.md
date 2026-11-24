@@ -184,7 +184,7 @@ beside A/B (one Opus + one Sonnet at a time). F can start after A and run beside
 - Sounds/icons: none new (the effects are D165's).
 
 ### Slice B. Gun core, energy guns, pins, recharger - Opus, tg ~2.4k
-- tg: `projectiles/gun.dm` (734; all but suicide `handle_suicide` :662, mail :717-734, fantasy :136-149, attachments `add_seclight_point`/
+- tg: `projectiles/gun.dm` (734; all but mail :717-734, fantasy :136-149, attachments `add_seclight_point`/
   `add_bayonet_point`/`clear_suppressor` stay NotTranslated per ROADMAP), `ammunition/_ammunition.dm` (175), `_firing.dm` (102),
   `guns/energy.dm` (375), `guns/energy/stun.dm` (73, disabler), `energy_gun.dm` (:1-110: e_gun, hos), `laser.dm` (:1-130: laser, pistol,
   practice, carbine, carbine/practice), `special.dm` (:1-38 ionrifle, :338-360 temperature), `ammunition/energy/{_energy 13, laser 200 (the

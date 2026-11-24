@@ -23,6 +23,7 @@ client's top-right corner, in its window title and in the first line of the serv
 
 - The crosshair now opens for the spread of firing two light guns at once in combat mode.
 - Picking an item up with an empty hand in combat mode no longer plays a punch swing.
+- Character Setup's species page opens again, so the lizard and the felinid can be picked (it showed an empty window).
 
 ## [1.12.0-pre-alpha] - 2026-11-23
 

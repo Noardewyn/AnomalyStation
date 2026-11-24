@@ -186,7 +186,7 @@ public static class TguiRender
             return content;
         // silicons SI1: a box with tgui's backgroundColor (LawRack's coloured slots) is a panel of that colour around its children
         var panel = new PanelContainer();
-        StyleBoxFlat style = Flat(TguiTheme.Hex(node.Background), 4);
+        StyleBoxFlat style = Flat(TguiTheme.Named(node.Background) ?? TguiTheme.Hex(node.Background), 4);
         style.ContentMarginLeft = style.ContentMarginRight = style.ContentMarginTop = style.ContentMarginBottom = 4;
         panel.AddThemeStyleboxOverride("panel", style);
         panel.AddChild(content);
@@ -414,7 +414,7 @@ public static class TguiRender
         // a coloured item (tgui's style background: the preferences' job rows in their department's colour)
         Container item = node.Background != null ? new PanelContainer() : new MarginContainer();
         if (node.Background != null)
-            item.AddThemeStyleboxOverride("panel", Flat(TguiTheme.Hex(node.Background), 0));
+            item.AddThemeStyleboxOverride("panel", Flat(TguiTheme.Named(node.Background) ?? TguiTheme.Hex(node.Background), 0));
         item.AddChild(inner);
         if (node.Grow > 0)
         {
@@ -453,7 +453,7 @@ public static class TguiRender
     {
         var panel = new PanelContainer();
         // M10 slice F: tgui-core's StyleableSection (JobSelection's departments): its background colour, its title's text colour
-        panel.AddThemeStyleboxOverride("panel", Flat(node.Background != null ? TguiTheme.Hex(node.Background) : TguiTheme.SectionBg, 0));
+        panel.AddThemeStyleboxOverride("panel", Flat(node.Background != null ? (TguiTheme.Named(node.Background) ?? TguiTheme.Hex(node.Background)) : TguiTheme.SectionBg, 0));
         var column = new VBoxContainer();
         column.AddThemeConstantOverride("separation", 0);
         panel.AddChild(column);

@@ -45,6 +45,10 @@ OPEN_JOBS
 ## (--no-station-traits on the command line turns them off for one run). An admin plans the next round's with station-traits.
 STATION_TRAITS
 
+## D349: every ported species can be picked in Character Setup, not only tg's roundstart ones (human, felinid, lizard, moth,
+## plasmaman, ethereal, cerulean). For testing; leave it commented out for normal rounds.
+#ALL_SPECIES_ROUNDSTART
+
 ## Gaps R6 (D332): the round's clock at the real date (UTC), so tg's holidays come by the calendar (the host turns on ALLOW_HOLIDAYS)
 ## and the commendations' hearts last a real day. Comment it out for the fixed 2000-01-01 clock without holidays (--no-real-date on
 ## the command line turns it off for one run).

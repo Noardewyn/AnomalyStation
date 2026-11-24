@@ -11,7 +11,7 @@ using NVector3 = System.Numerics.Vector3;
 
 namespace Anomaly.Client;
 
-// The dev menu's Tools tab (the owner, 2026-11-06): live tuning of how things look, saved into the files the look is read from. The held things' turn,
+// The dev menu's Tools tab: live tuning of how things look, saved into the files the look is read from. The held things' turn,
 // size and move (held_items.json); a 2D thing's look in the world: standing or flat, size and move, by type (world_looks.json); a map model's
 // scale and offset (models.json).
 public partial class GameScene
@@ -30,8 +30,8 @@ public partial class GameScene
 
     private void DrawToolsTab()
     {
-        // D285: the first-person held things' tuning (ViewModel), saved into held_items.json for everyone (the owner, 2026-11-20: every thing's own
-        // place on the screen, loaded as it is picked up; every held thing's field of view, size and shift saved too)
+        // D285: the first-person held things' tuning (ViewModel), saved into held_items.json for everyone: every thing's own place on the screen,
+        // loaded as it is picked up, and every held thing's field of view, size and shift
         ImGui.SeparatorText("Held things (first person)");
         ImGui.TextDisabled("Every held thing:");
         if (ImGui.SliderFloat("All: field of view", ref ViewModel.Fov, 40f, 100f, "%.0f"))
@@ -40,23 +40,36 @@ public partial class GameScene
         var shift = new NVector3(ViewModel.Shift.X, ViewModel.Shift.Y, ViewModel.Shift.Z);
         if (ImGui.SliderFloat3("All: shift (m)", ref shift, -1f, 1f, "%.3f"))
             ViewModel.Shift = new Vector3(shift.X, shift.Y, shift.Z);
-        ViewModel.Turns.All = new HeldGlobal(ViewModel.Fov, ViewModel.Size, ViewModel.Shift.X, ViewModel.Shift.Y, ViewModel.Shift.Z);
+        ViewModel.Turns.All = ViewModel.Turns.All with { Fov = ViewModel.Fov, Size = ViewModel.Size, X = ViewModel.Shift.X, Y = ViewModel.Shift.Y, Z = ViewModel.Shift.Z };
+        ViewModel.Turns.All = ViewModel.Turns.All with { Flip = DrawFlip("All", ViewModel.Turns.All.Flip) };
+        ViewModel.Turns.All = ViewModel.Turns.All with { Attack = DrawAttack("All: attack", ViewModel.Turns.All.Attack, "tg's: a pointed thing stabs") };
         if (ImGui.Button("Reset all##heldall"))
         {
             HeldGlobal saved = ViewModel.Turns.SavedAll;
             (ViewModel.Fov, ViewModel.Size, ViewModel.Shift) = (saved.Fov, saved.Size, new Vector3(saved.X, saved.Y, saved.Z));
             ViewModel.Turns.All = saved;
+            (ViewModel.Turns.Wield, ViewModel.Turns.WieldGun) = ViewModel.Turns.SavedWield;
+            (ViewModel.Turns.WieldFlip, ViewModel.Turns.WieldGunFlip) = ViewModel.Turns.SavedWieldFlip;
+            ViewModel.Turns.WieldAttack = ViewModel.Turns.SavedWieldAttack;
             _viewModel.ApplyFov();
         }
+        // a wielded thing (tg's two_handed, Z) is held nearer the middle; its move from the rest pose, the right hand's
+        ImGui.TextDisabled("Wielded in both hands (move from the rest pose):");
+        ViewModel.Turns.Wield = DrawWieldMove("Wielded melee", ViewModel.Turns.Wield, HeldPose.WieldMelee);
+        ViewModel.Turns.WieldFlip = DrawFlip("Wielded melee", ViewModel.Turns.WieldFlip);
+        ViewModel.Turns.WieldAttack = DrawAttack("Wielded melee: attack", ViewModel.Turns.WieldAttack, "tg's: a pointed thing stabs");
+        ViewModel.Turns.WieldGun = DrawWieldMove("Wielded gun", ViewModel.Turns.WieldGun, HeldPose.WieldGun);
+        ViewModel.Turns.WieldGunFlip = DrawFlip("Wielded gun", ViewModel.Turns.WieldGunFlip);
+        ImGui.TextDisabled("A melee hit's chops and stabs are keyframed in Blender: models/held/held_swing.blend (tools/models/make_held_swing.py).");
         ImGui.Separator();
         // the active hand's thing's own turn, size and move (HeldTurns)
         if (_viewModel.ActivePicture is (string icon, string state))
-            DrawHeldTurn(icon, state, _viewModel.SecondPicture == null ? "" : "Left arm: ");
+            DrawHeldTurn(icon, state, _viewModel.SecondPicture == null ? "" : "Left arm: ", _viewModel.ActiveWielded);
         else
             ImGui.TextDisabled("This thing: nothing in the active hand");
         // DV361: in a mech the right arm's equipment is tuned beside the left's (each is drawn in its own place, mirrored)
         if (_viewModel.SecondPicture is (string icon2, string state2))
-            DrawHeldTurn(icon2, state2, "Right arm: ");
+            DrawHeldTurn(icon2, state2, "Right arm: ", false);
         ImGui.Separator();
         bool unsaved = ViewModel.Turns.Unsaved;
         if (ImGui.Button(unsaved ? "Save held things *##heldsave" : "Save held things##heldsave"))
@@ -70,7 +83,40 @@ public partial class GameScene
         DrawModelTuning();
     }
 
-    private static void DrawHeldTurn(string icon, string state, string label)
+    private static HeldOffset DrawWieldMove(string label, HeldOffset move, HeldOffset fallback)
+    {
+        var at = new NVector3(move.X, move.Y, move.Z);
+        var turn = new NVector3(move.Pitch, move.Yaw, move.Roll);
+        if (ImGui.SliderFloat3(label + ": move (m)", ref at, -0.6f, 0.6f, "%.3f"))
+            move = move with { X = at.X, Y = at.Y, Z = at.Z };
+        if (ImGui.SliderFloat3(label + ": pitch, yaw, roll", ref turn, -180f, 180f, "%.0f"))
+            move = move with { Pitch = turn.X, Yaw = turn.Y, Roll = turn.Z };
+        if (ImGui.Button("Default##" + label))
+            move = fallback;
+        return move;
+    }
+
+    // the clip a setting's melee hits play (HeldClip.Names), or none: the next setting down decides (unset is the first item)
+    private static string DrawAttack(string label, string clip, string unset)
+    {
+        string[] items = HeldClip.Names.Prepend(unset).ToArray();
+        int index = clip == null ? 0 : Array.IndexOf(HeldClip.Names, clip) + 1;
+        if (ImGui.Combo(label, ref index, items, items.Length))
+            clip = index == 0 ? null : HeldClip.Names[index - 1];
+        return clip;
+    }
+
+    // a flip of the pictures a setting covers: one click instead of three turns for a picture drawn the other way round
+    private static HeldFlip DrawFlip(string label, HeldFlip flip)
+    {
+        bool x = flip.X, y = flip.Y;
+        ImGui.Checkbox(label + ": flip left-right", ref x);
+        ImGui.SameLine();
+        ImGui.Checkbox(label + ": flip up-down", ref y);
+        return new HeldFlip(x, y);
+    }
+
+    private static void DrawHeldTurn(string icon, string state, string label, bool wielded)
     {
         ImGui.PushID(label);
         HeldTurn t = ViewModel.Turns.Find(icon, state);
@@ -90,6 +136,35 @@ public partial class GameScene
         float recoil = t.Kick; // DV96: a gun's own recoil, times the server's kick
         if (ImGui.SliderFloat("Its recoil (guns)", ref recoil, 0.05f, 3f, "%.2f"))
             ViewModel.Turns.Set(icon, state, t with { Recoil = recoil });
+        string attack = DrawAttack("Its attack", t.Attack, "the default (All: attack)");
+        if (attack != t.Attack)
+            ViewModel.Turns.Set(icon, state, t with { Attack = attack });
+        if (wielded)
+        {
+            string wieldAttack = DrawAttack("Its wielded attack", t.WieldAttack, "the default (Wielded melee: attack)");
+            if (wieldAttack != t.WieldAttack)
+                ViewModel.Turns.Set(icon, state, t with { WieldAttack = wieldAttack });
+        }
+        HeldFlip flip = DrawFlip("Its", t.Flip);
+        if (flip != t.Flip)
+            ViewModel.Turns.Set(icon, state, t with { FlipX = flip.X, FlipY = flip.Y });
+        if (wielded)
+        {
+            // this thing's own wielded move from the rest pose, in place of the common "Wielded melee" / "Wielded gun" one
+            bool gun = HeldHands.IsGunIcon(icon);
+            HeldOffset common = ViewModel.Turns.WieldOf(gun ? HeldKind.Gun : HeldKind.Long);
+            HeldFlip commonFlip = gun ? ViewModel.Turns.WieldGunFlip : ViewModel.Turns.WieldFlip;
+            bool ownWield = t.Wield != null;
+            if (ImGui.Checkbox("Its own wielded pose", ref ownWield))
+                ViewModel.Turns.Set(icon, state, t with { Wield = ownWield ? common : null, WieldFlip = ownWield ? commonFlip : default });
+            if (t.Wield is HeldOffset w)
+            {
+                HeldOffset moved = DrawWieldMove("Its wielded", w, common);
+                HeldFlip wieldFlip = DrawFlip("Its wielded", t.WieldFlip);
+                if (moved != w || wieldFlip != t.WieldFlip)
+                    ViewModel.Turns.Set(icon, state, t with { Wield = moved, WieldFlip = wieldFlip });
+            }
+        }
         if (ImGui.Button("Yaw 180"))
             ViewModel.Turns.Set(icon, state, t with { Yaw = t.Yaw == 180f ? 0f : 180f });
         ImGui.SameLine();
@@ -105,7 +180,7 @@ public partial class GameScene
         ImGui.PopID();
     }
 
-    // A 2D thing's look in the world (the owner, 2026-11-20: a pool of blood standing up, a cut-off leg too small): the picture under the crosshair
+    // A 2D thing's look in the world (a pool of blood should lie flat, a cut-off leg be big enough to see): the picture under the crosshair
     // is picked, its type's look (or an ancestor's, for all its subtypes) changed live and saved for everyone.
     private void DrawWorldLooks()
     {

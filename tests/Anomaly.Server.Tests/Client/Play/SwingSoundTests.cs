@@ -17,11 +17,16 @@ public class SwingSoundTests(ITestOutputHelper output)
         SwingKind Of(string path, bool longThing = false)
         {
             Assert.True(new ReflectionTypeSource().TryGet(path, out TypeDefaults d), path);
-            return SwingSound.KindOf(looks, d.Icon, d.StateAfterInit(null), longThing);
+            return SwingSound.KindOf(looks, d.IconAfterInit(null), d.StateAfterInit(null), longThing);
         }
         Assert.Equal(SwingKind.Sharp, Of("/obj/item/knife/kitchen"));
         Assert.Equal(SwingKind.Sharp, Of("/obj/item/claymore"));
         Assert.Equal(SwingKind.Sharp, Of("/obj/item/scalpel"));
+        Assert.Equal(SwingKind.Pointy, Of("/obj/item/screwdriver")); // tg's SHARP_POINTY: it stabs
+        Assert.Equal(SwingKind.Pointy, Of("/obj/item/spear"));
+        Assert.Equal(SwingKind.Pointy, SwingSound.KindOf(looks, "icons/obj/weapons/spear.dmi", "spearglass1", false)); // wielded
+        Assert.Equal(SwingKind.Pointy, SwingSound.KindOf(looks, "gags:/datum/greyscale_config/screwdriver|#18a2d5", "screwdriver", false)); // a random colour of it
+        Assert.Equal(SwingSound.SlashOne, SwingSound.FileOf(SwingKind.Pointy, 0));
         Assert.Equal(SwingKind.Heavy, Of("/obj/item/storage/toolbox/mechanical"));
         Assert.Equal(SwingKind.Light, Of("/obj/item/bikehorn"));
         Assert.Equal(SwingKind.Heavy, Of("/obj/item/bikehorn", longThing: true)); // a long picture swings heavy

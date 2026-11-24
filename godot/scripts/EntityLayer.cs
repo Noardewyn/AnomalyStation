@@ -462,6 +462,14 @@ public partial class EntityLayer : Node3D
     private readonly Dictionary<long, (Vector3 Point, double At)> _aimedMelee = new();
 
     /// <summary>
+    /// shortcut: an attack image is the own one when the player clicked its target within <see cref="AimedHitSeconds"/> and it starts
+    /// within a tile of the own mob (the wire does not name the attacker); a neighbour hitting the same target in that second loses theirs.
+    /// </summary>
+    private bool IsOwnAttack(long target, Vector3 start, double now)
+        => target != 0 && _aimedMelee.TryGetValue(target, out var clicked) && now - clicked.At <= AimedHitSeconds
+            && _entries.TryGetValue(_ownId, out Entry own) && new Vector2(own.Node.Position.X - start.X, own.Node.Position.Z - start.Z).Length() < TileSpace.TileSize;
+
+    /// <summary>
     /// The player clicked entity <paramref name="id"/> where the crosshair met its picture, at <paramref name="world"/> (world
     /// space): if the click hits, the burst starts there (the owner, 2026-10-10), kept relative to the picture in case it moves.
     /// </summary>
@@ -1168,6 +1176,12 @@ public partial class EntityLayer : Node3D
                 Vector3 start = new(TileSpace.WorldX((float)(melee.OriginX / 32.0)), TileSpace.WorldY(state.Z) + (float)melee.HeightPixels * TileSpace.TileSize / 32f,
                     TileSpace.WorldZ((float)(melee.OriginY / 32.0)));
                 Vector3 end = new(TileSpace.WorldX(state.X), TileSpace.WorldY(state.Z) + (float)melee.HeightAt(state.X * 32, state.Y * 32) * TileSpace.TileSize / 32f, TileSpace.WorldZ(state.Y));
+                // first person: the own attack's image is not drawn, the view model's clip shows the hit (others and the third person see it)
+                if (_hideOwn && IsOwnAttack(host, start, now))
+                {
+                    e.Node.Visible = false;
+                    continue;
+                }
                 if (host != 0 && _aimedMelee.TryGetValue(host, out var aimed) && now - aimed.At <= AimedHitSeconds)
                     end = aimed.Point;
                 else if (host != 0 && map != null && map.TryVisualAnchor(host, eye, out VisualPlacement anchor))

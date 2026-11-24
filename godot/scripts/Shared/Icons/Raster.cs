@@ -63,6 +63,22 @@ public sealed class Raster
         Pixels = pixels;
     }
 
+    /// <summary>A copy mirrored left to right (<paramref name="horizontal"/>) and/or top to bottom (<paramref name="vertical"/>).</summary>
+    public Raster Flipped(bool horizontal, bool vertical)
+    {
+        var flipped = new Raster(Width, Height);
+        for (int y = 0; y < Height; y++)
+        {
+            int fromY = vertical ? Height - 1 - y : y;
+            for (int x = 0; x < Width; x++)
+            {
+                int fromX = horizontal ? Width - 1 - x : x;
+                Buffer.BlockCopy(Pixels, (fromY * Width + fromX) * 4, flipped.Pixels, (y * Width + x) * 4, 4);
+            }
+        }
+        return flipped;
+    }
+
     /// <summary>A flat picture of one colour (<c>0xRRGGBBAA</c>).</summary>
     public static Raster Solid(int width, int height, uint rgba)
     {

@@ -7,7 +7,7 @@ using static Anomaly.Core.Tg.Builtins;
 namespace Anomaly.Core.Tg;
 
 /// <summary>
-/// DEVIATION(DV96, the owner 2026-11-21: a shooter's crosshair): what the own mob's crosshair shows of its gun, sent to its client (protocol 92,
+/// DEVIATION(DV96): a shooter's crosshair, what the own mob's crosshair shows of its gun, sent to its client (protocol 92,
 /// GunSight): the half angle of the cone the held gun's shots scatter in at most, and a count of the mob's shots that hit a living thing.
 /// </summary>
 public static class GunSight
@@ -20,7 +20,7 @@ public static class GunSight
     /// _firing.dm fire_casing): the gun's spread gives a deviation of at most 0.5 x 1.4 x spread; a casing with variance replaces it by at most
     /// 0.5 x variance (a pellet's). Times the server's share (<see cref="ShotSpread"/>), as <see cref="ShotGeometry.Scatter"/> takes it.
     /// The dual wield penalty (gun.dm:426-433, in combat mode each other light gun held adds the gun's <c>dual_wield_spread</c>) widens it too.
-    /// shortcut: the signals' bonus spread (COMSIG_MOB_FIRED_GUN) is not shown; add it if the owner asks for it.
+    /// shortcut: the signals' bonus spread (COMSIG_MOB_FIRED_GUN) is not shown; add it once a ported effect adds a large one.
     /// </summary>
     public static float? ConeOf(mob user)
     {

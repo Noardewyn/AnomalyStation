@@ -547,8 +547,10 @@ public partial class GameScene
                 _session.DblClick(target, button, modifiers);
             _crosshair.PulseNow(now);
             _highlight.PulseNow(now);
+            bool onItem = target.Kind == TargetKind.Entity && _feed.Replica?.TryGet(target.Id, out ReplicaEntity clickedThing) == true
+                && clickedThing.TypePath != null && Shared.World.PropKinds.IsItem(clickedThing.TypePath);
             if (button == ClickButton.Left && target.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling
-                && _viewModel?.Clicked() is SwingSound.Whoosh whoosh) // D285: the held thing swings; DV586: in combat mode it whooshes
+                && _viewModel?.Clicked(onItem) is SwingSound.Whoosh whoosh) // D285: the held thing swings; DV586: in combat mode it whooshes
                 _sound?.PlayOwn(whoosh.File, whoosh.Volume);
             else if (button == ClickButton.Right && target.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling)
                 _viewModel?.RightClicked(); // DV361: a mech's right arm fires

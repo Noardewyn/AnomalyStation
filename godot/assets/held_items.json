@@ -4,16 +4,41 @@
     "scale": 1.07,
     "x": 0.118,
     "y": -0.113,
-    "z": -0.176
+    "z": -0.176,
+    "attack": "melee_swing"
+  },
+  "_wield": {
+    "x": -0.389,
+    "y": 0.178,
+    "z": 0.083,
+    "pitch": -17,
+    "yaw": -6,
+    "roll": -53
   },
   "gags:/datum/greyscale_config/cleric_mace|#B6BEC2#855932:default": {
     "pitch": 9,
     "roll": 13
   },
+  "gags:/datum/greyscale_config/screwdriver|#18a2d5:screwdriver": {
+    "attack": "stab"
+  },
+  "gags:/datum/greyscale_config/screwdriver|#a05212:screwdriver": {
+    "attack": "stab"
+  },
   "icons/obj/antags/syndicate_tools.dmi:powerfist": {
     "yaw": -162,
     "pitch": -37,
-    "roll": 20
+    "roll": 20,
+    "attack": "stab"
+  },
+  "icons/obj/aquarium/rift.dmi:chrystarfish": {
+    "attack": "melee_swing"
+  },
+  "icons/obj/aquarium/rift.dmi:mossglob": {
+    "attack": "melee_swing"
+  },
+  "icons/obj/aquarium/wide.dmi:dolphish": {
+    "attack": "melee_swing"
   },
   "icons/obj/chronos.dmi:chronogun": {
     "yaw": 15,
@@ -86,6 +111,12 @@
   "icons/obj/lighting.dmi:flashlight": {
     "pitch": 100
   },
+  "icons/obj/lighting.dmi:lbulb": {
+    "attack": "melee_swing"
+  },
+  "icons/obj/lighting.dmi:ltube": {
+    "attack": "melee_swing"
+  },
   "icons/obj/lighting.dmi:penlight": {
     "pitch": 100
   },
@@ -128,6 +159,9 @@
   "icons/obj/service/kitchen.dmi:knife": {
     "yaw": -137
   },
+  "icons/obj/service/kitchen.dmi:roastingstick": {
+    "attack": "stab"
+  },
   "icons/obj/tools.dmi:cercd": {
     "yaw": -16,
     "pitch": -140,
@@ -143,7 +177,8 @@
     "roll": -111,
     "x": -0.041,
     "y": 0.141,
-    "z": -0.284
+    "z": -0.284,
+    "attack": "stab"
   },
   "icons/obj/tools.dmi:exwelder": {
     "yaw": -14,
@@ -180,6 +215,13 @@
     "x": -0.048,
     "y": 0.25,
     "z": -0.153
+  },
+  "icons/obj/weapons/48x.dmi:speardragon0": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/48x.dmi:speardragon1": {
+    "scale": 0.65,
+    "wield_attack": "wield_chop"
   },
   "icons/obj/weapons/bat.dmi:baseball_bat": {
     "yaw": 14,
@@ -272,22 +314,25 @@
     "x": -0.074
   },
   "icons/obj/weapons/chainsaw.dmi:chainsaw": {
-    "yaw": -4,
-    "pitch": -142,
-    "roll": -147,
+    "yaw": 1,
+    "pitch": -115,
+    "roll": -144,
     "scale": 1.32,
-    "x": -0.025,
-    "y": 0.373,
-    "z": -0.075
+    "x": 0.082,
+    "y": 0.18,
+    "z": 0.012,
+    "wield_attack": "wield_stab"
   },
   "icons/obj/weapons/chainsaw.dmi:chainsaw_on": {
     "yaw": -4,
-    "pitch": -142,
-    "roll": -147,
-    "scale": 1.11,
-    "x": -0.025,
-    "y": 0.4,
-    "z": -0.075
+    "pitch": -116,
+    "roll": -161,
+    "scale": 1.22,
+    "x": 0.04,
+    "y": 0.177,
+    "z": -0.024,
+    "attack": "stab",
+    "wield_attack": "wield_stab"
   },
   "icons/obj/weapons/chainsaw.dmi:chainsawdual": {
     "yaw": 10,
@@ -298,6 +343,9 @@
     "y": -0.038,
     "z": -0.071
   },
+  "icons/obj/weapons/changeling_items.dmi:ling_shield": {
+    "attack": "stab"
+  },
   "icons/obj/weapons/fireaxe.dmi:boarding_axe": {
     "pitch": 180
   },
@@ -307,7 +355,14 @@
   "icons/obj/weapons/fireaxe.dmi:fireaxe0": {
     "pitch": -140,
     "roll": -27,
-    "scale": 1.28
+    "scale": 1.28,
+    "x": -0.127
+  },
+  "icons/obj/weapons/fireaxe.dmi:fireaxe1": {
+    "pitch": 180,
+    "x": 0.032,
+    "y": -0.075,
+    "flip_y": 1
   },
   "icons/obj/weapons/grenade.dmi:chemg_locked": {
     "scale": 1.18,
@@ -703,6 +758,51 @@
     "x": -0.062,
     "z": 0.025
   },
+  "icons/obj/weapons/shields.dmi:adamshield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:advanced_eshield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:ballistic": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:bananaeshield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:buckler": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:eshield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:flashshield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:improvised": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:kite": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:mattress_shield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:mirror_shield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:moonflower_buckler": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:riot": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:roman_shield": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/shields.dmi:teleriot": {
+    "attack": "stab"
+  },
   "icons/obj/weapons/spear.dmi:bone_spear0": {
     "yaw": 27,
     "pitch": 24,
@@ -715,17 +815,32 @@
     "roll": 10,
     "scale": 1.01
   },
+  "icons/obj/weapons/spear.dmi:military_spear0": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/spear.dmi:military_spear1": {
+    "attack": "stab"
+  },
   "icons/obj/weapons/spear.dmi:pillow_lance0": {
     "yaw": 30,
     "pitch": 22,
     "roll": 10,
     "scale": 1.25
   },
+  "icons/obj/weapons/spear.dmi:pitchfork0": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/spear.dmi:pitchfork1": {
+    "attack": "stab"
+  },
   "icons/obj/weapons/spear.dmi:spearbomb0": {
     "yaw": 36,
     "pitch": 30,
     "roll": 25,
     "scale": 1.32
+  },
+  "icons/obj/weapons/spear.dmi:stunprod": {
+    "attack": "stab"
   },
   "icons/obj/weapons/stabby.dmi:buckknife": {
     "yaw": 14,
@@ -739,6 +854,18 @@
     "yaw": -1,
     "pitch": -152,
     "roll": -180
+  },
+  "icons/obj/weapons/stabby.dmi:plasmashiv": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/stabby.dmi:plastitaniumshiv": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/stabby.dmi:shiv": {
+    "attack": "stab"
+  },
+  "icons/obj/weapons/staff.dmi:bostaff1": {
+    "y": -0.106
   },
   "icons/obj/weapons/sword.dmi:chainswordon": {
     "yaw": 35,

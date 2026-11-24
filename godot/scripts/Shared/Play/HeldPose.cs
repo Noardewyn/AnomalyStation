@@ -31,15 +31,21 @@ public readonly record struct HeldOffset(float X, float Y, float Z, float Pitch 
 
     /// <summary>The same for the left hand: across the view the other way, turned the other way.</summary>
     public HeldOffset Mirrored => new(-X, Y, Z, Pitch, -Yaw, -Roll);
+
+    // the record's own printing would print Mirrored, whose Mirrored it prints again, until the stack overflows
+    private bool PrintMembers(System.Text.StringBuilder builder)
+    {
+        builder.Append($"X = {X}, Y = {Y}, Z = {Z}, Pitch = {Pitch}, Yaw = {Yaw}, Roll = {Roll}");
+        return true;
+    }
 }
 
 /// <summary>The held things' poses and motions as pure functions of time.</summary>
 public static class HeldPose
 {
     /// <summary>
-    /// A picture's pixel in metres at the pose's distance (the owner, 2026-10-28: a crowbar was small and hung high enough to show nothing held it; it
-    /// is big now and its handle goes under the view's edge, as Minecraft's; a gun was small too and is four times what it was (2026-10-28 and
-    /// 2026-10-29), a 32-pixel gun about 0.9 m).
+    /// A picture's pixel in metres at the pose's distance: big enough that a tool's handle goes under the view's edge, as Minecraft's, so the
+    /// thing reads as held; a 32-pixel gun is about 0.9 m.
     /// </summary>
     public static float PixelMetres(HeldKind kind) => kind switch
     {
@@ -58,7 +64,7 @@ public static class HeldPose
 
     public const double ReloadSeconds = 0.7, RackSeconds = 0.35;
 
-    /// <summary>The inactive hand's thing sits this much lower (metres), the owner's choice (2026-10-28: lower again, so it reads as not in use).</summary>
+    /// <summary>The inactive hand's thing sits this much lower (metres), so it reads as not in use.</summary>
     public const float InactiveDrop = 0.12f;
 
     /// <summary>A long thing's head is turned this many degrees up from the side away from the middle of the view (its handle down), as Minecraft holds a tool.</summary>
@@ -67,11 +73,22 @@ public static class HeldPose
     /// <summary>A gun's barrel meets the crosshair this far ahead (metres).</summary>
     public const float Converge = 10f;
 
-    /// <summary>A thing's depth in pixels (the owner, 2026-10-28: about twice Minecraft's one) and a gun's (seen from behind its barrel it is still a solid).</summary>
+    /// <summary>A thing's depth in pixels (about twice Minecraft's one) and a gun's (seen from behind its barrel it is still a solid).</summary>
     public const float Thickness = 2.1f, GunThickness = 2.4f;
 
-    /// <summary>The right hand's rest pose of a kind; a wielded thing is held nearer the middle.</summary>
-    public static HeldOffset Rest(HeldKind kind, bool left, bool wielded)
+    /// <summary>
+    /// The default move of a wielded thing (tg's two_handed, TRAIT_WIELDED) from its rest pose, the right hand's: held in both hands it is nearer the
+    /// middle of the view, a melee thing raised and cocked over the shoulder, ready to chop (HeldClip.WieldChop); a melee thing's and a gun's apart.
+    /// held_items.json's <c>_wield</c> and <c>_wield_gun</c> tune them.
+    /// </summary>
+    public static readonly HeldOffset WieldMelee = new(-0.12f, 0.26f, 0.06f, Pitch: 55f, Roll: -25f), WieldGun = new(-0.22f, 0.04f, 0f);
+
+    /// <summary>The right hand's rest pose of a kind; a wielded thing is held nearer the middle (<see cref="WieldMelee"/>, <see cref="WieldGun"/>).</summary>
+    public static HeldOffset Rest(HeldKind kind, bool left, bool wielded) =>
+        Rest(kind, left, wielded ? kind == HeldKind.Gun ? WieldGun : WieldMelee : default);
+
+    /// <summary>The right hand's rest pose of a kind moved by <paramref name="wield"/> (a wielded thing's move, partly while it changes hands' grip).</summary>
+    public static HeldOffset Rest(HeldKind kind, bool left, HeldOffset wield)
     {
         HeldOffset rest = kind switch
         {
@@ -79,10 +96,12 @@ public static class HeldPose
             HeldKind.Long => new HeldOffset(0.3f, -0.3f, -0.42f, Pitch: -15f, Yaw: -55f), // the handle's end under the view's edge
             _ => new HeldOffset(0.26f, -0.19f, -0.42f, Yaw: -20f, Roll: -8f), // its lower part under the edge
         };
-        if (wielded)
-            rest += new HeldOffset(-0.1f, -0.02f, 0f, Roll: kind == HeldKind.Gun ? 0f : -15f);
+        rest += wield;
         return left ? rest.Mirrored : rest;
     }
+
+    /// <summary>How long a thing takes to go into or out of the wielded pose (seconds).</summary>
+    public const double WieldSeconds = 0.2;
 
     /// <summary>How far under the view a thing is (0 in place, 1 out of sight) <paramref name="age"/> seconds after it was taken: up fast, then easing in.</summary>
     public static float Raised(double age)
@@ -102,7 +121,8 @@ public static class HeldPose
     public const double SwingWindUp = 0.35, SwingChop = 0.55;
 
     /// <summary>
-    /// The swing of a hit (the right hand's), a Minecraft-like chop (the owner, 2026-10-30: it read as a pull toward the eye): the thing is raised and
+    /// The swing of a gun's hit (the right hand's; a melee thing plays a Blender clip, HeldClip), and anyone's when the clips cannot be read: a
+    /// Minecraft-like chop (not a pull toward the eye): the thing is raised and
     /// cocked back a little, chops hard forward and down toward the crosshair, and eases back to rest. Its turn is in the camera's space about the grip
     /// (Hud/ViewModel), not the thing's own, so a pitch is a chop whatever way the thing is held.
     /// </summary>
@@ -132,7 +152,7 @@ public static class HeldPose
     public const double KickFresh = 0.3;
 
     /// <summary>
-    /// A gun's fire kick (ShotLook.Kick): back and its muzzle up. DV96 (the owner, 2026-11-21: every gun kicked alike, the anti-tank rifle snapped):
+    /// A gun's fire kick (ShotLook.Kick): back and its muzzle up. DV96: each gun kicks by its own weight,
     /// as big as the view's kick (<paramref name="kick"/>: up to three times at 8 degrees), slower out and back when heavy (up to 80 ms and 0.5 s),
     /// and rolled toward the kick's side.
     /// </summary>

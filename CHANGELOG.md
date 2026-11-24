@@ -10,10 +10,18 @@ client's top-right corner, in its window title and in the first line of the serv
 ### Added
 
 - The mech removal tool works: two-handed (5 force in one hand, 19 wielded), and wielded it pries the pilot out of a mech.
+- Held melee things attack with animations made in Blender: a one-handed chop straight down, a two-handed chop, and a stab for pointed things such as screwdrivers and spears.
+- Dev menu: pick a held thing's attack animation, as a default for all things and for wielded ones, and as an override for each item.
+- Dev menu: held things can be flipped left-right or up-down in one click, all at once, wielded or one by one, and given their own wielded pose.
+
+### Changed
+
+- In first person your own attacks no longer show the flying, spinning weapon sprite; others and the third-person view still see it.
 
 ### Fixed
 
 - The crosshair now opens for the spread of firing two light guns at once in combat mode.
+- Picking an item up with an empty hand in combat mode no longer plays a punch swing.
 
 ## [1.12.0-pre-alpha] - 2026-11-23
 

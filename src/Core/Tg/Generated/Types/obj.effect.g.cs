@@ -1754,9 +1754,9 @@ public partial class obj_effect_dummy_phased_mob_blood : obj_effect_dummy_phased
     }
 }
 
-// tg: code/modules/spells/spell_types/jaunt/shadow_walk.dm:55
-[DmPath("/obj/effect/dummy/phased_mob/shadow"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_dummy_phased_mob_shadow : obj_effect_dummy_phased_mob
+// tg: code/modules/spells/spell_types/jaunt/shadow_walk.dm:55 (the var block of a hand-written class)
+[DmPath("/obj/effect/dummy/phased_mob/shadow")]
+public partial class obj_effect_dummy_phased_mob_shadow
 {
     public float light_max = 0.2f; // tg: code/modules/spells/spell_types/jaunt/shadow_walk.dm:58
     public float healing_rate = 1.5f; // tg: code/modules/spells/spell_types/jaunt/shadow_walk.dm:60

@@ -616,9 +616,9 @@ public partial class datum_status_effect_grouped_bodypart_effect_ethereal_glow
     }
 }
 
-// tg: code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:4
-[DmPath("/datum/status_effect/grouped/bodypart_effect/nyxosynthesis"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_bodypart_effect_nyxosynthesis : datum_status_effect_grouped_bodypart_effect
+// tg: code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/bodypart_effect/nyxosynthesis")]
+public partial class datum_status_effect_grouped_bodypart_effect_nyxosynthesis
 {
     // tg: code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:4
     public datum_status_effect_grouped_bodypart_effect_nyxosynthesis()
@@ -1036,9 +1036,9 @@ public partial class datum_status_effect_shadow : datum_status_effect
     }
 }
 
-// tg: code/datums/status_effects/buffs.dm:641
-[DmPath("/datum/status_effect/shadow/regeneration"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_shadow_regeneration : datum_status_effect_shadow
+// tg: code/datums/status_effects/buffs.dm:641 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/shadow/regeneration")]
+public partial class datum_status_effect_shadow_regeneration
 {
     // tg: code/datums/status_effects/buffs.dm:641
     public datum_status_effect_shadow_regeneration()
@@ -1047,9 +1047,9 @@ public partial class datum_status_effect_shadow_regeneration : datum_status_effe
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:48
-[DmPath("/datum/status_effect/shadow/nightmare"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_shadow_nightmare : datum_status_effect_shadow
+// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:48 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/shadow/nightmare")]
+public partial class datum_status_effect_shadow_nightmare
 {
     // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:48
     public datum_status_effect_shadow_nightmare()

@@ -1834,15 +1834,6 @@ public partial class obj_item_slime_extract
         return DmTask<object>.FromResult(default);
     }
 
-    // tg: code/modules/research/xenobiology/xenobiology.dm:47
-    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
-    [DmGeneratedStub]
-    public override object Initialize(object mapload = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:47", "Initialize: xenobiology lab not translated (D349)");
-        return default;
-    }
-
     // tg: code/modules/research/xenobiology/xenobiology.dm:69
     // STUB(D349): docs/ai/specs/live-partial.txt, section Species
     [DmGeneratedStub]

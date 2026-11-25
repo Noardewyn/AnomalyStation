@@ -270,3 +270,40 @@ public partial class obj_item_bodypart_chest_jelly : obj_item_bodypart_chest
         return Dm.icon(Dm.resource("icons/mob/butts.dmi"), BUTT_SPRITE_SLIME);
     }
 }
+
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:66
+public partial class obj_item_bodypart_chest_abductor : obj_item_bodypart_chest
+{
+    // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:66
+    public override object get_butt_sprite()
+    {
+        return Dm.icon(Dm.resource("icons/mob/butts.dmi"), BUTT_SPRITE_GREY);
+    }
+}
+
+/// Dullahan head preserves organs inside it
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:512
+public partial class obj_item_bodypart_head_dullahan : obj_item_bodypart_head
+{
+    // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:517
+    public override async DmTask<object> Entered(atom_movable arrived = null, atom old_loc = null, DmList old_locs = null)
+    {
+        object dot = await base.Entered(arrived, old_loc, old_locs);
+        if (!isorgan(arrived))
+            return dot;
+        obj_item_organ organ_arrived = (obj_item_organ)arrived;
+        Dm.combine(ref organ_arrived.organ_flags, ORGAN_FROZEN);
+        return dot;
+    }
+
+    // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:523
+    public override async DmTask<object> Exited(atom_movable gone = null, object direction = null)
+    {
+        object dot = await base.Exited(gone, direction);
+        if (!isorgan(gone))
+            return dot;
+        obj_item_organ organ_gone = (obj_item_organ)gone;
+        organ_gone.organ_flags = (int)Dm.num(organ_gone.organ_flags) & ~ORGAN_FROZEN;
+        return dot;
+    }
+}

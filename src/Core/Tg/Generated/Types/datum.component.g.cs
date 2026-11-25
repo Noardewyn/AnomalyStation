@@ -2526,9 +2526,9 @@ public partial class datum_component_life_link
     }
 }
 
-// tg: code/datums/components/light_eater.dm:7
-[DmPath("/datum/component/light_eater"), DmGeneratedOnly, DmInert]
-public partial class datum_component_light_eater : datum_component
+// tg: code/datums/components/light_eater.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/light_eater")]
+public partial class datum_component_light_eater
 {
     public DmList eaten_lights; // tg: code/datums/components/light_eater.dm:9
 
@@ -4787,9 +4787,9 @@ public partial class datum_component_germ_sensitive
     public float infective = 0; // tg: code/datums/components/food/germ_sensitive.dm:18
 }
 
-// tg: code/datums/components/food/ghost_edible.dm:7
-[DmPath("/datum/component/ghost_edible"), DmGeneratedOnly, DmInert]
-public partial class datum_component_ghost_edible : datum_component
+// tg: code/datums/components/food/ghost_edible.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/ghost_edible")]
+public partial class datum_component_ghost_edible
 {
     public object bite_consumption; // tg: code/datums/components/food/ghost_edible.dm:7
     public object bite_chance; // tg: code/datums/components/food/ghost_edible.dm:9

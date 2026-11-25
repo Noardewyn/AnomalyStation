@@ -62,7 +62,7 @@ public partial class obj_effect_dummy_phased_mob : obj_effect_dummy
 
     /// Removes jaunter from our phased mob
     // tg: code/game/objects/effects/phased_mob.dm:52
-    public virtual async DmTask eject_jaunter()
+    public virtual async DmTask eject_jaunter(params object[] __extra)
     {
         if (jaunter == null)
             return; // This is weird but it can happen if the jaunt is gibbed by an arriving shuttle

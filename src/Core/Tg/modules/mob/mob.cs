@@ -572,7 +572,15 @@ public partial class obj_effect_overlay_holo_pad_hologram : obj_effect_overlay
     }
 }
 
-// tg: code/modules/mob/mob.dm:415  /obj/item/dullahan_relay/get_listening_mob(): not declared, the dullahans (M2) are not ported yet.
+// tg: code/modules/mob/mob.dm:415  the dullahan's head hears for the body
+public partial class obj_item_dullahan_relay : obj_item
+{
+    // tg: code/modules/mob/mob.dm:415
+    public override object get_listening_mob()
+    {
+        return owner;
+    }
+}
 
 // tg: code/modules/mob/mob.dm:418
 public partial class mob : atom_movable

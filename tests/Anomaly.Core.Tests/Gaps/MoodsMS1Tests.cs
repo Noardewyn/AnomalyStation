@@ -400,7 +400,10 @@ public class MoodsMS1Tests
             Waiting.NoSleep(dummy.mob_mood.set_sanity(10, @override: TRUE));
             Assert.Equal((float)SANITY_NEUTRAL, dummy.mob_mood.sanity);
             Waiting.NoSleep(dummy.add_mood_event("test", typeof(datum_mood_event_hug)));
-            Assert.Equal(1f, Dm.num(dummy.mob_mood.mood));
+            // the hug adds its 1 to the mood (the random starting nutrition may add a hunger moodlet of its own)
+            float others = Dm.each(dummy.mob_mood.mood_events).Where(k => Dm.str(k) != "test").Sum(k => Dm.num(((datum_mood_event)dummy.mob_mood.mood_events[k]).mood_change));
+            Assert.Equal(1f + others, Dm.num(dummy.mob_mood.mood));
+            Assert.Equal((float)SANITY_NEUTRAL, dummy.mob_mood.sanity);
         });
         r.AssertNoRuntimes();
     }

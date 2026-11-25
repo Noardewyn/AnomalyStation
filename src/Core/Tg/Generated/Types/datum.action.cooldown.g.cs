@@ -6937,9 +6937,9 @@ public partial class datum_action_cooldown_spell_jaunt_bloodcrawl_slaughter_demo
     }
 }
 
-// tg: code/modules/spells/spell_types/jaunt/shadow_walk.dm:2
-[DmPath("/datum/action/cooldown/spell/jaunt/shadow_walk"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_jaunt_shadow_walk : datum_action_cooldown_spell_jaunt
+// tg: code/modules/spells/spell_types/jaunt/shadow_walk.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/jaunt/shadow_walk")]
+public partial class datum_action_cooldown_spell_jaunt_shadow_walk
 {
     public float light_threshold = 0.2f; // tg: code/modules/spells/spell_types/jaunt/shadow_walk.dm:13
 
@@ -7806,9 +7806,9 @@ public partial class datum_action_cooldown_spell_charge : datum_action_cooldown_
     }
 }
 
-// tg: code/modules/spells/spell_types/self/ghostliness.dm:2
-[DmPath("/datum/action/cooldown/spell/ghostliness"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_ghostliness : datum_action_cooldown_spell
+// tg: code/modules/spells/spell_types/self/ghostliness.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/ghostliness")]
+public partial class datum_action_cooldown_spell_ghostliness
 {
     // tg: code/modules/spells/spell_types/self/ghostliness.dm:2
     public datum_action_cooldown_spell_ghostliness()

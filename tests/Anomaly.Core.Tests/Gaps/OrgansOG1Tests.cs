@@ -253,7 +253,7 @@ public class OrgansOG1Tests
         r.In(() => Waiting.NoSleep(brain.Remove(body)));
         r.Step(4);
         Assert.True(r.In(() => QDELETED(brain)), "the brain exploded");
-        Assert.True(feed.Any("The brain explodes"), Diag(r, feed));
+        Assert.True(feed.Any("brain explodes"), Diag(r, feed));
     }
 
     [Fact]

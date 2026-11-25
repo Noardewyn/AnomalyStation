@@ -1176,9 +1176,9 @@ public partial class datum_preference_choiced_lizard_legs
     }
 }
 
-// tg: code/modules/client/preferences/species_features/vampire.dm:2
-[DmPath("/datum/preference/choiced/vampire_status"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_vampire_status : datum_preference_choiced
+// tg: code/modules/client/preferences/species_features/vampire.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/vampire_status")]
+public partial class datum_preference_choiced_vampire_status
 {
     // tg: code/modules/client/preferences/species_features/vampire.dm:2
     public datum_preference_choiced_vampire_status()

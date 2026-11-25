@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 718 rows over 444 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 714 rows over 442 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -234,7 +234,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_orion_ship), "attack_self"), // /obj/item/orion_ship (tg: code/game/machinery/computer/arcade/orion.dm:514)
         (typeof(obj_item_organ_brain), "attack"), // /obj/item/organ/brain (tg: code/modules/mob/living/brain/brain_item.dm:295)
         (typeof(obj_item_organ_brain), "attackby"), // /obj/item/organ/brain (tg: code/modules/mob/living/brain/brain_item.dm:204)
-        (typeof(obj_item_organ_heart_nightmare), "attack"), // /obj/item/organ/heart/nightmare (tg: code/modules/antagonists/nightmare/nightmare_organs.dm:99)
         (typeof(obj_item_organ_heart_demon), "attack"), // /obj/item/organ/heart/demon (tg: code/modules/mob/living/basic/space_fauna/demon/demon_items.dm:13)
         (typeof(obj_item_organ_ears_babbelfish), "attack"), // /obj/item/organ/ears/babbelfish (tg: code/modules/fishing/fish/types/rift.dm:751)
         (typeof(obj_item_organ_cyberimp_arm_toolkit_shard), "attack_self"), // /obj/item/organ/cyberimp/arm/toolkit/shard (tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:18)
@@ -328,9 +327,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_void_prison), "attack_self"), // /obj/item/void_prison (tg: code/modules/antagonists/heretic/items/voidballd.dm:13)
         (typeof(obj_item_eldritch_potion), "attack_self"), // /obj/item/eldritch_potion (tg: code/modules/antagonists/heretic/structures/mawed_crucible.dm:265)
         (typeof(obj_item_eldritch_potion_crucible_soul), "attack_self"), // /obj/item/eldritch_potion/crucible_soul (tg: code/modules/antagonists/heretic/structures/mawed_crucible.dm:307)
-        (typeof(obj_item_light_eater), "attack"), // /obj/item/light_eater (tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:51)
-        (typeof(obj_item_light_eater), "dropped"), // /obj/item/light_eater (tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:43)
-        (typeof(obj_item_light_eater), "equipped"), // /obj/item/light_eater (tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:36)
         (typeof(obj_item_energy_katana), "dropped"), // /obj/item/energy_katana (tg: code/modules/antagonists/space_ninja/equipment/energy_katana.dm:61)
         (typeof(obj_item_energy_katana), "equipped"), // /obj/item/energy_katana (tg: code/modules/antagonists/space_ninja/equipment/energy_katana.dm:56)
         (typeof(obj_item_energy_katana), "ranged_interact_with_atom_secondary"), // /obj/item/energy_katana (tg: code/modules/antagonists/space_ninja/equipment/energy_katana.dm:48)

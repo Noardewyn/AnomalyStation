@@ -131,7 +131,7 @@ public class SyndicateJobItemsTests
         DmList no = r.In(() => obj_item_toy_eightball.possible_answers["No"] as DmList);
         r.Step(31 * Second);
         r.AssertNoRuntimes();
-        Assert.True(r.In(() => Dm.each(no).Any(a => feed.Any(Dm.str(a)))), "the haunted ball did not answer No: " + string.Join(" | ", feed.Chat.Select(c => c.Html).TakeLast(8)));
+        Assert.True(r.In(() => Dm.each(no).Any(a => feed.Any(Dm.str(a)) || feed.Any(System.Net.WebUtility.HtmlEncode(Dm.str(a))))), "the haunted ball did not answer No: " + string.Join(" | ", feed.Chat.Select(c => c.Html).TakeLast(8)));
         Assert.Equal(0f, r.In(() => Dm.num(haunted.votes["No"])));
         r.AssertNoRuntimes();
     }

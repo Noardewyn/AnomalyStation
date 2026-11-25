@@ -2680,7 +2680,7 @@ proc	/datum/controller/global_vars	InitGlobalpreference_entries	code/modules/cli
 proc	/datum/controller/global_vars	InitGlobalpreference_entries_by_key	code/modules/client/preferences/_preference.dm:52		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalnon_ruleset_antagonists	code/modules/client/preferences/middleware/antags.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalprisoner_crimes	code/modules/client/preferences/prisoner_crime.dm:22		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalvampire_houses	code/modules/client/preferences/species_features/vampire.dm:25		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalvampire_houses	code/modules/client/preferences/species_features/vampire.dm:25		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalOOC_COLOR	code/modules/client/verbs/ooc.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalnormal_ooc_colour	code/modules/client/verbs/ooc.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalcursed_animal_masks	code/modules/clothing/masks/animal_masks.dm:2		yes	full	proc root
@@ -5635,14 +5635,14 @@ proc	/datum/action/innate/slime/evolve	Activate	code/modules/mob/living/basic/sl
 type	/datum/action/innate/slime/reproduce	/datum/action/innate/slime	code/modules/mob/living/basic/slime/actions.dm:87	live	datum_action_innate_slime_reproduce	1	0
 proc	/datum/action/innate/slime/reproduce	update_button_status	code/modules/mob/living/basic/slime/actions.dm:93	button,force	yes	full	proc
 proc	/datum/action/innate/slime/reproduce	Activate	code/modules/mob/living/basic/slime/actions.dm:101		yes	full	proc
-type	/datum/action/innate/toggle_passthrough	/datum/action/innate	code/modules/mob/living/carbon/human/species_types/ghost.dm:166	inert	datum_action_innate_toggle_passthrough	0	0
-proc	/datum/action/innate/toggle_passthrough	Grant	code/modules/mob/living/carbon/human/species_types/ghost.dm:171	grant_to	no	-	proc
-proc	/datum/action/innate/toggle_passthrough	Remove	code/modules/mob/living/carbon/human/species_types/ghost.dm:175	remove_from	no	-	proc
-proc	/datum/action/innate/toggle_passthrough	Activate	code/modules/mob/living/carbon/human/species_types/ghost.dm:180		no	-	proc
-proc	/datum/action/innate/toggle_passthrough	IsAvailable	code/modules/mob/living/carbon/human/species_types/ghost.dm:186	feedback	no	-	proc
-proc	/datum/action/innate/toggle_passthrough	on_new_limb	code/modules/mob/living/carbon/human/species_types/ghost.dm:204	source,new_part,special	no	-	proc root
-proc	/datum/action/innate/toggle_passthrough	swap_mode	code/modules/mob/living/carbon/human/species_types/ghost.dm:212	force_off	no	-	proc root
-proc	/datum/action/innate/toggle_passthrough	attempt_move	code/modules/mob/living/carbon/human/species_types/ghost.dm:254	source,new_loc,direct	no	-	proc root
+type	/datum/action/innate/toggle_passthrough	/datum/action/innate	code/modules/mob/living/carbon/human/species_types/ghost.dm:166	live	datum_action_innate_toggle_passthrough	1	0
+proc	/datum/action/innate/toggle_passthrough	Grant	code/modules/mob/living/carbon/human/species_types/ghost.dm:171	grant_to	yes	full	proc
+proc	/datum/action/innate/toggle_passthrough	Remove	code/modules/mob/living/carbon/human/species_types/ghost.dm:175	remove_from	yes	full	proc
+proc	/datum/action/innate/toggle_passthrough	Activate	code/modules/mob/living/carbon/human/species_types/ghost.dm:180		yes	full	proc
+proc	/datum/action/innate/toggle_passthrough	IsAvailable	code/modules/mob/living/carbon/human/species_types/ghost.dm:186	feedback	yes	full	proc
+proc	/datum/action/innate/toggle_passthrough	on_new_limb	code/modules/mob/living/carbon/human/species_types/ghost.dm:204	source,new_part,special	yes	full	proc root
+proc	/datum/action/innate/toggle_passthrough	swap_mode	code/modules/mob/living/carbon/human/species_types/ghost.dm:212	force_off	yes	full	proc root
+proc	/datum/action/innate/toggle_passthrough	attempt_move	code/modules/mob/living/carbon/human/species_types/ghost.dm:254	source,new_loc,direct	yes	full	proc root
 type	/datum/action/innate/regenerate_limbs	/datum/action/innate	code/modules/mob/living/carbon/human/species_types/jellypeople.dm:169	live	datum_action_innate_regenerate_limbs	1	0
 proc	/datum/action/innate/regenerate_limbs	IsAvailable	code/modules/mob/living/carbon/human/species_types/jellypeople.dm:178	feedback	yes	full	proc
 proc	/datum/action/innate/regenerate_limbs	Activate	code/modules/mob/living/carbon/human/species_types/jellypeople.dm:189		yes	full	proc
@@ -7102,12 +7102,12 @@ proc	/datum/action/cooldown/spell/jaunt/bloodcrawl/slaughter_demon/funny	on_vict
 proc	/datum/action/cooldown/spell/jaunt/bloodcrawl/slaughter_demon/funny	on_death	code/modules/spells/spell_types/jaunt/bloodcrawl.dm:325	source	no	-	proc root
 proc	/datum/action/cooldown/spell/jaunt/bloodcrawl/slaughter_demon/funny	on_victim_statchange	code/modules/spells/spell_types/jaunt/bloodcrawl.dm:349	victim,new_stat	no	-	proc root
 proc	/datum/action/cooldown/spell/jaunt/bloodcrawl/slaughter_demon/funny	on_victim_deleted	code/modules/spells/spell_types/jaunt/bloodcrawl.dm:365	source	no	-	proc root
-type	/datum/action/cooldown/spell/jaunt/shadow_walk	/datum/action/cooldown/spell/jaunt	code/modules/spells/spell_types/jaunt/shadow_walk.dm:2	inert	datum_action_cooldown_spell_jaunt_shadow_walk	0	0
-proc	/datum/action/cooldown/spell/jaunt/shadow_walk	Grant	code/modules/spells/spell_types/jaunt/shadow_walk.dm:15	grant_to	no	-	proc
-proc	/datum/action/cooldown/spell/jaunt/shadow_walk	Remove	code/modules/spells/spell_types/jaunt/shadow_walk.dm:19	remove_from	no	-	proc
-proc	/datum/action/cooldown/spell/jaunt/shadow_walk	enter_jaunt	code/modules/spells/spell_types/jaunt/shadow_walk.dm:23	jaunter,loc_override	no	-	proc
-proc	/datum/action/cooldown/spell/jaunt/shadow_walk	can_cast_spell	code/modules/spells/spell_types/jaunt/shadow_walk.dm:29	feedback	no	-	proc
-proc	/datum/action/cooldown/spell/jaunt/shadow_walk	cast	code/modules/spells/spell_types/jaunt/shadow_walk.dm:42	cast_on	no	-	proc
+type	/datum/action/cooldown/spell/jaunt/shadow_walk	/datum/action/cooldown/spell/jaunt	code/modules/spells/spell_types/jaunt/shadow_walk.dm:2	live	datum_action_cooldown_spell_jaunt_shadow_walk	1	0
+proc	/datum/action/cooldown/spell/jaunt/shadow_walk	Grant	code/modules/spells/spell_types/jaunt/shadow_walk.dm:15	grant_to	yes	full	proc
+proc	/datum/action/cooldown/spell/jaunt/shadow_walk	Remove	code/modules/spells/spell_types/jaunt/shadow_walk.dm:19	remove_from	yes	full	proc
+proc	/datum/action/cooldown/spell/jaunt/shadow_walk	enter_jaunt	code/modules/spells/spell_types/jaunt/shadow_walk.dm:23	jaunter,loc_override	yes	full	proc
+proc	/datum/action/cooldown/spell/jaunt/shadow_walk	can_cast_spell	code/modules/spells/spell_types/jaunt/shadow_walk.dm:29	feedback	yes	full	proc
+proc	/datum/action/cooldown/spell/jaunt/shadow_walk	cast	code/modules/spells/spell_types/jaunt/shadow_walk.dm:42	cast_on	yes	full	proc
 type	/datum/action/cooldown/spell/caretaker	/datum/action/cooldown/spell	code/modules/antagonists/heretic/magic/caretaker.dm:2	inert	datum_action_cooldown_spell_caretaker	0	0
 proc	/datum/action/cooldown/spell/caretaker	Remove	code/modules/antagonists/heretic/magic/caretaker.dm:19	remove_from	no	-	proc
 proc	/datum/action/cooldown/spell/caretaker	is_valid_target	code/modules/antagonists/heretic/magic/caretaker.dm:23	cast_on	no	-	proc
@@ -7242,10 +7242,10 @@ proc	/datum/action/cooldown/spell/basic_heal	cast	code/modules/spells/spell_type
 type	/datum/action/cooldown/spell/charge	/datum/action/cooldown/spell	code/modules/spells/spell_types/self/charge.dm:2	inert	datum_action_cooldown_spell_charge	0	0
 proc	/datum/action/cooldown/spell/charge	is_valid_target	code/modules/spells/spell_types/self/charge.dm:17	cast_on	no	-	proc
 proc	/datum/action/cooldown/spell/charge	cast	code/modules/spells/spell_types/self/charge.dm:20	cast_on	no	-	proc
-type	/datum/action/cooldown/spell/ghostliness	/datum/action/cooldown/spell	code/modules/spells/spell_types/self/ghostliness.dm:2	inert	datum_action_cooldown_spell_ghostliness	0	0
-proc	/datum/action/cooldown/spell/ghostliness	can_cast_spell	code/modules/spells/spell_types/self/ghostliness.dm:15	feedback	no	-	proc
-proc	/datum/action/cooldown/spell/ghostliness	is_valid_target	code/modules/spells/spell_types/self/ghostliness.dm:27	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/ghostliness	cast	code/modules/spells/spell_types/self/ghostliness.dm:30	cast_on	no	-	proc
+type	/datum/action/cooldown/spell/ghostliness	/datum/action/cooldown/spell	code/modules/spells/spell_types/self/ghostliness.dm:2	live	datum_action_cooldown_spell_ghostliness	1	0
+proc	/datum/action/cooldown/spell/ghostliness	can_cast_spell	code/modules/spells/spell_types/self/ghostliness.dm:15	feedback	yes	full	proc
+proc	/datum/action/cooldown/spell/ghostliness	is_valid_target	code/modules/spells/spell_types/self/ghostliness.dm:27	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/ghostliness	cast	code/modules/spells/spell_types/self/ghostliness.dm:30	cast_on	yes	full	proc
 type	/datum/action/cooldown/spell/lichdom	/datum/action/cooldown/spell	code/modules/spells/spell_types/self/lichdom.dm:2	inert	datum_action_cooldown_spell_lichdom	0	0
 proc	/datum/action/cooldown/spell/lichdom	can_cast_spell	code/modules/spells/spell_types/self/lichdom.dm:18	feedback	no	-	proc
 proc	/datum/action/cooldown/spell/lichdom	is_valid_target	code/modules/spells/spell_types/self/lichdom.dm:31	cast_on	no	-	proc
@@ -7589,12 +7589,12 @@ type	/datum/action/item_action/organ_action/colossus	/datum/action/item_action/o
 proc	/datum/action/item_action/organ_action/colossus	New	code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:17		no	-	proc
 proc	/datum/action/item_action/organ_action/colossus	IsAvailable	code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:21	feedback	no	-	proc
 proc	/datum/action/item_action/organ_action/colossus	do_effect	code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:45	trigger_flags	no	-	proc
-type	/datum/action/item_action/organ_action/dullahan	/datum/action/item_action/organ_action	code/modules/mob/living/carbon/human/species_types/dullahan.dm:224	inert	datum_action_item_action_organ_action_dullahan	0	0
-proc	/datum/action/item_action/organ_action/dullahan	do_effect	code/modules/mob/living/carbon/human/species_types/dullahan.dm:227	trigger_flags	no	-	proc
+type	/datum/action/item_action/organ_action/dullahan	/datum/action/item_action/organ_action	code/modules/mob/living/carbon/human/species_types/dullahan.dm:224	live	datum_action_item_action_organ_action_dullahan	1	0
+proc	/datum/action/item_action/organ_action/dullahan	do_effect	code/modules/mob/living/carbon/human/species_types/dullahan.dm:227	trigger_flags	yes	full	proc
 type	/datum/action/item_action/organ_action/toggle_trip	/datum/action/item_action/organ_action	code/modules/mob/living/carbon/human/species_types/monkeys.dm:128	live	datum_action_item_action_organ_action_toggle_trip	1	0
 proc	/datum/action/item_action/organ_action/toggle_trip	do_effect	code/modules/mob/living/carbon/human/species_types/monkeys.dm:134	trigger_flags	yes	full	proc
-type	/datum/action/item_action/organ_action/vampire	/datum/action/item_action/organ_action	code/modules/mob/living/carbon/human/species_types/vampire.dm:205	inert	datum_action_item_action_organ_action_vampire	0	0
-proc	/datum/action/item_action/organ_action/vampire	do_effect	code/modules/mob/living/carbon/human/species_types/vampire.dm:211	trigger_flags	no	-	proc
+type	/datum/action/item_action/organ_action/vampire	/datum/action/item_action/organ_action	code/modules/mob/living/carbon/human/species_types/vampire.dm:205	live	datum_action_item_action_organ_action_vampire	1	0
+proc	/datum/action/item_action/organ_action/vampire	do_effect	code/modules/mob/living/carbon/human/species_types/vampire.dm:211	trigger_flags	yes	full	proc
 type	/datum/action/item_action/fortify	/datum/action/item_action	code/datums/actions/items/pillow_weapons.dm:3	live	datum_action_item_action_fortify	0	0
 type	/datum/action/item_action/reload_rebar	/datum/action/item_action	code/datums/actions/items/reload_rebar.dm:2	live	datum_action_item_action_reload_rebar	0	0
 type	/datum/action/item_action/set_internals	/datum/action/item_action	code/datums/actions/items/set_internals.dm:2	live	datum_action_item_action_set_internals	1	0
@@ -12735,8 +12735,8 @@ proc	/datum/status_effect/grouped/bodypart_effect/ethereal_glow	stop_glow_emote	
 proc	/datum/status_effect/grouped/bodypart_effect/ethereal_glow	handle_flicker	code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:196	flickmin,flickmax	yes	full	proc root
 proc	/datum/status_effect/grouped/bodypart_effect/ethereal_glow	stop_flicker	code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:209		yes	full	proc root
 proc	/datum/status_effect/grouped/bodypart_effect/ethereal_glow	start_flicker	code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:213	duration,min,max	yes	full	proc root
-type	/datum/status_effect/grouped/bodypart_effect/nyxosynthesis	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:4	inert	datum_status_effect_grouped_bodypart_effect_nyxosynthesis	0	0
-proc	/datum/status_effect/grouped/bodypart_effect/nyxosynthesis	tick	code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:7	seconds_between_ticks	no	-	proc
+type	/datum/status_effect/grouped/bodypart_effect/nyxosynthesis	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:4	live	datum_status_effect_grouped_bodypart_effect_nyxosynthesis	1	0
+proc	/datum/status_effect/grouped/bodypart_effect/nyxosynthesis	tick	code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:7	seconds_between_ticks	yes	full	proc
 type	/datum/status_effect/grouped/bodypart_effect/photosynthesis	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/photosynthesis.dm:3	live	datum_status_effect_grouped_bodypart_effect_photosynthesis	1	0
 proc	/datum/status_effect/grouped/bodypart_effect/photosynthesis	tick	code/modules/surgery/bodyparts/bodypart_effects/photosynthesis.dm:7	seconds_between_ticks	yes	full	proc
 type	/datum/status_effect/grouped/bodypart_effect/plasma_based	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:3	live	datum_status_effect_grouped_bodypart_effect_plasma_based	1	0
@@ -12831,14 +12831,14 @@ proc	/datum/status_effect/radiation_immunity	on_apply	code/datums/status_effects
 proc	/datum/status_effect/radiation_immunity	on_remove	code/datums/status_effects/buffs.dm:620		no	-	proc
 type	/datum/status_effect/radiation_immunity/radnebula	/datum/status_effect/radiation_immunity	code/datums/status_effects/buffs.dm:624	inert	datum_status_effect_radiation_immunity_radnebula	0	0
 type	/datum/status_effect/shadow	/datum/status_effect	code/datums/status_effects/buffs.dm:634	live	datum_status_effect_shadow	0	0
-type	/datum/status_effect/shadow/regeneration	/datum/status_effect/shadow	code/datums/status_effects/buffs.dm:641	inert	datum_status_effect_shadow_regeneration	0	0
-proc	/datum/status_effect/shadow/regeneration	on_apply	code/datums/status_effects/buffs.dm:643		no	-	proc
-proc	/datum/status_effect/shadow/regeneration	refresh	code/datums/status_effects/buffs.dm:650	effect	no	-	proc
-proc	/datum/status_effect/shadow/regeneration	heal_owner	code/datums/status_effects/buffs.dm:655		no	-	proc root
-type	/datum/status_effect/shadow/nightmare	/datum/status_effect/shadow	code/modules/antagonists/nightmare/nightmare_organs.dm:48	inert	datum_status_effect_shadow_nightmare	0	0
-proc	/datum/status_effect/shadow/nightmare	on_apply	code/modules/antagonists/nightmare/nightmare_organs.dm:51		no	-	proc
-proc	/datum/status_effect/shadow/nightmare	on_remove	code/modules/antagonists/nightmare/nightmare_organs.dm:58		no	-	proc
-proc	/datum/status_effect/shadow/nightmare	dodge_bullets	code/modules/antagonists/nightmare/nightmare_organs.dm:62	source,hitting_projectile,def_zone	no	-	proc root
+type	/datum/status_effect/shadow/regeneration	/datum/status_effect/shadow	code/datums/status_effects/buffs.dm:641	live	datum_status_effect_shadow_regeneration	1	0
+proc	/datum/status_effect/shadow/regeneration	on_apply	code/datums/status_effects/buffs.dm:643		yes	full	proc
+proc	/datum/status_effect/shadow/regeneration	refresh	code/datums/status_effects/buffs.dm:650	effect	yes	full	proc
+proc	/datum/status_effect/shadow/regeneration	heal_owner	code/datums/status_effects/buffs.dm:655		yes	full	proc root
+type	/datum/status_effect/shadow/nightmare	/datum/status_effect/shadow	code/modules/antagonists/nightmare/nightmare_organs.dm:48	live	datum_status_effect_shadow_nightmare	1	0
+proc	/datum/status_effect/shadow/nightmare	on_apply	code/modules/antagonists/nightmare/nightmare_organs.dm:51		yes	full	proc
+proc	/datum/status_effect/shadow/nightmare	on_remove	code/modules/antagonists/nightmare/nightmare_organs.dm:58		yes	full	proc
+proc	/datum/status_effect/shadow/nightmare	dodge_bullets	code/modules/antagonists/nightmare/nightmare_organs.dm:62	source,hitting_projectile,def_zone	yes	full	proc root
 type	/datum/status_effect/desensitized	/datum/status_effect	code/datums/status_effects/buffs.dm:666	live	datum_status_effect_desensitized	1	0
 proc	/datum/status_effect/desensitized	on_creation	code/datums/status_effects/buffs.dm:675	new_owner,effect_id,magnitude	yes	full	proc
 proc	/datum/status_effect/desensitized	on_apply	code/datums/status_effects/buffs.dm:680		yes	full	proc
@@ -19084,14 +19084,14 @@ proc	/datum/component/life_link	update_med_hud_status	code/datums/components/lif
 proc	/datum/component/life_link	on_host_died	code/datums/components/life_link.dm:129	source,gibbed	yes	full	proc root
 proc	/datum/component/life_link	on_host_revived	code/datums/components/life_link.dm:136	source,full_heal_flags	yes	full	proc root
 proc	/datum/component/life_link	on_host_deleted	code/datums/components/life_link.dm:142		yes	full	proc root
-type	/datum/component/light_eater	/datum/component	code/datums/components/light_eater.dm:7	inert	datum_component_light_eater	0	0
-proc	/datum/component/light_eater	Initialize	code/datums/components/light_eater.dm:11	_eaten	no	-	proc
-proc	/datum/component/light_eater	Destroy	code/datums/components/light_eater.dm:25	force	no	-	proc
-proc	/datum/component/light_eater	RegisterWithParent	code/datums/components/light_eater.dm:33		no	-	proc
-proc	/datum/component/light_eater	UnregisterFromParent	code/datums/components/light_eater.dm:38		no	-	proc
-proc	/datum/component/light_eater	InheritComponent	code/datums/components/light_eater.dm:43	C,i_am_original,_eaten	no	-	proc
-proc	/datum/component/light_eater	on_devour	code/datums/components/light_eater.dm:55	source,morsel	no	-	proc root
-proc	/datum/component/light_eater	deref_eaten_light	code/datums/components/light_eater.dm:62	eaten_light,force	no	-	proc root
+type	/datum/component/light_eater	/datum/component	code/datums/components/light_eater.dm:7	live	datum_component_light_eater	1	0
+proc	/datum/component/light_eater	Initialize	code/datums/components/light_eater.dm:11	_eaten	yes	full	proc
+proc	/datum/component/light_eater	Destroy	code/datums/components/light_eater.dm:25	force	yes	full	proc
+proc	/datum/component/light_eater	RegisterWithParent	code/datums/components/light_eater.dm:33		yes	full	proc
+proc	/datum/component/light_eater	UnregisterFromParent	code/datums/components/light_eater.dm:38		yes	full	proc
+proc	/datum/component/light_eater	InheritComponent	code/datums/components/light_eater.dm:43	C,i_am_original,_eaten	yes	full	proc
+proc	/datum/component/light_eater	on_devour	code/datums/components/light_eater.dm:55	source,morsel	yes	full	proc root
+proc	/datum/component/light_eater	deref_eaten_light	code/datums/components/light_eater.dm:62	eaten_light,force	yes	full	proc root
 type	/datum/component/limb_applicable	/datum/component	code/datums/components/limb_applicable.dm:11	live	datum_component_limb_applicable	1	0
 proc	/datum/component/limb_applicable	Initialize	code/datums/components/limb_applicable.dm:26	valid_zones,apply_category,override_existing,can_apply,do_apply,on_apply	yes	full	proc
 proc	/datum/component/limb_applicable	RegisterWithParent	code/datums/components/limb_applicable.dm:45		yes	full	proc
@@ -20779,12 +20779,12 @@ proc	/datum/component/germ_sensitive	dropped	code/datums/components/food/germ_se
 proc	/datum/component/germ_sensitive	examine	code/datums/components/food/germ_sensitive.dm:102	source,user,examine_list	yes	full	proc root
 proc	/datum/component/germ_sensitive	expose_to_germs	code/datums/components/food/germ_sensitive.dm:107		yes	full	proc root
 proc	/datum/component/germ_sensitive	delete_germs	code/datums/components/food/germ_sensitive.dm:122		yes	full	proc root
-type	/datum/component/ghost_edible	/datum/component	code/datums/components/food/ghost_edible.dm:7	inert	datum_component_ghost_edible	0	0
-proc	/datum/component/ghost_edible	Initialize	code/datums/components/food/ghost_edible.dm:15	bite_consumption,bite_chance,minimum_scale	no	-	proc
-proc	/datum/component/ghost_edible	RegisterWithParent	code/datums/components/food/ghost_edible.dm:38		no	-	proc
-proc	/datum/component/ghost_edible	UnregisterFromParent	code/datums/components/food/ghost_edible.dm:41		no	-	proc
-proc	/datum/component/ghost_edible	Destroy	code/datums/components/food/ghost_edible.dm:44	force	no	-	proc
-proc	/datum/component/ghost_edible	process	code/datums/components/food/ghost_edible.dm:48	seconds_per_tick	no	-	proc
+type	/datum/component/ghost_edible	/datum/component	code/datums/components/food/ghost_edible.dm:7	live	datum_component_ghost_edible	1	0
+proc	/datum/component/ghost_edible	Initialize	code/datums/components/food/ghost_edible.dm:15	bite_consumption,bite_chance,minimum_scale	yes	full	proc
+proc	/datum/component/ghost_edible	RegisterWithParent	code/datums/components/food/ghost_edible.dm:38		yes	full	proc
+proc	/datum/component/ghost_edible	UnregisterFromParent	code/datums/components/food/ghost_edible.dm:41		yes	full	proc
+proc	/datum/component/ghost_edible	Destroy	code/datums/components/food/ghost_edible.dm:44	force	yes	full	proc
+proc	/datum/component/ghost_edible	process	code/datums/components/food/ghost_edible.dm:48	seconds_per_tick	yes	full	proc
 type	/datum/component/golem_food	/datum/component	code/datums/components/food/golem_food.dm:4	live	datum_component_golem_food	1	0
 proc	/datum/component/golem_food	Initialize	code/datums/components/food/golem_food.dm:14	consume_on_eat,golem_food_key,extra_validation,food_multiplier	yes	full	proc
 proc	/datum/component/golem_food	RegisterWithParent	code/datums/components/food/golem_food.dm:26		yes	full	proc
@@ -24306,25 +24306,25 @@ type	/datum/element/light_blocking	/datum/element	code/datums/elements/light_blo
 proc	/datum/element/light_blocking	Attach	code/datums/elements/light_blocking.dm:8	target	yes	full	proc
 proc	/datum/element/light_blocking	Detach	code/datums/elements/light_blocking.dm:20	target	yes	full	proc
 proc	/datum/element/light_blocking	on_target_move	code/datums/elements/light_blocking.dm:31	source,old_loc,dir,forced,old_locs	yes	full	proc root
-type	/datum/element/light_eaten	/datum/element	code/datums/elements/light_eaten.dm:5	inert	datum_element_light_eaten	0	0
-proc	/datum/element/light_eaten	Attach	code/datums/elements/light_eaten.dm:7	target	no	-	proc
-proc	/datum/element/light_eaten	Detach	code/datums/elements/light_eaten.dm:28	source	no	-	proc
-proc	/datum/element/light_eaten	block_light_power	code/datums/elements/light_eaten.dm:38	eaten_light,new_power	no	-	proc root
-proc	/datum/element/light_eaten	block_light_range	code/datums/elements/light_eaten.dm:47	eaten_light,new_range	no	-	proc root
-proc	/datum/element/light_eaten	block_light_on	code/datums/elements/light_eaten.dm:56	eaten_light,new_on	no	-	proc root
-proc	/datum/element/light_eaten	on_examine	code/datums/elements/light_eaten.dm:63	eaten_light,examiner,examine_text	no	-	proc root
-type	/datum/element/light_eater	/datum/element	code/datums/elements/light_eater.dm:12	inert	datum_element_light_eater	0	0
-proc	/datum/element/light_eater	Attach	code/datums/elements/light_eater.dm:12	target	no	-	proc
-proc	/datum/element/light_eater	Detach	code/datums/elements/light_eater.dm:34	source	no	-	proc
-proc	/datum/element/light_eater	eat_lights	code/datums/elements/light_eater.dm:51	food,eater	no	-	proc root
-proc	/datum/element/light_eater	table_buffet	code/datums/elements/light_eater.dm:76	commisary,devourer	no	-	proc root
-proc	/datum/element/light_eater	devour	code/datums/elements/light_eater.dm:89	morsel,eater	no	-	proc root
-proc	/datum/element/light_eater	on_throw_impact	code/datums/elements/light_eater.dm:115	source,hit_atom,thrownthing	no	-	proc root
-proc	/datum/element/light_eater	on_interacting_with	code/datums/elements/light_eater.dm:128	source,user,target	no	-	proc root
-proc	/datum/element/light_eater	on_hit_reaction	code/datums/elements/light_eater.dm:161	source,owner,hitby,attack_text,final_block_chance,damage,attack_type,damage_type	no	-	proc root
-proc	/datum/element/light_eater	on_projectile_hit	code/datums/elements/light_eater.dm:176	source,firer,target,angle	no	-	proc root
-proc	/datum/element/light_eater	on_projectile_self_hit	code/datums/elements/light_eater.dm:191	source,firer,target,angle,hit_limb	no	-	proc root
-proc	/datum/element/light_eater	on_expose_atom	code/datums/elements/light_eater.dm:204	source,target,reac_volume,methods	no	-	proc root
+type	/datum/element/light_eaten	/datum/element	code/datums/elements/light_eaten.dm:5	live	datum_element_light_eaten	1	0
+proc	/datum/element/light_eaten	Attach	code/datums/elements/light_eaten.dm:7	target	yes	full	proc
+proc	/datum/element/light_eaten	Detach	code/datums/elements/light_eaten.dm:28	source	yes	full	proc
+proc	/datum/element/light_eaten	block_light_power	code/datums/elements/light_eaten.dm:38	eaten_light,new_power	yes	full	proc root
+proc	/datum/element/light_eaten	block_light_range	code/datums/elements/light_eaten.dm:47	eaten_light,new_range	yes	full	proc root
+proc	/datum/element/light_eaten	block_light_on	code/datums/elements/light_eaten.dm:56	eaten_light,new_on	yes	full	proc root
+proc	/datum/element/light_eaten	on_examine	code/datums/elements/light_eaten.dm:63	eaten_light,examiner,examine_text	yes	full	proc root
+type	/datum/element/light_eater	/datum/element	code/datums/elements/light_eater.dm:12	live	datum_element_light_eater	1	0
+proc	/datum/element/light_eater	Attach	code/datums/elements/light_eater.dm:12	target	yes	full	proc
+proc	/datum/element/light_eater	Detach	code/datums/elements/light_eater.dm:34	source	yes	full	proc
+proc	/datum/element/light_eater	eat_lights	code/datums/elements/light_eater.dm:51	food,eater	yes	full	proc root
+proc	/datum/element/light_eater	table_buffet	code/datums/elements/light_eater.dm:76	commisary,devourer	yes	full	proc root
+proc	/datum/element/light_eater	devour	code/datums/elements/light_eater.dm:89	morsel,eater	yes	full	proc root
+proc	/datum/element/light_eater	on_throw_impact	code/datums/elements/light_eater.dm:115	source,hit_atom,thrownthing	yes	full	proc root
+proc	/datum/element/light_eater	on_interacting_with	code/datums/elements/light_eater.dm:128	source,user,target	yes	full	proc root
+proc	/datum/element/light_eater	on_hit_reaction	code/datums/elements/light_eater.dm:161	source,owner,hitby,attack_text,final_block_chance,damage,attack_type,damage_type	yes	full	proc root
+proc	/datum/element/light_eater	on_projectile_hit	code/datums/elements/light_eater.dm:176	source,firer,target,angle	yes	full	proc root
+proc	/datum/element/light_eater	on_projectile_self_hit	code/datums/elements/light_eater.dm:191	source,firer,target,angle,hit_limb	yes	full	proc root
+proc	/datum/element/light_eater	on_expose_atom	code/datums/elements/light_eater.dm:204	source,target,reac_volume,methods	yes	full	proc root
 type	/datum/element/living_limb_initialiser	/datum/element	code/datums/elements/living_limb_initialiser.dm:4	inert	datum_element_living_limb_initialiser	0	0
 proc	/datum/element/living_limb_initialiser	Attach	code/datums/elements/living_limb_initialiser.dm:4	target	no	-	proc
 proc	/datum/element/living_limb_initialiser	Detach	code/datums/elements/living_limb_initialiser.dm:10	target	no	-	proc
@@ -28085,11 +28085,11 @@ type	/datum/preference/choiced/lizard_legs	/datum/preference/choiced	code/module
 proc	/datum/preference/choiced/lizard_legs	init_possible_values	code/modules/client/preferences/species_features/lizard.dm:84		yes	full	proc
 proc	/datum/preference/choiced/lizard_legs	apply_to_human	code/modules/client/preferences/species_features/lizard.dm:87	target,value,preferences	yes	full	proc
 proc	/datum/preference/choiced/lizard_legs	is_accessible	code/modules/client/preferences/species_features/lizard.dm:112	preferences	yes	full	proc
-type	/datum/preference/choiced/vampire_status	/datum/preference/choiced	code/modules/client/preferences/species_features/vampire.dm:2	inert	datum_preference_choiced_vampire_status	0	0
-proc	/datum/preference/choiced/vampire_status	create_default_value	code/modules/client/preferences/species_features/vampire.dm:11		no	-	proc
-proc	/datum/preference/choiced/vampire_status	init_possible_values	code/modules/client/preferences/species_features/vampire.dm:14		no	-	proc
-proc	/datum/preference/choiced/vampire_status	icon_for	code/modules/client/preferences/species_features/vampire.dm:17	value	no	-	proc
-proc	/datum/preference/choiced/vampire_status	apply_to_human	code/modules/client/preferences/species_features/vampire.dm:27	target,value,preferences	no	-	proc
+type	/datum/preference/choiced/vampire_status	/datum/preference/choiced	code/modules/client/preferences/species_features/vampire.dm:2	live	datum_preference_choiced_vampire_status	1	0
+proc	/datum/preference/choiced/vampire_status	create_default_value	code/modules/client/preferences/species_features/vampire.dm:11		yes	full	proc
+proc	/datum/preference/choiced/vampire_status	init_possible_values	code/modules/client/preferences/species_features/vampire.dm:14		yes	full	proc
+proc	/datum/preference/choiced/vampire_status	icon_for	code/modules/client/preferences/species_features/vampire.dm:17	value	yes	full	proc
+proc	/datum/preference/choiced/vampire_status	apply_to_human	code/modules/client/preferences/species_features/vampire.dm:27	target,value,preferences	yes	full	proc
 type	/datum/preference/color	/datum/preference	code/modules/client/preferences/_preference.dm:508	live	datum_preference_color	1	0
 proc	/datum/preference/color	deserialize	code/modules/client/preferences/_preference.dm:510	input,preferences	yes	full	proc
 proc	/datum/preference/color	create_default_value	code/modules/client/preferences/_preference.dm:513		yes	full	proc
@@ -36610,15 +36610,15 @@ proc	/datum/species/shadow	get_species_description	code/modules/mob/living/carbo
 proc	/datum/species/shadow	get_species_lore	code/modules/mob/living/carbon/human/species_types/shadowpeople.dm:58		yes	full	proc
 proc	/datum/species/shadow	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/shadowpeople.dm:73		yes	full	proc
 proc	/datum/species/shadow	on_flashed	code/modules/mob/living/carbon/human/species_types/shadowpeople.dm:117	source,flashed,flash,deviation	yes	full	proc root
-type	/datum/species/shadow/nightmare	/datum/species/shadow	code/modules/antagonists/nightmare/nightmare_species.dm:5	inert	datum_species_shadow_nightmare	0	0
-proc	/datum/species/shadow/nightmare	on_species_gain	code/modules/antagonists/nightmare/nightmare_species.dm:38	C,old_species,pref_load,regenerate_icons	no	-	proc
-proc	/datum/species/shadow/nightmare	check_roundstart_eligible	code/modules/antagonists/nightmare/nightmare_species.dm:43		no	-	proc
-type	/datum/species/abductor	/datum/species	code/modules/mob/living/carbon/human/species_types/abductors.dm:2	inert	datum_species_abductor	0	0
-proc	/datum/species/abductor	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/abductors.dm:32		no	-	proc
-proc	/datum/species/abductor	get_species_description	code/modules/mob/living/carbon/human/species_types/abductors.dm:36		no	-	proc
-proc	/datum/species/abductor	get_species_lore	code/modules/mob/living/carbon/human/species_types/abductors.dm:40		no	-	proc
-proc	/datum/species/abductor	create_pref_traits_perks	code/modules/mob/living/carbon/human/species_types/abductors.dm:47		no	-	proc
-proc	/datum/species/abductor	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/abductors.dm:64		no	-	proc
+type	/datum/species/shadow/nightmare	/datum/species/shadow	code/modules/antagonists/nightmare/nightmare_species.dm:5	live	datum_species_shadow_nightmare	1	0
+proc	/datum/species/shadow/nightmare	on_species_gain	code/modules/antagonists/nightmare/nightmare_species.dm:38	C,old_species,pref_load,regenerate_icons	yes	full	proc
+proc	/datum/species/shadow/nightmare	check_roundstart_eligible	code/modules/antagonists/nightmare/nightmare_species.dm:43		yes	full	proc
+type	/datum/species/abductor	/datum/species	code/modules/mob/living/carbon/human/species_types/abductors.dm:2	live	datum_species_abductor	1	0
+proc	/datum/species/abductor	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/abductors.dm:32		yes	full	proc
+proc	/datum/species/abductor	get_species_description	code/modules/mob/living/carbon/human/species_types/abductors.dm:36		yes	full	proc
+proc	/datum/species/abductor	get_species_lore	code/modules/mob/living/carbon/human/species_types/abductors.dm:40		yes	full	proc
+proc	/datum/species/abductor	create_pref_traits_perks	code/modules/mob/living/carbon/human/species_types/abductors.dm:47		yes	full	proc
+proc	/datum/species/abductor	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/abductors.dm:64		yes	full	proc
 type	/datum/species/android	/datum/species	code/modules/mob/living/carbon/human/species_types/android.dm:2	live	datum_species_android	1	0
 proc	/datum/species/android	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/android.dm:51		yes	full	proc
 proc	/datum/species/android	get_species_description	code/modules/mob/living/carbon/human/species_types/android.dm:56		yes	full	proc
@@ -36649,33 +36649,33 @@ proc	/datum/species/human/felinid	get_physical_attributes	code/modules/mob/livin
 proc	/datum/species/human/felinid	get_species_description	code/modules/mob/living/carbon/human/species_types/felinid.dm:133		yes	full	proc
 proc	/datum/species/human/felinid	get_species_lore	code/modules/mob/living/carbon/human/species_types/felinid.dm:138		yes	full	proc
 proc	/datum/species/human/felinid	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/felinid.dm:154		yes	full	proc
-type	/datum/species/human/vampire	/datum/species/human	code/modules/mob/living/carbon/human/species_types/vampire.dm:8	inert	datum_species_human_vampire	0	0
-proc	/datum/species/human/vampire	check_roundstart_eligible	code/modules/mob/living/carbon/human/species_types/vampire.dm:28		no	-	proc
-proc	/datum/species/human/vampire	on_species_gain	code/modules/mob/living/carbon/human/species_types/vampire.dm:33	new_vampire,old_species,pref_load,regenerate_icons	no	-	proc
-proc	/datum/species/human/vampire	on_species_loss	code/modules/mob/living/carbon/human/species_types/vampire.dm:42	old_vampire,new_species,pref_load	no	-	proc
-proc	/datum/species/human/vampire	on_life	code/modules/mob/living/carbon/human/species_types/vampire.dm:50	vampire,seconds_per_tick	no	-	proc root
-proc	/datum/species/human/vampire	on_hud_created	code/modules/mob/living/carbon/human/species_types/vampire.dm:73	source	no	-	proc root
-proc	/datum/species/human/vampire	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/vampire.dm:77		no	-	proc
-proc	/datum/species/human/vampire	get_species_description	code/modules/mob/living/carbon/human/species_types/vampire.dm:81		no	-	proc
-proc	/datum/species/human/vampire	get_species_lore	code/modules/mob/living/carbon/human/species_types/vampire.dm:84		no	-	proc
-proc	/datum/species/human/vampire	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/vampire.dm:91		no	-	proc
-proc	/datum/species/human/vampire	create_pref_blood_perks	code/modules/mob/living/carbon/human/species_types/vampire.dm:120		no	-	proc
-proc	/datum/species/human/vampire	create_pref_biotypes_perks	code/modules/mob/living/carbon/human/species_types/vampire.dm:137		no	-	proc
-type	/datum/species/dullahan	/datum/species	code/modules/mob/living/carbon/human/species_types/dullahan.dm:2	inert	datum_species_dullahan	0	0
-proc	/datum/species/dullahan	check_roundstart_eligible	code/modules/mob/living/carbon/human/species_types/dullahan.dm:37		no	-	proc
-proc	/datum/species/dullahan	on_species_gain	code/modules/mob/living/carbon/human/species_types/dullahan.dm:42	human,old_species,pref_load,regenerate_icons	no	-	proc
-proc	/datum/species/dullahan	on_gained_part	code/modules/mob/living/carbon/human/species_types/dullahan.dm:69	dullahan,part	no	-	proc root
-proc	/datum/species/dullahan	on_head_destroyed	code/modules/mob/living/carbon/human/species_types/dullahan.dm:80		no	-	proc root
-proc	/datum/species/dullahan	on_relay_move	code/modules/mob/living/carbon/human/species_types/dullahan.dm:90		no	-	proc root
-proc	/datum/species/dullahan	defib_check	code/modules/mob/living/carbon/human/species_types/dullahan.dm:97	human	no	-	proc root
-proc	/datum/species/dullahan	on_species_loss	code/modules/mob/living/carbon/human/species_types/dullahan.dm:101	human	no	-	proc
-proc	/datum/species/dullahan	update_vision_perspective	code/modules/mob/living/carbon/human/species_types/dullahan.dm:118	human	no	-	proc root
-proc	/datum/species/dullahan	on_owner_login	code/modules/mob/living/carbon/human/species_types/dullahan.dm:129	owner	no	-	proc
-proc	/datum/species/dullahan	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/dullahan.dm:143		no	-	proc
-proc	/datum/species/dullahan	get_species_description	code/modules/mob/living/carbon/human/species_types/dullahan.dm:146		no	-	proc
-proc	/datum/species/dullahan	get_species_lore	code/modules/mob/living/carbon/human/species_types/dullahan.dm:151		no	-	proc
-proc	/datum/species/dullahan	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/dullahan.dm:158		no	-	proc
-proc	/datum/species/dullahan	create_pref_biotypes_perks	code/modules/mob/living/carbon/human/species_types/dullahan.dm:173		no	-	proc
+type	/datum/species/human/vampire	/datum/species/human	code/modules/mob/living/carbon/human/species_types/vampire.dm:8	live	datum_species_human_vampire	1	0
+proc	/datum/species/human/vampire	check_roundstart_eligible	code/modules/mob/living/carbon/human/species_types/vampire.dm:28		yes	full	proc
+proc	/datum/species/human/vampire	on_species_gain	code/modules/mob/living/carbon/human/species_types/vampire.dm:33	new_vampire,old_species,pref_load,regenerate_icons	yes	full	proc
+proc	/datum/species/human/vampire	on_species_loss	code/modules/mob/living/carbon/human/species_types/vampire.dm:42	old_vampire,new_species,pref_load	yes	full	proc
+proc	/datum/species/human/vampire	on_life	code/modules/mob/living/carbon/human/species_types/vampire.dm:50	vampire,seconds_per_tick	yes	full	proc root
+proc	/datum/species/human/vampire	on_hud_created	code/modules/mob/living/carbon/human/species_types/vampire.dm:73	source	yes	full	proc root
+proc	/datum/species/human/vampire	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/vampire.dm:77		yes	full	proc
+proc	/datum/species/human/vampire	get_species_description	code/modules/mob/living/carbon/human/species_types/vampire.dm:81		yes	full	proc
+proc	/datum/species/human/vampire	get_species_lore	code/modules/mob/living/carbon/human/species_types/vampire.dm:84		yes	full	proc
+proc	/datum/species/human/vampire	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/vampire.dm:91		yes	full	proc
+proc	/datum/species/human/vampire	create_pref_blood_perks	code/modules/mob/living/carbon/human/species_types/vampire.dm:120		yes	full	proc
+proc	/datum/species/human/vampire	create_pref_biotypes_perks	code/modules/mob/living/carbon/human/species_types/vampire.dm:137		yes	full	proc
+type	/datum/species/dullahan	/datum/species	code/modules/mob/living/carbon/human/species_types/dullahan.dm:2	live	datum_species_dullahan	1	0
+proc	/datum/species/dullahan	check_roundstart_eligible	code/modules/mob/living/carbon/human/species_types/dullahan.dm:37		yes	full	proc
+proc	/datum/species/dullahan	on_species_gain	code/modules/mob/living/carbon/human/species_types/dullahan.dm:42	human,old_species,pref_load,regenerate_icons	yes	full	proc
+proc	/datum/species/dullahan	on_gained_part	code/modules/mob/living/carbon/human/species_types/dullahan.dm:69	dullahan,part	yes	full	proc root
+proc	/datum/species/dullahan	on_head_destroyed	code/modules/mob/living/carbon/human/species_types/dullahan.dm:80		yes	full	proc root
+proc	/datum/species/dullahan	on_relay_move	code/modules/mob/living/carbon/human/species_types/dullahan.dm:90		yes	full	proc root
+proc	/datum/species/dullahan	defib_check	code/modules/mob/living/carbon/human/species_types/dullahan.dm:97	human	yes	full	proc root
+proc	/datum/species/dullahan	on_species_loss	code/modules/mob/living/carbon/human/species_types/dullahan.dm:101	human	yes	full	proc
+proc	/datum/species/dullahan	update_vision_perspective	code/modules/mob/living/carbon/human/species_types/dullahan.dm:118	human	yes	full	proc root
+proc	/datum/species/dullahan	on_owner_login	code/modules/mob/living/carbon/human/species_types/dullahan.dm:129	owner	yes	full	proc
+proc	/datum/species/dullahan	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/dullahan.dm:143		yes	full	proc
+proc	/datum/species/dullahan	get_species_description	code/modules/mob/living/carbon/human/species_types/dullahan.dm:146		yes	full	proc
+proc	/datum/species/dullahan	get_species_lore	code/modules/mob/living/carbon/human/species_types/dullahan.dm:151		yes	full	proc
+proc	/datum/species/dullahan	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/dullahan.dm:158		yes	full	proc
+proc	/datum/species/dullahan	create_pref_biotypes_perks	code/modules/mob/living/carbon/human/species_types/dullahan.dm:173		yes	full	proc
 type	/datum/species/ethereal	/datum/species	code/modules/mob/living/carbon/human/species_types/ethereal.dm:2	live	datum_species_ethereal	1	0
 proc	/datum/species/ethereal	on_species_gain	code/modules/mob/living/carbon/human/species_types/ethereal.dm:40	new_ethereal,old_species,pref_load,regenerate_icons	yes	full	proc
 proc	/datum/species/ethereal	randomize_features	code/modules/mob/living/carbon/human/species_types/ethereal.dm:51		yes	full	proc
@@ -36693,18 +36693,18 @@ proc	/datum/species/fly	get_physical_attributes	code/modules/mob/living/carbon/h
 proc	/datum/species/fly	get_species_description	code/modules/mob/living/carbon/human/species_types/flypeople.dm:32		yes	full	proc
 proc	/datum/species/fly	get_species_lore	code/modules/mob/living/carbon/human/species_types/flypeople.dm:38		yes	full	proc
 proc	/datum/species/fly	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/flypeople.dm:52		yes	full	proc
-type	/datum/species/spirit	/datum/species	code/modules/mob/living/carbon/human/species_types/ghost.dm:3	inert	datum_species_spirit	0	0
-proc	/datum/species/spirit	check_roundstart_eligible	code/modules/mob/living/carbon/human/species_types/ghost.dm:44		no	-	proc
-proc	/datum/species/spirit	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/ghost.dm:49		no	-	proc
-proc	/datum/species/spirit	get_species_description	code/modules/mob/living/carbon/human/species_types/ghost.dm:52		no	-	proc
-proc	/datum/species/spirit	get_species_lore	code/modules/mob/living/carbon/human/species_types/ghost.dm:55		no	-	proc
-proc	/datum/species/spirit	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/ghost.dm:63		no	-	proc
-type	/datum/species/spirit/ghost	/datum/species/spirit	code/modules/mob/living/carbon/human/species_types/ghost.dm:89	inert	datum_species_spirit_ghost	0	0
-proc	/datum/species/spirit/ghost	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/ghost.dm:118		no	-	proc
-proc	/datum/species/spirit/ghost	get_species_lore	code/modules/mob/living/carbon/human/species_types/ghost.dm:122		no	-	proc
-proc	/datum/species/spirit/ghost	on_species_gain	code/modules/mob/living/carbon/human/species_types/ghost.dm:131	new_ghost,old_species,pref_load,regenerate_icons	no	-	proc
-proc	/datum/species/spirit/ghost	on_species_loss	code/modules/mob/living/carbon/human/species_types/ghost.dm:138	former_ghost,new_species,pref_load	no	-	proc
-proc	/datum/species/spirit/ghost	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/ghost.dm:145		no	-	proc
+type	/datum/species/spirit	/datum/species	code/modules/mob/living/carbon/human/species_types/ghost.dm:3	live	datum_species_spirit	1	0
+proc	/datum/species/spirit	check_roundstart_eligible	code/modules/mob/living/carbon/human/species_types/ghost.dm:44		yes	full	proc
+proc	/datum/species/spirit	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/ghost.dm:49		yes	full	proc
+proc	/datum/species/spirit	get_species_description	code/modules/mob/living/carbon/human/species_types/ghost.dm:52		yes	full	proc
+proc	/datum/species/spirit	get_species_lore	code/modules/mob/living/carbon/human/species_types/ghost.dm:55		yes	full	proc
+proc	/datum/species/spirit	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/ghost.dm:63		yes	full	proc
+type	/datum/species/spirit/ghost	/datum/species/spirit	code/modules/mob/living/carbon/human/species_types/ghost.dm:89	live	datum_species_spirit_ghost	1	0
+proc	/datum/species/spirit/ghost	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/ghost.dm:118		yes	full	proc
+proc	/datum/species/spirit/ghost	get_species_lore	code/modules/mob/living/carbon/human/species_types/ghost.dm:122		yes	full	proc
+proc	/datum/species/spirit/ghost	on_species_gain	code/modules/mob/living/carbon/human/species_types/ghost.dm:131	new_ghost,old_species,pref_load,regenerate_icons	yes	full	proc
+proc	/datum/species/spirit/ghost	on_species_loss	code/modules/mob/living/carbon/human/species_types/ghost.dm:138	former_ghost,new_species,pref_load	yes	full	proc
+proc	/datum/species/spirit/ghost	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/ghost.dm:145		yes	full	proc
 type	/datum/species/golem	/datum/species	code/modules/mob/living/carbon/human/species_types/golems.dm:3	live	datum_species_golem	1	0
 proc	/datum/species/golem	on_species_gain	code/modules/mob/living/carbon/human/species_types/golems.dm:62	human_who_gained_species,old_species,pref_load,regenerate_icons,replace_missing	yes	full	proc
 proc	/datum/species/golem	on_species_loss	code/modules/mob/living/carbon/human/species_types/golems.dm:77	human_who_lost_species,new_species,pref_load	yes	full	proc
@@ -66993,9 +66993,9 @@ type	/obj/item/bodypart/head/skeleton	/obj/item/bodypart/head	code/modules/surge
 type	/obj/item/bodypart/head/skeleton/nonfunctional	/obj/item/bodypart/head/skeleton	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:401	base	obj_item_bodypart_head_skeleton_nonfunctional	1	0
 proc	/obj/item/bodypart/head/skeleton/nonfunctional	Initialize	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:406	mapload	yes	full	proc
 type	/obj/item/bodypart/head/mushroom	/obj/item/bodypart/head	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:467	live	obj_item_bodypart_head_mushroom	0	0
-type	/obj/item/bodypart/head/dullahan	/obj/item/bodypart/head	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:512	inert	obj_item_bodypart_head_dullahan	0	0
-proc	/obj/item/bodypart/head/dullahan	Entered	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:517	arrived,old_loc,old_locs	no	-	proc
-proc	/obj/item/bodypart/head/dullahan	Exited	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:523	gone,direction	no	-	proc
+type	/obj/item/bodypart/head/dullahan	/obj/item/bodypart/head	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:512	live	obj_item_bodypart_head_dullahan	1	0
+proc	/obj/item/bodypart/head/dullahan	Entered	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:517	arrived,old_loc,old_locs	yes	full	proc
+proc	/obj/item/bodypart/head/dullahan	Exited	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:523	gone,direction	yes	full	proc
 type	/obj/item/bodypart/head/golem	/obj/item/bodypart/head	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:532	live	obj_item_bodypart_head_golem	1	0
 proc	/obj/item/bodypart/head/golem	Initialize	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:549	mapload	yes	full	proc
 type	/obj/item/bodypart/head/monkey	/obj/item/bodypart/head	code/modules/surgery/bodyparts/species_parts/monkey_parts.dm:2	live	obj_item_bodypart_head_monkey	1	0
@@ -67127,8 +67127,8 @@ type	/obj/item/bodypart/chest/ghost/spirit	/obj/item/bodypart/chest/ghost	code/m
 type	/obj/item/bodypart/chest/lizard	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/lizard_bodyparts.dm:13	live	obj_item_bodypart_chest_lizard	1	0
 proc	/obj/item/bodypart/chest/lizard	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/lizard_bodyparts.dm:19		yes	full	proc
 type	/obj/item/bodypart/chest/snail	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:11	live	obj_item_bodypart_chest_snail	0	0
-type	/obj/item/bodypart/chest/abductor	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:60	inert	obj_item_bodypart_chest_abductor	0	0
-proc	/obj/item/bodypart/chest/abductor	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:66		no	-	proc
+type	/obj/item/bodypart/chest/abductor	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:60	live	obj_item_bodypart_chest_abductor	1	0
+proc	/obj/item/bodypart/chest/abductor	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:66		yes	full	proc
 type	/obj/item/bodypart/chest/jelly	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:99	live	obj_item_bodypart_chest_jelly	1	0
 proc	/obj/item/bodypart/chest/jelly	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:108		yes	full	proc
 type	/obj/item/bodypart/chest/jelly/slime	/obj/item/bodypart/chest/jelly	code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:149	live	obj_item_bodypart_chest_jelly_slime	0	0
@@ -73509,11 +73509,11 @@ proc	/obj/item/organ/fangs/carp	on_mob_remove	code/game/machinery/dna_infuser/or
 proc	/obj/item/organ/fangs/carp	on_life	code/game/machinery/dna_infuser/organ_sets/carp_organs.dm:75	seconds_per_tick	yes	full	proc
 type	/obj/item/organ/fangs/stoat	/obj/item/organ/fangs	code/game/machinery/dna_infuser/organ_sets/stoat_organs.dm:136	live	obj_item_organ_fangs_stoat	1	0
 proc	/obj/item/organ/fangs/stoat	Initialize	code/game/machinery/dna_infuser/organ_sets/stoat_organs.dm:145	mapload	yes	full	proc
-type	/obj/item/organ/fangs/vampire	/obj/item/organ/fangs	code/modules/mob/living/carbon/human/species_types/vampire.dm:153	inert	obj_item_organ_fangs_vampire	0	0
-proc	/obj/item/organ/fangs/vampire	on_mob_insert	code/modules/mob/living/carbon/human/species_types/vampire.dm:166	receiver,special,movement_flags	no	-	proc
-proc	/obj/item/organ/fangs/vampire	on_mob_remove	code/modules/mob/living/carbon/human/species_types/vampire.dm:170	organ_owner,special,movement_flags	no	-	proc
-proc	/obj/item/organ/fangs/vampire	stab_bloodbag	code/modules/mob/living/carbon/human/species_types/vampire.dm:174	source,user,used_item,modifiers	no	-	proc root
-proc	/obj/item/organ/fangs/vampire	async_stab_bloodbag	code/modules/mob/living/carbon/human/species_types/vampire.dm:194	user,bloodbag,time	no	-	proc root
+type	/obj/item/organ/fangs/vampire	/obj/item/organ/fangs	code/modules/mob/living/carbon/human/species_types/vampire.dm:153	live	obj_item_organ_fangs_vampire	1	0
+proc	/obj/item/organ/fangs/vampire	on_mob_insert	code/modules/mob/living/carbon/human/species_types/vampire.dm:166	receiver,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/fangs/vampire	on_mob_remove	code/modules/mob/living/carbon/human/species_types/vampire.dm:170	organ_owner,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/fangs/vampire	stab_bloodbag	code/modules/mob/living/carbon/human/species_types/vampire.dm:174	source,user,used_item,modifiers	yes	full	proc root
+proc	/obj/item/organ/fangs/vampire	async_stab_bloodbag	code/modules/mob/living/carbon/human/species_types/vampire.dm:194	user,bloodbag,time	yes	full	proc root
 type	/obj/item/organ/fangs/cat	/obj/item/organ/fangs	code/modules/surgery/organs/internal/fangs/_fangs.dm:43	live	obj_item_organ_fangs_cat	1	0
 proc	/obj/item/organ/fangs/cat	on_bodypart_insert	code/modules/surgery/organs/internal/fangs/_fangs.dm:48	head	yes	full	proc
 proc	/obj/item/organ/fangs/cat	on_bodypart_remove	code/modules/surgery/organs/internal/fangs/_fangs.dm:53	head	yes	full	proc
@@ -73577,8 +73577,8 @@ proc	/obj/item/organ/tongue/corrupt	Initialize	code/modules/antagonists/heretic/
 proc	/obj/item/organ/tongue/corrupt	on_mob_insert	code/modules/antagonists/heretic/items/corrupted_organs.dm:67	organ_owner,special,movement_flags	no	-	proc
 proc	/obj/item/organ/tongue/corrupt	on_mob_remove	code/modules/antagonists/heretic/items/corrupted_organs.dm:71	organ_owner,special,movement_flags	no	-	proc
 proc	/obj/item/organ/tongue/corrupt	on_spoken	code/modules/antagonists/heretic/items/corrupted_organs.dm:76	organ_owner,speech_args	no	-	proc root
-type	/obj/item/organ/tongue/dullahan	/obj/item/organ/tongue	code/modules/mob/living/carbon/human/species_types/dullahan.dm:193	inert	obj_item_organ_tongue_dullahan	0	0
-proc	/obj/item/organ/tongue/dullahan	handle_speech	code/modules/mob/living/carbon/human/species_types/dullahan.dm:197	source,speech_args	no	-	proc
+type	/obj/item/organ/tongue/dullahan	/obj/item/organ/tongue	code/modules/mob/living/carbon/human/species_types/dullahan.dm:193	live	obj_item_organ_tongue_dullahan	1	0
+proc	/obj/item/organ/tongue/dullahan	handle_speech	code/modules/mob/living/carbon/human/species_types/dullahan.dm:197	source,speech_args	yes	full	proc
 type	/obj/item/organ/tongue/lizard	/obj/item/organ/tongue	code/modules/surgery/organs/internal/tongue/_tongue.dm:190	live	obj_item_organ_tongue_lizard	1	0
 proc	/obj/item/organ/tongue/lizard	Initialize	code/modules/surgery/organs/internal/tongue/_tongue.dm:219	mapload	yes	full	proc
 type	/obj/item/organ/tongue/lizard/silver	/obj/item/organ/tongue/lizard	code/modules/surgery/organs/internal/tongue/_tongue.dm:224	live	obj_item_organ_tongue_lizard_silver	0	0
@@ -73676,10 +73676,10 @@ proc	/obj/item/organ/brain/goliath	Initialize	code/game/machinery/dna_infuser/or
 proc	/obj/item/organ/brain/goliath	on_mob_insert	code/game/machinery/dna_infuser/organ_sets/goliath_organs.dm:74	brain_owner	yes	full	proc
 proc	/obj/item/organ/brain/goliath	on_mob_remove	code/game/machinery/dna_infuser/organ_sets/goliath_organs.dm:86	brain_owner	yes	full	proc
 type	/obj/item/organ/brain/shadow	/obj/item/organ/brain	code/modules/mob/living/carbon/human/species_types/shadowpeople.dm:112	live	obj_item_organ_brain_shadow	0	0
-type	/obj/item/organ/brain/shadow/nightmare	/obj/item/organ/brain/shadow	code/modules/antagonists/nightmare/nightmare_organs.dm:7	inert	obj_item_organ_brain_shadow_nightmare	0	0
-proc	/obj/item/organ/brain/shadow/nightmare	on_mob_insert	code/modules/antagonists/nightmare/nightmare_organs.dm:19	brain_owner	no	-	proc
-proc	/obj/item/organ/brain/shadow/nightmare	on_mob_remove	code/modules/antagonists/nightmare/nightmare_organs.dm:33	brain_owner	no	-	proc
-proc	/obj/item/organ/brain/shadow/nightmare	on_life	code/modules/antagonists/nightmare/nightmare_organs.dm:38	seconds_per_tick	no	-	proc
+type	/obj/item/organ/brain/shadow/nightmare	/obj/item/organ/brain/shadow	code/modules/antagonists/nightmare/nightmare_organs.dm:7	live	obj_item_organ_brain_shadow_nightmare	1	0
+proc	/obj/item/organ/brain/shadow/nightmare	on_mob_insert	code/modules/antagonists/nightmare/nightmare_organs.dm:19	brain_owner	yes	full	proc
+proc	/obj/item/organ/brain/shadow/nightmare	on_mob_remove	code/modules/antagonists/nightmare/nightmare_organs.dm:33	brain_owner	yes	full	proc
+proc	/obj/item/organ/brain/shadow/nightmare	on_life	code/modules/antagonists/nightmare/nightmare_organs.dm:38	seconds_per_tick	yes	full	proc
 type	/obj/item/organ/brain/cybernetic	/obj/item/organ/brain	code/modules/mob/living/brain/brain_cybernetic.dm:2	live	obj_item_organ_brain_cybernetic	1	0
 proc	/obj/item/organ/brain/cybernetic	brain_damage_examine	code/modules/mob/living/brain/brain_cybernetic.dm:9		yes	full	proc
 proc	/obj/item/organ/brain/cybernetic	check_for_repair	code/modules/mob/living/brain/brain_cybernetic.dm:22	item,user	yes	full	proc
@@ -73711,10 +73711,10 @@ type	/obj/item/organ/brain/felinid	/obj/item/organ/brain	code/modules/mob/living
 proc	/obj/item/organ/brain/felinid	get_attacking_limb	code/modules/mob/living/brain/brain_item.dm:560	target	yes	full	proc
 type	/obj/item/organ/brain/lizard	/obj/item/organ/brain	code/modules/mob/living/brain/brain_item.dm:568	live	obj_item_organ_brain_lizard	0	0
 type	/obj/item/organ/brain/ghost	/obj/item/organ/brain	code/modules/mob/living/brain/brain_item.dm:573	live	obj_item_organ_brain_ghost	0	0
-type	/obj/item/organ/brain/abductor	/obj/item/organ/brain	code/modules/mob/living/brain/brain_item.dm:581	inert	obj_item_organ_brain_abductor	0	0
-proc	/obj/item/organ/brain/abductor	on_mob_insert	code/modules/mob/living/brain/brain_item.dm:588	brain_owner,special,movement_flags	no	-	proc
-proc	/obj/item/organ/brain/abductor	on_mob_remove	code/modules/mob/living/brain/brain_item.dm:592	organ_owner,special,movement_flags	no	-	proc
-proc	/obj/item/organ/brain/abductor	handle_peanut_butter	code/modules/mob/living/brain/brain_item.dm:596	organ_owner,reagent,seconds_per_tick,metabolization_ratio	no	-	proc root
+type	/obj/item/organ/brain/abductor	/obj/item/organ/brain	code/modules/mob/living/brain/brain_item.dm:581	live	obj_item_organ_brain_abductor	1	0
+proc	/obj/item/organ/brain/abductor	on_mob_insert	code/modules/mob/living/brain/brain_item.dm:588	brain_owner,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/brain/abductor	on_mob_remove	code/modules/mob/living/brain/brain_item.dm:592	organ_owner,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/brain/abductor	handle_peanut_butter	code/modules/mob/living/brain/brain_item.dm:596	organ_owner,reagent,seconds_per_tick,metabolization_ratio	yes	full	proc root
 type	/obj/item/organ/brain/pod	/obj/item/organ/brain	code/modules/mob/living/brain/brain_item.dm:763	live	obj_item_organ_brain_pod	0	0
 type	/obj/item/organ/brain/dullahan	/obj/item/organ/brain	code/modules/mob/living/carbon/human/species_types/dullahan.dm:189	live	obj_item_organ_brain_dullahan	0	0
 type	/obj/item/organ/brain/primate	/obj/item/organ/brain	code/modules/mob/living/carbon/human/species_types/monkeys.dm:114	live	obj_item_organ_brain_primate	1	0
@@ -73842,15 +73842,15 @@ type	/obj/item/organ/heart/corrupt	/obj/item/organ/heart	code/modules/antagonist
 proc	/obj/item/organ/heart/corrupt	Initialize	code/modules/antagonists/heretic/items/corrupted_organs.dm:205	mapload	no	-	proc
 proc	/obj/item/organ/heart/corrupt	on_life	code/modules/antagonists/heretic/items/corrupted_organs.dm:209	seconds_per_tick	no	-	proc
 proc	/obj/item/organ/heart/corrupt	hear_beat_noise	code/modules/antagonists/heretic/items/corrupted_organs.dm:216	hearer	no	-	proc
-type	/obj/item/organ/heart/nightmare	/obj/item/organ/heart	code/modules/antagonists/nightmare/nightmare_organs.dm:77	inert	obj_item_organ_heart_nightmare	0	0
-proc	/obj/item/organ/heart/nightmare	Destroy	code/modules/antagonists/nightmare/nightmare_organs.dm:95		no	-	proc
-proc	/obj/item/organ/heart/nightmare	attack	code/modules/antagonists/nightmare/nightmare_organs.dm:99	M,user,target	no	-	proc
-proc	/obj/item/organ/heart/nightmare	on_mob_insert	code/modules/antagonists/nightmare/nightmare_organs.dm:115	heart_owner,special,movement_flags	no	-	proc
-proc	/obj/item/organ/heart/nightmare	on_mob_remove	code/modules/antagonists/nightmare/nightmare_organs.dm:123	heart_owner,special,movement_flags	no	-	proc
-proc	/obj/item/organ/heart/nightmare	Stop	code/modules/antagonists/nightmare/nightmare_organs.dm:130		no	-	proc
-proc	/obj/item/organ/heart/nightmare	on_blade_deleted	code/modules/antagonists/nightmare/nightmare_organs.dm:134	source	no	-	proc root
-proc	/obj/item/organ/heart/nightmare	on_death	code/modules/antagonists/nightmare/nightmare_organs.dm:138	seconds_per_tick	no	-	proc
-proc	/obj/item/organ/heart/nightmare	get_availability	code/modules/antagonists/nightmare/nightmare_organs.dm:163	owner_species,owner_mob	no	-	proc
+type	/obj/item/organ/heart/nightmare	/obj/item/organ/heart	code/modules/antagonists/nightmare/nightmare_organs.dm:77	live	obj_item_organ_heart_nightmare	1	0
+proc	/obj/item/organ/heart/nightmare	Destroy	code/modules/antagonists/nightmare/nightmare_organs.dm:95		yes	full	proc
+proc	/obj/item/organ/heart/nightmare	attack	code/modules/antagonists/nightmare/nightmare_organs.dm:99	M,user,target	yes	full	proc
+proc	/obj/item/organ/heart/nightmare	on_mob_insert	code/modules/antagonists/nightmare/nightmare_organs.dm:115	heart_owner,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/heart/nightmare	on_mob_remove	code/modules/antagonists/nightmare/nightmare_organs.dm:123	heart_owner,special,movement_flags	yes	full	proc
+proc	/obj/item/organ/heart/nightmare	Stop	code/modules/antagonists/nightmare/nightmare_organs.dm:130		yes	full	proc
+proc	/obj/item/organ/heart/nightmare	on_blade_deleted	code/modules/antagonists/nightmare/nightmare_organs.dm:134	source	yes	full	proc root
+proc	/obj/item/organ/heart/nightmare	on_death	code/modules/antagonists/nightmare/nightmare_organs.dm:138	seconds_per_tick	yes	full	proc
+proc	/obj/item/organ/heart/nightmare	get_availability	code/modules/antagonists/nightmare/nightmare_organs.dm:163	owner_species,owner_mob	yes	full	proc
 type	/obj/item/organ/heart/cursed	/obj/item/organ/heart	code/modules/surgery/organs/internal/heart/_heart.dm:172	live	obj_item_organ_heart_cursed	1	0
 proc	/obj/item/organ/heart/cursed	attack	code/modules/surgery/organs/internal/heart/_heart.dm:184	accursed,user,target	yes	full	proc
 proc	/obj/item/organ/heart/cursed	on_mob_insert	code/modules/surgery/organs/internal/heart/_heart.dm:192	accursed	yes	full	proc
@@ -80305,15 +80305,15 @@ type	/obj/item/eldritch_potion/crucible_soul	/obj/item/eldritch_potion	code/modu
 proc	/obj/item/eldritch_potion/crucible_soul	attack_self	code/modules/antagonists/heretic/structures/mawed_crucible.dm:307	user	no	-	proc
 type	/obj/item/eldritch_potion/duskndawn	/obj/item/eldritch_potion	code/modules/antagonists/heretic/structures/mawed_crucible.dm:314	inert	obj_item_eldritch_potion_duskndawn	0	0
 type	/obj/item/eldritch_potion/wounded	/obj/item/eldritch_potion	code/modules/antagonists/heretic/structures/mawed_crucible.dm:321	inert	obj_item_eldritch_potion_wounded	0	0
-type	/obj/item/light_eater	/obj/item	code/modules/antagonists/nightmare/nightmare_equipment.dm:5	inert	obj_item_light_eater	0	0
-proc	/obj/item/light_eater	Initialize	code/modules/antagonists/nightmare/nightmare_equipment.dm:27	mapload	no	-	proc
-proc	/obj/item/light_eater	equipped	code/modules/antagonists/nightmare/nightmare_equipment.dm:36	user,slot,initial	no	-	proc
-proc	/obj/item/light_eater	dropped	code/modules/antagonists/nightmare/nightmare_equipment.dm:43	user,silent	no	-	proc
-proc	/obj/item/light_eater	attack	code/modules/antagonists/nightmare/nightmare_equipment.dm:51	target,user,modifiers,attack_modifiers	no	-	proc
-proc	/obj/item/light_eater	prepare_crit_timer	code/modules/antagonists/nightmare/nightmare_equipment.dm:66		no	-	proc root
-proc	/obj/item/light_eater	stop_crit_timer	code/modules/antagonists/nightmare/nightmare_equipment.dm:69		no	-	proc root
-proc	/obj/item/light_eater	add_crit	code/modules/antagonists/nightmare/nightmare_equipment.dm:72		no	-	proc root
-proc	/obj/item/light_eater	remove_crit	code/modules/antagonists/nightmare/nightmare_equipment.dm:80		no	-	proc root
+type	/obj/item/light_eater	/obj/item	code/modules/antagonists/nightmare/nightmare_equipment.dm:5	live	obj_item_light_eater	1	0
+proc	/obj/item/light_eater	Initialize	code/modules/antagonists/nightmare/nightmare_equipment.dm:27	mapload	yes	full	proc
+proc	/obj/item/light_eater	equipped	code/modules/antagonists/nightmare/nightmare_equipment.dm:36	user,slot,initial	yes	full	proc
+proc	/obj/item/light_eater	dropped	code/modules/antagonists/nightmare/nightmare_equipment.dm:43	user,silent	yes	full	proc
+proc	/obj/item/light_eater	attack	code/modules/antagonists/nightmare/nightmare_equipment.dm:51	target,user,modifiers,attack_modifiers	yes	full	proc
+proc	/obj/item/light_eater	prepare_crit_timer	code/modules/antagonists/nightmare/nightmare_equipment.dm:66		yes	full	proc root
+proc	/obj/item/light_eater	stop_crit_timer	code/modules/antagonists/nightmare/nightmare_equipment.dm:69		yes	full	proc root
+proc	/obj/item/light_eater	add_crit	code/modules/antagonists/nightmare/nightmare_equipment.dm:72		yes	full	proc root
+proc	/obj/item/light_eater	remove_crit	code/modules/antagonists/nightmare/nightmare_equipment.dm:80		yes	full	proc root
 type	/obj/item/borg_chameleon	/obj/item	code/modules/antagonists/nukeop/equipment/borgchameleon.dm:5	live	obj_item_borg_chameleon	1	0
 proc	/obj/item/borg_chameleon	Initialize	code/modules/antagonists/nukeop/equipment/borgchameleon.dm:31	mapload	yes	full	proc
 proc	/obj/item/borg_chameleon	Destroy	code/modules/antagonists/nukeop/equipment/borgchameleon.dm:35		yes	full	proc
@@ -82252,14 +82252,14 @@ proc	/obj/item/storm_staff	throw_thunderbolt	code/modules/mining/lavaland/mining
 type	/obj/item/wendigo_blood	/obj/item	code/modules/mining/lavaland/mining_loot/megafauna/wendigo.dm:4	inert	obj_item_wendigo_blood	0	0
 proc	/obj/item/wendigo_blood	attack_self	code/modules/mining/lavaland/mining_loot/megafauna/wendigo.dm:9	user	no	-	proc
 type	/obj/item/wendigo_skull	/obj/item	code/modules/mining/lavaland/mining_loot/megafauna/wendigo.dm:24	live	obj_item_wendigo_skull	0	0
-type	/obj/item/dullahan_relay	/obj/item	code/modules/mob/living/carbon/human/species_types/dullahan.dm:239	inert	obj_item_dullahan_relay	0	0
-proc	/obj/item/dullahan_relay	Initialize	code/modules/mob/living/carbon/human/species_types/dullahan.dm:243	mapload,new_owner	no	-	proc
-proc	/obj/item/dullahan_relay	Destroy	code/modules/mob/living/carbon/human/species_types/dullahan.dm:257		no	-	proc
-proc	/obj/item/dullahan_relay	on_prefs_loaded	code/modules/mob/living/carbon/human/species_types/dullahan.dm:263	headless	no	-	proc root
-proc	/obj/item/dullahan_relay	Hear	code/modules/mob/living/carbon/human/species_types/dullahan.dm:278	speaker,message_language,raw_message,radio_freq,radio_freq_name,radio_freq_color,spans,message_mods,message_range	no	-	proc
-proc	/obj/item/dullahan_relay	unlist_head	code/modules/mob/living/carbon/human/species_types/dullahan.dm:293	source,excluded_zones	no	-	proc root
-proc	/obj/item/dullahan_relay	retrieve_head	code/modules/mob/living/carbon/human/species_types/dullahan.dm:298	source,full_heal_flags	no	-	proc root
-proc	/obj/item/dullahan_relay	get_listening_mob	code/modules/mob/mob.dm:415		no	-	proc
+type	/obj/item/dullahan_relay	/obj/item	code/modules/mob/living/carbon/human/species_types/dullahan.dm:239	live	obj_item_dullahan_relay	1	0
+proc	/obj/item/dullahan_relay	Initialize	code/modules/mob/living/carbon/human/species_types/dullahan.dm:243	mapload,new_owner	yes	full	proc
+proc	/obj/item/dullahan_relay	Destroy	code/modules/mob/living/carbon/human/species_types/dullahan.dm:257		yes	full	proc
+proc	/obj/item/dullahan_relay	on_prefs_loaded	code/modules/mob/living/carbon/human/species_types/dullahan.dm:263	headless	yes	full	proc root
+proc	/obj/item/dullahan_relay	Hear	code/modules/mob/living/carbon/human/species_types/dullahan.dm:278	speaker,message_language,raw_message,radio_freq,radio_freq_name,radio_freq_color,spans,message_mods,message_range	yes	full	proc
+proc	/obj/item/dullahan_relay	unlist_head	code/modules/mob/living/carbon/human/species_types/dullahan.dm:293	source,excluded_zones	yes	full	proc root
+proc	/obj/item/dullahan_relay	retrieve_head	code/modules/mob/living/carbon/human/species_types/dullahan.dm:298	source,full_heal_flags	yes	full	proc root
+proc	/obj/item/dullahan_relay	get_listening_mob	code/modules/mob/mob.dm:415		yes	full	proc
 type	/obj/item/carried_repairbot	/obj/item	code/modules/mob/living/basic/bots/repairbot/repairbot.dm:366	live	obj_item_carried_repairbot	1	0
 proc	/obj/item/carried_repairbot	set_bot	code/modules/mob/living/basic/bots/repairbot/repairbot.dm:375	repairbot	yes	full	proc root
 proc	/obj/item/carried_repairbot	dropped	code/modules/mob/living/basic/bots/repairbot/repairbot.dm:386		yes	full	proc
@@ -82950,7 +82950,7 @@ type	/obj/item/slime_extract	/obj/item	code/modules/research/xenobiology/xenobio
 proc	/obj/item/slime_extract	grind_results	code/modules/research/xenobiology/xenobiology.dm:24		stub	deferred	proc
 proc	/obj/item/slime_extract	examine	code/modules/research/xenobiology/xenobiology.dm:27	user	stub	deferred	proc
 proc	/obj/item/slime_extract	item_interaction	code/modules/research/xenobiology/xenobiology.dm:32	user,tool,modifiers	stub	deferred	proc
-proc	/obj/item/slime_extract	Initialize	code/modules/research/xenobiology/xenobiology.dm:47	mapload	stub	deferred	proc
+proc	/obj/item/slime_extract	Initialize	code/modules/research/xenobiology/xenobiology.dm:47	mapload	yes	full	proc
 proc	/obj/item/slime_extract	activate	code/modules/research/xenobiology/xenobiology.dm:60	user,species,activation_type	yes	full	proc root
 proc	/obj/item/slime_extract	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:69	interacting_with,user,modifiers	stub	deferred	proc
 proc	/obj/item/slime_extract	auto_activate_reaction	code/modules/research/xenobiology/xenobiology.dm:101	slime_reaction	stub	deferred	proc root
@@ -95691,16 +95691,16 @@ type	/obj/effect/dummy/phased_mob/grub_burrow	/obj/effect/dummy/phased_mob	code/
 proc	/obj/effect/dummy/phased_mob/grub_burrow	phased_check	code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81	user,direction	no	-	proc
 type	/obj/effect/dummy/phased_mob/chrono	/obj/effect/dummy/phased_mob	code/modules/mod/modules/modules_timeline.dm:199	live	obj_effect_dummy_phased_mob_chrono	0	0
 type	/obj/effect/dummy/phased_mob/blood	/obj/effect/dummy/phased_mob	code/modules/spells/spell_types/jaunt/bloodcrawl.dm:383	live	obj_effect_dummy_phased_mob_blood	0	0
-type	/obj/effect/dummy/phased_mob/shadow	/obj/effect/dummy/phased_mob	code/modules/spells/spell_types/jaunt/shadow_walk.dm:55	inert	obj_effect_dummy_phased_mob_shadow	0	0
-proc	/obj/effect/dummy/phased_mob/shadow	Initialize	code/modules/spells/spell_types/jaunt/shadow_walk.dm:66	mapload	no	-	proc
-proc	/obj/effect/dummy/phased_mob/shadow	Destroy	code/modules/spells/spell_types/jaunt/shadow_walk.dm:70		no	-	proc
-proc	/obj/effect/dummy/phased_mob/shadow	process	code/modules/spells/spell_types/jaunt/shadow_walk.dm:74	seconds_per_tick	no	-	proc
-proc	/obj/effect/dummy/phased_mob/shadow	relaymove	code/modules/spells/spell_types/jaunt/shadow_walk.dm:87	user,direction	no	-	proc
-proc	/obj/effect/dummy/phased_mob/shadow	phased_check	code/modules/spells/spell_types/jaunt/shadow_walk.dm:94	user,direction	no	-	proc
-proc	/obj/effect/dummy/phased_mob/shadow	eject_jaunter	code/modules/spells/spell_types/jaunt/shadow_walk.dm:103	forced_out	no	-	proc
-proc	/obj/effect/dummy/phased_mob/shadow	check_light_level	code/modules/spells/spell_types/jaunt/shadow_walk.dm:124	location_to_check	no	-	proc root
-proc	/obj/effect/dummy/phased_mob/shadow	light_step_warning	code/modules/spells/spell_types/jaunt/shadow_walk.dm:135		no	-	proc root
-proc	/obj/effect/dummy/phased_mob/shadow	reactivate_light_alert	code/modules/spells/spell_types/jaunt/shadow_walk.dm:156		no	-	proc root
+type	/obj/effect/dummy/phased_mob/shadow	/obj/effect/dummy/phased_mob	code/modules/spells/spell_types/jaunt/shadow_walk.dm:55	live	obj_effect_dummy_phased_mob_shadow	1	0
+proc	/obj/effect/dummy/phased_mob/shadow	Initialize	code/modules/spells/spell_types/jaunt/shadow_walk.dm:66	mapload	yes	full	proc
+proc	/obj/effect/dummy/phased_mob/shadow	Destroy	code/modules/spells/spell_types/jaunt/shadow_walk.dm:70		yes	full	proc
+proc	/obj/effect/dummy/phased_mob/shadow	process	code/modules/spells/spell_types/jaunt/shadow_walk.dm:74	seconds_per_tick	yes	full	proc
+proc	/obj/effect/dummy/phased_mob/shadow	relaymove	code/modules/spells/spell_types/jaunt/shadow_walk.dm:87	user,direction	yes	full	proc
+proc	/obj/effect/dummy/phased_mob/shadow	phased_check	code/modules/spells/spell_types/jaunt/shadow_walk.dm:94	user,direction	yes	full	proc
+proc	/obj/effect/dummy/phased_mob/shadow	eject_jaunter	code/modules/spells/spell_types/jaunt/shadow_walk.dm:103	forced_out	yes	full	proc
+proc	/obj/effect/dummy/phased_mob/shadow	check_light_level	code/modules/spells/spell_types/jaunt/shadow_walk.dm:124	location_to_check	yes	full	proc root
+proc	/obj/effect/dummy/phased_mob/shadow	light_step_warning	code/modules/spells/spell_types/jaunt/shadow_walk.dm:135		yes	full	proc root
+proc	/obj/effect/dummy/phased_mob/shadow	reactivate_light_alert	code/modules/spells/spell_types/jaunt/shadow_walk.dm:156		yes	full	proc root
 type	/obj/effect/dummy/lighting_obj	/obj/effect/dummy	code/game/objects/effects/lighting.dm:8	live	obj_effect_dummy_lighting_obj	1	0
 proc	/obj/effect/dummy/lighting_obj	Initialize	code/game/objects/effects/lighting.dm:17	mapload,range,power,color,duration	yes	full	proc
 type	/obj/effect/dummy/lighting_obj/moblight	/obj/effect/dummy/lighting_obj	code/game/objects/effects/lighting.dm:29	live	obj_effect_dummy_lighting_obj_moblight	1	0

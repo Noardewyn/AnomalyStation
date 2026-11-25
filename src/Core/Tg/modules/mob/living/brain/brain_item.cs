@@ -859,3 +859,34 @@ public partial class obj_item_organ_brain_felinid : obj_item_organ_brain
     }
 }
 
+
+// Species package SP3b (D349): the abductor's grey brain: peanut butter gets to it like it did to E.T.
+// tg: code/modules/mob/living/brain/brain_item.dm:581
+public partial class obj_item_organ_brain_abductor : obj_item_organ_brain
+{
+    // tg: code/modules/mob/living/brain/brain_item.dm:588
+    public override async DmTask<object> on_mob_insert(mob_living_carbon brain_owner = null, float? special = null, object movement_flags = null)
+    {
+        special ??= FALSE;
+        object dot = await base.on_mob_insert(brain_owner, special, movement_flags);
+        RegisterSignal(brain_owner, COMSIG_MOB_REAGENT_TICK, nameof(handle_peanut_butter));
+        return dot;
+    }
+
+    // tg: code/modules/mob/living/brain/brain_item.dm:592
+    public override async DmTask on_mob_remove(object organ_owner = null, float? special = null, object movement_flags = null)
+    {
+        await base.on_mob_remove(organ_owner, special, movement_flags);
+        UnregisterSignal(organ_owner as datum, COMSIG_MOB_REAGENT_TICK);
+    }
+
+    // tg: code/modules/mob/living/brain/brain_item.dm:596
+    [SignalHandler]
+    public virtual void handle_peanut_butter(mob_living_carbon organ_owner = null, datum_reagent reagent = null, object seconds_per_tick = null, object metabolization_ratio = null)
+    {
+        if (!istype(reagent, typeof(datum_reagent_consumable_peanut_butter)))
+            return;
+        Waiting.NoSleep(organ_owner.add_mood_event("ET_pieces", typeof(datum_mood_event_et_pieces), reagent.name));
+        Waiting.NoSleep(organ_owner.set_drugginess_if_lower(15 * SECONDS * Dm.num(metabolization_ratio) * Dm.num(seconds_per_tick)));
+    }
+}

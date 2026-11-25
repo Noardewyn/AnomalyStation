@@ -794,6 +794,8 @@
 /obj/item/slime_extract	grind_results	D349	deferred	the slime extract (xenobiology lab) is not translated; only activate() is, the luminescent actions call it
 /obj/item/slime_extract	examine	D349	deferred	xenobiology lab not translated
 /obj/item/slime_extract	item_interaction	D349	deferred	xenobiology lab not translated (the enhancer potion)
-/obj/item/slime_extract	Initialize	D349	deferred	xenobiology lab not translated
 /obj/item/slime_extract	interact_with_atom	D349	deferred	xenobiology lab not translated (core crossing on a slime)
 /obj/item/slime_extract	auto_activate_reaction	D349	deferred	xenobiology lab not translated
+
+## Species SP3b (D349)
+# No rows: every proc of the abductor, dullahan, vampire, spirit/ghost and nightmare species is translated. Left out whole (their types stay inert): the abductor baton recall (summonitem/abductor, abductor gear), the nightmare antagonist's terrorize spell and the shadow cloak (heretic).

@@ -1398,9 +1398,9 @@ public partial class datum_element_light_blocking
     }
 }
 
-// tg: code/datums/elements/light_eaten.dm:5
-[DmPath("/datum/element/light_eaten"), DmGeneratedOnly, DmInert]
-public partial class datum_element_light_eaten : datum_element
+// tg: code/datums/elements/light_eaten.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/element/light_eaten")]
+public partial class datum_element_light_eaten
 {
     // tg: code/datums/elements/light_eaten.dm:5
     public datum_element_light_eaten()
@@ -1409,9 +1409,9 @@ public partial class datum_element_light_eaten : datum_element
     }
 }
 
-// tg: code/datums/elements/light_eater.dm:12
-[DmPath("/datum/element/light_eater"), DmGeneratedOnly, DmInert]
-public partial class datum_element_light_eater : datum_element { }
+// tg: code/datums/elements/light_eater.dm:12 (the var block of a hand-written class)
+[DmPath("/datum/element/light_eater")]
+public partial class datum_element_light_eater { }
 
 // tg: code/datums/elements/living_limb_initialiser.dm:4
 [DmPath("/datum/element/living_limb_initialiser"), DmGeneratedOnly, DmInert]

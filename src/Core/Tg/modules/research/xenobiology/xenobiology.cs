@@ -18,6 +18,14 @@ namespace Anomaly.Core.Tg;
 // tg: code/modules/research/xenobiology/xenobiology.dm:3
 public partial class obj_item_slime_extract : obj_item
 {
+    // tg: code/modules/research/xenobiology/xenobiology.dm:47
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        create_reagents(100, Dm.bitor(Dm.bitor(INJECTABLE, DRAWABLE), SEALED_CONTAINER));
+        return dot;
+    }
+
     /**
     * Effect when activated by a Luminescent.
     *

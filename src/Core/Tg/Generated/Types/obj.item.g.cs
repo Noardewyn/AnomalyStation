@@ -31161,9 +31161,9 @@ public partial class obj_item_eldritch_potion_wounded : obj_item_eldritch_potion
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:5
-[DmPath("/obj/item/light_eater"), DmGeneratedOnly, DmInert]
-public partial class obj_item_light_eater : obj_item
+// tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/light_eater")]
+public partial class obj_item_light_eater
 {
     public float has_crit = 0; // tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:23
     public object crit_timer; // tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:25
@@ -40627,9 +40627,9 @@ public partial class obj_item_wendigo_skull : obj_item
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:239
-[DmPath("/obj/item/dullahan_relay"), DmGeneratedOnly, DmInert]
-public partial class obj_item_dullahan_relay : obj_item
+// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:239 (the var block of a hand-written class)
+[DmPath("/obj/item/dullahan_relay")]
+public partial class obj_item_dullahan_relay
 {
     public mob_living owner; // tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:241
 

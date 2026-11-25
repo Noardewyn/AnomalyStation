@@ -505,3 +505,32 @@ public partial class datum_status_effect_jump_jet : datum_status_effect
         return null;
     }
 }
+
+/// Same as the shadow alert, but also heal in darkness!! Mostly superseded but some simple mobs use this
+// tg: code/datums/status_effects/buffs.dm:641
+public partial class datum_status_effect_shadow_regeneration : datum_status_effect_shadow
+{
+    // tg: code/datums/status_effects/buffs.dm:643
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        if (!Dm.truthy(dot))
+            return FALSE;
+        await heal_owner();
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:650
+    public override async DmTask refresh(object effect = null, params object[] __extra)
+    {
+        await base.refresh(effect, __extra);
+        await heal_owner();
+    }
+
+    /// Regenerate health whenever this status effect is applied or reapplied
+    // tg: code/datums/status_effects/buffs.dm:655
+    public virtual async DmTask heal_owner()
+    {
+        await owner.heal_overall_damage(brute: 1, burn: 1, required_bodytype: BODYTYPE_ORGANIC);
+    }
+}

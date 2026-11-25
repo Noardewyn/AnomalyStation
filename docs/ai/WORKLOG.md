@@ -12,6 +12,17 @@ The running record of the work: what was done in which wave, choices made by the
 
 None. The owner confirmed all ten at C0 (D95, 2026-10-07; `docs/ai/C0-report.md` section 4).
 
+## 2026-11-25 — D349: every species, Character Setup's species page
+
+Local branch `species-port` (from `combat_improvements` f5eb171 plus main's f5b532c; not pushed).
+
+- **The bug:** Character Setup's species page threw in the Godot client (a perk's named tgui background went to `TguiTheme.Hex`) and showed an empty window. Fixed in `TguiRender`; found by driving the real client with `--keys` clicks and `--screenshot-after`.
+- **Species ported** (five helper packages in worktrees, merged here, types regenerated after each): SP2a moth, plasmaman (envirosuits, plasma burning, `is_atmos_sealed`); SP2b ethereal and lustrous, pod, mush, snail; SP2c jelly, slime, luminescent, stargazer (the SlimeBodySwapper window), cerulean; SP3a skeleton, zombie, golem; SP3b abductor, dullahan, vampire, spirit and ghost, the nightmare's species side. Two opus reviews against tg; their confirmed findings are fixed.
+- **Server:** `ServerHost.RoundstartRaces` writes tg's `ROUNDSTART_RACES` of the live species; `ALL_SPECIES_ROUNDSTART` / `--all-species-roundstart` offers every live species with a description. A tgui update over the wire's caps (the preferences menu with every species is about 330 kB) goes as several updates split by static-data key (the client merges them); a dropped window is now logged.
+- **Client:** the feature table names the new species' secondary features; the character preview keeps the body's 32 px square filling the box (a cerulean's tail no longer shrinks it).
+- **Deviations:** DV543 amended, DV587-DV590. **Tests:** `Species*` in Core and Server, `SpeciesSetupGameplayTests` (a lobby player picks a species through the real server; every offered species' features reach the page).
+- **Not done / open:** the antagonist sides (D333): abductor gear, nightmare terrorize, golem shell and ghost roles, romerol; the luminescent's extract colour effects (xenobiology). The full suites (Meta included) were not run. Found in passing: on the test room (no map) a late joiner spawns at (4,4) inside a wall without air, human or not.
+
 ## 2026-10-10 — M4b slices 1 and 2: the air moves; pipes, vents, alarms, firelocks, canisters
 
 The owner paused M4a and started M4b, the atmosphere (D134). The lead works alone, with no subagents.

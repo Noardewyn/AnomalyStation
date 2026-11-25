@@ -1615,9 +1615,9 @@ public partial class datum_action_innate_slime_reproduce
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:166
-[DmPath("/datum/action/innate/toggle_passthrough"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_toggle_passthrough : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:166 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/toggle_passthrough")]
+public partial class datum_action_innate_toggle_passthrough
 {
     // tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:166
     public datum_action_innate_toggle_passthrough()

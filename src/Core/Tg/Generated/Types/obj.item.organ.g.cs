@@ -449,9 +449,9 @@ public partial class obj_item_organ_fangs_stoat
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:153
-[DmPath("/obj/item/organ/fangs/vampire"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_fangs_vampire : obj_item_organ_fangs
+// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:153 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/fangs/vampire")]
+public partial class obj_item_organ_fangs_vampire
 {
     public float drain_cooldown = 0; // tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:164
 
@@ -742,9 +742,9 @@ public partial class obj_item_organ_tongue_corrupt : obj_item_organ_tongue
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:193
-[DmPath("/obj/item/organ/tongue/dullahan"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tongue_dullahan : obj_item_organ_tongue
+// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tongue/dullahan")]
+public partial class obj_item_organ_tongue_dullahan
 {
     // tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:193
     public obj_item_organ_tongue_dullahan()
@@ -1287,9 +1287,9 @@ public partial class obj_item_organ_brain_shadow : obj_item_organ_brain
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:7
-[DmPath("/obj/item/organ/brain/shadow/nightmare"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_shadow_nightmare : obj_item_organ_brain_shadow
+// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/shadow/nightmare")]
+public partial class obj_item_organ_brain_shadow_nightmare
 {
     public datum_action_cooldown_spell_jaunt_shadow_walk our_jaunt; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:15
     public datum_action_cooldown_spell_pointed_terrorize terrorize_spell; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:17
@@ -1486,9 +1486,9 @@ public partial class obj_item_organ_brain_ghost : obj_item_organ_brain
     }
 }
 
-// tg: code/modules/mob/living/brain/brain_item.dm:581
-[DmPath("/obj/item/organ/brain/abductor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_abductor : obj_item_organ_brain
+// tg: code/modules/mob/living/brain/brain_item.dm:581 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/abductor")]
+public partial class obj_item_organ_brain_abductor
 {
     // tg: code/modules/mob/living/brain/brain_item.dm:581
     public obj_item_organ_brain_abductor()
@@ -2058,9 +2058,9 @@ public partial class obj_item_organ_heart_corrupt : obj_item_organ_heart
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:77
-[DmPath("/obj/item/organ/heart/nightmare"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_heart_nightmare : obj_item_organ_heart
+// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:77 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/heart/nightmare")]
+public partial class obj_item_organ_heart_nightmare
 {
     public float respawn_progress = 0; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:91
     public Type blade; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:93

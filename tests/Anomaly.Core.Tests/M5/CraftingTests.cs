@@ -203,6 +203,7 @@ public class CraftingTests
         // the do_after: time * (1 - 0.85) + time * 0.85 / 2 * (screwdriver speed + wrench speed) (_crafting.dm:254-279)
         float time = r.In(() => Dm.num(anchor.time));
         float expected = time - time * 0.85f + time * 0.85f / 2 * (r.In(() => Dm.num(screwdriver.toolspeed)) + r.In(() => Dm.num(wrench.toolspeed)));
+        expected *= r.In(() => Dm.num(bob.cached_multiplicative_actions_slowdown)); // do_after's action speed (a good mood's high sanity is 0.9)
         long start = r.World.Tick;
         object made = null;
         r.Command(() => Waiting.Detach(Make()));

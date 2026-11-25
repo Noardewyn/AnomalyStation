@@ -316,9 +316,9 @@ public partial class datum_action_item_action_organ_action_colossus : datum_acti
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:224
-[DmPath("/datum/action/item_action/organ_action/dullahan"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_organ_action_dullahan : datum_action_item_action_organ_action
+// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:224 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/organ_action/dullahan")]
+public partial class datum_action_item_action_organ_action_dullahan
 {
     // tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:224
     public datum_action_item_action_organ_action_dullahan()
@@ -343,9 +343,9 @@ public partial class datum_action_item_action_organ_action_toggle_trip
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:205
-[DmPath("/datum/action/item_action/organ_action/vampire"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_organ_action_vampire : datum_action_item_action_organ_action
+// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:205 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/organ_action/vampire")]
+public partial class datum_action_item_action_organ_action_vampire
 {
     // tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:205
     public datum_action_item_action_organ_action_vampire()

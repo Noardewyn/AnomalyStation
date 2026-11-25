@@ -16,6 +16,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - Moths and plasmamen are playable: moth wings, antennae and markings in Character Setup; plasmamen spawn in envirosuits and burn in oxygen without one.
 - Ethereals and ceruleans are playable too: an ethereal glows in its colour and runs on charge; a cerulean has a fish tail and frills.
 - Podpeople, mushroompeople, snailpeople, jellypeople, slimepeople, luminescents, stargazers, skeletons, zombies and golems are ported, each with its own mechanics.
+- Abductors, dullahans, vampires, spirits, ghosts and nightmares are ported too; every tg species is now playable (most through mirrors, toxins or admins).
 
 ### Changed
 

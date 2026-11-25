@@ -831,3 +831,5 @@ what the bitrunning machinery (gaps BR1) still draws in 2D:
 - **The virtual domains' props** (gaps BR1-2, `_maps/virtual_domains/*.dmm`): the domains reuse the station's and the ruins' things;
   their own are the binary floor and wall (`icons/turf/floors.dmi` `binary`, `bitrunning`), drawn as flat textures, and the host
   monitor (`icons/obj/devices/scanner.dmi` `host_monitor`), an item in 2D.
+- **Abductor, dullahan, ghost, shadow and vampire bodies** (gaps SP3b, `species_parts/misc_bodyparts.dm`, `icons/mob/human/species/abductor/`, `dullahan`, `ghost`, `shadow`): the grey three-fingered limbs; the detached **dullahan head** held in the hands (its own orbiting-free model with the eyes inside); the legless **ghost** chest with its see-through limbs; the see-through **shadow** limbs. Meanwhile tg's sprites.
+- **Nightmare light eater** (gaps SP3b, `icons/obj/weapons/Nightmare_items.dmi` `light_eater`, `icons/mob/inhands/antag/nightmare_*`, the `crit_glow` outline): the armblade the heart of darkness grows, held in the hand with the critical-strike glow; and the **shadow walk** holder (`purple_laser`). Meanwhile tg's sprites.

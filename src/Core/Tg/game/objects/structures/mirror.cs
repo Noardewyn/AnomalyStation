@@ -289,7 +289,7 @@ public partial class obj_structure_mirror : obj_structure
                 }
             }
 
-            await race_changer.update_body(Dm.named("is_creating", TRUE));
+            await race_changer.update_body(TRUE); // update_body(is_creating = TRUE)
             return;
         }
     }
@@ -337,7 +337,7 @@ public partial class obj_structure_mirror : obj_structure
             sexy.physique = Dm.eq(chosen_physique, "Warlock Physique") ? MALE : FEMALE;
 
         sexy.dna.update_ui_block(typeof(datum_dna_block_identity_gender));
-        await sexy.update_body(Dm.named("is_creating", TRUE)); // or else physique won't change properly
+        await sexy.update_body(TRUE); // update_body(is_creating = TRUE) // or else physique won't change properly
         await sexy.update_clothing(ITEM_SLOT_ICLOTHING); // update gender shaped clothing
     }
 

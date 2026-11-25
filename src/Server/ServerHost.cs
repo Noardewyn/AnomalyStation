@@ -466,17 +466,23 @@ public sealed partial class ServerHost : IClientHost, IDisposable
 
     /// <summary>
     /// D349: <c>ROUNDSTART_RACES</c> of tg's roundstart species that are live, or with <see cref="ServerConfig.AllSpeciesRoundstart"/> of
-    /// every live species. An inert species (its tg code not translated, D112) is never offered: its body would run its parent's code.
+    /// every live species that has a description. An inert species (its tg code not translated, D112) is never offered: its body would
+    /// run its parent's code. A species without its own description is one tg never makes roundstart: Character Setup's species page
+    /// would crash on it (tg's get_species_description CRASH), so the dev option leaves it out too.
     /// </summary>
     public static string RoundstartRaces(ServerConfig config)
     {
-        HashSet<string> live = typeof(datum_species).Assembly.GetTypes()
-            .Where(t => t.IsSubclassOf(typeof(datum_species)) && !t.IsAbstract && !t.IsDefined(typeof(DmInertAttribute), inherit: false))
-            .Select(t => Dm.initial(t, "id") as string)
-            .Where(id => !string.IsNullOrEmpty(id))
-            .ToHashSet();
-        live.Add("human");
-        IEnumerable<string> ids = config.AllSpeciesRoundstart ? live.Order(StringComparer.Ordinal) : TgRoundstartRaces.Where(live.Contains);
+        var live = new HashSet<string> { "human" };
+        var described = new HashSet<string> { "human" };
+        foreach (Type t in typeof(datum_species).Assembly.GetTypes())
+        {
+            if (!t.IsSubclassOf(typeof(datum_species)) || t.IsAbstract || t.IsDefined(typeof(DmInertAttribute), inherit: false) || Dm.initial(t, "id") is not string { Length: > 0 } id)
+                continue;
+            live.Add(id);
+            if (t.GetMethod(nameof(datum_species.get_species_description))?.DeclaringType != typeof(datum_species))
+                described.Add(id);
+        }
+        IEnumerable<string> ids = config.AllSpeciesRoundstart ? described.Order(StringComparer.Ordinal) : TgRoundstartRaces.Where(live.Contains);
         return string.Concat(ids.Select(id => "ROUNDSTART_RACES " + id + "\n"));
     }
 

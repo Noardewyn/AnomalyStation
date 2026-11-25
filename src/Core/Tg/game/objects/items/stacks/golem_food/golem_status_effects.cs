@@ -371,7 +371,7 @@ public partial class datum_status_effect_golem_diamond : datum_status_effect_gol
         await owner.add_movespeed_modifier(typeof(datum_movespeed_modifier_status_effect_light_speed));
 
         mob_living_carbon carbon_owner = owner as mob_living_carbon;
-        foreach (obj_item_bodypart_arm arm in Dm.each_cast<obj_item_bodypart_arm>(carbon_owner.get_bodyparts()))
+        foreach (obj_item_bodypart_arm arm in Dm.each<obj_item_bodypart_arm>(carbon_owner.get_bodyparts()))
             set_arm_fluff(arm);
         return TRUE;
     }
@@ -461,7 +461,7 @@ public partial class datum_status_effect_golem_titanium : datum_status_effect_go
             return FALSE;
         RegisterSignal(owner, COMSIG_LIVING_UNARMED_ATTACK, nameof(on_punched));
         MODIFY_PHYSIOLOGY(owner, BRUTE, brute_modifier);
-        foreach (obj_item_bodypart_arm arm in Dm.each_cast<obj_item_bodypart_arm>(owner.get_bodyparts()))
+        foreach (obj_item_bodypart_arm arm in Dm.each<obj_item_bodypart_arm>(owner.get_bodyparts()))
             buff_arm(arm);
         return dot;
     }

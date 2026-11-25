@@ -21,7 +21,7 @@ public partial class datum_species_pod : datum_species
     {
         human.dna.features[FEATURE_MUTANT_COLOR] = "#886600";
         human.dna.features[FEATURE_POD_HAIR] = "Rose";
-        await human.update_body(Dm.named("is_creating", TRUE));
+        await human.update_body(TRUE); // update_body(is_creating = TRUE)
     }
 
     // tg: code/modules/mob/living/carbon/human/species_types/podpeople.dm:48

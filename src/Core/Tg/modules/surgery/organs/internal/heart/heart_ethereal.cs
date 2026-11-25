@@ -270,7 +270,7 @@ public partial class obj_structure_ethereal_crystal : obj_structure
         ethereal_heart.current_crystal = null;
         ethereal_heart.crystalize_cooldown = world.time + CRYSTALIZE_COOLDOWN_LENGTH; // COOLDOWN_START, inline
 
-        foreach (mob_living living in Dm.each_cast<mob_living>(contents))
+        foreach (mob_living living in Dm.each<mob_living>(contents))
         {
             Waiting.NoSleep(living.forceMove(get_turf(this)));
             REMOVE_TRAIT(living, TRAIT_CORPSELOCKED, SPECIES_TRAIT);

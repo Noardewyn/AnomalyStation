@@ -204,7 +204,7 @@ public partial class datum_action_innate_regenerate_limbs : datum_action_innate
             return FALSE;
         if (Dm.num(H.get_blood_volume()) >= BLOOD_VOLUME_OKAY + blood_per_limb)
             return TRUE;
-        return null;
+        return dot; // tg falls off the end with . still the parent's truthy result: the button stays, Activate says there is not enough blood
     }
 
     // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:189

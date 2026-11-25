@@ -230,6 +230,7 @@ public partial class datum_status_effect_zombie : datum_status_effect
 
     // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:219
     [SignalHandler]
+    // DEVIATION(DV587): the source first, so the 2 s cap applies (tg passes the list as the source and the cap never runs)
     public virtual void on_spec_stun(object source = null, DmList amount = null)
     {
         amount[1] = Dm.min(Dm.num(amount[1]), max_stun_length);

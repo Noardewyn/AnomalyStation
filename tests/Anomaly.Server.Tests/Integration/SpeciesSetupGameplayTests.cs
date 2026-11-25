@@ -54,6 +54,7 @@ public class SpeciesSetupGameplayTests(ITestOutputHelper output)
         Window(windows, replica, Limits.LobbyUiInterface).Context.Act("character_setup");
         w.Run(Second / 2);
         TguiWindow prefs = Window(windows, replica, "PreferencesMenu");
+        Assert.Equal(0, w.Host.SessionOf(1).UiWindowsDropped); // the window fits the wire's caps (Limits.MaxUiWindowBytes, MaxUiValues)
         Assert.NotNull(prefs);
 
         // the species the server offers reach the client
@@ -90,6 +91,45 @@ public class SpeciesSetupGameplayTests(ITestOutputHelper output)
         Assert.Equal("Dark Tiger", In(w, () => Dm.str(lizard.dna.features[Defines.FEATURE_TAIL_LIZARD])));
         Assert.Equal("#22aa44", In(w, () => Dm.str(lizard.dna.features[Defines.FEATURE_MUTANT_COLOR])));
         Assert.NotNull(In(w, () => lizard.get_organ_slot(Defines.ORGAN_SLOT_EXTERNAL_TAIL)));
+    }
+
+    [Fact]
+    public void Every_offered_species_sends_each_of_its_features_to_character_setup()
+    {
+        using RealHeadlessWorld w = Lobby(4713, allSpecies: true);
+        var runtimes = new List<string>();
+        w.World.RuntimeErrorSink = e => runtimes.Add(e.ToString());
+        RealHeadlessWorld.Player alice = w.Join("Alice");
+        ReplicaWorld replica = alice.Session.Replica;
+        var windows = new TguiWindows
+        {
+            SendAct = (window, action, parameters) => alice.Session.UiAct(window, action, parameters),
+            SendClose = window => alice.Session.UiClose(window),
+        };
+        w.Run(Second / 2);
+        Window(windows, replica, Limits.LobbyUiInterface).Context.Act("character_setup");
+        w.Run(Second / 2);
+        TguiWindow prefs = Window(windows, replica, "PreferencesMenu");
+        Assert.True(w.Host.SessionOf(1).UiWindowsDropped == 0, w.Err.ToString()); // the window fits the wire's caps (Limits.MaxUiWindowBytes, MaxUiValues)
+        Assert.True(runtimes.Count == 0, string.Join("\n\n", runtimes.Take(3)));
+        Assert.NotNull(prefs);
+        Assert.NotNull(prefs.Context.Data.Get("constant_data"));
+        Assert.NotNull(prefs.Context.Data.Get("constant_data").Get("species"));
+        var missing = new List<string>();
+        foreach ((string id, UiValue entry) in prefs.Context.Data.Get("constant_data").Get("species").Fields.ToList())
+        {
+            prefs.Context.Act("set_preference", ("preference", "species"), ("value", id));
+            w.Run(Second / 2);
+            prefs = Window(windows, replica, "PreferencesMenu");
+            Assert.Equal(id, prefs.Context.Data.Get("character_preferences").Get("misc").Str("species"));
+            // every feature the species enables is a preference the page holds a value of (tg's PreferencesMenu reads them there)
+            var held = prefs.Context.Data.Get("character_preferences").Fields.SelectMany(section => section.Value.Fields.Select(f => f.Key)).ToHashSet();
+            foreach (UiValue feature in entry.Get("enabled_features")?.Items ?? [])
+                if (!held.Contains(feature.AsStr()))
+                    missing.Add(id + ": " + feature.AsStr());
+        }
+        output.WriteLine(string.Join("\n", missing));
+        Assert.Empty(missing);
     }
 
     [Fact]

@@ -19,7 +19,7 @@ public partial class datum_species_snail : datum_species
     public override async DmTask prepare_human_for_preview(mob_living_carbon_human human = null)
     {
         human.dna.features[FEATURE_MUTANT_COLOR] = COLOR_BEIGE;
-        await human.update_body(Dm.named("is_creating", TRUE));
+        await human.update_body(TRUE); // update_body(is_creating = TRUE)
     }
 
     // tg: code/modules/mob/living/carbon/human/species_types/snail.dm:34

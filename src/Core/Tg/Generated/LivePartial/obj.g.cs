@@ -1812,7 +1812,7 @@ public partial class obj_item_slime_extract
     [DmGeneratedStub]
     public override DmTask<object> grind_results()
     {
-        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:24", "grind_results: the slime extract (xenobiology lab) is not translated; only activate() is, the luminescent actions call it (D349)");
+        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:24", "grind_results: the slime extract (xenobiology lab) is not translated; only activate() and the colours' overrides are, the luminescent actions call them (D349)");
         return DmTask<object>.FromResult(default);
     }
 

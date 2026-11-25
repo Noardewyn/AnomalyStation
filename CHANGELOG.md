@@ -9,6 +9,7 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ### Added
 
+- A luminescent jellyperson's integrated slime extract now does what its colour does in tg, for both its minor and major activation.
 - The mech removal tool works: two-handed (5 force in one hand, 19 wielded), and wielded it pries the pilot out of a mech.
 - Held melee things attack with animations made in Blender: a one-handed chop straight down, a two-handed chop, and a stab for pointed things such as screwdrivers and spears.
 - Dev menu: pick a held thing's attack animation, as a default for all things and for wielded ones, and as an override for each item.

@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // Gaps SP2c (D349): the whole file: the jellyperson, the slimeperson (split body, body swap), the luminescent (glow, the integrated slime
 // extract) and the stargazer (telepathy, link minds), with their actions. The luminescent's extract activation calls the extract's
-// activate(), whose per-colour effects belong to the slime extracts (docs/ai/specs/live-partial.txt). The var blocks are generated (D111).
+// activate(), which each colour extract overrides (research/xenobiology/xenobiology.cs). The var blocks are generated (D111).
 
 public partial class datum_species_jelly
 {

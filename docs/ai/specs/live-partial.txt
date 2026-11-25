@@ -791,7 +791,7 @@
 
 
 ## Species SP2c (D349): the jelly family and the cerulean
-/obj/item/slime_extract	grind_results	D349	deferred	the slime extract (xenobiology lab) is not translated; only activate() is, the luminescent actions call it
+/obj/item/slime_extract	grind_results	D349	deferred	the slime extract (xenobiology lab) is not translated; only activate() and the colours' overrides are, the luminescent actions call them
 /obj/item/slime_extract	examine	D349	deferred	xenobiology lab not translated
 /obj/item/slime_extract	item_interaction	D349	deferred	xenobiology lab not translated (the enhancer potion)
 /obj/item/slime_extract	interact_with_atom	D349	deferred	xenobiology lab not translated (core crossing on a slime)

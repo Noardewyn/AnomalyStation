@@ -787,8 +787,8 @@ proc	/	get_rand_frequency	code/game/sound/sound.dm:209		yes	full	global
 proc	/	get_rand_frequency_low_range	code/game/sound/sound.dm:213		yes	full	global
 proc	/	get_random_bitflag	code/_globalvars/bitfields.dm:23	var_name	no	-	global
 proc	/	get_random_coin	code/__HELPERS/randoms.dm:38		no	-	global
-proc	/	get_random_drink	code/__HELPERS/randoms.dm:13		no	-	global
-proc	/	get_random_food	code/__HELPERS/randoms.dm:2		no	-	global
+proc	/	get_random_drink	code/__HELPERS/randoms.dm:13		yes	full	global
+proc	/	get_random_food	code/__HELPERS/randoms.dm:2		yes	full	global
 proc	/	get_random_hallucination	code/__HELPERS/hallucinations.dm:149	tier,strict	yes	full	global
 proc	/	get_random_jumpskirt	code/modules/clothing/under/color.dm:54		yes	full	global
 proc	/	get_random_jumpsuit	code/modules/clothing/under/color.dm:28		yes	full	global
@@ -82351,8 +82351,8 @@ type	/obj/item/slimepotion/fireproof	/obj/item/slimepotion	code/modules/research
 proc	/obj/item/slimepotion/fireproof	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:1002	interacting_with,user,modifiers	no	-	proc
 type	/obj/item/slimepotion/genderchange	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:1029	inert	obj_item_slimepotion_genderchange	0	0
 proc	/obj/item/slimepotion/genderchange	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:1033	interacting_with,user,modifiers	no	-	proc
-type	/obj/item/slimepotion/renaming	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:1064	inert	obj_item_slimepotion_renaming	0	0
-proc	/obj/item/slimepotion/renaming	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:1070	interacting_with,user,modifiers	no	-	proc
+type	/obj/item/slimepotion/renaming	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:1064	live	obj_item_slimepotion_renaming	1	0
+proc	/obj/item/slimepotion/renaming	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:1070	interacting_with,user,modifiers	yes	full	proc
 type	/obj/item/slimepotion/slimeradio	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:1104	inert	obj_item_slimepotion_slimeradio	0	0
 proc	/obj/item/slimepotion/slimeradio	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:1108	interacting_with,user,modifiers	no	-	proc
 type	/obj/item/slimepotion/extract_cloner	/obj/item/slimepotion	code/modules/research/xenobiology/crossbreeding/_potions.dm:9	inert	obj_item_slimepotion_extract_cloner	0	0
@@ -82954,51 +82954,51 @@ proc	/obj/item/slime_extract	Initialize	code/modules/research/xenobiology/xenobi
 proc	/obj/item/slime_extract	activate	code/modules/research/xenobiology/xenobiology.dm:60	user,species,activation_type	yes	full	proc root
 proc	/obj/item/slime_extract	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:69	interacting_with,user,modifiers	stub	deferred	proc
 proc	/obj/item/slime_extract	auto_activate_reaction	code/modules/research/xenobiology/xenobiology.dm:101	slime_reaction	stub	deferred	proc root
-type	/obj/item/slime_extract/grey	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:156	inert	obj_item_slime_extract_grey	0	0
-proc	/obj/item/slime_extract/grey	activate	code/modules/research/xenobiology/xenobiology.dm:160	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/gold	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:180	inert	obj_item_slime_extract_gold	0	0
-proc	/obj/item/slime_extract/gold	activate	code/modules/research/xenobiology/xenobiology.dm:186	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/silver	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:210	inert	obj_item_slime_extract_silver	0	0
-proc	/obj/item/slime_extract/silver	activate	code/modules/research/xenobiology/xenobiology.dm:216	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/metal	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:237	inert	obj_item_slime_extract_metal	0	0
-proc	/obj/item/slime_extract/metal	activate	code/modules/research/xenobiology/xenobiology.dm:241	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/purple	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:260	inert	obj_item_slime_extract_purple	0	0
-proc	/obj/item/slime_extract/purple	activate	code/modules/research/xenobiology/xenobiology.dm:264	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/darkpurple	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:278	inert	obj_item_slime_extract_darkpurple	0	0
-proc	/obj/item/slime_extract/darkpurple	activate	code/modules/research/xenobiology/xenobiology.dm:282	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/orange	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:300	inert	obj_item_slime_extract_orange	0	0
-proc	/obj/item/slime_extract/orange	activate	code/modules/research/xenobiology/xenobiology.dm:304	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/yellow	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:319	inert	obj_item_slime_extract_yellow	0	0
-proc	/obj/item/slime_extract/yellow	activate	code/modules/research/xenobiology/xenobiology.dm:323	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/red	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:342	inert	obj_item_slime_extract_red	0	0
-proc	/obj/item/slime_extract/red	activate	code/modules/research/xenobiology/xenobiology.dm:346	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/blue	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:361	inert	obj_item_slime_extract_blue	0	0
-proc	/obj/item/slime_extract/blue	activate	code/modules/research/xenobiology/xenobiology.dm:365	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/darkblue	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:379	inert	obj_item_slime_extract_darkblue	0	0
-proc	/obj/item/slime_extract/darkblue	activate	code/modules/research/xenobiology/xenobiology.dm:383	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/pink	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:401	inert	obj_item_slime_extract_pink	0	0
-proc	/obj/item/slime_extract/pink	activate	code/modules/research/xenobiology/xenobiology.dm:405	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/green	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:428	inert	obj_item_slime_extract_green	0	0
-proc	/obj/item/slime_extract/green	activate	code/modules/research/xenobiology/xenobiology.dm:432	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/lightpink	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:451	inert	obj_item_slime_extract_lightpink	0	0
-proc	/obj/item/slime_extract/lightpink	activate	code/modules/research/xenobiology/xenobiology.dm:455	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/black	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:474	inert	obj_item_slime_extract_black	0	0
-proc	/obj/item/slime_extract/black	activate	code/modules/research/xenobiology/xenobiology.dm:478	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/oil	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:494	inert	obj_item_slime_extract_oil	0	0
-proc	/obj/item/slime_extract/oil	activate	code/modules/research/xenobiology/xenobiology.dm:498	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/adamantine	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:517	inert	obj_item_slime_extract_adamantine	0	0
-proc	/obj/item/slime_extract/adamantine	activate	code/modules/research/xenobiology/xenobiology.dm:521	user,species,activation_type	no	-	proc
-proc	/obj/item/slime_extract/adamantine	reset_armor	code/modules/research/xenobiology/xenobiology.dm:541	user	no	-	proc root
-type	/obj/item/slime_extract/bluespace	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:546	inert	obj_item_slime_extract_bluespace	0	0
-proc	/obj/item/slime_extract/bluespace	activate	code/modules/research/xenobiology/xenobiology.dm:554	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/pyrite	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:581	inert	obj_item_slime_extract_pyrite	0	0
-proc	/obj/item/slime_extract/pyrite	activate	code/modules/research/xenobiology/xenobiology.dm:585	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/cerulean	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:607	inert	obj_item_slime_extract_cerulean	0	0
-proc	/obj/item/slime_extract/cerulean	activate	code/modules/research/xenobiology/xenobiology.dm:611	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/sepia	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:626	inert	obj_item_slime_extract_sepia	0	0
-proc	/obj/item/slime_extract/sepia	activate	code/modules/research/xenobiology/xenobiology.dm:630	user,species,activation_type	no	-	proc
-type	/obj/item/slime_extract/rainbow	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:647	inert	obj_item_slime_extract_rainbow	0	0
-proc	/obj/item/slime_extract/rainbow	activate	code/modules/research/xenobiology/xenobiology.dm:651	user,species,activation_type	no	-	proc
+type	/obj/item/slime_extract/grey	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:156	live	obj_item_slime_extract_grey	1	0
+proc	/obj/item/slime_extract/grey	activate	code/modules/research/xenobiology/xenobiology.dm:160	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/gold	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:180	live	obj_item_slime_extract_gold	1	0
+proc	/obj/item/slime_extract/gold	activate	code/modules/research/xenobiology/xenobiology.dm:186	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/silver	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:210	live	obj_item_slime_extract_silver	1	0
+proc	/obj/item/slime_extract/silver	activate	code/modules/research/xenobiology/xenobiology.dm:216	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/metal	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:237	live	obj_item_slime_extract_metal	1	0
+proc	/obj/item/slime_extract/metal	activate	code/modules/research/xenobiology/xenobiology.dm:241	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/purple	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:260	live	obj_item_slime_extract_purple	1	0
+proc	/obj/item/slime_extract/purple	activate	code/modules/research/xenobiology/xenobiology.dm:264	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/darkpurple	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:278	live	obj_item_slime_extract_darkpurple	1	0
+proc	/obj/item/slime_extract/darkpurple	activate	code/modules/research/xenobiology/xenobiology.dm:282	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/orange	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:300	live	obj_item_slime_extract_orange	1	0
+proc	/obj/item/slime_extract/orange	activate	code/modules/research/xenobiology/xenobiology.dm:304	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/yellow	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:319	live	obj_item_slime_extract_yellow	1	0
+proc	/obj/item/slime_extract/yellow	activate	code/modules/research/xenobiology/xenobiology.dm:323	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/red	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:342	live	obj_item_slime_extract_red	1	0
+proc	/obj/item/slime_extract/red	activate	code/modules/research/xenobiology/xenobiology.dm:346	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/blue	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:361	live	obj_item_slime_extract_blue	1	0
+proc	/obj/item/slime_extract/blue	activate	code/modules/research/xenobiology/xenobiology.dm:365	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/darkblue	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:379	live	obj_item_slime_extract_darkblue	1	0
+proc	/obj/item/slime_extract/darkblue	activate	code/modules/research/xenobiology/xenobiology.dm:383	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/pink	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:401	live	obj_item_slime_extract_pink	1	0
+proc	/obj/item/slime_extract/pink	activate	code/modules/research/xenobiology/xenobiology.dm:405	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/green	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:428	live	obj_item_slime_extract_green	1	0
+proc	/obj/item/slime_extract/green	activate	code/modules/research/xenobiology/xenobiology.dm:432	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/lightpink	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:451	live	obj_item_slime_extract_lightpink	1	0
+proc	/obj/item/slime_extract/lightpink	activate	code/modules/research/xenobiology/xenobiology.dm:455	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/black	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:474	live	obj_item_slime_extract_black	1	0
+proc	/obj/item/slime_extract/black	activate	code/modules/research/xenobiology/xenobiology.dm:478	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/oil	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:494	live	obj_item_slime_extract_oil	1	0
+proc	/obj/item/slime_extract/oil	activate	code/modules/research/xenobiology/xenobiology.dm:498	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/adamantine	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:517	live	obj_item_slime_extract_adamantine	1	0
+proc	/obj/item/slime_extract/adamantine	activate	code/modules/research/xenobiology/xenobiology.dm:521	user,species,activation_type	yes	full	proc
+proc	/obj/item/slime_extract/adamantine	reset_armor	code/modules/research/xenobiology/xenobiology.dm:541	user	yes	full	proc root
+type	/obj/item/slime_extract/bluespace	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:546	live	obj_item_slime_extract_bluespace	1	0
+proc	/obj/item/slime_extract/bluespace	activate	code/modules/research/xenobiology/xenobiology.dm:554	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/pyrite	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:581	live	obj_item_slime_extract_pyrite	1	0
+proc	/obj/item/slime_extract/pyrite	activate	code/modules/research/xenobiology/xenobiology.dm:585	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/cerulean	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:607	live	obj_item_slime_extract_cerulean	1	0
+proc	/obj/item/slime_extract/cerulean	activate	code/modules/research/xenobiology/xenobiology.dm:611	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/sepia	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:626	live	obj_item_slime_extract_sepia	1	0
+proc	/obj/item/slime_extract/sepia	activate	code/modules/research/xenobiology/xenobiology.dm:630	user,species,activation_type	yes	full	proc
+type	/obj/item/slime_extract/rainbow	/obj/item/slime_extract	code/modules/research/xenobiology/xenobiology.dm:647	live	obj_item_slime_extract_rainbow	1	0
+proc	/obj/item/slime_extract/rainbow	activate	code/modules/research/xenobiology/xenobiology.dm:651	user,species,activation_type	yes	full	proc
 type	/obj/item/slimecross	/obj/item	code/modules/research/xenobiology/crossbreeding/__corecross.dm:28	inert	obj_item_slimecross	0	0
 proc	/obj/item/slimecross	examine	code/modules/research/xenobiology/crossbreeding/__corecross.dm:41	user	no	-	proc
 proc	/obj/item/slimecross	Initialize	code/modules/research/xenobiology/crossbreeding/__corecross.dm:46	mapload	no	-	proc

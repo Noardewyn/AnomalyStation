@@ -163,17 +163,109 @@ public class SpeciesSP2cTests
             Waiting.NoSleep(integrate.Activate());
             Assert.Same(extract, species.current_extract);
             Assert.Same(bob, extract.loc);
-            // the minor activation: the base extract does nothing and gives back no cooldown (activate() returns FALSE)
+            // the minor activation: a grey extract spits a monkey cube into the free hand, then 12 s of cooldown (xenobiology.dm:163)
             var minor = (datum_action_innate_use_extract)species.luminescent_actions[2];
             Assert.True(Dm.truthy(Waiting.NoSleep(minor.IsAvailable())));
             Waiting.NoSleep(minor.Activate());
-            Assert.True(feed.Any("Nothing happened"));
-            Assert.True(species.extract_cooldown <= world.time);
+            Assert.True(feed.Any("You spit out a monkey cube."));
+            Assert.IsAssignableFrom<obj_item_food_monkeycube>(bob.get_active_held_item());
+            Assert.Equal(world.time + 120, species.extract_cooldown);
+            Assert.False(Dm.truthy(Waiting.NoSleep(minor.IsAvailable())));
+            qdel(bob.get_active_held_item());
             // eject: back into the hand
             Waiting.NoSleep(integrate.Activate());
             Assert.Null(species.current_extract);
             Assert.Same(extract, bob.get_active_held_item());
         });
+        r.AssertNoRuntimes();
+    }
+
+    // a luminescent Bob with an extract of the type integrated; the activations run through his actions
+    private static (AudioRoom R, Feed Feed, mob_living_carbon_human Bob, datum_species_jelly_luminescent Species) Luminescent(ulong seed, Type extract)
+    {
+        var (r, feed, bob) = Room(seed);
+        Become(r, bob, typeof(datum_species_jelly_luminescent));
+        datum_species_jelly_luminescent species = null;
+        r.In(() =>
+        {
+            species = (datum_species_jelly_luminescent)bob.dna.species;
+            var core = (obj_item)Dm.@new(extract, bob.loc);
+            Waiting.NoSleep(bob.put_in_active_hand(core));
+            Waiting.NoSleep(((datum_action_innate)species.luminescent_actions[1]).Activate());
+            Assert.Same(core, species.current_extract);
+        });
+        return (r, feed, bob, species);
+    }
+
+    // one activation (2 = minor, 3 = major action), the cooldown reset first, then time for its do_after
+    private static void Use(AudioRoom r, datum_species_jelly_luminescent species, int action, int seconds = 13)
+    {
+        r.In(() =>
+        {
+            species.extract_cooldown = 0;
+            Waiting.Detach(((datum_action_innate)species.luminescent_actions[action]).Activate());
+        });
+        r.Step(seconds * Second);
+    }
+
+    [Fact]
+    public void Each_slime_extract_colour_has_its_minor_and_major_luminescent_effects_without_runtimes()
+    {
+        ulong seed = 9910;
+        int colours = 0;
+        foreach (Type colour in typeof(obj_item_slime_extract).Assembly.GetTypes().Where(t => t.BaseType == typeof(obj_item_slime_extract)))
+        {
+            Assert.False(colour.IsDefined(typeof(DmInertAttribute), false), colour.Name);
+            colours++;
+            foreach (int action in new[] { 2, 3 })
+            {
+                var (r, _, bob, species) = Luminescent(seed++, colour);
+                Use(r, species, action);
+                r.AssertNoRuntimes();
+            }
+        }
+        Assert.Equal(22, colours);
+    }
+
+    [Fact]
+    public void Extracts_spit_materials_feed_swap_gender_harden_and_anchor_a_luminescent()
+    {
+        // metal: five glass sheets (minor), five iron sheets (major)
+        var (r, _, bob, species) = Luminescent(9950, typeof(obj_item_slime_extract_metal));
+        Use(r, species, 2, 1);
+        r.In(() => Assert.Equal(5, Dm.num(((obj_item_stack_sheet_glass)bob.get_active_held_item()).amount)));
+        r.In(() => qdel(bob.get_active_held_item()));
+        Use(r, species, 3, 1);
+        r.In(() => Assert.Equal(5, Dm.num(((obj_item_stack_sheet_iron)bob.get_active_held_item()).amount)));
+
+        // purple: 50 nutrition and 50 blood (minor)
+        (r, _, bob, species) = Luminescent(9951, typeof(obj_item_slime_extract_purple));
+        float nutrition = 0;
+        r.In(() => nutrition = Dm.num(bob.nutrition));
+        Use(r, species, 2, 0);
+        r.In(() => Assert.Equal(nutrition + 50, Dm.num(bob.nutrition), 0.5));
+
+        // pink: the gender swaps (minor)
+        (r, _, bob, species) = Luminescent(9952, typeof(obj_item_slime_extract_pink));
+        r.In(() => bob.gender = MALE);
+        Use(r, species, 2, 0);
+        r.In(() => Assert.Equal(FEMALE, bob.gender));
+
+        // adamantine: 25 damage resistance for two minutes (minor)
+        (r, _, bob, species) = Luminescent(9953, typeof(obj_item_slime_extract_adamantine));
+        float resistance = 0;
+        r.In(() => resistance = Dm.num(bob.damage_resistance));
+        Use(r, species, 2, 1);
+        r.In(() => Assert.Equal(resistance + 25, Dm.num(bob.damage_resistance)));
+        r.Step(120 * Second);
+        r.In(() => Assert.Equal(resistance, Dm.num(bob.damage_resistance)));
+
+        // bluespace: the first major anchors, the second snaps back to the anchor
+        (r, _, bob, species) = Luminescent(9954, typeof(obj_item_slime_extract_bluespace));
+        Use(r, species, 3, 0);
+        r.In(() => Waiting.NoSleep(bob.forceMove(locate(6, 6, 1))));
+        Use(r, species, 3, 1);
+        r.In(() => Assert.Equal((4, 4), ((int)Dm.num(bob.x), (int)Dm.num(bob.y))));
         r.AssertNoRuntimes();
     }
 

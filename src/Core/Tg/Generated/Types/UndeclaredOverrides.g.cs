@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 714 rows over 442 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 713 rows over 441 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -457,7 +457,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_slimepotion_speed), "interact_with_atom"), // /obj/item/slimepotion/speed (tg: code/modules/research/xenobiology/xenobiology.dm:960)
         (typeof(obj_item_slimepotion_fireproof), "interact_with_atom"), // /obj/item/slimepotion/fireproof (tg: code/modules/research/xenobiology/xenobiology.dm:1002)
         (typeof(obj_item_slimepotion_genderchange), "interact_with_atom"), // /obj/item/slimepotion/genderchange (tg: code/modules/research/xenobiology/xenobiology.dm:1033)
-        (typeof(obj_item_slimepotion_renaming), "interact_with_atom"), // /obj/item/slimepotion/renaming (tg: code/modules/research/xenobiology/xenobiology.dm:1070)
         (typeof(obj_item_slimepotion_slimeradio), "interact_with_atom"), // /obj/item/slimepotion/slimeradio (tg: code/modules/research/xenobiology/xenobiology.dm:1108)
         (typeof(obj_item_slimepotion_extract_cloner), "interact_with_atom"), // /obj/item/slimepotion/extract_cloner (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:13)
         (typeof(obj_item_slimepotion_peacepotion), "interact_with_atom"), // /obj/item/slimepotion/peacepotion (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:39)

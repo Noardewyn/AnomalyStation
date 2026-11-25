@@ -808,6 +808,42 @@ public partial class obj_item_organ_brain : obj_item_organ
     }
 }
 
+// Species package SP2b (D349): the lustrous's brain, which carries the bluespace prophet trauma and the tenacious element
+// tg: code/modules/mob/living/brain/brain_item.dm:528
+public partial class obj_item_organ_brain_lustrous : obj_item_organ_brain
+{
+    // This fixes an edge case from species/regenerate_organs that would transfer the brain trauma before organ/on_mob_remove can remove it
+    // Prevents wizards from using the magic mirror to gain bluespace_prophet trauma and then switching to another race
+    // tg: code/modules/mob/living/brain/brain_item.dm:536
+    public override async DmTask before_organ_replacement(obj_item_organ replacement = null)
+    {
+        if (owner != null)
+        {
+            owner.cure_trauma_type(typeof(datum_brain_trauma_special_bluespace_prophet), TRAUMA_RESILIENCE_ABSOLUTE);
+            owner.RemoveElement(typeof(datum_element_tenacious));
+        }
+        await base.before_organ_replacement(replacement);
+    }
+
+    // tg: code/modules/mob/living/brain/brain_item.dm:542
+    public override async DmTask on_mob_remove(object organ_owner = null, float? special = null, object movement_flags = null)
+    {
+        mob_living_carbon organ_owner__carbon = organ_owner as mob_living_carbon;
+        await base.on_mob_remove(organ_owner, special, movement_flags);
+        organ_owner__carbon.cure_trauma_type(typeof(datum_brain_trauma_special_bluespace_prophet), TRAUMA_RESILIENCE_ABSOLUTE);
+        organ_owner__carbon.RemoveElement(typeof(datum_element_tenacious));
+    }
+
+    // tg: code/modules/mob/living/brain/brain_item.dm:547
+    public override async DmTask<object> on_mob_insert(mob_living_carbon organ_owner = null, float? special = null, object movement_flags = null)
+    {
+        object dot = await base.on_mob_insert(organ_owner, special, movement_flags);
+        await organ_owner.gain_trauma(typeof(datum_brain_trauma_special_bluespace_prophet), TRAUMA_RESILIENCE_ABSOLUTE);
+        await organ_owner.AddElement(typeof(datum_element_tenacious));
+        return dot;
+    }
+}
+
 // tg: code/modules/mob/living/brain/brain_item.dm:552 (gaps SP1: the felinid's brain)
 public partial class obj_item_organ_brain_felinid : obj_item_organ_brain
 {

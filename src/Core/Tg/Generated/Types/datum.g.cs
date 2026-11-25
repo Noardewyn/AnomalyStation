@@ -9762,9 +9762,9 @@ public partial class datum_bodypart_overlay_mutant_tail_lizard : datum_bodypart_
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:105
-[DmPath("/datum/bodypart_overlay/mutant/mushroom_cap"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_mutant_mushroom_cap : datum_bodypart_overlay_mutant
+// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:105 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/mutant/mushroom_cap")]
+public partial class datum_bodypart_overlay_mutant_mushroom_cap
 {
     // tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:106
     public datum_bodypart_overlay_mutant_mushroom_cap()
@@ -31126,9 +31126,9 @@ public partial class datum_species_dullahan : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:2
-[DmPath("/datum/species/ethereal"), DmGeneratedOnly, DmInert]
-public partial class datum_species_ethereal : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/ethereal")]
+public partial class datum_species_ethereal
 {
     // tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:2
     public datum_species_ethereal()
@@ -31165,9 +31165,9 @@ public partial class datum_species_ethereal : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:121
-[DmPath("/datum/species/ethereal/lustrous"), DmGeneratedOnly, DmInert]
-public partial class datum_species_ethereal_lustrous : datum_species_ethereal
+// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:121 (the var block of a hand-written class)
+[DmPath("/datum/species/ethereal/lustrous")]
+public partial class datum_species_ethereal_lustrous
 {
     // tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:121
     public datum_species_ethereal_lustrous()
@@ -31600,9 +31600,9 @@ public partial class datum_species_moth
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:4
-[DmPath("/datum/species/mush"), DmGeneratedOnly, DmInert]
-public partial class datum_species_mush : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/species/mush")]
+public partial class datum_species_mush
 {
     public datum_martial_art_mushpunch mush; // tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:39
 
@@ -31676,9 +31676,9 @@ public partial class datum_species_plasmaman
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/podpeople.dm:3
-[DmPath("/datum/species/pod"), DmGeneratedOnly, DmInert]
-public partial class datum_species_pod : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/podpeople.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/pod")]
+public partial class datum_species_pod
 {
     // tg: code/modules/mob/living/carbon/human/species_types/podpeople.dm:3
     public datum_species_pod()
@@ -31748,9 +31748,9 @@ public partial class datum_species_skeleton
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/snail.dm:2
-[DmPath("/datum/species/snail"), DmGeneratedOnly, DmInert]
-public partial class datum_species_snail : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/snail.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/snail")]
+public partial class datum_species_snail
 {
     // tg: code/modules/mob/living/carbon/human/species_types/snail.dm:2
     public datum_species_snail()

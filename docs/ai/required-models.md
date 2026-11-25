@@ -789,6 +789,11 @@ dye: a greyscale model tinted at run time).
 - **Golem body** (gaps SP3a, `icons/mob/human/species/golems.dmi`, the `golem_*` states): the rock head, chest, arms and legs, and the **mineral veins** a golem grows from the metals it eats (`uranium_*`, `silver_*`, `plasma_*`, `iron_*`, `gold_*`, `diamond_*`, `platinum_*`, `banana_*` per body zone). Meanwhile tg's sprites.
 - **Zombie claws and infection** (gaps SP3a, `icons/effects/blood.dmi` `bloodhand_left/right`, `icons/obj/medical/organs/organs.dmi` `blacktumor`): the held mutant claw (a held, undroppable hand model) and the black ooze organ. Meanwhile tg's sprites.
 
+- **Ethereal body** (gaps SP2b, `species_parts/ethereal_bodyparts.dm`, `icons/mob/human/species/ethereal/bodyparts.dmi`, the `ethereal_*` states): the crystalline head, chest, arms and legs, glowing in the ethereal's colour (the glow's colour follows health; an emissive limb material rather than a tint). Meanwhile tg's sprites.
+- **Podperson body and hair** (gaps SP2b, `icons/mob/human/bodyparts_greyscale.dmi` `pod_*`, `icons/mob/human/species/podperson_hair.dmi` `m_pod_hair_*`): the leafy limbs and the eleven hairstyles (ivy, cabbage, spinach, prayer, vine, shrub, rose, orchid, fig, hibiscus), a front and an adjacent part each. Meanwhile tg's sprites.
+- **Mushroomperson body and cap** (gaps SP2b, `bodyparts_greyscale.dmi` `mush_*`, `icons/mob/human/species/mush_cap.dmi` `m_caps_*`): the stalk-like limbs and the red mushroom cap on the head, hidden by headgear. Meanwhile tg's sprites.
+- **Snailperson body and shell** (gaps SP2b, `bodyparts_greyscale.dmi` `snail_*`, `icons/mob/clothing/back/backpack.dmi` `snailshell`): the slimy limbs and the armoured shell on the back. Meanwhile tg's sprites.
+
 ## Medicines and toxins
 - **Ice block** (gaps RG2, `xenobiology/crossbreeding/_misc.dm:127`, `icons/obj/science/slimecrossing.dmi` state `frozen`): a man-high
   block of clear, frosted ice with the frozen body dimly visible inside, standing on one tile; cryogelidia (the inverse of

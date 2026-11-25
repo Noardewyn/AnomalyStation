@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 721 rows over 446 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 720 rows over 445 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -178,7 +178,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_style_meter), "interact_with_atom"), // /obj/item/style_meter (tg: code/datums/components/style/style_meter.dm:33)
         (typeof(obj_item_storage_belt_unfathomable_curio), "dropped"), // /obj/item/storage/belt/unfathomable_curio (tg: code/modules/antagonists/heretic/items/unfathomable_curio.dm:37)
         (typeof(obj_item_storage_belt_unfathomable_curio), "equipped"), // /obj/item/storage/belt/unfathomable_curio (tg: code/modules/antagonists/heretic/items/unfathomable_curio.dm:27)
-        (typeof(obj_item_storage_backpack_snail), "dropped"), // /obj/item/storage/backpack/snail (tg: code/modules/mob/living/carbon/human/species_types/snail.dm:112)
         (typeof(obj_item_tattoo_kit), "attack"), // /obj/item/tattoo_kit (tg: code/datums/memory/tattoo_kit.dm:47)
         (typeof(obj_item_tattoo_kit), "item_interaction"), // /obj/item/tattoo_kit (tg: code/datums/memory/tattoo_kit.dm:30)
         (typeof(obj_item_melee_touch_attack_star_touch), "attack_self"), // /obj/item/melee/touch_attack/star_touch (tg: code/modules/antagonists/heretic/magic/star_touch.dm:116)

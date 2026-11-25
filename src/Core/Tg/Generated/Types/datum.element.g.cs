@@ -2327,9 +2327,9 @@ public partial class datum_element_table_smash
     }
 }
 
-// tg: code/datums/elements/tenacious.dm:8
-[DmPath("/datum/element/tenacious"), DmGeneratedOnly, DmInert]
-public partial class datum_element_tenacious : datum_element { }
+// tg: code/datums/elements/tenacious.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/element/tenacious")]
+public partial class datum_element_tenacious { }
 
 // tg: code/datums/elements/tiny_mob_hunter.dm:3 (the var block of a hand-written class)
 [DmPath("/datum/element/tiny_mob_hunter")]

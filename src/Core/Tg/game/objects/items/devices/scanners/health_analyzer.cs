@@ -599,11 +599,30 @@ public static partial class GlobalProcs
                 Dm.append(ref render_list, I18n.T("<span class='info ml-1'>[] alcohol content: []%</span><br>", blood_name, blood_alcohol_content));
         }
 
-        // Ethereal Charge (:419-438): /obj/item/organ/stomach/ethereal is not declared (M2's species are narrowed to the
-        // human, plan Q7); a human's stomach is never one.
-        object stomach__1 = target.get_organ_slot(ORGAN_SLOT_STOMACH);
-        if (stomach__1 != null && DmTypes.PathOf(stomach__1.GetType()) is string stomach_path && stomach_path.StartsWith("/obj/item/organ/stomach/ethereal", StringComparison.Ordinal))
-            Dm.NotTranslated("code/game/objects/items/devices/scanners/health_analyzer.dm:420", "healthscan: an ethereal's electrical charge (other species, later)");
+        // Ethereal Charge
+        if (target.get_organ_slot(ORGAN_SLOT_STOMACH) is obj_item_organ_stomach_ethereal battery_stomach)
+        {
+            float charge = battery_stomach.cell.charge;
+            bool charge_dangerous = charge > ETHEREAL_CHARGE_FULL || charge < ETHEREAL_CHARGE_LOWPOWER;
+            string charge_format = Dm.text("[] / []", display_power(charge), display_power(ETHEREAL_CHARGE_FULL));
+
+            if (charge_dangerous)
+            {
+                string recommendation = I18n.T("Recommendation: ");
+                if (charge >= -INFINITY && charge <= ETHEREAL_CHARGE_LOWPOWER)
+                    recommendation += I18n.T("charging by LE-fortified food");
+                else if (charge >= ETHEREAL_CHARGE_FULL && charge <= ETHEREAL_CHARGE_OVERLOAD)
+                    recommendation += I18n.T("discharge into nearest undercapacity APC");
+                else if (charge >= ETHEREAL_CHARGE_OVERLOAD && charge <= ETHEREAL_CHARGE_DANGEROUS)
+                {
+                    recommendation += I18n.T("preparation for violent electrocardiac discharge event");
+                    recommendation = Dm.str(uppertext(recommendation));
+                }
+                charge_format = span_tooltip(I18n.T("[] followed with toxins treatment.", recommendation), charge_format);
+            }
+
+            Dm.append(ref render_list, I18n.T("<span class='[] ml-1'>Electrical charge: []</span><br>", charge_dangerous ? "alert" : "info", charge_format));
+        }
 
         //Diseases
         bool disease_hr = false;

@@ -258,9 +258,9 @@ public partial class datum_preference_choiced_species_feature_moth_wings
     }
 }
 
-// tg: code/modules/client/preferences/species_features/mushperson.dm:2
-[DmPath("/datum/preference/choiced/species_feature/mushroom_cap"), DmGeneratedOnly]
-public partial class datum_preference_choiced_species_feature_mushroom_cap : datum_preference_choiced_species_feature
+// tg: code/modules/client/preferences/species_features/mushperson.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/species_feature/mushroom_cap")]
+public partial class datum_preference_choiced_species_feature_mushroom_cap
 {
     // tg: code/modules/client/preferences/species_features/mushperson.dm:2
     public datum_preference_choiced_species_feature_mushroom_cap()
@@ -272,9 +272,9 @@ public partial class datum_preference_choiced_species_feature_mushroom_cap : dat
     }
 }
 
-// tg: code/modules/client/preferences/species_features/pod.dm:2
-[DmPath("/datum/preference/choiced/species_feature/pod_hair"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_species_feature_pod_hair : datum_preference_choiced_species_feature
+// tg: code/modules/client/preferences/species_features/pod.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/species_feature/pod_hair")]
+public partial class datum_preference_choiced_species_feature_pod_hair
 {
     // tg: code/modules/client/preferences/species_features/pod.dm:2
     public datum_preference_choiced_species_feature_pod_hair()
@@ -1148,9 +1148,9 @@ public partial class datum_preference_choiced_hair_gradient
     }
 }
 
-// tg: code/modules/client/preferences/species_features/ethereal.dm:2
-[DmPath("/datum/preference/choiced/ethereal_color"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_ethereal_color : datum_preference_choiced
+// tg: code/modules/client/preferences/species_features/ethereal.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/ethereal_color")]
+public partial class datum_preference_choiced_ethereal_color
 {
     // tg: code/modules/client/preferences/species_features/ethereal.dm:2
     public datum_preference_choiced_ethereal_color()

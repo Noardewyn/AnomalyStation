@@ -1826,9 +1826,9 @@ public partial class obj_item_bodypart_chest_jelly_luminescent : obj_item_bodypa
     }
 }
 
-// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:194
-[DmPath("/obj/item/bodypart/chest/pod"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bodypart_chest_pod : obj_item_bodypart_chest
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:194 (the var block of a hand-written class)
+[DmPath("/obj/item/bodypart/chest/pod")]
+public partial class obj_item_bodypart_chest_pod
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:194
     public obj_item_bodypart_chest_pod()

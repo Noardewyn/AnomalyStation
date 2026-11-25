@@ -19,6 +19,21 @@ public partial class obj_item_organ_stomach_ethereal : obj_item_organ_stomach
     // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:7
     public obj_item_stock_parts_power_store cell;
 
+    // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:2  the var overrides of the type block (the class declares cell by hand, so the block is here)
+    public obj_item_organ_stomach_ethereal()
+    {
+        name = "biological battery";
+        icon_state = "stomach-p"; //Welp. At least it's more unique in functionaliy.
+        desc = "A crystal-like organ that stores the electric charge of ethereals.";
+    }
+
+    // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:5
+    protected internal override void dm_init_vars()
+    {
+        base.dm_init_vars();
+        organ_traits = Dm.list(TRAIT_NOHUNGER, TRAIT_ETHEREAL_METABOLISM); // We have our own hunger mechanic.
+    }
+
     // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:11
     public override object Initialize(object mapload = null, params object[] __extra)
     {

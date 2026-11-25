@@ -316,10 +316,8 @@ public partial class mob : atom_movable
                 object our_heart = crystal_fella.get_organ_slot(ORGAN_SLOT_HEART);
                 if (istype(our_heart, typeof(obj_item_organ_heart_ethereal))) //so you got the heart?
                 {
-                    // tg: :278-279  var/obj/item/organ/heart/ethereal/ethereal_heart = our_heart;
-                    //               ethereal_heart.stop_crystalization_process(crystal_fella) //stops the crystallization process
-                    // GAP(lead): /obj/item/organ/heart/ethereal is generated only (the ethereals, after the core version).
-                    Dm.NotTranslated("code/modules/mob/dead/observer/observer.dm:279", "ghostize: the ethereal heart's stop_crystalization_process (ethereals, after the core version)");
+                    obj_item_organ_heart_ethereal ethereal_heart = (obj_item_organ_heart_ethereal)our_heart;
+                    ethereal_heart.stop_crystalization_process(crystal_fella); //stops the crystallization process
                 }
             }
         }

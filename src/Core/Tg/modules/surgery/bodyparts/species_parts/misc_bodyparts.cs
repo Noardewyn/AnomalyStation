@@ -247,3 +247,14 @@ public partial class obj_item_bodypart_arm_right_golem : obj_item_bodypart_arm_r
         await new_owner.AddComponentFrom(REF(this), typeof(datum_component_shovel_hands));
     }
 }
+
+// Species package SP2b (D349): the podperson's chest, the flowerpot butt.
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:194
+public partial class obj_item_bodypart_chest_pod : obj_item_bodypart_chest
+{
+    // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:202
+    public override object get_butt_sprite()
+    {
+        return Dm.icon(Dm.resource("icons/mob/butts.dmi"), BUTT_SPRITE_FLOWERPOT);
+    }
+}

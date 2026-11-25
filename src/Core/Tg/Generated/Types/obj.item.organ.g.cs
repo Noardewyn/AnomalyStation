@@ -1418,9 +1418,9 @@ public partial class obj_item_organ_brain_golem : obj_item_organ_brain
     }
 }
 
-// tg: code/modules/mob/living/brain/brain_item.dm:528
-[DmPath("/obj/item/organ/brain/lustrous"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_lustrous : obj_item_organ_brain
+// tg: code/modules/mob/living/brain/brain_item.dm:528 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/lustrous")]
+public partial class obj_item_organ_brain_lustrous
 {
     // tg: code/modules/mob/living/brain/brain_item.dm:528
     public obj_item_organ_brain_lustrous()
@@ -6054,9 +6054,9 @@ public partial class obj_item_organ_alien_eggsac : obj_item_organ_alien
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:56
-[DmPath("/obj/item/organ/mushroom_cap"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_mushroom_cap : obj_item_organ
+// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:56 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/mushroom_cap")]
+public partial class obj_item_organ_mushroom_cap
 {
     // tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:56
     public obj_item_organ_mushroom_cap()

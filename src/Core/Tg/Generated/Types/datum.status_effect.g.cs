@@ -595,9 +595,9 @@ public partial class datum_status_effect_grouped_bodypart_effect
     }
 }
 
-// tg: code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:3
-[DmPath("/datum/status_effect/grouped/bodypart_effect/ethereal_glow"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_bodypart_effect_ethereal_glow : datum_status_effect_grouped_bodypart_effect
+// tg: code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/bodypart_effect/ethereal_glow")]
+public partial class datum_status_effect_grouped_bodypart_effect_ethereal_glow
 {
     public float disrupted = 0; // tg: code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:6
     public float emageffect = 0; // tg: code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:8
@@ -628,9 +628,9 @@ public partial class datum_status_effect_grouped_bodypart_effect_nyxosynthesis :
     }
 }
 
-// tg: code/modules/surgery/bodyparts/bodypart_effects/photosynthesis.dm:3
-[DmPath("/datum/status_effect/grouped/bodypart_effect/photosynthesis"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_bodypart_effect_photosynthesis : datum_status_effect_grouped_bodypart_effect
+// tg: code/modules/surgery/bodyparts/bodypart_effects/photosynthesis.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/bodypart_effect/photosynthesis")]
+public partial class datum_status_effect_grouped_bodypart_effect_photosynthesis
 {
     // tg: code/modules/surgery/bodyparts/bodypart_effects/photosynthesis.dm:3
     public datum_status_effect_grouped_bodypart_effect_photosynthesis()

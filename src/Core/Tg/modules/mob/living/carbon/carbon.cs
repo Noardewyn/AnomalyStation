@@ -933,9 +933,7 @@ public partial class mob_living_carbon : mob_living
         float final_modification = 0;
         foreach (obj_item_bodypart_leg bodypart in Dm.each<obj_item_bodypart_leg>(get_bodyparts()))
             final_modification += Dm.num(bodypart.speed_modifier);
-        // GAP(P1): /datum/movespeed_modifier/bodypart (modules/movespeed/modifiers/innate.dm:14) is not declared. Not on the
-        // M2 path: a human's legs have speed_modifier 0, so nothing calls this proc (default_parts.dm:440-454).
-        Dm.NotTranslated("code/modules/mob/living/carbon/carbon.dm:891", "update_bodypart_speed_modifier: add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bodypart, update = TRUE, multiplicative_slowdown = final_modification)");
+        await add_or_update_variable_movespeed_modifier(typeof(datum_movespeed_modifier_bodypart), TRUE, multiplicative_slowdown: final_modification);
     }
 }
 

@@ -2147,9 +2147,9 @@ public partial class datum_emote_living_carbon_human_blink_r
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/emote.dm:285
-[DmPath("/datum/emote/living/carbon/human/glow"), DmGeneratedOnly, DmInert]
-public partial class datum_emote_living_carbon_human_glow : datum_emote_living_carbon_human
+// tg: code/modules/mob/living/carbon/human/emote.dm:285 (the var block of a hand-written class)
+[DmPath("/datum/emote/living/carbon/human/glow")]
+public partial class datum_emote_living_carbon_human_glow
 {
     // tg: code/modules/mob/living/carbon/human/emote.dm:285
     public datum_emote_living_carbon_human_glow()
@@ -2161,9 +2161,9 @@ public partial class datum_emote_living_carbon_human_glow : datum_emote_living_c
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/emote.dm:301
-[DmPath("/datum/emote/living/carbon/human/flare"), DmGeneratedOnly, DmInert]
-public partial class datum_emote_living_carbon_human_flare : datum_emote_living_carbon_human
+// tg: code/modules/mob/living/carbon/human/emote.dm:301 (the var block of a hand-written class)
+[DmPath("/datum/emote/living/carbon/human/flare")]
+public partial class datum_emote_living_carbon_human_flare
 {
     // tg: code/modules/mob/living/carbon/human/emote.dm:301
     public datum_emote_living_carbon_human_flare()
@@ -2176,9 +2176,9 @@ public partial class datum_emote_living_carbon_human_flare : datum_emote_living_
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/emote.dm:318
-[DmPath("/datum/emote/living/carbon/human/flicker"), DmGeneratedOnly, DmInert]
-public partial class datum_emote_living_carbon_human_flicker : datum_emote_living_carbon_human
+// tg: code/modules/mob/living/carbon/human/emote.dm:318 (the var block of a hand-written class)
+[DmPath("/datum/emote/living/carbon/human/flicker")]
+public partial class datum_emote_living_carbon_human_flicker
 {
     // tg: code/modules/mob/living/carbon/human/emote.dm:318
     public datum_emote_living_carbon_human_flicker()

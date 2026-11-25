@@ -136,4 +136,11 @@ public partial class datum_status_effect_grouped_bodypart_effect : datum_status_
             remove_bodypart(bodypart.owner, bodypart, deleting: TRUE);
         return base.Destroy(force);
     }
+
+    /// round(bodyparts.len / BODYPARTS_DEFAULT_MAXIMUM, 0.1), the effect's strength (GET_BODYPART_COEFFICIENT)
+    // tg: code/__DEFINES/bodyparts.dm:236
+    public float get_bodypart_coefficient()
+    {
+        return round(length(bodyparts) / (float)BODYPARTS_DEFAULT_MAXIMUM, 0.1f);
+    }
 }

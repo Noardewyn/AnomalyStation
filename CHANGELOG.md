@@ -13,6 +13,7 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ### Fixed
 
+- Map editor: flying up inside a room two levels high keeps the lamps' light and shadows instead of turning the room flat.
 - Lasers fly through windows, glass doors, grilles and glass floors and ceilings aimed at in first person, as in tg.
 - Map editor: a floor placed as a ceiling from inside a room whose walls are two levels high goes on top of the walls.
 

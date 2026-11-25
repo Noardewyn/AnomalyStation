@@ -790,8 +790,28 @@ public partial class GameScene
         // From above the walls the map's light is tg's own, tile by tile, over the whole map (the light grid): which rooms are lit and which are dark, with no lamp
         // shining through a wall. Under them, flown into a room, it is the game's: the lamps as lights with their shadows, which the game draws around a
         // player and no further.
+        // A room two or more levels high is flown into too while a roof is over the camera on a level above it.
         if (_light != null)
-            _light.Dynamic = !(EditorLit && height > WorldScale.WallHeight);
+            _light.Dynamic = !(EditorLit && height > WorldScale.WallHeight && (_editorTop || !EditorRoofed(camera.GlobalPosition)));
+    }
+
+    // A floor or a ceiling over the camera's tile, on a level above the one the camera is in (open space and space are none).
+    private bool EditorRoofed(Vector3 eye)
+    {
+        ReplicaWorld replica = _feed?.Replica;
+        if (replica == null)
+            return false;
+        int x = Mathf.FloorToInt(eye.X / TileSpace.TileSize) + 1, y = Mathf.FloorToInt(-eye.Z / TileSpace.TileSize) + 1;
+        int level = Math.Max(1, 1 + Mathf.FloorToInt(eye.Y / TileSpace.LevelHeight));
+        for (int z = level; z <= _editor.Document.Levels; z++)
+        {
+            if (replica.CeilingAt(x, y, z).Sealed)
+                return true;
+            if (z > level && replica.TurfTypeAt(x, y, z) is string type && !type.StartsWith("/turf/open/space", StringComparison.Ordinal)
+                && !type.StartsWith("/turf/open/openspace", StringComparison.Ordinal))
+                return true;
+        }
+        return false;
     }
 
     // The point of the edited level's floor under a point of the screen, if the view meets the floor there.

@@ -784,3 +784,7 @@
 
 ## Species SP2a (D349): the moth and the plasmaman
 /obj/item/clothing/under/plasmaman/clown/magic	Initialize	D349	deferred	the wizard's enchanted clown suit adds the clown pockets spell (a wizard item, antagonist code not ported)
+
+## Species SP3a (D349)
+/datum/golem_food_buff/gibtonite	apply_effects	D349	not_translated	the gibtonite_hand launcher item is not translated (mining items); a golem still eats gibtonite for its nutrition
+/datum/golem_food_buff/bluespace	apply_effects	D349	not_translated	the bluespace_finger teleport item is not translated (mining items); a golem still eats bluespace crystals for its nutrition

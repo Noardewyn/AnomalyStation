@@ -3502,9 +3502,9 @@ public partial class datum_status_effect_slimed : datum_status_effect
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:3
-[DmPath("/datum/status_effect/golem"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem : datum_status_effect
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem")]
+public partial class datum_status_effect_golem
 {
     public object overlay_state_prefix; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:8
     public string mineral_name = ""; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:10
@@ -3535,9 +3535,9 @@ public partial class datum_status_effect_golem : datum_status_effect
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:176
-[DmPath("/datum/status_effect/golem/uranium"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_uranium : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:176 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/uranium")]
+public partial class datum_status_effect_golem_uranium
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:176
     public datum_status_effect_golem_uranium()
@@ -3551,9 +3551,9 @@ public partial class datum_status_effect_golem_uranium : datum_status_effect_gol
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:198
-[DmPath("/datum/status_effect/golem/silver"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_silver : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:198 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/silver")]
+public partial class datum_status_effect_golem_silver
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:198
     public datum_status_effect_golem_silver()
@@ -3567,9 +3567,9 @@ public partial class datum_status_effect_golem_silver : datum_status_effect_gole
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:223
-[DmPath("/datum/status_effect/golem/plasma"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_plasma : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:223 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/plasma")]
+public partial class datum_status_effect_golem_plasma
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:223
     public datum_status_effect_golem_plasma()
@@ -3583,9 +3583,9 @@ public partial class datum_status_effect_golem_plasma : datum_status_effect_gole
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:273
-[DmPath("/datum/status_effect/golem/plasteel"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_plasteel : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:273 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/plasteel")]
+public partial class datum_status_effect_golem_plasteel
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:273
     public datum_status_effect_golem_plasteel()
@@ -3599,9 +3599,9 @@ public partial class datum_status_effect_golem_plasteel : datum_status_effect_go
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:293
-[DmPath("/datum/status_effect/golem/gold"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_gold : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:293 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/gold")]
+public partial class datum_status_effect_golem_gold
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:293
     public datum_status_effect_golem_gold()
@@ -3615,9 +3615,9 @@ public partial class datum_status_effect_golem_gold : datum_status_effect_golem
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:313
-[DmPath("/datum/status_effect/golem/diamond"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_diamond : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:313 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/diamond")]
+public partial class datum_status_effect_golem_diamond
 {
     public float alpha_per_tick = 20; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:321
     public float moving_alpha = 200; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:323
@@ -3646,9 +3646,9 @@ public partial class datum_status_effect_golem_diamond : datum_status_effect_gol
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:399
-[DmPath("/datum/status_effect/golem/titanium"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_titanium : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:399 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/titanium")]
+public partial class datum_status_effect_golem_titanium
 {
     public float brute_modifier = 0.8f; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:406
     public float damage_increase = 3; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:408
@@ -3667,9 +3667,9 @@ public partial class datum_status_effect_golem_titanium : datum_status_effect_go
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:463
-[DmPath("/datum/status_effect/golem/bananium"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_bananium : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:463 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/bananium")]
+public partial class datum_status_effect_golem_bananium
 {
     public datum_component_slippery slipperiness; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:470
 
@@ -3685,9 +3685,9 @@ public partial class datum_status_effect_golem_bananium : datum_status_effect_go
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:497
-[DmPath("/datum/status_effect/golem/lightbulb"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_golem_lightbulb : datum_status_effect_golem
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:497 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/golem/lightbulb")]
+public partial class datum_status_effect_golem_lightbulb
 {
     public float glow_range = 3; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:506
     public float glow_power = 1; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:507
@@ -5143,9 +5143,9 @@ public partial class datum_status_effect_inflated
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:48
-[DmPath("/datum/status_effect/zombie"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_zombie : datum_status_effect
+// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:48 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/zombie")]
+public partial class datum_status_effect_zombie
 {
     public float regen_time = 60; // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:53
     public float regen_amount = 0.5f; // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:55
@@ -5176,7 +5176,7 @@ public partial class datum_status_effect_zombie : datum_status_effect
 }
 
 // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:267
-[DmPath("/datum/status_effect/zombie/mindless"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/status_effect/zombie/mindless"), DmGeneratedOnly]
 public partial class datum_status_effect_zombie_mindless : datum_status_effect_zombie
 {
     // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:267
@@ -5189,9 +5189,9 @@ public partial class datum_status_effect_zombie_mindless : datum_status_effect_z
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:273
-[DmPath("/datum/status_effect/zombie/uninfected"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_zombie_uninfected : datum_status_effect_zombie
+// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:273 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/zombie/uninfected")]
+public partial class datum_status_effect_zombie_uninfected
 {
     // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:273
     public datum_status_effect_zombie_uninfected()

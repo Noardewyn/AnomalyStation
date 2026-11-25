@@ -79,9 +79,13 @@ public partial class obj_item_stack : obj_item
         update_weight();
         update_appearance();
 
-        // if(is_path_in_list(merge_type, GLOB.golem_stack_food_directory)) AddComponent(/datum/component/golem_food, ...)
-        // (:101-105): GLOB.golem_stack_food_directory is not declared (golems, M10+), so no stack is golem food.
-        Dm.Deferred("code/game/objects/items/stacks/stack.dm:101", "Initialize: the golem food component of a stack golems can eat (golems, M10+)");
+        if (Dm.truthy(is_path_in_list(merge_type, GLOB.golem_stack_food_directory)))
+        {
+            float processing_bonus = 1;
+            if (Dm.truthy(ispath(merge_type, typeof(obj_item_stack_sheet))))
+                processing_bonus = GOLEMFOOD_PREPARED_MEAL;
+            Waiting.NoSleep(AddComponent(typeof(datum_component_golem_food), Dm.named("golem_food_key", merge_type), Dm.named("food_multiplier", processing_bonus)));
+        }
         return dot;
     }
 

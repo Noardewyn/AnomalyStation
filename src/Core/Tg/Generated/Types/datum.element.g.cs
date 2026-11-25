@@ -341,9 +341,9 @@ public partial class datum_element_blocks_explosives
     }
 }
 
-// tg: code/datums/elements/blood_limb_overlay.dm:4
-[DmPath("/datum/element/blood_limb_overlay"), DmGeneratedOnly, DmInert]
-public partial class datum_element_blood_limb_overlay : datum_element { }
+// tg: code/datums/elements/blood_limb_overlay.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/element/blood_limb_overlay")]
+public partial class datum_element_blood_limb_overlay { }
 
 // tg: code/datums/elements/blood_reagent.dm:4 (the vars the hand-written class does not declare)
 [DmPath("/datum/element/blood_reagent")]

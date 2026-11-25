@@ -53,9 +53,9 @@ public partial class obj_item_food
     }
 }
 
-// tg: code/datums/components/food/golem_food.dm:83
-[DmPath("/obj/item/food/golem_food"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_golem_food : obj_item_food
+// tg: code/datums/components/food/golem_food.dm:83 (the var block of a hand-written class)
+[DmPath("/obj/item/food/golem_food")]
+public partial class obj_item_food_golem_food
 {
     public float consume_food = 1; // tg: code/datums/components/food/golem_food.dm:89
     public atom owner; // tg: code/datums/components/food/golem_food.dm:91

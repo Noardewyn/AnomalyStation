@@ -643,8 +643,15 @@ public partial class datum_component_edible : datum_component
 
         //food may also apply golem buffs if it contains certain materials and the mob has the required trait
         if (Dm.truthy(owner.custom_materials) && HAS_TRAIT(eater, TRAIT_ROCK_EATER))
-            // effect = GLOB.golem_stack_food_directory[material.sheet_type || material.ore_type] and its on_consumption (:538-543)
-            Dm.Deferred("code/datums/components/food/edible.dm:538", "check_materials: the golem food buffs of GLOB.golem_stack_food_directory (golems)");
+        {
+            foreach (datum_material material in Dm.each_cast<datum_material>(owner.custom_materials))
+            {
+                float effect_stack_amount = Dm.num(owner.custom_materials[material]) * Dm.num(fraction) / SHEET_MATERIAL_AMOUNT;
+                datum_golem_food_buff effect = GLOB.golem_stack_food_directory[Dm.truthy(material.sheet_type) ? material.sheet_type : material.ore_type] as datum_golem_food_buff;
+                if (effect != null && Dm.truthy(effect.can_consume(eater)))
+                    effect.on_consumption(eater, owner as atom_movable, effect_stack_amount);
+            }
+        }
 
         if (Dm.num(fraction) >= 1) //don't bother if the item is about to be deleted anyway...
             return;

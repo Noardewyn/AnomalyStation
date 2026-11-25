@@ -433,9 +433,9 @@ public partial class obj_item_bodypart_head_dullahan : obj_item_bodypart_head
     }
 }
 
-// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:532
-[DmPath("/obj/item/bodypart/head/golem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bodypart_head_golem : obj_item_bodypart_head
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:532 (the var block of a hand-written class)
+[DmPath("/obj/item/bodypart/head/golem")]
+public partial class obj_item_bodypart_head_golem
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:532
     public obj_item_bodypart_head_golem()
@@ -1949,9 +1949,9 @@ public partial class obj_item_bodypart_chest_mushroom : obj_item_bodypart_chest
     }
 }
 
-// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:575
-[DmPath("/obj/item/bodypart/chest/golem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bodypart_chest_golem : obj_item_bodypart_chest
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:575 (the var block of a hand-written class)
+[DmPath("/obj/item/bodypart/chest/golem")]
+public partial class obj_item_bodypart_chest_golem
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:575
     public obj_item_bodypart_chest_golem()
@@ -2529,9 +2529,9 @@ public partial class obj_item_bodypart_arm_left_mushroom : obj_item_bodypart_arm
     }
 }
 
-// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:601
-[DmPath("/obj/item/bodypart/arm/left/golem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bodypart_arm_left_golem : obj_item_bodypart_arm_left
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:601 (the var block of a hand-written class)
+[DmPath("/obj/item/bodypart/arm/left/golem")]
+public partial class obj_item_bodypart_arm_left_golem
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:601
     public obj_item_bodypart_arm_left_golem()
@@ -3120,9 +3120,9 @@ public partial class obj_item_bodypart_arm_right_mushroom : obj_item_bodypart_ar
     }
 }
 
-// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:638
-[DmPath("/obj/item/bodypart/arm/right/golem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bodypart_arm_right_golem : obj_item_bodypart_arm_right
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:638 (the var block of a hand-written class)
+[DmPath("/obj/item/bodypart/arm/right/golem")]
+public partial class obj_item_bodypart_arm_right_golem
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:638
     public obj_item_bodypart_arm_right_golem()

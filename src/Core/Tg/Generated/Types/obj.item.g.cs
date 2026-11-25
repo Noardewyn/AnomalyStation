@@ -29,9 +29,9 @@ public partial class obj_item_tk_grab
     }
 }
 
-// tg: code/datums/components/mutant_hands.dm:145
-[DmPath("/obj/item/mutant_hand"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mutant_hand : obj_item
+// tg: code/datums/components/mutant_hands.dm:145 (the var block of a hand-written class)
+[DmPath("/obj/item/mutant_hand")]
+public partial class obj_item_mutant_hand
 {
     // tg: code/datums/components/mutant_hands.dm:145
     public obj_item_mutant_hand()
@@ -48,7 +48,7 @@ public partial class obj_item_mutant_hand : obj_item
 }
 
 // tg: code/modules/antagonists/heretic/knowledge/side_knowledge/tier_three.dm:153
-[DmPath("/obj/item/mutant_hand/shattered_risen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/mutant_hand/shattered_risen"), DmGeneratedOnly]
 public partial class obj_item_mutant_hand_shattered_risen : obj_item_mutant_hand
 {
     // tg: code/modules/antagonists/heretic/knowledge/side_knowledge/tier_three.dm:153
@@ -66,9 +66,9 @@ public partial class obj_item_mutant_hand_shattered_risen : obj_item_mutant_hand
     }
 }
 
-// tg: code/modules/zombie/items.dm:2
-[DmPath("/obj/item/mutant_hand/zombie"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mutant_hand_zombie : obj_item_mutant_hand
+// tg: code/modules/zombie/items.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/mutant_hand/zombie")]
+public partial class obj_item_mutant_hand_zombie
 {
     public float infect_chance = 100; // tg: code/modules/zombie/items.dm:14
 
@@ -86,7 +86,7 @@ public partial class obj_item_mutant_hand_zombie : obj_item_mutant_hand
 }
 
 // tg: code/modules/zombie/items.dm:25
-[DmPath("/obj/item/mutant_hand/zombie/weak"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/mutant_hand/zombie/weak"), DmGeneratedOnly]
 public partial class obj_item_mutant_hand_zombie_weak : obj_item_mutant_hand_zombie
 {
     // tg: code/modules/zombie/items.dm:25

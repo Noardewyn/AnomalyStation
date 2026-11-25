@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 722 rows over 447 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 721 rows over 446 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -157,7 +157,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_gun_magic_midas_hand), "interact_with_atom_secondary"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:40)
         (typeof(obj_item_gun_magic_midas_hand), "item_interaction"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:78)
         (typeof(obj_item_gun_magic_midas_hand), "ranged_interact_with_atom_secondary"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:45)
-        (typeof(obj_item_mutant_hand_zombie), "afterattack"), // /obj/item/mutant_hand/zombie (tg: code/modules/zombie/items.dm:16)
         (typeof(obj_item_fishing_rod), "attack_self_secondary"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:291)
         (typeof(obj_item_fishing_rod), "dropped"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:328)
         (typeof(obj_item_fishing_rod), "interact_with_atom"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:371)

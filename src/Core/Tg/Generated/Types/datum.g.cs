@@ -9561,9 +9561,9 @@ public partial class datum_bodypart_overlay_simple_roach_shell
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:154
-[DmPath("/datum/bodypart_overlay/simple/golem_overlay"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_simple_golem_overlay : datum_bodypart_overlay_simple
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:154 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/simple/golem_overlay")]
+public partial class datum_bodypart_overlay_simple_golem_overlay
 {
     public datum_weakref attached_bodypart; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:162
 
@@ -27561,9 +27561,9 @@ public partial class datum_stack_recipe_list
     public DmList recipes; // tg: code/game/objects/items/stacks/stack_recipe.dm:106
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:4
-[DmPath("/datum/golem_food_buff"), DmGeneratedOnly, DmInert]
-public partial class datum_golem_food_buff : datum
+// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/golem_food_buff")]
+public partial class datum_golem_food_buff
 {
     public float exclusive = 1; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:4
     public float nutrition = 2; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:6
@@ -27572,7 +27572,7 @@ public partial class datum_golem_food_buff : datum
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:32
-[DmPath("/datum/golem_food_buff/glass"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/glass"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_glass : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:32
@@ -27584,9 +27584,9 @@ public partial class datum_golem_food_buff_glass : datum_golem_food_buff
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:38
-[DmPath("/datum/golem_food_buff/iron"), DmGeneratedOnly, DmInert]
-public partial class datum_golem_food_buff_iron : datum_golem_food_buff
+// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/golem_food_buff/iron")]
+public partial class datum_golem_food_buff_iron
 {
     public float healed_amount = 3; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:41
     public DmList damage_heal_order; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:43
@@ -27607,7 +27607,7 @@ public partial class datum_golem_food_buff_iron : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:52
-[DmPath("/datum/golem_food_buff/uranium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/uranium"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_uranium : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:52
@@ -27620,7 +27620,7 @@ public partial class datum_golem_food_buff_uranium : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:57
-[DmPath("/datum/golem_food_buff/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/silver"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_silver : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:57
@@ -27633,7 +27633,7 @@ public partial class datum_golem_food_buff_silver : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:62
-[DmPath("/datum/golem_food_buff/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/plasma"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_plasma : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:62
@@ -27646,7 +27646,7 @@ public partial class datum_golem_food_buff_plasma : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:67
-[DmPath("/datum/golem_food_buff/plasteel"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/plasteel"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_plasteel : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:67
@@ -27659,7 +27659,7 @@ public partial class datum_golem_food_buff_plasteel : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:72
-[DmPath("/datum/golem_food_buff/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/gold"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_gold : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:72
@@ -27672,7 +27672,7 @@ public partial class datum_golem_food_buff_gold : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:77
-[DmPath("/datum/golem_food_buff/diamond"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/diamond"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_diamond : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:77
@@ -27685,7 +27685,7 @@ public partial class datum_golem_food_buff_diamond : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:82
-[DmPath("/datum/golem_food_buff/titanium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/titanium"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_titanium : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:82
@@ -27698,7 +27698,7 @@ public partial class datum_golem_food_buff_titanium : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:87
-[DmPath("/datum/golem_food_buff/bananium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/bananium"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_bananium : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:87
@@ -27711,7 +27711,7 @@ public partial class datum_golem_food_buff_bananium : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:92
-[DmPath("/datum/golem_food_buff/lightbulb"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/lightbulb"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_lightbulb : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:92
@@ -27725,7 +27725,7 @@ public partial class datum_golem_food_buff_lightbulb : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:99
-[DmPath("/datum/golem_food_buff/gibtonite"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/gibtonite"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_gibtonite : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:99
@@ -27738,7 +27738,7 @@ public partial class datum_golem_food_buff_gibtonite : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:118
-[DmPath("/datum/golem_food_buff/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/bluespace"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_bluespace : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:118
@@ -31282,9 +31282,9 @@ public partial class datum_species_spirit_ghost : datum_species_spirit
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/golems.dm:3
-[DmPath("/datum/species/golem"), DmGeneratedOnly, DmInert]
-public partial class datum_species_golem : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/golems.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/golem")]
+public partial class datum_species_golem
 {
     public float early_warning = 0; // tg: code/modules/mob/living/carbon/human/species_types/golems.dm:56
     public float final_warning = 0; // tg: code/modules/mob/living/carbon/human/species_types/golems.dm:58
@@ -31715,9 +31715,9 @@ public partial class datum_species_pod : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/skeletons.dm:3
-[DmPath("/datum/species/skeleton"), DmGeneratedOnly, DmInert]
-public partial class datum_species_skeleton : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/skeletons.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/skeleton")]
+public partial class datum_species_skeleton
 {
     // tg: code/modules/mob/living/carbon/human/species_types/skeletons.dm:3
     public datum_species_skeleton()
@@ -31777,9 +31777,9 @@ public partial class datum_species_snail : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:3
-[DmPath("/datum/species/zombie"), DmGeneratedOnly, DmInert]
-public partial class datum_species_zombie : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/zombie")]
+public partial class datum_species_zombie
 {
     // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:3
     public datum_species_zombie()

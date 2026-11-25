@@ -2837,9 +2837,9 @@ public partial class datum_component_multiple_lives : datum_component
     }
 }
 
-// tg: code/datums/components/mutant_hands.dm:20
-[DmPath("/datum/component/mutant_hands"), DmGeneratedOnly, DmInert]
-public partial class datum_component_mutant_hands : datum_component
+// tg: code/datums/components/mutant_hands.dm:20 (the var block of a hand-written class)
+[DmPath("/datum/component/mutant_hands")]
+public partial class datum_component_mutant_hands
 {
     public Type mutant_hand_path = typeof(obj_item_mutant_hand); // tg: code/datums/components/mutant_hands.dm:22
 
@@ -3567,9 +3567,9 @@ public partial class datum_component_shoe_footstep
     public object falloff_distance; // tg: code/datums/components/shoe_footstep.dm:22
 }
 
-// tg: code/datums/components/shovel_hands.dm:3
-[DmPath("/datum/component/shovel_hands"), DmGeneratedOnly, DmInert]
-public partial class datum_component_shovel_hands : datum_component
+// tg: code/datums/components/shovel_hands.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/shovel_hands")]
+public partial class datum_component_shovel_hands
 {
     public obj_item_shovel internal_shovel; // tg: code/datums/components/shovel_hands.dm:5
 
@@ -4797,9 +4797,9 @@ public partial class datum_component_ghost_edible : datum_component
     public float initial_reagent_volume = 0; // tg: code/datums/components/food/ghost_edible.dm:13
 }
 
-// tg: code/datums/components/food/golem_food.dm:4
-[DmPath("/datum/component/golem_food"), DmGeneratedOnly, DmInert]
-public partial class datum_component_golem_food : datum_component
+// tg: code/datums/components/food/golem_food.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/component/golem_food")]
+public partial class datum_component_golem_food
 {
     public object consume_on_eat; // tg: code/datums/components/food/golem_food.dm:4
     public datum_golem_food_buff snack_type; // tg: code/datums/components/food/golem_food.dm:6

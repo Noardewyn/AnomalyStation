@@ -785,6 +785,9 @@ dye: a greyscale model tinted at run time).
   inner ear, the cat, big, coeurl, fold, lynx, round and cybernetic ears with the cybernetic kinds' coloured inner ears;
   `m_tail_cat_*` with its wagging states): ears on top of the human head, the inner ear its own coloured part, and a cat tail with its
   wag. Meanwhile tg's sprites.
+- **Skeleton body** (gaps SP3a, `species_parts/misc_bodyparts.dm`, `icons/mob/human/species/misc/skeleton.dmi`, the `skeleton_*` states): the bare bone head, chest, arms and legs, plus the **degloved bone limbs** (`bone_*` states, with their `_blood` overlay) a dismembered skeleton leaves. Meanwhile tg's sprites.
+- **Golem body** (gaps SP3a, `icons/mob/human/species/golems.dmi`, the `golem_*` states): the rock head, chest, arms and legs, and the **mineral veins** a golem grows from the metals it eats (`uranium_*`, `silver_*`, `plasma_*`, `iron_*`, `gold_*`, `diamond_*`, `platinum_*`, `banana_*` per body zone). Meanwhile tg's sprites.
+- **Zombie claws and infection** (gaps SP3a, `icons/effects/blood.dmi` `bloodhand_left/right`, `icons/obj/medical/organs/organs.dmi` `blacktumor`): the held mutant claw (a held, undroppable hand model) and the black ooze organ. Meanwhile tg's sprites.
 
 ## Medicines and toxins
 - **Ice block** (gaps RG2, `xenobiology/crossbreeding/_misc.dm:127`, `icons/obj/science/slimecrossing.dmi` state `frozen`): a man-high

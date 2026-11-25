@@ -230,8 +230,7 @@ public partial class obj_item_gibtonite : obj_item
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_two_handed), Dm.named("require_twohands", TRUE)));
-        // AddComponent(/datum/component/golem_food, ...): the golems' food (the golems, not ported)
-        Dm.Deferred("code/modules/mining/ores_coins.dm:358", "Initialize: AddComponent(/datum/component/golem_food): the golems' food (the golems, not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_golem_food), Dm.named("consume_on_eat", FALSE), Dm.named("golem_food_key", typeof(obj_item_gibtonite))));
         return dot;
     }
 

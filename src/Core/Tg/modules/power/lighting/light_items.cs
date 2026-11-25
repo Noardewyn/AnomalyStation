@@ -28,8 +28,7 @@ public partial class obj_item_light : obj_item
         Waiting.NoSleep(update_icon_state());
         Waiting.NoSleep(AddElement(typeof(datum_element_connect_loc), Initialize__loc_connections));
         Waiting.NoSleep(AddElement(typeof(datum_element_update_icon_updates_onmob)));
-        // AddComponent(/datum/component/golem_food, golem_food_key = /obj/item/light, extra_validation = CALLBACK(src, PROC_REF(is_intact))) (:30)
-        Dm.Deferred("code/modules/power/lighting/light_items.dm:30", "Initialize: AddComponent(/datum/component/golem_food) of a light tube or bulb (golems eating lights, M10+)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_golem_food), Dm.named("golem_food_key", typeof(obj_item_light)), Dm.named("extra_validation", Dm.@new<datum_callback>(this, nameof(is_intact)))));
         return dot;
     }
 

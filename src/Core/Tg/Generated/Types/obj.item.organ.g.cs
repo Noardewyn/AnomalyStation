@@ -6347,9 +6347,9 @@ public partial class obj_item_organ_adamantine_resonator : obj_item_organ
     }
 }
 
-// tg: code/modules/zombie/organs.dm:2
-[DmPath("/obj/item/organ/zombie_infection"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_zombie_infection : obj_item_organ
+// tg: code/modules/zombie/organs.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/zombie_infection")]
+public partial class obj_item_organ_zombie_infection
 {
     public float causes_damage = 1; // tg: code/modules/zombie/organs.dm:7
     public float living_transformation_time = 30; // tg: code/modules/zombie/organs.dm:8
@@ -6371,7 +6371,7 @@ public partial class obj_item_organ_zombie_infection : obj_item_organ
 }
 
 // tg: code/modules/zombie/organs.dm:125
-[DmPath("/obj/item/organ/zombie_infection/nodamage"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/organ/zombie_infection/nodamage"), DmGeneratedOnly]
 public partial class obj_item_organ_zombie_infection_nodamage : obj_item_organ_zombie_infection
 {
     // tg: code/modules/zombie/organs.dm:125

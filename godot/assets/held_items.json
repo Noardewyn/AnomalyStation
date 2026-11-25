@@ -370,11 +370,152 @@
     "y": 0.055,
     "z": 0.014
   },
+  "icons/obj/weapons/guns/ammo.dmi:.223": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:.223-empty": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:.223-full": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:.50mag": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:.50mag-ammo": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:10mmbox": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:310_strip": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:310_strip-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:310_strip-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:310_strip-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:310_strip-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:310_strip-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:310_strip-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357-7": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:357OLD-7": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-base": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-laser-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-laser-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-laser-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-laser-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-laser-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-laser-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-lead-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-lead-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-lead-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-lead-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-lead-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38-lead-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:38mag": {
+    "scale": 0.5
+  },
   "icons/obj/weapons/guns/ammo.dmi:38mag-ammo": {
     "yaw": -2,
     "roll": -11,
     "scale": 0.56,
     "x": -0.025
+  },
+  "icons/obj/weapons/guns/ammo.dmi:40mm": {
+    "scale": 0.5
   },
   "icons/obj/weapons/guns/ammo.dmi:40mm-0": {
     "scale": 0.4
@@ -391,9 +532,456 @@
   "icons/obj/weapons/guns/ammo.dmi:40mm-4": {
     "scale": 0.4
   },
+  "icons/obj/weapons/guns/ammo.dmi:45-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-7": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:45box": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:46x30mmt": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:46x30mmt-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:46x30mmt-12": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:46x30mmt-16": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:46x30mmt-20": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:46x30mmt-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:46x30mmt-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-7": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:50ae-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:75": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:75-empty": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:75-full": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9mmaps-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9mmaps-10": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9mmaps-15": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9mmaps-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9mmbox": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9x19p": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9x19p-empty": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:9x19p-full": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-10": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-20": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-30": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-40": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-50": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-riot": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:a7mm-toy": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-10": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-12": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-14": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-16": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-18": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-20": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-22": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-24": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-10": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-12": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-14": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-16": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-18": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-20": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-22": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-24": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-blue-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-10": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-12": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-14": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-16": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-18": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-20": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-22": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-24": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-foam-red-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-riot": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-riot-base": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-toy": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:c20r45-toy-base": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:disruptor": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:disruptor-ammo": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:drum45": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:incendiary": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:incendiary-ammo": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:lionhunter_strip": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:lionhunter_strip-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:lionhunter_strip-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:lionhunter_strip-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:lionhunter_strip-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gb": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gb-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gb-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gbc": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gbc-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gbc-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gd": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gd-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gd-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gf": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gf-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gf-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gfl": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gfl-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gfl-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gs": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gs-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gs-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gsl": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gsl-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gsl-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gt": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gt-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:m12gt-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:marksman": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:marksman-ammo": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:napad_mag": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:napad_mag-empty": {
+    "scale": 0.5
+  },
   "icons/obj/weapons/guns/ammo.dmi:napad_mag-full": {
     "scale": 0.44,
     "y": 0.226
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle-12": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle-16": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle-20": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle-32": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:oldrifle-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:penetrator": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:penetrator-ammo": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r10mm-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-1": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-2": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-3": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-5": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-6": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-7": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:r45-8": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:rocketbundle": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:rocketbundle-0": {
+    "scale": 0.5
   },
   "icons/obj/weapons/guns/ammo.dmi:rocketbundle-1": {
     "scale": 0.6
@@ -404,12 +992,66 @@
   "icons/obj/weapons/guns/ammo.dmi:rocketbundle-3": {
     "scale": 0.6
   },
+  "icons/obj/weapons/guns/ammo.dmi:smartgun": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:smartgun-empty": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:smartgun-full": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:smg9mm": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:smg9mm-empty": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:smg9mm-full": {
+    "scale": 0.5
+  },
   "icons/obj/weapons/guns/ammo.dmi:srm-8": {
     "pitch": 4,
     "roll": -20,
     "scale": 0.6,
     "x": -0.025,
     "z": 0.037
+  },
+  "icons/obj/weapons/guns/ammo.dmi:surplus": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:surplus-ammo": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-0": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-12": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-16": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-20": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-24": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-28": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-32": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-4": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/ammo.dmi:uzi9mm-8": {
+    "scale": 0.5
   },
   "icons/obj/weapons/guns/ballistic.dmi:aps": {
     "scale": 0.58
@@ -703,6 +1345,18 @@
   "icons/obj/weapons/guns/syringegun.dmi:dartsyringegun": {
     "scale": 1.3,
     "x": 0.075
+  },
+  "icons/obj/weapons/guns/toy.dmi:foambox": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/toy.dmi:foambox_mini": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/toy.dmi:foambox_riot": {
+    "scale": 0.5
+  },
+  "icons/obj/weapons/guns/toy.dmi:foambox_riot_mini": {
+    "scale": 0.5
   },
   "icons/obj/weapons/guns/wide_guns.dmi:assault_laser": {
     "scale": 1.32,

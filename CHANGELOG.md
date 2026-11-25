@@ -21,13 +21,14 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ### Changed
 
+- Magazines, speedloaders and ammo boxes are drawn half as large in first-person hands.
 - A melee hit, with a weapon, a fist or a mech, always lands on the body part you aim at; a lost limb can't be hit at all.
 - In first person your own attacks no longer show the flying, spinning weapon sprite; others and the third-person view still see it.
 - A body part flashes red, for everyone, on any damage it takes (a blow, a fall, a burn), not only on a shot's hit.
 
 ### Fixed
 
-- A melee swing's whoosh no longer plays on clicks faster than the attack cooldown; you hear it only when a blow really goes out.
+- A melee swing's whoosh no longer plays on clicks faster than the weapon's attack cooldown; you hear it only when a blow really goes out.
 - Coin flips, a vampire's drinking, an ethereal's overcharge and a torn-off fish tail now play their sounds.
 - Tab in the lobby no longer hides the mouse pointer.
 - The crosshair now opens for the spread of firing two light guns at once in combat mode.

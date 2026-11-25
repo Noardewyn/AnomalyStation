@@ -179,7 +179,9 @@ public static class ShotGeometry
             return false;
         // DEVIATION(DV525): a ladder's hole is a floor tg only draws see-through (ladders.dm make_base_transparent); the 3D client cuts the hatch's
         // opening out of it (DV397), and a shot through that opening goes on, down or up
-        if (!InHatch(p, down ? here : next) && (Dm.num(here.zPassOut(dir)) == 0 || Dm.num(next.zPassIn(dir)) == 0))
+        // DEVIATION(DV595): a shot that passes glass (a laser's PASSGLASS) goes on through a glass floor between the levels
+        if (!InHatch(p, down ? here : next) && !(PassesGlass(p) && (down ? here : next) is turf_open_floor_glass)
+            && (Dm.num(here.zPassOut(dir)) == 0 || Dm.num(next.zPassIn(dir)) == 0))
             return false;
         p.free_hitscan_forceMove = TRUE;
         await p.forceMove(next);
@@ -188,6 +190,21 @@ public static class ShotGeometry
         p.dm_origin_h += down ? CeilingPixels : -CeilingPixels;
         return true;
     }
+
+    private static bool PassesGlass(obj_projectile p) => Dm.truthy(Dm.bitand(p.pass_flags, PASSGLASS));
+
+    /// <summary>
+    /// DEVIATION(DV595): the see-through thing under a first-person crosshair is not the aimed shot's direct target when the shot would pass it
+    /// unclicked: a window, a windoor or a grille its pass flags match (glass and grilles only, not a table's top), or a closed glass door a PASSGLASS
+    /// shot passes (door.dm CanAllowThrough). tg's player clicks the mob behind the glass; the 3D crosshair can only click the glass.
+    /// </summary>
+    public static bool SeesThrough(obj_projectile p, atom target)
+        => p.dm_aimed && (Dm.truthy(Dm.bitand(Dm.bitand(target.pass_flags_self, p.pass_flags), PASSGLASS | PASSGRILLE))
+            || target is obj_machinery_door && PassesGlass(p) && !Dm.truthy(target.opacity));
+
+    /// <summary>DEVIATION(DV595): a PASSGLASS shot that reached a cell's own glass ceiling (no level over it) flies on through it, away.</summary>
+    public static bool ThroughGlassCeiling(obj_projectile p, turf cell)
+        => PassesGlass(p) && CeilingSystem.Of(World.Current).At((int)Dm.num(cell.x), (int)Dm.num(cell.y), (int)Dm.num(cell.z)).IsGlass;
 
     /// <summary>What closes the top of a cell for a shot that reached it (<see cref="Overhead"/>).</summary>
     public enum Top

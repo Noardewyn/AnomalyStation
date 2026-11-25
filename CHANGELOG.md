@@ -7,6 +7,10 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Fixed
+
+- Lasers fly through windows, glass doors, grilles and glass floors and ceilings aimed at in first person, as in tg.
+
 ## [1.13.0-pre-alpha] - 2026-11-25
 
 ### Protocol

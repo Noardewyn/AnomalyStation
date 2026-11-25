@@ -234,6 +234,31 @@ public class OpenSpaceTests
         }
     }
 
+    // DV595: the shot of the case above that hit (2, 3, 2)'s floor at x 75: made a glass floor, a laser goes on through it into level 1
+    [Fact]
+    public void AnAimedLaserFliesThroughAGlassFloorIntoTheLevelBelow()
+    {
+        World world = Boot(out TgTestWorld.Log log);
+        obj_projectile_beam_emitter_hitscan p;
+        using (world.Enter())
+        {
+            Waiting.NoSleep(locate(2, 3, 2).ChangeTurf(typeof(turf_open_floor_glass)));
+            mob_living_carbon_human alice = Dm.@new<mob_living_carbon_human>(locate(2, 3, 2));
+            p = Dm.@new<obj_projectile_beam_emitter_hitscan>(locate(2, 3, 2));
+            p.firer = alice;
+            p.fired_from = alice;
+            string aim = "icon-x=16;icon-y=16;left=1;button=left;" + ClientSeam.AimParam(50, 96, 20.8, 90, -Math.Atan2(20.8, 25) * 180 / Math.PI);
+            Waiting.NoSleep(p.aim_projectile(locate(4, 3, 2), alice, Dm.params2list(aim), 0f));
+            Waiting.NoSleep(p.fire());
+        }
+        world.Step(2);
+        using (world.Enter())
+        {
+            Assert.Equal(1f, Dm.num(p.last_impact_turf.z));
+            Assert.Empty(log.Runtimes);
+        }
+    }
+
     // DV97 (the owner, 2026-11-20): fired up 24.1 degrees north from (2, 3, 1), the line reaches level 1's top 25 px out, at y 121 in (2, 4, 1), under
     // the floor of (2, 4, 2): the shot hits that floor from under it (it was deleted there unseen), and its impact is on that floor's level, at its floor.
     [Fact]

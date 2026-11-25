@@ -82,6 +82,15 @@ public sealed class Session
 
     public SessionState State { get; set; }
 
+    /// <summary>Version 97 (DV597): the client's Hello said it loads the world before it plays (<see cref="Hello.WaitsForLoad"/>); its Joins say so.</summary>
+    public bool WaitsForLoad { get; init; }
+
+    /// <summary>
+    /// DV597, the world half: the Join said the client loads first and no <see cref="ActionKind.Loaded"/> has come since, so the direct join (no
+    /// lobby) leaves its new player in tg's lobby. Each Join (a new round's too) sets it again from the command.
+    /// </summary>
+    public bool AwaitingLoad { get; set; }
+
     /// <summary>
     /// The tg client while the session is in the world (from the Join to the Leave). The host holds it only while
     /// <c>GLOB.clients</c> does too and drops it at <c>IClientHost.ClientDeleted</c>, so it never keeps a deleted client

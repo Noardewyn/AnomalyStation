@@ -3210,3 +3210,17 @@ replica keeps them (`ReplicaWorld.TurfLightAt`, `TurfLights`) and raises `TurfLi
 changed cell for the map's meshes (a glowing tile is drawn self-lit, `turf_kit.gdshader` condition 5).
 
 Tests: `Protocol/ProtocolV96TurfLightTests`, `Integration/TurfLightGameplayTests` (server).
+
+## 92. Version 97 (DV597: the client loads before it plays)
+
+The Hello's flags gain bit 2, `Hello.WaitsForLoad`: the client loads the world behind a loading screen before it plays (`Codec.cs`,
+`HelloFlagWaitsForLoad`). Only the game's own client sets it (the connect screen's `JoinAttempt` and the map editor's Play); the bots, the
+test rigs and anything else keep joining at once. A new untargeted action, `ActionKind.Loaded` (27, no fields, the toggle bucket), says the
+client has built the map, decoded the round's sprite sheets and warmed its shaders. The server keeps the flag on the session and on every
+Join command (`QueuedCommand.WaitsForLoad`, the replay log's `w` extra), and without the lobby `DirectJoins` passes over a session whose
+Join said it waits (`Session.AwaitingLoad`) until its Loaded comes, when it is late-joined at once: until then the key is tg's new player
+(`/mob/dead/new_player`), with no body. A new round's Join (D306) sets the wait again, since the client builds the next world too. With the
+lobby on the server refuses nothing: the client's loading screen covers the lobby's Join and Ready until it is loaded, and a client that
+skips it only plays on a world it has not loaded.
+
+Tests: `Protocol/ProtocolV97Tests`, `Integration/JoinGateTests` (server).

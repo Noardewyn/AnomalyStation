@@ -74,12 +74,13 @@ public enum CommandKind : byte
 /// <param name="OverZ">Version 17: a turf <paramref name="OverKind"/>'s z.</param>
 /// <param name="DragTime">Version 17: the drag's length in deciseconds (at most 255).</param>
 /// <param name="Aim">Version 34: the camera's aim of a click or a mouse action (DV94), null for none.</param>
+/// <param name="WaitsForLoad">Version 97 (DV597): a Join of a client that loads the world first (<see cref="Session.AwaitingLoad"/>).</param>
 public readonly record struct QueuedCommand(long ApplyTick, int Session, uint Seq, CommandKind Kind, string Text = null, HeldDirs Dirs = HeldDirs.None,
     Anomaly.Core.Motion.MotionInput Motion = default, ActionKind Action = ActionKind.None, long Target = 0, ClickButton Button = ClickButton.None, ClickModifiers Modifiers = ClickModifiers.None,
     TargetKind TargetKind = TargetKind.None, int TurfX = 0, int TurfY = 0, int TurfZ = 0, byte IconX = 0, byte IconY = 0, KeybindingCode Keybinding = KeybindingCode.None, bool KeyUp = false, AimZone AimZone = AimZone.None,
     long RadialMenu = 0, int RadialElement = 0, int UiWindow = 0, string UiParams = null,
     TargetKind OverKind = TargetKind.None, long OverTarget = 0, int OverX = 0, int OverY = 0, int OverZ = 0, byte DragTime = 0, ShotAim? Aim = null,
-    string SayType = null, string SayChannel = null, bool SayVisible = false)
+    string SayType = null, string SayChannel = null, bool SayVisible = false, bool WaitsForLoad = false)
 {
     /// <summary>The seq of a Join: first in its session.</summary>
     public const uint JoinSeq = 0;

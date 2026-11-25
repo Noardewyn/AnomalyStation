@@ -228,7 +228,7 @@ public partial class ConnectScreen : Control
         // M3 R4: the token kept for this server and name takes the character back after a crash or a quit (JoinAttempt).
         // D335: the launcher starts the client with a game token for the server it names in --connect; no other server is shown it.
         string login = args.HasConnect && host == args.Host && port == args.Port ? System.Environment.GetEnvironmentVariable(LoginTokenVariable) : null;
-        _join = new JoinAttempt(Transport, new ReconnectTokens(TokenStorePath(args)), host, port, name, login);
+        _join = new JoinAttempt(Transport, new ReconnectTokens(TokenStorePath(args)), host, port, name, login, waitsForLoad: true); // the game scene says when it has loaded (DV597)
     }
 
     /// <summary>D335: the environment variable the launcher passes the hub's game token in (not on the command line, which other programs can read).</summary>

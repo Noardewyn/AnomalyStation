@@ -194,7 +194,9 @@ public static class ProtocolVersion
     /// (the held thing's <c>attack_speed</c> with the mob's modifiers), so the client swings and whooshes only on a click the server takes as a blow.
     /// Version 96 (MessagesV96.cs): MapGrid and the Delta body end with the turfs' own lights (<see cref="TurfLightChange"/>): a light floor,
     /// a circuit floor or lava lights the room, and a ceiling's floor block lights the room under it.
-    public const ushort Current = 96;
+    /// Version 97 (DV597): the Hello's flag <see cref="Hello.WaitsForLoad"/> and the action <see cref="ActionKind.Loaded"/>: the game's client
+    /// loads the world behind its loading screen before its new player is late-joined.
+    public const ushort Current = 97;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

@@ -126,7 +126,7 @@ public partial class GameScene
         {
             if (!round.Ready)
                 return;
-            _playJoining = new GameClient(GameClient.CreateTransport(), "127.0.0.1", round.Port, App.Instance.Args.Name);
+            _playJoining = new GameClient(GameClient.CreateTransport(), "127.0.0.1", round.Port, App.Instance.Args.Name, waitsForLoad: true); // (DV597)
             _playJoining.Connect();
         }
         _playJoining.Poll(now);

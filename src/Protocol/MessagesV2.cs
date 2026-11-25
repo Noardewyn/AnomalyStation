@@ -470,6 +470,11 @@ public enum ActionKind : byte
     /// action that is no click (the table's Flip). The server runs it only when it would offer that entry for the target now.
     /// </summary>
     ContextPick = 26,
+    /// <summary>
+    /// Version 97 (DV597): the client that said <see cref="Hello.WaitsForLoad"/> has built and loaded the world (its loading screen is done); no
+    /// fields. Without tg's lobby the server late-joins its new player now.
+    /// </summary>
+    Loaded = 27,
 }
 
 /// <summary>The mouse button of a click (tg's <c>params</c>: <c>button=left</c>, <c>right</c>, <c>middle</c>).</summary>

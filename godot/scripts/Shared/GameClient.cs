@@ -25,6 +25,10 @@ public sealed class GameClient : IWorldFeed, IDisposable
     private readonly string _name;
     private SessionToken _token;
     private readonly string _loginToken;
+    private readonly bool _waitsForLoad;
+
+    /// <summary>Version 97 (DV597): the Hello said this client loads the world first; its game scene sends Loaded when it has.</summary>
+    public bool WaitsForLoad => _waitsForLoad;
     private DisconnectReason _closeCode;
     private Welcome? _welcome;
     private FeedPhase _phase = FeedPhase.Idle;
@@ -40,8 +44,10 @@ public sealed class GameClient : IWorldFeed, IDisposable
     /// <param name="name">The player name (the server's BYOND key).</param>
     /// <param name="token">An earlier session's token to take it back, or none.</param>
     /// <param name="loginToken">D335: the hub's game token the launcher started the client with, or null: sent in the Hello, where a server that takes the launcher's login reads the player's name.</param>
-    public GameClient(IClientTransport transport, string host, int port, string name, SessionToken token = default, string loginToken = null)
+    /// <param name="waitsForLoad">Version 97 (DV597): the game's client loads the world before it plays and sends <see cref="ActionKind.Loaded"/> then.</param>
+    public GameClient(IClientTransport transport, string host, int port, string name, SessionToken token = default, string loginToken = null, bool waitsForLoad = false)
     {
+        _waitsForLoad = waitsForLoad;
         _transport = transport ?? throw new ArgumentNullException(nameof(transport));
         _host = host;
         _port = port;
@@ -192,7 +198,7 @@ public sealed class GameClient : IWorldFeed, IDisposable
         _phase = FeedPhase.Connecting;
         try
         {
-            byte[] hello = Codec.Encode(new Hello(ProtocolVersion.Current, _name, _token, _loginToken));
+            byte[] hello = Codec.Encode(new Hello(ProtocolVersion.Current, _name, _token, _loginToken, _waitsForLoad));
             _transport.Connect(_host, _port, hello);
         }
         catch (Exception ex) when (ex is not OutOfMemoryException)

@@ -217,6 +217,7 @@ public sealed partial class ServerHost
         // From here a failure (a runtime in KeyMob or Connect) leaves the session LoggingIn without a login, which
         // PollLogins refuses after the tick.
         if (s.State == SessionState.Joining) s.State = SessionState.LoggingIn;
+        s.AwaitingLoad = command.WaitsForLoad; // DV597: until its client's Loaded, a new player stays in the lobby
         if (Room == null && !MapLoaded)
             throw new InvalidOperationException("a join needs the tg world (the server runs --empty)");
 
@@ -261,7 +262,8 @@ public sealed partial class ServerHost
     private const string JoinConnectPiece = "join: client/New";
     private const string JoinLateSpawnPiece = "join: late spawn";
 
-    // D270: without the lobby, the new players that wait for the round to start (it starts at the ticker's first fire).
+    // D270: without the lobby, the new players that wait for the round to start (it starts at the ticker's first fire), and DV597's that wait for
+    // their client to load the world (Session.AwaitingLoad).
     private readonly List<Session> _directJoins = new();
 
     // D270: without the lobby, each waiting new player late-joins as tg's overflow job once the round is in progress, as tg's
@@ -273,6 +275,10 @@ public sealed partial class ServerHost
             return;
         foreach (Session s in _directJoins.ToArray())
         {
+            // DEVIATION(DV597): a client still loading the world (its loading screen up) is late-joined once it says it is loaded, as BYOND's
+            // PRELOAD_RSC sends the resources before the login; until then its key stays tg's new player, with no body
+            if (s.AwaitingLoad && s.State != SessionState.Closed)
+                continue;
             _directJoins.Remove(s);
             // (the map editor's Play as a new arrival: tg's own late-join point, the arrivals shuttle's chair, and no spawn point of the host's)
             bool arrive = _config.JoinAsArrival;
@@ -492,6 +498,11 @@ public sealed partial class ServerHost
             case ActionKind.Verb:
                 // version 78: a command verb of the stat panel
                 _clients.Verb(s.Client, command.Text);
+                break;
+            case ActionKind.Loaded:
+                // version 97 (DV597): the client has loaded the world; a new player waiting for that joins the round now (no lobby)
+                s.AwaitingLoad = false;
+                DirectJoins(world);
                 break;
             case ActionKind.ContextPick:
                 // version 86 (DV503): the radial's entry that is no click, on a target checked as a click's

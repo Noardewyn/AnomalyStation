@@ -144,7 +144,7 @@ public sealed partial class ServerHost
             player.LoggedIn = true;
             MarkLoginUsed(hello.LoginToken, loginExpires);
         }
-        var session = new Session(++_lastOrdinal, key, player.Token, connection) { State = SessionState.Joining, Address = address, LastSeenBefore = seen?.LastSeen };
+        var session = new Session(++_lastOrdinal, key, player.Token, connection) { State = SessionState.Joining, Address = address, LastSeenBefore = seen?.LastSeen, WaitsForLoad = hello.WaitsForLoad };
         // tg's player row (client_procs.dm:719-791): the key's first connection claims it with its token (D275), a later one is seen again
         if (seen == null)
             _db?.AddPlayer(ckey, key, player.Token, address, RoundId);
@@ -153,7 +153,7 @@ public sealed partial class ServerHost
         AddSession(session);
         _byConnection[connection.Id] = session;
         _sessionsServed++;
-        _queue.Enqueue(new QueuedCommand(World.Tick + 1, session.Ordinal, QueuedCommand.JoinSeq, CommandKind.Join, key));
+        _queue.Enqueue(new QueuedCommand(World.Tick + 1, session.Ordinal, QueuedCommand.JoinSeq, CommandKind.Join, key, WaitsForLoad: session.WaitsForLoad));
         _out.WriteLine(string.Create(CultureInfo.InvariantCulture,
             $"join #{session.Ordinal} {key}{(live != null ? " (replaces #" + live.Ordinal.ToString(CultureInfo.InvariantCulture) + ")" : "")} at tick {World.Tick}"));
     }
@@ -404,6 +404,7 @@ public sealed partial class ServerHost
             case ActionKind.ToggleMoveIntent:
             case ActionKind.ToggleCombatMode:
             case ActionKind.Unhover: // version 14: untargeted
+            case ActionKind.Loaded: // version 97: untargeted
                 return true;
             case ActionKind.RadialPick: // version 15: the menu and the element; whether the menu is shown to the player is ClientSeam's check
                 if (action.RadialMenu < 1) { why = "a radial pick without a menu"; return false; }

@@ -71,7 +71,7 @@ public class CodecTests
         Assert.Equal(ProtocolError.BadMagic, error);
 
         byte[] flags = (byte[])good.Clone();
-        flags[^1] = 4;
+        flags[^1] = 8; // (version 97 took bit 2: WaitsForLoad)
         Assert.False(Codec.TryDecode(flags, out Hello _, out error));
         Assert.Equal(ProtocolError.BadValue, error);
 

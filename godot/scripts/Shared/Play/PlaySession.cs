@@ -649,6 +649,9 @@ public sealed class PlaySession
     /// <see cref="DragRelease.Over"/> (BYOND's MouseDrop; the server runs tg's /client/MouseDrop). The icon pixel is the one under the
     /// pointer at the release (the over thing's). False, and nothing sent, without both things or a button.
     /// </summary>
+    /// <summary>Version 97 (DV597): the world is built and loaded (the loading screen is done): the server may late-join the new player now.</summary>
+    public void Loaded() => Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Loaded, 0, ClickButton.None, ClickModifiers.None, null));
+
     /// <summary>Version 86 (DV503): the radial's entry <paramref name="label"/> that is no click (the table's Flip) picked on an entity <paramref name="target"/>.</summary>
     public bool ContextPick(in ClickTarget target, string label)
     {

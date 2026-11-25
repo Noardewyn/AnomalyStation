@@ -61,6 +61,7 @@ public static partial class Codec
 
     private const int HelloFlagToken = 1;
     private const int HelloFlagLogin = 2;
+    private const int HelloFlagWaitsForLoad = 4; // version 97
 
     /// <summary>The id of a message without decoding it; false for an empty message or an unknown id.</summary>
     public static bool TryPeekId(ReadOnlySpan<byte> message, out MessageId id)
@@ -84,7 +85,7 @@ public static partial class Codec
         w.WriteBytes(ProtocolVersion.Magic);
         w.WriteUInt16(message.Protocol);
         w.WriteString(message.Name, Limits.MaxNameBytes);
-        w.WriteByte((byte)((message.ReconnectToken.IsNone ? 0 : HelloFlagToken) | (message.LoginToken == null ? 0 : HelloFlagLogin)));
+        w.WriteByte((byte)((message.ReconnectToken.IsNone ? 0 : HelloFlagToken) | (message.LoginToken == null ? 0 : HelloFlagLogin) | (message.WaitsForLoad ? HelloFlagWaitsForLoad : 0)));
         if (!message.ReconnectToken.IsNone)
             w.WriteToken(message.ReconnectToken);
         if (message.LoginToken != null)
@@ -126,7 +127,7 @@ public static partial class Codec
 
             string name = r.ReadString(Limits.MaxNameBytes);
             byte flags = r.ReadByte();
-            if ((flags & ~(HelloFlagToken | HelloFlagLogin)) != 0)
+            if ((flags & ~(HelloFlagToken | HelloFlagLogin | HelloFlagWaitsForLoad)) != 0)
                 throw Bad("a Hello sets reserved flags");
             SessionToken token = SessionToken.None;
             if ((flags & HelloFlagToken) != 0)
@@ -144,7 +145,7 @@ public static partial class Codec
             }
 
             r.ExpectEnd();
-            value = new Hello(version, name, token, login);
+            value = new Hello(version, name, token, login, (flags & HelloFlagWaitsForLoad) != 0);
             return true;
         }
         catch (ProtocolException e)

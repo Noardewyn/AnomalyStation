@@ -10,6 +10,7 @@ client's top-right corner, in its window title and in the first line of the serv
 ### Fixed
 
 - Lasers fly through windows, glass doors, grilles and glass floors and ceilings aimed at in first person, as in tg.
+- Map editor: a floor placed as a ceiling from inside a room whose walls are two levels high goes on top of the walls.
 
 ## [1.13.0-pre-alpha] - 2026-11-25
 

@@ -602,6 +602,24 @@ public partial class GameScene
 
     private bool EditorVoid(int x, int y, int z) => TurfStyle.Classify(MapEdits.TurfOf(_editor.Document[x, y, z])) == TurfKind.Void;
 
+    // A room goes on up over (x, y, z): the tile above is open, and on that level something stands on each side of it before the map's edge (the
+    // room's walls, a window, a gallery's floor). Under open space or beside another building only, it does not.
+    private bool EditorRoomGoesUp(int x, int y, int z)
+    {
+        MapDocument map = _editor.Document;
+        if (!_map.LevelAbove(z) || !map.Contains(x, y, z + 1) || !EditorVoid(x, y, z + 1))
+            return false;
+        foreach ((int dx, int dy) in new[] { (1, 0), (-1, 0), (0, 1), (0, -1) })
+        {
+            int cx = x + dx, cy = y + dy;
+            while (map.Contains(cx, cy, z + 1) && EditorVoid(cx, cy, z + 1))
+                (cx, cy) = (cx + dx, cy + dy);
+            if (!map.Contains(cx, cy, z + 1))
+                return false;
+        }
+        return true;
+    }
+
     // ---- the preview (5.9) ----
 
     private const int EditorPreviewTiles = 48; // the most tiles a preview shows: a larger shape is marked tile by tile and not made
@@ -1288,6 +1306,14 @@ public partial class GameScene
                 _picker.PickEmptyCeilings = false;
                 EditorPick(ray);
             }
+            // A room taller than a level (open over the empty ceiling, with its walls going on up): the place where its ceiling would be is the top
+            // of its walls, not the first level the ray crosses (a floor there is placed from above).
+            int topShown = EditorHideAbove == 0 ? map.Levels : EditorHideAbove;
+            while (_picker.PickEmptyCeilings && _editorHit.Kind == TargetKind.Ceiling && _editorHit.Z < topShown
+                && !_map.HasCeilingAt(_editorHit.X, _editorHit.Y, _editorHit.Z) && EditorRoomGoesUp(_editorHit.X, _editorHit.Y, _editorHit.Z)
+                && EditorHitOnPlane(origin, normal, TileSpace.WorldY(_editorHit.Z + 2), _editorHit.Z + 1) is { IsHit: true } higher
+                && EditorVoid(higher.X, higher.Y, higher.Z))
+                _editorHit = higher with { Kind = TargetKind.Ceiling, Surface = PickSurface.Ceiling };
         }
         // With the levels above hidden, the floor of the first of them is still the ceiling of the top one shown and is drawn from under it: a ray that
         // goes up to it hits it (the pick itself stops at the top level shown).

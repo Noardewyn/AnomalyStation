@@ -1194,6 +1194,10 @@ the level alike:
   (`EditorCeilingAt`). A layer taken off a rule's plating is written as `"none"`.
 - A stroke or a shape that began on the floor does not take to the ceiling, nor the other way.
 - A ceiling's height is its level's: the tool bar's height builds none over it.
+- The place where a ceiling would be, in a room taller than a level, is the top of its walls (the owner, 2026-11-25): where
+  the tile over the empty ceiling is open and something stands on each side of it on that level before the map's edge,
+  the ray goes on up, to the top level shown (`EditorRoomGoesUp`). A room under open space keeps its own level's
+  ceiling; a floor between the two levels of a tall room is placed from above.
 - Plating made over a room from under it is in the room's area where its own tile had none (the map's default): it
   would be a floor in the area of space, which the checks name.
 - The preview shows no ceiling ahead: the line at the mouse says what a click does, and what it would not do (glass

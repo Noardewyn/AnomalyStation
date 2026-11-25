@@ -201,8 +201,10 @@ public partial class obj_item_organ_tail_fish_cerulean : obj_item_organ_tail_fis
         await organ_owner.spray_blood(REVERSE_DIR(organ_owner.dir), 2);
         organ_owner.visible_message(span_danger(I18n.T("[] detaches from []'s [], spilling out liters of []!", this, organ_owner, limb_name, LOWER_TEXT((organ_owner.get_bloodtype() as datum_blood_type)?.get_blood_name()))));
         REMOVE_TRAIT(this, TRAIT_NODROP, ORGAN_INSIDE_BODY_TRAIT); //do this early so we can fling it
+        if (QDELETED(this))
+            return; // DEVIATION(DV593): a tail deleted off a living cerulean is not flung (tg's throw_at CRASHes on a qdeleted thing)
         await throw_at(get_edge_target_turf(organ_owner, REVERSE_DIR(organ_owner.dir)) as atom); //ok so it doesnt actually fling it it just spins but idk hwo to fling
-        playsound(this, "sound/effects/cartoon_sfx/cartoon_splat.ogg", rand(50, 75), TRUE);
+        playsound(this, Dm.resource("sound/effects/cartoon_sfx/cartoon_splat.ogg"), rand(50, 75), TRUE);
     }
 
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:200

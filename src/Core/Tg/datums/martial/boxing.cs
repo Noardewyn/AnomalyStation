@@ -331,7 +331,7 @@ public partial class datum_martial_art_boxing : datum_martial_art
 
         experience_earned *= 2; //Double our experience gain on a crit hit
 
-        playsound(defender, "sound/effects/coin2.ogg", 40, TRUE);
+        playsound(defender, Dm.resource("sound/effects/coin2.ogg"), 40, TRUE);
         Dm.@new<obj_effect_temp_visual_crit>(get_turf(defender));
         await skill_experience_adjustment(attacker, defender, experience_earned); //double experience for a successful crit
 

@@ -216,7 +216,7 @@ public partial class obj_item_organ_fangs_vampire : obj_item_organ_fangs
             return;
 
         to_chat(user, span_notice(I18n.T("You swallow a gulp of [].", this)));
-        playsound(bloodbag, "sound/items/drink.ogg", 50, TRUE); //slurp
+        playsound(bloodbag, Dm.resource("sound/items/drink.ogg"), 50, TRUE); //slurp
         await ((datum_reagents)bloodbag.reagents).trans_to(user, Dm.num(((datum_reagents)bloodbag.reagents).maximum_volume) * 0.05f, transferred_by: user, methods: INGEST);
         if (Dm.num(((datum_reagents)bloodbag.reagents).total_volume) > 0)
             await async_stab_bloodbag(user, bloodbag, 1 * SECONDS);
@@ -281,7 +281,7 @@ public partial class datum_action_item_action_organ_action_vampire : datum_actio
 
         victim.show_message(span_danger(I18n.T("[] is draining your blood!", user)));
         to_chat(user, span_notice(I18n.T("You drain some blood!")));
-        playsound(user, "sound/items/drink.ogg", 30, TRUE, -2);
+        playsound(user, Dm.resource("sound/items/drink.ogg"), 30, TRUE, -2);
 
         // Since we adjust the user first, we need to take the victim's blood volume into account.
         object amount_drained = Dm.min(datum_species_human_vampire.VAMP_DRAIN_AMOUNT, victim.get_blood_volume());

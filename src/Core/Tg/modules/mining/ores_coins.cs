@@ -572,7 +572,7 @@ public partial class obj_item_coin : obj_item
             flick(Dm.text("coin_[]_flip", coinflip), this);
             coinflip = pick(sideslist);
             icon_state = Dm.text("coin_[]", coinflip);
-            playsound(user.loc as atom, "sound/items/coinflip.ogg", 50, TRUE);
+            playsound(user.loc as atom, Dm.resource("sound/items/coinflip.ogg"), 50, TRUE);
             object oldloc = loc;
             await sleep(1.5f * SECONDS);
             if (loc == oldloc && user != null && !Dm.truthy(user.incapacitated))
@@ -668,7 +668,7 @@ public partial class obj_item_coin_gold_debug : obj_item_coin_gold
             flick(Dm.text("coin_[]_flip", coinflip), this);
             coinflip = pick(sideslist);
             icon_state = Dm.text("coin_[]", coinflip);
-            playsound(user.loc as atom, "sound/items/coinflip.ogg", 50, TRUE);
+            playsound(user.loc as atom, Dm.resource("sound/items/coinflip.ogg"), 50, TRUE);
             object oldloc = loc;
             await sleep(1.5f * SECONDS);
             if (loc == oldloc && user != null && !Dm.truthy(user.incapacitated))

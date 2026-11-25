@@ -25,6 +25,7 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ### Fixed
 
+- Coin flips, a vampire's drinking, an ethereal's overcharge and a torn-off fish tail now play their sounds.
 - Tab in the lobby no longer hides the mouse pointer.
 - The crosshair now opens for the spread of firing two light guns at once in combat mode.
 - Picking an item up with an empty hand in combat mode no longer plays a punch swing.

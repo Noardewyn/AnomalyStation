@@ -576,12 +576,22 @@ public static class ShotGeometry
     /// <c>receive_damage</c>) is lit for <see cref="HitFlashDeciseconds"/>, for everyone who sees the mob: the part's own cached images as
     /// one overlay over the picture, bright red.
     /// </summary>
+    // the world time each carbon's lit parts go out (FlashLimb)
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<mob_living_carbon, Dictionary<string, float>> LitParts = new();
+
     public static void FlashLimb(mob_living_carbon carbon, object zone)
     {
         if (carbon == null || QDELETED(carbon) || !Dm.truthy(zone) || !Dm.truthy(carbon.icon_render_keys?[zone]))
             return;
         if (mob_living_carbon.limb_icon_cache[carbon.icon_render_keys[zone]] is not DmList parts || parts.len == 0)
             return;
+        // one flash per part at a time: damage every tick (toxins, fire) would pile up tg's 100 overlays before the first went out
+        var lit = LitParts.GetOrCreateValue(carbon);
+        string part = Dm.str(zone);
+        float now = Dm.num(world.time);
+        if (lit.TryGetValue(part, out float until) && now < until)
+            return;
+        lit[part] = now + HitFlashDeciseconds;
         mutable_appearance flash = mutable_appearance() as mutable_appearance;
         flash.appearance_flags = (int)KEEP_TOGETHER | (int)RESET_COLOR;
         // every drawn pixel of the part becomes the same bright red, most of its alpha kept: seen on any clothes

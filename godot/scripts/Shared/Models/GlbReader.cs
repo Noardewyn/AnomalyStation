@@ -337,6 +337,8 @@ public sealed class GlbFile
                         continue;
                     JsonElement sampler = samplers[channel.GetProperty("sampler").GetInt32()];
                     string path = target.GetProperty("path").GetString() ?? string.Empty;
+                    if (path is not ("translation" or "rotation" or "scale"))
+                        continue; // a shape key's weights (the corgi pinata's) move no node
                     JsonElement nodeElement = nodes[node.GetInt32()];
                     read.Channels.Add(new GlbChannel
                     {

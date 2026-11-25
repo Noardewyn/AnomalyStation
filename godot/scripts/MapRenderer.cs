@@ -631,8 +631,9 @@ public partial class MapRenderer : Node3D, IStaticPropHost
                 float part = turns >= 0 ? TileKitParts.DiagonalWall : t.Hatch ? (t.Shape == TileShape.Ceiling ? TileKitParts.HatchCeiling : TileKitParts.HatchFloor) : (float)t.Shape;
                 (v[9], v[10], v[11]) = (at.X, at.Y, at.Z);
                 // w: a ceiling's support (1, or -1 unsupported); a wet floor 2 (TileKit.IsWet); a wall with nothing over it 3 (its top at the full height, turf_kit.gdshader);
-                // a polished floor 4 (TurfStyle.Polished: it reflects the room)
-                float condition = t.Shape == TileShape.Ceiling ? (t.Ceiling.Supported ? 1f : -1f) : _tileKit.IsWet(t) ? 2f : t.Roofless ? 3f
+                // a polished floor 4 (TurfStyle.Polished: it reflects the room); a floor or ceiling block that gives light glows, 5 (-5 unsupported; protocol 96)
+                bool glows = t.Shape is TileShape.Floor or TileShape.Ceiling && !_replica.TurfLightAt(t.X, t.Y, t.Z, t.Shape == TileShape.Ceiling).IsNone;
+                float condition = t.Shape == TileShape.Ceiling ? (t.Ceiling.Supported ? 1f : -1f) * (glows ? 5f : 1f) : glows ? 5f : _tileKit.IsWet(t) ? 2f : t.Roofless ? 3f
                     : t.Shape == TileShape.Floor && t.TypeIndex >= 0 && t.TypeIndex < _replica.TurfTypes.Count && TurfStyle.Polished(_replica.TurfTypes[t.TypeIndex]) ? 4f : 0f;
                 // colour: a wall's side picture of each face (FaceLayers); custom: as above
                 Color faces = items[i].Faces;

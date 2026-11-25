@@ -259,7 +259,7 @@ public static partial class Codec
         foreach (string type in message.TurfTypes)
             size += 10 + MaxUtf8(type, Limits.MaxTypePathBytes);
         return size + (long)message.Runs.Count * MaxTurfRunBytes + (long)message.AppearanceRuns.Count * MaxTurfRunBytes
-            + (message.SolidBits?.Length ?? 0) + MaxMapGridV3Size(message) + MaxMapGridV5Size(message) + CeilingBytes(message.Ceilings) + NoParallaxBytes(message) + LinkedBelowBytes(message) + MapLookBytes(message) + WallHeightBytes;
+            + (message.SolidBits?.Length ?? 0) + MaxMapGridV3Size(message) + MaxMapGridV5Size(message) + CeilingBytes(message.Ceilings) + NoParallaxBytes(message) + LinkedBelowBytes(message) + MapLookBytes(message) + WallHeightBytes + TurfLightBytes(message.TurfLights);
     }
 
     public static int Encode(MapGrid message, Span<byte> destination)
@@ -333,6 +333,9 @@ public static partial class Codec
         WriteLinkedBelow(ref w, message);
         WriteMapLook(ref w, message);
         WriteWallHeight(ref w, message);
+        foreach (TurfLightChange c in message.TurfLights) // version 96
+            if (c.X > message.Width || c.Y > message.Height || c.Z > message.Levels) throw Bad("a turf light outside the map");
+        WriteTurfLights(ref w, message.TurfLights, 2 * cells, false);
         return Finish(ref w, Limits.MaxOutboundMessageBytes);
     }
 
@@ -413,6 +416,9 @@ public static partial class Codec
             ReadLinkedBelow(ref r, grid);
             ReadMapLook(ref r, grid);
             ReadWallHeight(ref r, grid);
+            ReadTurfLights(ref r, grid.TurfLights, 2 * cells, false); // version 96
+            foreach (TurfLightChange c in grid.TurfLights)
+                if (c.X > grid.Width || c.Y > grid.Height || c.Z > grid.Levels) throw Bad("a turf light outside the map");
             r.ExpectEnd();
             value = grid;
             return true;
@@ -568,7 +574,7 @@ public static partial class Codec
                 + 15 + ((change.Mask & NetField.Animation) != 0 ? MaxAnimationBytes(change.Animation) : 0) + ((change.Mask & NetField.Door) != 0 ? MaxDoorBytes(change.Door) : 0);
         size += 10 + (long)message.Despawned.Count * MaxDespawnBytes;
         size += 10 + 10 + ((long)message.SolidChanged.Count + message.TurfAppearanceChanged.Count) * (5 + 5 + 5 + 5);
-        return size + MaxDeltaV3Size(message) + MaxDeltaV5Size(message) + CeilingBytes(message.Ceilings) + 5;
+        return size + MaxDeltaV3Size(message) + MaxDeltaV5Size(message) + CeilingBytes(message.Ceilings) + 5 + TurfLightBytes(message.TurfLightChanged);
     }
 
     /// <summary>The whole Delta, header, body and private block (<see cref="Delta.Own"/>; tests, and a server that sends one connection only).</summary>
@@ -812,6 +818,7 @@ public static partial class Codec
             WriteDeltaV5(ref w, message);
         WriteCeilings(ref w, message.Ceilings, Limits.MaxCellChangesPerDelta);
         WriteSun(ref w, message.SunAzimuth);
+        WriteTurfLights(ref w, message.TurfLightChanged, Limits.MaxCellChangesPerDelta, true); // version 96
     }
 
     private const int PartResources = 1;
@@ -896,6 +903,7 @@ public static partial class Codec
             ReadDeltaV5(ref r, delta, Limits.MaxCellChangesPerDelta - delta.SolidChanged.Count - delta.TurfAppearanceChanged.Count - V3CellChanges(delta));
         ReadCeilings(ref r, delta.Ceilings, Limits.MaxCellChangesPerDelta - delta.SolidChanged.Count - delta.TurfAppearanceChanged.Count - V3CellChanges(delta) - delta.CellGasChanged.Count);
         delta.SunAzimuth = ReadSun(ref r);
+        ReadTurfLights(ref r, delta.TurfLightChanged, Limits.MaxCellChangesPerDelta, true); // version 96
     }
 
     // ---- entity records ----

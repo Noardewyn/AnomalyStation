@@ -156,6 +156,7 @@ public sealed partial class ReplicaWorld
         TakeMapCells(grid);
         _map = grid;
         TakeCeilings(grid);
+        TakeTurfLights(grid); // version 96
         TakeMapCellsV3(grid);
         TakeMapCellsV5(grid);
         TakeMapCellsV6();
@@ -460,6 +461,7 @@ public sealed partial class ReplicaWorld
         RaiseV2();
         RaiseV3();
         RaiseV5();
+        RaiseV96();
     }
 
     private static ProtocolException Bad(string message) => new(ProtocolError.BadValue, message);

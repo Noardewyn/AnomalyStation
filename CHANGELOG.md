@@ -7,6 +7,10 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Added
+
+- Light floor tiles glow and light the room around them, laid on the floor or as a ceiling; lava and circuit floors light their surroundings too.
+
 ### Fixed
 
 - Lasers fly through windows, glass doors, grilles and glass floors and ceilings aimed at in first person, as in tg.

@@ -84,11 +84,14 @@ public partial class LightLayer : Node3D
     private const float SmallRange = 2.5f;       // tiles: a light this small is drawn only near (SmallLightTiles) and its shadow holds no things
     private const float SmallLightTiles = 10f;   // a small light (a screen, an APC's lamp) is drawn only this near: farther it lights next to nothing
     private const float FloorLightHeight = 0.25f; // metres: a light tg puts on the floor (light_height below 0.5)
+    private const float CeilingLightDrop = 0.15f; // metres under the ceiling a ceiling's lit floor block (a light floor laid as a ceiling) shines from
     private const float FadeMetres = 6f;         // a lamp fades out over the last metres of the light distance (Godot's distance fade)
     private const float ShadowKeepTiles = 3f;    // a lamp with a shadow keeps it until another is this much nearer, so shadows do not flap (a new one is drawn whole)
     private const float FireLampBoost = 2.5f;    // D302: a group's one lamp stands in for up to nine
     private const int MaxFireShadows = 2;      // D302: a burning room's lamps leave the rest of the budget to the other lights
     private readonly Dictionary<long, long> _fireLamps = new(); // D302: a group of burning tiles to the hotspot that lights it (its lowest id)
+    // the lit turfs' groups (a light floor's three by three tiles, by level and by floor or ceiling) to the turf that lights each and how many it stands in for
+    private readonly Dictionary<(long Group, int Z, bool Ceiling), (long First, int Count)> _turfLamps = new();
     private const int MaxNewShadows = 2;        // lamps that gain a shadow in one selection (each draws its cube anew; a turn gave several at once)
     private const int OutOfView = 3;             // added to a light's priority when its light does not reach the view: it takes a shadow after every one that does
     private const float ViewMargin = 2f;         // metres added to a light's range in that test, so a small turn finds its shadow there
@@ -361,9 +364,11 @@ public partial class LightLayer : Node3D
             _replica.LightChanged += OnLightChanged;
             _replica.StarlightChanged += OnStarlightChanged;
             _replica.CellsChanged += OnCellsChanged;
+            _replica.TurfLightChanged += OnTurfLightsChanged;
             feed.Despawned += OnDespawned;
             foreach (ReplicaEntity e in feed.Entities)
                 TrackEntity(e);
+            OnTurfLightsChanged(_replica.TurfLights.ToList());
             _failed = false;
         }
         catch (NotImplementedException ex)
@@ -619,6 +624,10 @@ public partial class LightLayer : Node3D
                 level.Grid.SetSource(e.Id, e.State.X, e.State.Y, GridLight(Presented(e)));
         }
 
+        foreach (TurfLightChange t in _replica.TurfLights)
+            if (t.Z == z)
+                level.Grid.SetSource(TurfKey(t.X, t.Y, t.Z, t.Ceiling), t.X, t.Y, t.Light);
+
         LightState star = _replica.Starlight;
         int w = _cells.MaxX + 1;
         for (int y = 1; y <= _cells.MaxY; y++)
@@ -665,6 +674,27 @@ public partial class LightLayer : Node3D
     }
 
     private void OnLightChanged(ReplicaEntity e) => ApplyEntityLight(e);
+
+    // A turf's own light (a light floor, lava) or a ceiling's lit floor block (protocol 96): a source of its tile, keyed apart from the entities.
+    private void OnTurfLightsChanged(IReadOnlyList<TurfLightChange> lights)
+    {
+        foreach (TurfLightChange t in lights)
+        {
+            long key = TurfKey(t.X, t.Y, t.Z, t.Ceiling);
+            if (_byZ.TryGetValue(t.Z, out Level level))
+                level.Grid.SetSource(key, t.X, t.Y, t.Light);
+            if (!t.Light.IsNone && t.Light.On && t.Light.Power != 0f && TgLightMath.OnGrid(t.Light.System))
+                _lit[key] = (t.X, t.Y, t.Z, t.Light);
+            else
+                _lit.Remove(key);
+            LampChanged(key);
+        }
+    }
+
+    // above every entity id, below the sign bit: bit 61 the ceiling, then z, y and x in 16 bits each
+    private const long TurfKeyBit = 1L << 62, CeilingKeyBit = 1L << 61;
+    private static long TurfKey(int x, int y, int z, bool ceiling) => TurfKeyBit | (ceiling ? CeilingKeyBit : 0L) | ((long)z << 32) | ((long)y << 16) | (uint)x;
+    private static bool IsTurfKey(long id) => (id & TurfKeyBit) != 0;
 
     // D288: while the Godot lights draw the sources a flashlight is its spot alone: in the grid (the lamps' bounce) its light would fill its own shadows
     private LightState GridLight(in LightState light) => _dynamic && FlashlightBeam.IsBeam(light) ? LightState.None : light;
@@ -1047,11 +1077,23 @@ public partial class LightLayer : Node3D
                 _fireLamps[group] = _fireLamps.TryGetValue(group, out long first) ? Math.Min(first, id) : id;
             }
         }
+        // a floor of light tiles lights as one lamp per three by three tiles, the tiles' light summed in it (the grid has each tile's)
+        _turfLamps.Clear();
+        foreach ((long id, var at) in _lit)
+        {
+            if (InStack(at.Z) && IsTurfKey(id))
+            {
+                var group = (ShadowedLightSelector.FireGroup(at.X, at.Y), at.Z, (id & CeilingKeyBit) != 0);
+                _turfLamps[group] = _turfLamps.TryGetValue(group, out var had) ? (Math.Min(had.First, id), had.Count + 1) : (id, 1);
+            }
+        }
         foreach ((long id, var at) in _lit)
         {
             if (!InStack(at.Z) || FlashlightBeam.IsBeam(at.S)) // D325: the lamps of every level of the camera's stack
                 continue;
             if (IsFire(id) && _fireLamps[ShadowedLightSelector.FireGroup(at.X, at.Y)] != id)
+                continue;
+            if (IsTurfKey(id) && _turfLamps[(ShadowedLightSelector.FireGroup(at.X, at.Y), at.Z, (id & CeilingKeyBit) != 0)].First != id)
                 continue;
             float dx = at.X - camX, dy = at.Y - camY, d2 = dx * dx + dy * dy;
             float near = at.S.Range < SmallRange ? Math.Min(reach, SmallLightTiles + 2f) : reach;
@@ -1105,6 +1147,8 @@ public partial class LightLayer : Node3D
                     continue;
                 lamp = NewLamp(id, _instant.Contains(id));
             }
+            else if (IsTurfKey(id))
+                StyleLamp(id, lamp); // its group may have grown or shrunk
 
             lamp.Target = shown ? 1f : 0f;
             lamp.ShadowTarget = shadowed ? 1f : 0f;
@@ -1124,6 +1168,11 @@ public partial class LightLayer : Node3D
         _effectShadows = effects;
         _instant.Clear();
     }
+
+    // a turf lamp standing in for its group's other lit tiles (SelectLamps) is boosted as a burning room's is (D302); 1 for any other lamp.
+    // shortcut: a group's lamp takes the colour of its first tile, so a dance floor's mixed colours light as one; split by colour if it shows.
+    private float TurfShare(long id, int x, int y, int z)
+        => IsTurfKey(id) && _turfLamps.TryGetValue((ShadowedLightSelector.FireGroup(x, y), z, (id & CeilingKeyBit) != 0), out var g) && g.First == id ? Math.Min(g.Count, FireLampBoost) : 1f;
 
     private bool IsFire(long id) => _replica != null && _replica.TryGet(id, out ReplicaEntity e) && e.TypePath == Anomaly.Client.Shared.World.StaticPropRule.HotspotType;
 
@@ -1243,7 +1292,7 @@ public partial class LightLayer : Node3D
         var at = _lit[id];
         LightState l = at.S;
         // tg's falloff at the source itself (its height under the root): a small light is dim even where it stands
-        lamp.Energy = l.Power * LampStrength * TgLightMath.FalloffAtCoord(0f, 0f, 0f, l.Range, 0, 360f, Math.Max(l.Height, 0f)) * (IsFire(id) ? FireLampBoost : 1f);
+        lamp.Energy = l.Power * LampStrength * TgLightMath.FalloffAtCoord(0f, 0f, 0f, l.Range, 0, 360f, Math.Max(l.Height, 0f)) * (IsFire(id) ? FireLampBoost : 1f) * TurfShare(id, at.X, at.Y, at.Z);
         lamp.Light.LightColor = new Color(((l.Rgba >> 24) & 255) / 255f, ((l.Rgba >> 16) & 255) / 255f, ((l.Rgba >> 8) & 255) / 255f);
         float range = Math.Max(l.Range, 1f) * TileSpace.TileSize;
         if (lamp.Light.OmniRange != range)
@@ -1261,7 +1310,8 @@ public partial class LightLayer : Node3D
         // tg's offset is added to the corner's offset from the source (generate_sheet), so the source sits at the tile minus it; a wall
         // lamp's half tile would put it on the wall's face, so it stays MaxLampOffset off (a quarter metre): the wall shades it cleanly
         float ox = Math.Clamp(l.OffsetX, -MaxLampOffset, MaxLampOffset), oy = Math.Clamp(l.OffsetY, -MaxLampOffset, MaxLampOffset);
-        float height = l.Height < 0.5f ? FloorLightHeight : WorldScale.WallHeight * LampLightShare;
+        float height = IsTurfKey(id) ? ((id & CeilingKeyBit) != 0 ? WorldScale.WallHeight - CeilingLightDrop : FloorLightHeight)
+            : l.Height < 0.5f ? FloorLightHeight : WorldScale.WallHeight * LampLightShare;
         lamp.Light.Position = new Vector3(TileSpace.WorldX(at.X - ox), TileSpace.WorldY(at.Z) + height, TileSpace.WorldZ(at.Y - oy));
     }
 
@@ -1694,6 +1744,7 @@ public partial class LightLayer : Node3D
             _replica.LightChanged -= OnLightChanged;
             _replica.StarlightChanged -= OnStarlightChanged;
             _replica.CellsChanged -= OnCellsChanged;
+            _replica.TurfLightChanged -= OnTurfLightsChanged;
         }
 
         if (_feed != null)

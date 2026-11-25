@@ -55,7 +55,7 @@ public class ProtocolV87Tests
 
         // a decoder refuses the same: the flag, and a kind out of range
         byte[] good = Codec.Encode(Map(new MapLook()));
-        int at = good.Length - 31; // (before version 91's wall height) the flag, the sky's kind, its colours, its stars, its picture's length, then the sun's flag
+        int at = good.Length - 32; // (before version 91's wall height and version 96's empty turf light list) the flag, the sky's kind, its colours, its stars, its picture's length, then the sun's flag
         foreach ((int offset, byte value) in new[] { (0, (byte)2), (1, (byte)9), (13, (byte)2) })
         {
             byte[] crafted = (byte[])good.Clone();

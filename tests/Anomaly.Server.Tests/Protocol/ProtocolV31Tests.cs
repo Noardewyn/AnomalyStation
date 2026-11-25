@@ -63,8 +63,8 @@ public class ProtocolV31Tests
         d.Own.VisionChanged = true;
         d.Own.Vision = new VisionState(1 << 24, 0f, 0f, 0f, 0f);
         Assert.Throws<ProtocolException>(() => Codec.Encode(d));
-        // crafted: no ceilings (version 44), no sun (version 47), flags 128, depth 0, version 43's 0 and 0, a sight of 2^24 (varuint 0x80 0x80 0x80 0x08) and four zero singles
-        byte[] bytes = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0)
+        // crafted: no ceilings (version 44), no sun (version 47), no turf lights (version 96), flags 128, depth 0, version 43's 0 and 0, a sight of 2^24 (varuint 0x80 0x80 0x80 0x08) and four zero singles
+        byte[] bytes = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0)
             .Bytes(new byte[] { 128, 0, 0, 0, 0x80, 0x80, 0x80, 0x08, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }));
         Assert.False(Codec.TryDecode(bytes, out Delta _, out ProtocolError error));
         Assert.Equal(ProtocolError.BadValue, error);

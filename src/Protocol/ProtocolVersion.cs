@@ -192,7 +192,9 @@ public static class ProtocolVersion
     /// Version 94 (D347): the magic of <see cref="Hello"/> is <c>"ANOM"</c>, no longer <c>"SS3D"</c>.
     /// Version 95 (DV586, MessagesV95.cs): the private block names the own mob's melee click cooldown when it is not tg's <c>CLICK_CD_MELEE</c>
     /// (the held thing's <c>attack_speed</c> with the mob's modifiers), so the client swings and whooshes only on a click the server takes as a blow.
-    public const ushort Current = 95;
+    /// Version 96 (MessagesV96.cs): MapGrid and the Delta body end with the turfs' own lights (<see cref="TurfLightChange"/>): a light floor,
+    /// a circuit floor or lava lights the room, and a ceiling's floor block lights the room under it.
+    public const ushort Current = 96;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

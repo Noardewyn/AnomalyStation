@@ -469,7 +469,7 @@ public class CodecV2Tests
         Encodes(o);
 
         // The decoder: undefined flag bits, a flagged part that is empty, an invalid motion.
-        byte[] Own(Action<Msg.RawWriter> r) => Msg.Raw(MessageId.Delta, w => { w.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0); r(w); });
+        byte[] Own(Action<Msg.RawWriter> r) => Msg.Raw(MessageId.Delta, w => { w.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0); r(w); }); // ... ceilings, sun, turf lights (version 96)
         Assert.True(Codec.TryDecode(Own(r => r.Byte(0).Byte(0).VarUInt(0).Byte(0)), out Delta _, out ProtocolError error), error.ToString());
         foreach (byte[] bad in new[]
                  {
@@ -555,6 +555,7 @@ public class CodecV2Tests
             r.VarUInt(0); // version 76: no linked levels
             r.VarUInt(0); // version 87: the game's own sky and sun
             r.Bytes(0xD0, 0x07); // version 91: walls and ceiling 2000 mm high
+            r.VarUInt(0); // version 96: no turf lights
         });
 
         Assert.True(Codec.TryDecode(Craft(r => r.VarUInt(1).VarUInt(9).VarUInt(1).VarUInt(2).Bytes(0xFF, 0x01)), out MapGrid _, out ProtocolError error), error.ToString());
@@ -616,7 +617,7 @@ public class CodecV2Tests
         byte[] body = Codec.EncodeDeltaBody(d);
         // [0 first type] [0 types] [0 parts] [0 spawned] [2 changed] id 3 (zigzag 6), mask 0b11, pos 1000 and 2000 as u16 pairs, yaw 7;
         // id 4 (diff +1: zigzag 2), mask Appearance (wire bit 7 = 0x80: two bytes 0x80 0x01), appearance 300 (0xAC 0x02); [0 despawned]
-        Assert.Equal(new byte[] { 0, 0, 0, 0, 2, 6, 0b11, 0xE8, 0x03, 0xD0, 0x07, 7, 2, 0x80, 0x01, 0xAC, 0x02, 0, 0, 0 }, body);
+        Assert.Equal(new byte[] { 0, 0, 0, 0, 2, 6, 0b11, 0xE8, 0x03, 0xD0, 0x07, 7, 2, 0x80, 0x01, 0xAC, 0x02, 0, 0, 0, 0 }, body); // ... [0 ceilings] [0 sun] [0 turf lights]
     }
 
     [Fact]
@@ -673,7 +674,7 @@ public class CodecV2Tests
     public void ADeltaCarriesNewTableEntriesOnlyWhenThereAreAnd()
     {
         Delta d = Msg.Delta(10);
-        Assert.Equal(new byte[] { 5, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, Codec.Encode(d));
+        Assert.Equal(new byte[] { 5, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, Codec.Encode(d));
         d.FirstNewResource = 40;
         d.NewResources.Add("icons/x.dmi");
         d.FirstNewAppearance = 7;
@@ -728,6 +729,7 @@ public class CodecV2Tests
             tail(r);
             r.VarUInt(0); // version 44: no ceiling cells
             r.VarUInt(0); // version 47: no sun
+            r.VarUInt(0); // version 96: no turf lights
             r.Byte(0).Byte(0).VarUInt(0).Byte(0);
         });
 

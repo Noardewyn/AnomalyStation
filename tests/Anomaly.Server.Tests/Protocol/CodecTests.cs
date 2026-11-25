@@ -294,6 +294,7 @@ public class CodecTests
             r.VarUInt(0); // version 76: no linked levels
             r.VarUInt(0); // version 87: the game's own sky and sun
             r.Bytes(0xD0, 0x07); // version 91: walls and ceiling 2000 mm high
+            r.VarUInt(0); // version 96: no turf lights
         });
 
         Assert.True(Codec.TryDecode(Craft(2, 2, 1, new[] { Floor }, (4, 0)), out MapGrid _, out _));
@@ -523,6 +524,7 @@ public class CodecTests
             3, // id 7: 7 - 9 = -2: zigzag 3
             0, // version 44: no ceilings
             0, // version 47: no sun
+            0, // version 96: no turf lights
             0, 0, 0, 0, // the private block: empty (flags, input buffer depth, version 43's actions done and flags)
         };
         Assert.Equal(expected, Codec.Encode(d));
@@ -562,6 +564,7 @@ public class CodecTests
             1, 3, 2, 1, 1, // turf appearance changes: (3,2,1) has appearance 1
             0, // version 44: no ceilings
             0, // version 47: no sun
+            0, // version 96: no turf lights
             0, 0, 0, 0, // the private block: empty
         };
         Assert.Equal(expected, Codec.Encode(d));
@@ -628,7 +631,7 @@ public class CodecTests
         {
             r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0);
             changed(r);
-            r.VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).Byte(0).VarUInt(0).Byte(0); // despawned, ceilings, sun (version 47), the private block
+            r.VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).Byte(0).VarUInt(0).Byte(0); // despawned, ceilings, sun (version 47), turf lights (version 96), the private block
         });
         const ulong MaskX = 1 << 2, MaskGlide = 1 << 10;
 

@@ -304,7 +304,7 @@ public class CodecV4Tests
         // no look), 0 changed, 0 removed.
         byte[] bytes = { 4, 0, 0, 0, 1, 2, 2, 0, 7, 0, 0, 0 };
         var snapshot = new Delta { Tick = 1 };
-        byte[] delta = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Bytes(bytes));
+        byte[] delta = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Bytes(bytes));
         Assert.False(Codec.TryDecode(delta, out Delta _, out ProtocolError error));
         Assert.Equal(ProtocolError.BadValue, error);
         GC.KeepAlive(snapshot);
@@ -374,14 +374,14 @@ public class CodecV4Tests
                      new byte[] { 8, 0, 1, 2, 0, 0, 0, 0, 0 },
                  })
         {
-            byte[] delta = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Bytes(bad));
+            byte[] delta = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Bytes(bad));
             Assert.False(Codec.TryDecode(delta, out Delta _, out ProtocolError error), "accepted " + BitConverter.ToString(bad));
             Assert.NotEqual(ProtocolError.None, error);
         }
 
         var many = new List<byte> { 8, 0, 0, 0, 0x81, 0x04 }; // 513 removed ids: a count of one over the cap
         for (int i = 0; i < Limits.MaxPrivateImages + 1; i++) many.Add(2);
-        byte[] tooMany = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Bytes(many.ToArray()));
+        byte[] tooMany = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Bytes(many.ToArray()));
         Assert.False(Codec.TryDecode(tooMany, out Delta _, out ProtocolError e2));
         Assert.Equal(ProtocolError.CountTooLarge, e2);
     }
@@ -420,14 +420,14 @@ public class CodecV4Tests
         // A change of only the flags: the wire mask has bit 12 (Pos, Yaw, X, Y, Z, Dir, LastMoveTick, Appearance, Posture, Name, GlideSize, Light, Flags).
         byte[] bytes = Codec.Encode(Msg.Delta(1, changed: new[] { new EntityChange { Id = 4, Mask = NetField.Flags, Flags = EntityFlags.Thrown } }));
         // id 5, tick 1, seq 0, own 0, first type 0, 0 types, parts 0, 0 spawned, 1 changed: id 4 (zigzag 8), mask 4096 (0x80 0x20), flags 1; 0 despawned; the empty private block
-        Assert.Equal(new byte[] { 5, 1, 0, 0, 0, 0, 0, 0, 1, 8, 0x80, 0x20, 1, 0, 0, 0, 0, 0, 0, 0 }, bytes);
+        Assert.Equal(new byte[] { 5, 1, 0, 0, 0, 0, 0, 0, 1, 8, 0x80, 0x20, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, bytes);
     }
 
     [Fact]
     public void ThePushableBitIsDecoded()
     {
         // version 56: bit 3 (Pushable) was the byte's one undefined bit, refused before
-        byte[] craftedChange = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(1).VarInt(4).VarUInt(4096).Byte(8).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).Byte(0).VarUInt(0).Byte(0));
+        byte[] craftedChange = Msg.Raw(MessageId.Delta, r => r.VarUInt(1).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).VarUInt(0).VarUInt(1).VarInt(4).VarUInt(4096).Byte(8).VarUInt(0).VarUInt(0).VarUInt(0).VarUInt(0).Byte(0).Byte(0).VarUInt(0).Byte(0));
         Assert.True(Codec.TryDecode(craftedChange, out Delta delta, out ProtocolError error), error.ToString());
         Assert.Equal(EntityFlags.Pushable, delta.Changed[0].Flags);
         Assert.Equal(craftedChange, Codec.Encode(delta));

@@ -217,6 +217,7 @@ public sealed partial class ReplicaWorld
         ApplyCellChangesV3(delta);
         ApplyCellChangesV5(delta);
         ApplyCeilings(delta);
+        ApplyTurfLights(delta); // version 96
         SunAzimuth = delta.SunAzimuth;
     }
 

@@ -3197,3 +3197,16 @@ click only once that long and a tick have passed since its last swing (`ViewMode
 `next_move`.
 
 Tests: `Protocol/ProtocolV95CooldownTests`, `Integration/MeleeCooldownReplicationTests` (server).
+
+## 91. Version 96 (DV596: the turfs' own lights)
+
+MapGrid ends, after the wall height, and the Delta body ends, after the sun, with the turf lights (`MessagesV96.cs`, `Codec.V96.cs`):
+`[count] { [cell] [u8 ceiling 0/1] [light] }*`, a cell and kind once per message. A floor entry (ceiling 0) is the light of the turf
+itself, tg's own light vars (`ReplicatedFields.OwnLight` of the turf), switched on and not tg's starlight (space turfs and lights at
+`LIGHTING_HEIGHT_SPACE`, which the cells' starlight flag gives). A ceiling entry (1) is the light of the ceiling's floor block (D295) as
+`CeilingSystem.LitBlockAt` reads it: a light floor as a working one leaves it (its `currentcolor`, range 3), none when broken. MapGrid lists
+every lit one (no light of range 0); a Delta lists the changed ones, range 0 for a light gone out, at most `MaxCellChangesPerDelta`. The
+replica keeps them (`ReplicaWorld.TurfLightAt`, `TurfLights`) and raises `TurfLightChanged` after the Delta; a changed cell is also a
+changed cell for the map's meshes (a glowing tile is drawn self-lit, `turf_kit.gdshader` condition 5).
+
+Tests: `Protocol/ProtocolV96TurfLightTests`, `Integration/TurfLightGameplayTests` (server).

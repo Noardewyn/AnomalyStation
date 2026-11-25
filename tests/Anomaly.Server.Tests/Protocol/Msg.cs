@@ -136,6 +136,7 @@ internal static class Msg
         Assert.Equal(e.InputBufferDepth, a.InputBufferDepth);
         Assert.Equal(e.ActionsDone, a.ActionsDone); // version 43
         Assert.Equal(e.HandsBlocked, a.HandsBlocked); // version 89
+        Assert.Equal(e.MeleeCooldownMs, a.MeleeCooldownMs); // version 95
         Assert.Equal(e.Access, a.Access);
         Assert.Equal(e.Eye, a.Eye); // version 51
         Assert.Equal(e.StaticChunks, a.StaticChunks); // version 78

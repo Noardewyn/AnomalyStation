@@ -262,6 +262,9 @@ public sealed class Session
     // Version 89: tg's ClickOn refuses the own mob's clicks (incapacitated or TRAIT_HANDS_BLOCKED), read with the access.
     internal bool HandsBlocked;
 
+    // Version 95: the own mob's melee click cooldown in milliseconds (ServerHost.MeleeCooldownMs), read with the access.
+    internal int MeleeCooldownMs = OwnBlock.DefaultMeleeCooldownMs;
+
     // The host's clock when each pending action arrived (Stopwatch ticks), aligned with PendingActions: a click's age when its
     // Delta is sent is the server's part of click_ms (ServerHost.ClickLatency).
     internal readonly List<long> PendingStamps = new();

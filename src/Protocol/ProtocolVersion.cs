@@ -190,7 +190,9 @@ public static class ProtocolVersion
     /// crosshair.
     /// Version 93 (DV585): the keybinding code <see cref="KeybindingCode.Scoreboard"/>, the deathmatch scoreboard held on a key.
     /// Version 94 (D347): the magic of <see cref="Hello"/> is <c>"ANOM"</c>, no longer <c>"SS3D"</c>.
-    public const ushort Current = 94;
+    /// Version 95 (DV586, MessagesV95.cs): the private block names the own mob's melee click cooldown when it is not tg's <c>CLICK_CD_MELEE</c>
+    /// (the held thing's <c>attack_speed</c> with the mob's modifiers), so the client swings and whooshes only on a click the server takes as a blow.
+    public const ushort Current = 95;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

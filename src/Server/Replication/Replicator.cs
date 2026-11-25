@@ -1969,6 +1969,7 @@ public sealed partial class Replicator : IReplicator
             block.InputBufferDepth = inputs.InputBufferDepth;
             block.ActionsDone = inputs.ActionsDone; // version 43
             block.HandsBlocked = inputs.HandsBlocked; // version 89
+            block.MeleeCooldownMs = inputs.MeleeCooldownMs; // version 95
             block.Access = null;
             if (full || !ReferenceEquals(inputs.Access, _accessSent))
             {

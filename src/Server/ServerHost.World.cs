@@ -311,6 +311,24 @@ public sealed partial class ServerHost
         return m;
     }
 
+    /// <summary>
+    /// Version 95: the cooldown a melee blow with the active hand would set now, milliseconds: the held thing's <c>attack_speed</c> (an empty
+    /// hand's <c>CLICK_CD_MELEE</c>) through the mob's modifiers and its status effects', as mob_living's changeNext_move takes it (click.dm:23).
+    /// </summary>
+    internal static int MeleeCooldownMs(mob own)
+    {
+        if (own is not mob_living living)
+            return OwnBlock.DefaultMeleeCooldownMs;
+        float speed = living.get_active_held_item() is obj_item held ? held.attack_speed : CLICK_CD_MELEE;
+        float mod = living.next_move_modifier, adj = living.next_move_adjust;
+        foreach (datum_status_effect effect in Dm.each_cast<datum_status_effect>(living.status_effects))
+        {
+            mod *= Dm.num(effect.nextmove_modifier());
+            adj += Dm.num(effect.nextmove_adjust());
+        }
+        return (int)Math.Clamp(Math.Round((speed + adj) * mod * 100), 0, OwnBlock.MaxMeleeCooldownMs);
+    }
+
     // Version 43 (M10 slice E): each joined player's access, tg's get_access() (the IDs held and worn answer COMSIG_MOB_RETRIEVE_ACCESS),
     // read inside the world once a tick after the step, for the private block: the client guesses which airlocks open for it. A read
     // only (the replicator calls no proc; this getter sends a signal its listeners answer by adding to the list).
@@ -324,6 +342,7 @@ public sealed partial class ServerHost
                 mob own = MobOf(s);
                 // version 89: click.dm ClickOn's first refusals, before the click reaches what was clicked
                 s.HandsBlocked = own != null && (Dm.truthy(INCAPACITATED_IGNORING(own, INCAPABLE_RESTRAINTS | INCAPABLE_STASIS)) || HAS_TRAIT(own, TRAIT_HANDS_BLOCKED));
+                s.MeleeCooldownMs = MeleeCooldownMs(own); // version 95
                 List<string> now = (own as mob_living)?.get_access() is DmList list
                     ? Dm.each(list).Select(a => Dm.str(a)).Where(a => !string.IsNullOrEmpty(a) && Encoding.UTF8.GetByteCount(a) <= Limits.MaxAccessBytes).Distinct().Take(Limits.MaxAccessEntries).ToList()
                     : new List<string>();

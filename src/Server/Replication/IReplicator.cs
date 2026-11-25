@@ -51,6 +51,9 @@ public readonly record struct PrivateInputs(int Session, long ClientId, long Own
     /// <summary>Version 89: tg's ClickOn refuses the own mob's clicks now (<see cref="OwnBlock.HandsBlocked"/>).</summary>
     public bool HandsBlocked { get; init; }
 
+    /// <summary>Version 95: the own mob's melee click cooldown, milliseconds (<see cref="OwnBlock.MeleeCooldownMs"/>).</summary>
+    public int MeleeCooldownMs { get; init; } = OwnBlock.DefaultMeleeCooldownMs;
+
     /// <summary>The entity the client treats as its body, the header's own entity: the exosuit its mob sits in (DV358), else the mob.</summary>
     public long Body { get => _body != 0 ? _body : OwnEntity; init => _body = value; }
 

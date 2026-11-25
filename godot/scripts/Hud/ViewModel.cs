@@ -346,9 +346,9 @@ public partial class ViewModel : Node3D
 
     private double SwingLength => _clip?.Length ?? HeldPose.SwingSeconds;
 
-    // tg's CLICK_CD_MELEE (0.8 s) and a tick of slack: the server takes no blow before it, so a click sooner neither swings nor whooshes
-    // shortcut: every held thing is taken at tg's default attack_speed, the dozen tg things with their own (a high-frequency blade) swing at it
-    private const double ClickCooldown = Anomaly.Core.Tg.Defines.CLICK_CD_MELEE / 10.0 + 0.05;
+    // the server's melee click cooldown for the active hand now (version 95: the thing's attack_speed with the mob's modifiers) and a tick
+    // of slack: the server takes no blow before it, so a click sooner neither swings nor whooshes
+    private double ClickCooldown => (_replica?.Own.MeleeCooldownMs ?? OwnBlock.DefaultMeleeCooldownMs) / 1000.0 + 0.05;
 
     // the held swings' clips from the models folder, read once; none when the file is missing or broken
     private static Dictionary<string, HeldClip> _clips;

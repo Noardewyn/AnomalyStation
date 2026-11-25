@@ -3185,3 +3185,15 @@ mob's own count. The client draws the shooter's crosshair while a gun is held: f
 view, opened by each shot and closing again, and a hit marker when `hits` changes.
 
 Tests: `Protocol/ProtocolV92GunSightTests` (server), `M7x/GunSightTests` (core).
+
+## 90. Version 95 (DV586: the own melee cooldown)
+
+The private block's version 43 flags byte has bit 7 (128) when the own mob's melee click cooldown is not tg's `CLICK_CD_MELEE` (800 ms):
+`[varuint milliseconds, 0..60000]` follows the view areas (`OwnBlock.MeleeCooldownMs`, `OwnState.MeleeCooldownMs`; 800 without the bit).
+It is the cooldown a melee blow with the active hand would set now, as mob_living's `changeNext_move` takes it: the held thing's
+`attack_speed` (an empty hand's `CLICK_CD_MELEE`) plus `next_move_adjust`, times `next_move_modifier`, each with the status effects' own
+(`ServerHost.MeleeCooldownMs`, read inside the world once a tick with the access). The client swings its held thing and whooshes on a
+click only once that long and a tick have passed since its last swing (`ViewModel.Clicked`), as tg's `ClickOn` takes no blow before its
+`next_move`.
+
+Tests: `Protocol/ProtocolV95CooldownTests`, `Integration/MeleeCooldownReplicationTests` (server).

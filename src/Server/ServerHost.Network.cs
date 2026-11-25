@@ -878,6 +878,7 @@ public sealed partial class ServerHost
             ActionsDone = s.ActionsReceived - (uint)s.PendingActions.Count,
             Access = s.Access,
             HandsBlocked = s.HandsBlocked,
+            MeleeCooldownMs = s.MeleeCooldownMs,
             Body = s.OwnEntity != 0 ? _locomotion.OwnBody(World, s.OwnEntity) : 0,
         };
     }

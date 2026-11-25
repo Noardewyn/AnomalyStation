@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 720 rows over 445 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 718 rows over 444 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -473,8 +473,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_ritual_totem), "pickup"), // /obj/item/ritual_totem (tg: code/modules/religion/religion_structures.dm:141)
         (typeof(obj_item_ceremonial_blade), "melee_attack_chain"), // /obj/item/ceremonial_blade (tg: code/modules/religion/sparring/ceremonial_gear.dm:50)
         (typeof(obj_item_gizmo), "item_interaction"), // /obj/item/gizmo (tg: code/modules/research/gizmo/gizmo_items.dm:24)
-        (typeof(obj_item_slime_extract), "interact_with_atom"), // /obj/item/slime_extract (tg: code/modules/research/xenobiology/xenobiology.dm:69)
-        (typeof(obj_item_slime_extract), "item_interaction"), // /obj/item/slime_extract (tg: code/modules/research/xenobiology/xenobiology.dm:32)
         (typeof(obj_item_slimecross_burning), "attack_self"), // /obj/item/slimecross/burning (tg: code/modules/research/xenobiology/crossbreeding/burning.dm:16)
         (typeof(obj_item_slimecross_burning_oil), "boom"), // /obj/item/slimecross/burning/oil (tg: code/modules/research/xenobiology/crossbreeding/burning.dm:252)
         (typeof(obj_item_slimecross_charged), "attack_self"), // /obj/item/slimecross/charged (tg: code/modules/research/xenobiology/crossbreeding/charged.dm:17)

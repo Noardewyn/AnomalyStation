@@ -1804,6 +1804,64 @@ public partial class obj_item_photo
     }
 }
 
+// tg: code/modules/research/xenobiology/xenobiology.dm:4
+public partial class obj_item_slime_extract
+{
+    // tg: code/modules/research/xenobiology/xenobiology.dm:24
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override DmTask<object> grind_results()
+    {
+        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:24", "grind_results: the slime extract (xenobiology lab) is not translated; only activate() is, the luminescent actions call it (D349)");
+        return DmTask<object>.FromResult(default);
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:27
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override DmTask<object> examine(mob user = null, params object[] __extra)
+    {
+        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:27", "examine: xenobiology lab not translated (D349)");
+        return base.examine(user, __extra);
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:32
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override DmTask<object> item_interaction(mob_living user = null, obj_item tool = null, DmList modifiers = null, params object[] __extra)
+    {
+        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:32", "item_interaction: xenobiology lab not translated (the enhancer potion) (D349)");
+        return DmTask<object>.FromResult(default);
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:47
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:47", "Initialize: xenobiology lab not translated (D349)");
+        return default;
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:69
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
+    {
+        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:69", "interact_with_atom: xenobiology lab not translated (core crossing on a slime) (D349)");
+        return DmTask<object>.FromResult(default);
+    }
+
+    // tg: code/modules/research/xenobiology/xenobiology.dm:101
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public virtual DmTask auto_activate_reaction(datum_chemical_reaction_slime slime_reaction = null)
+    {
+        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:101", "auto_activate_reaction: xenobiology lab not translated (D349)");
+        return DmTask.CompletedTask;
+    }
+}
+
 // tg: code/modules/surgery/surgery_tray.dm:8
 public partial class obj_item_surgery_tray
 {

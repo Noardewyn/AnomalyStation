@@ -258,3 +258,15 @@ public partial class obj_item_bodypart_chest_pod : obj_item_bodypart_chest
         return Dm.icon(Dm.resource("icons/mob/butts.dmi"), BUTT_SPRITE_FLOWERPOT);
     }
 }
+
+// ---- Gaps SP2c (D349): the JELLY family's limbs (the var blocks are generated, D111) ----
+
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:108
+public partial class obj_item_bodypart_chest_jelly : obj_item_bodypart_chest
+{
+    // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:108
+    public override object get_butt_sprite()
+    {
+        return Dm.icon(Dm.resource("icons/mob/butts.dmi"), BUTT_SPRITE_SLIME);
+    }
+}

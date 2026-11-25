@@ -54,6 +54,7 @@ public static class TguiInterfaces
         ["AtmosPump"] = AtmosPump.Render,
         ["Jukebox"] = Jukebox.Render, // gaps H3
         ["BloodFilter"] = BloodFilter.Render, // gaps J5
+        ["SlimeBodySwapper"] = SlimeBodySwapper.Render, // gaps SP2c
         ["CrewConsole"] = CrewConsole.Render, // gaps J5
         ["Electropack"] = Electropack.Render, // gaps J5
         ["Crayon"] = Crayon.Render,

@@ -1363,9 +1363,9 @@ public partial class datum_preference_color_hair_gradient
     }
 }
 
-// tg: code/modules/client/preferences/species_features/cerulean.dm:3
-[DmPath("/datum/preference/color/fish_tail_color"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_color_fish_tail_color : datum_preference_color
+// tg: code/modules/client/preferences/species_features/cerulean.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/preference/color/fish_tail_color")]
+public partial class datum_preference_color_fish_tail_color
 {
     // tg: code/modules/client/preferences/species_features/cerulean.dm:3
     public datum_preference_color_fish_tail_color()
@@ -2372,9 +2372,9 @@ public partial class datum_preference_toggle_window_flashing
     }
 }
 
-// tg: code/modules/client/preferences/species_features/cerulean.dm:16
-[DmPath("/datum/preference/toggle/cerulean_frills"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_toggle_cerulean_frills : datum_preference_toggle
+// tg: code/modules/client/preferences/species_features/cerulean.dm:16 (the var block of a hand-written class)
+[DmPath("/datum/preference/toggle/cerulean_frills")]
+public partial class datum_preference_toggle_cerulean_frills
 {
     // tg: code/modules/client/preferences/species_features/cerulean.dm:16
     public datum_preference_toggle_cerulean_frills()

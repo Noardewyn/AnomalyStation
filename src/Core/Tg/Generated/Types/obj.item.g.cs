@@ -44118,9 +44118,9 @@ public partial class obj_item_gizmo_moo : obj_item_gizmo
 [DmPath("/obj/item/gizmo_copy"), DmGeneratedOnly, DmInert]
 public partial class obj_item_gizmo_copy : obj_item { }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:4
-[DmPath("/obj/item/slime_extract"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract : obj_item
+// tg: code/modules/research/xenobiology/xenobiology.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract")]
+public partial class obj_item_slime_extract
 {
     public float can_grind = 1; // tg: code/modules/research/xenobiology/xenobiology.dm:14
     public float extract_uses = 1; // tg: code/modules/research/xenobiology/xenobiology.dm:16

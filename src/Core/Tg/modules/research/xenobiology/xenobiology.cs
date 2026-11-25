@@ -13,6 +13,28 @@ namespace Anomaly.Core.Tg;
 // dangerous pony potion of the uplink's pony box). The slime extracts, the other potions and the xenobiology console wait for
 // the xenobiology lab. The var blocks are generated (D111).
 
+// Gaps SP2c (D349): the slime extract's activate(), the hook of the luminescent's extract actions; the extract itself stays inert until the
+// xenobiology lab is translated (its per-colour effects override this).
+// tg: code/modules/research/xenobiology/xenobiology.dm:3
+public partial class obj_item_slime_extract : obj_item
+{
+    /**
+    * Effect when activated by a Luminescent.
+    *
+    * This proc is called whenever a Luminescent consumes a slime extract. Each one is separated into major and minor effects depending on the extract. Cooldown is measured in deciseconds.
+    *
+    * * arg1 - The mob absorbing the slime extract.
+    * * arg2 - The valid species for the absorbtion. Should always be a Luminescent unless something very major has changed.
+    * * arg3 - Whether or not the activation is major or minor. Major activations have large, complex effects, minor are simple.
+    */
+    // tg: code/modules/research/xenobiology/xenobiology.dm:60
+    public virtual async DmTask<object> activate(mob_living_carbon_human user = null, datum_species_jelly_luminescent species = null, object activation_type = null)
+    {
+        to_chat(user, span_warning(I18n.T("Nothing happened... This slime extract cannot be activated this way.")));
+        return FALSE;
+    }
+}
+
 // tg: code/modules/research/xenobiology/xenobiology.dm:682
 public partial class obj_item_slimepotion : obj_item
 {

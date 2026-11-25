@@ -14,6 +14,8 @@ client's top-right corner, in its window title and in the first line of the serv
 - Dev menu: pick a held thing's attack animation, as a default for all things and for wielded ones, and as an override for each item.
 - Dev menu: held things can be flipped left-right or up-down in one click, all at once, wielded or one by one, and given their own wielded pose.
 - Moths and plasmamen are playable: moth wings, antennae and markings in Character Setup; plasmamen spawn in envirosuits and burn in oxygen without one.
+- Ethereals and ceruleans are playable too: an ethereal glows in its colour and runs on charge; a cerulean has a fish tail and frills.
+- Podpeople, mushroompeople, snailpeople, jellypeople, slimepeople, luminescents, stargazers, skeletons, zombies and golems are ported, each with its own mechanics.
 
 ### Changed
 

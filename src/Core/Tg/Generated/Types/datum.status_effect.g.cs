@@ -656,9 +656,9 @@ public partial class datum_status_effect_grouped_bodypart_effect_plasma_based
     }
 }
 
-// tg: code/modules/surgery/bodyparts/bodypart_effects/slime_passgrille.dm:3
-[DmPath("/datum/status_effect/grouped/bodypart_effect/slime_passgrille"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_bodypart_effect_slime_passgrille : datum_status_effect_grouped_bodypart_effect
+// tg: code/modules/surgery/bodyparts/bodypart_effects/slime_passgrille.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/bodypart_effect/slime_passgrille")]
+public partial class datum_status_effect_grouped_bodypart_effect_slime_passgrille
 {
     // tg: code/modules/surgery/bodyparts/bodypart_effects/slime_passgrille.dm:3
     public datum_status_effect_grouped_bodypart_effect_slime_passgrille()

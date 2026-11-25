@@ -1780,9 +1780,9 @@ public partial class obj_item_bodypart_chest_abductor : obj_item_bodypart_chest
     }
 }
 
-// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:99
-[DmPath("/obj/item/bodypart/chest/jelly"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bodypart_chest_jelly : obj_item_bodypart_chest
+// tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:99 (the var block of a hand-written class)
+[DmPath("/obj/item/bodypart/chest/jelly")]
+public partial class obj_item_bodypart_chest_jelly
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:99
     public obj_item_bodypart_chest_jelly()
@@ -1805,7 +1805,7 @@ public partial class obj_item_bodypart_chest_jelly : obj_item_bodypart_chest
 }
 
 // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:149
-[DmPath("/obj/item/bodypart/chest/jelly/slime"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bodypart/chest/jelly/slime"), DmGeneratedOnly]
 public partial class obj_item_bodypart_chest_jelly_slime : obj_item_bodypart_chest_jelly
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:149
@@ -1816,7 +1816,7 @@ public partial class obj_item_bodypart_chest_jelly_slime : obj_item_bodypart_che
 }
 
 // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:169
-[DmPath("/obj/item/bodypart/chest/jelly/luminescent"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bodypart/chest/jelly/luminescent"), DmGeneratedOnly]
 public partial class obj_item_bodypart_chest_jelly_luminescent : obj_item_bodypart_chest_jelly
 {
     // tg: code/modules/surgery/bodyparts/species_parts/misc_bodyparts.dm:169

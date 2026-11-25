@@ -794,6 +794,13 @@ dye: a greyscale model tinted at run time).
 - **Mushroomperson body and cap** (gaps SP2b, `bodyparts_greyscale.dmi` `mush_*`, `icons/mob/human/species/mush_cap.dmi` `m_caps_*`): the stalk-like limbs and the red mushroom cap on the head, hidden by headgear. Meanwhile tg's sprites.
 - **Snailperson body and shell** (gaps SP2b, `bodyparts_greyscale.dmi` `snail_*`, `icons/mob/clothing/back/backpack.dmi` `snailshell`): the slimy limbs and the armoured shell on the back. Meanwhile tg's sprites.
 
+- **Jelly body** (gaps SP2c, `icons/mob/human/species/jelly/` limbs, `jelly_*`, `slime_*`, `luminescent_*` states): the translucent
+  head, chest, arms and legs of the jellyperson, slimeperson and luminescent (the hair at 150 alpha, the skeleton and three eyes
+  showing through), in the mutant colour. Meanwhile tg's sprites.
+- **Cerulean body and tail** (gaps SP2c, `icons/mob/human/species/cerulean/cerulean_tails.dmi`: `default`, `skeleton`, `abyss_*`): the
+  oversized fish tail that replaces the legs (a wide, tall, two-layer model behind and beside the torso, in the fish tail colour), the
+  aquatic frills, and the abyss variant's translucent skeleton with its glow. Meanwhile tg's sprites.
+
 ## Medicines and toxins
 - **Ice block** (gaps RG2, `xenobiology/crossbreeding/_misc.dm:127`, `icons/obj/science/slimecrossing.dmi` state `frozen`): a man-high
   block of clear, frosted ice with the frozen body dimly visible inside, standing on one tile; cryogelidia (the inverse of

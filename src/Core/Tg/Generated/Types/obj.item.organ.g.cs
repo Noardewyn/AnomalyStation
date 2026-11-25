@@ -2446,9 +2446,9 @@ public partial class obj_item_organ_tail_fish
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:158
-[DmPath("/obj/item/organ/tail/fish/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tail_fish_cerulean : obj_item_organ_tail_fish
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:158 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tail/fish/cerulean")]
+public partial class obj_item_organ_tail_fish_cerulean
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:158
     public obj_item_organ_tail_fish_cerulean()
@@ -2469,9 +2469,9 @@ public partial class obj_item_organ_tail_fish_cerulean : obj_item_organ_tail_fis
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:261
-[DmPath("/obj/item/organ/tail/fish/cerulean/abyss"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tail_fish_cerulean_abyss : obj_item_organ_tail_fish_cerulean
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:261 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tail/fish/cerulean/abyss")]
+public partial class obj_item_organ_tail_fish_cerulean_abyss
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:261
     public obj_item_organ_tail_fish_cerulean_abyss()
@@ -2482,9 +2482,9 @@ public partial class obj_item_organ_tail_fish_cerulean_abyss : obj_item_organ_ta
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:292
-[DmPath("/obj/item/organ/tail/fish/cerulean/skeletal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tail_fish_cerulean_skeletal : obj_item_organ_tail_fish_cerulean
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:292 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tail/fish/cerulean/skeletal")]
+public partial class obj_item_organ_tail_fish_cerulean_skeletal
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:292
     public obj_item_organ_tail_fish_cerulean_skeletal()

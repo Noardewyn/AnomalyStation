@@ -2728,9 +2728,9 @@ public partial class datum_component_material_turf_tracking
     }
 }
 
-// tg: code/datums/components/mind_linker.dm:10
-[DmPath("/datum/component/mind_linker"), DmGeneratedOnly, DmInert]
-public partial class datum_component_mind_linker : datum_component
+// tg: code/datums/components/mind_linker.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/component/mind_linker")]
+public partial class datum_component_mind_linker
 {
     public string network_name = "Mind Link"; // tg: code/datums/components/mind_linker.dm:10
     public object chat_color; // tg: code/datums/components/mind_linker.dm:12
@@ -2752,9 +2752,9 @@ public partial class datum_component_mind_linker : datum_component
     }
 }
 
-// tg: code/datums/components/mind_linker.dm:147
-[DmPath("/datum/component/mind_linker/active_linking"), DmGeneratedOnly, DmInert]
-public partial class datum_component_mind_linker_active_linking : datum_component_mind_linker
+// tg: code/datums/components/mind_linker.dm:147 (the var block of a hand-written class)
+[DmPath("/datum/component/mind_linker/active_linking")]
+public partial class datum_component_mind_linker_active_linking
 {
     public object link_message; // tg: code/datums/components/mind_linker.dm:147
     public object unlink_message; // tg: code/datums/components/mind_linker.dm:149

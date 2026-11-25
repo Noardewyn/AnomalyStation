@@ -9667,9 +9667,9 @@ public partial class datum_bodypart_overlay_mutant_tail_fish
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:227
-[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean : datum_bodypart_overlay_mutant_tail_fish
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:227 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean")]
+public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean
 {
     public DmList locked_sprite_datums; // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:232
 
@@ -9682,12 +9682,12 @@ public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean : datum_bo
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:266
-[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyss"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean_abyss : datum_bodypart_overlay_mutant_tail_fish_cerulean { }
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:266 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyss")]
+public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean_abyss { }
 
 // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:311
-[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/skeletal"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/skeletal"), DmGeneratedOnly]
 public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean_skeletal : datum_bodypart_overlay_mutant_tail_fish_cerulean
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:311
@@ -10224,9 +10224,9 @@ public partial class datum_bodypart_texture_mesh_space : datum_bodypart_texture_
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:280
-[DmPath("/datum/bodypart_texture/cerulean_abyss"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_texture_cerulean_abyss : datum_bodypart_texture { }
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:280 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_texture/cerulean_abyss")]
+public partial class datum_bodypart_texture_cerulean_abyss { }
 
 // tg: code/datums/cinematics/_cinematic.dm:34 (the var block of a hand-written class)
 [DmPath("/datum/cinematic")]
@@ -31001,9 +31001,9 @@ public partial class datum_species_android
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:2
-[DmPath("/datum/species/human/cerulean"), DmGeneratedOnly, DmInert]
-public partial class datum_species_human_cerulean : datum_species_human
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/human/cerulean")]
+public partial class datum_species_human_cerulean
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:2
     public datum_species_human_cerulean()
@@ -31325,9 +31325,9 @@ public partial class datum_species_golem
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:10
-[DmPath("/datum/species/jelly"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly")]
+public partial class datum_species_jelly
 {
     public datum_action_innate_regenerate_limbs regenerate_limbs; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:43
 
@@ -31366,9 +31366,9 @@ public partial class datum_species_jelly : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:216
-[DmPath("/datum/species/jelly/slime"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly_slime : datum_species_jelly
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:216 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly/slime")]
+public partial class datum_species_jelly_slime
 {
     public datum_action_innate_split_body slime_split; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:221
     public DmList bodies; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:222
@@ -31392,9 +31392,9 @@ public partial class datum_species_jelly_slime : datum_species_jelly
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:521
-[DmPath("/datum/species/jelly/luminescent"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly_luminescent : datum_species_jelly
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:521 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly/luminescent")]
+public partial class datum_species_jelly_luminescent
 {
     public float glow_intensity = 2; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:535
     public obj_effect_dummy_lighting_obj_moblight glow; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:537
@@ -31420,9 +31420,9 @@ public partial class datum_species_jelly_luminescent : datum_species_jelly
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:711
-[DmPath("/datum/species/jelly/stargazer"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly_stargazer : datum_species_jelly
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:711 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly/stargazer")]
+public partial class datum_species_jelly_stargazer
 {
     public datum_action_innate_project_thought project_action; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:716
 

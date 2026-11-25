@@ -717,11 +717,10 @@ public partial class obj_item_bodypart : obj_item
             if (Dm.truthy(overlay.can_draw_on_bodypart(this, owner)))
                 Dm.append(ref dot, overlay.icon_render_key(this));
         }
-        foreach (object texture in Dm.each(bodypart_textures))
+        foreach (datum_bodypart_texture texture in Dm.each_cast<datum_bodypart_texture>(bodypart_textures))
         {
-            // GAP(P2, datums/bodypart_overlays/texture_bodypart_overlay.cs): can_texture_bodypart and icon_render_key of
-            // /datum/bodypart_texture (texture_bodypart_overlay.dm:24, :27) are not declared; no limb is textured in M2.
-            Dm.NotTranslated("code/modules/mob/living/carbon/carbon_update_icons.dm:457", "generate_icon_key: the bodypart textures' render keys (M10+)");
+            if (Dm.truthy(texture.can_texture_bodypart(this)))
+                Dm.append(ref dot, Dm.text("[]", texture.icon_render_key()));
         }
         // isdummy(owner) (__DEFINES/is_helpers.dm:127): no GlobalProcs member yet, expanded inline (rules 11.1);
         // GAP(lead, __DEFINES/is_helpers.cs): add isdummy.

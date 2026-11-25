@@ -246,6 +246,22 @@ public partial class mob_living_carbon : mob_living
     }
 }
 
+public static partial class GlobalProcs
+{
+    // DEVIATION(DV592): a melee attack aimed at a limb the target has lost does not start (tg would hit the chest or another limb);
+    // the attacker is told which limb is missing.
+    public static bool aimed_limb_missing(mob user, atom target)
+    {
+        if (user == null || target is not mob_living_carbon carbon)
+            return false;
+        object zone = check_zone(user.zone_selected);
+        if (Dm.truthy(carbon.get_bodypart(Dm.str(zone))))
+            return false;
+        carbon.balloon_alert(user, I18n.T("no []!", parse_zone(zone)));
+        return true;
+    }
+}
+
 // The [DmPath] of /mob is on its engine part Builtin/mob.builtin.cs (rules 2.3).
 public partial class mob : atom_movable
 {

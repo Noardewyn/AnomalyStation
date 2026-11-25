@@ -567,7 +567,8 @@ public partial class obj_item_nullrod_nullblade : obj_item_nullrod
             sneak_attack_dice *= 0.5f;
 
         // Affecting body part check.
-        obj_item_bodypart affecting = living_target.get_bodypart(Dm.str(user.get_random_valid_zone(user.zone_selected))) as obj_item_bodypart;
+        // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+        obj_item_bodypart affecting = living_target.get_bodypart(Dm.str(user.get_random_valid_zone(user.zone_selected, 100))) as obj_item_bodypart;
         // Target's armor value. Accounts for armor penetration even though we have no armour_penetration defined on the parent.
         float? armor_block = Dm.num(living_target.run_armor_check(affecting, MELEE, armour_penetration: armour_penetration));
 

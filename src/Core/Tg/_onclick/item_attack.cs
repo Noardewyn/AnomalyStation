@@ -355,6 +355,8 @@ public partial class obj_item : obj
             to_chat(user, span_warning(I18n.T("You don't want to harm other living beings!")));
             return FALSE;
         }
+        if (aimed_limb_missing(user, target_mob)) // DEVIATION(DV592)
+            return TRUE;
 
         if (!Dm.truthy(LAZYACCESS(atk_mods, SILENCE_HITSOUND)))
         {
@@ -479,13 +481,9 @@ public partial class mob_living : mob
     public override async DmTask<object> attacked_by(obj_item attacking_item = null, mob_living user = null, DmList modifiers = null, DmList attack_modifiers = null)
     {
         object targeting = check_zone(user.zone_selected);
+        // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll (90% on a lying target) is not made
         if (user != this)
-        {
-            float zone_hit_chance = 80;
-            if (body_position == LYING_DOWN)
-                zone_hit_chance += 10;
-            targeting = get_random_valid_zone(targeting, zone_hit_chance);
-        }
+            targeting = get_random_valid_zone(targeting, 100);
         // GAP(lead): parse_zone_with_bodypart (__HELPERS/mobs.dm) is not declared; parse_zone (the same text for a zone
         // without a bodypart name override) stands for it.
         object targeting_human_readable = parse_zone(targeting);

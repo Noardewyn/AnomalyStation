@@ -156,6 +156,9 @@ public partial class datum_martial_art_boxing : datum_martial_art
             }
         }
 
+        if (aimed_limb_missing(attacker, defender)) // DEVIATION(DV592)
+            return FALSE;
+
         var active_arm = attacker.get_active_hand() as obj_item_bodypart_arm;
 
         //The values between which damage is rolled for punches
@@ -203,7 +206,8 @@ public partial class datum_martial_art_boxing : datum_martial_art
             return FALSE;
         }
 
-        var affecting = defender.get_bodypart(Dm.str(defender.get_random_valid_zone(attacker.zone_selected))) as obj_item_bodypart;
+        // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+        var affecting = defender.get_bodypart(Dm.str(defender.get_random_valid_zone(attacker.zone_selected, 100))) as obj_item_bodypart;
 
         if (Dm.truthy(honor_check(defender)))
         {

@@ -30,7 +30,8 @@ public partial class mob_living_carbon_alien_larva : mob_living_carbon_alien
             if ((stat != DEAD) && (damage > 4.9f))
                 await Unconscious(rand(100, 200));
 
-            obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(user.zone_selected) as string) as obj_item_bodypart;
+            // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+            obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(user.zone_selected, 100) as string) as obj_item_bodypart;
             await apply_damage(damage, BRUTE, affecting);
             log_combat(user, this, "attacked");
         }

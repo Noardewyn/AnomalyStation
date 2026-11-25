@@ -117,7 +117,8 @@ public partial class mob_living_carbon_alien : mob_living_carbon
         {
             if (stat != DEAD)
             {
-                obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(user.zone_selected) as string) as obj_item_bodypart;
+                // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+                obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(user.zone_selected, 100) as string) as obj_item_bodypart;
                 await apply_damage(rand(1, 3), BRUTE, affecting);
             }
         }

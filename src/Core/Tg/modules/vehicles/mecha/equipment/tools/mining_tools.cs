@@ -219,8 +219,11 @@ public partial class obj_item_mecha_parts_mecha_equipment_drill : obj_item_mecha
             return;
         }
 
+        if (aimed_limb_missing(user, target)) // DEVIATION(DV592)
+            return;
         //drill makes a hole
-        object def_zone = target.get_random_valid_zone(user.zone_selected);
+        // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+        object def_zone = target.get_random_valid_zone(user.zone_selected, 100);
         await target.apply_damage(
             10,
             BRUTE,

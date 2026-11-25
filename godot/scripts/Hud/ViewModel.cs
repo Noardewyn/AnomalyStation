@@ -116,7 +116,7 @@ public partial class ViewModel : Node3D
     {
         _mechRight = false; // tg's mech: the left button uses the left arm (_mecha.dm:705)
         Hand hand = _leftActive ? _left : _right;
-        if (_hands.Mech || hand.Kind == HeldKind.Gun && hand.Node != null || _now - _lungeAt < SwingLength * 0.8)
+        if (_hands.Mech || hand.Kind == HeldKind.Gun && hand.Node != null || _now - _lungeAt < Math.Max(SwingLength * 0.8, ClickCooldown))
             return null;
         if (hand.Node == null && (!_hands.Combat || onItem))
             return null;
@@ -345,6 +345,10 @@ public partial class ViewModel : Node3D
     private HeldClip _clip;
 
     private double SwingLength => _clip?.Length ?? HeldPose.SwingSeconds;
+
+    // tg's CLICK_CD_MELEE (0.8 s) and a tick of slack: the server takes no blow before it, so a click sooner neither swings nor whooshes
+    // shortcut: every held thing is taken at tg's default attack_speed, the dozen tg things with their own (a high-frequency blade) swing at it
+    private const double ClickCooldown = Anomaly.Core.Tg.Defines.CLICK_CD_MELEE / 10.0 + 0.05;
 
     // the held swings' clips from the models folder, read once; none when the file is missing or broken
     private static Dictionary<string, HeldClip> _clips;

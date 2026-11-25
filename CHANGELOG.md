@@ -27,6 +27,7 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ### Fixed
 
+- A melee swing's whoosh no longer plays on clicks faster than the attack cooldown; you hear it only when a blow really goes out.
 - Coin flips, a vampire's drinking, an ethereal's overcharge and a torn-off fish tail now play their sounds.
 - Tab in the lobby no longer hides the mouse pointer.
 - The crosshair now opens for the spread of firing two light guns at once in combat mode.

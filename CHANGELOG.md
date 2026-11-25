@@ -7,6 +7,12 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+## [1.13.0-pre-alpha] - 2026-11-25
+
+### Protocol
+
+- Network protocol 95: clients and servers older than 1.13.0-pre-alpha cannot connect to this version.
+
 ### Added
 
 - A luminescent jellyperson's integrated slime extract now does what its colour does in tg, for both its minor and major activation.

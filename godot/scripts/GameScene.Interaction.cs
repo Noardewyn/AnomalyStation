@@ -1041,7 +1041,8 @@ public partial class GameScene
         }
         if (action is PlayAction.CursorMode)
         {
-            SetCursorMode(!_mouse.CursorMode);
+            if (!InLobby) // the lobby has no view to give the mouse to: a stray Tab would only hide the pointer
+                SetCursorMode(!_mouse.CursorMode);
             return;
         }
         if (action is PlayAction.Inventory)

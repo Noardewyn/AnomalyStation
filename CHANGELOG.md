@@ -13,6 +13,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - Held melee things attack with animations made in Blender: a one-handed chop straight down, a two-handed chop, and a stab for pointed things such as screwdrivers and spears.
 - Dev menu: pick a held thing's attack animation, as a default for all things and for wielded ones, and as an override for each item.
 - Dev menu: held things can be flipped left-right or up-down in one click, all at once, wielded or one by one, and given their own wielded pose.
+- Moths and plasmamen are playable: moth wings, antennae and markings in Character Setup; plasmamen spawn in envirosuits and burn in oxygen without one.
 
 ### Changed
 

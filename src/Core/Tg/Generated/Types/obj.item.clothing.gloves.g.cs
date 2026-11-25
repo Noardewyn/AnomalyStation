@@ -639,9 +639,9 @@ public partial class obj_item_clothing_gloves_color_plasmaman_prototype : obj_it
     }
 }
 
-// tg: code/modules/clothing/gloves/plasmaman.dm:80
-[DmPath("/obj/item/clothing/gloves/color/plasmaman/clown"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_gloves_color_plasmaman_clown : obj_item_clothing_gloves_color_plasmaman
+// tg: code/modules/clothing/gloves/plasmaman.dm:80 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/gloves/color/plasmaman/clown")]
+public partial class obj_item_clothing_gloves_color_plasmaman_clown
 {
     // tg: code/modules/clothing/gloves/plasmaman.dm:80
     public obj_item_clothing_gloves_color_plasmaman_clown()

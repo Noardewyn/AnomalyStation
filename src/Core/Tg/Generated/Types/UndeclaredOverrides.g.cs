@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 733 rows over 450 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 722 rows over 447 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -83,11 +83,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_clothing_head_helmet_perceptomatrix), "dropped"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:81)
         (typeof(obj_item_clothing_head_helmet_perceptomatrix), "equipped"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:76)
         (typeof(obj_item_clothing_head_helmet_perceptomatrix), "item_interaction"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:135)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "attack_self"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:200)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "click_alt"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:125)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "item_interaction"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:160)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "ui_action_click"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:129)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "wash"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:192)
         (typeof(obj_item_clothing_head_hooded_cult_hoodie_eldritch_rust), "equipped"), // /obj/item/clothing/head/hooded/cult_hoodie/eldritch/rust (tg: code/modules/antagonists/heretic/items/heretic_armor.dm:1020)
         (typeof(obj_item_clothing_head_hooded_berserker), "dropped"), // /obj/item/clothing/head/hooded/berserker (tg: code/modules/mining/lavaland/mining_loot/berserker.dm:91)
         (typeof(obj_item_clothing_head_hooded_hostile_environment), "dropped"), // /obj/item/clothing/head/hooded/hostile_environment (tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:117)
@@ -120,12 +115,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_clothing_suit_armor_reactive), "attack_self"), // /obj/item/clothing/suit/armor/reactive (tg: code/modules/clothing/suits/reactive_armour.dm:69)
         (typeof(obj_item_clothing_suit_armor_abductor_vest), "ui_action_click"), // /obj/item/clothing/suit/armor/abductor/vest (tg: code/modules/antagonists/abductor/equipment/gear/abductor_clothing.dm:147)
         (typeof(obj_item_clothing_suit_wizrobe_paper), "ui_action_click"), // /obj/item/clothing/suit/wizrobe/paper (tg: code/modules/antagonists/wizard/equipment/wiz_robe.dm:287)
-        (typeof(obj_item_clothing_suit_space_eva_plasmaman), "dropped"), // /obj/item/clothing/suit/space/eva/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:32)
-        (typeof(obj_item_clothing_suit_space_eva_plasmaman), "equipped"), // /obj/item/clothing/suit/space/eva/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:26)
-        (typeof(obj_item_clothing_suit_space_eva_plasmaman), "item_interaction"), // /obj/item/clothing/suit/space/eva/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:59)
-        (typeof(obj_item_clothing_under_plasmaman), "dropped"), // /obj/item/clothing/under/plasmaman (tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:34)
-        (typeof(obj_item_clothing_under_plasmaman), "equipped"), // /obj/item/clothing/under/plasmaman (tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:28)
-        (typeof(obj_item_clothing_under_plasmaman), "item_interaction"), // /obj/item/clothing/under/plasmaman (tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:65)
         (typeof(obj_item_clothing_under_ethereal_tunic_trailwarden), "equipped"), // /obj/item/clothing/under/ethereal_tunic/trailwarden (tg: code/modules/clothing/under/ethereal.dm:33)
         (typeof(obj_item_clothing_neck_heretic_focus), "dropped"), // /obj/item/clothing/neck/heretic_focus (tg: code/modules/antagonists/heretic/items/heretic_necks.dm:19)
         (typeof(obj_item_clothing_neck_heretic_focus), "equipped"), // /obj/item/clothing/neck/heretic_focus (tg: code/modules/antagonists/heretic/items/heretic_necks.dm:12)

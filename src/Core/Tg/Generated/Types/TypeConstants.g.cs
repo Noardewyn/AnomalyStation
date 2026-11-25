@@ -38846,6 +38846,9 @@ public static partial class TypeOrder
 19256	sHolds a theme you can add to your Modular PC to set in the Themify application. Makes the application use more space
 19263	sThis program allows old-school communication with other modular devices.
 26931	n
+#extinguishes_left
+22650	f10
+23012	f5
 #extra_price
 33871	f50
 33874	f100

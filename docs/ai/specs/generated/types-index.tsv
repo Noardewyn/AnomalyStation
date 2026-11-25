@@ -12706,18 +12706,18 @@ proc	/datum/status_effect/grouped/heretic_dreams	on_remove	code/modules/antagoni
 proc	/datum/status_effect/grouped/heretic_dreams	add_heretic_dream	code/modules/antagonists/heretic/status_effects/dreams.dm:19	dreamer,dream_pool	no	-	proc root
 proc	/datum/status_effect/grouped/heretic_dreams	start_heretic_dream	code/modules/antagonists/heretic/status_effects/dreams.dm:31	dreamer,current_dream	no	-	proc root
 proc	/datum/status_effect/grouped/heretic_dreams	get_dream_center	code/modules/antagonists/heretic/status_effects/dreams.dm:39	dreamer	no	-	proc root
-type	/datum/status_effect/grouped/bodypart_effect	/datum/status_effect/grouped	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:3	inert	datum_status_effect_grouped_bodypart_effect	0	0
-proc	/datum/status_effect/grouped/bodypart_effect	source_added	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:15	source,bodypart,special,lazy	no	-	proc
-proc	/datum/status_effect/grouped/bodypart_effect	add_bodypart	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:19	bodypart,special,lazy	no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	remove_bodypart	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:28	old_owner,bodypart,deleting	no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	should_activate	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:43		no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	check_active	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:46		no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	on_bodypart_removed	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:58	bodypart,special	no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	on_bodypart_destroyed	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:64	bodypart	no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	activate	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:70		no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	deactivate	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:78		no	-	proc root
-proc	/datum/status_effect/grouped/bodypart_effect	on_remove	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:84		no	-	proc
-proc	/datum/status_effect/grouped/bodypart_effect	Destroy	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:92		no	-	proc
+type	/datum/status_effect/grouped/bodypart_effect	/datum/status_effect/grouped	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:3	live	datum_status_effect_grouped_bodypart_effect	1	0
+proc	/datum/status_effect/grouped/bodypart_effect	source_added	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:15	source,bodypart,special,lazy	yes	full	proc
+proc	/datum/status_effect/grouped/bodypart_effect	add_bodypart	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:19	bodypart,special,lazy	yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	remove_bodypart	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:28	old_owner,bodypart,deleting	yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	should_activate	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:43		yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	check_active	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:46		yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	on_bodypart_removed	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:58	bodypart,special	yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	on_bodypart_destroyed	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:64	bodypart	yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	activate	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:70		yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	deactivate	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:78		yes	full	proc root
+proc	/datum/status_effect/grouped/bodypart_effect	on_remove	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:84		yes	full	proc
+proc	/datum/status_effect/grouped/bodypart_effect	Destroy	code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:92		yes	full	proc
 type	/datum/status_effect/grouped/bodypart_effect/ethereal_glow	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:3	inert	datum_status_effect_grouped_bodypart_effect_ethereal_glow	0	0
 proc	/datum/status_effect/grouped/bodypart_effect/ethereal_glow	on_apply	code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:22	source,bodypart,special,lazy	no	-	proc
 proc	/datum/status_effect/grouped/bodypart_effect/ethereal_glow	add_bodypart	code/modules/surgery/bodyparts/bodypart_effects/ethereal_glow.dm:36	bodypart,special,lazy	no	-	proc
@@ -12739,8 +12739,8 @@ type	/datum/status_effect/grouped/bodypart_effect/nyxosynthesis	/datum/status_ef
 proc	/datum/status_effect/grouped/bodypart_effect/nyxosynthesis	tick	code/modules/surgery/bodyparts/bodypart_effects/nyxosynthesis.dm:7	seconds_between_ticks	no	-	proc
 type	/datum/status_effect/grouped/bodypart_effect/photosynthesis	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/photosynthesis.dm:3	inert	datum_status_effect_grouped_bodypart_effect_photosynthesis	0	0
 proc	/datum/status_effect/grouped/bodypart_effect/photosynthesis	tick	code/modules/surgery/bodyparts/bodypart_effects/photosynthesis.dm:7	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/grouped/bodypart_effect/plasma_based	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:3	inert	datum_status_effect_grouped_bodypart_effect_plasma_based	0	0
-proc	/datum/status_effect/grouped/bodypart_effect/plasma_based	tick	code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:12	seconds_between_ticks	no	-	proc
+type	/datum/status_effect/grouped/bodypart_effect/plasma_based	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:3	live	datum_status_effect_grouped_bodypart_effect_plasma_based	1	0
+proc	/datum/status_effect/grouped/bodypart_effect/plasma_based	tick	code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:12	seconds_between_ticks	yes	full	proc
 type	/datum/status_effect/grouped/bodypart_effect/slime_passgrille	/datum/status_effect/grouped/bodypart_effect	code/modules/surgery/bodyparts/bodypart_effects/slime_passgrille.dm:3	inert	datum_status_effect_grouped_bodypart_effect_slime_passgrille	0	0
 proc	/datum/status_effect/grouped/bodypart_effect/slime_passgrille	on_apply	code/modules/surgery/bodyparts/bodypart_effects/slime_passgrille.dm:6		no	-	proc
 proc	/datum/status_effect/grouped/bodypart_effect/slime_passgrille	on_remove	code/modules/surgery/bodyparts/bodypart_effects/slime_passgrille.dm:10		no	-	proc
@@ -27768,12 +27768,12 @@ proc	/datum/preference/choiced/species_feature/lizard_snout	icon_for	code/module
 type	/datum/preference/choiced/species_feature/lizard_spines	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/lizard.dm:130	live	datum_preference_choiced_species_feature_lizard_spines	1	0
 type	/datum/preference/choiced/species_feature/lizard_tail	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/lizard.dm:136	live	datum_preference_choiced_species_feature_lizard_tail	1	0
 type	/datum/preference/choiced/species_feature/monkey_tail	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/monkey.dm:2	live	datum_preference_choiced_species_feature_monkey_tail	0	0
-type	/datum/preference/choiced/species_feature/moth_antennae	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/moth.dm:2	inert	datum_preference_choiced_species_feature_moth_antennae	0	0
-proc	/datum/preference/choiced/species_feature/moth_antennae	icon_for	code/modules/client/preferences/species_features/moth.dm:9	value	no	-	proc
-type	/datum/preference/choiced/species_feature/moth_markings	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/moth.dm:27	inert	datum_preference_choiced_species_feature_moth_markings	0	0
-proc	/datum/preference/choiced/species_feature/moth_markings	icon_for	code/modules/client/preferences/species_features/moth.dm:34	value	no	-	proc
-type	/datum/preference/choiced/species_feature/moth_wings	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/moth.dm:71	inert	datum_preference_choiced_species_feature_moth_wings	0	0
-proc	/datum/preference/choiced/species_feature/moth_wings	icon_for	code/modules/client/preferences/species_features/moth.dm:78	value	no	-	proc
+type	/datum/preference/choiced/species_feature/moth_antennae	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/moth.dm:2	live	datum_preference_choiced_species_feature_moth_antennae	1	0
+proc	/datum/preference/choiced/species_feature/moth_antennae	icon_for	code/modules/client/preferences/species_features/moth.dm:9	value	yes	full	proc
+type	/datum/preference/choiced/species_feature/moth_markings	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/moth.dm:27	live	datum_preference_choiced_species_feature_moth_markings	1	0
+proc	/datum/preference/choiced/species_feature/moth_markings	icon_for	code/modules/client/preferences/species_features/moth.dm:34	value	yes	full	proc
+type	/datum/preference/choiced/species_feature/moth_wings	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/moth.dm:71	live	datum_preference_choiced_species_feature_moth_wings	1	0
+proc	/datum/preference/choiced/species_feature/moth_wings	icon_for	code/modules/client/preferences/species_features/moth.dm:78	value	yes	full	proc
 type	/datum/preference/choiced/species_feature/mushroom_cap	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/mushperson.dm:2	live	datum_preference_choiced_species_feature_mushroom_cap	0	0
 type	/datum/preference/choiced/species_feature/pod_hair	/datum/preference/choiced/species_feature	code/modules/client/preferences/species_features/pod.dm:2	inert	datum_preference_choiced_species_feature_pod_hair	0	0
 proc	/datum/preference/choiced/species_feature/pod_hair	icon_for	code/modules/client/preferences/species_features/pod.dm:9	value	no	-	proc
@@ -36769,22 +36769,22 @@ proc	/datum/species/monkey	get_species_description	code/modules/mob/living/carbo
 proc	/datum/species/monkey	get_species_lore	code/modules/mob/living/carbon/human/species_types/monkeys.dm:67		yes	full	proc
 proc	/datum/species/monkey	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/monkeys.dm:75		yes	full	proc
 proc	/datum/species/monkey	create_pref_language_perk	code/modules/mob/living/carbon/human/species_types/monkeys.dm:97		yes	full	proc
-type	/datum/species/moth	/datum/species	code/modules/mob/living/carbon/human/species_types/mothmen.dm:2	inert	datum_species_moth	0	0
-proc	/datum/species/moth	randomize_features	code/modules/mob/living/carbon/human/species_types/mothmen.dm:35		no	-	proc
-proc	/datum/species/moth	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/mothmen.dm:40		no	-	proc
-proc	/datum/species/moth	get_species_description	code/modules/mob/living/carbon/human/species_types/mothmen.dm:44		no	-	proc
-proc	/datum/species/moth	get_species_lore	code/modules/mob/living/carbon/human/species_types/mothmen.dm:48		no	-	proc
-proc	/datum/species/moth	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/mothmen.dm:64		no	-	proc
+type	/datum/species/moth	/datum/species	code/modules/mob/living/carbon/human/species_types/mothmen.dm:2	live	datum_species_moth	1	0
+proc	/datum/species/moth	randomize_features	code/modules/mob/living/carbon/human/species_types/mothmen.dm:35		yes	full	proc
+proc	/datum/species/moth	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/mothmen.dm:40		yes	full	proc
+proc	/datum/species/moth	get_species_description	code/modules/mob/living/carbon/human/species_types/mothmen.dm:44		yes	full	proc
+proc	/datum/species/moth	get_species_lore	code/modules/mob/living/carbon/human/species_types/mothmen.dm:48		yes	full	proc
+proc	/datum/species/moth	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/mothmen.dm:64		yes	full	proc
 type	/datum/species/mush	/datum/species	code/modules/mob/living/carbon/human/species_types/mushpeople.dm:4	inert	datum_species_mush	0	0
 proc	/datum/species/mush	on_species_gain	code/modules/mob/living/carbon/human/species_types/mushpeople.dm:41	C,old_species,pref_load,regenerate_icons	no	-	proc
 proc	/datum/species/mush	on_species_loss	code/modules/mob/living/carbon/human/species_types/mushpeople.dm:47	C	no	-	proc
 proc	/datum/species/mush	get_fixed_hair_color	code/modules/mob/living/carbon/human/species_types/mushpeople.dm:51	for_mob	no	-	proc
-type	/datum/species/plasmaman	/datum/species	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2	inert	datum_species_plasmaman	0	0
-proc	/datum/species/plasmaman	pre_equip_species_outfit	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:72	job,equipping,visuals_only	no	-	proc
-proc	/datum/species/plasmaman	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:78		no	-	proc
-proc	/datum/species/plasmaman	get_species_description	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:82		no	-	proc
-proc	/datum/species/plasmaman	get_species_lore	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:87		no	-	proc
-proc	/datum/species/plasmaman	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:106		no	-	proc
+type	/datum/species/plasmaman	/datum/species	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2	live	datum_species_plasmaman	1	0
+proc	/datum/species/plasmaman	pre_equip_species_outfit	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:72	job,equipping,visuals_only	yes	full	proc
+proc	/datum/species/plasmaman	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:78		yes	full	proc
+proc	/datum/species/plasmaman	get_species_description	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:82		yes	full	proc
+proc	/datum/species/plasmaman	get_species_lore	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:87		yes	full	proc
+proc	/datum/species/plasmaman	create_pref_unique_perks	code/modules/mob/living/carbon/human/species_types/plasmamen.dm:106		yes	full	proc
 type	/datum/species/pod	/datum/species	code/modules/mob/living/carbon/human/species_types/podpeople.dm:3	inert	datum_species_pod	0	0
 proc	/datum/species/pod	prepare_human_for_preview	code/modules/mob/living/carbon/human/species_types/podpeople.dm:43	human	no	-	proc
 proc	/datum/species/pod	get_physical_attributes	code/modules/mob/living/carbon/human/species_types/podpeople.dm:48		no	-	proc
@@ -52608,7 +52608,7 @@ proc	/mob/living/carbon/human	remove_eye_color	code/modules/mob/living/carbon/hu
 proc	/mob/living/carbon/human	get_right_eye_color	code/modules/mob/living/carbon/human/human.dm:996		yes	full	proc
 proc	/mob/living/carbon/human	get_left_eye_color	code/modules/mob/living/carbon/human/human.dm:1012		yes	full	proc
 proc	/mob/living/carbon/human	crewlike_monkify	code/modules/mob/living/carbon/human/human.dm:1042		yes	full	proc root
-proc	/mob/living/carbon/human	is_atmos_sealed	code/modules/mob/living/carbon/human/human.dm:1051	additional_flags,check_hands	yes	skeleton	proc root
+proc	/mob/living/carbon/human	is_atmos_sealed	code/modules/mob/living/carbon/human/human.dm:1051	additional_flags,check_hands	yes	full	proc root
 proc	/mob/living/carbon/human	should_electrocute	code/modules/mob/living/carbon/human/human.dm:1069	power_source	yes	full	proc
 proc	/mob/living/carbon/human	can_touch_acid	code/modules/mob/living/carbon/human/human.dm:1074	acided_atom,acid_power,acid_volume	no	-	proc
 proc	/mob/living/carbon/human	can_touch_burning	code/modules/mob/living/carbon/human/human.dm:1079	burning_atom,acid_power,acid_volume	no	-	proc
@@ -56944,8 +56944,8 @@ type	/obj/item/clothing/gloves/color/plasmaman/atmos	/obj/item/clothing/gloves/c
 type	/obj/item/clothing/gloves/color/plasmaman/explorer	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:63	live	obj_item_clothing_gloves_color_plasmaman_explorer	0	0
 type	/obj/item/clothing/gloves/color/plasmaman/botanic_leather	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:68	live	obj_item_clothing_gloves_color_plasmaman_botanic_leather	0	0
 type	/obj/item/clothing/gloves/color/plasmaman/prototype	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:75	live	obj_item_clothing_gloves_color_plasmaman_prototype	0	0
-type	/obj/item/clothing/gloves/color/plasmaman/clown	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:80	inert	obj_item_clothing_gloves_color_plasmaman_clown	0	0
-proc	/obj/item/clothing/gloves/color/plasmaman/clown	Initialize	code/modules/clothing/gloves/plasmaman.dm:84	mapload	no	-	proc
+type	/obj/item/clothing/gloves/color/plasmaman/clown	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:80	live	obj_item_clothing_gloves_color_plasmaman_clown	1	0
+proc	/obj/item/clothing/gloves/color/plasmaman/clown	Initialize	code/modules/clothing/gloves/plasmaman.dm:84	mapload	yes	full	proc
 type	/obj/item/clothing/gloves/color/plasmaman/head_of_personnel	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:89	live	obj_item_clothing_gloves_color_plasmaman_head_of_personnel	0	0
 type	/obj/item/clothing/gloves/color/plasmaman/chief_engineer	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:96	live	obj_item_clothing_gloves_color_plasmaman_chief_engineer	0	0
 type	/obj/item/clothing/gloves/color/plasmaman/research_director	/obj/item/clothing/gloves/color/plasmaman	code/modules/clothing/gloves/plasmaman.dm:102	live	obj_item_clothing_gloves_color_plasmaman_research_director	0	0
@@ -57285,56 +57285,56 @@ type	/obj/item/clothing/head/helmet/space/pirate	/obj/item/clothing/head/helmet/
 type	/obj/item/clothing/head/helmet/space/pirate/bandana	/obj/item/clothing/head/helmet/space/pirate	code/modules/clothing/spacesuits/pirate.dm:24	live	obj_item_clothing_head_helmet_space_pirate_bandana	0	0
 type	/obj/item/clothing/head/helmet/space/pirate/tophat	/obj/item/clothing/head/helmet/space/pirate	code/modules/clothing/spacesuits/pirate.dm:40	live	obj_item_clothing_head_helmet_space_pirate_tophat	1	0
 proc	/obj/item/clothing/head/helmet/space/pirate/tophat	add_stabilizer	code/modules/clothing/spacesuits/pirate.dm:44	loose_hat	yes	full	proc
-type	/obj/item/clothing/head/helmet/space/plasmaman	/obj/item/clothing/head/helmet/space	code/modules/clothing/spacesuits/plasmamen.dm:75	inert	obj_item_clothing_head_helmet_space_plasmaman	0	0
-proc	/obj/item/clothing/head/helmet/space/plasmaman	Initialize	code/modules/clothing/spacesuits/plasmamen.dm:109	mapload	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	add_stabilizer	code/modules/clothing/spacesuits/plasmamen.dm:115	loose_hat	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	add_context	code/modules/clothing/spacesuits/plasmamen.dm:118	source,context,held_item,user	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	click_alt	code/modules/clothing/spacesuits/plasmamen.dm:125	user	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	ui_action_click	code/modules/clothing/spacesuits/plasmamen.dm:129	user,action	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	adjust_visor	code/modules/clothing/spacesuits/plasmamen.dm:136	user	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	update_icon_state	code/modules/clothing/spacesuits/plasmamen.dm:146		no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	update_overlays	code/modules/clothing/spacesuits/plasmamen.dm:151		no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	item_interaction	code/modules/clothing/spacesuits/plasmamen.dm:160	user,tool,modifiers	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	worn_overlays	code/modules/clothing/spacesuits/plasmamen.dm:180	standing,isinhands,icon_file,bodyshape	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	separate_worn_overlays	code/modules/clothing/spacesuits/plasmamen.dm:185	standing,draw_target,isinhands,icon_file,bodyshape	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	wash	code/modules/clothing/spacesuits/plasmamen.dm:192	clean_types	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	attack_self	code/modules/clothing/spacesuits/plasmamen.dm:200	user	no	-	proc
-proc	/obj/item/clothing/head/helmet/space/plasmaman	on_saboteur	code/modules/clothing/spacesuits/plasmamen.dm:215	source,disrupt_duration	no	-	proc
-type	/obj/item/clothing/head/helmet/space/plasmaman/security	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:224	inert	obj_item_clothing_head_helmet_space_plasmaman_security	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/security/detective	/obj/item/clothing/head/helmet/space/plasmaman/security	code/modules/clothing/spacesuits/plasmamen.dm:236	inert	obj_item_clothing_head_helmet_space_plasmaman_security_detective	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/security/warden	/obj/item/clothing/head/helmet/space/plasmaman/security	code/modules/clothing/spacesuits/plasmamen.dm:248	inert	obj_item_clothing_head_helmet_space_plasmaman_security_warden	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/security/head_of_security	/obj/item/clothing/head/helmet/space/plasmaman/security	code/modules/clothing/spacesuits/plasmamen.dm:260	inert	obj_item_clothing_head_helmet_space_plasmaman_security_head_of_security	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/prisoner	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:272	inert	obj_item_clothing_head_helmet_space_plasmaman_prisoner	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/medical	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:278	inert	obj_item_clothing_head_helmet_space_plasmaman_medical	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/coroner	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:284	inert	obj_item_clothing_head_helmet_space_plasmaman_coroner	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/paramedic	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:290	inert	obj_item_clothing_head_helmet_space_plasmaman_paramedic	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/viro	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:296	inert	obj_item_clothing_head_helmet_space_plasmaman_viro	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/chemist	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:302	inert	obj_item_clothing_head_helmet_space_plasmaman_chemist	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/chief_medical_officer	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:308	inert	obj_item_clothing_head_helmet_space_plasmaman_chief_medical_officer	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/science	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:314	inert	obj_item_clothing_head_helmet_space_plasmaman_science	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/robotics	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:320	inert	obj_item_clothing_head_helmet_space_plasmaman_robotics	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/genetics	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:326	inert	obj_item_clothing_head_helmet_space_plasmaman_genetics	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/research_director	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:332	inert	obj_item_clothing_head_helmet_space_plasmaman_research_director	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/engineering	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:338	inert	obj_item_clothing_head_helmet_space_plasmaman_engineering	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/atmospherics	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:348	inert	obj_item_clothing_head_helmet_space_plasmaman_atmospherics	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/chief_engineer	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:356	inert	obj_item_clothing_head_helmet_space_plasmaman_chief_engineer	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/cargo	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:364	inert	obj_item_clothing_head_helmet_space_plasmaman_cargo	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/mining	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:370	inert	obj_item_clothing_head_helmet_space_plasmaman_mining	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/chaplain	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:377	inert	obj_item_clothing_head_helmet_space_plasmaman_chaplain	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/white	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:383	inert	obj_item_clothing_head_helmet_space_plasmaman_white	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/curator	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:389	inert	obj_item_clothing_head_helmet_space_plasmaman_curator	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/botany	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:398	inert	obj_item_clothing_head_helmet_space_plasmaman_botany	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/janitor	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:404	inert	obj_item_clothing_head_helmet_space_plasmaman_janitor	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/mime	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:410	inert	obj_item_clothing_head_helmet_space_plasmaman_mime	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/clown	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:417	inert	obj_item_clothing_head_helmet_space_plasmaman_clown	0	0
-proc	/obj/item/clothing/head/helmet/space/plasmaman/clown	Initialize	code/modules/clothing/spacesuits/plasmamen.dm:424	mapload	no	-	proc
-type	/obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:429	inert	obj_item_clothing_head_helmet_space_plasmaman_head_of_personnel	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/captain	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:441	inert	obj_item_clothing_head_helmet_space_plasmaman_captain	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/centcom_commander	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:453	inert	obj_item_clothing_head_helmet_space_plasmaman_centcom_commander	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/centcom_official	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:465	inert	obj_item_clothing_head_helmet_space_plasmaman_centcom_official	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/centcom_intern	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:471	inert	obj_item_clothing_head_helmet_space_plasmaman_centcom_intern	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/syndie	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:477	inert	obj_item_clothing_head_helmet_space_plasmaman_syndie	0	0
-type	/obj/item/clothing/head/helmet/space/plasmaman/bitrunner	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:484	inert	obj_item_clothing_head_helmet_space_plasmaman_bitrunner	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman	/obj/item/clothing/head/helmet/space	code/modules/clothing/spacesuits/plasmamen.dm:75	live	obj_item_clothing_head_helmet_space_plasmaman	1	0
+proc	/obj/item/clothing/head/helmet/space/plasmaman	Initialize	code/modules/clothing/spacesuits/plasmamen.dm:109	mapload	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	add_stabilizer	code/modules/clothing/spacesuits/plasmamen.dm:115	loose_hat	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	add_context	code/modules/clothing/spacesuits/plasmamen.dm:118	source,context,held_item,user	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	click_alt	code/modules/clothing/spacesuits/plasmamen.dm:125	user	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	ui_action_click	code/modules/clothing/spacesuits/plasmamen.dm:129	user,action	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	adjust_visor	code/modules/clothing/spacesuits/plasmamen.dm:136	user	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	update_icon_state	code/modules/clothing/spacesuits/plasmamen.dm:146		yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	update_overlays	code/modules/clothing/spacesuits/plasmamen.dm:151		yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	item_interaction	code/modules/clothing/spacesuits/plasmamen.dm:160	user,tool,modifiers	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	worn_overlays	code/modules/clothing/spacesuits/plasmamen.dm:180	standing,isinhands,icon_file,bodyshape	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	separate_worn_overlays	code/modules/clothing/spacesuits/plasmamen.dm:185	standing,draw_target,isinhands,icon_file,bodyshape	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	wash	code/modules/clothing/spacesuits/plasmamen.dm:192	clean_types	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	attack_self	code/modules/clothing/spacesuits/plasmamen.dm:200	user	yes	full	proc
+proc	/obj/item/clothing/head/helmet/space/plasmaman	on_saboteur	code/modules/clothing/spacesuits/plasmamen.dm:215	source,disrupt_duration	yes	full	proc
+type	/obj/item/clothing/head/helmet/space/plasmaman/security	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:224	live	obj_item_clothing_head_helmet_space_plasmaman_security	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/security/detective	/obj/item/clothing/head/helmet/space/plasmaman/security	code/modules/clothing/spacesuits/plasmamen.dm:236	live	obj_item_clothing_head_helmet_space_plasmaman_security_detective	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/security/warden	/obj/item/clothing/head/helmet/space/plasmaman/security	code/modules/clothing/spacesuits/plasmamen.dm:248	live	obj_item_clothing_head_helmet_space_plasmaman_security_warden	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/security/head_of_security	/obj/item/clothing/head/helmet/space/plasmaman/security	code/modules/clothing/spacesuits/plasmamen.dm:260	live	obj_item_clothing_head_helmet_space_plasmaman_security_head_of_security	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/prisoner	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:272	live	obj_item_clothing_head_helmet_space_plasmaman_prisoner	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/medical	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:278	live	obj_item_clothing_head_helmet_space_plasmaman_medical	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/coroner	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:284	live	obj_item_clothing_head_helmet_space_plasmaman_coroner	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/paramedic	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:290	live	obj_item_clothing_head_helmet_space_plasmaman_paramedic	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/viro	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:296	live	obj_item_clothing_head_helmet_space_plasmaman_viro	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/chemist	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:302	live	obj_item_clothing_head_helmet_space_plasmaman_chemist	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/chief_medical_officer	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:308	live	obj_item_clothing_head_helmet_space_plasmaman_chief_medical_officer	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/science	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:314	live	obj_item_clothing_head_helmet_space_plasmaman_science	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/robotics	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:320	live	obj_item_clothing_head_helmet_space_plasmaman_robotics	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/genetics	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:326	live	obj_item_clothing_head_helmet_space_plasmaman_genetics	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/research_director	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:332	live	obj_item_clothing_head_helmet_space_plasmaman_research_director	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/engineering	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:338	live	obj_item_clothing_head_helmet_space_plasmaman_engineering	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/atmospherics	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:348	live	obj_item_clothing_head_helmet_space_plasmaman_atmospherics	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/chief_engineer	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:356	live	obj_item_clothing_head_helmet_space_plasmaman_chief_engineer	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/cargo	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:364	live	obj_item_clothing_head_helmet_space_plasmaman_cargo	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/mining	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:370	live	obj_item_clothing_head_helmet_space_plasmaman_mining	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/chaplain	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:377	live	obj_item_clothing_head_helmet_space_plasmaman_chaplain	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/white	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:383	live	obj_item_clothing_head_helmet_space_plasmaman_white	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/curator	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:389	live	obj_item_clothing_head_helmet_space_plasmaman_curator	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/botany	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:398	live	obj_item_clothing_head_helmet_space_plasmaman_botany	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/janitor	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:404	live	obj_item_clothing_head_helmet_space_plasmaman_janitor	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/mime	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:410	live	obj_item_clothing_head_helmet_space_plasmaman_mime	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/clown	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:417	live	obj_item_clothing_head_helmet_space_plasmaman_clown	1	0
+proc	/obj/item/clothing/head/helmet/space/plasmaman/clown	Initialize	code/modules/clothing/spacesuits/plasmamen.dm:424	mapload	yes	full	proc
+type	/obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:429	live	obj_item_clothing_head_helmet_space_plasmaman_head_of_personnel	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/captain	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:441	live	obj_item_clothing_head_helmet_space_plasmaman_captain	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/centcom_commander	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:453	live	obj_item_clothing_head_helmet_space_plasmaman_centcom_commander	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/centcom_official	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:465	live	obj_item_clothing_head_helmet_space_plasmaman_centcom_official	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/centcom_intern	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:471	live	obj_item_clothing_head_helmet_space_plasmaman_centcom_intern	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/syndie	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:477	live	obj_item_clothing_head_helmet_space_plasmaman_syndie	0	0
+type	/obj/item/clothing/head/helmet/space/plasmaman/bitrunner	/obj/item/clothing/head/helmet/space/plasmaman	code/modules/clothing/spacesuits/plasmamen.dm:484	live	obj_item_clothing_head_helmet_space_plasmaman_bitrunner	0	0
 type	/obj/item/clothing/head/helmet/space/santahat	/obj/item/clothing/head/helmet/space	code/modules/clothing/spacesuits/santa.dm:2	live	obj_item_clothing_head_helmet_space_santahat	0	0
 type	/obj/item/clothing/head/helmet/space/santahat/beardless	/obj/item/clothing/head/helmet/space/santahat	code/modules/clothing/spacesuits/santa.dm:14	live	obj_item_clothing_head_helmet_space_santahat_beardless	0	0
 type	/obj/item/clothing/head/helmet/space/nasavoid	/obj/item/clothing/head/helmet/space	code/modules/clothing/spacesuits/softsuit.dm:3	live	obj_item_clothing_head_helmet_space_nasavoid	0	0
@@ -58894,12 +58894,12 @@ type	/obj/item/clothing/suit/space/freedom	/obj/item/clothing/suit/space	code/mo
 type	/obj/item/clothing/suit/space/pirate	/obj/item/clothing/suit/space	code/modules/clothing/spacesuits/pirate.dm:27	live	obj_item_clothing_suit_space_pirate	0	0
 type	/obj/item/clothing/suit/space/pirate/silverscale	/obj/item/clothing/suit/space/pirate	code/modules/clothing/spacesuits/pirate.dm:48	live	obj_item_clothing_suit_space_pirate_silverscale	0	0
 type	/obj/item/clothing/suit/space/eva	/obj/item/clothing/suit/space	code/modules/clothing/spacesuits/softsuit.dm:32	live	obj_item_clothing_suit_space_eva	0	0
-type	/obj/item/clothing/suit/space/eva/plasmaman	/obj/item/clothing/suit/space/eva	code/modules/clothing/spacesuits/plasmamen.dm:4	inert	obj_item_clothing_suit_space_eva_plasmaman	0	0
-proc	/obj/item/clothing/suit/space/eva/plasmaman	examine	code/modules/clothing/spacesuits/plasmamen.dm:22	user	no	-	proc
-proc	/obj/item/clothing/suit/space/eva/plasmaman	equipped	code/modules/clothing/spacesuits/plasmamen.dm:26	user,slot	no	-	proc
-proc	/obj/item/clothing/suit/space/eva/plasmaman	dropped	code/modules/clothing/spacesuits/plasmamen.dm:32	user	no	-	proc
-proc	/obj/item/clothing/suit/space/eva/plasmaman	check_fire_state	code/modules/clothing/spacesuits/plasmamen.dm:36	source	no	-	proc root
-proc	/obj/item/clothing/suit/space/eva/plasmaman	item_interaction	code/modules/clothing/spacesuits/plasmamen.dm:59	user,tool,modifiers	no	-	proc
+type	/obj/item/clothing/suit/space/eva/plasmaman	/obj/item/clothing/suit/space/eva	code/modules/clothing/spacesuits/plasmamen.dm:4	live	obj_item_clothing_suit_space_eva_plasmaman	1	0
+proc	/obj/item/clothing/suit/space/eva/plasmaman	examine	code/modules/clothing/spacesuits/plasmamen.dm:22	user	yes	full	proc
+proc	/obj/item/clothing/suit/space/eva/plasmaman	equipped	code/modules/clothing/spacesuits/plasmamen.dm:26	user,slot	yes	full	proc
+proc	/obj/item/clothing/suit/space/eva/plasmaman	dropped	code/modules/clothing/spacesuits/plasmamen.dm:32	user	yes	full	proc
+proc	/obj/item/clothing/suit/space/eva/plasmaman	check_fire_state	code/modules/clothing/spacesuits/plasmamen.dm:36	source	yes	full	proc root
+proc	/obj/item/clothing/suit/space/eva/plasmaman	item_interaction	code/modules/clothing/spacesuits/plasmamen.dm:59	user,tool,modifiers	yes	full	proc
 type	/obj/item/clothing/suit/space/santa	/obj/item/clothing/suit/space	code/modules/clothing/spacesuits/santa.dm:21	live	obj_item_clothing_suit_space_santa	0	0
 type	/obj/item/clothing/suit/space/nasavoid	/obj/item/clothing/suit/space	code/modules/clothing/spacesuits/softsuit.dm:9	live	obj_item_clothing_suit_space_nasavoid	0	0
 type	/obj/item/clothing/suit/space/nasavoid/old	/obj/item/clothing/suit/space/nasavoid	code/modules/clothing/spacesuits/softsuit.dm:23	live	obj_item_clothing_suit_space_nasavoid_old	0	0
@@ -59395,52 +59395,52 @@ type	/obj/item/clothing/under/rank/prisoner/nosensor	/obj/item/clothing/under/ra
 type	/obj/item/clothing/under/rank/prisoner/skirt	/obj/item/clothing/under/rank/prisoner	code/modules/clothing/under/jobs/security.dm:260	base	obj_item_clothing_under_rank_prisoner_skirt	1	1
 type	/obj/item/clothing/under/rank/station_trait	/obj/item/clothing/under/rank	code/modules/clothing/under/jobs/station_trait.dm:5	live	obj_item_clothing_under_rank_station_trait	0	0
 type	/obj/item/clothing/under/rank/station_trait/human_ai	/obj/item/clothing/under/rank/station_trait	code/modules/clothing/under/jobs/station_trait.dm:10	live	obj_item_clothing_under_rank_station_trait_human_ai	0	0
-type	/obj/item/clothing/under/plasmaman	/obj/item/clothing/under	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:3	inert	obj_item_clothing_under_plasmaman	0	0
-proc	/obj/item/clothing/under/plasmaman	examine	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:24	user	no	-	proc
-proc	/obj/item/clothing/under/plasmaman	equipped	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:28	user,slot	no	-	proc
-proc	/obj/item/clothing/under/plasmaman	dropped	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:34	user	no	-	proc
-proc	/obj/item/clothing/under/plasmaman	check_fire_state	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:38	source	no	-	proc root
-proc	/obj/item/clothing/under/plasmaman	activate_fire_safety	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:60	owner	no	-	proc root
-proc	/obj/item/clothing/under/plasmaman	item_interaction	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:65	user,tool,modifiers	no	-	proc
-type	/obj/item/clothing/under/plasmaman/clown	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:141	inert	obj_item_clothing_under_plasmaman_clown	0	0
-proc	/obj/item/clothing/under/plasmaman/clown	Initialize	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:152	mapload	no	-	proc
-proc	/obj/item/clothing/under/plasmaman/clown	activate_fire_safety	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:166	owner	no	-	proc
-type	/obj/item/clothing/under/plasmaman/clown/magic	/obj/item/clothing/under/plasmaman/clown	code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:102	inert	obj_item_clothing_under_plasmaman_clown_magic	0	0
-proc	/obj/item/clothing/under/plasmaman/clown/magic	Initialize	code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:104	mapload	no	-	proc
-type	/obj/item/clothing/under/plasmaman/syndicate	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/syndicate.dm:195	inert	obj_item_clothing_under_plasmaman_syndicate	0	0
-type	/obj/item/clothing/under/plasmaman/centcom_commander	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/centcom.dm:2	inert	obj_item_clothing_under_plasmaman_centcom_commander	0	0
-type	/obj/item/clothing/under/plasmaman/centcom_official	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/centcom.dm:8	inert	obj_item_clothing_under_plasmaman_centcom_official	0	0
-type	/obj/item/clothing/under/plasmaman/centcom_intern	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/centcom.dm:14	inert	obj_item_clothing_under_plasmaman_centcom_intern	0	0
-type	/obj/item/clothing/under/plasmaman/cargo	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:87	inert	obj_item_clothing_under_plasmaman_cargo	0	0
-type	/obj/item/clothing/under/plasmaman/mining	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:93	inert	obj_item_clothing_under_plasmaman_mining	0	0
-type	/obj/item/clothing/under/plasmaman/chef	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:99	inert	obj_item_clothing_under_plasmaman_chef	0	0
-type	/obj/item/clothing/under/plasmaman/enviroslacks	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:105	inert	obj_item_clothing_under_plasmaman_enviroslacks	0	0
-type	/obj/item/clothing/under/plasmaman/chaplain	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:111	inert	obj_item_clothing_under_plasmaman_chaplain	0	0
-type	/obj/item/clothing/under/plasmaman/curator	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:117	inert	obj_item_clothing_under_plasmaman_curator	0	0
-type	/obj/item/clothing/under/plasmaman/janitor	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:123	inert	obj_item_clothing_under_plasmaman_janitor	0	0
-type	/obj/item/clothing/under/plasmaman/botany	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:129	inert	obj_item_clothing_under_plasmaman_botany	0	0
-type	/obj/item/clothing/under/plasmaman/mime	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:135	inert	obj_item_clothing_under_plasmaman_mime	0	0
-type	/obj/item/clothing/under/plasmaman/bitrunner	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:147	inert	obj_item_clothing_under_plasmaman_bitrunner	0	0
-type	/obj/item/clothing/under/plasmaman/prisoner	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:157	inert	obj_item_clothing_under_plasmaman_prisoner	0	0
-type	/obj/item/clothing/under/plasmaman/captain	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:2	inert	obj_item_clothing_under_plasmaman_captain	0	0
-type	/obj/item/clothing/under/plasmaman/head_of_personnel	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:16	inert	obj_item_clothing_under_plasmaman_head_of_personnel	0	0
-type	/obj/item/clothing/under/plasmaman/security	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/security.dm:2	inert	obj_item_clothing_under_plasmaman_security	0	0
-type	/obj/item/clothing/under/plasmaman/security/head_of_security	/obj/item/clothing/under/plasmaman/security	code/modules/clothing/under/jobs/Plasmaman/command.dm:22	inert	obj_item_clothing_under_plasmaman_security_head_of_security	0	0
-type	/obj/item/clothing/under/plasmaman/security/detective	/obj/item/clothing/under/plasmaman/security	code/modules/clothing/under/jobs/Plasmaman/security.dm:16	inert	obj_item_clothing_under_plasmaman_security_detective	0	0
-type	/obj/item/clothing/under/plasmaman/security/warden	/obj/item/clothing/under/plasmaman/security	code/modules/clothing/under/jobs/Plasmaman/security.dm:22	inert	obj_item_clothing_under_plasmaman_security_warden	0	0
-type	/obj/item/clothing/under/plasmaman/chief_engineer	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:36	inert	obj_item_clothing_under_plasmaman_chief_engineer	0	0
-type	/obj/item/clothing/under/plasmaman/chief_medical_officer	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:48	inert	obj_item_clothing_under_plasmaman_chief_medical_officer	0	0
-type	/obj/item/clothing/under/plasmaman/research_director	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:54	inert	obj_item_clothing_under_plasmaman_research_director	0	0
-type	/obj/item/clothing/under/plasmaman/engineering	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/engineering.dm:2	inert	obj_item_clothing_under_plasmaman_engineering	0	0
-type	/obj/item/clothing/under/plasmaman/atmospherics	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/engineering.dm:14	inert	obj_item_clothing_under_plasmaman_atmospherics	0	0
-type	/obj/item/clothing/under/plasmaman/medical	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:2	inert	obj_item_clothing_under_plasmaman_medical	0	0
-type	/obj/item/clothing/under/plasmaman/coroner	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:8	inert	obj_item_clothing_under_plasmaman_coroner	0	0
-type	/obj/item/clothing/under/plasmaman/paramedic	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:14	inert	obj_item_clothing_under_plasmaman_paramedic	0	0
-type	/obj/item/clothing/under/plasmaman/science	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:20	inert	obj_item_clothing_under_plasmaman_science	0	0
-type	/obj/item/clothing/under/plasmaman/robotics	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:26	inert	obj_item_clothing_under_plasmaman_robotics	0	0
-type	/obj/item/clothing/under/plasmaman/viro	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:32	inert	obj_item_clothing_under_plasmaman_viro	0	0
-type	/obj/item/clothing/under/plasmaman/genetics	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:38	inert	obj_item_clothing_under_plasmaman_genetics	0	0
-type	/obj/item/clothing/under/plasmaman/chemist	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:44	inert	obj_item_clothing_under_plasmaman_chemist	0	0
+type	/obj/item/clothing/under/plasmaman	/obj/item/clothing/under	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:3	live	obj_item_clothing_under_plasmaman	1	0
+proc	/obj/item/clothing/under/plasmaman	examine	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:24	user	yes	full	proc
+proc	/obj/item/clothing/under/plasmaman	equipped	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:28	user,slot	yes	full	proc
+proc	/obj/item/clothing/under/plasmaman	dropped	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:34	user	yes	full	proc
+proc	/obj/item/clothing/under/plasmaman	check_fire_state	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:38	source	yes	full	proc root
+proc	/obj/item/clothing/under/plasmaman	activate_fire_safety	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:60	owner	yes	full	proc root
+proc	/obj/item/clothing/under/plasmaman	item_interaction	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:65	user,tool,modifiers	yes	full	proc
+type	/obj/item/clothing/under/plasmaman/clown	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:141	live	obj_item_clothing_under_plasmaman_clown	1	0
+proc	/obj/item/clothing/under/plasmaman/clown	Initialize	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:152	mapload	yes	full	proc
+proc	/obj/item/clothing/under/plasmaman/clown	activate_fire_safety	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:166	owner	yes	full	proc
+type	/obj/item/clothing/under/plasmaman/clown/magic	/obj/item/clothing/under/plasmaman/clown	code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:102	live	obj_item_clothing_under_plasmaman_clown_magic	0	0
+proc	/obj/item/clothing/under/plasmaman/clown/magic	Initialize	code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:104	mapload	stub	deferred	proc
+type	/obj/item/clothing/under/plasmaman/syndicate	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/syndicate.dm:195	live	obj_item_clothing_under_plasmaman_syndicate	0	0
+type	/obj/item/clothing/under/plasmaman/centcom_commander	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/centcom.dm:2	live	obj_item_clothing_under_plasmaman_centcom_commander	0	0
+type	/obj/item/clothing/under/plasmaman/centcom_official	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/centcom.dm:8	live	obj_item_clothing_under_plasmaman_centcom_official	0	0
+type	/obj/item/clothing/under/plasmaman/centcom_intern	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/centcom.dm:14	live	obj_item_clothing_under_plasmaman_centcom_intern	0	0
+type	/obj/item/clothing/under/plasmaman/cargo	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:87	live	obj_item_clothing_under_plasmaman_cargo	0	0
+type	/obj/item/clothing/under/plasmaman/mining	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:93	live	obj_item_clothing_under_plasmaman_mining	0	0
+type	/obj/item/clothing/under/plasmaman/chef	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:99	live	obj_item_clothing_under_plasmaman_chef	0	0
+type	/obj/item/clothing/under/plasmaman/enviroslacks	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:105	live	obj_item_clothing_under_plasmaman_enviroslacks	0	0
+type	/obj/item/clothing/under/plasmaman/chaplain	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:111	live	obj_item_clothing_under_plasmaman_chaplain	0	0
+type	/obj/item/clothing/under/plasmaman/curator	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:117	live	obj_item_clothing_under_plasmaman_curator	0	0
+type	/obj/item/clothing/under/plasmaman/janitor	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:123	live	obj_item_clothing_under_plasmaman_janitor	0	0
+type	/obj/item/clothing/under/plasmaman/botany	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:129	live	obj_item_clothing_under_plasmaman_botany	0	0
+type	/obj/item/clothing/under/plasmaman/mime	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:135	live	obj_item_clothing_under_plasmaman_mime	0	0
+type	/obj/item/clothing/under/plasmaman/bitrunner	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:147	live	obj_item_clothing_under_plasmaman_bitrunner	0	0
+type	/obj/item/clothing/under/plasmaman/prisoner	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:157	live	obj_item_clothing_under_plasmaman_prisoner	0	0
+type	/obj/item/clothing/under/plasmaman/captain	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:2	live	obj_item_clothing_under_plasmaman_captain	0	0
+type	/obj/item/clothing/under/plasmaman/head_of_personnel	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:16	live	obj_item_clothing_under_plasmaman_head_of_personnel	0	0
+type	/obj/item/clothing/under/plasmaman/security	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/security.dm:2	live	obj_item_clothing_under_plasmaman_security	0	0
+type	/obj/item/clothing/under/plasmaman/security/head_of_security	/obj/item/clothing/under/plasmaman/security	code/modules/clothing/under/jobs/Plasmaman/command.dm:22	live	obj_item_clothing_under_plasmaman_security_head_of_security	0	0
+type	/obj/item/clothing/under/plasmaman/security/detective	/obj/item/clothing/under/plasmaman/security	code/modules/clothing/under/jobs/Plasmaman/security.dm:16	live	obj_item_clothing_under_plasmaman_security_detective	0	0
+type	/obj/item/clothing/under/plasmaman/security/warden	/obj/item/clothing/under/plasmaman/security	code/modules/clothing/under/jobs/Plasmaman/security.dm:22	live	obj_item_clothing_under_plasmaman_security_warden	0	0
+type	/obj/item/clothing/under/plasmaman/chief_engineer	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:36	live	obj_item_clothing_under_plasmaman_chief_engineer	0	0
+type	/obj/item/clothing/under/plasmaman/chief_medical_officer	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:48	live	obj_item_clothing_under_plasmaman_chief_medical_officer	0	0
+type	/obj/item/clothing/under/plasmaman/research_director	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/command.dm:54	live	obj_item_clothing_under_plasmaman_research_director	0	0
+type	/obj/item/clothing/under/plasmaman/engineering	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/engineering.dm:2	live	obj_item_clothing_under_plasmaman_engineering	0	0
+type	/obj/item/clothing/under/plasmaman/atmospherics	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/engineering.dm:14	live	obj_item_clothing_under_plasmaman_atmospherics	0	0
+type	/obj/item/clothing/under/plasmaman/medical	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:2	live	obj_item_clothing_under_plasmaman_medical	0	0
+type	/obj/item/clothing/under/plasmaman/coroner	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:8	live	obj_item_clothing_under_plasmaman_coroner	0	0
+type	/obj/item/clothing/under/plasmaman/paramedic	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:14	live	obj_item_clothing_under_plasmaman_paramedic	0	0
+type	/obj/item/clothing/under/plasmaman/science	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:20	live	obj_item_clothing_under_plasmaman_science	0	0
+type	/obj/item/clothing/under/plasmaman/robotics	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:26	live	obj_item_clothing_under_plasmaman_robotics	0	0
+type	/obj/item/clothing/under/plasmaman/viro	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:32	live	obj_item_clothing_under_plasmaman_viro	0	0
+type	/obj/item/clothing/under/plasmaman/genetics	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:38	live	obj_item_clothing_under_plasmaman_genetics	0	0
+type	/obj/item/clothing/under/plasmaman/chemist	/obj/item/clothing/under/plasmaman	code/modules/clothing/under/jobs/Plasmaman/medsci.dm:44	live	obj_item_clothing_under_plasmaman_chemist	0	0
 type	/obj/item/clothing/under/chameleon	/obj/item/clothing/under	code/modules/clothing/chameleon/generic_chameleon_clothing.dm:19	live	obj_item_clothing_under_chameleon	0	0
 type	/obj/item/clothing/under/chameleon/broken	/obj/item/clothing/under/chameleon	code/modules/clothing/chameleon/generic_chameleon_clothing.dm:41	live	obj_item_clothing_under_chameleon_broken	1	0
 proc	/obj/item/clothing/under/chameleon/broken	Initialize	code/modules/clothing/chameleon/generic_chameleon_clothing.dm:41	mapload	yes	full	proc
@@ -67148,10 +67148,10 @@ proc	/obj/item/bodypart/chest/golem	Initialize	code/modules/surgery/bodyparts/sp
 type	/obj/item/bodypart/chest/monkey	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/monkey_parts.dm:28	live	obj_item_bodypart_chest_monkey	1	0
 proc	/obj/item/bodypart/chest/monkey	Initialize	code/modules/surgery/bodyparts/species_parts/monkey_parts.dm:47	mapload	yes	full	proc
 proc	/obj/item/bodypart/chest/monkey	update_mob_heights	code/modules/surgery/bodyparts/species_parts/monkey_parts.dm:55	holder	yes	full	proc
-type	/obj/item/bodypart/chest/moth	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/moth_bodyparts.dm:13	inert	obj_item_bodypart_chest_moth	0	0
-proc	/obj/item/bodypart/chest/moth	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/moth_bodyparts.dm:22		no	-	proc
-type	/obj/item/bodypart/chest/plasmaman	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/plasmaman_bodyparts.dm:15	inert	obj_item_bodypart_chest_plasmaman	0	0
-proc	/obj/item/bodypart/chest/plasmaman	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/plasmaman_bodyparts.dm:27		no	-	proc
+type	/obj/item/bodypart/chest/moth	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/moth_bodyparts.dm:13	live	obj_item_bodypart_chest_moth	1	0
+proc	/obj/item/bodypart/chest/moth	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/moth_bodyparts.dm:22		yes	full	proc
+type	/obj/item/bodypart/chest/plasmaman	/obj/item/bodypart/chest	code/modules/surgery/bodyparts/species_parts/plasmaman_bodyparts.dm:15	live	obj_item_bodypart_chest_plasmaman	1	0
+proc	/obj/item/bodypart/chest/plasmaman	get_butt_sprite	code/modules/surgery/bodyparts/species_parts/plasmaman_bodyparts.dm:27		yes	full	proc
 type	/obj/item/bodypart/arm	/obj/item/bodypart	code/modules/surgery/bodyparts/default_parts.dm:117	base	obj_item_bodypart_arm	1	1
 proc	/obj/item/bodypart/arm	Destroy	code/modules/surgery/bodyparts/default_parts.dm:150		yes	full	proc
 proc	/obj/item/bodypart/arm	set_speed_modifiers	code/modules/surgery/bodyparts/default_parts.dm:155	interaction,click	yes	full	proc root

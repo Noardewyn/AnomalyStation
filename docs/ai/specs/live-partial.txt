@@ -781,3 +781,6 @@
 ## Gaps RG3 (D333, D339): the drugs, pyrotechnics and the other reagents, not-translated.md section 226
 /datum/reagent/teslium	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed teslium is electrogenic for a while
 /datum/reagent/growthserum	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed growth serum grows quickly for a while
+
+## Species SP2a (D349): the moth and the plasmaman
+/obj/item/clothing/under/plasmaman/clown/magic	Initialize	D349	deferred	the wizard's enchanted clown suit adds the clown pockets spell (a wizard item, antagonist code not ported)

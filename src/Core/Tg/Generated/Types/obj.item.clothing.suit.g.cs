@@ -3844,9 +3844,9 @@ public partial class obj_item_clothing_suit_space_eva : obj_item_clothing_suit_s
     }
 }
 
-// tg: code/modules/clothing/spacesuits/plasmamen.dm:4
-[DmPath("/obj/item/clothing/suit/space/eva/plasmaman"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_space_eva_plasmaman : obj_item_clothing_suit_space_eva
+// tg: code/modules/clothing/spacesuits/plasmamen.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/space/eva/plasmaman")]
+public partial class obj_item_clothing_suit_space_eva_plasmaman
 {
     public float extinguish_timer = 0; // tg: code/modules/clothing/spacesuits/plasmamen.dm:13
     public float extinguish_cooldown = 100; // tg: code/modules/clothing/spacesuits/plasmamen.dm:14

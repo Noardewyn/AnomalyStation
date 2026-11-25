@@ -767,6 +767,13 @@ dye: a greyscale model tinted at run time).
   smooth, dark tiger, light tiger and spikes tails, each with a **wagging** animation (`m_tail_lizard_wagging_<style>_*`, tg's
   animated states), and their **tail spines** (`lizard_spines.dmi`, `m_tailspines_*`: short, long, the membranes, aquatic) riding on the
   tail and wagging with it. Meanwhile tg's sprites.
+- **Moth body, wings and antennae** (gaps SP2a, `species_parts/moth_bodyparts.dm`, `icons/mob/human/species/moth/`: `bodyparts.dmi`
+  `moth_*`, `moth_wings.dmi` `m_moth_wings_<style>_FRONT/BEHIND`, `moth_antennae.dmi`, `moth_markings.dmi`): the fuzzy head, chest and
+  limbs with their body markings, the large **wings** (about 25 styles, including the burnt-off one, opening and closing for the flap)
+  and the feathery **antennae**; the wings are the part that matters in 3D (they show the drift in zero gravity). Meanwhile tg's sprites.
+- **Plasmaman body and envirosuits** (gaps SP2a, `species_parts/plasmaman_bodyparts.dm`, `icons/mob/human/species/plasmaman/bodyparts.dmi`;
+  `icons/mob/clothing/under/plasmaman.dmi`, `icons/mob/clothing/head/plasmaman_head.dmi`): the skeleton's bones, one **envirosuit** and
+  one **helmet** per job (with the welding visor, the torch light and the crayon smile overlay) and the envirogloves. Meanwhile tg's sprites.
 - **Snouts, horns and frills** (gaps SP1, `icons/mob/human/species/lizard/lizard_misc.dmi`, `m_snout_*`, `m_horns_*`, `m_frills_*`): the
   sharp and round snouts with their light-belly kinds; the simple, short, curled, ram and angler horns; the simple, short and aquatic
   frills. Meanwhile tg's sprites.

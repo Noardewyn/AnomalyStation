@@ -60,13 +60,13 @@ public class SpeciesSetupGameplayTests(ITestOutputHelper output)
         UiValue species = prefs.Context.Data.Get("constant_data")?.Get("species");
         output.WriteLine("species on the client: " + string.Join(", ", species?.Fields.Select(f => f.Key) ?? []));
         Assert.NotNull(species);
-        Assert.Equal(new[] { "felinid", "human", "lizard" }, species.Fields.Select(f => f.Key).OrderBy(k => k, StringComparer.Ordinal));
+        Assert.Subset(species.Fields.Select(f => f.Key).ToHashSet(), new HashSet<string> { "felinid", "human", "lizard" }); // and every other live roundstart species (D349)
 
         // the client's species page: one button per species; a click picks the lizard
         prefs.Content.Walk().Single(n => n.Kind == UiKind.Button && n.Tooltip == "Species").OnClick();
         prefs = Window(windows, replica, "PreferencesMenu");
         List<UiNode> buttons = prefs.Content.Walk().Where(n => n.Kind == UiKind.Button && n.Key?.StartsWith("species:", StringComparison.Ordinal) == true).ToList();
-        Assert.Equal(3, buttons.Count);
+        Assert.Equal(species.Fields.Count(), buttons.Count);
         buttons.Single(b => b.Key == "species:lizard").OnClick();
         w.Run(Second / 2);
         prefs = Window(windows, replica, "PreferencesMenu");

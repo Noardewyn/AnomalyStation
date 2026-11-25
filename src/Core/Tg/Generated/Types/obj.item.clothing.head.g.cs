@@ -2742,9 +2742,9 @@ public partial class obj_item_clothing_head_helmet_space_pirate_tophat
     }
 }
 
-// tg: code/modules/clothing/spacesuits/plasmamen.dm:75
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_helmet_space_plasmaman : obj_item_clothing_head_helmet_space
+// tg: code/modules/clothing/spacesuits/plasmamen.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman")]
+public partial class obj_item_clothing_head_helmet_space_plasmaman
 {
     public float helmet_on = 0; // tg: code/modules/clothing/spacesuits/plasmamen.dm:98
     public float smile = 0; // tg: code/modules/clothing/spacesuits/plasmamen.dm:99
@@ -2788,7 +2788,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman : obj_item_cl
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:224
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_security : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:224
@@ -2803,7 +2803,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_security : ob
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:236
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security/detective"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security/detective"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_security_detective : obj_item_clothing_head_helmet_space_plasmaman_security
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:236
@@ -2818,7 +2818,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_security_dete
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:248
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security/warden"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security/warden"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_security_warden : obj_item_clothing_head_helmet_space_plasmaman_security
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:248
@@ -2833,7 +2833,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_security_ward
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:260
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security/head_of_security"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/security/head_of_security"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_security_head_of_security : obj_item_clothing_head_helmet_space_plasmaman_security
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:260
@@ -2848,7 +2848,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_security_head
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:272
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/prisoner"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/prisoner"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_prisoner : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:272
@@ -2862,7 +2862,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_prisoner : ob
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:278
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/medical"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/medical"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_medical : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:278
@@ -2876,7 +2876,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_medical : obj
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:284
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/coroner"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/coroner"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_coroner : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:284
@@ -2890,7 +2890,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_coroner : obj
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:290
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/paramedic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/paramedic"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_paramedic : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:290
@@ -2904,7 +2904,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_paramedic : o
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:296
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/viro"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/viro"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_viro : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:296
@@ -2918,7 +2918,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_viro : obj_it
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:302
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chemist"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chemist"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_chemist : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:302
@@ -2932,7 +2932,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_chemist : obj
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:308
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chief_medical_officer"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chief_medical_officer"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_chief_medical_officer : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:308
@@ -2946,7 +2946,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_chief_medical
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:314
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/science"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/science"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_science : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:314
@@ -2960,7 +2960,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_science : obj
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:320
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/robotics"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/robotics"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_robotics : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:320
@@ -2974,7 +2974,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_robotics : ob
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:326
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/genetics"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/genetics"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_genetics : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:326
@@ -2988,7 +2988,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_genetics : ob
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:332
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/research_director"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/research_director"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_research_director : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:332
@@ -3002,7 +3002,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_research_dire
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:338
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/engineering"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/engineering"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_engineering : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:338
@@ -3017,7 +3017,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_engineering :
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:348
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/atmospherics"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/atmospherics"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_atmospherics : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:348
@@ -3033,7 +3033,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_atmospherics 
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:356
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chief_engineer"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chief_engineer"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_chief_engineer : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:356
@@ -3049,7 +3049,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_chief_enginee
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:364
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/cargo"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/cargo"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_cargo : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:364
@@ -3063,7 +3063,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_cargo : obj_i
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:370
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/mining"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/mining"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_mining : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:370
@@ -3078,7 +3078,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_mining : obj_
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:377
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chaplain"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/chaplain"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_chaplain : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:377
@@ -3092,7 +3092,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_chaplain : ob
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:383
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/white"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/white"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_white : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:383
@@ -3106,7 +3106,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_white : obj_i
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:389
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/curator"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/curator"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_curator : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:389
@@ -3129,7 +3129,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_curator : obj
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:398
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/botany"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/botany"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_botany : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:398
@@ -3143,7 +3143,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_botany : obj_
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:404
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/janitor"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/janitor"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_janitor : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:404
@@ -3157,7 +3157,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_janitor : obj
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:410
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/mime"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/mime"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_mime : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:410
@@ -3171,9 +3171,9 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_mime : obj_it
     }
 }
 
-// tg: code/modules/clothing/spacesuits/plasmamen.dm:417
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/clown"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_helmet_space_plasmaman_clown : obj_item_clothing_head_helmet_space_plasmaman
+// tg: code/modules/clothing/spacesuits/plasmamen.dm:417 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/clown")]
+public partial class obj_item_clothing_head_helmet_space_plasmaman_clown
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:417
     public obj_item_clothing_head_helmet_space_plasmaman_clown()
@@ -3188,7 +3188,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_clown : obj_i
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:429
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/head_of_personnel"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_head_of_personnel : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:429
@@ -3203,7 +3203,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_head_of_perso
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:441
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/captain"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/captain"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_captain : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:441
@@ -3218,7 +3218,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_captain : obj
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:453
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/centcom_commander"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/centcom_commander"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_centcom_commander : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:453
@@ -3233,7 +3233,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_centcom_comma
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:465
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/centcom_official"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/centcom_official"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_centcom_official : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:465
@@ -3247,7 +3247,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_centcom_offic
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:471
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/centcom_intern"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/centcom_intern"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_centcom_intern : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:471
@@ -3261,7 +3261,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_centcom_inter
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:477
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/syndie"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/syndie"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_syndie : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:477
@@ -3275,7 +3275,7 @@ public partial class obj_item_clothing_head_helmet_space_plasmaman_syndie : obj_
 }
 
 // tg: code/modules/clothing/spacesuits/plasmamen.dm:484
-[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/bitrunner"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/space/plasmaman/bitrunner"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_space_plasmaman_bitrunner : obj_item_clothing_head_helmet_space_plasmaman
 {
     // tg: code/modules/clothing/spacesuits/plasmamen.dm:484

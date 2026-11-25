@@ -468,7 +468,7 @@ public sealed partial class ServerHost : IClientHost, IDisposable
     /// D349: <c>ROUNDSTART_RACES</c> of tg's roundstart species that are live, or with <see cref="ServerConfig.AllSpeciesRoundstart"/> of
     /// every live species. An inert species (its tg code not translated, D112) is never offered: its body would run its parent's code.
     /// </summary>
-    internal static string RoundstartRaces(ServerConfig config)
+    public static string RoundstartRaces(ServerConfig config)
     {
         HashSet<string> live = typeof(datum_species).Assembly.GetTypes()
             .Where(t => t.IsSubclassOf(typeof(datum_species)) && !t.IsAbstract && !t.IsDefined(typeof(DmInertAttribute), inherit: false))

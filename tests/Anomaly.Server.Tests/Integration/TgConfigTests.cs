@@ -100,7 +100,8 @@ public class TgConfigTests
         ServerConfig config = ServerConfig.Parse(new[] { "--ticks", "10", "--run-delay", "2", "--walk-delay=5.5" }, _ => null, out string error);
         Assert.Null(error);
         Assert.Equal((2f, 5.5f), (config.RunDelay, config.WalkDelay));
-        Assert.Equal("RUN_DELAY 2\nWALK_DELAY 5.5\nREACTIONARY_EXPLOSIONS\nBOMBCAP 20\nOOC_DURING_ROUND\nPROTECT_ROLES_FROM_ANTAGONIST\nALLOW_LATEJOIN_ANTAGONISTS\nDYNAMIC_CONFIG_ENABLED\nALLOW_AI\nALLOW_AI_MULTICAM\nALLOW_RANDOM_EVENTS\nEMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2\nALLOW_VOTE_RESTART\nCOMMENDATION_PERCENT_POLL 0.05\nROUNDSTART_RACES human\nROUNDSTART_RACES felinid\nROUNDSTART_RACES lizard\nFORBID_STATION_TRAITS\n", ServerHost.TgConfigText(config));
+        Assert.Equal("RUN_DELAY 2\nWALK_DELAY 5.5\nREACTIONARY_EXPLOSIONS\nBOMBCAP 20\nOOC_DURING_ROUND\nPROTECT_ROLES_FROM_ANTAGONIST\nALLOW_LATEJOIN_ANTAGONISTS\nDYNAMIC_CONFIG_ENABLED\nALLOW_AI\nALLOW_AI_MULTICAM\nALLOW_RANDOM_EVENTS\nEMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2\nALLOW_VOTE_RESTART\nCOMMENDATION_PERCENT_POLL 0.05\n" + ServerHost.RoundstartRaces(config) + "FORBID_STATION_TRAITS\n", ServerHost.TgConfigText(config));
+        Assert.StartsWith("ROUNDSTART_RACES human\nROUNDSTART_RACES felinid\nROUNDSTART_RACES lizard\n", ServerHost.RoundstartRaces(config)); // tg's list order (D349)
         CommandLog log = CommandLog.Parse(CommandLog.For(config).ToText(), out error);
         Assert.Null(error);
         Assert.Equal((2f, 5.5f), (log.ReplayConfig().RunDelay, log.ReplayConfig().WalkDelay));

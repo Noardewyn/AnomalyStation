@@ -31567,9 +31567,9 @@ public partial class datum_species_monkey
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mothmen.dm:2
-[DmPath("/datum/species/moth"), DmGeneratedOnly, DmInert]
-public partial class datum_species_moth : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/mothmen.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/moth")]
+public partial class datum_species_moth
 {
     // tg: code/modules/mob/living/carbon/human/species_types/mothmen.dm:2
     public datum_species_moth()
@@ -31633,9 +31633,9 @@ public partial class datum_species_mush : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2
-[DmPath("/datum/species/plasmaman"), DmGeneratedOnly, DmInert]
-public partial class datum_species_plasmaman : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/plasmaman")]
+public partial class datum_species_plasmaman
 {
     // tg: code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2
     public datum_species_plasmaman()

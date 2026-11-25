@@ -570,9 +570,9 @@ public partial class datum_status_effect_grouped_heretic_dreams : datum_status_e
     }
 }
 
-// tg: code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:3
-[DmPath("/datum/status_effect/grouped/bodypart_effect"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_bodypart_effect : datum_status_effect_grouped
+// tg: code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/bodypart_effect")]
+public partial class datum_status_effect_grouped_bodypart_effect
 {
     public DmList bodyparts; // tg: code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:9
     public float minimum_bodyparts = 1; // tg: code/modules/surgery/bodyparts/bodypart_effects/bodypart_effect.dm:11
@@ -641,9 +641,9 @@ public partial class datum_status_effect_grouped_bodypart_effect_photosynthesis 
     }
 }
 
-// tg: code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:3
-[DmPath("/datum/status_effect/grouped/bodypart_effect/plasma_based"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_grouped_bodypart_effect_plasma_based : datum_status_effect_grouped_bodypart_effect
+// tg: code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/grouped/bodypart_effect/plasma_based")]
+public partial class datum_status_effect_grouped_bodypart_effect_plasma_based
 {
     public float fire_stacks_per_second = 0.0416f; // tg: code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:7
     public float fire_stacks_loss = 1.66f; // tg: code/modules/surgery/bodyparts/bodypart_effects/plasma_based.dm:10

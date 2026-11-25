@@ -202,6 +202,19 @@ public partial class obj_item_clothing_under
     }
 }
 
+// tg: code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:102
+public partial class obj_item_clothing_under_plasmaman_clown_magic
+{
+    // tg: code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:104
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        Dm.Deferred("code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:104", "Initialize: the wizard's enchanted clown suit adds the clown pockets spell (a wizard item, antagonist code not ported) (D349)");
+        return default;
+    }
+}
+
 // tg: code/modules/clothing/neck/_neck.dm:51
 public partial class obj_item_clothing_neck_tie
 {

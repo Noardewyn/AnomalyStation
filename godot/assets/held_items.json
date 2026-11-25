@@ -324,14 +324,14 @@
     "wield_attack": "wield_stab"
   },
   "icons/obj/weapons/chainsaw.dmi:chainsaw_on": {
-    "yaw": -4,
-    "pitch": -116,
-    "roll": -161,
+    "yaw": -59,
+    "pitch": 151,
+    "roll": -131,
     "scale": 1.22,
-    "x": 0.04,
-    "y": 0.177,
+    "x": -0.07,
+    "y": 0.163,
     "z": -0.024,
-    "attack": "stab",
+    "attack": "melee_swing",
     "wield_attack": "wield_stab"
   },
   "icons/obj/weapons/chainsaw.dmi:chainsawdual": {
@@ -342,6 +342,15 @@
     "x": 0.155,
     "y": -0.038,
     "z": -0.071
+  },
+  "icons/obj/weapons/chainsaw.dmi:chainsawdual_on": {
+    "yaw": 10,
+    "pitch": 6,
+    "roll": -11,
+    "scale": 1.24,
+    "x": -0.089,
+    "y": -0.199,
+    "z": -0.046
   },
   "icons/obj/weapons/changeling_items.dmi:ling_shield": {
     "attack": "stab"

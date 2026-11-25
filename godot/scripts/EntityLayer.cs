@@ -2094,7 +2094,23 @@ public partial class EntityLayer : Node3D
 
     // Things that arrive while playing are built over the next frames, nearest first, within SpawnBudgetMs a frame: walking into a new part
     // of the map brings hundreds at once (M10's interest), and building them in one frame was a visible stall. Mobs and visuals come at once.
-    private const double SpawnBudgetMs = 4;
+    public const double SpawnBudgetMs = 4;
+
+    /// <summary>The frame time the queued things may take to be built: <see cref="SpawnBudgetMs"/> in play, more under the loading screen.</summary>
+    public double SpawnBudget { get; set; } = SpawnBudgetMs;
+
+    /// <summary>The things queued to be built (<see cref="AddPending"/>) within <paramref name="tiles"/> of a point on the map.</summary>
+    public int PendingNear(double x, double y, double tiles)
+    {
+        int near = 0;
+        foreach (ReplicaEntity e in _pending.Values)
+        {
+            double dx = e.State.X - x, dy = e.State.Y - y;
+            if (dx * dx + dy * dy <= tiles * tiles)
+                near++;
+        }
+        return near;
+    }
     private readonly Dictionary<long, ReplicaEntity> _pending = new();
     private ReplicaEntity[] _pendingOrder = [];
     private double[] _pendingDistance = [];
@@ -2134,7 +2150,7 @@ public partial class EntityLayer : Node3D
             long one = System.Diagnostics.Stopwatch.GetTimestamp();
             Add(entity);
             Dev.FrameProbe.Item("spawn", entity.TypePath, System.Diagnostics.Stopwatch.GetElapsedTime(one).TotalMilliseconds);
-            if (System.Diagnostics.Stopwatch.GetElapsedTime(start).TotalMilliseconds >= SpawnBudgetMs)
+            if (System.Diagnostics.Stopwatch.GetElapsedTime(start).TotalMilliseconds >= SpawnBudget)
                 break;
         }
         Array.Clear(_pendingOrder, 0, count); // holds no despawned entity

@@ -122,6 +122,18 @@ public static class FrameProbe
         FrameDraws.Add((int)Performance.GetMonitor(Performance.Monitor.RenderTotalDrawCallsInFrame));
     }
 
+    /// <summary>The world was shown (the loading screen gone): the summary counts the frames from here.</summary>
+    public static void Restart()
+    {
+        if (!On)
+            return;
+        GD.Print($"[frameprobe] the world is shown after {_frame} frames of loading; the summary counts from here");
+        FrameMs.Clear();
+        FrameDraws.Clear();
+        RunSections.Clear();
+        _frame = 0;
+    }
+
     /// <summary>
     /// The whole run's frames (tools/perf/walk.sh reads it): the frame time percentiles and maximum, the frames over 33, 50 and 100 ms,
     /// the draw calls' median and maximum; the first 60 frames (the join) are left out.
@@ -130,6 +142,7 @@ public static class FrameProbe
     {
         if (!On || FrameMs.Count <= 60)
             return null;
+        float first = FrameMs.Take(60).Max(); // the frames right after the join (or the loading screen), which the rest leaves out
         var ms = FrameMs.GetRange(60, FrameMs.Count - 60);
         var draws = FrameDraws.GetRange(60, FrameDraws.Count - 60);
         double seconds = 0;
@@ -144,7 +157,7 @@ public static class FrameProbe
         string sections = string.Join(" ", RunSections.Where(kv => !kv.Key.Contains(' ')).OrderByDescending(kv => kv.Value).Take(14)
             .Select(kv => string.Create(c, $"{kv.Key}={kv.Value / ms.Count:0.00}")));
         return string.Create(c,
-            $"frames={ms.Count} seconds={seconds:0.0} avg_fps={ms.Count / seconds:0.0} p50_ms={At(0.5):0.0} p95_ms={At(0.95):0.0} p99_ms={At(0.99):0.0} max_ms={ms[^1]:0.0} over33={Over(33)} over50={Over(50)} over100={Over(100)} draws_p50={draws[draws.Count / 2]} draws_max={draws[^1]} | per frame: {sections}");
+            $"frames={ms.Count} seconds={seconds:0.0} avg_fps={ms.Count / seconds:0.0} p50_ms={At(0.5):0.0} p95_ms={At(0.95):0.0} p99_ms={At(0.99):0.0} max_ms={ms[^1]:0.0} over33={Over(33)} over50={Over(50)} over100={Over(100)} draws_p50={draws[draws.Count / 2]} draws_max={draws[^1]} first60_max_ms={first:0.0} | per frame: {sections}");
     }
 
     /// <summary>

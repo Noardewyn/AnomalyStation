@@ -195,7 +195,14 @@ public partial class GameScene : Node3D
         var textures = new AppearanceTextures();
         // the map editor looks at a whole station from far above: the model parts too small to be seen from there are not drawn (map-editor.md 5.6)
         Render.ChunkBatch.SmallPartRange = app.Editing ? EditorSmallPartRange : 0f;
-        _map.Build(_feed.Map, _feed.Replica, textures);
+        BeginLoading(textures); // the map is built over the next frames under the loading screen, then FinishReady (GameScene.Loading.cs)
+    }
+
+    // The rest of the scene, made once its map is built.
+    private void FinishReady(AppearanceTextures textures)
+    {
+        App app = App.Instance;
+        ClientArgs args = app.Args;
         _entities.Bind(_feed, textures, _map);
         _entities.Rest = _map.TryRest; // things at rest lie on shelves and table tops (docs/ai/specs/models.md)
         _entities.LieOn = _map.TryLieOn; // DV127: bodies lie on beds, stretchers and tables
@@ -300,16 +307,15 @@ public partial class GameScene : Node3D
 
         StartEditor(app, args);
         StartPlayed(app);
-        if (args.Bench)
-            _bench = new BenchRunner(args, _feed, _map, _rig, GetViewport(), _light, _map.LoadSeconds, _options.CustomGraphics);
         _startedAt = App.NowSeconds;
         _scriptBase = scriptGoesOn ? app.ScriptStartedAt.Value : _startedAt;
         if (app.HasEditor)
             app.ScriptStartedAt = _scriptBase;
         _lastFrameAt = _startedAt;
         _rateAt = _startedAt;
+        SetProcessInput(true);
+        SetProcessUnhandledInput(true);
         app.SummaryProvider = Summary;
-        app.GameStarted();
         GD.Print($"[anomaly] game: {_feed.Description}: map {_feed.Map.Width}x{_feed.Map.Height}x{_feed.Map.Levels}, {_feed.Count} entities, own #{_feed.OwnEntity}, camera {_rig.Mode}, input buffer target {(remote ? 2 : 1)}");
     }
 
@@ -513,6 +519,8 @@ public partial class GameScene : Node3D
 
     public override void _Process(double delta)
     {
+        if (StepBuild())
+            return;
         UpdateInterfaceVisibility();
         Dev.FrameProbe.BeginFrame();
         Dev.FrameProbe.Record();
@@ -532,7 +540,8 @@ public partial class GameScene : Node3D
         _lastFrameAt = now;
         _frames++;
 
-        RunScript(now);
+        if (_cover == null) // (the script's clock stands while the loading screen is up: GameScene.Loading.cs)
+            RunScript(now);
         // the keys are polled, so a field of the dev menu being typed in (ImGui's) is a UI that holds them too
         bool uiOpen = PanelsOpen || _imgui?.WantsText == true || _tguiHost?.Typing == true || SayOpen || ChatTyping;
         MoveKeys keys = _rig.Mode == CameraMode.Free || uiOpen ? MoveKeys.None : (_walker != null ? WalkerKeys(now) : ReadMoveKeys());

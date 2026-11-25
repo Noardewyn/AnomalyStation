@@ -52,6 +52,9 @@ public sealed class ModelLibrary
 
     private const int DecodesInFlight = 8;
     private readonly List<Warm> _warm = new();
+
+    /// <summary>The parts queued by <see cref="PrepareFamily"/> and not built yet.</summary>
+    public int WarmUpCount => _warm.Count;
     private readonly Dictionary<byte[], (Task<Raster> Task, int Users)> _decoding = new(ReferenceEqualityComparer.Instance);
     private readonly Dictionary<string, (byte[] Png, IconSheet Sheet)> _sheets = new(StringComparer.Ordinal);
     private readonly Dictionary<byte[], Task<string>> _hashing = new(ReferenceEqualityComparer.Instance);

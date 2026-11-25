@@ -133,10 +133,26 @@ public partial class MapRenderer : Node3D, IStaticPropHost
     /// <summary>The M1 look: tinted boxes and floor (no appearances).</summary>
     public void Build(MapGrid map) => Build(map, null, null);
 
-    /// <summary>The world from a replica's turf appearances, entities and tables and the pictures of the entity layer.</summary>
+    /// <summary>The world from a replica's turf appearances, entities and tables and the pictures of the entity layer, at once.</summary>
     public void Build(MapGrid map, ReplicaWorld replica, AppearanceTextures textures)
     {
+        IEnumerator<float> steps = BuildSteps(map, replica, textures);
+        while (steps.MoveNext())
+        {
+        }
+    }
+
+    /// <summary>What <see cref="BuildSteps"/> is doing now, for the loading screen.</summary>
+    public string BuildPhase { get; private set; }
+
+    /// <summary>
+    /// <see cref="Build"/> in small steps (a chunk's tiles, one thing placed, one model built), so the game's loading screen spreads it over frames
+    /// and its bar moves: each step yields how far the build is, 0 to 1. Nothing else may touch the renderer or the replica between the steps.
+    /// </summary>
+    public IEnumerator<float> BuildSteps(MapGrid map, ReplicaWorld replica, AppearanceTextures textures)
+    {
         var watch = Stopwatch.StartNew();
+        BuildPhase = "Planning the map";
         _width = map.Width;
         _height = map.Height;
         _levels = map.Levels;
@@ -164,6 +180,8 @@ public partial class MapRenderer : Node3D, IStaticPropHost
         foreach (ChunkPlan planned in _plan.Chunks)
             DropEngineTiles(planned, engines);
         Dev.FrameProbe.Mark("build/plan", watch);
+        BuildPhase = "Laying the floors and walls";
+        yield return 0.1f;
 
         _quadMesh = WorldMeshes.PictureQuad();
         _pieceMesh = WorldMeshes.Pieces();
@@ -204,9 +222,11 @@ public partial class MapRenderer : Node3D, IStaticPropHost
                 }
             }
             chunkTiles[chunk] = list;
+            yield return 0.1f + 0.15f * chunkTiles.Count / _plan.Chunks.Count;
         }
         _tileKit.Finish();
         Dev.FrameProbe.Mark("build/tiles", watch);
+        yield return 0.26f;
 
         foreach (ChunkPlan chunk in _plan.Chunks)
         {
@@ -220,6 +240,7 @@ public partial class MapRenderer : Node3D, IStaticPropHost
             AddOccluder(turfs, chunk);
             _turfNodes[(chunk.ChunkX, chunk.ChunkY, chunk.Z)] = turfs;
             _batches[(chunk.ChunkX, chunk.ChunkY, chunk.Z)] = new ChunkBatch(chunk, root, _quadMesh, _pieceMesh, _atlas?.Material, bounds, ModelMeshAt, ModelMaterialAt);
+            yield return 0.26f + 0.06f * _batches.Count / _plan.Chunks.Count;
         }
 
         if (_atlas != null)
@@ -227,6 +248,8 @@ public partial class MapRenderer : Node3D, IStaticPropHost
             // the models' textures decode on the thread pool while the records are laid (each model starts its own), and the models that
             // found theirs decoding are built after the loop, waiting for them: the join decodes in parallel, not one texture after another
             _models.WaitForTextures = false;
+            BuildPhase = "Placing the things";
+            int things = _plan.Chunks.Sum(c => c.Placed.Count), placedSoFar = 0;
             foreach (ChunkPlan chunk in _plan.Chunks)
             {
                 ChunkBatch batch = _batches[(chunk.ChunkX, chunk.ChunkY, chunk.Z)];
@@ -238,20 +261,30 @@ public partial class MapRenderer : Node3D, IStaticPropHost
                         AddRecord(entity, placed, batch);
                         Dev.FrameProbe.Item("record", entity.TypePath, Stopwatch.GetElapsedTime(one).TotalMilliseconds);
                     }
+                    yield return 0.32f + 0.5f * ++placedSoFar / Math.Max(1, things);
                 }
                 AttachTurfs((chunk.ChunkX, chunk.ChunkY, chunk.Z), chunk.Tiles, batch);
+                yield return 0.32f + 0.5f * placedSoFar / Math.Max(1, things);
             }
             Dev.FrameProbe.Mark("build/records", watch);
+            BuildPhase = "Building the models";
             _models.WaitForTextures = true;
-            foreach (StaticRecord record in _awaitingIcons.ToList())
+            List<StaticRecord> awaiting = _awaitingIcons.ToList();
+            for (int i = 0; i < awaiting.Count; i++)
             {
-                _awaitingIcons.Remove(record);
-                BuildInstances(record);
+                _awaitingIcons.Remove(awaiting[i]);
+                BuildInstances(awaiting[i]);
+                yield return 0.82f + 0.1f * (i + 1) / awaiting.Count;
             }
             _models.WaitForTextures = false; // in play a model whose textures are not in waits for them off the frame (RetryAwaitingIcons)
             Dev.FrameProbe.Mark("build/models", watch);
+            BuildPhase = "Packing the pictures";
+            int rebuilt = 0;
             foreach (ChunkBatch batch in _batches.Values)
+            {
                 batch.Rebuild();
+                yield return 0.92f + 0.06f * ++rebuilt / _batches.Count;
+            }
             _dirty.Clear();
             _atlas.Flush();
             Dev.FrameProbe.Mark("build/atlas", watch);
@@ -262,6 +295,8 @@ public partial class MapRenderer : Node3D, IStaticPropHost
         Extent = new Vector2(map.Width * TileSpace.TileSize, map.Height * TileSpace.TileSize);
         Center = new Vector3(Extent.X / 2f, 0, -Extent.Y / 2f);
         LoadSeconds = watch.Elapsed.TotalSeconds;
+        BuildPhase = null;
+        yield return 1f;
     }
 
     // ---- the third-person view's line of sight ----
@@ -2065,7 +2100,13 @@ public partial class MapRenderer : Node3D, IStaticPropHost
     /// (they go to the layer as nodes), changed their picture, or are doors whose state or cell changed; then slides the moving doors.
     /// </summary>
     // The frame time the model families' warm-up may take (ModelLibrary.StepWarmUp).
-    private const double WarmUpBudgetMs = 3;
+    public const double WarmUpBudgetMs = 3;
+
+    /// <summary>The frame time the model families' warm-up may take: <see cref="WarmUpBudgetMs"/> in play, more under the loading screen.</summary>
+    public double WarmUpBudget { get; set; } = WarmUpBudgetMs;
+
+    /// <summary>Model parts queued to be built before they show (<see cref="ModelLibrary.StepWarmUp"/>): the loading screen waits for none.</summary>
+    public int WarmUpPending => _models?.WarmUpCount ?? 0;
 
     public void Update(double delta) => Update(delta, double.NaN);
 
@@ -2143,7 +2184,7 @@ public partial class MapRenderer : Node3D, IStaticPropHost
             }
         }
         using (Dev.FrameProbe.Scope("map/models.WarmUp"))
-            _models?.StepWarmUp(WarmUpBudgetMs);
+            _models?.StepWarmUp(WarmUpBudget);
         using (Dev.FrameProbe.Scope("map/batch.Upload"))
             ChunkBatch.UploadPending();
     }

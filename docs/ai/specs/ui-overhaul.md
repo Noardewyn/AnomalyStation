@@ -41,25 +41,24 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `e3af6b3` | Package 2, slice D: the vitals column at the right edge, alerts as chips, the hint strip over the hands, the swap key cap, the red cuffed hand (client only; section 6, "Slice D as built") |
 | `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV589; section 9, one known fault accepted by the contributor) |
 | `fc882c5` | Package 2, slice E: the vitals without a box, tg's combat toggle in the corner, the key-duplicating buttons hidden, keys for crafting, language and navigate, "Offer item" in the wheel (server and client, no wire change, DV139; section 6, "Slice E as built") |
+| `52bcb78` | Package T, slice T5's numbers: the look-down pivot 0.25 m and the limit 135 degrees (client only; section 8, "T5's numbers changed") |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
 Next, in this order:
-1. Slice T5's numbers, settled by the contributor on 2026-11-26 after a comparison sheet (pivots 15, 20, 25 cm at
-   105 to 150 degrees; the session's scratchpad, `pivot`): the pivot becomes 0.25 m and the downward limit 135
-   degrees (`LookDown.PivotMetres`, `MaxDownDegrees`). By the geometry the crosshair is then on the feet at 105
-   degrees, the groin at about 117 to 121 and the chest from there to 135; to confirm in the playtest. To build
-   after slice D and the in-range prompt's commit. The contributor also said: "for now we just use the inventory
-   to do operations on yourself mainly", so looking down is a secondary way and gets no more design work (no way
-   to reach the arms by look); the Tab overlay's character sprite (package 4) is the main one. Tg's zone selector
-   stays under Tab.
-2. The prompt beside the crosshair only when the thing looked at is in reach: committed after `e3af6b3` with one
-   known fault the contributor accepted (section 9, "The in-range prompt: built, committed with one known fault").
-3. Package 2, slice E (section 6): no box round the vitals, tg's combat sprite back at the bottom right, tg's
-   key-duplicating buttons removed, keys for crafting, language and navigate. The devlog screenshots of the HUD
-   (`../devlog-screenshots/2026-11-26/`, outside the repository) are retaken after it.
-4. Packages 3 to 8 and what section 9 adds.
+1. The devlog screenshots of the HUD (`../devlog-screenshots/2026-11-26/`, outside the repository) are retaken
+   with slice E's look and the new look-down numbers.
+2. Package 3 (the belt hotbar; a wire change, so the contributor signs off before the commit). The manager
+   designs it and the designer confirms the design before a builder starts.
+3. Packages 4 to 8 and what section 9 adds. The Tab overlay's character sprite (package 4) is the main way to act
+   on oneself (the contributor, 2026-11-26: "for now we just use the inventory to do operations on yourself
+   mainly"); looking down is a secondary way and gets no more design work. Tg's zone selector stays under Tab.
+
+Seen in play and not yet looked into: the prompt not always matching where the crosshair is drawn, and "Headpat"
+offered to a handcuffed player (section 9); a patient buckled to the operating table drawn as an upright sideways
+picture over the table; the radial's title crossed through by the ring line; Shift+F4 pressed twice within two
+seconds not bringing the HUD back.
 
 
 To tell the owner (the contributor does this; `DECISIONS.md` is not edited by us): the protocol changes of version

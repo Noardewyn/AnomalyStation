@@ -877,7 +877,7 @@ public sealed partial class FakeServer
             _screen[FullscreenId] = new ScreenEntry(FullscreenId, Leaf(ScreenFullIcon, "brutedamageoverlay", (byte)(40 + severity * 30), 18f), "CENTER-7,CENTER-7");
         else
             _screen.Remove(FullscreenId);
-        _screen[IntentId] = new ScreenEntry(IntentId, Leaf(ScreenGenIcon, p.Run ? "running" : "walking", 255, 20f), "EAST-2:26,SOUTH:5");
+        _screen[IntentId] = new ScreenEntry(IntentId, Leaf(ScreenGenIcon, p.Run ? "running" : "walking", 255, 20f), "EAST-2:26,SOUTH:5") { Group = HudGroup.Static }; // tg: HUD_GROUP_STATIC (hud/human.dm)
         // tg's human HUD (hud/human.dm): the zone selector (HUD_GROUP_STATIC, ui_zonesel) with the selected zone as its overlay (the client shows it
         // in cursor mode only), and the combat toggle (HUD_GROUP_INFO, ui_acti) whose icon state follows combat mode
         if (p.ZoneSelected != _zoneShown || initial)

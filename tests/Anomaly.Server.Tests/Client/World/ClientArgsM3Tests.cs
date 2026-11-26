@@ -88,10 +88,12 @@ public sealed class ClientArgsM3Tests
     }
 
     [Fact]
-    public void TheFlashlightIsAnActionOnL()
+    public void TheFlashlightIsAnActionOnU()
     {
+        // on L until ui-overhaul.md section 6, slice E, which gave L to the language menu
         KeyBindings keys = KeyBindings.Defaults();
-        Assert.Equal(PlayAction.Flashlight, keys.ActionOf("L"));
+        Assert.Equal(PlayAction.Flashlight, keys.ActionOf("U"));
+        Assert.Equal(PlayAction.LanguageMenu, keys.ActionOf("L"));
         Assert.Equal("flashlight", KeyBindings.IdOf(PlayAction.Flashlight));
     }
 }

@@ -6,7 +6,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M8y slice D (D230): the radial context menu's Buckle, Unbuckle, Pull and Stop pulling, beyond tg's screentips; M8z adds Climb (slice C) and Strip (slice B, D238). Not tg code: the host's
+// M8y slice D (D230): the radial context menu's Buckle, Unbuckle, Pull and Stop pulling, beyond tg's screentips; M8z adds Climb (slice C) and Strip (slice B, D238);
+// ui-overhaul.md section 6, slice E adds Offer item (tg's give, which was the give key's). Not tg code: the host's
 // screentip sink adds them after tg's own entries (a label tg already gives is not repeated). They are advisory, as tg's are: the choice
 // runs tg's own action (the drag of oneself onto the thing, the empty hand's click, the ctrl-click, the stop-pulling keybinding), which
 // checks everything again. DEVIATION(DV139).
@@ -39,15 +40,25 @@ public enum RadialExtra : byte
 
     /// <summary>DV588 (package T, slice T4c): a lying carbon turned face up or face down (not in tg: <c>mob_living.radial_turn_over</c>, a do_after).</summary>
     TurnOver = 9,
+
+    /// <summary>
+    /// DV139 (ui-overhaul.md section 6, slice E): the held item offered to the mob, tg's <c>/mob/living/proc/give(offered)</c>
+    /// (living_item_handling.dm:130), which was the give key's.
+    /// </summary>
+    Offer = 10,
 }
 
 public static class RadialExtras
 {
+    /// <summary>The label of <see cref="RadialExtra.Offer"/>: the words of tg's own screentip for it (carbon_context.dm), which the host leaves out of tg's entries.</summary>
+    public static string OfferLabel => I18n.T("Offer item");
+
     /// <summary>
     /// The entries of D230 and D238 that <paramref name="user"/> can use on <paramref name="target"/> now, with their labels, in this order: Buckle
     /// (a thing he can buckle himself to, as tg's <c>is_user_buckle_possible</c> of a drag), Unbuckle (a thing with someone buckled to it,
     /// his active hand empty), Climb in (a sealed vehicle with a free seat he is not in), Climb (a climbable tg's drag would start climbing), Pull (a thing tg lets him pull) or Stop pulling (the thing he pulls), and Strip (a human whose strip menu
-    /// tg's drag of him onto oneself would open: <c>should_strip</c> and <c>can_perform_action</c>), and Turn over (DV588: a lying carbon). Only for a movable on a turf next to
+    /// tg's drag of him onto oneself would open: <c>should_strip</c> and <c>can_perform_action</c>), Offer item (slice E: a living mob tg's
+    /// <c>give</c> would offer his held item to, <see cref="CanOffer"/>), and Turn over (DV588: a lying carbon). Only for a movable on a turf next to
     /// him (tg's <c>Adjacent</c>); none for a mob he would buckle to (tg's grabs, M9) or for himself. Called in the tick (the hover).
     /// </summary>
     public static List<(RadialExtra Kind, string Label)> Of(mob user, atom target)
@@ -80,6 +91,8 @@ public static class RadialExtras
         if (thing is mob_living_carbon_human victim && Dm.truthy(victim.should_strip(user))
             && Dm.truthy(Waiting.NoSleep(user.can_perform_action(victim, Dm.bitor(FORBID_TELEKINESIS_REACH, ALLOW_RESTING)))))
             entries.Add((RadialExtra.Strip, I18n.T("Strip")));
+        if (thing is mob_living taker && CanOffer(living, taker)) // DEVIATION(DV139): slice E's Offer item, the give key's
+            entries.Add((RadialExtra.Offer, OfferLabel));
         if (thing is mob_living lying && lying.dm_can_be_turned_over) // DEVIATION(DV588)
             entries.Add((RadialExtra.TurnOver, I18n.T("Turn over")));
         return entries;
@@ -96,7 +109,7 @@ public static class RadialExtras
             return;
         foreach ((RadialExtra kind, string offered) in Of(user, target))
         {
-            if (offered != label || !(kind == RadialExtra.Flip && target is obj_structure_table || kind == RadialExtra.TurnOver && target is mob_living))
+            if (offered != label || !(kind == RadialExtra.Flip && target is obj_structure_table || kind is RadialExtra.TurnOver or RadialExtra.Offer && target is mob_living))
                 continue;
             World world = World.Current;
             object caller_usr = world.usr;
@@ -105,6 +118,8 @@ public static class RadialExtras
                 world.usr = user;
                 if (target is obj_structure_table table)
                     Waiting.Detach(table.radial_flip(user));
+                else if (kind == RadialExtra.Offer)
+                    Waiting.Detach(((mob_living)user).give((mob_living)target)); // DV139: tg's give, which checks everything again
                 else
                     Waiting.Detach(((mob_living)target).radial_turn_over(user)); // DV588
             }
@@ -114,6 +129,18 @@ public static class RadialExtras
             }
             return;
         }
+    }
+
+    // DEVIATION(DV139): slice E's Offer item: exactly when tg's give(offered) would go through to the offer (living_item_handling.dm:130-166): the
+    // giver not offering already and not incapacitated, an item in his active hand that give takes (not an abstract one, unless a borg's to give, one
+    // offered when pulled or a hand item), the taker not incapacitated and able to hold items. The adjacency is Of's (tg's IsReachableBy from beside him).
+    private static bool CanOffer(mob_living giver, mob_living taker)
+    {
+        if (Dm.truthy(giver.has_status_effect(typeof(datum_status_effect_offering))) || Dm.truthy(giver.incapacitated) || Dm.truthy(taker.incapacitated)
+            || !HAS_TRAIT(taker, TRAIT_CAN_HOLD_ITEMS))
+            return false;
+        return giver.get_active_held_item() is obj_item item && (!Dm.truthy(Dm.bitand(item.item_flags, ABSTRACT)) || HAS_TRAIT(item, TRAIT_BORG_GIVE)
+            || HAS_TRAIT(item, TRAIT_OFFERED_WHEN_PULLED) || Dm.truthy(Dm.bitand(item.item_flags, HAND_ITEM)));
     }
 
     // DEVIATION(DV156): tg's climbable element would start a climb on the drag (mousedrop_receive's checks and can_climb, asked of the thing's own element).

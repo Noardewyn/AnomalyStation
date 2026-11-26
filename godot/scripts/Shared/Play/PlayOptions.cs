@@ -136,8 +136,18 @@ public enum PlayAction : byte
     /// <summary>M9 slice C (D247): the big chat window [Shift+T].</summary>
     ChatWindow,
 
-    /// <summary>M9 slice F (protocol version 41): tg's <c>/datum/keybinding/living/give</c> [G]: offer the held item.</summary>
-    GiveItem,
+    /// <summary>
+    /// ui-overhaul.md section 6, slice E: tg's crafting menu [G, SS14's OpenCraftingMenu]: the click of tg's crafting button, which the human HUD no
+    /// longer draws (<see cref="LiveHud.ButtonEntry"/>). It took the place of M9 slice F's give key (<c>give_item</c>, read and ignored in an old file);
+    /// "Offer item" is in the radial now.
+    /// </summary>
+    CraftingMenu,
+
+    /// <summary>Slice E: tg's language menu [L, SS14's OpenLanguageMenu]: the click of tg's language button.</summary>
+    LanguageMenu,
+
+    /// <summary>Slice E: tg's navigate [M; SS14 has no such function]: the click of tg's navigate button.</summary>
+    Navigate,
 
     /// <summary>Gaps C2 (protocol version 59): tg's <c>/datum/keybinding/living/view_pet_data</c> [J; Shift before, which is Walk now]: held, hovering a friendly pet opens its commands' radial.</summary>
     ViewPetCommands,
@@ -265,7 +275,9 @@ public sealed class KeyBindings
         b.Set(PlayAction.Pray, "P");
         b.Set(PlayAction.EmoteWheel, "Y");
         b.Set(PlayAction.ChatWindow, "Shift_T");
-        b.Set(PlayAction.GiveItem, "G");
+        b.Set(PlayAction.CraftingMenu, "G");
+        b.Set(PlayAction.LanguageMenu, "L");
+        b.Set(PlayAction.Navigate, "M");
         b.Set(PlayAction.ViewPetCommands, "J");
         b.Set(PlayAction.CloseWindows, "Shift_Escape");
         b.Set(PlayAction.Inventory, "I");
@@ -285,7 +297,7 @@ public sealed class KeyBindings
         b.Set(PlayAction.Names, "F4");
         b.Set(PlayAction.DebugHud, "F3");
         b.Set(PlayAction.HideInterface, "Shift_F4");
-        b.Set(PlayAction.Flashlight, "L");
+        b.Set(PlayAction.Flashlight, "U"); // slice E: L is the language menu
         b.Set(PlayAction.Scoreboard, "K");
         b.Set(PlayAction.Fullscreen, "F11");
         return b;
@@ -446,6 +458,9 @@ public sealed class KeyBindings
         ["shove"] = PlayAction.SecondaryClick,
     };
 
+    /// <summary>The ids of actions the client no longer has, which an old options file may still name: read and ignored (slice E: the give key).</summary>
+    public static readonly IReadOnlySet<string> RetiredIds = new HashSet<string>(StringComparer.Ordinal) { "give_item" };
+
     /// <summary>The action of an id (<see cref="IdOf"/>, or a <see cref="LegacyIds"/> one), or null.</summary>
     public static PlayAction? ActionOfId(string id)
     {
@@ -488,7 +503,9 @@ public sealed class KeyBindings
         PlayAction.Ooc => "OOC",
         PlayAction.Pray => "Pray",
         PlayAction.EmoteWheel => "Emote wheel",
-        PlayAction.GiveItem => "Give item",
+        PlayAction.CraftingMenu => "Crafting menu",
+        PlayAction.LanguageMenu => "Language menu",
+        PlayAction.Navigate => "Navigate",
         PlayAction.ViewPetCommands => "View pet commands",
         PlayAction.CloseWindows => "Close all windows",
         PlayAction.Inventory => "Inventory",
@@ -1450,6 +1467,8 @@ public sealed class PlayOptions
     {
         problem = null;
         PlayAction? action = KeyBindings.ActionOfId(id);
+        if (action == null && KeyBindings.RetiredIds.Contains(id))
+            return true; // an action the client no longer has: its keys stay free for today's actions
         if (action == null)
         {
             problem = "unknown action '" + id + "'";

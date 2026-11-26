@@ -1012,6 +1012,9 @@ public sealed partial class ServerHost
                 ClickModifiers modifiers = (hint.Shift ? ClickModifiers.Shift : 0) | (hint.Ctrl ? ClickModifiers.Ctrl : 0) | (hint.Alt ? ClickModifiers.Alt : 0);
                 ClickButton button = hint.Button == RIGHT_CLICK ? ClickButton.Right : hint.Button == LEFT_CLICK ? ClickButton.Left : ClickButton.None;
                 if (button == ClickButton.None) continue;
+                // DEVIATION(DV139): tg's "Offer item" of a carbon (carbon_context.dm, the Ctrl+Shift-click, offered with any item in hand) is the wheel's
+                // Offer item extra now, offered only when tg's give would go through; the Ctrl+Shift-click itself is tg's still
+                if (modifiers == (ClickModifiers.Ctrl | ClickModifiers.Shift) && button == ClickButton.Left && PlainLabel(hint.Label) == "Offer item") continue; // tg's words, untranslated there
                 message.Hints.Add(new ContextHint(button, modifiers, Truncate(PlainLabel(hint.Label), Limits.MaxContextLabelBytes)));
             }
 
@@ -1026,7 +1029,7 @@ public sealed partial class ServerHost
                     RadialExtra.Pull => new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, label),
                     RadialExtra.StopPulling => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.StopPulling),
                     RadialExtra.Strip => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.DropOntoSelf),
-                    RadialExtra.Flip or RadialExtra.TurnOver => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503); 95 (DV588)
+                    RadialExtra.Flip or RadialExtra.TurnOver or RadialExtra.Offer => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503); 95 (DV588); DV139 slice E
                     _ => new ContextHint(ClickButton.Left, ClickModifiers.None, label), // Unbuckle: the empty hand's click
                 });
             }

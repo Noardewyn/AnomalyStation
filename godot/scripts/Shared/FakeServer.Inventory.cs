@@ -45,6 +45,19 @@ public sealed partial class FakeServer
     /// <summary>tg's inventory toggle (screen/human/toggle at ui_inventory), which only the human HUD has.</summary>
     public const long InventoryToggleId = 2006;
 
+    /// <summary>tg's crafting, language menu, navigate, memories and area creator buttons, the floor changer, pull, resist and rest (hud/human.dm, __DEFINES/hud.dm).</summary>
+    public const long CraftId = 2030, LanguageId = 2031, NavigateId = 2032, MemoriesId = 2033, AreaCreatorId = 2034, FloorChangerId = 2035, PullButtonId = 2036,
+        ResistId = 2037, RestId = 2038;
+
+    private static readonly (long Id, string State, string Loc, byte Group)[] HudButtons =
+    {
+        (CraftId, "craft", "EAST-3:24,SOUTH+1:7", HudGroup.Static), (LanguageId, "talk_wheel", "EAST-3:7,SOUTH+1:24", HudGroup.Static),
+        (NavigateId, "navigate", "EAST-3:7,SOUTH+1:7", HudGroup.Static), (MemoriesId, "memories", "EAST-4:22,SOUTH+1:7", HudGroup.Static),
+        (AreaCreatorId, "area_edit", "EAST-3:24,SOUTH+1:24", HudGroup.Static), (FloorChangerId, "floor_change_v", "EAST-4:22,SOUTH:5", HudGroup.Static),
+        (PullButtonId, "pull0", "EAST-2:26, SOUTH+1:24", HudGroup.Static), (ResistId, "act_resist", "EAST-3:24, SOUTH+1:7", HudGroup.Hotkeys),
+        (RestId, "act_rest", "EAST-1:28,SOUTH+1:7", HudGroup.Hotkeys),
+    };
+
     private const int BeltSlot = 14;
 
     private enum Where : byte { Floor, Hand, Slot, Storage }
@@ -329,6 +342,10 @@ public sealed partial class FakeServer
         _screen[DropId] = new ScreenEntry(DropId, Leaf(HudIcon, "act_drop", 255, 20f), "CENTER-1:16,SOUTH+1:5") { Group = HudGroup.Static };
         _screen[SwapId] = new ScreenEntry(SwapId, Leaf(HudIcon, "act_swap", 255, 20f), "CENTER:16,SOUTH+1:5") { Group = HudGroup.Static };
         _screen[ThrowId] = new ScreenEntry(ThrowId, Leaf(HudIcon, _throwMode ? "act_throw_on" : "act_throw", 255, 20f), "EAST-1:28,SOUTH+1:24") { Group = HudGroup.Hotkeys };
+        // the rest of tg's human HUD buttons (hud/human.dm), at tg's places: a click on one is answered by nothing here (ui-overhaul.md section 6,
+        // slice E: the human HUD draws none of them but the memories button and the area creator under Tab, and the keys send their clicks)
+        foreach ((long id, string state, string loc, byte group) in HudButtons)
+            _screen[id] = new ScreenEntry(id, Leaf(HudIcon, state, 255, 20f), loc) { Group = group };
         for (int i = 0; i < SlotDefs.Length; i++)
             _screen[SlotIdBase + i] = new ScreenEntry(SlotIdBase + i, SlotApp(i), SlotDefs[i].Loc)
             {

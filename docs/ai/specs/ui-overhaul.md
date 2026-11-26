@@ -39,6 +39,7 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `a98d5ee` | Package T, slices T5b and T5c: the own body is a target, the doll's eyes, mouth and grasp (client only; section 8, "T5b and T5c as built") |
 | `6a3e649` | Package 2, slice C: the hands either side of the hotbar gap, the bottom slots in the gap, the held-item card (client only; section 6, "Slice C as built") |
 | `e3af6b3` | Package 2, slice D: the vitals column at the right edge, alerts as chips, the hint strip over the hands, the swap key cap, the red cuffed hand (client only; section 6, "Slice D as built") |
+| `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV589; section 9, one known fault accepted by the contributor) |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
@@ -488,21 +489,34 @@ pill it had since slice B.
 Vitals:
 - No box: no panel fill, rim or separator lines, and no cells. Three pictures stacked against the right screen
   edge: the health doll at its whole-pixel scale S, under it tg's health indicator with its percentage at S-1,
-  under it tg's mood face at S-1, 8 between pictures. Their right edges are on one line, 8 from the screen edge,
-  the same line as the alert chips' right edge when the chips are above.
-- The hunger bar, while tg shows it, stands left of the mood face at tg's own offset from it (26 tg pixels), at the
-  mood face's scale. The mood face never moves or changes size (this ends slice D's limit of a smaller face while
-  hungry).
+  under it tg's mood face at S-1, 8 between pictures. All three, and the chips when they stand above the doll,
+  are centred on one vertical axis, placed so that the widest square (the doll's) touches the right screen edge;
+  tg's pictures carry their own transparent margin, so the art stands clear of the edge. (First built with the
+  squares' right edges on one line 8 from the edge: the art then stood on three different centre lines.)
+- The hunger bar is a status chip (the designer, 2026-11-26, chosen from two mockups: beside the mood face it
+  stuck out left of the doll and ran into the chips where they stand left). Chip order after tg's alerts: hunger,
+  stamina, internals, suit cell, other info-group entries, sleep; each only while tg draws something visible for
+  it. The mood face always stands alone and never moves or changes size (this ends slice D's limit of a smaller
+  face while hungry). With the reduced arrangement the hunger bar is at tg's own place.
+- The hunger chip does not fade (the designer, 2026-11-26: "id rather not have the hunger chip fade in it should
+  appear right when the status starts"): tg fades its bar in and out over about a second; as a chip the picture is
+  at full opacity and the chip is there from the moment tg starts showing the bar and gone from the moment tg
+  starts hiding it.
+- The stamina chip shows only while stamina is down: tg's entry starts with no art (`stamina0`) but holds
+  `stamina_full`, a blue bolt, after the first stamina update, so by the "visible" rule alone the chip stayed for
+  the whole round (seen in the stress test's playtest). As a chip it is left out in the `stamina_full` state.
 - The stack is anchored at the bottom: the mood face's bottom is 8 above the top of the combat sprite in the
-  corner. S steps down as in slice D when the stack and five chips do not fit the height; the reduced arrangement
-  of slice D stays for extreme UI scales, without box and pill.
+  corner. S steps down as in slice D, only while the three pictures alone do not fit between the room under the
+  ping chip and that floor; the doll is never made smaller to make room for chips. The reduced arrangement of
+  slice D stays for extreme UI scales, without box and pill.
 - Chips as in slice D: above the doll when five fit under the ping chip, else in columns left of the doll (6 from
   the widest of the three pictures). Each picture is still tg's screen object for clicks and tooltips.
 
 Bottom right:
 - The combat pill is removed everywhere. tg's own combat toggle (`combattoggle/flashy`, tg's sprite and its own
   flashing while combat is on) is drawn at the corner tile, tg's zone-selector place (`ui_zonesel`), in first
-  person and under Tab; under Tab a click on it toggles, as tg's. To confirm: the corner.
+  person and under Tab; under Tab a click on it toggles, as tg's. The corner and the column on one axis were
+  confirmed by the designer from real-server screenshots on 2026-11-26 ("yes that looks good").
 - Under Tab only, in one row left of it at tg's bottom-row places: the zone selector at `ui_movi`'s place, tg's
   memories button at `ui_acti`'s place, tg's area creator at `ui_human_floor_changer`'s place. In first person
   none of the three is drawn. The hands' row yields to them as it yields to tg's bottom-right entries today.
@@ -527,6 +541,36 @@ Offer item (server; a wheel entry beyond tg's, like Pull and Strip, DV139):
 
 Known costs, accepted by the designer or to tell them: nothing on screen shows walking or running; nothing shows
 that something is being pulled (the wheel says "Stop pulling", H stops).
+
+### Slice E as built (2026-11-26)
+
+As designed above; server and client, no wire change (the wheel's entry travels as a label, DV139). One fix round
+after a clean first review (the stamina chip at `stamina_full`, the hunger chip's fade, three stale comments).
+
+- Found in that round: an entry that is a chip by role but has no chip at the moment (stamina at full, a hunger
+  bar fading out) was drawn at tg's own place, which for stamina is just above the doll. Such an entry now draws
+  nothing.
+- tg's navigate and area-creator buttons are not ported (`human.cs`, `Dm.Deferred`): M has nothing to click on a
+  real server and no area creator shows under Tab until they are.
+- tg's own "Offer item" screentip (a carbon's Ctrl+Shift-click hint, shown with any item in hand) is left out of
+  the wheel so that the entry shows only by the rule; the Ctrl+Shift-click itself still offers.
+- Saved keys stay as they were (package 1's rule): a saved file that has L on the flashlight or M on another action
+  leaves the language menu or navigate unbound until the player rebinds or resets the keys. A saved `give_item`
+  line is read and ignored.
+- The hands' row still keeps clear of the inventory toggle's old place at the bottom left.
+- Playtested on a real server at 1920x1080 and 1280x720 (the session's scratchpad, `slice-e` and
+  `playtest-slice-e`): only the combat toggle in the corner, also after pulling, resting, throw mode and walking;
+  F and a click under Tab toggle combat; the zone selector under Tab picks a part; clicks at the hidden buttons'
+  old places reach nothing; the doll's check, the mood readout and the tooltips at the new places; three alerts,
+  hunger, stamina and sleep chips in order; G crafting, L language menu, U flashlight, none while typing; Offer
+  item between two clients (tg's offer alert on the other side, the item changes hands once, walking away
+  cancels, not with an empty hand, Ctrl+Shift-click still offers); a cyborg and a ghost with tg's own layout;
+  100% to 300% UI scale with nothing overlapping.
+- Not playtested: an item used on a limb of the doll and the eye and mouth hover at the new place; handcuffs with
+  this slice (a missing arm was); memories opened under Tab; the offer refused for a sleeping or critical person
+  and from two tiles (server tests only); another z-level.
+- Known limits: G does not close the crafting window (tg's button does not either; Esc does); at 250% on 720 lines
+  and 300% on 1080 an open chat window covers part of the hands and the strip.
 
 ### To confirm with the owner
 

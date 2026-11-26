@@ -3,10 +3,11 @@ using Anomaly.Protocol;
 
 namespace Anomaly.Client.Shared;
 
-// Owner: ui-overhaul.md section 6 (package 2, slice B). Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
+// Owner: ui-overhaul.md section 6 (package 2, slices B to E). Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
 // The server still computes tg's screen entries and a click still goes to them (D107 as revised by ui-overhaul.md section 1); the client
-// re-places the health doll into a panel at the middle right and draws tg's combat toggle as a native pill under it. The doll only shows
-// injuries: targeting is where the player looks (the owner, 2026-11-24), so tg's zone selector shows only while the cursor is free.
+// re-places some of them. The doll only shows injuries: targeting is where the player looks (the owner, 2026-11-24), so tg's zone selector
+// shows only while the cursor is free. Slice E: on the human HUD the vitals stand bare at the right edge, tg's combat toggle is in the corner
+// and tg's buttons that a key does are neither drawn nor clicked.
 
 /// <summary>What a screen entry is for the live HUD.</summary>
 public enum LiveHudRole : byte
@@ -14,7 +15,7 @@ public enum LiveHudRole : byte
     /// <summary>Drawn at tg's <c>screen_loc</c> as before.</summary>
     Tg,
 
-    /// <summary>tg's health doll (its appearance holds the doll's zone states, <see cref="HudReader"/>): re-placed into the doll panel.</summary>
+    /// <summary>tg's health doll (its appearance holds the doll's zone states, <see cref="HudReader"/>): re-placed (<see cref="LiveHud.Layout"/>).</summary>
     Doll,
 
     /// <summary>
@@ -23,7 +24,7 @@ public enum LiveHudRole : byte
     /// </summary>
     ZoneSelector,
 
-    /// <summary>tg's combat toggle (icon state <c>combat</c> or <c>combat_off</c>): drawn as the native combat pill.</summary>
+    /// <summary>tg's combat toggle (icon state <c>combat</c> or <c>combat_off</c>): tg's own picture; slice E: on the human HUD at tg's zone selector's place (<see cref="LiveHud.HumanPlace"/>).</summary>
     CombatToggle,
 
     /// <summary>tg's first hand box (<see cref="ScreenEntry.HandIndex"/> 1, a left hand): drawn as the native left hand box (slice C).</summary>
@@ -35,29 +36,29 @@ public enum LiveHudRole : byte
     /// <summary>One of tg's bottom slots (an inventory box with a <see cref="ScreenEntry.SlotId"/> outside the toggled inventory: belt, back, pockets, ID, suit storage): moved into the hotbar's gap.</summary>
     BottomSlot,
 
-    /// <summary>tg's inventory toggle (icon state <c>toggle</c> or <c>toggle_active</c>), which only the human HUD has: drawn at tg's place; its presence marks the human HUD.</summary>
+    /// <summary>tg's inventory toggle (icon state <c>toggle</c> or <c>toggle_active</c>), which only the human HUD has: its presence marks the human HUD; slice E: not drawn there (the inventory key, I).</summary>
     InventoryToggle,
 
     /// <summary>
     /// One of tg's alerts (<c>/atom/movable/screen/alert</c>: in no HUD group, its icon tg's <c>screen_alert.dmi</c>, or the <c>template</c> state
-    /// of the player's HUD style for an alert that takes it, or any picture at one of tg's five alert places): drawn as a chip by the doll panel
+    /// of the player's HUD style for an alert that takes it, or any picture at one of tg's five alert places): drawn as a chip by the vitals
     /// (slice D, <see cref="LiveHud.AlertStack"/>).
     /// </summary>
     Alert,
 
-    /// <summary>tg's health indicator (<c>healths</c> at <c>ui_health</c>): in the vitals panel's second cell (<see cref="LiveHud.VitalSquare"/>).</summary>
+    /// <summary>tg's health indicator (<c>healths</c> at <c>ui_health</c>): under the doll in the full vitals stack (<see cref="LiveHud.VitalSquare"/>).</summary>
     Health,
 
-    /// <summary>tg's mood face (<c>ui_mood</c>): in the third cell, centred, or with the hunger bar beside it at tg's offset while that shows.</summary>
+    /// <summary>tg's mood face (<c>ui_mood</c>): under the health indicator, alone.</summary>
     Mood,
 
-    /// <summary>tg's hunger bar (<c>ui_hunger</c>): in the third cell, left of the mood face.</summary>
+    /// <summary>tg's hunger bar (<c>ui_hunger</c>): slice E, the first status chip after the alerts while the full stack is shown and tg draws it.</summary>
     Hunger,
 
-    /// <summary>tg's stamina indicator (<c>ui_stamina</c>): a chip after the alerts while the vitals panel is shown and tg draws it.</summary>
+    /// <summary>tg's stamina indicator (<c>ui_stamina</c>): a chip after the hunger chip while the full stack is shown and tg draws it.</summary>
     Stamina,
 
-    /// <summary>tg's internals indicator (<c>ui_internal</c>): a chip after the stamina chip while the vitals panel is shown and tg draws it.</summary>
+    /// <summary>tg's internals indicator (<c>ui_internal</c>): a chip after the stamina chip while the full stack is shown and tg draws it.</summary>
     Internals,
 
     /// <summary>tg's suit cell indicator (<c>ui_spacesuit</c>): a chip after the internals.</summary>
@@ -65,28 +66,53 @@ public enum LiveHudRole : byte
 
     /// <summary>
     /// Any other entry tg has put in its right status column (<see cref="LiveHud.InStatusColumn"/>), in tg's info group and neither a slot nor a hand:
-    /// a chip after the suit cell while the vitals panel is shown and tg draws it, in tg's order top to bottom.
+    /// a chip after the suit cell while the full stack is shown and tg draws it, in tg's order top to bottom.
     /// </summary>
     StatusOther,
+
+    /// <summary>
+    /// Slice E: one of tg's buttons that a key does (pull, resist, rest, throw, run/walk, drop, swap, the floor changer; tg's icon states for them):
+    /// neither drawn nor clicked on the human HUD (<see cref="LiveHud.Placed"/>), at tg's place on any other.
+    /// </summary>
+    KeyButton,
+
+    /// <summary>Slice E: tg's crafting button (<c>craft</c>): not drawn on the human HUD; the crafting key sends its click (<see cref="LiveHud.ButtonOf"/>).</summary>
+    Crafting,
+
+    /// <summary>Slice E: tg's language menu button (<c>talk_wheel</c>): the same, for the language key.</summary>
+    Language,
+
+    /// <summary>Slice E: tg's navigate button (<c>navigate</c>): the same, for the navigate key.</summary>
+    Navigate,
+
+    /// <summary>Slice E: tg's memories button (<c>memories</c>): on the human HUD under Tab only, at tg's combat toggle's place (<c>ui_acti</c>).</summary>
+    Memories,
+
+    /// <summary>Slice E: tg's area creator (<c>area_edit</c>): on the human HUD under Tab only, at tg's floor changer's place (<c>ui_human_floor_changer</c>).</summary>
+    AreaCreator,
+
+    /// <summary>Slice E: tg's sleep button (<c>act_sleep</c>), which no key does: the last status chip while the full stack is shown and tg draws it.</summary>
+    Sleep,
+
+    /// <summary>Slice E: what <see cref="LiveHud.Placed"/> makes of an entry the human HUD neither draws nor lets be clicked.</summary>
+    Hidden,
 }
 
-/// <summary>Where the live HUD's boxes go, screen pixels (<see cref="LiveHud.Layout"/>).</summary>
-/// <param name="Panel">The doll panel's background.</param>
+/// <summary>Where the live HUD's vitals go, screen pixels (<see cref="LiveHud.Layout"/>).</summary>
 /// <param name="Doll">The square the doll's 32 x 32 icon fills (<see cref="ScreenLoc.FitIcon"/>).</param>
-/// <param name="Pill">The combat pill under the panel.</param>
 /// <param name="DollScale">Screen pixels per tg pixel of the doll: a whole number.</param>
-/// <param name="Vitals">Slice D: the full vitals column at the screen's right edge, its panel holding tg's health indicator and mood face (with
-/// the hunger bar) under the doll; false: the reduced column left of tg's right column, which keeps those (the designer, 2026-11-26).</param>
-/// <param name="Health">The vitals panel's health cell: the square tg's health indicator's 32 x 32 icon fills.</param>
-/// <param name="Mood">Its mood cell: the row the mood face fills alone at <paramref name="CellScale"/>, or the hunger and mood pair (58 by 32 tg
-/// pixels) at <paramref name="PairScale"/>, each centred in it (<see cref="LiveHud.VitalSquare"/>).</param>
-/// <param name="CellScale">Screen pixels per tg pixel of the health and mood cells: the doll's less one, at least one.</param>
-/// <param name="PairScale">The same for the hunger and mood pair: smaller, step by step, where the pair would be wider than the panel at the cells' scale.</param>
-public readonly record struct LiveHudLayout(HudRect Panel, HudRect Doll, HudRect Pill, int DollScale, bool Vitals = false,
-    HudRect Health = default, HudRect Mood = default, int CellScale = 0, int PairScale = 0)
+/// <param name="Vitals">The full stack at the screen's right edge: the doll, tg's health indicator and tg's mood face, no box (slice E); false:
+/// the reduced arrangement, the doll alone left of tg's right column, which keeps tg's status icons.</param>
+/// <param name="Health">The square tg's health indicator's 32 x 32 icon fills, under the doll.</param>
+/// <param name="Mood">The square tg's mood face fills, under the health indicator.</param>
+/// <param name="CellScale">Screen pixels per tg pixel of the health indicator and the mood face: the doll's less one, at least one.</param>
+public readonly record struct LiveHudLayout(HudRect Doll, int DollScale, bool Vitals = false, HudRect Health = default, HudRect Mood = default, int CellScale = 0)
 {
-    /// <summary>The left edge of the panel and the pill together: whatever stands left of them (the zone labels, the prompts) ends a gap before it.</summary>
-    public float Left => Math.Min(Panel.Left, Pill.Left);
+    /// <summary>The pictures together: the doll, and with the full stack the health indicator and the mood face under it.</summary>
+    public HudRect Stack => Vitals ? new HudRect(Doll.Left, Doll.Top, Math.Max(Doll.Right, Mood.Right) - Doll.Left, Mood.Bottom - Doll.Top) : Doll;
+
+    /// <summary>The stack's left edge (the doll's, the widest picture): whatever stands left of it (the zone labels, the prompts) ends a gap before it.</summary>
+    public float Left => Doll.Left;
 }
 
 /// <summary>Where the hands and the hotbar's gap go, screen pixels (<see cref="LiveHud.Hands"/>).</summary>
@@ -138,6 +164,10 @@ public static class LiveHud
             return LiveHudRole.CombatToggle;
         if (state is "toggle" or "toggle_active")
             return LiveHudRole.InventoryToggle;
+        // slice E: tg's buttons of the human HUD (hud/human.dm, screen_objects.dm), by tg's icon states for them, only in one of its HUD groups (an
+        // alert, in none, keeps its role whatever its picture)
+        if (entry.Group != HudGroup.None && ButtonRole(state) is LiveHudRole button)
+            return button;
         // tg's alert (alert.dm): its own icon file, or with USER_HUD_STYLE_INHERIT (weightless, the gravity alerts, succumb) the HUD style's
         // "template" state with the alert's picture as an overlay; a full inventory slot also shows "template" but has a slot id (above)
         if (entry.Group == HudGroup.None && ((replica.ResolveResource(app.Icon) ?? replica.ResolveString(app.Icon)) == AlertIcon || state == "template"))
@@ -150,28 +180,96 @@ public static class LiveHud
         return entry.Group == HudGroup.Info && entry.HandIndex == 0 && placed && InStatusColumn(at) ? LiveHudRole.StatusOther : LiveHudRole.Tg;
     }
 
+    // tg's icon states of the human HUD's buttons (screen_objects.dm: pull, resist, rest, throw_catch, mov_intent, drop, swap_hand, floor_changer,
+    // craft, language_menu, navigate, memories, area_creator, sleep; their update_icon_state's states too)
+    private static LiveHudRole? ButtonRole(string state) => state switch
+    {
+        "pull" or "pull0" or "act_resist" or "act_rest" or "act_rest_on" or "act_throw" or "act_throw_on" or "running" or "walking" or "act_drop" or "act_swap"
+            or "floor_change" or "floor_change_v" => LiveHudRole.KeyButton,
+        "craft" => LiveHudRole.Crafting,
+        "talk_wheel" => LiveHudRole.Language,
+        "navigate" => LiveHudRole.Navigate,
+        "memories" => LiveHudRole.Memories,
+        "area_edit" => LiveHudRole.AreaCreator,
+        "act_sleep" or "act_sleep_on" => LiveHudRole.Sleep,
+        _ => null,
+    };
+
     /// <summary>
-    /// Whether an entry of <paramref name="role"/> is drawn and takes clicks now: tg's zone selector only while the cursor is free (cursor mode, Tab),
-    /// where any zone, the eyes, mouth and groin included (tg's surgeries, a ctrl-click on the doll), is still chosen on it (looking aims at them too since
-    /// package T, slice T4a, and the selector shows the zone the server selected); every other
-    /// entry always.
+    /// Whether an entry drawn in the role <paramref name="placed"/> (<see cref="Placed"/>) is drawn and takes clicks now: tg's zone selector only while
+    /// the cursor is free (cursor mode, Tab), where any zone, the eyes, mouth and groin included (tg's surgeries, a ctrl-click on the doll), is still
+    /// chosen on it (looking aims at them too since package T, slice T4a, and the selector shows the zone the server selected); slice E: on the human
+    /// HUD tg's memories button and area creator only then too, and a hidden entry never (no picture, no pick, no tooltip); every other entry always.
     /// </summary>
-    public static bool Shown(LiveHudRole role, bool cursorMode) => role != LiveHudRole.ZoneSelector || cursorMode;
+    public static bool Shown(LiveHudRole placed, bool cursorMode) => placed switch
+    {
+        LiveHudRole.ZoneSelector or LiveHudRole.Memories or LiveHudRole.AreaCreator => cursorMode,
+        LiveHudRole.Hidden => false,
+        _ => true,
+    };
 
     /// <summary>
     /// The role an entry is drawn in: the hands, the bottom slots and the alerts only on the human HUD (<paramref name="humanHud"/>: its inventory
     /// toggle is on the screen); the alien's, a basic mob's and the other HUDs keep tg's places, the alerts tg's column (ui-overhaul.md section 6).
-    /// Slice D: tg's health, mood and hunger indicators are re-placed into the vitals panel and the stamina, internals and suit cell indicators
-    /// become alert chips only with the full vitals column (<paramref name="vitals"/>, <see cref="LiveHudLayout.Vitals"/>); with the reduced one they stay at
-    /// tg's places.
+    /// Slice D: tg's health and mood indicators are re-placed into the vitals stack, and slice E's status chips (hunger, stamina, internals, suit
+    /// cell, another status display, sleep) are chips, only with the full stack (<paramref name="vitals"/>, <see cref="LiveHudLayout.Vitals"/>);
+    /// with the reduced one they stay at tg's places. Slice E: on the human HUD tg's buttons that a key does and its inventory toggle are hidden.
     /// </summary>
     public static LiveHudRole Placed(LiveHudRole role, bool humanHud, bool vitals = false) => role switch
     {
         LiveHudRole.LeftHand or LiveHudRole.RightHand or LiveHudRole.BottomSlot or LiveHudRole.Alert when !humanHud => LiveHudRole.Tg,
-        LiveHudRole.Health or LiveHudRole.Mood or LiveHudRole.Hunger when !humanHud || !vitals => LiveHudRole.Tg,
-        LiveHudRole.Stamina or LiveHudRole.Internals or LiveHudRole.SpaceSuit or LiveHudRole.StatusOther => humanHud && vitals ? LiveHudRole.Alert : LiveHudRole.Tg,
+        LiveHudRole.Health or LiveHudRole.Mood when !humanHud || !vitals => LiveHudRole.Tg,
+        LiveHudRole.Hunger or LiveHudRole.Stamina or LiveHudRole.Internals or LiveHudRole.SpaceSuit or LiveHudRole.StatusOther or LiveHudRole.Sleep
+            => humanHud && vitals ? LiveHudRole.Alert : LiveHudRole.Tg,
+        LiveHudRole.KeyButton or LiveHudRole.Crafting or LiveHudRole.Language or LiveHudRole.Navigate => humanHud ? LiveHudRole.Hidden : LiveHudRole.Tg,
+        LiveHudRole.InventoryToggle when humanHud => LiveHudRole.Hidden,
+        LiveHudRole.Memories or LiveHudRole.AreaCreator when !humanHud => LiveHudRole.Tg,
         _ => role,
     };
+
+    // tg's bottom-right places (__DEFINES/hud.dm): the zone selector's corner, the move intent's, the combat toggle's and the floor changer's
+    private static readonly ScreenLocSpec ZoneselLoc = Loc("EAST-1:28,SOUTH:5"), MoviLoc = Loc("EAST-2:26,SOUTH:5"), ActiLoc = Loc("EAST-3:24,SOUTH:5"),
+        FloorChangerLoc = Loc("EAST-4:22,SOUTH:5");
+
+    /// <summary>
+    /// Slice E: the place on the human HUD of an entry drawn in the role <paramref name="placed"/>, where it is not tg's own (null: tg's): tg's combat
+    /// toggle in the corner tile (<c>ui_zonesel</c>), and under Tab in one row left of it tg's zone selector at <c>ui_movi</c>, the memories button at
+    /// <c>ui_acti</c> and the area creator at <c>ui_human_floor_changer</c>.
+    /// </summary>
+    public static ScreenLocSpec? HumanPlace(LiveHudRole placed) => placed switch
+    {
+        LiveHudRole.CombatToggle => ZoneselLoc,
+        LiveHudRole.ZoneSelector => MoviLoc,
+        LiveHudRole.Memories => ActiLoc,
+        LiveHudRole.AreaCreator => FloorChangerLoc,
+        _ => null,
+    };
+
+    /// <summary>The role of tg's button whose click the key <paramref name="action"/> sends (slice E: crafting, the language menu, navigate); null for any other action.</summary>
+    public static LiveHudRole? ButtonOf(PlayAction action) => action switch
+    {
+        PlayAction.CraftingMenu => LiveHudRole.Crafting,
+        PlayAction.LanguageMenu => LiveHudRole.Language,
+        PlayAction.Navigate => LiveHudRole.Navigate,
+        _ => null,
+    };
+
+    /// <summary>
+    /// The screen entry the key <paramref name="action"/> clicks (<see cref="ButtonOf"/>): the first of the player's entries in that role, by
+    /// <see cref="RoleOf"/>, whether drawn or not; 0 when the HUD has none (another mob's) or the action clicks no button.
+    /// </summary>
+    public static long ButtonEntry(ReplicaWorld replica, PlayAction action)
+    {
+        if (ButtonOf(action) is not LiveHudRole role)
+            return 0;
+        long found = 0;
+        foreach (ScreenEntry entry in replica.Screen.Values)
+        {
+            if ((found == 0 || entry.Id < found) && RoleOf(replica, entry) == role)
+                found = entry.Id;
+        }
+        return found;
+    }
 
     // tg's places of its right-column indicators (__DEFINES/hud.dm)
     private static ScreenLocSpec Loc(string text) => ScreenLoc.TryParse(text, out ScreenLocSpec spec) ? spec : default;
@@ -191,15 +289,17 @@ public static class LiveHud
         => !spec.HasRange && spec.X.Anchor == ScreenAnchor.High && spec.X.Tile is 0 or -1 && spec.Y.Anchor == ScreenAnchor.Center;
 
     /// <summary>
-    /// The order of the chips (slice D): tg's alerts in tg's order (<see cref="AlertOrder"/>), then the stamina, internals and suit cell indicators,
-    /// then any other entry of tg's right status column, tg's top to bottom.
+    /// The order of the chips (slices D and E): tg's alerts in tg's order (<see cref="AlertOrder"/>), then the hunger, stamina, internals and suit
+    /// cell indicators, then any other entry of tg's right status column, tg's top to bottom, then the sleep button.
     /// </summary>
     public static int ChipOrder(LiveHudRole role, in ScreenLocSpec spec) => role switch
     {
-        LiveHudRole.Stamina => 1000,
-        LiveHudRole.Internals => 1001,
-        LiveHudRole.SpaceSuit => 1002,
+        LiveHudRole.Hunger => 1000,
+        LiveHudRole.Stamina => 1001,
+        LiveHudRole.Internals => 1002,
+        LiveHudRole.SpaceSuit => 1003,
         LiveHudRole.StatusOther => 3000 - (spec.Y.Tile * (int)HudMetrics.IconPixels + spec.Y.Pixels), // higher on the screen first
+        LiveHudRole.Sleep => 10000,
         _ => AlertOrder(spec),
     };
 
@@ -252,7 +352,7 @@ public static class LiveHud
 
     /// <summary>
     /// Whether one of tg's status indicators <paramref name="entry"/> (stamina, internals, suit cell, another of its right column, or the hunger bar)
-    /// draws something visible now (a chip; the mood pair): tg hides one by clearing its icon state (screen_objects.dm update_spacesuit_hud_icon:
+    /// draws something visible now (a chip): tg hides one by clearing its icon state (screen_objects.dm update_spacesuit_hud_icon:
     /// SPACESUIT_NO_ICON), by a state its icon file does not have ("spacesuit_0", which BYOND draws as nothing) or by making it transparent (the
     /// hunger bar keeps "hungerbar" at alpha 0 while fed). <paramref name="stateExists"/> says whether an icon file (its resource path) has a state.
     /// </summary>
@@ -261,6 +361,22 @@ public static class LiveHud
         if (!replica.TryGetAppearance(entry.Appearance, out AppearanceEntry app) || app.Alpha == 0 || replica.ResolveString(app.IconState) is not { Length: > 0 } state)
             return false;
         return (replica.ResolveResource(app.Icon) ?? replica.ResolveString(app.Icon)) is not string icon || stateExists(icon, state);
+    }
+
+    /// <summary>
+    /// Whether an entry of <paramref name="role"/> drawn as a chip (<see cref="Placed"/> gave <see cref="LiveHudRole.Alert"/>) gets one now: tg's
+    /// alerts always; the status indicators while tg draws something (<see cref="IndicatorShown"/>), and the stamina indicator only while stamina
+    /// is down (slice E, the designer, 2026-11-26): not at tg's <c>stamina_full</c> (living.dm:1458-1470, which tg sets after its first update with
+    /// nothing lost), only at <c>stamina_1</c> to <c>stamina_5</c>, <c>stamina_crit</c> and <c>stamina_dead</c>. At tg's places (another HUD, the
+    /// reduced arrangement) tg's entry is drawn in every state, as tg draws it.
+    /// </summary>
+    public static bool ChipShown(LiveHudRole role, ReplicaWorld replica, ScreenEntry entry, Func<string, string, bool> stateExists)
+    {
+        if (role == LiveHudRole.Alert)
+            return true;
+        if (!IndicatorShown(replica, entry, stateExists))
+            return false;
+        return role != LiveHudRole.Stamina || !(replica.TryGetAppearance(entry.Appearance, out AppearanceEntry app) && replica.ResolveString(app.IconState) == "stamina_full");
     }
 
     /// <summary>The swap-hands key cap's label: the first key bound to swapping hands; null while it is unbound.</summary>
@@ -312,10 +428,10 @@ public static class LiveHud
     /// neither when a third or fourth hand is active) and <see cref="UiTokens.HandInactive"/> otherwise, all on one bottom line. The row keeps a gap from tg's inventory toggle and from tg's bottom-right menu, and stays under the chat
     /// lines' lowest line; it is moved off the middle as little as that takes, and made smaller when it still does not fit. With the chat window
     /// open at the bottom left (its right edge <paramref name="chatRight"/>, screen pixels; 0: none) the row moves right of it only while it then
-    /// fits there: wholly right of the window and on the screen, its smaller hand box at <see cref="UiTokens.HandMinPixels"/> or more, and clear of
-    /// tg's drop and swap buttons; otherwise it is exactly where it is with the chat window closed, and a window over it covers it as a window
-    /// covers tg's HUD (D282). The gap and the boxes keep their places when the active hand changes.
-    /// Slice D: with the human HUD's column <paramref name="column"/> (<see cref="Layout"/>) the held-item hint strip's place over the row for a
+    /// fits there: wholly right of the window and on the screen, and its smaller hand box at <see cref="UiTokens.HandMinPixels"/> or more (slice E:
+    /// tg's drop and swap buttons are no longer in its way); otherwise it is exactly where it is with the chat window closed, and a window over it
+    /// covers it as a window covers tg's HUD (D282). The gap and the boxes keep their places when the active hand changes.
+    /// Slice D: with the human HUD's vitals <paramref name="column"/> (<see cref="Layout"/>) the held-item hint strip's place over the row for a
     /// strip of natural width <paramref name="hint"/> (<see cref="HintBy"/>), which never moves the row.
     /// </summary>
     public static HandsLayout Hands(in HudMetrics metrics, bool leftActive, bool rightActive, float chatRight = 0f, LiveHudLayout column = default, float hint = 0f)
@@ -327,11 +443,11 @@ public static class LiveHud
         {
             // judged with both boxes at the active size, so a swap never moves the row between the two places
             HandsLayout beside = Row(metrics, true, true, chatRight);
-            if (beside.Left.Left >= chatRight && UiTokens.HandInactive * beside.Unit >= UiTokens.HandMinPixels && !OverDropOrSwap(beside, metrics))
+            if (beside.Left.Left >= chatRight && UiTokens.HandInactive * beside.Unit >= UiTokens.HandMinPixels)
                 (row, besideChat) = (Row(metrics, leftActive, rightActive, chatRight), chatRight);
         }
-        // slice D: the held-item hint strip over the row, with the vitals column given (the human HUD)
-        if (column.Panel.Width <= 0f)
+        // slice D: the held-item hint strip over the row, with the vitals given (the human HUD)
+        if (column.Doll.Width <= 0f)
             return row;
         HudRect strip = HintBy(metrics, row, column, besideChat, hint, out float share);
         return row with { Hint = strip, HintShare = share };
@@ -349,22 +465,6 @@ public static class LiveHud
         LiveHudRole.BottomSlot => SlotCell(hands, cell, cells),
         _ => null,
     };
-
-    // tg's drop and swap buttons over the gap's middle (ui_swaphand_position), which stay at tg's places: a row moved right of the chat window must
-    // not reach under them
-    private static readonly ScreenLocSpec DropLoc = ScreenLoc.TryParse("CENTER-1:16,SOUTH+1:5", out ScreenLocSpec drop) ? drop : default;
-    private static readonly ScreenLocSpec SwapLoc = ScreenLoc.TryParse("CENTER:16,SOUTH+1:5", out ScreenLocSpec swap) ? swap : default;
-
-    private static bool OverDropOrSwap(in HandsLayout row, in HudMetrics metrics)
-    {
-        HudRect drop = ScreenLoc.Place(DropLoc, metrics, 32, 32, 0, 0, out _), swap = ScreenLoc.Place(SwapLoc, metrics, 32, 32, 0, 0, out _);
-        foreach (HudRect part in new[] { row.Left, row.Right, row.Hotbar })
-        {
-            if (Over(part, drop) || Over(part, swap))
-                return true;
-        }
-        return false;
-    }
 
     // The row between `leftEdge` (and a gap) and tg's bottom-right menu.
     private static HandsLayout Row(in HudMetrics metrics, bool leftActive, bool rightActive, float leftEdge)
@@ -433,163 +533,99 @@ public static class LiveHud
         return new HudRect(square.Left + (shiftX - originX) * k, square.Bottom - (shiftY - originY + height) * k, width * k, height * k);
     }
 
-    /// <summary>Whether the combat toggle <paramref name="toggle"/> shows combat mode on (tg's icon state <c>combat</c>).</summary>
-    public static bool CombatOn(ReplicaWorld replica, ScreenEntry toggle)
-        => replica.TryGetAppearance(toggle.Appearance, out AppearanceEntry app) && replica.ResolveString(app.IconState) == "combat";
-
-    /// <summary>The combat pill's word.</summary>
-    public static string CombatText(bool on) => on ? I18n.T("Combat") : I18n.T("Peaceful");
-
     /// <summary>
     /// What the HUD pick gets for the doll entry <paramref name="id"/>: the doll's own 32 x 32 icon square in its box, with no picture, so a point
     /// on it is tg's icon pixel whatever size its zones' pictures are (a wound outline grows them).
     /// </summary>
     public static HudDrawn DollDrawn(long id, in LiveHudLayout layout) => new(id, ScreenLoc.FitIcon(layout.Doll, 32, 32, 0, 0), null, 0, 0);
 
-    /// <summary>What the HUD pick gets for the combat toggle <paramref name="id"/>: the pill, with no picture (all of it takes the click).</summary>
-    public static HudDrawn PillDrawn(long id, in LiveHudLayout layout) => new(id, layout.Pill, null, 0, 0);
+    /// <summary>Where a column of text left of the vitals (the zone labels, the prompts) ends, screen pixels from the left.</summary>
+    public static float LeftOfVitals(in LiveHudLayout layout, in HudMetrics metrics) => layout.Left - UiTokens.DollPanelGap * UiTokens.Unit(metrics);
 
-    /// <summary>Where a column of text left of the panel and the pill (the zone labels) ends, screen pixels from the left.</summary>
-    public static float LeftOfPanel(in LiveHudLayout layout, in HudMetrics metrics) => layout.Left - UiTokens.DollPanelGap * UiTokens.Unit(metrics);
-
-    // tg's lowest row of the bottom-right buttons that stand under the panel's column (ui_above_movement_top, ui_human_area): the pill stays above it
+    // tg's lowest row of the bottom-right buttons that stand under the reduced doll's column (ui_above_movement_top, ui_human_area): it stays above it
     private static readonly ScreenLocSpec BottomRow = ScreenLoc.TryParse("EAST-2:26,SOUTH+1:24", out ScreenLocSpec spec) ? spec : default;
 
     /// <summary>
-    /// The doll panel and the combat pill under it. On the human HUD (<paramref name="human"/>; slice D, the designer, 2026-11-26): the full vitals
-    /// column (<see cref="VitalsColumn"/>: the doll, tg's health indicator and mood face in one panel at the screen's right edge, over tg's sleep
-    /// button) wherever it fits at this screen and scale; else the reduced column, the panel holding the doll alone with the vitals panel's padding,
-    /// its right edge <see cref="UiTokens.DollPanelGap"/> left of tg's right-hand column (the tiles at <c>EAST-1</c>, where tg's health, mood,
-    /// stamina and internals indicators then stay), the panel and the pill <see cref="UiTokens.VitalsWidth"/> wide, centred vertically and kept
-    /// above tg's bottom-right buttons and under the version tag and the ping chip (<see cref="UiTokens.CardTopRoom"/>): the doll made smaller,
-    /// then the pill as the full column's, and only then the panel climbing into that room. On the other HUDs the same reduced column at the
-    /// doll's size with the slice B padding, the pill at least <see cref="UiTokens.PillWidth"/> wide. The doll is a whole multiple of tg's pixels
-    /// (<see cref="UiTokens.DollPixels"/> at the reference size); everything else scales with <see cref="UiTokens.Unit"/> (the options' HUD scale).
+    /// The vitals. On the human HUD (<paramref name="human"/>; slice E, the designer, 2026-11-26): the full stack (<see cref="VitalsColumn"/>: the
+    /// doll, tg's health indicator and mood face, bare against the screen's right edge over tg's combat toggle) wherever it fits at this screen and
+    /// scale; else the reduced arrangement, the doll alone, its right edge <see cref="UiTokens.DollPanelGap"/> left of tg's right-hand column (the
+    /// tiles at <c>EAST-1</c>, where tg's status indicators then stay), centred vertically and kept above tg's bottom-right buttons and under the
+    /// version tag and the ping chip (<see cref="UiTokens.CardTopRoom"/>), the doll made smaller as far as needed. On the other HUDs the same
+    /// reduced arrangement, free of the top room. The doll is a whole multiple of tg's pixels (<see cref="UiTokens.DollPixels"/> at the reference
+    /// size); everything else scales with <see cref="UiTokens.Unit"/> (the options' HUD scale).
     /// </summary>
     public static LiveHudLayout Layout(in HudMetrics metrics, bool human = false)
     {
         if (human && VitalsColumn(metrics) is LiveHudLayout vitals)
             return vitals;
         float u = UiTokens.Unit(metrics);
-        float pad = (human ? UiTokens.VitalsPad : UiTokens.DollPanelPad) * u, gap = UiTokens.PillGap * u, pill = MathF.Round(UiTokens.PillHeight * u);
         float right = metrics.Width - 2 * metrics.Tile - UiTokens.DollPanelGap * u; // EAST-1's tile starts two tiles from the right edge
         float floor = ScreenLoc.Place(BottomRow, metrics, 32, 32, 0, 0, out _).Top - UiTokens.DollPanelGap * u;
+        float ceiling = human ? UiTokens.CardTopRoom * u : 0f; // where the doll may start from the top
         int k = DollScaleAt(u);
-        float PanelHeight(int scale) => MathF.Round(2 * pad + HudMetrics.IconPixels * scale);
-        float ceiling = human ? UiTokens.CardTopRoom * u : 0f; // where the column may start from the top
-        while (k > 1 && PanelHeight(k) + gap + pill > floor - ceiling)
+        while (k > 1 && HudMetrics.IconPixels * k > floor - ceiling)
             k--;
-        // slice D: the reduced column's pill is made smaller as the full column's is, down to a quarter, before the panel climbs into the top room
-        for (int step = 1; human && step <= 15 && PanelHeight(k) + gap + pill > floor - ceiling; step++)
-            pill = MathF.Round(UiTokens.PillHeight * u * (1f - 0.05f * step));
-        float side = HudMetrics.IconPixels * k, panelHeight = PanelHeight(k), block = panelHeight + gap + pill;
-        // the panel and the pill one column, the doll centred
-        float width = MathF.Round(human ? UiTokens.VitalsWidth * u : Math.Max(side + 2 * pad, UiTokens.PillWidth * u));
-        // never past the screen's left edge (a portrait screen at a large scale), on the human HUD with room for a column of the smallest chips
-        // left of it: the doll and then the padding smaller as far as needed
+        // never past the screen's left edge (a portrait screen at a large scale), on the human HUD with room for a column of the smallest chips left of it
         float room = MathF.Max(1f, MathF.Floor(right - (human ? MathF.Round(UiTokens.AlertStackGap * u) + Math.Min(MathF.Round(UiTokens.AlertChip * u), UiTokens.AlertChipMinPixels) : 0f)));
-        if (width > room)
-        {
-            width = room;
-            while (k > 1 && HudMetrics.IconPixels * k + 2 * pad > width)
-                k--;
-            side = Math.Min(HudMetrics.IconPixels * k, width);
-            pad = Math.Min(pad, MathF.Floor((width - side) / 2f));
-            panelHeight = PanelHeight(k) - HudMetrics.IconPixels * k + side;
-            block = panelHeight + gap + pill;
-        }
-        float top =MathF.Round(Math.Max(Math.Min(ceiling, Math.Max(0f, floor - block)), Math.Min((metrics.Height - block) / 2f, floor - block)));
-        var panel = new HudRect(MathF.Floor(right - width), top, width, panelHeight);
-        var doll = new HudRect(panel.Left + MathF.Floor((width - side) / 2f), top + MathF.Round(pad), side, side);
-        var pillRect = new HudRect(panel.Left, MathF.Round(top + panelHeight + gap), width, pill);
-        return new LiveHudLayout(panel, doll, pillRect, k);
+        while (k > 1 && HudMetrics.IconPixels * k > room)
+            k--;
+        float side = Math.Min(HudMetrics.IconPixels * k, room);
+        float top = MathF.Round(Math.Max(Math.Min(ceiling, Math.Max(0f, floor - side)), Math.Min((metrics.Height - side) / 2f, floor - side)));
+        return new LiveHudLayout(new HudRect(MathF.Floor(right - side), top, side, side), k);
     }
 
     // the doll's whole tg pixels per screen pixel at the reference unit's size (3 at 1080 lines and 100 %)
     private static int DollScaleAt(float u) => Math.Max(1, (int)Math.Round(UiTokens.DollPixels * u, MidpointRounding.AwayFromZero));
 
-    // tg's highest button under the vitals column at the bottom right: the sleep button (ui_above_throw); the pill stands over it
+    // tg's sleep button (ui_above_throw), at tg's place with the reduced arrangement
     private static readonly ScreenLocSpec SleepLoc = Loc("EAST-1:28,SOUTH+1:41");
 
     /// <summary>
-    /// The full vitals column (the designer, 2026-11-26), or null where it does not fit: the vitals panel and the combat pill
-    /// <see cref="UiTokens.PillGap"/> under it, <see cref="UiTokens.VitalsWidth"/> wide, <see cref="UiTokens.VitalsMargin"/> from the screen's right
-    /// edge, anchored at the bottom with the pill's bottom that margin over tg's highest button under the column (<c>ui_above_throw</c>). The panel
-    /// holds three cells top to bottom, centred, <see cref="UiTokens.VitalsPad"/> inside its top and bottom and <see cref="UiTokens.VitalsCellGap"/>
-    /// apart: the doll at its whole-pixel scale S, tg's health indicator and tg's mood face at S - 1 (at least 1), the mood cell wide enough for tg's
-    /// hunger and mood pair (58 by 32 tg pixels: tg's two squares at tg's offset; smaller, step by step, where it would be wider than the panel). The column
-    /// is never narrower than the pair at one tg pixel per pixel and the panel's side padding, the pill as wide. The cells keep their room whether
-    /// their entries are shown or not, so the panel's size never changes in play. The column keeps under the version tag and the ping and FPS chip
-    /// (<see cref="UiTokens.CardTopRoom"/>): S steps down while it does not fit, and at S = 1 the pill is made smaller, down to a quarter; null when
-    /// even that does not fit. It depends on the screen and the scale alone.
+    /// The full vitals stack (slice E, the designer, 2026-11-26), or null where it does not fit: three pictures, no box, centred on one vertical axis
+    /// (<see cref="Axis"/>) placed so that the widest, the doll's square, touches the screen's right edge (tg's pictures carry their own transparent
+    /// margin), the others centred on it at whole pixels, <see cref="UiTokens.VitalsMargin"/> apart, top to bottom the doll at
+    /// its whole-pixel scale S and tg's health indicator and mood face at S - 1 (at least 1), anchored at the bottom: the mood face's bottom
+    /// <see cref="UiTokens.VitalsMargin"/> over the top of tg's combat toggle in the corner (<c>ui_zonesel</c>). It keeps under the version tag and the
+    /// ping and FPS chip (<see cref="UiTokens.CardTopRoom"/>): S steps down while it does not fit, never for the chips; null when even S = 1 does not.
+    /// It depends on the screen and the scale alone.
     /// </summary>
     public static LiveHudLayout? VitalsColumn(in HudMetrics metrics)
     {
-        float u = UiTokens.Unit(metrics);
-        float pad = MathF.Round(UiTokens.VitalsPad * u), cellGap = MathF.Round(UiTokens.VitalsCellGap * u);
-        // never narrower than its widest cell at one tg pixel per pixel (the 58-pixel hunger and mood pair) and the padding at its sides
-        float width = Math.Max(MathF.Round(UiTokens.VitalsWidth * u), PairWidth + 2 * pad);
-        float right = MathF.Round(metrics.Width - UiTokens.VitalsMargin * u), left = right - width;
-        // whole pixels (tg's sleep button can stand at a fraction of one), so every rectangle of the column is whole
-        float floor = MathF.Floor(ScreenLoc.Place(SleepLoc, metrics, 32, 32, 0, 0, out _).Top - MathF.Round(UiTokens.VitalsMargin * u));
-        float ceiling = MathF.Ceiling(UiTokens.CardTopRoom * u), gap = MathF.Round(UiTokens.PillGap * u);
+        float u = UiTokens.Unit(metrics), gap = MathF.Round(UiTokens.VitalsMargin * u);
+        float width = metrics.Width;
+        // whole pixels (tg's combat toggle can stand at a fraction of one), so every square of the stack is whole
+        float floor = MathF.Floor(ScreenLoc.Place(ZoneselLoc, metrics, 32, 32, 0, 0, out _).Top - gap);
+        float ceiling = MathF.Ceiling(UiTokens.CardTopRoom * u);
         const float icon = HudMetrics.IconPixels;
         for (int s = DollScaleAt(u); s >= 1; s--)
         {
             int cell = Math.Max(1, s - 1);
-            int pair = cell;
-            while (pair > 1 && PairWidth * pair > width) // smaller until it fits the panel's width
-                pair--;
-            float moodHeight = icon * Math.Max(cell, pair), panelHeight = 2 * pad + icon * (s + cell) + moodHeight + 2 * cellGap;
-            for (int step = 0; step <= 15 && (s == 1 || step == 0); step++)
-            {
-                float pill = MathF.Round(UiTokens.PillHeight * u * (1f - 0.05f * step));
-                if (floor - pill - gap - panelHeight < ceiling)
-                    continue;
-                var pillRect = new HudRect(left, floor - pill, width, pill);
-                var panel = new HudRect(left, pillRect.Top - gap - panelHeight, width, panelHeight);
-                float y = panel.Top + pad;
-                HudRect Centred(float w, float h)
-                {
-                    var r = new HudRect(left + MathF.Floor((width - w) / 2f), y, w, h);
-                    y += h + cellGap;
-                    return r;
-                }
-                HudRect doll = Centred(icon * s, icon * s), health = Centred(icon * cell, icon * cell);
-                HudRect mood = Centred(Math.Max(PairWidth * pair, icon * cell), moodHeight);
-                return new LiveHudLayout(panel, doll, pillRect, s, true, health, mood, cell, pair);
-            }
+            if (floor - icon * (s + 2 * cell) - 2 * gap < ceiling)
+                continue;
+            // the doll's square (the widest) against the edge, the axis its middle; the others centred on it (a square of 32 tg pixels at a whole
+            // scale is an even number of screen pixels, so their halves are whole)
+            float axis = MathF.Floor(width) - icon * s / 2f;
+            var mood = new HudRect(axis - icon * cell / 2f, floor - icon * cell, icon * cell, icon * cell);
+            var health = mood with { Top = mood.Top - gap - icon * cell };
+            var doll = new HudRect(axis - icon * s / 2f, health.Top - gap - icon * s, icon * s, icon * s);
+            return new LiveHudLayout(doll, s, true, health, mood, cell);
         }
         return null;
     }
 
-    // tg's hunger bar (ui_hunger, EAST-1:2) stands this many tg pixels left of its mood face (ui_mood, EAST-1:28), on the same row: the pair is one
-    // box of that offset and a square
-    private static readonly int MoodOffset = MoodLoc.X.Pixels - HungerLoc.X.Pixels;
-    private static readonly int PairWidth = MoodOffset + (int)HudMetrics.IconPixels;
+    /// <summary>The vertical axis the full stack's pictures and the chips above them are centred on: the doll's middle, screen pixels from the left.</summary>
+    public static float Axis(in LiveHudLayout layout) => layout.Doll.Left + layout.Doll.Width / 2f;
 
     /// <summary>
-    /// The square that the 32 x 32 icon of the re-placed vitals entry of <paramref name="role"/> fills in the vitals panel (null for any other role or
-    /// without the full column): the health cell; in the mood cell, while tg's hunger bar shows (<paramref name="hungerShown"/>,
-    /// <see cref="IndicatorShown"/>), the hunger and mood pair centred, the mood face at tg's offset right of the hunger bar; else the mood face alone,
-    /// centred at the cells' scale.
+    /// The square that the 32 x 32 icon of the re-placed vitals entry of <paramref name="role"/> fills (null for any other role or without the full
+    /// stack): tg's health indicator's or tg's mood face's.
     /// </summary>
-    public static HudRect? VitalSquare(LiveHudRole role, in LiveHudLayout layout, bool hungerShown = true)
+    public static HudRect? VitalSquare(LiveHudRole role, in LiveHudLayout layout) => !layout.Vitals ? null : role switch
     {
-        if (!layout.Vitals)
-            return null;
-        HudRect row = layout.Mood;
-        float k = layout.PairScale, side = HudMetrics.IconPixels * k, cell = HudMetrics.IconPixels * layout.CellScale;
-        float pairLeft = row.Left + MathF.Floor((row.Width - PairWidth * k) / 2f), pairTop = row.Top + MathF.Floor((row.Height - side) / 2f);
-        return role switch
-        {
-            LiveHudRole.Health => layout.Health,
-            LiveHudRole.Hunger => new HudRect(pairLeft, pairTop, side, side),
-            LiveHudRole.Mood when hungerShown => new HudRect(pairLeft + MoodOffset * k, pairTop, side, side),
-            LiveHudRole.Mood => new HudRect(row.Left + MathF.Floor((row.Width - cell) / 2f), row.Top + MathF.Floor((row.Height - cell) / 2f), cell, cell),
-            _ => null,
-        };
-    }
+        LiveHudRole.Health => layout.Health,
+        LiveHudRole.Mood => layout.Mood,
+        _ => null,
+    };
 
     // ---- the held-item hint strip above the hands (the designer, 2026-11-26) ----
 
@@ -606,32 +642,30 @@ public static class LiveHud
     /// </summary>
     public static float HintWidth(float unit, IReadOnlyList<(float Cap, float Verb)> entries)
     {
-        float width = 2 * UiTokens.HintPad * unit + HintPicture(MathF.Round(UiTokens.PillHeight * unit));
+        float width = 2 * UiTokens.HintPad * unit + HintPicture(MathF.Round(UiTokens.HintHeight * unit));
         foreach ((float cap, float verb) in entries)
             width += UiTokens.HintGap * unit + cap + UiTokens.HintCapGap * unit + verb;
         return width;
     }
 
-    // tg's human HUD entries that stay at tg's places at the bottom (the inventory toggle, drop and swap, the bottom-right buttons and menu) and the
-    // right column's status icons, which stay at tg's places with the reduced column: the hint strip keeps clear of all of them
+    // tg's human HUD entries still drawn at the bottom right (slice E: the combat toggle in the corner; under Tab the zone selector, the memories
+    // button and the area creator in the row left of it) and the right column's status icons, which stay at tg's places with the reduced
+    // arrangement, the sleep button among them: the hint strip keeps clear of all of them, under Tab or not
     private static readonly ScreenLocSpec[] HintClear =
     {
-        ToggleLoc,
-        Loc("EAST-1:28,SOUTH:5"), Loc("EAST-1:28,SOUTH+1:24"), Loc("EAST-1:28,SOUTH+1:41"), Loc("EAST-2:26,SOUTH:5"), Loc("EAST-2:26,SOUTH+1:7"),
-        Loc("EAST-2:26, SOUTH+1:24"), Loc("EAST-3:24, SOUTH+1:7"), Loc("EAST-3:24,SOUTH+1:24"), Loc("EAST-3:7,SOUTH+1:7"), Loc("EAST-3:7,SOUTH+1:24"),
-        Loc("EAST-4:22,SOUTH:5"), Loc("EAST-4:22,SOUTH+1:7"), HealthLoc, MoodLoc, HungerLoc, Loc("EAST-1:28,CENTER-3:14"), Loc("EAST-1:28,CENTER+1:21"),
-        Loc("EAST-1:28,CENTER-4:14"),
+        ZoneselLoc, MoviLoc, ActiLoc, FloorChangerLoc, SleepLoc,
+        HealthLoc, MoodLoc, HungerLoc, Loc("EAST-1:28,CENTER-3:14"), Loc("EAST-1:28,CENTER+1:21"), Loc("EAST-1:28,CENTER-4:14"),
     };
 
     /// <summary>
     /// Where the held-item hint strip goes over the hands' row <paramref name="row"/>, and the share of its size it is drawn at (<paramref name="share"/>;
     /// an empty rectangle where it is left out): its natural width <paramref name="natural"/> (<see cref="HintWidth"/>; 0: none), centred on the
-    /// hotbar's gap, its bottom <see cref="UiTokens.PillGap"/> over the higher of the row's top line (a box at the active size) and the visible top of
-    /// tg's drop and swap buttons (<see cref="VisibleButton"/>). One wider than the row (both boxes at the active size) is made smaller as one to the row's width, its text to no less than
+    /// hotbar's gap, its bottom <see cref="UiTokens.HintRise"/> over the row's top line (the taller, active box; slice E). One wider than the row
+    /// (both boxes at the active size) is made smaller as one to the row's width, its text to no less than
     /// <see cref="UiTokens.HintLeastShare"/> of the prompts' size; below that it is left out. It is shown only where it is wholly on the screen and
-    /// clear of the chat window when the row stands right of it (<paramref name="chatRight"/>), tg's entries at tg's places, the vitals column
-    /// (<paramref name="column"/>), every chip it can show (eight) and the widest prompt block beside the crosshair. It never moves the row and
-    /// does not change with a swap: it depends on the screen, the scale and the row's place alone (and the bound keys it names).
+    /// clear of the chat window when the row stands right of it (<paramref name="chatRight"/>), tg's entries still drawn, the vitals
+    /// (<paramref name="column"/>), every chip it can show (<see cref="MaxChips"/>) and the widest prompt block beside the crosshair. It never moves
+    /// the row and does not change with a swap: it depends on the screen, the scale and the row's place alone (and the bound keys it names).
     /// </summary>
     public static HudRect HintBy(in HudMetrics metrics, in HandsLayout row, in LiveHudLayout column, float chatRight, float natural, out float share)
     {
@@ -644,11 +678,9 @@ public static class LiveHud
         float fit = natural > rowWidth ? rowWidth / natural : 1f;
         if (fit * UiTokens.HintShare < UiTokens.HintLeastShare - 0.0001f)
             return default;
-        float width = MathF.Floor(natural * fit), height = MathF.Round(UiTokens.PillHeight * u * fit);
-        // tg's drop and swap buttons drawn only in the lower part of their squares (UiTokens.DropSwapVisible): the strip sits on what shows
-        HudRect drop = VisibleButton(DropLoc, metrics), swap = VisibleButton(SwapLoc, metrics);
-        // at the whole pixel above what shows (it can end at a fraction of one), so the strip and its picture stand at whole pixels
-        float bottom = MathF.Floor(Math.Min(row.Hotbar.Bottom - active, Math.Min(drop.Top, swap.Top))) - MathF.Round(UiTokens.PillGap * u);
+        float width = MathF.Floor(natural * fit), height = MathF.Round(UiTokens.HintHeight * u * fit);
+        // at the whole pixel above the active box (the row's place can end at a fraction of one), so the strip and its picture stand at whole pixels
+        float bottom = MathF.Floor(row.Hotbar.Bottom - active) - MathF.Round(UiTokens.HintRise * u);
         var hint = new HudRect(MathF.Round(row.Hotbar.Left + row.Hotbar.Width / 2f - width / 2f), bottom - height, width, height);
         if (hint.Left < 0f || hint.Top < 0f || hint.Right > metrics.Width || hint.Bottom > metrics.Height || hint.Left < chatRight)
             return default;
@@ -657,15 +689,13 @@ public static class LiveHud
             if (Over(hint, ScreenLoc.Place(spec, metrics, 32, 32, 0, 0, out _)))
                 return default;
         }
-        if (Over(hint, drop) || Over(hint, swap))
-            return default;
         List<HudRect> chips = AlertStack(metrics, MaxChips, column);
-        foreach (HudRect ours in new List<HudRect>(chips) { column.Panel, column.Pill })
+        foreach (HudRect ours in new List<HudRect>(chips) { column.Doll, column.Health, column.Mood })
         {
             if (Over(hint, ours))
                 return default;
         }
-        float edge = Math.Min(LeftOfPanel(column, metrics), LeftOfAlerts(chips, metrics));
+        float edge = Math.Min(LeftOfVitals(column, metrics), LeftOfAlerts(chips, metrics));
         HudRect prompt = KeyChips.PromptBlock(metrics, KeyChips.MaxPromptLines, UiTokens.PromptMaxWidth * u, metrics.Width / 2f, metrics.Height / 2f,
             KeyChips.SightReach(false, 0f, 70f, metrics.Height, 1f), edge);
         if (Over(hint, prompt))
@@ -686,24 +716,13 @@ public static class LiveHud
         return new HudRect(hint.Left + MathF.Round(UiTokens.HintPad * unit * share), hint.Top + MathF.Floor((hint.Height - side) / 2f), side, side);
     }
 
-    // tg's five alerts and the stamina, internals and suit cell chips
-    private const int MaxChips = 8;
-
     /// <summary>
-    /// The visible part of tg's drop or swap button at <paramref name="spec"/>: the lower <see cref="UiTokens.DropSwapVisible"/> tg pixels of its 32 x 32
-    /// square, where its picture is opaque. The hint strip sits on it.
+    /// The most chips the layouts make room for: tg's five alerts and slice E's status chips (hunger, stamina, internals, suit cell, sleep) with two
+    /// more status displays of another body.
     /// </summary>
-    public static HudRect VisibleButton(in ScreenLocSpec spec, in HudMetrics metrics)
-    {
-        HudRect square = ScreenLoc.Place(spec, metrics, 32, 32, 0, 0, out _);
-        float height = square.Height * UiTokens.DropSwapVisible / HudMetrics.IconPixels;
-        return new HudRect(square.Left, square.Bottom - height, square.Width, height);
-    }
+    public const int MaxChips = 12;
 
-    /// <summary>The share of its normal size the pill's key chip and word are drawn at: smaller together when they would not fit, never cut.</summary>
-    public static float PillFit(float needed, float room) => needed > room && needed > 0f ? room / needed : 1f;
-
-    // ---- slice D: tg's alerts as chips by the doll panel, above it or left of it (the designer, 2026-11-26) ----
+    // ---- slice D: tg's alerts as chips by the vitals, above them or left of them (the designer, 2026-11-26) ----
 
     /// <summary>
     /// Where an alert stands in tg's order: its index in tg's column (alert.dm get_ui_alert_placement, read from the screen_loc tg gave it; alert 1
@@ -712,58 +731,63 @@ public static class LiveHud
     public static int AlertOrder(in ScreenLocSpec spec) => ScreenLoc.AlertSlot(spec) is int slot and > 0 ? slot : int.MaxValue;
 
     /// <summary>
-    /// Whether the alert chips stand above the doll panel at this screen and scale: when five chips at full size (<see cref="UiTokens.AlertChip"/>,
-    /// <see cref="UiTokens.AlertChipGap"/> apart, <see cref="UiTokens.AlertStackGap"/> over the panel) fit between the panel's top and the version
-    /// tag and the ping and FPS chip (<see cref="UiTokens.CardTopRoom"/>); else they stand left of the doll's column. It never depends on how
+    /// Whether the alert chips stand above the doll at this screen and scale: when five chips at full size (<see cref="UiTokens.AlertChip"/>,
+    /// <see cref="UiTokens.AlertChipGap"/> apart, <see cref="UiTokens.AlertStackGap"/> over the doll) fit between the doll's top and the version
+    /// tag and the ping and FPS chip (<see cref="UiTokens.CardTopRoom"/>); else they stand left of the vitals. It never depends on how
     /// many alerts show, so no chip moves to the other place when one comes or goes (the designer, 2026-11-26).
     /// </summary>
     public static bool AlertsAbove(in HudMetrics metrics, in LiveHudLayout layout)
     {
         float u = UiTokens.Unit(metrics), side = MathF.Round(UiTokens.AlertChip * u), gap = MathF.Round(UiTokens.AlertChipGap * u);
-        return layout.Panel.Top - MathF.Round(UiTokens.AlertStackGap * u) - (MaxAlerts * side + (MaxAlerts - 1) * gap) >= MathF.Ceiling(UiTokens.CardTopRoom * u);
+        return layout.Stack.Top - MathF.Round(UiTokens.AlertStackGap * u) - (MaxAlerts * side + (MaxAlerts - 1) * gap) >= MathF.Ceiling(UiTokens.CardTopRoom * u);
     }
 
     // tg shows five alerts at most (alert.dm get_ui_alert_placement)
     private const int MaxAlerts = 5;
 
     /// <summary>
-    /// The chips of <paramref name="count"/> alerts, square, in tg's order from top to bottom (alert 1 at the top), by the doll panel
-    /// (<paramref name="layout"/>). Above it (<see cref="AlertsAbove"/>): one column at full size, right-aligned with the panel, the lowest
-    /// <see cref="UiTokens.AlertStackGap"/> over its top, holding the first chips (as many as fit), and the chips after them (the internals and
-    /// suit cell chips, say) in further columns to the left, each read top down and standing on the panel. Else left of it: a column whose right edge is that gap left of the
-    /// panel and the pill, its first chip level with the panel's top (or under the top room), running down beside them, above tg's bottom-right rows and the hands' row, and above the widest prompt block
-    /// where that stands under it; when five full-size chips do not fit there they are all made smaller, down to
-    /// <see cref="UiTokens.AlertChipMinPixels"/> (or their full size when that is smaller), and when they still do not fit the column goes on in
-    /// further columns to the left, top down again. The size and the places there are those of five chips whatever the count, so a chip never
-    /// moves when another comes or goes. Empty without a doll panel.
+    /// The chips of <paramref name="count"/> alerts, square, in tg's order from top to bottom (alert 1 at the top), by the vitals
+    /// (<paramref name="layout"/>). Above the doll (<see cref="AlertsAbove"/>): one column at full size, centred on the full stack's <see cref="Axis"/> (right-aligned with the reduced doll), the lowest
+    /// <see cref="UiTokens.AlertStackGap"/> over the doll's top, holding the first chips (as many as fit), and the chips after them (the status
+    /// chips, say) in further columns to the left, each read top down and standing on the doll. Else left of the pictures: a column whose right edge
+    /// is that gap left of the doll (the widest picture), its first chip level with the doll's top (or under the top room), running down beside
+    /// them, above tg's bottom-right row and the hands' row, and above the widest prompt block where that stands under it; when five full-size
+    /// chips do not fit there they are all made smaller, down to <see cref="UiTokens.AlertChipMinPixels"/> (or their full size when that is
+    /// smaller), and when they still do not fit the column goes on in further columns to the left, top down again. The size and the places there
+    /// are those of five chips whatever the count, so a chip never moves when another comes or goes. Empty without the vitals.
     /// </summary>
     public static List<HudRect> AlertStack(in HudMetrics metrics, int count, in LiveHudLayout layout)
     {
         var chips = new List<HudRect>(Math.Max(0, count));
-        if (count <= 0 || layout.Panel.Width <= 0f)
+        if (count <= 0 || layout.Doll.Width <= 0f)
             return chips;
         float u = UiTokens.Unit(metrics), stackGap = MathF.Round(UiTokens.AlertStackGap * u);
         float full = MathF.Round(UiTokens.AlertChip * u), fullGap = MathF.Round(UiTokens.AlertChipGap * u);
+        HudRect stack = layout.Stack;
         if (AlertsAbove(metrics, layout))
         {
-            float bottom = layout.Panel.Top - stackGap;
+            float bottom = stack.Top - stackGap;
             // the first chips in the column at the edge, as many as fit (five at least); the chips after them go on in the next column to the left
             int above = Math.Max(MaxAlerts, (int)MathF.Floor((bottom - MathF.Ceiling(UiTokens.CardTopRoom * u) + fullGap) / (full + fullGap)));
             for (int i = 0; i < count; i++)
             {
                 int column = i / above, row = i % above, inColumn = Math.Min(above, count - column * above);
-                float columnTop = bottom - inColumn * full - (inColumn - 1) * fullGap; // each column stands on the panel
-                chips.Add(new HudRect(layout.Panel.Right - (column + 1) * full - column * fullGap, columnTop + row * (full + fullGap), full, full));
+                float columnTop = bottom - inColumn * full - (inColumn - 1) * fullGap; // each column stands on the doll
+                // slice E: the first column centred on the full stack's axis (at a whole pixel); with the reduced doll right-aligned with it
+                float first = layout.Vitals ? MathF.Round(Axis(layout) - full / 2f) : stack.Right - full;
+                chips.Add(new HudRect(first - column * (full + fullGap), columnTop + row * (full + fullGap), full, full));
             }
             return chips;
         }
-        float top = Math.Max(layout.Panel.Top, MathF.Ceiling(UiTokens.CardTopRoom * u));
-        // beside the panel and the pill, left of whichever reaches further left
-        float right = (layout.Pill.Width > 0f ? Math.Min(layout.Panel.Left, layout.Pill.Left) : layout.Panel.Left) - stackGap;
+        float top = Math.Max(stack.Top, MathF.Ceiling(UiTokens.CardTopRoom * u));
+        float right = stack.Left - stackGap; // the doll is the widest picture
         float handsRow = metrics.Height - (UiTokens.HotbarMargin + UiTokens.HandActive) * u; // the hands' row at its full size: it is only ever smaller
-        float floor = Math.Min(ScreenLoc.Place(BottomRow, metrics, 32, 32, 0, 0, out _).Top, handsRow) - stackGap;
+        // above tg's bottom-right row still drawn (slice E: the combat toggle and, under Tab, the three entries left of it); with the reduced
+        // arrangement above tg's rows of buttons at their places as before
+        float buttons = ScreenLoc.Place(layout.Vitals ? MoviLoc : BottomRow, metrics, 32, 32, 0, 0, out _).Top;
+        float floor = Math.Min(buttons, handsRow) - stackGap;
         HudRect sleep = ScreenLoc.Place(SleepLoc, metrics, 32, 32, 0, 0, out _);
-        if (sleep.Left < right) // tg's sleep button, higher than that row, reaches under the column where tg's tiles are wide (a 4K screen at a large scale)
+        if (!layout.Vitals && sleep.Left < right) // tg's sleep button at its place, higher than that row, reaches under the column where tg's tiles are wide (a 4K screen at a large scale)
             floor = Math.Min(floor, sleep.Top - stackGap);
         // the widest prompt block beside the crosshair, which ends before the column: where there is no room for it right of the crosshair it
         // stands left of it, under the column on a narrow screen at a large scale, and the column then ends above it
@@ -817,10 +841,14 @@ public static class LiveHud
     /// <summary>
     /// The look a screen entry drawn in the role <paramref name="placed"/> (<see cref="Placed"/>) shows of its animate() chain: in a chip
     /// (<see cref="LiveHudRole.Alert"/>: tg's alerts and the status indicators on the human HUD) without moving, so its picture always stays in
-    /// <see cref="AlertPicture"/> (tg throws a new alert in 32 pixels to the right, alert.dm:65-66, which would draw it over the panel beside the
-    /// empty chip); nothing replaces that slide. At tg's places the look is tg's.
+    /// <see cref="AlertPicture"/> (tg throws a new alert in 32 pixels to the right, alert.dm:65-66, which would draw it over the doll beside the
+    /// empty chip); nothing replaces that slide. Slice E (the designer, 2026-11-26): the hunger bar's chip (<paramref name="role"/>
+    /// <see cref="LiveHudRole.Hunger"/>) is drawn at full opacity, not with tg's fade (screen_objects.dm:1237-1247, a second): the chip comes and
+    /// goes with the fade's target, which is the entry's own alpha (animate() sets it at once, as BYOND does; <see cref="ChipShown"/>). At tg's
+    /// places the look is tg's.
     /// </summary>
-    public static HudLook ChipLook(LiveHudRole placed, in HudLook look) => placed == LiveHudRole.Alert ? look with { MoveX = 0f, MoveY = 0f } : look;
+    public static HudLook ChipLook(LiveHudRole placed, in HudLook look, LiveHudRole role = LiveHudRole.Alert) => placed != LiveHudRole.Alert ? look
+        : role == LiveHudRole.Hunger ? look with { MoveX = 0f, MoveY = 0f, Alpha = 1f } : look with { MoveX = 0f, MoveY = 0f };
 
     /// <summary>What the HUD pick gets for the alert <paramref name="id"/> drawn in <paramref name="chip"/>: the whole chip, with no picture, so a click anywhere on it is tg's alert.</summary>
     public static HudDrawn AlertDrawn(long id, HudRect chip) => new(id, chip, null, 0, 0);

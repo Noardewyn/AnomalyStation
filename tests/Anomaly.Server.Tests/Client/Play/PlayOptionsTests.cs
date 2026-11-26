@@ -488,12 +488,15 @@ public class PlayOptionsTests
         [PlayAction.ViewPetCommands] = new[] { "J" },
         [PlayAction.CursorMode] = new[] { "Tab" },
         [PlayAction.QuickEquip] = new[] { "E" },
-        // the last row, unchanged: resist, pray, give, push to talk, flashlight, scoreboard, levels, the other function keys, \
+        // the last row: resist, pray, push to talk, scoreboard, levels, the other function keys, the | key; slice E (section 6): the flashlight moved
+        // to U, L is the language menu, G (the give key's, which is gone) crafting, M navigate
         [PlayAction.Resist] = new[] { "B" },
         [PlayAction.Pray] = new[] { "P" },
-        [PlayAction.GiveItem] = new[] { "G" },
+        [PlayAction.CraftingMenu] = new[] { "G" },
+        [PlayAction.LanguageMenu] = new[] { "L" },
+        [PlayAction.Navigate] = new[] { "M" },
         [PlayAction.PushToTalk] = new[] { "N" },
-        [PlayAction.Flashlight] = new[] { "L" },
+        [PlayAction.Flashlight] = new[] { "U" },
         [PlayAction.Scoreboard] = new[] { "K" },
         [PlayAction.MoveUpLevel] = new[] { "Space" },
         [PlayAction.MoveDownLevel] = new[] { "Ctrl" },
@@ -638,16 +641,50 @@ public class PlayOptionsTests
                 continue;
             lines++;
             string[] pair = line.Substring(5).Split('=');
+            if (pair[0] == "give_item")
+            {
+                // slice E: the give key is gone; its line is read without an error and names no action
+                Assert.Null(KeyBindings.ActionOfId(pair[0]));
+                continue;
+            }
             PlayAction action = KeyBindings.ActionOfId(pair[0]).Value;
             Assert.True(string.Join(",", options.Bindings.KeysOf(action)) == pair[1], $"{pair[0]}: {string.Join(",", options.Bindings.KeysOf(action))}, saved {pair[1]}");
         }
-        Assert.Equal(Enum.GetValues<PlayAction>().Length, lines);
+        // every action of the time, the give key among them: today's actions less slice E's three menu keys, and the give key
+        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 + 1, lines);
+        // slice E's menu keys keep their defaults where the old file left the key free (G: the give key's line is ignored), and lose it where the old
+        // file gave it to another action (L the flashlight's, M the me key's), as a key serves one action
+        Assert.Equal(new[] { "G" }, options.Bindings.KeysOf(PlayAction.CraftingMenu));
+        Assert.Empty(options.Bindings.KeysOf(PlayAction.LanguageMenu));
+        Assert.Empty(options.Bindings.KeysOf(PlayAction.Navigate));
         // and the old keys do what they did: R throws, Ctrl+Q drops (no Ctrl pair there), Shift+left click is the plain left click, V examines
         Assert.Equal(PlayAction.ThrowMode, options.Bindings.ActionOfPress("R", shift: false));
         Assert.Equal(PlayAction.DropItem, options.Bindings.ActionOfPress("Q", shift: false, ctrl: true));
         Assert.Equal(PlayAction.PrimaryClick, options.Bindings.ActionOfPress("MouseLeft", shift: true, ctrl: true));
         Assert.Equal(PlayAction.Examine, options.Bindings.ActionOf("V"));
         Assert.Equal(PlayAction.ViewPetCommands, options.Bindings.ActionOfPress("Shift", shift: true));
+    }
+
+    [Fact]
+    public void TheGiveKeyIsGoneAndAFileThatStillNamesItLoadsWithoutAnError()
+    {
+        // ui-overhaul.md section 6, slice E: "Offer item" is in the radial; the give key's line is read and ignored, whatever key it names
+        Assert.DoesNotContain("give_item", Enum.GetValues<PlayAction>().Select(KeyBindings.IdOf));
+        Assert.DoesNotContain(Enum.GetValues<PlayAction>().Select(KeyBindings.TitleOf), t => t.StartsWith("Give", StringComparison.Ordinal));
+        var errors = new List<string>();
+        PlayOptions options = PlayOptions.Parse("bind.give_item=G\nbind.flashlight=U\n", errors);
+        Assert.Empty(errors);
+        Assert.Equal(new[] { "G" }, options.Bindings.KeysOf(PlayAction.CraftingMenu));
+        PlayOptions taken = PlayOptions.Parse("bind.give_item=L\n", errors);
+        Assert.Empty(errors);
+        Assert.Equal(new[] { "L" }, taken.Bindings.KeysOf(PlayAction.LanguageMenu)); // it takes no key from today's actions
+        Assert.DoesNotContain("give_item", taken.ToText());
+        // an unknown action still is an error
+        PlayOptions.Parse("bind.give_items=G\n", errors);
+        Assert.Single(errors);
+        // the three menu keys in the options panel, in the style of the others
+        Assert.Equal(("Crafting menu", "Language menu", "Navigate"), (KeyBindings.TitleOf(PlayAction.CraftingMenu), KeyBindings.TitleOf(PlayAction.LanguageMenu), KeyBindings.TitleOf(PlayAction.Navigate)));
+        Assert.Equal(("crafting_menu", "language_menu", "navigate"), (KeyBindings.IdOf(PlayAction.CraftingMenu), KeyBindings.IdOf(PlayAction.LanguageMenu), KeyBindings.IdOf(PlayAction.Navigate)));
     }
 
     [Fact]

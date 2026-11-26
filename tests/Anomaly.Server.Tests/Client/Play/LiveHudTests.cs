@@ -5,12 +5,12 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Client.Play;
 
 /// <summary>
-/// ui-overhaul.md section 6, slice B: which screen entries the live HUD re-draws (the doll, the combat toggle) or hides (tg's zone selector in the
-/// captured view), combat mode read off the replica, the doll panel and the combat pill placed clear of tg's right-hand column at every HUD
-/// scale, and clicks on the re-placed doll and on the pill reaching tg's entries with tg's icon pixels. Slice C: the hands known by hand index and
-/// the bottom slots by slot id on the human HUD only, the active hand and its swaps, the hands' row and the bottom slots clear of each other and of
-/// tg's HUD and the chat window, and a click on a hand box reaching tg's hand box or the held item. Slice D: the vitals column, the alert chips and
-/// the hint strip.
+/// ui-overhaul.md section 6, slice B: which screen entries the live HUD re-places (the doll) or hides (tg's zone selector in the captured view),
+/// the doll placed clear of tg's right-hand column at every HUD scale, and clicks on the re-placed doll reaching tg's entry with tg's icon pixels.
+/// Slice C: the hands known by hand index and the bottom slots by slot id on the human HUD only, the active hand and its swaps, the hands' row and
+/// the bottom slots clear of each other and of tg's HUD and the chat window, and a click on a hand box reaching tg's hand box or the held item.
+/// Slice D: the alert chips and the hint strip. Slice E: the bare vitals stack, the status chips, tg's combat toggle in the corner and the Tab row,
+/// tg's buttons that a key does hidden, and the keys' buttons found.
 /// </summary>
 public class LiveHudTests
 {
@@ -38,12 +38,14 @@ public class LiveHudTests
         Assert.Equal(LiveHudRole.Doll, LiveHud.RoleOf(world, world.Screen[DollId]));
         Assert.Equal(LiveHudRole.ZoneSelector, LiveHud.RoleOf(world, world.Screen[FakeServer.ZoneSelId]));
         Assert.Equal(LiveHudRole.CombatToggle, LiveHud.RoleOf(world, world.Screen[FakeServer.CombatId]));
-        foreach (long id in new[] { IntentId, ThrowId, FirstSlotId })
-            Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, world.Screen[id]));
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, world.Screen[FirstSlotId])); // a slot of the toggled inventory: the window's
         Assert.Equal(LiveHudRole.Health, LiveHud.RoleOf(world, world.Screen[HealthId])); // slice D: tg's health indicator, at ui_health
+        // slice E: tg's move intent, throw, drop and swap buttons, which keys do
+        foreach (long id in new[] { IntentId, ThrowId, DropId, SwapId })
+            Assert.Equal(LiveHudRole.KeyButton, LiveHud.RoleOf(world, world.Screen[id]));
         // every other entry of the fake's HUD stays at tg's place, but slice C's: the two hands, the six bottom slots and the inventory toggle,
-        // and slice D's health indicator
-        Assert.Equal(3 + 2 + 6 + 1 + 1, world.Screen.Values.Count(e => LiveHud.RoleOf(world, e) != LiveHudRole.Tg));
+        // slice D's health indicator, and slice E's buttons: those four and the fake's nine others (FakeServer.HudButtons)
+        Assert.Equal(3 + 2 + 6 + 1 + 1 + 4 + 9, world.Screen.Values.Count(e => LiveHud.RoleOf(world, e) != LiveHudRole.Tg));
         // tg puts them where the fake does: the zone selector at ui_zonesel, the toggle at ui_acti
         Assert.Equal("EAST-1:28,SOUTH:5", world.Screen[FakeServer.ZoneSelId].ScreenLoc);
         Assert.Equal("EAST-3:24,SOUTH:5", world.Screen[FakeServer.CombatId].ScreenLoc);
@@ -92,19 +94,20 @@ public class LiveHudTests
     }
 
     [Fact]
-    public void CombatModeIsReadFromTheToggleOnAndOff()
+    public void TgsCombatToggleFollowsTheKeyAndItsOwnClick()
     {
+        // slice E: tg's own toggle, drawn with tg's picture in the corner, its icon state "combat" or "combat_off"
         (PlayRig rig, ReplicaWorld world) = Start();
-        Assert.False(LiveHud.CombatOn(world, world.Screen[FakeServer.CombatId]));
-        Assert.Equal("Peaceful", LiveHud.CombatText(false));
+        string State() => world.TryGetAppearance(world.Screen[FakeServer.CombatId].Appearance, out AppearanceEntry app) ? world.ResolveString(app.IconState) : null;
+        Assert.Equal("combat_off", State());
         rig.Session.ToggleCombatMode(); // the key (F by default)
         rig.Run(0.4);
-        Assert.True(LiveHud.CombatOn(world, world.Screen[FakeServer.CombatId]));
+        Assert.Equal("combat", State());
         Assert.True(HeldHands.Find(world).Combat); // the swing sound's reading agrees
-        Assert.Equal("Combat", LiveHud.CombatText(true));
-        ClickScreen(rig, FakeServer.CombatId, 16, 16); // tg's click on the toggle, which the pill reports
-        Assert.False(LiveHud.CombatOn(world, world.Screen[FakeServer.CombatId]));
+        ClickScreen(rig, FakeServer.CombatId, 16, 16); // tg's click on the toggle (under Tab)
+        Assert.Equal("combat_off", State());
         Assert.False(HeldHands.Find(world).Combat);
+        Assert.Equal(LiveHudRole.CombatToggle, LiveHud.Placed(LiveHud.RoleOf(world, world.Screen[FakeServer.CombatId]), humanHud: true, vitals: true));
     }
 
     [Fact]
@@ -173,45 +176,37 @@ public class LiveHudTests
 
     [Theory]
     [MemberData(nameof(Screens))]
-    public void ThePanelAndThePillAreOnTheScreenAndClearOfTgsRightColumn(int width, int height, float scale)
+    public void OnAnotherHudTheDollIsOnTheScreenAndClearOfTgsRightColumn(int width, int height, float scale)
     {
+        // every HUD but the human one: the reduced arrangement, the doll alone and bare (slice E took the panel and the pill away)
         var metrics = new HudMetrics(width, height, scale);
         LiveHudLayout layout = LiveHud.Layout(metrics);
         var screen = new HudRect(0, 0, width, height);
-        Assert.True(Inside(layout.Panel, screen), $"panel {layout.Panel}");
-        Assert.True(Inside(layout.Pill, screen), $"pill {layout.Pill}");
-        Assert.True(Inside(layout.Doll, layout.Panel), $"doll {layout.Doll} in {layout.Panel}");
-        Assert.True(layout.Pill.Top >= layout.Panel.Bottom);
-        // one column: the panel as wide as the pill, the doll centred in it
-        Assert.Equal(layout.Panel.Left, layout.Pill.Left);
-        Assert.Equal(layout.Panel.Width, layout.Pill.Width);
-        Assert.InRange(layout.Doll.Left - layout.Panel.Left - (layout.Panel.Right - layout.Doll.Right), -1f, 1f);
-        // the doll: a whole multiple of tg's pixels, the panel just around it (no title)
+        Assert.False(layout.Vitals);
+        Assert.Equal(layout.Doll, layout.Stack);
+        Assert.True(Inside(layout.Doll, screen), $"doll {layout.Doll}");
+        // the doll: a whole multiple of tg's pixels, at whole pixels
         Assert.True(layout.DollScale >= 1);
         Assert.Equal(32f * layout.DollScale, layout.Doll.Width);
         Assert.Equal(32f * layout.DollScale, layout.Doll.Height);
-        float pad = UiTokens.DollPanelPad * UiTokens.Unit(metrics);
-        Assert.InRange(layout.Panel.Height - layout.Doll.Height, 2 * pad - 1f, 2 * pad + 1f);
-        Assert.True(layout.Panel.Width >= layout.Doll.Width + 2 * pad - 1f);
+        Assert.True(layout.Doll.Left == MathF.Round(layout.Doll.Left) && layout.Doll.Top == MathF.Round(layout.Doll.Top), $"{layout.Doll}");
         // at the middle right
-        Assert.True(layout.Panel.Left > width / 2f, $"{layout.Panel}");
-        Assert.True(layout.Panel.Top < height / 2f, $"{layout.Panel}");
+        Assert.True(layout.Doll.Left > width / 2f, $"{layout.Doll}");
+        Assert.True(layout.Doll.Top < height / 2f, $"{layout.Doll}");
         foreach (string loc in RightColumn)
         {
             Assert.True(ScreenLoc.TryParse(loc, out ScreenLocSpec spec), loc);
             HudRect tg = ScreenLoc.Place(spec, metrics, 32, 32, 0, 0, out _);
-            Assert.False(Overlaps(layout.Panel, tg), $"panel {layout.Panel} over {loc} {tg}");
-            Assert.False(Overlaps(layout.Pill, tg), $"pill {layout.Pill} over {loc} {tg}");
+            Assert.False(Overlaps(layout.Doll, tg), $"doll {layout.Doll} over {loc} {tg}");
         }
         float pulseTop = ScreenLoc.Place(Parse(RightColumn[0]), metrics, 32, 32, 0, 0, out _).Top;
         for (int slot = 1; slot <= 5; slot++)
         {
             HudRect alert = ScreenLoc.PlaceAlert(slot, 5, metrics, pulseTop);
-            Assert.False(Overlaps(layout.Panel, alert) || Overlaps(layout.Pill, alert), $"alert {slot} {alert}");
+            Assert.False(Overlaps(layout.Doll, alert), $"alert {slot} {alert}");
         }
-        // the zone labels and the prompts end before both
-        float edge = LiveHud.LeftOfPanel(layout, metrics);
-        Assert.True(edge < layout.Panel.Left && edge < layout.Pill.Left);
+        // the zone labels and the prompts end before it
+        Assert.True(LiveHud.LeftOfVitals(layout, metrics) < layout.Doll.Left);
     }
 
     private static ScreenLocSpec Parse(string loc) => ScreenLoc.TryParse(loc, out ScreenLocSpec spec) ? spec : default;
@@ -222,12 +217,12 @@ public class LiveHudTests
         Assert.Equal(3, LiveHud.Layout(new HudMetrics(1920, 1080, 1f)).DollScale);
         Assert.Equal(6, LiveHud.Layout(new HudMetrics(1920, 1080, 2f)).DollScale);
         Assert.Equal(2, LiveHud.Layout(new HudMetrics(1280, 720, 1f)).DollScale);
-        // at 300% on 1080 lines the full 9x doll would push the pill over tg's buttons (the probe: pill 444 to 540 over ui_human_area from 486)
+        // at 300% on 1080 lines the doll stays above tg's buttons (ui_human_area from 486)
         LiveHudLayout big = LiveHud.Layout(new HudMetrics(1920, 1080, 3f));
-        Assert.InRange(big.DollScale, 1, 8);
+        Assert.InRange(big.DollScale, 1, 9);
         HudRect area = ScreenLoc.Place(Parse("EAST-3:24,SOUTH+1:24"), new HudMetrics(1920, 1080, 3f), 32, 32, 0, 0, out _);
-        Assert.True(big.Pill.Bottom <= area.Top, $"{big.Pill} {area}");
-        Assert.True(big.Panel.Top >= 0f);
+        Assert.True(big.Doll.Bottom <= area.Top, $"{big.Doll} {area}");
+        Assert.True(big.Doll.Top >= 0f);
     }
 
     [Fact]
@@ -254,19 +249,23 @@ public class LiveHudTests
     }
 
     [Theory]
-    [InlineData(1920, 1080, 1f)]
-    [InlineData(1280, 720, 1.25f)]
-    [InlineData(2560, 1440, 2f)]
-    [InlineData(1920, 1080, 3f)]
-    public void AClickOnTheRePlacedDollIsTheSameTgIconPixelAndAClickOnThePillIsTheToggle(int width, int height, float scale)
+    [InlineData(1920, 1080, 1f, false)]
+    [InlineData(1280, 720, 1.25f, false)]
+    [InlineData(2560, 1440, 2f, false)]
+    [InlineData(1920, 1080, 3f, false)]
+    [InlineData(1920, 1080, 1f, true)]
+    [InlineData(1280, 720, 1.25f, true)]
+    [InlineData(2560, 1440, 2f, true)]
+    [InlineData(1920, 1080, 3f, true)]
+    public void AClickOnTheRePlacedDollIsTheSameTgIconPixel(int width, int height, float scale, bool human)
     {
-        LiveHudLayout layout = LiveHud.Layout(new HudMetrics(width, height, scale));
+        LiveHudLayout layout = LiveHud.Layout(new HudMetrics(width, height, scale), human);
         // what HudLayer.Collect reports: the doll's icon square once (whatever size its zones' pictures are: a wound outline makes them 36 x 36
-        // with the square at 2,2) and the pill under the combat toggle's id
+        // with the square at 2,2)
         HudDrawn doll = LiveHud.DollDrawn(DollId, layout);
         Assert.Equal(layout.Doll, doll.Rect);
         Assert.Null(doll.Image);
-        var picker = new HudPicker(new StubSurface(new List<HudDrawn> { doll, LiveHud.PillDrawn(FakeServer.CombatId, layout) }));
+        var picker = new HudPicker(new StubSurface(new List<HudDrawn> { doll }));
         foreach ((int x, int y) in new[] { (1, 1), (3, 3), (16, 16), (22, 18), (32, 32), (5, 29) })
         {
             (float sx, float sy) = PixelCentre(layout.Doll, x, y);
@@ -282,12 +281,6 @@ public class LiveHudTests
         Assert.Equal(layout.Doll.Bottom + 2 * k, grown.Bottom, 2);
         // just outside the square is not the doll
         Assert.NotEqual(DollId, picker.PickScreen(layout.Doll.Left - 1, layout.Doll.Top + 1).Id);
-
-        PickHit pill = picker.PickScreen(layout.Pill.Left + layout.Pill.Width / 2f, layout.Pill.Top + layout.Pill.Height / 2f);
-        Assert.Equal(PickSurface.Screen, pill.Surface);
-        Assert.Equal(FakeServer.CombatId, pill.Id);
-        Assert.Equal(FakeServer.CombatId, picker.PickScreen(layout.Pill.Left + 1, layout.Pill.Bottom - 1).Id);
-        Assert.Equal(PickHit.None, picker.PickScreen(layout.Pill.Left - 1, layout.Pill.Top + 1));
     }
 
     // The probe (2026-11-24): on the top screen line of a tg pixel row the pick said the row above (1697,503 at 1920x1080: drawn 14,22, picked 14,23).
@@ -304,7 +297,7 @@ public class LiveHudTests
     {
         // the doll's square as LiveHud places it (whole pixels), at k screen pixels per tg pixel; mouse positions are whole screen pixels
         var square = new HudRect(1601, 437, 32 * scale, 32 * scale);
-        var picker = new HudPicker(new StubSurface(new List<HudDrawn> { LiveHud.DollDrawn(DollId, new LiveHudLayout(square, square, default, scale)) }));
+        var picker = new HudPicker(new StubSurface(new List<HudDrawn> { LiveHud.DollDrawn(DollId, new LiveHudLayout(square, scale)) }));
         for (int y = 0; y < 32 * scale; y++)
         {
             for (int x = 0; x < 32 * scale; x++)
@@ -344,18 +337,19 @@ public class LiveHudTests
     }
 
     [Fact]
-    public void APromptBesideTheCrosshairEndsBeforeThePanelAndIsNarrowedNotMoved()
+    public void APromptBesideTheCrosshairEndsBeforeTheVitalsAndIsNarrowedNotMoved()
     {
-        foreach ((int w, int h, float scale) in new[] { (1920, 1080, 2f), (1280, 720, 2f), (1920, 1080, 1f), (1024, 600, 3f) })
+        foreach ((int w, int h, float scale, bool human) in new[] { (1920, 1080, 2f, false), (1280, 720, 2f, false), (1920, 1080, 1f, false), (1024, 600, 3f, false),
+                     (1920, 1080, 2f, true), (1280, 720, 2f, true), (1024, 600, 3f, true) })
         {
             var metrics = new HudMetrics(w, h, scale);
-            LiveHudLayout layout = LiveHud.Layout(metrics);
-            float edge = LiveHud.LeftOfPanel(layout, metrics);
+            LiveHudLayout layout = LiveHud.Layout(metrics, human);
+            float edge = LiveHud.LeftOfVitals(layout, metrics);
             float reach = KeyChips.SightReach(false, 0f, 70f, h, 1f);
             // a long name ("reinforced wall (wall/r wall)" at 200%: about 700 pixels wide)
             HudRect block = KeyChips.PromptBlock(metrics, 2, 700f * UiTokens.Unit(metrics), w / 2f, h / 2f, reach, edge);
             Assert.True(block.Right <= edge + 0.01f, $"{w}x{h} {scale}: {block} past {edge}");
-            Assert.False(Overlaps(block, layout.Panel) || Overlaps(block, layout.Pill));
+            Assert.False(Overlaps(block, layout.Doll) || Overlaps(block, layout.Health) || Overlaps(block, layout.Mood));
             float room = edge - (w / 2f + reach + UiTokens.PromptOffsetX * UiTokens.Unit(metrics));
             if (room >= UiTokens.PromptMinWidth * UiTokens.Unit(metrics))
             {
@@ -386,9 +380,9 @@ public class LiveHudTests
         Assert.Equal(LiveHudRole.InventoryToggle, LiveHud.RoleOf(world, world.Screen[FakeServer.InventoryToggleId]));
         foreach (long id in BottomSlotIds)
             Assert.Equal(LiveHudRole.BottomSlot, LiveHud.RoleOf(world, world.Screen[id]));
-        // tg's swap, drop and throw buttons stay at tg's places
+        // tg's swap, drop and throw buttons are buttons a key does (slice E)
         foreach (long id in new[] { SwapId, DropId, ThrowId })
-            Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, world.Screen[id]));
+            Assert.Equal(LiveHudRole.KeyButton, LiveHud.RoleOf(world, world.Screen[id]));
         ScreenEntry left = world.Screen[HandLeftId], right = world.Screen[HandRightId];
         // the place says nothing: the left hand at the right hand's place is the left hand, and the hand index wins over the picture
         Assert.Equal(LiveHudRole.LeftHand, LiveHud.RoleOf(world, left with { ScreenLoc = right.ScreenLoc }));
@@ -480,34 +474,13 @@ public class LiveHudTests
         return new HudRect(Math.Clamp(0.006f * w, 0f, Math.Max(0f, w - width)), Math.Clamp(0.631f * h, 0f, Math.Max(0f, h - height)), width, height);
     }
 
-    // tg's human HUD at the bottom (hud/human.dm, __DEFINES/hud.dm): the inventory toggle, the drop and swap buttons over the hands, and the
-    // bottom-right menu with the zone selector, the move intent, pull, resist, throw, rest and sleep
-    private static readonly string[] HumanBottom =
-    {
-        "WEST:6,SOUTH:5", // ui_inventory
-        "CENTER-1:16,SOUTH+1:5", // ui_swaphand_position(1): drop
-        "CENTER:16,SOUTH+1:5", // ui_swaphand_position(2): swap
-        "EAST-4:22,SOUTH:5", // ui_human_floor_changer
-        "EAST-4:22,SOUTH+1:7", // ui_human_memories_menu
-        "EAST-3:7,SOUTH+1:7", // ui_human_navigate
-        "EAST-3:7,SOUTH+1:24", // ui_human_language
-        "EAST-3:24,SOUTH:5", // ui_acti (the combat toggle, drawn as the pill)
-        "EAST-3:24, SOUTH+1:7", // ui_above_intent: resist
-    };
+    // tg's human HUD entries still drawn at the bottom right (slice E, hud/human.dm, __DEFINES/hud.dm): the combat toggle in the corner (ui_zonesel's
+    // place), and under Tab the zone selector at ui_movi's, the memories button at ui_acti's and the area creator at ui_human_floor_changer's
+    private static readonly string[] HumanCorner = { "EAST-1:28,SOUTH:5" };
 
-    // tg's human HUD entries at the bottom right that stay at tg's places (hud/human.dm): the zone selector (in cursor mode), throw, sleep, the move
-    // intent, rest and pull
-    private static readonly string[] HumanBottomRight =
-    {
-        "EAST-1:28,SOUTH:5", // ui_zonesel
-        "EAST-1:28,SOUTH+1:24", // ui_drop_throw
-        "EAST-1:28,SOUTH+1:41", // ui_above_throw: sleep
-        "EAST-2:26,SOUTH:5", // ui_movi
-        "EAST-2:26,SOUTH+1:7", // ui_above_movement: rest
-        "EAST-2:26, SOUTH+1:24", // ui_above_movement_top: pull
-    };
+    private static readonly string[] HumanTabRow = { "EAST-2:26,SOUTH:5", "EAST-3:24,SOUTH:5", "EAST-4:22,SOUTH:5" };
 
-    // tg's right-column status icons of the human HUD: at tg's places with the reduced column, in the vitals panel or chips with the full one
+    // tg's right-column status icons of the human HUD and its sleep button: at tg's places with the reduced arrangement, chips with the full stack
     private static readonly string[] HumanStatus =
     {
         "EAST-1:28,CENTER-1:19", // ui_health
@@ -516,23 +489,27 @@ public class LiveHudTests
         "EAST-1:28,CENTER-3:14", // ui_stamina
         "EAST-1:28,CENTER+1:21", // ui_internal
         "EAST-1:28,CENTER-4:14", // ui_spacesuit
+        "EAST-1:28,SOUTH+1:41", // ui_above_throw: sleep
     };
+
+    private static bool Whole(HudRect r) => r.Left == MathF.Round(r.Left) && r.Top == MathF.Round(r.Top) && r.Width == MathF.Round(r.Width) && r.Height == MathF.Round(r.Height);
+
+    // tg's entries still drawn on the human HUD at this screen and scale, in first person or under Tab
+    private static List<(string loc, HudRect rect)> HumanTg(HudMetrics metrics, LiveHudLayout layout, bool tab)
+        => HumanCorner.Concat(tab ? HumanTabRow : Array.Empty<string>()).Concat(layout.Vitals ? Array.Empty<string>() : HumanStatus)
+            .Select(loc => (loc, ScreenLoc.Place(Parse(loc), metrics, 32, 32, 0, 0, out _))).ToList();
 
     [Theory]
     [MemberData(nameof(HandScreens))]
-    public void TheHandsTheBottomSlotsTheColumnAndTheStripAreOnTheScreenAndClearOfEachOtherAndOfTgsHud(int width, int height, float scale, bool chatOpen)
+    public void TheHandsTheBottomSlotsTheVitalsAndTheStripAreOnTheScreenAndClearOfEachOtherAndOfTgsHud(int width, int height, float scale, bool chatOpen)
     {
         var metrics = new HudMetrics(width, height, scale);
         var screen = new HudRect(0, 0, width, height);
         HudRect chat = DefaultChat(width, height);
         LiveHudLayout layout = LiveHud.Layout(metrics, human: true);
-        // slice D: the arrangement depends on the screen and the scale alone
+        // the arrangement depends on the screen and the scale alone
         Assert.Equal(layout, LiveHud.Layout(new HudMetrics(width, height, scale), human: true));
         Assert.Equal(LiveHud.VitalsColumn(metrics).HasValue, layout.Vitals);
-        // tg's human HUD that stays at tg's places: the bottom row, the bottom right, and with the reduced column the status icons (tg's alerts are
-        // chips on the human HUD, its doll is in our panel)
-        var tg = HumanBottom.Concat(HumanBottomRight).Concat(layout.Vitals ? Array.Empty<string>() : HumanStatus)
-            .Select(loc => (loc, rect: ScreenLoc.Place(Parse(loc), metrics, 32, 32, 0, 0, out _))).ToList();
         // the chat window closed, at its place in the round, and widened from its left edge to every tenth of the screen up to all of it
         var chatRights = new List<float> { 0f };
         if (chatOpen)
@@ -542,30 +519,31 @@ public class LiveHudTests
                 chatRights.Add(width * tenth / 10f);
         }
         float u = UiTokens.Unit(metrics);
-        List<HudRect> chips = LiveHud.AlertStack(metrics, 8, layout);
+        List<HudRect> chips = LiveHud.AlertStack(metrics, LiveHud.MaxChips, layout);
         // a hint strip of about the natural width of the default keys' entries (Z Use, Q Drop, Ctrl+Q Throw: about 300 reference pixels)
         float hint = 300f * u;
         HudRect prompt = KeyChips.PromptBlock(metrics, KeyChips.MaxPromptLines, UiTokens.PromptMaxWidth * u, width / 2f, height / 2f,
-            KeyChips.SightReach(false, 0f, 70f, height, 1f), Math.Min(LiveHud.LeftOfPanel(layout, metrics), LiveHud.LeftOfAlerts(chips, metrics)));
+            KeyChips.SightReach(false, 0f, 70f, height, 1f), Math.Min(LiveHud.LeftOfVitals(layout, metrics), LiveHud.LeftOfAlerts(chips, metrics)));
+        var vitals = new List<(string Name, HudRect Rect)> { ("doll", layout.Doll) };
+        if (layout.Vitals)
+            vitals.AddRange(new[] { ("health", layout.Health), ("mood", layout.Mood) });
+        foreach (bool tab in new[] { false, true })
         foreach (float chatRight in chatRights)
         foreach (bool leftActive in new[] { true, false })
         {
+            var tg = HumanTg(metrics, layout, tab);
             HandsLayout hands = LiveHud.Hands(metrics, leftActive, !leftActive, chatRight, layout, hint);
             var window = new HudRect(chat.Left, chat.Top, Math.Max(0f, chatRight - chat.Left), chat.Height);
             var row = new List<(string Name, HudRect Rect)> { ("left hand", hands.Left), ("right hand", hands.Right), ("hotbar", hands.Hotbar) };
-            var ours = row.Concat(new (string Name, HudRect Rect)[] { ("panel", layout.Panel), ("pill", layout.Pill) }).ToList();
+            var ours = row.Concat(vitals).ToList();
             if (hands.Hint.Width > 0)
                 ours.Add(("hint strip", hands.Hint));
-            string at = $"{width}x{height} at {scale}, chat to {chatRight}, left {(leftActive ? "active" : "not active")}, {(layout.Vitals ? "full" : "reduced")}";
+            string at = $"{width}x{height} at {scale}, {(tab ? "Tab" : "first person")}, chat to {chatRight}, left {(leftActive ? "active" : "not active")}, {(layout.Vitals ? "full" : "reduced")}";
             foreach ((string name, HudRect rect) in ours)
             {
                 Assert.True(rect.Width > 0 && rect.Height > 0 && Inside(rect, screen), $"{at}: {name} {rect}");
                 foreach ((string loc, HudRect tgRect) in tg)
-                {
-                    // the hint strip alone sits on tg's drop and swap buttons: it keeps clear of their visible part, not their whole squares
-                    HudRect against = name == "hint strip" && loc.StartsWith("CENTER", StringComparison.Ordinal) ? LiveHud.VisibleButton(Parse(loc), metrics) : tgRect;
-                    Assert.False(Overlaps(rect, against), $"{at}: {name} {rect} over {loc} {against}");
-                }
+                    Assert.False(Overlaps(rect, tgRect), $"{at}: {name} {rect} over {loc} {tgRect}");
             }
             for (int i = 0; i < ours.Count; i++)
                 for (int j = i + 1; j < ours.Count; j++)
@@ -589,12 +567,11 @@ public class LiveHudTests
                 Assert.False(hands with { Hint = default, HintShare = 0f } != closed && Overlaps(hands.Hint, window), $"{at}: hint strip {hands.Hint} over the chat window {window}");
                 // over the row, centred on the gap, no wider than the row with both boxes at the active size, its text at 60 % of the prompts' at least
                 float activeSide = MathF.Round(UiTokens.HandActive * hands.Unit);
-                float buttons = Math.Min(LiveHud.VisibleButton(Parse("CENTER-1:16,SOUTH+1:5"), metrics).Top, LiveHud.VisibleButton(Parse("CENTER:16,SOUTH+1:5"), metrics).Top);
-                // the gap over the higher of the row's top line and what shows of tg's buttons, at the whole pixel above it
-                Assert.Equal(MathF.Floor(Math.Min(hands.Hotbar.Bottom - activeSide, buttons)) - MathF.Round(UiTokens.PillGap * u), hands.Hint.Bottom);
+                // slice E: 6 over the row's top line (the active box), at the whole pixel above it
+                Assert.Equal(MathF.Floor(hands.Hotbar.Bottom - activeSide) - MathF.Round(UiTokens.HintRise * u), hands.Hint.Bottom);
                 // the strip and its picture at whole pixels
                 foreach (HudRect r in new[] { hands.Hint, LiveHud.HintPictureSquare(hands.Hint, u, hands.HintShare) })
-                    Assert.True(r.Left == MathF.Round(r.Left) && r.Top == MathF.Round(r.Top) && r.Width == MathF.Round(r.Width) && r.Height == MathF.Round(r.Height), $"{at}: hint {r} not at whole pixels");
+                    Assert.True(Whole(r), $"{at}: hint {r} not at whole pixels");
                 Assert.InRange(hands.Hint.Left + hands.Hint.Width / 2f - (hands.Hotbar.Left + hands.Hotbar.Width / 2f), -1f, 1f);
                 Assert.True(hands.Hint.Width <= hands.Hotbar.Width + 2 * (MathF.Round(UiTokens.HandGap * hands.Unit) + activeSide) + 0.01f);
                 Assert.True(hands.HintShare * UiTokens.HintShare >= UiTokens.HintLeastShare - 0.001f);
@@ -646,45 +623,46 @@ public class LiveHudTests
             Assert.Equal(default, LiveHud.SwapCap(LiveHud.Hands(metrics, false, false, chatRight), false, false, 40f));
             Assert.Equal(LiveHud.Hands(metrics, !leftActive, leftActive, chatRight).Hotbar, hands.Hotbar);
         }
-        // slice D: the column fits under the version tag and the ping chip, and the full one stands against the screen's right edge, the pill over
-        // tg's sleep button, the panel's four cells inside it in order
-        // (the panel may climb into that room only where the pill is already at its smallest, a quarter: the reduced column at the largest scales)
-        bool smallestPill = layout.Pill.Height <= MathF.Round(UiTokens.PillHeight * u * 0.25f);
-        Assert.True(layout.Panel.Top >= UiTokens.CardTopRoom * u - 1f || smallestPill, $"{width}x{height} at {scale}: panel {layout.Panel} under the top room, pill {layout.Pill}");
-        Assert.True(layout.Pill.Top >= layout.Panel.Bottom && layout.Panel.Width == layout.Pill.Width && layout.Panel.Left == layout.Pill.Left);
+        // slice E: the pictures at whole pixels, the doll a whole multiple of tg's pixels, under the version tag and the ping chip (the reduced doll
+        // climbs into that room only at one tg pixel per pixel, the least it can be)
+        foreach ((string name, HudRect rect) in vitals)
+            Assert.True(Whole(rect), $"{width}x{height} at {scale}: {name} {rect} not at whole pixels");
+        Assert.True(layout.Doll.Top >= MathF.Ceiling(UiTokens.CardTopRoom * u) || (!layout.Vitals && layout.DollScale == 1), $"{width}x{height} at {scale}: doll {layout.Doll} under the top room");
         if (layout.Vitals)
         {
-            Assert.Equal(MathF.Round(width - UiTokens.VitalsMargin * u), layout.Panel.Right);
-            Assert.Equal(MathF.Floor(ScreenLoc.Place(Parse("EAST-1:28,SOUTH+1:41"), metrics, 32, 32, 0, 0, out _).Top - MathF.Round(UiTokens.VitalsMargin * u)), layout.Pill.Bottom);
-            HudRect[] cells = { layout.Doll, layout.Health, layout.Mood };
-            // every rectangle of the column at whole pixels (tg's sleep button can stand at a fraction of one: 843.75 at 1920x1080)
-            foreach (HudRect r in new[] { layout.Panel, layout.Pill, layout.Doll, layout.Health, layout.Mood,
-                         LiveHud.VitalSquare(LiveHudRole.Hunger, layout).Value, LiveHud.VitalSquare(LiveHudRole.Mood, layout).Value, LiveHud.VitalSquare(LiveHudRole.Mood, layout, false).Value })
-                Assert.True(r.Left == MathF.Round(r.Left) && r.Top == MathF.Round(r.Top) && r.Width == MathF.Round(r.Width) && r.Height == MathF.Round(r.Height), $"{width}x{height} at {scale}: {r} not at whole pixels");
-            for (int i = 0; i < cells.Length; i++)
-            {
-                Assert.True(Inside(cells[i], layout.Panel), $"{width}x{height} at {scale}: cell {i} {cells[i]} out of the panel {layout.Panel}");
-                if (i > 0)
-                    Assert.True(cells[i - 1].Bottom < cells[i].Top, $"{width}x{height} at {scale}: cells {i - 1} and {i}");
-            }
-            // the hunger and mood pair and the mood face alone inside the panel too (the pair made smaller until it fits its width)
-            foreach (bool hunger in new[] { true, false })
-                foreach (LiveHudRole role in new[] { LiveHudRole.Hunger, LiveHudRole.Mood })
-                    Assert.True(Inside(LiveHud.VitalSquare(role, layout, hunger).Value, layout.Panel), $"{width}x{height} at {scale}: {role} {LiveHud.VitalSquare(role, layout, hunger)} out of the panel {layout.Panel}");
+            // three pictures, no box: the doll at S, the health indicator and the mood face at S - 1 (at least 1), all centred on one axis, the doll's
+            // square (the widest) touching the screen's right edge, 8 apart, the mood face's bottom 8 over tg's combat toggle in the corner (at the
+            // whole pixel above it)
+            float gap = MathF.Round(UiTokens.VitalsMargin * u), axis = width - 16 * layout.DollScale;
+            int cell = Math.Max(1, layout.DollScale - 1);
+            Assert.Equal(cell, layout.CellScale);
+            Assert.Equal(axis, LiveHud.Axis(layout));
+            Assert.Equal(new HudRect(width - 32 * layout.DollScale, layout.Doll.Top, 32 * layout.DollScale, 32 * layout.DollScale), layout.Doll);
+            Assert.Equal(new HudRect(axis - 16 * cell, layout.Doll.Bottom + gap, 32 * cell, 32 * cell), layout.Health);
+            Assert.Equal(new HudRect(axis - 16 * cell, layout.Health.Bottom + gap, 32 * cell, 32 * cell), layout.Mood);
+            Assert.True(layout.Health.Width <= layout.Doll.Width && layout.Doll.Right == width);
+            HudRect corner = ScreenLoc.Place(Parse("EAST-1:28,SOUTH:5"), metrics, 32, 32, 0, 0, out _);
+            Assert.Equal(MathF.Floor(corner.Top - gap), layout.Mood.Bottom);
+            Assert.Equal(layout.Health, LiveHud.VitalSquare(LiveHudRole.Health, layout));
+            Assert.Equal(layout.Mood, LiveHud.VitalSquare(LiveHudRole.Mood, layout));
         }
         else
-            Assert.True(layout.Panel.Right <= width - 2 * metrics.Tile, $"{width}x{height} at {scale}: the reduced panel {layout.Panel} not left of tg's right column");
+            Assert.True(layout.Doll.Right <= width - 2 * metrics.Tile, $"{width}x{height} at {scale}: the reduced doll {layout.Doll} not left of tg's right column");
         if (!chatOpen) // the alert chips do not depend on the chat window, and tg's alert column is not drawn on the human HUD
-            AlertStackIsClear(metrics, layout, tg, $"{width}x{height} at {scale}");
+        {
+            AlertStackIsClear(metrics, layout, HumanTg(metrics, layout, tab: true), $"{width}x{height} at {scale}");
+            foreach (HudRect chip in chips)
+                Assert.True(Whole(chip) && Whole(LiveHud.AlertPicture(chip)), $"{width}x{height} at {scale}: chip {chip} not at whole pixels");
+        }
     }
 
-    // ---- slice D: tg's alerts as chips by the doll panel, above it or left of it ----
+    // ---- slice D: tg's alerts as chips by the vitals, above them or left of them ----
 
-    // Zero to eight chips (tg's five alerts, then the stamina, internals and suit cell chips), in the place this screen and scale gives (above the doll
-    // when five full-size chips fit there, else left of the column), the same place for one alert and for five: all there, square, on the
-    // screen, clear of each other, of the version tag and the ping and FPS chip (the whole top band, as wide as the tag gets at a large scale), of
-    // the doll panel and the pill, of the hands' row with either hand active, of tg's entries at tg's places, and of the widest prompt block beside
-    // the crosshair, which ends before them; at full size above the doll, and left of it at full size while five fit, never under 24 screen pixels.
+    // Zero to twelve chips (tg's five alerts, then slice E's status chips), in the place this screen and scale gives (above the doll when five
+    // full-size chips fit there, else left of the pictures), the same place for one alert and for five: all there, square, on the screen, clear
+    // of each other, of the version tag and the ping and FPS chip (the whole top band, as wide as the tag gets at a large scale), of the vitals,
+    // of the hands' row with either hand active, of tg's entries still drawn (the Tab row with them), and of the widest prompt block beside the
+    // crosshair, which ends before them; at full size above the doll, and left of it at full size while five fit, never under 24 screen pixels.
     private static void AlertStackIsClear(HudMetrics metrics, LiveHudLayout layout, List<(string loc, HudRect rect)> tg, string at)
     {
         float u = UiTokens.Unit(metrics), full = MathF.Round(UiTokens.AlertChip * u), stackGap = MathF.Round(UiTokens.AlertStackGap * u);
@@ -692,7 +670,7 @@ public class LiveHudTests
         var others = new List<(string Name, HudRect Rect)>
         {
             ("version tag and ping chip", new HudRect(0, 0, metrics.Width, (UiTokens.CardTopRoom - UiTokens.ScreenMargin) * u)),
-            ("panel", layout.Panel), ("pill", layout.Pill),
+            ("doll", layout.Doll), ("health", layout.Health), ("mood", layout.Mood),
         };
         foreach (bool leftActive in new[] { true, false })
         {
@@ -701,17 +679,17 @@ public class LiveHudTests
         }
         others.AddRange(tg.Select(t => (t.loc, t.rect)));
         bool above = LiveHud.AlertsAbove(metrics, layout);
-        // left of the column: the panel and the pill, one width
-        float columnRight = Math.Min(layout.Panel.Left, layout.Pill.Left) - stackGap;
+        // left of the pictures: the doll, the widest of them
+        float columnRight = layout.Doll.Left - stackGap;
         float least = Math.Min(full, UiTokens.AlertChipMinPixels);
-        List<HudRect> eight = LiveHud.AlertStack(metrics, 8, layout);
-        for (int count = 0; count <= 8; count++)
+        List<HudRect> all = LiveHud.AlertStack(metrics, LiveHud.MaxChips, layout);
+        for (int count = 0; count <= LiveHud.MaxChips; count++)
         {
             List<HudRect> chips = LiveHud.AlertStack(metrics, count, layout);
             string where = $"{at}, {count} chips, {(above ? "above" : "left")}";
             Assert.Equal(count, chips.Count);
-            // the widest prompt block beside the crosshair (three prompts and the stop-pulling line), cut before the panel and the chips
-            float edge = Math.Min(LiveHud.LeftOfPanel(layout, metrics), LiveHud.LeftOfAlerts(chips, metrics));
+            // the widest prompt block beside the crosshair (three prompts and the stop-pulling line), cut before the vitals and the chips
+            float edge = Math.Min(LiveHud.LeftOfVitals(layout, metrics), LiveHud.LeftOfAlerts(chips, metrics));
             HudRect prompt = KeyChips.PromptBlock(metrics, 4, UiTokens.PromptMaxWidth * u, metrics.Width / 2f, metrics.Height / 2f, KeyChips.SightReach(false, 0f, 70f, metrics.Height, 1f), edge);
             for (int i = 0; i < count; i++)
             {
@@ -723,16 +701,16 @@ public class LiveHudTests
                     Assert.False(Overlaps(chip, chips[j]), $"{where}: chips {i} {chip} and {j} {chips[j]}");
                 if (above)
                 {
-                    // full size, right-aligned with the panel or in a column left of that, over the panel
+                    // full size, in the column on the axis or in a column left of that, over the doll
                     Assert.Equal(full, chip.Width);
-                    Assert.True(chip.Right <= layout.Panel.Right && chip.Bottom <= layout.Panel.Top - stackGap, $"{where}: chip {i} {chip} not over the panel {layout.Panel}");
+                    Assert.True(chip.Right <= layout.Stack.Right && chip.Bottom <= layout.Doll.Top - stackGap, $"{where}: chip {i} {chip} not over the doll {layout.Doll}");
                 }
                 else
                 {
-                    // the places of the eight, whatever the count: the first column's right edge the gap left of the column, its top level with the
-                    // panel's, tg's order down the column, then the next column left of it
-                    Assert.Equal(eight[i], chip);
-                    Assert.True(chip.Right <= columnRight, $"{where}: chip {i} {chip} not left of the column {columnRight}");
+                    // the places of the twelve, whatever the count: the first column's right edge the gap left of the doll, its top level with the
+                    // doll's, tg's order down the column, then the next column left of it
+                    Assert.Equal(all[i], chip);
+                    Assert.True(chip.Right <= columnRight, $"{where}: chip {i} {chip} not left of the pictures {columnRight}");
                 }
                 // in both places tg's order down a column, then on in the next column to the left
                 if (i > 0)
@@ -742,16 +720,19 @@ public class LiveHudTests
                 continue;
             if (above)
             {
-                // the first chips in the column at the panel's right edge, its last the gap over the panel
-                Assert.Equal(layout.Panel.Right, chips[0].Right);
-                Assert.Equal(new HudRect(layout.Panel.Right - full, layout.Panel.Top - stackGap - full, full, full), chips.Last(c => c.Right == layout.Panel.Right));
+                // the first chips in the column centred on the full stack's axis (right-aligned with the reduced doll), its last the gap over the doll
+                float firstLeft = layout.Vitals ? MathF.Round(LiveHud.Axis(layout) - full / 2f) : layout.Stack.Right - full;
+                Assert.Equal(firstLeft, chips[0].Left);
+                Assert.Equal(new HudRect(firstLeft, layout.Doll.Top - stackGap - full, full, full), chips.Last(c => c.Left == firstLeft));
+                if (layout.Vitals)
+                    Assert.InRange(chips[0].Left + full / 2f - LiveHud.Axis(layout), -0.5f, 0.5f);
                 if (count <= 5)
-                    Assert.All(chips, c => Assert.Equal(layout.Panel.Right, c.Right));
+                    Assert.All(chips, c => Assert.Equal(firstLeft, c.Left));
             }
             else
             {
                 Assert.Equal(columnRight, chips[0].Right);
-                Assert.Equal(Math.Max(layout.Panel.Top, MathF.Ceiling(UiTokens.CardTopRoom * u)), chips[0].Top);
+                Assert.Equal(Math.Max(layout.Doll.Top, MathF.Ceiling(UiTokens.CardTopRoom * u)), chips[0].Top);
             }
         }
         // the place is the same for one alert and for five
@@ -761,7 +742,6 @@ public class LiveHudTests
         else
             Assert.Equal(five[0], one[0]);
     }
-
 
     [Fact]
     public void AnAlertWithAForeignPictureAtTgsAlertPlaceIsAnAlertToo()
@@ -835,13 +815,14 @@ public class LiveHudTests
     }
 
     [Fact]
-    public void AtTheReferenceSizeTheChipsStackOverTheDollRightAlignedTheNewestNearest()
+    public void AtTheReferenceSizeTheChipsStackOverTheDollOnItsAxisTheNewestNearest()
     {
         var metrics = new HudMetrics(1920, 1080, 1f);
         LiveHudLayout layout = LiveHud.Layout(metrics, human: true);
-        float right = layout.Panel.Right, bottom = layout.Panel.Top - 6;
+        float right = 1892, bottom = layout.Doll.Top - 6; // 1852..1892: centred on the stack's axis (1872), the doll's square 1824..1920
+        Assert.Equal(1872f, LiveHud.Axis(layout));
         Assert.True(LiveHud.AlertsAbove(metrics, layout)); // five fit above the doll here
-        // alert 3 (the newest) on the panel, alert 2 over it, alert 1 at the top: 40 pixels, 4 apart
+        // alert 3 (the newest) on the doll, alert 2 over it, alert 1 at the top: 40 pixels, 4 apart
         List<HudRect> chips = LiveHud.AlertStack(metrics, 3, layout);
         Assert.Equal(new[]
         {
@@ -861,9 +842,10 @@ public class LiveHudTests
     [Fact]
     public void WithoutRoomAboveTheChipsGoLeftOfTheDollShrinkingThenInMoreColumns()
     {
-        // at 250% on 1920x1080: a chip is 100 pixels, the top room 215; tg's bottom-right rows start at 585, so the column ends at 570
+        // at 250% on 1920x1080: a chip is 100 pixels, the top room 215; with the reduced arrangement (a doll alone, here a made-up 375 x 290) tg's
+        // bottom-right rows start at 585, so the column ends at 570
         var metrics = new HudMetrics(1920, 1080, 2.5f);
-        LiveHudLayout At(float panelTop) => new(new HudRect(1400, panelTop, 375, 290), default, default, 7);
+        LiveHudLayout At(float panelTop) => new(new HudRect(1400, panelTop, 375, 290), 7);
         Assert.True(LiveHud.AlertsAbove(metrics, At(215 + 15 + 540)));
         Assert.False(LiveHud.AlertsAbove(metrics, At(215 + 15 + 539)));
         // the panel at the top room: left of it, its top level with the panel's, 15 pixels from its edge; five full chips (540) do not fit in 355,
@@ -888,8 +870,8 @@ public class LiveHudTests
     public void ANewAlertsPictureIsDrawnInItsChipWithoutTgsSlideIn()
     {
         // tg throws an alert in with transform = matrix(32, 0, MATRIX_TRANSLATE), animated back over a second (alert.dm:65-66); at its start
-        // the look moves the picture 32 tg pixels right. With the chips left of the panel (1920x1080 at 150 %) that is over the panel
-        var metrics = new HudMetrics(1920, 1080, 1.5f);
+        // the look moves the picture 32 tg pixels right. With the chips left of the doll (1920x1080 at 200 %) that is over the doll
+        var metrics = new HudMetrics(1920, 1080, 2f);
         LiveHudLayout layout = LiveHud.Layout(metrics, human: true);
         Assert.False(LiveHud.AlertsAbove(metrics, layout));
         HudRect chip = LiveHud.AlertStack(metrics, 1, layout)[0], picture = LiveHud.AlertPicture(chip);
@@ -898,14 +880,14 @@ public class LiveHudTests
         {
             HudLook tgs = HudLook.Of(AnimatedLook.None with { Transform = slide }, perPixel);
             Assert.True(tgs.MoveX > 0f);
-            Assert.True(Overlaps(picture with { Left = picture.Left + tgs.MoveX }, layout.Panel) || slide.C < 32); // tg's slide would reach the panel
+            Assert.True(Overlaps(picture with { Left = picture.Left + tgs.MoveX }, layout.Doll) || slide.C < 32); // tg's slide would reach the doll
             // in a chip on the human HUD: not moved, the picture inside its chip
             HudLook shown = LiveHud.ChipLook(LiveHud.Placed(LiveHudRole.Alert, humanHud: true), tgs);
             Assert.Equal((0f, 0f), (shown.MoveX, shown.MoveY));
             Assert.True(Inside(picture with { Left = picture.Left + shown.MoveX, Top = picture.Top + shown.MoveY }, chip));
             Assert.Equal(tgs with { MoveX = 0f, MoveY = 0f }, shown); // nothing else of the look changes
-            // the stamina, internals, suit cell and other status chips too
-            foreach (LiveHudRole role in new[] { LiveHudRole.Stamina, LiveHudRole.Internals, LiveHudRole.SpaceSuit, LiveHudRole.StatusOther })
+            // the hunger, stamina, internals, suit cell, other status and sleep chips too
+            foreach (LiveHudRole role in new[] { LiveHudRole.Hunger, LiveHudRole.Stamina, LiveHudRole.Internals, LiveHudRole.SpaceSuit, LiveHudRole.StatusOther, LiveHudRole.Sleep })
                 Assert.Equal(shown, LiveHud.ChipLook(LiveHud.Placed(role, humanHud: true, vitals: true), tgs));
             // at tg's places (another HUD, the reduced column) tg's slide plays
             Assert.Equal(tgs, LiveHud.ChipLook(LiveHud.Placed(LiveHudRole.Alert, humanHud: false), tgs));
@@ -914,7 +896,7 @@ public class LiveHudTests
     }
 
     [Fact]
-    public void OnAPortraitScreenTheColumnAndTheChipsStayOnTheScreen()
+    public void OnAPortraitScreenTheVitalsAndTheChipsStayOnTheScreen()
     {
         // tg's own entries collide on such screens; ours are only wholly on the screen, at every HUD scale the options offer
         foreach ((int w, int h) in new[] { (720, 1280), (360, 640) })
@@ -927,12 +909,11 @@ public class LiveHudTests
                 {
                     LiveHudLayout layout = LiveHud.Layout(metrics, human);
                     string at = $"{w}x{h} at {percent}%{(human ? "" : ", not human")}";
-                    foreach (HudRect r in new[] { layout.Panel, layout.Pill, layout.Doll })
-                        Assert.True(r.Width > 0 && Inside(r, screen), $"{at}: {r} off the screen (panel {layout.Panel})");
-                    Assert.True(Inside(layout.Doll, layout.Panel), $"{at}: the doll {layout.Doll} out of the panel {layout.Panel}");
+                    foreach (HudRect r in layout.Vitals ? new[] { layout.Doll, layout.Health, layout.Mood } : new[] { layout.Doll })
+                        Assert.True(r.Width > 0 && Inside(r, screen), $"{at}: {r} off the screen");
                     if (!human)
                         continue;
-                    foreach (HudRect chip in LiveHud.AlertStack(metrics, 8, layout))
+                    foreach (HudRect chip in LiveHud.AlertStack(metrics, LiveHud.MaxChips, layout))
                         Assert.True(chip.Width >= 1 && Inside(chip, screen), $"{at}: chip {chip} off the screen");
                 }
             }
@@ -1026,13 +1007,11 @@ public class LiveHudTests
         HandsLayout beside = LiveHud.Hands(metrics, true, false, DefaultChat(1920, 1080).Right);
         Assert.Equal(1f, beside.Unit);
         Assert.Equal(DefaultChat(1920, 1080).Right + UiTokens.DollPanelGap, beside.Left.Left, 0);
-        // slice D: the hint strip over the row, centred on the gap, its bottom 6 over the visible top of tg's drop and swap buttons (higher than the row's top line
-        // here), the same through a swap; it never moves the row, and there is none without the human HUD's column or without a width
+        // slice D: the hint strip over the row, centred on the gap; slice E: its bottom 6 over the row's top line, the active box's (992), the same
+        // through a swap; it never moves the row, and there is none without the human HUD's vitals or without a width
         LiveHudLayout column = LiveHud.Layout(metrics, human: true);
         HandsLayout hinted = LiveHud.Hands(metrics, true, false, 0f, column, 300f);
-        float dropTop = LiveHud.VisibleButton(Parse("CENTER-1:16,SOUTH+1:5"), metrics).Top; // its visible part: the lower 10 of its 32 tg pixels
-        Assert.Equal(996.75f - 22.5f, dropTop);
-        Assert.Equal(new HudRect(810, 936, 300, 32), hinted.Hint); // 6 over the whole pixel above it (974)
+        Assert.Equal(new HudRect(810, 954, 300, 32), hinted.Hint);
         Assert.Equal(1f, hinted.HintShare);
         Assert.Equal(hinted.Hint, LiveHud.Hands(metrics, false, true, 0f, column, 300f).Hint);
         Assert.Equal(hinted with { Hint = default, HintShare = 0f }, left);
@@ -1191,7 +1170,7 @@ public class LiveHudTests
         Assert.Null(LiveHud.MaptextSquare(LiveHud.Placed(LiveHudRole.BottomSlot, humanHud: false), hands, 0, 6));
     }
 
-    // ---- slice D: the vitals column ----
+    // ---- slices D and E: the vitals ----
 
     [Fact]
     public void TgsRightColumnIndicatorsAreKnownByTgsPlacesForThem()
@@ -1218,26 +1197,28 @@ public class LiveHudTests
     }
 
     [Fact]
-    public void TheIndicatorsArePlacedOnlyWithTheFullColumnOfTheHumanHudTheStaminaInternalsAndSuitCellAsChips()
+    public void TheIndicatorsArePlacedOnlyWithTheFullStackOfTheHumanHudTheStatusIndicatorsAsChips()
     {
-        foreach (LiveHudRole role in new[] { LiveHudRole.Health, LiveHudRole.Mood, LiveHudRole.Hunger })
+        foreach (LiveHudRole role in new[] { LiveHudRole.Health, LiveHudRole.Mood })
         {
             Assert.Equal(role, LiveHud.Placed(role, humanHud: true, vitals: true));
             Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(role, humanHud: true, vitals: false));
             Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(role, humanHud: false, vitals: true));
         }
-        foreach (LiveHudRole role in new[] { LiveHudRole.Stamina, LiveHudRole.Internals, LiveHudRole.SpaceSuit })
+        // slice E: the hunger bar and the sleep button are chips too
+        foreach (LiveHudRole role in new[] { LiveHudRole.Hunger, LiveHudRole.Stamina, LiveHudRole.Internals, LiveHudRole.SpaceSuit, LiveHudRole.Sleep })
         {
             Assert.Equal(LiveHudRole.Alert, LiveHud.Placed(role, humanHud: true, vitals: true));
             Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(role, humanHud: true, vitals: false));
             Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(role, humanHud: false, vitals: true));
         }
-        // tg's alerts are chips with either column
+        // tg's alerts are chips with either arrangement
         Assert.Equal(LiveHudRole.Alert, LiveHud.Placed(LiveHudRole.Alert, humanHud: true, vitals: false));
+        Assert.Null(LiveHud.VitalSquare(LiveHudRole.Hunger, LiveHud.Layout(new HudMetrics(1920, 1080, 1f), human: true)));
     }
 
     [Fact]
-    public void TheStaminaInternalsAndSuitCellChipsAndTheHungerBarShowOnlyWhileTgDrawsAPicture()
+    public void TheStatusChipsTheHungerBarAmongThemShowOnlyWhileTgDrawsAPicture()
     {
         // tg's suit cell indicator clears its icon state with no suit on (SPACESUIT_NO_ICON) and starts at "spacesuit_0", which screen_gen.dmi has not
         (_, ReplicaWorld world) = Start();
@@ -1257,8 +1238,8 @@ public class LiveHudTests
         Assert.False(LiveHud.IndicatorShown(world, stamina, Exists));
         Assert.True(LiveHud.IndicatorShown(world, stamina, (_, _) => true));
         Assert.False(LiveHud.IndicatorShown(world, At(null) with { ScreenLoc = "EAST-1:2,CENTER:21" }, Exists));
-        // tg hides a fed human's hunger bar at alpha 0 with its "hungerbar" state kept (screen_objects.dm, screen/hunger update_appearance): not
-        // shown, so the mood face stands alone, centred; a chip at alpha 0 is not shown either; one mid-fade is
+        // tg hides a fed human's hunger bar at alpha 0 with its "hungerbar" state kept (screen_objects.dm, screen/hunger update_appearance): no
+        // chip then; a chip at alpha 0 is not shown either; one mid-fade is
         ScreenEntry Faded(string state, string loc, byte alpha) => new(9301, world.LocalAppearance(new AppearanceEntry
         {
             Icon = world.LocalString("icons/hud/screen_gen.dmi"), IconState = world.LocalString(state), Alpha = alpha,
@@ -1268,15 +1249,12 @@ public class LiveHudTests
         Assert.Equal(LiveHudRole.Hunger, LiveHud.RoleOf(world, hunger));
         Assert.False(LiveHud.IndicatorShown(world, hunger, All));
         Assert.True(LiveHud.IndicatorShown(world, Faded("hungerbar", "EAST-1:2,CENTER:21", 255), All));
-        LiveHudLayout layout = LiveHud.Layout(new HudMetrics(1920, 1080, 1f), human: true);
-        HudRect alone = LiveHud.VitalSquare(LiveHudRole.Mood, layout, LiveHud.IndicatorShown(world, hunger, All)).Value;
-        Assert.InRange(alone.Left + alone.Width / 2f - (layout.Mood.Left + layout.Mood.Width / 2f), -1f, 1f); // centred in its cell
         Assert.False(LiveHud.IndicatorShown(world, Faded("spacesuit_high", "EAST-1:28,CENTER-4:14", 0), All));
         Assert.True(LiveHud.IndicatorShown(world, Faded("spacesuit_high", "EAST-1:28,CENTER-4:14", 128), All));
     }
 
     [Fact]
-    public void AnyOtherEntryOfTgsRightStatusColumnIsAChipAfterTheSuitCellWithTheFullColumn()
+    public void AnyOtherEntryOfTgsRightStatusColumnIsAChipAfterTheSuitCellWithTheFullStack()
     {
         // tg's alien plasma display on a human (alien/organs.dm: add_screen_object(..., HUD_GROUP_INFO, ui_loc = ui_alienplasmadisplay_human
         // "EAST,CENTER-5:8")), and a made-up info-group display higher in the column one tile in (EAST-1)
@@ -1301,74 +1279,69 @@ public class LiveHudTests
         // the doll (at ui_healthdoll, in that column) and the known indicators keep their roles
         Assert.Equal(LiveHudRole.Doll, LiveHud.RoleOf(world, world.Screen[DollId]));
         Assert.Equal(LiveHudRole.Health, LiveHud.RoleOf(world, world.Screen[HealthId]));
-        // a chip with the full column, tg's place with the reduced one or off the human HUD
+        // a chip with the full stack, tg's place with the reduced one or off the human HUD
         Assert.Equal(LiveHudRole.Alert, LiveHud.Placed(LiveHudRole.StatusOther, humanHud: true, vitals: true));
         Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(LiveHudRole.StatusOther, humanHud: true, vitals: false));
         Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(LiveHudRole.StatusOther, humanHud: false, vitals: true));
-        // the order: tg's alerts, stamina, internals, suit cell, then these, tg's top to bottom
+        // the order (slice E): tg's alerts, hunger, stamina, internals, suit cell, then these, tg's top to bottom, then sleep
         int[] order =
         {
-            LiveHud.ChipOrder(LiveHudRole.Alert, Parse("EAST-1:28,CENTER+1:19")), LiveHud.ChipOrder(LiveHudRole.Stamina, default),
-            LiveHud.ChipOrder(LiveHudRole.Internals, default), LiveHud.ChipOrder(LiveHudRole.SpaceSuit, default),
+            LiveHud.ChipOrder(LiveHudRole.Alert, Parse("EAST-1:28,CENTER+1:19")), LiveHud.ChipOrder(LiveHudRole.Hunger, default),
+            LiveHud.ChipOrder(LiveHudRole.Stamina, default), LiveHud.ChipOrder(LiveHudRole.Internals, default), LiveHud.ChipOrder(LiveHudRole.SpaceSuit, default),
             LiveHud.ChipOrder(LiveHudRole.StatusOther, Parse(upper.ScreenLoc)), LiveHud.ChipOrder(LiveHudRole.StatusOther, Parse(lower.ScreenLoc)),
+            LiveHud.ChipOrder(LiveHudRole.Sleep, Parse("EAST-1:28,SOUTH+1:41")),
         };
         Assert.Equal(order.OrderBy(o => o), order);
         Assert.Equal(order.Length, order.Distinct().Count());
     }
 
     [Fact]
-    public void AtTheReferenceSizeTheFullColumnStandsAtTheRightEdgeOverTgsSleepButton()
+    public void AtTheReferenceSizeTheVitalsStandBareAtTheRightEdgeOverTgsCombatToggle()
     {
         var metrics = new HudMetrics(1920, 1080, 1f);
         LiveHudLayout layout = LiveHud.Layout(metrics, human: true);
         Assert.True(layout.Vitals);
-        Assert.Equal(3, layout.DollScale);
-        // 128 wide, 8 from the right edge; the pill's bottom 8 over tg's sleep button (ui_above_throw, its top at 843.75 here) to the whole pixel above,
-        // the panel 6 over the pill
-        float sleepTop = ScreenLoc.Place(Parse("EAST-1:28,SOUTH+1:41"), metrics, 32, 32, 0, 0, out _).Top;
-        Assert.Equal(843.75f, sleepTop);
-        Assert.Equal(new HudRect(1784, 803, 128, 32), layout.Pill);
-        // the panel: 8 over and under, the doll at 3 (96), the health and the mood cells at 2 (64 each), 4 between: three cells
-        float panelHeight = 8 + 96 + 4 + 64 + 4 + 64 + 8;
-        Assert.Equal(new HudRect(1784, layout.Pill.Top - 6 - panelHeight, 128, panelHeight), layout.Panel);
-        float top = layout.Panel.Top + 8;
-        Assert.Equal(new HudRect(1784 + 16, top, 96, 96), layout.Doll);
-        Assert.Equal(new HudRect(1784 + 32, top + 100, 64, 64), layout.Health);
-        Assert.Equal(new HudRect(1784 + 6, top + 168, 116, 64), layout.Mood); // as wide as the 58 tg pixel pair at 2, centred
-        Assert.Equal((2, 2), (layout.CellScale, layout.PairScale));
-        // while tg draws the hunger bar: the bar at the pair's left, the mood face 26 tg pixels right of it (tg's EAST-1:2 and EAST-1:28)
-        Assert.Equal(new HudRect(1790, top + 168, 64, 64), LiveHud.VitalSquare(LiveHudRole.Hunger, layout));
-        Assert.Equal(new HudRect(1790 + 52, top + 168, 64, 64), LiveHud.VitalSquare(LiveHudRole.Mood, layout));
+        Assert.Equal((3, 2), (layout.DollScale, layout.CellScale));
+        // tg's combat toggle in the corner (ui_zonesel), its top at 996.75 here: the mood face's bottom 8 over the whole pixel above it (988)
+        Assert.Equal(996.75f, ScreenLoc.Place(Parse("EAST-1:28,SOUTH:5"), metrics, 32, 32, 0, 0, out _).Top);
+        // one axis (1872), the doll's square against the edge (1824..1920), 8 between pictures: the mood face and the health indicator at 2 (64, 1840..1904), the doll at 3 (96)
+        Assert.Equal(new HudRect(1840, 924, 64, 64), layout.Mood);
+        Assert.Equal(new HudRect(1840, 852, 64, 64), layout.Health);
+        Assert.Equal(new HudRect(1824, 748, 96, 96), layout.Doll);
+        Assert.Equal(new HudRect(1824, 748, 96, 240), layout.Stack);
         Assert.Equal(layout.Health, LiveHud.VitalSquare(LiveHudRole.Health, layout));
-        // without the hunger bar the mood face alone, centred in its cell at 2
-        Assert.Equal(new HudRect(1784 + 32, top + 168, 64, 64), LiveHud.VitalSquare(LiveHudRole.Mood, layout, hungerShown: false));
-        Assert.Null(LiveHud.VitalSquare(LiveHudRole.Stamina, layout)); // a chip now
+        Assert.Equal(layout.Mood, LiveHud.VitalSquare(LiveHudRole.Mood, layout)); // alone, hungry or not
+        Assert.Null(LiveHud.VitalSquare(LiveHudRole.Stamina, layout)); // a chip
         Assert.Null(LiveHud.VitalSquare(LiveHudRole.Doll, layout));
-        // the panel's size does not depend on which entries show: the layout has no input but the screen and the scale
+        // the stack's size does not depend on which entries show: the layout has no input but the screen and the scale
         Assert.Equal(layout, LiveHud.Layout(metrics, human: true));
-        // the HUDs that are not human keep slice B's panel left of tg's right column
+        // the HUDs that are not human keep the doll alone left of tg's right column
         Assert.False(LiveHud.Layout(metrics).Vitals);
-        Assert.True(LiveHud.Layout(metrics).Panel.Right <= 1920 - 2 * metrics.Tile);
+        Assert.True(LiveHud.Layout(metrics).Doll.Right <= 1920 - 2 * metrics.Tile);
     }
 
     [Fact]
-    public void WhereTheFullColumnDoesNotFitTheReducedOneStandsLeftOfTgsRightColumn()
+    public void WhereTheFullStackDoesNotFitTheReducedDollStandsLeftOfTgsRightColumn()
     {
-        var metrics = new HudMetrics(1280, 720, 3f);
+        // a screen 200 lines high at 300 %: the three pictures at one tg pixel per pixel (32 + 32 + 32 and two gaps of 4) do not fit between the top
+        // room (48) and the combat toggle (its top at 153.75)
+        var metrics = new HudMetrics(1920, 200, 3f);
         Assert.Null(LiveHud.VitalsColumn(metrics));
         LiveHudLayout layout = LiveHud.Layout(metrics, human: true);
         float u = UiTokens.Unit(metrics);
         Assert.False(layout.Vitals);
-        Assert.Equal(MathF.Round(UiTokens.VitalsWidth * u), layout.Panel.Width);
-        Assert.Equal(layout.Panel.Width, layout.Pill.Width);
-        Assert.True(layout.Panel.Right <= 1280 - 2 * metrics.Tile - UiTokens.DollPanelGap * u + 1f);
-        Assert.Equal(MathF.Round(2 * UiTokens.VitalsPad * u + 32 * layout.DollScale), layout.Panel.Height); // the doll cell alone
+        Assert.True(layout.Doll.Right <= 1920 - 2 * metrics.Tile - UiTokens.DollPanelGap * u + 1f);
+        Assert.Equal(32f * layout.DollScale, layout.Doll.Width);
         Assert.Null(LiveHud.VitalSquare(LiveHudRole.Health, layout)); // tg's indicators stay at tg's places
         Assert.Equal(default, layout.Health);
+        Assert.Equal(layout.Doll, layout.Stack);
+        // and the full stack wherever it fits: every landscape screen the options offer at 300 %
+        foreach ((int w, int h) in HandSizes)
+            Assert.NotNull(LiveHud.VitalsColumn(new HudMetrics(w, h, 3f)));
     }
 
     [Fact]
-    public void TheHintStripsWidthPictureAndFitAndThePillsWordNeverCut()
+    public void TheHintStripsWidthPictureAndFit()
     {
         // the natural width: 8 at each end, the picture, then 12 before each entry, its cap, 6, its verb
         Assert.Equal(16 + 32 + 3 * (12 + 6) + 19 + 28 + 20 + 36 + 51 + 44, LiveHud.HintWidth(1f, new[] { (19f, 28f), (20f, 36f), (51f, 44f) }), 3);
@@ -1389,22 +1362,19 @@ public class LiveHudTests
         Assert.Equal(MathF.Round(32f * 624f / 700f), wide.Hint.Height);
         Assert.Equal(0.75f, LiveHud.Hands(metrics, true, false, 0f, column, 624f / 0.75f).HintShare, 3);
         Assert.Equal(default, LiveHud.Hands(metrics, true, false, 0f, column, 624f / 0.74f).Hint);
-        // the pill's chip and word: smaller together, never cut
-        Assert.Equal(1f, LiveHud.PillFit(90f, 114f));
-        Assert.Equal(114f / 150f, LiveHud.PillFit(150f, 114f), 4);
     }
 
     [Fact]
     public void AboveTheDollChipsBeyondTheColumnGoOnInASecondColumn()
     {
-        // room over the panel for exactly five: chips 0 to 4 (tg's alerts first) in the column at the edge, top down; the chips after them (the
-        // internals and suit cell, 5 and 6) in the next column to the left, top down; every column stands on the panel, 6 over it
+        // room over the doll for exactly five: chips 0 to 4 (tg's alerts first) in the column at the edge, top down; the chips after them (the
+        // internals and suit cell, 5 and 6) in the next column to the left, top down; every column stands on the doll, 6 over it
         var metrics = new HudMetrics(1920, 1080, 1f);
         float top = MathF.Ceiling(UiTokens.CardTopRoom);
-        var layout = new LiveHudLayout(new HudRect(1784, top + 6 + 5 * 40 + 4 * 4, 128, 300), default, new HudRect(1784, 900, 128, 32), 3);
+        var layout = new LiveHudLayout(new HudRect(1784, top + 6 + 5 * 40 + 4 * 4, 128, 300), 3); // a made-up doll alone, its right edge at 1912
         Assert.True(LiveHud.AlertsAbove(metrics, layout));
         List<HudRect> chips = LiveHud.AlertStack(metrics, 7, layout);
-        float bottom = layout.Panel.Top - 6;
+        float bottom = layout.Doll.Top - 6;
         (int Column, int Row)[] places = { (0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1) };
         int[] inColumn = { 5, 2 };
         for (int i = 0; i < chips.Count; i++)
@@ -1417,10 +1387,10 @@ public class LiveHudTests
         Assert.Equal(bottom, chips[6].Bottom);
         Assert.True(chips.All(c => c.Top >= top));
 
-        // left of the panel (1920x1080 at 250%, chips of 24, three to a column, 2 apart): chips 0 to 2 in the column next to the panel, top down
-        // from the panel's top; 3 and 4 in the next column to the left, top-aligned with it
+        // left of the doll (1920x1080 at 250%, chips of 24, three to a column, 2 apart): chips 0 to 2 in the column next to the doll, top down
+        // from the doll's top; 3 and 4 in the next column to the left, top-aligned with it
         var big = new HudMetrics(1920, 1080, 2.5f);
-        var low = new LiveHudLayout(new HudRect(1400, 480, 375, 290), default, default, 7);
+        var low = new LiveHudLayout(new HudRect(1400, 480, 375, 290), 7);
         Assert.False(LiveHud.AlertsAbove(big, low));
         List<HudRect> left = LiveHud.AlertStack(big, 5, low);
         (int Column, int Row)[] leftPlaces = { (0, 0), (0, 1), (0, 2), (1, 0), (1, 1) };
@@ -1429,5 +1399,166 @@ public class LiveHudTests
             (int column, int row) = leftPlaces[i];
             Assert.Equal(new HudRect(1385 - 24 - column * 26, 480 + row * 26, 24, 24), left[i]);
         }
+    }
+
+    // ---- slice E: tg's buttons that a key does, the Tab row, the menu keys ----
+
+    [Fact]
+    public void TgsButtonsOfTheHumanHudAreKnownByTheirIconStatesInAHudGroup()
+    {
+        (_, ReplicaWorld world) = Start();
+        ScreenEntry Button(string state, byte group, string loc = "EAST-3:24,SOUTH+1:7") => new(9500, world.LocalAppearance(new AppearanceEntry
+        {
+            Icon = world.LocalString("icons/hud/screen_midnight.dmi"), IconState = world.LocalString(state),
+        }), loc) { Group = group };
+        foreach ((string state, LiveHudRole role) in new[]
+        {
+            ("pull", LiveHudRole.KeyButton), ("pull0", LiveHudRole.KeyButton), ("act_resist", LiveHudRole.KeyButton), ("act_rest", LiveHudRole.KeyButton),
+            ("act_rest_on", LiveHudRole.KeyButton), ("act_throw", LiveHudRole.KeyButton), ("act_throw_on", LiveHudRole.KeyButton), ("running", LiveHudRole.KeyButton),
+            ("walking", LiveHudRole.KeyButton), ("act_drop", LiveHudRole.KeyButton), ("act_swap", LiveHudRole.KeyButton), ("floor_change", LiveHudRole.KeyButton),
+            ("floor_change_v", LiveHudRole.KeyButton), ("craft", LiveHudRole.Crafting), ("talk_wheel", LiveHudRole.Language), ("navigate", LiveHudRole.Navigate),
+            ("memories", LiveHudRole.Memories), ("area_edit", LiveHudRole.AreaCreator), ("act_sleep", LiveHudRole.Sleep), ("act_sleep_on", LiveHudRole.Sleep),
+        })
+        {
+            Assert.Equal(role, LiveHud.RoleOf(world, Button(state, HudGroup.Static)));
+            Assert.Equal(role, LiveHud.RoleOf(world, Button(state, HudGroup.Hotkeys, "WEST,NORTH"))); // what it is, wherever tg puts it
+            // in no HUD group (an alert's, say) or in a native window it is no button
+            Assert.NotEqual(role, LiveHud.RoleOf(world, Button(state, HudGroup.None)));
+            Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, Button(state, HudGroup.Storage)));
+            Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, Button(state, HudGroup.Static) with { ActionTarget = 4 }));
+        }
+        // the fake's human HUD has them at tg's places
+        Assert.Equal(LiveHudRole.Crafting, LiveHud.RoleOf(world, world.Screen[FakeServer.CraftId]));
+        Assert.Equal(LiveHudRole.Language, LiveHud.RoleOf(world, world.Screen[FakeServer.LanguageId]));
+        Assert.Equal(LiveHudRole.Navigate, LiveHud.RoleOf(world, world.Screen[FakeServer.NavigateId]));
+        Assert.Equal(LiveHudRole.Memories, LiveHud.RoleOf(world, world.Screen[FakeServer.MemoriesId]));
+        Assert.Equal(LiveHudRole.AreaCreator, LiveHud.RoleOf(world, world.Screen[FakeServer.AreaCreatorId]));
+        foreach (long id in new[] { FakeServer.FloorChangerId, FakeServer.PullButtonId, FakeServer.ResistId, FakeServer.RestId })
+            Assert.Equal(LiveHudRole.KeyButton, LiveHud.RoleOf(world, world.Screen[id]));
+    }
+
+    [Fact]
+    public void OnTheHumanHudTheButtonsAKeyDoesAreHiddenAndTheTabRowShowsUnderTabOnly()
+    {
+        // hidden: no picture, no pick, no tooltip, in first person and under Tab; on another HUD at tg's place
+        foreach (LiveHudRole role in new[] { LiveHudRole.KeyButton, LiveHudRole.Crafting, LiveHudRole.Language, LiveHudRole.Navigate, LiveHudRole.InventoryToggle })
+        {
+            LiveHudRole placed = LiveHud.Placed(role, humanHud: true, vitals: true);
+            Assert.Equal(LiveHudRole.Hidden, placed);
+            Assert.Equal(placed, LiveHud.Placed(role, humanHud: true, vitals: false));
+            Assert.False(LiveHud.Shown(placed, cursorMode: false));
+            Assert.False(LiveHud.Shown(placed, cursorMode: true));
+            Assert.Null(LiveHud.HumanPlace(placed));
+            Assert.True(LiveHud.Shown(LiveHud.Placed(role, humanHud: false), cursorMode: false));
+        }
+        // the memories button and the area creator: under Tab only on the human HUD, always at tg's place on another
+        foreach (LiveHudRole role in new[] { LiveHudRole.Memories, LiveHudRole.AreaCreator })
+        {
+            Assert.Equal(role, LiveHud.Placed(role, humanHud: true, vitals: true));
+            Assert.False(LiveHud.Shown(role, cursorMode: false));
+            Assert.True(LiveHud.Shown(role, cursorMode: true));
+            Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(role, humanHud: false));
+            Assert.True(LiveHud.Shown(LiveHud.Placed(role, humanHud: false), cursorMode: false));
+        }
+        // tg's combat toggle is drawn in first person and under Tab
+        Assert.True(LiveHud.Shown(LiveHud.Placed(LiveHudRole.CombatToggle, humanHud: true, vitals: true), cursorMode: false));
+        Assert.True(LiveHud.Shown(LiveHud.Placed(LiveHudRole.CombatToggle, humanHud: true, vitals: true), cursorMode: true));
+        // the places: the combat toggle in the corner (ui_zonesel), the Tab row left of it at ui_movi, ui_acti and ui_human_floor_changer
+        Assert.Equal(Parse("EAST-1:28,SOUTH:5"), LiveHud.HumanPlace(LiveHudRole.CombatToggle));
+        Assert.Equal(Parse("EAST-2:26,SOUTH:5"), LiveHud.HumanPlace(LiveHudRole.ZoneSelector));
+        Assert.Equal(Parse("EAST-3:24,SOUTH:5"), LiveHud.HumanPlace(LiveHudRole.Memories));
+        Assert.Equal(Parse("EAST-4:22,SOUTH:5"), LiveHud.HumanPlace(LiveHudRole.AreaCreator));
+        foreach (LiveHudRole role in new[] { LiveHudRole.Tg, LiveHudRole.Doll, LiveHudRole.Alert, LiveHudRole.LeftHand, LiveHudRole.Health })
+            Assert.Null(LiveHud.HumanPlace(role));
+        // one row at the reference size, left to right, none over another
+        var metrics = new HudMetrics(1920, 1080, 1f);
+        HudRect[] row = new[] { LiveHudRole.AreaCreator, LiveHudRole.Memories, LiveHudRole.ZoneSelector, LiveHudRole.CombatToggle }
+            .Select(r => ScreenLoc.Place(LiveHud.HumanPlace(r).Value, metrics, 32, 32, 0, 0, out _)).ToArray();
+        for (int i = 1; i < row.Length; i++)
+        {
+            Assert.Equal(row[0].Top, row[i].Top);
+            Assert.True(row[i - 1].Right <= row[i].Left, $"{row[i - 1]} {row[i]}");
+        }
+    }
+
+    [Fact]
+    public void TheMenuKeysFindTgsButtonsAndNothingOnAHudWithoutThem()
+    {
+        (_, ReplicaWorld world) = Start();
+        Assert.Equal(FakeServer.CraftId, LiveHud.ButtonEntry(world, PlayAction.CraftingMenu));
+        Assert.Equal(FakeServer.LanguageId, LiveHud.ButtonEntry(world, PlayAction.LanguageMenu));
+        Assert.Equal(FakeServer.NavigateId, LiveHud.ButtonEntry(world, PlayAction.Navigate));
+        Assert.Equal(0, LiveHud.ButtonEntry(world, PlayAction.Resist)); // a key with no button of its own
+        Assert.Null(LiveHud.ButtonOf(PlayAction.ToggleCombatMode));
+        // a HUD without them (the fake without its human inventory HUD stands for another mob's): nothing to click
+        var bare = new FakeFeed("Tester", seed: 1, size: 32, bots: 0, inventory: false);
+        new PlayRig(bare).Run(0.5);
+        foreach (PlayAction action in new[] { PlayAction.CraftingMenu, PlayAction.LanguageMenu, PlayAction.Navigate })
+            Assert.Equal(0, LiveHud.ButtonEntry(bare.Replica, action));
+    }
+
+    [Fact]
+    public void TheStaminaChipShowsOnlyWhileStaminaIsDownAndTheChipsAfterItCloseUp()
+    {
+        // tg sets "stamina_full" (a blue bolt) after its first update with nothing lost (living.dm:1458-1470): a chip only from stamina_1 on
+        (_, ReplicaWorld world) = Start();
+        ScreenEntry Entry(long id, string icon, string state, string loc, byte group = HudGroup.Info) => new(id, world.LocalAppearance(new AppearanceEntry
+        {
+            Icon = world.LocalString(icon), IconState = world.LocalString(state),
+        }), loc) { Group = group };
+        bool All(string icon, string state) => true;
+        ScreenEntry Stamina(string state) => Entry(9600, "icons/hud/screen_gen.dmi", state, "EAST-1:28,CENTER-3:14");
+        Assert.Equal(LiveHudRole.Stamina, LiveHud.RoleOf(world, Stamina("stamina_full")));
+        Assert.False(LiveHud.ChipShown(LiveHudRole.Stamina, world, Stamina("stamina_full"), All));
+        foreach (string down in new[] { "stamina_1", "stamina_3", "stamina_5", "stamina_crit", "stamina_dead" })
+            Assert.True(LiveHud.ChipShown(LiveHudRole.Stamina, world, Stamina(down), All), down);
+        Assert.False(LiveHud.ChipShown(LiveHudRole.Stamina, world, Stamina("stamina0"), (_, s) => s != "stamina0")); // tg's first state has no art
+        // the other indicators keep their rule; an alert always has its chip
+        ScreenEntry internals = Entry(9601, "icons/hud/screen_gen.dmi", "internal1", "EAST-1:28,CENTER+1:21");
+        Assert.True(LiveHud.ChipShown(LiveHudRole.Internals, world, internals, All));
+        ScreenEntry alert = Entry(9602, "icons/hud/screen_alert.dmi", "not_enough_oxy", "EAST-1:28,CENTER+5:27", HudGroup.None);
+        Assert.Equal(LiveHudRole.Alert, LiveHud.RoleOf(world, alert));
+        Assert.True(LiveHud.ChipShown(LiveHudRole.Alert, world, alert, All));
+        // the chips as HudLayer lists them (shown ones in tg's order): with full stamina the internals chip takes the place right after the alert
+        var metrics = new HudMetrics(1920, 1080, 1f);
+        LiveHudLayout layout = LiveHud.Layout(metrics, human: true);
+        List<HudRect> Chips(ScreenEntry stamina)
+        {
+            var shown = new[] { alert, stamina, internals }.Where(e => LiveHud.ChipShown(LiveHud.RoleOf(world, e), world, e, All)).ToList();
+            return LiveHud.AlertStack(metrics, shown.Count, layout);
+        }
+        Assert.Equal(2, Chips(Stamina("stamina_full")).Count);
+        Assert.Equal(3, Chips(Stamina("stamina_3")).Count);
+        Assert.Equal(LiveHud.AlertStack(metrics, 2, layout), Chips(Stamina("stamina_full")));
+        // with the reduced arrangement or on another HUD tg's entry is no chip: it is drawn at tg's place in every state, stamina_full included
+        Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(LiveHudRole.Stamina, humanHud: true, vitals: false));
+        Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(LiveHudRole.Stamina, humanHud: false, vitals: true));
+        Assert.True(LiveHud.Shown(LiveHud.Placed(LiveHudRole.Stamina, humanHud: true, vitals: false), cursorMode: false));
+    }
+
+    [Fact]
+    public void TheHungerChipComesAndGoesWithTgsFadeTargetAtFullOpacity()
+    {
+        // tg fades its hunger bar in and out over a second (screen_objects.dm:1237-1247); animate() sets the entry's alpha to the fade's end at
+        // once (as BYOND does), so the entry's own alpha is where the fade is going and the animation chain where it is now
+        (_, ReplicaWorld world) = Start();
+        ScreenEntry Bar(byte target) => new(9700, world.LocalAppearance(new AppearanceEntry
+        {
+            Icon = world.LocalString("icons/hud/screen_gen.dmi"), IconState = world.LocalString("hungerbar"), Alpha = target,
+        }), "EAST-1:2,CENTER:21") { Group = HudGroup.Info };
+        bool All(string icon, string state) => true;
+        Assert.Equal(LiveHudRole.Hunger, LiveHud.RoleOf(world, Bar(255)));
+        // fading in (going to 255, at 0.2 of the way now): a chip, its picture at full opacity
+        Assert.True(LiveHud.ChipShown(LiveHudRole.Hunger, world, Bar(255), All));
+        HudLook midFade = HudLook.None with { Alpha = 0.2f };
+        HudLook chip = LiveHud.ChipLook(LiveHud.Placed(LiveHudRole.Hunger, humanHud: true, vitals: true), midFade, LiveHudRole.Hunger);
+        Assert.Equal(1f, chip.Alpha);
+        // fading out (going to 0, still at 0.8 now): no chip from the start of the fade
+        Assert.False(LiveHud.ChipShown(LiveHudRole.Hunger, world, Bar(0), All));
+        // only the hunger chip: another chip keeps tg's alpha, and at tg's places (the reduced arrangement, another HUD) the bar keeps tg's fade
+        Assert.Equal(0.2f, LiveHud.ChipLook(LiveHudRole.Alert, midFade, LiveHudRole.Internals).Alpha);
+        Assert.Equal(0.2f, LiveHud.ChipLook(LiveHudRole.Alert, midFade).Alpha);
+        Assert.Equal(0.2f, LiveHud.ChipLook(LiveHud.Placed(LiveHudRole.Hunger, humanHud: true, vitals: false), midFade, LiveHudRole.Hunger).Alpha);
+        Assert.Equal(0.2f, LiveHud.ChipLook(LiveHud.Placed(LiveHudRole.Hunger, humanHud: false, vitals: true), midFade, LiveHudRole.Hunger).Alpha);
     }
 }

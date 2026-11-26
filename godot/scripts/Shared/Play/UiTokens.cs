@@ -104,7 +104,7 @@ public static class UiTokens
     /// <summary>The gap between a chip and its text.</summary>
     public const float PromptChipGap = 8f;
 
-    /// <summary>The narrowest a prompt block beside the crosshair is cut to before the doll panel; with less room there it goes left of the crosshair.</summary>
+    /// <summary>The narrowest a prompt block beside the crosshair is cut to before the vitals at the right edge (and their chips); with less room there it goes left of the crosshair.</summary>
     public const float PromptMinWidth = 100f;
 
     /// <summary>The widest a prompt block grows.</summary>
@@ -156,37 +156,19 @@ public static class UiTokens
     /// <summary>... and over a dark one (a colourblind palette's worst levels): white lines, more see-through.</summary>
     public const uint HatchLight = 0xFFFFFF99;
 
-    // ---- the doll panel and the combat pill under it: the vitals column at the right edge, or the reduced column left of tg's (LiveHud.Layout) ----
+    // ---- the vitals: the full stack at the right edge, or the reduced doll left of tg's right column (LiveHud.Layout) ----
 
     /// <summary>The doll's picture is this many screen pixels per tg pixel at the reference size (an integer multiple at every size).</summary>
     public const float DollPixels = 3f;
 
-    /// <summary>The room inside the panel's edges, around the doll.</summary>
-    public const float DollPanelPad = 10f;
-
-    /// <summary>The gap between the panel and tg's right-hand column of HUD entries, and between the panel and what stands left of it (the prompts, the zone labels).</summary>
+    /// <summary>The gap between the reduced doll and tg's right-hand column of HUD entries, and between the vitals and what stands left of them (the prompts, the zone labels).</summary>
     public const float DollPanelGap = 12f;
 
-    /// <summary>The panel's fill.</summary>
+    /// <summary>The dark fill of the alert chips and the hand boxes (slice B's doll panel's, which slice E removed).</summary>
     public const uint DollPanelBack = 0x1E242BB3;
 
-    /// <summary>The panel's corner radius.</summary>
+    /// <summary>An alert chip's corner radius.</summary>
     public const float DollPanelRadius = 6f;
-
-    /// <summary>The gap between the panel and the combat pill.</summary>
-    public const float PillGap = 6f;
-
-    /// <summary>The least width of the doll panel and the combat pill under it, one column (room for the pill's key chip and "Peaceful").</summary>
-    public const float PillWidth = 150f;
-
-    /// <summary>The combat pill's height.</summary>
-    public const float PillHeight = 32f;
-
-    /// <summary>The combat pill's text size.</summary>
-    public const float PillFont = 18f;
-
-    /// <summary>The combat pill's fill when combat mode is on.</summary>
-    public const uint PillCombat = Security;
 
     // ---- the hands either side of the hotbar's gap at the bottom centre (LiveHud.Hands; wireframes Mockup 1) ----
 
@@ -250,7 +232,13 @@ public static class UiTokens
     /// <summary>... and its lighter fill, so that tg's mark over it reads at a glance.</summary>
     public const uint HandMarkedBack = 0x5A6470D9;
 
-    // ---- the held-item hint strip over the hands (LiveHud.HintBy; the designer, 2026-11-26): the combat pill's height, dark fill and rounded ends ----
+    // ---- the held-item hint strip over the hands (LiveHud.HintBy; the designer, 2026-11-26): slice D's combat pill's height, dark fill and rounded ends ----
+
+    /// <summary>The strip's height.</summary>
+    public const float HintHeight = 32f;
+
+    /// <summary>The gap between the strip and the top of the hands' row (the active box) under it.</summary>
+    public const float HintRise = 6f;
 
     /// <summary>The room at each end of the strip.</summary>
     public const float HintPad = 8f;
@@ -268,35 +256,17 @@ public static class UiTokens
     public const float HintLeastShare = 0.6f;
 
     /// <summary>
-    /// How high tg's drop and swap buttons are drawn in their 32 x 32 squares, tg pixels from the bottom: their pictures (screen_midnight.dmi
-    /// "act_drop" and "act_swap", the default HUD style) are opaque in rows 22 to 31 of 32 only. The hint strip sits on that visible part.
-    /// </summary>
-    public const float DropSwapVisible = 10f;
-
-    /// <summary>
-    /// The room the doll's column leaves at the screen's top: the build's version tag (11 text units, about 32
+    /// The room the vitals leave at the screen's top: the build's version tag (11 text units, about 32
     /// reference pixels with its line), the gap under it and the ping and FPS chip (StatsCorner.Top), and a margin.
     /// </summary>
     public const float CardTopRoom = 32f + 8f + StatusChipHeight + ScreenMargin;
 
-    // ---- the vitals column on the human HUD (LiveHud.Layout; the designer, 2026-11-26) ----
+    // ---- the full vitals stack on the human HUD (LiveHud.VitalsColumn; slice E, the designer, 2026-11-26) ----
 
-    /// <summary>The width of the vitals column, the panel and the pill in it (never narrower than the panel's widest cell and its padding).</summary>
-    public const float VitalsWidth = 128f;
-
-    /// <summary>The gap between the column and the screen's right edge, and between the pill and tg's highest button under it.</summary>
+    /// <summary>The gap between two pictures of the stack, and between the mood face and tg's combat toggle under it.</summary>
     public const float VitalsMargin = 8f;
 
-    /// <summary>The room inside the panel around its cells.</summary>
-    public const float VitalsPad = 8f;
-
-    /// <summary>The gap between two cells of the panel (a line of <see cref="VitalsLine"/> in its middle).</summary>
-    public const float VitalsCellGap = 4f;
-
-    /// <summary>The line between two cells: the faint rim the other hand box has.</summary>
-    public const uint VitalsLine = HandRim;
-
-    // ---- tg's alerts as a stack of chips by the doll panel (LiveHud.AlertStack; the designer, 2026-11-26) ----
+    // ---- tg's alerts as a stack of chips by the vitals (LiveHud.AlertStack; the designer, 2026-11-26) ----
 
     /// <summary>An alert chip's side: a square holding tg's alert picture.</summary>
     public const float AlertChip = 40f;
@@ -307,7 +277,7 @@ public static class UiTokens
     /// <summary>The gap between two chips.</summary>
     public const float AlertChipGap = 4f;
 
-    /// <summary>The gap between the doll panel's top and the lowest chip.</summary>
+    /// <summary>The gap between the doll's top and the lowest chip above it, and between the doll and a column of chips left of it.</summary>
     public const float AlertStackGap = 6f;
 
     /// <summary>The least side the chips are made when they do not fit at full size, screen pixels (not reference pixels).</summary>

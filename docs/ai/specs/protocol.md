@@ -2660,7 +2660,9 @@ The taker takes the item by clicking tg's give alert, a screen object (section 2
 
 ### 50.4 The client
 
-G (`PlayAction.GiveItem`) sends code 15.
+Until the UI overhaul's package 2, slice E, the client's G key (`PlayAction.GiveItem`) sent code 15; the client no
+longer has that key (G is the crafting menu, the offer is the radial's "Offer item", DV139), and the code stays on
+the wire.
 
 ### 50.5 Tests
 

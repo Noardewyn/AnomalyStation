@@ -22,14 +22,15 @@ namespace Anomaly.Client.Hud;
 /// overlays) are limited by the player's strength setting.
 /// </para>
 /// <para>
-/// The live HUD (ui-overhaul.md section 6, <see cref="LiveHud"/>): the doll is re-placed into a panel at the middle right (it shows injuries
-/// only; its wound outlines stay tg's), the combat toggle is drawn as a native pill under it (<see cref="LiveHudView"/>), both still taking
-/// tg's clicks, and tg's zone selector is shown only while the cursor is free. Slice C, on the human HUD: tg's two hand boxes are drawn as native
-/// boxes either side of the hotbar's gap at the bottom centre, tg's bottom slots are moved into that gap; the boxes and the slots still take tg's
-/// clicks and drags. Slice D, on the human HUD: the doll panel holds tg's health indicator and mood face too (the vitals column at the screen's
-/// right edge, or the doll alone left of tg's right column on a crowded screen), a hint strip over the hands names the held item's keys, and tg's
-/// alerts are chips by the panel (above it, or left of it) instead of tg's column (DV82, which other HUDs keep), each chip taking its alert's clicks
-/// and hover.
+/// The live HUD (ui-overhaul.md section 6, <see cref="LiveHud"/>): the doll is re-placed (it shows injuries only; its wound outlines stay tg's),
+/// still taking tg's clicks, and tg's zone selector is shown only while the cursor is free. Slice C, on the human HUD: tg's two hand boxes are
+/// drawn as native boxes either side of the hotbar's gap at the bottom centre (<see cref="LiveHudView"/>), tg's bottom slots are moved into that
+/// gap; the boxes and the slots still take tg's clicks and drags. Slice D, on the human HUD: a hint strip over the hands names the held item's
+/// keys, and tg's alerts are chips by the vitals (above them, or left of them) instead of tg's column (DV82, which other HUDs keep), each chip
+/// taking its alert's clicks and hover. Slice E, on the human HUD: the doll, tg's health indicator and mood face stand bare against the screen's
+/// right edge (or the doll alone left of tg's right column on a crowded screen), tg's status indicators and sleep button are chips, tg's combat
+/// toggle is in the corner with, under Tab only, the zone selector, the memories button and the area creator left of it, and tg's buttons that a
+/// key does are neither drawn nor clicked.
 /// </para>
 /// </summary>
 public partial class HudLayer : CanvasLayer, IHudSurface
@@ -98,14 +99,13 @@ void fragment() {
     private Label _labels;
     private readonly List<ZoneState> _zoneStates = new();
     private readonly List<HudRect> _zoneRects = new();
-    private LiveHudView _view; // ui-overhaul.md section 6: the doll panel and the combat pill, the hands and the hint strip, under tg's pictures
+    private LiveHudView _view; // ui-overhaul.md section 6: the hands, the hint strip and the alert chips' boxes, under tg's pictures
     private LiveHudLayout _layout;
     private HandsLayout _hands;
     private bool _humanHud; // slice C: tg's inventory toggle is on the screen, so the hands and the bottom slots are re-placed (LiveHud.Placed)
     private readonly List<Item> _bottomSlots = new();
     private readonly List<Item> _alerts = new(); // slice D: tg's alerts on the human HUD, in tg's order
     private List<HudRect> _chips = new(); // their chips (Item.Cell is the index)
-    private bool _hungerShown; // slice D: tg draws its hunger bar now, so the mood cell holds the hunger and mood pair
 
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
@@ -114,7 +114,7 @@ void fragment() {
     public float ChatRight { get; set; }
 
     // the role an item is drawn in this frame: the hands, the bottom slots and the alerts only on the human HUD, tg's right-column indicators
-    // only with its full vitals column (slice D)
+    // only with its full vitals stack (slices D and E)
     private LiveHudRole RoleNow(Item item) => LiveHud.Placed(item.Role, _humanHud, _layout.Vitals);
 
     private static bool IsHand(LiveHudRole role) => role is LiveHudRole.LeftHand or LiveHudRole.RightHand;
@@ -128,7 +128,7 @@ void fragment() {
 
     private static readonly Dictionary<string, Texture2D> FacePictures = new();
 
-    /// <summary>Where what stands left of the doll panel and the combat pill must end (the prompts beside the crosshair), screen pixels; infinity while neither is shown.</summary>
+    /// <summary>Where what stands left of the vitals and their chips must end (the prompts beside the crosshair), screen pixels; infinity while no doll is shown.</summary>
     public float PanelLeftEdge { get; private set; } = float.PositiveInfinity;
 
     /// <summary>Raised when the doll shows more damage than before (the camera shakes a little).</summary>
@@ -236,7 +236,7 @@ void fragment() {
     {
         foreach (Item item in _order)
         {
-            if (!item.Container.Visible || !item.HasSpec || item.Hidden || !LiveHud.Shown(item.Role, CursorMode))
+            if (!item.Container.Visible || !item.HasSpec || item.Hidden || !LiveHud.Shown(RoleNow(item), CursorMode))
                 continue;
             if (item.Zones.Count > 0)
             {
@@ -245,8 +245,6 @@ void fragment() {
                 if (item.Zones.Any(node => node.Rect.Visible))
                     bottomToTop.Add(item.Role == LiveHudRole.Doll ? LiveHud.DollDrawn(item.Entry.Id, _layout) : new HudDrawn(item.Entry.Id, item.IconSquare, null, 0, 0));
             }
-            else if (item.Role == LiveHudRole.CombatToggle)
-                bottomToTop.Add(LiveHud.PillDrawn(item.Entry.Id, _layout)); // the native pill takes tg's toggle's clicks
             else if (RoleNow(item) == LiveHudRole.Alert)
             {
                 if (item.Cell < _chips.Count) // slice D: the whole chip is tg's alert
@@ -399,13 +397,12 @@ void fragment() {
 
     private bool _dollShown;
 
-    // ui-overhaul.md section 6: what the live HUD's view shows (the doll panel when a doll is shown, the combat pill when a combat toggle is
-    // shown; slice C: on the human HUD the hands and the bottom slots' places in the hotbar's gap; slice D: the vitals column, the alert chips
-    // and the hint strip), and where what stands left of them must end.
+    // ui-overhaul.md section 6: where the live HUD's re-placed entries go (slice C: on the human HUD the hands and the bottom slots' places in the
+    // hotbar's gap; slice D: the vitals, the alert chips and the hint strip; slice E: the vitals bare, tg's combat toggle in the corner), what its
+    // view draws, and where what stands left of them must end.
     private void UpdateLiveHud(in HudMetrics metrics)
     {
         bool doll = false, human = false;
-        bool? combat = null;
         Item left = null, right = null, active = null;
         _bottomSlots.Clear();
         _alerts.Clear();
@@ -418,7 +415,6 @@ void fragment() {
             switch (item.Role)
             {
                 case LiveHudRole.Doll: doll = true; break;
-                case LiveHudRole.CombatToggle: combat ??= LiveHud.CombatOn(_replica, item.Entry); break;
                 case LiveHudRole.InventoryToggle: human = true; break;
                 case LiveHudRole.LeftHand: left = item; break;
                 case LiveHudRole.RightHand: right = item; break;
@@ -431,17 +427,14 @@ void fragment() {
         _dollShown = doll;
         _humanHud = human;
         _layout = LiveHud.Layout(metrics, human);
-        // slice D: on the human HUD tg's alerts are chips by the doll panel, in tg's order, and with the full vitals column tg's stamina, internals
-        // and suit cell indicators and any other entry of its right status column are chips after them while tg draws them
-        _hungerShown = false;
+        // slice D: on the human HUD tg's alerts are chips by the vitals, in tg's order, and with the full stack slice E's status chips (hunger,
+        // stamina, internals, suit cell, any other entry of tg's right status column, sleep) follow them while tg draws them
         foreach (Item item in _order)
         {
-            if (item.Role == LiveHudRole.Hunger && item.HasSpec && !item.Hidden) // the mood face is centred alone while tg draws no hunger bar
-                _hungerShown |= LiveHud.IndicatorShown(_replica, item.Entry, StateExists);
             if (!item.HasSpec || item.Hidden || RoleNow(item) != LiveHudRole.Alert)
                 continue;
             item.Cell = int.MaxValue; // no chip unless it gets one below
-            if (item.Role is not (LiveHudRole.Stamina or LiveHudRole.Internals or LiveHudRole.SpaceSuit or LiveHudRole.StatusOther) || LiveHud.IndicatorShown(_replica, item.Entry, StateExists))
+            if (LiveHud.ChipShown(item.Role, _replica, item.Entry, StateExists)) // slice E: the stamina chip only while stamina is down
                 _alerts.Add(item);
         }
         static int Order(Item item) => LiveHud.ChipOrder(item.Role, item.Spec);
@@ -455,10 +448,9 @@ void fragment() {
         _bottomSlots.Sort((a, b) => a.Entry.SlotId.CompareTo(b.Entry.SlotId)); // tg's slot order (ID, belt, back, suit storage, pockets), not their places
         for (int i = 0; i < _bottomSlots.Count; i++)
             _bottomSlots[i].Cell = i;
-        PanelLeftEdge = doll || combat.HasValue ? LiveHud.LeftOfPanel(_layout, metrics) : float.PositiveInfinity;
-        if (_chips.Count > 0) // slice D: the prompts end before alert chips left of the panel too
+        PanelLeftEdge = doll ? LiveHud.LeftOfVitals(_layout, metrics) : float.PositiveInfinity;
+        if (_chips.Count > 0) // slice D: the prompts end before alert chips left of the vitals too
             PanelLeftEdge = Math.Min(PanelLeftEdge, LiveHud.LeftOfAlerts(_chips, metrics));
-        _view.Show(_layout, UiTokens.Unit(metrics), doll, combat, KeyChips.KeyOf(_options.Bindings, PlayAction.ToggleCombatMode));
         LiveHudView.HandsScene scene = _view.Hands;
         scene.Shown = human && (left != null || right != null);
         if (!scene.Shown)
@@ -563,7 +555,7 @@ void fragment() {
     }
 
     // An item's rectangle: tg's screen_loc, or an alert's place in its column (DV82); the picture's own square is where the place puts a 32 x 32 icon.
-    // The health doll is re-placed into the live HUD's doll panel (ui-overhaul.md section 6), its icon pixels kept: its zones, Collect and a click go through here.
+    // The health doll is re-placed (ui-overhaul.md section 6, LiveHud.Layout), its icon pixels kept: its zones, Collect and a click go through here.
     private HudRect Place(Item item, in HudMetrics metrics, int width, int height, int originX, int originY, out bool fullscreen)
     {
         if (item.Role == LiveHudRole.Doll)
@@ -581,11 +573,13 @@ void fragment() {
             fullscreen = false;
             return ScreenLoc.FitIcon(LiveHud.AlertPicture(_chips[item.Cell]), width, height, originX, originY);
         }
-        if (LiveHud.VitalSquare(RoleNow(item), _layout, _hungerShown) is HudRect vital) // slice D: tg's indicator in its cell of the vitals panel
+        if (LiveHud.VitalSquare(RoleNow(item), _layout) is HudRect vital) // slice D: tg's indicator in its place under the doll
         {
             fullscreen = false;
             return ScreenLoc.FitIcon(vital, width, height, originX, originY);
         }
+        if (_humanHud && LiveHud.HumanPlace(RoleNow(item)) is ScreenLocSpec moved) // slice E: tg's combat toggle in the corner, the Tab row left of it
+            return ScreenLoc.Place(moved, metrics, width, height, originX, originY, out fullscreen);
         int slot = ScreenLoc.AlertSlot(item.Spec);
         if (slot == 0 || width >= HudMetrics.GridTiles * 32)
             return ScreenLoc.Place(item.Spec, metrics, width, height, originX, originY, out fullscreen);
@@ -627,9 +621,9 @@ void fragment() {
         if (_labels.Text != lines)
             _labels.Text = lines;
         _labels.Size = new Vector2(metrics.Tile * 2.6f, Mathf.Max(bottom - top, 1f));
-        // the doll's panel: the column ends a gap left of the panel and the pill under it (ui-overhaul.md 6)
-        float right = _dollShown ? Math.Min(LiveHud.LeftOfPanel(_layout, metrics), LiveHud.LeftOfAlerts(_chips, metrics)) : left - 6f; // slice D: before alert chips left of the panel
-        _labels.Position = new Vector2(right - _labels.Size.X, _dollShown ? _layout.Panel.Top : top);
+        // the column ends a gap left of the vitals (ui-overhaul.md 6)
+        float right = _dollShown ? Math.Min(LiveHud.LeftOfVitals(_layout, metrics), LiveHud.LeftOfAlerts(_chips, metrics)) : left - 6f; // slice D: before alert chips left of them
+        _labels.Position = new Vector2(right - _labels.Size.X, _dollShown ? _layout.Doll.Top : top);
         if (_dollShown) // the prompts beside the crosshair end before the labels too
         {
             float textWidth = _labels.GetThemeFont("font").GetMultilineStringSize(lines, HorizontalAlignment.Right, -1, fontSize).X;
@@ -648,8 +642,9 @@ void fragment() {
         }
         if (item.Analyze)
             Analyze(item);
-        // tg's zone selector only while the cursor is free (LiveHud.Shown): hidden, Collect leaves it out too
-        item.Container.Visible = LiveHud.Shown(item.Role, CursorMode);
+        // tg's zone selector only while the cursor is free, slice E's hidden buttons never (LiveHud.Shown): hidden, Collect leaves it out too
+        // slice E: an entry drawn as a chip draws nothing while it has none (tg fading its hunger bar out: the chip follows the fade's target)
+        item.Container.Visible = LiveHud.Shown(RoleNow(item), CursorMode) && !(RoleNow(item) == LiveHudRole.Alert && item.Cell >= _chips.Count);
         if (!item.Container.Visible)
             return;
         float pixelScale = metrics.PixelScale;
@@ -658,15 +653,14 @@ void fragment() {
             UpdateZones(item, metrics, now, ref total);
             return;
         }
-        if (item.Role == LiveHudRole.CombatToggle || IsHand(RoleNow(item)))
+        if (IsHand(RoleNow(item)))
         {
-            // drawn as the native pill or hand box (LiveHudView), which Collect reports under this entry
+            // drawn as the native hand box (LiveHudView), which Collect reports under this entry
             if (item.Whole != null)
                 item.Whole.Visible = false;
             foreach (TextureRect big in item.Fitted)
                 big.Visible = false;
-            if (IsHand(RoleNow(item))) // slice C: the entry's maptexts (a held stack's amount) over the box's picture square, as tg puts them on its slot
-                ShowMaptext(item, metrics, item.Entry.Appearance, HudLook.None);
+            ShowMaptext(item, metrics, item.Entry.Appearance, HudLook.None); // slice C: a held stack's amount over the box's picture square, as tg puts it on its slot
             return;
         }
         // M4v slice 4 (protocol version 11): the entry's flick plays over its picture, and its animate() chains move, turn, tint and fade it.
@@ -732,7 +726,7 @@ void fragment() {
             rect = new HudRect((metrics.Width - side) / 2f, (metrics.Height - side) / 2f, side, side);
         }
         Apply(item.Whole, composed.Texture, rect);
-        HudLook moved = playing ? LiveHud.ChipLook(RoleNow(item), HudLook.Of(look, pixelScale)) : HudLook.None; // slice D: a chip's picture stays in it
+        HudLook moved = playing ? LiveHud.ChipLook(RoleNow(item), HudLook.Of(look, pixelScale), item.Role) : HudLook.None; // slice D: a chip's picture stays in it
         if (playing)
         {
             float perPixel = composed.PixelWidth > 0 ? rect.Width / composed.PixelWidth : pixelScale;
@@ -820,7 +814,7 @@ void fragment() {
 
         LiveHudRole role = RoleNow(item);
         HudRect? square = role == LiveHudRole.Alert && item.Cell < _chips.Count ? LiveHud.AlertPicture(_chips[item.Cell])
-            : LiveHud.VitalSquare(role, _layout, _hungerShown) ?? LiveHud.MaptextSquare(role, _hands, item.Cell, _bottomSlots.Count);
+            : LiveHud.VitalSquare(role, _layout) ?? LiveHud.MaptextSquare(role, _hands, item.Cell, _bottomSlots.Count);
         HudRect tile = square ?? Place(item, metrics, 32, 32, 0, 0, out _);
         item.Text.Modulate = item.Whole != null && !IsHand(role) ? item.Whole.Modulate : Colors.White;
         item.Text.SetText(renderer, real, _replica, shown, new Vector2(tile.Left + moved.MoveX, tile.Top + tile.Height + moved.MoveY), square is HudRect s ? s.Width / 32f : metrics.PixelScale);

@@ -485,7 +485,7 @@ public partial class GameScene
         // ui-overhaul.md section 6: the prompts stand beside the crosshair, or beside the free pointer when it aims at the world (cursor mode)
         _chatLines.PromptAnchor = pointerAim ? GetViewport().GetMousePosition() : view / 2f;
         _chatLines.PromptReach = pointerAim ? KeyChips.PointerReach : _crosshair.Extent;
-        // beside the crosshair they end before the doll panel and its pill, their text cut (the free pointer's block keeps its own room)
+        // beside the crosshair they end before the vitals and their chips, their text cut (the free pointer's block keeps its own room)
         _chatLines.PromptRightEdge = pointerAim || _hudLayer == null ? float.PositiveInfinity : _hudLayer.PanelLeftEdge;
         _chatLines.TextScale = metrics.TextScale; // scales with the HUD (the owner, 2026-10-18)
         _chatLines.ChatScale = _options.ChatLinesScale; // and its chat lines by their own share (the owner, 2026-11-19)
@@ -1113,8 +1113,11 @@ public partial class GameScene
             case PlayAction.Resist:
                 _session.Keybinding(KeybindingCode.Resist); // version 37 (M8z): tg's resist keybinding
                 break;
-            case PlayAction.GiveItem:
-                _session.Keybinding(KeybindingCode.GiveItem); // version 41 (M9 slice F): tg's give keybinding
+            case PlayAction.CraftingMenu or PlayAction.LanguageMenu or PlayAction.Navigate:
+                // ui-overhaul.md section 6, slice E: the click of tg's button the human HUD no longer draws; nothing on a HUD without one
+                long menu = LiveHud.ButtonEntry(_feed.Replica, action.Value);
+                if (menu != 0)
+                    _session.Click(new ClickTarget(TargetKind.Screen, menu, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
                 break;
             case PlayAction.ViewPetCommands:
                 _session.Keybinding(KeybindingCode.ViewPetCommands); // version 59 (gaps C2): tg's view pet commands: held, hover a pet
@@ -1325,8 +1328,8 @@ public partial class GameScene
                 At(1.8, () => Input.WarpMouse(GetViewport().GetVisibleRect().Size * new Vector2(0.7f, 0.45f)));
                 break;
             case "livehud":
-                // the doll panel coloured by damage, one level per part (head 1, chest 2, left arm 3, right arm 4, left leg 5, right leg none), a
-                // wound outline on the right arm, and the combat pill on (ui-overhaul.md 6); tg's zone selector is not shown
+                // the doll coloured by damage, one level per part (head 1, chest 2, left arm 3, right arm 4, left leg 5, right leg none), a
+                // wound outline on the right arm, and combat mode on (tg's toggle in the corner, ui-overhaul.md 6, slice E); tg's zone selector is not shown
                 At(0.5, () => _session.DevCommand("damage me brute 40 head"));
                 At(0.55, () => _session.DevCommand("damage me brute 80 chest"));
                 At(0.6, () => _session.DevCommand("damage me brute 30 l_arm"));
@@ -1335,7 +1338,7 @@ public partial class GameScene
                 At(0.75, () => _session.DevCommand("wound me r_arm slash severe"));
                 if (System.Environment.GetEnvironmentVariable("ANOMALY_SHOT_DISABLED") == "1")
                     At(0.8, () => _session.DevCommand("wound me l_arm blunt critical")); // tg's compound fracture disables the left arm (doll key 7)
-                // slice D: three of tg's alerts as chips at the top (no oxygen, weightless in the HUD's style, cold)
+                // slice D: three of tg's alerts as chips by the doll (no oxygen, weightless in the HUD's style, cold)
                 foreach (string alert in new[] { "not_enough_oxy", "weightless", "cold" })
                     At(0.85, () => _session.DevCommand("alert me " + alert));
                 At(1.0, () => _session.ToggleCombatMode());

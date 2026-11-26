@@ -39,13 +39,15 @@ public class FakeInventoryTests
     {
         (PlayRig rig, FakeFeed feed, _) = Start();
         ReplicaWorld world = feed.Replica;
-        // tg's zone selector (HUD_GROUP_STATIC), then the hands, drop, swap and the inventory toggle, and the six bottom slots (the ID, back,
-        // the pockets, suit storage and belt: hud/human.dm builds them in no screen group, so they stay with the static HUD); the combat toggle is
-        // in HUD_GROUP_INFO
-        Assert.Equal(new long[] { FakeServer.ZoneSelId, 2001, 2002, 2003, 2004, FakeServer.InventoryToggleId, 2012, 2015, 2016, 2017, 2018, 2024 },
+        // tg's move intent and zone selector (HUD_GROUP_STATIC), then the hands, drop, swap and the inventory toggle, the six bottom slots (the ID,
+        // back, the pockets, suit storage and belt: hud/human.dm builds them in no screen group, so they stay with the static HUD), and since
+        // ui-overhaul.md section 6, slice E the crafting, language, navigate, memories and area creator buttons, the floor changer and pull; the
+        // combat toggle is in HUD_GROUP_INFO; throw, resist and rest are hotkeys
+        Assert.Equal(new long[] { 1004, FakeServer.ZoneSelId, 2001, 2002, 2003, 2004, FakeServer.InventoryToggleId, 2012, 2015, 2016, 2017, 2018, 2024,
+                FakeServer.CraftId, FakeServer.LanguageId, FakeServer.NavigateId, FakeServer.MemoriesId, FakeServer.AreaCreatorId, FakeServer.FloorChangerId, FakeServer.PullButtonId },
             world.ScreenGroup(HudGroup.Static).Select(e => e.Id));
         Assert.Equal(new long[] { FakeServer.CombatId }, world.ScreenGroup(HudGroup.Info).Select(e => e.Id));
-        Assert.Equal(new long[] { 2005 }, world.ScreenGroup(HudGroup.Hotkeys).Select(e => e.Id));
+        Assert.Equal(new long[] { 2005, FakeServer.ResistId, FakeServer.RestId }, world.ScreenGroup(HudGroup.Hotkeys).Select(e => e.Id));
         IReadOnlyList<ScreenEntry> slots = world.ScreenGroup(HudGroup.ToggleableInventory);
         Assert.Equal(9, slots.Count); // the worn slots the toggle shows: uniform, suit, mask, neck, gloves, eyes, ears, head, shoes
         Assert.StartsWith("CENTER+-1:", world.Screen[2001].ScreenLoc, StringComparison.Ordinal); // ui_hand_position with a negative offset: the left hand (DV212)
@@ -57,7 +59,7 @@ public class FakeInventoryTests
         Assert.Equal((byte)2, world.Screen[2002].HandIndex);
         Assert.Equal(1u << 9, world.Screen[2024].SlotId); // ITEM_SLOT_BELT
         Assert.Equal(1u << 15, world.Screen[2016].SlotId); // ITEM_SLOT_LPOCKET
-        Assert.All(slots.Concat(world.ScreenGroup(HudGroup.Static).Where(e => e.Id >= 2010)), e => Assert.Equal(1, System.Numerics.BitOperations.PopCount(e.SlotId)));
+        Assert.All(slots.Concat(world.ScreenGroup(HudGroup.Static).Where(e => e.Id is >= 2010 and < FakeServer.CraftId)), e => Assert.Equal(1, System.Numerics.BitOperations.PopCount(e.SlotId)));
         Assert.Equal(15, slots.Concat(world.ScreenGroup(HudGroup.Static)).Select(e => e.SlotId).Where(s => s != 0).Distinct().Count());
 
         var inventory = new ContainerLayout(HudGroup.ToggleableInventory);

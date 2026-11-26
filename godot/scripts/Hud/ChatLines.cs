@@ -32,7 +32,7 @@ public partial class ChatLines : Control
     /// <summary>How far right of <see cref="PromptAnchor"/> what is drawn there reaches (<see cref="Crosshair.Extent"/>, <see cref="KeyChips.PointerReach"/>): the prompts start past it.</summary>
     public float PromptReach { get; set; }
 
-    /// <summary>The prompts end before this, screen pixels from the left (the doll panel in the captured view; infinity: no limit), their text cut with an ellipsis.</summary>
+    /// <summary>The prompts end before this, screen pixels from the left (left of the vitals at the right edge and their chips, in the captured view; infinity: no limit), their text cut with an ellipsis.</summary>
     public float PromptRightEdge { get; set; } = float.PositiveInfinity;
 
     /// <summary>The progress bars placed this frame (<see cref="PlaceBars"/>).</summary>

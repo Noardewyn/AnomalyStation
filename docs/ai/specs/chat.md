@@ -13,8 +13,8 @@ tg references: the compact say window `tgui/packages/tgui-say` (DM side `code/mo
 | M | compact bar, Me | tg `me` [M] |
 | O | compact bar, OOC | tg `ooc` [O] |
 | Shift+T | the big chat window | owner (D247) |
-| J | the emote wheel | D256: tg has no emote key; G is tg's `give` (offering an item, M9), so J, a letter tg leaves free |
-| G | give: offer the held item | tg `give` [G] |
+| J | the emote wheel | D256: tg has no emote key; G was tg's `give` (offering an item, M9), so J, a letter tg leaves free |
+| G | the crafting menu (was give; the offer is the radial's "Offer item" since the UI overhaul's package 2, slice E) | Space Station 14's `OpenCraftingMenu` [G] |
 | P | compact bar, Pray | tg `pray` [P] |
 
 Opening the compact bar closes the big window and the other way round (D247). All keys are rebindable in the options like every other action.

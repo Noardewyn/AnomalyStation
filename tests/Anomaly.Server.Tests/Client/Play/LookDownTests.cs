@@ -11,20 +11,20 @@ public class LookDownTests
     private const double Near = 0.05; // the first-person camera's near plane (scenes/game.tscn)
 
     [Fact]
-    public void TheEyeTurnsAboutAPointFifteenCentimetresUnderItAndOnlyLookingDown()
+    public void TheEyeTurnsAboutAPointTwentyFiveCentimetresUnderItAndOnlyLookingDown()
     {
         Assert.Equal((0.0, 0.0), LookDown.EyeOffset(0, Eye));
         Assert.Equal((0.0, 0.0), LookDown.EyeOffset(60 * Degree, Eye));
         (double forward, double down) = LookDown.EyeOffset(-90 * Degree, Eye);
-        Assert.Equal(0.15, forward, 9);
-        Assert.Equal(0.15, down, 9);
-        (forward, down) = LookDown.EyeOffset(-105 * Degree, Eye);
-        Assert.Equal(0.15 * Math.Sin(105 * Degree), forward, 9);
-        Assert.Equal(0.15 * (1 - Math.Cos(105 * Degree)), down, 9);
-        for (double p = 0; p <= 105; p += 5)
+        Assert.Equal(0.25, forward, 9);
+        Assert.Equal(0.25, down, 9);
+        (forward, down) = LookDown.EyeOffset(-135 * Degree, Eye);
+        Assert.Equal(0.25 * Math.Sin(135 * Degree), forward, 9);
+        Assert.Equal(0.25 * (1 - Math.Cos(135 * Degree)), down, 9);
+        for (double p = 0; p <= 135; p += 5)
         {
             (forward, down) = LookDown.EyeOffset(-p * Degree, Eye);
-            // always the pivot's distance from the pivot, which sits 0.15 m under the level eye
+            // always the pivot's distance from the pivot, which sits 0.25 m under the level eye
             Assert.Equal(LookDown.PivotMetres, Math.Sqrt(forward * forward + (LookDown.PivotMetres - down) * (LookDown.PivotMetres - down)), 9);
             Assert.True(forward >= 0, "never behind the body");
         }
@@ -47,18 +47,20 @@ public class LookDownTests
     }
 
     [Fact]
-    public void ThePivotIsAStandingHumansFifteenCentimetresAtMostAndLessForALowerEye()
+    public void ThePivotIsAStandingHumansTwentyFiveCentimetresAtMostAndLessForALowerEye()
     {
-        Assert.Equal(0.15, LookDown.Pivot(1.3), 9);
-        Assert.Equal(0.15, LookDown.Pivot(1.9), 9); // a raised eye-height option does not lengthen the neck
-        Assert.Equal(0.15 * 0.4 / 1.3, LookDown.Pivot(0.4), 6);
+        Assert.Equal(0.25, LookDown.Pivot(1.3), 9);
+        Assert.Equal(0.25, LookDown.Pivot(1.9), 9); // a raised eye-height option does not lengthen the neck
+        Assert.Equal(0.25 * 0.4 / 1.3, LookDown.Pivot(0.4), 6);
         Assert.Equal(0.0, LookDown.Pivot(0), 9);
     }
 
     [Fact]
-    public void ThePitchGoesTo105DegreesDownAnd89UpInTheFirstPersonAlone()
+    public void ThePitchGoesTo135DegreesDownAnd89UpInTheFirstPersonAlone()
     {
-        Assert.Equal(-105 * Degree, LookDown.ClampPitch(-2.5, firstPerson: true), 9);
+        Assert.Equal(-135 * Degree, LookDown.ClampPitch(-2.5, firstPerson: true), 9);
+        Assert.Equal(-135 * Degree, LookDown.ClampPitch(-136 * Degree, firstPerson: true), 9);
+        Assert.Equal(-120 * Degree, LookDown.ClampPitch(-120 * Degree, firstPerson: true), 9);
         Assert.Equal(89 * Degree, LookDown.ClampPitch(2.5, firstPerson: true), 9);
         Assert.Equal(-100 * Degree, LookDown.ClampPitch(-100 * Degree, firstPerson: true), 9);
         Assert.Equal(0.3, LookDown.ClampPitch(0.3, firstPerson: true), 9);
@@ -70,7 +72,7 @@ public class LookDownTests
     }
 
     [Theory]
-    [InlineData(0.4)]
+    [InlineData(0.3)] // under about 0.33 m up the neck (0.25 m in proportion) is too short for the near plane
     [InlineData(0.15)]
     public void ABodyWhoseNeckIsTooShortToClearTheNearPlaneIsNotShown(double eye)
     {
@@ -112,15 +114,36 @@ public class LookDownTests
         // edge at most), so it cannot pop into the middle of the screen
         double? before = HighestSeen(from - 1, fov);
         Assert.True(before == null || before < 0.25, $"at {from - 1:0.0} degrees with a {fov} degree view the card is seen up to {before:0.00} m");
-        // further down it rises in from the bottom edge: the legs first
-        double? seen = HighestSeen(from + 10, fov);
+        // further down it rises in from the bottom edge: the legs first (with the 0.25 m neck the first rays to reach the card's plane meet it
+        // under the floor, so the feet come in a few degrees later, by the time the held things are down)
+        double? seen = HighestSeen(from + 15, fov);
         Assert.NotNull(seen);
-        Assert.True(seen < 1.0, $"at {from + 10:0.0} degrees with a {fov} degree view the card is seen up to {seen:0.00} m");
+        Assert.True(seen < 1.0, $"at {from + 15:0.0} degrees with a {fov} degree view the card is seen up to {seen:0.00} m");
     }
 
     [Fact]
     public void WithTheDefaultViewTheBodyShowsFrom52AndAHalfDegrees()
         => Assert.Equal(52.5, LookDown.BodyFrom(75, Near, Eye) / Degree, 6);
+
+    // Where the crosshair's ray (the screen's middle, the camera's forward) meets the card, metres above the feet; past straight down only.
+    private static double CrosshairHeight(double pitchDown)
+    {
+        (double ahead, double drop) = LookDown.EyeOffset(-pitchDown * Degree, Eye);
+        return Eye - drop + Math.Tan(pitchDown * Degree) * ahead;
+    }
+
+    [Theory]
+    // the picture is 0.05 m a pixel: the playtest clicked icon rows 2 (the left leg), 11 (tg's groin rows 10 to 13) and 14 (the chest)
+    [InlineData(105, 0.084)] // the feet
+    [InlineData(119, 0.534)] // the groin
+    [InlineData(135, 0.696)] // the chest
+    public void TheCrosshairRisesUpTheOwnBodyFromTheFeetToTheChest(double pitchDown, double height)
+    {
+        Assert.Equal(height, CrosshairHeight(pitchDown), 3);
+        for (double p = 95; p < LookDown.MaxDownDegrees; p += 1)
+            Assert.True(CrosshairHeight(p + 1) > CrosshairHeight(p), $"the crosshair goes down the body from {p} to {p + 1} degrees");
+        Assert.True(CrosshairHeight(LookDown.MaxDownDegrees) < 1.0, "never above the chest");
+    }
 
     [Theory]
     [InlineData(50)]
@@ -204,7 +227,7 @@ public class LookDownTests
         foreach (double yawDegrees in new[] { 0.0, 37, 90, -135, 180 })
         {
             double yaw = yawDegrees * Degree;
-            for (double p = -105; p <= 89; p += 1)
+            for (double p = -135; p <= 89; p += 1)
             {
                 ((double rx, double rz), (double fx, double fy, double fz)) = Camera(yaw, p * Degree);
                 (double ax, double az) = LookDown.Ahead(rx, rz);
@@ -235,7 +258,7 @@ public class LookDownTests
     {
         // The body at tile (10, 10) facing north (yaw byte 0); the frame is the one a viewer ahead of it along the view's yaw sees (EntityLayer's
         // FrontViewer): its front, at every pitch, also past straight down where the camera's forward points back.
-        foreach (double p in new[] { -45.0, -89, -91, -100, -105 })
+        foreach (double p in new[] { -45.0, -89, -91, -100, -105, -120, -135 })
         {
             ((double rx, double rz), _) = Camera(0, p * Degree);
             (double ax, double az) = LookDown.Ahead(rx, rz);

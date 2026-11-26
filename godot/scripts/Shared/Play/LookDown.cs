@@ -3,17 +3,17 @@ namespace Anomaly.Client.Shared;
 // Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
 // UI overhaul slice T5a (the contributor, 2026-11-24; docs/ai/specs/ui-overhaul.md section 8, "T5 design, corrected by the contributor"):
 // looking down at one's own body in first person. The eye turns about the neck, so looking down moves it forward and down; the pitch goes
-// past straight down so the view looks a little back at the body, one continuous turn about the camera's own right axis. Past 90 degrees the
+// past straight down so the view looks back at the body, one continuous turn about the camera's own right axis. Past 90 degrees the
 // camera's forward points backward on the ground, so the way the player faces is taken from the view's right (the yaw), never from its forward.
 
 /// <summary>The first-person eye looking down at its own body: the eye's place for a pitch, the pitch limits, and when the body is seen.</summary>
 public static class LookDown
 {
     /// <summary>How far under a standing human's eye (at a level look) the point it turns about is, metres: the neck.</summary>
-    public const double PivotMetres = 0.15;
+    public const double PivotMetres = 0.25;
 
-    /// <summary>How far the first-person view turns down, degrees below level: past straight down, a little back at the own body.</summary>
-    public const double MaxDownDegrees = 105;
+    /// <summary>How far the first-person view turns down, degrees below level: past straight down, back at the own body (the contributor, 2026-11-26).</summary>
+    public const double MaxDownDegrees = 135;
 
     /// <summary>How far the view turns up, degrees above level; and how far the other cameras (free, orbit, the map editor's) turn down.</summary>
     public const double MaxUpDegrees = 89;

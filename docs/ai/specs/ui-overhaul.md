@@ -40,6 +40,7 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `6a3e649` | Package 2, slice C: the hands either side of the hotbar gap, the bottom slots in the gap, the held-item card (client only; section 6, "Slice C as built") |
 | `e3af6b3` | Package 2, slice D: the vitals column at the right edge, alerts as chips, the hint strip over the hands, the swap key cap, the red cuffed hand (client only; section 6, "Slice D as built") |
 | `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV589; section 9, one known fault accepted by the contributor) |
+| `fc882c5` | Package 2, slice E: the vitals without a box, tg's combat toggle in the corner, the key-duplicating buttons hidden, keys for crafting, language and navigate, "Offer item" in the wheel (server and client, no wire change, DV139; section 6, "Slice E as built") |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
@@ -1096,6 +1097,31 @@ Known limits:
 
 To tell the owner: D288 (the own body is a shadow only in first person) now has the body itself in view when the
 player looks down past about 52 degrees.
+
+### T5's numbers changed (2026-11-26): pivot 0.25 m, limit 135 degrees
+
+Settled by the contributor from a comparison sheet (section 0). `LookDown.PivotMetres` is 0.25 (was 0.15) and
+`MaxDownDegrees` 135 (was 105); the numbers in "T5a as built" below are the old ones. What follows from them:
+- The crosshair climbs the own body's middle line: the feet (the left leg) at 105 degrees down, the groin at about
+  119, the chest at 135 (pinned by `LookDownTests.TheCrosshairRisesUpTheOwnBodyFromTheFeetToTheChest`; in the
+  playtest wrench clicks at those angles hit the left leg, the groin and the chest). The arms and the head stay
+  out of reach by look, as accepted; the inventory is the main way to act on oneself.
+- With the longer neck the feet come into view a little later (about 63 degrees down at the default field of
+  view; the body counts as shown from 52.5), and a body with an eye between about 0.33 and 0.55 m now sees itself
+  when looking down; before, only an eye above 0.55 m did.
+- Playtested on a real server at 90, 105, 120 and 135 degrees with a scripted pitch, empty-handed and with an
+  item in hand (the session's scratchpad, `lookdown-135`): no view through the own head or body, no near-plane
+  clipping, the held item fully lowered. The stress test then drove the real mouse: the pitch stops at 135 with
+  no flip or jitter and comes back smoothly; W, A, S, D and a yaw turn at 135 go the same ways as when level; a
+  wrench, a pistol used on oneself and a throw at 120 and 135 behave; a possessed monkey and corgi show their own
+  body with nothing cut; the dev flashlight's patch does not turn round past straight down.
+- Not playtested: standing against a wall or in a doorway at 105 to 135, the smallest and largest field of view,
+  a cyborg, lying, buckled, dead, third person and free look entered at 135, a held flashlight item.
+- Raised by one reviewer and not reproduced (so not acted on): for a body whose eye is between about 0.33 and
+  0.46 m, the near plane would cut a strip of the own sprite from about 128 degrees down, because `BodyFrom` checks
+  only the lower end of the pitch range. The monkey and the corgi tried in the client had a human's eye height
+  (1.3 m), so no such body was found; if one turns up, `BodyFrom` should also refuse a neck that does not clear the
+  near plane at the limit.
 
 ### T5b and T5c as built (2026-11-26): the own body as a target, the doll's eyes, mouth and grasp
 

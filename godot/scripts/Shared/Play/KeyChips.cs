@@ -174,7 +174,7 @@ public static class KeyChips
     /// <see cref="UiTokens.PromptMaxWidth"/>. It stays on the screen: where the right side has no room it goes to the anchor's left, mirrored,
     /// else it is narrowed; it is moved up or down to fit the screen's height. At the screen's middle its bottom stays above the balloon
     /// alert's row (<see cref="BalloonRow"/>) at every HUD scale.
-    /// <paramref name="rightEdge"/> (the doll panel's left edge less its gap, in the captured view; ui-overhaul.md section 6): the block never
+    /// <paramref name="rightEdge"/> (the vitals' left edge less its gap, in the captured view; ui-overhaul.md section 6): the block never
     /// reaches past it; one wider is narrowed to end there, not moved (the caller cuts its text, <see cref="Ellipsize"/>), unless less than
     /// <see cref="UiTokens.PromptMinWidth"/> is left there (a very large HUD scale on a small screen), when it is placed as without the panel.
     /// </summary>

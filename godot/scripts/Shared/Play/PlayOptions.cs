@@ -48,9 +48,6 @@ public enum PlayAction : byte
     /// <summary>Opens and closes the options panel (D70).</summary>
     Options,
 
-    /// <summary>Shows or hides the dev analyzer readout panel.</summary>
-    Analyzer,
-
     /// <summary>M4b slice 3 (the owner, 2026-10-13): opens and closes the ImGui dev menu (the gas overlay, view switches) [\, the | key; F8 before D137].</summary>
     DevMenu,
 
@@ -289,7 +286,6 @@ public sealed class KeyBindings
             b.Set((PlayAction)((int)PlayAction.ActionButton1 + n - 1), "Key" + n, "Kp" + n);
         b.Set(PlayAction.Console, "Quoteleft");
         b.Set(PlayAction.Options, "F10");
-        b.Set(PlayAction.Analyzer, "F9");
         b.Set(PlayAction.DevMenu, "Backslash");
         b.Set(PlayAction.CameraMode, "F1");
         b.Set(PlayAction.ThirdPersonView, "F5");
@@ -458,8 +454,8 @@ public sealed class KeyBindings
         ["shove"] = PlayAction.SecondaryClick,
     };
 
-    /// <summary>The ids of actions the client no longer has, which an old options file may still name: read and ignored (slice E: the give key).</summary>
-    public static readonly IReadOnlySet<string> RetiredIds = new HashSet<string>(StringComparer.Ordinal) { "give_item" };
+    /// <summary>The ids of actions the client no longer has, which an old options file may still name: read and ignored (slice E: the give key; the readout panel's key, gone with the panel, D184).</summary>
+    public static readonly IReadOnlySet<string> RetiredIds = new HashSet<string>(StringComparer.Ordinal) { "give_item", "analyzer" };
 
     /// <summary>The action of an id (<see cref="IdOf"/>, or a <see cref="LegacyIds"/> one), or null.</summary>
     public static PlayAction? ActionOfId(string id)
@@ -513,7 +509,6 @@ public sealed class KeyBindings
         PlayAction.ChatWindow => "Chat window",
         PlayAction.Console => "Dev console",
         PlayAction.Options => "Settings",
-        PlayAction.Analyzer => "Analyzer panel",
         PlayAction.CameraMode => "Camera mode",
         PlayAction.ThirdPersonView => "View: first person, third person, free look",
         PlayAction.Ceiling => "Ceiling",
@@ -671,6 +666,9 @@ public sealed class PlayOptions
 
     /// <summary>D296 (DV226): the ship hum's volume, 0 to 100 per cent (tg's sound_ship_ambience_volume preference).</summary>
     public int ShipHumVolumePercent { get; set; } = 40;
+
+    /// <summary>DV598: the soft ping of another player's OOC line, 0 (off) to 100 per cent.</summary>
+    public int OocPingVolumePercent { get; set; } = 60;
 
     /// <summary>D296: the area reverb (tg's sound_environment) on.</summary>
     public bool Reverb { get; set; } = true;
@@ -968,6 +966,7 @@ public sealed class PlayOptions
         sb.Append("interface_volume=").Append(InterfaceVolumePercent.ToString(c)).Append('\n');
         sb.Append("ambience_volume=").Append(AmbienceVolumePercent.ToString(c)).Append('\n');
         sb.Append("ship_hum_volume=").Append(ShipHumVolumePercent.ToString(c)).Append('\n');
+        sb.Append("ooc_ping_volume=").Append(OocPingVolumePercent.ToString(c)).Append('\n');
         sb.Append("reverb=").Append(Reverb ? "true" : "false").Append('\n');
         sb.Append("text_to_speech=").Append(TextToSpeech ? "true" : "false").Append('\n');
         sb.Append("speech_volume=").Append(SpeechVolumePercent.ToString(c)).Append('\n');
@@ -1193,6 +1192,8 @@ public sealed class PlayOptions
                 return TryPercent(value, v => AmbienceVolumePercent = v, out problem);
             case "ship_hum_volume":
                 return TryPercent(value, v => ShipHumVolumePercent = v, out problem);
+            case "ooc_ping_volume":
+                return TryPercent(value, v => OocPingVolumePercent = v, out problem);
             case "reverb":
                 return TryBool(value, v => Reverb = v, out problem);
             case "text_to_speech":

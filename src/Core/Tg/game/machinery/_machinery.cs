@@ -326,6 +326,8 @@ public partial class obj_machinery : obj
             return dot;
         if (!Dm.truthy(length(GLOB.uncommon_roundstart_languages)))
             return dot;
+        if (QDELETED(this))
+            return dot; // DEVIATION(DV594): a machine being deleted keeps its languages (tg's get_language_holder CRASHes on a QDELING atom)
         remove_all_languages(source: LANGUAGE_EMP);
         grant_random_uncommon_language(source: LANGUAGE_EMP);
         return dot;

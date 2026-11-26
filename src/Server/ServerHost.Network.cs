@@ -144,7 +144,7 @@ public sealed partial class ServerHost
             player.LoggedIn = true;
             MarkLoginUsed(hello.LoginToken, loginExpires);
         }
-        var session = new Session(++_lastOrdinal, key, player.Token, connection) { State = SessionState.Joining, Address = address, LastSeenBefore = seen?.LastSeen };
+        var session = new Session(++_lastOrdinal, key, player.Token, connection) { State = SessionState.Joining, Address = address, LastSeenBefore = seen?.LastSeen, WaitsForLoad = hello.WaitsForLoad };
         // tg's player row (client_procs.dm:719-791): the key's first connection claims it with its token (D275), a later one is seen again
         if (seen == null)
             _db?.AddPlayer(ckey, key, player.Token, address, RoundId);
@@ -153,7 +153,7 @@ public sealed partial class ServerHost
         AddSession(session);
         _byConnection[connection.Id] = session;
         _sessionsServed++;
-        _queue.Enqueue(new QueuedCommand(World.Tick + 1, session.Ordinal, QueuedCommand.JoinSeq, CommandKind.Join, key));
+        _queue.Enqueue(new QueuedCommand(World.Tick + 1, session.Ordinal, QueuedCommand.JoinSeq, CommandKind.Join, key, WaitsForLoad: session.WaitsForLoad));
         _out.WriteLine(string.Create(CultureInfo.InvariantCulture,
             $"join #{session.Ordinal} {key}{(live != null ? " (replaces #" + live.Ordinal.ToString(CultureInfo.InvariantCulture) + ")" : "")} at tick {World.Tick}"));
     }
@@ -404,6 +404,7 @@ public sealed partial class ServerHost
             case ActionKind.ToggleMoveIntent:
             case ActionKind.ToggleCombatMode:
             case ActionKind.Unhover: // version 14: untargeted
+            case ActionKind.Loaded: // version 97: untargeted
                 return true;
             case ActionKind.RadialPick: // version 15: the menu and the element; whether the menu is shown to the player is ClientSeam's check
                 if (action.RadialMenu < 1) { why = "a radial pick without a menu"; return false; }
@@ -442,7 +443,7 @@ public sealed partial class ServerHost
                 if (action.AimZone > AimZone.Last) { why = "an unknown aim zone"; return false; }
                 if (action.Kind == ActionKind.Hover)
                 {
-                    // version 95 (slice T4b): the zone looked at, on an entity only
+                    // version 98 (slice T4b): the zone looked at, on an entity only
                     if (action.AimZone != AimZone.None && action.EffectiveTargetKind != TargetKind.Entity) { why = "an aim zone on a hover that is not on an entity"; return false; }
                     return true;
                 }
@@ -782,18 +783,56 @@ public sealed partial class ServerHost
         {
             if (window.Interface == Limits.BrowseUiInterface && window.Data?.Get("html") is UiValue html)
                 s.ChatLinks.Record(string.Concat(System.Linq.Enumerable.Select(html.Items, p => p.Text))); // DV216: a browse() page's links are tg's chat links (DV59)
-            byte[] bytes;
+            List<byte[]> parts;
             try
             {
-                bytes = Codec.Encode(window);
+                parts = EncodeUiWindow(window);
             }
-            catch (ProtocolException)
+            catch (ProtocolException e)
             {
                 s.UiWindowsDropped++; // a payload over the caps (Limits.MaxUiWindowBytes, MaxUiValues): the window misses this update
+                _err.WriteLine($"tgui window {window.Interface} dropped for {s.Ckey}: {e.Message}"); // otherwise the player sees nothing open
                 continue;
             }
-            Send(s, Channel.State, bytes);
+            foreach (byte[] bytes in parts)
+                Send(s, Channel.State, bytes);
             s.UiWindowsSent++;
+        }
+    }
+
+    // An update over the caps (the preferences menu's static data with every species, D349) goes as several updates, each with some of
+    // its static data's top-level keys: the client merges static data key by key (ReplicaWorld.V16), so it ends up with all of them.
+    private static List<byte[]> EncodeUiWindow(UiWindowMessage window)
+    {
+        try
+        {
+            return [Codec.Encode(window)];
+        }
+        catch (ProtocolException) when (window.Kind == UiWindowKind.Update && window.StaticData is { Kind: UiValueKind.Object, Fields.Count: > 1 })
+        {
+            var parts = new List<byte[]>();
+            var keys = new List<KeyValuePair<string, UiValue>>();
+            UiWindowMessage With(IEnumerable<KeyValuePair<string, UiValue>> statics, bool first) => new()
+            {
+                Kind = window.Kind, Window = window.Window, Interface = window.Interface, Title = window.Title, Status = window.Status,
+                Refreshing = window.Refreshing, Data = first ? window.Data : null, StaticData = UiValue.ObjectOf(statics),
+            };
+            foreach (KeyValuePair<string, UiValue> field in window.StaticData.Fields)
+            {
+                keys.Add(field);
+                try
+                {
+                    Codec.Encode(With(keys, parts.Count == 0));
+                }
+                catch (ProtocolException) when (keys.Count > 1)
+                {
+                    keys.RemoveAt(keys.Count - 1);
+                    parts.Add(Codec.Encode(With(keys, parts.Count == 0)));
+                    keys = [field];
+                }
+            }
+            parts.Add(Codec.Encode(With(keys, parts.Count == 0))); // a single key over the caps throws: the window is dropped
+            return parts;
         }
     }
 
@@ -845,6 +884,7 @@ public sealed partial class ServerHost
             ActionsDone = s.ActionsReceived - (uint)s.PendingActions.Count,
             Access = s.Access,
             HandsBlocked = s.HandsBlocked,
+            MeleeCooldownMs = s.MeleeCooldownMs,
             Body = s.OwnEntity != 0 ? _locomotion.OwnBody(World, s.OwnEntity) : 0,
         };
     }

@@ -153,15 +153,20 @@ public class ShotGeometryTests
     }
 
     [Fact]
-    public void AHitLightsTheHitBodyPartForAMoment()
+    public void AnyDamageLightsTheHurtBodyPartForAMoment()
     {
         (AudioRoom r, mob_living_carbon_human bob) = Room(7807);
         int before = r.In(() => (int)bob.overlays.len);
         r.In(() => ShotGeometry.ShowHit(bob, BODY_ZONE_CHEST));
         r.Step(1);
-        Assert.Equal(before + 1, r.In(() => (int)bob.overlays.len)); // DV400: the chest's images as one overlay
+        Assert.Equal(before, r.In(() => (int)bob.overlays.len)); // a shot's jolt alone: the light comes from the damage
+        // a blow or a fall: not a shot, the damaged leg lights up all the same (DV400: the leg's images as one overlay)
+        r.In(() => Waiting.NoSleep(bob.apply_damage(10, BRUTE, BODY_ZONE_L_LEG, wound_bonus: CANT_WOUND)));
+        r.Step(1);
+        int lit = r.In(() => (int)bob.overlays.len);
         r.Step(20);
-        Assert.Equal(before, r.In(() => (int)bob.overlays.len));
+        Assert.Equal(lit - 1, r.In(() => (int)bob.overlays.len)); // the light is gone; tg's own damage overlay of the leg stays
+        Assert.True(lit - 1 > before);
         r.AssertNoRuntimes();
     }
 

@@ -111,6 +111,9 @@ public sealed class TypeDefaults
     /// <summary>tg's <c>sharpness</c> is set (an edge or a point: a knife, a sword, a spear), and its <c>w_class</c>: the own swing's whoosh (SwingSound).</summary>
     public bool Sharp { get; set; }
 
+    /// <summary>tg's <c>sharpness</c> has <c>SHARP_POINTY</c> (a point: a screwdriver, a spear, a pen): the own hit stabs (HeldClip.Stab).</summary>
+    public bool Pointy { get; set; }
+
     public int WeightClass { get; set; }
 
     /// <summary>A copy to change fields of.</summary>
@@ -315,6 +318,9 @@ public sealed class ReflectionTypeSource : ITypeSource, IRandomTypeSource
     /// <summary>tg's <c>ON_BORDER_1</c>: <c>1 &lt;&lt; 1</c> (code/__DEFINES/_flags.dm:25; it was read as 1 &lt;&lt; 9 until M3 R2, so no class ever had it).</summary>
     public const int OnBorder1 = 1 << 1;
 
+    /// <summary>tg's <c>SHARP_POINTY</c>: <c>1 &lt;&lt; 1</c> (code/__DEFINES/obj_flags.dm:136).</summary>
+    public const int SharpPointy = 1 << 1;
+
     /// <summary>tg's <c>USES_SMOOTHING</c> (SMOOTH_BITMASK | SMOOTH_BITMASK_CARDINALS, code/__DEFINES/icon_smoothing.dm).</summary>
     public const int UsesSmoothing = (1 << 0) | (1 << 1);
 
@@ -369,6 +375,7 @@ public sealed class ReflectionTypeSource : ITypeSource, IRandomTypeSource
             Light = LightOf(instance),
             RandomBaseType = (Member(instance, "random_basetype") as Type)?.GetCustomAttribute<DmPathAttribute>(false)?.Path,
             Sharp = Number(instance, "sharpness") != 0f,
+            Pointy = ((int)Number(instance, "sharpness") & SharpPointy) != 0,
             WeightClass = (int)Number(instance, "w_class"),
         };
         return true;

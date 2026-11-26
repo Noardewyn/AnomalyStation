@@ -137,7 +137,8 @@ public class BlueprintsPaintersGameplayTests(ITestOutputHelper output)
             DmList detected = Waiting.NoSleep(detect_room((turf)get_turf(apcHere), Dm.list(), 600)) as DmList;
             List<turf> tiles = Dm.each(detected).OfType<turf>().ToList();
             var alarmHere = tiles.SelectMany(t => Dm.each<obj_machinery_airalarm>(t)).Single();
-            var lightsHere = tiles.SelectMany(t => Dm.each<obj_machinery_light>(t)).ToList();
+            // a bulb tg's mapload roll broke (light.dm post_machine_initialize, prob 2/5) stays dark: only the working ones count
+            var lightsHere = tiles.SelectMany(t => Dm.each<obj_machinery_light>(t)).Where(l => l.status == LIGHT_OK).ToList();
             return (tiles, apcHere, alarmHere, lightsHere, apcHere.area);
         });
         string oldName = In(w, () => post.name);

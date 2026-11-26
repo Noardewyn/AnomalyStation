@@ -190,13 +190,19 @@ public static class ProtocolVersion
     /// crosshair.
     /// Version 93 (DV585): the keybinding code <see cref="KeybindingCode.Scoreboard"/>, the deathmatch scoreboard held on a key.
     /// Version 94 (D347): the magic of <see cref="Hello"/> is <c>"ANOM"</c>, no longer <c>"SS3D"</c>.
-    /// Version 95 (package T, slice T4a, DV30; Codec.V95.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
+    /// Version 95 (DV586, MessagesV95.cs): the private block names the own mob's melee click cooldown when it is not tg's <c>CLICK_CD_MELEE</c>
+    /// (the held thing's <c>attack_speed</c> with the mob's modifiers), so the client swings and whooshes only on a click the server takes as a blow.
+    /// Version 96 (MessagesV96.cs): MapGrid and the Delta body end with the turfs' own lights (<see cref="TurfLightChange"/>): a light floor,
+    /// a circuit floor or lava lights the room, and a ceiling's floor block lights the room under it.
+    /// Version 97 (DV597): the Hello's flag <see cref="Hello.WaitsForLoad"/> and the action <see cref="ActionKind.Loaded"/>: the game's client
+    /// loads the world behind its loading screen before its new player is late-joined.
+    /// Version 98 (package T, slice T4a, DV30; Codec.V98.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
     /// <see cref="AimZone.Mouth"/> and <see cref="AimZone.Groin"/>, the modifiers byte's spare bit 3 its high bit.
-    /// Version 95 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
+    /// Version 98 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
     /// selects without logging before tg's hover, so the hints name what a click there does.
-    /// Version 95 also (package T, slice T4c, DV588): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
+    /// Version 98 also (package T, slice T4c, DV600): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
     /// <see cref="PostureBits.FaceUp"/>), the side a lying body was turned to from the radial's Turn over (a ContextPick of that label).
-    public const ushort Current = 95;
+    public const ushort Current = 98;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

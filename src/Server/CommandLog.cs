@@ -34,7 +34,8 @@ namespace Anomaly.Server;
 /// <c>kind,target,button,modifiers,targetKind,x,y,z,iconX,iconY,keybinding,keyUp</c> (a <see cref="CommandKind.Action"/>; M3's lines have
 /// the first four, which parse as before; then the aim zone, and version 15's radial menu and element, when set; version 17's drop
 /// adds <c>aim,menu,element,window,params,overKind,overTarget,overX,overY,overZ,dragTime</c>), or <c>s</c> and <c>type,channel,visible</c>
-/// (version 38: a <see cref="ActionKind.Say"/>, its type and channel as hex UTF-8, <c>-</c> for no channel; the entry is the TEXT); TEXT is <c>-</c> for none or <c>:</c> followed by
+/// (version 38: a <see cref="ActionKind.Say"/>, its type and channel as hex UTF-8, <c>-</c> for no channel; the entry is the TEXT), or <c>w</c> (version 97: a Join
+/// of a client that loads the world first, DV597); TEXT is <c>-</c> for none or <c>:</c> followed by
 /// the text with <c>\</c>, newlines and tabs escaped (<c>\\</c>, <c>\n</c>, <c>\r</c>, <c>\t</c>).
 /// </para>
 /// </summary>
@@ -365,6 +366,7 @@ public sealed class CommandLog
         CommandKind.Motion => Inv($"m{c.Motion.MoveX},{c.Motion.MoveY},{c.Motion.Yaw},{(byte)c.Motion.Flags}"),
         CommandKind.Action when c.Action == ActionKind.Say => "s" + Hex(c.SayType) + "," + Hex(c.SayChannel) + "," + (c.SayVisible ? "1" : "0"),
         CommandKind.Action => Inv($"a{(byte)c.Action},{c.Target},{(byte)c.Button},{(byte)c.Modifiers},{(byte)c.TargetKind},{c.TurfX},{c.TurfY},{c.TurfZ},{c.IconX},{c.IconY},{(byte)c.Keybinding},{(c.KeyUp ? 1 : 0)}{(c.AimZone != AimZone.None || c.RadialMenu != 0 || c.UiWindow != 0 || IsDrop(c) || c.Aim.HasValue ? "," + (byte)c.AimZone : "")}{(c.RadialMenu != 0 || c.UiWindow != 0 || IsDrop(c) || c.Aim.HasValue ? "," + c.RadialMenu + "," + c.RadialElement : "")}{(c.UiWindow != 0 || IsDrop(c) || c.Aim.HasValue ? "," + c.UiWindow + "," + (c.UiParams == null ? "-" : Convert.ToHexString(Encoding.UTF8.GetBytes(c.UiParams))) : "")}{(IsDrop(c) || c.Aim.HasValue ? "," + (byte)c.OverKind + "," + c.OverTarget + "," + c.OverX + "," + c.OverY + "," + c.OverZ + "," + c.DragTime : "")}{(c.Aim is ShotAim aim ? "," + aim.East + "," + aim.North + "," + aim.Up + "," + aim.Yaw + "," + aim.Pitch + (aim.Seen != 0 ? "," + aim.Seen : "") : "")}"),
+        CommandKind.Join when c.WaitsForLoad => "w", // version 97 (DV597)
         _ => c.Dirs != HeldDirs.None ? Inv($"d{(byte)c.Dirs}") : "-",
     };
 
@@ -383,6 +385,8 @@ public sealed class CommandLog
         string[] v = extra.Substring(1).Split(',');
         switch (extra[0])
         {
+            case 'w':
+                return new QueuedCommand(tick, session, seq, kind, text, WaitsForLoad: true);
             case 'd':
                 return new QueuedCommand(tick, session, seq, kind, text, (HeldDirs)byte.Parse(v[0], CultureInfo.InvariantCulture));
             case 'm':

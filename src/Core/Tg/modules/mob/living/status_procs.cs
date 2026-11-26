@@ -718,6 +718,9 @@ public partial class mob_living : mob
     // tg: code/modules/mob/living/status_procs.dm:529
     public virtual async DmTask transfer_quirk_datums(mob_living to_mob = null)
     {
+        // no quirk datum is translated, so a mob's quirks list is always empty and the loop of tg has nothing to move (gaps SP2c)
+        if (length(quirks) == 0)
+            return;
         Dm.NotTranslated("code/modules/mob/living/status_procs.dm:529", "transfer_quirk_datums: not in M2 (M8 husk/quirks, M10+ personalities/drunk)");
     }
 

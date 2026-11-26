@@ -76,22 +76,40 @@ public partial class ChatLines : Control
         // Chat: the newest at the bottom, above the hands' row.
         _links.Clear();
         float y = size.Y - Mathf.Round(size.Y * 0.2f);
-        float chatWidth = Math.Max(200f, size.X * 0.55f - 16 * kc);
+        float chatWidth = Math.Max(200f, size.X / 3f - 16 * kc); // at most a third of the screen: text and boxes wrap there
         int chatSize = Math.Max(1, (int)Math.Round(15 * kc));
         float lineHeight = font.GetHeight(chatSize);
         float ascent = font.GetAscent(chatSize);
         for (int i = Lines.Count - 1; i >= 0; i--)
         {
             ChatLine line = Lines[i];
+            // D184: a boxed message in its frame (chat-dark.scss .boxed_message: a padded block, a thin border, a thick left one;
+            // an announcement's .chat_alert_*: a thick border all round), as wide as its text
+            bool boxed = line.Box != null;
+            float padX = boxed ? 12f * kc : 0, padY = boxed ? 8f * kc : 0, gap = boxed ? 6f * kc : 0;
             // A long line wraps (at the larger size it would run past the width); the block of the newest line ends at y.
-            List<Run> runs = Layout(font, line, chatWidth, chatSize, lineHeight, out float height);
-            float top = y - height + 20f * kc;
+            List<Run> runs = Layout(font, line, chatWidth - 2 * padX, chatSize, lineHeight, ascent, out float height, out float inkWidth);
+            float top = y + 20f * kc - gap - padY - height;
             var linkColour = new Color(0.55f, 0.8f, 1f, line.Alpha);
             var outline = new Color(0, 0, 0, 0.85f * line.Alpha);
-            var origin = new Vector2(16 * kc, top);
+            var origin = new Vector2(16 * kc + padX, top);
+            if (line.Box is ChatBox box)
+            {
+                var frame = new Rect2(16 * kc, top - padY, inkWidth + 2 * padX, height + 2 * padY);
+                Color border = ToColor(box.Border, line.Alpha);
+                float thick = Math.Max(2f, 3f * kc);
+                DrawRect(frame, ToColor(box.Bg, 0.9f * line.Alpha));
+                if (box.Alert)
+                    DrawRect(frame.Grow(-thick / 2), border, false, thick);
+                else
+                {
+                    DrawRect(frame, border, false, Math.Max(1f, kc));
+                    DrawRect(new Rect2(frame.Position, new Vector2(thick, frame.Size.Y)), border);
+                }
+            }
             foreach (Run run in runs)
             {
-                Vector2 at = origin + run.At + new Vector2(0, ascent);
+                Vector2 at = origin + new Vector2(run.At.X, run.Baseline);
                 Font face = FaceOf(font, run.Style);
                 Color colour = ToColor(run.Style.Rgba, line.Alpha); // M9: tg's chat colours (Shared/Play/ChatStyles)
                 int runSize = SizeOf(chatSize, run.Style);
@@ -104,7 +122,7 @@ public partial class ChatLines : Control
                 DrawLine(at + new Vector2(0, 2 * kc), at + new Vector2(inked, 2 * kc), linkColour, Math.Max(1f, kc));
                 _links.Add((new Rect2(origin + run.At, new Vector2(run.Width, lineHeight)), run.Href));
             }
-            y = top - 20f * kc;
+            y = top - padY - gap - 20f * kc;
         }
         float u = UiTokens.Unit(Metrics);
         if (PromptName != null)
@@ -227,7 +245,7 @@ public partial class ChatLines : Control
         return null;
     }
 
-    private readonly record struct Run(string Text, Vector2 At, float Width, string Href, ChatStyle Style);
+    private readonly record struct Run(string Text, Vector2 At, float Width, string Href, ChatStyle Style, float Baseline = 0);
 
     private Font _bold, _italic, _boldItalic;
 
@@ -246,13 +264,24 @@ public partial class ChatLines : Control
         new(((rgba >> 24) & 0xFF) / 255f, ((rgba >> 16) & 0xFF) / 255f, ((rgba >> 8) & 0xFF) / 255f, (rgba & 0xFF) / 255f * alpha);
 
     // A chat line laid out in words: runs of a word and the spaces after it (cut where a link or a style starts or ends and at a line
-    // break), wrapped at the width; a run carries its link's href and its style.
-    private List<Run> Layout(Font font, ChatLine line, float width, int fontSize, float lineHeight, out float height)
+    // break), wrapped at the width; a run carries its link's href, its style and its row's baseline. A row is as tall as its largest
+    // text (an OOC line, an announcement's title). inkWidth: the widest row's text.
+    private List<Run> Layout(Font font, ChatLine line, float width, int fontSize, float lineHeight, float ascent, out float height, out float inkWidth)
     {
         var runs = new List<Run>();
         string text = line.Text;
-        float x = 0, yy = 0;
-        int start = 0;
+        float x = 0, yy = 0, ink = 0;
+        int start = 0, rowStart = 0;
+        void EndRow()
+        {
+            float scale = 1f;
+            for (int r = rowStart; r < runs.Count; r++)
+                scale = Math.Max(scale, runs[r].Style.Scale);
+            for (int r = rowStart; r < runs.Count; r++)
+                runs[r] = runs[r] with { At = new Vector2(runs[r].At.X, yy), Baseline = yy + ascent * scale };
+            yy += lineHeight * scale;
+            rowStart = runs.Count;
+        }
         for (int i = 0; i <= text.Length; i++)
         {
             bool end = i == text.Length;
@@ -268,29 +297,33 @@ public partial class ChatLines : Control
                 Font face = FaceOf(font, style);
                 int size = SizeOf(fontSize, style);
                 float w = face.GetStringSize(piece, HorizontalAlignment.Left, -1, size).X;
-                if (x > 0 && x + face.GetStringSize(piece.TrimEnd(), HorizontalAlignment.Left, -1, size).X > width)
+                float inked = face.GetStringSize(piece.TrimEnd(), HorizontalAlignment.Left, -1, size).X;
+                if (x > 0 && x + inked > width)
                 {
+                    EndRow();
                     x = 0;
-                    yy += lineHeight;
                 }
                 runs.Add(new Run(piece, new Vector2(x, yy), w, HrefAt(line, start), style));
+                ink = Math.Max(ink, x + inked);
                 x += w;
             }
             if (!end && text[i] == '\n')
             {
+                EndRow();
                 x = 0;
-                yy += lineHeight;
                 start = i + 1;
             }
             else
                 start = i;
         }
-        height = yy + lineHeight;
+        EndRow();
+        height = yy;
+        inkWidth = ink;
         return runs;
     }
 
-    // D319: a smaller style (a translated line's original) is drawn smaller; a header's larger one is not, the lines being one height
-    private static int SizeOf(int fontSize, ChatStyle style) => style.Scale < 1f ? Math.Max(1, (int)MathF.Round(fontSize * style.Scale)) : fontSize;
+    // D319: a smaller style (a translated line's original) is drawn smaller; a larger one (an OOC line, an announcement's title) larger, its row taller
+    private static int SizeOf(int fontSize, ChatStyle style) => style.Scale != 1f ? Math.Max(1, (int)MathF.Round(fontSize * style.Scale)) : fontSize;
 
     private static string HrefAt(ChatLine line, int index)
     {

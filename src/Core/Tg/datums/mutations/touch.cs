@@ -44,7 +44,8 @@ public partial class datum_action_cooldown_spell_touch_shock : datum_action_cool
             mob_living_carbon carbon_victim = victim as mob_living_carbon;
             if (Dm.truthy(await carbon_victim.electrocute_act(5, caster, 1, SHOCK_NOGLOVES | SHOCK_NOSTUN))) //doesn't stun. never let this stun
             {
-                obj_item_bodypart affecting = carbon_victim.get_bodypart(Dm.str(carbon_victim.get_random_valid_zone(caster.zone_selected))) as obj_item_bodypart;
+                // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+                obj_item_bodypart affecting = carbon_victim.get_bodypart(Dm.str(carbon_victim.get_random_valid_zone(caster.zone_selected, 100))) as obj_item_bodypart;
                 object armor_block = carbon_victim.run_armor_check(affecting, ENERGY);
                 await carbon_victim.apply_damage(20, STAMINA, def_zone: affecting, blocked: Dm.num(armor_block));
 

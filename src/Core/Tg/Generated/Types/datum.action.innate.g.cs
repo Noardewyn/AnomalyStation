@@ -203,9 +203,9 @@ public partial class datum_action_innate_listen_prayers
     }
 }
 
-// tg: code/datums/components/mind_linker.dm:223
-[DmPath("/datum/action/innate/linked_speech"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_linked_speech : datum_action_innate
+// tg: code/datums/components/mind_linker.dm:223 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/linked_speech")]
+public partial class datum_action_innate_linked_speech
 {
     // tg: code/datums/components/mind_linker.dm:223
     public datum_action_innate_linked_speech()
@@ -1615,9 +1615,9 @@ public partial class datum_action_innate_slime_reproduce
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:166
-[DmPath("/datum/action/innate/toggle_passthrough"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_toggle_passthrough : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:166 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/toggle_passthrough")]
+public partial class datum_action_innate_toggle_passthrough
 {
     // tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:166
     public datum_action_innate_toggle_passthrough()
@@ -1629,9 +1629,9 @@ public partial class datum_action_innate_toggle_passthrough : datum_action_innat
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:169
-[DmPath("/datum/action/innate/regenerate_limbs"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_regenerate_limbs : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:169 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/regenerate_limbs")]
+public partial class datum_action_innate_regenerate_limbs
 {
     public float blood_per_limb = 40; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:176
 
@@ -1647,9 +1647,9 @@ public partial class datum_action_innate_regenerate_limbs : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:304
-[DmPath("/datum/action/innate/split_body"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_split_body : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:304 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/split_body")]
+public partial class datum_action_innate_split_body
 {
     // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:304
     public datum_action_innate_split_body()
@@ -1663,9 +1663,9 @@ public partial class datum_action_innate_split_body : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:375
-[DmPath("/datum/action/innate/swap_body"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_swap_body : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:375 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/swap_body")]
+public partial class datum_action_innate_swap_body
 {
     // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:375
     public datum_action_innate_swap_body()
@@ -1679,9 +1679,9 @@ public partial class datum_action_innate_swap_body : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:590
-[DmPath("/datum/action/innate/integrate_extract"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_integrate_extract : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:590 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/integrate_extract")]
+public partial class datum_action_innate_integrate_extract
 {
     // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:590
     public datum_action_innate_integrate_extract()
@@ -1696,9 +1696,9 @@ public partial class datum_action_innate_integrate_extract : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:659
-[DmPath("/datum/action/innate/use_extract"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_use_extract : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:659 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/use_extract")]
+public partial class datum_action_innate_use_extract
 {
     public float activation_type = 1; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:666
 
@@ -1716,7 +1716,7 @@ public partial class datum_action_innate_use_extract : datum_action_innate
 }
 
 // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:701
-[DmPath("/datum/action/innate/use_extract/major"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/use_extract/major"), DmGeneratedOnly]
 public partial class datum_action_innate_use_extract_major : datum_action_innate_use_extract
 {
     // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:701
@@ -1729,9 +1729,9 @@ public partial class datum_action_innate_use_extract_major : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:745
-[DmPath("/datum/action/innate/project_thought"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_project_thought : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:745 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/project_thought")]
+public partial class datum_action_innate_project_thought
 {
     // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:745
     public datum_action_innate_project_thought()
@@ -1745,9 +1745,9 @@ public partial class datum_action_innate_project_thought : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:787
-[DmPath("/datum/action/innate/link_minds"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_link_minds : datum_action_innate
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:787 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/link_minds")]
+public partial class datum_action_innate_link_minds
 {
     public Type req_species = typeof(datum_species_jelly_stargazer); // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:794
     public float currently_linking = 0; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:796

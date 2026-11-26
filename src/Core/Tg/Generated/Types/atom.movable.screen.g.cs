@@ -3192,9 +3192,9 @@ public partial class atom_movable_screen_alert_status_effect_blind
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:31
-[DmPath("/atom/movable/screen/alert/status_effect/golem_status"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_golem_status : atom_movable_screen_alert_status_effect
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:31 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/golem_status")]
+public partial class atom_movable_screen_alert_status_effect_golem_status
 {
     public mutable_appearance mineral_overlay; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:35
     public float early_expiry_warning = 300; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:37

@@ -4,10 +4,10 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Protocol;
 
 /// <summary>
-/// Protocol version 95 also (package T, slice T4c, DV588): the posture byte's bits 6 and 7, the side a lying body was turned to, and the radial's
+/// Protocol version 98 also (package T, slice T4c, DV600): the posture byte's bits 6 and 7, the side a lying body was turned to, and the radial's
 /// Turn over, a context hint of the Extra action whose pick is a ContextPick of its label (<see cref="RadialExtra.TurnOver"/>, 9, is the server's own).
 /// </summary>
-public class ProtocolV95TurnOverTests
+public class ProtocolV98TurnOverTests
 {
     private static Delta WithPosture(byte posture) => Msg.Delta(5, changed: new[] { new EntityChange { Id = 1, Mask = NetField.Posture, Posture = posture } });
 
@@ -42,7 +42,7 @@ public class ProtocolV95TurnOverTests
     [Fact]
     public void Older_bytes_decode_as_before_and_a_side_without_its_meaning_is_refused()
     {
-        // every byte of version 94 (bits 6 and 7 clear) means what it did: no side fixed
+        // every byte of version 97 (bits 6 and 7 clear) means what it did: no side fixed
         for (int b = 0; b < 64; b++)
         {
             Assert.Equal(b, RoundTrip((byte)b));

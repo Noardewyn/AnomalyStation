@@ -3,13 +3,13 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Protocol;
 
 /// <summary>
-/// Protocol version 95 (package T, slice T4a, Codec.V95.cs): a click's and a throw's aim zone gains the eyes (7), the mouth (8) and the groin (9),
-/// the modifiers byte's spare bit 3 its high bit: <c>zone = ((mods &gt;&gt; 4) &amp; 7) | (mods &amp; 8)</c>. Every byte of version 94 keeps its meaning.
+/// Protocol version 98 (package T, slice T4a, Codec.V98.cs): a click's and a throw's aim zone gains the eyes (7), the mouth (8) and the groin (9),
+/// the modifiers byte's spare bit 3 its high bit: <c>zone = ((mods &gt;&gt; 4) &amp; 7) | (mods &amp; 8)</c>. Every byte of version 97 keeps its meaning.
 /// </summary>
-public class ProtocolV95AimZoneTests
+public class ProtocolV98AimZoneTests
 {
     [Fact]
-    public void TheVersionIs95OrLater() => Assert.True(ProtocolVersion.Current >= 95);
+    public void TheVersionIs98OrLater() => Assert.True(ProtocolVersion.Current >= 98);
 
     [Fact]
     public void TheZonesAreTgsDollsPreciseZonesAfterTheSixLimbs()
@@ -59,7 +59,7 @@ public class ProtocolV95AimZoneTests
         }
     }
 
-    // Corrected by slice T4b (version 95 also): a hover on an entity now carries a zone (ProtocolV95HoverZoneTests); what stays is that a hover has no
+    // Corrected by slice T4b (version 98 also): a hover on an entity now carries a zone (ProtocolV98HoverZoneTests); what stays is that a hover has no
     // modifiers byte, so a byte after its target is no zone of the modifiers' layout: 0x78 is refused as a zone of 120.
     [Fact]
     public void AHoverCarriesNoModifiersByte()
@@ -101,11 +101,11 @@ public class ProtocolV95AimZoneTests
         for (int mods = 0; mods < 0x80; mods++)
         {
             if ((mods & 0x08) != 0 || ((mods >> 4) & 7) > 6)
-                continue; // bit 3 set or a zone of 7: version 94 refused them
+                continue; // bit 3 set or a zone of 7: version 97 refused them
             byte[] bytes = (byte[])good.Clone();
             bytes[6] = (byte)mods;
             Assert.True(Codec.TryDecode(bytes, out ActionMessage back, out ProtocolError error), $"0x{mods:X2}: {error}");
-            // version 94's reading: bits 0-2 the modifiers, bits 4-6 the zone
+            // version 97's reading: bits 0-2 the modifiers, bits 4-6 the zone
             Assert.Equal(((ClickModifiers)(mods & 7), (AimZone)((mods >> 4) & 7)), (back.Modifiers, back.AimZone));
             Assert.Equal(bytes, Codec.Encode(back));
         }

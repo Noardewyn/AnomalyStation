@@ -63,10 +63,13 @@ Each version, after `tools/release.sh X.Y.Z`:
 ```bash
 git push origin main vX.Y.Z
 tools/publish-server.sh vX.Y.Z
+tools/publish-clients.sh vX.Y.Z
 ```
 
-It builds the server from the tag's commit and makes the release `vX.Y.Z` with `AnomalyStation-server-linux-x64.zip` and `install-server.sh` (run again,
-it replaces the release's files).
+The first builds the server from the tag's commit and makes the release `vX.Y.Z` with `AnomalyStation-server-linux-x64.zip` and `install-server.sh`.
+The second exports the Windows, Linux and macOS clients (Godot 4.7.2 mono and its export templates) and adds their zips and the client manifest
+`client-build.json` to the same release; set `ANOMALY_SIGNING_KEY` first to sign them as official builds. Copy `dist/client-build.json` to each
+server's `config/` ([Settings](#settings), `CLIENT_BUILD`). Either script run again replaces its files in the release.
 
 Each server, in the provider's server creation form:
 
@@ -98,7 +101,8 @@ For the launcher (the launcher's own repository, AnomalyLauncher, describes its 
 - `STATUS`: the server answers `GET /status` over TCP on the game's port number, so open TCP 7777 beside UDP 7777. The launcher's
   hub asks it twice a minute, and so does a launcher that connects by address. The server is put on the list on the hub's host:
   `./Anomaly.Hub servers add play.example.org:7777`.
-- `CLIENT_BUILD config/client-build.json`: the game client this server's players run. After a release build, upload the client
+- `CLIENT_BUILD config/client-build.json`: the game client this server's players run. `tools/publish-clients.sh vX.Y.Z` puts the
+  clients in the GitHub release and writes this file for them. To host the zips elsewhere, after a release build upload the client
   zips of `dist/` and run `tools/make-client-manifest.sh https://<where the zips are>`: it writes `dist/client-build.json` with each
   zip's address, size and SHA-256. With `ANOMALY_SIGNING_KEY` set to the project's private key it also signs them as official
   builds; the launcher asks a player before it runs an unsigned one. Copy the file beside the server's config.

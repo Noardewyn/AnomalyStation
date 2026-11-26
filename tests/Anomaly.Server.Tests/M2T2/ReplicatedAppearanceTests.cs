@@ -46,7 +46,8 @@ public class ReplicatedAppearanceTests
         public void Damage(string type, float amount, string zone)
         {
             Run.In(() => Waiting.NoSleep(Subject.apply_damage(amount, type, zone)));
-            Tick();
+            for (int i = 0; i < 8; i++) // past the damaged part's red flash (DV400, 3 ds)
+                Tick();
         }
 
         public ReplicaEntity Entity()

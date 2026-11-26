@@ -88,7 +88,7 @@ public sealed partial class ServerHost
             // (one client per key), and its objects would keep the whole old world alive (M10 slice J)
             s.Client = null;
             s.Login = null;
-            s.HoverOutOfReach = null; // DV589: a thing of the old world
+            s.HoverOutOfReach = null; // DV601: a thing of the old world
             s.Sounds.Discard();
             s.Outbox.Clear();
             s.ControlOutbox.Clear();
@@ -185,7 +185,7 @@ public sealed partial class ServerHost
         {
             if (s.State != SessionState.Joining) continue; // its connection dropped while it waited
             _db?.UpdatePlayerSeen(s.Ckey, s.Address, RoundId);
-            _queue.Enqueue(new QueuedCommand(world.Tick + 1, s.Ordinal, QueuedCommand.JoinSeq, CommandKind.Join, s.Key));
+            _queue.Enqueue(new QueuedCommand(world.Tick + 1, s.Ordinal, QueuedCommand.JoinSeq, CommandKind.Join, s.Key, WaitsForLoad: s.WaitsForLoad)); // its client builds the next round's world first (DV597)
             _out.WriteLine(string.Create(CultureInfo.InvariantCulture, $"join #{s.Ordinal} {s.Key} at tick {world.Tick} (waited between rounds)"));
         }
         _waiting.Clear();

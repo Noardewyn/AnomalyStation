@@ -341,9 +341,9 @@ public partial class datum_element_blocks_explosives
     }
 }
 
-// tg: code/datums/elements/blood_limb_overlay.dm:4
-[DmPath("/datum/element/blood_limb_overlay"), DmGeneratedOnly, DmInert]
-public partial class datum_element_blood_limb_overlay : datum_element { }
+// tg: code/datums/elements/blood_limb_overlay.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/element/blood_limb_overlay")]
+public partial class datum_element_blood_limb_overlay { }
 
 // tg: code/datums/elements/blood_reagent.dm:4 (the vars the hand-written class does not declare)
 [DmPath("/datum/element/blood_reagent")]
@@ -1398,9 +1398,9 @@ public partial class datum_element_light_blocking
     }
 }
 
-// tg: code/datums/elements/light_eaten.dm:5
-[DmPath("/datum/element/light_eaten"), DmGeneratedOnly, DmInert]
-public partial class datum_element_light_eaten : datum_element
+// tg: code/datums/elements/light_eaten.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/element/light_eaten")]
+public partial class datum_element_light_eaten
 {
     // tg: code/datums/elements/light_eaten.dm:5
     public datum_element_light_eaten()
@@ -1409,9 +1409,9 @@ public partial class datum_element_light_eaten : datum_element
     }
 }
 
-// tg: code/datums/elements/light_eater.dm:12
-[DmPath("/datum/element/light_eater"), DmGeneratedOnly, DmInert]
-public partial class datum_element_light_eater : datum_element { }
+// tg: code/datums/elements/light_eater.dm:12 (the var block of a hand-written class)
+[DmPath("/datum/element/light_eater")]
+public partial class datum_element_light_eater { }
 
 // tg: code/datums/elements/living_limb_initialiser.dm:4
 [DmPath("/datum/element/living_limb_initialiser"), DmGeneratedOnly, DmInert]
@@ -2327,9 +2327,9 @@ public partial class datum_element_table_smash
     }
 }
 
-// tg: code/datums/elements/tenacious.dm:8
-[DmPath("/datum/element/tenacious"), DmGeneratedOnly, DmInert]
-public partial class datum_element_tenacious : datum_element { }
+// tg: code/datums/elements/tenacious.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/element/tenacious")]
+public partial class datum_element_tenacious { }
 
 // tg: code/datums/elements/tiny_mob_hunter.dm:3 (the var block of a hand-written class)
 [DmPath("/datum/element/tiny_mob_hunter")]

@@ -13,11 +13,13 @@ public static partial class Codec
     private const byte OwnV78Verbs = 16;
     private const byte OwnV78Areas = 32;
     private const byte OwnV89HandsBlocked = 64; // version 89 (MessagesV89.cs): no bytes of its own
-    private const byte OwnV43FlagsAll = OwnV43Access | OwnV51Eye | OwnV78Static | OwnV78Popups | OwnV78Verbs | OwnV78Areas | OwnV89HandsBlocked;
+    private const byte OwnV95Cooldown = 128; // version 95 (MessagesV95.cs): [varuint milliseconds] after the view areas
+    private const byte OwnV43FlagsAll = OwnV43Access | OwnV51Eye | OwnV78Static | OwnV78Popups | OwnV78Verbs | OwnV78Areas | OwnV89HandsBlocked | OwnV95Cooldown;
 
     private static byte OwnV78Flags(OwnBlock own)
         => (byte)((own.StaticChunks != null ? OwnV78Static : 0) | (own.Popups != null ? OwnV78Popups : 0) | (own.Verbs != null ? OwnV78Verbs : 0)
-            | (own.ViewAreas != null ? OwnV78Areas : 0) | (own.HandsBlocked ? OwnV89HandsBlocked : 0));
+            | (own.ViewAreas != null ? OwnV78Areas : 0) | (own.HandsBlocked ? OwnV89HandsBlocked : 0)
+            | (own.MeleeCooldownMs != OwnBlock.DefaultMeleeCooldownMs ? OwnV95Cooldown : 0));
 
     private static void WriteOwnV78(ref WireWriter w, OwnBlock own)
     {
@@ -75,6 +77,13 @@ public static partial class Codec
                 w.WriteVarUInt(CheckCoordinate(area.Y2, Limits.MaxMapSize, "a view area's y2"));
                 w.WriteVarUInt(CheckCoordinate(area.Z, Limits.MaxMapLevels, "a view area's z"));
             }
+        }
+
+        if (own.MeleeCooldownMs != OwnBlock.DefaultMeleeCooldownMs) // version 95
+        {
+            if (own.MeleeCooldownMs < 0 || own.MeleeCooldownMs > OwnBlock.MaxMeleeCooldownMs)
+                throw Bad("a melee cooldown out of range");
+            w.WriteVarUInt((ulong)own.MeleeCooldownMs);
         }
     }
 
@@ -142,11 +151,16 @@ public static partial class Codec
                 own.ViewAreas.Add(new ViewArea(screen, map.Length == 0 ? null : map, x1, y1, x2, y2, z));
             }
         }
+
+        own.MeleeCooldownMs = (flags & OwnV95Cooldown) != 0 // version 95
+            ? ReadRanged(ref r, 0, OwnBlock.MaxMeleeCooldownMs, "a melee cooldown")
+            : OwnBlock.DefaultMeleeCooldownMs;
     }
 
     private static long MaxOwnV78Bytes(OwnBlock own)
         => (own.StaticChunks == null ? 0 : 5 + (long)own.StaticChunks.Count * (5 + 5 + 5 + 8))
             + (own.Popups == null ? 0 : 5 + (long)own.Popups.Count * (5 + Limits.MaxPopupNameBytes + 5 + Limits.MaxPopupTitleBytes + 5 + 5))
             + (own.Verbs == null ? 0 : 5 + (long)own.Verbs.Count * (5 + Limits.MaxVerbNameBytes + 5 + Limits.MaxVerbNameBytes + 5 + Limits.MaxVerbPathBytes))
-            + (own.ViewAreas == null ? 0 : 5 + (long)own.ViewAreas.Count * (10 + 5 + Limits.MaxPopupNameBytes + 4 + 5 * 5));
+            + (own.ViewAreas == null ? 0 : 5 + (long)own.ViewAreas.Count * (10 + 5 + Limits.MaxPopupNameBytes + 4 + 5 * 5))
+            + 5; // version 95: the melee cooldown
 }

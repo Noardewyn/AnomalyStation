@@ -10,6 +10,7 @@ render_mode cull_back, diffuse_burley;
 uniform sampler2DArray pictures : source_color, filter_nearest_mipmap_anisotropic, repeat_disable;
 uniform float ceiling_dim = 0.55;
 uniform bool ceilings = true;
+uniform float tile_glow = 1.6; // a glowing tile's own light over its picture (as a lit model piece's, prop_atlas): over 1 it blooms
 
 varying flat float v_layer;
 varying flat float v_part;
@@ -71,7 +72,9 @@ void fragment() {
 	// DV265: a wet floor (w = 2, TileKit.IsWet) is darker and glossy, so tg's pale water overlay reads as water in 3D
 	bool wet = v_part < 0.5 && v_condition > 1.5 && v_condition < 2.5;
 	// a polished floor (w = 4, TurfStyle.Polished) is smooth enough for the screen-space reflections, where the graphics have them on
-	bool polished = v_part < 0.5 && v_condition > 3.5;
+	bool polished = v_part < 0.5 && v_condition > 3.5 && v_condition < 4.5;
+	// a floor or a ceiling's block that gives light (w = 5, a ceiling's -5 unsupported: a light floor, lava) shines by itself
+	bool glows = v_part < 1.5 && abs(v_condition) > 4.5;
 	if (wet) { albedo *= vec3(0.55, 0.6, 0.68); }
 	albedo = anomaly_previewed(albedo, v_world, 1.0); // the editor's preview of a turf
 	ALBEDO = albedo;
@@ -87,5 +90,6 @@ void fragment() {
 	EMISSION += albedo * anomaly_sky_light(p, wn);
 	// the grid's light is emission, which no specular sees: the water's sheen grows towards a grazing view (Schlick's fresnel)
 	if (wet) { EMISSION += grid * 0.55 * pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), 3.0); }
+	if (glows) { EMISSION += c.rgb * tile_glow; }
 	anomaly_sun_share = anomaly_sun_share_at(p, wn, length(VERTEX));
 }

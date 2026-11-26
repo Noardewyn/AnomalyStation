@@ -13,5 +13,5 @@ namespace Anomaly.Protocol;
 public static class ActionKinds
 {
     /// <summary>The highest <see cref="ActionKind"/> on the wire.</summary>
-    public const ActionKind Last = ActionKind.ContextPick; // version 86 (82: PutDown, 81: Throw, 78: PopupClose, 70: MouseWheel)
+    public const ActionKind Last = ActionKind.Loaded; // version 97 (86: ContextPick, 82: PutDown, 81: Throw, 78: PopupClose, 70: MouseWheel)
 }

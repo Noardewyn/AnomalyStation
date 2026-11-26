@@ -24,7 +24,7 @@ public partial class ConnectScreen : Control
     private LineEdit _name;
     private Button _button;
     private Label _formStatus; // the status line under the fields
-    private Label _status => _loading is { Visible: true } ? _loadingStatus : _formStatus; // ... or the loading screen's, while that is shown
+    private Label _status => _loading is { Visible: true } ? _loading.StatusLabel : _formStatus; // ... or the loading screen's, while that is shown
 
     private JoinAttempt _join;
     private GameClient _client => _join?.Client;
@@ -47,7 +47,7 @@ public partial class ConnectScreen : Control
 #if ANOMALY_EDITOR
         bool editorStarts = App.Instance.EditorStarting != null;
         if (args.Editor || editorStarts)
-            ShowLoading(ClientArgs.EditorName, EditorPicture); // (the editor makes no connection: its window never shows the fields)
+            ShowLoading(ClientArgs.EditorName, Hud.LoadingCover.EditorPicture); // (the editor makes no connection: its window never shows the fields)
 #else
         const bool editorStarts = false;
 #endif
@@ -73,8 +73,8 @@ public partial class ConnectScreen : Control
         {
             GD.Print($"[anomaly] connect screen: {App.Instance.Notice} (host {_host.Text}, port {_port.Text}, name {_name.Text})");
             ShowStatus(App.Instance.Notice, true);
-            if (_loadingBar != null)
-                _loadingBar.Visible = false; // (the editor's world ended: nothing is loading)
+            if (_loading != null)
+                _loading.BarVisible = false; // (the editor's world ended: nothing is loading)
         }
         App.Instance.Notice = null;
 
@@ -147,21 +147,14 @@ public partial class ConnectScreen : Control
             // (a connection says nothing of how far it is: the bar creeps by the clock through each part and never reaches the part's end)
             case FeedPhase.Connecting:
                 ShowStatus(string.Create(CultureInfo.InvariantCulture, $"Connecting to {_client.Description}... {now - _connectStartedAt:0} s"), false);
-                _loadingBar.Value = Creep(0f, 0.4f, now - _connectStartedAt);
+                _loading.Progress = Creep(0f, 0.4f, now - _connectStartedAt);
                 break;
             case FeedPhase.Joining:
                 _joiningAt ??= now;
                 ShowStatus("Connected. Joining the game...", false);
-                _loadingBar.Value = Creep(0.4f, 0.9f, now - _joiningAt.Value);
+                _loading.Progress = Creep(0.4f, 0.9f, now - _joiningAt.Value);
                 break;
             case FeedPhase.Playing:
-                if (_loadingBar.Value < 1)
-                {
-                    // (one frame with the bar full, before the making of the game's scene holds the picture)
-                    _loadingBar.Value = 1;
-                    ShowStatus("Building the scene...", false);
-                    break;
-                }
                 if (_join.Retried)
                     GD.Print($"[anomaly] the kept reconnect token was refused; joined as {_join.Name} without it");
                 App.Instance.Feed = _client;
@@ -219,8 +212,8 @@ public partial class ConnectScreen : Control
         _joiningAt = null;
         _button.Text = "Cancel";
         SetFieldsEnabled(false);
-        ShowLoading("Anomaly Station", GamePicture);
-        _loadingBar.Value = 0;
+        ShowLoading("Anomaly Station", Hud.LoadingCover.GamePicture);
+        _loading.Progress = 0;
         ShowStatus($"Connecting to {host}:{port}...", false);
         // Normal mode: the transport's own threads move bytes; its events come only in Poll(), in _Process (D31). A host
         // name is resolved by the transport on a pool thread, so a lookup cannot freeze the main thread either.
@@ -235,7 +228,7 @@ public partial class ConnectScreen : Control
         // M3 R4: the token kept for this server and name takes the character back after a crash or a quit (JoinAttempt).
         // D335: the launcher starts the client with a game token for the server it names in --connect; no other server is shown it.
         string login = args.HasConnect && host == args.Host && port == args.Port ? System.Environment.GetEnvironmentVariable(LoginTokenVariable) : null;
-        _join = new JoinAttempt(Transport, new ReconnectTokens(TokenStorePath(args)), host, port, name, login);
+        _join = new JoinAttempt(Transport, new ReconnectTokens(TokenStorePath(args)), host, port, name, login, waitsForLoad: true); // the game scene says when it has loaded (DV597)
     }
 
     /// <summary>D335: the environment variable the launcher passes the hub's game token in (not on the command line, which other programs can read).</summary>
@@ -373,14 +366,6 @@ public partial class ConnectScreen : Control
         switch (session.Feed.Phase)
         {
             case FeedPhase.Playing:
-                if (_loadingBar != null && _loadingBar.Value < 1)
-                {
-                    // (one frame with the bar full, before the making of the game's scene holds the picture; the small window of the editor's start
-                    // stays as it is until that scene is made: GameScene.BuildEditorUi)
-                    _loadingBar.Value = 1;
-                    ShowStatus(session.Title.TrimEnd(' ', '*') + ": building the scene...", false);
-                    break;
-                }
                 GD.Print(string.Create(CultureInfo.InvariantCulture, $"[anomaly] editor: the map is shown after {now - _editorStartedAt:0.0} s, {session.Feed.Count} things ({session.Feed.StartTimes})"));
                 App.Instance.HoldSplash();
                 _editorStarting = null;
@@ -394,38 +379,35 @@ public partial class ConnectScreen : Control
                 foreach (string line in session.Feed.Log.TakeLast(30))
                     GD.PrintErr("[anomaly] editor:   " + line);
                 ShowStatus(session.Feed.CloseReason, true);
-                if (_loadingBar != null)
-                    _loadingBar.Visible = false;
+                if (_loading != null)
+                    _loading.BarVisible = false;
                 App.Instance.EndSplashWindow(); // (a window with its border, to read why and to close)
                 session.Dispose();
                 break;
             default:
                 (float fraction, string doing) = session.Feed.StartProgress;
-                if (_loadingBar != null)
-                    _loadingBar.Value = fraction;
+                if (_loading != null)
+                    _loading.Progress = fraction * Hud.LoadingCover.ConnectShare;
                 ShowStatus(string.Create(CultureInfo.InvariantCulture, $"{session.Title.TrimEnd(' ', '*')}: {doing}... {now - _editorStartedAt:0} s"), false);
                 break;
         }
     }
 #endif
 
-    private Control _loading; // the loading screen, once it was shown: over the fields
-    private Label _loadingTitle; // ... the program's name
-    private Label _loadingStatus; // ... what is being done
-    private ProgressBar _loadingBar; // ... and how far it is
-    private VBoxContainer _loadingBottom;
-    private Panel _loadingEdge; // the small window's edge
+    private Hud.LoadingCover _loading; // the loading screen, once it was shown: over the fields
     private double? _joiningAt; // when the connection was made and the join began
 
     // A part of the bar that fills by the clock, for a wait that says nothing of how far it is: half of the part after two seconds, never its end.
-    private static float Creep(float from, float to, double seconds) => from + (to - from) * (float)(seconds / (seconds + 2.0));
+    // (the connection's share of the bar: the game's scene fills the rest as it builds and loads the world, GameScene.Loading.cs)
+    private static float Creep(float from, float to, double seconds)
+        => (float)Hud.LoadingCover.ConnectShare * (from + (to - from) * (float)(seconds / (seconds + 2.0)));
 
     /// <summary>
-    /// The loading screen (the owner, 2026-11-18): the program's name in the window's top left corner and a bar along the bottom that fills as the wait
-    /// goes on, with what is being done written over it, in place of the fields. The game shows it from Connect until its scene is made
-    /// and goes back to the fields when the connection fails. The map editor, which makes no connection, shows nothing else while the
-    /// game's world starts for its map, in a small window in the middle of the screen: at the program's start (App.TakeFirstWindow), and for another
-    /// map opened later (App.TakeSplashWindow). Each has its picture behind (<see cref="LoadingPicture"/>): the editor's own, the game's lobby picture.
+    /// The loading screen (the owner, 2026-11-18; <see cref="Hud.LoadingCover"/>) in place of the fields. The game shows it from Connect until the
+    /// game's scene has loaded the world under the same look, and goes back to the fields when the connection fails. The map editor, which makes no
+    /// connection, shows nothing else while the game's world starts for its map, in a small window in the middle of the screen: at the program's
+    /// start (App.TakeFirstWindow), and for another map opened later (App.TakeSplashWindow). Each has its picture: the editor's own, the game's
+    /// lobby picture.
     /// </summary>
     private void ShowLoading(string title, string picture)
     {
@@ -435,67 +417,7 @@ public partial class ConnectScreen : Control
             _loading.Visible = true;
             return;
         }
-        _loading = new Control { MouseFilter = MouseFilterEnum.Ignore };
-        _loading.SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
+        _loading = new Hud.LoadingCover(title, picture);
         AddChild(_loading);
-        _loading.AddChild(LoadingPicture(picture));
-        _loadingTitle = new Label { Text = title, MouseFilter = MouseFilterEnum.Ignore };
-        _loadingTitle.AddThemeColorOverride("font_color", new Color(0.92f, 0.95f, 1f));
-        _loading.AddChild(_loadingTitle);
-        // (a window with no border is lost on a dark desktop without an edge of its own)
-        var edge = new StyleBoxFlat { DrawCenter = false, BorderColor = new Color(1f, 1f, 1f, 0.16f) };
-        edge.SetBorderWidthAll(2);
-        _loadingEdge = new Panel { MouseFilter = MouseFilterEnum.Ignore };
-        _loadingEdge.AddThemeStyleboxOverride("panel", edge);
-        _loadingEdge.SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
-        _loading.AddChild(_loadingEdge);
-        _loadingStatus = new Label { AutowrapMode = TextServer.AutowrapMode.WordSmart, MouseFilter = MouseFilterEnum.Ignore, SizeFlagsHorizontal = SizeFlags.ExpandFill };
-        _loadingBar = new ProgressBar { MinValue = 0, MaxValue = 1, Step = 0, ShowPercentage = false, MouseFilter = MouseFilterEnum.Ignore };
-        _loadingBar.AddThemeStyleboxOverride("background", new StyleBoxFlat { BgColor = new Color(1f, 1f, 1f, 0.08f) });
-        _loadingBar.AddThemeStyleboxOverride("fill", new StyleBoxFlat { BgColor = new Color(0.45f, 0.68f, 1f) });
-        var line = new HBoxContainer { MouseFilter = MouseFilterEnum.Ignore };
-        line.AddChild(_loadingStatus);
-        _loadingBottom = new VBoxContainer { MouseFilter = MouseFilterEnum.Ignore, GrowVertical = GrowDirection.Begin };
-        _loadingBottom.AddChild(line);
-        _loadingBottom.AddChild(_loadingBar);
-        _loading.AddChild(_loadingBottom);
-        Resized += SizeLoading;
-        SizeLoading();
-    }
-
-    public const string EditorPicture = "res://assets/ui/editor_loading.webp";
-    private const string GamePicture = "res://assets/ui/lobby_title.webp";
-
-    /// <summary>A loading picture (the editor's: the owner, 2026-11-18; the game's: 2026-11-20): over the whole window, cut to fill it. App.StopPlay shows the editor's too.</summary>
-    public static TextureRect LoadingPicture(string path)
-    {
-        var picture = new TextureRect
-        {
-            Texture = GD.Load<Texture2D>(path),
-            ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
-            StretchMode = TextureRect.StretchModeEnum.KeepAspectCovered,
-            MouseFilter = MouseFilterEnum.Ignore,
-        };
-        picture.SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
-        return picture;
-    }
-
-    // Sized by the window's height, so the screen is the same picture on a small display and on a large one; the small window of the editor's start has
-    // larger letters for its size than a whole window.
-    private void SizeLoading()
-    {
-        bool small = App.Instance.SplashWindow;
-        float unit = GetViewportRect().Size.Y / 100f;
-        int margin = Math.Max(8, (int)(unit * (small ? 6f : 3f)));
-        _loadingEdge.Visible = small;
-        _loadingTitle.AddThemeFontSizeOverride("font_size", Math.Max(16, (int)(unit * (small ? 11f : 8f))));
-        _loadingTitle.Size = Vector2.Zero; // shrink to the new sizes before the anchors place it
-        _loadingTitle.SetAnchorsAndOffsetsPreset(LayoutPreset.TopLeft, LayoutPresetMode.Minsize, margin);
-        int text = Math.Max(10, (int)(unit * (small ? 4.2f : 2f)));
-        _loadingStatus.AddThemeFontSizeOverride("font_size", text);
-        _loadingBar.CustomMinimumSize = new Vector2(0, Math.Max(4f, unit * (small ? 1.6f : 1.2f)));
-        _loadingBottom.AddThemeConstantOverride("separation", Math.Max(2, (int)(unit * (small ? 2f : 1f))));
-        _loadingBottom.Size = Vector2.Zero;
-        _loadingBottom.SetAnchorsAndOffsetsPreset(LayoutPreset.BottomWide, LayoutPresetMode.Minsize, margin);
     }
 }

@@ -177,6 +177,7 @@ public partial class GameScene
     }
     private bool _editorPasting; // the copy follows the mouse: a click pastes it
     private byte _editorMountSide; // the place tool is against a wall's side: the way from its tile to that wall (0: not)
+    private byte _editorShapeMount; // and was so where the button went down for a shape: its things hang on that side's walls
     private readonly List<(int X, int Y)> _editorRun = new(); // the tiles of a stroke that draws a run, in its order
     private readonly List<MapMember> _editorRunPieces = new(); // and the piece it placed on each
     private EditorCells _editorMarks, _editorAreaMarks, _editorFoundMarks, _editorCeilingMarks;
@@ -561,10 +562,23 @@ public partial class GameScene
     };
 
     // What the place tool puts on a tile: the brush as one more member, or (the replace mode) in the place of what was clicked.
-    private MapModel EditorPlaced(MapDocument map, int x, int y, int z, MapMember brush) => EditorPlacedBy(map, x, y, z, brush, _editorReplaceTarget);
+    private MapModel EditorPlaced(MapDocument map, int x, int y, int z, MapMember brush) => EditorPlacedBy(map, x, y, z, brush, _editorReplaceTarget, tell: true);
 
-    private MapModel EditorPlacedBy(MapDocument map, int x, int y, int z, MapMember brush, string target)
-        => _editorPlaceMode == EditorPlaceMode.Replace ? MapEdits.ReplaceOn(map, map[x, y, z], target, brush) : MapEdits.Place(map, map[x, y, z], brush);
+    // A pipe or an atmos machine that would share a layer and a way with one already on the tile is not placed, as tg's wrench refuses to fasten
+    // it (construction.dm): the tile stays as it was, and a place that is not the preview says why.
+    private MapModel EditorPlacedBy(MapDocument map, int x, int y, int z, MapMember brush, string target, bool tell = false)
+    {
+        MapModel tile = map[x, y, z];
+        MapModel next = _editorPlaceMode == EditorPlaceMode.Replace ? MapEdits.ReplaceOn(map, tile, target, brush) : MapEdits.Place(map, tile, brush);
+        if (ReferenceEquals(next, tile) || !brush.Path.StartsWith("/obj/machinery/atmospherics", StringComparison.Ordinal)
+            || MapChecks.PipeConflicts(next).Count() <= MapChecks.PipeConflicts(tile).Count())
+            return next;
+        if (tell)
+            EditorNotice(_editorRefused = "Not placed: " + MapChecks.PipeConflictText, 8);
+        return tile;
+    }
+
+    private string _editorRefused; // why the place tool last left a tile as it was (a shape that changed nothing says it)
 
     // The place tool is making or changing a ceiling from under it, on a level whose ceiling is the floor of the level above (5.18): a stroke or a
     // shape that began so, else where the mouse is with what makes a ceiling. Two tiles change there, the ceiling's and the one under it
@@ -603,6 +617,24 @@ public partial class GameScene
         => _editorHit.Kind == TargetKind.Ceiling && (_editorPlaceMode == EditorPlaceMode.Replace || MapEdits.CeilingFrom(brush.Path) != null);
 
     private bool EditorVoid(int x, int y, int z) => TurfStyle.Classify(MapEdits.TurfOf(_editor.Document[x, y, z])) == TurfKind.Void;
+
+    // A room goes on up over (x, y, z): the tile above is open, and on that level something stands on each side of it before the map's edge (the
+    // room's walls, a window, a gallery's floor). Under open space or beside another building only, it does not.
+    private bool EditorRoomGoesUp(int x, int y, int z)
+    {
+        MapDocument map = _editor.Document;
+        if (!_map.LevelAbove(z) || !map.Contains(x, y, z + 1) || !EditorVoid(x, y, z + 1))
+            return false;
+        foreach ((int dx, int dy) in new[] { (1, 0), (-1, 0), (0, 1), (0, -1) })
+        {
+            int cx = x + dx, cy = y + dy;
+            while (map.Contains(cx, cy, z + 1) && EditorVoid(cx, cy, z + 1))
+                (cx, cy) = (cx + dx, cy + dy);
+            if (!map.Contains(cx, cy, z + 1))
+                return false;
+        }
+        return true;
+    }
 
     // ---- the preview (5.9) ----
 
@@ -652,7 +684,7 @@ public partial class GameScene
                             (int cx, int cy) = cells[i];
                             if (!map.Contains(cx, cy, level))
                                 continue;
-                            MapMember placed = pieces != null ? pieces[i] : _editorDragFrom == null && (cx, cy) == (x, y) ? MapEdits.Mounted(brush, _editorMountSide) : brush;
+                            MapMember placed = pieces != null ? pieces[i] : EditorHung(map, brush, cx, cy, level, _editorDragFrom == null ? _editorMountSide : _editorShapeMount);
                             MapModel tile = map[cx, cy, level];
                             // (a tile the click would not change shows no preview: the thing is there already)
                             MapModel shown = EditorPlacedBy(map, cx, cy, level, placed, target);
@@ -774,8 +806,28 @@ public partial class GameScene
         // From above the walls the map's light is tg's own, tile by tile, over the whole map (the light grid): which rooms are lit and which are dark, with no lamp
         // shining through a wall. Under them, flown into a room, it is the game's: the lamps as lights with their shadows, which the game draws around a
         // player and no further.
+        // A room two or more levels high is flown into too while a roof is over the camera on a level above it.
         if (_light != null)
-            _light.Dynamic = !(EditorLit && height > WorldScale.WallHeight);
+            _light.Dynamic = !(EditorLit && height > WorldScale.WallHeight && (_editorTop || !EditorRoofed(camera.GlobalPosition)));
+    }
+
+    // A floor or a ceiling over the camera's tile, on a level above the one the camera is in (open space and space are none).
+    private bool EditorRoofed(Vector3 eye)
+    {
+        ReplicaWorld replica = _feed?.Replica;
+        if (replica == null)
+            return false;
+        int x = Mathf.FloorToInt(eye.X / TileSpace.TileSize) + 1, y = Mathf.FloorToInt(-eye.Z / TileSpace.TileSize) + 1;
+        int level = Math.Max(1, 1 + Mathf.FloorToInt(eye.Y / TileSpace.LevelHeight));
+        for (int z = level; z <= _editor.Document.Levels; z++)
+        {
+            if (replica.CeilingAt(x, y, z).Sealed)
+                return true;
+            if (z > level && replica.TurfTypeAt(x, y, z) is string type && !type.StartsWith("/turf/open/space", StringComparison.Ordinal)
+                && !type.StartsWith("/turf/open/openspace", StringComparison.Ordinal))
+                return true;
+        }
+        return false;
     }
 
     // The point of the edited level's floor under a point of the screen, if the view meets the floor there.
@@ -989,7 +1041,7 @@ public partial class GameScene
         else
             _editorMarks.Show(string.Join("|", parts.Select(p => p.Key)), () => parts.SelectMany(p => p.Cells().Where(c => map.Contains(c.X, c.Y, p.Z)).Select(c => (c.X, c.Y, p.Z, p.Colour))));
 
-        if (_editorAreas)
+        if (_editorAreas || _spawnTab == SpawnTab.Areas) // (the palette's areas show them by themselves: the menu's switch is for the other tabs)
             _editorAreaMarks.Show(Inv($"areas {map.Revision} {_editorLevel}"), () => EditorAreaCells(map, _editorLevel));
         else
             _editorAreaMarks.Clear();
@@ -1290,6 +1342,14 @@ public partial class GameScene
                 _picker.PickEmptyCeilings = false;
                 EditorPick(ray);
             }
+            // A room taller than a level (open over the empty ceiling, with its walls going on up): the place where its ceiling would be is the top
+            // of its walls, not the first level the ray crosses (a floor there is placed from above).
+            int topShown = EditorHideAbove == 0 ? map.Levels : EditorHideAbove;
+            while (_picker.PickEmptyCeilings && _editorHit.Kind == TargetKind.Ceiling && _editorHit.Z < topShown
+                && !_map.HasCeilingAt(_editorHit.X, _editorHit.Y, _editorHit.Z) && EditorRoomGoesUp(_editorHit.X, _editorHit.Y, _editorHit.Z)
+                && EditorHitOnPlane(origin, normal, TileSpace.WorldY(_editorHit.Z + 2), _editorHit.Z + 1) is { IsHit: true } higher
+                && EditorVoid(higher.X, higher.Y, higher.Z))
+                _editorHit = higher with { Kind = TargetKind.Ceiling, Surface = PickSurface.Ceiling };
         }
         // With the levels above hidden, the floor of the first of them is still the ceiling of the top one shown and is drawn from under it: a ray that
         // goes up to it hits it (the pick itself stops at the top level shown).
@@ -1528,6 +1588,7 @@ public partial class GameScene
                 // the replace mode: what was clicked gives its place, the thing under the mouse or else the tile's turf, and every other of its type the shape covers
                 _editorReplaceTarget = EditorMemberUnderMouse() is { Member: >= 0 } clicked ? map[clicked.X, clicked.Y, clicked.Z].Members[clicked.Member].Path : MapEdits.TurfOf(map[x, y, z]);
                 _editorReplaceUnder = _editorStrokeSlab && z > 1 ? MapEdits.UndersideOf(map[x, y, z - 1], map[x, y, z]) : null;
+                _editorShapeMount = _editorMountSide;
                 if (_editorDraw == MapShape.Zone)
                 {
                     List<(int X, int Y)> zone = MapShapes.Zone(map, x, y, z);
@@ -1590,6 +1651,16 @@ public partial class GameScene
         }
     }
 
+    // What the place tool puts on a tile of a shape begun against a wall's side: hung on the wall on that side of the tile, turned to it
+    // whatever way the palette faces; the brush as it is where that side has no wall.
+    private static MapMember EditorHung(MapDocument map, MapMember brush, int x, int y, int z, byte side)
+    {
+        if (side == 0)
+            return brush;
+        (int dx, int dy) = WallMounts.Step(side);
+        return map.Contains(x + dx, y + dy, z) && TurfStyle.Classify(MapEdits.TurfOf(map[x + dx, y + dy, z])) == TurfKind.Closed ? MapEdits.Mounted(brush, side) : brush;
+    }
+
     // The place or the erase tool on the tiles of a shape, as one step. A run's pieces are turned along a line.
     private void EditorShape(IReadOnlyList<(int X, int Y)> cells, int z)
     {
@@ -1600,6 +1671,7 @@ public partial class GameScene
         try
         {
             var tiles = new List<(int, int, int, MapModel)>();
+            _editorRefused = null;
             MapMember brush = place ? EditorBrush().Value : default;
             List<MapMember> pieces = place && _editorDraw == MapShape.Line && MapEdits.IsRunPiece(brush.Path) ? MapEdits.RunPieces(brush, cells) : null;
             bool slabs = place ? _editorStrokeSlab : _editorErase is EditorErase.Laid or EditorErase.Slab; // ceilings from under a level (5.18)
@@ -1617,7 +1689,7 @@ public partial class GameScene
                     }
                     MapModel tile = map[x, y, level];
                     MapModel next = !place ? EditorErased(map, x, y, level) : _editorStrokeCeiling ? MapEdits.WithCeiling(map, tile, MapEdits.CeilingFrom(brush.Path))
-                        : pieces != null ? MapEdits.Place(map, tile, pieces[i]) : EditorPlaced(map, x, y, level, brush);
+                        : pieces != null ? MapEdits.Place(map, tile, pieces[i]) : EditorPlaced(map, x, y, level, EditorHung(map, brush, x, y, level, _editorShapeMount));
                     if (!ReferenceEquals(next, tile))
                         tiles.Add((x, y, level, next));
                 }
@@ -1626,7 +1698,7 @@ public partial class GameScene
             }
             string what = !place ? EditorEraseName(many: true) : _editorStrokeCeiling || slabs ? "Ceiling of " + EditorBrushName() : (_editorPlaceMode == EditorPlaceMode.Replace ? "Replace with " : "Place ") + EditorBrushName();
             if (tiles.Count == 0)
-                EditorNotice(place && _editorPlaceMode == EditorPlaceMode.Replace ? "Nothing to replace there: the shape has none of what was clicked." : "Nothing changed.", 3);
+                EditorNotice(_editorRefused ?? (place && _editorPlaceMode == EditorPlaceMode.Replace ? "Nothing to replace there: the shape has none of what was clicked." : "Nothing changed."), _editorRefused == null ? 3 : 8);
             else if (map.Edit(Inv($"{what} ({tiles.Count} tiles)"), tiles))
             {
                 EditorNotice(Inv($"{what}: {tiles.Count} tiles"), 2);
@@ -1974,11 +2046,11 @@ public partial class GameScene
     //   editor log [LINES] | editor undo | editor redo | editor place X Y Z MEMBER | editor erase X Y Z INDEX | editor set X Y Z INDEX VAR [LITERAL] | editor select X Y Z [INDEX]
     //   editor tool NAME | editor shape NAME | editor brush MEMBER | editor region X0 Y0 X1 Y1 [Z] | editor copy | editor cut | editor paste X Y [Z] | editor move DX DY
     //   editor delete | editor find TEXT | editor layer under|markers|areas|border|preview on|off
-    //   editor level N | editor above on|off | editor lock on|off | editor mode add|replace|attach | editor height N | editor setting KEY [VALUE] | editor ceiling VALUE
+    //   editor level N | editor above on|off | editor lock on|off | editor mode add|replace|attach | editor height N | editor setting KEY [VALUE] | editor ceiling VALUE | editor gas MIX|own|window
     //   editor key FUNCTION KEY|none|default | editor keys | editor do FUNCTION | editor autosave | editor restore [N] | editor state
     //   editor checks | editor package ZIP | editor panel TITLE
     //   editor view X Y EYE YAW PITCH | editor top on|off | editor focus | editor home | editor look simple|lighting|shadows|dark|bloom on|off
-    //   editor play [X Y [Z] | arrival] (and, in the round: editor stop)
+    //   editor play [X Y [Z] | arrival | start] (and, in the round: editor stop)
     private bool EditorCommand(string command)
     {
         string[] words = command.Trim().Split(' ', 3, StringSplitOptions.RemoveEmptyEntries);
@@ -2111,6 +2183,8 @@ public partial class GameScene
                 case "checks": ShowPanel("Checks"); break; // the Checks panel comes to the front: it checks the map and prints how many it found (5.13)
                 case "package": EditorPackage(rest); break; // the map's package into a zip (5.13)
                 case "ceiling": EditorSetCeiling(rest is "" or "rule" ? null : rest); break; // over the selection (5.12): none, lattice, catwalk, a floor type, rule
+                case "gas" when rest == "window": OpenGasDialog(); break; // the Tile panel's gas window, for a scripted look
+                case "gas": EditorSetGas(rest is "" or "own" ? null : rest); break; // over the selection (5.23): tg's gas string, or own
                 case "setting":
                 {
                     // a setting of the map by its name (5.10): editor setting sky colours, editor setting sun_energy 2, editor setting station_name Port Tarkon
@@ -2126,9 +2200,9 @@ public partial class GameScene
                 {
                     // a round of the map with the player on a tile (else where Play finds one, or as the tool bar's choice says); "arrival": as a new
                     // arrival on the map's arrivals shuttle; again while it starts: given up
-                    if (rest == "arrival")
+                    if (rest is "arrival" or "start")
                     {
-                        EditorPlay(arrive: true);
+                        EditorPlay(arrive: rest == "arrival", atStart: rest == "start");
                         break;
                     }
                     int[] p = rest.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(word => int.Parse(word, CultureInfo.InvariantCulture)).ToArray();

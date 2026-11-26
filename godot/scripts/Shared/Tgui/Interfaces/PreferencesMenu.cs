@@ -576,6 +576,11 @@ public static class PreferencesMenu
         ["feature_lizard_spines"] = "Spines",
         ["feature_lizard_tail"] = "Tail",
         ["feature_mcolor"] = "Mutant color", // FeatureColorInput
+        ["feature_monkey_tail"] = "Tail", // D349: species_features.tsx, FeatureDropdownInput
+        ["feature_vampire_status"] = "Vampire status", // FeatureDropdownInput
+        ["feature_fish_tail_color"] = "Fish tail color", // FeatureColorInput
+        ["feature_cerulean_frills"] = "Fish frills", // CheckboxInput
+        ["heterochromatic"] = "Heterochromatic (Right Eye) color", // FeatureColorInput
         ["facial_hair_color"] = "Facial hair color",
         ["facial_hair_gradient"] = "Facial hair gradient",
         ["facial_hair_gradient_color"] = "Facial hair gradient color",
@@ -595,7 +600,7 @@ public static class PreferencesMenu
     };
 
     private static bool IsColorFeature(string key) => key is "eye_color" or "facial_hair_color" or "facial_hair_gradient_color" or "hair_color"
-        or "hair_gradient_color" or "underwear_color" or "feature_mcolor";
+        or "hair_gradient_color" or "underwear_color" or "feature_mcolor" or "feature_fish_tail_color" or "heterochromatic";
 
     // A choice's picture (the constant data's icons: list(resource, state), DV44) in a box of 32 px times size.
     private static UiNode Picture(UiValue catalog, string choice, double size)
@@ -778,6 +783,7 @@ public static class PreferencesMenu
                     new UiNode(UiKind.StackItem) { Key = "radio" }.With(new UiNode(UiKind.Button) { Icon = "walkie-talkie", Tooltip = "Play over the radio", OnClick = () => c.Act("play_voice_radio") }));
             }
             case "random_hardcore": // CheckboxInput
+            case "feature_cerulean_frills":
                 return new UiNode(UiKind.Button) { Key = key, Checkbox = value.Truthy, OnClick = () => Set(value.Truthy ? 0 : 1) };
             case "random_name": // randomization.tsx random_name: the RandomizationButton
                 return RandomizationButton(key, (int)value.Number, v => Set(v));

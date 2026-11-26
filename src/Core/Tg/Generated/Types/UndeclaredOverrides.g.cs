@@ -10,7 +10,7 @@ namespace Anomaly.Core.Tg;
 
 /// <summary>
 /// The tg definitions of the interaction chain's guarded procs (<see cref="InertSeam.GuardedProcs"/>) at types whose C#
-/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 733 rows over 450 types.
+/// class does not declare them (docs/ai/specs/types-converter.md 10; D132, DV27): 713 rows over 441 types.
 /// <see cref="InertSeam.HasUndeclaredOverride"/> walks a runtime class up to the class whose C# method would run.
 /// </summary>
 internal static partial class UndeclaredOverrides
@@ -83,11 +83,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_clothing_head_helmet_perceptomatrix), "dropped"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:81)
         (typeof(obj_item_clothing_head_helmet_perceptomatrix), "equipped"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:76)
         (typeof(obj_item_clothing_head_helmet_perceptomatrix), "item_interaction"), // /obj/item/clothing/head/helmet/perceptomatrix (tg: code/modules/clothing/head/perceptomatrix.dm:135)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "attack_self"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:200)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "click_alt"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:125)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "item_interaction"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:160)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "ui_action_click"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:129)
-        (typeof(obj_item_clothing_head_helmet_space_plasmaman), "wash"), // /obj/item/clothing/head/helmet/space/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:192)
         (typeof(obj_item_clothing_head_hooded_cult_hoodie_eldritch_rust), "equipped"), // /obj/item/clothing/head/hooded/cult_hoodie/eldritch/rust (tg: code/modules/antagonists/heretic/items/heretic_armor.dm:1020)
         (typeof(obj_item_clothing_head_hooded_berserker), "dropped"), // /obj/item/clothing/head/hooded/berserker (tg: code/modules/mining/lavaland/mining_loot/berserker.dm:91)
         (typeof(obj_item_clothing_head_hooded_hostile_environment), "dropped"), // /obj/item/clothing/head/hooded/hostile_environment (tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:117)
@@ -120,12 +115,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_clothing_suit_armor_reactive), "attack_self"), // /obj/item/clothing/suit/armor/reactive (tg: code/modules/clothing/suits/reactive_armour.dm:69)
         (typeof(obj_item_clothing_suit_armor_abductor_vest), "ui_action_click"), // /obj/item/clothing/suit/armor/abductor/vest (tg: code/modules/antagonists/abductor/equipment/gear/abductor_clothing.dm:147)
         (typeof(obj_item_clothing_suit_wizrobe_paper), "ui_action_click"), // /obj/item/clothing/suit/wizrobe/paper (tg: code/modules/antagonists/wizard/equipment/wiz_robe.dm:287)
-        (typeof(obj_item_clothing_suit_space_eva_plasmaman), "dropped"), // /obj/item/clothing/suit/space/eva/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:32)
-        (typeof(obj_item_clothing_suit_space_eva_plasmaman), "equipped"), // /obj/item/clothing/suit/space/eva/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:26)
-        (typeof(obj_item_clothing_suit_space_eva_plasmaman), "item_interaction"), // /obj/item/clothing/suit/space/eva/plasmaman (tg: code/modules/clothing/spacesuits/plasmamen.dm:59)
-        (typeof(obj_item_clothing_under_plasmaman), "dropped"), // /obj/item/clothing/under/plasmaman (tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:34)
-        (typeof(obj_item_clothing_under_plasmaman), "equipped"), // /obj/item/clothing/under/plasmaman (tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:28)
-        (typeof(obj_item_clothing_under_plasmaman), "item_interaction"), // /obj/item/clothing/under/plasmaman (tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:65)
         (typeof(obj_item_clothing_under_ethereal_tunic_trailwarden), "equipped"), // /obj/item/clothing/under/ethereal_tunic/trailwarden (tg: code/modules/clothing/under/ethereal.dm:33)
         (typeof(obj_item_clothing_neck_heretic_focus), "dropped"), // /obj/item/clothing/neck/heretic_focus (tg: code/modules/antagonists/heretic/items/heretic_necks.dm:19)
         (typeof(obj_item_clothing_neck_heretic_focus), "equipped"), // /obj/item/clothing/neck/heretic_focus (tg: code/modules/antagonists/heretic/items/heretic_necks.dm:12)
@@ -168,7 +157,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_gun_magic_midas_hand), "interact_with_atom_secondary"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:40)
         (typeof(obj_item_gun_magic_midas_hand), "item_interaction"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:78)
         (typeof(obj_item_gun_magic_midas_hand), "ranged_interact_with_atom_secondary"), // /obj/item/gun/magic/midas_hand (tg: code/modules/projectiles/guns/special/hand_of_midas.dm:45)
-        (typeof(obj_item_mutant_hand_zombie), "afterattack"), // /obj/item/mutant_hand/zombie (tg: code/modules/zombie/items.dm:16)
         (typeof(obj_item_fishing_rod), "attack_self_secondary"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:291)
         (typeof(obj_item_fishing_rod), "dropped"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:328)
         (typeof(obj_item_fishing_rod), "interact_with_atom"), // /obj/item/fishing_rod (tg: code/modules/fishing/fishing_rod.dm:371)
@@ -190,7 +178,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_style_meter), "interact_with_atom"), // /obj/item/style_meter (tg: code/datums/components/style/style_meter.dm:33)
         (typeof(obj_item_storage_belt_unfathomable_curio), "dropped"), // /obj/item/storage/belt/unfathomable_curio (tg: code/modules/antagonists/heretic/items/unfathomable_curio.dm:37)
         (typeof(obj_item_storage_belt_unfathomable_curio), "equipped"), // /obj/item/storage/belt/unfathomable_curio (tg: code/modules/antagonists/heretic/items/unfathomable_curio.dm:27)
-        (typeof(obj_item_storage_backpack_snail), "dropped"), // /obj/item/storage/backpack/snail (tg: code/modules/mob/living/carbon/human/species_types/snail.dm:112)
         (typeof(obj_item_tattoo_kit), "attack"), // /obj/item/tattoo_kit (tg: code/datums/memory/tattoo_kit.dm:47)
         (typeof(obj_item_tattoo_kit), "item_interaction"), // /obj/item/tattoo_kit (tg: code/datums/memory/tattoo_kit.dm:30)
         (typeof(obj_item_melee_touch_attack_star_touch), "attack_self"), // /obj/item/melee/touch_attack/star_touch (tg: code/modules/antagonists/heretic/magic/star_touch.dm:116)
@@ -247,7 +234,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_orion_ship), "attack_self"), // /obj/item/orion_ship (tg: code/game/machinery/computer/arcade/orion.dm:514)
         (typeof(obj_item_organ_brain), "attack"), // /obj/item/organ/brain (tg: code/modules/mob/living/brain/brain_item.dm:295)
         (typeof(obj_item_organ_brain), "attackby"), // /obj/item/organ/brain (tg: code/modules/mob/living/brain/brain_item.dm:204)
-        (typeof(obj_item_organ_heart_nightmare), "attack"), // /obj/item/organ/heart/nightmare (tg: code/modules/antagonists/nightmare/nightmare_organs.dm:99)
         (typeof(obj_item_organ_heart_demon), "attack"), // /obj/item/organ/heart/demon (tg: code/modules/mob/living/basic/space_fauna/demon/demon_items.dm:13)
         (typeof(obj_item_organ_ears_babbelfish), "attack"), // /obj/item/organ/ears/babbelfish (tg: code/modules/fishing/fish/types/rift.dm:751)
         (typeof(obj_item_organ_cyberimp_arm_toolkit_shard), "attack_self"), // /obj/item/organ/cyberimp/arm/toolkit/shard (tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:18)
@@ -341,9 +327,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_void_prison), "attack_self"), // /obj/item/void_prison (tg: code/modules/antagonists/heretic/items/voidballd.dm:13)
         (typeof(obj_item_eldritch_potion), "attack_self"), // /obj/item/eldritch_potion (tg: code/modules/antagonists/heretic/structures/mawed_crucible.dm:265)
         (typeof(obj_item_eldritch_potion_crucible_soul), "attack_self"), // /obj/item/eldritch_potion/crucible_soul (tg: code/modules/antagonists/heretic/structures/mawed_crucible.dm:307)
-        (typeof(obj_item_light_eater), "attack"), // /obj/item/light_eater (tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:51)
-        (typeof(obj_item_light_eater), "dropped"), // /obj/item/light_eater (tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:43)
-        (typeof(obj_item_light_eater), "equipped"), // /obj/item/light_eater (tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:36)
         (typeof(obj_item_energy_katana), "dropped"), // /obj/item/energy_katana (tg: code/modules/antagonists/space_ninja/equipment/energy_katana.dm:61)
         (typeof(obj_item_energy_katana), "equipped"), // /obj/item/energy_katana (tg: code/modules/antagonists/space_ninja/equipment/energy_katana.dm:56)
         (typeof(obj_item_energy_katana), "ranged_interact_with_atom_secondary"), // /obj/item/energy_katana (tg: code/modules/antagonists/space_ninja/equipment/energy_katana.dm:48)
@@ -474,7 +457,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_slimepotion_speed), "interact_with_atom"), // /obj/item/slimepotion/speed (tg: code/modules/research/xenobiology/xenobiology.dm:960)
         (typeof(obj_item_slimepotion_fireproof), "interact_with_atom"), // /obj/item/slimepotion/fireproof (tg: code/modules/research/xenobiology/xenobiology.dm:1002)
         (typeof(obj_item_slimepotion_genderchange), "interact_with_atom"), // /obj/item/slimepotion/genderchange (tg: code/modules/research/xenobiology/xenobiology.dm:1033)
-        (typeof(obj_item_slimepotion_renaming), "interact_with_atom"), // /obj/item/slimepotion/renaming (tg: code/modules/research/xenobiology/xenobiology.dm:1070)
         (typeof(obj_item_slimepotion_slimeradio), "interact_with_atom"), // /obj/item/slimepotion/slimeradio (tg: code/modules/research/xenobiology/xenobiology.dm:1108)
         (typeof(obj_item_slimepotion_extract_cloner), "interact_with_atom"), // /obj/item/slimepotion/extract_cloner (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:13)
         (typeof(obj_item_slimepotion_peacepotion), "interact_with_atom"), // /obj/item/slimepotion/peacepotion (tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:39)
@@ -486,8 +468,6 @@ internal static partial class UndeclaredOverrides
         (typeof(obj_item_ritual_totem), "pickup"), // /obj/item/ritual_totem (tg: code/modules/religion/religion_structures.dm:141)
         (typeof(obj_item_ceremonial_blade), "melee_attack_chain"), // /obj/item/ceremonial_blade (tg: code/modules/religion/sparring/ceremonial_gear.dm:50)
         (typeof(obj_item_gizmo), "item_interaction"), // /obj/item/gizmo (tg: code/modules/research/gizmo/gizmo_items.dm:24)
-        (typeof(obj_item_slime_extract), "interact_with_atom"), // /obj/item/slime_extract (tg: code/modules/research/xenobiology/xenobiology.dm:69)
-        (typeof(obj_item_slime_extract), "item_interaction"), // /obj/item/slime_extract (tg: code/modules/research/xenobiology/xenobiology.dm:32)
         (typeof(obj_item_slimecross_burning), "attack_self"), // /obj/item/slimecross/burning (tg: code/modules/research/xenobiology/crossbreeding/burning.dm:16)
         (typeof(obj_item_slimecross_burning_oil), "boom"), // /obj/item/slimecross/burning/oil (tg: code/modules/research/xenobiology/crossbreeding/burning.dm:252)
         (typeof(obj_item_slimecross_charged), "attack_self"), // /obj/item/slimecross/charged (tg: code/modules/research/xenobiology/crossbreeding/charged.dm:17)

@@ -2838,9 +2838,9 @@ public partial class obj_item_clothing_under_rank_station_trait_human_ai : obj_i
     }
 }
 
-// tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:3
-[DmPath("/obj/item/clothing/under/plasmaman"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_under_plasmaman : obj_item_clothing_under
+// tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/under/plasmaman")]
+public partial class obj_item_clothing_under_plasmaman
 {
     public float extinguish_timer = 0; // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:15
     public float extinguish_cooldown = 100; // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:16
@@ -2864,9 +2864,9 @@ public partial class obj_item_clothing_under_plasmaman : obj_item_clothing_under
     }
 }
 
-// tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:141
-[DmPath("/obj/item/clothing/under/plasmaman/clown"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_under_plasmaman_clown : obj_item_clothing_under_plasmaman
+// tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:141 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/under/plasmaman/clown")]
+public partial class obj_item_clothing_under_plasmaman_clown
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:141
     public obj_item_clothing_under_plasmaman_clown()
@@ -2879,7 +2879,7 @@ public partial class obj_item_clothing_under_plasmaman_clown : obj_item_clothing
 }
 
 // tg: code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:102
-[DmPath("/obj/item/clothing/under/plasmaman/clown/magic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/clown/magic"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_clown_magic : obj_item_clothing_under_plasmaman_clown
 {
     // tg: code/modules/antagonists/wizard/equipment/enchanted_clown_suit.dm:102
@@ -2890,7 +2890,7 @@ public partial class obj_item_clothing_under_plasmaman_clown_magic : obj_item_cl
 }
 
 // tg: code/modules/clothing/under/syndicate.dm:195
-[DmPath("/obj/item/clothing/under/plasmaman/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/syndicate"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_syndicate : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/syndicate.dm:195
@@ -2906,7 +2906,7 @@ public partial class obj_item_clothing_under_plasmaman_syndicate : obj_item_clot
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/centcom.dm:2
-[DmPath("/obj/item/clothing/under/plasmaman/centcom_commander"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/centcom_commander"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_centcom_commander : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/centcom.dm:2
@@ -2920,7 +2920,7 @@ public partial class obj_item_clothing_under_plasmaman_centcom_commander : obj_i
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/centcom.dm:8
-[DmPath("/obj/item/clothing/under/plasmaman/centcom_official"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/centcom_official"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_centcom_official : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/centcom.dm:8
@@ -2934,7 +2934,7 @@ public partial class obj_item_clothing_under_plasmaman_centcom_official : obj_it
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/centcom.dm:14
-[DmPath("/obj/item/clothing/under/plasmaman/centcom_intern"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/centcom_intern"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_centcom_intern : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/centcom.dm:14
@@ -2948,7 +2948,7 @@ public partial class obj_item_clothing_under_plasmaman_centcom_intern : obj_item
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:87
-[DmPath("/obj/item/clothing/under/plasmaman/cargo"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/cargo"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_cargo : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:87
@@ -2962,7 +2962,7 @@ public partial class obj_item_clothing_under_plasmaman_cargo : obj_item_clothing
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:93
-[DmPath("/obj/item/clothing/under/plasmaman/mining"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/mining"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_mining : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:93
@@ -2976,7 +2976,7 @@ public partial class obj_item_clothing_under_plasmaman_mining : obj_item_clothin
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:99
-[DmPath("/obj/item/clothing/under/plasmaman/chef"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/chef"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_chef : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:99
@@ -2990,7 +2990,7 @@ public partial class obj_item_clothing_under_plasmaman_chef : obj_item_clothing_
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:105
-[DmPath("/obj/item/clothing/under/plasmaman/enviroslacks"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/enviroslacks"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_enviroslacks : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:105
@@ -3004,7 +3004,7 @@ public partial class obj_item_clothing_under_plasmaman_enviroslacks : obj_item_c
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:111
-[DmPath("/obj/item/clothing/under/plasmaman/chaplain"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/chaplain"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_chaplain : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:111
@@ -3018,7 +3018,7 @@ public partial class obj_item_clothing_under_plasmaman_chaplain : obj_item_cloth
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:117
-[DmPath("/obj/item/clothing/under/plasmaman/curator"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/curator"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_curator : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:117
@@ -3032,7 +3032,7 @@ public partial class obj_item_clothing_under_plasmaman_curator : obj_item_clothi
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:123
-[DmPath("/obj/item/clothing/under/plasmaman/janitor"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/janitor"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_janitor : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:123
@@ -3046,7 +3046,7 @@ public partial class obj_item_clothing_under_plasmaman_janitor : obj_item_clothi
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:129
-[DmPath("/obj/item/clothing/under/plasmaman/botany"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/botany"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_botany : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:129
@@ -3060,7 +3060,7 @@ public partial class obj_item_clothing_under_plasmaman_botany : obj_item_clothin
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:135
-[DmPath("/obj/item/clothing/under/plasmaman/mime"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/mime"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_mime : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:135
@@ -3074,7 +3074,7 @@ public partial class obj_item_clothing_under_plasmaman_mime : obj_item_clothing_
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:147
-[DmPath("/obj/item/clothing/under/plasmaman/bitrunner"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/bitrunner"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_bitrunner : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:147
@@ -3088,7 +3088,7 @@ public partial class obj_item_clothing_under_plasmaman_bitrunner : obj_item_clot
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:157
-[DmPath("/obj/item/clothing/under/plasmaman/prisoner"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/prisoner"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_prisoner : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/civilian_service.dm:157
@@ -3105,7 +3105,7 @@ public partial class obj_item_clothing_under_plasmaman_prisoner : obj_item_cloth
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:2
-[DmPath("/obj/item/clothing/under/plasmaman/captain"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/captain"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_captain : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:2
@@ -3122,7 +3122,7 @@ public partial class obj_item_clothing_under_plasmaman_captain : obj_item_clothi
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:16
-[DmPath("/obj/item/clothing/under/plasmaman/head_of_personnel"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/head_of_personnel"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_head_of_personnel : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:16
@@ -3136,7 +3136,7 @@ public partial class obj_item_clothing_under_plasmaman_head_of_personnel : obj_i
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/security.dm:2
-[DmPath("/obj/item/clothing/under/plasmaman/security"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/security"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_security : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/security.dm:2
@@ -3153,7 +3153,7 @@ public partial class obj_item_clothing_under_plasmaman_security : obj_item_cloth
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:22
-[DmPath("/obj/item/clothing/under/plasmaman/security/head_of_security"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/security/head_of_security"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_security_head_of_security : obj_item_clothing_under_plasmaman_security
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:22
@@ -3170,7 +3170,7 @@ public partial class obj_item_clothing_under_plasmaman_security_head_of_security
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/security.dm:16
-[DmPath("/obj/item/clothing/under/plasmaman/security/detective"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/security/detective"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_security_detective : obj_item_clothing_under_plasmaman_security
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/security.dm:16
@@ -3184,7 +3184,7 @@ public partial class obj_item_clothing_under_plasmaman_security_detective : obj_
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/security.dm:22
-[DmPath("/obj/item/clothing/under/plasmaman/security/warden"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/security/warden"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_security_warden : obj_item_clothing_under_plasmaman_security
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/security.dm:22
@@ -3198,7 +3198,7 @@ public partial class obj_item_clothing_under_plasmaman_security_warden : obj_ite
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:36
-[DmPath("/obj/item/clothing/under/plasmaman/chief_engineer"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/chief_engineer"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_chief_engineer : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:36
@@ -3213,7 +3213,7 @@ public partial class obj_item_clothing_under_plasmaman_chief_engineer : obj_item
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:48
-[DmPath("/obj/item/clothing/under/plasmaman/chief_medical_officer"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/chief_medical_officer"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_chief_medical_officer : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:48
@@ -3227,7 +3227,7 @@ public partial class obj_item_clothing_under_plasmaman_chief_medical_officer : o
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:54
-[DmPath("/obj/item/clothing/under/plasmaman/research_director"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/research_director"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_research_director : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/command.dm:54
@@ -3242,7 +3242,7 @@ public partial class obj_item_clothing_under_plasmaman_research_director : obj_i
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/engineering.dm:2
-[DmPath("/obj/item/clothing/under/plasmaman/engineering"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/engineering"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_engineering : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/engineering.dm:2
@@ -3257,7 +3257,7 @@ public partial class obj_item_clothing_under_plasmaman_engineering : obj_item_cl
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/engineering.dm:14
-[DmPath("/obj/item/clothing/under/plasmaman/atmospherics"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/atmospherics"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_atmospherics : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/engineering.dm:14
@@ -3272,7 +3272,7 @@ public partial class obj_item_clothing_under_plasmaman_atmospherics : obj_item_c
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:2
-[DmPath("/obj/item/clothing/under/plasmaman/medical"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/medical"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_medical : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:2
@@ -3286,7 +3286,7 @@ public partial class obj_item_clothing_under_plasmaman_medical : obj_item_clothi
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:8
-[DmPath("/obj/item/clothing/under/plasmaman/coroner"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/coroner"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_coroner : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:8
@@ -3300,7 +3300,7 @@ public partial class obj_item_clothing_under_plasmaman_coroner : obj_item_clothi
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:14
-[DmPath("/obj/item/clothing/under/plasmaman/paramedic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/paramedic"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_paramedic : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:14
@@ -3314,7 +3314,7 @@ public partial class obj_item_clothing_under_plasmaman_paramedic : obj_item_clot
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:20
-[DmPath("/obj/item/clothing/under/plasmaman/science"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/science"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_science : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:20
@@ -3328,7 +3328,7 @@ public partial class obj_item_clothing_under_plasmaman_science : obj_item_clothi
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:26
-[DmPath("/obj/item/clothing/under/plasmaman/robotics"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/robotics"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_robotics : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:26
@@ -3342,7 +3342,7 @@ public partial class obj_item_clothing_under_plasmaman_robotics : obj_item_cloth
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:32
-[DmPath("/obj/item/clothing/under/plasmaman/viro"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/viro"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_viro : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:32
@@ -3356,7 +3356,7 @@ public partial class obj_item_clothing_under_plasmaman_viro : obj_item_clothing_
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:38
-[DmPath("/obj/item/clothing/under/plasmaman/genetics"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/genetics"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_genetics : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:38
@@ -3370,7 +3370,7 @@ public partial class obj_item_clothing_under_plasmaman_genetics : obj_item_cloth
 }
 
 // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:44
-[DmPath("/obj/item/clothing/under/plasmaman/chemist"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/under/plasmaman/chemist"), DmGeneratedOnly]
 public partial class obj_item_clothing_under_plasmaman_chemist : obj_item_clothing_under_plasmaman
 {
     // tg: code/modules/clothing/under/jobs/Plasmaman/medsci.dm:44

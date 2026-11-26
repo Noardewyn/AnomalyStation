@@ -100,6 +100,49 @@ public class AimTests
         r.AssertNoRuntimes();
     }
 
+    // DV595: the crosshair can only click the glass in front of what is behind it. A laser (PASSGLASS, beams.dm:4) aimed at a window or a glass
+    // airlock flies on to the room's east wall and leaves them whole; a bullet (no PASSGLASS) still hits the window it was aimed at.
+    [Fact]
+    public void AnAimedLaserFliesThroughTheClickedGlassABulletHitsIt()
+    {
+        var r = Room(7854);
+        var alice = r.Dummy(From, LineY);
+        obj_structure_window_reinforced_fulltile window = r.In(() => Dm.@new<obj_structure_window_reinforced_fulltile>(locate(6, LineY, 1)));
+        obj_machinery_door_airlock_glass door = r.In(() => Dm.@new<obj_machinery_door_airlock_glass>(locate(8, LineY, 1)));
+        float windowFull = r.In(() => Dm.num(window.atom_integrity)), doorFull = r.In(() => Dm.num(door.atom_integrity));
+        string level = Params(From * 32, LineY * 32, 20.8, 90, 0);
+        foreach (atom clicked in new atom[] { window, door })
+        {
+            var laser = Aim<obj_projectile_beam_emitter_hitscan>(r, alice, clicked, level);
+            Assert.Equal(r.In(() => locate(Width, LineY, 1)), r.In(() => laser.last_impact_turf));
+        }
+        Assert.Equal(windowFull, r.In(() => Dm.num(window.atom_integrity)));
+        Assert.Equal(doorFull, r.In(() => Dm.num(door.atom_integrity)));
+        var bullet = Aim<obj_projectile_bullet>(r, alice, window, level);
+        r.Step(10);
+        Assert.Equal(r.In(() => locate(6, LineY, 1)), r.In(() => bullet.last_impact_turf));
+        Assert.True(r.In(() => Dm.num(window.atom_integrity)) < windowFull);
+        r.AssertNoRuntimes();
+    }
+
+    // DV595: a laser up 30 degrees meets the ceiling over (4, 4); made of glass, it lets the laser out: no impact, the ceiling as it was
+    [Fact]
+    public void ALaserFliesOutThroughAGlassCeiling()
+    {
+        var r = Room(7855);
+        var alice = r.Dummy(From, LineY);
+        r.In(() => CeilingSystem.Of(r.World).Initialize());
+        var glass = Anomaly.Core.Motion.CeilingState.Of("/turf/open/floor/glass");
+        r.In(() => CeilingSystem.Of(r.World).Set(From + 1, LineY, 1, glass));
+        var laser = Aim<obj_projectile_beam_laser>(r, alice, r.In(() => locate(Width, LineY, 1)), Params(From * 32, LineY * 32, 20.8, 90, 30));
+        r.Step(6);
+        Assert.True(r.In(() => QDELETED(laser)));
+        Assert.Null(r.In(() => laser.last_impact_turf));
+        Assert.Empty(r.In(() => Dm.each<obj_effect_temp_visual_impact_effect>().ToList()));
+        Assert.Equal(glass.Turf, r.In(() => CeilingSystem.Of(r.World).At(From + 1, LineY, 1)).Turf);
+        r.AssertNoRuntimes();
+    }
+
     // DV577 (the owner, 2026-11-20): what breaks a wall breaks the ceiling it hits too: tg's pulse (beams.dm:225, a heavy blast on the turf it hit)
     // up 30 degrees from (3, 4) meets the ceiling over (4, 4), which takes the blast; the floor under it stays as it was.
     [Fact]

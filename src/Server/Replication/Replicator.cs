@@ -130,6 +130,7 @@ public sealed partial class Replicator : IReplicator
     // Version 5: the gas every tile shows as the clients have it (null: none), the fixed table of gas kinds (tg's gas overlay
     // icon states) and the scratch list of a cell's overlays.
     private GasLevel[][] _cellGas;
+    private LightState[] _cellLight; // version 96: the light of each tile's own turf (TurfLightOf)
     private readonly List<string> _gasKinds = new();
     private readonly Dictionary<string, int> _gasKindIndex = new();
     private readonly List<(string State, int Level)> _gasScratch = new();
@@ -328,6 +329,7 @@ public sealed partial class Replicator : IReplicator
         _delta.TurfTypeChanged.Clear();
         _delta.StarlightChanged = null;
         _delta.CellGasChanged.Clear();
+        _delta.TurfLightChanged.Clear();
         _delta.Tick = tick;
         _delta.LastInputSeq = 0;
         _delta.OwnEntity = 0;
@@ -643,10 +645,16 @@ public sealed partial class Replicator : IReplicator
                 if (_cellGas[i] == null) continue;
                 grid.GasCells.Add(new CellGasChange(i % _width + 1, i / _width % _height + 1, i / (_width * _height) + 1, _cellGas[i]));
             }
+            for (int i = 0; i < _cellLight.Length; i++)
+                if (!_cellLight[i].IsNone)
+                    grid.TurfLights.Add(new TurfLightChange(i % _width + 1, i / _width % _height + 1, i / (_width * _height) + 1, false, _cellLight[i]));
         }
         grid.GasKinds.AddRange(_gasKinds);
         foreach (var entry in _ceilingShadow.OrderBy(e => e.Key.Z).ThenBy(e => e.Key.Y).ThenBy(e => e.Key.X))
             grid.Ceilings.Add(entry.Value);
+        foreach (var entry in _ceilingLight.OrderBy(e => e.Key.Z).ThenBy(e => e.Key.Y).ThenBy(e => e.Key.X))
+            if (entry.Key.X <= grid.Width && entry.Key.Y <= grid.Height && entry.Key.Z <= grid.Levels)
+                grid.TurfLights.Add(new TurfLightChange(entry.Key.X, entry.Key.Y, entry.Key.Z, true, entry.Value));
 
         grid.Starlight = StarlightState(_starlight);
         // read raw, outside the world's step (protocol 60): the levels with tg's ZTRAIT_NOPARALLAX (Lavaland)
@@ -687,6 +695,15 @@ public sealed partial class Replicator : IReplicator
             runs.Add(new TurfRun(i - runStart, valueAt(runStart)));
             runStart = i;
         }
+    }
+
+    // Version 96: the light a turf gives by its own light vars (a light floor, a circuit floor, lava), switched on; none for tg's starlight
+    // (space and glass floors light at LIGHTING_HEIGHT_SPACE), which the cells' starlight flag already gives.
+    private static LightState TurfLightOf(atom t)
+    {
+        if (t == null || t is turf_open_space) return LightState.None;
+        LightState light = ReplicatedFields.OwnLight(t);
+        return light.IsNone || !light.On || light.Height == LIGHTING_HEIGHT_SPACE ? LightState.None : light;
     }
 
     // tg's starlight as a light source of the replica: the space turf's height, the cone all around.
@@ -1389,6 +1406,7 @@ public sealed partial class Replicator : IReplicator
         _cellBase = new ushort[cells];
         _cellTurfType = new int[cells];
         _cellGas = new GasLevel[cells][];
+        _cellLight = new LightState[cells];
         if (_gasKindIndex.Count == 0)
         {
             IReadOnlyList<string> kinds = CellState.GasKinds();
@@ -1411,6 +1429,7 @@ public sealed partial class Replicator : IReplicator
                     _cellBase[i] = (ushort)BaseLightIndexOf(CellState.BaseLightOf(_world, x, y, z));
                     _cellTurfType[i] = TurfTypeIndexOf(cell?.GetType() ?? typeof(turf));
                     _cellGas[i] = GasOf(x, y, z);
+                    _cellLight[i] = TurfLightOf(cell);
                 }
         if (_turfTypePaths.Count == 0) _turfTypePaths.Add(PathOf(typeof(turf)));
         if (rebuild) return;
@@ -1612,6 +1631,14 @@ public sealed partial class Replicator : IReplicator
             {
                 _cellGas[i] = gas;
                 _delta.CellGasChanged.Add(new CellGasChange(x, y, z, gas ?? Array.Empty<GasLevel>()));
+                changes++;
+            }
+
+            LightState light = TurfLightOf(cell);
+            if (light != _cellLight[i])
+            {
+                _cellLight[i] = light;
+                _delta.TurfLightChanged.Add(new TurfLightChange(x, y, z, false, light));
                 changes++;
             }
         }
@@ -1969,6 +1996,7 @@ public sealed partial class Replicator : IReplicator
             block.InputBufferDepth = inputs.InputBufferDepth;
             block.ActionsDone = inputs.ActionsDone; // version 43
             block.HandsBlocked = inputs.HandsBlocked; // version 89
+            block.MeleeCooldownMs = inputs.MeleeCooldownMs; // version 95
             block.Access = null;
             if (full || !ReferenceEquals(inputs.Access, _accessSent))
             {

@@ -52,6 +52,9 @@ public sealed class ModelLibrary
 
     private const int DecodesInFlight = 8;
     private readonly List<Warm> _warm = new();
+
+    /// <summary>The parts queued by <see cref="PrepareFamily"/> and not built yet.</summary>
+    public int WarmUpCount => _warm.Count;
     private readonly Dictionary<byte[], (Task<Raster> Task, int Users)> _decoding = new(ReferenceEqualityComparer.Instance);
     private readonly Dictionary<string, (byte[] Png, IconSheet Sheet)> _sheets = new(StringComparer.Ordinal);
     private readonly Dictionary<byte[], Task<string>> _hashing = new(ReferenceEqualityComparer.Instance);
@@ -154,7 +157,7 @@ public sealed class ModelLibrary
     private readonly List<byte[]> _dropped = new();
     private const int TexturePending = -2;
 
-    private Task<Raster> Decode(byte[] png) => Counted(Task.Run(() => PngDecoder.Decode(png)));
+    private Task<Raster> Decode(byte[] png) => Counted(AssetPreload.TryDecoded(png, out Raster kept) ? Task.FromResult(kept) : Task.Run(() => PngDecoder.Decode(png)));
 
     // A decode is counted in DecodesDone only once its task is complete, so a caller that saw the count move finds its result in. Counted inside
     // the task, the count could move before IsCompleted did: a retry in between found the work still pending and took the new count as seen,
@@ -211,9 +214,8 @@ public sealed class ModelLibrary
                 continue;
             }
             _warm.RemoveAt(i);
-            long one = Stopwatch.GetTimestamp();
-            TryPieces(w.Variant, w.Part, w.Tint, out _, gags: w.Gags);
-            Anomaly.Client.Dev.FrameProbe.Item("warm", w.Variant.Id + "/" + w.Part, Stopwatch.GetElapsedTime(one).TotalMilliseconds);
+            using (Anomaly.Client.Dev.FrameProbe.Measure("warm", w.Variant.Id + "/" + w.Part))
+                TryPieces(w.Variant, w.Part, w.Tint, out _, gags: w.Gags);
             foreach (byte[] png in w.Images)
             {
                 var d = _decoding[png];
@@ -556,7 +558,9 @@ public sealed class ModelLibrary
             string stem = Path.Combine(IconPaths.Root, icon[..^4]);
             try
             {
-                if (File.Exists(stem + ".png") && File.Exists(stem + ".json"))
+                if (AssetPreload.TryIconBytes(icon[..^4] + ".png", out byte[] png) && AssetPreload.TryIconBytes(icon[..^4] + ".json", out byte[] json))
+                    sheet = (png, IconSheet.Parse(System.Text.Encoding.UTF8.GetString(json), null));
+                else if (File.Exists(stem + ".png") && File.Exists(stem + ".json"))
                     sheet = (File.ReadAllBytes(stem + ".png"), IconSheet.Parse(File.ReadAllText(stem + ".json"), null));
             }
             catch (Exception e) when (e is IOException or InvalidDataException)
@@ -598,8 +602,8 @@ public sealed class ModelLibrary
         if (_images.TryGetValue(image, out byte[] bytes))
             return bytes;
         bytes = image.EndsWith(".dmi", StringComparison.Ordinal)
-            ? File.ReadAllBytes(Path.Combine(IconPaths.Root, Inside(image)[..^4] + ".png"))
-            : File.ReadAllBytes(Path.Combine(_root, Inside(image)));
+            ? AssetPreload.TryIconBytes(Inside(image)[..^4] + ".png", out byte[] sheet) ? sheet : File.ReadAllBytes(Path.Combine(IconPaths.Root, Inside(image)[..^4] + ".png"))
+            : AssetPreload.TryModelImage(Inside(image), out byte[] own) && _root == Root ? own : File.ReadAllBytes(Path.Combine(_root, Inside(image)));
         _images[image] = bytes;
         return bytes;
     }
@@ -611,16 +615,15 @@ public sealed class ModelLibrary
         var key = (entry.Id, part, index, junction);
         if (_pieceMeshes.TryGetValue(key, out var known))
             return known;
-        long start = Stopwatch.GetTimestamp();
-        ModelMeshData data = ModelMesh.Build(file, entry, spec, TileSpace.TileSize, WorldScale.WallHeight, WorldScale.TableTop, index, frame, junction,
-            entry.SpriteTop && frame == null ? TopCells(entry, image) : null);
-        Anomaly.Client.Dev.FrameProbe.Item("mesh", entry.Id + "/" + part, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
+        ModelMeshData data;
+        using (Anomaly.Client.Dev.FrameProbe.Measure("mesh", entry.Id + "/" + part))
+            data = ModelMesh.Build(file, entry, spec, TileSpace.TileSize, WorldScale.WallHeight, WorldScale.TableTop, index, frame, junction,
+                entry.SpriteTop && frame == null ? TopCells(entry, image) : null);
         int mesh = _meshes.Count;
-        long made = Stopwatch.GetTimestamp();
-        _meshes.Add(ToMesh(data));
+        using (Anomaly.Client.Dev.FrameProbe.Measure("arraymesh", entry.Id + "/" + part))
+            _meshes.Add(ToMesh(data));
         if (data.PickBoxes != null)
             _pickBoxes[mesh] = data.PickBoxes;
-        Anomaly.Client.Dev.FrameProbe.Item("arraymesh", entry.Id + "/" + part, Stopwatch.GetElapsedTime(made).TotalMilliseconds);
         if (spec.Shader != null)
             _materials[mesh] = ShaderMaterialOf(spec, spec.Color is System.Numerics.Vector3 c ? new System.Numerics.Vector4(Linear(c.X), Linear(c.Y), Linear(c.Z), color.W) : color);
         if (spec.Shader == ModelPart.CrystalShader)
@@ -649,8 +652,12 @@ public sealed class ModelLibrary
         if (_files.TryGetValue(relative, out GlbFile file))
             return file;
         long start = Stopwatch.GetTimestamp();
-        file = GlbFile.Read(System.IO.File.ReadAllBytes(Path.Combine(_root, Inside(relative))), uri => GlbFile.TgIcon(uri) is string icon ? ImageBytes(icon) : null);
-        Anomaly.Client.Dev.FrameProbe.Item("glb", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
+        using (Anomaly.Client.Dev.FrameProbe.Measure("glb", relative))
+            if (_root != Root || !AssetPreload.TryGlb(Inside(relative), out file))
+            {
+                file = GlbFile.Read(System.IO.File.ReadAllBytes(Path.Combine(_root, Inside(relative))), uri => GlbFile.TgIcon(uri) is string icon ? ImageBytes(icon) : null);
+                AssetPreload.Miss("model", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds, blocked: true);
+            }
         _files[relative] = file;
         return file;
     }
@@ -664,15 +671,8 @@ public sealed class ModelLibrary
                       + (frame == null ? string.Empty : $"@{frame.X},{frame.Y},{frame.Width},{frame.Height}") + (opaque ? fill ? "#filled" : "#opaque" : string.Empty);
         if (_pictures.TryGetValue(hash, out int id))
             return id;
-        long start = Stopwatch.GetTimestamp();
-        try
-        {
+        using (Anomaly.Client.Dev.FrameProbe.Measure("texture", hash[..8]))
             return NewPicture(png, tint, frame, hash, opaque, fill);
-        }
-        finally
-        {
-            Anomaly.Client.Dev.FrameProbe.Item("texture", hash[..8], Stopwatch.GetElapsedTime(start).TotalMilliseconds);
-        }
     }
 
     private int NewPicture(byte[] png, uint tint, ModelFrame frame, string hash, bool opaque, bool fill)
@@ -698,7 +698,7 @@ public sealed class ModelLibrary
                 _ownDecodes[png] = Stopwatch.GetTimestamp();
                 return TexturePending;
             }
-            (_lastPng, _lastDecoded) = (png, PngDecoder.Decode(png));
+            (_lastPng, _lastDecoded) = (png, AssetPreload.TryDecoded(png, out Raster kept) ? kept : PngDecoder.Decode(png));
         }
         // the atlas copies the picture: the decoded raster itself is cut from or laid in, copied first only when it is tinted
         Raster raster = frame != null ? _lastDecoded.Crop(frame.X, frame.Y, frame.Width, frame.Height) : tint != 0xFFFFFFFFu || opaque ? _lastDecoded.Clone() : _lastDecoded;

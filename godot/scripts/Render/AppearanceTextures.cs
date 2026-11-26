@@ -63,7 +63,7 @@ public sealed class AppearanceTextures : IAppearanceTextures
 
     public AppearanceTextures(string assetsRoot = null)
     {
-        var library = new IconLibrary(new DirectoryIconFiles(assetsRoot ?? IconPaths.Root));
+        var library = new IconLibrary(AssetPreload.IconFiles(assetsRoot ?? IconPaths.Root));
         library.ProblemFound += problem => GD.PushWarning("[anomaly] icons: " + problem);
         _compositor = new AppearanceCompositor(library);
     }

@@ -1,0 +1,277 @@
+diff --git a/core/profiling/SCsub b/core/profiling/SCsub
+index f908444..44dde38 100644
+--- a/core/profiling/SCsub
++++ b/core/profiling/SCsub
+@@ -62,7 +62,7 @@ if env["profiler"]:
+         env.Prepend(CPPPATH=[str(profiler_path.absolute())])
+ 
+         env_tracy = env.Clone()
+-        env_tracy.Append(CPPDEFINES=["TRACY_ENABLE"])
++        env_tracy.Append(CPPDEFINES=["TRACY_ENABLE", "TRACY_EXPORTS"])  # profiling: the C API exported, for the game's C# zones
+         if env["profiler_sample_callstack"]:
+             if env["platform"] not in ("windows", "linuxbsd", "android"):
+                 # Reference the feature matrix in the tracy documentation.
+diff --git a/servers/rendering/renderer_rd/forward_clustered/render_forward_clustered.cpp b/servers/rendering/renderer_rd/forward_clustered/render_forward_clustered.cpp
+index 370d3b6..b29a4c8 100644
+--- a/servers/rendering/renderer_rd/forward_clustered/render_forward_clustered.cpp
++++ b/servers/rendering/renderer_rd/forward_clustered/render_forward_clustered.cpp
+@@ -28,6 +28,16 @@
+ /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
+ /**************************************************************************/
+ 
++#include "core/profiling/profiling.h" // profiling
++
++#if defined(GODOT_USE_TRACY)
++// profiling: why geometry instances get dirty (dependency notifications by type; 14 created, 15 a dependency deleted), plotted a frame
++static int64_t tracy_dirty_by[16] = {};
++static int64_t tracy_marked = 0;
++#define TRACY_DIRTY(m_i) tracy_dirty_by[m_i]++
++#else
++#define TRACY_DIRTY(m_i)
++#endif
+ #include "render_forward_clustered.h"
+ 
+ #include "core/config/project_settings.h"
+@@ -680,6 +690,7 @@ void RenderForwardClustered::_render_list(RenderingDevice::DrawListID p_draw_lis
+ }
+ 
+ void RenderForwardClustered::_render_list_with_draw_list(RenderListParameters *p_params, RID p_framebuffer, BitField<RD::DrawFlags> p_draw_flags, const Vector<Color> &p_clear_color_values, float p_clear_depth_value, uint32_t p_clear_stencil_value, const Rect2 &p_region) {
++	GodotProfileZone("fc::_render_list_with_draw_list");
+ 	RD::FramebufferFormatID fb_format = RD::get_singleton()->framebuffer_get_format(p_framebuffer);
+ 	p_params->framebuffer_format = fb_format;
+ 
+@@ -804,6 +815,7 @@ void RenderForwardClustered::SceneState::grow_instance_buffer(RenderListType p_r
+ }
+ 
+ void RenderForwardClustered::_fill_instance_data(RenderListType p_render_list, int *p_render_info, uint32_t p_offset, int32_t p_max_elements, bool p_update_buffer) {
++	GodotProfileZone("fc::_fill_instance_data");
+ 	RenderList *rl = &render_list[p_render_list];
+ 	uint32_t element_total = p_max_elements >= 0 ? uint32_t(p_max_elements) : rl->elements.size();
+ 
+@@ -919,6 +931,7 @@ _FORCE_INLINE_ static uint32_t _indices_to_primitives(RSE::PrimitiveType p_primi
+ 	return (p_indices - subtractor[p_primitive]) / divisor[p_primitive];
+ }
+ void RenderForwardClustered::_fill_render_list(RenderListType p_render_list, const RenderDataRD *p_render_data, PassMode p_pass_mode, bool p_using_sdfgi, bool p_using_opaque_gi, bool p_using_motion_pass, bool p_append) {
++	GodotProfileZone("fc::_fill_render_list");
+ 	RendererRD::MeshStorage *mesh_storage = RendererRD::MeshStorage::get_singleton();
+ 	uint64_t frame = RSG::rasterizer->get_frame_number();
+ 
+@@ -1515,6 +1528,7 @@ void RenderForwardClustered::_copy_framebuffer_to_ss_effects(Ref<RenderSceneBuff
+ }
+ 
+ void RenderForwardClustered::_pre_opaque_render(RenderDataRD *p_render_data, bool p_use_ssao, bool p_use_ssil, bool p_use_ssr, bool p_use_gi, const RID *p_normal_roughness_slices, RID p_voxel_gi_buffer) {
++	GodotProfileZone("fc::_pre_opaque_render");
+ 	// Render shadows while GI is rendering, due to how barriers are handled, this should happen at the same time
+ 	RendererRD::LightStorage *light_storage = RendererRD::LightStorage::get_singleton();
+ 	RendererRD::TextureStorage *texture_storage = RendererRD::TextureStorage::get_singleton();
+@@ -1702,6 +1716,7 @@ void RenderForwardClustered::_process_sss(Ref<RenderSceneBuffersRD> p_render_buf
+ }
+ 
+ void RenderForwardClustered::_render_scene(RenderDataRD *p_render_data, const Color &p_default_bg_color) {
++	GodotProfileZone("fc::_render_scene");
+ 	scene_state.used_uniform_buffer_count = 0;
+ 
+ 	RendererRD::LightStorage *light_storage = RendererRD::LightStorage::get_singleton();
+@@ -2603,6 +2618,7 @@ void RenderForwardClustered::_render_buffers_debug_draw(const RenderDataRD *p_re
+ }
+ 
+ void RenderForwardClustered::_render_shadow_pass(RID p_light, RID p_shadow_atlas, int p_pass, const PagedArray<RenderGeometryInstance *> &p_instances, float p_lod_distance_multiplier, float p_screen_mesh_lod_threshold, bool p_open_pass, bool p_close_pass, bool p_clear_region, RenderingServerTypes::RenderInfo *p_render_info, const Size2i &p_viewport_size, const Transform3D &p_main_cam_transform) {
++	GodotProfileZone("fc::_render_shadow_pass");
+ 	RendererRD::LightStorage *light_storage = RendererRD::LightStorage::get_singleton();
+ 
+ 	ERR_FAIL_COND(!light_storage->owns_light_instance(p_light));
+@@ -3186,6 +3202,7 @@ void RenderForwardClustered::base_uniforms_changed() {
+ }
+ 
+ void RenderForwardClustered::_update_render_base_uniform_set() {
++	GodotProfileZone("fc::_update_render_base_uniform_set");
+ 	RendererRD::LightStorage *light_storage = RendererRD::LightStorage::get_singleton();
+ 
+ 	if (render_base_uniform_set.is_null() || !RD::get_singleton()->uniform_set_is_valid(render_base_uniform_set) || (lightmap_texture_array_version != light_storage->lightmap_array_get_version())) {
+@@ -4138,6 +4155,9 @@ void RenderForwardClustered::GeometryInstanceForwardClustered::_mark_dirty() {
+ 
+ 	surface_caches = nullptr;
+ 
++#if defined(GODOT_USE_TRACY)
++	tracy_marked++;
++#endif
+ 	RenderForwardClustered::get_singleton()->geometry_instance_dirty_list.add(&dirty_list_element);
+ }
+ 
+@@ -4834,16 +4854,34 @@ void RenderForwardClustered::_mesh_generate_all_pipelines_for_surface_cache(Geom
+ }
+ 
+ void RenderForwardClustered::_update_dirty_geometry_instances() {
++	GodotProfileZone("fc::_update_dirty_geometry_instances");
++	int64_t updated = 0;
+ 	while (geometry_instance_dirty_list.first()) {
+ 		_geometry_instance_update(geometry_instance_dirty_list.first()->self());
+-	}
++		updated++;
++	}
++#if defined(GODOT_USE_TRACY)
++	TracyPlot("fc dirty: updated", updated);
++	TracyPlot("fc dirty: marked", tracy_marked);
++	TracyPlot("fc dirty: material", tracy_dirty_by[Dependency::DEPENDENCY_CHANGED_MATERIAL]);
++	TracyPlot("fc dirty: mesh", tracy_dirty_by[Dependency::DEPENDENCY_CHANGED_MESH]);
++	TracyPlot("fc dirty: multimesh", tracy_dirty_by[Dependency::DEPENDENCY_CHANGED_MULTIMESH]);
++	TracyPlot("fc dirty: created", tracy_dirty_by[14]);
++	TracyPlot("fc dirty: dependency deleted", tracy_dirty_by[15]);
++	for (int64_t &n : tracy_dirty_by) {
++		n = 0;
++	}
++	tracy_marked = 0;
++#endif
+ 
+ 	_update_dirty_geometry_pipelines();
+ }
+ 
+ void RenderForwardClustered::_update_dirty_geometry_pipelines() {
++	GodotProfileZone("fc::_update_dirty_geometry_pipelines");
+ 	if (global_pipeline_data_required.key != global_pipeline_data_compiled.key) {
+ 		// Go through the entire list of surfaces and compile pipelines for everything again.
++		GodotProfileZone("fc::pipelines: all surfaces");
+ 		SelfList<GeometryInstanceSurfaceDataCache> *list = geometry_surface_compilation_all_list.first();
+ 		while (list != nullptr) {
+ 			GeometryInstanceSurfaceDataCache *surface_cache = list->self();
+@@ -4864,11 +4902,16 @@ void RenderForwardClustered::_update_dirty_geometry_pipelines() {
+ 			return;
+ 		}
+ 
++		int64_t surfaces = 0;
+ 		while (geometry_surface_compilation_dirty_list.first() != nullptr) {
+ 			GeometryInstanceSurfaceDataCache *surface_cache = geometry_surface_compilation_dirty_list.first()->self();
+ 			_mesh_generate_all_pipelines_for_surface_cache(surface_cache, global_pipeline_data_compiled);
+ 			surface_cache->compilation_dirty_element.remove_from_list();
++			surfaces++;
+ 		}
++#if defined(GODOT_USE_TRACY)
++		TracyPlot("fc pipelines: dirty surfaces", surfaces);
++#endif
+ 	}
+ }
+ 
+@@ -4880,6 +4923,7 @@ void RenderForwardClustered::_geometry_instance_dependency_changed(Dependency::D
+ 		case Dependency::DEPENDENCY_CHANGED_PARTICLES_INSTANCES:
+ 		case Dependency::DEPENDENCY_CHANGED_MULTIMESH:
+ 		case Dependency::DEPENDENCY_CHANGED_SKELETON_DATA: {
++			TRACY_DIRTY(p_notification);
+ 			static_cast<RenderGeometryInstance *>(p_tracker->userdata)->_mark_dirty();
+ 			static_cast<GeometryInstanceForwardClustered *>(p_tracker->userdata)->data->dirty_dependencies = true;
+ 		} break;
+@@ -4895,6 +4939,7 @@ void RenderForwardClustered::_geometry_instance_dependency_changed(Dependency::D
+ 	}
+ }
+ void RenderForwardClustered::_geometry_instance_dependency_deleted(const RID &p_dependency, DependencyTracker *p_tracker) {
++	TRACY_DIRTY(15);
+ 	static_cast<RenderGeometryInstance *>(p_tracker->userdata)->_mark_dirty();
+ 	static_cast<GeometryInstanceForwardClustered *>(p_tracker->userdata)->data->dirty_dependencies = true;
+ }
+@@ -4912,6 +4957,7 @@ RenderGeometryInstance *RenderForwardClustered::geometry_instance_create(RID p_b
+ 	ginstance->data->dependency_tracker.changed_callback = _geometry_instance_dependency_changed;
+ 	ginstance->data->dependency_tracker.deleted_callback = _geometry_instance_dependency_deleted;
+ 
++	TRACY_DIRTY(14);
+ 	ginstance->_mark_dirty();
+ 
+ 	return ginstance;
+diff --git a/servers/rendering/renderer_rd/storage_rd/material_storage.cpp b/servers/rendering/renderer_rd/storage_rd/material_storage.cpp
+index d4906c9..97e6289 100644
+--- a/servers/rendering/renderer_rd/storage_rd/material_storage.cpp
++++ b/servers/rendering/renderer_rd/storage_rd/material_storage.cpp
+@@ -28,6 +28,14 @@
+ /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
+ /**************************************************************************/
+ 
++#include "core/profiling/profiling.h" // profiling
++
++// profiling: which material told its users it changed, and why (a macro: Material is private to MaterialStorage)
++#if defined(GODOT_USE_TRACY)
++#define TRACY_MATERIAL_MESSAGE(m_why, m_material) { String path = (m_material)->shader ? (m_material)->shader->path_hint : String("?"); CharString text = (String("material ") + (m_why) + ": " + path).utf8(); TracyMessage(text.get_data(), text.length()); }
++#else
++#define TRACY_MATERIAL_MESSAGE(m_why, m_material)
++#endif
+ #include "material_storage.h"
+ 
+ #include "core/config/engine.h"
+@@ -2404,6 +2412,7 @@ void MaterialStorage::_material_uniform_set_erased(void *p_material) {
+ 			// if a texture is deleted, so re-create it.
+ 			MaterialStorage::get_singleton()->_material_queue_update(material, false, true);
+ 		}
++		TRACY_MATERIAL_MESSAGE("uniform set erased", material);
+ 		material->dependency.changed_notify(Dependency::DEPENDENCY_CHANGED_MATERIAL);
+ 	}
+ }
+@@ -2436,9 +2445,13 @@ void MaterialStorage::_update_queued_materials() {
+ 		copy.remove(E);
+ 		bool uniforms_changed = false;
+ 
++		bool textures = material->texture_dirty;
+ 		if (material->data) {
+ 			uniforms_changed = material->data->update_parameters(material->params, material->uniform_dirty, material->texture_dirty);
+ 		}
++		if (uniforms_changed) {
++			TRACY_MATERIAL_MESSAGE(textures ? "new uniform set (textures)" : "new uniform set", material);
++		}
+ 		material->texture_dirty = false;
+ 		material->uniform_dirty = false;
+ 
+diff --git a/servers/rendering/renderer_rd/storage_rd/utilities.cpp b/servers/rendering/renderer_rd/storage_rd/utilities.cpp
+index d6e37fe..de0e7ef 100644
+--- a/servers/rendering/renderer_rd/storage_rd/utilities.cpp
++++ b/servers/rendering/renderer_rd/storage_rd/utilities.cpp
+@@ -29,6 +29,7 @@
+ /**************************************************************************/
+ 
+ #include "utilities.h"
++#include "core/profiling/profiling.h" // profiling: the render timestamps as Tracy messages
+ 
+ #include "servers/rendering/renderer_rd/environment/fog.h"
+ #include "servers/rendering/renderer_rd/environment/gi.h"
+@@ -224,6 +225,10 @@ void Utilities::capture_timestamps_begin() {
+ }
+ 
+ void Utilities::capture_timestamp(const String &p_name) {
++#if defined(GODOT_USE_TRACY)
++	CharString name = p_name.utf8();
++	TracyMessage(name.get_data(), name.length());
++#endif
+ 	RD::get_singleton()->capture_timestamp(p_name);
+ }
+ 
+diff --git a/servers/rendering/renderer_scene_cull.cpp b/servers/rendering/renderer_scene_cull.cpp
+index 26a7879..61c99cb 100644
+--- a/servers/rendering/renderer_scene_cull.cpp
++++ b/servers/rendering/renderer_scene_cull.cpp
+@@ -35,6 +35,7 @@
+ #include "core/math/geometry_3d.h"
+ #include "core/object/callable_mp.h"
+ #include "core/object/worker_thread_pool.h"
++#include "core/profiling/profiling.h" // profiling
+ #include "servers/rendering/rendering_light_culler.h"
+ #include "servers/rendering/rendering_server.h"
+ #include "servers/rendering/rendering_server_default.h"
+@@ -2668,6 +2669,7 @@ bool RendererSceneCull::_light_instance_update_shadow(Instance *p_instance, cons
+ }
+ 
+ void RendererSceneCull::render_camera(const Ref<RenderSceneBuffers> &p_render_buffers, RID p_camera, RID p_scenario, RID p_viewport, Size2 p_viewport_size, uint32_t p_jitter_phase_count, float p_screen_mesh_lod_threshold, RID p_shadow_atlas, Ref<XRInterface> &p_xr_interface, float p_window_output_max_value, RenderingServerTypes::RenderInfo *r_render_info) {
++	GodotProfileZone("render_camera");
+ #ifndef _3D_DISABLED
+ 
+ 	Camera *camera = camera_owner.get_or_null(p_camera);
+@@ -3295,6 +3297,7 @@ void RendererSceneCull::_scene_particles_set_view_axis(RID p_particles, const Ve
+ }
+ 
+ void RendererSceneCull::_render_scene(const RendererSceneRender::CameraData *p_camera_data, const Ref<RenderSceneBuffers> &p_render_buffers, RID p_environment, RID p_force_camera_attributes, RID p_compositor, uint32_t p_visible_layers, RID p_scenario, RID p_viewport, RID p_shadow_atlas, RID p_reflection_probe, int p_reflection_probe_pass, float p_screen_mesh_lod_threshold, float p_window_output_max_value, bool p_using_shadows, RenderingServerTypes::RenderInfo *r_render_info) {
++	GodotProfileZone("_render_scene");
+ 	Instance *render_reflection_probe = instance_owner.get_or_null(p_reflection_probe); //if null, not rendering to it
+ 
+ 	// Prepare the light - camera volume culling system.
+@@ -4355,6 +4358,7 @@ void RendererSceneCull::_update_dirty_instance(Instance *p_instance) const {
+ }
+ 
+ void RendererSceneCull::update_dirty_instances() const {
++	GodotProfileZone("update_dirty_instances");
+ 	while (_instance_update_list.first()) {
+ 		_update_dirty_instance(_instance_update_list.first()->self());
+ 	}

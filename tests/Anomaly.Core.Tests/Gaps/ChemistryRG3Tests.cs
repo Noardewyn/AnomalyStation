@@ -479,7 +479,7 @@ public class ChemistryRG3Tests
     }
 
     [Fact]
-    public void TheHumanMutationToxinKeepsAHumanAndAnInertSpeciesIsNotTakenOn()
+    public void TheHumanMutationToxinKeepsAHumanAndTheSlimeOneMakesAJellyperson()
     {
         var (r, _, bob) = Room(10121);
         r.In(() =>
@@ -489,11 +489,11 @@ public class ChemistryRG3Tests
             Waiting.NoSleep(toxin.on_mob_life(bob, 2, 1));
             Assert.IsType<datum_species_human>(bob.dna.species);
             Clear(bob);
-            // the slime mutation toxin's jellyperson is not ported (XB1-2): the human stays a human (GAP(D338))
+            // the slime mutation toxin makes a jellyperson, now ported (gaps SP2c)
             var classic = Dose<datum_reagent_mutationtoxin_classic>(bob, 10);
             classic.current_cycle = 20;
             Waiting.NoSleep(classic.on_mob_life(bob, 2, 1));
-            Assert.IsType<datum_species_human>(bob.dna.species);
+            Assert.IsType<datum_species_jelly_slime>(bob.dna.species);
         });
         r.AssertNoRuntimes();
     }

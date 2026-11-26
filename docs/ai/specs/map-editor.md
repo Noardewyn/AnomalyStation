@@ -355,7 +355,7 @@ sides it joins (`MapEdits.RunPieces`). Placing a type that lies under the floor 
 |---|---|---|
 | Under the floor | The cables, pipes and disposal pipes that an intact floor tile covers, half clear over the tile (the world's: section 3) | off, as the game looks |
 | Markers | The landmarks, the spawners and the mapping helpers (the world's) | on |
-| Areas | A colour over every tile of an area, the same colour in every run, none over the map's default area (the editor's own squares) | off |
+| Areas | A colour over every tile of an area, the same colour in every run, none over the map's default area (the editor's own squares) | off; on by itself while the palette shows the Areas tab |
 | Shuttle docks | The border of the rectangle each docking port's shuttle takes (5.11): a dock's in blue, a shuttle's own in pink | on |
 | Map border | A yellow line around the tiles of the edited level, at its floor and at its walls' tops, with a post at each corner: an empty map is all space and shows nothing else of where it is | on |
 
@@ -902,8 +902,10 @@ the tiles are boxed in red in the view while the panel is in front. The map is c
 | `no_arrivals` | No late-join and no start landmark: nobody can join a round of the map | the editor's own |
 | `ceiling_under_level` | On a level that has a level over it: a `ceiling` that is no floor tile to lay there, or a laid tile with no plating over it, open space or glass (5.12) | the editor's own |
 | `shuttle_ports` | A shuttle's map with more than one port of its own | the editor's own (5.11) |
+| `pipe_conflict` | Two pipes or atmos machines on one layer of a tile (or one of them on all layers, or both one-per-tile) whose ways have one in common, read from the translated classes' `set_init_directions` | tg's wrench rule (`construction.dm` `wrench_act`), not a lint of tg's: what lies beside such a tile joins one of the two, and where that is a component the round's pipenet build fails (`set_pipenet` with a node it does not have) and every SSair fire aborts. MetaStation has a few where nothing beside them breaks. The place tool refuses such a place, as the wrench does, and says why |
+| `space_open_space` | tg's open space of space (`/turf/open/space/openspace`, a vacuum with no end) in a room's area: an open floor under it lets its air up into it (`/turf/open/zAirOut`), so the room empties; a room's open space is `/turf/open/openspace`. An area other than space's placed on such a tile makes it `/turf/open/openspace` (`MapEdits.Place`): new levels are filled with space's open space, and a room built up through them is meant to hold air | the editor's own |
 
-A test holds tg's rules to tg's own station: they find nothing on MetaStation, which passes tg's lint. Whether a slot's
+A test holds tg's rules to tg's own station: they find nothing on MetaStation, which passes tg's lint (the wrench rule finds fewer than ten). Whether a slot's
 shuttle fits its dock is told in the Map panel (5.11).
 
 **A program of its own.** The editor is the client built with the map editor in, started with `--editor`. The owner
@@ -1194,6 +1196,10 @@ the level alike:
   (`EditorCeilingAt`). A layer taken off a rule's plating is written as `"none"`.
 - A stroke or a shape that began on the floor does not take to the ceiling, nor the other way.
 - A ceiling's height is its level's: the tool bar's height builds none over it.
+- The place where a ceiling would be, in a room taller than a level, is the top of its walls (the owner, 2026-11-25): where
+  the tile over the empty ceiling is open and something stands on each side of it on that level before the map's edge,
+  the ray goes on up, to the top level shown (`EditorRoomGoesUp`). A room under open space keeps its own level's
+  ceiling; a floor between the two levels of a tall room is placed from above.
 - Plating made over a room from under it is in the room's area where its own tile had none (the map's default): it
   would be a floor in the area of space, which the checks name.
 - The preview shows no ceiling ahead: the line at the mouse says what a click does, and what it would not do (glass
@@ -1349,6 +1355,33 @@ again what stands beside a cell whose wall came or went, where the renderer's ta
 so a wall taken down leaves no panel in the air either. A floor laid where the received map has space had its first
 picture asked for when the icons already load on worker threads, got the flat tint of a missing picture and kept it: a
 chunk made while a sheet of its pictures was loading is made again when a load lands (`_turfsAwaitingIcons`).
+
+### 5.23 The gas of the tiles (done; the owner, 2026-11-25)
+
+The owner: a handy tool to set the gas of the selected tiles, like the dev menu's gas tab, and the gases drawn as in the
+game.
+
+- **What it sets.** The `initial_gas_mix` var of each selected tile's turf: tg's gas string, the moles of each gas on
+  the tile by its id and `TEMP` in kelvin (`o2=22;n2=82;TEMP=293.15`). Walls hold no air and are skipped. Without the
+  var a tile has its floor type's own gas (an `engine/o2` floor its 100 000 mol of oxygen); the map's "air inside"
+  (DV505) still reaches only the floors with tg's default air.
+- **The Tile panel's Gas row** says what the selected tile, or every tile of the selected rectangles, starts with: the
+  map's mix, "the floor's own: ..." with the type's, "mixed", or "none (a wall)"; each as its gases, temperature and
+  pressure on a tile (tg's n R T / V, `GasMix.Kpa`).
+- **Edit...** opens a window: Normal air, Vacuum (tg's `AIRLESS_ATMOS`) and Gas tank (the listed gases, 100 000 mol
+  in all, as tg's chambers hold) to start from; a row for each gas with tg's colour, name and moles; tg's other gases
+  to add (the dev menu's list, `GasCatalog`); the temperature with Celsius beside it; the pressure; and the string as
+  text, which may be typed. Apply sets it on the selection as one step; "The floor's own" takes the var away. A
+  string that is no gas mix (one of tg's named atmospheres) is shown as it is.
+- **The view.** The editor's world stands before the round, where tg's SSair does not fire and no turf redraws its
+  gas overlays; a changed tile draws its own at once (`MapEditSeam.SetTiles`: `update_visuals`), so the haze of the
+  game (GasLayer, D18) shows what a tile starts with. The gas does not spread in the editor.
+- Console: `editor gas MIX` and `editor gas own` over the selection, `editor gas window` opens the window.
+
+Tests: `Client/Editor/MapEditsTests` (a tile's gas, its type's own, a wall; a gas string read and written).
+Checked in the real editor by script: a rectangle of floors with a wall in it set to 100 000 mol of oxygen (the wall
+kept, the tile outside untouched, undo and redo), the window, and plasma set and taken away in a sealed room, the haze
+coming and going at once.
 
 ## 6. Measurements (ME0, 2026-11-16, the owner's Mac)
 

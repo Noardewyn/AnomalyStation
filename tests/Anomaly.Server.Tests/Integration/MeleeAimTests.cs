@@ -147,7 +147,7 @@ public class MeleeAimTests(ITestOutputHelper output)
     }
 
     /// <summary>
-    /// Package T, slice T4a (protocol 95): a click aimed at the eyes, the mouth or the groin selects tg's precise zone through tg's own zone selector,
+    /// Package T, slice T4a (protocol 98): a click aimed at the eyes, the mouth or the groin selects tg's precise zone through tg's own zone selector,
     /// which the clicker's HUD then draws; and tg's own branches read it: a screwdriver aimed at the head hits the head, aimed at the eyes it is tg's
     /// eye stab (<c>/datum/element/eyestab</c>, COMSIG_ITEM_ATTACK when <c>zone_selected</c> is <c>BODY_ZONE_PRECISE_EYES</c>), which hurts the eyes.
     /// </summary>

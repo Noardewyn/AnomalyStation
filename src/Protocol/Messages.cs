@@ -26,7 +26,7 @@ public readonly record struct SessionToken(ulong Low, ulong High)
 /// <summary>
 /// Client to server, the first and only message before <see cref="Welcome"/>; it travels in the transport's connection
 /// request data, so the server refuses a bad one before a connection exists (a request flood is cheap to refuse). Wire:
-/// <c>[Hello][magic "ANOM"][u16 protocol][name][u8 flags][token if flags bit 0][login token if flags bit 1]</c> (docs/ai/specs/protocol.md section 3.1). The server answers with a reject
+/// <c>[Hello][magic "ANOM"][u16 protocol][name][u8 flags][token if flags bit 0][login token if flags bit 1]</c> (flags bit 2: <paramref name="WaitsForLoad"/>) (docs/ai/specs/protocol.md section 3.1). The server answers with a reject
 /// (<see cref="DisconnectInfo"/>) or, once the world accepted the player (tg's <c>client/New</c> and <c>mob/Login</c>
 /// finished), with the join sequence.
 /// </summary>
@@ -34,7 +34,12 @@ public readonly record struct SessionToken(ulong Low, ulong High)
 /// <param name="Name">The player's name, at most <see cref="Limits.MaxNameChars"/> characters, no control characters. It becomes the BYOND key of the session (the tg <c>client.key</c>; <c>ckey</c> is its canonical form).</param>
 /// <param name="ReconnectToken">The token of an earlier <see cref="Welcome"/> to take that session back, or <see cref="SessionToken.None"/>.</param>
 /// <param name="LoginToken">Version 85 (D335): the hub's game token the launcher handed the client (an ES256 JWT of at most <see cref="Limits.MaxLoginTokenBytes"/> bytes that names the account and this server), or null. A server that holds the hub's key takes the account's name from it in place of <paramref name="Name"/>; a server without one does not read it.</param>
-public readonly record struct Hello(ushort Protocol, string Name, SessionToken ReconnectToken, string LoginToken = null);
+/// <param name="WaitsForLoad">
+/// Version 97 (DV597): the client loads the world before it plays and says so with <see cref="ActionKind.Loaded"/>: until then the server keeps
+/// the new player in tg's lobby (<c>/mob/dead/new_player</c>, no body) and does not late-join it. The game's own client sets it; a bot or a test
+/// rig that plays at once does not.
+/// </param>
+public readonly record struct Hello(ushort Protocol, string Name, SessionToken ReconnectToken, string LoginToken = null, bool WaitsForLoad = false);
 
 /// <summary>
 /// Server to client, State channel, the first message of the join sequence (Welcome, <see cref="MapGrid"/>,

@@ -84,7 +84,7 @@ public class HumanStackGoldenTests
         // healed: the next update cuts the damage appearance
         // (HEAL_ALL would reach cure_all_traumas, not translated: M8)
         rig.Room.Command(() => Waiting.NoSleep(rig.Human.fully_heal(HEAL_BRUTE | HEAL_BURN)));
-        rig.Room.Step();
+        rig.Room.Step(8); // and the damaged part's red flash (DV400, 3 ds) has gone out
         Assert.Null(rig.DamageOverlay());
         Assert.Equal(HealthyStack(Skin), rig.Room.In(() => rig.Overlays().Select(Entry).ToArray()));
         rig.Room.AssertNoRuntimes();

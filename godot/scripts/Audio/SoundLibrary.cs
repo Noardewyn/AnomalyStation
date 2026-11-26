@@ -28,6 +28,7 @@ public sealed class SoundLibrary
 
     private readonly SoundCache<Loaded> _cache;
     private readonly HashSet<string> _missing = new(StringComparer.Ordinal);
+    private readonly Dictionary<string, Loaded> _kept = new(StringComparer.Ordinal); // the start's preload (AssetPreload): outside the cache's budget, never evicted
     private readonly SoundIndex _index;
 
     public SoundLibrary(string root = null, long budgetBytes = DefaultBudgetBytes)
@@ -73,21 +74,25 @@ public sealed class SoundLibrary
     {
         if (string.IsNullOrEmpty(path) || _missing.Contains(path))
             return null;
-        if (!_cache.TryGet(path, out Loaded loaded))
+        if (!_cache.TryGet(path, out Loaded loaded) && !_kept.TryGetValue(path, out loaded))
         {
-            loaded = Load(path, out long bytes);
+            loaded = Load(path, out long bytes, out bool preloaded);
             if (loaded == null)
                 return null;
-            _cache.Add(path, loaded, bytes);
+            if (preloaded)
+                _kept[path] = loaded;
+            else
+                _cache.Add(path, loaded, bytes);
         }
         if (!repeat)
             return loaded.OneShot;
         return loaded.Loop ??= LoopingCopy(path, loaded.OneShot);
     }
 
-    private Loaded Load(string path, out long bytes)
+    private Loaded Load(string path, out long bytes, out bool preloaded)
     {
         bytes = 0;
+        preloaded = false;
         string format = "ogg";
         string relative = path;
         if (_index != null && _index.TryGet(path, out SoundIndexEntry entry))
@@ -102,16 +107,23 @@ public sealed class SoundLibrary
             return null;
         }
         string file = Path.Combine(Root, relative);
+        if (AssetPreload.TrySound(file, out AudioStream kept))
+        {
+            preloaded = true;
+            LoadedFiles++;
+            return new Loaded { OneShot = kept };
+        }
         if (!File.Exists(file))
         {
             Miss(path, "no file " + file);
             return null;
         }
         AudioStream stream = null;
+        long started = System.Diagnostics.Stopwatch.GetTimestamp();
         switch (format)
         {
             case "ogg":
-                stream = AudioStreamOggVorbis.LoadFromFile(file);
+                stream = LoadOgg(file);
                 break;
             case "wav":
                 stream = AudioStreamWav.LoadFromFile(file);
@@ -128,6 +140,7 @@ public sealed class SoundLibrary
             Miss(path, "Godot could not read " + file + " as " + format);
             return null;
         }
+        AssetPreload.Miss("sound", path, System.Diagnostics.Stopwatch.GetElapsedTime(started).TotalMilliseconds, blocked: true);
         if (bytes <= 0)
             bytes = new FileInfo(file).Length;
         LoadedFiles++;
@@ -163,6 +176,14 @@ public sealed class SoundLibrary
     private const int SeamPadFrames = 512;
 
     // DEVIATION(DV228): a short loop whose ends fade plays as a decoded copy with its tail crossfaded into its head.
+    /// <summary>An Ogg Vorbis file read with its comments mended first (<see cref="VorbisComments"/>: Godot warns about each one without '=').</summary>
+    public static AudioStreamOggVorbis LoadOgg(string file)
+    {
+        byte[] bytes = File.ReadAllBytes(file);
+        VorbisComments.Repair(bytes);
+        return AudioStreamOggVorbis.LoadFromBuffer(bytes);
+    }
+
     private static AudioStreamWav SeamlessCopy(AudioStreamOggVorbis ogg)
     {
         double seconds = ogg.GetLength();

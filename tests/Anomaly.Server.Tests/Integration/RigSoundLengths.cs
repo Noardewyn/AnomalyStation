@@ -154,6 +154,7 @@ internal static class RigSoundLengths
         ["sound/ambience/space/ambispace4.ogg"] = 585.309f,
         ["sound/ambience/space/ambispace5.ogg"] = 429.147f,
         ["sound/ambience/space/ambispace6.ogg"] = 954.48f,
+        ["sound/effects/droplet.ogg"] = 6.5306f, // the moisture trap's drip loop (a random spawner can roll one at boot)
         ["sound/effects/ghost.ogg"] = 84.0533f,
         ["sound/effects/ghost2.ogg"] = 17.2417f,
         ["sound/effects/hallucinations/behind_you1.ogg"] = 39.4449f,

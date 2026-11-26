@@ -6,9 +6,14 @@
 </p>
 
 <p align="center">
+  <a href="https://discord.com/invite/3QYKDaWVX3"><img src="https://img.shields.io/badge/Discord-join%20us-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://www.youtube.com/@AnomalyStation3D"><img src="https://img.shields.io/badge/YouTube-subscribe-FF0000?logo=youtube&logoColor=white" alt="YouTube"></a>
+  <a href="https://ko-fi.com/anomalystation3d"><img src="https://img.shields.io/badge/Ko--fi-donate-FF5E5B?logo=kofi&logoColor=white" alt="Donate on Ko-fi"></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/Noardewyn/AnomalyStation/actions/workflows/ci.yml?query=branch%3Amain"><img src="https://img.shields.io/github/actions/workflow/status/Noardewyn/AnomalyStation/ci.yml?branch=main&label=CI&logo=github" alt="CI status"></a>
   <a href="https://github.com/Noardewyn/AnomalyStation/releases/latest"><img src="https://img.shields.io/github/v/release/Noardewyn/AnomalyStation?include_prereleases&label=release" alt="Latest release"></a>
-  <a href="https://discord.com/invite/3QYKDaWVX3"><img src="https://img.shields.io/badge/Discord-join%20us-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-AGPL--3.0-blue" alt="Code license: AGPL-3.0"></a>
   <a href="LICENSE-ASSETS"><img src="https://img.shields.io/badge/assets-CC%20BY--SA%203.0-lightgrey" alt="Asset license: CC BY-SA 3.0"></a>
   <img src="https://img.shields.io/badge/Godot-4.7%20mono-478CBF?logo=godotengine&logoColor=white" alt="Godot 4.7 mono">

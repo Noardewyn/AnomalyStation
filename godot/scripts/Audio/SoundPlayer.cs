@@ -312,13 +312,14 @@ public partial class SoundPlayer : Node
 
     /// <summary>
     /// A sound of the client's own, heard by the player alone (DV586: the own swing's whoosh): a centred play on any free channel at tg's
-    /// <paramref name="volume"/> (0 to 100) with tg's vary (get_rand_frequency, 32000 to 55000), through the mixer as the server's sounds go.
+    /// <paramref name="volume"/> (0 to 100) with tg's vary (get_rand_frequency, 32000 to 55000) unless <paramref name="vary"/> is false, through
+    /// the mixer as the server's sounds go.
     /// </summary>
-    public void PlayOwn(string file, float volume)
+    public void PlayOwn(string file, float volume, bool vary = true)
     {
         if (Mixer == null)
             return;
-        var play = new SoundEvent { Kind = SoundKind.Play, File = file, Volume = (byte)Math.Clamp(volume * 2f, 0f, 200f), Frequency = Random.Shared.Next(32000, 55001) };
+        var play = new SoundEvent { Kind = SoundKind.Play, File = file, Volume = (byte)Math.Clamp(volume * 2f, 0f, 200f), Frequency = vary ? Random.Shared.Next(32000, 55001) : 0 };
         Run(Mixer.Apply(new[] { play }, App.NowSeconds, Listener()));
     }
 

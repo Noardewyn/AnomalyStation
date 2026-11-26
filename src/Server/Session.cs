@@ -82,6 +82,15 @@ public sealed class Session
 
     public SessionState State { get; set; }
 
+    /// <summary>Version 97 (DV597): the client's Hello said it loads the world before it plays (<see cref="Hello.WaitsForLoad"/>); its Joins say so.</summary>
+    public bool WaitsForLoad { get; init; }
+
+    /// <summary>
+    /// DV597, the world half: the Join said the client loads first and no <see cref="ActionKind.Loaded"/> has come since, so the direct join (no
+    /// lobby) leaves its new player in tg's lobby. Each Join (a new round's too) sets it again from the command.
+    /// </summary>
+    public bool AwaitingLoad { get; set; }
+
     /// <summary>
     /// The tg client while the session is in the world (from the Join to the Leave). The host holds it only while
     /// <c>GLOB.clients</c> does too and drops it at <c>IClientHost.ClientDeleted</c>, so it never keeps a deleted client
@@ -262,6 +271,9 @@ public sealed class Session
     // Version 89: tg's ClickOn refuses the own mob's clicks (incapacitated or TRAIT_HANDS_BLOCKED), read with the access.
     internal bool HandsBlocked;
 
+    // Version 95: the own mob's melee click cooldown in milliseconds (ServerHost.MeleeCooldownMs), read with the access.
+    internal int MeleeCooldownMs = OwnBlock.DefaultMeleeCooldownMs;
+
     // The host's clock when each pending action arrived (Stopwatch ticks), aligned with PendingActions: a click's age when its
     // Delta is sent is the server's part of click_ms (ServerHost.ClickLatency).
     internal readonly List<long> PendingStamps = new();
@@ -280,11 +292,11 @@ public sealed class Session
     internal uint LastFrameSeq;
     internal ushort LastYaw;
 
-    // Version 95 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
+    // Version 98 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
     // none left (ServerHost.CatchUpLooks); set and cleared only by applied commands and the world, so a replay holds the same.
     internal QueuedCommand? FrozenLook;
 
-    // DEVIATION(DV589): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
+    // DEVIATION(DV601): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
     // screentip router, which tg calls for that hover later in the tick (SSmouse_entered's fire), sends its hints empty and clears this. Null
     // when it was in reach, a screen target, or the mob's clicks are not gated by reach.
     internal Anomaly.Core.Tg.atom HoverOutOfReach;

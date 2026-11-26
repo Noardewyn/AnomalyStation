@@ -859,8 +859,25 @@ public partial class mob_living_carbon_human : mob_living_carbon
     // tg: code/modules/mob/living/carbon/human/human.dm:1051
     public virtual object is_atmos_sealed(object additional_flags = null, float? check_hands = null)
     {
-        Dm.NotTranslated("code/modules/mob/living/carbon/human/human.dm:1051", "is_atmos_sealed: not in M2 (M4a/M8/M10+ rest)");
-        return default;
+        check_hands ??= FALSE;
+        bool chest_covered = false;
+        bool head_covered = false;
+        bool hands_covered = false;
+        foreach (obj_item_clothing equipped in Dm.each<obj_item_clothing>(get_equipped_items(INCLUDE_ABSTRACT)))
+        {
+            // We don't really have space-proof gloves, so even if we're checking them we ignore the flags
+            if (Dm.truthy(Dm.bitand(equipped.body_parts_covered, HANDS)) && num_hands >= default_num_hands)
+                hands_covered = true;
+            if (Dm.truthy(Dm.bitand(equipped.clothing_flags, Dm.bitor(STOPSPRESSUREDAMAGE, additional_flags))) && Dm.truthy(Dm.bitand(equipped.body_parts_covered, CHEST)))
+                chest_covered = true;
+            if (Dm.truthy(Dm.bitand(equipped.clothing_flags, Dm.bitor(STOPSPRESSUREDAMAGE, additional_flags))) && Dm.truthy(Dm.bitand(equipped.body_parts_covered, HEAD)))
+                head_covered = true;
+        }
+        if (!chest_covered)
+            return FALSE;
+        if (!hands_covered && Dm.truthy(check_hands))
+            return FALSE;
+        return (head_covered || HAS_TRAIT(this, TRAIT_HEAD_ATMOS_SEALED)) ? TRUE : FALSE;
     }
 
     // tg: code/modules/mob/living/carbon/human/human.dm:1069  (the M7 shocks slice)

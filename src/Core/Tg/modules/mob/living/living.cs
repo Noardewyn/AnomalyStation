@@ -2881,7 +2881,7 @@ public partial class mob_living : mob
         dot = body_position;
         body_position = Dm.num(new_value);
         if (body_position != LYING_DOWN)
-            dm_turned_side = 0; // DEVIATION(DV588): the side the radial's Turn over put the body on is forgotten when it gets up
+            dm_turned_side = 0; // DEVIATION(DV600): the side the radial's Turn over put the body on is forgotten when it gets up
         if (Dm.truthy(_listen_lookup?[COMSIG_LIVING_SET_BODY_POSITION]))
             _SendSignal(COMSIG_LIVING_SET_BODY_POSITION, Dm.list(this, new_value, dot));
         if (Dm.eq(new_value, LYING_DOWN)) // From standing to lying down.

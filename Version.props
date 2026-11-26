@@ -12,8 +12,8 @@
     and until it does Anomaly.Protocol builds with warning ANOMVER01. tools/release.sh writes both numbers.
   -->
   <PropertyGroup>
-    <Version>1.12.0-pre-alpha</Version>
-    <AnomalyProtocolVersion>94</AnomalyProtocolVersion>
+    <Version>1.14.0-pre-alpha</Version>
+    <AnomalyProtocolVersion>97</AnomalyProtocolVersion>
   </PropertyGroup>
 
   <Target Name="AnomalyCheckProtocolVersion" BeforeTargets="CoreCompile" Condition=" '$(MSBuildProjectName)' == 'Anomaly.Protocol' ">

@@ -613,6 +613,9 @@ public static partial class GlobalProcs
     // tg: code/__DEFINES/is_helpers.dm:135  #define isabductor(A) (is_species(A, /datum/species/abductor)) (gaps P1: the dissection's value)
     public static bool isabductor(object A) => Dm.truthy(is_species(A, typeof(datum_species_abductor)));
 
+    // tg: code/__DEFINES/is_helpers.dm:150  #define isdullahan(A) (is_species(A, /datum/species/dullahan))
+    public static bool isdullahan(object A) => Dm.truthy(is_species(A, typeof(datum_species_dullahan)));
+
     // tg: code/__DEFINES/is_helpers.dm:137  #define isgolem(A) (is_species(A, /datum/species/golem)) (gaps P1: the dissection's value)
     public static bool isgolem(object A) => Dm.truthy(is_species(A, typeof(datum_species_golem)));
 

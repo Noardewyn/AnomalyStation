@@ -245,6 +245,12 @@ public sealed class ServerConfig
     public bool StationTraits { get; init; }
 
     /// <summary>
+    /// D349: every ported species can be picked in Character Setup (<c>--all-species-roundstart</c>, <c>ALL_SPECIES_ROUNDSTART</c>), for
+    /// testing; without it the host writes tg's own <c>ROUNDSTART_RACES</c> (game_options.txt:365-390).
+    /// </summary>
+    public bool AllSpeciesRoundstart { get; init; }
+
+    /// <summary>
     /// Gaps R6 (D332): the round's clock at the real date (<c>--real-date</c>, <c>REAL_DATE</c>; the shipped config/server.txt turns it
     /// on): the first world's <c>world.realtime</c> starts at the host's wall clock (UTC, DV3), each next round's where the last one ended,
     /// and the host writes tg's <c>ALLOW_HOLIDAYS</c> (config.txt:260, as tgstation ships it), so the holidays come by the calendar.
@@ -457,6 +463,7 @@ public sealed class ServerConfig
         ["open_jobs"] = ("open_jobs", Kind.Flag),
         ["station_traits"] = ("station_traits", Kind.Flag),
         ["no_station_traits"] = ("no_station_traits", Kind.Flag),
+        ["all_species_roundstart"] = ("all_species_roundstart", Kind.Flag),
         ["real_date"] = ("real_date", Kind.Flag),
         ["no_real_date"] = ("no_real_date", Kind.Flag),
         ["models_catalog"] = ("models_catalog", Kind.Text),
@@ -769,6 +776,7 @@ public sealed class ServerConfig
             Lobby = Flag(values, "lobby") && !Flag(values, "no_lobby"), // the command line's off wins over the file's on
             OpenJobs = Flag(values, "open_jobs"),
             StationTraits = Flag(values, "station_traits") && !Flag(values, "no_station_traits"), // the command line's off wins over the file's on
+            AllSpeciesRoundstart = Flag(values, "all_species_roundstart"),
             RealDate = Flag(values, "real_date") && !Flag(values, "no_real_date"), // the command line's off wins over the file's on
             ModelsCatalog = Text(values, "models_catalog"),
             SoundIndex = Text(values, "sound_index") ?? d.SoundIndex,

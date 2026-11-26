@@ -534,6 +534,8 @@ public partial class obj_item_organ_cyberimp_arm_strongarm : obj_item_organ_cybe
             return NONE;
         if (!Dm.truthy(source.can_unarmed_attack()))
             return COMPONENT_SKIP_ATTACK;
+        if (aimed_limb_missing(source, target)) // DEVIATION(DV592)
+            return COMPONENT_SKIP_ATTACK;
 
         mob_living living_target = (mob_living)target;
         object picked_hit_type = pick("punch", "smash", "pummel", "bash", "slam");
@@ -619,7 +621,8 @@ public partial class obj_item_organ_cyberimp_arm_strongarm : obj_item_organ_cybe
         if (ishuman(target))
             slam_cooldown = world.time + slam_cooldown_duration; // COOLDOWN_START (__DEFINES/cooldowns.dm:111), inline
 
-        object target_zone = living_target.get_random_valid_zone(source.zone_selected);
+        // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+        object target_zone = living_target.get_random_valid_zone(source.zone_selected, 100);
         object armor_block = living_target.run_armor_check(target_zone, MELEE, armour_penetration: potential_effectiveness);
         Waiting.NoSleep(living_target.apply_damage(potential_damage * 2, attacking_bodypart.attack_type as string, target_zone, Dm.num(armor_block)));
 

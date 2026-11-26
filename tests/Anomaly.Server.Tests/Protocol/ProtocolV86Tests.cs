@@ -11,7 +11,7 @@ public class ProtocolV86Tests
         var pick = new ActionMessage(9, ActionKind.ContextPick, 42, ClickButton.None, ClickModifiers.None, "Flip") { TargetKind = TargetKind.Entity };
         Assert.True(Codec.TryDecode(Codec.Encode(pick), out ActionMessage back, out ProtocolError error), error.ToString());
         Assert.Equal(pick, back);
-        Assert.Equal(ActionKind.ContextPick, ActionKinds.Last);
+        Assert.True(ActionKinds.Last >= ActionKind.ContextPick);
         Assert.Equal(ContextHintAction.Extra, ContextHintAction.Last);
         Assert.Throws<ProtocolException>(() => Codec.Encode(pick with { Text = null }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(pick with { Target = 0, TargetKind = TargetKind.None }));

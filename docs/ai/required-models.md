@@ -767,6 +767,13 @@ dye: a greyscale model tinted at run time).
   smooth, dark tiger, light tiger and spikes tails, each with a **wagging** animation (`m_tail_lizard_wagging_<style>_*`, tg's
   animated states), and their **tail spines** (`lizard_spines.dmi`, `m_tailspines_*`: short, long, the membranes, aquatic) riding on the
   tail and wagging with it. Meanwhile tg's sprites.
+- **Moth body, wings and antennae** (gaps SP2a, `species_parts/moth_bodyparts.dm`, `icons/mob/human/species/moth/`: `bodyparts.dmi`
+  `moth_*`, `moth_wings.dmi` `m_moth_wings_<style>_FRONT/BEHIND`, `moth_antennae.dmi`, `moth_markings.dmi`): the fuzzy head, chest and
+  limbs with their body markings, the large **wings** (about 25 styles, including the burnt-off one, opening and closing for the flap)
+  and the feathery **antennae**; the wings are the part that matters in 3D (they show the drift in zero gravity). Meanwhile tg's sprites.
+- **Plasmaman body and envirosuits** (gaps SP2a, `species_parts/plasmaman_bodyparts.dm`, `icons/mob/human/species/plasmaman/bodyparts.dmi`;
+  `icons/mob/clothing/under/plasmaman.dmi`, `icons/mob/clothing/head/plasmaman_head.dmi`): the skeleton's bones, one **envirosuit** and
+  one **helmet** per job (with the welding visor, the torch light and the crayon smile overlay) and the envirogloves. Meanwhile tg's sprites.
 - **Snouts, horns and frills** (gaps SP1, `icons/mob/human/species/lizard/lizard_misc.dmi`, `m_snout_*`, `m_horns_*`, `m_frills_*`): the
   sharp and round snouts with their light-belly kinds; the simple, short, curled, ram and angler horns; the simple, short and aquatic
   frills. Meanwhile tg's sprites.
@@ -778,6 +785,21 @@ dye: a greyscale model tinted at run time).
   inner ear, the cat, big, coeurl, fold, lynx, round and cybernetic ears with the cybernetic kinds' coloured inner ears;
   `m_tail_cat_*` with its wagging states): ears on top of the human head, the inner ear its own coloured part, and a cat tail with its
   wag. Meanwhile tg's sprites.
+- **Skeleton body** (gaps SP3a, `species_parts/misc_bodyparts.dm`, `icons/mob/human/species/misc/skeleton.dmi`, the `skeleton_*` states): the bare bone head, chest, arms and legs, plus the **degloved bone limbs** (`bone_*` states, with their `_blood` overlay) a dismembered skeleton leaves. Meanwhile tg's sprites.
+- **Golem body** (gaps SP3a, `icons/mob/human/species/golems.dmi`, the `golem_*` states): the rock head, chest, arms and legs, and the **mineral veins** a golem grows from the metals it eats (`uranium_*`, `silver_*`, `plasma_*`, `iron_*`, `gold_*`, `diamond_*`, `platinum_*`, `banana_*` per body zone). Meanwhile tg's sprites.
+- **Zombie claws and infection** (gaps SP3a, `icons/effects/blood.dmi` `bloodhand_left/right`, `icons/obj/medical/organs/organs.dmi` `blacktumor`): the held mutant claw (a held, undroppable hand model) and the black ooze organ. Meanwhile tg's sprites.
+
+- **Ethereal body** (gaps SP2b, `species_parts/ethereal_bodyparts.dm`, `icons/mob/human/species/ethereal/bodyparts.dmi`, the `ethereal_*` states): the crystalline head, chest, arms and legs, glowing in the ethereal's colour (the glow's colour follows health; an emissive limb material rather than a tint). Meanwhile tg's sprites.
+- **Podperson body and hair** (gaps SP2b, `icons/mob/human/bodyparts_greyscale.dmi` `pod_*`, `icons/mob/human/species/podperson_hair.dmi` `m_pod_hair_*`): the leafy limbs and the eleven hairstyles (ivy, cabbage, spinach, prayer, vine, shrub, rose, orchid, fig, hibiscus), a front and an adjacent part each. Meanwhile tg's sprites.
+- **Mushroomperson body and cap** (gaps SP2b, `bodyparts_greyscale.dmi` `mush_*`, `icons/mob/human/species/mush_cap.dmi` `m_caps_*`): the stalk-like limbs and the red mushroom cap on the head, hidden by headgear. Meanwhile tg's sprites.
+- **Snailperson body and shell** (gaps SP2b, `bodyparts_greyscale.dmi` `snail_*`, `icons/mob/clothing/back/backpack.dmi` `snailshell`): the slimy limbs and the armoured shell on the back. Meanwhile tg's sprites.
+
+- **Jelly body** (gaps SP2c, `icons/mob/human/species/jelly/` limbs, `jelly_*`, `slime_*`, `luminescent_*` states): the translucent
+  head, chest, arms and legs of the jellyperson, slimeperson and luminescent (the hair at 150 alpha, the skeleton and three eyes
+  showing through), in the mutant colour. Meanwhile tg's sprites.
+- **Cerulean body and tail** (gaps SP2c, `icons/mob/human/species/cerulean/cerulean_tails.dmi`: `default`, `skeleton`, `abyss_*`): the
+  oversized fish tail that replaces the legs (a wide, tall, two-layer model behind and beside the torso, in the fish tail colour), the
+  aquatic frills, and the abyss variant's translucent skeleton with its glow. Meanwhile tg's sprites.
 
 ## Medicines and toxins
 - **Ice block** (gaps RG2, `xenobiology/crossbreeding/_misc.dm:127`, `icons/obj/science/slimecrossing.dmi` state `frozen`): a man-high
@@ -809,3 +831,5 @@ what the bitrunning machinery (gaps BR1) still draws in 2D:
 - **The virtual domains' props** (gaps BR1-2, `_maps/virtual_domains/*.dmm`): the domains reuse the station's and the ruins' things;
   their own are the binary floor and wall (`icons/turf/floors.dmi` `binary`, `bitrunning`), drawn as flat textures, and the host
   monitor (`icons/obj/devices/scanner.dmi` `host_monitor`), an item in 2D.
+- **Abductor, dullahan, ghost, shadow and vampire bodies** (gaps SP3b, `species_parts/misc_bodyparts.dm`, `icons/mob/human/species/abductor/`, `dullahan`, `ghost`, `shadow`): the grey three-fingered limbs; the detached **dullahan head** held in the hands (its own orbiting-free model with the eyes inside); the legless **ghost** chest with its see-through limbs; the see-through **shadow** limbs. Meanwhile tg's sprites.
+- **Nightmare light eater** (gaps SP3b, `icons/obj/weapons/Nightmare_items.dmi` `light_eater`, `icons/mob/inhands/antag/nightmare_*`, the `crit_glow` outline): the armblade the heart of darkness grows, held in the hand with the critical-strike glow; and the **shadow walk** holder (`purple_laser`). Meanwhile tg's sprites.

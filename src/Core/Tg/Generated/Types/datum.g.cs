@@ -9561,9 +9561,9 @@ public partial class datum_bodypart_overlay_simple_roach_shell
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:154
-[DmPath("/datum/bodypart_overlay/simple/golem_overlay"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_simple_golem_overlay : datum_bodypart_overlay_simple
+// tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:154 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/simple/golem_overlay")]
+public partial class datum_bodypart_overlay_simple_golem_overlay
 {
     public datum_weakref attached_bodypart; // tg: code/game/objects/items/stacks/golem_food/golem_status_effects.dm:162
 
@@ -9667,9 +9667,9 @@ public partial class datum_bodypart_overlay_mutant_tail_fish
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:227
-[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean : datum_bodypart_overlay_mutant_tail_fish
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:227 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean")]
+public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean
 {
     public DmList locked_sprite_datums; // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:232
 
@@ -9682,12 +9682,12 @@ public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean : datum_bo
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:266
-[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyss"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean_abyss : datum_bodypart_overlay_mutant_tail_fish_cerulean { }
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:266 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyss")]
+public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean_abyss { }
 
 // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:311
-[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/skeletal"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/bodypart_overlay/mutant/tail/fish/cerulean/skeletal"), DmGeneratedOnly]
 public partial class datum_bodypart_overlay_mutant_tail_fish_cerulean_skeletal : datum_bodypart_overlay_mutant_tail_fish_cerulean
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:311
@@ -9762,9 +9762,9 @@ public partial class datum_bodypart_overlay_mutant_tail_lizard : datum_bodypart_
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:105
-[DmPath("/datum/bodypart_overlay/mutant/mushroom_cap"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_mutant_mushroom_cap : datum_bodypart_overlay_mutant
+// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:105 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/mutant/mushroom_cap")]
+public partial class datum_bodypart_overlay_mutant_mushroom_cap
 {
     // tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:106
     public datum_bodypart_overlay_mutant_mushroom_cap()
@@ -10224,9 +10224,9 @@ public partial class datum_bodypart_texture_mesh_space : datum_bodypart_texture_
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:280
-[DmPath("/datum/bodypart_texture/cerulean_abyss"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_texture_cerulean_abyss : datum_bodypart_texture { }
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:280 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_texture/cerulean_abyss")]
+public partial class datum_bodypart_texture_cerulean_abyss { }
 
 // tg: code/datums/cinematics/_cinematic.dm:34 (the var block of a hand-written class)
 [DmPath("/datum/cinematic")]
@@ -27561,9 +27561,9 @@ public partial class datum_stack_recipe_list
     public DmList recipes; // tg: code/game/objects/items/stacks/stack_recipe.dm:106
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:4
-[DmPath("/datum/golem_food_buff"), DmGeneratedOnly, DmInert]
-public partial class datum_golem_food_buff : datum
+// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/golem_food_buff")]
+public partial class datum_golem_food_buff
 {
     public float exclusive = 1; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:4
     public float nutrition = 2; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:6
@@ -27572,7 +27572,7 @@ public partial class datum_golem_food_buff : datum
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:32
-[DmPath("/datum/golem_food_buff/glass"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/glass"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_glass : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:32
@@ -27584,9 +27584,9 @@ public partial class datum_golem_food_buff_glass : datum_golem_food_buff
     }
 }
 
-// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:38
-[DmPath("/datum/golem_food_buff/iron"), DmGeneratedOnly, DmInert]
-public partial class datum_golem_food_buff_iron : datum_golem_food_buff
+// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/golem_food_buff/iron")]
+public partial class datum_golem_food_buff_iron
 {
     public float healed_amount = 3; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:41
     public DmList damage_heal_order; // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:43
@@ -27607,7 +27607,7 @@ public partial class datum_golem_food_buff_iron : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:52
-[DmPath("/datum/golem_food_buff/uranium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/uranium"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_uranium : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:52
@@ -27620,7 +27620,7 @@ public partial class datum_golem_food_buff_uranium : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:57
-[DmPath("/datum/golem_food_buff/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/silver"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_silver : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:57
@@ -27633,7 +27633,7 @@ public partial class datum_golem_food_buff_silver : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:62
-[DmPath("/datum/golem_food_buff/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/plasma"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_plasma : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:62
@@ -27646,7 +27646,7 @@ public partial class datum_golem_food_buff_plasma : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:67
-[DmPath("/datum/golem_food_buff/plasteel"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/plasteel"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_plasteel : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:67
@@ -27659,7 +27659,7 @@ public partial class datum_golem_food_buff_plasteel : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:72
-[DmPath("/datum/golem_food_buff/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/gold"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_gold : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:72
@@ -27672,7 +27672,7 @@ public partial class datum_golem_food_buff_gold : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:77
-[DmPath("/datum/golem_food_buff/diamond"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/diamond"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_diamond : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:77
@@ -27685,7 +27685,7 @@ public partial class datum_golem_food_buff_diamond : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:82
-[DmPath("/datum/golem_food_buff/titanium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/titanium"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_titanium : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:82
@@ -27698,7 +27698,7 @@ public partial class datum_golem_food_buff_titanium : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:87
-[DmPath("/datum/golem_food_buff/bananium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/bananium"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_bananium : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:87
@@ -27711,7 +27711,7 @@ public partial class datum_golem_food_buff_bananium : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:92
-[DmPath("/datum/golem_food_buff/lightbulb"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/lightbulb"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_lightbulb : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:92
@@ -27725,7 +27725,7 @@ public partial class datum_golem_food_buff_lightbulb : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:99
-[DmPath("/datum/golem_food_buff/gibtonite"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/gibtonite"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_gibtonite : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:99
@@ -27738,7 +27738,7 @@ public partial class datum_golem_food_buff_gibtonite : datum_golem_food_buff
 }
 
 // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:118
-[DmPath("/datum/golem_food_buff/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/golem_food_buff/bluespace"), DmGeneratedOnly]
 public partial class datum_golem_food_buff_bluespace : datum_golem_food_buff
 {
     // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:118
@@ -30914,9 +30914,9 @@ public partial class datum_species_shadow
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_species.dm:5
-[DmPath("/datum/species/shadow/nightmare"), DmGeneratedOnly, DmInert]
-public partial class datum_species_shadow_nightmare : datum_species_shadow
+// tg: code/modules/antagonists/nightmare/nightmare_species.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/species/shadow/nightmare")]
+public partial class datum_species_shadow_nightmare
 {
     // tg: code/modules/antagonists/nightmare/nightmare_species.dm:5
     public datum_species_shadow_nightmare()
@@ -30939,9 +30939,9 @@ public partial class datum_species_shadow_nightmare : datum_species_shadow
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/abductors.dm:2
-[DmPath("/datum/species/abductor"), DmGeneratedOnly, DmInert]
-public partial class datum_species_abductor : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/abductors.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/abductor")]
+public partial class datum_species_abductor
 {
     // tg: code/modules/mob/living/carbon/human/species_types/abductors.dm:2
     public datum_species_abductor()
@@ -31001,9 +31001,9 @@ public partial class datum_species_android
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:2
-[DmPath("/datum/species/human/cerulean"), DmGeneratedOnly, DmInert]
-public partial class datum_species_human_cerulean : datum_species_human
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/human/cerulean")]
+public partial class datum_species_human_cerulean
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:2
     public datum_species_human_cerulean()
@@ -31065,9 +31065,9 @@ public partial class datum_species_human_felinid
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:8
-[DmPath("/datum/species/human/vampire"), DmGeneratedOnly, DmInert]
-public partial class datum_species_human_vampire : datum_species_human
+// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/species/human/vampire")]
+public partial class datum_species_human_vampire
 {
     public string info_text = "You are a <span class='danger'>Vampire</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."; // tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:26
 
@@ -31093,9 +31093,9 @@ public partial class datum_species_human_vampire : datum_species_human
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:2
-[DmPath("/datum/species/dullahan"), DmGeneratedOnly, DmInert]
-public partial class datum_species_dullahan : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/dullahan")]
+public partial class datum_species_dullahan
 {
     public obj_item_dullahan_relay my_head; // tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:33
     public float owner_first_client_connection_handled = 0; // tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:35
@@ -31126,9 +31126,9 @@ public partial class datum_species_dullahan : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:2
-[DmPath("/datum/species/ethereal"), DmGeneratedOnly, DmInert]
-public partial class datum_species_ethereal : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/ethereal")]
+public partial class datum_species_ethereal
 {
     // tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:2
     public datum_species_ethereal()
@@ -31165,9 +31165,9 @@ public partial class datum_species_ethereal : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:121
-[DmPath("/datum/species/ethereal/lustrous"), DmGeneratedOnly, DmInert]
-public partial class datum_species_ethereal_lustrous : datum_species_ethereal
+// tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:121 (the var block of a hand-written class)
+[DmPath("/datum/species/ethereal/lustrous")]
+public partial class datum_species_ethereal_lustrous
 {
     // tg: code/modules/mob/living/carbon/human/species_types/ethereal.dm:121
     public datum_species_ethereal_lustrous()
@@ -31222,9 +31222,9 @@ public partial class datum_species_fly
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:3
-[DmPath("/datum/species/spirit"), DmGeneratedOnly, DmInert]
-public partial class datum_species_spirit : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/spirit")]
+public partial class datum_species_spirit
 {
     public float halloween_exclusive = 1; // tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:42
 
@@ -31258,9 +31258,9 @@ public partial class datum_species_spirit : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:89
-[DmPath("/datum/species/spirit/ghost"), DmGeneratedOnly, DmInert]
-public partial class datum_species_spirit_ghost : datum_species_spirit
+// tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:89 (the var block of a hand-written class)
+[DmPath("/datum/species/spirit/ghost")]
+public partial class datum_species_spirit_ghost
 {
     public datum_action_innate_toggle_passthrough passthrough_ability; // tg: code/modules/mob/living/carbon/human/species_types/ghost.dm:116
 
@@ -31282,9 +31282,9 @@ public partial class datum_species_spirit_ghost : datum_species_spirit
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/golems.dm:3
-[DmPath("/datum/species/golem"), DmGeneratedOnly, DmInert]
-public partial class datum_species_golem : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/golems.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/golem")]
+public partial class datum_species_golem
 {
     public float early_warning = 0; // tg: code/modules/mob/living/carbon/human/species_types/golems.dm:56
     public float final_warning = 0; // tg: code/modules/mob/living/carbon/human/species_types/golems.dm:58
@@ -31325,9 +31325,9 @@ public partial class datum_species_golem : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:10
-[DmPath("/datum/species/jelly"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly")]
+public partial class datum_species_jelly
 {
     public datum_action_innate_regenerate_limbs regenerate_limbs; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:43
 
@@ -31366,9 +31366,9 @@ public partial class datum_species_jelly : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:216
-[DmPath("/datum/species/jelly/slime"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly_slime : datum_species_jelly
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:216 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly/slime")]
+public partial class datum_species_jelly_slime
 {
     public datum_action_innate_split_body slime_split; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:221
     public DmList bodies; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:222
@@ -31392,9 +31392,9 @@ public partial class datum_species_jelly_slime : datum_species_jelly
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:521
-[DmPath("/datum/species/jelly/luminescent"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly_luminescent : datum_species_jelly
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:521 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly/luminescent")]
+public partial class datum_species_jelly_luminescent
 {
     public float glow_intensity = 2; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:535
     public obj_effect_dummy_lighting_obj_moblight glow; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:537
@@ -31420,9 +31420,9 @@ public partial class datum_species_jelly_luminescent : datum_species_jelly
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:711
-[DmPath("/datum/species/jelly/stargazer"), DmGeneratedOnly, DmInert]
-public partial class datum_species_jelly_stargazer : datum_species_jelly
+// tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:711 (the var block of a hand-written class)
+[DmPath("/datum/species/jelly/stargazer")]
+public partial class datum_species_jelly_stargazer
 {
     public datum_action_innate_project_thought project_action; // tg: code/modules/mob/living/carbon/human/species_types/jellypeople.dm:716
 
@@ -31567,9 +31567,9 @@ public partial class datum_species_monkey
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mothmen.dm:2
-[DmPath("/datum/species/moth"), DmGeneratedOnly, DmInert]
-public partial class datum_species_moth : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/mothmen.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/moth")]
+public partial class datum_species_moth
 {
     // tg: code/modules/mob/living/carbon/human/species_types/mothmen.dm:2
     public datum_species_moth()
@@ -31600,9 +31600,9 @@ public partial class datum_species_moth : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:4
-[DmPath("/datum/species/mush"), DmGeneratedOnly, DmInert]
-public partial class datum_species_mush : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/species/mush")]
+public partial class datum_species_mush
 {
     public datum_martial_art_mushpunch mush; // tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:39
 
@@ -31633,9 +31633,9 @@ public partial class datum_species_mush : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2
-[DmPath("/datum/species/plasmaman"), DmGeneratedOnly, DmInert]
-public partial class datum_species_plasmaman : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/plasmaman")]
+public partial class datum_species_plasmaman
 {
     // tg: code/modules/mob/living/carbon/human/species_types/plasmamen.dm:2
     public datum_species_plasmaman()
@@ -31676,9 +31676,9 @@ public partial class datum_species_plasmaman : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/podpeople.dm:3
-[DmPath("/datum/species/pod"), DmGeneratedOnly, DmInert]
-public partial class datum_species_pod : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/podpeople.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/pod")]
+public partial class datum_species_pod
 {
     // tg: code/modules/mob/living/carbon/human/species_types/podpeople.dm:3
     public datum_species_pod()
@@ -31715,9 +31715,9 @@ public partial class datum_species_pod : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/skeletons.dm:3
-[DmPath("/datum/species/skeleton"), DmGeneratedOnly, DmInert]
-public partial class datum_species_skeleton : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/skeletons.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/skeleton")]
+public partial class datum_species_skeleton
 {
     // tg: code/modules/mob/living/carbon/human/species_types/skeletons.dm:3
     public datum_species_skeleton()
@@ -31748,9 +31748,9 @@ public partial class datum_species_skeleton : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/snail.dm:2
-[DmPath("/datum/species/snail"), DmGeneratedOnly, DmInert]
-public partial class datum_species_snail : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/snail.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/species/snail")]
+public partial class datum_species_snail
 {
     // tg: code/modules/mob/living/carbon/human/species_types/snail.dm:2
     public datum_species_snail()
@@ -31777,9 +31777,9 @@ public partial class datum_species_snail : datum_species
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:3
-[DmPath("/datum/species/zombie"), DmGeneratedOnly, DmInert]
-public partial class datum_species_zombie : datum_species
+// tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/species/zombie")]
+public partial class datum_species_zombie
 {
     // tg: code/modules/mob/living/carbon/human/species_types/zombies.dm:3
     public datum_species_zombie()

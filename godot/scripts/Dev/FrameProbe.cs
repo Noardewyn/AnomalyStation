@@ -10,7 +10,8 @@ namespace Anomaly.Client.Dev;
 /// <summary>
 /// A hitch probe (env <c>ANOMALY_FRAMEPROBE=1</c>, threshold in ms by <c>ANOMALY_FRAMEPROBE_MS</c>, default 40): the per-frame time of named
 /// script sections, and for every frame longer than the threshold one log line with the sections, the engine's process time and the
-/// rest (rendering, uploads, pipeline compiles). Off, every call is one branch.
+/// rest (rendering, uploads, pipeline compiles). With the Tracy profiler on (<see cref="Tracy"/>) every section is a zone and each frame
+/// sends the frame mark and the engine's counters as plots. Off, every call is one branch.
 /// </summary>
 public static class FrameProbe
 {
@@ -25,19 +26,33 @@ public static class FrameProbe
     public readonly struct Section : IDisposable
     {
         private readonly string _name;
+        private readonly string _what;
         private readonly long _start;
+        private readonly Tracy.Zone _zone;
 
-        public Section(string name)
+        public Section(string name, string what = null)
         {
             _name = name;
+            _what = what;
             _start = Stopwatch.GetTimestamp();
+            _zone = Tracy.Begin(name);
+            if (what != null)
+                Tracy.Text(_zone, what);
         }
 
         public void Dispose()
         {
             if (_name == null)
                 return;
+            Tracy.End(_zone);
+            if (!On)
+                return;
             double ms = Stopwatch.GetElapsedTime(_start).TotalMilliseconds;
+            if (_what != null)
+            {
+                Item(_name, _what, ms);
+                return;
+            }
             Sections.TryGetValue(_name, out var v);
             Sections[_name] = (v.Ms + ms, v.Count + 1);
         }
@@ -46,7 +61,7 @@ public static class FrameProbe
     static FrameProbe()
     {
         if (On)
-            Anomaly.Client.Shared.Icons.IconLibrary.ProbeLoaded = (resource, ms) =>
+            Anomaly.Client.Shared.Icons.IconLibrary.ProbeLoaded += (resource, ms) =>
             {
                 if (!resource.EndsWith("(background)", StringComparison.Ordinal)) // a worker thread's: not this frame's time
                     Add("icon load", ms);
@@ -55,7 +70,10 @@ public static class FrameProbe
             };
     }
 
-    public static Section Scope(string name) => On ? new Section(name) : default;
+    public static Section Scope(string name) => On || Tracy.On ? new Section(name) : default;
+
+    /// <summary>One item of a budgeted queue (<see cref="Item"/>), measured over the scope: in Tracy a zone named by the queue, with the item as its text.</summary>
+    public static Section Measure(string queue, string what) => On || Tracy.On ? new Section(queue, what) : default;
 
     /// <summary>Adds <paramref name="ms"/> to a section measured elsewhere.</summary>
     public static void Add(string name, double ms, int count = 1)
@@ -69,6 +87,8 @@ public static class FrameProbe
     /// <summary>Called first in the game scene's frame: closes the last frame (logged when it was long) and opens this one.</summary>
     public static void BeginFrame()
     {
+        if (Tracy.On)
+            TracyFrame();
         if (!On)
             return;
         long now = Stopwatch.GetTimestamp();
@@ -110,6 +130,66 @@ public static class FrameProbe
 
     private static readonly Dictionary<string, double> RunSections = new();
 
+    private static long _tracyFrameStart;
+    private static TimeSpan _jit, _gcPause;
+    private static long _jitMethods, _allocated, _contention;
+    private static readonly long[] Pipelines = new long[5];
+    private static readonly Performance.Monitor[] PipelineMonitors =
+    {
+        Performance.Monitor.PipelineCompilationsCanvas, Performance.Monitor.PipelineCompilationsMesh, Performance.Monitor.PipelineCompilationsSurface,
+        Performance.Monitor.PipelineCompilationsDraw, Performance.Monitor.PipelineCompilationsSpecialization,
+    };
+    private static readonly string[] PipelinePlots = { "pipelines canvas", "pipelines mesh", "pipelines surface", "pipelines draw", "pipelines specialization" };
+    private static Rid _viewport;
+
+    // The frame mark and, as plots, what the engine and the runtime did in the frame that ended: its wall time, the renderer's CPU and
+    // GPU time (the numbers of Godot's own frame time view), the draw calls, the pipelines compiled, the video memory, the main
+    // thread's JIT time and allocations, the collections' pauses.
+    private static void TracyFrame()
+    {
+        long now = Stopwatch.GetTimestamp();
+        if (_tracyFrameStart == 0)
+        {
+            _viewport = ((SceneTree)Engine.GetMainLoop()).Root.GetViewportRid();
+            RenderingServer.ViewportSetMeasureRenderTime(_viewport, true);
+            foreach (string plot in new[] { "texture memory", "buffer memory", "video memory", "allocated" })
+                Tracy.Configure(plot, Tracy.PlotFormat.Memory);
+        }
+        else
+        {
+            Tracy.Plot("frame ms", Stopwatch.GetElapsedTime(_tracyFrameStart, now).TotalMilliseconds);
+            Tracy.Plot("render cpu ms", RenderingServer.ViewportGetMeasuredRenderTimeCpu(_viewport) + RenderingServer.GetFrameSetupTimeCpu());
+            Tracy.Plot("render gpu ms", RenderingServer.ViewportGetMeasuredRenderTimeGpu(_viewport));
+            Tracy.Plot("jit ms", (System.Runtime.JitInfo.GetCompilationTime(currentThread: true) - _jit).TotalMilliseconds);
+            Tracy.Plot("jit methods", System.Runtime.JitInfo.GetCompiledMethodCount(currentThread: true) - _jitMethods);
+            Tracy.Plot("gc pause ms", (GC.GetTotalPauseDuration() - _gcPause).TotalMilliseconds);
+            Tracy.Plot("allocated", GC.GetAllocatedBytesForCurrentThread() - _allocated);
+            Tracy.Plot("lock contentions", System.Threading.Monitor.LockContentionCount - _contention);
+        }
+        _jit = System.Runtime.JitInfo.GetCompilationTime(currentThread: true);
+        _jitMethods = System.Runtime.JitInfo.GetCompiledMethodCount(currentThread: true);
+        _gcPause = GC.GetTotalPauseDuration();
+        _allocated = GC.GetAllocatedBytesForCurrentThread();
+        _contention = System.Threading.Monitor.LockContentionCount;
+        Tracy.Plot("draw calls", Performance.GetMonitor(Performance.Monitor.RenderTotalDrawCallsInFrame));
+        Tracy.Plot("draw calls: shadows", RenderingServer.ViewportGetRenderInfo(_viewport, RenderingServer.ViewportRenderInfoType.Shadow, RenderingServer.ViewportRenderInfo.DrawCallsInFrame));
+        Tracy.Plot("draw calls: visible", RenderingServer.ViewportGetRenderInfo(_viewport, RenderingServer.ViewportRenderInfoType.Visible, RenderingServer.ViewportRenderInfo.DrawCallsInFrame));
+        Tracy.Plot("objects drawn", Performance.GetMonitor(Performance.Monitor.RenderTotalObjectsInFrame));
+        Tracy.Plot("nodes", Performance.GetMonitor(Performance.Monitor.ObjectNodeCount));
+        Tracy.Plot("texture memory", Performance.GetMonitor(Performance.Monitor.RenderTextureMemUsed));
+        Tracy.Plot("buffer memory", Performance.GetMonitor(Performance.Monitor.RenderBufferMemUsed));
+        Tracy.Plot("video memory", Performance.GetMonitor(Performance.Monitor.RenderVideoMemUsed));
+        for (int i = 0; i < Pipelines.Length; i++)
+        {
+            long count = (long)Performance.GetMonitor(PipelineMonitors[i]);
+            if (_tracyFrameStart != 0)
+                Tracy.Plot(PipelinePlots[i], count - Pipelines[i]);
+            Pipelines[i] = count;
+        }
+        Tracy.FrameMark();
+        _tracyFrameStart = now;
+    }
+
     private static readonly List<float> FrameMs = new();
     private static readonly List<int> FrameDraws = new();
 
@@ -122,6 +202,18 @@ public static class FrameProbe
         FrameDraws.Add((int)Performance.GetMonitor(Performance.Monitor.RenderTotalDrawCallsInFrame));
     }
 
+    /// <summary>The world was shown (the loading screen gone): the summary counts the frames from here.</summary>
+    public static void Restart()
+    {
+        if (!On)
+            return;
+        GD.Print($"[frameprobe] the world is shown after {_frame} frames of loading; the summary counts from here");
+        FrameMs.Clear();
+        FrameDraws.Clear();
+        RunSections.Clear();
+        _frame = 0;
+    }
+
     /// <summary>
     /// The whole run's frames (tools/perf/walk.sh reads it): the frame time percentiles and maximum, the frames over 33, 50 and 100 ms,
     /// the draw calls' median and maximum; the first 60 frames (the join) are left out.
@@ -130,6 +222,7 @@ public static class FrameProbe
     {
         if (!On || FrameMs.Count <= 60)
             return null;
+        float first = FrameMs.Take(60).Max(); // the frames right after the join (or the loading screen), which the rest leaves out
         var ms = FrameMs.GetRange(60, FrameMs.Count - 60);
         var draws = FrameDraws.GetRange(60, FrameDraws.Count - 60);
         double seconds = 0;
@@ -144,7 +237,7 @@ public static class FrameProbe
         string sections = string.Join(" ", RunSections.Where(kv => !kv.Key.Contains(' ')).OrderByDescending(kv => kv.Value).Take(14)
             .Select(kv => string.Create(c, $"{kv.Key}={kv.Value / ms.Count:0.00}")));
         return string.Create(c,
-            $"frames={ms.Count} seconds={seconds:0.0} avg_fps={ms.Count / seconds:0.0} p50_ms={At(0.5):0.0} p95_ms={At(0.95):0.0} p99_ms={At(0.99):0.0} max_ms={ms[^1]:0.0} over33={Over(33)} over50={Over(50)} over100={Over(100)} draws_p50={draws[draws.Count / 2]} draws_max={draws[^1]} | per frame: {sections}");
+            $"frames={ms.Count} seconds={seconds:0.0} avg_fps={ms.Count / seconds:0.0} p50_ms={At(0.5):0.0} p95_ms={At(0.95):0.0} p99_ms={At(0.99):0.0} max_ms={ms[^1]:0.0} over33={Over(33)} over50={Over(50)} over100={Over(100)} draws_p50={draws[draws.Count / 2]} draws_max={draws[^1]} first60_max_ms={first:0.0} | per frame: {sections}");
     }
 
     /// <summary>

@@ -243,6 +243,11 @@ public partial class App : Node
         DisplayServer.WindowSetTitle((StartsAsEditor ? ClientArgs.EditorName : "Anomaly Station") + " " + Anomaly.Protocol.BuildInfo.Display);
         TakeFirstWindow(splash: StartsAsEditor && Args.Errors.Count == 0);
         AddVersionTag();
+        Render.AssetPreload.Start(); // the sounds, the models and the sheets' bytes, on worker threads while the connect screen is up
+        Dev.TracyPhases.Install(this);
+        // a game's setting: the runtime collects the old generation in the background and does not stop the threads for a full blocking
+        // collection unless memory runs short (the managed heap holds about 1.6 GB of preloaded sheets once the round is joined)
+        System.Runtime.GCSettings.LatencyMode = System.Runtime.GCLatencyMode.SustainedLowLatency;
 
         // M0's proof that the core assemblies load and run inside Godot, kept as the first line of every run.
         var world = new World(1);
@@ -389,25 +394,8 @@ public partial class App : Node
     {
         if (_splashHeld != null)
             return;
-        Control cover = ConnectScreen.LoadingPicture(ConnectScreen.EditorPicture);
-        // (as the loading screen: ConnectScreen.SizeLoading; the window's size, which the viewport takes only on a later frame after TakeSplashWindow)
-        bool small = SplashWindow;
-        float unit = DisplayServer.WindowGetSize().Y / 100f;
-        var title = new Label { Text = ClientArgs.EditorName, MouseFilter = Control.MouseFilterEnum.Ignore };
-        title.AddThemeColorOverride("font_color", new Color(0.92f, 0.95f, 1f));
-        title.AddThemeFontSizeOverride("font_size", Math.Max(16, (int)(unit * (small ? 11f : 8f))));
-        cover.AddChild(title);
-        title.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.TopLeft, Control.LayoutPresetMode.Minsize, Math.Max(8, (int)(unit * (small ? 6f : 3f))));
-        if (small)
-        {
-            var edge = new StyleBoxFlat { DrawCenter = false, BorderColor = new Color(1f, 1f, 1f, 0.16f) }; // (ConnectScreen's edge of the small window)
-            edge.SetBorderWidthAll(2);
-            var panel = new Panel { MouseFilter = Control.MouseFilterEnum.Ignore };
-            panel.AddThemeStyleboxOverride("panel", edge);
-            panel.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
-            cover.AddChild(panel);
-        }
-        HoldOver(cover);
+        // (it lays itself out again when the viewport takes the small window's size, on a later frame after TakeSplashWindow)
+        HoldOver(new Hud.LoadingCover(ClientArgs.EditorName, Hud.LoadingCover.EditorPicture) { Progress = Hud.LoadingCover.ConnectShare });
     }
 
     private void HoldOver(Control picture)
@@ -552,7 +540,9 @@ public partial class App : Node
         string summary = SummaryProvider?.Invoke();
         if (Dev.FrameProbe.Summary() is { } frames)
             GD.Print($"[frameprobe] summary {frames}");
-        GD.Print($"[anomaly] client summary: {summary ?? "no game was started"} exit={exitCode}");
+        if (DisplayServer.GetName() != "headless")
+            GD.Print("[anomaly] pipeline compilations at the end: " + Render.ShaderWarmUp.Pipelines());
+        GD.Print($"[anomaly] client summary: {summary ?? "no game was started"} preload_misses={Render.AssetPreload.Misses} exit={exitCode}");
 #if ANOMALY_EDITOR
         Play?.Dispose();
         Editor?.Dispose(); // the map editor's world

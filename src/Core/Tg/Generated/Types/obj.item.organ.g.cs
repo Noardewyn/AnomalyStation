@@ -449,9 +449,9 @@ public partial class obj_item_organ_fangs_stoat
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:153
-[DmPath("/obj/item/organ/fangs/vampire"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_fangs_vampire : obj_item_organ_fangs
+// tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:153 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/fangs/vampire")]
+public partial class obj_item_organ_fangs_vampire
 {
     public float drain_cooldown = 0; // tg: code/modules/mob/living/carbon/human/species_types/vampire.dm:164
 
@@ -742,9 +742,9 @@ public partial class obj_item_organ_tongue_corrupt : obj_item_organ_tongue
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:193
-[DmPath("/obj/item/organ/tongue/dullahan"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tongue_dullahan : obj_item_organ_tongue
+// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tongue/dullahan")]
+public partial class obj_item_organ_tongue_dullahan
 {
     // tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:193
     public obj_item_organ_tongue_dullahan()
@@ -1287,9 +1287,9 @@ public partial class obj_item_organ_brain_shadow : obj_item_organ_brain
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:7
-[DmPath("/obj/item/organ/brain/shadow/nightmare"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_shadow_nightmare : obj_item_organ_brain_shadow
+// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/shadow/nightmare")]
+public partial class obj_item_organ_brain_shadow_nightmare
 {
     public datum_action_cooldown_spell_jaunt_shadow_walk our_jaunt; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:15
     public datum_action_cooldown_spell_pointed_terrorize terrorize_spell; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:17
@@ -1418,9 +1418,9 @@ public partial class obj_item_organ_brain_golem : obj_item_organ_brain
     }
 }
 
-// tg: code/modules/mob/living/brain/brain_item.dm:528
-[DmPath("/obj/item/organ/brain/lustrous"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_lustrous : obj_item_organ_brain
+// tg: code/modules/mob/living/brain/brain_item.dm:528 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/lustrous")]
+public partial class obj_item_organ_brain_lustrous
 {
     // tg: code/modules/mob/living/brain/brain_item.dm:528
     public obj_item_organ_brain_lustrous()
@@ -1486,9 +1486,9 @@ public partial class obj_item_organ_brain_ghost : obj_item_organ_brain
     }
 }
 
-// tg: code/modules/mob/living/brain/brain_item.dm:581
-[DmPath("/obj/item/organ/brain/abductor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_abductor : obj_item_organ_brain
+// tg: code/modules/mob/living/brain/brain_item.dm:581 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/abductor")]
+public partial class obj_item_organ_brain_abductor
 {
     // tg: code/modules/mob/living/brain/brain_item.dm:581
     public obj_item_organ_brain_abductor()
@@ -2058,9 +2058,9 @@ public partial class obj_item_organ_heart_corrupt : obj_item_organ_heart
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:77
-[DmPath("/obj/item/organ/heart/nightmare"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_heart_nightmare : obj_item_organ_heart
+// tg: code/modules/antagonists/nightmare/nightmare_organs.dm:77 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/heart/nightmare")]
+public partial class obj_item_organ_heart_nightmare
 {
     public float respawn_progress = 0; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:91
     public Type blade; // tg: code/modules/antagonists/nightmare/nightmare_organs.dm:93
@@ -2446,9 +2446,9 @@ public partial class obj_item_organ_tail_fish
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:158
-[DmPath("/obj/item/organ/tail/fish/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tail_fish_cerulean : obj_item_organ_tail_fish
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:158 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tail/fish/cerulean")]
+public partial class obj_item_organ_tail_fish_cerulean
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:158
     public obj_item_organ_tail_fish_cerulean()
@@ -2469,9 +2469,9 @@ public partial class obj_item_organ_tail_fish_cerulean : obj_item_organ_tail_fis
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:261
-[DmPath("/obj/item/organ/tail/fish/cerulean/abyss"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tail_fish_cerulean_abyss : obj_item_organ_tail_fish_cerulean
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:261 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tail/fish/cerulean/abyss")]
+public partial class obj_item_organ_tail_fish_cerulean_abyss
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:261
     public obj_item_organ_tail_fish_cerulean_abyss()
@@ -2482,9 +2482,9 @@ public partial class obj_item_organ_tail_fish_cerulean_abyss : obj_item_organ_ta
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:292
-[DmPath("/obj/item/organ/tail/fish/cerulean/skeletal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_tail_fish_cerulean_skeletal : obj_item_organ_tail_fish_cerulean
+// tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:292 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/tail/fish/cerulean/skeletal")]
+public partial class obj_item_organ_tail_fish_cerulean_skeletal
 {
     // tg: code/modules/mob/living/carbon/human/species_types/cerulean.dm:292
     public obj_item_organ_tail_fish_cerulean_skeletal()
@@ -6054,9 +6054,9 @@ public partial class obj_item_organ_alien_eggsac : obj_item_organ_alien
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:56
-[DmPath("/obj/item/organ/mushroom_cap"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_mushroom_cap : obj_item_organ
+// tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:56 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/mushroom_cap")]
+public partial class obj_item_organ_mushroom_cap
 {
     // tg: code/modules/mob/living/carbon/human/species_types/mushpeople.dm:56
     public obj_item_organ_mushroom_cap()
@@ -6347,9 +6347,9 @@ public partial class obj_item_organ_adamantine_resonator : obj_item_organ
     }
 }
 
-// tg: code/modules/zombie/organs.dm:2
-[DmPath("/obj/item/organ/zombie_infection"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_zombie_infection : obj_item_organ
+// tg: code/modules/zombie/organs.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/zombie_infection")]
+public partial class obj_item_organ_zombie_infection
 {
     public float causes_damage = 1; // tg: code/modules/zombie/organs.dm:7
     public float living_transformation_time = 30; // tg: code/modules/zombie/organs.dm:8
@@ -6371,7 +6371,7 @@ public partial class obj_item_organ_zombie_infection : obj_item_organ
 }
 
 // tg: code/modules/zombie/organs.dm:125
-[DmPath("/obj/item/organ/zombie_infection/nodamage"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/organ/zombie_infection/nodamage"), DmGeneratedOnly]
 public partial class obj_item_organ_zombie_infection_nodamage : obj_item_organ_zombie_infection
 {
     // tg: code/modules/zombie/organs.dm:125

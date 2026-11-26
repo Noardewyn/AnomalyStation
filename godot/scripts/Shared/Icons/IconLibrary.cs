@@ -182,10 +182,13 @@ public sealed class IconLibrary
         return System.Diagnostics.Stopwatch.GetElapsedTime(since, now).TotalSeconds > 0.25;
     }
 
-    /// <summary>Starts reading a .dmi sheet on a worker thread (with <see cref="Background"/> on), so that it is ready when first drawn.</summary>
+    /// <summary>
+    /// Starts reading a .dmi sheet on a worker thread, so that it is ready when first drawn (before <see cref="Background"/> is on, a blocking
+    /// <see cref="TryGetIcon"/> waits for it rather than reading it twice).
+    /// </summary>
     public void Prefetch(string resource)
     {
-        if (!Background || string.IsNullOrEmpty(resource) || !IsSheet(resource) || _icons.ContainsKey(resource) || _loading.ContainsKey(resource))
+        if (string.IsNullOrEmpty(resource) || !IsSheet(resource) || _icons.ContainsKey(resource) || _loading.ContainsKey(resource))
             return;
         _loading[resource] = StartLoad(resource);
     }

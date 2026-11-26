@@ -461,6 +461,31 @@ public sealed partial class ServerHost : IClientHost, IDisposable
     public static double RealDateNow()
         => Math.Floor((DateTime.UtcNow - new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds * 10d);
 
+    /// <summary>The roundstart species tgstation ships (game_options.txt:365-390, D349).</summary>
+    private static readonly string[] TgRoundstartRaces = ["human", "felinid", "lizard", "moth", "plasmaman", "ethereal", "cerulean"];
+
+    /// <summary>
+    /// D349: <c>ROUNDSTART_RACES</c> of tg's roundstart species that are live, or with <see cref="ServerConfig.AllSpeciesRoundstart"/> of
+    /// every live species that has a description. An inert species (its tg code not translated, D112) is never offered: its body would
+    /// run its parent's code. A species without its own description is one tg never makes roundstart: Character Setup's species page
+    /// would crash on it (tg's get_species_description CRASH), so the dev option leaves it out too.
+    /// </summary>
+    public static string RoundstartRaces(ServerConfig config)
+    {
+        var live = new HashSet<string> { "human" };
+        var described = new HashSet<string> { "human" };
+        foreach (Type t in typeof(datum_species).Assembly.GetTypes())
+        {
+            if (!t.IsSubclassOf(typeof(datum_species)) || t.IsAbstract || t.IsDefined(typeof(DmInertAttribute), inherit: false) || Dm.initial(t, "id") is not string { Length: > 0 } id)
+                continue;
+            live.Add(id);
+            if (t.GetMethod(nameof(datum_species.get_species_description))?.DeclaringType != typeof(datum_species))
+                described.Add(id);
+        }
+        IEnumerable<string> ids = config.AllSpeciesRoundstart ? described.Order(StringComparer.Ordinal) : TgRoundstartRaces.Where(live.Contains);
+        return string.Concat(ids.Select(id => "ROUNDSTART_RACES " + id + "\n"));
+    }
+
     public static string TgConfigText(ServerConfig config)
         => string.Create(CultureInfo.InvariantCulture, $"RUN_DELAY {config.RunDelay:R}\nWALK_DELAY {config.WalkDelay:R}\nREACTIONARY_EXPLOSIONS\nBOMBCAP {TgBombCap}\nOOC_DURING_ROUND\n")
             + "PROTECT_ROLES_FROM_ANTAGONIST\nALLOW_LATEJOIN_ANTAGONISTS\nDYNAMIC_CONFIG_ENABLED\n"
@@ -468,7 +493,7 @@ public sealed partial class ServerHost : IClientHost, IDisposable
             + "ALLOW_RANDOM_EVENTS\n" // the owner (2026-11-14): tg's random events, on as tgstation ships them (game_options.txt:155)
             + "EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2\nALLOW_VOTE_RESTART\n" // the owner (2026-11-08): tg's crew-death shuttle call at its suggested 20% (game_options.txt:480) and players' restart votes (config.txt:117)
             + "COMMENDATION_PERCENT_POLL 0.05\n" // gaps R5: the end-of-round commendations' poll, as tgstation ships it (game_options.txt:24)
-            + "ROUNDSTART_RACES human\nROUNDSTART_RACES felinid\nROUNDSTART_RACES lizard\n" // gaps SP1 (D338): the roundstart species tgstation ships that are ported (game_options.txt:365-377; the moth, plasmaman, ethereal and cerulean with gaps SP2)
+            + RoundstartRaces(config)
             + (config.StationTraits ? "" : "FORBID_STATION_TRAITS\n") // gaps R2: tg's station traits only when the config turns them on (game_options.txt:158)
             + (config.RealDate || config.RealtimeStart != 0d ? "ALLOW_HOLIDAYS\n" : "") // gaps R6 (D332): tg's holidays with the real date (config.txt:260)
             + (config.MapEditor ? "MICE_ROUNDSTART 0\n" : "") // a map editor's world shows the map: no mice of tg's on its bare cables (game_options.txt, minor_mapping.dm)

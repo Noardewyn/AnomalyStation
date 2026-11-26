@@ -1,15 +1,15 @@
 namespace Anomaly.Protocol;
 
-// Version 95 (package T, slice T4a; docs/ai/specs/protocol.md section 90): a click's, a throw's and a put-down's aim zone gains
+// Version 98 (package T, slice T4a; docs/ai/specs/protocol.md section 93): a click's, a throw's and a put-down's aim zone gains
 // AimZone.Eyes (7), Mouth (8) and Groin (9). The modifiers byte's spare bit 3 is the zone's high bit:
 //
 //   [u8 modifiers: shift 1, ctrl 2, alt 4, bit 3 the zone's high bit, bits 4-6 the zone's low bits, bit 7 aim]
 //   zone = ((mods >> 4) & 7) | (mods & 8), 0..9 (10 to 15 refused)
 //
-// so every byte version 94 sent (bit 3 zero, a zone of 0 to 6) keeps its meaning.
+// so every byte version 97 sent (bit 3 zero, a zone of 0 to 6) keeps its meaning.
 //
-// Version 95 also (slice T4b, section 91): a hover on an entity may end with the zone looked at, one byte of 1 to 9 after its target; a
-// hover without a zone has no such byte, so it is the bytes of version 94. A zone byte of 0 or above AimZone.Last, or after a turf, a
+// Version 98 also (slice T4b, section 94): a hover on an entity may end with the zone looked at, one byte of 1 to 9 after its target; a
+// hover without a zone has no such byte, so it is the bytes of version 97. A zone byte of 0 or above AimZone.Last, or after a turf, a
 // ceiling or a screen target, is refused (BadValue).
 
 public static partial class Codec

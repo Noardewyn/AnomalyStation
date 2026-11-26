@@ -474,7 +474,7 @@ public static class ReplicatedFields
         int quarter = float.IsFinite(angle) ? (int)(angle / 90f) : 0;
         return PostureBits.Encode(lying, lying ? quarter * 90 : 0, limp: Dm.num(mob.stat) != 0, // stat 0 is conscious (tg has no define for it);
             incorporeal: mob.incorporeal_move != 0, buckled: mob.buckled is not null and not mob_living,
-            turnedFaceUp: mob.dm_turned_face_up); // version 95 (DV588): the side the radial's Turn over put it on
+            turnedFaceUp: mob.dm_turned_face_up); // version 98 (DV600): the side the radial's Turn over put it on
     }
 
     /// <summary>

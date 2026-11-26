@@ -1412,9 +1412,9 @@ public partial class obj_item_storage_backpack_chameleon_broken
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/snail.dm:91
-[DmPath("/obj/item/storage/backpack/snail"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_backpack_snail : obj_item_storage_backpack
+// tg: code/modules/mob/living/carbon/human/species_types/snail.dm:91 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/backpack/snail")]
+public partial class obj_item_storage_backpack_snail
 {
     // tg: code/modules/mob/living/carbon/human/species_types/snail.dm:91
     public obj_item_storage_backpack_snail()

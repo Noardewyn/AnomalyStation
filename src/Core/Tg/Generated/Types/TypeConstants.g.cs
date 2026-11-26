@@ -6193,6 +6193,14 @@ public static partial class TypeOrder
 26851	f1
 26872	f16
 26874	f2
+#bodytemp_heat_damage_limit
+13697	f423.15
+13702	f355
+13707	f355
+13713	f320.15
+#bodytemp_normal
+13697	f360.15
+13713	f270.15
 #bodytype
 26714	f9
 26715	f5
@@ -38846,6 +38854,9 @@ public static partial class TypeOrder
 19256	sHolds a theme you can add to your Modular PC to set in the Themify application. Makes the application use more space
 19263	sThis program allows old-school communication with other modular devices.
 26931	n
+#extinguishes_left
+22650	f10
+23012	f5
 #extra_price
 33871	f50
 33874	f100
@@ -42087,6 +42098,24 @@ public static partial class TypeOrder
 21537	f0
 21538	f2
 21541	f0
+#grappled_attack_verb
+26827	sscorch
+26829	slacerate
+26836	slacerate
+26846	slacerate
+26856	sscorch
+26858	slacerate
+26865	slacerate
+26875	slacerate
+#grappled_attack_verb_continuous
+26827	sscorches
+26829	slacerates
+26836	slacerates
+26846	slacerates
+26856	sscorches
+26858	slacerates
+26865	slacerates
+26875	slacerates
 #greyscale_color
 9317	s#FFF269
 9339	s#FFFFFF
@@ -71786,6 +71815,107 @@ public static partial class TypeOrder
 23384	i100
 29700	i10
 29717	i15
+#lighting_cutoff_blue
+21063	f20
+21070	f30
+21077	f35
+21130	f20
+21150	f35
+21208	f50
+21215	f30
+21238	f20
+21245	f5
+21256	f20
+21311	f34
+21317	f20
+21318	f25
+21319	f25
+21320	f25
+21389	f15
+21394	f10
+21417	f5
+21420	f20
+21424	f30
+21430	f40
+21431	f15
+21434	f50
+21436	f5
+21438	f35
+21442	f34
+21444	f5
+21492	f25
+21496	f40
+21543	f35
+21563	f35
+21583	f20
+21589	f50
+#lighting_cutoff_green
+21063	f20
+21070	f15
+21077	f25
+21130	f5
+21150	f15
+21208	f15
+21215	f40
+21238	f5
+21245	f20
+21256	f25
+21311	f15
+21317	f35
+21318	f20
+21319	f20
+21320	f20
+21389	f35
+21394	f30
+21417	f5
+21420	f10
+21424	f20
+21430	f15
+21431	f25
+21434	f15
+21436	f8
+21438	f15
+21442	f15
+21444	f5
+21492	f10
+21496	f10
+21543	f15
+21563	f15
+21583	f35
+21589	f40
+#lighting_cutoff_red
+21063	f40
+21070	f30
+21077	f15
+21130	f30
+21150	f25
+21208	f30
+21215	f20
+21238	f30
+21245	f10
+21256	f10
+21311	f12
+21317	f10
+21318	f5
+21319	f5
+21389	f10
+21394	f30
+21417	f22
+21420	f30
+21424	f40
+21430	f30
+21431	f5
+21434	f15
+21436	f22
+21438	f20
+21442	f12
+21444	f22
+21492	f15
+21496	f20
+21543	f25
+21563	f25
+21583	f0
+21589	f30
 #liked_foodtypes
 29553	f2162689
 29555	f525312
@@ -117469,6 +117599,30 @@ public static partial class TypeOrder
 26860	sdisarm
 26865	sclaw
 26875	sclaw
+#unarmed_attack_sound
+26719	rsound/items/weapons/etherealhit.ogg
+26748	rsound/items/weapons/etherealhit.ogg
+26775	rsound/items/weapons/etherealhit.ogg
+26827	rsound/items/weapons/etherealhit.ogg
+26829	rsound/items/weapons/slash.ogg
+26836	rsound/items/weapons/slice.ogg
+26846	rsound/items/weapons/slash.ogg
+26856	rsound/items/weapons/etherealhit.ogg
+26858	rsound/items/weapons/slash.ogg
+26865	rsound/items/weapons/slice.ogg
+26875	rsound/items/weapons/slash.ogg
+#unarmed_miss_sound
+26719	rsound/items/weapons/etherealmiss.ogg
+26748	rsound/items/weapons/etherealmiss.ogg
+26775	rsound/items/weapons/etherealmiss.ogg
+26827	rsound/items/weapons/etherealmiss.ogg
+26829	rsound/items/weapons/slashmiss.ogg
+26836	rsound/items/weapons/slashmiss.ogg
+26846	rsound/items/weapons/slashmiss.ogg
+26856	rsound/items/weapons/etherealmiss.ogg
+26858	rsound/items/weapons/slashmiss.ogg
+26865	rsound/items/weapons/slashmiss.ogg
+26875	rsound/items/weapons/slashmiss.ogg
 #uniform
 2846	y/obj/item/clothing/under/syndicate
 2847	y/obj/item/clothing/under/abductor

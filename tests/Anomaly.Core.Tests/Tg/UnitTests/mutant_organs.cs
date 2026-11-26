@@ -29,6 +29,7 @@ public sealed class datum_unit_test_mutant_organs : TgUnitTest
         {
             TgStrings.Mount(DmWorldState.Of(World.Current).Files, Tools.TgClone.Root);
             GLOB.gross_adjectives = world.file2list("strings/names/gross_adjectives.txt") as DmList;
+            GLOB.nightmare_names = world.file2list("strings/names/nightmare.txt") as DmList; // the nightmare renames itself on gain (D349)
         }
     }
 

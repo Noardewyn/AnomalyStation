@@ -229,6 +229,46 @@ off, and the replicator's unit-test harness keeps it off so the shared body's te
   visuals at once); (3) an animated thing's picture set in place on a chunk just refilled made Godot read the MultiMesh buffer back
   from the GPU (35 ms): in-place changes go to the batch's own copy and are uploaded once a frame (`ChunkBatch.UploadPending`). After:
   no frame above 80 ms but the first; a thing whose own model texture is new still costs its decode (20-60 ms, once per texture).
+- **The join's loading** (D352, the owner 2026-11-25; DV597; measured on Meta without the lobby, RTX 4080, `ANOMALY_FRAMEPROBE_MS=33`):
+  before, `MapRenderer.Build` ran inside `_Ready` for 5.2 s (10 s on the owner's machine) behind a frozen window while the server had
+  already late-joined the character, and the first frames after it took 462 ms and then 44-82 ms. Now the client preloads at its start
+  (`AssetPreload`: 3,789 sounds, 105 MB; 998 models with their 160 distinct textures, 117 MB decoded, a kit's copies of one atlas shared;
+  54 MB of sheet bytes; 0.5-3.7 s on worker threads). The game scene shows `Hud/LoadingCover` and builds the map in steps of 40 ms
+  (`MapRenderer.BuildSteps`, 3.4-3.7 s over about 70 frames), decodes the round's sheets and `IconPrefetch`'s common folders ahead
+  (about 930 sheets, 646 MB; none over 32 MB but the combat list's), warms every shader and effect up (`ShaderWarmUp`: surface pipelines
+  35 to 133, draw 8 to 67, specialization 14 to 90), then sends `Loaded` (protocol 97): the server late-joins the body only then, and the
+  cover goes once the things it streams around the body have about stopped coming (about 1.1 s after the build). Under the cover a few
+  frames still take 0.5-0.8 s (the scene's making, its first full frame). After the reveal the worst of the first 60 frames is 127 ms,
+  and the miss log (`preload miss: ...`) names 5 first-time sheet loads under 1 ms each (564 with `ANOMALY_PRELOAD=0`), no model and no
+  sound. The 130 s walk: p50 16.7 ms, p95 25.3 (33 before), p99 39.6 (42), worst 78 (108), 29 frames over 50 ms (37), none over 100.
+  The cost is memory: the working set at the reveal is 3.6 GB against 2.2 GB with the preload off, mostly the sheets decoded ahead. Left:
+  the engine-side stalls (45-55 ms with no script time) and the streaming costs (`map/atlas.Flush`, `map/RebuildTurfs`).
+- **The streaming hitches** (the owner, 2026-11-26: FPS fell to 10-15 while flying into parts of the station not seen before, and
+  not on the way back): measured with Tracy (`tools/perf/fly.sh`, docs/testing.md "Profiling"), a noclip flight at the normal speed
+  along row 127 from the west edge to the east and back, Meta without the lobby, RTX 4080. The display's refresh turns a frame of
+  20-30 ms into 33 or 50 ms, so the slow frames come in runs at 30 or 20 FPS. Found and changed: (1) the prop atlas uploaded a whole
+  2048 x 2048 layer (16 MB) for each new picture, 7-14 ms a frame while things arrived, about 1 s of the first leg's slow frames: the
+  atlas is the RenderingDevice's own texture array and a flush uploads the shelves' new rectangles alone, copied into place on the GPU
+  (`PropAtlas.FlushRects`; Godot's `Texture2DArray` updates whole layers only); (2) a door or a window that arrived rebuilt its
+  neighbours' models at once, inside the message or the tick's scan (frames of 20-50 ms): `Replace` is queued and drawn within the
+  warm-up's budget (`StepReplace`); (3) turf chunks were rebuilt four a frame (20 ms) and each made a new occluder, which makes Godot
+  build its occlusion culling's scene again: a time budget, and the occluder is kept while the chunk's walls are the same; (4) the
+  runtime runs in `SustainedLowLatency`. Standing still the render passes of 35-45 ms every 4.8 s are gone (2 in 45 s). First leg,
+  with vsync: frames over 33 ms 379 to 287, over 50 ms 33 to 23, p99 47 to 44 ms; the game's own time in the slow frames 4.3 s to
+  1.7 s (atlas 1.06 s to 0, model builds 0.58 to 0.19 s, spawns 0.76 to 0.24 s). Then, profiled inside the engine (a Godot built
+  with Tracy, `tools/perf/godot-tracy.patch`): the clusters of four render passes of 35-50 ms about every 5 s were Godot preparing
+  every glass mesh instance again (`_update_dirty_geometry_instances`, 886 instances at first and 9,000 once the station was
+  seen, so it grew with the flight, and twice a time). The own mob's appearance turns to a private one and back about every 4.6 s
+  (a server-side thing not looked into), and each turn set the reflection's four `anomaly_self_*` globals to new textures: Godot
+  makes a new uniform set for each material that reads a global texture set anew, and that marks every instance drawn with it
+  dirty. The four textures are now made once at 128 x 128 and their pixels updated (`EntityLayer.PublishSelfReflection`); the prop
+  atlas's metrics texture, made anew every 1,024 pictures with the same cost, starts at 16 rows and doubles. Full flight, vsync
+  off: frames over 50 ms 33 and 46 (first leg and back) to 3 and 2, p99 47 and 51 ms to 31 and 30. A directional window that
+  left redrew the panes around it at once, each pane once for every neighbour that left (1,158 model builds, a frame of 100 ms on
+  the way back): `RedrawBorderWindowsAround` queues them for `StepReplace` as `Rejoin` does. With the stock engine and vsync, as
+  played: frames over 33 ms 379 and 206 to 33 and 12, over 50 ms 33 and 44 to 3 and 0, p99 47 and 49 ms to 32 and 29. Left are
+  the game's own costs: a thing's first model build (8-35 ms), a first spawn of a type (11-17 ms, some of it the code's first
+  run), `map/Scan` walking every static record each server tick (2.6-6 ms, 21 times a second) and the turf rebuilds (up to 27 ms).
 - **The spawn queue and the leave margins** (performance.md P3.7, P3.8, 2026-10-29): what the sets bring in is queued and spawned
   nearest the eye first, `SpawnBudget` (150) a tick, `JoinSpawnBudget` (1,000) in the join's Snapshot; the own mob, the mobs, the
   doors of the near chunks, the visuals and what the world made this tick skip the queue, and what lies on a spawned door's tile comes

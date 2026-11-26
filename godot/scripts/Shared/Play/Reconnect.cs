@@ -142,6 +142,7 @@ public sealed class JoinAttempt : IDisposable
     private readonly Func<IClientTransport> _transport;
     private readonly ReconnectTokens _tokens;
     private readonly string _loginToken;
+    private readonly bool _waitsForLoad;
     private readonly string _server;
     private bool _usedKeptToken;
     private bool _retried;
@@ -156,8 +157,10 @@ public sealed class JoinAttempt : IDisposable
     public const double NotReadyRetrySeconds = 2;
 
     /// <param name="loginToken">D335: the launcher's game token for this server, or null; every try sends it (<see cref="GameClient"/>).</param>
-    public JoinAttempt(Func<IClientTransport> transport, ReconnectTokens tokens, string host, int port, string name, string loginToken = null)
+    /// <param name="waitsForLoad">Version 97 (DV597): every try's client loads the world before it plays (<see cref="GameClient"/>).</param>
+    public JoinAttempt(Func<IClientTransport> transport, ReconnectTokens tokens, string host, int port, string name, string loginToken = null, bool waitsForLoad = false)
     {
+        _waitsForLoad = waitsForLoad;
         _transport = transport ?? throw new ArgumentNullException(nameof(transport));
         _loginToken = loginToken;
         _tokens = tokens ?? new ReconnectTokens(null);
@@ -236,7 +239,7 @@ public sealed class JoinAttempt : IDisposable
     private void Start(SessionToken token)
     {
         _usedKeptToken = !token.IsNone;
-        Client = new GameClient(_transport(), Host, Port, Name, token, _loginToken);
+        Client = new GameClient(_transport(), Host, Port, Name, token, _loginToken, _waitsForLoad);
         Client.Connect();
     }
 

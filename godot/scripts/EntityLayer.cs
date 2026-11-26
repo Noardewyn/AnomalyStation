@@ -211,8 +211,10 @@ public partial class EntityLayer : Node3D
 
     private static readonly byte[] SelfSideDirs = { ByondDir.South, ByondDir.East, ByondDir.North, ByondDir.West };
     private static readonly StringName[] SelfSideParams = { "anomaly_self_south", "anomaly_self_east", "anomaly_self_north", "anomaly_self_west" };
-    private readonly ImageTexture[] _selfSides = new ImageTexture[4];
-    private readonly ImageTexture[] _selfPublishedSides = new ImageTexture[4];
+    private readonly ComposedRaster[] _selfSides = new ComposedRaster[4];
+    private readonly ComposedRaster[] _selfPublishedSides = new ComposedRaster[4];
+    private readonly ImageTexture[] _selfTextures = new ImageTexture[4];
+    private const int SelfSideSize = 128; // a 32 or 64 pixel picture at a whole multiple; a bigger one loses some pixels in the reflection
     private float _selfYaw;
     private bool _selfPublished;
 
@@ -220,12 +222,12 @@ public partial class EntityLayer : Node3D
     // not the front (the owner, 2026-11-18). A lying body or a still icon shows its one picture on every side.
     // shortcut: four sides even for an eight-direction icon (the mobs' are four); its diagonals need four more globals.
     private void NoteSelfSides(IAppearanceSource tables, TableRef appearance, double seconds, Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>> filterLooks,
-        GodotPicture picture, bool lying, byte yaw)
+        ComposedRaster picture, bool lying, byte yaw)
     {
         bool turns = !lying && Textures.Directions(tables, appearance) > 1;
         for (int i = 0; i < SelfSideDirs.Length; i++)
-            _selfSides[i] = turns && Textures.TryGet(tables, appearance, SelfSideDirs[i], seconds, out _, out GodotPicture side, rootOpaque: false, filterLooks: filterLooks)
-                ? side.Texture : picture.Texture;
+            _selfSides[i] = turns && Textures.TryGet(tables, appearance, SelfSideDirs[i], seconds, out ComposedRaster side, out _, rootOpaque: false, filterLooks: filterLooks)
+                ? side : picture;
         _selfYaw = yaw * MathF.Tau / 256f;
     }
 
@@ -246,7 +248,17 @@ public partial class EntityLayer : Node3D
         {
             if (ReferenceEquals(_selfSides[i], _selfPublishedSides[i]))
                 continue;
-            RenderingServer.GlobalShaderParameterSet(SelfSideParams[i], _selfSides[i]);
+            // The shaders keep the same four textures of one size and a new picture only changes their pixels (the shader reads them by
+            // their fraction of the picture): another texture, or this one at another size, makes Godot rebuild every material that reads
+            // it and prepare again each mesh drawn with them (all the station's glass, 20-30 ms a time)
+            Image image = AppearanceTextures.ToImage(_selfSides[i].Image.Resized(SelfSideSize, SelfSideSize));
+            if (_selfTextures[i] == null)
+            {
+                _selfTextures[i] = ImageTexture.CreateFromImage(image);
+                RenderingServer.GlobalShaderParameterSet(SelfSideParams[i], _selfTextures[i]);
+            }
+            else
+                _selfTextures[i].Update(image);
             _selfPublishedSides[i] = _selfSides[i];
         }
         RenderingServer.GlobalShaderParameterSet("anomaly_self_yaw", _selfYaw);
@@ -462,6 +474,14 @@ public partial class EntityLayer : Node3D
     /// <summary>How long after the player's own click its aimed point is where the next hit's burst starts.</summary>
     public const double AimedHitSeconds = 1.0;
     private readonly Dictionary<long, (Vector3 Point, double At)> _aimedMelee = new();
+
+    /// <summary>
+    /// shortcut: an attack image is the own one when the player clicked its target within <see cref="AimedHitSeconds"/> and it starts
+    /// within a tile of the own mob (the wire does not name the attacker); a neighbour hitting the same target in that second loses theirs.
+    /// </summary>
+    private bool IsOwnAttack(long target, Vector3 start, double now)
+        => target != 0 && _aimedMelee.TryGetValue(target, out var clicked) && now - clicked.At <= AimedHitSeconds
+            && _entries.TryGetValue(_ownId, out Entry own) && new Vector2(own.Node.Position.X - start.X, own.Node.Position.Z - start.Z).Length() < TileSpace.TileSize;
 
     /// <summary>
     /// The player clicked entity <paramref name="id"/> where the crosshair met its picture, at <paramref name="world"/> (world
@@ -813,7 +833,7 @@ public partial class EntityLayer : Node3D
         // needs a second lookup. A point arrow, a mining ping and a visual keep the one side (a small, transient effect of little weight).
         bool isOwnMob = e.Entity.Id == _ownId;
         if (isOwnMob && _hideOwn)
-            NoteSelfSides(tables, appearance, seconds, filterLooks, picture, lying, yaw);
+            NoteSelfSides(tables, appearance, seconds, filterLooks, raster, lying, yaw);
         bool reflectable = (e.Entity.IsMob() || PropKinds.IsItem(e.Entity.TypePath)) && !e.IsVisual && !pointArrow && !miningPing;
         if (MirrorViewer is Vector2 mirrorEye && reflectable
             && MathF.Abs(mirrorEye.X - pose.X) <= MirrorReflectRangeTiles && MathF.Abs(mirrorEye.Y - pose.Y) <= MirrorReflectRangeTiles)
@@ -1173,6 +1193,12 @@ public partial class EntityLayer : Node3D
                 Vector3 start = new(TileSpace.WorldX((float)(melee.OriginX / 32.0)), TileSpace.WorldY(state.Z) + (float)melee.HeightPixels * TileSpace.TileSize / 32f,
                     TileSpace.WorldZ((float)(melee.OriginY / 32.0)));
                 Vector3 end = new(TileSpace.WorldX(state.X), TileSpace.WorldY(state.Z) + (float)melee.HeightAt(state.X * 32, state.Y * 32) * TileSpace.TileSize / 32f, TileSpace.WorldZ(state.Y));
+                // first person: the own attack's image is not drawn, the view model's clip shows the hit (others and the third person see it)
+                if (_hideOwn && IsOwnAttack(host, start, now))
+                {
+                    e.Node.Visible = false;
+                    continue;
+                }
                 if (host != 0 && _aimedMelee.TryGetValue(host, out var aimed) && now - aimed.At <= AimedHitSeconds)
                     end = aimed.Point;
                 else if (host != 0 && map != null && map.TryVisualAnchor(host, eye, out VisualPlacement anchor))
@@ -2126,7 +2152,23 @@ public partial class EntityLayer : Node3D
 
     // Things that arrive while playing are built over the next frames, nearest first, within SpawnBudgetMs a frame: walking into a new part
     // of the map brings hundreds at once (M10's interest), and building them in one frame was a visible stall. Mobs and visuals come at once.
-    private const double SpawnBudgetMs = 4;
+    public const double SpawnBudgetMs = 4;
+
+    /// <summary>The frame time the queued things may take to be built: <see cref="SpawnBudgetMs"/> in play, more under the loading screen.</summary>
+    public double SpawnBudget { get; set; } = SpawnBudgetMs;
+
+    /// <summary>The things queued to be built (<see cref="AddPending"/>) within <paramref name="tiles"/> of a point on the map.</summary>
+    public int PendingNear(double x, double y, double tiles)
+    {
+        int near = 0;
+        foreach (ReplicaEntity e in _pending.Values)
+        {
+            double dx = e.State.X - x, dy = e.State.Y - y;
+            if (dx * dx + dy * dy <= tiles * tiles)
+                near++;
+        }
+        return near;
+    }
     private readonly Dictionary<long, ReplicaEntity> _pending = new();
     private ReplicaEntity[] _pendingOrder = [];
     private double[] _pendingDistance = [];
@@ -2163,10 +2205,9 @@ public partial class EntityLayer : Node3D
         {
             ReplicaEntity entity = _pendingOrder[i];
             _pending.Remove(entity.Id);
-            long one = System.Diagnostics.Stopwatch.GetTimestamp();
-            Add(entity);
-            Dev.FrameProbe.Item("spawn", entity.TypePath, System.Diagnostics.Stopwatch.GetElapsedTime(one).TotalMilliseconds);
-            if (System.Diagnostics.Stopwatch.GetElapsedTime(start).TotalMilliseconds >= SpawnBudgetMs)
+            using (Dev.FrameProbe.Measure("spawn", entity.TypePath))
+                Add(entity);
+            if (System.Diagnostics.Stopwatch.GetElapsedTime(start).TotalMilliseconds >= SpawnBudget)
                 break;
         }
         Array.Clear(_pendingOrder, 0, count); // holds no despawned entity

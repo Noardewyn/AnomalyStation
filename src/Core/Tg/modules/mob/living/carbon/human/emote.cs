@@ -133,3 +133,71 @@ public partial class datum_emote_living_carbon_human_wag : datum_emote_living_ca
         return FALSE;
     }
 }
+
+// Species package SP2b (D349): the emotes of the ethereal's glow.
+/// emotes for glowy goobers
+// tg: code/modules/mob/living/carbon/human/emote.dm:284
+public partial class datum_emote_living_carbon_human_glow : datum_emote_living_carbon_human
+{
+    // tg: code/modules/mob/living/carbon/human/emote.dm:290
+    public override async DmTask<object> can_run_emote(mob user = null, float? status_check = null, float? intentional = null, object @params = null)
+    {
+        status_check ??= TRUE;
+        if (!Dm.truthy((user as mob_living)?.has_status_effect(typeof(datum_status_effect_grouped_bodypart_effect_ethereal_glow))))
+            return FALSE;
+        return await base.can_run_emote(user, status_check, intentional, @params);
+    }
+
+    // tg: code/modules/mob/living/carbon/human/emote.dm:295
+    public override async DmTask<object> run_emote(mob user = null, object @params = null, object type_override = null, float? intentional = null)
+    {
+        object dot = await base.run_emote(user, @params, type_override, intentional);
+        var glow = ((mob_living)user).has_status_effect(typeof(datum_status_effect_grouped_bodypart_effect_ethereal_glow)) as datum_status_effect_grouped_bodypart_effect_ethereal_glow;
+        glow.handle_glow_emote(1.75f, 1.2f);
+        return dot;
+    }
+}
+
+// tg: code/modules/mob/living/carbon/human/emote.dm:300
+public partial class datum_emote_living_carbon_human_flare : datum_emote_living_carbon_human
+{
+    // tg: code/modules/mob/living/carbon/human/emote.dm:307
+    public override async DmTask<object> can_run_emote(mob user = null, float? status_check = null, float? intentional = null, object @params = null)
+    {
+        status_check ??= TRUE;
+        if (!Dm.truthy((user as mob_living)?.has_status_effect(typeof(datum_status_effect_grouped_bodypart_effect_ethereal_glow))))
+            return FALSE;
+        return await base.can_run_emote(user, status_check, intentional, @params);
+    }
+
+    // tg: code/modules/mob/living/carbon/human/emote.dm:312
+    public override async DmTask<object> run_emote(mob user = null, object @params = null, object type_override = null, float? intentional = null)
+    {
+        object dot = await base.run_emote(user, @params, type_override, intentional);
+        var glow = ((mob_living)user).has_status_effect(typeof(datum_status_effect_grouped_bodypart_effect_ethereal_glow)) as datum_status_effect_grouped_bodypart_effect_ethereal_glow;
+        glow.handle_glow_emote(12, 6, flare: TRUE, duration: 2 * SECONDS, flare_time: 10 * SECONDS);
+        return dot;
+    }
+}
+
+// tg: code/modules/mob/living/carbon/human/emote.dm:317
+public partial class datum_emote_living_carbon_human_flicker : datum_emote_living_carbon_human
+{
+    // tg: code/modules/mob/living/carbon/human/emote.dm:324
+    public override async DmTask<object> can_run_emote(mob user = null, float? status_check = null, float? intentional = null, object @params = null)
+    {
+        status_check ??= TRUE;
+        if (!Dm.truthy((user as mob_living)?.has_status_effect(typeof(datum_status_effect_grouped_bodypart_effect_ethereal_glow))))
+            return FALSE;
+        return await base.can_run_emote(user, status_check, intentional, @params);
+    }
+
+    // tg: code/modules/mob/living/carbon/human/emote.dm:329
+    public override async DmTask<object> run_emote(mob user = null, object @params = null, object type_override = null, float? intentional = null)
+    {
+        object dot = await base.run_emote(user, @params, type_override, intentional);
+        var glow = ((mob_living)user).has_status_effect(typeof(datum_status_effect_grouped_bodypart_effect_ethereal_glow)) as datum_status_effect_grouped_bodypart_effect_ethereal_glow;
+        glow.start_flicker();
+        return dot;
+    }
+}

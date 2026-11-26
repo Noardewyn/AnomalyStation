@@ -15,6 +15,15 @@ public class PlayOptionsTests
         return File.ReadAllText(Path.Combine(dir, "godot", "default-options.cfg"));
     }
 
+    // D184: the readout panel's key went with the panel; an options file that still binds it reads without an error
+    [Fact]
+    public void TheRetiredAnalyzerKeyReadsClean()
+    {
+        var errors = new List<string>();
+        PlayOptions.Parse("bind.analyzer=F9\n", errors);
+        Assert.Empty(errors);
+    }
+
     // D324: the file stays readable as the options change, and copying the owner's settings must not hand a new player a dev view
     [Fact]
     public void TheSettingsANewPlayerStartsFromHaveNoErrorAndNoDevView()
@@ -503,7 +512,6 @@ public class PlayOptionsTests
         [PlayAction.CameraMode] = new[] { "F1" },
         [PlayAction.Ceiling] = new[] { "F2" },
         [PlayAction.ThirdPersonView] = new[] { "F5" },
-        [PlayAction.Analyzer] = new[] { "F9" },
         [PlayAction.Options] = new[] { "F10" },
         [PlayAction.DevMenu] = new[] { "Backslash" },
         // not in the table, so unchanged
@@ -641,17 +649,17 @@ public class PlayOptionsTests
                 continue;
             lines++;
             string[] pair = line.Substring(5).Split('=');
-            if (pair[0] == "give_item")
+            if (pair[0] is "give_item" or "analyzer")
             {
-                // slice E: the give key is gone; its line is read without an error and names no action
+                // slice E: the give key is gone, and the readout panel's key with the panel (D184); each line is read without an error and names no action
                 Assert.Null(KeyBindings.ActionOfId(pair[0]));
                 continue;
             }
             PlayAction action = KeyBindings.ActionOfId(pair[0]).Value;
             Assert.True(string.Join(",", options.Bindings.KeysOf(action)) == pair[1], $"{pair[0]}: {string.Join(",", options.Bindings.KeysOf(action))}, saved {pair[1]}");
         }
-        // every action of the time, the give key among them: today's actions less slice E's three menu keys, and the give key
-        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 + 1, lines);
+        // every action of the time, the give key among them: today's actions less slice E's three menu keys, and the give and analyzer keys
+        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 + 2, lines);
         // slice E's menu keys keep their defaults where the old file left the key free (G: the give key's line is ignored), and lose it where the old
         // file gave it to another action (L the flashlight's, M the me key's), as a key serves one action
         Assert.Equal(new[] { "G" }, options.Bindings.KeysOf(PlayAction.CraftingMenu));

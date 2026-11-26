@@ -439,6 +439,23 @@ public sealed partial class CeilingSystem
         return block != null ? Dm.text("[]", block.name) : "none";
     }
 
+    /// <summary>
+    /// The floor block shown over the cell (<see cref="ShownAt"/>) as the unplaced instance of its type whose light vars light the room under it;
+    /// null for none, a lattice or a broken block. A light floor's is lit as a working one's update_appearance leaves it (light_floor.dm:65):
+    /// its colour and range 3.
+    /// </summary>
+    public atom LitBlockAt(int x, int y, int z)
+    {
+        CeilingState state = ShownAt(x, y, z);
+        if (!state.Sealed || state.Broken != 0 || Proto(state.Turf) is not atom block) return null;
+        if (block is turf_open_floor_light lit)
+        {
+            lit.light_color = lit.currentcolor;
+            lit.light_range = 3;
+        }
+        return block;
+    }
+
     private atom BlockOf(CeilingState state)
         => state.Sealed ? Proto(state.Turf) : state.Lattice switch
         {

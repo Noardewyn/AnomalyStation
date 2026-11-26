@@ -378,11 +378,17 @@ public partial class obj_item_bodypart : obj_item
         }
 
         // Then texture everything at once, including bodypart overlays
-        foreach (object texture in Dm.each(bodypart_textures))
+        foreach (datum_bodypart_texture texture in Dm.each_cast<datum_bodypart_texture>(bodypart_textures))
         {
-            // GAP(P2, datums/bodypart_overlays/texture_bodypart_overlay.cs): can_texture_bodypart and modify_bodypart_appearance
-            // of /datum/bodypart_texture are not declared; no limb is textured in M2 (M9).
-            Dm.NotTranslated("code/modules/surgery/bodyparts/_bodyparts.dm:1460", "get_limb_icon: the bodypart textures (M10+)");
+            if (!Dm.truthy(texture.can_texture_bodypart(this)))
+                continue;
+            foreach ((object generated_overlay, object generated_overlay_flags) in Dm.pairs(dot))
+            {
+                if (!Dm.truthy(Dm.bitand(generated_overlay_flags, LIMB_OVERLAY_TEXTURED)))
+                    continue;
+
+                texture.modify_bodypart_appearance(generated_overlay as image, generated_overlay_flags);
+            }
         }
 
         // tg: #ifndef UNIT_TESTS ... if(PERFORM_ALL_TESTS(focus_only/bodypart_overlay_flags)) ... #endif (:1469-1475):

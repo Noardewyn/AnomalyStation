@@ -82,7 +82,7 @@ public sealed partial class ServerHost
         }
         _due.Clear();
         if (_frozenLooks.Count > 0)
-            CatchUpLooks(world); // version 95 also (slice T4b): the looks skipped during do-afters that are over now
+            CatchUpLooks(world); // version 98 also (slice T4b): the looks skipped during do-afters that are over now
         AutoRespawns(world); // DV580: before the direct joins, which late-join the respawned players
         DirectJoins(world);
     }
@@ -219,6 +219,7 @@ public sealed partial class ServerHost
         // From here a failure (a runtime in KeyMob or Connect) leaves the session LoggingIn without a login, which
         // PollLogins refuses after the tick.
         if (s.State == SessionState.Joining) s.State = SessionState.LoggingIn;
+        s.AwaitingLoad = command.WaitsForLoad; // DV597: until its client's Loaded, a new player stays in the lobby
         if (Room == null && !MapLoaded)
             throw new InvalidOperationException("a join needs the tg world (the server runs --empty)");
 
@@ -263,7 +264,8 @@ public sealed partial class ServerHost
     private const string JoinConnectPiece = "join: client/New";
     private const string JoinLateSpawnPiece = "join: late spawn";
 
-    // D270: without the lobby, the new players that wait for the round to start (it starts at the ticker's first fire).
+    // D270: without the lobby, the new players that wait for the round to start (it starts at the ticker's first fire), and DV597's that wait for
+    // their client to load the world (Session.AwaitingLoad).
     private readonly List<Session> _directJoins = new();
 
     // D270: without the lobby, each waiting new player late-joins as tg's overflow job once the round is in progress, as tg's
@@ -275,6 +277,10 @@ public sealed partial class ServerHost
             return;
         foreach (Session s in _directJoins.ToArray())
         {
+            // DEVIATION(DV597): a client still loading the world (its loading screen up) is late-joined once it says it is loaded, as BYOND's
+            // PRELOAD_RSC sends the resources before the login; until then its key stays tg's new player, with no body
+            if (s.AwaitingLoad && s.State != SessionState.Closed)
+                continue;
             _directJoins.Remove(s);
             // (the map editor's Play as a new arrival: tg's own late-join point, the arrivals shuttle's chair, and no spawn point of the host's)
             bool arrive = _config.JoinAsArrival;
@@ -313,6 +319,24 @@ public sealed partial class ServerHost
         return m;
     }
 
+    /// <summary>
+    /// Version 95: the cooldown a melee blow with the active hand would set now, milliseconds: the held thing's <c>attack_speed</c> (an empty
+    /// hand's <c>CLICK_CD_MELEE</c>) through the mob's modifiers and its status effects', as mob_living's changeNext_move takes it (click.dm:23).
+    /// </summary>
+    internal static int MeleeCooldownMs(mob own)
+    {
+        if (own is not mob_living living)
+            return OwnBlock.DefaultMeleeCooldownMs;
+        float speed = living.get_active_held_item() is obj_item held ? held.attack_speed : CLICK_CD_MELEE;
+        float mod = living.next_move_modifier, adj = living.next_move_adjust;
+        foreach (datum_status_effect effect in Dm.each_cast<datum_status_effect>(living.status_effects))
+        {
+            mod *= Dm.num(effect.nextmove_modifier());
+            adj += Dm.num(effect.nextmove_adjust());
+        }
+        return (int)Math.Clamp(Math.Round((speed + adj) * mod * 100), 0, OwnBlock.MaxMeleeCooldownMs);
+    }
+
     // Version 43 (M10 slice E): each joined player's access, tg's get_access() (the IDs held and worn answer COMSIG_MOB_RETRIEVE_ACCESS),
     // read inside the world once a tick after the step, for the private block: the client guesses which airlocks open for it. A read
     // only (the replicator calls no proc; this getter sends a signal its listeners answer by adding to the list).
@@ -326,6 +350,7 @@ public sealed partial class ServerHost
                 mob own = MobOf(s);
                 // version 89: click.dm ClickOn's first refusals, before the click reaches what was clicked
                 s.HandsBlocked = own != null && (Dm.truthy(INCAPACITATED_IGNORING(own, INCAPABLE_RESTRAINTS | INCAPABLE_STASIS)) || HAS_TRAIT(own, TRAIT_HANDS_BLOCKED));
+                s.MeleeCooldownMs = MeleeCooldownMs(own); // version 95
                 List<string> now = (own as mob_living)?.get_access() is DmList list
                     ? Dm.each(list).Select(a => Dm.str(a)).Where(a => !string.IsNullOrEmpty(a) && Encoding.UTF8.GetByteCount(a) <= Limits.MaxAccessBytes).Distinct().Take(Limits.MaxAccessEntries).ToList()
                     : new List<string>();
@@ -402,7 +427,7 @@ public sealed partial class ServerHost
         if (s == null || s.Client == null) return;
         world.usr = MobOf(s);
         if (command.Action is ActionKind.Hover or ActionKind.Unhover or ActionKind.Click or ActionKind.Throw)
-            s.FrozenLook = null; // version 95 also (slice T4b): a newer look, or a click's or a throw's own zone, replaces a skipped look
+            s.FrozenLook = null; // version 98 also (slice T4b): a newer look, or a click's or a throw's own zone, replaces a skipped look
         switch (command.Action)
         {
             case ActionKind.Rest:
@@ -477,6 +502,11 @@ public sealed partial class ServerHost
             case ActionKind.Verb:
                 // version 78: a command verb of the stat panel
                 _clients.Verb(s.Client, command.Text);
+                break;
+            case ActionKind.Loaded:
+                // version 97 (DV597): the client has loaded the world; a new player waiting for that joins the round now (no lobby)
+                s.AwaitingLoad = false;
+                DirectJoins(world);
                 break;
             case ActionKind.ContextPick:
                 // version 86 (DV503): the radial's entry that is no click, on a target checked as a click's
@@ -763,7 +793,7 @@ public sealed partial class ServerHost
 
     // DEVIATION(DV30): a click on a carbon's picture selects the body zone under the crosshair before tg's Click, through tg's
     // own zone selector (set_selected_zone, so the HUD's doll shows it), where tg selects it on the zone selector alone.
-    // Version 95 also (slice T4b): a hover selects the zone looked at with tg's should_log = FALSE (a look is no choice to log).
+    // Version 98 also (slice T4b): a hover selects the zone looked at with tg's should_log = FALSE (a look is no choice to log).
     private static void AimAt(mob aimer, AimZone aim, bool log = true)
     {
         string zone = aim switch
@@ -774,7 +804,7 @@ public sealed partial class ServerHost
             AimZone.RightArm => BODY_ZONE_R_ARM,
             AimZone.LeftLeg => BODY_ZONE_L_LEG,
             AimZone.RightLeg => BODY_ZONE_R_LEG,
-            // version 95 (package T, slice T4a): the precise zones of tg's doll (get_zone_at), which tg's readers of zone_selected handle as on tg
+            // version 98 (package T, slice T4a): the precise zones of tg's doll (get_zone_at), which tg's readers of zone_selected handle as on tg
             AimZone.Eyes => BODY_ZONE_PRECISE_EYES,
             AimZone.Mouth => BODY_ZONE_PRECISE_MOUTH,
             AimZone.Groin => BODY_ZONE_PRECISE_GROIN,
@@ -850,7 +880,7 @@ public sealed partial class ServerHost
             var hint = new ContextHintsMessage { TargetKind = TargetKind.Ceiling, TurfX = (int)ceilingCell.x, TurfY = (int)ceilingCell.y, TurfZ = (int)ceilingCell.z,
                 Name = $"Ceiling: {CeilingSystem.Of(World).NameAt((int)ceilingCell.x, (int)ceilingCell.y, (int)ceilingCell.z)}"
                     + (state.Broken != 0 ? " (broken)" : "") + (state.Damage != 0 ? $" ({CeilingState.LatticeIntegrity - state.Damage / 10f:0.#}/{CeilingState.LatticeIntegrity})" : "") + (state.Exists && !state.Supported ? " (NO SUPPORT)" : "") };
-            // DEVIATION(DV589): out of the ceiling click's range the ceiling is not named
+            // DEVIATION(DV601): out of the ceiling click's range the ceiling is not named
             // (the ceiling's range, CeilingSystem's, for every living mob whatever it holds: a gun's shot from afar shows nothing either)
             if (s.Client.mob is mob_living reacher && !Waiting.NoSleep(CeilingSystem.InReach(reacher, ceilingCell)))
                 hint.Name = "";
@@ -858,7 +888,7 @@ public sealed partial class ServerHost
             s.ControlOutbox.Enqueue(Codec.Encode(hint));
             return;
         }
-        // DEVIATION(DV30), version 95 also (slice T4b): the zone looked at on a carbon becomes tg's zone_selected before tg's hover, so the
+        // DEVIATION(DV30), version 98 also (slice T4b): the zone looked at on a carbon becomes tg's zone_selected before tg's hover, so the
         // screentip is built from it (carbon_context's Headpat, Hug, Pull tail). Not while any of tg's do-afters runs for the mob (the
         // designer, 2026-11-24): a surgery step or the gun at the mouth keeps the zone it started with, and the look is applied once the
         // do-afters are over (CatchUpLooks); a click still sets it (ApplyClick). tg's MouseEntered of the same atom runs on_mouse_enter
@@ -875,7 +905,7 @@ public sealed partial class ServerHost
         s.HoversApplied++;
     }
 
-    // DEVIATION(DV589): tg's screentip shows at any distance; the designer (2026-11-26) wants the prompt only where a click would reach, so the
+    // DEVIATION(DV601): tg's screentip shows at any distance; the designer (2026-11-26) wants the prompt only where a click would reach, so the
     // router sends a world thing's hints empty when the mob cannot reach it by tg's own test of a click (ClickOn's IsReachableBy with the held
     // item's reach, click.dm:171). tg's MouseEntered still runs, so the hover's own effects (dm_mouse_over, the aimed turf, MouseExited) stay.
     private static void NoteReach(Session s, atom target, TargetKind kind)
@@ -888,7 +918,7 @@ public sealed partial class ServerHost
     }
 
     // The mob gated by tg's reach test: a living one acting from where it stands (on a turf, or in a loc whose AllowClick is true), whatever its
-    // state of the moment (cuffed, incapacitated, a cooldown, throw mode). Any other keeps tg's screentip (as before DV589), since tg handles its
+    // state of the moment (cuffed, incapacitated, a cooldown, throw mode). Any other keeps tg's screentip (as before DV601), since tg handles its
     // clicks by another rule: not living (observer.dm:13), the AI (ai.dm:18), a cyborg with no module out (interaction_range, cyborg.dm:51), the
     // hunter while leap_on_click is on (hunter.dm:36), and a mob inside a thing that does not allow the click (a mech, a locker: click.dm:161).
     private static mob_living ReachGated(Session s)
@@ -899,7 +929,7 @@ public sealed partial class ServerHost
         return m.loc is turf || Dm.truthy(m.loc?.AllowClick()) ? m : null;
     }
 
-    // Version 95 also (slice T4b): the sessions holding a look skipped during a do-after, in the order the looks were applied (a list, so
+    // Version 98 also (slice T4b): the sessions holding a look skipped during a do-after, in the order the looks were applied (a list, so
     // the catch-up's order is the commands' order in a replay too).
     private readonly List<Session> _frozenLooks = new();
 
@@ -954,7 +984,7 @@ public sealed partial class ServerHost
     // the world (presentation-seam.md). A replay has no connections, so nothing is queued there.
     private bool _screentipsInstalled;
 
-    // DV589: the session whose chat is muted while its hover's radial extras are worked out (ScreentipRouter.QuietExtras), else null.
+    // DV601: the session whose chat is muted while its hover's radial extras are worked out (ScreentipRouter.QuietExtras), else null.
     private Session _chatMutedFor;
 
     private void InstallScreentips(World world)
@@ -974,7 +1004,7 @@ public sealed partial class ServerHost
         {
             Session s = _host.SessionOfClient(viewer);
             if (s == null) return;
-            // DV589: the reach of the hover this screentip answers (tg builds it later in the tick, in SSmouse_entered's fire): read once and let go
+            // DV601: the reach of the hover this screentip answers (tg builds it later in the tick, in SSmouse_entered's fire): read once and let go
             atom outOfReachTarget = s.HoverOutOfReach;
             s.HoverOutOfReach = null;
             if (s.Connection == null || s.State != SessionState.Joined) return;
@@ -997,7 +1027,7 @@ public sealed partial class ServerHost
                 message.Target = target.dm_id;
             }
 
-            // DEVIATION(DV589): out of reach (ApplyHover's NoteReach) the thing's message is empty: a zero-length name (null is tg's "no screentip",
+            // DEVIATION(DV601): out of reach (ApplyHover's NoteReach) the thing's message is empty: a zero-length name (null is tg's "no screentip",
             // which every floor sends and the client then names the floor itself), no hints, no radial extras
             bool outOfReach = outOfReachTarget != null && outOfReachTarget == target && message.TargetKind != TargetKind.Screen;
             if (outOfReach)
@@ -1029,7 +1059,7 @@ public sealed partial class ServerHost
                     RadialExtra.Pull => new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, label),
                     RadialExtra.StopPulling => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.StopPulling),
                     RadialExtra.Strip => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.DropOntoSelf),
-                    RadialExtra.Flip or RadialExtra.TurnOver or RadialExtra.Offer => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503); 95 (DV588); DV139 slice E
+                    RadialExtra.Flip or RadialExtra.TurnOver or RadialExtra.Offer => new ContextHint(ClickButton.Left, ClickModifiers.None, label, ContextHintAction.Extra), // version 86 (DV503); 98 (DV600); DV139 slice E
                     _ => new ContextHint(ClickButton.Left, ClickModifiers.None, label), // Unbuckle: the empty hand's click
                 });
             }
@@ -1039,7 +1069,7 @@ public sealed partial class ServerHost
             s.ControlOutbox.Enqueue(Codec.Encode(message));
         }
 
-        // DV589: the extras ask tg's own checks (can_perform_action and its overrides), which tell the mob each refusal in the chat; a hover asks
+        // DV601: the extras ask tg's own checks (can_perform_action and its overrides), which tell the mob each refusal in the chat; a hover asks
         // twice a second and must not talk, so the hovering session's chat is muted while they are worked out. The call is synchronous on the
         // world's thread: what reaches that session's chat meanwhile was posted by it. The world is untouched (only the outbox is), so a replay,
         // which has no sinks, holds the same.

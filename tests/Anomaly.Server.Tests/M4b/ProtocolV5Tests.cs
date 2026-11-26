@@ -56,8 +56,8 @@ public class ProtocolV5Tests
 
         grid.GasCells[0] = new CellGasChange(2, 2, 1, new[] { new GasLevel(1, 80) });
         byte[] bytes = Codec.Encode(grid);
-        Assert.Equal(80, bytes[^7]);
-        bytes[^7] = 81; // the level byte is last before version 44's empty ceiling list, version 60's and version 76's empty level lists, version 87's look flag and version 91's two-byte wall height
+        Assert.Equal(80, bytes[^8]);
+        bytes[^8] = 81; // the level byte is last before version 44's empty ceiling list, version 60's and version 76's empty level lists, version 87's look flag, version 91's two-byte wall height and version 96's empty turf light list
         Assert.False(Codec.TryDecode(bytes, out MapGrid _, out ProtocolError error));
         Assert.Equal(ProtocolError.BadValue, error);
     }

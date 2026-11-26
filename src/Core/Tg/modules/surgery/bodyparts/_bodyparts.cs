@@ -999,6 +999,7 @@ public partial class obj_item_bodypart : obj_item
 
         if (!Dm.truthy(brute) && !Dm.truthy(burn))
             return FALSE;
+        ShotGeometry.FlashLimb(owner, body_zone); // DEVIATION(DV400): the damaged part lights up
 
         brute = Dm.num(brute) * wound_damage_multiplier;
         burn = Dm.num(burn) * wound_damage_multiplier;

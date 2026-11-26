@@ -230,8 +230,7 @@ public partial class obj_item_gibtonite : obj_item
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_two_handed), Dm.named("require_twohands", TRUE)));
-        // AddComponent(/datum/component/golem_food, ...): the golems' food (the golems, not ported)
-        Dm.Deferred("code/modules/mining/ores_coins.dm:358", "Initialize: AddComponent(/datum/component/golem_food): the golems' food (the golems, not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_golem_food), Dm.named("consume_on_eat", FALSE), Dm.named("golem_food_key", typeof(obj_item_gibtonite))));
         return dot;
     }
 
@@ -573,7 +572,7 @@ public partial class obj_item_coin : obj_item
             flick(Dm.text("coin_[]_flip", coinflip), this);
             coinflip = pick(sideslist);
             icon_state = Dm.text("coin_[]", coinflip);
-            playsound(user.loc as atom, "sound/items/coinflip.ogg", 50, TRUE);
+            playsound(user.loc as atom, Dm.resource("sound/items/coinflip.ogg"), 50, TRUE);
             object oldloc = loc;
             await sleep(1.5f * SECONDS);
             if (loc == oldloc && user != null && !Dm.truthy(user.incapacitated))
@@ -669,7 +668,7 @@ public partial class obj_item_coin_gold_debug : obj_item_coin_gold
             flick(Dm.text("coin_[]_flip", coinflip), this);
             coinflip = pick(sideslist);
             icon_state = Dm.text("coin_[]", coinflip);
-            playsound(user.loc as atom, "sound/items/coinflip.ogg", 50, TRUE);
+            playsound(user.loc as atom, Dm.resource("sound/items/coinflip.ogg"), 50, TRUE);
             object oldloc = loc;
             await sleep(1.5f * SECONDS);
             if (loc == oldloc && user != null && !Dm.truthy(user.incapacitated))

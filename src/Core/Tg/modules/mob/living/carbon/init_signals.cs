@@ -56,11 +56,9 @@ public partial class mob_living_carbon : mob_living
     [SignalHandler]
     public virtual void on_agender_trait_loss(datum source = null)
     {
-        // :49-50  var/datum/dna_block/identity/gender/to_update = GLOB.dna_identity_blocks[/datum/dna_block/identity/gender]
-        //         to_update.apply_to_mob(src, src.dna.unique_identity)
-        // GAP(lead): the dna identity block types (datums/dna/blocks/*.dm) are not declared, and dna.unique_identity is not
-        // made (dna.cs: the identity hashes are M8); nothing in M2 gives or takes TRAIT_AGENDER.
-        Dm.NotTranslated("code/modules/mob/living/carbon/init_signals.dm:49", "on_agender_trait_loss: the gender identity block (dna blocks, M8)");
+        var to_update = GLOB.dna_identity_blocks[typeof(datum_dna_block_identity_gender)] as datum_dna_block_identity_gender;
+        // apply_to_mob takes a human (the only carbons that lose TRAIT_AGENDER are species changes of humans); a signal handler does not sleep
+        Waiting.NoSleep(to_update.apply_to_mob(this as mob_living_carbon_human, dna.unique_identity));
     }
 
     // tg: code/modules/mob/living/carbon/init_signals.dm:54

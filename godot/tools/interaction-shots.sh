@@ -14,9 +14,8 @@ set -eu
 project=$(cd "$(dirname "$0")/.." && pwd)
 out=${1:?usage: interaction-shots.sh OUTDIR}
 mkdir -p "$out"
-if [ -z "${GODOT:-}" ]; then
-    GODOT=$(command -v godot-mono || echo /Applications/Godot_mono.app/Contents/MacOS/Godot)
-fi
+. "$project/tools/export-common.sh"
+GODOT=$(find_godot)
 shot() {
     name=$1
     at=$2

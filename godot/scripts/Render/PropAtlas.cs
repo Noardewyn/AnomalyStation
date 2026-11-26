@@ -24,6 +24,11 @@ public sealed class PropAtlas
     private readonly Dictionary<(uint Index, bool Private, int Facing, bool Trim, bool Once), AtlasAnimation> _animations = new();
     private readonly Dictionary<(uint Index, bool Private, byte Dir, int Width, int Height), AtlasAnimation> _modelAnimations = new();
     private Texture2DArray _atlasTexture;
+    // With Vulkan (Forward+ or Mobile) and the render thread on the main one, the atlas is the RenderingDevice's own texture array: an added
+    // picture uploads its rectangle alone, copied into its page on the GPU (Godot's Texture2DArray updates whole 16 MB layers only)
+    private Rid _rdAtlas;
+    private int _rdLayers;
+    private Texture2DArrayRD _rdTexture;
     private ImageTexture _metricsTexture;
     private int _uploadedVersion = -1;
     private int _uploadedPages = -1, _uploadedMetricsRows = -1;
@@ -449,19 +454,104 @@ public sealed class PropAtlas
     }
 
     /// <summary>
-    /// Uploads the atlas and the metrics when entries were added since the last call: only the pages that changed, as layers of a texture
-    /// array. The array keeps <see cref="SparePages"/> blank layers beyond the pages, so a new page is one layer's upload; the array is made
-    /// again (every page at once) only when they run out.
+    /// Uploads the atlas and the metrics when entries were added since the last call. With the RenderingDevice (<see cref="Device"/>) only the
+    /// rectangles drawn since are uploaded (<see cref="FlushRects"/>); otherwise the pages that changed, as layers of a texture array. Either array
+    /// keeps <see cref="SparePages"/> blank layers beyond the pages, so a new page does not make it again at once.
     /// </summary>
     public void Flush()
     {
         if (_uploadedVersion == _builder.Version)
             return;
         _uploadedVersion = _builder.Version;
+        if (Device() is RenderingDevice device)
+            FlushRects(device);
+        else
+            FlushPages();
+        FlushMetrics();
+    }
+
+    /// <summary>Frees the atlas's RenderingDevice texture (the map renderer's end).</summary>
+    public void Release()
+    {
+        if (!_rdAtlas.IsValid)
+            return;
+        Set("atlas", default);
+        _rdTexture.Dispose(); // its own view of the array goes before the array
+        _rdTexture = null;
+        RenderingServer.GetRenderingDevice()?.FreeRid(_rdAtlas);
+        _rdAtlas = default;
+    }
+
+    // The main RenderingDevice when its calls may come from this thread: none with the Compatibility renderer, nor with a render thread of its own.
+    private static RenderingDevice Device()
+        => (int)ProjectSettings.GetSetting("rendering/driver/threads/thread_model", 1) == 2 ? null : RenderingServer.GetRenderingDevice();
+
+    private static RDTextureFormat AtlasFormat(int width, int height, int layers, RenderingDevice.TextureUsageBits usage) => new()
+    {
+        // sRGB as Godot's own view of a colour texture is (the shader samples it with source_color)
+        Format = RenderingDevice.DataFormat.R8G8B8A8Srgb,
+        Width = (uint)width,
+        Height = (uint)height,
+        ArrayLayers = (uint)layers,
+        TextureType = layers > 1 ? RenderingDevice.TextureType.Type2DArray : RenderingDevice.TextureType.Type2D,
+        UsageBits = usage,
+    };
+
+    private void FlushRects(RenderingDevice device)
+    {
+        List<(int Page, int X, int Y, int Width, int Height)> rects = _builder.TakeDirtyRects();
+        IReadOnlyList<Raster> pages = _builder.Pages;
+        const RenderingDevice.TextureUsageBits usage = RenderingDevice.TextureUsageBits.SamplingBit | RenderingDevice.TextureUsageBits.CanUpdateBit
+            | RenderingDevice.TextureUsageBits.CanCopyToBit | RenderingDevice.TextureUsageBits.CanCopyFromBit;
+        if (!_rdAtlas.IsValid)
+        {
+            // the first upload (the world's build): every page whole
+            using var made = Anomaly.Client.Dev.FrameProbe.Scope("atlas/all pages");
+            _rdLayers = pages.Count + SparePages;
+            _rdAtlas = device.TextureCreate(AtlasFormat(AtlasBuilder.AtlasWidth, AtlasBuilder.PageHeight, _rdLayers, usage), new RDTextureView());
+            for (int layer = 0; layer < pages.Count; layer++)
+                device.TextureUpdate(_rdAtlas, (uint)layer, pages[layer].Pixels);
+            _rdTexture = new Texture2DArrayRD { TextureRdRid = _rdAtlas };
+            Set("atlas", _rdTexture);
+            Set("atlas_size", new Vector2(AtlasBuilder.AtlasWidth, AtlasBuilder.PageHeight));
+            return;
+        }
+        if (pages.Count > _rdLayers)
+        {
+            // more pages than layers: a bigger array, the pages it had copied over on the GPU
+            using var grown = Anomaly.Client.Dev.FrameProbe.Scope("atlas/grow");
+            int layers = pages.Count + SparePages;
+            Rid bigger = device.TextureCreate(AtlasFormat(AtlasBuilder.AtlasWidth, AtlasBuilder.PageHeight, layers, usage), new RDTextureView());
+            var size = new Vector3(AtlasBuilder.AtlasWidth, AtlasBuilder.PageHeight, 1);
+            for (int layer = 0; layer < _rdLayers; layer++)
+                device.TextureCopy(_rdAtlas, bigger, Vector3.Zero, Vector3.Zero, size, 0, 0, (uint)layer, (uint)layer);
+            // the resource takes the new array first: it frees its own view of the old one, which must still be there
+            _rdTexture.TextureRdRid = bigger;
+            device.FreeRid(_rdAtlas);
+            _rdAtlas = bigger;
+            _rdLayers = layers;
+        }
+        using var changed = Anomaly.Client.Dev.FrameProbe.Scope("atlas/rects");
+        foreach ((int page, int x, int y, int width, int height) in rects)
+        {
+            byte[] pixels = pages[page].Pixels, rect = new byte[width * height * 4];
+            for (int row = 0; row < height; row++)
+                Buffer.BlockCopy(pixels, ((y + row) * AtlasBuilder.AtlasWidth + x) * 4, rect, row * width * 4, width * 4);
+            // a texture of the rectangle alone, copied into its place; the device frees it once the frame that copies it is done
+            Rid staging = device.TextureCreate(AtlasFormat(width, height, 1, RenderingDevice.TextureUsageBits.CanCopyFromBit | RenderingDevice.TextureUsageBits.CanUpdateBit),
+                new RDTextureView(), new Godot.Collections.Array<byte[]> { rect });
+            device.TextureCopy(staging, _rdAtlas, Vector3.Zero, new Vector3(x, y, 0), new Vector3(width, height, 1), 0, 0, 0, (uint)page);
+            device.FreeRid(staging);
+        }
+    }
+
+    private void FlushPages()
+    {
         List<int> dirty = _builder.TakeDirtyPages();
         IReadOnlyList<Raster> pages = _builder.Pages;
         if (_atlasTexture == null || pages.Count > _uploadedPages)
         {
+            using var made = Anomaly.Client.Dev.FrameProbe.Scope("atlas/all pages");
             var images = new Godot.Collections.Array<Image>();
             foreach (Raster page in pages)
                 images.Add(PageImage(page));
@@ -476,29 +566,40 @@ public sealed class PropAtlas
         }
         else
         {
+            using var changed = Anomaly.Client.Dev.FrameProbe.Scope("atlas/changed pages");
             foreach (int layer in dirty)
                 _atlasTexture.UpdateLayer(PageImage(pages[layer]), layer);
         }
+    }
+
+    private void FlushMetrics()
+    {
+        using var table = Anomaly.Client.Dev.FrameProbe.Scope("atlas/metrics");
 
         float[] metrics = _builder.Metrics();
         int texels = Math.Max(2, _builder.Entries.Count * 2);
-        int rows = (texels + 2047) / 2048;
+        // room for a station's pictures from the start, doubled beyond: a new texture makes Godot rebuild the material and prepare again
+        // every mesh drawn with it (all the props and their glass, 20-60 ms once the station is in)
+        int rows = Math.Max(_uploadedMetricsRows, MetricsRows);
+        while (rows * 2048 < texels)
+            rows *= 2;
         var padded = new float[rows * 2048 * 4];
         Array.Copy(metrics, padded, metrics.Length);
         var bytes = new byte[padded.Length * sizeof(float)];
         Buffer.BlockCopy(padded, 0, bytes, 0, bytes.Length);
-        Image table = Image.CreateFromData(2048, rows, false, Image.Format.Rgbaf, bytes);
+        Image metricsImage = Image.CreateFromData(2048, rows, false, Image.Format.Rgbaf, bytes);
         if (_metricsTexture == null || _uploadedMetricsRows != rows)
         {
-            _metricsTexture = ImageTexture.CreateFromImage(table);
+            _metricsTexture = ImageTexture.CreateFromImage(metricsImage);
             _uploadedMetricsRows = rows;
             Set("metrics", _metricsTexture);
         }
         else
-            _metricsTexture.Update(table);
+            _metricsTexture.Update(metricsImage);
     }
 
     private const int SparePages = 2;
+    private const int MetricsRows = 16; // 16384 pictures, 512 KB
 
     private static Image PageImage(Raster page) => Image.CreateFromData(page.Width, page.Height, false, Image.Format.Rgba8, page.Pixels);
 }

@@ -42,7 +42,8 @@ public partial class GameScene : Node3D
     private IconLibrary _ghostIcons;
     // Third-person play (the owner, 2026-10-16): the own mob's line of sight and its shade (Space Station 14's FOV).
     private int _hideAbove; // the own level in the third person: the levels above it are not drawn (0: all are)
-    private Func<float, float, int, bool> _belowView; // the entities' sight while they are hidden (_hideAbove), made once
+    private Func<float, float, int, bool> _inView; // the entities' sight (the own stack, _hideAbove, the third person's field of view), made once
+    private int _viewLevel; // the own mob's level, 0 without one
     private readonly FovMask _fov = new();
     private FovShadow _fovShadow;
     private bool _fovOn;
@@ -109,11 +110,9 @@ public partial class GameScene : Node3D
     private Render.OutlinePass _outline; // D298: the edge outlines, under the camera
     private Render.MirrorPass _mirrors; // the live mirror's reflection
     private DevConsolePanel _console;
-    private ReadoutPanel _readoutPanel;
     private MinimapPanel _minimap;
     private Label _cameraHint;
     private Tween _cameraHintTween;
-    private readonly ReadoutModel _readout = new(); // D184
     private OptionsPanel _optionsPanel;
     private EscMenu _escMenu; // D282
     private int _escapeSerial = -1;
@@ -196,7 +195,14 @@ public partial class GameScene : Node3D
         var textures = new AppearanceTextures();
         // the map editor looks at a whole station from far above: the model parts too small to be seen from there are not drawn (map-editor.md 5.6)
         Render.ChunkBatch.SmallPartRange = app.Editing ? EditorSmallPartRange : 0f;
-        _map.Build(_feed.Map, _feed.Replica, textures);
+        BeginLoading(textures); // the map is built over the next frames under the loading screen, then FinishReady (GameScene.Loading.cs)
+    }
+
+    // The rest of the scene, made once its map is built.
+    private void FinishReady(AppearanceTextures textures)
+    {
+        App app = App.Instance;
+        ClientArgs args = app.Args;
         _entities.Bind(_feed, textures, _map);
         _entities.Rest = _map.TryRest; // things at rest lie on shelves and table tops (docs/ai/specs/models.md)
         _entities.LieOn = _map.TryLieOn; // DV127: bodies lie on beds, stretchers and tables
@@ -301,16 +307,15 @@ public partial class GameScene : Node3D
 
         StartEditor(app, args);
         StartPlayed(app);
-        if (args.Bench)
-            _bench = new BenchRunner(args, _feed, _map, _rig, GetViewport(), _light, _map.LoadSeconds, _options.CustomGraphics);
         _startedAt = App.NowSeconds;
         _scriptBase = scriptGoesOn ? app.ScriptStartedAt.Value : _startedAt;
         if (app.HasEditor)
             app.ScriptStartedAt = _scriptBase;
         _lastFrameAt = _startedAt;
         _rateAt = _startedAt;
+        SetProcessInput(true);
+        SetProcessUnhandledInput(true);
         app.SummaryProvider = Summary;
-        app.GameStarted();
         GD.Print($"[anomaly] game: {_feed.Description}: map {_feed.Map.Width}x{_feed.Map.Height}x{_feed.Map.Levels}, {_feed.Count} entities, own #{_feed.OwnEntity}, camera {_rig.Mode}, input buffer target {(remote ? 2 : 1)}");
     }
 
@@ -373,9 +378,6 @@ public partial class GameScene : Node3D
         Vector2 screen = GetViewport().GetVisibleRect().Size;
         float tile = new HudMetrics(screen.X, screen.Y, _options.UiScale).Tile;
         minimapChrome.Place(new Vector2(0.25f, 1.4f) * tile, Vector2.One * MinimapPanel.Side);
-        _readoutPanel = new ReadoutPanel();
-        ui.AddChild(_readoutPanel);
-        _readoutPanel.Build(_readout, new WindowChrome(_readoutPanel, "readout", _options, SaveOptions));
         _console = new DevConsolePanel();
         ui.AddChild(_console);
         _console.Bind(_consoleModel, _options.Bindings, new WindowChrome(_console, "dev_console", _options, SaveOptions));
@@ -514,6 +516,8 @@ public partial class GameScene : Node3D
 
     public override void _Process(double delta)
     {
+        if (StepBuild())
+            return;
         UpdateInterfaceVisibility();
         Dev.FrameProbe.BeginFrame();
         Dev.FrameProbe.Record();
@@ -533,7 +537,8 @@ public partial class GameScene : Node3D
         _lastFrameAt = now;
         _frames++;
 
-        RunScript(now);
+        if (_cover == null) // (the script's clock stands while the loading screen is up: GameScene.Loading.cs)
+            RunScript(now);
         // a mouse press another part of the interface took (the dev menu) cancels a lone modifier too; one whose release went elsewhere is dropped
         _modifierTap.Frame((long)Input.GetMouseButtonMask(), _modifierTap.Waiting is string waiting && Enum.TryParse(waiting, out Key held) && Input.IsPhysicalKeyPressed(held));
         _session?.ReleaseLetGo(HeldKeyDown); // a held keybinding whose release went to a panel, the free camera or another window: released now
@@ -735,8 +740,11 @@ public partial class GameScene : Node3D
         _map.SetSight(_fovOn ? _fov : null, EditorOn ? _editorLevel : hasOwn ? pose.Z : 0, _hideAbove);
         if (_light != null)
             _light.LevelsAboveHidden = _hideAbove != 0;
-        _entities.InSight = EditorOn ? _editorInSight ??= (_, _, z) => EditorLevelShown(z) : _hideAbove != 0 ? _belowView ??= (x, y, z) => z <= _hideAbove && (!_fovOn || _fov.PointVisible(x, y, z))
-            : _fovOn ? _fov.PointVisible : null;
+        // the things of the own level's stack only, as the map draws them: a server without interest sends every level's (Lavaland's mobs hung over the station)
+        _viewLevel = hasOwn ? (int)pose.Z : 0;
+        _entities.InSight = EditorOn ? _editorInSight ??= (_, _, z) => EditorLevelShown(z) : _viewLevel != 0 || _hideAbove != 0 || _fovOn ? _inView ??= (x, y, z) =>
+            (_viewLevel == 0 || (_feed?.Replica?.SameStack(z, _viewLevel) ?? true)) && (_hideAbove == 0 || z <= _hideAbove) && (!_fovOn || _fov.PointVisible(x, y, z))
+            : null;
         _entities.SeeMobs = hasOwn && !observing && ObserverVision.SeesMobs(_feed.Replica?.OwnVision ?? VisionState.Normal, ghost,
             _feed.Replica.TryGet(own, out ReplicaEntity seer) ? seer.State.Posture : (byte)0);
         _entities.PlayerNames = _options.PlayerNames && !_interfaceHiddenNow; // the hidden interface hides the names over heads too
@@ -1001,9 +1009,6 @@ public partial class GameScene : Node3D
             case PlayAction.Options:
                 _optionsPanel.Visible = true;
                 break;
-            case PlayAction.Analyzer:
-                _readout.Toggle();
-                break;
             case PlayAction.CameraMode:
                 _rig.CycleMode();
                 AnnounceCamera();
@@ -1174,7 +1179,6 @@ public partial class GameScene : Node3D
     {
         float scale = _options.DevUiScale;
         _console.ApplyScale(scale);
-        _readoutPanel.ApplyScale(scale);
     }
 
     // D137: the fullscreen key (F11) switches the window between fullscreen and windowed.
@@ -1205,6 +1209,8 @@ public partial class GameScene : Node3D
         {
             ScriptedInput step = _script.Dequeue();
             App.Instance.ScriptKeysDone++;
+            if (Dev.Tracy.On) // the capture's marks: tools/perf/tracy-frames.py splits a run at its key presses
+                Dev.Tracy.Message($"script: {step.Action} {step.Key}{(step.Action == ScriptAction.Press ? "+" : step.Action == ScriptAction.Release ? "-" : "")}");
             switch (step.Action)
             {
                 case ScriptAction.Press:
@@ -1533,21 +1539,16 @@ public partial class GameScene : Node3D
             return;
         }
         ChatEntry entry = _chatLog.Add(text.Type, text.Html, App.NowSeconds); // M9 slice C: the chat window's log holds every line, as tg's chat does
-        ChatFeed.Line feedLine = null;
         TextDestination where = _consoleModel.OnServerText(text, App.NowSeconds, out string plain);
-        if (where == TextDestination.Analyzer)
-            _readout.Show(plain);
-        else if (_readout.Offer(text.Html))
-            _chat.Add(ReadoutModel.Headline(plain), App.NowSeconds); // D184: tg's boxed message (a scan) opens whole in the readout panel
-        else
-        {
-            // version 24 (D154): tg's links (the self-check's embedded objects) stay clickable in the chat; M9: in tg's chat colours
-            var links = new List<ChatLink>();
-            var spans = new List<ChatSpan>();
-            string styled = HtmlText.ToPlain(text.Html, links, spans);
-            feedLine = _chat.Add(styled, App.NowSeconds, links, spans);
-        }
+        // version 24 (D154): tg's links (the self-check's embedded objects) stay clickable in the chat; M9: in tg's chat colours
+        var links = new List<ChatLink>();
+        var spans = new List<ChatSpan>();
+        string styled = HtmlText.ToPlain(text.Html, links, spans);
+        // D184: tg's boxed message (a scan) whole in its box, as is the dev command analyze's reply
+        ChatBox? box = where == TextDestination.Analyzer ? ChatBox.Plain : ChatBox.Of(text.Html, text.Type);
+        ChatFeed.Line feedLine = _chat.Add(styled, App.NowSeconds, links, spans, box);
         TranslateChat(entry, feedLine); // D319
+        PingOoc(entry);
         _lastServerText = plain.Replace('\n', ' ');
         if (_lastServerText.Length > 120)
             _lastServerText = _lastServerText.Substring(0, 120);

@@ -533,6 +533,8 @@ public partial class obj_projectile : obj
         // if pass_flags match, pass through entirely - unless direct target is set.
         if (Dm.truthy(Dm.bitand(target.pass_flags_self, pass_flags)) && !Dm.truthy(direct_target))
             return FALSE;
+        if (Dm.truthy(direct_target) && ShotGeometry.SeesThrough(this, target)) // DEVIATION(DV595): the clicked glass of a 3D aim is passed
+            return FALSE;
         if (HAS_TRAIT(target, TRAIT_UNHITTABLE_BY_PROJECTILES))
         {
             if (!HAS_TRAIT(target, TRAIT_BLOCKING_PROJECTILES) && isliving(target))
@@ -1133,6 +1135,9 @@ public partial class obj_projectile : obj
                             hit_surface = above;
                             top_of = loc as turf;
                             break;
+                        case ShotGeometry.Top.Ceiling when ShotGeometry.ThroughGlassCeiling(this, loc as turf):
+                            qdel(this);
+                            return movements_done;
                         case ShotGeometry.Top.Ceiling:
                             await TopBlast.Hitting(loc as turf, null, () => ShotGeometry.HitCeiling(this));
                             qdel(this);

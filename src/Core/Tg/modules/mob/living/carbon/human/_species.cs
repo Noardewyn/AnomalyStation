@@ -1024,6 +1024,8 @@ public partial class datum_species : datum
             to_chat(user, span_warning(I18n.T("You don't want to harm []!", target)));
             return FALSE;
         }
+        if (aimed_limb_missing(user, target)) // DEVIATION(DV592)
+            return FALSE;
 
         obj_item_organ_brain brain = user.get_organ_slot(ORGAN_SLOT_BRAIN) as obj_item_organ_brain;
         obj_item_bodypart attacking_bodypart = (attacker_style?.get_attacking_limb(user, target) is var or__1 && Dm.truthy(or__1) ? or__1
@@ -1125,7 +1127,8 @@ public partial class datum_species : datum
         }
 
         // Select a zone to hit, blacklisting the part we're attacking with if we're attacking ourselves.
-        object hit_zone = target.get_random_valid_zone(user.zone_selected, blacklisted_parts: user == target ? Dm.list(attacking_bodypart.body_zone) : null);
+        // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+        object hit_zone = target.get_random_valid_zone(user.zone_selected, 100, blacklisted_parts: user == target ? Dm.list(attacking_bodypart.body_zone) : null);
         obj_item_bodypart affecting = target.get_bodypart(Dm.str(hit_zone)) as obj_item_bodypart;
 
         float miss_chance = 100;//calculate the odds that a punch misses entirely. considers stamina and brute damage of the puncher. punches miss by default to prevent weird cases
@@ -1284,7 +1287,8 @@ public partial class datum_species : datum
         else if (roll_them_bones >= 46)
         {
             await target.apply_effect(4 * SECONDS, EFFECT_KNOCKDOWN, armor_block);
-            obj_item_bodypart affecting = target.get_bodypart(Dm.str(target.get_random_valid_zone(user.zone_selected))) as obj_item_bodypart;
+            // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+            obj_item_bodypart affecting = target.get_bodypart(Dm.str(target.get_random_valid_zone(user.zone_selected, 100))) as obj_item_bodypart;
             await target.apply_damage(5, BRUTE, affecting, armor_block, wound_bonus: limb_accuracy * 2); //Mostly for the crunchy wounding effect than actually doing damage
             target.visible_message(span_warning(I18n.T("[]'s [] hits [] so hard, you hit them off their feet with a loud crunch! Fucking hell!", user, atk_verb, target)),
                 span_warning(I18n.T("You are hit viciously by []'s [], and suddenly feel an overwhelming pain as you topple head over heels!", user, atk_verb)), span_hear(I18n.T("You hear a sickening crack and a loud thud!")), COMBAT_MESSAGE_RANGE, user);

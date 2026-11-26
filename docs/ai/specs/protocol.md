@@ -250,7 +250,7 @@ in its place, so a client that went silent stops instead of walking on until its
 ```
 [u8 id = 10] [varuint frameSeq] [u8 kind]  then by kind:
     Click (4):        [u8 target kind] [target] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y]
-    Hover (7):        [u8 target kind] [target] [u8 aim zone 1..9, an entity's only, absent for none]   (version 95, section 91)
+    Hover (7):        [u8 target kind] [target] [u8 aim zone 1..9, an entity's only, absent for none]   (version 98, section 94)
     Drop (13):        [u8 target kind] [target] [u8 target kind] [over] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y] [u8 drag time]   (version 17, section 26)
     Keybinding (6):   [u8 code] [u8 key up]
     DevCommand (5):   [str(200) text]
@@ -263,7 +263,7 @@ the frame was already applied. `kind` 1 to 7 (anything else is `BadValue`). The 
 are version 4's (section 14.1; version 2 and 3 clicked `[varuint target] [u8 button] [u8 modifiers]`). A click needs a `button` of
 1 left, 2 right or 3 middle and `modifiers` within `shift = 1, ctrl = 2, alt = 4` (bit 3 and bit 7 zero); bits 4-6 of the
 modifiers byte are the body zone a click on an entity aims at (`AimZone`: 0 none, 1 head, 2 chest, 3 left arm, 4 right arm,
-5 left leg, 6 right leg; DV30; version 95 adds 7 eyes, 8 mouth, 9 groin with bit 3 as the zone's high bit, section 90), which the server selects as tg's `zone_selected` before a click on a carbon; the server checks that the target exists, is
+5 left leg, 6 right leg; DV30; version 98 adds 7 eyes, 8 mouth, 9 groin with bit 3 as the zone's high bit, section 93), which the server selects as tg's `zone_selected` before a click on a carbon; the server checks that the target exists, is
 visible to the player and is in view (section 14.1), and reach is tg's own (`Adjacent`, `ClickOn`). A dev command carries a non-null
 text of at most 200 bytes, for the server's `DEV_COMMANDS` option. Every other field must be absent or zero. At most
 `Limits.MaxActionMessageBytes` (248 since version 15, section 24) bytes, within the 256 of an inbound message.
@@ -795,7 +795,7 @@ tree keep working.
 
 ```
 Click (kind 4):      [u8 target kind] [target] [u8 button] [u8 modifiers] [u8 icon-x] [u8 icon-y]
-Hover (kind 7):      [u8 target kind] [target] [version 95: u8 aim zone 1..9 on an entity, absent for none (section 91)]
+Hover (kind 7):      [u8 target kind] [target] [version 98: u8 aim zone 1..9 on an entity, absent for none (section 94)]
 Keybinding (kind 6): [u8 code] [u8 key up]
 target:              Entity (1) and Screen (3): [varuint id >= 1]       Turf (2): [u8 x 1..255] [u8 y 1..255] [varuint z 1..80]
 ```
@@ -853,7 +853,7 @@ the hovering session: tg's `on_mouse_enter` (once per tick, `SSmouse_entered`) c
 (`ScreentipRouter`, installed when the first player joins) encodes the message into the viewer's session and `SendChat` sends it
 after the tick (the newest 8 are kept for a slow link). Cap `MaxContextHintsMessageBytes` (959).
 
-Out of reach (DV589, the designer 2026-11-26; still protocol 95, no new field): a message for a world target (an entity, a turf, a ceiling
+Out of reach (DV601, the designer 2026-11-26; still protocol 98, no new field): a message for a world target (an entity, a turf, a ceiling
 cell) with a **zero-length name** (not null) and no hints means "out of reach": the player's mob cannot reach the target by tg's test of a
 click (`IsReachableBy` with the held item's reach; the ceiling's own range for a ceiling cell), and the client shows no prompt at all, not even
 its own name for the thing; nor does it show anything for a world target before the answer for that target has arrived. A null name keeps
@@ -3203,22 +3203,61 @@ view, opened by each shot and closing again, and a hit marker when `hits` change
 
 Tests: `Protocol/ProtocolV92GunSightTests` (server), `M7x/GunSightTests` (core).
 
-## 90. Version 95 (package T, slice T4a: the eyes, the mouth and the groin by look)
+## 90. Version 95 (DV586: the own melee cooldown)
+
+The private block's version 43 flags byte has bit 7 (128) when the own mob's melee click cooldown is not tg's `CLICK_CD_MELEE` (800 ms):
+`[varuint milliseconds, 0..60000]` follows the view areas (`OwnBlock.MeleeCooldownMs`, `OwnState.MeleeCooldownMs`; 800 without the bit).
+It is the cooldown a melee blow with the active hand would set now, as mob_living's `changeNext_move` takes it: the held thing's
+`attack_speed` (an empty hand's `CLICK_CD_MELEE`) plus `next_move_adjust`, times `next_move_modifier`, each with the status effects' own
+(`ServerHost.MeleeCooldownMs`, read inside the world once a tick with the access). The client swings its held thing and whooshes on a
+click only once that long and a tick have passed since its last swing (`ViewModel.Clicked`), as tg's `ClickOn` takes no blow before its
+`next_move`.
+
+Tests: `Protocol/ProtocolV95CooldownTests`, `Integration/MeleeCooldownReplicationTests` (server).
+
+## 91. Version 96 (DV596: the turfs' own lights)
+
+MapGrid ends, after the wall height, and the Delta body ends, after the sun, with the turf lights (`MessagesV96.cs`, `Codec.V96.cs`):
+`[count] { [cell] [u8 ceiling 0/1] [light] }*`, a cell and kind once per message. A floor entry (ceiling 0) is the light of the turf
+itself, tg's own light vars (`ReplicatedFields.OwnLight` of the turf), switched on and not tg's starlight (space turfs and lights at
+`LIGHTING_HEIGHT_SPACE`, which the cells' starlight flag gives). A ceiling entry (1) is the light of the ceiling's floor block (D295) as
+`CeilingSystem.LitBlockAt` reads it: a light floor as a working one leaves it (its `currentcolor`, range 3), none when broken. MapGrid lists
+every lit one (no light of range 0); a Delta lists the changed ones, range 0 for a light gone out, at most `MaxCellChangesPerDelta`. The
+replica keeps them (`ReplicaWorld.TurfLightAt`, `TurfLights`) and raises `TurfLightChanged` after the Delta; a changed cell is also a
+changed cell for the map's meshes (a glowing tile is drawn self-lit, `turf_kit.gdshader` condition 5).
+
+Tests: `Protocol/ProtocolV96TurfLightTests`, `Integration/TurfLightGameplayTests` (server).
+
+## 92. Version 97 (DV597: the client loads before it plays)
+
+The Hello's flags gain bit 2, `Hello.WaitsForLoad`: the client loads the world behind a loading screen before it plays (`Codec.cs`,
+`HelloFlagWaitsForLoad`). Only the game's own client sets it (the connect screen's `JoinAttempt` and the map editor's Play); the bots, the
+test rigs and anything else keep joining at once. A new untargeted action, `ActionKind.Loaded` (27, no fields, the toggle bucket), says the
+client has built the map, decoded the round's sprite sheets and warmed its shaders. The server keeps the flag on the session and on every
+Join command (`QueuedCommand.WaitsForLoad`, the replay log's `w` extra), and without the lobby `DirectJoins` passes over a session whose
+Join said it waits (`Session.AwaitingLoad`) until its Loaded comes, when it is late-joined at once: until then the key is tg's new player
+(`/mob/dead/new_player`), with no body. A new round's Join (D306) sets the wait again, since the client builds the next world too. With the
+lobby on the server refuses nothing: the client's loading screen covers the lobby's Join and Ready until it is loaded, and a client that
+skips it only plays on a world it has not loaded.
+
+Tests: `Protocol/ProtocolV97Tests`, `Integration/JoinGateTests` (server).
+
+## 93. Version 98 (package T, slice T4a: the eyes, the mouth and the groin by look)
 
 A Click's, a Throw's and a PutDown's modifiers byte: `[shift 1, ctrl 2, alt 4] [bit 3: the zone's high bit] [bits 4-6: the zone's low bits]
 [bit 7: an aim follows]`, the zone `((mods >> 4) & 7) | (mods & 8)`: `AimZone` gains 7 eyes, 8 mouth and 9 groin (tg's
-`BODY_ZONE_PRECISE_EYES`, `_MOUTH`, `_GROIN`); 10 to 15 are refused (`BadValue`). Every byte of version 94 (bit 3 zero, a zone of 0 to 6) keeps
-its meaning, so an older recording replays as it was. A mouse action carries no zone (its bit 3 stays refused); a hover's zone came with slice T4b in the same version (section 91).
+`BODY_ZONE_PRECISE_EYES`, `_MOUTH`, `_GROIN`); 10 to 15 are refused (`BadValue`). Every byte of version 97 (bit 3 zero, a zone of 0 to 6) keeps
+its meaning, so an older recording replays as it was. A mouse action carries no zone (its bit 3 stays refused); a hover's zone came with slice T4b in the same version (section 94).
 The server checks the zone again (`ValidAction`, 0 to 9) and selects it through tg's zone selector before the click or throw on a carbon, as any
 other zone (DV30). Examples: `0x71` shift and the eyes, `0x09` shift and the mouth, `0x98` an aim and the groin, `0x29` refused (zone 10).
 
-Tests: `Protocol/ProtocolV95AimZoneTests`, `Protocol/CodecV2Tests` (server), `Integration/BodyZoneRegionTests`, `Integration/MeleeAimTests`,
+Tests: `Protocol/ProtocolV98AimZoneTests`, `Protocol/CodecV2Tests` (server), `Integration/BodyZoneRegionTests`, `Integration/MeleeAimTests`,
 `Integration/PreciseZoneReplayTests`.
 
-## 91. Version 95, also (package T, slice T4b: the hover's zone)
+## 94. Version 98, also (package T, slice T4b: the hover's zone)
 
 A **Hover** on an entity may end with `[u8 aim zone 1..9]` after its target: the body zone the crosshair is on (`ActionMessage.AimZone`, the
-values of section 90). A hover without a zone has no such byte, so its bytes are version 94's and an older recording replays as it was. A zone
+values of section 93). A hover without a zone has no such byte, so its bytes are version 97's and an older recording replays as it was. A zone
 byte of 0 or above 9, a zone after a turf, ceiling or screen target, and any byte after the zone are refused (`BadValue`, `TrailingBytes`).
 Examples: `0A 05 07 01 2C` a hover on entity 44 (no zone), `0A 05 07 01 2C 01` the same with the head, `0A 05 07 01 2C 09` the groin,
 `0A 05 07 02 0C C8 03 01` refused (a zone on a turf).
@@ -3231,14 +3270,14 @@ tg's do-afters runs for the looker (DV30), when the server keeps the skipped hov
 end (`ServerHost.CatchUpLooks`). In cursor mode the client's hovers carry no zone (`PlaySession.HoverCarriesZone`). The hover keeps its rate limit (`ActionLimits.Hover`, one applied a tick). The command log keeps
 the zone as an action's zone field, as a click's.
 
-Tests: `Protocol/ProtocolV95HoverZoneTests`, `Protocol/ProtocolV95AimZoneTests`, `Protocol/CodecV2Tests` (server),
+Tests: `Protocol/ProtocolV98HoverZoneTests`, `Protocol/ProtocolV98AimZoneTests`, `Protocol/CodecV2Tests` (server),
 `Integration/HoverZoneGameplayTests`.
 
-## 92. Version 95, also (package T, slice T4c: a lying body's side, the radial's Turn over)
+## 95. Version 98, also (package T, slice T4c: a lying body's side, the radial's Turn over)
 
 The posture byte (`NetField.Posture`, `PostureBits`) uses its two spare bits: bit 6 (64, `SideFixed`) says someone turned the lying body over
-(DV588), bit 7 (128, `FaceUp`) with it says it lies face up, without it back up. They are set only while the body lies; the server forgets the side
-when the body gets up. A decoder refuses bit 6 without bit 0 (a side on a standing body) and bit 7 without bit 6; every byte of version 94 (bits
+(DV600), bit 7 (128, `FaceUp`) with it says it lies face up, without it back up. They are set only while the body lies; the server forgets the side
+when the body gets up. A decoder refuses bit 6 without bit 0 (a side on a standing body) and bit 7 without bit 6; every byte of version 97 (bits
 6 and 7 clear) keeps its meaning. Examples: `0x43` lying at 90 degrees and turned back up, `0xC3` the same turned face up, `0x40` and `0x83`
 refused. `PostureBits.TurnedFaceUp` reads the side (null when not turned). The byte is sent again when the side changes (the turn is an appearance
 hint of the mob, so a mob with no capsule is read too).
@@ -3251,5 +3290,5 @@ The radial's **Turn over** is a context hint of the Extra action (section 83) wi
 that label. The server's entry is `RadialExtra.TurnOver` (9), which is not on the wire: the label is. It is offered on a lying carbon on a turf next
 to the player, never on himself; the pick takes the click bucket as every ContextPick.
 
-Tests: `Protocol/ProtocolV95TurnOverTests`, `Protocol/CodecV2Tests`, `Client/Render/TurnOverLyingDirTests` (server), `Integration/TurnOverGameplayTests`,
+Tests: `Protocol/ProtocolV98TurnOverTests`, `Protocol/CodecV2Tests`, `Client/Render/TurnOverLyingDirTests` (server), `Integration/TurnOverGameplayTests`,
 `Integration/BodyZoneRegionTests`.

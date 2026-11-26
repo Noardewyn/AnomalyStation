@@ -29,9 +29,9 @@ public partial class obj_item_tk_grab
     }
 }
 
-// tg: code/datums/components/mutant_hands.dm:145
-[DmPath("/obj/item/mutant_hand"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mutant_hand : obj_item
+// tg: code/datums/components/mutant_hands.dm:145 (the var block of a hand-written class)
+[DmPath("/obj/item/mutant_hand")]
+public partial class obj_item_mutant_hand
 {
     // tg: code/datums/components/mutant_hands.dm:145
     public obj_item_mutant_hand()
@@ -48,7 +48,7 @@ public partial class obj_item_mutant_hand : obj_item
 }
 
 // tg: code/modules/antagonists/heretic/knowledge/side_knowledge/tier_three.dm:153
-[DmPath("/obj/item/mutant_hand/shattered_risen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/mutant_hand/shattered_risen"), DmGeneratedOnly]
 public partial class obj_item_mutant_hand_shattered_risen : obj_item_mutant_hand
 {
     // tg: code/modules/antagonists/heretic/knowledge/side_knowledge/tier_three.dm:153
@@ -66,9 +66,9 @@ public partial class obj_item_mutant_hand_shattered_risen : obj_item_mutant_hand
     }
 }
 
-// tg: code/modules/zombie/items.dm:2
-[DmPath("/obj/item/mutant_hand/zombie"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mutant_hand_zombie : obj_item_mutant_hand
+// tg: code/modules/zombie/items.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/mutant_hand/zombie")]
+public partial class obj_item_mutant_hand_zombie
 {
     public float infect_chance = 100; // tg: code/modules/zombie/items.dm:14
 
@@ -86,7 +86,7 @@ public partial class obj_item_mutant_hand_zombie : obj_item_mutant_hand
 }
 
 // tg: code/modules/zombie/items.dm:25
-[DmPath("/obj/item/mutant_hand/zombie/weak"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/mutant_hand/zombie/weak"), DmGeneratedOnly]
 public partial class obj_item_mutant_hand_zombie_weak : obj_item_mutant_hand_zombie
 {
     // tg: code/modules/zombie/items.dm:25
@@ -3128,7 +3128,7 @@ public partial class obj_item_crowbar
 }
 
 // tg: code/game/objects/items/tools/engineering/crowbar.dm:354 (the var block of a hand-written class)
-[DmPath("/obj/item/crowbar/mechremoval"), DmInert]
+[DmPath("/obj/item/crowbar/mechremoval")]
 public partial class obj_item_crowbar_mechremoval
 {
     // tg: code/game/objects/items/tools/engineering/crowbar.dm:354
@@ -31161,9 +31161,9 @@ public partial class obj_item_eldritch_potion_wounded : obj_item_eldritch_potion
     }
 }
 
-// tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:5
-[DmPath("/obj/item/light_eater"), DmGeneratedOnly, DmInert]
-public partial class obj_item_light_eater : obj_item
+// tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/light_eater")]
+public partial class obj_item_light_eater
 {
     public float has_crit = 0; // tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:23
     public object crit_timer; // tg: code/modules/antagonists/nightmare/nightmare_equipment.dm:25
@@ -40627,9 +40627,9 @@ public partial class obj_item_wendigo_skull : obj_item
     }
 }
 
-// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:239
-[DmPath("/obj/item/dullahan_relay"), DmGeneratedOnly, DmInert]
-public partial class obj_item_dullahan_relay : obj_item
+// tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:239 (the var block of a hand-written class)
+[DmPath("/obj/item/dullahan_relay")]
+public partial class obj_item_dullahan_relay
 {
     public mob_living owner; // tg: code/modules/mob/living/carbon/human/species_types/dullahan.dm:241
 
@@ -41167,9 +41167,9 @@ public partial class obj_item_slimepotion_genderchange : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:1064
-[DmPath("/obj/item/slimepotion/renaming"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_renaming : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:1064 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/renaming")]
+public partial class obj_item_slimepotion_renaming
 {
     public float being_used = 0; // tg: code/modules/research/xenobiology/xenobiology.dm:1068
 
@@ -44118,9 +44118,9 @@ public partial class obj_item_gizmo_moo : obj_item_gizmo
 [DmPath("/obj/item/gizmo_copy"), DmGeneratedOnly, DmInert]
 public partial class obj_item_gizmo_copy : obj_item { }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:4
-[DmPath("/obj/item/slime_extract"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract : obj_item
+// tg: code/modules/research/xenobiology/xenobiology.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract")]
+public partial class obj_item_slime_extract
 {
     public float can_grind = 1; // tg: code/modules/research/xenobiology/xenobiology.dm:14
     public float extract_uses = 1; // tg: code/modules/research/xenobiology/xenobiology.dm:16
@@ -44143,9 +44143,9 @@ public partial class obj_item_slime_extract : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:156
-[DmPath("/obj/item/slime_extract/grey"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_grey : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:156 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/grey")]
+public partial class obj_item_slime_extract_grey
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:156
     public obj_item_slime_extract_grey()
@@ -44156,9 +44156,9 @@ public partial class obj_item_slime_extract_grey : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:180
-[DmPath("/obj/item/slime_extract/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_gold : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:180 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/gold")]
+public partial class obj_item_slime_extract_gold
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:180
     public obj_item_slime_extract_gold()
@@ -44169,9 +44169,9 @@ public partial class obj_item_slime_extract_gold : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:210
-[DmPath("/obj/item/slime_extract/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_silver : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:210 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/silver")]
+public partial class obj_item_slime_extract_silver
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:210
     public obj_item_slime_extract_silver()
@@ -44182,9 +44182,9 @@ public partial class obj_item_slime_extract_silver : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:237
-[DmPath("/obj/item/slime_extract/metal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_metal : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:237 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/metal")]
+public partial class obj_item_slime_extract_metal
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:237
     public obj_item_slime_extract_metal()
@@ -44195,9 +44195,9 @@ public partial class obj_item_slime_extract_metal : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:260
-[DmPath("/obj/item/slime_extract/purple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_purple : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:260 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/purple")]
+public partial class obj_item_slime_extract_purple
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:260
     public obj_item_slime_extract_purple()
@@ -44208,9 +44208,9 @@ public partial class obj_item_slime_extract_purple : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:278
-[DmPath("/obj/item/slime_extract/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_darkpurple : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:278 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/darkpurple")]
+public partial class obj_item_slime_extract_darkpurple
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:278
     public obj_item_slime_extract_darkpurple()
@@ -44221,9 +44221,9 @@ public partial class obj_item_slime_extract_darkpurple : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:300
-[DmPath("/obj/item/slime_extract/orange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_orange : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:300 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/orange")]
+public partial class obj_item_slime_extract_orange
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:300
     public obj_item_slime_extract_orange()
@@ -44234,9 +44234,9 @@ public partial class obj_item_slime_extract_orange : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:319
-[DmPath("/obj/item/slime_extract/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_yellow : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:319 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/yellow")]
+public partial class obj_item_slime_extract_yellow
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:319
     public obj_item_slime_extract_yellow()
@@ -44247,9 +44247,9 @@ public partial class obj_item_slime_extract_yellow : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:342
-[DmPath("/obj/item/slime_extract/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_red : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:342 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/red")]
+public partial class obj_item_slime_extract_red
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:342
     public obj_item_slime_extract_red()
@@ -44260,9 +44260,9 @@ public partial class obj_item_slime_extract_red : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:361
-[DmPath("/obj/item/slime_extract/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_blue : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:361 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/blue")]
+public partial class obj_item_slime_extract_blue
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:361
     public obj_item_slime_extract_blue()
@@ -44273,9 +44273,9 @@ public partial class obj_item_slime_extract_blue : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:379
-[DmPath("/obj/item/slime_extract/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_darkblue : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:379 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/darkblue")]
+public partial class obj_item_slime_extract_darkblue
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:379
     public obj_item_slime_extract_darkblue()
@@ -44286,9 +44286,9 @@ public partial class obj_item_slime_extract_darkblue : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:401
-[DmPath("/obj/item/slime_extract/pink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_pink : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:401 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/pink")]
+public partial class obj_item_slime_extract_pink
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:401
     public obj_item_slime_extract_pink()
@@ -44299,9 +44299,9 @@ public partial class obj_item_slime_extract_pink : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:428
-[DmPath("/obj/item/slime_extract/green"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_green : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:428 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/green")]
+public partial class obj_item_slime_extract_green
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:428
     public obj_item_slime_extract_green()
@@ -44312,9 +44312,9 @@ public partial class obj_item_slime_extract_green : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:451
-[DmPath("/obj/item/slime_extract/lightpink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_lightpink : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:451 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/lightpink")]
+public partial class obj_item_slime_extract_lightpink
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:451
     public obj_item_slime_extract_lightpink()
@@ -44325,9 +44325,9 @@ public partial class obj_item_slime_extract_lightpink : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:474
-[DmPath("/obj/item/slime_extract/black"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_black : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:474 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/black")]
+public partial class obj_item_slime_extract_black
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:474
     public obj_item_slime_extract_black()
@@ -44338,9 +44338,9 @@ public partial class obj_item_slime_extract_black : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:494
-[DmPath("/obj/item/slime_extract/oil"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_oil : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:494 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/oil")]
+public partial class obj_item_slime_extract_oil
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:494
     public obj_item_slime_extract_oil()
@@ -44351,9 +44351,9 @@ public partial class obj_item_slime_extract_oil : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:517
-[DmPath("/obj/item/slime_extract/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_adamantine : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:517 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/adamantine")]
+public partial class obj_item_slime_extract_adamantine
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:517
     public obj_item_slime_extract_adamantine()
@@ -44364,9 +44364,9 @@ public partial class obj_item_slime_extract_adamantine : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:546
-[DmPath("/obj/item/slime_extract/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_bluespace : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:546 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/bluespace")]
+public partial class obj_item_slime_extract_bluespace
 {
     public float teleport_ready = 0; // tg: code/modules/research/xenobiology/xenobiology.dm:549
     public float teleport_x = 0; // tg: code/modules/research/xenobiology/xenobiology.dm:550
@@ -44382,9 +44382,9 @@ public partial class obj_item_slime_extract_bluespace : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:581
-[DmPath("/obj/item/slime_extract/pyrite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_pyrite : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:581 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/pyrite")]
+public partial class obj_item_slime_extract_pyrite
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:581
     public obj_item_slime_extract_pyrite()
@@ -44395,9 +44395,9 @@ public partial class obj_item_slime_extract_pyrite : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:607
-[DmPath("/obj/item/slime_extract/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_cerulean : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:607 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/cerulean")]
+public partial class obj_item_slime_extract_cerulean
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:607
     public obj_item_slime_extract_cerulean()
@@ -44408,9 +44408,9 @@ public partial class obj_item_slime_extract_cerulean : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:626
-[DmPath("/obj/item/slime_extract/sepia"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_sepia : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:626 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/sepia")]
+public partial class obj_item_slime_extract_sepia
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:626
     public obj_item_slime_extract_sepia()
@@ -44421,9 +44421,9 @@ public partial class obj_item_slime_extract_sepia : obj_item_slime_extract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:647
-[DmPath("/obj/item/slime_extract/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_extract_rainbow : obj_item_slime_extract
+// tg: code/modules/research/xenobiology/xenobiology.dm:647 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_extract/rainbow")]
+public partial class obj_item_slime_extract_rainbow
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:647
     public obj_item_slime_extract_rainbow()

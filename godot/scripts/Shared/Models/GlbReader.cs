@@ -8,7 +8,8 @@ namespace Anomaly.Client.Shared.Models;
 
 // Engine-free. The binary glTF (.glb) reader of the 3D models (docs/ai/specs/models.md): the client reads the model files itself, as it reads tg's converted icons,
 // so that Godot never imports or recompresses them. It reads what the models use: the node tree (TRS or matrix), triangle meshes with positions, normals, the
-// first uv set and indices, the materials (their name, alpha mode, base colour and texture) and the images (PNG bytes): embedded, or tg's converted sheets by uri.
+// first uv set and indices, the materials (their name, alpha mode, base colour and texture) and the images (PNG bytes): embedded, or tg's converted sheets by uri;
+// and the animations' channels (the first-person held swings, HeldClip).
 
 /// <summary>One triangle list of a mesh: positions and normals in the node's space, the first uv set (glTF's: v runs down the image), indices.</summary>
 public sealed class GlbPrimitive
@@ -55,9 +56,33 @@ public sealed class GlbMeshNode
     public readonly List<GlbPrimitive> Primitives = new();
 }
 
+/// <summary>One animated property of a node: its keys' times (seconds) and values (3 floats for a translation or a scale, 4 for a rotation's x, y, z, w).</summary>
+public sealed class GlbChannel
+{
+    public string Node = string.Empty;
+
+    /// <summary>glTF's target path: <c>translation</c>, <c>rotation</c>, <c>scale</c> or <c>weights</c>.</summary>
+    public string Path = string.Empty;
+
+    /// <summary>glTF's interpolation: <c>LINEAR</c>, <c>STEP</c> or <c>CUBICSPLINE</c> (whose values hold an in-tangent, the value and an out-tangent per key).</summary>
+    public string Interpolation = "LINEAR";
+
+    public float[] Times = Array.Empty<float>();
+    public float[][] Values = Array.Empty<float[]>();
+}
+
+/// <summary>A named animation: its channels.</summary>
+public sealed class GlbAnimation
+{
+    public string Name = string.Empty;
+    public readonly List<GlbChannel> Channels = new();
+}
+
 /// <summary>A read .glb file.</summary>
 public sealed class GlbFile
 {
+    public readonly List<GlbAnimation> Animations = new();
+
     public readonly List<GlbMeshNode> MeshNodes = new();
     public readonly List<GlbMaterial> Materials = new();
 
@@ -126,6 +151,7 @@ public sealed class GlbFile
             ReadMaterials();
             if (!_root.TryGetProperty("nodes", out JsonElement nodes))
                 return;
+            ReadAnimations(nodes);
             // The roots: the default scene's nodes, else every node that is no child.
             var roots = new List<int>();
             if (_root.TryGetProperty("scenes", out JsonElement scenes) && scenes.GetArrayLength() > 0)
@@ -294,6 +320,37 @@ public sealed class GlbFile
                 };
             }
             return result;
+        }
+
+        private void ReadAnimations(JsonElement nodes)
+        {
+            if (!_root.TryGetProperty("animations", out JsonElement animations))
+                return;
+            foreach (JsonElement animation in animations.EnumerateArray())
+            {
+                var read = new GlbAnimation { Name = animation.TryGetProperty("name", out JsonElement n) ? n.GetString() ?? string.Empty : string.Empty };
+                JsonElement samplers = animation.GetProperty("samplers");
+                foreach (JsonElement channel in animation.GetProperty("channels").EnumerateArray())
+                {
+                    JsonElement target = channel.GetProperty("target");
+                    if (!target.TryGetProperty("node", out JsonElement node))
+                        continue;
+                    JsonElement sampler = samplers[channel.GetProperty("sampler").GetInt32()];
+                    string path = target.GetProperty("path").GetString() ?? string.Empty;
+                    if (path is not ("translation" or "rotation" or "scale"))
+                        continue; // a shape key's weights (the corgi pinata's) move no node
+                    JsonElement nodeElement = nodes[node.GetInt32()];
+                    read.Channels.Add(new GlbChannel
+                    {
+                        Node = nodeElement.TryGetProperty("name", out JsonElement nodeName) ? nodeName.GetString() ?? string.Empty : string.Empty,
+                        Path = path,
+                        Interpolation = sampler.TryGetProperty("interpolation", out JsonElement i) ? i.GetString() ?? "LINEAR" : "LINEAR",
+                        Times = Floats(sampler.GetProperty("input").GetInt32(), 1).Select(f => f[0]).ToArray(),
+                        Values = Floats(sampler.GetProperty("output").GetInt32(), path == "rotation" ? 4 : 3),
+                    });
+                }
+                _file.Animations.Add(read);
+            }
         }
 
         private void ReadImages()

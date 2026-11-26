@@ -169,6 +169,8 @@ public partial class mob_living : mob
             to_chat(user, span_warning(I18n.T("You don't want to harm other living beings!")));
             return null;
         }
+        if (aimed_limb_missing(user, this)) // DEVIATION(DV592)
+            return null;
 
         await mecha_attacker.do_attack_animation(this);
         if (Dm.eq(mecha_attacker.damtype, BRUTE))
@@ -204,7 +206,8 @@ public partial class mob_living : mob
         object damage = rand(force * 0.5f, force);
         if (Dm.eq(mecha_attacker.damtype, BRUTE) || Dm.eq(mecha_attacker.damtype, BURN))
         {
-            object def_zone = get_random_valid_zone(user?.zone_selected, even_weights: TRUE);
+            // DEVIATION(DV591): the pilot's aimed zone is hit, where tg picks any limb at even odds
+            object def_zone = get_random_valid_zone(user?.zone_selected, 100);
             object zone_readable = parse_zone_with_bodypart(def_zone);
             await apply_damage(Dm.num(damage), mecha_attacker.damtype as string, def_zone, Dm.num(run_armor_check(
                 def_zone: def_zone,

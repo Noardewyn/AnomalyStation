@@ -298,6 +298,16 @@ public partial class obj_item_fireaxe : obj_item
     }
 }
 
+// tg: code/game/gamemodes/objective_items.dm:181 (the mech removal tool turns live)
+public partial class obj_item_crowbar_mechremoval : obj_item_crowbar
+{
+    // tg: code/game/gamemodes/objective_items.dm:181
+    public override object add_stealing_item_objective()
+    {
+        return add_item_to_steal(this, typeof(obj_item_crowbar_mechremoval));
+    }
+}
+
 // tg: code/game/gamemodes/objective_items.dm:143
 public partial class obj_item_gun_ballistic_shotgun_doublebarrel : obj_item_gun_ballistic_shotgun
 {

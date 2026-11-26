@@ -412,6 +412,8 @@ public partial class mob_living_carbon_human : mob_living_carbon
 
         if (Dm.truthy(user.combat_mode))
         {
+            if (aimed_limb_missing(user, this)) // DEVIATION(DV592)
+                return FALSE;
             if (w_uniform != null)
                 w_uniform.add_fingerprint(user);
             float damage = prob(90) ? rand(Dm.num(user.melee_damage_lower), Dm.num(user.melee_damage_upper)) : 0;
@@ -423,7 +425,8 @@ public partial class mob_living_carbon_human : mob_living_carbon
                 to_chat(user, span_danger(I18n.T("You lunge at []!", this)));
                 return FALSE;
             }
-            obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(user.zone_selected) as string) as obj_item_bodypart;
+            // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+            obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(user.zone_selected, 100) as string) as obj_item_bodypart;
             object armor_block = run_armor_check(affecting, MELEE, "", "", 10);
 
             playsound(loc, Dm.resource("sound/items/weapons/slice.ogg"), 25, TRUE, -1);
@@ -446,6 +449,8 @@ public partial class mob_living_carbon_human : mob_living_carbon
         object dot = await base.attack_larva(worm, modifiers);
         if (!Dm.truthy(dot))
             return dot; //successful larva bite.
+        if (aimed_limb_missing(worm, this)) // DEVIATION(DV592)
+            return FALSE;
         float damage = rand(Dm.num(worm.melee_damage_lower), Dm.num(worm.melee_damage_upper));
         if (!Dm.truthy(damage))
             return dot;
@@ -454,7 +459,8 @@ public partial class mob_living_carbon_human : mob_living_carbon
         if (stat != DEAD)
         {
             worm.amount_grown = min(worm.amount_grown + damage, XENOMORPH_MAX_GROWTH);
-            obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(worm.zone_selected) as string) as obj_item_bodypart;
+            // DEVIATION(DV591): an aimed melee hit lands on the selected zone; tg's 80% zone roll is not made
+            obj_item_bodypart affecting = get_bodypart(get_random_valid_zone(worm.zone_selected, 100) as string) as obj_item_bodypart;
             object armor_block = run_armor_check(affecting, MELEE);
             await apply_damage(damage, BRUTE, affecting, Dm.num(armor_block));
         }

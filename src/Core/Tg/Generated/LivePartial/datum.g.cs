@@ -519,6 +519,30 @@ public partial class datum_wires_radio
     }
 }
 
+// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:99
+public partial class datum_golem_food_buff_gibtonite
+{
+    // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:103
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override void apply_effects(mob_living_carbon consumer = null, atom_movable consumed = null, object multiplier = null)
+    {
+        Dm.NotTranslated("code/game/objects/items/stacks/golem_food/golem_food_buff.dm:103", "apply_effects: the gibtonite_hand launcher item is not translated (mining items); a golem still eats gibtonite for its nutrition (D349)");
+    }
+}
+
+// tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:118
+public partial class datum_golem_food_buff_bluespace
+{
+    // tg: code/game/objects/items/stacks/golem_food/golem_food_buff.dm:122
+    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
+    [DmGeneratedStub]
+    public override void apply_effects(mob_living_carbon consumer = null, atom_movable consumed = null, object multiplier = null)
+    {
+        Dm.NotTranslated("code/game/objects/items/stacks/golem_food/golem_food_buff.dm:122", "apply_effects: the bluespace_finger teleport item is not translated (mining items); a golem still eats bluespace crystals for its nutrition (D349)");
+    }
+}
+
 // tg: code/game/objects/items/tools/engineering/painter/paintable_decals.dm:8
 public partial class datum_paintable_decal_category
 {

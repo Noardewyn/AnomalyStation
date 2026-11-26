@@ -143,7 +143,7 @@ public sealed class AppearanceEntry
     public const short DefaultMaptextSize = 32;
 }
 
-/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 95).</summary>
+/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 98).</summary>
 public static class PostureBits
 {
     /// <summary>Bit 0: lying (tg <c>LYING_DOWN</c>).</summary>
@@ -171,12 +171,12 @@ public static class PostureBits
     public const byte Buckled = 32;
 
     /// <summary>
-    /// Bit 6 (version 95, slice T4c, DV588): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
+    /// Bit 6 (version 98, slice T4c, DV600): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
     /// Set only while lying; the server forgets the side when the body stands up.
     /// </summary>
     public const byte SideFixed = 64;
 
-    /// <summary>Bit 7 (version 95, slice T4c, DV588): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
+    /// <summary>Bit 7 (version 98, slice T4c, DV600): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
     public const byte FaceUp = 128;
 
     /// <summary>
@@ -486,6 +486,11 @@ public enum ActionKind : byte
     /// action that is no click (the table's Flip). The server runs it only when it would offer that entry for the target now.
     /// </summary>
     ContextPick = 26,
+    /// <summary>
+    /// Version 97 (DV597): the client that said <see cref="Hello.WaitsForLoad"/> has built and loaded the world (its loading screen is done); no
+    /// fields. Without tg's lobby the server late-joins its new player now.
+    /// </summary>
+    Loaded = 27,
 }
 
 /// <summary>The mouse button of a click (tg's <c>params</c>: <c>button=left</c>, <c>right</c>, <c>middle</c>).</summary>
@@ -565,7 +570,7 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     /// <summary>Version 4: tg's <c>icon-y</c>, 1 to 32 (0: absent): north (or up on a billboard) is y.</summary>
     public byte IconY { get; init; }
 
-    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 95: bit 3 its high bit); version 95 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
+    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 98: bit 3 its high bit); version 98 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
     public AimZone AimZone { get; init; }
 
     /// <summary>Version 4: the keybinding of a <see cref="ActionKind.Keybinding"/> (<see cref="KeybindingCode"/>), else None.</summary>

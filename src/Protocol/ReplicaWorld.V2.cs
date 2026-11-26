@@ -24,6 +24,9 @@ public readonly record struct OwnState(long Tick, uint AckedSeq, bool HasMotion,
 
     /// <summary>Version 89: tg's ClickOn refuses the own mob's clicks now (<see cref="OwnBlock.HandsBlocked"/>).</summary>
     public bool HandsBlocked { get; init; }
+
+    /// <summary>Version 95: the own mob's melee click cooldown, milliseconds (<see cref="OwnBlock.MeleeCooldownMs"/>).</summary>
+    public int MeleeCooldownMs { get; init; } = OwnBlock.DefaultMeleeCooldownMs;
 }
 
 public sealed partial class ReplicaWorld
@@ -214,6 +217,7 @@ public sealed partial class ReplicaWorld
         ApplyCellChangesV3(delta);
         ApplyCellChangesV5(delta);
         ApplyCeilings(delta);
+        ApplyTurfLights(delta); // version 96
         SunAzimuth = delta.SunAzimuth;
     }
 
@@ -465,7 +469,7 @@ public sealed partial class ReplicaWorld
         if (block.Eye != null || isSnapshot) // version 51: a Snapshot's block names the eye or the eye is the own mob
             EyeEntity = block.Eye ?? 0;
         ApplyOwnV78(block, isSnapshot); // version 78
-        _own = new OwnState(tick, ackedSeq, block.HasMotion, block.Motion, block.Params, block.InputBufferDepth) { ActionsDone = block.ActionsDone, HandsBlocked = block.HandsBlocked };
+        _own = new OwnState(tick, ackedSeq, block.HasMotion, block.Motion, block.Params, block.InputBufferDepth) { ActionsDone = block.ActionsDone, HandsBlocked = block.HandsBlocked, MeleeCooldownMs = block.MeleeCooldownMs };
         _ownPending = true;
     }
 

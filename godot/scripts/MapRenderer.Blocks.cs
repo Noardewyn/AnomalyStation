@@ -287,8 +287,9 @@ public partial class MapRenderer
                     continue;
                 foreach (StaticRecord other in there.ToArray())
                 {
+                    // queued (StepReplace): a strip of the station leaving redrew each pane once for every neighbour that left, 1,000 models in a frame
                     if (other.Entity.Id != except && other.Placed.Kind == PlacedKind.Piece && other.Placed.Shape == RenderKind.DirectionalWindow)
-                        BuildInstances(other);
+                        Replace(other, rebuildAlways: true);
                 }
             }
         }

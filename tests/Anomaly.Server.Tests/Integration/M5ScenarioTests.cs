@@ -382,11 +382,12 @@ public class M5ScenarioTests
             var welder = Take<obj_item_weldingtool>(_toolbox);
             Key(KeybindingCode.ActivateInhand, 1);
             Assert.True(Truthy(() => welder.welding), "the welder is lit");
+            float speed = (float)In(() => Dm.num(_me.cached_multiplicative_actions_slowdown)); // a well-fed roll's high sanity cuts it to 9 s
             long cut = _w.Ticks;
             ClickTurf(WallX, WallY, 0.5f);
             Assert.True(Until(() => TurfAt(WallX, WallY) is turf_open_floor_plating, 12), "the wall is sliced");
             float took = (_w.Ticks - cut) / (float)Second;
-            Assert.True(took >= 9.5f, "tg's 10 s (walls.dm:233): " + took);
+            Assert.True(took >= 9.5f * speed, "tg's 10 s (walls.dm:233) at action speed " + speed + ": " + took);
             var girder = On<obj_structure_girder>(WallX, WallY).SingleOrDefault();
             Assert.NotNull(girder);
             float iron = In(() => Enumerable.Range(WallX - 6, 8).SelectMany(cx => Enumerable.Range(WallY - 3, 7).SelectMany(cy => Dm.each_cast<atom>(((turf)Builtins.locate(cx, cy, _z)).contents)))

@@ -2526,9 +2526,9 @@ public partial class datum_component_life_link
     }
 }
 
-// tg: code/datums/components/light_eater.dm:7
-[DmPath("/datum/component/light_eater"), DmGeneratedOnly, DmInert]
-public partial class datum_component_light_eater : datum_component
+// tg: code/datums/components/light_eater.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/light_eater")]
+public partial class datum_component_light_eater
 {
     public DmList eaten_lights; // tg: code/datums/components/light_eater.dm:9
 
@@ -2728,9 +2728,9 @@ public partial class datum_component_material_turf_tracking
     }
 }
 
-// tg: code/datums/components/mind_linker.dm:10
-[DmPath("/datum/component/mind_linker"), DmGeneratedOnly, DmInert]
-public partial class datum_component_mind_linker : datum_component
+// tg: code/datums/components/mind_linker.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/component/mind_linker")]
+public partial class datum_component_mind_linker
 {
     public string network_name = "Mind Link"; // tg: code/datums/components/mind_linker.dm:10
     public object chat_color; // tg: code/datums/components/mind_linker.dm:12
@@ -2752,9 +2752,9 @@ public partial class datum_component_mind_linker : datum_component
     }
 }
 
-// tg: code/datums/components/mind_linker.dm:147
-[DmPath("/datum/component/mind_linker/active_linking"), DmGeneratedOnly, DmInert]
-public partial class datum_component_mind_linker_active_linking : datum_component_mind_linker
+// tg: code/datums/components/mind_linker.dm:147 (the var block of a hand-written class)
+[DmPath("/datum/component/mind_linker/active_linking")]
+public partial class datum_component_mind_linker_active_linking
 {
     public object link_message; // tg: code/datums/components/mind_linker.dm:147
     public object unlink_message; // tg: code/datums/components/mind_linker.dm:149
@@ -2837,9 +2837,9 @@ public partial class datum_component_multiple_lives : datum_component
     }
 }
 
-// tg: code/datums/components/mutant_hands.dm:20
-[DmPath("/datum/component/mutant_hands"), DmGeneratedOnly, DmInert]
-public partial class datum_component_mutant_hands : datum_component
+// tg: code/datums/components/mutant_hands.dm:20 (the var block of a hand-written class)
+[DmPath("/datum/component/mutant_hands")]
+public partial class datum_component_mutant_hands
 {
     public Type mutant_hand_path = typeof(obj_item_mutant_hand); // tg: code/datums/components/mutant_hands.dm:22
 
@@ -3567,9 +3567,9 @@ public partial class datum_component_shoe_footstep
     public object falloff_distance; // tg: code/datums/components/shoe_footstep.dm:22
 }
 
-// tg: code/datums/components/shovel_hands.dm:3
-[DmPath("/datum/component/shovel_hands"), DmGeneratedOnly, DmInert]
-public partial class datum_component_shovel_hands : datum_component
+// tg: code/datums/components/shovel_hands.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/shovel_hands")]
+public partial class datum_component_shovel_hands
 {
     public obj_item_shovel internal_shovel; // tg: code/datums/components/shovel_hands.dm:5
 
@@ -4787,9 +4787,9 @@ public partial class datum_component_germ_sensitive
     public float infective = 0; // tg: code/datums/components/food/germ_sensitive.dm:18
 }
 
-// tg: code/datums/components/food/ghost_edible.dm:7
-[DmPath("/datum/component/ghost_edible"), DmGeneratedOnly, DmInert]
-public partial class datum_component_ghost_edible : datum_component
+// tg: code/datums/components/food/ghost_edible.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/ghost_edible")]
+public partial class datum_component_ghost_edible
 {
     public object bite_consumption; // tg: code/datums/components/food/ghost_edible.dm:7
     public object bite_chance; // tg: code/datums/components/food/ghost_edible.dm:9
@@ -4797,9 +4797,9 @@ public partial class datum_component_ghost_edible : datum_component
     public float initial_reagent_volume = 0; // tg: code/datums/components/food/ghost_edible.dm:13
 }
 
-// tg: code/datums/components/food/golem_food.dm:4
-[DmPath("/datum/component/golem_food"), DmGeneratedOnly, DmInert]
-public partial class datum_component_golem_food : datum_component
+// tg: code/datums/components/food/golem_food.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/component/golem_food")]
+public partial class datum_component_golem_food
 {
     public object consume_on_eat; // tg: code/datums/components/food/golem_food.dm:4
     public datum_golem_food_buff snack_type; // tg: code/datums/components/food/golem_food.dm:6

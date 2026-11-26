@@ -187,6 +187,15 @@ public partial class datum_controller_global_vars : datum_controller
         cable_list = Dm.list();
         Dm.append(ref gvars_datum_init_order, "cable_list");
     }
+    // tg: code/_globalvars/lists/objects.dm:59  GLOBAL_LIST_EMPTY(zombie_infection_list) (gaps SP3a: the zombie infection organs)
+    public DmList zombie_infection_list;
+
+    public virtual void InitGlobalzombie_infection_list()
+    {
+        zombie_infection_list = Dm.list();
+        Dm.append(ref gvars_datum_init_order, "zombie_infection_list");
+    }
+
     // tg: code/_globalvars/lists/objects.dm:80  GLOBAL_LIST_EMPTY(joinable_mobs) (gaps package C3: the bots' offer to ghosts)
     public DmList joinable_mobs;
 

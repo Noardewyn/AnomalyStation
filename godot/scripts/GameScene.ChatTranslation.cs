@@ -28,6 +28,16 @@ public partial class GameScene
         _session?.Say(message);
     }
 
+    // DEVIATION(DV598): another player's OOC line pings softly (tg's bloop, the OOC announcement's sound), at the Audio tab's volume
+    private void PingOoc(ChatEntry entry)
+    {
+        if (entry?.Type != ChatLog.TypeOoc || _options.OocPingVolumePercent <= 0)
+            return;
+        if (ChatTranslation.TryWords(entry.Type, entry.Plain, out int start, out int length) && ChatTranslation.Mine(entry.Plain.Substring(start, length), _sentLines))
+            return;
+        _sound?.PlayOwn("sound/misc/bloop.ogg", 25f * _options.OocPingVolumePercent / 100f, vary: false);
+    }
+
     /// <summary>The translator is on and <paramref name="words"/> are not in its language (nor the player's own line).</summary>
     private bool WillTranslate(string words) =>
         _options?.ChatTranslation == true && !ChatTranslation.Mine(words, _sentLines) && ChatTranslation.Route(words, _options.ChatTranslationLanguage).Count > 0;

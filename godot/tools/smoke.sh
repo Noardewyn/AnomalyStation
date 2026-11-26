@@ -7,7 +7,7 @@
 #   godot/tools/smoke.sh [screenshot.png]
 #   SMOKE_CONNECT=127.0.0.1:7777 godot/tools/smoke.sh      # also joins a running server for a few seconds
 #
-# GODOT overrides the Godot 4.7.2 mono binary (default: godot-mono on PATH, else the macOS app bundle).
+# GODOT overrides the Godot 4.7.2 mono binary (default: the usual place on this OS, export-common.sh's find_godot).
 # tg's icons, sounds and maps must be converted first: tools/convert-tg.sh does that, this script converts nothing.
 # When maps/ holds MetaStation, a headless run of the fake server on it checks the chunked world renderer at its real size.
 # SMOKE_META_SHOTS=DIR also saves windowed screenshots of MetaStation (a lit hall, a wall corner, a corridor with windows, a room with a table and props, a wall with lamps and signs, the hull against the starfield, an airlock opening) as DIR/<name>.png; the debug HUD is hidden (F3 by --keys) so that the whole view, ceiling included, can be judged (M3 R1, D119).
@@ -15,9 +15,8 @@
 set -eu
 
 project=$(cd "$(dirname "$0")/.." && pwd)
-if [ -z "${GODOT:-}" ]; then
-    GODOT=$(command -v godot-mono || echo /Applications/Godot_mono.app/Contents/MacOS/Godot)
-fi
+. "$project/tools/export-common.sh"
+GODOT=$(find_godot)
 
 repo=$(cd "$project/.." && pwd)
 if [ ! -d "$project/assets/tg/icons" ]; then

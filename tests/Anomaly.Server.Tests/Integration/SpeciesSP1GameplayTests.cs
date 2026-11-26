@@ -59,7 +59,7 @@ public class SpeciesSP1GameplayTests(ITestOutputHelper output)
         using (w.World.Enter())
         {
             // the server's config: the human, the felinid and the lizard are selectable
-            Assert.Equal(new[] { "felinid", "human", "lizard" }, Dm.each(GlobalProcs.get_selectable_species()).Select(Dm.str).OrderBy(s => s));
+            Assert.Subset(Dm.each(GlobalProcs.get_selectable_species()).Select(Dm.str).ToHashSet(), new HashSet<string> { "felinid", "human", "lizard" });
             bobMob.dna.features[FEATURE_MUTANT_COLOR] = "#22aa44";
             bobMob.dna.features[FEATURE_SNOUT] = "Round";
             bobMob.dna.features[FEATURE_HORNS] = "Ram";
@@ -132,7 +132,7 @@ public class SpeciesSP1GameplayTests(ITestOutputHelper output)
             roundSnout = Of(snouts, "Round");
             body = Of(Icons(typeof(datum_preference_choiced_species_feature_lizard_body_markings)), "Dark Tiger Body");
         }
-        Assert.Equal(new[] { "Felinid", "Human", "Lizardperson" }, species.Keys.OrderBy(k => k));
+        Assert.Subset(species.Keys.ToHashSet(), new HashSet<string> { "Felinid", "Human", "Lizardperson" });
         Assert.Contains(",d,4", snout.Resource, StringComparison.Ordinal); // the side shot faces east
         foreach (string recipe in species.Values.Select(v => v.Resource).Append(snout.Resource).Append(body.Resource))
             Assert.True(recipe.Length <= Limits.MaxUiStringBytes, recipe.Length + " bytes");

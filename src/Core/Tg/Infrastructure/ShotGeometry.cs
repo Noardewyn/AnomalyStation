@@ -179,7 +179,9 @@ public static class ShotGeometry
             return false;
         // DEVIATION(DV525): a ladder's hole is a floor tg only draws see-through (ladders.dm make_base_transparent); the 3D client cuts the hatch's
         // opening out of it (DV397), and a shot through that opening goes on, down or up
-        if (!InHatch(p, down ? here : next) && (Dm.num(here.zPassOut(dir)) == 0 || Dm.num(next.zPassIn(dir)) == 0))
+        // DEVIATION(DV595): a shot that passes glass (a laser's PASSGLASS) goes on through a glass floor between the levels
+        if (!InHatch(p, down ? here : next) && !(PassesGlass(p) && (down ? here : next) is turf_open_floor_glass)
+            && (Dm.num(here.zPassOut(dir)) == 0 || Dm.num(next.zPassIn(dir)) == 0))
             return false;
         p.free_hitscan_forceMove = TRUE;
         await p.forceMove(next);
@@ -188,6 +190,21 @@ public static class ShotGeometry
         p.dm_origin_h += down ? CeilingPixels : -CeilingPixels;
         return true;
     }
+
+    private static bool PassesGlass(obj_projectile p) => Dm.truthy(Dm.bitand(p.pass_flags, PASSGLASS));
+
+    /// <summary>
+    /// DEVIATION(DV595): the see-through thing under a first-person crosshair is not the aimed shot's direct target when the shot would pass it
+    /// unclicked: a window, a windoor or a grille its pass flags match (glass and grilles only, not a table's top), or a closed glass door a PASSGLASS
+    /// shot passes (door.dm CanAllowThrough). tg's player clicks the mob behind the glass; the 3D crosshair can only click the glass.
+    /// </summary>
+    public static bool SeesThrough(obj_projectile p, atom target)
+        => p.dm_aimed && (Dm.truthy(Dm.bitand(Dm.bitand(target.pass_flags_self, p.pass_flags), PASSGLASS | PASSGRILLE))
+            || target is obj_machinery_door && PassesGlass(p) && !Dm.truthy(target.opacity));
+
+    /// <summary>DEVIATION(DV595): a PASSGLASS shot that reached a cell's own glass ceiling (no level over it) flies on through it, away.</summary>
+    public static bool ThroughGlassCeiling(obj_projectile p, turf cell)
+        => PassesGlass(p) && CeilingSystem.Of(World.Current).At((int)Dm.num(cell.x), (int)Dm.num(cell.y), (int)Dm.num(cell.z)).IsGlass;
 
     /// <summary>What closes the top of a cell for a shot that reached it (<see cref="Overhead"/>).</summary>
     public enum Top
@@ -559,9 +576,8 @@ public static class ShotGeometry
 
     /// <summary>
     /// DEVIATION(DV400): a shot's hit on a living mob is shown on the mob, for everyone who sees it: its picture jolts 2 pixels to a side and
-    /// back (an animation beside whatever runs on it; fixed steps, so the world's RNG is not drawn from as tg's <c>Shake</c> would), and a
-    /// carbon's hit body part (<paramref name="zone"/>, tg's <c>check_hit_limb_zone_name</c>) is lit for <see cref="HitFlashDeciseconds"/>:
-    /// the part's own cached images as one overlay over the picture, bright red.
+    /// back (an animation beside whatever runs on it; fixed steps, so the world's RNG is not drawn from as tg's <c>Shake</c> would). The hit
+    /// body part lights up from its damage (<see cref="FlashLimb"/>).
     /// </summary>
     public static void ShowHit(mob_living victim, object zone)
     {
@@ -570,10 +586,29 @@ public static class ShotGeometry
         Dm.animate(victim, Dm.named("pixel_x", 2), Dm.named("time", 0.5f), Dm.named("flags", (int)ANIMATION_PARALLEL | (int)ANIMATION_RELATIVE));
         Dm.animate(Dm.named("pixel_x", -4), Dm.named("time", 1), Dm.named("flags", ANIMATION_RELATIVE));
         Dm.animate(Dm.named("pixel_x", 2), Dm.named("time", 0.5f), Dm.named("flags", ANIMATION_RELATIVE));
-        if (victim is not mob_living_carbon carbon || !Dm.truthy(zone) || !Dm.truthy(carbon.icon_render_keys?[zone]))
+    }
+
+    /// <summary>
+    /// DEVIATION(DV400): a carbon's body part that takes brute or burn damage (any: a shot, a blow, a fall, a burn; tg's
+    /// <c>receive_damage</c>) is lit for <see cref="HitFlashDeciseconds"/>, for everyone who sees the mob: the part's own cached images as
+    /// one overlay over the picture, bright red.
+    /// </summary>
+    // the world time each carbon's lit parts go out (FlashLimb)
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<mob_living_carbon, Dictionary<string, float>> LitParts = new();
+
+    public static void FlashLimb(mob_living_carbon carbon, object zone)
+    {
+        if (carbon == null || QDELETED(carbon) || !Dm.truthy(zone) || !Dm.truthy(carbon.icon_render_keys?[zone]))
             return;
         if (mob_living_carbon.limb_icon_cache[carbon.icon_render_keys[zone]] is not DmList parts || parts.len == 0)
             return;
+        // one flash per part at a time: damage every tick (toxins, fire) would pile up tg's 100 overlays before the first went out
+        var lit = LitParts.GetOrCreateValue(carbon);
+        string part = Dm.str(zone);
+        float now = Dm.num(world.time);
+        if (lit.TryGetValue(part, out float until) && now < until)
+            return;
+        lit[part] = now + HitFlashDeciseconds;
         mutable_appearance flash = mutable_appearance() as mutable_appearance;
         flash.appearance_flags = (int)KEEP_TOGETHER | (int)RESET_COLOR;
         // every drawn pixel of the part becomes the same bright red, most of its alpha kept: seen on any clothes
@@ -584,8 +619,8 @@ public static class ShotGeometry
             0f, 0f, 0f, 0.85f,
             1f, 0.25f, 0.2f, 0f);
         Dm.combine(ref flash.overlays, parts);
-        victim.add_overlay(flash);
-        _addtimer(Dm.@new<datum_callback>(victim, nameof(atom.cut_overlay), flash), HitFlashDeciseconds, file: "anomaly/ShotGeometry.ShowHit", line: 0);
+        carbon.add_overlay(flash);
+        _addtimer(Dm.@new<datum_callback>(carbon, nameof(atom.cut_overlay), flash), HitFlashDeciseconds, file: "anomaly/ShotGeometry.FlashLimb", line: 0);
     }
 
     // ---- the crossing (DV95) ----
@@ -694,7 +729,7 @@ public static class ShotGeometry
 
     /// <summary>
     /// The frame a lying <paramref name="target"/> shows a viewer at (<paramref name="viewerX"/>, <paramref name="viewerY"/>), from its own state as the
-    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV588).
+    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV600).
     /// </summary>
     public static byte LyingFrame(mob_living target, byte yaw, double mobX, double mobY, double viewerX, double viewerY)
         => ChooseLyingDir(yaw, mobX, mobY, viewerX, viewerY, IsLimp(target), target.dm_lies_buckled, target.dm_turned_face_up);
@@ -786,7 +821,7 @@ public static class ShotGeometry
     }
 
     /// <summary>
-    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV588, <paramref name="turnedFaceUp"/>), one
+    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV600, <paramref name="turnedFaceUp"/>), one
     /// lying buckled to an object its front (slice T4c), from every side; otherwise a conscious body lies face down (its back, north), a limp one by the
     /// viewer's side.
     /// </summary>

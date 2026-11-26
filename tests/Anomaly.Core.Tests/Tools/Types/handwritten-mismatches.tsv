@@ -42,10 +42,6 @@
 /obj/item/wallframe/flasher	icon_state	override	code/game/machinery/flasher.dm:223	"mflash_frame"	null
 /obj/item/wallframe/flasher	result_path	override	code/game/machinery/flasher.dm:224	/obj/machinery/flasher	null
 /obj/item/wallframe/flasher	pixel_shift	override	code/game/machinery/flasher.dm:226	28	null
-/obj/item/organ/stomach/ethereal	name	override	code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:2	"biological battery"	"stomach"
-/obj/item/organ/stomach/ethereal	icon_state	override	code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:3	"stomach-p"	"stomach"
-/obj/item/organ/stomach/ethereal	desc	override	code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:4	"A crystal-like organ that stores the electric charge of ethereals."	"Onaka ga suite imasu."
-/obj/item/organ/stomach/ethereal	organ_traits	init	code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:5	list("no_hunger", "ethereal_metabolism")	null
 /obj/item/fish	name	override	code/modules/fishing/fish/_fish.dm:20	"fish"	"item"
 /obj/item/fish	desc	override	code/modules/fishing/fish/_fish.dm:21	"very bland"	null
 /obj/item/fish	abstract_type	override	code/modules/fishing/fish/_fish.dm:22	/obj/item/fish	/obj/item

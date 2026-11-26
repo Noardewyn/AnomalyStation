@@ -19,6 +19,21 @@ public partial class obj_item_organ_stomach_ethereal : obj_item_organ_stomach
     // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:7
     public obj_item_stock_parts_power_store cell;
 
+    // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:2  the var overrides of the type block (the class declares cell by hand, so the block is here)
+    public obj_item_organ_stomach_ethereal()
+    {
+        name = "biological battery";
+        icon_state = "stomach-p"; //Welp. At least it's more unique in functionaliy.
+        desc = "A crystal-like organ that stores the electric charge of ethereals.";
+    }
+
+    // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:5
+    protected internal override void dm_init_vars()
+    {
+        base.dm_init_vars();
+        organ_traits = Dm.list(TRAIT_NOHUNGER, TRAIT_ETHEREAL_METABOLISM); // We have our own hunger mechanic.
+    }
+
     // tg: code/modules/surgery/organs/internal/stomach/stomach_ethereal.dm:11
     public override object Initialize(object mapload = null, params object[] __extra)
     {
@@ -200,7 +215,7 @@ public partial class obj_item_organ_stomach_ethereal : obj_item_organ_stomach
                 }
             }
 
-            playsound(carbon, "sound/effects/magic/lightningshock.ogg", 100, TRUE, extrarange: 5);
+            playsound(carbon, Dm.resource("sound/effects/magic/lightningshock.ogg"), 100, TRUE, extrarange: 5);
             carbon.cut_overlay(overcharge);
             // Only a small amount of the energy gets discharged as the zap. The rest dissipates as heat. Keeps the damage and energy from the zap the same regardless of what STANDARD_CELL_CHARGE is.
             float discharged_energy = -Dm.num(await adjust_charge(ETHEREAL_CHARGE_FULL - Dm.num(cell.charge__proc()))) * min(7500 / STANDARD_CELL_CHARGE, 1);
@@ -211,7 +226,7 @@ public partial class obj_item_organ_stomach_ethereal : obj_item_organ_stomach
             {
                 await carbon.apply_status_effect(typeof(datum_status_effect_heart_attack));
                 to_chat(carbon, span_userdanger(I18n.T("You're pretty sure you just felt your heart stop for a second there..")));
-                carbon.playsound_local(carbon, "sound/effects/singlebeat.ogg", 100, 0);
+                carbon.playsound_local(carbon, Dm.resource("sound/effects/singlebeat.ogg"), 100, 0);
             }
 
             await carbon.Paralyze(100);

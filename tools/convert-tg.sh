@@ -9,12 +9,13 @@
 #   tools/convert-tg.sh
 #
 # ANOMALY_TGSTATION names the tgstation clone (default: a "tgstation" folder next to the repository or one of its parents).
-# GODOT overrides the Godot 4.7.2 mono binary (default: godot-mono on PATH, else the macOS app bundle).
+# GODOT overrides the Godot 4.7.2 mono binary (default: the usual place on this OS, godot/tools/export-common.sh's find_godot).
 set -euo pipefail
 
 repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 assets="$repo/godot/assets/tg"
-GODOT=${GODOT:-$(command -v godot-mono || echo /Applications/Godot_mono.app/Contents/MacOS/Godot)}
+. "$repo/godot/tools/export-common.sh"
+GODOT=$(find_godot)
 
 tg=${ANOMALY_TGSTATION:-}
 if [ -z "$tg" ]; then

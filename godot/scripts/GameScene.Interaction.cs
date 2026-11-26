@@ -256,7 +256,7 @@ public partial class GameScene
         if (target.Kind == TargetKind.Entity && _feed.Replica.TryGet(target.Id, out ReplicaEntity e) && !string.IsNullOrEmpty(e.State.Name))
             return e.State.Name;
         if (target.Kind == TargetKind.Ceiling)
-            return Anomaly.Core.DmShim.I18n.T("Ceiling"); // the server names a ceiling only in reach (DV589)
+            return Anomaly.Core.DmShim.I18n.T("Ceiling"); // the server names a ceiling only in reach (DV601)
         if (target.Kind != TargetKind.Turf)
             return string.Empty;
         // Until the cell's hints arrive: what kind of turf it is (a wall was named "floor" before, the owner's play test 2026-10-14).
@@ -391,7 +391,7 @@ public partial class GameScene
         // The hover: a thing or a cell under the crosshair (tg's screentip names a turf too: its hints carry the wall's or floor's name; while
         // throwing, a cell's hint is the throw).
         ClickTarget hover = _hit.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling ? _target : ClickTarget.None;
-        // version 95 also (slice T4b): the hover on a mob carries the body zone looked at (the cached zone map), so the hints name what a click does;
+        // version 98 also (slice T4b): the hover on a mob carries the body zone looked at (the cached zone map), so the hints name what a click does;
         // not in cursor mode, where tg's zone selector holds the player's choice
         if (PlaySession.HoverCarriesZone(hover, _mouse.CursorMode))
             hover = hover with { Aim = _entities.AimZoneAt(hover.Id, hover.IconX, hover.IconY, hover.Picture) };
@@ -565,8 +565,10 @@ public partial class GameScene
                 _session.DblClick(target, button, modifiers);
             _crosshair.PulseNow(now);
             _highlight.PulseNow(now);
+            bool onItem = target.Kind == TargetKind.Entity && _feed.Replica?.TryGet(target.Id, out ReplicaEntity clickedThing) == true
+                && clickedThing.TypePath != null && Shared.World.PropKinds.IsItem(clickedThing.TypePath);
             if (button == ClickButton.Left && target.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling
-                && _viewModel?.Clicked() is SwingSound.Whoosh whoosh) // D285: the held thing swings; DV586: in combat mode it whooshes
+                && _viewModel?.Clicked(onItem) is SwingSound.Whoosh whoosh) // D285: the held thing swings; DV586: in combat mode it whooshes
                 _sound?.PlayOwn(whoosh.File, whoosh.Volume);
             else if (button == ClickButton.Right && target.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling)
                 _viewModel?.RightClicked(); // DV361: a mech's right arm fires
@@ -1067,7 +1069,8 @@ public partial class GameScene
         }
         if (action is PlayAction.CursorMode)
         {
-            SetCursorMode(!_mouse.CursorMode);
+            if (!InLobby) // the lobby has no view to give the mouse to: a stray Tab would only hide the pointer
+                SetCursorMode(!_mouse.CursorMode);
             return;
         }
         if (action is PlayAction.Inventory)

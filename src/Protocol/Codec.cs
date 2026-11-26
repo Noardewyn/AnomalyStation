@@ -61,6 +61,7 @@ public static partial class Codec
 
     private const int HelloFlagToken = 1;
     private const int HelloFlagLogin = 2;
+    private const int HelloFlagWaitsForLoad = 4; // version 97
 
     /// <summary>The id of a message without decoding it; false for an empty message or an unknown id.</summary>
     public static bool TryPeekId(ReadOnlySpan<byte> message, out MessageId id)
@@ -84,7 +85,7 @@ public static partial class Codec
         w.WriteBytes(ProtocolVersion.Magic);
         w.WriteUInt16(message.Protocol);
         w.WriteString(message.Name, Limits.MaxNameBytes);
-        w.WriteByte((byte)((message.ReconnectToken.IsNone ? 0 : HelloFlagToken) | (message.LoginToken == null ? 0 : HelloFlagLogin)));
+        w.WriteByte((byte)((message.ReconnectToken.IsNone ? 0 : HelloFlagToken) | (message.LoginToken == null ? 0 : HelloFlagLogin) | (message.WaitsForLoad ? HelloFlagWaitsForLoad : 0)));
         if (!message.ReconnectToken.IsNone)
             w.WriteToken(message.ReconnectToken);
         if (message.LoginToken != null)
@@ -126,7 +127,7 @@ public static partial class Codec
 
             string name = r.ReadString(Limits.MaxNameBytes);
             byte flags = r.ReadByte();
-            if ((flags & ~(HelloFlagToken | HelloFlagLogin)) != 0)
+            if ((flags & ~(HelloFlagToken | HelloFlagLogin | HelloFlagWaitsForLoad)) != 0)
                 throw Bad("a Hello sets reserved flags");
             SessionToken token = SessionToken.None;
             if ((flags & HelloFlagToken) != 0)
@@ -144,7 +145,7 @@ public static partial class Codec
             }
 
             r.ExpectEnd();
-            value = new Hello(version, name, token, login);
+            value = new Hello(version, name, token, login, (flags & HelloFlagWaitsForLoad) != 0);
             return true;
         }
         catch (ProtocolException e)
@@ -259,7 +260,7 @@ public static partial class Codec
         foreach (string type in message.TurfTypes)
             size += 10 + MaxUtf8(type, Limits.MaxTypePathBytes);
         return size + (long)message.Runs.Count * MaxTurfRunBytes + (long)message.AppearanceRuns.Count * MaxTurfRunBytes
-            + (message.SolidBits?.Length ?? 0) + MaxMapGridV3Size(message) + MaxMapGridV5Size(message) + CeilingBytes(message.Ceilings) + NoParallaxBytes(message) + LinkedBelowBytes(message) + MapLookBytes(message) + WallHeightBytes;
+            + (message.SolidBits?.Length ?? 0) + MaxMapGridV3Size(message) + MaxMapGridV5Size(message) + CeilingBytes(message.Ceilings) + NoParallaxBytes(message) + LinkedBelowBytes(message) + MapLookBytes(message) + WallHeightBytes + TurfLightBytes(message.TurfLights);
     }
 
     public static int Encode(MapGrid message, Span<byte> destination)
@@ -333,6 +334,9 @@ public static partial class Codec
         WriteLinkedBelow(ref w, message);
         WriteMapLook(ref w, message);
         WriteWallHeight(ref w, message);
+        foreach (TurfLightChange c in message.TurfLights) // version 96
+            if (c.X > message.Width || c.Y > message.Height || c.Z > message.Levels) throw Bad("a turf light outside the map");
+        WriteTurfLights(ref w, message.TurfLights, 2 * cells, false);
         return Finish(ref w, Limits.MaxOutboundMessageBytes);
     }
 
@@ -413,6 +417,9 @@ public static partial class Codec
             ReadLinkedBelow(ref r, grid);
             ReadMapLook(ref r, grid);
             ReadWallHeight(ref r, grid);
+            ReadTurfLights(ref r, grid.TurfLights, 2 * cells, false); // version 96
+            foreach (TurfLightChange c in grid.TurfLights)
+                if (c.X > grid.Width || c.Y > grid.Height || c.Z > grid.Levels) throw Bad("a turf light outside the map");
             r.ExpectEnd();
             value = grid;
             return true;
@@ -568,7 +575,7 @@ public static partial class Codec
                 + 15 + ((change.Mask & NetField.Animation) != 0 ? MaxAnimationBytes(change.Animation) : 0) + ((change.Mask & NetField.Door) != 0 ? MaxDoorBytes(change.Door) : 0);
         size += 10 + (long)message.Despawned.Count * MaxDespawnBytes;
         size += 10 + 10 + ((long)message.SolidChanged.Count + message.TurfAppearanceChanged.Count) * (5 + 5 + 5 + 5);
-        return size + MaxDeltaV3Size(message) + MaxDeltaV5Size(message) + CeilingBytes(message.Ceilings) + 5;
+        return size + MaxDeltaV3Size(message) + MaxDeltaV5Size(message) + CeilingBytes(message.Ceilings) + 5 + TurfLightBytes(message.TurfLightChanged);
     }
 
     /// <summary>The whole Delta, header, body and private block (<see cref="Delta.Own"/>; tests, and a server that sends one connection only).</summary>
@@ -812,6 +819,7 @@ public static partial class Codec
             WriteDeltaV5(ref w, message);
         WriteCeilings(ref w, message.Ceilings, Limits.MaxCellChangesPerDelta);
         WriteSun(ref w, message.SunAzimuth);
+        WriteTurfLights(ref w, message.TurfLightChanged, Limits.MaxCellChangesPerDelta, true); // version 96
     }
 
     private const int PartResources = 1;
@@ -896,6 +904,7 @@ public static partial class Codec
             ReadDeltaV5(ref r, delta, Limits.MaxCellChangesPerDelta - delta.SolidChanged.Count - delta.TurfAppearanceChanged.Count - V3CellChanges(delta));
         ReadCeilings(ref r, delta.Ceilings, Limits.MaxCellChangesPerDelta - delta.SolidChanged.Count - delta.TurfAppearanceChanged.Count - V3CellChanges(delta) - delta.CellGasChanged.Count);
         delta.SunAzimuth = ReadSun(ref r);
+        ReadTurfLights(ref r, delta.TurfLightChanged, Limits.MaxCellChangesPerDelta, true); // version 96
     }
 
     // ---- entity records ----
@@ -1324,7 +1333,7 @@ public static partial class Codec
 
     private static void CheckPosture(byte posture)
     {
-        // version 95 (DV588): the turned side's two bits, only on a lying body, face up only with the side fixed
+        // version 98 (DV600): the turned side's two bits, only on a lying body, face up only with the side fixed
         if ((posture & PostureBits.SideFixed) != 0 && (posture & PostureBits.Lying) == 0 || (posture & (PostureBits.SideFixed | PostureBits.FaceUp)) == PostureBits.FaceUp)
             throw Bad("a posture byte " + posture + " sets a turned side that is not defined");
     }

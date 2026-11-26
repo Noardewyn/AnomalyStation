@@ -104,9 +104,8 @@ public class FirstAidGameplayTests(ITestOutputHelper output)
         foreach (string other in new[] { "Bob", "Carol" })
             Assert.DoesNotContain(texts[other], t => t.Contains("boxed_message", StringComparison.Ordinal) || t.Contains("% healthy", StringComparison.Ordinal) || t.Contains("Analyzing results", StringComparison.Ordinal));
         Assert.Contains(heard, h => h.File == "sound/items/healthanalyzer.ogg");
-        var readout = new ReadoutModel();
-        Assert.True(readout.Offer(scan));
-        Assert.Contains("Overall status:", readout.Text);
+        Assert.Equal(ChatBox.Blue, ChatBox.Of(scan)); // drawn whole in the chat in tg's blue box
+        Assert.Contains("Overall status:", HtmlText.ToPlain(scan));
 
         // 2. The suture on Bob's left arm, aimed at it (DV30): other_delay 1 s, stop_bleeding 0.5 off the cut's flow.
         Hold<obj_item_stack_medical_suture>(w, aliceMob);

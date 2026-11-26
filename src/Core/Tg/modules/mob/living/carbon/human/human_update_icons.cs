@@ -872,10 +872,7 @@ public partial class obj_item : obj
         {
             if (Dm.truthy(Dm.bitand(bodyshapes_with_variations, BODYSHAPE_CERULEAN)) || Dm.truthy(Dm.bitand(supports_variations_flags, CERULEAN_MASKING)))
             {
-                // return generate_cerulean_icons(base_icon, key, greyscale_colors, bodyshape) (cerulean_update_icons.dm): the cerulean's tail
-                // clothing waits for the cerulean species (gaps SP2)
-                Dm.NotTranslated("code/modules/mob/living/carbon/human/human_update_icons.dm:459", "get_bodyshape_icon: generate_cerulean_icons, the cerulean's clothing (gaps SP2)");
-                return null;
+                return generate_cerulean_icons(base_icon, key, greyscale_colors, bodyshape);
             }
         }
         // Gaps SP1: the digitigrade clothing is the icon recipe the client composes (D104): tg's mask and GAGS legs as /icon Blend operations

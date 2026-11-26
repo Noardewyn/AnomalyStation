@@ -210,9 +210,9 @@ public partial class datum_preference_choiced_species_feature_monkey_tail : datu
     }
 }
 
-// tg: code/modules/client/preferences/species_features/moth.dm:2
-[DmPath("/datum/preference/choiced/species_feature/moth_antennae"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_species_feature_moth_antennae : datum_preference_choiced_species_feature
+// tg: code/modules/client/preferences/species_features/moth.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/species_feature/moth_antennae")]
+public partial class datum_preference_choiced_species_feature_moth_antennae
 {
     // tg: code/modules/client/preferences/species_features/moth.dm:2
     public datum_preference_choiced_species_feature_moth_antennae()
@@ -226,9 +226,9 @@ public partial class datum_preference_choiced_species_feature_moth_antennae : da
     }
 }
 
-// tg: code/modules/client/preferences/species_features/moth.dm:27
-[DmPath("/datum/preference/choiced/species_feature/moth_markings"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_species_feature_moth_markings : datum_preference_choiced_species_feature
+// tg: code/modules/client/preferences/species_features/moth.dm:27 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/species_feature/moth_markings")]
+public partial class datum_preference_choiced_species_feature_moth_markings
 {
     // tg: code/modules/client/preferences/species_features/moth.dm:27
     public datum_preference_choiced_species_feature_moth_markings()
@@ -242,9 +242,9 @@ public partial class datum_preference_choiced_species_feature_moth_markings : da
     }
 }
 
-// tg: code/modules/client/preferences/species_features/moth.dm:71
-[DmPath("/datum/preference/choiced/species_feature/moth_wings"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_species_feature_moth_wings : datum_preference_choiced_species_feature
+// tg: code/modules/client/preferences/species_features/moth.dm:71 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/species_feature/moth_wings")]
+public partial class datum_preference_choiced_species_feature_moth_wings
 {
     // tg: code/modules/client/preferences/species_features/moth.dm:71
     public datum_preference_choiced_species_feature_moth_wings()
@@ -258,9 +258,9 @@ public partial class datum_preference_choiced_species_feature_moth_wings : datum
     }
 }
 
-// tg: code/modules/client/preferences/species_features/mushperson.dm:2
-[DmPath("/datum/preference/choiced/species_feature/mushroom_cap"), DmGeneratedOnly]
-public partial class datum_preference_choiced_species_feature_mushroom_cap : datum_preference_choiced_species_feature
+// tg: code/modules/client/preferences/species_features/mushperson.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/species_feature/mushroom_cap")]
+public partial class datum_preference_choiced_species_feature_mushroom_cap
 {
     // tg: code/modules/client/preferences/species_features/mushperson.dm:2
     public datum_preference_choiced_species_feature_mushroom_cap()
@@ -272,9 +272,9 @@ public partial class datum_preference_choiced_species_feature_mushroom_cap : dat
     }
 }
 
-// tg: code/modules/client/preferences/species_features/pod.dm:2
-[DmPath("/datum/preference/choiced/species_feature/pod_hair"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_species_feature_pod_hair : datum_preference_choiced_species_feature
+// tg: code/modules/client/preferences/species_features/pod.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/species_feature/pod_hair")]
+public partial class datum_preference_choiced_species_feature_pod_hair
 {
     // tg: code/modules/client/preferences/species_features/pod.dm:2
     public datum_preference_choiced_species_feature_pod_hair()
@@ -1148,9 +1148,9 @@ public partial class datum_preference_choiced_hair_gradient
     }
 }
 
-// tg: code/modules/client/preferences/species_features/ethereal.dm:2
-[DmPath("/datum/preference/choiced/ethereal_color"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_ethereal_color : datum_preference_choiced
+// tg: code/modules/client/preferences/species_features/ethereal.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/ethereal_color")]
+public partial class datum_preference_choiced_ethereal_color
 {
     // tg: code/modules/client/preferences/species_features/ethereal.dm:2
     public datum_preference_choiced_ethereal_color()
@@ -1176,9 +1176,9 @@ public partial class datum_preference_choiced_lizard_legs
     }
 }
 
-// tg: code/modules/client/preferences/species_features/vampire.dm:2
-[DmPath("/datum/preference/choiced/vampire_status"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_choiced_vampire_status : datum_preference_choiced
+// tg: code/modules/client/preferences/species_features/vampire.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/preference/choiced/vampire_status")]
+public partial class datum_preference_choiced_vampire_status
 {
     // tg: code/modules/client/preferences/species_features/vampire.dm:2
     public datum_preference_choiced_vampire_status()
@@ -1363,9 +1363,9 @@ public partial class datum_preference_color_hair_gradient
     }
 }
 
-// tg: code/modules/client/preferences/species_features/cerulean.dm:3
-[DmPath("/datum/preference/color/fish_tail_color"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_color_fish_tail_color : datum_preference_color
+// tg: code/modules/client/preferences/species_features/cerulean.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/preference/color/fish_tail_color")]
+public partial class datum_preference_color_fish_tail_color
 {
     // tg: code/modules/client/preferences/species_features/cerulean.dm:3
     public datum_preference_color_fish_tail_color()
@@ -2372,9 +2372,9 @@ public partial class datum_preference_toggle_window_flashing
     }
 }
 
-// tg: code/modules/client/preferences/species_features/cerulean.dm:16
-[DmPath("/datum/preference/toggle/cerulean_frills"), DmGeneratedOnly, DmInert]
-public partial class datum_preference_toggle_cerulean_frills : datum_preference_toggle
+// tg: code/modules/client/preferences/species_features/cerulean.dm:16 (the var block of a hand-written class)
+[DmPath("/datum/preference/toggle/cerulean_frills")]
+public partial class datum_preference_toggle_cerulean_frills
 {
     // tg: code/modules/client/preferences/species_features/cerulean.dm:16
     public datum_preference_toggle_cerulean_frills()

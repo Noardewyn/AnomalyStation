@@ -20,8 +20,11 @@ public enum SwingKind : byte
     /// <summary>A long or a bulky thing: a thing thrown hard.</summary>
     Heavy,
 
-    /// <summary>An edged or pointed thing (tg's sharpness): the dagger's slashes, one and the other in turn.</summary>
+    /// <summary>An edged thing (tg's sharpness): the dagger's slashes, one and the other in turn.</summary>
     Sharp,
+
+    /// <summary>A pointed thing (tg's SHARP_POINTY: a screwdriver, a spear, a pen): it whooshes as a sharp one and stabs (HeldClip.Stab).</summary>
+    Pointy,
 }
 
 /// <summary>The own swing's whoosh: its file and volume, and which held pictures are tg's sharp or bulky things.</summary>
@@ -39,7 +42,7 @@ public static class SwingSound
     /// <summary>The whoosh of the <paramref name="count"/>th swing (the sharp ones take turns).</summary>
     public static string FileOf(SwingKind kind, int count) => kind switch
     {
-        SwingKind.Sharp => count % 2 == 0 ? SlashOne : SlashTwo,
+        SwingKind.Sharp or SwingKind.Pointy => count % 2 == 0 ? SlashOne : SlashTwo,
         SwingKind.Heavy => Hard,
         SwingKind.Fist => Fist,
         _ => Soft,
@@ -53,13 +56,17 @@ public static class SwingSound
     {
         if (icon == null)
             return SwingKind.Fist;
-        SwingKind kind = looks != null && looks.TryGetValue((icon, state ?? string.Empty), out SwingKind known) ? known : SwingKind.Light;
+        SwingKind kind = looks != null && looks.TryGetValue((PictureOf(icon), state ?? string.Empty), out SwingKind known) ? known : SwingKind.Light;
         return kind == SwingKind.Light && longThing ? SwingKind.Heavy : kind;
     }
 
+    // a greyscale (GAGS) icon without its colours: a screwdriver's are random, so its picture is any colour of its config's
+    private static string PictureOf(string icon)
+        => icon.StartsWith("gags:", StringComparison.Ordinal) && icon.IndexOf('|') is > 0 and int bar ? icon[..bar] : icon;
+
     /// <summary>
-    /// tg's items by their picture (icon and the state they draw after init): a sharp thing's is <see cref="SwingKind.Sharp"/>, a bulky one's
-    /// <see cref="SwingKind.Heavy"/> (a picture several types share is sharp if any of them is). Read from the translated classes: a second or two.
+    /// tg's items by their picture (icon and the state they draw after init): a pointed thing's is <see cref="SwingKind.Pointy"/>, an edged one's
+    /// <see cref="SwingKind.Sharp"/>, a bulky one's <see cref="SwingKind.Heavy"/> (a picture several types share takes the latest of these kinds any of them has). Read from the translated classes: a second or two.
     /// </summary>
     public static Dictionary<(string Icon, string State), SwingKind> Looks(ITypeSource types)
     {
@@ -68,13 +75,21 @@ public static class SwingSound
         {
             if (!path.StartsWith("/obj/item/", StringComparison.Ordinal) || !types.TryGet(path, out TypeDefaults d) || d.Icon == null)
                 continue;
-            SwingKind kind = d.Sharp ? SwingKind.Sharp : d.WeightClass >= Bulky ? SwingKind.Heavy : SwingKind.Light;
+            SwingKind kind = d.Pointy ? SwingKind.Pointy : d.Sharp ? SwingKind.Sharp : d.WeightClass >= Bulky ? SwingKind.Heavy : SwingKind.Light;
             if (kind == SwingKind.Light)
                 continue;
-            (string, string) key = (d.Icon, d.StateAfterInit(null) ?? string.Empty);
+            string icon = PictureOf(d.IconAfterInit(null)), state = d.StateAfterInit(null) ?? string.Empty;
+            Add((icon, state), kind);
+            // tg's two_handed things draw "<base>0" and "<base>1" when wielded (a spear's spearglass0 and spearglass1): the wielded picture is the same thing
+            if (state.EndsWith('0'))
+                Add((icon, state[..^1] + "1"), kind);
+        }
+        return looks;
+
+        void Add((string, string) key, SwingKind kind)
+        {
             if (!looks.TryGetValue(key, out SwingKind had) || kind > had)
                 looks[key] = kind;
         }
-        return looks;
     }
 }

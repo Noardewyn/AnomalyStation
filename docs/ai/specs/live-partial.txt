@@ -781,3 +781,21 @@
 ## Gaps RG3 (D333, D339): the drugs, pyrotechnics and the other reagents, not-translated.md section 226
 /datum/reagent/teslium	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed teslium is electrogenic for a while
 /datum/reagent/growthserum	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed growth serum grows quickly for a while
+
+## Species SP2a (D349): the moth and the plasmaman
+/obj/item/clothing/under/plasmaman/clown/magic	Initialize	D349	deferred	the wizard's enchanted clown suit adds the clown pockets spell (a wizard item, antagonist code not ported)
+
+## Species SP3a (D349)
+/datum/golem_food_buff/gibtonite	apply_effects	D349	not_translated	the gibtonite_hand launcher item is not translated (mining items); a golem still eats gibtonite for its nutrition
+/datum/golem_food_buff/bluespace	apply_effects	D349	not_translated	the bluespace_finger teleport item is not translated (mining items); a golem still eats bluespace crystals for its nutrition
+
+
+## Species SP2c (D349): the jelly family and the cerulean
+/obj/item/slime_extract	grind_results	D349	deferred	the slime extract (xenobiology lab) is not translated; only activate() and the colours' overrides are, the luminescent actions call them
+/obj/item/slime_extract	examine	D349	deferred	xenobiology lab not translated
+/obj/item/slime_extract	item_interaction	D349	deferred	xenobiology lab not translated (the enhancer potion)
+/obj/item/slime_extract	interact_with_atom	D349	deferred	xenobiology lab not translated (core crossing on a slime)
+/obj/item/slime_extract	auto_activate_reaction	D349	deferred	xenobiology lab not translated
+
+## Species SP3b (D349)
+# No rows: every proc of the abductor, dullahan, vampire, spirit/ghost and nightmare species is translated. Left out whole (their types stay inert): the abductor baton recall (summonitem/abductor, abductor gear), the nightmare antagonist's terrorize spell and the shadow cloak (heretic).

@@ -29,6 +29,73 @@ client's top-right corner, in its window title and in the first line of the serv
 - The health doll's head has eyes and a mouth to use items on, and a Ctrl-click on the doll grasps the limb clicked.
 - The prompt beside the crosshair shows only for things within reach; anything further away leaves the crosshair bare.
 
+## [1.14.0-pre-alpha] - 2026-11-26
+
+### Protocol
+
+- Network protocol 97: clients and servers older than 1.14.0-pre-alpha cannot connect to this version.
+
+### Added
+
+- Joining shows a loading screen while the station is built and loaded; your character enters the round only once the game is ready.
+- Map editor: Play can start you at the map's nearest round-start spawn point (a job's start landmark).
+- Map editor: a Gas row and window in the Tile panel set the gas the selected tiles start with; the haze shows at once.
+- Map editor: a pipe or atmos machine that would clash with one on the same layer is not placed, and Checks lists such tiles (they stop the round's air).
+- Map editor: the palette's Areas tab shows the area colours by itself, without the View menu's switch.
+- Map editor: a room's area painted over space open space makes it the room's open space, which holds air; Checks names any left in a room.
+- Light floor tiles glow and light the room around them, laid on the floor or as a ceiling; lava and circuit floors light their surroundings too.
+- Another player's OOC message plays a soft ping; its volume (or off) is in Settings, Audio.
+
+### Changed
+
+- Scanner readouts (health, gas analyzer and the like) show whole in a framed box in the chat, as in SS13, instead of a separate window.
+- Station announcements and admin messages show in coloured boxes in the chat; OOC lines are larger and bold.
+
+### Fixed
+
+- Fewer stutters while moving into parts of the station seen for the first time; the game no longer prints Ogg Vorbis warnings at the start.
+- First person: no more stutter every few seconds that grew worse the more of the station you had seen (glass reflecting your body).
+- Creatures and things of other levels (Lavaland's mobs) no longer hang in the sky over the station on a server that sends everything.
+- Map editor: Play on the tile starts you on the edited level, not on the roof or ceiling selected over it.
+- Map editor: flying up inside a room two levels high keeps the lamps' light and shadows instead of turning the room flat.
+- Lasers fly through windows, glass doors, grilles and glass floors and ceilings aimed at in first person, as in tg.
+- Map editor: a floor placed as a ceiling from inside a room whose walls are two levels high goes on top of the walls.
+- Map editor: a lamp, an APC or a sign placed against a wall with a rectangle shape hangs on that wall, whatever way the palette faces.
+
+## [1.13.0-pre-alpha] - 2026-11-25
+
+### Protocol
+
+- Network protocol 95: clients and servers older than 1.13.0-pre-alpha cannot connect to this version.
+
+### Added
+
+- A luminescent jellyperson's integrated slime extract now does what its colour does in tg, for both its minor and major activation.
+- The mech removal tool works: two-handed (5 force in one hand, 19 wielded), and wielded it pries the pilot out of a mech.
+- Held melee things attack with animations made in Blender: a one-handed chop straight down, a two-handed chop, and a stab for pointed things such as screwdrivers and spears.
+- Dev menu: pick a held thing's attack animation, as a default for all things and for wielded ones, and as an override for each item.
+- Dev menu: held things can be flipped left-right or up-down in one click, all at once, wielded or one by one, and given their own wielded pose.
+- Moths and plasmamen are playable: moth wings, antennae and markings in Character Setup; plasmamen spawn in envirosuits and burn in oxygen without one.
+- Ethereals and ceruleans are playable too: an ethereal glows in its colour and runs on charge; a cerulean has a fish tail and frills.
+- Podpeople, mushroompeople, snailpeople, jellypeople, slimepeople, luminescents, stargazers, skeletons, zombies and golems are ported, each with its own mechanics.
+- Abductors, dullahans, vampires, spirits, ghosts and nightmares are ported too; every tg species is now playable (most through mirrors, toxins or admins).
+
+### Changed
+
+- Magazines, speedloaders and ammo boxes are drawn half as large in first-person hands.
+- A melee hit, with a weapon, a fist or a mech, always lands on the body part you aim at; a lost limb can't be hit at all.
+- In first person your own attacks no longer show the flying, spinning weapon sprite; others and the third-person view still see it.
+- A body part flashes red, for everyone, on any damage it takes (a blow, a fall, a burn), not only on a shot's hit.
+
+### Fixed
+
+- A melee swing's whoosh no longer plays on clicks faster than the weapon's attack cooldown; you hear it only when a blow really goes out.
+- Coin flips, a vampire's drinking, an ethereal's overcharge and a torn-off fish tail now play their sounds.
+- Tab in the lobby no longer hides the mouse pointer.
+- The crosshair now opens for the spread of firing two light guns at once in combat mode.
+- Picking an item up with an empty hand in combat mode no longer plays a punch swing.
+- Character Setup's species page opens again, so the lizard and the felinid can be picked (it showed an empty window).
+
 ## [1.12.0-pre-alpha] - 2026-11-23
 
 ### Added

@@ -180,7 +180,8 @@ public partial class HoverHighlight : Node3D
             var feet = new Vector3((float)shape.East, floor + (float)shape.Up, -(float)shape.North);
             Vector3 right = new Vector3(camera.X.X, 0, camera.X.Z).Normalized();
             // (picture_billboard.gdshader's face_eye: the camera's back x the ground right)
-            Vector3 up = shape.FacesEye ? camera.Z.Cross(right).Normalized() : Vector3.Up;
+            Vector3 up = shape.FacesEye ? camera.Z.Cross(right) : Vector3.Up;
+            up = (up with { Y = Mathf.Max(up.Y, 0f) }).Normalized(); // (flat on the floor past straight down, T5a)
             turn = new Basis(right, up, right.Cross(up));
             centre = feet + right * (float)(r.Left + r.Right) / 2f + up * (float)(r.Bottom + r.Top) / 2f;
         }

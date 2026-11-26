@@ -11,12 +11,12 @@ namespace Anomaly.Client;
 /// in every input frame (M2). F1 switches to a free fly camera (inspection and screenshots) or the third-person orbit, a play view (DV53).
 /// <para>
 /// Yaw is Godot's: radians about +Y, counter-clockwise seen from above; 0 looks north (-Z), +90 degrees looks west. The
-/// pitch is positive looking up and limited to 89 degrees either way.
+/// pitch is positive looking up, limited to <see cref="LookDown.MaxUpDegrees"/> up and <see cref="LookDown.MaxDownDegrees"/> down: past straight
+/// down it is one continuous turn about the camera's own right axis, so the screen's right stays the player's right (slice T5a).
 /// </para>
 /// </summary>
 public partial class CameraRig : Node3D
 {
-    private const float MaxPitch = 89f * Mathf.Pi / 180f;
     private const float FlySpeed = 9f;
     private const float FastFactor = 3.5f;
 
@@ -105,6 +105,9 @@ public partial class CameraRig : Node3D
 
     public Camera3D Camera => _camera;
 
+    /// <summary>T5a: the first-person eye's height above the feet at a level look, as the last <see cref="UpdateRig"/> placed it (LookDown.Pivot).</summary>
+    public float EyeUp { get; private set; } = TileSpace.EyeHeight;
+
     public override void _Ready()
     {
         _camera = GetNode<Camera3D>("Camera");
@@ -139,7 +142,7 @@ public partial class CameraRig : Node3D
     public void Turn(float up, float right)
     {
         Yaw = Mathf.Wrap(Yaw - right, -Mathf.Pi, Mathf.Pi);
-        Pitch = Mathf.Clamp(Pitch + up, -MaxPitch, MaxPitch);
+        Pitch = (float)LookDown.ClampPitch(Pitch + up, Mode == CameraMode.FirstPerson);
     }
 
     public void SetMode(CameraMode mode)
@@ -152,6 +155,7 @@ public partial class CameraRig : Node3D
             Pitch = Mathf.Min(Pitch, -0.7f);
         else if (mode == CameraMode.FirstPerson && Mode == CameraMode.Orbit)
             Pitch = 0f; // back to the eye: level, not the orbit's look down
+        Pitch = (float)LookDown.ClampPitch(Pitch, mode == CameraMode.FirstPerson); // T5a: past 89 degrees down is the first person's alone
         Mode = mode;
     }
 
@@ -212,8 +216,12 @@ public partial class CameraRig : Node3D
         switch (Mode)
         {
             case CameraMode.FirstPerson when hasOwn:
-                // The camera layer's sideways offset is along the view's right, level with the floor.
-                GlobalPosition = ownFeet + new Basis(Vector3.Up, Yaw).X * offsets.Right + new Vector3(0, up, 0);
+                // The camera layer's sideways offset is along the view's right, level with the floor. T5a: the eye turns about the neck
+                // (LookDown.EyeOffset): looking down it goes forward along the view's yaw and down.
+                var level = new Basis(Vector3.Up, Yaw);
+                EyeUp = up;
+                (double eyeAhead, double eyeDrop) = LookDown.EyeOffset(Pitch + offsets.PitchRadians, up);
+                GlobalPosition = ownFeet + level.X * offsets.Right + new Vector3(0, up - (float)eyeDrop, 0) - level.Z * (float)eyeAhead;
                 if (offsets.Forward != 0f) // DV96: a heavy gun kick shoves the eye back along the view
                     GlobalPosition += Transform.Basis * new Vector3(0f, 0f, -offsets.Forward);
                 break;

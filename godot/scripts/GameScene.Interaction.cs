@@ -277,7 +277,16 @@ public partial class GameScene
     {
         Vector3 origin = camera.GlobalPosition;
         Vector3 forward = (-camera.GlobalTransform.Basis.Z).Normalized();
-        return new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, forward.X, -forward.Z, forward.Y, maxMetres);
+        return Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, forward.X, -forward.Z, forward.Y, maxMetres), camera);
+    }
+
+    // The camera's forward and right on a ray (PickShape.FacesEye: an item's picture is square to the view, its right the camera's). T5a: past
+    // straight down the ray's own ground track points back, and a right taken from it would turn such a picture round.
+    private static PickRay Viewed(in PickRay ray, Camera3D camera)
+    {
+        Basis b = camera.GlobalTransform.Basis;
+        Vector3 view = (-b.Z).Normalized();
+        return ray with { ViewEast = view.X, ViewNorth = -view.Z, ViewUp = view.Y, RightEast = b.X.X, RightNorth = -b.X.Z };
     }
 
     // The third-person pick's ray: from the camera through the screen's middle (the crosshair) or the pointer. lead is how far along it the
@@ -360,7 +369,7 @@ public partial class GameScene
                 {
                     Vector2 at = GetViewport().GetMousePosition();
                     Vector3 origin = camera.ProjectRayOrigin(at), dir = camera.ProjectRayNormal(at);
-                    ray = new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, dir.X, -dir.Z, dir.Y, WorldPicker.DefaultRange);
+                    ray = Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, dir.X, -dir.Z, dir.Y, WorldPicker.DefaultRange), camera);
                 }
                 _hit = _throwModeOn ? _picker.PickThrow(ray, _feed.OwnEntity) : _picker.Pick(ray, _feed.OwnEntity);
                 // Nothing within the ordinary range (open space, a long corridor): the click lands on what is in view farther on, as BYOND's
@@ -598,7 +607,7 @@ public partial class GameScene
             {
                 Vector2 pointer = GetViewport().GetMousePosition();
                 Vector3 origin = camera.ProjectRayOrigin(pointer), direction = camera.ProjectRayNormal(pointer);
-                ray = new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, direction.X, -direction.Z, direction.Y, WorldPicker.ViewRange);
+                ray = Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, direction.X, -direction.Z, direction.Y, WorldPicker.ViewRange), camera);
             }
             PickHit pointed = _picker.PickPoint(ray, _feed.OwnEntity, lead);
             if (pointed.IsHit && (!_fovOn || _fov.CellVisible(pointed.X, pointed.Y, _fov.Z)))
@@ -792,8 +801,7 @@ public partial class GameScene
         Vector3 dir = camera.ProjectRayNormal(pointer);
         (_, _, int z) = _session.Prediction.RenderPosition();
         _pickWorld.PickExclude = _feed.OwnEntity;
-        Vector3 view = (-camera.GlobalTransform.Basis.Z).Normalized(); // the camera's forward: an item's picture is square to it (PickShape.FacesEye)
-        var ray = new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, dir.X, -dir.Z, dir.Y, WorldPicker.DefaultRange, view.X, -view.Z, view.Y);
+        PickRay ray = Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, dir.X, -dir.Z, dir.Y, WorldPicker.DefaultRange), camera);
         PickHit hit = _picker.Pick(ray, _feed.OwnEntity);
         shape = _picker.LastShape;
         return hit;
@@ -1049,7 +1057,8 @@ public partial class GameScene
         _dizzy = Mathf.MoveToward(_dizzy, camera.Wobbling ? 1f : 0f, (float)GetProcessDeltaTime() * 2f);
         GunKick kick = camera.Kick; // a fresh kick only: a gun with none (a mech's) kicks lightly
         HeldKick held = kick.SinceKick < HeldPose.KickFresh ? new HeldKick(kick.LastDegrees, kick.Heavy, kick.RollSide) : default;
-        return new ViewModel.Holder(camera.BobAmount, camera.BobPhase, shakeX, shakeY, _dizzy, held);
+        float lowered = _entities.OwnBodyInView ? LookDown.HeldLowered(_rig.Pitch, _rig.FovDegrees, _rig.Camera.Near, _rig.EyeUp) : 0f; // T5a
+        return new ViewModel.Holder(camera.BobAmount, camera.BobPhase, shakeX, shakeY, _dizzy, held, lowered);
     }
 
     // ---- keys ----

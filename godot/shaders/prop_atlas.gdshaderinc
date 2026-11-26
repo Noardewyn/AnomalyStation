@@ -139,7 +139,8 @@ void vertex() {
 			// A billboard turned about the vertical axis only: its right is the camera's right on the ground plane. An item faces the eye fully:
 			// its up is the camera's up, tilted back about its feet (the owner, 2026-11-19; picture_billboard.gdshader's face_eye)
 			vec3 right = normalize(vec3(INV_VIEW_MATRIX[0].x, 0.0, INV_VIEW_MATRIX[0].z));
-			vec3 up = item ? normalize(cross(INV_VIEW_MATRIX[2].xyz, right)) : vec3(0.0, 1.0, 0.0);
+			vec3 up = item ? cross(INV_VIEW_MATRIX[2].xyz, right) : vec3(0.0, 1.0, 0.0);
+			up = normalize(vec3(up.x, max(up.y, 0.0), up.z)); // T5a: past straight down the camera's up points into the floor; there it lies flat
 			vec3 back = cross(right, up);
 			MODELVIEW_MATRIX = VIEW_MATRIX * mat4(vec4(right, 0.0), vec4(up, 0.0), vec4(back, 0.0), MODEL_MATRIX[3]);
 			// its place in its tile's order (the instance colour's green: DepthRank, metres); an item at its own depth, not its tile centre's (D329: an item

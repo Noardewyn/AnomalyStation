@@ -740,6 +740,11 @@ public partial class GameScene : Node3D
             _feed.Replica.TryGet(own, out ReplicaEntity seer) ? seer.State.Posture : (byte)0);
         _entities.PlayerNames = _options.PlayerNames && !_interfaceHiddenNow; // the hidden interface hides the names over heads too
         _entities.MirrorViewer = _mirrors.Update(_rig.Camera, _map, delta); // the camera's place is last frame's: a frame late, unseen
+        // T5a: looking down far enough, the own body is drawn for its own eye (its pose's posture: lying and limp, as the entity layer draws it)
+        ReplicaEntity body = null;
+        bool onTurf = own != 0 && _feed.Replica.TryGet(own, out body);
+        _entities.OwnBodyInView = _rig.Camera != null && LookDown.ShowsOwnBody(_rig.Pitch, _rig.FovDegrees, _rig.Camera.Near, _rig.EyeUp, _rig.Mode == CameraMode.FirstPerson,
+            onTurf, ghost, observing, PostureBits.IsLying(pose.Posture), PostureBits.IsLimp(pose.Posture), onTurf && body.IsExosuit(), _scopeZoom >= 1.01f);
         using (Dev.FrameProbe.Scope("GameScene/entities.Update"))
             _entities.Update(_session.RenderTick, now, observing ? eye : own, observing || (_rig.Mode == CameraMode.FirstPerson && !ghost), _names);
 

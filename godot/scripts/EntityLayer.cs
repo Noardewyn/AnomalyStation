@@ -62,6 +62,9 @@ public partial class EntityLayer : Node3D
     /// <summary>Where the mirror that reflects the view now sees the world from (tile coordinates; null: no mirror): the own body, not drawn in first person, shows it its side.</summary>
     public Vector2? MirrorViewer { get; set; }
 
+    /// <summary>T5a: the first-person eye looks down at its own body (<see cref="LookDown.ShowsOwnBody"/>): the body is drawn whole, not as its shadow alone.</summary>
+    public bool OwnBodyInView { get; set; }
+
     /// <summary>
     /// shortcut: a mob farther than this from the mirror's own eye (tiles) keeps the main camera's facing in the mirror too (a long reach
     /// costs a second picture for every mob it covers, every frame; a mirror's own small room rarely has one this far in view anyway).
@@ -198,14 +201,12 @@ public partial class EntityLayer : Node3D
             _host.PropMoved -= AddNode;
     }
 
-    // A point two tiles before the eye (tile coordinates), on the ground; looking straight down, the top of the screen is before it.
+    // A point two tiles before the eye (tile coordinates), on the ground, the way the view faces (its yaw: past straight down the camera's
+    // forward points back, T5a).
     private static (double X, double Y) FrontViewer(Camera3D camera, double viewerX, double viewerY)
     {
-        Vector3 ahead = -camera.GlobalBasis.Z;
-        if (new Vector2(ahead.X, ahead.Z).Length() < 0.1f)
-            ahead = camera.GlobalBasis.Y;
-        Vector2 flat = new Vector2(ahead.X, -ahead.Z).Normalized() * 2f;
-        return (viewerX + flat.X, viewerY + flat.Y);
+        (double aheadX, double aheadZ) = LookDown.Ahead(camera.GlobalBasis.X.X, camera.GlobalBasis.X.Z);
+        return (viewerX + aheadX * 2, viewerY - aheadZ * 2);
     }
 
     private static readonly byte[] SelfSideDirs = { ByondDir.South, ByondDir.East, ByondDir.North, ByondDir.West };
@@ -378,7 +379,7 @@ public partial class EntityLayer : Node3D
                 position = pointedAt.LastPosition + Vector3.Up * (pointedAt.Entity.IsMob() ? PointOverMob : PointOverThing);
             bool own = e.Entity.Id == ownId;
             // the own hidden body shows the side the mirror before it sees (MirrorViewer), not its back
-            bool mirrored = own && hideOwn && MirrorViewer is Vector2;
+            bool mirrored = own && hideOwn && !OwnBodyInView && MirrorViewer is Vector2;
             // with no mirror it shows its front (its shadow's side); the windows and wet floors show the side each turns to (NoteSelfSides)
             (double eyeX, double eyeY) = mirrored ? (MirrorViewer.Value.X, MirrorViewer.Value.Y) : own && hideOwn && hasViewer ? FrontViewer(camera, viewerX, viewerY) : (viewerX, viewerY);
             bool shownAsPicture = UpdateVisual(e, pose, position, nowSeconds, hasViewer, eyeX, eyeY);
@@ -401,7 +402,8 @@ public partial class EntityLayer : Node3D
             bool throughWalls = !own && SeeMobs && e.Entity.IsMob();
             if (e.Billboard != null)
             {
-                e.Billboard.ShadowOnly = own && hideOwn; // reset when no longer own: an exosuit the pilot left stayed shadow-only
+                e.Billboard.ShadowOnly = own && hideOwn && !OwnBodyInView; // reset when no longer own: an exosuit the pilot left stayed shadow-only
+                e.Billboard.FacesBack = own && hideOwn && !e.Billboard.FacesEye; // T5a: its picture and its shadow, standing
                 e.Billboard.ThroughWalls = throughWalls;
             }
             bool ownShadow = own && hideOwn && shownAsPicture; // its shadow, and its reflection in a mirror (Billboard.ShadowOnly)
@@ -816,7 +818,7 @@ public partial class EntityLayer : Node3D
         if (MirrorViewer is Vector2 mirrorEye && reflectable
             && MathF.Abs(mirrorEye.X - pose.X) <= MirrorReflectRangeTiles && MathF.Abs(mirrorEye.Y - pose.Y) <= MirrorReflectRangeTiles)
         {
-            if (isOwnMob && _hideOwn)
+            if (isOwnMob && _hideOwn && !OwnBodyInView)
                 e.Billboard.SetReflection(picture);
             else
             {
@@ -1690,8 +1692,8 @@ public partial class EntityLayer : Node3D
             // the owner (2026-11-20): the muzzle's flash lights the world for a moment, a little ahead of the shooter and below the eye
             if (camera != null)
             {
-                Vector3 ahead = -camera.GlobalBasis.Z with { Y = 0f };
-                Vector3 lit = eye + (ahead.LengthSquared() > 1e-6f ? ahead.Normalized() : Vector3.Zero) * OwnFlashAhead + Vector3.Down * OwnFlashBelow;
+                (double aheadX, double aheadZ) = LookDown.Ahead(camera.GlobalBasis.X.X, camera.GlobalBasis.X.Z); // (the yaw's: T5a)
+                Vector3 lit = eye + new Vector3((float)aheadX, 0f, (float)aheadZ) * OwnFlashAhead + Vector3.Down * OwnFlashBelow;
                 Remember(ShotFlash.Spawn(this, lit, fired, 0f, OwnFlashRange, OwnFlashEnergy, OwnFlashSeconds), eye);
             }
             return;
@@ -2038,6 +2040,7 @@ public partial class EntityLayer : Node3D
                 PickShape picture = PickShape.StandingPicture(e.Entity.Id, surface, tx, ty, z, at.X, -at.Z, at.Y - floor, e.Billboard.Rect, e.Billboard.Raster.Image, e.Billboard.Raster.OriginX, e.Billboard.Raster.OriginY);
                 picture.OnTop = e.OnSlot; // a thing put on a rack's shelf is clicked over the rack (PickShape.OnTop)
                 picture.FacesEye = e.Billboard.FacesEye;
+                picture.FacesBack = e.Billboard.FacesBack;
                 picture.HitMask = e.Entity.IsMob() ? BodyMaskOf(e) : null; // package T, slice T1: a carbon is hit on its body, not its clothes or carried things
                 into.Add(picture);
                 continue;

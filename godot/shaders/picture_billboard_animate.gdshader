@@ -33,6 +33,8 @@ instance uniform float depth_rank = 0.0;
 instance uniform bool depth_snap = false;
 // DV434: a walking mob's tilt about its feet in the picture's plane (radians, Billboard.Sway; Shared/Play/WalkSway.cs)
 instance uniform float sway = 0.0;
+// T5a: the own body for its own eye, its picture's right on the view's left (picture_billboard.gdshader's face_back)
+instance uniform bool face_back = false;
 
 varying vec3 v_world;
 
@@ -43,7 +45,11 @@ void vertex() {
 	if (!fixed_plane) {
 		// D288: turned to the main camera in the shadow passes too, so its shadow is the picture the eye sees and it never shades itself
 		vec3 right = normalize(vec3(MAIN_CAM_INV_VIEW_MATRIX[0].x, 0.0, MAIN_CAM_INV_VIEW_MATRIX[0].z));
-		vec3 up = face_eye ? normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[2].xyz, right)) : vec3(0.0, 1.0, 0.0);
+		vec3 up = face_eye ? cross(MAIN_CAM_INV_VIEW_MATRIX[2].xyz, right) : vec3(0.0, 1.0, 0.0);
+		up = normalize(vec3(up.x, max(up.y, 0.0), up.z)); // T5a: past straight down the camera's up points into the floor; there it lies flat
+		if (face_back) {
+			right = -right;
+		}
 		vec3 back = cross(right, up);
 		if (lie_flat) {
 			right = vec3(1.0, 0.0, 0.0);

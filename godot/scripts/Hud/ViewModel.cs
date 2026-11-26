@@ -58,7 +58,8 @@ public partial class ViewModel : Node3D
     /// <param name="ShakeY">The same north.</param>
     /// <param name="Dizzy">tg's dizziness wobble is turning the view, 0 to 1.</param>
     /// <param name="Kick">The own gun's last view kick (CameraLayer.Kick, DV96): the held gun kicks as hard and as heavily, and rolls to its side.</param>
-    public readonly record struct Holder(float StepSpeed, double StridePhase, double ShakeX, double ShakeY, float Dizzy, HeldKick Kick = default);
+    /// <param name="Lowered">T5a: how far the held things are lowered out of the view, 0 to 1, so they do not cover the own body looked down at (LookDown.HeldLowered).</param>
+    public readonly record struct Holder(float StepSpeed, double StridePhase, double ShakeX, double ShakeY, float Dizzy, HeldKick Kick = default, float Lowered = 0f);
 
     /// <summary>A tg pixel of the own mob's shake moves the held things this much (metres).</summary>
     private const float ShakeMetresPerPixel = 0.004f;
@@ -339,7 +340,7 @@ public partial class ViewModel : Node3D
         hand.ActiveBlend = Mathf.MoveToward(hand.ActiveBlend, active ? 1f : 0f, (float)(GetProcessDeltaTime() / 0.15));
         hand.Rest = HeldPose.Rest(hand.Kind, hand.Left, wielded);
         HeldOffset pose = hand.Rest
-            + new HeldOffset(0f, -HeldPose.Drop * HeldPose.Raised(now - hand.TakenAt) - HeldPose.InactiveDrop * (1f - hand.ActiveBlend), 0.02f * (1f - hand.ActiveBlend))
+            + new HeldOffset(0f, -HeldPose.Drop * Math.Max(HeldPose.Raised(now - hand.TakenAt), holder.Lowered) - HeldPose.InactiveDrop * (1f - hand.ActiveBlend), 0.02f * (1f - hand.ActiveBlend))
             + HeldPose.Breath(now + (hand.Left ? 1.3 : 0))
             + HeldPose.Bob(holder.StridePhase + (hand.Left ? Math.PI : 0), holder.StepSpeed)
             + HeldPose.Float(now, holder.Dizzy)

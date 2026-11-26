@@ -1450,8 +1450,9 @@ public partial class LightLayer : Node3D
     // The own beam at its hand, aimed at the crosshair and swayed by the hand (FlashlightSway: the view's turn, the walk, the breath).
     private void SwayOwnBeam(float dt)
     {
-        Vector3 f = -_camera.GlobalBasis.Z;
-        float yaw = Mathf.RadToDeg(MathF.Atan2(f.X, -f.Z)), pitch = Mathf.RadToDeg(MathF.Asin(Math.Clamp(f.Y, -1f, 1f)));
+        // the view's yaw and pitch, turning on smoothly past straight down (T5a: there the forward's own bearing would turn round)
+        Vector3 f = -_camera.GlobalBasis.Z, r = _camera.GlobalBasis.X;
+        float yaw = Mathf.RadToDeg((float)LookDown.CompassYaw(r.X, r.Z)), pitch = Mathf.RadToDeg((float)LookDown.Pitch(f.X, f.Y, f.Z, r.X, r.Z));
         float yawRate = 0f, pitchRate = 0f;
         if (_viewSeen && dt > 0f)
         {

@@ -338,4 +338,65 @@ public class BillboardMathTests
         Assert.Equal(31, iconY);
         Assert.False(shape.TryHit(down with { RightEast = 1, OriginNorth = 1 - 0.1 }, 50, out _, out _, out _, out _, out _, out _)); // south of its feet
     }
+
+    [Fact]
+    public void AStandingPictureBehindTheEyeIsPickedWhereItIsDrawnWhenTheViewLooksPastStraightDown()
+    {
+        // Slice T5a: the camera looks north and 100 degrees down, its right east; the crosshair's ray goes down and a little back (south) to a
+        // standing picture whose feet are just behind the eye. The shader lays the card along the camera's right (east), whatever the pitch: a
+        // point 0.2 m east of the feet is the picture's column 20 of 32, not its mirror (13), as the ray's own ground track (south) would give.
+        double p = -100 * Math.PI / 180;
+        PickShape shape = PickShape.StandingPicture(1, PickSurface.Billboard, 1, 1, 1, 1, 1, 0, SpriteRect.Of(32, 32, 0, 0), null, 0, 0);
+        var ray = new PickRay(1.2, 1 + 0.148, 1.12, 1, 0, Math.Cos(p), Math.Sin(p), 50, RightEast: 1, RightNorth: 0);
+        Assert.True(shape.TryHit(ray, 50, out double t, out double east, out double north, out double up, out byte iconX, out _));
+        Assert.Equal(0.148 / -Math.Cos(p), t, 6);
+        Assert.Equal(1.2, east, 6);
+        Assert.Equal(1, north, 6);
+        Assert.InRange(up, 0, 2);
+        Assert.Equal(20, iconX);
+        // the own body for its own eye (Billboard.FacesBack) is laid out along the view's left: the same point is its column 13, as drawn
+        shape.FacesBack = true;
+        Assert.True(shape.TryHit(ray, 50, out _, out _, out _, out _, out iconX, out _));
+        Assert.Equal(13, iconX);
+    }
+
+    [Fact]
+    public void AStandingPictureAheadIsPickedAsBeforeWhenTheViewLooksDownLessThanStraight()
+    {
+        // 80 degrees down, the picture 0.05 m ahead of the eye's ground point: the camera's right on the ray changes nothing for the crosshair's ray
+        double p = -80 * Math.PI / 180;
+        PickShape shape = PickShape.StandingPicture(1, PickSurface.Billboard, 1, 1, 1, 1, 1.05, 0, SpriteRect.Of(32, 32, 0, 0), null, 0, 0);
+        var plain = new PickRay(1.2, 1, 0.5, 1, 0, Math.Cos(p), Math.Sin(p), 50);
+        Assert.True(shape.TryHit(plain, 50, out double t0, out double e0, out double n0, out double u0, out byte x0, out byte y0));
+        Assert.True(shape.TryHit(plain with { RightEast = 1 }, 50, out double t1, out double e1, out double n1, out double u1, out byte x1, out byte y1));
+        Assert.Equal(20, x0);
+        Assert.Equal(t0, t1, 9);
+        Assert.Equal(e0, e1, 9);
+        Assert.Equal(n0, n1, 9);
+        Assert.Equal(u0, u1, 9);
+        Assert.Equal((x0, y0), (x1, y1));
+    }
+
+    [Fact]
+    public void APickShapeThatFacesTheEyeLiesFlatAndUnturnedWhenTheViewLooksPastStraightDown()
+    {
+        // Slice T5a: the camera looks north and 100 degrees down (a little back), its right east. The camera's up points into the floor there, so
+        // the picture lies flat with its up north (as the shader draws it), not tilted under the floor; and its right stays east, not west as the
+        // view's own ground track (pointing south) would give.
+        double p = -100 * Math.PI / 180;
+        PickShape shape = PickShape.StandingPicture(1, PickSurface.Billboard, 1, 1, 1, 1, 1, 0, SpriteRect.Of(32, 32, 0, 0), null, 0, 0);
+        shape.FacesEye = true;
+        // a cursor ray from 2 m up through the upper part of the view, at the point 1.9 m north of the feet and 0.5 m east or west of them
+        foreach (double east in new[] { 1.5, 0.5 })
+        {
+            double oe = east, on = 1 + 1.9 - 0.5, ou = 2, de = 0, dn = 0.5, du = -2, length = Math.Sqrt(dn * dn + du * du);
+            var cursor = new PickRay(oe, on, ou, 1, de, dn / length, du / length, 50, 0, Math.Cos(p), Math.Sin(p), RightEast: 1, RightNorth: 0);
+            Assert.True(shape.TryHit(cursor, 50, out _, out double hitEast, out double north, out double up, out byte iconX, out byte iconY));
+            Assert.InRange(up, 0, 2 * PickShape.FacingLift); // on the floor (lifted as drawn), not under it
+            Assert.InRange(north, 1 + 1.9 - 0.02, 1 + 1.9 + 0.02);
+            Assert.Equal(east, hitEast, 6);
+            Assert.InRange(iconY, (byte)30, (byte)31); // 1.9 m of 2 m up the picture
+            Assert.Equal(east > 1 ? 25 : 9, iconX); // east of the feet is the picture's right half
+        }
+    }
 }

@@ -619,8 +619,8 @@ void fragment() {
         Camera3D camera = GetViewport()?.GetCamera3D();
         if (camera == null)
             return 0f;
-        Vector3 forward = -camera.GlobalTransform.Basis.Z;
-        return Mathf.Atan2(forward.X, -forward.Z);
+        Vector3 right = camera.GlobalTransform.Basis.X; // the yaw's: past straight down the forward points back (T5a)
+        return (float)LookDown.CompassYaw(right.X, right.Z);
     }
 
     // Protocol version 18: the maptexts of the entry's picture (its own, its overlays' and the item in its hand), over it, at the HUD's pixel size.

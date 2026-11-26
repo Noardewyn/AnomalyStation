@@ -29,27 +29,20 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `5a5c4a8` | Spec only |
 | `f1a2ee1` | Package T, slice T4a: eyes, mouth and groin by look; tg's gun in the mouth (protocol 95) |
 | `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 95) |
-
-In the working tree, not committed: package T, slice T4c (a patient's face, "Turn over", and the input-script step
-`radial=LABEL` for test runs). Its gate is clean after two fix rounds: validator PASS (1279 tests, log
-`C:/Users/Lucas/.claude/state/qa/logs/verify-AnomalyStation-20261126-012556-570572.log`), three bug reviewers,
-architecture and security with no open finding, the stress test's one finding fixed, and the playtest against the
-real server passed (section 8, "T4c playtested"). It changes the wire, so it waits only for the contributor's
-sign-off; then run verify on the exact tree and commit everything in the working tree together (this file and
-`ui-overhaul-reference.txt` are uncommitted too).
+| `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 95; signed off by the contributor 2026-11-26) |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
 Next, in this order:
-1. Commit slice T4c on the contributor's sign-off (above).
-2. Package T, slice T5: targeting oneself by looking down (section 8, "T5 design, corrected by the contributor"),
-   the health doll's eyes and mouth; client only. Build the camera and the own body in view first and show it to the
-   contributor before the targeting is added.
-3. The prompt beside the crosshair only when the thing looked at is in reach (section 9, "Asked for by the designer
+1. Package T, slice T5: targeting oneself by looking down (section 8, "T5 design, corrected by the contributor"),
+   the health doll's eyes and mouth; client only. Built in three parts: T5a the camera and the own body in view,
+   shown to the contributor as screenshots at several look angles before anything else; T5b the own body as a
+   target; T5c the doll's eyes and mouth and the ctrl-click grasp of the limb clicked.
+2. The prompt beside the crosshair only when the thing looked at is in reach (section 9, "Asked for by the designer
    after the reference").
-4. Package 2, slices C (native hands, held-item card) and D (alert chips).
-5. Packages 3 to 8 and what section 9 adds.
+3. Package 2, slices C (native hands, held-item card) and D (alert chips).
+4. Packages 3 to 8 and what section 9 adds.
 
 To tell the owner (the contributor does this; `DECISIONS.md` is not edited by us): the protocol changes of version
 95; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
@@ -819,6 +812,52 @@ and each is to work on its own: looking down at one's own body (below the neck);
 middle of the Tab overlay (every zone, the head, eyes and mouth included; package 4); the health doll, whose head
 gains the eyes and the mouth; and tg's zone selector under Tab.
 
+### T5a as built (2026-11-26): the look-down camera and the own body in view
+
+Client only; no server or protocol change. The own body is not a target yet (slice T5b).
+
+- The numbers live in `godot/scripts/Shared/Play/LookDown.cs`: `PivotMetres` 0.15, `MaxDownDegrees` 105,
+  `MaxUpDegrees` 89. The pivot shrinks in proportion for an eye lower than the standard 1.3 m (a small or lying
+  body), so no eye turns under the floor, and never grows. The 105 degrees apply in first person only; the free,
+  orbit and editor cameras keep 89 and clamp on a switch.
+- The own body shows once no ray of the view can miss the card on its way in: from 52.5 degrees down at the default
+  75 degree field of view (65 at 50, about 38 at the widest). It rises from the bottom edge; shadow only before, as
+  D288. Not shown lying, limp, dead, a ghost, observing, in an exosuit, a scope, a locker, or another camera.
+- The card stands across the view yaw with its front toward the eye ahead of it (`face_back` in the picture
+  shaders), so the left arm is on the screen's left with no mirroring.
+- Everything that read "ahead" from the camera's forward takes it from the yaw now (the own body's frame, the muzzle
+  flash, the compass, the flashlight's sway); pictures that face the eye lie flat past straight down instead of
+  sinking into the floor; a pick hits a standing picture where the shader draws it at every pitch.
+- The held items drop out of view over the 15 degrees after the body starts to show.
+
+Playtested against the real server (evidence: the session's scratchpad, `t5a` and `playtest-t5a`): a toolbox in the
+left hand is on the screen's left at 100 degrees and on the viewer's right seen from the front, and the right hand
+likewise; from 0 to 105 degrees the body rises from the bottom edge with no pop and no cut, feet at the middle at
+100 and the body to about 58% of the screen at 105, never the head; walking and strafing at 100 degrees move as at
+level; items at the feet lie flat from 90 to 105 and a click at 95 picks one up; the held item is up at level, gone
+at 100 and back after looking up; no body lying, dead, or in the free camera, which stops at 89; a mouse's eye
+stays above the floor at 105; the flashlight's spot moves smoothly through 90; name tags, the radial and a pistol
+shot at the floor behave past 90.
+
+Not driven: the mouse path to the 105 limit (a scripted pitch sets the camera directly); a ghost, a locker and an
+exosuit; a mirror and a wet floor while the body is drawn (one window at 65 degrees showed no second body); chat
+bubbles and thrown items past 90.
+
+Known limits:
+- At 15 cm the torso is drawn very large and the legs are a short band under the crosshair. The two numbers are the
+  contributor's to tune after seeing it.
+- With the eye-height option raised well above 1.3 m the head can come into view at 105 degrees.
+- A person behind the player is never in view (at 2 m their arms are 84 degrees back from straight down; the view
+  reaches 52.5), so nothing behind can be clicked by looking down.
+- A picture that faces the eye (a loose item) lying flat past 89 degrees can miss a pick along a one-pixel border
+  (the older `FacingLift`).
+- A start argument or scripted pitch is not clamped until the first mouse turn, as before.
+- For T5b: `Billboard.TryPick` and the hover outline (`HoverHighlight.BoxOf`) do not follow `FacesBack` yet; nothing
+  reaches them with the own body while it is excluded from the pick.
+
+To tell the owner: D288 (the own body is a shadow only in first person) now has the body itself in view when the
+player looks down past about 52 degrees.
+
 ## 9. Reference document checklist
 
 Every element of `ui-overhaul-reference.txt` that section 7 does not already carry, the package that delivers it,
@@ -888,6 +927,12 @@ is the designer's raw notes (Appendix A); numbers are the reference's sections.
 | Element | Package | To settle |
 |---|---|---|
 | "The on screen tooltips should only show up if youre in range to interact with the object": the prompt beside the crosshair is shown only when the player can reach the thing looked at | 2 (a small slice of its own, after package T's slice T4c) | today the prompt shows at any distance (the hover has no range check). Who decides reach: the server knows tg's own rule (`CanReach`: adjacent, the held item's reach, over a table, not through a window) and can send no hints for a thing out of reach, with no change to the wire; what is shown for actions that work at a distance (a gun, a throw, examine); whether the thing's name still shows out of reach |
+
+Settled by the designer (2026-11-26), the three points of the row above:
+- In range is tg's own reach rule, the one a click obeys: the next tile, further with a long-reach item, across a
+  table, not through a window or a wall. The server decides it and sends no hints for a thing out of reach.
+- Out of reach nothing is shown for actions that work from afar either (a gun, a throw, examine), whatever is held.
+- Out of reach the thing's name does not show: the crosshair is bare.
 
 ### T4c playtested (2026-11-26)
 

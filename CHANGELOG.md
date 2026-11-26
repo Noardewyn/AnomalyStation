@@ -19,6 +19,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - A gun held to someone's mouth from the next tile is tg's twelve-second execution shot; from further away it is an ordinary shot at the head.
 - The prompt beside the crosshair follows the body part you look at (Headpat on the head, Hug on the chest), except during a timed action.
 - A patient on a bed or operating table lies face up, and a lying person can be turned over from the radial.
+- Looking down now shows your own body in the lower half of the view with the floor ahead above it; held items lower out of the way.
 
 ## [1.12.0-pre-alpha] - 2026-11-23
 

@@ -102,6 +102,9 @@ public sealed class PickShape
     /// <summary>A standing picture that faces the eye fully (an item: tilted back about its feet, its up the camera's up), not turned about the vertical axis only.</summary>
     public bool FacesEye;
 
+    /// <summary>T5a: a standing picture laid out along the view's left (the own body for its own eye, Billboard.FacesBack), not its right.</summary>
+    public bool FacesBack;
+
     /// <summary>How much nearer the eye a picture that faces it is picked (metres along the view): an item's draw-order lift (DepthRank.LayerStep at its layer).</summary>
     public const double FacingLift = 0.05;
 
@@ -162,13 +165,20 @@ public sealed class PickShape
             if (hr < 1e-9 || facing < 1e-9)
                 return false;
             (re, rn) = (re / hr, rn / hr);
-            // back x right in Godot's frame (x east, y up, z south), back = -f, right = (re, 0, -rn), read back as east, north, up
-            double ue = fu * rn, un = -fu * re, uu = fn * re - fe * rn, hu = Math.Sqrt(ue * ue + un * un + uu * uu);
+            // back x right in Godot's frame (x east, y up, z south), back = -f, right = (re, 0, -rn), read back as east, north, up; past straight down
+            // (slice T5a) it would point into the floor, and the picture lies flat on it instead, as the shader draws it
+            double ue = fu * rn, un = -fu * re, uu = Math.Max(fn * re - fe * rn, 0), hu = Math.Sqrt(ue * ue + un * un + uu * uu);
             if (hu < 1e-9)
+                return false;
+            // the picture's plane holds the right and that up: its normal is their cross product (the view f itself while the up is not flattened)
+            double normalE = rn * uu, normalN = -re * uu, normalU = re * un - rn * ue;
+            double across = ray.DirEast * normalE + ray.DirNorth * normalN + ray.DirUp * normalU;
+            if (Math.Abs(across) < 1e-9)
                 return false;
             // the plane FacingLift nearer the eye, as the shader draws it (depth_order.gdshaderinc's rank): seen straight down (the editor's top view) the
             // picture lies in the floor's plane, and a pick that stops at the floor lost it there
-            t = ((East - ray.OriginEast) * fe + (North - ray.OriginNorth) * fn + (Up - ray.OriginUp) * fu - FacingLift) / facing;
+            t = ((East - fe * FacingLift - ray.OriginEast) * normalE + (North - fn * FacingLift - ray.OriginNorth) * normalN
+                + (Up - fu * FacingLift - ray.OriginUp) * normalU) / across;
             if (t <= 0 || t > maxT)
                 return false;
             east = ray.OriginEast + ray.DirEast * t;
@@ -176,6 +186,23 @@ public sealed class PickShape
             up = ray.OriginUp + ray.DirUp * t;
             double de = east - East + fe * FacingLift, dn = north - North + fn * FacingLift, du = up - Up + fu * FacingLift;
             return Inside(de * re + dn * rn, (de * ue + dn * un + du * uu) / hu, out pictureX, out pictureY);
+        }
+        double cardRight = Math.Sqrt(ray.RightEast * ray.RightEast + ray.RightNorth * ray.RightNorth);
+        if (cardRight > 1e-9)
+        {
+            // T5a: the card as the shader draws it, along the camera's right on the ground (the other way for FacesBack), its plane square to that
+            // right. Past straight down the ray's own ground track points back, and a picture laid out along it would be picked mirrored.
+            double ce = ray.RightEast / cardRight * (FacesBack ? -1 : 1), cn = ray.RightNorth / cardRight * (FacesBack ? -1 : 1);
+            double crossing = ray.DirEast * -cn + ray.DirNorth * ce; // the ray along the plane's normal (-cn, ce)
+            if (Math.Abs(crossing) < 1e-9)
+                return false;
+            t = ((East - ray.OriginEast) * -cn + (North - ray.OriginNorth) * ce) / crossing;
+            if (t <= 0 || t > maxT)
+                return false;
+            east = ray.OriginEast + ray.DirEast * t;
+            north = ray.OriginNorth + ray.DirNorth * t;
+            up = ray.OriginUp + ray.DirUp * t;
+            return Inside((east - East) * ce + (north - North) * cn, up - Up, out pictureX, out pictureY);
         }
         double h = Math.Sqrt(ray.DirEast * ray.DirEast + ray.DirNorth * ray.DirNorth);
         if (h < 1e-9)
@@ -188,7 +215,7 @@ public sealed class PickShape
         east = ray.OriginEast + ray.DirEast * t;
         north = ray.OriginNorth + ray.DirNorth * t;
         up = ray.OriginUp + ray.DirUp * t;
-        double u = (east - East) * nn + (north - North) * -ne;
+        double u = ((east - East) * nn + (north - North) * -ne) * (FacesBack ? -1 : 1);
         double v = up - Up;
         return Inside(u, v, out pictureX, out pictureY);
     }

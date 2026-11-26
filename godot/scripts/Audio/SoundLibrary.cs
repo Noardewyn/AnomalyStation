@@ -123,7 +123,7 @@ public sealed class SoundLibrary
         switch (format)
         {
             case "ogg":
-                stream = AudioStreamOggVorbis.LoadFromFile(file);
+                stream = LoadOgg(file);
                 break;
             case "wav":
                 stream = AudioStreamWav.LoadFromFile(file);
@@ -176,6 +176,14 @@ public sealed class SoundLibrary
     private const int SeamPadFrames = 512;
 
     // DEVIATION(DV228): a short loop whose ends fade plays as a decoded copy with its tail crossfaded into its head.
+    /// <summary>An Ogg Vorbis file read with its comments mended first (<see cref="VorbisComments"/>: Godot warns about each one without '=').</summary>
+    public static AudioStreamOggVorbis LoadOgg(string file)
+    {
+        byte[] bytes = File.ReadAllBytes(file);
+        VorbisComments.Repair(bytes);
+        return AudioStreamOggVorbis.LoadFromBuffer(bytes);
+    }
+
     private static AudioStreamWav SeamlessCopy(AudioStreamOggVorbis ogg)
     {
         double seconds = ogg.GetLength();

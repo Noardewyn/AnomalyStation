@@ -127,7 +127,7 @@ public static class AssetPreload
                 AudioStream stream = File.Exists(file)
                     ? entry.Format switch
                     {
-                        "ogg" => AudioStreamOggVorbis.LoadFromFile(file),
+                        "ogg" => SoundLibrary.LoadOgg(file),
                         "wav" => AudioStreamWav.LoadFromFile(file),
                         "mp3" => AudioStreamMP3.LoadFromFile(file),
                         _ => null,

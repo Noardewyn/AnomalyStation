@@ -45,3 +45,23 @@ If a run is killed or hangs when memory runs out, set a lower cap yourself, for 
 - `dotnet run --project tools/Anomaly.Tools.ToyWorld -c Release -- --twice` runs the toy world twice and compares the
   state hashes.
 - On the server, `--record run.log` records a run and `--replay run.log` replays it and checks the final hash.
+
+## Profiling the client
+
+The client speaks to the [Tracy](https://github.com/wolfpld/tracy) profiler when it is started with the environment variable
+`ANOMALY_TRACY` set to Tracy's client library. Its frame probe's sections are Tracy zones (the thing a spawn or a model build
+worked on is the zone's text), Godot's physics, process and render passes are zones of their own, and each frame sends the
+frame time, the renderer's CPU and GPU time, the draw calls (and those of the shadows), the pipelines compiled, the video
+memory, the JIT time and the collections' pauses as plots.
+
+1. Build the client library from a Tracy checkout of the same version as your `tracy-profiler` (the protocol changes between
+   versions): `tools/perf/tracy-client.sh /path/to/tracy` (it needs CMake and a C++ compiler; set `CMAKE=` if CMake is not on
+   the PATH). It writes `build/tracy/TracyClient.dll` (or `.so`, `.dylib`). The library listens on localhost only.
+2. Start the game with `ANOMALY_TRACY=/full/path/to/build/tracy/TracyClient.dll` and connect `tracy-profiler` to localhost.
+
+The streaming hitch test `tools/perf/fly.sh` starts a MetaStation server on port 7791 and a client that flies with noclip at
+the normal speed across the map and back, recorded with `tracy-capture`: `GODOT=/path/to/godot-mono TRACY_TOOLS=/path/to/tracy/bin
+tools/perf/fly.sh`. Its folder holds `fly.tracy` (open it in `tracy-profiler`) and `summary.txt`: each leg's frame times (the
+first leg meets the station for the first time, the way back meets it again) and its longest frames with their zones.
+`GODOT_ARGS="--disable-vsync --max-fps 60"` takes the display's refresh out of the frame times, and `--still` stands at the
+station's centre instead of flying.

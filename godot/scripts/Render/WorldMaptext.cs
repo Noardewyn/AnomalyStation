@@ -94,6 +94,7 @@ public sealed partial class WorldMaptext : Node
     {
         if (!_pages.TryGetValue(key, out Page page))
         {
+            using var made = Anomaly.Client.Dev.FrameProbe.Measure("maptext/page", key.Text);
             var viewport = new SubViewport
             {
                 Size = new Vector2I(key.Width * TexelsPerPixel, key.Height * TexelsPerPixel),

@@ -214,9 +214,8 @@ public sealed class ModelLibrary
                 continue;
             }
             _warm.RemoveAt(i);
-            long one = Stopwatch.GetTimestamp();
-            TryPieces(w.Variant, w.Part, w.Tint, out _, gags: w.Gags);
-            Anomaly.Client.Dev.FrameProbe.Item("warm", w.Variant.Id + "/" + w.Part, Stopwatch.GetElapsedTime(one).TotalMilliseconds);
+            using (Anomaly.Client.Dev.FrameProbe.Measure("warm", w.Variant.Id + "/" + w.Part))
+                TryPieces(w.Variant, w.Part, w.Tint, out _, gags: w.Gags);
             foreach (byte[] png in w.Images)
             {
                 var d = _decoding[png];
@@ -616,16 +615,15 @@ public sealed class ModelLibrary
         var key = (entry.Id, part, index, junction);
         if (_pieceMeshes.TryGetValue(key, out var known))
             return known;
-        long start = Stopwatch.GetTimestamp();
-        ModelMeshData data = ModelMesh.Build(file, entry, spec, TileSpace.TileSize, WorldScale.WallHeight, WorldScale.TableTop, index, frame, junction,
-            entry.SpriteTop && frame == null ? TopCells(entry, image) : null);
-        Anomaly.Client.Dev.FrameProbe.Item("mesh", entry.Id + "/" + part, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
+        ModelMeshData data;
+        using (Anomaly.Client.Dev.FrameProbe.Measure("mesh", entry.Id + "/" + part))
+            data = ModelMesh.Build(file, entry, spec, TileSpace.TileSize, WorldScale.WallHeight, WorldScale.TableTop, index, frame, junction,
+                entry.SpriteTop && frame == null ? TopCells(entry, image) : null);
         int mesh = _meshes.Count;
-        long made = Stopwatch.GetTimestamp();
-        _meshes.Add(ToMesh(data));
+        using (Anomaly.Client.Dev.FrameProbe.Measure("arraymesh", entry.Id + "/" + part))
+            _meshes.Add(ToMesh(data));
         if (data.PickBoxes != null)
             _pickBoxes[mesh] = data.PickBoxes;
-        Anomaly.Client.Dev.FrameProbe.Item("arraymesh", entry.Id + "/" + part, Stopwatch.GetElapsedTime(made).TotalMilliseconds);
         if (spec.Shader != null)
             _materials[mesh] = ShaderMaterialOf(spec, spec.Color is System.Numerics.Vector3 c ? new System.Numerics.Vector4(Linear(c.X), Linear(c.Y), Linear(c.Z), color.W) : color);
         if (spec.Shader == ModelPart.CrystalShader)
@@ -654,12 +652,12 @@ public sealed class ModelLibrary
         if (_files.TryGetValue(relative, out GlbFile file))
             return file;
         long start = Stopwatch.GetTimestamp();
-        if (_root != Root || !AssetPreload.TryGlb(Inside(relative), out file))
-        {
-            file = GlbFile.Read(System.IO.File.ReadAllBytes(Path.Combine(_root, Inside(relative))), uri => GlbFile.TgIcon(uri) is string icon ? ImageBytes(icon) : null);
-            AssetPreload.Miss("model", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds, blocked: true);
-        }
-        Anomaly.Client.Dev.FrameProbe.Item("glb", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
+        using (Anomaly.Client.Dev.FrameProbe.Measure("glb", relative))
+            if (_root != Root || !AssetPreload.TryGlb(Inside(relative), out file))
+            {
+                file = GlbFile.Read(System.IO.File.ReadAllBytes(Path.Combine(_root, Inside(relative))), uri => GlbFile.TgIcon(uri) is string icon ? ImageBytes(icon) : null);
+                AssetPreload.Miss("model", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds, blocked: true);
+            }
         _files[relative] = file;
         return file;
     }
@@ -673,15 +671,8 @@ public sealed class ModelLibrary
                       + (frame == null ? string.Empty : $"@{frame.X},{frame.Y},{frame.Width},{frame.Height}") + (opaque ? fill ? "#filled" : "#opaque" : string.Empty);
         if (_pictures.TryGetValue(hash, out int id))
             return id;
-        long start = Stopwatch.GetTimestamp();
-        try
-        {
+        using (Anomaly.Client.Dev.FrameProbe.Measure("texture", hash[..8]))
             return NewPicture(png, tint, frame, hash, opaque, fill);
-        }
-        finally
-        {
-            Anomaly.Client.Dev.FrameProbe.Item("texture", hash[..8], Stopwatch.GetElapsedTime(start).TotalMilliseconds);
-        }
     }
 
     private int NewPicture(byte[] png, uint tint, ModelFrame frame, string hash, bool opaque, bool fill)

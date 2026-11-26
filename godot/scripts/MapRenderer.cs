@@ -257,9 +257,8 @@ public partial class MapRenderer : Node3D, IStaticPropHost
                 {
                     if (replica.TryGet(placed.EntityId, out ReplicaEntity entity))
                     {
-                        long one = Stopwatch.GetTimestamp();
-                        AddRecord(entity, placed, batch);
-                        Dev.FrameProbe.Item("record", entity.TypePath, Stopwatch.GetElapsedTime(one).TotalMilliseconds);
+                        using (Dev.FrameProbe.Measure("record", entity.TypePath))
+                            AddRecord(entity, placed, batch);
                     }
                     yield return 0.32f + 0.5f * ++placedSoFar / Math.Max(1, things);
                 }
@@ -1654,10 +1653,8 @@ public partial class MapRenderer : Node3D, IStaticPropHost
 
     private bool TryBuildModel(StaticRecord record, Vector3 origin, int spriteId, out bool ownTexture)
     {
-        long start = Stopwatch.GetTimestamp();
-        bool built = TryBuildModelNow(record, origin, spriteId, out ownTexture);
-        Dev.FrameProbe.Item("model", record.Entity.TypePath, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
-        return built;
+        using (Dev.FrameProbe.Measure("model", record.Entity.TypePath))
+            return TryBuildModelNow(record, origin, spriteId, out ownTexture);
     }
 
     private bool TryBuildModelNow(StaticRecord record, Vector3 origin, int spriteId, out bool ownTexture)
@@ -1915,10 +1912,8 @@ public partial class MapRenderer : Node3D, IStaticPropHost
     // 32 x 48, for the south one, the way the closets' frames are cut).
     private bool TryLivePicture(StaticRecord record, ModelFrame frame, out int id)
     {
-        long start = Stopwatch.GetTimestamp();
-        bool found = TryLivePictureNow(record, frame, out id);
-        Dev.FrameProbe.Item("live", record.Entity.TypePath, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
-        return found;
+        using (Dev.FrameProbe.Measure("live", record.Entity.TypePath))
+            return TryLivePictureNow(record, frame, out id);
     }
 
     private bool TryLivePictureNow(StaticRecord record, ModelFrame frame, out int id)

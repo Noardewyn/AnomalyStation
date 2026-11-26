@@ -1180,6 +1180,8 @@ public partial class GameScene : Node3D
         {
             ScriptedInput step = _script.Dequeue();
             App.Instance.ScriptKeysDone++;
+            if (Dev.Tracy.On) // the capture's marks: tools/perf/tracy-frames.py splits a run at its key presses
+                Dev.Tracy.Message($"script: {step.Action} {step.Key}{(step.Action == ScriptAction.Press ? "+" : step.Action == ScriptAction.Release ? "-" : "")}");
             switch (step.Action)
             {
                 case ScriptAction.Press:

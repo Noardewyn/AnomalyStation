@@ -277,6 +277,7 @@ public partial class GameScene
         GD.Print(string.Create(CultureInfo.InvariantCulture,
             $"[anomaly] loading: {_ahead.Count} sheets decoded ahead (about {_aheadBytes / 1048576.0:0} MB), {_icons.Loaded} in the library; managed heap {GC.GetTotalMemory(false) / 1048576.0:0} MB, working set {self.WorkingSet64 / 1048576.0:0} MB"));
         Dev.FrameProbe.Restart();
+        Dev.Tracy.Message("the world is shown");
         GD.Print(string.Create(CultureInfo.InvariantCulture,
             $"[anomaly] loading: the world is shown ({why}): map built in {_map.LoadSeconds:0.00} s, then {now - _builtAt:0.00} s of loading"));
     }

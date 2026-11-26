@@ -475,6 +475,12 @@ public partial class LightLayer : Node3D
             return;
         long started = System.Diagnostics.Stopwatch.GetTimestamp();
         ProcessInner(delta);
+        if (Anomaly.Client.Dev.Tracy.On) // what makes Godot draw a lamp's shadow cube again (the capture's plots)
+        {
+            Anomaly.Client.Dev.Tracy.Plot("shadows switched on", _shadowsOn);
+            Anomaly.Client.Dev.Tracy.Plot("shadow casters changed", _castersChanged);
+            _shadowsOn = _castersChanged = 0;
+        }
         double us = (System.Diagnostics.Stopwatch.GetTimestamp() - started) * 1e6 / System.Diagnostics.Stopwatch.Frequency;
         ProcessMicros = ProcessMicros == 0 ? us : ProcessMicros * 0.95 + us * 0.05;
     }
@@ -1197,15 +1203,23 @@ public partial class LightLayer : Node3D
     // kind, the same value or not (each fading lamp and every beam set it every frame).
     private static void SetShadow(Light3D light, bool on)
     {
-        if (light.ShadowEnabled != on)
-            light.ShadowEnabled = on;
+        if (light.ShadowEnabled == on)
+            return;
+        light.ShadowEnabled = on;
+        if (on)
+            _shadowsOn++;
     }
+
+    private static int _shadowsOn, _castersChanged;
 
     private void HoldThings(Lamp lamp, bool things)
     {
         uint casters = (!things ? ~(ThingLayer | CharacterLayer | OwnBodyLayer) : _objectShadows > 0 ? uint.MaxValue : ~ThingLayer) & ~BeamBlockLayer;
         if (lamp.Light.ShadowCasterMask != casters)
+        {
             lamp.Light.ShadowCasterMask = casters;
+            _castersChanged++;
+        }
         // the own body's shadow-only picture (first person) moves with every step, and Godot draws again the shadow of every lamp it is
         // paired with, whatever the caster mask: it is paired only with the lamps that cast it (it is never drawn lit, so no light misses it)
         uint cull = (casters & OwnBodyLayer) != 0 ? uint.MaxValue : ~OwnBodyLayer;

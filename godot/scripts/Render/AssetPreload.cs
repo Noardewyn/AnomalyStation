@@ -237,7 +237,9 @@ public static class AssetPreload
             if (!Missed.Add(kind + " " + name))
                 return;
         }
-        GD.Print(string.Create(CultureInfo.InvariantCulture, $"[anomaly] preload miss: {kind} {name} {ms:0.0} ms{(blocked ? ", in the frame" : ", on a worker")}"));
+        string line = string.Create(CultureInfo.InvariantCulture, $"preload miss: {kind} {name} {ms:0.0} ms{(blocked ? ", in the frame" : ", on a worker")}");
+        GD.Print("[anomaly] " + line);
+        Dev.Tracy.Message(line);
     }
 
     /// <summary>The preloaded icon files under <paramref name="folder"/> ("icons/hud/"), by their paths.</summary>

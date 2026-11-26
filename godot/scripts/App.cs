@@ -244,6 +244,7 @@ public partial class App : Node
         TakeFirstWindow(splash: StartsAsEditor && Args.Errors.Count == 0);
         AddVersionTag();
         Render.AssetPreload.Start(); // the sounds, the models and the sheets' bytes, on worker threads while the connect screen is up
+        Dev.TracyPhases.Install(this);
 
         // M0's proof that the core assemblies load and run inside Godot, kept as the first line of every run.
         var world = new World(1);

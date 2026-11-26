@@ -2147,9 +2147,8 @@ public partial class EntityLayer : Node3D
         {
             ReplicaEntity entity = _pendingOrder[i];
             _pending.Remove(entity.Id);
-            long one = System.Diagnostics.Stopwatch.GetTimestamp();
-            Add(entity);
-            Dev.FrameProbe.Item("spawn", entity.TypePath, System.Diagnostics.Stopwatch.GetElapsedTime(one).TotalMilliseconds);
+            using (Dev.FrameProbe.Measure("spawn", entity.TypePath))
+                Add(entity);
             if (System.Diagnostics.Stopwatch.GetElapsedTime(start).TotalMilliseconds >= SpawnBudget)
                 break;
         }

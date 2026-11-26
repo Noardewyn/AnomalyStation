@@ -245,6 +245,9 @@ public partial class App : Node
         AddVersionTag();
         Render.AssetPreload.Start(); // the sounds, the models and the sheets' bytes, on worker threads while the connect screen is up
         Dev.TracyPhases.Install(this);
+        // a game's setting: the runtime collects the old generation in the background and does not stop the threads for a full blocking
+        // collection unless memory runs short (the managed heap holds about 1.6 GB of preloaded sheets once the round is joined)
+        System.Runtime.GCSettings.LatencyMode = System.Runtime.GCLatencyMode.SustainedLowLatency;
 
         // M0's proof that the core assemblies load and run inside Godot, kept as the first line of every run.
         var world = new World(1);

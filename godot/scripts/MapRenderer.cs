@@ -27,7 +27,6 @@ public partial class MapRenderer : Node3D, IStaticPropHost
 {
     private const int RebuildsPerFrame = 6;
     // Chunks whose floors and walls are made again in one frame after turfs changed (tg's ChangeTurf after the join).
-    private const int TurfRebuildsPerFrame = 4;
 
     private readonly Dictionary<(int, int, int), ChunkBatch> _batches = new();
     private readonly Dictionary<long, StaticRecord> _records = new();
@@ -394,6 +393,7 @@ public partial class MapRenderer : Node3D, IStaticPropHost
     {
         if (_replica != null)
             _replica.CellsChanged -= OnCellsChanged;
+        _atlas?.Release();
     }
 
     private void OnCellsChanged(IReadOnlyList<(int X, int Y, int Z)> cells)
@@ -465,15 +465,16 @@ public partial class MapRenderer : Node3D, IStaticPropHost
             _turfDirty.Add((ChunkPlanner.ChunkIndex(x), ChunkPlanner.ChunkIndex(y), z));
     }
 
+    // The chunks whose turfs changed, made again within the frame's budget (at least one a frame): a count of four a frame took 20 ms.
     private void RebuildTurfs()
     {
-        int rebuilt = 0;
+        long start = Stopwatch.GetTimestamp();
         _rebuildEngines = EngineCells(_replica);
         foreach ((int, int, int) key in _turfDirty.ToList())
         {
             _turfDirty.Remove(key);
             RebuildTurfs(key);
-            if (++rebuilt >= TurfRebuildsPerFrame)
+            if (Stopwatch.GetElapsedTime(start).TotalMilliseconds >= WarmUpBudget)
                 break;
         }
     }
@@ -716,12 +717,20 @@ public partial class MapRenderer : Node3D, IStaticPropHost
                     slot.Multi.SetInstanceCustomData(slot.Index, new Color(_tileKit.Frames.LayerNow(slot.Group), slot.Part, slot.Side, slot.Condition));
     }
 
-    // The chunk's occluder, made again (one node; the old occluder's RID is freed at once rather than at the GC, as the tiles' MultiMeshes are kept).
+    // The chunk's occluder, made again when its walls changed (one node; the old occluder's RID is freed at once rather than at the GC, as the
+    // tiles' MultiMeshes are kept). A new occluder makes Godot build its occlusion culling's scene again: a floor's new look keeps the old one.
+    private readonly Dictionary<(int X, int Y, int Z), string> _occluderWalls = new();
+
     private void AddOccluder(Node3D root, ChunkPlan chunk)
     {
         var node = root.GetNodeOrNull<OccluderInstance3D>("Occluder");
-        Occluder3D old = node?.Occluder;
         var walls = chunk.Tiles.Where(t => t.Shape == TileShape.Wall).Select(t => (t.X, t.Y)).ToList();
+        string key = string.Join(";", walls);
+        var at = (chunk.ChunkX, chunk.ChunkY, chunk.Z);
+        if (_occluderWalls.TryGetValue(at, out string had) && had == key && (node != null || walls.Count == 0))
+            return;
+        _occluderWalls[at] = key;
+        Occluder3D old = node?.Occluder;
         if (walls.Count > 0)
         {
             if (node == null)
@@ -1084,8 +1093,31 @@ public partial class MapRenderer : Node3D, IStaticPropHost
         BuildInstances(record);
     }
 
-    // Plans a window or grille again from what its entity says now (its joints, or a grille broken into tg's sprite) and redraws it.
+    // Plans a window or grille again from what its entity says now (its joints, or a grille broken into tg's sprite) and redraws it, within
+    // the frame's budget (StepReplace): a door or a window that arrived rebuilt each neighbour's model at once, inside the message or the
+    // tick's scan that brought it, and a station's windows streaming in made frames of 20-50 ms.
     private void Replace(StaticRecord record, bool rebuildAlways)
+        => _replaceSoon[record] = rebuildAlways || (_replaceSoon.TryGetValue(record, out bool always) && always);
+
+    private readonly Dictionary<StaticRecord, bool> _replaceSoon = new();
+
+    private void StepReplace()
+    {
+        if (_replaceSoon.Count == 0)
+            return;
+        using var probe = Dev.FrameProbe.Scope("map/replace");
+        long start = Stopwatch.GetTimestamp();
+        foreach ((StaticRecord record, bool always) in _replaceSoon.ToList())
+        {
+            _replaceSoon.Remove(record);
+            if (_records.TryGetValue(record.Entity.Id, out StaticRecord live) && ReferenceEquals(live, record))
+                ReplaceNow(record, always);
+            if (Stopwatch.GetElapsedTime(start).TotalMilliseconds >= WarmUpBudget)
+                break;
+        }
+    }
+
+    private void ReplaceNow(StaticRecord record, bool rebuildAlways)
     {
         if (!ChunkPlanner.TryPlace(ToPlan(record.Entity), Probe, out Placed again))
             return;
@@ -1201,6 +1233,7 @@ public partial class MapRenderer : Node3D, IStaticPropHost
     private void RemoveRecord(StaticRecord record)
     {
         _awaitingIcons.Remove(record);
+        _replaceSoon.Remove(record);
         ModelEntry deckModel = record.Model;
         ClearInstances(record);
         _records.Remove(record.Entity.Id);
@@ -2101,7 +2134,7 @@ public partial class MapRenderer : Node3D, IStaticPropHost
     public double WarmUpBudget { get; set; } = WarmUpBudgetMs;
 
     /// <summary>Model parts queued to be built before they show (<see cref="ModelLibrary.StepWarmUp"/>): the loading screen waits for none.</summary>
-    public int WarmUpPending => _models?.WarmUpCount ?? 0;
+    public int WarmUpPending => (_models?.WarmUpCount ?? 0) + _replaceSoon.Count;
 
     public void Update(double delta) => Update(delta, double.NaN);
 
@@ -2164,6 +2197,7 @@ public partial class MapRenderer : Node3D, IStaticPropHost
         StepModelOverlayFrames();
         StepModelFilters();
         StepMaptext();
+        StepReplace();
         using (Dev.FrameProbe.Scope("map/atlas.Flush"))
             _atlas.Flush();
         if (_dirty.Count > 0)

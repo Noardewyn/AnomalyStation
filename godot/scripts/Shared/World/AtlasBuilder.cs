@@ -45,6 +45,8 @@ public sealed class AtlasBuilder
     private int _nextShelfY;
     private readonly List<Raster> _pages = new() { new Raster(AtlasWidth, PageHeight) };
     private readonly HashSet<int> _dirtyPages = new() { 0 };
+    // the rectangles drawn since the last TakeDirtyRects, one per shelf (a shelf's pictures side by side): the renderer uploads just them
+    private readonly Dictionary<(int Page, int Y), (int X0, int X1, int Y1)> _dirtyRects = new();
 
     private struct Shelf
     {
@@ -71,7 +73,23 @@ public sealed class AtlasBuilder
         var pages = new List<int>(_dirtyPages);
         pages.Sort();
         _dirtyPages.Clear();
+        _dirtyRects.Clear();
         return pages;
+    }
+
+    /// <summary>
+    /// The rectangles drawn since the last call (page, x, y within the page, width, height), one per shelf that took pictures, and clears them
+    /// with the dirty pages (the renderer that uploads rectangles does not need the pages).
+    /// </summary>
+    public List<(int Page, int X, int Y, int Width, int Height)> TakeDirtyRects()
+    {
+        var rects = new List<(int Page, int X, int Y, int Width, int Height)>(_dirtyRects.Count);
+        foreach (var ((page, y), (x0, x1, y1)) in _dirtyRects)
+            rects.Add((page, x0, y, x1 - x0, y1 - y));
+        rects.Sort();
+        _dirtyRects.Clear();
+        _dirtyPages.Clear();
+        return rects;
     }
 
     /// <summary>Incremented whenever the atlas picture or the table changed (the renderer re-uploads when it moves).</summary>
@@ -100,6 +118,10 @@ public sealed class AtlasBuilder
         byte[] page = _pages[pageIndex].Pixels;
         int pageY = py - pageIndex * PageHeight;
         _dirtyPages.Add(pageIndex);
+        var shelf = (pageIndex, pageY);
+        _dirtyRects[shelf] = _dirtyRects.TryGetValue(shelf, out var had)
+            ? (Math.Min(had.X0, px), Math.Max(had.X1, px + tw + 2), Math.Max(had.Y1, pageY + th + 2))
+            : (px, px + tw + 2, pageY + th + 2);
         // Copy with a one pixel border of the nearest edge pixel, a row at a time (a model's 1-2k texture pixel by pixel stalled the frame).
         // The border keeps the colour but not the alpha: a picture's edge must not grow a halo.
         for (int y = -1; y <= th; y++)

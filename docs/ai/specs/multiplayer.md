@@ -243,6 +243,24 @@ off, and the replicator's unit-test harness keeps it off so the shared body's te
   sound. The 130 s walk: p50 16.7 ms, p95 25.3 (33 before), p99 39.6 (42), worst 78 (108), 29 frames over 50 ms (37), none over 100.
   The cost is memory: the working set at the reveal is 3.6 GB against 2.2 GB with the preload off, mostly the sheets decoded ahead. Left:
   the engine-side stalls (45-55 ms with no script time) and the streaming costs (`map/atlas.Flush`, `map/RebuildTurfs`).
+- **The streaming hitches** (the owner, 2026-11-26: FPS fell to 10-15 while flying into parts of the station not seen before, and
+  not on the way back): measured with Tracy (`tools/perf/fly.sh`, docs/testing.md "Profiling"), a noclip flight at the normal speed
+  along row 127 from the west edge to the east and back, Meta without the lobby, RTX 4080. The display's refresh turns a frame of
+  20-30 ms into 33 or 50 ms, so the slow frames come in runs at 30 or 20 FPS. Found and changed: (1) the prop atlas uploaded a whole
+  2048 x 2048 layer (16 MB) for each new picture, 7-14 ms a frame while things arrived, about 1 s of the first leg's slow frames: the
+  atlas is the RenderingDevice's own texture array and a flush uploads the shelves' new rectangles alone, copied into place on the GPU
+  (`PropAtlas.FlushRects`; Godot's `Texture2DArray` updates whole layers only); (2) a door or a window that arrived rebuilt its
+  neighbours' models at once, inside the message or the tick's scan (frames of 20-50 ms): `Replace` is queued and drawn within the
+  warm-up's budget (`StepReplace`); (3) turf chunks were rebuilt four a frame (20 ms) and each made a new occluder, which makes Godot
+  build its occlusion culling's scene again: a time budget, and the occluder is kept while the chunk's walls are the same; (4) the
+  runtime runs in `SustainedLowLatency`. Standing still the render passes of 35-45 ms every 4.8 s are gone (2 in 45 s). First leg,
+  with vsync: frames over 33 ms 379 to 287, over 50 ms 33 to 23, p99 47 to 44 ms; the game's own time in the slow frames 4.3 s to
+  1.7 s (atlas 1.06 s to 0, model builds 0.58 to 0.19 s, spawns 0.76 to 0.24 s). Left: while flying, a cluster of four render
+  passes of 35-50 ms about every 5 s, one per chunk crossed, with the same draw calls as the frames around them and no game zone
+  in them: not the lamps' shadows (`shadowed_lights=0`), not occlusion culling (`--occlusion=off`); it needs a profile inside the
+  engine (Godot built with `profiler=tracy`, or WPR as administrator). Also left: `map/Scan` walks every static record each server
+  tick (2.6-6 ms, 21 times a second), and a thing's first model build can take 8-35 ms on its own (a light fixture, an APC, the
+  shuttle's engine).
 - **The spawn queue and the leave margins** (performance.md P3.7, P3.8, 2026-10-29): what the sets bring in is queued and spawned
   nearest the eye first, `SpawnBudget` (150) a tick, `JoinSpawnBudget` (1,000) in the join's Snapshot; the own mob, the mobs, the
   doors of the near chunks, the visuals and what the world made this tick skip the queue, and what lies on a spawned door's tile comes

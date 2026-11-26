@@ -536,6 +536,8 @@ public partial class App : Node
         string summary = SummaryProvider?.Invoke();
         if (Dev.FrameProbe.Summary() is { } frames)
             GD.Print($"[frameprobe] summary {frames}");
+        if (DisplayServer.GetName() != "headless")
+            GD.Print("[anomaly] pipeline compilations at the end: " + Render.ShaderWarmUp.Pipelines());
         GD.Print($"[anomaly] client summary: {summary ?? "no game was started"} exit={exitCode}");
 #if ANOMALY_EDITOR
         Play?.Dispose();

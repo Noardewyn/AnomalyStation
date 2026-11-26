@@ -30,6 +30,8 @@ public partial class GameScene
     private const double PreloadShare = 0.05;
     private const double BuildEnd = 0.8;
 
+    private const int CoverLayer = 129; // over App's held picture of the editor's loading screen (128)
+
     private LoadingCover _cover;
     private IEnumerator<float> _building;
     private AppearanceTextures _buildTextures;
@@ -43,7 +45,7 @@ public partial class GameScene
         // the keys and the mouse wait for the scene (FinishReady turns them on)
         SetProcessInput(false);
         SetProcessUnhandledInput(false);
-        var layer = new CanvasLayer { Name = "LoadingCover", Layer = 129 }; // over App's held picture of the editor's loading screen (128)
+        var layer = new CanvasLayer { Name = "LoadingCover", Layer = CoverLayer };
         _cover = app.HasEditor
             ? new LoadingCover(ClientArgs.EditorName, LoadingCover.EditorPicture)
             : new LoadingCover("Anomaly Station", LoadingCover.GamePicture);
@@ -142,8 +144,15 @@ public partial class GameScene
     {
         if (!AssetPreload.SoundsDone)
             return string.Create(CultureInfo.InvariantCulture, $"Loading the sounds... {AssetPreload.Progress:P0}");
+        if (!_warmUp.Done)
+        {
+            _warmUp.Step(this, _rig.Camera, CoverLayer);
+            return "Preparing the shaders...";
+        }
         return null;
     }
+
+    private readonly ShaderWarmUp _warmUp = new();
 
     private void SendLoaded(double now)
     {

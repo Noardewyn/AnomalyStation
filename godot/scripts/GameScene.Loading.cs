@@ -187,7 +187,8 @@ public partial class GameScene
             Ahead(sheet);
         foreach (string folder in IconPrefetch.CommonFolders)
             foreach (string png in AssetPreload.IconsUnder(folder).Where(f => f.EndsWith(".png", StringComparison.OrdinalIgnoreCase)).ToArray())
-                Ahead(png[..^4] + ".dmi");
+                if (AssetPreload.TryIconBytes(png[..^4] + ".json", out _)) // a sheet; not one of the plain pictures beside them (the lobby's buttons)
+                    Ahead(png[..^4] + ".dmi");
     }
 
     private void Ahead(string resource)

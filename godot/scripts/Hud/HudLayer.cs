@@ -568,10 +568,10 @@ void fragment() {
             fullscreen = false;
             return ScreenLoc.FitIcon(LiveHud.SlotCell(_hands, item.Cell, _bottomSlots.Count), width, height, originX, originY);
         }
-        if (RoleNow(item) == LiveHudRole.Alert && item.Cell < _chips.Count) // slice D: tg's picture in its chip, its icon pixels kept
+        if (RoleNow(item) == LiveHudRole.Alert && item.Cell < _chips.Count) // slice D: tg's picture in its chip; section 11: its visible art fitted to it
         {
             fullscreen = false;
-            return ScreenLoc.FitIcon(LiveHud.AlertPicture(_chips[item.Cell]), width, height, originX, originY);
+            return LiveHud.ChipPicture(_chips[item.Cell], ChipArt(item), width, height, originX, originY);
         }
         if (LiveHud.VitalSquare(RoleNow(item), _layout) is HudRect vital) // slice D: tg's indicator in its place under the doll
         {
@@ -587,6 +587,37 @@ void fragment() {
         HudRect icon = ScreenLoc.PlaceAlert(slot, _alertSlots, metrics, _alertFloor);
         float k = icon.Width / HudMetrics.IconPixels;
         return new HudRect(icon.Left - originX * k, icon.Bottom - (height - originY) * k, width * k, height * k);
+    }
+
+    // Section 11: a chip's visible art, found again only when the entry's icon, icon state, overlays, underlays or outline change (or the tables
+    // restart); null keeps tg's whole square (nothing opaque, the icon unreadable, or still loading this frame)
+    private HudRect? ChipArt(Item item)
+    {
+        if (_textures is not AppearanceTextures real || !_replica.TryGetAppearance(item.Entry.Appearance, out AppearanceEntry look))
+            return null;
+        float outline = LiveHud.OutlineReach(look);
+        bool same = item.ArtKnown && item.ArtSnapshots == _replica.SnapshotsApplied && item.ArtIcon == look.Icon && item.ArtState == look.IconState
+            && item.ArtOutline == outline && item.ArtLayers.Count == look.OverlayCount + look.UnderlayCount;
+        for (int i = 0; same && i < look.OverlayCount; i++)
+            same = item.ArtLayers[i] == look.Overlays[i];
+        for (int i = 0; same && i < look.UnderlayCount; i++)
+            same = item.ArtLayers[look.OverlayCount + i] == look.Underlays[i];
+        if (same)
+            return item.Art;
+        if (!LiveHud.TryChipArtBounds(real.Compositor, real.TablesOf(_replica), item.Entry.Appearance, out HudRect? art))
+            return null;
+        item.ArtKnown = true;
+        item.Art = art;
+        item.ArtSnapshots = _replica.SnapshotsApplied;
+        item.ArtIcon = look.Icon;
+        item.ArtState = look.IconState;
+        item.ArtOutline = outline;
+        item.ArtLayers.Clear();
+        if (look.OverlayCount > 0)
+            item.ArtLayers.AddRange(look.Overlays);
+        if (look.UnderlayCount > 0)
+            item.ArtLayers.AddRange(look.Underlays);
+        return art;
     }
 
     // D70's text labels: one column for all the doll's zones, whichever entries carry them (the doll's own appearance, or one entry per limb).
@@ -1029,6 +1060,13 @@ void fragment() {
         public int Cell; // slice C: a bottom slot's place in the hotbar's gap
         public TextureRect Face; // slice T5c: tg's eyes or mouth hover picture on the doll
         public readonly List<ZoneNode> Zones = new();
+        // section 11: a chip's visible art (LiveHud.TryChipArtBounds), and the icon, icon state, overlays and underlays it was found for
+        public bool ArtKnown;
+        public HudRect? Art;
+        public int ArtSnapshots;
+        public float ArtOutline;
+        public TableRef ArtIcon, ArtState;
+        public readonly List<TableRef> ArtLayers = new();
     }
 
     private sealed class ZoneNode

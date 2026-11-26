@@ -1,3 +1,4 @@
+using Anomaly.Client.Shared.Icons;
 using Anomaly.Core.DmShim;
 using Anomaly.Protocol;
 
@@ -836,6 +837,100 @@ public static class LiveHud
     {
         float inset = MathF.Round(UiTokens.AlertChipInset * chip.Width / UiTokens.AlertChip);
         return new HudRect(chip.Left + inset, chip.Top + inset, Math.Max(1f, chip.Width - 2 * inset), Math.Max(1f, chip.Height - 2 * inset));
+    }
+
+    /// <summary>
+    /// Section 11 (the designer, 2026-11-26, revised the same day): how a chip shows the visible art <paramref name="art"/> (tg pixels, its left
+    /// and top from the top left corner of tg's 32 x 32 icon square): scaled uniformly, by any factor, so that its larger side fills the chip
+    /// less <see cref="UiTokens.AlertChipArtMargin"/> on each side exactly, and centred in the chip both ways. <c>Picture</c> is where the art
+    /// lands on the screen: at whole pixels, its smaller side rounded (the aspect kept within a pixel), always inside the chip.
+    /// </summary>
+    public static (float Scale, HudRect Picture) ChipArt(HudRect chip, HudRect art)
+    {
+        float margin = MathF.Round(UiTokens.AlertChipArtMargin * chip.Width / UiTokens.AlertChip), room = Math.Max(1f, chip.Width - 2 * margin);
+        float scale = room / Math.Max(art.Width, art.Height);
+        float width = Math.Max(1f, MathF.Round(art.Width * scale)), height = Math.Max(1f, MathF.Round(art.Height * scale));
+        return (scale, new HudRect(chip.Left + MathF.Floor((chip.Width - width) / 2f), chip.Top + MathF.Floor((chip.Height - height) / 2f), width, height));
+    }
+
+    /// <summary>
+    /// Where a chip's composed picture (<paramref name="pixelWidth"/> x <paramref name="pixelHeight"/> tg pixels, tg's icon square's lower left
+    /// corner at (<paramref name="originX"/>, <paramref name="originY"/>), as for <see cref="ScreenLoc.FitIcon"/>) is drawn so that its visible
+    /// art <paramref name="art"/> lands exactly on <see cref="ChipArt"/>'s picture; without art (nothing opaque, or the icon could not be read)
+    /// tg's whole square fitted in the chip as before (<see cref="AlertPicture"/>).
+    /// </summary>
+    public static HudRect ChipPicture(HudRect chip, HudRect? art, int pixelWidth, int pixelHeight, int originX, int originY)
+    {
+        if (art is not HudRect a || a.Width <= 0f || a.Height <= 0f)
+            return ScreenLoc.FitIcon(AlertPicture(chip), pixelWidth, pixelHeight, originX, originY);
+        HudRect picture = ChipArt(chip, a).Picture;
+        float kx = picture.Width / a.Width, ky = picture.Height / a.Height;
+        float artX = a.Left + originX, artY = a.Top + (pixelHeight - originY - HudMetrics.IconPixels); // the art's corner in the composed picture
+        return new HudRect(picture.Left - artX * kx, picture.Top - artY * ky, pixelWidth * kx, pixelHeight * ky);
+    }
+
+    /// <summary>How far tg's outline filters on <paramref name="look"/> reach out of its art (the starving hunger bar's pulsing outline), 0 without one.</summary>
+    public static float OutlineReach(AppearanceEntry look)
+    {
+        float reach = 0f;
+        if (look?.Filters != null)
+            foreach (FilterEntry f in look.Filters)
+                if (f.Kind == FilterKind.Outline)
+                    reach = Math.Max(reach, f.Size);
+        return reach;
+    }
+
+    /// <summary>
+    /// The visible art of the screen appearance <paramref name="appearance"/> as the HUD composes it (facing south, its own pixel offset kept):
+    /// the smallest rectangle holding every pixel with alpha above zero over every picture of its animation, its icon state's frames with its
+    /// overlays' and underlays', in tg pixels from the top left corner of its 32 x 32 icon square (<see cref="ChipArt"/>). The entry is composed
+    /// opaque (a hunger bar fading in counts whole), and tg's outline filters on it at their full strength (the starving hunger bar's outline
+    /// pulses from alpha 0 to 200: counted at its full reach, so the picture does not move as it pulses). Null when nothing is drawn or nothing
+    /// could be composed. False while an icon is still loading: nothing is known yet, ask again on a later frame.
+    /// </summary>
+    public static bool TryChipArtBounds(AppearanceCompositor compositor, IAppearanceSource tables, TableRef appearance, out HudRect? art)
+    {
+        art = null;
+        int misses = compositor.Library.PendingMisses;
+        Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>> outlines = null;
+        if (tables.TryGetAppearance(appearance, out AppearanceEntry root) && OutlineReach(root) > 0f)
+        {
+            var full = root.Filters.ConvertAll(f =>
+            {
+                if (f.Kind != FilterKind.Outline)
+                    return f;
+                FilterEntry strong = f.Copy();
+                strong.Alpha = 255f;
+                return strong;
+            });
+            outlines = new Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>>(ReferenceEqualityComparer.Instance) { [root] = full };
+        }
+        AnimationTimeline timeline = AnimationTimeline.Of(compositor.AnimatedStates(tables, appearance, ByondDir.South, rootOffset: true), once: false);
+        int left = int.MaxValue, top = int.MaxValue, right = int.MinValue, bottom = int.MinValue;
+        for (int i = 0; i < (timeline?.Count ?? 1); i++)
+        {
+            if (!compositor.TryCompose(tables, appearance, ByondDir.South, timeline?.SampleAt(i) ?? 0, out ComposedRaster picture, rootOffset: true, rootOpaque: true, outlines))
+                continue;
+            Raster image = picture.Image;
+            int squareTop = image.Height - picture.OriginY - AppearanceCompositor.DefaultIconSize;
+            for (int y = 0; y < image.Height; y++)
+            {
+                for (int x = 0; x < image.Width; x++)
+                {
+                    if (image.Pixels[(y * image.Width + x) * 4 + 3] == 0)
+                        continue;
+                    left = Math.Min(left, x - picture.OriginX);
+                    right = Math.Max(right, x - picture.OriginX);
+                    top = Math.Min(top, y - squareTop);
+                    bottom = Math.Max(bottom, y - squareTop);
+                }
+            }
+        }
+        if (compositor.Library.PendingMisses != misses)
+            return false;
+        if (left <= right)
+            art = new HudRect(left, top, right - left + 1, bottom - top + 1);
+        return true;
     }
 
     /// <summary>

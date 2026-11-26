@@ -32,28 +32,41 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `a67c16a` | Package T, slices T0 and T1: a person is hit on the body alone |
 | `5d1449c` | Package T, slice T2: the leg in front, shots, effects pass clicks |
 | `5a5c4a8` | Spec only |
-| `f1a2ee1` | Package T, slice T4a: eyes, mouth and groin by look; tg's gun in the mouth (protocol 95) |
-| `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 95) |
-| `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 95; signed off by the contributor 2026-11-26) |
+| `f1a2ee1` | Package T, slice T4a: eyes, mouth and groin by look; tg's gun in the mouth (protocol 98 since the merge; built as "95") |
+| `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 98 since the merge) |
+| `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 98 since the merge; signed off by the contributor 2026-11-26) |
 | `d48b027` | Package T, slice T5a: looking down shows the own body (client only; section 8, "T5a as built") |
 | `a98d5ee` | Package T, slices T5b and T5c: the own body is a target, the doll's eyes, mouth and grasp (client only; section 8, "T5b and T5c as built") |
 | `6a3e649` | Package 2, slice C: the hands either side of the hotbar gap, the bottom slots in the gap, the held-item card (client only; section 6, "Slice C as built") |
 | `e3af6b3` | Package 2, slice D: the vitals column at the right edge, alerts as chips, the hint strip over the hands, the swap key cap, the red cuffed hand (client only; section 6, "Slice D as built") |
-| `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV589; section 9, one known fault accepted by the contributor) |
+| `b258604` | The prompt beside the crosshair only for a thing within reach (server and client, no wire change, DV601; section 9, one known fault accepted by the contributor) |
 | `fc882c5` | Package 2, slice E: the vitals without a box, tg's combat toggle in the corner, the key-duplicating buttons hidden, keys for crafting, language and navigate, "Offer item" in the wheel (server and client, no wire change, DV139; section 6, "Slice E as built") |
 | `52bcb78` | Package T, slice T5's numbers: the look-down pivot 0.25 m and the limit 135 degrees (client only; section 8, "T5's numbers changed") |
+| `5a42a6d` | Merge of `origin/main` (release 1.14.0, upstream's protocol 95 to 97): this branch's wire changes are protocol 98, its new deviations DV599 (click through), DV600 (Turn over) and DV601 (the prompt only in reach); signed off by the contributor 2026-11-26 |
 
-Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
-until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
+The branch follows `origin/main` (https://github.com/Noardewyn/AnomalyStation): fetch at the start of a session and
+before any wire or server work, and merge upstream in before building on it; upstream's protocol and DV numbers win
+and ours are renumbered after them. Upstream's `CLAUDE.md` now forbids code comments that say who asked for something
+or when; builders write what the code does and why, with plain `DEVIATION(DVnnn)` and decision references.
+
+Protocol version 98 (ours; built as "95" before the merge) is not released: slices T4a, T4b and T4c and the hotbar
+ride one release by the owner (`tools/release.sh`); until then the build warns `ANOMVER01` and
+`BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
 Next, in this order:
-1. The devlog screenshots of the HUD (`../devlog-screenshots/2026-11-26/`, outside the repository) are retaken
-   with slice E's look and the new look-down numbers.
-2. Package 3 (the belt hotbar; a wire change, so the contributor signs off before the commit). The manager
-   designs it and the designer confirms the design before a builder starts.
-3. Packages 4 to 8 and what section 9 adds. The Tab overlay's character sprite (package 4) is the main way to act
-   on oneself (the contributor, 2026-11-26: "for now we just use the inventory to do operations on yourself
-   mainly"); looking down is a secondary way and gets no more design work. Tg's zone selector stays under Tab.
+1. On the merged base: the chip pictures (section 11, branch `chip-art`); the fix for item attacks refused on a
+   carbon drawn as one picture (upstream's lost-limb check with our look-aiming leaves a stale zone: a click that
+   carries no zone on a carbon counts as aimed at the chest); the comments of this branch that name who asked and
+   when, cleaned for upstream's rule.
+2. Package 3 (section 10): slice 3A is built, reviewed and set aside on the branch `hotbar-3a` (on the old base;
+   its protocol, action kind, file and DV numbers clash with upstream's and are renumbered when it is brought
+   over), then slice 3B, the bar itself. One commit after the contributor's sign-off.
+3. The devlog screenshots (`../devlog-screenshots/2026-11-26/`, outside the repository): a last retake once the
+   chips and the bar are in (`02`, `03`, `06` and `07` still show the old look).
+4. Package 4 (section 12, design confirmed in part), then packages 5 to 8 and what section 9 adds. The Tab
+   overlay's character sprite is the main way to act on oneself; looking down is a secondary way and gets no more
+   design work. Tg's zone selector stays under Tab. Anatomical focus (package 6) is held on the middle mouse button
+   (the contributor, 2026-11-26), so the middle click's second binding for swapping hands goes then.
 
 Seen in play and not yet looked into: the prompt not always matching where the crosshair is drawn, and "Headpat"
 offered to a handcuffed player (section 9); a patient buckled to the operating table drawn as an upright sideways
@@ -62,8 +75,8 @@ seconds not bringing the HUD back.
 
 
 To tell the owner (the contributor does this; `DECISIONS.md` is not edited by us): the protocol changes of version
-95; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
-"Turn over" is new (DV588); tg's `handle_suicide` is translated; the earlier decisions revised for the interface
+98; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
+"Turn over" is new (DV600); tg's `handle_suicide` is translated; the earlier decisions revised for the interface
 (section 1).
 
 ## 1. What was agreed, and what it changes
@@ -846,7 +859,7 @@ tied to a deliberate input instead of the look.
 
 ### T4a as built (2026-11-24)
 
-Protocol 95. Playtested against the real server: from the front the eyes, the mouth and the groin select tg's
+Protocol 98 (built as 95; renumbered in the merge with origin/main). Playtested against the real server: from the front the eyes, the mouth and the groin select tg's
 precise zones on exactly the pixels of tg's doll (read from the zone selector's picture and from a penlight's two
 answers); from each side they sit on the three columns at the front of the face; from behind there are none; a
 bar-stool sitter's and a giant's follow the drawn face; a screwdriver on the eyes is tg's eye stab; a help click on
@@ -952,7 +965,7 @@ cannot work today.
 
 ### T4b as built (2026-11-24)
 
-Still protocol 95 (a second wire change inside the unreleased version, as version 89 did): a hover on an entity may
+Still protocol 98 (built as 95) (a second wire change inside the unreleased version, as version 89 did): a hover on an entity may
 carry the zone as one byte after the target; a hover without one keeps its old bytes. Beyond the design above:
 - the server remembers the last look it skipped during a do-after and applies it, with fresh hints, in the tick the
   mob's last do-after ends; any later hover, unhover, click or throw clears what was remembered;
@@ -1251,9 +1264,9 @@ Settled by the designer (2026-11-26), the three points of the row above:
 Three fix rounds were used up with one fault open, and the change was parked in a stash on top of `a98d5ee`. The
 contributor accepted that fault as a known limit on 2026-11-26 ("just accept it and make a note"). The stash was
 then applied onto the head after package 2's slice D (no conflicts, every hunk as reviewed), verified and committed
-as it is, with the fault recorded below and in DV589.
+as it is, with the fault recorded below and in DV601.
 
-As built (server and client, no wire change; DV589 and protocol.md 14.2 have the full text):
+As built (server and client, no wire change; DV601 and protocol.md 14.2 have the full text):
 - The server answers a hover of a thing its sender cannot reach (tg's `IsReachableBy` with the held item's reach)
   with a zero-length name and no hints; the client then shows a bare crosshair. Gated: every living mob acting from
   where it stands, whatever its state. Not gated: a ghost, the AI, a cyborg with no module out, the hunter while it
@@ -1324,3 +1337,175 @@ Known, for later:
   other sides lies with the head on the other end than on a bed or a table. Needs its own fix.
 - A slow test, `BuckleGameplayTests.A_friend_is_buckled_to_a_chair_and_a_roller_bed_...`, fails at its line 178 at
   commit `77f593f` already (the builder's report; not looked into).
+
+## 10. Package 3: the belt hotbar
+
+### Design confirmed by the designer (2026-11-26)
+
+The designer's notes: "quick swap hotbar config items in storage to specific slots 1-9. or like zomboid where you can
+equip items to belt to be able to access quick. left and right of hotbar show hand slots, when you select item from
+hotbar or inventory it goes to active hand." The reference's section 3: only what is in the pockets, the belt, suit
+storage or the ID slot can be on a key; a press takes the item into the active hand and the same number puts it back.
+Chosen by the designer from mockups on 2026-11-26: ten cells (tg's toolbelt and medical belt hold seven items, so the
+wireframe's six belt keys would leave a full belt's seventh tool without a key), quick swap, and the worn slots under
+Tab only.
+
+The bar (human HUD only; other HUDs keep tg's layout and have no bar):
+- Ten cells in one row between the hands, in three groups: 1 to 7 the worn belt's contents, 8 and 9 the left and the
+  right pocket, 0 the ID slot. Cells are 48 square with 4 between them and 12 between the groups; the hands' row
+  grows by the difference and keeps its rules (centred at the bottom, right of the chat window while it fits, the
+  hint strip 6 above the active hand's box).
+- A cell has the chips' fill and rim, its key's cap in the top left corner (from the bindings, the swap cap's
+  look), the item's picture in the middle and a stack's count as tg draws it. No names in the cells.
+- A cell's states: empty (rim and a dim key cap only); holding an item; out (its item is in one of the player's
+  hands, taken from this cell: the picture stays at about a third of its opacity, so the player sees where it goes
+  back); refused (the rim blinks red for about a third of a second after a press that did nothing). With no belt
+  worn the seven belt cells are empty cells at half opacity; the row never changes width.
+- The pocket and ID cells are tg's own slot entries re-placed into the cells, so under Tab a click or a drag on
+  them is tg's (the ID taken out of the PDA and so on). A belt cell is ours: under Tab a click on it is the key's
+  press.
+- tg's belt, back and suit-storage slots, which stood in the gap since slice C, are drawn only under Tab, in a
+  short row just above the right end of the bar, clickable as now. Suit storage has no key.
+- The hint strip now leads with the held item's name ("Wrench", then use, drop and throw with their keys), from the
+  names the server sends for the items in the player's own hands. The hand boxes stay pictures only.
+
+Keys: 1 to 9 and 0 are the ten cells (number row and keypad). tg's action buttons move to Shift+1 to Shift+9, and the
+numbers drawn on them follow the bindings. Saved keys stay as they were (package 1's rule).
+
+What a press of cell N does. The server decides and does everything with tg's own procs (the belt's storage, the
+slot's equip rules, put in hands), so tg's checks, sounds and delays apply; cuffed, stunned or dead, nothing happens:
+1. The item of cell N is out, in either hand: it goes back into cell N.
+2. The active hand is empty and cell N holds an item: the item comes into the active hand.
+3. The active hand holds an item that is out from another cell M, and cell N holds an item: the held item goes
+   back to M and N's item comes into the active hand (quick swap). If it cannot go back, nothing happens.
+4. The active hand holds any item and cell N is empty (no item in it and none out from it): the item is stored in
+   cell N if tg lets it in (the belt's storage rules; a pocket's or the ID slot's equip rules).
+5. Anything else (an item not from the bar in hand and cell N holding an item; an empty hand and an empty cell): the
+   press is refused and the cell blinks.
+
+Which belt item is in which cell: when a belt is put on, its contents take cells 1 to 7 in tg's storage order. An
+item keeps its cell while it is in the belt or, taken from the bar, in the player's hands. An item put into the belt
+any other way takes the lowest free cell. An item that leaves both the belt and the hands (dropped, thrown, handed
+over, used up) frees its cell, and so does an out item put somewhere else. Items beyond seven (a bandolier) have no
+cell and are reached under Tab. Taking the belt off empties the seven cells. A pocket's or the ID slot's item taken
+from the bar is out from its cell in the same way until it is put back or leaves the hands.
+
+The wire: the server sends the player the ten cells' state and the names of the items in their own hands; the client
+sends "press cell N", a number from 1 to 10 and nothing else. The server trusts only that number, checks the sender's
+own mob on every press and counts presses in the action rate limit.
+
+### Slices
+
+| Slice | What |
+|---|---|
+| 3A | The wire and the server's rules; the client keeps the cells' state and sends presses from keys 1 to 0; the action buttons on Shift+1 to 9; gameplay tests on a real server. Nothing new is drawn yet. |
+| 3B | The bar: cells, states, key caps, the blink, the worn slots' row under Tab, the item's name in the hint strip; layout tests; playtest and screenshots. |
+
+Both are reviewed on their own; the package is one commit after the designer's sign-off (a wire change).
+
+## 11. Chip pictures: fitted to their art (asked for by the designer, 2026-11-26)
+
+"i just noticed the hunger sprite isnt centred or the righ size within its box, can you check this and the other
+stutus effect sprites when showing on the hud". Checked in the real-server shots of slice E: a chip draws tg's whole
+32-pixel square, and tg's art sits where tg wants it inside that square. The hunger bar with its burger measures 23
+by 22 pixels, off the square's centre; the stamina bolt 16 by 29; tg's alert pictures about 30 high.
+
+Settled design, one rule for every chip (alerts and status chips alike):
+- A chip shows the entry's visible art: the smallest rectangle holding every opaque pixel of what the entry draws
+  (its icon state with its overlays), not tg's whole square.
+- That art is scaled uniformly, by whatever factor, so that its larger side fills the chip less 2 on each side, and
+  centred in the chip both ways, at whole pixels. So every chip's picture reaches the same extent whatever tg's art
+  measures, and nothing is ever drawn outside its chip. (First built with whole-number factors only, to keep the
+  pixel art sharp: at the default 125% UI scale and at 150% that made most pictures smaller than before, since the
+  HUD already resamples there, and changed nothing at 100%.)
+- The rectangle is worked out from everything the entry shows over its animation (a blinking alert does not jump),
+  with a pulsing outline filter counted at its full reach, and again only when the entry's icon state or overlays
+  change.
+- The chip's fill, rim, size, place and order do not change; a chip's maptext stays over the chip as now; the click
+  and tooltip area stays the whole chip.
+- Only chips: the doll, the health indicator, the mood face, the combat toggle and every entry at tg's own place
+  keep tg's square.
+
+Built in its own worktree and branch beside package 3, and merged before slice 3B.
+
+## 12. Package 4: the Tab inventory (design, confirmed so far)
+
+Confirmed by the designer from mockups on 2026-11-26. Not built; it starts after package 3. What exists today is in
+the survey of the same day (cursor mode on Tab, tg's toggleable slot panel in a native `InventoryPanel`, one
+`ContainerWindow` for tg's single active storage, the strip menu as a tgui window, drags as tg's MouseDrop, no paper
+doll of the own sprite, "Things here" in the radial, quick-equip on E only).
+
+- Tab (cursor mode) shows three columns over the view, with the hands and the hotbar staying at the bottom and the
+  vitals at the right edge: the full chat at the left; in the middle the player's own character sprite with the worn
+  slots laid out around it where they sit on the body; at the right the storage panels.
+- The middle column is see-through: only the slot cells and the sprite are drawn, no panel behind them, so the room
+  and anyone walking up stay in sight. The overlay closes by itself when the player takes damage (the reference's
+  guardrail).
+- An item used on the sprite is used on oneself at the body part clicked (the nine-zone map of aiming by look); an
+  empty-hand click checks oneself.
+- Tab opens the backpack: its contents show at the top right at once, with tg's own opening sound each time, as
+  when it is opened by hand ("open with tab and tg sound").
+- Everything carried is on screen at once and an item can be dragged from any of it to any other ("the tab
+  inventory shoud show belt and pockets and suit storage ect too so you can move items between all the storage"),
+  each thing shown once: the belt (1 to 7), the pockets (8, 9) and the ID slot (0) are the bar at the bottom, which
+  becomes a drag target; suit storage is a slot beside the character; the right column holds the backpack (with its
+  count of used and free room), then any other storage worn (a bandolier's items beyond seven, a box in a pocket),
+  then the other container or the person being stripped, then the items lying nearby.
+- To settle with the designer before building: the right column when several panels do not fit; what the strip
+  target's panel shows and where its timers go; Shift+click transfer; the keys (E world interact, quick-equip to
+  belt and bag, a key for the backpack); what closes the other container's panel (distance).
+- Server side, to design with the builder: tg shows one storage at a time (`active_storage`), so the contents of
+  every worn storage at once, and a second container beside the backpack, need the server to send them (the hotbar
+  message of package 3 already carries the belt's); every move still goes through tg's storage and equip procs.
+
+Added by the designer the same day: "the strip should show both people's inventories side by side with a search
+mechanic like tarkov where it takes time to reveal each item in storagae, less time for belds and pockets. need to
+select the storage to search it or have (search) prompt over the hidden items in each. shift click is normally the
+inspect key on ss14. id like a keybind for click transfer, maybe cntrl click. but clicka nd drag should also work. e
+is fine, can alwyas be rebound in the settings so make the interact binding seperate to the quick equip."
+
+- Stripping: the other person's inventory is shown beside the player's own, laid out the same way (their sprite
+  with the worn slots around it, their storages under it). What is inside their storages is hidden until searched:
+  a hidden storage shows a "Search" prompt; choosing it reveals its items one at a time, each taking time, less for
+  a belt and pockets than for a bag. The times, what the searched person is told and what interrupts a search are
+  to be settled. THIS IS A MECHANIC tg DOES NOT HAVE (in tg a worn bag is taken off before it can be looked into,
+  and a pocket's item is unknown until it is stripped), so it needs the owner's agreement before it is built; the
+  contributor raises it.
+- Shift+click stays examine. A separate, rebindable key action moves an item at once between the hand and the
+  open panels, by default Ctrl+click; dragging works as well. In the inventory this takes Ctrl+click from tg's own
+  Ctrl-click actions on a carried item (a PDA's pen, for one), which then need another way in.
+- E is world interact, its own binding, separate from quick equip (which keeps a binding of its own).
+
+Settled further by the designer (2026-11-26, later): "we can also use alt click for the alternative item
+interactions like in ss14. please review the ss14 bindings in detail. for right column, scolling works. for walking
+away, your plan also works. items revealed should stay revealed if you leave and open storage again unless someone
+else moves them. maybe have their sprite and storages visible but also all our storages visible on the left, but
+not hte players sprite. can also use scrolling for our storages if there are too many."
+
+- The right column scrolls when its panels do not fit. The other container's or the strip target's panel closes by
+  tg's reach rule (when the player can no longer reach it).
+- The strip view: the chat stays at the left; the middle column shows all of the player's own storages (the
+  backpack and any other worn storage, scrolling when there are too many) and not the player's own sprite; the
+  right column shows the target's sprite with the worn slots round it and the target's storages with their "Search"
+  prompts. The bar and the hands stay at the bottom.
+- An item revealed by a search stays revealed for that searcher when the view is closed and opened again, until
+  someone else moves it.
+- Alt+click is tg's alt-click (the alternative interaction), in the world and on an item in the inventory, as
+  Space Station 14's `AltActivateItemInWorld`. Ctrl+click in the inventory is the quick transfer; tg's own
+  Ctrl-click actions on a carried item go to the right-click wheel there.
+- Space Station 14's bindings were read in full (`Resources/keybinds.yml` of the fork checkout, 2026-11-26). Those
+  this package takes, to confirm with the designer: E `ActivateItemInWorld` (world interact, its own action);
+  Alt+left click and Alt+E `AltActivateItemInWorld`; Alt+Z `AltActivateItemInHand`; Shift+B, Shift+E, Shift+G,
+  Shift+H, Shift+F `SmartEquipBackpack`, `Belt`, `Pocket1`, `Pocket2`, `SuitStorage` (tg's quick-equip keybindings
+  for the bag, belt, pockets and suit storage); V `OpenBackpack` and Shift+V `OpenBelt`; Shift+middle click
+  `Point`; comma `FocusWhisperChatWindow`. Space Station 14 has no quick-transfer key and no key for tg's plain
+  quick equip, which needs a new default once E is world interact. Kept as ours where Space Station 14 differs:
+  Tab (theirs cycles chat channels), F combat mode (theirs flips an object), a tap of Shift for walk (theirs is
+  held), 1 to 0 for the belt bar with the action buttons on Shift+digits (theirs: two action bars). Alt held for
+  anatomical focus (package 6, from the wireframes) would now clash with Alt+click and needs another key.
+
+Keys confirmed by the designer (2026-11-26: "your key suggestions are fine, for anotomical focus, maybe `"): the
+Space Station 14 bindings listed above are taken as listed; tg's plain quick equip moves to R; the quick transfer is
+Ctrl+click in the inventory. Anatomical focus (package 6): the backtick was withdrawn (it is the dev console, as in
+Space Station 14: "dont use `"); chosen from four candidates: the middle mouse button, held ("do middle mouse"). The
+middle click's second binding for swapping hands goes then; X stays.

@@ -274,6 +274,9 @@ public static class UiTokens
     /// <summary>The room between a chip's edge and the alert's picture.</summary>
     public const float AlertChipInset = 4f;
 
+    /// <summary>The least room between a chip's edge and the visible art it shows (ui-overhaul.md section 11, <c>LiveHud.ChipArt</c>).</summary>
+    public const float AlertChipArtMargin = 2f;
+
     /// <summary>The gap between two chips.</summary>
     public const float AlertChipGap = 4f;
 

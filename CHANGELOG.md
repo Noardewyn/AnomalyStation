@@ -14,6 +14,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - The health doll, health and mood stand bare at the right edge over the combat toggle in the corner; the zone selector shows only in cursor mode.
 - Your hands sit either side of the bottom centre with belt, pockets and ID between them; a strip above them shows the held item and its keys.
 - Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.
+- Every chip's picture is centred and scaled so its art fills the chip, so hunger, stamina and alerts no longer sit small or off-centre.
 - The swap-hands key sits on the corner of the other hand; a cuffed or missing hand gets a red border.
 - HUD buttons that a key does are gone; G opens crafting, L languages, M navigate, and Offer item is in the right-click wheel.
 - Aiming at a person hits their body, not their clothes, hair, backpack or held items, so every click on them targets the body part you aim at.

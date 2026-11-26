@@ -498,7 +498,7 @@ public sealed class PlaySession
     /// <summary>
     /// Version 95 also (slice T4b): whether a hover on <paramref name="target"/> carries the body zone looked at: a picked entity pixel seen through
     /// the crosshair. In cursor mode (Tab) it carries none: the free pointer passing over a person must not overwrite the zone chosen on tg's zone
-    /// selector, which shows there and which the doll's ctrl-click grasp reads (DV72); a click there still carries its zone.
+    /// selector, which shows there; a click there still carries its zone.
     /// </summary>
     public static bool HoverCarriesZone(in ClickTarget target, bool cursorMode) => !cursorMode && target.Kind == TargetKind.Entity && target.IconX != 0;
 

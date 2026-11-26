@@ -361,6 +361,32 @@ public class BillboardMathTests
     }
 
     [Fact]
+    public void TheOwnCardTurnedRoundIsPickedOnTheSamePixelByTheBillboardAsByThePickShape()
+    {
+        // Slice T5b: Billboard.TryPick lays the own card (FacesBack) along the view's left, as the pick shape and the shader do. The same ray as
+        // above, 100 degrees down; the picture is opaque in its column 13 alone: both hit it there at the same distance, and laid along the
+        // view's right (the point is column 20, clear) the billboard's math would miss.
+        double p = -100 * Math.PI / 180;
+        var image = new Raster(32, 32);
+        for (int row = 0; row < 32; row++)
+            image.Pixels[(row * 32 + 12) * 4 + 3] = 255;
+        SpriteRect rect = SpriteRect.Of(32, 32, 0, 0);
+        PickShape shape = PickShape.StandingPicture(1, PickSurface.Billboard, 1, 1, 1, 1, 1, 0, rect, image, 0, 0);
+        shape.FacesBack = true;
+        var ray = new PickRay(1.2, 1 + 0.148, 1.12, 1, 0, Math.Cos(p), Math.Sin(p), 50, RightEast: 1, RightNorth: 0);
+        Assert.True(shape.TryHit(ray, 50, out double t, out _, out _, out _, out byte iconX, out _));
+        Assert.Equal(13, iconX);
+        // Godot's frame: x east, y up, z south; the camera's right is east
+        var from = new Vec3(1.2, 1.12, -1.148);
+        var dir = new Vec3(0, Math.Sin(p), -Math.Cos(p));
+        var feet = new Vec3(1, 0, -1);
+        var right = new Vec3(1, 0, 0);
+        Assert.True(BillboardMath.RayStanding(from, dir, 50, feet, right * -1, rect, image, out BillboardHit hit));
+        Assert.Equal(t, hit.Distance, 6);
+        Assert.False(BillboardMath.RayStanding(from, dir, 50, feet, right, rect, image, out _));
+    }
+
+    [Fact]
     public void AStandingPictureAheadIsPickedAsBeforeWhenTheViewLooksDownLessThanStraight()
     {
         // 80 degrees down, the picture 0.05 m ahead of the eye's ground point: the camera's right on the ray changes nothing for the crosshair's ray

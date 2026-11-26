@@ -106,6 +106,36 @@ public class HoverZoneGameplayTests
     }
 
     [Fact]
+    public void Looking_at_ones_own_body_selects_the_zone_and_a_swing_at_it_hits_that_part()
+    {
+        // Slice T5b: the own body looked down at is a target as anyone's: a hover on one's own mob carries the zone and the server selects it,
+        // with one's own hints; a toolbox swung at it in combat mode hits oneself on the part clicked (tg's attacked_by never misses oneself)
+        var (w, alice, aliceMob, _) = Pair(66);
+        using (w)
+        {
+            var hints = new List<ContextHintsMessage>();
+            alice.Client.ContextHintsReceived += hints.Add;
+            var texts = new List<string>();
+            alice.Client.ServerTextReceived += t => texts.Add(t.Html);
+            Assert.True(alice.Session.Hover(On(aliceMob, AimZone.LeftLeg), w.Now));
+            w.Run(4);
+            Assert.Equal(BODY_ZONE_L_LEG, In(w, () => aliceMob.zone_selected));
+            Assert.NotNull(LastHintsOn(hints, aliceMob));
+
+            w.Host.EnqueueConsoleLine("give Alice /obj/item/storage/toolbox/mechanical");
+            alice.Session.ToggleCombatMode();
+            w.Run(10);
+            var arm = In(w, () => (obj_item_bodypart)aliceMob.get_bodypart(BODY_ZONE_R_ARM));
+            float before = In(w, () => Dm.num(arm.brute_dam));
+            Assert.True(alice.Session.Click(On(aliceMob, AimZone.RightArm), ClickButton.Left, ClickModifiers.None));
+            w.Run(Second);
+            Assert.Equal(BODY_ZONE_R_ARM, In(w, () => aliceMob.zone_selected));
+            Assert.True(In(w, () => Dm.num(arm.brute_dam)) > before, "the right arm took the hit");
+            Assert.Contains(texts, t => t.Contains("yourself in the right arm", StringComparison.Ordinal));
+        }
+    }
+
+    [Fact]
     public void A_zone_on_a_thing_that_is_no_carbon_leaves_the_selected_zone_alone()
     {
         var (w, alice, aliceMob, bobMob) = Pair(62);

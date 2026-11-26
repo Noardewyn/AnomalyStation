@@ -147,12 +147,14 @@ public sealed class DragModel
     /// <summary>
     /// DEVIATION(DV72): in first person the own body is never under the pointer, so a ctrl-click on the HUD's health doll (cursor mode)
     /// is a ctrl-click on the own mob, as <see cref="SelfOnDoll"/> makes a drop on it one: tg's ctrl-click on oneself grasps the
-    /// bleeding limb of the zone selected (<c>grabbedby</c>, carbon_defense.dm:518). The target names no icon pixel, so it aims at
-    /// no zone (DV30): the zone is the zone selector's, as in tg. tg's own ctrl-click on the doll does nothing. Any other click is kept.
+    /// bleeding limb of the zone selected (<c>grabbedby</c>, carbon_defense.dm:518). Slice T5c: it aims at the doll's part clicked
+    /// (<paramref name="zone"/>, <see cref="BodyZoneAim.DollZoneAt"/>; the server selects it as tg's <c>zone_selected</c>, DV30), so the limb
+    /// clicked is grasped; off the doll's parts (None) the zone selector's stays, as in tg. tg's own ctrl-click on the doll does nothing.
+    /// Any other click is kept.
     /// </summary>
-    public static ClickTarget SelfCtrlClickOnDoll(in ClickTarget target, ClickModifiers modifiers, Func<long, bool> isDoll, long ownEntity)
+    public static ClickTarget SelfCtrlClickOnDoll(in ClickTarget target, ClickModifiers modifiers, Func<long, bool> isDoll, long ownEntity, AimZone zone)
         => (modifiers & ClickModifiers.Ctrl) != 0 && target.Kind == TargetKind.Screen && ownEntity != 0 && isDoll(target.Id)
-            ? new ClickTarget(TargetKind.Entity, ownEntity, 0, 0, 0)
+            ? new ClickTarget(TargetKind.Entity, ownEntity, 0, 0, 0, 0, 0, zone)
             : target;
 
     /// <summary>

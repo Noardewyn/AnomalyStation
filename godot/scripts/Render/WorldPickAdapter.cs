@@ -181,6 +181,8 @@ public partial class HoverHighlight : Node3D
             Vector3 right = new Vector3(camera.X.X, 0, camera.X.Z).Normalized();
             // (picture_billboard.gdshader's face_eye: the camera's back x the ground right)
             Vector3 up = shape.FacesEye ? camera.Z.Cross(right) : Vector3.Up;
+            if (shape.FacesBack)
+                right = -right; // T5b: the own body for its own eye is laid out along the view's left (face_back), so its drawn pixels are there
             up = (up with { Y = Mathf.Max(up.Y, 0f) }).Normalized(); // (flat on the floor past straight down, T5a)
             turn = new Basis(right, up, right.Cross(up));
             centre = feet + right * (float)(r.Left + r.Right) / 2f + up * (float)(r.Bottom + r.Top) / 2f;

@@ -139,6 +139,23 @@ public static class BodyZoneAim
         return Search(tables, compositor, entry, 2, iconX, iconY, (_, state) => DollZoneOfState(state));
     }
 
+    /// <summary>
+    /// Slice T5c (the contributor, 2026-11-24: "Add eyes and mouth to the health doll"): the doll's <paramref name="limb"/> (<see cref="DollZoneAt"/>)
+    /// at tg's (<paramref name="iconX"/>, <paramref name="iconY"/>) refined on the head by tg's own pixels of the zone selector (screen_objects.dm,
+    /// <c>get_zone_at</c>): the eyes rows 25 to 27, columns 15 to 17, and columns 14 and 18 on row 26; the mouth rows 23 and 24, columns 15 to 17.
+    /// For an item used on the doll and its hover pictures; the ctrl-click grasp takes the limb itself (tg's <c>get_bodypart</c> has no eyes or mouth).
+    /// </summary>
+    public static AimZone DollFaceAt(AimZone limb, int iconX, int iconY)
+    {
+        if (limb != AimZone.Head)
+            return limb;
+        if (iconX >= 15 && iconX <= 17 && (iconY == 23 || iconY == 24))
+            return AimZone.Mouth;
+        if (iconY == 26 && iconX >= 14 && iconX <= 18 || iconY >= 25 && iconY <= 27 && iconX >= 15 && iconX <= 17)
+            return AimZone.Eyes;
+        return AimZone.Head;
+    }
+
     /// <summary>The zone a health doll limb state names (<c>"head3"</c>, <c>"r_legDEAD"</c>, <see cref="HealthZones.TryParseState"/>), None for any other state.</summary>
     public static AimZone DollZoneOfState(string state)
         => HealthZones.TryParseState(state, out ZoneState zone) ? zone.Zone switch

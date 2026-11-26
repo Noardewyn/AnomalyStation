@@ -426,8 +426,8 @@ public partial class Billboard : Node3D
             up = (up with { Y = Mathf.Max(up.Y, 0f) }).Normalized();
             found = BillboardMath.RayPlane(from, dir, maxDistance, feet, right, new Vec3(up.X, up.Y, up.Z), Rect, _raster.Image, out hit);
         }
-        else
-            found = BillboardMath.RayStanding(from, dir, maxDistance, feet, right, Rect, _raster.Image, out hit);
+        else // T5b: the own body for its own eye is laid out along the view's left, as the shader draws it (face_back)
+            found = BillboardMath.RayStanding(from, dir, maxDistance, feet, _facesBack ? right * -1 : right, Rect, _raster.Image, out hit);
         if (!found)
             return false;
         distance = (float)hit.Distance;

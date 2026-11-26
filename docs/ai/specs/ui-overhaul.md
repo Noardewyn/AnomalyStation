@@ -30,15 +30,16 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `f1a2ee1` | Package T, slice T4a: eyes, mouth and groin by look; tg's gun in the mouth (protocol 95) |
 | `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 95) |
 | `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 95; signed off by the contributor 2026-11-26) |
+| `d48b027` | Package T, slice T5a: looking down shows the own body (client only; section 8, "T5a as built") |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
 Next, in this order:
-1. Package T, slice T5: targeting oneself by looking down (section 8, "T5 design, corrected by the contributor"),
-   the health doll's eyes and mouth; client only. Built in three parts: T5a the camera and the own body in view,
-   shown to the contributor as screenshots at several look angles before anything else; T5b the own body as a
-   target; T5c the doll's eyes and mouth and the ctrl-click grasp of the limb clicked.
+1. Package T, slice T5, the rest (section 8, "T5 design, corrected by the contributor"; client only): T5b the own
+   body as a target like anyone else's in every mode; T5c the health doll's eyes and mouth and the ctrl-click grasp
+   of the limb clicked. T5a's screenshots were sent to the contributor on 2026-11-26; the pivot (0.15 m) and the
+   limit (105 degrees) are theirs to tune.
 2. The prompt beside the crosshair only when the thing looked at is in reach (section 9, "Asked for by the designer
    after the reference").
 3. Package 2, slices C (native hands, held-item card) and D (alert chips).
@@ -857,6 +858,54 @@ Known limits:
 
 To tell the owner: D288 (the own body is a shadow only in first person) now has the body itself in view when the
 player looks down past about 52 degrees.
+
+### T5b and T5c as built (2026-11-26): the own body as a target, the doll's eyes, mouth and grasp
+
+Client only; the server already took a click, a hover and a throw at the sender's own mob with a zone.
+
+T5b:
+- The own mob is left out of every first-person pick except while its body is drawn for its own eye
+  (`LookDown.PickExclude`): the crosshair, the pointer in cursor mode, the throw, the drag source, pointing. No
+  special rule: body parts alone, the nearest surface wins, the zone is the part under the crosshair, in every mode.
+- What the crosshair reaches (geometry, not a choice): the eye sits ahead of the body's vertical axis along the yaw
+  and looks back along the same line, so the crosshair's ray always passes through that axis and meets the card on
+  its middle column only. From about 97 degrees it is on the own feet and legs (the left leg: the middle falls on
+  column 17), from about 103 on the groin (tg's attack text says "chest" for it), at the 105 limit 0.57 m up. The
+  chest proper would need a limit of about 135 degrees. The arms and the right leg are never under the crosshair:
+  they are reached by the pointer in cursor mode (hover and the Ctrl-click grasp; a plain click on the world does
+  nothing in cursor mode, an older rule), by the health doll and by tg's zone selector. For the contributor to
+  decide with the pivot and the limit.
+- What the body covers: only floor behind the body's own line. At 95 degrees the crosshair is about 5 cm ahead of
+  it; an item at the feet is picked up there, and from about 97 degrees the crosshair is on the own feet.
+
+T5c:
+- `BodyZoneAim.DollFaceAt` refines the doll's head into tg's eye and mouth pixels (`get_zone_at`) for an item used
+  on the doll and for the hover picture (tg's `eyes` and `mouth` states of `screen_gen.dmi`, half transparent).
+- The Ctrl-click on the doll carries the limb clicked, the head on the face pixels too: tg's self-grasp looks the
+  zone up as a body part and has none for the eyes or the mouth (found in review).
+
+Playtested against the real server (evidence: the session's scratchpad, `t5bc` and `playtest-t5bc`): a wrench swung
+with the crosshair on the own body hits "yourself in the left leg" at 98 and 100 degrees and the groin at 103 and
+105, in and out of combat mode, and an empty hand checks oneself for injuries; from 60 to 95 degrees clicks go to
+the person ahead or the floor, never to oneself; lying or at level pitch nothing lands on oneself; in cursor mode
+the Ctrl-click grasps the bleeding limb under the pointer with left and right correct, and a pointer on an empty
+sleeve reads the floor behind; dragging the own body, or the doll, onto a table climbs it and onto a chair sits; a
+throw at the own body drops the item on the own tile; on the doll the eye and mouth pictures show under the pointer
+and go away off them, a penlight gives tg's eye and mouth messages, a bruise pack on the rest of the head treats the
+head, a Ctrl-click on the eyes, the mouth and the plain head grasps the bleeding head and on each arm and leg that
+limb while the selector holds another part; the selector is not changed by the doll; the eye picture sits on the
+face in the three colourblind palettes and at 150% and 250% scale; examine and the radial work on the own body.
+
+Not driven or not confirmed: the mouth's hover picture at 150% and 250% scale (the click there lands on the mouth
+pixel; the screenshots are too small to show the picture); the free camera; a gun held to one's own mouth; two
+players at once.
+
+Known, tg's own or older:
+- The prompt on the own body never names the part (tg's hints do not depend on it for most items).
+- A gun with the crosshair on the own leg clubs the leg and does not fire (tg fires at oneself only at the mouth).
+- A toolbox used on oneself out of combat mode opens tg's tool radial, as on anyone.
+- The self-grasp's timed action has no target, so it does not freeze the zone (section 8, "T4b as built").
+- An item lying at the feet is only under the crosshair in a narrow band around 95 degrees.
 
 ## 9. Reference document checklist
 

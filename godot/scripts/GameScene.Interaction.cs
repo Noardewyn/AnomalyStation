@@ -221,6 +221,9 @@ public partial class GameScene
     private ClickTarget _hudHover; // the HUD entry the free pointer hovers (cursor mode), else none
     private TooltipMessage _hudTip;
 
+    // T5b: what the world picks leave out: the own mob, unless its body is drawn for its own eye, where it is a target like anyone (LookDown.PickExclude)
+    private long OwnPickExclude => LookDown.PickExclude(_feed.OwnEntity, _entities.OwnBodyInView);
+
     // tg's screentip of a hovered HUD entry (on_mouse_enter names it, with its click hints), drawn as the pointer's tooltip where tg's own
     // tooltip (openToolTip: action buttons, alerts) says nothing: the AI's and the cyborgs' HUD buttons have only their names (the owner, 2026-11-14)
     private TooltipMessage HudTooltip()
@@ -347,7 +350,7 @@ public partial class GameScene
         if (aiming)
         {
             (float ox, float oy, int z) = ViewerPosition();
-            long exclude = thirdPerson && pointerAim ? 0 : _feed.OwnEntity;
+            long exclude = thirdPerson && pointerAim ? 0 : OwnPickExclude;
             _pickWorld.PickExclude = exclude;
             double lead = 0;
             PickRay ray = thirdPerson ? ThirdPersonRay(camera, z, pointerAim, out lead) : MakeRay(camera, z, WorldPicker.DefaultRange);
@@ -371,11 +374,11 @@ public partial class GameScene
                     Vector3 origin = camera.ProjectRayOrigin(at), dir = camera.ProjectRayNormal(at);
                     ray = Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, dir.X, -dir.Z, dir.Y, WorldPicker.DefaultRange), camera);
                 }
-                _hit = _throwModeOn ? _picker.PickThrow(ray, _feed.OwnEntity) : _picker.Pick(ray, _feed.OwnEntity);
+                _hit = _throwModeOn ? _picker.PickThrow(ray, exclude) : _picker.Pick(ray, exclude);
                 // Nothing within the ordinary range (open space, a long corridor): the click lands on what is in view farther on, as BYOND's
                 // screen always has a turf under the mouse (a ranged item's target: the extinguisher's spray and its push in zero gravity).
                 if (!_hit.IsHit && !_throwModeOn)
-                    _hit = _picker.PickInView(ray, _feed.OwnEntity);
+                    _hit = _picker.PickInView(ray, exclude);
             }
             _hitShape = _hit.IsHit ? _picker.LastShape : null;
             (_throwRay, _throwThird, _throwLead, _throwExclude) = (ray, thirdPerson, lead, exclude); // the one-key throw's pick (ThrowAtCrosshair)
@@ -536,7 +539,7 @@ public partial class GameScene
     {
         if (_throwRay is not PickRay ray)
             return;
-        PickHit hit = _throwModeOn ? _hit : _throwThird ? _picker.PickToRangeFrom(ray, _throwExclude, _throwLead + WorldPicker.ThrowRange) : _picker.PickThrow(ray, _feed.OwnEntity);
+        PickHit hit = _throwModeOn ? _hit : _throwThird ? _picker.PickToRangeFrom(ray, _throwExclude, _throwLead + WorldPicker.ThrowRange) : _picker.PickThrow(ray, _throwExclude);
         SendThrow(ClickTarget.Of(hit));
     }
 
@@ -557,7 +560,7 @@ public partial class GameScene
     {
         // D183: with an item in the active hand, a click on a limb of the health doll is a click on the own mob aimed at that limb
         ClickTarget target = DragModel.SelfItemClickOnDoll(clicked, modifiers, _viewModel?.HasItem == true, _hudLayer.IsDoll, _feed.OwnEntity,
-            clicked.Kind == TargetKind.Screen ? _hudLayer.DollZoneAt(clicked.Id, clicked.IconX, clicked.IconY) : AimZone.None);
+            clicked.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(clicked.Id, clicked.IconX, clicked.IconY), clicked.IconX, clicked.IconY) : AimZone.None);
         ClickTarget aimed = target;
         // DV30: a click on a mob's picture aims at the body part under the crosshair (the server selects it as tg's zone_selected)
         if (target.Kind == TargetKind.Entity && target.IconX != 0)
@@ -609,7 +612,7 @@ public partial class GameScene
                 Vector3 origin = camera.ProjectRayOrigin(pointer), direction = camera.ProjectRayNormal(pointer);
                 ray = Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, direction.X, -direction.Z, direction.Y, WorldPicker.ViewRange), camera);
             }
-            PickHit pointed = _picker.PickPoint(ray, _feed.OwnEntity, lead);
+            PickHit pointed = _picker.PickPoint(ray, OwnPickExclude, lead);
             if (pointed.IsHit && (!_fovOn || _fov.CellVisible(pointed.X, pointed.Y, _fov.Z)))
                 // DV232: the aim from the eye through the point aimed at, where the server puts the arrow
                 SendClick(ClickTarget.Of(pointed), button, modifiers, PlaySession.AimOf(_rig.Mode == CameraMode.Orbit ? EyeRay(ray, ox, oy, z, pointed) : ray));
@@ -800,9 +803,9 @@ public partial class GameScene
         Vector3 origin = camera.ProjectRayOrigin(pointer);
         Vector3 dir = camera.ProjectRayNormal(pointer);
         (_, _, int z) = _session.Prediction.RenderPosition();
-        _pickWorld.PickExclude = _feed.OwnEntity;
+        _pickWorld.PickExclude = OwnPickExclude;
         PickRay ray = Viewed(new PickRay(origin.X, -origin.Z, origin.Y - TileSpace.WorldY(z), z, dir.X, -dir.Z, dir.Y, WorldPicker.DefaultRange), camera);
-        PickHit hit = _picker.Pick(ray, _feed.OwnEntity);
+        PickHit hit = _picker.Pick(ray, OwnPickExclude);
         shape = _picker.LastShape;
         return hit;
     }
@@ -820,7 +823,8 @@ public partial class GameScene
         {
             case DragOutcome.Click:
                 if (DragModel.ClickIsSent(release, _cameraEye))
-                    SendClick(DragModel.SelfCtrlClickOnDoll(release.Source, release.Modifiers, _hudLayer.IsDoll, _feed.OwnEntity), release.Button, release.Modifiers);
+                    SendClick(DragModel.SelfCtrlClickOnDoll(release.Source, release.Modifiers, _hudLayer.IsDoll, _feed.OwnEntity,
+                        release.Source.Kind == TargetKind.Screen ? _hudLayer.DollZoneAt(release.Source.Id, release.Source.IconX, release.Source.IconY) : AimZone.None), release.Button, release.Modifiers);
                 break;
             case DragOutcome.Drop:
                 release = DragModel.SelfFromDoll(release, _hudLayer.IsDoll, _feed.OwnEntity); // DV417

@@ -82,6 +82,13 @@ public static class LookDown
         => firstPerson && onTurf && !ghost && !observing && !lying && !limp && !exosuit && !scoped && -pitch >= BodyFrom(fovDegrees, nearMetres, eyeMetres);
 
     /// <summary>
+    /// Slice T5b (the contributor, 2026-11-24: "your body should count as a target when you're looking at it, same as targeting other people"): the
+    /// entity the world picks leave out: the own mob <paramref name="ownEntity"/>, except while its body is drawn for its own eye
+    /// (<paramref name="bodyShown"/>, <see cref="ShowsOwnBody"/>), when it is hit on its body parts as anyone else is (0: nothing left out).
+    /// </summary>
+    public static long PickExclude(long ownEntity, bool bodyShown) => bodyShown ? 0 : ownEntity;
+
+    /// <summary>
     /// How far the first-person held things are lowered out of the view (0: where they are held, 1: all the way down) while the own body is shown:
     /// none at <see cref="BodyFrom"/>, all within <see cref="HeldLowerDegrees"/> more, smoothly.
     /// </summary>

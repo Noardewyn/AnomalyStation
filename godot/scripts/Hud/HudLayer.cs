@@ -99,6 +99,15 @@ void fragment() {
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
 
+    /// <summary>
+    /// Slice T5c: the doll's part under the free pointer (<see cref="DollZoneAt"/> refined by <see cref="BodyZoneAim.DollFaceAt"/>; None off the doll). Over the eyes or the mouth tg's own hover
+    /// picture of the zone selector (<c>obj/effect/overlay/zone_sel</c>: screen_gen.dmi's "eyes" or "mouth", alpha 128) is drawn on the doll. Set by
+    /// the scene each frame.
+    /// </summary>
+    public AimZone DollHover { get; set; }
+
+    private static readonly Dictionary<string, Texture2D> FacePictures = new();
+
     /// <summary>Where what stands left of the doll panel and the combat pill must end (the prompts beside the crosshair), screen pixels; infinity while neither is shown.</summary>
     public float PanelLeftEdge { get; private set; } = float.PositiveInfinity;
 
@@ -745,6 +754,28 @@ void fragment() {
             else if (state.Kind == ZoneKind.Dead)
                 total += HealthZones.MaxLevel;
         }
+        // slice T5c: tg's hover picture of the eyes or the mouth under the pointer, over the limbs on the doll's own icon square
+        string face = item.Role != LiveHudRole.Doll ? null : DollHover switch { AimZone.Eyes => "eyes", AimZone.Mouth => "mouth", _ => null };
+        Texture2D facePicture = face != null && real != null ? FacePicture(real.Library, face) : null;
+        if (facePicture != null)
+        {
+            item.Face ??= NewRect(item.Container, null);
+            item.Container.MoveChild(item.Face, -1); // over zone pictures made since
+            item.Face.Modulate = new Color(1f, 1f, 1f, 128f / 255f); // tg's alpha of the hover overlay
+            Apply(item.Face, facePicture, item.IconSquare);
+        }
+        if (item.Face != null)
+            item.Face.Visible = facePicture != null;
+    }
+
+    // tg's zone selector's hover picture of a zone (screen_gen.dmi), loaded once
+    private static Texture2D FacePicture(IconLibrary icons, string state)
+    {
+        if (!FacePictures.TryGetValue(state, out Texture2D texture))
+            FacePictures[state] = texture = icons.GetSheet("icons/hud/screen_gen.dmi") is IconSheet sheet && sheet.TryGetState(state, out IIconState found)
+                ? ImageTexture.CreateFromImage(AppearanceTextures.ToImage(found.Get(0, 0)))
+                : null;
+        return texture;
     }
 
     private static TextureRect NewRect(Control parent, Material material)
@@ -823,6 +854,7 @@ void fragment() {
         public int OriginX, OriginY;
         public LiveHudRole Role; // ui-overhaul.md section 6: the doll and the combat toggle are re-placed, the zone selector shown in cursor mode only
         public HudRect IconSquare; // a doll entry's own 32 x 32 icon square, where it is drawn (what Collect reports)
+        public TextureRect Face; // slice T5c: tg's eyes or mouth hover picture on the doll
         public readonly List<ZoneNode> Zones = new();
     }
 

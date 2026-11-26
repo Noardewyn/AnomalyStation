@@ -140,16 +140,57 @@ public class DragModelTests
     [Fact]
     public void ACtrlClickOnTheHealthDollIsACtrlClickOnTheOwnMob()
     {
-        // DV72: tg's ctrl-click on oneself (the self grasp) through the doll; no icon pixel, so no aim zone (DV30): the zone selector's
+        // DV72: tg's ctrl-click on oneself (the self grasp) through the doll; slice T5c: aimed at the doll's part clicked (DV30), so that limb is
+        // grasped; off the doll's parts no zone: the zone selector's
         var doll = new ClickTarget(TargetKind.Screen, 40, 0, 0, 0, 10, 10);
         var slot = new ClickTarget(TargetKind.Screen, 41, 0, 0, 0, 10, 10);
         bool IsDoll(long id) => id == 40;
-        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0), DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl, IsDoll, 99));
-        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0), DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl | ClickModifiers.Shift, IsDoll, 99));
-        Assert.Equal(doll, DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.None, IsDoll, 99)); // a plain click is tg's self-check
-        Assert.Equal(doll, DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Alt, IsDoll, 99));
-        Assert.Equal(slot, DragModel.SelfCtrlClickOnDoll(slot, ClickModifiers.Ctrl, IsDoll, 99));
-        Assert.Equal(doll, DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl, IsDoll, 0)); // no own mob yet
+        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0, 0, 0, AimZone.LeftArm), DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl, IsDoll, 99, AimZone.LeftArm));
+        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0, 0, 0, AimZone.RightLeg), DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl | ClickModifiers.Shift, IsDoll, 99, AimZone.RightLeg));
+        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0), DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl, IsDoll, 99, AimZone.None));
+        Assert.Equal(doll, DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.None, IsDoll, 99, AimZone.LeftArm)); // a plain click is tg's self-check
+        Assert.Equal(doll, DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Alt, IsDoll, 99, AimZone.LeftArm));
+        Assert.Equal(slot, DragModel.SelfCtrlClickOnDoll(slot, ClickModifiers.Ctrl, IsDoll, 99, AimZone.LeftArm));
+        Assert.Equal(doll, DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl, IsDoll, 0, AimZone.LeftArm)); // no own mob yet
+    }
+
+    [Fact]
+    public void TheHealthDollsHeadHoldsTgsEyesAndMouthPixelByPixel()
+    {
+        // Slice T5c: tg's zone selector's get_zone_at on the 32 x 32 doll: eyes rows 25 to 27 columns 15 to 17, plus 14 and 18 on row 26; mouth
+        // rows 23 and 24 columns 15 to 17; the rest of the head is the head
+        var eyes = new HashSet<(int, int)> { (14, 26), (18, 26) };
+        var mouth = new HashSet<(int, int)>();
+        for (int x = 15; x <= 17; x++)
+        {
+            for (int y = 25; y <= 27; y++)
+                eyes.Add((x, y));
+            mouth.Add((x, 23));
+            mouth.Add((x, 24));
+        }
+        for (int x = 1; x <= 32; x++)
+            for (int y = 1; y <= 32; y++)
+            {
+                Assert.Equal(eyes.Contains((x, y)) ? AimZone.Eyes : mouth.Contains((x, y)) ? AimZone.Mouth : AimZone.Head, BodyZoneAim.DollFaceAt(AimZone.Head, x, y));
+                // only the head is refined: any other limb (or none) under those pixels stays itself
+                Assert.Equal(AimZone.Chest, BodyZoneAim.DollFaceAt(AimZone.Chest, x, y));
+                Assert.Equal(AimZone.None, BodyZoneAim.DollFaceAt(AimZone.None, x, y));
+            }
+        Assert.Equal(11, eyes.Count);
+        Assert.Equal(6, mouth.Count);
+    }
+
+    [Fact]
+    public void AnItemOnTheDollsEyesOrMouthUsesThemAndACtrlClickThereGraspsTheHead()
+    {
+        // Slice T5c: an item click on the doll carries the eyes or the mouth; the ctrl-click grasp carries the limb (the head), since tg's
+        // get_bodypart has no eyes or mouth to grasp
+        var doll = new ClickTarget(TargetKind.Screen, 40, 0, 0, 0, 16, 26);
+        bool IsDoll(long id) => id == 40;
+        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0, 0, 0, AimZone.Eyes), DragModel.SelfItemClickOnDoll(doll, ClickModifiers.None, true, IsDoll, 99, BodyZoneAim.DollFaceAt(AimZone.Head, 16, 26)));
+        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0, 0, 0, AimZone.Mouth), DragModel.SelfItemClickOnDoll(doll, ClickModifiers.None, true, IsDoll, 99, BodyZoneAim.DollFaceAt(AimZone.Head, 16, 23)));
+        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0, 0, 0, AimZone.Head), DragModel.SelfItemClickOnDoll(doll, ClickModifiers.None, true, IsDoll, 99, BodyZoneAim.DollFaceAt(AimZone.Head, 13, 28)));
+        Assert.Equal(new ClickTarget(TargetKind.Entity, 99, 0, 0, 0, 0, 0, AimZone.Head), DragModel.SelfCtrlClickOnDoll(doll, ClickModifiers.Ctrl, IsDoll, 99, AimZone.Head));
     }
 
     [Fact]

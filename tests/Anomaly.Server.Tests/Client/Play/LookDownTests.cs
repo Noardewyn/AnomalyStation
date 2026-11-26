@@ -222,6 +222,15 @@ public class LookDownTests
     }
 
     [Fact]
+    public void TheOwnMobIsATargetOnlyWhileItsBodyIsShownToItsOwnEye()
+    {
+        // Slice T5b: shown (looking down far enough), nothing is left out of the pick; otherwise the own mob is, as before
+        Assert.Equal(0, LookDown.PickExclude(42, bodyShown: true));
+        Assert.Equal(42, LookDown.PickExclude(42, bodyShown: false));
+        Assert.Equal(0, LookDown.PickExclude(0, bodyShown: false)); // no own mob
+    }
+
+    [Fact]
     public void TheOwnBodyShowsItsFrontToItsOwnEyeLookingDownPastStraightDown()
     {
         // The body at tile (10, 10) facing north (yaw byte 0); the frame is the one a viewer ahead of it along the view's yaw sees (EntityLayer's

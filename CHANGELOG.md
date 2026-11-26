@@ -7,6 +7,12 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+## [1.14.0-pre-alpha] - 2026-11-26
+
+### Protocol
+
+- Network protocol 97: clients and servers older than 1.14.0-pre-alpha cannot connect to this version.
+
 ### Added
 
 - Joining shows a loading screen while the station is built and loaded; your character enters the round only once the game is ready.

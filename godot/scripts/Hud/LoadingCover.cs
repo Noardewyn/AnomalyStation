@@ -46,7 +46,9 @@ public partial class LoadingCover : Control
         _bar.AddThemeStyleboxOverride("fill", new StyleBoxFlat { BgColor = new Color(0.45f, 0.68f, 1f) });
         var line = new HBoxContainer { MouseFilter = MouseFilterEnum.Ignore };
         line.AddChild(StatusLabel);
-        _bottom = new VBoxContainer { MouseFilter = MouseFilterEnum.Ignore, GrowVertical = GrowDirection.Begin };
+        // (laid out before the status line has its width, the line wraps a letter a row and makes the box tall; a box never shrinks back, so its
+        // contents keep to its bottom edge)
+        _bottom = new VBoxContainer { MouseFilter = MouseFilterEnum.Ignore, GrowVertical = GrowDirection.Begin, Alignment = BoxContainer.AlignmentMode.End };
         _bottom.AddChild(line);
         _bottom.AddChild(_bar);
         AddChild(_bottom);

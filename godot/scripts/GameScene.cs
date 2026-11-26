@@ -41,7 +41,8 @@ public partial class GameScene : Node3D
     private IconLibrary _ghostIcons;
     // Third-person play (the owner, 2026-10-16): the own mob's line of sight and its shade (Space Station 14's FOV).
     private int _hideAbove; // the own level in the third person: the levels above it are not drawn (0: all are)
-    private Func<float, float, int, bool> _belowView; // the entities' sight while they are hidden (_hideAbove), made once
+    private Func<float, float, int, bool> _inView; // the entities' sight (the own stack, _hideAbove, the third person's field of view), made once
+    private int _viewLevel; // the own mob's level, 0 without one
     private readonly FovMask _fov = new();
     private FovShadow _fovShadow;
     private bool _fovOn;
@@ -735,8 +736,11 @@ public partial class GameScene : Node3D
         _map.SetSight(_fovOn ? _fov : null, EditorOn ? _editorLevel : hasOwn ? pose.Z : 0, _hideAbove);
         if (_light != null)
             _light.LevelsAboveHidden = _hideAbove != 0;
-        _entities.InSight = EditorOn ? _editorInSight ??= (_, _, z) => EditorLevelShown(z) : _hideAbove != 0 ? _belowView ??= (x, y, z) => z <= _hideAbove && (!_fovOn || _fov.PointVisible(x, y, z))
-            : _fovOn ? _fov.PointVisible : null;
+        // the things of the own level's stack only, as the map draws them: a server without interest sends every level's (Lavaland's mobs hung over the station)
+        _viewLevel = hasOwn ? (int)pose.Z : 0;
+        _entities.InSight = EditorOn ? _editorInSight ??= (_, _, z) => EditorLevelShown(z) : _viewLevel != 0 || _hideAbove != 0 || _fovOn ? _inView ??= (x, y, z) =>
+            (_viewLevel == 0 || (_feed?.Replica?.SameStack(z, _viewLevel) ?? true)) && (_hideAbove == 0 || z <= _hideAbove) && (!_fovOn || _fov.PointVisible(x, y, z))
+            : null;
         _entities.SeeMobs = hasOwn && !observing && ObserverVision.SeesMobs(_feed.Replica?.OwnVision ?? VisionState.Normal, ghost,
             _feed.Replica.TryGet(own, out ReplicaEntity seer) ? seer.State.Posture : (byte)0);
         _entities.PlayerNames = _options.PlayerNames && !_interfaceHiddenNow; // the hidden interface hides the names over heads too

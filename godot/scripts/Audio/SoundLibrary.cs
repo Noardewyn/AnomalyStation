@@ -119,6 +119,7 @@ public sealed class SoundLibrary
             return null;
         }
         AudioStream stream = null;
+        long started = System.Diagnostics.Stopwatch.GetTimestamp();
         switch (format)
         {
             case "ogg":
@@ -139,6 +140,7 @@ public sealed class SoundLibrary
             Miss(path, "Godot could not read " + file + " as " + format);
             return null;
         }
+        AssetPreload.Miss("sound", path, System.Diagnostics.Stopwatch.GetElapsedTime(started).TotalMilliseconds, blocked: true);
         if (bytes <= 0)
             bytes = new FileInfo(file).Length;
         LoadedFiles++;

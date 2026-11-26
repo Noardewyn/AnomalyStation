@@ -48,7 +48,17 @@ public static class AssetPreload
     /// <summary>Starts the preload once (the paths are read here, on the main thread).</summary>
     public static void Start()
     {
-        if (_files != null || System.Environment.GetEnvironmentVariable("ANOMALY_PRELOAD") == "0" || !IconPaths.Exists)
+        if (_files != null)
+            return;
+        IconLibrary.ProbeLoaded += (resource, ms) =>
+        {
+            if (resource.StartsWith("gags:", StringComparison.Ordinal) || resource.StartsWith(IconOps.Prefix, StringComparison.Ordinal))
+                return; // made of sheets, no load of its own
+            const string worker = " (background)";
+            bool blocked = !resource.EndsWith(worker, StringComparison.Ordinal);
+            Miss("sheet", blocked ? resource : resource[..^worker.Length], ms, blocked);
+        };
+        if (System.Environment.GetEnvironmentVariable("ANOMALY_PRELOAD") == "0" || !IconPaths.Exists)
             return;
         string icons = _iconRoot = Path.GetFullPath(IconPaths.Root);
         string models = ModelLibrary.Root;
@@ -191,6 +201,47 @@ public static class AssetPreload
             SheetImages[bytes] = true; // a sheet's picture: not decoded here (the join decodes the round's sheets)
         return bytes;
     }
+
+    // ---- what was not ready when it was first used, once the world is shown ----
+
+    private static readonly HashSet<string> Missed = new(StringComparer.Ordinal);
+    private static volatile bool _watching;
+
+    /// <summary>The world is shown (on) or a new one loads (off): from then on each sheet, model or sound loaded for the first time is logged.</summary>
+    public static bool Watching
+    {
+        get => _watching;
+        set => _watching = value;
+    }
+
+    /// <summary>The distinct sheets, models and sounds loaded after the world was shown (the client summary's <c>preload_misses</c>).</summary>
+    public static int Misses
+    {
+        get
+        {
+            lock (Missed)
+                return Missed.Count;
+        }
+    }
+
+    /// <summary>
+    /// A <paramref name="kind"/> (sheet, model, sound) loaded for the first time after the world was shown, <paramref name="ms"/> long, on the main
+    /// thread (<paramref name="blocked"/>: the frame waited) or a worker: logged once each, so the join's common list can grow.
+    /// </summary>
+    public static void Miss(string kind, string name, double ms, bool blocked)
+    {
+        if (!_watching)
+            return;
+        lock (Missed)
+        {
+            if (!Missed.Add(kind + " " + name))
+                return;
+        }
+        GD.Print(string.Create(CultureInfo.InvariantCulture, $"[anomaly] preload miss: {kind} {name} {ms:0.0} ms{(blocked ? ", in the frame" : ", on a worker")}"));
+    }
+
+    /// <summary>The preloaded icon files under <paramref name="folder"/> ("icons/hud/"), by their paths.</summary>
+    public static IEnumerable<string> IconsUnder(string folder) => Icons.Keys.Where(k => k.StartsWith(folder, StringComparison.OrdinalIgnoreCase));
 
     /// <summary>A converted icon file's bytes by its path under the icons' root ("icons/obj/doors/airlock.png").</summary>
     public static bool TryIconBytes(string relative, out byte[] bytes)

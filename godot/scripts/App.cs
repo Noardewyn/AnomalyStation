@@ -538,7 +538,7 @@ public partial class App : Node
             GD.Print($"[frameprobe] summary {frames}");
         if (DisplayServer.GetName() != "headless")
             GD.Print("[anomaly] pipeline compilations at the end: " + Render.ShaderWarmUp.Pipelines());
-        GD.Print($"[anomaly] client summary: {summary ?? "no game was started"} exit={exitCode}");
+        GD.Print($"[anomaly] client summary: {summary ?? "no game was started"} preload_misses={Render.AssetPreload.Misses} exit={exitCode}");
 #if ANOMALY_EDITOR
         Play?.Dispose();
         Editor?.Dispose(); // the map editor's world

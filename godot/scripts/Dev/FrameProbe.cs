@@ -46,7 +46,7 @@ public static class FrameProbe
     static FrameProbe()
     {
         if (On)
-            Anomaly.Client.Shared.Icons.IconLibrary.ProbeLoaded = (resource, ms) =>
+            Anomaly.Client.Shared.Icons.IconLibrary.ProbeLoaded += (resource, ms) =>
             {
                 if (!resource.EndsWith("(background)", StringComparison.Ordinal)) // a worker thread's: not this frame's time
                     Add("icon load", ms);

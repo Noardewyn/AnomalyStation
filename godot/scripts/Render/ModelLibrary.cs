@@ -655,7 +655,10 @@ public sealed class ModelLibrary
             return file;
         long start = Stopwatch.GetTimestamp();
         if (_root != Root || !AssetPreload.TryGlb(Inside(relative), out file))
+        {
             file = GlbFile.Read(System.IO.File.ReadAllBytes(Path.Combine(_root, Inside(relative))), uri => GlbFile.TgIcon(uri) is string icon ? ImageBytes(icon) : null);
+            AssetPreload.Miss("model", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds, blocked: true);
+        }
         Anomaly.Client.Dev.FrameProbe.Item("glb", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
         _files[relative] = file;
         return file;

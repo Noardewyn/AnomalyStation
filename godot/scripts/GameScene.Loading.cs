@@ -1,9 +1,11 @@
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using Godot;
 using Anomaly.Client.Hud;
 using Anomaly.Client.Render;
 using Anomaly.Client.Shared;
+using Anomaly.Client.Shared.Icons;
 
 namespace Anomaly.Client;
 
@@ -54,6 +56,8 @@ public partial class GameScene
         layer.AddChild(_cover);
         AddChild(layer);
         _buildTextures = textures;
+        _icons = textures.Library;
+        AssetPreload.Watching = false; // (a new round's world loads: what it reads now is no miss)
         _building = _map.BuildSteps(_feed.Map, _feed.Replica, textures);
     }
 
@@ -65,6 +69,8 @@ public partial class GameScene
         {
             if (_cover != null && !_leaving)
                 StepCover();
+            else if (_icons != null && !_leaving)
+                PrefetchRound(); // (after the reveal too: a sheet named anew starts decoding before the first thing that draws it)
             return false;
         }
         if (_leaving)
@@ -78,6 +84,7 @@ public partial class GameScene
             _cover.Status = string.Create(CultureInfo.InvariantCulture, $"Loading the game's files... {AssetPreload.Progress:P0}");
             return true;
         }
+        PrefetchRound(common: false); // (their decodes run beside the build, which waits for one it needs rather than reading it again)
         long start = Stopwatch.GetTimestamp();
         bool more;
         using (Dev.FrameProbe.Scope("loading/build"))
@@ -144,6 +151,9 @@ public partial class GameScene
     {
         if (!AssetPreload.SoundsDone)
             return string.Create(CultureInfo.InvariantCulture, $"Loading the sounds... {AssetPreload.Progress:P0}");
+        PrefetchRound();
+        if (Pending() is { } sheets)
+            return sheets;
         if (!_warmUp.Done)
         {
             _warmUp.Step(this, _rig.Camera, CoverLayer);
@@ -153,6 +163,52 @@ public partial class GameScene
     }
 
     private readonly ShaderWarmUp _warmUp = new();
+
+    // The round's sprite sheets, decoded on worker threads behind the cover: every sheet the replica's resource tables name (more come with the
+    // things around the body after the late join), and IconPrefetch's common folders, but no giant (IconPrefetch.Ahead).
+    private IconLibrary _icons;
+    private readonly HashSet<string> _ahead = new(StringComparer.Ordinal);
+    private long _aheadBytes;
+    private int _publicResources, _privateResources;
+    private bool _commonAhead;
+
+    // The common folders' only once the scene is made: hundreds of decodes at once beside FinishReady stretched its frame from 0.6 to 1.7 s.
+    private void PrefetchRound(bool common = true)
+    {
+        Anomaly.Protocol.ReplicaWorld replica = _feed.Replica;
+        for (; _publicResources < replica.Resources.Count; _publicResources++)
+            Ahead(replica.Resources[_publicResources]);
+        for (; _privateResources < replica.PrivateResources.Count; _privateResources++)
+            Ahead(replica.PrivateResources[_privateResources]);
+        if (_commonAhead || !common)
+            return;
+        _commonAhead = true;
+        foreach (string sheet in IconPrefetch.CombatSheets.Concat(IconPrefetch.CommonSheets))
+            Ahead(sheet);
+        foreach (string folder in IconPrefetch.CommonFolders)
+            foreach (string png in AssetPreload.IconsUnder(folder).Where(f => f.EndsWith(".png", StringComparison.OrdinalIgnoreCase)).ToArray())
+                Ahead(png[..^4] + ".dmi");
+    }
+
+    private void Ahead(string resource)
+    {
+        if (resource == null || !resource.EndsWith(".dmi", StringComparison.Ordinal) || _ahead.Contains(resource))
+            return;
+        string stem = (resource.StartsWith("./", StringComparison.Ordinal) ? resource[2..] : resource)[..^4];
+        AssetPreload.TryIconBytes(stem + ".png", out byte[] png);
+        if (!IconPrefetch.Ahead(resource, png))
+            return;
+        _ahead.Add(resource);
+        _aheadBytes += Math.Max(0, IconPrefetch.DecodedBytes(png));
+        _icons.Prefetch(resource);
+    }
+
+    // The sheets still decoding (the status line), or null.
+    private string Pending()
+    {
+        _icons.Pump();
+        return _icons.PendingCount > 0 ? string.Create(CultureInfo.InvariantCulture, $"Decoding the round's pictures... {_icons.PendingCount} left") : null;
+    }
 
     private void SendLoaded(double now)
     {
@@ -165,16 +221,30 @@ public partial class GameScene
         }
     }
 
+    private const double CoverQuietSeconds = 0.5;
+    private const int CoverQuietChange = 16;
+    private int _quietCount = -1000;
+    private double _quietSince;
+
     // What the cover waits for once the server was told (its status line), or null for nothing.
     private string CoverWaitsFor(double now)
     {
         App app = App.Instance;
         if (app.Editing)
             return null; // the map editor has no player: its world is shown once built
+        PrefetchRound(); // (the round's things around the body arrive after the late join)
+        if (Pending() is { } sheets)
+            return sheets;
         if (InLobby)
             return null; // tg's lobby: its window is the screen
         if (!_ownSeen)
             return now - _loadedAt > 1.5 ? "Waiting for the round to start..." : "Joining the round...";
+        // the server streams the things around a new body over the ticks after its join (the interest's join budget): the cover stays until
+        // the count has stood about still for CoverQuietSeconds
+        if (Math.Abs(_feed.Count - _quietCount) > CoverQuietChange)
+            (_quietCount, _quietSince) = (_feed.Count, now);
+        if (now - _quietSince < CoverQuietSeconds)
+            return "Placing the things around you...";
         RenderPose pose = default;
         if (_feed.Replica.TryGet(_feed.OwnEntity, out var own) && _session.Poses.TryGetPose(own, out pose)
             && _entities.PendingNear(pose.X, pose.Y, CoverNearTiles) > 0)
@@ -201,6 +271,10 @@ public partial class GameScene
         if (app.Args.Bench)
             _bench = new BenchRunner(app.Args, _feed, _map, _rig, GetViewport(), _light, _map.LoadSeconds, _options.CustomGraphics);
         app.GameStarted();
+        AssetPreload.Watching = true;
+        System.Diagnostics.Process self = System.Diagnostics.Process.GetCurrentProcess();
+        GD.Print(string.Create(CultureInfo.InvariantCulture,
+            $"[anomaly] loading: {_ahead.Count} sheets decoded ahead (about {_aheadBytes / 1048576.0:0} MB), {_icons.Loaded} in the library; managed heap {GC.GetTotalMemory(false) / 1048576.0:0} MB, working set {self.WorkingSet64 / 1048576.0:0} MB"));
         Dev.FrameProbe.Restart();
         GD.Print(string.Create(CultureInfo.InvariantCulture,
             $"[anomaly] loading: the world is shown ({why}): map built in {_map.LoadSeconds:0.00} s, then {now - _builtAt:0.00} s of loading"));

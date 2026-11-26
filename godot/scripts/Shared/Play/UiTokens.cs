@@ -156,7 +156,7 @@ public static class UiTokens
     /// <summary>... and over a dark one (a colourblind palette's worst levels): white lines, more see-through.</summary>
     public const uint HatchLight = 0xFFFFFF99;
 
-    // ---- the doll panel at the middle right and the combat pill under it (LiveHud.Layout) ----
+    // ---- the doll panel and the combat pill under it: the vitals column at the right edge, or the reduced column left of tg's (LiveHud.Layout) ----
 
     /// <summary>The doll's picture is this many screen pixels per tg pixel at the reference size (an integer multiple at every size).</summary>
     public const float DollPixels = 3f;
@@ -235,35 +235,81 @@ public static class UiTokens
     /// <summary>The gap between a hand box and the hotbar.</summary>
     public const float HandGap = 8f;
 
-    /// <summary>The widest the swap-hand chip and its text above the right hand are (the text is cut to fit).</summary>
-    public const float SwapChipWidth = 150f;
+    /// <summary>The swap-hands key cap in the inactive hand box's top outer corner: its height ...</summary>
+    public const float SwapCapHeight = 18f;
 
-    /// <summary>The gap between a hand box and the swap-hand chip above it.</summary>
-    public const float SwapChipGap = 4f;
+    /// <summary>... the room between it and the box's edges ...</summary>
+    public const float SwapCapInset = 3f;
 
-    // ---- the held-item card at the bottom right, above tg's two-row menu and under the doll panel (LiveHud.Layout) ----
+    /// <summary>... and its text size.</summary>
+    public const float SwapCapFont = 12f;
 
-    /// <summary>The card's width.</summary>
-    public const float CardWidth = 180f;
+    /// <summary>A handcuffed or blocked hand (tg's handcuff or blocked overlay on its box): its border, whether it is the active hand or not ...</summary>
+    public const uint HandMarkedBorder = Security;
 
-    /// <summary>The room inside the card's edges.</summary>
-    public const float CardPad = 8f;
+    /// <summary>... and its lighter fill, so that tg's mark over it reads at a glance.</summary>
+    public const uint HandMarkedBack = 0x5A6470D9;
 
-    /// <summary>The side of the held item's picture at the card's top left (the hand's name beside it).</summary>
-    public const float CardPicture = 48f;
+    // ---- the held-item hint strip over the hands (LiveHud.HintBy; the designer, 2026-11-26): the combat pill's height, dark fill and rounded ends ----
 
-    /// <summary>The gap between the picture and the key lines under it.</summary>
-    public const float CardHeaderGap = 6f;
+    /// <summary>The room at each end of the strip.</summary>
+    public const float HintPad = 8f;
 
-    /// <summary>The card's height: the picture, and three key lines (use, drop, throw) of a chip each.</summary>
-    public const float CardHeight = 2 * CardPad + CardPicture + CardHeaderGap + 2 * PromptLine + ChipHeight;
+    /// <summary>The gap after the item's picture and between two entries.</summary>
+    public const float HintGap = 12f;
 
-    /// <summary>The card's fill.</summary>
-    public const uint CardBack = DollPanelBack;
+    /// <summary>The gap between an entry's key cap and its verb.</summary>
+    public const float HintCapGap = 6f;
+
+    /// <summary>The strip's text and caps: a share of the prompts' size ...</summary>
+    public const float HintShare = 0.8f;
+
+    /// <summary>... and the least share of the prompts' size a strip too wide for the hands' row is made smaller to; below it the strip is left out.</summary>
+    public const float HintLeastShare = 0.6f;
 
     /// <summary>
-    /// The room the doll's column leaves at the screen's top when the card makes it climb: the build's version tag (11 text units, about 32
+    /// How high tg's drop and swap buttons are drawn in their 32 x 32 squares, tg pixels from the bottom: their pictures (screen_midnight.dmi
+    /// "act_drop" and "act_swap", the default HUD style) are opaque in rows 22 to 31 of 32 only. The hint strip sits on that visible part.
+    /// </summary>
+    public const float DropSwapVisible = 10f;
+
+    /// <summary>
+    /// The room the doll's column leaves at the screen's top: the build's version tag (11 text units, about 32
     /// reference pixels with its line), the gap under it and the ping and FPS chip (StatsCorner.Top), and a margin.
     /// </summary>
     public const float CardTopRoom = 32f + 8f + StatusChipHeight + ScreenMargin;
+
+    // ---- the vitals column on the human HUD (LiveHud.Layout; the designer, 2026-11-26) ----
+
+    /// <summary>The width of the vitals column, the panel and the pill in it (never narrower than the panel's widest cell and its padding).</summary>
+    public const float VitalsWidth = 128f;
+
+    /// <summary>The gap between the column and the screen's right edge, and between the pill and tg's highest button under it.</summary>
+    public const float VitalsMargin = 8f;
+
+    /// <summary>The room inside the panel around its cells.</summary>
+    public const float VitalsPad = 8f;
+
+    /// <summary>The gap between two cells of the panel (a line of <see cref="VitalsLine"/> in its middle).</summary>
+    public const float VitalsCellGap = 4f;
+
+    /// <summary>The line between two cells: the faint rim the other hand box has.</summary>
+    public const uint VitalsLine = HandRim;
+
+    // ---- tg's alerts as a stack of chips by the doll panel (LiveHud.AlertStack; the designer, 2026-11-26) ----
+
+    /// <summary>An alert chip's side: a square holding tg's alert picture.</summary>
+    public const float AlertChip = 40f;
+
+    /// <summary>The room between a chip's edge and the alert's picture.</summary>
+    public const float AlertChipInset = 4f;
+
+    /// <summary>The gap between two chips.</summary>
+    public const float AlertChipGap = 4f;
+
+    /// <summary>The gap between the doll panel's top and the lowest chip.</summary>
+    public const float AlertStackGap = 6f;
+
+    /// <summary>The least side the chips are made when they do not fit at full size, screen pixels (not reference pixels).</summary>
+    public const float AlertChipMinPixels = 24f;
 }

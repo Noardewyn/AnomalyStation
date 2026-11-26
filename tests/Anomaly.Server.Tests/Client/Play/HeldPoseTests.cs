@@ -136,10 +136,10 @@ public class HeldPoseTests
     }
 
     [Fact]
-    public void TheHandBoxesAndTheCardShowTheHandTheViewModelHolds()
+    public void TheHandBoxesAndTheHintStripShowTheHandTheViewModelHolds()
     {
         // ui-overhaul.md section 6, slice C: the live HUD reads the active hand off the hand boxes by hand index (LiveHud), the view model off their
-        // icon states (HeldHands): through pick-ups and swaps they agree, and the active hand holds an item (the card shows) exactly when the view
+        // icon states (HeldHands): through pick-ups and swaps they agree, and the active hand holds an item (the hint strip shows) exactly when the view
         // model holds one there
         var feed = new FakeFeed("Tester", seed: 1, size: 32, bots: 0, inventory: true);
         var rig = new PlayRig(feed);
@@ -167,7 +167,7 @@ public class HeldPoseTests
         Agree(true, server.ToolboxId);
         rig.Session.Keybinding(Anomaly.Protocol.KeybindingCode.SwapHands);
         rig.Run(0.3);
-        Agree(false, 0); // the right hand, empty: no card
+        Agree(false, 0); // the right hand, empty: no hint strip
         Pick(server.WelderId);
         Agree(false, server.WelderId);
         rig.Session.Keybinding(Anomaly.Protocol.KeybindingCode.SwapHands);

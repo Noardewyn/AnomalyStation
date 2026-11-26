@@ -8,6 +8,11 @@ contributor who owns the design (the project's UI designer):
 - `docs/ai/specs/ui-overhaul-wireframes.txt` (2026-11-23, agreed on the project's Discord as the contributor reports):
   example layouts for that specification.
 
+The wireframes are rough examples, not a layout to copy (the designer, 2026-11-26: "for the wireframes, use your
+judgement in design as these are very rudamentary, feel free to change the layout if you think you have something
+better"). What each element is and does comes from the designer's notes and words; where it sits and how it looks
+is ours to design well, shown to the designer in screenshots.
+
 This file turns them into work packages. Read both source documents in full before starting a package. Order of
 authority where they disagree: what the designer has said since (recorded in this file with its date) wins over
 everything; then the designer's raw notes (the reference's Appendix A); then the reference's sections and the
@@ -32,19 +37,30 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 95; signed off by the contributor 2026-11-26) |
 | `d48b027` | Package T, slice T5a: looking down shows the own body (client only; section 8, "T5a as built") |
 | `a98d5ee` | Package T, slices T5b and T5c: the own body is a target, the doll's eyes, mouth and grasp (client only; section 8, "T5b and T5c as built") |
+| `6a3e649` | Package 2, slice C: the hands either side of the hotbar gap, the bottom slots in the gap, the held-item card (client only; section 6, "Slice C as built") |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
 Next, in this order:
-1. Open with the contributor on slice T5: the pivot (0.15 m) and the limit (105 degrees) are theirs to tune after
-   the screenshots of 2026-11-26; at those numbers the crosshair reaches only a leg and the groin of the own body
-   (section 8, "T5b and T5c as built"). Tg's zone selector stays under Tab.
+1. Slice T5's numbers, settled by the contributor on 2026-11-26 after a comparison sheet (pivots 15, 20, 25 cm at
+   105 to 150 degrees; the session's scratchpad, `pivot`): the pivot becomes 0.25 m and the downward limit 135
+   degrees (`LookDown.PivotMetres`, `MaxDownDegrees`). By the geometry the crosshair is then on the feet at 105
+   degrees, the groin at about 117 to 121 and the chest from there to 135; to confirm in the playtest. To build
+   after slice D and the in-range prompt's commit. The contributor also said: "for now we just use the inventory
+   to do operations on yourself mainly", so looking down is a secondary way and gets no more design work (no way
+   to reach the arms by look); the Tab overlay's character sprite (package 4) is the main one. Tg's zone selector
+   stays under Tab.
 2. The prompt beside the crosshair only when the thing looked at is in reach: built and playtested, parked in a
    stash with one open fault after three fix rounds (section 9, "The in-range prompt: built, parked with one open
-   fault"). It waits for the contributor's decision; nothing else depends on it.
-3. Package 2, slices C (native hands, held-item card) and D (alert chips).
+   fault"). The contributor accepted the fault on 2026-11-26; the stash is brought onto the head and committed.
+3. Package 2, slice E (section 6): no box round the vitals, tg's combat sprite back at the bottom right, tg's
+   key-duplicating buttons removed, keys for crafting, language and navigate. The devlog screenshots of the HUD
+   (`../devlog-screenshots/2026-11-26/`, outside the repository) are retaken after it.
 4. Packages 3 to 8 and what section 9 adds.
+
+Package 2, slice D (the vitals column, alert chips, hint strip) is committed after `6a3e649`; section 6, "Slice D
+as built".
 
 To tell the owner (the contributor does this; `DECISIONS.md` is not edited by us): the protocol changes of version
 95; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
@@ -379,6 +395,108 @@ Known limits:
 - On 4:3 and 5:4 screens at 230% scale and above the boxes go under 32 px for want of room.
 - The tooltip of a slot hidden under a window still shows (older).
 - The doll panel sits a little higher than in slice B, to keep the card's room.
+
+### Designs confirmed by the designer (2026-11-26); these replace what the slices table and the layout say
+
+From 2026-11-26 the manager designs each UI element and the designer confirms it before it is built; a builder gets
+the settled design and stops on any design choice it does not settle.
+
+- Alert chips (slice D): a vertical stack directly above the health doll, right-aligned with the doll panel, the
+  newest alert nearest the doll; square chips of 40 px with the doll panel's fill and rim and tg's alert picture
+  inside; no text until package 3, when each chip grows a short label to its left. Not the row at the top left of
+  Mockup 1: the stack keeps everything about the player's own state in one place and does not move with tg's
+  action buttons. tg's alert column is not drawn on the human HUD.
+  Where there is no room above the doll (the designer's second answer, the same day): the stack is above the doll
+  when five full-size chips fit between the panel and the ping chip, and otherwise in one column immediately left
+  of the doll panel, level with its top and running down. The place depends on the screen and the UI scale alone,
+  never on how many alerts show. tg's order from top to bottom in both places. Only in the left place do the chips
+  shrink (to 24 px at least) and then wrap into further columns to the left. The F3 debug lines are not an
+  obstacle.
+- The vitals column (the designer, 2026-11-26: "integrate the EKG like thing that shows the health with the health
+  doll and move the doll and icons ect all to hugh the right side so they use up less of my field of view"; the
+  tall narrow arrangement chosen from two mockups). One column 128 px wide against the right screen edge, anchored
+  above tg's bottom-right menu: the vitals panel, the pill, the held-item card. The panel is one box of four stacked
+  cells: the health doll at its whole-pixel scale S, then tg's health indicator (the EKG with its percentage), tg's
+  mood face with the hunger bar, and tg's stamina indicator, each tg's own picture at scale S-1 and still tg's
+  screen object for input; the panel's size never changes. tg's internals and suit-cell indicators become chips
+  with the alerts. The pill keeps its full word, scaled to fit. When the column does not fit the height, S steps
+  down first, then the pill shrinks; where even that does not fit (very large UI scales) a reduced column is used:
+  the doll cell and the pill just left of tg's right column, tg's status icons at tg's own places. The alert stack
+  follows the panel: above it against the edge, or left of the column.
+- Refined from the first real-server screenshots (the designer, the same day): the panel has three cells (the
+  doll, the health indicator, the mood face), not four. tg draws its stamina picture only while stamina is down,
+  so stamina is a chip with the alerts, like internals and the suit cell (alerts, then stamina, internals, suit
+  cell). The mood face is centred, and shares its cell with the hunger bar only while tg shows one. The hint strip
+  sits 6 above the visible top of tg's drop and swap buttons, not their whole icon squares.
+- Settled in review (2026-11-26): an indicator counts as shown only while tg draws something visible (its icon
+  state exists and its alpha is above zero; tg hides the hunger bar with alpha 0). Any other entry tg puts in its
+  right status column on the human HUD (an alien plasma display, say) is a chip too with the full column, after the
+  suit cell. The hint strip has the pill's height (32), fill and rounded ends, and no rim, since it is not a button.
+  While the hunger bar shows, the mood face and the bar are drawn together at the largest whole scale at which the
+  pair fits the panel; at some UI scales (125% and 150% at 1080 lines) that is one less than the face alone, so the
+  face is a size smaller while the player is hungry. Accepted: the column stays 128 wide.
+  Where more chips show than fit one column, tg's alerts keep the first column and later chips spill to the left.
+- The held-item tip ("we could also move the cards position on the screen", then chosen from mockups): the card
+  is gone from the column. A place right of the right hand was tried first and dropped the same day: tg's
+  bottom-right buttons leave room for a card there only at 100% scale on 16:9 screens. What is built is a
+  one-line hint strip centred over the hands' row, just above tg's drop and swap buttons: the active hand's item
+  picture, then use, drop and throw with their key caps, in the pill's look and height and a compact text size. No
+  count and no hand tag (the hand box shows both). Never wider than the hands' row; it scales down to fit and is
+  left out where it cannot. It takes no clicks. When package 3 sends item names, the name leads the line.
+- Swap hint (changes slice C): the labelled "[X] Swap hand" chip is gone; a small key cap with the swap key sits
+  inside the top outer corner of the inactive hand's box and moves with a swap.
+- A cuffed or missing hand (changes slice C): its box has a 2 px red border and a lighter fill, with tg's cuff or
+  blocked mark at full strength on top.
+
+### Slice D as built (2026-11-26): the vitals column, the alert chips, the hint strip
+
+Client only, as designed above. Three review rounds; the last was clean (validator PASS on 4032 tests, the stress
+tester's three reproduced faults rechecked as fixed, no findings).
+
+- Settled by the stress test: a chip's picture is always drawn inside its chip. tg throws a new alert 32 pixels to
+  the right and slides it back over a second (`alert.dm:65-66`); as a chip that slide is not played
+  (`LiveHud.ChipLook` drops the look's move, keeping turn, scale, colour and alpha). On other HUDs, and for the
+  status indicators at tg's places with the reduced column, tg's animation plays as before.
+- The hint strip and its picture stand at whole pixels (the anchor is floored). On portrait screens at very large
+  UI scales the reduced column narrows and the chips shrink below 24 px so that nothing of ours leaves the screen;
+  no landscape screen is affected.
+- Playtested on a real server at 1920x1080 and 1280x720: an empty-hand click on the doll checks yourself, an item
+  on it is used on yourself; a click on the mood face prints tg's mood readout; the pill and F toggle combat; a
+  Shift-click on a chip examines the alert and its tooltip shows; alerts kept tg's order and never changed place;
+  the hunger bar appeared beside the mood face without the panel changing size; limb damage, crit, death and
+  revival; the strip with an item and without; the key cap following a rebind; a missing arm's red box (handcuffs
+  by the builder with two clients); 100% to 300% UI scale; a cyborg and a ghost keep tg's layout.
+- Not playtested: a chip click that does more than examine (the buckled alert); the doll's eye and mouth hover in
+  the new place; a colourblind palette; an animal or alien HUD; the alien plasma display and the suit-cell chip (no
+  dev command gives the organ or the suit; unit-tested only); changing the UI scale during play.
+- Known limits: the mood face is a size smaller while the hunger bar shows at 125% and 150% on 1080 lines; the F3
+  debug text may be overlapped; an open chat window covers the strip where it covers the hands; a cyborg still
+  gets the combat pill (from slice B).
+- Seen and older than this slice: Shift+F4 pressed twice within two seconds did not bring the HUD back.
+
+### Slice E, asked for by the designer on seeing slice D (2026-11-26); built after slice D is committed
+
+"id like the box around the ekg, mood and doll removed. and those 3 icons moed more to the right ot be inline iwth
+the status icons more. the combat mode indicator should be moved but i think i prefered it when it had the original
+sprite. maybe put it back bottom right as some of the sprites there will be removed. like remove pull, throw, resist
+and rest and the crafting ect as these should all now be bound to keys correct?" Then, asked about the buttons with
+no key: remove them and give them keys; "use ss14 keybinds for them"; "use G, and move offer item to right click menu
+only when looking at someone you can talk too"; the run/walk sprite and tg's drop and swap buttons go too.
+
+- The vitals have no box: no panel fill, rim or lines. The doll, tg's health indicator and tg's mood face stack as
+  now, with their right edges on one line with the alert chips' right edge against the screen edge.
+- The combat pill is gone. tg's own combat sprite is drawn again, in the bottom-right corner in both views (to be
+  confirmed from screenshots: the designer said "bottom right"; under Tab tg's zone selector stands just left of
+  it, so the sprite never moves). The vitals stand straight above it.
+- Not drawn and not clickable on the human HUD any more: tg's pull, throw, resist, rest, run/walk, drop, swap,
+  crafting, language and navigate buttons. tg's sleep button, which tg shows only at times and which has no key,
+  becomes a chip with the alerts.
+- Keys: crafting on G and the language menu on L, as in Space Station 14 (`OpenCraftingMenu`, `OpenLanguageMenu`
+  in the forks' `Resources/keybinds.yml`); navigate on M (Space Station 14 has no such function). Each key sends
+  the click of tg's own button, so nothing changes on the server. Give item loses its key (it was G): giving is the
+  right-click wheel's "Offer item" on a person in reach, as tg offers it. The dev flashlight moves from L to U.
+- The hint strip sits 6 above the hands' row, since tg's drop and swap buttons are gone.
+- Known cost, accepted by the designer: nothing on screen shows walking or running any more.
 
 ### To confirm with the owner
 
@@ -1031,9 +1149,11 @@ Settled by the designer (2026-11-26), the three points of the row above:
 
 ### The in-range prompt: built, parked with one open fault (2026-11-26)
 
-Not committed. The change is parked in the stash entry `parked: in-range prompt (DV589)` on top of `a98d5ee`
-(`git stash list`; `git stash apply` brings it back). Three fix rounds are used up, so it waits for the contributor:
-accept the open fault as a known limit and commit, or allow one more fix round.
+Not committed yet. The change is parked in the stash entry `parked: in-range prompt (DV589)` on top of `a98d5ee`
+(`git stash list`; `git stash apply` brings it back). Three fix rounds were used up with one fault open. The
+contributor accepted that fault as a known limit on 2026-11-26 ("just accept it and make a note"): the slice is
+brought onto the branch's head, verified and committed as it is, after package 2's slice D, with the fault recorded
+below and in DV589.
 
 As built (server and client, no wire change; DV589 and protocol.md 14.2 in the stash have the full text):
 - The server answers a hover of a thing its sender cannot reach (tg's `IsReachableBy` with the held item's reach)

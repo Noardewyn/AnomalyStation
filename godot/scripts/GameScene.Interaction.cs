@@ -1325,8 +1325,11 @@ public partial class GameScene
                 At(0.75, () => _session.DevCommand("wound me r_arm slash severe"));
                 if (System.Environment.GetEnvironmentVariable("ANOMALY_SHOT_DISABLED") == "1")
                     At(0.8, () => _session.DevCommand("wound me l_arm blunt critical")); // tg's compound fracture disables the left arm (doll key 7)
+                // slice D: three of tg's alerts as chips at the top (no oxygen, weightless in the HUD's style, cold)
+                foreach (string alert in new[] { "not_enough_oxy", "weightless", "cold" })
+                    At(0.85, () => _session.DevCommand("alert me " + alert));
                 At(1.0, () => _session.ToggleCombatMode());
-                // slice C: the toolbox in the left hand, then the welder in the right, which stays active: both hand boxes and the card show
+                // slice C: the toolbox in the left hand, then the welder in the right, which stays active: both hand boxes and the hint strip show
                 Pick(server.ToolboxId, 1.1);
                 At(1.9, () => _session.Keybinding(KeybindingCode.SwapHands));
                 Pick(server.WelderId, 2.1);

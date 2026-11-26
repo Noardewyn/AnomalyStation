@@ -86,7 +86,7 @@ public sealed class FakeServerOptions
 /// <item><description>the player's frames go through a jitter buffer (one frame per tick, the last one repeated when none came, the oldest dropped above the cap, 4) and the private block carries the state after the last applied frame, the parameters and the buffer's depth;</description></item>
 /// <item><description>rest (lying at once, getting up takes 1 s), walk or run (tg's 4 and 1.5 deciseconds per tile, crawling adds 4), combat mode, a left click on a mob in reach (help) and a right click (the shove: one tile away, a knockdown against a wall or a mob, the click cooldown of 16 ticks);</description></item>
 /// <item><description>the player's HUD as private screen entries: the health doll (tg's <c>head3</c> style states per zone, level = <c>ceil(damage / max * 5)</c>), the health indicator, a damage fullscreen, the move intent, tg's zone selector (a click selects the zone under its pixel, tg's <c>get_zone_at</c>) and the combat toggle (a click switches combat mode); a wounded limb carries tg's wound outline filter, steady;</description></item>
-/// <item><description>dev commands in the real server's syntax (<c>damage WHO brute|burn|tox|oxy N [ZONE]</c>, <c>wound WHO ZONE [TYPE SEVERITY]</c>, <c>heal</c>, <c>fullheal</c>, <c>kill</c>, <c>revive</c>, <c>knockdown WHO S</c>, <c>stun</c>, <c>analyze WHO</c>, <c>speedscale F</c>, <c>spawn /mob/living/carbon/human [X Y]</c>, <c>help</c>; WHO is <c>me</c>, the player's name or a world id), replies to the requester only.</description></item>
+/// <item><description>dev commands in the real server's syntax (<c>damage WHO brute|burn|tox|oxy N [ZONE]</c>, <c>wound WHO ZONE [TYPE SEVERITY]</c>, <c>heal</c>, <c>fullheal</c>, <c>kill</c>, <c>revive</c>, <c>knockdown WHO S</c>, <c>stun</c>, <c>analyze WHO</c>, <c>speedscale F</c>, <c>spawn /mob/living/carbon/human [X Y]</c>, <c>help</c>; WHO is <c>me</c>, the player's name or a world id), replies to the requester only; and the fake's own <c>alert me NAME</c>, which throws or clears one of tg's alerts (<see cref="AlertNames"/>) at tg's places in its column;</description></item>
 /// </list>
 /// Everything leaves as encoded messages, through <see cref="Step"/>'s callback; the owner (<see cref="FakeFeed"/>, a test
 /// harness) moves them to a client.
@@ -111,6 +111,20 @@ public sealed partial class FakeServer
 
     /// <summary>tg's target zone selector (<c>zone_sel</c>) and combat toggle on the player's screen.</summary>
     public const long ZoneSelId = 1005, CombatId = 1006;
+
+    /// <summary>
+    /// tg's alerts the fake throws with <c>alert WHO NAME</c> (slice D): the name, the screen entry's id (<see cref="AlertIdBase"/> plus the index),
+    /// and the picture: tg's <c>screen_alert.dmi</c> state, or for weightless (tg's USER_HUD_STYLE_INHERIT) the HUD style's <c>template</c> with
+    /// the alert's state as an overlay. A click on the buckled one unbuckles (tg's <c>/alert/buckled/Click</c>): it goes.
+    /// </summary>
+    public static readonly string[] AlertNames = { "not_enough_oxy", "cold", "weightless", "buckled" };
+
+    /// <summary>The first fake alert's screen entry id.</summary>
+    public const long AlertIdBase = 1100;
+
+    private const string AlertIcon = "icons/hud/screen_alert.dmi";
+    private readonly List<int> _alertsUp = new(); // tg's mob.alerts, in the order thrown
+    private readonly Dictionary<int, TableRef> _alertLooks = new();
 
     private static readonly int[] ZoneMax = { 200, 200, 50, 50, 50, 50 };
 
@@ -623,7 +637,7 @@ public sealed partial class FakeServer
         string verb = words[0].ToLowerInvariant();
         if (verb == "help")
         {
-            replies.Add("Commands (the real server's syntax, WHO is me, your name or #1): damage WHO brute|burn|tox|oxy N [ZONE], wound WHO ZONE [TYPE SEVERITY], heal WHO, fullheal WHO, kill WHO, revive WHO, knockdown WHO S, stun WHO S, analyze WHO, speedscale F.");
+            replies.Add("Commands (the real server's syntax, WHO is me, your name or #1): damage WHO brute|burn|tox|oxy N [ZONE], wound WHO ZONE [TYPE SEVERITY], heal WHO, fullheal WHO, kill WHO, revive WHO, knockdown WHO S, stun WHO S, analyze WHO, speedscale F; the fake's own: alert me " + string.Join('|', AlertNames) + ".");
             return;
         }
         if (verb == "speedscale")
@@ -799,6 +813,16 @@ public sealed partial class FakeServer
             case "analyze":
                 replies.Add(Analyze(target));
                 break;
+            case "alert":
+                int alert = words.Length == 3 && ReferenceEquals(target, _mobs[0]) ? Array.IndexOf(AlertNames, words[2]) : -1;
+                if (alert < 0)
+                {
+                    replies.Add("Usage: alert me " + string.Join('|', AlertNames) + " (throws it, or clears it when it is up).");
+                    break;
+                }
+                if (!_alertsUp.Remove(alert))
+                    _alertsUp.Add(alert);
+                break;
             default:
                 replies.Add("Unknown command: " + words[0]);
                 break;
@@ -864,6 +888,35 @@ public sealed partial class FakeServer
             _screen[ZoneSelId] = new ScreenEntry(ZoneSelId, PrivateAppearance(selector), "EAST-1:28,SOUTH:5") { Group = HudGroup.Static };
         }
         _screen[CombatId] = new ScreenEntry(CombatId, Leaf(HudIcon, p.Combat ? "combat" : "combat_off", 255, 20f), "EAST-3:24,SOUTH:5") { Group = HudGroup.Info };
+        // tg's alerts (alert.dm reorganize_alerts): in no HUD group, at get_ui_alert_placement(i) in the order thrown, no place past the fifth
+        for (int i = 0; i < AlertNames.Length; i++)
+        {
+            int at = _alertsUp.IndexOf(i) + 1;
+            if (at == 0)
+            {
+                _screen.Remove(AlertIdBase + i);
+                continue;
+            }
+            string loc = at <= 5 ? "EAST-1:28,CENTER+" + (6 - at).ToString(CultureInfo.InvariantCulture) + ":" + (29 - 2 * at).ToString(CultureInfo.InvariantCulture) : "";
+            _screen[AlertIdBase + i] = new ScreenEntry(AlertIdBase + i, AlertLook(i), loc);
+        }
+    }
+
+    private TableRef AlertLook(int alert)
+    {
+        if (_alertLooks.TryGetValue(alert, out TableRef look))
+            return look;
+        string name = AlertNames[alert];
+        if (name == "weightless")
+        {
+            var styled = new AppearanceEntry { Icon = PrivateResource(HudIcon), IconState = PrivateString("template"), Layer = 20f };
+            styled.Overlays.Add(Leaf(AlertIcon, name, 255, 20.1f));
+            look = PrivateAppearance(styled);
+        }
+        else
+            look = Leaf(AlertIcon, name == "cold" ? "cold2" : name, 255, 20f); // tg's severity is the state's number
+        _alertLooks[alert] = look;
+        return look;
     }
 
     // A wounded limb (tg's healthdoll/human, screen_objects.dm:1031): the "wound_outline" filter, a #FF0033 outline of size 1.2; tg pulses its
@@ -898,6 +951,11 @@ public sealed partial class FakeServer
     {
         if (a.EffectiveTargetKind != TargetKind.Screen)
             return false;
+        if (a.Target == AlertIdBase + Array.IndexOf(AlertNames, "buckled") && _alertsUp.Remove(Array.IndexOf(AlertNames, "buckled")))
+        {
+            replies.Add("You unbuckle yourself.");
+            return true;
+        }
         if (a.Target == ZoneSelId)
         {
             if (ZoneSelAt(a.IconX, a.IconY) is string zone)

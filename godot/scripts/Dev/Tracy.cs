@@ -7,8 +7,10 @@ namespace Anomaly.Client.Dev;
 
 /// <summary>
 /// The Tracy profiler's client (https://github.com/wolfpld/tracy), loaded only when the environment variable <c>ANOMALY_TRACY</c> names its
-/// library (<c>tools/perf/tracy-client.sh</c> builds it; docs/testing.md, "Profiling"). Through its C API: zones (every
-/// <see cref="FrameProbe.Scope"/> is one), the frame mark, plots and messages. Off, every call is one branch.
+/// library (<c>tools/perf/tracy-client.sh</c> builds it; docs/testing.md, "Profiling"), or is <c>engine</c>: a Godot built with its own
+/// Tracy (<c>profiler=tracy</c>) and the C API exported, whose client is the engine's (one capture holds both the engine's zones and the
+/// game's; the engine marks the frames and owns the client's lifetime). Through its C API: zones (every <see cref="FrameProbe.Scope"/> is
+/// one), the frame mark, plots and messages. Off, every call is one branch.
 /// </summary>
 public static unsafe class Tracy
 {
@@ -44,6 +46,10 @@ public static unsafe class Tracy
     private static readonly delegate* unmanaged[Cdecl]<byte*, int, int, int, uint, void> PlotConfig;
     private static readonly delegate* unmanaged[Cdecl]<byte*, nuint, int, void> MessageFn;
     private static readonly delegate* unmanaged[Cdecl]<byte*, void> ThreadName;
+    private static readonly bool OwnFrames; // false with the engine's client: Godot marks its frames itself
+
+    /// <summary>The engine's own client (<c>ANOMALY_TRACY=engine</c>): Godot zones its own passes and marks its frames.</summary>
+    public static bool InEngine => _on && !OwnFrames;
 
     // Tracy keeps the pointers it is given (a zone's source location, a plot's name), so each lives in native memory for the run
     private static readonly ConcurrentDictionary<string, nint> Locations = new(StringComparer.Ordinal);
@@ -57,10 +63,13 @@ public static unsafe class Tracy
             return;
         try
         {
-            nint lib = NativeLibrary.Load(path);
+            bool engine = path == "engine";
+            nint lib = engine ? NativeLibrary.GetMainProgramHandle() : NativeLibrary.Load(path);
             nint F(string name) => NativeLibrary.GetExport(lib, name);
-            Startup = (delegate* unmanaged[Cdecl]<void>)F("___tracy_startup_profiler");
-            Shutdown = (delegate* unmanaged[Cdecl]<void>)F("___tracy_shutdown_profiler");
+            // the start and the stop exist only in a client built for a manual lifetime (tracy-client.sh's), not in the engine's
+            Startup = NativeLibrary.TryGetExport(lib, "___tracy_startup_profiler", out nint startup) ? (delegate* unmanaged[Cdecl]<void>)startup : null;
+            Shutdown = NativeLibrary.TryGetExport(lib, "___tracy_shutdown_profiler", out nint shutdown) ? (delegate* unmanaged[Cdecl]<void>)shutdown : null;
+            OwnFrames = !engine;
             ZoneBegin = (delegate* unmanaged[Cdecl]<SourceLocation*, int, Zone>)F("___tracy_emit_zone_begin");
             ZoneEnd = (delegate* unmanaged[Cdecl]<Zone, void>)F("___tracy_emit_zone_end");
             ZoneText = (delegate* unmanaged[Cdecl]<Zone, byte*, nuint, void>)F("___tracy_emit_zone_text");
@@ -70,7 +79,8 @@ public static unsafe class Tracy
             PlotConfig = (delegate* unmanaged[Cdecl]<byte*, int, int, int, uint, void>)F("___tracy_emit_plot_config");
             MessageFn = (delegate* unmanaged[Cdecl]<byte*, nuint, int, void>)F("___tracy_emit_message");
             ThreadName = (delegate* unmanaged[Cdecl]<byte*, void>)F("___tracy_set_thread_name");
-            Startup();
+            if (Startup != null)
+                Startup();
             _on = true;
             ThreadName((byte*)Utf8("main"));
             Godot.GD.Print($"[anomaly] tracy: the profiler's client is on ({path}); connect tracy-profiler or tracy-capture to localhost");
@@ -126,7 +136,7 @@ public static unsafe class Tracy
 
     public static void FrameMark()
     {
-        if (On)
+        if (On && OwnFrames)
             FrameMarkFn(null);
     }
 
@@ -165,6 +175,7 @@ public static unsafe class Tracy
         if (!_on)
             return;
         _on = false;
-        Shutdown();
+        if (Shutdown != null)
+            Shutdown();
     }
 }

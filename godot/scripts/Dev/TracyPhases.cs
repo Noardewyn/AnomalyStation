@@ -14,7 +14,8 @@ public partial class TracyPhases : Node
 
     public static void Install(Node root)
     {
-        if (!Tracy.On)
+        // the engine's own client zones these passes itself, and its zones would not nest with ones opened in one callback and closed in another
+        if (!Tracy.On || Tracy.InEngine)
             return;
         root.AddChild(new TracyPhases { _first = true, ProcessPriority = int.MinValue, ProcessPhysicsPriority = int.MinValue, Name = "TracyPhasesFirst" });
         root.AddChild(new TracyPhases { _first = false, ProcessPriority = int.MaxValue, ProcessPhysicsPriority = int.MaxValue, Name = "TracyPhasesLast" });

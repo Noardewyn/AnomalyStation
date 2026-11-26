@@ -65,3 +65,19 @@ tools/perf/fly.sh`. Its folder holds `fly.tracy` (open it in `tracy-profiler`) a
 first leg meets the station for the first time, the way back meets it again) and its longest frames with their zones.
 `GODOT_ARGS="--disable-vsync --max-fps 60"` takes the display's refresh out of the frame times, and `--still` stands at the
 station's centre instead of flying.
+
+### Inside the engine
+
+What Godot itself does in a frame (culling, the renderer's passes, preparing meshes and materials again) shows only in a Godot built
+with Tracy. `tools/perf/godot-tracy.patch` exports Tracy's C API from it (so the game's zones join the engine's in one capture) and
+adds zones and counters where the renderer prepares its meshes and materials:
+
+1. `git clone --depth 1 -b 4.7.2-stable https://github.com/godotengine/godot godot-tracy`, then in it
+   `git apply /path/to/AnomalyStation/tools/perf/godot-tracy.patch`.
+2. Build it with SCons against the same Tracy checkout as the profiler: `scons platform=windows target=editor
+   module_mono_enabled=yes profiler=tracy profiler_path=/path/to/tracy debug_symbols=no` (add `accesskit=no d3d12=no` without
+   those SDKs); about five minutes, a minute again after a change of the patch.
+3. Copy the `GodotSharp` folder of the installed Godot next to the new `bin/godot.windows.editor.x86_64.mono.exe`.
+4. `ANOMALY_TRACY=engine GODOT=/path/to/godot-tracy/bin/godot.windows.editor.x86_64.mono.console.exe TRACY_TOOLS=... tools/perf/fly.sh`;
+   with `--gpu-profile` in `GODOT_ARGS` the renderer's own step timestamps are sent as messages as well, and `summary.txt` sums
+   each step's time in the slow frames against the others.

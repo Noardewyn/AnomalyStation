@@ -9,6 +9,8 @@
 #   tools/perf/fly.sh --row 100 --leg 50 --out DIR -- --quality=high      another row, longer legs, extra client arguments
 #   GODOT=/path/to/godot-mono TRACY_TOOLS=/path/to/tracy tools/perf/fly.sh
 #   GODOT_ARGS="--disable-vsync --max-fps 60" tools/perf/fly.sh       the engine's own arguments (before the game's)
+#   ANOMALY_TRACY=engine GODOT=/path/to/godot-built-with-tracy tools/perf/fly.sh      the engine's own Tracy client and zones
+#                                                (a Godot built with profiler=tracy and TRACY_EXPORTS: docs/testing.md)
 #   tools/perf/fly.sh --still                    no flight: as long standing at the station's centre, looking east (what hitches
 #                                                with no streaming at all)
 #
@@ -56,7 +58,7 @@ until grep -q "joins open" "$OUT/server.log"; do
 done
 
 TRACY_ENV=
-if [ -n "$TRACY_TOOLS" ] && [ -f "$TRACY_LIB" ]; then
+if [ -n "$TRACY_TOOLS" ] && { [ -f "$TRACY_LIB" ] || [ "$TRACY_LIB" = engine ]; }; then
     "$TRACY_TOOLS/tracy-capture" -o "$OUT/fly.tracy" -a 127.0.0.1 -f > "$OUT/capture.log" 2>&1 &
     CAPTURE=$!
     TRACY_ENV=$TRACY_LIB

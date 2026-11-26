@@ -5,9 +5,12 @@
 ZONES.csv is `tracy-csvexport -u -p capture.tracy` (every zone and plot point), MESSAGES.csv is `tracy-csvexport -m capture.tracy`.
 The client sends the frame time and the engine's counters as plots once a frame (godot/scripts/Dev/FrameProbe.cs) and a message
 at the world's reveal and at each step of its --keys script; the legs are the spans between a "script: ... W+" and the next "W-".
+A Godot built with Tracy and run with --gpu-profile also sends its renderer's step timestamps as messages (docs/testing.md): then
+each leg also shows how long each step took in its slow frames against the frames under 20 ms.
 """
 import bisect
 import csv
+import re
 import sys
 from collections import defaultdict
 
@@ -35,17 +38,20 @@ def load(path):
     return frames, plots, zones
 
 
-def legs(messages_path, frames):
-    if not messages_path:
-        return [('all', frames[0][0], frames[-1][0])]
+def messages(path):
     marks = []
-    with open(messages_path, encoding='utf-8', errors='replace') as f:
-        next(f, None)  # MessageName,total_ns; a message's own commas are not quoted, so the time is the last field
-        for line in f:
-            text, _, ns = line.rstrip().rpartition(',')
-            if ns.isdigit():
-                marks.append((int(ns), text))
+    if path:
+        with open(path, encoding='utf-8', errors='replace') as f:
+            next(f, None)  # MessageName,total_ns; a message's own commas are not quoted, so the time is the last field
+            for line in f:
+                text, _, ns = line.rstrip().rpartition(',')
+                if ns.isdigit():
+                    marks.append((int(ns), text))
     marks.sort()
+    return marks
+
+
+def legs(marks, frames):
     out, start, n = [], None, 0
     for ns, text in marks:
         if text.startswith('script:') and text.endswith('W+'):
@@ -93,7 +99,19 @@ def main():
             i += 1
         return by_name, by_item
 
-    for title, start, end in legs(sys.argv[2] if len(sys.argv) > 2 else None, frames):
+    marks = messages(sys.argv[2] if len(sys.argv) > 2 else None)
+    steps = [m for m in marks if not m[1].startswith('script:')]
+    step_starts = [m[0] for m in steps]
+
+    def frame_steps(end_ns, ms):
+        # the time from one renderer timestamp to the next is the first one's step ("Render Light3D 3" and the like share a name)
+        lo, hi = bisect.bisect_left(step_starts, end_ns - int(ms * 1e6)), bisect.bisect_right(step_starts, end_ns)
+        out = defaultdict(float)
+        for (a, text), (b, _) in zip(steps[lo:hi], steps[lo + 1:hi]):
+            out[re.sub(r'\d+', '#', text)] += (b - a) / 1e6
+        return out
+
+    for title, start, end in legs(marks, frames):
         leg = [(ns, ms) for ns, ms in frames if start <= ns <= end]
         if len(leg) < 10:
             continue
@@ -117,6 +135,15 @@ def main():
                   ', '.join('%s %.0f' % (p, sums[p]) for p in PLOTS)))
             print('  zones: ' + ', '.join('%s %.0f' % kv for kv in sorted(totals.items(), key=lambda kv: -kv[1])[:16]))
             print('  items: ' + ', '.join('%s %.0f' % kv for kv in sorted(items.items(), key=lambda kv: -kv[1])[:12]))
+            if steps:
+                fast = [(ns, m) for ns, m in leg if m < 20]
+                slow_steps, fast_steps = defaultdict(float), defaultdict(float)
+                for group, into in ((slow, slow_steps), (fast, fast_steps)):
+                    for ns, m in group:
+                        for k, v in frame_steps(ns, m).items():
+                            into[k] += v / len(group)
+                print('  renderer steps, ms a frame in the slow frames (in the frames under 20 ms): ' + ', '.join(
+                    '%s %.1f (%.1f)' % (k, v, fast_steps[k]) for k, v in sorted(slow_steps.items(), key=lambda kv: -kv[1])[:14]))
         print('  longest frames:')
         for ns, m in sorted(leg, key=lambda f: -f[1])[:12]:
             by_name, by_item = frame_zones(ns, m)

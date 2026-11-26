@@ -244,7 +244,7 @@ public partial class GameScene
         _menuView.AddSeparator();
         KeyedItem(_menuView, "view.under", "T-ray: under the floor (cables, pipes, disposal pipes)", check: true);
         KeyedItem(_menuView, "view.markers", "Markers (landmarks, spawners, mapping helpers)", check: true);
-        KeyedItem(_menuView, "view.areas", "Areas (a colour over each area's tiles)", check: true);
+        KeyedItem(_menuView, "view.areas", "Areas (a colour over each area's tiles; always shown on the palette's Areas tab)", check: true);
         KeyedItem(_menuView, "view.border", "Map border (lines around the map's tiles, level by level)", check: true);
         KeyedItem(_menuView, "view.docks", "Shuttle docks (the tiles a docked shuttle takes)", check: true);
         KeyedItem(_menuView, "view.preview", "Preview of what the place tool places", check: true);
@@ -340,7 +340,9 @@ public partial class GameScene
         _playStartOption.SetItemTooltip(0, "Play starts you on the selected tile, or where the view looks.");
         _playStartOption.AddItem("As an arrival");
         _playStartOption.SetItemTooltip(1, "Play starts you as a player who joins a round in progress: in a seat of the map's arrivals shuttle, or at a late-join landmark.");
-        _playStartOption.ItemSelected += index => _playArrive = index == 1;
+        _playStartOption.AddItem("At a spawn point");
+        _playStartOption.SetItemTooltip(2, "Play starts you on the map's round-start spawn point (a job's start landmark) nearest to the selected tile, or to where the view looks.");
+        _playStartOption.ItemSelected += index => (_playArrive, _playAtStart) = (index == 1, index == 2);
         _shell.Tools.AddChild(_playStartOption);
         _titleLabel = new Label { SizeFlagsHorizontal = Control.SizeFlags.ExpandFill, HorizontalAlignment = HorizontalAlignment.Right, ClipText = true };
         _shell.Tools.AddChild(_titleLabel);
@@ -514,6 +516,7 @@ public partial class GameScene
         _editorPreviewOn = _editorSettings.Bool("view", "preview", true);
         _editorDocksOn = _editorSettings.Bool("view", "docks", true);
         _playArrive = _editorSettings.Bool("play", "arrive", false);
+        _playAtStart = !_playArrive && _editorSettings.Bool("play", "start", false);
         for (int i = 0; i < _favourites.Length; i++)
         {
             if (!_editorSettings.Has("palette", Inv($"favourites_{i}")))
@@ -539,7 +542,7 @@ public partial class GameScene
         if (now < _editorSettingsNextAt)
             return;
         _editorSettingsNextAt = now + 1;
-        string kept = Inv($"{_shell.LayoutSignature()}|{_editorSimple}|{_favouritesVersion}|{_editor.Feed.UnderFloor}|{_editor.Feed.Markers}|{_editorAreas}|{_editorBorderOn}|{_editorPreviewOn}|{_editorDocksOn}|{string.Join(' ', _editorLook)}|{_editorFlySpeed}|{_editorKeysVersion}|{_editorLevelLock}|{_editorArrowsOn}|{_playArrive}");
+        string kept = Inv($"{_shell.LayoutSignature()}|{_editorSimple}|{_favouritesVersion}|{_editor.Feed.UnderFloor}|{_editor.Feed.Markers}|{_editorAreas}|{_editorBorderOn}|{_editorPreviewOn}|{_editorDocksOn}|{string.Join(' ', _editorLook)}|{_editorFlySpeed}|{_editorKeysVersion}|{_editorLevelLock}|{_editorArrowsOn}|{_playArrive}|{_playAtStart}");
         if (kept == _editorSettingsKept)
             return;
         _editorSettingsKept = kept;
@@ -562,6 +565,7 @@ public partial class GameScene
         _editorSettings.Set("view", "level_lock", _editorLevelLock);
         _editorSettings.Set("view", "arrows", _editorArrowsOn);
         _editorSettings.Set("play", "arrive", _playArrive);
+        _editorSettings.Set("play", "start", _playAtStart);
         _editorSettings.SetSection("keys", _editorKeys.Changed());
         for (int i = 0; i < _favourites.Length; i++)
             _editorSettings.Set("palette", Inv($"favourites_{i}"), _favourites[i].OrderBy(path => path, StringComparer.Ordinal).ToArray());
@@ -723,6 +727,7 @@ public partial class GameScene
         };
         ceiling.AddChild(_tileCeiling);
         column.AddChild(_tileCeilingRow = ceiling);
+        column.AddChild(_tileGasRow = BuildTileGasRow(s)); // the gas the selected tiles start with
         _tileTree = new Tree { HideRoot = true, SizeFlagsVertical = Control.SizeFlags.ExpandFill, SelectMode = Tree.SelectModeEnum.Row, FocusMode = Control.FocusModeEnum.Click };
         _tileTree.AddThemeConstantOverride("icon_max_width", Mathf.RoundToInt(32 * s));
         _tileTree.ItemSelected += () =>
@@ -947,10 +952,11 @@ public partial class GameScene
         }
         _playButton.Text = _playStarting == null ? "Play" : Inv($"Starting... {now - _playAskedAt:0} s");
         _playButton.TooltipText = _playStarting == null
-            ? "Play the map as it is, the changes that are not saved too: a round of the game starts and you stand on the selected tile, or where the view looks; or, by the choice beside this button, you arrive on the map's arrivals shuttle. You are an admin there. F8 comes back." + KeyLine("play.start")
+            ? "Play the map as it is, the changes that are not saved too: a round of the game starts and you stand on the selected tile, or where the view looks; or, by the choice beside this button, you arrive on the map's arrivals shuttle or stand on its nearest spawn point. You are an admin there. F8 comes back." + KeyLine("play.start")
             : "The round is starting, as a server does. Press to give it up.";
-        if (_playStartOption.Selected != (_playArrive ? 1 : 0))
-            _playStartOption.Selected = _playArrive ? 1 : 0;
+        int playFrom = _playArrive ? 1 : _playAtStart ? 2 : 0;
+        if (_playStartOption.Selected != playFrom)
+            _playStartOption.Selected = playFrom;
         _titleLabel.Text = Inv($"{_editor.Title}   {map.Width} x {map.Height} x {map.Levels}");
         string title = ClientArgs.EditorName + ": " + _editor.Title;
         if (GetWindow().Title != title)
@@ -1065,12 +1071,10 @@ public partial class GameScene
             EditorNotice(CeilingAboveTip, 10);
             return;
         }
-        IEnumerable<(int X, int Y, int Z)> cells = _editorRegion is { } r ? EditorRegionCells().Select(c => (c.X, c.Y, r.Z))
-            : _editorSelected is { } s ? new[] { (s.X, s.Y, s.Z) } : Array.Empty<(int, int, int)>();
         try
         {
             var tiles = new List<(int X, int Y, int Z, MapModel Model)>();
-            foreach ((int x, int y, int z) in cells.Where(c => map.Contains(c.X, c.Y, c.Z)))
+            foreach ((int x, int y, int z) in EditorSelectionCells().Where(c => map.Contains(c.X, c.Y, c.Z)))
             {
                 MapModel tile = map[x, y, z];
                 if (!under || ceiling == null)
@@ -1133,6 +1137,7 @@ public partial class GameScene
     private void UpdateTilePanel()
     {
         UpdateTileCeiling();
+        UpdateTileGas();
         if (_editorSelected is not { } selected)
         {
             if (_tileShown.Tile != null)
@@ -1390,7 +1395,7 @@ public partial class GameScene
                     return Inv($"place {EditorBrushName()}: {EditorShapes[(int)_editorDraw].Name.ToLowerInvariant()} from {from.X}, {from.Y} to {x}, {y}");
                 if (_editorDraw == MapShape.Zone)
                     return Inv($"place {EditorBrushName()} on the zone of {x}, {y}, {z}");
-                string wall = _editorDraw != MapShape.Free || MapEdits.Mounted(brush, _editorMountSide).Equals(brush) ? string.Empty
+                string wall = MapEdits.Mounted(brush, _editorMountSide).Equals(brush) ? string.Empty
                     : " on the " + (_editorMountSide switch { 1 => "north", 2 => "south", 4 => "east", _ => "west" }) + " wall";
                 string high = _editorHeight > 1 ? Inv($", {Math.Min(_editorHeight, _editor.Document.Levels - z + 1)} levels up") : string.Empty;
                 if (_editorPlaceMode == EditorPlaceMode.Replace)

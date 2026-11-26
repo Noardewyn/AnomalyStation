@@ -10,6 +10,11 @@ client's top-right corner, in its window title and in the first line of the serv
 ### Added
 
 - Joining shows a loading screen while the station is built and loaded; your character enters the round only once the game is ready.
+- Map editor: Play can start you at the map's nearest round-start spawn point (a job's start landmark).
+- Map editor: a Gas row and window in the Tile panel set the gas the selected tiles start with; the haze shows at once.
+- Map editor: a pipe or atmos machine that would clash with one on the same layer is not placed, and Checks lists such tiles (they stop the round's air).
+- Map editor: the palette's Areas tab shows the area colours by itself, without the View menu's switch.
+- Map editor: a room's area painted over space open space makes it the room's open space, which holds air; Checks names any left in a room.
 - Light floor tiles glow and light the room around them, laid on the floor or as a ceiling; lava and circuit floors light their surroundings too.
 - Another player's OOC message plays a soft ping; its volume (or off) is in Settings, Audio.
 
@@ -22,9 +27,11 @@ client's top-right corner, in its window title and in the first line of the serv
 
 - Fewer stutters while moving into parts of the station seen for the first time; the game no longer prints Ogg Vorbis warnings at the start.
 - First person: no more stutter every few seconds that grew worse the more of the station you had seen (glass reflecting your body).
+- Map editor: Play on the tile starts you on the edited level, not on the roof or ceiling selected over it.
 - Map editor: flying up inside a room two levels high keeps the lamps' light and shadows instead of turning the room flat.
 - Lasers fly through windows, glass doors, grilles and glass floors and ceilings aimed at in first person, as in tg.
 - Map editor: a floor placed as a ceiling from inside a room whose walls are two levels high goes on top of the walls.
+- Map editor: a lamp, an APC or a sign placed against a wall with a rectangle shape hangs on that wall, whatever way the palette faces.
 
 ## [1.13.0-pre-alpha] - 2026-11-25
 

@@ -67,6 +67,30 @@ public static class MapChecks
     }
 
     /// <summary>
+    /// The tile of the map's round-start spawn point (a job's <c>/obj/effect/landmark/start</c>; the lobby's <c>new_player</c> one is not) nearest to
+    /// (<paramref name="x"/>, <paramref name="y"/>, <paramref name="z"/>), the same level first; null when the map has none.
+    /// </summary>
+    public static (int X, int Y, int Z)? StartPoint(MapDocument map, int x, int y, int z)
+    {
+        ArgumentNullException.ThrowIfNull(map);
+        (int X, int Y, int Z)? best = null;
+        long bestScore = long.MaxValue;
+        for (int lz = 1; lz <= map.Levels; lz++)
+        {
+            for (int ly = 1; ly <= map.Height; ly++)
+            {
+                for (int lx = 1; lx <= map.Width; lx++)
+                {
+                    long score = (long)(lx - x) * (lx - x) + (long)(ly - y) * (ly - y) + (lz == z ? 0 : 1L << 40);
+                    if (score < bestScore && map[lx, ly, lz].Members.Any(m => Under(m.Path, "/obj/effect/landmark/start") && !Under(m.Path, "/obj/effect/landmark/start/new_player")))
+                        (best, bestScore) = ((lx, ly, lz), score);
+                }
+            }
+        }
+        return best;
+    }
+
+    /// <summary>
     /// Checks a map: the first <paramref name="limit"/> problems in the order of the levels, the rows from the south and the tiles from the west, and
     /// how many there are in all.
     /// </summary>
@@ -161,11 +185,17 @@ public static class MapChecks
             if (Under(members[i].Path, "/obj/machinery/disposal") && !members.Any(m => Under(m.Path, "/obj/structure/disposalpipe/trunk")))
                 problems.Add((i, "disposals_without_trunks", "a disposal unit with no trunk under it"));
         }
+        foreach ((_, int second) in PipeConflicts(tile))
+            problems.Add((second, "pipe_conflict", PipeConflictText));
         // the editor's own: a floor or a wall left in the area of space has no power and no air alarm, and tg counts it as the outside
         // (tg's own area of the hull's outside, /area/space/nearstation, is meant for what stands there)
         if (turf != null && area == "/area/space" && !Under(turf, "/turf/open/space") && !Under(turf, "/turf/open/openspace") && !Under(turf, "/turf/template_noop")
             && (Under(turf, "/turf/open/floor") || Under(turf, "/turf/closed/wall")))
             problems.Add((members.Count - 1, "space_area", "a floor or a wall in the area of space: give its room an area (the palette's Areas, the zone shape)"));
+        // the editor's own: tg's open space of space is space (a vacuum with no end), and an open floor under it lets its air up into it
+        // (tg's /turf/open zAirOut): in a room's area it is open space meant to hold the room's air, which is tg's /turf/open/openspace
+        if (turf != null && area != null && !Under(area, "/area/space") && Under(turf, "/turf/open/space/openspace"))
+            problems.Add((members.Count - 1, "space_open_space", "open space of space in a room's area: it is space, and the air under it goes out to it (a room's open space is /turf/open/openspace)"));
         return problems;
     }
 
@@ -194,6 +224,80 @@ public static class MapChecks
         MapModel tile = map[x, y, z];
         return tile.Members.Any(m => Under(m.Path, "/turf/closed") || Under(m.Path, "/obj/effect/spawner/structure/window")
             || (Under(m.Path, "/obj/structure/window") && m.Path.Contains("fulltile", StringComparison.Ordinal)));
+    }
+
+    /// <summary>What the checks and the place tool say of two atmos machines that share a layer and a way on one tile.</summary>
+    public const string PipeConflictText = "two pipes or atmos machines on one layer of this tile connect the same way, which tg's wrench refuses: what lies beside them joins only one, and where that is a machine the air of the whole map stops (take one away, or put it on another layer)";
+
+    // The way an atmos machine of a map lies in its tile: its piping layer, tg's pipe_flags and the ways it connects (tg's set_init_directions).
+    private readonly record struct Piping(float Layer, int Flags, int Ways);
+
+    private static readonly Dictionary<string, Piping?> Pipings = new(StringComparer.Ordinal);
+
+    /// <summary>
+    /// The pairs of atmos machines of a tile that tg's pipe construction would not let share it (construction.dm:277): both take the whole tile
+    /// (<c>PIPING_ONE_PER_TURF</c>), or their layers meet (the same layer, or one on all of them) and they connect a way in common. The map editor
+    /// places them as tg's maps do, past that rule; in the round each takes the other's neighbour for its node, one of them is left out of the
+    /// pipe network, and its processing breaks the air subsystem's every cycle. tg's map lint has no such rule. The pairs are (first, second)
+    /// member indices.
+    /// </summary>
+    public static IEnumerable<(int First, int Second)> PipeConflicts(MapModel tile)
+    {
+        ArgumentNullException.ThrowIfNull(tile);
+        IReadOnlyList<MapMember> members = tile.Members;
+        List<(int Index, Piping Piping)> atmos = null;
+        for (int i = 0; i < members.Count; i++)
+        {
+            if (PipingOf(members[i]) is { } piping)
+                (atmos ??= new()).Add((i, piping));
+        }
+        if (atmos == null || atmos.Count < 2)
+            yield break;
+        for (int a = 0; a < atmos.Count; a++)
+        {
+            for (int b = a + 1; b < atmos.Count; b++)
+            {
+                Piping p = atmos[a].Piping, q = atmos[b].Piping;
+                bool clash = (p.Flags & q.Flags & Defines.PIPING_ONE_PER_TURF) != 0
+                    || ((p.Layer == q.Layer || ((p.Flags | q.Flags) & Defines.PIPING_ALL_LAYER) != 0) && (p.Ways & q.Ways) != 0);
+                if (clash)
+                    yield return (atmos[a].Index, atmos[b].Index);
+            }
+        }
+    }
+
+    // An atmos machine's piping, read from its class in the translated code as the properties panel reads a type's vars: the map's dir and
+    // piping_layer set on it, then tg's own set_init_directions; null for anything else, or a class that needs a world to be made.
+    private static Piping? PipingOf(MapMember member)
+    {
+        if (!Under(member.Path, "/obj/machinery/atmospherics"))
+            return null;
+        string key = MapDocument.TextOf(new[] { member });
+        lock (Pipings)
+        {
+            if (Pipings.TryGetValue(key, out Piping? known))
+                return known;
+        }
+        Piping? piping = null;
+        try
+        {
+            if (Anomaly.Core.DmShim.DmTypes.FromPath(member.Path) is { IsAbstract: false } type && Activator.CreateInstance(type) is obj_machinery_atmospherics machine)
+            {
+                if (float.TryParse(MapEdits.VarOf(member, "dir"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float dir))
+                    machine.dir = dir;
+                if (float.TryParse(MapEdits.VarOf(member, "piping_layer"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float layer))
+                    machine.piping_layer = layer;
+                machine.set_init_directions();
+                piping = new Piping(machine.piping_layer, (int)machine.pipe_flags, (int)Anomaly.Core.DmShim.Dm.num(machine.get_init_directions()));
+            }
+        }
+        catch (Exception e) when (e is System.Reflection.TargetInvocationException or MissingMethodException or MemberAccessException or InvalidCastException or NullReferenceException or InvalidOperationException)
+        {
+            piping = null; // (a class whose making or whose set_init_directions needs a world)
+        }
+        lock (Pipings)
+            Pipings[key] = piping;
+        return piping;
     }
 
     private static bool Under(string path, string root)

@@ -35,6 +35,56 @@ public sealed class MapEditsTests
         Assert.Same(tile, MapEdits.Place(map, tile, new MapMember("/turf/closed/wall", null)));
     }
 
+    // tg's open space of space is space in any area: a room's area painted over it makes it the room's open space, which holds the room's air
+    [Fact]
+    public void ARoomsAreaOverOpenSpaceOfSpaceMakesItTheRoomsOpenSpace()
+    {
+        MapDocument map = Map();
+        MapModel space = map.Model("/turf/open/space/openspace | /area/space");
+        MapModel room = MapEdits.Place(map, space, new MapMember("/area/station/service/bar", null));
+        Assert.Equal("/turf/open/openspace | /area/station/service/bar", room.Text);
+        // the area of space, near the station too, leaves it space; and a room's open space stays as it is when the area goes
+        Assert.Equal(space.Text, MapEdits.Place(map, space, new MapMember("/area/space", null)).Text);
+        Assert.Equal("/turf/open/space/openspace | /area/space/nearstation", MapEdits.Place(map, space, new MapMember("/area/space/nearstation", null)).Text);
+        Assert.Equal("/turf/open/openspace | /area/space", MapEdits.Unareaed(map, room).Text);
+    }
+
+    [Fact]
+    public void ATilesGasIsItsTurfsInitialGasMix()
+    {
+        MapDocument map = Map();
+        MapModel floor = map.Model("/turf/open/floor/iron | /area/space");
+        Assert.Equal(GasMix.NormalAir, MapEdits.GasMixOf(floor, out bool set)); // the type's own
+        Assert.False(set);
+        Assert.Equal("o2=100000;TEMP=293.15", MapEdits.GasMixOf(map.Model("/turf/open/floor/engine/o2 | /area/space"), out _));
+
+        MapModel filled = MapEdits.WithGasMix(map, floor, "plasma=500;TEMP=500");
+        Assert.Equal("/turf/open/floor/iron{initial_gas_mix = \"plasma=500;TEMP=500\"} | /area/space", filled.Text);
+        Assert.Equal("plasma=500;TEMP=500", MapEdits.GasMixOf(filled, out set));
+        Assert.True(set);
+        Assert.Equal(floor.Text, MapEdits.WithGasMix(map, filled, null).Text); // the type's own again
+        MapModel wall = map.Model("/turf/closed/wall | /area/space");
+        Assert.Same(wall, MapEdits.WithGasMix(map, wall, GasMix.NormalAir)); // a wall holds no air
+        Assert.Null(MapEdits.GasMixOf(wall, out _));
+    }
+
+    [Fact]
+    public void AGasStringIsReadAndWrittenAsTgWritesIt()
+    {
+        GasMix air = GasMix.Parse(GasMix.NormalAir);
+        Assert.Equal(new[] { ("o2", 22.0), ("n2", 82.0) }, air.Gases);
+        Assert.Equal(293.15, air.Kelvin);
+        Assert.Equal(101.3, air.Kpa, 1); // a room's normal pressure
+        Assert.Equal(GasMix.NormalAir, air.ToString());
+
+        air["co2"] = 1.5;
+        air["n2"] = 0; // a gas with no moles is not written
+        Assert.Equal("o2=22;co2=1.5;TEMP=293.15", air.ToString());
+        Assert.Empty(GasMix.Parse(GasMix.Vacuum).Gases);
+        Assert.Null(GasMix.Parse("LAVALAND_ATMOS")); // a named atmosphere is no gas string
+        Assert.Null(GasMix.Parse("o2=lots"));
+    }
+
     [Fact]
     public void AnotherTurfKeepsTheCeilingTheMapSetOverTheTile()
     {

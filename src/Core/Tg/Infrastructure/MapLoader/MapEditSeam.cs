@@ -146,6 +146,14 @@ public static class MapEditSeam
             }
         }
 
+        // A floor shows its gas by tg's gas overlays (update_visuals), which SSair's processing or its setup at init draws; the editor's world stands
+        // before the round, where SSair does not fire, so a changed tile draws its gas here (the gas its initial_gas_mix gave it, or none).
+        foreach ((int x, int y, int z, _) in tiles)
+        {
+            if (locate(x, y, z) is turf_open open && open.air != null)
+                open.update_visuals();
+        }
+
         // The neighbours of a changed turf join it anew, or stop joining what stood there. tg queues them when a turf changes in a round (ChangeTurf,
         // change_turf.dm:202), but a template's load changes its turfs before they are initialized, and a turf's Initialize queues the turf alone.
         foreach ((int x, int y, int z, _) in tiles)

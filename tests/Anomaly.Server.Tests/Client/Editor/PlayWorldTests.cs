@@ -191,6 +191,47 @@ public sealed class PlayWorldTests : IDisposable
         Assert.DoesNotContain("traits", File.ReadAllText(jsonPath));
     }
 
+    // The gas the editor sets on one tile of a closed room (5.23) spreads over the room in a round, as tg's air does.
+    [Fact]
+    public void TheGasOfOneTileSpreadsOverItsRoomInARound()
+    {
+        Directory.CreateDirectory(Path.Combine(_root, "map_jsons"));
+        File.WriteAllText(Path.Combine(_root, "map_jsons", "play.json"), "{\"version\": 1, \"map_name\": \"Play\", \"map_path\": \"map_files/Play\", \"map_file\": \"Play.dmm\"}");
+        using EditorSession session = EditorSession.New(Path.Combine(_root, "map_files", "Play", "Play" + MapText.Extension), 12, 10, 1);
+        MapDocument map = session.Document;
+        // a room of three by three plating tiles in walls, in a station area (one in the area of space has no ceiling by the game's rule, DV183: its air
+        // goes out to space), the gas on one corner
+        const string Area = " | /area/station/engineering/atmos";
+        map.Edit("room", (from x in Enumerable.Range(3, 5) from y in Enumerable.Range(3, 5)
+                          select (x, y, 1, map.Model((x is 3 or 7 || y is 3 or 7 ? "/turf/closed/wall" : "/turf/open/floor/plating") + Area))).ToList());
+        map.Edit("gas", new[] { (6, 4, 1, MapEdits.WithGasMix(map, map[6, 4, 1], "o2=10000;n2=82;TEMP=293.15")) });
+        session.Save();
+
+        var net = new LoopbackNetwork(new LoopbackOptions { Seed = 1, TimeoutSteps = int.MaxValue });
+        var config = new ServerConfig { Seed = 1, Port = 7777, Console = false, StatusEveryTicks = int.MaxValue, Map = "play", MapsFolder = _root, JoinAt = (5, 5, 1) };
+        var output = new StringWriter();
+        using var host = new ServerHost(config, net.CreateServer(), new Replicator(new ReplicatorOptions { Interest = new InterestOptions() }), output: output, errors: output);
+        host.Start();
+        for (int tick = 0; !host.JoinsOpen && tick < 2000; tick++)
+        {
+            host.RunTick();
+            net.Advance();
+        }
+        Assert.True(host.JoinsOpen, output.ToString());
+        double Moles(int x, int y)
+        {
+            using (host.World.Enter())
+                return Anomaly.Core.DmShim.Dm.num(((turf_open)Builtins.locate(x, y, 1)).air.total_moles());
+        }
+        // (tg's air setup at the round's start shares a closed room's gas out already: 10 000 mol of oxygen and the plating's own air, over nine tiles)
+        for (int tick = 0; tick < 400; tick++)
+            host.RunTick();
+        double gassed = Moles(6, 4), far = Moles(4, 6);
+        Assert.True(far > 1000 && Math.Abs(gassed - far) < 1, Inv($"the far corner {far:0} mol, the gassed tile {gassed:0} mol"));
+    }
+
+    private static string Inv(FormattableString text) => FormattableString.Invariant(text);
+
     // A map of no maps folder keeps its settings in a json of its own, beside its file.
     [Fact]
     public void ALoneMapKeepsItsSettingsBesideItsFile()

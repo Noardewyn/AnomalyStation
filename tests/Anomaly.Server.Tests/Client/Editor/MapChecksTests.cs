@@ -19,6 +19,22 @@ public sealed class MapChecksTests
     }
 
     [Fact]
+    public void PlayFindsTheNearestSpawnPointOfTheLevelFirst()
+    {
+        MapDocument map = MapDocument.Create(8, 8, 2, Space);
+        Assert.Null(MapChecks.StartPoint(map, 1, 1, 1));
+        map.Edit("starts", new[]
+        {
+            (1, 1, 1, map.Model("/obj/effect/landmark/start/new_player | /turf/open/floor/iron" + Hall)), // the lobby's: not a spawn point
+            (2, 2, 2, map.Model("/obj/effect/landmark/start/assistant | /turf/open/floor/iron" + Hall)),
+            (7, 7, 1, map.Model("/obj/effect/landmark/start/captain | /turf/open/floor/iron" + Hall)),
+            (5, 5, 1, map.Model("/obj/effect/landmark/start/cook | /turf/open/floor/iron" + Hall)),
+        });
+        Assert.Equal((5, 5, 1), MapChecks.StartPoint(map, 1, 1, 1));
+        Assert.Equal((2, 2, 2), MapChecks.StartPoint(map, 8, 8, 2));
+    }
+
+    [Fact]
     public void WhatMustNotShareATileIsFound()
     {
         MapProblem airlocks = Assert.Single(Check((2, 2, "/obj/machinery/door/airlock | /obj/machinery/door/airlock/command | /turf/open/floor/iron" + Hall)));
@@ -41,6 +57,23 @@ public sealed class MapChecksTests
         Assert.Empty(Check((2, 2, "/obj/structure/table | /obj/item/wrench | /obj/machinery/light/directional/north | /turf/open/floor/iron" + Hall), (2, 3, "/turf/closed/wall" + Hall)));
     }
 
+    // tg's pipe construction rule (construction.dm:277), which tg's lint has not: two atmos machines on one layer of a tile that connect a way in common
+    [Fact]
+    public void AtmosMachinesThatShareALayerAndAWayAreFound()
+    {
+        const string Manifold = "/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4";
+        // the Demo map's tile: a vent on the manifold's layer, facing east, where the manifold connects too
+        MapProblem vent = Assert.Single(Check((2, 2, "/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{dir = 4} | " + Manifold + " | /turf/open/floor/iron" + Hall)));
+        Assert.Equal(("pipe_conflict", 1), (vent.Rule, vent.Member));
+        // on another layer it is no conflict (a scrubber of layer 2 beside the supply of layer 4, as tg's maps lay them)
+        Assert.Empty(Check((2, 2, "/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{dir = 4} | " + Manifold + " | /turf/open/floor/iron" + Hall)));
+        // a straight pipe and a pump on one layer meet where both run; two pumps turned across each other do not
+        Assert.Equal("pipe_conflict", Assert.Single(Check((2, 2, "/obj/machinery/atmospherics/components/binary/pump{dir = 4} | /obj/machinery/atmospherics/components/binary/pump{dir = 8} | /turf/open/floor/iron" + Hall))).Rule);
+        Assert.Empty(Check((2, 2, "/obj/machinery/atmospherics/components/binary/pump{dir = 4} | /obj/machinery/atmospherics/components/binary/pump{dir = 1} | /turf/open/floor/iron" + Hall)));
+        // a layer manifold is on all layers
+        Assert.Equal("pipe_conflict", Assert.Single(Check((2, 2, "/obj/machinery/atmospherics/pipe/layer_manifold{dir = 4} | /obj/machinery/atmospherics/components/binary/pump/layer2{dir = 4} | /turf/open/floor/iron" + Hall))).Rule);
+    }
+
     // tg's own station passes tg's lint: the rules taken from it find nothing on MetaStation, and the editor's own are told for a look.
     [Fact]
     [Trait("Category", "Meta")]
@@ -53,13 +86,16 @@ public sealed class MapChecksTests
         List<MapProblem> found = MapChecks.Run(station, 100000, out int total);
         var byRule = found.GroupBy(p => p.Rule).ToDictionary(g => g.Key, g => g.ToList());
         string told = string.Join("; ", byRule.Select(r => r.Key + " " + r.Value.Count + " (first at " + r.Value[0].X + ", " + r.Value[0].Y + ": " + station[r.Value[0].X, r.Value[0].Y, r.Value[0].Z].Text + ")"));
-        string[] own = { "space_area", "wall_mount", "no_arrivals", "shuttle_ports" };
+        // (tg's pipe construction rule is no lint of tg's: its mappers lay a few such tiles where nothing beside them breaks)
+        string[] own = { "space_area", "wall_mount", "no_arrivals", "shuttle_ports", "pipe_conflict", "space_open_space" };
         Assert.True(byRule.Keys.All(rule => own.Contains(rule)), told);
         Assert.True(total == found.Count, told);
         Assert.True(!byRule.ContainsKey("no_arrivals") && !byRule.ContainsKey("shuttle_ports"), told);
-        // the editor's own two are few on a finished station: what they find there is told when they grow
+        // the editor's own are few on a finished station: what they find there is told when they grow
         Assert.True(byRule.GetValueOrDefault("space_area")?.Count is null or < 40, told);
         Assert.True(byRule.GetValueOrDefault("wall_mount")?.Count is null or < 40, told);
+        Assert.True(byRule.GetValueOrDefault("pipe_conflict")?.Count is null or < 10, told);
+        Assert.False(byRule.ContainsKey("space_open_space"), told);
     }
 
     [Fact]
@@ -68,6 +104,10 @@ public sealed class MapChecksTests
         // a floor left in the area of space
         MapProblem floor = Assert.Single(Check((2, 2, "/turf/open/floor/iron | /area/space")));
         Assert.Equal(("space_area", 1), (floor.Rule, floor.Member));
+
+        // open space of space in a room's area lets the room's air out; the room's own open space, and space's in the area of space, do not
+        Assert.Equal("space_open_space", Assert.Single(Check((2, 2, "/turf/open/space/openspace" + Hall))).Rule);
+        Assert.Empty(Check((2, 2, "/turf/open/openspace" + Hall), (3, 2, "/turf/open/space/openspace | /area/space")));
 
         // a lamp hung on a side with no wall there; with a wall, and with a window that fills its tile, it holds
         Assert.Equal("wall_mount", Assert.Single(Check((2, 2, "/obj/machinery/light/directional/north | /turf/open/floor/iron" + Hall))).Rule);

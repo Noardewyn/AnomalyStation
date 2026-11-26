@@ -19,6 +19,7 @@ public partial class GameScene
     private Button _playButton;
     private OptionButton _playStartOption;
     private bool _playArrive; // where Play starts the player: as a new arrival (the arrivals shuttle, a late-join landmark), and not on the selected tile
+    private bool _playAtStart; // or on the map's round-start spawn point (a job's landmark) nearest to the selected tile or the view
 
     // What the editor's scene is at, kept while a round is played (App.EditorResume).
     private sealed record EditorResumeState(Vector3 Position, float Yaw, float Pitch, bool Top, (float Yaw, float Pitch) TopFrom, int Level, EditorTool Tool, MapShape Draw,
@@ -29,7 +30,7 @@ public partial class GameScene
 
     // F5 or the tool bar's button: a round of the map starts, with the player on the given tile (else the one EditorPlayTile finds), or, by the tool
     // bar's choice (arrive: null) or the caller's, as a new arrival on the map's arrivals shuttle; pressed again while it starts, the round is given up.
-    private void EditorPlay((int X, int Y, int Z)? at = null, bool? arrive = null)
+    private void EditorPlay((int X, int Y, int Z)? at = null, bool? arrive = null, bool atStart = false)
     {
         if (_playStarting != null)
         {
@@ -44,6 +45,15 @@ public partial class GameScene
                 return;
             }
             at = null;
+        }
+        else if (at == null && (atStart || (arrive == null && _playAtStart)))
+        {
+            (int x, int y, int z) = EditorPlayFrom();
+            if ((at = MapChecks.StartPoint(_editor.Document, x, y, z)) == null)
+            {
+                EditorNotice("Play: the map has no spawn point. Place a job's start landmark (/obj/effect/landmark/start), or start on a tile.");
+                return;
+            }
         }
         else if ((at ??= EditorPlayTile()) == null)
         {
@@ -77,22 +87,11 @@ public partial class GameScene
             EditorNotice(notice);
     }
 
-    // The tile a round's player starts on: the selected tile, the middle of the selected rectangle, else the tile in the middle of the view; and from
-    // there the nearest tile a mob stands on. Null when the level has none.
+    // The tile a round's player starts on: the nearest tile a mob stands on from where Play looks from (EditorPlayFrom). Null when the level has none.
     private (int X, int Y, int Z)? EditorPlayTile()
     {
         MapDocument map = _editor.Document;
-        (int x, int y, int z) = (0, 0, _editorLevel);
-        if (_editorSelected is { } s)
-            (x, y, z) = (s.X, s.Y, s.Z);
-        else if (_editorRegion is { } r)
-            (x, y, z) = ((r.X0 + r.X1) / 2, (r.Y0 + r.Y1) / 2, r.Z);
-        else
-        {
-            Vector3 point = EditorFloorPoint(_shell.Centre.GetGlobalRect().GetCenter()) ?? _rig.FreePosition;
-            (x, y) = (Mathf.FloorToInt(point.X / TileSpace.TileSize) + 1, Mathf.FloorToInt(-point.Z / TileSpace.TileSize) + 1);
-        }
-        (x, y) = (Math.Clamp(x, 1, map.Width), Math.Clamp(y, 1, map.Height));
+        (int x, int y, int z) = EditorPlayFrom();
         for (int ring = 0; ring < Math.Max(map.Width, map.Height); ring++)
         {
             for (int dy = -ring; dy <= ring; dy++)
@@ -106,6 +105,25 @@ public partial class GameScene
             }
         }
         return null;
+    }
+
+    // Where Play looks from: the selected tile, the middle of the selected rectangle, else the tile in the middle of the view; on the edited level
+    // or under it.
+    private (int X, int Y, int Z) EditorPlayFrom()
+    {
+        MapDocument map = _editor.Document;
+        (int x, int y, int z) = (0, 0, _editorLevel);
+        // (not above the edited level: with the levels above shown, a roof or a ceiling over the room is what gets selected)
+        if (_editorSelected is { } s)
+            (x, y, z) = (s.X, s.Y, Math.Min(s.Z, _editorLevel));
+        else if (_editorRegion is { } r)
+            (x, y, z) = ((r.X0 + r.X1) / 2, (r.Y0 + r.Y1) / 2, Math.Min(r.Z, _editorLevel));
+        else
+        {
+            Vector3 point = EditorFloorPoint(_shell.Centre.GetGlobalRect().GetCenter()) ?? _rig.FreePosition;
+            (x, y) = (Mathf.FloorToInt(point.X / TileSpace.TileSize) + 1, Mathf.FloorToInt(-point.Z / TileSpace.TileSize) + 1);
+        }
+        return (Math.Clamp(x, 1, map.Width), Math.Clamp(y, 1, map.Height), z);
     }
 
     // Every frame while a round starts: the join once the round takes joins, and the game's scene once the join plays.

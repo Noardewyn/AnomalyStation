@@ -69,9 +69,16 @@ public static class MapEdits
         {
             members.RemoveAll(m => IsArea(m.Path));
             members.Add(member);
+            // tg's open space of space is space whatever area it is in: a room's area painted over it means the room's own open space, which
+            // holds the room's air (/turf/open/openspace); else the floors under it lose their air to it
+            int turf = members.FindIndex(m => IsTurf(m.Path));
+            if (turf >= 0 && members[turf].Path == SpaceOpenSpace && !Under(member.Path, "/area/space"))
+                members[turf] = new MapMember(RoomOpenSpace, members[turf].Overrides);
         }
         return map.Model(members);
     }
+
+    private const string SpaceOpenSpace = "/turf/open/space/openspace", RoomOpenSpace = "/turf/open/openspace";
 
     /// <summary>
     /// Takes a member of a tile away: a thing is removed; a turf or the area, which a tile cannot be without, gives its place to the one of
@@ -267,6 +274,33 @@ public static class MapEdits
         ArgumentNullException.ThrowIfNull(tile);
         int turf = TurfIndex(tile);
         return turf < 0 ? tile : SetVar(map, tile, turf, "ceiling", ceiling == null ? null : "\"" + ceiling + "\"");
+    }
+
+    /// <summary>
+    /// The gas a tile starts the round with, as tg's gas string: the <c>initial_gas_mix</c> var the map sets on its turf, else the turf type's own;
+    /// null for a tile with no turf or a turf that holds no air (a wall). <paramref name="set"/> says whether the map sets it.
+    /// </summary>
+    public static string GasMixOf(MapModel tile, out bool set)
+    {
+        ArgumentNullException.ThrowIfNull(tile);
+        set = false;
+        int turf = TurfIndex(tile);
+        if (turf < 0 || TurfStyle.Classify(tile.Members[turf].Path) == TurfKind.Closed)
+            return null;
+        string literal = VarOf(tile.Members[turf], "initial_gas_mix");
+        set = literal != null;
+        literal ??= TypeVars.Of(tile.Members[turf].Path).FirstOrDefault(v => v.Name == "initial_gas_mix")?.Default;
+        return literal is { Length: >= 2 } && literal[0] == '"' && literal[^1] == '"' ? literal.Substring(1, literal.Length - 2) : literal;
+    }
+
+    /// <summary>A tile whose turf starts the round with another gas (tg's gas string), or (null) with its type's own again. A wall is left as it is.</summary>
+    public static MapModel WithGasMix(MapDocument map, MapModel tile, string mix)
+    {
+        ArgumentNullException.ThrowIfNull(map);
+        ArgumentNullException.ThrowIfNull(tile);
+        int turf = TurfIndex(tile);
+        return turf < 0 || TurfStyle.Classify(tile.Members[turf].Path) == TurfKind.Closed ? tile
+            : SetVar(map, tile, turf, "initial_gas_mix", mix == null ? null : "\"" + mix + "\"");
     }
 
     // ---- the layers of a tile (docs/ai/specs/map-editor.md 5.17) ----

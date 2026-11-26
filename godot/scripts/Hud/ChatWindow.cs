@@ -78,6 +78,9 @@ public sealed partial class ChatWindow : Control
 
     public bool IsOpen => Visible;
 
+    /// <summary>Where the window is on the screen, its scale included (the live HUD's hands keep clear of it).</summary>
+    public Rect2 ScreenRect => _frame.GetGlobalRect();
+
     /// <summary>The input row has the keyboard: the game gets no keys.</summary>
     public bool Typing => Visible && _edit.HasFocus();
 

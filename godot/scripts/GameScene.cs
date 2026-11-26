@@ -840,6 +840,10 @@ public partial class GameScene : Node3D
         UpdateEditor();
         _hudLayer.RenderTick = _session.RenderTick; // M4v slice 4: the screen objects' flicks and animate() chains play at the entities' render tick
         _hudLayer.CursorMode = _mouse.CursorMode; // ui-overhaul.md 6: tg's zone selector shows only while the cursor is free
+        // slice C: the hands' row keeps clear of the chat window where it stands at the bottom left (its default place, D282)
+        Rect2 chat = ChatWindowOpen ? _chatWindow.ScreenRect : default;
+        Vector2 screen = GetViewport().GetVisibleRect().Size;
+        _hudLayer.ChatRight = chat.End.Y > screen.Y * 0.8f && chat.Position.X < screen.X / 2f ? chat.End.X : 0f;
         // slice T5c: the doll's part under the free pointer, so its eyes and mouth show tg's hover pictures
         _hudLayer.DollHover = _hudHover.Kind == TargetKind.Screen ? BodyZoneAim.DollFaceAt(_hudLayer.DollZoneAt(_hudHover.Id, _hudHover.IconX, _hudHover.IconY), _hudHover.IconX, _hudHover.IconY) : AimZone.None;
         using (Dev.FrameProbe.Scope("GameScene/hud.Update"))

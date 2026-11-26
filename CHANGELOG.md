@@ -12,6 +12,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - New default keys follow Space Station 14: Shift switches walk and run, C lies down, Ctrl+Q throws, Shift+click examines; saved keys stay as they were.
 - What you can do with the thing under the crosshair now shows beside it, each with your key; F3 shows ping and FPS in one chip at the top right.
 - The health doll is in a panel at the middle right, green to red, with a combat mode pill under it; the zone selector shows only in cursor mode.
+- Your hands sit either side of the bottom centre with belt, pockets and ID between them; a card at the bottom right shows the held item and its keys.
 - Aiming at a person hits their body, not their clothes, hair, backpack or held items, so every click on them targets the body part you aim at.
 - Aiming or shooting at a person from the side hits the leg in front where the legs overlap; shots hit a giant's head and a body moved by a handrail.
 - Attack and hit effects no longer take the next click, so a quick second attack lands on the person instead of the effect.

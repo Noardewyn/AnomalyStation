@@ -1326,8 +1326,12 @@ public partial class GameScene
                 if (System.Environment.GetEnvironmentVariable("ANOMALY_SHOT_DISABLED") == "1")
                     At(0.8, () => _session.DevCommand("wound me l_arm blunt critical")); // tg's compound fracture disables the left arm (doll key 7)
                 At(1.0, () => _session.ToggleCombatMode());
+                // slice C: the toolbox in the left hand, then the welder in the right, which stays active: both hand boxes and the card show
+                Pick(server.ToolboxId, 1.1);
+                At(1.9, () => _session.Keybinding(KeybindingCode.SwapHands));
+                Pick(server.WelderId, 2.1);
                 if (System.Environment.GetEnvironmentVariable("ANOMALY_SHOT_CURSOR") == "1")
-                    At(2.0, () => SetCursorMode(true)); // the cursor freed: tg's zone selector shows at its place
+                    At(3.0, () => SetCursorMode(true)); // the cursor freed: tg's zone selector shows at its place
                 break;
             case "throw":
                 Pick(server.WelderId, 0.8);

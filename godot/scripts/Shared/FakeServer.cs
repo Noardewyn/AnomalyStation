@@ -353,9 +353,14 @@ public sealed partial class FakeServer
     /// <summary>An action of the Control channel: it is applied in the tick that applies its frame.</summary>
     public void OnAction(ActionMessage action)
     {
+        _actionsReceived++;
         if (_pendingActions.Count < 64)
             _pendingActions.Add(action);
     }
+
+    // Version 43: the Action messages received; less the pending ones, the settled ones the private block reports (as the real server's
+    // Session), so the client's guesses of its hands (OwnGuesses, which the hand indices of the fake's hand boxes turn on) end with the answer
+    private uint _actionsReceived;
 
     // ---- the tick ----
 
@@ -954,6 +959,7 @@ public sealed partial class FakeServer
             Motion = p.Motion,
             Params = ParamsFor(p),
             InputBufferDepth = (byte)_jitter.Count,
+            ActionsDone = _actionsReceived - (uint)_pendingActions.Count,
         };
         if (snapshot)
         {

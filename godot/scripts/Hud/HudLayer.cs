@@ -24,7 +24,9 @@ namespace Anomaly.Client.Hud;
 /// <para>
 /// The live HUD (ui-overhaul.md section 6, <see cref="LiveHud"/>): the doll is re-placed into a panel at the middle right (it shows injuries
 /// only; its wound outlines stay tg's), the combat toggle is drawn as a native pill under it (<see cref="LiveHudView"/>), both still taking
-/// tg's clicks, and tg's zone selector is shown only while the cursor is free.
+/// tg's clicks, and tg's zone selector is shown only while the cursor is free. Slice C, on the human HUD: tg's two hand boxes are drawn as native
+/// boxes either side of the hotbar's gap at the bottom centre, tg's bottom slots are moved into that gap, and the held-item card stands under the
+/// doll panel; the boxes and the slots still take tg's clicks and drags.
 /// </para>
 /// </summary>
 public partial class HudLayer : CanvasLayer, IHudSurface
@@ -93,11 +95,23 @@ void fragment() {
     private Label _labels;
     private readonly List<ZoneState> _zoneStates = new();
     private readonly List<HudRect> _zoneRects = new();
-    private LiveHudView _view; // ui-overhaul.md section 6: the doll panel and the combat pill, under tg's pictures
+    private LiveHudView _view; // ui-overhaul.md section 6: the doll panel and the combat pill, the hands and the held-item card, under tg's pictures
     private LiveHudLayout _layout;
+    private HandsLayout _hands;
+    private bool _humanHud; // slice C: tg's inventory toggle is on the screen, so the hands and the bottom slots are re-placed (LiveHud.Placed)
+    private readonly List<Item> _bottomSlots = new();
+    private MaptextNode _cardText; // slice C: the active hand's maptexts (a stack's amount) on the card's picture
 
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
+
+    /// <summary>Slice C: the open chat window's right edge, screen pixels, when it reaches down into the hands' row (0: none); the row keeps clear of it. Set by the scene each frame.</summary>
+    public float ChatRight { get; set; }
+
+    // the role an item is drawn in this frame: the hands and the bottom slots only on the human HUD
+    private LiveHudRole RoleNow(Item item) => LiveHud.Placed(item.Role, _humanHud);
+
+    private static bool IsHand(LiveHudRole role) => role is LiveHudRole.LeftHand or LiveHudRole.RightHand;
 
     /// <summary>
     /// Slice T5c: the doll's part under the free pointer (<see cref="DollZoneAt"/> refined by <see cref="BodyZoneAim.DollFaceAt"/>; None off the doll). Over the eyes or the mouth tg's own hover
@@ -174,6 +188,8 @@ void fragment() {
         AddChild(_root);
         _view = new LiveHudView { Name = "LiveHud" };
         _root.AddChild(_view); // the root's first child: tg's pictures are drawn over it (Update keeps it first)
+        _cardText = new MaptextNode { Name = "CardMaptext" };
+        _root.AddChild(_cardText); // kept last (Update): the card's maptext over the card
         // tg draws the fullscreens (the damage, crit and death overlays) on FULLSCREEN_PLANE, below the HUD planes, so the HUD
         // stays visible over them: here they go on their own canvas layer under every UI layer (the debug HUD 1, this HUD
         // and the windows 2, the UI 3), above the 3D view (the owner, 2026-10-09).
@@ -227,6 +243,13 @@ void fragment() {
             }
             else if (item.Role == LiveHudRole.CombatToggle)
                 bottomToTop.Add(LiveHud.PillDrawn(item.Entry.Id, _layout)); // the native pill takes tg's toggle's clicks
+            else if (IsHand(RoleNow(item)))
+            {
+                // slice C: the native box is tg's hand box for clicks and drags, the held item's own pixels in its picture square the item's
+                HudRect box = item.Role == LiveHudRole.LeftHand ? _hands.Left : _hands.Right;
+                bottomToTop.Add(new HudDrawn(item.Entry.Id, box, null, 0, 0));
+                bottomToTop.Add(new HudDrawn(item.Entry.Id, LiveHud.HandPicture(box, _hands.Unit), null, 0, 0, HudPictures.ChildrenOf(_replica, _textures, item.Entry, _lastNow)));
+            }
             else if (item.Whole != null && item.Whole.Visible && item.Whole.Texture != null && item.Fullscreen == false)
                 // Version 12: the item in a hand or a slot (the entry's vis_contents child) is hit on its own pixels before the slot.
                 bottomToTop.Add(new HudDrawn(item.Entry.Id, item.LastRect, HudPictures.RasterOf(item.Whole.Texture), item.OriginX, item.OriginY,
@@ -336,7 +359,6 @@ void fragment() {
         _lastNow = nowSeconds;
         Vector2 size = GetViewport().GetVisibleRect().Size;
         var metrics = new HudMetrics(size.X, size.Y, _options.UiScale);
-        _layout = LiveHud.Layout(metrics);
         if (_sortDirty)
         {
             _order.Sort((a, b) => a.Layer != b.Layer ? a.Layer.CompareTo(b.Layer) : a.Entry.Id.CompareTo(b.Entry.Id));
@@ -347,6 +369,7 @@ void fragment() {
                 Node parent = ordered.Container.GetParent();
                 parent.MoveChild(ordered.Container, parent == _fullscreenRoot ? fullscreenIndex++ : parent == _splashRoot ? splashIndex++ : hudIndex++);
             }
+            _root.MoveChild(_cardText, -1); // the card's maptext over the card
             _sortDirty = false;
         }
         _zoneStates.Clear();
@@ -369,25 +392,111 @@ void fragment() {
     private bool _dollShown;
 
     // ui-overhaul.md section 6: what the live HUD's view shows (the doll panel when a doll is shown, the combat pill when a combat toggle is
-    // shown), and where what stands left of them must end.
+    // shown; slice C: on the human HUD the hands, the bottom slots' places in the hotbar's gap and the held-item card), and where what stands
+    // left of them must end.
     private void UpdateLiveHud(in HudMetrics metrics)
     {
-        bool doll = false;
+        bool doll = false, human = false;
         bool? combat = null;
+        Item left = null, right = null, active = null;
+        _bottomSlots.Clear();
         foreach (Item item in _order)
         {
             if (!item.HasSpec || item.Hidden)
                 continue;
             if (item.Analyze)
                 Analyze(item);
-            if (item.Role == LiveHudRole.Doll)
-                doll = true;
-            else if (item.Role == LiveHudRole.CombatToggle)
-                combat ??= LiveHud.CombatOn(_replica, item.Entry);
+            switch (item.Role)
+            {
+                case LiveHudRole.Doll: doll = true; break;
+                case LiveHudRole.CombatToggle: combat ??= LiveHud.CombatOn(_replica, item.Entry); break;
+                case LiveHudRole.InventoryToggle: human = true; break;
+                case LiveHudRole.LeftHand: left = item; break;
+                case LiveHudRole.RightHand: right = item; break;
+                case LiveHudRole.BottomSlot: _bottomSlots.Add(item); break;
+            }
+            // the active hand, whichever (a third or fourth hand stays at tg's place): the one with tg's active overlay
+            if (active == null && item.Entry.HandIndex > 0 && LiveHud.IsActiveHand(_replica, item.Entry))
+                active = item;
         }
         _dollShown = doll;
+        _humanHud = human;
+        _layout = LiveHud.Layout(metrics, card: human);
+        bool leftActive = active != null && active == left, rightActive = active != null && active == right;
+        _hands = LiveHud.Hands(metrics, leftActive, rightActive, ChatRight);
+        _bottomSlots.Sort((a, b) => a.Entry.SlotId.CompareTo(b.Entry.SlotId)); // tg's slot order (ID, belt, back, suit storage, pockets), not their places
+        for (int i = 0; i < _bottomSlots.Count; i++)
+            _bottomSlots[i].Cell = i;
         PanelLeftEdge = doll || combat.HasValue ? LiveHud.LeftOfPanel(_layout, metrics) : float.PositiveInfinity;
         _view.Show(_layout, UiTokens.Unit(metrics), doll, combat, KeyChips.KeyOf(_options.Bindings, PlayAction.ToggleCombatMode));
+        LiveHudView.HandsScene scene = _view.Hands;
+        scene.Shown = human && (left != null || right != null);
+        if (!scene.Shown)
+        {
+            _cardText.Visible = false;
+            _view.ShowHands();
+            return;
+        }
+        scene.Layout = _hands;
+        scene.LeftActive = leftActive;
+        scene.RightActive = rightActive;
+        scene.HasLeft = left != null;
+        scene.HasRight = right != null;
+        HudRect leftSquare = LiveHud.HandPicture(_hands.Left, _hands.Unit), rightSquare = LiveHud.HandPicture(_hands.Right, _hands.Unit);
+        Pictures(left, leftSquare, scene.Left);
+        Pictures(right, rightSquare, scene.Right);
+        Overlays(left, leftSquare, scene.LeftOverlays);
+        Overlays(right, rightSquare, scene.RightOverlays);
+        scene.Swap = LiveHud.SwapLine(_options.Bindings);
+        // the held-item card: the active hand's item, which hand holds it, its maptexts (a stack's amount) and the keys for it; none with an empty
+        // active hand
+        HudRect cardSquare = LiveHud.CardPicture(_layout.Card, _layout.CardUnit);
+        scene.Card = _layout.Card;
+        scene.CardUnit = _layout.CardUnit;
+        Pictures(active, cardSquare, scene.CardPictures);
+        scene.CardShown = scene.CardPictures.Count > 0;
+        scene.CardHand = LiveHud.HandName(active != null && active.Entry.HandIndex % 2 == 1); // tg's IS_LEFT_INDEX
+        scene.CardLines = LiveHud.CardLines(_options.Bindings);
+        _cardText.Visible = scene.CardShown && _textures is AppearanceTextures;
+        if (_cardText.Visible)
+            _cardText.SetText(MaptextRenderer.Shared, (AppearanceTextures)_textures, _replica, active.Entry.Appearance, new Vector2(cardSquare.Left, cardSquare.Bottom), cardSquare.Width / 32f);
+        if (scene.CardShown) // the prompts beside the crosshair end before the card as well
+            PanelLeftEdge = Math.Min(PanelLeftEdge, _layout.Card.Left - UiTokens.DollPanelGap * UiTokens.Unit(metrics));
+        _view.ShowHands();
+    }
+
+    // tg's overlays on a hand box that the native box draws over the held items (LiveHud.HandOverlays: the handcuffs, the blocked mark), placed as
+    // the box's own picture would hold them for an icon square at `square`.
+    private void Overlays(Item hand, HudRect square, List<LiveHudView.Picture> into)
+    {
+        into.Clear();
+        if (hand == null)
+            return;
+        (int shiftX, int shiftY) = _replica.TryGetAppearance(hand.Entry.Appearance, out AppearanceEntry holder) ? (holder.PixelX, holder.PixelY) : (0, 0);
+        foreach (TableRef overlay in LiveHud.HandOverlays(_replica, hand.Entry))
+        {
+            if (!_textures.TryCompose(_replica, overlay, 2, _lastNow, out ComposedAppearance composed))
+                continue;
+            HudRect at = LiveHud.ChildPicture(square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY, shiftX, shiftY);
+            into.Add(new LiveHudView.Picture(composed.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height)));
+        }
+    }
+
+    // The pictures of the items a hand box holds (its vis_contents children, as HudPicker hits them), placed for an icon square at `square`.
+    private void Pictures(Item hand, HudRect square, List<LiveHudView.Picture> into)
+    {
+        into.Clear();
+        ScreenChild[] children = hand?.Entry.VisChildren?.Items;
+        if (children == null)
+            return;
+        (int shiftX, int shiftY) = _replica.TryGetAppearance(hand.Entry.Appearance, out AppearanceEntry holder) ? (holder.PixelX, holder.PixelY) : (0, 0);
+        foreach (ScreenChild child in children)
+        {
+            if (!_textures.TryCompose(_replica, child.Appearance, 2, _lastNow, out ComposedAppearance composed))
+                continue;
+            HudRect at = LiveHud.ChildPicture(square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY, shiftX, shiftY);
+            into.Add(new LiveHudView.Picture(composed.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height)));
+        }
     }
 
     private int _alertSlots;
@@ -419,6 +528,11 @@ void fragment() {
         {
             fullscreen = false;
             return ScreenLoc.FitIcon(_layout.Doll, width, height, originX, originY);
+        }
+        if (RoleNow(item) == LiveHudRole.BottomSlot) // slice C: tg's picture moved into the hotbar's gap, its icon pixels kept
+        {
+            fullscreen = false;
+            return ScreenLoc.FitIcon(LiveHud.SlotCell(_hands, item.Cell, _bottomSlots.Count), width, height, originX, originY);
         }
         int slot = ScreenLoc.AlertSlot(item.Spec);
         if (slot == 0 || width >= HudMetrics.GridTiles * 32)
@@ -492,11 +606,15 @@ void fragment() {
             UpdateZones(item, metrics, now, ref total);
             return;
         }
-        if (item.Role == LiveHudRole.CombatToggle)
+        if (item.Role == LiveHudRole.CombatToggle || IsHand(RoleNow(item)))
         {
-            // drawn as the native pill (LiveHudView), which Collect reports under this entry
+            // drawn as the native pill or hand box (LiveHudView), which Collect reports under this entry
             if (item.Whole != null)
                 item.Whole.Visible = false;
+            foreach (TextureRect big in item.Fitted)
+                big.Visible = false;
+            if (IsHand(RoleNow(item))) // slice C: the entry's maptexts (a held stack's amount) over the box's picture square, as tg puts them on its slot
+                ShowMaptext(item, metrics, item.Entry.Appearance, HudLook.None);
             return;
         }
         // M4v slice 4 (protocol version 11): the entry's flick plays over its picture, and its animate() chains move, turn, tint and fade it.
@@ -634,6 +752,7 @@ void fragment() {
 
     // Protocol version 18: the maptexts of the entry's picture (its own, its overlays' and the item in its hand), over it, at the HUD's pixel size.
     // The box sits at the icon's lower left corner, which is the entry's tile; the entry's animate() chain moves the text with the picture.
+    // Slice C: a hand box's or a moved bottom slot's texts stand on its icon square there and scale with it (LiveHud.MaptextSquare).
     private void ShowMaptext(Item item, in HudMetrics metrics, TableRef shown, in HudLook moved)
     {
         if (_textures is not AppearanceTextures real)
@@ -647,9 +766,11 @@ void fragment() {
             item.Container.AddChild(item.Text);
         }
 
-        HudRect tile = Place(item, metrics, 32, 32, 0, 0, out _);
-        item.Text.Modulate = item.Whole != null ? item.Whole.Modulate : Colors.White;
-        item.Text.SetText(renderer, real, _replica, shown, new Vector2(tile.Left + moved.MoveX, tile.Top + tile.Height + moved.MoveY), metrics.PixelScale);
+        LiveHudRole role = RoleNow(item);
+        HudRect? square = LiveHud.MaptextSquare(role, _hands, item.Cell, _bottomSlots.Count);
+        HudRect tile = square ?? Place(item, metrics, 32, 32, 0, 0, out _);
+        item.Text.Modulate = item.Whole != null && !IsHand(role) ? item.Whole.Modulate : Colors.White;
+        item.Text.SetText(renderer, real, _replica, shown, new Vector2(tile.Left + moved.MoveX, tile.Top + tile.Height + moved.MoveY), square is HudRect s ? s.Width / 32f : metrics.PixelScale);
     }
 
     // The appearance is read again whenever its entry changed: does it hold the doll's zones?
@@ -854,6 +975,7 @@ void fragment() {
         public int OriginX, OriginY;
         public LiveHudRole Role; // ui-overhaul.md section 6: the doll and the combat toggle are re-placed, the zone selector shown in cursor mode only
         public HudRect IconSquare; // a doll entry's own 32 x 32 icon square, where it is drawn (what Collect reports)
+        public int Cell; // slice C: a bottom slot's place in the hotbar's gap
         public TextureRect Face; // slice T5c: tg's eyes or mouth hover picture on the doll
         public readonly List<ZoneNode> Zones = new();
     }

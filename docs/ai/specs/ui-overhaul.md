@@ -31,17 +31,18 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 95) |
 | `3398a80` | Package T, slice T4c: a patient lies face up, "Turn over", the input-script step `radial=LABEL` (protocol 95; signed off by the contributor 2026-11-26) |
 | `d48b027` | Package T, slice T5a: looking down shows the own body (client only; section 8, "T5a as built") |
+| `a98d5ee` | Package T, slices T5b and T5c: the own body is a target, the doll's eyes, mouth and grasp (client only; section 8, "T5b and T5c as built") |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
 Next, in this order:
-1. Package T, slice T5, the rest (section 8, "T5 design, corrected by the contributor"; client only): T5b the own
-   body as a target like anyone else's in every mode; T5c the health doll's eyes and mouth and the ctrl-click grasp
-   of the limb clicked. T5a's screenshots were sent to the contributor on 2026-11-26; the pivot (0.15 m) and the
-   limit (105 degrees) are theirs to tune.
-2. The prompt beside the crosshair only when the thing looked at is in reach (section 9, "Asked for by the designer
-   after the reference").
+1. Open with the contributor on slice T5: the pivot (0.15 m) and the limit (105 degrees) are theirs to tune after
+   the screenshots of 2026-11-26; at those numbers the crosshair reaches only a leg and the groin of the own body
+   (section 8, "T5b and T5c as built"). Tg's zone selector stays under Tab.
+2. The prompt beside the crosshair only when the thing looked at is in reach: built and playtested, parked in a
+   stash with one open fault after three fix rounds (section 9, "The in-range prompt: built, parked with one open
+   fault"). It waits for the contributor's decision; nothing else depends on it.
 3. Package 2, slices C (native hands, held-item card) and D (alert chips).
 4. Packages 3 to 8 and what section 9 adds.
 
@@ -333,6 +334,51 @@ dropped (F1 is the camera mode and there is no traits data). The wireframes' "[C
 | B | Doll colours and panel, combat pill, the fake server's combat toggle | `Client.Play.HudTests`, `Client.Play.LiveHudTests`, `Client.Interaction.FakeInventoryTests` |
 | C | Native hands, the bottom row in the hotbar gap, the held-item card | `Client.Play.LiveHudTests`, `Client.Play.HeldPoseTests`, `Client.Interaction.FakeInventoryTests` |
 | D | Alert chips at the top, tg's alert column (DV82) removed | `Client.Play.HudTests`, `Client.Play.LiveHudTests` |
+
+### Slice C as built (2026-11-26): the hands, the bottom slots in the hotbar gap, the held-item card
+
+Client only. On the human HUD (tg's inventory toggle on screen; every other HUD and hands beyond the second keep
+tg's places):
+- The two hands are native boxes either side of a gap for the nine-slot hotbar (9 x 48 + 8 x 4) at the bottom
+  centre. A box is 72 px with a 2 px amber border only when that hand carries tg's active overlay, else 56 px. Each
+  shows the held item's picture and, over it, what tg draws on a hand slot: the handcuff and blocked overlays and a
+  held stack's count. A hand box is tg's hand slot for input: `HudLayer.Collect` reports the box and the picture
+  square with the held items under the entry's id.
+- tg's six bottom slots (ID, belt, back, suit storage, both pockets; a non-zero slot id, ordered by it) are fitted
+  into the gap until package 3; a stack's count on an item there is drawn at the cell's scale.
+- "[X] Swap hand" is a chip over the right hand; where that place would touch tg's drop or swap button (4:3, 5:4
+  and 16:10 screens at about 125 to 190% scale) it is raised above them, and it is left out only at 1280x1024 at
+  290% and above.
+- The held-item card sits under the combat pill: the active hand's item picture with its count, which hand, and key
+  chips for use, drop and throw from the bindings; hidden with an empty active hand. No name and no traits until
+  package 3 sends them.
+- With the chat window open at the bottom left the row moves right of it only while it still fits (the smaller box
+  at 32 px or more, clear of tg's drop and swap buttons); otherwise it is where it is with the chat closed, and a
+  window over it covers it as a window covers tg's HUD (D282).
+- The fake server gained hand indices, tg's slot ids, tg's static and toggled slot groups, the inventory toggle and
+  the count of settled actions.
+
+Playtested against the real server (evidence: the session's scratchpad, `hands` and `playtest-hands`): empty hands,
+an item in each, and X, tg's swap button and a click on the other box each moving the border and the card; a click
+on the held flashlight turning it on; drags hand to pocket, hand to hand and pocket to hand; the back slot opening
+the backpack and the belt giving up the PDA; the inventory window complete with nothing drawn twice; "30" on cable
+and "15" on iron in the box and on the card, a bruise pack going from 6 to 5, a split leaving 9 and 1; counts on
+the belt and in a pocket inside their cells at 100% and 250%; tg's blocked mark with an arm removed and the cuff
+marks when handcuffed; Z, Q and Ctrl+Q doing what the card says and a rebound key changing its chip; no overlap at
+1280x720 and 1920x1080 from 100% to 250%; a cyborg and a ghost keeping tg's layout; the HUD hidden and shown, a
+death and a revival. Probes: 134,640 layouts over 40 screens, every scale from 50 to 300% and every chat position
+with no overlap and nothing off screen.
+
+Not driven: middle click to swap; a drag from the floor onto a hand box; the ID slot; an animal, an alien and the
+AI in the client; reconnecting mid-round; four hands (unit test only).
+
+Known limits:
+- At 250% scale the chat window at its default place covers the left hand's box; closing or moving the chat
+  uncovers it. Package 5 replaces that window.
+- The handcuff marks are faint on the dark box (tg's handcuffed alert still shows).
+- On 4:3 and 5:4 screens at 230% scale and above the boxes go under 32 px for want of room.
+- The tooltip of a slot hidden under a window still shows (older).
+- The doll panel sits a little higher than in slice B, to keep the card's room.
 
 ### To confirm with the owner
 
@@ -982,6 +1028,55 @@ Settled by the designer (2026-11-26), the three points of the row above:
   table, not through a window or a wall. The server decides it and sends no hints for a thing out of reach.
 - Out of reach nothing is shown for actions that work from afar either (a gun, a throw, examine), whatever is held.
 - Out of reach the thing's name does not show: the crosshair is bare.
+
+### The in-range prompt: built, parked with one open fault (2026-11-26)
+
+Not committed. The change is parked in the stash entry `parked: in-range prompt (DV589)` on top of `a98d5ee`
+(`git stash list`; `git stash apply` brings it back). Three fix rounds are used up, so it waits for the contributor:
+accept the open fault as a known limit and commit, or allow one more fix round.
+
+As built (server and client, no wire change; DV589 and protocol.md 14.2 in the stash have the full text):
+- The server answers a hover of a thing its sender cannot reach (tg's `IsReachableBy` with the held item's reach)
+  with a zero-length name and no hints; the client then shows a bare crosshair. Gated: every living mob acting from
+  where it stands, whatever its state. Not gated: a ghost, the AI, a cyborg with no module out, the hunter while it
+  leaps on click, a mob inside a mech or a locker; screen targets never. A ceiling cell goes bare outside the
+  ceiling's range for every living mob.
+- The client sends an unchanged hover again every half second (not while the pet-commands key is held), so the
+  prompt follows walking into and out of reach and a change of held item or combat mode. A held key whose release
+  was lost is released when the key is no longer down.
+- On a real server nothing shows for a thing until the server has answered during the current look. Only the
+  prompt goes bare: the radial keeps its title ("Ceiling" for a ceiling cell) and the dev tools their labels.
+- Working out a hover's answer no longer writes to the player's chat (a mute in the server's chat sink); before, a
+  cuffed player got "You are incapacitated at the moment!" on every look at a person beside them.
+
+The open fault (reproduced by the stress test, `src/Server/ServerHost.World.cs` `NoteReach` and the router): reach is
+decided for the body playing when the hover is applied, and the answer is built one tick later for the body playing
+then. A player who changes body in that one tick (a ghost re-entering its corpse while looking at a far pen, or the
+reverse) gets one answer by the old body's rule: a far thing named, or a ghost's name blank, for at most half a
+second until the next repeat. The fix would be small (keep the mob with the flag and compare it in the router).
+
+Playtested against the real server (evidence: the session's scratchpad, `reach` to `reach5` and `playtest-reach`): a
+pen, a person and a vending machine are bare from four tiles and named from the next; walking up brings the prompt
+within about a second and stepping back clears it; a pistol holder sees nothing at five tiles; the lines follow a
+change of held item, a hand swap and combat mode without looking away; the pointer under Tab likewise, with the hand
+slot's and the HUD's own tooltips unchanged; the radial is titled near and far, with only the fixed entries far, and
+"Ceiling" on a far ceiling cell; with 300 and 400 ms of added latency no far name ever shows; a ghost sees names at
+any distance; a cuffed player and a pAI in holoform get no chat line from looking; a mech pilot keeps the old
+prompt; one's own body shows the prompt; sixty seconds on one person leave the chat and the server's log clean.
+Probes: 200 hovers in a tick and 50 a second for ten seconds are held by the limiter (one in five applied) with the
+answer always the last applied hover's; two minutes of repeats on five kinds of thing pile nothing up; the hover
+agrees with a real click for windows on each edge, tables, grilles, diagonals and airlocks.
+
+Not driven: throw mode confirmed on; a person seen through a window (the crosshair stops at the pane); a locker,
+a cyborg and the AI in the client; a round restart with a hover pending; the lost key release beyond one console run.
+
+Known limits, accepted: an answer in flight from an earlier look at the same thing counts for the current one; on a
+slow connection every name lags by the round trip; while J is held the prompt does not follow reach; a change on
+the thing itself (a door opening) refreshes the prompt only on a new look; the repeat is about 100 bytes a second
+per player in a recording.
+
+Last verify PASS on the parked tree: `C:/Users/Lucas/.claude/state/qa/logs/verify-AnomalyStation-20261126-064511-583150.log`
+(213 server tests). Filter: `(FullyQualifiedName~HoverReach|FullyQualifiedName~HoverZone|FullyQualifiedName~KeyChips|FullyQualifiedName~PlaySessionTests|FullyQualifiedName~RadialTests|FullyQualifiedName~Ceiling|FullyQualifiedName~Screentip|FullyQualifiedName~ContextHint|FullyQualifiedName~ProtocolV14|FullyQualifiedName~FakeInventory|FullyQualifiedName~PetsGameplay)&Category!=Meta&FullyQualifiedName!~BuildInfo&FullyQualifiedName!~Bench`.
 
 ### T4c playtested (2026-11-26)
 

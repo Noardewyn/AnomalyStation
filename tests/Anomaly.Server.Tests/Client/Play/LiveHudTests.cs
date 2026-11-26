@@ -7,11 +7,14 @@ namespace Anomaly.Server.Tests.Client.Play;
 /// <summary>
 /// ui-overhaul.md section 6, slice B: which screen entries the live HUD re-draws (the doll, the combat toggle) or hides (tg's zone selector in the
 /// captured view), combat mode read off the replica, the doll panel and the combat pill placed clear of tg's right-hand column at every HUD
-/// scale, and clicks on the re-placed doll and on the pill reaching tg's entries with tg's icon pixels.
+/// scale, and clicks on the re-placed doll and on the pill reaching tg's entries with tg's icon pixels. Slice C: the hands known by hand index and
+/// the bottom slots by slot id on the human HUD only, the active hand and its swaps, the hands' row, the bottom slots and the held-item card clear
+/// of each other and of tg's HUD and the chat window, and a click on a hand box reaching tg's hand box or the held item.
 /// </summary>
 public class LiveHudTests
 {
-    private const long DollId = 1001, HealthId = 1002, IntentId = 1004, HandLeftId = 2001, ThrowId = 2005, FirstSlotId = 2010;
+    private const long DollId = 1001, HealthId = 1002, IntentId = 1004, HandLeftId = 2001, HandRightId = 2002, SwapId = 2003, DropId = 2004, ThrowId = 2005,
+        FirstSlotId = 2010, BeltSlotId = 2024;
 
     private static (PlayRig Rig, ReplicaWorld World) Start()
     {
@@ -34,10 +37,10 @@ public class LiveHudTests
         Assert.Equal(LiveHudRole.Doll, LiveHud.RoleOf(world, world.Screen[DollId]));
         Assert.Equal(LiveHudRole.ZoneSelector, LiveHud.RoleOf(world, world.Screen[FakeServer.ZoneSelId]));
         Assert.Equal(LiveHudRole.CombatToggle, LiveHud.RoleOf(world, world.Screen[FakeServer.CombatId]));
-        foreach (long id in new[] { HealthId, IntentId, HandLeftId, ThrowId, FirstSlotId })
+        foreach (long id in new[] { HealthId, IntentId, ThrowId, FirstSlotId })
             Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, world.Screen[id]));
-        // every other entry of the fake's HUD stays at tg's place
-        Assert.Equal(3, world.Screen.Values.Count(e => LiveHud.RoleOf(world, e) != LiveHudRole.Tg));
+        // every other entry of the fake's HUD stays at tg's place, but slice C's: the two hands, the six bottom slots and the inventory toggle
+        Assert.Equal(3 + 2 + 6 + 1, world.Screen.Values.Count(e => LiveHud.RoleOf(world, e) != LiveHudRole.Tg));
         // tg puts them where the fake does: the zone selector at ui_zonesel, the toggle at ui_acti
         Assert.Equal("EAST-1:28,SOUTH:5", world.Screen[FakeServer.ZoneSelId].ScreenLoc);
         Assert.Equal("EAST-3:24,SOUTH:5", world.Screen[FakeServer.CombatId].ScreenLoc);
@@ -364,5 +367,402 @@ public class LiveHudTests
             if (room >= 40f)
                 Assert.Equal(KeyChips.PromptBlock(metrics, 2, 40f, w / 2f, h / 2f, reach), small);
         }
+    }
+
+    // ---- slice C: the hands, the bottom slots in the hotbar's gap, the held-item card ----
+
+    // the fake's six bottom slots: ID, back, left and right pocket, suit storage, belt (FakeServer.SlotDefs)
+    private static readonly long[] BottomSlotIds = { 2012, 2015, 2016, 2017, 2018, BeltSlotId };
+
+    [Fact]
+    public void TheHandsAreKnownByHandIndexAndTheBottomSlotsBySlotIdNeverByPlace()
+    {
+        (_, ReplicaWorld world) = Start();
+        Assert.Equal(LiveHudRole.LeftHand, LiveHud.RoleOf(world, world.Screen[HandLeftId]));
+        Assert.Equal(LiveHudRole.RightHand, LiveHud.RoleOf(world, world.Screen[HandRightId]));
+        Assert.Equal(LiveHudRole.InventoryToggle, LiveHud.RoleOf(world, world.Screen[FakeServer.InventoryToggleId]));
+        foreach (long id in BottomSlotIds)
+            Assert.Equal(LiveHudRole.BottomSlot, LiveHud.RoleOf(world, world.Screen[id]));
+        // tg's swap, drop and throw buttons stay at tg's places
+        foreach (long id in new[] { SwapId, DropId, ThrowId })
+            Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, world.Screen[id]));
+        ScreenEntry left = world.Screen[HandLeftId], right = world.Screen[HandRightId];
+        // the place says nothing: the left hand at the right hand's place is the left hand, and the hand index wins over the picture
+        Assert.Equal(LiveHudRole.LeftHand, LiveHud.RoleOf(world, left with { ScreenLoc = right.ScreenLoc }));
+        Assert.Equal(LiveHudRole.RightHand, LiveHud.RoleOf(world, left with { HandIndex = 2 }));
+        // a third and fourth hand keep tg's place
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, left with { HandIndex = 3 }));
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, right with { HandIndex = 4 }));
+        // a slot of the toggled inventory or of a storage window is the window's, whatever its slot id
+        ScreenEntry belt = world.Screen[BeltSlotId];
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, belt with { Group = HudGroup.ToggleableInventory }));
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, belt with { Group = HudGroup.Storage }));
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, belt with { SlotId = 0 }));
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, left with { ActionTarget = 7 }));
+    }
+
+    [Fact]
+    public void OnlyTheHumanHudsHandsAndBottomSlotsAreRePlaced()
+    {
+        // the alien's, a basic mob's and the other HUDs have no inventory toggle: their hands and slots keep tg's places
+        foreach (LiveHudRole role in new[] { LiveHudRole.LeftHand, LiveHudRole.RightHand, LiveHudRole.BottomSlot })
+        {
+            Assert.Equal(role, LiveHud.Placed(role, humanHud: true));
+            Assert.Equal(LiveHudRole.Tg, LiveHud.Placed(role, humanHud: false));
+        }
+        // the doll, the combat toggle and the zone selector are slice B's on every HUD
+        foreach (LiveHudRole role in new[] { LiveHudRole.Doll, LiveHudRole.CombatToggle, LiveHudRole.ZoneSelector, LiveHudRole.InventoryToggle, LiveHudRole.Tg })
+            Assert.Equal(role, LiveHud.Placed(role, humanHud: false));
+        Assert.True(LiveHud.Shown(LiveHudRole.LeftHand, cursorMode: false) && LiveHud.Shown(LiveHudRole.BottomSlot, cursorMode: false));
+    }
+
+    [Fact]
+    public void TheActiveHandIsTgsOverlayAndASwapByKeyByButtonOrByAClickOnTheOtherHandMovesIt()
+    {
+        (PlayRig rig, ReplicaWorld world) = Start();
+        bool LeftActive() => LiveHud.IsActiveHand(world, world.Screen[HandLeftId]);
+        bool RightActive() => LiveHud.IsActiveHand(world, world.Screen[HandRightId]);
+        Assert.True(LeftActive());
+        Assert.False(RightActive());
+        rig.Session.Keybinding(KeybindingCode.SwapHands); // X
+        rig.Run(0.3);
+        Assert.False(LeftActive());
+        Assert.True(RightActive());
+        ClickScreen(rig, HandLeftId, 16, 16); // what the left hand box reports: tg's hand box, whose Click swaps to it
+        Assert.True(LeftActive());
+        Assert.False(RightActive());
+        ClickScreen(rig, SwapId, 16, 16); // tg's swap button
+        Assert.True(RightActive());
+    }
+
+    [Fact]
+    public void TheSwapChipAndTheCardsLinesAreTheBoundKeys()
+    {
+        KeyBindings bindings = KeyBindings.Defaults();
+        Assert.Equal(new PromptLine("X", "Swap hand"), LiveHud.SwapLine(bindings));
+        Assert.Equal(new[] { new PromptLine("Z", "Use"), new PromptLine("Q", "Drop"), new PromptLine("Ctrl+Q", "Throw") }, // swapping is the chip by the hands
+            LiveHud.CardLines(bindings));
+        bindings.Set(PlayAction.SwapHand, "V", "MouseMiddle");
+        bindings.Set(PlayAction.DropItem); // unbound: its line is left out
+        Assert.Equal(new PromptLine("V", "Swap hand"), LiveHud.SwapLine(bindings));
+        Assert.Equal(new[] { "Z", "Ctrl+Q" }, LiveHud.CardLines(bindings).Select(l => l.Key));
+        bindings.Set(PlayAction.SwapHand);
+        Assert.Null(LiveHud.SwapLine(bindings));
+        Assert.Equal(("Left hand", "Right hand"), (LiveHud.HandName(true), LiveHud.HandName(false)));
+    }
+
+    // 16:9, 16:10, 4:3, 5:4 and 21:9 screens at every HUD scale the options offer in steps of 5 (50 to 300 %)
+    private static readonly (int W, int H)[] HandSizes =
+    {
+        (1280, 720), (1920, 1080), (2560, 1440), (1024, 600), (1024, 768), (1280, 1024), (1440, 900), (1920, 1200), (2560, 1080), (3440, 1440),
+    };
+
+    public static IEnumerable<object[]> HandScreens()
+    {
+        foreach ((int w, int h) in HandSizes)
+        {
+            for (int percent = 50; percent <= 300; percent += 5)
+            {
+                yield return new object[] { w, h, percent / 100f, true };
+                yield return new object[] { w, h, percent / 100f, false };
+            }
+        }
+    }
+
+    // The chat window at its place in the round (GameScene.Chat.cs ChatRoundDefault) at the default chat scale (PlayOptions.ChatWindowScaleFor:
+    // the height over 540), its least size (ChatWindow.MinSize) kept, as ChatWindow.Place puts it.
+    private static HudRect DefaultChat(int w, int h)
+    {
+        float scale = h / 540f;
+        float width = Math.Max(360f, 0.39f * w / scale) * scale, height = Math.Max(240f, 0.319f * h / scale) * scale;
+        return new HudRect(Math.Clamp(0.006f * w, 0f, Math.Max(0f, w - width)), Math.Clamp(0.631f * h, 0f, Math.Max(0f, h - height)), width, height);
+    }
+
+    // tg's human HUD at the bottom (hud/human.dm, __DEFINES/hud.dm): the inventory toggle, the drop and swap buttons over the hands, and the
+    // bottom-right menu with the zone selector, the move intent, pull, resist, throw, rest and sleep
+    private static readonly string[] HumanBottom =
+    {
+        "WEST:6,SOUTH:5", // ui_inventory
+        "CENTER-1:16,SOUTH+1:5", // ui_swaphand_position(1): drop
+        "CENTER:16,SOUTH+1:5", // ui_swaphand_position(2): swap
+        "EAST-4:22,SOUTH:5", // ui_human_floor_changer
+        "EAST-4:22,SOUTH+1:7", // ui_human_memories_menu
+        "EAST-3:7,SOUTH+1:7", // ui_human_navigate
+        "EAST-3:7,SOUTH+1:24", // ui_human_language
+        "EAST-3:24,SOUTH:5", // ui_acti (the combat toggle, drawn as the pill)
+        "EAST-3:24, SOUTH+1:7", // ui_above_intent: resist
+    };
+
+    [Theory]
+    [MemberData(nameof(HandScreens))]
+    public void TheHandsTheBottomSlotsAndTheCardAreOnTheScreenAndClearOfEachOtherAndOfTgsHud(int width, int height, float scale, bool chatOpen)
+    {
+        var metrics = new HudMetrics(width, height, scale);
+        var screen = new HudRect(0, 0, width, height);
+        HudRect chat = DefaultChat(width, height);
+        LiveHudLayout layout = LiveHud.Layout(metrics, card: true);
+        var tg = RightColumn.Concat(HumanBottom).Select(loc => (loc, rect: ScreenLoc.Place(Parse(loc), metrics, 32, 32, 0, 0, out _))).ToList();
+        float pulseTop = ScreenLoc.Place(Parse(RightColumn[0]), metrics, 32, 32, 0, 0, out _).Top;
+        for (int slot = 1; slot <= 5; slot++)
+            tg.Add(("alert " + slot, ScreenLoc.PlaceAlert(slot, 5, metrics, pulseTop)));
+        // the chat window closed, at its place in the round, and widened from its left edge to every tenth of the screen up to all of it
+        var chatRights = new List<float> { 0f };
+        if (chatOpen)
+        {
+            chatRights.Add(chat.Right);
+            for (int tenth = 1; tenth <= 10; tenth++)
+                chatRights.Add(width * tenth / 10f);
+        }
+        foreach (float chatRight in chatRights)
+        foreach (bool leftActive in new[] { true, false })
+        {
+            HandsLayout hands = LiveHud.Hands(metrics, leftActive, !leftActive, chatRight);
+            var window = new HudRect(chat.Left, chat.Top, Math.Max(0f, chatRight - chat.Left), chat.Height);
+            var row = new List<(string Name, HudRect Rect)> { ("left hand", hands.Left), ("right hand", hands.Right), ("hotbar", hands.Hotbar) };
+            if (hands.SwapChip.Width > 0) // left out only where no clear place exists at this size
+                row.Add(("swap chip", hands.SwapChip));
+            var ours = row.Concat(new (string Name, HudRect Rect)[] { ("card", layout.Card), ("panel", layout.Panel), ("pill", layout.Pill) }).ToList();
+            string at = $"{width}x{height} at {scale}, chat to {chatRight}, left {(leftActive ? "active" : "not active")}";
+            foreach ((string name, HudRect rect) in ours)
+            {
+                Assert.True(rect.Width > 0 && rect.Height > 0 && Inside(rect, screen), $"{at}: {name} {rect}");
+                foreach ((string loc, HudRect tgRect) in tg)
+                    Assert.False(Overlaps(rect, tgRect), $"{at}: {name} {rect} over {loc} {tgRect}");
+            }
+            for (int i = 0; i < ours.Count; i++)
+                for (int j = i + 1; j < ours.Count; j++)
+                    Assert.False(Overlaps(ours[i].Rect, ours[j].Rect), $"{at}: {ours[i].Name} {ours[i].Rect} over {ours[j].Name} {ours[j].Rect}");
+            // the row either stands wholly right of the chat window, clear of it, or exactly where it is with the chat window closed (the window,
+            // if it reaches there, covers it as it covers tg's HUD)
+            HandsLayout closed = LiveHud.Hands(metrics, leftActive, !leftActive);
+            bool beside = row.All(r => window.Width <= 0 || !Overlaps(r.Rect, window)) && hands.Left.Left >= chatRight;
+            Assert.True(beside || hands == closed, $"{at}: the row {hands.Left}..{hands.Right} is neither clear of the chat window {window} nor at its place without it");
+            if (hands != closed)
+                Assert.True(hands.Left.Left >= chatRight && !row.Any(r => Overlaps(r.Rect, window)), $"{at}: moved, yet over the chat window");
+            // the active hand 72 reference pixels and the other 56, both on the gap's bottom line, the gap between them. Moved beside the chat window
+            // the smaller box is never less than tg's own slot at its native size; at its own place it is never made smaller than the room between
+            // tg's inventory toggle and its bottom-right menu, and under the chat lines, leaves it (a 4:3 or 5:4 screen at 230 % and more: tg's own
+            // menu takes the bottom's width)
+            float k = hands.Unit, u = UiTokens.Unit(metrics), margin = UiTokens.DollPanelGap * u;
+            HudRect active = leftActive ? hands.Left : hands.Right, other = leftActive ? hands.Right : hands.Left;
+            Assert.InRange(active.Width, UiTokens.HandActive * k - 1f, UiTokens.HandActive * k + 1f);
+            Assert.InRange(other.Width, UiTokens.HandInactive * k - 1f, UiTokens.HandInactive * k + 1f);
+            const float half = UiTokens.HotbarWidth / 2f + UiTokens.HandGap + UiTokens.HandActive;
+            float across = (ScreenLoc.Place(Parse("EAST-4:22,SOUTH:5"), metrics, 32, 32, 0, 0, out _).Left - ScreenLoc.Place(Parse("WEST:6,SOUTH:5"), metrics, 32, 32, 0, 0, out _).Right - 2 * margin) / (2 * half * u);
+            float up = (height * 0.2f - 20f * u - margin) / ((UiTokens.HotbarMargin + UiTokens.HandActive + UiTokens.SwapChipGap + UiTokens.ChipHeight) * u);
+            float least = hands == closed ? Math.Min(UiTokens.HandMinPixels, UiTokens.HandInactive * u * Math.Clamp(Math.Min(across, up), 0.1f, 1f)) : UiTokens.HandMinPixels;
+            Assert.True(other.Width >= least - 1f, $"{at}: the smaller hand box {other} under {least} pixels");
+            Assert.Equal(hands.Hotbar.Bottom, hands.Left.Bottom);
+            Assert.Equal(hands.Hotbar.Bottom, hands.Right.Bottom);
+            Assert.True(hands.Left.Right < hands.Hotbar.Left && hands.Hotbar.Right < hands.Right.Left);
+            Assert.InRange(hands.Hotbar.Width, UiTokens.HotbarWidth * k - 1f, UiTokens.HotbarWidth * k + 1f);
+            // one to nine bottom slots: each a square wholly in the gap, a hotbar slot's size, left to right, never over each other (a gap between
+            // them from a gap of one screen pixel up)
+            for (int count = 1; count <= UiTokens.HotbarSlots; count++)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    HudRect cell = LiveHud.SlotCell(hands, i, count);
+                    Assert.True(Inside(cell, hands.Hotbar), $"{at}: slot {i} of {count} {cell} out of the gap {hands.Hotbar}");
+                    Assert.InRange(cell.Width, UiTokens.HotbarSlot * k - 1.5f, UiTokens.HotbarSlot * k + 1f);
+                    Assert.Equal(cell.Width, cell.Height);
+                    if (i > 0)
+                    {
+                        HudRect previous = LiveHud.SlotCell(hands, i - 1, count);
+                        Assert.True(UiTokens.HotbarSlotGap * k >= 1f ? previous.Right < cell.Left : previous.Right <= cell.Left, $"{at}: slots {i - 1} {previous} and {i} {cell} of {count}");
+                    }
+                }
+            }
+            // the swap chip by the right hand, over it (it may stand higher, over tg's drop and swap buttons, or reach right of the box), the same
+            // through a swap
+            if (hands.SwapChip.Width > 0)
+                Assert.True(hands.SwapChip.Bottom <= hands.Right.Top && hands.SwapChip.Left <= hands.Right.Right && hands.SwapChip.Right >= hands.Right.Left,
+                    $"{at}: chip {hands.SwapChip} not by {hands.Right}");
+            Assert.Equal(LiveHud.Hands(metrics, !leftActive, leftActive, chatRight).SwapChip, hands.SwapChip);
+            Assert.Equal(LiveHud.Hands(metrics, !leftActive, leftActive, chatRight).Hotbar, hands.Hotbar);
+        }
+        // the card at the bottom right, in the doll's column under the pill, and the prompts end before it
+        Assert.True(layout.Card.Top >= layout.Pill.Bottom && Math.Abs(layout.Card.Right - layout.Panel.Right) <= 1f, $"card {layout.Card} panel {layout.Panel}");
+        Assert.True(layout.Card.Right > width / 2f); // at the right (on a narrow screen at a large scale it reaches left of the middle)
+        Assert.InRange(layout.CardUnit, 0.25f * UiTokens.Unit(metrics) - 0.001f, UiTokens.Unit(metrics) + 0.001f);
+        // the card does not push the doll under the version tag and the ping chip at the top, unless even the smallest card would not fit
+        if (layout.CardUnit > 0.25f * UiTokens.Unit(metrics) + 0.001f)
+            Assert.True(layout.Panel.Top >= UiTokens.CardTopRoom * UiTokens.Unit(metrics) - 1f, $"panel {layout.Panel} under the top room");
+    }
+
+    [Fact]
+    public void AtTheReferenceSizeTheRowIsFullSizeAtTheBottomCentreAndKeepsItsPlacesThroughASwap()
+    {
+        var metrics = new HudMetrics(1920, 1080, 1f);
+        HandsLayout left = LiveHud.Hands(metrics, leftActive: true, rightActive: false), right = LiveHud.Hands(metrics, leftActive: false, rightActive: true);
+        Assert.Equal(1f, left.Unit);
+        Assert.Equal(new HudRect(960 - 232, 1080 - 16 - 48, 464, 48), left.Hotbar); // 9 x 48 + 8 x 4, centred, 16 over the bottom edge
+        Assert.Equal(new HudRect(960 - 232 - 8 - 72, 1080 - 16 - 72, 72, 72), left.Left);
+        Assert.Equal(new HudRect(960 + 232 + 8, 1080 - 16 - 56, 56, 56), left.Right);
+        // a swap moves the highlight, not the gap
+        Assert.Equal(left.Hotbar, right.Hotbar);
+        Assert.Equal(new HudRect(960 - 232 - 8 - 56, 1080 - 16 - 56, 56, 56), right.Left);
+        Assert.Equal(new HudRect(960 + 232 + 8, 1080 - 16 - 72, 72, 72), right.Right);
+        // the chat window in the row's way moves it right only as far as it must, at full size while it fits
+        HandsLayout beside = LiveHud.Hands(metrics, true, false, DefaultChat(1920, 1080).Right);
+        Assert.Equal(1f, beside.Unit);
+        Assert.Equal(DefaultChat(1920, 1080).Right + UiTokens.DollPanelGap, beside.Left.Left, 0);
+        // the card keeps its room at the full size there and the doll stands where slice B put it
+        LiveHudLayout layout = LiveHud.Layout(metrics, card: true);
+        Assert.Equal(1f, layout.CardUnit);
+        Assert.Equal(new HudRect(layout.Card.Left, layout.Card.Top, UiTokens.CardWidth, UiTokens.CardHeight), layout.Card);
+        Assert.Equal(LiveHud.Layout(metrics).DollScale, layout.DollScale);
+        Assert.Equal(default, LiveHud.Layout(metrics).Card); // no card room off the human HUD
+    }
+
+    [Theory]
+    [InlineData(1920, 1080, 1f, true)]
+    [InlineData(1280, 720, 1.5f, false)]
+    [InlineData(1920, 1080, 2.5f, true)]
+    public void AClickOnAHandBoxIsTgsHandAndOnTheHeldItemsPixelsTheItem(int width, int height, float scale, bool leftActive)
+    {
+        // what HudLayer.Collect reports for a hand: the box under the hand's id, and over it the picture square with the held item as the hand's
+        // child (an item 16 x 16 in its icon's lower left, as ModelTests' window cell)
+        const long itemId = 400123;
+        HandsLayout hands = LiveHud.Hands(new HudMetrics(width, height, scale), leftActive, !leftActive);
+        HudRect box = hands.Left, square = LiveHud.HandPicture(box, hands.Unit);
+        Raster item = Raster.Solid(16, 16, 0xFFFFFFFF);
+        var picker = new HudPicker(new StubSurface(new List<HudDrawn>
+        {
+            new(HandLeftId, box, null, 0, 0),
+            new(HandLeftId, square, null, 0, 0, new[] { new HudChildDrawn(itemId, item, 0, 0) }),
+            new(HandRightId, hands.Right, null, 0, 0),
+        }));
+        Assert.True(Inside(square, box));
+        // the item's pixels where its picture is drawn: ChildPicture puts its 16 x 16 at the square's lower left quarter
+        HudRect drawn = LiveHud.ChildPicture(square, 16, 16, 0, 0);
+        Assert.Equal(square.Left, drawn.Left, 2);
+        Assert.Equal(square.Bottom, drawn.Bottom, 2);
+        Assert.Equal(square.Width / 2f, drawn.Width, 2);
+        Assert.Equal(itemId, picker.PickScreen(drawn.Left + 1, drawn.Bottom - 1).Id);
+        Assert.Equal(itemId, picker.PickScreen(drawn.Right - 1, drawn.Top + 1).Id);
+        // the rest of the square and the box's frame are the hand box
+        Assert.Equal(HandLeftId, picker.PickScreen(square.Right - 1, square.Top + 1).Id);
+        Assert.Equal(HandLeftId, picker.PickScreen(box.Left + 1, box.Top + 1).Id);
+        Assert.Equal(HandRightId, picker.PickScreen(hands.Right.Left + hands.Right.Width / 2f, hands.Right.Bottom - 1).Id);
+        // between the boxes (the gap) and over the row is nothing of theirs
+        Assert.False(picker.PickScreen(hands.Hotbar.Left + hands.Hotbar.Width / 2f, hands.Hotbar.Top + 1).IsHit);
+        Assert.False(picker.PickScreen(box.Left + 1, box.Top - 2).IsHit);
+    }
+
+    [Fact]
+    public void AHeldItemTooBigForTheBoxIsDrawnFittedWhereThePickHitsIt()
+    {
+        // DV575: a 64 x 64 picture drawn at half its size in the square, its top right quarter opaque
+        var pixels = new byte[64 * 64 * 4];
+        for (int row = 0; row < 32; row++)
+            for (int col = 32; col < 64; col++)
+                pixels[(row * 64 + col) * 4 + 3] = 255;
+        var square = new HudRect(100, 200, 64, 64);
+        HudRect drawn = LiveHud.ChildPicture(square, 64, 64, 16, 16);
+        Assert.Equal(square, drawn);
+        var picker = new HudPicker(new StubSurface(new List<HudDrawn>
+        {
+            new(HandRightId, square, null, 0, 0, new[] { new HudChildDrawn(400201, new Raster(64, 64, pixels), 16, 16, Fit: HudChildDrawn.FitOf(64, 64)) }),
+        }));
+        Assert.Equal(400201, picker.PickScreen(drawn.Right - 2, drawn.Top + 2).Id);
+        Assert.Equal(HandRightId, picker.PickScreen(drawn.Left + 2, drawn.Bottom - 2).Id);
+        // a holder moved by its pixel offset moves the picture with it, as the pick does
+        HudRect shifted = LiveHud.ChildPicture(square, 32, 32, 0, 0, shiftX: 4, shiftY: 2);
+        Assert.Equal(square.Left + 4 * 2, shifted.Left, 2);
+        Assert.Equal(square.Bottom - 2 * 2, shifted.Bottom, 2);
+    }
+
+    [Fact]
+    public void WithAThirdOrFourthHandActiveNeitherBoxIsHighlightedOrLarger()
+    {
+        var metrics = new HudMetrics(1920, 1080, 1f);
+        HandsLayout neither = LiveHud.Hands(metrics, leftActive: false, rightActive: false);
+        Assert.Equal(UiTokens.HandInactive, neither.Left.Width);
+        Assert.Equal(UiTokens.HandInactive, neither.Right.Width);
+        Assert.Equal(LiveHud.Hands(metrics, true, false).Hotbar, neither.Hotbar); // the gap stays put
+        // tg's active mark on a third hand (held_index 3, a left hand: lhandactive) makes it the active hand, and neither of the first two
+        (_, ReplicaWorld world) = Start();
+        ScreenEntry left = world.Screen[HandLeftId], right = world.Screen[HandRightId];
+        Assert.True(LiveHud.IsActiveHand(world, left));
+        Assert.True(world.TryGetAppearance(left.Appearance, out AppearanceEntry marked));
+        AppearanceEntry unmarked = marked.WithOverlays(o => !(world.TryGetAppearance(o, out AppearanceEntry e) && world.ResolveString(e.IconState) == "lhandactive"));
+        ScreenEntry third = left with { Id = 2099, HandIndex = 3 };
+        Assert.True(LiveHud.IsActiveHand(world, third));
+        Assert.False(LiveHud.IsActiveHand(world, left with { Appearance = world.LocalAppearance(unmarked) }));
+        Assert.False(LiveHud.IsActiveHand(world, right));
+        Assert.Equal(LiveHudRole.Tg, LiveHud.RoleOf(world, third));
+    }
+
+    // The fake's world as an appearance source (the maptext collector's, as ReplicaTables is for the client).
+    private sealed class WorldTables(ReplicaWorld world) : IAppearanceSource
+    {
+        public bool TryGetAppearance(TableRef reference, out AppearanceEntry entry) => world.TryGetAppearance(reference, out entry);
+
+        public string ResolveString(TableRef reference) => world.ResolveString(reference);
+
+        public string ResolveResource(TableRef reference) => world.ResolveResource(reference);
+    }
+
+    [Fact]
+    public void AHandBoxDrawsTgsHandcuffsAndBlockedMarkOverItsItemAndShowsTheHeldStacksAmount()
+    {
+        // tg's hand box as the server sends it: the held item flattened as an overlay and listed as the box's child, the active mark, and
+        // update_overlays' handcuff_overlay ("markus") and blocked_overlay ("blocked") (screen_objects.dm); the held stack carries its amount as
+        // maptext (stack.dm update_overlays)
+        (PlayRig rig, ReplicaWorld world) = Start();
+        rig.Session.Click(new ClickTarget(TargetKind.Entity, ((FakeFeed)rig.Feed).Server.ToolboxId, 0, 0, 0, 16, 16), ClickButton.Left, ClickModifiers.None);
+        rig.Run(0.4);
+        ScreenEntry hand = world.Screen[HandLeftId];
+        ScreenChild toolbox = Assert.Single(hand.VisChildren.Items);
+        Assert.True(world.TryGetAppearance(hand.Appearance, out AppearanceEntry look));
+        TableRef cuffs = world.LocalAppearance(new AppearanceEntry { IconState = world.LocalString("markus") });
+        TableRef blocked = world.LocalAppearance(new AppearanceEntry { IconState = world.LocalString("blocked") });
+        AppearanceEntry withMarks = look.WithOverlays(_ => true);
+        withMarks.Overlays.Add(cuffs);
+        withMarks.Overlays.Add(blocked);
+        ScreenEntry cuffed = hand with { Appearance = world.LocalAppearance(withMarks) };
+        Assert.Equal(new[] { cuffs, blocked }, LiveHud.HandOverlays(world, cuffed)); // not the toolbox (drawn as the child), not the active mark
+        Assert.Empty(LiveHud.HandOverlays(world, hand));
+        Assert.Empty(LiveHud.HandOverlays(world, world.Screen[HandRightId])); // an empty hand, not active
+        // a held item the box does not list as a child (mouse_opacity 0) is drawn from the box's overlays
+        Assert.Equal(new[] { toolbox.Appearance }, LiveHud.HandOverlays(world, hand with { VisChildren = null }));
+
+        // a stack of 30: its amount is a maptext of the item, which the box's picture carries, so the box shows it where tg's slot does
+        var stackLook = new AppearanceEntry { IconState = world.LocalString("sheet-metal"), Maptext = world.LocalString("30") };
+        TableRef stack = world.LocalAppearance(stackLook);
+        AppearanceEntry holding = look.WithOverlays(o => !o.Equals(toolbox.Appearance));
+        holding.Overlays.Add(stack);
+        ScreenEntry stacked = hand with { Appearance = world.LocalAppearance(holding), VisChildren = new ScreenChildren { Items = new[] { new ScreenChild(toolbox.Id, stack) } } };
+        Anomaly.Client.Shared.Maptext.MaptextItem text = Assert.Single(new Anomaly.Client.Shared.Maptext.MaptextCollector().Collect(new WorldTables(world), stacked.Appearance));
+        Assert.Equal("30", text.Text);
+        Assert.Equal(stack, text.Source);
+        Assert.Empty(LiveHud.HandOverlays(world, stacked)); // the stack's picture is the child's, its amount the maptext's
+    }
+
+    [Theory]
+    [InlineData(1920, 1080, 1f)]
+    [InlineData(1920, 1080, 2.5f)]
+    [InlineData(1280, 720, 1.5f)]
+    public void AHandsOrAMovedBottomSlotsMaptextStandsOnItsSquareThereAndScalesWithIt(int width, int height, float scale)
+    {
+        // a stack's amount (tg's maptext at the icon's lower left) on an item in a hand or in a moved bottom slot: on that box's square, at that
+        // square's size (32 tg pixels across it), not at the HUD's tg scale of the entry's own place
+        var metrics = new HudMetrics(width, height, scale);
+        HandsLayout hands = LiveHud.Hands(metrics, true, false);
+        Assert.Equal(LiveHud.HandPicture(hands.Left, hands.Unit), LiveHud.MaptextSquare(LiveHudRole.LeftHand, hands, 0, 6));
+        Assert.Equal(LiveHud.HandPicture(hands.Right, hands.Unit), LiveHud.MaptextSquare(LiveHudRole.RightHand, hands, 0, 6));
+        for (int cell = 0; cell < 6; cell++)
+        {
+            HudRect slot = LiveHud.SlotCell(hands, cell, 6);
+            Assert.Equal(slot, LiveHud.MaptextSquare(LiveHudRole.BottomSlot, hands, cell, 6));
+            // the slot's tg picture is fitted to that cell (HudLayer.Place), so its icon square is the cell
+            Assert.Equal(slot, ScreenLoc.FitIcon(slot, 32, 32, 0, 0));
+            Assert.True(slot.Width / 32f < metrics.PixelScale, "the cell's scale is not the HUD's tg scale, which made the amount too large");
+        }
+        // an entry at its own place (or a slot of another HUD, which LiveHud.Placed keeps there) keeps the HUD's own square and scale
+        foreach (LiveHudRole role in new[] { LiveHudRole.Tg, LiveHudRole.Doll, LiveHudRole.CombatToggle, LiveHudRole.ZoneSelector, LiveHudRole.InventoryToggle })
+            Assert.Null(LiveHud.MaptextSquare(role, hands, 0, 6));
+        Assert.Null(LiveHud.MaptextSquare(LiveHud.Placed(LiveHudRole.BottomSlot, humanHud: false), hands, 0, 6));
     }
 }

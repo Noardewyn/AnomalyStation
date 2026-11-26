@@ -39,28 +39,54 @@ public class FakeInventoryTests
     {
         (PlayRig rig, FakeFeed feed, _) = Start();
         ReplicaWorld world = feed.Replica;
-        // tg's zone selector (HUD_GROUP_STATIC), then the hands, drop and swap; the combat toggle is in HUD_GROUP_INFO (hud/human.dm)
-        Assert.Equal(new long[] { FakeServer.ZoneSelId, 2001, 2002, 2003, 2004 }, world.ScreenGroup(HudGroup.Static).Select(e => e.Id));
+        // tg's zone selector (HUD_GROUP_STATIC), then the hands, drop, swap and the inventory toggle, and the six bottom slots (the ID, back,
+        // the pockets, suit storage and belt: hud/human.dm builds them in no screen group, so they stay with the static HUD); the combat toggle is
+        // in HUD_GROUP_INFO
+        Assert.Equal(new long[] { FakeServer.ZoneSelId, 2001, 2002, 2003, 2004, FakeServer.InventoryToggleId, 2012, 2015, 2016, 2017, 2018, 2024 },
+            world.ScreenGroup(HudGroup.Static).Select(e => e.Id));
         Assert.Equal(new long[] { FakeServer.CombatId }, world.ScreenGroup(HudGroup.Info).Select(e => e.Id));
         Assert.Equal(new long[] { 2005 }, world.ScreenGroup(HudGroup.Hotkeys).Select(e => e.Id));
         IReadOnlyList<ScreenEntry> slots = world.ScreenGroup(HudGroup.ToggleableInventory);
-        Assert.Equal(15, slots.Count);
+        Assert.Equal(9, slots.Count); // the worn slots the toggle shows: uniform, suit, mask, neck, gloves, eyes, ears, head, shoes
         Assert.StartsWith("CENTER+-1:", world.Screen[2001].ScreenLoc, StringComparison.Ordinal); // ui_hand_position with a negative offset: the left hand (DV212)
         Assert.True(ScreenLoc.TryParse(world.Screen[2001].ScreenLoc, out ScreenLocSpec hand));
         Assert.Equal(-1, hand.X.Tile);
         Assert.Empty(world.ScreenGroup(HudGroup.Storage));
+        // version 43: tg's held_index on the hand boxes (odd: left) and its slot_id bit on every slot box
+        Assert.Equal((byte)1, world.Screen[2001].HandIndex);
+        Assert.Equal((byte)2, world.Screen[2002].HandIndex);
+        Assert.Equal(1u << 9, world.Screen[2024].SlotId); // ITEM_SLOT_BELT
+        Assert.Equal(1u << 15, world.Screen[2016].SlotId); // ITEM_SLOT_LPOCKET
+        Assert.All(slots.Concat(world.ScreenGroup(HudGroup.Static).Where(e => e.Id >= 2010)), e => Assert.Equal(1, System.Numerics.BitOperations.PopCount(e.SlotId)));
+        Assert.Equal(15, slots.Concat(world.ScreenGroup(HudGroup.Static)).Select(e => e.SlotId).Where(s => s != 0).Distinct().Count());
 
         var inventory = new ContainerLayout(HudGroup.ToggleableInventory);
         inventory.Rebuild(slots, world);
         Assert.True(inventory.IsOpen);
-        Assert.Equal(15, inventory.Cells.Count);
+        Assert.Equal(9, inventory.Cells.Count);
         Assert.All(inventory.Cells, c => Assert.Equal(ContainerCellRole.Slot, c.Role));
         Assert.All(inventory.Cells, c => Assert.NotEqual(string.Empty, c.Label)); // D70: every slot has a text label
-        Assert.Contains(inventory.Cells, c => c.Label == "Belt");
-        Assert.Contains(inventory.Cells, c => c.Label == "Left pocket" || c.Label == "Pocket");
+        Assert.Contains(inventory.Cells, c => c.Label == "Shoes");
+        Assert.DoesNotContain(inventory.Cells, c => c.Label == "Belt"); // on the HUD's bottom row, as tg's
         // D70: no two slots share a grid position.
         Assert.Equal(inventory.Cells.Count, inventory.Cells.Select(c => (c.Column, c.Row)).Distinct().Count());
         _ = rig;
+    }
+
+    [Fact]
+    public void AnItemTakenOffABottomSlotGoesToTheActiveHandAndAnEmptyBottomSlotTakesTheHeldItem()
+    {
+        // slice C: the bottom slots are clicked where the live HUD draws them; the fake answers as tg's screen/inventory Click does
+        (PlayRig rig, FakeFeed feed, FakeServer server) = Start();
+        ReplicaWorld world = feed.Replica;
+        Click(rig, Entity(server.WelderId));
+        Assert.Equal(server.WelderId, server.HeldId(0));
+        Click(rig, Screen(2024)); // the empty belt slot with the welder in the active hand: it is put on
+        Assert.Equal(0, server.HeldId(0));
+        Assert.Equal(server.WelderId, Assert.Single(world.Screen[2024].VisChildren.Items).Id);
+        Click(rig, Screen(server.WelderId)); // the item on the belt, the active hand empty: it comes to the hand
+        Assert.Equal(server.WelderId, server.HeldId(0));
+        Assert.Null(world.Screen[2024].VisChildren);
     }
 
     [Fact]

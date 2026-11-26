@@ -187,4 +187,83 @@ public static class UiTokens
 
     /// <summary>The combat pill's fill when combat mode is on.</summary>
     public const uint PillCombat = Security;
+
+    // ---- the hands either side of the hotbar's gap at the bottom centre (LiveHud.Hands; wireframes Mockup 1) ----
+
+    /// <summary>The hotbar's slots: how many ...</summary>
+    public const int HotbarSlots = 9;
+
+    /// <summary>... their side ...</summary>
+    public const float HotbarSlot = 48f;
+
+    /// <summary>... and the gap between two.</summary>
+    public const float HotbarSlotGap = 4f;
+
+    /// <summary>The hotbar's whole width: nine slots and the eight gaps between them.</summary>
+    public const float HotbarWidth = HotbarSlots * HotbarSlot + (HotbarSlots - 1) * HotbarSlotGap;
+
+    /// <summary>The room under the hotbar and the hands, to the screen's bottom edge.</summary>
+    public const float HotbarMargin = 16f;
+
+    /// <summary>The active hand's box: its side ...</summary>
+    public const float HandActive = 72f;
+
+    /// <summary>... and the other hand's.</summary>
+    public const float HandInactive = 56f;
+
+    /// <summary>The active hand's border: its width ...</summary>
+    public const float HandBorder = 2f;
+
+    /// <summary>... and colour (the palette's amber).</summary>
+    public const uint HandActiveBorder = Engineering;
+
+    /// <summary>A hand box's fill.</summary>
+    public const uint HandBack = DollPanelBack;
+
+    /// <summary>The other hand box's faint rim (not a highlight: it only keeps the box seen over a dark floor), one reference pixel wide.</summary>
+    public const uint HandRim = 0xFFFFFF40;
+
+    /// <summary>The room between a hand box's edge and the held item's picture.</summary>
+    public const float HandInset = 6f;
+
+    /// <summary>
+    /// The least a hand box may be, screen pixels (not reference pixels): tg's own 32-pixel slot at its native size. The row keeps clear of the
+    /// chat window only while its smaller box keeps this size (LiveHud.Hands).
+    /// </summary>
+    public const float HandMinPixels = 32f;
+
+    /// <summary>The gap between a hand box and the hotbar.</summary>
+    public const float HandGap = 8f;
+
+    /// <summary>The widest the swap-hand chip and its text above the right hand are (the text is cut to fit).</summary>
+    public const float SwapChipWidth = 150f;
+
+    /// <summary>The gap between a hand box and the swap-hand chip above it.</summary>
+    public const float SwapChipGap = 4f;
+
+    // ---- the held-item card at the bottom right, above tg's two-row menu and under the doll panel (LiveHud.Layout) ----
+
+    /// <summary>The card's width.</summary>
+    public const float CardWidth = 180f;
+
+    /// <summary>The room inside the card's edges.</summary>
+    public const float CardPad = 8f;
+
+    /// <summary>The side of the held item's picture at the card's top left (the hand's name beside it).</summary>
+    public const float CardPicture = 48f;
+
+    /// <summary>The gap between the picture and the key lines under it.</summary>
+    public const float CardHeaderGap = 6f;
+
+    /// <summary>The card's height: the picture, and three key lines (use, drop, throw) of a chip each.</summary>
+    public const float CardHeight = 2 * CardPad + CardPicture + CardHeaderGap + 2 * PromptLine + ChipHeight;
+
+    /// <summary>The card's fill.</summary>
+    public const uint CardBack = DollPanelBack;
+
+    /// <summary>
+    /// The room the doll's column leaves at the screen's top when the card makes it climb: the build's version tag (11 text units, about 32
+    /// reference pixels with its line), the gap under it and the ping and FPS chip (StatsCorner.Top), and a margin.
+    /// </summary>
+    public const float CardTopRoom = 32f + 8f + StatusChipHeight + ScreenMargin;
 }

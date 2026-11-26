@@ -21,25 +21,29 @@ public sealed partial class FakeServer
     private const string ProgressIcon = "icons/effects/progressbar.dmi";
     private const int WeldTicks = 40;
 
-    // tg's slot icon states and screen_locs (_onclick/hud/human.dm, __DEFINES/hud.dm), the order the human HUD builds them in.
-    private static readonly (string State, string Name, string Loc)[] SlotDefs =
+    // tg's slot icon states, screen_locs and slot_ids (_onclick/hud/human.dm, __DEFINES/hud.dm, __DEFINES/inventory.dm), the order the human HUD
+    // builds them in; Toggled: in HUD_GROUP_TOGGLEABLE_INVENTORY (the worn slots the inventory toggle shows), else in HUD_GROUP_STATIC (the bottom row).
+    private static readonly (string State, string Name, string Loc, uint SlotId, bool Toggled)[] SlotDefs =
     {
-        ("uniform", "uniform", "WEST:6,SOUTH+1:7"),
-        ("suit", "suit", "WEST+1:8,SOUTH+1:7"),
-        ("id", "id", "CENTER-4:12,SOUTH:5"),
-        ("mask", "mask", "WEST+1:8,SOUTH+2:9"),
-        ("neck", "neck", "WEST:6,SOUTH+2:9"),
-        ("back", "back", "CENTER-2:14,SOUTH:5"),
-        ("pocket", "left pocket", "CENTER+1:18,SOUTH:5"),
-        ("pocket", "right pocket", "CENTER+2:20,SOUTH:5"),
-        ("suit_storage", "suit storage", "CENTER-5:10,SOUTH:5"),
-        ("gloves", "gloves", "WEST+2:10,SOUTH+1:7"),
-        ("glasses", "eyes", "WEST:6,SOUTH+3:11"),
-        ("ears", "ears", "WEST+2:10,SOUTH+2:9"),
-        ("head", "head", "WEST+1:8,SOUTH+3:11"),
-        ("shoes", "shoes", "WEST+1:8,SOUTH:5"),
-        ("belt", "belt", "CENTER-3:14,SOUTH:5"),
+        ("uniform", "uniform", "WEST:6,SOUTH+1:7", 1u << 1, true),
+        ("suit", "suit", "WEST+1:8,SOUTH+1:7", 1u << 0, true),
+        ("id", "id", "CENTER-4:12,SOUTH:5", 1u << 8, false),
+        ("mask", "mask", "WEST+1:8,SOUTH+2:9", 1u << 5, true),
+        ("neck", "neck", "WEST:6,SOUTH+2:9", 1u << 12, true),
+        ("back", "back", "CENTER-2:14,SOUTH:5", 1u << 10, false),
+        ("pocket", "left pocket", "CENTER+1:18,SOUTH:5", 1u << 15, false),
+        ("pocket", "right pocket", "CENTER+2:20,SOUTH:5", 1u << 16, false),
+        ("suit_storage", "suit storage", "CENTER-5:10,SOUTH:5", 1u << 14, false),
+        ("gloves", "gloves", "WEST+2:10,SOUTH+1:7", 1u << 2, true),
+        ("glasses", "eyes", "WEST:6,SOUTH+3:11", 1u << 3, true),
+        ("ears", "ears", "WEST+2:10,SOUTH+2:9", 1u << 4, true),
+        ("head", "head", "WEST+1:8,SOUTH+3:11", 1u << 6, true),
+        ("shoes", "shoes", "WEST+1:8,SOUTH:5", 1u << 7, true),
+        ("belt", "belt", "CENTER-3:14,SOUTH:5", 1u << 9, false),
     };
+
+    /// <summary>tg's inventory toggle (screen/human/toggle at ui_inventory), which only the human HUD has.</summary>
+    public const long InventoryToggleId = 2006;
 
     private const int BeltSlot = 14;
 
@@ -318,13 +322,18 @@ public sealed partial class FakeServer
 
     private void BuildInventoryHud()
     {
-        _screen[HandLeftId] = new ScreenEntry(HandLeftId, HandApp(0), "CENTER+-1:16,SOUTH+0:5") { Group = HudGroup.Static, VisChildren = ShownChild(_hands[0]) };
-        _screen[HandRightId] = new ScreenEntry(HandRightId, HandApp(1), "CENTER+0:16,SOUTH+0:5") { Group = HudGroup.Static, VisChildren = ShownChild(_hands[1]) };
+        // tg's held_index: odd is a left hand (IS_LEFT_INDEX)
+        _screen[HandLeftId] = new ScreenEntry(HandLeftId, HandApp(0), "CENTER+-1:16,SOUTH+0:5") { Group = HudGroup.Static, VisChildren = ShownChild(_hands[0]), HandIndex = 1 };
+        _screen[HandRightId] = new ScreenEntry(HandRightId, HandApp(1), "CENTER+0:16,SOUTH+0:5") { Group = HudGroup.Static, VisChildren = ShownChild(_hands[1]), HandIndex = 2 };
+        _screen[InventoryToggleId] = new ScreenEntry(InventoryToggleId, Leaf(HudIcon, "toggle", 255, 20f), "WEST:6,SOUTH:5") { Group = HudGroup.Static };
         _screen[DropId] = new ScreenEntry(DropId, Leaf(HudIcon, "act_drop", 255, 20f), "CENTER-1:16,SOUTH+1:5") { Group = HudGroup.Static };
         _screen[SwapId] = new ScreenEntry(SwapId, Leaf(HudIcon, "act_swap", 255, 20f), "CENTER:16,SOUTH+1:5") { Group = HudGroup.Static };
         _screen[ThrowId] = new ScreenEntry(ThrowId, Leaf(HudIcon, _throwMode ? "act_throw_on" : "act_throw", 255, 20f), "EAST-1:28,SOUTH+1:24") { Group = HudGroup.Hotkeys };
         for (int i = 0; i < SlotDefs.Length; i++)
-            _screen[SlotIdBase + i] = new ScreenEntry(SlotIdBase + i, SlotApp(i), SlotDefs[i].Loc) { Group = HudGroup.ToggleableInventory, VisChildren = ShownChild(_slotItems[i]) };
+            _screen[SlotIdBase + i] = new ScreenEntry(SlotIdBase + i, SlotApp(i), SlotDefs[i].Loc)
+            {
+                Group = SlotDefs[i].Toggled ? HudGroup.ToggleableInventory : HudGroup.Static, VisChildren = ShownChild(_slotItems[i]), SlotId = SlotDefs[i].SlotId,
+            };
         // An open storage: tg's storage_interface (cells, corners, row joins, up and close buttons) and the items, at orient_storage's screen_locs.
         for (long id = StorageCellsId; id <= StorageCloseId; id++)
             _screen.Remove(id);

@@ -853,6 +853,21 @@ the hovering session: tg's `on_mouse_enter` (once per tick, `SSmouse_entered`) c
 (`ScreentipRouter`, installed when the first player joins) encodes the message into the viewer's session and `SendChat` sends it
 after the tick (the newest 8 are kept for a slow link). Cap `MaxContextHintsMessageBytes` (959).
 
+Out of reach (DV589, the designer 2026-11-26; still protocol 95, no new field): a message for a world target (an entity, a turf, a ceiling
+cell) with a **zero-length name** (not null) and no hints means "out of reach": the player's mob cannot reach the target by tg's test of a
+click (`IsReachableBy` with the held item's reach; the ceiling's own range for a ceiling cell), and the client shows no prompt at all, not even
+its own name for the thing; nor does it show anything for a world target before the answer for that target has arrived. A null name keeps
+its meaning (tg shows no screentip, as for every floor) and the client then names the thing itself. Every living mob acting from where it
+stands (on a turf, or in a `loc` that allows the click) is gated, whatever its state of the moment (`ServerHost.ReachGated`); a ghost, the
+AI, a cyborg with no module out, the alien hunter while it leaps on click, a mob inside a mech or a locker, and screen targets always get
+tg's screentip for things and turfs. A ceiling cell's answer is the project's own, not tg's screentip: its name is zero-length out of the
+ceiling's range (`CeilingSystem.InReach`) for every living mob whatever it holds, the AI and a mob inside a mech or a locker included. The client repeats the hover of a world thing kept under the crosshair or the pointer every
+0.5 seconds (`PlaySession.RepeatHoverInterval`), inside the hover bucket, so the answer follows the player walking into or out of reach.
+Every hover, a repeat included, runs tg's hover again; so the client sends no repeat while the pet-commands keybinding is held (tg's pets
+listen to `MouseEntered` then and would open their command radial again). An answer counts only for the look it arrived in: a hover of
+another thing, or none, drops it on the client. Known limit: an answer still in flight from an earlier look at the same thing counts when it
+arrives during the current look, since the message carries nothing to tell the two apart (that would need a new field).
+
 ### 14.3 The private block
 
 - **Screen entries' group** (`ScreenEntry.Group`): a trailing `u8` in every added and changed entry: tg's HUD group (`HudGroup`: 0

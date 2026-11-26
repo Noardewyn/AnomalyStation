@@ -52,6 +52,49 @@ public class KeyChipsTests
     }
 
     [Fact]
+    public void The_prompt_names_a_thing_only_from_the_servers_answer_for_it()
+    {
+        // DV589: on a real server nothing shows until the answer for this very target has come
+        var thing = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0);
+        var cell = new ClickTarget(TargetKind.Turf, 0, 3, 4, 1);
+        Assert.Null(KeyChips.PromptName(KeyChips.AnswerFor(null, thing), realServer: true, "toolbox"));
+        Assert.Equal("toolbox", KeyChips.PromptName(null, realServer: false, "toolbox")); // the fake server: the client's name, as before
+
+        // an answer for another target (an older hover) is no answer for this one
+        var other = new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 8, Name = "crowbar" };
+        Assert.Null(KeyChips.AnswerFor(other, thing));
+        Assert.Null(KeyChips.PromptName(KeyChips.AnswerFor(other, thing), realServer: true, "toolbox"));
+        Assert.Null(KeyChips.AnswerFor(new ContextHintsMessage { TargetKind = TargetKind.Turf, TurfX = 3, TurfY = 5, TurfZ = 1 }, cell));
+        Assert.Null(KeyChips.AnswerFor(new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7 }, cell)); // same numbers, another kind
+
+        // tg's "no screentip" (every floor): a null name, and the client names the floor itself
+        var floor = new ContextHintsMessage { TargetKind = TargetKind.Turf, TurfX = 3, TurfY = 4, TurfZ = 1 };
+        Assert.Same(floor, KeyChips.AnswerFor(floor, cell));
+        Assert.Equal("floor (iron)", KeyChips.PromptName(KeyChips.AnswerFor(floor, cell), realServer: true, "floor (iron)"));
+
+        // out of reach: a zero-length name and no hints: bare, no lines
+        var far = new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7, Name = "" };
+        Assert.Equal("", KeyChips.PromptName(KeyChips.AnswerFor(far, thing), realServer: true, "toolbox"));
+        Assert.Empty(KeyChips.Prompts(far, KeyBindings.Defaults()));
+
+        // in reach: the answer for it gives its name (the client's name for it takes the server's)
+        Assert.Equal("toolbox", KeyChips.PromptName(KeyChips.AnswerFor(Hints(), thing), realServer: true, "toolbox"));
+    }
+
+    [Fact]
+    public void Out_of_reach_only_the_prompt_goes_bare_and_the_radial_and_dev_tools_keep_a_name()
+    {
+        // DV589: the server's zero-length name is "out of reach": no name given, so the radial's title and the dev tools use the client's own;
+        // tg's null ("no screentip") the same; a name is the server's
+        Assert.Null(KeyChips.ServerName(new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7, Name = "" }));
+        Assert.Null(KeyChips.ServerName(new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7 }));
+        Assert.Null(KeyChips.ServerName(null));
+        Assert.Equal("toolbox", KeyChips.ServerName(Hints()));
+        // the prompt alone stays bare for it, whatever the client would call the thing
+        Assert.Equal("", KeyChips.PromptName(new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7, Name = "" }, realServer: true, "pen"));
+    }
+
+    [Fact]
     public void A_left_and_a_right_click_hint_give_two_lines_with_the_click_keys()
     {
         List<PromptLine> lines = KeyChips.Prompts(Hints(new ContextHint(ClickButton.Left, ClickModifiers.None, "Pick up"), new ContextHint(ClickButton.Right, ClickModifiers.None, "Open")), KeyBindings.Defaults());

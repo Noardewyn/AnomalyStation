@@ -284,6 +284,11 @@ public sealed class Session
     // none left (ServerHost.CatchUpLooks); set and cleared only by applied commands and the world, so a replay holds the same.
     internal QueuedCommand? FrozenLook;
 
+    // DEVIATION(DV589): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
+    // screentip router, which tg calls for that hover later in the tick (SSmouse_entered's fire), sends its hints empty and clears this. Null
+    // when it was in reach, a screen target, or the mob's clicks are not gated by reach.
+    internal Anomaly.Core.Tg.atom HoverOutOfReach;
+
     // The close the host does after the tick (set inside the world, done outside it).
     internal bool CloseAfterTick;
 

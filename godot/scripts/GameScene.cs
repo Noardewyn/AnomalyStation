@@ -536,6 +536,7 @@ public partial class GameScene : Node3D
         RunScript(now);
         // a mouse press another part of the interface took (the dev menu) cancels a lone modifier too; one whose release went elsewhere is dropped
         _modifierTap.Frame((long)Input.GetMouseButtonMask(), _modifierTap.Waiting is string waiting && Enum.TryParse(waiting, out Key held) && Input.IsPhysicalKeyPressed(held));
+        _session?.ReleaseLetGo(HeldKeyDown); // a held keybinding whose release went to a panel, the free camera or another window: released now
         // the keys are polled, so a field of the dev menu being typed in (ImGui's) is a UI that holds them too
         bool uiOpen = PanelsOpen || _imgui?.WantsText == true || _tguiHost?.Typing == true || SayOpen || ChatTyping;
         MoveKeys keys = _rig.Mode == CameraMode.Free || uiOpen ? MoveKeys.None : (_walker != null ? WalkerKeys(now) : ReadMoveKeys());

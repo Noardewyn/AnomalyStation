@@ -850,6 +850,10 @@ public sealed partial class ServerHost
             var hint = new ContextHintsMessage { TargetKind = TargetKind.Ceiling, TurfX = (int)ceilingCell.x, TurfY = (int)ceilingCell.y, TurfZ = (int)ceilingCell.z,
                 Name = $"Ceiling: {CeilingSystem.Of(World).NameAt((int)ceilingCell.x, (int)ceilingCell.y, (int)ceilingCell.z)}"
                     + (state.Broken != 0 ? " (broken)" : "") + (state.Damage != 0 ? $" ({CeilingState.LatticeIntegrity - state.Damage / 10f:0.#}/{CeilingState.LatticeIntegrity})" : "") + (state.Exists && !state.Supported ? " (NO SUPPORT)" : "") };
+            // DEVIATION(DV589): out of the ceiling click's range the ceiling is not named
+            // (the ceiling's range, CeilingSystem's, for every living mob whatever it holds: a gun's shot from afar shows nothing either)
+            if (s.Client.mob is mob_living reacher && !Waiting.NoSleep(CeilingSystem.InReach(reacher, ceilingCell)))
+                hint.Name = "";
             while (s.ControlOutbox.Count >= Session.ControlOutboxCap) s.ControlOutbox.Dequeue();
             s.ControlOutbox.Enqueue(Codec.Encode(hint));
             return;
@@ -866,8 +870,33 @@ public sealed partial class ServerHost
             else
                 RememberFrozenLook(s, command);
         }
+        NoteReach(s, target, command.TargetKind);
         _clients.Hover(s.Client, target);
         s.HoversApplied++;
+    }
+
+    // DEVIATION(DV589): tg's screentip shows at any distance; the designer (2026-11-26) wants the prompt only where a click would reach, so the
+    // router sends a world thing's hints empty when the mob cannot reach it by tg's own test of a click (ClickOn's IsReachableBy with the held
+    // item's reach, click.dm:171). tg's MouseEntered still runs, so the hover's own effects (dm_mouse_over, the aimed turf, MouseExited) stay.
+    private static void NoteReach(Session s, atom target, TargetKind kind)
+    {
+        s.HoverOutOfReach = null;
+        if (kind == TargetKind.Screen || ReachGated(s) is not mob_living user)
+            return;
+        if (!Dm.truthy(Waiting.NoSleep(target.IsReachableBy(user, (user.get_active_held_item() as obj_item)?.reach))))
+            s.HoverOutOfReach = target;
+    }
+
+    // The mob gated by tg's reach test: a living one acting from where it stands (on a turf, or in a loc whose AllowClick is true), whatever its
+    // state of the moment (cuffed, incapacitated, a cooldown, throw mode). Any other keeps tg's screentip (as before DV589), since tg handles its
+    // clicks by another rule: not living (observer.dm:13), the AI (ai.dm:18), a cyborg with no module out (interaction_range, cyborg.dm:51), the
+    // hunter while leap_on_click is on (hunter.dm:36), and a mob inside a thing that does not allow the click (a mech, a locker: click.dm:161).
+    private static mob_living ReachGated(Session s)
+    {
+        if (s.Client?.mob is not mob_living m || m is mob_living_silicon_ai || m is mob_living_silicon_robot && m.get_active_held_item() == null
+            || m is mob_living_carbon_alien_adult_hunter { leap_on_click: var leap } && Dm.truthy(leap))
+            return null;
+        return m.loc is turf || Dm.truthy(m.loc?.AllowClick()) ? m : null;
     }
 
     // Version 95 also (slice T4b): the sessions holding a look skipped during a do-after, in the order the looks were applied (a list, so
@@ -905,6 +934,7 @@ public sealed partial class ServerHost
                 if (TryResolveTarget(s, due, out atom target) && target is mob_living_carbon)
                 {
                     AimAt(mob, due.AimZone, log: false);
+                    NoteReach(s, target, due.TargetKind);
                     _clients.Hover(s.Client, target);
                 }
             }
@@ -924,6 +954,9 @@ public sealed partial class ServerHost
     // the world (presentation-seam.md). A replay has no connections, so nothing is queued there.
     private bool _screentipsInstalled;
 
+    // DV589: the session whose chat is muted while its hover's radial extras are worked out (ScreentipRouter.QuietExtras), else null.
+    private Session _chatMutedFor;
+
     private void InstallScreentips(World world)
     {
         if (_screentipsInstalled || _replay) return;
@@ -940,7 +973,11 @@ public sealed partial class ServerHost
         public void Screentip(client viewer, atom target, string name, IReadOnlyList<ScreentipHint> hints)
         {
             Session s = _host.SessionOfClient(viewer);
-            if (s == null || s.Connection == null || s.State != SessionState.Joined) return;
+            if (s == null) return;
+            // DV589: the reach of the hover this screentip answers (tg builds it later in the tick, in SSmouse_entered's fire): read once and let go
+            atom outOfReachTarget = s.HoverOutOfReach;
+            s.HoverOutOfReach = null;
+            if (s.Connection == null || s.State != SessionState.Joined) return;
             var message = new ContextHintsMessage { Name = name == null ? null : Truncate(name, Limits.MaxContextNameBytes) };
             if (ClientSeam.IsScreenTarget(viewer, target)) // version 12: an item in a hand or slot is a screen target too
             {
@@ -960,6 +997,15 @@ public sealed partial class ServerHost
                 message.Target = target.dm_id;
             }
 
+            // DEVIATION(DV589): out of reach (ApplyHover's NoteReach) the thing's message is empty: a zero-length name (null is tg's "no screentip",
+            // which every floor sends and the client then names the floor itself), no hints, no radial extras
+            bool outOfReach = outOfReachTarget != null && outOfReachTarget == target && message.TargetKind != TargetKind.Screen;
+            if (outOfReach)
+            {
+                message.Name = "";
+                hints = Array.Empty<ScreentipHint>();
+            }
+
             foreach (ScreentipHint hint in hints)
             {
                 if (message.Hints.Count >= Limits.MaxContextHints) break;
@@ -970,7 +1016,7 @@ public sealed partial class ServerHost
             }
 
             // D230 (version 36), D238: the radial's Buckle, Unbuckle, Climb in, Climb, Pull and Stop pulling after tg's entries, a label tg gives not repeated.
-            foreach ((RadialExtra kind, string label) in RadialExtras.Of(viewer.mob, target))
+            foreach ((RadialExtra kind, string label) in outOfReach ? Enumerable.Empty<(RadialExtra, string)>() : QuietExtras(s, viewer.mob, target))
             {
                 if (message.Hints.Count >= Limits.MaxContextHints) break;
                 if (message.Hints.Exists(h => string.Equals(h.Label, label, StringComparison.OrdinalIgnoreCase))) continue;
@@ -988,6 +1034,23 @@ public sealed partial class ServerHost
             if (message.TargetKind == TargetKind.Entity && message.Target < 1) return; // an object the replica cannot name
             while (s.ControlOutbox.Count >= Session.ControlOutboxCap) s.ControlOutbox.Dequeue();
             s.ControlOutbox.Enqueue(Codec.Encode(message));
+        }
+
+        // DV589: the extras ask tg's own checks (can_perform_action and its overrides), which tell the mob each refusal in the chat; a hover asks
+        // twice a second and must not talk, so the hovering session's chat is muted while they are worked out. The call is synchronous on the
+        // world's thread: what reaches that session's chat meanwhile was posted by it. The world is untouched (only the outbox is), so a replay,
+        // which has no sinks, holds the same.
+        private List<(RadialExtra Kind, string Label)> QuietExtras(Session s, mob user, atom target)
+        {
+            _host._chatMutedFor = s;
+            try
+            {
+                return RadialExtras.Of(user, target);
+            }
+            finally
+            {
+                _host._chatMutedFor = null;
+            }
         }
 
         // tg's labels are plain words; a stray tag or entity from a context builder is removed.
@@ -1220,9 +1283,9 @@ public sealed partial class ServerHost
         }
 
         // Version 24 (D154): the session keeps the hrefs of the chat links it is sent, the only ones it may click back.
-        private static void Send(Session s, ServerText text)
+        private void Send(Session s, ServerText text)
         {
-            if (s == null) return;
+            if (s == null || s == _host._chatMutedFor) return;
             s.Outbox.Enqueue(text);
             s.ChatLinks.Record(text.Html);
         }

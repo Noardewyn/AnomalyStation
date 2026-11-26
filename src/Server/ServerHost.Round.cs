@@ -88,6 +88,7 @@ public sealed partial class ServerHost
             // (one client per key), and its objects would keep the whole old world alive (M10 slice J)
             s.Client = null;
             s.Login = null;
+            s.HoverOutOfReach = null; // DV589: a thing of the old world
             s.Sounds.Discard();
             s.Outbox.Clear();
             s.ControlOutbox.Clear();

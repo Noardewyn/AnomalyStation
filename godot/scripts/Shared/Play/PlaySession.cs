@@ -445,7 +445,32 @@ public sealed class PlaySession
             return;
         if (code == KeybindingCode.StopPulling)
             Poses.PullTarget = 0;
+        if (up)
+            _heldKeybindings.Remove(code);
+        else if (HasRelease(code))
+            _heldKeybindings.Add(code);
         Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Keybinding, 0, ClickButton.None, ClickModifiers.None, null) { Keybinding = code, KeyUp = up });
+    }
+
+    // The keybindings the scene also sends on the key's release (GameScene.OnKeyUp): tg acts on both, and keeps a state while one is held.
+    private static bool HasRelease(KeybindingCode code) => code is KeybindingCode.HoldThrowMode or KeybindingCode.ZLevelUp or KeybindingCode.Resist
+        or KeybindingCode.ViewPetCommands or KeybindingCode.Scoreboard;
+
+    private readonly HashSet<KeybindingCode> _heldKeybindings = new(); // sent down, their release not yet sent
+
+    /// <summary>
+    /// Each frame: a keybinding sent down whose key is no longer down (<paramref name="keyDown"/>) gets its release now. Its own release can be
+    /// lost: the window lost the focus (Godot sends no key release then), or a panel or the free camera took the key as it was let go.
+    /// </summary>
+    public void ReleaseLetGo(Func<KeybindingCode, bool> keyDown)
+    {
+        if (_heldKeybindings.Count == 0)
+            return;
+        foreach (KeybindingCode code in _heldKeybindings.ToArray())
+        {
+            if (!keyDown(code))
+                Keybinding(code, up: true);
+        }
     }
 
     /// <summary>Protocol version 38: a message of the say window to the server's /datum/tgui_say (<see cref="SayModel"/>).</summary>
@@ -502,6 +527,28 @@ public sealed class PlaySession
     /// </summary>
     public static bool HoverCarriesZone(in ClickTarget target, bool cursorMode) => !cursorMode && target.Kind == TargetKind.Entity && target.IconX != 0;
 
+    /// <summary>
+    /// DV589: while the same world thing stays hovered, the hover goes out again this long after the last hover or unhover, so the server's answer
+    /// follows reach (the prompt shows only in reach: the player walks up, steps back, or the thing moves), the held item and combat mode. Two a
+    /// second, on <see cref="HoverInterval"/>'s clock, well inside the server's bucket (10 a second, 5 at once), so the zone's resends are not starved.
+    /// None while the pet-commands key is held: tg's pets listen to MouseEntered then (obeys_commands.dm), and each repeat would be a new entering
+    /// that opens a befriended pet's command radial again; the prompt does not follow reach meanwhile.
+    /// </summary>
+    public const double RepeatHoverInterval = 0.5;
+
+
+    /// <summary>
+    /// DV589: the server's newest hints (<see cref="HintsArrived"/>), kept only while <see cref="Hover"/> is given the same thing (any zone):
+    /// a look at another thing, or at nothing, drops them, so an answer from an earlier look at a thing never stands for a new one (it may have
+    /// been in reach then). Match them to a target with <see cref="KeyChips.AnswerFor"/>.
+    /// </summary>
+    public ContextHintsMessage Hints { get; private set; }
+
+    /// <summary>A ContextHints message from the server: the newest answer to this look's hovers.</summary>
+    public void HintsArrived(ContextHintsMessage hints) => Hints = hints;
+
+    private ClickTarget _hintsLook;
+
     private ClickTarget _hovered;
     private ClickTarget _pendingHover;
     private bool _hasPendingHover;
@@ -535,6 +582,9 @@ public sealed class PlaySession
     /// </summary>
     public bool Hover(in ClickTarget target, double now)
     {
+        if (!target.SameThing(_hintsLook))
+            (_hintsLook, Hints) = (target, null); // DV589: a new look, or none: the answer in hand was for an earlier one
+        bool repeat = target.IsSet && target.Kind != TargetKind.Screen && !_heldKeybindings.Contains(KeybindingCode.ViewPetCommands) && now - _lastHoverAt >= RepeatHoverInterval; // DV589
         if (!target.IsSet)
         {
             _hovered = default;
@@ -544,7 +594,7 @@ public sealed class PlaySession
                 return false;
             }
         }
-        else if (!_hasPendingHover && target.SameThing(_hovered) && target.SameThing(_serverHovered) && target.Aim == _serverHovered.Aim)
+        else if (!_hasPendingHover && target.SameThing(_hovered) && target.SameThing(_serverHovered) && target.Aim == _serverHovered.Aim && !repeat)
             return false;
         _pendingHover = target;
         _hasPendingHover = true;
@@ -560,7 +610,7 @@ public sealed class PlaySession
             Send(Make(ActionKind.Unhover));
             return true;
         }
-        if (_pendingHover.SameThing(_serverHovered) && _pendingHover.Aim == _serverHovered.Aim)
+        if (_pendingHover.SameThing(_serverHovered) && _pendingHover.Aim == _serverHovered.Aim && !repeat)
         {
             _hovered = _pendingHover; // back on what the server still has: nothing to send
             return false;

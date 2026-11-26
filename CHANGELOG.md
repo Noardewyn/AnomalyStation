@@ -25,6 +25,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - Looking down now shows your own body in the lower half of the view with the floor ahead above it; held items lower out of the way.
 - Your own body is a target while you look down at it: the part under the crosshair is the one a click, a throw or an attack takes.
 - The health doll's head has eyes and a mouth to use items on, and a Ctrl-click on the doll grasps the limb clicked.
+- The prompt beside the crosshair shows only for things within reach; anything further away leaves the crosshair bare.
 
 ## [1.12.0-pre-alpha] - 2026-11-23
 

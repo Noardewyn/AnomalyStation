@@ -38,6 +38,7 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `d48b027` | Package T, slice T5a: looking down shows the own body (client only; section 8, "T5a as built") |
 | `a98d5ee` | Package T, slices T5b and T5c: the own body is a target, the doll's eyes, mouth and grasp (client only; section 8, "T5b and T5c as built") |
 | `6a3e649` | Package 2, slice C: the hands either side of the hotbar gap, the bottom slots in the gap, the held-item card (client only; section 6, "Slice C as built") |
+| `e3af6b3` | Package 2, slice D: the vitals column at the right edge, alerts as chips, the hint strip over the hands, the swap key cap, the red cuffed hand (client only; section 6, "Slice D as built") |
 
 Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
 until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
@@ -51,16 +52,13 @@ Next, in this order:
    to do operations on yourself mainly", so looking down is a secondary way and gets no more design work (no way
    to reach the arms by look); the Tab overlay's character sprite (package 4) is the main one. Tg's zone selector
    stays under Tab.
-2. The prompt beside the crosshair only when the thing looked at is in reach: built and playtested, parked in a
-   stash with one open fault after three fix rounds (section 9, "The in-range prompt: built, parked with one open
-   fault"). The contributor accepted the fault on 2026-11-26; the stash is brought onto the head and committed.
+2. The prompt beside the crosshair only when the thing looked at is in reach: committed after `e3af6b3` with one
+   known fault the contributor accepted (section 9, "The in-range prompt: built, committed with one known fault").
 3. Package 2, slice E (section 6): no box round the vitals, tg's combat sprite back at the bottom right, tg's
    key-duplicating buttons removed, keys for crafting, language and navigate. The devlog screenshots of the HUD
    (`../devlog-screenshots/2026-11-26/`, outside the repository) are retaken after it.
 4. Packages 3 to 8 and what section 9 adds.
 
-Package 2, slice D (the vitals column, alert chips, hint strip) is committed after `6a3e649`; section 6, "Slice D
-as built".
 
 To tell the owner (the contributor does this; `DECISIONS.md` is not edited by us): the protocol changes of version
 95; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
@@ -483,20 +481,52 @@ and rest and the crafting ect as these should all now be bound to keys correct?"
 no key: remove them and give them keys; "use ss14 keybinds for them"; "use G, and move offer item to right click menu
 only when looking at someone you can talk too"; the run/walk sprite and tg's drop and swap buttons go too.
 
-- The vitals have no box: no panel fill, rim or lines. The doll, tg's health indicator and tg's mood face stack as
-  now, with their right edges on one line with the alert chips' right edge against the screen edge.
-- The combat pill is gone. tg's own combat sprite is drawn again, in the bottom-right corner in both views (to be
-  confirmed from screenshots: the designer said "bottom right"; under Tab tg's zone selector stands just left of
-  it, so the sprite never moves). The vitals stand straight above it.
-- Not drawn and not clickable on the human HUD any more: tg's pull, throw, resist, rest, run/walk, drop, swap,
-  crafting, language and navigate buttons. tg's sleep button, which tg shows only at times and which has no key,
-  becomes a chip with the alerts.
-- Keys: crafting on G and the language menu on L, as in Space Station 14 (`OpenCraftingMenu`, `OpenLanguageMenu`
-  in the forks' `Resources/keybinds.yml`); navigate on M (Space Station 14 has no such function). Each key sends
-  the click of tg's own button, so nothing changes on the server. Give item loses its key (it was G): giving is the
-  right-click wheel's "Offer item" on a person in reach, as tg offers it. The dev flashlight moves from L to U.
-- The hint strip sits 6 above the hands' row, since tg's drop and swap buttons are gone.
-- Known cost, accepted by the designer: nothing on screen shows walking or running any more.
+Settled design (the manager's, from the designer's words above; the points marked "to confirm" are shown to the
+designer in screenshots before the commit). Human HUD only; every other HUD keeps tg's layout, and loses the combat
+pill it had since slice B.
+
+Vitals:
+- No box: no panel fill, rim or separator lines, and no cells. Three pictures stacked against the right screen
+  edge: the health doll at its whole-pixel scale S, under it tg's health indicator with its percentage at S-1,
+  under it tg's mood face at S-1, 8 between pictures. Their right edges are on one line, 8 from the screen edge,
+  the same line as the alert chips' right edge when the chips are above.
+- The hunger bar, while tg shows it, stands left of the mood face at tg's own offset from it (26 tg pixels), at the
+  mood face's scale. The mood face never moves or changes size (this ends slice D's limit of a smaller face while
+  hungry).
+- The stack is anchored at the bottom: the mood face's bottom is 8 above the top of the combat sprite in the
+  corner. S steps down as in slice D when the stack and five chips do not fit the height; the reduced arrangement
+  of slice D stays for extreme UI scales, without box and pill.
+- Chips as in slice D: above the doll when five fit under the ping chip, else in columns left of the doll (6 from
+  the widest of the three pictures). Each picture is still tg's screen object for clicks and tooltips.
+
+Bottom right:
+- The combat pill is removed everywhere. tg's own combat toggle (`combattoggle/flashy`, tg's sprite and its own
+  flashing while combat is on) is drawn at the corner tile, tg's zone-selector place (`ui_zonesel`), in first
+  person and under Tab; under Tab a click on it toggles, as tg's. To confirm: the corner.
+- Under Tab only, in one row left of it at tg's bottom-row places: the zone selector at `ui_movi`'s place, tg's
+  memories button at `ui_acti`'s place, tg's area creator at `ui_human_floor_changer`'s place. In first person
+  none of the three is drawn. The hands' row yields to them as it yields to tg's bottom-right entries today.
+- Not drawn and not clickable on the human HUD: tg's pull, resist, rest, throw, run/walk, drop, swap (both
+  halves), inventory toggle, floor changer, crafting, language and navigate buttons. Every one has a key.
+- tg's sleep button has no key: it is a chip after the status chips, only while tg draws something visible for it.
+- The hint strip sits 6 above the top of the hands' row (the taller, active box).
+
+Keys (`PlayOptions`):
+- Crafting on G and the language menu on L, as in Space Station 14 (`OpenCraftingMenu`, `OpenLanguageMenu` in the
+  forks' `Resources/keybinds.yml`); navigate on M (Space Station 14 has no such function). Each key sends the click
+  of tg's own screen button, which the server still sends though it is not drawn; nothing changes on the wire.
+- "Give item" is no longer a key or an options row (the wire's keybinding code stays). The dev flashlight moves
+  from L to U.
+
+Offer item (server; a wheel entry beyond tg's, like Pull and Strip, DV139):
+- The right-click wheel on a living mob beside the player has "Offer item", after Strip, exactly when tg's
+  `/mob/living/proc/give(offered)` would go through to the offer: the player is not incapacitated, is not already
+  offering, holds in the active hand an item `give` accepts; the mob is not the player, is not incapacitated and
+  can hold items (`TRAIT_CAN_HOLD_ITEMS`). Picking it calls tg's `give` with that mob, which checks everything
+  again and makes tg's offer alert on the other side.
+
+Known costs, accepted by the designer or to tell them: nothing on screen shows walking or running; nothing shows
+that something is being pulled (the wheel says "Stop pulling", H stops).
 
 ### To confirm with the owner
 
@@ -1147,15 +1177,14 @@ Settled by the designer (2026-11-26), the three points of the row above:
 - Out of reach nothing is shown for actions that work from afar either (a gun, a throw, examine), whatever is held.
 - Out of reach the thing's name does not show: the crosshair is bare.
 
-### The in-range prompt: built, parked with one open fault (2026-11-26)
+### The in-range prompt: built, committed with one known fault (2026-11-26)
 
-Not committed yet. The change is parked in the stash entry `parked: in-range prompt (DV589)` on top of `a98d5ee`
-(`git stash list`; `git stash apply` brings it back). Three fix rounds were used up with one fault open. The
-contributor accepted that fault as a known limit on 2026-11-26 ("just accept it and make a note"): the slice is
-brought onto the branch's head, verified and committed as it is, after package 2's slice D, with the fault recorded
-below and in DV589.
+Three fix rounds were used up with one fault open, and the change was parked in a stash on top of `a98d5ee`. The
+contributor accepted that fault as a known limit on 2026-11-26 ("just accept it and make a note"). The stash was
+then applied onto the head after package 2's slice D (no conflicts, every hunk as reviewed), verified and committed
+as it is, with the fault recorded below and in DV589.
 
-As built (server and client, no wire change; DV589 and protocol.md 14.2 in the stash have the full text):
+As built (server and client, no wire change; DV589 and protocol.md 14.2 have the full text):
 - The server answers a hover of a thing its sender cannot reach (tg's `IsReachableBy` with the held item's reach)
   with a zero-length name and no hints; the client then shows a bare crosshair. Gated: every living mob acting from
   where it stands, whatever its state. Not gated: a ghost, the AI, a cyborg with no module out, the hunter while it
@@ -1195,8 +1224,12 @@ slow connection every name lags by the round trip; while J is held the prompt do
 the thing itself (a door opening) refreshes the prompt only on a new look; the repeat is about 100 bytes a second
 per player in a recording.
 
-Last verify PASS on the parked tree: `C:/Users/Lucas/.claude/state/qa/logs/verify-AnomalyStation-20261126-064511-583150.log`
-(213 server tests). Filter: `(FullyQualifiedName~HoverReach|FullyQualifiedName~HoverZone|FullyQualifiedName~KeyChips|FullyQualifiedName~PlaySessionTests|FullyQualifiedName~RadialTests|FullyQualifiedName~Ceiling|FullyQualifiedName~Screentip|FullyQualifiedName~ContextHint|FullyQualifiedName~ProtocolV14|FullyQualifiedName~FakeInventory|FullyQualifiedName~PetsGameplay)&Category!=Meta&FullyQualifiedName!~BuildInfo&FullyQualifiedName!~Bench`.
+Seen while the devlog screenshots were staged (2026-11-26, not yet looked into): the prompt did not always match
+where the crosshair is drawn ("Headpat" with the crosshair on the upper chest, "Hug" on the chin), and a handcuffed
+player still got "Headpat" as the prompt on a person.
+
+Verify on the parked tree: `C:/Users/Lucas/.claude/state/qa/logs/verify-AnomalyStation-20261126-064511-583150.log`
+(213 server tests); on the head with the client tests added, 4098 server tests. Filter on the parked tree: `(FullyQualifiedName~HoverReach|FullyQualifiedName~HoverZone|FullyQualifiedName~KeyChips|FullyQualifiedName~PlaySessionTests|FullyQualifiedName~RadialTests|FullyQualifiedName~Ceiling|FullyQualifiedName~Screentip|FullyQualifiedName~ContextHint|FullyQualifiedName~ProtocolV14|FullyQualifiedName~FakeInventory|FullyQualifiedName~PetsGameplay)&Category!=Meta&FullyQualifiedName!~BuildInfo&FullyQualifiedName!~Bench`.
 
 ### T4c playtested (2026-11-26)
 

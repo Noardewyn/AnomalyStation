@@ -38,7 +38,6 @@ public partial class GameScene
     private ShotAim? _aim;
     private PickShape _hitShape;
     private ClickTarget _target;
-    private ContextHintsMessage _hints;
     private readonly MouseOwner _mouse = new(); // D282: cursor mode and the pointer
     private bool _throwModeOn;
     private bool _radialSticky;
@@ -187,7 +186,7 @@ public partial class GameScene
 
     private void OnHints(ContextHintsMessage hints)
     {
-        _hints = hints;
+        _session.HintsArrived(hints);
         // Version 36 (D230): the answer to the radial's re-hover (OpenRadial) brings the entries possible now; they replace the open radial's
         // only when they differ (a replacement re-centres the aim).
         if (_radialModel.Phase != RadialPhase.Open || _radialSticky || _radialModel.ServerMenu != 0 || HintsFor(_radialTarget) != hints)
@@ -237,17 +236,7 @@ public partial class GameScene
         return _hudTip;
     }
 
-    private ContextHintsMessage HintsFor(in ClickTarget target)
-    {
-        ContextHintsMessage h = _hints;
-        if (h == null || !target.IsSet || h.TargetKind != target.Kind)
-            return null;
-        return target.Kind switch
-        {
-            TargetKind.Ceiling or TargetKind.Turf => h.TurfX == target.X && h.TurfY == target.Y && h.TurfZ == target.Z ? h : null,
-            _ => h.Target == target.Id ? h : null,
-        };
-    }
+    private ContextHintsMessage HintsFor(in ClickTarget target) => KeyChips.AnswerFor(_session.Hints, target);
 
     private string TargetName(in ClickTarget target)
     {
@@ -262,11 +251,12 @@ public partial class GameScene
 
     private string BaseTargetName(in ClickTarget target)
     {
-        ContextHintsMessage h = HintsFor(target);
-        if (h?.Name != null)
-            return h.Name;
+        if (KeyChips.ServerName(HintsFor(target)) is string named)
+            return named;
         if (target.Kind == TargetKind.Entity && _feed.Replica.TryGet(target.Id, out ReplicaEntity e) && !string.IsNullOrEmpty(e.State.Name))
             return e.State.Name;
+        if (target.Kind == TargetKind.Ceiling)
+            return Anomaly.Core.DmShim.I18n.T("Ceiling"); // the server names a ceiling only in reach (DV589)
         if (target.Kind != TargetKind.Turf)
             return string.Empty;
         // Until the cell's hints arrive: what kind of turf it is (a wall was named "floor" before, the owner's play test 2026-10-14).
@@ -506,8 +496,9 @@ public partial class GameScene
         List<PromptLine> prompts = NoPrompts;
         if (aiming && _target.IsSet && _target.Kind != TargetKind.Screen && _radialModel.Phase != RadialPhase.Open)
         {
-            string targetName = TargetName(_target);
-            List<PromptLine> lines = KeyChips.Prompts(HintsFor(_target), _options.Bindings);
+            ContextHintsMessage answer = HintsFor(_target);
+            string targetName = KeyChips.PromptName(answer, _feed is not FakeFeed, TargetName(_target)) ?? "";
+            List<PromptLine> lines = KeyChips.Prompts(answer, _options.Bindings);
             if (targetName.Length > 0 || lines.Count > 0)
                 (name, prompts) = (targetName, lines);
         }
@@ -1142,6 +1133,25 @@ public partial class GameScene
                 ClickAtCrosshair(ClickButton.Left, KeyBindings.ModifiedClick(PlayAction.Examine, _pressExtraShift, _pressExtraCtrl));
                 break;
         }
+    }
+
+    // Whether a key of the action a held keybinding came from is down now (a binding's key past its modifiers; a mouse binding counts as down)
+    private bool HeldKeyDown(KeybindingCode code)
+    {
+        PlayAction action = code switch
+        {
+            KeybindingCode.HoldThrowMode => PlayAction.HoldThrow,
+            KeybindingCode.ZLevelUp => PlayAction.MoveUpLevel,
+            KeybindingCode.Resist => PlayAction.Resist,
+            KeybindingCode.ViewPetCommands => PlayAction.ViewPetCommands,
+            _ => PlayAction.Scoreboard,
+        };
+        foreach (string name in _options.Bindings.KeysOf(action))
+        {
+            if (!Enum.TryParse(name[(name.LastIndexOf('_') + 1)..], out Key key) || Input.IsPhysicalKeyPressed(key))
+                return true;
+        }
+        return false;
     }
 
     private void OnKeyUp(InputEventKey key)

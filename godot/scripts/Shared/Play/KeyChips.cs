@@ -129,6 +129,31 @@ public static class KeyChips
         return lines;
     }
 
+    /// <summary>The server's newest hints when they answer a hover of <paramref name="target"/> (its id, or its cell for a turf or ceiling), else null.</summary>
+    public static ContextHintsMessage AnswerFor(ContextHintsMessage newest, in ClickTarget target)
+    {
+        if (newest == null || !target.IsSet || newest.TargetKind != target.Kind)
+            return null;
+        return target.Kind is TargetKind.Ceiling or TargetKind.Turf
+            ? newest.TurfX == target.X && newest.TurfY == target.Y && newest.TurfZ == target.Z ? newest : null
+            : newest.Target == target.Id ? newest : null;
+    }
+
+    /// <summary>
+    /// DV589: the name the prompt shows beside the crosshair, null for none. <paramref name="answer"/> is the server's answer for the target
+    /// (<see cref="AnswerFor"/>), <paramref name="ownName"/> the client's name for it. Until the answer comes, a real server's player sees nothing
+    /// (the thing may be out of reach); the fake server, which answers few hovers, shows the client's name. A zero-length name is the server's
+    /// "out of reach": bare. A null name is tg's "no screentip" (every floor): the client's name.
+    /// </summary>
+    public static string PromptName(ContextHintsMessage answer, bool realServer, string ownName)
+        => answer == null ? (realServer ? null : ownName) : answer.Name is { Length: 0 } ? "" : ownName;
+
+    /// <summary>
+    /// The thing's name the server gave, null for none: tg's "no screentip" (null) and DV589's "out of reach" (zero-length) give none, so the
+    /// radial's title and the dev tools fall back to the client's own name; only the prompt goes bare (<see cref="PromptName"/>).
+    /// </summary>
+    public static string ServerName(ContextHintsMessage answer) => string.IsNullOrEmpty(answer?.Name) ? null : answer.Name;
+
     /// <summary>The prompt block's height in reference pixels: the name line and <paramref name="lines"/> prompt lines.</summary>
     public static float PromptHeight(int lines) => UiTokens.PromptNameLine + Math.Clamp(lines, 0, MaxPromptLines) * UiTokens.PromptLine;
 

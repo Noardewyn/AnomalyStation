@@ -89,9 +89,10 @@ public class HoverZoneGameplayTests
             Assert.Equal(BODY_ZONE_PRECISE_EYES, In(w, () => aliceMob.zone_selected));
             Assert.Equal("Headpat", LeftClickLabel(LastHintsOn(hints, bobMob)));
 
-            // the same zone again: nothing is sent
+            // the same zone again: nothing is sent, until the repeat (DV589: PlaySession.RepeatHoverInterval after the last hover) sends it again
             Assert.False(alice.Session.Hover(On(bobMob, AimZone.Eyes), w.Now));
-            Assert.False(alice.Session.Hover(On(bobMob, AimZone.Eyes) with { IconY = 22 }, w.Now + 1));
+            Assert.False(alice.Session.Hover(On(bobMob, AimZone.Eyes) with { IconY = 22 }, w.Now + 0.1));
+            Assert.True(alice.Session.Hover(On(bobMob, AimZone.Eyes) with { IconY = 22 }, w.Now + 1));
 
             // a look is no choice of the player's: tg's should_log = FALSE, so set_selected_zone never reached its log
             Assert.DoesNotContain(ZoneLogSite, In(w, () => DmWorldState.Of(w.World).DeferredSites));

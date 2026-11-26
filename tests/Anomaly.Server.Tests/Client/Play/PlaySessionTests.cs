@@ -194,6 +194,155 @@ public class PlaySessionTests
     }
 
     [Fact]
+    public void AWorldThingKeptUnderTheCrosshairIsHoveredAgainTwiceASecondAndAScreenEntryIsNot()
+    {
+        // DV589: the repeat brings the server's answer after a walk into or out of reach
+        (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);
+        rig.Run(0.5);
+        int Hovers() => feed.Actions.Count(a => a.Kind == ActionKind.Hover);
+        var thing = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0, 16, 16, AimZone.Head);
+        const double t = 100;
+        Assert.True(rig.Session.Hover(thing, t));
+        Assert.False(rig.Session.Hover(thing, t + 0.2));
+        Assert.False(rig.Session.Hover(thing, t + 0.49));
+        Assert.True(rig.Session.Hover(thing, t + PlaySession.RepeatHoverInterval));
+        Assert.Equal(2, Hovers());
+        Assert.Equal(feed.Actions[^2], feed.Actions[^1]); // the same hover: target, zone and all (the frame tag aside, none moved)
+
+        // a new zone right after a repeat still goes out on the zone's own pace, not the repeat's
+        double r = t + PlaySession.RepeatHoverInterval;
+        Assert.False(rig.Session.Hover(thing with { Aim = AimZone.Chest }, r + 0.1));
+        Assert.True(rig.Session.Hover(thing with { Aim = AimZone.Chest }, r + PlaySession.ZoneHoverInterval));
+        Assert.Equal(AimZone.Chest, feed.Actions[^1].AimZone);
+
+        // held for ten seconds, a call every 1/60 s: two a second, within the server's bucket (ActionLimits.Hover: 10 a second)
+        int before = Hovers();
+        double start = r + 1;
+        for (int frame = 0; frame < 600; frame++)
+            rig.Session.Hover(thing with { Aim = AimZone.Chest }, start + frame / 60.0);
+        Assert.InRange(Hovers() - before, 19, 21);
+        Assert.True(1 / PlaySession.RepeatHoverInterval < ActionLimits.Hover.PerSecond);
+
+        // a turf and a ceiling cell repeat too; a screen entry (the hand slot under the free pointer) does not
+        double u = start + 20;
+        var cell = new ClickTarget(TargetKind.Turf, 0, 3, 4, 1);
+        Assert.True(rig.Session.Hover(cell, u));
+        Assert.True(rig.Session.Hover(cell, u + 0.5));
+        var slot = new ClickTarget(TargetKind.Screen, 42, 0, 0, 0);
+        Assert.True(rig.Session.Hover(slot, u + 1));
+        before = Hovers();
+        for (int frame = 0; frame < 300; frame++)
+            rig.Session.Hover(slot, u + 1 + frame / 60.0);
+        Assert.Equal(before, Hovers());
+
+        // nothing under the crosshair: one unhover, no repeats
+        Assert.True(rig.Session.Hover(ClickTarget.None, u + 7));
+        for (int frame = 0; frame < 120; frame++)
+            Assert.False(rig.Session.Hover(ClickTarget.None, u + 7 + frame / 60.0));
+        Assert.Equal(before, Hovers());
+    }
+
+    [Fact]
+    public void WhileThePetCommandsKeyIsHeldNoRepeatGoesOutButANewThingOrZoneDoes()
+    {
+        // DV589: tg's pets listen to MouseEntered while the key is held (obeys_commands.dm); a repeat would be a new entering and open the radial again
+        (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);
+        rig.Run(0.5);
+        int Hovers() => feed.Actions.Count(a => a.Kind == ActionKind.Hover);
+        var pet = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0, 16, 16);
+        const double t = 100;
+        Assert.True(rig.Session.Hover(pet, t));
+        rig.Session.Keybinding(KeybindingCode.ViewPetCommands);
+        int before = Hovers();
+        for (int frame = 0; frame < 300; frame++) // five seconds on the pet
+            Assert.False(rig.Session.Hover(pet, t + 0.1 + frame / 60.0));
+        Assert.Equal(before, Hovers());
+
+        // a zone change and a new thing still go out
+        Assert.True(rig.Session.Hover(pet with { Aim = AimZone.Head }, t + 6));
+        var other = new ClickTarget(TargetKind.Entity, 8, 0, 0, 0, 16, 16);
+        Assert.True(rig.Session.Hover(other, t + 6.2));
+        Assert.Equal(before + 2, Hovers());
+        Assert.False(rig.Session.Hover(other, t + 7)); // and no repeat of it either
+
+        // the key let go: the repeat is back
+        rig.Session.Keybinding(KeybindingCode.ViewPetCommands, up: true);
+        Assert.True(rig.Session.Hover(other, t + 7.5));
+        Assert.True(rig.Session.Hover(other, t + 8.0));
+        Assert.Equal(before + 4, Hovers());
+    }
+
+    [Fact]
+    public void AHeldKeybindingWhoseKeyIsNoLongerDownIsReleasedOnce()
+    {
+        // the window lost the focus or a panel took the key as it was let go: its own release never came
+        (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);
+        rig.Run(0.5);
+        List<ActionMessage> Sent(KeybindingCode code) => feed.Actions.Where(a => a.Kind == ActionKind.Keybinding && a.Keybinding == code).ToList();
+        rig.Session.Keybinding(KeybindingCode.ViewPetCommands);
+        rig.Session.Keybinding(KeybindingCode.HoldThrowMode);
+        rig.Session.Keybinding(KeybindingCode.SwapHands); // no release of its own: never released
+        rig.Session.ReleaseLetGo(_ => true);
+        Assert.Single(Sent(KeybindingCode.ViewPetCommands));
+
+        // the pet key is up now, the throw key still down
+        rig.Session.ReleaseLetGo(code => code == KeybindingCode.HoldThrowMode);
+        Assert.Equal(new[] { false, true }, Sent(KeybindingCode.ViewPetCommands).Select(a => a.KeyUp));
+        Assert.Single(Sent(KeybindingCode.HoldThrowMode));
+        Assert.Single(Sent(KeybindingCode.SwapHands));
+        rig.Session.ReleaseLetGo(_ => false);
+        rig.Session.ReleaseLetGo(_ => false);
+        Assert.Equal(2, Sent(KeybindingCode.ViewPetCommands).Count); // once
+        Assert.Equal(new[] { false, true }, Sent(KeybindingCode.HoldThrowMode).Select(a => a.KeyUp));
+        Assert.Single(Sent(KeybindingCode.SwapHands));
+
+        // a release the scene sent itself is not sent again
+        rig.Session.Keybinding(KeybindingCode.Resist);
+        rig.Session.Keybinding(KeybindingCode.Resist, up: true);
+        rig.Session.ReleaseLetGo(_ => false);
+        Assert.Equal(2, Sent(KeybindingCode.Resist).Count);
+
+        // and the repeat of the thing under the crosshair is back once the pet key is released
+        var thing = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0, 16, 16);
+        Assert.True(rig.Session.Hover(thing, 100));
+        Assert.True(rig.Session.Hover(thing, 100.5));
+    }
+
+    [Fact]
+    public void TheAnswerInHandCountsOnlyForTheLookItArrivedIn()
+    {
+        // DV589: an answer from an earlier look at a thing may have been in reach then; a new look waits for its own
+        (RecordingFeed _, PlayRig rig) = Rig(bots: 0);
+        rig.Run(0.5);
+        var pen = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0, 16, 16);
+        var other = new ClickTarget(TargetKind.Entity, 8, 0, 0, 0, 16, 16);
+        var answer = new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7, Name = "pen" };
+        const double t = 100;
+        rig.Session.Hover(pen, t);
+        rig.Session.HintsArrived(answer);
+        Assert.Same(answer, KeyChips.AnswerFor(rig.Session.Hints, pen));
+
+        // the same look, a zone change and the repeats: kept
+        rig.Session.Hover(pen with { Aim = AimZone.Chest }, t + 0.3);
+        rig.Session.Hover(pen with { Aim = AimZone.Chest }, t + 0.9);
+        Assert.Same(answer, KeyChips.AnswerFor(rig.Session.Hints, pen));
+
+        // pen, away, pen: the old answer no longer counts
+        rig.Session.Hover(ClickTarget.None, t + 1);
+        rig.Session.Hover(pen, t + 1.2);
+        Assert.Null(KeyChips.AnswerFor(rig.Session.Hints, pen));
+        rig.Session.HintsArrived(answer);
+        rig.Session.Hover(other, t + 1.4);
+        rig.Session.Hover(pen, t + 1.6);
+        Assert.Null(KeyChips.AnswerFor(rig.Session.Hints, pen));
+
+        // the answer for this look counts again, and the open radial's rebuild finds it for its target (OnHints)
+        var fresh = new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7, Name = "pen" };
+        rig.Session.HintsArrived(fresh);
+        Assert.Same(fresh, KeyChips.AnswerFor(rig.Session.Hints, pen));
+    }
+
+    [Fact]
     public void TheKeyToMotionProbeSeesTheFirstFrameAfterTheKey()
     {
         (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);

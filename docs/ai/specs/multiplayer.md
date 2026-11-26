@@ -263,9 +263,12 @@ off, and the replicator's unit-test harness keeps it off so the shared body's te
   makes a new uniform set for each material that reads a global texture set anew, and that marks every instance drawn with it
   dirty. The four textures are now made once at 128 x 128 and their pixels updated (`EntityLayer.PublishSelfReflection`); the prop
   atlas's metrics texture, made anew every 1,024 pictures with the same cost, starts at 16 rows and doubles. Full flight, vsync
-  off: frames over 50 ms 33 and 46 (first leg and back) to 3 and 2, p99 47 and 51 ms to 31 and 30. Left are the game's own
-  costs: a thing's first model build (8-35 ms, once 100 ms for a window spawner), a first spawn of a type (11-17 ms), `map/Scan`
-  walking every static record each server tick (2.6-6 ms, 21 times a second) and the turf rebuilds (up to 20 ms).
+  off: frames over 50 ms 33 and 46 (first leg and back) to 3 and 2, p99 47 and 51 ms to 31 and 30. A directional window that
+  left redrew the panes around it at once, each pane once for every neighbour that left (1,158 model builds, a frame of 100 ms on
+  the way back): `RedrawBorderWindowsAround` queues them for `StepReplace` as `Rejoin` does. With the stock engine and vsync, as
+  played: frames over 33 ms 379 and 206 to 33 and 12, over 50 ms 33 and 44 to 3 and 0, p99 47 and 49 ms to 32 and 29. Left are
+  the game's own costs: a thing's first model build (8-35 ms), a first spawn of a type (11-17 ms, some of it the code's first
+  run), `map/Scan` walking every static record each server tick (2.6-6 ms, 21 times a second) and the turf rebuilds (up to 27 ms).
 - **The spawn queue and the leave margins** (performance.md P3.7, P3.8, 2026-10-29): what the sets bring in is queued and spawned
   nearest the eye first, `SpawnBudget` (150) a tick, `JoinSpawnBudget` (1,000) in the join's Snapshot; the own mob, the mobs, the
   doors of the near chunks, the visuals and what the world made this tick skip the queue, and what lies on a spawned door's tile comes

@@ -1,9 +1,60 @@
 # UI overhaul for first person (ROADMAP stage 11)
 
-The interface is reworked to fit first-person play. The agreed design is the wireframe document
-`docs/ai/specs/ui-overhaul-wireframes.txt` (agreed on the project's Discord, as reported by the contributor doing this
-work, 2026-11-23). This file turns it into work packages. Where the two disagree, the wireframes win for layout and
-behaviour, and this file wins for keys (section 3).
+The interface is reworked to fit first-person play. The design has two source documents, both copied here from the
+contributor who owns the design (the project's UI designer):
+
+- `docs/ai/specs/ui-overhaul-reference.txt` (added 2026-11-26): the design specification. Its Appendix A is the
+  designer's own raw notes; its sections 1 to 7 are the specification written up from them.
+- `docs/ai/specs/ui-overhaul-wireframes.txt` (2026-11-23, agreed on the project's Discord as the contributor reports):
+  example layouts for that specification.
+
+This file turns them into work packages. Read both source documents in full before starting a package. Order of
+authority where they disagree: what the designer has said since (recorded in this file with its date) wins over
+everything; then the designer's raw notes (the reference's Appendix A); then the reference's sections and the
+wireframes for layout and behaviour; this file wins for keys (section 3). Section 0 says where the work stands;
+section 7 maps the wireframes to packages and section 9 the reference.
+
+## 0. Where the work stands (2026-11-26)
+
+Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
+
+| Commit | What |
+|---|---|
+| `cf06907` | This spec and the wireframes |
+| `8d6d518` | Package 1: keys |
+| `052116d` | Package 2, slice A: prompts beside the crosshair, ping and FPS |
+| `e7d96bf` | Package 2, slice B: the health doll panel and the combat pill |
+| `a67c16a` | Package T, slices T0 and T1: a person is hit on the body alone |
+| `5d1449c` | Package T, slice T2: the leg in front, shots, effects pass clicks |
+| `5a5c4a8` | Spec only |
+| `f1a2ee1` | Package T, slice T4a: eyes, mouth and groin by look; tg's gun in the mouth (protocol 95) |
+| `77f593f` | Package T, slice T4b: the prompt follows the part looked at (protocol 95) |
+
+In the working tree, not committed: package T, slice T4c (a patient's face, "Turn over", and the input-script step
+`radial=LABEL` for test runs). Its gate is clean after two fix rounds: validator PASS (1279 tests, log
+`C:/Users/Lucas/.claude/state/qa/logs/verify-AnomalyStation-20261126-012556-570572.log`), three bug reviewers,
+architecture and security with no open finding, the stress test's one finding fixed, and the playtest against the
+real server passed (section 8, "T4c playtested"). It changes the wire, so it waits only for the contributor's
+sign-off; then run verify on the exact tree and commit everything in the working tree together (this file and
+`ui-overhaul-reference.txt` are uncommitted too).
+
+Protocol version 95 is not released: slices T4a, T4b and T4c ride one release by the owner (`tools/release.sh`);
+until then the build warns `ANOMVER01` and `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
+
+Next, in this order:
+1. Commit slice T4c on the contributor's sign-off (above).
+2. Package T, slice T5: targeting oneself by looking down (section 8, "T5 design, corrected by the contributor"),
+   the health doll's eyes and mouth; client only. Build the camera and the own body in view first and show it to the
+   contributor before the targeting is added.
+3. The prompt beside the crosshair only when the thing looked at is in reach (section 9, "Asked for by the designer
+   after the reference").
+4. Package 2, slices C (native hands, held-item card) and D (alert chips).
+5. Packages 3 to 8 and what section 9 adds.
+
+To tell the owner (the contributor does this; `DECISIONS.md` is not edited by us): the protocol changes of version
+95; that the lying-body rule of the play test of 2026-10-13 is narrowed for bodies buckled to an object (DV573) and
+"Turn over" is new (DV588); tg's `handle_suicide` is translated; the earlier decisions revised for the interface
+(section 1).
 
 ## 1. What was agreed, and what it changes
 
@@ -135,6 +186,23 @@ Open points on aiming by look, seen in the playtest of 2026-11-24 against a real
   changes.
 7. **Handheld screens and schema-driven machine panels** (wireframes section 5).
 8. **Grabs and hallucination hooks** (wireframes section 6).
+
+The "Targeting" paragraphs above are as written on 2026-11-24 before the rework; section 8 (package T) is what was
+built and decided since: looking now picks nine zones, the prompt follows the look, and the zone selector stays under
+Tab.
+
+Added from the reference document (2026-11-26; section 9 has every element):
+
+- Package 4's middle column is the character's own sprite, not an abstract doll: an item used on it is used on
+  oneself at the body part clicked on the sprite ("grab syringe on cursor and click on chest", the designer's raw
+  notes), with the worn things laid out around it where they sit on the body. It uses the same zone map as aiming by
+  look (`BodyZoneMap`), so the head, the eyes and the mouth can be reached there too.
+- 9. **Damage screen effects**: a directional blood vignette for brute, a heat-wave border for burn, a frost creep
+  for oxygen loss, muffled sound below 20% health. Not in the wireframes.
+- 10. **Aiming down sights**: with an aimable firearm in hand the right button held aims down the sights, and racking
+  the slide or chambering moves to another key; with anything else in hand the right button stays tg's secondary use
+  or shove. Not in the wireframes; the designer's note is a question ("ads with guns?"), so it is confirmed with the
+  designer before it is built.
 
 ## 5. Package 1: keys
 
@@ -679,3 +747,169 @@ two ways: tg's zone selector under Tab, as it is, and the health doll, whose hea
 regions: an item used on the doll's eyes or mouth is used on one's own eyes or mouth, and elsewhere on the head on
 the head. This also removes the fault read from the code, where a click on the doll's head overwrote an eyes or
 mouth picked on the selector.
+
+### T5 design as proposed (2026-11-24; read from the code, nothing run; awaiting the contributor's answers)
+
+Client only: no server and no protocol change (the server already accepts a click and a hover on the sender's own
+mob with a zone).
+
+The eye about the neck: the eye turns about a point `d` below it on its own vertical line; at pitch `p` below level
+it moves forward `d sin p` and down `d (1 - cos p)`. Proposed `d` = 0.10 m (the jaw and upper neck of the sprite,
+drawn at 0.05 m a pixel with the eyes at about 1.275 m). With the default 75 degree field of view the own body
+enters the view at about 57 degrees; at 75 degrees the legs, groin, belly and hands are in view; at the limit of 89
+degrees everything below the neck but the chest's top row, the legs a band about 40 pixels tall under the crosshair
+on a 1080p screen and the torso about 415 pixels tall below them, as in life. The head never enters the view. The
+pitch limit, the near plane and the field of view need no change. The eye moves at most 0.10 m and the collision
+capsule keeps its centre 0.4 m from anything solid, so the eye stays out of walls without a cast.
+
+The own sprite: the same standing billboard, shown to its own eye once the pitch passes about 40 degrees (shadow
+only before, as today, D288), never its rows above the neck (at level pitch the eye is inside the sprite's plane at
+head height). Not shown while lying (the eye sits inside the lying picture), dead, a ghost, in an exosuit, a scope,
+a locker or third person; the health doll covers those. The first-person held items are lowered out of view as the
+body comes in.
+
+Targeting: while shown, the own mob is no longer excluded from the pick; its hit shape is its body parts below the
+neck; the nearest surface wins; the click and the hover carry the zone, in every mode. The sprite is a vertical
+plane through the middle of the body across the facing, so it only ever covers floor behind that line: whatever the
+player faces stays clickable; a thing under or behind the player is covered by the legs and torso, and the player
+steps back or turns. tg's rule holds: an item with force used on one's own body hits oneself in any mode.
+
+The health doll: its head is tg's 32 by 32 picture with the head on rows 23 to 29, so tg's `get_zone_at` eye and
+mouth pixels land on it; `DollZoneAt` returns Eyes or Mouth there and Head elsewhere on the head. At a 1080p HUD
+scale of 1 the doll is drawn at 3 screen pixels a pixel: the eyes are a 9 by 9 patch, the mouth 9 by 6. While the
+pointer is over them, tg's own `eyes` and `mouth` hover pictures are drawn. The ctrl-click grasp carries the limb
+clicked.
+
+To settle: whether the own sprite is mirrored left to right for its own eye (unmirrored, the player's left arm and
+the item in the left hand appear on the right of the screen, as on the doll but against the first-person held
+items); `d` 0.10 m or larger (0.20 m gives legs about 98 pixels tall and loses the top six rows of the chest).
+
+### T5 design, corrected by the contributor (2026-11-24); this replaces the two points "to settle" above
+
+"The eyes should be angled down more than 90 so that you're looking slightly back at yourself, pivot about a point
+15cm from the neck and see how that works. Also there should be no need for mirroring unless you've flipped the view
+somehow. The view should remain in the same orientation as it starts. So when you're looking down your body should
+be on the bottom half of the screen and the floor ahead."
+
+- The pivot is 0.15 m below the eye. The downward pitch limit is raised past 90 degrees so the view looks slightly
+  back at the body; to start, 105 degrees, tuned in the playtest.
+- The view keeps its orientation all the way: the pitch is one continuous turn about the camera's own right axis,
+  with no flip or roll at 90 degrees, so the screen's right stays the player's right and the floor ahead stays in
+  the upper part of the view.
+- No mirroring is a consequence, not a choice: the own body is the same card other players see, standing where the
+  player stands and facing the way the player faces. Looked back at from the player's own eye, its left arm is on
+  the player's left. (The earlier "mirror" question came from the billboard code laying a picture out along the
+  camera's right; for its own eye the sprite must stand facing the mob's facing instead of turning to the camera.)
+- Worked from the geometry (not yet seen in the game): at 100 degrees the eye is 0.15 m ahead of the body and about
+  1.12 m up; the feet sit just above the middle of the screen, the legs across it, and the torso fills the lower
+  half to about row 20; the floor ahead fills the upper half. At 105 to 110 degrees the body rises to about two
+  thirds of the screen. The head stays out of view at every pitch.
+
+T4c as built, one widening of the wording above (found in review, 2026-11-24): the face-up rule applies to a body
+lying while buckled to any object that is not a mob, which is what the posture byte can tell (its lying and buckled
+bits), not only to furniture that lays people down. The difference is a person knocked down or paralysed while
+buckled in a chair or on a vehicle: drawn face up from every side where before a conscious one was drawn back up.
+Kept: it serves the same purpose (the face of someone slumped in a seat can be aimed at) and needs no further wire
+change; narrowing it to laying furniture would need the server to send the side itself.
+
+T5, added from the designer's raw notes (the reference document, Appendix A, 2026-11-26): "inventory ui that shows
+sprite in the middle, lets you use items on sprite like using on self this targets the body part you target on the
+sprite. so you can like grab syringe on cursor and click on chest for example." So oneself is targeted four ways,
+and each is to work on its own: looking down at one's own body (below the neck); the character's sprite in the
+middle of the Tab overlay (every zone, the head, eyes and mouth included; package 4); the health doll, whose head
+gains the eyes and the mouth; and tg's zone selector under Tab.
+
+## 9. Reference document checklist
+
+Every element of `ui-overhaul-reference.txt` that section 7 does not already carry, the package that delivers it,
+and what has to be settled. Where the reference and the wireframes say the same thing, section 7 has the row. "A"
+is the designer's raw notes (Appendix A); numbers are the reference's sections.
+
+### What the designer has overruled since
+
+| Reference | What holds instead |
+|---|---|
+| 4: releasing Alt on a part "locks that limb on your HUD targeting doll" | Nothing is locked; the doll shows injuries only; the part targeted is the part looked at (section 4, "Targeting"; section 8) |
+| 4: the doll goes green, yellow, red, flashing black | Green, yellow, orange, red with hatching, dark grey for a missing limb (built, slice B; D70) |
+| 3: combat mode on C or F | F, the binding (section 3) |
+
+### Layout and inventory (reference 1, 2, A)
+
+| Element | Package | To settle |
+|---|---|---|
+| The middle of the Tab overlay is the character's sprite with the worn things around it where they sit on the body; an item on the cursor used on the sprite is used on oneself at the part clicked (A) | 4, with package T's zone map | which frame of the sprite is shown and whether it can be turned to show the back |
+| Everything worn is shown beside the doll, as in Barotrauma and NEO Scavenger (A) | 4 | |
+| Items in worn storage (backpack, pockets) are shown (A) | 4 | |
+| An item picked from the hotbar or the inventory goes to the active hand (A) | 3, 4 | |
+| Drag and drop works for everything while the inventory is open; drag travel under 300 px between hands, pockets and gear (2) | 4 | |
+| The compact chat has six lines and its background fades out after 8 seconds idle (2) | 5 | |
+| The centre of the view is never blurred; machine and loot panels close on taking damage or moving more than 1.5 m (7) | 4, 7 | closing on damage is new; the server decides the range |
+
+### Hotbar, hands and firearms (reference 3, A)
+
+| Element | Package | To settle |
+|---|---|---|
+| Only items in the pockets, the belt, suit storage or the ID and PDA slots can be bound to 1 to 9 (3) | 3 | suit storage is not in section 4's layout of the nine keys (belt 1 to 6, pockets 7 and 8, ID 9) |
+| X swaps the active hand; the active hand has a high-contrast highlight (3) | 1 (done), 2 slice C | |
+| With an aimable firearm in hand the right button held aims down the sights, and racking or chambering moves to R or Alt+right button; otherwise the right button is tg's secondary use or shove (3; A: "ads with guns?") | 10 | a question in the designer's notes: confirm before building; what the port's gun sight and scope already do (DV96) |
+
+### Health, focus and first-person visibility (reference 4, A)
+
+| Element | Package | To settle |
+|---|---|---|
+| Anatomical focus reaches 15 m and floats a tag by each part; it is mainly for non-humanoids, for combat and surgery (4, A) | 6 | xenomorphs and other mobs drawn as one picture need their regions drawn by hand (section 8) |
+| Screen effects when hurt: a directional blood vignette for brute, a heat-wave border for burn, a frost creep for oxygen loss, muffled sound below 20% health (4, A) | 9 | what tg's own damage overlays already show in the port |
+| Grip brackets at the screen's edges coloured by tg's grab tier: yellow passive, orange aggressive with sway, red chokehold with tunnel vision (4) | 8 | |
+| A fireman carry tilts the carried player's camera 25 degrees with an over-the-shoulder view (4) | 8 | the horizon stays level (reference 7) |
+| Hallucinations also fake chat: phantom speech pills from off screen (`fake_chat`) (4) | 8 | |
+| A knockdown or stun never spins the camera: lowered eye height and a vignette instead; the horizon stays upright (7) | 8 | the camera's lying height exists (0.4 m) |
+
+### Prompts and chat (reference 5, A)
+
+| Element | Package | To settle |
+|---|---|---|
+| The prompt sits below and right of the crosshair and follows the active hand's item, the target and combat mode (5) | 2 slice A (done), T4b (done) | it refreshes on a look; a change of held item or combat mode alone does not refresh it yet |
+| A tip for the item held in the hand; holding F1 expands a card of all its verbs (5, A) | 2 slice C | F1 is the camera mode; no list of an item's verbs is sent today |
+| Local speech in 3D above heads inside a 100 degree field of view; size and opacity fall off from 0 to 10 m; whispers in italics within 2 m only (5, A) | 5 | what tg's runechat in the port already does |
+| Channel tags by department with colours; own name, job title, department and codewords highlighted with pill badges and a soft tick (5, A: "see starlight ss14 system") | 5 | |
+| Local speech has a white outline in the log and a one-click Local only tab (7) | 5 | |
+| A held radio shows its text scrolling on the item's own screen as well as in the chat log; a radio in the world floats its frequency and text above it within 4 m (5, A) | 7 | |
+
+### Item and machine interfaces (reference 6, A)
+
+| Element | Package | To settle |
+|---|---|---|
+| Tier 1, on the held item's own screen, about a quarter: health analyzer, gas analyzer, T-ray scanner, Geiger counter; hold I to bring it close without freeing the cursor | 7 | I is the inventory key |
+| Tier 2, one schema-driven renderer, about two thirds: APCs, air alarms, vending machines, autolathes, cryo and sleeper pods | 7 | the 298 translated tgui windows stay until a machine moves over |
+| Tier 3, hand-built, about a tenth: PDA and crew manifest, ChemMaster, surgery console, telecomms, the nuclear bomb | 7 | |
+
+### Asked for by the designer after the reference (2026-11-26)
+
+| Element | Package | To settle |
+|---|---|---|
+| "The on screen tooltips should only show up if youre in range to interact with the object": the prompt beside the crosshair is shown only when the player can reach the thing looked at | 2 (a small slice of its own, after package T's slice T4c) | today the prompt shows at any distance (the hover has no range check). Who decides reach: the server knows tg's own rule (`CanReach`: adjacent, the held item's reach, over a table, not through a window) and can send no hints for a thing out of reach, with no change to the wire; what is shown for actions that work at a distance (a gun, a throw, examine); whether the thing's name still shows out of reach |
+
+### T4c playtested (2026-11-26)
+
+Against the real server, driven by the input script (evidence: the session's scratchpad, `playtest-aim-t4c` and
+`playtest-aim-t4c2`): a conscious patient on an operating table and on a bed is drawn face up from all four sides and
+a penlight finds the eyes and the mouth on the drawn face; a conscious person on the floor is back up with neither.
+"Turn over" from the radial: the progress bar, "You start turning X over." and "You turn X over.", the body face up
+from every side with eyes and mouth by penlight, and back again on a second turn; not offered on a standing person,
+a corgi, an item or from two tiles; walking away, the target standing up and both hands full each stop it; standing
+up forgets the side; a patient on furniture turns back up and face up again; a bystander's client gets the same
+lines and draws the same side; a pistol shot at the same spot hit the right arm face up and the left arm after a
+turn.
+
+For test runs the input script has a new step, `SECONDS:radial=LABEL` (`docs/ai/specs/apps.md`): it holds the right
+button, lets the radial open, aims at the entry with that label and releases, and logs what was picked or what was
+offered. Use it for every later playtest of a radial entry.
+
+Known, for later:
+- The person being turned reads the third-person line ("X starts turning Y over."), not a "you" form.
+- An actor with no arms, or with no free hand, is refused silently.
+- Older than this package, seen in both playtests and confirmed on commit `77f593f`: a patient on the emergency
+  medical bed (`/obj/structure/bed/medical/emergency`) is not drawn at all when seen from the north, and from the
+  other sides lies with the head on the other end than on a bed or a table. Needs its own fix.
+- A slow test, `BuckleGameplayTests.A_friend_is_buckled_to_a_chair_and_a_roller_bed_...`, fails at its line 178 at
+  commit `77f593f` already (the builder's report; not looked into).

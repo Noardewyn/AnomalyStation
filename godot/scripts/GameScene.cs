@@ -1251,6 +1251,16 @@ public partial class GameScene : Node3D
                     _pendingReleases.Enqueue((now + 0.35, held, end));
                     break;
                 }
+                case ScriptAction.Radial:
+                {
+                    // slice T4c: the right button held at the crosshair (the radial opens after RadialModel.HoldSeconds), the entry aimed by its label
+                    // at 0.5 s (fresh hints have come by then), then let go: the release chooses it (OnRightReleased)
+                    Vector2 centre = GetViewport().GetVisibleRect().Size / 2f;
+                    Input.ParseInputEvent(WithHeldKeys(new InputEventMouseButton { ButtonIndex = MouseButton.Right, Pressed = true, Position = centre, GlobalPosition = centre }));
+                    _pendingRadial = (now + 0.5, step.Text);
+                    _pendingReleases.Enqueue((now + 0.5, MouseButton.Right, centre));
+                    break;
+                }
                 case ScriptAction.Type:
                     foreach (char c in step.Text)
                     {

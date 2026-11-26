@@ -627,7 +627,7 @@ public static class ShotGeometry
         if (TryFlight(standing, cx, cy, out double lift, out _))
             height -= lift;
         bool lying = target.body_position == LYING_DOWN;
-        byte dir = lying ? ChooseLyingDir(mobYaw, cx, cy, cx - ux, cy - uy, IsLimp(target)) : ChooseDir(mobYaw, cx, cy, cx - ux, cy - uy);
+        byte dir = lying ? LyingFrame(target, mobYaw, cx, cy, cx - ux, cy - uy) : ChooseDir(mobYaw, cx, cy, cx - ux, cy - uy);
         zone = ZoneAtPoint(Layers(parts, dir), PlacementOf(target), lateral / MobScale, height / MobScale);
         return zone == null ? Crossing.Miss : Crossing.Hit;
     }
@@ -691,6 +691,13 @@ public static class ShotGeometry
     }
 
     private static bool IsLimp(mob_living target) => Dm.num(target.stat) != 0; // the replicator's limp posture bit: stat 0 is conscious
+
+    /// <summary>
+    /// The frame a lying <paramref name="target"/> shows a viewer at (<paramref name="viewerX"/>, <paramref name="viewerY"/>), from its own state as the
+    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV588).
+    /// </summary>
+    public static byte LyingFrame(mob_living target, byte yaw, double mobX, double mobY, double viewerX, double viewerY)
+        => ChooseLyingDir(yaw, mobX, mobY, viewerX, viewerY, IsLimp(target), target.dm_lies_buckled, target.dm_turned_face_up);
 
     // One body-part image: its zone, its mask in the frame (rows from the bottom), its pixel offsets and its layer order.
     private readonly record struct Layer(string Zone, uint[] Rows, int OffsetX, int OffsetY);
@@ -778,9 +785,17 @@ public static class ShotGeometry
         return FrontClockwise[((int)Math.Floor((relative + 45.0) / 90.0) % 4) * 2];
     }
 
-    /// <summary>The client's <c>BillboardMath.ChooseLyingDir</c>: a conscious body lies face down (its back, north), a limp one by the viewer's side.</summary>
-    public static byte ChooseLyingDir(byte yaw, double mobX, double mobY, double viewerX, double viewerY, bool limp)
+    /// <summary>
+    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV588, <paramref name="turnedFaceUp"/>), one
+    /// lying buckled to an object its front (slice T4c), from every side; otherwise a conscious body lies face down (its back, north), a limp one by the
+    /// viewer's side.
+    /// </summary>
+    public static byte ChooseLyingDir(byte yaw, double mobX, double mobY, double viewerX, double viewerY, bool limp, bool buckled = false, bool? turnedFaceUp = null)
     {
+        if (turnedFaceUp is bool up)
+            return up ? (byte)2 : (byte)1;
+        if (buckled)
+            return 2;
         if (!limp)
             return 1;
         double dx = viewerX - mobX, dy = viewerY - mobY;

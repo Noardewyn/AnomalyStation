@@ -112,6 +112,51 @@ public class ModelTests
         Assert.Equal((0.0, -100.0), (Math.Round(x, 6), Math.Round(y, 6)));
     }
 
+    /// <summary>
+    /// Slice T4c: the input script's radial=LABEL aims the open radial at the entry of that label (case and outer spaces ignored), so the release
+    /// chooses exactly that entry, with the dispatch a mouse release has (here the Extra entry the server offers, Turn over); an absent label
+    /// aims at the centre and the release cancels; a radial that is not open aims at nothing.
+    /// </summary>
+    [Fact]
+    public void AnInputScriptPicksTheRadialsEntryByItsLabel()
+    {
+        var hints = new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7 };
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.None, "Hug"));
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.None, "Turn over", ContextHintAction.Extra));
+        hints.Hints.Add(new ContextHint(ClickButton.Left, ClickModifiers.Ctrl, "Pull"));
+        var radial = new RadialModel();
+        Assert.False(radial.AimAtLabel("Turn over")); // closed
+        radial.Press(0);
+        Assert.False(radial.AimAtLabel("Turn over")); // pressed, not open yet
+        radial.Update(0.3);
+        radial.SetEntries(RadialModel.Build(hints, 1, true));
+        Assert.True(radial.AimAtLabel("  turn OVER "));
+        Assert.Equal(RadialOutcome.Choice, radial.Release(0.5, out RadialEntry choice));
+        Assert.Equal((RadialKind.Extra, "Turn over"), (choice.Kind, choice.Label));
+
+        // every entry, whichever its place on the circle, is the one aimed
+        List<RadialEntry> entries = RadialModel.Build(hints, 3, true);
+        foreach (RadialEntry wanted in entries)
+        {
+            radial.Press(1);
+            radial.Update(1.3);
+            radial.SetEntries(entries);
+            Assert.True(radial.AimAtLabel(wanted.Label), wanted.Label);
+            Assert.Equal(RadialOutcome.Choice, radial.Release(1.5, out choice));
+            Assert.Equal(wanted, choice);
+        }
+
+        // a label not offered: no entry, the release cancels, even after the mouse had aimed somewhere
+        radial.Press(2);
+        radial.Update(2.3);
+        radial.SetEntries(RadialModel.Build(hints, 1, true));
+        radial.Motion(100, 0);
+        Assert.NotEqual(-1, radial.Highlight);
+        Assert.False(radial.AimAtLabel("Strip"));
+        Assert.Equal(-1, radial.Highlight);
+        Assert.Equal(RadialOutcome.Cancel, radial.Release(2.5, out _));
+    }
+
     [Fact]
     public void TheEntriesAreTgsContextThenTheFixedOnes()
     {

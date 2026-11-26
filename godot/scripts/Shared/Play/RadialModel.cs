@@ -264,6 +264,22 @@ public sealed class RadialModel
         Motion(x, y);
     }
 
+    /// <summary>
+    /// The input script's <c>radial=LABEL</c> (slice T4c): aims at the open radial's entry labelled <paramref name="label"/> (case and outer spaces
+    /// ignored) as the mouse would, at its slice's middle, so a <see cref="Release"/> chooses it; with no such entry the aim goes back to the
+    /// centre (a release cancels) and it returns false.
+    /// </summary>
+    public bool AimAtLabel(string label)
+    {
+        if (Phase != RadialPhase.Open)
+            return false;
+        string wanted = (label ?? string.Empty).Trim();
+        int index = _entries.FindIndex(e => string.Equals((e.Label ?? string.Empty).Trim(), wanted, StringComparison.OrdinalIgnoreCase));
+        (double x, double y) = index < 0 ? (0.0, 0.0) : PositionOf(index, _entries.Count, MaxReach);
+        AimAt(x, y);
+        return index >= 0 && Highlight == index;
+    }
+
     /// <summary>The right button went up at <paramref name="now"/>.</summary>
     public RadialOutcome Release(double now, out RadialEntry choice)
     {

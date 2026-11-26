@@ -636,7 +636,8 @@ public class CodecV2Tests
         foreach (EntityState bad in new[]
                  {
                      capsule with { PosX = 0 }, capsule with { PosX = 127 }, capsule with { PosY = 256 * 255 + 128 }, capsule with { PosX = -5 },
-                     capsule with { PosX = 70000 }, Msg.State(1) with { Posture = 64 }, Msg.State(1) with { Posture = 255 },
+                     // version 95 (DV588) defines bits 6 and 7, so 255 is a valid byte now; a turned side on a standing body or face up without a fixed side is not
+                     capsule with { PosX = 70000 }, Msg.State(1) with { Posture = 64 }, Msg.State(1) with { Posture = 128 | 1 }, Msg.State(1) with { Posture = 254 },
                      Msg.State(1) with { Appearance = new TableRef(1, true) }, Msg.State(1) with { Appearance = TableRef.Public((uint)Limits.MaxAppearanceTableEntries + 1) },
                  })
         {
@@ -664,7 +665,9 @@ public class CodecV2Tests
                      Entity(r => r.VarUInt(6).Byte(0).VarUInt(0)), // moved 6 ticks ago at tick 5
                      Entity(r => r.VarUInt(0).Byte(4).VarUInt(0)), // an undefined record flag
                      Entity(r => r.VarUInt(0).Byte(2).Byte(0).VarUInt(0)), // a posture flagged and 0
-                     Entity(r => r.VarUInt(0).Byte(2).Byte(65).VarUInt(0)), // undefined posture bits
+                     // version 95 (DV588) defines bits 6 and 7, so 65 (lying, turned face down) is valid now; these two are not
+                     Entity(r => r.VarUInt(0).Byte(2).Byte(129).VarUInt(0)), // face up without a fixed side
+                     Entity(r => r.VarUInt(0).Byte(2).Byte(64).VarUInt(0)), // a turned side on a standing body
                      Entity(r => r.VarUInt(0).Byte(1).Bytes(0, 0, 0, 1).Byte(0).VarUInt(0)), // a position in tile 0
                      Entity(r => r.VarUInt(0).Byte(1).Bytes(0, 1, 0, 1).VarUInt(0)), // truncated
                      Entity(r => r.VarUInt(0).Byte(0).VarUInt(2)), // an appearance past the Snapshot's table

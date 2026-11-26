@@ -123,4 +123,18 @@ public class InputScriptTests
         Assert.False(InputScript.TryParse("1:pan=3@10x10", out _, out _));
         Assert.False(InputScript.TryParse("1:pinch=0@10x10", out _, out _));
     }
+
+    [Fact]
+    public void TheContextRadialsEntryIsPickedByItsLabel()
+    {
+        // slice T4c: radial=LABEL, an underscore for a space (no quotes needed in a shell), a quoted space works too
+        Assert.True(InputScript.TryParse("6:radial=Turn_over,7:radial=Turn over, 8:radial= Pull ", out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(new[] { (6.0, "Turn over"), (7.0, "Turn over"), (8.0, "Pull") }, steps.Select(s => (s.AtSeconds, s.Text)));
+        Assert.All(steps, s => Assert.Equal(ScriptAction.Radial, s.Action));
+        Assert.False(InputScript.TryParse("1:radial=", out _, out error));
+        Assert.Contains("radial=LABEL", error);
+        Assert.False(InputScript.TryParse("1:radial=___", out _, out _)); // only spaces
+        Assert.False(InputScript.TryParse("1:radial=" + new string('a', 65), out _, out _));
+        Assert.False(InputScript.TryParse("radial=Turn_over", out _, out _)); // no time
+    }
 }

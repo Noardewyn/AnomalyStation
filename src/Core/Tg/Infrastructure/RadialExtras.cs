@@ -36,6 +36,9 @@ public enum RadialExtra : byte
 
     /// <summary>DV503: the table flipped over or back upright (tg's empty hand's right click, which no longer flips: <c>radial_flip</c>).</summary>
     Flip = 8,
+
+    /// <summary>DV588 (package T, slice T4c): a lying carbon turned face up or face down (not in tg: <c>mob_living.radial_turn_over</c>, a do_after).</summary>
+    TurnOver = 9,
 }
 
 public static class RadialExtras
@@ -44,7 +47,7 @@ public static class RadialExtras
     /// The entries of D230 and D238 that <paramref name="user"/> can use on <paramref name="target"/> now, with their labels, in this order: Buckle
     /// (a thing he can buckle himself to, as tg's <c>is_user_buckle_possible</c> of a drag), Unbuckle (a thing with someone buckled to it,
     /// his active hand empty), Climb in (a sealed vehicle with a free seat he is not in), Climb (a climbable tg's drag would start climbing), Pull (a thing tg lets him pull) or Stop pulling (the thing he pulls), and Strip (a human whose strip menu
-    /// tg's drag of him onto oneself would open: <c>should_strip</c> and <c>can_perform_action</c>). Only for a movable on a turf next to
+    /// tg's drag of him onto oneself would open: <c>should_strip</c> and <c>can_perform_action</c>), and Turn over (DV588: a lying carbon). Only for a movable on a turf next to
     /// him (tg's <c>Adjacent</c>); none for a mob he would buckle to (tg's grabs, M9) or for himself. Called in the tick (the hover).
     /// </summary>
     public static List<(RadialExtra Kind, string Label)> Of(mob user, atom target)
@@ -77,6 +80,8 @@ public static class RadialExtras
         if (thing is mob_living_carbon_human victim && Dm.truthy(victim.should_strip(user))
             && Dm.truthy(Waiting.NoSleep(user.can_perform_action(victim, Dm.bitor(FORBID_TELEKINESIS_REACH, ALLOW_RESTING)))))
             entries.Add((RadialExtra.Strip, I18n.T("Strip")));
+        if (thing is mob_living lying && lying.dm_can_be_turned_over) // DEVIATION(DV588)
+            entries.Add((RadialExtra.TurnOver, I18n.T("Turn over")));
         return entries;
     }
 
@@ -91,14 +96,17 @@ public static class RadialExtras
             return;
         foreach ((RadialExtra kind, string offered) in Of(user, target))
         {
-            if (kind != RadialExtra.Flip || offered != label || target is not obj_structure_table table)
+            if (offered != label || !(kind == RadialExtra.Flip && target is obj_structure_table || kind == RadialExtra.TurnOver && target is mob_living))
                 continue;
             World world = World.Current;
             object caller_usr = world.usr;
             try
             {
                 world.usr = user;
-                Waiting.Detach(table.radial_flip(user));
+                if (target is obj_structure_table table)
+                    Waiting.Detach(table.radial_flip(user));
+                else
+                    Waiting.Detach(((mob_living)target).radial_turn_over(user)); // DV588
             }
             finally
             {

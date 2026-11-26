@@ -466,14 +466,15 @@ public static class ReplicatedFields
     public static byte WireYaw(atom_movable movable, ushort capsuleYaw)
         => movable is mob_living { buckled: not null } ? ShotGeometry.YawOfDir(WireDir(movable.dir)) : (byte)(capsuleYaw >> 8);
 
-    /// <summary>The wire posture byte of a living mob: lying, the quarter turns of its lying angle and whether it is limp (<see cref="PostureBits"/>).</summary>
+    /// <summary>The wire posture byte of a living mob: lying, the quarter turns of its lying angle, whether it is limp, and the side it was turned to (<see cref="PostureBits"/>).</summary>
     public static byte WirePosture(mob_living mob)
     {
         bool lying = mob.body_position == Defines.LYING_DOWN;
         float angle = mob.lying_angle;
         int quarter = float.IsFinite(angle) ? (int)(angle / 90f) : 0;
         return PostureBits.Encode(lying, lying ? quarter * 90 : 0, limp: Dm.num(mob.stat) != 0, // stat 0 is conscious (tg has no define for it);
-            incorporeal: mob.incorporeal_move != 0, buckled: mob.buckled is not null and not mob_living);
+            incorporeal: mob.incorporeal_move != 0, buckled: mob.buckled is not null and not mob_living,
+            turnedFaceUp: mob.dm_turned_face_up); // version 95 (DV588): the side the radial's Turn over put it on
     }
 
     /// <summary>

@@ -3216,3 +3216,23 @@ the zone as an action's zone field, as a click's.
 
 Tests: `Protocol/ProtocolV95HoverZoneTests`, `Protocol/ProtocolV95AimZoneTests`, `Protocol/CodecV2Tests` (server),
 `Integration/HoverZoneGameplayTests`.
+
+## 92. Version 95, also (package T, slice T4c: a lying body's side, the radial's Turn over)
+
+The posture byte (`NetField.Posture`, `PostureBits`) uses its two spare bits: bit 6 (64, `SideFixed`) says someone turned the lying body over
+(DV588), bit 7 (128, `FaceUp`) with it says it lies face up, without it back up. They are set only while the body lies; the server forgets the side
+when the body gets up. A decoder refuses bit 6 without bit 0 (a side on a standing body) and bit 7 without bit 6; every byte of version 94 (bits
+6 and 7 clear) keeps its meaning. Examples: `0x43` lying at 90 degrees and turned back up, `0xC3` the same turned face up, `0x40` and `0x83`
+refused. `PostureBits.TurnedFaceUp` reads the side (null when not turned). The byte is sent again when the side changes (the turn is an appearance
+hint of the mob, so a mob with no capsule is read too).
+
+Which side of a lying body a client draws (`BillboardMath.ChooseLyingDir`, mirrored by the server's shots in `ShotGeometry.ChooseLyingDir`): the side
+it was turned to, from every viewer; else, lying buckled to an object (bits 0 and 5: a bed, an operating table), its front; else the owner's rule
+of 2026-10-13 (conscious: its back; limp: by the viewer's side).
+
+The radial's **Turn over** is a context hint of the Extra action (section 83) with the label `Turn over` (`I18n.T`); its pick is a ContextPick of
+that label. The server's entry is `RadialExtra.TurnOver` (9), which is not on the wire: the label is. It is offered on a lying carbon on a turf next
+to the player, never on himself; the pick takes the click bucket as every ContextPick.
+
+Tests: `Protocol/ProtocolV95TurnOverTests`, `Protocol/CodecV2Tests`, `Client/Render/TurnOverLyingDirTests` (server), `Integration/TurnOverGameplayTests`,
+`Integration/BodyZoneRegionTests`.

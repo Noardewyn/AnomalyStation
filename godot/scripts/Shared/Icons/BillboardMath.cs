@@ -151,10 +151,18 @@ public static class BillboardMath
     /// lying body, so the frame decides which side of the body the viewer sees: a conscious body (knocked down, crawling) lies face down, so the
     /// viewer sees its back (north); a limp one (unconscious, in crit, dead) lies on its back or front by the way it fell: front (south) when the
     /// viewer is on the side it faces, back (north) when behind it. <paramref name="directions"/> is the icon's direction count.
+    /// Slice T4c (the contributor, 2026-11-24; DV573, DV588), before that rule: a body someone turned over shows the side it was turned to
+    /// (<paramref name="turnedFaceUp"/>, the posture's <c>PostureBits.TurnedFaceUp</c>) from every side, and one lying <paramref name="buckled"/> to
+    /// an object (a bed, an operating table) lies on its back, its front (south) seen from every side. The server mirrors it for shots
+    /// (<c>ShotGeometry.ChooseLyingDir</c>).
     /// </summary>
-    public static byte ChooseLyingDir(byte yaw, double mobX, double mobY, double viewerX, double viewerY, int directions, bool limp)
+    public static byte ChooseLyingDir(byte yaw, double mobX, double mobY, double viewerX, double viewerY, int directions, bool limp, bool buckled = false, bool? turnedFaceUp = null)
     {
         if (directions <= 1)
+            return ByondDir.South;
+        if (turnedFaceUp is bool up)
+            return up ? ByondDir.South : ByondDir.North;
+        if (buckled)
             return ByondDir.South;
         if (!limp)
             return ByondDir.North;

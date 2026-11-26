@@ -143,7 +143,7 @@ public sealed class AppearanceEntry
     public const short DefaultMaptextSize = 32;
 }
 
-/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte.</summary>
+/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 95).</summary>
 public static class PostureBits
 {
     /// <summary>Bit 0: lying (tg <c>LYING_DOWN</c>).</summary>
@@ -170,9 +170,25 @@ public static class PostureBits
     /// </summary>
     public const byte Buckled = 32;
 
-    /// <summary>The byte of a body position and lying angle (the angle is taken modulo 360 in quarter turns).</summary>
-    public static byte Encode(bool lying, int lyingAngle, bool limp = false, bool incorporeal = false, bool buckled = false)
-        => (byte)((lying ? Lying : 0) | (((lyingAngle / 90) & 3) << AngleShift) | (lying && limp ? Limp : 0) | (incorporeal ? Incorporeal : 0) | (buckled ? Buckled : 0));
+    /// <summary>
+    /// Bit 6 (version 95, slice T4c, DV588): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
+    /// Set only while lying; the server forgets the side when the body stands up.
+    /// </summary>
+    public const byte SideFixed = 64;
+
+    /// <summary>Bit 7 (version 95, slice T4c, DV588): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
+    public const byte FaceUp = 128;
+
+    /// <summary>
+    /// The byte of a body position and lying angle (the angle is taken modulo 360 in quarter turns). <paramref name="turnedFaceUp"/>: the side a
+    /// turned lying body lies on (true face up, false back up), null when no one turned it; written only while lying.
+    /// </summary>
+    public static byte Encode(bool lying, int lyingAngle, bool limp = false, bool incorporeal = false, bool buckled = false, bool? turnedFaceUp = null)
+        => (byte)((lying ? Lying : 0) | (((lyingAngle / 90) & 3) << AngleShift) | (lying && limp ? Limp : 0) | (incorporeal ? Incorporeal : 0) | (buckled ? Buckled : 0)
+            | (lying && turnedFaceUp is bool up ? SideFixed | (up ? FaceUp : 0) : 0));
+
+    /// <summary>The side a turned lying body lies on (<see cref="SideFixed"/>, <see cref="FaceUp"/>): true face up, false back up, null when not turned.</summary>
+    public static bool? TurnedFaceUp(byte posture) => (posture & SideFixed) != 0 ? (posture & FaceUp) != 0 : null;
 
     /// <summary>True when the byte says buckled to an object (<see cref="Buckled"/>).</summary>
     public static bool IsBuckled(byte posture) => (posture & Buckled) != 0;

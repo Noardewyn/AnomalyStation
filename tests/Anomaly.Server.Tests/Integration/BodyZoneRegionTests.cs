@@ -200,6 +200,92 @@ public class BodyZoneRegionTests(ITestOutputHelper output)
         }
     }
 
+    /// <summary>
+    /// Slice T4c (the contributor, 2026-11-24; narrows the owner's rule of 2026-10-13): a conscious patient lying buckled to an operating table or a
+    /// bed is drawn face up from every side, the frame the client chooses from the replicated posture, so its eyes and mouth are there to aim at.
+    /// </summary>
+    [Theory]
+    [InlineData("operating table")]
+    [InlineData("bed")]
+    public void A_conscious_patient_on_furniture_shows_its_eyes_and_mouth_from_every_side(string furniture)
+    {
+        string root = Anomaly.Server.Tests.M3Maps.I1d.MetaPictureTests.IconRoot();
+        if (root == null)
+            return; // no tg icons here
+        using var w = new RealHeadlessWorld(new LoopbackOptions { Seed = 5, TimeoutSteps = 400 });
+        RealHeadlessWorld.Player alice = w.Join("Alice");
+        RealHeadlessWorld.Player bob = w.Join("Bob");
+        var bobMob = (mob_living_carbon_human)w.MobOf(bob);
+        Naked(w, bobMob);
+        using (w.World.Enter())
+        {
+            var made = (atom_movable)DevCommands.Spawn(furniture == "bed" ? typeof(obj_structure_bed) : typeof(obj_structure_table_optable), (turf)bobMob.loc, 1, 2, out _).Single();
+            Waiting.NoSleep(made.buckle_mob(bobMob, force: Dm.TRUE));
+            Assert.Equal(0f, Dm.num(bobMob.stat)); // conscious
+        }
+        w.Run(10);
+        ReplicaEntity seen = alice.Session.Replica.Entities.Single(e => e.Id == bobMob.dm_id);
+        Assert.True(PostureBits.IsLying(seen.State.Posture) && PostureBits.IsBuckled(seen.State.Posture) && !PostureBits.IsLimp(seen.State.Posture));
+        AssertFace(alice, bobMob, seen, expectFace: true, furniture);
+    }
+
+    /// <summary>
+    /// Slice T4c (DV588): a conscious body on the floor keeps the owner's rule, back up with no eyes and no mouth from every side; turned over from
+    /// the radial it shows its face from every side; turned again, its back.
+    /// </summary>
+    [Fact]
+    public void A_conscious_body_on_the_floor_is_back_up_until_turned_over()
+    {
+        string root = Anomaly.Server.Tests.M3Maps.I1d.MetaPictureTests.IconRoot();
+        if (root == null)
+            return; // no tg icons here
+        using var w = new RealHeadlessWorld(new LoopbackOptions { Seed = 5, TimeoutSteps = 4000 });
+        RealHeadlessWorld.Player alice = w.Join("Alice");
+        RealHeadlessWorld.Player bob = w.Join("Bob");
+        mob_living aliceMob = w.MobOf(alice);
+        var bobMob = (mob_living_carbon_human)w.MobOf(bob);
+        Naked(w, bobMob);
+        using (w.World.Enter())
+        {
+            var start = (turf)aliceMob.loc;
+            Waiting.NoSleep(bobMob.forceMove(Builtins.locate(Dm.num(start.x) + 1, Dm.num(start.y), Dm.num(start.z))));
+            Waiting.NoSleep(bobMob.set_resting(Dm.TRUE, Dm.TRUE));
+        }
+        w.Run(20);
+        ReplicaEntity Seen() => alice.Session.Replica.Entities.Single(e => e.Id == bobMob.dm_id);
+        AssertFace(alice, bobMob, Seen(), expectFace: false, "on the floor");
+        var target = new ClickTarget(TargetKind.Entity, bobMob.dm_id, 0, 0, 0, 16, 16, AimZone.None);
+        Assert.True(alice.Session.ContextPick(target, "Turn over"));
+        w.Run(40);
+        Assert.True(PostureBits.TurnedFaceUp(Seen().State.Posture) == true, "turned face up");
+        AssertFace(alice, bobMob, Seen(), expectFace: true, "turned over");
+        Assert.True(alice.Session.ContextPick(target, "Turn over"));
+        w.Run(40);
+        Assert.True(PostureBits.TurnedFaceUp(Seen().State.Posture) == false, "turned back up");
+        AssertFace(alice, bobMob, Seen(), expectFace: false, "turned again");
+    }
+
+    // The frame the client draws for viewers on the four sides of the lying body (BillboardMath.ChooseLyingDir from the replicated posture) and
+    // the zone map of that frame: the front with tg's 11 eye and 6 mouth pixels, or the back with none.
+    private void AssertFace(RealHeadlessWorld.Player viewer, mob_living mob, ReplicaEntity seen, bool expectFace, string what)
+    {
+        (Tables tables, AppearanceCompositor compositor, TableRef look) = Picture(viewer, mob);
+        byte posture = seen.State.Posture;
+        foreach ((double dx, double dy) in new[] { (0.0, 3.0), (0.0, -3.0), (3.0, 0.0), (-3.0, 0.0) })
+        {
+            byte dir = BillboardMath.ChooseLyingDir(seen.State.Yaw, 10, 10, 10 + dx, 10 + dy, 4, PostureBits.IsLimp(posture), PostureBits.IsBuckled(posture), PostureBits.TurnedFaceUp(posture));
+            Assert.True((expectFace ? ByondDir.South : ByondDir.North) == dir, $"{what}, viewer at {dx},{dy}: frame {dir}");
+            Assert.True(compositor.TryCompose(tables, look, dir, 0, out ComposedRaster picture));
+            (int left, int right, int bottom, int topRow) = Extent(picture);
+            Func<int, int, AimZone> zone = (x, y) => BodyZoneAim.ZoneAtPixel(tables, compositor, look, dir, x, y);
+            var pixels = Square(left, right, bottom, topRow).ToList();
+            int eyes = pixels.Count(p => zone(p.Item1, p.Item2) == AimZone.Eyes), mouth = pixels.Count(p => zone(p.Item1, p.Item2) == AimZone.Mouth);
+            if (dx == 0 && dy > 0)
+                output.WriteLine($"{what}, dir {dir}:\n{Grid(zone, left, right, bottom, topRow)}");
+            Assert.Equal(expectFace ? (11, 6) : (0, 0), (eyes, mouth));
+        }
+    }
+
     // ---- helpers ----
 
     private static IEnumerable<(int, int)> Square(int left, int right, int bottom, int top)

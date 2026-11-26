@@ -54,6 +54,9 @@ public partial class GameScene
     private TextureRect _dragIcon;
     private IAppearanceTextures _dragTextures;
     private readonly Queue<(double At, Vector2 Point)> _pendingMoves = new();
+
+    // the input script's radial=LABEL (slice T4c): when to aim the held radial at the entry of that label, just before its release
+    private (double At, string Label)? _pendingRadial;
     private Vector2 _scriptedMouse; // where a scripted drag's mouse is (a captured mouse does not move: the way moved is counted from here)
     private MouseButton _scriptedDrag; // the button a scripted drag holds
     private readonly List<(double At, Action Do)> _shotSteps = new();
@@ -453,6 +456,14 @@ public partial class GameScene
             _scriptedMouse = point;
             Input.WarpMouse(point);
             Input.ParseInputEvent(motion);
+        }
+        if (_pendingRadial is { } radial && radial.At <= now)
+        {
+            _pendingRadial = null;
+            string offered = string.Join(", ", _radialModel.Entries.Select(e => "\"" + e.Label + "\""));
+            GD.Print(_radialModel.AimAtLabel(radial.Label)
+                ? $"[anomaly] radial: picked \"{radial.Label}\" on {Describe(_radialTarget)}"
+                : $"[anomaly] radial: \"{radial.Label}\" not offered on {Describe(_radialTarget)}{(_radialModel.Phase == RadialPhase.Open ? string.Empty : " (the radial is not open)")}; offered: {(offered.Length > 0 ? offered : "none")}");
         }
         while (_pendingReleases.Count > 0 && _pendingReleases.Peek().At <= now)
         {

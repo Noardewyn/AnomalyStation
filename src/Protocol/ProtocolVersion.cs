@@ -194,6 +194,8 @@ public static class ProtocolVersion
     /// <see cref="AimZone.Mouth"/> and <see cref="AimZone.Groin"/>, the modifiers byte's spare bit 3 its high bit.
     /// Version 95 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
     /// selects without logging before tg's hover, so the hints name what a click there does.
+    /// Version 95 also (package T, slice T4c, DV588): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
+    /// <see cref="PostureBits.FaceUp"/>), the side a lying body was turned to from the radial's Turn over (a ContextPick of that label).
     public const ushort Current = 95;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>

@@ -752,12 +752,15 @@ public partial class EntityLayer : Node3D
         byte dir;
         // A lying mob is drawn like a standing one from the side it is seen from (its facing is the way it crawls, or the side it lies on).
         // The replicated yaw is the player's look: a body on the floor keeps the way it fell (LyingFacing). A conscious one lies face down (its back
-        // is seen), a limp one front or back by the viewer's side (BillboardMath.ChooseLyingDir).
+        // is seen), a limp one front or back by the viewer's side (BillboardMath.ChooseLyingDir). Slice T4c: one turned over shows the side it was turned
+        // to, one buckled to a bed or a table its front, from every side (the replicated posture's bits: the own pose re-encodes only lying and limp).
+        bool lyingBuckled = PostureBits.IsBuckled(e.Entity.State.Posture);
+        bool? turnedFaceUp = PostureBits.TurnedFaceUp(e.Entity.State.Posture);
         byte yaw = e.Entity.IsMob() ? e.Facing.Update(lying, pose.Yaw) : pose.Yaw;
         if (liesFlat || (!e.Entity.HasPos && !e.Entity.IsMob()) || !hasViewer) // a mob with an AI has no capsule, only its dir, and is seen from each side too (its yaw is the dir's)
             dir = pose.Dir == 0 ? ByondDir.South : pose.Dir;
         else if (lying)
-            dir = BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, viewerX, viewerY, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture));
+            dir = BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, viewerX, viewerY, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture), lyingBuckled, turnedFaceUp);
         else if (PropKinds.IsItem(e.Entity.TypePath))
             dir = BillboardMath.ChooseSideDir(yaw, pose.X, pose.Y, viewerX, viewerY, Textures.Directions(tables, appearance));
         else
@@ -817,7 +820,7 @@ public partial class EntityLayer : Node3D
                 e.Billboard.SetReflection(picture);
             else
             {
-                byte mirrorDir = lying ? BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture))
+                byte mirrorDir = lying ? BillboardMath.ChooseLyingDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance), PostureBits.IsLimp(pose.Posture), lyingBuckled, turnedFaceUp)
                     : PropKinds.IsItem(e.Entity.TypePath) ? BillboardMath.ChooseSideDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance))
                     : BillboardMath.ChooseDir(yaw, pose.X, pose.Y, mirrorEye.X, mirrorEye.Y, Textures.Directions(tables, appearance));
                 e.Billboard.SetReflection(Textures.TryGet(tables, appearance, mirrorDir, seconds, out _, out GodotPicture mirrorPicture, rootOpaque: false, filterLooks: filterLooks)

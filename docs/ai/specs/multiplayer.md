@@ -229,6 +229,20 @@ off, and the replicator's unit-test harness keeps it off so the shared body's te
   visuals at once); (3) an animated thing's picture set in place on a chunk just refilled made Godot read the MultiMesh buffer back
   from the GPU (35 ms): in-place changes go to the batch's own copy and are uploaded once a frame (`ChunkBatch.UploadPending`). After:
   no frame above 80 ms but the first; a thing whose own model texture is new still costs its decode (20-60 ms, once per texture).
+- **The join's loading** (D352, the owner 2026-11-25; DV597; measured on Meta without the lobby, RTX 4080, `ANOMALY_FRAMEPROBE_MS=33`):
+  before, `MapRenderer.Build` ran inside `_Ready` for 5.2 s (10 s on the owner's machine) behind a frozen window while the server had
+  already late-joined the character, and the first frames after it took 462 ms and then 44-82 ms. Now the client preloads at its start
+  (`AssetPreload`: 3,789 sounds, 105 MB; 998 models with their 160 distinct textures, 117 MB decoded, a kit's copies of one atlas shared;
+  54 MB of sheet bytes; 0.5-3.7 s on worker threads). The game scene shows `Hud/LoadingCover` and builds the map in steps of 40 ms
+  (`MapRenderer.BuildSteps`, 3.4-3.7 s over about 70 frames), decodes the round's sheets and `IconPrefetch`'s common folders ahead
+  (about 930 sheets, 646 MB; none over 32 MB but the combat list's), warms every shader and effect up (`ShaderWarmUp`: surface pipelines
+  35 to 133, draw 8 to 67, specialization 14 to 90), then sends `Loaded` (protocol 97): the server late-joins the body only then, and the
+  cover goes once the things it streams around the body have about stopped coming (about 1.1 s after the build). Under the cover a few
+  frames still take 0.5-0.8 s (the scene's making, its first full frame). After the reveal the worst of the first 60 frames is 127 ms,
+  and the miss log (`preload miss: ...`) names 5 first-time sheet loads under 1 ms each (564 with `ANOMALY_PRELOAD=0`), no model and no
+  sound. The 130 s walk: p50 16.7 ms, p95 25.3 (33 before), p99 39.6 (42), worst 78 (108), 29 frames over 50 ms (37), none over 100.
+  The cost is memory: the working set at the reveal is 3.6 GB against 2.2 GB with the preload off, mostly the sheets decoded ahead. Left:
+  the engine-side stalls (45-55 ms with no script time) and the streaming costs (`map/atlas.Flush`, `map/RebuildTurfs`).
 - **The spawn queue and the leave margins** (performance.md P3.7, P3.8, 2026-10-29): what the sets bring in is queued and spawned
   nearest the eye first, `SpawnBudget` (150) a tick, `JoinSpawnBudget` (1,000) in the join's Snapshot; the own mob, the mobs, the
   doors of the near chunks, the visuals and what the world made this tick skip the queue, and what lies on a spawned door's tile comes

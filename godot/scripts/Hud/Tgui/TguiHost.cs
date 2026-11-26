@@ -247,7 +247,7 @@ public partial class TguiHost : Control
         }
         if (_lobby == null)
         {
-            var files = new DirectoryIconFiles(IconPaths.Root);
+            IIconFiles files = AssetPreload.IconFiles(IconPaths.Root);
             _lobby = new LobbyScreen(path => files.TryRead(path, out byte[] bytes) ? bytes : null, icon => IconTexture(icon, ""), _lobbySound, _lobbyFont);
             _lobby.OpenSettings = () => LobbySettings?.Invoke();
             AddChild(_lobby);
@@ -451,7 +451,7 @@ public partial class TguiHost : Control
         else if (icon.EndsWith(".png", StringComparison.Ordinal) && state == null)
         {
             // M8z slice B (D236): a plain PNG of the converted tree (the strip menu's slot pictures), copied by tools/Anomaly.Tools.Icons
-            if (new DirectoryIconFiles(IconPaths.Root).TryRead(icon, out byte[] bytes))
+            if (AssetPreload.IconFiles(IconPaths.Root).TryRead(icon, out byte[] bytes))
             {
                 var picture = new Image();
                 if (picture.LoadPngFromBuffer(bytes) == Error.Ok)

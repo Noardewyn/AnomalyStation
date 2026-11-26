@@ -157,7 +157,7 @@ public sealed class ModelLibrary
     private readonly List<byte[]> _dropped = new();
     private const int TexturePending = -2;
 
-    private Task<Raster> Decode(byte[] png) => Counted(Task.Run(() => PngDecoder.Decode(png)));
+    private Task<Raster> Decode(byte[] png) => Counted(AssetPreload.TryDecoded(png, out Raster kept) ? Task.FromResult(kept) : Task.Run(() => PngDecoder.Decode(png)));
 
     // A decode is counted in DecodesDone only once its task is complete, so a caller that saw the count move finds its result in. Counted inside
     // the task, the count could move before IsCompleted did: a retry in between found the work still pending and took the new count as seen,
@@ -559,7 +559,9 @@ public sealed class ModelLibrary
             string stem = Path.Combine(IconPaths.Root, icon[..^4]);
             try
             {
-                if (File.Exists(stem + ".png") && File.Exists(stem + ".json"))
+                if (AssetPreload.TryIconBytes(icon[..^4] + ".png", out byte[] png) && AssetPreload.TryIconBytes(icon[..^4] + ".json", out byte[] json))
+                    sheet = (png, IconSheet.Parse(System.Text.Encoding.UTF8.GetString(json), null));
+                else if (File.Exists(stem + ".png") && File.Exists(stem + ".json"))
                     sheet = (File.ReadAllBytes(stem + ".png"), IconSheet.Parse(File.ReadAllText(stem + ".json"), null));
             }
             catch (Exception e) when (e is IOException or InvalidDataException)
@@ -601,8 +603,8 @@ public sealed class ModelLibrary
         if (_images.TryGetValue(image, out byte[] bytes))
             return bytes;
         bytes = image.EndsWith(".dmi", StringComparison.Ordinal)
-            ? File.ReadAllBytes(Path.Combine(IconPaths.Root, Inside(image)[..^4] + ".png"))
-            : File.ReadAllBytes(Path.Combine(_root, Inside(image)));
+            ? AssetPreload.TryIconBytes(Inside(image)[..^4] + ".png", out byte[] sheet) ? sheet : File.ReadAllBytes(Path.Combine(IconPaths.Root, Inside(image)[..^4] + ".png"))
+            : AssetPreload.TryModelImage(Inside(image), out byte[] own) && _root == Root ? own : File.ReadAllBytes(Path.Combine(_root, Inside(image)));
         _images[image] = bytes;
         return bytes;
     }
@@ -652,7 +654,8 @@ public sealed class ModelLibrary
         if (_files.TryGetValue(relative, out GlbFile file))
             return file;
         long start = Stopwatch.GetTimestamp();
-        file = GlbFile.Read(System.IO.File.ReadAllBytes(Path.Combine(_root, Inside(relative))), uri => GlbFile.TgIcon(uri) is string icon ? ImageBytes(icon) : null);
+        if (_root != Root || !AssetPreload.TryGlb(Inside(relative), out file))
+            file = GlbFile.Read(System.IO.File.ReadAllBytes(Path.Combine(_root, Inside(relative))), uri => GlbFile.TgIcon(uri) is string icon ? ImageBytes(icon) : null);
         Anomaly.Client.Dev.FrameProbe.Item("glb", relative, Stopwatch.GetElapsedTime(start).TotalMilliseconds);
         _files[relative] = file;
         return file;
@@ -701,7 +704,7 @@ public sealed class ModelLibrary
                 _ownDecodes[png] = Stopwatch.GetTimestamp();
                 return TexturePending;
             }
-            (_lastPng, _lastDecoded) = (png, PngDecoder.Decode(png));
+            (_lastPng, _lastDecoded) = (png, AssetPreload.TryDecoded(png, out Raster kept) ? kept : PngDecoder.Decode(png));
         }
         // the atlas copies the picture: the decoded raster itself is cut from or laid in, copied first only when it is tinted
         Raster raster = frame != null ? _lastDecoded.Crop(frame.X, frame.Y, frame.Width, frame.Height) : tint != 0xFFFFFFFFu || opaque ? _lastDecoded.Clone() : _lastDecoded;

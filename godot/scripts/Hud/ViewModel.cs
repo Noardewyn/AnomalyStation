@@ -361,7 +361,8 @@ public partial class ViewModel : Node3D
             string path = System.IO.Path.Combine(Render.DataPaths.Find("assets/models"), HeldClip.File);
             try
             {
-                Shared.Models.GlbFile file = Shared.Models.GlbFile.Read(System.IO.File.ReadAllBytes(path));
+                Shared.Models.GlbFile file = Render.AssetPreload.TryGlb(HeldClip.File, out var kept) && path == System.IO.Path.Combine(Render.ModelLibrary.Root, HeldClip.File)
+                    ? kept : Shared.Models.GlbFile.Read(System.IO.File.ReadAllBytes(path));
                 foreach (string clip in HeldClip.Names)
                     _clips[clip] = HeldClip.Of(file, clip);
             }

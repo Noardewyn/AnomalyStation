@@ -19,6 +19,9 @@ public sealed class SoundIndex
 
     public int Count => _entries.Count;
 
+    /// <summary>Every file of the index (the start's preload loads them all).</summary>
+    public IEnumerable<SoundIndexEntry> Entries => _entries.Values;
+
     public bool TryGet(string path, out SoundIndexEntry entry) => _entries.TryGetValue(path ?? string.Empty, out entry);
 
     /// <summary>The mixer's facts of a file, null when the index does not know it.</summary>

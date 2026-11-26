@@ -28,6 +28,7 @@ public sealed class SoundLibrary
 
     private readonly SoundCache<Loaded> _cache;
     private readonly HashSet<string> _missing = new(StringComparer.Ordinal);
+    private readonly Dictionary<string, Loaded> _kept = new(StringComparer.Ordinal); // the start's preload (AssetPreload): outside the cache's budget, never evicted
     private readonly SoundIndex _index;
 
     public SoundLibrary(string root = null, long budgetBytes = DefaultBudgetBytes)
@@ -73,21 +74,25 @@ public sealed class SoundLibrary
     {
         if (string.IsNullOrEmpty(path) || _missing.Contains(path))
             return null;
-        if (!_cache.TryGet(path, out Loaded loaded))
+        if (!_cache.TryGet(path, out Loaded loaded) && !_kept.TryGetValue(path, out loaded))
         {
-            loaded = Load(path, out long bytes);
+            loaded = Load(path, out long bytes, out bool preloaded);
             if (loaded == null)
                 return null;
-            _cache.Add(path, loaded, bytes);
+            if (preloaded)
+                _kept[path] = loaded;
+            else
+                _cache.Add(path, loaded, bytes);
         }
         if (!repeat)
             return loaded.OneShot;
         return loaded.Loop ??= LoopingCopy(path, loaded.OneShot);
     }
 
-    private Loaded Load(string path, out long bytes)
+    private Loaded Load(string path, out long bytes, out bool preloaded)
     {
         bytes = 0;
+        preloaded = false;
         string format = "ogg";
         string relative = path;
         if (_index != null && _index.TryGet(path, out SoundIndexEntry entry))
@@ -102,6 +107,12 @@ public sealed class SoundLibrary
             return null;
         }
         string file = Path.Combine(Root, relative);
+        if (AssetPreload.TrySound(file, out AudioStream kept))
+        {
+            preloaded = true;
+            LoadedFiles++;
+            return new Loaded { OneShot = kept };
+        }
         if (!File.Exists(file))
         {
             Miss(path, "no file " + file);

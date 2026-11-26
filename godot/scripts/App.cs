@@ -243,6 +243,7 @@ public partial class App : Node
         DisplayServer.WindowSetTitle((StartsAsEditor ? ClientArgs.EditorName : "Anomaly Station") + " " + Anomaly.Protocol.BuildInfo.Display);
         TakeFirstWindow(splash: StartsAsEditor && Args.Errors.Count == 0);
         AddVersionTag();
+        Render.AssetPreload.Start(); // the sounds, the models and the sheets' bytes, on worker threads while the connect screen is up
 
         // M0's proof that the core assemblies load and run inside Godot, kept as the first line of every run.
         var world = new World(1);

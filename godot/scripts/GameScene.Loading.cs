@@ -25,7 +25,9 @@ public partial class GameScene
     // Frames drawn under the cover once everything is in, before it goes: the first frames after the build are long (the light's first pass).
     private const int CoverSettleFrames = 3;
 
-    // The bar's shares: the connection fills it to LoadingCover.ConnectShare, the build to BuildEnd, the rest of the loading to the end.
+    // The bar's shares: the connection fills it to LoadingCover.ConnectShare, the start's preload (when it is not done yet) PreloadShare more,
+    // the build to BuildEnd, the rest of the loading to the end.
+    private const double PreloadShare = 0.05;
     private const double BuildEnd = 0.8;
 
     private LoadingCover _cover;
@@ -67,6 +69,13 @@ public partial class GameScene
             return true;
         Dev.FrameProbe.BeginFrame();
         Dev.FrameProbe.Record();
+        if (!AssetPreload.FilesDone)
+        {
+            // the map's models and sheets come from the start's preload: it is waited for, not read a second time beside it
+            _cover.Progress = LoadingCover.ConnectShare + PreloadShare * AssetPreload.Progress;
+            _cover.Status = string.Create(CultureInfo.InvariantCulture, $"Loading the game's files... {AssetPreload.Progress:P0}");
+            return true;
+        }
         long start = Stopwatch.GetTimestamp();
         bool more;
         using (Dev.FrameProbe.Scope("loading/build"))
@@ -75,7 +84,7 @@ public partial class GameScene
             }
         if (more)
         {
-            _cover.Progress = LoadingCover.ConnectShare + (BuildEnd - LoadingCover.ConnectShare) * _building.Current;
+            _cover.Progress = LoadingCover.ConnectShare + PreloadShare + (BuildEnd - LoadingCover.ConnectShare - PreloadShare) * _building.Current;
             _cover.Status = _map.BuildPhase + "...";
             return true;
         }
@@ -129,7 +138,12 @@ public partial class GameScene
     private double _loadedAt;
 
     // What the client's own loading still waits for (the status line), or null when it is done and the server may be told.
-    private string LoadingWaitsFor() => null;
+    private string LoadingWaitsFor()
+    {
+        if (!AssetPreload.SoundsDone)
+            return string.Create(CultureInfo.InvariantCulture, $"Loading the sounds... {AssetPreload.Progress:P0}");
+        return null;
+    }
 
     private void SendLoaded(double now)
     {

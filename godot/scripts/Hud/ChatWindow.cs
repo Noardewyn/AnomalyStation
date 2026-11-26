@@ -146,7 +146,8 @@ public sealed partial class ChatWindow : Control
         _text.OffsetLeft = _text.OffsetTop = 4;
         _text.OffsetRight = _text.OffsetBottom = -2;
         ChatText.Style(_text, LogFontSize);
-        _text.AddThemeStyleboxOverride("normal", new StyleBoxEmpty());
+        // a little room at the sides, so a boxed message's frame is never cut by the log's edge or its scroll bar
+        _text.AddThemeStyleboxOverride("normal", new StyleBoxEmpty { ContentMarginLeft = 2, ContentMarginRight = 6 });
         _text.AddThemeStyleboxOverride("focus", new StyleBoxEmpty());
         _text.MetaClicked += meta => LinkClicked?.Invoke(meta.AsString());
         logBox.AddChild(_text);
@@ -397,7 +398,30 @@ public sealed partial class ChatWindow : Control
             _text.Newline();
         _paragraphs.Add(_drawnParagraphs);
         string text = entry.Plain;
-        ChatText.Append(_text, text, entry.Spans, entry.Links, LogFontSize);
+        if (entry.Box is ChatBox box)
+        {
+            // D184: a boxed message, a framed block of the log's width in its box's colours: a cell in the border's colour whose padding
+            // is the border (thin with a thick left edge; an announcement's thick all round), around a cell in the box's colour
+            const float Thin = 1, Thick = 3;
+            float left = Thick, edge = box.Alert ? Thick : Thin;
+            _text.PushTable(1);
+            _text.SetTableColumnExpand(0, true, 1, false); // not shrunk to the text: tg's box is the log's width
+            _text.PushCell();
+            _text.SetCellRowBackgroundColor(ToColor(box.Border), ToColor(box.Border));
+            _text.SetCellPadding(new Rect2(left, edge, edge, edge));
+            _text.PushTable(1);
+            _text.SetTableColumnExpand(0, true, 1, false);
+            _text.PushCell();
+            _text.SetCellRowBackgroundColor(ToColor(box.Bg), ToColor(box.Bg));
+            _text.SetCellPadding(new Rect2(LogFontSize * 0.75f, LogFontSize * 0.5f, LogFontSize * 0.75f, LogFontSize * 0.5f));
+            ChatText.Append(_text, text, entry.Spans, entry.Links, LogFontSize);
+            _text.Pop();
+            _text.Pop();
+            _text.Pop();
+            _text.Pop();
+        }
+        else
+            ChatText.Append(_text, text, entry.Spans, entry.Links, LogFontSize);
         if (entry.Times > 1)
         {
             // tg's Chat__badge: "x" and the count, white on red
@@ -410,7 +434,7 @@ public sealed partial class ChatWindow : Control
             _text.Pop();
             _text.Pop();
         }
-        _drawnParagraphs += text.Count(c => c == '\n') + 1;
+        _drawnParagraphs = _text.GetParagraphCount(); // a boxed line's table counts as the paragraphs the label made of it
     }
 
     // tg's SCROLL_TRACKING_TOLERANCE: within 24 px of the end counts as at the end.

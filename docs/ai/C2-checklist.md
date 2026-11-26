@@ -13,7 +13,7 @@ Bots: `dotnet tools/Anomaly.Tools.Bots/bin/Release/net10.0/Anomaly.Tools.Bots.dl
 ## 2. Character, locomotion, basic medical
 
 - [ ] Footsteps while walking; lie down and get up (U) takes tg's delay; a shove (right click in combat mode, F) moves a player a tile. [M2ScenarioTests]
-- [ ] `damage me brute 30 chest`, `damage me burn 30 l_arm`, `damage me tox 40`, `damage me oxy 40`: the health doll shows each zone; another player sees the injury overlays; F9 shows the health analyzer panel.
+- [ ] `damage me brute 30 chest`, `damage me burn 30 l_arm`, `damage me tox 40`, `damage me oxy 40`: the health doll shows each zone; another player sees the injury overlays; the `analyze me` reply shows whole in a box in the chat.
 - [ ] `damage me tox 150`: hard crit, then death at tg's pace; the other player sees the body lying. `revive me` brings you back.
 - [ ] `stun me 3`, `knockdown me 3`, `effect me add TYPE` (`effect types` lists them).
 

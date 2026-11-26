@@ -23,7 +23,7 @@ public class ChatStylesTests
         Assert.Equal(0xB3CCE6FFu, ChatStyles.Base.Rgba); // hsl(210, 50%, 80%)
         Assert.Equal(new ChatStyle(ChatStyles.Hsl(0, 73.6, 44.5), false, true), ChatStyles.Apply(ChatStyles.Base, "warning"));
         Assert.Equal(new ChatStyle(ChatStyles.Hsl(227, 87.7, 68), false, false), ChatStyles.Apply(ChatStyles.Base, "notice"));
-        Assert.Equal(new ChatStyle(ChatStyles.Hsl(47.9, 100, 40), true, false), ChatStyles.Apply(ChatStyles.Base, "ooc"));
+        Assert.Equal(new ChatStyle(ChatStyles.Hsl(47.9, 100, 40), true, false, ChatStyles.OocScale), ChatStyles.Apply(ChatStyles.Base, "ooc")); // larger than tg (DV598)
         Assert.Equal(ChatStyles.Hsl(202, 83.6, 64.1), ChatStyles.Apply(ChatStyles.Base, "medradio").Rgba);
         Assert.Equal(0xFF0000FFu, ChatStyles.Hsl(0, 100, 50));
         // two classes: the later rule of the sheet wins (".bolddanger" comes after ".danger")

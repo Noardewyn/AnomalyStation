@@ -11,6 +11,12 @@ client's top-right corner, in its window title and in the first line of the serv
 
 - Joining shows a loading screen while the station is built and loaded; your character enters the round only once the game is ready.
 - Light floor tiles glow and light the room around them, laid on the floor or as a ceiling; lava and circuit floors light their surroundings too.
+- Another player's OOC message plays a soft ping; its volume (or off) is in Settings, Audio.
+
+### Changed
+
+- Scanner readouts (health, gas analyzer and the like) show whole in a framed box in the chat, as in SS13, instead of a separate window.
+- Station announcements and admin messages show in coloured boxes in the chat; OOC lines are larger and bold.
 
 ### Fixed
 

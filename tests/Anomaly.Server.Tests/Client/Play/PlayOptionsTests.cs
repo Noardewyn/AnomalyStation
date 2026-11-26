@@ -15,6 +15,15 @@ public class PlayOptionsTests
         return File.ReadAllText(Path.Combine(dir, "godot", "default-options.cfg"));
     }
 
+    // D184: the readout panel's key went with the panel; an options file that still binds it reads without an error
+    [Fact]
+    public void TheRetiredAnalyzerKeyReadsClean()
+    {
+        var errors = new List<string>();
+        PlayOptions.Parse("bind.analyzer=F9\n", errors);
+        Assert.Empty(errors);
+    }
+
     // D324: the file stays readable as the options change, and copying the owner's settings must not hand a new player a dev view
     [Fact]
     public void TheSettingsANewPlayerStartsFromHaveNoErrorAndNoDevView()

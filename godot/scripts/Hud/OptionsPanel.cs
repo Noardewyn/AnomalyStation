@@ -185,6 +185,7 @@ public partial class OptionsPanel : PanelContainer
         audio.AddChild(Slider("Ship hum", 0, 100, 5, options.ShipHumVolumePercent, v => options.ShipHumVolumePercent = (int)v, "%"));
         audio.AddChild(Slider("Music", 0, 100, 5, options.MusicVolumePercent, v => options.MusicVolumePercent = (int)v, "%"));
         audio.AddChild(Slider("Interface", 0, 100, 5, options.InterfaceVolumePercent, v => options.InterfaceVolumePercent = (int)v, "%"));
+        audio.AddChild(Slider("OOC message ping (0: off)", 0, 100, 5, options.OocPingVolumePercent, v => options.OocPingVolumePercent = (int)v, "%"));
         audio.AddChild(Check("Room echo (reverb)", options.Reverb, v => options.Reverb = v));
 
         // D307: both are off until the player turns them on; turning one on downloads its model

@@ -7,7 +7,7 @@ namespace Anomaly.Client.Shared;
 // docs/ai/specs/interaction.md 9, D128: the feedback until M9: tg's chat lines, balloon alerts, the progress bar.
 
 /// <summary>One line of chat as drawn: the plain text, how opaque it is now, (protocol version 24, D154) its links, or null, and (M9) its runs in tg's chat styles, or null for the plain chat colour.</summary>
-public readonly record struct ChatLine(string Text, float Alpha, IReadOnlyList<ChatLink> Links = null, IReadOnlyList<ChatSpan> Spans = null)
+public readonly record struct ChatLine(string Text, float Alpha, IReadOnlyList<ChatLink> Links = null, IReadOnlyList<ChatSpan> Spans = null, ChatBox? Box = null)
 {
     /// <summary>The style of the character at <paramref name="index"/> (tg's chat colour where no span says otherwise).</summary>
     public ChatStyle StyleAt(int index)
@@ -49,16 +49,18 @@ public sealed class ChatFeed
         internal double At;
         internal IReadOnlyList<ChatLink> Links;
         internal IReadOnlyList<ChatSpan> Spans;
+        internal ChatBox? Box;
     }
 
     private readonly List<Line> _lines = new();
 
-    /// <summary>Adds a line (the HTML made plain; an empty one is dropped) with its links and styles (<see cref="HtmlText.ToPlain(string, List{ChatLink}, List{ChatSpan})"/>), if any.</summary>
-    public Line Add(string plain, double now, IReadOnlyList<ChatLink> links = null, IReadOnlyList<ChatSpan> spans = null)
+    /// <summary>Adds a line (the HTML made plain; an empty one is dropped) with its links and styles (<see cref="HtmlText.ToPlain(string, List{ChatLink}, List{ChatSpan})"/>), if any;
+    /// D184: tg's boxed message (<paramref name="box"/>) is kept whole and drawn in its box.</summary>
+    public Line Add(string plain, double now, IReadOnlyList<ChatLink> links = null, IReadOnlyList<ChatSpan> spans = null, ChatBox? box = null)
     {
         if (string.IsNullOrWhiteSpace(plain))
             return null;
-        var line = new Line { At = now };
+        var line = new Line { At = now, Box = box };
         Fill(line, plain, links, spans);
         _lines.Add(line);
         while (_lines.Count > Capacity)
@@ -75,8 +77,8 @@ public sealed class ChatFeed
 
     private static void Fill(Line line, string plain, IReadOnlyList<ChatLink> links, IReadOnlyList<ChatSpan> spans)
     {
-        int keep = MaxChars;
-        if (links != null && links.Count > 0)
+        int keep = line.Box != null ? int.MaxValue : MaxChars;
+        if (line.Box == null && links != null && links.Count > 0)
             keep = Math.Min(MaxLinkedChars, Math.Max(MaxChars, links.Max(l => l.Start + l.Length)));
         string text = plain.Length > keep ? plain.Substring(0, keep) : plain;
         List<ChatLink> kept = links?.Where(l => l.Start + l.Length <= text.Length).ToList();
@@ -95,7 +97,7 @@ public sealed class ChatFeed
             double age = now - line.At;
             if (age >= StaySeconds + FadeSeconds)
                 continue;
-            shown.Add(new ChatLine(line.Text, age <= StaySeconds ? 1f : (float)(1.0 - (age - StaySeconds) / FadeSeconds), line.Links, line.Spans));
+            shown.Add(new ChatLine(line.Text, age <= StaySeconds ? 1f : (float)(1.0 - (age - StaySeconds) / FadeSeconds), line.Links, line.Spans, line.Box));
         }
         return shown;
     }

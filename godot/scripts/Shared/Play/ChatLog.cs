@@ -46,6 +46,9 @@ public sealed class ChatEntry
 
     public IReadOnlyList<ChatSpan> Spans { get; set; }
 
+    /// <summary>D184: tg's boxed message's box (<see cref="ChatBox.Of"/>), or null.</summary>
+    public ChatBox? Box { get; init; }
+
     /// <summary>How many times the line came (tg's <c>times</c>: the badge "xN" from 2 on).</summary>
     public int Times { get; set; } = 1;
 
@@ -196,6 +199,7 @@ public sealed class ChatLog
             Plain = plain,
             Links = links.Count > 0 ? links : null,
             Spans = spans.Count > 0 ? spans : null,
+            Box = ChatBox.Of(html, type),
             CreatedAt = now,
         };
         _messages.Add(message);

@@ -13,6 +13,9 @@ public readonly record struct ChatStyle(uint Rgba, bool Bold, bool Italic, float
 /// <summary>tg's dark chat style sheet: the classes of its spans (<c>notice</c>, <c>warning</c>, <c>radio</c>, ...) as text styles.</summary>
 public static class ChatStyles
 {
+    /// <summary>DV598: the font scale of an OOC line (tg draws it at the chat's size).</summary>
+    public const float OocScale = 1.2f;
+
     /// <summary>The chat's text (main.scss <c>--chat-text-color: hsl(210, 50%, 80%)</c>).</summary>
     public static readonly ChatStyle Base = new(Hsl(210, 50, 80), false, false);
 
@@ -179,6 +182,9 @@ public static class ChatStyles
         }
         foreach (string name in named)
             style = Announcement(style, name);
+        // DEVIATION(DV598): an OOC line is larger than the rest of the chat, so it stands out among the in-character lines
+        if (named.Contains("ooc") || named.Contains("adminooc") || named.Contains("adminobserverooc"))
+            style = style with { Scale = Math.Max(style.Scale, OocScale) };
         return style;
     }
 
@@ -207,7 +213,7 @@ public static class ChatStyles
         return style;
     }
 
-    private static readonly Dictionary<string, (double H, double S, double L)> AlertStripes = new(StringComparer.Ordinal)
+    internal static readonly Dictionary<string, (double H, double S, double L)> AlertStripes = new(StringComparer.Ordinal)
     {
         ["default"] = (198.6, 100, 11.4), ["green"] = (120, 100, 12), ["blue"] = (198.6, 100, 11.4), ["pink"] = (326.2, 100, 9.4),
         ["yellow"] = (51, 100, 17.1), ["orange"] = (35.1, 100, 17.5), ["red"] = (0, 100, 12.9), ["purple"] = (295, 100, 9.4), ["grey"] = (0, 0, 14.5),

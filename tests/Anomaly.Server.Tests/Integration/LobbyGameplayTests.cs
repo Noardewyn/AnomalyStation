@@ -435,30 +435,6 @@ public class LobbyGameplayTests
         Assert.Equal(bootRuntimes, w.World.RuntimeErrorCount);
     }
 
-    // The owner (2026-10-28): joining the round opens no readout panel; no text the client gets at the round start is a readout.
-    [MetaServerFact]
-    public void The_round_start_sends_no_readout()
-    {
-        ServerConfig meta = MapJoinTests.MapConfig("metastation", MetaServer.Folder());
-        var config = new ServerConfig
-        {
-            Seed = meta.Seed, Console = false, StatusEveryTicks = 100000, Map = meta.Map, MapsFolder = meta.MapsFolder, MoveSpeedScale = 1f,
-            Lobby = true, OpenJobs = true,
-        };
-        using var w = new RealHeadlessWorld(new LoopbackOptions { Seed = 48, TimeoutSteps = 8000 }, config, strict: false);
-        for (int i = 0; i < 10 * Second && In(w, () => GlobalProcs.SSticker.current_state) < GameStatePregame; i++)
-            w.Run(1);
-        RealHeadlessWorld.Player alice = w.Join("Alice");
-        var texts = new List<string>();
-        alice.Client.ServerTextReceived += t => texts.Add(t.Html);
-        Window(WindowsOf(alice), alice.Session.Replica, Limits.LobbyUiInterface).Context.Act("ready_toggle");
-        w.Run(Second / 2);
-        alice.Session.DevCommand("startnow");
-        w.Run(5 * Second);
-        Assert.Equal(GameStatePlaying, In(w, () => GlobalProcs.SSticker.current_state));
-        Assert.DoesNotContain(texts, t => Anomaly.Client.Shared.ReadoutModel.IsReadout(t));
-    }
-
     // D279: tg's character slots. Alice makes a second character, Bea, and a third she deletes again; on Ada's Occupations page she sets
     // the medical doctor to High and puts Bea on the doctor (Show Characters). At the round start tg's create_character loads Bea's
     // slot for the doctor's job, so Alice plays Bea.

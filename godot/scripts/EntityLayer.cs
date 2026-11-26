@@ -210,8 +210,10 @@ public partial class EntityLayer : Node3D
 
     private static readonly byte[] SelfSideDirs = { ByondDir.South, ByondDir.East, ByondDir.North, ByondDir.West };
     private static readonly StringName[] SelfSideParams = { "anomaly_self_south", "anomaly_self_east", "anomaly_self_north", "anomaly_self_west" };
-    private readonly ImageTexture[] _selfSides = new ImageTexture[4];
-    private readonly ImageTexture[] _selfPublishedSides = new ImageTexture[4];
+    private readonly ComposedRaster[] _selfSides = new ComposedRaster[4];
+    private readonly ComposedRaster[] _selfPublishedSides = new ComposedRaster[4];
+    private readonly ImageTexture[] _selfTextures = new ImageTexture[4];
+    private const int SelfSideSize = 128; // a 32 or 64 pixel picture at a whole multiple; a bigger one loses some pixels in the reflection
     private float _selfYaw;
     private bool _selfPublished;
 
@@ -219,12 +221,12 @@ public partial class EntityLayer : Node3D
     // not the front (the owner, 2026-11-18). A lying body or a still icon shows its one picture on every side.
     // shortcut: four sides even for an eight-direction icon (the mobs' are four); its diagonals need four more globals.
     private void NoteSelfSides(IAppearanceSource tables, TableRef appearance, double seconds, Dictionary<AppearanceEntry, IReadOnlyList<FilterEntry>> filterLooks,
-        GodotPicture picture, bool lying, byte yaw)
+        ComposedRaster picture, bool lying, byte yaw)
     {
         bool turns = !lying && Textures.Directions(tables, appearance) > 1;
         for (int i = 0; i < SelfSideDirs.Length; i++)
-            _selfSides[i] = turns && Textures.TryGet(tables, appearance, SelfSideDirs[i], seconds, out _, out GodotPicture side, rootOpaque: false, filterLooks: filterLooks)
-                ? side.Texture : picture.Texture;
+            _selfSides[i] = turns && Textures.TryGet(tables, appearance, SelfSideDirs[i], seconds, out ComposedRaster side, out _, rootOpaque: false, filterLooks: filterLooks)
+                ? side : picture;
         _selfYaw = yaw * MathF.Tau / 256f;
     }
 
@@ -245,7 +247,17 @@ public partial class EntityLayer : Node3D
         {
             if (ReferenceEquals(_selfSides[i], _selfPublishedSides[i]))
                 continue;
-            RenderingServer.GlobalShaderParameterSet(SelfSideParams[i], _selfSides[i]);
+            // The shaders keep the same four textures of one size and a new picture only changes their pixels (the shader reads them by
+            // their fraction of the picture): another texture, or this one at another size, makes Godot rebuild every material that reads
+            // it and prepare again each mesh drawn with them (all the station's glass, 20-30 ms a time)
+            Image image = AppearanceTextures.ToImage(_selfSides[i].Image.Resized(SelfSideSize, SelfSideSize));
+            if (_selfTextures[i] == null)
+            {
+                _selfTextures[i] = ImageTexture.CreateFromImage(image);
+                RenderingServer.GlobalShaderParameterSet(SelfSideParams[i], _selfTextures[i]);
+            }
+            else
+                _selfTextures[i].Update(image);
             _selfPublishedSides[i] = _selfSides[i];
         }
         RenderingServer.GlobalShaderParameterSet("anomaly_self_yaw", _selfYaw);
@@ -816,7 +828,7 @@ public partial class EntityLayer : Node3D
         // needs a second lookup. A point arrow, a mining ping and a visual keep the one side (a small, transient effect of little weight).
         bool isOwnMob = e.Entity.Id == _ownId;
         if (isOwnMob && _hideOwn)
-            NoteSelfSides(tables, appearance, seconds, filterLooks, picture, lying, yaw);
+            NoteSelfSides(tables, appearance, seconds, filterLooks, raster, lying, yaw);
         bool reflectable = (e.Entity.IsMob() || PropKinds.IsItem(e.Entity.TypePath)) && !e.IsVisual && !pointArrow && !miningPing;
         if (MirrorViewer is Vector2 mirrorEye && reflectable
             && MathF.Abs(mirrorEye.X - pose.X) <= MirrorReflectRangeTiles && MathF.Abs(mirrorEye.Y - pose.Y) <= MirrorReflectRangeTiles)

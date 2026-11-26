@@ -255,12 +255,17 @@ off, and the replicator's unit-test harness keeps it off so the shared body's te
   build its occlusion culling's scene again: a time budget, and the occluder is kept while the chunk's walls are the same; (4) the
   runtime runs in `SustainedLowLatency`. Standing still the render passes of 35-45 ms every 4.8 s are gone (2 in 45 s). First leg,
   with vsync: frames over 33 ms 379 to 287, over 50 ms 33 to 23, p99 47 to 44 ms; the game's own time in the slow frames 4.3 s to
-  1.7 s (atlas 1.06 s to 0, model builds 0.58 to 0.19 s, spawns 0.76 to 0.24 s). Left: while flying, a cluster of four render
-  passes of 35-50 ms about every 5 s, one per chunk crossed, with the same draw calls as the frames around them and no game zone
-  in them: not the lamps' shadows (`shadowed_lights=0`), not occlusion culling (`--occlusion=off`); it needs a profile inside the
-  engine (Godot built with `profiler=tracy`, or WPR as administrator). Also left: `map/Scan` walks every static record each server
-  tick (2.6-6 ms, 21 times a second), and a thing's first model build can take 8-35 ms on its own (a light fixture, an APC, the
-  shuttle's engine).
+  1.7 s (atlas 1.06 s to 0, model builds 0.58 to 0.19 s, spawns 0.76 to 0.24 s). Then, profiled inside the engine (a Godot built
+  with Tracy, `tools/perf/godot-tracy.patch`): the clusters of four render passes of 35-50 ms about every 5 s were Godot preparing
+  every glass mesh instance again (`_update_dirty_geometry_instances`, 886 instances at first and 9,000 once the station was
+  seen, so it grew with the flight, and twice a time). The own mob's appearance turns to a private one and back about every 4.6 s
+  (a server-side thing not looked into), and each turn set the reflection's four `anomaly_self_*` globals to new textures: Godot
+  makes a new uniform set for each material that reads a global texture set anew, and that marks every instance drawn with it
+  dirty. The four textures are now made once at 128 x 128 and their pixels updated (`EntityLayer.PublishSelfReflection`); the prop
+  atlas's metrics texture, made anew every 1,024 pictures with the same cost, starts at 16 rows and doubles. Full flight, vsync
+  off: frames over 50 ms 33 and 46 (first leg and back) to 3 and 2, p99 47 and 51 ms to 31 and 30. Left are the game's own
+  costs: a thing's first model build (8-35 ms, once 100 ms for a window spawner), a first spawn of a type (11-17 ms), `map/Scan`
+  walking every static record each server tick (2.6-6 ms, 21 times a second) and the turf rebuilds (up to 20 ms).
 - **The spawn queue and the leave margins** (performance.md P3.7, P3.8, 2026-10-29): what the sets bring in is queued and spawned
   nearest the eye first, `SpawnBudget` (150) a tick, `JoinSpawnBudget` (1,000) in the join's Snapshot; the own mob, the mobs, the
   doors of the near chunks, the visuals and what the world made this tick skip the queue, and what lies on a spawned door's tile comes

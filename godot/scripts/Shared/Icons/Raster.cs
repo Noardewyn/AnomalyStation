@@ -158,6 +158,19 @@ public sealed class Raster
         return result;
     }
 
+    /// <summary>This raster stretched or shrunk to <paramref name="width"/> by <paramref name="height"/>, each new pixel the nearest old one.</summary>
+    public Raster Resized(int width, int height)
+    {
+        var result = new Raster(width, height);
+        for (int y = 0; y < height; y++)
+        {
+            int sy = y * Height / height;
+            for (int x = 0; x < width; x++)
+                Buffer.BlockCopy(Pixels, (sy * Width + x * Width / width) * 4, result.Pixels, (y * width + x) * 4, 4);
+        }
+        return result;
+    }
+
     /// <summary>True when no pixel has any alpha.</summary>
     public bool IsEmpty()
     {

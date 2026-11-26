@@ -21,6 +21,7 @@ client's top-right corner, in its window title and in the first line of the serv
 ### Fixed
 
 - Fewer stutters while moving into parts of the station seen for the first time; the game no longer prints Ogg Vorbis warnings at the start.
+- First person: no more stutter every few seconds that grew worse the more of the station you had seen (glass reflecting your body).
 - Map editor: flying up inside a room two levels high keeps the lamps' light and shadows instead of turning the room flat.
 - Lasers fly through windows, glass doors, grilles and glass floors and ceilings aimed at in first person, as in tg.
 - Map editor: a floor placed as a ceiling from inside a room whose walls are two levels high goes on top of the walls.

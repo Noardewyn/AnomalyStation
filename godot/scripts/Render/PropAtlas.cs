@@ -578,7 +578,11 @@ public sealed class PropAtlas
 
         float[] metrics = _builder.Metrics();
         int texels = Math.Max(2, _builder.Entries.Count * 2);
-        int rows = (texels + 2047) / 2048;
+        // room for a station's pictures from the start, doubled beyond: a new texture makes Godot rebuild the material and prepare again
+        // every mesh drawn with it (all the props and their glass, 20-60 ms once the station is in)
+        int rows = Math.Max(_uploadedMetricsRows, MetricsRows);
+        while (rows * 2048 < texels)
+            rows *= 2;
         var padded = new float[rows * 2048 * 4];
         Array.Copy(metrics, padded, metrics.Length);
         var bytes = new byte[padded.Length * sizeof(float)];
@@ -595,6 +599,7 @@ public sealed class PropAtlas
     }
 
     private const int SparePages = 2;
+    private const int MetricsRows = 16; // 16384 pictures, 512 KB
 
     private static Image PageImage(Raster page) => Image.CreateFromData(page.Width, page.Height, false, Image.Format.Rgba8, page.Pixels);
 }

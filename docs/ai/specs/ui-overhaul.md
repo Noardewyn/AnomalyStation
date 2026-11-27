@@ -1753,3 +1753,32 @@ The wire (protocol 99, unreleased, so no new version number), for 4B-1:
   inventory dragging to obj", 2026-11-27): dragging oneself onto an object is done from the own body seen by
   looking down, or from the health doll. An item dragged onto the sprite (used on oneself at the part) stays in
   slice 4B.
+
+## 17. Dragging oneself onto an object in first person (asked for by the designer, 2026-11-27)
+
+"make sure the dragging our sprite onto objects works by looking at yourself".
+
+Playtested on the merged build (2026-11-27, real server; evidence in the session's scratchpad, `playtest-selfdrag`):
+under Tab a press on the own body drawn in the view and a release on a table, a rack, a disposal bin or a chair
+does tg's drag of one's own mob onto it, and so does a drag from the health doll; with an item in hand too. In plain
+first person there is no drag at all: a press on the own body is sent at once as a click (the self-check), since
+the captured view has no drags (`DragModel`), so the gesture as the designer describes it does not exist there.
+
+Settled design (client only; the server already takes the drop of the sender's own mob onto a target):
+- In first person, with the own body under the crosshair (looking down), pressing the left button on it sends
+  nothing yet. The player keeps the button down, turns the view to an object and lets go: the client sends tg's
+  drag of the player's own mob onto what the crosshair is on at the release (the same drop cursor mode sends), and
+  tg does what it does for it (climb a table or a rack, sit on a chair, lie on a bed, get into a disposal bin, a
+  closet, a machine), with tg's own reach rule and messages.
+- Let go while the crosshair is still on the own body: it is the click it always was (the self-check, an item used
+  on oneself at the part pressed, an attack in combat mode), sent at the release with the zone of the press. So a
+  plain click on oneself is unchanged apart from landing when the button comes up.
+- Let go on nothing a drop can go to (the floor, a wall, the sky, out of reach): nothing is sent.
+- While the button is held after a press on the own body: the crosshair is drawn as the drag mark cursor mode
+  uses for a drag, and the hint strip reads "Yourself" with "Release on an object" (and the key's cap); when the
+  crosshair is on a thing in reach its name is shown as the prompt names it. Nothing else of the HUD changes.
+- Only the own body starts a drag in first person. A press on anything else is the click on the press, as now:
+  another person or an item is dragged under Tab, as before (an attack must not wait for the button to come up).
+- Tab pressed, the view lost (a window, death, a stun that drops the body from view) or the right button pressed
+  while holding: the drag is dropped and nothing is sent.
+- The Tab inventory's own sprite is not a drag source (section 12, slice 4B's added points).

@@ -155,7 +155,25 @@ public enum PlayAction : byte
     /// <summary>The owner (2026-10-29): opens and closes the inventory panel [I] (it shows in cursor mode, so this is cursor mode too; tg has no such key).</summary>
     Inventory,
 
-    /// <summary>The owner (2026-10-29): the number keys click the shown item action buttons at the top left, in reading order [1 to 9] (tg has no such keys).</summary>
+    /// <summary>
+    /// ui-overhaul.md section 10 (DV603, protocol version 98's HotbarPress): the ten hotbar cells [1 to 9 and 0, the number row and the keypad]: 1 to 7
+    /// the belt, 8 and 9 the pockets, 0 (Hotbar10) the ID slot. A press is sent to the server, which decides what it does (tg has no such keys).
+    /// </summary>
+    Hotbar1,
+    Hotbar2,
+    Hotbar3,
+    Hotbar4,
+    Hotbar5,
+    Hotbar6,
+    Hotbar7,
+    Hotbar8,
+    Hotbar9,
+    Hotbar10,
+
+    /// <summary>
+    /// Shift and the number keys click the shown item action buttons at the top left, in reading order [Shift+1 to Shift+9; the plain number keys
+    /// are the hotbar's, ui-overhaul.md section 10] (tg has no such keys).
+    /// </summary>
     ActionButton1,
     ActionButton2,
     ActionButton3,
@@ -282,8 +300,10 @@ public sealed class KeyBindings
         b.Set(PlayAction.PushToTalkTyping, "Alt");
         b.Set(PlayAction.MoveUpLevel, "Space");
         b.Set(PlayAction.MoveDownLevel, "Ctrl");
+        for (int n = 1; n <= 10; n++)
+            b.Set((PlayAction)((int)PlayAction.Hotbar1 + n - 1), "Key" + n % 10, "Kp" + n % 10); // section 10: the hotbar on 1 to 9 and 0
         for (int n = 1; n <= 9; n++)
-            b.Set((PlayAction)((int)PlayAction.ActionButton1 + n - 1), "Key" + n, "Kp" + n);
+            b.Set((PlayAction)((int)PlayAction.ActionButton1 + n - 1), "Shift_Key" + n); // section 10: tg's action buttons on Shift+1 to Shift+9
         b.Set(PlayAction.Console, "Quoteleft");
         b.Set(PlayAction.Options, "F10");
         b.Set(PlayAction.DevMenu, "Backslash");
@@ -505,6 +525,10 @@ public sealed class KeyBindings
         PlayAction.ViewPetCommands => "View pet commands",
         PlayAction.CloseWindows => "Close all windows",
         PlayAction.Inventory => "Inventory",
+        >= PlayAction.Hotbar1 and <= PlayAction.Hotbar7 => "Hotbar " + (action - PlayAction.Hotbar1 + 1) + " (belt)",
+        PlayAction.Hotbar8 => "Hotbar 8 (left pocket)",
+        PlayAction.Hotbar9 => "Hotbar 9 (right pocket)",
+        PlayAction.Hotbar10 => "Hotbar 0 (ID slot)",
         >= PlayAction.ActionButton1 and <= PlayAction.ActionButton9 => "Action button " + (action - PlayAction.ActionButton1 + 1),
         PlayAction.ChatWindow => "Chat window",
         PlayAction.Console => "Dev console",

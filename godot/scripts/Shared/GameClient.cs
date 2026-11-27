@@ -174,6 +174,15 @@ public sealed class GameClient : IWorldFeed, IDisposable
 
     private bool _gunSightSeen;
 
+    /// <inheritdoc/>
+    public HotbarMessage Hotbar => _replica.Hotbar;
+
+    /// <inheritdoc/>
+    public int HotbarRefusals => _replica.HotbarRefusals;
+
+    /// <inheritdoc/>
+    public int HotbarRefusedCell => _replica.HotbarRefusedCell;
+
     /// <summary>How many connection attempts a connect makes before it gives up (LiteNetLib's <c>MaxConnectAttempts</c>).</summary>
     public const int ConnectAttempts = 6;
 
@@ -341,6 +350,7 @@ public sealed class GameClient : IWorldFeed, IDisposable
             case MessageId.RadioChannels: // version 40: the replica keeps the prefixes and raises RadioChannelsChanged (RadioChannelsReceived)
             case MessageId.Motion: // version 42: the capsule mobs' positions on the unreliable channel
             case MessageId.HeldMotion: // version 54: the replica raises HeldMotionReceived (the first-person gun moves, Hud/ViewModel)
+            case MessageId.Hotbar: // version 98 also (DV603): the replica keeps the own hotbar and counts its refusals
                 if (_phase == FeedPhase.BetweenRounds)
                     break; // D306: the old world's last messages
                 try

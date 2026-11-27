@@ -251,6 +251,7 @@ public sealed partial class FakeServer
         if (_options.Inventory)
         {
             InitInventory();
+            InitHotbar(); // ui-overhaul.md section 10 (DV603)
             BuildInventoryHud();
         }
     }
@@ -457,7 +458,10 @@ public sealed partial class FakeServer
             StepInventory();
         BuildHud(initial: false);
         if (InventoryOn)
+        {
             BuildInventoryHud();
+            BuildHotbar(); // DV603: its pictures' rows go out in this Delta, the message after it
+        }
         emit(Channel.State, Codec.Encode(BuildDelta()));
         foreach (string text in replies)
             emit(Channel.Control, Codec.Encode(new ServerText("dev", text)));
@@ -556,6 +560,9 @@ public sealed partial class FakeServer
                 case ActionKind.Hover when InventoryOn:
                     InventoryHover(a);
                     break;
+                case ActionKind.HotbarPress when InventoryOn:
+                    HotbarPress(a.HotbarCell); // DV603 (FakeServer.Hotbar.cs)
+                    break;
             }
         }
     }
@@ -637,7 +644,12 @@ public sealed partial class FakeServer
         string verb = words[0].ToLowerInvariant();
         if (verb == "help")
         {
-            replies.Add("Commands (the real server's syntax, WHO is me, your name or #1): damage WHO brute|burn|tox|oxy N [ZONE], wound WHO ZONE [TYPE SEVERITY], heal WHO, fullheal WHO, kill WHO, revive WHO, knockdown WHO S, stun WHO S, analyze WHO, speedscale F; the fake's own: alert me " + string.Join('|', AlertNames) + ".");
+            replies.Add("Commands (the real server's syntax, WHO is me, your name or #1): damage WHO brute|burn|tox|oxy N [ZONE], wound WHO ZONE [TYPE SEVERITY], heal WHO, fullheal WHO, kill WHO, revive WHO, knockdown WHO S, stun WHO S, analyze WHO, speedscale F; the fake's own: alert me " + string.Join('|', AlertNames) + ", toolbelt (the hotbar's kit, with --fake-inventory).");
+            return;
+        }
+        if (verb == "toolbelt")
+        {
+            GiveToolbelt(replies); // DV603: the hotbar's kit (FakeServer.Hotbar.cs)
             return;
         }
         if (verb == "speedscale")

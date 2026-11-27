@@ -1355,7 +1355,7 @@ The bar (human HUD only; other HUDs keep tg's layout and have no bar):
   right pocket, 0 the ID slot. Cells are 48 square with 4 between them and 12 between the groups; the hands' row
   grows by the difference and keeps its rules (centred at the bottom, right of the chat window while it fits, the
   hint strip 6 above the active hand's box).
-- A cell has the chips' fill and rim, its key's cap in the top left corner (from the bindings, the swap cap's
+- A cell has the chips' fill and the inactive hand box's faint rim (as built in slice 3B; first written as "the chips' rim"), its key's cap in the top left corner (from the bindings, the swap cap's
   look), the item's picture in the middle and a stack's count as tg draws it. No names in the cells.
 - A cell's states: empty (rim and a dim key cap only); holding an item; out (its item is in one of the player's
   hands, taken from this cell: the picture stays at about a third of its opacity, so the player sees where it goes
@@ -1365,9 +1365,11 @@ The bar (human HUD only; other HUDs keep tg's layout and have no bar):
   them is tg's (the ID taken out of the PDA and so on). A belt cell is ours: under Tab a click on it is the key's
   press.
 - tg's belt, back and suit-storage slots, which stood in the gap since slice C, are drawn only under Tab, in a
-  short row just above the right end of the bar, clickable as now. Suit storage has no key.
+  short row just above the right end of the bar, clickable as now; where tg's bottom-right buttons reach over that place (a 5:4 screen at the largest UI scales) the row stands over the bar's left end, and it is left out where neither fits. Suit storage has no key.
 - The hint strip now leads with the held item's name ("Wrench", then use, drop and throw with their keys), from the
-  names the server sends for the items in the player's own hands. The hand boxes stay pictures only.
+  names the server sends for the items in the player's own hands. The hand boxes stay pictures only. Under Tab the
+  hint strip is not drawn (the pointer has tooltips there), which leaves its place to the worn slots' row.
+- A cell's item picture is drawn the way a hand box draws its item, centred in the cell.
 
 Keys: 1 to 9 and 0 are the ten cells (number row and keypad). tg's action buttons move to Shift+1 to Shift+9, and the
 numbers drawn on them follow the bindings. Saved keys stay as they were (package 1's rule).
@@ -1509,3 +1511,91 @@ Space Station 14 bindings listed above are taken as listed; tg's plain quick equ
 Ctrl+click in the inventory. Anatomical focus (package 6): the backtick was withdrawn (it is the dev console, as in
 Space Station 14: "dont use `"); chosen from four candidates: the middle mouse button, held ("do middle mouse"). The
 middle click's second binding for swapping hands goes then; X stays.
+
+## 13. The chat window in first person (asked for by the designer, 2026-11-27)
+
+"we imght have to move the chat too to make the hotbar work, and maybe change it ui so its less intusive", then,
+offered a compact text feed instead of the window: "keep the window but higher so the bar can fit under it, and also
+make it more transparent. maybe the box with the text input and buttons only appears when you go to type".
+
+Settled design (client only; built as its own slice right after the bar, shown to the designer with it):
+- The chat window stays a window, with its title bar, its tabs and its log. Its default place in the round is at
+  the left, with its bottom edge 8 above whatever of the bottom row stands under it (the hands' row; the hint strip
+  where the window reaches over it), so the bar is never under it. The hands' row is always centred at the bottom
+  and no longer moves aside for the chat (slice 3B drops that rule). A place or size the player has given the window
+  is kept as theirs.
+- More see-through: while the player is not typing the window's backing is drawn at about a third of its opacity
+  (title bar and tabs with it) and the log's text keeps full strength with a dark outline so it reads over the room.
+  While the player types, or the pointer is over the window under Tab, it is at its normal opacity.
+- The row of chat buttons (Say, Whisper, Shout, Radio, Me, Emotes, OOC, Message) and the input row are hidden until
+  the player goes to type: a chat key (T, the radio key, Me, OOC and the others) or a click in the window under Tab
+  shows them with the input focused; they hide again when the input is sent, cancelled or loses focus. The log takes
+  the room they leave.
+- The lobby's chat is not changed.
+- To tell the owner: the chat window's default place, opacity and hidden input change upstream's defaults (the chat
+  panel opens on entering the round with its input shown).
+
+## 14. The belt slot's own item on the bar (found by the designer, 2026-11-27)
+
+"ive noticed the PDA isnt in the hotbar?" Checked in tg: a job's PDA is worn ON the belt slot by default
+(`pda_slot = ITEM_SLOT_BELT`, `_job.dm`; 30 job outfits name it there; jobs with a tool belt carry the PDA in a
+pocket, where cell 8 or 9 shows it). The bar as designed in section 10 shows only what is INSIDE a belt that is a
+storage, so with a PDA on the belt slot the seven belt cells were empty and faded and the PDA had no cell. A gap in
+the design, not a fault of the build.
+
+Settled design, added to section 10's rules:
+- When the belt slot holds an item that is not a storage (a PDA, a single tool), that item is cell 1: it shows in
+  cell 1 at full strength, cells 2 to 7 are empty at half opacity. A press of 1 takes it into the active hand
+  (rule 2), a second press puts it back on the belt slot (rule 1), a bar item in hand swaps with it (rule 3); it is
+  "out" from cell 1 while held, as a pocket's item is from its cell.
+- With nothing on the belt slot, a press of 1 with an item in the active hand puts that item on the belt slot if
+  tg's equip rules allow it there (rule 4): a PDA goes on; a tool belt goes on too, and its contents then take the
+  cells as section 10 says. Cells 2 to 7 refuse while there is no belt storage.
+- When what is on the belt slot changes kind (a belt put on while the PDA is in hand), the cells are given out
+  afresh, as when a belt is changed.
+
+WITHDRAWN by the designer the same day ("i tihnk leave the bar as it is"): section 14's cell for the belt slot's own
+item is not built; the bar stays as section 10 has it, and a PDA worn on the belt slot has no cell.
+
+## 15. The actions menu (asked for by the designer, 2026-11-27)
+
+"we need an action wheel like the k menu in ss14 which lets you assign actions to numbers, but for us we would need
+it to be assignable to the shift+number buttons. id also like the actions useable from the action menu itself."
+Space Station 14's `OpenAbilitiesMenu` is on K.
+
+Confirmed by the designer from mockups:
+- K opens the actions menu, as in Space Station 14. The deathmatch scoreboard, which was on K (held), moves to
+  another key (Caps Lock held is free) and stays rebindable.
+- In first person the top left shows only a row of nine slots, each with its Shift+number key cap and the action
+  assigned to it; tg's own list of every action button is no longer drawn there. A new action takes the first free
+  slot by itself, so nothing has to be set up.
+- The menu is a window with the cursor free: the nine slots at its top and, under them, every action the player has
+  (tg's action buttons: its picture and its name). A click on an action uses it; a drag onto a slot assigns it; a
+  right click on a slot clears it.
+To design before building (its own package, after package 3 and the chat window): where the slot assignments are
+kept (per character or per player, across rounds or not); what a slot shows when its action is gone (an item put
+away, a spell lost); tg's own states on a button (a cooldown, an active toggle, a count) in a slot and in the menu;
+tg's action palette and its drag-to-reorder, which this replaces on the human HUD; other HUDs (a cyborg's module
+buttons, an alien's abilities, a ghost's): the same menu or tg's layout.
+
+Settled by the designer the same day: "dont need to remember slots, after the action is gone the slot should be
+hidden, like ss14 so it only shows when youre dragging items so you can put them into the slots. toggles should
+heighlight the square, cooldowns should have a wheel that slowly reduces as the cooldown ticks, like ss14 and counts
+can have a number overlayed or in teh botton corner. cyborn alien and ghost should get same menu, as long as it still
+works".
+- Slot assignments are not remembered: they last while the player has the actions and start again with the
+  automatic first-free-slot filling.
+- An empty slot is not drawn. A slot whose action is gone becomes empty and disappears; the empty slots show only
+  while an action is being dragged, as places to drop it, as in Space Station 14.
+- A toggle that is on highlights its square. A cooldown is a wheel over the square that shrinks as the cooldown
+  runs down. A count is a number in the square's bottom corner. In a slot and in the menu alike.
+- A cyborg, an alien and a ghost get the same slots and the same menu, provided their actions still work through
+  it; where a HUD's actions cannot be driven this way it keeps tg's layout and that is reported.
+
+Order (the designer, 2026-11-27: "do tab inventory before actions menu unless it needs to be that way round"):
+package 3 and the chat window, then the Tab inventory (section 12), then the actions menu (section 15). Nothing in
+the actions menu has to come first; it can reuse the Tab inventory's dragging between panels.
+
+The search mechanic of section 12 (looking into a bag someone still wears, item by item, over time) is agreed by the
+lead developer, as the contributor reports on 2026-11-27 ("it is agreed"). It is built with the Tab inventory and
+recorded as a deviation from tg when it is; `DECISIONS.md` is the owner's to update.

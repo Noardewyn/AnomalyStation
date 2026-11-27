@@ -12,7 +12,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - New default keys follow Space Station 14: Shift switches walk and run, C lies down, Ctrl+Q throws, Shift+click examines; saved keys stay as they were.
 - What you can do with the thing under the crosshair now shows beside it, each with your key; F3 shows ping and FPS in one chip at the top right.
 - The health doll, health and mood stand bare at the right edge over the combat toggle in the corner; the zone selector shows only in cursor mode.
-- Your hands sit either side of the bottom centre with belt, pockets and ID between them; a strip above them shows the held item and its keys.
+- Your hands sit either side of a ten-cell bar of belt, pockets and ID at the bottom centre; a strip above them names the held item and its keys.
 - Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.
 - Every chip's picture is centred and scaled so its art fills the chip, so hunger, stamina and alerts no longer sit small or off-centre.
 - The swap-hands key sits on the corner of the other hand; a cuffed or missing hand gets a red border.
@@ -24,6 +24,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - A gun held to someone's mouth from the next tile is tg's twelve-second execution shot; from further away it is an ordinary shot at the head.
 - The prompt beside the crosshair follows the body part you look at (Headpat on the head, Hug on the chest), except during a timed action.
 - A patient on a bed or operating table lies face up, and a lying person can be turned over from the radial.
+- The number keys now take items from your belt, pockets and ID slot and put them back; item action buttons moved to Shift+number.
 - Looking down now shows your own body in the lower half of the view with the floor ahead above it; held items lower out of the way.
 - Your own body is a target while you look down at it: the part under the crosshair is the one a click, a throw or an attack takes.
 - Looking down goes further, to 135 degrees, and shows more of your own body: the crosshair climbs from your feet to your chest.

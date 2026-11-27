@@ -491,6 +491,11 @@ public enum ActionKind : byte
     /// fields. Without tg's lobby the server late-joins its new player now.
     /// </summary>
     Loaded = 27,
+    /// <summary>
+    /// Version 98 (DV603, ui-overhaul.md section 10): a press of hotbar cell <see cref="ActionMessage.HotbarCell"/> (1 to 10: 1 to 7 the belt,
+    /// 8 and 9 the pockets, 10 the ID slot), untargeted. The server does what the cell's rules say with tg's procs, or tells the client it refused.
+    /// </summary>
+    HotbarPress = 28,
 }
 
 /// <summary>The mouse button of a click (tg's <c>params</c>: <c>button=left</c>, <c>right</c>, <c>middle</c>).</summary>
@@ -628,4 +633,7 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
 
     /// <summary>Version 38: a <see cref="ActionKind.Say"/> of type "thinking": tg's <c>payload["visible"]</c>; false otherwise.</summary>
     public bool SayVisible { get; init; }
+
+    /// <summary>Version 98 also (DV603): the cell of a <see cref="ActionKind.HotbarPress"/>, 1 to <see cref="HotbarMessage.CellCount"/>; 0 for every other kind.</summary>
+    public int HotbarCell { get; init; }
 }

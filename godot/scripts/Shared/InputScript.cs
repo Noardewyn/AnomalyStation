@@ -64,7 +64,8 @@ public static class InputScript
     private static readonly HashSet<string> Keys = new(StringComparer.Ordinal) { "W", "A", "S", "D", "UP", "DOWN", "LEFT", "RIGHT", "U", "F", "C", "QUOTELEFT", "F9", "F10", "F3", "F4", "L", "F8", "BACKSLASH", "F12", "ESCAPE", "Z", "Q", "E", "X", "R", "TAB", "ENTER", "BACKSPACE", "F5", "F6", "SHIFT", "B", "T", "Y", "M", "O", "P", "J", "H", "SPACE", "CTRL", "META", "S", "DELETE", "V", "ALT",
         "SEMICOLON", "BRACKETLEFT", "APOSTROPHE", "F11", // ui-overhaul.md section 5: the radio, OOC and me keys and fullscreen
         // the map editor's own keys (docs/ai/specs/map-editor.md 5.16), by the engine's names of them
-        "KEY1", "KEY2", "KEY3", "KEY4", "EQUAL", "MINUS", "PERIOD", "COMMA", "PAGEUP", "PAGEDOWN", "HOME", "KPADD", "KPSUBTRACT", "G" };
+        "KEY1", "KEY2", "KEY3", "KEY4", "EQUAL", "MINUS", "PERIOD", "COMMA", "PAGEUP", "PAGEDOWN", "HOME", "KPADD", "KPSUBTRACT", "G",
+        "KEY5", "KEY6", "KEY7", "KEY8", "KEY9", "KEY0" }; // ui-overhaul.md section 10: the hotbar's other number keys
 
     /// <summary>Parses a script; on an error returns false with the problem.</summary>
     public static bool TryParse(string text, out List<ScriptedInput> steps, out string error)

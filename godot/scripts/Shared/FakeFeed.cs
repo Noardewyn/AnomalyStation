@@ -59,6 +59,15 @@ public sealed class FakeFeed : IWorldFeed
         _replica.Despawned += e => Despawned?.Invoke(e);
     }
 
+    /// <inheritdoc/>
+    public HotbarMessage Hotbar => _replica.Hotbar; // version 98 also (DV603): the replica takes the message (ReplicaWorld.V98.cs)
+
+    /// <inheritdoc/>
+    public int HotbarRefusals => _replica.HotbarRefusals;
+
+    /// <inheritdoc/>
+    public int HotbarRefusedCell => _replica.HotbarRefusedCell;
+
     /// <summary>A room side that leaves room for <paramref name="bots"/> wandering bots (at least 32 tiles).</summary>
     public static int SizeFor(int bots) => Math.Max(32, (int)Math.Ceiling(Math.Sqrt(bots * 10.0)));
 

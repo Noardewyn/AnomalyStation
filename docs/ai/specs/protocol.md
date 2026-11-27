@@ -3292,3 +3292,39 @@ to the player, never on himself; the pick takes the click bucket as every Contex
 
 Tests: `Protocol/ProtocolV98TurnOverTests`, `Protocol/CodecV2Tests`, `Client/Render/TurnOverLyingDirTests` (server), `Integration/TurnOverGameplayTests`,
 `Integration/BodyZoneRegionTests`.
+
+## 96. Version 98, also (ui-overhaul.md section 10, slice 3A, DV603: the belt hotbar)
+
+**Hotbar** (server to client, State channel, id 32, after the tick's Delta or a join's Snapshot, when it changed or a press was refused;
+`MessagesV98Hotbar.cs`, `Codec.V98Hotbar.cs`): the own human's ten hotbar cells, 1 to 7 the worn belt's contents, 8 and 9 the left and right pocket,
+10 the ID slot, and the names of the items in the own hands.
+
+```
+[u8 flags: bit 0 the bar (a human), bit 1 a belt worn; bits 2-7 zero]
+ten cells, cell 1 first: { [u8 state: 0 empty, 1 holding, 2 out] ([tableref picture, may be none] unless empty) }
+[str(1..128) the left hand's item name, or none] [str(1..128) the right hand's] [u8 refused cell 0..10]
+```
+
+A cell is holding when its item is in the belt or in its slot, out when that item was taken from the bar and is in either hand. The picture is the
+item drawn alone, the private row a slot's `ScreenChild` uses (`AppearanceTables.InternVisChild`), interned before the Delta's tables are taken,
+so the Delta or Snapshot before the message carries it. Only a human has a bar (tg's quick-equip keys' `ishuman`): every other mob's message is
+`HotbarMessage.None`, 15 bytes: the id 32, the flags byte 0, ten state bytes 0, two none names (a 0 byte each) and the refused byte 0. Without the bar no cell holds anything and there are no
+names or refusal; without a belt (a belt-slot item with a storage) cells 1 to 7 are empty; an empty cell has no picture; a name is never empty.
+Anything else is refused at both ends (`BadValue`). The refused cell is an event: the press of that cell this tick did nothing (the client's
+blink of slice 3B); the next message carries 0 again. The server reads the cells after the tick (`Replicator.Hotbar.cs`, `BeltHotbar.Peek`)
+and sends them when they differ from the last sent, when the cells' refusal count grew, and in a join.
+
+**HotbarPress** (client to server, an Action of kind 28, `ActionKind.HotbarPress`): `[u8 cell 1..10]` after the kind, no target and no other
+field (`ActionMessage.HotbarCell`; a cell on another kind, or 0, 11 and up, is refused). The server checks it again (`ValidAction`), takes it from
+the overall action bucket and the keybinding bucket (`ActionLimits.Keybinding`, as tg's quick-equip keys), and in the command phase runs
+`BeltHotbar.Press` with usr the player's mob: nothing unless the client's mob is a human, connected, not deleted, and the cell is 1 to 10; the
+press's rules (ui-overhaul.md section 10) then move the item with tg's own procs, or count a refusal (dead or incapacitated, no rule applies, or
+tg refuses the move). The command log keeps the cell in the action's target field (`QueuedCommand.Target`). Examples: `0A 07 1C 03` a press of
+cell 3 in frame 7, `0A 07 1C 00` and `0A 07 1C 0B` refused.
+
+The cells are the port's state on the mob (`mob_living_carbon_human.dm_hotbar`), brought up to date in each command phase for every player's human
+(`ServerHost.TrackHotbars`, a replay's too) and before each press, so items that come into the belt take the lowest free cell in the order they
+came.
+
+Tests: `Protocol/ProtocolV98HotbarTests`, `Protocol/WireTests` (server), `UiOverhaul/BeltHotbarTests` (core), `Integration/HotbarGameplayTests`,
+`Client/Play/HotbarClientTests`.

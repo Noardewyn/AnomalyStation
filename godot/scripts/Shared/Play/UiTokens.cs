@@ -170,19 +170,40 @@ public static class UiTokens
     /// <summary>An alert chip's corner radius.</summary>
     public const float DollPanelRadius = 6f;
 
-    // ---- the hands either side of the hotbar's gap at the bottom centre (LiveHud.Hands; wireframes Mockup 1) ----
+    // ---- the hands either side of the hotbar at the bottom centre (LiveHud.Hands; wireframes Mockup 1; ui-overhaul.md section 10) ----
 
-    /// <summary>The hotbar's slots: how many ...</summary>
-    public const int HotbarSlots = 9;
+    /// <summary>The hotbar's cells (1 to 7 the belt, 8 and 9 the pockets, 0 the ID slot): how many ...</summary>
+    public const int HotbarSlots = 10;
 
     /// <summary>... their side ...</summary>
     public const float HotbarSlot = 48f;
 
-    /// <summary>... and the gap between two.</summary>
+    /// <summary>... the gap between two in one group ...</summary>
     public const float HotbarSlotGap = 4f;
 
-    /// <summary>The hotbar's whole width: nine slots and the eight gaps between them.</summary>
-    public const float HotbarWidth = HotbarSlots * HotbarSlot + (HotbarSlots - 1) * HotbarSlotGap;
+    /// <summary>... and between two groups (the belt's, the pockets', the ID slot's).</summary>
+    public const float HotbarGroupGap = 12f;
+
+    /// <summary>The hotbar's whole width: ten cells, seven gaps within the groups and two between them.</summary>
+    public const float HotbarWidth = HotbarSlots * HotbarSlot + (HotbarSlots - 3) * HotbarSlotGap + 2 * HotbarGroupGap;
+
+    /// <summary>A cell's rim: the other hand box's faint one.</summary>
+    public const uint HotbarRim = HandRim;
+
+    /// <summary>... red for <see cref="HotbarRefusedSeconds"/> after a press that did nothing.</summary>
+    public const uint HotbarRefusedRim = Security;
+
+    /// <summary>How long a refused cell's rim is red, seconds.</summary>
+    public const double HotbarRefusedSeconds = 0.33;
+
+    /// <summary>An out item's picture (in one of the player's hands, taken from the cell): its opacity.</summary>
+    public const float HotbarOutAlpha = 1f / 3f;
+
+    /// <summary>An empty cell's key cap: its opacity.</summary>
+    public const float HotbarEmptyCapAlpha = 0.45f;
+
+    /// <summary>The belt's cells with no belt worn: their opacity.</summary>
+    public const float HotbarNoBeltAlpha = 0.5f;
 
     /// <summary>The room under the hotbar and the hands, to the screen's bottom edge.</summary>
     public const float HotbarMargin = 16f;
@@ -208,11 +229,6 @@ public static class UiTokens
     /// <summary>The room between a hand box's edge and the held item's picture.</summary>
     public const float HandInset = 6f;
 
-    /// <summary>
-    /// The least a hand box may be, screen pixels (not reference pixels): tg's own 32-pixel slot at its native size. The row keeps clear of the
-    /// chat window only while its smaller box keeps this size (LiveHud.Hands).
-    /// </summary>
-    public const float HandMinPixels = 32f;
 
     /// <summary>The gap between a hand box and the hotbar.</summary>
     public const float HandGap = 8f;
@@ -225,6 +241,9 @@ public static class UiTokens
 
     /// <summary>... and its text size.</summary>
     public const float SwapCapFont = 12f;
+
+    /// <summary>A key cap's label too wide for its cap is drawn smaller, to this share of the cap's text size at least, then cut (LiveHud.CapLabel).</summary>
+    public const float CapLeastShare = 0.6f;
 
     /// <summary>A handcuffed or blocked hand (tg's handcuff or blocked overlay on its box): its border, whether it is the active hand or not ...</summary>
     public const uint HandMarkedBorder = Security;

@@ -91,8 +91,11 @@ public class PlayOptionsTests
     {
         KeyBindings keys = KeyBindings.Defaults();
         Assert.Equal(PlayAction.Inventory, keys.ActionOf("I"));
-        Assert.Equal(PlayAction.ActionButton1, keys.ActionOf("Key1"));
-        Assert.Equal(PlayAction.ActionButton9, keys.ActionOf("Kp9"));
+        // ui-overhaul.md section 10: the numbers are the hotbar's, Shift and a number tg's action buttons
+        Assert.Equal(PlayAction.ActionButton1, keys.ActionOf("Shift_Key1"));
+        Assert.Equal(PlayAction.ActionButton9, keys.ActionOfPress("Key9", shift: true));
+        Assert.Equal(PlayAction.Hotbar1, keys.ActionOf("Key1"));
+        Assert.Equal(PlayAction.Hotbar9, keys.ActionOf("Kp9"));
         Assert.Equal("Action button 3", KeyBindings.TitleOf(PlayAction.ActionButton3));
     }
 
@@ -480,15 +483,26 @@ public class PlayOptionsTests
         [PlayAction.EmoteWheel] = new[] { "Y" },
         [PlayAction.Inventory] = new[] { "I" },
         [PlayAction.CloseWindows] = new[] { "Shift_Escape" },
-        [PlayAction.ActionButton1] = new[] { "Key1", "Kp1" },
-        [PlayAction.ActionButton2] = new[] { "Key2", "Kp2" },
-        [PlayAction.ActionButton3] = new[] { "Key3", "Kp3" },
-        [PlayAction.ActionButton4] = new[] { "Key4", "Kp4" },
-        [PlayAction.ActionButton5] = new[] { "Key5", "Kp5" },
-        [PlayAction.ActionButton6] = new[] { "Key6", "Kp6" },
-        [PlayAction.ActionButton7] = new[] { "Key7", "Kp7" },
-        [PlayAction.ActionButton8] = new[] { "Key8", "Kp8" },
-        [PlayAction.ActionButton9] = new[] { "Key9", "Kp9" },
+        // ui-overhaul.md section 10: the hotbar on 1 to 9 and 0, the number row and the keypad
+        [PlayAction.Hotbar1] = new[] { "Key1", "Kp1" },
+        [PlayAction.Hotbar2] = new[] { "Key2", "Kp2" },
+        [PlayAction.Hotbar3] = new[] { "Key3", "Kp3" },
+        [PlayAction.Hotbar4] = new[] { "Key4", "Kp4" },
+        [PlayAction.Hotbar5] = new[] { "Key5", "Kp5" },
+        [PlayAction.Hotbar6] = new[] { "Key6", "Kp6" },
+        [PlayAction.Hotbar7] = new[] { "Key7", "Kp7" },
+        [PlayAction.Hotbar8] = new[] { "Key8", "Kp8" },
+        [PlayAction.Hotbar9] = new[] { "Key9", "Kp9" },
+        [PlayAction.Hotbar10] = new[] { "Key0", "Kp0" },
+        [PlayAction.ActionButton1] = new[] { "Shift_Key1" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton2] = new[] { "Shift_Key2" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton3] = new[] { "Shift_Key3" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton4] = new[] { "Shift_Key4" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton5] = new[] { "Shift_Key5" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton6] = new[] { "Shift_Key6" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton7] = new[] { "Shift_Key7" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton8] = new[] { "Shift_Key8" }, // section 10: Shift and the digit
+        [PlayAction.ActionButton9] = new[] { "Shift_Key9" }, // section 10: Shift and the digit
         [PlayAction.Console] = new[] { "Quoteleft" },
         [PlayAction.DebugHud] = new[] { "F3" },
         [PlayAction.HideInterface] = new[] { "Shift_F4" },
@@ -658,8 +672,9 @@ public class PlayOptionsTests
             PlayAction action = KeyBindings.ActionOfId(pair[0]).Value;
             Assert.True(string.Join(",", options.Bindings.KeysOf(action)) == pair[1], $"{pair[0]}: {string.Join(",", options.Bindings.KeysOf(action))}, saved {pair[1]}");
         }
-        // every action of the time, the give key among them: today's actions less slice E's three menu keys, and the give and analyzer keys
-        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 + 2, lines);
+        // every action of the time, the give key among them: today's actions less slice E's three menu keys and section 10's ten hotbar keys, and the
+        // give and analyzer keys
+        Assert.Equal(Enum.GetValues<PlayAction>().Length - 3 - 10 + 2, lines);
         // slice E's menu keys keep their defaults where the old file left the key free (G: the give key's line is ignored), and lose it where the old
         // file gave it to another action (L the flashlight's, M the me key's), as a key serves one action
         Assert.Equal(new[] { "G" }, options.Bindings.KeysOf(PlayAction.CraftingMenu));

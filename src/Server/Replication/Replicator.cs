@@ -2129,6 +2129,7 @@ public sealed partial class Replicator : IReplicator
             UpdateGamePlane(owner, player, tick, full); // version 29
             UpdateVision(player, full); // version 31
             UpdateRadioChannels(owner, player, full); // version 40
+            UpdateHotbar(player, tick, full); // version 98 also (DV603), before the tables' new rows are taken: its pictures are among them
 
             // The private tables' new entries (all of them in a join: the tables start afresh).
             AppearanceTables t = Tables;

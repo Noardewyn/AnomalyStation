@@ -43,6 +43,17 @@ public class InputScriptTests
     }
 
     [Fact]
+    public void TheHotbarsNumberKeysCanBeScripted()
+    {
+        // ui-overhaul.md section 10: 1 to 9 and 0 press the hotbar's cells; the engine's names (Key1 to Key0) are what the bindings name
+        string script = string.Join(",", Enumerable.Range(0, 10).Select(n => $"{n + 1}:KEY{n}+,{n + 1}.1:KEY{n}-"));
+        Assert.True(InputScript.TryParse(script, out List<ScriptedInput> steps, out string error), error);
+        Assert.Equal(10, steps.Count(s => s.Action == ScriptAction.Press));
+        for (int n = 0; n <= 9; n++)
+            Assert.Equal(PlayAction.Hotbar1 + (byte)((n + 9) % 10), KeyBindings.Defaults().ActionOfPress("Key" + n, shift: false));
+    }
+
+    [Fact]
     public void TheDevFlashlightKeyCanBeScripted()
     {
         Assert.True(InputScript.TryParse("2:L+,2.1:L-", out List<ScriptedInput> steps, out _));

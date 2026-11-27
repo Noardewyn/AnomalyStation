@@ -391,8 +391,12 @@ public sealed partial class ServerHost
         if (action.Kind != ActionKind.RadialPick && (action.RadialMenu != 0 || action.RadialElement != 0)) { why = "a radial pick's fields on another action"; return false; }
         bool ui = action.Kind is ActionKind.UiAct or ActionKind.UiClose;
         if (!ui && (action.UiWindow != 0 || action.UiAction != null || action.UiParams != null)) { why = "a UI action's fields on another action"; return false; }
+        if (action.Kind != ActionKind.HotbarPress && action.HotbarCell != 0) { why = "a hotbar cell on another action"; return false; }
         switch (action.Kind)
         {
+            case ActionKind.HotbarPress: // version 98 also (DV603): the cell; whether the mob has a hotbar and can act is BeltHotbar.Press's check
+                if (action.HotbarCell < 1 || action.HotbarCell > HotbarMessage.CellCount) { why = "a hotbar press of a cell out of range"; return false; }
+                return true;
             case ActionKind.UiAct: // version 16: the window, the action, the params; whether the window is the player's is tgui_Topic's check
             case ActionKind.UiClose:
                 if (action.UiWindow < 1 || action.UiWindow > Limits.MaxUiWindows) { why = "a UI action on a window out of range"; return false; }
@@ -560,6 +564,8 @@ public sealed partial class ServerHost
             ActionKind.Topic => s.ClickBucket.Take(tick),
             // Version 86: a context pick takes the click bucket (it stands for one).
             ActionKind.ContextPick => s.ClickBucket.Take(tick),
+            // Version 98 also (DV603): a hotbar press takes the keybinding bucket (it is a key, as tg's quick-equip keys are).
+            ActionKind.HotbarPress => s.KeybindingBucket.Take(tick),
             // Version 51: a double click takes only the overall bucket (it always comes with its press's click, which the click bucket counts).
             ActionKind.DblClick => true,
             // Version 34: a press and a release take only the overall bucket (each comes with a click or ends one, which the click bucket counts).
@@ -751,6 +757,7 @@ public sealed partial class ServerHost
             SendMinimapMobs(s, frame.Tick); // version 68
             SendBuildPreview(s); // version 70
             SendGunSight(s); // version 92
+            SendHotbar(s); // version 98 also (DV603)
             SendWeather(s); // version 84
         }
     }
@@ -862,6 +869,15 @@ public sealed partial class ServerHost
             Send(s, Channel.State, Codec.Encode(held));
     }
 
+    // Version 98 also (DV603): the own hotbar when its cells or the held names changed or a press was refused, after the Delta or Snapshot whose
+    // private tables carry its pictures.
+    private void SendHotbar(Session s)
+    {
+        HotbarMessage hotbar = _replicator.TakeHotbar(s.Ordinal);
+        if (hotbar != null)
+            Send(s, Channel.State, Codec.Encode(hotbar));
+    }
+
     private void SendRadials(Session s)
     {
         foreach (RadialMenuMessage radial in _replicator.TakeRadials(s.Ordinal))
@@ -916,6 +932,7 @@ public sealed partial class ServerHost
         SendRadials(s); // version 15: the menus open at the join
         SendUiWindows(s); // version 16: the tgui windows open at the join
         SendTooltip(s); // version 19: the tooltip shown at the join
+        SendHotbar(s); // version 98 also (DV603): the hotbar at the join, its pictures in the Snapshot's tables
         s.MinimapLevels.Clear(); // version 67: a join's client has no minimap yet
         s.BuildPreview = BuildPreviewMessage.None; // version 70: nor a build preview
         s.GunSight = GunSightMessage.None; // version 92: nor a gun sight

@@ -17,13 +17,13 @@ public class ProtocolV97Tests
     }
 
     [Fact]
-    public void LoadedIsTheLastActionAndCarriesNothing()
+    public void LoadedCarriesNothing()
     {
         var loaded = new ActionMessage(3, ActionKind.Loaded, 0, ClickButton.None, ClickModifiers.None, null);
         byte[] bytes = Codec.Encode(loaded);
         Assert.True(Codec.TryDecode(bytes, out ActionMessage back, out ProtocolError error), error.ToString());
         Assert.Equal(loaded, back);
-        Assert.Equal(ActionKind.Loaded, ActionKinds.Last);
+        Assert.True(ActionKinds.Last >= ActionKind.Loaded); // version 98 adds HotbarPress after it
         Assert.Throws<ProtocolException>(() => Codec.Encode(loaded with { Target = 4, TargetKind = TargetKind.Entity }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(loaded with { Text = "x" }));
     }

@@ -654,6 +654,12 @@ public static class Limits
 
     /// <summary>Version 92: a <see cref="GunSightMessage"/>: the id, the gun flag, the cone and the hits.</summary>
     public const int MaxGunSightBytes = 1 + 1 + 4 + 1;
+
+    /// <summary>Version 98 (DV603): the most UTF-8 bytes of a held item's name in a <see cref="HotbarMessage"/>.</summary>
+    public const int MaxHotbarNameBytes = 128;
+
+    /// <summary>Version 98: a <see cref="HotbarMessage"/>: the id, the flags, ten cells (a state and an appearance each), two names and the refused cell.</summary>
+    public const int MaxHotbarBytes = 1 + 1 + HotbarMessage.CellCount * (1 + 5) + 2 * (2 + MaxHotbarNameBytes) + 1;
 }
 
 /// <summary>A token bucket: <see cref="PerSecond"/> tokens refill per second of game time (20 ticks), at most <see cref="Burst"/> are kept.</summary>

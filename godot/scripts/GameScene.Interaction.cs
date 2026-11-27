@@ -1128,6 +1128,9 @@ public partial class GameScene
             case PlayAction.Scoreboard:
                 _session.Keybinding(KeybindingCode.Scoreboard); // version 93 (DV585): the deathmatch scoreboard, while held
                 break;
+            case >= PlayAction.Hotbar1 and <= PlayAction.Hotbar10:
+                _session.HotbarPress(HotbarModel.CellOf(action.Value)); // ui-overhaul.md section 10 (DV603): the server decides; nothing predicted
+                break;
             case >= PlayAction.ActionButton1 and <= PlayAction.ActionButton9:
                 // the owner (2026-10-29): tg's click on the shown action button of that number
                 long button = _hudLayer.ActionButtonNumber(action.Value - PlayAction.ActionButton1 + 1);

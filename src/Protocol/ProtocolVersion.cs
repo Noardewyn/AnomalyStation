@@ -202,6 +202,8 @@ public static class ProtocolVersion
     /// selects without logging before tg's hover, so the hints name what a click there does.
     /// Version 98 also (package T, slice T4c, DV600): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
     /// <see cref="PostureBits.FaceUp"/>), the side a lying body was turned to from the radial's Turn over (a ContextPick of that label).
+    /// Version 98 also (ui-overhaul.md section 10, slice 3A, DV603; MessagesV98Hotbar.cs): the Hotbar message, the own human's ten hotbar cells
+    /// and the held items' names, and the <see cref="ActionKind.HotbarPress"/> action, a press of one cell.
     public const ushort Current = 98;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>

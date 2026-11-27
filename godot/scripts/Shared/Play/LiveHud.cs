@@ -34,8 +34,17 @@ public enum LiveHudRole : byte
     /// <summary>tg's second hand box (<see cref="ScreenEntry.HandIndex"/> 2, a right hand): drawn as the native right hand box.</summary>
     RightHand,
 
-    /// <summary>One of tg's bottom slots (an inventory box with a <see cref="ScreenEntry.SlotId"/> outside the toggled inventory: belt, back, pockets, ID, suit storage): moved into the hotbar's gap.</summary>
-    BottomSlot,
+    /// <summary>
+    /// tg's pocket or ID slot (an inventory box outside the toggled inventory with tg's <c>ITEM_SLOT_LPOCKET</c>, <c>ITEM_SLOT_RPOCKET</c> or
+    /// <c>ITEM_SLOT_ID</c>): drawn as hotbar cell 8, 9 or 10 (<see cref="LiveHud.BarCellOfSlot"/>), still tg's slot for clicks and drags (package 3).
+    /// </summary>
+    BarSlot,
+
+    /// <summary>
+    /// Any other of tg's bottom slots (an inventory box outside the toggled inventory: the belt, the back, suit storage): under Tab only, in the
+    /// worn slots' row above the bar's right end (<see cref="LiveHud.WornCell"/>; package 3).
+    /// </summary>
+    WornSlot,
 
     /// <summary>tg's inventory toggle (icon state <c>toggle</c> or <c>toggle_active</c>), which only the human HUD has: its presence marks the human HUD; slice E: not drawn there (the inventory key, I).</summary>
     InventoryToggle,
@@ -116,14 +125,26 @@ public readonly record struct LiveHudLayout(HudRect Doll, int DollScale, bool Vi
     public float Left => Doll.Left;
 }
 
-/// <summary>Where the hands and the hotbar's gap go, screen pixels (<see cref="LiveHud.Hands"/>).</summary>
-/// <param name="Left">The left hand's box, left of the gap.</param>
+/// <summary>Where the hands and the hotbar go, screen pixels (<see cref="LiveHud.Hands"/>).</summary>
+/// <param name="Left">The left hand's box, left of the bar.</param>
 /// <param name="Right">The right hand's box, right of it.</param>
-/// <param name="Hotbar">The gap kept for the nine-slot hotbar; tg's bottom slots stand in it until package 3 (<see cref="LiveHud.SlotCell"/>).</param>
+/// <param name="Hotbar">The bar of ten cells (package 3: <see cref="LiveHud.BarCell"/>), the worn slots' row over its right end (<see cref="LiveHud.WornCell"/>).</param>
 /// <param name="Unit">Screen pixels per reference pixel in the row (<see cref="UiTokens.Unit"/>, less when the row is made smaller to fit).</param>
 /// <param name="Hint">Slice D: the held-item hint strip over the row (<see cref="LiveHud.HintBy"/>); empty where it is left out.</param>
 /// <param name="HintShare">The share of its natural size the hint strip is drawn at.</param>
-public readonly record struct HandsLayout(HudRect Left, HudRect Right, HudRect Hotbar, float Unit, HudRect Hint = default, float HintShare = 0f);
+/// <param name="HintName">Package 3: the width the held item's name has in the strip, screen pixels at its natural size (cut to fit the row); 0: no name.</param>
+/// <param name="WornRight">Package 3: where the worn slots' row ends on the right, screen pixels (<see cref="LiveHud.WornCell"/>); 0: left out.</param>
+public readonly record struct HandsLayout(HudRect Left, HudRect Right, HudRect Hotbar, float Unit, HudRect Hint = default, float HintShare = 0f, float HintName = 0f,
+    float WornRight = 0f);
+
+/// <summary>What a hotbar cell shows at a given time (<see cref="LiveHud.CellLook"/>; package 3).</summary>
+/// <param name="Alpha">The whole cell's opacity (its fill, rim, cap and picture): less for a belt cell with no belt worn.</param>
+/// <param name="Picture">The item's picture (none for an empty cell).</param>
+/// <param name="PictureAlpha">The picture's opacity within the cell: less while the item is out in a hand.</param>
+/// <param name="Cap">The key cap's label: the first key bound to the cell (null: unbound, no cap).</param>
+/// <param name="CapAlpha">The cap's opacity within the cell: dim on an empty cell.</param>
+/// <param name="Rim">The rim's colour (<c>0xRRGGBBAA</c>): red while a refused press blinks.</param>
+public readonly record struct HotbarCellLook(float Alpha, TableRef Picture, float PictureAlpha, string Cap, float CapAlpha, uint Rim);
 
 /// <summary>The live HUD's reading of tg's screen entries and its layout (ui-overhaul.md section 6, wireframes Mockup 1).</summary>
 public static class LiveHud
@@ -132,7 +153,7 @@ public static class LiveHud
     /// What <paramref name="entry"/> is, by its hand index, slot id, icon state and group, never by where it is drawn (only tg's own alert places
     /// say an entry is an alert): an entry of a native window (a
     /// storage, the inventory) or an action button is always <see cref="LiveHudRole.Tg"/>. The hands and the bottom slots are re-placed only on
-    /// the human HUD (<see cref="Placed"/>).
+    /// the human HUD (<see cref="Placed"/>); a bottom slot is a cell of the bar or a worn slot by its slot id.
     /// </summary>
     public static LiveHudRole RoleOf(ReplicaWorld replica, ScreenEntry entry)
     {
@@ -141,7 +162,7 @@ public static class LiveHud
         if (entry.HandIndex is 1 or 2) // hands beyond the second keep tg's place
             return entry.HandIndex == 1 ? LiveHudRole.LeftHand : LiveHudRole.RightHand;
         if (entry.SlotId != 0 && entry.HandIndex == 0)
-            return LiveHudRole.BottomSlot;
+            return BarCellOfSlot(entry.SlotId) > 0 ? LiveHudRole.BarSlot : LiveHudRole.WornSlot;
         // tg's own place for an alert (ui_alert1 to ui_alert5), whatever its picture: an alert from another icon file (the tracker, the blood
         // worm's) is not left behind in tg's column
         bool placed = ScreenLoc.TryParse(entry.ScreenLoc, out ScreenLocSpec at);
@@ -200,17 +221,18 @@ public static class LiveHud
     /// Whether an entry drawn in the role <paramref name="placed"/> (<see cref="Placed"/>) is drawn and takes clicks now: tg's zone selector only while
     /// the cursor is free (cursor mode, Tab), where any zone, the eyes, mouth and groin included (tg's surgeries, a ctrl-click on the doll), is still
     /// chosen on it (looking aims at them too since package T, slice T4a, and the selector shows the zone the server selected); slice E: on the human
-    /// HUD tg's memories button and area creator only then too, and a hidden entry never (no picture, no pick, no tooltip); every other entry always.
+    /// HUD tg's memories button and area creator only then too, and a hidden entry never (no picture, no pick, no tooltip); package 3: tg's belt, back
+    /// and suit-storage slots only then; every other entry always.
     /// </summary>
     public static bool Shown(LiveHudRole placed, bool cursorMode) => placed switch
     {
-        LiveHudRole.ZoneSelector or LiveHudRole.Memories or LiveHudRole.AreaCreator => cursorMode,
+        LiveHudRole.ZoneSelector or LiveHudRole.Memories or LiveHudRole.AreaCreator or LiveHudRole.WornSlot => cursorMode,
         LiveHudRole.Hidden => false,
         _ => true,
     };
 
     /// <summary>
-    /// The role an entry is drawn in: the hands, the bottom slots and the alerts only on the human HUD (<paramref name="humanHud"/>: its inventory
+    /// The role an entry is drawn in: the hands, the bar's and the worn slots and the alerts only on the human HUD (<paramref name="humanHud"/>: its inventory
     /// toggle is on the screen); the alien's, a basic mob's and the other HUDs keep tg's places, the alerts tg's column (ui-overhaul.md section 6).
     /// Slice D: tg's health and mood indicators are re-placed into the vitals stack, and slice E's status chips (hunger, stamina, internals, suit
     /// cell, another status display, sleep) are chips, only with the full stack (<paramref name="vitals"/>, <see cref="LiveHudLayout.Vitals"/>);
@@ -218,7 +240,7 @@ public static class LiveHud
     /// </summary>
     public static LiveHudRole Placed(LiveHudRole role, bool humanHud, bool vitals = false) => role switch
     {
-        LiveHudRole.LeftHand or LiveHudRole.RightHand or LiveHudRole.BottomSlot or LiveHudRole.Alert when !humanHud => LiveHudRole.Tg,
+        LiveHudRole.LeftHand or LiveHudRole.RightHand or LiveHudRole.BarSlot or LiveHudRole.WornSlot or LiveHudRole.Alert when !humanHud => LiveHudRole.Tg,
         LiveHudRole.Health or LiveHudRole.Mood when !humanHud || !vitals => LiveHudRole.Tg,
         LiveHudRole.Hunger or LiveHudRole.Stamina or LiveHudRole.Internals or LiveHudRole.SpaceSuit or LiveHudRole.StatusOther or LiveHudRole.Sleep
             => humanHud && vitals ? LiveHudRole.Alert : LiveHudRole.Tg,
@@ -424,46 +446,101 @@ public static class LiveHud
     private static readonly ScreenLocSpec MenuLoc = ScreenLoc.TryParse("EAST-4:22,SOUTH:5", out ScreenLocSpec menu) ? menu : default;
 
     /// <summary>
-    /// The hands' row at the bottom centre: the hotbar's gap, the left hand's box left of it and the right hand's right of it, each
+    /// The hands' row at the bottom centre: the hotbar, the left hand's box left of it and the right hand's right of it, each
     /// <see cref="UiTokens.HandActive"/> when it is the active hand (tg's overlay on it: <paramref name="leftActive"/>, <paramref name="rightActive"/>;
     /// neither when a third or fourth hand is active) and <see cref="UiTokens.HandInactive"/> otherwise, all on one bottom line. The row keeps a gap from tg's inventory toggle and from tg's bottom-right menu, and stays under the chat
-    /// lines' lowest line; it is moved off the middle as little as that takes, and made smaller when it still does not fit. With the chat window
-    /// open at the bottom left (its right edge <paramref name="chatRight"/>, screen pixels; 0: none) the row moves right of it only while it then
-    /// fits there: wholly right of the window and on the screen, and its smaller hand box at <see cref="UiTokens.HandMinPixels"/> or more (slice E:
-    /// tg's drop and swap buttons are no longer in its way); otherwise it is exactly where it is with the chat window closed, and a window over it
-    /// covers it as a window covers tg's HUD (D282). The gap and the boxes keep their places when the active hand changes.
+    /// lines' lowest line; it is moved off the middle as little as that takes, and made smaller when it still does not fit. It does not move for
+    /// the chat window: a window over it covers it as a window covers tg's HUD (D282). The bar and the boxes keep their places when the active
+    /// hand changes.
     /// Slice D: with the human HUD's vitals <paramref name="column"/> (<see cref="Layout"/>) the held-item hint strip's place over the row for a
-    /// strip of natural width <paramref name="hint"/> (<see cref="HintBy"/>), which never moves the row.
+    /// strip of natural width <paramref name="hint"/> (<see cref="HintBy"/>), which never moves the row. Package 3: the bar's ten cells make the
+    /// row's middle (<see cref="UiTokens.HotbarWidth"/>), whatever they hold; the held item's name (natural width <paramref name="name"/>) leads the
+    /// strip, cut to the room the row's width leaves it (<see cref="HintNameWidth"/>); under Tab (<paramref name="tab"/>) there is no strip.
     /// </summary>
-    public static HandsLayout Hands(in HudMetrics metrics, bool leftActive, bool rightActive, float chatRight = 0f, LiveHudLayout column = default, float hint = 0f)
+    public static HandsLayout Hands(in HudMetrics metrics, bool leftActive, bool rightActive, LiveHudLayout column = default, float hint = 0f,
+        float name = 0f, bool tab = false)
     {
-        float toggle = ScreenLoc.Place(ToggleLoc, metrics, 32, 32, 0, 0, out _).Right;
-        HandsLayout row = Row(metrics, leftActive, rightActive, toggle);
-        float besideChat = 0f;
-        if (chatRight > toggle)
-        {
-            // judged with both boxes at the active size, so a swap never moves the row between the two places
-            HandsLayout beside = Row(metrics, true, true, chatRight);
-            if (beside.Left.Left >= chatRight && UiTokens.HandInactive * beside.Unit >= UiTokens.HandMinPixels)
-                (row, besideChat) = (Row(metrics, leftActive, rightActive, chatRight), chatRight);
-        }
-        // slice D: the held-item hint strip over the row, with the vitals given (the human HUD)
-        if (column.Doll.Width <= 0f)
+        HandsLayout row = Row(metrics, leftActive, rightActive, ScreenLoc.Place(ToggleLoc, metrics, 32, 32, 0, 0, out _).Right);
+        // slice D: the held-item hint strip over the row, with the vitals given (the human HUD); package 3: none under Tab, where its place is the
+        // worn slots' row's and the pointer has tooltips
+        if (column.Doll.Width <= 0f || tab)
             return row;
-        HudRect strip = HintBy(metrics, row, column, besideChat, hint, out float share);
-        return row with { Hint = strip, HintShare = share };
+        float named = hint > 0f ? HintNameWidth(metrics, row, hint, name) : 0f;
+        HudRect strip = HintBy(metrics, row, column, named > 0f ? hint + UiTokens.HintGap * UiTokens.Unit(metrics) + named : hint, out float share);
+        return row with { Hint = strip, HintShare = share, HintName = strip.Width > 0f ? named : 0f };
+    }
+
+    // the hands' row's width with both boxes at the active size: the hint strip is never wider
+    private static float RowWidth(in HandsLayout row)
+        => row.Hotbar.Width + 2 * (MathF.Round(UiTokens.HandGap * row.Unit) + MathF.Round(UiTokens.HandActive * row.Unit));
+
+    /// <summary>
+    /// Package 3: the width the held item's name (natural width <paramref name="name"/>, measured at the strip's compact text size) has at the head of
+    /// a hint strip of natural width <paramref name="hint"/> without it: the whole name while the strip with it is no wider than the row (both boxes
+    /// at the active size), else cut to the room the row leaves it, whole pixels; 0 where there is none (the strip alone already fills the row), so a
+    /// name never makes the strip smaller or leaves it out.
+    /// </summary>
+    public static float HintNameWidth(in HudMetrics metrics, in HandsLayout row, float hint, float name)
+    {
+        if (name <= 0f)
+            return 0f;
+        float room = MathF.Floor(RowWidth(row) - hint - UiTokens.HintGap * UiTokens.Unit(metrics));
+        return room <= 0f ? 0f : Math.Min(MathF.Ceiling(name), room);
+    }
+
+    /// <summary>
+    /// Package 3: the held item's name as the hint strip shows it: the server's name with its first letter capitalised (tg's names are lower case:
+    /// "welding tool" reads "Welding tool"), cut to <paramref name="width"/> pixels by <paramref name="measure"/> with an ellipsis at the end; null
+    /// for no name, an empty string where not even the ellipsis fits.
+    /// </summary>
+    public static string HintName(string name, float width, Func<string, float> measure)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return null;
+        return Cut(char.ToUpperInvariant(name[0]) + name[1..], width, measure);
+    }
+
+    // `text` whole where it fits `width`, else its longest head that fits with an ellipsis after it; an empty string where not even that fits
+    private static string Cut(string text, float width, Func<string, float> measure)
+    {
+        if (measure(text) <= width)
+            return text;
+        for (int length = text.Length - 1; length > 0; length--)
+        {
+            string cut = text[..length].TrimEnd() + "…";
+            if (measure(cut) <= width)
+                return cut;
+        }
+        return measure("…") <= width ? "…" : string.Empty;
+    }
+
+    /// <summary>
+    /// A key cap's label as drawn (a hotbar cell's, the swap-hands cap's, an action button's): the whole <paramref name="label"/> at the largest
+    /// font size from <paramref name="size"/> down to <see cref="UiTokens.CapLeastShare"/> of it at which it fits the cap's inner width
+    /// <paramref name="inner"/> (<paramref name="measure"/>: a text's width at a size); at that least size and still too wide, cut with an
+    /// ellipsis to fit.
+    /// </summary>
+    public static (string Text, int Size) CapLabel(string label, float inner, int size, Func<string, int, float> measure)
+    {
+        int least = Math.Max(1, (int)MathF.Ceiling(size * UiTokens.CapLeastShare));
+        for (int s = size; s >= least; s--)
+        {
+            if (measure(label, s) <= inner)
+                return (label, s);
+        }
+        return (Cut(label, inner, text => measure(text, least)), least);
     }
 
     /// <summary>
     /// The icon square the maptexts of an entry drawn in <paramref name="placed"/> stand on, which they scale with: a hand box's picture square, a
-    /// moved bottom slot's cell (number <paramref name="cell"/> of <paramref name="cells"/>); null for an entry at its own place (its screen_loc's
-    /// square at the HUD's pixel scale).
+    /// worn slot's cell (number <paramref name="cell"/> of <paramref name="cells"/>); null for an entry at its own place (its screen_loc's square at
+    /// the HUD's pixel scale). A bar slot's texts are not its entry's: the cell draws its item's (<see cref="CellLook"/>).
     /// </summary>
     public static HudRect? MaptextSquare(LiveHudRole placed, in HandsLayout hands, int cell, int cells) => placed switch
     {
         LiveHudRole.LeftHand => HandPicture(hands.Left, hands.Unit),
         LiveHudRole.RightHand => HandPicture(hands.Right, hands.Unit),
-        LiveHudRole.BottomSlot => SlotCell(hands, cell, cells),
+        LiveHudRole.WornSlot => WornCell(hands, cell, cells),
         _ => null,
     };
 
@@ -488,26 +565,164 @@ public static class LiveHud
         float leftSide = leftActive ? active : other, rightSide = rightActive ? active : other;
         var leftBox = new HudRect(hotbar.Left - handGap - leftSide, bottom - leftSide, leftSide, leftSide);
         var rightBox = new HudRect(hotbar.Right + handGap, bottom - rightSide, rightSide, rightSide);
-        return new HandsLayout(leftBox, rightBox, hotbar, k);
+        var row = new HandsLayout(leftBox, rightBox, hotbar, k);
+        return row with { WornRight = WornEnd(metrics, row) };
     }
 
     // Two rectangles share some area (an empty one shares none).
     private static bool Over(HudRect a, HudRect b)
         => a.Width > 0 && a.Height > 0 && b.Width > 0 && b.Height > 0 && a.Left < b.Right && b.Left < a.Right && a.Top < b.Bottom && b.Top < a.Bottom;
 
-    /// <summary>
-    /// Where tg's bottom slot number <paramref name="index"/> (from 0) of <paramref name="count"/> goes in the hotbar's gap: a hotbar slot's square,
-    /// the slots side by side with the hotbar's gaps between them, centred in the gap; narrower when more than nine would not fit.
-    /// </summary>
-    public static HudRect SlotCell(in HandsLayout hands, int index, int count)
+    // ---- package 3: the belt hotbar (ui-overhaul.md section 10) ----
+
+    // tg's slot ids of the pockets and the ID slot (__DEFINES/inventory.dm ITEM_SLOT_LPOCKET, ITEM_SLOT_RPOCKET, ITEM_SLOT_ID)
+    private const uint LeftPocketSlot = 1u << 15, RightPocketSlot = 1u << 16, IdSlot = 1u << 8;
+
+    /// <summary>The bar's cell (8 the left pocket, 9 the right one, 10 the ID slot) tg's slot <paramref name="slotId"/> is drawn as; 0 for any other slot.</summary>
+    public static int BarCellOfSlot(uint slotId) => slotId switch
     {
-        float k = hands.Unit, gap = UiTokens.HotbarSlotGap * k;
-        float cell = Math.Min(hands.Hotbar.Height, (hands.Hotbar.Width - (count - 1) * gap) / Math.Max(1, count));
-        float block = count * cell + (count - 1) * gap;
-        float left = hands.Hotbar.Left + (hands.Hotbar.Width - block) / 2f + index * (cell + gap);
-        // both edges rounded, so neighbours never overlap; no taller than the gap (its height was rounded on its own)
-        float l = MathF.Round(left), side = Math.Min(MathF.Round(left + cell) - l, hands.Hotbar.Height);
-        return new HudRect(l, hands.Hotbar.Bottom - side, side, side);
+        LeftPocketSlot => HotbarMessage.BeltCells + 1,
+        RightPocketSlot => HotbarMessage.BeltCells + 2,
+        IdSlot => HotbarMessage.CellCount,
+        _ => 0,
+    };
+
+    // where cell `cell` (1 to 10) starts in the bar, reference pixels from its left: the belt's seven, the pockets' two and the ID slot's one, the
+    // cells a slot gap apart within a group and a group gap apart between groups
+    private static float CellOffset(int cell)
+    {
+        int index = cell - 1;
+        float offset = index * (UiTokens.HotbarSlot + UiTokens.HotbarSlotGap);
+        if (cell > HotbarMessage.BeltCells)
+            offset += UiTokens.HotbarGroupGap - UiTokens.HotbarSlotGap;
+        if (cell > HotbarMessage.BeltCells + 2)
+            offset += UiTokens.HotbarGroupGap - UiTokens.HotbarSlotGap;
+        return offset;
+    }
+
+    /// <summary>
+    /// Package 3: where the bar's cell <paramref name="cell"/> (1 to 7 the belt, 8 and 9 the pockets, 10 the ID slot) is: a square of
+    /// <see cref="UiTokens.HotbarSlot"/> on the bar's bottom line, <see cref="UiTokens.HotbarSlotGap"/> from its neighbour in its group and
+    /// <see cref="UiTokens.HotbarGroupGap"/> from the next group, the last one ending at the bar's right end. Both edges are rounded on their own, so
+    /// the cells stand at whole pixels and never over each other.
+    /// </summary>
+    public static HudRect BarCell(in HandsLayout hands, int cell)
+    {
+        float k = hands.Unit, offset = CellOffset(cell);
+        // from the bar's left edge, a whole pixel, as its width is rounded: the last cell ends exactly at its right end
+        float left = hands.Hotbar.Left + MathF.Round(offset * k), right = hands.Hotbar.Left + MathF.Round((offset + UiTokens.HotbarSlot) * k);
+        float side = Math.Min(right - left, hands.Hotbar.Height); // no taller than the bar (its height was rounded on its own): kept at its right edge
+        return new HudRect(right - side, hands.Hotbar.Bottom - side, side, side);
+    }
+
+    /// <summary>
+    /// Package 3: where tg's worn slot number <paramref name="index"/> (from 0) of <paramref name="count"/> (tg's belt, back and suit storage, in tg's
+    /// slot order) is under Tab: a row of cells of the bar's size and gap ending at <see cref="HandsLayout.WornRight"/> (the bar's right end), its
+    /// bottom <see cref="UiTokens.HotbarSlotGap"/> over the bar's top, whole pixels; empty where the row is left out.
+    /// </summary>
+    public static HudRect WornCell(in HandsLayout hands, int index, int count) => WornCellAt(hands, hands.WornRight, index, count);
+
+    private static HudRect WornCellAt(in HandsLayout hands, float end, int index, int count)
+    {
+        if (end <= 0f)
+            return default;
+        float k = hands.Unit, fromRight = (count - 1 - index) * (UiTokens.HotbarSlot + UiTokens.HotbarSlotGap);
+        float right = end - MathF.Round(fromRight * k), left = end - MathF.Round((fromRight + UiTokens.HotbarSlot) * k);
+        float side = Math.Min(right - left, hands.Hotbar.Height), bottom = hands.Hotbar.Top - MathF.Round(UiTokens.HotbarSlotGap * k);
+        return new HudRect(right - side, bottom - side, side, side);
+    }
+
+    // Where the worn slots' row ends: over the bar's right end; where tg's entries still drawn at the bottom right (or at tg's places in its right
+    // column) reach down over that place, which only a 5:4 screen at the largest UI scales does (tg's buttons there take the bottom's width and the
+    // row is made small under them), over the bar's left end instead; 0 (left out) where neither is clear.
+    private static float WornEnd(in HudMetrics metrics, in HandsLayout row)
+    {
+        float span = MathF.Round((WornSlots * UiTokens.HotbarSlot + (WornSlots - 1) * UiTokens.HotbarSlotGap) * row.Unit);
+        foreach (float end in new[] { row.Hotbar.Right, row.Hotbar.Left + span })
+        {
+            bool clear = true;
+            for (int i = 0; i < WornSlots && clear; i++)
+            {
+                HudRect cell = WornCellAt(row, end, i, WornSlots);
+                foreach (ScreenLocSpec spec in HintClear)
+                    clear &= !Over(cell, ScreenLoc.Place(spec, metrics, 32, 32, 0, 0, out _));
+            }
+            if (clear)
+                return end;
+        }
+        return 0f;
+    }
+
+    /// <summary>tg's worn slots shown under Tab on the human HUD: the belt, the back and suit storage.</summary>
+    public const int WornSlots = 3;
+
+    /// <summary>
+    /// Package 3: the screen entry id the HUD pick reports for the belt's cell <paramref name="cell"/> (1 to 7), which is ours, not a tg entry: below
+    /// zero, where no screen entry of the server's is (<see cref="BeltCellOf"/>).
+    /// </summary>
+    public static long BeltCellId(int cell) => -cell;
+
+    /// <summary>The belt's cell (1 to 7) a HUD pick's <paramref name="target"/> names (<see cref="BeltCellId"/>); 0 for anything else.</summary>
+    public static int BeltCellOf(in ClickTarget target)
+        => target.Kind == TargetKind.Screen && target.Id is <= -1 and >= -HotbarMessage.BeltCells ? (int)-target.Id : 0;
+
+    /// <summary>
+    /// What the HUD pick gets for the belt's cells on the bar (<paramref name="hands"/>): each whole cell under its <see cref="BeltCellId"/>, so a
+    /// click on it under Tab is that cell's press (<see cref="PlaySession.Click(in ClickTarget, ClickButton, ClickModifiers, ShotAim?)"/>); none while the interface is
+    /// hidden (<paramref name="hidden"/>: the cells are not drawn, so not clickable).
+    /// </summary>
+    public static void BeltDrawn(in HandsLayout hands, List<HudDrawn> into, bool hidden = false)
+    {
+        if (hidden)
+            return;
+        for (int cell = 1; cell <= HotbarMessage.BeltCells; cell++)
+            into.Add(new HudDrawn(BeltCellId(cell), BarCell(hands, cell), null, 0, 0));
+    }
+
+    /// <summary>
+    /// What the HUD pick gets for tg's pocket or ID slot <paramref name="entryId"/> drawn as the bar's cell <paramref name="cell"/> (8 to 10): the whole
+    /// cell under the slot's id, and over it the cell's picture square (<see cref="HandPicture"/>) with the slot's items (<paramref name="children"/>,
+    /// its vis_contents), so a click on the item's pixels is the item's and anywhere else on the cell tg's slot's, as on a hand box.
+    /// </summary>
+    public static void BarSlotDrawn(in HandsLayout hands, long entryId, int cell, IReadOnlyList<HudChildDrawn> children, List<HudDrawn> into)
+    {
+        HudRect rect = BarCell(hands, cell);
+        into.Add(new HudDrawn(entryId, rect, null, 0, 0));
+        into.Add(new HudDrawn(entryId, HandPicture(rect, hands.Unit), null, 0, 0, children));
+    }
+
+    /// <summary>
+    /// A key cap (a hotbar cell's, a tg action button's), <paramref name="width"/> screen pixels wide at most (its label's measure), in the top left corner of <paramref name="cell"/>
+    /// at <paramref name="unit"/> screen pixels per reference pixel: the swap-hands cap's size, inset and look, wholly inside it; its label as <see cref="CapLabel"/> fits it.
+    /// </summary>
+    public static HudRect CellCap(HudRect cell, float unit, float width)
+    {
+        float inset = Math.Max(1f, MathF.Round(UiTokens.SwapCapInset * unit));
+        float height = Math.Min(MathF.Round(UiTokens.SwapCapHeight * unit), cell.Height - 2 * inset), w = Math.Min(MathF.Ceiling(width), cell.Width - 2 * inset);
+        return height <= 0f || w <= 0f ? default : new HudRect(cell.Left + inset, cell.Top + inset, w, height);
+    }
+
+    /// <summary>
+    /// Package 3: what cell <paramref name="cell"/> (1 to 10) of the bar <paramref name="bar"/> shows at <paramref name="now"/> (the clock of
+    /// <see cref="HotbarModel.Apply"/>), its key cap from <paramref name="bindings"/>. Empty: the rim and a dim cap only; holding: the item's picture;
+    /// out (its item in one of the player's hands): the picture at <see cref="UiTokens.HotbarOutAlpha"/>; refused: the rim red for
+    /// <see cref="UiTokens.HotbarRefusedSeconds"/> from <see cref="HotbarModel.RefusedAt"/>. With no belt worn the belt's cells are empty cells at
+    /// <see cref="UiTokens.HotbarNoBeltAlpha"/>.
+    /// </summary>
+    public static HotbarCellLook CellLook(HotbarModel bar, int cell, KeyBindings bindings, double now)
+    {
+        bool belt = cell <= HotbarMessage.BeltCells;
+        HotbarCell shown = belt && !bar.BeltWorn ? HotbarCell.Empty : bar.Cells[cell - 1];
+        float alpha = belt && !bar.BeltWorn ? UiTokens.HotbarNoBeltAlpha : 1f;
+        string cap = KeyChips.KeyOf(bindings, PlayAction.Hotbar1 + (byte)(cell - 1));
+        bool refused = bar.RefusedCell == cell && now >= bar.RefusedAt && now - bar.RefusedAt < UiTokens.HotbarRefusedSeconds;
+        uint rim = refused ? UiTokens.HotbarRefusedRim : UiTokens.HotbarRim;
+        return shown.State switch
+        {
+            HotbarCellState.Holding => new HotbarCellLook(alpha, shown.Appearance, 1f, cap, 1f, rim),
+            HotbarCellState.Out => new HotbarCellLook(alpha, shown.Appearance, UiTokens.HotbarOutAlpha, cap, 1f, rim),
+            _ => new HotbarCellLook(alpha, TableRef.None, 0f, cap, UiTokens.HotbarEmptyCapAlpha, rim),
+        };
     }
 
     /// <summary>The square inside a hand box that the held item's 32 x 32 icon square fills.</summary>
@@ -661,21 +876,20 @@ public static class LiveHud
     /// <summary>
     /// Where the held-item hint strip goes over the hands' row <paramref name="row"/>, and the share of its size it is drawn at (<paramref name="share"/>;
     /// an empty rectangle where it is left out): its natural width <paramref name="natural"/> (<see cref="HintWidth"/>; 0: none), centred on the
-    /// hotbar's gap, its bottom <see cref="UiTokens.HintRise"/> over the row's top line (the taller, active box; slice E). One wider than the row
+    /// hotbar, its bottom <see cref="UiTokens.HintRise"/> over the row's top line (the taller, active box; slice E). One wider than the row
     /// (both boxes at the active size) is made smaller as one to the row's width, its text to no less than
     /// <see cref="UiTokens.HintLeastShare"/> of the prompts' size; below that it is left out. It is shown only where it is wholly on the screen and
-    /// clear of the chat window when the row stands right of it (<paramref name="chatRight"/>), tg's entries still drawn, the vitals
+    /// clear of tg's entries still drawn, the vitals
     /// (<paramref name="column"/>), every chip it can show (<see cref="MaxChips"/>) and the widest prompt block beside the crosshair. It never moves
     /// the row and does not change with a swap: it depends on the screen, the scale and the row's place alone (and the bound keys it names).
     /// </summary>
-    public static HudRect HintBy(in HudMetrics metrics, in HandsLayout row, in LiveHudLayout column, float chatRight, float natural, out float share)
+    public static HudRect HintBy(in HudMetrics metrics, in HandsLayout row, in LiveHudLayout column, float natural, out float share)
     {
         share = 0f;
         if (natural <= 0f)
             return default;
         float u = UiTokens.Unit(metrics), k = row.Unit;
-        float active = MathF.Round(UiTokens.HandActive * k), handGap = MathF.Round(UiTokens.HandGap * k);
-        float rowWidth = row.Hotbar.Width + 2 * (handGap + active);
+        float active = MathF.Round(UiTokens.HandActive * k), rowWidth = RowWidth(row);
         float fit = natural > rowWidth ? rowWidth / natural : 1f;
         if (fit * UiTokens.HintShare < UiTokens.HintLeastShare - 0.0001f)
             return default;
@@ -683,7 +897,7 @@ public static class LiveHud
         // at the whole pixel above the active box (the row's place can end at a fraction of one), so the strip and its picture stand at whole pixels
         float bottom = MathF.Floor(row.Hotbar.Bottom - active) - MathF.Round(UiTokens.HintRise * u);
         var hint = new HudRect(MathF.Round(row.Hotbar.Left + row.Hotbar.Width / 2f - width / 2f), bottom - height, width, height);
-        if (hint.Left < 0f || hint.Top < 0f || hint.Right > metrics.Width || hint.Bottom > metrics.Height || hint.Left < chatRight)
+        if (hint.Left < 0f || hint.Top < 0f || hint.Right > metrics.Width || hint.Bottom > metrics.Height)
             return default;
         foreach (ScreenLocSpec spec in HintClear)
         {

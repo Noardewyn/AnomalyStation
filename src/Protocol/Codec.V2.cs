@@ -169,11 +169,19 @@ public static partial class Codec
             throw Bad("a radial menu or element on an action that is not a radial pick");
         if (message.Kind != ActionKind.UiAct && message.Kind != ActionKind.UiClose && (message.UiWindow != 0 || message.UiAction != null || message.UiParams != null))
             throw Bad("a UI window, action or params on an action that is not a UI act or close");
+        if (message.Kind != ActionKind.HotbarPress && message.HotbarCell != 0)
+            throw Bad("a hotbar cell on an action that is not a hotbar press");
         switch (message.Kind)
         {
             case ActionKind.UiAct:
             case ActionKind.UiClose:
                 WriteUiAction(ref w, message);
+                break;
+            case ActionKind.HotbarPress:
+                // version 98 also (DV603): the cell, 1 to 10
+                if (message.HotbarCell < 1 || message.HotbarCell > HotbarMessage.CellCount)
+                    throw Bad("a hotbar press of cell " + message.HotbarCell);
+                w.WriteByte((byte)message.HotbarCell);
                 break;
             case ActionKind.RadialPick:
                 if (message.RadialMenu < 1)
@@ -346,11 +354,17 @@ public static partial class Codec
             int uiWindow = 0;
             string uiAction = null;
             UiValue uiParams = null;
+            int hotbarCell = 0;
             switch (kind)
             {
                 case ActionKind.UiAct:
                 case ActionKind.UiClose:
                     ReadUiAction(ref r, kind, out uiWindow, out uiAction, out uiParams);
+                    break;
+                case ActionKind.HotbarPress:
+                    hotbarCell = r.ReadByte(); // version 98 also (DV603)
+                    if (hotbarCell < 1 || hotbarCell > HotbarMessage.CellCount)
+                        throw Bad("a hotbar press of cell " + hotbarCell);
                     break;
                 case ActionKind.Drop:
                     ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a drop's dragged thing");
@@ -501,6 +515,7 @@ public static partial class Codec
                 SayType = sayType,
                 SayChannel = sayChannel,
                 SayVisible = sayVisible,
+                HotbarCell = hotbarCell,
             };
             return true;
         }

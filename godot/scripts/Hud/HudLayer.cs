@@ -24,9 +24,10 @@ namespace Anomaly.Client.Hud;
 /// <para>
 /// The live HUD (ui-overhaul.md section 6, <see cref="LiveHud"/>): the doll is re-placed (it shows injuries only; its wound outlines stay tg's),
 /// still taking tg's clicks, and tg's zone selector is shown only while the cursor is free. Slice C, on the human HUD: tg's two hand boxes are
-/// drawn as native boxes either side of the hotbar's gap at the bottom centre (<see cref="LiveHudView"/>), tg's bottom slots are moved into that
-/// gap; the boxes and the slots still take tg's clicks and drags. Slice D, on the human HUD: a hint strip over the hands names the held item's
-/// keys, and tg's alerts are chips by the vitals (above them, or left of them) instead of tg's column (DV82, which other HUDs keep), each chip
+/// drawn as native boxes either side of the hotbar at the bottom centre (<see cref="LiveHudView"/>); the boxes still take tg's clicks and drags.
+/// Package 3: the hotbar's ten cells between them (the belt's seven, a click on one under Tab its press; tg's pocket and ID slots drawn as cells 8
+/// to 10, still tg's for clicks and drags), and tg's belt, back and suit-storage slots in a row over the bar's right end under Tab only. Slice D,
+/// on the human HUD: a hint strip over the hands names the held item (package 3) and its keys, not under Tab, and tg's alerts are chips by the vitals (above them, or left of them) instead of tg's column (DV82, which other HUDs keep), each chip
 /// taking its alert's clicks and hover. Slice E, on the human HUD: the doll, tg's health indicator and mood face stand bare against the screen's
 /// right edge (or the doll alone left of tg's right column on a crowded screen), tg's status indicators and sleep button are chips, tg's combat
 /// toggle is in the corner with, under Tab only, the zone selector, the memories button and the area creator left of it, and tg's buttons that a
@@ -103,15 +104,16 @@ void fragment() {
     private LiveHudLayout _layout;
     private HandsLayout _hands;
     private bool _humanHud; // slice C: tg's inventory toggle is on the screen, so the hands and the bottom slots are re-placed (LiveHud.Placed)
-    private readonly List<Item> _bottomSlots = new();
+    private readonly List<Item> _wornSlots = new(); // package 3: tg's belt, back and suit-storage slots, in the row over the bar under Tab
+    private readonly MaptextNode[] _cellTexts = new MaptextNode[HotbarMessage.CellCount]; // package 3: a stack's amount on its cell's item
+
+    /// <summary>Package 3 (ui-overhaul.md section 10): the own hotbar as the server last sent it, which the bar's cells show. Set by the scene each frame.</summary>
+    public HotbarModel Hotbar { get; set; }
     private readonly List<Item> _alerts = new(); // slice D: tg's alerts on the human HUD, in tg's order
     private List<HudRect> _chips = new(); // their chips (Item.Cell is the index)
 
     /// <summary>Whether the cursor is free (cursor mode, Tab): tg's zone selector is shown then only (<see cref="LiveHud.Shown"/>). Set by the scene each frame.</summary>
     public bool CursorMode { get; set; }
-
-    /// <summary>Slice C: the open chat window's right edge, screen pixels, when it reaches down into the hands' row (0: none); the row keeps clear of it. Set by the scene each frame.</summary>
-    public float ChatRight { get; set; }
 
     // the role an item is drawn in this frame: the hands, the bottom slots and the alerts only on the human HUD, tg's right-column indicators
     // only with its full vitals stack (slices D and E)
@@ -234,6 +236,8 @@ void fragment() {
     /// <inheritdoc />
     public void Collect(List<HudDrawn> bottomToTop)
     {
+        if (_view.Hands.Shown) // package 3: the belt's cells are ours, a click on one is its press (PlaySession.Click)
+            LiveHud.BeltDrawn(_hands, bottomToTop, hidden: !_root.Visible);
         foreach (Item item in _order)
         {
             if (!item.Container.Visible || !item.HasSpec || item.Hidden || !LiveHud.Shown(RoleNow(item), CursorMode))
@@ -257,6 +261,8 @@ void fragment() {
                 bottomToTop.Add(new HudDrawn(item.Entry.Id, box, null, 0, 0));
                 bottomToTop.Add(new HudDrawn(item.Entry.Id, LiveHud.HandPicture(box, _hands.Unit), null, 0, 0, HudPictures.ChildrenOf(_replica, _textures, item.Entry, _lastNow)));
             }
+            else if (RoleNow(item) == LiveHudRole.BarSlot && _view.Hands.Shown) // package 3: the cell is tg's pocket or ID slot for clicks and drags
+                LiveHud.BarSlotDrawn(_hands, item.Entry.Id, item.Cell, HudPictures.ChildrenOf(_replica, _textures, item.Entry, _lastNow), bottomToTop);
             else if (item.Whole != null && item.Whole.Visible && item.Whole.Texture != null && item.Fullscreen == false)
                 // Version 12: the item in a hand or a slot (the entry's vis_contents child) is hit on its own pixels before the slot.
                 bottomToTop.Add(new HudDrawn(item.Entry.Id, item.LastRect, HudPictures.RasterOf(item.Whole.Texture), item.OriginX, item.OriginY,
@@ -299,8 +305,8 @@ void fragment() {
 
     private readonly List<Item> _numbered = new();
 
-    // The owner (2026-10-29): the shown item action buttons in reading order, each with its key (ActionButton1-9) at its bottom right
-    private void NumberActionButtons()
+    // The owner (2026-10-29): the shown item action buttons in reading order, each with its key (ActionButton1-9) as a key cap in its top left corner
+    private void NumberActionButtons(float unit)
     {
         _numbered.Clear();
         _numbered.AddRange(_order.Where(item => item.Entry.ActionTarget > 0 && item.Container.Visible && !item.Hidden && item.Whole != null && item.Whole.Visible && !item.Fullscreen)
@@ -315,16 +321,16 @@ void fragment() {
                     item.KeyHint.Visible = false;
                 continue;
             }
-            item.KeyHint ??= NewLabel(item.Container);
-            Label hint = item.KeyHint;
-            hint.Text = KeyChips.Label(keys[0]);
-            hint.HorizontalAlignment = HorizontalAlignment.Right;
-            hint.VerticalAlignment = VerticalAlignment.Bottom;
-            hint.AddThemeFontSizeOverride("font_size", Math.Max(10, (int)(item.LastRect.Height * 0.3f)));
-            float inset = item.LastRect.Width * 0.06f;
-            hint.Position = new Vector2(item.LastRect.Left, item.LastRect.Top);
-            hint.Size = new Vector2(item.LastRect.Width - inset, item.LastRect.Height - inset * 0.5f);
-            hint.Visible = true;
+            // a key cap in the button's top left corner, as a hotbar cell's (its label made smaller, then cut, to fit)
+            if (item.KeyHint == null)
+            {
+                item.KeyHint = new LiveHudView.KeyCap();
+                item.KeyHint.SetAnchorsPreset(Control.LayoutPreset.FullRect);
+                item.Container.AddChild(item.KeyHint);
+            }
+            item.Container.MoveChild(item.KeyHint, -1); // over the button's picture
+            item.KeyHint.Set(item.LastRect, KeyChips.Label(keys[0]), unit);
+            item.KeyHint.Visible = true;
         }
     }
 
@@ -385,7 +391,7 @@ void fragment() {
         int total = 0;
         foreach (Item item in _order)
             UpdateItem(item, metrics, nowSeconds, ref total);
-        NumberActionButtons();
+        NumberActionButtons(UiTokens.Unit(metrics));
         UpdateLabels(metrics);
         if (_zoneStates.Count > 0)
         {
@@ -397,14 +403,14 @@ void fragment() {
 
     private bool _dollShown;
 
-    // ui-overhaul.md section 6: where the live HUD's re-placed entries go (slice C: on the human HUD the hands and the bottom slots' places in the
-    // hotbar's gap; slice D: the vitals, the alert chips and the hint strip; slice E: the vitals bare, tg's combat toggle in the corner), what its
-    // view draws, and where what stands left of them must end.
+    // ui-overhaul.md section 6: where the live HUD's re-placed entries go (slice C: on the human HUD the hands; package 3: the bar's cells and the
+    // worn slots' row; slice D: the vitals, the alert chips and the hint strip; slice E: the vitals bare, tg's combat toggle in the corner), what
+    // its view draws, and where what stands left of them must end.
     private void UpdateLiveHud(in HudMetrics metrics)
     {
         bool doll = false, human = false;
         Item left = null, right = null, active = null;
-        _bottomSlots.Clear();
+        _wornSlots.Clear();
         _alerts.Clear();
         foreach (Item item in _order)
         {
@@ -418,7 +424,10 @@ void fragment() {
                 case LiveHudRole.InventoryToggle: human = true; break;
                 case LiveHudRole.LeftHand: left = item; break;
                 case LiveHudRole.RightHand: right = item; break;
-                case LiveHudRole.BottomSlot: _bottomSlots.Add(item); break;
+                case LiveHudRole.WornSlot: _wornSlots.Add(item); break;
+                case LiveHudRole.BarSlot:
+                    item.Cell = LiveHud.BarCellOfSlot(item.Entry.SlotId);
+                    break;
             }
             // the active hand, whichever (a third or fourth hand stays at tg's place): the one with tg's active overlay
             if (active == null && item.Entry.HandIndex > 0 && LiveHud.IsActiveHand(_replica, item.Entry))
@@ -444,10 +453,13 @@ void fragment() {
         _chips = LiveHud.AlertStack(metrics, _alerts.Count, _layout);
         _view.ShowAlerts(_chips);
         bool leftActive = active != null && active == left, rightActive = active != null && active == right;
-        _hands = LiveHud.Hands(metrics, leftActive, rightActive, ChatRight, human ? _layout : default, human ? HintNatural(UiTokens.Unit(metrics)) : 0f);
-        _bottomSlots.Sort((a, b) => a.Entry.SlotId.CompareTo(b.Entry.SlotId)); // tg's slot order (ID, belt, back, suit storage, pockets), not their places
-        for (int i = 0; i < _bottomSlots.Count; i++)
-            _bottomSlots[i].Cell = i;
+        // package 3: the held item's name leads the hint strip (the server's names of the items in the own hands)
+        string heldName = leftActive ? Hotbar?.LeftHand : rightActive ? Hotbar?.RightHand : null;
+        float named = 0f, hint = human ? HintNatural(UiTokens.Unit(metrics), heldName, out named) : 0f;
+        _hands = LiveHud.Hands(metrics, leftActive, rightActive, human ? _layout : default, hint, named, CursorMode);
+        _wornSlots.Sort((a, b) => a.Entry.SlotId.CompareTo(b.Entry.SlotId)); // tg's slot order (belt, back, suit storage), not their places
+        for (int i = 0; i < _wornSlots.Count; i++)
+            _wornSlots[i].Cell = i;
         PanelLeftEdge = doll ? LiveHud.LeftOfVitals(_layout, metrics) : float.PositiveInfinity;
         if (_chips.Count > 0) // slice D: the prompts end before alert chips left of the vitals too
             PanelLeftEdge = Math.Min(PanelLeftEdge, LiveHud.LeftOfAlerts(_chips, metrics));
@@ -455,9 +467,11 @@ void fragment() {
         scene.Shown = human && (left != null || right != null);
         if (!scene.Shown)
         {
+            HideCellTexts();
             _view.ShowHands();
             return;
         }
+        UpdateCells(scene);
         scene.Layout = _hands;
         scene.LeftActive = leftActive;
         scene.RightActive = rightActive;
@@ -479,12 +493,64 @@ void fragment() {
         scene.HintUnit = UiTokens.Unit(metrics);
         Pictures(_hands.Hint.Width > 0f ? active : null, LiveHud.HintPictureSquare(_hands.Hint, scene.HintUnit, _hands.HintShare), scene.HintPictures);
         scene.HintShown = scene.HintPictures.Count > 0;
+        // package 3: the name, cut to the width the layout left it
+        scene.HintName = _hands.HintName > 0f ? LiveHud.HintName(heldName, _hands.HintName, _measureVerb) : null;
         _view.ShowHands();
     }
 
+    // Package 3: the bar's ten cells as the hotbar model says (LiveHud.CellLook), each item drawn as a hand box draws its item, with a stack's
+    // amount (its maptext) on the item's square; tg's pocket and ID slots are only their cells' click areas (Collect).
+    private void UpdateCells(LiveHudView.HandsScene scene)
+    {
+        HotbarModel bar = Hotbar ?? NoHotbar;
+        var real = _textures as AppearanceTextures;
+        for (int cell = 1; cell <= HotbarMessage.CellCount; cell++)
+        {
+            HudRect rect = LiveHud.BarCell(_hands, cell);
+            HotbarCellLook look = LiveHud.CellLook(bar, cell, _options.Bindings, _lastNow);
+            LiveHudView.CellScene shown = scene.Cells[cell - 1];
+            shown.Rect = rect;
+            shown.Look = look;
+            shown.Pictures.Clear();
+            HudRect square = LiveHud.HandPicture(rect, _hands.Unit);
+            if (!look.Picture.IsNone && _textures.TryCompose(_replica, look.Picture, 2, _lastNow, out ComposedAppearance composed))
+            {
+                HudRect at = LiveHud.ChildPicture(square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY);
+                shown.Pictures.Add(new LiveHudView.Picture(composed.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height)));
+            }
+            MaptextNode text = _cellTexts[cell - 1] ??= NewCellText(cell);
+            if (real == null || look.Picture.IsNone)
+                text.Visible = false;
+            else
+            {
+                text.SetText(MaptextRenderer.Shared, real, _replica, look.Picture, new Vector2(square.Left, square.Bottom), square.Width / 32f);
+                text.Modulate = new Color(1f, 1f, 1f, look.Alpha * look.PictureAlpha);
+            }
+        }
+    }
+
+    private static readonly HotbarModel NoHotbar = new();
+
+    private MaptextNode NewCellText(int cell)
+    {
+        var text = new MaptextNode { Name = "Cell" + cell + "Maptext" };
+        _view.AddChild(text); // over the view's own drawing (the cells), under tg's pictures
+        return text;
+    }
+
+    private void HideCellTexts()
+    {
+        foreach (MaptextNode text in _cellTexts)
+        {
+            if (text != null)
+                text.Visible = false;
+        }
+    }
+
     // Slice D: the hint strip's entries (use, drop, throw with their bound keys) and the widths of their key caps and verbs at the compact size, at
-    // the HUD's unit: the strip's natural width (LiveHud.HintWidth), which the hands' layout fits over the row.
-    private float HintNatural(float unit)
+    // the HUD's unit: the strip's natural width (LiveHud.HintWidth), which the hands' layout fits over the row; package 3: the held item's name
+    // (`name`, null: none) measured at the verbs' size (`named`, 0: none).
+    private float HintNatural(float unit, string name, out float named)
     {
         _hintLines = LiveHud.HintLines(_options.Bindings);
         Font font = ThemeDB.FallbackFont;
@@ -493,8 +559,12 @@ void fragment() {
         _hintWidths.Clear();
         foreach (PromptLine line in _hintLines)
             _hintWidths.Add((font.GetStringSize(line.Key, HorizontalAlignment.Left, -1, capSize).X + 2 * UiTokens.ChipPadX * k, font.GetStringSize(line.Text, HorizontalAlignment.Left, -1, verbSize).X));
+        _measureVerb = text => font.GetStringSize(text, HorizontalAlignment.Left, -1, verbSize).X;
+        named = LiveHud.HintName(name, float.PositiveInfinity, _measureVerb) is string whole ? _measureVerb(whole) : 0f;
         return LiveHud.HintWidth(unit, _hintWidths);
     }
+
+    private Func<string, float> _measureVerb = _ => 0f;
 
     private List<PromptLine> _hintLines = new();
     private readonly List<(float Cap, float Verb)> _hintWidths = new();
@@ -563,10 +633,10 @@ void fragment() {
             fullscreen = false;
             return ScreenLoc.FitIcon(_layout.Doll, width, height, originX, originY);
         }
-        if (RoleNow(item) == LiveHudRole.BottomSlot) // slice C: tg's picture moved into the hotbar's gap, its icon pixels kept
+        if (RoleNow(item) == LiveHudRole.WornSlot) // package 3: tg's picture in the worn slots' row over the bar, its icon pixels kept
         {
             fullscreen = false;
-            return ScreenLoc.FitIcon(LiveHud.SlotCell(_hands, item.Cell, _bottomSlots.Count), width, height, originX, originY);
+            return ScreenLoc.FitIcon(LiveHud.WornCell(_hands, item.Cell, _wornSlots.Count), width, height, originX, originY);
         }
         if (RoleNow(item) == LiveHudRole.Alert && item.Cell < _chips.Count) // slice D: tg's picture in its chip; section 11: its visible art fitted to it
         {
@@ -692,6 +762,17 @@ void fragment() {
             foreach (TextureRect big in item.Fitted)
                 big.Visible = false;
             ShowMaptext(item, metrics, item.Entry.Appearance, HudLook.None); // slice C: a held stack's amount over the box's picture square, as tg puts it on its slot
+            return;
+        }
+        if (RoleNow(item) == LiveHudRole.BarSlot)
+        {
+            // package 3: drawn as its hotbar cell (LiveHudView, from the hotbar model, its stack's amount too), which Collect reports under this entry
+            if (item.Whole != null)
+                item.Whole.Visible = false;
+            foreach (TextureRect big in item.Fitted)
+                big.Visible = false;
+            if (item.Text != null)
+                item.Text.Visible = false;
             return;
         }
         // M4v slice 4 (protocol version 11): the entry's flick plays over its picture, and its animate() chains move, turn, tint and fade it.
@@ -829,7 +910,7 @@ void fragment() {
 
     // Protocol version 18: the maptexts of the entry's picture (its own, its overlays' and the item in its hand), over it, at the HUD's pixel size.
     // The box sits at the icon's lower left corner, which is the entry's tile; the entry's animate() chain moves the text with the picture.
-    // Slice C: a hand box's or a moved bottom slot's texts stand on its icon square there and scale with it (LiveHud.MaptextSquare).
+    // Slice C: a hand box's or a worn slot's texts stand on its icon square there and scale with it (LiveHud.MaptextSquare).
     private void ShowMaptext(Item item, in HudMetrics metrics, TableRef shown, in HudLook moved)
     {
         if (_textures is not AppearanceTextures real)
@@ -845,7 +926,7 @@ void fragment() {
 
         LiveHudRole role = RoleNow(item);
         HudRect? square = role == LiveHudRole.Alert && item.Cell < _chips.Count ? LiveHud.AlertPicture(_chips[item.Cell])
-            : LiveHud.VitalSquare(role, _layout) ?? LiveHud.MaptextSquare(role, _hands, item.Cell, _bottomSlots.Count);
+            : LiveHud.VitalSquare(role, _layout) ?? LiveHud.MaptextSquare(role, _hands, item.Cell, _wornSlots.Count);
         HudRect tile = square ?? Place(item, metrics, 32, 32, 0, 0, out _);
         item.Text.Modulate = item.Whole != null && !IsHand(role) ? item.Whole.Modulate : Colors.White;
         item.Text.SetText(renderer, real, _replica, shown, new Vector2(tile.Left + moved.MoveX, tile.Top + tile.Height + moved.MoveY), square is HudRect s ? s.Width / 32f : metrics.PixelScale);
@@ -1045,7 +1126,7 @@ void fragment() {
         public int Indicator = -1;
         public TextureRect Whole;
         public readonly List<TextureRect> Fitted = new(); // DV575: the slot's items too big for it, fitted into its square
-        public Label KeyHint; // its action button's number key
+        public LiveHudView.KeyCap KeyHint; // its action button's key cap
         public MultitoolIndicator Scanner;
         public MaptextNode Text; // protocol version 18: the entry's maptexts
         public TableRef FlickSeen; // M4v slice 4: the flick whose length FlickLength is
@@ -1057,7 +1138,7 @@ void fragment() {
         public int OriginX, OriginY;
         public LiveHudRole Role; // ui-overhaul.md section 6: the doll and the combat toggle are re-placed, the zone selector shown in cursor mode only
         public HudRect IconSquare; // a doll entry's own 32 x 32 icon square, where it is drawn (what Collect reports)
-        public int Cell; // slice C: a bottom slot's place in the hotbar's gap
+        public int Cell; // package 3: a worn slot's place in its row, a bar slot's cell (8 to 10); slice D: an alert's chip
         public TextureRect Face; // slice T5c: tg's eyes or mouth hover picture on the doll
         public readonly List<ZoneNode> Zones = new();
         // section 11: a chip's visible art (LiveHud.TryChipArtBounds), and the icon, icon state, overlays and underlays it was found for

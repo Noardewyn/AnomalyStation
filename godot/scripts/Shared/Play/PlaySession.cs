@@ -135,6 +135,7 @@ public sealed class PlaySession
         _feed.Poll(now);
         if (_feed.Phase != FeedPhase.Playing)
             return;
+        Hotbar.Apply(_feed.Hotbar, _feed.HotbarRefusals, _feed.HotbarRefusedCell, now); // version 98 also (DV603)
         long newest = Math.Max(_feed.Tick, _replica.MotionTick); // version 42: a Motion runs ahead of a Delta the reliable channel holds back
         if (newest != _lastTick)
         {
@@ -287,10 +288,18 @@ public sealed class PlaySession
     /// <summary>
     /// M4a (interaction.md 2): a click on <paramref name="target"/> (an entity, a turf by its cell or a screen entry) with tg's pixel inside the clicked icon.
     /// Version 34: <paramref name="aim"/> is the camera's ray (<see cref="AimOf"/>) of a click on the world, so a shot flies along the crosshair (DV94).
-    /// False, and nothing sent, when there is no target or no button.
+    /// False, and nothing sent, when there is no target or no button. Package 3 (ui-overhaul.md section 10): a belt cell of the bar
+    /// (<see cref="LiveHud.BeltCellOf"/>) is ours, not a tg entry: a plain left click on it is that cell's <see cref="HotbarPress"/>, as its key
+    /// is, and no click goes out (false).
     /// </summary>
     public bool Click(in ClickTarget target, ClickButton button, ClickModifiers modifiers, ShotAim? aim = null)
     {
+        if (LiveHud.BeltCellOf(target) is int cell and > 0)
+        {
+            if (button == ClickButton.Left && modifiers == ClickModifiers.None)
+                HotbarPress(cell);
+            return false;
+        }
         if (!target.IsSet || button == ClickButton.None)
             return false;
         if (target.Kind == TargetKind.Entity)
@@ -579,9 +588,12 @@ public sealed class PlaySession
     /// under it clears the hints at once and, when the server was told of a thing, sends an <see cref="ActionKind.Unhover"/> (BYOND's
     /// <c>MouseExited</c>), on the same interval. Version 98 also (slice T4b): the hover carries the target's <see cref="ClickTarget.Aim"/>, the zone looked
     /// at, and goes out again when only that zone changed, at most once per <see cref="ZoneHoverInterval"/>. Returns true when a hover or an unhover was sent.
+    /// A belt cell of the bar (package 3) is no tg entry: over it the pointer hovers nothing.
     /// </summary>
     public bool Hover(in ClickTarget target, double now)
     {
+        if (LiveHud.BeltCellOf(target) > 0)
+            return Hover(ClickTarget.None, now);
         if (!target.SameThing(_hintsLook))
             (_hintsLook, Hints) = (target, null); // DV601: a new look, or none: the answer in hand was for an earlier one
         bool repeat = target.IsSet && target.Kind != TargetKind.Screen && !_heldKeybindings.Contains(KeybindingCode.ViewPetCommands) && now - _lastHoverAt >= RepeatHoverInterval; // DV601
@@ -711,6 +723,21 @@ public sealed class PlaySession
     /// <summary>Version 16: tgui window closes sent.</summary>
     public int UiClosesSent { get; private set; }
 
+    /// <summary>Version 98 also (DV603): the own hotbar as the server last sent it (the cells, the held names, the last refused press).</summary>
+    public HotbarModel Hotbar { get; } = new();
+
+    /// <summary>
+    /// Version 98 also (DV603, ui-overhaul.md section 10): a press of hotbar cell <paramref name="cell"/> (1 to 10), sent as it is; the server decides
+    /// what it does (nothing is predicted). False, and nothing sent, for a cell out of range.
+    /// </summary>
+    public bool HotbarPress(int cell)
+    {
+        if (cell is < 1 or > HotbarMessage.CellCount)
+            return false;
+        Send(new ActionMessage(Prediction.NewestSeq, ActionKind.HotbarPress, 0, ClickButton.None, ClickModifiers.None, null) { HotbarCell = cell });
+        return true;
+    }
+
     /// <summary>
     /// Protocol version 17 (drag and drop): the player dragged <see cref="DragRelease.Source"/> with its button held and let go over
     /// <see cref="DragRelease.Over"/> (BYOND's MouseDrop; the server runs tg's /client/MouseDrop). The icon pixel is the one under the
@@ -728,9 +755,15 @@ public sealed class PlaySession
         return true;
     }
 
+    /// <summary>
+    /// Protocol version 17 (drag and drop): the player dragged <see cref="DragRelease.Source"/> with its button held and let go over
+    /// <see cref="DragRelease.Over"/> (BYOND's MouseDrop; the server runs tg's /client/MouseDrop). The icon pixel is the one under the
+    /// pointer at the release (the over thing's). False, and nothing sent, without both things or a button.
+    /// </summary>
     public bool Drop(in DragRelease drop)
     {
-        if (!drop.Source.IsSet || !drop.Over.IsSet || drop.Button == ClickButton.None)
+        // package 3: a belt cell of the bar is no tg entry the server knows; dragging to or from it does nothing yet (package 4)
+        if (!drop.Source.IsSet || !drop.Over.IsSet || drop.Button == ClickButton.None || LiveHud.BeltCellOf(drop.Source) > 0 || LiveHud.BeltCellOf(drop.Over) > 0)
             return false;
         bool sourceCell = drop.Source.Kind is TargetKind.Turf or TargetKind.Ceiling, overCell = drop.Over.Kind is TargetKind.Turf or TargetKind.Ceiling;
         Send(new ActionMessage(Prediction.NewestSeq, ActionKind.Drop, sourceCell ? 0 : drop.Source.Id, drop.Button, drop.Modifiers, null)

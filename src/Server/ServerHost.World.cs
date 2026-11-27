@@ -61,6 +61,7 @@ public sealed partial class ServerHost
         }
 
         FindSubsystems();
+        TrackHotbars(); // version 98 also (DV603): before the presses, after everything the last tick moved
         _due.Clear();
         _queue.TakeDue(world.Tick, _due);
         foreach (QueuedCommand command in _due)
@@ -133,7 +134,7 @@ public sealed partial class ServerHost
                     s.PendingStamps[kept++] = stamp;
                     continue;
                 }
-                _queue.Enqueue(new QueuedCommand(applyTick, s.Ordinal, taken, CommandKind.Action, a.Text, Action: a.Kind, Target: a.Target, Button: a.Button, Modifiers: a.Modifiers,
+                _queue.Enqueue(new QueuedCommand(applyTick, s.Ordinal, taken, CommandKind.Action, a.Text, Action: a.Kind, Target: a.Kind == ActionKind.HotbarPress ? a.HotbarCell : a.Target, Button: a.Button, Modifiers: a.Modifiers,
                     TargetKind: a.EffectiveTargetKind, TurfX: a.TurfX, TurfY: a.TurfY, TurfZ: a.TurfZ, IconX: a.IconX, IconY: a.IconY, Keybinding: a.Keybinding, KeyUp: a.KeyUp, AimZone: a.AimZone,
                     RadialMenu: a.RadialMenu, RadialElement: a.RadialElement,
                     UiWindow: a.UiWindow, UiParams: a.UiParams?.ToJson(), OverKind: a.OverKind, OverTarget: a.OverTarget, OverX: a.OverX, OverY: a.OverY, OverZ: a.OverZ,
@@ -360,6 +361,17 @@ public sealed partial class ServerHost
         }
     }
 
+    // DV603: each player's human brings its hotbar cells up to date in the command phase (a replay's too), so the items that came into the belt
+    // last tick take their cells in the order they came, as the replicator showed them (BeltHotbar.Peek after that tick).
+    private void TrackHotbars()
+    {
+        foreach (Session s in _sessions)
+        {
+            if (s.Client != null && MobOf(s) is mob_living_carbon_human human)
+                BeltHotbar.Track(human);
+        }
+    }
+
     private mob MobOf(Session s)
     {
         if (s.OwnEntity == 0 || !World.Objects.TryGet(s.OwnEntity, out object o)) return null;
@@ -518,6 +530,10 @@ public sealed partial class ServerHost
             case ActionKind.PopupClose:
                 // version 78 (DV387): a popup window's on-close command
                 _clients.ClosePopup(s.Client, command.Text);
+                break;
+            case ActionKind.HotbarPress:
+                // version 98 also (DV603): a hotbar cell's press, the cell in the command's target field (QueuedCommand)
+                _clients.HotbarPress(s.Client, (int)command.Target);
                 break;
             default:
                 return;

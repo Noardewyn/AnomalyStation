@@ -211,6 +211,9 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         //needs a heart (unit_test.dm:325; live since gaps OG1)
         foreach (Type t in Dm.each_cast<Type>(typesof(typeof(obj_structure_ethereal_crystal))))
             uncreatables.Add(t);
+        //this boi spawns turf changing stuff, and it stacks and causes pain. Let's just not (unit_test.dm:343; live since the Lavaland ruins)
+        foreach (Type t in Dm.each_cast<Type>(typesof(typeof(obj_effect_sliding_puzzle))))
+            uncreatables.Add(t);
         //No tauma to pass in (unit_test.dm:323; live since gaps B1)
         foreach (Type t in Dm.each_cast<Type>(typesof(typeof(mob_eye_imaginary_friend))))
             uncreatables.Add(t);

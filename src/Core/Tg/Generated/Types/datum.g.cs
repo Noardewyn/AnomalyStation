@@ -28227,9 +28227,9 @@ public partial class datum_team_abductor_team : datum_team
     }
 }
 
-// tg: code/modules/antagonists/ashwalker/ashwalker.dm:46
-[DmPath("/datum/team/ashwalkers"), DmGeneratedOnly, DmInert]
-public partial class datum_team_ashwalkers : datum_team
+// tg: code/modules/antagonists/ashwalker/ashwalker.dm:46 (the var block of a hand-written class)
+[DmPath("/datum/team/ashwalkers")]
+public partial class datum_team_ashwalkers
 {
     public float sacrifices_made = 0; // tg: code/modules/antagonists/ashwalker/ashwalker.dm:49
     public float eggs_created = 0; // tg: code/modules/antagonists/ashwalker/ashwalker.dm:51

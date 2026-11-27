@@ -433,3 +433,27 @@ public partial class obj_effect_landmark_holding_facility : obj_effect_landmark
         return INITIALIZE_HINT_QDEL;
     }
 }
+
+// tg: code/game/objects/effects/landmarks.dm:484  (a placed ruin's landmark, for the admins' ruin jump and the Clarke's ruin scanner)
+public partial class obj_effect_landmark_ruin : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:487
+    [DmParams("mapload", "my_ruin_template")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object my_ruin_template = Dm.arg(__extra, 0);
+        object dot = base.Initialize(mapload, __extra);
+        name = Dm.text("ruin_[]", GLOB.ruin_landmarks.len + 1);
+        ruin_template = my_ruin_template as datum_map_template_ruin;
+        Dm.combine(ref GLOB.ruin_landmarks, this);
+        return dot;
+    }
+
+    // tg: code/game/objects/effects/landmarks.dm:493
+    public override object Destroy(float? force = null)
+    {
+        Dm.remove(ref GLOB.ruin_landmarks, this);
+        ruin_template = null;
+        return base.Destroy(force);
+    }
+}

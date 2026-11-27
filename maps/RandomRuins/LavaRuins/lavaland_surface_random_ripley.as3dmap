@@ -1,0 +1,17 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_random_ripley.dmm tg 1d99bd7f
+size 5 5 1
+chunk 32
+default /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+
+[chunk 1 1 1]
+1,5: /turf/template_noop | /area/template_noop
+2,4: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,4: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,4: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,3: /obj/vehicle/sealed/mecha/ripley/mining | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,2: /obj/item/clothing/shoes/workboots/mining | /obj/item/clothing/under/rank/cargo/miner/lavaland | /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,1: /turf/template_noop | /area/template_noop
+5,1: /turf/template_noop | /area/template_noop

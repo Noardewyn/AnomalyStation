@@ -950,9 +950,9 @@ public partial class datum_map_template_ruin_lavaland_blood_drunk_miner_hunter :
     }
 }
 
-// tg: code/datums/ruins/lavaland.dm:171
-[DmPath("/datum/map_template/ruin/lavaland/blood_drunk_miner/random"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_ruin_lavaland_blood_drunk_miner_random : datum_map_template_ruin_lavaland_blood_drunk_miner
+// tg: code/datums/ruins/lavaland.dm:171 (the var block of a hand-written class)
+[DmPath("/datum/map_template/ruin/lavaland/blood_drunk_miner/random")]
+public partial class datum_map_template_ruin_lavaland_blood_drunk_miner_random
 {
     // tg: code/datums/ruins/lavaland.dm:171
     public datum_map_template_ruin_lavaland_blood_drunk_miner_random()

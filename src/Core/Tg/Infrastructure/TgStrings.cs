@@ -113,7 +113,9 @@ public static class TgStrings
         "strings/traumas.json", "strings/zombie_replacement.json",
         // gaps BR1 (D339): the virtual domains' safehouse rooms (the safehouse modular map root, modules/mapping/modular_map_loader/
         // modular_map_loader.dm:30, through rustg_read_toml_file)
-        "strings/modular_maps/safehouse.toml"
+        "strings/modular_maps/safehouse.toml",
+        // Lavaland's syndicate base's rooms (its modular map roots, lavalandruin_code/syndicate_base.dm:3)
+        "strings/modular_maps/syndicatebase.toml"
     ).AddRange(GeneticsFiles);
 
 

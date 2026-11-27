@@ -377,7 +377,7 @@ proc	/	cmp_uplink_category_desc	code/__HELPERS/cmp.dm:171	compare1,compare2	yes	
 proc	/	cmp_vending_prices	code/__HELPERS/cmp.dm:223	a,b	yes	full	global
 proc	/	cmp_wardrobe_performance	code/controllers/subsystem/wardrobe.dm:404	A,B	no	-	global
 proc	/	cmp_word_length_asc	code/controllers/subsystem/tts.dm:67	a,b	no	-	global
-proc	/	cmp_xy_desc	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:126	A,B	no	-	global
+proc	/	cmp_xy_desc	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:126	A,B	yes	full	global
 proc	/	collect_vv	code/modules/clothing/outfits/vv_outfit.dm:47	item	no	-	global
 proc	/	color_hex2color_matrix	code/__HELPERS/type2type.dm:333	string	no	-	global
 proc	/	color_matrix2color_hex	code/__HELPERS/type2type.dm:349	the_matrix	yes	full	global
@@ -1219,7 +1219,7 @@ proc	/	propagate_network	code/modules/power/power.dm:389	C,PN,skip_assigned_powe
 proc	/	purrbation_apply	code/modules/mob/living/carbon/human/species_types/felinid.dm:59	soon_to_be_felinid,silent	yes	full	global
 proc	/	purrbation_remove	code/modules/mob/living/carbon/human/species_types/felinid.dm:87	purrbated_human,silent	yes	full	global
 proc	/	purrbation_toggle	code/modules/mob/living/carbon/human/species_types/felinid.dm:49	target_human,silent	yes	full	global
-proc	/	puzzle_imprison	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:341	prisoner	no	-	global
+proc	/	puzzle_imprison	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:341	prisoner	yes	full	global
 proc	/	qdel	code/controllers/subsystem/garbage.dm:346	to_delete,force	yes	partial	global
 proc	/	radial_blur_filter	code/__HELPERS/filters.dm:281	size,x,y	yes	full	global
 proc	/	radiation_pulse	code/__HELPERS/radiation.dm:25	source,max_range,threshold,chance,minimum_exposure_time	yes	full	global
@@ -1353,7 +1353,7 @@ proc	/	scream_about_watchlists	code/modules/admin/sql_message_system.dm:715	read
 proc	/	screen_loc_to_offset	code/__HELPERS/screen_objs.dm:6	screen_loc,view	yes	full	global
 proc	/	screen_loc_to_turf	code/__HELPERS/turfs.dm:357	text,origin,C	no	-	global
 proc	/	screen_text	code/__HELPERS/game.dm:73	object_to_change,maptext,screen_loc,maptext_height,maptext_width	yes	full	global
-proc	/	seedRuins	code/modules/mapping/ruins.dm:80	z_levels,budget,whitelist,potentialRuins,clear_below,mineral_budget,mineral_budget_update,ruins_type,immediate_load	no	-	global
+proc	/	seedRuins	code/modules/mapping/ruins.dm:80	z_levels,budget,whitelist,potentialRuins,clear_below,mineral_budget,mineral_budget_update,ruins_type,immediate_load	yes	full	global
 proc	/	seedify	code/modules/hydroponics/seed_extractor.dm:16	object,t_max,extractor,user	yes	full	global
 proc	/	select_active_ai	code/__HELPERS/mobs.dm:420	user,z,skip_syndicate,only_syndicate	yes	full	global
 proc	/	select_active_ai_with_fewest_borgs	code/__HELPERS/mobs.dm:402	z	yes	full	global
@@ -3609,9 +3609,9 @@ proc	/datum/controller/subsystem/mapping	calculate_default_z_level_gravities	cod
 proc	/datum/controller/subsystem/mapping	generate_z_level_linkages	code/controllers/subsystem/mapping.dm:222		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	generate_linkages_for_z_level	code/controllers/subsystem/mapping.dm:226	z_level	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	calculate_z_level_gravity	code/controllers/subsystem/mapping.dm:241	z_level_number	yes	full	proc root
-proc	/datum/controller/subsystem/mapping	setup_ruins	code/controllers/subsystem/mapping.dm:259		yes	skeleton	proc root
-proc	/datum/controller/subsystem/mapping	load_reserved_ruins	code/controllers/subsystem/mapping.dm:282		yes	skeleton	proc root
-proc	/datum/controller/subsystem/mapping	load_ruin_now	code/controllers/subsystem/mapping.dm:294	reserved_ruin,central_turf,clear_below	yes	skeleton	proc root
+proc	/datum/controller/subsystem/mapping	setup_ruins	code/controllers/subsystem/mapping.dm:259		yes	full	proc root
+proc	/datum/controller/subsystem/mapping	load_reserved_ruins	code/controllers/subsystem/mapping.dm:282		yes	full	proc root
+proc	/datum/controller/subsystem/mapping	load_ruin_now	code/controllers/subsystem/mapping.dm:294	reserved_ruin,central_turf,clear_below	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	setup_rivers	code/controllers/subsystem/mapping.dm:303		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	wipe_reservations	code/controllers/subsystem/mapping.dm:317	wipe_safety_delay	yes	skeleton	proc root
 proc	/datum/controller/subsystem/mapping	safety_clear_transit_dock	code/controllers/subsystem/mapping.dm:339	T,M,returning	yes	skeleton	proc root
@@ -3627,7 +3627,7 @@ proc	/datum/controller/subsystem/mapping	generate_station_area_list	code/control
 proc	/datum/controller/subsystem/mapping	run_map_terrain_generation	code/controllers/subsystem/mapping.dm:523		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	run_map_terrain_population	code/controllers/subsystem/mapping.dm:528		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadTemplates	code/controllers/subsystem/mapping.dm:532	path	yes	full	proc root
-proc	/datum/controller/subsystem/mapping	preloadRuinTemplates	code/controllers/subsystem/mapping.dm:543		yes	deferred	proc root
+proc	/datum/controller/subsystem/mapping	preloadRuinTemplates	code/controllers/subsystem/mapping.dm:543		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadShuttleTemplates	code/controllers/subsystem/mapping.dm:568		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadShelterTemplates	code/controllers/subsystem/mapping.dm:583		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	preloadHolodeckTemplates	code/controllers/subsystem/mapping.dm:593		yes	deferred	proc root
@@ -3638,7 +3638,7 @@ proc	/datum/controller/subsystem/mapping	reserve_turfs	code/controllers/subsyste
 proc	/datum/controller/subsystem/mapping	do_wipe_turf_reservations	code/controllers/subsystem/mapping.dm:710		yes	skeleton	proc root
 proc	/datum/controller/subsystem/mapping	initialize_biomes	code/controllers/subsystem/mapping.dm:728		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	reg_in_areas_in_z	code/controllers/subsystem/mapping.dm:733	areas	yes	full	proc root
-proc	/datum/controller/subsystem/mapping	get_isolated_ruin_z	code/controllers/subsystem/mapping.dm:738		yes	skeleton	proc root
+proc	/datum/controller/subsystem/mapping	get_isolated_ruin_z	code/controllers/subsystem/mapping.dm:738		yes	full	proc root
 proc	/datum/controller/subsystem/mapping	manage_z_level	code/controllers/subsystem/mapping.dm:746	new_z,filled_with_space,contain_turfs	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	build_area_turfs	code/controllers/subsystem/mapping.dm:775	z_level,space_guaranteed	yes	full	proc root
 proc	/datum/controller/subsystem/mapping	update_plane_tracking	code/controllers/subsystem/mapping.dm:789	update_with	yes	full	proc root
@@ -11513,17 +11513,17 @@ type	/datum/outfit/nanotrasencommander	/datum/outfit	code/modules/mob_spawn/corp
 type	/datum/outfit/nanotrasensoldier	/datum/outfit	code/modules/mob_spawn/corpses/nanotrasen_corpses.dm:41	live	datum_outfit_nanotrasensoldier	0	0
 type	/datum/outfit/abductorcorpse	/datum/outfit	code/modules/mob_spawn/corpses/species_corpses.dm:46	live	datum_outfit_abductorcorpse	0	0
 type	/datum/outfit/hermit	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:51	live	datum_outfit_hermit	0	0
-type	/datum/outfit/beachbum	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:98	inert	datum_outfit_beachbum	0	0
-proc	/datum/outfit/beachbum	post_equip	code/modules/mob_spawn/ghost_roles/mining_roles.dm:105	bum,visuals_only	no	-	proc
-type	/datum/outfit/beachbum/lifeguard	/datum/outfit/beachbum	code/modules/mob_spawn/ghost_roles/mining_roles.dm:112	inert	datum_outfit_beachbum_lifeguard	0	0
-type	/datum/outfit/spacebartender	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:128	inert	datum_outfit_spacebartender	0	0
-proc	/datum/outfit/spacebartender	post_equip	code/modules/mob_spawn/ghost_roles/mining_roles.dm:138	bartender,visuals_only	no	-	proc
+type	/datum/outfit/beachbum	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:98	live	datum_outfit_beachbum	1	0
+proc	/datum/outfit/beachbum	post_equip	code/modules/mob_spawn/ghost_roles/mining_roles.dm:105	bum,visuals_only	yes	full	proc
+type	/datum/outfit/beachbum/lifeguard	/datum/outfit/beachbum	code/modules/mob_spawn/ghost_roles/mining_roles.dm:112	live	datum_outfit_beachbum_lifeguard	0	0
+type	/datum/outfit/spacebartender	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:128	live	datum_outfit_spacebartender	1	0
+proc	/datum/outfit/spacebartender	post_equip	code/modules/mob_spawn/ghost_roles/mining_roles.dm:138	bartender,visuals_only	yes	full	proc
 type	/datum/outfit/ashwalker	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:271	live	datum_outfit_ashwalker	0	0
 type	/datum/outfit/ashwalker/spear	/datum/outfit/ashwalker	code/modules/mob_spawn/ghost_roles/mining_roles.dm:276	live	datum_outfit_ashwalker_spear	0	0
-type	/datum/outfit/lavaland_syndicate	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:307	inert	datum_outfit_lavaland_syndicate	0	0
-proc	/datum/outfit/lavaland_syndicate	post_equip	code/modules/mob_spawn/ghost_roles/mining_roles.dm:323	syndicate,visuals_only	no	-	proc
-type	/datum/outfit/lavaland_syndicate/comms	/datum/outfit/lavaland_syndicate	code/modules/mob_spawn/ghost_roles/mining_roles.dm:327	inert	datum_outfit_lavaland_syndicate_comms	0	0
-type	/datum/outfit/lavaland_syndicate/comms/icemoon	/datum/outfit/lavaland_syndicate/comms	code/modules/mob_spawn/ghost_roles/mining_roles.dm:335	inert	datum_outfit_lavaland_syndicate_comms_icemoon	0	0
+type	/datum/outfit/lavaland_syndicate	/datum/outfit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:307	live	datum_outfit_lavaland_syndicate	1	0
+proc	/datum/outfit/lavaland_syndicate	post_equip	code/modules/mob_spawn/ghost_roles/mining_roles.dm:323	syndicate,visuals_only	yes	full	proc
+type	/datum/outfit/lavaland_syndicate/comms	/datum/outfit/lavaland_syndicate	code/modules/mob_spawn/ghost_roles/mining_roles.dm:327	live	datum_outfit_lavaland_syndicate_comms	0	0
+type	/datum/outfit/lavaland_syndicate/comms/icemoon	/datum/outfit/lavaland_syndicate/comms	code/modules/mob_spawn/ghost_roles/mining_roles.dm:335	live	datum_outfit_lavaland_syndicate_comms_icemoon	0	0
 type	/datum/outfit/oldsec	/datum/outfit	code/modules/mob_spawn/ghost_roles/space_roles.dm:43	live	datum_outfit_oldsec	0	0
 type	/datum/outfit/oldeng	/datum/outfit	code/modules/mob_spawn/ghost_roles/space_roles.dm:57	live	datum_outfit_oldeng	0	0
 type	/datum/outfit/oldeng/mod	/datum/outfit/oldeng	code/modules/mob_spawn/ghost_roles/space_roles.dm:65	live	datum_outfit_oldeng_mod	0	0
@@ -11616,10 +11616,10 @@ proc	/datum/map_template	update_blacklist	code/modules/mapping/map_template.dm:2
 proc	/datum/map_template	get_affected_turfs	code/modules/mapping/map_template.dm:204	T,centered	yes	full	proc root
 proc	/datum/map_template	discover_offset	code/modules/mapping/map_template.dm:213	marker	yes	full	proc root
 type	/datum/map_template/ruin	/datum/map_template	code/datums/ruins.dm:3	base	datum_map_template_ruin	1	0
-proc	/datum/map_template/ruin	New	code/datums/ruins.dm:36		no	-	proc
-proc	/datum/map_template/ruin	try_to_place	code/modules/mapping/ruins.dm:1	z,allowed_areas_typecache,forced_turf,clear_below	no	-	proc root
-proc	/datum/map_template/ruin	reserve_isolated_level	code/modules/mapping/ruins.dm:38	z	no	-	proc root
-proc	/datum/map_template/ruin	load_reserved	code/modules/mapping/ruins.dm:49	central_turf,clear_below	no	-	proc root
+proc	/datum/map_template/ruin	New	code/datums/ruins.dm:36		yes	full	proc
+proc	/datum/map_template/ruin	try_to_place	code/modules/mapping/ruins.dm:1	z,allowed_areas_typecache,forced_turf,clear_below	yes	full	proc root
+proc	/datum/map_template/ruin	reserve_isolated_level	code/modules/mapping/ruins.dm:38	z	yes	full	proc root
+proc	/datum/map_template/ruin	load_reserved	code/modules/mapping/ruins.dm:49	central_turf,clear_below	yes	full	proc root
 type	/datum/map_template/ruin/icemoon	/datum/map_template/ruin	code/datums/ruins/icemoon.dm:4	live	datum_map_template_ruin_icemoon	0	0
 type	/datum/map_template/ruin/icemoon/gas	/datum/map_template/ruin/icemoon	code/datums/ruins/icemoon.dm:16	live	datum_map_template_ruin_icemoon_gas	0	0
 type	/datum/map_template/ruin/icemoon/lust	/datum/map_template/ruin/icemoon	code/datums/ruins/icemoon.dm:22	live	datum_map_template_ruin_icemoon_lust	0	0
@@ -11680,8 +11680,8 @@ type	/datum/map_template/ruin/lavaland/hierophant	/datum/map_template/ruin/laval
 type	/datum/map_template/ruin/lavaland/blood_drunk_miner	/datum/map_template/ruin/lavaland	code/datums/ruins/lavaland.dm:152	live	datum_map_template_ruin_lavaland_blood_drunk_miner	0	0
 type	/datum/map_template/ruin/lavaland/blood_drunk_miner/guidance	/datum/map_template/ruin/lavaland/blood_drunk_miner	code/datums/ruins/lavaland.dm:161	live	datum_map_template_ruin_lavaland_blood_drunk_miner_guidance	0	0
 type	/datum/map_template/ruin/lavaland/blood_drunk_miner/hunter	/datum/map_template/ruin/lavaland/blood_drunk_miner	code/datums/ruins/lavaland.dm:166	live	datum_map_template_ruin_lavaland_blood_drunk_miner_hunter	0	0
-type	/datum/map_template/ruin/lavaland/blood_drunk_miner/random	/datum/map_template/ruin/lavaland/blood_drunk_miner	code/datums/ruins/lavaland.dm:171	inert	datum_map_template_ruin_lavaland_blood_drunk_miner_random	0	0
-proc	/datum/map_template/ruin/lavaland/blood_drunk_miner/random	New	code/datums/ruins/lavaland.dm:175		no	-	proc
+type	/datum/map_template/ruin/lavaland/blood_drunk_miner/random	/datum/map_template/ruin/lavaland/blood_drunk_miner	code/datums/ruins/lavaland.dm:171	live	datum_map_template_ruin_lavaland_blood_drunk_miner_random	1	0
+proc	/datum/map_template/ruin/lavaland/blood_drunk_miner/random	New	code/datums/ruins/lavaland.dm:175		yes	full	proc
 type	/datum/map_template/ruin/lavaland/ufo_crash	/datum/map_template/ruin/lavaland	code/datums/ruins/lavaland.dm:180	live	datum_map_template_ruin_lavaland_ufo_crash	0	0
 type	/datum/map_template/ruin/lavaland/xeno_nest	/datum/map_template/ruin/lavaland	code/datums/ruins/lavaland.dm:188	live	datum_map_template_ruin_lavaland_xeno_nest	0	0
 type	/datum/map_template/ruin/lavaland/fountain	/datum/map_template/ruin/lavaland	code/datums/ruins/lavaland.dm:197	live	datum_map_template_ruin_lavaland_fountain	0	0
@@ -13231,17 +13231,17 @@ proc	/datum/status_effect/confusion	on_creation	code/datums/status_effects/debuf
 proc	/datum/status_effect/confusion	on_apply	code/datums/status_effects/debuffs/confusion.dm:18		yes	full	proc
 proc	/datum/status_effect/confusion	on_remove	code/datums/status_effects/debuffs/confusion.dm:22		yes	full	proc
 proc	/datum/status_effect/confusion	on_move	code/datums/status_effects/debuffs/confusion.dm:26	source,move_args	yes	full	proc root
-type	/datum/status_effect/slot_machine_curse	/datum/status_effect	code/datums/status_effects/debuffs/cursed.dm:6	inert	datum_status_effect_slot_machine_curse	0	0
-proc	/datum/status_effect/slot_machine_curse	on_apply	code/datums/status_effects/debuffs/cursed.dm:23		no	-	proc
-proc	/datum/status_effect/slot_machine_curse	Destroy	code/datums/status_effects/debuffs/cursed.dm:31		no	-	proc
-proc	/datum/status_effect/slot_machine_curse	check_curses	code/datums/status_effects/debuffs/cursed.dm:39	user,max_curse_amount	no	-	proc root
-proc	/datum/status_effect/slot_machine_curse	update_curse_count	code/datums/status_effects/debuffs/cursed.dm:49		no	-	proc root
-proc	/datum/status_effect/slot_machine_curse	handle_after_effects	code/datums/status_effects/debuffs/cursed.dm:58		no	-	proc root
-proc	/datum/status_effect/slot_machine_curse	clear_curses	code/datums/status_effects/debuffs/cursed.dm:117		no	-	proc root
-proc	/datum/status_effect/slot_machine_curse	on_stat_changed	code/datums/status_effects/debuffs/cursed.dm:131		no	-	proc root
-proc	/datum/status_effect/slot_machine_curse	on_death	code/datums/status_effects/debuffs/cursed.dm:141	source,gibbed	no	-	proc root
-proc	/datum/status_effect/slot_machine_curse	update_particles	code/datums/status_effects/debuffs/cursed.dm:147		no	-	proc
-proc	/datum/status_effect/slot_machine_curse	tick	code/datums/status_effects/debuffs/cursed.dm:163	seconds_between_ticks	no	-	proc
+type	/datum/status_effect/slot_machine_curse	/datum/status_effect	code/datums/status_effects/debuffs/cursed.dm:6	live	datum_status_effect_slot_machine_curse	1	0
+proc	/datum/status_effect/slot_machine_curse	on_apply	code/datums/status_effects/debuffs/cursed.dm:23		yes	full	proc
+proc	/datum/status_effect/slot_machine_curse	Destroy	code/datums/status_effects/debuffs/cursed.dm:31		yes	full	proc
+proc	/datum/status_effect/slot_machine_curse	check_curses	code/datums/status_effects/debuffs/cursed.dm:39	user,max_curse_amount	yes	full	proc root
+proc	/datum/status_effect/slot_machine_curse	update_curse_count	code/datums/status_effects/debuffs/cursed.dm:49		yes	full	proc root
+proc	/datum/status_effect/slot_machine_curse	handle_after_effects	code/datums/status_effects/debuffs/cursed.dm:58		yes	full	proc root
+proc	/datum/status_effect/slot_machine_curse	clear_curses	code/datums/status_effects/debuffs/cursed.dm:117		yes	full	proc root
+proc	/datum/status_effect/slot_machine_curse	on_stat_changed	code/datums/status_effects/debuffs/cursed.dm:131		yes	full	proc root
+proc	/datum/status_effect/slot_machine_curse	on_death	code/datums/status_effects/debuffs/cursed.dm:141	source,gibbed	yes	full	proc root
+proc	/datum/status_effect/slot_machine_curse	update_particles	code/datums/status_effects/debuffs/cursed.dm:147		yes	full	proc
+proc	/datum/status_effect/slot_machine_curse	tick	code/datums/status_effects/debuffs/cursed.dm:163	seconds_between_ticks	yes	full	proc
 type	/datum/status_effect/borg_slow	/datum/status_effect	code/datums/status_effects/debuffs/cyborg.dm:3	live	datum_status_effect_borg_slow	1	0
 proc	/datum/status_effect/borg_slow	on_creation	code/datums/status_effects/debuffs/cyborg.dm:12	new_owner,slowdown	yes	full	proc
 proc	/datum/status_effect/borg_slow	on_apply	code/datums/status_effects/debuffs/cyborg.dm:16		yes	full	proc
@@ -21048,9 +21048,9 @@ proc	/datum/component/riding/vehicle	RegisterWithParent	code/datums/components/r
 proc	/datum/component/riding/vehicle	riding_can_z_move	code/datums/components/riding/riding_vehicle.dm:12	movable_parent,direction,start,destination,z_move_flags,rider	yes	full	proc
 proc	/datum/component/riding/vehicle	driver_move	code/datums/components/riding/riding_vehicle.dm:35	movable_parent,user,direction	yes	full	proc
 proc	/datum/component/riding/vehicle	handle_ride	code/datums/components/riding/riding_vehicle.dm:86	user,direction	yes	full	proc root
-type	/datum/component/riding/vehicle/atv	/datum/component/riding/vehicle	code/datums/components/riding/riding_vehicle.dm:111	inert	datum_component_riding_vehicle_atv	0	0
-proc	/datum/component/riding/vehicle/atv	get_rider_offsets_and_layers	code/datums/components/riding/riding_vehicle.dm:115	pass_index,offsetter	no	-	proc
-proc	/datum/component/riding/vehicle/atv	get_parent_offsets_and_layers	code/datums/components/riding/riding_vehicle.dm:123		no	-	proc
+type	/datum/component/riding/vehicle/atv	/datum/component/riding/vehicle	code/datums/components/riding/riding_vehicle.dm:111	live	datum_component_riding_vehicle_atv	1	0
+proc	/datum/component/riding/vehicle/atv	get_rider_offsets_and_layers	code/datums/components/riding/riding_vehicle.dm:115	pass_index,offsetter	yes	full	proc
+proc	/datum/component/riding/vehicle/atv	get_parent_offsets_and_layers	code/datums/components/riding/riding_vehicle.dm:123		yes	full	proc
 type	/datum/component/riding/vehicle/bicycle	/datum/component/riding/vehicle	code/datums/components/riding/riding_vehicle.dm:132	inert	datum_component_riding_vehicle_bicycle	0	0
 proc	/datum/component/riding/vehicle/bicycle	get_rider_offsets_and_layers	code/datums/components/riding/riding_vehicle.dm:135	pass_index,offsetter	no	-	proc
 type	/datum/component/riding/vehicle/lavaboat	/datum/component/riding/vehicle	code/datums/components/riding/riding_vehicle.dm:144	live	datum_component_riding_vehicle_lavaboat	1	0
@@ -23803,13 +23803,13 @@ proc	/datum/element/body_temp_sensitive	Attach	code/datums/elements/body_temp_se
 proc	/datum/element/body_temp_sensitive	Detach	code/datums/elements/body_temp_sensitive.dm:41	source	yes	full	proc
 proc	/datum/element/body_temp_sensitive	on_life	code/datums/elements/body_temp_sensitive.dm:46	target,seconds_per_tick	yes	full	proc root
 proc	/datum/element/body_temp_sensitive	check_safe_environment	code/datums/elements/body_temp_sensitive.dm:79	living_mob	yes	deferred	proc root
-type	/datum/element/bombable_turf	/datum/element	code/datums/elements/bombable_turf.dm:8	inert	datum_element_bombable_turf	0	0
-proc	/datum/element/bombable_turf	Attach	code/datums/elements/bombable_turf.dm:8	target	no	-	proc
-proc	/datum/element/bombable_turf	Detach	code/datums/elements/bombable_turf.dm:21	source	no	-	proc
-proc	/datum/element/bombable_turf	detonate	code/datums/elements/bombable_turf.dm:28	source	no	-	proc root
-proc	/datum/element/bombable_turf	turf_changed	code/datums/elements/bombable_turf.dm:33	source	no	-	proc root
-proc	/datum/element/bombable_turf	on_update_overlays	code/datums/elements/bombable_turf.dm:38	source,overlays	no	-	proc root
-proc	/datum/element/bombable_turf	on_examined	code/datums/elements/bombable_turf.dm:43	source,user,examine_list	no	-	proc root
+type	/datum/element/bombable_turf	/datum/element	code/datums/elements/bombable_turf.dm:8	live	datum_element_bombable_turf	1	0
+proc	/datum/element/bombable_turf	Attach	code/datums/elements/bombable_turf.dm:8	target	yes	full	proc
+proc	/datum/element/bombable_turf	Detach	code/datums/elements/bombable_turf.dm:21	source	yes	full	proc
+proc	/datum/element/bombable_turf	detonate	code/datums/elements/bombable_turf.dm:28	source	yes	full	proc root
+proc	/datum/element/bombable_turf	turf_changed	code/datums/elements/bombable_turf.dm:33	source	yes	full	proc root
+proc	/datum/element/bombable_turf	on_update_overlays	code/datums/elements/bombable_turf.dm:38	source,overlays	yes	full	proc root
+proc	/datum/element/bombable_turf	on_examined	code/datums/elements/bombable_turf.dm:43	source,user,examine_list	yes	full	proc root
 type	/datum/element/bonus_damage	/datum/element	code/datums/elements/bonus_damage.dm:6	inert	datum_element_bonus_damage	0	0
 proc	/datum/element/bonus_damage	Attach	code/datums/elements/bonus_damage.dm:10	target,damage_percentage,brute_damage_amount	no	-	proc
 proc	/datum/element/bonus_damage	Detach	code/datums/elements/bonus_damage.dm:19	source	no	-	proc
@@ -28614,13 +28614,13 @@ type	/datum/antagonist/abductee	/datum/antagonist	code/modules/antagonists/abduc
 proc	/datum/antagonist/abductee	on_gain	code/modules/antagonists/abductor/abductee/abductee.dm:14		no	-	proc
 proc	/datum/antagonist/abductee	greet	code/modules/antagonists/abductor/abductee/abductee.dm:18		no	-	proc
 proc	/datum/antagonist/abductee	give_objective	code/modules/antagonists/abductor/abductee/abductee.dm:24		no	-	proc root
-type	/datum/antagonist/ashwalker	/datum/antagonist	code/modules/antagonists/ashwalker/ashwalker.dm:2	inert	datum_antagonist_ashwalker	0	0
-proc	/datum/antagonist/ashwalker	create_team	code/modules/antagonists/ashwalker/ashwalker.dm:11	ashwalker_team	no	-	proc
-proc	/datum/antagonist/ashwalker	get_team	code/modules/antagonists/ashwalker/ashwalker.dm:18		no	-	proc
-proc	/datum/antagonist/ashwalker	on_body_transfer	code/modules/antagonists/ashwalker/ashwalker.dm:21	old_body,new_body	no	-	proc
-proc	/datum/antagonist/ashwalker	on_gain	code/modules/antagonists/ashwalker/ashwalker.dm:26		no	-	proc
-proc	/datum/antagonist/ashwalker	on_removal	code/modules/antagonists/ashwalker/ashwalker.dm:32		no	-	proc
-proc	/datum/antagonist/ashwalker	on_examinate	code/modules/antagonists/ashwalker/ashwalker.dm:39	source,A	no	-	proc root
+type	/datum/antagonist/ashwalker	/datum/antagonist	code/modules/antagonists/ashwalker/ashwalker.dm:2	live	datum_antagonist_ashwalker	1	0
+proc	/datum/antagonist/ashwalker	create_team	code/modules/antagonists/ashwalker/ashwalker.dm:11	ashwalker_team	yes	full	proc
+proc	/datum/antagonist/ashwalker	get_team	code/modules/antagonists/ashwalker/ashwalker.dm:18		yes	full	proc
+proc	/datum/antagonist/ashwalker	on_body_transfer	code/modules/antagonists/ashwalker/ashwalker.dm:21	old_body,new_body	yes	full	proc
+proc	/datum/antagonist/ashwalker	on_gain	code/modules/antagonists/ashwalker/ashwalker.dm:26		yes	full	proc
+proc	/datum/antagonist/ashwalker	on_removal	code/modules/antagonists/ashwalker/ashwalker.dm:32		yes	full	proc
+proc	/datum/antagonist/ashwalker	on_examinate	code/modules/antagonists/ashwalker/ashwalker.dm:39	source,A	yes	full	proc root
 type	/datum/antagonist/battlecruiser	/datum/antagonist	code/modules/antagonists/battlecruiser/battlecruiser.dm:16	inert	datum_antagonist_battlecruiser	0	0
 proc	/datum/antagonist/battlecruiser	get_team	code/modules/antagonists/battlecruiser/battlecruiser.dm:27		no	-	proc
 proc	/datum/antagonist/battlecruiser	greet	code/modules/antagonists/battlecruiser/battlecruiser.dm:30		no	-	proc
@@ -33475,8 +33475,8 @@ proc	/datum/team	antag_listing_name	code/modules/antagonists/_common/antag_team.
 type	/datum/team/abductor_team	/datum/team	code/modules/antagonists/abductor/abductor.dm:198	inert	datum_team_abductor_team	0	0
 proc	/datum/team/abductor_team	New	code/modules/antagonists/abductor/abductor.dm:206		no	-	proc
 proc	/datum/team/abductor_team	roundend_report	code/modules/antagonists/abductor/abductor.dm:215		no	-	proc
-type	/datum/team/ashwalkers	/datum/team	code/modules/antagonists/ashwalker/ashwalker.dm:46	inert	datum_team_ashwalkers	0	0
-proc	/datum/team/ashwalkers	roundend_report	code/modules/antagonists/ashwalker/ashwalker.dm:53		no	-	proc
+type	/datum/team/ashwalkers	/datum/team	code/modules/antagonists/ashwalker/ashwalker.dm:46	live	datum_team_ashwalkers	1	0
+proc	/datum/team/ashwalkers	roundend_report	code/modules/antagonists/ashwalker/ashwalker.dm:53		yes	full	proc
 type	/datum/team/battlecruiser	/datum/team	code/modules/antagonists/battlecruiser/battlecruiser.dm:2	inert	datum_team_battlecruiser	0	0
 proc	/datum/team/battlecruiser	update_objectives	code/modules/antagonists/battlecruiser/battlecruiser.dm:9		no	-	proc root
 type	/datum/team/blood_worm	/datum/team	code/modules/antagonists/blood_worm/blood_worm_team.dm:2	inert	datum_team_blood_worm	0	0
@@ -50266,8 +50266,8 @@ type	/atom/movable/screen/alert/status_effect/ashstorm_immune	/atom/movable/scre
 type	/atom/movable/screen/alert/status_effect/waddle	/atom/movable/screen/alert/status_effect	code/datums/status_effects/buffs/food/grant_trait.dm:57	live	atom_movable_screen_alert_status_effect_waddle	0	0
 type	/atom/movable/screen/alert/status_effect/italian_speech	/atom/movable/screen/alert/status_effect	code/datums/status_effects/buffs/food/speech.dm:29	live	atom_movable_screen_alert_status_effect_italian_speech	0	0
 type	/atom/movable/screen/alert/status_effect/french_speech	/atom/movable/screen/alert/status_effect	code/datums/status_effects/buffs/food/speech.dm:58	live	atom_movable_screen_alert_status_effect_french_speech	0	0
-type	/atom/movable/screen/alert/status_effect/cursed	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/cursed.dm:179	inert	atom_movable_screen_alert_status_effect_cursed	0	0
-proc	/atom/movable/screen/alert/status_effect/cursed	update_desc	code/datums/status_effects/debuffs/cursed.dm:184		no	-	proc
+type	/atom/movable/screen/alert/status_effect/cursed	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/cursed.dm:179	live	atom_movable_screen_alert_status_effect_cursed	1	0
+proc	/atom/movable/screen/alert/status_effect/cursed	update_desc	code/datums/status_effects/debuffs/cursed.dm:184		yes	full	proc
 type	/atom/movable/screen/alert/status_effect/asleep	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/debuffs.dm:334	base	atom_movable_screen_alert_status_effect_asleep	1	0
 type	/atom/movable/screen/alert/status_effect/stasis	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/debuffs.dm:382	live	atom_movable_screen_alert_status_effect_stasis	0	0
 type	/atom/movable/screen/alert/status_effect/his_wrath	/atom/movable/screen/alert/status_effect	code/datums/status_effects/debuffs/debuffs.dm:400	live	atom_movable_screen_alert_status_effect_his_wrath	0	0
@@ -54174,16 +54174,16 @@ type	/mob/living/basic/wizard/buffwiz	/mob/living/basic/wizard	code/modules/away
 type	/mob/living/basic/wizard/tired	/mob/living/basic/wizard	code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:51	inert	mob_living_basic_wizard_tired	0	0
 type	/mob/living/basic/wizard/high_magus	/mob/living/basic/wizard	code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:61	inert	mob_living_basic_wizard_high_magus	0	0
 type	/mob/living/basic/wizard/classic	/mob/living/basic/wizard	code/modules/mob/living/basic/ruin_defender/wizard/wizard.dm:91	inert	mob_living_basic_wizard_classic	0	0
-type	/mob/living/basic/skeleton	/mob/living/basic	code/modules/mob/living/basic/ruin_defender/skeleton.dm:2	inert	mob_living_basic_skeleton	0	0
-proc	/mob/living/basic/skeleton	Initialize	code/modules/mob/living/basic/ruin_defender/skeleton.dm:44	mapload	no	-	proc
-proc	/mob/living/basic/skeleton	get_unconscious_appearance	code/modules/mob/living/basic/ruin_defender/skeleton.dm:57		no	-	proc
-type	/mob/living/basic/skeleton/templar	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:87	inert	mob_living_basic_skeleton_templar	0	0
-type	/mob/living/basic/skeleton/templar/academy	/mob/living/basic/skeleton/templar	code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:70	inert	mob_living_basic_skeleton_templar_academy	0	0
-type	/mob/living/basic/skeleton/templar/leader	/mob/living/basic/skeleton/templar	code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:100	inert	mob_living_basic_skeleton_templar_leader	0	0
-type	/mob/living/basic/skeleton/settler	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:61	inert	mob_living_basic_skeleton_settler	0	0
-type	/mob/living/basic/skeleton/ice	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:116	inert	mob_living_basic_skeleton_ice	0	0
-type	/mob/living/basic/skeleton/plasmaminer	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:125	inert	mob_living_basic_skeleton_plasmaminer	0	0
-type	/mob/living/basic/skeleton/plasmaminer/jackhammer	/mob/living/basic/skeleton/plasmaminer	code/modules/mob/living/basic/ruin_defender/skeleton.dm:142	inert	mob_living_basic_skeleton_plasmaminer_jackhammer	0	0
+type	/mob/living/basic/skeleton	/mob/living/basic	code/modules/mob/living/basic/ruin_defender/skeleton.dm:2	live	mob_living_basic_skeleton	1	0
+proc	/mob/living/basic/skeleton	Initialize	code/modules/mob/living/basic/ruin_defender/skeleton.dm:44	mapload	yes	full	proc
+proc	/mob/living/basic/skeleton	get_unconscious_appearance	code/modules/mob/living/basic/ruin_defender/skeleton.dm:57		yes	full	proc
+type	/mob/living/basic/skeleton/templar	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:87	live	mob_living_basic_skeleton_templar	0	0
+type	/mob/living/basic/skeleton/templar/academy	/mob/living/basic/skeleton/templar	code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:70	live	mob_living_basic_skeleton_templar_academy	0	0
+type	/mob/living/basic/skeleton/templar/leader	/mob/living/basic/skeleton/templar	code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:100	live	mob_living_basic_skeleton_templar_leader	0	0
+type	/mob/living/basic/skeleton/settler	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:61	live	mob_living_basic_skeleton_settler	0	0
+type	/mob/living/basic/skeleton/ice	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:116	live	mob_living_basic_skeleton_ice	0	0
+type	/mob/living/basic/skeleton/plasmaminer	/mob/living/basic/skeleton	code/modules/mob/living/basic/ruin_defender/skeleton.dm:125	live	mob_living_basic_skeleton_plasmaminer	0	0
+type	/mob/living/basic/skeleton/plasmaminer/jackhammer	/mob/living/basic/skeleton/plasmaminer	code/modules/mob/living/basic/ruin_defender/skeleton.dm:142	live	mob_living_basic_skeleton_plasmaminer_jackhammer	0	0
 type	/mob/living/basic/trooper	/mob/living/basic	code/modules/mob/living/basic/trooper/trooper.dm:2	live	mob_living_basic_trooper	1	0
 proc	/mob/living/basic/trooper	Initialize	code/modules/mob/living/basic/trooper/trooper.dm:32	mapload	yes	full	proc
 proc	/mob/living/basic/trooper	get_unconscious_appearance	code/modules/mob/living/basic/trooper/trooper.dm:41		yes	full	proc
@@ -55244,9 +55244,9 @@ proc	/mob/living/basic/cybersun_ai_core	update_overlays	code/modules/mob/living/
 proc	/mob/living/basic/cybersun_ai_core	LateInitialize	code/modules/mob/living/basic/ruin_defender/cybersun_aicore.dm:76		no	-	proc
 proc	/mob/living/basic/cybersun_ai_core	MatchedLinks	code/modules/mob/living/basic/ruin_defender/cybersun_aicore.dm:80	id,partners	no	-	proc
 proc	/mob/living/basic/cybersun_ai_core	death	code/modules/mob/living/basic/ruin_defender/cybersun_aicore.dm:86	gibbed	no	-	proc
-type	/mob/living/basic/dark_wizard	/mob/living/basic	code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:3	inert	mob_living_basic_dark_wizard	0	0
-proc	/mob/living/basic/dark_wizard	get_save_vars	code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:27		no	-	proc
-proc	/mob/living/basic/dark_wizard	Initialize	code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:30	mapload	no	-	proc
+type	/mob/living/basic/dark_wizard	/mob/living/basic	code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:3	live	mob_living_basic_dark_wizard	1	0
+proc	/mob/living/basic/dark_wizard	get_save_vars	code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:27		yes	full	proc
+proc	/mob/living/basic/dark_wizard	Initialize	code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:30	mapload	yes	full	proc
 type	/mob/living/basic/paper_wizard	/mob/living/basic	code/modules/mob/living/basic/space_fauna/paper_wizard/paper_wizard.dm:2	live	mob_living_basic_paper_wizard	1	0
 proc	/mob/living/basic/paper_wizard	get_unconscious_appearance	code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:56		yes	full	proc
 proc	/mob/living/basic/paper_wizard	Initialize	code/modules/mob/living/basic/space_fauna/paper_wizard/paper_wizard.dm:31	mapload	yes	full	proc
@@ -57028,8 +57028,8 @@ type	/obj/item/clothing/gloves/tackler/rocket	/obj/item/clothing/gloves/tackler	
 type	/obj/item/clothing/gloves/tackler/offbrand	/obj/item/clothing/gloves/tackler	code/modules/clothing/gloves/tacklers.dm:110	live	obj_item_clothing_gloves_tackler_offbrand	0	0
 type	/obj/item/clothing/gloves/tackler/football	/obj/item/clothing/gloves/tackler	code/modules/clothing/gloves/tacklers.dm:123	live	obj_item_clothing_gloves_tackler_football	0	0
 type	/obj/item/clothing/gloves/divine_archer	/obj/item/clothing/gloves	code/modules/jobs/job_types/chaplain/chaplain_divine_archer.dm:46	live	obj_item_clothing_gloves_divine_archer	0	0
-type	/obj/item/clothing/gloves/butchering	/obj/item/clothing/gloves	code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2	inert	obj_item_clothing_gloves_butchering	0	0
-proc	/obj/item/clothing/gloves/butchering	Initialize	code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:11	mapload	no	-	proc
+type	/obj/item/clothing/gloves/butchering	/obj/item/clothing/gloves	code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2	live	obj_item_clothing_gloves_butchering	1	0
+proc	/obj/item/clothing/gloves/butchering	Initialize	code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:11	mapload	yes	full	proc
 type	/obj/item/clothing/gloves/gauntlets	/obj/item/clothing/gloves	code/modules/mining/lavaland/mining_loot/clothing.dm:95	live	obj_item_clothing_gloves_gauntlets	1	0
 proc	/obj/item/clothing/gloves/gauntlets	Initialize	code/modules/mining/lavaland/mining_loot/clothing.dm:119	mapload	yes	full	proc
 proc	/obj/item/clothing/gloves/gauntlets	equipped	code/modules/mining/lavaland/mining_loot/clothing.dm:123	user,slot	yes	full	proc
@@ -58168,8 +58168,8 @@ proc	/obj/item/clothing/mask/chameleon/broken	Initialize	code/modules/clothing/c
 type	/obj/item/clothing/mask/chameleon/drone	/obj/item/clothing/mask/chameleon	code/modules/clothing/chameleon/generic_chameleon_clothing.dm:251	inert	obj_item_clothing_mask_chameleon_drone	0	0
 proc	/obj/item/clothing/mask/chameleon/drone	Initialize	code/modules/clothing/chameleon/generic_chameleon_clothing.dm:257	mapload	no	-	proc
 proc	/obj/item/clothing/mask/chameleon/drone	attack_self	code/modules/clothing/chameleon/generic_chameleon_clothing.dm:263	user	no	-	proc
-type	/obj/item/clothing/mask/chameleon/gps	/obj/item/clothing/mask/chameleon	code/modules/mob_spawn/ghost_roles/mining_roles.dm:339	inert	obj_item_clothing_mask_chameleon_gps	0	0
-proc	/obj/item/clothing/mask/chameleon/gps	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:339	mapload	no	-	proc
+type	/obj/item/clothing/mask/chameleon/gps	/obj/item/clothing/mask/chameleon	code/modules/mob_spawn/ghost_roles/mining_roles.dm:339	live	obj_item_clothing_mask_chameleon_gps	1	0
+proc	/obj/item/clothing/mask/chameleon/gps	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:339	mapload	yes	full	proc
 type	/obj/item/clothing/mask/animal	/obj/item/clothing/mask	code/modules/clothing/masks/animal_masks.dm:17	live	obj_item_clothing_mask_animal	1	1
 proc	/obj/item/clothing/mask/animal	Initialize	code/modules/clothing/masks/animal_masks.dm:31	mapload	yes	full	proc
 proc	/obj/item/clothing/mask/animal	equipped	code/modules/clothing/masks/animal_masks.dm:36	M,slot	yes	full	proc
@@ -63371,14 +63371,14 @@ type	/obj/item/food/egg/yellow	/obj/item/food/egg	code/modules/food_and_drinks/f
 type	/obj/item/food/egg/penguin_egg	/obj/item/food/egg	code/modules/food_and_drinks/food/egg.dm:182	live	obj_item_food_egg_penguin_egg	0	0
 type	/obj/item/food/egg/fertile	/obj/item/food/egg	code/modules/food_and_drinks/food/egg.dm:186	live	obj_item_food_egg_fertile	1	0
 proc	/obj/item/food/egg/fertile	Initialize	code/modules/food_and_drinks/food/egg.dm:190	mapload,loc	yes	full	proc
-type	/obj/item/food/egg/watcher	/obj/item/food/egg	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:19	inert	obj_item_food_egg_watcher	0	0
-proc	/obj/item/food/egg/watcher	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:32	mapload	no	-	proc
-proc	/obj/item/food/egg/watcher	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:36	force	no	-	proc
-proc	/obj/item/food/egg/watcher	spawn_impact_chick	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:40	spawn_turf	no	-	proc
-proc	/obj/item/food/egg/watcher	examine	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:43	user	no	-	proc
-proc	/obj/item/food/egg/watcher	examine_more	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:46	user	no	-	proc
-proc	/obj/item/food/egg/watcher	on_stepped	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:55	egg,mover,old_loc,direction	no	-	proc root
-proc	/obj/item/food/egg/watcher	jiggle	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:72		no	-	proc root
+type	/obj/item/food/egg/watcher	/obj/item/food/egg	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:19	live	obj_item_food_egg_watcher	1	0
+proc	/obj/item/food/egg/watcher	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:32	mapload	yes	full	proc
+proc	/obj/item/food/egg/watcher	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:36	force	yes	full	proc
+proc	/obj/item/food/egg/watcher	spawn_impact_chick	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:40	spawn_turf	yes	full	proc
+proc	/obj/item/food/egg/watcher	examine	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:43	user	yes	full	proc
+proc	/obj/item/food/egg/watcher	examine_more	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:46	user	yes	full	proc
+proc	/obj/item/food/egg/watcher	on_stepped	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:55	egg,mover,old_loc,direction	yes	full	proc root
+proc	/obj/item/food/egg/watcher	jiggle	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:72		yes	full	proc root
 type	/obj/item/food/egg/raptor_egg	/obj/item/food/egg	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:2	live	obj_item_food_egg_raptor_egg	1	0
 proc	/obj/item/food/egg/raptor_egg	Initialize	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:18	mapload	yes	full	proc
 proc	/obj/item/food/egg/raptor_egg	Destroy	code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:23		yes	full	proc
@@ -71939,10 +71939,10 @@ type	/obj/item/circuitboard/machine/mech_recharger	/obj/item/circuitboard/machin
 type	/obj/item/circuitboard/machine/mechfab	/obj/item/circuitboard/machine	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1024	live	obj_item_circuitboard_machine_mechfab	0	0
 type	/obj/item/circuitboard/machine/vatgrower	/obj/item/circuitboard/machine	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1034	live	obj_item_circuitboard_machine_vatgrower	0	0
 type	/obj/item/circuitboard/machine/monkey_recycler	/obj/item/circuitboard/machine	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1039	live	obj_item_circuitboard_machine_monkey_recycler	0	0
-type	/obj/item/circuitboard/machine/processor	/obj/item/circuitboard/machine	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383	inert	obj_item_circuitboard_machine_processor	0	0
-proc	/obj/item/circuitboard/machine/processor	screwdriver_act	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1391	user,tool	no	-	proc
-type	/obj/item/circuitboard/machine/processor/slime	/obj/item/circuitboard/machine/processor	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1048	inert	obj_item_circuitboard_machine_processor_slime	0	0
-type	/obj/item/circuitboard/machine/processor/slime/fullupgrade	/obj/item/circuitboard/machine/processor/slime	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1053	inert	obj_item_circuitboard_machine_processor_slime_fullupgrade	0	0
+type	/obj/item/circuitboard/machine/processor	/obj/item/circuitboard/machine	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383	live	obj_item_circuitboard_machine_processor	1	0
+proc	/obj/item/circuitboard/machine/processor	screwdriver_act	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1391	user,tool	yes	full	proc
+type	/obj/item/circuitboard/machine/processor/slime	/obj/item/circuitboard/machine/processor	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1048	live	obj_item_circuitboard_machine_processor_slime	0	0
+type	/obj/item/circuitboard/machine/processor/slime/fullupgrade	/obj/item/circuitboard/machine/processor/slime	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1053	live	obj_item_circuitboard_machine_processor_slime_fullupgrade	0	0
 type	/obj/item/circuitboard/machine/quantumpad	/obj/item/circuitboard/machine	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1066	live	obj_item_circuitboard_machine_quantumpad	0	0
 type	/obj/item/circuitboard/machine/rdserver	/obj/item/circuitboard/machine	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1077	live	obj_item_circuitboard_machine_rdserver	0	0
 type	/obj/item/circuitboard/machine/rdserver/oldstation	/obj/item/circuitboard/machine/rdserver	code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1086	live	obj_item_circuitboard_machine_rdserver_oldstation	0	0
@@ -74716,8 +74716,8 @@ proc	/obj/item/knife/kitchen/silicon	examine	code/modules/food_and_drinks/equipm
 proc	/obj/item/knife/kitchen/silicon	attack_self	code/modules/food_and_drinks/equipment/kitchen_utensils.dm:138	user	yes	full	proc
 type	/obj/item/knife/plastic	/obj/item/knife	code/modules/food_and_drinks/equipment/kitchen_utensils.dm:97	live	obj_item_knife_plastic	1	1
 proc	/obj/item/knife/plastic	Initialize	code/modules/food_and_drinks/equipment/kitchen_utensils.dm:113	mapload	yes	full	proc
-type	/obj/item/knife/envy	/obj/item/knife	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27	inert	obj_item_knife_envy	0	0
-proc	/obj/item/knife/envy	afterattack	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:40	target,user,modifiers,attack_modifiers	no	-	proc
+type	/obj/item/knife/envy	/obj/item/knife	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27	live	obj_item_knife_envy	1	0
+proc	/obj/item/knife/envy	afterattack	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:40	target,user,modifiers,attack_modifiers	yes	full	proc
 type	/obj/item/knife/rainbowknife	/obj/item/knife	code/modules/research/xenobiology/crossbreeding/_weapons.dm:21	live	obj_item_knife_rainbowknife	1	0
 proc	/obj/item/knife/rainbowknife	afterattack	code/modules/research/xenobiology/crossbreeding/_weapons.dm:30	target,user,modifiers,attack_modifiers	yes	full	proc
 type	/obj/item/goliath_infuser_hammer	/obj/item	code/game/machinery/dna_infuser/organ_sets/goliath_organs.dm:101	live	obj_item_goliath_infuser_hammer	1	0
@@ -81841,19 +81841,19 @@ proc	/obj/item/golem_shell	item_interaction	code/modules/mapfluff/ruins/lavaland
 proc	/obj/item/golem_shell	crowbar_act	code/modules/mapfluff/ruins/lavaland_ruin_code.dm:61	user,tool	no	-	proc
 type	/obj/item/golem_shell/servant	/obj/item/golem_shell	code/modules/mapfluff/ruins/lavaland_ruin_code.dm:78	inert	obj_item_golem_shell_servant	0	0
 type	/obj/item/feather	/obj/item	code/modules/mapfluff/ruins/icemoonruin_code/library.dm:39	live	obj_item_feather	0	0
-type	/obj/item/freeze_cube	/obj/item	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:6	inert	obj_item_freeze_cube	0	0
-proc	/obj/item/freeze_cube	examine	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:17	user	no	-	proc
-proc	/obj/item/freeze_cube	throw_at	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:21	target,range,speed,thrower,spin,diagonals_first,callback,gentle,quickstart,throw_type_path	no	-	proc
-proc	/obj/item/freeze_cube	throw_impact	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:28	hit_atom,throwingdatum	no	-	proc
-proc	/obj/item/freeze_cube	freeze_hit_atom	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:37	hit_atom	no	-	proc root
-type	/obj/item/prisoncube	/obj/item	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318	inert	obj_item_prisoncube	0	0
-proc	/obj/item/prisoncube	interact_with_atom	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:323	interacting_with,user,modifiers	no	-	proc
-type	/obj/item/watcher_hatchling	/obj/item	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:94	inert	obj_item_watcher_hatchling	0	0
-proc	/obj/item/watcher_hatchling	attack_self	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:104	user,modifiers	no	-	proc
-proc	/obj/item/watcher_hatchling	Moved	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:115	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc
-proc	/obj/item/watcher_hatchling	remove_owner	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:124		no	-	proc root
-proc	/obj/item/watcher_hatchling	remove_orbiter	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:130		no	-	proc root
-proc	/obj/item/watcher_hatchling	watcher_return	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:135		no	-	proc root
+type	/obj/item/freeze_cube	/obj/item	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:6	live	obj_item_freeze_cube	1	0
+proc	/obj/item/freeze_cube	examine	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:17	user	yes	full	proc
+proc	/obj/item/freeze_cube	throw_at	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:21	target,range,speed,thrower,spin,diagonals_first,callback,gentle,quickstart,throw_type_path	yes	full	proc
+proc	/obj/item/freeze_cube	throw_impact	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:28	hit_atom,throwingdatum	yes	full	proc
+proc	/obj/item/freeze_cube	freeze_hit_atom	code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:37	hit_atom	yes	full	proc root
+type	/obj/item/prisoncube	/obj/item	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318	live	obj_item_prisoncube	1	0
+proc	/obj/item/prisoncube	interact_with_atom	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:323	interacting_with,user,modifiers	yes	full	proc
+type	/obj/item/watcher_hatchling	/obj/item	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:94	live	obj_item_watcher_hatchling	1	0
+proc	/obj/item/watcher_hatchling	attack_self	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:104	user,modifiers	yes	full	proc
+proc	/obj/item/watcher_hatchling	Moved	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:115	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc
+proc	/obj/item/watcher_hatchling	remove_owner	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:124		yes	full	proc root
+proc	/obj/item/watcher_hatchling	remove_orbiter	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:130		yes	full	proc root
+proc	/obj/item/watcher_hatchling	watcher_return	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:135		yes	full	proc root
 type	/obj/item/eyesnatcher	/obj/item	code/modules/mapfluff/ruins/spaceruin_code/garbagetruck.dm:2	inert	obj_item_eyesnatcher	0	0
 proc	/obj/item/eyesnatcher	update_icon_state	code/modules/mapfluff/ruins/spaceruin_code/garbagetruck.dm:17		no	-	proc
 proc	/obj/item/eyesnatcher	attack	code/modules/mapfluff/ruins/spaceruin_code/garbagetruck.dm:21	target,user,modifiers,attack_modifiers	no	-	proc
@@ -84121,24 +84121,24 @@ type	/obj/machinery/door/airlock/highsecurity/syndicate	/obj/machinery/door/airl
 type	/obj/machinery/door/airlock/shuttle	/obj/machinery/door/airlock	code/game/machinery/doors/airlock.dm:2428	live	obj_machinery_door_airlock_shuttle	0	0
 type	/obj/machinery/door/airlock/shuttle/glass	/obj/machinery/door/airlock/shuttle	code/game/machinery/doors/airlock.dm:2434	live	obj_machinery_door_airlock_shuttle_glass	0	0
 type	/obj/machinery/door/airlock/abductor	/obj/machinery/door/airlock	code/game/machinery/doors/airlock.dm:2438	live	obj_machinery_door_airlock_abductor	0	0
-type	/obj/machinery/door/airlock/cult	/obj/machinery/door/airlock	code/game/machinery/doors/airlock.dm:2455	inert	obj_machinery_door_airlock_cult	1	0
-proc	/obj/machinery/door/airlock/cult	Initialize	code/game/machinery/doors/airlock.dm:2468	mapload	no	-	proc
-proc	/obj/machinery/door/airlock/cult	canAIControl	code/game/machinery/doors/airlock.dm:2473	user	no	-	proc
-proc	/obj/machinery/door/airlock/cult	on_break	code/game/machinery/doors/airlock.dm:2476		no	-	proc
-proc	/obj/machinery/door/airlock/cult	isElectrified	code/game/machinery/doors/airlock.dm:2479		no	-	proc
-proc	/obj/machinery/door/airlock/cult	hasPower	code/game/machinery/doors/airlock.dm:2482		no	-	proc
-proc	/obj/machinery/door/airlock/cult	allowed	code/game/machinery/doors/airlock.dm:2485	L	no	-	proc
-proc	/obj/machinery/door/airlock/cult	conceal	code/game/machinery/doors/airlock.dm:2503		yes	skeleton	proc root
-proc	/obj/machinery/door/airlock/cult	reveal	code/game/machinery/doors/airlock.dm:2511		yes	skeleton	proc root
-proc	/obj/machinery/door/airlock/cult	narsie_act	code/game/machinery/doors/airlock.dm:2519		no	-	proc
-type	/obj/machinery/door/airlock/cult/friendly	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2523	inert	obj_machinery_door_airlock_cult_friendly	0	0
-type	/obj/machinery/door/airlock/cult/glass	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2526	inert	obj_machinery_door_airlock_cult_glass	0	0
-type	/obj/machinery/door/airlock/cult/glass/friendly	/obj/machinery/door/airlock/cult/glass	code/game/machinery/doors/airlock.dm:2530	inert	obj_machinery_door_airlock_cult_glass_friendly	0	0
-type	/obj/machinery/door/airlock/cult/unruned	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2533	inert	obj_machinery_door_airlock_cult_unruned	0	0
-type	/obj/machinery/door/airlock/cult/unruned/friendly	/obj/machinery/door/airlock/cult/unruned	code/game/machinery/doors/airlock.dm:2539	inert	obj_machinery_door_airlock_cult_unruned_friendly	0	0
-type	/obj/machinery/door/airlock/cult/unruned/glass	/obj/machinery/door/airlock/cult/unruned	code/game/machinery/doors/airlock.dm:2542	inert	obj_machinery_door_airlock_cult_unruned_glass	0	0
-type	/obj/machinery/door/airlock/cult/unruned/glass/friendly	/obj/machinery/door/airlock/cult/unruned/glass	code/game/machinery/doors/airlock.dm:2546	inert	obj_machinery_door_airlock_cult_unruned_glass_friendly	0	0
-type	/obj/machinery/door/airlock/cult/weak	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2549	inert	obj_machinery_door_airlock_cult_weak	0	0
+type	/obj/machinery/door/airlock/cult	/obj/machinery/door/airlock	code/game/machinery/doors/airlock.dm:2455	live	obj_machinery_door_airlock_cult	1	0
+proc	/obj/machinery/door/airlock/cult	Initialize	code/game/machinery/doors/airlock.dm:2468	mapload	yes	full	proc
+proc	/obj/machinery/door/airlock/cult	canAIControl	code/game/machinery/doors/airlock.dm:2473	user	yes	full	proc
+proc	/obj/machinery/door/airlock/cult	on_break	code/game/machinery/doors/airlock.dm:2476		yes	full	proc
+proc	/obj/machinery/door/airlock/cult	isElectrified	code/game/machinery/doors/airlock.dm:2479		yes	full	proc
+proc	/obj/machinery/door/airlock/cult	hasPower	code/game/machinery/doors/airlock.dm:2482		yes	full	proc
+proc	/obj/machinery/door/airlock/cult	allowed	code/game/machinery/doors/airlock.dm:2485	L	yes	full	proc
+proc	/obj/machinery/door/airlock/cult	conceal	code/game/machinery/doors/airlock.dm:2503		yes	full	proc root
+proc	/obj/machinery/door/airlock/cult	reveal	code/game/machinery/doors/airlock.dm:2511		yes	full	proc root
+proc	/obj/machinery/door/airlock/cult	narsie_act	code/game/machinery/doors/airlock.dm:2519		yes	full	proc
+type	/obj/machinery/door/airlock/cult/friendly	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2523	live	obj_machinery_door_airlock_cult_friendly	0	0
+type	/obj/machinery/door/airlock/cult/glass	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2526	live	obj_machinery_door_airlock_cult_glass	0	0
+type	/obj/machinery/door/airlock/cult/glass/friendly	/obj/machinery/door/airlock/cult/glass	code/game/machinery/doors/airlock.dm:2530	live	obj_machinery_door_airlock_cult_glass_friendly	0	0
+type	/obj/machinery/door/airlock/cult/unruned	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2533	live	obj_machinery_door_airlock_cult_unruned	0	0
+type	/obj/machinery/door/airlock/cult/unruned/friendly	/obj/machinery/door/airlock/cult/unruned	code/game/machinery/doors/airlock.dm:2539	live	obj_machinery_door_airlock_cult_unruned_friendly	0	0
+type	/obj/machinery/door/airlock/cult/unruned/glass	/obj/machinery/door/airlock/cult/unruned	code/game/machinery/doors/airlock.dm:2542	live	obj_machinery_door_airlock_cult_unruned_glass	0	0
+type	/obj/machinery/door/airlock/cult/unruned/glass/friendly	/obj/machinery/door/airlock/cult/unruned/glass	code/game/machinery/doors/airlock.dm:2546	live	obj_machinery_door_airlock_cult_unruned_glass_friendly	0	0
+type	/obj/machinery/door/airlock/cult/weak	/obj/machinery/door/airlock/cult	code/game/machinery/doors/airlock.dm:2549	live	obj_machinery_door_airlock_cult_weak	0	0
 type	/obj/machinery/door/airlock/material	/obj/machinery/door/airlock	code/game/machinery/doors/airlock.dm:2558	inert	obj_machinery_door_airlock_material	0	0
 proc	/obj/machinery/door/airlock/material	close	code/game/machinery/doors/airlock.dm:2563	forced,force_crush	no	-	proc
 proc	/obj/machinery/door/airlock/material	prepare_deconstruction_assembly	code/game/machinery/doors/airlock.dm:2572	assembly	no	-	proc
@@ -84887,8 +84887,8 @@ proc	/obj/machinery/power/supermatter_crystal	consume_callback	code/modules/powe
 type	/obj/machinery/power/supermatter_crystal/shard	/obj/machinery/power/supermatter_crystal	code/modules/power/supermatter/supermatter_variants.dm:14	live	obj_machinery_power_supermatter_crystal_shard	1	0
 proc	/obj/machinery/power/supermatter_crystal/shard	Initialize	code/modules/power/supermatter/supermatter_variants.dm:25	mapload	yes	full	proc
 proc	/obj/machinery/power/supermatter_crystal/shard	add_context	code/modules/power/supermatter/supermatter_variants.dm:31	source,context,held_item,user	yes	full	proc
-type	/obj/machinery/power/supermatter_crystal/shard/syndicate	/obj/machinery/power/supermatter_crystal/shard	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:23	inert	obj_machinery_power_supermatter_crystal_shard_syndicate	0	0
-proc	/obj/machinery/power/supermatter_crystal/shard/syndicate	item_interaction	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:31	user,tool,modifiers	no	-	proc
+type	/obj/machinery/power/supermatter_crystal/shard/syndicate	/obj/machinery/power/supermatter_crystal/shard	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:23	live	obj_machinery_power_supermatter_crystal_shard_syndicate	1	0
+proc	/obj/machinery/power/supermatter_crystal/shard/syndicate	item_interaction	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:31	user,tool,modifiers	yes	full	proc
 type	/obj/machinery/power/supermatter_crystal/shard/hugbox	/obj/machinery/power/supermatter_crystal/shard	code/modules/power/supermatter/supermatter_variants.dm:41	live	obj_machinery_power_supermatter_crystal_shard_hugbox	0	0
 type	/obj/machinery/power/supermatter_crystal/shard/engine	/obj/machinery/power/supermatter_crystal/shard	code/modules/power/supermatter/supermatter_variants.dm:51	live	obj_machinery_power_supermatter_crystal_shard_engine	0	0
 type	/obj/machinery/power/supermatter_crystal/hugbox	/obj/machinery/power/supermatter_crystal	code/modules/power/supermatter/supermatter_variants.dm:3	live	obj_machinery_power_supermatter_crystal_hugbox	0	0
@@ -90619,38 +90619,38 @@ proc	/obj/machinery/atmospherics/pipe/heat_exchanging/simple	set_init_directions
 proc	/obj/machinery/atmospherics/pipe/heat_exchanging/simple	update_pipe_icon	code/modules/atmospherics/machinery/pipes/heat_exchange/simple.dm:27		yes	full	proc
 type	/obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer2	/obj/machinery/atmospherics/pipe/heat_exchanging/simple	code/modules/atmospherics/machinery/pipes/heat_exchange/simple.dm:32	live	obj_machinery_atmospherics_pipe_heat_exchanging_simple_layer2	0	1
 type	/obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer4	/obj/machinery/atmospherics/pipe/heat_exchanging/simple	code/modules/atmospherics/machinery/pipes/heat_exchange/simple.dm:36	live	obj_machinery_atmospherics_pipe_heat_exchanging_simple_layer4	0	0
-type	/obj/machinery/atmospherics/miner	/obj/machinery/atmospherics	code/modules/atmospherics/machinery/other/miner.dm:9	inert	obj_machinery_atmospherics_miner	0	0
-proc	/obj/machinery/atmospherics/miner	Initialize	code/modules/atmospherics/machinery/other/miner.dm:33	mapload	no	-	proc
-proc	/obj/machinery/atmospherics/miner	examine	code/modules/atmospherics/machinery/other/miner.dm:37	user	no	-	proc
-proc	/obj/machinery/atmospherics/miner	check_operation	code/modules/atmospherics/machinery/other/miner.dm:42		no	-	proc root
-proc	/obj/machinery/atmospherics/miner	set_active	code/modules/atmospherics/machinery/other/miner.dm:73	setting	no	-	proc root
-proc	/obj/machinery/atmospherics/miner	set_broken	code/modules/atmospherics/machinery/other/miner.dm:78	setting	no	-	proc root
-proc	/obj/machinery/atmospherics/miner	update_power	code/modules/atmospherics/machinery/other/miner.dm:83		no	-	proc root
-proc	/obj/machinery/atmospherics/miner	do_use_energy	code/modules/atmospherics/machinery/other/miner.dm:101	amount	no	-	proc root
-proc	/obj/machinery/atmospherics/miner	update_overlays	code/modules/atmospherics/machinery/other/miner.dm:113		no	-	proc
-proc	/obj/machinery/atmospherics/miner	process	code/modules/atmospherics/machinery/other/miner.dm:124	seconds_per_tick	no	-	proc
-proc	/obj/machinery/atmospherics/miner	mine_gas	code/modules/atmospherics/machinery/other/miner.dm:133	seconds_per_tick	no	-	proc root
-proc	/obj/machinery/atmospherics/miner	attack_ai	code/modules/atmospherics/machinery/other/miner.dm:143	user	no	-	proc
-type	/obj/machinery/atmospherics/miner/n2o	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:149	inert	obj_machinery_atmospherics_miner_n2o	0	0
-type	/obj/machinery/atmospherics/miner/nitrogen	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:154	inert	obj_machinery_atmospherics_miner_nitrogen	0	0
-type	/obj/machinery/atmospherics/miner/oxygen	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:159	inert	obj_machinery_atmospherics_miner_oxygen	0	0
-type	/obj/machinery/atmospherics/miner/plasma	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:164	inert	obj_machinery_atmospherics_miner_plasma	0	0
-type	/obj/machinery/atmospherics/miner/carbon_dioxide	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:169	inert	obj_machinery_atmospherics_miner_carbon_dioxide	0	0
-type	/obj/machinery/atmospherics/miner/bz	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:174	inert	obj_machinery_atmospherics_miner_bz	0	0
-type	/obj/machinery/atmospherics/miner/water_vapor	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:179	inert	obj_machinery_atmospherics_miner_water_vapor	0	0
-type	/obj/machinery/atmospherics/miner/freon	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:184	inert	obj_machinery_atmospherics_miner_freon	0	0
-type	/obj/machinery/atmospherics/miner/halon	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:189	inert	obj_machinery_atmospherics_miner_halon	0	0
-type	/obj/machinery/atmospherics/miner/healium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:194	inert	obj_machinery_atmospherics_miner_healium	0	0
-type	/obj/machinery/atmospherics/miner/hydrogen	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:199	inert	obj_machinery_atmospherics_miner_hydrogen	0	0
-type	/obj/machinery/atmospherics/miner/hypernoblium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:204	inert	obj_machinery_atmospherics_miner_hypernoblium	0	0
-type	/obj/machinery/atmospherics/miner/miasma	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:209	inert	obj_machinery_atmospherics_miner_miasma	0	0
-type	/obj/machinery/atmospherics/miner/nitrium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:214	inert	obj_machinery_atmospherics_miner_nitrium	0	0
-type	/obj/machinery/atmospherics/miner/pluoxium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:219	inert	obj_machinery_atmospherics_miner_pluoxium	0	0
-type	/obj/machinery/atmospherics/miner/proto_nitrate	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:224	inert	obj_machinery_atmospherics_miner_proto_nitrate	0	0
-type	/obj/machinery/atmospherics/miner/tritium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:229	inert	obj_machinery_atmospherics_miner_tritium	0	0
-type	/obj/machinery/atmospherics/miner/zauker	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:234	inert	obj_machinery_atmospherics_miner_zauker	0	0
-type	/obj/machinery/atmospherics/miner/helium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:239	inert	obj_machinery_atmospherics_miner_helium	0	0
-type	/obj/machinery/atmospherics/miner/antinoblium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:244	inert	obj_machinery_atmospherics_miner_antinoblium	0	0
+type	/obj/machinery/atmospherics/miner	/obj/machinery/atmospherics	code/modules/atmospherics/machinery/other/miner.dm:9	live	obj_machinery_atmospherics_miner	1	0
+proc	/obj/machinery/atmospherics/miner	Initialize	code/modules/atmospherics/machinery/other/miner.dm:33	mapload	yes	full	proc
+proc	/obj/machinery/atmospherics/miner	examine	code/modules/atmospherics/machinery/other/miner.dm:37	user	yes	full	proc
+proc	/obj/machinery/atmospherics/miner	check_operation	code/modules/atmospherics/machinery/other/miner.dm:42		yes	full	proc root
+proc	/obj/machinery/atmospherics/miner	set_active	code/modules/atmospherics/machinery/other/miner.dm:73	setting	yes	full	proc root
+proc	/obj/machinery/atmospherics/miner	set_broken	code/modules/atmospherics/machinery/other/miner.dm:78	setting	yes	full	proc root
+proc	/obj/machinery/atmospherics/miner	update_power	code/modules/atmospherics/machinery/other/miner.dm:83		yes	full	proc root
+proc	/obj/machinery/atmospherics/miner	do_use_energy	code/modules/atmospherics/machinery/other/miner.dm:101	amount	yes	full	proc root
+proc	/obj/machinery/atmospherics/miner	update_overlays	code/modules/atmospherics/machinery/other/miner.dm:113		yes	full	proc
+proc	/obj/machinery/atmospherics/miner	process	code/modules/atmospherics/machinery/other/miner.dm:124	seconds_per_tick	yes	full	proc
+proc	/obj/machinery/atmospherics/miner	mine_gas	code/modules/atmospherics/machinery/other/miner.dm:133	seconds_per_tick	yes	full	proc root
+proc	/obj/machinery/atmospherics/miner	attack_ai	code/modules/atmospherics/machinery/other/miner.dm:143	user	yes	full	proc
+type	/obj/machinery/atmospherics/miner/n2o	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:149	live	obj_machinery_atmospherics_miner_n2o	0	0
+type	/obj/machinery/atmospherics/miner/nitrogen	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:154	live	obj_machinery_atmospherics_miner_nitrogen	0	0
+type	/obj/machinery/atmospherics/miner/oxygen	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:159	live	obj_machinery_atmospherics_miner_oxygen	0	0
+type	/obj/machinery/atmospherics/miner/plasma	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:164	live	obj_machinery_atmospherics_miner_plasma	0	0
+type	/obj/machinery/atmospherics/miner/carbon_dioxide	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:169	live	obj_machinery_atmospherics_miner_carbon_dioxide	0	0
+type	/obj/machinery/atmospherics/miner/bz	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:174	live	obj_machinery_atmospherics_miner_bz	0	0
+type	/obj/machinery/atmospherics/miner/water_vapor	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:179	live	obj_machinery_atmospherics_miner_water_vapor	0	0
+type	/obj/machinery/atmospherics/miner/freon	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:184	live	obj_machinery_atmospherics_miner_freon	0	0
+type	/obj/machinery/atmospherics/miner/halon	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:189	live	obj_machinery_atmospherics_miner_halon	0	0
+type	/obj/machinery/atmospherics/miner/healium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:194	live	obj_machinery_atmospherics_miner_healium	0	0
+type	/obj/machinery/atmospherics/miner/hydrogen	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:199	live	obj_machinery_atmospherics_miner_hydrogen	0	0
+type	/obj/machinery/atmospherics/miner/hypernoblium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:204	live	obj_machinery_atmospherics_miner_hypernoblium	0	0
+type	/obj/machinery/atmospherics/miner/miasma	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:209	live	obj_machinery_atmospherics_miner_miasma	0	0
+type	/obj/machinery/atmospherics/miner/nitrium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:214	live	obj_machinery_atmospherics_miner_nitrium	0	0
+type	/obj/machinery/atmospherics/miner/pluoxium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:219	live	obj_machinery_atmospherics_miner_pluoxium	0	0
+type	/obj/machinery/atmospherics/miner/proto_nitrate	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:224	live	obj_machinery_atmospherics_miner_proto_nitrate	0	0
+type	/obj/machinery/atmospherics/miner/tritium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:229	live	obj_machinery_atmospherics_miner_tritium	0	0
+type	/obj/machinery/atmospherics/miner/zauker	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:234	live	obj_machinery_atmospherics_miner_zauker	0	0
+type	/obj/machinery/atmospherics/miner/helium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:239	live	obj_machinery_atmospherics_miner_helium	0	0
+type	/obj/machinery/atmospherics/miner/antinoblium	/obj/machinery/atmospherics/miner	code/modules/atmospherics/machinery/other/miner.dm:244	live	obj_machinery_atmospherics_miner_antinoblium	0	0
 type	/obj/machinery/meter	/obj/machinery	code/modules/atmospherics/machinery/other/meter.dm:2	live	obj_machinery_meter	1	1
 proc	/obj/machinery/meter	Destroy	code/modules/atmospherics/machinery/other/meter.dm:28		yes	full	proc
 proc	/obj/machinery/meter	Initialize	code/modules/atmospherics/machinery/other/meter.dm:35	mapload,new_piping_layer	yes	full	proc
@@ -95514,8 +95514,8 @@ type	/obj/effect/spawner/random/medical/supplies	/obj/effect/spawner/random/medi
 type	/obj/effect/spawner/random/mining_loot	/obj/effect/spawner/random	code/game/objects/effects/spawners/random/mining_loot.dm:4	live	obj_effect_spawner_random_mining_loot	0	0
 type	/obj/effect/spawner/random/mining_loot/demonic	/obj/effect/spawner/random/mining_loot	code/game/objects/effects/spawners/random/mining_loot.dm:30	live	obj_effect_spawner_random_mining_loot_demonic	0	0
 type	/obj/effect/spawner/random/mining_loot/pka_mod	/obj/effect/spawner/random/mining_loot	code/game/objects/effects/spawners/random/mining_loot.dm:56	live	obj_effect_spawner_random_mining_loot_pka_mod	0	0
-type	/obj/effect/spawner/random/mining_loot/shoe_factory	/obj/effect/spawner/random/mining_loot	code/modules/mapfluff/ruins/shoe_factory.dm:5	inert	obj_effect_spawner_random_mining_loot_shoe_factory	0	0
-proc	/obj/effect/spawner/random/mining_loot/shoe_factory	make_item	code/modules/mapfluff/ruins/shoe_factory.dm:15	spawn_loc,type_path_to_make	no	-	proc
+type	/obj/effect/spawner/random/mining_loot/shoe_factory	/obj/effect/spawner/random/mining_loot	code/modules/mapfluff/ruins/shoe_factory.dm:5	live	obj_effect_spawner_random_mining_loot_shoe_factory	1	0
+proc	/obj/effect/spawner/random/mining_loot/shoe_factory	make_item	code/modules/mapfluff/ruins/shoe_factory.dm:15	spawn_loc,type_path_to_make	yes	full	proc
 type	/obj/effect/spawner/random/mod	/obj/effect/spawner/random	code/game/objects/effects/spawners/random/mod.dm:2	live	obj_effect_spawner_random_mod	0	0
 type	/obj/effect/spawner/random/mod/maint	/obj/effect/spawner/random/mod	code/game/objects/effects/spawners/random/mod.dm:7	live	obj_effect_spawner_random_mod_maint	1	0
 proc	/obj/effect/spawner/random/mod/maint	Initialize	code/game/objects/effects/spawners/random/mod.dm:19	mapload	yes	full	proc
@@ -95875,9 +95875,9 @@ proc	/obj/effect/landmark/thunderdome/admin	Initialize	code/game/objects/effects
 type	/obj/effect/landmark/event_spawn	/obj/effect/landmark	code/game/objects/effects/landmarks.dm:473	live	obj_effect_landmark_event_spawn	1	1
 proc	/obj/effect/landmark/event_spawn	Initialize	code/game/objects/effects/landmarks.dm:476	mapload	yes	full	proc
 proc	/obj/effect/landmark/event_spawn	Destroy	code/game/objects/effects/landmarks.dm:480		yes	full	proc
-type	/obj/effect/landmark/ruin	/obj/effect/landmark	code/game/objects/effects/landmarks.dm:485	inert	obj_effect_landmark_ruin	0	0
-proc	/obj/effect/landmark/ruin	Initialize	code/game/objects/effects/landmarks.dm:487	mapload,my_ruin_template	no	-	proc
-proc	/obj/effect/landmark/ruin	Destroy	code/game/objects/effects/landmarks.dm:493		no	-	proc
+type	/obj/effect/landmark/ruin	/obj/effect/landmark	code/game/objects/effects/landmarks.dm:485	live	obj_effect_landmark_ruin	1	0
+proc	/obj/effect/landmark/ruin	Initialize	code/game/objects/effects/landmarks.dm:487	mapload,my_ruin_template	yes	full	proc
+proc	/obj/effect/landmark/ruin	Destroy	code/game/objects/effects/landmarks.dm:493		yes	full	proc
 type	/obj/effect/landmark/portal_exit	/obj/effect/landmark	code/game/objects/effects/landmarks.dm:500	live	obj_effect_landmark_portal_exit	0	0
 type	/obj/effect/landmark/unit_test_bottom_left	/obj/effect/landmark	code/game/objects/effects/landmarks.dm:507	live	obj_effect_landmark_unit_test_bottom_left	0	0
 type	/obj/effect/landmark/unit_test_top_right	/obj/effect/landmark	code/game/objects/effects/landmarks.dm:512	live	obj_effect_landmark_unit_test_top_right	0	0
@@ -96205,20 +96205,20 @@ proc	/obj/effect/shield	Initialize	code/game/objects/effects/shield.dm:11	maploa
 proc	/obj/effect/shield	Destroy	code/game/objects/effects/shield.dm:17		yes	full	proc
 proc	/obj/effect/shield	singularity_act	code/game/objects/effects/shield.dm:22		yes	full	proc
 proc	/obj/effect/shield	singularity_pull	code/game/objects/effects/shield.dm:25	singularity,current_size	yes	full	proc
-type	/obj/effect/step_trigger	/obj/effect	code/game/objects/effects/step_triggers.dm:4	inert	obj_effect_step_trigger	0	0
-proc	/obj/effect/step_trigger	Initialize	code/game/objects/effects/step_triggers.dm:10	mapload	no	-	proc
-proc	/obj/effect/step_trigger	Trigger	code/game/objects/effects/step_triggers.dm:17	A	no	-	proc root
-proc	/obj/effect/step_trigger	on_entered	code/game/objects/effects/step_triggers.dm:20	source,entering	no	-	proc root
-proc	/obj/effect/step_trigger	singularity_act	code/game/objects/effects/step_triggers.dm:31		no	-	proc
-proc	/obj/effect/step_trigger	singularity_pull	code/game/objects/effects/step_triggers.dm:34	singularity,current_size	no	-	proc
-type	/obj/effect/step_trigger/message	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:40	inert	obj_effect_step_trigger_message	0	0
-proc	/obj/effect/step_trigger/message	Trigger	code/game/objects/effects/step_triggers.dm:44	M	no	-	proc
+type	/obj/effect/step_trigger	/obj/effect	code/game/objects/effects/step_triggers.dm:4	live	obj_effect_step_trigger	1	0
+proc	/obj/effect/step_trigger	Initialize	code/game/objects/effects/step_triggers.dm:10	mapload	yes	full	proc
+proc	/obj/effect/step_trigger	Trigger	code/game/objects/effects/step_triggers.dm:17	A	yes	full	proc root
+proc	/obj/effect/step_trigger	on_entered	code/game/objects/effects/step_triggers.dm:20	source,entering	yes	full	proc root
+proc	/obj/effect/step_trigger	singularity_act	code/game/objects/effects/step_triggers.dm:31		yes	full	proc
+proc	/obj/effect/step_trigger	singularity_pull	code/game/objects/effects/step_triggers.dm:34	singularity,current_size	yes	full	proc
+type	/obj/effect/step_trigger/message	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:40	live	obj_effect_step_trigger_message	1	0
+proc	/obj/effect/step_trigger/message	Trigger	code/game/objects/effects/step_triggers.dm:44	M	yes	full	proc
 type	/obj/effect/step_trigger/thrower	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:52	inert	obj_effect_step_trigger_thrower	0	0
 proc	/obj/effect/step_trigger/thrower	Trigger	code/game/objects/effects/step_triggers.dm:61	A	no	-	proc
 proc	/obj/effect/step_trigger/thrower	pre_move	code/game/objects/effects/step_triggers.dm:78	source	no	-	proc root
 proc	/obj/effect/step_trigger/thrower	post_move	code/game/objects/effects/step_triggers.dm:83	source	no	-	proc root
 proc	/obj/effect/step_trigger/thrower	set_to_normal	code/game/objects/effects/step_triggers.dm:102	source	no	-	proc root
-type	/obj/effect/step_trigger/stopper	/obj/effect/step_trigger	(implied by a subtype's path)	inert	obj_effect_step_trigger_stopper	0	0
+type	/obj/effect/step_trigger/stopper	/obj/effect/step_trigger	(implied by a subtype's path)	live	obj_effect_step_trigger_stopper	0	0
 type	/obj/effect/step_trigger/teleporter	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:116	inert	obj_effect_step_trigger_teleporter	0	0
 proc	/obj/effect/step_trigger/teleporter	Trigger	code/game/objects/effects/step_triggers.dm:120	A	no	-	proc
 type	/obj/effect/step_trigger/teleporter/random	/obj/effect/step_trigger/teleporter	code/game/objects/effects/step_triggers.dm:129	inert	obj_effect_step_trigger_teleporter_random	0	0
@@ -96228,11 +96228,11 @@ proc	/obj/effect/step_trigger/teleporter/offset	on_entered	code/game/objects/eff
 proc	/obj/effect/step_trigger/teleporter/offset	Trigger	code/game/objects/effects/step_triggers.dm:152	poor_soul	no	-	proc
 type	/obj/effect/step_trigger/teleport_fancy	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:164	inert	obj_effect_step_trigger_teleport_fancy	0	0
 proc	/obj/effect/step_trigger/teleport_fancy	Trigger	code/game/objects/effects/step_triggers.dm:172	M	no	-	proc
-type	/obj/effect/step_trigger/sound_effect	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:195	inert	obj_effect_step_trigger_sound_effect	0	0
-proc	/obj/effect/step_trigger/sound_effect	Trigger	code/game/objects/effects/step_triggers.dm:203	A	no	-	proc
-type	/obj/effect/step_trigger/sound_effect/lavaland_cult_altar	/obj/effect/step_trigger/sound_effect	code/game/objects/effects/step_triggers.dm:219	inert	obj_effect_step_trigger_sound_effect_lavaland_cult_altar	0	0
-type	/obj/effect/step_trigger/outfitter	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:226	inert	obj_effect_step_trigger_outfitter	0	0
-proc	/obj/effect/step_trigger/outfitter	Trigger	code/game/objects/effects/step_triggers.dm:231	A	no	-	proc
+type	/obj/effect/step_trigger/sound_effect	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:195	live	obj_effect_step_trigger_sound_effect	1	0
+proc	/obj/effect/step_trigger/sound_effect	Trigger	code/game/objects/effects/step_triggers.dm:203	A	yes	full	proc
+type	/obj/effect/step_trigger/sound_effect/lavaland_cult_altar	/obj/effect/step_trigger/sound_effect	code/game/objects/effects/step_triggers.dm:219	live	obj_effect_step_trigger_sound_effect_lavaland_cult_altar	0	0
+type	/obj/effect/step_trigger/outfitter	/obj/effect/step_trigger	code/game/objects/effects/step_triggers.dm:226	live	obj_effect_step_trigger_outfitter	1	0
+proc	/obj/effect/step_trigger/outfitter	Trigger	code/game/objects/effects/step_triggers.dm:231	A	yes	full	proc
 type	/obj/effect/anomaly	/obj/effect	code/game/objects/effects/anomalies/_anomalies.dm:3	live	obj_effect_anomaly	1	0
 proc	/obj/effect/anomaly	Initialize	code/game/objects/effects/anomalies/_anomalies.dm:27	mapload,new_lifespan,drops_core	yes	full	proc
 proc	/obj/effect/anomaly	vv_edit_var	code/game/objects/effects/anomalies/_anomalies.dm:59	vname,vval	stub	deferred	proc
@@ -96606,8 +96606,8 @@ type	/obj/effect/decal/cleanable/wrapping/pinata/syndie	/obj/effect/decal/cleana
 type	/obj/effect/decal/cleanable/wrapping/pinata/donk	/obj/effect/decal/cleanable/wrapping/pinata	code/game/objects/effects/decals/cleanable/mess.dm:363	live	obj_effect_decal_cleanable_wrapping_pinata_donk	0	0
 type	/obj/effect/decal/cleanable/garbage	/obj/effect/decal/cleanable	code/game/objects/effects/decals/cleanable/mess.dm:366	inert	obj_effect_decal_cleanable_garbage	0	1
 proc	/obj/effect/decal/cleanable/garbage	Initialize	code/game/objects/effects/decals/cleanable/mess.dm:375	mapload	no	-	proc
-type	/obj/effect/decal/cleanable/rubble	/obj/effect/decal/cleanable	code/game/objects/effects/decals/cleanable/mess.dm:382	inert	obj_effect_decal_cleanable_rubble	0	1
-proc	/obj/effect/decal/cleanable/rubble	Initialize	code/game/objects/effects/decals/cleanable/mess.dm:393	mapload	no	-	proc
+type	/obj/effect/decal/cleanable/rubble	/obj/effect/decal/cleanable	code/game/objects/effects/decals/cleanable/mess.dm:382	live	obj_effect_decal_cleanable_rubble	1	1
+proc	/obj/effect/decal/cleanable/rubble	Initialize	code/game/objects/effects/decals/cleanable/mess.dm:393	mapload	yes	full	proc
 type	/obj/effect/decal/cleanable/can_bits	/obj/effect/decal/cleanable	code/game/objects/effects/decals/cleanable/mess.dm:402	live	obj_effect_decal_cleanable_can_bits	0	0
 type	/obj/effect/decal/cleanable/concrete_dust	/obj/effect/decal/cleanable	code/game/objects/effects/decals/cleanable/mess.dm:406	live	obj_effect_decal_cleanable_concrete_dust	0	0
 type	/obj/effect/decal/cleanable/traitor_rune	/obj/effect/decal/cleanable	code/game/objects/items/syndie_spraycan.dm:157	live	obj_effect_decal_cleanable_traitor_rune	1	0
@@ -97738,26 +97738,26 @@ type	/obj/effect/mob_spawn/ghost_role/human/golem/servant	/obj/effect/mob_spawn/
 proc	/obj/effect/mob_spawn/ghost_role/human/golem/servant	Initialize	code/modules/mob_spawn/ghost_roles/golem_roles.dm:93	mapload,creator,made_of	no	-	proc
 proc	/obj/effect/mob_spawn/ghost_role/human/golem/servant	give_directive	code/modules/mob_spawn/ghost_roles/golem_roles.dm:99	new_spawn	no	-	proc
 proc	/obj/effect/mob_spawn/ghost_role/human/golem/servant	name_mob	code/modules/mob_spawn/ghost_roles/golem_roles.dm:111	spawned_mob,forced_name	no	-	proc
-type	/obj/effect/mob_spawn/ghost_role/human/hermit	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:6	inert	obj_effect_mob_spawn_ghost_role_human_hermit	0	0
-proc	/obj/effect/mob_spawn/ghost_role/human/hermit	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:19	mapload	no	-	proc
-proc	/obj/effect/mob_spawn/ghost_role/human/hermit	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:46		no	-	proc
-type	/obj/effect/mob_spawn/ghost_role/human/hermit/icemoon	/obj/effect/mob_spawn/ghost_role/human/hermit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:61	inert	obj_effect_mob_spawn_ghost_role_human_hermit_icemoon	0	0
+type	/obj/effect/mob_spawn/ghost_role/human/hermit	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:6	live	obj_effect_mob_spawn_ghost_role_human_hermit	1	0
+proc	/obj/effect/mob_spawn/ghost_role/human/hermit	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:19	mapload	yes	full	proc
+proc	/obj/effect/mob_spawn/ghost_role/human/hermit	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:46		yes	full	proc
+type	/obj/effect/mob_spawn/ghost_role/human/hermit/icemoon	/obj/effect/mob_spawn/ghost_role/human/hermit	code/modules/mob_spawn/ghost_roles/mining_roles.dm:61	live	obj_effect_mob_spawn_ghost_role_human_hermit_icemoon	0	0
 type	/obj/effect/mob_spawn/ghost_role/human/beach	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:75	live	obj_effect_mob_spawn_ghost_role_human_beach	0	0
-type	/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard	/obj/effect/mob_spawn/ghost_role/human/beach	code/modules/mob_spawn/ghost_roles/mining_roles.dm:86	inert	obj_effect_mob_spawn_ghost_role_human_beach_lifeguard	0	0
-proc	/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard	special	code/modules/mob_spawn/ghost_roles/mining_roles.dm:92	lifeguard,mob_possessor,apply_prefs	no	-	proc
+type	/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard	/obj/effect/mob_spawn/ghost_role/human/beach	code/modules/mob_spawn/ghost_roles/mining_roles.dm:86	live	obj_effect_mob_spawn_ghost_role_human_beach_lifeguard	1	0
+proc	/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard	special	code/modules/mob_spawn/ghost_roles/mining_roles.dm:92	lifeguard,mob_possessor,apply_prefs	yes	full	proc
 type	/obj/effect/mob_spawn/ghost_role/human/bartender	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:117	live	obj_effect_mob_spawn_ghost_role_human_bartender	0	0
-type	/obj/effect/mob_spawn/ghost_role/human/seed_vault	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:147	inert	obj_effect_mob_spawn_ghost_role_human_seed_vault	0	0
-proc	/obj/effect/mob_spawn/ghost_role/human/seed_vault	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:162	mapload	no	-	proc
-proc	/obj/effect/mob_spawn/ghost_role/human/seed_vault	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:167		no	-	proc
-type	/obj/effect/mob_spawn/ghost_role/human/ash_walker	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:211	inert	obj_effect_mob_spawn_ghost_role_human_ash_walker	0	0
-proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:228		no	-	proc
-proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	allow_spawn	code/modules/mob_spawn/ghost_roles/mining_roles.dm:232	user,silent	no	-	proc
-proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	special	code/modules/mob_spawn/ghost_roles/mining_roles.dm:241	spawned_human,mob_possessor,apply_prefs	no	-	proc
-proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:253	mapload,ashteam	no	-	proc
-type	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:282	inert	obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate	0	0
-proc	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate	special	code/modules/mob_spawn/ghost_roles/mining_roles.dm:294	new_spawn,mob_possessor,apply_prefs	no	-	proc
-type	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate	code/modules/mob_spawn/ghost_roles/mining_roles.dm:299	inert	obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms	0	0
-type	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms/icemoon	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms	code/modules/mob_spawn/ghost_roles/mining_roles.dm:346	inert	obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms_icemoon	0	0
+type	/obj/effect/mob_spawn/ghost_role/human/seed_vault	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:147	live	obj_effect_mob_spawn_ghost_role_human_seed_vault	1	0
+proc	/obj/effect/mob_spawn/ghost_role/human/seed_vault	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:162	mapload	yes	full	proc
+proc	/obj/effect/mob_spawn/ghost_role/human/seed_vault	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:167		yes	full	proc
+type	/obj/effect/mob_spawn/ghost_role/human/ash_walker	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:211	live	obj_effect_mob_spawn_ghost_role_human_ash_walker	1	0
+proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:228		yes	full	proc
+proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	allow_spawn	code/modules/mob_spawn/ghost_roles/mining_roles.dm:232	user,silent	yes	full	proc
+proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	special	code/modules/mob_spawn/ghost_roles/mining_roles.dm:241	spawned_human,mob_possessor,apply_prefs	yes	full	proc
+proc	/obj/effect/mob_spawn/ghost_role/human/ash_walker	Initialize	code/modules/mob_spawn/ghost_roles/mining_roles.dm:253	mapload,ashteam	yes	full	proc
+type	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/mining_roles.dm:282	live	obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate	1	0
+proc	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate	special	code/modules/mob_spawn/ghost_roles/mining_roles.dm:294	new_spawn,mob_possessor,apply_prefs	yes	full	proc
+type	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate	code/modules/mob_spawn/ghost_roles/mining_roles.dm:299	live	obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms	0	0
+type	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms/icemoon	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms	code/modules/mob_spawn/ghost_roles/mining_roles.dm:346	live	obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms_icemoon	0	0
 type	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms/space	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms	code/modules/mob_spawn/ghost_roles/space_roles.dm:87	inert	obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms_space	0	0
 proc	/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms/space	Initialize	code/modules/mob_spawn/ghost_roles/space_roles.dm:91	mapload	no	-	proc
 type	/obj/effect/mob_spawn/ghost_role/human/oldstation	/obj/effect/mob_spawn/ghost_role/human	code/modules/mob_spawn/ghost_roles/space_roles.dm:4	inert	obj_effect_mob_spawn_ghost_role_human_oldstation	0	0
@@ -98153,41 +98153,41 @@ proc	/obj/effect/holodeck_effect/mobspawner/penguin	Initialize	code/modules/holo
 type	/obj/effect/holodeck_effect/mobspawner/penguin_baby	/obj/effect/holodeck_effect/mobspawner	code/modules/holodeck/holo_effect.dm:136	inert	obj_effect_holodeck_effect_mobspawner_penguin_baby	0	0
 type	/obj/effect/holodeck_effect/mobspawner/crab	/obj/effect/holodeck_effect/mobspawner	(implied by a subtype's path)	inert	obj_effect_holodeck_effect_mobspawner_crab	0	0
 type	/obj/effect/holodeck_effect/mobspawner/crab/jon	/obj/effect/holodeck_effect/mobspawner/crab	code/modules/holodeck/holo_effect.dm:139	inert	obj_effect_holodeck_effect_mobspawner_crab_jon	0	0
-type	/obj/effect/sliding_puzzle	/obj/effect	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:2	inert	obj_effect_sliding_puzzle	0	0
-proc	/obj/effect/sliding_puzzle	get_turf_for_id	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:16	id	no	-	proc root
-proc	/obj/effect/sliding_puzzle	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:38	mapload	no	-	proc
-proc	/obj/effect/sliding_puzzle	LateInitialize	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:42		no	-	proc
-proc	/obj/effect/sliding_puzzle	check_setup_location	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:46		no	-	proc root
-proc	/obj/effect/sliding_puzzle	validate	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:56		no	-	proc root
-proc	/obj/effect/sliding_puzzle	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:74		no	-	proc
-proc	/obj/effect/sliding_puzzle	finish	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:83		no	-	proc root
-proc	/obj/effect/sliding_puzzle	dispense_reward	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:92		no	-	proc root
-proc	/obj/effect/sliding_puzzle	is_solvable	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:95		no	-	proc root
-proc	/obj/effect/sliding_puzzle	make_solvable	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:110		no	-	proc root
-proc	/obj/effect/sliding_puzzle	elements_in_order	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:137		no	-	proc root
-proc	/obj/effect/sliding_puzzle	get_base_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:140		no	-	proc root
-proc	/obj/effect/sliding_puzzle	setup	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:147		no	-	proc root
-type	/obj/effect/sliding_puzzle/admin	/obj/effect/sliding_puzzle	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:254	inert	obj_effect_sliding_puzzle_admin	0	0
-proc	/obj/effect/sliding_puzzle/admin	get_base_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:258		no	-	proc
-type	/obj/effect/sliding_puzzle/lavaland	/obj/effect/sliding_puzzle	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264	inert	obj_effect_sliding_puzzle_lavaland	0	0
-proc	/obj/effect/sliding_puzzle/lavaland	dispense_reward	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:266		no	-	proc
-type	/obj/effect/sliding_puzzle/prison	/obj/effect/sliding_puzzle	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276	inert	obj_effect_sliding_puzzle_prison	0	0
-proc	/obj/effect/sliding_puzzle/prison	get_base_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:280		no	-	proc
-proc	/obj/effect/sliding_puzzle/prison	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:288		no	-	proc
-proc	/obj/effect/sliding_puzzle/prison	dispense_reward	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:296		no	-	proc
-type	/obj/effect/watcher_orbiter	/obj/effect	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:142	inert	obj_effect_watcher_orbiter	0	0
-proc	/obj/effect/watcher_orbiter	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:166	mapload	no	-	proc
-proc	/obj/effect/watcher_orbiter	shuttleRotate	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:173	rotation,params	no	-	proc
-proc	/obj/effect/watcher_orbiter	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:176	force	no	-	proc
-proc	/obj/effect/watcher_orbiter	process	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:181	seconds_per_tick	no	-	proc
-proc	/obj/effect/watcher_orbiter	shoot_at	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:193	target	no	-	proc root
-proc	/obj/effect/watcher_orbiter	follow	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:205	target	no	-	proc root
-proc	/obj/effect/watcher_orbiter	orbit_animation	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:217		no	-	proc root
-proc	/obj/effect/watcher_orbiter	on_parent_moved	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:226	parent,mover,old_loc,direction	no	-	proc root
-proc	/obj/effect/watcher_orbiter	on_glide_size_changed	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:237	source,new_glide_size	no	-	proc root
-proc	/obj/effect/watcher_orbiter	on_parent_deleted	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:242		no	-	proc root
-proc	/obj/effect/watcher_orbiter	on_parent_died	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:248	parent	no	-	proc root
-proc	/obj/effect/watcher_orbiter	on_parent_revived	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:254	parent	no	-	proc root
+type	/obj/effect/sliding_puzzle	/obj/effect	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:2	live	obj_effect_sliding_puzzle	1	0
+proc	/obj/effect/sliding_puzzle	get_turf_for_id	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:16	id	yes	full	proc root
+proc	/obj/effect/sliding_puzzle	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:38	mapload	yes	full	proc
+proc	/obj/effect/sliding_puzzle	LateInitialize	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:42		yes	full	proc
+proc	/obj/effect/sliding_puzzle	check_setup_location	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:46		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	validate	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:56		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:74		yes	full	proc
+proc	/obj/effect/sliding_puzzle	finish	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:83		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	dispense_reward	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:92		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	is_solvable	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:95		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	make_solvable	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:110		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	elements_in_order	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:137		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	get_base_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:140		yes	full	proc root
+proc	/obj/effect/sliding_puzzle	setup	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:147		yes	full	proc root
+type	/obj/effect/sliding_puzzle/admin	/obj/effect/sliding_puzzle	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:254	live	obj_effect_sliding_puzzle_admin	1	0
+proc	/obj/effect/sliding_puzzle/admin	get_base_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:258		yes	full	proc
+type	/obj/effect/sliding_puzzle/lavaland	/obj/effect/sliding_puzzle	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264	live	obj_effect_sliding_puzzle_lavaland	1	0
+proc	/obj/effect/sliding_puzzle/lavaland	dispense_reward	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:266		yes	full	proc
+type	/obj/effect/sliding_puzzle/prison	/obj/effect/sliding_puzzle	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276	live	obj_effect_sliding_puzzle_prison	1	0
+proc	/obj/effect/sliding_puzzle/prison	get_base_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:280		yes	full	proc
+proc	/obj/effect/sliding_puzzle/prison	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:288		yes	full	proc
+proc	/obj/effect/sliding_puzzle/prison	dispense_reward	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:296		yes	full	proc
+type	/obj/effect/watcher_orbiter	/obj/effect	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:142	live	obj_effect_watcher_orbiter	1	0
+proc	/obj/effect/watcher_orbiter	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:166	mapload	yes	full	proc
+proc	/obj/effect/watcher_orbiter	shuttleRotate	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:173	rotation,params	yes	full	proc
+proc	/obj/effect/watcher_orbiter	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:176	force	yes	full	proc
+proc	/obj/effect/watcher_orbiter	process	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:181	seconds_per_tick	yes	full	proc
+proc	/obj/effect/watcher_orbiter	shoot_at	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:193	target	yes	full	proc root
+proc	/obj/effect/watcher_orbiter	follow	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:205	target	yes	full	proc root
+proc	/obj/effect/watcher_orbiter	orbit_animation	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:217		yes	full	proc root
+proc	/obj/effect/watcher_orbiter	on_parent_moved	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:226	parent,mover,old_loc,direction	yes	full	proc root
+proc	/obj/effect/watcher_orbiter	on_glide_size_changed	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:237	source,new_glide_size	yes	full	proc root
+proc	/obj/effect/watcher_orbiter	on_parent_deleted	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:242		yes	full	proc root
+proc	/obj/effect/watcher_orbiter	on_parent_died	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:248	parent	yes	full	proc root
+proc	/obj/effect/watcher_orbiter	on_parent_revived	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:254	parent	yes	full	proc root
 type	/obj/effect/light_emitter	/obj/effect	code/modules/mining/mine_items.dm:5	live	obj_effect_light_emitter	1	0
 proc	/obj/effect/light_emitter	Initialize	code/modules/mining/mine_items.dm:12	mapload	yes	full	proc
 proc	/obj/effect/light_emitter	singularity_pull	code/modules/mining/mine_items.dm:16	singularity,current_size	yes	full	proc
@@ -98196,13 +98196,13 @@ type	/obj/effect/light_emitter/tendril	/obj/effect/light_emitter	code/modules/ma
 type	/obj/effect/light_emitter/podbay	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:23	live	obj_effect_light_emitter_podbay	0	0
 type	/obj/effect/light_emitter/thunderdome	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:26	live	obj_effect_light_emitter_thunderdome	0	0
 type	/obj/effect/light_emitter/fake_outdoors	/obj/effect/light_emitter	code/modules/mining/mine_items.dm:30	live	obj_effect_light_emitter_fake_outdoors	0	0
-type	/obj/effect/collapse	/obj/effect	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:132	inert	obj_effect_collapse	0	0
-proc	/obj/effect/collapse	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:144	mapload	no	-	proc
-proc	/obj/effect/collapse	examine	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:152	user	no	-	proc
-proc	/obj/effect/collapse	attack_hand	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:161	collector,modifiers	no	-	proc
-proc	/obj/effect/collapse	Destroy	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:171		no	-	proc
-proc	/obj/effect/collapse	has_collected	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:177	collector	no	-	proc root
-proc	/obj/effect/collapse	collapse	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:187		no	-	proc root
+type	/obj/effect/collapse	/obj/effect	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:132	live	obj_effect_collapse	1	0
+proc	/obj/effect/collapse	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:144	mapload	yes	full	proc
+proc	/obj/effect/collapse	examine	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:152	user	yes	full	proc
+proc	/obj/effect/collapse	attack_hand	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:161	collector,modifiers	yes	full	proc
+proc	/obj/effect/collapse	Destroy	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:171		yes	full	proc
+proc	/obj/effect/collapse	has_collected	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:177	collector	yes	full	proc root
+proc	/obj/effect/collapse	collapse	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:187		yes	full	proc root
 type	/obj/effect/replica_spawner	/obj/effect	code/modules/mapfluff/ruins/objects_and_mobs/museum.dm:10	inert	obj_effect_replica_spawner	0	0
 proc	/obj/effect/replica_spawner	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/museum.dm:22	mapload	no	-	proc
 type	/obj/effect/mapping_helpers	/obj/effect	code/modules/mapping/mapping_helpers.dm:118	live	obj_effect_mapping_helpers	1	1
@@ -98716,19 +98716,19 @@ proc	/obj/effect/mapping_helpers/apc/full_charge	payload	code/modules/mapping/ma
 type	/obj/effect/mapping_helpers/turn_off_lights_with_lightswitch	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:679	live	obj_effect_mapping_helpers_turn_off_lights_with_lightswitch	1	1
 proc	/obj/effect/mapping_helpers/turn_off_lights_with_lightswitch	Initialize	code/modules/mapping/mapping_helpers.dm:682	mapload	yes	full	proc
 proc	/obj/effect/mapping_helpers/turn_off_lights_with_lightswitch	LateInitialize	code/modules/mapping/mapping_helpers.dm:689		yes	full	proc
-type	/obj/effect/mapping_helpers/no_lava	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:703	inert	obj_effect_mapping_helpers_no_lava	0	0
-proc	/obj/effect/mapping_helpers/no_lava	New	code/modules/mapping/mapping_helpers.dm:700	loc	no	-	proc
-proc	/obj/effect/mapping_helpers/no_lava	Initialize	code/modules/mapping/mapping_helpers.dm:705	mapload	no	-	proc
+type	/obj/effect/mapping_helpers/no_lava	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:703	live	obj_effect_mapping_helpers_no_lava	1	0
+proc	/obj/effect/mapping_helpers/no_lava	New	code/modules/mapping/mapping_helpers.dm:700	loc	yes	full	proc
+proc	/obj/effect/mapping_helpers/no_lava	Initialize	code/modules/mapping/mapping_helpers.dm:705	mapload	yes	full	proc
 type	/obj/effect/mapping_helpers/no_atoms_ontop	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:712	inert	obj_effect_mapping_helpers_no_atoms_ontop	0	0
 proc	/obj/effect/mapping_helpers/no_atoms_ontop	New	code/modules/mapping/mapping_helpers.dm:710	loc	no	-	proc
 proc	/obj/effect/mapping_helpers/no_atoms_ontop	Initialize	code/modules/mapping/mapping_helpers.dm:714	mapload	no	-	proc
-type	/obj/effect/mapping_helpers/atom_injector	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:721	inert	obj_effect_mapping_helpers_atom_injector	0	0
-proc	/obj/effect/mapping_helpers/atom_injector	LateInitialize	code/modules/mapping/mapping_helpers.dm:732		no	-	proc
-proc	/obj/effect/mapping_helpers/atom_injector	check_validity	code/modules/mapping/mapping_helpers.dm:754		no	-	proc root
-proc	/obj/effect/mapping_helpers/atom_injector	inject	code/modules/mapping/mapping_helpers.dm:758	target	no	-	proc root
-proc	/obj/effect/mapping_helpers/atom_injector	generate_stack_trace	code/modules/mapping/mapping_helpers.dm:762		no	-	proc root
-type	/obj/effect/mapping_helpers/atom_injector/obj_flag	/obj/effect/mapping_helpers/atom_injector	code/modules/mapping/mapping_helpers.dm:766	inert	obj_effect_mapping_helpers_atom_injector_obj_flag	0	0
-proc	/obj/effect/mapping_helpers/atom_injector/obj_flag	inject	code/modules/mapping/mapping_helpers.dm:770	target	no	-	proc
+type	/obj/effect/mapping_helpers/atom_injector	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:721	live	obj_effect_mapping_helpers_atom_injector	1	0
+proc	/obj/effect/mapping_helpers/atom_injector	LateInitialize	code/modules/mapping/mapping_helpers.dm:732		yes	full	proc
+proc	/obj/effect/mapping_helpers/atom_injector	check_validity	code/modules/mapping/mapping_helpers.dm:754		yes	full	proc root
+proc	/obj/effect/mapping_helpers/atom_injector	inject	code/modules/mapping/mapping_helpers.dm:758	target	yes	full	proc root
+proc	/obj/effect/mapping_helpers/atom_injector	generate_stack_trace	code/modules/mapping/mapping_helpers.dm:762		yes	full	proc root
+type	/obj/effect/mapping_helpers/atom_injector/obj_flag	/obj/effect/mapping_helpers/atom_injector	code/modules/mapping/mapping_helpers.dm:766	live	obj_effect_mapping_helpers_atom_injector_obj_flag	1	0
+proc	/obj/effect/mapping_helpers/atom_injector/obj_flag	inject	code/modules/mapping/mapping_helpers.dm:770	target	yes	full	proc
 type	/obj/effect/mapping_helpers/atom_injector/component_injector	/obj/effect/mapping_helpers/atom_injector	code/modules/mapping/mapping_helpers.dm:778	inert	obj_effect_mapping_helpers_atom_injector_component_injector	0	0
 proc	/obj/effect/mapping_helpers/atom_injector/component_injector	check_validity	code/modules/mapping/mapping_helpers.dm:785		no	-	proc
 proc	/obj/effect/mapping_helpers/atom_injector/component_injector	inject	code/modules/mapping/mapping_helpers.dm:790	target	no	-	proc
@@ -98764,8 +98764,8 @@ proc	/obj/effect/mapping_helpers/ianbirthday/admin	LateInitialize	code/modules/m
 type	/obj/effect/mapping_helpers/iannewyear	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1107	live	obj_effect_mapping_helpers_iannewyear	1	1
 proc	/obj/effect/mapping_helpers/iannewyear	LateInitialize	code/modules/mapping/mapping_helpers.dm:1111		yes	full	proc
 proc	/obj/effect/mapping_helpers/iannewyear	fireworks	code/modules/mapping/mapping_helpers.dm:1116		yes	full	proc root
-type	/obj/effect/mapping_helpers/airlock_note_placer	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1145	inert	obj_effect_mapping_helpers_airlock_note_placer	0	0
-proc	/obj/effect/mapping_helpers/airlock_note_placer	LateInitialize	code/modules/mapping/mapping_helpers.dm:1152		no	-	proc
+type	/obj/effect/mapping_helpers/airlock_note_placer	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1145	live	obj_effect_mapping_helpers_airlock_note_placer	1	0
+proc	/obj/effect/mapping_helpers/airlock_note_placer	LateInitialize	code/modules/mapping/mapping_helpers.dm:1152		yes	full	proc
 type	/obj/effect/mapping_helpers/trapdoor_placer	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1194	inert	obj_effect_mapping_helpers_trapdoor_placer	0	0
 proc	/obj/effect/mapping_helpers/trapdoor_placer	LateInitialize	code/modules/mapping/mapping_helpers.dm:1198		no	-	proc
 type	/obj/effect/mapping_helpers/circuit_spawner	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1218	inert	obj_effect_mapping_helpers_circuit_spawner	0	0
@@ -98801,8 +98801,8 @@ proc	/obj/effect/mapping_helpers/requests_console/ore_update	payload	code/module
 type	/obj/effect/mapping_helpers/engraving	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1433	inert	obj_effect_mapping_helpers_engraving	0	0
 proc	/obj/effect/mapping_helpers/engraving	Initialize	code/modules/mapping/mapping_helpers.dm:1439	mapload	no	-	proc
 proc	/obj/effect/mapping_helpers/engraving	LateInitialize	code/modules/mapping/mapping_helpers.dm:1443		no	-	proc
-type	/obj/effect/mapping_helpers/bombable_wall	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1461	inert	obj_effect_mapping_helpers_bombable_wall	0	0
-proc	/obj/effect/mapping_helpers/bombable_wall	Initialize	code/modules/mapping/mapping_helpers.dm:1465	mapload	no	-	proc
+type	/obj/effect/mapping_helpers/bombable_wall	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1461	live	obj_effect_mapping_helpers_bombable_wall	1	0
+proc	/obj/effect/mapping_helpers/bombable_wall	Initialize	code/modules/mapping/mapping_helpers.dm:1465	mapload	yes	full	proc
 type	/obj/effect/mapping_helpers/mob_buckler	/obj/effect/mapping_helpers	code/modules/mapping/mapping_helpers.dm:1477	inert	obj_effect_mapping_helpers_mob_buckler	0	0
 proc	/obj/effect/mapping_helpers/mob_buckler	Initialize	code/modules/mapping/mapping_helpers.dm:1483	mapload	no	-	proc
 proc	/obj/effect/mapping_helpers/mob_buckler	LateInitialize	code/modules/mapping/mapping_helpers.dm:1491		no	-	proc
@@ -98825,8 +98825,8 @@ type	/obj/effect/mapping_helpers/blessing	/obj/effect/mapping_helpers	code/modul
 proc	/obj/effect/mapping_helpers/blessing	Initialize	code/modules/mapping/mapping_helpers.dm:1643	mapload	no	-	proc
 type	/obj/effect/mapping_helpers/blessing/invisible	/obj/effect/mapping_helpers/blessing	code/modules/mapping/mapping_helpers.dm:1650	inert	obj_effect_mapping_helpers_blessing_invisible	0	0
 type	/obj/effect/smooths_with_walls	/obj/effect	code/modules/mapfluff/ruins/objects_and_mobs/museum.dm:117	live	obj_effect_smooths_with_walls	0	0
-type	/obj/effect/gluttony	/obj/effect	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4	inert	obj_effect_gluttony	0	0
-proc	/obj/effect/gluttony	CanAllowThrough	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:12	mover,border_dir	no	-	proc
+type	/obj/effect/gluttony	/obj/effect	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4	live	obj_effect_gluttony	1	0
+proc	/obj/effect/gluttony	CanAllowThrough	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:12	mover,border_dir	yes	full	proc
 type	/obj/effect/overloader_trap	/obj/effect	code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:222	inert	obj_effect_overloader_trap	0	0
 proc	/obj/effect/overloader_trap	Initialize	code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:265	mapload	no	-	proc
 proc	/obj/effect/overloader_trap	HasProximity	code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:274	target	no	-	proc
@@ -99393,8 +99393,8 @@ type	/obj/structure/closet/crate/secure/freezer/interdyne	/obj/structure/closet/
 type	/obj/structure/closet/crate/secure/freezer/interdyne/blood	/obj/structure/closet/crate/secure/freezer/interdyne	code/game/objects/structures/crates_lockers/crates/secure.dm:157	live	obj_structure_closet_crate_secure_freezer_interdyne_blood	1	0
 proc	/obj/structure/closet/crate/secure/freezer/interdyne/blood	PopulateContents	code/game/objects/structures/crates_lockers/crates/secure.dm:160		yes	full	proc
 type	/obj/structure/closet/crate/secure/freezer/donk	/obj/structure/closet/crate/secure/freezer	code/game/objects/structures/crates_lockers/crates/secure.dm:166	live	obj_structure_closet_crate_secure_freezer_donk	0	0
-type	/obj/structure/closet/crate/secure/freezer/commsagent	/obj/structure/closet/crate/secure/freezer	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:6	inert	obj_structure_closet_crate_secure_freezer_commsagent	0	0
-proc	/obj/structure/closet/crate/secure/freezer/commsagent	PopulateContents	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:9		no	-	proc
+type	/obj/structure/closet/crate/secure/freezer/commsagent	/obj/structure/closet/crate/secure/freezer	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:6	live	obj_structure_closet_crate_secure_freezer_commsagent	1	0
+proc	/obj/structure/closet/crate/secure/freezer/commsagent	PopulateContents	code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:9		yes	full	proc
 type	/obj/structure/closet/crate/secure/centcom	/obj/structure/closet/crate/secure	code/game/objects/structures/crates_lockers/crates/secure.dm:83	live	obj_structure_closet_crate_secure_centcom	0	0
 type	/obj/structure/closet/crate/secure/cargo	/obj/structure/closet/crate/secure	code/game/objects/structures/crates_lockers/crates/secure.dm:88	live	obj_structure_closet_crate_secure_cargo	0	0
 type	/obj/structure/closet/crate/secure/cargo/mining	/obj/structure/closet/crate/secure/cargo	code/game/objects/structures/crates_lockers/crates/secure.dm:93	live	obj_structure_closet_crate_secure_cargo_mining	0	0
@@ -101107,13 +101107,13 @@ type	/obj/structure/sign/poster/official/periodic_table/directional/north	/obj/s
 type	/obj/structure/sign/poster/official/periodic_table/directional/south	/obj/structure/sign/poster/official/periodic_table/directional	code/game/objects/effects/posters/official.dm:307	live	obj_structure_sign_poster_official_periodic_table_directional_south	0	0
 type	/obj/structure/sign/poster/official/periodic_table/directional/east	/obj/structure/sign/poster/official/periodic_table/directional	code/game/objects/effects/posters/official.dm:307	live	obj_structure_sign_poster_official_periodic_table_directional_east	0	1
 type	/obj/structure/sign/poster/official/periodic_table/directional/west	/obj/structure/sign/poster/official/periodic_table/directional	code/game/objects/effects/posters/official.dm:307	live	obj_structure_sign_poster_official_periodic_table_directional_west	0	0
-type	/obj/structure/sign/poster/official/plasma_effects	/obj/structure/sign/poster/official	code/game/objects/effects/posters/official.dm:310	inert	obj_structure_sign_poster_official_plasma_effects	0	0
-proc	/obj/structure/sign/poster/official/plasma_effects	examine_more	code/game/objects/effects/posters/official.dm:314	user	no	-	proc
-type	/obj/structure/sign/poster/official/plasma_effects/directional	/obj/structure/sign/poster/official/plasma_effects	code/game/objects/effects/posters/official.dm:326	inert	obj_structure_sign_poster_official_plasma_effects_directional	0	0
-type	/obj/structure/sign/poster/official/plasma_effects/directional/north	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	inert	obj_structure_sign_poster_official_plasma_effects_directional_north	0	0
-type	/obj/structure/sign/poster/official/plasma_effects/directional/south	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	inert	obj_structure_sign_poster_official_plasma_effects_directional_south	0	0
-type	/obj/structure/sign/poster/official/plasma_effects/directional/east	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	inert	obj_structure_sign_poster_official_plasma_effects_directional_east	0	0
-type	/obj/structure/sign/poster/official/plasma_effects/directional/west	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	inert	obj_structure_sign_poster_official_plasma_effects_directional_west	0	0
+type	/obj/structure/sign/poster/official/plasma_effects	/obj/structure/sign/poster/official	code/game/objects/effects/posters/official.dm:310	live	obj_structure_sign_poster_official_plasma_effects	1	0
+proc	/obj/structure/sign/poster/official/plasma_effects	examine_more	code/game/objects/effects/posters/official.dm:314	user	yes	full	proc
+type	/obj/structure/sign/poster/official/plasma_effects/directional	/obj/structure/sign/poster/official/plasma_effects	code/game/objects/effects/posters/official.dm:326	live	obj_structure_sign_poster_official_plasma_effects_directional	0	0
+type	/obj/structure/sign/poster/official/plasma_effects/directional/north	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	live	obj_structure_sign_poster_official_plasma_effects_directional_north	0	0
+type	/obj/structure/sign/poster/official/plasma_effects/directional/south	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	live	obj_structure_sign_poster_official_plasma_effects_directional_south	0	0
+type	/obj/structure/sign/poster/official/plasma_effects/directional/east	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	live	obj_structure_sign_poster_official_plasma_effects_directional_east	0	0
+type	/obj/structure/sign/poster/official/plasma_effects/directional/west	/obj/structure/sign/poster/official/plasma_effects/directional	code/game/objects/effects/posters/official.dm:326	live	obj_structure_sign_poster_official_plasma_effects_directional_west	0	0
 type	/obj/structure/sign/poster/official/terragov	/obj/structure/sign/poster/official	code/game/objects/effects/posters/official.dm:329	live	obj_structure_sign_poster_official_terragov	0	0
 type	/obj/structure/sign/poster/official/terragov/directional	/obj/structure/sign/poster/official/terragov	code/game/objects/effects/posters/official.dm:333	live	obj_structure_sign_poster_official_terragov_directional	0	0
 type	/obj/structure/sign/poster/official/terragov/directional/north	/obj/structure/sign/poster/official/terragov/directional	code/game/objects/effects/posters/official.dm:333	live	obj_structure_sign_poster_official_terragov_directional_north	0	0
@@ -102766,11 +102766,11 @@ proc	/obj/structure/displaycase_chassis	examine	code/game/objects/structures/dis
 proc	/obj/structure/displaycase_chassis	wrench_act	code/game/objects/structures/displaycase.dm:289	user,tool	yes	full	proc
 proc	/obj/structure/displaycase_chassis	item_interaction	code/game/objects/structures/displaycase.dm:302	user,tool,modifiers	yes	full	proc
 proc	/obj/structure/displaycase_chassis	make_final_result	code/game/objects/structures/displaycase.dm:338	display_type	yes	full	proc root
-type	/obj/structure/sacrificealtar	/obj/structure	code/game/objects/structures/divine.dm:2	inert	obj_structure_sacrificealtar	0	0
-proc	/obj/structure/sacrificealtar	click_alt	code/game/objects/structures/divine.dm:10	user	no	-	proc
-type	/obj/structure/healingfountain	/obj/structure	code/game/objects/structures/divine.dm:23	inert	obj_structure_healingfountain	0	0
-proc	/obj/structure/healingfountain	attack_hand	code/game/objects/structures/divine.dm:32	user,modifiers	no	-	proc
-proc	/obj/structure/healingfountain	update_icon_state	code/game/objects/structures/divine.dm:46		no	-	proc
+type	/obj/structure/sacrificealtar	/obj/structure	code/game/objects/structures/divine.dm:2	live	obj_structure_sacrificealtar	1	0
+proc	/obj/structure/sacrificealtar	click_alt	code/game/objects/structures/divine.dm:10	user	yes	full	proc
+type	/obj/structure/healingfountain	/obj/structure	code/game/objects/structures/divine.dm:23	live	obj_structure_healingfountain	1	0
+proc	/obj/structure/healingfountain	attack_hand	code/game/objects/structures/divine.dm:32	user,modifiers	yes	full	proc
+proc	/obj/structure/healingfountain	update_icon_state	code/game/objects/structures/divine.dm:46		yes	full	proc
 type	/obj/structure/door_assembly	/obj/structure	code/game/objects/structures/door_assembly.dm:2	live	obj_structure_door_assembly	1	0
 proc	/obj/structure/door_assembly	Initialize	code/game/objects/structures/door_assembly.dm:50	mapload	yes	full	proc
 proc	/obj/structure/door_assembly	examine	code/game/objects/structures/door_assembly.dm:65	user	yes	full	proc
@@ -104316,11 +104316,11 @@ type	/obj/structure/table/wood/fancy/purple	/obj/structure/table/wood/fancy	code
 type	/obj/structure/table/wood/fancy/red	/obj/structure/table/wood/fancy	code/game/objects/structures/tables_racks.dm:724	live	obj_structure_table_wood_fancy_red	0	1
 type	/obj/structure/table/wood/fancy/royalblack	/obj/structure/table/wood/fancy	code/game/objects/structures/tables_racks.dm:730	live	obj_structure_table_wood_fancy_royalblack	0	1
 type	/obj/structure/table/wood/fancy/royalblue	/obj/structure/table/wood/fancy	code/game/objects/structures/tables_racks.dm:736	live	obj_structure_table_wood_fancy_royalblue	0	1
-type	/obj/structure/table/wood/shuttle_bar	/obj/structure/table/wood	code/modules/shuttle/misc/special.dm:175	inert	obj_structure_table_wood_shuttle_bar	0	0
-proc	/obj/structure/table/wood/shuttle_bar	Initialize	code/modules/shuttle/misc/special.dm:179	mapload,frame_used,stack_used	no	-	proc
-proc	/obj/structure/table/wood/shuttle_bar	on_climbed	code/modules/shuttle/misc/special.dm:188	source,AM	no	-	proc root
-proc	/obj/structure/table/wood/shuttle_bar	is_barstaff	code/modules/shuttle/misc/special.dm:198	user	no	-	proc root
-proc	/obj/structure/table/wood/shuttle_bar	shuttleRotate	code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:72	rotation,params	no	-	proc
+type	/obj/structure/table/wood/shuttle_bar	/obj/structure/table/wood	code/modules/shuttle/misc/special.dm:175	live	obj_structure_table_wood_shuttle_bar	1	0
+proc	/obj/structure/table/wood/shuttle_bar	Initialize	code/modules/shuttle/misc/special.dm:179	mapload,frame_used,stack_used	yes	full	proc
+proc	/obj/structure/table/wood/shuttle_bar	on_climbed	code/modules/shuttle/misc/special.dm:188	source,AM	yes	full	proc root
+proc	/obj/structure/table/wood/shuttle_bar	is_barstaff	code/modules/shuttle/misc/special.dm:198	user	yes	full	proc root
+proc	/obj/structure/table/wood/shuttle_bar	shuttleRotate	code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:72	rotation,params	yes	full	proc
 type	/obj/structure/table/reinforced	/obj/structure/table	code/game/objects/structures/tables_racks.dm:745	live	obj_structure_table_reinforced	1	1
 proc	/obj/structure/table/reinforced	add_context	code/game/objects/structures/tables_racks.dm:766	source,context,held_item,user	stub	deferred	proc
 proc	/obj/structure/table/reinforced	deconstruction_hints	code/game/objects/structures/tables_racks.dm:778	user	yes	full	proc
@@ -105409,13 +105409,13 @@ proc	/obj/structure/speaking_tile	attack_larva	code/modules/awaymissions/super_s
 proc	/obj/structure/speaking_tile	attack_ai	code/modules/awaymissions/super_secret_room.dm:104	user	no	-	proc
 proc	/obj/structure/speaking_tile	attack_animal	code/modules/awaymissions/super_secret_room.dm:108	user,modifiers	no	-	proc
 proc	/obj/structure/speaking_tile	SpeakPeace	code/modules/awaymissions/super_secret_room.dm:111	statements	no	-	proc root
-type	/obj/structure/firepit	/obj/structure	code/modules/awaymissions/mission_code/Cabin.dm:37	inert	obj_structure_firepit	0	0
-proc	/obj/structure/firepit	Initialize	code/modules/awaymissions/mission_code/Cabin.dm:44	mapload	no	-	proc
-proc	/obj/structure/firepit	interact	code/modules/awaymissions/mission_code/Cabin.dm:48	user	no	-	proc
-proc	/obj/structure/firepit	item_interaction	code/modules/awaymissions/mission_code/Cabin.dm:53	user,tool,modifiers	no	-	proc
-proc	/obj/structure/firepit	toggleFirepit	code/modules/awaymissions/mission_code/Cabin.dm:67		no	-	proc root
-proc	/obj/structure/firepit	extinguish	code/modules/awaymissions/mission_code/Cabin.dm:76		no	-	proc
-proc	/obj/structure/firepit	fire_act	code/modules/awaymissions/mission_code/Cabin.dm:82	exposed_temperature,exposed_volume	no	-	proc
+type	/obj/structure/firepit	/obj/structure	code/modules/awaymissions/mission_code/Cabin.dm:37	live	obj_structure_firepit	1	0
+proc	/obj/structure/firepit	Initialize	code/modules/awaymissions/mission_code/Cabin.dm:44	mapload	yes	full	proc
+proc	/obj/structure/firepit	interact	code/modules/awaymissions/mission_code/Cabin.dm:48	user	yes	full	proc
+proc	/obj/structure/firepit	item_interaction	code/modules/awaymissions/mission_code/Cabin.dm:53	user,tool,modifiers	yes	full	proc
+proc	/obj/structure/firepit	toggleFirepit	code/modules/awaymissions/mission_code/Cabin.dm:67		yes	full	proc root
+proc	/obj/structure/firepit	extinguish	code/modules/awaymissions/mission_code/Cabin.dm:76		yes	full	proc
+proc	/obj/structure/firepit	fire_act	code/modules/awaymissions/mission_code/Cabin.dm:82	exposed_temperature,exposed_volume	yes	full	proc
 type	/obj/structure/hoop	/obj/structure	code/modules/basketball/hoop.dm:13	live	obj_structure_hoop	1	1
 proc	/obj/structure/hoop	Initialize	code/modules/basketball/hoop.dm:27	mapload	yes	full	proc
 proc	/obj/structure/hoop	add_context	code/modules/basketball/hoop.dm:33	source,context,held_item,user	yes	full	proc
@@ -105614,37 +105614,37 @@ type	/obj/structure/bookcase/random/reference	/obj/structure/bookcase/random	cod
 proc	/obj/structure/bookcase/random/reference	Initialize	code/modules/library/random_books.dm:121	mapload	yes	full	proc
 type	/obj/structure/bookcase/random/reference/wizard	/obj/structure/bookcase/random/reference	code/modules/library/random_books.dm:128	live	obj_structure_bookcase_random_reference_wizard	1	0
 proc	/obj/structure/bookcase/random/reference/wizard	after_random_load	code/modules/library/random_books.dm:132		yes	full	proc
-type	/obj/structure/puzzle_element	/obj/structure	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198	inert	obj_structure_puzzle_element	0	0
-proc	/obj/structure/puzzle_element	Move	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:208	nloc,dir	no	-	proc
-proc	/obj/structure/puzzle_element	set_puzzle_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:214		no	-	proc root
-proc	/obj/structure/puzzle_element	update_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:226	updates	no	-	proc
-proc	/obj/structure/puzzle_element	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:230		no	-	proc
-proc	/obj/structure/puzzle_element	collapse	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:237		no	-	proc root
-proc	/obj/structure/puzzle_element	Moved	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:247	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc
-type	/obj/structure/puzzle_element/prison	/obj/structure/puzzle_element	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303	inert	obj_structure_puzzle_element_prison	0	0
-proc	/obj/structure/puzzle_element/prison	relaymove	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:314	user,direction	no	-	proc
-type	/obj/structure/dead_ratvar	/obj/structure	code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10	inert	obj_structure_dead_ratvar	0	0
-proc	/obj/structure/dead_ratvar	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:25	mapload	no	-	proc
+type	/obj/structure/puzzle_element	/obj/structure	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198	live	obj_structure_puzzle_element	1	0
+proc	/obj/structure/puzzle_element	Move	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:208	nloc,dir	yes	full	proc
+proc	/obj/structure/puzzle_element	set_puzzle_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:214		yes	full	proc root
+proc	/obj/structure/puzzle_element	update_icon	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:226	updates	yes	full	proc
+proc	/obj/structure/puzzle_element	Destroy	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:230		yes	full	proc
+proc	/obj/structure/puzzle_element	collapse	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:237		yes	full	proc root
+proc	/obj/structure/puzzle_element	Moved	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:247	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc
+type	/obj/structure/puzzle_element/prison	/obj/structure/puzzle_element	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303	live	obj_structure_puzzle_element_prison	1	0
+proc	/obj/structure/puzzle_element/prison	relaymove	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:314	user,direction	yes	full	proc
+type	/obj/structure/dead_ratvar	/obj/structure	code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10	live	obj_structure_dead_ratvar	1	0
+proc	/obj/structure/dead_ratvar	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:25	mapload	yes	full	proc
 type	/obj/structure/lavaland	/obj/structure	(implied by a subtype's path)	live	obj_structure_lavaland	0	0
-type	/obj/structure/lavaland/ash_walker	/obj/structure/lavaland	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:4	inert	obj_structure_lavaland_ash_walker	0	0
-proc	/obj/structure/lavaland/ash_walker	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:22	mapload	no	-	proc
-proc	/obj/structure/lavaland/ash_walker	Destroy	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:32		no	-	proc
-proc	/obj/structure/lavaland/ash_walker	atom_deconstruct	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:38	disassembled	no	-	proc
-proc	/obj/structure/lavaland/ash_walker	process	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:43		no	-	proc
-proc	/obj/structure/lavaland/ash_walker	consume	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:47		no	-	proc root
-proc	/obj/structure/lavaland/ash_walker	remake_walker	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:95	oldmob	no	-	proc root
-proc	/obj/structure/lavaland/ash_walker	spawn_mob	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:109		no	-	proc root
+type	/obj/structure/lavaland/ash_walker	/obj/structure/lavaland	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:4	live	obj_structure_lavaland_ash_walker	1	0
+proc	/obj/structure/lavaland/ash_walker	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:22	mapload	yes	full	proc
+proc	/obj/structure/lavaland/ash_walker	Destroy	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:32		yes	full	proc
+proc	/obj/structure/lavaland/ash_walker	atom_deconstruct	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:38	disassembled	yes	full	proc
+proc	/obj/structure/lavaland/ash_walker	process	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:43		yes	full	proc
+proc	/obj/structure/lavaland/ash_walker	consume	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:47		yes	full	proc root
+proc	/obj/structure/lavaland/ash_walker	remake_walker	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:95	oldmob	yes	full	proc root
+proc	/obj/structure/lavaland/ash_walker	spawn_mob	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:109		yes	full	proc root
 type	/obj/structure/lavaland/ash_walker_fake	/obj/structure/lavaland	code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:117	live	obj_structure_lavaland_ash_walker_fake	0	0
-type	/obj/structure/cursed_slot_machine	/obj/structure	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:3	inert	obj_structure_cursed_slot_machine	0	0
-proc	/obj/structure/cursed_slot_machine	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:28	mapload	no	-	proc
-proc	/obj/structure/cursed_slot_machine	interact	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:33	user	no	-	proc
-proc	/obj/structure/cursed_slot_machine	update_overlays	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:50		no	-	proc
-proc	/obj/structure/cursed_slot_machine	check_and_set_usage	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:57	user	no	-	proc root
-proc	/obj/structure/cursed_slot_machine	determine_victor	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:75	user	no	-	proc root
-type	/obj/structure/cursed_money	/obj/structure	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101	inert	obj_structure_cursed_money	0	0
-proc	/obj/structure/cursed_money	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:108	mapload	no	-	proc
-proc	/obj/structure/cursed_money	collapse	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:112		no	-	proc root
-proc	/obj/structure/cursed_money	attack_hand	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:118	user,modifiers	no	-	proc
+type	/obj/structure/cursed_slot_machine	/obj/structure	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:3	live	obj_structure_cursed_slot_machine	1	0
+proc	/obj/structure/cursed_slot_machine	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:28	mapload	yes	full	proc
+proc	/obj/structure/cursed_slot_machine	interact	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:33	user	yes	full	proc
+proc	/obj/structure/cursed_slot_machine	update_overlays	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:50		yes	full	proc
+proc	/obj/structure/cursed_slot_machine	check_and_set_usage	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:57	user	yes	full	proc root
+proc	/obj/structure/cursed_slot_machine	determine_victor	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:75	user	yes	full	proc root
+type	/obj/structure/cursed_money	/obj/structure	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101	live	obj_structure_cursed_money	1	0
+proc	/obj/structure/cursed_money	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:108	mapload	yes	full	proc
+proc	/obj/structure/cursed_money	collapse	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:112		yes	full	proc root
+proc	/obj/structure/cursed_money	attack_hand	code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:118	user,modifiers	yes	full	proc
 type	/obj/structure/necropolis_gate	/obj/structure	code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:3	live	obj_structure_necropolis_gate	1	0
 proc	/obj/structure/necropolis_gate	Initialize	code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:28	mapload	yes	full	proc
 proc	/obj/structure/necropolis_gate	Destroy	code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:57	force	yes	full	proc
@@ -105820,10 +105820,10 @@ type	/obj/structure/legionnaire_bonfire	/obj/structure	code/modules/mob/living/s
 proc	/obj/structure/legionnaire_bonfire	Initialize	code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:281	mapload	yes	full	proc
 proc	/obj/structure/legionnaire_bonfire	on_entered	code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:288	source,mover	yes	full	proc root
 proc	/obj/structure/legionnaire_bonfire	Destroy	code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:298		yes	full	proc
-type	/obj/structure/ash_walker_eggshell	/obj/structure	code/modules/mob_spawn/ghost_roles/mining_roles.dm:174	inert	obj_structure_ash_walker_eggshell	0	0
-proc	/obj/structure/ash_walker_eggshell	play_attack_sound	code/modules/mob_spawn/ghost_roles/mining_roles.dm:182	damage_amount,damage_type,damage_flag	no	-	proc
-proc	/obj/structure/ash_walker_eggshell	attack_ghost	code/modules/mob_spawn/ghost_roles/mining_roles.dm:193	user	no	-	proc
-proc	/obj/structure/ash_walker_eggshell	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:198		no	-	proc
+type	/obj/structure/ash_walker_eggshell	/obj/structure	code/modules/mob_spawn/ghost_roles/mining_roles.dm:174	live	obj_structure_ash_walker_eggshell	1	0
+proc	/obj/structure/ash_walker_eggshell	play_attack_sound	code/modules/mob_spawn/ghost_roles/mining_roles.dm:182	damage_amount,damage_type,damage_flag	yes	full	proc
+proc	/obj/structure/ash_walker_eggshell	attack_ghost	code/modules/mob_spawn/ghost_roles/mining_roles.dm:193	user	yes	full	proc
+proc	/obj/structure/ash_walker_eggshell	Destroy	code/modules/mob_spawn/ghost_roles/mining_roles.dm:198		yes	full	proc
 type	/obj/structure/cable	/obj/structure	code/modules/power/cable.dm:18	live	obj_structure_cable	1	1
 proc	/obj/structure/cable	ninjadrain_act	code/modules/mod/modules/modules_ninja.dm:429	ninja,hacking_module	stub	deferred	proc
 proc	/obj/structure/cable	ninjadrain_charge	code/modules/mod/modules/modules_ninja.dm:435	ninja,hacking_module	stub	deferred	proc root
@@ -106961,8 +106961,8 @@ type	/obj/projectile/hallucination/change	/obj/projectile/hallucination	code/mod
 proc	/obj/projectile/hallucination/change	apply_effect_to_hallucinator	code/modules/hallucination/stray_bullet.dm:267	afflicted	yes	full	proc
 type	/obj/projectile/hallucination/death	/obj/projectile/hallucination	code/modules/hallucination/stray_bullet.dm:280	live	obj_projectile_hallucination_death	1	0
 proc	/obj/projectile/hallucination/death	apply_effect_to_hallucinator	code/modules/hallucination/stray_bullet.dm:289	afflicted	yes	full	proc
-type	/obj/projectile/baby_watcher_blast	/obj/projectile	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:262	inert	obj_projectile_baby_watcher_blast	0	0
-proc	/obj/projectile/baby_watcher_blast	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:268	mapload	no	-	proc
+type	/obj/projectile/baby_watcher_blast	/obj/projectile	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:262	live	obj_projectile_baby_watcher_blast	1	0
+proc	/obj/projectile/baby_watcher_blast	Initialize	code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:268	mapload	yes	full	proc
 type	/obj/projectile/grapple_hook	/obj/projectile	code/modules/mining/equipment/grapple_gun.dm:178	live	obj_projectile_grapple_hook	0	0
 type	/obj/projectile/destabilizer	/obj/projectile	code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:295	live	obj_projectile_destabilizer	1	0
 proc	/obj/projectile/destabilizer	Initialize	code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:308	mapload	yes	full	proc
@@ -107582,19 +107582,19 @@ proc	/obj/vehicle/ridden/scooter/skateboard/wheelys	post_buckle_mob	code/modules
 proc	/obj/vehicle/ridden/scooter/skateboard/wheelys	link_shoes	code/modules/vehicles/scooter.dm:343	newshoes	no	-	proc root
 type	/obj/vehicle/ridden/scooter/skateboard/wheelys/rollerskates	/obj/vehicle/ridden/scooter/skateboard/wheelys	code/modules/vehicles/scooter.dm:347	inert	obj_vehicle_ridden_scooter_skateboard_wheelys_rollerskates	0	0
 type	/obj/vehicle/ridden/scooter/skateboard/wheelys/skishoes	/obj/vehicle/ridden/scooter/skateboard/wheelys	code/modules/vehicles/scooter.dm:353	inert	obj_vehicle_ridden_scooter_skateboard_wheelys_skishoes	0	0
-type	/obj/vehicle/ridden/atv	/obj/vehicle/ridden	code/modules/vehicles/atv.dm:3	inert	obj_vehicle_ridden_atv	0	0
-proc	/obj/vehicle/ridden/atv	Initialize	code/modules/vehicles/atv.dm:20	mapload	no	-	proc
-proc	/obj/vehicle/ridden/atv	post_buckle_mob	code/modules/vehicles/atv.dm:26	M	no	-	proc
-proc	/obj/vehicle/ridden/atv	post_unbuckle_mob	code/modules/vehicles/atv.dm:30	M	no	-	proc
-proc	/obj/vehicle/ridden/atv	welder_act	code/modules/vehicles/atv.dm:75	user,W	no	-	proc
-proc	/obj/vehicle/ridden/atv	atom_break	code/modules/vehicles/atv.dm:102		no	-	proc
-proc	/obj/vehicle/ridden/atv	process	code/modules/vehicles/atv.dm:106	seconds_per_tick	no	-	proc
-proc	/obj/vehicle/ridden/atv	projectile_hit	code/modules/vehicles/atv.dm:113	hitting_projectile,def_zone,piercing_hit,blocked	no	-	proc
-proc	/obj/vehicle/ridden/atv	atom_destruction	code/modules/vehicles/atv.dm:120		no	-	proc
-proc	/obj/vehicle/ridden/atv	Destroy	code/modules/vehicles/atv.dm:124		no	-	proc
-type	/obj/vehicle/ridden/atv/turret	/obj/vehicle/ridden/atv	code/modules/vehicles/atv.dm:37	inert	obj_vehicle_ridden_atv_turret	0	0
-proc	/obj/vehicle/ridden/atv/turret	Initialize	code/modules/vehicles/atv.dm:44	mapload	no	-	proc
-proc	/obj/vehicle/ridden/atv/turret	Moved	code/modules/vehicles/atv.dm:49	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc
+type	/obj/vehicle/ridden/atv	/obj/vehicle/ridden	code/modules/vehicles/atv.dm:3	live	obj_vehicle_ridden_atv	1	0
+proc	/obj/vehicle/ridden/atv	Initialize	code/modules/vehicles/atv.dm:20	mapload	yes	full	proc
+proc	/obj/vehicle/ridden/atv	post_buckle_mob	code/modules/vehicles/atv.dm:26	M	yes	full	proc
+proc	/obj/vehicle/ridden/atv	post_unbuckle_mob	code/modules/vehicles/atv.dm:30	M	yes	full	proc
+proc	/obj/vehicle/ridden/atv	welder_act	code/modules/vehicles/atv.dm:75	user,W	yes	full	proc
+proc	/obj/vehicle/ridden/atv	atom_break	code/modules/vehicles/atv.dm:102		yes	full	proc
+proc	/obj/vehicle/ridden/atv	process	code/modules/vehicles/atv.dm:106	seconds_per_tick	yes	full	proc
+proc	/obj/vehicle/ridden/atv	projectile_hit	code/modules/vehicles/atv.dm:113	hitting_projectile,def_zone,piercing_hit,blocked	yes	full	proc
+proc	/obj/vehicle/ridden/atv	atom_destruction	code/modules/vehicles/atv.dm:120		yes	full	proc
+proc	/obj/vehicle/ridden/atv	Destroy	code/modules/vehicles/atv.dm:124		yes	full	proc
+type	/obj/vehicle/ridden/atv/turret	/obj/vehicle/ridden/atv	code/modules/vehicles/atv.dm:37	live	obj_vehicle_ridden_atv_turret	1	0
+proc	/obj/vehicle/ridden/atv/turret	Initialize	code/modules/vehicles/atv.dm:44	mapload	yes	full	proc
+proc	/obj/vehicle/ridden/atv/turret	Moved	code/modules/vehicles/atv.dm:49	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc
 type	/obj/vehicle/ridden/bicycle	/obj/vehicle/ridden	code/modules/vehicles/bicycle.dm:2	inert	obj_vehicle_ridden_bicycle	0	0
 proc	/obj/vehicle/ridden/bicycle	Initialize	code/modules/vehicles/bicycle.dm:9	mapload	no	-	proc
 proc	/obj/vehicle/ridden/bicycle	zap_act	code/modules/vehicles/bicycle.dm:13	power,zap_flags	no	-	proc
@@ -108300,9 +108300,9 @@ proc	/turf/closed/wall/mineral/uranium	attackby	code/game/turfs/closed/wall/mine
 proc	/turf/closed/wall/mineral/uranium	Bumped	code/game/turfs/closed/wall/mineral_walls.dm:138	AM	no	-	proc
 proc	/turf/closed/wall/mineral/uranium	hulk_recoil	code/game/turfs/closed/wall/mineral_walls.dm:142	arm,hulkman,damage	no	-	proc
 type	/turf/closed/wall/mineral/plasma	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:146	live	turf_closed_wall_mineral_plasma	0	0
-type	/turf/closed/wall/mineral/wood	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:161	inert	turf_closed_wall_mineral_wood	0	0
-proc	/turf/closed/wall/mineral/wood	item_interaction	code/game/turfs/closed/wall/mineral_walls.dm:176	user,tool,modifiers	no	-	proc
-type	/turf/closed/wall/mineral/wood/nonmetal	/turf/closed/wall/mineral/wood	code/game/turfs/closed/wall/mineral_walls.dm:193	inert	turf_closed_wall_mineral_wood_nonmetal	0	0
+type	/turf/closed/wall/mineral/wood	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:161	live	turf_closed_wall_mineral_wood	1	0
+proc	/turf/closed/wall/mineral/wood	item_interaction	code/game/turfs/closed/wall/mineral_walls.dm:176	user,tool,modifiers	yes	full	proc
+type	/turf/closed/wall/mineral/wood/nonmetal	/turf/closed/wall/mineral/wood	code/game/turfs/closed/wall/mineral_walls.dm:193	live	turf_closed_wall_mineral_wood_nonmetal	0	0
 type	/turf/closed/wall/mineral/bamboo	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:200	live	turf_closed_wall_mineral_bamboo	0	0
 type	/turf/closed/wall/mineral/iron	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:213	live	turf_closed_wall_mineral_iron	0	0
 type	/turf/closed/wall/mineral/snow	/turf/closed/wall/mineral	code/game/turfs/closed/wall/mineral_walls.dm:228	inert	turf_closed_wall_mineral_snow	0	0
@@ -108329,18 +108329,18 @@ type	/turf/closed/wall/mineral/plastitanium/survival/nodiagonal	/turf/closed/wal
 type	/turf/closed/wall/mineral/plastitanium/survival/pod	/turf/closed/wall/mineral/plastitanium/survival	code/game/turfs/closed/wall/mineral_walls.dm:379	live	turf_closed_wall_mineral_plastitanium_survival_pod	0	0
 type	/turf/closed/wall/mineral/plastitanium/nodiagonal	/turf/closed/wall/mineral/plastitanium	code/game/turfs/closed/wall/mineral_walls.dm:390	live	turf_closed_wall_mineral_plastitanium_nodiagonal	0	0
 type	/turf/closed/wall/mineral/plastitanium/overspace	/turf/closed/wall/mineral/plastitanium	code/game/turfs/closed/wall/mineral_walls.dm:395	live	turf_closed_wall_mineral_plastitanium_overspace	0	0
-type	/turf/closed/wall/mineral/plastitanium/explosive	/turf/closed/wall/mineral/plastitanium	code/game/turfs/closed/wall/mineral_walls.dm:406	inert	turf_closed_wall_mineral_plastitanium_explosive	0	0
-proc	/turf/closed/wall/mineral/plastitanium/explosive	ex_act	code/game/turfs/closed/wall/mineral_walls.dm:406	severity	no	-	proc
-type	/turf/closed/wall/mineral/cult	/turf/closed/wall/mineral	code/game/turfs/closed/wall/misc_walls.dm:2	inert	turf_closed_wall_mineral_cult	0	0
-proc	/turf/closed/wall/mineral/cult	Initialize	code/game/turfs/closed/wall/misc_walls.dm:14	mapload	no	-	proc
-proc	/turf/closed/wall/mineral/cult	devastate_wall	code/game/turfs/closed/wall/misc_walls.dm:18		no	-	proc
+type	/turf/closed/wall/mineral/plastitanium/explosive	/turf/closed/wall/mineral/plastitanium	code/game/turfs/closed/wall/mineral_walls.dm:406	live	turf_closed_wall_mineral_plastitanium_explosive	1	0
+proc	/turf/closed/wall/mineral/plastitanium/explosive	ex_act	code/game/turfs/closed/wall/mineral_walls.dm:406	severity	yes	full	proc
+type	/turf/closed/wall/mineral/cult	/turf/closed/wall/mineral	code/game/turfs/closed/wall/misc_walls.dm:2	live	turf_closed_wall_mineral_cult	1	0
+proc	/turf/closed/wall/mineral/cult	Initialize	code/game/turfs/closed/wall/misc_walls.dm:14	mapload	yes	full	proc
+proc	/turf/closed/wall/mineral/cult	devastate_wall	code/game/turfs/closed/wall/misc_walls.dm:18		yes	full	proc
 type	/turf/closed/wall/mineral/cult/artificer	/turf/closed/wall/mineral/cult	code/game/turfs/closed/wall/misc_walls.dm:22	inert	turf_closed_wall_mineral_cult_artificer	0	0
 proc	/turf/closed/wall/mineral/cult/artificer	break_wall	code/game/turfs/closed/wall/misc_walls.dm:25		no	-	proc
 proc	/turf/closed/wall/mineral/cult/artificer	devastate_wall	code/game/turfs/closed/wall/misc_walls.dm:29		no	-	proc
 type	/turf/closed/wall/mineral/bronze	/turf/closed/wall/mineral	code/game/turfs/closed/wall/misc_walls.dm:77	live	turf_closed_wall_mineral_bronze	0	0
 type	/turf/closed/wall/ice	/turf/closed/wall	code/game/turfs/closed/wall/misc_walls.dm:33	live	turf_closed_wall_ice	0	0
-type	/turf/closed/wall/rust	/turf/closed/wall	code/game/turfs/closed/wall/misc_walls.dm:49	inert	turf_closed_wall_rust	0	0
-proc	/turf/closed/wall/rust	Initialize	code/game/turfs/closed/wall/misc_walls.dm:49	mapload	no	-	proc
+type	/turf/closed/wall/rust	/turf/closed/wall	code/game/turfs/closed/wall/misc_walls.dm:49	live	turf_closed_wall_rust	1	0
+proc	/turf/closed/wall/rust	Initialize	code/game/turfs/closed/wall/misc_walls.dm:49	mapload	yes	full	proc
 type	/turf/closed/wall/heretic_rust	/turf/closed/wall	code/game/turfs/closed/wall/misc_walls.dm:56	inert	turf_closed_wall_heretic_rust	0	0
 proc	/turf/closed/wall/heretic_rust	Initialize	code/game/turfs/closed/wall/misc_walls.dm:56	mapload	no	-	proc
 type	/turf/closed/wall/r_wall	/turf/closed/wall	code/game/turfs/closed/wall/reinf_walls.dm:2	live	turf_closed_wall_r_wall	1	1
@@ -108402,9 +108402,9 @@ type	/turf/closed/indestructible/riveted/boss	/turf/closed/indestructible/rivete
 proc	/turf/closed/indestructible/riveted/boss	get_smooth_underlay_icon	code/game/turfs/closed/indestructible.dm:346	underlay_appearance,asking_turf,adjacency_dir	yes	full	proc
 type	/turf/closed/indestructible/riveted/boss/wasteland	/turf/closed/indestructible/riveted/boss	code/game/turfs/closed/indestructible.dm:341	live	turf_closed_indestructible_riveted_boss_wasteland	0	0
 type	/turf/closed/indestructible/riveted/boss/see_through	/turf/closed/indestructible/riveted/boss	code/game/turfs/closed/indestructible.dm:344	live	turf_closed_indestructible_riveted_boss_see_through	0	0
-type	/turf/closed/indestructible/riveted/hierophant	/turf/closed/indestructible/riveted	code/game/turfs/closed/indestructible.dm:352	inert	turf_closed_indestructible_riveted_hierophant	0	0
-proc	/turf/closed/indestructible/riveted/hierophant	set_smoothed_icon_state	code/game/turfs/closed/indestructible.dm:361	new_junction	no	-	proc
-proc	/turf/closed/indestructible/riveted/hierophant	update_overlays	code/game/turfs/closed/indestructible.dm:365		no	-	proc
+type	/turf/closed/indestructible/riveted/hierophant	/turf/closed/indestructible/riveted	code/game/turfs/closed/indestructible.dm:352	live	turf_closed_indestructible_riveted_hierophant	1	0
+proc	/turf/closed/indestructible/riveted/hierophant	set_smoothed_icon_state	code/game/turfs/closed/indestructible.dm:361	new_junction	yes	full	proc
+proc	/turf/closed/indestructible/riveted/hierophant	update_overlays	code/game/turfs/closed/indestructible.dm:365		yes	full	proc
 type	/turf/closed/indestructible/syndicate	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:130	live	turf_closed_indestructible_syndicate	0	0
 type	/turf/closed/indestructible/wood	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:159	live	turf_closed_indestructible_wood	0	0
 type	/turf/closed/indestructible/alien	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:168	live	turf_closed_indestructible_alien	0	0
@@ -108426,8 +108426,8 @@ type	/turf/closed/indestructible/rock/snow	/turf/closed/indestructible/rock	code
 type	/turf/closed/indestructible/rock/snow/ore	/turf/closed/indestructible/rock/snow	code/game/turfs/closed/indestructible.dm:283	live	turf_closed_indestructible_rock_snow_ore	0	0
 type	/turf/closed/indestructible/ice	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:293	live	turf_closed_indestructible_ice	0	0
 type	/turf/closed/indestructible/paper	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:299	live	turf_closed_indestructible_paper	0	0
-type	/turf/closed/indestructible/necropolis	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:305	inert	turf_closed_indestructible_necropolis	0	0
-proc	/turf/closed/indestructible/necropolis	get_smooth_underlay_icon	code/game/turfs/closed/indestructible.dm:312	underlay_appearance,asking_turf,adjacency_dir	no	-	proc
+type	/turf/closed/indestructible/necropolis	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:305	live	turf_closed_indestructible_necropolis	1	0
+proc	/turf/closed/indestructible/necropolis	get_smooth_underlay_icon	code/game/turfs/closed/indestructible.dm:312	underlay_appearance,asking_turf,adjacency_dir	yes	full	proc
 type	/turf/closed/indestructible/iron	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:318	live	turf_closed_indestructible_iron	0	0
 type	/turf/closed/indestructible/resin	/turf/closed/indestructible	code/game/turfs/closed/indestructible.dm:370	live	turf_closed_indestructible_resin	0	0
 type	/turf/closed/indestructible/resin/membrane	/turf/closed/indestructible/resin	code/game/turfs/closed/indestructible.dm:379	inert	turf_closed_indestructible_resin_membrane	0	0
@@ -108547,8 +108547,8 @@ type	/turf/closed/mineral/bscrystal/volcanic	/turf/closed/mineral/bscrystal	code
 type	/turf/closed/mineral/volcanic	/turf/closed/mineral	code/game/turfs/closed/minerals.dm:931	live	turf_closed_mineral_volcanic	0	1
 type	/turf/closed/mineral/volcanic/airless	/turf/closed/mineral/volcanic	code/game/turfs/closed/minerals.dm:936	live	turf_closed_mineral_volcanic_airless	0	0
 type	/turf/closed/mineral/volcanic/lava_land_surface	/turf/closed/mineral/volcanic	code/game/turfs/closed/minerals.dm:941	live	turf_closed_mineral_volcanic_lava_land_surface	0	0
-type	/turf/closed/mineral/volcanic/lava_land_surface/biome_replace	/turf/closed/mineral/volcanic/lava_land_surface	code/game/turfs/closed/minerals.dm:948	inert	turf_closed_mineral_volcanic_lava_land_surface_biome_replace	0	0
-proc	/turf/closed/mineral/volcanic/lava_land_surface/biome_replace	Initialize	code/game/turfs/closed/minerals.dm:954	mapload	no	-	proc
+type	/turf/closed/mineral/volcanic/lava_land_surface/biome_replace	/turf/closed/mineral/volcanic/lava_land_surface	code/game/turfs/closed/minerals.dm:948	live	turf_closed_mineral_volcanic_lava_land_surface_biome_replace	1	0
+proc	/turf/closed/mineral/volcanic/lava_land_surface/biome_replace	Initialize	code/game/turfs/closed/minerals.dm:954	mapload	yes	full	proc
 type	/turf/closed/mineral/volcanic/lava_land_surface/do_not_chasm	/turf/closed/mineral/volcanic/lava_land_surface	code/game/turfs/closed/minerals.dm:977	live	turf_closed_mineral_volcanic_lava_land_surface_do_not_chasm	0	0
 type	/turf/closed/mineral/ash_rock	/turf/closed/mineral	code/game/turfs/closed/minerals.dm:981	live	turf_closed_mineral_ash_rock	0	0
 type	/turf/closed/mineral/asteroid	/turf/closed/mineral	code/game/turfs/closed/minerals.dm:1039	live	turf_closed_mineral_asteroid	0	0
@@ -108681,9 +108681,9 @@ proc	/turf/open/floor/plating	item_interaction	code/game/turfs/open/floor/platin
 proc	/turf/open/floor/plating	welder_act	code/game/turfs/open/floor/plating.dm:141	user,tool	yes	full	proc
 proc	/turf/open/floor/plating	make_plating	code/game/turfs/open/floor/plating.dm:155	force	yes	full	proc
 type	/turf/open/floor/plating/lavaland_baseturf	/turf/open/floor/plating	code/game/turfs/open/asteroid.dm:123	live	turf_open_floor_plating_lavaland_baseturf	0	0
-type	/turf/open/floor/plating/rust	/turf/open/floor/plating	code/game/turfs/open/floor/misc_floor.dm:274	inert	turf_open_floor_plating_rust	0	0
-proc	/turf/open/floor/plating/rust	Initialize	code/game/turfs/open/floor/misc_floor.dm:276	mapload	no	-	proc
-type	/turf/open/floor/plating/rust/airless	/turf/open/floor/plating/rust	code/game/turfs/open/floor/misc_floor.dm:282	inert	turf_open_floor_plating_rust_airless	0	0
+type	/turf/open/floor/plating/rust	/turf/open/floor/plating	code/game/turfs/open/floor/misc_floor.dm:274	live	turf_open_floor_plating_rust	1	0
+proc	/turf/open/floor/plating/rust	Initialize	code/game/turfs/open/floor/misc_floor.dm:276	mapload	yes	full	proc
+type	/turf/open/floor/plating/rust/airless	/turf/open/floor/plating/rust	code/game/turfs/open/floor/misc_floor.dm:282	live	turf_open_floor_plating_rust_airless	0	0
 type	/turf/open/floor/plating/heretic_rust	/turf/open/floor/plating	code/game/turfs/open/floor/misc_floor.dm:285	inert	turf_open_floor_plating_heretic_rust	0	0
 proc	/turf/open/floor/plating/heretic_rust	Initialize	code/game/turfs/open/floor/misc_floor.dm:287	mapload	no	-	proc
 type	/turf/open/floor/plating/plasma	/turf/open/floor/plating	code/game/turfs/open/floor/misc_floor.dm:293	live	turf_open_floor_plating_plasma	0	0
@@ -108711,9 +108711,9 @@ type	/turf/open/floor/plating/airless	/turf/open/floor/plating	code/game/turfs/o
 type	/turf/open/floor/plating/lowpressure	/turf/open/floor/plating	code/game/turfs/open/floor/plating/misc_plating.dm:6	live	turf_open_floor_plating_lowpressure	0	0
 type	/turf/open/floor/plating/dumpsterair	/turf/open/floor/plating	code/game/turfs/open/floor/plating/misc_plating.dm:10	live	turf_open_floor_plating_dumpsterair	0	0
 type	/turf/open/floor/plating/icemoon	/turf/open/floor/plating	code/game/turfs/open/floor/plating/misc_plating.dm:14	live	turf_open_floor_plating_icemoon	0	0
-type	/turf/open/floor/plating/abductor	/turf/open/floor/plating	code/game/turfs/open/floor/plating/misc_plating.dm:18	inert	turf_open_floor_plating_abductor	0	0
-proc	/turf/open/floor/plating/abductor	Initialize	code/game/turfs/open/floor/plating/misc_plating.dm:24	mapload	no	-	proc
-proc	/turf/open/floor/plating/abductor	break_tile	code/game/turfs/open/floor/plating/misc_plating.dm:28		no	-	proc
+type	/turf/open/floor/plating/abductor	/turf/open/floor/plating	code/game/turfs/open/floor/plating/misc_plating.dm:18	live	turf_open_floor_plating_abductor	1	0
+proc	/turf/open/floor/plating/abductor	Initialize	code/game/turfs/open/floor/plating/misc_plating.dm:24	mapload	yes	full	proc
+proc	/turf/open/floor/plating/abductor	break_tile	code/game/turfs/open/floor/plating/misc_plating.dm:28		yes	full	proc
 type	/turf/open/floor/plating/abductor2	/turf/open/floor/plating	code/game/turfs/open/floor/plating/misc_plating.dm:32	inert	turf_open_floor_plating_abductor2	0	0
 proc	/turf/open/floor/plating/abductor2	break_tile	code/game/turfs/open/floor/plating/misc_plating.dm:39		no	-	proc
 proc	/turf/open/floor/plating/abductor2	burn_tile	code/game/turfs/open/floor/plating/misc_plating.dm:42		no	-	proc
@@ -109510,16 +109510,16 @@ proc	/turf/open/misc	is_explosion_shielded	code/game/turfs/open/misc.dm:72	sever
 proc	/turf/open/misc	blob_act	code/game/turfs/open/misc.dm:80	B	stub	deferred	proc
 proc	/turf/open/misc	rcd_vals	code/game/turfs/open/misc.dm:83	user,the_rcd	yes	full	proc
 proc	/turf/open/misc	rcd_act	code/game/turfs/open/misc.dm:91	user,the_rcd,rcd_data	yes	full	proc
-type	/turf/open/misc/ashplanet	/turf/open/misc	code/game/turfs/open/ashplanet.dm:2	inert	turf_open_misc_ashplanet	0	0
-proc	/turf/open/misc/ashplanet	Initialize	code/game/turfs/open/ashplanet.dm:21	mapload	no	-	proc
-proc	/turf/open/misc/ashplanet	break_tile	code/game/turfs/open/ashplanet.dm:30		no	-	proc
-proc	/turf/open/misc/ashplanet	burn_tile	code/game/turfs/open/ashplanet.dm:33		no	-	proc
-type	/turf/open/misc/ashplanet/ash	/turf/open/misc/ashplanet	code/game/turfs/open/ashplanet.dm:37	inert	turf_open_misc_ashplanet_ash	0	0
-type	/turf/open/misc/ashplanet/rocky	/turf/open/misc/ashplanet	code/game/turfs/open/ashplanet.dm:43	inert	turf_open_misc_ashplanet_rocky	0	0
-type	/turf/open/misc/ashplanet/wateryrock	/turf/open/misc/ashplanet	code/game/turfs/open/ashplanet.dm:57	inert	turf_open_misc_ashplanet_wateryrock	0	0
-proc	/turf/open/misc/ashplanet/wateryrock	Initialize	code/game/turfs/open/ashplanet.dm:69	mapload	no	-	proc
-type	/turf/open/misc/ashplanet/wateryrock/lavaland_atmos	/turf/open/misc/ashplanet/wateryrock	code/game/turfs/open/ashplanet.dm:74	inert	turf_open_misc_ashplanet_wateryrock_lavaland_atmos	0	0
-type	/turf/open/misc/ashplanet/wateryrock/safeair	/turf/open/misc/ashplanet/wateryrock	code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:84	inert	turf_open_misc_ashplanet_wateryrock_safeair	0	0
+type	/turf/open/misc/ashplanet	/turf/open/misc	code/game/turfs/open/ashplanet.dm:2	live	turf_open_misc_ashplanet	1	0
+proc	/turf/open/misc/ashplanet	Initialize	code/game/turfs/open/ashplanet.dm:21	mapload	yes	full	proc
+proc	/turf/open/misc/ashplanet	break_tile	code/game/turfs/open/ashplanet.dm:30		yes	full	proc
+proc	/turf/open/misc/ashplanet	burn_tile	code/game/turfs/open/ashplanet.dm:33		yes	full	proc
+type	/turf/open/misc/ashplanet/ash	/turf/open/misc/ashplanet	code/game/turfs/open/ashplanet.dm:37	live	turf_open_misc_ashplanet_ash	0	0
+type	/turf/open/misc/ashplanet/rocky	/turf/open/misc/ashplanet	code/game/turfs/open/ashplanet.dm:43	live	turf_open_misc_ashplanet_rocky	0	0
+type	/turf/open/misc/ashplanet/wateryrock	/turf/open/misc/ashplanet	code/game/turfs/open/ashplanet.dm:57	live	turf_open_misc_ashplanet_wateryrock	1	0
+proc	/turf/open/misc/ashplanet/wateryrock	Initialize	code/game/turfs/open/ashplanet.dm:69	mapload	yes	full	proc
+type	/turf/open/misc/ashplanet/wateryrock/lavaland_atmos	/turf/open/misc/ashplanet/wateryrock	code/game/turfs/open/ashplanet.dm:74	live	turf_open_misc_ashplanet_wateryrock_lavaland_atmos	0	0
+type	/turf/open/misc/ashplanet/wateryrock/safeair	/turf/open/misc/ashplanet/wateryrock	code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:84	live	turf_open_misc_ashplanet_wateryrock_safeair	0	0
 type	/turf/open/misc/asteroid	/turf/open/misc	code/game/turfs/open/asteroid.dm:6	live	turf_open_misc_asteroid	1	1
 proc	/turf/open/misc/asteroid	broken_states	code/game/turfs/open/asteroid.dm:34		yes	full	proc
 proc	/turf/open/misc/asteroid	break_tile	code/game/turfs/open/asteroid.dm:39		yes	full	proc
@@ -109546,9 +109546,9 @@ type	/turf/open/misc/asteroid/basalt/lava	/turf/open/misc/asteroid/basalt	code/g
 type	/turf/open/misc/asteroid/basalt/airless	/turf/open/misc/asteroid/basalt	code/game/turfs/open/asteroid.dm:172	live	turf_open_misc_asteroid_basalt_airless	0	1
 type	/turf/open/misc/asteroid/basalt/lava_land_surface	/turf/open/misc/asteroid/basalt	code/game/turfs/open/asteroid.dm:189	live	turf_open_misc_asteroid_basalt_lava_land_surface	0	0
 type	/turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins	/turf/open/misc/asteroid/basalt/lava_land_surface	code/game/turfs/open/asteroid.dm:196	live	turf_open_misc_asteroid_basalt_lava_land_surface_no_ruins	0	0
-type	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace	/turf/open/misc/asteroid/basalt/lava_land_surface	code/game/turfs/open/asteroid.dm:200	inert	turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace	0	0
-proc	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace	Initialize	code/game/turfs/open/asteroid.dm:206	mapload	no	-	proc
-type	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace/normal_atmos	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace	code/game/turfs/open/asteroid.dm:228	inert	turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace_normal_atmos	0	0
+type	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace	/turf/open/misc/asteroid/basalt/lava_land_surface	code/game/turfs/open/asteroid.dm:200	live	turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace	1	0
+proc	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace	Initialize	code/game/turfs/open/asteroid.dm:206	mapload	yes	full	proc
+type	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace/normal_atmos	/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace	code/game/turfs/open/asteroid.dm:228	live	turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace_normal_atmos	0	0
 type	/turf/open/misc/asteroid/basalt/smooth	/turf/open/misc/asteroid/basalt	code/game/turfs/open/asteroid.dm:243	live	turf_open_misc_asteroid_basalt_smooth	1	0
 proc	/turf/open/misc/asteroid/basalt/smooth	set_smoothed_icon_state	code/game/turfs/open/asteroid.dm:254	new_junction	yes	full	proc
 proc	/turf/open/misc/asteroid/basalt/smooth	update_overlays	code/game/turfs/open/asteroid.dm:262		yes	full	proc
@@ -109568,59 +109568,59 @@ type	/turf/open/misc/asteroid/basalt/wasteland/basin	/turf/open/misc/asteroid/ba
 type	/turf/open/misc/asteroid/basalt/wasteland/station	/turf/open/misc/asteroid/basalt/wasteland	code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:87	live	turf_open_misc_asteroid_basalt_wasteland_station	0	0
 type	/turf/open/misc/asteroid/lowpressure	/turf/open/misc/asteroid	code/game/turfs/open/asteroid.dm:232	live	turf_open_misc_asteroid_lowpressure	0	0
 type	/turf/open/misc/asteroid/airless	/turf/open/misc/asteroid	code/game/turfs/open/asteroid.dm:237	live	turf_open_misc_asteroid_airless	0	0
-type	/turf/open/misc/asteroid/snow	/turf/open/misc/asteroid	code/game/turfs/open/asteroid.dm:322	inert	turf_open_misc_asteroid_snow	0	0
-proc	/turf/open/misc/asteroid/snow	burn_tile	code/game/turfs/open/asteroid.dm:339		no	-	proc
-proc	/turf/open/misc/asteroid/snow	burnt_states	code/game/turfs/open/asteroid.dm:348		no	-	proc
-proc	/turf/open/misc/asteroid/snow	add_footprint	code/game/turfs/open/asteroid.dm:351	walker,movement_direction	no	-	proc
-proc	/turf/open/misc/asteroid/snow	snow_clear_footprints	code/game/turfs/open/asteroid.dm:371	source,storm	no	-	proc root
-proc	/turf/open/misc/asteroid/snow	item_interaction	code/game/turfs/open/asteroid.dm:381	user,tool,modifiers	no	-	proc
-type	/turf/open/misc/asteroid/snow/icemoon	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:413	inert	turf_open_misc_asteroid_snow_icemoon	0	0
-type	/turf/open/misc/asteroid/snow/icemoon/do_not_chasm	/turf/open/misc/asteroid/snow/icemoon	code/game/turfs/open/asteroid.dm:420	inert	turf_open_misc_asteroid_snow_icemoon_do_not_chasm	0	0
-type	/turf/open/misc/asteroid/snow/icemoon/do_not_scrape	/turf/open/misc/asteroid/snow/icemoon	code/game/turfs/open/asteroid.dm:424	inert	turf_open_misc_asteroid_snow_icemoon_do_not_scrape	0	0
+type	/turf/open/misc/asteroid/snow	/turf/open/misc/asteroid	code/game/turfs/open/asteroid.dm:322	live	turf_open_misc_asteroid_snow	1	0
+proc	/turf/open/misc/asteroid/snow	burn_tile	code/game/turfs/open/asteroid.dm:339		yes	full	proc
+proc	/turf/open/misc/asteroid/snow	burnt_states	code/game/turfs/open/asteroid.dm:348		yes	full	proc
+proc	/turf/open/misc/asteroid/snow	add_footprint	code/game/turfs/open/asteroid.dm:351	walker,movement_direction	yes	full	proc
+proc	/turf/open/misc/asteroid/snow	snow_clear_footprints	code/game/turfs/open/asteroid.dm:371	source,storm	yes	full	proc root
+proc	/turf/open/misc/asteroid/snow	item_interaction	code/game/turfs/open/asteroid.dm:381	user,tool,modifiers	yes	full	proc
+type	/turf/open/misc/asteroid/snow/icemoon	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:413	live	turf_open_misc_asteroid_snow_icemoon	0	0
+type	/turf/open/misc/asteroid/snow/icemoon/do_not_chasm	/turf/open/misc/asteroid/snow/icemoon	code/game/turfs/open/asteroid.dm:420	live	turf_open_misc_asteroid_snow_icemoon_do_not_chasm	0	0
+type	/turf/open/misc/asteroid/snow/icemoon/do_not_scrape	/turf/open/misc/asteroid/snow/icemoon	code/game/turfs/open/asteroid.dm:424	live	turf_open_misc_asteroid_snow_icemoon_do_not_scrape	0	0
 type	/turf/open/misc/asteroid/snow/ice	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:433	inert	turf_open_misc_asteroid_snow_ice	0	0
 proc	/turf/open/misc/asteroid/snow/ice	break_tile	code/game/turfs/open/asteroid.dm:447		no	-	proc
 proc	/turf/open/misc/asteroid/snow/ice	burn_tile	code/game/turfs/open/asteroid.dm:450		no	-	proc
 type	/turf/open/misc/asteroid/snow/ice/icemoon	/turf/open/misc/asteroid/snow/ice	code/game/turfs/open/asteroid.dm:454	inert	turf_open_misc_asteroid_snow_ice_icemoon	0	0
-type	/turf/open/misc/asteroid/snow/airless	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:460	inert	turf_open_misc_asteroid_snow_airless	0	0
-type	/turf/open/misc/asteroid/snow/temperatre	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:464	inert	turf_open_misc_asteroid_snow_temperatre	0	0
-type	/turf/open/misc/asteroid/snow/coldroom	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:468	inert	turf_open_misc_asteroid_snow_coldroom	0	0
-type	/turf/open/misc/asteroid/snow/snow_cabin	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:475	inert	turf_open_misc_asteroid_snow_snow_cabin	0	0
-type	/turf/open/misc/asteroid/snow/atmosphere	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:478	inert	turf_open_misc_asteroid_snow_atmosphere	0	0
-type	/turf/open/misc/asteroid/snow/standard_air	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:482	inert	turf_open_misc_asteroid_snow_standard_air	0	0
+type	/turf/open/misc/asteroid/snow/airless	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:460	live	turf_open_misc_asteroid_snow_airless	0	0
+type	/turf/open/misc/asteroid/snow/temperatre	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:464	live	turf_open_misc_asteroid_snow_temperatre	0	0
+type	/turf/open/misc/asteroid/snow/coldroom	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:468	live	turf_open_misc_asteroid_snow_coldroom	0	0
+type	/turf/open/misc/asteroid/snow/snow_cabin	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:475	live	turf_open_misc_asteroid_snow_snow_cabin	0	0
+type	/turf/open/misc/asteroid/snow/atmosphere	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:478	live	turf_open_misc_asteroid_snow_atmosphere	0	0
+type	/turf/open/misc/asteroid/snow/standard_air	/turf/open/misc/asteroid/snow	code/game/turfs/open/asteroid.dm:482	live	turf_open_misc_asteroid_snow_standard_air	0	0
 type	/turf/open/misc/asteroid/moon	/turf/open/misc/asteroid	code/game/turfs/open/asteroid.dm:486	live	turf_open_misc_asteroid_moon	0	0
 type	/turf/open/misc/asteroid/moon/dug	/turf/open/misc/asteroid/moon	code/game/turfs/open/asteroid.dm:496	live	turf_open_misc_asteroid_moon_dug	0	0
 type	/turf/open/misc/asteroid/plasma	/turf/open/misc/asteroid	code/game/turfs/open/asteroid.dm:504	live	turf_open_misc_asteroid_plasma	0	0
 type	/turf/open/misc/basalt	/turf/open/misc	code/game/turfs/open/basalt.dm:2	inert	turf_open_misc_basalt	0	0
 proc	/turf/open/misc/basalt	Initialize	code/game/turfs/open/basalt.dm:9	mapload	no	-	proc
 type	/turf/open/misc/basalt/safe	/turf/open/misc/basalt	code/game/turfs/open/basalt.dm:21	inert	turf_open_misc_basalt_safe	0	0
-type	/turf/open/misc/grass	/turf/open/misc	code/game/turfs/open/grass.dm:2	inert	turf_open_misc_grass	0	0
-proc	/turf/open/misc/grass	broken_states	code/game/turfs/open/grass.dm:28		no	-	proc
-proc	/turf/open/misc/grass	burnt_states	code/game/turfs/open/grass.dm:34		no	-	proc
-proc	/turf/open/misc/grass	Initialize	code/game/turfs/open/grass.dm:40	mapload	no	-	proc
-proc	/turf/open/misc/grass	get_smooth_underlay_icon	code/game/turfs/open/grass.dm:52	underlay_appearance,asking_turf,adjacency_dir	no	-	proc
-type	/turf/open/misc/grass/lavaland	/turf/open/misc/grass	code/game/turfs/open/grass.dm:64	inert	turf_open_misc_grass_lavaland	0	0
-type	/turf/open/misc/grass/jungle	/turf/open/misc/grass	code/game/turfs/open/planet.dm:69	inert	turf_open_misc_grass_jungle	0	0
-type	/turf/open/misc/grass/jungle/lavaland	/turf/open/misc/grass/jungle	code/game/turfs/open/planet.dm:79	inert	turf_open_misc_grass_jungle_lavaland	0	0
-type	/turf/open/misc/grass/jungle/station	/turf/open/misc/grass/jungle	code/game/turfs/open/planet.dm:82	inert	turf_open_misc_grass_jungle_station	0	0
+type	/turf/open/misc/grass	/turf/open/misc	code/game/turfs/open/grass.dm:2	live	turf_open_misc_grass	1	0
+proc	/turf/open/misc/grass	broken_states	code/game/turfs/open/grass.dm:28		yes	full	proc
+proc	/turf/open/misc/grass	burnt_states	code/game/turfs/open/grass.dm:34		yes	full	proc
+proc	/turf/open/misc/grass	Initialize	code/game/turfs/open/grass.dm:40	mapload	yes	full	proc
+proc	/turf/open/misc/grass	get_smooth_underlay_icon	code/game/turfs/open/grass.dm:52	underlay_appearance,asking_turf,adjacency_dir	yes	full	proc
+type	/turf/open/misc/grass/lavaland	/turf/open/misc/grass	code/game/turfs/open/grass.dm:64	live	turf_open_misc_grass_lavaland	0	0
+type	/turf/open/misc/grass/jungle	/turf/open/misc/grass	code/game/turfs/open/planet.dm:69	live	turf_open_misc_grass_jungle	0	0
+type	/turf/open/misc/grass/jungle/lavaland	/turf/open/misc/grass/jungle	code/game/turfs/open/planet.dm:79	live	turf_open_misc_grass_jungle_lavaland	0	0
+type	/turf/open/misc/grass/jungle/station	/turf/open/misc/grass/jungle	code/game/turfs/open/planet.dm:82	live	turf_open_misc_grass_jungle_station	0	0
 type	/turf/open/misc/hay	/turf/open/misc	code/game/turfs/open/hay.dm:2	live	turf_open_misc_hay	0	0
 type	/turf/open/misc/hay/lavaland	/turf/open/misc/hay	code/game/turfs/open/hay.dm:9	live	turf_open_misc_hay_lavaland	0	0
 type	/turf/open/misc/hay/icemoon	/turf/open/misc/hay	code/game/turfs/open/hay.dm:13	live	turf_open_misc_hay_icemoon	0	0
-type	/turf/open/misc/ice	/turf/open/misc	code/game/turfs/open/ice.dm:2	inert	turf_open_misc_ice	0	0
-proc	/turf/open/misc/ice	Initialize	code/game/turfs/open/ice.dm:28	mapload	no	-	proc
-proc	/turf/open/misc/ice	break_tile	code/game/turfs/open/ice.dm:34		no	-	proc
-proc	/turf/open/misc/ice	burn_tile	code/game/turfs/open/ice.dm:37		no	-	proc
-proc	/turf/open/misc/ice	examine	code/game/turfs/open/ice.dm:40	user	no	-	proc
-proc	/turf/open/misc/ice	attack_animal	code/game/turfs/open/ice.dm:45	animal,modifiers	no	-	proc
-proc	/turf/open/misc/ice	item_interaction	code/game/turfs/open/ice.dm:50	user,tool,modifiers	no	-	proc
-proc	/turf/open/misc/ice	dig_hole	code/game/turfs/open/ice.dm:56	user	no	-	proc root
-proc	/turf/open/misc/ice	spawn_hole	code/game/turfs/open/ice.dm:67		no	-	proc root
-type	/turf/open/misc/ice/smooth	/turf/open/misc/ice	code/game/turfs/open/ice.dm:76	inert	turf_open_misc_ice_smooth	0	0
-type	/turf/open/misc/ice/icemoon	/turf/open/misc/ice	code/game/turfs/open/ice.dm:83	inert	turf_open_misc_ice_icemoon	0	0
-type	/turf/open/misc/ice/icemoon/no_planet_atmos	/turf/open/misc/ice/icemoon	code/game/turfs/open/ice.dm:89	inert	turf_open_misc_ice_icemoon_no_planet_atmos	0	0
+type	/turf/open/misc/ice	/turf/open/misc	code/game/turfs/open/ice.dm:2	live	turf_open_misc_ice	1	0
+proc	/turf/open/misc/ice	Initialize	code/game/turfs/open/ice.dm:28	mapload	yes	full	proc
+proc	/turf/open/misc/ice	break_tile	code/game/turfs/open/ice.dm:34		yes	full	proc
+proc	/turf/open/misc/ice	burn_tile	code/game/turfs/open/ice.dm:37		yes	full	proc
+proc	/turf/open/misc/ice	examine	code/game/turfs/open/ice.dm:40	user	yes	full	proc
+proc	/turf/open/misc/ice	attack_animal	code/game/turfs/open/ice.dm:45	animal,modifiers	yes	full	proc
+proc	/turf/open/misc/ice	item_interaction	code/game/turfs/open/ice.dm:50	user,tool,modifiers	yes	full	proc
+proc	/turf/open/misc/ice	dig_hole	code/game/turfs/open/ice.dm:56	user	yes	full	proc root
+proc	/turf/open/misc/ice	spawn_hole	code/game/turfs/open/ice.dm:67		yes	full	proc root
+type	/turf/open/misc/ice/smooth	/turf/open/misc/ice	code/game/turfs/open/ice.dm:76	live	turf_open_misc_ice_smooth	0	0
+type	/turf/open/misc/ice/icemoon	/turf/open/misc/ice	code/game/turfs/open/ice.dm:83	live	turf_open_misc_ice_icemoon	0	0
+type	/turf/open/misc/ice/icemoon/no_planet_atmos	/turf/open/misc/ice/icemoon	code/game/turfs/open/ice.dm:89	live	turf_open_misc_ice_icemoon_no_planet_atmos	0	0
 type	/turf/open/misc/ice/icemoon/no_planet_atmos/holed	/turf/open/misc/ice/icemoon/no_planet_atmos	code/game/turfs/open/ice.dm:94	inert	turf_open_misc_ice_icemoon_no_planet_atmos_holed	0	0
 proc	/turf/open/misc/ice/icemoon/no_planet_atmos/holed	Initialize	code/game/turfs/open/ice.dm:94	mapload	no	-	proc
-type	/turf/open/misc/ice/temperate	/turf/open/misc/ice	code/game/turfs/open/ice.dm:99	inert	turf_open_misc_ice_temperate	0	0
-type	/turf/open/misc/ice/coldroom	/turf/open/misc/ice	code/game/turfs/open/ice.dm:105	inert	turf_open_misc_ice_coldroom	0	0
+type	/turf/open/misc/ice/temperate	/turf/open/misc/ice	code/game/turfs/open/ice.dm:99	live	turf_open_misc_ice_temperate	0	0
+type	/turf/open/misc/ice/coldroom	/turf/open/misc/ice	code/game/turfs/open/ice.dm:105	live	turf_open_misc_ice_coldroom	0	0
 type	/turf/open/misc/dirt	/turf/open/misc	code/game/turfs/open/planet.dm:2	live	turf_open_misc_dirt	0	0
 type	/turf/open/misc/dirt/station	/turf/open/misc/dirt	code/game/turfs/open/planet.dm:19	live	turf_open_misc_dirt_station	0	0
 type	/turf/open/misc/dirt/jungle	/turf/open/misc/dirt	code/game/turfs/open/planet.dm:26	live	turf_open_misc_dirt_jungle	0	0
@@ -109632,18 +109632,18 @@ type	/turf/open/misc/dirt/dark	/turf/open/misc/dirt	code/game/turfs/open/planet.
 type	/turf/open/misc/dirt/dark/station	/turf/open/misc/dirt/dark	code/game/turfs/open/planet.dm:34	live	turf_open_misc_dirt_dark_station	0	0
 type	/turf/open/misc/dirt/dark/station/airless	/turf/open/misc/dirt/dark/station	code/game/turfs/open/planet.dm:39	live	turf_open_misc_dirt_dark_station_airless	0	0
 type	/turf/open/misc/dirt/dark/jungle	/turf/open/misc/dirt/dark	code/game/turfs/open/planet.dm:43	live	turf_open_misc_dirt_dark_jungle	0	0
-type	/turf/open/misc/beach	/turf/open/misc	code/game/turfs/open/sand.dm:2	inert	turf_open_misc_beach	0	0
-proc	/turf/open/misc/beach	Initialize	code/game/turfs/open/sand.dm:14	mapload	no	-	proc
-proc	/turf/open/misc/beach	ex_act	code/game/turfs/open/sand.dm:18	severity,target	no	-	proc
-proc	/turf/open/misc/beach	add_footprint	code/game/turfs/open/sand.dm:23	walker,movement_direction	no	-	proc
-proc	/turf/open/misc/beach	sand_clear_footprints	code/game/turfs/open/sand.dm:40	source,storm	no	-	proc root
-type	/turf/open/misc/beach/sand	/turf/open/misc/beach	code/game/turfs/open/sand.dm:51	inert	turf_open_misc_beach_sand	0	0
-proc	/turf/open/misc/beach/sand	Initialize	code/game/turfs/open/sand.dm:58	mapload	no	-	proc
-type	/turf/open/misc/beach/coast	/turf/open/misc/beach	code/game/turfs/open/sand.dm:64	inert	turf_open_misc_beach_coast	0	0
-proc	/turf/open/misc/beach/coast	Initialize	code/game/turfs/open/sand.dm:74	mapload	no	-	proc
-proc	/turf/open/misc/beach/coast	break_tile	code/game/turfs/open/sand.dm:78		no	-	proc
-type	/turf/open/misc/beach/coast/corner	/turf/open/misc/beach/coast	code/game/turfs/open/sand.dm:83	inert	turf_open_misc_beach_coast_corner	0	0
-proc	/turf/open/misc/beach/coast/corner	break_tile	code/game/turfs/open/sand.dm:86		no	-	proc
+type	/turf/open/misc/beach	/turf/open/misc	code/game/turfs/open/sand.dm:2	live	turf_open_misc_beach	1	0
+proc	/turf/open/misc/beach	Initialize	code/game/turfs/open/sand.dm:14	mapload	yes	full	proc
+proc	/turf/open/misc/beach	ex_act	code/game/turfs/open/sand.dm:18	severity,target	yes	full	proc
+proc	/turf/open/misc/beach	add_footprint	code/game/turfs/open/sand.dm:23	walker,movement_direction	yes	full	proc
+proc	/turf/open/misc/beach	sand_clear_footprints	code/game/turfs/open/sand.dm:40	source,storm	yes	full	proc root
+type	/turf/open/misc/beach/sand	/turf/open/misc/beach	code/game/turfs/open/sand.dm:51	live	turf_open_misc_beach_sand	1	0
+proc	/turf/open/misc/beach/sand	Initialize	code/game/turfs/open/sand.dm:58	mapload	yes	full	proc
+type	/turf/open/misc/beach/coast	/turf/open/misc/beach	code/game/turfs/open/sand.dm:64	live	turf_open_misc_beach_coast	1	0
+proc	/turf/open/misc/beach/coast	Initialize	code/game/turfs/open/sand.dm:74	mapload	yes	full	proc
+proc	/turf/open/misc/beach/coast	break_tile	code/game/turfs/open/sand.dm:78		yes	full	proc
+type	/turf/open/misc/beach/coast/corner	/turf/open/misc/beach/coast	code/game/turfs/open/sand.dm:83	live	turf_open_misc_beach_coast_corner	1	0
+proc	/turf/open/misc/beach/coast/corner	break_tile	code/game/turfs/open/sand.dm:86		yes	full	proc
 type	/turf/open/misc/sandy_dirt	/turf/open/misc	code/game/turfs/open/sand.dm:91	inert	turf_open_misc_sandy_dirt	0	0
 proc	/turf/open/misc/sandy_dirt	break_tile	code/game/turfs/open/sand.dm:106		no	-	proc
 proc	/turf/open/misc/sandy_dirt	broken_states	code/game/turfs/open/sand.dm:110		no	-	proc
@@ -109792,9 +109792,9 @@ type	/turf/open/water/jungle	/turf/open/water	(implied by a subtype's path)	live
 type	/turf/open/water/no_planet_atmos	/turf/open/water	code/game/turfs/open/water.dm:87	live	turf_open_water_no_planet_atmos	0	1
 type	/turf/open/water/no_planet_atmos/deep	/turf/open/water/no_planet_atmos	code/game/turfs/open/water.dm:91	live	turf_open_water_no_planet_atmos_deep	0	1
 type	/turf/open/water/no_planet_atmos/deep/lethal	/turf/open/water/no_planet_atmos/deep	code/game/turfs/open/water.dm:99	live	turf_open_water_no_planet_atmos_deep_lethal	0	0
-type	/turf/open/water/beach	/turf/open/water	code/game/turfs/open/water.dm:107	inert	turf_open_water_beach	0	0
-proc	/turf/open/water/beach	Initialize	code/game/turfs/open/water.dm:117	mapload	no	-	proc
-type	/turf/open/water/beach/tizira	/turf/open/water/beach	code/game/turfs/open/water.dm:203	inert	turf_open_water_beach_tizira	0	0
+type	/turf/open/water/beach	/turf/open/water	code/game/turfs/open/water.dm:107	live	turf_open_water_beach	1	0
+proc	/turf/open/water/beach	Initialize	code/game/turfs/open/water.dm:117	mapload	yes	full	proc
+type	/turf/open/water/beach/tizira	/turf/open/water/beach	code/game/turfs/open/water.dm:203	live	turf_open_water_beach_tizira	0	0
 type	/turf/open/water/deep_beach	/turf/open/water	code/game/turfs/open/water.dm:123	live	turf_open_water_deep_beach	0	0
 type	/turf/open/water/deep_beach/lethal	/turf/open/water/deep_beach	code/game/turfs/open/water.dm:134	live	turf_open_water_deep_beach_lethal	0	0
 type	/turf/open/water/lavaland_atmos	/turf/open/water	code/game/turfs/open/water.dm:138	live	turf_open_water_lavaland_atmos	0	0

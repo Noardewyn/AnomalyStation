@@ -1,0 +1,12 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_ore_vent.dmm tg 1d99bd7f
+size 3 3 1
+chunk 32
+default /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+
+[chunk 1 1 1]
+1,3: /turf/template_noop | /area/template_noop
+3,3: /turf/template_noop | /area/template_noop
+2,2: /obj/structure/ore_vent/random | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop

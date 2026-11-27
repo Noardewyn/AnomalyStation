@@ -5289,9 +5289,9 @@ public partial class obj_effect_spawner_random_mining_loot_pka_mod : obj_effect_
     }
 }
 
-// tg: code/modules/mapfluff/ruins/shoe_factory.dm:5
-[DmPath("/obj/effect/spawner/random/mining_loot/shoe_factory"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_spawner_random_mining_loot_shoe_factory : obj_effect_spawner_random_mining_loot
+// tg: code/modules/mapfluff/ruins/shoe_factory.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/effect/spawner/random/mining_loot/shoe_factory")]
+public partial class obj_effect_spawner_random_mining_loot_shoe_factory
 {
     // tg: code/modules/mapfluff/ruins/shoe_factory.dm:5
     public obj_effect_spawner_random_mining_loot_shoe_factory()

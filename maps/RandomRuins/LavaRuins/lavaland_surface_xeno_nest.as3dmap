@@ -1,0 +1,619 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_xeno_nest.dmm tg 1d99bd7f
+size 43 30 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+20,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,30: /obj/structure/alien/resin/wall | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,30: /obj/structure/alien/resin/wall | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,30: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,29: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,29: /obj/structure/alien/weeds | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,29: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,29: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+4,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+5,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+6,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+7,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+8,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+9,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+10,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+11,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+12,28: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+20,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,28: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,28: /obj/structure/alien/weeds | /mob/living/basic/alien | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,28: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,28: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,28: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,27: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,27: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+3,27: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+4,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,27: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+13,27: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+14,27: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+20,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,27: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,27: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,27: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,27: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,26: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,26: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,26: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,26: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/item/gun/ballistic/automatic/pistol | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,26: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+15,26: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+21,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,26: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,25: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,25: /obj/structure/alien/weeds | /mob/living/basic/alien/sentinel | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,25: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,25: /obj/structure/alien/weeds/node | /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,25: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,25: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,25: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+16,25: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+21,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,25: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,24: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,24: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,24: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,24: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,24: /obj/structure/alien/weeds | /mob/living/basic/alien/sentinel | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,24: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/item/clothing/under/rank/security/officer | /obj/item/clothing/suit/armor/vest | /obj/item/melee/baton/security/loaded | /obj/item/clothing/head/helmet | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,24: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,23: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,23: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,23: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,23: /obj/structure/alien/weeds | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,23: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,23: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,23: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,22: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,22: /obj/structure/alien/weeds | /mob/living/basic/alien/queen/large{desc = "A gigantic alien who is in charge of the hive and all of its loyal servants."; name = "alien queen"; pixel_x = -16; can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,22: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,22: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,22: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,22: /obj/structure/alien/weeds | /mob/living/basic/alien | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,21: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,21: /obj/structure/alien/weeds | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,21: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,21: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,21: /obj/structure/alien/weeds | /mob/living/basic/alien/sentinel | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,21: /obj/structure/alien/weeds | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,21: /obj/structure/alien/weeds | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,21: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,20: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,20: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,20: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/effect/decal/cleanable/blood | /obj/item/clothing/under/syndicate | /obj/item/clothing/glasses/night | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,20: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,20: /obj/structure/alien/weeds | /mob/living/basic/alien/sentinel | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,20: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,20: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,20: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+17,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,20: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,20: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,20: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,20: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,19: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+3,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,19: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,19: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,19: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,19: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+16,19: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+17,19: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+18,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,19: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,19: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+1,18: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,18: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+3,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall{move_force = 1000; move_resist = 3000; pull_force = 1000} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+4,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+5,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+6,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+7,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+8,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+9,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+10,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,18: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+15,18: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+17,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+2,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+3,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+4,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+5,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+6,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+7,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+8,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+9,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+10,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+11,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+12,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+13,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+14,17: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+17,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,16: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,16: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,15: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,15: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,14: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,14: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,12: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,11: /obj/structure/alien/weeds/node | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,11: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,10: /obj/structure/alien/weeds | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+24,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,10: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,10: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+21,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+22,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+23,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,9: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,9: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+19,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+20,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,8: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,8: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,7: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,7: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,7: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,7: /obj/structure/alien/weeds | /mob/living/basic/alien | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,7: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+18,7: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,7: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,7: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,7: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,6: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,6: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,6: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,6: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,6: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,6: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,6: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,6: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,6: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,6: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,6: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,5: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,5: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,5: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,5: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,5: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,5: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,5: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,5: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,5: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,5: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,5: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,4: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,4: /obj/structure/alien/weeds | /obj/structure/bed/nest | /obj/effect/decal/cleanable/blood/gibs | /obj/item/tank/internals/oxygen | /obj/item/clothing/suit/space/syndicate/orange | /obj/item/clothing/mask/gas | /obj/item/clothing/head/helmet/space/syndicate/orange | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,4: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood/gibs | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,4: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,4: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,4: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+17,4: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,4: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,4: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,4: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,4: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,3: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,3: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,3: /obj/structure/alien/weeds | /obj/effect/decal/cleanable/blood | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,3: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,3: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,3: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,3: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,3: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,3: /obj/structure/alien/weeds | /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,3: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,3: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,3: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+11,2: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,2: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,2: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,2: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,2: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+16,2: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,2: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,2: /obj/structure/alien/weeds/node | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,2: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,2: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,2: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,2: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,2: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+12,1: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+13,1: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+14,1: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+15,1: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+25,1: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+26,1: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+27,1: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+28,1: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+29,1: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+30,1: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+31,1: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+32,1: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+
+[chunk 33 1 1]
+41,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+43,26: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,25: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+43,25: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,24: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,24: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,24: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+43,24: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+34,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+35,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+36,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,23: /obj/structure/alien/weeds | /mob/living/basic/alien/drone{can_plant_weeds = 0} | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,23: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+43,23: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+34,22: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+35,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+36,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,22: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,22: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,22: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+43,22: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+34,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+35,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+36,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,21: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,21: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,21: /obj/structure/alien/weeds | /obj/structure/bed/nest | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+43,21: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,20: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,20: /obj/structure/alien/weeds | /obj/structure/alien/egg/burst | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+43,20: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,19: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+42,19: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,18: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,18: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,17: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+41,17: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,16: /obj/structure/alien/weeds/node | /mob/living/basic/alien | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,16: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,15: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,15: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+36,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,14: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,14: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,14: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+34,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+35,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+36,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,13: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+40,13: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,12: /obj/structure/alien/weeds/node | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+34,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+35,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+36,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,12: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+39,12: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+34,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+35,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+36,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+37,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+38,11: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,4: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+34,4: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,3: /obj/structure/alien/weeds | /obj/structure/alien/resin/wall | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest
+33,2: /obj/structure/alien/weeds | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/unpowered/xenonest

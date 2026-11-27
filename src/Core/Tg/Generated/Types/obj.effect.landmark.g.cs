@@ -935,9 +935,9 @@ public partial class obj_effect_landmark_event_spawn
     }
 }
 
-// tg: code/game/objects/effects/landmarks.dm:485
-[DmPath("/obj/effect/landmark/ruin"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_landmark_ruin : obj_effect_landmark
+// tg: code/game/objects/effects/landmarks.dm:485 (the var block of a hand-written class)
+[DmPath("/obj/effect/landmark/ruin")]
+public partial class obj_effect_landmark_ruin
 {
     public datum_map_template_ruin ruin_template; // tg: code/game/objects/effects/landmarks.dm:485
 }

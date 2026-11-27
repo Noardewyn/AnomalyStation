@@ -1,0 +1,95 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_bileworm_nest.dmm tg 1d99bd7f
+size 15 15 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+5,13: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+7,13: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+8,13: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+9,13: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+10,13: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+7,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+8,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+9,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+10,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+11,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+3,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+7,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+8,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+9,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+10,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+11,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+13,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+3,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+7,10: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+8,10: /mob/living/basic/mining/bileworm | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+9,10: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+10,10: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+11,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+13,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,9: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+7,9: /obj/item/crusher_trophy/bileworm_spewlet | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+8,9: /obj/structure/water_source/puddle | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+9,9: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+10,9: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+11,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+13,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,8: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+7,8: /mob/living/basic/mining/bileworm | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+8,8: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+9,8: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+10,8: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+11,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+13,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,7: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+7,7: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+8,7: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/lavaland_atmos | /area/lavaland/surface/outdoors
+9,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+10,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+11,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+13,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+3,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+7,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+8,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+9,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+10,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+11,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+3,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+6,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+7,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+8,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+11,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+4,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+5,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+7,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+8,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop
+12,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/template_noop

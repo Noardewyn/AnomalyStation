@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M10 slice G3 (D272): the whole file, the rotation of what a shuttle carries when it docks turned (Meta's mining docks); the alien
-// weeds' since gaps X5.
+// weeds' since gaps X5, and the shuttle bar's.
 
 /*
 All shuttleRotate procs go here
@@ -135,6 +135,17 @@ public partial class obj_structure_disposalpipe : obj_structure
                 new_dpdir = Dm.bitor(new_dpdir, Dm.num(angle2dir(Dm.num(rotation) + Dm.num(dir2angle(D)))));
         }
         dpdir = new_dpdir;
+    }
+}
+
+// tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:72 (the shuttle bar's kick, a Lavaland ruin's table)
+public partial class obj_structure_table_wood_shuttle_bar : obj_structure_table_wood
+{
+    // tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:72
+    public override async DmTask shuttleRotate(object rotation = null, float? @params = null)
+    {
+        await base.shuttleRotate(rotation, @params);
+        boot_dir = Dm.num(angle2dir(Dm.num(rotation) + Dm.num(dir2angle(boot_dir))));
     }
 }
 

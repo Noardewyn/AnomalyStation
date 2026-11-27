@@ -1118,9 +1118,9 @@ public partial class obj_item_clothing_mask_chameleon_drone : obj_item_clothing_
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:339
-[DmPath("/obj/item/clothing/mask/chameleon/gps"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_mask_chameleon_gps : obj_item_clothing_mask_chameleon { }
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:339 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/mask/chameleon/gps")]
+public partial class obj_item_clothing_mask_chameleon_gps { }
 
 // tg: code/modules/clothing/masks/animal_masks.dm:17 (the var block of a hand-written class)
 [DmPath("/obj/item/clothing/mask/animal")]

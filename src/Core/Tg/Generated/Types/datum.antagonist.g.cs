@@ -175,9 +175,9 @@ public partial class datum_antagonist_abductee : datum_antagonist
     }
 }
 
-// tg: code/modules/antagonists/ashwalker/ashwalker.dm:2
-[DmPath("/datum/antagonist/ashwalker"), DmGeneratedOnly, DmInert]
-public partial class datum_antagonist_ashwalker : datum_antagonist
+// tg: code/modules/antagonists/ashwalker/ashwalker.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/antagonist/ashwalker")]
+public partial class datum_antagonist_ashwalker
 {
     public datum_team_ashwalkers ashie_team; // tg: code/modules/antagonists/ashwalker/ashwalker.dm:9
 

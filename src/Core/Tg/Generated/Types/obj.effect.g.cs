@@ -3044,9 +3044,9 @@ public partial class obj_effect_shield
     }
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:4
-[DmPath("/obj/effect/step_trigger"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger : obj_effect
+// tg: code/game/objects/effects/step_triggers.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger")]
+public partial class obj_effect_step_trigger
 {
     public float affect_ghosts = 0; // tg: code/game/objects/effects/step_triggers.dm:4
     public float stopper = 1; // tg: code/game/objects/effects/step_triggers.dm:5
@@ -3060,9 +3060,9 @@ public partial class obj_effect_step_trigger : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:40
-[DmPath("/obj/effect/step_trigger/message"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger_message : obj_effect_step_trigger
+// tg: code/game/objects/effects/step_triggers.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger/message")]
+public partial class obj_effect_step_trigger_message
 {
     public object message; // tg: code/game/objects/effects/step_triggers.dm:40
     public float once = 1; // tg: code/game/objects/effects/step_triggers.dm:41
@@ -3095,7 +3095,7 @@ public partial class obj_effect_step_trigger_thrower : obj_effect_step_trigger
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/obj/effect/step_trigger/stopper"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/step_trigger/stopper"), DmGeneratedOnly]
 public partial class obj_effect_step_trigger_stopper : obj_effect_step_trigger { }
 
 // tg: code/game/objects/effects/step_triggers.dm:116
@@ -3137,9 +3137,9 @@ public partial class obj_effect_step_trigger_teleport_fancy : obj_effect_step_tr
     public float exitsmoke = 0; // tg: code/game/objects/effects/step_triggers.dm:170
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:195
-[DmPath("/obj/effect/step_trigger/sound_effect"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger_sound_effect : obj_effect_step_trigger
+// tg: code/game/objects/effects/step_triggers.dm:195 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger/sound_effect")]
+public partial class obj_effect_step_trigger_sound_effect
 {
     public object sound; // tg: code/game/objects/effects/step_triggers.dm:195
     public float? volume = 100; // tg: code/game/objects/effects/step_triggers.dm:196
@@ -3150,7 +3150,7 @@ public partial class obj_effect_step_trigger_sound_effect : obj_effect_step_trig
 }
 
 // tg: code/game/objects/effects/step_triggers.dm:219
-[DmPath("/obj/effect/step_trigger/sound_effect/lavaland_cult_altar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/step_trigger/sound_effect/lavaland_cult_altar"), DmGeneratedOnly]
 public partial class obj_effect_step_trigger_sound_effect_lavaland_cult_altar : obj_effect_step_trigger_sound_effect
 {
     // tg: code/game/objects/effects/step_triggers.dm:219
@@ -3163,9 +3163,9 @@ public partial class obj_effect_step_trigger_sound_effect_lavaland_cult_altar : 
     }
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:226
-[DmPath("/obj/effect/step_trigger/outfitter"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger_outfitter : obj_effect_step_trigger
+// tg: code/game/objects/effects/step_triggers.dm:226 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger/outfitter")]
+public partial class obj_effect_step_trigger_outfitter
 {
     public datum_outfit outfit_to_equip; // tg: code/game/objects/effects/step_triggers.dm:228
     public float happens_once = 0; // tg: code/game/objects/effects/step_triggers.dm:229
@@ -5900,9 +5900,9 @@ public partial class obj_effect_holodeck_effect_mobspawner_crab_jon : obj_effect
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:2
-[DmPath("/obj/effect/sliding_puzzle"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle : obj_effect
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/effect/sliding_puzzle")]
+public partial class obj_effect_sliding_puzzle
 {
     public DmList elements; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:7
     public Type floor_type = typeof(turf_open_floor_vault); // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:8
@@ -5923,9 +5923,9 @@ public partial class obj_effect_sliding_puzzle : obj_effect
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:254
-[DmPath("/obj/effect/sliding_puzzle/admin"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle_admin : obj_effect_sliding_puzzle
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:254 (the var block of a hand-written class)
+[DmPath("/obj/effect/sliding_puzzle/admin")]
+public partial class obj_effect_sliding_puzzle_admin
 {
     public icon puzzle_icon; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:255
     public object puzzle_state; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:256
@@ -5937,9 +5937,9 @@ public partial class obj_effect_sliding_puzzle_admin : obj_effect_sliding_puzzle
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264
-[DmPath("/obj/effect/sliding_puzzle/lavaland"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle_lavaland : obj_effect_sliding_puzzle
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264 (the var block of a hand-written class)
+[DmPath("/obj/effect/sliding_puzzle/lavaland")]
+public partial class obj_effect_sliding_puzzle_lavaland
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264
     public obj_effect_sliding_puzzle_lavaland()
@@ -5948,23 +5948,13 @@ public partial class obj_effect_sliding_puzzle_lavaland : obj_effect_sliding_puz
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276
-[DmPath("/obj/effect/sliding_puzzle/prison"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle_prison : obj_effect_sliding_puzzle
-{
-    public Type prisoner; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:277
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276 (the vars the hand-written class does not declare)
+[DmPath("/obj/effect/sliding_puzzle/prison")]
+public partial class obj_effect_sliding_puzzle_prison { }
 
-    // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276
-    public obj_effect_sliding_puzzle_prison()
-    {
-        auto_setup = 0;
-        element_type = typeof(obj_structure_puzzle_element_prison);
-    }
-}
-
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:142
-[DmPath("/obj/effect/watcher_orbiter"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_watcher_orbiter : obj_effect
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:142 (the var block of a hand-written class)
+[DmPath("/obj/effect/watcher_orbiter")]
+public partial class obj_effect_watcher_orbiter
 {
     public atom_movable parent; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:150
     public datum_movement_detector tracker; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:152
@@ -6060,9 +6050,9 @@ public partial class obj_effect_light_emitter_fake_outdoors : obj_effect_light_e
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:132
-[DmPath("/obj/effect/collapse"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_collapse : obj_effect
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:132 (the var block of a hand-written class)
+[DmPath("/obj/effect/collapse")]
+public partial class obj_effect_collapse
 {
     public DmList collected; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:140
     public obj_effect_light_emitter_tendril emitted_light; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:142
@@ -6128,9 +6118,9 @@ public partial class obj_effect_smooths_with_walls : obj_effect
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4
-[DmPath("/obj/effect/gluttony"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_gluttony : obj_effect
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/effect/gluttony")]
+public partial class obj_effect_gluttony
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4
     public obj_effect_gluttony()

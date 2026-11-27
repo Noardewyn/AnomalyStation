@@ -145,6 +145,19 @@ public static class MapSeam
                 seam.WriteText("_maps/" + folder + "/" + Path.GetFileNameWithoutExtension(converted) + ".dmm", File.ReadAllText(converted));
         }
 
+        // Lavaland's ruins, <MapsFolder>/RandomRuins/<folder>/<name>.as3dmap (with the syndicate base's modules one folder deeper), at tg's
+        // _maps/RandomRuins/<folder>/<name>.dmm, where the ruin templates' prefix and suffix and the modular map roots' tomls find them.
+        // A map editor's world (MapEditSeam) shows its map alone, without the ruins Lavaland's seeding would place.
+        string ruins = Path.Combine(selection.MapsFolder, "RandomRuins");
+        if (Directory.Exists(ruins) && !alone)
+        {
+            foreach (string converted in Directory.GetFiles(ruins, "*" + MapText.Extension, SearchOption.AllDirectories).OrderBy(f => f, StringComparer.Ordinal))
+            {
+                string relative = Path.GetRelativePath(ruins, converted).Replace('\\', '/');
+                seam.WriteText("_maps/RandomRuins/" + relative[..^MapText.Extension.Length] + ".dmm", File.ReadAllText(converted));
+            }
+        }
+
         string shuttles = Path.Combine(selection.MapsFolder, "shuttles");
         if (Directory.Exists(shuttles))
         {

@@ -1,0 +1,8 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_strong_rock.dmm tg 1d99bd7f
+size 3 3 1
+chunk 32
+default /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+
+[chunk 1 1 1]
+2,2: /turf/closed/mineral/strong | /area/lavaland/surface/outdoors

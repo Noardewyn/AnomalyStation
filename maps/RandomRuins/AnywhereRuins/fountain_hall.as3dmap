@@ -1,0 +1,73 @@
+anomaly-map 1
+source _maps/RandomRuins/AnywhereRuins/fountain_hall.dmm tg 1d99bd7f
+size 7 16 1
+chunk 32
+default /turf/open/floor/engine/cult | /area/ruin/unpowered
+
+[chunk 1 1 1]
+1,16: /turf/template_noop | /area/template_noop
+2,16: /turf/template_noop | /area/template_noop
+3,16: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+4,16: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+5,16: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+6,16: /turf/template_noop | /area/template_noop
+7,16: /turf/template_noop | /area/template_noop
+1,15: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+2,15: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+3,15: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+4,15: /obj/structure/healingfountain | /turf/open/floor/engine/cult | /area/ruin/unpowered
+5,15: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+6,15: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+7,15: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,14: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+2,14: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+3,14: /obj/structure/sacrificealtar | /turf/open/floor/engine/cult | /area/ruin/unpowered
+5,14: /obj/structure/sacrificealtar | /turf/open/floor/engine/cult | /area/ruin/unpowered
+6,14: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,14: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,13: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+3,13: /mob/living/basic/butterfly | /turf/open/floor/engine/cult | /area/ruin/unpowered
+6,13: /mob/living/basic/butterfly | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,13: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,12: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+7,12: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,11: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+2,11: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+6,11: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,11: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,10: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+3,10: /mob/living/basic/butterfly | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,10: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,9: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+5,9: /mob/living/basic/butterfly | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,9: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,8: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+2,8: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+6,8: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,8: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,7: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+7,7: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,6: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+7,6: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,5: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+2,5: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+3,5: /mob/living/basic/butterfly | /turf/open/floor/engine/cult | /area/ruin/unpowered
+6,5: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,5: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,4: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+7,4: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,3: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+3,3: /mob/living/basic/butterfly | /turf/open/floor/engine/cult | /area/ruin/unpowered
+6,3: /mob/living/basic/butterfly | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,3: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,2: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+2,2: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+6,2: /obj/structure/fluff/divine/conduit | /turf/open/floor/engine/cult | /area/ruin/unpowered
+7,2: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+1,1: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+2,1: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+3,1: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+4,1: /obj/structure/fans/tiny/invisible | /turf/open/floor/engine/cult | /area/ruin/unpowered
+5,1: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+6,1: /turf/closed/wall/mineral/cult | /area/ruin/unpowered
+7,1: /turf/closed/wall/mineral/cult | /area/ruin/unpowered

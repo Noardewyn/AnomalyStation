@@ -2345,9 +2345,9 @@ public partial class datum_status_effect_confusion
     }
 }
 
-// tg: code/datums/status_effects/debuffs/cursed.dm:6
-[DmPath("/datum/status_effect/slot_machine_curse"), DmGeneratedOnly, DmInert]
-public partial class datum_status_effect_slot_machine_curse : datum_status_effect
+// tg: code/datums/status_effects/debuffs/cursed.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/status_effect/slot_machine_curse")]
+public partial class datum_status_effect_slot_machine_curse
 {
     public float max_curse_count = 5; // tg: code/datums/status_effects/debuffs/cursed.dm:11
     public float curse_count = 0; // tg: code/datums/status_effects/debuffs/cursed.dm:13

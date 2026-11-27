@@ -575,6 +575,7 @@ public class MobLifecycleTests
             // disease is not ported (reagent_containers.dm:81, diseases after the core version), and the uplink hides the kit (DV343). The
             // live types of syndicate G4d moved the room's random stream onto that kit
             .Where(t => t != typeof(obj_item_storage_box_syndicate_bundle_b))
+            .Where(t => !typeof(obj_effect_sliding_puzzle).IsAssignableFrom(t)) // unit_test.dm:343: it spawns turf changing stuff (its vault floors and tiles)
             .ToList());
 
     [Fact]
@@ -647,12 +648,20 @@ public class MobLifecycleTests
                     for (int dy = -1; dy <= 1; dy++)
                         foreach (atom to_kill in Dm.each_cast<atom>(MobRoom.T(3 + dx, 3 + dy).contents.Copy()))
                             qdel(to_kill, force: TRUE);
+                // The ash walker egg's shell, deleted above, gibs a human (mining_roles.dm:201-206): its organs spill where it stood
+                // after that cell was listed, and its bodyparts fly up to three cells away (spread_bodyparts); the organs process on
+                // SSobj (their decay). tg's next round of create_and_destroy.dm:31-35 clears them; here the cells around are cleared again.
+                for (int dx = -3; dx <= 3; dx++)
+                    for (int dy = -3; dy <= 3; dy++)
+                        if (MobRoom.T(3 + dx, 3 + dy) is turf around)
+                            foreach (atom to_kill in Dm.each_cast<atom>(around.contents.Copy()))
+                                qdel(to_kill, force: TRUE);
                 Assert.True(length(GLOB.mob_list) == 0, type.Name + " left a mob in GLOB.mob_list");
                 Assert.True(length(GLOB.alive_mob_list) == 0, type.Name + " left a mob in GLOB.alive_mob_list");
                 Assert.True(length(GLOB.dead_mob_list) == 0, type.Name + " left a mob in GLOB.dead_mob_list");
                 Assert.True(length(GLOB.suicided_mob_list) == 0, type.Name + " left a mob in GLOB.suicided_mob_list");
                 Assert.True(length(GLOB.objects_by_id_tag) == 0, type.Name + " left an id tag");
-                Assert.True(SSobj.processing.len == 0, type.Name + " left a processing object");
+                Assert.True(SSobj.processing.len == 0, type.Name + " left a processing object: " + string.Join(", ", Dm.each(SSobj.processing).Select(o => o.GetType().Name + (o is atom a ? " at " + a.x + "," + a.y + " in " + (a.loc?.GetType().Name ?? "null") : ""))));
             }
             Assert.Equal(0f, MobRoom.T(3, 3).contents.len);
         });

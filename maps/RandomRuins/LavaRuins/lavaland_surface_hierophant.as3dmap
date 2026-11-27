@@ -1,0 +1,224 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_hierophant.dmm tg 1d99bd7f
+size 23 23 1
+chunk 32
+default /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+
+[chunk 1 1 1]
+1,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+2,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+9,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+10,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+11,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+13,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+14,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+15,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+16,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+22,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+23,23: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,22: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+5,22: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,22: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,22: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+18,22: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,22: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,22: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,21: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,21: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,21: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,21: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+8,21: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+10,21: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,21: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+14,21: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+16,21: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,21: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,21: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+21,21: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,21: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,20: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+2,19: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+3,19: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,19: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+6,19: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,19: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+9,19: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,19: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+15,19: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+16,19: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,19: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+19,19: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,19: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+22,19: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+2,18: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+3,18: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,18: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+6,18: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,18: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+9,18: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,18: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+15,18: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+16,18: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,18: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+19,18: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,18: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+22,18: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,17: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+1,16: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,16: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,16: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,16: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+8,16: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+10,16: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,16: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+14,16: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+16,16: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,16: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,16: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+21,16: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,16: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,15: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+5,15: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,15: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+10,15: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,15: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+14,15: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,15: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,15: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,15: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,14: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,14: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,14: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+9,14: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+15,14: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+16,14: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,14: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+23,14: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,13: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+11,13: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,13: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+13,13: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,13: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,12: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+2,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+3,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+4,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+6,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+7,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+8,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+9,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+11,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,12: /mob/living/simple_animal/hostile/megafauna/hierophant | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+13,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+15,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+16,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+17,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+19,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+20,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+21,12: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+22,12: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+23,12: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,11: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+11,11: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,11: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+13,11: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,11: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,10: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,10: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,10: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+9,10: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+15,10: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+16,10: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,10: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+23,10: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,9: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+5,9: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,9: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+10,9: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,9: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+14,9: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,9: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,9: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,9: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,8: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,8: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,8: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,8: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+8,8: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+10,8: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,8: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+14,8: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+16,8: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,8: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,8: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+21,8: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,8: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,7: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+2,6: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+3,6: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,6: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+6,6: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,6: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+9,6: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,6: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+15,6: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+16,6: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,6: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+19,6: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,6: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+22,6: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+2,5: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+3,5: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,5: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+6,5: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,5: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+9,5: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,5: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+15,5: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+16,5: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,5: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+19,5: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,5: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+22,5: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,4: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+1,3: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,3: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+5,3: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,3: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+8,3: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+10,3: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,3: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+14,3: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+16,3: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+18,3: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,3: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+21,3: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,3: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,2: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+5,2: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+6,2: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+12,2: /obj/effect/light_emitter{set_cap = 3; set_luminosity = 5} | /turf/open/indestructible/hierophant | /area/ruin/unpowered/hierophant
+18,2: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+19,2: /turf/open/indestructible/hierophant/two | /area/ruin/unpowered/hierophant
+23,2: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+1,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+2,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+3,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+8,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+9,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+10,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+11,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+12,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+13,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+14,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+15,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+16,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+21,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+22,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant
+23,1: /turf/closed/indestructible/riveted/hierophant | /area/ruin/unpowered/hierophant

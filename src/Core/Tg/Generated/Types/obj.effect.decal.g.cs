@@ -1773,9 +1773,9 @@ public partial class obj_effect_decal_cleanable_garbage : obj_effect_decal_clean
     }
 }
 
-// tg: code/game/objects/effects/decals/cleanable/mess.dm:382
-[DmPath("/obj/effect/decal/cleanable/rubble"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_rubble : obj_effect_decal_cleanable
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:382 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/rubble")]
+public partial class obj_effect_decal_cleanable_rubble
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:382
     public obj_effect_decal_cleanable_rubble()

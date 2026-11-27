@@ -51,3 +51,35 @@ public partial class turf_closed_wall_mineral_plastitanium : turf_closed_wall_mi
         return dot;
     }
 }
+
+// tg: code/game/turfs/closed/wall/mineral_walls.dm:160  (Lavaland's ash walker nest, winter biodome and mook village)
+public partial class turf_closed_wall_mineral_wood : turf_closed_wall_mineral
+{
+    // tg: code/game/turfs/closed/wall/mineral_walls.dm:176
+    public override async DmTask<object> item_interaction(mob_living user = null, obj_item tool = null, DmList modifiers = null, params object[] __extra)
+    {
+        if (!Dm.truthy(tool.get_sharpness()) || !Dm.truthy(tool.force))
+            return await base.item_interaction(user, tool, modifiers, __extra);
+
+        float duration = (4.8f * SECONDS / Dm.num(tool.force)) * 2; //In seconds, for now.
+        if (tool is obj_item_hatchet || tool is obj_item_fireaxe)
+            duration /= 4; //Much better with hatchets and axes.
+        if (!Dm.truthy(await do_after(user, duration * 1 * SECONDS, target: this))) //Into deciseconds.
+            return ITEM_INTERACT_BLOCKING;
+
+        await dismantle_wall(FALSE, FALSE);
+        return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/game/turfs/closed/wall/mineral_walls.dm:406  (the syndicate lava base's rigged walls)
+public partial class turf_closed_wall_mineral_plastitanium_explosive : turf_closed_wall_mineral_plastitanium
+{
+    // tg: code/game/turfs/closed/wall/mineral_walls.dm:406
+    public override object ex_act(object severity = null, object target = null, params object[] __extra)
+    {
+        var bombcore = Dm.@new<obj_item_bombcore_large>(get_turf(this));
+        Waiting.NoSleep(bombcore.detonate());
+        return base.ex_act(severity, target, __extra);
+    }
+}

@@ -410,9 +410,9 @@ public partial class turf_closed_wall_mineral_plasma : turf_closed_wall_mineral
     }
 }
 
-// tg: code/game/turfs/closed/wall/mineral_walls.dm:161
-[DmPath("/turf/closed/wall/mineral/wood"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_wall_mineral_wood : turf_closed_wall_mineral
+// tg: code/game/turfs/closed/wall/mineral_walls.dm:161 (the var block of a hand-written class)
+[DmPath("/turf/closed/wall/mineral/wood")]
+public partial class turf_closed_wall_mineral_wood
 {
     // tg: code/game/turfs/closed/wall/mineral_walls.dm:161
     public turf_closed_wall_mineral_wood()
@@ -441,7 +441,7 @@ public partial class turf_closed_wall_mineral_wood : turf_closed_wall_mineral
 }
 
 // tg: code/game/turfs/closed/wall/mineral_walls.dm:193
-[DmPath("/turf/closed/wall/mineral/wood/nonmetal"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/closed/wall/mineral/wood/nonmetal"), DmGeneratedOnly]
 public partial class turf_closed_wall_mineral_wood_nonmetal : turf_closed_wall_mineral_wood
 {
     // tg: code/game/turfs/closed/wall/mineral_walls.dm:193
@@ -796,13 +796,13 @@ public partial class turf_closed_wall_mineral_plastitanium_overspace : turf_clos
     }
 }
 
-// tg: code/game/turfs/closed/wall/mineral_walls.dm:406
-[DmPath("/turf/closed/wall/mineral/plastitanium/explosive"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_wall_mineral_plastitanium_explosive : turf_closed_wall_mineral_plastitanium { }
+// tg: code/game/turfs/closed/wall/mineral_walls.dm:406 (the var block of a hand-written class)
+[DmPath("/turf/closed/wall/mineral/plastitanium/explosive")]
+public partial class turf_closed_wall_mineral_plastitanium_explosive { }
 
-// tg: code/game/turfs/closed/wall/misc_walls.dm:2
-[DmPath("/turf/closed/wall/mineral/cult"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_wall_mineral_cult : turf_closed_wall_mineral
+// tg: code/game/turfs/closed/wall/misc_walls.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/closed/wall/mineral/cult")]
+public partial class turf_closed_wall_mineral_cult
 {
     // tg: code/game/turfs/closed/wall/misc_walls.dm:2
     public turf_closed_wall_mineral_cult()
@@ -874,9 +874,9 @@ public partial class turf_closed_wall_ice : turf_closed_wall
     }
 }
 
-// tg: code/game/turfs/closed/wall/misc_walls.dm:49
-[DmPath("/turf/closed/wall/rust"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_wall_rust : turf_closed_wall { }
+// tg: code/game/turfs/closed/wall/misc_walls.dm:49 (the var block of a hand-written class)
+[DmPath("/turf/closed/wall/rust")]
+public partial class turf_closed_wall_rust { }
 
 // tg: code/game/turfs/closed/wall/misc_walls.dm:56
 [DmPath("/turf/closed/wall/heretic_rust"), DmGeneratedOnly, DmInert]
@@ -1341,9 +1341,9 @@ public partial class turf_closed_indestructible_riveted_boss_see_through : turf_
     }
 }
 
-// tg: code/game/turfs/closed/indestructible.dm:352
-[DmPath("/turf/closed/indestructible/riveted/hierophant"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_indestructible_riveted_hierophant : turf_closed_indestructible_riveted
+// tg: code/game/turfs/closed/indestructible.dm:352 (the var block of a hand-written class)
+[DmPath("/turf/closed/indestructible/riveted/hierophant")]
+public partial class turf_closed_indestructible_riveted_hierophant
 {
     // tg: code/game/turfs/closed/indestructible.dm:352
     public turf_closed_indestructible_riveted_hierophant()
@@ -1637,9 +1637,9 @@ public partial class turf_closed_indestructible_paper : turf_closed_indestructib
     }
 }
 
-// tg: code/game/turfs/closed/indestructible.dm:305
-[DmPath("/turf/closed/indestructible/necropolis"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_indestructible_necropolis : turf_closed_indestructible
+// tg: code/game/turfs/closed/indestructible.dm:305 (the var block of a hand-written class)
+[DmPath("/turf/closed/indestructible/necropolis")]
+public partial class turf_closed_indestructible_necropolis
 {
     // tg: code/game/turfs/closed/indestructible.dm:305
     public turf_closed_indestructible_necropolis()
@@ -2571,9 +2571,9 @@ public partial class turf_closed_mineral_volcanic_lava_land_surface : turf_close
     }
 }
 
-// tg: code/game/turfs/closed/minerals.dm:948
-[DmPath("/turf/closed/mineral/volcanic/lava_land_surface/biome_replace"), DmGeneratedOnly, DmInert]
-public partial class turf_closed_mineral_volcanic_lava_land_surface_biome_replace : turf_closed_mineral_volcanic_lava_land_surface
+// tg: code/game/turfs/closed/minerals.dm:948 (the var block of a hand-written class)
+[DmPath("/turf/closed/mineral/volcanic/lava_land_surface/biome_replace")]
+public partial class turf_closed_mineral_volcanic_lava_land_surface_biome_replace
 {
     public Type default_area = typeof(area_lavaland_surface_outdoors_unexplored_danger); // tg: code/game/turfs/closed/minerals.dm:952
 

@@ -127,13 +127,22 @@ public class LightingAtomTests
     }
 
     [Fact]
-    public void AnInertMachineWithTgsDefaultLightLightsThroughTheInertInit()
+    public void AnInertObjectWithTgsDefaultLightLightsThroughTheInertInit()
     {
-        // scope 2g: inert machines keep their default light through InertInitialize's update_light (types-converter.md 7).
+        // scope 2g: inert types keep their default light through InertInitialize's update_light (types-converter.md 7). The
+        // type is one whose nearest live ancestor is a base type with no light code of its own: the inert machines left with
+        // tg's default light all have live ancestors that set their light again (a vending machine's power, _vending.dm:385-387;
+        // a button's, a fire alarm's), and the last inert machine without one, the syndicate's supermatter shard, is live now.
+        var bases = new[] { typeof(obj), typeof(obj_item), typeof(obj_structure), typeof(obj_machinery), typeof(obj_effect) };
         Type type = null;
-        foreach (object t in Dm.each(typesof(typeof(obj_machinery))))
+        foreach (object t in Dm.each(typesof(typeof(obj))))
         {
             if (t is not Type candidate || !InertSeam.IsInertType(candidate) || !candidate.IsDefined(typeof(DmGeneratedOnlyAttribute), false))
+                continue;
+            Type live = candidate.BaseType;
+            while (InertSeam.IsInertType(live))
+                live = live.BaseType;
+            if (!bases.Contains(live))
                 continue;
             var proto = (atom)Activator.CreateInstance(candidate);
             if (proto.light_system == COMPLEX_LIGHT && proto.light_range > 0 && proto.light_power > 0 && proto.color == null && proto.greyscale_config == null)
@@ -146,9 +155,9 @@ public class LightingAtomTests
         var (room, sinks) = Room();
         using (room.World.Enter())
         {
-            var machine = (atom)Dm.@new(type, ToyRoom.FloorBottomLeft());
-            Assert.Equal(1, LightLines(sinks, machine));
-            Assert.Empty(room.RuntimeText);
+            var made = (atom)Dm.@new(type, ToyRoom.FloorBottomLeft());
+            Assert.True(LightLines(sinks, made) == 1, type.Name + " sent " + LightLines(sinks, made) + " light lines");
+            Assert.True(!room.RuntimeText.Any(), string.Join("\n", room.RuntimeText));
         }
     }
 }

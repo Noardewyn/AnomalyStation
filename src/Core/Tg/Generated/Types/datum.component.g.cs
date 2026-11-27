@@ -5367,9 +5367,9 @@ public partial class datum_component_riding_leaper : datum_component_riding { }
 [DmPath("/datum/component/riding/vehicle")]
 public partial class datum_component_riding_vehicle { }
 
-// tg: code/datums/components/riding/riding_vehicle.dm:111
-[DmPath("/datum/component/riding/vehicle/atv"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_vehicle_atv : datum_component_riding_vehicle
+// tg: code/datums/components/riding/riding_vehicle.dm:111 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/vehicle/atv")]
+public partial class datum_component_riding_vehicle_atv
 {
     // tg: code/datums/components/riding/riding_vehicle.dm:111
     public datum_component_riding_vehicle_atv()

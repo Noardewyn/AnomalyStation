@@ -239,6 +239,9 @@ public static class Program
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Safehouses);
         // The survival capsules' shelters (tg's /datum/map_template/shelter mappaths) the miners unfold on Lavaland, at maps/templates/<name>.as3dmap
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Shelters);
+        // Lavaland's ruins (tg's /datum/map_template/ruin/lavaland prefix and suffix values, and the syndicate base's modules), at
+        // maps/RandomRuins/<folder>/<name>.as3dmap, which SSmapping's seedRuins places over the caves
+        if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(LavaRuins);
         foreach (string template in templates)
         {
             string relative = "_maps/" + template;
@@ -327,6 +330,40 @@ public static class Program
     /// </summary>
     internal static readonly string[] Shelters = ["templates/shelter_1.dmm", "templates/shelter_2.dmm", "templates/shelter_3.dmm",
         "templates/shelter_t.dmm"];
+
+    /// <summary>
+    /// Lavaland's ruins: every map of tg's _maps/RandomRuins/LavaRuins (with the syndicate base's modules, which its modular map roots
+    /// load from strings/modular_maps/syndicatebase.toml) and the three of _maps/RandomRuins/AnywhereRuins that code/datums/ruins/lavaland.dm
+    /// names (the free golems' ship, the fountain hall, the shoe factory).
+    /// </summary>
+    internal static readonly string[] LavaRuins = ["RandomRuins/LavaRuins/lavaland_battle_site.dmm",
+        "RandomRuins/LavaRuins/lavaland_biodome_beach.dmm", "RandomRuins/LavaRuins/lavaland_biodome_clown_planet.dmm",
+        "RandomRuins/LavaRuins/lavaland_strong_rock.dmm", "RandomRuins/LavaRuins/lavaland_surface_ash_walker1.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_bileworm_nest.dmm", "RandomRuins/LavaRuins/lavaland_surface_biodome_winter.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_blooddrunk1.dmm", "RandomRuins/LavaRuins/lavaland_surface_blooddrunk2.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_blooddrunk3.dmm", "RandomRuins/LavaRuins/lavaland_surface_crashsite.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_cube.dmm", "RandomRuins/LavaRuins/lavaland_surface_cultaltar.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_dead_ratvar.dmm", "RandomRuins/LavaRuins/lavaland_surface_elephant_graveyard.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_elite_tumor.dmm", "RandomRuins/LavaRuins/lavaland_surface_envy.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_gaia.dmm", "RandomRuins/LavaRuins/lavaland_surface_gas.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_gluttony.dmm", "RandomRuins/LavaRuins/lavaland_surface_greed.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_hermit.dmm", "RandomRuins/LavaRuins/lavaland_surface_hierophant.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_mookvillage.dmm", "RandomRuins/LavaRuins/lavaland_surface_ore_vent.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_phonebooth.dmm", "RandomRuins/LavaRuins/lavaland_surface_pizzaparty.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_pride.dmm", "RandomRuins/LavaRuins/lavaland_surface_puzzle.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_random_ripley.dmm", "RandomRuins/LavaRuins/lavaland_surface_seed_vault.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_shuttle_wreckage.dmm", "RandomRuins/LavaRuins/lavaland_surface_sloth.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_survivalpod.dmm", "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_ufo_crash.dmm", "RandomRuins/LavaRuins/lavaland_surface_watcher_grave.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_wizard.dmm", "RandomRuins/LavaRuins/lavaland_surface_xeno_nest.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/commswilding_1.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/commswilding_2.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/commswilding_3.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/mistake_feasible.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/mistake_inevitable.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/mistake_unlikely.dmm",
+        "RandomRuins/AnywhereRuins/golem_ship.dmm", "RandomRuins/AnywhereRuins/fountain_hall.dmm",
+        "RandomRuins/AnywhereRuins/shoe_factory.dmm"];
 
     internal static readonly string[] Safehouses = ["safehouses/abductor.dmm", "safehouses/bathroom.dmm", "safehouses/den.dmm",
         "safehouses/dig.dmm", "safehouses/ice.dmm", "safehouses/lavaland_boss.dmm", "safehouses/maintsafe.dmm", "safehouses/mine.dmm",

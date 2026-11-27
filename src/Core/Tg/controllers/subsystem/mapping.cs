@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (M3 P2): the station path (D108: Meta's station level only): PreInit, Initialize with loadWorld, LoadGroup, the
 // z-level management (manage_z_level, build_area_turfs, the linkages and gravities, zlevel_manager.cs, traits.cs) and
 // generate_station_area_list. Initialize leaves out what D108 does not load (the space ruin and empty levels, the
-// wilderness, away missions, ruins and rivers and the space transitions) and the BYOND
+// wilderness, away missions and the space transitions; Lavaland's ruins are seeded) and the BYOND
 // plane cube (create_plane_offsets: client presentation; the plane macros keep their base case, max_plane_offset 0);
 // M10 slice G1 (D272) adds the first transit level, the turf reservations and fire.
 // A world without a selected map (MapSeam.Select: the host-built test and toy rooms, M2's server) keeps the M2 stub's
@@ -110,14 +110,16 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
         determine_fake_sale();
         require_area_resort();
         process_teleport_locs(); //Sets up the wizard teleport locations
-        preloadTemplates(); // M10 slice G2: the shuttles'; the survival capsules' shelters (the ruins and holodeck are deferred)
-        // tg: :134-158  #ifndef SKIP_SPACE_LEVELS: the space ruin and empty levels, the wilderness, the away missions and
-        // setup_ruins(): D108 loads the station level only
+        preloadTemplates(); // M10 slice G2: the shuttles'; the survival capsules' shelters; the ruins (the holodeck's are deferred)
+        // tg: :134-157  #ifndef SKIP_SPACE_LEVELS: the space ruin and empty levels, the wilderness and the away missions: D108 loads
+        // the station level only (with CentCom and Lavaland)
+        await setup_ruins();
         // Run map generation after ruin space is reserved, since this space is used for the cave gen.
         await run_map_terrain_generation();
         // Generate our rivers, we do this here so the map doesn't load on top of them
         await setup_rivers();
-        // tg: :165 load_reserved_ruins(): the ruins come with D304 L8
+        // Now that terrain generation is done, actually load the ruin maps in.
+        await load_reserved_ruins();
         // now that the terrain is generated, including rivers, we can safely populate it with objects and mobs
         await run_map_terrain_population();
         // DEVIATION(DV509): tg's world is never smaller than CentCom's 255 x 255, so a reserved level always has room for a dock and for a shuttle's
@@ -313,22 +315,66 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
         return max_gravity;
     }
 
+    /**
+     * ##setup_ruins
+     *
+     * Sets up all of the ruins to be spawned
+     */
     // tg: code/controllers/subsystem/mapping.dm:259
     public virtual async DmTask setup_ruins()
     {
-        Dm.NotTranslated("code/controllers/subsystem/mapping.dm:259", "setup_ruins: M3 P2 (skeleton)");
+        // Generate mining ruins
+        DmList lava_ruins = levels_by_trait(ZTRAIT_LAVA_RUINS) as DmList;
+        if (Dm.truthy(lava_ruins.len))
+            await seedRuins(lava_ruins, Dm.num(config.Get(typeof(datum_config_entry_number_lavaland_budget))), Dm.list(typeof(area_lavaland_surface_outdoors_unexplored)), themed_ruins[ZTRAIT_LAVA_RUINS] as DmList, clear_below: TRUE, mineral_budget: 15, mineral_budget_update: OREGEN_PRESET_LAVALAND, ruins_type: ZTRAIT_LAVA_RUINS);
+
+        DmList ice_ruins = levels_by_trait(ZTRAIT_ICE_RUINS) as DmList;
+        if (Dm.truthy(ice_ruins.len))
+            // needs to be whitelisted for underground too so place_below ruins work
+            await seedRuins(ice_ruins, Dm.num(config.Get(typeof(datum_config_entry_number_icemoon_budget))), Dm.list(typeof(area_icemoon_surface_outdoors_unexplored), typeof(area_icemoon_underground_unexplored)), themed_ruins[ZTRAIT_ICE_RUINS] as DmList, clear_below: TRUE, mineral_budget: 4, mineral_budget_update: OREGEN_PRESET_TRIPLE_Z, ruins_type: ZTRAIT_ICE_RUINS);
+
+        DmList ice_ruins_underground = levels_by_trait(ZTRAIT_ICE_RUINS_UNDERGROUND) as DmList;
+        if (Dm.truthy(ice_ruins_underground.len))
+            await seedRuins(ice_ruins_underground, Dm.num(config.Get(typeof(datum_config_entry_number_icemoon_budget))), Dm.list(typeof(area_icemoon_underground_unexplored)), themed_ruins[ZTRAIT_ICE_RUINS_UNDERGROUND] as DmList, clear_below: TRUE, mineral_budget: 21, ruins_type: ZTRAIT_ICE_RUINS_UNDERGROUND);
+
+        // Generate deep space ruins
+        DmList space_ruins = levels_by_trait(ZTRAIT_SPACE_RUINS) as DmList;
+        if (Dm.truthy(space_ruins.len))
+        {
+            // Create a proportional budget by multiplying the amount of space ruin levels in the current map over the default amount
+            float proportional_budget = Dm.round(Dm.num(config.Get(typeof(datum_config_entry_number_space_budget))) * (space_ruins.len / (float)DEFAULT_SPACE_RUIN_LEVELS));
+            await seedRuins(space_ruins, proportional_budget, Dm.list(typeof(area_space)), themed_ruins[ZTRAIT_SPACE_RUINS] as DmList, mineral_budget: 0, ruins_type: ZTRAIT_SPACE_RUINS);
+        }
     }
 
+    ///loads all of the ruins we previously reserved space for
     // tg: code/controllers/subsystem/mapping.dm:282
     public virtual async DmTask load_reserved_ruins()
     {
-        Dm.NotTranslated("code/controllers/subsystem/mapping.dm:282", "load_reserved_ruins: M3 P2 (skeleton)");
+        foreach (DmList reservation in Dm.each<DmList>(reserved_ruins))
+        {
+            var reserved_ruin = (datum_map_template_ruin)reservation[1];
+            var central_turf = (turf)reservation[2];
+            object clear_below = reservation[3];
+            await load_ruin_now(reserved_ruin, central_turf, clear_below);
+        }
+        reserved_ruins.Cut();
     }
 
+    /**
+     * Immediately loads a single reserved ruin's map, and runs terrain generation for any
+     * of the areas, since they get spawned AFTER normal terrain gen runs its pass
+     */
     // tg: code/controllers/subsystem/mapping.dm:294
     public virtual async DmTask load_ruin_now(datum_map_template_ruin reserved_ruin = null, turf central_turf = null, object clear_below = null)
     {
-        Dm.NotTranslated("code/controllers/subsystem/mapping.dm:294", "load_ruin_now: M3 P2 (skeleton)");
+        float starting_area_count = GLOB.areas.len;
+        await reserved_ruin.load_reserved(central_turf, clear_below);
+        for (float i = starting_area_count + 1; i <= GLOB.areas.len; i++)
+        {
+            var ruin_area = (area)GLOB.areas[i];
+            await ruin_area.RunTerrainGeneration();
+        }
     }
 
     // tg: code/controllers/subsystem/mapping.dm:303
@@ -598,7 +644,37 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
     // tg: code/controllers/subsystem/mapping.dm:543
     public virtual void preloadRuinTemplates()
     {
-        Dm.Deferred("code/controllers/subsystem/mapping.dm:543", "preloadRuinTemplates: the ruins load the levels D108 skips");
+        // Still supporting bans by filename
+        DmList banned = generateMapList("spaceruinblacklist.txt") as DmList;
+        if (Dm.eq(current_map.minetype, MINETYPE_LAVALAND))
+            Dm.append(ref banned, generateMapList("lavaruinblacklist.txt"));
+        else if (Dm.truthy(current_map.blacklist_file))
+            Dm.append(ref banned, generateMapList(current_map.blacklist_file));
+
+        foreach (Type ruin_type in Dm.each<Type>(sort_list(subtypesof(typeof(datum_map_template_ruin)), "/proc/" + nameof(cmp_ruincost_priority))))
+        {
+            // screen out the abstract subtypes
+            if (!Dm.truthy(Dm.initial(ruin_type, (datum_map_template_ruin r) => r.id)))
+                continue;
+            // DEVIATION(DV635): only the ruins whose map the host mounted (Lavaland's, maps/RandomRuins); tg preloads every ruin of
+            // every planet and of space, whose maps the port has not converted (the ice moon is not loaded; the space ruins come with
+            // the space level). A ruin whose map file is picked in its New (the random blood-drunk miner) is made to know its file.
+            object prefix = Dm.initial(ruin_type, (datum_map_template_ruin r) => r.prefix);
+            object suffix = Dm.initial(ruin_type, (datum_map_template_ruin r) => r.suffix);
+            if (suffix != null ? !Dm.truthy(fexists(Dm.text("[][]", prefix, suffix))) : !Dm.truthy((flist(prefix) as DmList)?.len))
+                continue;
+            var R = (datum_map_template_ruin)Dm.@new(ruin_type);
+
+            if (Dm.truthy(banned.Find(R.mappath)))
+                continue;
+
+            map_templates[R.name] = R;
+            ruins_templates[R.name] = R;
+
+            if (!Dm.truthy(Dm.@in(R.ruin_type, themed_ruins)))
+                themed_ruins[R.ruin_type] = Dm.list();
+            (themed_ruins[R.ruin_type] as DmList)[R.name] = R;
+        }
     }
 
     // tg: code/controllers/subsystem/mapping.dm:568
@@ -870,8 +946,12 @@ public partial class datum_controller_subsystem_mapping : datum_controller_subsy
     // tg: code/controllers/subsystem/mapping.dm:738
     public virtual async DmTask<object> get_isolated_ruin_z()
     {
-        Dm.NotTranslated("code/controllers/subsystem/mapping.dm:738", "get_isolated_ruin_z: M3 P2 (skeleton)");
-        return default;
+        if (isolated_ruins_z == null)
+        {
+            isolated_ruins_z = await add_new_zlevel("Isolated Ruins/Reserved", Dm.list(Dm.kv(ZTRAIT_RESERVED, TRUE), Dm.kv(ZTRAIT_ISOLATED_RUINS, TRUE))) as datum_space_level;
+            await initialize_reserved_level(isolated_ruins_z.z_value);
+        }
+        return isolated_ruins_z.z_value;
     }
 
     // tg: code/controllers/subsystem/mapping.dm:746

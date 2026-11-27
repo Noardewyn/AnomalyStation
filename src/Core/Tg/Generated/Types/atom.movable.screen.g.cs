@@ -2801,9 +2801,9 @@ public partial class atom_movable_screen_alert_status_effect_french_speech : ato
     }
 }
 
-// tg: code/datums/status_effects/debuffs/cursed.dm:179
-[DmPath("/atom/movable/screen/alert/status_effect/cursed"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_cursed : atom_movable_screen_alert_status_effect
+// tg: code/datums/status_effects/debuffs/cursed.dm:179 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/cursed")]
+public partial class atom_movable_screen_alert_status_effect_cursed
 {
     // tg: code/datums/status_effects/debuffs/cursed.dm:179
     public atom_movable_screen_alert_status_effect_cursed()

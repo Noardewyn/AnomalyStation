@@ -4998,9 +4998,9 @@ public partial class obj_projectile_hallucination_death
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:262
-[DmPath("/obj/projectile/baby_watcher_blast"), DmGeneratedOnly, DmInert]
-public partial class obj_projectile_baby_watcher_blast : obj_projectile
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:262 (the var block of a hand-written class)
+[DmPath("/obj/projectile/baby_watcher_blast")]
+public partial class obj_projectile_baby_watcher_blast
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:262
     public obj_projectile_baby_watcher_blast()

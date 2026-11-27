@@ -1866,9 +1866,9 @@ public partial class obj_effect_mapping_helpers_turn_off_lights_with_lightswitch
     }
 }
 
-// tg: code/modules/mapping/mapping_helpers.dm:703
-[DmPath("/obj/effect/mapping_helpers/no_lava"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mapping_helpers_no_lava : obj_effect_mapping_helpers
+// tg: code/modules/mapping/mapping_helpers.dm:703 (the var block of a hand-written class)
+[DmPath("/obj/effect/mapping_helpers/no_lava")]
+public partial class obj_effect_mapping_helpers_no_lava
 {
     // tg: code/modules/mapping/mapping_helpers.dm:703
     public obj_effect_mapping_helpers_no_lava()
@@ -1888,9 +1888,9 @@ public partial class obj_effect_mapping_helpers_no_atoms_ontop : obj_effect_mapp
     }
 }
 
-// tg: code/modules/mapping/mapping_helpers.dm:721
-[DmPath("/obj/effect/mapping_helpers/atom_injector"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mapping_helpers_atom_injector : obj_effect_mapping_helpers
+// tg: code/modules/mapping/mapping_helpers.dm:721 (the var block of a hand-written class)
+[DmPath("/obj/effect/mapping_helpers/atom_injector")]
+public partial class obj_effect_mapping_helpers_atom_injector
 {
     public float first_match_only = 1; // tg: code/modules/mapping/mapping_helpers.dm:725
     public Type target_type; // tg: code/modules/mapping/mapping_helpers.dm:727
@@ -1905,9 +1905,9 @@ public partial class obj_effect_mapping_helpers_atom_injector : obj_effect_mappi
     }
 }
 
-// tg: code/modules/mapping/mapping_helpers.dm:766
-[DmPath("/obj/effect/mapping_helpers/atom_injector/obj_flag"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mapping_helpers_atom_injector_obj_flag : obj_effect_mapping_helpers_atom_injector
+// tg: code/modules/mapping/mapping_helpers.dm:766 (the var block of a hand-written class)
+[DmPath("/obj/effect/mapping_helpers/atom_injector/obj_flag")]
+public partial class obj_effect_mapping_helpers_atom_injector_obj_flag
 {
     public float? inject_flags = 0; // tg: code/modules/mapping/mapping_helpers.dm:768
 
@@ -2088,9 +2088,9 @@ public partial class obj_effect_mapping_helpers_iannewyear
     }
 }
 
-// tg: code/modules/mapping/mapping_helpers.dm:1145
-[DmPath("/obj/effect/mapping_helpers/airlock_note_placer"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mapping_helpers_airlock_note_placer : obj_effect_mapping_helpers
+// tg: code/modules/mapping/mapping_helpers.dm:1145 (the var block of a hand-written class)
+[DmPath("/obj/effect/mapping_helpers/airlock_note_placer")]
+public partial class obj_effect_mapping_helpers_airlock_note_placer
 {
     public object note_info; // tg: code/modules/mapping/mapping_helpers.dm:1148
     public object note_name; // tg: code/modules/mapping/mapping_helpers.dm:1149
@@ -2280,9 +2280,9 @@ public partial class obj_effect_mapping_helpers_engraving : obj_effect_mapping_h
     }
 }
 
-// tg: code/modules/mapping/mapping_helpers.dm:1461
-[DmPath("/obj/effect/mapping_helpers/bombable_wall"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mapping_helpers_bombable_wall : obj_effect_mapping_helpers
+// tg: code/modules/mapping/mapping_helpers.dm:1461 (the var block of a hand-written class)
+[DmPath("/obj/effect/mapping_helpers/bombable_wall")]
+public partial class obj_effect_mapping_helpers_bombable_wall
 {
     // tg: code/modules/mapping/mapping_helpers.dm:1461
     public obj_effect_mapping_helpers_bombable_wall()

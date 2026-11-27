@@ -2466,9 +2466,9 @@ public partial class mob_living_basic_wizard_classic : mob_living_basic_wizard
     }
 }
 
-// tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:2
-[DmPath("/mob/living/basic/skeleton"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_skeleton : mob_living_basic
+// tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:2 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/skeleton")]
+public partial class mob_living_basic_skeleton
 {
     public DmList loot; // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:28
     public Type outfit; // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:30
@@ -2513,7 +2513,7 @@ public partial class mob_living_basic_skeleton : mob_living_basic
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:87
-[DmPath("/mob/living/basic/skeleton/templar"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/skeleton/templar"), DmGeneratedOnly]
 public partial class mob_living_basic_skeleton_templar : mob_living_basic_skeleton
 {
     // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:87
@@ -2545,7 +2545,7 @@ public partial class mob_living_basic_skeleton_templar : mob_living_basic_skelet
 }
 
 // tg: code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:70
-[DmPath("/mob/living/basic/skeleton/templar/academy"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/skeleton/templar/academy"), DmGeneratedOnly]
 public partial class mob_living_basic_skeleton_templar_academy : mob_living_basic_skeleton_templar
 {
     // tg: code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:70
@@ -2566,7 +2566,7 @@ public partial class mob_living_basic_skeleton_templar_academy : mob_living_basi
 }
 
 // tg: code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:100
-[DmPath("/mob/living/basic/skeleton/templar/leader"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/skeleton/templar/leader"), DmGeneratedOnly]
 public partial class mob_living_basic_skeleton_templar_leader : mob_living_basic_skeleton_templar
 {
     // tg: code/modules/awaymissions/mission_code/academy/academy_items_and_mobs.dm:100
@@ -2582,7 +2582,7 @@ public partial class mob_living_basic_skeleton_templar_leader : mob_living_basic
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:61
-[DmPath("/mob/living/basic/skeleton/settler"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/skeleton/settler"), DmGeneratedOnly]
 public partial class mob_living_basic_skeleton_settler : mob_living_basic_skeleton
 {
     // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:61
@@ -2612,7 +2612,7 @@ public partial class mob_living_basic_skeleton_settler : mob_living_basic_skelet
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:116
-[DmPath("/mob/living/basic/skeleton/ice"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/skeleton/ice"), DmGeneratedOnly]
 public partial class mob_living_basic_skeleton_ice : mob_living_basic_skeleton
 {
     // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:116
@@ -2635,7 +2635,7 @@ public partial class mob_living_basic_skeleton_ice : mob_living_basic_skeleton
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:125
-[DmPath("/mob/living/basic/skeleton/plasmaminer"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/skeleton/plasmaminer"), DmGeneratedOnly]
 public partial class mob_living_basic_skeleton_plasmaminer : mob_living_basic_skeleton
 {
     // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:125
@@ -2666,7 +2666,7 @@ public partial class mob_living_basic_skeleton_plasmaminer : mob_living_basic_sk
 }
 
 // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:142
-[DmPath("/mob/living/basic/skeleton/plasmaminer/jackhammer"), DmGeneratedOnly, DmInert]
+[DmPath("/mob/living/basic/skeleton/plasmaminer/jackhammer"), DmGeneratedOnly]
 public partial class mob_living_basic_skeleton_plasmaminer_jackhammer : mob_living_basic_skeleton_plasmaminer
 {
     // tg: code/modules/mob/living/basic/ruin_defender/skeleton.dm:142
@@ -9673,9 +9673,9 @@ public partial class mob_living_basic_cybersun_ai_core : mob_living_basic
     }
 }
 
-// tg: code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:3
-[DmPath("/mob/living/basic/dark_wizard"), DmGeneratedOnly, DmInert]
-public partial class mob_living_basic_dark_wizard : mob_living_basic
+// tg: code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:3 (the var block of a hand-written class)
+[DmPath("/mob/living/basic/dark_wizard")]
+public partial class mob_living_basic_dark_wizard
 {
     // tg: code/modules/mob/living/basic/ruin_defender/dark_wizard.dm:3
     public mob_living_basic_dark_wizard()

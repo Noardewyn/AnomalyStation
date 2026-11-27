@@ -42,6 +42,10 @@ internal sealed class TurfAreaWorld
             Dm.@new<datum_controller_subsystem_atoms>();
             Dm.@new<datum_controller_subsystem_timer>(); // the slippery fake ice's wet floor queues its gc (wet_floor.dm:36)
             SSmapping.gravity_by_z_level.len = maxz;
+            // and its plane offset list, which ChangeTurf reads for the changed turf's level (change_turf.dm:202; every level offset 0)
+            SSmapping.z_level_to_plane_offset.len = maxz;
+            for (int z = 1; z <= maxz; z++)
+                SSmapping.z_level_to_plane_offset[z] = 0f;
             ToyRoom.LinkLevels(maxz);
             Dm.world.turf = turfType ?? typeof(turf_open_indestructible);
             Dm.world.area = areaType ?? typeof(area_misc_testroom);

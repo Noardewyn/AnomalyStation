@@ -1623,9 +1623,9 @@ public partial class obj_item_clothing_gloves_divine_archer : obj_item_clothing_
     }
 }
 
-// tg: code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2
-[DmPath("/obj/item/clothing/gloves/butchering"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_gloves_butchering : obj_item_clothing_gloves
+// tg: code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/gloves/butchering")]
+public partial class obj_item_clothing_gloves_butchering
 {
     // tg: code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2
     public obj_item_clothing_gloves_butchering()

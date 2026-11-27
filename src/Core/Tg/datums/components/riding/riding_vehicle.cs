@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (gaps H4, the janitor): the ridden vehicle's riding base (the key check, the rider's condition, the move and its cooldown)
-// and the janicart's, the secway's (gaps SE1), the lava boat's and the dragon boat's. The other vehicles' variants (the ATV, scooters and skateboards, the wheelchairs, the speedbike,
+// and the janicart's, the ATV's, the secway's (gaps SE1), the lava boat's and the dragon boat's. The other vehicles' variants (scooters and skateboards, the wheelchairs, the speedbike,
 // the bone bike, the stake...) come with their vehicles. The var blocks are generated (D111).
 
 // For any /obj/vehicle's that can be ridden
@@ -255,5 +255,29 @@ public partial class datum_component_riding_vehicle_secway : datum_component_rid
             return COMPONENT_DRIVER_BLOCK_MOVE;
         }
         return base.driver_move(movable_parent, user, direction);
+    }
+}
+
+// tg: code/datums/components/riding/riding_vehicle.dm:110
+public partial class datum_component_riding_vehicle_atv : datum_component_riding_vehicle
+{
+    // tg: code/datums/components/riding/riding_vehicle.dm:115
+    public override DmList get_rider_offsets_and_layers(object pass_index = null, mob offsetter = null)
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 4f)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 4f)),
+            Dm.kv(TEXT_EAST, Dm.list(0f, 4f)),
+            Dm.kv(TEXT_WEST, Dm.list(0f, 4f)));
+    }
+
+    // tg: code/datums/components/riding/riding_vehicle.dm:123
+    public override DmList get_parent_offsets_and_layers()
+    {
+        return Dm.list(
+            Dm.kv(TEXT_NORTH, Dm.list(0f, 0f, OBJ_LAYER)),
+            Dm.kv(TEXT_SOUTH, Dm.list(0f, 0f, ABOVE_MOB_LAYER)),
+            Dm.kv(TEXT_EAST, Dm.list(0f, 0f, OBJ_LAYER)),
+            Dm.kv(TEXT_WEST, Dm.list(0f, 0f, OBJ_LAYER)));
     }
 }

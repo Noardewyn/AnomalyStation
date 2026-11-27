@@ -102,3 +102,15 @@ public sealed partial class TgState
     internal object turf_open_water_lavaland_atmos_basalt_bitmask_smooth__siderite_group;
     internal object turf_open_water_lavaland_atmos_basalt_bitmask_smooth__shale_group;
 }
+
+// tg: code/game/turfs/open/water.dm:107  (Lavaland's beach biodome)
+public partial class turf_open_water_beach : turf_open_water
+{
+    // tg: code/game/turfs/open/water.dm:117
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        ADD_TRAIT(this, TRAIT_MESSAGE_IN_A_BOTTLE_LOCATION, INNATE_TRAIT);
+        return dot;
+    }
+}

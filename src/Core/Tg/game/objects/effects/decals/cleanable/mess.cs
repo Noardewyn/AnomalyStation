@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL: the dirt and the dust (M3 I1a: their init, the tiled dirt's smoothing), the glass debris (M5x slice 1: its init and
-// ex_act, so a blast clears the debris of the windows it breaks), the shreds (M6 slice 2: shredded clothing leaves them), the vomit's slurping (gaps S1), the ashes (syndicate G4a), the glowing goo (silicons SI1c), the glitter (gaps ST3), the old vomit and the black bile a legion's tumour makes its host throw up; the other messes' procs come with their modules. The vomit's [DmPath] is package B's (wave 4: the signatures of its turf and area files name the type, rules 2.3).
+// ex_act, so a blast clears the debris of the windows it breaks), the shreds (M6 slice 2: shredded clothing leaves them), the vomit's slurping (gaps S1), the ashes (syndicate G4a), the glowing goo (silicons SI1c), the glitter (gaps ST3), the old vomit, the black bile a legion's tumour makes its host throw up and the rubble's bounce (a Lavaland ruin's collapsed walls); the other messes' procs come with their modules. The vomit's [DmPath] is package B's (wave 4: the signatures of its turf and area files name the type, rules 2.3).
 // The var blocks are generated (D111).
 
 //Vomit (sorry)
@@ -221,6 +221,22 @@ public partial class obj_effect_decal_cleanable_vomit_old : obj_effect_decal_cle
             return dot;
         icon_state += "-old";
         Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 10));
+        return dot;
+    }
+}
+
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:382
+public partial class obj_effect_decal_cleanable_rubble : obj_effect_decal_cleanable
+{
+    // tg: code/game/objects/effects/decals/cleanable/mess.dm:393
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        if (Dm.eq(dot, INITIALIZE_HINT_QDEL))
+            return dot;
+        flick("rubble_bounce", this);
+        icon_state = "rubble";
+        update_appearance(UPDATE_ICON_STATE);
         return dot;
     }
 }

@@ -7001,9 +7001,9 @@ public partial class obj_item_knife_plastic
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27
-[DmPath("/obj/item/knife/envy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_knife_envy : obj_item_knife
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27 (the var block of a hand-written class)
+[DmPath("/obj/item/knife/envy")]
+public partial class obj_item_knife_envy
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27
     public obj_item_knife_envy()
@@ -38580,9 +38580,9 @@ public partial class obj_item_feather : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:6
-[DmPath("/obj/item/freeze_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_freeze_cube : obj_item
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/freeze_cube")]
+public partial class obj_item_freeze_cube
 {
     public float? cooldown_time = 50; // tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:14
     public float freeze_cooldown = 0; // tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:15
@@ -38600,9 +38600,9 @@ public partial class obj_item_freeze_cube : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318
-[DmPath("/obj/item/prisoncube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_prisoncube : obj_item
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318 (the var block of a hand-written class)
+[DmPath("/obj/item/prisoncube")]
+public partial class obj_item_prisoncube
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318
     public obj_item_prisoncube()
@@ -38614,9 +38614,9 @@ public partial class obj_item_prisoncube : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:94
-[DmPath("/obj/item/watcher_hatchling"), DmGeneratedOnly, DmInert]
-public partial class obj_item_watcher_hatchling : obj_item
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:94 (the var block of a hand-written class)
+[DmPath("/obj/item/watcher_hatchling")]
+public partial class obj_item_watcher_hatchling
 {
     public obj_effect_watcher_orbiter orbiter; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:100
     public mob_living owner; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:102

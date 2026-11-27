@@ -1164,9 +1164,9 @@ public partial class obj_vehicle_ridden_scooter_skateboard_wheelys_skishoes : ob
     }
 }
 
-// tg: code/modules/vehicles/atv.dm:3
-[DmPath("/obj/vehicle/ridden/atv"), DmGeneratedOnly, DmInert]
-public partial class obj_vehicle_ridden_atv : obj_vehicle_ridden
+// tg: code/modules/vehicles/atv.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/vehicle/ridden/atv")]
+public partial class obj_vehicle_ridden_atv
 {
     // tg: code/modules/vehicles/atv.dm:3
     public obj_vehicle_ridden_atv()
@@ -1181,9 +1181,9 @@ public partial class obj_vehicle_ridden_atv : obj_vehicle_ridden
     }
 }
 
-// tg: code/modules/vehicles/atv.dm:37
-[DmPath("/obj/vehicle/ridden/atv/turret"), DmGeneratedOnly, DmInert]
-public partial class obj_vehicle_ridden_atv_turret : obj_vehicle_ridden_atv
+// tg: code/modules/vehicles/atv.dm:37 (the var block of a hand-written class)
+[DmPath("/obj/vehicle/ridden/atv/turret")]
+public partial class obj_vehicle_ridden_atv_turret
 {
     public obj_machinery_porta_turret_syndicate_vehicle_turret turret; // tg: code/modules/vehicles/atv.dm:37
 }

@@ -196,8 +196,9 @@ public partial class datum_controller_subsystem_lighting : datum_controller_subs
     // tg: code/controllers/subsystem/lighting.dm:139
     public virtual void setup_static_lighting_if_needed(DmList turfs = null)
     {
-        foreach (turf unlit in Dm.each<turf>(turfs))
+        foreach (turf listed in Dm.each<turf>(turfs))
         {
+            var unlit = (turf)turf.dm_identity(listed); // TURF-IDENTITY: a turf replaced as the atoms initialized (a ruin's biome-replacing floor) names its cell's turf
             if (Dm.truthy(unlit.space_lit))
                 continue;
             area loc_area = unlit.loc as area;

@@ -1,0 +1,258 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_gaia.dmm tg 1d99bd7f
+size 20 16 1
+chunk 32
+default /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/ruin/unpowered/gaia
+
+[chunk 1 1 1]
+1,16: /turf/template_noop | /area/template_noop
+2,16: /turf/template_noop | /area/template_noop
+3,16: /turf/template_noop | /area/template_noop
+4,16: /turf/template_noop | /area/template_noop
+5,16: /turf/template_noop | /area/template_noop
+6,16: /turf/template_noop | /area/template_noop
+15,16: /turf/template_noop | /area/template_noop
+16,16: /turf/template_noop | /area/template_noop
+17,16: /turf/template_noop | /area/template_noop
+18,16: /turf/template_noop | /area/template_noop
+19,16: /turf/template_noop | /area/template_noop
+20,16: /turf/template_noop | /area/template_noop
+1,15: /turf/template_noop | /area/template_noop
+2,15: /turf/template_noop | /area/template_noop
+3,15: /turf/template_noop | /area/template_noop
+4,15: /turf/template_noop | /area/template_noop
+5,15: /turf/template_noop | /area/template_noop
+8,15: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,15: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,15: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+11,15: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,15: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+13,15: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,15: /turf/template_noop | /area/template_noop
+17,15: /turf/template_noop | /area/template_noop
+18,15: /turf/template_noop | /area/template_noop
+19,15: /turf/template_noop | /area/template_noop
+20,15: /turf/template_noop | /area/template_noop
+1,14: /turf/template_noop | /area/template_noop
+2,14: /turf/template_noop | /area/template_noop
+3,14: /turf/template_noop | /area/template_noop
+7,14: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,14: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,14: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,14: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+11,14: /obj/structure/flora/rock/pile/jungle/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,14: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,14: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,14: /obj/structure/flora/bush/sparsegrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+19,14: /turf/template_noop | /area/template_noop
+20,14: /turf/template_noop | /area/template_noop
+1,13: /turf/template_noop | /area/template_noop
+2,13: /turf/template_noop | /area/template_noop
+5,13: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,13: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,13: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,13: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,13: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,13: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+11,13: /obj/machinery/hydroponics/soil{self_sustaining = 1} | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,13: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,13: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,13: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,13: /obj/item/food/grown/mushroom/angel | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,13: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,13: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+20,13: /turf/template_noop | /area/template_noop
+1,12: /turf/template_noop | /area/template_noop
+4,12: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+5,12: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,12: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,12: /obj/item/food/grown/mushroom/libertycap | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,12: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,12: /obj/structure/flora/bush/sparsegrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,12: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+11,12: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+12,12: /mob/living/basic/lightgeist{light_color = "#42ECFF"} | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,12: /obj/structure/flora/tree/jungle/small/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,12: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,12: /mob/living/basic/butterfly/lavaland | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,12: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,12: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,12: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+3,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+4,11: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+5,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,11: /obj/structure/flora/grass/jungle/b/style_random | /obj/structure/flora/bush/sparsegrass/style_random | /mob/living/basic/butterfly/lavaland | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,11: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,11: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,11: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+11,11: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,11: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,11: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,11: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+19,11: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+2,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+3,10: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+4,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+5,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+11,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,10: /obj/item/food/grown/mushroom/amanita | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+13,10: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,10: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,10: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,10: /mob/living/basic/lightgeist{light_color = "#42ECFF"} | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,10: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+19,10: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+2,9: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+3,9: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+4,9: /obj/machinery/hydroponics/soil{self_sustaining = 1} | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+5,9: /mob/living/basic/lightgeist{light_color = "#42ECFF"} | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,9: /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+7,9: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,9: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+9,9: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,9: /turf/closed/wall/mineral/bronze | /area/ruin/unpowered/gaia
+11,9: /obj/structure/flora/bush/sunny/style_random | /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,9: /turf/closed/wall/mineral/bronze | /area/ruin/unpowered/gaia
+13,9: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,9: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,9: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+16,9: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,9: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,9: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+19,9: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+2,8: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+3,8: /obj/structure/flora/bush/sparsegrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+4,8: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+5,8: /mob/living/basic/butterfly/lavaland | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,8: /obj/structure/flora/tree/jungle/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,8: /obj/structure/flora/bush/stalky/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,8: /obj/structure/flora/grass/jungle/a/style_random | /mob/living/basic/lightgeist{light_color = "#42ECFF"} | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,8: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,8: /obj/structure/flora/bush/sunny/style_random | /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+11,8: /obj/item/mod/construction/lavalandcore | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,8: /obj/structure/flora/grass/jungle/b/style_random | /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,8: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,8: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+15,8: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,8: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,8: /obj/structure/flora/bush/sunny/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,8: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+19,8: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+2,7: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+3,7: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+4,7: /obj/structure/flora/bush/ferny/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+5,7: /obj/item/food/grown/mushroom/amanita | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,7: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+7,7: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,7: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,7: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+10,7: /obj/structure/flora/grass/jungle/b/style_random | /turf/closed/wall/mineral/bronze | /area/ruin/unpowered/gaia
+11,7: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+12,7: /turf/closed/wall/mineral/bronze | /area/ruin/unpowered/gaia
+13,7: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+14,7: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,7: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,7: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+17,7: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,7: /mob/living/basic/butterfly/lavaland | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+19,7: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+2,6: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+3,6: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+4,6: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+5,6: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,6: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,6: /obj/structure/flora/bush/ferny/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,6: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,6: /obj/structure/flora/bush/sparsegrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,6: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+11,6: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,6: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,6: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,6: /mob/living/basic/butterfly/lavaland | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,6: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,6: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,6: /obj/structure/flora/rock/pile/jungle/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,6: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+19,6: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+3,5: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+4,5: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+5,5: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,5: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,5: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,5: /obj/item/food/grown/mushroom/libertycap | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,5: /mob/living/basic/butterfly/lavaland | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,5: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+11,5: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+12,5: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+13,5: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,5: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,5: /mob/living/basic/butterfly/lavaland | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,5: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,5: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,5: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+1,4: /turf/template_noop | /area/template_noop
+5,4: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+6,4: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,4: /obj/structure/flora/bush/flowers_yw/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,4: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,4: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,4: /obj/structure/flora/bush/stalky/style_random | /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+11,4: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,4: /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,4: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,4: /obj/machinery/hydroponics/soil{self_sustaining = 1} | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,4: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+16,4: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,4: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+18,4: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+20,4: /turf/template_noop | /area/template_noop
+1,3: /turf/template_noop | /area/template_noop
+2,3: /turf/template_noop | /area/template_noop
+3,3: /turf/template_noop | /area/template_noop
+5,3: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+7,3: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+8,3: /obj/structure/flora/bush/lavendergrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,3: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,3: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+11,3: /obj/structure/flora/tree/jungle/small/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,3: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+13,3: /obj/item/food/grown/mushroom/chanterelle | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,3: /obj/structure/flora/bush/ferny/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+15,3: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+20,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/template_noop | /area/template_noop
+3,2: /turf/template_noop | /area/template_noop
+8,2: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+9,2: /obj/structure/flora/bush/sparsegrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+10,2: /obj/structure/flora/bush/fullgrass/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+11,2: /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+12,2: /obj/structure/flora/grass/jungle/b/style_random | /turf/open/floor/bronze/filled/lavaland | /area/ruin/unpowered/gaia
+13,2: /obj/structure/flora/bush/ferny/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+14,2: /obj/structure/flora/grass/jungle/a/style_random | /turf/open/misc/grass/lavaland | /area/ruin/unpowered/gaia
+17,2: /turf/template_noop | /area/template_noop
+18,2: /turf/template_noop | /area/template_noop
+19,2: /turf/template_noop | /area/template_noop
+20,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+5,1: /turf/template_noop | /area/template_noop
+6,1: /turf/template_noop | /area/template_noop
+16,1: /turf/template_noop | /area/template_noop
+17,1: /turf/template_noop | /area/template_noop
+18,1: /turf/template_noop | /area/template_noop
+19,1: /turf/template_noop | /area/template_noop
+20,1: /turf/template_noop | /area/template_noop

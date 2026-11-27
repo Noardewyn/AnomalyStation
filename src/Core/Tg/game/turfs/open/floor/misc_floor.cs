@@ -181,3 +181,16 @@ public partial class turf_open_floor_cult : turf_open_floor
         return null;
     }
 }
+
+// tg: code/game/turfs/open/floor/misc_floor.dm:270  (the shoe factory)
+public partial class turf_open_floor_plating_rust : turf_open_floor_plating
+{
+    // tg: code/game/turfs/open/floor/misc_floor.dm:276
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_rust)));
+        color = null;
+        return dot;
+    }
+}

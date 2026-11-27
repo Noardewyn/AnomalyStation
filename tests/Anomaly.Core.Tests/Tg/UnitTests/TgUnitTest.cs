@@ -189,6 +189,11 @@ public abstract class TgUnitTest
             Dm.@new<datum_controller_subsystem_sun>();
             Dm.@new<datum_controller_subsystem_persistence>(); // an incident display reads the delamination counter (incident_display.dm:102), tg's MC always creates it
             Dm.@new<datum_controller_subsystem_polling>(); // Syndicate X2: a ghost-controllable mob polls the ghosts (ghost_direct_control.dm:81), tg's MC always creates it
+            // the ash walker egg's shell gibs a human when it goes (mining_roles.dm:201-206), whose bodyparts are thrown (spread_bodyparts),
+            // and throw_at reads SSthrowing's state (atoms_movable.dm:1442), which tg's MC always creates; a world that never fires it
+            // sets its currentrun here, as TgToyRoom does.
+            Dm.@new<datum_controller_subsystem_throwing>();
+            SSthrowing.currentrun ??= Dm.list();
             // M7 lighting slice L1: a trash item on a station level (the burnt flare, the melted candle) records its mess on SSblackbox (trash.dm:13), which tg's MC always creates.
             Dm.@new<datum_controller_subsystem_blackbox>();
             // M7 lumcount: SSlighting, which tg's MC always creates; not initialized, so the turfs have no lighting mark and count as

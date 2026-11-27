@@ -3436,9 +3436,9 @@ public partial class obj_structure_displaycase_chassis
     }
 }
 
-// tg: code/game/objects/structures/divine.dm:2
-[DmPath("/obj/structure/sacrificealtar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_sacrificealtar : obj_structure
+// tg: code/game/objects/structures/divine.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/sacrificealtar")]
+public partial class obj_structure_sacrificealtar
 {
     // tg: code/game/objects/structures/divine.dm:2
     public obj_structure_sacrificealtar()
@@ -3453,9 +3453,9 @@ public partial class obj_structure_sacrificealtar : obj_structure
     }
 }
 
-// tg: code/game/objects/structures/divine.dm:23
-[DmPath("/obj/structure/healingfountain"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_healingfountain : obj_structure
+// tg: code/game/objects/structures/divine.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/structure/healingfountain")]
+public partial class obj_structure_healingfountain
 {
     public float time_between_uses = 1800; // tg: code/game/objects/structures/divine.dm:29
     public float last_process = 0; // tg: code/game/objects/structures/divine.dm:30
@@ -10930,9 +10930,9 @@ public partial class obj_structure_table_wood_fancy_royalblue : obj_structure_ta
     }
 }
 
-// tg: code/modules/shuttle/misc/special.dm:175
-[DmPath("/obj/structure/table/wood/shuttle_bar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_table_wood_shuttle_bar : obj_structure_table_wood
+// tg: code/modules/shuttle/misc/special.dm:175 (the var block of a hand-written class)
+[DmPath("/obj/structure/table/wood/shuttle_bar")]
+public partial class obj_structure_table_wood_shuttle_bar
 {
     public float boot_dir = 1; // tg: code/modules/shuttle/misc/special.dm:177
 
@@ -14923,9 +14923,9 @@ public partial class obj_structure_speaking_tile : obj_structure
     }
 }
 
-// tg: code/modules/awaymissions/mission_code/Cabin.dm:37
-[DmPath("/obj/structure/firepit"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_firepit : obj_structure
+// tg: code/modules/awaymissions/mission_code/Cabin.dm:37 (the var block of a hand-written class)
+[DmPath("/obj/structure/firepit")]
+public partial class obj_structure_firepit
 {
     public float? active = 1; // tg: code/modules/awaymissions/mission_code/Cabin.dm:42
 
@@ -15646,29 +15646,17 @@ public partial class obj_structure_bookcase_random_reference_wizard
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198
-[DmPath("/obj/structure/puzzle_element"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_puzzle_element : obj_structure
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198 (the vars the hand-written class does not declare)
+[DmPath("/obj/structure/puzzle_element")]
+public partial class obj_structure_puzzle_element
 {
     public float? id = 0; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:204
-    public Type source; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:205
     public icon puzzle_icon; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:206
-
-    // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198
-    public obj_structure_puzzle_element()
-    {
-        name = "mysterious pillar";
-        desc = "Puzzling...";
-        icon = Dm.resource("icons/obj/mining_zones/artefacts.dmi");
-        icon_state = "puzzle_pillar";
-        anchored = 0;
-        density = 1;
-    }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303
-[DmPath("/obj/structure/puzzle_element/prison"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_puzzle_element_prison : obj_structure_puzzle_element
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303 (the var block of a hand-written class)
+[DmPath("/obj/structure/puzzle_element/prison")]
+public partial class obj_structure_puzzle_element_prison
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303
     public obj_structure_puzzle_element_prison()
@@ -15677,9 +15665,9 @@ public partial class obj_structure_puzzle_element_prison : obj_structure_puzzle_
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10
-[DmPath("/obj/structure/dead_ratvar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_dead_ratvar : obj_structure
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/structure/dead_ratvar")]
+public partial class obj_structure_dead_ratvar
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10
     public obj_structure_dead_ratvar()
@@ -15705,9 +15693,9 @@ public partial class obj_structure_dead_ratvar : obj_structure
 [DmPath("/obj/structure/lavaland"), DmGeneratedOnly]
 public partial class obj_structure_lavaland : obj_structure { }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:4
-[DmPath("/obj/structure/lavaland/ash_walker"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_lavaland_ash_walker : obj_structure_lavaland
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/structure/lavaland/ash_walker")]
+public partial class obj_structure_lavaland_ash_walker
 {
     public float meat_counter = 6; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:18
     public datum_team_ashwalkers ashies; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:19
@@ -15753,9 +15741,9 @@ public partial class obj_structure_lavaland_ash_walker_fake : obj_structure_lava
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:3
-[DmPath("/obj/structure/cursed_slot_machine"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_cursed_slot_machine : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/structure/cursed_slot_machine")]
+public partial class obj_structure_cursed_slot_machine
 {
     public string icon_screen = "slots_screen"; // tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:10
     public float brightness_on = 1; // tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:12
@@ -15779,9 +15767,9 @@ public partial class obj_structure_cursed_slot_machine : obj_structure
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101
-[DmPath("/obj/structure/cursed_money"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_cursed_money : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101 (the var block of a hand-written class)
+[DmPath("/obj/structure/cursed_money")]
+public partial class obj_structure_cursed_money
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101
     public obj_structure_cursed_money()
@@ -16763,9 +16751,9 @@ public partial class obj_structure_legionnaire_bonfire
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:174
-[DmPath("/obj/structure/ash_walker_eggshell"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_ash_walker_eggshell : obj_structure
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:174 (the var block of a hand-written class)
+[DmPath("/obj/structure/ash_walker_eggshell")]
+public partial class obj_structure_ash_walker_eggshell
 {
     public obj_effect_mob_spawn_ghost_role_human_ash_walker egg; // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:180
 

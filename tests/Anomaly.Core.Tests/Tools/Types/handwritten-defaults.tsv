@@ -4482,6 +4482,23 @@
 /obj/effect/puzzle_poddoor_open	icon_state	override	code/game/objects/items/puzzle_pieces.dm:531	{"K":"str","N":0,"S":""}
 /obj/effect/puzzle_poddoor_open	anchored	override	code/game/objects/items/puzzle_pieces.dm:532	{"K":"num","N":1}
 /obj/effect/puzzle_poddoor_open	invisibility	override	code/game/objects/items/puzzle_pieces.dm:533	{"K":"num","N":100}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	team	decl	code/modules/mob_spawn/ghost_roles/mining_roles.dm:225	{"K":"null","N":0}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	eggshell	decl	code/modules/mob_spawn/ghost_roles/mining_roles.dm:226	{"K":"null","N":0}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	name	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:211	{"K":"str","N":0,"S":"ash walker egg"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	desc	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:212	{"K":"str","N":0,"S":"A man-sized yellow egg, spawned from some unfathomable creature. A humanoid silhouette lurks within."}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	prompt_name	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:213	{"K":"str","N":0,"S":"necropolis ash walker"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	icon	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:214	{"K":"res","N":0,"S":"icons/mob/simple/lavaland/lavaland_monsters.dmi"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	icon_state	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:215	{"K":"str","N":0,"S":"large_egg"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	mob_species	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:216	{"K":"type","N":0,"S":"/datum/species/lizard/ashwalker"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	outfit	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:217	{"K":"type","N":0,"S":"/datum/outfit/ashwalker"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	move_resist	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:218	{"K":"num","N":1000}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	density	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:219	{"K":"num","N":0}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	you_are_text	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:220	{"K":"str","N":0,"S":"You are an ash walker. Your tribe worships the Necropolis."}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	flavour_text	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:221	{"K":"str","N":0,"S":"The wastes are sacred ground, its monsters a blessed bounty. You have seen lights in the distance... they foreshadow the arrival of outsiders that seek to tear apart the Necropolis and its domain. Fresh sacrifices for your nest."}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	spawner_job_path	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:224	{"K":"type","N":0,"S":"/datum/job/ash_walker"}
+/obj/effect/sliding_puzzle/prison	prisoner	decl	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:277	{"K":"null","N":0}
+/obj/effect/sliding_puzzle/prison	auto_setup	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276	{"K":"num","N":0}
+/obj/effect/sliding_puzzle/prison	element_type	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:278	{"K":"type","N":0,"S":"/obj/structure/puzzle_element/prison"}
 /obj/structure/closet/crate/critter	tank	decl	code/game/objects/structures/crates_lockers/crates/critter.dm:22	{"K":"null","N":0}
 /obj/structure/closet/crate/critter	name	override	code/game/objects/structures/crates_lockers/crates/critter.dm:2	{"K":"str","N":0,"S":"critter crate"}
 /obj/structure/closet/crate/critter	desc	override	code/game/objects/structures/crates_lockers/crates/critter.dm:3	{"K":"str","N":0,"S":"A crate designed for safe transport of animals. It has an oxygen tank for safe transport in space."}
@@ -4536,6 +4553,13 @@
 /obj/structure/tray	anchored	override	code/game/objects/structures/morgue.dm:534	{"K":"num","N":1}
 /obj/structure/tray	pass_flags_self	override	code/game/objects/structures/morgue.dm:535	{"K":"num","N":65}
 /obj/structure/tray	max_integrity	override	code/game/objects/structures/morgue.dm:537	{"K":"num","N":350}
+/obj/structure/puzzle_element	source	decl	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:205	{"K":"null","N":0}
+/obj/structure/puzzle_element	name	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198	{"K":"str","N":0,"S":"mysterious pillar"}
+/obj/structure/puzzle_element	desc	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:199	{"K":"str","N":0,"S":"Puzzling..."}
+/obj/structure/puzzle_element	icon	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:200	{"K":"res","N":0,"S":"icons/obj/mining_zones/artefacts.dmi"}
+/obj/structure/puzzle_element	icon_state	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:201	{"K":"str","N":0,"S":"puzzle_pillar"}
+/obj/structure/puzzle_element	anchored	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:202	{"K":"num","N":0}
+/obj/structure/puzzle_element	density	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:203	{"K":"num","N":1}
 /obj/structure/light_construct	cell	decl	code/modules/power/lighting/light_construct.dm:20	{"K":"null","N":0}
 /obj/structure/light_construct	name	override	code/modules/power/lighting/light_construct.dm:2	{"K":"str","N":0,"S":"light fixture frame"}
 /obj/structure/light_construct	desc	override	code/modules/power/lighting/light_construct.dm:3	{"K":"str","N":0,"S":"A light fixture under construction."}

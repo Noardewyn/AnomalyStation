@@ -9379,9 +9379,9 @@ public partial class datum_outfit_hermit : datum_outfit
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:98
-[DmPath("/datum/outfit/beachbum"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_beachbum : datum_outfit
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:98 (the var block of a hand-written class)
+[DmPath("/datum/outfit/beachbum")]
+public partial class datum_outfit_beachbum
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:98
     public datum_outfit_beachbum()
@@ -9396,7 +9396,7 @@ public partial class datum_outfit_beachbum : datum_outfit
 }
 
 // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:112
-[DmPath("/datum/outfit/beachbum/lifeguard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/outfit/beachbum/lifeguard"), DmGeneratedOnly]
 public partial class datum_outfit_beachbum_lifeguard : datum_outfit_beachbum
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:112
@@ -9408,9 +9408,9 @@ public partial class datum_outfit_beachbum_lifeguard : datum_outfit_beachbum
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:128
-[DmPath("/datum/outfit/spacebartender"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_spacebartender : datum_outfit
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:128 (the var block of a hand-written class)
+[DmPath("/datum/outfit/spacebartender")]
+public partial class datum_outfit_spacebartender
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:128
     public datum_outfit_spacebartender()
@@ -9452,9 +9452,9 @@ public partial class datum_outfit_ashwalker_spear : datum_outfit_ashwalker
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:307
-[DmPath("/datum/outfit/lavaland_syndicate"), DmGeneratedOnly, DmInert]
-public partial class datum_outfit_lavaland_syndicate : datum_outfit
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:307 (the var block of a hand-written class)
+[DmPath("/datum/outfit/lavaland_syndicate")]
+public partial class datum_outfit_lavaland_syndicate
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:307
     public datum_outfit_lavaland_syndicate()
@@ -9483,7 +9483,7 @@ public partial class datum_outfit_lavaland_syndicate : datum_outfit
 }
 
 // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:327
-[DmPath("/datum/outfit/lavaland_syndicate/comms"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/outfit/lavaland_syndicate/comms"), DmGeneratedOnly]
 public partial class datum_outfit_lavaland_syndicate_comms : datum_outfit_lavaland_syndicate
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:327
@@ -9499,7 +9499,7 @@ public partial class datum_outfit_lavaland_syndicate_comms : datum_outfit_lavala
 }
 
 // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:335
-[DmPath("/datum/outfit/lavaland_syndicate/comms/icemoon"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/outfit/lavaland_syndicate/comms/icemoon"), DmGeneratedOnly]
 public partial class datum_outfit_lavaland_syndicate_comms_icemoon : datum_outfit_lavaland_syndicate_comms
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:335

@@ -13,7 +13,7 @@ namespace Anomaly.Core.Tg;
 // cooling loop): the temperature control unit's board, whose piping layer its on_construction reads. Silicons SI4 (D326): the holopad's
 // board, whose security a multitool toggles. Gaps H2 (D333): the smart fridge's board, which a screwdriver switches between the
 // fridge kinds. Gaps MD1: the medical kiosk's board (a multitool sets its price) and the first aid station's (an emag fries its
-// safety chip; it is built against a wall). The other machine boards of
+// safety chip; it is built against a wall). The processor's board, which a screwdriver switches between food and slimes. The other machine boards of
 // the file are var-only and live with the machine board (circuitboard.cs); their procs come with their machines. The var blocks are
 // generated (D111).
 
@@ -336,4 +336,27 @@ public sealed partial class TgState
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:593  /obj/item/circuitboard/machine/smartfridge's var/static/list/fridges_name_paths
     internal DmList obj_item_circuitboard_machine_smartfridge__fridges_name_paths;
+}
+
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383
+public partial class obj_item_circuitboard_machine_processor : obj_item_circuitboard_machine
+{
+    // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1391
+    public override async DmTask<object> screwdriver_act(mob_living user = null, obj_item tool = null)
+    {
+        await DmTask.CompletedTask;
+        if (build_path == typeof(obj_machinery_processor))
+        {
+            name = "Slime Processor";
+            build_path = typeof(obj_machinery_processor_slime);
+            to_chat(user, span_notice(I18n.T("Name protocols successfully updated.")));
+        }
+        else
+        {
+            name = "Food Processor";
+            build_path = typeof(obj_machinery_processor);
+            to_chat(user, span_notice(I18n.T("Defaulting name protocols.")));
+        }
+        return TRUE;
+    }
 }

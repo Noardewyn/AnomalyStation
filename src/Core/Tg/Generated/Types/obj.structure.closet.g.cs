@@ -1372,9 +1372,9 @@ public partial class obj_structure_closet_crate_secure_freezer_donk : obj_struct
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:6
-[DmPath("/obj/structure/closet/crate/secure/freezer/commsagent"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_closet_crate_secure_freezer_commsagent : obj_structure_closet_crate_secure_freezer
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/structure/closet/crate/secure/freezer/commsagent")]
+public partial class obj_structure_closet_crate_secure_freezer_commsagent
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:6
     public obj_structure_closet_crate_secure_freezer_commsagent()

@@ -52,8 +52,10 @@ public class EveryTurfAndAreaTypeTests
             else
             {
                 Assert.Empty(t.Runtimes);
-                Assert.True(Dm.truthy(Dm.bitand(made.flags_1, INITIALIZED_1)) || type == typeof(turf_open_space_basic), name);
-                Assert.Same(made, locate(1, 1, 1));
+                // TURF-IDENTITY: a turf whose Initialize changes it (the ruins' biome-replacing rock and basalt) names the cell's final turf
+                var cell = (turf)turf.dm_identity(made);
+                Assert.True(Dm.truthy(Dm.bitand(cell.flags_1, INITIALIZED_1)) || type == typeof(turf_open_space_basic), name);
+                Assert.Same(cell, locate(1, 1, 1));
             }
         }
     }

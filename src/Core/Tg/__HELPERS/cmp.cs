@@ -207,7 +207,8 @@ public static partial class GlobalProcs
     }
 
     // tg: code/__HELPERS/cmp.dm:91
-    public static object cmp_ruincost_priority(datum_map_template_ruin A = null, datum_map_template_ruin B = null)
+    // (tg's preloadRuinTemplates sorts the ruin types, not instances: A and B are type paths, which initial reads)
+    public static object cmp_ruincost_priority(object A = null, object B = null)
     {
         return Dm.initial(A, (datum_map_template_ruin p) => p.cost) - Dm.initial(B, (datum_map_template_ruin p) => p.cost);
     }

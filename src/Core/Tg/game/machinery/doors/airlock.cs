@@ -19,7 +19,9 @@ namespace Anomaly.Core.Tg;
 // electrification's loop and setter, the deconstruction into an assembly and its electronics. The sounds
 // of the translated procs play (M4b audio slice 1); the hearers' messages (audible_message) are M9. The var block is
 // generated (D111). M4c slice 5: open's cycling pump hook (cycle_pump.airlock_act) and the external airlock's powered
-// safety latch (try_safety_unlock with is_safe_turf). E13: rcd_vals and rcd_act (the RCD).
+// safety latch (try_safety_unlock with is_safe_turf). E13: rcd_vals and rcd_act (the RCD). The cult airlock (a Lavaland ruin's
+// doors): it lets in cultists, shades, constructs and everyone if friendly, flings everyone else away, and hides as a maintenance
+// airlock.
 
 // tg: code/game/machinery/doors/airlock.dm:25  (the global procs, rules 7.8)
 public static partial class GlobalProcs
@@ -2594,19 +2596,101 @@ public partial class obj_machinery_door_airlock_external : obj_machinery_door_ai
     }
 }
 
-// tg: code/game/machinery/doors/airlock.dm:2503
+// Cult Airlocks
+// tg: code/game/machinery/doors/airlock.dm:2455
 public partial class obj_machinery_door_airlock_cult : obj_machinery_door_airlock
 {
+    // tg: code/game/machinery/doors/airlock.dm:2468
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Dm.@new(openingoverlaytype, loc);
+        Waiting.NoSleep(AddElement(typeof(datum_element_empprotection), EMP_PROTECT_ALL));
+        return dot;
+    }
+
+    // tg: code/game/machinery/doors/airlock.dm:2473
+    public override object canAIControl(mob user = null)
+    {
+        return Dm.num(Dm.truthy(IS_CULTIST(user)) && !Dm.truthy(isAllPowerCut()));
+    }
+
+    // tg: code/game/machinery/doors/airlock.dm:2476
+    [SignalHandler]
+    public override void on_break()
+    {
+        set_panel_open(TRUE);
+    }
+
+    // tg: code/game/machinery/doors/airlock.dm:2479
+    public override object isElectrified()
+    {
+        return FALSE;
+    }
+
+    // tg: code/game/machinery/doors/airlock.dm:2482
+    public override object hasPower()
+    {
+        return TRUE;
+    }
+
+    // tg: code/game/machinery/doors/airlock.dm:2485
+    [DmParams("L")]
+    public override async DmTask<object> allowed__proc(mob accessor = null)
+    {
+        await DmTask.CompletedTask;
+        var L = accessor as mob_living;
+        if (!Dm.truthy(density))
+            return TRUE;
+        if (Dm.truthy(friendly) || Dm.truthy(IS_CULTIST(L)) || L is mob_living_basic_shade || isconstruct(L))
+        {
+            if (!Dm.truthy(stealthy))
+                Dm.@new(openingoverlaytype, loc);
+            return TRUE;
+        }
+        else
+        {
+            if (!Dm.truthy(stealthy))
+            {
+                Dm.@new<obj_effect_temp_visual_cult_sac>(loc);
+                atom throwtarget;
+                throwtarget = get_edge_target_turf(this, get_dir(this, get_step_away(L, this))) as atom;
+                Dm.output_to(L, sound(SFX_HALLUCINATION_TURN_AROUND, 0, 1, 50)); // SEND_SOUND
+                flash_color(L, flash_color: COLOR_CULT_RED, flash_time: 20);
+                await L.Paralyze(40);
+                await L.throw_at(throwtarget, 5, 1);
+            }
+            return FALSE;
+        }
+    }
+
     // tg: code/game/machinery/doors/airlock.dm:2503
     public virtual void conceal()
     {
-        Dm.NotTranslated("code/game/machinery/doors/airlock.dm:2503", "conceal: the cult's doors (antagonists, M10+)");
+        icon = Dm.resource("icons/obj/doors/airlocks/station/maintenance.dmi");
+        overlays_file = Dm.resource("icons/obj/doors/airlocks/station/overlays.dmi");
+        name = "Airlock";
+        desc = "It opens and closes.";
+        stealthy = TRUE;
+        update_appearance();
     }
 
     // tg: code/game/machinery/doors/airlock.dm:2511
     public virtual void reveal()
     {
-        Dm.NotTranslated("code/game/machinery/doors/airlock.dm:2511", "reveal: the cult's doors (antagonists, M10+)");
+        icon = Dm.initial(type, (obj_machinery_door_airlock_cult a) => a.icon);
+        overlays_file = Dm.initial(type, (obj_machinery_door_airlock_cult a) => a.overlays_file);
+        name = Dm.initial(type, (obj_machinery_door_airlock_cult a) => a.name);
+        desc = Dm.initial(type, (obj_machinery_door_airlock_cult a) => a.desc);
+        stealthy = Dm.initial(type, (obj_machinery_door_airlock_cult a) => a.stealthy);
+        update_appearance();
+    }
+
+    // tg: code/game/machinery/doors/airlock.dm:2519
+    public override async DmTask<object> narsie_act(params object[] __extra)
+    {
+        await DmTask.CompletedTask;
+        return null;
     }
 }
 

@@ -1,0 +1,77 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_survivalpod.dmm tg 1d99bd7f
+size 10 11 1
+chunk 32
+default /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+
+[chunk 1 1 1]
+1,11: /turf/template_noop | /area/template_noop
+2,11: /turf/template_noop | /area/template_noop
+3,11: /turf/template_noop | /area/template_noop
+4,11: /turf/template_noop | /area/template_noop
+5,11: /turf/template_noop | /area/template_noop
+7,11: /turf/template_noop | /area/template_noop
+8,11: /turf/template_noop | /area/template_noop
+9,11: /turf/template_noop | /area/template_noop
+10,11: /turf/template_noop | /area/template_noop
+1,10: /turf/template_noop | /area/template_noop
+2,10: /turf/template_noop | /area/template_noop
+3,10: /turf/template_noop | /area/template_noop
+8,10: /turf/template_noop | /area/template_noop
+9,10: /turf/template_noop | /area/template_noop
+10,10: /turf/template_noop | /area/template_noop
+1,9: /turf/template_noop | /area/template_noop
+10,9: /turf/template_noop | /area/template_noop
+3,8: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+4,8: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+5,8: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+6,8: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+7,8: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+10,8: /turf/template_noop | /area/template_noop
+3,7: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+4,7: /obj/structure/fans | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+5,7: /obj/machinery/smartfridge/survival_pod{desc = "A heated storage unit. This one's seen better days."; name = "dusty survival pod storage"} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+6,7: /obj/item/gps/computer | /obj/structure/tubes | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+7,7: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+9,7: /obj/effect/decal/cleanable/blood/drip | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,7: /turf/template_noop | /area/template_noop
+3,6: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+4,6: /obj/machinery/sleeper/survival_pod | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+5,6: /obj/item/pickaxe | /obj/effect/decal/cleanable/blood | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+6,6: /obj/structure/bed/pod | /obj/item/bedsheet/black | /obj/structure/tubes | /obj/machinery/light/small/broken/directional/east | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+7,6: /obj/effect/turf_decal/mining/survival{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+9,6: /obj/effect/decal/cleanable/blood | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,6: /obj/effect/decal/cleanable/blood | /obj/effect/mob_spawn/corpse/goliath | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,5: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+4,5: /obj/structure/table/survival_pod | /obj/item/knife/combat/survival | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+5,5: /obj/effect/mob_spawn/corpse/human/miner/explorer{brute_damage = 150; oxy_damage = 50} | /obj/effect/decal/cleanable/blood | /obj/effect/decal/cleanable/blood/drip | /obj/effect/decal/cleanable/blood/footprints{dir = 1} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+6,5: /obj/structure/tubes | /obj/item/crowbar | /obj/effect/decal/cleanable/blood/drip | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+7,5: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+9,5: /obj/effect/decal/cleanable/blood/footprints | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,5: /obj/effect/decal/cleanable/blood/drip | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,4: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+4,4: /obj/effect/turf_decal/mining/survival | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+5,4: /obj/effect/decal/cleanable/blood/footprints{dir = 1} | /obj/machinery/door/airlock/survival_pod/glass | /turf/open/floor/mineral/plastitanium/pod/dark | /area/ruin/powered
+6,4: /obj/effect/turf_decal/mining | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+7,4: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/ruin/powered
+8,4: /obj/effect/decal/cleanable/blood/footprints{dir = 8} | /obj/effect/decal/cleanable/blood/drip | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,4: /obj/effect/decal/cleanable/blood/footprints{dir = 8} | /obj/effect/decal/cleanable/blood/footprints | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,3: /turf/template_noop | /area/template_noop
+5,3: /obj/effect/decal/cleanable/blood/drip | /obj/effect/decal/cleanable/blood/footprints{dir = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,3: /obj/effect/decal/cleanable/blood/footprints{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,3: /obj/effect/decal/cleanable/blood/footprints{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,3: /obj/effect/decal/cleanable/blood/footprints | /obj/effect/decal/cleanable/blood/drip | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,3: /turf/template_noop | /area/template_noop
+10,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/template_noop | /area/template_noop
+3,2: /turf/template_noop | /area/template_noop
+7,2: /obj/effect/decal/cleanable/blood/drip | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,2: /turf/template_noop | /area/template_noop
+10,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+7,1: /obj/effect/decal/cleanable/blood/drip | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,1: /turf/template_noop | /area/template_noop
+10,1: /turf/template_noop | /area/template_noop

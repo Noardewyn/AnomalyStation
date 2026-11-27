@@ -2835,9 +2835,9 @@ public partial class obj_structure_sign_poster_official_periodic_table_direction
     }
 }
 
-// tg: code/game/objects/effects/posters/official.dm:310
-[DmPath("/obj/structure/sign/poster/official/plasma_effects"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_sign_poster_official_plasma_effects : obj_structure_sign_poster_official
+// tg: code/game/objects/effects/posters/official.dm:310 (the var block of a hand-written class)
+[DmPath("/obj/structure/sign/poster/official/plasma_effects")]
+public partial class obj_structure_sign_poster_official_plasma_effects
 {
     // tg: code/game/objects/effects/posters/official.dm:310
     public obj_structure_sign_poster_official_plasma_effects()
@@ -2849,7 +2849,7 @@ public partial class obj_structure_sign_poster_official_plasma_effects : obj_str
 }
 
 // tg: code/game/objects/effects/posters/official.dm:326
-[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_plasma_effects_directional : obj_structure_sign_poster_official_plasma_effects
 {
     // tg: code/game/objects/effects/posters/official.dm:326
@@ -2860,7 +2860,7 @@ public partial class obj_structure_sign_poster_official_plasma_effects_direction
 }
 
 // tg: code/game/objects/effects/posters/official.dm:326
-[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/north"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/north"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_plasma_effects_directional_north : obj_structure_sign_poster_official_plasma_effects_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:326
@@ -2872,7 +2872,7 @@ public partial class obj_structure_sign_poster_official_plasma_effects_direction
 }
 
 // tg: code/game/objects/effects/posters/official.dm:326
-[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/south"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/south"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_plasma_effects_directional_south : obj_structure_sign_poster_official_plasma_effects_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:326
@@ -2884,7 +2884,7 @@ public partial class obj_structure_sign_poster_official_plasma_effects_direction
 }
 
 // tg: code/game/objects/effects/posters/official.dm:326
-[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/east"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/east"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_plasma_effects_directional_east : obj_structure_sign_poster_official_plasma_effects_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:326
@@ -2896,7 +2896,7 @@ public partial class obj_structure_sign_poster_official_plasma_effects_direction
 }
 
 // tg: code/game/objects/effects/posters/official.dm:326
-[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/west"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/sign/poster/official/plasma_effects/directional/west"), DmGeneratedOnly]
 public partial class obj_structure_sign_poster_official_plasma_effects_directional_west : obj_structure_sign_poster_official_plasma_effects_directional
 {
     // tg: code/game/objects/effects/posters/official.dm:326

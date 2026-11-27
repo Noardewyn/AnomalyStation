@@ -69,7 +69,9 @@ public class CreateAndDestroyTests
         // unit_test.dm:307, :339, :373 (silicons SI2: live since then): the silicons' PDAs delete themselves outside a silicon, the
         // preset-model cyborgs invoke async in their Initialize, and the robot models never spawn outside a robot
         || typeof(obj_item_modular_computer_pda_silicon).IsAssignableFrom(t) || typeof(mob_living_silicon_robot_model).IsAssignableFrom(t)
-        || typeof(obj_item_robot_model).IsAssignableFrom(t);
+        || typeof(obj_item_robot_model).IsAssignableFrom(t)
+        // unit_test.dm:343: the sliding puzzle "spawns turf changing stuff" (its vault floors and tiles; live since the Lavaland ruins)
+        || typeof(obj_effect_sliding_puzzle).IsAssignableFrom(t);
 
     private static List<Type> ValidMovableTypes() => datum_unit_test_create_and_destroy.TranslatedMovableTypes().Where(t => !Uncreatable(t)).ToList();
 

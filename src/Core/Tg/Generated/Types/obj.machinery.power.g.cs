@@ -913,9 +913,9 @@ public partial class obj_machinery_power_supermatter_crystal_shard
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:23
-[DmPath("/obj/machinery/power/supermatter_crystal/shard/syndicate"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_power_supermatter_crystal_shard_syndicate : obj_machinery_power_supermatter_crystal_shard
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/machinery/power/supermatter_crystal/shard/syndicate")]
+public partial class obj_machinery_power_supermatter_crystal_shard_syndicate
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/syndicate_base.dm:23
     public obj_machinery_power_supermatter_crystal_shard_syndicate()

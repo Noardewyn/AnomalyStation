@@ -1,0 +1,170 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_ufo_crash.dmm tg 1d99bd7f
+size 30 10 1
+chunk 32
+default /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+
+[chunk 1 1 1]
+1,10: /turf/template_noop | /area/template_noop
+2,10: /turf/template_noop | /area/template_noop
+3,10: /turf/template_noop | /area/template_noop
+4,10: /turf/template_noop | /area/template_noop
+5,10: /turf/template_noop | /area/template_noop
+6,10: /turf/template_noop | /area/template_noop
+7,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,10: /turf/template_noop | /area/template_noop
+11,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,10: /turf/template_noop | /area/template_noop
+14,10: /turf/template_noop | /area/template_noop
+15,10: /turf/template_noop | /area/template_noop
+16,10: /turf/template_noop | /area/template_noop
+17,10: /turf/template_noop | /area/template_noop
+18,10: /turf/template_noop | /area/template_noop
+19,10: /turf/template_noop | /area/template_noop
+20,10: /turf/template_noop | /area/template_noop
+21,10: /turf/template_noop | /area/template_noop
+22,10: /turf/template_noop | /area/template_noop
+23,10: /turf/template_noop | /area/template_noop
+24,10: /turf/template_noop | /area/template_noop
+25,10: /turf/template_noop | /area/template_noop
+26,10: /turf/template_noop | /area/template_noop
+27,10: /turf/template_noop | /area/template_noop
+28,10: /turf/template_noop | /area/template_noop
+29,10: /turf/template_noop | /area/template_noop
+30,10: /turf/template_noop | /area/template_noop
+1,9: /turf/template_noop | /area/template_noop
+2,9: /turf/template_noop | /area/template_noop
+3,9: /turf/template_noop | /area/template_noop
+4,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+15,9: /turf/template_noop | /area/template_noop
+16,9: /turf/template_noop | /area/template_noop
+18,9: /turf/template_noop | /area/template_noop
+19,9: /turf/template_noop | /area/template_noop
+20,9: /turf/template_noop | /area/template_noop
+23,9: /turf/template_noop | /area/template_noop
+24,9: /turf/template_noop | /area/template_noop
+25,9: /turf/template_noop | /area/template_noop
+26,9: /turf/template_noop | /area/template_noop
+27,9: /turf/template_noop | /area/template_noop
+1,8: /turf/template_noop | /area/template_noop
+2,8: /turf/template_noop | /area/template_noop
+3,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,8: /turf/closed/wall/mineral/abductor | /area/lavaland/surface/outdoors
+5,8: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+6,8: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+7,8: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+8,8: /turf/closed/wall/mineral/abductor | /area/lavaland/surface/outdoors
+18,8: /turf/template_noop | /area/template_noop
+1,7: /turf/template_noop | /area/template_noop
+2,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,7: /turf/closed/wall/mineral/abductor | /area/lavaland/surface/outdoors
+4,7: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+5,7: /obj/machinery/abductor/experiment{team_number = 100} | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+6,7: /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+7,7: /obj/machinery/abductor/pad{team_number = 100} | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+8,7: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+9,7: /turf/closed/wall/mineral/abductor | /area/lavaland/surface/outdoors
+1,6: /turf/template_noop | /area/template_noop
+2,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,6: /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+6,6: /obj/item/hemostat/alien | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+7,6: /obj/effect/mob_spawn/corpse/human/abductor | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+8,6: /obj/structure/closet/abductor | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+9,6: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+1,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,5: /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+6,5: /obj/structure/table/optable/abductor | /obj/item/cautery/alien | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+7,5: /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+8,5: /obj/structure/table/abductor | /obj/item/storage/box/alienhandcuffs | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+9,5: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+1,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,4: /obj/item/scalpel/alien | /obj/item/surgical_drapes | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+7,4: /obj/item/retractor/alien | /obj/item/paper/guides/antag/abductor | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+8,4: /obj/structure/closet/abductor | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+9,4: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+1,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,3: /obj/machinery/abductor/gland_dispenser | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+6,3: /obj/structure/table/abductor | /obj/item/surgicaldrill/alien | /obj/item/circular_saw/alien | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+7,3: /obj/structure/bed/abductor | /turf/open/floor/plating/abductor{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered
+8,3: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+9,3: /turf/closed/wall/mineral/abductor | /area/lavaland/surface/outdoors
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,2: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+6,2: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+7,2: /turf/closed/wall/mineral/abductor | /area/ruin/unpowered
+8,2: /turf/closed/wall/mineral/abductor | /area/lavaland/surface/outdoors
+10,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+15,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+17,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,2: /turf/template_noop | /area/template_noop
+21,2: /turf/template_noop | /area/template_noop
+22,2: /turf/template_noop | /area/template_noop
+23,2: /turf/template_noop | /area/template_noop
+24,2: /turf/template_noop | /area/template_noop
+25,2: /turf/template_noop | /area/template_noop
+26,2: /turf/template_noop | /area/template_noop
+27,2: /turf/template_noop | /area/template_noop
+28,2: /turf/template_noop | /area/template_noop
+29,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+15,1: /turf/template_noop | /area/template_noop
+16,1: /turf/template_noop | /area/template_noop
+17,1: /turf/template_noop | /area/template_noop
+18,1: /turf/template_noop | /area/template_noop
+19,1: /turf/template_noop | /area/template_noop
+20,1: /turf/template_noop | /area/template_noop
+21,1: /turf/template_noop | /area/template_noop
+22,1: /turf/template_noop | /area/template_noop
+23,1: /turf/template_noop | /area/template_noop
+24,1: /turf/template_noop | /area/template_noop
+25,1: /turf/template_noop | /area/template_noop
+26,1: /turf/template_noop | /area/template_noop
+27,1: /turf/template_noop | /area/template_noop
+28,1: /turf/template_noop | /area/template_noop
+29,1: /turf/template_noop | /area/template_noop
+30,1: /turf/template_noop | /area/template_noop

@@ -1,0 +1,308 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_seed_vault.dmm tg 1d99bd7f
+size 20 20 1
+chunk 32
+default /turf/closed/wall/r_wall | /area/ruin/powered/seedvault
+
+[chunk 1 1 1]
+1,20: /obj/effect/baseturf_helper/lava_land/surface | /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,20: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,19: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,19: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,19: /obj/machinery/vending/hydronutrients | /obj/effect/turf_decal/trimline/green/filled/line | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+11,19: /obj/machinery/smartfridge | /obj/effect/turf_decal/trimline/green/filled/line | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+12,19: /obj/machinery/vending/hydroseeds | /obj/effect/turf_decal/trimline/green/filled/line | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+14,19: /obj/structure/table/wood | /obj/effect/turf_decal/trimline/green/filled/line | /obj/item/stack/sheet/glass{amount = 10} | /obj/item/storage/toolbox/syndicate | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+15,19: /obj/item/reagent_containers/cup/beaker/bluespace | /obj/item/reagent_containers/cup/beaker/bluespace | /obj/item/reagent_containers/cup/beaker/bluespace | /obj/item/reagent_containers/cup/beaker/bluespace | /obj/structure/table/wood | /obj/effect/turf_decal/trimline/green/filled/line | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+16,19: /obj/structure/table/wood | /obj/item/gun/energy/floragun{pixel_y = 6} | /obj/item/gun/energy/floragun{pixel_y = 4} | /obj/item/gun/energy/floragun{pixel_y = 2} | /obj/item/gun/energy/floragun | /obj/effect/decal/cleanable/cobweb/cobweb2 | /obj/effect/turf_decal/trimline/green/filled/line | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+19,19: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,19: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,18: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,18: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,18: /obj/effect/mob_spawn/ghost_role/human/seed_vault | /obj/machinery/light/directional/west | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+5,18: /obj/effect/mob_spawn/ghost_role/human/seed_vault | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+6,18: /obj/effect/mob_spawn/ghost_role/human/seed_vault | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+7,18: /obj/effect/mob_spawn/ghost_role/human/seed_vault | /obj/effect/decal/cleanable/cobweb/cobweb2 | /obj/machinery/light/directional/east | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+9,18: /obj/structure/closet/crate/hydroponics | /obj/item/clothing/under/rank/civilian/hydroponics | /obj/item/clothing/under/rank/civilian/hydroponics | /obj/item/clothing/under/rank/civilian/hydroponics | /obj/item/clothing/under/rank/civilian/hydroponics | /obj/effect/decal/cleanable/cobweb | /obj/effect/turf_decal/trimline/green/filled/line{dir = 4} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+10,18: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+11,18: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+12,18: /obj/machinery/light/directional/east | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+14,18: /obj/machinery/light/directional/west | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+15,18: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+16,18: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+17,18: /obj/structure/loom | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+1,17: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,17: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,17: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+5,17: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+6,17: /obj/machinery/atmospherics/components/unary/vent_pump/on | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+7,17: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+9,17: /obj/structure/closet/crate/hydroponics | /obj/item/cultivator | /obj/item/cultivator | /obj/item/cultivator | /obj/item/cultivator | /obj/item/shovel/spade | /obj/item/shovel/spade | /obj/item/shovel/spade | /obj/item/shovel/spade | /obj/item/hatchet | /obj/item/hatchet | /obj/item/hatchet | /obj/item/hatchet | /obj/effect/turf_decal/trimline/green/filled/line{dir = 4} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+10,17: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+11,17: /obj/machinery/atmospherics/components/unary/vent_pump/on | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+12,17: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+13,17: /obj/machinery/reagentgrinder{pixel_y = 5} | /obj/structure/table/glass | /obj/effect/turf_decal/trimline/green/filled/end | /obj/machinery/airalarm/directional/north | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+14,17: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+15,17: /obj/machinery/atmospherics/components/unary/vent_pump/on | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+16,17: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+17,17: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+18,17: /obj/structure/reagent_dispensers/watertank/high | /obj/effect/turf_decal/trimline/green/line{dir = 9} | /obj/effect/turf_decal/trimline/green/filled/corner | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+19,17: /obj/structure/reagent_dispensers/watertank/high | /obj/effect/turf_decal/trimline/green/line{dir = 5} | /obj/effect/turf_decal/trimline/green/filled/corner{dir = 8} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+1,16: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,16: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,16: /obj/machinery/door/airlock/multi_tile/public/glass | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+6,16: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+9,16: /obj/structure/closet/crate/hydroponics | /obj/item/soap/homemade | /obj/item/soap/homemade | /obj/effect/turf_decal/trimline/green/filled/line{dir = 6} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+10,16: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+11,16: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+12,16: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+13,16: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+14,16: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+15,16: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+16,16: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+17,16: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+18,16: /obj/structure/reagent_dispensers/watertank/high | /obj/effect/turf_decal/trimline/green/line{dir = 10} | /obj/effect/turf_decal/trimline/green/filled/corner{dir = 4} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+19,16: /obj/machinery/light/directional/east | /obj/structure/reagent_dispensers/watertank/high | /obj/effect/turf_decal/trimline/green/line{dir = 6} | /obj/effect/turf_decal/trimline/green/filled/corner{dir = 1} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+1,15: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,15: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,15: /obj/machinery/atmospherics/components/tank/air{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+5,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+6,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+7,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+8,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+9,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+10,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+11,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+12,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+13,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+14,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+15,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+16,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+17,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+18,15: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 10} | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+19,15: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+1,14: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,14: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+5,14: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+6,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+7,14: /obj/machinery/light/directional/south | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+8,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+9,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+10,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+11,14: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+12,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+13,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+14,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+15,14: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+18,14: /obj/machinery/door/airlock/titanium | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/vault | /area/ruin/powered/seedvault
+1,13: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,13: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,13: /obj/machinery/door/airlock/external/ruin | /obj/effect/mapping_helpers/airlock/cyclelink_helper | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+6,13: /obj/machinery/door/airlock/external/ruin | /obj/effect/mapping_helpers/airlock/cyclelink_helper | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+8,13: /obj/structure/table/wood | /obj/item/storage/bag/plants{pixel_x = -5} | /obj/item/storage/bag/plants{pixel_y = -5} | /obj/item/storage/bag/plants{pixel_y = 5} | /obj/item/storage/bag/plants{pixel_x = 5} | /obj/effect/turf_decal/trimline/green/filled/line{dir = 1} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+9,13: /obj/item/reagent_containers/cup/bucket | /obj/structure/table/wood | /obj/item/reagent_containers/cup/bucket | /obj/item/reagent_containers/cup/bucket | /obj/item/reagent_containers/cup/bucket | /obj/effect/turf_decal/trimline/green/filled/line{dir = 5} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+10,13: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+11,13: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /obj/machinery/light/floor | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+12,13: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+13,13: /obj/structure/table/wood | /obj/item/lighter | /obj/item/lighter | /obj/item/storage/fancy/rollingpapers | /obj/item/storage/fancy/rollingpapers | /obj/item/storage/fancy/rollingpapers | /obj/item/storage/fancy/rollingpapers | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+14,13: /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+15,13: /obj/structure/table/wood | /obj/item/lighter | /obj/item/lighter | /obj/item/storage/fancy/rollingpapers | /obj/item/storage/fancy/rollingpapers | /obj/item/storage/fancy/rollingpapers | /obj/item/storage/fancy/rollingpapers | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+17,13: /obj/structure/closet/crate/hydroponics | /obj/structure/beebox | /obj/item/melee/flyswatter | /obj/item/honey_frame | /obj/item/honey_frame | /obj/item/honey_frame | /obj/item/queen_bee/bought | /obj/item/clothing/head/utility/beekeeper_head | /obj/item/clothing/suit/utility/beekeeper_suit | /obj/effect/decal/cleanable/cobweb | /turf/open/floor/vault | /area/ruin/powered/seedvault
+18,13: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/vault | /area/ruin/powered/seedvault
+19,13: /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/structure/closet/crate/hydroponics | /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/item/vending_refill/hydronutrients | /obj/item/vending_refill/hydroseeds | /turf/open/floor/vault | /area/ruin/powered/seedvault
+1,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,12: /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+6,12: /obj/machinery/light/directional/east | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+10,12: /obj/structure/sink/directional/east | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+11,12: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+12,12: /obj/structure/sink/directional/west | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+14,12: /obj/machinery/door/airlock/titanium | /turf/open/floor/vault | /area/ruin/powered/seedvault
+17,12: /obj/structure/closet/crate/hydroponics | /obj/structure/beebox | /obj/item/melee/flyswatter | /obj/item/honey_frame | /obj/item/honey_frame | /obj/item/honey_frame | /obj/item/queen_bee/bought | /obj/item/clothing/head/utility/beekeeper_head | /obj/item/clothing/suit/utility/beekeeper_suit | /obj/machinery/light/directional/west | /turf/open/floor/vault | /area/ruin/powered/seedvault
+18,12: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/vault | /area/ruin/powered/seedvault
+19,12: /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/structure/closet/crate/hydroponics | /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/item/vending_refill/hydronutrients | /obj/item/vending_refill/hydroseeds | /turf/open/floor/vault | /area/ruin/powered/seedvault
+1,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,11: /obj/machinery/door/airlock/vault | /obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 1} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+6,11: /obj/machinery/door/airlock/vault | /obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 1} | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+8,11: /turf/closed/mineral/volcanic/lava_land_surface | /area/ruin/powered/seedvault
+11,11: /obj/machinery/door/airlock/vault | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+14,11: /turf/open/floor/vault | /area/ruin/powered/seedvault
+15,11: /turf/open/floor/vault | /area/ruin/powered/seedvault
+16,11: /obj/machinery/light/directional/north | /turf/open/floor/vault | /area/ruin/powered/seedvault
+17,11: /turf/open/floor/vault | /area/ruin/powered/seedvault
+18,11: /obj/effect/decal/cleanable/food/plant_smudge | /obj/machinery/atmospherics/components/unary/vent_pump/on{dir = 1} | /turf/open/floor/vault | /area/ruin/powered/seedvault
+19,11: /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/structure/closet/crate/hydroponics | /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/effect/spawner/random/food_or_drink/seed_vault | /obj/item/vending_refill/hydronutrients | /obj/item/vending_refill/hydroseeds | /turf/open/floor/vault | /area/ruin/powered/seedvault
+1,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,10: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,10: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,10: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,10: /obj/structure/sink/directional/east | /obj/effect/decal/cleanable/cobweb | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+11,10: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /turf/open/floor/iron/freezer | /area/ruin/powered/seedvault
+12,10: /obj/structure/sink/directional/west | /turf/open/floor/iron/dark | /area/ruin/powered/seedvault
+16,10: /turf/open/floor/vault | /area/ruin/powered/seedvault
+17,10: /turf/open/floor/vault | /area/ruin/powered/seedvault
+18,10: /obj/structure/table/wood | /turf/open/floor/vault | /area/ruin/powered/seedvault
+1,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,9: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,9: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,9: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,9: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,9: /obj/effect/turf_decal/trimline/green/line{dir = 6} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+9,9: /obj/effect/decal/cleanable/dirt | /obj/structure/extinguisher_cabinet/directional/north | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+10,9: /obj/effect/decal/cleanable/dirt | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+11,9: /obj/effect/decal/cleanable/dirt | /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden | /obj/machinery/light/floor | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+12,9: /obj/effect/decal/cleanable/dirt | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+13,9: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+14,9: /obj/effect/turf_decal/trimline/green/line{dir = 10} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+16,9: /obj/structure/table/wood | /obj/item/geneshears{pixel_x = 6} | /obj/item/geneshears | /obj/item/geneshears{pixel_x = -6} | /obj/item/geneshears | /turf/open/floor/vault | /area/ruin/powered/seedvault
+17,9: /obj/structure/table/wood | /obj/item/secateurs{pixel_x = -6} | /obj/item/secateurs{pixel_x = 6} | /obj/item/secateurs | /obj/item/secateurs{pixel_x = -6} | /turf/open/floor/vault | /area/ruin/powered/seedvault
+20,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,8: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,8: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,8: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,8: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,8: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+9,8: /obj/effect/decal/cleanable/dirt | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+10,8: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+11,8: /obj/machinery/atmospherics/components/unary/vent_pump/on{dir = 1} | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+12,8: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+13,8: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+14,8: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+19,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,7: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,7: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,7: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,7: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+8,7: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+9,7: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+10,7: /obj/machinery/chem_dispenser/mutagensaltpeter | /obj/effect/turf_decal/trimline/green/corner | /obj/effect/turf_decal/trimline/green/line{dir = 9} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+11,7: /obj/effect/turf_decal/trimline/green/line | /obj/effect/turf_decal/trimline/green/line{dir = 1} | /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+12,7: /obj/machinery/biogenerator | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/corner{dir = 8} | /obj/effect/turf_decal/trimline/green/line{dir = 5} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+13,7: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+14,7: /obj/effect/decal/cleanable/dirt | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+15,7: /obj/effect/decal/cleanable/dirt | /obj/effect/decal/cleanable/cobweb/cobweb2 | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+16,7: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/wall/r_wall | /area/ruin/powered/seedvault
+17,7: /obj/structure/disposalpipe/trunk{dir = 8} | /obj/structure/flora/bush/fullgrass/style_random | /obj/structure/disposaloutlet | /obj/structure/flora/bush/fullgrass/style_random | /obj/machinery/light/directional/north | /turf/open/misc/grass/lavaland | /area/ruin/powered/seedvault
+18,7: /obj/structure/window/spawner/directional/east | /obj/structure/flora/bush/pale/style_random | /obj/structure/flora/bush/flowers_pp/style_random | /turf/open/misc/grass/lavaland | /area/ruin/powered/seedvault
+19,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,6: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,6: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,6: /obj/machinery/light/directional/west | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+8,6: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+9,6: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+10,6: /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+11,6: /obj/machinery/disposal/bin | /obj/structure/disposalpipe/trunk{dir = 4} | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+12,6: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+13,6: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+14,6: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+15,6: /obj/machinery/light/directional/east | /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+16,6: /obj/structure/disposalpipe/segment{dir = 9} | /turf/closed/wall/r_wall | /area/ruin/powered/seedvault
+17,6: /obj/structure/flora/bush/sunny/style_random | /obj/structure/flora/grass/jungle/b/style_random | /turf/open/misc/grass/lavaland | /area/ruin/powered/seedvault
+18,6: /obj/structure/window/spawner/directional/east | /obj/structure/flora/bush/sparsegrass/style_random | /turf/open/misc/grass/lavaland | /area/ruin/powered/seedvault
+19,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,6: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,5: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,5: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+8,5: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+9,5: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+10,5: /obj/machinery/chem_master/condimaster | /obj/effect/turf_decal/trimline/green/corner{dir = 4} | /obj/effect/turf_decal/trimline/green/line{dir = 10} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+11,5: /obj/effect/turf_decal/trimline/green/line | /obj/effect/turf_decal/trimline/green/line{dir = 1} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+12,5: /obj/machinery/seed_extractor | /obj/effect/turf_decal/trimline/green/corner{dir = 1} | /obj/effect/turf_decal/trimline/green/line{dir = 6} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+13,5: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+14,5: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+15,5: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 8} | /obj/effect/turf_decal/trimline/green/line{dir = 4} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+17,5: /obj/structure/window/spawner/directional/south | /obj/structure/flora/bush/flowers_pp/style_random | /obj/structure/flora/bush/generic/style_random | /obj/structure/flora/bush/flowers_br/style_random | /turf/open/misc/grass/lavaland | /area/ruin/powered/seedvault
+18,5: /obj/structure/window/spawner/directional/east | /obj/structure/flora/bush/ferny/style_random | /obj/structure/flora/bush/flowers_yw/style_random | /obj/structure/flora/bush/sparsegrass/style_random | /obj/effect/decal/cleanable/glass | /turf/open/misc/grass/lavaland | /area/ruin/powered/seedvault
+19,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,4: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,4: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+9,4: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+10,4: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+11,4: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+12,4: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+13,4: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+14,4: /obj/effect/decal/cleanable/dirt | /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+17,4: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,4: /obj/effect/decal/cleanable/glass | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,4: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,3: /obj/effect/turf_decal/trimline/green/line{dir = 5} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+9,3: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+10,3: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+11,3: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+12,3: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+13,3: /turf/open/floor/mineral/titanium/blue | /area/ruin/powered/seedvault
+14,3: /obj/effect/turf_decal/trimline/green/line{dir = 9} | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+16,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+17,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,2: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 1} | /obj/effect/turf_decal/trimline/green/line | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+11,2: /obj/machinery/light/directional/south | /obj/effect/decal/cleanable/dirt | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 1} | /obj/effect/turf_decal/trimline/green/line | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+12,2: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/trimline/green/line{dir = 1} | /obj/effect/turf_decal/trimline/green/line | /obj/machinery/hydroponics/constructable/fullupgrade | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/seedvault
+16,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+17,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,1: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,1: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,1: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+15,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+17,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,1: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,1: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,1: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors

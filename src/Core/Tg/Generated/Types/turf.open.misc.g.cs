@@ -33,9 +33,9 @@ public partial class turf_open_misc
     }
 }
 
-// tg: code/game/turfs/open/ashplanet.dm:2
-[DmPath("/turf/open/misc/ashplanet"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_ashplanet : turf_open_misc
+// tg: code/game/turfs/open/ashplanet.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/ashplanet")]
+public partial class turf_open_misc_ashplanet
 {
     public object smooth_icon = Dm.resource("icons/turf/floors/ash.dmi"); // tg: code/game/turfs/open/ashplanet.dm:19
 
@@ -62,7 +62,7 @@ public partial class turf_open_misc_ashplanet : turf_open_misc
 }
 
 // tg: code/game/turfs/open/ashplanet.dm:37
-[DmPath("/turf/open/misc/ashplanet/ash"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ashplanet/ash"), DmGeneratedOnly]
 public partial class turf_open_misc_ashplanet_ash : turf_open_misc_ashplanet
 {
     // tg: code/game/turfs/open/ashplanet.dm:37
@@ -76,7 +76,7 @@ public partial class turf_open_misc_ashplanet_ash : turf_open_misc_ashplanet
 }
 
 // tg: code/game/turfs/open/ashplanet.dm:43
-[DmPath("/turf/open/misc/ashplanet/rocky"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ashplanet/rocky"), DmGeneratedOnly]
 public partial class turf_open_misc_ashplanet_rocky : turf_open_misc_ashplanet
 {
     // tg: code/game/turfs/open/ashplanet.dm:43
@@ -97,9 +97,9 @@ public partial class turf_open_misc_ashplanet_rocky : turf_open_misc_ashplanet
     }
 }
 
-// tg: code/game/turfs/open/ashplanet.dm:57
-[DmPath("/turf/open/misc/ashplanet/wateryrock"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_ashplanet_wateryrock : turf_open_misc_ashplanet
+// tg: code/game/turfs/open/ashplanet.dm:57 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/ashplanet/wateryrock")]
+public partial class turf_open_misc_ashplanet_wateryrock
 {
     // tg: code/game/turfs/open/ashplanet.dm:57
     public turf_open_misc_ashplanet_wateryrock()
@@ -119,7 +119,7 @@ public partial class turf_open_misc_ashplanet_wateryrock : turf_open_misc_ashpla
 }
 
 // tg: code/game/turfs/open/ashplanet.dm:74
-[DmPath("/turf/open/misc/ashplanet/wateryrock/lavaland_atmos"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ashplanet/wateryrock/lavaland_atmos"), DmGeneratedOnly]
 public partial class turf_open_misc_ashplanet_wateryrock_lavaland_atmos : turf_open_misc_ashplanet_wateryrock
 {
     // tg: code/game/turfs/open/ashplanet.dm:74
@@ -130,7 +130,7 @@ public partial class turf_open_misc_ashplanet_wateryrock_lavaland_atmos : turf_o
 }
 
 // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:84
-[DmPath("/turf/open/misc/ashplanet/wateryrock/safeair"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ashplanet/wateryrock/safeair"), DmGeneratedOnly]
 public partial class turf_open_misc_ashplanet_wateryrock_safeair : turf_open_misc_ashplanet_wateryrock
 {
     // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:84
@@ -264,9 +264,9 @@ public partial class turf_open_misc_asteroid_basalt_lava_land_surface_no_ruins :
     }
 }
 
-// tg: code/game/turfs/open/asteroid.dm:200
-[DmPath("/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace : turf_open_misc_asteroid_basalt_lava_land_surface
+// tg: code/game/turfs/open/asteroid.dm:200 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace")]
+public partial class turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace
 {
     public Type default_area = typeof(area_lavaland_surface_outdoors_unexplored_danger); // tg: code/game/turfs/open/asteroid.dm:204
 
@@ -280,7 +280,7 @@ public partial class turf_open_misc_asteroid_basalt_lava_land_surface_biome_repl
 }
 
 // tg: code/game/turfs/open/asteroid.dm:228
-[DmPath("/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace/normal_atmos"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace/normal_atmos"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace_normal_atmos : turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace
 {
     // tg: code/game/turfs/open/asteroid.dm:228
@@ -487,9 +487,9 @@ public partial class turf_open_misc_asteroid_airless : turf_open_misc_asteroid
     }
 }
 
-// tg: code/game/turfs/open/asteroid.dm:322
-[DmPath("/turf/open/misc/asteroid/snow"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_asteroid_snow : turf_open_misc_asteroid
+// tg: code/game/turfs/open/asteroid.dm:322 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/asteroid/snow")]
+public partial class turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:322
     public turf_open_misc_asteroid_snow()
@@ -514,7 +514,7 @@ public partial class turf_open_misc_asteroid_snow : turf_open_misc_asteroid
 }
 
 // tg: code/game/turfs/open/asteroid.dm:413
-[DmPath("/turf/open/misc/asteroid/snow/icemoon"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/icemoon"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_icemoon : turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:413
@@ -528,7 +528,7 @@ public partial class turf_open_misc_asteroid_snow_icemoon : turf_open_misc_aster
 }
 
 // tg: code/game/turfs/open/asteroid.dm:420
-[DmPath("/turf/open/misc/asteroid/snow/icemoon/do_not_chasm"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/icemoon/do_not_chasm"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_icemoon_do_not_chasm : turf_open_misc_asteroid_snow_icemoon
 {
     // tg: code/game/turfs/open/asteroid.dm:420
@@ -540,7 +540,7 @@ public partial class turf_open_misc_asteroid_snow_icemoon_do_not_chasm : turf_op
 }
 
 // tg: code/game/turfs/open/asteroid.dm:424
-[DmPath("/turf/open/misc/asteroid/snow/icemoon/do_not_scrape"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/icemoon/do_not_scrape"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_icemoon_do_not_scrape : turf_open_misc_asteroid_snow_icemoon
 {
     // tg: code/game/turfs/open/asteroid.dm:424
@@ -589,7 +589,7 @@ public partial class turf_open_misc_asteroid_snow_ice_icemoon : turf_open_misc_a
 }
 
 // tg: code/game/turfs/open/asteroid.dm:460
-[DmPath("/turf/open/misc/asteroid/snow/airless"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/airless"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_airless : turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:460
@@ -601,7 +601,7 @@ public partial class turf_open_misc_asteroid_snow_airless : turf_open_misc_aster
 }
 
 // tg: code/game/turfs/open/asteroid.dm:464
-[DmPath("/turf/open/misc/asteroid/snow/temperatre"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/temperatre"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_temperatre : turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:464
@@ -612,7 +612,7 @@ public partial class turf_open_misc_asteroid_snow_temperatre : turf_open_misc_as
 }
 
 // tg: code/game/turfs/open/asteroid.dm:468
-[DmPath("/turf/open/misc/asteroid/snow/coldroom"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/coldroom"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_coldroom : turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:468
@@ -626,7 +626,7 @@ public partial class turf_open_misc_asteroid_snow_coldroom : turf_open_misc_aste
 }
 
 // tg: code/game/turfs/open/asteroid.dm:475
-[DmPath("/turf/open/misc/asteroid/snow/snow_cabin"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/snow_cabin"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_snow_cabin : turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:475
@@ -637,7 +637,7 @@ public partial class turf_open_misc_asteroid_snow_snow_cabin : turf_open_misc_as
 }
 
 // tg: code/game/turfs/open/asteroid.dm:478
-[DmPath("/turf/open/misc/asteroid/snow/atmosphere"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/atmosphere"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_atmosphere : turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:478
@@ -649,7 +649,7 @@ public partial class turf_open_misc_asteroid_snow_atmosphere : turf_open_misc_as
 }
 
 // tg: code/game/turfs/open/asteroid.dm:482
-[DmPath("/turf/open/misc/asteroid/snow/standard_air"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/asteroid/snow/standard_air"), DmGeneratedOnly]
 public partial class turf_open_misc_asteroid_snow_standard_air : turf_open_misc_asteroid_snow
 {
     // tg: code/game/turfs/open/asteroid.dm:482
@@ -739,9 +739,9 @@ public partial class turf_open_misc_basalt_safe : turf_open_misc_basalt
     }
 }
 
-// tg: code/game/turfs/open/grass.dm:2
-[DmPath("/turf/open/misc/grass"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_grass : turf_open_misc
+// tg: code/game/turfs/open/grass.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/grass")]
+public partial class turf_open_misc_grass
 {
     public object smooth_icon = Dm.resource("icons/turf/floors/grass.dmi"); // tg: code/game/turfs/open/grass.dm:22
     public string base_broken_icon_state = "grass_damaged"; // tg: code/game/turfs/open/grass.dm:24
@@ -773,7 +773,7 @@ public partial class turf_open_misc_grass : turf_open_misc
 }
 
 // tg: code/game/turfs/open/grass.dm:64
-[DmPath("/turf/open/misc/grass/lavaland"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/grass/lavaland"), DmGeneratedOnly]
 public partial class turf_open_misc_grass_lavaland : turf_open_misc_grass
 {
     // tg: code/game/turfs/open/grass.dm:64
@@ -784,7 +784,7 @@ public partial class turf_open_misc_grass_lavaland : turf_open_misc_grass
 }
 
 // tg: code/game/turfs/open/planet.dm:69
-[DmPath("/turf/open/misc/grass/jungle"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/grass/jungle"), DmGeneratedOnly]
 public partial class turf_open_misc_grass_jungle : turf_open_misc_grass
 {
     // tg: code/game/turfs/open/planet.dm:69
@@ -802,7 +802,7 @@ public partial class turf_open_misc_grass_jungle : turf_open_misc_grass
 }
 
 // tg: code/game/turfs/open/planet.dm:79
-[DmPath("/turf/open/misc/grass/jungle/lavaland"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/grass/jungle/lavaland"), DmGeneratedOnly]
 public partial class turf_open_misc_grass_jungle_lavaland : turf_open_misc_grass_jungle
 {
     // tg: code/game/turfs/open/planet.dm:79
@@ -813,7 +813,7 @@ public partial class turf_open_misc_grass_jungle_lavaland : turf_open_misc_grass
 }
 
 // tg: code/game/turfs/open/planet.dm:82
-[DmPath("/turf/open/misc/grass/jungle/station"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/grass/jungle/station"), DmGeneratedOnly]
 public partial class turf_open_misc_grass_jungle_station : turf_open_misc_grass_jungle
 {
     // tg: code/game/turfs/open/planet.dm:82
@@ -874,9 +874,9 @@ public partial class turf_open_misc_hay_icemoon : turf_open_misc_hay
     }
 }
 
-// tg: code/game/turfs/open/ice.dm:2
-[DmPath("/turf/open/misc/ice"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_ice : turf_open_misc
+// tg: code/game/turfs/open/ice.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/ice")]
+public partial class turf_open_misc_ice
 {
     public float can_make_hole = 1; // tg: code/game/turfs/open/ice.dm:18
 
@@ -903,7 +903,7 @@ public partial class turf_open_misc_ice : turf_open_misc
 }
 
 // tg: code/game/turfs/open/ice.dm:76
-[DmPath("/turf/open/misc/ice/smooth"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ice/smooth"), DmGeneratedOnly]
 public partial class turf_open_misc_ice_smooth : turf_open_misc_ice
 {
     // tg: code/game/turfs/open/ice.dm:76
@@ -918,7 +918,7 @@ public partial class turf_open_misc_ice_smooth : turf_open_misc_ice
 }
 
 // tg: code/game/turfs/open/ice.dm:83
-[DmPath("/turf/open/misc/ice/icemoon"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ice/icemoon"), DmGeneratedOnly]
 public partial class turf_open_misc_ice_icemoon : turf_open_misc_ice
 {
     // tg: code/game/turfs/open/ice.dm:83
@@ -932,7 +932,7 @@ public partial class turf_open_misc_ice_icemoon : turf_open_misc_ice
 }
 
 // tg: code/game/turfs/open/ice.dm:89
-[DmPath("/turf/open/misc/ice/icemoon/no_planet_atmos"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ice/icemoon/no_planet_atmos"), DmGeneratedOnly]
 public partial class turf_open_misc_ice_icemoon_no_planet_atmos : turf_open_misc_ice_icemoon
 {
     // tg: code/game/turfs/open/ice.dm:89
@@ -947,7 +947,7 @@ public partial class turf_open_misc_ice_icemoon_no_planet_atmos : turf_open_misc
 public partial class turf_open_misc_ice_icemoon_no_planet_atmos_holed : turf_open_misc_ice_icemoon_no_planet_atmos { }
 
 // tg: code/game/turfs/open/ice.dm:99
-[DmPath("/turf/open/misc/ice/temperate"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ice/temperate"), DmGeneratedOnly]
 public partial class turf_open_misc_ice_temperate : turf_open_misc_ice
 {
     // tg: code/game/turfs/open/ice.dm:99
@@ -960,7 +960,7 @@ public partial class turf_open_misc_ice_temperate : turf_open_misc_ice
 }
 
 // tg: code/game/turfs/open/ice.dm:105
-[DmPath("/turf/open/misc/ice/coldroom"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/misc/ice/coldroom"), DmGeneratedOnly]
 public partial class turf_open_misc_ice_coldroom : turf_open_misc_ice
 {
     // tg: code/game/turfs/open/ice.dm:105
@@ -1105,9 +1105,9 @@ public partial class turf_open_misc_dirt_dark_jungle : turf_open_misc_dirt_dark
     }
 }
 
-// tg: code/game/turfs/open/sand.dm:2
-[DmPath("/turf/open/misc/beach"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_beach : turf_open_misc
+// tg: code/game/turfs/open/sand.dm:2 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/beach")]
+public partial class turf_open_misc_beach
 {
     // tg: code/game/turfs/open/sand.dm:2
     public turf_open_misc_beach()
@@ -1126,9 +1126,9 @@ public partial class turf_open_misc_beach : turf_open_misc
     }
 }
 
-// tg: code/game/turfs/open/sand.dm:51
-[DmPath("/turf/open/misc/beach/sand"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_beach_sand : turf_open_misc_beach
+// tg: code/game/turfs/open/sand.dm:51 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/beach/sand")]
+public partial class turf_open_misc_beach_sand
 {
     // tg: code/game/turfs/open/sand.dm:51
     public turf_open_misc_beach_sand()
@@ -1142,9 +1142,9 @@ public partial class turf_open_misc_beach_sand : turf_open_misc_beach
     }
 }
 
-// tg: code/game/turfs/open/sand.dm:64
-[DmPath("/turf/open/misc/beach/coast"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_beach_coast : turf_open_misc_beach
+// tg: code/game/turfs/open/sand.dm:64 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/beach/coast")]
+public partial class turf_open_misc_beach_coast
 {
     // tg: code/game/turfs/open/sand.dm:64
     public turf_open_misc_beach_coast()
@@ -1161,9 +1161,9 @@ public partial class turf_open_misc_beach_coast : turf_open_misc_beach
     }
 }
 
-// tg: code/game/turfs/open/sand.dm:83
-[DmPath("/turf/open/misc/beach/coast/corner"), DmGeneratedOnly, DmInert]
-public partial class turf_open_misc_beach_coast_corner : turf_open_misc_beach_coast
+// tg: code/game/turfs/open/sand.dm:83 (the var block of a hand-written class)
+[DmPath("/turf/open/misc/beach/coast/corner")]
+public partial class turf_open_misc_beach_coast_corner
 {
     // tg: code/game/turfs/open/sand.dm:83
     public turf_open_misc_beach_coast_corner()

@@ -1,0 +1,341 @@
+anomaly-map 1
+source _maps/RandomRuins/AnywhereRuins/shoe_factory.dmm tg 1d99bd7f
+size 23 19 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+6,19: /turf/closed/wall | /area/ruin/shoe_factory
+7,19: /turf/closed/wall | /area/ruin/shoe_factory
+8,19: /turf/closed/wall | /area/ruin/shoe_factory
+9,19: /turf/closed/wall/rust | /area/ruin/shoe_factory
+10,19: /turf/closed/wall/rust | /area/ruin/shoe_factory
+11,19: /turf/closed/wall | /area/ruin/shoe_factory
+12,19: /turf/closed/wall | /area/ruin/shoe_factory
+6,18: /turf/closed/wall/rust | /area/ruin/shoe_factory
+7,18: /obj/structure/table | /obj/machinery/coffeemaker{pixel_y = 5} | /obj/effect/decal/cleanable/cobweb | /turf/open/floor/wood | /area/ruin/shoe_factory
+8,18: /obj/structure/table | /obj/item/plate/large | /obj/item/kitchen/fork | /obj/machinery/computer/security/telescreen/entertainment/directional/north | /turf/open/floor/wood | /area/ruin/shoe_factory
+9,18: /obj/structure/table | /obj/item/reagent_containers/condiment/saltshaker{pixel_x = 7; pixel_y = 9} | /obj/item/reagent_containers/condiment/peppermill{pixel_x = 7; pixel_y = 5} | /obj/effect/spawner/random/entertainment/deck{pixel_x = -6} | /obj/machinery/light/small/directional/north | /obj/effect/decal/cleanable/dirt | /turf/open/floor/wood | /area/ruin/shoe_factory
+10,18: /obj/machinery/digital_clock/directional/north | /obj/item/kirbyplants/random | /turf/open/floor/wood | /area/ruin/shoe_factory
+11,18: /obj/effect/spawner/random/vending/colavend | /turf/open/floor/wood | /area/ruin/shoe_factory
+12,18: /turf/closed/wall | /area/ruin/shoe_factory
+13,18: /turf/closed/wall/rust | /area/ruin/shoe_factory
+14,18: /turf/closed/wall | /area/ruin/shoe_factory
+15,18: /turf/closed/wall | /area/ruin/shoe_factory
+16,18: /turf/closed/wall | /area/ruin/shoe_factory
+6,17: /turf/closed/wall | /area/ruin/shoe_factory
+7,17: /obj/structure/table | /obj/effect/spawner/random/food_or_drink/donkpockets | /obj/item/coffee_cartridge | /obj/structure/sign/poster/contraband/eat/directional/west | /turf/open/floor/wood | /area/ruin/shoe_factory
+8,17: /obj/effect/mapping_helpers/broken_floor | /obj/item/chair | /turf/open/floor/wood | /area/ruin/shoe_factory
+9,17: /obj/structure/chair{dir = 1} | /turf/open/floor/wood | /area/ruin/shoe_factory
+10,17: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+11,17: /obj/structure/closet/crate/bin | /obj/effect/spawner/random/trash/garbage | /obj/effect/spawner/random/trash/garbage | /turf/open/floor/wood | /area/ruin/shoe_factory
+12,17: /obj/structure/girder | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+13,17: /obj/machinery/space_heater | /obj/machinery/light/small/dim/directional/north | /turf/open/floor/plating | /area/ruin/shoe_factory
+14,17: /obj/machinery/power/port_gen/pacman | /obj/item/wrench | /obj/item/stack/sheet/mineral/plasma/thirty | /obj/machinery/power/apc/auto_name/directional/north | /obj/structure/cable | /obj/effect/mapping_helpers/apc/unlocked | /obj/effect/mapping_helpers/apc/no_charge | /turf/open/floor/plating | /area/ruin/shoe_factory
+15,17: /obj/machinery/portable_atmospherics/canister/air | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+16,17: /turf/closed/wall/rust | /area/ruin/shoe_factory
+18,17: /turf/closed/wall | /area/ruin/shoe_factory
+19,17: /turf/closed/wall/rust | /area/ruin/shoe_factory
+20,17: /turf/closed/wall | /area/ruin/shoe_factory
+21,17: /turf/closed/wall/rust | /area/ruin/shoe_factory
+22,17: /turf/closed/wall | /area/ruin/shoe_factory
+23,17: /turf/closed/wall/rust | /area/ruin/shoe_factory
+6,16: /turf/closed/wall | /area/ruin/shoe_factory
+7,16: /obj/structure/table | /obj/machinery/microwave | /obj/effect/spawner/random/trash/graffiti{pixel_x = -32; spawn_loot_chance = 50} | /turf/open/floor/wood | /area/ruin/shoe_factory
+8,16: /turf/open/floor/wood | /area/ruin/shoe_factory
+9,16: /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/open/floor/wood | /area/ruin/shoe_factory
+10,16: /obj/effect/mapping_helpers/broken_floor | /turf/open/floor/wood | /area/ruin/shoe_factory
+11,16: /obj/effect/spawner/random/vending/snackvend | /turf/open/floor/wood | /area/ruin/shoe_factory
+12,16: /turf/closed/wall | /area/ruin/shoe_factory
+13,16: /obj/machinery/airalarm/directional/west | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+14,16: /obj/effect/spawner/random/trash/garbage{spawn_loot_count = 3; spawn_scatter_radius = 1} | /obj/structure/cable | /turf/open/floor/plating | /area/ruin/shoe_factory
+15,16: /obj/item/reagent_containers/cup/bucket | /obj/item/mop | /obj/structure/mop_bucket | /obj/effect/decal/cleanable/dirt | /obj/item/storage/box/lights/mixed | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,16: /turf/closed/wall/rust | /area/ruin/shoe_factory
+18,16: /turf/closed/wall | /area/ruin/shoe_factory
+19,16: /obj/machinery/smartfridge/drying/rack | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+20,16: /obj/structure/kitchenspike | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+21,16: /obj/structure/kitchenspike | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,16: /obj/machinery/smartfridge/drying/rack | /turf/open/floor/plating | /area/ruin/shoe_factory
+23,16: /turf/closed/wall | /area/ruin/shoe_factory
+5,15: /turf/closed/wall/rust | /area/ruin/shoe_factory
+6,15: /obj/structure/girder | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+7,15: /turf/closed/wall/rust | /area/ruin/shoe_factory
+8,15: /obj/machinery/door/airlock/glass{name = "Break Room"} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+9,15: /turf/closed/wall | /area/ruin/shoe_factory
+10,15: /turf/closed/wall | /area/ruin/shoe_factory
+11,15: /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/closed/wall/rust | /area/ruin/shoe_factory
+12,15: /turf/closed/wall/rust | /area/ruin/shoe_factory
+13,15: /obj/machinery/door/airlock/maintenance | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+14,15: /turf/closed/wall/rust | /area/ruin/shoe_factory
+15,15: /turf/closed/wall | /area/ruin/shoe_factory
+16,15: /turf/closed/wall | /area/ruin/shoe_factory
+17,15: /turf/closed/wall | /area/ruin/shoe_factory
+18,15: /obj/structure/girder | /turf/open/floor/plating | /area/ruin/shoe_factory
+19,15: /turf/open/floor/plating | /area/ruin/shoe_factory
+20,15: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/plating | /area/ruin/shoe_factory
+21,15: /obj/item/knife | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,15: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+23,15: /turf/closed/wall/rust | /area/ruin/shoe_factory
+4,14: /turf/closed/wall | /area/ruin/shoe_factory
+5,14: /turf/closed/wall | /area/ruin/shoe_factory
+6,14: /obj/structure/sign/poster/official/do_not_question/directional/west | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+7,14: /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,14: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+9,14: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+10,14: /obj/item/light/tube/broken | /obj/machinery/light/empty/directional/north | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+11,14: /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+12,14: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+13,14: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+14,14: /turf/closed/wall/rust | /area/ruin/shoe_factory
+15,14: /obj/structure/closet/crate/freezer | /obj/item/stack/sheet/animalhide/corgi | /obj/item/stack/sheet/animalhide/cat | /obj/item/stack/sheet/animalhide/carbon/monkey | /obj/item/stack/sheet/animalhide/carbon/lizard | /obj/item/stack/sheet/animalhide/carbon/human | /obj/item/stack/sheet/animalhide/bear | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+16,14: /obj/structure/closet/crate | /obj/item/stack/sheet/hairlesshide | /obj/item/stack/sheet/hairlesshide | /obj/item/stack/sheet/hairlesshide | /obj/item/stack/sheet/leather/five | /obj/item/stack/sheet/leather/five | /obj/item/stack/sheet/leather/five | /obj/machinery/light/small/burned/directional/north | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+17,14: /obj/structure/closet/crate/wooden | /obj/item/stack/sheet/cotton/durathread{amount = 50} | /obj/item/stack/sheet/cotton{amount = 50} | /obj/item/stack/sheet/cotton/wool{amount = 50} | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,14: /obj/structure/loom | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+19,14: /turf/open/floor/plating | /area/ruin/shoe_factory
+20,14: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+21,14: /turf/open/floor/plating | /area/ruin/shoe_factory
+22,14: /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/broken/directional/east | /obj/item/light/bulb/broken | /turf/open/floor/plating | /area/ruin/shoe_factory
+23,14: /turf/closed/wall/rust | /area/ruin/shoe_factory
+4,13: /obj/effect/spawner/structure/window/reinforced | /obj/structure/barricade/wooden/crude | /turf/open/floor/plating | /area/ruin/shoe_factory
+5,13: /obj/structure/chair{pixel_y = -2} | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+6,13: /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,13: /obj/effect/turf_decal/trimline/brown/filled/corner | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,13: /obj/effect/turf_decal/trimline/brown/filled/line | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+9,13: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+10,13: /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/trash/graffiti{pixel_y = -32; spawn_loot_chance = 50} | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+11,13: /obj/effect/turf_decal/trimline/brown/filled/line | /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/trash/graffiti{pixel_y = -32; spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+12,13: /obj/effect/turf_decal/trimline/brown/filled/line | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+13,13: /obj/effect/turf_decal/trimline/brown/filled/line | /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+14,13: /obj/structure/girder | /turf/open/floor/plating | /area/ruin/shoe_factory
+15,13: /turf/open/floor/plating | /area/ruin/shoe_factory
+16,13: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+17,13: /turf/open/floor/plating | /area/ruin/shoe_factory
+18,13: /obj/structure/sign/poster/official/safety_eye_protection/directional/south | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+19,13: /turf/open/floor/plating | /area/ruin/shoe_factory
+20,13: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+21,13: /obj/effect/spawner/random/trash/garbage{spawn_scatter_radius = 1} | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,13: /turf/open/floor/plating | /area/ruin/shoe_factory
+23,13: /turf/closed/wall/rust | /area/ruin/shoe_factory
+4,12: /obj/effect/spawner/structure/window/reinforced | /obj/structure/barricade/wooden/crude | /turf/open/floor/plating | /area/ruin/shoe_factory
+5,12: /obj/structure/table | /obj/item/storage/toolbox/mechanical{pixel_x = -2; pixel_y = 8} | /obj/effect/spawner/random/engineering/flashlight | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+6,12: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,12: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 4} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,12: /obj/structure/sign/warning | /turf/closed/wall | /area/ruin/shoe_factory
+9,12: /turf/closed/wall/rust | /area/ruin/shoe_factory
+10,12: /turf/closed/wall/rust | /area/ruin/shoe_factory
+11,12: /turf/closed/wall | /area/ruin/shoe_factory
+12,12: /obj/structure/girder/displaced | /turf/open/floor/plating | /area/ruin/shoe_factory
+13,12: /turf/closed/wall/rust | /area/ruin/shoe_factory
+14,12: /turf/closed/wall | /area/ruin/shoe_factory
+15,12: /obj/structure/girder | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,12: /turf/closed/wall | /area/ruin/shoe_factory
+17,12: /turf/closed/wall/rust | /area/ruin/shoe_factory
+18,12: /turf/closed/wall | /area/ruin/shoe_factory
+19,12: /obj/structure/railing | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,12: /obj/structure/railing/corner/end | /turf/open/floor/plating | /area/ruin/shoe_factory
+21,12: /turf/open/floor/plating | /area/ruin/shoe_factory
+22,12: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+23,12: /turf/closed/wall | /area/ruin/shoe_factory
+4,11: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/shoe_factory
+5,11: /obj/item/chair | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+6,11: /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,11: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 4} | /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,11: /turf/closed/wall/rust | /area/ruin/shoe_factory
+9,11: /obj/machinery/conveyor{dir = 5; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+10,11: /obj/machinery/conveyor{dir = 4; id = "shoe_factory"} | /obj/structure/plasticflaps/opaque | /turf/open/floor/plating | /area/ruin/shoe_factory
+11,11: /obj/machinery/conveyor{dir = 6; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+12,11: /obj/structure/girder | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+13,11: /obj/machinery/conveyor{dir = 5; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+14,11: /obj/machinery/conveyor{dir = 4; id = "shoe_factory"} | /obj/structure/plasticflaps/opaque | /turf/open/floor/plating | /area/ruin/shoe_factory
+15,11: /obj/machinery/conveyor{dir = 6; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,11: /turf/closed/wall/rust | /area/ruin/shoe_factory
+17,11: /obj/machinery/conveyor{dir = 5; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,11: /obj/machinery/conveyor{dir = 4; id = "shoe_factory"} | /obj/structure/plasticflaps/opaque | /turf/open/floor/plating | /area/ruin/shoe_factory
+19,11: /obj/machinery/conveyor{dir = 6; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,11: /obj/structure/railing{dir = 8} | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+21,11: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+22,11: /obj/structure/closet/crate/cardboard | /obj/effect/turf_decal/delivery | /obj/effect/spawner/random/mining_loot/shoe_factory{spawn_loot_count = 1; spawn_scatter_radius = 0; spawn_random_offset = 0} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/ruin/shoe_factory
+23,11: /turf/closed/wall | /area/ruin/shoe_factory
+4,10: /turf/closed/wall/rust | /area/ruin/shoe_factory
+5,10: /turf/closed/wall | /area/ruin/shoe_factory
+6,10: /obj/effect/spawner/random/trash/graffiti{pixel_x = -32; spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,10: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+8,10: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+9,10: /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+10,10: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+11,10: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+12,10: /obj/structure/grille | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+13,10: /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+14,10: /turf/closed/wall | /area/ruin/shoe_factory
+15,10: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,10: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+17,10: /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,10: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+19,10: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,10: /obj/effect/turf_decal/loading_area{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+21,10: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,10: /obj/structure/closet/cardboard | /obj/effect/turf_decal/delivery | /obj/effect/spawner/random/mining_loot/shoe_factory{spawn_loot_count = 1; spawn_scatter_radius = 0; spawn_random_offset = 0} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+23,10: /turf/closed/wall | /area/ruin/shoe_factory
+5,9: /turf/closed/wall | /area/ruin/shoe_factory
+6,9: /obj/machinery/light/directional/west | /obj/structure/extinguisher_cabinet/directional/west | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,9: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/ruin/shoe_factory
+8,9: /obj/structure/grille | /turf/open/floor/plating | /area/ruin/shoe_factory
+9,9: /obj/effect/spawner/random/mining_loot/shoe_factory | /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+10,9: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+11,9: /obj/effect/spawner/random/mining_loot/shoe_factory | /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+12,9: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+13,9: /obj/effect/spawner/random/mining_loot/shoe_factory | /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+14,9: /turf/closed/wall/rust | /area/ruin/shoe_factory
+15,9: /obj/effect/spawner/random/mining_loot/shoe_factory | /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,9: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+17,9: /obj/effect/spawner/random/mining_loot/shoe_factory | /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,9: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+19,9: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,9: /obj/machinery/conveyor_switch/oneway{id = "shoe_factory"; conveyor_speed = 5} | /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/floor/plating | /area/ruin/shoe_factory
+21,9: /mob/living/basic/mouse | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,9: /obj/machinery/light/small/dim/directional/east | /obj/item/stack/sheet/cardboard/fifty | /obj/structure/rack | /obj/item/stack/package_wrap | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+23,9: /turf/closed/wall | /area/ruin/shoe_factory
+5,8: /turf/closed/wall | /area/ruin/shoe_factory
+6,8: /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/trash/graffiti{pixel_x = -32; spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,8: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 4} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,8: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+9,8: /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+10,8: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+11,8: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+12,8: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+13,8: /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+14,8: /turf/closed/wall/rust | /area/ruin/shoe_factory
+15,8: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,8: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/shoe_factory
+17,8: /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,8: /obj/structure/grille/broken | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+19,8: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,8: /obj/effect/turf_decal/loading_area{dir = 4} | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+21,8: /turf/open/floor/plating | /area/ruin/shoe_factory
+22,8: /obj/item/stack/sheet/cardboard/fifty | /obj/structure/rack | /obj/item/stack/package_wrap | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+23,8: /turf/closed/wall/rust | /area/ruin/shoe_factory
+5,7: /turf/closed/wall/rust | /area/ruin/shoe_factory
+6,7: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+7,7: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 4} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,7: /obj/structure/girder/displaced | /turf/open/floor/plating | /area/ruin/shoe_factory
+9,7: /obj/machinery/conveyor{dir = 1; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+10,7: /turf/closed/wall/rust | /area/ruin/shoe_factory
+11,7: /obj/machinery/conveyor/inverted{dir = 9; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+12,7: /obj/machinery/conveyor{dir = 4; id = "shoe_factory"} | /obj/structure/plasticflaps/opaque | /turf/open/floor/plating | /area/ruin/shoe_factory
+13,7: /obj/machinery/conveyor/inverted{dir = 10; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+14,7: /obj/structure/girder | /turf/open/floor/plating | /area/ruin/shoe_factory
+15,7: /obj/machinery/conveyor/inverted{dir = 9; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,7: /obj/machinery/conveyor{dir = 4; id = "shoe_factory"} | /obj/structure/plasticflaps/opaque | /turf/open/floor/plating | /area/ruin/shoe_factory
+17,7: /obj/machinery/conveyor/inverted{dir = 10; id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,7: /turf/closed/wall | /area/ruin/shoe_factory
+19,7: /obj/machinery/conveyor{id = "shoe_factory"} | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,7: /obj/structure/railing{dir = 8} | /turf/open/floor/plating | /area/ruin/shoe_factory
+21,7: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,7: /obj/structure/closet/cardboard | /obj/effect/turf_decal/delivery | /obj/effect/spawner/random/mining_loot/shoe_factory{spawn_loot_count = 1; spawn_scatter_radius = 0; spawn_random_offset = 0} | /turf/open/floor/plating | /area/ruin/shoe_factory
+23,7: /turf/closed/wall | /area/ruin/shoe_factory
+3,6: /turf/closed/wall/rust | /area/ruin/shoe_factory
+4,6: /turf/closed/wall{baseturfs = /turf/open/floor/plating/lavaland_baseturf} | /area/ruin/shoe_factory
+5,6: /obj/structure/girder | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+6,6: /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,6: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 4} | /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,6: /obj/structure/sign/warning | /turf/closed/wall/rust | /area/ruin/shoe_factory
+9,6: /obj/structure/disposalpipe/trunk{dir = 2} | /obj/structure/disposaloutlet{dir = 1} | /turf/open/floor/plating | /area/ruin/shoe_factory
+10,6: /turf/closed/wall | /area/ruin/shoe_factory
+11,6: /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/closed/wall | /area/ruin/shoe_factory
+12,6: /turf/closed/wall/rust | /area/ruin/shoe_factory
+13,6: /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/closed/wall | /area/ruin/shoe_factory
+14,6: /turf/closed/wall | /area/ruin/shoe_factory
+15,6: /turf/closed/wall/rust | /area/ruin/shoe_factory
+16,6: /turf/closed/wall/rust | /area/ruin/shoe_factory
+17,6: /obj/structure/girder/displaced | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,6: /turf/closed/wall/rust | /area/ruin/shoe_factory
+19,6: /obj/machinery/disposal/delivery_chute{dir = 1} | /obj/structure/disposalpipe/trunk{dir = 2} | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,6: /obj/structure/railing{dir = 8} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+21,6: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,6: /obj/structure/closet/crate/cardboard | /obj/effect/turf_decal/delivery | /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/mining_loot/shoe_factory{spawn_loot_count = 1; spawn_scatter_radius = 0; spawn_random_offset = 0} | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+23,6: /turf/closed/wall | /area/ruin/shoe_factory
+3,5: /obj/machinery/door/airlock/external/ruin | /obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{cycle_id = "shoe_factory_entrance"} | /obj/structure/barricade/wooden/crude | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+4,5: /obj/machinery/light/small/dim/directional/north | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+5,5: /obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{cycle_id = "shoe_factory_entrance"} | /obj/machinery/door/airlock/external/ruin | /obj/effect/mapping_helpers/airlock_note_placer{note_path = /obj/item/paper/fluff/ruins/shoe_factory/osha_shutdown} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+6,5: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/ruin/shoe_factory
+7,5: /obj/effect/turf_decal/trimline/brown/filled/corner{dir = 4} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,5: /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+9,5: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+10,5: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+11,5: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+12,5: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+13,5: /obj/effect/turf_decal/stripes/line{dir = 4} | /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/turf_decal/trimline/brown/filled/line{dir = 1} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+14,5: /obj/machinery/door/poddoor/shutters{name = "Warehouse Shutters"; id = "shoe_warehouse"} | /obj/effect/turf_decal/caution | /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+15,5: /obj/effect/turf_decal/stripes/line{dir = 8} | /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,5: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+17,5: /obj/structure/disposalpipe/segment{dir = 4} | /turf/open/floor/plating | /area/ruin/shoe_factory
+18,5: /obj/structure/disposalpipe/segment{dir = 4} | /obj/effect/decal/cleanable/dirt | /obj/structure/sign/poster/official/safety_eye_protection/directional/north | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+19,5: /obj/structure/disposalpipe/segment{dir = 9} | /obj/structure/railing{dir = 1} | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,5: /obj/structure/railing/corner/end{dir = 8} | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+21,5: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,5: /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+23,5: /turf/closed/wall | /area/ruin/shoe_factory
+3,4: /obj/machinery/door/airlock/external/ruin | /obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{cycle_id = "shoe_factory_entrance"} | /obj/structure/barricade/wooden/crude | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+4,4: /obj/effect/decal/cleanable/dirt/dust | /obj/effect/spawner/random/trash/graffiti{pixel_y = -32; spawn_loot_chance = 50} | /turf/open/floor/plating | /area/ruin/shoe_factory
+5,4: /obj/machinery/door/airlock/external/ruin | /obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{cycle_id = "shoe_factory_entrance"} | /obj/effect/mapping_helpers/airlock_note_placer{note_path = /obj/item/paper/fluff/ruins/shoe_factory/osha_shutdown} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+6,4: /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+7,4: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+8,4: /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+9,4: /mob/living/basic/mouse | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+10,4: /obj/structure/sign/poster/official/work_for_a_future/directional/south | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/broken/directional/south | /obj/item/light/tube/broken | /turf/open/floor/plating | /area/ruin/shoe_factory
+11,4: /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+12,4: /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+13,4: /obj/machinery/button/door/directional/south{id = "shoe_warehouse"; name = "Warehouse Shutters Control"} | /obj/effect/turf_decal/stripes/line{dir = 4} | /obj/effect/spawner/random/trash/graffiti{spawn_loot_chance = 50} | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+14,4: /obj/machinery/door/poddoor/shutters{name = "Warehouse Shutters"; id = "shoe_warehouse"} | /obj/effect/turf_decal/caution | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+15,4: /obj/machinery/button/door/directional/south{id = "shoe_warehouse"; name = "Warehouse Shutters Control"} | /obj/effect/turf_decal/stripes/line{dir = 8} | /turf/open/floor/plating | /area/ruin/shoe_factory
+16,4: /obj/effect/decal/cleanable/dirt | /obj/item/light/bulb/broken | /obj/machinery/light/small/empty/directional/south | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+17,4: /turf/open/floor/plating | /area/ruin/shoe_factory
+18,4: /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating | /area/ruin/shoe_factory
+19,4: /obj/structure/extinguisher_cabinet/directional/south | /turf/open/floor/plating | /area/ruin/shoe_factory
+20,4: /obj/effect/spawner/random/trash/garbage{spawn_scatter_radius = 1} | /turf/open/floor/plating | /area/ruin/shoe_factory
+21,4: /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+22,4: /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/dim/directional/east | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+23,4: /turf/closed/wall/rust | /area/ruin/shoe_factory
+3,3: /turf/closed/wall{baseturfs = /turf/open/floor/plating/lavaland_baseturf} | /area/ruin/shoe_factory
+4,3: /turf/closed/wall{baseturfs = /turf/open/floor/plating/lavaland_baseturf} | /area/ruin/shoe_factory
+5,3: /turf/closed/wall | /area/ruin/shoe_factory
+6,3: /turf/closed/wall/rust | /area/ruin/shoe_factory
+7,3: /obj/structure/rack | /obj/item/clothing/shoes/sneakers/random | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+8,3: /obj/structure/rack | /obj/item/clothing/shoes/sneakers/random | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+9,3: /obj/structure/rack | /obj/item/clothing/shoes/sneakers/random | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+10,3: /turf/closed/wall/rust | /area/ruin/shoe_factory
+11,3: /turf/closed/wall | /area/ruin/shoe_factory
+12,3: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/siding/white{dir = 8} | /obj/machinery/door/airlock{name = "Restroom"} | /turf/open/floor/iron/freezer | /area/ruin/shoe_factory
+13,3: /turf/closed/wall | /area/ruin/shoe_factory
+14,3: /turf/closed/wall/rust | /area/ruin/shoe_factory
+15,3: /turf/closed/wall | /area/ruin/shoe_factory
+16,3: /turf/closed/wall/rust | /area/ruin/shoe_factory
+17,3: /turf/closed/wall/rust | /area/ruin/shoe_factory
+18,3: /turf/closed/wall | /area/ruin/shoe_factory
+19,3: /turf/closed/wall | /area/ruin/shoe_factory
+20,3: /obj/item/hand_labeler | /obj/item/hand_labeler_refill | /obj/effect/decal/cleanable/dirt/dust | /turf/open/floor/plating/rust | /area/ruin/shoe_factory
+21,3: /obj/structure/chair/office | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+22,3: /obj/structure/table | /obj/item/paper_bin | /obj/item/pen | /obj/structure/noticeboard/directional/east | /obj/item/paper/fluff/ruins/shoe_factory/osha_shutdown | /turf/open/floor/iron | /area/ruin/shoe_factory
+23,3: /turf/closed/wall | /area/ruin/shoe_factory
+6,2: /turf/closed/wall | /area/ruin/shoe_factory
+7,2: /obj/effect/spawner/structure/window/reinforced | /obj/structure/barricade/wooden/crude | /turf/open/floor/plating | /area/ruin/shoe_factory
+8,2: /obj/effect/spawner/structure/window/reinforced | /obj/structure/barricade/wooden/crude | /turf/open/floor/plating | /area/ruin/shoe_factory
+9,2: /obj/effect/spawner/structure/window/reinforced | /obj/structure/barricade/wooden/crude | /turf/open/floor/plating | /area/ruin/shoe_factory
+10,2: /turf/closed/wall/rust | /area/ruin/shoe_factory
+11,2: /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/trash/graffiti{pixel_y = -32; spawn_loot_chance = 50} | /obj/structure/toilet{pixel_y = 8; dir = 4} | /turf/open/floor/iron/freezer | /area/ruin/shoe_factory
+12,2: /obj/effect/decal/cleanable/dirt | /obj/structure/sign/poster/official/cleanliness/directional/east | /obj/structure/sink/kitchen/directional/west | /obj/machinery/light/small/directional/south | /obj/effect/spawner/random/trash/graffiti{pixel_y = -32; spawn_loot_chance = 50} | /turf/open/floor/iron/freezer | /area/ruin/shoe_factory
+13,2: /turf/closed/wall | /area/ruin/shoe_factory
+19,2: /turf/closed/wall | /area/ruin/shoe_factory
+20,2: /obj/structure/filingcabinet | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+21,2: /obj/structure/table | /obj/effect/spawner/random/decoration/ornament | /turf/open/floor/iron{baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface} | /area/ruin/shoe_factory
+22,2: /obj/structure/table | /obj/item/clipboard | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating | /area/ruin/shoe_factory
+23,2: /turf/closed/wall/rust | /area/ruin/shoe_factory
+10,1: /turf/closed/wall/rust | /area/ruin/shoe_factory
+11,1: /turf/closed/wall/rust | /area/ruin/shoe_factory
+12,1: /turf/closed/wall/rust | /area/ruin/shoe_factory
+13,1: /turf/closed/wall | /area/ruin/shoe_factory
+19,1: /turf/closed/wall/rust | /area/ruin/shoe_factory
+20,1: /turf/closed/wall/rust | /area/ruin/shoe_factory
+21,1: /turf/closed/wall | /area/ruin/shoe_factory
+22,1: /turf/closed/wall/rust | /area/ruin/shoe_factory
+23,1: /turf/closed/wall | /area/ruin/shoe_factory

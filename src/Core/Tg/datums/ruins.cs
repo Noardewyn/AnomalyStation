@@ -9,9 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// SKELETON: completed in wave 3 or later (with its module).
-// Only the members that the list, sort and comparator helpers (code/__HELPERS/_lists.dm, cmp.dm, sorts/) name;
-// bodies are Dm.NotTranslated until then.
+// The whole file. The vars but cost are generated.
 
 // tg: code/datums/ruins.dm:1
 [DmPath("/datum/map_template/ruin")]
@@ -19,4 +17,14 @@ public partial class datum_map_template_ruin : datum_map_template
 {
     // tg: code/datums/ruins.dm:16
     public float cost = 0;
+
+    // tg: code/datums/ruins.dm:36
+    public override async DmTask New(params object[] __extra)
+    {
+        if (!Dm.truthy(name) && Dm.truthy(id))
+            name = Dm.str(id);
+
+        mappath = Dm.add(prefix, suffix);
+        await base.New(mappath);
+    }
 }

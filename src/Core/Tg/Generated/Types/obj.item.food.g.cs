@@ -6712,9 +6712,9 @@ public partial class obj_item_food_egg_fertile
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:19
-[DmPath("/obj/item/food/egg/watcher"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_egg_watcher : obj_item_food_egg
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:19 (the var block of a hand-written class)
+[DmPath("/obj/item/food/egg/watcher")]
+public partial class obj_item_food_egg_watcher
 {
     public float steps_travelled = 0; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:26
     public float steps_to_hatch = 600; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:28

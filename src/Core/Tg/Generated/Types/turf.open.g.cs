@@ -892,9 +892,9 @@ public partial class turf_open_water_no_planet_atmos_deep_lethal : turf_open_wat
     }
 }
 
-// tg: code/game/turfs/open/water.dm:107
-[DmPath("/turf/open/water/beach"), DmGeneratedOnly, DmInert]
-public partial class turf_open_water_beach : turf_open_water
+// tg: code/game/turfs/open/water.dm:107 (the var block of a hand-written class)
+[DmPath("/turf/open/water/beach")]
+public partial class turf_open_water_beach
 {
     // tg: code/game/turfs/open/water.dm:107
     public turf_open_water_beach()
@@ -912,7 +912,7 @@ public partial class turf_open_water_beach : turf_open_water
 }
 
 // tg: code/game/turfs/open/water.dm:203
-[DmPath("/turf/open/water/beach/tizira"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/water/beach/tizira"), DmGeneratedOnly]
 public partial class turf_open_water_beach_tizira : turf_open_water_beach
 {
     // tg: code/game/turfs/open/water.dm:203

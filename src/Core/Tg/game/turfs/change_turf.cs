@@ -195,6 +195,9 @@ public partial class turf : atom
         object carryover_turf_flags = Dm.bitand(Dm.bitor(RESERVATION_TURF, UNUSED_RESERVATION_TURF), turf_flags);
         // Turf references survive replacement, but their signal lists must be set before Initialize.
         var new_turf = (turf)Dm.@new((Type)path, this, old_listen_lookup, old_signal_procs);
+        // TURF-IDENTITY: a new turf whose own Initialize changed it again (the ruins' biome-replacing rock and basalt,
+        // asteroid.dm:206, minerals.dm:954) is the cell's final turf in tg, where new_turf names the location
+        new_turf = (turf)turf.dm_identity(new_turf);
         dm_replaced_by = new_turf; // TURF-IDENTITY: the reference this replaced turf names from now on (turf.dm_identity)
         // TURF-IDENTITY (M8z): its listeners are the new turf's now, rekeyed to it in its New; in tg no other turf is left to signal them,
         // so the replaced one keeps none (a signal it still sent, the Exited of a thing leaving it, reached a climbable table's connect_loc

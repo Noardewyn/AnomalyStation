@@ -74,9 +74,9 @@ public partial class turf_open_floor_plating_lavaland_baseturf : turf_open_floor
     }
 }
 
-// tg: code/game/turfs/open/floor/misc_floor.dm:274
-[DmPath("/turf/open/floor/plating/rust"), DmGeneratedOnly, DmInert]
-public partial class turf_open_floor_plating_rust : turf_open_floor_plating
+// tg: code/game/turfs/open/floor/misc_floor.dm:274 (the var block of a hand-written class)
+[DmPath("/turf/open/floor/plating/rust")]
+public partial class turf_open_floor_plating_rust
 {
     // tg: code/game/turfs/open/floor/misc_floor.dm:274
     public turf_open_floor_plating_rust()
@@ -86,7 +86,7 @@ public partial class turf_open_floor_plating_rust : turf_open_floor_plating
 }
 
 // tg: code/game/turfs/open/floor/misc_floor.dm:282
-[DmPath("/turf/open/floor/plating/rust/airless"), DmGeneratedOnly, DmInert]
+[DmPath("/turf/open/floor/plating/rust/airless"), DmGeneratedOnly]
 public partial class turf_open_floor_plating_rust_airless : turf_open_floor_plating_rust
 {
     // tg: code/game/turfs/open/floor/misc_floor.dm:282
@@ -229,9 +229,9 @@ public partial class turf_open_floor_plating_icemoon : turf_open_floor_plating
     }
 }
 
-// tg: code/game/turfs/open/floor/plating/misc_plating.dm:18
-[DmPath("/turf/open/floor/plating/abductor"), DmGeneratedOnly, DmInert]
-public partial class turf_open_floor_plating_abductor : turf_open_floor_plating
+// tg: code/game/turfs/open/floor/plating/misc_plating.dm:18 (the var block of a hand-written class)
+[DmPath("/turf/open/floor/plating/abductor")]
+public partial class turf_open_floor_plating_abductor
 {
     // tg: code/game/turfs/open/floor/plating/misc_plating.dm:18
     public turf_open_floor_plating_abductor()

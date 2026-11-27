@@ -367,9 +367,9 @@ public partial class datum_element_body_temp_sensitive
     }
 }
 
-// tg: code/datums/elements/bombable_turf.dm:8
-[DmPath("/datum/element/bombable_turf"), DmGeneratedOnly, DmInert]
-public partial class datum_element_bombable_turf : datum_element { }
+// tg: code/datums/elements/bombable_turf.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/element/bombable_turf")]
+public partial class datum_element_bombable_turf { }
 
 // tg: code/datums/elements/bonus_damage.dm:6
 [DmPath("/datum/element/bonus_damage"), DmGeneratedOnly, DmInert]

@@ -2305,9 +2305,9 @@ public partial class obj_item_circuitboard_machine_monkey_recycler : obj_item_ci
     }
 }
 
-// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383
-[DmPath("/obj/item/circuitboard/machine/processor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_machine_processor : obj_item_circuitboard_machine
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/machine/processor")]
+public partial class obj_item_circuitboard_machine_processor
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383
     public obj_item_circuitboard_machine_processor()
@@ -2327,7 +2327,7 @@ public partial class obj_item_circuitboard_machine_processor : obj_item_circuitb
 }
 
 // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1048
-[DmPath("/obj/item/circuitboard/machine/processor/slime"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/machine/processor/slime"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_machine_processor_slime : obj_item_circuitboard_machine_processor
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1048
@@ -2340,7 +2340,7 @@ public partial class obj_item_circuitboard_machine_processor_slime : obj_item_ci
 }
 
 // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1053
-[DmPath("/obj/item/circuitboard/machine/processor/slime/fullupgrade"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/machine/processor/slime/fullupgrade"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_machine_processor_slime_fullupgrade : obj_item_circuitboard_machine_processor_slime
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1053

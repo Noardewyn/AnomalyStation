@@ -43,6 +43,11 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `fc882c5` | Package 2, slice E: the vitals without a box, tg's combat toggle in the corner, the key-duplicating buttons hidden, keys for crafting, language and navigate, "Offer item" in the wheel (server and client, no wire change, DV139; section 6, "Slice E as built") |
 | `52bcb78` | Package T, slice T5's numbers: the look-down pivot 0.25 m and the limit 135 degrees (client only; section 8, "T5's numbers changed") |
 | `5a42a6d` | Merge of `origin/main` (release 1.14.0, upstream's protocol 95 to 97): this branch's wire changes are protocol 98, its new deviations DV599 (click through), DV600 (Turn over) and DV601 (the prompt only in reach); signed off by the contributor 2026-11-26 |
+| `6449390` | Chip pictures fitted to their art (client only; section 11) |
+| `b475196` | A hit on an alien aimed at a body part it lacks lands on its chest (server; DV602; found by the merge's stress test) |
+| `f6a5677` | Code comments of this branch: what and why, not who asked or when (upstream's new rule) |
+| `7e4f032` | Package 3: the belt hotbar, ten cells on the number keys, action buttons on Shift+digits (server and client, protocol 98, DV603; section 10; signed off by the contributor 2026-11-27) |
+| `11e5c15` | The chat window above the bar, see-through at rest, input shown only while typing (client only; section 13) |
 
 The branch follows `origin/main` (https://github.com/Noardewyn/AnomalyStation): fetch at the start of a session and
 before any wire or server work, and merge upstream in before building on it; upstream's protocol and DV numbers win
@@ -54,19 +59,21 @@ ride one release by the owner (`tools/release.sh`); until then the build warns `
 `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
 Next, in this order:
-1. On the merged base: the chip pictures (section 11, branch `chip-art`); the fix for item attacks refused on a
-   carbon drawn as one picture (upstream's lost-limb check with our look-aiming leaves a stale zone: a click that
-   carries no zone on a carbon counts as aimed at the chest); the comments of this branch that name who asked and
-   when, cleaned for upstream's rule.
-2. Package 3 (section 10): slice 3A is built, reviewed and set aside on the branch `hotbar-3a` (on the old base;
-   its protocol, action kind, file and DV numbers clash with upstream's and are renumbered when it is brought
-   over), then slice 3B, the bar itself. One commit after the contributor's sign-off.
-3. The devlog screenshots (`../devlog-screenshots/2026-11-26/`, outside the repository): a last retake once the
-   chips and the bar are in (`02`, `03`, `06` and `07` still show the old look).
-4. Package 4 (section 12, design confirmed in part), then packages 5 to 8 and what section 9 adds. The Tab
-   overlay's character sprite is the main way to act on oneself; looking down is a secondary way and gets no more
-   design work. Tg's zone selector stays under Tab. Anatomical focus (package 6) is held on the middle mouse button
-   (the contributor, 2026-11-26), so the middle click's second binding for swapping hands goes then.
+1. Package 4, the Tab inventory (section 12; the strip view's search mechanic is agreed by the lead developer): the
+   remaining design points are confirmed with the designer before a builder starts; it changes the wire (the
+   contents of every worn storage at once, a second container, the search), so the contributor signs off.
+2. The actions menu (section 15), after the Tab inventory.
+3. The devlog screenshots (`../devlog-screenshots/2026-11-26/`, outside the repository): a last retake with the
+   finished HUD (`02`, `03`, `06` and `07` still show the old look; the chips, the bar and the chat have changed).
+4. Packages 5 to 8 and what section 9 adds. The Tab overlay's character sprite is the main way to act on oneself;
+   looking down is a secondary way and gets no more design work. Tg's zone selector stays under Tab. Anatomical
+   focus (package 6) is held on the middle mouse button (the contributor, 2026-11-26), so the middle click's second
+   binding for swapping hands goes then.
+
+Known limits of what is committed, to remember: a PDA worn on the belt slot has no cell on the bar (section 14,
+withdrawn); with both arms lost the bar is not drawn and the pockets cannot be clicked; dragging onto or out of a
+pocket cell does nothing (tg's slots work by clicks; package 4 brings drags); the emotes menu stays open after a
+send hides the chat's rows; the client crashes on a malformed `--keys` argument (seen in a stress test).
 
 Seen in play and not yet looked into: the prompt not always matching where the crosshair is drawn, and "Headpat"
 offered to a handcuffed player (section 9); a patient buckled to the operating table drawn as an upright sideways

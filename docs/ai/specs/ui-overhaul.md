@@ -1879,3 +1879,23 @@ Human HUD, cursor mode (Tab or the inventory key), as slice 4A.
 - A click (no drag) on an item in a storage panel takes it to the active hand as tg's click on it in tg's storage
   window does (the move to the active hand); a click on an empty cell or a panel with an item in the active hand
   puts it in (the move into that storage, at that cell). Shift+click examines, as on tg's entries.
+
+### Slice 4B-2 after review (2026-11-27): corrections to the settled design
+
+- The right column is cut clear of tg's drawn entries, the vitals and every chip place, as the character panel is
+  (so at large UI scales it is narrower than "64% to the vitals"); where no cell fits, no panel is drawn.
+- A drag onto a thing in the view, the health doll or another tg entry that is no inventory place keeps what it did
+  before this slice for every item in one of tg's own entries: a hand, a worn slot's cell, a pocket or ID cell
+  (D224, D225: a worn backpack dragged from its slot onto a table empties onto it). Only items in a storage
+  panel's cell or a belt cell of the bar do nothing there. (The first wording, "any other item: nothing", was too
+  broad.)
+- "Onto a belt cell: into the belt at that cell" means the bar's cell, which decides the number key: an empty cell
+  takes the item; two belt items swap cells; an item new to the bar takes the cell and the one that was there
+  takes the lowest free cell. The server does it (the move's cell for the worn belt is the bar's cell).
+- The inventory's drag, click and quick-transfer rules are the human HUD's only; other bodies keep tg's drags.
+- Shift+click on an item in a panel examines it through a server path that takes only that (an item the sender's
+  own listed storages show). Each cell of the bar's message names its item, so identical items are told apart.
+- The quick transfer is Ctrl+left click with no other modifier; from a hand with no backpack worn the player is
+  told why, besides the blink.
+- tg's own Ctrl-click on a carried item has no way in under Tab until the keys slice builds the wheel entry for
+  it (the wheel opens only on things in the view today): for the contributor to know.

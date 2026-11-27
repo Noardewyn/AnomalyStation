@@ -335,6 +335,13 @@ public static class TguiInterfaces
         ["QuantumConsole"] = QuantumConsole.Render, // gaps BR1
         ["NetpodOutfits"] = NetpodOutfits.Render, // gaps BR1
         ["AvatarHelp"] = AvatarHelp.Render, // gaps BR1
+        ["LibraryVisitor"] = LibraryVisitor.Render, // the library's visitor console
+        ["LibraryConsole"] = LibraryConsole.Render, // the library's book management console
+        ["LibraryScanner"] = LibraryScanner.Render, // the library's scanner
+        ["LibraryAdmin"] = LibraryAdmin.Render, // the admins' library console
+        ["AdminBookViewer"] = AdminBookViewer.Render, // the admins' library console's book viewer
+        ["DSMBook"] = DSMBook.Render, // the psychologist's manual
+        ["IDCBook"] = IDCBook.Render, // the manual of the diseases
     };
 
     /// <summary>The interface of that name, or null when it is not translated yet.</summary>

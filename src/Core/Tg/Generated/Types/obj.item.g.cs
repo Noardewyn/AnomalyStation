@@ -6394,9 +6394,9 @@ public partial class obj_item_tgui_book_manual_infuser
     }
 }
 
-// tg: code/modules/library/book.dm:306
-[DmPath("/obj/item/tgui_book/manual/dsm"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tgui_book_manual_dsm : obj_item_tgui_book_manual
+// tg: code/modules/library/book.dm:306 (the var block of a hand-written class)
+[DmPath("/obj/item/tgui_book/manual/dsm")]
+public partial class obj_item_tgui_book_manual_dsm
 {
     // tg: code/modules/library/book.dm:306
     public obj_item_tgui_book_manual_dsm()
@@ -6408,9 +6408,9 @@ public partial class obj_item_tgui_book_manual_dsm : obj_item_tgui_book_manual
     }
 }
 
-// tg: code/modules/library/book.dm:384
-[DmPath("/obj/item/tgui_book/manual/idc"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tgui_book_manual_idc : obj_item_tgui_book_manual
+// tg: code/modules/library/book.dm:384 (the var block of a hand-written class)
+[DmPath("/obj/item/tgui_book/manual/idc")]
+public partial class obj_item_tgui_book_manual_idc
 {
     // tg: code/modules/library/book.dm:384
     public obj_item_tgui_book_manual_idc()

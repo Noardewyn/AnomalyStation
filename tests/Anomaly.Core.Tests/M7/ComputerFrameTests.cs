@@ -49,9 +49,10 @@ public class ComputerFrameTests
     public void AnInertConsoleTakenApartWithAScrewdriverLeavesItsFrameAndBoard()
     {
         var (r, bob) = Room(7103);
-        // the library console is inert (D112): its Initialize, which makes the board (_machinery.dm:179), never ran (the teleporter
-        // console was the example until gaps TP1 made it live, the station alert console until E6)
-        var console = Place<obj_machinery_computer_libraryconsole>(r);
+        // the launchpad console is inert (D112): its Initialize, which makes the board (_machinery.dm:179), never ran (the teleporter
+        // console was the example until gaps TP1 made it live, the station alert console until E6, the library console until the
+        // library's machines were ported)
+        var console = Place<obj_machinery_computer_launchpad>(r);
         r.Step(Second);
         Assert.True(r.In(() => InertSeam.IsInert(console)));
         Hold<obj_item_screwdriver>(r, bob);
@@ -59,7 +60,7 @@ public class ComputerFrameTests
         Assert.True(r.In(() => QDELETED(console)), string.Join("\n", r.Room.RuntimeText));
         var frame = Assert.Single(On<obj_structure_frame_computer>(r));
         Assert.Equal(FRAME_COMPUTER_STATE_GLASSED, State(r, frame));
-        Assert.IsType<obj_item_circuitboard_computer_libraryconsole>(r.In(() => frame.circuit_value));
+        Assert.IsType<obj_item_circuitboard_computer_launchpad_console>(r.In(() => frame.circuit_value));
         Assert.Same(r.In(() => frame.circuit_value), r.In(() => Dm.each(frame.contents).Single()));
         r.AssertNoRuntimes();
     }

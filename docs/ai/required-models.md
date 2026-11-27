@@ -208,6 +208,14 @@ the client draws meanwhile.
   (`controller`, `controller-c` calibrating, `controller-p` unpowered, `controller-o` open panel). Meanwhile the client draws tg's
   sprites.
 
+- **Library scanner's open panel** (gaps LB1, `library/lib_machines.dm:711`, `icons/obj/service/library.dmi` state `bigscanner2`):
+  the scanner with its maintenance panel off. Its model (`machines/service_wave/library_scanner.glb`) has no hatch, so the open panel
+  does not show; its scan (`bigscanner1`) and the binder's printing (`binder1`) play on the models' working surfaces.
+
+- **Library consoles** (gaps LB1, `library/lib_machines.dm`, `icons/obj/machines/computer.dmi` state `oldcomp` with the `library`
+  screen): the visitor console and the book management console. Meanwhile both are drawn by the old library computer's model
+  (`station_props/station_equipment/library_console.glb`), as the admins' console is.
+
 ## Security
 
 - **Secway** (gaps SE1, `vehicles/secway.dm`, `icons/mob/rideables/vehicles.dmi` state `secway`): the security officer's ridden

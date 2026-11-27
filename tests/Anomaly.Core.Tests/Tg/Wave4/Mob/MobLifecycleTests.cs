@@ -618,6 +618,9 @@ public class MobLifecycleTests
             // the Thing's ruin machines (its phase depleters, the aggro gates) queue their links on SSqueuelinks, which tg's MC always makes
             if (SSqueuelinks == null)
                 Dm.@new<datum_controller_subsystem_queuelinks>();
+            // the library's consoles look for the database at Initialize (lib_machines.dm:173, SSdbcore.Connect), which tg's MC always makes
+            if (SSdbcore == null)
+                Dm.@new<datum_controller_subsystem_dbcore>();
             // silicons SI3: the printers' auto-unlocking techwebs (the lathe's, the smelter's, the biogenerator's) register with SSresearch
             // and read its design table; tg's MC always makes it
             if (SSresearch == null)

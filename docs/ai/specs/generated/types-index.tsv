@@ -786,7 +786,7 @@ proc	/	get_radio_span	code/game/say.dm:330	freq	yes	full	global
 proc	/	get_rand_frequency	code/game/sound/sound.dm:209		yes	full	global
 proc	/	get_rand_frequency_low_range	code/game/sound/sound.dm:213		yes	full	global
 proc	/	get_random_bitflag	code/_globalvars/bitfields.dm:23	var_name	no	-	global
-proc	/	get_random_coin	code/__HELPERS/randoms.dm:38		no	-	global
+proc	/	get_random_coin	code/__HELPERS/randoms.dm:38		yes	full	global
 proc	/	get_random_drink	code/__HELPERS/randoms.dm:13		yes	full	global
 proc	/	get_random_food	code/__HELPERS/randoms.dm:2		yes	full	global
 proc	/	get_random_hallucination	code/__HELPERS/hallucinations.dm:149	tier,strict	yes	full	global
@@ -981,7 +981,7 @@ proc	/	lavaland_equipment_pressure_check	code/__HELPERS/game.dm:249	turf_to_chec
 proc	/	lawid_to_type	code/datums/ai_laws/ai_laws.dm:105	lawid	yes	full	global
 proc	/	layering_filter	code/__HELPERS/filters.dm:246	icon,render_source,x,y,flags,color,transform,blend_mode	yes	full	global
 proc	/	level_announce	code/__HELPERS/priority_announce.dm:162	selected_level,previous_level_number	yes	full	global
-proc	/	library_updated	code/modules/library/lib_machines.dm:15		no	-	global
+proc	/	library_updated	code/modules/library/lib_machines.dm:15		yes	full	global
 proc	/	lightningbolt	code/modules/admin/smites/lightning.dm:11	user	yes	full	global
 proc	/	list2stickyban	code/modules/admin/stickyban.dm:460	ban	no	-	global
 proc	/	list_clear_empty_weakrefs	code/__HELPERS/_lists.dm:456	list_to_clear	yes	full	global
@@ -1242,7 +1242,7 @@ proc	/	random_step	code/__HELPERS/atoms.dm:134	moving_atom,steps,chance	no	-	glo
 proc	/	random_string	code/__HELPERS/text.dm:443	length,characters	yes	full	global
 proc	/	random_undershirt	code/__HELPERS/mobs.dm:82	gender	yes	full	global
 proc	/	random_underwear	code/__HELPERS/mobs.dm:71	gender	yes	full	global
-proc	/	randomize_human	code/modules/admin/create_mob.dm:4	human,randomize_mutations	yes	skeleton	global
+proc	/	randomize_human	code/modules/admin/create_mob.dm:4	human,randomize_mutations	yes	full	global
 proc	/	randomize_human_normie	code/modules/admin/create_mob.dm:27	human,randomize_mutations,update_body	yes	full	global
 proc	/	ranks_from_rank_name	code/modules/admin/admin_ranks.dm:219	rank_name	yes	full	global
 proc	/	rays_filter	code/__HELPERS/filters.dm:290	size,color,offset,density,threshold,factor,x,y,flags	yes	full	global
@@ -2738,7 +2738,7 @@ proc	/datum/controller/global_vars	InitGlobalprototype_language_holders	code/mod
 proc	/datum/controller/global_vars	InitGlobalbiblenames	code/modules/library/bibles.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalbiblestates	code/modules/library/bibles.dm:24		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalbibleitemstates	code/modules/library/bibles.dm:45		yes	full	proc root
-proc	/datum/controller/global_vars	InitGloballibrary_table_modified	code/modules/library/lib_machines.dm:12		no	-	proc root
+proc	/datum/controller/global_vars	InitGloballibrary_table_modified	code/modules/library/lib_machines.dm:12		yes	full	proc root
 proc	/datum/controller/global_vars	InitGloballighting_sheets	code/modules/lighting/lighting_source.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalstarlight_objects	code/modules/lighting/static_lighting_area.dm:6		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalstarlight_overlays	code/modules/lighting/static_lighting_area.dm:27		no	-	proc root
@@ -3396,13 +3396,13 @@ proc	/datum/controller/subsystem/dbcore	Recover	code/controllers/subsystem/dbcor
 proc	/datum/controller/subsystem/dbcore	Shutdown	code/controllers/subsystem/dbcore.dm:183		no	-	proc
 proc	/datum/controller/subsystem/dbcore	can_vv_get	code/controllers/subsystem/dbcore.dm:223	var_name	no	-	proc
 proc	/datum/controller/subsystem/dbcore	vv_edit_var	code/controllers/subsystem/dbcore.dm:237	var_name,var_value	no	-	proc
-proc	/datum/controller/subsystem/dbcore	Connect	code/controllers/subsystem/dbcore.dm:250		no	-	proc root
+proc	/datum/controller/subsystem/dbcore	Connect	code/controllers/subsystem/dbcore.dm:250		yes	partial	proc root
 proc	/datum/controller/subsystem/dbcore	CheckSchemaVersion	code/controllers/subsystem/dbcore.dm:304		no	-	proc root
 proc	/datum/controller/subsystem/dbcore	InitializeRound	code/controllers/subsystem/dbcore.dm:325		yes	full	proc root
 proc	/datum/controller/subsystem/dbcore	SetRoundStart	code/controllers/subsystem/dbcore.dm:340		yes	full	proc root
 proc	/datum/controller/subsystem/dbcore	SetRoundEnd	code/controllers/subsystem/dbcore.dm:350		yes	full	proc root
-proc	/datum/controller/subsystem/dbcore	Disconnect	code/controllers/subsystem/dbcore.dm:360		no	-	proc root
-proc	/datum/controller/subsystem/dbcore	IsConnected	code/controllers/subsystem/dbcore.dm:366		no	-	proc root
+proc	/datum/controller/subsystem/dbcore	Disconnect	code/controllers/subsystem/dbcore.dm:360		yes	partial	proc root
+proc	/datum/controller/subsystem/dbcore	IsConnected	code/controllers/subsystem/dbcore.dm:366		yes	partial	proc root
 proc	/datum/controller/subsystem/dbcore	ErrorMsg	code/controllers/subsystem/dbcore.dm:373		no	-	proc root
 proc	/datum/controller/subsystem/dbcore	ReportError	code/controllers/subsystem/dbcore.dm:378	error	no	-	proc root
 proc	/datum/controller/subsystem/dbcore	NewQuery	code/controllers/subsystem/dbcore.dm:381	sql_query,arguments,allow_during_shutdown	no	-	proc root
@@ -6590,8 +6590,8 @@ proc	/datum/action/cooldown/spell/pointed/projectile/cybersun_barrage	fire_proje
 type	/datum/action/cooldown/spell/pointed/projectile/fireball	/datum/action/cooldown/spell/pointed/projectile	code/modules/spells/spell_types/pointed/fireball.dm:2	inert	datum_action_cooldown_spell_pointed_projectile_fireball	0	0
 proc	/datum/action/cooldown/spell/pointed/projectile/fireball	ready_projectile	code/modules/spells/spell_types/pointed/fireball.dm:20	to_fire,target,user,iteration	no	-	proc
 type	/datum/action/cooldown/spell/pointed/projectile/fireball/lesser	/datum/action/cooldown/spell/pointed/projectile/fireball	code/modules/mob/living/basic/ruin_defender/wizard/wizard_spells.dm:5	inert	datum_action_cooldown_spell_pointed_projectile_fireball_lesser	0	0
-type	/datum/action/cooldown/spell/pointed/projectile/finger_guns	/datum/action/cooldown/spell/pointed/projectile	code/modules/spells/spell_types/pointed/finger_guns.dm:2	inert	datum_action_cooldown_spell_pointed_projectile_finger_guns	0	0
-proc	/datum/action/cooldown/spell/pointed/projectile/finger_guns	try_invoke	code/modules/spells/spell_types/pointed/finger_guns.dm:29	invoker,feedback	no	-	proc
+type	/datum/action/cooldown/spell/pointed/projectile/finger_guns	/datum/action/cooldown/spell/pointed/projectile	code/modules/spells/spell_types/pointed/finger_guns.dm:2	live	datum_action_cooldown_spell_pointed_projectile_finger_guns	1	0
+proc	/datum/action/cooldown/spell/pointed/projectile/finger_guns	try_invoke	code/modules/spells/spell_types/pointed/finger_guns.dm:29	invoker,feedback	yes	full	proc
 type	/datum/action/cooldown/spell/pointed/projectile/lightningbolt	/datum/action/cooldown/spell/pointed/projectile	code/modules/spells/spell_types/pointed/lightning_bolt.dm:2	inert	datum_action_cooldown_spell_pointed_projectile_lightningbolt	0	0
 proc	/datum/action/cooldown/spell/pointed/projectile/lightningbolt	Grant	code/modules/spells/spell_types/pointed/lightning_bolt.dm:27	grant_to	no	-	proc
 proc	/datum/action/cooldown/spell/pointed/projectile/lightningbolt	Remove	code/modules/spells/spell_types/pointed/lightning_bolt.dm:31	remove_from	no	-	proc
@@ -6984,18 +6984,18 @@ type	/datum/action/cooldown/spell/aoe/sacred_flame	/datum/action/cooldown/spell/
 proc	/datum/action/cooldown/spell/aoe/sacred_flame	get_things_to_cast_on	code/modules/spells/spell_types/aoe_spell/sacred_flame.dm:19	center	no	-	proc
 proc	/datum/action/cooldown/spell/aoe/sacred_flame	cast_on_thing_in_aoe	code/modules/spells/spell_types/aoe_spell/sacred_flame.dm:26	victim,caster	no	-	proc
 proc	/datum/action/cooldown/spell/aoe/sacred_flame	cast	code/modules/spells/spell_types/aoe_spell/sacred_flame.dm:36	cast_on	no	-	proc
-type	/datum/action/cooldown/spell/shapeshift	/datum/action/cooldown/spell	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:10	inert	datum_action_cooldown_spell_shapeshift	0	0
-proc	/datum/action/cooldown/spell/shapeshift	Remove	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:35	remove_from	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift	is_valid_target	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:39	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift	before_cast	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:42	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift	cast	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:89	cast_on	no	-	proc
-proc	/datum/action/cooldown/spell/shapeshift	eject_from_vents	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:117	cast_on	no	-	proc root
-proc	/datum/action/cooldown/spell/shapeshift	check_menu	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:141	caster	no	-	proc root
-proc	/datum/action/cooldown/spell/shapeshift	do_shapeshift	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:150	caster	no	-	proc root
-proc	/datum/action/cooldown/spell/shapeshift	do_unshapeshift	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:176	caster	no	-	proc root
-proc	/datum/action/cooldown/spell/shapeshift	create_shapeshift_mob	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:194	loc	no	-	proc root
-proc	/datum/action/cooldown/spell/shapeshift	unshift_owner	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:198		no	-	proc root
-type	/datum/action/cooldown/spell/shapeshift/eldritch	/datum/action/cooldown/spell/shapeshift	code/modules/antagonists/heretic/magic/eldritch_shapeshift.dm:3	inert	datum_action_cooldown_spell_shapeshift_eldritch	0	0
+type	/datum/action/cooldown/spell/shapeshift	/datum/action/cooldown/spell	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:10	live	datum_action_cooldown_spell_shapeshift	1	0
+proc	/datum/action/cooldown/spell/shapeshift	Remove	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:35	remove_from	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift	is_valid_target	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:39	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift	before_cast	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:42	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift	cast	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:89	cast_on	yes	full	proc
+proc	/datum/action/cooldown/spell/shapeshift	eject_from_vents	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:117	cast_on	yes	full	proc root
+proc	/datum/action/cooldown/spell/shapeshift	check_menu	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:141	caster	yes	full	proc root
+proc	/datum/action/cooldown/spell/shapeshift	do_shapeshift	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:150	caster	yes	full	proc root
+proc	/datum/action/cooldown/spell/shapeshift	do_unshapeshift	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:176	caster	yes	full	proc root
+proc	/datum/action/cooldown/spell/shapeshift	create_shapeshift_mob	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:194	loc	yes	full	proc root
+proc	/datum/action/cooldown/spell/shapeshift	unshift_owner	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:198		yes	full	proc root
+type	/datum/action/cooldown/spell/shapeshift/eldritch	/datum/action/cooldown/spell/shapeshift	code/modules/antagonists/heretic/magic/eldritch_shapeshift.dm:3	live	datum_action_cooldown_spell_shapeshift_eldritch	0	0
 type	/datum/action/cooldown/spell/shapeshift/eldritch/ascension	/datum/action/cooldown/spell/shapeshift/eldritch	code/modules/antagonists/heretic/magic/ascended_shapeshift.dm:3	inert	datum_action_cooldown_spell_shapeshift_eldritch_ascension	0	0
 proc	/datum/action/cooldown/spell/shapeshift/eldritch/ascension	do_shapeshift	code/modules/antagonists/heretic/magic/ascended_shapeshift.dm:18	caster	no	-	proc
 proc	/datum/action/cooldown/spell/shapeshift/eldritch/ascension	do_unshapeshift	code/modules/antagonists/heretic/magic/ascended_shapeshift.dm:33	caster	no	-	proc
@@ -7009,13 +7009,13 @@ proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	Remove	code/modules/
 proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	before_cast	code/modules/clothing/belts/polymorph_belt.dm:133	cast_on	no	-	proc
 proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	after_cast	code/modules/clothing/belts/polymorph_belt.dm:162	cast_on	no	-	proc
 proc	/datum/action/cooldown/spell/shapeshift/polymorph_belt	update_type	code/modules/clothing/belts/polymorph_belt.dm:170	transform_type	no	-	proc root
-type	/datum/action/cooldown/spell/shapeshift/slime_form	/datum/action/cooldown/spell/shapeshift	code/modules/research/xenobiology/crossbreeding/_mobs.dm:9	inert	datum_action_cooldown_spell_shapeshift_slime_form	0	0
-proc	/datum/action/cooldown/spell/shapeshift/slime_form	do_unshapeshift	code/modules/research/xenobiology/crossbreeding/_mobs.dm:23	caster	no	-	proc
-type	/datum/action/cooldown/spell/shapeshift/dragon	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/dragon.dm:3	inert	datum_action_cooldown_spell_shapeshift_dragon	0	0
-type	/datum/action/cooldown/spell/shapeshift/gorilla	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/gorilla.dm:3	inert	datum_action_cooldown_spell_shapeshift_gorilla	0	0
-type	/datum/action/cooldown/spell/shapeshift/polar_bear	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/polar_bear.dm:2	inert	datum_action_cooldown_spell_shapeshift_polar_bear	0	0
-type	/datum/action/cooldown/spell/shapeshift/wizard	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/shapechange.dm:2	inert	datum_action_cooldown_spell_shapeshift_wizard	0	0
-type	/datum/action/cooldown/spell/shapeshift/wolf	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/wolf.dm:2	inert	datum_action_cooldown_spell_shapeshift_wolf	0	0
+type	/datum/action/cooldown/spell/shapeshift/slime_form	/datum/action/cooldown/spell/shapeshift	code/modules/research/xenobiology/crossbreeding/_mobs.dm:9	live	datum_action_cooldown_spell_shapeshift_slime_form	1	0
+proc	/datum/action/cooldown/spell/shapeshift/slime_form	do_unshapeshift	code/modules/research/xenobiology/crossbreeding/_mobs.dm:23	caster	yes	full	proc
+type	/datum/action/cooldown/spell/shapeshift/dragon	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/dragon.dm:3	live	datum_action_cooldown_spell_shapeshift_dragon	0	0
+type	/datum/action/cooldown/spell/shapeshift/gorilla	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/gorilla.dm:3	live	datum_action_cooldown_spell_shapeshift_gorilla	0	0
+type	/datum/action/cooldown/spell/shapeshift/polar_bear	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/polar_bear.dm:2	live	datum_action_cooldown_spell_shapeshift_polar_bear	0	0
+type	/datum/action/cooldown/spell/shapeshift/wizard	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/shapechange.dm:2	live	datum_action_cooldown_spell_shapeshift_wizard	0	0
+type	/datum/action/cooldown/spell/shapeshift/wolf	/datum/action/cooldown/spell/shapeshift	code/modules/spells/spell_types/shapeshift/wolf.dm:2	live	datum_action_cooldown_spell_shapeshift_wolf	0	0
 type	/datum/action/cooldown/spell/fire_sworn	/datum/action/cooldown/spell	code/modules/antagonists/heretic/magic/ash_ascension.dm:3	inert	datum_action_cooldown_spell_fire_sworn	0	0
 proc	/datum/action/cooldown/spell/fire_sworn	Remove	code/modules/antagonists/heretic/magic/ash_ascension.dm:22	remove_from	no	-	proc
 proc	/datum/action/cooldown/spell/fire_sworn	is_valid_target	code/modules/antagonists/heretic/magic/ash_ascension.dm:26	cast_on	no	-	proc
@@ -7805,10 +7805,10 @@ type	/datum/action/item_action/mod_recall	/datum/action/item_action	code/modules
 proc	/datum/action/item_action/mod_recall	New	code/modules/mod/modules/module_pathfinder.dm:230	Target	yes	full	proc
 proc	/datum/action/item_action/mod_recall	do_effect	code/modules/mod/modules/module_pathfinder.dm:236	trigger_flags	yes	full	proc
 type	/datum/action/item_action/pray_refill	/datum/action/item_action	code/modules/religion/burdened/psyker.dm:214	live	datum_action_item_action_pray_refill	0	0
-type	/datum/action/item_action/change_prism_colour	/datum/action/item_action	code/modules/research/xenobiology/crossbreeding/_clothing.dm:70	inert	datum_action_item_action_change_prism_colour	0	0
-proc	/datum/action/item_action/change_prism_colour	do_effect	code/modules/research/xenobiology/crossbreeding/_clothing.dm:74	trigger_flags	no	-	proc
-type	/datum/action/item_action/place_light_prism	/datum/action/item_action	code/modules/research/xenobiology/crossbreeding/_clothing.dm:84	inert	datum_action_item_action_place_light_prism	0	0
-proc	/datum/action/item_action/place_light_prism	do_effect	code/modules/research/xenobiology/crossbreeding/_clothing.dm:88	trigger_flags	no	-	proc
+type	/datum/action/item_action/change_prism_colour	/datum/action/item_action	code/modules/research/xenobiology/crossbreeding/_clothing.dm:70	live	datum_action_item_action_change_prism_colour	1	0
+proc	/datum/action/item_action/change_prism_colour	do_effect	code/modules/research/xenobiology/crossbreeding/_clothing.dm:74	trigger_flags	yes	full	proc
+type	/datum/action/item_action/place_light_prism	/datum/action/item_action	code/modules/research/xenobiology/crossbreeding/_clothing.dm:84	live	datum_action_item_action_place_light_prism	1	0
+proc	/datum/action/item_action/place_light_prism	do_effect	code/modules/research/xenobiology/crossbreeding/_clothing.dm:88	trigger_flags	yes	full	proc
 type	/datum/action/item_action/activate_pill	/datum/action/item_action	code/modules/surgery/operations/operation_dental.dm:128	live	datum_action_item_action_activate_pill	1	0
 proc	/datum/action/item_action/activate_pill	IsAvailable	code/modules/surgery/operations/operation_dental.dm:131	feedback	yes	full	proc
 proc	/datum/action/item_action/activate_pill	do_effect	code/modules/surgery/operations/operation_dental.dm:136	trigger_flags	yes	full	proc
@@ -14035,25 +14035,25 @@ proc	/datum/status_effect/teleport_flux/perma	delayed_remove	code/modules/antago
 type	/datum/status_effect/embryonic	/datum/status_effect	code/modules/bitrunning/components/netpod_healing.dm:53	live	datum_status_effect_embryonic	1	0
 proc	/datum/status_effect/embryonic	on_apply	code/modules/bitrunning/components/netpod_healing.dm:56		yes	full	proc
 proc	/datum/status_effect/embryonic	on_remove	code/modules/bitrunning/components/netpod_healing.dm:60		yes	full	proc
-type	/datum/status_effect/shapechange_mob	/datum/status_effect	code/modules/spells/spell_types/shapeshift/_shape_status.dm:5	inert	datum_status_effect_shapechange_mob	0	0
-proc	/datum/status_effect/shapechange_mob	on_creation	code/modules/spells/spell_types/shapeshift/_shape_status.dm:16	new_owner,caster	no	-	proc
-proc	/datum/status_effect/shapechange_mob	on_apply	code/modules/spells/spell_types/shapeshift/_shape_status.dm:37		no	-	proc
-proc	/datum/status_effect/shapechange_mob	on_remove	code/modules/spells/spell_types/shapeshift/_shape_status.dm:52		no	-	proc
-proc	/datum/status_effect/shapechange_mob	on_pre_wabbajack	code/modules/spells/spell_types/shapeshift/_shape_status.dm:63	source	no	-	proc root
-proc	/datum/status_effect/shapechange_mob	on_pre_type_change	code/modules/spells/spell_types/shapeshift/_shape_status.dm:69	source	no	-	proc root
-proc	/datum/status_effect/shapechange_mob	on_mob_transformed	code/modules/spells/spell_types/shapeshift/_shape_status.dm:75	source	no	-	proc root
-proc	/datum/status_effect/shapechange_mob	restore_caster	code/modules/spells/spell_types/shapeshift/_shape_status.dm:83	kill_caster_after	no	-	proc root
-proc	/datum/status_effect/shapechange_mob	after_unchange	code/modules/spells/spell_types/shapeshift/_shape_status.dm:117		no	-	proc root
-proc	/datum/status_effect/shapechange_mob	on_shape_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:123	source,gibbed	no	-	proc root
-proc	/datum/status_effect/shapechange_mob	on_caster_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:135	source,gibbed	no	-	proc root
-proc	/datum/status_effect/shapechange_mob	on_caster_deleted	code/modules/spells/spell_types/shapeshift/_shape_status.dm:147	source	no	-	proc root
-type	/datum/status_effect/shapechange_mob/from_spell	/datum/status_effect/shapechange_mob	code/modules/spells/spell_types/shapeshift/_shape_status.dm:158	inert	datum_status_effect_shapechange_mob_from_spell	0	0
-proc	/datum/status_effect/shapechange_mob/from_spell	on_creation	code/modules/spells/spell_types/shapeshift/_shape_status.dm:162	new_owner,caster,source_spell	no	-	proc
-proc	/datum/status_effect/shapechange_mob/from_spell	on_apply	code/modules/spells/spell_types/shapeshift/_shape_status.dm:171		no	-	proc
-proc	/datum/status_effect/shapechange_mob/from_spell	restore_caster	code/modules/spells/spell_types/shapeshift/_shape_status.dm:193	kill_caster_after	no	-	proc
-proc	/datum/status_effect/shapechange_mob/from_spell	after_unchange	code/modules/spells/spell_types/shapeshift/_shape_status.dm:213		no	-	proc
-proc	/datum/status_effect/shapechange_mob/from_spell	on_shape_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:226	source,gibbed	no	-	proc
-proc	/datum/status_effect/shapechange_mob/from_spell	on_caster_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:238	source	no	-	proc
+type	/datum/status_effect/shapechange_mob	/datum/status_effect	code/modules/spells/spell_types/shapeshift/_shape_status.dm:5	live	datum_status_effect_shapechange_mob	1	0
+proc	/datum/status_effect/shapechange_mob	on_creation	code/modules/spells/spell_types/shapeshift/_shape_status.dm:16	new_owner,caster	yes	full	proc
+proc	/datum/status_effect/shapechange_mob	on_apply	code/modules/spells/spell_types/shapeshift/_shape_status.dm:37		yes	full	proc
+proc	/datum/status_effect/shapechange_mob	on_remove	code/modules/spells/spell_types/shapeshift/_shape_status.dm:52		yes	full	proc
+proc	/datum/status_effect/shapechange_mob	on_pre_wabbajack	code/modules/spells/spell_types/shapeshift/_shape_status.dm:63	source	yes	full	proc root
+proc	/datum/status_effect/shapechange_mob	on_pre_type_change	code/modules/spells/spell_types/shapeshift/_shape_status.dm:69	source	yes	full	proc root
+proc	/datum/status_effect/shapechange_mob	on_mob_transformed	code/modules/spells/spell_types/shapeshift/_shape_status.dm:75	source	yes	full	proc root
+proc	/datum/status_effect/shapechange_mob	restore_caster	code/modules/spells/spell_types/shapeshift/_shape_status.dm:83	kill_caster_after	yes	full	proc root
+proc	/datum/status_effect/shapechange_mob	after_unchange	code/modules/spells/spell_types/shapeshift/_shape_status.dm:117		yes	full	proc root
+proc	/datum/status_effect/shapechange_mob	on_shape_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:123	source,gibbed	yes	full	proc root
+proc	/datum/status_effect/shapechange_mob	on_caster_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:135	source,gibbed	yes	full	proc root
+proc	/datum/status_effect/shapechange_mob	on_caster_deleted	code/modules/spells/spell_types/shapeshift/_shape_status.dm:147	source	yes	full	proc root
+type	/datum/status_effect/shapechange_mob/from_spell	/datum/status_effect/shapechange_mob	code/modules/spells/spell_types/shapeshift/_shape_status.dm:158	live	datum_status_effect_shapechange_mob_from_spell	1	0
+proc	/datum/status_effect/shapechange_mob/from_spell	on_creation	code/modules/spells/spell_types/shapeshift/_shape_status.dm:162	new_owner,caster,source_spell	yes	full	proc
+proc	/datum/status_effect/shapechange_mob/from_spell	on_apply	code/modules/spells/spell_types/shapeshift/_shape_status.dm:171		yes	full	proc
+proc	/datum/status_effect/shapechange_mob/from_spell	restore_caster	code/modules/spells/spell_types/shapeshift/_shape_status.dm:193	kill_caster_after	yes	full	proc
+proc	/datum/status_effect/shapechange_mob/from_spell	after_unchange	code/modules/spells/spell_types/shapeshift/_shape_status.dm:213		yes	full	proc
+proc	/datum/status_effect/shapechange_mob/from_spell	on_shape_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:226	source,gibbed	yes	full	proc
+proc	/datum/status_effect/shapechange_mob/from_spell	on_caster_death	code/modules/spells/spell_types/shapeshift/_shape_status.dm:238	source	yes	full	proc
 type	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	/datum/status_effect/shapechange_mob/from_spell	code/modules/clothing/belts/polymorph_belt.dm:181	inert	datum_status_effect_shapechange_mob_from_spell_polymorph_belt	0	0
 proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_apply	code/modules/clothing/belts/polymorph_belt.dm:181		no	-	proc
 proc	/datum/status_effect/shapechange_mob/from_spell/polymorph_belt	on_pre_type_change	code/modules/clothing/belts/polymorph_belt.dm:185	source	no	-	proc
@@ -14237,155 +14237,155 @@ proc	/datum/status_effect/slumber_party	force_dream	code/modules/religion/dreams
 proc	/datum/status_effect/slumber_party	add_shared_dream	code/modules/religion/dreams/slumber_party.dm:90	source,dream_pool	yes	full	proc root
 proc	/datum/status_effect/slumber_party	start_shared_dream	code/modules/religion/dreams/slumber_party.dm:94	source,current_dream	yes	full	proc root
 proc	/datum/status_effect/slumber_party	damage_applied	code/modules/religion/dreams/slumber_party.dm:98	source,damage_amount	yes	full	proc root
-type	/datum/status_effect/rainbow_protection	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:7	inert	datum_status_effect_rainbow_protection	0	0
-proc	/datum/status_effect/rainbow_protection	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:13		no	-	proc
-proc	/datum/status_effect/rainbow_protection	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:26		no	-	proc
-type	/datum/status_effect/slimeskin	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:38	inert	datum_status_effect_slimeskin	0	0
-proc	/datum/status_effect/slimeskin	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:43		no	-	proc
-proc	/datum/status_effect/slimeskin	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:50		no	-	proc
-type	/datum/status_effect/slimerecall	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:57	inert	datum_status_effect_slimerecall	0	0
-proc	/datum/status_effect/slimerecall	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:65		no	-	proc
-proc	/datum/status_effect/slimerecall	resistField	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:73		no	-	proc root
-proc	/datum/status_effect/slimerecall	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:78		no	-	proc
+type	/datum/status_effect/rainbow_protection	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:7	live	datum_status_effect_rainbow_protection	1	0
+proc	/datum/status_effect/rainbow_protection	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:13		yes	full	proc
+proc	/datum/status_effect/rainbow_protection	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:26		yes	full	proc
+type	/datum/status_effect/slimeskin	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:38	live	datum_status_effect_slimeskin	1	0
+proc	/datum/status_effect/slimeskin	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:43		yes	full	proc
+proc	/datum/status_effect/slimeskin	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:50		yes	full	proc
+type	/datum/status_effect/slimerecall	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:57	live	datum_status_effect_slimerecall	1	0
+proc	/datum/status_effect/slimerecall	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:65		yes	full	proc
+proc	/datum/status_effect/slimerecall	resistField	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:73		yes	full	proc root
+proc	/datum/status_effect/slimerecall	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:78		yes	full	proc
 type	/datum/status_effect/frozenstasis	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:93	live	datum_status_effect_frozenstasis	1	0
 proc	/datum/status_effect/frozenstasis	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:103		yes	full	proc
 proc	/datum/status_effect/frozenstasis	clear_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:113		yes	full	proc root
 proc	/datum/status_effect/frozenstasis	has_escaped	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:118		yes	full	proc root
 proc	/datum/status_effect/frozenstasis	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:124		yes	full	proc
 type	/datum/status_effect/frozenstasis/irresistable	/datum/status_effect/frozenstasis	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:132	live	datum_status_effect_frozenstasis_irresistable	0	0
-type	/datum/status_effect/slime_clone	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:135	inert	datum_status_effect_slime_clone	0	0
-proc	/datum/status_effect/slime_clone	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:142		no	-	proc
-proc	/datum/status_effect/slime_clone	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:157	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/slime_clone	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:161		no	-	proc
-type	/datum/status_effect/slime_clone_decay	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:179	inert	datum_status_effect_slime_clone_decay	0	0
-proc	/datum/status_effect/slime_clone_decay	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:184		no	-	proc
-proc	/datum/status_effect/slime_clone_decay	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:188	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/bloodchill	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:204	inert	datum_status_effect_bloodchill	0	0
-proc	/datum/status_effect/bloodchill	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:208		no	-	proc
-proc	/datum/status_effect/bloodchill	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:212	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/bloodchill	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:216		no	-	proc
-type	/datum/status_effect/bonechill	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:220	inert	datum_status_effect_bonechill	0	0
-proc	/datum/status_effect/bonechill	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:224		no	-	proc
-proc	/datum/status_effect/bonechill	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:228	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/bonechill	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:238		no	-	proc
-type	/datum/status_effect/rebreathing	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:248	inert	datum_status_effect_rebreathing	0	0
-proc	/datum/status_effect/rebreathing	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:252	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/firecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:260	inert	datum_status_effect_firecookie	0	0
-proc	/datum/status_effect/firecookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:266		no	-	proc
-proc	/datum/status_effect/firecookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:271		no	-	proc
-type	/datum/status_effect/watercookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:275	inert	datum_status_effect_watercookie	0	0
-proc	/datum/status_effect/watercookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:280		no	-	proc
-proc	/datum/status_effect/watercookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:284	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/watercookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:288		no	-	proc
-type	/datum/status_effect/metalcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:292	inert	datum_status_effect_metalcookie	0	0
-proc	/datum/status_effect/metalcookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:298		no	-	proc
-proc	/datum/status_effect/metalcookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:302		no	-	proc
-type	/datum/status_effect/sparkcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:306	inert	datum_status_effect_sparkcookie	0	0
-proc	/datum/status_effect/sparkcookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:312		no	-	proc
-proc	/datum/status_effect/sparkcookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:316		no	-	proc
-type	/datum/status_effect/toxincookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:320	inert	datum_status_effect_toxincookie	0	0
-proc	/datum/status_effect/toxincookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:326		no	-	proc
-proc	/datum/status_effect/toxincookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:330		no	-	proc
-type	/datum/status_effect/timecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:334	inert	datum_status_effect_timecookie	0	0
-proc	/datum/status_effect/timecookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:340		no	-	proc
-proc	/datum/status_effect/timecookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:344		no	-	proc
-type	/datum/status_effect/lovecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:349	inert	datum_status_effect_lovecookie	0	0
-proc	/datum/status_effect/lovecookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:354	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/tarcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:370	inert	datum_status_effect_tarcookie	0	0
-proc	/datum/status_effect/tarcookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:375	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/tarfoot	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:381	inert	datum_status_effect_tarfoot	0	0
-proc	/datum/status_effect/tarfoot	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:386		no	-	proc
-proc	/datum/status_effect/tarfoot	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:390		no	-	proc
-type	/datum/status_effect/spookcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:394	inert	datum_status_effect_spookcookie	0	0
-proc	/datum/status_effect/spookcookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:399		no	-	proc
-proc	/datum/status_effect/spookcookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:405		no	-	proc
-type	/datum/status_effect/peacecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:409	inert	datum_status_effect_peacecookie	0	0
-proc	/datum/status_effect/peacecookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:414	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/plur	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:419	inert	datum_status_effect_plur	0	0
-proc	/datum/status_effect/plur	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:425		no	-	proc
-proc	/datum/status_effect/plur	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:429		no	-	proc
-type	/datum/status_effect/adamantinecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:433	inert	datum_status_effect_adamantinecookie	0	0
-proc	/datum/status_effect/adamantinecookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:439		no	-	proc
-proc	/datum/status_effect/adamantinecookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:443		no	-	proc
-type	/datum/status_effect/stabilized	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:451	inert	datum_status_effect_stabilized	0	0
-proc	/datum/status_effect/stabilized	on_creation	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:459	new_owner,linked_extract	no	-	proc
-proc	/datum/status_effect/stabilized	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:463	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/null	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:476	inert	datum_status_effect_stabilized_null	0	0
-type	/datum/status_effect/stabilized/grey	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:481	inert	datum_status_effect_stabilized_grey	0	0
-proc	/datum/status_effect/stabilized/grey	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:484	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/orange	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:492	inert	datum_status_effect_stabilized_orange	0	0
-proc	/datum/status_effect/stabilized/orange	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:495	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/purple	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:513	inert	datum_status_effect_stabilized_purple	0	0
-proc	/datum/status_effect/stabilized/purple	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:518	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/purple	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:544	examiner	no	-	proc
-type	/datum/status_effect/stabilized/blue	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:551	inert	datum_status_effect_stabilized_blue	0	0
-proc	/datum/status_effect/stabilized/blue	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:554		no	-	proc
-proc	/datum/status_effect/stabilized/blue	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:558		no	-	proc
-type	/datum/status_effect/stabilized/metal	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:562	inert	datum_status_effect_stabilized_metal	0	0
-proc	/datum/status_effect/stabilized/metal	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:567	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/yellow	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:585	inert	datum_status_effect_stabilized_yellow	0	0
-proc	/datum/status_effect/stabilized/yellow	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:590	examiner	no	-	proc
-proc	/datum/status_effect/stabilized/yellow	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:593	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/darkpurple	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:615	inert	datum_status_effect_stabilized_darkpurple	0	0
-proc	/datum/status_effect/stabilized/darkpurple	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:619		no	-	proc
-proc	/datum/status_effect/stabilized/darkpurple	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:624	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/darkpurple	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:633		no	-	proc
-proc	/datum/status_effect/stabilized/darkpurple	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:637	examiner	no	-	proc
-type	/datum/status_effect/stabilized/darkblue	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:641	inert	datum_status_effect_stabilized_darkblue	0	0
-proc	/datum/status_effect/stabilized/darkblue	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:644	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/silver	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:673	inert	datum_status_effect_stabilized_silver	0	0
-proc	/datum/status_effect/stabilized/silver	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:676		no	-	proc
-proc	/datum/status_effect/stabilized/silver	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:680		no	-	proc
-type	/datum/status_effect/stabilized/bluespace	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:696	inert	datum_status_effect_stabilized_bluespace	0	0
-proc	/datum/status_effect/stabilized/bluespace	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:701	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/sepia	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:726	inert	datum_status_effect_stabilized_sepia	0	0
-proc	/datum/status_effect/stabilized/sepia	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:730	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/sepia	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:740		no	-	proc
-type	/datum/status_effect/stabilized/cerulean	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:744	inert	datum_status_effect_stabilized_cerulean	0	0
-proc	/datum/status_effect/stabilized/cerulean	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:748		no	-	proc
-proc	/datum/status_effect/stabilized/cerulean	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:765	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/cerulean	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:779		no	-	proc
-type	/datum/status_effect/stabilized/pyrite	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:786	inert	datum_status_effect_stabilized_pyrite	0	0
-proc	/datum/status_effect/stabilized/pyrite	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:789	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/pyrite	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:794		no	-	proc
-type	/datum/status_effect/stabilized/red	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:798	inert	datum_status_effect_stabilized_red	0	0
-proc	/datum/status_effect/stabilized/red	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:801		no	-	proc
-proc	/datum/status_effect/stabilized/red	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:805		no	-	proc
-type	/datum/status_effect/stabilized/green	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:810	inert	datum_status_effect_stabilized_green	0	0
-proc	/datum/status_effect/stabilized/green	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:815		no	-	proc
-proc	/datum/status_effect/stabilized/green	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:826	examiner	no	-	proc
-proc	/datum/status_effect/stabilized/green	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:832		no	-	proc
-type	/datum/status_effect/stabilized/pink	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:859	inert	datum_status_effect_stabilized_pink	0	0
-proc	/datum/status_effect/stabilized/pink	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:866		no	-	proc
-proc	/datum/status_effect/stabilized/pink	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:872	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/pink	update_nearby_mobs	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:885		no	-	proc root
-proc	/datum/status_effect/stabilized/pink	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:915		no	-	proc
-type	/datum/status_effect/stabilized/oil	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:925	inert	datum_status_effect_stabilized_oil	0	0
-proc	/datum/status_effect/stabilized/oil	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:928	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/oil	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:934	examiner	no	-	proc
-type	/datum/status_effect/stabilized/black	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:942	inert	datum_status_effect_stabilized_black	0	0
-proc	/datum/status_effect/stabilized/black	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:949		no	-	proc
-proc	/datum/status_effect/stabilized/black	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:953		no	-	proc
-proc	/datum/status_effect/stabilized/black	on_grab	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:958	source,new_state	no	-	proc root
-proc	/datum/status_effect/stabilized/black	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:973	examiner	no	-	proc
-proc	/datum/status_effect/stabilized/black	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:980	seconds_between_ticks	no	-	proc
-type	/datum/status_effect/stabilized/lightpink	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1008	inert	datum_status_effect_stabilized_lightpink	0	0
-proc	/datum/status_effect/stabilized/lightpink	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1011		no	-	proc
-proc	/datum/status_effect/stabilized/lightpink	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1016	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/lightpink	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1023		no	-	proc
-type	/datum/status_effect/stabilized/adamantine	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1028	inert	datum_status_effect_stabilized_adamantine	0	0
-proc	/datum/status_effect/stabilized/adamantine	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1031	examiner	no	-	proc
-proc	/datum/status_effect/stabilized/adamantine	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1063		no	-	proc
-proc	/datum/status_effect/stabilized/adamantine	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1067		no	-	proc
-type	/datum/status_effect/stabilized/gold	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1035	inert	datum_status_effect_stabilized_gold	0	0
-proc	/datum/status_effect/stabilized/gold	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1039	seconds_between_ticks	no	-	proc
-proc	/datum/status_effect/stabilized/gold	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1059		no	-	proc
-type	/datum/status_effect/stabilized/rainbow	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1071	inert	datum_status_effect_stabilized_rainbow	0	0
-proc	/datum/status_effect/stabilized/rainbow	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1074	seconds_between_ticks	no	-	proc
+type	/datum/status_effect/slime_clone	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:135	live	datum_status_effect_slime_clone	1	0
+proc	/datum/status_effect/slime_clone	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:142		yes	full	proc
+proc	/datum/status_effect/slime_clone	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:157	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/slime_clone	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:161		yes	full	proc
+type	/datum/status_effect/slime_clone_decay	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:179	live	datum_status_effect_slime_clone_decay	1	0
+proc	/datum/status_effect/slime_clone_decay	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:184		yes	full	proc
+proc	/datum/status_effect/slime_clone_decay	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:188	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/bloodchill	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:204	live	datum_status_effect_bloodchill	1	0
+proc	/datum/status_effect/bloodchill	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:208		yes	full	proc
+proc	/datum/status_effect/bloodchill	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:212	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/bloodchill	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:216		yes	full	proc
+type	/datum/status_effect/bonechill	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:220	live	datum_status_effect_bonechill	1	0
+proc	/datum/status_effect/bonechill	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:224		yes	full	proc
+proc	/datum/status_effect/bonechill	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:228	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/bonechill	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:238		yes	full	proc
+type	/datum/status_effect/rebreathing	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:248	live	datum_status_effect_rebreathing	1	0
+proc	/datum/status_effect/rebreathing	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:252	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/firecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:260	live	datum_status_effect_firecookie	1	0
+proc	/datum/status_effect/firecookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:266		yes	full	proc
+proc	/datum/status_effect/firecookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:271		yes	full	proc
+type	/datum/status_effect/watercookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:275	live	datum_status_effect_watercookie	1	0
+proc	/datum/status_effect/watercookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:280		yes	full	proc
+proc	/datum/status_effect/watercookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:284	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/watercookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:288		yes	full	proc
+type	/datum/status_effect/metalcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:292	live	datum_status_effect_metalcookie	1	0
+proc	/datum/status_effect/metalcookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:298		yes	full	proc
+proc	/datum/status_effect/metalcookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:302		yes	full	proc
+type	/datum/status_effect/sparkcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:306	live	datum_status_effect_sparkcookie	1	0
+proc	/datum/status_effect/sparkcookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:312		yes	full	proc
+proc	/datum/status_effect/sparkcookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:316		yes	full	proc
+type	/datum/status_effect/toxincookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:320	live	datum_status_effect_toxincookie	1	0
+proc	/datum/status_effect/toxincookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:326		yes	full	proc
+proc	/datum/status_effect/toxincookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:330		yes	full	proc
+type	/datum/status_effect/timecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:334	live	datum_status_effect_timecookie	1	0
+proc	/datum/status_effect/timecookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:340		yes	full	proc
+proc	/datum/status_effect/timecookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:344		yes	full	proc
+type	/datum/status_effect/lovecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:349	live	datum_status_effect_lovecookie	1	0
+proc	/datum/status_effect/lovecookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:354	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/tarcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:370	live	datum_status_effect_tarcookie	1	0
+proc	/datum/status_effect/tarcookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:375	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/tarfoot	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:381	live	datum_status_effect_tarfoot	1	0
+proc	/datum/status_effect/tarfoot	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:386		yes	full	proc
+proc	/datum/status_effect/tarfoot	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:390		yes	full	proc
+type	/datum/status_effect/spookcookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:394	live	datum_status_effect_spookcookie	1	0
+proc	/datum/status_effect/spookcookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:399		yes	full	proc
+proc	/datum/status_effect/spookcookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:405		yes	full	proc
+type	/datum/status_effect/peacecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:409	live	datum_status_effect_peacecookie	1	0
+proc	/datum/status_effect/peacecookie	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:414	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/plur	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:419	live	datum_status_effect_plur	1	0
+proc	/datum/status_effect/plur	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:425		yes	full	proc
+proc	/datum/status_effect/plur	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:429		yes	full	proc
+type	/datum/status_effect/adamantinecookie	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:433	live	datum_status_effect_adamantinecookie	1	0
+proc	/datum/status_effect/adamantinecookie	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:439		yes	full	proc
+proc	/datum/status_effect/adamantinecookie	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:443		yes	full	proc
+type	/datum/status_effect/stabilized	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:451	live	datum_status_effect_stabilized	1	0
+proc	/datum/status_effect/stabilized	on_creation	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:459	new_owner,linked_extract	yes	full	proc
+proc	/datum/status_effect/stabilized	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:463	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/null	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:476	live	datum_status_effect_stabilized_null	0	0
+type	/datum/status_effect/stabilized/grey	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:481	live	datum_status_effect_stabilized_grey	1	0
+proc	/datum/status_effect/stabilized/grey	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:484	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/orange	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:492	live	datum_status_effect_stabilized_orange	1	0
+proc	/datum/status_effect/stabilized/orange	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:495	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/purple	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:513	live	datum_status_effect_stabilized_purple	1	0
+proc	/datum/status_effect/stabilized/purple	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:518	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/purple	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:544	examiner	yes	full	proc
+type	/datum/status_effect/stabilized/blue	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:551	live	datum_status_effect_stabilized_blue	1	0
+proc	/datum/status_effect/stabilized/blue	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:554		yes	full	proc
+proc	/datum/status_effect/stabilized/blue	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:558		yes	full	proc
+type	/datum/status_effect/stabilized/metal	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:562	live	datum_status_effect_stabilized_metal	1	0
+proc	/datum/status_effect/stabilized/metal	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:567	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/yellow	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:585	live	datum_status_effect_stabilized_yellow	1	0
+proc	/datum/status_effect/stabilized/yellow	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:590	examiner	yes	full	proc
+proc	/datum/status_effect/stabilized/yellow	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:593	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/darkpurple	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:615	live	datum_status_effect_stabilized_darkpurple	1	0
+proc	/datum/status_effect/stabilized/darkpurple	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:619		yes	full	proc
+proc	/datum/status_effect/stabilized/darkpurple	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:624	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/darkpurple	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:633		yes	full	proc
+proc	/datum/status_effect/stabilized/darkpurple	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:637	examiner	yes	full	proc
+type	/datum/status_effect/stabilized/darkblue	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:641	live	datum_status_effect_stabilized_darkblue	1	0
+proc	/datum/status_effect/stabilized/darkblue	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:644	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/silver	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:673	live	datum_status_effect_stabilized_silver	1	0
+proc	/datum/status_effect/stabilized/silver	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:676		yes	full	proc
+proc	/datum/status_effect/stabilized/silver	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:680		yes	full	proc
+type	/datum/status_effect/stabilized/bluespace	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:696	live	datum_status_effect_stabilized_bluespace	1	0
+proc	/datum/status_effect/stabilized/bluespace	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:701	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/sepia	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:726	live	datum_status_effect_stabilized_sepia	1	0
+proc	/datum/status_effect/stabilized/sepia	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:730	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/sepia	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:740		yes	full	proc
+type	/datum/status_effect/stabilized/cerulean	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:744	live	datum_status_effect_stabilized_cerulean	1	0
+proc	/datum/status_effect/stabilized/cerulean	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:748		yes	full	proc
+proc	/datum/status_effect/stabilized/cerulean	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:765	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/cerulean	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:779		yes	full	proc
+type	/datum/status_effect/stabilized/pyrite	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:786	live	datum_status_effect_stabilized_pyrite	1	0
+proc	/datum/status_effect/stabilized/pyrite	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:789	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/pyrite	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:794		yes	full	proc
+type	/datum/status_effect/stabilized/red	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:798	live	datum_status_effect_stabilized_red	1	0
+proc	/datum/status_effect/stabilized/red	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:801		yes	full	proc
+proc	/datum/status_effect/stabilized/red	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:805		yes	full	proc
+type	/datum/status_effect/stabilized/green	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:810	live	datum_status_effect_stabilized_green	1	0
+proc	/datum/status_effect/stabilized/green	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:815		yes	full	proc
+proc	/datum/status_effect/stabilized/green	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:826	examiner	yes	full	proc
+proc	/datum/status_effect/stabilized/green	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:832		yes	full	proc
+type	/datum/status_effect/stabilized/pink	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:859	live	datum_status_effect_stabilized_pink	1	0
+proc	/datum/status_effect/stabilized/pink	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:866		yes	full	proc
+proc	/datum/status_effect/stabilized/pink	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:872	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/pink	update_nearby_mobs	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:885		yes	full	proc root
+proc	/datum/status_effect/stabilized/pink	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:915		yes	full	proc
+type	/datum/status_effect/stabilized/oil	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:925	live	datum_status_effect_stabilized_oil	1	0
+proc	/datum/status_effect/stabilized/oil	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:928	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/oil	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:934	examiner	yes	full	proc
+type	/datum/status_effect/stabilized/black	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:942	live	datum_status_effect_stabilized_black	1	0
+proc	/datum/status_effect/stabilized/black	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:949		yes	full	proc
+proc	/datum/status_effect/stabilized/black	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:953		yes	full	proc
+proc	/datum/status_effect/stabilized/black	on_grab	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:958	source,new_state	yes	full	proc root
+proc	/datum/status_effect/stabilized/black	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:973	examiner	yes	full	proc
+proc	/datum/status_effect/stabilized/black	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:980	seconds_between_ticks	yes	full	proc
+type	/datum/status_effect/stabilized/lightpink	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1008	live	datum_status_effect_stabilized_lightpink	1	0
+proc	/datum/status_effect/stabilized/lightpink	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1011		yes	full	proc
+proc	/datum/status_effect/stabilized/lightpink	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1016	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/lightpink	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1023		yes	full	proc
+type	/datum/status_effect/stabilized/adamantine	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1028	live	datum_status_effect_stabilized_adamantine	1	0
+proc	/datum/status_effect/stabilized/adamantine	get_examine_text	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1031	examiner	yes	full	proc
+proc	/datum/status_effect/stabilized/adamantine	on_apply	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1063		yes	full	proc
+proc	/datum/status_effect/stabilized/adamantine	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1067		yes	full	proc
+type	/datum/status_effect/stabilized/gold	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1035	live	datum_status_effect_stabilized_gold	1	0
+proc	/datum/status_effect/stabilized/gold	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1039	seconds_between_ticks	yes	full	proc
+proc	/datum/status_effect/stabilized/gold	on_remove	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1059		yes	full	proc
+type	/datum/status_effect/stabilized/rainbow	/datum/status_effect/stabilized	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1071	live	datum_status_effect_stabilized_rainbow	1	0
+proc	/datum/status_effect/stabilized/rainbow	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1074	seconds_between_ticks	yes	full	proc
 type	/datum/status_effect/bluespacestabilization	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:690	live	datum_status_effect_bluespacestabilization	0	0
 type	/datum/status_effect/brokenpeace	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:842	live	datum_status_effect_brokenpeace	0	0
-type	/datum/status_effect/pinkdamagetracker	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:847	inert	datum_status_effect_pinkdamagetracker	0	0
-proc	/datum/status_effect/pinkdamagetracker	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:853	seconds_between_ticks	no	-	proc
+type	/datum/status_effect/pinkdamagetracker	/datum/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:847	live	datum_status_effect_pinkdamagetracker	1	0
+proc	/datum/status_effect/pinkdamagetracker	tick	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:853	seconds_between_ticks	yes	full	proc
 type	/datum/status_effect/arm_speed_penalty	/datum/status_effect	code/modules/surgery/bodyparts/default_parts.dm:215	live	datum_status_effect_arm_speed_penalty	1	0
 proc	/datum/status_effect/arm_speed_penalty	on_creation	code/modules/surgery/bodyparts/default_parts.dm:229	new_owner,hand_index,new_actionspeed,new_click_cd	yes	full	proc
 proc	/datum/status_effect/arm_speed_penalty	before_remove	code/modules/surgery/bodyparts/default_parts.dm:242	hand_index	yes	full	proc
@@ -15100,8 +15100,8 @@ type	/datum/bt_node/ai_behavior/use_mob_ability	/datum/bt_node/ai_behavior	code/
 proc	/datum/bt_node/ai_behavior/use_mob_ability	perform	code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:5	seconds_per_tick,controller	yes	full	proc
 proc	/datum/bt_node/ai_behavior/use_mob_ability	get_valid_ability	code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:16	controller	yes	full	proc root
 proc	/datum/bt_node/ai_behavior/use_mob_ability	perform_async	code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:22	controller	yes	full	proc
-type	/datum/bt_node/ai_behavior/use_mob_ability/shapeshift	/datum/bt_node/ai_behavior/use_mob_ability	code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:31	inert	datum_bt_node_ai_behavior_use_mob_ability_shapeshift	0	0
-proc	/datum/bt_node/ai_behavior/use_mob_ability/shapeshift	get_valid_ability	code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:33	controller	no	-	proc
+type	/datum/bt_node/ai_behavior/use_mob_ability/shapeshift	/datum/bt_node/ai_behavior/use_mob_ability	code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:31	live	datum_bt_node_ai_behavior_use_mob_ability_shapeshift	1	0
+proc	/datum/bt_node/ai_behavior/use_mob_ability/shapeshift	get_valid_ability	code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:33	controller	yes	full	proc
 type	/datum/bt_node/ai_behavior/use_mob_ability/random_honk	/datum/bt_node/ai_behavior/use_mob_ability	code/modules/mob/living/basic/bots/honkbots/honkbot_ai.dm:41	live	datum_bt_node_ai_behavior_use_mob_ability_random_honk	1	0
 proc	/datum/bt_node/ai_behavior/use_mob_ability/random_honk	perform	code/modules/mob/living/basic/bots/honkbots/honkbot_ai.dm:41	seconds_per_tick,controller	yes	full	proc
 type	/datum/bt_node/ai_behavior/use_mob_ability/domain	/datum/bt_node/ai_behavior/use_mob_ability	code/modules/mob/living/basic/space_fauna/regal_rat/regal_rat_ai.dm:13	live	datum_bt_node_ai_behavior_use_mob_ability_domain	1	0
@@ -30880,10 +30880,10 @@ type	/datum/storage/carpskin_bag	/datum/storage	code/datums/storage/subtypes/oth
 proc	/datum/storage/carpskin_bag	New	code/datums/storage/subtypes/others/carpskin_bag.dm:6	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	no	-	proc
 proc	/datum/storage/carpskin_bag	process_numerical_display	code/datums/storage/subtypes/others/carpskin_bag.dm:18		no	-	proc
 proc	/datum/storage/carpskin_bag	remove_single	code/datums/storage/subtypes/others/carpskin_bag.dm:46	removing,thing,remove_to_loc,silent	no	-	proc
-type	/datum/storage/extract_inventory	/datum/storage	code/datums/storage/subtypes/others/extract_inventory.dm:2	inert	datum_storage_extract_inventory	0	0
-proc	/datum/storage/extract_inventory	New	code/datums/storage/subtypes/others/extract_inventory.dm:13	parent,max_slots,max_specific_storage,max_total_storage	no	-	proc
-proc	/datum/storage/extract_inventory	processCubes	code/datums/storage/subtypes/others/extract_inventory.dm:27	user	no	-	proc root
-proc	/datum/storage/extract_inventory	createExtracts	code/datums/storage/subtypes/others/extract_inventory.dm:33	user	no	-	proc root
+type	/datum/storage/extract_inventory	/datum/storage	code/datums/storage/subtypes/others/extract_inventory.dm:2	live	datum_storage_extract_inventory	1	0
+proc	/datum/storage/extract_inventory	New	code/datums/storage/subtypes/others/extract_inventory.dm:13	parent,max_slots,max_specific_storage,max_total_storage	yes	full	proc
+proc	/datum/storage/extract_inventory	processCubes	code/datums/storage/subtypes/others/extract_inventory.dm:27	user	yes	full	proc root
+proc	/datum/storage/extract_inventory	createExtracts	code/datums/storage/subtypes/others/extract_inventory.dm:33	user	yes	full	proc root
 type	/datum/storage/donut_box	/datum/storage	code/datums/storage/subtypes/others/fancy_storage.dm:7	live	datum_storage_donut_box	1	0
 proc	/datum/storage/donut_box	New	code/datums/storage/subtypes/others/fancy_storage.dm:9	parent,max_slots,max_specific_storage,max_total_storage,rustle_sound,remove_rustle_sound	yes	full	proc
 type	/datum/storage/egg_box	/datum/storage	code/datums/storage/subtypes/others/fancy_storage.dm:15	live	datum_storage_egg_box	1	0
@@ -43726,13 +43726,13 @@ proc	/datum/language_menu	ui_state	code/modules/language/_language_menu.dm:11	us
 proc	/datum/language_menu	ui_interact	code/modules/language/_language_menu.dm:14	user,ui	yes	full	proc
 proc	/datum/language_menu	ui_data	code/modules/language/_language_menu.dm:23	user	yes	full	proc
 proc	/datum/language_menu	ui_act	code/modules/language/_language_menu.dm:52	action,params,ui,state	yes	full	proc
-type	/datum/book_history_entry	/datum	code/modules/library/admin_only.dm:278	inert	datum_book_history_entry	0	0
-proc	/datum/book_history_entry	serialize	code/modules/library/admin_only.dm:292		no	-	proc root
-type	/datum/admin_book_viewer	/datum	code/modules/library/admin_only.dm:306	inert	datum_admin_book_viewer	0	0
-proc	/datum/admin_book_viewer	set_owner	code/modules/library/admin_only.dm:330	owner	no	-	proc root
-proc	/datum/admin_book_viewer	ui_interact	code/modules/library/admin_only.dm:334	user,ui	no	-	proc
-proc	/datum/admin_book_viewer	ui_status	code/modules/library/admin_only.dm:342	user,state	no	-	proc
-proc	/datum/admin_book_viewer	ui_data	code/modules/library/admin_only.dm:347	user	no	-	proc
+type	/datum/book_history_entry	/datum	code/modules/library/admin_only.dm:278	live	datum_book_history_entry	1	0
+proc	/datum/book_history_entry	serialize	code/modules/library/admin_only.dm:292		yes	full	proc root
+type	/datum/admin_book_viewer	/datum	code/modules/library/admin_only.dm:306	live	datum_admin_book_viewer	1	0
+proc	/datum/admin_book_viewer	set_owner	code/modules/library/admin_only.dm:330	owner	yes	full	proc root
+proc	/datum/admin_book_viewer	ui_interact	code/modules/library/admin_only.dm:334	user,ui	yes	full	proc
+proc	/datum/admin_book_viewer	ui_status	code/modules/library/admin_only.dm:342	user,state	yes	full	proc
+proc	/datum/admin_book_viewer	ui_data	code/modules/library/admin_only.dm:347	user	yes	full	proc
 type	/datum/book_info	/datum	code/modules/library/book_info.dm:9	live	datum_book_info	1	0
 proc	/datum/book_info	New	code/modules/library/book_info.dm:15	_title,_author,_content	yes	full	proc
 proc	/datum/book_info	set_title	code/modules/library/book_info.dm:20	_title,trusted	yes	full	proc root
@@ -50350,8 +50350,8 @@ type	/atom/movable/screen/alert/status_effect/clone_decay	/atom/movable/screen/a
 type	/atom/movable/screen/alert/status_effect/bloodchill	/atom/movable/screen/alert/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:198	live	atom_movable_screen_alert_status_effect_bloodchill	0	0
 type	/atom/movable/screen/alert/status_effect/bonechill	/atom/movable/screen/alert/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:242	live	atom_movable_screen_alert_status_effect_bonechill	0	0
 type	/atom/movable/screen/alert/status_effect/bluespaceslime	/atom/movable/screen/alert/status_effect	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:685	live	atom_movable_screen_alert_status_effect_bluespaceslime	0	0
-type	/atom/movable/screen/alert/status_effect/shapeshifted	/atom/movable/screen/alert/status_effect	code/modules/spells/spell_types/shapeshift/_shape_status.dm:247	inert	atom_movable_screen_alert_status_effect_shapeshifted	0	0
-proc	/atom/movable/screen/alert/status_effect/shapeshifted	Click	code/modules/spells/spell_types/shapeshift/_shape_status.dm:254	location,control,params	no	-	proc
+type	/atom/movable/screen/alert/status_effect/shapeshifted	/atom/movable/screen/alert/status_effect	code/modules/spells/spell_types/shapeshift/_shape_status.dm:247	live	atom_movable_screen_alert_status_effect_shapeshifted	1	0
+proc	/atom/movable/screen/alert/status_effect/shapeshifted	Click	code/modules/spells/spell_types/shapeshift/_shape_status.dm:254	location,control,params	yes	full	proc
 type	/atom/movable/screen/alert/status_effect/anomalock_active	/atom/movable/screen/alert/status_effect	code/modules/surgery/organs/internal/heart/heart_anomalock.dm:246	live	atom_movable_screen_alert_status_effect_anomalock_active	0	0
 type	/atom/movable/screen/alert/status_effect/golem_statued	/atom/movable/screen/alert/status_effect	code/modules/surgery/organs/internal/stomach/stomach_golem.dm:64	live	atom_movable_screen_alert_status_effect_golem_statued	0	0
 type	/atom/movable/screen/alert/nocell	/atom/movable/screen/alert	code/_onclick/hud/screen_objects/alert.dm:775	live	atom_movable_screen_alert_nocell	0	0
@@ -51580,8 +51580,8 @@ proc	/mob/living	put_in_hand_check	code/modules/mob/inventory.dm:211	I	yes	full	
 proc	/mob/living	unequip_everything	code/modules/mob/inventory.dm:486		yes	full	proc root
 proc	/mob/living	get_all_gear	code/modules/mob/inventory.dm:686	equipment_flags,recursive	yes	full	proc root
 proc	/mob/living	gather_belongings	code/modules/mob/inventory.dm:697	equipment_flags,recursive	yes	full	proc root
-proc	/mob/living	drop_everything	code/modules/mob/inventory.dm:704	del_on_drop,force,del_if_nodrop	yes	skeleton	proc root
-proc	/mob/living	get_all_cells	code/modules/mob/inventory.dm:727	max_percent	yes	skeleton	proc root
+proc	/mob/living	drop_everything	code/modules/mob/inventory.dm:704	del_on_drop,force,del_if_nodrop	yes	full	proc root
+proc	/mob/living	get_all_cells	code/modules/mob/inventory.dm:727	max_percent	yes	full	proc root
 proc	/mob/living	get_all_linked_holoparasites	code/modules/mob/living/basic/guardian/guardian_helpers.dm:2		yes	full	proc root
 proc	/mob/living	can_have_blood	code/modules/mob/living/blood.dm:11		yes	full	proc root
 proc	/mob/living	get_blood_volume	code/modules/mob/living/blood.dm:20	apply_modifiers	yes	full	proc root
@@ -54589,8 +54589,8 @@ type	/mob/living/basic/slime/pet	/mob/living/basic/slime	code/modules/mob/living
 proc	/mob/living/basic/slime/pet	Initialize	code/modules/mob/living/basic/slime/slime.dm:167	mapload,new_colour,new_life_stage	yes	full	proc
 type	/mob/living/basic/slime/hilbert	/mob/living/basic/slime	code/modules/mob/living/basic/slime/slime.dm:174	live	mob_living_basic_slime_hilbert	1	0
 proc	/mob/living/basic/slime/hilbert	Initialize	code/modules/mob/living/basic/slime/slime.dm:174	mapload,new_colour,new_life_stage	yes	full	proc
-type	/mob/living/basic/slime/transformed_slime	/mob/living/basic/slime	code/modules/research/xenobiology/crossbreeding/_mobs.dm:35	inert	mob_living_basic_slime_transformed_slime	0	0
-proc	/mob/living/basic/slime/transformed_slime	reproduce	code/modules/research/xenobiology/crossbreeding/_mobs.dm:35		no	-	proc
+type	/mob/living/basic/slime/transformed_slime	/mob/living/basic/slime	code/modules/research/xenobiology/crossbreeding/_mobs.dm:35	live	mob_living_basic_slime_transformed_slime	1	0
+proc	/mob/living/basic/slime/transformed_slime	reproduce	code/modules/research/xenobiology/crossbreeding/_mobs.dm:35		yes	full	proc
 type	/mob/living/basic/festivus	/mob/living/basic	code/modules/mob/living/basic/festivus_pole.dm:5	inert	mob_living_basic_festivus	0	0
 proc	/mob/living/basic/festivus	Initialize	code/modules/mob/living/basic/festivus_pole.dm:46	mapload	no	-	proc
 proc	/mob/living/basic/festivus	attack_hand	code/modules/mob/living/basic/festivus_pole.dm:62	user,modifiers	no	-	proc
@@ -57780,8 +57780,8 @@ proc	/obj/item/clothing/head/wig/natural	Initialize	code/modules/clothing/head/w
 proc	/obj/item/clothing/head/wig/natural	visual_equipped	code/modules/clothing/head/wig.dm:115	user,slot	yes	full	proc
 type	/obj/item/clothing/head/mod	/obj/item/clothing/head	code/modules/mod/mod_clothes.dm:2	live	obj_item_clothing_head_mod	1	0
 proc	/obj/item/clothing/head/mod	Initialize	code/modules/mod/mod_clothes.dm:15	mapload	yes	full	proc
-type	/obj/item/clothing/head/peaceflower	/obj/item/clothing/head	code/modules/research/xenobiology/crossbreeding/_clothing.dm:101	inert	obj_item_clothing_head_peaceflower	0	0
-proc	/obj/item/clothing/head/peaceflower	can_mob_unequip	code/modules/research/xenobiology/crossbreeding/_clothing.dm:116	user	no	-	proc
+type	/obj/item/clothing/head/peaceflower	/obj/item/clothing/head	code/modules/research/xenobiology/crossbreeding/_clothing.dm:101	live	obj_item_clothing_head_peaceflower	1	0
+proc	/obj/item/clothing/head/peaceflower	can_mob_unequip	code/modules/research/xenobiology/crossbreeding/_clothing.dm:116	user	yes	full	proc
 type	/obj/item/clothing/shoes	/obj/item/clothing	code/modules/clothing/shoes/_shoes.dm:2	base	obj_item_clothing_shoes	1	1
 proc	/obj/item/clothing/shoes	Initialize	code/modules/clothing/shoes/_shoes.dm:34	mapload	yes	full	proc
 proc	/obj/item/clothing/shoes	add_context	code/modules/clothing/shoes/_shoes.dm:38	source,context,held_item,user	stub	deferred	proc
@@ -58287,9 +58287,9 @@ type	/obj/item/clothing/mask/muzzle/tape/pointy	/obj/item/clothing/mask/muzzle/t
 type	/obj/item/clothing/mask/muzzle/tape/pointy/super	/obj/item/clothing/mask/muzzle/tape/pointy	code/modules/clothing/masks/muzzle.dm:103	live	obj_item_clothing_mask_muzzle_tape_pointy_super	0	0
 type	/obj/item/clothing/mask/surgical	/obj/item/clothing/mask	code/modules/clothing/masks/surgical.dm:2	live	obj_item_clothing_mask_surgical	1	1
 proc	/obj/item/clothing/mask/surgical	attack_self	code/modules/clothing/masks/surgical.dm:17	user	yes	full	proc
-type	/obj/item/clothing/mask/nobreath	/obj/item/clothing/mask	code/modules/research/xenobiology/crossbreeding/_clothing.dm:9	inert	obj_item_clothing_mask_nobreath	0	0
-proc	/obj/item/clothing/mask/nobreath	equipped	code/modules/research/xenobiology/crossbreeding/_clothing.dm:24	user,slot	no	-	proc
-proc	/obj/item/clothing/mask/nobreath	dropped	code/modules/research/xenobiology/crossbreeding/_clothing.dm:31	user	no	-	proc
+type	/obj/item/clothing/mask/nobreath	/obj/item/clothing/mask	code/modules/research/xenobiology/crossbreeding/_clothing.dm:9	live	obj_item_clothing_mask_nobreath	1	0
+proc	/obj/item/clothing/mask/nobreath	equipped	code/modules/research/xenobiology/crossbreeding/_clothing.dm:24	user,slot	yes	full	proc
+proc	/obj/item/clothing/mask/nobreath	dropped	code/modules/research/xenobiology/crossbreeding/_clothing.dm:31	user	yes	full	proc
 type	/obj/item/clothing/accessory	/obj/item/clothing	code/modules/clothing/under/accessories/_accessories.dm:12	live	obj_item_clothing_accessory	1	1
 proc	/obj/item/clothing/accessory	Initialize	code/modules/clothing/under/accessories/_accessories.dm:32	mapload	yes	full	proc
 proc	/obj/item/clothing/accessory	can_attach_accessory	code/modules/clothing/under/accessories/_accessories.dm:39	attach_to,user	yes	full	proc root
@@ -58793,9 +58793,9 @@ proc	/obj/item/clothing/suit/armor/swat	Initialize	code/modules/clothing/suits/a
 proc	/obj/item/clothing/suit/armor/swat	init_rustle_component	code/modules/clothing/suits/armor.dm:448		yes	full	proc root
 type	/obj/item/clothing/suit/armor/heavy	/obj/item/clothing/suit/armor	code/modules/clothing/suits/armor.dm:466	live	obj_item_clothing_suit_armor_heavy	1	0
 proc	/obj/item/clothing/suit/armor/heavy	Initialize	code/modules/clothing/suits/armor.dm:479	mapload	yes	full	proc
-type	/obj/item/clothing/suit/armor/heavy/adamantine	/obj/item/clothing/suit/armor/heavy	code/modules/research/xenobiology/crossbreeding/_clothing.dm:123	inert	obj_item_clothing_suit_armor_heavy_adamantine	0	0
-proc	/obj/item/clothing/suit/armor/heavy/adamantine	Initialize	code/modules/research/xenobiology/crossbreeding/_clothing.dm:136	mapload	no	-	proc
-proc	/obj/item/clothing/suit/armor/heavy/adamantine	IsReflect	code/modules/research/xenobiology/crossbreeding/_clothing.dm:140	def_zone	no	-	proc
+type	/obj/item/clothing/suit/armor/heavy/adamantine	/obj/item/clothing/suit/armor/heavy	code/modules/research/xenobiology/crossbreeding/_clothing.dm:123	live	obj_item_clothing_suit_armor_heavy_adamantine	1	0
+proc	/obj/item/clothing/suit/armor/heavy/adamantine	Initialize	code/modules/research/xenobiology/crossbreeding/_clothing.dm:136	mapload	yes	full	proc
+proc	/obj/item/clothing/suit/armor/heavy/adamantine	IsReflect	code/modules/research/xenobiology/crossbreeding/_clothing.dm:140	def_zone	yes	full	proc
 type	/obj/item/clothing/suit/armor/tdome	/obj/item/clothing/suit/armor	code/modules/clothing/suits/armor.dm:494	live	obj_item_clothing_suit_armor_tdome	0	0
 type	/obj/item/clothing/suit/armor/tdome/red	/obj/item/clothing/suit/armor/tdome	code/modules/clothing/suits/armor.dm:512	live	obj_item_clothing_suit_armor_tdome_red	0	0
 type	/obj/item/clothing/suit/armor/tdome/green	/obj/item/clothing/suit/armor/tdome	code/modules/clothing/suits/armor.dm:518	live	obj_item_clothing_suit_armor_tdome_green	0	0
@@ -60004,8 +60004,8 @@ proc	/obj/item/clothing/glasses/godeye	dropped	code/modules/mining/lavaland/mini
 proc	/obj/item/clothing/glasses/godeye	pain	code/modules/mining/lavaland/mining_loot/eye_of_god.dm:37	victim	yes	full	proc root
 type	/obj/item/clothing/glasses/mod	/obj/item/clothing/glasses	code/modules/mod/mod_clothes.dm:154	live	obj_item_clothing_glasses_mod	1	0
 proc	/obj/item/clothing/glasses/mod	Initialize	code/modules/mod/mod_clothes.dm:165	mapload	yes	full	proc
-type	/obj/item/clothing/glasses/prism_glasses	/obj/item/clothing/glasses	code/modules/research/xenobiology/crossbreeding/_clothing.dm:36	inert	obj_item_clothing_glasses_prism_glasses	0	0
-proc	/obj/item/clothing/glasses/prism_glasses	Initialize	code/modules/research/xenobiology/crossbreeding/_clothing.dm:45	mapload	no	-	proc
+type	/obj/item/clothing/glasses/prism_glasses	/obj/item/clothing/glasses	code/modules/research/xenobiology/crossbreeding/_clothing.dm:36	live	obj_item_clothing_glasses_prism_glasses	1	0
+proc	/obj/item/clothing/glasses/prism_glasses	Initialize	code/modules/research/xenobiology/crossbreeding/_clothing.dm:45	mapload	yes	full	proc
 type	/obj/item/clothing/ears	/obj/item/clothing	code/modules/clothing/ears/_ears.dm:4	live	obj_item_clothing_ears	0	1
 type	/obj/item/clothing/ears/earmuffs	/obj/item/clothing/ears	code/modules/clothing/ears/_ears.dm:14	live	obj_item_clothing_ears_earmuffs	1	1
 proc	/obj/item/clothing/ears/earmuffs	Initialize	code/modules/clothing/ears/_ears.dm:27	mapload	yes	full	proc
@@ -61936,9 +61936,9 @@ proc	/obj/item/gun/magic/hook	suicide_act	code/modules/projectiles/guns/special/
 proc	/obj/item/gun/magic/hook	on_mail_unwrap	code/modules/projectiles/guns/special/meat_hook.dm:45	user,letter	yes	full	proc
 type	/obj/item/gun/magic/hook/bounty	/obj/item/gun/magic/hook	code/modules/projectiles/guns/special/meat_hook.dm:214	live	obj_item_gun_magic_hook_bounty	0	0
 type	/obj/item/gun/magic/hook/debug	/obj/item/gun/magic/hook	code/modules/projectiles/guns/special/meat_hook.dm:226	live	obj_item_gun_magic_hook_debug	0	0
-type	/obj/item/gun/magic/bloodchill	/obj/item/gun/magic	code/modules/research/xenobiology/crossbreeding/_weapons.dm:85	inert	obj_item_gun_magic_bloodchill	0	0
-proc	/obj/item/gun/magic/bloodchill	Initialize	code/modules/research/xenobiology/crossbreeding/_weapons.dm:103	mapload	no	-	proc
-proc	/obj/item/gun/magic/bloodchill	process	code/modules/research/xenobiology/crossbreeding/_weapons.dm:107	seconds_per_tick	no	-	proc
+type	/obj/item/gun/magic/bloodchill	/obj/item/gun/magic	code/modules/research/xenobiology/crossbreeding/_weapons.dm:85	live	obj_item_gun_magic_bloodchill	1	0
+proc	/obj/item/gun/magic/bloodchill	Initialize	code/modules/research/xenobiology/crossbreeding/_weapons.dm:103	mapload	yes	full	proc
+proc	/obj/item/gun/magic/bloodchill	process	code/modules/research/xenobiology/crossbreeding/_weapons.dm:107	seconds_per_tick	yes	full	proc
 type	/obj/item/gun/medbeam	/obj/item/gun	code/modules/projectiles/guns/special/medbeam.dm:2	live	obj_item_gun_medbeam	1	0
 proc	/obj/item/gun/medbeam	Destroy	code/modules/projectiles/guns/special/medbeam.dm:21	user	yes	full	proc
 proc	/obj/item/gun/medbeam	dropped	code/modules/projectiles/guns/special/medbeam.dm:25	user	yes	full	proc
@@ -64124,9 +64124,9 @@ type	/obj/item/food/ready_donk/nachos_grandes	/obj/item/food/ready_donk	code/mod
 type	/obj/item/food/ready_donk/donkrange_chicken	/obj/item/food/ready_donk	code/modules/food_and_drinks/food/packaged.dm:311	live	obj_item_food_ready_donk_donkrange_chicken	0	0
 type	/obj/item/food/ready_donk/salisbury_steak	/obj/item/food/ready_donk	code/modules/food_and_drinks/food/packaged.dm:327	live	obj_item_food_ready_donk_salisbury_steak	0	0
 type	/obj/item/food/ready_donk/country_chicken	/obj/item/food/ready_donk	code/modules/food_and_drinks/food/packaged.dm:343	live	obj_item_food_ready_donk_country_chicken	0	0
-type	/obj/item/food/rationpack	/obj/item/food	code/modules/food_and_drinks/food/packaged.dm:360	inert	obj_item_food_rationpack	0	0
-proc	/obj/item/food/rationpack	make_edible	code/modules/food_and_drinks/food/packaged.dm:373		no	-	proc
-proc	/obj/item/food/rationpack	check_liked	code/modules/food_and_drinks/food/packaged.dm:377	mob	no	-	proc root
+type	/obj/item/food/rationpack	/obj/item/food	code/modules/food_and_drinks/food/packaged.dm:360	live	obj_item_food_rationpack	1	0
+proc	/obj/item/food/rationpack	make_edible	code/modules/food_and_drinks/food/packaged.dm:373		yes	full	proc
+proc	/obj/item/food/rationpack	check_liked	code/modules/food_and_drinks/food/packaged.dm:377	mob	yes	full	proc root
 type	/obj/item/food/pancakes	/obj/item/food	code/modules/food_and_drinks/food/pancakes.dm:4	live	obj_item_food_pancakes	1	0
 proc	/obj/item/food/pancakes	Initialize	code/modules/food_and_drinks/food/pancakes.dm:87	mapload	yes	full	proc
 proc	/obj/item/food/pancakes	update_name	code/modules/food_and_drinks/food/pancakes.dm:91		yes	full	proc
@@ -66383,8 +66383,8 @@ proc	/obj/item/melee/arm_blade	Initialize	code/modules/antagonists/changeling/po
 proc	/obj/item/melee/arm_blade	afterattack	code/modules/antagonists/changeling/powers/mutations.dm:230	target,user,modifiers,attack_modifiers	yes	full	proc
 proc	/obj/item/melee/arm_blade	dropped	code/modules/antagonists/changeling/powers/mutations.dm:260	user	yes	full	proc
 type	/obj/item/melee/arm_blade/false	/obj/item/melee/arm_blade	code/modules/antagonists/changeling/powers/tiny_prick.dm:158	live	obj_item_melee_arm_blade_false	0	0
-type	/obj/item/melee/arm_blade/slime	/obj/item/melee/arm_blade	code/modules/research/xenobiology/crossbreeding/_weapons.dm:9	inert	obj_item_melee_arm_blade_slime	0	0
-proc	/obj/item/melee/arm_blade/slime	attack	code/modules/research/xenobiology/crossbreeding/_weapons.dm:14	L,user	no	-	proc
+type	/obj/item/melee/arm_blade/slime	/obj/item/melee/arm_blade	code/modules/research/xenobiology/crossbreeding/_weapons.dm:9	live	obj_item_melee_arm_blade_slime	1	0
+proc	/obj/item/melee/arm_blade/slime	attack	code/modules/research/xenobiology/crossbreeding/_weapons.dm:14	L,user	yes	full	proc
 type	/obj/item/melee/blood_magic	/obj/item/melee	code/modules/antagonists/cult/blood_magic.dm:347	inert	obj_item_melee_blood_magic	0	0
 proc	/obj/item/melee/blood_magic	Initialize	code/modules/antagonists/cult/blood_magic.dm:364	mapload,spell	no	-	proc
 proc	/obj/item/melee/blood_magic	Destroy	code/modules/antagonists/cult/blood_magic.dm:371		no	-	proc
@@ -72108,9 +72108,9 @@ type	/obj/item/circuitboard/computer/arcade/amputation	/obj/item/circuitboard/co
 type	/obj/item/circuitboard/computer/arcade/battle	/obj/item/circuitboard/computer/arcade	code/game/objects/items/circuitboards/computer_circuitboards.dm:254	live	obj_item_circuitboard_computer_arcade_battle	0	0
 type	/obj/item/circuitboard/computer/arcade/orion_trail	/obj/item/circuitboard/computer/arcade	code/game/objects/items/circuitboards/computer_circuitboards.dm:259	live	obj_item_circuitboard_computer_arcade_orion_trail	0	0
 type	/obj/item/circuitboard/computer/holodeck	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:264	live	obj_item_circuitboard_computer_holodeck	0	0
-type	/obj/item/circuitboard/computer/libraryconsole	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:269	inert	obj_item_circuitboard_computer_libraryconsole	0	0
-proc	/obj/item/circuitboard/computer/libraryconsole	screwdriver_act	code/game/objects/items/circuitboards/computer_circuitboards.dm:276	user,tool	no	-	proc
-type	/obj/item/circuitboard/computer/libraryconsole/bookconsole	/obj/item/circuitboard/computer/libraryconsole	code/game/objects/items/circuitboards/computer_circuitboards.dm:273	inert	obj_item_circuitboard_computer_libraryconsole_bookconsole	0	0
+type	/obj/item/circuitboard/computer/libraryconsole	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:269	live	obj_item_circuitboard_computer_libraryconsole	1	0
+proc	/obj/item/circuitboard/computer/libraryconsole	screwdriver_act	code/game/objects/items/circuitboards/computer_circuitboards.dm:276	user,tool	yes	full	proc
+type	/obj/item/circuitboard/computer/libraryconsole/bookconsole	/obj/item/circuitboard/computer/libraryconsole	code/game/objects/items/circuitboards/computer_circuitboards.dm:273	live	obj_item_circuitboard_computer_libraryconsole_bookconsole	0	0
 type	/obj/item/circuitboard/computer/monastery_shuttle	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:288	live	obj_item_circuitboard_computer_monastery_shuttle	0	0
 type	/obj/item/circuitboard/computer/olddoor	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:293	live	obj_item_circuitboard_computer_olddoor	0	0
 type	/obj/item/circuitboard/computer/pod	/obj/item/circuitboard/computer	code/game/objects/items/circuitboards/computer_circuitboards.dm:298	live	obj_item_circuitboard_computer_pod	0	0
@@ -73341,10 +73341,10 @@ type	/obj/item/tgui_book/manual	/obj/item/tgui_book	code/modules/library/book.dm
 proc	/obj/item/tgui_book/manual	ui_state	code/modules/library/book.dm:294	user	yes	full	proc
 type	/obj/item/tgui_book/manual/infuser	/obj/item/tgui_book/manual	code/game/machinery/dna_infuser/infuser_book.dm:3	live	obj_item_tgui_book_manual_infuser	1	1
 proc	/obj/item/tgui_book/manual/infuser	ui_static_data	code/game/machinery/dna_infuser/infuser_book.dm:9	user	yes	full	proc
-type	/obj/item/tgui_book/manual/dsm	/obj/item/tgui_book/manual	code/modules/library/book.dm:306	inert	obj_item_tgui_book_manual_dsm	0	1
-proc	/obj/item/tgui_book/manual/dsm	ui_static_data	code/modules/library/book.dm:313	user	no	-	proc
-type	/obj/item/tgui_book/manual/idc	/obj/item/tgui_book/manual	code/modules/library/book.dm:384	inert	obj_item_tgui_book_manual_idc	0	1
-proc	/obj/item/tgui_book/manual/idc	ui_static_data	code/modules/library/book.dm:391	user	no	-	proc
+type	/obj/item/tgui_book/manual/dsm	/obj/item/tgui_book/manual	code/modules/library/book.dm:306	live	obj_item_tgui_book_manual_dsm	1	1
+proc	/obj/item/tgui_book/manual/dsm	ui_static_data	code/modules/library/book.dm:313	user	yes	full	proc
+type	/obj/item/tgui_book/manual/idc	/obj/item/tgui_book/manual	code/modules/library/book.dm:384	live	obj_item_tgui_book_manual_idc	1	1
+proc	/obj/item/tgui_book/manual/idc	ui_static_data	code/modules/library/book.dm:391	user	yes	full	proc
 type	/obj/item/organ	/obj/item	code/modules/surgery/organs/_organ.dm:2	base	obj_item_organ	1	1
 proc	/obj/item/organ	New	code/modules/surgery/organs/_organ.dm:83	loc	yes	full	proc
 proc	/obj/item/organ	Initialize	code/modules/surgery/organs/_organ.dm:85	mapload	yes	full	proc
@@ -74718,8 +74718,8 @@ type	/obj/item/knife/plastic	/obj/item/knife	code/modules/food_and_drinks/equipm
 proc	/obj/item/knife/plastic	Initialize	code/modules/food_and_drinks/equipment/kitchen_utensils.dm:113	mapload	yes	full	proc
 type	/obj/item/knife/envy	/obj/item/knife	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27	inert	obj_item_knife_envy	0	0
 proc	/obj/item/knife/envy	afterattack	code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:40	target,user,modifiers,attack_modifiers	no	-	proc
-type	/obj/item/knife/rainbowknife	/obj/item/knife	code/modules/research/xenobiology/crossbreeding/_weapons.dm:21	inert	obj_item_knife_rainbowknife	0	0
-proc	/obj/item/knife/rainbowknife	afterattack	code/modules/research/xenobiology/crossbreeding/_weapons.dm:30	target,user,modifiers,attack_modifiers	no	-	proc
+type	/obj/item/knife/rainbowknife	/obj/item/knife	code/modules/research/xenobiology/crossbreeding/_weapons.dm:21	live	obj_item_knife_rainbowknife	1	0
+proc	/obj/item/knife/rainbowknife	afterattack	code/modules/research/xenobiology/crossbreeding/_weapons.dm:30	target,user,modifiers,attack_modifiers	yes	full	proc
 type	/obj/item/goliath_infuser_hammer	/obj/item	code/game/machinery/dna_infuser/organ_sets/goliath_organs.dm:101	live	obj_item_goliath_infuser_hammer	1	0
 proc	/obj/item/goliath_infuser_hammer	Initialize	code/game/machinery/dna_infuser/organ_sets/goliath_organs.dm:126	mapload	yes	full	proc
 proc	/obj/item/goliath_infuser_hammer	examine	code/game/machinery/dna_infuser/organ_sets/goliath_organs.dm:130	user	yes	full	proc
@@ -76016,8 +76016,8 @@ proc	/obj/item/shield/mirror	hit_reaction	code/modules/antagonists/cult/cult_ite
 proc	/obj/item/shield/mirror	readd	code/modules/antagonists/cult/cult_items.dm:1145		no	-	proc root
 proc	/obj/item/shield/mirror	IsReflect	code/modules/antagonists/cult/cult_items.dm:1151		no	-	proc
 proc	/obj/item/shield/mirror	throw_impact	code/modules/antagonists/cult/cult_items.dm:1156	hit_atom,throwingdatum	no	-	proc
-type	/obj/item/shield/adamantineshield	/obj/item/shield	code/modules/research/xenobiology/crossbreeding/_weapons.dm:53	inert	obj_item_shield_adamantineshield	0	0
-proc	/obj/item/shield/adamantineshield	Initialize	code/modules/research/xenobiology/crossbreeding/_weapons.dm:79	mapload	no	-	proc
+type	/obj/item/shield/adamantineshield	/obj/item/shield	code/modules/research/xenobiology/crossbreeding/_weapons.dm:53	live	obj_item_shield_adamantineshield	1	0
+proc	/obj/item/shield/adamantineshield	Initialize	code/modules/research/xenobiology/crossbreeding/_weapons.dm:79	mapload	yes	full	proc
 type	/obj/item/pinpointer	/obj/item	code/game/objects/items/pinpointer.dm:3	live	obj_item_pinpointer	1	1
 proc	/obj/item/pinpointer	Initialize	code/game/objects/items/pinpointer.dm:38	mapload	yes	full	proc
 proc	/obj/item/pinpointer	Destroy	code/game/objects/items/pinpointer.dm:42		yes	full	proc
@@ -77220,10 +77220,10 @@ type	/obj/item/camera/spooky	/obj/item/camera	code/modules/photography/camera/ot
 proc	/obj/item/camera/spooky	steal_souls	code/modules/photography/camera/other.dm:6	victims	yes	full	proc
 type	/obj/item/camera/spooky/badmin	/obj/item/camera/spooky	code/modules/photography/camera/other.dm:24	live	obj_item_camera_spooky_badmin	0	0
 type	/obj/item/camera/detective	/obj/item/camera	code/modules/photography/camera/other.dm:28	live	obj_item_camera_detective	0	1
-type	/obj/item/camera/rewind	/obj/item/camera	code/modules/research/xenobiology/crossbreeding/_misc.dm:9	inert	obj_item_camera_rewind	0	0
-proc	/obj/item/camera/rewind	on_flash	code/modules/research/xenobiology/crossbreeding/_misc.dm:48	target,user	no	-	proc
-type	/obj/item/camera/timefreeze	/obj/item/camera	code/modules/research/xenobiology/crossbreeding/_misc.dm:61	inert	obj_item_camera_timefreeze	0	0
-proc	/obj/item/camera/timefreeze	on_flash	code/modules/research/xenobiology/crossbreeding/_misc.dm:66	target,user	no	-	proc
+type	/obj/item/camera/rewind	/obj/item/camera	code/modules/research/xenobiology/crossbreeding/_misc.dm:9	live	obj_item_camera_rewind	1	0
+proc	/obj/item/camera/rewind	on_flash	code/modules/research/xenobiology/crossbreeding/_misc.dm:48	target,user	yes	full	proc
+type	/obj/item/camera/timefreeze	/obj/item/camera	code/modules/research/xenobiology/crossbreeding/_misc.dm:61	live	obj_item_camera_timefreeze	1	0
+proc	/obj/item/camera/timefreeze	on_flash	code/modules/research/xenobiology/crossbreeding/_misc.dm:66	target,user	yes	full	proc
 type	/obj/item/transfer_valve	/obj/item	code/game/objects/items/devices/transfer_valve.dm:2	live	obj_item_transfer_valve	1	1
 proc	/obj/item/transfer_valve	Initialize	code/game/objects/items/devices/transfer_valve.dm:25	mapload	yes	full	proc
 proc	/obj/item/transfer_valve	Destroy	code/game/objects/items/devices/transfer_valve.dm:32		yes	full	proc
@@ -82339,8 +82339,8 @@ type	/obj/item/slimepotion/slime/stabilizer	/obj/item/slimepotion/slime	code/mod
 proc	/obj/item/slimepotion/slime/stabilizer	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:920	interacting_slime,user,modifiers	yes	full	proc
 type	/obj/item/slimepotion/slime/mutator	/obj/item/slimepotion/slime	code/modules/research/xenobiology/xenobiology.dm:934	live	obj_item_slimepotion_slime_mutator	1	0
 proc	/obj/item/slimepotion/slime/mutator	interact_with_slime	code/modules/research/xenobiology/xenobiology.dm:938	interacting_slime,user,modifiers	yes	full	proc
-type	/obj/item/slimepotion/slime/chargedstabilizer	/obj/item/slimepotion/slime	code/modules/research/xenobiology/crossbreeding/_potions.dm:214	inert	obj_item_slimepotion_slime_chargedstabilizer	0	0
-proc	/obj/item/slimepotion/slime/chargedstabilizer	interact_with_slime	code/modules/research/xenobiology/crossbreeding/_potions.dm:218	interacting_slime,user,modifiers	no	-	proc
+type	/obj/item/slimepotion/slime/chargedstabilizer	/obj/item/slimepotion/slime	code/modules/research/xenobiology/crossbreeding/_potions.dm:214	live	obj_item_slimepotion_slime_chargedstabilizer	1	0
+proc	/obj/item/slimepotion/slime/chargedstabilizer	interact_with_slime	code/modules/research/xenobiology/crossbreeding/_potions.dm:218	interacting_slime,user,modifiers	yes	full	proc
 type	/obj/item/slimepotion/transference	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:834	live	obj_item_slimepotion_transference	1	0
 proc	/obj/item/slimepotion/transference	interact_with_atom	code/modules/research/xenobiology/xenobiology.dm:840	interacting_with,user,modifiers	yes	full	proc
 type	/obj/item/slimepotion/enhancer	/obj/item/slimepotion	code/modules/research/xenobiology/xenobiology.dm:911	live	obj_item_slimepotion_enhancer	0	0
@@ -86731,52 +86731,52 @@ proc	/obj/machinery/computer/holodeck	emp_act	code/modules/holodeck/computer.dm:
 proc	/obj/machinery/computer/holodeck	ex_act	code/modules/holodeck/computer.dm:463	severity,target	no	-	proc
 proc	/obj/machinery/computer/holodeck	Destroy	code/modules/holodeck/computer.dm:467		no	-	proc
 proc	/obj/machinery/computer/holodeck	blob_act	code/modules/holodeck/computer.dm:474	B	no	-	proc
-type	/obj/machinery/computer/libraryconsole	/obj/machinery/computer	code/modules/library/lib_machines.dm:22	inert	obj_machinery_computer_libraryconsole	0	1
-proc	/obj/machinery/computer/libraryconsole	Initialize	code/modules/library/lib_machines.dm:56	mapload	no	-	proc
-proc	/obj/machinery/computer/libraryconsole	ui_interact	code/modules/library/lib_machines.dm:61	user,ui	no	-	proc
-proc	/obj/machinery/computer/libraryconsole	ui_data	code/modules/library/lib_machines.dm:68	user	no	-	proc
-proc	/obj/machinery/computer/libraryconsole	ui_act	code/modules/library/lib_machines.dm:83	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/libraryconsole	prevent_db_spam	code/modules/library/lib_machines.dm:139		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	can_db_request	code/modules/library/lib_machines.dm:146		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	sanitize_page_input	code/modules/library/lib_machines.dm:154	input,default,max	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	convert_ambiguous_input	code/modules/library/lib_machines.dm:160	input,default	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	update_db_info	code/modules/library/lib_machines.dm:170		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	has_anything_changed	code/modules/library/lib_machines.dm:187		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	hash_search_info	code/modules/library/lib_machines.dm:192		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	update_page_contents	code/modules/library/lib_machines.dm:195		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole	update_page_count	code/modules/library/lib_machines.dm:227		no	-	proc root
-type	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	/obj/machinery/computer/libraryconsole	code/modules/library/admin_only.dm:6	inert	obj_machinery_computer_libraryconsole_admin_only_do_not_map_in_you_fucker	0	0
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	can_db_request	code/modules/library/admin_only.dm:17		no	-	proc
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	hash_search_info	code/modules/library/admin_only.dm:22		no	-	proc
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	update_page_contents	code/modules/library/admin_only.dm:26		no	-	proc
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	update_page_count	code/modules/library/admin_only.dm:61		no	-	proc
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	ui_status	code/modules/library/admin_only.dm:83	user,state	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	ui_act	code/modules/library/admin_only.dm:91	action,params,ui	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	ui_data	code/modules/library/admin_only.dm:138	user	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	view_book	code/modules/library/admin_only.dm:150	id,show_to	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	get_book_history	code/modules/library/admin_only.dm:181	id	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	hide_book	code/modules/library/admin_only.dm:206	id,reason,admin	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	unhide_book	code/modules/library/admin_only.dm:241	id,reason,admin	no	-	proc root
-type	/obj/machinery/computer/libraryconsole/bookmanagement	/obj/machinery/computer/libraryconsole	code/modules/library/lib_machines.dm:278	inert	obj_machinery_computer_libraryconsole_bookmanagement	0	1
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	Initialize	code/modules/library/lib_machines.dm:319	mapload	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_static_data	code/modules/library/lib_machines.dm:324	user	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_data	code/modules/library/lib_machines.dm:343	user	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_assets	code/modules/library/lib_machines.dm:411	user	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	load_nearby_books	code/modules/library/lib_machines.dm:414		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	get_scanner	code/modules/library/lib_machines.dm:419	viewrange	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_act	code/modules/library/lib_machines.dm:430	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	item_interaction	code/modules/library/lib_machines.dm:550	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	emag_act	code/modules/library/lib_machines.dm:564	user,emag_card	no	-	proc
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	set_screen_state	code/modules/library/lib_machines.dm:571	new_state	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	inventory_update	code/modules/library/lib_machines.dm:574		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	checkout_update	code/modules/library/lib_machines.dm:578		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_forbidden_lore	code/modules/library/lib_machines.dm:582	user	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	shun_the_corp	code/modules/library/lib_machines.dm:591	user	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	upload_from_scanner	code/modules/library/lib_machines.dm:595	upload_category	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	attempt_print	code/modules/library/lib_machines.dm:633	call_after	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_bible	code/modules/library/lib_machines.dm:642		no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_poster	code/modules/library/lib_machines.dm:651	poster_name	no	-	proc root
-proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_book	code/modules/library/lib_machines.dm:657	id	no	-	proc root
+type	/obj/machinery/computer/libraryconsole	/obj/machinery/computer	code/modules/library/lib_machines.dm:22	live	obj_machinery_computer_libraryconsole	1	1
+proc	/obj/machinery/computer/libraryconsole	Initialize	code/modules/library/lib_machines.dm:56	mapload	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole	ui_interact	code/modules/library/lib_machines.dm:61	user,ui	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole	ui_data	code/modules/library/lib_machines.dm:68	user	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole	ui_act	code/modules/library/lib_machines.dm:83	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole	prevent_db_spam	code/modules/library/lib_machines.dm:139		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole	can_db_request	code/modules/library/lib_machines.dm:146		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole	sanitize_page_input	code/modules/library/lib_machines.dm:154	input,default,max	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole	convert_ambiguous_input	code/modules/library/lib_machines.dm:160	input,default	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole	update_db_info	code/modules/library/lib_machines.dm:170		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole	has_anything_changed	code/modules/library/lib_machines.dm:187		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole	hash_search_info	code/modules/library/lib_machines.dm:192		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole	update_page_contents	code/modules/library/lib_machines.dm:195		yes	partial	proc root
+proc	/obj/machinery/computer/libraryconsole	update_page_count	code/modules/library/lib_machines.dm:227		yes	skeleton	proc root
+type	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	/obj/machinery/computer/libraryconsole	code/modules/library/admin_only.dm:6	live	obj_machinery_computer_libraryconsole_admin_only_do_not_map_in_you_fucker	1	0
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	can_db_request	code/modules/library/admin_only.dm:17		yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	hash_search_info	code/modules/library/admin_only.dm:22		yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	update_page_contents	code/modules/library/admin_only.dm:26		yes	partial	proc
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	update_page_count	code/modules/library/admin_only.dm:61		yes	skeleton	proc
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	ui_status	code/modules/library/admin_only.dm:83	user,state	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	ui_act	code/modules/library/admin_only.dm:91	action,params,ui	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	ui_data	code/modules/library/admin_only.dm:138	user	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	view_book	code/modules/library/admin_only.dm:150	id,show_to	yes	partial	proc root
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	get_book_history	code/modules/library/admin_only.dm:181	id	yes	partial	proc root
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	hide_book	code/modules/library/admin_only.dm:206	id,reason,admin	yes	partial	proc root
+proc	/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker	unhide_book	code/modules/library/admin_only.dm:241	id,reason,admin	yes	partial	proc root
+type	/obj/machinery/computer/libraryconsole/bookmanagement	/obj/machinery/computer/libraryconsole	code/modules/library/lib_machines.dm:278	live	obj_machinery_computer_libraryconsole_bookmanagement	1	1
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	Initialize	code/modules/library/lib_machines.dm:319	mapload	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_static_data	code/modules/library/lib_machines.dm:324	user	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_data	code/modules/library/lib_machines.dm:343	user	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_assets	code/modules/library/lib_machines.dm:411	user	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	load_nearby_books	code/modules/library/lib_machines.dm:414		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	get_scanner	code/modules/library/lib_machines.dm:419	viewrange	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	ui_act	code/modules/library/lib_machines.dm:430	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	item_interaction	code/modules/library/lib_machines.dm:550	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	emag_act	code/modules/library/lib_machines.dm:564	user,emag_card	yes	full	proc
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	set_screen_state	code/modules/library/lib_machines.dm:571	new_state	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	inventory_update	code/modules/library/lib_machines.dm:574		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	checkout_update	code/modules/library/lib_machines.dm:578		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_forbidden_lore	code/modules/library/lib_machines.dm:582	user	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	shun_the_corp	code/modules/library/lib_machines.dm:591	user	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	upload_from_scanner	code/modules/library/lib_machines.dm:595	upload_category	yes	partial	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	attempt_print	code/modules/library/lib_machines.dm:633	call_after	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_bible	code/modules/library/lib_machines.dm:642		yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_poster	code/modules/library/lib_machines.dm:651	poster_name	yes	full	proc root
+proc	/obj/machinery/computer/libraryconsole/bookmanagement	print_book	code/modules/library/lib_machines.dm:657	id	yes	partial	proc root
 type	/obj/machinery/computer/vaultcontroller	/obj/machinery/computer	code/modules/mapfluff/ruins/spaceruin_code/TheDerelict.dm:46	inert	obj_machinery_computer_vaultcontroller	0	0
 proc	/obj/machinery/computer/vaultcontroller	process	code/modules/mapfluff/ruins/spaceruin_code/TheDerelict.dm:68		no	-	proc
 proc	/obj/machinery/computer/vaultcontroller	update_cable	code/modules/mapfluff/ruins/spaceruin_code/TheDerelict.dm:76		no	-	proc root
@@ -92788,23 +92788,23 @@ proc	/obj/machinery/seed_extractor	ui_interact	code/modules/hydroponics/seed_ext
 proc	/obj/machinery/seed_extractor	ui_data	code/modules/hydroponics/seed_extractor.dm:219		yes	full	proc
 proc	/obj/machinery/seed_extractor	ui_static_data	code/modules/hydroponics/seed_extractor.dm:234	user	yes	full	proc
 proc	/obj/machinery/seed_extractor	ui_act	code/modules/hydroponics/seed_extractor.dm:248	action,params,ui,state	yes	full	proc
-type	/obj/machinery/libraryscanner	/obj/machinery	code/modules/library/lib_machines.dm:694	inert	obj_machinery_libraryscanner	0	1
-proc	/obj/machinery/libraryscanner	screwdriver_act	code/modules/library/lib_machines.dm:705	user,tool	no	-	proc
-proc	/obj/machinery/libraryscanner	crowbar_act	code/modules/library/lib_machines.dm:708	user,tool	no	-	proc
-proc	/obj/machinery/libraryscanner	update_icon_state	code/modules/library/lib_machines.dm:711		no	-	proc
-proc	/obj/machinery/libraryscanner	Destroy	code/modules/library/lib_machines.dm:715		no	-	proc
-proc	/obj/machinery/libraryscanner	item_interaction	code/modules/library/lib_machines.dm:720	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/libraryscanner	Exited	code/modules/library/lib_machines.dm:731	gone,direction	no	-	proc
-proc	/obj/machinery/libraryscanner	ui_interact	code/modules/library/lib_machines.dm:736	user,ui	no	-	proc
-proc	/obj/machinery/libraryscanner	ui_data	code/modules/library/lib_machines.dm:742		no	-	proc
-proc	/obj/machinery/libraryscanner	ui_act	code/modules/library/lib_machines.dm:754	action,params,ui,state	no	-	proc
-type	/obj/machinery/bookbinder	/obj/machinery	code/modules/library/lib_machines.dm:779	inert	obj_machinery_bookbinder	0	1
-proc	/obj/machinery/bookbinder	screwdriver_act	code/modules/library/lib_machines.dm:793	user,tool	no	-	proc
-proc	/obj/machinery/bookbinder	crowbar_act	code/modules/library/lib_machines.dm:796	user,tool	no	-	proc
-proc	/obj/machinery/bookbinder	update_icon_state	code/modules/library/lib_machines.dm:799		no	-	proc
-proc	/obj/machinery/bookbinder	item_interaction	code/modules/library/lib_machines.dm:803	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/bookbinder	prebind_book	code/modules/library/lib_machines.dm:816	user,draw_from	no	-	proc root
-proc	/obj/machinery/bookbinder	bind_book	code/modules/library/lib_machines.dm:839	draw_from	no	-	proc root
+type	/obj/machinery/libraryscanner	/obj/machinery	code/modules/library/lib_machines.dm:694	live	obj_machinery_libraryscanner	1	1
+proc	/obj/machinery/libraryscanner	screwdriver_act	code/modules/library/lib_machines.dm:705	user,tool	yes	full	proc
+proc	/obj/machinery/libraryscanner	crowbar_act	code/modules/library/lib_machines.dm:708	user,tool	yes	full	proc
+proc	/obj/machinery/libraryscanner	update_icon_state	code/modules/library/lib_machines.dm:711		yes	full	proc
+proc	/obj/machinery/libraryscanner	Destroy	code/modules/library/lib_machines.dm:715		yes	full	proc
+proc	/obj/machinery/libraryscanner	item_interaction	code/modules/library/lib_machines.dm:720	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/libraryscanner	Exited	code/modules/library/lib_machines.dm:731	gone,direction	yes	full	proc
+proc	/obj/machinery/libraryscanner	ui_interact	code/modules/library/lib_machines.dm:736	user,ui	yes	full	proc
+proc	/obj/machinery/libraryscanner	ui_data	code/modules/library/lib_machines.dm:742		yes	full	proc
+proc	/obj/machinery/libraryscanner	ui_act	code/modules/library/lib_machines.dm:754	action,params,ui,state	yes	full	proc
+type	/obj/machinery/bookbinder	/obj/machinery	code/modules/library/lib_machines.dm:779	live	obj_machinery_bookbinder	1	1
+proc	/obj/machinery/bookbinder	screwdriver_act	code/modules/library/lib_machines.dm:793	user,tool	yes	full	proc
+proc	/obj/machinery/bookbinder	crowbar_act	code/modules/library/lib_machines.dm:796	user,tool	yes	full	proc
+proc	/obj/machinery/bookbinder	update_icon_state	code/modules/library/lib_machines.dm:799		yes	full	proc
+proc	/obj/machinery/bookbinder	item_interaction	code/modules/library/lib_machines.dm:803	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/bookbinder	prebind_book	code/modules/library/lib_machines.dm:816	user,draw_from	yes	full	proc root
+proc	/obj/machinery/bookbinder	bind_book	code/modules/library/lib_machines.dm:839	draw_from	yes	full	proc root
 type	/obj/machinery/skill_station	/obj/machinery	code/modules/library/skill_learning/skill_station.dm:5	live	obj_machinery_skill_station	1	1
 proc	/obj/machinery/skill_station	Initialize	code/modules/library/skill_learning/skill_station.dm:22	mapload	yes	full	proc
 proc	/obj/machinery/skill_station	ui_state	code/modules/library/skill_learning/skill_station.dm:27	user	yes	full	proc
@@ -95735,9 +95735,9 @@ proc	/obj/effect/forcefield/arena_shuttle	Initialize	code/game/area/areas/shuttl
 proc	/obj/effect/forcefield/arena_shuttle	Bumped	code/game/area/areas/shuttles.dm:281	AM	no	-	proc
 type	/obj/effect/forcefield/arena_shuttle_entrance	/obj/effect/forcefield	code/game/area/areas/shuttles.dm:309	inert	obj_effect_forcefield_arena_shuttle_entrance	0	0
 proc	/obj/effect/forcefield/arena_shuttle_entrance	Bumped	code/game/area/areas/shuttles.dm:313	AM	no	-	proc
-type	/obj/effect/forcefield/wizard	/obj/effect/forcefield	code/game/objects/effects/forcefields.dm:23	inert	obj_effect_forcefield_wizard	0	0
-proc	/obj/effect/forcefield/wizard	Initialize	code/game/objects/effects/forcefields.dm:27	mapload,caster,flags	no	-	proc
-proc	/obj/effect/forcefield/wizard	CanAllowThrough	code/game/objects/effects/forcefields.dm:33	mover,border_dir	no	-	proc
+type	/obj/effect/forcefield/wizard	/obj/effect/forcefield	code/game/objects/effects/forcefields.dm:23	live	obj_effect_forcefield_wizard	1	0
+proc	/obj/effect/forcefield/wizard	Initialize	code/game/objects/effects/forcefields.dm:27	mapload,caster,flags	yes	full	proc
+proc	/obj/effect/forcefield/wizard	CanAllowThrough	code/game/objects/effects/forcefields.dm:33	mover,border_dir	yes	full	proc
 type	/obj/effect/forcefield/wizard/heretic	/obj/effect/forcefield/wizard	code/modules/antagonists/heretic/items/labyrinth_handbook.dm:2	inert	obj_effect_forcefield_wizard_heretic	0	0
 proc	/obj/effect/forcefield/wizard/heretic	CanAllowThrough	code/modules/antagonists/heretic/items/labyrinth_handbook.dm:7	mover,border_dir	no	-	proc
 proc	/obj/effect/forcefield/wizard/heretic	Bumped	code/modules/antagonists/heretic/items/labyrinth_handbook.dm:12	bumpee	no	-	proc
@@ -106215,9 +106215,9 @@ proc	/obj/structure/altar/of_gods	Destroy	code/modules/religion/religion_structu
 proc	/obj/structure/altar/of_gods	examine_more	code/modules/religion/religion_structures.dm:63	user	yes	full	proc
 proc	/obj/structure/altar/of_gods	reflect_sect_in_icons	code/modules/religion/religion_structures.dm:78		yes	full	proc root
 proc	/obj/structure/altar/of_gods	get_chaplains	code/modules/religion/religion_structures.dm:95		yes	full	proc root
-type	/obj/structure/light_prism	/obj/structure	code/modules/research/xenobiology/crossbreeding/_clothing.dm:50	inert	obj_structure_light_prism	0	0
-proc	/obj/structure/light_prism	Initialize	code/modules/research/xenobiology/crossbreeding/_clothing.dm:58	mapload,newcolor	no	-	proc
-proc	/obj/structure/light_prism	attack_hand	code/modules/research/xenobiology/crossbreeding/_clothing.dm:65	user,modifiers	no	-	proc
+type	/obj/structure/light_prism	/obj/structure	code/modules/research/xenobiology/crossbreeding/_clothing.dm:50	live	obj_structure_light_prism	1	0
+proc	/obj/structure/light_prism	Initialize	code/modules/research/xenobiology/crossbreeding/_clothing.dm:58	mapload,newcolor	yes	full	proc
+proc	/obj/structure/light_prism	attack_hand	code/modules/research/xenobiology/crossbreeding/_clothing.dm:65	user,modifiers	yes	full	proc
 type	/obj/structure/ice_stasis	/obj/structure	code/modules/research/xenobiology/crossbreeding/_misc.dm:127	live	obj_structure_ice_stasis	1	0
 proc	/obj/structure/ice_stasis	Initialize	code/modules/research/xenobiology/crossbreeding/_misc.dm:143	mapload	yes	full	proc
 proc	/obj/structure/ice_stasis	Destroy	code/modules/research/xenobiology/crossbreeding/_misc.dm:147		yes	full	proc
@@ -106919,8 +106919,8 @@ proc	/obj/projectile/magic/wipe	on_hit	code/modules/projectiles/projectile/magic
 proc	/obj/projectile/magic/wipe	possession_test	code/modules/projectiles/projectile/magic.dm:386	target	no	-	proc root
 type	/obj/projectile/magic/nothing	/obj/projectile/magic	code/modules/projectiles/projectile/magic.dm:586	live	obj_projectile_magic_nothing	0	0
 type	/obj/projectile/magic/spellcard	/obj/projectile/magic	code/modules/projectiles/projectile/magic.dm:590	live	obj_projectile_magic_spellcard	0	0
-type	/obj/projectile/magic/bloodchill	/obj/projectile/magic	code/modules/research/xenobiology/crossbreeding/_weapons.dm:128	inert	obj_projectile_magic_bloodchill	0	0
-proc	/obj/projectile/magic/bloodchill	on_hit	code/modules/research/xenobiology/crossbreeding/_weapons.dm:132	target,blocked,pierce_hit	no	-	proc
+type	/obj/projectile/magic/bloodchill	/obj/projectile/magic	code/modules/research/xenobiology/crossbreeding/_weapons.dm:128	live	obj_projectile_magic_bloodchill	1	0
+proc	/obj/projectile/magic/bloodchill	on_hit	code/modules/research/xenobiology/crossbreeding/_weapons.dm:132	target,blocked,pierce_hit	yes	full	proc
 type	/obj/projectile/floating_blade	/obj/projectile	code/modules/antagonists/heretic/magic/furious_steel.dm:101	inert	obj_projectile_floating_blade	0	0
 proc	/obj/projectile/floating_blade	Initialize	code/modules/antagonists/heretic/magic/furious_steel.dm:113	mapload	no	-	proc
 proc	/obj/projectile/floating_blade	prehit_pierce	code/modules/antagonists/heretic/magic/furious_steel.dm:117	hit	no	-	proc

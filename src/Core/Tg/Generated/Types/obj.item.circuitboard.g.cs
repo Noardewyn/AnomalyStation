@@ -4849,9 +4849,9 @@ public partial class obj_item_circuitboard_computer_holodeck : obj_item_circuitb
     }
 }
 
-// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:269
-[DmPath("/obj/item/circuitboard/computer/libraryconsole"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_computer_libraryconsole : obj_item_circuitboard_computer
+// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:269 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/computer/libraryconsole")]
+public partial class obj_item_circuitboard_computer_libraryconsole
 {
     // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:269
     public obj_item_circuitboard_computer_libraryconsole()
@@ -4862,7 +4862,7 @@ public partial class obj_item_circuitboard_computer_libraryconsole : obj_item_ci
 }
 
 // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:273
-[DmPath("/obj/item/circuitboard/computer/libraryconsole/bookconsole"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/computer/libraryconsole/bookconsole"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_computer_libraryconsole_bookconsole : obj_item_circuitboard_computer_libraryconsole
 {
     // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:273

@@ -1138,6 +1138,48 @@ public static partial class TypeOrder
 27434	f1
 27448	f0
 27472	f0
+#agent
+1458	sUnknown
+1459	sadvance microbes
+1465	sKronkaine Abuse
+1466	sAllergy
+1467	sExcess Lepidopticides
+1468	sInflammatory
+1473	sApidae Infection
+1474	sCryptococcus Cosmosis
+1475	sQuantum Entanglement
+1476	sXY-rhinovirus
+1477	sICE9-rhinovirus
+1478	sEating the Death Sandwich wrong
+1479	sSevere Genetic Damage
+1480	sS4E1 Retrovirus
+1481	sGravitokinetic Bipotential SADS-
+1482	sH13N1 Flu Virion
+1483	s1nqu1s1t10n Flu Virion
+1484	sAgent S and DNA Restructuring
+1485	sGravitokinetic Bipotential SADS+
+1487	sFukkos Miracos
+1488	sFood-bourne Parasite
+1489	sAvian Vengence
+1490	sH0NI<42 Virus
+1491	sVirus
+1492	sUnknown
+1493	sShenanigans
+1494	sKongey Vibrion M-909
+1495	sR2D2 Nanomachines
+1496	sRip-LEY Alien Microbes
+1497	sAdvanced Mutation Toxin
+1498	sFell Doge Majicks
+1499	sGluttony's Blessing
+1500	sTranquility
+1502	sFungal Tubercle Bacillus Cosmosis
+1503	sWizard's Curse
+1504	sSub-quantum DNA Repulsion
+1505	sRincewindus Vulgaris
+1506	sCarp Ella
+1507	sAtmobacter Polyri
+1508	sStars
+1509	sUnholy Forces
 #ai_movement
 5417	y/datum/ai_movement/basic_avoidance
 5433	y/datum/ai_movement/basic_avoidance
@@ -4205,6 +4247,19 @@ public static partial class TypeOrder
 21569	sslash your arms at
 21570	sbite at
 21571	ssmash into the side of
+#author
+540	n
+562	n
+10461	n
+10468	n
+12002	s
+12003	s
+12004	s
+15565	n
+17515	n
+17516	n
+19480	n
+34352	s
 #availability_prob
 15319	i40
 15320	i50
@@ -8760,7 +8815,6 @@ public static partial class TypeOrder
 1058	srepulse
 1059	stailsweep
 1060	ssacredflame
-1061	sshapeshift
 1063	slock_ascension
 1064	sworm_ascend
 1066	stransformslime
@@ -13433,7 +13487,6 @@ public static partial class TypeOrder
 4413	sblack
 4414	slight-pink
 4415	sadamantine
-4416	sgold
 4417	srainbow
 19153	n
 19154	sgrey
@@ -14484,7 +14537,6 @@ public static partial class TypeOrder
 1058	f400
 1059	f150
 1060	f60
-1061	f100
 1063	f200
 1065	f300
 1066	f0
@@ -16509,6 +16561,47 @@ public static partial class TypeOrder
 3638	f3200
 3639	f1600
 3640	f1900
+#cure_text
+1458	s
+1465	sTrauma (Adrenaline / \u0022Determination\u0022)
+1466	sEpinephrine
+1467	sEthanol (Liquid Courage)
+1468	sAlbuterol or surgical intervention
+1473	sSugar
+1474	sMannitol
+1475	sAbated by Sansufentanyl
+1476	sSpaceacillin or rest
+1477	sSpaceacillin or common Cold antibodies
+1478	sAnacea
+1479	sRezadone, abated by Mutadone, or death
+1480	sMutadone
+1481	sSynaptizine & Sulfur
+1482	sSpaceacillin, abated by rest
+1483	sSpaceacillin or common Flu antibodies
+1484	sTable Salt & Mutadone
+1485	sSynaptizine & Sulfur
+1487	y/datum/reagent/iron
+1488	sSurgical removal of the liver
+1489	sHoly Water
+1490	sBanana products, especially banana bread.
+1491	sMutadone or rest
+1492	sChick Chicky Boom!
+1493	sA coder's love (theoretical).
+1494	sDeath
+1495	sCopper
+1496	sSpaceacillin & Glycerol
+1497	sFrost Oil
+1498	sDeath
+1499	sNothing
+1500	sCondensed Capsaicin (not applied via vapor)
+1502	sSpaceacillin & Convermol
+1503	sExorcism
+1504	sLiquid Dark Matter
+1505	sThe Manly Dorf, abated by magical grounding
+1506	sChlorine
+1507	sMilk
+1508	sSpace Cleaner
+1509	sHoly Water or rest
 #current_tile_charge
 6251	f0
 30379	f0
@@ -38264,7 +38357,6 @@ public static partial class TypeOrder
 4370	f200
 4371	f100
 4372	f300
-4373	f-1
 4374	f-1
 4376	f-1
 4377	f-1
@@ -41792,6 +41884,23 @@ public static partial class TypeOrder
 43933	f30
 #force_bonus
 31812	f0
+#form
+1458	sVirus
+1459	sAdvanced Disease
+1465	sCondition
+1466	sCondition
+1467	sCondition
+1468	sBronchitis
+1473	sParasite
+1478	sCondition
+1479	sVirus
+1488	sParasite
+1502	sFungus
+1503	sAffliction
+1506	sParasite
+1507	sBacteria
+1508	sCondition
+1509	sCondition
 #four_char_chance
 4234	f10
 4235	f4
@@ -65200,7 +65309,6 @@ public static partial class TypeOrder
 4370	sslumber_party
 4371	srainbow_protection
 4372	sslimeskin
-4373	sslime_recall
 4374	sslime_frozen
 4376	sslime_cloned
 4377	sslime_clonedecay
@@ -65242,7 +65350,6 @@ public static partial class TypeOrder
 4413	sstabilizedblack
 4414	sstabilizedlightpink
 4415	sstabilizedadamantine
-4416	sstabilizedgold
 4417	sstabilizedrainbow
 4418	sstabilizedbluespacecooldown
 4419	sbrokenpeace
@@ -65827,6 +65934,35 @@ public static partial class TypeOrder
 2422	f1
 2425	f1
 2427	f1
+#illness
+8108	sUnidentified
+8109	sMan-Mouth
+8112	sCold Shoulder
+8113	sPneumatic Tubes
+8114	sIron Lungs
+8115	sShattered Reality
+8116	sJest Infection
+8117	sAural Perforation
+8118	sBroken Face
+8119	sMotion Sickness
+8120	sBurning Desire
+8121	sSpontaneous Combustion
+8122	sCrispy Skin
+8123	sJellyitis
+8124	sPremature Mummification
+8125	sLycanthropy
+8126	sParanoyance
+8127	sBrain Freeze
+8139	sDiscrete Itching
+8140	sAurora Snorealis
+8144	sThin Skinned
+8145	sChroma Imbalance
+8146	sBard Flu
+8152	sDiluted Pupils
+8153	sMime Crisis
+8154	sCyclonic Irritation
+8155	sNebula Nausea
+8156	sPlacid Reflux
 #image_icon
 17129	ricons/effects/atmospherics.dmi
 37283	n
@@ -70158,6 +70294,18 @@ public static partial class TypeOrder
 43908	n
 #keylock
 31031	f2
+#known_trauma
+5975	f0
+5980	f0
+5984	f0
+5987	f0
+5996	f0
+6040	f0
+6041	f0
+6045	f0
+6050	f0
+6054	f0
+6056	f0
 #label
 4930	s
 5207	sSEQUENCE
@@ -73963,6 +74111,121 @@ public static partial class TypeOrder
 13713	y/obj/item/stack/sheet/mineral/plasma
 13714	y/obj/item/food/meat/slab/human/mutant/plant
 13715	y/obj/item/food/meat/slab/human/mutant/skeleton
+#medical_record_text
+10342	sPatient has a history with SOMETHING but he refuses to tell us what it is.
+10343	sPatient has a history of hard drugs.
+10344	sPatient is a current smoker.
+10345	sPatient is an alcoholic.
+10346	sPatient's immune system responds violently to certain chemicals.
+10347	sPatient has lost their sensation of smell.
+10348	sPatient suffers from asthma.
+10349	sPatient has permanent blindness.
+10350	sPatient has a tumor in their brain that is slowly driving them to brain death.
+10351	sPatient has an anomalous chronic illness that requires constant medication to keep under control.
+10352	sPatient's cochlear nerve is incurably damaged.
+10353	sPatient demonstrates an unnatural attachment to a family heirloom.
+10354	sPatient has lost their eyelids in a grueling accident.
+10355	sPatient's immune system responds violently to certain food.
+10356	sPatient is afflicted with chronic immunodeficiency.
+10357	sPatient appears to suffer from a weakness in the leg.
+10358	sPatient may involuntarily fall asleep during normal activities, and feel drowsy at any given moment.
+10359	sPatient requires prescription glasses in order to counteract nearsightedness.
+10360	sPatient has severe scarring on one of their eyes, resulting in partial vision loss.
+10361	sPatient starkly refused to take off headwear during examination.
+10362	sPatient mentions photography as a stress-relieving hobby.
+10363	sPatient reports being a big enjoyer of clowns.
+10364	sPatient reports being a big fan of mimes.
+10365	sPatient brain scans show a highly-developed auditory pathway.
+10366	sPatient reports a desire to cover walls with homemade objects.
+10367	sPatient can communicate with sign language.
+10368	sPatient was recently seen for possible paint huffing incident.
+10369	sPatient appears to be suffering from sleep deprivation.
+10370	sPatient scans indicate severe and chronic back pain.
+10371	sPatient requires regular treatment for blood loss due to low production of blood.
+10372	sThis patient has disclosed an extreme hatred for unnatural bodyparts and augmentations.
+10373	sPatient demonstrates a fear of tight spaces.
+10374	sPatient has demonstrated an extreme difficulty with high motor skill paired with an inability to demonstrate critical thinking.
+10375	sPatient is CSL.
+10376	sPatient is cursed with bad luck.
+10377	sPatient has a mild mood disorder causing them to experience acute episodes of depression.
+10378	sPatient has a bipolar personality disorder.
+10379	sPatient is absurdly easy to injure. Please take all due diligence to avoid possible malpractice suits.
+10380	sPatient is absurdly easy to knock out. Do not allow them near a boxing ring.
+10381	sPatient has an untreatable impairment in motor function on half of their body.
+10382	sPatient demonstrates a high level of emotional volatility.
+10383	sPatient is not literate.
+10384	sAlas, the patient struggled to scrape together enough money to pay the checkup bill.
+10385	sPatient suffers from acute Reality Dissociation Syndrome and experiences vivid hallucinations, and may have trouble speaking.
+10386	sPatient demonstrates a low tolerance for alcohol. (Wimp)
+10387	sPatient has a severe fear of being left alone.
+10388	sThe patient is unable to use their voice in any capacity.
+10389	sPatient is unusually pacifistic and cannot bring themselves to cause physical harm.
+10390	sThe patient exhibits congenital hypoesthesia, making them insensitive to pain stimuli.
+10391	sPatient demonstrates a fear of the dark. (Seriously?)
+10392	sPatient presents optimistically, but possesses a tendency to lose their head when placed under pressure.
+10393	sPatient has an untreatable impairment in motor function in the lower extremities.
+10394	sPatient has acute phobia of light, and insists it is physically harmful.
+10395	sPatient possesses a strong tremor in both hands.
+10396	sPatient suffers from prosopagnosia and cannot recognize faces.
+10398	sDuring physical examination, patient was found to have a low-budget prosthetic organ. <b>Removal of these organs is known to be dangerous to the patient as well as the practitioner.</b>
+10399	sPatient presents a notably unassertive personality and is easy to manipulate.
+10400	sPatient demonstrates a fear of fire.
+10401	sDuring physical examination, patient was found to have all low-budget prosthetic limbs.
+10402	sPatient is usually anxious in social encounters and prefers to avoid them.
+10403	sPatient is soft-spoken and difficult to hear.
+10404	sDuring physical examination, patient was found to have numerous low-budget prosthetic internal organs. <b>Removal of these organs is known to be dangerous to the patient as well as the practitioner.</b>
+10405	sPatient's mind is in a vulnerable state, and cannot recover from traumatic events.
+10406	sPatient is unable to tell objects apart from a distance.
+10407	sPatient demonstrates irregular nutrition preferences.
+10408	sPatient has passed all our social fitness tests with flying colours, but had trouble on the empathy tests.
+10409	sPatient does not speak Galactic Common and may require an interpreter.
+10410	sPatient has a severe video game addiction.
+10411	sPatient's irises are different colors.
+10412	sPatient is afflicted with almost complete color blindness.
+10413	sPatient suffers from ageusia and is incapable of tasting food or reagents.
+10414	sPatient has an irrational fear of something.
+10415	sPatient is correct to think that pineapple is disgusting.
+10416	sPatient demonstrates a pathological love of pineapple.
+10417	sFucking creep kept staring at me the whole damn checkup. I'm only diagnosing this because it's less awkward than thinking it was on purpose.
+10418	sPatient has Thanatorenasia - in the event of their death and resuscitation, they may experience memory loss or a change in personality.
+10419	sPatient reports hating pathetic creatures of meat and bone.
+10420	sPatient reports a vegetarian diet.
+10421	sPatient demonstrates a high tolerance for alcohol.
+10422	sPatient speaks multiple languages.
+10423	sPatient has a cybernetic implant on their back of their head that lets them install and remove skillchips at will. Gross.
+10424	sPatient explained how they got caught up in 'the skillchip chase' recently, and now they have some useless chip in their head. Dumbass.
+10425	sPatient routinely fakes cardiac arrest to get out of fights.
+10426	sPatient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages.
+10427	sPatient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed.
+10428	sPatient scored highly on cardio tests.
+10429	sPatient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case.
+10430	sPatient demonstrates constant euthymia irregular for environment. It's a bit much, to be honest.
+10431	sPatient has an unusually sensitive olfactory system.
+10432	sPatient's dexterity belies a strong capacity for stealth.
+10433	sPatient has a fascination with fire, and exhibits a compulsive desire to start fires.
+10434	sPatient demonstrates an uncanny knack for self-diagnosis.
+10435	sPatient has been exposed to planetary conditions for extended periods, resulting in an excessively stout build.
+10436	sPatient demonstrates a high aversion to danger and has described hiding in containers out of fear.
+10437	sPatient is well-adapted to non-terrestrial environments.
+10438	sPatient has a stronger than average immune system...to food poisoning, at least.
+10439	sPatient displays mastery over throwing balls.
+10440	sPatient has an above average appreciation for food and drink.
+#medical_symptom_text
+10373	sExperiences panic attacks and shortness of breath when confined in small spaces. Medication such as Psicodine may lessen the severity of the reaction.
+10374	sExhibits poor coordination and frequent accidents, along with difficulty in problem-solving and decision-making tasks.
+10377	sExperiences persistent feelings of sadness, hopelessness, and a lack of motivation.
+10378	sExhibits sudden and unpredictable changes in personality, mood, and behavior, often swinging between extremes of emotion and demeanor.
+10382	sExhibits heightened emotional responses to stimuli, leading to greatly increased sensitivity and reactivity in social situations.
+10390	sExhibits an inability to perceive pain, which may lead to unintentional self-injury and delayed response to harmful stimuli.
+10391	sExperiences panic attacks and shortness of breath when in dark environments. Medication such as Psicodine may lessen the severity of the reaction.
+10394	sExhibits heightened sensitivity to bright lights, leading to discomfort and avoidance behaviors.
+10396	sUnable to recognize familiar faces, often relying on alternative cues such as voice, clothing, identification, or context to identify individuals.
+10400	sExperiences panic attacks and shortness of breath when near open flames. Medication such as Psicodine may lessen the severity of the reaction.
+10402	sExperiences intense anxiety and discomfort in social situations, leading to avoidance of social interactions and difficulty in communication.
+10405	sExhibits severe mood instability and an inability to recover from psychological stressors.
+10418	sIn the event of the patient's death and resuscitation, they may experience memory loss or a change in personality.
+10430	sExhibits persistent feelings of happiness and elevated mood, which may lead to unrealistic optimism and risk-taking behaviors.
+10433	sExperiences an uncontrollable urge to start fires and a fascination with flames.
 #melee_damage_lower
 19143	f10
 19144	f15
@@ -108077,6 +108340,41 @@ public static partial class TypeOrder
 #quirk
 17754	n
 17755	y/datum/quirk/prosthetic_limb
+#quirk_flags
+10342	f3
+10346	f3
+10349	f5
+10350	f3
+10353	f3
+10359	f5
+10360	f5
+10361	f5
+10367	f5
+10369	f7
+10373	f17
+10374	f16
+10375	f8
+10377	f19
+10378	f19
+10382	f16
+10384	f9
+10390	f16
+10391	f17
+10394	f17
+10396	f17
+10397	f5
+10400	f16
+10401	f5
+10402	f17
+10405	f16
+10411	f5
+10418	f32
+10419	f3
+10426	f3
+10430	f19
+10433	f19
+10435	f5
+10437	f5
 #quote
 19372	sHail Coderbus! Coderbus #1! Fuck the playerbase!
 19373	sNanotrasen Recommends!
@@ -112930,6 +113228,59 @@ public static partial class TypeOrder
 10170	soperative_alias
 10171	shacker_alias
 10172	sloadout_list
+#scan_desc
+5973	spsychotic schizophrenic delusions
+5974	spartial schizophrenia
+5976	sgod delusion
+5977	sbluespace attunement
+5978	squantum alignment
+5979	sviolent psychosis
+5981	straumatic neuropathy
+5982	schronic functional necrosis
+5983	sexistential crisis
+5984	scriminal mind
+5985	sPTSD
+5986	sferality
+5987	sobject attachment
+5988	sdamaged frontal lobe
+5989	sdamaged frontal lobe
+5990	slooping thought pattern
+5992	slight hypersensitivity
+5993	sparanormal activity
+5994	sthaumic blank
+5995	sextra-sensory paranoia
+5998	sschizophrenia
+5999	sreduced mouth coordination
+6000	sreduced brain activity
+6001	scommunication disorder
+6002	sconcussion
+6003	sself-awareness deficit
+6004	sweak motor nerve signal
+6005	snervous fits
+6006	snervous cough
+6007	sinability to form complex sentences
+6008	slooping neural pattern
+6009	scolorblindness
+6010	spossessiveness
+6011	sphobia
+6036	sextensive damage to the brain's speech center
+6037	sextensive damage to the brain's language center
+6038	sextensive damage to the brain's occipital lobe
+6039	scerebral paralysis
+6044	straumatic narcolepsy
+6045	schronic narcolepsy
+6046	smonophobia
+6047	sextreme discoordination
+6048	spacific syndrome
+6049	soneiric feedback loop
+6050	soneiric feedback loop
+6051	sdyslexia
+6052	skleptomania
+6053	scomplete lobe separation
+6054	scomplete lobe separation
+6055	salcohol-induced CNS impairment
+6056	scosmic neural pattern
+6057	sstable cosmic neural pattern
 #search_objects
 21542	f0
 #sechud_icon
@@ -115121,6 +115472,71 @@ public static partial class TypeOrder
 27584	f4
 27587	f2
 27589	f4
+#spread_flags
+1458	f56
+1465	f2
+1466	f2
+1467	f28
+1468	f2
+1473	f28
+1474	f28
+1475	f2
+1477	f28
+1478	f1
+1479	f2
+1480	f28
+1481	f28
+1484	f1
+1485	f28
+1486	f2
+1488	f2
+1489	f1
+1491	f28
+1492	f28
+1493	f1
+1494	f2
+1503	f16
+1504	f28
+1506	f2
+1507	f2
+1508	f2
+1509	f2
+#spread_text
+1458	s
+1459	sUnknown
+1465	sNone
+1466	sNone
+1467	sSkin contact
+1468	sNone
+1473	sSkin contact
+1474	sSkin contact
+1475	sNone
+1476	sAirborne
+1477	sSkin contact
+1478	sNone
+1479	sNone
+1480	sSkin contact
+1481	sSkin contact
+1482	sAirborne
+1483	sAirborne
+1484	sNone
+1485	sSkin contact
+1486	sSkin contact
+1487	sAirborne
+1488	sNone
+1489	sNone
+1490	sAirborne
+1491	sContact
+1492	sSkin contact
+1493	sNone
+1494	sUnknown
+1502	sAirborne
+1504	sSkin contact
+1505	sAirborne
+1506	sNone
+1507	sNone
+1508	sNone
+1509	sNone
 #sprint
 20957	f10
 20958	f5
@@ -115772,6 +116188,93 @@ public static partial class TypeOrder
 26569	n
 26570	sgreen
 26571	sred
+#symptom_cure
+8108	y/datum/reagent/medicine/spaceacillin
+8109	y/datum/reagent/medicine/mannitol
+8110	y/datum/reagent/acetaldehyde
+8111	y/datum/reagent/inverse/penthrite
+8112	y/datum/reagent/medicine/leporazine
+8113	y/datum/reagent/medicine/c2/tirimol
+8114	y/datum/reagent/toxin/bonehurtingjuice
+8115	y/datum/reagent/medicine/synaptizine
+8117	y/datum/reagent/medicine/psicodine
+8118	y/datum/reagent/consumable/milk
+8119	y/datum/reagent/medicine/haloperidol
+8120	y/datum/reagent/medicine/leporazine
+8121	y/datum/reagent/medicine/leporazine
+8122	y/datum/reagent/consumable/frostoil
+8123	y/datum/reagent/medicine/omnizine
+8124	y/datum/reagent/medicine/earthsblood
+8125	y/datum/reagent/acetaldehyde
+8126	y/datum/reagent/medicine/psicodine
+8127	y/datum/reagent/drug/space_drugs
+8140	y/datum/reagent/medicine/ondansetron
+8144	y/datum/reagent/barbers_aid
+8145	y/datum/reagent/water/salt
+8147	n
+8148	n
+8150	n
+8151	n
+8152	y/datum/reagent/medicine/oculine
+8153	y/datum/reagent/inverse/healing/convermol
+8154	y/datum/reagent/medicine/ondansetron
+8156	y/datum/reagent/medicine/diphenhydramine
+8157	n
+#symptoms
+1459	n
+5973	sExhibits obsessive behaviors towards a specific individual, including frequent staring, intrusive thoughts, and an overwhelming desire to be near them. This obsession can lead to social withdrawal, anxiety, and impaired daily functioning.
+5974	sExhibits signs of interacting with an unseen individual, including talking to themselves, responding to unheard stimuli, and displaying behaviors that suggest the presence of a companion. This \u0022imaginary friend\u0022 may influence the patient's actions and emotional state, leading to social withdrawal, altered perceptions of reality, or atypical activities.
+5976	sOccasionally utters phrases or commands in a commanding tone, often accompanied by a sense of divine authority. These utterances can influence the behavior of others, compelling them to act in accordance with the spoken words.
+5977	sGains the ability to perceive hidden pathways through bluespace, allowing for spontaneous creation of temporary portals that connect two distant locations. To the average eye, the patient appears to disappear into thin air, only to reappear elsewhere nearby.
+5978	sFrequently experiences spontaneous quantum entanglement with nearby objects or beings, resulting in sudden and unpredictable teleportation events that connect the patient to the entangled target.
+5979	sExhibits erratic and potentially violent behavior when in physical contact with others, often accidentally attacking those they intend to offer a hand, or hugging those who they mean to strike.
+5981	sExhibits a remarkable resistance to pain and physical trauma, allowing them to sustain severe injuries that would incapacitate an otherwise normal individual.
+5982	sExperiences intermittent auditory hallucinations characterized by whispering voices, which are often perceived as communications from the deceased.
+5983	sExperiences sporadic episodes of \u0022non-existence\u0022, during which the patient temporarily fades out of reality, becoming intangible and invisible to others. Often accompanied by feelings of detachment, depression, and disorientation.
+5985	sWitnessed or experienced a traumatic, horrific, or potentially life threatening event, resulting in avoidance, intrusive thoughts, flashbacks, auditory hallucinations, emotional numbness, detachment from others, and heightened reactivity to stimuli - particularly in situations reminiscent of the traumatic event.
+5986	sRarely experiences episodes where higher cognitive functions are suppressed, resulting in behavior driven primarily by primal instincts. During these episodes, the patient may exhibit increased aggression, territoriality, and a focus on basic survival needs.
+5988	sExperiences an overwhelming compulsion to self-harm, often engaging in behaviors that lead to significant physical injury. This compulsion is driven by an intense psychological need to feel pain and suffering, believing that through this self-inflicted harm, they can achieve a deeper understanding of universal truths and the nature of existence.
+5989	sGains a strict code of honor that governs their behavior, forbidding them from attacking those who are unready, just, or innocent. This code often leads to strife, both external and internal, as the patient struggles to reconcile their beliefs with the realities of combat and survival.
+5990	sFixates on a specific word or phrase. This fixation can lead to altered behavior, such as prioritizing actions related to the phrase over other tasks while neglecting work, needs, or social interactions.
+5992	sExhibits extreme discomfort and adverse reactions when exposed to bright light sources, and will go to great lengths to avoid illuminated areas. This sensitivity can lead to skin irritation, similar to that of a severe sunburn.
+5993	sExperiences frequent and unprovoked physical disturbances in their immediate vicinity, such as objects being thrown or moved without any apparent cause.
+5994	sExhibits a complete immunity to effects unexplainable by conventional science, such as the abilities demonstrated by members of the Wizard Federation.
+5995	sFeels an unshakable sensation of being watched or pursued by an unseen entity, leading to heightened anxiety, paranoia, and occasional hallucinations of a ghostly figure in their vicinity. Extreme cases may even result in physical harm inflicted upon the patient by a seemingly invisible force.
+5998	sExperiences frequent hallucinations (either visual or auditory) or delusions which subside on being administered Mindbreaker Toxin.
+5999	sHas difficulty speaking fluently, often repeating or prolonging sounds or syllables.
+6000	sExhibits a noticeable decline in cognitive functions, including speech, memory, motorics, and problem-solving abilities.
+6001	sStruggles to articulate thoughts into coherent speech, often resulting in jumbled or nonsensical sentences.
+6002	sExperiences headaches, dizziness, nausea, confusion, and occasional loss of consciousness.
+6003	sExhibits a lack of awareness or denial of their own medical conditions, often insisting they are perfectly healthy despite clear evidence to the contrary.
+6004	sExperiences sudden episodes of muscle weakness, resulting in weak grip strength, difficulty moving, and occasional falls.
+6005	sExperiences involuntary muscle contractions leading to sudden, brief movements or twitches, which can interfere with normal motor functions.
+6006	sExperiences a persistent, uncontrollable urge to cough, which may disrupt normal activities and social interactions.
+6007	sStruggles to express thoughts verbally, often substituting complex words with simpler alternatives or nonsensical sounds.
+6008	sExperiences involuntary repetition of previously heard or spoken phrases, leading to persistent moments of déjà vu in both hearing and speech.
+6009	sExhibits a complete inability to perceive colors, seeing the world in shades of gray, black, and white.
+6010	sExhibits an overwhelming need to keep personal belongings close, often resulting in an intense grip on held items that persists even when forced to let go.
+6011	sWhen exposed to a specific stimulus, experiences an immediate anxiety or fear response far greater than typically expected, leading to panic attacks or impaired social and occupational functioning. Physical contact such as hugging, or medication such as Psicodine may lessen the severity of the reaction.
+6036	sCompletley incapable of producing sound or speech verbally.
+6037	sCompletely incapable of understanding or producing language besides incomprehensible utterances.
+6038	sExhibits a complete loss of vision despite having fully functional eyes.
+6039	sExperience a complete loss of voluntary movement in specific body parts.
+6044	sExperiences sudden and uncontrollable episodes of drowsiness or sleepiness during regular activities.
+6046	sExperiences intense fear and anxiety when alone, often leading to panic attacks, nausea, rapid heartbeat, and in severe cases, fainting, vomiting, or heart failure.
+6047	sCompletely incapable of performing tasks that require fine motor skills or coordination, such as using tools or operating machinery.
+6048	sCompletely incapable of willing themselves to commit acts of violence or harm towards others, often going to great lengths to avoid confrontations or situations that may lead to violence.
+6049	sExperiences sudden episodes of deep stupor or trance-like states, during which the patient becomes highly suggestible to external influences, often leading to altered perceptions or behaviors, memories imposed by others, or in severe cases, danger to self or others.
+6051	sExperiences significant difficulties in reading and writing, often confusing letters and words, leading to challenges in literacy-related tasks such as reading scanners or completing paperwork.
+6052	sExperiences an uncontrollable urge to steal nearby items, often without need or reason, leading to compulsive theft behaviors that can interfere with daily life and social interactions.
+6053	sExhibits two distinct personalities that alternate control over the same body, each with its own memories, behaviors, and preferences. While both personalities are aware of each other, they may have conflicting desires and actions, leading to confusion and disorientation for the host.
+6055	sExcessive alcohol consumption leading to a temporary blackout, followed by confusion, disorientation, and an almost completely altered state of consciousness upon waking for several minutes - during which the individual may exhibit impaired fine motor skills, an incredible resistance to pain, and a complete lack of memory.
+19326	sWants more cringe code.
+19327	sExpresses a desire for painkillers, and when in withdrawl, experiences drowsiness, high blood pressure, and nausea.
+19328	sExpresses a desire for stimulants, and when in withdrawal, experiences fatigue, slowness, and difficulty concentrating.
+19329	sExpresses a desire for alcoholic beverages, and when in withdrawal, experiences jitteriness, hallucinations, and potentially seizures.
+19330	sExpresses a desire for hallucinogens, and when in withdrawal, experiences feelings of emptiness, difficulty seeing, and disconnection from reality.
+19331	sExpresses a desire for maintenance drugs, and when in withdrawal, experiences various adaptions such as light sensitivity, numbness, changes to taste, enhanced hair growth, and greater low light vision.
+19332	sExpresses a need for medication despite being otherwise healthy, and when in withdrawal, experiences coughing fits, hallucinations, and distorted health perceptions.
+19333	sExpresses a desire for nicotine products, and when in withdrawal, experiences jitteriness, coughing, and difficulty concentrating.
 #target_temperature
 34606	f293.15
 34890	f293.15
@@ -119921,6 +120424,25 @@ public static partial class TypeOrder
 38155	f16
 38161	f56
 44049	f60
+#visibility_flags
+1458	f0
+1459	f4
+1465	f2
+1466	f2
+1468	f6
+1471	f1
+1478	f1
+1481	f4
+1492	f4
+1493	f3
+1494	f0
+1495	f0
+1496	f0
+1497	f0
+1498	f0
+1499	f0
+1500	f0
+1501	f4
 #vision_range
 4954	i9
 5124	n
@@ -122918,6 +123440,6 @@ public static partial class TypeOrder
 29842	shead
 #zone_on_open
 34204	n
-!0,1,2,3,4,5,6,7,12,14,17,20,21,23,32,35,39,42,45,47,49,55,56,63,66,68,70,71,80,82,84,101,108,110,125,127,145,146,147,569,570,572,1511,1514,1516,1556,1567,1805,1807,1808,1832,1835,1840,1841,1842,1843,1844,1845,1850,1851,1852,1853,1854,1855,1856,1858,1859,1860,1864,1865,1866,1874,1880,1889,1904,1905,1906,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2016,2066,2067,2068,2069,2070,2071,2072,2076,2079,2083,2095,2098,2110,2119,2120,2121,2122,2123,2124,2148,2149,2150,2152,2157,2159,2161,2162,2171,2172,2173,2174,2177,2179,2180,2181,2182,2187,2188,2196,2198,2199,2216,2222,2226,2286,2305,2316,2317,2318,2322,2840,2842,2843,2845,2929,2981,2982,2983,3375,3377,3379,3792,3796,3802,3844,3859,3995,4015,4027,4098,4139,4169,4170,4171,4172,4175,4177,4178,4179,4180,4181,4214,4215,4243,4244,4245,4253,4257,4953,4963,4986,5030,5219,5220,5221,5222,5223,5225,5233,5234,5237,5240,5248,5254,5259,5260,5261,5266,5414,5906,5907,5908,5941,5944,5946,5971,6074,6097,6108,6133,6174,6215,6295,6421,6585,8158,8192,8223,8243,8325,8341,8395,8406,8418,8424,8428,8429,8436,8517,8518,8519,8520,8521,8522,8523,8524,8525,8526,8528,8529,8530,8531,8532,8535,8536,8537,8538,8539,8540,8541,8542,8543,8544,8545,8546,8547,8548,8549,8550,8551,8552,8553,8554,8555,8556,8557,8558,8559,8560,8561,8562,8563,8564,8565,8566,8567,8568,8633,8692,8693,8694,8695,8973,9009,9141,9178,9182,9183,9186,9187,9301,9390,9408,9430,9432,9849,10214,10340,10466,10469,10478,11142,11153,11472,11478,11504,12011,12030,12100,12101,12427,12430,12508,12571,13527,13687,13692,13911,14063,14065,14066,14067,14068,14069,14070,14071,14072,14073,14074,14075,14076,14077,14078,14079,14080,14081,14082,14083,14084,14085,14086,14087,14088,14453,15290,15299,15317,15396,15397,15427,15428,15515,17416,17423,17435,17436,17437,17438,17439,17440,17441,17442,17443,17444,17446,17453,17472,17477,17490,17510,17664,17665,17666,17667,17668,17669,17670,17671,17672,17673,17674,17675,17676,17677,17678,17679,17680,17681,17682,17683,17684,17685,17686,17687,17688,17689,17690,17691,17692,17693,17694,17695,17696,17697,17698,17699,17700,17701,17702,17703,17704,17705,17706,17707,17708,17709,17710,17711,17712,17713,17714,17715,17716,17717,17718,17719,17720,17721,17722,17723,17724,17725,17726,17727,17728,17729,17730,17731,17732,17761,17768,17813,19091,19099,19111,19115,19116,19117,19118,19119,19120,19121,19122,19123,19124,19210,19273,19291,19319,19383,19911,19912,19914,19916,19931,20301,20346,20364,20365,20367,20467,20468,20469,20470,20471,20472,20473,20474,20475,20476,20477,20491,20492,20493,20494,20502,20508,20683,20684,20685,20686,20687,20689,20691,20694,20792,20811,20818,20819,20820,20821,20893,20904,20905,20906,20907,20909,20947,20978,20988,20991,21007,21013,21288,21353,21588,21597,21598,21599,22835,22860,23051,23052,23053,23054,23055,23056,23057,23058,23059,23060,23061,23062,23063,23064,23065,23066,23067,23068,23069,23070,23071,23072,23073,23074,23075,23076,23077,23078,23079,23080,23081,23082,23083,23084,23085,23086,23087,23088,23089,23090,23422,23596,23959,24018,24120,24342,24426,25678,26464,26581,26625,26711,26712,26739,26740,26767,26794,26818,26819,26848,27032,27794,28107,28123,28246,28866,29520,29521,29532,29551,29581,29600,29653,29670,29672,29693,29729,29737,30183,30396,30757,30854,30857,30893,31230,31242,31247,31273,32115,32161,32455,32462,32521,32619,32690,32726,32739,32962,33065,33515,33767,33793,33802,33813,33961,33967,34219,34282,34347,34358,34487,34575,34579,34659,34685,34870,36192,36193,36326,36340,36499,36593,36636,36757,36787,36801,38099,38231,38238,38913,38962,38963,39784,40119,41860,42599,42675,43380,43514,43917,44050,44051,44108,44109,44220,44738,44739,44751,44752,44753,44754,44755,44756,44757,44758,44759,44760,44761,44762,44763,44764,44765,44766,44767,44768,44769,44770,44771,44772,44773,44774,44775,44919,44920,45421,45424,45595,45969,45970,45972,45973,45974,45976,45979,46039,46041,46042,46043,46044,46045,46046,46047,46048,46049,46050
+!0,1,2,3,4,5,6,7,12,14,17,20,21,23,32,35,39,42,45,47,49,55,56,63,66,68,70,71,80,82,84,101,108,110,125,127,145,146,147,569,570,572,1061,1511,1514,1516,1556,1567,1805,1807,1808,1832,1835,1840,1841,1842,1843,1844,1845,1850,1851,1852,1853,1854,1855,1856,1858,1859,1860,1864,1865,1866,1874,1880,1889,1904,1905,1906,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2016,2066,2067,2068,2069,2070,2071,2072,2076,2079,2083,2095,2098,2110,2119,2120,2121,2122,2123,2124,2148,2149,2150,2152,2157,2159,2161,2162,2171,2172,2173,2174,2177,2179,2180,2181,2182,2187,2188,2196,2198,2199,2216,2222,2226,2286,2305,2316,2317,2318,2322,2840,2842,2843,2845,2929,2981,2982,2983,3375,3377,3379,3792,3796,3802,3844,3859,3995,4015,4027,4098,4139,4169,4170,4171,4172,4175,4177,4178,4179,4180,4181,4214,4215,4243,4244,4245,4253,4257,4373,4416,4953,4963,4986,5030,5219,5220,5221,5222,5223,5225,5233,5234,5237,5240,5248,5254,5259,5260,5261,5266,5414,5906,5907,5908,5941,5944,5946,5971,6074,6097,6108,6133,6174,6215,6295,6421,6585,8158,8192,8223,8243,8325,8341,8395,8406,8418,8424,8428,8429,8436,8517,8518,8519,8520,8521,8522,8523,8524,8525,8526,8528,8529,8530,8531,8532,8535,8536,8537,8538,8539,8540,8541,8542,8543,8544,8545,8546,8547,8548,8549,8550,8551,8552,8553,8554,8555,8556,8557,8558,8559,8560,8561,8562,8563,8564,8565,8566,8567,8568,8633,8692,8693,8694,8695,8973,9009,9141,9178,9182,9183,9186,9187,9301,9390,9408,9430,9432,9849,10214,10340,10466,10469,10478,11142,11153,11472,11478,11504,12011,12030,12100,12101,12427,12430,12508,12571,13527,13687,13692,13911,14063,14065,14066,14067,14068,14069,14070,14071,14072,14073,14074,14075,14076,14077,14078,14079,14080,14081,14082,14083,14084,14085,14086,14087,14088,14453,15290,15299,15317,15396,15397,15427,15428,15515,17416,17423,17435,17436,17437,17438,17439,17440,17441,17442,17443,17444,17446,17453,17472,17477,17490,17510,17664,17665,17666,17667,17668,17669,17670,17671,17672,17673,17674,17675,17676,17677,17678,17679,17680,17681,17682,17683,17684,17685,17686,17687,17688,17689,17690,17691,17692,17693,17694,17695,17696,17697,17698,17699,17700,17701,17702,17703,17704,17705,17706,17707,17708,17709,17710,17711,17712,17713,17714,17715,17716,17717,17718,17719,17720,17721,17722,17723,17724,17725,17726,17727,17728,17729,17730,17731,17732,17761,17768,17813,19091,19099,19111,19115,19116,19117,19118,19119,19120,19121,19122,19123,19124,19210,19273,19291,19319,19383,19911,19912,19914,19916,19931,20301,20346,20364,20365,20367,20467,20468,20469,20470,20471,20472,20473,20474,20475,20476,20477,20491,20492,20493,20494,20502,20508,20683,20684,20685,20686,20687,20689,20691,20694,20792,20811,20818,20819,20820,20821,20893,20904,20905,20906,20907,20909,20947,20978,20988,20991,21007,21013,21288,21353,21588,21597,21598,21599,22835,22860,23051,23052,23053,23054,23055,23056,23057,23058,23059,23060,23061,23062,23063,23064,23065,23066,23067,23068,23069,23070,23071,23072,23073,23074,23075,23076,23077,23078,23079,23080,23081,23082,23083,23084,23085,23086,23087,23088,23089,23090,23422,23596,23959,24018,24120,24342,24426,25678,26464,26581,26625,26711,26712,26739,26740,26767,26794,26818,26819,26848,27032,27794,28107,28123,28246,28866,29520,29521,29532,29551,29581,29600,29653,29670,29672,29693,29729,29737,30183,30396,30757,30854,30857,30893,31230,31242,31247,31273,32115,32161,32455,32462,32521,32619,32690,32726,32739,32962,33065,33515,33767,33793,33802,33813,33961,33967,34219,34282,34347,34358,34487,34575,34579,34659,34685,34870,36192,36193,36326,36340,36499,36593,36636,36757,36787,36801,38099,38231,38238,38913,38962,38963,39784,40119,41860,42599,42675,43380,43514,43917,44050,44051,44108,44109,44220,44738,44739,44751,44752,44753,44754,44755,44756,44757,44758,44759,44760,44761,44762,44763,44764,44765,44766,44767,44768,44769,44770,44771,44772,44773,44774,44775,44919,44920,45421,45424,45595,45969,45970,45972,45973,45974,45976,45979,46039,46041,46042,46043,46044,46045,46046,46047,46048,46049,46050
 """;
 }

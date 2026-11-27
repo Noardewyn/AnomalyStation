@@ -212,6 +212,9 @@ public abstract class TgUnitTest
             // starts processing on SSmanufacturing at Initialize (crafter.dm:25); tg's MC always creates both.
             Dm.@new<datum_controller_subsystem_processing_plumbing>();
             Dm.@new<datum_controller_subsystem_processing_manufacturing>();
+            // the library's consoles look for the database at Initialize (lib_machines.dm:173, SSdbcore.Connect); tg's MC always creates it
+            if (SSdbcore == null)
+                Dm.@new<datum_controller_subsystem_dbcore>();
 
             // var/datum/unit_test/test = new test_path
             New();

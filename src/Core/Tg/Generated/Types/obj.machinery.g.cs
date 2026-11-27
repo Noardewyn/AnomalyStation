@@ -12835,9 +12835,9 @@ public partial class obj_machinery_seed_extractor
     }
 }
 
-// tg: code/modules/library/lib_machines.dm:694
-[DmPath("/obj/machinery/libraryscanner"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_libraryscanner : obj_machinery
+// tg: code/modules/library/lib_machines.dm:694 (the var block of a hand-written class)
+[DmPath("/obj/machinery/libraryscanner")]
+public partial class obj_machinery_libraryscanner
 {
     public obj_item_book held_book; // tg: code/modules/library/lib_machines.dm:701
     public datum_book_info cache; // tg: code/modules/library/lib_machines.dm:703
@@ -12855,9 +12855,9 @@ public partial class obj_machinery_libraryscanner : obj_machinery
     }
 }
 
-// tg: code/modules/library/lib_machines.dm:779
-[DmPath("/obj/machinery/bookbinder"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_bookbinder : obj_machinery
+// tg: code/modules/library/lib_machines.dm:779 (the var block of a hand-written class)
+[DmPath("/obj/machinery/bookbinder")]
+public partial class obj_machinery_bookbinder
 {
     public float? busy = 0; // tg: code/modules/library/lib_machines.dm:788
     public object scanned_name; // tg: code/modules/library/lib_machines.dm:791

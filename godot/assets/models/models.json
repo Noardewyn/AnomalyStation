@@ -12778,6 +12778,142 @@
       }
     },
     {
+      // the binder's printing (tg's binder1 flick, lib_machines.dm:836): its working surface's 9 frames
+      "id": "bookbinder_bind_0",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 0,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_0"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_1",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 1,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_1"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_2",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 2,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_2"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_3",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 3,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_3"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_4",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 4,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_4"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_5",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 5,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_5"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_6",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 6,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_6"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_7",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 7,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_7"}
+      }
+    },
+    {
+      "id": "bookbinder_bind_8",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["binder1"],
+      "flickFrame": 8,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/bookbinder.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/bookbinder.glb", "node": "Working_Surface_Frame_8"}
+      }
+    },
+    {
       "id": "library_scanner",
       "dir": {"awayFromWall": true},
       "icons": ["icons/obj/service/library.dmi"],
@@ -12788,6 +12924,532 @@
       "fit": {"width": "tile", "height": 2.0},
       "parts": {
         "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"}
+      }
+    },
+    {
+      // the scanner's scan (tg's bigscanner1 flick, lib_machines.dm:764): its working surface's 35 frames
+      "id": "library_scanner_scan_0",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 0,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_0"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_1",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 1,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_1"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_2",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 2,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_2"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_3",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 3,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_3"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_4",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 4,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_4"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_5",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 5,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_5"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_6",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 6,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_6"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_7",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 7,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_7"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_8",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 8,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_8"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_9",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 9,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_9"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_10",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 10,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_10"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_11",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 11,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_11"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_12",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 12,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_12"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_13",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 13,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_13"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_14",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 14,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_14"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_15",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 15,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_15"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_16",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 16,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_16"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_17",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 17,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_17"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_18",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 18,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_18"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_19",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 19,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_19"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_20",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 20,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_20"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_21",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 21,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_21"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_22",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 22,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_22"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_23",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 23,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_23"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_24",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 24,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_24"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_25",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 25,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_25"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_26",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 26,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_26"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_27",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 27,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_27"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_28",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 28,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_28"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_29",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 29,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_29"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_30",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 30,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_30"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_31",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 31,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_31"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_32",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 32,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_32"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_33",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 33,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_33"}
+      }
+    },
+    {
+      "id": "library_scanner_scan_34",
+      "dir": {"awayFromWall": true},
+      "icons": ["icons/obj/service/library.dmi"],
+      "states": ["bigscanner1"],
+      "flickFrame": 34,
+      "rule": "single",
+      "texture": "model",
+      "source": {"width": 2.0, "height": 2.0},
+      "fit": {"width": "tile", "height": 2.0},
+      "parts": {
+        "model": {"file": "machines/service_wave/library_scanner.glb", "node": "Machine_Body"},
+        "Working_Surface": {"file": "machines/service_wave/library_scanner.glb", "node": "Working_Surface_Frame_34"}
       }
     },
     {

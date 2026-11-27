@@ -46972,9 +46972,9 @@ public partial class datum_language_menu
     public datum_language_holder language_holder; // tg: code/modules/language/_language_menu.dm:2
 }
 
-// tg: code/modules/library/admin_only.dm:278
-[DmPath("/datum/book_history_entry"), DmGeneratedOnly, DmInert]
-public partial class datum_book_history_entry : datum
+// tg: code/modules/library/admin_only.dm:278 (the var block of a hand-written class)
+[DmPath("/datum/book_history_entry")]
+public partial class datum_book_history_entry
 {
     public Type id; // tg: code/modules/library/admin_only.dm:278
     public object book; // tg: code/modules/library/admin_only.dm:280
@@ -46985,9 +46985,9 @@ public partial class datum_book_history_entry : datum
     public object ip_addr; // tg: code/modules/library/admin_only.dm:290
 }
 
-// tg: code/modules/library/admin_only.dm:306
-[DmPath("/datum/admin_book_viewer"), DmGeneratedOnly, DmInert]
-public partial class datum_admin_book_viewer : datum
+// tg: code/modules/library/admin_only.dm:306 (the var block of a hand-written class)
+[DmPath("/datum/admin_book_viewer")]
+public partial class datum_admin_book_viewer
 {
     public datum_weakref owner_ref; // tg: code/modules/library/admin_only.dm:306
     public float view_raw = 0; // tg: code/modules/library/admin_only.dm:308

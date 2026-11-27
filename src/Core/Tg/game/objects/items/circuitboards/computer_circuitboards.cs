@@ -13,7 +13,8 @@ namespace Anomaly.Core.Tg;
 // vars turn live with it and give the machine they build its default parts (the board in component_parts, circuitboard.cs);
 // the boards with procs of their own (the syndicate shuttle's Destroy) stay inert. The var blocks are generated. The engineering
 // package E6 (D287): the atmospheric alert board's examine and its multitool mode switch. Gaps P4d (D298): the supply consoles'
-// boards (their receiver spectrum, emag and the console they configure). Gaps RD2 (D333): the R&D console's board.
+// boards (their receiver spectrum, emag and the console they configure). Gaps RD2 (D333): the R&D console's board. The library
+// console's board, switched between the visitor and the book management console with a screwdriver.
 
 // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:2
 public partial class obj_item_circuitboard_computer : obj_item_circuitboard
@@ -262,5 +263,28 @@ public partial class obj_item_circuitboard_computer_rdconsole : obj_item_circuit
             span_notice(I18n.T("You unlock \\the [] with \\the [].", this, tool)),
             span_hear(I18n.T("You hear a soft beep.")));
         return ITEM_INTERACT_SUCCESS;
+    }
+}
+
+// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:268
+public partial class obj_item_circuitboard_computer_libraryconsole : obj_item_circuitboard_computer
+{
+    // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:276
+    public override async DmTask<object> screwdriver_act(mob_living user = null, obj_item tool = null)
+    {
+        await DmTask.CompletedTask;
+        if (build_path == typeof(obj_machinery_computer_libraryconsole_bookmanagement))
+        {
+            name = I18n.T("Library Visitor Console");
+            build_path = typeof(obj_machinery_computer_libraryconsole);
+            to_chat(user, span_notice(I18n.T("Defaulting access protocols.")));
+        }
+        else
+        {
+            name = I18n.T("Book Inventory Management Console");
+            build_path = typeof(obj_machinery_computer_libraryconsole_bookmanagement);
+            to_chat(user, span_notice(I18n.T("Access protocols successfully updated.")));
+        }
+        return TRUE;
     }
 }

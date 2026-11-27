@@ -6,10 +6,10 @@ in section 12; they will most likely not be ported.
 
 Sources:
 - tg's snapshot `1d99bd7f` (2026-10-04) in `../tgstation/`;
-- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-25): 46,051 tg types, of them 39,518
-  live and 6,523 inert; 65,645 tg procs, of them 49,247 translated (75%) and 443 stubbed;
+- the translation tracker `docs/ai/specs/generated/types-index.tsv` (recounted 2026-11-25): 46,051 tg types, of them 39,902
+  live and 6,139 inert; 65,645 tg procs, of them 49,660 translated (75%) and 443 stubbed;
 - MetaStation's map (`_maps/map_files/MetaStation/MetaStation.dmm`): how many of each type it places;
-- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 318 of tg's 444 interfaces;
+- the client's tgui windows (`godot/scripts/Shared/Tgui/TguiWindows.cs`): 325 of tg's 444 interfaces;
 - `docs/ROADMAP.md`, `docs/ai/DECISIONS.md`, `docs/ai/specs/not-translated.md` for what is planned, deferred or cut by the owner.
 
 How to read a row:
@@ -30,15 +30,14 @@ How to read a row:
 ## 0. Overview by tg area
 
 Share of tg's procs declared in each area of `code/` (translated or stubbed), recounted 2026-11-25 by
-`tools/checklist/refresh-port-checklist.py`. All of `code/`: 49,690/65,645 (75%). An area at 100% can still have leaves in
-`tools/checklist/refresh-port-checklist.py`. All of `code/`: 49,275/65,645 (75%). An area at 100% can still have leaves in
+`tools/checklist/refresh-port-checklist.py`. All of `code/`: 50,103/65,645 (76%). An area at 100% can still have leaves in
 `not-translated.md`; the rows below say what of it runs.
 
 | State | Areas (procs declared / tg procs) |
 |---|---|
-| Done (100%) | art 98/98, brain traumas 216/216, detective work 36/36, dna 104/104, dna infuser 174/174, economy 45/45, experisci 127/127, forensics 37/37, grenades 141/141, hallucination 236/236, holiday 110/110, hydroponics 529/529, instruments 97/97, lost crew 38/38, mafia 124/124, materials 197/197, meteors 78/78, mining 947/947, mutations 235/235, newscaster 71/71, paperwork 407/407, plumbing 148/148, porta turrets 105/105, power 994/994, rcd 182/182, recycling (disposal pipes) 232/232, religion 283/283, robot items 198/198, security levels 20/20, silicons 528/528, skills 13/13, station goals 94/94, telecomms 123/123, transit tubes 74/74, water structures 60/60, weather 66/66, wounds 182/182 |
-| Mostly ported (70-99%) | transport 366/368, bitrunning 274/277, station traits 136/138, reagents 2,011/2,041, language 64/65, pai 121/123, manufactorio 95/97, wiremod 1,037/1,063, memory 183/188, structures 1,346/1,383, diseases 299/308, weaponry 413/426, items 1,239/1,280, cards 59/61, atmospherics 1,139/1,178, movespeed and actionspeed 27/28, devices 698/724, uplink 55/58, doors 352/372, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, tgui 134/144, AI modules 66/71, MODsuits 817/882, storage 199/217, simple animals 408/448, actions 220/246, AI controllers 756/853, modular computers 663/751, martial arts 143/164, wires 170/195, cargo 346/398, tools 225/259, stacks 338/398, machinery 1,440/1,715, lobby menu 26/31, mapping 324/393, food and drinks 798/969, implants 131/160, clothing 960/1,173, projectiles 943/1,153, effects 701/876, turfs 607/761, status effects 600/755, basic mobs 2,137/2,756, computers 404/525, carbon 893/1,182, vehicles and mechs 648/876, `__HELPERS` 817/1,108, jobs 183/251, `_onclick` 677/935, elements 865/1,200, components 2,533/3,579, photography 75/106, library 161/228, events 398/564 |
-| Partly (2-69%) | subsystems 1,103/1,578, shuttles 276/401, vending 97/148, basketball 29/51, client 367/737, research 473/993, mob spawners 52/116, keybindings 28/71, spells 157/426, holodeck 16/65, antagonists 908/3,715, species (`carbon/human/species_types`) 55/273, mapfluff 39/268, admin 178/1,643, awaymissions 13/136, admin verbs 85/975, quirks 10/287 |
+| Done (100%) | art 98/98, brain traumas 216/216, detective work 36/36, dna 104/104, dna infuser 174/174, economy 45/45, experisci 127/127, forensics 37/37, grenades 141/141, hallucination 236/236, holiday 110/110, hydroponics 529/529, instruments 97/97, library 228/228, lost crew 38/38, mafia 124/124, materials 197/197, meteors 78/78, mining 947/947, mutations 235/235, newscaster 71/71, paperwork 407/407, plumbing 148/148, porta turrets 105/105, power 994/994, rcd 182/182, recycling (disposal pipes) 232/232, religion 283/283, robot items 198/198, security levels 20/20, silicons 528/528, skills 13/13, station goals 94/94, telecomms 123/123, transit tubes 74/74, water structures 60/60, weather 66/66, wounds 182/182 |
+| Mostly ported (70-99%) | transport 366/368, bitrunning 274/277, station traits 136/138, reagents 2,011/2,041, language 64/65, pai 121/123, manufactorio 95/97, wiremod 1,037/1,063, memory 183/188, structures 1,346/1,383, diseases 299/308, weaponry 413/426, items 1,239/1,280, cards 59/61, atmospherics 1,139/1,178, movespeed and actionspeed 27/28, devices 698/724, uplink 55/58, doors 352/372, `mob/living` base 595/631, surgery dir (bodyparts, organs) 1,523/1,616, storage 202/217, tgui 134/144, AI modules 66/71, MODsuits 817/882, simple animals 408/448, actions 220/246, AI controllers 757/853, modular computers 663/751, martial arts 143/164, wires 170/195, cargo 346/398, tools 225/259, stacks 338/398, machinery 1,440/1,715, lobby menu 26/31, food and drinks 800/969, mapping 324/393, implants 131/160, clothing 960/1,173, projectiles 943/1,153, effects 703/876, turfs 607/761, status effects 600/755, research 777/993, basic mobs 2,137/2,756, computers 404/525, carbon 893/1,182, vehicles and mechs 648/876, `__HELPERS` 818/1,108, jobs 183/251, `_onclick` 677/935, elements 865/1,200, components 2,533/3,579, photography 75/106, events 398/564, subsystems 1,106/1,578 |
+| Partly (2-69%) | shuttles 276/401, vending 97/148, basketball 29/51, client 367/737, mob spawners 52/116, spells 186/426, keybindings 28/71, holodeck 16/65, antagonists 908/3,715, species (`carbon/human/species_types`) 55/273, mapfluff 39/268, admin 178/1,643, awaymissions 13/136, admin verbs 85/975, quirks 10/287 |
 | Not started (0-1%) | explorer drones 3/207, achievements 1/72, fishing 10/787, minimap 1/127, buildmode 0/102, CTF 0/101, deathmatch 0/113, TCG 0/67, tutorials 0/48 |
 
 ---
@@ -58,7 +57,7 @@ Live mechanics that still miss a window, a leaf or a piece the owner put off.
 - [x] Memory panel (gaps G4: the 54 memories and the HUD button; win: MemoryPanel; DV191 retired by gaps S3: the captain's code folder). Left: the tattoo kit and the engravings (with the art), the memories of callers not yet live
 - [x] Floors with their own procs (gaps G2; the engine floor family, 35 types, Meta 496 tiles: engineering E4): wood (Meta 480), carpet (223), grass (68), large, circuit, the reinforced plating (`plating/reinforced`) and others (Meta's 24 floor types, 1,045 tiles); volcanic mineral turfs (9), plastitanium walls (5). Left inert, none on Meta: the tram's high-traction floor, the rusted and meat platings, the random, ore, gibtonite and biome rocks, the explosive plastitanium wall, snow, ice and lavaland floors
 - [x] Meta's untranslated mapping helpers and spawners (gaps G3; the dead body placer's cadavers came with gaps OG1; left: the holidays wait for `check_holidays`) (ROADMAP 3, M4 follow-up): request console helpers (Meta 64), mail sorting, `dead_body_placer`, Ian's birthday and new year, `turn_off_lights_with_lightswitch`, xmas trees, costumes, maintenance MOD, `round_default_module`
-- [ ] The deferred leaves of ported mechanics: `not-translated.md` (232 sections; the sites tagged M10+) and `live-partial.txt` (440 lines); each names its milestone
+- [ ] The deferred leaves of ported mechanics: `not-translated.md` (234 sections; the sites tagged M10+) and `live-partial.txt` (440 lines); each names its milestone
 - [ ] Owner-deferred pieces of ported milestones: screentips (M9 G, owner; the object examines and `examine_more` are done, D288: X1, X2, X3); chat icons, icon2html (owner: later); the fireman carry and piggyback (M9 F, owner); leaning on walls, the table slam and the table flip (done, gaps L1); the hand-item emotes' leftovers
 - [x] M10x's slices (D281, D282, `docs/ai/specs/lobby.md`; done, released in 1.1.0-pre-alpha): G the Esc menu, bug reports and tg's admin help, D the character's looks, E the preview, I the closing; not now (owner): tg's server game preferences (stashed, D282), the Quirks, Loadout and Personality tabs, the polls (the Antagonists tab: syndicate A3, D316)
 - [x] M9x station life (D228, D249): eating, drinking and hunger with the nutrition HUD (done, gaps S1), vending machines (done, gaps S2: free until the economy, DV225), paper, pens, clipboards and the hand labeler (done, gaps S3), the PDA's job apps (done, gaps S4; the cargo apps, the budget orders, shipping and bounty board: gaps P4)
@@ -107,8 +106,7 @@ Each row means the antagonist with its datum, team, objectives, powers, items, H
 - [ ] Heretic: paths, influences, rituals, the 116 knowledges, ascension, lunatics, summons, the arena (win: AntagInfoHeretic)
 - [x] Blood brothers (win: AntagInfoBrother) (syndicate X4: the conversion by flash, the team's objectives and name; the preference picture waits for the ethereal and moth species)
 - [x] Malfunctioning AI: modules and the doomsday device (silicons SI8; win: AntagInfoMalf, MalfunctionModulePicker, AiVoiceChanger; mech domination waits for the mechs)
-- [ ] Wizard: spellbook (88 entries; win: Spellbook), 226 spells (`modules/spells` 157/426), apprentice (win: ApprenticeContract), the wizard's shuttle and den, imps, wizard events (win: AntagInfoWizard, AntagInfoDemon)
-- [ ] Wizard: spellbook (88 entries; win: Spellbook), 226 spells (`modules/spells` 154/426), apprentice (win: ApprenticeContract), the wizard's shuttle and den, imps, wizard events (win: AntagInfoWizard, AntagInfoDemon)
+- [ ] Wizard: spellbook (88 entries; win: Spellbook), 226 spells (`modules/spells` 186/426), apprentice (win: ApprenticeContract), the wizard's shuttle and den, imps, wizard events (win: AntagInfoWizard, AntagInfoDemon)
 - [ ] Blood cult: runes, the cult's magic, constructs and shades, soulstones, Nar'Sie and the summoning, the cult's structures
 - [x] Revolution: head revolutionaries, conversion by flash, the enemy of the state, the revolution's end (win: AntagInfoRevolution) (gaps V1; the drinks that read revolutionaries since gaps RG1: the cuba libre heals them, grenadine weakens them, the garibaldi's resilience; the death moodlet comes with the moods)
 - [x] Nuclear operatives: the team, the nuke and the disk, the war declaration, the syndicate base and shuttle, reinforcements, clown operatives, the lone operative (the nuke and the disk: syndicate N1a; the team, the leader, the outfits, the base, the infiltrator, the reinforcements and the roundstart ruleset: N1b; the war declaration, the infiltrator's navigation computer, the lone operative and the midround nukies: N1c; the arsenal's guns: N2a; the bags, kits and pinatas: N2b; the reinforcements and the assault pod: N2c; the clown operatives, their gear and rulesets: N3a; the bananium nuke's clowning of the station with the fear and phobia system: N3b; done but the MODsuits and the silicons, booked)
@@ -240,8 +238,9 @@ hallucinations, cryo cells, stasis beds, IV drips, buckling.
 - [x] **Botany** (`modules/hydroponics` 529/529, gaps P2; the botanical encyclopedia waits for S4): hydroponics trays and soil (Meta 39), 158 seed types with plant genes and mutations, growing, weeds, pests and harvesting, the seed extractor (Meta 4; win: SeedExtractor), the biogenerator (Meta 4; win: Biogenerator), plant analyzers (Meta 7; win: PlantAnalyzer), cultivators (9), hatchets (4), shovels and spades (4), secateurs, plant bags, watering cans (9), fertilizers and the nutrient vendor, beehives and bees, the botanical encyclopedia (win: NtosBotanicalEncyclopedia)
 - [x] **Janitor** (gaps H4; the other ridden vehicles' riding waits for the vehicles): the mop and bucket (Meta 6+3), the janitorial cart (Meta 1) and the janicart with its key and upgrades (Meta 1), the advanced mop, the wet floor signs, soap (1), rags (8), the push broom (2), plungers (2), cleaning decals, trash bags; the light replacer and holosigns are live; soap (done, syndicate G3b)
 - [ ] **Chapel** (`modules/religion` 283/283): the religion choice, bibles (Meta 3) and blessing, holy water, the null rod and its 33 forms (Meta 1), the 10 sects and the altar of the gods (Meta 1; win: ReligiousTool), the rites, the sects' traumas and the dreams, the soulstone (Meta 1; win: AntagInfoShade), sparring (win: SparringContract) (the sects, altar, rites, soulstone and sparring: done, gaps CH1; the psyker's echolocation waits for an owner decision), the chapel's mass driver (Meta 1; gaps OR1)
-- [ ] **Library and curator** (`modules/library` 161/228): books (Meta 58), bookcases (Meta 15; done with the library subsystem, gaps ST2), the library console and the book management consoles (Meta 1+2; win: LibraryConsole, LibraryVisitor, LibraryAdmin), the library scanner (Meta 1; win: LibraryScanner), the bookbinder (Meta 1), the tgui books (the DSM, the IDC, the infuser book; Meta 8; win: DSMBook, IDCBook, InfuserBook), display and trophy cases (Meta 9; win: Trophycase, Vendatray; done, gaps ST2)
-- [ ] **Theatre**: the clown's and the mime's kit and powers (mime spells, the invisible wall), costumes (the costume spawners), the theatre's curtains (Meta 8; done with the curtain button, gaps ST2)
+- [ ] **Chapel** (`modules/religion` 283/283): the religion choice, bibles (Meta 3) and blessing, holy water, the null rod and its 33 forms (Meta 1), the 10 sects and the altar of the gods (Meta 1), the soulstone (Meta 1), sparring (win: SparringContract), the chapel's mass driver (Meta 1)
+- [x] **Library and curator** (`modules/library` 228/228; gaps LB1): books (Meta 58), bookcases (Meta 15; done with the library subsystem, gaps ST2), the library console and the book management consoles (Meta 1+2; win: LibraryConsole, LibraryVisitor, LibraryAdmin, AdminBookViewer; done, gaps LB1: the archive is tg's database, which the port has not, so the consoles take tg's no-connection paths, not-translated.md 245), the library scanner (Meta 1; win: LibraryScanner; done), the bookbinder (Meta 1; done), the barcode scanner's scans (done), the tgui books (the DSM, the IDC, the infuser book; Meta 8; win: DSMBook, IDCBook, InfuserBook; done), display and trophy cases (Meta 9; win: Trophycase, Vendatray; done, gaps ST2)
+- [x] **Theatre**: the clown's and the mime's kit and powers (mime spells, the invisible wall; done, gaps J2; the advanced guides' invisible blockade and finger guns, gaps LB1), costumes (the costume spawners), the theatre's curtains (Meta 8; done with the curtain button, gaps ST2)
 - [x] **Washing and household** (gaps H1; the toilet's fish and the puddle's tadpoles wait for the fishing): sinks (Meta 32), showers (Meta 31), toilets (14) and urinals (5), puddles (3), washing machines (Meta 4), bedsheets (13) and their bins (2) (done, syndicate G3c), dressers (6), mirrors (13) and razors (3) for hair and beards
 - [x] **Vending machines** (gaps S2; `modules/vending` 97/148; 78 of 85 types live; all of Meta's 92 machines; win: Vending): products, restocking (refills Meta 3), wires, tilting and crushing, the prices and payment (gaps P4a). Left: NtosRestock (the PDA app, S4; NtosCouponMaster with gaps P4b), the custom, runic and museum vendors (the labor camp's, paid in labour points: gaps LV1)
 - [ ] **Recreation**: the holodeck (its computer Meta 1; `modules/holodeck` 16/65; win: Holodeck), the arcade (Orion Trail Meta 1, the battle arcade; win: OrionGame, BattleArcade), slot machines and the roulette (win: SlotMachine, Roulette), playing cards (done, syndicate G3d), dice (Meta 2), the trading card game (`items/tcg` 0/67), toys (`/obj/item/toy` 193/197; Meta 40) and plushies (done, syndicate G3c), crayons and spray cans (graffiti; win: Crayon), the gym's punching bags, weight machines and training machine (Meta 3, 5, 3; win: TrainingMachine; done, gaps ST4, with the training toolbox; the athletics experience and the exercised status came with gaps SL1)
@@ -393,8 +392,8 @@ ruins, the CentCom level and the transit and reserved levels. The port runs the 
 
 - [ ] The tgui windows the client does not draw: 396 of tg's 444; the full index is section 13
 - [ ] The HUDs of other mobs (`/datum/hud`: pAI (done, silicons SI6), alien and larva (done, gaps X5), blob overmind, revenant, guardian and dextrous (done, syndicate X2), soulscythe); the human and ghost HUDs are live (the robot's: silicons SI2, the AI's: SI4)
-- [ ] Action buttons: item actions (`/datum/action/item_action` 112/125 live); spells (226), innate actions (`/datum/action/innate` 103/162) and vehicle actions (`/datum/action/vehicle` 30/43) come with their owners
-- [ ] The remaining screen alerts (`/atom/movable/screen/alert` 185/201 live)
+- [ ] Action buttons: item actions (`/datum/action/item_action` 114/125 live); spells (226), innate actions (`/datum/action/innate` 103/162) and vehicle actions (`/datum/action/vehicle` 30/43) come with their owners
+- [ ] The remaining screen alerts (`/atom/movable/screen/alert` 186/201 live)
 - [ ] tg's stat panel (the Status tab: round time, the shuttle's ETA, the security level; the MC and admin tabs): the client has only the command verbs' tabs (silicons SI4's Commands window)
 - [x] tg's escape menu: an Esc menu with tg's items in the client's own style (D282; M10x G3-G6, 1.0.4-pre-alpha to 1.0.6-pre-alpha)
 - [ ] Hotkeys help (win: HotkeysHelp); tg's keybindings (`/datum/keybinding` 31/86 live; the client's Settings window has a Keybindings tab, D282)
@@ -474,8 +473,9 @@ Well-known SS13 mechanics that are not in tg any more; nothing to port. Checked 
 
 ## 13. Index of the tgui windows not drawn yet
 
-396 of tg's 444 windows (the client drew 48 when this index was made); 272 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 279 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 271 of the 396 are ticked now. One row per
+396 of tg's 444 windows (the client drew 48 when this index was made); 276 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 267 of the 396 are ticked now. One row per
 396 of tg's 444 windows (the client drew 48 when this index was made); 264 of the 396 are ticked now. One row per
 window, grouped by where its mechanic sits above; tick it when the client draws it (a registration in TguiWindows.cs), in the
@@ -651,26 +651,27 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [x] Techweb (gaps RD2)
 - [x] TransferValve (syndicate G4b)
 
-### Service (5.4): 33 (16 drawn)
+### Service (5.4): 0 (0 drawn)
+### Service (5.4): 33 (22 drawn)
 
 - [ ] Aquarium
 - [ ] BattleArcade
 - [x] Biogenerator (gaps P2)
 - [x] Canvas (silicons SI4d)
 - [x] Crayon
-- [ ] DSMBook
+- [x] DSMBook (gaps LB1)
 - [ ] FishAnalyzer
 - [ ] FishCatalog
 - [ ] FishingCalculator
 - [ ] FishingRod
 - [ ] Holodeck
-- [ ] IDCBook
+- [x] IDCBook (gaps LB1)
 - [x] InstrumentEditor (silicons SI6c)
 - [x] Jukebox (gaps H3)
-- [ ] LibraryAdmin
-- [ ] LibraryConsole
-- [ ] LibraryScanner
-- [ ] LibraryVisitor
+- [x] LibraryAdmin (gaps LB1)
+- [x] LibraryConsole (gaps LB1)
+- [x] LibraryScanner (gaps LB1)
+- [x] LibraryVisitor (gaps LB1)
 - [x] MarkdownViewer (J2)
 - [ ] OrionGame
 - [ ] PaintingMachine
@@ -853,10 +854,10 @@ package that draws it. Windows of section 12 are listed for completeness.
 - [ ] HotkeysHelp
 - [ ] KeyComboModal
 
-### Admin and debug (11.2): 49 (5 drawn)
+### Admin and debug (11.2): 49 (6 drawn)
 
 - [ ] AchievementsAdminPanel
-- [ ] AdminBookViewer
+- [x] AdminBookViewer (gaps LB1)
 - [ ] AdminFax
 - [ ] AdminPDA
 - [ ] AdminVerbPanel

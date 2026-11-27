@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (the chapel: the psyker's psychic wall stands on it): the forcewall spell, a wall of three forcefields across its
-// caster's facing. The var blocks are generated (D111).
+// The whole file: the wizard's forcewall, the cult's shield and the mime's invisible blockade, each a three tile wide wall of its
+// own forcefield across the caster's facing (the psyker's psychic wall stands on it). The var blocks are generated (D111).
 
 // tg: code/modules/spells/spell_types/self/forcewall.dm:1
 public partial class datum_action_cooldown_spell_forcewall : datum_action_cooldown_spell

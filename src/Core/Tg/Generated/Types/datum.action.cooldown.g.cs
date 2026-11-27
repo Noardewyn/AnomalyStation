@@ -4381,9 +4381,9 @@ public partial class datum_action_cooldown_spell_pointed_projectile_fireball_les
     }
 }
 
-// tg: code/modules/spells/spell_types/pointed/finger_guns.dm:2
-[DmPath("/datum/action/cooldown/spell/pointed/projectile/finger_guns"), DmGeneratedOnly, DmInert]
-public partial class datum_action_cooldown_spell_pointed_projectile_finger_guns : datum_action_cooldown_spell_pointed_projectile
+// tg: code/modules/spells/spell_types/pointed/finger_guns.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/cooldown/spell/pointed/projectile/finger_guns")]
+public partial class datum_action_cooldown_spell_pointed_projectile_finger_guns
 {
     // tg: code/modules/spells/spell_types/pointed/finger_guns.dm:2
     public datum_action_cooldown_spell_pointed_projectile_finger_guns()

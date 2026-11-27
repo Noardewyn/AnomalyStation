@@ -1984,9 +1984,9 @@ public partial class obj_effect_forcefield_arena_shuttle_entrance : obj_effect_f
     }
 }
 
-// tg: code/game/objects/effects/forcefields.dm:23
-[DmPath("/obj/effect/forcefield/wizard"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_forcefield_wizard : obj_effect_forcefield
+// tg: code/game/objects/effects/forcefields.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/effect/forcefield/wizard")]
+public partial class obj_effect_forcefield_wizard
 {
     public float antimagic_flags = 1; // tg: code/game/objects/effects/forcefields.dm:23
     public datum_weakref caster_weakref; // tg: code/game/objects/effects/forcefields.dm:25

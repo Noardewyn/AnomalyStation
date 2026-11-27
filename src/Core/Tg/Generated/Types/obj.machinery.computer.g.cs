@@ -6496,9 +6496,9 @@ public partial class obj_machinery_computer_holodeck : obj_machinery_computer
     }
 }
 
-// tg: code/modules/library/lib_machines.dm:22
-[DmPath("/obj/machinery/computer/libraryconsole"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_libraryconsole : obj_machinery_computer
+// tg: code/modules/library/lib_machines.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/libraryconsole")]
+public partial class obj_machinery_computer_libraryconsole
 {
     public object book_id; // tg: code/modules/library/lib_machines.dm:30
     public string title = ""; // tg: code/modules/library/lib_machines.dm:32
@@ -6534,9 +6534,9 @@ public partial class obj_machinery_computer_libraryconsole : obj_machinery_compu
     }
 }
 
-// tg: code/modules/library/admin_only.dm:6
-[DmPath("/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_libraryconsole_admin_only_do_not_map_in_you_fucker : obj_machinery_computer_libraryconsole
+// tg: code/modules/library/admin_only.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker")]
+public partial class obj_machinery_computer_libraryconsole_admin_only_do_not_map_in_you_fucker
 {
     public float view_raw = 0; // tg: code/modules/library/admin_only.dm:8
     public float show_deleted = 1; // tg: code/modules/library/admin_only.dm:10
@@ -6557,9 +6557,9 @@ public partial class obj_machinery_computer_libraryconsole_admin_only_do_not_map
     }
 }
 
-// tg: code/modules/library/lib_machines.dm:278
-[DmPath("/obj/machinery/computer/libraryconsole/bookmanagement"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_libraryconsole_bookmanagement : obj_machinery_computer_libraryconsole
+// tg: code/modules/library/lib_machines.dm:278 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/libraryconsole/bookmanagement")]
+public partial class obj_machinery_computer_libraryconsole_bookmanagement
 {
     public float can_spawn_lore = 1; // tg: code/modules/library/lib_machines.dm:291
     public float screen_state = 1; // tg: code/modules/library/lib_machines.dm:293

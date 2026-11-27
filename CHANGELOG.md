@@ -74,6 +74,10 @@ client's top-right corner, in its window title and in the first line of the serv
 - Picking an item up with an empty hand in combat mode no longer plays a punch swing.
 - Character Setup's species page opens again, so the lizard and the felinid can be picked (it showed an empty window).
 
+### Fixed
+
+- A crate you are pulling no longer hitches when you turn around and push it: the push takes it over in one smooth motion.
+
 ## [1.12.0-pre-alpha] - 2026-11-23
 
 ### Added

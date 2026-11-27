@@ -59,8 +59,11 @@ public sealed class PoseSource : IPoseSource
     /// <summary>DV533: how far behind the own body's centre a pulled thing is drawn (tiles): tg's pulled thing stands in the next tile.</summary>
     public const float TrailTiles = 1f;
 
-    /// <summary>DV533: the nearest a pulled thing comes to the own body's centre (tiles) when the puller walks back into it.</summary>
-    public const float TrailNearest = 0.7f;
+    /// <summary>
+    /// DV533: the nearest a pulled thing comes to the own body's centre (tiles) when the puller walks back into it: touching the body, where a push
+    /// holds it (<see cref="PushContact"/>), so the push that follows takes it over without a gap to close.
+    /// </summary>
+    public const float TrailNearest = PushContact;
 
     /// <summary>DV533: how fast the drawn point is brought back toward the tile the server says (seconds: the time constant).</summary>
     public const double TrailCorrectionSeconds = 0.4;
@@ -346,11 +349,13 @@ public sealed class PoseSource : IPoseSource
         bool alongX = ux != 0;
         int dir = ux + uy;
         float glide = alongX ? pose.X : pose.Y, tile = alongX ? s.X : s.Y;
-        if (float.IsNaN(track.PushAlong))
+        // a new push starts where it is drawn this frame, which already has this frame's move: it slides on from the next
+        bool starts = float.IsNaN(track.PushAlong);
+        if (starts)
             track.PushAlong = glide;
         float before = track.PushAlong, left = (tile - before) * dir;
         float glideSpeed = (s.GlideSize > 0 ? s.GlideSize : 8f) / 32f * MotionMath.TicksPerSecond;
-        if (left > 0.001f && _dt > 0)
+        if (!starts && left > 0.001f && _dt > 0)
         {
             // it slides on by its own speed (at most its glide's), slowed evenly to stop on its tile; one too slow for that creeps there
             float speed = MathF.Min(track.PushSpeed, glideSpeed);
@@ -362,7 +367,7 @@ public sealed class PoseSource : IPoseSource
             else
                 track.PushAlong += dir * MathF.Min(PushCreep * (float)_dt, left * (float)(1 - Math.Exp(-_dt / PushEaseSeconds)));
         }
-        else if (left < -0.001f && _dt > 0)
+        else if (!starts && left < -0.001f && _dt > 0)
             track.PushAlong += dir * MathF.Max(left, -PushCreep * (float)_dt); // drawn past its tile for a push that did not come: back to it
         if (_ownDrawn && (alongX ? MathF.Abs(pose.Y - _ownY) : MathF.Abs(pose.X - _ownX)) < PushContact)
         {

@@ -7,6 +7,12 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+## [1.15.0-pre-alpha] - 2026-11-27
+
+### Protocol
+
+- Network protocol 98: clients and servers older than 1.15.0-pre-alpha cannot connect to this version.
+
 ### Added
 
 - Aquariums and fish tanks: put fish in, feed them, set water and temperature, watch them swim and breed; the fish analyzer and fishing gloves.

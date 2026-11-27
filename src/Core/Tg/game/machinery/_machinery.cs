@@ -16,7 +16,7 @@ namespace Anomaly.Core.Tg;
 // default_pry_open; M5 slice 7 (machine frames, D148): the circuit board and its default parts (New's board, Initialize),
 // RefreshParts, the default screwdriver, crowbar and wrench, spawn_frame, on_construction, Exited's deconstruct; M5 slice 6
 // (airlocks): dump_contents, handle_deconstruct, atom_break and the base on_deconstruction. The other procs of the file stay Dm.NotTranslated with their
-// milestone: the UIs and interactions (M4a, M9), the occupant machines (M4a), exchange_parts (the part replacer, M9). EMP (emp_act, M7 EMP slice) is translated; its language tail is M9. The M7 zaps slice: zap_act. The var block is generated (D111).
+// milestone: the UIs and interactions (M4a, M9), the occupant machines (M4a), exchange_parts (the part replacer, M9). EMP (emp_act, M7 EMP slice) is translated; its language tail is M9. The M7 zaps slice: zap_act. The MetaStation leftovers: attack_hulk. The var block is generated (D111).
 
 // M5 slice 7 (machine frames, D148): the circuit board instance (GAP(types): /obj/machinery/var/circuit is generated as a
 // Type, rules 3.2 V3; tg keeps the typepath there until Initialize and the board itself after it).
@@ -792,6 +792,17 @@ public partial class obj_machinery : obj
             span_hear(I18n.T("You hear a [].", Dm.truthy(damage) ? "smash" : "thud")),
             COMBAT_MESSAGE_RANGE);
         return TRUE;
+    }
+
+    // tg: code/game/machinery/_machinery.dm:755  (the MetaStation leftovers: the machine hurts the hulk's punching arm back)
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        object dot = await base.attack_hulk(user, __extra);
+        obj_item_bodypart arm = user.get_active_hand() as obj_item_bodypart;
+        if (arm == null || Dm.truthy(arm.bodypart_disabled))
+            return dot;
+        await user.apply_damage(damage_deflection * 0.1f, BRUTE, arm, wound_bonus: CANT_WOUND);
+        return dot;
     }
 
     // tg: code/game/machinery/_machinery.dm:762  (silicons SI4: the cyborg's and the AI's clicks on a machine)

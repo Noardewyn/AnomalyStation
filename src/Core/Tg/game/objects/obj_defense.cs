@@ -14,8 +14,9 @@ namespace Anomaly.Core.Tg;
 // deconstruction chain (atom_deconstruct, handle_deconstruct, deconstruct) and /obj/atom_destruction.
 // The M7 projectiles slice: bullet_act :30. M5x slice 1 (explosions, D149): ex_act :10 and GetExplosionBlock :218. M5x slice 5: singularity_act :100
 // (the singularity). M7 zaps: zap_act :148 and zap_buckle_check :157. Not declared, their /atom roots not being declared
-// (each with its milestone): attack_hulk :53 (hulks, M10+), blob_act :63 (blobs, M10+),
-// acid_act :110 came with the acid (silicons SI1c, D326); attack_alien :68 with the xenomorphs (gaps X5).
+// (each with its milestone): blob_act :63 (blobs, M10+),
+// acid_act :110 came with the acid (silicons SI1c, D326); attack_alien :68 with the xenomorphs (gaps X5). The MetaStation leftovers:
+// attack_hulk :53 (a hulk's punch).
 
 // tg: code/game/objects/obj_defense.dm:2
 public partial class obj : atom_movable
@@ -355,6 +356,20 @@ public partial class obj : atom_movable
 // tg: code/game/objects/obj_defense.dm:63  (interleaved, rules 1.9)
 public partial class obj : atom_movable
 {
+    // tg: code/game/objects/obj_defense.dm:53
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        await base.attack_hulk(user, __extra);
+        if (Dm.truthy(density))
+            playsound(this, Dm.resource("sound/effects/meteorimpact.ogg"), 100, TRUE);
+        else
+            playsound(this, Dm.resource("sound/effects/bang.ogg"), 50, TRUE);
+        object damage = await take_damage(hulk_damage(), BRUTE, MELEE, 0, get_dir(this, user));
+        string feedback = Dm.truthy(damage) ? "" : Dm.text(", []", no_damage_feedback);
+        user.visible_message(span_danger(I18n.T("[] smashes [][]!", user, this, feedback)), span_danger(I18n.T("You smash [][]!", this, feedback)), null, COMBAT_MESSAGE_RANGE);
+        return TRUE;
+    }
+
     // tg: code/game/objects/obj_defense.dm:63
     public override async DmTask<object> blob_act(obj_structure_blob attacking_blob = null)
     {

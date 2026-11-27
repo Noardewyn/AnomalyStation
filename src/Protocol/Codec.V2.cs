@@ -1108,7 +1108,8 @@ public static partial class Codec
     private const uint PresMaptext = 1u << 15; // version 18
     private const uint PresFilters = 1u << 16; // version 25
     private const uint PresRenderTarget = 1u << 17; // version 25
-    private const uint PresAll = (1u << 18) - 1;
+    private const uint PresParticles = 1u << 18; // version 99
+    private const uint PresAll = (1u << 19) - 1;
 
     private const uint DefaultRgba = 0xFFFFFFFF;
 
@@ -1120,6 +1121,7 @@ public static partial class Codec
     //   filters (version 25): [count 1..16] { [u8 kind 1..4] [u8 fields: bit 0 x y, 1 size, 2 rgba, 3 matrix, 4 flags, 5 icon,
     //     6 icon state, 7 render source] x, y: f32; size: f32; rgba: u32; matrix: 20 x f32; flags: u8; icon, state, source: tableref }*
     //   renderTarget (version 25): tableref (a string)
+    //   particles (version 99): tableref (a string, the particle set's JSON)
     // A field is present exactly when it is not its default (none, 0, white, 255, +0.0).
     private static void WriteAppearance(ref WireWriter w, AppearanceEntry e, bool isPrivate, uint ownIndex)
     {
@@ -1142,6 +1144,7 @@ public static partial class Codec
         if (!e.Maptext.IsNone) presence |= PresMaptext;
         if (e.Filters is { Count: > 0 }) presence |= PresFilters;
         if (!e.RenderTarget.IsNone) presence |= PresRenderTarget;
+        if (!e.Particles.IsNone) presence |= PresParticles;
         w.WriteVarUInt(presence);
         const string what = "an appearance entry";
         if ((presence & PresIcon) != 0)
@@ -1218,6 +1221,8 @@ public static partial class Codec
 
         if ((presence & PresRenderTarget) != 0)
             WritePlainRef(ref w, e.RenderTarget, isPrivate, Limits.MaxStringTableEntries, what + "'s render target");
+        if ((presence & PresParticles) != 0)
+            WritePlainRef(ref w, e.Particles, isPrivate, Limits.MaxStringTableEntries, what + "'s particles");
     }
 
     // Version 26: the fields of a filter, a varuint mask (protocol.md section 35.1).
@@ -1516,6 +1521,13 @@ public static partial class Codec
             e.RenderTarget = ReadPlainRef(ref r, isPrivate, Limits.MaxStringTableEntries, what + "'s render target");
             if (e.RenderTarget.IsNone)
                 throw Bad(what + "'s render target is present and names none");
+        }
+
+        if ((presence & PresParticles) != 0)
+        {
+            e.Particles = ReadPlainRef(ref r, isPrivate, Limits.MaxStringTableEntries, what + "'s particles");
+            if (e.Particles.IsNone)
+                throw Bad(what + "'s particles are present and name none");
         }
 
         return e;

@@ -1031,9 +1031,10 @@ public class CodecFuzzTests
     }
 
     [Fact]
-    public void AnAppearanceTableOfEmptyEntriesIsTheWorstCaseAndStaysUnder130BytesPerInputByte()
+    public void AnAppearanceTableOfEmptyEntriesIsTheWorstCaseAndStaysUnder140BytesPerInputByte()
     {
-        // The cheapest entry to send, one byte, is the dearest to decode: an object each (about 100 bytes), hence the cap on the table.
+        // The cheapest entry to send, one byte, is the dearest to decode: an object each (about 100 bytes; version 99's particles
+        // reference added 8), hence the cap on the table.
         var s = new Snapshot { Tick = 5 };
         for (int i = 0; i < Limits.MaxAppearanceTableEntries; i++)
             s.Appearances.Add(new AppearanceEntry());
@@ -1043,7 +1044,7 @@ public class CodecFuzzTests
         Assert.True(Codec.TryDecode(bytes, out Snapshot decoded, out _));
         long allocated = GC.GetAllocatedBytesForCurrentThread() - before;
         Assert.Equal(Limits.MaxAppearanceTableEntries, decoded.Appearances.Count);
-        Assert.True(allocated <= 130L * bytes.Length + 16 * 1024, allocated + " bytes for a message of " + bytes.Length);
+        Assert.True(allocated <= 140L * bytes.Length + 16 * 1024, allocated + " bytes for a message of " + bytes.Length);
         s.Appearances.Add(new AppearanceEntry());
         Assert.Throws<ProtocolException>(() => Codec.Encode(s));
     }

@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // gaps ST5 (D333): the file whole. The life candle (an admin's and an event's spawn): a touch links the toucher's mind to it (the
 // flame lit, the candle floating) or severs it; while lit it checks its minds and five seconds after one's body dies or is gone it
-// brings it back on the candle's turf, revived, or in a new body. Its light's flicker goes through the light middleman, which is
-// not translated (the client draws the light from its vars, D24; a Dm.Deferred leaf, as the welder's). The var block is generated
+// brings it back on the candle's turf, revived, or in a new body. Its light's flicker goes through the light middleman (DV688: the
+// client's flame flicker). The var block is generated
 // (D111).
 
 // tg: code/game/objects/structures/life_candle.dm:1
@@ -23,10 +23,11 @@ public partial class obj_structure_life_candle : obj_structure
     {
         object dot = base.Initialize(mapload, __extra);
         if (light_system == OVERLAY_LIGHT || light_system == OVERLAY_LIGHT_DIRECTIONAL || light_system == OVERLAY_LIGHT_BEAM) // IS_OVERLAY_LIGHT_SYSTEM (__DEFINES/lighting.dm), inline
-            // middleman = new(src, "life_candle"); RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, PROC_REF(light_updated));
-            // middleman.being_overriding_light(): the light middleman (render-source light interception, light_middleman.dm) is not
-            // translated; the client draws the candle's light from its light vars (D24).
-            Dm.Deferred("code/game/objects/structures/life_candle.dm:36", "Initialize: the life candle's light middleman (its flame's flicker; client lighting, D24)");
+        {
+            middleman = Dm.@new<datum_light_middleman>(this, "life_candle");
+            RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, nameof(light_updated));
+            middleman.being_overriding_light();
+        }
         Waiting.NoSleep(AddElement(typeof(datum_element_movetype_handler)));
         return dot;
     }
@@ -114,8 +115,7 @@ public partial class obj_structure_life_candle : obj_structure
     [SignalHandler]
     public virtual void light_updated(datum source = null)
     {
-        // fire_flicker_middleman(middleman): the light middleman is not translated (D24; the signal is never registered, above)
-        Dm.Deferred("code/game/objects/structures/life_candle.dm:93", "light_updated: fire_flicker_middleman(middleman), the flame's flicker (client lighting, D24)");
+        fire_flicker_middleman(middleman);
     }
 
     // tg: code/game/objects/structures/life_candle.dm:95

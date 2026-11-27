@@ -931,7 +931,47 @@ public partial class EntityLayer : Node3D
         if (!pointArrow)
             ApplyAnimation(e, picture, lying, item, scale, hasRoot ? root : null);
         ApplyHit(e, now);
+        UpdateParticles(e, tables, appearance, ground + new Vector3(0, (float)(e.Billboard.Rect.Bottom + e.Billboard.Rect.Top) / 2f, 0));
         return true;
+    }
+
+    // DV687 (protocol version 99): the BYOND particles of the picture (its own, or a particle holder's among its overlays: a cigarette's
+    // smoke on the smoker) as an emitter at the picture's middle, remade when the set changes.
+    private void UpdateParticles(Entry e, IAppearanceSource tables, TableRef appearance, Vector3 middle)
+    {
+        string source = FindParticles(tables, appearance, 0);
+        if (source == e.Particles?.Source)
+        {
+            if (e.Particles != null)
+                e.Particles.Position = middle + e.ParticlesOffset;
+            return;
+        }
+        e.Particles?.QueueFree();
+        e.Particles = null;
+        ParticleSet set = ParticleSet.Parse(source);
+        if (set == null)
+            return;
+        Texture2D picture = null;
+        if (!string.IsNullOrEmpty(set.Icon) && Textures.Library.TryGetIcon(set.Icon, out IIcon icon) && icon.TryGetState(set.State, out IIconState state))
+            picture = ImageTexture.CreateFromImage(AppearanceTextures.ToImage(state.Get(0, 0)));
+        e.Particles = ParticleEmitter.Create(e.Node, source, set, picture);
+        e.ParticlesOffset = e.Particles.Position;
+        e.Particles.Position = middle + e.ParticlesOffset;
+    }
+
+    private static string FindParticles(IAppearanceSource tables, TableRef reference, int depth)
+    {
+        if (depth > 4 || !tables.TryGetAppearance(reference, out AppearanceEntry entry))
+            return null;
+        if (!entry.Particles.IsNone)
+            return tables.ResolveString(entry.Particles);
+        for (int i = 0; i < entry.OverlayCount; i++)
+            if (FindParticles(tables, entry.Overlays[i], depth + 1) is string inOverlay)
+                return inOverlay;
+        for (int i = 0; i < entry.UnderlayCount; i++)
+            if (FindParticles(tables, entry.Underlays[i], depth + 1) is string inUnderlay)
+                return inUnderlay;
+        return null;
     }
 
     // DV122: a standing picture taller than the walls (tg's 32 x 64 cryo cell) is drawn at the scale that ends its drawn pixels under the ceiling;
@@ -2386,6 +2426,8 @@ public partial class EntityLayer : Node3D
         public Node3D Node;
         public Node3D Placeholder;
         public Billboard Billboard;
+        public ParticleEmitter Particles; // DV687: the picture's BYOND particles
+        public Vector3 ParticlesOffset;
         public Label3D Label;
         public Label3D NameTag;
         public ComposedRaster NameRaster;

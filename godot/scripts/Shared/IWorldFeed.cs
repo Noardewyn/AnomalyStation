@@ -196,4 +196,16 @@ public interface IWorldFeed
     void SendBugReport(BugReportMessage report)
     {
     }
+
+    /// <summary>Protocol version 99 (DV685): takes the oldest picture the server asked this client to render, false when none waits.</summary>
+    bool TryTakePhotoRequest(out PhotoRequestMessage request)
+    {
+        request = null;
+        return false;
+    }
+
+    /// <summary>Protocol version 99: sends a rendered picture's PNG for the request <paramref name="id"/> on the State channel; a no-op unless playing.</summary>
+    void SendPhoto(uint id, byte[] png)
+    {
+    }
 }

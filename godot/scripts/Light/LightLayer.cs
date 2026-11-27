@@ -2,6 +2,7 @@ using System.Linq;
 using Godot;
 using Anomaly.Client.Shared;
 using Anomaly.Client.Shared.Light;
+using Anomaly.Client.Shared.Play;
 using Anomaly.Client.Shared.World;
 using Anomaly.Protocol;
 
@@ -106,6 +107,7 @@ public partial class LightLayer : Node3D
         public OmniLight3D Light;
         public float Fade, Target, Shadow, ShadowTarget, Energy;
         public bool Carried; // held by a mob: placed at its drawn pose every frame
+        public FlameFlicker Flicker; // DV688: a flame's light (tg's fire_flicker_middleman), its energy flickering
         public bool Small;   // range below SmallRange: drawn only within SmallLightTiles
     }
 
@@ -552,6 +554,7 @@ public partial class LightLayer : Node3D
         if (_dynamic)
         {
             FadeLamps((float)delta);
+            FlickerLamps();
             PlaceCarriedLamps();
         }
         else
@@ -1227,6 +1230,15 @@ public partial class LightLayer : Node3D
             lamp.Light.LightCullMask = cull;
     }
 
+    // DV688: a flame's lamp flickers (tg's fire_flicker_middleman): its energy times the flicker's brightness now.
+    private void FlickerLamps()
+    {
+        double now = Time.GetTicksMsec() / 1000.0;
+        foreach (Lamp lamp in _lamps.Values)
+            if (lamp.Flicker != null)
+                lamp.Light.LightEnergy = lamp.Fade * lamp.Energy * (float)lamp.Flicker.At(now);
+    }
+
     // Fades the lamps toward their targets (in and out over FadeSeconds, their shadows too) and frees the ones faded out.
     private void FadeLamps(float delta)
     {
@@ -1312,6 +1324,7 @@ public partial class LightLayer : Node3D
         if (lamp.Light.OmniRange != range)
             lamp.Light.OmniRange = range; // a flicker changes the power only: the shadow stays
         lamp.Light.LightEnergy = lamp.Fade * lamp.Energy;
+        lamp.Flicker = l.Flicker ? lamp.Flicker ?? new FlameFlicker(unchecked((int)id ^ (int)(id >> 32))) : null;
         lamp.Small = l.Range < SmallRange;
         ApplyLampPreset(lamp);
         ReplicaEntity e = null;

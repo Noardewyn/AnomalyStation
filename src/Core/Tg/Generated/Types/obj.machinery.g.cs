@@ -1085,9 +1085,9 @@ public partial class obj_machinery_button_crematorium_indestructible : obj_machi
     }
 }
 
-// tg: code/game/machinery/photobooth.dm:171
-[DmPath("/obj/machinery/button/photobooth"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_button_photobooth : obj_machinery_button
+// tg: code/game/machinery/photobooth.dm:171 (the var block of a hand-written class)
+[DmPath("/obj/machinery/button/photobooth")]
+public partial class obj_machinery_button_photobooth
 {
     // tg: code/game/machinery/photobooth.dm:171
     public obj_machinery_button_photobooth()
@@ -3651,9 +3651,9 @@ public partial class obj_machinery_pdapainter_supply : obj_machinery_pdapainter
     }
 }
 
-// tg: code/game/machinery/photobooth.dm:8
-[DmPath("/obj/machinery/photobooth"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_photobooth : obj_machinery
+// tg: code/game/machinery/photobooth.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/machinery/photobooth")]
+public partial class obj_machinery_photobooth
 {
     public float add_height_chart = 0; // tg: code/game/machinery/photobooth.dm:23
     public float taking_pictures = 0; // tg: code/game/machinery/photobooth.dm:25
@@ -3686,7 +3686,7 @@ public partial class obj_machinery_photobooth : obj_machinery
 }
 
 // tg: code/game/machinery/photobooth.dm:35
-[DmPath("/obj/machinery/photobooth/security"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/photobooth/security"), DmGeneratedOnly]
 public partial class obj_machinery_photobooth_security : obj_machinery_photobooth
 {
     // tg: code/game/machinery/photobooth.dm:35

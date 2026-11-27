@@ -5390,9 +5390,9 @@ public partial class datum_reagent_cement_pavement : datum_reagent_cement
     }
 }
 
-// tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3686
-[DmPath("/datum/reagent/concrete"), DmGeneratedOnly, DmInert]
-public partial class datum_reagent_concrete : datum_reagent
+// tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3686 (the var block of a hand-written class)
+[DmPath("/datum/reagent/concrete")]
+public partial class datum_reagent_concrete
 {
     public float units_per_wall = 10; // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3692
     public float units_per_floor = 2; // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3693
@@ -5412,7 +5412,7 @@ public partial class datum_reagent_concrete : datum_reagent
 }
 
 // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3739
-[DmPath("/datum/reagent/concrete/hexacrete"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/reagent/concrete/hexacrete"), DmGeneratedOnly]
 public partial class datum_reagent_concrete_hexacrete : datum_reagent_concrete
 {
     // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3739
@@ -5427,7 +5427,7 @@ public partial class datum_reagent_concrete_hexacrete : datum_reagent_concrete
 }
 
 // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3746
-[DmPath("/datum/reagent/concrete/pavement"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/reagent/concrete/pavement"), DmGeneratedOnly]
 public partial class datum_reagent_concrete_pavement : datum_reagent_concrete
 {
     // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:3746

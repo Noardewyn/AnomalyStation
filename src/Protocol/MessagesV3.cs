@@ -67,7 +67,8 @@ public readonly record struct BaseLight(uint Rgba);
 /// <param name="OffsetX">tg's visual offset of the source in tiles, x (<c>calculate_light_offset</c>, <c>lighting_atom.dm:218</c>), at most <see cref="Limits.MaxLightOffset"/> in size.</param>
 /// <param name="OffsetY">The same, y.</param>
 /// <param name="System">tg's <c>light_system</c>: <c>COMPLEX_LIGHT</c> 1 (the corner light), <c>OVERLAY_LIGHT</c> 2, <c>OVERLAY_LIGHT_DIRECTIONAL</c> 3, <c>OVERLAY_LIGHT_BEAM</c> 4.</param>
-public readonly record struct LightState(float Range, float Power, uint Rgba, bool On, float Angle, byte Dir, float Height, float OffsetX, float OffsetY, byte System)
+/// <param name="Flicker">Version 99 (DV688): the light flickers as a flame (tg's <c>fire_flicker_middleman</c>: a lighter's, a welder's, a flare's).</param>
+public readonly record struct LightState(float Range, float Power, uint Rgba, bool On, float Angle, byte Dir, float Height, float OffsetX, float OffsetY, byte System, bool Flicker = false)
 {
     /// <summary>No light.</summary>
     public static LightState None => default;

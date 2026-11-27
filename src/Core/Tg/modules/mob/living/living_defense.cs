@@ -1293,3 +1293,19 @@ public partial class mob_living : mob
         return FALSE;
     }
 }
+
+// tg: code/modules/mob/living/living_defense.dm:600 (interleaved types, rules 1.9; the MetaStation leftovers: a hulk's punch)
+public partial class mob_living : mob
+{
+    // tg: code/modules/mob/living/living_defense.dm:600
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        await base.attack_hulk(user, __extra);
+        if (HAS_TRAIT(user, TRAIT_PACIFISM))
+        {
+            to_chat(user, span_warning(I18n.T("You don't want to hurt []!", this)));
+            return FALSE;
+        }
+        return TRUE;
+    }
+}

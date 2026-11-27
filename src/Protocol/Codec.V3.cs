@@ -41,7 +41,7 @@ public static partial class Codec
         w.WriteSingle(light.Range);
         w.WriteSingle(light.Power);
         w.WriteUInt32(light.Rgba);
-        w.WriteByte(light.On ? (byte)1 : (byte)0);
+        w.WriteByte((byte)((light.On ? 1 : 0) | (light.Flicker ? 2 : 0))); // version 99: bit 1, the flicker
         w.WriteSingle(light.Angle);
         w.WriteByte(light.Dir);
         w.WriteSingle(light.Height);
@@ -80,7 +80,7 @@ public static partial class Codec
         float power = r.ReadSingle();
         uint rgba = r.ReadUInt32();
         byte flags = r.ReadByte();
-        if ((flags & ~1) != 0)
+        if ((flags & ~3) != 0)
             throw Bad("a light flags byte sets bits that are not defined");
         float angle = r.ReadSingle();
         byte dir = r.ReadByte();
@@ -88,7 +88,7 @@ public static partial class Codec
         float ox = r.ReadSingle();
         float oy = r.ReadSingle();
         byte system = r.ReadByte();
-        var light = new LightState(range, power, rgba, (flags & 1) != 0, angle, dir, height, ox, oy, system);
+        var light = new LightState(range, power, rgba, (flags & 1) != 0, angle, dir, height, ox, oy, system, (flags & 2) != 0);
         CheckLight(light);
         return light;
     }

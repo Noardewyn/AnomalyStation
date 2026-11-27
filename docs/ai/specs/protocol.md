@@ -3233,3 +3233,42 @@ recipes with reagent ingredients and the chemical reactions' recipe guides: abou
 152 kB and 8,300. Nothing else of the `UiWindow` message changes; a version 97 peer would refuse such a window.
 
 Tests: `M5/CraftingTests` (core: the cooking tab's encoded window within the caps), `Protocol/` (server).
+
+## 94. Version 99 (DV685, the owner, 2026-11-26: photos)
+
+`PhotoRequest` (server to client, State channel, id 32, after the tick's Delta): `[varuint photo id >= 1] [varint x] [varint y]
+[varint z] [u8 tiles x 1..15] [u8 tiles y 1..15] [u16 width 1..1024] [u16 height 1..1024]`. tg's camera took a picture of tile
+(x, y, z), framing tiles x by tiles y tiles; the photographer's client renders one frame from its own eye toward the tile's middle at half
+the wall height (`PhotoPose`: a field of view that fits the frame's width at that distance, 30 to 90 degrees; a shot of its own tile looks
+along its view, 30 degrees down), at most width by height pixels, with what its own camera draws (no HUD), and answers with the PNG.
+
+`PhotoPart` (client to server, State channel, id 33): `[varuint photo id >= 1] [varuint total 1..MaxPhotoBytes (512 KiB)]
+[varuint offset < total] [varuint length 1..4096, offset + length <= total] [bytes]`: the PNG in parts sent in order from offset 0, as the
+bug report's (section 57; the server takes no client message over 8 fragments). A part out of order is a strike. The whole PNG goes to the
+world (`PhotoSeam.Develop`), which takes it only as the answer to a request it sent that client, within 10 seconds, once, when its own PNG
+decoder reads it and it is 16 pixels to the requested size on each side; otherwise the server logs the refusal and the picture stays blank.
+A client whose PNG is over the cap shrinks it by a quarter until it fits. The server keeps the client's bytes as a runtime resource
+(`rsc/MD5.png`), which every client is sent once as a `RuntimeResource` (section 79's message; `Limits.MaxRuntimeResourceBytes` is now
+512 KiB) before the picture's look names it.
+
+The photo window is tg's `browse()` page: `browse_rsc(picture_image, "tmp_photo.png")` makes the page's `<img src='tmp_photo.png'>`
+the image's resource, and the client's Html node draws an `<img>` whose source is a runtime image or an icon recipe (`HtmlImages`).
+
+Tests: `Protocol/ProtocolV99PhotoTests` (server), `Gaps/PhotographyTests` (core), `Client/Play/PhotoClientTests` (the pose and the
+page's pictures).
+
+## 95. Version 99, also (DV687, DV688: particles and the flame flicker)
+
+An appearance entry (section 3) gains the presence bit 18, `particles`: a table string (the public or the session's private table),
+the JSON of the atom's BYOND particle set (`Anomaly.Server.Replication.ParticleSets`): `icon` (the file), `states` (each icon state and
+its weight), `color` (`#rrggbbaa`), the numbers `width`, `height`, `count`, `spawning`, `lifespan`, `fade`, `fadein`, `friction`,
+`rotation`, `spin`, and the vectors `position`, `velocity`, `gravity`, `drift`, `scale`, `grow` (an array of up to three numbers, or
+one number for all axes). A var that is unset or a generator is left out; a set whose JSON passes 1024 bytes is not sent. tg keeps a
+particle set on a particle holder in its parent's vis_contents, so it arrives as an overlay entry of the parent's picture. The client
+(`ParticleSet`, `Render/ParticleEmitter.cs`) draws it at the picture's middle, BYOND's ticks read as deciseconds and its pixels as tg
+pixels of a 2 m tile.
+
+A light state's flags byte (section 13) gains bit 1, the flicker: the light flickers as a flame (tg's `fire_flicker_middleman`: a
+lighter, a welder, a flare, the life candle; DV688). The client multiplies the lamp's energy by tg's alpha loop (`FlameFlicker`). A flags
+byte with a bit past 1 is refused.
+

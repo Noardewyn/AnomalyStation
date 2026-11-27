@@ -9,8 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file but the image itself (gaps J3, D298): the camera takes pictures with their description, spotted mobs and names, flash, film, zoom and printing, and prints a photo. The picture's image
-// (camera_get_icon, a composite of the seen atoms' sprites) has no counterpart in the 3D client: a row. The holodisk record is a row too (the AI's camera net came with silicons SI4); the camera is a circuit shell. The var blocks are generated.
+// The whole file (gaps J3, D298): the camera takes pictures with their description, spotted mobs and names, flash, film, zoom and printing, and prints a photo. The picture's image is the
+// photographer's client's 3D render (DEVIATION(DV685): PhotoSeam), not camera_get_icon's composite of the seen atoms' sprites. The holodisk record is a row (the AI's camera net came with silicons
+// SI4); the camera is a circuit shell. The var blocks are generated.
 
 // tg: code/modules/photography/camera/camera.dm:2
 public partial class obj_item_camera : obj_item
@@ -243,7 +244,7 @@ public partial class obj_item_camera : obj_item
         float height = APERTURE_TO_METERS(picture_size_y);
         ///list of human names taken on picture
         DmList names = Dm.list();
-        // tg's turf reservation holds the clones camera_get_icon renders; with no image there are no clones (a row)
+        // tg's turf reservation holds the clones camera_get_icon renders; the client renders the shot from the world itself (DV685)
         foreach (turf seen_placeholder in Dm.each<turf>(CORNER_BLOCK_OFFSET(target_turf, width, height, -size_x, -size_y)))
         {
             if (seen_placeholder == null)
@@ -282,7 +283,9 @@ public partial class obj_item_camera : obj_item
                 desc_lines.Add(info);
         }
 
-        object get_icon = await camera_get_icon(turfs, target_turf, null);
+        // DEVIATION(DV685): var/icon/get_icon = camera_get_icon(turfs, target_turf, clone_area), with its black underlay: the image is the
+        // photographer's client's render of this shot, which PhotoSeam asks for once the picture exists (below)
+        object get_icon = null;
         foreach (mob_living_carbon_human person in Dm.each<mob_living_carbon_human>(mobs))
         {
             if (Dm.truthy(Dm.bitand(person.obscured_slots, HIDEFACE)))
@@ -304,6 +307,7 @@ public partial class obj_item_camera : obj_item
             null,
             null,
             see_ghosts);
+        PhotoSeam.Request(user, picture, target_turf, width, height);
         await after_picture(user, picture);
         if (Dm.truthy(_listen_lookup?[COMSIG_CAMERA_IMAGE_CAPTURED]))
             _SendSignal(COMSIG_CAMERA_IMAGE_CAPTURED, Dm.list(this, target, user, picture));
@@ -393,7 +397,7 @@ public partial class obj_item_camera : obj_item
         }
 
         await new_photo.set_picture(picture, TRUE, TRUE);
-        // if(CONFIG_GET(flag/picture_logging_camera)) picture.log_to_file(): the pictures' log (no image to log)
+        // if(CONFIG_GET(flag/picture_logging_camera)) picture.log_to_file(): the pictures' log to disk (D332, with persistence)
 
         pictures_left--;
 

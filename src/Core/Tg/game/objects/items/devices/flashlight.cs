@@ -14,7 +14,7 @@ namespace Anomaly.Core.Tg;
 // lamps' COMPLEX_LIGHT through update_light). M8 slice D: the penlight's eye and mouth examination (eye_examine,
 // mouth_examine, interact_with_atom). Left for their milestones: the cuffable handle (the cuffable_item element is not translated)
 // (the live-partial rows of "## Flashlight (M4a)": gaps DV2, below). M7 lighting slice L1 (D168): the flares (with the torches and the candles) and the glowsticks, whole;
-// their leaves are the light middleman's flicker (the lighting module, D24), the admin log of a mob set on fire (M10), the
+// their leaves are the admin log of a mob set on fire (M10), the
 // glowstick's edible component (food, M8), lighting a cigarette from a candle (smoking, M9) and the glowstick fluid's effect
 // on a mob that drinks it (live-partial rows, M8). Gaps DV2 (D333): the base's suicide, the light disruptor's
 // blackout and a painted flashlight's tinted light, the penlight's medical holosign, the glowstick's suicide, the flashdark and the
@@ -470,10 +470,9 @@ public partial class obj_item_flashlight_flare : obj_item_flashlight
         object dot = base.Initialize(mapload, __extra);
         if (light_system == OVERLAY_LIGHT || light_system == OVERLAY_LIGHT_DIRECTIONAL || light_system == OVERLAY_LIGHT_BEAM) // IS_OVERLAY_LIGHT_SYSTEM (__DEFINES/lighting.dm), inline
         {
-            // middleman = new(src, "flashlight"); RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, PROC_REF(light_updated));
-            // middleman.being_overriding_light(): the flare's flicker, the lighting module (D24, rules 13: the client computes
-            // light from the replicated light_on, range, power and colour).
-            Dm.Deferred("code/game/objects/items/devices/flashlight.dm:476", "Initialize: the light middleman's flicker (the lighting module, D24)");
+            middleman = Dm.@new<datum_light_middleman>(this, "flashlight");
+            RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, nameof(light_updated));
+            middleman.being_overriding_light();
         }
         if (Dm.truthy(randomize_fuel))
             fuel = rand(10 * MINUTES, 15 * MINUTES);
@@ -554,8 +553,7 @@ public partial class obj_item_flashlight_flare : obj_item_flashlight
     [SignalHandler]
     public virtual void light_updated(datum source = null)
     {
-        // fire_flicker_middleman(middleman): the flare's flicker, the lighting module (D24); no middleman is made (Initialize).
-        Dm.Deferred("code/game/objects/items/devices/flashlight.dm:535", "light_updated: fire_flicker_middleman (the lighting module, D24)");
+        fire_flicker_middleman(middleman);
     }
 
     // tg: code/game/objects/items/devices/flashlight.dm:537

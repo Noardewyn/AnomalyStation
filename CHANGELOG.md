@@ -7,6 +7,14 @@ client's top-right corner, in its window title and in the first line of the serv
 
 ## [Unreleased]
 
+### Added
+
+- Cigarettes and their smokers give off smoke, and lighters', welders' and flares' flames flicker.
+- Canisters can be recoloured in the colour menu, and vending machines' colourable products use it too.
+- Concrete: pour it over a grille or catwalk to make walls and floors that cure in a minute and can be shaped while wet.
+- Hulks smash: their punch dents and breaks walls, digs through rock, hurts people and animals, and damages machines and mechs.
+- Photos show what the photographer saw: the camera's shot is rendered in 3D, shown in its window and on the photo; photo booths and picture frames work.
+
 ## [1.15.0-pre-alpha] - 2026-11-27
 
 ### Protocol

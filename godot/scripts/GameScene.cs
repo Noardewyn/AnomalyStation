@@ -97,6 +97,7 @@ public partial class GameScene : Node3D
         return _feed.Replica.IsOpaque(x, y, _ownZ);
     }
     private CameraRig _rig;
+    private Anomaly.Client.Render.PhotoCamera _photoCamera;
     private PlaySession _session;
     private PlayOptions _options;
     private HudLayer _hudLayer;
@@ -189,6 +190,8 @@ public partial class GameScene : Node3D
         _map = GetNode<MapRenderer>("Map");
         _entities = GetNode<EntityLayer>("Entities");
         _rig = GetNode<CameraRig>("Rig");
+        _photoCamera = new Anomaly.Client.Render.PhotoCamera { Name = "PhotoCamera" }; // DV685: the pictures tg's camera takes
+        AddChild(_photoCamera);
         // The map draws the tiles and the static props itself (M3 P6, scope 2i); the entity layer keeps the mobs and whatever moves.
         // Both take their pictures from tg's icons through one set of textures.
         var textures = new AppearanceTextures();
@@ -546,6 +549,8 @@ public partial class GameScene : Node3D
         using (Dev.FrameProbe.Scope("GameScene/session.Frame"))
             _session.Frame(now, moveKeys, facing, controlling);
         ApplyMapLook();
+        while (_feed.TryTakePhotoRequest(out PhotoRequestMessage photo)) // DV685: a picture this client's camera took, rendered from the own eye
+            _photoCamera.Take(photo, _rig.Camera, _feed.SendPhoto);
         Starfield.SetSun(EditorOn ? EditorSunAzimuth(_feed.Replica?.SunAzimuth ?? float.NaN) : _feed.Replica?.SunAzimuth ?? float.NaN, dt); // tg's SSsun, moved once a minute
         bool ashen = _feed.Replica?.IsNoParallax(_ownZ) == true; // D305: Lavaland's own sky (the own or the watched mob's level, last frame's)
         Starfield.SetAshen(ashen);

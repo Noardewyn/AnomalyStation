@@ -85,7 +85,7 @@ public static class TguiRender
             UiKind.Input => Input(node, env),
             UiKind.TextArea => TextArea(node, env),
             UiKind.Dropdown => Dropdown(node),
-            UiKind.Html => Html(node),
+            UiKind.Html => Html(node, env),
             UiKind.ColorPicker => ColorPickerControl(node),
             UiKind.NumberInput => NumberInput(node, env),
             UiKind.Loader => new TguiLoader { Value = node.Value },
@@ -1180,7 +1180,7 @@ public static class TguiRender
 
     // M9 slice E: tgui-core's TextArea (a multi-line field): its text is the window's local state while it is typed, as an Input's
     // M10x slice G6 (DV216): a browse() page, drawn as tg's chat lines are; its links go to the server's Topic
-    private static Control Html(UiNode node)
+    private static Control Html(UiNode node, TguiRenderEnv env)
     {
         var text = new RichTextLabel
         {
@@ -1191,10 +1191,23 @@ public static class TguiRender
             SizeFlagsVertical = Control.SizeFlags.ExpandFill,
         };
         ChatText.Style(text, 13);
-        var links = new List<ChatLink>();
-        var spans = new List<ChatSpan>();
-        string plain = HtmlText.ToPlain(node.TextValue ?? "", links, spans);
-        ChatText.Append(text, plain, spans, links, 13);
+        // DV685: a browse() page's pictures (tg's photo window) between its text pieces, each piece drawn as tg's chat lines
+        foreach (HtmlPiece piece in HtmlImages.Split(node.TextValue ?? ""))
+        {
+            if (piece.Source == null)
+            {
+                var links = new List<ChatLink>();
+                var spans = new List<ChatSpan>();
+                string plain = HtmlText.ToPlain(piece.Html, links, spans);
+                ChatText.Append(text, plain, spans, links, 13);
+            }
+            else if (env.Icon?.Invoke(piece.Source, "") is Texture2D picture)
+            {
+                text.PushParagraph(HorizontalAlignment.Center);
+                text.AddImage(picture, piece.Width, piece.Height);
+                text.Pop();
+            }
+        }
         text.MetaClicked += meta => node.OnInput?.Invoke(meta.AsString());
         return text;
     }

@@ -650,8 +650,11 @@ public static class Limits
     /// <summary>Version 78: a verb's path (<c>/mob/living/silicon/ai/verb/pick_icon</c>) and an action running it.</summary>
     public const int MaxVerbPathBytes = 128;
 
-    /// <summary>Version 79 (silicons SI4d): the largest runtime resource, a PNG the world made (tg's biggest canvas, 45 x 27, is a few KiB).</summary>
-    public const int MaxRuntimeResourceBytes = 64 * 1024;
+    /// <summary>
+    /// Version 79 (silicons SI4d): the largest runtime resource, a PNG the world made (tg's biggest canvas, 45 x 27, is a few KiB). Version 99: a
+    /// photo (<see cref="MaxPhotoBytes"/>; it was 64 KiB).
+    /// </summary>
+    public const int MaxRuntimeResourceBytes = MaxPhotoBytes;
 
     /// <summary>Version 84: the weathers of a <see cref="WeatherMessage"/> (tg runs one or two on a level at once).</summary>
     public const int MaxWeatherLayers = 16;
@@ -661,6 +664,24 @@ public static class Limits
 
     /// <summary>Version 92: a <see cref="GunSightMessage"/>: the id, the gun flag, the cone and the hits.</summary>
     public const int MaxGunSightBytes = 1 + 1 + 4 + 1;
+
+    /// <summary>Version 99: the most tiles a <see cref="PhotoRequestMessage"/> frames on a side (tg's widest camera aperture is 7).</summary>
+    public const int MaxPhotoTiles = 15;
+
+    /// <summary>Version 99: the most pixels on a side of a photo.</summary>
+    public const int MaxPhotoSide = 1024;
+
+    /// <summary>Version 99: the largest <see cref="PhotoRequestMessage"/> (the id, three tiles of up to 5 bytes each, the frame and the size).</summary>
+    public const int MaxPhotoRequestBytes = 1 + 5 + 3 * 5 + 2 + 4;
+
+    /// <summary>Version 99: the most bytes of a photo's PNG (a 448 x 448 render of the widest aperture fits).</summary>
+    public const int MaxPhotoBytes = 512 * 1024;
+
+    /// <summary>Version 99: the most PNG bytes of one <see cref="PhotoPart"/>.</summary>
+    public const int MaxPhotoPartBytes = 4096;
+
+    /// <summary>Version 99: the largest <see cref="PhotoPart"/> message (the id, the total, the offset and the part's length of up to 5 bytes each, and the part).</summary>
+    public const int MaxPhotoPartMessageBytes = 1 + 4 * 5 + MaxPhotoPartBytes;
 }
 
 /// <summary>A token bucket: <see cref="PerSecond"/> tokens refill per second of game time (20 ticks), at most <see cref="Burst"/> are kept.</summary>

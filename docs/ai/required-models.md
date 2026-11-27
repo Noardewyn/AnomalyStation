@@ -1271,4 +1271,10 @@ the kits' in `supplies.dmi`). Meanwhile tg's sprites, with the fish drawn into t
 - **Laptops** (gaps MT2, `modular_computers/computers/item/laptop.dm`, `icons/obj/devices/modular_laptop.dmi`): a laptop open
   (`laptop`, with its screen's program overlay, and `laptop-off` unpowered) and closed (`laptop-closed`), small enough to sit on a
   desk; MetaStation places two civilian ones. Meanwhile the client draws tg's sprite in 2D.
+- **Photo booths** (gaps MT3, `machinery/photobooth.dm`, `icons/obj/machines/photobooth.dmi`): a booth one tile big with drapes and a
+  camera, open (`booth_open`) and shut on its occupant (`booth_closed`), with its countdown light (the security booth's height chart is
+  the same model); MetaStation has two. Meanwhile the client draws tg's sprite in 2D.
+- **Picture frames** (gaps MT3, `photography/photos/frame.dm`, `icons/obj/signs.dmi` `frame-empty`, `frame-overlay`, the bar portrait's
+  `frame-monkey`, `frame-fruit`, `frame-rat`, `frame-ratvar`): a flat wall frame that shows the framed photo's picture (its small icon)
+  or a portrait; MetaStation has five. Meanwhile the client draws tg's sprite in 2D on the wall.
 

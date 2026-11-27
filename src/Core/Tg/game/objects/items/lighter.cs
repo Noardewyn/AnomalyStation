@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (gaps J3, D298). The light middleman's flicker is the lighting module's (D24, as the welder's and the flare's). The var blocks are generated.
+// The whole file (gaps J3, D298). The light middleman's flicker is the client's flame flicker (DV688). The var blocks are generated.
 
 // tg: code/game/objects/items/lighter.dm:2
 public partial class obj_item_lighter : obj_item
@@ -20,9 +20,9 @@ public partial class obj_item_lighter : obj_item
         object dot = base.Initialize(mapload, __extra);
         if (light_system == OVERLAY_LIGHT || light_system == OVERLAY_LIGHT_DIRECTIONAL || light_system == OVERLAY_LIGHT_BEAM) // IS_OVERLAY_LIGHT_SYSTEM (__DEFINES/lighting.dm), inline
         {
-            // middleman = new(src, "lighter"); RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, PROC_REF(light_updated)); middleman.being_overriding_light():
-            // the flicker, the lighting module (D24, rules 13: the client computes light from the replicated light_on, range, power and colour).
-            Dm.Deferred("code/game/objects/items/lighter.dm:47", "Initialize: the light middleman's flicker (the lighting module, D24)");
+            middleman = Dm.@new<datum_light_middleman>(this, "lighter");
+            RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, nameof(light_updated));
+            middleman.being_overriding_light();
         }
         create_reagents(maximum_fuel, Dm.bitor(REFILLABLE, DRAINABLE));
         if (Dm.truthy(spawns_with_reagent))
@@ -67,8 +67,7 @@ public partial class obj_item_lighter : obj_item
     [SignalHandler]
     public virtual void light_updated(datum source = null)
     {
-        // fire_flicker_middleman(middleman): the flicker, the lighting module (D24); no middleman is made (Initialize).
-        Dm.Deferred("code/game/objects/items/lighter.dm:80", "light_updated: fire_flicker_middleman (the lighting module, D24)");
+        fire_flicker_middleman(middleman);
     }
 
     /// Destroy the lighter when it's shot by a bullet

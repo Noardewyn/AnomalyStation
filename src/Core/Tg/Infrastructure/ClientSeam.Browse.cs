@@ -32,7 +32,7 @@ public static partial class ClientSeam
             player.dm_tgui_write(new TguiOutput(window, TguiOutputKind.Close, null));
             return;
         }
-        string page = Dm.str(html);
+        string page = BrowseSources(player, Dm.str(html));
         string[] size = Dm.str(opts["size"] ?? "").Split('x');
         Match title = TitleTag.Match(page);
         DmList json = Dm.list();
@@ -42,4 +42,48 @@ public static partial class ClientSeam
         json["height"] = size.Length == 2 && int.TryParse(size[1], out int h) ? h : 0;
         player.dm_tgui_write(new TguiOutput(window, TguiOutputKind.Browse, Dm.json_encode(json)));
     }
+
+    private static readonly Regex SourceAttribute = new("\\bsrc\\s*=\\s*(['\"])([^'\"]*)\\1", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+    /// <summary>
+    /// DV685: <c>target &lt;&lt; browse_rsc(file, name)</c> (BYOND ref <c>browse_rsc</c>): the client's browser cache holds the file under
+    /// <paramref name="name"/>, which a page's <c>&lt;img src&gt;</c> names. The port's client already has every runtime image and icon file,
+    /// so the cache is the name's resource (an icon's file or its recipe, <see cref="icon.dm_resource"/>), put in the pages
+    /// <see cref="Browse"/> sends in place of the name.
+    /// </summary>
+    public static void BrowseRsc(object target, object file, object name)
+    {
+        client player = target as client ?? (target as mob)?.client;
+        string key = Dm.str(name ?? "");
+        if (player == null || key.Length == 0)
+            return;
+        string resource = file switch
+        {
+            icon image => image.dm_resource(),
+            DmResource cached => cached.Path,
+            string path when path.Length > 0 => path,
+            _ => null,
+        };
+        if (resource == null)
+            player.dm_browse_rsc.Remove(key);
+        else
+            player.dm_browse_rsc[key] = resource;
+    }
+
+    // A page's src attributes that name a browse_rsc file, as that file's resource
+    private static string BrowseSources(client player, string page)
+    {
+        if (player.dm_browse_rsc.Count == 0 || page.IndexOf("src", StringComparison.OrdinalIgnoreCase) < 0)
+            return page;
+        return SourceAttribute.Replace(page, m => player.dm_browse_rsc.TryGetValue(m.Groups[2].Value, out string resource)
+            ? "src=" + m.Groups[1].Value + resource + m.Groups[1].Value
+            : m.Value);
+    }
+}
+
+public partial class client
+{
+    /// <summary>DV685: the files <see cref="ClientSeam.BrowseRsc"/> put in this client's browser cache, by name, as their resource. Presentation state.</summary>
+    [NotHashed]
+    public readonly Dictionary<string, string> dm_browse_rsc = new(StringComparer.Ordinal);
 }

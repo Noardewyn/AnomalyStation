@@ -232,6 +232,9 @@ internal sealed class AppearanceTables
         // Version 25 (D155): the filters the client draws, and the render target a filter takes a picture by.
         e.Filters = Filters(a.filters);
         e.RenderTarget = a.render_target is string target && target.Length > 0 ? StringRef(target) : TableRef.None;
+        // Version 99 (DV687): the particle set the atom emits (a particle holder's), its vars as JSON for the client to draw.
+        string particles = a is Anomaly.Core.Tg.atom_movable emitter ? ParticleSets.Text(emitter.particles) : null;
+        e.Particles = particles != null ? StringRef(particles) : TableRef.None;
 
         if (depth < MaxDepth)
         {
@@ -654,6 +657,7 @@ internal sealed class AppearanceTables
         e.MaptextX = e.MaptextY = 0;
         e.Filters = null;
         e.RenderTarget = default;
+        e.Particles = default;
         if (e.OverlayCount > 0) e.Overlays.Clear();
         if (e.UnderlayCount > 0) e.Underlays.Clear();
     }
@@ -684,6 +688,7 @@ internal sealed class AppearanceTables
             MaptextY = e.MaptextY,
             Filters = e.Filters?.ConvertAll(f => f.Copy()),
             RenderTarget = e.RenderTarget,
+            Particles = e.Particles,
         };
         if (e.OverlayCount > 0) copy.Overlays.AddRange(e.Overlays);
         if (e.UnderlayCount > 0) copy.Underlays.AddRange(e.Underlays);
@@ -706,7 +711,7 @@ internal sealed class AppearanceTables
                 && x.Maptext == y.Maptext && (x.Maptext.IsNone || (x.MaptextWidth == y.MaptextWidth && x.MaptextHeight == y.MaptextHeight
                     && x.MaptextX == y.MaptextX && x.MaptextY == y.MaptextY))
                 && FloatsEqual(x.ColorMatrix, y.ColorMatrix) && FloatsEqual(x.Transform, y.Transform)
-                && x.RenderTarget == y.RenderTarget && FiltersEqual(x.Filters, y.Filters)
+                && x.RenderTarget == y.RenderTarget && x.Particles == y.Particles && FiltersEqual(x.Filters, y.Filters)
                 && RefsEqual(x.Overlays, x.OverlayCount, y.Overlays, y.OverlayCount)
                 && RefsEqual(x.Underlays, x.UnderlayCount, y.Underlays, y.UnderlayCount);
         }

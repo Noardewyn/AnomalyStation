@@ -26,10 +26,9 @@ public partial class obj_item_weldingtool : obj_item
         object dot = base.Initialize(mapload, __extra);
         if (light_system == OVERLAY_LIGHT || light_system == OVERLAY_LIGHT_DIRECTIONAL || light_system == OVERLAY_LIGHT_BEAM) // IS_OVERLAY_LIGHT_SYSTEM (__DEFINES/lighting.dm), inline
         {
-            // middleman = new(src, "weldingtool"); RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED,
-            // PROC_REF(light_updated)); middleman.being_overriding_light(): the light's flicker, the lighting module
-            // (D24, rules 13: the client computes light from the replicated light_on, range, power and colour).
-            Dm.Deferred("code/game/objects/items/tools/engineering/weldingtool.dm:61", "Initialize: the light middleman's flicker (the lighting module, D24)");
+            middleman = Dm.@new<datum_light_middleman>(this, "weldingtool");
+            RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, nameof(light_updated));
+            middleman.being_overriding_light();
         }
         // AddElement(/datum/element/update_icon_updates_onmob): redrawing the holder's hand when the icon changes; the
         // held item's inhand_icon_state replicates with the item (M4a P2's hands), so nothing reads the element.
@@ -167,8 +166,7 @@ public partial class obj_item_weldingtool : obj_item
     [SignalHandler]
     public virtual void light_updated(datum source = null)
     {
-        // fire_flicker_middleman(middleman): the light's flicker, the lighting module (D24); no middleman is made (Initialize).
-        Dm.Deferred("code/game/objects/items/tools/engineering/weldingtool.dm:160", "light_updated: fire_flicker_middleman (the lighting module, D24)");
+        fire_flicker_middleman(middleman);
     }
 
     // tg: code/game/objects/items/tools/engineering/weldingtool.dm:145  (M5 slice 4: a welder that does not slice a wall or a

@@ -1171,9 +1171,9 @@ public partial class obj_item_wallframe_ticket_machine : obj_item_wallframe
     }
 }
 
-// tg: code/modules/photography/photos/frame.dm:4
-[DmPath("/obj/item/wallframe/picture"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wallframe_picture : obj_item_wallframe
+// tg: code/modules/photography/photos/frame.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/wallframe/picture")]
+public partial class obj_item_wallframe_picture
 {
     public obj_item_photo displayed; // tg: code/modules/photography/photos/frame.dm:12
 

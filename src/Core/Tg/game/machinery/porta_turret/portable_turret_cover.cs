@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (syndicate G4d, D316) but the hulk's punch, which it hands to the turret (attack_hulk: a live-partial row); the AI's
-// and the cyborgs' clicks since silicons SI2. The var block is generated (D111).
+// The whole file (syndicate G4d, D316); the AI's and the cyborgs' clicks since silicons SI2; the hulk's punch, which it hands to the
+// turret, with the MetaStation leftovers. The var block is generated (D111).
 
 /************************
 * PORTABLE TURRET COVER *
@@ -117,6 +117,12 @@ public partial class obj_machinery_porta_turret_cover : obj_machinery
     {
         await parent_turret.attack_animal(user, modifiers);
         return null;
+    }
+
+    // tg: code/game/machinery/porta_turret/portable_turret_cover.dm:85
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        return await parent_turret.attack_hulk(user);
     }
 
     // tg: code/game/machinery/porta_turret/portable_turret_cover.dm:88

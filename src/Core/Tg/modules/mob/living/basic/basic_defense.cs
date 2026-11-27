@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (gaps package C1).
+// The whole file (gaps package C1; the hulk's punch with the MetaStation leftovers).
 
 // tg: code/modules/mob/living/basic/basic_defense.dm:1
 public partial class mob_living_basic : mob_living
@@ -84,6 +84,20 @@ public partial class mob_living_basic : mob_living
             Dm.list(this)
         );
         to_chat(this, span_userdanger(I18n.T("You're [] by []!", moved ? I18n.T("pushed") : I18n.T("shoved"), shover.name)));
+    }
+
+    // tg: code/modules/mob/living/basic/basic_defense.dm:55
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        object dot = await base.attack_hulk(user, __extra);
+        if (!Dm.truthy(dot))
+            return dot;
+        playsound(loc, SFX_PUNCH, 25, TRUE, -1);
+        visible_message(span_danger(I18n.T("[] punches []!", user, this)),
+                        span_userdanger(I18n.T("You're punched by []!", user)), null, COMBAT_MESSAGE_RANGE, user);
+        to_chat(user, span_danger(I18n.T("You punch []!", this)));
+        await apply_damage(15, damagetype: BRUTE);
+        return dot;
     }
 
     // tg: code/modules/mob/living/basic/basic_defense.dm:68

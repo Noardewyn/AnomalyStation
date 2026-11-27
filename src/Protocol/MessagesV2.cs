@@ -139,6 +139,12 @@ public sealed class AppearanceEntry
     /// <summary>Version 25: BYOND <c>render_target</c>, a string (a filter's render source names it), or none. One starting with <c>*</c> is not drawn itself.</summary>
     public TableRef RenderTarget { get; set; }
 
+    /// <summary>
+    /// Version 99 (DV687): BYOND <c>particles</c>, the particle set the atom emits (tg's particle holders: a cigarette's smoke), as a string
+    /// table entry holding the set's vars as JSON (docs/ai/specs/protocol.md section 95), or none.
+    /// </summary>
+    public TableRef Particles { get; set; }
+
     /// <summary>BYOND's default <c>maptext_width</c> and <c>maptext_height</c>: one icon (32 pixels).</summary>
     public const short DefaultMaptextSize = 32;
 }

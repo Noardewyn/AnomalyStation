@@ -198,7 +198,11 @@ public static class ProtocolVersion
     /// loads the world behind its loading screen before its new player is late-joined.
     /// Version 98: a <see cref="UiWindowMessage"/> may be <see cref="Limits.MaxUiWindowBytes"/> 1 MiB long (256 KiB before) and a UI payload
     /// may hold <see cref="Limits.MaxUiValues"/> 65536 values (32768 before), as tg's crafting window sends every cooking recipe at once.
-    public const ushort Current = 98;
+    /// Version 99 (DV685; MessagesV99.cs): the PhotoRequest and PhotoPart messages, a photo rendered by the photographer's
+    /// client and sent to the server, which gives it to every client as a RuntimeResource; <see cref="Limits.MaxRuntimeResourceBytes"/> is 512 KiB.
+    /// Version 99, also (DV687, DV688; docs/ai/specs/protocol.md section 95): an appearance's particles (BYOND particles, a particle set's vars as
+    /// JSON: a cigarette's smoke) and a light's flicker bit (a flame's light, tg's fire_flicker_middleman).
+    public const ushort Current = 99;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

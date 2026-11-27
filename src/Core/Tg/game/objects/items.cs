@@ -2693,9 +2693,15 @@ public partial class obj_item : obj
     }
 }
 
-// Gaps package C1.
+// Gaps package C1; the MetaStation leftovers: a hulk does not punch items (attack_hulk).
 public partial class obj_item : obj
 {
+    // tg: code/game/objects/items.dm:978
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        return FALSE;
+    }
+
     // tg: code/game/objects/items.dm:981
     public override async DmTask<object> attack_animal(mob user = null, DmList modifiers = null)
     {

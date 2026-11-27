@@ -54,15 +54,6 @@ public partial class mob_living_basic
         return DmTask<object>.FromResult(default);
     }
 
-    // tg: code/modules/mob/living/basic/basic_defense.dm:55
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/mob/living/basic/basic_defense.dm:55", "attack_hulk: hulks (genetics) and no live ancestor declares the slot yet (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
     // tg: code/modules/mob/living/basic/basic_defense.dm:140
     // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]

@@ -214,8 +214,8 @@ public sealed partial class ServerHost
 
         if (!_codec.TryPeekId(message, out MessageId id)) { Strike(s, "an unknown message id"); return; }
         // version 38: a say action carries up to 1024 characters, every other message keeps the 256-byte cap
-        // version 53: a bug report carries its screenshot
-        int cap = id switch { MessageId.Action => Limits.MaxSayActionBytes, MessageId.BugReport => Limits.MaxBugReportPartMessageBytes, _ => Limits.MaxInboundMessageBytes };
+        // version 53: a bug report carries its screenshot; version 99: a photo's part carries 4 KB of its PNG
+        int cap = id switch { MessageId.Action => Limits.MaxSayActionBytes, MessageId.BugReport => Limits.MaxBugReportPartMessageBytes, MessageId.PhotoPart => Limits.MaxPhotoPartMessageBytes, _ => Limits.MaxInboundMessageBytes };
         if (message.Length > cap) { Strike(s, "an oversized message"); return; }
         if (_waiting.Contains(s))
             return; // D306: a session waiting between rounds has no world to command (the old round's last inputs may still come)
@@ -229,6 +229,9 @@ public sealed partial class ServerHost
                 return;
             case MessageId.BugReport when channel == Channel.State:
                 ReceiveBugReport(s, message);
+                return;
+            case MessageId.PhotoPart when channel == Channel.State:
+                ReceivePhotoPart(s, message);
                 return;
             default:
                 // A second Hello, a server message, the version-1 InputFrame, or a right message on the wrong channel.
@@ -746,6 +749,7 @@ public sealed partial class ServerHost
             SendMinimapMobs(s, frame.Tick); // version 68
             SendBuildPreview(s); // version 70
             SendGunSight(s); // version 92
+            SendPhotoRequests(s); // version 99
             SendWeather(s); // version 84
         }
     }

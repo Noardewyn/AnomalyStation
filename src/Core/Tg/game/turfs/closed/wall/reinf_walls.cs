@@ -10,14 +10,21 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL: /turf/closed/wall/r_wall's update_icon and update_icon_state (M3 P4: the reinforced wall's picture follows its
-// smoothing) and its deconstruction (M5 slice 4: try_decon's seven stages and their reversals, devastate_wall); the
-// hulks (M10+) and rust (M10+) are generated
-// live-partial stubs (docs/ai/specs/live-partial.txt's P4 section); E13: rcd_vals and rcd_act (the RCD). The plastitanium subtypes
+// smoothing) and its deconstruction (M5 slice 4: try_decon's seven stages and their reversals, devastate_wall); the hulk's
+// recoil (the MetaStation leftovers); rust (M10+) is a generated
+// live-partial stub (docs/ai/specs/live-partial.txt's P4 section); E13: rcd_vals and rcd_act (the RCD). The plastitanium subtypes
 // wait for their own procs.
 
 // tg: code/game/turfs/closed/wall/reinf_walls.dm:1
 public partial class turf_closed_wall_r_wall : turf_closed_wall
 {
+    // tg: code/game/turfs/closed/wall/reinf_walls.dm:47
+    public override async DmTask hulk_recoil(obj_item_bodypart arm = null, mob_living_carbon_human hulkman = null, float? damage = null)
+    {
+        damage ??= 41;
+        await base.hulk_recoil(arm, hulkman, damage);
+    }
+
     // tg: code/game/turfs/closed/wall/reinf_walls.dm:26
     public override object deconstruction_hints(mob user = null)
     {

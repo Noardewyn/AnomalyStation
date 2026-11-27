@@ -229,10 +229,34 @@ public partial class obj_item_reagent_containers_cup : obj_item_reagent_containe
     // tg: code/modules/reagents/reagent_containers/cups/_cup.dm:199
     public virtual async DmTask<object> pour_concrete(atom target = null, mob_living user = null)
     {
-        if (((datum_reagents)reagents).has_reagent(typeof(datum_reagent_concrete), check_subtypes: TRUE) is not datum_reagent_concrete)
+        if (((datum_reagents)reagents).has_reagent(typeof(datum_reagent_concrete), check_subtypes: TRUE) is not datum_reagent_concrete concrete)
             return NONE;
-        Dm.NotTranslated("code/modules/reagents/reagent_containers/cups/_cup.dm:203", "pour_concrete: the concrete reagent's pour_amount (concrete, M10+ engineering odds and ends)");
-        return NONE;
+        float pour_amount = Dm.num(concrete.pour_amount(target, user));
+        if (!Dm.truthy(pour_amount))
+            return NONE;
+        if (concrete.volume < pour_amount)
+        {
+            user.balloon_alert(user, I18n.T("not enough to pour"));
+            return ITEM_INTERACT_FAILURE;
+        }
+        user.balloon_alert(user, I18n.T("pouring..."));
+        user.visible_message(
+            span_notice(I18n.T("[] starts pouring concrete onto \\a [].", user, target)),
+            span_notice(I18n.T("You start pouring concrete onto \\a []...", target)));
+        if (!Dm.truthy(await do_after(user, 1 * SECONDS, target: target)))
+        {
+            user.balloon_alert(user, I18n.T("interrupted"));
+            return ITEM_INTERACT_FAILURE;
+        }
+        if (concrete.volume < pour_amount) // check if volume has changed during do_after
+        {
+            user.balloon_alert(user, I18n.T("not enough to pour"));
+            return ITEM_INTERACT_FAILURE;
+        }
+        playsound(this, Dm.resource("sound/effects/slosh.ogg"), 25, TRUE);
+        await concrete.expose_atom(target, pour_amount, TOUCH);
+        await ((datum_reagents)reagents).remove_reagent(concrete.type, pour_amount);
+        return ITEM_INTERACT_SUCCESS;
     }
 
     // tg: code/modules/reagents/reagent_containers/cups/_cup.dm:225

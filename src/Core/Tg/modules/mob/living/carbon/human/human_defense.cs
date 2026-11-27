@@ -1036,3 +1036,25 @@ public partial class mob_living_carbon_human : mob_living_carbon
         return TRUE;
     }
 }
+
+// tg: code/modules/mob/living/carbon/human/human_defense.dm:105 (interleaved types, rules 1.9; the MetaStation leftovers: a hulk's punch)
+public partial class mob_living_carbon_human : mob_living_carbon
+{
+    // tg: code/modules/mob/living/carbon/human/human_defense.dm:105
+    public override async DmTask<object> attack_hulk(mob_living_carbon_human user = null, params object[] __extra)
+    {
+        object dot = await base.attack_hulk(user, __extra);
+        if (!Dm.truthy(dot))
+            return dot;
+        string hulk_verb = (string)pick("smash", "pummel");
+        if (Dm.truthy(await check_block(user, 15, Dm.text("the []ing", hulk_verb), UNARMED_ATTACK)))
+            return dot;
+        obj_item_bodypart_arm active_arm = user.get_active_hand() as obj_item_bodypart_arm;
+        playsound(loc, active_arm?.unarmed_attack_sound, 25, TRUE, -1);
+        visible_message(span_danger(I18n.T("[] []ed []!", user, hulk_verb, this)),
+                        span_userdanger(I18n.T("[] []ed []!", user, hulk_verb, this)), span_hear(I18n.T("You hear a sickening sound of flesh hitting flesh!")), null, user);
+        to_chat(user, span_danger(I18n.T("You [] []!", hulk_verb, this)));
+        await apply_damage(15, BRUTE, wound_bonus: 10);
+        return dot;
+    }
+}

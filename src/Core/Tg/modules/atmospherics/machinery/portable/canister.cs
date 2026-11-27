@@ -22,7 +22,8 @@ namespace Anomaly.Core.Tg;
 // acts (M4a, M5), take_damage and atom_break (M5), replace_tank (the hand-held tanks, M4a), the tgui window (ui_state,
 // ui_interact, ui_static_data, ui_data, ui_act: M9) and the colour menu (recolor, M9). The var blocks are generated.
 // M5 slice 3 (D148, protocol 16): the tgui window (ui_state, ui_interact, ui_static_data, ui_data, ui_act) is translated; its
-// relabel (tgui_input_list) and recolor (the greyscale menu) are deferred leaves, and cellCharge reads the missing cell (GAP).
+// relabel (tgui_input_list) is a deferred leaf, and cellCharge reads the missing cell (GAP). The colour menu (recolor) came with the
+// MetaStation leftovers.
 
 // tg: code/modules/atmospherics/machinery/portable/canister.dm:2  #define CAN_DEFAULT_RELEASE_PRESSURE (ONE_ATMOSPHERE) (file-local)
 // tg: code/modules/atmospherics/machinery/portable/canister.dm:4  #define TEMPERATURE_RESISTANCE (1000 + T0C) (file-local, #undef at :778)
@@ -474,9 +475,13 @@ public partial class obj_machinery_portable_atmospherics_canister : obj_machiner
                 object initial_config = Dm.initial(this, nameof(greyscale_config));
                 if (initial_config == null)
                     return FALSE;
-                // var/datum/greyscale_modify_menu/menu = new(src, usr, list("[initial_config]"), CALLBACK(src, PROC_REF(recolor)), ...);
-                // menu.ui_interact(usr): the greyscale colour menu (its tgui window, not translated yet).
-                Dm.Deferred("code/modules/atmospherics/machinery/portable/canister.dm:676", "ui_act: recolor, the greyscale_modify_menu window (not translated yet)");
+                object initial_icon_state = Dm.initial(this, nameof(post_init_icon_state));
+                var menu = Dm.@new<datum_greyscale_modify_menu>(
+                    this, usr, Dm.list(Dm.text("[]", initial_config)), Dm.@new<datum_callback>(this, nameof(recolor)),
+                    Dm.truthy(initial_icon_state) ? initial_icon_state : Dm.initial(this, nameof(icon_state)), // starting_icon_state
+                    initial_config, // starting_config
+                    Dm.initial(this, nameof(greyscale_colors))); // starting_colors
+                await menu.ui_interact(usr);
                 dot = TRUE;
                 break;
             }
@@ -760,4 +765,14 @@ public sealed partial class TgState
 {
     // tg: code/modules/atmospherics/machinery/portable/canister.dm:383  /obj/machinery/portable_atmospherics/canister/update_window var/static/alpha_filter
     internal dm_filter obj_machinery_portable_atmospherics_canister__update_window__alpha_filter;
+}
+
+// tg: code/modules/atmospherics/machinery/portable/canister.dm:767  (interleaved, rules 1.9; the MetaStation leftovers: the colour menu)
+public partial class obj_machinery_portable_atmospherics_canister : obj_machinery_portable_atmospherics
+{
+    // tg: code/modules/atmospherics/machinery/portable/canister.dm:767
+    public virtual async DmTask recolor(datum_greyscale_modify_menu menu = null)
+    {
+        await set_greyscale(menu.split_colors, menu.config.type);
+    }
 }

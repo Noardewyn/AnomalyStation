@@ -114,4 +114,10 @@ public enum MessageId : byte
 
     /// <summary>Version 92: <see cref="Anomaly.Protocol.GunSightMessage"/>: server to client, State channel (the own gun's cone and hits, after the tick's Delta, when it changes).</summary>
     GunSight = 31,
+
+    /// <summary>Version 99: <see cref="Anomaly.Protocol.PhotoRequestMessage"/>: server to client, State channel (a picture tg's camera took, for the photographer's client to render, after the tick's Delta).</summary>
+    PhotoRequest = 32,
+
+    /// <summary>Version 99: <see cref="Anomaly.Protocol.PhotoPart"/>: client to server, State channel (a part of the rendered picture's PNG).</summary>
+    PhotoPart = 33,
 }

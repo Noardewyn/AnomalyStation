@@ -1619,3 +1619,41 @@ Section 13 as built (2026-11-27), additions and what to tell the owner:
   also multiplied by 0.35 at rest, and its title bar's text, its X and its tab labels fade with it); D259 and D247
   (the action row and the input row always shown: now only while typing); and the layout of 2026-10-30 that put
   the chat window at the bottom left under the inventory (now above the hands' row).
+
+### Package 4 in slices
+
+| Slice | What |
+|---|---|
+| 4A | Client only: under Tab the chat window as the left column, the character's sprite with the worn slots round it in the middle, an item used on the sprite used on oneself at the part clicked, the overlay closing on damage. |
+| 4B | Server and client: Tab opens the backpack with tg's sound; the contents of every worn storage shown at once in the right column, with names and room; dragging between everything; Ctrl+click transfer. |
+| 4C | The other container's panel beside the backpack (closing by tg's reach rule) and the nearby items' strip. |
+| 4D | The strip view: the target's sprite, slots and storages at the right, the player's own storages in the middle, the search that reveals a storage's items one at a time (agreed by the lead developer). |
+| 4E | The keys of section 12 taken from Space Station 14: E world interact, R quick equip, the smart-equip keys, V and Shift+V, Alt+click and Alt+Z, Shift+middle click to point, comma to whisper. |
+
+### Slice 4A: settled design (the worn slots' arrangement chosen by the designer from two mockups, 2026-11-27)
+
+Human HUD only, in cursor mode (Tab; the inventory key I does the same as Tab). Other HUDs keep what they have.
+- The chat window, when it is open, is docked as the left column while Tab is on: from the screen's left edge to
+  28% of its width (`UiTokens`' Tab share), from just under the action buttons at the top left down to 8 above the
+  bottom row, at its normal opacity. When Tab goes off it returns to where it was (its default place or the
+  player's own). A chat window the player has closed stays closed.
+- The middle column (28% to 64% of the width) holds the character panel, see-through: no backing, only the cells
+  and the sprite. The player's own sprite, facing the viewer, as the game draws the body (clothes and all), at a
+  whole-number scale (6 at the reference size, stepping down where the panel does not fit the height). Round it,
+  the worn slots as cells of the bar's size and look, by body position: above the sprite a row of ears, head, eyes,
+  under it the mask, under it the neck; left of the sprite, top to bottom, suit, uniform, gloves; right of it, top
+  to bottom, back, suit storage, belt; under it, shoes. 4 between cells, 12 between the sprite and the side
+  columns. The pockets and the ID slot are not repeated: they are cells 8, 9 and 0 of the bar.
+- A cell is tg's own slot entry re-placed (as the bar's pocket and ID cells are), so a click, a drag and a tooltip on
+  it are tg's: a click with an item in hand puts it on, an empty-hand click takes the thing off. An empty slot
+  shows tg's own slot picture.
+- The sprite takes clicks as the health doll does: with an item in the active hand a click on a body part uses the
+  item on oneself at that part (the nine zones of aiming by look, from the sprite's own pixels); an empty-hand
+  click checks oneself; Ctrl+click grasps the limb clicked. The pointer's prompt names the part under it.
+- The worn slots are available under Tab without the player doing anything first (tg's expanded inventory is kept
+  open for the human HUD; in first person its entries are not drawn and not clickable, as now). The old native
+  inventory panel with its outline doll is gone, and so is the short row of belt, back and suit storage over the
+  bar (slice 3B): those three are in the character panel.
+- The overlay closes by itself when the player takes damage: cursor mode turns off, unless the player is typing in
+  a text field or a window that needs the pointer is open.
+- Nothing of this is drawn in first person.

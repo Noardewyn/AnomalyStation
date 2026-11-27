@@ -9,12 +9,12 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file but its circuit components (gaps SC2, D333): the security records console and its laptops in tgui's
+// The whole file (gaps SC2, D333): the security records console and its laptops in tgui's
 // SecurityRecords window: the crimes and citations of the crew's records (added, edited and voided by their author or one with
 // armory access), the wanted status that the security HUDs show, the security note, deleting a record, a new record from a photo,
 // and the printouts: the rapsheet paper and the missing and wanted posters with the record's front photo. An EMP scrambles the
-// records. The arrest console's circuit components (arrest_console_data, arrest_console_arrest) and the console's USB port wait for
-// the integrated circuits, and the space ninja's drain (modules_ninja.dm) is a live-partial row (not-translated.md 198). The
+// records. The console's USB port takes the records data and set status circuit components; the space ninja's drain
+// (modules_ninja.dm) is a live-partial row (not-translated.md 198). The
 // blackbox's citation records (SSblackbox.ReportCitation) are the database's. The var blocks are generated (D111).
 
 // tg: code/game/machinery/computer/records/security.dm:8
@@ -28,8 +28,12 @@ public partial class obj_machinery_computer_records_security : obj_machinery_com
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/arrest_console_data,
-        // /obj/item/circuit_component/arrest_console_arrest), only_root_path = TRUE)): the integrated circuits (not-translated.md 198)
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port),
+            typecacheof(Dm.list(
+                typeof(obj_item_circuit_component_arrest_console_data),
+                typeof(obj_item_circuit_component_arrest_console_arrest)
+            ), only_root_path: TRUE)
+        ));
         return dot;
     }
 
@@ -476,5 +480,171 @@ public partial class obj_machinery_computer_records_security : obj_machinery_com
         _addtimer(Dm.@new<datum_callback>(this, nameof(print_finish), printable), 2 * SECONDS, Dm.bitor(TIMER_UNIQUE, TIMER_STOPPABLE), file: "code/game/machinery/computer/records/security.dm", line: 387);
 
         return TRUE;
+    }
+}
+
+/**
+ * Security circuit component
+ */
+// tg: code/game/machinery/computer/records/security.dm:394
+public partial class obj_item_circuit_component_arrest_console_data : obj_item_circuit_component
+{
+    // tg: code/game/machinery/computer/records/security.dm:407
+    public override async DmTask populate_ports()
+    {
+        records = add_output_port("Security Records", PORT_TYPE_TABLE) as datum_port_output;
+        on_fail = add_output_port("Failed", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:411
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_computer_records_security)))
+            attached_console = shell as obj_machinery_computer_records_security;
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:416
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_console = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:420
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+        Dm.append(ref dot, create_table_notices(Dm.list(
+            "name",
+            "id",
+            "rank",
+            "arrest_status",
+            "gender",
+            "age",
+            "species",
+            "fingerprint")));
+        return dot;
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:433
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (attached_console == null || !Dm.truthy(attached_console.authenticated))
+        {
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        if (GLOB.manifest.general == null)
+        {
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        DmList new_table = Dm.list();
+        foreach (datum_record_crew player_record in Dm.each_cast<datum_record_crew>(GLOB.manifest.general))
+        {
+            DmList entry = Dm.list();
+            entry["age"] = player_record.age;
+            entry["arrest_status"] = player_record.wanted_status;
+            entry["fingerprint"] = player_record.fingerprint;
+            entry["gender"] = player_record.gender;
+            entry["name"] = player_record.name;
+            entry["rank"] = player_record.rank;
+            entry["record"] = REF(player_record);
+            entry["species"] = player_record.species;
+
+            Dm.append(new_table, Dm.list(entry));
+        }
+
+        records.set_output(new_table);
+        return null;
+    }
+}
+
+// tg: code/game/machinery/computer/records/security.dm:458
+public partial class obj_item_circuit_component_arrest_console_arrest : obj_item_circuit_component
+{
+    // tg: code/game/machinery/computer/records/security.dm:1
+    private const float COMP_SECURITY_ARREST_AMOUNT_TO_FLAG = 10;
+
+    // tg: code/game/machinery/computer/records/security.dm:476
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_computer_records_security)))
+            attached_console = shell as obj_machinery_computer_records_security;
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:481
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_console = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:485
+    public override void populate_options()
+    {
+        // The component is made, and its options populated, before the USB port registers it with the console: tg's options are
+        // never added, so the set status input reads a null option port; kept as tg has it
+        if (attached_console == null)
+            return;
+        DmList available_statuses = WANTED_STATUSES();
+        new_status = add_option_port("Arrest Options", available_statuses) as datum_port_input_option;
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:491
+    public override async DmTask populate_ports()
+    {
+        targets = add_input_port("Targets", PORT_TYPE_TABLE) as datum_port_input;
+        new_status_set = add_output_port("Set Status", PORT_TYPE_STRING) as datum_port_output;
+        on_fail = add_output_port("Failed", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/computer/records/security.dm:496
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (attached_console == null || !Dm.truthy(attached_console.authenticated))
+        {
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        object status_to_set = new_status.value;
+
+        new_status_set.set_output(status_to_set);
+        DmList target_table = targets.value as DmList;
+        if (target_table == null)
+        {
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        float successful_set = 0;
+        DmList names_of_entries = Dm.list();
+        foreach (DmList target in Dm.each<DmList>(target_table))
+        {
+            datum_record_crew sec_record = target["security_record"] as datum_record_crew;
+            if (sec_record == null)
+                continue;
+
+            if (!Dm.eq(sec_record.wanted_status, status_to_set))
+            {
+                successful_set++;
+                Dm.append(names_of_entries, target["name"]);
+            }
+            sec_record.wanted_status = (string)status_to_set;
+        }
+
+        if (successful_set > 0)
+        {
+            investigate_log(Dm.text("[] have been set to [] by [].", names_of_entries.Join(", "), status_to_set, parent.get_creator()), INVESTIGATE_RECORDS);
+            if (successful_set > COMP_SECURITY_ARREST_AMOUNT_TO_FLAG)
+                message_admins(Dm.text("[] security entries have been set to [] by []. []", successful_set, status_to_set, parent.get_creator_admin(), ADMIN_COORDJMP(this)));
+            update_all_security_huds();
+        }
+        return null;
     }
 }

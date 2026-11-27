@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M9 slice E (NtOS's notepad): the Notepad app (notepad.dm:1-120), its text files (an inserted computer disk's too, syndicate G3d)
-// and its NtosNotepad window. Left out with a comment: the app's circuit component (/obj/item/circuit_component/mod_program/notepad, :122-156: wiremod). The var block is generated
-// (D111).
+// and its NtosNotepad window, and its circuit component (:122-156) that reads and writes the note from a circuit plugged into
+// the computer. The var block is generated (D111).
 
 // tg: code/modules/modular_computers/file_system/programs/notepad.dm:1
 public partial class datum_computer_file_program_notepad : datum_computer_file_program
@@ -148,5 +148,54 @@ public partial class datum_computer_file_program_notepad : datum_computer_file_p
         }
 
         return data;
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/notepad.dm:122
+public partial class obj_item_circuit_component_mod_program_notepad : obj_item_circuit_component_mod_program
+{
+    // tg: code/modules/modular_computers/file_system/programs/notepad.dm:131
+    public override async DmTask populate_ports()
+    {
+        await base.populate_ports();
+        set_text = add_input_port("Set Notes", PORT_TYPE_STRING) as datum_port_input;
+        updated_text = add_output_port("Notes", PORT_TYPE_STRING) as datum_port_output;
+        updated = add_output_port("Updated", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/notepad.dm:137
+    public override async DmTask register_shell(atom_movable shell = null)
+    {
+        await base.register_shell(shell);
+        RegisterSignal(associated_program as datum, COMSIG_UI_ACT, nameof(on_note_updated));
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/notepad.dm:141
+    public override async DmTask unregister_shell(atom_movable shell = null)
+    {
+        UnregisterSignal(associated_program as datum, COMSIG_UI_ACT);
+        await base.unregister_shell(shell);
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/notepad.dm:145
+    [SignalHandler]
+    public virtual void on_note_updated(datum source = null, mob user = null, object action = null, DmList @params = null)
+    {
+        if (Dm.eq(action, "UpdateNote"))
+        {
+            updated_text.set_output(@params["newnote"]);
+            updated.set_output(COMPONENT_SIGNAL);
+        }
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/notepad.dm:151
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        datum_computer_file_program_notepad pad = associated_program as datum_computer_file_program_notepad;
+        pad.written_note = Dm.str(set_text.value);
+        SStgui.update_uis(pad.computer);
+        updated_text.set_output(pad.written_note);
+        updated.set_output(COMPONENT_SIGNAL);
+        return null;
     }
 }

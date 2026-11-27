@@ -10,8 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The whole file (gaps package H2, D333): the food processor and the slime processor. The var blocks are generated (D111); the
-// static processor_inputs is a TgState field (rules 10.6). The slime processor's circuit (the USB port and its circuit component)
-// waits for the circuits (wiremod).
+// static processor_inputs is a TgState field (rules 10.6). The slime processor has a USB port for its circuit component.
 
 // tg: code/modules/food_and_drinks/machinery/processor.dm:3
 public partial class obj_machinery_processor : obj_machinery
@@ -339,8 +338,7 @@ public partial class obj_machinery_processor_slime : obj_machinery_processor
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/slime_processor), only_root_path = TRUE))
-        Dm.Deferred("code/modules/food_and_drinks/machinery/processor.dm:231", "Initialize: the slime processor's USB port for circuits (the circuits, wiremod, are not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_slime_processor)), only_root_path: TRUE)));
         return dot;
     }
 
@@ -433,4 +431,50 @@ public sealed partial class TgState
     internal DmList obj_machinery_processor__processor_inputs;
     // tg: code/modules/food_and_drinks/machinery/processor.dm:234  /obj/machinery/processor/slime/adjust_item_drop_location's var/static/list/slimecores
     internal DmList obj_machinery_processor_slime__adjust_item_drop_location__slimecores;
+}
+
+// tg: code/modules/food_and_drinks/machinery/processor.dm:289
+public partial class obj_item_circuit_component_slime_processor : obj_item_circuit_component
+{
+    // tg: code/modules/food_and_drinks/machinery/processor.dm:301
+    public override async DmTask populate_ports()
+    {
+        active = add_input_port("Activate", PORT_TYPE_SIGNAL, trigger: nameof(activate)) as datum_port_input;
+        amount = add_output_port("Amount", PORT_TYPE_NUMBER) as datum_port_output;
+    }
+
+    // tg: code/modules/food_and_drinks/machinery/processor.dm:305
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_processor_slime)))
+            attached_processor = shell as obj_machinery_processor_slime;
+    }
+
+    // tg: code/modules/food_and_drinks/machinery/processor.dm:310
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_processor = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/modules/food_and_drinks/machinery/processor.dm:314
+    [SignalHandler]
+    public virtual void activate()
+    {
+        input_received();
+        if (Dm.truthy(attached_processor.processing))
+            return;
+        if (!Dm.truthy(LAZYLEN(attached_processor.processor_contents)))
+            return;
+        Waiting.NoSleep(attached_processor.processing__proc());
+    }
+
+    // tg: code/modules/food_and_drinks/machinery/processor.dm:322
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        DmList contents = attached_processor.processor_contents;
+        amount.set_output(LAZYLEN(contents));
+        return null;
+    }
 }

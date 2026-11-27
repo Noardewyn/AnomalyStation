@@ -2729,9 +2729,9 @@ public partial class obj_item_implant_mod
     }
 }
 
-// tg: code/modules/wiremod/shell/implant.dm:2
-[DmPath("/obj/item/implant/circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_implant_circuit : obj_item_implant
+// tg: code/modules/wiremod/shell/implant.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/implant/circuit")]
+public partial class obj_item_implant_circuit
 {
     // tg: code/modules/wiremod/shell/implant.dm:2
     public obj_item_implant_circuit()

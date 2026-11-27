@@ -264,7 +264,7 @@ proc	/	can_hear_radio_tts	code/controllers/subsystem/tts.dm:668	hearer,radio_fre
 proc	/	can_pass_check_vars	code/__HELPERS/paths/path.dm:359		no	-	global
 proc	/	can_see	code/__HELPERS/atoms.dm:61	source,target,length	yes	full	global
 proc	/	capitalize	code/__HELPERS/text.dm:374	t	yes	full	global
-proc	/	censor_ic_filter_for_pdas	code/__HELPERS/chat_filter.dm:89	message	no	-	global
+proc	/	censor_ic_filter_for_pdas	code/__HELPERS/chat_filter.dm:89	message	yes	partial	global
 proc	/	center_image	code/__HELPERS/icons.dm:1144	image_to_center,x_dimension,y_dimension	yes	full	global
 proc	/	change_command_name	code/__HELPERS/names.dm:81	name	no	-	global
 proc	/	chatter	code/modules/chatter/chatter.dm:1	message,phomeme,speaker	yes	full	global
@@ -5767,20 +5767,20 @@ proc	/datum/action/innate/circuit_equipment_action	Destroy	code/modules/wiremod/
 proc	/datum/action/innate/circuit_equipment_action	Activate	code/modules/wiremod/components/action/equpiment_action.dm:113		yes	full	proc
 type	/datum/action/innate/mmi_comp_disconnect	/datum/action/innate	code/modules/wiremod/components/action/mmi.dm:4	live	datum_action_innate_mmi_comp_disconnect	1	0
 proc	/datum/action/innate/mmi_comp_disconnect	Trigger	code/modules/wiremod/components/action/mmi.dm:9	clicker,trigger_flags	yes	full	proc
-type	/datum/action/innate/bci_charge_action	/datum/action/innate	code/modules/wiremod/shell/brain_computer_interface.dm:198	inert	datum_action_innate_bci_charge_action	0	0
-proc	/datum/action/innate/bci_charge_action	New	code/modules/wiremod/shell/brain_computer_interface.dm:205	circuit_component	no	-	proc
-proc	/datum/action/innate/bci_charge_action	create_button	code/modules/wiremod/shell/brain_computer_interface.dm:214	viewer	no	-	proc
-proc	/datum/action/innate/bci_charge_action	Destroy	code/modules/wiremod/shell/brain_computer_interface.dm:220		no	-	proc
-proc	/datum/action/innate/bci_charge_action	Trigger	code/modules/wiremod/shell/brain_computer_interface.dm:228	clicker,trigger_flags	no	-	proc
-proc	/datum/action/innate/bci_charge_action	process	code/modules/wiremod/shell/brain_computer_interface.dm:239	seconds_per_tick	no	-	proc
-proc	/datum/action/innate/bci_charge_action	update_button_status	code/modules/wiremod/shell/brain_computer_interface.dm:242	button,force	no	-	proc
-type	/datum/action/innate/implant_charge_action	/datum/action/innate	code/modules/wiremod/shell/implant.dm:187	inert	datum_action_innate_implant_charge_action	0	0
-proc	/datum/action/innate/implant_charge_action	New	code/modules/wiremod/shell/implant.dm:194	circuit_component	no	-	proc
-proc	/datum/action/innate/implant_charge_action	create_button	code/modules/wiremod/shell/implant.dm:203	viewer	no	-	proc
-proc	/datum/action/innate/implant_charge_action	Destroy	code/modules/wiremod/shell/implant.dm:209		no	-	proc
-proc	/datum/action/innate/implant_charge_action	Trigger	code/modules/wiremod/shell/implant.dm:217	clicker,trigger_flags	no	-	proc
-proc	/datum/action/innate/implant_charge_action	process	code/modules/wiremod/shell/implant.dm:228	seconds_per_tick	no	-	proc
-proc	/datum/action/innate/implant_charge_action	update_button_status	code/modules/wiremod/shell/implant.dm:231	button,force	no	-	proc
+type	/datum/action/innate/bci_charge_action	/datum/action/innate	code/modules/wiremod/shell/brain_computer_interface.dm:198	live	datum_action_innate_bci_charge_action	1	0
+proc	/datum/action/innate/bci_charge_action	New	code/modules/wiremod/shell/brain_computer_interface.dm:205	circuit_component	yes	full	proc
+proc	/datum/action/innate/bci_charge_action	create_button	code/modules/wiremod/shell/brain_computer_interface.dm:214	viewer	yes	full	proc
+proc	/datum/action/innate/bci_charge_action	Destroy	code/modules/wiremod/shell/brain_computer_interface.dm:220		yes	full	proc
+proc	/datum/action/innate/bci_charge_action	Trigger	code/modules/wiremod/shell/brain_computer_interface.dm:228	clicker,trigger_flags	yes	full	proc
+proc	/datum/action/innate/bci_charge_action	process	code/modules/wiremod/shell/brain_computer_interface.dm:239	seconds_per_tick	yes	full	proc
+proc	/datum/action/innate/bci_charge_action	update_button_status	code/modules/wiremod/shell/brain_computer_interface.dm:242	button,force	yes	full	proc
+type	/datum/action/innate/implant_charge_action	/datum/action/innate	code/modules/wiremod/shell/implant.dm:187	live	datum_action_innate_implant_charge_action	1	0
+proc	/datum/action/innate/implant_charge_action	New	code/modules/wiremod/shell/implant.dm:194	circuit_component	yes	full	proc
+proc	/datum/action/innate/implant_charge_action	create_button	code/modules/wiremod/shell/implant.dm:203	viewer	yes	full	proc
+proc	/datum/action/innate/implant_charge_action	Destroy	code/modules/wiremod/shell/implant.dm:209		yes	full	proc
+proc	/datum/action/innate/implant_charge_action	Trigger	code/modules/wiremod/shell/implant.dm:217	clicker,trigger_flags	yes	full	proc
+proc	/datum/action/innate/implant_charge_action	process	code/modules/wiremod/shell/implant.dm:228	seconds_per_tick	yes	full	proc
+proc	/datum/action/innate/implant_charge_action	update_button_status	code/modules/wiremod/shell/implant.dm:231	button,force	yes	full	proc
 type	/datum/action/vote	/datum/action	code/controllers/subsystem/vote.dm:454	live	datum_action_vote	1	0
 proc	/datum/action/vote	IsAvailable	code/controllers/subsystem/vote.dm:458	feedback	yes	full	proc
 proc	/datum/action/vote	Trigger	code/controllers/subsystem/vote.dm:461	clicker,trigger_flags	yes	full	proc
@@ -20574,27 +20574,27 @@ proc	/datum/component/uplink	pen_rotation	code/datums/components/uplink.dm:358	s
 proc	/datum/component/uplink	setup_unlock_code	code/datums/components/uplink.dm:376		yes	full	proc root
 proc	/datum/component/uplink	generate_code	code/datums/components/uplink.dm:386		yes	full	proc root
 proc	/datum/component/uplink	failsafe	code/datums/components/uplink.dm:413	source	yes	full	proc root
-type	/datum/component/usb_port	/datum/component	code/datums/components/usb_port.dm:3	inert	datum_component_usb_port	0	0
-proc	/datum/component/usb_port	Initialize	code/datums/components/usb_port.dm:28	circuit_component_types,extra_registration_callback,extra_unregistration_callback	no	-	proc
-proc	/datum/component/usb_port	set_circuit_components	code/datums/components/usb_port.dm:36	components	no	-	proc root
-proc	/datum/component/usb_port	RegisterWithParent	code/datums/components/usb_port.dm:55		no	-	proc
-proc	/datum/component/usb_port	UnregisterFromParent	code/datums/components/usb_port.dm:71		no	-	proc
-proc	/datum/component/usb_port	save_component	code/datums/components/usb_port.dm:93	source,objects	no	-	proc root
-proc	/datum/component/usb_port	on_load	code/datums/components/usb_port.dm:97	source,circuit,components	no	-	proc root
-proc	/datum/component/usb_port	Destroy	code/datums/components/usb_port.dm:113		no	-	proc
-proc	/datum/component/usb_port	unregister_circuit_signals	code/datums/components/usb_port.dm:122		no	-	proc root
-proc	/datum/component/usb_port	unregister_physical_signals	code/datums/components/usb_port.dm:132		no	-	proc root
-proc	/datum/component/usb_port	attach_circuit_components	code/datums/components/usb_port.dm:140	circuitboard	no	-	proc root
-proc	/datum/component/usb_port	on_examine	code/datums/components/usb_port.dm:145	source,user,examine_text	no	-	proc root
-proc	/datum/component/usb_port	on_examine_shell	code/datums/components/usb_port.dm:153	source,user,examine_text	no	-	proc root
-proc	/datum/component/usb_port	on_atom_usb_cable_try_attach	code/datums/components/usb_port.dm:158	source,connecting_cable,user	no	-	proc root
-proc	/datum/component/usb_port	set_physical_object	code/datums/components/usb_port.dm:204	new_physical_object	no	-	proc root
-proc	/datum/component/usb_port	on_set_shell	code/datums/components/usb_port.dm:219	source,new_shell	no	-	proc root
-proc	/datum/component/usb_port	on_moved	code/datums/components/usb_port.dm:223		no	-	proc root
-proc	/datum/component/usb_port	on_circuit_deleting	code/datums/components/usb_port.dm:234		no	-	proc root
-proc	/datum/component/usb_port	on_circuit_component_removed	code/datums/components/usb_port.dm:239	source	no	-	proc root
-proc	/datum/component/usb_port	on_circuit_shell_removed	code/datums/components/usb_port.dm:243		no	-	proc root
-proc	/datum/component/usb_port	detach	code/datums/components/usb_port.dm:247		no	-	proc root
+type	/datum/component/usb_port	/datum/component	code/datums/components/usb_port.dm:3	live	datum_component_usb_port	1	0
+proc	/datum/component/usb_port	Initialize	code/datums/components/usb_port.dm:28	circuit_component_types,extra_registration_callback,extra_unregistration_callback	yes	full	proc
+proc	/datum/component/usb_port	set_circuit_components	code/datums/components/usb_port.dm:36	components	yes	full	proc root
+proc	/datum/component/usb_port	RegisterWithParent	code/datums/components/usb_port.dm:55		yes	full	proc
+proc	/datum/component/usb_port	UnregisterFromParent	code/datums/components/usb_port.dm:71		yes	full	proc
+proc	/datum/component/usb_port	save_component	code/datums/components/usb_port.dm:93	source,objects	yes	full	proc root
+proc	/datum/component/usb_port	on_load	code/datums/components/usb_port.dm:97	source,circuit,components	yes	full	proc root
+proc	/datum/component/usb_port	Destroy	code/datums/components/usb_port.dm:113		yes	full	proc
+proc	/datum/component/usb_port	unregister_circuit_signals	code/datums/components/usb_port.dm:122		yes	full	proc root
+proc	/datum/component/usb_port	unregister_physical_signals	code/datums/components/usb_port.dm:132		yes	full	proc root
+proc	/datum/component/usb_port	attach_circuit_components	code/datums/components/usb_port.dm:140	circuitboard	yes	full	proc root
+proc	/datum/component/usb_port	on_examine	code/datums/components/usb_port.dm:145	source,user,examine_text	yes	full	proc root
+proc	/datum/component/usb_port	on_examine_shell	code/datums/components/usb_port.dm:153	source,user,examine_text	yes	full	proc root
+proc	/datum/component/usb_port	on_atom_usb_cable_try_attach	code/datums/components/usb_port.dm:158	source,connecting_cable,user	yes	full	proc root
+proc	/datum/component/usb_port	set_physical_object	code/datums/components/usb_port.dm:204	new_physical_object	yes	full	proc root
+proc	/datum/component/usb_port	on_set_shell	code/datums/components/usb_port.dm:219	source,new_shell	yes	full	proc root
+proc	/datum/component/usb_port	on_moved	code/datums/components/usb_port.dm:223		yes	full	proc root
+proc	/datum/component/usb_port	on_circuit_deleting	code/datums/components/usb_port.dm:234		yes	full	proc root
+proc	/datum/component/usb_port	on_circuit_component_removed	code/datums/components/usb_port.dm:239	source	yes	full	proc root
+proc	/datum/component/usb_port	on_circuit_shell_removed	code/datums/components/usb_port.dm:243		yes	full	proc root
+proc	/datum/component/usb_port	detach	code/datums/components/usb_port.dm:247		yes	full	proc root
 type	/datum/component/vacuum	/datum/component	code/datums/components/vacuum.dm:10	live	datum_component_vacuum	1	0
 proc	/datum/component/vacuum	Initialize	code/datums/components/vacuum.dm:12	connected_bag	yes	full	proc
 proc	/datum/component/vacuum	suck	code/datums/components/vacuum.dm:28	suckee	yes	full	proc root
@@ -66085,12 +66085,12 @@ proc	/obj/item/implant/camouflage	emp_act	code/modules/antagonists/fugitive/fugi
 type	/obj/item/implant/mod	/obj/item/implant	code/modules/mod/modules/module_pathfinder.dm:196	live	obj_item_implant_mod	1	0
 proc	/obj/item/implant/mod	Initialize	code/modules/mod/modules/module_pathfinder.dm:209	mapload	yes	full	proc
 proc	/obj/item/implant/mod	Destroy	code/modules/mod/modules/module_pathfinder.dm:215		yes	full	proc
-type	/obj/item/implant/circuit	/obj/item/implant	code/modules/wiremod/shell/implant.dm:2	inert	obj_item_implant_circuit	0	0
-proc	/obj/item/implant/circuit	Initialize	code/modules/wiremod/shell/implant.dm:13	mapload	no	-	proc
-proc	/obj/item/implant/circuit	action_comp_registered	code/modules/wiremod/shell/implant.dm:20	source,action_comp	no	-	proc root
-proc	/obj/item/implant/circuit	action_comp_unregistered	code/modules/wiremod/shell/implant.dm:24	source,action_comp	no	-	proc root
-proc	/obj/item/implant/circuit	on_new_implant	code/modules/wiremod/shell/implant.dm:32	source,arguments,other_implant	no	-	proc root
-proc	/obj/item/implant/circuit	ui_host	code/modules/wiremod/shell/implant.dm:42	user	no	-	proc
+type	/obj/item/implant/circuit	/obj/item/implant	code/modules/wiremod/shell/implant.dm:2	live	obj_item_implant_circuit	1	0
+proc	/obj/item/implant/circuit	Initialize	code/modules/wiremod/shell/implant.dm:13	mapload	yes	full	proc
+proc	/obj/item/implant/circuit	action_comp_registered	code/modules/wiremod/shell/implant.dm:20	source,action_comp	yes	full	proc root
+proc	/obj/item/implant/circuit	action_comp_unregistered	code/modules/wiremod/shell/implant.dm:24	source,action_comp	yes	full	proc root
+proc	/obj/item/implant/circuit	on_new_implant	code/modules/wiremod/shell/implant.dm:32	source,arguments,other_implant	yes	full	proc root
+proc	/obj/item/implant/circuit	ui_host	code/modules/wiremod/shell/implant.dm:42	user	yes	full	proc
 type	/obj/item/hardened_spike	/obj/item	code/datums/mutations/tongue_spike.dm:44	live	obj_item_hardened_spike	1	0
 proc	/obj/item/hardened_spike	Initialize	code/datums/mutations/tongue_spike.dm:61	mapload,source	yes	full	proc
 proc	/obj/item/hardened_spike	check_morph	code/datums/mutations/tongue_spike.dm:66		yes	full	proc root
@@ -70628,256 +70628,256 @@ proc	/obj/item/circuit_component	unregister_usb_parent	code/modules/wiremod/core
 proc	/obj/item/circuit_component	send_ntnet_data	code/modules/wiremod/core/component.dm:438	port,key,signal_type	yes	full	proc root
 proc	/obj/item/circuit_component	save_data_to_list	code/modules/wiremod/core/duplicator.dm:214	component_data	yes	full	proc root
 proc	/obj/item/circuit_component	load_data_from_list	code/modules/wiremod/core/duplicator.dm:219	component_data	yes	full	proc root
-type	/obj/item/circuit_component/firealarm	/obj/item/circuit_component	code/game/machinery/firealarm.dm:654	inert	obj_item_circuit_component_firealarm	0	0
-proc	/obj/item/circuit_component/firealarm	populate_ports	code/game/machinery/firealarm.dm:669		no	-	proc
-proc	/obj/item/circuit_component/firealarm	register_usb_parent	code/game/machinery/firealarm.dm:677	parent	no	-	proc
-proc	/obj/item/circuit_component/firealarm	unregister_usb_parent	code/game/machinery/firealarm.dm:684	parent	no	-	proc
-proc	/obj/item/circuit_component/firealarm	on_firealarm_triggered	code/game/machinery/firealarm.dm:690	source	no	-	proc root
-proc	/obj/item/circuit_component/firealarm	on_firealarm_reset	code/game/machinery/firealarm.dm:695	source	no	-	proc root
-proc	/obj/item/circuit_component/firealarm	input_received	code/game/machinery/firealarm.dm:701	port	no	-	proc
-type	/obj/item/circuit_component/bluespace_launchpad	/obj/item/circuit_component	code/game/machinery/launch_pad.dm:443	inert	obj_item_circuit_component_bluespace_launchpad	0	0
-proc	/obj/item/circuit_component/bluespace_launchpad	get_ui_notices	code/game/machinery/launch_pad.dm:458		no	-	proc
-proc	/obj/item/circuit_component/bluespace_launchpad	populate_ports	code/game/machinery/launch_pad.dm:467		no	-	proc
-proc	/obj/item/circuit_component/bluespace_launchpad	register_usb_parent	code/game/machinery/launch_pad.dm:478	shell	no	-	proc
-proc	/obj/item/circuit_component/bluespace_launchpad	unregister_usb_parent	code/game/machinery/launch_pad.dm:483	shell	no	-	proc
-proc	/obj/item/circuit_component/bluespace_launchpad	input_received	code/game/machinery/launch_pad.dm:487	port	no	-	proc
+type	/obj/item/circuit_component/firealarm	/obj/item/circuit_component	code/game/machinery/firealarm.dm:654	live	obj_item_circuit_component_firealarm	1	0
+proc	/obj/item/circuit_component/firealarm	populate_ports	code/game/machinery/firealarm.dm:669		yes	full	proc
+proc	/obj/item/circuit_component/firealarm	register_usb_parent	code/game/machinery/firealarm.dm:677	parent	yes	full	proc
+proc	/obj/item/circuit_component/firealarm	unregister_usb_parent	code/game/machinery/firealarm.dm:684	parent	yes	full	proc
+proc	/obj/item/circuit_component/firealarm	on_firealarm_triggered	code/game/machinery/firealarm.dm:690	source	yes	full	proc root
+proc	/obj/item/circuit_component/firealarm	on_firealarm_reset	code/game/machinery/firealarm.dm:695	source	yes	full	proc root
+proc	/obj/item/circuit_component/firealarm	input_received	code/game/machinery/firealarm.dm:701	port	yes	full	proc
+type	/obj/item/circuit_component/bluespace_launchpad	/obj/item/circuit_component	code/game/machinery/launch_pad.dm:443	live	obj_item_circuit_component_bluespace_launchpad	1	0
+proc	/obj/item/circuit_component/bluespace_launchpad	get_ui_notices	code/game/machinery/launch_pad.dm:458		yes	full	proc
+proc	/obj/item/circuit_component/bluespace_launchpad	populate_ports	code/game/machinery/launch_pad.dm:467		yes	full	proc
+proc	/obj/item/circuit_component/bluespace_launchpad	register_usb_parent	code/game/machinery/launch_pad.dm:478	shell	yes	full	proc
+proc	/obj/item/circuit_component/bluespace_launchpad	unregister_usb_parent	code/game/machinery/launch_pad.dm:483	shell	yes	full	proc
+proc	/obj/item/circuit_component/bluespace_launchpad	input_received	code/game/machinery/launch_pad.dm:487	port	yes	full	proc
 type	/obj/item/circuit_component/bluespace_launchpad/console	/obj/item/circuit_component/bluespace_launchpad	code/game/machinery/computer/launchpad_control.dm:19	inert	obj_item_circuit_component_bluespace_launchpad_console	0	0
 proc	/obj/item/circuit_component/bluespace_launchpad/console	populate_ports	code/game/machinery/computer/launchpad_control.dm:26		no	-	proc
 proc	/obj/item/circuit_component/bluespace_launchpad/console	register_usb_parent	code/game/machinery/computer/launchpad_control.dm:30	shell	no	-	proc
 proc	/obj/item/circuit_component/bluespace_launchpad/console	unregister_usb_parent	code/game/machinery/computer/launchpad_control.dm:35	shell	no	-	proc
 proc	/obj/item/circuit_component/bluespace_launchpad/console	input_received	code/game/machinery/computer/launchpad_control.dm:39	port	no	-	proc
-type	/obj/item/circuit_component/light_switch	/obj/item/circuit_component	code/game/machinery/lightswitch.dm:131	inert	obj_item_circuit_component_light_switch	0	0
-proc	/obj/item/circuit_component/light_switch	populate_ports	code/game/machinery/lightswitch.dm:142		no	-	proc
-proc	/obj/item/circuit_component/light_switch	register_usb_parent	code/game/machinery/lightswitch.dm:146	parent	no	-	proc
-proc	/obj/item/circuit_component/light_switch	unregister_usb_parent	code/game/machinery/lightswitch.dm:152	parent	no	-	proc
-proc	/obj/item/circuit_component/light_switch	on_light_switch_set	code/game/machinery/lightswitch.dm:157	source,status	no	-	proc root
-proc	/obj/item/circuit_component/light_switch	input_received	code/game/machinery/lightswitch.dm:161	port	no	-	proc
+type	/obj/item/circuit_component/light_switch	/obj/item/circuit_component	code/game/machinery/lightswitch.dm:131	live	obj_item_circuit_component_light_switch	1	0
+proc	/obj/item/circuit_component/light_switch	populate_ports	code/game/machinery/lightswitch.dm:142		yes	full	proc
+proc	/obj/item/circuit_component/light_switch	register_usb_parent	code/game/machinery/lightswitch.dm:146	parent	yes	full	proc
+proc	/obj/item/circuit_component/light_switch	unregister_usb_parent	code/game/machinery/lightswitch.dm:152	parent	yes	full	proc
+proc	/obj/item/circuit_component/light_switch	on_light_switch_set	code/game/machinery/lightswitch.dm:157	source,status	yes	full	proc root
+proc	/obj/item/circuit_component/light_switch	input_received	code/game/machinery/lightswitch.dm:161	port	yes	full	proc
 type	/obj/item/circuit_component/quantumpad	/obj/item/circuit_component	code/game/machinery/quantum_pad.dm:199	inert	obj_item_circuit_component_quantumpad	0	0
 proc	/obj/item/circuit_component/quantumpad	populate_ports	code/game/machinery/quantum_pad.dm:208		no	-	proc
 proc	/obj/item/circuit_component/quantumpad	register_usb_parent	code/game/machinery/quantum_pad.dm:212	shell	no	-	proc
 proc	/obj/item/circuit_component/quantumpad	unregister_usb_parent	code/game/machinery/quantum_pad.dm:217	shell	no	-	proc
 proc	/obj/item/circuit_component/quantumpad	input_received	code/game/machinery/quantum_pad.dm:221	port	no	-	proc
-type	/obj/item/circuit_component/status_display	/obj/item/circuit_component	code/game/machinery/status_display.dm:798	inert	obj_item_circuit_component_status_display	0	0
-proc	/obj/item/circuit_component/status_display	populate_ports	code/game/machinery/status_display.dm:812		no	-	proc
-proc	/obj/item/circuit_component/status_display	populate_options	code/game/machinery/status_display.dm:816		no	-	proc
-proc	/obj/item/circuit_component/status_display	register_usb_parent	code/game/machinery/status_display.dm:849	shell	no	-	proc
-proc	/obj/item/circuit_component/status_display	unregister_usb_parent	code/game/machinery/status_display.dm:854	parent	no	-	proc
-proc	/obj/item/circuit_component/status_display	input_received	code/game/machinery/status_display.dm:858	port	no	-	proc
-type	/obj/item/circuit_component/vitals_monitor	/obj/item/circuit_component	code/game/machinery/wall_vitals.dm:533	inert	obj_item_circuit_component_vitals_monitor	0	0
-proc	/obj/item/circuit_component/vitals_monitor	Destroy	code/game/machinery/wall_vitals.dm:570		no	-	proc
-proc	/obj/item/circuit_component/vitals_monitor	populate_ports	code/game/machinery/wall_vitals.dm:574		no	-	proc
-proc	/obj/item/circuit_component/vitals_monitor	register_usb_parent	code/game/machinery/wall_vitals.dm:589	shell	no	-	proc
-proc	/obj/item/circuit_component/vitals_monitor	unregister_usb_parent	code/game/machinery/wall_vitals.dm:598	shell	no	-	proc
-proc	/obj/item/circuit_component/vitals_monitor	get_ui_notices	code/game/machinery/wall_vitals.dm:604		no	-	proc
-proc	/obj/item/circuit_component/vitals_monitor	handle_patient_change	code/game/machinery/wall_vitals.dm:609	source,old_patient,new_patient	no	-	proc root
-proc	/obj/item/circuit_component/vitals_monitor	process	code/game/machinery/wall_vitals.dm:625	seconds_per_tick	no	-	proc
-proc	/obj/item/circuit_component/vitals_monitor	delayed_reading	code/game/machinery/wall_vitals.dm:632		no	-	proc root
-proc	/obj/item/circuit_component/vitals_monitor	update_output_stats	code/game/machinery/wall_vitals.dm:637		no	-	proc root
-type	/obj/item/circuit_component/advanced_camera	/obj/item/circuit_component	code/game/machinery/computer/camera_advanced.dm:339	inert	obj_item_circuit_component_advanced_camera	0	0
-proc	/obj/item/circuit_component/advanced_camera	populate_ports	code/game/machinery/computer/camera_advanced.dm:348		no	-	proc
-proc	/obj/item/circuit_component/advanced_camera	register_usb_parent	code/game/machinery/computer/camera_advanced.dm:353	parent	no	-	proc
-proc	/obj/item/circuit_component/advanced_camera	on_parent_eye_created	code/game/machinery/computer/camera_advanced.dm:362	_source,eyeobj	no	-	proc root
-proc	/obj/item/circuit_component/advanced_camera	register_eyeobj	code/game/machinery/computer/camera_advanced.dm:367	eyeobj	no	-	proc root
-proc	/obj/item/circuit_component/advanced_camera	unregister_usb_parent	code/game/machinery/computer/camera_advanced.dm:370	parent	no	-	proc
-proc	/obj/item/circuit_component/advanced_camera	on_eyeobj_moved	code/game/machinery/computer/camera_advanced.dm:378	source	no	-	proc root
-type	/obj/item/circuit_component/advanced_camera_intercept	/obj/item/circuit_component	code/game/machinery/computer/camera_advanced.dm:392	inert	obj_item_circuit_component_advanced_camera_intercept	0	0
-proc	/obj/item/circuit_component/advanced_camera_intercept	populate_ports	code/game/machinery/computer/camera_advanced.dm:408		no	-	proc
-proc	/obj/item/circuit_component/advanced_camera_intercept	register_usb_parent	code/game/machinery/computer/camera_advanced.dm:421	parent	no	-	proc
-proc	/obj/item/circuit_component/advanced_camera_intercept	input_received	code/game/machinery/computer/camera_advanced.dm:430	port,return_values	no	-	proc
-proc	/obj/item/circuit_component/advanced_camera_intercept	on_parent_eye_created	code/game/machinery/computer/camera_advanced.dm:438	_source,eyeobj	no	-	proc root
-proc	/obj/item/circuit_component/advanced_camera_intercept	register_eyeobj	code/game/machinery/computer/camera_advanced.dm:443	eyeobj	no	-	proc root
-proc	/obj/item/circuit_component/advanced_camera_intercept	unregister_usb_parent	code/game/machinery/computer/camera_advanced.dm:448	parent	no	-	proc
-proc	/obj/item/circuit_component/advanced_camera_intercept	on_parent_assign_user	code/game/machinery/computer/camera_advanced.dm:457	_source,new_user,old_user	no	-	proc root
-proc	/obj/item/circuit_component/advanced_camera_intercept	InterceptClickOn	code/game/machinery/computer/camera_advanced.dm:463	user,params,target	no	-	proc root
-type	/obj/item/circuit_component/medical_console_data	/obj/item/circuit_component	code/game/machinery/computer/crew.dm:20	inert	obj_item_circuit_component_medical_console_data	0	0
-proc	/obj/item/circuit_component/medical_console_data	populate_ports	code/game/machinery/computer/crew.dm:29		no	-	proc
-proc	/obj/item/circuit_component/medical_console_data	register_usb_parent	code/game/machinery/computer/crew.dm:32	shell	no	-	proc
-proc	/obj/item/circuit_component/medical_console_data	unregister_usb_parent	code/game/machinery/computer/crew.dm:37	shell	no	-	proc
-proc	/obj/item/circuit_component/medical_console_data	get_ui_notices	code/game/machinery/computer/crew.dm:41		no	-	proc
-proc	/obj/item/circuit_component/medical_console_data	input_received	code/game/machinery/computer/crew.dm:56	port	no	-	proc
-type	/obj/item/circuit_component/teleporter_control_console	/obj/item/circuit_component	code/game/machinery/computer/teleporter.dm:244	inert	obj_item_circuit_component_teleporter_control_console	0	0
-proc	/obj/item/circuit_component/teleporter_control_console	populate_ports	code/game/machinery/computer/teleporter.dm:258		no	-	proc
-proc	/obj/item/circuit_component/teleporter_control_console	register_usb_parent	code/game/machinery/computer/teleporter.dm:268	shell	no	-	proc
-proc	/obj/item/circuit_component/teleporter_control_console	unregister_usb_parent	code/game/machinery/computer/teleporter.dm:277	shell	no	-	proc
-proc	/obj/item/circuit_component/teleporter_control_console	input_received	code/game/machinery/computer/teleporter.dm:282	port	no	-	proc
-proc	/obj/item/circuit_component/teleporter_control_console	on_teleporter_new_target	code/game/machinery/computer/teleporter.dm:305	source,new_target	no	-	proc root
-proc	/obj/item/circuit_component/teleporter_control_console	update_targets	code/game/machinery/computer/teleporter.dm:321		no	-	proc root
-type	/obj/item/circuit_component/arrest_console_data	/obj/item/circuit_component	code/game/machinery/computer/records/security.dm:395	inert	obj_item_circuit_component_arrest_console_data	0	0
-proc	/obj/item/circuit_component/arrest_console_data	populate_ports	code/game/machinery/computer/records/security.dm:407		no	-	proc
-proc	/obj/item/circuit_component/arrest_console_data	register_usb_parent	code/game/machinery/computer/records/security.dm:411	shell	no	-	proc
-proc	/obj/item/circuit_component/arrest_console_data	unregister_usb_parent	code/game/machinery/computer/records/security.dm:416	shell	no	-	proc
-proc	/obj/item/circuit_component/arrest_console_data	get_ui_notices	code/game/machinery/computer/records/security.dm:420		no	-	proc
-proc	/obj/item/circuit_component/arrest_console_data	input_received	code/game/machinery/computer/records/security.dm:433	port	no	-	proc
-type	/obj/item/circuit_component/arrest_console_arrest	/obj/item/circuit_component	code/game/machinery/computer/records/security.dm:458	inert	obj_item_circuit_component_arrest_console_arrest	0	0
-proc	/obj/item/circuit_component/arrest_console_arrest	register_usb_parent	code/game/machinery/computer/records/security.dm:476	shell	no	-	proc
-proc	/obj/item/circuit_component/arrest_console_arrest	unregister_usb_parent	code/game/machinery/computer/records/security.dm:481	shell	no	-	proc
-proc	/obj/item/circuit_component/arrest_console_arrest	populate_options	code/game/machinery/computer/records/security.dm:485		no	-	proc
-proc	/obj/item/circuit_component/arrest_console_arrest	populate_ports	code/game/machinery/computer/records/security.dm:491		no	-	proc
-proc	/obj/item/circuit_component/arrest_console_arrest	input_received	code/game/machinery/computer/records/security.dm:496	port	no	-	proc
-type	/obj/item/circuit_component/reflector	/obj/item/circuit_component	code/game/objects/structures/reflector.dm:272	inert	obj_item_circuit_component_reflector	0	0
-proc	/obj/item/circuit_component/reflector	populate_ports	code/game/objects/structures/reflector.dm:281		no	-	proc
-proc	/obj/item/circuit_component/reflector	register_usb_parent	code/game/objects/structures/reflector.dm:284	parent	no	-	proc
-proc	/obj/item/circuit_component/reflector	unregister_usb_parent	code/game/objects/structures/reflector.dm:289	parent	no	-	proc
-proc	/obj/item/circuit_component/reflector	input_received	code/game/objects/structures/reflector.dm:293	port	no	-	proc
-type	/obj/item/circuit_component/holo_signboard	/obj/item/circuit_component	code/game/objects/structures/signboards/holosign.dm:163	inert	obj_item_circuit_component_holo_signboard	0	0
-proc	/obj/item/circuit_component/holo_signboard	populate_ports	code/game/objects/structures/signboards/holosign.dm:180		no	-	proc
-proc	/obj/item/circuit_component/holo_signboard	register_usb_parent	code/game/objects/structures/signboards/holosign.dm:192	shell	no	-	proc
-proc	/obj/item/circuit_component/holo_signboard	input_received	code/game/objects/structures/signboards/holosign.dm:197	port	no	-	proc
-proc	/obj/item/circuit_component/holo_signboard	clear_received	code/game/objects/structures/signboards/holosign.dm:218	port	no	-	proc root
-proc	/obj/item/circuit_component/holo_signboard	color_received	code/game/objects/structures/signboards/holosign.dm:223	port	no	-	proc root
-type	/obj/item/circuit_component/air_alarm_general	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:2	inert	obj_item_circuit_component_air_alarm_general	0	0
-proc	/obj/item/circuit_component/air_alarm_general	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:24		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_general	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:32		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_general	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:41	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_general	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:50	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_general	on_mode_updated	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:63	alarm,signal_source	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_general	on_alarm_triggered	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:67	source,alarm_type,location	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_general	on_alarm_cleared	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:72	source,alarm_type,location	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_general	trigger_alarm	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:78	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_general	set_mode	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:90	port	no	-	proc root
-type	/obj/item/circuit_component/air_alarm	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:102	inert	obj_item_circuit_component_air_alarm	0	0
-proc	/obj/item/circuit_component/air_alarm	ui_perform_action	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:130	user,action	no	-	proc
-proc	/obj/item/circuit_component/air_alarm	on_duplicate_removed	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:141	source	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:145		no	-	proc
-proc	/obj/item/circuit_component/air_alarm	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:158		no	-	proc
-proc	/obj/item/circuit_component/air_alarm	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:189	removed_from	no	-	proc
-proc	/obj/item/circuit_component/air_alarm	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:193	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:198	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm	set_limits	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:204		no	-	proc root
-proc	/obj/item/circuit_component/air_alarm	input_received	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:224	port	no	-	proc
-type	/obj/item/circuit_component/air_alarm/duplicate	/obj/item/circuit_component/air_alarm	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:175	inert	obj_item_circuit_component_air_alarm_duplicate	0	0
-proc	/obj/item/circuit_component/air_alarm/duplicate	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:180	removed_from	no	-	proc
-proc	/obj/item/circuit_component/air_alarm/duplicate	Destroy	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:185		no	-	proc
-type	/obj/item/circuit_component/air_alarm_scrubbers	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:239	inert	obj_item_circuit_component_air_alarm_scrubbers	0	0
-proc	/obj/item/circuit_component/air_alarm_scrubbers	ui_perform_action	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:285	user,action	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers	on_duplicate_removed	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:297	source	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:301		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:304		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:334	removed_from	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:338	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:344	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers	get_ui_notices	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:351		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers	set_gas_to_filter	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:360	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	set_gas_filter_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:364	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_scrubber	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:381	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_scrubber_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:385	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_range	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:397	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_range_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:401	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_siphon	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:412	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_siphon_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:416	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_scrubbers	update_data	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:427		no	-	proc root
-type	/obj/item/circuit_component/air_alarm_scrubbers/duplicate	/obj/item/circuit_component/air_alarm_scrubbers	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:321	inert	obj_item_circuit_component_air_alarm_scrubbers_duplicate	0	0
-proc	/obj/item/circuit_component/air_alarm_scrubbers/duplicate	Destroy	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:325		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_scrubbers/duplicate	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:329	removed_from	no	-	proc
-type	/obj/item/circuit_component/air_alarm_vents	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:449	inert	obj_item_circuit_component_air_alarm_vents	0	0
-proc	/obj/item/circuit_component/air_alarm_vents	ui_perform_action	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:505	user,action	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_vents	on_duplicate_removed	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:517	source	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:521		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_vents	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:524		no	-	proc
-proc	/obj/item/circuit_component/air_alarm_vents	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:562	removed_from	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_vents	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:566	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_vents	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:572	shell	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_vent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:579	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_vent_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:583	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_external	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:594	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_external_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:598	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_internal	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:611	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_internal_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:615	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	set_internal_pressure	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:628	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	set_internal_pressure_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:632	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	set_external_pressure	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:642	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	set_external_pressure_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:646	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_siphon	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:656	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	toggle_siphon_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:660	port	no	-	proc root
-proc	/obj/item/circuit_component/air_alarm_vents	update_data	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:670		no	-	proc root
-type	/obj/item/circuit_component/air_alarm_vents/duplicate	/obj/item/circuit_component/air_alarm_vents	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:548	inert	obj_item_circuit_component_air_alarm_vents_duplicate	0	0
-proc	/obj/item/circuit_component/air_alarm_vents/duplicate	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:553	removed_from	no	-	proc
-proc	/obj/item/circuit_component/air_alarm_vents/duplicate	Destroy	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:558		no	-	proc
-type	/obj/item/circuit_component/atmos_pump	/obj/item/circuit_component	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:135	inert	obj_item_circuit_component_atmos_pump	0	0
-proc	/obj/item/circuit_component/atmos_pump	populate_ports	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:166		no	-	proc
-proc	/obj/item/circuit_component/atmos_pump	register_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:181	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_pump	unregister_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:187	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_pump	pre_input_received	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:192	port	no	-	proc
-proc	/obj/item/circuit_component/atmos_pump	handle_pump_activation	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:195	source,active	no	-	proc root
-proc	/obj/item/circuit_component/atmos_pump	set_pump_pressure	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:203		no	-	proc root
-proc	/obj/item/circuit_component/atmos_pump	set_pump_on	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:209		no	-	proc root
-proc	/obj/item/circuit_component/atmos_pump	set_pump_off	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:215		no	-	proc root
-proc	/obj/item/circuit_component/atmos_pump	request_pump_data	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:222		no	-	proc root
-type	/obj/item/circuit_component/digital_valve	/obj/item/circuit_component	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:95	inert	obj_item_circuit_component_digital_valve	0	0
-proc	/obj/item/circuit_component/digital_valve	populate_ports	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:112		no	-	proc
-proc	/obj/item/circuit_component/digital_valve	register_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:120	shell	no	-	proc
-proc	/obj/item/circuit_component/digital_valve	unregister_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:126	shell	no	-	proc
-proc	/obj/item/circuit_component/digital_valve	handle_valve_toggled	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:131	source,on	no	-	proc root
-proc	/obj/item/circuit_component/digital_valve	input_received	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:139	port	no	-	proc
-type	/obj/item/circuit_component/atmos_volume_pump	/obj/item/circuit_component	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:196	inert	obj_item_circuit_component_atmos_volume_pump	0	0
-proc	/obj/item/circuit_component/atmos_volume_pump	populate_ports	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:227		no	-	proc
-proc	/obj/item/circuit_component/atmos_volume_pump	register_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:242	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_volume_pump	unregister_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:248	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_volume_pump	pre_input_received	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:253	port	no	-	proc
-proc	/obj/item/circuit_component/atmos_volume_pump	handle_pump_activation	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:256	source,active	no	-	proc root
-proc	/obj/item/circuit_component/atmos_volume_pump	set_transfer_rate	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:264		no	-	proc root
-proc	/obj/item/circuit_component/atmos_volume_pump	set_pump_on	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:270		no	-	proc root
-proc	/obj/item/circuit_component/atmos_volume_pump	set_pump_off	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:277		no	-	proc root
-proc	/obj/item/circuit_component/atmos_volume_pump	request_pump_data	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:284		no	-	proc root
-type	/obj/item/circuit_component/atmos_meter	/obj/item/circuit_component	code/modules/atmospherics/machinery/other/meter.dm:198	inert	obj_item_circuit_component_atmos_meter	0	0
-proc	/obj/item/circuit_component/atmos_meter	populate_ports	code/modules/atmospherics/machinery/other/meter.dm:212		no	-	proc
-proc	/obj/item/circuit_component/atmos_meter	register_usb_parent	code/modules/atmospherics/machinery/other/meter.dm:218	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_meter	unregister_usb_parent	code/modules/atmospherics/machinery/other/meter.dm:223	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_meter	request_meter_data	code/modules/atmospherics/machinery/other/meter.dm:227		no	-	proc root
-type	/obj/item/circuit_component/slime_processor	/obj/item/circuit_component	code/modules/food_and_drinks/machinery/processor.dm:290	inert	obj_item_circuit_component_slime_processor	0	0
-proc	/obj/item/circuit_component/slime_processor	populate_ports	code/modules/food_and_drinks/machinery/processor.dm:301		no	-	proc
-proc	/obj/item/circuit_component/slime_processor	register_usb_parent	code/modules/food_and_drinks/machinery/processor.dm:305	parent	no	-	proc
-proc	/obj/item/circuit_component/slime_processor	unregister_usb_parent	code/modules/food_and_drinks/machinery/processor.dm:310	parent	no	-	proc
-proc	/obj/item/circuit_component/slime_processor	activate	code/modules/food_and_drinks/machinery/processor.dm:314		no	-	proc root
-proc	/obj/item/circuit_component/slime_processor	input_received	code/modules/food_and_drinks/machinery/processor.dm:323		no	-	proc
-type	/obj/item/circuit_component/hydroponics	/obj/item/circuit_component	code/modules/hydroponics/hydroponics.dm:1282	inert	obj_item_circuit_component_hydroponics	0	0
-proc	/obj/item/circuit_component/hydroponics	populate_ports	code/modules/hydroponics/hydroponics.dm:1314		no	-	proc
-proc	/obj/item/circuit_component/hydroponics	register_usb_parent	code/modules/hydroponics/hydroponics.dm:1341	parent	no	-	proc
-proc	/obj/item/circuit_component/hydroponics	unregister_usb_parent	code/modules/hydroponics/hydroponics.dm:1357	parent	no	-	proc
-proc	/obj/item/circuit_component/hydroponics	get_ui_notices	code/modules/hydroponics/hydroponics.dm:1367		no	-	proc
-proc	/obj/item/circuit_component/hydroponics	on_set_seed	code/modules/hydroponics/hydroponics.dm:1371	source,new_seed	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_set_selfsustaining	code/modules/hydroponics/hydroponics.dm:1375	source,new_value	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_set_weedlevel	code/modules/hydroponics/hydroponics.dm:1379	source,new_value	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_set_pestlevel	code/modules/hydroponics/hydroponics.dm:1383	source,new_value	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_set_waterlevel	code/modules/hydroponics/hydroponics.dm:1387	source,new_value	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_set_plant_health	code/modules/hydroponics/hydroponics.dm:1391	source,new_value	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_set_toxic_level	code/modules/hydroponics/hydroponics.dm:1395	source,new_value	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_set_plant_status	code/modules/hydroponics/hydroponics.dm:1399	source,new_value	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_harvest	code/modules/hydroponics/hydroponics.dm:1403	source,product_amount	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	on_plant_death	code/modules/hydroponics/hydroponics.dm:1408	source	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	update_reagents_level	code/modules/hydroponics/hydroponics.dm:1412	source	no	-	proc root
-proc	/obj/item/circuit_component/hydroponics	input_received	code/modules/hydroponics/hydroponics.dm:1416	port	no	-	proc
-type	/obj/item/circuit_component/synth	/obj/item/circuit_component	code/modules/instruments/piano_synth.dm:71	inert	obj_item_circuit_component_synth	0	0
-proc	/obj/item/circuit_component/synth	populate_ports	code/modules/instruments/piano_synth.dm:108		no	-	proc
-proc	/obj/item/circuit_component/synth	register_shell	code/modules/instruments/piano_synth.dm:126	shell	no	-	proc
-proc	/obj/item/circuit_component/synth	unregister_shell	code/modules/instruments/piano_synth.dm:133	shell	no	-	proc
-proc	/obj/item/circuit_component/synth	start_playing	code/modules/instruments/piano_synth.dm:140	port	no	-	proc root
-proc	/obj/item/circuit_component/synth	on_song_start	code/modules/instruments/piano_synth.dm:143	source,starting_song,player	no	-	proc root
-proc	/obj/item/circuit_component/synth	continue_if_autoplaying	code/modules/instruments/piano_synth.dm:150	source,music_player	no	-	proc root
-proc	/obj/item/circuit_component/synth	stop_playing	code/modules/instruments/piano_synth.dm:155	port	no	-	proc root
-proc	/obj/item/circuit_component/synth	on_song_end	code/modules/instruments/piano_synth.dm:158		no	-	proc root
-proc	/obj/item/circuit_component/synth	import_song	code/modules/instruments/piano_synth.dm:163		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_repetitions	code/modules/instruments/piano_synth.dm:166		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_bpm	code/modules/instruments/piano_synth.dm:169		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_instrument	code/modules/instruments/piano_synth.dm:173		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_volume	code/modules/instruments/piano_synth.dm:176		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_dropoff	code/modules/instruments/piano_synth.dm:179		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_note_shift	code/modules/instruments/piano_synth.dm:182		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_sustain_mode	code/modules/instruments/piano_synth.dm:185		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_sustain_value	code/modules/instruments/piano_synth.dm:190		no	-	proc root
-proc	/obj/item/circuit_component/synth	set_sustain_decay	code/modules/instruments/piano_synth.dm:197		no	-	proc root
-type	/obj/item/circuit_component/synth/headphones	/obj/item/circuit_component/synth	code/modules/instruments/piano_synth.dm:201	inert	obj_item_circuit_component_synth_headphones	0	0
-type	/obj/item/circuit_component/modpc	/obj/item/circuit_component	code/modules/modular_computers/computers/item/computer_circuit.dm:3	inert	obj_item_circuit_component_modpc	0	0
-proc	/obj/item/circuit_component/modpc	register_shell	code/modules/modular_computers/computers/item/computer_circuit.dm:25	shell	no	-	proc
-proc	/obj/item/circuit_component/modpc	unregister_shell	code/modules/modular_computers/computers/item/computer_circuit.dm:51	shell	no	-	proc
-proc	/obj/item/circuit_component/modpc	populate_ports	code/modules/modular_computers/computers/item/computer_circuit.dm:57		no	-	proc
-proc	/obj/item/circuit_component/modpc	pre_input_received	code/modules/modular_computers/computers/item/computer_circuit.dm:65	port	no	-	proc
-proc	/obj/item/circuit_component/modpc	print_text	code/modules/modular_computers/computers/item/computer_circuit.dm:71	source	no	-	proc root
-proc	/obj/item/circuit_component/modpc	toggle_power	code/modules/modular_computers/computers/item/computer_circuit.dm:75	source	no	-	proc root
-proc	/obj/item/circuit_component/modpc	toggle_flashlight	code/modules/modular_computers/computers/item/computer_circuit.dm:81	source	no	-	proc root
-proc	/obj/item/circuit_component/modpc	set_flashlight_color	code/modules/modular_computers/computers/item/computer_circuit.dm:84	source	no	-	proc root
-proc	/obj/item/circuit_component/modpc	computer_on	code/modules/modular_computers/computers/item/computer_circuit.dm:90	source,user	no	-	proc root
-proc	/obj/item/circuit_component/modpc	computer_off	code/modules/modular_computers/computers/item/computer_circuit.dm:94	source,loud	no	-	proc root
+type	/obj/item/circuit_component/status_display	/obj/item/circuit_component	code/game/machinery/status_display.dm:798	live	obj_item_circuit_component_status_display	1	0
+proc	/obj/item/circuit_component/status_display	populate_ports	code/game/machinery/status_display.dm:812		yes	full	proc
+proc	/obj/item/circuit_component/status_display	populate_options	code/game/machinery/status_display.dm:816		yes	full	proc
+proc	/obj/item/circuit_component/status_display	register_usb_parent	code/game/machinery/status_display.dm:849	shell	yes	full	proc
+proc	/obj/item/circuit_component/status_display	unregister_usb_parent	code/game/machinery/status_display.dm:854	parent	yes	full	proc
+proc	/obj/item/circuit_component/status_display	input_received	code/game/machinery/status_display.dm:858	port	yes	full	proc
+type	/obj/item/circuit_component/vitals_monitor	/obj/item/circuit_component	code/game/machinery/wall_vitals.dm:533	live	obj_item_circuit_component_vitals_monitor	1	0
+proc	/obj/item/circuit_component/vitals_monitor	Destroy	code/game/machinery/wall_vitals.dm:570		yes	full	proc
+proc	/obj/item/circuit_component/vitals_monitor	populate_ports	code/game/machinery/wall_vitals.dm:574		yes	full	proc
+proc	/obj/item/circuit_component/vitals_monitor	register_usb_parent	code/game/machinery/wall_vitals.dm:589	shell	yes	full	proc
+proc	/obj/item/circuit_component/vitals_monitor	unregister_usb_parent	code/game/machinery/wall_vitals.dm:598	shell	yes	full	proc
+proc	/obj/item/circuit_component/vitals_monitor	get_ui_notices	code/game/machinery/wall_vitals.dm:604		yes	full	proc
+proc	/obj/item/circuit_component/vitals_monitor	handle_patient_change	code/game/machinery/wall_vitals.dm:609	source,old_patient,new_patient	yes	full	proc root
+proc	/obj/item/circuit_component/vitals_monitor	process	code/game/machinery/wall_vitals.dm:625	seconds_per_tick	yes	full	proc
+proc	/obj/item/circuit_component/vitals_monitor	delayed_reading	code/game/machinery/wall_vitals.dm:632		yes	full	proc root
+proc	/obj/item/circuit_component/vitals_monitor	update_output_stats	code/game/machinery/wall_vitals.dm:637		yes	full	proc root
+type	/obj/item/circuit_component/advanced_camera	/obj/item/circuit_component	code/game/machinery/computer/camera_advanced.dm:339	live	obj_item_circuit_component_advanced_camera	1	0
+proc	/obj/item/circuit_component/advanced_camera	populate_ports	code/game/machinery/computer/camera_advanced.dm:348		yes	full	proc
+proc	/obj/item/circuit_component/advanced_camera	register_usb_parent	code/game/machinery/computer/camera_advanced.dm:353	parent	yes	full	proc
+proc	/obj/item/circuit_component/advanced_camera	on_parent_eye_created	code/game/machinery/computer/camera_advanced.dm:362	_source,eyeobj	yes	full	proc root
+proc	/obj/item/circuit_component/advanced_camera	register_eyeobj	code/game/machinery/computer/camera_advanced.dm:367	eyeobj	yes	full	proc root
+proc	/obj/item/circuit_component/advanced_camera	unregister_usb_parent	code/game/machinery/computer/camera_advanced.dm:370	parent	yes	full	proc
+proc	/obj/item/circuit_component/advanced_camera	on_eyeobj_moved	code/game/machinery/computer/camera_advanced.dm:378	source	yes	full	proc root
+type	/obj/item/circuit_component/advanced_camera_intercept	/obj/item/circuit_component	code/game/machinery/computer/camera_advanced.dm:392	live	obj_item_circuit_component_advanced_camera_intercept	1	0
+proc	/obj/item/circuit_component/advanced_camera_intercept	populate_ports	code/game/machinery/computer/camera_advanced.dm:408		yes	full	proc
+proc	/obj/item/circuit_component/advanced_camera_intercept	register_usb_parent	code/game/machinery/computer/camera_advanced.dm:421	parent	yes	full	proc
+proc	/obj/item/circuit_component/advanced_camera_intercept	input_received	code/game/machinery/computer/camera_advanced.dm:430	port,return_values	yes	full	proc
+proc	/obj/item/circuit_component/advanced_camera_intercept	on_parent_eye_created	code/game/machinery/computer/camera_advanced.dm:438	_source,eyeobj	yes	full	proc root
+proc	/obj/item/circuit_component/advanced_camera_intercept	register_eyeobj	code/game/machinery/computer/camera_advanced.dm:443	eyeobj	yes	full	proc root
+proc	/obj/item/circuit_component/advanced_camera_intercept	unregister_usb_parent	code/game/machinery/computer/camera_advanced.dm:448	parent	yes	full	proc
+proc	/obj/item/circuit_component/advanced_camera_intercept	on_parent_assign_user	code/game/machinery/computer/camera_advanced.dm:457	_source,new_user,old_user	yes	full	proc root
+proc	/obj/item/circuit_component/advanced_camera_intercept	InterceptClickOn	code/game/machinery/computer/camera_advanced.dm:463	user,params,target	yes	full	proc root
+type	/obj/item/circuit_component/medical_console_data	/obj/item/circuit_component	code/game/machinery/computer/crew.dm:20	live	obj_item_circuit_component_medical_console_data	1	0
+proc	/obj/item/circuit_component/medical_console_data	populate_ports	code/game/machinery/computer/crew.dm:29		yes	full	proc
+proc	/obj/item/circuit_component/medical_console_data	register_usb_parent	code/game/machinery/computer/crew.dm:32	shell	yes	full	proc
+proc	/obj/item/circuit_component/medical_console_data	unregister_usb_parent	code/game/machinery/computer/crew.dm:37	shell	yes	full	proc
+proc	/obj/item/circuit_component/medical_console_data	get_ui_notices	code/game/machinery/computer/crew.dm:41		yes	full	proc
+proc	/obj/item/circuit_component/medical_console_data	input_received	code/game/machinery/computer/crew.dm:56	port	yes	full	proc
+type	/obj/item/circuit_component/teleporter_control_console	/obj/item/circuit_component	code/game/machinery/computer/teleporter.dm:244	live	obj_item_circuit_component_teleporter_control_console	1	0
+proc	/obj/item/circuit_component/teleporter_control_console	populate_ports	code/game/machinery/computer/teleporter.dm:258		yes	full	proc
+proc	/obj/item/circuit_component/teleporter_control_console	register_usb_parent	code/game/machinery/computer/teleporter.dm:268	shell	yes	full	proc
+proc	/obj/item/circuit_component/teleporter_control_console	unregister_usb_parent	code/game/machinery/computer/teleporter.dm:277	shell	yes	full	proc
+proc	/obj/item/circuit_component/teleporter_control_console	input_received	code/game/machinery/computer/teleporter.dm:282	port	yes	full	proc
+proc	/obj/item/circuit_component/teleporter_control_console	on_teleporter_new_target	code/game/machinery/computer/teleporter.dm:305	source,new_target	yes	full	proc root
+proc	/obj/item/circuit_component/teleporter_control_console	update_targets	code/game/machinery/computer/teleporter.dm:321		yes	full	proc root
+type	/obj/item/circuit_component/arrest_console_data	/obj/item/circuit_component	code/game/machinery/computer/records/security.dm:395	live	obj_item_circuit_component_arrest_console_data	1	0
+proc	/obj/item/circuit_component/arrest_console_data	populate_ports	code/game/machinery/computer/records/security.dm:407		yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_data	register_usb_parent	code/game/machinery/computer/records/security.dm:411	shell	yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_data	unregister_usb_parent	code/game/machinery/computer/records/security.dm:416	shell	yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_data	get_ui_notices	code/game/machinery/computer/records/security.dm:420		yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_data	input_received	code/game/machinery/computer/records/security.dm:433	port	yes	full	proc
+type	/obj/item/circuit_component/arrest_console_arrest	/obj/item/circuit_component	code/game/machinery/computer/records/security.dm:458	live	obj_item_circuit_component_arrest_console_arrest	1	0
+proc	/obj/item/circuit_component/arrest_console_arrest	register_usb_parent	code/game/machinery/computer/records/security.dm:476	shell	yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_arrest	unregister_usb_parent	code/game/machinery/computer/records/security.dm:481	shell	yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_arrest	populate_options	code/game/machinery/computer/records/security.dm:485		yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_arrest	populate_ports	code/game/machinery/computer/records/security.dm:491		yes	full	proc
+proc	/obj/item/circuit_component/arrest_console_arrest	input_received	code/game/machinery/computer/records/security.dm:496	port	yes	full	proc
+type	/obj/item/circuit_component/reflector	/obj/item/circuit_component	code/game/objects/structures/reflector.dm:272	live	obj_item_circuit_component_reflector	1	0
+proc	/obj/item/circuit_component/reflector	populate_ports	code/game/objects/structures/reflector.dm:281		yes	full	proc
+proc	/obj/item/circuit_component/reflector	register_usb_parent	code/game/objects/structures/reflector.dm:284	parent	yes	full	proc
+proc	/obj/item/circuit_component/reflector	unregister_usb_parent	code/game/objects/structures/reflector.dm:289	parent	yes	full	proc
+proc	/obj/item/circuit_component/reflector	input_received	code/game/objects/structures/reflector.dm:293	port	yes	full	proc
+type	/obj/item/circuit_component/holo_signboard	/obj/item/circuit_component	code/game/objects/structures/signboards/holosign.dm:163	live	obj_item_circuit_component_holo_signboard	1	0
+proc	/obj/item/circuit_component/holo_signboard	populate_ports	code/game/objects/structures/signboards/holosign.dm:180		yes	full	proc
+proc	/obj/item/circuit_component/holo_signboard	register_usb_parent	code/game/objects/structures/signboards/holosign.dm:192	shell	yes	full	proc
+proc	/obj/item/circuit_component/holo_signboard	input_received	code/game/objects/structures/signboards/holosign.dm:197	port	yes	full	proc
+proc	/obj/item/circuit_component/holo_signboard	clear_received	code/game/objects/structures/signboards/holosign.dm:218	port	yes	full	proc root
+proc	/obj/item/circuit_component/holo_signboard	color_received	code/game/objects/structures/signboards/holosign.dm:223	port	yes	full	proc root
+type	/obj/item/circuit_component/air_alarm_general	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:2	live	obj_item_circuit_component_air_alarm_general	1	0
+proc	/obj/item/circuit_component/air_alarm_general	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:24		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_general	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:32		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_general	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:41	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_general	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:50	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_general	on_mode_updated	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:63	alarm,signal_source	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_general	on_alarm_triggered	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:67	source,alarm_type,location	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_general	on_alarm_cleared	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:72	source,alarm_type,location	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_general	trigger_alarm	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:78	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_general	set_mode	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:90	port	yes	full	proc root
+type	/obj/item/circuit_component/air_alarm	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:102	live	obj_item_circuit_component_air_alarm	1	0
+proc	/obj/item/circuit_component/air_alarm	ui_perform_action	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:130	user,action	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm	on_duplicate_removed	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:141	source	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:145		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:158		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:189	removed_from	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:193	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:198	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm	set_limits	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:204		yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm	input_received	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:224	port	yes	full	proc
+type	/obj/item/circuit_component/air_alarm/duplicate	/obj/item/circuit_component/air_alarm	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:175	live	obj_item_circuit_component_air_alarm_duplicate	1	0
+proc	/obj/item/circuit_component/air_alarm/duplicate	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:180	removed_from	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm/duplicate	Destroy	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:185		yes	full	proc
+type	/obj/item/circuit_component/air_alarm_scrubbers	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:239	live	obj_item_circuit_component_air_alarm_scrubbers	1	0
+proc	/obj/item/circuit_component/air_alarm_scrubbers	ui_perform_action	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:285	user,action	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers	on_duplicate_removed	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:297	source	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:301		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:304		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:334	removed_from	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:338	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:344	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers	get_ui_notices	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:351		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers	set_gas_to_filter	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:360	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	set_gas_filter_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:364	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_scrubber	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:381	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_scrubber_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:385	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_range	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:397	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_range_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:401	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_siphon	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:412	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	toggle_siphon_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:416	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_scrubbers	update_data	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:427		yes	full	proc root
+type	/obj/item/circuit_component/air_alarm_scrubbers/duplicate	/obj/item/circuit_component/air_alarm_scrubbers	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:321	live	obj_item_circuit_component_air_alarm_scrubbers_duplicate	1	0
+proc	/obj/item/circuit_component/air_alarm_scrubbers/duplicate	Destroy	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:325		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_scrubbers/duplicate	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:329	removed_from	yes	full	proc
+type	/obj/item/circuit_component/air_alarm_vents	/obj/item/circuit_component	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:449	live	obj_item_circuit_component_air_alarm_vents	1	0
+proc	/obj/item/circuit_component/air_alarm_vents	ui_perform_action	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:505	user,action	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_vents	on_duplicate_removed	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:517	source	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	populate_options	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:521		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_vents	populate_ports	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:524		yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_vents	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:562	removed_from	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_vents	register_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:566	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_vents	unregister_usb_parent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:572	shell	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_vent	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:579	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_vent_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:583	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_external	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:594	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_external_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:598	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_internal	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:611	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_internal_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:615	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	set_internal_pressure	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:628	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	set_internal_pressure_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:632	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	set_external_pressure	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:642	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	set_external_pressure_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:646	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_siphon	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:656	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	toggle_siphon_async	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:660	port	yes	full	proc root
+proc	/obj/item/circuit_component/air_alarm_vents	update_data	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:670		yes	full	proc root
+type	/obj/item/circuit_component/air_alarm_vents/duplicate	/obj/item/circuit_component/air_alarm_vents	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:548	live	obj_item_circuit_component_air_alarm_vents_duplicate	1	0
+proc	/obj/item/circuit_component/air_alarm_vents/duplicate	removed_from	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:553	removed_from	yes	full	proc
+proc	/obj/item/circuit_component/air_alarm_vents/duplicate	Destroy	code/modules/atmospherics/machinery/air_alarm/air_alarm_circuit.dm:558		yes	full	proc
+type	/obj/item/circuit_component/atmos_pump	/obj/item/circuit_component	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:135	live	obj_item_circuit_component_atmos_pump	1	0
+proc	/obj/item/circuit_component/atmos_pump	populate_ports	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:166		yes	full	proc
+proc	/obj/item/circuit_component/atmos_pump	register_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:181	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_pump	unregister_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:187	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_pump	pre_input_received	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:192	port	yes	full	proc
+proc	/obj/item/circuit_component/atmos_pump	handle_pump_activation	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:195	source,active	yes	full	proc root
+proc	/obj/item/circuit_component/atmos_pump	set_pump_pressure	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:203		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_pump	set_pump_on	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:209		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_pump	set_pump_off	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:215		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_pump	request_pump_data	code/modules/atmospherics/machinery/components/binary_devices/pump.dm:222		yes	full	proc root
+type	/obj/item/circuit_component/digital_valve	/obj/item/circuit_component	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:95	live	obj_item_circuit_component_digital_valve	1	0
+proc	/obj/item/circuit_component/digital_valve	populate_ports	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:112		yes	full	proc
+proc	/obj/item/circuit_component/digital_valve	register_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:120	shell	yes	full	proc
+proc	/obj/item/circuit_component/digital_valve	unregister_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:126	shell	yes	full	proc
+proc	/obj/item/circuit_component/digital_valve	handle_valve_toggled	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:131	source,on	yes	full	proc root
+proc	/obj/item/circuit_component/digital_valve	input_received	code/modules/atmospherics/machinery/components/binary_devices/valve.dm:139	port	yes	full	proc
+type	/obj/item/circuit_component/atmos_volume_pump	/obj/item/circuit_component	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:196	live	obj_item_circuit_component_atmos_volume_pump	1	0
+proc	/obj/item/circuit_component/atmos_volume_pump	populate_ports	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:227		yes	full	proc
+proc	/obj/item/circuit_component/atmos_volume_pump	register_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:242	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_volume_pump	unregister_usb_parent	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:248	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_volume_pump	pre_input_received	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:253	port	yes	full	proc
+proc	/obj/item/circuit_component/atmos_volume_pump	handle_pump_activation	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:256	source,active	yes	full	proc root
+proc	/obj/item/circuit_component/atmos_volume_pump	set_transfer_rate	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:264		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_volume_pump	set_pump_on	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:270		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_volume_pump	set_pump_off	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:277		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_volume_pump	request_pump_data	code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:284		yes	full	proc root
+type	/obj/item/circuit_component/atmos_meter	/obj/item/circuit_component	code/modules/atmospherics/machinery/other/meter.dm:198	live	obj_item_circuit_component_atmos_meter	1	0
+proc	/obj/item/circuit_component/atmos_meter	populate_ports	code/modules/atmospherics/machinery/other/meter.dm:212		yes	full	proc
+proc	/obj/item/circuit_component/atmos_meter	register_usb_parent	code/modules/atmospherics/machinery/other/meter.dm:218	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_meter	unregister_usb_parent	code/modules/atmospherics/machinery/other/meter.dm:223	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_meter	request_meter_data	code/modules/atmospherics/machinery/other/meter.dm:227		yes	full	proc root
+type	/obj/item/circuit_component/slime_processor	/obj/item/circuit_component	code/modules/food_and_drinks/machinery/processor.dm:290	live	obj_item_circuit_component_slime_processor	1	0
+proc	/obj/item/circuit_component/slime_processor	populate_ports	code/modules/food_and_drinks/machinery/processor.dm:301		yes	full	proc
+proc	/obj/item/circuit_component/slime_processor	register_usb_parent	code/modules/food_and_drinks/machinery/processor.dm:305	parent	yes	full	proc
+proc	/obj/item/circuit_component/slime_processor	unregister_usb_parent	code/modules/food_and_drinks/machinery/processor.dm:310	parent	yes	full	proc
+proc	/obj/item/circuit_component/slime_processor	activate	code/modules/food_and_drinks/machinery/processor.dm:314		yes	full	proc root
+proc	/obj/item/circuit_component/slime_processor	input_received	code/modules/food_and_drinks/machinery/processor.dm:323		yes	full	proc
+type	/obj/item/circuit_component/hydroponics	/obj/item/circuit_component	code/modules/hydroponics/hydroponics.dm:1282	live	obj_item_circuit_component_hydroponics	1	0
+proc	/obj/item/circuit_component/hydroponics	populate_ports	code/modules/hydroponics/hydroponics.dm:1314		yes	full	proc
+proc	/obj/item/circuit_component/hydroponics	register_usb_parent	code/modules/hydroponics/hydroponics.dm:1341	parent	yes	full	proc
+proc	/obj/item/circuit_component/hydroponics	unregister_usb_parent	code/modules/hydroponics/hydroponics.dm:1357	parent	yes	full	proc
+proc	/obj/item/circuit_component/hydroponics	get_ui_notices	code/modules/hydroponics/hydroponics.dm:1367		yes	full	proc
+proc	/obj/item/circuit_component/hydroponics	on_set_seed	code/modules/hydroponics/hydroponics.dm:1371	source,new_seed	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_set_selfsustaining	code/modules/hydroponics/hydroponics.dm:1375	source,new_value	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_set_weedlevel	code/modules/hydroponics/hydroponics.dm:1379	source,new_value	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_set_pestlevel	code/modules/hydroponics/hydroponics.dm:1383	source,new_value	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_set_waterlevel	code/modules/hydroponics/hydroponics.dm:1387	source,new_value	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_set_plant_health	code/modules/hydroponics/hydroponics.dm:1391	source,new_value	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_set_toxic_level	code/modules/hydroponics/hydroponics.dm:1395	source,new_value	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_set_plant_status	code/modules/hydroponics/hydroponics.dm:1399	source,new_value	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_harvest	code/modules/hydroponics/hydroponics.dm:1403	source,product_amount	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	on_plant_death	code/modules/hydroponics/hydroponics.dm:1408	source	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	update_reagents_level	code/modules/hydroponics/hydroponics.dm:1412	source	yes	full	proc root
+proc	/obj/item/circuit_component/hydroponics	input_received	code/modules/hydroponics/hydroponics.dm:1416	port	yes	full	proc
+type	/obj/item/circuit_component/synth	/obj/item/circuit_component	code/modules/instruments/piano_synth.dm:71	live	obj_item_circuit_component_synth	1	0
+proc	/obj/item/circuit_component/synth	populate_ports	code/modules/instruments/piano_synth.dm:108		yes	full	proc
+proc	/obj/item/circuit_component/synth	register_shell	code/modules/instruments/piano_synth.dm:126	shell	yes	full	proc
+proc	/obj/item/circuit_component/synth	unregister_shell	code/modules/instruments/piano_synth.dm:133	shell	yes	full	proc
+proc	/obj/item/circuit_component/synth	start_playing	code/modules/instruments/piano_synth.dm:140	port	yes	full	proc root
+proc	/obj/item/circuit_component/synth	on_song_start	code/modules/instruments/piano_synth.dm:143	source,starting_song,player	yes	full	proc root
+proc	/obj/item/circuit_component/synth	continue_if_autoplaying	code/modules/instruments/piano_synth.dm:150	source,music_player	yes	full	proc root
+proc	/obj/item/circuit_component/synth	stop_playing	code/modules/instruments/piano_synth.dm:155	port	yes	full	proc root
+proc	/obj/item/circuit_component/synth	on_song_end	code/modules/instruments/piano_synth.dm:158		yes	full	proc root
+proc	/obj/item/circuit_component/synth	import_song	code/modules/instruments/piano_synth.dm:163		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_repetitions	code/modules/instruments/piano_synth.dm:166		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_bpm	code/modules/instruments/piano_synth.dm:169		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_instrument	code/modules/instruments/piano_synth.dm:173		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_volume	code/modules/instruments/piano_synth.dm:176		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_dropoff	code/modules/instruments/piano_synth.dm:179		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_note_shift	code/modules/instruments/piano_synth.dm:182		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_sustain_mode	code/modules/instruments/piano_synth.dm:185		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_sustain_value	code/modules/instruments/piano_synth.dm:190		yes	full	proc root
+proc	/obj/item/circuit_component/synth	set_sustain_decay	code/modules/instruments/piano_synth.dm:197		yes	full	proc root
+type	/obj/item/circuit_component/synth/headphones	/obj/item/circuit_component/synth	code/modules/instruments/piano_synth.dm:201	live	obj_item_circuit_component_synth_headphones	0	0
+type	/obj/item/circuit_component/modpc	/obj/item/circuit_component	code/modules/modular_computers/computers/item/computer_circuit.dm:3	live	obj_item_circuit_component_modpc	1	0
+proc	/obj/item/circuit_component/modpc	register_shell	code/modules/modular_computers/computers/item/computer_circuit.dm:25	shell	yes	full	proc
+proc	/obj/item/circuit_component/modpc	unregister_shell	code/modules/modular_computers/computers/item/computer_circuit.dm:51	shell	yes	full	proc
+proc	/obj/item/circuit_component/modpc	populate_ports	code/modules/modular_computers/computers/item/computer_circuit.dm:57		yes	full	proc
+proc	/obj/item/circuit_component/modpc	pre_input_received	code/modules/modular_computers/computers/item/computer_circuit.dm:65	port	yes	full	proc
+proc	/obj/item/circuit_component/modpc	print_text	code/modules/modular_computers/computers/item/computer_circuit.dm:71	source	yes	full	proc root
+proc	/obj/item/circuit_component/modpc	toggle_power	code/modules/modular_computers/computers/item/computer_circuit.dm:75	source	yes	full	proc root
+proc	/obj/item/circuit_component/modpc	toggle_flashlight	code/modules/modular_computers/computers/item/computer_circuit.dm:81	source	yes	full	proc root
+proc	/obj/item/circuit_component/modpc	set_flashlight_color	code/modules/modular_computers/computers/item/computer_circuit.dm:84	source	yes	full	proc root
+proc	/obj/item/circuit_component/modpc	computer_on	code/modules/modular_computers/computers/item/computer_circuit.dm:90	source,user	yes	full	proc root
+proc	/obj/item/circuit_component/modpc	computer_off	code/modules/modular_computers/computers/item/computer_circuit.dm:94	source,loud	yes	full	proc root
 type	/obj/item/circuit_component/mod_program	/obj/item/circuit_component	code/modules/wiremod/core/program_circuit.dm:7	live	obj_item_circuit_component_mod_program	1	0
 proc	/obj/item/circuit_component/mod_program	Initialize	code/modules/wiremod/core/program_circuit.dm:23	mapload	yes	full	proc
 proc	/obj/item/circuit_component/mod_program	register_shell	code/modules/wiremod/core/program_circuit.dm:29	shell	yes	full	proc
@@ -70889,94 +70889,94 @@ proc	/obj/item/circuit_component/mod_program	on_start	code/modules/wiremod/core/
 proc	/obj/item/circuit_component/mod_program	kill_prog	code/modules/wiremod/core/program_circuit.dm:85	port	yes	full	proc root
 proc	/obj/item/circuit_component/mod_program	on_kill	code/modules/wiremod/core/program_circuit.dm:88	user	yes	full	proc root
 proc	/obj/item/circuit_component/mod_program	get_ui_notices	code/modules/wiremod/core/program_circuit.dm:92		yes	full	proc
-type	/obj/item/circuit_component/mod_program/borg_monitor	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/borg_monitor.dm:191	inert	obj_item_circuit_component_mod_program_borg_monitor	0	0
-proc	/obj/item/circuit_component/mod_program/borg_monitor	populate_ports	code/modules/modular_computers/file_system/programs/borg_monitor.dm:199		no	-	proc
-proc	/obj/item/circuit_component/mod_program/borg_monitor	sanitize_borg_message	code/modules/modular_computers/file_system/programs/borg_monitor.dm:204	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/borg_monitor	input_received	code/modules/modular_computers/file_system/programs/borg_monitor.dm:207	port	no	-	proc
-type	/obj/item/circuit_component/mod_program/borg_monitor/syndie	/obj/item/circuit_component/mod_program/borg_monitor	code/modules/modular_computers/file_system/programs/borg_monitor.dm:216	inert	obj_item_circuit_component_mod_program_borg_monitor_syndie	0	0
-type	/obj/item/circuit_component/mod_program/notepad	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/notepad.dm:123	inert	obj_item_circuit_component_mod_program_notepad	0	0
-proc	/obj/item/circuit_component/mod_program/notepad	populate_ports	code/modules/modular_computers/file_system/programs/notepad.dm:131		no	-	proc
-proc	/obj/item/circuit_component/mod_program/notepad	register_shell	code/modules/modular_computers/file_system/programs/notepad.dm:137	shell	no	-	proc
-proc	/obj/item/circuit_component/mod_program/notepad	unregister_shell	code/modules/modular_computers/file_system/programs/notepad.dm:141		no	-	proc
-proc	/obj/item/circuit_component/mod_program/notepad	on_note_updated	code/modules/modular_computers/file_system/programs/notepad.dm:145	source,user,action,params	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/notepad	input_received	code/modules/modular_computers/file_system/programs/notepad.dm:151	port	no	-	proc
-type	/obj/item/circuit_component/mod_program/nt_pay	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/nt_pay.dm:114	inert	obj_item_circuit_component_mod_program_nt_pay	0	0
-proc	/obj/item/circuit_component/mod_program/nt_pay	register_shell	code/modules/modular_computers/file_system/programs/nt_pay.dm:130	shell	no	-	proc
-proc	/obj/item/circuit_component/mod_program/nt_pay	unregister_shell	code/modules/modular_computers/file_system/programs/nt_pay.dm:138		no	-	proc
-proc	/obj/item/circuit_component/mod_program/nt_pay	register_id	code/modules/modular_computers/file_system/programs/nt_pay.dm:145	source,inserted_id,user	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/nt_pay	unregister_id	code/modules/modular_computers/file_system/programs/nt_pay.dm:150	gone	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/nt_pay	populate_ports	code/modules/modular_computers/file_system/programs/nt_pay.dm:154		no	-	proc
-proc	/obj/item/circuit_component/mod_program/nt_pay	get_ui_notices	code/modules/modular_computers/file_system/programs/nt_pay.dm:163		no	-	proc
-proc	/obj/item/circuit_component/mod_program/nt_pay	input_received	code/modules/modular_computers/file_system/programs/nt_pay.dm:174	port	no	-	proc
-proc	/obj/item/circuit_component/mod_program/nt_pay	on_payment_done	code/modules/modular_computers/file_system/programs/nt_pay.dm:178	source,payment_result	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/nt_pay	on_payment_received	code/modules/modular_computers/file_system/programs/nt_pay.dm:182	source,computer,money_received	no	-	proc root
-type	/obj/item/circuit_component/mod_program/radar	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/radar.dm:418	inert	obj_item_circuit_component_mod_program_radar	0	0
-proc	/obj/item/circuit_component/mod_program/radar	populate_ports	code/modules/modular_computers/file_system/programs/radar.dm:427		no	-	proc
-proc	/obj/item/circuit_component/mod_program/radar	register_shell	code/modules/modular_computers/file_system/programs/radar.dm:434	shell	no	-	proc
-proc	/obj/item/circuit_component/mod_program/radar	unregister_shell	code/modules/modular_computers/file_system/programs/radar.dm:440		no	-	proc
-proc	/obj/item/circuit_component/mod_program/radar	get_ui_notices	code/modules/modular_computers/file_system/programs/radar.dm:448		no	-	proc
-proc	/obj/item/circuit_component/mod_program/radar	input_received	code/modules/modular_computers/file_system/programs/radar.dm:453	port	no	-	proc
-proc	/obj/item/circuit_component/mod_program/radar	can_track	code/modules/modular_computers/file_system/programs/radar.dm:472	source,signal,signal_turf,computer_turf	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/radar	get_atom	code/modules/modular_computers/file_system/programs/radar.dm:479	source,atom_container	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/radar	on_selected	code/modules/modular_computers/file_system/programs/radar.dm:487	source,selected_ref	no	-	proc root
-type	/obj/item/circuit_component/mod_program/radar/medical	/obj/item/circuit_component/mod_program/radar	code/modules/modular_computers/file_system/programs/radar.dm:505	inert	obj_item_circuit_component_mod_program_radar_medical	0	0
-proc	/obj/item/circuit_component/mod_program/radar/medical	can_track	code/modules/modular_computers/file_system/programs/radar.dm:507	source,signal,signal_turf,computer_turf	no	-	proc
-type	/obj/item/circuit_component/mod_program/radar/janitor	/obj/item/circuit_component/mod_program/radar	code/modules/modular_computers/file_system/programs/radar.dm:513	inert	obj_item_circuit_component_mod_program_radar_janitor	0	0
-proc	/obj/item/circuit_component/mod_program/radar/janitor	can_track	code/modules/modular_computers/file_system/programs/radar.dm:515	source,signal,signal_turf,computer_turf	no	-	proc
-type	/obj/item/circuit_component/mod_program/radar/nukie	/obj/item/circuit_component/mod_program/radar	code/modules/modular_computers/file_system/programs/radar.dm:520	inert	obj_item_circuit_component_mod_program_radar_nukie	0	0
-proc	/obj/item/circuit_component/mod_program/radar/nukie	can_track	code/modules/modular_computers/file_system/programs/radar.dm:522	source,signal,signal_turf,computer_turf	no	-	proc
-type	/obj/item/circuit_component/mod_program/signaler	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/signalcommander.dm:101	inert	obj_item_circuit_component_mod_program_signaler	0	0
-proc	/obj/item/circuit_component/mod_program/signaler	populate_ports	code/modules/modular_computers/file_system/programs/signalcommander.dm:109		no	-	proc
-proc	/obj/item/circuit_component/mod_program/signaler	set_freq	code/modules/modular_computers/file_system/programs/signalcommander.dm:114	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/signaler	set_code	code/modules/modular_computers/file_system/programs/signalcommander.dm:118	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/signaler	input_received	code/modules/modular_computers/file_system/programs/signalcommander.dm:122	port	no	-	proc
-type	/obj/item/circuit_component/mod_program/status	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/statusdisplay.dm:95	inert	obj_item_circuit_component_mod_program_status	0	0
-proc	/obj/item/circuit_component/mod_program/status	populate_ports	code/modules/modular_computers/file_system/programs/statusdisplay.dm:105		no	-	proc
-proc	/obj/item/circuit_component/mod_program/status	populate_options	code/modules/modular_computers/file_system/programs/statusdisplay.dm:110		no	-	proc
-proc	/obj/item/circuit_component/mod_program/status	set_picture	code/modules/modular_computers/file_system/programs/statusdisplay.dm:113	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/status	input_received	code/modules/modular_computers/file_system/programs/statusdisplay.dm:117	port	no	-	proc
-type	/obj/item/circuit_component/mod_program/ntnetmonitor	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/wirecarp.dm:72	inert	obj_item_circuit_component_mod_program_ntnetmonitor	0	0
-proc	/obj/item/circuit_component/mod_program/ntnetmonitor	populate_ports	code/modules/modular_computers/file_system/programs/wirecarp.dm:91		no	-	proc
-proc	/obj/item/circuit_component/mod_program/ntnetmonitor	get_pdas	code/modules/modular_computers/file_system/programs/wirecarp.dm:102	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/ntnetmonitor	toggle_ids	code/modules/modular_computers/file_system/programs/wirecarp.dm:109	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/ntnetmonitor	toggle_relay	code/modules/modular_computers/file_system/programs/wirecarp.dm:112	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/ntnetmonitor	purge_logs	code/modules/modular_computers/file_system/programs/wirecarp.dm:118	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/ntnetmonitor	toggle_pda_stuff	code/modules/modular_computers/file_system/programs/wirecarp.dm:121	port	no	-	proc root
-type	/obj/item/circuit_component/mod_program/modsuit_control	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:53	inert	obj_item_circuit_component_mod_program_modsuit_control	0	0
-proc	/obj/item/circuit_component/mod_program/modsuit_control	populate_ports	code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:58		no	-	proc
-proc	/obj/item/circuit_component/mod_program/modsuit_control	input_received	code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:62	port	no	-	proc
-type	/obj/item/circuit_component/mod_program/spectre_meter	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:141	inert	obj_item_circuit_component_mod_program_spectre_meter	0	0
-proc	/obj/item/circuit_component/mod_program/spectre_meter	populate_ports	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:149		no	-	proc
-proc	/obj/item/circuit_component/mod_program/spectre_meter	register_shell	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:154	shell	no	-	proc
-proc	/obj/item/circuit_component/mod_program/spectre_meter	unregister_shell	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:158		no	-	proc
-proc	/obj/item/circuit_component/mod_program/spectre_meter	get_ui_notices	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:162		no	-	proc
-proc	/obj/item/circuit_component/mod_program/spectre_meter	input_received	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:166	port	no	-	proc
-proc	/obj/item/circuit_component/mod_program/spectre_meter	on_scan	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:170	source,spook_value	no	-	proc root
-type	/obj/item/circuit_component/mod_program/messenger	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:7	inert	obj_item_circuit_component_mod_program_messenger	0	0
-proc	/obj/item/circuit_component/mod_program/messenger	populate_ports	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:34		no	-	proc
-proc	/obj/item/circuit_component/mod_program/messenger	input_received	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:48	port	no	-	proc
-proc	/obj/item/circuit_component/mod_program/messenger	register_shell	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:65	shell	no	-	proc
-proc	/obj/item/circuit_component/mod_program/messenger	unregister_shell	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:70		no	-	proc
-proc	/obj/item/circuit_component/mod_program/messenger	get_ui_notices	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:74		no	-	proc
-proc	/obj/item/circuit_component/mod_program/messenger	message_received	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:80	source,signal,message_job,message_name	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/messenger	message_sent	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:97	source,origin,signal	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/messenger	set_ringtone	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:106	port	no	-	proc root
-proc	/obj/item/circuit_component/mod_program/messenger	play_ringtone	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:110	port	no	-	proc root
+type	/obj/item/circuit_component/mod_program/borg_monitor	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/borg_monitor.dm:191	live	obj_item_circuit_component_mod_program_borg_monitor	1	0
+proc	/obj/item/circuit_component/mod_program/borg_monitor	populate_ports	code/modules/modular_computers/file_system/programs/borg_monitor.dm:199		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/borg_monitor	sanitize_borg_message	code/modules/modular_computers/file_system/programs/borg_monitor.dm:204	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/borg_monitor	input_received	code/modules/modular_computers/file_system/programs/borg_monitor.dm:207	port	yes	full	proc
+type	/obj/item/circuit_component/mod_program/borg_monitor/syndie	/obj/item/circuit_component/mod_program/borg_monitor	code/modules/modular_computers/file_system/programs/borg_monitor.dm:216	live	obj_item_circuit_component_mod_program_borg_monitor_syndie	0	0
+type	/obj/item/circuit_component/mod_program/notepad	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/notepad.dm:123	live	obj_item_circuit_component_mod_program_notepad	1	0
+proc	/obj/item/circuit_component/mod_program/notepad	populate_ports	code/modules/modular_computers/file_system/programs/notepad.dm:131		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/notepad	register_shell	code/modules/modular_computers/file_system/programs/notepad.dm:137	shell	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/notepad	unregister_shell	code/modules/modular_computers/file_system/programs/notepad.dm:141		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/notepad	on_note_updated	code/modules/modular_computers/file_system/programs/notepad.dm:145	source,user,action,params	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/notepad	input_received	code/modules/modular_computers/file_system/programs/notepad.dm:151	port	yes	full	proc
+type	/obj/item/circuit_component/mod_program/nt_pay	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/nt_pay.dm:114	live	obj_item_circuit_component_mod_program_nt_pay	1	0
+proc	/obj/item/circuit_component/mod_program/nt_pay	register_shell	code/modules/modular_computers/file_system/programs/nt_pay.dm:130	shell	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/nt_pay	unregister_shell	code/modules/modular_computers/file_system/programs/nt_pay.dm:138		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/nt_pay	register_id	code/modules/modular_computers/file_system/programs/nt_pay.dm:145	source,inserted_id,user	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/nt_pay	unregister_id	code/modules/modular_computers/file_system/programs/nt_pay.dm:150	gone	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/nt_pay	populate_ports	code/modules/modular_computers/file_system/programs/nt_pay.dm:154		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/nt_pay	get_ui_notices	code/modules/modular_computers/file_system/programs/nt_pay.dm:163		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/nt_pay	input_received	code/modules/modular_computers/file_system/programs/nt_pay.dm:174	port	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/nt_pay	on_payment_done	code/modules/modular_computers/file_system/programs/nt_pay.dm:178	source,payment_result	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/nt_pay	on_payment_received	code/modules/modular_computers/file_system/programs/nt_pay.dm:182	source,computer,money_received	yes	full	proc root
+type	/obj/item/circuit_component/mod_program/radar	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/radar.dm:418	live	obj_item_circuit_component_mod_program_radar	1	0
+proc	/obj/item/circuit_component/mod_program/radar	populate_ports	code/modules/modular_computers/file_system/programs/radar.dm:427		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/radar	register_shell	code/modules/modular_computers/file_system/programs/radar.dm:434	shell	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/radar	unregister_shell	code/modules/modular_computers/file_system/programs/radar.dm:440		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/radar	get_ui_notices	code/modules/modular_computers/file_system/programs/radar.dm:448		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/radar	input_received	code/modules/modular_computers/file_system/programs/radar.dm:453	port	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/radar	can_track	code/modules/modular_computers/file_system/programs/radar.dm:472	source,signal,signal_turf,computer_turf	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/radar	get_atom	code/modules/modular_computers/file_system/programs/radar.dm:479	source,atom_container	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/radar	on_selected	code/modules/modular_computers/file_system/programs/radar.dm:487	source,selected_ref	yes	full	proc root
+type	/obj/item/circuit_component/mod_program/radar/medical	/obj/item/circuit_component/mod_program/radar	code/modules/modular_computers/file_system/programs/radar.dm:505	live	obj_item_circuit_component_mod_program_radar_medical	1	0
+proc	/obj/item/circuit_component/mod_program/radar/medical	can_track	code/modules/modular_computers/file_system/programs/radar.dm:507	source,signal,signal_turf,computer_turf	yes	full	proc
+type	/obj/item/circuit_component/mod_program/radar/janitor	/obj/item/circuit_component/mod_program/radar	code/modules/modular_computers/file_system/programs/radar.dm:513	live	obj_item_circuit_component_mod_program_radar_janitor	1	0
+proc	/obj/item/circuit_component/mod_program/radar/janitor	can_track	code/modules/modular_computers/file_system/programs/radar.dm:515	source,signal,signal_turf,computer_turf	yes	full	proc
+type	/obj/item/circuit_component/mod_program/radar/nukie	/obj/item/circuit_component/mod_program/radar	code/modules/modular_computers/file_system/programs/radar.dm:520	live	obj_item_circuit_component_mod_program_radar_nukie	1	0
+proc	/obj/item/circuit_component/mod_program/radar/nukie	can_track	code/modules/modular_computers/file_system/programs/radar.dm:522	source,signal,signal_turf,computer_turf	yes	full	proc
+type	/obj/item/circuit_component/mod_program/signaler	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/signalcommander.dm:101	live	obj_item_circuit_component_mod_program_signaler	1	0
+proc	/obj/item/circuit_component/mod_program/signaler	populate_ports	code/modules/modular_computers/file_system/programs/signalcommander.dm:109		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/signaler	set_freq	code/modules/modular_computers/file_system/programs/signalcommander.dm:114	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/signaler	set_code	code/modules/modular_computers/file_system/programs/signalcommander.dm:118	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/signaler	input_received	code/modules/modular_computers/file_system/programs/signalcommander.dm:122	port	yes	full	proc
+type	/obj/item/circuit_component/mod_program/status	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/statusdisplay.dm:95	live	obj_item_circuit_component_mod_program_status	1	0
+proc	/obj/item/circuit_component/mod_program/status	populate_ports	code/modules/modular_computers/file_system/programs/statusdisplay.dm:105		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/status	populate_options	code/modules/modular_computers/file_system/programs/statusdisplay.dm:110		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/status	set_picture	code/modules/modular_computers/file_system/programs/statusdisplay.dm:113	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/status	input_received	code/modules/modular_computers/file_system/programs/statusdisplay.dm:117	port	yes	full	proc
+type	/obj/item/circuit_component/mod_program/ntnetmonitor	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/wirecarp.dm:72	live	obj_item_circuit_component_mod_program_ntnetmonitor	1	0
+proc	/obj/item/circuit_component/mod_program/ntnetmonitor	populate_ports	code/modules/modular_computers/file_system/programs/wirecarp.dm:91		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/ntnetmonitor	get_pdas	code/modules/modular_computers/file_system/programs/wirecarp.dm:102	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/ntnetmonitor	toggle_ids	code/modules/modular_computers/file_system/programs/wirecarp.dm:109	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/ntnetmonitor	toggle_relay	code/modules/modular_computers/file_system/programs/wirecarp.dm:112	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/ntnetmonitor	purge_logs	code/modules/modular_computers/file_system/programs/wirecarp.dm:118	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/ntnetmonitor	toggle_pda_stuff	code/modules/modular_computers/file_system/programs/wirecarp.dm:121	port	yes	full	proc root
+type	/obj/item/circuit_component/mod_program/modsuit_control	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:53	live	obj_item_circuit_component_mod_program_modsuit_control	1	0
+proc	/obj/item/circuit_component/mod_program/modsuit_control	populate_ports	code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:58		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/modsuit_control	input_received	code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:62	port	yes	full	proc
+type	/obj/item/circuit_component/mod_program/spectre_meter	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:141	live	obj_item_circuit_component_mod_program_spectre_meter	1	0
+proc	/obj/item/circuit_component/mod_program/spectre_meter	populate_ports	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:149		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/spectre_meter	register_shell	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:154	shell	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/spectre_meter	unregister_shell	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:158		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/spectre_meter	get_ui_notices	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:162		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/spectre_meter	input_received	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:166	port	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/spectre_meter	on_scan	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:170	source,spook_value	yes	full	proc root
+type	/obj/item/circuit_component/mod_program/messenger	/obj/item/circuit_component/mod_program	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:7	live	obj_item_circuit_component_mod_program_messenger	1	0
+proc	/obj/item/circuit_component/mod_program/messenger	populate_ports	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:34		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/messenger	input_received	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:48	port	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/messenger	register_shell	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:65	shell	yes	full	proc
+proc	/obj/item/circuit_component/mod_program/messenger	unregister_shell	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:70		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/messenger	get_ui_notices	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:74		yes	full	proc
+proc	/obj/item/circuit_component/mod_program/messenger	message_received	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:80	source,signal,message_job,message_name	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/messenger	message_sent	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:97	source,origin,signal	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/messenger	set_ringtone	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:106	port	yes	full	proc root
+proc	/obj/item/circuit_component/mod_program/messenger	play_ringtone	code/modules/modular_computers/file_system/programs/messenger/messenger_circuit.dm:110	port	yes	full	proc root
 type	/obj/item/circuit_component/mod_program/camera	/obj/item/circuit_component/mod_program	code/modules/wiremod/components/action/camera.dm:62	inert	obj_item_circuit_component_mod_program_camera	0	0
 proc	/obj/item/circuit_component/mod_program/camera	populate_ports	code/modules/wiremod/components/action/camera.dm:78		no	-	proc
 proc	/obj/item/circuit_component/mod_program/camera	register_shell	code/modules/wiremod/components/action/camera.dm:85	shell	no	-	proc
 proc	/obj/item/circuit_component/mod_program/camera	unregister_shell	code/modules/wiremod/components/action/camera.dm:90		no	-	proc
 proc	/obj/item/circuit_component/mod_program/camera	input_received	code/modules/wiremod/components/action/camera.dm:95	port	no	-	proc
 proc	/obj/item/circuit_component/mod_program/camera	on_image_captured	code/modules/wiremod/components/action/camera.dm:107	source,target,user	no	-	proc root
-type	/obj/item/circuit_component/conveyor_switch	/obj/item/circuit_component	code/modules/recycling/conveyor.dm:714	inert	obj_item_circuit_component_conveyor_switch	0	0
-proc	/obj/item/circuit_component/conveyor_switch	populate_ports	code/modules/recycling/conveyor.dm:726		no	-	proc
-proc	/obj/item/circuit_component/conveyor_switch	get_ui_notices	code/modules/recycling/conveyor.dm:731		no	-	proc
-proc	/obj/item/circuit_component/conveyor_switch	register_usb_parent	code/modules/recycling/conveyor.dm:735	shell	no	-	proc
-proc	/obj/item/circuit_component/conveyor_switch	unregister_usb_parent	code/modules/recycling/conveyor.dm:742	shell	no	-	proc
-proc	/obj/item/circuit_component/conveyor_switch	on_switch_changed	code/modules/recycling/conveyor.dm:746		no	-	proc root
-proc	/obj/item/circuit_component/conveyor_switch	activate	code/modules/recycling/conveyor.dm:752		no	-	proc root
-proc	/obj/item/circuit_component/conveyor_switch	stop	code/modules/recycling/conveyor.dm:757		no	-	proc root
-proc	/obj/item/circuit_component/conveyor_switch	reverse	code/modules/recycling/conveyor.dm:762		no	-	proc root
+type	/obj/item/circuit_component/conveyor_switch	/obj/item/circuit_component	code/modules/recycling/conveyor.dm:714	live	obj_item_circuit_component_conveyor_switch	1	0
+proc	/obj/item/circuit_component/conveyor_switch	populate_ports	code/modules/recycling/conveyor.dm:726		yes	full	proc
+proc	/obj/item/circuit_component/conveyor_switch	get_ui_notices	code/modules/recycling/conveyor.dm:731		yes	full	proc
+proc	/obj/item/circuit_component/conveyor_switch	register_usb_parent	code/modules/recycling/conveyor.dm:735	shell	yes	full	proc
+proc	/obj/item/circuit_component/conveyor_switch	unregister_usb_parent	code/modules/recycling/conveyor.dm:742	shell	yes	full	proc
+proc	/obj/item/circuit_component/conveyor_switch	on_switch_changed	code/modules/recycling/conveyor.dm:746		yes	full	proc root
+proc	/obj/item/circuit_component/conveyor_switch	activate	code/modules/recycling/conveyor.dm:752		yes	full	proc root
+proc	/obj/item/circuit_component/conveyor_switch	stop	code/modules/recycling/conveyor.dm:757		yes	full	proc root
+proc	/obj/item/circuit_component/conveyor_switch	reverse	code/modules/recycling/conveyor.dm:762		yes	full	proc root
 type	/obj/item/circuit_component/variable	/obj/item/circuit_component	code/modules/wiremod/components/abstract/variable.dm:7	live	obj_item_circuit_component_variable	1	0
 proc	/obj/item/circuit_component/variable	populate_options	code/modules/wiremod/components/abstract/variable.dm:18		yes	full	proc
 proc	/obj/item/circuit_component/variable	add_to	code/modules/wiremod/components/abstract/variable.dm:21	added_to	yes	full	proc
@@ -71314,13 +71314,13 @@ proc	/obj/item/circuit_component/remotecam	remove_camera_emp	code/modules/wiremo
 proc	/obj/item/circuit_component/remotecam	start_process	code/modules/wiremod/components/atom/remotecam.dm:244		yes	full	proc root
 proc	/obj/item/circuit_component/remotecam	stop_process	code/modules/wiremod/components/atom/remotecam.dm:252		yes	full	proc root
 proc	/obj/item/circuit_component/remotecam	process	code/modules/wiremod/components/atom/remotecam.dm:260	seconds_per_tick	yes	full	proc
-type	/obj/item/circuit_component/remotecam/bci	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:282	inert	obj_item_circuit_component_remotecam_bci	0	0
-proc	/obj/item/circuit_component/remotecam/bci	register_shell	code/modules/wiremod/components/atom/remotecam.dm:317	shell	no	-	proc
-proc	/obj/item/circuit_component/remotecam/bci	unregister_shell	code/modules/wiremod/components/atom/remotecam.dm:332	shell	no	-	proc
-proc	/obj/item/circuit_component/remotecam/bci	Destroy	code/modules/wiremod/components/atom/remotecam.dm:340		no	-	proc
-proc	/obj/item/circuit_component/remotecam/bci	on_organ_implanted	code/modules/wiremod/components/atom/remotecam.dm:348	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/remotecam/bci	on_organ_removed	code/modules/wiremod/components/atom/remotecam.dm:355	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/remotecam/bci	process	code/modules/wiremod/components/atom/remotecam.dm:386	seconds_per_tick	no	-	proc
+type	/obj/item/circuit_component/remotecam/bci	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:282	live	obj_item_circuit_component_remotecam_bci	1	0
+proc	/obj/item/circuit_component/remotecam/bci	register_shell	code/modules/wiremod/components/atom/remotecam.dm:317	shell	yes	full	proc
+proc	/obj/item/circuit_component/remotecam/bci	unregister_shell	code/modules/wiremod/components/atom/remotecam.dm:332	shell	yes	full	proc
+proc	/obj/item/circuit_component/remotecam/bci	Destroy	code/modules/wiremod/components/atom/remotecam.dm:340		yes	full	proc
+proc	/obj/item/circuit_component/remotecam/bci	on_organ_implanted	code/modules/wiremod/components/atom/remotecam.dm:348	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/remotecam/bci	on_organ_removed	code/modules/wiremod/components/atom/remotecam.dm:355	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/remotecam/bci	process	code/modules/wiremod/components/atom/remotecam.dm:386	seconds_per_tick	yes	full	proc
 type	/obj/item/circuit_component/remotecam/drone	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:295	live	obj_item_circuit_component_remotecam_drone	1	0
 proc	/obj/item/circuit_component/remotecam/drone	register_shell	code/modules/wiremod/components/atom/remotecam.dm:362	shell	yes	full	proc
 type	/obj/item/circuit_component/remotecam/airlock	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:300	live	obj_item_circuit_component_remotecam_airlock	1	0
@@ -71335,60 +71335,60 @@ proc	/obj/item/circuit_component/self	unregister_shell	code/modules/wiremod/comp
 type	/obj/item/circuit_component/species	/obj/item/circuit_component	code/modules/wiremod/components/atom/species.dm:7	live	obj_item_circuit_component_species	1	0
 proc	/obj/item/circuit_component/species	populate_ports	code/modules/wiremod/components/atom/species.dm:19		yes	full	proc
 proc	/obj/item/circuit_component/species	input_received	code/modules/wiremod/components/atom/species.dm:24	port	yes	full	proc
-type	/obj/item/circuit_component/install_detector	/obj/item/circuit_component	code/modules/wiremod/components/bci/install_detector.dm:9	inert	obj_item_circuit_component_install_detector	0	0
-proc	/obj/item/circuit_component/install_detector	populate_ports	code/modules/wiremod/components/bci/install_detector.dm:19		no	-	proc
-proc	/obj/item/circuit_component/install_detector	register_shell	code/modules/wiremod/components/bci/install_detector.dm:25	shell	no	-	proc
-proc	/obj/item/circuit_component/install_detector	unregister_shell	code/modules/wiremod/components/bci/install_detector.dm:34	shell	no	-	proc
-proc	/obj/item/circuit_component/install_detector	implanted	code/modules/wiremod/components/bci/install_detector.dm:47	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/install_detector	removed	code/modules/wiremod/components/bci/install_detector.dm:52	source,owner	no	-	proc root
-type	/obj/item/circuit_component/reagent_injector	/obj/item/circuit_component	code/modules/wiremod/components/bci/reagent_injector.dm:9	inert	obj_item_circuit_component_reagent_injector	0	0
-proc	/obj/item/circuit_component/reagent_injector	Initialize	code/modules/wiremod/components/bci/reagent_injector.dm:21	mapload	no	-	proc
-proc	/obj/item/circuit_component/reagent_injector	populate_ports	code/modules/wiremod/components/bci/reagent_injector.dm:25		no	-	proc
-proc	/obj/item/circuit_component/reagent_injector	get_mob	code/modules/wiremod/components/bci/reagent_injector.dm:30		no	-	proc root
-proc	/obj/item/circuit_component/reagent_injector	trigger_inject	code/modules/wiremod/components/bci/reagent_injector.dm:38		no	-	proc root
-proc	/obj/item/circuit_component/reagent_injector	register_shell	code/modules/wiremod/components/bci/reagent_injector.dm:53	shell	no	-	proc
-proc	/obj/item/circuit_component/reagent_injector	unregister_shell	code/modules/wiremod/components/bci/reagent_injector.dm:61	shell	no	-	proc
-type	/obj/item/circuit_component/thought_listener	/obj/item/circuit_component	code/modules/wiremod/components/bci/thought_listener.dm:9	inert	obj_item_circuit_component_thought_listener	0	0
-proc	/obj/item/circuit_component/thought_listener	populate_ports	code/modules/wiremod/components/bci/thought_listener.dm:26		no	-	proc
-proc	/obj/item/circuit_component/thought_listener	register_shell	code/modules/wiremod/components/bci/thought_listener.dm:33	shell	no	-	proc
-proc	/obj/item/circuit_component/thought_listener	unregister_shell	code/modules/wiremod/components/bci/thought_listener.dm:37	shell	no	-	proc
-proc	/obj/item/circuit_component/thought_listener	input_received	code/modules/wiremod/components/bci/thought_listener.dm:40	port	no	-	proc
-proc	/obj/item/circuit_component/thought_listener	thought_listen	code/modules/wiremod/components/bci/thought_listener.dm:58	owner	no	-	proc root
-type	/obj/item/circuit_component/vox	/obj/item/circuit_component	code/modules/wiremod/components/bci/vox.dm:9	inert	obj_item_circuit_component_vox	0	0
-proc	/obj/item/circuit_component/vox	populate_options	code/modules/wiremod/components/bci/vox.dm:24		no	-	proc
-proc	/obj/item/circuit_component/vox	populate_ports	code/modules/wiremod/components/bci/vox.dm:27		no	-	proc
-proc	/obj/item/circuit_component/vox	register_shell	code/modules/wiremod/components/bci/vox.dm:30	shell	no	-	proc
-proc	/obj/item/circuit_component/vox	unregister_shell	code/modules/wiremod/components/bci/vox.dm:34	shell	no	-	proc
-proc	/obj/item/circuit_component/vox	pre_input_received	code/modules/wiremod/components/bci/vox.dm:37	port	no	-	proc
-proc	/obj/item/circuit_component/vox	input_received	code/modules/wiremod/components/bci/vox.dm:43	port	no	-	proc
-type	/obj/item/circuit_component/object_overlay	/obj/item/circuit_component	code/modules/wiremod/components/bci/hud/object_overlay.dm:11	inert	obj_item_circuit_component_object_overlay	0	0
-proc	/obj/item/circuit_component/object_overlay	populate_ports	code/modules/wiremod/components/bci/hud/object_overlay.dm:38		no	-	proc
-proc	/obj/item/circuit_component/object_overlay	Destroy	code/modules/wiremod/components/bci/hud/object_overlay.dm:48		no	-	proc
-proc	/obj/item/circuit_component/object_overlay	populate_options	code/modules/wiremod/components/bci/hud/object_overlay.dm:52		no	-	proc
-proc	/obj/item/circuit_component/object_overlay	register_shell	code/modules/wiremod/components/bci/hud/object_overlay.dm:68	shell	no	-	proc
-proc	/obj/item/circuit_component/object_overlay	unregister_shell	code/modules/wiremod/components/bci/hud/object_overlay.dm:73	shell	no	-	proc
-proc	/obj/item/circuit_component/object_overlay	input_received	code/modules/wiremod/components/bci/hud/object_overlay.dm:77	port	no	-	proc
-proc	/obj/item/circuit_component/object_overlay	show_to_owner	code/modules/wiremod/components/bci/hud/object_overlay.dm:95	target_atom,owner	no	-	proc root
-proc	/obj/item/circuit_component/object_overlay	on_organ_removed	code/modules/wiremod/components/bci/hud/object_overlay.dm:128	source,owner	no	-	proc root
-type	/obj/item/circuit_component/object_overlay/bar	/obj/item/circuit_component/object_overlay	code/modules/wiremod/components/bci/hud/bar_overlay.dm:12	inert	obj_item_circuit_component_object_overlay_bar	0	0
-proc	/obj/item/circuit_component/object_overlay/bar	populate_ports	code/modules/wiremod/components/bci/hud/bar_overlay.dm:21		no	-	proc
-proc	/obj/item/circuit_component/object_overlay/bar	populate_options	code/modules/wiremod/components/bci/hud/bar_overlay.dm:25		no	-	proc
-proc	/obj/item/circuit_component/object_overlay/bar	show_to_owner	code/modules/wiremod/components/bci/hud/bar_overlay.dm:33	target_atom,owner	no	-	proc
-type	/obj/item/circuit_component/counter_overlay	/obj/item/circuit_component	code/modules/wiremod/components/bci/hud/counter_overlay.dm:9	inert	obj_item_circuit_component_counter_overlay	0	0
-proc	/obj/item/circuit_component/counter_overlay	populate_ports	code/modules/wiremod/components/bci/hud/counter_overlay.dm:26		no	-	proc
-proc	/obj/item/circuit_component/counter_overlay	register_shell	code/modules/wiremod/components/bci/hud/counter_overlay.dm:34	shell	no	-	proc
-proc	/obj/item/circuit_component/counter_overlay	unregister_shell	code/modules/wiremod/components/bci/hud/counter_overlay.dm:39	shell	no	-	proc
-proc	/obj/item/circuit_component/counter_overlay	input_received	code/modules/wiremod/components/bci/hud/counter_overlay.dm:50	port	no	-	proc
-proc	/obj/item/circuit_component/counter_overlay	on_organ_removed	code/modules/wiremod/components/bci/hud/counter_overlay.dm:112	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/counter_overlay	Destroy	code/modules/wiremod/components/bci/hud/counter_overlay.dm:123		no	-	proc
-type	/obj/item/circuit_component/target_intercept	/obj/item/circuit_component	code/modules/wiremod/components/bci/hud/target_intercept.dm:9	inert	obj_item_circuit_component_target_intercept	0	0
-proc	/obj/item/circuit_component/target_intercept	populate_ports	code/modules/wiremod/components/bci/hud/target_intercept.dm:20		no	-	proc
-proc	/obj/item/circuit_component/target_intercept	register_shell	code/modules/wiremod/components/bci/hud/target_intercept.dm:25	shell	no	-	proc
-proc	/obj/item/circuit_component/target_intercept	unregister_shell	code/modules/wiremod/components/bci/hud/target_intercept.dm:30	shell	no	-	proc
-proc	/obj/item/circuit_component/target_intercept	input_received	code/modules/wiremod/components/bci/hud/target_intercept.dm:34	port	no	-	proc
-proc	/obj/item/circuit_component/target_intercept	on_organ_removed	code/modules/wiremod/components/bci/hud/target_intercept.dm:51	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/target_intercept	InterceptClickOn	code/modules/wiremod/components/bci/hud/target_intercept.dm:57	user,params,object	no	-	proc root
-proc	/obj/item/circuit_component/target_intercept	get_ui_notices	code/modules/wiremod/components/bci/hud/target_intercept.dm:64		no	-	proc
+type	/obj/item/circuit_component/install_detector	/obj/item/circuit_component	code/modules/wiremod/components/bci/install_detector.dm:9	live	obj_item_circuit_component_install_detector	1	0
+proc	/obj/item/circuit_component/install_detector	populate_ports	code/modules/wiremod/components/bci/install_detector.dm:19		yes	full	proc
+proc	/obj/item/circuit_component/install_detector	register_shell	code/modules/wiremod/components/bci/install_detector.dm:25	shell	yes	full	proc
+proc	/obj/item/circuit_component/install_detector	unregister_shell	code/modules/wiremod/components/bci/install_detector.dm:34	shell	yes	full	proc
+proc	/obj/item/circuit_component/install_detector	implanted	code/modules/wiremod/components/bci/install_detector.dm:47	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/install_detector	removed	code/modules/wiremod/components/bci/install_detector.dm:52	source,owner	yes	full	proc root
+type	/obj/item/circuit_component/reagent_injector	/obj/item/circuit_component	code/modules/wiremod/components/bci/reagent_injector.dm:9	live	obj_item_circuit_component_reagent_injector	1	0
+proc	/obj/item/circuit_component/reagent_injector	Initialize	code/modules/wiremod/components/bci/reagent_injector.dm:21	mapload	yes	full	proc
+proc	/obj/item/circuit_component/reagent_injector	populate_ports	code/modules/wiremod/components/bci/reagent_injector.dm:25		yes	full	proc
+proc	/obj/item/circuit_component/reagent_injector	get_mob	code/modules/wiremod/components/bci/reagent_injector.dm:30		yes	full	proc root
+proc	/obj/item/circuit_component/reagent_injector	trigger_inject	code/modules/wiremod/components/bci/reagent_injector.dm:38		yes	full	proc root
+proc	/obj/item/circuit_component/reagent_injector	register_shell	code/modules/wiremod/components/bci/reagent_injector.dm:53	shell	yes	full	proc
+proc	/obj/item/circuit_component/reagent_injector	unregister_shell	code/modules/wiremod/components/bci/reagent_injector.dm:61	shell	yes	full	proc
+type	/obj/item/circuit_component/thought_listener	/obj/item/circuit_component	code/modules/wiremod/components/bci/thought_listener.dm:9	live	obj_item_circuit_component_thought_listener	1	0
+proc	/obj/item/circuit_component/thought_listener	populate_ports	code/modules/wiremod/components/bci/thought_listener.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/thought_listener	register_shell	code/modules/wiremod/components/bci/thought_listener.dm:33	shell	yes	full	proc
+proc	/obj/item/circuit_component/thought_listener	unregister_shell	code/modules/wiremod/components/bci/thought_listener.dm:37	shell	yes	full	proc
+proc	/obj/item/circuit_component/thought_listener	input_received	code/modules/wiremod/components/bci/thought_listener.dm:40	port	yes	full	proc
+proc	/obj/item/circuit_component/thought_listener	thought_listen	code/modules/wiremod/components/bci/thought_listener.dm:58	owner	yes	full	proc root
+type	/obj/item/circuit_component/vox	/obj/item/circuit_component	code/modules/wiremod/components/bci/vox.dm:9	live	obj_item_circuit_component_vox	1	0
+proc	/obj/item/circuit_component/vox	populate_options	code/modules/wiremod/components/bci/vox.dm:24		yes	full	proc
+proc	/obj/item/circuit_component/vox	populate_ports	code/modules/wiremod/components/bci/vox.dm:27		yes	full	proc
+proc	/obj/item/circuit_component/vox	register_shell	code/modules/wiremod/components/bci/vox.dm:30	shell	yes	full	proc
+proc	/obj/item/circuit_component/vox	unregister_shell	code/modules/wiremod/components/bci/vox.dm:34	shell	yes	full	proc
+proc	/obj/item/circuit_component/vox	pre_input_received	code/modules/wiremod/components/bci/vox.dm:37	port	yes	full	proc
+proc	/obj/item/circuit_component/vox	input_received	code/modules/wiremod/components/bci/vox.dm:43	port	yes	full	proc
+type	/obj/item/circuit_component/object_overlay	/obj/item/circuit_component	code/modules/wiremod/components/bci/hud/object_overlay.dm:11	live	obj_item_circuit_component_object_overlay	1	0
+proc	/obj/item/circuit_component/object_overlay	populate_ports	code/modules/wiremod/components/bci/hud/object_overlay.dm:38		yes	full	proc
+proc	/obj/item/circuit_component/object_overlay	Destroy	code/modules/wiremod/components/bci/hud/object_overlay.dm:48		yes	full	proc
+proc	/obj/item/circuit_component/object_overlay	populate_options	code/modules/wiremod/components/bci/hud/object_overlay.dm:52		yes	full	proc
+proc	/obj/item/circuit_component/object_overlay	register_shell	code/modules/wiremod/components/bci/hud/object_overlay.dm:68	shell	yes	full	proc
+proc	/obj/item/circuit_component/object_overlay	unregister_shell	code/modules/wiremod/components/bci/hud/object_overlay.dm:73	shell	yes	full	proc
+proc	/obj/item/circuit_component/object_overlay	input_received	code/modules/wiremod/components/bci/hud/object_overlay.dm:77	port	yes	full	proc
+proc	/obj/item/circuit_component/object_overlay	show_to_owner	code/modules/wiremod/components/bci/hud/object_overlay.dm:95	target_atom,owner	yes	full	proc root
+proc	/obj/item/circuit_component/object_overlay	on_organ_removed	code/modules/wiremod/components/bci/hud/object_overlay.dm:128	source,owner	yes	full	proc root
+type	/obj/item/circuit_component/object_overlay/bar	/obj/item/circuit_component/object_overlay	code/modules/wiremod/components/bci/hud/bar_overlay.dm:12	live	obj_item_circuit_component_object_overlay_bar	1	0
+proc	/obj/item/circuit_component/object_overlay/bar	populate_ports	code/modules/wiremod/components/bci/hud/bar_overlay.dm:21		yes	full	proc
+proc	/obj/item/circuit_component/object_overlay/bar	populate_options	code/modules/wiremod/components/bci/hud/bar_overlay.dm:25		yes	full	proc
+proc	/obj/item/circuit_component/object_overlay/bar	show_to_owner	code/modules/wiremod/components/bci/hud/bar_overlay.dm:33	target_atom,owner	yes	full	proc
+type	/obj/item/circuit_component/counter_overlay	/obj/item/circuit_component	code/modules/wiremod/components/bci/hud/counter_overlay.dm:9	live	obj_item_circuit_component_counter_overlay	1	0
+proc	/obj/item/circuit_component/counter_overlay	populate_ports	code/modules/wiremod/components/bci/hud/counter_overlay.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/counter_overlay	register_shell	code/modules/wiremod/components/bci/hud/counter_overlay.dm:34	shell	yes	full	proc
+proc	/obj/item/circuit_component/counter_overlay	unregister_shell	code/modules/wiremod/components/bci/hud/counter_overlay.dm:39	shell	yes	full	proc
+proc	/obj/item/circuit_component/counter_overlay	input_received	code/modules/wiremod/components/bci/hud/counter_overlay.dm:50	port	yes	full	proc
+proc	/obj/item/circuit_component/counter_overlay	on_organ_removed	code/modules/wiremod/components/bci/hud/counter_overlay.dm:112	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/counter_overlay	Destroy	code/modules/wiremod/components/bci/hud/counter_overlay.dm:123		yes	full	proc
+type	/obj/item/circuit_component/target_intercept	/obj/item/circuit_component	code/modules/wiremod/components/bci/hud/target_intercept.dm:9	live	obj_item_circuit_component_target_intercept	1	0
+proc	/obj/item/circuit_component/target_intercept	populate_ports	code/modules/wiremod/components/bci/hud/target_intercept.dm:20		yes	full	proc
+proc	/obj/item/circuit_component/target_intercept	register_shell	code/modules/wiremod/components/bci/hud/target_intercept.dm:25	shell	yes	full	proc
+proc	/obj/item/circuit_component/target_intercept	unregister_shell	code/modules/wiremod/components/bci/hud/target_intercept.dm:30	shell	yes	full	proc
+proc	/obj/item/circuit_component/target_intercept	input_received	code/modules/wiremod/components/bci/hud/target_intercept.dm:34	port	yes	full	proc
+proc	/obj/item/circuit_component/target_intercept	on_organ_removed	code/modules/wiremod/components/bci/hud/target_intercept.dm:51	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/target_intercept	InterceptClickOn	code/modules/wiremod/components/bci/hud/target_intercept.dm:57	user,params,object	yes	full	proc root
+proc	/obj/item/circuit_component/target_intercept	get_ui_notices	code/modules/wiremod/components/bci/hud/target_intercept.dm:64		yes	full	proc
 type	/obj/item/circuit_component/id_access_reader	/obj/item/circuit_component	code/modules/wiremod/components/id/access_reader.dm:2	live	obj_item_circuit_component_id_access_reader	1	0
 proc	/obj/item/circuit_component/id_access_reader	get_ui_notices	code/modules/wiremod/components/id/access_reader.dm:16		yes	full	proc
 proc	/obj/item/circuit_component/id_access_reader	populate_ports	code/modules/wiremod/components/id/access_reader.dm:20		yes	full	proc
@@ -71552,33 +71552,33 @@ proc	/obj/item/circuit_component/select	populate_options	code/modules/wiremod/co
 proc	/obj/item/circuit_component/select	populate_ports	code/modules/wiremod/components/table/select.dm:39		yes	full	proc
 proc	/obj/item/circuit_component/select	pre_input_received	code/modules/wiremod/components/table/select.dm:46	port	yes	full	proc
 proc	/obj/item/circuit_component/select	input_received	code/modules/wiremod/components/table/select.dm:59	port	yes	full	proc
-type	/obj/item/circuit_component/emitter	/obj/item/circuit_component	code/modules/wiremod/components/usb/emitter.dm:5	inert	obj_item_circuit_component_emitter	0	0
-proc	/obj/item/circuit_component/emitter	populate_ports	code/modules/wiremod/components/usb/emitter.dm:21		no	-	proc
-proc	/obj/item/circuit_component/emitter	register_usb_parent	code/modules/wiremod/components/usb/emitter.dm:28	parent	no	-	proc
-proc	/obj/item/circuit_component/emitter	unregister_usb_parent	code/modules/wiremod/components/usb/emitter.dm:35	parent	no	-	proc
-proc	/obj/item/circuit_component/emitter	handle_emitter_activation	code/modules/wiremod/components/usb/emitter.dm:41	source,active	no	-	proc root
-proc	/obj/item/circuit_component/emitter	handle_emitter_on_fire	code/modules/wiremod/components/usb/emitter.dm:48	source,active	no	-	proc root
-proc	/obj/item/circuit_component/emitter	fire_emitter	code/modules/wiremod/components/usb/emitter.dm:52		no	-	proc root
-type	/obj/item/circuit_component/atmos_temperature_pump	/obj/item/circuit_component	code/modules/wiremod/components/usb/temperature_pump.dm:5	inert	obj_item_circuit_component_atmos_temperature_pump	0	0
-proc	/obj/item/circuit_component/atmos_temperature_pump	populate_ports	code/modules/wiremod/components/usb/temperature_pump.dm:38		no	-	proc
-proc	/obj/item/circuit_component/atmos_temperature_pump	register_usb_parent	code/modules/wiremod/components/usb/temperature_pump.dm:54	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_temperature_pump	unregister_usb_parent	code/modules/wiremod/components/usb/temperature_pump.dm:60	shell	no	-	proc
-proc	/obj/item/circuit_component/atmos_temperature_pump	pre_input_received	code/modules/wiremod/components/usb/temperature_pump.dm:65	port	no	-	proc
-proc	/obj/item/circuit_component/atmos_temperature_pump	handle_pump_activation	code/modules/wiremod/components/usb/temperature_pump.dm:68	source,active	no	-	proc root
-proc	/obj/item/circuit_component/atmos_temperature_pump	set_pump_heat_rate	code/modules/wiremod/components/usb/temperature_pump.dm:76		no	-	proc root
-proc	/obj/item/circuit_component/atmos_temperature_pump	set_pump_on	code/modules/wiremod/components/usb/temperature_pump.dm:82		no	-	proc root
-proc	/obj/item/circuit_component/atmos_temperature_pump	set_pump_off	code/modules/wiremod/components/usb/temperature_pump.dm:88		no	-	proc root
-proc	/obj/item/circuit_component/atmos_temperature_pump	request_pump_data	code/modules/wiremod/components/usb/temperature_pump.dm:95		no	-	proc root
-type	/obj/item/circuit_component/thermomachine	/obj/item/circuit_component	code/modules/wiremod/components/usb/thermomachine.dm:5	inert	obj_item_circuit_component_thermomachine	0	0
-proc	/obj/item/circuit_component/thermomachine	populate_ports	code/modules/wiremod/components/usb/thermomachine.dm:32		no	-	proc
-proc	/obj/item/circuit_component/thermomachine	register_usb_parent	code/modules/wiremod/components/usb/thermomachine.dm:45	shell	no	-	proc
-proc	/obj/item/circuit_component/thermomachine	unregister_usb_parent	code/modules/wiremod/components/usb/thermomachine.dm:51	shell	no	-	proc
-proc	/obj/item/circuit_component/thermomachine	pre_input_received	code/modules/wiremod/components/usb/thermomachine.dm:56	port	no	-	proc
-proc	/obj/item/circuit_component/thermomachine	handle_pump_activation	code/modules/wiremod/components/usb/thermomachine.dm:62	source,active	no	-	proc root
-proc	/obj/item/circuit_component/thermomachine	set_temperature	code/modules/wiremod/components/usb/thermomachine.dm:70		no	-	proc root
-proc	/obj/item/circuit_component/thermomachine	set_machine_on	code/modules/wiremod/components/usb/thermomachine.dm:79		no	-	proc root
-proc	/obj/item/circuit_component/thermomachine	set_machine_off	code/modules/wiremod/components/usb/thermomachine.dm:86		no	-	proc root
-proc	/obj/item/circuit_component/thermomachine	request_pump_data	code/modules/wiremod/components/usb/thermomachine.dm:94		no	-	proc root
+type	/obj/item/circuit_component/emitter	/obj/item/circuit_component	code/modules/wiremod/components/usb/emitter.dm:5	live	obj_item_circuit_component_emitter	1	0
+proc	/obj/item/circuit_component/emitter	populate_ports	code/modules/wiremod/components/usb/emitter.dm:21		yes	full	proc
+proc	/obj/item/circuit_component/emitter	register_usb_parent	code/modules/wiremod/components/usb/emitter.dm:28	parent	yes	full	proc
+proc	/obj/item/circuit_component/emitter	unregister_usb_parent	code/modules/wiremod/components/usb/emitter.dm:35	parent	yes	full	proc
+proc	/obj/item/circuit_component/emitter	handle_emitter_activation	code/modules/wiremod/components/usb/emitter.dm:41	source,active	yes	full	proc root
+proc	/obj/item/circuit_component/emitter	handle_emitter_on_fire	code/modules/wiremod/components/usb/emitter.dm:48	source,active	yes	full	proc root
+proc	/obj/item/circuit_component/emitter	fire_emitter	code/modules/wiremod/components/usb/emitter.dm:52		yes	full	proc root
+type	/obj/item/circuit_component/atmos_temperature_pump	/obj/item/circuit_component	code/modules/wiremod/components/usb/temperature_pump.dm:5	live	obj_item_circuit_component_atmos_temperature_pump	1	0
+proc	/obj/item/circuit_component/atmos_temperature_pump	populate_ports	code/modules/wiremod/components/usb/temperature_pump.dm:38		yes	full	proc
+proc	/obj/item/circuit_component/atmos_temperature_pump	register_usb_parent	code/modules/wiremod/components/usb/temperature_pump.dm:54	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_temperature_pump	unregister_usb_parent	code/modules/wiremod/components/usb/temperature_pump.dm:60	shell	yes	full	proc
+proc	/obj/item/circuit_component/atmos_temperature_pump	pre_input_received	code/modules/wiremod/components/usb/temperature_pump.dm:65	port	yes	full	proc
+proc	/obj/item/circuit_component/atmos_temperature_pump	handle_pump_activation	code/modules/wiremod/components/usb/temperature_pump.dm:68	source,active	yes	full	proc root
+proc	/obj/item/circuit_component/atmos_temperature_pump	set_pump_heat_rate	code/modules/wiremod/components/usb/temperature_pump.dm:76		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_temperature_pump	set_pump_on	code/modules/wiremod/components/usb/temperature_pump.dm:82		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_temperature_pump	set_pump_off	code/modules/wiremod/components/usb/temperature_pump.dm:88		yes	full	proc root
+proc	/obj/item/circuit_component/atmos_temperature_pump	request_pump_data	code/modules/wiremod/components/usb/temperature_pump.dm:95		yes	full	proc root
+type	/obj/item/circuit_component/thermomachine	/obj/item/circuit_component	code/modules/wiremod/components/usb/thermomachine.dm:5	live	obj_item_circuit_component_thermomachine	1	0
+proc	/obj/item/circuit_component/thermomachine	populate_ports	code/modules/wiremod/components/usb/thermomachine.dm:32		yes	full	proc
+proc	/obj/item/circuit_component/thermomachine	register_usb_parent	code/modules/wiremod/components/usb/thermomachine.dm:45	shell	yes	full	proc
+proc	/obj/item/circuit_component/thermomachine	unregister_usb_parent	code/modules/wiremod/components/usb/thermomachine.dm:51	shell	yes	full	proc
+proc	/obj/item/circuit_component/thermomachine	pre_input_received	code/modules/wiremod/components/usb/thermomachine.dm:56	port	yes	full	proc
+proc	/obj/item/circuit_component/thermomachine	handle_pump_activation	code/modules/wiremod/components/usb/thermomachine.dm:62	source,active	yes	full	proc root
+proc	/obj/item/circuit_component/thermomachine	set_temperature	code/modules/wiremod/components/usb/thermomachine.dm:70		yes	full	proc root
+proc	/obj/item/circuit_component/thermomachine	set_machine_on	code/modules/wiremod/components/usb/thermomachine.dm:79		yes	full	proc root
+proc	/obj/item/circuit_component/thermomachine	set_machine_off	code/modules/wiremod/components/usb/thermomachine.dm:86		yes	full	proc root
+proc	/obj/item/circuit_component/thermomachine	request_pump_data	code/modules/wiremod/components/usb/thermomachine.dm:94		yes	full	proc root
 type	/obj/item/circuit_component/clock	/obj/item/circuit_component	code/modules/wiremod/components/utility/clock.dm:7	live	obj_item_circuit_component_clock	1	0
 proc	/obj/item/circuit_component/clock	get_ui_notices	code/modules/wiremod/components/utility/clock.dm:17		yes	full	proc
 proc	/obj/item/circuit_component/clock	populate_ports	code/modules/wiremod/components/utility/clock.dm:21		yes	full	proc
@@ -71683,19 +71683,19 @@ proc	/obj/item/circuit_component/bot	populate_ports	code/modules/wiremod/shell/b
 proc	/obj/item/circuit_component/bot	register_shell	code/modules/wiremod/shell/bot.dm:37	shell	yes	full	proc
 proc	/obj/item/circuit_component/bot	unregister_shell	code/modules/wiremod/shell/bot.dm:40	shell	yes	full	proc
 proc	/obj/item/circuit_component/bot	on_attack_hand	code/modules/wiremod/shell/bot.dm:43	source,user	yes	full	proc root
-type	/obj/item/circuit_component/bci_core	/obj/item/circuit_component	code/modules/wiremod/shell/brain_computer_interface.dm:59	inert	obj_item_circuit_component_bci_core	0	0
-proc	/obj/item/circuit_component/bci_core	populate_ports	code/modules/wiremod/shell/brain_computer_interface.dm:73		no	-	proc
-proc	/obj/item/circuit_component/bci_core	Destroy	code/modules/wiremod/shell/brain_computer_interface.dm:81		no	-	proc
-proc	/obj/item/circuit_component/bci_core	update_charge_action	code/modules/wiremod/shell/brain_computer_interface.dm:85		no	-	proc root
-proc	/obj/item/circuit_component/bci_core	register_shell	code/modules/wiremod/shell/brain_computer_interface.dm:102	shell	no	-	proc
-proc	/obj/item/circuit_component/bci_core	unregister_shell	code/modules/wiremod/shell/brain_computer_interface.dm:110	shell	no	-	proc
-proc	/obj/item/circuit_component/bci_core	input_received	code/modules/wiremod/shell/brain_computer_interface.dm:124	port	no	-	proc
-proc	/obj/item/circuit_component/bci_core	on_organ_implanted	code/modules/wiremod/shell/brain_computer_interface.dm:140	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/bci_core	on_organ_removed	code/modules/wiremod/shell/brain_computer_interface.dm:151	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/bci_core	on_borg_charge	code/modules/wiremod/shell/brain_computer_interface.dm:162	source,charge_cell,seconds_per_tick	no	-	proc root
-proc	/obj/item/circuit_component/bci_core	on_electrocute	code/modules/wiremod/shell/brain_computer_interface.dm:170	source,shock_damage,shock_source,siemens_coefficient,flags	no	-	proc root
-proc	/obj/item/circuit_component/bci_core	on_examine	code/modules/wiremod/shell/brain_computer_interface.dm:182	source,mob,examine_text	no	-	proc root
-proc	/obj/item/circuit_component/bci_core	Topic	code/modules/wiremod/shell/brain_computer_interface.dm:188	href,href_list	no	-	proc
+type	/obj/item/circuit_component/bci_core	/obj/item/circuit_component	code/modules/wiremod/shell/brain_computer_interface.dm:59	live	obj_item_circuit_component_bci_core	1	0
+proc	/obj/item/circuit_component/bci_core	populate_ports	code/modules/wiremod/shell/brain_computer_interface.dm:73		yes	full	proc
+proc	/obj/item/circuit_component/bci_core	Destroy	code/modules/wiremod/shell/brain_computer_interface.dm:81		yes	full	proc
+proc	/obj/item/circuit_component/bci_core	update_charge_action	code/modules/wiremod/shell/brain_computer_interface.dm:85		yes	full	proc root
+proc	/obj/item/circuit_component/bci_core	register_shell	code/modules/wiremod/shell/brain_computer_interface.dm:102	shell	yes	full	proc
+proc	/obj/item/circuit_component/bci_core	unregister_shell	code/modules/wiremod/shell/brain_computer_interface.dm:110	shell	yes	full	proc
+proc	/obj/item/circuit_component/bci_core	input_received	code/modules/wiremod/shell/brain_computer_interface.dm:124	port	yes	full	proc
+proc	/obj/item/circuit_component/bci_core	on_organ_implanted	code/modules/wiremod/shell/brain_computer_interface.dm:140	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/bci_core	on_organ_removed	code/modules/wiremod/shell/brain_computer_interface.dm:151	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/bci_core	on_borg_charge	code/modules/wiremod/shell/brain_computer_interface.dm:162	source,charge_cell,seconds_per_tick	yes	full	proc root
+proc	/obj/item/circuit_component/bci_core	on_electrocute	code/modules/wiremod/shell/brain_computer_interface.dm:170	source,shock_damage,shock_source,siemens_coefficient,flags	yes	full	proc root
+proc	/obj/item/circuit_component/bci_core	on_examine	code/modules/wiremod/shell/brain_computer_interface.dm:182	source,mob,examine_text	yes	full	proc root
+proc	/obj/item/circuit_component/bci_core	Topic	code/modules/wiremod/shell/brain_computer_interface.dm:188	href,href_list	yes	full	proc
 type	/obj/item/circuit_component/compact_remote	/obj/item/circuit_component	code/modules/wiremod/shell/compact_remote.dm:26	live	obj_item_circuit_component_compact_remote	1	0
 proc	/obj/item/circuit_component/compact_remote	populate_ports	code/modules/wiremod/shell/compact_remote.dm:34		yes	full	proc
 proc	/obj/item/circuit_component/compact_remote	register_shell	code/modules/wiremod/shell/compact_remote.dm:38	shell	yes	full	proc
@@ -71734,19 +71734,19 @@ proc	/obj/item/circuit_component/wiremod_gun	register_shell	code/modules/wiremod
 proc	/obj/item/circuit_component/wiremod_gun	unregister_shell	code/modules/wiremod/shell/gun.dm:65	shell	yes	full	proc
 proc	/obj/item/circuit_component/wiremod_gun	handle_shot	code/modules/wiremod/shell/gun.dm:83	source,firer,target,angle	yes	full	proc root
 proc	/obj/item/circuit_component/wiremod_gun	handle_chamber	code/modules/wiremod/shell/gun.dm:94	source	yes	full	proc root
-type	/obj/item/circuit_component/implant_core	/obj/item/circuit_component	code/modules/wiremod/shell/implant.dm:48	inert	obj_item_circuit_component_implant_core	0	0
-proc	/obj/item/circuit_component/implant_core	populate_ports	code/modules/wiremod/shell/implant.dm:62		no	-	proc
-proc	/obj/item/circuit_component/implant_core	Destroy	code/modules/wiremod/shell/implant.dm:70		no	-	proc
-proc	/obj/item/circuit_component/implant_core	update_charge_action	code/modules/wiremod/shell/implant.dm:74		no	-	proc root
-proc	/obj/item/circuit_component/implant_core	register_shell	code/modules/wiremod/shell/implant.dm:91	shell	no	-	proc
-proc	/obj/item/circuit_component/implant_core	unregister_shell	code/modules/wiremod/shell/implant.dm:99	shell	no	-	proc
-proc	/obj/item/circuit_component/implant_core	on_implanted	code/modules/wiremod/shell/implant.dm:113	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/implant_core	on_removed	code/modules/wiremod/shell/implant.dm:124	source,owner	no	-	proc root
-proc	/obj/item/circuit_component/implant_core	input_received	code/modules/wiremod/shell/implant.dm:135	port	no	-	proc
-proc	/obj/item/circuit_component/implant_core	on_borg_charge	code/modules/wiremod/shell/implant.dm:151	source,charge_cell,seconds_per_tick	no	-	proc root
-proc	/obj/item/circuit_component/implant_core	on_electrocute	code/modules/wiremod/shell/implant.dm:159	source,shock_damage,shock_source,siemens_coefficient,flags	no	-	proc root
-proc	/obj/item/circuit_component/implant_core	on_examine	code/modules/wiremod/shell/implant.dm:171	source,mob,examine_text	no	-	proc root
-proc	/obj/item/circuit_component/implant_core	Topic	code/modules/wiremod/shell/implant.dm:177	href,href_list	no	-	proc
+type	/obj/item/circuit_component/implant_core	/obj/item/circuit_component	code/modules/wiremod/shell/implant.dm:48	live	obj_item_circuit_component_implant_core	1	0
+proc	/obj/item/circuit_component/implant_core	populate_ports	code/modules/wiremod/shell/implant.dm:62		yes	full	proc
+proc	/obj/item/circuit_component/implant_core	Destroy	code/modules/wiremod/shell/implant.dm:70		yes	full	proc
+proc	/obj/item/circuit_component/implant_core	update_charge_action	code/modules/wiremod/shell/implant.dm:74		yes	full	proc root
+proc	/obj/item/circuit_component/implant_core	register_shell	code/modules/wiremod/shell/implant.dm:91	shell	yes	full	proc
+proc	/obj/item/circuit_component/implant_core	unregister_shell	code/modules/wiremod/shell/implant.dm:99	shell	yes	full	proc
+proc	/obj/item/circuit_component/implant_core	on_implanted	code/modules/wiremod/shell/implant.dm:113	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/implant_core	on_removed	code/modules/wiremod/shell/implant.dm:124	source,owner	yes	full	proc root
+proc	/obj/item/circuit_component/implant_core	input_received	code/modules/wiremod/shell/implant.dm:135	port	yes	full	proc
+proc	/obj/item/circuit_component/implant_core	on_borg_charge	code/modules/wiremod/shell/implant.dm:151	source,charge_cell,seconds_per_tick	yes	full	proc root
+proc	/obj/item/circuit_component/implant_core	on_electrocute	code/modules/wiremod/shell/implant.dm:159	source,shock_damage,shock_source,siemens_coefficient,flags	yes	full	proc root
+proc	/obj/item/circuit_component/implant_core	on_examine	code/modules/wiremod/shell/implant.dm:171	source,mob,examine_text	yes	full	proc root
+proc	/obj/item/circuit_component/implant_core	Topic	code/modules/wiremod/shell/implant.dm:177	href,href_list	yes	full	proc
 type	/obj/item/circuit_component/keyboard_shell	/obj/item/circuit_component	code/modules/wiremod/shell/keyboard.dm:21	live	obj_item_circuit_component_keyboard_shell	1	0
 proc	/obj/item/circuit_component/keyboard_shell	populate_ports	code/modules/wiremod/shell/keyboard.dm:31		yes	full	proc
 proc	/obj/item/circuit_component/keyboard_shell	register_shell	code/modules/wiremod/shell/keyboard.dm:36	shell	yes	full	proc
@@ -74508,11 +74508,11 @@ type	/obj/item/organ/cyberimp/brain/surgical_processor/pre_loaded	/obj/item/orga
 type	/obj/item/organ/cyberimp/mouth	/obj/item/organ/cyberimp	code/modules/surgery/organs/internal/cyberimp/augments_internal.dm:479	live	obj_item_organ_cyberimp_mouth	0	0
 type	/obj/item/organ/cyberimp/mouth/breathing_tube	/obj/item/organ/cyberimp/mouth	code/modules/surgery/organs/internal/cyberimp/augments_internal.dm:482	live	obj_item_organ_cyberimp_mouth_breathing_tube	1	0
 proc	/obj/item/organ/cyberimp/mouth/breathing_tube	emp_act	code/modules/surgery/organs/internal/cyberimp/augments_internal.dm:490	severity	yes	full	proc
-type	/obj/item/organ/cyberimp/bci	/obj/item/organ/cyberimp	code/modules/wiremod/shell/brain_computer_interface.dm:2	inert	obj_item_organ_cyberimp_bci	0	0
-proc	/obj/item/organ/cyberimp/bci	Initialize	code/modules/wiremod/shell/brain_computer_interface.dm:9	mapload	no	-	proc
-proc	/obj/item/organ/cyberimp/bci	say	code/modules/wiremod/shell/brain_computer_interface.dm:22	message,bubble_type,spans,sanitize,language,ignore_spam,forced,filterproof,message_range,saymode,message_mods	no	-	proc
-proc	/obj/item/organ/cyberimp/bci	action_comp_registered	code/modules/wiremod/shell/brain_computer_interface.dm:46	source,action_comp	no	-	proc root
-proc	/obj/item/organ/cyberimp/bci	action_comp_unregistered	code/modules/wiremod/shell/brain_computer_interface.dm:50	source,action_comp	no	-	proc root
+type	/obj/item/organ/cyberimp/bci	/obj/item/organ/cyberimp	code/modules/wiremod/shell/brain_computer_interface.dm:2	live	obj_item_organ_cyberimp_bci	1	0
+proc	/obj/item/organ/cyberimp/bci	Initialize	code/modules/wiremod/shell/brain_computer_interface.dm:9	mapload	yes	full	proc
+proc	/obj/item/organ/cyberimp/bci	say	code/modules/wiremod/shell/brain_computer_interface.dm:22	message,bubble_type,spans,sanitize,language,ignore_spam,forced,filterproof,message_range,saymode,message_mods	yes	full	proc
+proc	/obj/item/organ/cyberimp/bci	action_comp_registered	code/modules/wiremod/shell/brain_computer_interface.dm:46	source,action_comp	yes	full	proc root
+proc	/obj/item/organ/cyberimp/bci	action_comp_unregistered	code/modules/wiremod/shell/brain_computer_interface.dm:50	source,action_comp	yes	full	proc root
 type	/obj/item/organ/monster_core	/obj/item/organ	code/modules/mining/equipment/monster_organs/monster_organ.dm:33	inert	obj_item_organ_monster_core	0	0
 proc	/obj/item/organ/monster_core	Initialize	code/modules/mining/equipment/monster_organs/monster_organ.dm:61	mapload	no	-	proc
 proc	/obj/item/organ/monster_core	examine	code/modules/mining/equipment/monster_organs/monster_organ.dm:66	user	no	-	proc
@@ -80595,10 +80595,10 @@ proc	/obj/item/bitrunning_host_monitor	attack_self	code/modules/bitrunning/objec
 type	/obj/item/modular_computer	/obj/item	code/modules/modular_computers/computers/item/computer.dm:5	base	obj_item_modular_computer	1	1
 proc	/obj/item/modular_computer	Initialize	code/modules/modular_computers/computers/item/computer.dm:135	mapload	yes	full	proc
 proc	/obj/item/modular_computer	LateInitialize	code/modules/modular_computers/computers/item/computer.dm:159		yes	full	proc
-proc	/obj/item/modular_computer	add_shell_component	code/modules/modular_computers/computers/item/computer.dm:164	capacity,shell_flags	no	-	proc root
-proc	/obj/item/modular_computer	on_circuit_attached	code/modules/modular_computers/computers/item/computer.dm:169	source	no	-	proc root
-proc	/obj/item/modular_computer	use_energy_for_circuits	code/modules/modular_computers/computers/item/computer.dm:174	source,energy_usage_per_input	no	-	proc root
-proc	/obj/item/modular_computer	on_circuit_removed	code/modules/modular_computers/computers/item/computer.dm:179	source	no	-	proc root
+proc	/obj/item/modular_computer	add_shell_component	code/modules/modular_computers/computers/item/computer.dm:164	capacity,shell_flags	yes	full	proc root
+proc	/obj/item/modular_computer	on_circuit_attached	code/modules/modular_computers/computers/item/computer.dm:169	source	yes	full	proc root
+proc	/obj/item/modular_computer	use_energy_for_circuits	code/modules/modular_computers/computers/item/computer.dm:174	source,energy_usage_per_input	yes	full	proc root
+proc	/obj/item/modular_computer	on_circuit_removed	code/modules/modular_computers/computers/item/computer.dm:179	source	yes	full	proc root
 proc	/obj/item/modular_computer	install_default_programs	code/modules/modular_computers/computers/item/computer.dm:183		yes	full	proc root
 proc	/obj/item/modular_computer	Destroy	code/modules/modular_computers/computers/item/computer.dm:189		yes	full	proc
 proc	/obj/item/modular_computer	interact_with_atom_secondary	code/modules/modular_computers/computers/item/computer.dm:209	interacting_with,user,modifiers	yes	full	proc
@@ -85988,12 +85988,12 @@ proc	/obj/machinery/computer/camera_advanced	can_use	code/game/machinery/compute
 proc	/obj/machinery/computer/camera_advanced	attack_hand	code/game/machinery/computer/camera_advanced.dm:155	user,modifiers	yes	full	proc
 proc	/obj/machinery/computer/camera_advanced	attack_robot	code/game/machinery/computer/camera_advanced.dm:206	user	yes	full	proc
 proc	/obj/machinery/computer/camera_advanced	attack_ai	code/game/machinery/computer/camera_advanced.dm:209	user	yes	full	proc
-proc	/obj/machinery/computer/camera_advanced	register_usb_port	code/game/machinery/computer/camera_advanced.dm:293	port	stub	deferred	proc root
-proc	/obj/machinery/computer/camera_advanced	on_port_register_object	code/game/machinery/computer/camera_advanced.dm:299	source,object	stub	deferred	proc root
-proc	/obj/machinery/computer/camera_advanced	add_circuit_action	code/game/machinery/computer/camera_advanced.dm:309	_source,action_comp	stub	deferred	proc root
-proc	/obj/machinery/computer/camera_advanced	remove_circuit_action	code/game/machinery/computer/camera_advanced.dm:316	_source,action_comp	stub	deferred	proc root
-proc	/obj/machinery/computer/camera_advanced	on_port_unregister_object	code/game/machinery/computer/camera_advanced.dm:324	source,object	stub	deferred	proc root
-proc	/obj/machinery/computer/camera_advanced	unregister_usb_port	code/game/machinery/computer/camera_advanced.dm:331	port	stub	deferred	proc root
+proc	/obj/machinery/computer/camera_advanced	register_usb_port	code/game/machinery/computer/camera_advanced.dm:293	port	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced	on_port_register_object	code/game/machinery/computer/camera_advanced.dm:299	source,object	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced	add_circuit_action	code/game/machinery/computer/camera_advanced.dm:309	_source,action_comp	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced	remove_circuit_action	code/game/machinery/computer/camera_advanced.dm:316	_source,action_comp	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced	on_port_unregister_object	code/game/machinery/computer/camera_advanced.dm:324	source,object	yes	full	proc root
+proc	/obj/machinery/computer/camera_advanced	unregister_usb_port	code/game/machinery/computer/camera_advanced.dm:331	port	yes	full	proc root
 type	/obj/machinery/computer/camera_advanced/syndie	/obj/machinery/computer/camera_advanced	code/game/machinery/computer/camera_advanced.dm:86	live	obj_machinery_computer_camera_advanced_syndie	1	0
 proc	/obj/machinery/computer/camera_advanced/syndie	connect_to_shuttle	code/game/machinery/computer/camera_advanced.dm:90	mapload,port,dock	yes	full	proc
 type	/obj/machinery/computer/camera_advanced/abductor	/obj/machinery/computer/camera_advanced	code/modules/antagonists/abductor/machinery/camera.dm:2	inert	obj_machinery_computer_camera_advanced_abductor	0	0
@@ -94230,27 +94230,27 @@ proc	/obj/machinery/module_duplicator	ui_static_data	code/modules/wiremod/core/c
 proc	/obj/machinery/module_duplicator	crowbar_act	code/modules/wiremod/core/component_printer.dm:553	user,tool	yes	full	proc
 proc	/obj/machinery/module_duplicator	screwdriver_act	code/modules/wiremod/core/component_printer.dm:556	user,tool	yes	full	proc
 proc	/obj/machinery/module_duplicator	update_icon_state	code/modules/wiremod/core/component_printer.dm:559		yes	full	proc
-type	/obj/machinery/bci_implanter	/obj/machinery	code/modules/wiremod/shell/brain_computer_interface.dm:248	inert	obj_machinery_bci_implanter	0	1
-proc	/obj/machinery/bci_implanter	Initialize	code/modules/wiremod/shell/brain_computer_interface.dm:267	mapload	no	-	proc
-proc	/obj/machinery/bci_implanter	on_deconstruction	code/modules/wiremod/shell/brain_computer_interface.dm:271	disassembled	no	-	proc
-proc	/obj/machinery/bci_implanter	Destroy	code/modules/wiremod/shell/brain_computer_interface.dm:274		no	-	proc
-proc	/obj/machinery/bci_implanter	examine	code/modules/wiremod/shell/brain_computer_interface.dm:278	user	no	-	proc
-proc	/obj/machinery/bci_implanter	set_busy	code/modules/wiremod/shell/brain_computer_interface.dm:285	status,working_icon	no	-	proc root
-proc	/obj/machinery/bci_implanter	update_icon_state	code/modules/wiremod/shell/brain_computer_interface.dm:290		no	-	proc
-proc	/obj/machinery/bci_implanter	update_overlays	code/modules/wiremod/shell/brain_computer_interface.dm:297		no	-	proc
-proc	/obj/machinery/bci_implanter	attack_hand_secondary	code/modules/wiremod/shell/brain_computer_interface.dm:317	user,modifiers	no	-	proc
-proc	/obj/machinery/bci_implanter	item_interaction	code/modules/wiremod/shell/brain_computer_interface.dm:337	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/bci_implanter	screwdriver_act_secondary	code/modules/wiremod/shell/brain_computer_interface.dm:356	user,tool	no	-	proc
-proc	/obj/machinery/bci_implanter	crowbar_act_secondary	code/modules/wiremod/shell/brain_computer_interface.dm:359	user,tool	no	-	proc
-proc	/obj/machinery/bci_implanter	start_process	code/modules/wiremod/shell/brain_computer_interface.dm:362		no	-	proc root
-proc	/obj/machinery/bci_implanter	complete_process	code/modules/wiremod/shell/brain_computer_interface.dm:380	locked_state	no	-	proc root
-proc	/obj/machinery/bci_implanter	open_machine	code/modules/wiremod/shell/brain_computer_interface.dm:407	drop,density_to_set	no	-	proc
-proc	/obj/machinery/bci_implanter	close_machine	code/modules/wiremod/shell/brain_computer_interface.dm:415	user,density_to_set	no	-	proc
-proc	/obj/machinery/bci_implanter	relaymove	code/modules/wiremod/shell/brain_computer_interface.dm:432	user,direction	no	-	proc
-proc	/obj/machinery/bci_implanter	interact	code/modules/wiremod/shell/brain_computer_interface.dm:449	user	no	-	proc
-proc	/obj/machinery/bci_implanter	drop_stored_bci	code/modules/wiremod/shell/brain_computer_interface.dm:459		no	-	proc root
-proc	/obj/machinery/bci_implanter	dump_inventory_contents	code/modules/wiremod/shell/brain_computer_interface.dm:464	subset	no	-	proc
-proc	/obj/machinery/bci_implanter	Exited	code/modules/wiremod/shell/brain_computer_interface.dm:469	gone,direction	no	-	proc
+type	/obj/machinery/bci_implanter	/obj/machinery	code/modules/wiremod/shell/brain_computer_interface.dm:248	live	obj_machinery_bci_implanter	1	1
+proc	/obj/machinery/bci_implanter	Initialize	code/modules/wiremod/shell/brain_computer_interface.dm:267	mapload	yes	full	proc
+proc	/obj/machinery/bci_implanter	on_deconstruction	code/modules/wiremod/shell/brain_computer_interface.dm:271	disassembled	yes	full	proc
+proc	/obj/machinery/bci_implanter	Destroy	code/modules/wiremod/shell/brain_computer_interface.dm:274		yes	full	proc
+proc	/obj/machinery/bci_implanter	examine	code/modules/wiremod/shell/brain_computer_interface.dm:278	user	yes	full	proc
+proc	/obj/machinery/bci_implanter	set_busy	code/modules/wiremod/shell/brain_computer_interface.dm:285	status,working_icon	yes	full	proc root
+proc	/obj/machinery/bci_implanter	update_icon_state	code/modules/wiremod/shell/brain_computer_interface.dm:290		yes	full	proc
+proc	/obj/machinery/bci_implanter	update_overlays	code/modules/wiremod/shell/brain_computer_interface.dm:297		yes	full	proc
+proc	/obj/machinery/bci_implanter	attack_hand_secondary	code/modules/wiremod/shell/brain_computer_interface.dm:317	user,modifiers	yes	full	proc
+proc	/obj/machinery/bci_implanter	item_interaction	code/modules/wiremod/shell/brain_computer_interface.dm:337	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/bci_implanter	screwdriver_act_secondary	code/modules/wiremod/shell/brain_computer_interface.dm:356	user,tool	yes	full	proc
+proc	/obj/machinery/bci_implanter	crowbar_act_secondary	code/modules/wiremod/shell/brain_computer_interface.dm:359	user,tool	yes	full	proc
+proc	/obj/machinery/bci_implanter	start_process	code/modules/wiremod/shell/brain_computer_interface.dm:362		yes	full	proc root
+proc	/obj/machinery/bci_implanter	complete_process	code/modules/wiremod/shell/brain_computer_interface.dm:380	locked_state	yes	full	proc root
+proc	/obj/machinery/bci_implanter	open_machine	code/modules/wiremod/shell/brain_computer_interface.dm:407	drop,density_to_set	yes	full	proc
+proc	/obj/machinery/bci_implanter	close_machine	code/modules/wiremod/shell/brain_computer_interface.dm:415	user,density_to_set	yes	full	proc
+proc	/obj/machinery/bci_implanter	relaymove	code/modules/wiremod/shell/brain_computer_interface.dm:432	user,direction	yes	full	proc
+proc	/obj/machinery/bci_implanter	interact	code/modules/wiremod/shell/brain_computer_interface.dm:449	user	yes	full	proc
+proc	/obj/machinery/bci_implanter	drop_stored_bci	code/modules/wiremod/shell/brain_computer_interface.dm:459		yes	full	proc root
+proc	/obj/machinery/bci_implanter	dump_inventory_contents	code/modules/wiremod/shell/brain_computer_interface.dm:464	subset	yes	full	proc
+proc	/obj/machinery/bci_implanter	Exited	code/modules/wiremod/shell/brain_computer_interface.dm:469	gone,direction	yes	full	proc
 type	/obj/effect	/obj	code/game/objects/effects/effects.dm:5	base	obj_effect	1	1
 proc	/obj/effect	attackby	code/game/objects/effects/effects.dm:13	weapon,user,modifiers,attack_modifiers	no	-	proc
 proc	/obj/effect	attack_generic	code/game/objects/effects/effects.dm:18	user,damage_amount,damage_type,damage_flag,sound_effect,armor_penetration	no	-	proc

@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL: the M7 supermatter slice (G5, D163): the reflectors (base, single, double, box and their anchored and mapping
 // subtypes) that turn MetaStation's emitter beams onto the crystal, with their construction, rotation and their tgui window
-// (Reflector), the cyborg's reach (attack_robot, silicons SI2). Left out: the integrated circuits' USB port and its circuit
-// component (wiremod, after the core version). The var blocks are generated (D111).
+// (Reflector), the cyborg's reach (attack_robot, silicons SI2). Its USB port takes the reflector's circuit component, which turns
+// it from a circuit. The var blocks are generated (D111).
 
 // tg: code/game/objects/structures/reflector.dm:1
 public partial class obj_structure_reflector : obj_structure
@@ -41,8 +41,7 @@ public partial class obj_structure_reflector : obj_structure
         if (Dm.truthy(admin))
             can_rotate = FALSE;
 
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/reflector), only_root_path = TRUE))
-        Dm.Deferred("code/game/objects/structures/reflector.dm:40", "Initialize: the integrated circuits' USB port and its reflector component (wiremod, after the core version)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_reflector)), only_root_path: TRUE)));
         return dot;
     }
 
@@ -413,6 +412,40 @@ public partial class obj_structure_reflector : obj_structure
     public override async DmTask<object> attack_robot(mob user = null, object modifiers = null)
     {
         await ui_interact(user);
+        return null;
+    }
+}
+
+//	USB
+
+// tg: code/game/objects/structures/reflector.dm:272
+public partial class obj_item_circuit_component_reflector : obj_item_circuit_component
+{
+    // tg: code/game/objects/structures/reflector.dm:281
+    public override async DmTask populate_ports()
+    {
+        angle = add_input_port("Angle", PORT_TYPE_NUMBER) as datum_port_input;
+    }
+
+    // tg: code/game/objects/structures/reflector.dm:284
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_structure_reflector)))
+            attached_reflector = shell as obj_structure_reflector;
+    }
+
+    // tg: code/game/objects/structures/reflector.dm:289
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_reflector = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/objects/structures/reflector.dm:293
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        attached_reflector?.set_angle(angle.value);
         return null;
     }
 }

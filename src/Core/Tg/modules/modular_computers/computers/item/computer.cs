@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // The whole file (M9 slice E: the PDA's modular computer): the computer item, its ID slots, its programs' start and shutdown, its
 // NTNet signal, its flashlight, its ring and alerts, its tools, its examine and screentips, its overlays and the items it takes.
-// Left out with a comment or a marked leaf: the circuit shell (wiremod, add_shell_component and its signals), the TTS voice
+// Left out with a comment or a marked leaf: the TTS voice
 // (LateInitialize, after the core version), the photos (save_photo, photo_act: the camera), the pAI card's messenger ability (pAIs),
 // (the printer's paper came with the paperwork, gaps S3), the computer disks (computer_disk_act and the disk eject: the
 // disks), attack_ghost's admin override (admin rights, M10), the saboteur's
@@ -76,7 +76,7 @@ public partial class obj_item_modular_computer : obj_item
         if (physical == null)
         {
             physical = this;
-            // add_shell_component(shell_capacity): the circuit shell (wiremod) is not ported
+            Waiting.NoSleep(add_shell_component(shell_capacity));
         }
         set_light_color(comp_light_color);
         set_light_range(comp_light_luminosity);
@@ -104,8 +104,41 @@ public partial class obj_item_modular_computer : obj_item
             voice = SStts.computer_voice;
     }
 
-    // tg: code/modules/modular_computers/computers/item/computer.dm:164  add_shell_component, :169 on_circuit_attached, :174
-    // use_energy_for_circuits, :179 on_circuit_removed: the circuit shell (wiremod) is not ported
+    ///Initialize the shell for this item, or the physical machinery it belongs to.
+    // tg: code/modules/modular_computers/computers/item/computer.dm:164
+    public virtual async DmTask add_shell_component(float? capacity = null, float? shell_flags = null)
+    {
+        capacity ??= SHELL_CAPACITY_MEDIUM;
+        shell_flags ??= NONE;
+        shell = await physical.AddComponent(typeof(datum_component_shell), Dm.list(Dm.@new<obj_item_circuit_component_modpc>()), capacity, shell_flags) as datum_component_shell;
+        RegisterSignal(shell, COMSIG_SHELL_CIRCUIT_ATTACHED, nameof(on_circuit_attached));
+        RegisterSignal(shell, COMSIG_SHELL_CIRCUIT_REMOVED, nameof(on_circuit_removed));
+    }
+
+    // tg: code/modules/modular_computers/computers/item/computer.dm:169
+    [SignalHandler]
+    public virtual void on_circuit_attached(datum source = null)
+    {
+        RegisterSignal(shell.attached_circuit, COMSIG_CIRCUIT_PRE_POWER_USAGE, nameof(use_energy_for_circuits));
+    }
+
+    ///Try to draw power from our internal cell first, before switching to that of the circuit.
+    // tg: code/modules/modular_computers/computers/item/computer.dm:174
+    [SignalHandler]
+    public virtual object use_energy_for_circuits(datum source = null, object energy_usage_per_input = null)
+    {
+        if (Dm.truthy(use_energy(energy_usage_per_input, check_programs: FALSE)))
+            return COMPONENT_OVERRIDE_POWER_USAGE;
+        return null;
+    }
+
+    // tg: code/modules/modular_computers/computers/item/computer.dm:179
+    [SignalHandler]
+    public virtual void on_circuit_removed(datum source = null)
+    {
+        UnregisterSignal(shell.attached_circuit, COMSIG_CIRCUIT_PRE_POWER_USAGE);
+    }
+
 
     // tg: code/modules/modular_computers/computers/item/computer.dm:183
     public virtual void install_default_programs()

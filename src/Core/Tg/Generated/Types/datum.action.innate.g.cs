@@ -2451,9 +2451,9 @@ public partial class datum_action_innate_mmi_comp_disconnect
     }
 }
 
-// tg: code/modules/wiremod/shell/brain_computer_interface.dm:198
-[DmPath("/datum/action/innate/bci_charge_action"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_bci_charge_action : datum_action_innate
+// tg: code/modules/wiremod/shell/brain_computer_interface.dm:198 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/bci_charge_action")]
+public partial class datum_action_innate_bci_charge_action
 {
     public obj_item_circuit_component_bci_core circuit_component; // tg: code/modules/wiremod/shell/brain_computer_interface.dm:203
 
@@ -2467,9 +2467,9 @@ public partial class datum_action_innate_bci_charge_action : datum_action_innate
     }
 }
 
-// tg: code/modules/wiremod/shell/implant.dm:187
-[DmPath("/datum/action/innate/implant_charge_action"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_implant_charge_action : datum_action_innate
+// tg: code/modules/wiremod/shell/implant.dm:187 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/implant_charge_action")]
+public partial class datum_action_innate_implant_charge_action
 {
     public obj_item_circuit_component_implant_core circuit_component; // tg: code/modules/wiremod/shell/implant.dm:192
 

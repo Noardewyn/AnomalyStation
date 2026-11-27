@@ -40,9 +40,7 @@ public partial class obj_machinery_power_emitter : obj_machinery_power
         sparks.attach(this);
         Waiting.NoSleep(AddElement(typeof(datum_element_simple_rotation)));
         Waiting.NoSleep(AddElement(typeof(datum_element_empprotection), Dm.bitor(EMP_PROTECT_SELF, EMP_PROTECT_WIRES)));
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/emitter), only_root_path = TRUE)): the
-        // integrated circuits' port (wiremod, after the core version)
-        Dm.Deferred("code/modules/power/singularity/emitter.dm:81", "Initialize: the usb_port component of the integrated circuits (wiremod, M10+)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_emitter)), only_root_path: TRUE)));
         return dot;
     }
 

@@ -360,6 +360,8 @@ sprite, a standing picture turned by its `dir`, until its model exists.
 - **The circuit scanner gate** (gaps CI2, `wiremod/shell/scanner_gate.dm`, `icons/obj/machines/scangate.dmi` state `scangate_black` with
   the `passive` and `scanning` overlays): tg's black gate. Meanwhile it is drawn by the security scanner gate's model
   (`station_props/station_extras/weapon_scanner_gate.glb`), whose scan field shows the two lines; a black variant is wanted.
+- **The brain-computer interface and the circuit implant** (gaps CI3, `icons/obj/science/circuits.dmi` state `bci`; the implant case):
+  a small cranial chip. Meanwhile the client draws tg's sprites.
 
 ## Assemblies
 

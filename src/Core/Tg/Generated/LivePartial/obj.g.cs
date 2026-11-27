@@ -2117,58 +2117,6 @@ public partial class obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/computer/camera_advanced.dm:2
-public partial class obj_machinery_computer_camera_advanced
-{
-    // tg: code/game/machinery/computer/camera_advanced.dm:293
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void register_usb_port(datum_component_usb_port port = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:293", "register_usb_port: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:299
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void on_port_register_object(datum_component_usb_port source = null, atom_movable @object = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:299", "on_port_register_object: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:309
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void add_circuit_action(datum _source = null, obj_item_circuit_component_equipment_action action_comp = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:309", "add_circuit_action: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:316
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void remove_circuit_action(datum _source = null, obj_item_circuit_component_equipment_action action_comp = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:316", "remove_circuit_action: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:324
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void on_port_unregister_object(datum_component_usb_port source = null, atom_movable @object = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:324", "on_port_unregister_object: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:331
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void unregister_usb_port(datum_component_usb_port port = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:331", "unregister_usb_port: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-}
-
 // tg: code/game/machinery/computer/communications.dm:11
 public partial class obj_machinery_computer_communications
 {

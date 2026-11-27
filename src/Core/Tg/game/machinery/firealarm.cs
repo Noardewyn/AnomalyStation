@@ -13,13 +13,13 @@ namespace Anomaly.Core.Tg;
 // relationship (setup_area_power_relationship, on_enter_area, on_exit_area, handle_fire), update_name, set_status, the
 // pictures and the light, alarm and reset (pulling the alarm closes the area's firelocks, the right click cracks them
 // open), the hand clicks, and the thermal sensor toggles, the EMP (M7); the siren (/datum/looping_sound/firealarm, M4b audio slice 5). Deferred
-// leaves: the wires (/datum/wires/firealarm: hacking, M7), the circuit USB port (circuits), the turf's hand
+// leaves: the wires (/datum/wires/firealarm: hacking, M7), the turf's hand
 // redirect and the screentips (M4a, M9), the emissives (DEVIATION DV12) and the game log lines (M10). M5 slice 7 (D148): add_context,
 // the construction states and tool acts (the wires window a not-translated leaf, M7), the repair, the damage, the break
 // and the deconstruction; the wall frame (/obj/item/wallframe/firealarm) and its electronics are live. Generated
 // live-partial stubs: the AI and cyborg clicks (M10+; the pseudocircuit since silicons SI2) (E13: the RCD's procs),
-// the singularity (M10+). The examine is translated (X1). The party button (/obj/machinery/firealarm/partyalarm) and the circuit component
-// stay inert. Gaps R4: the security level's picture and light colour and its signal. The var block is generated.
+// the singularity (M10+). The examine is translated (X1). The party button (/obj/machinery/firealarm/partyalarm) stays inert; the
+// circuit component on the USB port is live. Gaps R4: the security level's picture and light colour and its signal. The var block is generated.
 
 // tg: code/game/machinery/firealarm.dm:20
 public partial class obj_machinery_firealarm : obj_machinery
@@ -49,10 +49,11 @@ public partial class obj_machinery_firealarm : obj_machinery
         // can_toggle_detection keep their TRUE defaults until then
         set_wires(Dm.@new<datum_wires_firealarm>(this));
 
-        // AddComponent(/datum/component/usb_port, ...): circuits; AddComponent(/datum/component/redirect_attack_hand_from_turf,
-        // screentip_texts = list(lmb_text = "Turn on alarm", rmb_text = "Turn off alarm")): clicking the wall below (clicks, M4a);
-        // register_context(): screentips (M9)
-        Dm.Deferred("code/game/machinery/firealarm.dm:75", "Initialize: the USB port (circuits), redirect_attack_hand_from_turf (clicks, M4a) and register_context (screentips, M10+)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_firealarm)), only_root_path: TRUE)));
+
+        // AddComponent(/datum/component/redirect_attack_hand_from_turf, screentip_texts = list(lmb_text = "Turn on alarm",
+        // rmb_text = "Turn off alarm")): clicking the wall below (clicks, M4a); register_context(): screentips (M9)
+        Dm.Deferred("code/game/machinery/firealarm.dm:77", "Initialize: redirect_attack_hand_from_turf (clicks, M4a) and register_context (screentips, M10+)");
         if (Dm.truthy(mapload))
             Waiting.NoSleep(find_and_mount_on_atom());
         update_appearance();
@@ -874,5 +875,68 @@ public partial class obj_machinery_firealarm : obj_machinery
             return;
         }
         toggle_fire_detect(user);
+    }
+}
+
+// tg: code/game/machinery/firealarm.dm:653
+public partial class obj_item_circuit_component_firealarm : obj_item_circuit_component
+{
+    // tg: code/game/machinery/firealarm.dm:669
+    public override async DmTask populate_ports()
+    {
+        alarm_trigger = add_input_port("Set", PORT_TYPE_SIGNAL) as datum_port_input;
+        reset_trigger = add_input_port("Reset", PORT_TYPE_SIGNAL) as datum_port_input;
+
+        is_on = add_output_port("Is On", PORT_TYPE_BOOLEAN) as datum_port_output;
+        triggered = add_output_port("Triggered", PORT_TYPE_SIGNAL) as datum_port_output;
+        reset = add_output_port("Reset", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/firealarm.dm:677
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_firealarm)))
+        {
+            attached_alarm = shell as obj_machinery_firealarm;
+            RegisterSignal(shell, COMSIG_FIREALARM_ON_TRIGGER, nameof(on_firealarm_triggered));
+            RegisterSignal(shell, COMSIG_FIREALARM_ON_RESET, nameof(on_firealarm_reset));
+        }
+    }
+
+    // tg: code/game/machinery/firealarm.dm:684
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_alarm = null;
+        UnregisterSignal(shell, COMSIG_FIREALARM_ON_TRIGGER);
+        UnregisterSignal(shell, COMSIG_FIREALARM_ON_RESET);
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/machinery/firealarm.dm:690
+    [SignalHandler]
+    public virtual void on_firealarm_triggered(datum source = null)
+    {
+        is_on.set_output(1);
+        triggered.set_output(COMPONENT_SIGNAL);
+    }
+
+    // tg: code/game/machinery/firealarm.dm:695
+    [SignalHandler]
+    public virtual void on_firealarm_reset(datum source = null)
+    {
+        is_on.set_output(0);
+        reset.set_output(COMPONENT_SIGNAL);
+    }
+
+    // tg: code/game/machinery/firealarm.dm:701
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (COMPONENT_TRIGGERED_BY(alarm_trigger, port))
+            attached_alarm?.alarm();
+
+        if (COMPONENT_TRIGGERED_BY(reset_trigger, port))
+            attached_alarm?.reset();
+        return null;
     }
 }

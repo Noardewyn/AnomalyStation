@@ -9,9 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the abstract remote camera and its drone, airlock and polaroid kinds translated; /obj/item/circuit_component/remotecam/bci,
-// the brain-computer interface's, comes with the BCI (not-translated.md section 232). The camera a circuit adds is an ordinary
-// station camera on the camera net, watched from the camera consoles as any other. The var blocks are generated.
+// The whole file: the abstract remote camera and its brain-computer interface, drone, airlock and polaroid kinds. The camera a circuit
+// adds is an ordinary station camera on the camera net, watched from the camera consoles as any other. The var blocks are generated.
 
 /**
  * # Remote Camera Component
@@ -345,6 +344,126 @@ public partial class obj_item_circuit_component_remotecam : obj_item_circuit_com
                 current_camera_range = Dm.num(camera_range.value);
                 update_camera_range();
             }
+        }
+        //Set the camera state (if state has been changed)
+        if (Dm.truthy(Dm.bitxor(current_camera_state, shell_camera.camera_enabled)))
+            shell_camera.toggle_cam(null, 0);
+        return null;
+    }
+}
+
+// tg: code/modules/wiremod/components/atom/remotecam.dm:282
+public partial class obj_item_circuit_component_remotecam_bci : obj_item_circuit_component_remotecam
+{
+    // tg: code/modules/wiremod/components/atom/remotecam.dm:317
+    public override async DmTask register_shell(atom_movable shell = null)
+    {
+        await base.register_shell(shell);
+        if (!istype(shell_parent, typeof(obj_item_organ_cyberimp_bci)))
+            return;
+        shell_camera = Dm.@new<obj_machinery_camera>(shell_parent);
+        init_camera();
+        RegisterSignal(shell_parent, COMSIG_ORGAN_IMPLANTED, nameof(on_organ_implanted));
+        RegisterSignal(shell_parent, COMSIG_ORGAN_REMOVED, nameof(on_organ_removed));
+        obj_item_organ_cyberimp_bci bci = shell_parent as obj_item_organ_cyberimp_bci;
+        if (bci.owner != null) //If somehow the camera was added while shell is already installed inside a mob, assign signals
+        {
+            if (bciuser != null) //This should never happen... But if it does, unassign move signal from old mob
+                UnregisterSignal(bciuser, COMSIG_MOVABLE_MOVED); // tg passes the handler too, which UnregisterSignal does not take
+            bciuser = bci.owner;
+            RegisterSignal(bciuser, COMSIG_MOVABLE_MOVED, nameof(update_camera_location));
+        }
+    }
+
+    // tg: code/modules/wiremod/components/atom/remotecam.dm:333
+    public override async DmTask unregister_shell(atom_movable shell = null)
+    {
+        if (shell_camera != null)
+        {
+            if (bciuser != null)
+            {
+                UnregisterSignal(bciuser, COMSIG_MOVABLE_MOVED); // tg passes the handler too, which UnregisterSignal does not take
+                bciuser = null;
+            }
+            UnregisterSignal(shell_parent, Dm.list(COMSIG_ORGAN_IMPLANTED, COMSIG_ORGAN_REMOVED));
+        }
+        await base.unregister_shell(shell);
+    }
+
+    // tg: code/modules/wiremod/components/atom/remotecam.dm:341
+    public override object Destroy(float? force = null)
+    {
+        if (shell_camera != null)
+        {
+            if (bciuser != null)
+            {
+                UnregisterSignal(bciuser, COMSIG_MOVABLE_MOVED); // tg passes the handler too, which UnregisterSignal does not take
+                bciuser = null;
+            }
+            UnregisterSignal(shell_parent, Dm.list(COMSIG_ORGAN_IMPLANTED, COMSIG_ORGAN_REMOVED));
+        }
+        return base.Destroy(force);
+    }
+
+    // tg: code/modules/wiremod/components/atom/remotecam.dm:349
+    [SignalHandler]
+    public virtual void on_organ_implanted(datum source = null, mob_living_carbon owner = null)
+    {
+        if (bciuser != null)
+            return;
+        bciuser = owner;
+        RegisterSignal(bciuser, COMSIG_MOVABLE_MOVED, nameof(update_camera_location));
+    }
+
+    // tg: code/modules/wiremod/components/atom/remotecam.dm:356
+    [SignalHandler]
+    public virtual void on_organ_removed(datum source = null, mob_living_carbon owner = null)
+    {
+        if (bciuser == null)
+            return;
+        UnregisterSignal(bciuser, COMSIG_MOVABLE_MOVED); // tg passes the handler too, which UnregisterSignal does not take
+        bciuser = null;
+    }
+
+    // tg: code/modules/wiremod/components/atom/remotecam.dm:379
+    public override object process(object seconds_per_tick = null, params object[] __extra)
+    {
+        if (shell_parent == null || shell_camera == null)
+            return PROCESS_KILL;
+        //Camera is currently emp'd
+        if (Dm.truthy(current_camera_emp))
+        {
+            close_camera();
+            return null;
+        }
+        obj_item_organ_cyberimp_bci bci = shell_parent as obj_item_organ_cyberimp_bci;
+        //If shell is not currently inside a head, or user is currently blind, or user is dead
+        if (bci.owner == null || Dm.truthy(bci.owner.is_blind()) || IS_UNCONSCIOUS(bci.owner))
+        {
+            close_camera();
+            return null;
+        }
+        obj_item_stock_parts_power_store cell = parent.get_cell() as obj_item_stock_parts_power_store;
+        //If cell doesn't exist, or we ran out of power
+        if (!Dm.truthy(cell == null ? null : Waiting.NoSleep(cell.use(current_camera_range > 0 ? REMOTECAM_ENERGY_USAGE_FAR : REMOTECAM_ENERGY_USAGE_NEAR))))
+        {
+            close_camera();
+            return null;
+        }
+        //If owner is nearsighted, set camera range to short (if it wasn't already)
+        if (Dm.truthy(bci.owner.is_nearsighted_currently()))
+        {
+            if (Dm.truthy(current_camera_range))
+            {
+                current_camera_range = 0;
+                update_camera_range();
+            }
+        }
+        //Else if the camera range has changed, update camera range
+        else if (!Dm.truthy(camera_range.value) != !Dm.truthy(current_camera_range))
+        {
+            current_camera_range = Dm.num(camera_range.value);
+            update_camera_range();
         }
         //Set the camera state (if state has been changed)
         if (Dm.truthy(Dm.bitxor(current_camera_state, shell_camera.camera_enabled)))

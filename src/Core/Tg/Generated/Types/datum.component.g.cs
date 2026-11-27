@@ -4550,9 +4550,9 @@ public partial class datum_component_uplink
     }
 }
 
-// tg: code/datums/components/usb_port.dm:3
-[DmPath("/datum/component/usb_port"), DmGeneratedOnly, DmInert]
-public partial class datum_component_usb_port : datum_component
+// tg: code/datums/components/usb_port.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/usb_port")]
+public partial class datum_component_usb_port
 {
     public DmList circuit_component_types; // tg: code/datums/components/usb_port.dm:5
     public obj_item_integrated_circuit attached_circuit; // tg: code/datums/components/usb_port.dm:8

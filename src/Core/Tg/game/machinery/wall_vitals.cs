@@ -14,8 +14,8 @@ namespace Anomaly.Core.Tg;
 // (the EKG and the breathing, each limb's damage, the blood, oxygen and toxin bars; a simple mob's outline) and beeps at each change
 // of the patient's state, examines into tg's condensed health and chemical scan, flickers when EMPed and reconnects with a
 // multitool. The var blocks are generated (D111), but for `connected` below.
-// Not here: the screen's outline on the emissive plane (DEVIATION DV12) and the circuit USB port with its vitals monitor component
-// (wiremod is not ported, live-partial.txt).
+// Its USB port takes the vitals monitor's circuit component. Not here: the screen's outline on the emissive plane
+// (DEVIATION DV12).
 
 // tg: code/game/machinery/wall_vitals.dm:24
 public partial class obj_machinery_vitals_reader : obj_machinery
@@ -74,8 +74,7 @@ public partial class obj_machinery_vitals_reader : obj_machinery
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/vitals_monitor), only_root_path = TRUE))
-        Dm.Deferred("code/game/machinery/wall_vitals.dm:98", "Initialize: the circuit USB port and its vitals monitor component (wiremod, not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_vitals_monitor)), only_root_path: TRUE)));
         register_context();
         return INITIALIZE_HINT_LATELOAD;
     }
@@ -660,4 +659,142 @@ public sealed partial class TgState
 {
     // tg: code/game/machinery/wall_vitals.dm:56  /obj/machinery/vitals_reader/var/static/list/connectable_typecache
     internal DmList obj_machinery_vitals_reader__connectable_typecache;
+}
+
+// tg: code/game/machinery/wall_vitals.dm:532
+public partial class obj_item_circuit_component_vitals_monitor : obj_item_circuit_component
+{
+    // tg: code/game/machinery/wall_vitals.dm:570
+    public override object Destroy(float? force = null)
+    {
+        if (SSclock_component != null) // rules 10.6: a test harness world may lack the subsystem
+            STOP_PROCESSING(SSclock_component, this);
+        return base.Destroy(force);
+    }
+
+    // tg: code/game/machinery/wall_vitals.dm:574
+    public override async DmTask populate_ports()
+    {
+        status_updated = add_output_port("Status Updated", PORT_TYPE_SIGNAL) as datum_port_output;
+        patient_changed = add_output_port("Patient Changed", PORT_TYPE_SIGNAL) as datum_port_output;
+
+        patient_entity = add_output_port("Patient", PORT_TYPE_ATOM) as datum_port_output;
+        defib_state = add_output_port("Defib Status", PORT_TYPE_STRING) as datum_port_output;
+
+        patient_overall_health = add_output_port("Overall Health", PORT_TYPE_NUMBER) as datum_port_output;
+        patient_brute_damage = add_output_port("Brute Damage", PORT_TYPE_NUMBER) as datum_port_output;
+        patient_burn_damage = add_output_port("Burn Damage", PORT_TYPE_NUMBER) as datum_port_output;
+        patient_oxy_loss = add_output_port("Suffocation Damage", PORT_TYPE_NUMBER) as datum_port_output;
+        patient_tox_loss = add_output_port("Toxin Damage", PORT_TYPE_NUMBER) as datum_port_output;
+        patient_brain_damage = add_output_port("Brain Damage", PORT_TYPE_NUMBER) as datum_port_output;
+        patient_blood_level = add_output_port("Blood Level", PORT_TYPE_NUMBER) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/wall_vitals.dm:588
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        linked_monitor = shell as obj_machinery_vitals_reader;
+        RegisterSignal(shell, COMSIG_VITALS_SET_PATIENT, nameof(handle_patient_change));
+
+        obj_machinery_vitals_reader monitor = shell as obj_machinery_vitals_reader;
+        if (monitor.patient != null)
+            START_PROCESSING(SSclock_component, this);
+    }
+
+    // tg: code/game/machinery/wall_vitals.dm:597
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        object dot = base.unregister_usb_parent(shell);
+        linked_monitor = null;
+        UnregisterSignal(shell, COMSIG_VITALS_SET_PATIENT);
+        if (SSclock_component != null) // rules 10.6: a test harness world may lack the subsystem
+            STOP_PROCESSING(SSclock_component, this);
+        return dot;
+    }
+
+    // tg: code/game/machinery/wall_vitals.dm:603
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+        Dm.append(ref dot, create_ui_notice(Dm.text("Initial Delay: []", DisplayTimeText(1 * SECONDS)), "orange", "clock"));
+        Dm.append(ref dot, create_ui_notice(Dm.text("Update Interval: []", DisplayTimeText(read_cooldown_period)), "orange", "clock"));
+        return dot;
+    }
+
+    // tg: code/game/machinery/wall_vitals.dm:608
+    [SignalHandler]
+    public virtual void handle_patient_change(datum source = null, mob_living old_patient = null, mob_living new_patient = null)
+    {
+        if (new_patient == null)
+            STOP_PROCESSING(SSclock_component, this);
+        else
+            START_PROCESSING(SSclock_component, this);
+        patient_entity.set_output(new_patient);
+        patient_changed.set_output(COMPONENT_SIGNAL);
+        // wait a small amount (arbitrary) to provide initial data
+        read_cooldown = world.time + 1 * SECONDS; // COOLDOWN_START
+        _addtimer(Dm.@new<datum_callback>(this, nameof(delayed_reading)), 1 * SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE | TIMER_DELETE_ME, file: "code/game/machinery/wall_vitals.dm", line: 619);
+    }
+
+    /// Reads a patient value and applies a random amount of error if the monitor is emped or emagged
+    // tg: code/game/machinery/wall_vitals.dm:622  #define GET_PATIENT_VALUE(monitor, value_to_get), expanded through this file-local helper (rules 11.4)
+    private static float GET_PATIENT_VALUE(obj_machinery_vitals_reader monitor, object value_to_get)
+        => round(Dm.num(value_to_get) * (Dm.truthy(Dm.bitand(monitor.machine_stat, EMPED | EMAGGED)) ? rand(0, 100) * 0.01f : 1), DAMAGE_PRECISION);
+
+    // tg: code/game/machinery/wall_vitals.dm:625
+    public override object process(object seconds_per_tick = null, params object[] __extra)
+    {
+        if (linked_monitor?.patient == null)
+            return PROCESS_KILL;
+        if (!(read_cooldown <= world.time)) // COOLDOWN_FINISHED
+            return null;
+        update_output_stats();
+        return null;
+    }
+
+    // tg: code/game/machinery/wall_vitals.dm:632
+    public virtual void delayed_reading()
+    {
+        if (linked_monitor?.patient == null)
+            return;
+        update_output_stats();
+    }
+
+    // tg: code/game/machinery/wall_vitals.dm:637
+    public virtual void update_output_stats()
+    {
+        read_cooldown = world.time + read_cooldown_period; // COOLDOWN_START
+        status_updated.set_output(COMPONENT_SIGNAL);
+
+        mob_living patient = linked_monitor.patient;
+        patient_overall_health.set_output(GET_PATIENT_VALUE(linked_monitor, patient.health));
+        patient_brute_damage.set_output(GET_PATIENT_VALUE(linked_monitor, patient.get_brute_loss()));
+        patient_burn_damage.set_output(GET_PATIENT_VALUE(linked_monitor, patient.get_fire_loss()));
+        patient_oxy_loss.set_output(GET_PATIENT_VALUE(linked_monitor, patient.get_oxy_loss()));
+        patient_tox_loss.set_output(GET_PATIENT_VALUE(linked_monitor, patient.get_tox_loss()));
+        patient_brain_damage.set_output(GET_PATIENT_VALUE(linked_monitor, patient.get_organ_loss(ORGAN_SLOT_BRAIN)));
+        patient_blood_level.set_output(GET_PATIENT_VALUE(linked_monitor, patient.get_blood_volume(TRUE)));
+
+        object is_defib_possible = DEFIB_POSSIBLE;
+        if (iscarbon(linked_monitor.patient))
+        {
+            mob_living_carbon carbo_patient = linked_monitor.patient as mob_living_carbon;
+            is_defib_possible = carbo_patient.can_defib();
+        }
+
+        object sw__1 = is_defib_possible;
+        if (Dm.eq(sw__1, DEFIB_POSSIBLE))
+            defib_state.set_output("Possible");
+        else if (Dm.eq(sw__1, DEFIB_FAIL_SUICIDE) || Dm.eq(sw__1, DEFIB_FAIL_BLACKLISTED) || Dm.eq(sw__1, DEFIB_FAIL_NO_INTELLIGENCE) || Dm.eq(sw__1, DEFIB_FAIL_GOLEM))
+            defib_state.set_output("Impossible");
+        else if (Dm.eq(sw__1, DEFIB_FAIL_HUSK))
+            defib_state.set_output("Husked");
+        else if (Dm.eq(sw__1, DEFIB_FAIL_TISSUE_DAMAGE))
+            defib_state.set_output("Damaged");
+        else if (Dm.eq(sw__1, DEFIB_FAIL_FAILING_HEART) || Dm.eq(sw__1, DEFIB_FAIL_NO_HEART))
+            defib_state.set_output("Heart Failure");
+        else if (Dm.eq(sw__1, DEFIB_FAIL_FAILING_BRAIN) || Dm.eq(sw__1, DEFIB_FAIL_NO_BRAIN))
+            defib_state.set_output("Brain Failure");
+    }
 }

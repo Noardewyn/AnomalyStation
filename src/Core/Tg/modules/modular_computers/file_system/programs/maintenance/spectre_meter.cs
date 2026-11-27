@@ -10,9 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The Spectre-Meter (gaps S4c, D327): a maintenance disk's app that scans the spook around it (spirits, ghosts, hauntium), with its
-// overlay's needle, the geiger's clicks in its automatic mode and its NtosSpectreMeter window (lines 1-138). Its circuit component
-// (`/obj/item/circuit_component/mod_program/spectre_meter`, :140-173) waits with wiremod (not-translated section 164). The var blocks
-// are generated (D111).
+// overlay's needle, the geiger's clicks in its automatic mode and its NtosSpectreMeter window (lines 1-138), and its circuit component
+// (:140-173) that scans from a circuit plugged into the computer and reports each scan. The var blocks are generated (D111).
 
 // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:8
 public partial class datum_computer_file_program_maintenance_spectre_meter : datum_computer_file_program_maintenance
@@ -23,7 +22,7 @@ public partial class datum_computer_file_program_maintenance_spectre_meter : dat
     private const float SPOOK_VALUE_DEF_MOB = 10;
     private const float SPOOK_VALUE_ICON_STATE_MAX = 120;
     private const float SPOOK_VALUE_SEGMENT = 15;
-    private const float SPOOK_COOLDOWN = 2 * SECONDS;
+    internal const float SPOOK_COOLDOWN = 2 * SECONDS;
 
     // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:28
     public override async DmTask<object> on_start(mob_living user = null)
@@ -188,11 +187,61 @@ public partial class datum_looping_sound_spectre_meter : datum_looping_sound
         return base.get_sound((mid_sounds as DmList)[index]);
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:134
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:135
     public override void stop(float? null_parent = null)
     {
         null_parent ??= FALSE;
         last_spook_value = 0;
         base.stop(null_parent);
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:140
+public partial class obj_item_circuit_component_mod_program_spectre_meter : obj_item_circuit_component_mod_program
+{
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:149
+    public override async DmTask populate_ports()
+    {
+        await base.populate_ports();
+        scan_results = add_output_port("Scan Results", PORT_TYPE_NUMBER) as datum_port_output;
+        scanned = add_output_port("Scaned", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:154
+    public override async DmTask register_shell(atom_movable shell = null)
+    {
+        await base.register_shell(shell);
+        RegisterSignal((associated_program as datum_computer_file_program).computer, COMSIG_MODULAR_COMPUTER_SPECTRE_SCAN, nameof(on_scan));
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:158
+    public override async DmTask unregister_shell(atom_movable shell = null)
+    {
+        UnregisterSignal((associated_program as datum_computer_file_program).computer, COMSIG_MODULAR_COMPUTER_SPECTRE_SCAN);
+        await base.unregister_shell(shell);
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:162
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+        Dm.append(ref dot, create_ui_notice(Dm.text("Scan Coooldown: []", datum_computer_file_program_maintenance_spectre_meter.SPOOK_COOLDOWN), "orange", "stopwatch"));
+        return dot;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:166
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        datum_computer_file_program_maintenance_spectre_meter meter = associated_program as datum_computer_file_program_maintenance_spectre_meter;
+        Waiting.Detach(meter.scan_surroundings());
+        return null;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:170
+    [SignalHandler]
+    public virtual void on_scan(datum source = null, object spook_value = null)
+    {
+        scan_results.set_output(spook_value);
+        scanned.set_output(COMPONENT_SIGNAL);
     }
 }

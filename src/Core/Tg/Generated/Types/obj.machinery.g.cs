@@ -16719,9 +16719,9 @@ public partial class obj_machinery_module_duplicator
     }
 }
 
-// tg: code/modules/wiremod/shell/brain_computer_interface.dm:248
-[DmPath("/obj/machinery/bci_implanter"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_bci_implanter : obj_machinery
+// tg: code/modules/wiremod/shell/brain_computer_interface.dm:248 (the var block of a hand-written class)
+[DmPath("/obj/machinery/bci_implanter")]
+public partial class obj_machinery_bci_implanter
 {
     public float? busy = 0; // tg: code/modules/wiremod/shell/brain_computer_interface.dm:259
     public object busy_icon_state; // tg: code/modules/wiremod/shell/brain_computer_interface.dm:260

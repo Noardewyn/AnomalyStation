@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps CI1 (D339, D341): the whole file, the base of the modular programs' circuit components. Its subtypes (each program's
-// component, in the program's own file) and the computer's shell (computer_circuit.dm) are CI3's: until then they stay inert.
-// The var block is generated (D111).
+// component, in the program's own file) and the computer's shell (computer_circuit.dm) are live. The var block is
+// generated (D111).
 
 /**
  * Circuit components of modular programs are special.

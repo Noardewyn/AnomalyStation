@@ -9,9 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// SignalCommander (gaps S4b, D327): a PDA's built-in signaler, with its NtosSignaler window (lines 1-98). A circuit's signal through
-// its component (`/obj/item/circuit_component/mod_program/signaler`, :100-123) waits with wiremod (not-translated section 164). The
-// var block is generated (D111).
+// SignalCommander (gaps S4b, D327): a PDA's built-in signaler, with its NtosSignaler window (lines 1-98), and its circuit component
+// (:100-123) that sets the frequency and code and signals from a circuit plugged into the computer. The var block is generated (D111).
 
 // tg: code/modules/modular_computers/file_system/programs/signalcommander.dm:1
 public partial class datum_computer_file_program_signal_commander : datum_computer_file_program
@@ -124,5 +123,39 @@ public partial class datum_computer_file_program_signal_commander : datum_comput
         SSradio.remove_object(computer, signal_frequency);
         signal_frequency = Dm.num(new_frequency);
         radio_connection = SSradio.add_object(computer, signal_frequency, RADIO_SIGNALER);
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/signalcommander.dm:100
+public partial class obj_item_circuit_component_mod_program_signaler : obj_item_circuit_component_mod_program
+{
+    // tg: code/modules/modular_computers/file_system/programs/signalcommander.dm:109
+    public override async DmTask populate_ports()
+    {
+        await base.populate_ports();
+        freq = add_input_port("Frequency", PORT_TYPE_NUMBER, trigger: nameof(set_freq), @default: FREQ_SIGNALER) as datum_port_input;
+        code = add_input_port("Code", PORT_TYPE_NUMBER, trigger: nameof(set_code), @default: DEFAULT_SIGNALER_CODE) as datum_port_input;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/signalcommander.dm:114
+    public virtual void set_freq(datum_port port = null)
+    {
+        datum_computer_file_program_signal_commander signaler = associated_program as datum_computer_file_program_signal_commander;
+        signaler.set_frequency(clamp(freq.value, MIN_FREE_FREQ, MAX_FREE_FREQ));
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/signalcommander.dm:118
+    public virtual void set_code(datum_port port = null)
+    {
+        datum_computer_file_program_signal_commander signaler = associated_program as datum_computer_file_program_signal_commander;
+        signaler.signal_code = Dm.round(Dm.num(clamp(code.value, 1, 100)));
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/signalcommander.dm:122
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        datum_computer_file_program_signal_commander program = associated_program as datum_computer_file_program_signal_commander;
+        Waiting.DetachSync(() => program.signal(this));
+        return null;
     }
 }

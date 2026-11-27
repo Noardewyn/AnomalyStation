@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // SiliConnect and the syndicate's Roboverlord (gaps S4b, D327): the cyborgs' remote monitor, their system log downloaded by tapping a
-// cyborg, and messages to a cyborg, with the NtosCyborgRemoteMonitor window (lines 1-188). Its circuit components
-// (`/obj/item/circuit_component/mod_program/borg_monitor`, :190-216) wait with wiremod (not-translated section 164). The var blocks are
+// cyborg, and messages to a cyborg, with the NtosCyborgRemoteMonitor window (lines 1-188), and their circuit
+// components (:190-216) that message a cyborg from a circuit plugged into the computer. The var blocks are
 // generated (D111).
 
 // tg: code/modules/modular_computers/file_system/programs/borg_monitor.dm:1
@@ -246,5 +246,35 @@ public partial class datum_computer_file_program_borg_monitor_syndicate : datum_
     public override object checkID()
     {
         return "[CLASSIFIED]"; //no ID is needed for the syndicate version's message function, and the borg will see "[CLASSIFIED]" as the message sender.
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/borg_monitor.dm:190
+public partial class obj_item_circuit_component_mod_program_borg_monitor : obj_item_circuit_component_mod_program
+{
+    // tg: code/modules/modular_computers/file_system/programs/borg_monitor.dm:199
+    public override async DmTask populate_ports()
+    {
+        await base.populate_ports();
+        target_robot = add_input_port("Receiver", PORT_TYPE_ATOM) as datum_port_input;
+        set_message = add_input_port("Set Message", PORT_TYPE_STRING, trigger: nameof(sanitize_borg_message)) as datum_port_input;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/borg_monitor.dm:204
+    public virtual void sanitize_borg_message(datum_port port = null)
+    {
+        set_message.set_value(trim(html_encode(set_message.value), MAX_MESSAGE_LEN));
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/borg_monitor.dm:207
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (!Dm.truthy(length(set_message.value)) || !iscyborg(target_robot.value))
+            return null;
+        mob_living_silicon_robot robot = target_robot.value as mob_living_silicon_robot;
+        datum_computer_file_program_borg_monitor monitor = associated_program as datum_computer_file_program_borg_monitor;
+        if (Dm.truthy(Waiting.NoSleep(monitor.send_message(set_message.value, robot))))
+            monitor.computer.log_talk(Dm.text("Cyborg Monitor message (ID name \"[]\") sent to [] by []: []", monitor.checkID(), key_name(robot), parent.get_creator(), set_message.value));
+        return null;
     }
 }

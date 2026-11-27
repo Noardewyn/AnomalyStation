@@ -5602,9 +5602,9 @@ public partial class obj_item_organ_cyberimp_mouth_breathing_tube
     }
 }
 
-// tg: code/modules/wiremod/shell/brain_computer_interface.dm:2
-[DmPath("/obj/item/organ/cyberimp/bci"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_cyberimp_bci : obj_item_organ_cyberimp
+// tg: code/modules/wiremod/shell/brain_computer_interface.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/cyberimp/bci")]
+public partial class obj_item_organ_cyberimp_bci
 {
     // tg: code/modules/wiremod/shell/brain_computer_interface.dm:2
     public obj_item_organ_cyberimp_bci()

@@ -44,10 +44,7 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/controllers/subsystem/air.dm:609` | `log_active_turfs`: the per-level mapping log and SSblackbox feedback of roundstart active turfs (M10) | `log_active_turfs` | M10 | `controllers/subsystem/air.cs` |
 | `code/controllers/subsystem/air.dm:728` | `setup_turf_visuals`: the excited groups' debug overlays (the admin atmos control panel, M10) | `setup_turf_visuals` | M10 (the admin atmos control panel) | `controllers/subsystem/air.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:28` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/passive_gate.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/pump.dm:29` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/pump.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/pump.dm:30` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/pump.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/valve.dm:90` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/valve.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:34` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/volume_pump.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:39` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/volume_pump.cs` |
 | `code/modules/atmospherics/machinery/components/components_base.dm:70` | `update_overlays`: emissive_appearance(icon, "[icon_state]-emissive", src), the device's emissive glow (DEVIATION DV12) | `update_overlays` | never as such (emissives, DV12) | `modules/atmospherics/machinery/components/components_base.cs` |
 | `code/modules/atmospherics/machinery/components/trinary_devices/filter.dm:18` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/trinary_devices/filter.cs` |
@@ -314,7 +311,7 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/game/machinery/doors/poddoor.dm:33` | `/obj/machinery/door/poddoor/Initialize`: `AddElement(/datum/element/nav_computer_icon, ...)` | a pod door `Initialize` with `show_nav_computer_icon` | M10 (shuttles) | `game/machinery/doors/poddoor.cs` |
 | `code/game/machinery/doors/firedoor.dm:662` | `update_overlays`: emissive_appearance of the hazard lights (DEVIATION DV12) | `update_overlays` | never as such (emissives, DV12) | `game/machinery/doors/firedoor.cs` |
 | `code/game/machinery/firealarm.dm:73` | `Initialize`: set_wires(new /datum/wires/firealarm(src)): the fire alarm's wires (hacking, M7) | `Initialize` | M7 (hacking) | `game/machinery/firealarm.cs` |
-| `code/game/machinery/firealarm.dm:75` | `Initialize`: the USB port (circuits), redirect_attack_hand_from_turf (clicks, M4a) and register_context (screentips, M9) | `Initialize` | later (circuits), M9 (clicking the floor below, screentips) | `game/machinery/firealarm.cs` |
+| `code/game/machinery/firealarm.dm:77` | `Initialize`: redirect_attack_hand_from_turf (clicks, M4a) and register_context (screentips, M9); the USB port came with gaps CI3 | `Initialize` | M9 (clicking the floor below, screentips) | `game/machinery/firealarm.cs` |
 | `code/modules/lighting/lighting_atom.dm:84` | `/atom/set_opacity`: `AddElement(/datum/element/light_blocking)` | `set_opacity(TRUE)` of a movable (doors closing) | never as such: the client computes light (D24, rules 13); `CellState` reads opacity directly | `modules/lighting/lighting_atom.cs` |
 | `code/modules/lighting/lighting_atom.dm:86` | `/atom/set_opacity`: `RemoveElement(/datum/element/light_blocking)` | `set_opacity(FALSE)` of a movable (doors opening) | never as such (D24, rules 13) | `modules/lighting/lighting_atom.cs` |
 | `code/modules/lighting/lighting_atom.dm:88` | `/atom/set_opacity`: `SScameras.update_visibility(src)` | every opacity change | M9 (security cameras) | `modules/lighting/lighting_atom.cs` |
@@ -323,7 +320,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/modules/power/lighting/light.dm:194` | `/obj/machinery/light/update_overlays`: `emissive_appearance(overlay_icon, base_state, src, alpha)`, the fixture's glow (DEVIATION DV12) | `update_overlays` of a lit fixture | never while DV12 stands (D24; lead decision D2) | `modules/power/lighting/light.cs` |
 | `code/game/objects/effects/decals/decal.dm:73` | `/obj/effect/turf_decal/Initialize`: `request_decoration_colors(src, pattern)` (`__HELPERS/events.dm:88`), the holiday and station-trait colours of a decal that uses them; without either it gives null and the decal keeps its colour | a turf decal's init with `use_holiday_colors` | M10 (holidays and station traits) | `game/objects/effects/decals/decal.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:95` | `Initialize`: set_wires(new /datum/wires/airalarm(src)): the air alarm's wires (hacking, M7) | `Initialize` | M7 (hacking) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
-| `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:123` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:135` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:570` | `update_overlays`: emissive_appearance of the alarm's screen (DEVIATION DV12) | `update_overlays` | never as such (emissives, DV12) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:722` | `setup_chamber_link`: the mapping log of a missing sensor (AREACOORD, M10) | `setup_chamber_link` | M10 (the mapping log) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
@@ -879,9 +875,7 @@ tg's temperature control units (`thermomachine.dm`: the freezer, the heater and 
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/modules/atmospherics/machinery/components/unary_devices/thermomachine.dm:47` | `Initialize`: `AddComponent(/datum/component/usb_port, ...)`, the circuit USB port (`/obj/item/circuit_component/thermomachine` stays inert) | every interactive unit's init | later (circuits and wiremod) | `modules/atmospherics/machinery/components/unary_devices/thermomachine.cs` |
 | `code/modules/atmospherics/machinery/components/unary_devices/thermomachine.dm:138` | `update_overlays`: both `emissive_appearance` copies of the lit screen (DEVIATION DV12) | a unit that is on, every appearance update | never as such (DV12: no emissive plane) | `modules/atmospherics/machinery/components/unary_devices/thermomachine.cs` |
-| `code/modules/atmospherics/machinery/other/meter.dm:43` | `Initialize`: `AddComponent(/datum/component/usb_port, ...)`, the circuit USB port (`/obj/item/circuit_component/atmos_meter` stays inert) | every meter's init | later (circuits and wiremod) | `modules/atmospherics/machinery/other/meter.cs` |
 | `code/modules/atmospherics/machinery/other/meter.dm:153` | `update_overlays`: the `emissive_appearance` copies of the buttons and the pressure bars (DEVIATION DV12) | every meter appearance update | never as such (DV12: no emissive plane) | `modules/atmospherics/machinery/other/meter.cs` |
 | `code/game/machinery/computer/atmos_computers/_air_sensor.dm:30` | `/obj/machinery/air_sensor/Initialize`: `AddElement(/datum/element/contextual_screentip_tools, multitool_tips)`, the multitool screentips (package E5; the sensors and the atmospherics control consoles are translated) | every air sensor's init | M10+ (the screentips, not now: D264) | `game/machinery/computer/atmos_computers/_air_sensor.cs` |
 | `code/game/machinery/computer/atmos_computers/_air_sensor.dm:174` | `/obj/item/air_sensor/Initialize`: `register_context()`, the screentip context (package E5) | every sensor item's init | M10+ (the screentips, not now: D264) | `game/machinery/computer/atmos_computers/_air_sensor.cs` |
@@ -944,7 +938,6 @@ the icon's `DrawBox` and BYOND's `oview`, the powered grille's bolt (`grille.dm:
 | `code/datums/beam.dm:345` | `Draw`: the segments' `emissive_appearance` overlay (DEVIATION(DV12): no emissive plane; the client draws the segments unshaded, DV77) | every beam | with the emissive plane (DV12) | `datums/beam.cs` |
 | `code/modules/vehicles/ridden.dm:76`, `vehicles/bicycle.dm:13`, `blob/structures/_blob.dm:243`, `nuclear_bomb/_nuclear_bomb.dm:619`, `aquarium/aquarium_upgrades.dm:51` | the `zap_act` of inert types: a bolt that strikes one is stopped by the interaction guard (D132, DV27: the /atom root's null; the abductor RTG's, `power/rtg.dm:123`, is translated, section 88) | a bolt near a ridden vehicle, a blob, the nuke, a bioelectric aquarium | with their types | `game/objects/obj_defense.cs`, `structures.cs`, `_machinery.cs` |
 | `code/datums/wires/tesla_coil.dm`, `code/datums/wires/_wires.dm` | the coil's wires window (hacking: pulsing WIRE_ZAP by hand) | a screwdriver and a multitool on the coil | with wire hacking (D162) | `datums/wires/tesla_coil.cs` |
-| `code/modules/power/singularity/emitter.dm:81` | `Initialize`: `AddComponent(/datum/component/usb_port, ...)`, the integrated circuits' port (`Dm.Deferred`) | every emitter | wiremod (after the core version) | `modules/power/singularity/emitter.cs` |
 | `code/modules/power/singularity/emitter.dm:629-703` | the CTF emitter and the diode disks: inert (the disks' branch of `item_interaction` is translated) | | with their users (M10+) | `modules/power/singularity/emitter.cs` (PARTIAL) |
 | `code/modules/power/singularity/field_generator.dm:179` | `blob_act` of the field generator (a live-partial stub: its `..()` is the `/obj` root of `blob_act`, which is not translated) | a blob on a generator | M10+ (blobs, antagonists) | `docs/ai/specs/live-partial.txt` |
 | `code/modules/shuttle/misc/special.dm:6-25` | `/obj/machinery/power/emitter/energycannon` (its one proc, `RefreshParts`, returns without the parent's parts) and the wabbajack statue below it: inert; they are shuttle-template and minigame props (`emergency_supermatter.dmm`, `emergency_wabbajack.dmm`, CTF, deathmatch), not the engine's | a special emergency shuttle, a minigame | with the special shuttles (M10+) | (generated, inert) |
@@ -1021,7 +1014,6 @@ pressure and volume pumps' tgui window (`pump.dm:69-102`, `volume_pump.dm:122-15
 | `code/modules/power/supermatter/supermatter.dm:379-490`, `supermatter_gas.dm:10` | the ghosts' Supermatter monitor window (`ui_interact`, `ui_static_data`, `ui_data`, `sm_ui_data`, `sm_gas_data`; `live-partial.txt` rows); the crew's supermatter monitor is the NTOS program (`modular_computers/file_system/programs/sm_monitor.dm`, the modular computers) | a ghost's click; an engineer's tablet or console | M10 (the ghosts); modular computers (after the core version) | `modules/power/supermatter/supermatter.cs` |
 | `code/modules/power/supermatter/supermatter.dm:526`, `:529`, `:531` | `update_overlays`: the emissive masks of the crystal and its holiday lights (DEVIATION(DV12): no emissive plane; the glow is its light and the rays filter) | every crystal | with the emissive plane (DV12) | `modules/power/supermatter/supermatter.cs` |
 | `code/modules/power/supermatter/supermatter_variants.dm:67` | the wizard's small crystal: its GPS signal and station announcement (`live-partial.txt` row) | the wizard's sword recipe | M10+ (the wizard) | (generated stub) |
-| `code/game/objects/structures/reflector.dm:40`, `:271-296` | the reflector's integrated circuits port and circuit component (`Dm.Deferred`, inert) | every reflector | wiremod (after the core version) | `game/objects/structures/reflector.cs` |
 | `code/game/objects/effects/anomalies/_anomalies.dm:42`, `:112`, `:128` | the anomaly cores: the signaler a cored anomaly carries on a random free frequency and code, the core a neutralized one drops (or an inert anomaly past SSresearch's cap), the analyzer's frequency readout (`Dm.Deferred`; the generated `anomaly_core` var is a `Type` and keeps the core's path) | an anomaly made with its core (the random events'; the supermatter's drop none); a gas analyzer on one | with the anomaly cores (`modules/research/anomaly/anomaly_core.dm`: the cores' signal effects, the refinery; research, M10+; the signaler itself came with M9 slice D) | `game/objects/effects/anomalies/_anomalies.cs` |
 | `code/game/objects/effects/anomalies/_anomalies.dm:59` | the admins' variable editor (`vv_edit_var`, a `live-partial.txt` row; the orbit menu at `:31` translated in M10x slice C) | every anomaly made after the map load | M10 (admin tooling) | `game/objects/effects/anomalies/_anomalies.cs` |
 | `code/game/objects/effects/anomalies/anomalies_pyroclastic.dm:43`, `:50` | the pyroclastic slime its detonation makes (the basic slime mob, enraged, adult, red or orange) and the ghost poll that picks its player (`Dm.Deferred`; the 500 moles of hot plasma and oxygen are translated) | a pyroclastic anomaly's end | M10 (the slimes, the ghosts' polls) | `game/objects/effects/anomalies/anomalies_pyroclastic.cs` |
@@ -1075,9 +1067,8 @@ The wall light switch (`lightswitch.dm`), the light fixture frame and its wall f
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/game/machinery/lightswitch.dm:28`, `:30` | `Initialize`: `AddComponent(/datum/component/redirect_attack_hand_from_turf)` (a click on the floor below the switch) and the USB port of the circuits (`Dm.Deferred`) | every switch's init | M4a (clicks on the floor below), M10+ (circuits and wiremod) | `game/machinery/lightswitch.cs` |
+| `code/game/machinery/lightswitch.dm:28` | `Initialize`: `AddComponent(/datum/component/redirect_attack_hand_from_turf)` (a click on the floor below the switch, `Dm.Deferred`; the USB port came with gaps CI3) | every switch's init | M4a (clicks on the floor below) | `game/machinery/lightswitch.cs` |
 | `code/game/machinery/lightswitch.dm:71` | `update_overlays`: `emissive_appearance` of the switch's glow (`Dm.Deferred`, DEVIATION DV12) | a powered switch's appearance | never as such (DV12: no emissive plane) | `game/machinery/lightswitch.cs` |
-| `code/game/machinery/lightswitch.dm:130-` | `/obj/item/circuit_component/light_switch`: `populate_ports`, `register_usb_parent`, `unregister_usb_parent`, `on_light_switch_set`, `input_received`: the circuit component of the switch (inert; the signal `COMSIG_LIGHT_SWITCH_SET` is sent) | a USB port of the switch | M10+ (circuits and wiremod) | (generated, inert) |
 | `code/game/objects/items/devices/flashlight.dm:476`, `:535` | `/obj/item/flashlight/flare/Initialize` and `light_updated`: the light middleman (`middleman = new(src, "flashlight")`, its signal, `being_overriding_light`, `fire_flicker_middleman`): the lit flare's flicker (`Dm.Deferred`; the same as the welder's, `weldingtool.dm:61`) | a flare's init, a lit flare's light | never (the lighting module, D24, rules 13: the client lights from the replicated `light_on`) | `game/objects/items/devices/flashlight.cs` |
 | `code/game/objects/items/devices/flashlight.dm:906` | `/obj/item/flashlight/glowstick/Initialize`: `AddComponentFrom(SOURCE_EDIBLE_INNATE, /datum/component/edible, ...)`, eating a glowstick (`Dm.Deferred`) | a glowstick's init | M8 (food) | `game/objects/items/devices/flashlight.cs` |
 | `code/game/objects/items/devices/flashlight.dm:1100-1128`, `:1059-1098`, `:799-868`, `:1130-` | `/obj/item/flashlight/eyelight`, `eyelight/glow`, `spotlight`, `flashdark`, `slime`, `emp` and `lamp/space_bubble`: inert, unchanged (none is reached by a thing translated here but the eyelight through the fluid's metabolism above) | | with their users (M8, M10+) | (generated, inert) |
@@ -1141,7 +1132,6 @@ technicians' and the chief engineer's `populate_contents_immediate` (`closets/se
 |---|---|---|---|---|
 | `code/game/gamemodes/objective_items.dm:703` | `/obj/item/pipe_dispenser/add_stealing_item_objective` (a generated deferred stub) | the traitors' stealing objectives | M10 (antagonists) | `Generated/LivePartial/obj.g.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/pressure_valve.dm:19`, `temperature_gate.dm:23`, `temperature_pump.dm:19` | `Initialize`: register_context(): screentip contexts (`Dm.Deferred`) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/pressure_valve.cs`, `temperature_gate.cs`, `temperature_pump.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/temperature_pump.dm:18` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (`Dm.Deferred`) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/temperature_pump.cs` |
 
 Not a leaf: `mouse_wheeled` (`RPD.dm:579`, the layer change by the mouse wheel) is translated and registered on `COMSIG_MOUSE_SCROLL_ON`
 as tg does, but the client sends no mouse wheel input to the server yet (`/atom/MouseWheel` and `mob/MouseWheelOn` are translated and
@@ -1881,7 +1871,6 @@ inquisitive ghost preference; the client's `Supermatter` and `NtosSupermatter` w
 | `console_presets.dm:93-170` | the cargo interfacing consoles: translated (gaps P4d, section 170: the department order app, the chat client's channels and `#cargobus`; their shipping, budget and coupon apps live, the bounty board since silicons SI6b, the restock tracker still inert) | MetaStation's cargo and department consoles | translated (section 170) | `computers/machinery/console_presets.cs` |
 | the programs `scipaper_program`, `arcade` (`card_mod`, `job_management`, `power_monitor`, `chatclient`, `ntnetmonitor` and `robocontrol` came with gaps S4, section 164; `ai_restorer` and `portrait_printer` with the silicons campaign) | the consoles' other apps: stored as tg stores them, generated-only; running one shows the client's placeholder for an untranslated window (as the PDA's, section 74) | an engineering, identification, research, command, civilian or curator console | the packages that port them (`alarm_monitor`, Canary, came with E6: section 86) | (none) |
 | `modular_computer.dm:89` | `emag_act` (`live-partial.txt` E2) | an emag on a console | M10+ (antagonists) | `Generated/LivePartial/obj.g.cs` |
-| `modular_computer.dm:45` | the console's circuit shell (`add_shell_component`, wiremod) | a console's Initialize | gaps CI3 (D339) | `modular_computers/computers/machinery/modular_computer.cs` |
 | `controllers/subsystem/persistence/*.dm` but `counter_delamination.dm`, `incident_display.dm:103`, `:183`, `:355` | SSpersistence: only `Initialize`, `collect_data` and the delamination counter are translated (DV220); every other load and save (Poly, engravings, tattoos, trophies, recent maps, photos, outfits, adventures, recipes, scars, message bottles) and the tram counters (`tram_hits_this_round` and `tram_hits_last_round` stay 0: no trams) are left out with a comment | a round's start and end, a multitool's switch to tram mode | M10+ (round persistence) | `controllers/subsystem/persistence/_persistence.cs` |
 | `incident_display.dm:102` | the tram collisions (`SStransport`'s `COMSIG_TRAM_COLLISION`; no tram on MetaStation) | a tram display | with the trams | `game/machinery/incident_display.cs` |
 | `incident_display.dm:277`, `:288` and the other `emissive_appearance` sites | the displays' emissive glow (DEVIATION DV12) | every display | with the emissive plane | `game/machinery/incident_display.cs` |
@@ -2398,7 +2387,6 @@ Package J2 translates the job datums and outfits that were inert (security offic
 | tg file:line | What | Who reaches it | When | Translated file |
 |---|---|---|---|---|
 | `code/game/objects/items/devices/scanners/sequence_scanner.dm:37`, `:60`, `:92`, `:162` | the DNA console's database and buffer, `gene_scan`, `get_display_name` (the mutations) | a scan of a target's mutations; the console | P3 | `game/objects/items/devices/scanners/sequence_scanner.cs` |
-| `code/game/machinery/computer/crew.dm:15`, `:20`-`:75` | the console's USB port and `/obj/item/circuit_component/medical_console_data` (circuits; the AI's "select_person" came with silicons SI4) | circuits | M10+ | `game/machinery/computer/crew.cs` |
 | `code/game/objects/items/tanks/watertank.dm:370` | `/obj/item/reagent_containers/chemtank` (stays inert) | not a starting item | later | none |
 | `code/modules/reagents/reagent_containers/medigel.dm:58`, `code/game/objects/items/floppy_disk.dm:80` | `AddComponent(/datum/component/reskinable_item, ...)`: the reskin menu (`reskinnable_atom.dm` is inert) | alt-click on a plain gel or a disk | M10+ | `modules/reagents/reagent_containers/medigel.cs`, `game/objects/items/floppy_disk.cs` |
 | `code/game/objects/items/floppy_disk.dm:129`, `:148`, `:206` | the sticker's radial menu, disk stacks (`/obj/item/disk_stack` stays inert), `can_be_package_wrapped` (package wrapping) | right alt-click on a disk; a disk on a disk | M10+, the deliveries (PORT-CHECKLIST) | `game/objects/items/floppy_disk.cs` |
@@ -2459,7 +2447,7 @@ foam and smoke family. The deferred leaves and what stays inert:
 
 ## 119. Hydroponics (P2, D298)
 
-Translated: `code/modules/hydroponics` whole but the tray's circuit component (440 of its 441 types live, 529 procs): the trays and the
+Translated: `code/modules/hydroponics` whole (its 441 types live; the tray's circuit component with gaps CI3): the trays and the
 soil (`hydroponics.dm`, `hydroponics_chemreact.dm`, `soil.dm`, the snail), every seed and plant (`seeds.dm`, `grown.dm`,
 `growninedible.dm`, `grown/*.dm`: 158 seeds, 157 grown items with their juice, grind and distill values), every plant gene and unique
 gene (the smoke trait among them), mutations and species mutations, cross-pollination, grafts and the gene shears, the seed extractor
@@ -2472,7 +2460,6 @@ honeycomb raid and nutriment's grown tastes. The deferred leaves and what stays 
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `hydroponics.dm:1282`, `:183` (`usb_port`) | the tray's circuit component and its USB port (wiremod): the circuit component type stays inert | a circuit wired to a tray | wiremod | `modules/hydroponics/hydroponics.cs` |
 | `hydroponics.dm:184` (`fishing_spot`, `/datum/fish_source/hydro_tray`) | fishing in a tray | a fishing rod on a tray | fishing (M10+) | `modules/hydroponics/hydroponics.cs` |
 | `grown/replicapod.dm:179` | the pod person (`Dm.Deferred`): `/datum/species/pod` and the random chemical blood type are inert; the harvest makes the seeds only | a replica pod with a blood sample and a mind | the pod species | `modules/hydroponics/grown/replicapod.cs` |
 | `grown/banana.dm:218` | the Gros Michel peel's rotting (`Dm.Deferred`; the decomposition component is inert) | a Gros Michel peel | the food decomposition | `modules/hydroponics/grown/banana.cs` |
@@ -2598,7 +2585,6 @@ and flash, `machinery/launch_pad.dm` with the briefcase launchpad (`storage/brie
 | `hypnosis.dm:39`, `:63` | the hypnotized antagonist datum with its fixation objective and antag HUD (`add_antag_datum`, A1's mind procs; `/datum/antagonist/hypnotized`): the phrase, its alert, echoes and highlight work | a trance's next heard words | the antagonist core (syndicate A1) | leaves |
 | `icon2html` in the bomb's, training bomb's, wires', pizza bomb's and power fist's lines | the item's picture in the chat line | always | chat icons (section 76) | comments |
 | `launch_pad.dm:39`, `:59`, `:112` | the diagnostic HUD's target indicator of a launchpad (`prepare_huds`, the diagnostic hud); the pad teleports to its offset without it | a diagnostic HUD | the diagnostic HUD (M10+) | leaves |
-| `launch_pad.dm:448` the circuit component, `usb_port.dm` | the launchpad's wiremod component and USB port (the component's AddComponent is inert) | a stationary launchpad | wiremod (no package yet) | inert types |
 | `syndicatebomb.dm:74` GLOB.active_cosmic_fields | a heretic's cosmic field defusing a bomb | the heretic | the heretics | GAP local |
 | `special.dm:62` | the North Star gloves' fishing difficulty | fishing | fishing (M10+) | leaf |
 | `syndicatebeacon.dm:194` the No Escape beacon's black hole | the shuttle event `/datum/shuttle_event/simple_spawner/black_hole/no_escape` is created and stays inert | the No Escape final objective on the escape shuttle | the shuttle events and the final objectives (A2) | inert type |
@@ -2802,7 +2788,6 @@ inert:
 | `research/anomaly/anomaly_core.dm` | the gravity anomaly core that upgrades a Herculean spine into an Atlas (the cores are inert research items; the spine's check is translated) | a core on a spine | research | (inert) |
 | `research/designs/medical_designs.dm:418-713` | the implants' research designs (data) with no techweb, protolathe or exosuit fabricator: on the station the implants come from the CMO's autosurgeon (the medical HUD), the cyber implants box, the medkits' and lockers' autosurgeons and admin spawns | printing an implant | research | (data) |
 | `mining_loot/cursed_katana.dm:9`, `chaplain/chaplain_vorpal_scythe.dm:9` | the cursed katana's and the vorpal scythe's arm shards (subtypes of the toolkit with procs of their own; inert with the katana and the null rod's scythe) | lavaland loot, the chaplain's menu | with their packages | (inert) |
-| `wiremod/shell/brain_computer_interface.dm` | the brain-computer interface implant (`cyberimp/bci`, the circuits) | a BCI | gaps CI3 (D339) | (inert) |
 | the toolkits' `emag_act` | translated, unreachable: the emag is inert | an emag on a paperwork or toolset implant | the emag | `cyberimp/augments_arms.cs` |
 | `datums/elements/organ_set_bonus.dm` users | the infused organs' set bonuses (carp, goliath, gondola, rat are var-only and live; the organs that add them wait for the DNA infuser) | an infused organ | P3 | `datums/elements/organ_set_bonus.cs` |
 
@@ -2872,7 +2857,6 @@ display picture lists of `modules/mob/living/silicon/ai/_preferences.dm`. The em
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `status_display.dm` greenscreen types (`greenscreen_location_indicator`, `greenscreen_appearance_holder`, `greenscreen_display`, `greenscreen_camera`) | the captain-caster's greenscreen; a display's `SD_GREENSCREEN` branches are translated and only that camera reaches them | the greenscreen camera | with the cameras (M9 leftovers) | `game/machinery/status_display.cs` |
-| `status_display.dm:406` (`usb_port`) | the display's circuit USB port and `/obj/item/circuit_component/status_display` (`Dm.Deferred`) | a circuit wired to a display | wiremod (M10+) | `game/machinery/status_display.cs` |
 | `status_display.dm` `send_status_display_alert`, `post_status` sources | the signal's source is null, not tg's `virtualspeaker` (GAP(types)) | any status signal | the virtual speakers | `game/machinery/status_display.cs` |
 
 ## 142. Votes (the owner, 2026-11-08)
@@ -3138,7 +3122,7 @@ and its terminals (`shuttle_consoles/syndicate.dm` but the navigation computer),
 (`closets/syndicate.dm` whole), `syndicate_name`, the operative alias and species preferences, `equip_species_outfit`; the operatives'
 kit: the combat boots, the nuclear PDA, the Ansem's lore, the operation-ready survival box; on the base and on Meta (22 of them, inert until now, DV31): the pressure tank
 (`atmospherics/machinery/components/tank.dm` whole, with `gas_leaker.dm`, `volatile_gas_storage.dm`, `crackable.dm`, `cracked.dm`;
-SSair processes the leaker as tg passes it, a datum); the NTOS radar (`programs/radar.dm` whole but its circuit components: the
+SSair processes the leaker as tg passes it, a datum); the NTOS radar (`programs/radar.dm` whole, its circuit components since gaps CI3: the
 Fission360, the Lifeline, the Custodial Locator, with the client's NtosRadar windows and tg's radar pictures); the base's keycard doors
 (`puzzle_pieces.dm:1-145`, with `subsystem/queuelinks.dm` whole); the hijacked shuttle's syndicate dock and the base's early load on a hijack; the nuclear pinpointer's armed-nuke line. A dock made in a template's load yields
 a tick before loading its round-start shuttle (tg's call sleeps at the reservation's CHECK_TICK, its tick spent; the port's never is,
@@ -3165,11 +3149,9 @@ are hidden shuttles), `get_overlap`, `ISINRANGE_EX`, `get_linked_z_levels_in_ran
 | `operative_team.dm:79` | the round-end report's badass icon (`icon2html`) for a team that nuked the station spending no telecrystal | the round's end | chat icons | `operative_team.cs` |
 | `outfits.dm:19`, `:44`, `:101`; `implants/implant_tacmap.dm` | the operatives' tactical map implant and its minimap blips (the operatives, the disk, the nuke): tg's minimap HUD (`modules/minimap/`) is not ported; the port's minimap is D315's own; the implant is inert in the operatives' bodies | an operative's outfit | the owner's decision (D315's minimap) | (generated) |
 | `outfits.dm:30-35`, `:49-54`, `:104-115` | the plasmaman operatives' outfits (the plasmaman species is not ported: an operative is human or the client's own species) | an operative of the plasmaman species | the plasmaman species | `outfits.cs` |
-| `radar.dm:410-535` | the radar programs' circuit components (`circuit_component/mod_program/radar`: the circuits, wiremod) | a circuit shell | the circuits | `radar.cs` |
 | `pray.dm:80` | the nuke codes' request in the admins' requests manager (`GLOB.requests.nuke_request`) and the admins' links of its message (the request itself, its admins' message and the crew's announcement came with gaps CM1) | the communications console | the admin tools | `admin/verbs/pray.cs` |
 | `_event.dm:167` | an admin-forced event's options (`/datum/event_admin_setup`: the admin's prompts) | an admin forcing an event | the admin tools | `_event.cs` |
 | `subsystem/events.dm:167-207` | the holidays of the real date (`fill_holidays`, `check_holidays`: the deterministic world reads no date, D31; no holiday, as tg's default `allow_holidays` off) | the round's start | none (D31) | `events.cs` |
-| `camera_advanced.dm:57-74`, `:293-486` | the advanced camera console's circuits (the USB port and the circuit components: wiremod) | a circuit shell on the console | the circuits | `camera_advanced.cs`, live-partial |
 | `camera_advanced.dm:150`, `:282`; `xenobio_camera.dm`; `construction_console.dm` | the abductor's, the human AI's, the xenobiology and the base construction consoles (their own types, inert) | Meta's xenobiology and aux base consoles, the base's slime console | their departments | (generated) |
 
 ## 149. The nukie arsenal (syndicate N2, D316)
@@ -3323,7 +3305,7 @@ of stacks, the reagents the cyborgs synthesize; `notify_ghosts`, `on_saboteur`'s
 | `modules_ninja.dm:494`, `:502` | the space ninja draining a cyborg (`live-partial.txt`) | the ninja | M10+ | (generated stubs) |
 | `_onclick/hud/robot.dm:9`, `:27` | the HUD's navigate and floor changer buttons (as the human's HUD; the language button: gaps L2) | the HUD | M10+ | `_onclick/hud/robot.cs` |
 | `robot.dm` (`GLOB.current_anonymous_theme`), `robot/death.dm` (`SSblackbox.ReportDeath`), `robot/examine.dm` (`icon2html`), `game.dm:204` (`winset` flash) | the admins' anonymous names, the round statistics, the held module's chat icon, the taskbar flash | admins, the chat | presentation, M10+ | the robot's files |
-| `piano_synth.dm:15`, `:21` | the synthesizer's song and circuit shell (`/datum/song`, SSinstruments, wiremod: the instruments are props, section 106) | music | M10+; the circuit shell gaps CI3 (D339) | `instruments/items.cs` |
+| `piano_synth.dm:15`, `:21` | the synthesizer's song (`/datum/song`, SSinstruments: the instruments are props, section 106; the circuit shell came with gaps CI3) | music | M10+ | `instruments/items.cs` |
 | `art/statues.dm:380`, `:416-419`, `:79`, `:94` | the chisel shaping a concrete floor (concrete floors are not translated: nothing on Meta places or makes them), the sculptors' personality moods (personalities are not ported), the drake's and dragonman's glowing eyes (DV12) | a chisel, sculptors | M10+ | `art/statues.cs` |
 | `_persistence.dm` | saving and loading the wall engravings and the prison tattoos across rounds | the persistence | M10+ | `persistence/_persistence.cs` |
 | `robot/items/tools.dm` | the omnitool's context tips (D264, `live-partial.txt`) | screentips | M10+ | live-partial |
@@ -3408,7 +3390,6 @@ instrument plays a note whose file exists).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `instruments/piano_synth.dm:16`, `:70-202` | the synthesizer's circuit shell and its synth circuit components (`Dm.Deferred`): wiremod | the synthesizer's init | gaps CI3 (D339) | `modules/instruments/piano_synth.cs` |
 | `instrument_data/hardcoded.dm` (the `mid` instruments), `items.dm:131`, `:159`, `:190` | the MIDI note files of the violin, saxophone, recorder, accordion, glockenspiel, xylophone, harmonica and trombone (and the spectral doots): DV391, silent | playing one of them | Ogg renders (an owner question) | — |
 | `songs/_song.dm:403` | `vv_edit_var` (admin variable editing; `live-partial.txt`) | an admin | M10+ | (generated stub) |
 
@@ -3484,7 +3465,6 @@ Translated (S4d, Mafia): `modules/mafia` whole (the controller with its phases, 
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `statusdisplay.dm:94-121`, `signalcommander.dm:100-123`, `borg_monitor.dm:190-216`, `wirecarp.dm:71-131` | the apps' circuit components (`/obj/item/circuit_component/mod_program/*`: wiremod; SignalCommander's signal from a circuit reads the circuit's creator and owner since gaps CI1) | a circuit in a computer | the circuits (gaps CI3, D339) | (inert) |
 | `maintenance/themes.dm:44` | the PDA theme's progress award, which keeps a found theme for later rounds (`give_award`, a comment) | installing a maintenance theme | the achievements (M10) | `maintenance/themes.cs` |
 | `maintenance/camera.dm`, `nanopaint.dm`, `file_system/image_file.dm` | the camera app and NanoPaint: a photo or painting as an image file (`icon2base64`: the server reads no .dmi, D104) | a maintenance disk's camera, NanoPaint | with NtOS's image files | (inert) |
 | `raptordex.dm` | the RaptorDex (inert with the raptors) | a raptor scanned | with the raptors (Lavaland's ranch) | (inert) |
@@ -3548,7 +3528,6 @@ client's NtosPay, AccountingConsole, BankMachine and HoloPay windows.
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `basemats.dm:541`, `:547` | a mythril item's fantasy affixes (`/datum/component/fantasy`): a mythril coin's Initialize reaches the not-translated leaf, and so does a mythril sheet's (gaps SK1) | a mythril coin or sheet | the fantasy affixes | `datums/materials/basemats.cs` |
-| `nt_pay.dm:113-186` | the NT Pay app's circuit component (wiremod) | a circuit in a PDA | wiremod (section 164) | `modules/modular_computers/file_system/programs/nt_pay.cs` |
 | `account.dm:253-290` | the bank card's picture before its chat line (`icon2html`, chat icons) | every card message | chat icons (section 76) | `modules/economy/account.cs` |
 | `account.dm:120-139` | the CRAB-17's drain (`/obj/structure/checkoutmachine`: `dumpeet` and `stop_dump` are translated, the machine is inert) | a traitor's CRAB-17 | the traitor's uplink items | `modules/economy/account.cs` |
 | `cards_ids.dm:134`, `:704`, `:1034` | the card's fantasy bonuses, its admin var edits and the honorific toggle (`item_ctrl_click`) | — | the fantasy affixes, admin tooling, the honorifics | `game/objects/items/cards_ids.cs` |
@@ -4055,7 +4034,6 @@ slices.
 |---|---|---|---|---|
 | `food/_food.dm:228`, `decomposition.dm` | the decomposition of food left on the floor (the germs came with gaps VI1) | food on the floor | the food decomposition | `food/_food.cs` |
 | `machinery/deep_fryer.dm:63` | fishing in the deep fryer (the fishing spot and the fish-safe storage) | a fishing rod at the fryer | fishing | `machinery/deep_fryer.cs` |
-| `machinery/processor.dm:231`, `:289-325` | the slime processor's USB port and its circuit component (`/obj/item/circuit_component/slime_processor`, inert) | a circuit | the circuits (wiremod) | `machinery/processor.cs` |
 | `machinery/stove_component.dm:269`, `coffeemaker.dm:418`, `:670` | the steam particles' position over a pot (BYOND's `/particles` vars are not declared; particles are not drawn) | cooking soup, brewing coffee | the particles | `stove_component.cs`, `coffeemaker.cs` |
 | `components/ingredients_holder.dm:143` | the custom food's filling colour, read from the ingredient's sprite (`icon.GetPixel`; the server reads no tg icon, D104): the filling overlay is not drawn | putting an ingredient on bread, a bun, a pizza base | the client's icons (D104) | `components/ingredients_holder.cs` |
 
@@ -4134,7 +4112,7 @@ console's board (`computer_circuitboards.dm:470-524`), the hard drive's steal ob
 
 ## 198. The records consoles (gaps SC2, D333)
 
-Translated whole: `machinery/computer/records/records.dm` and `medical.dm`, `security.dm` but its circuit components, `computer/warrant.dm`,
+Translated whole: `machinery/computer/records/records.dm` and `medical.dm`, `security.dm` (its circuit components since gaps CI3), `computer/warrant.dm`,
 `effects/wanted_poster.dm` (DV498), `datums/records/medical_note.dm`; the record's photos of `datums/records/record.dm` (`get_front_photo`,
 `get_side_photo`, `recreate_manifest_photos`, `delete_photos`, `get_photo`, `make_photo`, DV497) with the manifest's and the prisoner's
 pictures; the list defines `PHYSICAL_STATUSES`, `MENTAL_STATUSES` and `WANTED_STATUSES`; `STRIP_HTML_FULL` and `strip_html_full`
@@ -4143,7 +4121,6 @@ pictures; the list defines `PHYSICAL_STATUSES`, `MENTAL_STATUSES` and `WANTED_ST
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `computer/records/security.dm:40-45`, `:394-532` | the console's USB port and its circuit components (`arrest_console_data`, `arrest_console_arrest`): the integrated circuits are not ported, the components stay inert | a circuit's USB cable on the console | with the integrated circuits (`modules/wiremod`) | `game/machinery/computer/records/security.cs` |
 | `security.dm:228`, `:240`, `:258`, `:265`, `warrant.dm:132`, `carbon/human/human.dm:340`, `:353` | `SSblackbox.ReportCitation`: the database's citation table (comments, translation rules 13) | every crime and citation written, edited or paid | with the database (not planned) | `security.cs`, `warrant.cs`, `human.cs` |
 | `computer/records/records.dm:11` | `isAdminGhostAI`: an admin ghost or AI's view of a console it is not logged in to | an admin observing | with the admin tools | `game/machinery/computer/records/records.cs` |
 | `effects/wanted_poster.dm:71` (DV498) | the mugshot on a hung wanted or missing poster: its overlay's recipe, a dressed human's flat picture shifted and cropped, is longer than a resource (512 bytes, `Limits.MaxResourceBytes`), so the poster shows its paper and header only (the rolled poster is tg's sprite) | hanging a printed poster | the owner's choice: a larger resource cap or flat pictures carried another way | `game/objects/effects/wanted_poster.cs` |
@@ -4158,7 +4135,6 @@ Translated: `machinery/teleporter.dm`, `computer/teleporter.dm` (:1-264), `items
 
 | tg reference | what | when it matters | ported with | C# file |
 |---|---|---|---|---|
-| `computer/teleporter.dm:28`, `:266-326` | the console's USB port and its teleporter control circuit component (set and list targets from a circuit) | a circuit plugged into the console | the integrated circuits | `game/machinery/computer/teleporter.cs` |
 | `machinery/teleporter.dm:87-88` | in Moth Week (`check_holidays(MOTH_WEEK)`) the uncalibrated jump makes a moth: the moth species is not ported, so the fly stands in | an uncalibrated jump in Moth Week (July) | the moth species | `game/machinery/teleporter.cs` |
 
 ## 201. The limb grower, the organ harvester and the lazarus injector (gaps MD3, D333)
@@ -4174,8 +4150,7 @@ Translated whole: `game/machinery/limbgrower.dm` (with the Limbgrower window), `
 
 ## 197. The medical wall machines and the kiosk (gaps MD1, D333)
 Translated whole: `machinery/wall_healer.dm`, `machinery/medical_kiosk.dm`, `scanners/scanner_wand.dm`, `machinery/wall_vitals.dm` up to
-its circuit component (`:1-530`); the kiosk's and the first aid station's boards (`machine_circuitboards.dm:875`, `:1993`).
-| `wall_vitals.dm:98`, `:532-668` | the vitals display's circuit USB port and the vitals monitor circuit component (`Dm.Deferred`) | a USB cable on the display | wiremod (5.3 circuits) | `game/machinery/wall_vitals.cs` |
+its circuit component (`:1-530`; the circuit component and its USB port came with gaps CI3); the kiosk's and the first aid station's boards (`machine_circuitboards.dm:875`, `:1993`).
 | `wall_healer.dm:187`, `wall_vitals.dm:333` | the reservoirs' and the screen outline's `emissive_appearance` (DEVIATION DV12) | the machines' overlays | with the emissive plane | the mirror files above |
 ## 200. The communications console (gaps CM1, D333)
 Translated: the rest of `computer/communications.dm` but what the table lists: the shuttle purchases (`purchaseShuttle`, the catalogue page
@@ -4417,7 +4392,6 @@ bedsheets and their bin, the syndicate crate's key and the tram plate stay live-
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `signboards/_signboard.dm:173-200` (`MouseEntered`, `MouseExited`, `update_text`) | the text over a written signboard: tg gives the hovering client a private image whose maptext (Grand9K Pixel, 6 pt) shows the text above the board; the server makes the image and puts it in `client.images` as tg does, but the 3D client draws no private image's maptext (it draws maptext for the status displays only), so the text is read on examine | a written signboard looked at | a client change: drawing a private image's maptext (stopped and reported, as the brief asks) | `game/objects/structures/signboards/_signboard.cs` |
-| `signboards/holosign.dm:25`, `:60`, `:162-236`; `reflector.dm:271-300` | the holographic signboard's and the reflector's circuit components (`/obj/item/circuit_component/holo_signboard`, `/obj/item/circuit_component/reflector`) and the USB port the sign makes; the sign text's glow in the dark (`emissive_appearance`, DV12) | a USB cable or a circuit on a holographic signboard or a reflector | the integrated circuits (wiremod, inert); DV12 | `.../signboards/holosign.cs`, `game/objects/structures/reflector.cs` |
 | `traps.dm:99-181` | the bounty trap (`/obj/structure/trap/stun/hunter`, `/obj/item/bountytrap`, its radio mistyped as a type by the converter): a fugitive hunter's tool that only fugitives set off | the fugitive hunters' gear | the antagonists (D333), with the fugitive hunters | `game/objects/structures/traps.cs` |
 | `antagonists/fugitive/hunters/hunter_gear.dm` (all but the bouncy castle); `antagonists/cult/cult_structures.dm:91-` | the fugitive hunters' gear (the bounty locator, the psychic's and the bounty hunters' items); the cult's structures (the altar, forge, archives, pylon and their item dispensers) | the fugitive hunters, the cult | the antagonists (D333) | `modules/antagonists/fugitive/hunters/hunter_gear.cs`, `modules/antagonists/cult/cult_structures.cs` |
 | `maintenance.dm:22`, `:39` | the moisture trap's fish safe storage and fishing spot (`Dm.Deferred`; the fish source's `prob(50)` is drawn) | a fishing rod cast into a moisture trap | fishing | `game/objects/structures/maintenance.cs` |
@@ -4579,7 +4553,7 @@ Translated whole: `modules/mod/` `mod_control.dm`, `mod_activation.dm`, `mod_act
 `mod_link.dm`, `mod_paint.dm`, `mod_part.dm`, `mod_theme.dm` (the themes' suit procs: `set_up_parts`, `set_skin`, the mining theme's
 suit storage), `mod_types.dm`, `mod_ui.dm` and `modules/modules_visor.dm`; the procs of `mod_core.dm` but the soul shard cores, of
 `mod_clothes.dm`, `modules/_module.dm` and `modules/modules_general.dm` but the leaves below, and of
-`modular_computers/file_system/programs/maintenance/modsuit.dm` but its circuit component; `datums/components/hat_stabilizer.dm`,
+`modular_computers/file_system/programs/maintenance/modsuit.dm` (its circuit component since gaps CI3); `datums/components/hat_stabilizer.dm`,
 `datums/wires/mod.dm`, `client/preferences/mod_select.dm`, the jump jet status effect (`status_effects/buffs.dm`),
 `parse_slot_flags` (`__HELPERS/mobs.dm`), `GLOB.mining_suit_allowed` (`__DEFINES/inventory.dm:311`), the MOD units' steal objectives
 (`objective_items.dm:325`, `:889`, `:900`, `:911`, `:933`), `get_loose_container`'s sealed-suit check (`__HELPERS/atoms.dm:332-340`)
@@ -4601,7 +4575,6 @@ shock absorber and the advanced EMP shield modules. Leaves:
 | `mod_clothes.dm:51` | `handle_cerulean_modsuit` (`Dm.NotTranslated`): the Cerulean species' modsuit icon, cut and blended on the server (icon procs), read only by `cerulean_update_icons.dm` | a Cerulean in a MODsuit (the species is not ported) | M10+ (species) | `modules/mod/mod_clothes.cs` |
 | `modules_general.dm:1013`, `:1020-1022`, `:1027-1028` | the fishing glove's rod on the gloves (`/datum/component/profound_fisher`) and its easier fishing (`/datum/element/adjust_fishing_difficulty`), `Dm.Deferred`: fishing is not ported (the rod is still put in and taken out) | a fishing glove module with a rod | fishing (M10+) | `modules/mod/modules/modules_general.cs` |
 | `modules_general.dm:983` | the fishing glove's examine names the rod where tg draws its picture (`icon2html`): the 3D client's chat is text | examining the module | chat icons (M10+) | `modules/mod/modules/modules_general.cs` |
-| `programs/maintenance/modsuit.dm:52-71` | the MODsuit Control program's circuit component (`circuit_component/mod_program/modsuit_control`): wiremod (section 164; the MOD circuit module and its pinned action came with gaps CI2) | a circuit shell on a computer | gaps CI3 (D339) | (generated, inert) |
 | `mod_theme.dm:94-104` | the themes' `New` checking that a theme's variants are made of the same parts: `#ifdef UNIT_TESTS` only, inactive in production as in tg | the unit test build | none | `modules/mod/mod_theme.cs` (comment) |
 | `mod_types.dm` (the ninja's, the wizard's, the syndicate's, the ERT's and the admins' suits) | those suits are live with their themes and, since gaps MO2, with their modules but the space ninja's (the seam above; the uplink sells the Syndicate, elite and infiltrator suits since gaps MO2); the antagonists' outfits and spells that hand them out are the antagonists' (D333) | an admin's spawn | the antagonists (D333) | `modules/mod/mod_types.cs`, `modules/uplink/uplink_items.cs` |
 | `suit_storage_unit.dm:736` | `disable_modlink` on a unit whose MOD slot holds a backpack (tg's slot takes either): tg calls `mod.disable_modlink()` on it and runtimes; the port skips it | a backpack in a suit storage unit whose communication wires are cut | none (a tg runtime) | `game/machinery/suit_storage_unit.cs` |
@@ -5009,8 +4982,6 @@ an explicit null, so `trigger = null` on a port still triggers `input_received`;
 its receiver reads the data list as the sender; the wire bundle calls its parent's `removed_from` twice; tg's `circuit_component_category`
 unit test loops over typepaths with a typed variable and so checks nothing (the port checks every design). The editor's adaptation is
 DV571. Left:
-| `datums/components/usb_port.dm` and every machine's USB circuit component (`circuit_component/*` in the machines' own files, `mod_program/*`) | the USB port of the machines and computers and their circuit components | a USB cable on a machine | gaps CI3 (D339) | (inert) |
-| `modules/research/designs/wiremod/` | the designs of CI3's components and shells (the BCI's components, the BCI implanter; DV384: not offered while their item is inert) | a printer | gaps CI3 (D339) | (generated) |
 | `wiremod/core/duplicator.dm:223` (`load_circuit`'s input) | tg's "File" option, and a JSON longer than one console line: the console's `load-circuit JSON` is a player's console line, capped at 200 bytes by the protocol (`Limits.MaxDevCommandBytes`), so only a small circuit is typed in | an admin loading a saved circuit | the admin tools | `src/Server/ServerHost.Console.cs` |
 | `wiremod/core/integrated_circuit.dm:417`, `:680` (`isAdminGhostAI`) | an admin ghost or AI's admin view of a circuit (is_admin, printing any component): the port's admin ghost check is a GAP, false | an admin ghost | the admin tools | `modules/wiremod/core/integrated_circuit.cs` |
 
@@ -5046,8 +5017,35 @@ equipment action's design has no category. The sound emitter's backwards playbac
 | `wiremod/components/admin/proccall.dm` | the proc call component and its ProcCallMenu window: an admin's circuit calls any proc (`WrapAdminProcCall`, `HandleUserlessProcCall`, the admin proc-call machinery, not ported) | an admin circuit | the admin tools (D275) | (inert) |
 | `wiremod/components/admin/sdql.dm` | the SDQL component: an admin's circuit runs an SDQL2 query (SDQL2 is not ported) | an admin circuit | the admin tools (D275) | (inert) |
 | `wiremod/shell/airlock.dm:43` (`isAdminGhostAI`) | an admin ghost or AI opens a circuit airlock: the port's admin ghost check is a GAP, false | an admin ghost | the admin tools | `modules/wiremod/shell/airlock.cs` |
-| `wiremod/components/action/camera.dm` (`circuit_component/mod_program/camera`) | the camera program's circuit component (a computer's program) | a circuit shell on a computer | gaps CI3 (D339) | (inert) |
-| `wiremod/components/atom/remotecam.dm` (`remotecam/bci`) | the BCI's remote camera | a BCI | gaps CI3 (D339) | (inert) |
-| `wiremod/shell/brain_computer_interface.dm`, `shell/implant.dm`, `components/bci/`, `components/usb/`, `datums/components/usb_port.dm`, the machines' and programs' circuit components outside `wiremod/` (section 231's row) | the brain-computer interface, the implant shell and its charge action, the BCI's components, the USB components and port; the BCI shell assembly stays refused (DV570) | a BCI, a USB cable | gaps CI3 (D339) | (inert) |
-| `research/designs/wiremod/shell_designs.dm:137` (`wiremod_shell/implant`) | the circuit implant case is offered (its type has no procs of its own, so it is live) but holds the inert circuit implant | a printer | gaps CI3 (D339) | (generated) |
 | the shells' 3D models | the bot, money bot, drone, server, dispenser, scanner, keyboard, gun, undertile and wallmount shells keep tg's sprites; the circuit scanner gate is drawn by the scanner gate's model (required-models.md) | the shells | the models | `godot/assets/models/models.json` |
+
+## 233. The brain-computer interface and the machines' USB components (gaps CI3, D333, D339, D341)
+Translated whole: `wiremod/shell/brain_computer_interface.dm` (the BCI with its core component, its message to the owner, its charge
+from a cyborg recharger or an electric shock and its charge action, the owner's speech through it; the BCI implanter with its occupant,
+the BCI loaded and swapped, the arm raising, working and falling, the implant put in or taken back into storage, the ejection, the
+lock and the deconstruction), `shell/implant.dm` (the circuit implant, its core and charge action; the implant case and its design hold
+a live implant), `wiremod/components/bci/` (the install detector, reagent injector, thought listener, VOX, and `hud/`: the object, bar
+and counter overlays, drawn as one-person alternate appearances that only the owner's client gets, and the target intercept),
+`components/usb/` (the emitter, temperature pump and thermomachine components), the BCI's remote camera (`remotecam/bci` of
+`components/atom/remotecam.dm`), `datums/components/usb_port.dm` (the cable plugged in, the machine's components added to the circuit,
+the cable's beam to the shell, the snap past two tiles), `computer_circuit.dm` (a computer's shell with its programs' components) and
+every machine's and program's own circuit component and USB port: the holographic signboard, the reflector, the vitals display, the
+launchpad, the fire alarm, the status displays, the light switch, the crew, teleporter, security records and advanced camera consoles
+(the latter's circuit action and intercept), the conveyor switch, the hydroponics tray, the synthesizer and headphones, the slime
+processor, the emitter, the meter, the pumps, the digital valve, the temperature pump, the thermomachine, the air alarm
+(`air_alarm_circuit.dm`); the status display, NT Pay, signal commander, messenger (`messenger_circuit.dm`), notepad, radar, WireCarp,
+cyborg monitor, MODsuit control and spectre meter apps. With them: `censor_ic_filter_for_pdas` (no word filter is loaded, so a
+message passes as with none configured). The research designs of the BCI, its components, the implanter's board and the circuit
+implant are offered (DV384) and the techweb's circuit nodes unlock them; the BCI's assembly finishes into the BCI (DV570 retired).
+Kept as tg has them: the circuit implant's core clears its implant before it reads its host when its shell goes; the bar overlay
+keeps its overlays under the target but looks them up by the target's weak reference; the arrest console's component never fills its
+options; the air alarm's vent component writes the external pressure into the internal bound; the messenger component reads the
+receiving computer, not the sender's, for a messenger's device; the radar component reads the turf of the selected reference text;
+the implanter's `close_machine` takes the user as its density. No new adaptation. Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `game/machinery/quantum_pad.dm:27`, `:198-252` | the quantum pad's USB port and circuit component (`circuit_component/quantumpad`): the quantum pad is not ported | a USB cable on a quantum pad | gaps OR1 (the quantum pad) | (inert) |
+| `game/machinery/computer/launchpad_control.dm:16`, `:18-60` | the launchpad console's USB port and its component (`circuit_component/bluespace_launchpad/console`): the console is not ported (the launchpad's own component is live) | a USB cable on a launchpad console | gaps OR1 (the launchpad console) | (inert) |
+| `wiremod/components/action/camera.dm:62-120` (`circuit_component/mod_program/camera`) | the camera app's circuit component: the app (`programs/maintenance/camera.dm`) waits for NtOS's image files (section 164) | a circuit in a computer with the camera app | with NtOS's image files | (inert) |
+| `messenger_program.dm:633-636` | the circuit sender's creator in the PDA message's talk log tag (`shell_addendum`): the talk log | a circuit's PDA message | the logs (M10) | `programs/messenger/messenger_program.cs` |
+| the BCI's and the circuit implant's 3D model | the chip keeps tg's sprite (`circuits.dmi` state `bci`) until its model is made (required-models.md); the implanter has its model (`machines/medical_wave/bci_implanter.glb`) | a BCI in hand or on the floor | the 3D models | — |

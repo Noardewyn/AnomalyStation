@@ -667,12 +667,6 @@
 /obj/machinery/porta_turret_cover	attack_hulk	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 
 ## Syndicate N1c (D316): the advanced camera console and the navigation computer; not-translated.md section 148.
-/obj/machinery/computer/camera_advanced	register_usb_port	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	on_port_register_object	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	add_circuit_action	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	remove_circuit_action	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	on_port_unregister_object	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	unregister_usb_port	M10+	deferred	the circuits' USB port (wiremod, not ported)
 
 ## Syndicate N2a (D316): the nukie arsenal's guns; not-translated.md section 149.
 

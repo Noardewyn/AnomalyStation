@@ -84,13 +84,15 @@ public class CircuitShellTests
         }
         Assert.True(feed.Any("You finish"), string.Join(" | ", feed.Chat.Select(c => c.Html)));
 
-        // the brain-computer interface's assembly waits for its shell
+        // the brain-computer interface's assembly finishes into the implant with its circuit shell
         var bci = r.In(() => Dm.@new<obj_item_shell_bci>(locate(5, 4, 1)));
         r.Step(2);
         r.In(() => Waiting.Detach(bci.screwdriver_act(bob, screwdriver)));
         r.Step(6 * Second);
-        Assert.False(r.In(() => QDELETED(bci)));
-        Assert.True(feed.Any("balloon: not ported yet"));
+        Assert.True(r.In(() => QDELETED(bci)));
+        atom implant = r.In(() => locate(5, 4, 1).dm_held.FirstOrDefault(a => a is obj_item_organ_cyberimp_bci));
+        Assert.NotNull(implant);
+        Assert.NotNull(CircuitTestRig.ShellOf(r, implant));
         r.AssertNoRuntimes();
     }
 

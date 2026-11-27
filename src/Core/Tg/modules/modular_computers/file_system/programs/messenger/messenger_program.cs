@@ -13,7 +13,7 @@ namespace Anomaly.Core.Tg;
 // window, sending a message through telecomms (the message server), receiving it with the PDA's ring and the chat line with its
 // (Reply) link, the quick reply and the mass message of the captain's and the lawyer's PDAs. Left out with a comment or a marked
 // leaf: the photos (the image files and their assets: the camera), the silicons' photo and their AI tracking link, the talk log
-// and the bomber log (the logs, M10) and the shell circuit's sender (wiremod). The virus disks' send and the rigged messages (the
+// and the bomber log with the shell circuit's sender in its tag (the logs, M10). The virus disks' send and the rigged messages (the
 // Detomatix disk, its explode choice) came with syndicate G3d (D316). The var block is generated (D111).
 
 // tg: code/modules/modular_computers/file_system/programs/messenger/messenger_program.dm:2  #define TEMP_IMAGE_PATH(ref),
@@ -755,7 +755,7 @@ public partial class datum_computer_file_program_messenger : datum_computer_file
             return FALSE;
         }
 
-        // the shell circuit's creator (:633-636: wiremod) and the talk log (source.log_talk(message, LOG_PDA, ...), :639) and the
+        // the shell circuit's creator for the talk log's tag (:633-636) and the talk log (source.log_talk(message, LOG_PDA, ...), :639) and the
         // bomber log of a rigged message (:640-641): the logs (M10)
 
         // Show it to ghosts

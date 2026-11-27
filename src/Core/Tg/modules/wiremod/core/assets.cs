@@ -28,7 +28,7 @@ public static partial class GlobalProcs
 
         foreach (Type component_type in Dm.each<Type>(subtypesof(typeof(obj_item_circuit_component))))
         {
-            // DEVIATION(DV568): a component whose type is not live (CI2's and CI3's, or tg's abstract ones a subtype completes)
+            // DEVIATION(DV568): a component whose type is not live (one whose machine is not ported, or tg's abstract ones a subtype completes)
             // is left out: its ports are not made, and the printers do not print it (DV384).
             if (InertSeam.IsInertType(component_type))
                 continue;

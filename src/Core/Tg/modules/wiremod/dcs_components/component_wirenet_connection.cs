@@ -174,6 +174,8 @@ public partial class datum_component_circuit_component_wirenet_connection : datu
         obj_structure_cable node = our_turf.get_cable_node(cable_layer) as obj_structure_cable;
         if (node == null)
         {
+            // tg attaches connect_loc to the component itself, which the element refuses (connect_loc.dm:10, a datum is not a
+            // movable): an anchored shell with no cable under it runtimes here, as in tg
             Waiting.NoSleep(AddElement(typeof(datum_element_connect_loc), turf_connections));
             return;
         }

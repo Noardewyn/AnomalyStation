@@ -4661,9 +4661,9 @@ public partial class obj_item_mod_module_night
     }
 }
 
-// tg: code/modules/wiremod/shell/module.dm:2
-[DmPath("/obj/item/mod/module/circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mod_module_circuit : obj_item_mod_module
+// tg: code/modules/wiremod/shell/module.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/mod/module/circuit")]
+public partial class obj_item_mod_module_circuit
 {
     public datum_component_shell shell; // tg: code/modules/wiremod/shell/module.dm:12
     public DmList action_comps; // tg: code/modules/wiremod/shell/module.dm:15

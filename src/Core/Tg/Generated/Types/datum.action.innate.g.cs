@@ -2421,9 +2421,9 @@ public partial class datum_action_innate_flight
     }
 }
 
-// tg: code/modules/wiremod/components/action/equpiment_action.dm:95
-[DmPath("/datum/action/innate/circuit_equipment_action"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_circuit_equipment_action : datum_action_innate
+// tg: code/modules/wiremod/components/action/equpiment_action.dm:95 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/circuit_equipment_action")]
+public partial class datum_action_innate_circuit_equipment_action
 {
     public obj_item_circuit_component_equipment_action action_comp; // tg: code/modules/wiremod/components/action/equpiment_action.dm:100
 
@@ -2437,9 +2437,9 @@ public partial class datum_action_innate_circuit_equipment_action : datum_action
     }
 }
 
-// tg: code/modules/wiremod/components/action/mmi.dm:4
-[DmPath("/datum/action/innate/mmi_comp_disconnect"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_mmi_comp_disconnect : datum_action_innate
+// tg: code/modules/wiremod/components/action/mmi.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/mmi_comp_disconnect")]
+public partial class datum_action_innate_mmi_comp_disconnect
 {
     // tg: code/modules/wiremod/components/action/mmi.dm:4
     public datum_action_innate_mmi_comp_disconnect()

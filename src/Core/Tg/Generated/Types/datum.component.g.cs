@@ -3606,9 +3606,9 @@ public partial class datum_component_shuttle_cling
     public float not_clinging_move_delay = 2; // tg: code/datums/components/shuttle_cling.dm:28
 }
 
-// tg: code/datums/components/shuttle_move_deferred_checks.dm:3
-[DmPath("/datum/component/shuttle_move_deferred_checks"), DmGeneratedOnly, DmInert]
-public partial class datum_component_shuttle_move_deferred_checks : datum_component
+// tg: code/datums/components/shuttle_move_deferred_checks.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/shuttle_move_deferred_checks")]
+public partial class datum_component_shuttle_move_deferred_checks
 {
     public DmList targets; // tg: code/datums/components/shuttle_move_deferred_checks.dm:5
     public object check; // tg: code/datums/components/shuttle_move_deferred_checks.dm:8
@@ -5826,9 +5826,9 @@ public partial class datum_component_circuit_component_add_port
     }
 }
 
-// tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:2
-[DmPath("/datum/component/boris_circuit_container"), DmGeneratedOnly, DmInert]
-public partial class datum_component_boris_circuit_container : datum_component
+// tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/component/boris_circuit_container")]
+public partial class datum_component_boris_circuit_container
 {
     public DmList mmi_components; // tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:3
     public datum_weakref indicator_weakref; // tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:4

@@ -1179,9 +1179,9 @@ public partial class obj_item_circuit_component_compare
     }
 }
 
-// tg: code/modules/wiremod/components/atom/health_state.dm:8
-[DmPath("/obj/item/circuit_component/compare/health_state"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_compare_health_state : obj_item_circuit_component_compare
+// tg: code/modules/wiremod/components/atom/health_state.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/compare/health_state")]
+public partial class obj_item_circuit_component_compare_health_state
 {
     public datum_port_input input_port; // tg: code/modules/wiremod/components/atom/health_state.dm:13
     public datum_port_input_option state_option; // tg: code/modules/wiremod/components/atom/health_state.dm:16
@@ -1196,9 +1196,9 @@ public partial class obj_item_circuit_component_compare_health_state : obj_item_
     }
 }
 
-// tg: code/modules/wiremod/components/id/access_checker.dm:2
-[DmPath("/obj/item/circuit_component/compare/access"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_compare_access : obj_item_circuit_component_compare
+// tg: code/modules/wiremod/components/id/access_checker.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/compare/access")]
+public partial class obj_item_circuit_component_compare_access
 {
     public datum_port_input subject_accesses; // tg: code/modules/wiremod/components/id/access_checker.dm:7
     public datum_port_input required_accesses; // tg: code/modules/wiremod/components/id/access_checker.dm:10
@@ -1383,9 +1383,9 @@ public partial class obj_item_circuit_component_module_output
     }
 }
 
-// tg: code/modules/wiremod/components/action/camera.dm:2
-[DmPath("/obj/item/circuit_component/camera"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_camera : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/camera.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/camera")]
+public partial class obj_item_circuit_component_camera
 {
     public datum_port_output photographed_atom; // tg: code/modules/wiremod/components/action/camera.dm:7
     public datum_port_output picture_taken; // tg: code/modules/wiremod/components/action/camera.dm:9
@@ -1405,9 +1405,9 @@ public partial class obj_item_circuit_component_camera : obj_item_circuit_compon
     }
 }
 
-// tg: code/modules/wiremod/components/action/equpiment_action.dm:2
-[DmPath("/obj/item/circuit_component/equipment_action"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_equipment_action : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/equpiment_action.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/equipment_action")]
+public partial class obj_item_circuit_component_equipment_action
 {
     public datum_port_input_option icon_options; // tg: code/modules/wiremod/components/action/equpiment_action.dm:7
     public datum_port_input button_name; // tg: code/modules/wiremod/components/action/equpiment_action.dm:10
@@ -1431,9 +1431,9 @@ public partial class obj_item_circuit_component_equipment_action : obj_item_circ
     }
 }
 
-// tg: code/modules/wiremod/components/action/laserpointer.dm:7
-[DmPath("/obj/item/circuit_component/laserpointer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_laserpointer : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/laserpointer.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/laserpointer")]
+public partial class obj_item_circuit_component_laserpointer
 {
     public datum_port_input target_input; // tg: code/modules/wiremod/components/action/laserpointer.dm:13
     public datum_port_input image_pixel_x; // tg: code/modules/wiremod/components/action/laserpointer.dm:14
@@ -1451,9 +1451,9 @@ public partial class obj_item_circuit_component_laserpointer : obj_item_circuit_
     }
 }
 
-// tg: code/modules/wiremod/components/action/light.dm:7
-[DmPath("/obj/item/circuit_component/light"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_light : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/light.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/light")]
+public partial class obj_item_circuit_component_light
 {
     public datum_port_input red; // tg: code/modules/wiremod/components/action/light.dm:12
     public datum_port_input green; // tg: code/modules/wiremod/components/action/light.dm:13
@@ -1473,9 +1473,9 @@ public partial class obj_item_circuit_component_light : obj_item_circuit_compone
     }
 }
 
-// tg: code/modules/wiremod/components/action/mmi.dm:22
-[DmPath("/obj/item/circuit_component/mmi"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_mmi : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/mmi.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/mmi")]
+public partial class obj_item_circuit_component_mmi
 {
     public datum_port_input message; // tg: code/modules/wiremod/components/action/mmi.dm:28
     public datum_port_input send; // tg: code/modules/wiremod/components/action/mmi.dm:30
@@ -1506,9 +1506,9 @@ public partial class obj_item_circuit_component_mmi : obj_item_circuit_component
     }
 }
 
-// tg: code/modules/wiremod/components/action/pathfind.dm:7
-[DmPath("/obj/item/circuit_component/pathfind"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_pathfind : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/pathfind.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/pathfind")]
+public partial class obj_item_circuit_component_pathfind
 {
     public datum_port_input input_X; // tg: code/modules/wiremod/components/action/pathfind.dm:12
     public datum_port_input input_Y; // tg: code/modules/wiremod/components/action/pathfind.dm:13
@@ -1534,9 +1534,9 @@ public partial class obj_item_circuit_component_pathfind : obj_item_circuit_comp
     }
 }
 
-// tg: code/modules/wiremod/components/action/pull.dm:7
-[DmPath("/obj/item/circuit_component/pull"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_pull : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/pull.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/pull")]
+public partial class obj_item_circuit_component_pull
 {
     public datum_port_input target; // tg: code/modules/wiremod/components/action/pull.dm:12
 
@@ -1550,9 +1550,9 @@ public partial class obj_item_circuit_component_pull : obj_item_circuit_componen
     }
 }
 
-// tg: code/modules/wiremod/components/action/radio.dm:10
-[DmPath("/obj/item/circuit_component/radio"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_radio : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/radio.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/radio")]
+public partial class obj_item_circuit_component_radio
 {
     public datum_port_input_option public_options; // tg: code/modules/wiremod/components/action/radio.dm:15
     public datum_port_input freq; // tg: code/modules/wiremod/components/action/radio.dm:18
@@ -1572,9 +1572,9 @@ public partial class obj_item_circuit_component_radio : obj_item_circuit_compone
     }
 }
 
-// tg: code/modules/wiremod/components/action/soundemitter.dm:7
-[DmPath("/obj/item/circuit_component/soundemitter"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_soundemitter : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/soundemitter.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/soundemitter")]
+public partial class obj_item_circuit_component_soundemitter
 {
     public datum_port_input_option sound_file; // tg: code/modules/wiremod/components/action/soundemitter.dm:13
     public datum_port_input volume; // tg: code/modules/wiremod/components/action/soundemitter.dm:16
@@ -1596,9 +1596,9 @@ public partial class obj_item_circuit_component_soundemitter : obj_item_circuit_
     }
 }
 
-// tg: code/modules/wiremod/components/action/speech.dm:7
-[DmPath("/obj/item/circuit_component/speech"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_speech : obj_item_circuit_component
+// tg: code/modules/wiremod/components/action/speech.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/speech")]
+public partial class obj_item_circuit_component_speech
 {
     public datum_port_input message; // tg: code/modules/wiremod/components/action/speech.dm:13
     public datum_port_input quietmode; // tg: code/modules/wiremod/components/action/speech.dm:15
@@ -1614,9 +1614,9 @@ public partial class obj_item_circuit_component_speech : obj_item_circuit_compon
     }
 }
 
-// tg: code/modules/wiremod/components/admin/animate.dm:5
-[DmPath("/obj/item/circuit_component/begin_animation"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_begin_animation : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/animate.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/begin_animation")]
+public partial class obj_item_circuit_component_begin_animation
 {
     public datum_port_input_option atom_or_filter; // tg: code/modules/wiremod/components/admin/animate.dm:11
     public datum_port_input filter_target; // tg: code/modules/wiremod/components/admin/animate.dm:14
@@ -1636,9 +1636,9 @@ public partial class obj_item_circuit_component_begin_animation : obj_item_circu
     }
 }
 
-// tg: code/modules/wiremod/components/admin/animate.dm:98
-[DmPath("/obj/item/circuit_component/animation_step"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_animation_step : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/animate.dm:98 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/animation_step")]
+public partial class obj_item_circuit_component_animation_step
 {
     public datum_port_input animation_variables; // tg: code/modules/wiremod/components/admin/animate.dm:104
     public datum_port_input animation_time; // tg: code/modules/wiremod/components/admin/animate.dm:106
@@ -1655,9 +1655,9 @@ public partial class obj_item_circuit_component_animation_step : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/components/admin/filter.dm:145
-[DmPath("/obj/item/circuit_component/filter_helper"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_filter_helper : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/filter.dm:145 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/filter_helper")]
+public partial class obj_item_circuit_component_filter_helper
 {
     public datum_port_input_option filter_type_port; // tg: code/modules/wiremod/components/admin/filter.dm:150
     public object current_filter_type; // tg: code/modules/wiremod/components/admin/filter.dm:151
@@ -1681,9 +1681,9 @@ public partial class obj_item_circuit_component_filter_helper : obj_item_circuit
     }
 }
 
-// tg: code/modules/wiremod/components/admin/filter.dm:189
-[DmPath("/obj/item/circuit_component/filter_adder"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_filter_adder : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/filter.dm:189 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/filter_adder")]
+public partial class obj_item_circuit_component_filter_adder
 {
     public datum_port_input target_port; // tg: code/modules/wiremod/components/admin/filter.dm:194
     public datum_port_input filter_name; // tg: code/modules/wiremod/components/admin/filter.dm:195
@@ -1709,9 +1709,9 @@ public partial class obj_item_circuit_component_filter_adder : obj_item_circuit_
     }
 }
 
-// tg: code/modules/wiremod/components/admin/filter.dm:241
-[DmPath("/obj/item/circuit_component/filter_remover"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_filter_remover : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/filter.dm:241 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/filter_remover")]
+public partial class obj_item_circuit_component_filter_remover
 {
     public datum_port_input target_port; // tg: code/modules/wiremod/components/admin/filter.dm:246
     public datum_port_input filter_name; // tg: code/modules/wiremod/components/admin/filter.dm:247
@@ -1726,9 +1726,9 @@ public partial class obj_item_circuit_component_filter_remover : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/components/admin/filter.dm:261
-[DmPath("/obj/item/circuit_component/bitflag_helper"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_bitflag_helper : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/filter.dm:261 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/bitflag_helper")]
+public partial class obj_item_circuit_component_bitflag_helper
 {
     public datum_port_input_option bitflag_port; // tg: code/modules/wiremod/components/admin/filter.dm:267
     public object current_bitflag; // tg: code/modules/wiremod/components/admin/filter.dm:268
@@ -1752,9 +1752,9 @@ public partial class obj_item_circuit_component_bitflag_helper : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/components/admin/getvar.dm:7
-[DmPath("/obj/item/circuit_component/get_variable"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_get_variable : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/getvar.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/get_variable")]
+public partial class obj_item_circuit_component_get_variable
 {
     public datum_port_input_option getvar_options; // tg: code/modules/wiremod/components/admin/getvar.dm:13
     public datum_port_input entity; // tg: code/modules/wiremod/components/admin/getvar.dm:16
@@ -1772,9 +1772,9 @@ public partial class obj_item_circuit_component_get_variable : obj_item_circuit_
     }
 }
 
-// tg: code/modules/wiremod/components/admin/input_request.dm:11
-[DmPath("/obj/item/circuit_component/input_request"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_input_request : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/input_request.dm:11 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/input_request")]
+public partial class obj_item_circuit_component_input_request
 {
     public datum_port_input_option input_options; // tg: code/modules/wiremod/components/admin/input_request.dm:17
     public datum_port_input entity; // tg: code/modules/wiremod/components/admin/input_request.dm:20
@@ -1822,9 +1822,9 @@ public partial class obj_item_circuit_component_proccall : obj_item_circuit_comp
     }
 }
 
-// tg: code/modules/wiremod/components/admin/save_shell.dm:7
-[DmPath("/obj/item/circuit_component/save_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_save_shell : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/save_shell.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/save_shell")]
+public partial class obj_item_circuit_component_save_shell
 {
     public datum_port_output on_loaded; // tg: code/modules/wiremod/components/admin/save_shell.dm:13
     public atom_movable loaded_shell; // tg: code/modules/wiremod/components/admin/save_shell.dm:15
@@ -1856,9 +1856,9 @@ public partial class obj_item_circuit_component_sdql_operation : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/components/admin/setvar.dm:7
-[DmPath("/obj/item/circuit_component/set_variable"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_set_variable : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/setvar.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/set_variable")]
+public partial class obj_item_circuit_component_set_variable
 {
     public datum_port_input resolve_weakrefs; // tg: code/modules/wiremod/components/admin/setvar.dm:13
     public datum_port_input entity; // tg: code/modules/wiremod/components/admin/setvar.dm:16
@@ -1875,9 +1875,9 @@ public partial class obj_item_circuit_component_set_variable : obj_item_circuit_
     }
 }
 
-// tg: code/modules/wiremod/components/admin/spawn.dm:7
-[DmPath("/obj/item/circuit_component/spawn_atom"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_spawn_atom : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/spawn.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/spawn_atom")]
+public partial class obj_item_circuit_component_spawn_atom
 {
     public datum_port_input input_path; // tg: code/modules/wiremod/components/admin/spawn.dm:13
     public datum_port_input spawn_at; // tg: code/modules/wiremod/components/admin/spawn.dm:16
@@ -1894,9 +1894,9 @@ public partial class obj_item_circuit_component_spawn_atom : obj_item_circuit_co
     }
 }
 
-// tg: code/modules/wiremod/components/admin/to_type.dm:7
-[DmPath("/obj/item/circuit_component/to_type"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_to_type : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/to_type.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/to_type")]
+public partial class obj_item_circuit_component_to_type
 {
     public datum_port_input input_path; // tg: code/modules/wiremod/components/admin/to_type.dm:13
     public datum_port_output type_output; // tg: code/modules/wiremod/components/admin/to_type.dm:16
@@ -1911,9 +1911,9 @@ public partial class obj_item_circuit_component_to_type : obj_item_circuit_compo
     }
 }
 
-// tg: code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:10
-[DmPath("/obj/item/circuit_component/signal_handler"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_signal_handler : obj_item_circuit_component
+// tg: code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/signal_handler")]
+public partial class obj_item_circuit_component_signal_handler
 {
     public datum_port_input_option signal_handler_options; // tg: code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:16
     public datum_port_input_option signal_id; // tg: code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:19
@@ -1951,9 +1951,9 @@ public partial class obj_item_circuit_component_signal_handler : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/components/atom/direction.dm:7
-[DmPath("/obj/item/circuit_component/direction"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_direction : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/direction.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/direction")]
+public partial class obj_item_circuit_component_direction
 {
     public datum_port_input input_port; // tg: code/modules/wiremod/components/atom/direction.dm:12
     public datum_port_output output; // tg: code/modules/wiremod/components/atom/direction.dm:15
@@ -1974,9 +1974,9 @@ public partial class obj_item_circuit_component_direction : obj_item_circuit_com
     }
 }
 
-// tg: code/modules/wiremod/components/atom/gps.dm:7
-[DmPath("/obj/item/circuit_component/gps"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_gps : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/gps.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/gps")]
+public partial class obj_item_circuit_component_gps
 {
     public datum_port_output x_pos; // tg: code/modules/wiremod/components/atom/gps.dm:12
     public datum_port_output y_pos; // tg: code/modules/wiremod/components/atom/gps.dm:13
@@ -1992,9 +1992,9 @@ public partial class obj_item_circuit_component_gps : obj_item_circuit_component
     }
 }
 
-// tg: code/modules/wiremod/components/atom/health.dm:7
-[DmPath("/obj/item/circuit_component/health"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_health : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/health.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/health")]
+public partial class obj_item_circuit_component_health
 {
     public datum_port_input input_port; // tg: code/modules/wiremod/components/atom/health.dm:12
     public datum_port_output brute; // tg: code/modules/wiremod/components/atom/health.dm:15
@@ -2014,9 +2014,9 @@ public partial class obj_item_circuit_component_health : obj_item_circuit_compon
     }
 }
 
-// tg: code/modules/wiremod/components/atom/hear.dm:7
-[DmPath("/obj/item/circuit_component/hear"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_hear : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/hear.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/hear")]
+public partial class obj_item_circuit_component_hear
 {
     public datum_port_input on; // tg: code/modules/wiremod/components/atom/hear.dm:12
     public datum_port_output message_port; // tg: code/modules/wiremod/components/atom/hear.dm:15
@@ -2034,9 +2034,9 @@ public partial class obj_item_circuit_component_hear : obj_item_circuit_componen
     }
 }
 
-// tg: code/modules/wiremod/components/atom/matscanner.dm:7
-[DmPath("/obj/item/circuit_component/matscanner"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_matscanner : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/matscanner.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/matscanner")]
+public partial class obj_item_circuit_component_matscanner
 {
     public datum_port_input input_port; // tg: code/modules/wiremod/components/atom/matscanner.dm:14
     public datum_port_input break_down_alloys; // tg: code/modules/wiremod/components/atom/matscanner.dm:16
@@ -2053,9 +2053,9 @@ public partial class obj_item_circuit_component_matscanner : obj_item_circuit_co
     }
 }
 
-// tg: code/modules/wiremod/components/atom/pinpointer.dm:7
-[DmPath("/obj/item/circuit_component/pinpointer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_pinpointer : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/pinpointer.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/pinpointer")]
+public partial class obj_item_circuit_component_pinpointer
 {
     public datum_port_input target; // tg: code/modules/wiremod/components/atom/pinpointer.dm:11
     public datum_port_output x_pos; // tg: code/modules/wiremod/components/atom/pinpointer.dm:13
@@ -2074,9 +2074,9 @@ public partial class obj_item_circuit_component_pinpointer : obj_item_circuit_co
     }
 }
 
-// tg: code/modules/wiremod/components/atom/reagentscanner.dm:7
-[DmPath("/obj/item/circuit_component/reagentscanner"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_reagentscanner : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/reagentscanner.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/reagentscanner")]
+public partial class obj_item_circuit_component_reagentscanner
 {
     public datum_port_input input_port; // tg: code/modules/wiremod/components/atom/reagentscanner.dm:14
     public datum_port_output result; // tg: code/modules/wiremod/components/atom/reagentscanner.dm:16
@@ -2092,9 +2092,9 @@ public partial class obj_item_circuit_component_reagentscanner : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/components/atom/remotecam.dm:13
-[DmPath("/obj/item/circuit_component/remotecam"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_remotecam : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/remotecam.dm:13 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/remotecam")]
+public partial class obj_item_circuit_component_remotecam
 {
     public datum_port_input start; // tg: code/modules/wiremod/components/atom/remotecam.dm:19
     public datum_port_input stop; // tg: code/modules/wiremod/components/atom/remotecam.dm:21
@@ -2148,9 +2148,9 @@ public partial class obj_item_circuit_component_remotecam_bci : obj_item_circuit
     }
 }
 
-// tg: code/modules/wiremod/components/atom/remotecam.dm:295
-[DmPath("/obj/item/circuit_component/remotecam/drone"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_remotecam_drone : obj_item_circuit_component_remotecam
+// tg: code/modules/wiremod/components/atom/remotecam.dm:295 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/remotecam/drone")]
+public partial class obj_item_circuit_component_remotecam_drone
 {
     // tg: code/modules/wiremod/components/atom/remotecam.dm:295
     public obj_item_circuit_component_remotecam_drone()
@@ -2161,9 +2161,9 @@ public partial class obj_item_circuit_component_remotecam_drone : obj_item_circu
     }
 }
 
-// tg: code/modules/wiremod/components/atom/remotecam.dm:300
-[DmPath("/obj/item/circuit_component/remotecam/airlock"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_remotecam_airlock : obj_item_circuit_component_remotecam
+// tg: code/modules/wiremod/components/atom/remotecam.dm:300 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/remotecam/airlock")]
+public partial class obj_item_circuit_component_remotecam_airlock
 {
     // tg: code/modules/wiremod/components/atom/remotecam.dm:300
     public obj_item_circuit_component_remotecam_airlock()
@@ -2176,9 +2176,9 @@ public partial class obj_item_circuit_component_remotecam_airlock : obj_item_cir
     }
 }
 
-// tg: code/modules/wiremod/components/atom/remotecam.dm:309
-[DmPath("/obj/item/circuit_component/remotecam/polaroid"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_remotecam_polaroid : obj_item_circuit_component_remotecam
+// tg: code/modules/wiremod/components/atom/remotecam.dm:309 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/remotecam/polaroid")]
+public partial class obj_item_circuit_component_remotecam_polaroid
 {
     // tg: code/modules/wiremod/components/atom/remotecam.dm:309
     public obj_item_circuit_component_remotecam_polaroid()
@@ -2191,9 +2191,9 @@ public partial class obj_item_circuit_component_remotecam_polaroid : obj_item_ci
     }
 }
 
-// tg: code/modules/wiremod/components/atom/self.dm:7
-[DmPath("/obj/item/circuit_component/self"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_self : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/self.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/self")]
+public partial class obj_item_circuit_component_self
 {
     public datum_port_output output; // tg: code/modules/wiremod/components/atom/self.dm:12
     public datum_port_output shell_received; // tg: code/modules/wiremod/components/atom/self.dm:15
@@ -2207,9 +2207,9 @@ public partial class obj_item_circuit_component_self : obj_item_circuit_componen
     }
 }
 
-// tg: code/modules/wiremod/components/atom/species.dm:7
-[DmPath("/obj/item/circuit_component/species"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_species : obj_item_circuit_component
+// tg: code/modules/wiremod/components/atom/species.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/species")]
+public partial class obj_item_circuit_component_species
 {
     public datum_port_input input_port; // tg: code/modules/wiremod/components/atom/species.dm:12
     public datum_port_output output; // tg: code/modules/wiremod/components/atom/species.dm:15
@@ -2429,9 +2429,9 @@ public partial class obj_item_circuit_component_target_intercept : obj_item_circ
     }
 }
 
-// tg: code/modules/wiremod/components/id/access_reader.dm:2
-[DmPath("/obj/item/circuit_component/id_access_reader"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_id_access_reader : obj_item_circuit_component
+// tg: code/modules/wiremod/components/id/access_reader.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/id_access_reader")]
+public partial class obj_item_circuit_component_id_access_reader
 {
     public datum_port_input target; // tg: code/modules/wiremod/components/id/access_reader.dm:7
     public datum_port_output access_port; // tg: code/modules/wiremod/components/id/access_reader.dm:10
@@ -2447,9 +2447,9 @@ public partial class obj_item_circuit_component_id_access_reader : obj_item_circ
     }
 }
 
-// tg: code/modules/wiremod/components/id/getter.dm:2
-[DmPath("/obj/item/circuit_component/id_getter"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_id_getter : obj_item_circuit_component
+// tg: code/modules/wiremod/components/id/getter.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/id_getter")]
+public partial class obj_item_circuit_component_id_getter
 {
     public datum_port_input target; // tg: code/modules/wiremod/components/id/getter.dm:7
     public datum_port_input prioritize_hands; // tg: code/modules/wiremod/components/id/getter.dm:10
@@ -2466,9 +2466,9 @@ public partial class obj_item_circuit_component_id_getter : obj_item_circuit_com
     }
 }
 
-// tg: code/modules/wiremod/components/id/info_reader.dm:2
-[DmPath("/obj/item/circuit_component/id_info_reader"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_id_info_reader : obj_item_circuit_component
+// tg: code/modules/wiremod/components/id/info_reader.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/id_info_reader")]
+public partial class obj_item_circuit_component_id_info_reader
 {
     public datum_port_input target; // tg: code/modules/wiremod/components/id/info_reader.dm:7
     public datum_port_output name_port; // tg: code/modules/wiremod/components/id/info_reader.dm:10
@@ -2737,9 +2737,9 @@ public partial class obj_item_circuit_component_list_literal
     }
 }
 
-// tg: code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:10
-[DmPath("/obj/item/circuit_component/list_literal/ntnet_send"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_list_literal_ntnet_send : obj_item_circuit_component_list_literal
+// tg: code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/list_literal/ntnet_send")]
+public partial class obj_item_circuit_component_list_literal_ntnet_send
 {
     public datum_port_input enc_key; // tg: code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:15
 
@@ -2768,9 +2768,9 @@ public partial class obj_item_circuit_component_list_literal_nfc_send
     }
 }
 
-// tg: code/modules/wiremod/components/wirenet/send_literal.dm:2
-[DmPath("/obj/item/circuit_component/list_literal/wirenet_send"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_list_literal_wirenet_send : obj_item_circuit_component_list_literal
+// tg: code/modules/wiremod/components/wirenet/send_literal.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/list_literal/wirenet_send")]
+public partial class obj_item_circuit_component_list_literal_wirenet_send
 {
     public float cable_layer = 2; // tg: code/modules/wiremod/components/wirenet/send_literal.dm:14
     public datum_powernet connected_powernet; // tg: code/modules/wiremod/components/wirenet/send_literal.dm:17
@@ -2971,9 +2971,9 @@ public partial class obj_item_circuit_component_trigonometry
     }
 }
 
-// tg: code/modules/wiremod/components/ntnet/ntnet_receive.dm:7
-[DmPath("/obj/item/circuit_component/ntnet_receive"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_ntnet_receive : obj_item_circuit_component
+// tg: code/modules/wiremod/components/ntnet/ntnet_receive.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/ntnet_receive")]
+public partial class obj_item_circuit_component_ntnet_receive
 {
     public datum_port_input_option list_options; // tg: code/modules/wiremod/components/ntnet/ntnet_receive.dm:14
     public datum_port_output data_package; // tg: code/modules/wiremod/components/ntnet/ntnet_receive.dm:17
@@ -2989,9 +2989,9 @@ public partial class obj_item_circuit_component_ntnet_receive : obj_item_circuit
     }
 }
 
-// tg: code/modules/wiremod/components/ntnet/ntnet_send.dm:8
-[DmPath("/obj/item/circuit_component/ntnet_send"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_ntnet_send : obj_item_circuit_component
+// tg: code/modules/wiremod/components/ntnet/ntnet_send.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/ntnet_send")]
+public partial class obj_item_circuit_component_ntnet_send
 {
     public datum_port_input_option list_options; // tg: code/modules/wiremod/components/ntnet/ntnet_send.dm:15
     public datum_port_input data_package; // tg: code/modules/wiremod/components/ntnet/ntnet_send.dm:18
@@ -3007,9 +3007,9 @@ public partial class obj_item_circuit_component_ntnet_send : obj_item_circuit_co
     }
 }
 
-// tg: code/modules/wiremod/components/sensors/pressuresensor.dm:7
-[DmPath("/obj/item/circuit_component/pressuresensor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_pressuresensor : obj_item_circuit_component
+// tg: code/modules/wiremod/components/sensors/pressuresensor.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/pressuresensor")]
+public partial class obj_item_circuit_component_pressuresensor
 {
     public datum_port_output result; // tg: code/modules/wiremod/components/sensors/pressuresensor.dm:14
 
@@ -3023,9 +3023,9 @@ public partial class obj_item_circuit_component_pressuresensor : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/components/sensors/tempsensor.dm:7
-[DmPath("/obj/item/circuit_component/tempsensor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_tempsensor : obj_item_circuit_component
+// tg: code/modules/wiremod/components/sensors/tempsensor.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/tempsensor")]
+public partial class obj_item_circuit_component_tempsensor
 {
     public datum_port_output result; // tg: code/modules/wiremod/components/sensors/tempsensor.dm:14
 
@@ -3039,9 +3039,9 @@ public partial class obj_item_circuit_component_tempsensor : obj_item_circuit_co
     }
 }
 
-// tg: code/modules/wiremod/components/sensors/view_sensor.dm:8
-[DmPath("/obj/item/circuit_component/view_sensor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_view_sensor : obj_item_circuit_component
+// tg: code/modules/wiremod/components/sensors/view_sensor.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/view_sensor")]
+public partial class obj_item_circuit_component_view_sensor
 {
     public datum_port_input range; // tg: code/modules/wiremod/components/sensors/view_sensor.dm:17
     public datum_port_output result; // tg: code/modules/wiremod/components/sensors/view_sensor.dm:20
@@ -3435,9 +3435,9 @@ public partial class obj_item_circuit_component_wire_bundle
     }
 }
 
-// tg: code/modules/wiremod/components/wirenet/receive.dm:2
-[DmPath("/obj/item/circuit_component/wirenet_receive"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_wirenet_receive : obj_item_circuit_component
+// tg: code/modules/wiremod/components/wirenet/receive.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/wirenet_receive")]
+public partial class obj_item_circuit_component_wirenet_receive
 {
     public float cable_layer = 2; // tg: code/modules/wiremod/components/wirenet/receive.dm:14
     public datum_port_input_option list_options; // tg: code/modules/wiremod/components/wirenet/receive.dm:17
@@ -3461,9 +3461,9 @@ public partial class obj_item_circuit_component_wirenet_receive : obj_item_circu
     }
 }
 
-// tg: code/modules/wiremod/components/wirenet/send.dm:2
-[DmPath("/obj/item/circuit_component/wirenet_send"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_wirenet_send : obj_item_circuit_component
+// tg: code/modules/wiremod/components/wirenet/send.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/wirenet_send")]
+public partial class obj_item_circuit_component_wirenet_send
 {
     public float cable_layer = 2; // tg: code/modules/wiremod/components/wirenet/send.dm:14
     public datum_powernet connected_powernet; // tg: code/modules/wiremod/components/wirenet/send.dm:17
@@ -3488,9 +3488,9 @@ public partial class obj_item_circuit_component_wirenet_send : obj_item_circuit_
     }
 }
 
-// tg: code/modules/wiremod/shell/airlock.dm:42
-[DmPath("/obj/item/circuit_component/airlock"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_airlock : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/airlock.dm:42 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/airlock")]
+public partial class obj_item_circuit_component_airlock
 {
     public obj_machinery_door_airlock attached_airlock; // tg: code/modules/wiremod/shell/airlock.dm:46
     public datum_port_input bolt; // tg: code/modules/wiremod/shell/airlock.dm:49
@@ -3512,9 +3512,9 @@ public partial class obj_item_circuit_component_airlock : obj_item_circuit_compo
     }
 }
 
-// tg: code/modules/wiremod/shell/airlock.dm:138
-[DmPath("/obj/item/circuit_component/airlock_access_event"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_airlock_access_event : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/airlock.dm:138 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/airlock_access_event")]
+public partial class obj_item_circuit_component_airlock_access_event
 {
     public obj_machinery_door_airlock attached_airlock; // tg: code/modules/wiremod/shell/airlock.dm:143
     public datum_port_input open_airlock; // tg: code/modules/wiremod/shell/airlock.dm:146
@@ -3530,9 +3530,9 @@ public partial class obj_item_circuit_component_airlock_access_event : obj_item_
     }
 }
 
-// tg: code/modules/wiremod/shell/assembly.dm:96
-[DmPath("/obj/item/circuit_component/assembly_input"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_assembly_input : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/assembly.dm:96 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/assembly_input")]
+public partial class obj_item_circuit_component_assembly_input
 {
     public datum_port_output signal; // tg: code/modules/wiremod/shell/assembly.dm:99
 
@@ -3544,9 +3544,9 @@ public partial class obj_item_circuit_component_assembly_input : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/shell/assembly.dm:115
-[DmPath("/obj/item/circuit_component/assembly_output"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_assembly_output : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/assembly.dm:115 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/assembly_output")]
+public partial class obj_item_circuit_component_assembly_output
 {
     public obj_item_assembly attached_assembly; // tg: code/modules/wiremod/shell/assembly.dm:118
     public datum_port_input signal; // tg: code/modules/wiremod/shell/assembly.dm:120
@@ -3559,9 +3559,9 @@ public partial class obj_item_circuit_component_assembly_output : obj_item_circu
     }
 }
 
-// tg: code/modules/wiremod/shell/bot.dm:25
-[DmPath("/obj/item/circuit_component/bot"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_bot : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/bot.dm:25 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/bot")]
+public partial class obj_item_circuit_component_bot
 {
     public datum_port_output signal; // tg: code/modules/wiremod/shell/bot.dm:29
     public datum_port_output entity; // tg: code/modules/wiremod/shell/bot.dm:31
@@ -3626,9 +3626,9 @@ public partial class obj_item_circuit_component_controller
     }
 }
 
-// tg: code/modules/wiremod/shell/dispenser.dm:96
-[DmPath("/obj/item/circuit_component/dispenser_bot"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_dispenser_bot : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/dispenser.dm:96 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/dispenser_bot")]
+public partial class obj_item_circuit_component_dispenser_bot
 {
     public datum_port_output item_list; // tg: code/modules/wiremod/shell/dispenser.dm:100
     public datum_port_output item; // tg: code/modules/wiremod/shell/dispenser.dm:102
@@ -3653,9 +3653,9 @@ public partial class obj_item_circuit_component_dispenser_bot : obj_item_circuit
     }
 }
 
-// tg: code/modules/wiremod/shell/dispenser.dm:174
-[DmPath("/obj/item/circuit_component/vendor_component"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_vendor_component : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/dispenser.dm:174 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/vendor_component")]
+public partial class obj_item_circuit_component_vendor_component
 {
     public obj_structure_dispenser_bot attached_bot; // tg: code/modules/wiremod/shell/dispenser.dm:179
     public datum_port_input item_to_vend; // tg: code/modules/wiremod/shell/dispenser.dm:182
@@ -3671,9 +3671,9 @@ public partial class obj_item_circuit_component_vendor_component : obj_item_circ
     }
 }
 
-// tg: code/modules/wiremod/shell/drone.dm:49
-[DmPath("/obj/item/circuit_component/bot_circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_bot_circuit : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/drone.dm:49 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/bot_circuit")]
+public partial class obj_item_circuit_component_bot_circuit
 {
     public datum_port_input north; // tg: code/modules/wiremod/shell/drone.dm:53
     public datum_port_input east; // tg: code/modules/wiremod/shell/drone.dm:54
@@ -3693,9 +3693,9 @@ public partial class obj_item_circuit_component_bot_circuit : obj_item_circuit_c
     }
 }
 
-// tg: code/modules/wiremod/shell/gun.dm:45
-[DmPath("/obj/item/circuit_component/wiremod_gun"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_wiremod_gun : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/gun.dm:45 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/wiremod_gun")]
+public partial class obj_item_circuit_component_wiremod_gun
 {
     public datum_port_output signal; // tg: code/modules/wiremod/shell/gun.dm:48
     public datum_port_output shooter; // tg: code/modules/wiremod/shell/gun.dm:50
@@ -3728,9 +3728,9 @@ public partial class obj_item_circuit_component_implant_core : obj_item_circuit_
     }
 }
 
-// tg: code/modules/wiremod/shell/keyboard.dm:21
-[DmPath("/obj/item/circuit_component/keyboard_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_keyboard_shell : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/keyboard.dm:21 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/keyboard_shell")]
+public partial class obj_item_circuit_component_keyboard_shell
 {
     public datum_port_output signal; // tg: code/modules/wiremod/shell/keyboard.dm:25
     public datum_port_output entity; // tg: code/modules/wiremod/shell/keyboard.dm:27
@@ -3744,9 +3744,9 @@ public partial class obj_item_circuit_component_keyboard_shell : obj_item_circui
     }
 }
 
-// tg: code/modules/wiremod/shell/module.dm:140
-[DmPath("/obj/item/circuit_component/mod_adapter_core"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_mod_adapter_core : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/module.dm:140 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/mod_adapter_core")]
+public partial class obj_item_circuit_component_mod_adapter_core
 {
     public obj_item_mod_module attached_module; // tg: code/modules/wiremod/shell/module.dm:144
     public datum_port_input_option module_to_select; // tg: code/modules/wiremod/shell/module.dm:147
@@ -3770,9 +3770,9 @@ public partial class obj_item_circuit_component_mod_adapter_core : obj_item_circ
     }
 }
 
-// tg: code/modules/wiremod/shell/moneybot.dm:43
-[DmPath("/obj/item/circuit_component/money_dispenser"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_money_dispenser : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/moneybot.dm:43 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/money_dispenser")]
+public partial class obj_item_circuit_component_money_dispenser
 {
     public float dispense_cd = 0; // tg: code/modules/wiremod/shell/moneybot.dm:48
     public float dispense_cd_length = 5; // tg: code/modules/wiremod/shell/moneybot.dm:51
@@ -3790,9 +3790,9 @@ public partial class obj_item_circuit_component_money_dispenser : obj_item_circu
     }
 }
 
-// tg: code/modules/wiremod/shell/moneybot.dm:113
-[DmPath("/obj/item/circuit_component/money_bot"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_money_bot : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/moneybot.dm:113 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/money_bot")]
+public partial class obj_item_circuit_component_money_bot
 {
     public obj_structure_money_bot attached_bot; // tg: code/modules/wiremod/shell/moneybot.dm:114
     public datum_port_output total_money; // tg: code/modules/wiremod/shell/moneybot.dm:118
@@ -3808,9 +3808,9 @@ public partial class obj_item_circuit_component_money_bot : obj_item_circuit_com
     }
 }
 
-// tg: code/modules/wiremod/shell/scanner.dm:26
-[DmPath("/obj/item/circuit_component/wiremod_scanner"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_wiremod_scanner : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/scanner.dm:26 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/wiremod_scanner")]
+public partial class obj_item_circuit_component_wiremod_scanner
 {
     public datum_port_output signal; // tg: code/modules/wiremod/shell/scanner.dm:30
     public datum_port_output attacker; // tg: code/modules/wiremod/shell/scanner.dm:33
@@ -3824,9 +3824,9 @@ public partial class obj_item_circuit_component_wiremod_scanner : obj_item_circu
     }
 }
 
-// tg: code/modules/wiremod/shell/scanner_gate.dm:40
-[DmPath("/obj/item/circuit_component/scanner_gate"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuit_component_scanner_gate : obj_item_circuit_component
+// tg: code/modules/wiremod/shell/scanner_gate.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/item/circuit_component/scanner_gate")]
+public partial class obj_item_circuit_component_scanner_gate
 {
     public datum_port_output scanned; // tg: code/modules/wiremod/shell/scanner_gate.dm:43
     public obj_structure_scanner_gate_shell attached_gate; // tg: code/modules/wiremod/shell/scanner_gate.dm:45

@@ -515,7 +515,7 @@ public class CircuitsCI1Tests
         });
 
         // a component the port has not translated is skipped with an error (DV569)
-        string inert = json.Replace("/obj/item/circuit_component/tostring", "/obj/item/circuit_component/speech");
+        string inert = json.Replace("/obj/item/circuit_component/tostring", "/obj/item/circuit_component/bci_core");
         r.In(() =>
         {
             var copy = Dm.@new<obj_item_integrated_circuit>(locate(6, 6, 1));
@@ -550,8 +550,8 @@ public class CircuitsCI1Tests
     }
 
     // tg: code/modules/unit_tests/circuit_component_category.dm (tg's loop walks typepaths with a typed var and checks nothing: the
-    // live components' designs are checked here; tg's data leaves two components Unassigned, the trigger variable setter (live,
-    // listed here as tg has it) and CI2's equipment action (inert))
+    // live components' designs are checked here; tg's data leaves two components Unassigned, the trigger variable setter and the
+    // equipment action, both live and skipped here as tg has them)
     [Fact]
     public void EveryComponentDesignHasACategory()
     {
@@ -562,7 +562,8 @@ public class CircuitsCI1Tests
             foreach (Type design in Dm.each<Type>(subtypesof(typeof(datum_design_component))))
             {
                 Type path = Dm.initial(design, (datum_design d) => d.build_path) as Type;
-                if (path == null || InertSeam.IsInertType(path) || path == typeof(obj_item_circuit_component_variable_setter_trigger))
+                if (path == null || InertSeam.IsInertType(path) || path == typeof(obj_item_circuit_component_variable_setter_trigger)
+                    || path == typeof(obj_item_circuit_component_equipment_action))
                     continue;
                 checkedDesigns++;
                 Assert.False(Dm.eq(Dm.initial(path, (obj_item_circuit_component c) => c.category), COMPONENT_DEFAULT_CATEGORY),

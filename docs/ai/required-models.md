@@ -351,6 +351,15 @@ sprite, a standing picture turned by its `dir`, until its model exists.
 - **The shell assemblies** (gaps CI1, `wiremod/shell/shell_items.dm`, `icons/obj/science/circuits.dmi` states `setup_medium_box-open`,
   `setup_large-open`, `setup_medium_med-open`, `setup_stationary-open`, `setup_drone_arms-open`, `bci-open`, and the airlock and scanner
   gate assemblies' own icons): the open frames of the shells, finished with a screwdriver. Meanwhile the client draws tg's sprites.
+- **The circuit shells** (gaps CI2, `wiremod/shell/`, `icons/obj/science/circuits.dmi`): the bot (`setup_medium_box`, a floor box with
+  a push button), the money bot (`setup_large`, with a cash slot), the circuit drone (`setup_medium_med`, a small walking mob), the
+  server (`setup_stationary`, a dense rack), the dispenser (`setup_drone_arms`, with its arms and a tray), the handheld scanner
+  (`setup_small`) and keyboard (`setup_small_keyboard`), the circuit gun (`setup_gun`), the under-floor shell (`undertile`) and the
+  wall mount with its frame (`wallmount`, `wallmount_assembly`). Each lights with its light component (`light_color`). Meanwhile the
+  client draws tg's sprites.
+- **The circuit scanner gate** (gaps CI2, `wiremod/shell/scanner_gate.dm`, `icons/obj/machines/scangate.dmi` state `scangate_black` with
+  the `passive` and `scanning` overlays): tg's black gate. Meanwhile it is drawn by the security scanner gate's model
+  (`station_props/station_extras/weapon_scanner_gate.glb`), whose scan field shows the two lines; a black variant is wanted.
 
 ## Assemblies
 

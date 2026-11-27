@@ -2535,9 +2535,9 @@ public partial class mob_living_blood_worm_host : mob_living
     }
 }
 
-// tg: code/modules/wiremod/shell/drone.dm:7
-[DmPath("/mob/living/circuit_drone"), DmGeneratedOnly, DmInert]
-public partial class mob_living_circuit_drone : mob_living
+// tg: code/modules/wiremod/shell/drone.dm:7 (the var block of a hand-written class)
+[DmPath("/mob/living/circuit_drone")]
+public partial class mob_living_circuit_drone
 {
     // tg: code/modules/wiremod/shell/drone.dm:7
     public mob_living_circuit_drone()

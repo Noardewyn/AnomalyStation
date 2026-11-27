@@ -16,10 +16,10 @@ namespace Anomaly.Core.Tg;
 //
 // D132 seam (gaps MO1, narrowed by gaps MO2): the MOD modules are translated (gaps MO2) but the space ninja's (modules_ninja.dm, M10+:
 // the ninja's cloak, hacker, weapon recall, energy net, adrenaline boost, EMP pulse, reinforced DNA lock and camera vision, which
-// the ninja's and the administrative suits carry) and the circuit module (wiremod/shell/module.dm, wiremod is not ported), so those
-// module types are inert. Initialize below skips an inert applied module (InertSeam.IsInertType) rather than make it and install
-// it as a base module, and an inert applied core (the soul shard cores, the antagonists', D333) likewise; not-translated.md 219 and
-// 222 have the rows, ModsuitsMO1Tests and ModsuitsMO2Tests pin them.
+// the ninja's and the administrative suits carry), so those module types are inert (the research suit's circuit module,
+// wiremod/shell/module.dm, is live with the circuit shells). Initialize below skips an inert applied module
+// (InertSeam.IsInertType) rather than make it and install it as a base module, and an inert applied core (the soul shard cores,
+// the antagonists', D333) likewise; not-translated.md 219 and 222 have the rows, ModsuitsMO1Tests and ModsuitsMO2Tests pin them.
 
 // tg: code/modules/mod/mod_types.dm:1
 public partial class obj_item_mod_control_pre_equipped : obj_item_mod_control
@@ -45,8 +45,8 @@ public partial class obj_item_mod_control_pre_equipped : obj_item_mod_control
         object dot = base.Initialize(mapload, Dm.forward(__extra, new_theme, new_skin, new_core));
         foreach (Type module_type in Dm.each_cast<Type>(applied_modules))
         {
-            // D132 seam (gaps MO1, narrowed by gaps MO2; removed with the ninja's modules, M10+, and wiremod): an inert module type
-            // (a space ninja's module, the circuit module) is not made and installed as if it were the base module.
+            // D132 seam (gaps MO1, narrowed by gaps MO2; removed with the ninja's modules, M10+): an inert module type (a space
+            // ninja's module) is not made and installed as if it were the base module.
             if (InertSeam.IsInertType(module_type))
                 continue;
             obj_item_mod_module module = Dm.@new(module_type, this) as obj_item_mod_module;

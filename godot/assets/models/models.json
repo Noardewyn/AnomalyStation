@@ -14343,7 +14343,7 @@
     {
       "id": "scanner_gate",
       "icons": ["icons/obj/machines/scangate.dmi"],
-      "states": ["scangate", "scangate_open"],
+      "states": ["scangate", "scangate_open", "scangate_black"],
       "rule": "single",
       "texture": "model",
       "source": {"width": 2.0, "height": 2.0},

@@ -297,6 +297,17 @@ public partial class datum_atom_hud_alternate_appearance_basic_silicons : datum_
     }
 }
 
+// The kind only AIs see (the circuits' B.O.R.I.S. container's tracking mark).
+// tg: code/game/atom/alternate_appearance.dm:175
+public partial class datum_atom_hud_alternate_appearance_basic_ais : datum_atom_hud_alternate_appearance_basic
+{
+    // tg: code/game/atom/alternate_appearance.dm:177
+    public override object mobShouldSee(mob M = null)
+    {
+        return Dm.num(isAI(M));
+    }
+}
+
 // Gaps RG3 (D339): the blessed tiles' glow, seen by whoever has the trait to see them (the chaplain's and the wizard's).
 // tg: code/game/atom/alternate_appearance.dm:194
 public partial class datum_atom_hud_alternate_appearance_basic_blessed_aware : datum_atom_hud_alternate_appearance_basic

@@ -1298,9 +1298,9 @@ public partial class obj_item_assembly_relic_lavaland_revealed { }
 [DmPath("/obj/item/assembly/relic/revealed")]
 public partial class obj_item_assembly_relic_revealed { }
 
-// tg: code/modules/wiremod/shell/assembly.dm:7
-[DmPath("/obj/item/assembly/wiremod"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_wiremod : obj_item_assembly
+// tg: code/modules/wiremod/shell/assembly.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/wiremod")]
+public partial class obj_item_assembly_wiremod
 {
     public atom_movable power_use_proxy; // tg: code/modules/wiremod/shell/assembly.dm:14
 
@@ -46356,13 +46356,13 @@ public partial class obj_item_integrated_circuit_module
 [DmPath("/obj/item/integrated_circuit/loaded")]
 public partial class obj_item_integrated_circuit_loaded { }
 
-// tg: code/modules/wiremod/preset/hello_world.dm:8
-[DmPath("/obj/item/integrated_circuit/loaded/hello_world"), DmGeneratedOnly, DmInert]
-public partial class obj_item_integrated_circuit_loaded_hello_world : obj_item_integrated_circuit_loaded { }
+// tg: code/modules/wiremod/preset/hello_world.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/integrated_circuit/loaded/hello_world")]
+public partial class obj_item_integrated_circuit_loaded_hello_world { }
 
-// tg: code/modules/wiremod/preset/speech_relay.dm:8
-[DmPath("/obj/item/integrated_circuit/loaded/speech_relay"), DmGeneratedOnly, DmInert]
-public partial class obj_item_integrated_circuit_loaded_speech_relay : obj_item_integrated_circuit_loaded { }
+// tg: code/modules/wiremod/preset/speech_relay.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/integrated_circuit/loaded/speech_relay")]
+public partial class obj_item_integrated_circuit_loaded_speech_relay { }
 
 // tg: code/modules/wiremod/core/integrated_circuit.dm:768
 [DmPath("/obj/item/integrated_circuit/admin"), DmGeneratedOnly]
@@ -46460,9 +46460,9 @@ public partial class obj_item_controller
     }
 }
 
-// tg: code/modules/wiremod/shell/keyboard.dm:2
-[DmPath("/obj/item/keyboard_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_item_keyboard_shell : obj_item
+// tg: code/modules/wiremod/shell/keyboard.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/keyboard_shell")]
+public partial class obj_item_keyboard_shell
 {
     // tg: code/modules/wiremod/shell/keyboard.dm:2
     public obj_item_keyboard_shell()
@@ -46487,9 +46487,9 @@ public partial class obj_item_keyboard_shell : obj_item
     }
 }
 
-// tg: code/modules/wiremod/shell/scanner.dm:7
-[DmPath("/obj/item/wiremod_scanner"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wiremod_scanner : obj_item
+// tg: code/modules/wiremod/shell/scanner.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/wiremod_scanner")]
+public partial class obj_item_wiremod_scanner
 {
     // tg: code/modules/wiremod/shell/scanner.dm:7
     public obj_item_wiremod_scanner()
@@ -46698,9 +46698,9 @@ public partial class obj_item_shell_scanner_gate : obj_item_shell
     }
 }
 
-// tg: code/modules/wiremod/shell/undertile.dm:2
-[DmPath("/obj/item/undertile_circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_undertile_circuit : obj_item
+// tg: code/modules/wiremod/shell/undertile.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/undertile_circuit")]
+public partial class obj_item_undertile_circuit
 {
     // tg: code/modules/wiremod/shell/undertile.dm:2
     public obj_item_undertile_circuit()

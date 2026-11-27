@@ -19410,9 +19410,9 @@ public partial class obj_structure_mecha_wreckage_odysseus : obj_structure_mecha
     }
 }
 
-// tg: code/modules/wiremod/shell/bot.dm:7
-[DmPath("/obj/structure/bot"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_bot : obj_structure
+// tg: code/modules/wiremod/shell/bot.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/structure/bot")]
+public partial class obj_structure_bot
 {
     // tg: code/modules/wiremod/shell/bot.dm:7
     public obj_structure_bot()
@@ -19426,9 +19426,9 @@ public partial class obj_structure_bot : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/dispenser.dm:7
-[DmPath("/obj/structure/dispenser_bot"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_dispenser_bot : obj_structure
+// tg: code/modules/wiremod/shell/dispenser.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/structure/dispenser_bot")]
+public partial class obj_structure_dispenser_bot
 {
     public float max_weight = 3; // tg: code/modules/wiremod/shell/dispenser.dm:15
     public float capacity = 20; // tg: code/modules/wiremod/shell/dispenser.dm:16
@@ -19454,9 +19454,9 @@ public partial class obj_structure_dispenser_bot : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/moneybot.dm:7
-[DmPath("/obj/structure/money_bot"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_money_bot : obj_structure
+// tg: code/modules/wiremod/shell/moneybot.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/structure/money_bot")]
+public partial class obj_structure_money_bot
 {
     public float stored_money = 0; // tg: code/modules/wiremod/shell/moneybot.dm:15
     public float locked = 0; // tg: code/modules/wiremod/shell/moneybot.dm:16
@@ -19473,9 +19473,9 @@ public partial class obj_structure_money_bot : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/scanner_gate.dm:2
-[DmPath("/obj/structure/scanner_gate_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_scanner_gate_shell : obj_structure
+// tg: code/modules/wiremod/shell/scanner_gate.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/scanner_gate_shell")]
+public partial class obj_structure_scanner_gate_shell
 {
     public float locked = 0; // tg: code/modules/wiremod/shell/scanner_gate.dm:6
 
@@ -19489,9 +19489,9 @@ public partial class obj_structure_scanner_gate_shell : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/server.dm:8
-[DmPath("/obj/structure/server"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_server : obj_structure
+// tg: code/modules/wiremod/shell/server.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/structure/server")]
+public partial class obj_structure_server
 {
     // tg: code/modules/wiremod/shell/server.dm:8
     public obj_structure_server()
@@ -19505,9 +19505,9 @@ public partial class obj_structure_server : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/wallmount.dm:2
-[DmPath("/obj/structure/wallmount_circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_wallmount_circuit : obj_structure
+// tg: code/modules/wiremod/shell/wallmount.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/wallmount_circuit")]
+public partial class obj_structure_wallmount_circuit
 {
     // tg: code/modules/wiremod/shell/wallmount.dm:2
     public obj_structure_wallmount_circuit()

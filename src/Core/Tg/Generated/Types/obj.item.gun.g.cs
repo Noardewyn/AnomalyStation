@@ -5238,9 +5238,9 @@ public partial class obj_item_gun_energy_taser : obj_item_gun_energy
     }
 }
 
-// tg: code/modules/wiremod/shell/gun.dm:7
-[DmPath("/obj/item/gun/energy/wiremod_gun"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_energy_wiremod_gun : obj_item_gun_energy
+// tg: code/modules/wiremod/shell/gun.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/gun/energy/wiremod_gun")]
+public partial class obj_item_gun_energy_wiremod_gun
 {
     // tg: code/modules/wiremod/shell/gun.dm:7
     public obj_item_gun_energy_wiremod_gun()

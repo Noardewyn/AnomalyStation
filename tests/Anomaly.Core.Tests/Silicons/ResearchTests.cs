@@ -116,7 +116,7 @@ public class ResearchTests
         Assert.Contains(typeof(datum_design_basic_cell), offered);
         Assert.Contains(typeof(datum_design_mod_shell), offered); // the starting Modular Suits node's shell, live since gaps MO1
         Assert.DoesNotContain(typeof(datum_design_ripley_chassis), offered); // DV384: the mechs are inert
-        // a MOD department module (the magboots) is live since gaps MO2; DV384 still hides the circuit module (wiremod)
+        // a MOD department module (the magboots) is live since gaps MO2
         r.In(() => Assert.True(obj_machinery_mecha_part_fabricator.offers_design(SSresearch.techweb_designs[typeof(datum_design_module_mod_magboot)] as datum_design)));
         Assert.DoesNotContain(typeof(datum_design_board_mechfab), offered); // a circuit imprinter's design
 

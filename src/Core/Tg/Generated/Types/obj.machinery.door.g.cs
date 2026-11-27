@@ -1402,9 +1402,9 @@ public partial class obj_machinery_door_airlock_tram
     }
 }
 
-// tg: code/modules/wiremod/shell/airlock.dm:12
-[DmPath("/obj/machinery/door/airlock/shell"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_door_airlock_shell : obj_machinery_door_airlock
+// tg: code/modules/wiremod/shell/airlock.dm:12 (the var block of a hand-written class)
+[DmPath("/obj/machinery/door/airlock/shell")]
+public partial class obj_machinery_door_airlock_shell
 {
     // tg: code/modules/wiremod/shell/airlock.dm:12
     public obj_machinery_door_airlock_shell()

@@ -11,7 +11,8 @@ namespace Anomaly.Core.Tests.Gaps;
 /// <summary>
 /// Gaps package CI1 on the converted MetaStation: Meta's compact remotes and controllers (with their shell and its component), circuit
 /// multitools, component printers (linked to the station's techweb with its circuit designs) and module duplicators boot live, with no
-/// runtime from the circuits' files. Meta's two loaded circuits stay inert (CI2's speech and hear components, not-translated section 231).
+/// runtime from the circuits' files. Meta's two loaded circuits (the presets, with the speech and hear components) boot live too;
+/// CircuitShellMetaTests runs them.
 /// </summary>
 public class CircuitsCI1MetaTests : IClassFixture<MetaWorldFixture>
 {
@@ -58,7 +59,7 @@ public class CircuitsCI1MetaTests : IClassFixture<MetaWorldFixture>
             Assert.Equal(6, things.OfType<obj_item_multitool_circuit>().Count());
             Assert.Equal(2, things.OfType<obj_machinery_component_printer>().Count());
             Assert.Equal(2, things.OfType<obj_machinery_module_duplicator>().Count());
-            Assert.All(things.Where(t => t is not obj_item_integrated_circuit), thing => Assert.False(InertSeam.IsInert(thing), thing.GetType().Name + " is inert"));
+            Assert.All(things, thing => Assert.False(InertSeam.IsInert(thing), thing.GetType().Name + " is inert"));
             Assert.All(things.OfType<obj_item>().Where(t => t is obj_item_compact_remote or obj_item_controller), shell =>
             {
                 var component = shell.GetComponent(typeof(datum_component_shell)) as datum_component_shell;
@@ -71,8 +72,7 @@ public class CircuitsCI1MetaTests : IClassFixture<MetaWorldFixture>
                 Assert.True(Dm.length(printer.current_unlocked_designs) > 20, "the printer offers " + Dm.length(printer.current_unlocked_designs));
                 Assert.NotNull(printer.materials);
             });
-            // the loaded circuits wait for CI2's speech and hear components
-            Assert.All(things.OfType<obj_item_integrated_circuit>(), circuit => Assert.True(InertSeam.IsInert(circuit), circuit.GetType().Name + " is live"));
+            Assert.Equal(4, things.OfType<obj_item_integrated_circuit>().Count());
             Assert.Empty(runtimes);
         }
     }

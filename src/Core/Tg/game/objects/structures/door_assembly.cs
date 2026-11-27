@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // M5 slice 6 (airlocks): the airlock assembly's construction steps (anchoring, wiring, the electronics, glass and mineral
 // plating, the screwdriver finishing the airlock), their reversals, the overlays and name of each state, the transfer to a
 // mineral assembly and the deconstruction. Generated live-partial stubs (docs/ai/specs/live-partial.txt, "M5 slice 6"): examine
-// (M9); E13: rcd_vals and rcd_act (the RCD). The integrated circuit shell of finish_door stays Dm.NotTranslated (wiremod, left
-// out of M5). The var blocks are generated.
+// (M9); E13: rcd_vals and rcd_act (the RCD). finish_door makes the circuit airlock's shell when the electronics ask for it. The
+// var blocks are generated.
 
 // tg: code/game/objects/structures/door_assembly.dm:1
 public partial class obj_structure_door_assembly : obj_structure
@@ -390,10 +390,12 @@ public partial class obj_structure_door_assembly : obj_structure
         door.security_level = 0;
         if (Dm.truthy(electronics.shell))
         {
-            // door.AddComponent(/datum/component/shell, unremovable_circuit_components = list(new /obj/item/circuit_component/airlock,
-            // new /obj/item/circuit_component/airlock_access_event, new /obj/item/circuit_component/remotecam/airlock),
-            // capacity = SHELL_CAPACITY_LARGE, shell_flags = SHELL_FLAG_ALLOW_FAILURE_ACTION|SHELL_FLAG_REQUIRE_ANCHOR)
-            Dm.NotTranslated("code/game/objects/structures/door_assembly.dm:356", "finish_door: the integrated circuit shell (circuits and wiremod, left out of M5; M10+)");
+            await door.AddComponent(
+                typeof(datum_component_shell),
+                Dm.named("unremovable_circuit_components", Dm.list(Dm.@new<obj_item_circuit_component_airlock>(), Dm.@new<obj_item_circuit_component_airlock_access_event>(), Dm.@new<obj_item_circuit_component_remotecam_airlock>())),
+                Dm.named("capacity", SHELL_CAPACITY_LARGE),
+                Dm.named("shell_flags", SHELL_FLAG_ALLOW_FAILURE_ACTION | SHELL_FLAG_REQUIRE_ANCHOR)
+            );
         }
         if (Dm.truthy(electronics.one_access))
             door.req_one_access = electronics.accesses;

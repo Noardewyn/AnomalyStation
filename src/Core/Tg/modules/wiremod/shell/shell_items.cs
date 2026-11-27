@@ -22,9 +22,9 @@ public partial class obj_item_shell : obj_item
     // tg: code/modules/wiremod/shell/shell_items.dm:14
     public override async DmTask<object> screwdriver_act(mob_living user = null, obj_item tool = null)
     {
-        // DEVIATION(DV570): the shells these assemblies finish into are CI2's and CI3's (bots, drones, servers, the airlock, the
-        // dispenser, the BCI, the scanner gate); until one is ported, finishing its assembly is refused with "not ported yet"
-        // (D132) instead of making an inert shell.
+        // DEVIATION(DV570): the brain-computer interface's assembly finishes into the BCI, which is not ported yet; until it is,
+        // finishing that assembly is refused with "not ported yet" (D132) instead of making an inert shell. The other assemblies
+        // finish into their shells as in tg.
         if (shell_to_spawn != null && InertSeam.IsInertType(shell_to_spawn))
         {
             balloon_alert(user, I18n.T("not ported yet"));

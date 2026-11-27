@@ -85,7 +85,9 @@ public partial class obj_item_circuit_component_nfc_receive : obj_item_circuit_c
             return;
 
         datum_weakref @ref = data["port"] as datum_weakref;
-        datum_port_input port = @ref?.resolve() as datum_port_input;
+        // tg types the local as an input port, but the list literal transmitters send their output port: DM does not check the
+        // type, and only the port's datatype is read, so the local is the port base here
+        datum_port port = @ref?.resolve() as datum_port;
         if (port == null)
             return;
 

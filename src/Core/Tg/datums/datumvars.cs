@@ -9,12 +9,37 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// SKELETON: completed with the admin tooling (the VV, view variables, procs: not translated in M0, translation-rules.md
-// 13). Only the slot roots that /datum/weakref overrides are declared, with the signatures of
-// docs/ai/specs/generated/slots.tsv.
+// PARTIAL: only vv_var_blacklist, can_vv_get and vv_edit_var translated (the circuits' Get and Set Variable components read
+// them) and the slot roots that /datum/weakref overrides declared, with the signatures of docs/ai/specs/generated/slots.tsv;
+// the rest is the VV, view variables, admin tooling (translation-rules.md 13).
+
+public partial class datum_controller_global_vars
+{
+    /// Items in this list will not show up in VV
+    // tg: code/datums/datumvars.dm:4  GLOBAL_LIST_INIT(vv_var_blacklist, list(...))
+    public DmList vv_var_blacklist;
+
+    // tg: code/datums/datumvars.dm:4  (GLOBAL_MANAGED(vv_var_blacklist, ...), __DEFINES/__globals.dm:5)
+    public virtual void InitGlobalvv_var_blacklist()
+    {
+        vv_var_blacklist = Dm.list(
+            Dm.kv("faction", TRUE));
+        Dm.append(ref gvars_datum_init_order, "vv_var_blacklist");
+    }
+}
 
 public partial class datum
 {
+    // tg: code/datums/datumvars.dm:7
+    public virtual object can_vv_get(object var_name = null)
+    {
+        if (Dm.eq(var_name, "vars"))
+            return FALSE;
+        if (Dm.@in(var_name, GLOB.vv_var_blacklist))
+            return FALSE;
+        return TRUE;
+    }
+
     /// Called when a var is edited with the new value to change to
     // tg: code/datums/datumvars.dm:15
     public virtual async DmTask<object> vv_edit_var(object var_name = null, object var_value = null)

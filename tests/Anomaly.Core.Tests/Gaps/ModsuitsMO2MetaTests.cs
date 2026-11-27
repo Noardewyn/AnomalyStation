@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tests.Gaps;
 
 /// <summary>
 /// Gaps package MO2 on the converted MetaStation: the twelve MODsuits of the suit storage units carry every module their kind and
-/// theme list, live (the seam keeps out only the research director's circuit module: wiremod is not ported); the loose MOD modules
+/// theme list, live (the research director's circuit module included); the loose MOD modules
 /// (the maintenance loot) are live; no runtime comes from MO2's files.
 /// </summary>
 public class ModsuitsMO2MetaTests : IClassFixture<MetaWorldFixture>
@@ -100,7 +100,7 @@ public class ModsuitsMO2MetaTests : IClassFixture<MetaWorldFixture>
                 _output.WriteLine($"  runtime x{group.Count()}: {group.Key}");
             Assert.Equal(12, mods); // the heads' and departments' units
             Assert.Empty(missing);
-            Assert.All(leftOut, s => Assert.EndsWith("obj_item_mod_module_circuit", s)); // wiremod's, not ported
+            Assert.Empty(leftOut); // the research director's circuit module is live with the circuit shells
             Assert.Empty(inertLoose);
             Assert.Empty(runtimes);
         }

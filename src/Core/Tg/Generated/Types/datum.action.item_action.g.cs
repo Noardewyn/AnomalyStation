@@ -1489,9 +1489,9 @@ public partial class datum_action_item_action_mod_pinnable_module
     }
 }
 
-// tg: code/modules/wiremod/shell/module.dm:97
-[DmPath("/datum/action/item_action/mod/pinnable/circuit"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_mod_pinnable_circuit : datum_action_item_action_mod_pinnable
+// tg: code/modules/wiremod/shell/module.dm:97 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/mod/pinnable/circuit")]
+public partial class datum_action_item_action_mod_pinnable_circuit
 {
     public obj_item_mod_module_circuit module; // tg: code/modules/wiremod/shell/module.dm:101
     public obj_item_circuit_component_equipment_action circuit_component; // tg: code/modules/wiremod/shell/module.dm:104

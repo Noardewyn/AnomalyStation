@@ -79,6 +79,8 @@ public static class TguiInterfaces
         ["ComponentPrinter"] = ComponentPrinter.Render, // gaps CI1
         ["CircuitModule"] = CircuitModule.Render, // gaps CI1
         ["CircuitAdminPanel"] = CircuitAdminPanel.Render, // gaps CI1
+        ["CircuitAccessChecker"] = CircuitAccessChecker.Render,
+        ["CircuitSignalHandler"] = CircuitSignalHandler.Render,
         ["ScannerGate"] = ScannerGate.Render, // gaps SG1
         ["HypnoChair"] = HypnoChair.Render, // gaps SG1
         ["VotePanel"] = VotePanel.Render, // the owner, 2026-11-08: votes

@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tests.Gaps;
 
 /// <summary>
 /// Gaps package MO2 (D333): the MODsuit modules, in a booted toy room with Bob as a player wearing a sealed pre-equipped suit:
-/// every pre-equipped suit carries its live modules (the seam keeps out only the ninja's and the circuit module); the engineering
+/// every pre-equipped suit carries its live modules (the seam keeps out only the ninja's); the engineering
 /// suit's welding visor, radiation protection, head protector, magboots and tether; the atmospheric suit's t-ray and mister; the
 /// medical suits' health analyzer, quick carry, injector and defibrillator; the security suits' magnetic harness, quick cuff, pepper
 /// shoulders, megaphone, criminal capture, projectile dampener and the mirage grenade dispenser; the supply suits' GPS, ore bag,

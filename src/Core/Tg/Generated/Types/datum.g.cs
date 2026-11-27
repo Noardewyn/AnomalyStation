@@ -6747,9 +6747,9 @@ public partial class datum_atom_hud_alternate_appearance_basic_everyone
 [DmPath("/datum/atom_hud/alternate_appearance/basic/silicons")]
 public partial class datum_atom_hud_alternate_appearance_basic_silicons { }
 
-// tg: code/game/atom/alternate_appearance.dm:177
-[DmPath("/datum/atom_hud/alternate_appearance/basic/ais"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_hud_alternate_appearance_basic_ais : datum_atom_hud_alternate_appearance_basic { }
+// tg: code/game/atom/alternate_appearance.dm:177 (the var block of a hand-written class)
+[DmPath("/datum/atom_hud/alternate_appearance/basic/ais")]
+public partial class datum_atom_hud_alternate_appearance_basic_ais { }
 
 // tg: code/game/atom/alternate_appearance.dm:181
 [DmPath("/datum/atom_hud/alternate_appearance/basic/observers"), DmGeneratedOnly, DmInert]
@@ -21940,9 +21940,9 @@ public partial class datum_wires_airlock_cargo : datum_wires_airlock
     }
 }
 
-// tg: code/modules/wiremod/shell/airlock.dm:2
-[DmPath("/datum/wires/airlock/shell"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_airlock_shell : datum_wires_airlock
+// tg: code/modules/wiremod/shell/airlock.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/airlock/shell")]
+public partial class datum_wires_airlock_shell
 {
     // tg: code/modules/wiremod/shell/airlock.dm:2
     public datum_wires_airlock_shell()

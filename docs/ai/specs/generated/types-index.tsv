@@ -295,8 +295,8 @@ proc	/	circle_range	code/__HELPERS/spatial_info.dm:302	center,radius	yes	full	gl
 proc	/	circle_range_turfs	code/__HELPERS/spatial_info.dm:341	center,radius	yes	full	global
 proc	/	circle_view	code/__HELPERS/spatial_info.dm:317	center,radius	no	-	global
 proc	/	circle_view_turfs	code/__HELPERS/spatial_info.dm:355	center,radius	no	-	global
-proc	/	circuit_signal_param	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:9	name,type	no	-	global
-proc	/	circuit_signal_response	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:1	name,bitflag	no	-	global
+proc	/	circuit_signal_param	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:9	name,type	yes	full	global
+proc	/	circuit_signal_response	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:1	name,bitflag	yes	full	global
 proc	/	cleanup_expired_reta_grant	code/modules/reta/reta_system.dm:262	target_dept,origin_dept	yes	full	global
 proc	/	cleanup_ghosts	code/game/objects/effects/anomalies/anomalies_ectoplasm.dm:204	delete_list	yes	full	global
 proc	/	cleanup_overmind_blobs	code/modules/antagonists/blob/overmind.dm:8	dead_overmind	no	-	global
@@ -601,7 +601,7 @@ proc	/	generate_changeling_meteor	code/modules/meteors/meteor_spawning.dm:80	pla
 proc	/	generate_chemwiki_line	code/modules/reagents/chemistry/chem_wiki_render.dm:45	reagent,reaction	no	-	global
 proc	/	generate_chromosome	code/game/objects/items/chromosome.dm:48		yes	full	global
 proc	/	generate_circuit_datatypes	code/modules/wiremod/core/datatypes.dm:4		yes	full	global
-proc	/	generate_circuit_signal_list	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:19		no	-	global
+proc	/	generate_circuit_signal_list	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:19		yes	full	global
 proc	/	generate_code_phrase	code/__HELPERS/names.dm:208	return_list	yes	full	global
 proc	/	generate_cult_rune_types	code/modules/antagonists/cult/runes.dm:8		no	-	global
 proc	/	generate_dummy_lookalike	code/modules/mob/living/carbon/human/dummy.dm:181	slotkey,target	yes	full	global
@@ -611,7 +611,7 @@ proc	/	generate_female_clothing	code/modules/clothing/clothing.dm:545	index,t_co
 proc	/	generate_gas_overlays	code/modules/atmospherics/gasmixtures/gas_types.dm:23	old_offset,new_offset,gas_type	yes	full	global
 proc	/	generate_gene_sequence	code/datums/dna/dna.dm:225	length	yes	full	global
 proc	/	generate_generator_index	code/modules/explorer_drone/loot.dm:4		no	-	global
-proc	/	generate_global_circuit_signal_list	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:50		no	-	global
+proc	/	generate_global_circuit_signal_list	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:50		yes	full	global
 proc	/	generate_global_heretic_tree	code/modules/antagonists/heretic/knowledge/_heretic_paths.dm:150		no	-	global
 proc	/	generate_global_trait_name_map	code/_globalvars/traits/_traits.dm:891		no	-	global
 proc	/	generate_hallucination_weighted_list	code/__HELPERS/hallucinations.dm:130		yes	full	global
@@ -1005,7 +1005,7 @@ proc	/	loadout_list_to_datums	code/modules/loadout/loadout_helpers.dm:66	loadout
 proc	/	loc_name	code/__HELPERS/logging/_logging.dm:253	A	yes	full	global
 proc	/	log_access	code/__HELPERS/logging/game.dm:26	text,data	yes	full	global
 proc	/	log_admin	code/__HELPERS/logging/admin.dm:7	text,data	yes	full	global
-proc	/	log_admin_circuit	code/__HELPERS/logging/admin.dm:13	text,data	no	-	global
+proc	/	log_admin_circuit	code/__HELPERS/logging/admin.dm:13	text,data	yes	full	global
 proc	/	log_admin_private	code/__HELPERS/logging/admin.dm:19	text,data	yes	full	global
 proc	/	log_adminsay	code/__HELPERS/logging/admin.dm:25	text,data	yes	full	global
 proc	/	log_asset	code/__HELPERS/logging/debug.dm:2	text,data	yes	full	global
@@ -1752,7 +1752,7 @@ proc	/datum	clear_filters	code/datums/datum.dm:523		yes	full	proc root
 proc	/datum	selfdelete	code/datums/datum.dm:531		yes	full	proc root
 proc	/datum	dump_harddel_info	code/datums/datum.dm:538		yes	full	proc root
 proc	/datum	CanProcCall	code/datums/datumvars.dm:1	procname	no	-	proc root
-proc	/datum	can_vv_get	code/datums/datumvars.dm:8	var_name	no	-	proc root
+proc	/datum	can_vv_get	code/datums/datumvars.dm:8	var_name	yes	full	proc root
 proc	/datum	vv_edit_var	code/datums/datumvars.dm:16	var_name,var_value	yes	full	proc root
 proc	/datum	vv_get_var	code/datums/datumvars.dm:23	var_name	no	-	proc root
 proc	/datum	can_vv_mark	code/datums/datumvars.dm:29		no	-	proc root
@@ -1900,7 +1900,7 @@ proc	/datum/controller/global_vars	InitGlobalduplicate_forbidden_vars	code/__HEL
 proc	/datum/controller/global_vars	InitGlobalduplicate_forbidden_vars	code/__HELPERS/duplicating.dm:51		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobaldynamic_human_appearances	code/__HELPERS/dynamic_human_icon_gen.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalfileaccess_timer	code/__HELPERS/files.dm:6		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalmaster_filter_info	code/__HELPERS/filters.dm:4		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalmaster_filter_info	code/__HELPERS/filters.dm:4		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalWALLITEMS_INTERIOR	code/__HELPERS/global_lists.dm:158		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalWALLITEMS_EXTERIOR	code/__HELPERS/global_lists.dm:193		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalallowed_money	code/__HELPERS/global_lists.dm:201		yes	full	proc root
@@ -2390,7 +2390,7 @@ proc	/datum/controller/global_vars	InitGlobalsplattable	code/datums/components/f
 proc	/datum/controller/global_vars	InitGlobalfloor_diseases	code/datums/components/food/germ_sensitive.dm:7		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalice_cream_flavours	code/datums/components/food/ice_cream_holder.dm:188		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalGPS_list	code/datums/components/gps.dm:2		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalvv_var_blacklist	code/datums/datumvars.dm:5		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalvv_var_blacklist	code/datums/datumvars.dm:5		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalcursed_vermin_by_stage	code/datums/diseases/verminous_plague.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobaltotal_ui_len_by_block	code/datums/dna/dna.dm:5		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalstandard_mutation_sources	code/datums/dna/dna.dm:7		yes	full	proc root
@@ -2924,10 +2924,10 @@ proc	/datum/controller/global_vars	InitGlobalautodrobe_premium_items	code/module
 proc	/datum/controller/global_vars	InitGlobalautodrobe_contraband_items	code/modules/vending/autodrobe.dm:195		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalall_autodrobe_items	code/modules/vending/autodrobe.dm:212		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalroaches_deployed	code/modules/vending/wardrobes.dm:1		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalwiremod_filter_info	code/modules/wiremod/components/admin/filter.dm:1		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalwiremod_flag_info	code/modules/wiremod/components/admin/filter.dm:84		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalintegrated_circuit_signal_ids	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:17		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalintegrated_circuit_global_signal_ids	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:48		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalwiremod_filter_info	code/modules/wiremod/components/admin/filter.dm:1		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalwiremod_flag_info	code/modules/wiremod/components/admin/filter.dm:84		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalintegrated_circuit_signal_ids	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:17		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalintegrated_circuit_global_signal_ids	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:48		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalcircuit_datatypes	code/modules/wiremod/core/datatypes.dm:2		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalcircuit_dupe_whitelisted_types	code/modules/wiremod/core/duplicator.dm:4		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalintegrated_circuits	code/modules/wiremod/core/integrated_circuit.dm:2		yes	full	proc root
@@ -5761,12 +5761,12 @@ type	/datum/action/innate/shuttledocker_place	/datum/action/innate	code/modules/
 proc	/datum/action/innate/shuttledocker_place	Activate	code/modules/shuttle/shuttle_consoles/navigation_computer.dm:424		yes	full	proc
 type	/datum/action/innate/flight	/datum/action/innate	code/modules/surgery/organs/external/wings/wings.dm:261	live	datum_action_innate_flight	1	0
 proc	/datum/action/innate/flight	Activate	code/modules/surgery/organs/external/wings/wings.dm:266		yes	full	proc
-type	/datum/action/innate/circuit_equipment_action	/datum/action/innate	code/modules/wiremod/components/action/equpiment_action.dm:95	inert	datum_action_innate_circuit_equipment_action	0	0
-proc	/datum/action/innate/circuit_equipment_action	New	code/modules/wiremod/components/action/equpiment_action.dm:102	target,action_comp	no	-	proc
-proc	/datum/action/innate/circuit_equipment_action	Destroy	code/modules/wiremod/components/action/equpiment_action.dm:107		no	-	proc
-proc	/datum/action/innate/circuit_equipment_action	Activate	code/modules/wiremod/components/action/equpiment_action.dm:113		no	-	proc
-type	/datum/action/innate/mmi_comp_disconnect	/datum/action/innate	code/modules/wiremod/components/action/mmi.dm:4	inert	datum_action_innate_mmi_comp_disconnect	0	0
-proc	/datum/action/innate/mmi_comp_disconnect	Trigger	code/modules/wiremod/components/action/mmi.dm:9	clicker,trigger_flags	no	-	proc
+type	/datum/action/innate/circuit_equipment_action	/datum/action/innate	code/modules/wiremod/components/action/equpiment_action.dm:95	live	datum_action_innate_circuit_equipment_action	1	0
+proc	/datum/action/innate/circuit_equipment_action	New	code/modules/wiremod/components/action/equpiment_action.dm:102	target,action_comp	yes	full	proc
+proc	/datum/action/innate/circuit_equipment_action	Destroy	code/modules/wiremod/components/action/equpiment_action.dm:107		yes	full	proc
+proc	/datum/action/innate/circuit_equipment_action	Activate	code/modules/wiremod/components/action/equpiment_action.dm:113		yes	full	proc
+type	/datum/action/innate/mmi_comp_disconnect	/datum/action/innate	code/modules/wiremod/components/action/mmi.dm:4	live	datum_action_innate_mmi_comp_disconnect	1	0
+proc	/datum/action/innate/mmi_comp_disconnect	Trigger	code/modules/wiremod/components/action/mmi.dm:9	clicker,trigger_flags	yes	full	proc
 type	/datum/action/innate/bci_charge_action	/datum/action/innate	code/modules/wiremod/shell/brain_computer_interface.dm:198	inert	datum_action_innate_bci_charge_action	0	0
 proc	/datum/action/innate/bci_charge_action	New	code/modules/wiremod/shell/brain_computer_interface.dm:205	circuit_component	no	-	proc
 proc	/datum/action/innate/bci_charge_action	create_button	code/modules/wiremod/shell/brain_computer_interface.dm:214	viewer	no	-	proc
@@ -7796,11 +7796,11 @@ proc	/datum/action/item_action/mod/pinnable/module	do_effect	code/modules/mod/mo
 proc	/datum/action/item_action/mod/pinnable/module	apply_button_overlay	code/modules/mod/mod_actions.dm:187	current_button,force	yes	full	proc
 proc	/datum/action/item_action/mod/pinnable/module	module_interacted_with	code/modules/mod/mod_actions.dm:201	source	yes	full	proc root
 proc	/datum/action/item_action/mod/pinnable/module	cooldown_started	code/modules/mod/mod_actions.dm:206	source,cooldown_time	yes	full	proc root
-type	/datum/action/item_action/mod/pinnable/circuit	/datum/action/item_action/mod/pinnable	code/modules/wiremod/shell/module.dm:97	inert	datum_action_item_action_mod_pinnable_circuit	0	0
-proc	/datum/action/item_action/mod/pinnable/circuit	New	code/modules/wiremod/shell/module.dm:106	Target,user,linked_module,action_comp	no	-	proc
-proc	/datum/action/item_action/mod/pinnable/circuit	Destroy	code/modules/wiremod/shell/module.dm:114		no	-	proc
-proc	/datum/action/item_action/mod/pinnable/circuit	do_effect	code/modules/wiremod/shell/module.dm:120	trigger_flags	no	-	proc
-proc	/datum/action/item_action/mod/pinnable/circuit	pinner_deleted	code/modules/wiremod/shell/module.dm:135		no	-	proc
+type	/datum/action/item_action/mod/pinnable/circuit	/datum/action/item_action/mod/pinnable	code/modules/wiremod/shell/module.dm:97	live	datum_action_item_action_mod_pinnable_circuit	1	0
+proc	/datum/action/item_action/mod/pinnable/circuit	New	code/modules/wiremod/shell/module.dm:106	Target,user,linked_module,action_comp	yes	full	proc
+proc	/datum/action/item_action/mod/pinnable/circuit	Destroy	code/modules/wiremod/shell/module.dm:114		yes	full	proc
+proc	/datum/action/item_action/mod/pinnable/circuit	do_effect	code/modules/wiremod/shell/module.dm:120	trigger_flags	yes	full	proc
+proc	/datum/action/item_action/mod/pinnable/circuit	pinner_deleted	code/modules/wiremod/shell/module.dm:135		yes	full	proc
 type	/datum/action/item_action/mod_recall	/datum/action/item_action	code/modules/mod/modules/module_pathfinder.dm:220	live	datum_action_item_action_mod_recall	1	0
 proc	/datum/action/item_action/mod_recall	New	code/modules/mod/modules/module_pathfinder.dm:230	Target	yes	full	proc
 proc	/datum/action/item_action/mod_recall	do_effect	code/modules/mod/modules/module_pathfinder.dm:236	trigger_flags	yes	full	proc
@@ -10628,8 +10628,8 @@ type	/datum/atom_hud/alternate_appearance/basic/everyone	/datum/atom_hud/alterna
 proc	/datum/atom_hud/alternate_appearance/basic/everyone	mobShouldSee	code/game/atom/alternate_appearance.dm:165	M	yes	full	proc
 type	/datum/atom_hud/alternate_appearance/basic/silicons	/datum/atom_hud/alternate_appearance/basic	code/game/atom/alternate_appearance.dm:170	live	datum_atom_hud_alternate_appearance_basic_silicons	1	0
 proc	/datum/atom_hud/alternate_appearance/basic/silicons	mobShouldSee	code/game/atom/alternate_appearance.dm:170	M	yes	full	proc
-type	/datum/atom_hud/alternate_appearance/basic/ais	/datum/atom_hud/alternate_appearance/basic	code/game/atom/alternate_appearance.dm:177	inert	datum_atom_hud_alternate_appearance_basic_ais	0	0
-proc	/datum/atom_hud/alternate_appearance/basic/ais	mobShouldSee	code/game/atom/alternate_appearance.dm:177	M	no	-	proc
+type	/datum/atom_hud/alternate_appearance/basic/ais	/datum/atom_hud/alternate_appearance/basic	code/game/atom/alternate_appearance.dm:177	live	datum_atom_hud_alternate_appearance_basic_ais	1	0
+proc	/datum/atom_hud/alternate_appearance/basic/ais	mobShouldSee	code/game/atom/alternate_appearance.dm:177	M	yes	full	proc
 type	/datum/atom_hud/alternate_appearance/basic/observers	/datum/atom_hud/alternate_appearance/basic	code/game/atom/alternate_appearance.dm:181	inert	datum_atom_hud_alternate_appearance_basic_observers	0	0
 proc	/datum/atom_hud/alternate_appearance/basic/observers	mobShouldSee	code/game/atom/alternate_appearance.dm:183	M	no	-	proc
 type	/datum/atom_hud/alternate_appearance/basic/noncult	/datum/atom_hud/alternate_appearance/basic	code/game/atom/alternate_appearance.dm:188	inert	datum_atom_hud_alternate_appearance_basic_noncult	0	0
@@ -19875,16 +19875,16 @@ proc	/datum/component/shuttle_cling	update_drift_direction	code/datums/component
 proc	/datum/component/shuttle_cling	is_tile_solid	code/datums/components/shuttle_cling.dm:166	maybe_solid	yes	full	proc root
 proc	/datum/component/shuttle_cling	do_remove	code/datums/components/shuttle_cling.dm:175		yes	full	proc root
 proc	/datum/component/shuttle_cling	Destroy	code/datums/components/shuttle_cling.dm:180	force	yes	full	proc
-type	/datum/component/shuttle_move_deferred_checks	/datum/component	code/datums/components/shuttle_move_deferred_checks.dm:3	inert	datum_component_shuttle_move_deferred_checks	0	0
-proc	/datum/component/shuttle_move_deferred_checks	Initialize	code/datums/components/shuttle_move_deferred_checks.dm:13	check	no	-	proc
-proc	/datum/component/shuttle_move_deferred_checks	Destroy	code/datums/components/shuttle_move_deferred_checks.dm:19	force	no	-	proc
-proc	/datum/component/shuttle_move_deferred_checks	on_source_add	code/datums/components/shuttle_move_deferred_checks.dm:25	source,check	no	-	proc
-proc	/datum/component/shuttle_move_deferred_checks	on_source_remove	code/datums/components/shuttle_move_deferred_checks.dm:36	source	no	-	proc
-proc	/datum/component/shuttle_move_deferred_checks	call_check	code/datums/components/shuttle_move_deferred_checks.dm:45		no	-	proc root
-proc	/datum/component/shuttle_move_deferred_checks	on_target_moved	code/datums/components/shuttle_move_deferred_checks.dm:52	source,old_loc,dir,forced,old_locs	no	-	proc root
-proc	/datum/component/shuttle_move_deferred_checks	before_target_shuttle_move	code/datums/components/shuttle_move_deferred_checks.dm:58	source	no	-	proc root
-proc	/datum/component/shuttle_move_deferred_checks	after_target_shuttle_move	code/datums/components/shuttle_move_deferred_checks.dm:62	source	no	-	proc root
-proc	/datum/component/shuttle_move_deferred_checks	on_target_deleted	code/datums/components/shuttle_move_deferred_checks.dm:68	source	no	-	proc root
+type	/datum/component/shuttle_move_deferred_checks	/datum/component	code/datums/components/shuttle_move_deferred_checks.dm:3	live	datum_component_shuttle_move_deferred_checks	1	0
+proc	/datum/component/shuttle_move_deferred_checks	Initialize	code/datums/components/shuttle_move_deferred_checks.dm:13	check	yes	full	proc
+proc	/datum/component/shuttle_move_deferred_checks	Destroy	code/datums/components/shuttle_move_deferred_checks.dm:19	force	yes	full	proc
+proc	/datum/component/shuttle_move_deferred_checks	on_source_add	code/datums/components/shuttle_move_deferred_checks.dm:25	source,check	yes	full	proc
+proc	/datum/component/shuttle_move_deferred_checks	on_source_remove	code/datums/components/shuttle_move_deferred_checks.dm:36	source	yes	full	proc
+proc	/datum/component/shuttle_move_deferred_checks	call_check	code/datums/components/shuttle_move_deferred_checks.dm:45		yes	full	proc root
+proc	/datum/component/shuttle_move_deferred_checks	on_target_moved	code/datums/components/shuttle_move_deferred_checks.dm:52	source,old_loc,dir,forced,old_locs	yes	full	proc root
+proc	/datum/component/shuttle_move_deferred_checks	before_target_shuttle_move	code/datums/components/shuttle_move_deferred_checks.dm:58	source	yes	full	proc root
+proc	/datum/component/shuttle_move_deferred_checks	after_target_shuttle_move	code/datums/components/shuttle_move_deferred_checks.dm:62	source	yes	full	proc root
+proc	/datum/component/shuttle_move_deferred_checks	on_target_deleted	code/datums/components/shuttle_move_deferred_checks.dm:68	source	yes	full	proc root
 type	/datum/component/sign_language	/datum/component	code/datums/components/sign_language.dm:35	live	datum_component_sign_language	1	0
 proc	/datum/component/sign_language	sanitize_message	code/datums/components/sign_language.dm:44	input	yes	full	proc root
 proc	/datum/component/sign_language	Initialize	code/datums/components/sign_language.dm:47		yes	full	proc
@@ -21337,15 +21337,15 @@ proc	/datum/component/circuit_component_add_port	on_action	code/modules/wiremod/
 proc	/datum/component/circuit_component_add_port	add_port	code/modules/wiremod/dcs_components/component_add_port.dm:72		yes	full	proc root
 proc	/datum/component/circuit_component_add_port	on_data_saved	code/modules/wiremod/dcs_components/component_add_port.dm:80	source,data	yes	full	proc root
 proc	/datum/component/circuit_component_add_port	on_data_loaded	code/modules/wiremod/dcs_components/component_add_port.dm:84	source,data	yes	full	proc root
-type	/datum/component/boris_circuit_container	/datum/component	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:2	inert	datum_component_boris_circuit_container	0	0
-proc	/datum/component/boris_circuit_container	Initialize	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:6		no	-	proc
-proc	/datum/component/boris_circuit_container	Destroy	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:11	force	no	-	proc
-proc	/datum/component/boris_circuit_container	RegisterWithParent	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:15		no	-	proc
-proc	/datum/component/boris_circuit_container	UnregisterFromParent	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:28		no	-	proc
-proc	/datum/component/boris_circuit_container	on_source_add	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:32	source	no	-	proc
-proc	/datum/component/boris_circuit_container	on_source_remove	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:39	source	no	-	proc
-proc	/datum/component/boris_circuit_container	on_ai_click	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:45	source,user	no	-	proc root
-proc	/datum/component/boris_circuit_container	select_circuit	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:59	source,user	no	-	proc root
+type	/datum/component/boris_circuit_container	/datum/component	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:2	live	datum_component_boris_circuit_container	1	0
+proc	/datum/component/boris_circuit_container	Initialize	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:6		yes	full	proc
+proc	/datum/component/boris_circuit_container	Destroy	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:11	force	yes	full	proc
+proc	/datum/component/boris_circuit_container	RegisterWithParent	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:15		yes	full	proc
+proc	/datum/component/boris_circuit_container	UnregisterFromParent	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:28		yes	full	proc
+proc	/datum/component/boris_circuit_container	on_source_add	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:32	source	yes	full	proc
+proc	/datum/component/boris_circuit_container	on_source_remove	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:39	source	yes	full	proc
+proc	/datum/component/boris_circuit_container	on_ai_click	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:45	source,user	yes	full	proc root
+proc	/datum/component/boris_circuit_container	select_circuit	code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:59	source,user	yes	full	proc root
 type	/datum/component/circuit_component_wirenet_connection	/datum/component	code/modules/wiremod/dcs_components/component_wirenet_connection.dm:2	live	datum_component_circuit_component_wirenet_connection	1	0
 proc	/datum/component/circuit_component_wirenet_connection	Initialize	code/modules/wiremod/dcs_components/component_wirenet_connection.dm:30	layer_1_action,layer_2_action,layer_3_action,connection_callback,disconnection_callback,post_set_cable_layer_callback	yes	full	proc
 proc	/datum/component/circuit_component_wirenet_connection	Destroy	code/modules/wiremod/dcs_components/component_wirenet_connection.dm:41	force	yes	full	proc
@@ -31172,8 +31172,8 @@ type	/datum/wires/airlock/medbay	/datum/wires/airlock	code/datums/wires/airlock.
 type	/datum/wires/airlock/science	/datum/wires/airlock	code/datums/wires/airlock.dm:34	live	datum_wires_airlock_science	0	0
 type	/datum/wires/airlock/ai	/datum/wires/airlock	code/datums/wires/airlock.dm:38	live	datum_wires_airlock_ai	0	0
 type	/datum/wires/airlock/cargo	/datum/wires/airlock	code/datums/wires/airlock.dm:42	live	datum_wires_airlock_cargo	0	0
-type	/datum/wires/airlock/shell	/datum/wires/airlock	code/modules/wiremod/shell/airlock.dm:2	inert	datum_wires_airlock_shell	0	0
-proc	/datum/wires/airlock/shell	on_cut	code/modules/wiremod/shell/airlock.dm:5	wire,mend,source	no	-	proc
+type	/datum/wires/airlock/shell	/datum/wires/airlock	code/modules/wiremod/shell/airlock.dm:2	live	datum_wires_airlock_shell	1	0
+proc	/datum/wires/airlock/shell	on_cut	code/modules/wiremod/shell/airlock.dm:5	wire,mend,source	yes	full	proc
 type	/datum/wires/apc	/datum/wires	code/datums/wires/apc.dm:2	inert	datum_wires_apc	1	0
 proc	/datum/wires/apc	New	code/datums/wires/apc.dm:5	holder	yes	full	proc
 proc	/datum/wires/apc	interactable	code/datums/wires/apc.dm:18	user	yes	full	proc
@@ -56231,11 +56231,11 @@ type	/mob/living/split_personality/blackout	/mob/living/split_personality	code/d
 proc	/mob/living/split_personality/blackout	Login	code/datums/brain_damage/split_personality.dm:342		yes	full	proc
 type	/mob/living/blood_worm_host	/mob/living	code/modules/antagonists/blood_worm/blood_worm_host_mob.dm:2	inert	mob_living_blood_worm_host	0	0
 proc	/mob/living/blood_worm_host	Login	code/modules/antagonists/blood_worm/blood_worm_host_mob.dm:7		no	-	proc
-type	/mob/living/circuit_drone	/mob/living	code/modules/wiremod/shell/drone.dm:7	inert	mob_living_circuit_drone	0	0
-proc	/mob/living/circuit_drone	Initialize	code/modules/wiremod/shell/drone.dm:17	mapload	no	-	proc
-proc	/mob/living/circuit_drone	examine	code/modules/wiremod/shell/drone.dm:24	user	no	-	proc
-proc	/mob/living/circuit_drone	updatehealth	code/modules/wiremod/shell/drone.dm:34		no	-	proc
-proc	/mob/living/circuit_drone	welder_act	code/modules/wiremod/shell/drone.dm:39	user,tool	no	-	proc
+type	/mob/living/circuit_drone	/mob/living	code/modules/wiremod/shell/drone.dm:7	live	mob_living_circuit_drone	1	0
+proc	/mob/living/circuit_drone	Initialize	code/modules/wiremod/shell/drone.dm:17	mapload	yes	full	proc
+proc	/mob/living/circuit_drone	examine	code/modules/wiremod/shell/drone.dm:24	user	yes	full	proc
+proc	/mob/living/circuit_drone	updatehealth	code/modules/wiremod/shell/drone.dm:34		yes	full	proc
+proc	/mob/living/circuit_drone	welder_act	code/modules/wiremod/shell/drone.dm:39	user,tool	yes	full	proc
 type	/mob/dview	/mob	code/__HELPERS/mobs.dm:676	live	mob_dview	1	0
 proc	/mob/dview	Initialize	code/__HELPERS/mobs.dm:682	mapload	yes	full	proc
 proc	/mob/dview	Destroy	code/__HELPERS/mobs.dm:689	force	yes	full	proc
@@ -61738,9 +61738,9 @@ proc	/obj/item/gun/energy/marksman_revolver	try_fire_gun	code/modules/projectile
 type	/obj/item/gun/energy/photon	/obj/item/gun/energy	code/modules/projectiles/guns/energy/special.dm:527	live	obj_item_gun_energy_photon	1	0
 proc	/obj/item/gun/energy/photon	Initialize	code/modules/projectiles/guns/energy/special.dm:541	mapload	yes	full	proc
 type	/obj/item/gun/energy/taser	/obj/item/gun/energy	code/modules/projectiles/guns/energy/stun.dm:2	live	obj_item_gun_energy_taser	0	0
-type	/obj/item/gun/energy/wiremod_gun	/obj/item/gun/energy	code/modules/wiremod/shell/gun.dm:7	inert	obj_item_gun_energy_wiremod_gun	0	0
-proc	/obj/item/gun/energy/wiremod_gun	Initialize	code/modules/wiremod/shell/gun.dm:36	mapload	no	-	proc
-proc	/obj/item/gun/energy/wiremod_gun	on_circuit_attached	code/modules/wiremod/shell/gun.dm:68	source	no	-	proc root
+type	/obj/item/gun/energy/wiremod_gun	/obj/item/gun/energy	code/modules/wiremod/shell/gun.dm:7	live	obj_item_gun_energy_wiremod_gun	1	0
+proc	/obj/item/gun/energy/wiremod_gun	Initialize	code/modules/wiremod/shell/gun.dm:36	mapload	yes	full	proc
+proc	/obj/item/gun/energy/wiremod_gun	on_circuit_attached	code/modules/wiremod/shell/gun.dm:68	source	yes	full	proc root
 type	/obj/item/gun/magic	/obj/item/gun	code/modules/projectiles/guns/magic.dm:2	live	obj_item_gun_magic	1	0
 proc	/obj/item/gun/magic	Initialize	code/modules/projectiles/guns/magic.dm:38	mapload	yes	full	proc
 proc	/obj/item/gun/magic	apply_fantasy_bonuses	code/modules/projectiles/guns/magic.dm:42	bonus	stub	deferred	proc
@@ -62433,16 +62433,16 @@ type	/obj/item/assembly/relic/lavaland/revealed	/obj/item/assembly/relic/lavalan
 proc	/obj/item/assembly/relic/lavaland/revealed	Initialize	code/modules/research/relics.dm:675	mapload	yes	full	proc
 type	/obj/item/assembly/relic/revealed	/obj/item/assembly/relic	code/modules/research/relics.dm:669	live	obj_item_assembly_relic_revealed	1	0
 proc	/obj/item/assembly/relic/revealed	Initialize	code/modules/research/relics.dm:669	mapload	yes	full	proc
-type	/obj/item/assembly/wiremod	/obj/item/assembly	code/modules/wiremod/shell/assembly.dm:7	inert	obj_item_assembly_wiremod	0	0
-proc	/obj/item/assembly/wiremod	Initialize	code/modules/wiremod/shell/assembly.dm:19	mapload	no	-	proc
-proc	/obj/item/assembly/wiremod	on_circuit_attached	code/modules/wiremod/shell/assembly.dm:31	source	no	-	proc root
-proc	/obj/item/assembly/wiremod	on_circuit_removed	code/modules/wiremod/shell/assembly.dm:35	source	no	-	proc root
-proc	/obj/item/assembly/wiremod	on_pre_attach	code/modules/wiremod/shell/assembly.dm:39	source,holder	no	-	proc root
-proc	/obj/item/assembly/wiremod	on_attached	code/modules/wiremod/shell/assembly.dm:51	source,holder	no	-	proc root
-proc	/obj/item/assembly/wiremod	on_detached	code/modules/wiremod/shell/assembly.dm:56	source	no	-	proc root
-proc	/obj/item/assembly/wiremod	override_circuit_power_usage	code/modules/wiremod/shell/assembly.dm:60	source,power_to_use	no	-	proc root
-proc	/obj/item/assembly/wiremod	examine	code/modules/wiremod/shell/assembly.dm:87	user	no	-	proc
-proc	/obj/item/assembly/wiremod	screwdriver_act_secondary	code/modules/wiremod/shell/assembly.dm:92	user,tool	no	-	proc
+type	/obj/item/assembly/wiremod	/obj/item/assembly	code/modules/wiremod/shell/assembly.dm:7	live	obj_item_assembly_wiremod	1	0
+proc	/obj/item/assembly/wiremod	Initialize	code/modules/wiremod/shell/assembly.dm:19	mapload	yes	full	proc
+proc	/obj/item/assembly/wiremod	on_circuit_attached	code/modules/wiremod/shell/assembly.dm:31	source	yes	full	proc root
+proc	/obj/item/assembly/wiremod	on_circuit_removed	code/modules/wiremod/shell/assembly.dm:35	source	yes	full	proc root
+proc	/obj/item/assembly/wiremod	on_pre_attach	code/modules/wiremod/shell/assembly.dm:39	source,holder	yes	full	proc root
+proc	/obj/item/assembly/wiremod	on_attached	code/modules/wiremod/shell/assembly.dm:51	source,holder	yes	full	proc root
+proc	/obj/item/assembly/wiremod	on_detached	code/modules/wiremod/shell/assembly.dm:56	source	yes	full	proc root
+proc	/obj/item/assembly/wiremod	override_circuit_power_usage	code/modules/wiremod/shell/assembly.dm:60	source,power_to_use	yes	full	proc root
+proc	/obj/item/assembly/wiremod	examine	code/modules/wiremod/shell/assembly.dm:87	user	yes	full	proc
+proc	/obj/item/assembly/wiremod	screwdriver_act_secondary	code/modules/wiremod/shell/assembly.dm:92	user,tool	yes	full	proc
 type	/obj/item/trapdoor_remote	/obj/item	code/datums/components/trapdoor.dm:376	inert	obj_item_trapdoor_remote	0	0
 proc	/obj/item/trapdoor_remote	examine	code/datums/components/trapdoor.dm:385	user	no	-	proc
 proc	/obj/item/trapdoor_remote	screwdriver_act	code/datums/components/trapdoor.dm:402	user,tool	no	-	proc
@@ -68153,18 +68153,18 @@ proc	/obj/item/mod/module/tem	field_check	code/modules/mod/modules/modules_timel
 type	/obj/item/mod/module/night	/obj/item/mod/module	code/modules/mod/modules/modules_visor.dm:83	live	obj_item_mod_module_night	1	0
 proc	/obj/item/mod/module/night	on_activation	code/modules/mod/modules/modules_visor.dm:96	activator	yes	full	proc
 proc	/obj/item/mod/module/night	on_deactivation	code/modules/mod/modules/modules_visor.dm:99	activator,display_message,deleting	yes	full	proc
-type	/obj/item/mod/module/circuit	/obj/item/mod/module	code/modules/wiremod/shell/module.dm:2	inert	obj_item_mod_module_circuit	0	0
-proc	/obj/item/mod/module/circuit	Initialize	code/modules/wiremod/shell/module.dm:17	mapload	no	-	proc
-proc	/obj/item/mod/module/circuit	override_power_usage	code/modules/wiremod/shell/module.dm:28	source,amount	no	-	proc root
-proc	/obj/item/mod/module/circuit	action_comp_registered	code/modules/wiremod/shell/module.dm:33	source,action_comp	no	-	proc root
-proc	/obj/item/mod/module/circuit	action_comp_unregistered	code/modules/wiremod/shell/module.dm:37	source,action_comp	no	-	proc root
-proc	/obj/item/mod/module/circuit	on_install	code/modules/wiremod/shell/module.dm:44		no	-	proc
-proc	/obj/item/mod/module/circuit	on_uninstall	code/modules/wiremod/shell/module.dm:50	deleting	no	-	proc
-proc	/obj/item/mod/module/circuit	on_use	code/modules/wiremod/shell/module.dm:59		no	-	proc
-proc	/obj/item/mod/module/circuit	get_configuration	code/modules/wiremod/shell/module.dm:67	user	no	-	proc
-proc	/obj/item/mod/module/circuit	configure_edit	code/modules/wiremod/shell/module.dm:73	key,value	no	-	proc
-proc	/obj/item/mod/module/circuit	pin_action	code/modules/wiremod/shell/module.dm:83	action_comp,user	no	-	proc root
-proc	/obj/item/mod/module/circuit	unpin_action	code/modules/wiremod/shell/module.dm:90	action_comp,user	no	-	proc root
+type	/obj/item/mod/module/circuit	/obj/item/mod/module	code/modules/wiremod/shell/module.dm:2	live	obj_item_mod_module_circuit	1	0
+proc	/obj/item/mod/module/circuit	Initialize	code/modules/wiremod/shell/module.dm:17	mapload	yes	full	proc
+proc	/obj/item/mod/module/circuit	override_power_usage	code/modules/wiremod/shell/module.dm:28	source,amount	yes	full	proc root
+proc	/obj/item/mod/module/circuit	action_comp_registered	code/modules/wiremod/shell/module.dm:33	source,action_comp	yes	full	proc root
+proc	/obj/item/mod/module/circuit	action_comp_unregistered	code/modules/wiremod/shell/module.dm:37	source,action_comp	yes	full	proc root
+proc	/obj/item/mod/module/circuit	on_install	code/modules/wiremod/shell/module.dm:44		yes	full	proc
+proc	/obj/item/mod/module/circuit	on_uninstall	code/modules/wiremod/shell/module.dm:50	deleting	yes	full	proc
+proc	/obj/item/mod/module/circuit	on_use	code/modules/wiremod/shell/module.dm:59		yes	full	proc
+proc	/obj/item/mod/module/circuit	get_configuration	code/modules/wiremod/shell/module.dm:67	user	yes	full	proc
+proc	/obj/item/mod/module/circuit	configure_edit	code/modules/wiremod/shell/module.dm:73	key,value	yes	full	proc
+proc	/obj/item/mod/module/circuit	pin_action	code/modules/wiremod/shell/module.dm:83	action_comp,user	yes	full	proc root
+proc	/obj/item/mod/module/circuit	unpin_action	code/modules/wiremod/shell/module.dm:90	action_comp,user	yes	full	proc root
 type	/obj/item/mod/ai_minicard	/obj/item/mod	code/modules/mod/mod_ai.dm:169	live	obj_item_mod_ai_minicard	1	0
 proc	/obj/item/mod/ai_minicard	Initialize	code/modules/mod/mod_ai.dm:175	mapload,ai	yes	full	proc
 proc	/obj/item/mod/ai_minicard	Destroy	code/modules/mod/mod_ai.dm:187		yes	full	proc
@@ -71022,24 +71022,24 @@ proc	/obj/item/circuit_component/compare	populate_ports	code/modules/wiremod/com
 proc	/obj/item/circuit_component/compare	populate_custom_ports	code/modules/wiremod/components/abstract/compare.dm:32		yes	full	proc root
 proc	/obj/item/circuit_component/compare	input_received	code/modules/wiremod/components/abstract/compare.dm:35	port	yes	full	proc
 proc	/obj/item/circuit_component/compare	do_comparisons	code/modules/wiremod/components/abstract/compare.dm:46		yes	full	proc root
-type	/obj/item/circuit_component/compare/health_state	/obj/item/circuit_component/compare	code/modules/wiremod/components/atom/health_state.dm:8	inert	obj_item_circuit_component_compare_health_state	0	0
-proc	/obj/item/circuit_component/compare/health_state	get_ui_notices	code/modules/wiremod/components/atom/health_state.dm:20		no	-	proc
-proc	/obj/item/circuit_component/compare/health_state	populate_options	code/modules/wiremod/components/atom/health_state.dm:24		no	-	proc
-proc	/obj/item/circuit_component/compare/health_state	do_comparisons	code/modules/wiremod/components/atom/health_state.dm:36		no	-	proc
-type	/obj/item/circuit_component/compare/access	/obj/item/circuit_component/compare	code/modules/wiremod/components/id/access_checker.dm:2	inert	obj_item_circuit_component_compare_access	0	0
-proc	/obj/item/circuit_component/compare/access	get_ui_notices	code/modules/wiremod/components/id/access_checker.dm:19		no	-	proc
-proc	/obj/item/circuit_component/compare/access	populate_custom_ports	code/modules/wiremod/components/id/access_checker.dm:24		no	-	proc
-proc	/obj/item/circuit_component/compare/access	save_data_to_list	code/modules/wiremod/components/id/access_checker.dm:29	component_data	no	-	proc
-proc	/obj/item/circuit_component/compare/access	add_to	code/modules/wiremod/components/id/access_checker.dm:33	added_to	no	-	proc
-proc	/obj/item/circuit_component/compare/access	removed_from	code/modules/wiremod/components/id/access_checker.dm:37	removed_from	no	-	proc
-proc	/obj/item/circuit_component/compare/access	on_post_load	code/modules/wiremod/components/id/access_checker.dm:41	source	no	-	proc root
-proc	/obj/item/circuit_component/compare/access	regenerate_access	code/modules/wiremod/components/id/access_checker.dm:44		no	-	proc root
-proc	/obj/item/circuit_component/compare/access	do_comparisons	code/modules/wiremod/components/id/access_checker.dm:56		no	-	proc
-proc	/obj/item/circuit_component/compare/access	ui_perform_action	code/modules/wiremod/components/id/access_checker.dm:59	user,action	no	-	proc
-proc	/obj/item/circuit_component/compare/access	ui_interact	code/modules/wiremod/components/id/access_checker.dm:65	user,ui	no	-	proc
-proc	/obj/item/circuit_component/compare/access	ui_static_data	code/modules/wiremod/components/id/access_checker.dm:71	user	no	-	proc
-proc	/obj/item/circuit_component/compare/access	ui_data	code/modules/wiremod/components/id/access_checker.dm:84	user	no	-	proc
-proc	/obj/item/circuit_component/compare/access	ui_act	code/modules/wiremod/components/id/access_checker.dm:90	action,params,ui,state	no	-	proc
+type	/obj/item/circuit_component/compare/health_state	/obj/item/circuit_component/compare	code/modules/wiremod/components/atom/health_state.dm:8	live	obj_item_circuit_component_compare_health_state	1	0
+proc	/obj/item/circuit_component/compare/health_state	get_ui_notices	code/modules/wiremod/components/atom/health_state.dm:20		yes	full	proc
+proc	/obj/item/circuit_component/compare/health_state	populate_options	code/modules/wiremod/components/atom/health_state.dm:24		yes	full	proc
+proc	/obj/item/circuit_component/compare/health_state	do_comparisons	code/modules/wiremod/components/atom/health_state.dm:36		yes	full	proc
+type	/obj/item/circuit_component/compare/access	/obj/item/circuit_component/compare	code/modules/wiremod/components/id/access_checker.dm:2	live	obj_item_circuit_component_compare_access	1	0
+proc	/obj/item/circuit_component/compare/access	get_ui_notices	code/modules/wiremod/components/id/access_checker.dm:19		yes	full	proc
+proc	/obj/item/circuit_component/compare/access	populate_custom_ports	code/modules/wiremod/components/id/access_checker.dm:24		yes	full	proc
+proc	/obj/item/circuit_component/compare/access	save_data_to_list	code/modules/wiremod/components/id/access_checker.dm:29	component_data	yes	full	proc
+proc	/obj/item/circuit_component/compare/access	add_to	code/modules/wiremod/components/id/access_checker.dm:33	added_to	yes	full	proc
+proc	/obj/item/circuit_component/compare/access	removed_from	code/modules/wiremod/components/id/access_checker.dm:37	removed_from	yes	full	proc
+proc	/obj/item/circuit_component/compare/access	on_post_load	code/modules/wiremod/components/id/access_checker.dm:41	source	yes	full	proc root
+proc	/obj/item/circuit_component/compare/access	regenerate_access	code/modules/wiremod/components/id/access_checker.dm:44		yes	full	proc root
+proc	/obj/item/circuit_component/compare/access	do_comparisons	code/modules/wiremod/components/id/access_checker.dm:56		yes	full	proc
+proc	/obj/item/circuit_component/compare/access	ui_perform_action	code/modules/wiremod/components/id/access_checker.dm:59	user,action	yes	full	proc
+proc	/obj/item/circuit_component/compare/access	ui_interact	code/modules/wiremod/components/id/access_checker.dm:65	user,ui	yes	full	proc
+proc	/obj/item/circuit_component/compare/access	ui_static_data	code/modules/wiremod/components/id/access_checker.dm:71	user	yes	full	proc
+proc	/obj/item/circuit_component/compare/access	ui_data	code/modules/wiremod/components/id/access_checker.dm:84	user	yes	full	proc
+proc	/obj/item/circuit_component/compare/access	ui_act	code/modules/wiremod/components/id/access_checker.dm:90	action,params,ui,state	yes	full	proc
 type	/obj/item/circuit_component/compare/comparison	/obj/item/circuit_component/compare	code/modules/wiremod/components/math/comparison.dm:7	live	obj_item_circuit_component_compare_comparison	1	0
 proc	/obj/item/circuit_component/compare/comparison	populate_options	code/modules/wiremod/components/math/comparison.dm:20		yes	full	proc
 proc	/obj/item/circuit_component/compare/comparison	populate_custom_ports	code/modules/wiremod/components/math/comparison.dm:31		yes	full	proc
@@ -71088,130 +71088,130 @@ proc	/obj/item/circuit_component/module_input	Destroy	code/modules/wiremod/compo
 type	/obj/item/circuit_component/module_output	/obj/item/circuit_component	code/modules/wiremod/components/abstract/module.dm:81	live	obj_item_circuit_component_module_output	1	0
 proc	/obj/item/circuit_component/module_output	pre_input_received	code/modules/wiremod/components/abstract/module.dm:89	port	yes	full	proc
 proc	/obj/item/circuit_component/module_output	Destroy	code/modules/wiremod/components/abstract/module.dm:108		yes	full	proc
-type	/obj/item/circuit_component/camera	/obj/item/circuit_component	code/modules/wiremod/components/action/camera.dm:2	inert	obj_item_circuit_component_camera	0	0
-proc	/obj/item/circuit_component/camera	populate_ports	code/modules/wiremod/components/action/camera.dm:23		no	-	proc
-proc	/obj/item/circuit_component/camera	register_shell	code/modules/wiremod/components/action/camera.dm:33	shell	no	-	proc
-proc	/obj/item/circuit_component/camera	unregister_shell	code/modules/wiremod/components/action/camera.dm:38	shell	no	-	proc
-proc	/obj/item/circuit_component/camera	sanitize_picture_size	code/modules/wiremod/components/action/camera.dm:44		no	-	proc root
-proc	/obj/item/circuit_component/camera	on_image_captured	code/modules/wiremod/components/action/camera.dm:47	source,target,user	no	-	proc root
-proc	/obj/item/circuit_component/camera	input_received	code/modules/wiremod/components/action/camera.dm:52	port	no	-	proc
-type	/obj/item/circuit_component/equipment_action	/obj/item/circuit_component	code/modules/wiremod/components/action/equpiment_action.dm:2	inert	obj_item_circuit_component_equipment_action	0	0
-proc	/obj/item/circuit_component/equipment_action	Initialize	code/modules/wiremod/components/action/equpiment_action.dm:21	mapload,default_icon	no	-	proc
-proc	/obj/item/circuit_component/equipment_action	Destroy	code/modules/wiremod/components/action/equpiment_action.dm:32		no	-	proc
-proc	/obj/item/circuit_component/equipment_action	populate_options	code/modules/wiremod/components/action/equpiment_action.dm:36		no	-	proc
-proc	/obj/item/circuit_component/equipment_action	register_shell	code/modules/wiremod/components/action/equpiment_action.dm:76	shell	no	-	proc
-proc	/obj/item/circuit_component/equipment_action	unregister_shell	code/modules/wiremod/components/action/equpiment_action.dm:80	shell	no	-	proc
-proc	/obj/item/circuit_component/equipment_action	input_received	code/modules/wiremod/components/action/equpiment_action.dm:84	port	no	-	proc
-proc	/obj/item/circuit_component/equipment_action	update_actions	code/modules/wiremod/components/action/equpiment_action.dm:88		no	-	proc root
-type	/obj/item/circuit_component/laserpointer	/obj/item/circuit_component	code/modules/wiremod/components/action/laserpointer.dm:7	inert	obj_item_circuit_component_laserpointer	0	0
-proc	/obj/item/circuit_component/laserpointer	get_ui_notices	code/modules/wiremod/components/action/laserpointer.dm:22		no	-	proc
-proc	/obj/item/circuit_component/laserpointer	populate_options	code/modules/wiremod/components/action/laserpointer.dm:26		no	-	proc
-proc	/obj/item/circuit_component/laserpointer	populate_ports	code/modules/wiremod/components/action/laserpointer.dm:36		no	-	proc
-proc	/obj/item/circuit_component/laserpointer	input_received	code/modules/wiremod/components/action/laserpointer.dm:42	port	no	-	proc
-type	/obj/item/circuit_component/light	/obj/item/circuit_component	code/modules/wiremod/components/action/light.dm:7	inert	obj_item_circuit_component_light	0	0
-proc	/obj/item/circuit_component/light	get_ui_notices	code/modules/wiremod/components/action/light.dm:26		no	-	proc
-proc	/obj/item/circuit_component/light	populate_ports	code/modules/wiremod/components/action/light.dm:30		no	-	proc
-proc	/obj/item/circuit_component/light	register_shell	code/modules/wiremod/components/action/light.dm:38	shell	no	-	proc
-proc	/obj/item/circuit_component/light	unregister_shell	code/modules/wiremod/components/action/light.dm:42	shell	no	-	proc
-proc	/obj/item/circuit_component/light	pre_input_received	code/modules/wiremod/components/action/light.dm:46	port	no	-	proc
-proc	/obj/item/circuit_component/light	input_received	code/modules/wiremod/components/action/light.dm:54	port	no	-	proc
-proc	/obj/item/circuit_component/light	set_atom_light	code/modules/wiremod/components/action/light.dm:58	target_atom	no	-	proc root
-type	/obj/item/circuit_component/mmi	/obj/item/circuit_component	code/modules/wiremod/components/action/mmi.dm:22	inert	obj_item_circuit_component_mmi	0	0
-proc	/obj/item/circuit_component/mmi	Initialize	code/modules/wiremod/components/action/mmi.dm:76	mapload	no	-	proc
-proc	/obj/item/circuit_component/mmi	populate_ports	code/modules/wiremod/components/action/mmi.dm:80		no	-	proc
-proc	/obj/item/circuit_component/mmi	Destroy	code/modules/wiremod/components/action/mmi.dm:94		no	-	proc
-proc	/obj/item/circuit_component/mmi	input_received	code/modules/wiremod/components/action/mmi.dm:99	port	no	-	proc
-proc	/obj/item/circuit_component/mmi	register_shell	code/modules/wiremod/components/action/mmi.dm:121	shell	no	-	proc
-proc	/obj/item/circuit_component/mmi	unregister_shell	code/modules/wiremod/components/action/mmi.dm:125	shell	no	-	proc
-proc	/obj/item/circuit_component/mmi	handle_interaction	code/modules/wiremod/components/action/mmi.dm:130	shell,user,item	no	-	proc root
-proc	/obj/item/circuit_component/mmi	register_boris_circuit	code/modules/wiremod/components/action/mmi.dm:163	shell	no	-	proc root
-proc	/obj/item/circuit_component/mmi	unregister_boris_circuit	code/modules/wiremod/components/action/mmi.dm:170	shell	no	-	proc root
-proc	/obj/item/circuit_component/mmi	boris_shell_or_container_moved	code/modules/wiremod/components/action/mmi.dm:176	shell_or_container,old_loc	no	-	proc root
-proc	/obj/item/circuit_component/mmi	occupant_item_moved	code/modules/wiremod/components/action/mmi.dm:191	occupant_item	no	-	proc root
-proc	/obj/item/circuit_component/mmi	remove_occupant_item	code/modules/wiremod/components/action/mmi.dm:197	removing	no	-	proc root
-proc	/obj/item/circuit_component/mmi	confirm_ai_connect	code/modules/wiremod/components/action/mmi.dm:219	user,shell	no	-	proc root
-proc	/obj/item/circuit_component/mmi	do_ai_connect	code/modules/wiremod/components/action/mmi.dm:227	user,shell	no	-	proc root
-proc	/obj/item/circuit_component/mmi	set_occupant	code/modules/wiremod/components/action/mmi.dm:234	new_occupant	no	-	proc root
-proc	/obj/item/circuit_component/mmi	occupant_or_container_moved	code/modules/wiremod/components/action/mmi.dm:255	occupant_or_container,old_loc	no	-	proc root
-proc	/obj/item/circuit_component/mmi	post_movement_checks	code/modules/wiremod/components/action/mmi.dm:268		no	-	proc root
-proc	/obj/item/circuit_component/mmi	on_control_toggled	code/modules/wiremod/components/action/mmi.dm:276	_source,control_disabled	no	-	proc root
-proc	/obj/item/circuit_component/mmi	remove_occupant	code/modules/wiremod/components/action/mmi.dm:281		no	-	proc root
-proc	/obj/item/circuit_component/mmi	relaymove	code/modules/wiremod/components/action/mmi.dm:301	user,direct	no	-	proc
-proc	/obj/item/circuit_component/mmi	handle_occupant_attack	code/modules/wiremod/components/action/mmi.dm:316	source,target,modifiers,attack_modifiers	no	-	proc root
-proc	/obj/item/circuit_component/mmi	add_to	code/modules/wiremod/components/action/mmi.dm:327	add_to	no	-	proc
-proc	/obj/item/circuit_component/mmi	removed_from	code/modules/wiremod/components/action/mmi.dm:333	removed_from	no	-	proc
-type	/obj/item/circuit_component/pathfind	/obj/item/circuit_component	code/modules/wiremod/components/action/pathfind.dm:7	inert	obj_item_circuit_component_pathfind	0	0
-proc	/obj/item/circuit_component/pathfind	get_ui_notices	code/modules/wiremod/components/action/pathfind.dm:31		no	-	proc
-proc	/obj/item/circuit_component/pathfind	populate_ports	code/modules/wiremod/components/action/pathfind.dm:37		no	-	proc
-proc	/obj/item/circuit_component/pathfind	input_received	code/modules/wiremod/components/action/pathfind.dm:47	port	no	-	proc
-proc	/obj/item/circuit_component/pathfind	perform_pathfinding	code/modules/wiremod/components/action/pathfind.dm:50	port	no	-	proc root
-type	/obj/item/circuit_component/pull	/obj/item/circuit_component	code/modules/wiremod/components/action/pull.dm:7	inert	obj_item_circuit_component_pull	0	0
-proc	/obj/item/circuit_component/pull	populate_ports	code/modules/wiremod/components/action/pull.dm:15		no	-	proc
-proc	/obj/item/circuit_component/pull	input_received	code/modules/wiremod/components/action/pull.dm:18	port	no	-	proc
-type	/obj/item/circuit_component/radio	/obj/item/circuit_component	code/modules/wiremod/components/action/radio.dm:10	inert	obj_item_circuit_component_radio	0	0
-proc	/obj/item/circuit_component/radio	Initialize	code/modules/wiremod/components/action/radio.dm:37	mapload	no	-	proc
-proc	/obj/item/circuit_component/radio	register_shell	code/modules/wiremod/components/action/radio.dm:42	shell	no	-	proc
-proc	/obj/item/circuit_component/radio	unregister_shell	code/modules/wiremod/components/action/radio.dm:48	shell	no	-	proc
-proc	/obj/item/circuit_component/radio	populate_options	code/modules/wiremod/components/action/radio.dm:51		no	-	proc
-proc	/obj/item/circuit_component/radio	populate_ports	code/modules/wiremod/components/action/radio.dm:58		no	-	proc
-proc	/obj/item/circuit_component/radio	Destroy	code/modules/wiremod/components/action/radio.dm:66		no	-	proc
-proc	/obj/item/circuit_component/radio	pre_input_received	code/modules/wiremod/components/action/radio.dm:70	port	no	-	proc
-proc	/obj/item/circuit_component/radio	input_received	code/modules/wiremod/components/action/radio.dm:73	port	no	-	proc
-proc	/obj/item/circuit_component/radio	handle_radio_input	code/modules/wiremod/components/action/radio.dm:76	port	no	-	proc root
-proc	/obj/item/circuit_component/radio	receive_signal	code/modules/wiremod/components/action/radio.dm:104	signal	no	-	proc
-type	/obj/item/circuit_component/soundemitter	/obj/item/circuit_component	code/modules/wiremod/components/action/soundemitter.dm:7	inert	obj_item_circuit_component_soundemitter	0	0
-proc	/obj/item/circuit_component/soundemitter	Initialize	code/modules/wiremod/components/action/soundemitter.dm:36	mapload	no	-	proc
-proc	/obj/item/circuit_component/soundemitter	get_ui_notices	code/modules/wiremod/components/action/soundemitter.dm:41		no	-	proc
-proc	/obj/item/circuit_component/soundemitter	populate_ports	code/modules/wiremod/components/action/soundemitter.dm:51		no	-	proc
-proc	/obj/item/circuit_component/soundemitter	populate_options	code/modules/wiremod/components/action/soundemitter.dm:56		no	-	proc
-proc	/obj/item/circuit_component/soundemitter	pre_input_received	code/modules/wiremod/components/action/soundemitter.dm:83	port	no	-	proc
-proc	/obj/item/circuit_component/soundemitter	input_received	code/modules/wiremod/components/action/soundemitter.dm:88	port	no	-	proc
-type	/obj/item/circuit_component/speech	/obj/item/circuit_component	code/modules/wiremod/components/action/speech.dm:7	inert	obj_item_circuit_component_speech	0	0
-proc	/obj/item/circuit_component/speech	get_ui_notices	code/modules/wiremod/components/action/speech.dm:20		no	-	proc
-proc	/obj/item/circuit_component/speech	populate_ports	code/modules/wiremod/components/action/speech.dm:24		no	-	proc
-proc	/obj/item/circuit_component/speech	input_received	code/modules/wiremod/components/action/speech.dm:28	port	no	-	proc
-type	/obj/item/circuit_component/begin_animation	/obj/item/circuit_component	code/modules/wiremod/components/admin/animate.dm:5	inert	obj_item_circuit_component_begin_animation	0	0
-proc	/obj/item/circuit_component/begin_animation	populate_options	code/modules/wiremod/components/admin/animate.dm:26		no	-	proc
-proc	/obj/item/circuit_component/begin_animation	populate_ports	code/modules/wiremod/components/admin/animate.dm:34		no	-	proc
-proc	/obj/item/circuit_component/begin_animation	pre_input_received	code/modules/wiremod/components/admin/animate.dm:41	port	no	-	proc
-proc	/obj/item/circuit_component/begin_animation	stop_animations	code/modules/wiremod/components/admin/animate.dm:50	port	no	-	proc root
-proc	/obj/item/circuit_component/begin_animation	input_received	code/modules/wiremod/components/admin/animate.dm:56	port,return_values	no	-	proc
-type	/obj/item/circuit_component/animation_step	/obj/item/circuit_component	code/modules/wiremod/components/admin/animate.dm:98	inert	obj_item_circuit_component_animation_step	0	0
-proc	/obj/item/circuit_component/animation_step	populate_ports	code/modules/wiremod/components/admin/animate.dm:110		no	-	proc
-proc	/obj/item/circuit_component/animation_step	input_received	code/modules/wiremod/components/admin/animate.dm:116	port,return_values	no	-	proc
-type	/obj/item/circuit_component/filter_helper	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:145	inert	obj_item_circuit_component_filter_helper	0	0
-proc	/obj/item/circuit_component/filter_helper	populate_options	code/modules/wiremod/components/admin/filter.dm:157		no	-	proc
-proc	/obj/item/circuit_component/filter_helper	populate_ports	code/modules/wiremod/components/admin/filter.dm:160		no	-	proc
-proc	/obj/item/circuit_component/filter_helper	pre_input_received	code/modules/wiremod/components/admin/filter.dm:165	port	no	-	proc
-proc	/obj/item/circuit_component/filter_helper	handle_filter_type_changed	code/modules/wiremod/components/admin/filter.dm:170		no	-	proc root
-proc	/obj/item/circuit_component/filter_helper	input_received	code/modules/wiremod/components/admin/filter.dm:179	port,return_values	no	-	proc
-type	/obj/item/circuit_component/filter_adder	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:189	inert	obj_item_circuit_component_filter_adder	0	0
-proc	/obj/item/circuit_component/filter_adder	populate_options	code/modules/wiremod/components/admin/filter.dm:202		no	-	proc
-proc	/obj/item/circuit_component/filter_adder	populate_ports	code/modules/wiremod/components/admin/filter.dm:205		no	-	proc
-proc	/obj/item/circuit_component/filter_adder	pre_input_received	code/modules/wiremod/components/admin/filter.dm:212	port	no	-	proc
-proc	/obj/item/circuit_component/filter_adder	handle_filter_type_changed	code/modules/wiremod/components/admin/filter.dm:217		no	-	proc root
-proc	/obj/item/circuit_component/filter_adder	input_received	code/modules/wiremod/components/admin/filter.dm:227	port,return_values	no	-	proc
-type	/obj/item/circuit_component/filter_remover	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:241	inert	obj_item_circuit_component_filter_remover	0	0
-proc	/obj/item/circuit_component/filter_remover	populate_ports	code/modules/wiremod/components/admin/filter.dm:249		no	-	proc
-proc	/obj/item/circuit_component/filter_remover	input_received	code/modules/wiremod/components/admin/filter.dm:253	port	no	-	proc
-type	/obj/item/circuit_component/bitflag_helper	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:261	inert	obj_item_circuit_component_bitflag_helper	0	0
-proc	/obj/item/circuit_component/bitflag_helper	populate_options	code/modules/wiremod/components/admin/filter.dm:274		no	-	proc
-proc	/obj/item/circuit_component/bitflag_helper	populate_ports	code/modules/wiremod/components/admin/filter.dm:277		no	-	proc
-proc	/obj/item/circuit_component/bitflag_helper	pre_input_received	code/modules/wiremod/components/admin/filter.dm:282	port	no	-	proc
-proc	/obj/item/circuit_component/bitflag_helper	handle_bitflag_type_changed	code/modules/wiremod/components/admin/filter.dm:287		no	-	proc root
-proc	/obj/item/circuit_component/bitflag_helper	input_received	code/modules/wiremod/components/admin/filter.dm:299	port	no	-	proc
-type	/obj/item/circuit_component/get_variable	/obj/item/circuit_component	code/modules/wiremod/components/admin/getvar.dm:7	inert	obj_item_circuit_component_get_variable	0	0
-proc	/obj/item/circuit_component/get_variable	populate_options	code/modules/wiremod/components/admin/getvar.dm:27		no	-	proc
-proc	/obj/item/circuit_component/get_variable	populate_ports	code/modules/wiremod/components/admin/getvar.dm:31		no	-	proc
-proc	/obj/item/circuit_component/get_variable	pre_input_received	code/modules/wiremod/components/admin/getvar.dm:36	port	no	-	proc
-proc	/obj/item/circuit_component/get_variable	input_received	code/modules/wiremod/components/admin/getvar.dm:47	port	no	-	proc
-type	/obj/item/circuit_component/input_request	/obj/item/circuit_component	code/modules/wiremod/components/admin/input_request.dm:11	inert	obj_item_circuit_component_input_request	0	0
-proc	/obj/item/circuit_component/input_request	populate_options	code/modules/wiremod/components/admin/input_request.dm:34		no	-	proc
-proc	/obj/item/circuit_component/input_request	populate_ports	code/modules/wiremod/components/admin/input_request.dm:43		no	-	proc
-proc	/obj/item/circuit_component/input_request	input_received	code/modules/wiremod/components/admin/input_request.dm:51	port	no	-	proc
-proc	/obj/item/circuit_component/input_request	request_input_from_player	code/modules/wiremod/components/admin/input_request.dm:58	player	no	-	proc root
-proc	/obj/item/circuit_component/input_request	pre_input_received	code/modules/wiremod/components/admin/input_request.dm:81	port	no	-	proc
-proc	/obj/item/circuit_component/input_request	update_options	code/modules/wiremod/components/admin/input_request.dm:85	port	no	-	proc root
+type	/obj/item/circuit_component/camera	/obj/item/circuit_component	code/modules/wiremod/components/action/camera.dm:2	live	obj_item_circuit_component_camera	1	0
+proc	/obj/item/circuit_component/camera	populate_ports	code/modules/wiremod/components/action/camera.dm:23		yes	full	proc
+proc	/obj/item/circuit_component/camera	register_shell	code/modules/wiremod/components/action/camera.dm:33	shell	yes	full	proc
+proc	/obj/item/circuit_component/camera	unregister_shell	code/modules/wiremod/components/action/camera.dm:38	shell	yes	full	proc
+proc	/obj/item/circuit_component/camera	sanitize_picture_size	code/modules/wiremod/components/action/camera.dm:44		yes	full	proc root
+proc	/obj/item/circuit_component/camera	on_image_captured	code/modules/wiremod/components/action/camera.dm:47	source,target,user	yes	full	proc root
+proc	/obj/item/circuit_component/camera	input_received	code/modules/wiremod/components/action/camera.dm:52	port	yes	full	proc
+type	/obj/item/circuit_component/equipment_action	/obj/item/circuit_component	code/modules/wiremod/components/action/equpiment_action.dm:2	live	obj_item_circuit_component_equipment_action	1	0
+proc	/obj/item/circuit_component/equipment_action	Initialize	code/modules/wiremod/components/action/equpiment_action.dm:21	mapload,default_icon	yes	full	proc
+proc	/obj/item/circuit_component/equipment_action	Destroy	code/modules/wiremod/components/action/equpiment_action.dm:32		yes	full	proc
+proc	/obj/item/circuit_component/equipment_action	populate_options	code/modules/wiremod/components/action/equpiment_action.dm:36		yes	full	proc
+proc	/obj/item/circuit_component/equipment_action	register_shell	code/modules/wiremod/components/action/equpiment_action.dm:76	shell	yes	full	proc
+proc	/obj/item/circuit_component/equipment_action	unregister_shell	code/modules/wiremod/components/action/equpiment_action.dm:80	shell	yes	full	proc
+proc	/obj/item/circuit_component/equipment_action	input_received	code/modules/wiremod/components/action/equpiment_action.dm:84	port	yes	full	proc
+proc	/obj/item/circuit_component/equipment_action	update_actions	code/modules/wiremod/components/action/equpiment_action.dm:88		yes	full	proc root
+type	/obj/item/circuit_component/laserpointer	/obj/item/circuit_component	code/modules/wiremod/components/action/laserpointer.dm:7	live	obj_item_circuit_component_laserpointer	1	0
+proc	/obj/item/circuit_component/laserpointer	get_ui_notices	code/modules/wiremod/components/action/laserpointer.dm:22		yes	full	proc
+proc	/obj/item/circuit_component/laserpointer	populate_options	code/modules/wiremod/components/action/laserpointer.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/laserpointer	populate_ports	code/modules/wiremod/components/action/laserpointer.dm:36		yes	full	proc
+proc	/obj/item/circuit_component/laserpointer	input_received	code/modules/wiremod/components/action/laserpointer.dm:42	port	yes	full	proc
+type	/obj/item/circuit_component/light	/obj/item/circuit_component	code/modules/wiremod/components/action/light.dm:7	live	obj_item_circuit_component_light	1	0
+proc	/obj/item/circuit_component/light	get_ui_notices	code/modules/wiremod/components/action/light.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/light	populate_ports	code/modules/wiremod/components/action/light.dm:30		yes	full	proc
+proc	/obj/item/circuit_component/light	register_shell	code/modules/wiremod/components/action/light.dm:38	shell	yes	full	proc
+proc	/obj/item/circuit_component/light	unregister_shell	code/modules/wiremod/components/action/light.dm:42	shell	yes	full	proc
+proc	/obj/item/circuit_component/light	pre_input_received	code/modules/wiremod/components/action/light.dm:46	port	yes	full	proc
+proc	/obj/item/circuit_component/light	input_received	code/modules/wiremod/components/action/light.dm:54	port	yes	full	proc
+proc	/obj/item/circuit_component/light	set_atom_light	code/modules/wiremod/components/action/light.dm:58	target_atom	yes	full	proc root
+type	/obj/item/circuit_component/mmi	/obj/item/circuit_component	code/modules/wiremod/components/action/mmi.dm:22	live	obj_item_circuit_component_mmi	1	0
+proc	/obj/item/circuit_component/mmi	Initialize	code/modules/wiremod/components/action/mmi.dm:76	mapload	yes	full	proc
+proc	/obj/item/circuit_component/mmi	populate_ports	code/modules/wiremod/components/action/mmi.dm:80		yes	full	proc
+proc	/obj/item/circuit_component/mmi	Destroy	code/modules/wiremod/components/action/mmi.dm:94		yes	full	proc
+proc	/obj/item/circuit_component/mmi	input_received	code/modules/wiremod/components/action/mmi.dm:99	port	yes	full	proc
+proc	/obj/item/circuit_component/mmi	register_shell	code/modules/wiremod/components/action/mmi.dm:121	shell	yes	full	proc
+proc	/obj/item/circuit_component/mmi	unregister_shell	code/modules/wiremod/components/action/mmi.dm:125	shell	yes	full	proc
+proc	/obj/item/circuit_component/mmi	handle_interaction	code/modules/wiremod/components/action/mmi.dm:130	shell,user,item	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	register_boris_circuit	code/modules/wiremod/components/action/mmi.dm:163	shell	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	unregister_boris_circuit	code/modules/wiremod/components/action/mmi.dm:170	shell	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	boris_shell_or_container_moved	code/modules/wiremod/components/action/mmi.dm:176	shell_or_container,old_loc	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	occupant_item_moved	code/modules/wiremod/components/action/mmi.dm:191	occupant_item	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	remove_occupant_item	code/modules/wiremod/components/action/mmi.dm:197	removing	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	confirm_ai_connect	code/modules/wiremod/components/action/mmi.dm:219	user,shell	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	do_ai_connect	code/modules/wiremod/components/action/mmi.dm:227	user,shell	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	set_occupant	code/modules/wiremod/components/action/mmi.dm:234	new_occupant	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	occupant_or_container_moved	code/modules/wiremod/components/action/mmi.dm:255	occupant_or_container,old_loc	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	post_movement_checks	code/modules/wiremod/components/action/mmi.dm:268		yes	full	proc root
+proc	/obj/item/circuit_component/mmi	on_control_toggled	code/modules/wiremod/components/action/mmi.dm:276	_source,control_disabled	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	remove_occupant	code/modules/wiremod/components/action/mmi.dm:281		yes	full	proc root
+proc	/obj/item/circuit_component/mmi	relaymove	code/modules/wiremod/components/action/mmi.dm:301	user,direct	yes	full	proc
+proc	/obj/item/circuit_component/mmi	handle_occupant_attack	code/modules/wiremod/components/action/mmi.dm:316	source,target,modifiers,attack_modifiers	yes	full	proc root
+proc	/obj/item/circuit_component/mmi	add_to	code/modules/wiremod/components/action/mmi.dm:327	add_to	yes	full	proc
+proc	/obj/item/circuit_component/mmi	removed_from	code/modules/wiremod/components/action/mmi.dm:333	removed_from	yes	full	proc
+type	/obj/item/circuit_component/pathfind	/obj/item/circuit_component	code/modules/wiremod/components/action/pathfind.dm:7	live	obj_item_circuit_component_pathfind	1	0
+proc	/obj/item/circuit_component/pathfind	get_ui_notices	code/modules/wiremod/components/action/pathfind.dm:31		yes	full	proc
+proc	/obj/item/circuit_component/pathfind	populate_ports	code/modules/wiremod/components/action/pathfind.dm:37		yes	full	proc
+proc	/obj/item/circuit_component/pathfind	input_received	code/modules/wiremod/components/action/pathfind.dm:47	port	yes	full	proc
+proc	/obj/item/circuit_component/pathfind	perform_pathfinding	code/modules/wiremod/components/action/pathfind.dm:50	port	yes	full	proc root
+type	/obj/item/circuit_component/pull	/obj/item/circuit_component	code/modules/wiremod/components/action/pull.dm:7	live	obj_item_circuit_component_pull	1	0
+proc	/obj/item/circuit_component/pull	populate_ports	code/modules/wiremod/components/action/pull.dm:15		yes	full	proc
+proc	/obj/item/circuit_component/pull	input_received	code/modules/wiremod/components/action/pull.dm:18	port	yes	full	proc
+type	/obj/item/circuit_component/radio	/obj/item/circuit_component	code/modules/wiremod/components/action/radio.dm:10	live	obj_item_circuit_component_radio	1	0
+proc	/obj/item/circuit_component/radio	Initialize	code/modules/wiremod/components/action/radio.dm:37	mapload	yes	full	proc
+proc	/obj/item/circuit_component/radio	register_shell	code/modules/wiremod/components/action/radio.dm:42	shell	yes	full	proc
+proc	/obj/item/circuit_component/radio	unregister_shell	code/modules/wiremod/components/action/radio.dm:48	shell	yes	full	proc
+proc	/obj/item/circuit_component/radio	populate_options	code/modules/wiremod/components/action/radio.dm:51		yes	full	proc
+proc	/obj/item/circuit_component/radio	populate_ports	code/modules/wiremod/components/action/radio.dm:58		yes	full	proc
+proc	/obj/item/circuit_component/radio	Destroy	code/modules/wiremod/components/action/radio.dm:66		yes	full	proc
+proc	/obj/item/circuit_component/radio	pre_input_received	code/modules/wiremod/components/action/radio.dm:70	port	yes	full	proc
+proc	/obj/item/circuit_component/radio	input_received	code/modules/wiremod/components/action/radio.dm:73	port	yes	full	proc
+proc	/obj/item/circuit_component/radio	handle_radio_input	code/modules/wiremod/components/action/radio.dm:76	port	yes	full	proc root
+proc	/obj/item/circuit_component/radio	receive_signal	code/modules/wiremod/components/action/radio.dm:104	signal	yes	full	proc
+type	/obj/item/circuit_component/soundemitter	/obj/item/circuit_component	code/modules/wiremod/components/action/soundemitter.dm:7	live	obj_item_circuit_component_soundemitter	1	0
+proc	/obj/item/circuit_component/soundemitter	Initialize	code/modules/wiremod/components/action/soundemitter.dm:36	mapload	yes	full	proc
+proc	/obj/item/circuit_component/soundemitter	get_ui_notices	code/modules/wiremod/components/action/soundemitter.dm:41		yes	full	proc
+proc	/obj/item/circuit_component/soundemitter	populate_ports	code/modules/wiremod/components/action/soundemitter.dm:51		yes	full	proc
+proc	/obj/item/circuit_component/soundemitter	populate_options	code/modules/wiremod/components/action/soundemitter.dm:56		yes	full	proc
+proc	/obj/item/circuit_component/soundemitter	pre_input_received	code/modules/wiremod/components/action/soundemitter.dm:83	port	yes	full	proc
+proc	/obj/item/circuit_component/soundemitter	input_received	code/modules/wiremod/components/action/soundemitter.dm:88	port	yes	full	proc
+type	/obj/item/circuit_component/speech	/obj/item/circuit_component	code/modules/wiremod/components/action/speech.dm:7	live	obj_item_circuit_component_speech	1	0
+proc	/obj/item/circuit_component/speech	get_ui_notices	code/modules/wiremod/components/action/speech.dm:20		yes	full	proc
+proc	/obj/item/circuit_component/speech	populate_ports	code/modules/wiremod/components/action/speech.dm:24		yes	full	proc
+proc	/obj/item/circuit_component/speech	input_received	code/modules/wiremod/components/action/speech.dm:28	port	yes	full	proc
+type	/obj/item/circuit_component/begin_animation	/obj/item/circuit_component	code/modules/wiremod/components/admin/animate.dm:5	live	obj_item_circuit_component_begin_animation	1	0
+proc	/obj/item/circuit_component/begin_animation	populate_options	code/modules/wiremod/components/admin/animate.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/begin_animation	populate_ports	code/modules/wiremod/components/admin/animate.dm:34		yes	full	proc
+proc	/obj/item/circuit_component/begin_animation	pre_input_received	code/modules/wiremod/components/admin/animate.dm:41	port	yes	full	proc
+proc	/obj/item/circuit_component/begin_animation	stop_animations	code/modules/wiremod/components/admin/animate.dm:50	port	yes	full	proc root
+proc	/obj/item/circuit_component/begin_animation	input_received	code/modules/wiremod/components/admin/animate.dm:56	port,return_values	yes	full	proc
+type	/obj/item/circuit_component/animation_step	/obj/item/circuit_component	code/modules/wiremod/components/admin/animate.dm:98	live	obj_item_circuit_component_animation_step	1	0
+proc	/obj/item/circuit_component/animation_step	populate_ports	code/modules/wiremod/components/admin/animate.dm:110		yes	full	proc
+proc	/obj/item/circuit_component/animation_step	input_received	code/modules/wiremod/components/admin/animate.dm:116	port,return_values	yes	full	proc
+type	/obj/item/circuit_component/filter_helper	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:145	live	obj_item_circuit_component_filter_helper	1	0
+proc	/obj/item/circuit_component/filter_helper	populate_options	code/modules/wiremod/components/admin/filter.dm:157		yes	full	proc
+proc	/obj/item/circuit_component/filter_helper	populate_ports	code/modules/wiremod/components/admin/filter.dm:160		yes	full	proc
+proc	/obj/item/circuit_component/filter_helper	pre_input_received	code/modules/wiremod/components/admin/filter.dm:165	port	yes	full	proc
+proc	/obj/item/circuit_component/filter_helper	handle_filter_type_changed	code/modules/wiremod/components/admin/filter.dm:170		yes	full	proc root
+proc	/obj/item/circuit_component/filter_helper	input_received	code/modules/wiremod/components/admin/filter.dm:179	port,return_values	yes	full	proc
+type	/obj/item/circuit_component/filter_adder	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:189	live	obj_item_circuit_component_filter_adder	1	0
+proc	/obj/item/circuit_component/filter_adder	populate_options	code/modules/wiremod/components/admin/filter.dm:202		yes	full	proc
+proc	/obj/item/circuit_component/filter_adder	populate_ports	code/modules/wiremod/components/admin/filter.dm:205		yes	full	proc
+proc	/obj/item/circuit_component/filter_adder	pre_input_received	code/modules/wiremod/components/admin/filter.dm:212	port	yes	full	proc
+proc	/obj/item/circuit_component/filter_adder	handle_filter_type_changed	code/modules/wiremod/components/admin/filter.dm:217		yes	full	proc root
+proc	/obj/item/circuit_component/filter_adder	input_received	code/modules/wiremod/components/admin/filter.dm:227	port,return_values	yes	full	proc
+type	/obj/item/circuit_component/filter_remover	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:241	live	obj_item_circuit_component_filter_remover	1	0
+proc	/obj/item/circuit_component/filter_remover	populate_ports	code/modules/wiremod/components/admin/filter.dm:249		yes	full	proc
+proc	/obj/item/circuit_component/filter_remover	input_received	code/modules/wiremod/components/admin/filter.dm:253	port	yes	full	proc
+type	/obj/item/circuit_component/bitflag_helper	/obj/item/circuit_component	code/modules/wiremod/components/admin/filter.dm:261	live	obj_item_circuit_component_bitflag_helper	1	0
+proc	/obj/item/circuit_component/bitflag_helper	populate_options	code/modules/wiremod/components/admin/filter.dm:274		yes	full	proc
+proc	/obj/item/circuit_component/bitflag_helper	populate_ports	code/modules/wiremod/components/admin/filter.dm:277		yes	full	proc
+proc	/obj/item/circuit_component/bitflag_helper	pre_input_received	code/modules/wiremod/components/admin/filter.dm:282	port	yes	full	proc
+proc	/obj/item/circuit_component/bitflag_helper	handle_bitflag_type_changed	code/modules/wiremod/components/admin/filter.dm:287		yes	full	proc root
+proc	/obj/item/circuit_component/bitflag_helper	input_received	code/modules/wiremod/components/admin/filter.dm:299	port	yes	full	proc
+type	/obj/item/circuit_component/get_variable	/obj/item/circuit_component	code/modules/wiremod/components/admin/getvar.dm:7	live	obj_item_circuit_component_get_variable	1	0
+proc	/obj/item/circuit_component/get_variable	populate_options	code/modules/wiremod/components/admin/getvar.dm:27		yes	full	proc
+proc	/obj/item/circuit_component/get_variable	populate_ports	code/modules/wiremod/components/admin/getvar.dm:31		yes	full	proc
+proc	/obj/item/circuit_component/get_variable	pre_input_received	code/modules/wiremod/components/admin/getvar.dm:36	port	yes	full	proc
+proc	/obj/item/circuit_component/get_variable	input_received	code/modules/wiremod/components/admin/getvar.dm:47	port	yes	full	proc
+type	/obj/item/circuit_component/input_request	/obj/item/circuit_component	code/modules/wiremod/components/admin/input_request.dm:11	live	obj_item_circuit_component_input_request	1	0
+proc	/obj/item/circuit_component/input_request	populate_options	code/modules/wiremod/components/admin/input_request.dm:34		yes	full	proc
+proc	/obj/item/circuit_component/input_request	populate_ports	code/modules/wiremod/components/admin/input_request.dm:43		yes	full	proc
+proc	/obj/item/circuit_component/input_request	input_received	code/modules/wiremod/components/admin/input_request.dm:51	port	yes	full	proc
+proc	/obj/item/circuit_component/input_request	request_input_from_player	code/modules/wiremod/components/admin/input_request.dm:58	player	yes	full	proc root
+proc	/obj/item/circuit_component/input_request	pre_input_received	code/modules/wiremod/components/admin/input_request.dm:81	port	yes	full	proc
+proc	/obj/item/circuit_component/input_request	update_options	code/modules/wiremod/components/admin/input_request.dm:85	port	yes	full	proc root
 type	/obj/item/circuit_component/proccall	/obj/item/circuit_component	code/modules/wiremod/components/admin/proccall.dm:11	inert	obj_item_circuit_component_proccall	0	0
 proc	/obj/item/circuit_component/proccall	ui_perform_action	code/modules/wiremod/components/admin/proccall.dm:37	user,action	no	-	proc
 proc	/obj/item/circuit_component/proccall	ui_interact	code/modules/wiremod/components/admin/proccall.dm:41	user,ui	no	-	proc
@@ -71226,94 +71226,94 @@ proc	/obj/item/circuit_component/proccall	load_data_from_list	code/modules/wirem
 proc	/obj/item/circuit_component/proccall	ui_act	code/modules/wiremod/components/admin/proccall.dm:117	action,params,ui,state	no	-	proc
 proc	/obj/item/circuit_component/proccall	input_received	code/modules/wiremod/components/admin/proccall.dm:158	port	no	-	proc
 proc	/obj/item/circuit_component/proccall	do_proccall	code/modules/wiremod/components/admin/proccall.dm:185	called_on,to_invoke,params	no	-	proc root
-type	/obj/item/circuit_component/save_shell	/obj/item/circuit_component	code/modules/wiremod/components/admin/save_shell.dm:7	inert	obj_item_circuit_component_save_shell	0	0
-proc	/obj/item/circuit_component/save_shell	populate_ports	code/modules/wiremod/components/admin/save_shell.dm:17		no	-	proc
-proc	/obj/item/circuit_component/save_shell	add_to	code/modules/wiremod/components/admin/save_shell.dm:20	added_to	no	-	proc
-proc	/obj/item/circuit_component/save_shell	removed_from	code/modules/wiremod/components/admin/save_shell.dm:25	removed_from	no	-	proc
-proc	/obj/item/circuit_component/save_shell	on_post_load	code/modules/wiremod/components/admin/save_shell.dm:29	source	no	-	proc root
-proc	/obj/item/circuit_component/save_shell	on_pre_save_to_json	code/modules/wiremod/components/admin/save_shell.dm:39	source,general_data	no	-	proc root
-proc	/obj/item/circuit_component/save_shell	save_data_to_list	code/modules/wiremod/components/admin/save_shell.dm:44	component_data	no	-	proc
-proc	/obj/item/circuit_component/save_shell	load_data_from_list	code/modules/wiremod/components/admin/save_shell.dm:49	component_data	no	-	proc
+type	/obj/item/circuit_component/save_shell	/obj/item/circuit_component	code/modules/wiremod/components/admin/save_shell.dm:7	live	obj_item_circuit_component_save_shell	1	0
+proc	/obj/item/circuit_component/save_shell	populate_ports	code/modules/wiremod/components/admin/save_shell.dm:17		yes	full	proc
+proc	/obj/item/circuit_component/save_shell	add_to	code/modules/wiremod/components/admin/save_shell.dm:20	added_to	yes	full	proc
+proc	/obj/item/circuit_component/save_shell	removed_from	code/modules/wiremod/components/admin/save_shell.dm:25	removed_from	yes	full	proc
+proc	/obj/item/circuit_component/save_shell	on_post_load	code/modules/wiremod/components/admin/save_shell.dm:29	source	yes	full	proc root
+proc	/obj/item/circuit_component/save_shell	on_pre_save_to_json	code/modules/wiremod/components/admin/save_shell.dm:39	source,general_data	yes	full	proc root
+proc	/obj/item/circuit_component/save_shell	save_data_to_list	code/modules/wiremod/components/admin/save_shell.dm:44	component_data	yes	full	proc
+proc	/obj/item/circuit_component/save_shell	load_data_from_list	code/modules/wiremod/components/admin/save_shell.dm:49	component_data	yes	full	proc
 type	/obj/item/circuit_component/sdql_operation	/obj/item/circuit_component	code/modules/wiremod/components/admin/sdql.dm:7	inert	obj_item_circuit_component_sdql_operation	0	0
 proc	/obj/item/circuit_component/sdql_operation	populate_ports	code/modules/wiremod/components/admin/sdql.dm:18		no	-	proc
 proc	/obj/item/circuit_component/sdql_operation	input_received	code/modules/wiremod/components/admin/sdql.dm:22	port	no	-	proc
 proc	/obj/item/circuit_component/sdql_operation	execute_sdql	code/modules/wiremod/components/admin/sdql.dm:28	port	no	-	proc root
-type	/obj/item/circuit_component/set_variable	/obj/item/circuit_component	code/modules/wiremod/components/admin/setvar.dm:7	inert	obj_item_circuit_component_set_variable	0	0
-proc	/obj/item/circuit_component/set_variable	populate_ports	code/modules/wiremod/components/admin/setvar.dm:25		no	-	proc
-proc	/obj/item/circuit_component/set_variable	input_received	code/modules/wiremod/components/admin/setvar.dm:31	port	no	-	proc
-type	/obj/item/circuit_component/spawn_atom	/obj/item/circuit_component	code/modules/wiremod/components/admin/spawn.dm:7	inert	obj_item_circuit_component_spawn_atom	0	0
-proc	/obj/item/circuit_component/spawn_atom	populate_ports	code/modules/wiremod/components/admin/spawn.dm:24		no	-	proc
-proc	/obj/item/circuit_component/spawn_atom	input_received	code/modules/wiremod/components/admin/spawn.dm:31	port	no	-	proc
-type	/obj/item/circuit_component/to_type	/obj/item/circuit_component	code/modules/wiremod/components/admin/to_type.dm:7	inert	obj_item_circuit_component_to_type	0	0
-proc	/obj/item/circuit_component/to_type	populate_ports	code/modules/wiremod/components/admin/to_type.dm:18		no	-	proc
-proc	/obj/item/circuit_component/to_type	input_received	code/modules/wiremod/components/admin/to_type.dm:22	port	no	-	proc
-type	/obj/item/circuit_component/signal_handler	/obj/item/circuit_component	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:10	inert	obj_item_circuit_component_signal_handler	0	0
-proc	/obj/item/circuit_component/signal_handler	populate_options	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:55		no	-	proc
-proc	/obj/item/circuit_component/signal_handler	populate_ports	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:65		no	-	proc
-proc	/obj/item/circuit_component/signal_handler	add_source_entity	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:74		no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	save_data_to_list	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:83	component_data	no	-	proc
-proc	/obj/item/circuit_component/signal_handler	load_data_from_list	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:88	component_data	no	-	proc
-proc	/obj/item/circuit_component/signal_handler	pre_input_received	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:96	port	no	-	proc
-proc	/obj/item/circuit_component/signal_handler	set_signal_options	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:108	port	no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	register_signals	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:128	port	no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	load_new_ports	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:140	ports_to_load	no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	unregister_signals_all	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:157	port	no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	unregister_signals	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:166	port	no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	run_ports_on_args	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:179	arguments	no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	handle_signal_received	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:188		no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	handle_bitflag_received	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:216	port,return_values	no	-	proc root
-proc	/obj/item/circuit_component/signal_handler	ui_state	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:63	user	no	-	proc
-proc	/obj/item/circuit_component/signal_handler	ui_static_data	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:66	user	no	-	proc
-proc	/obj/item/circuit_component/signal_handler	ui_interact	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:71	user,ui	no	-	proc
-proc	/obj/item/circuit_component/signal_handler	ui_act	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:78	action,params,ui	no	-	proc
-type	/obj/item/circuit_component/direction	/obj/item/circuit_component	code/modules/wiremod/components/atom/direction.dm:7	inert	obj_item_circuit_component_direction	0	0
-proc	/obj/item/circuit_component/direction	get_ui_notices	code/modules/wiremod/components/atom/direction.dm:29		no	-	proc
-proc	/obj/item/circuit_component/direction	populate_ports	code/modules/wiremod/components/atom/direction.dm:33		no	-	proc
-proc	/obj/item/circuit_component/direction	input_received	code/modules/wiremod/components/atom/direction.dm:44	port	no	-	proc
-type	/obj/item/circuit_component/gps	/obj/item/circuit_component	code/modules/wiremod/components/atom/gps.dm:7	inert	obj_item_circuit_component_gps	0	0
-proc	/obj/item/circuit_component/gps	populate_ports	code/modules/wiremod/components/atom/gps.dm:18		no	-	proc
-proc	/obj/item/circuit_component/gps	input_received	code/modules/wiremod/components/atom/gps.dm:23	port	no	-	proc
-type	/obj/item/circuit_component/health	/obj/item/circuit_component	code/modules/wiremod/components/atom/health.dm:7	inert	obj_item_circuit_component_health	0	0
-proc	/obj/item/circuit_component/health	get_ui_notices	code/modules/wiremod/components/atom/health.dm:29		no	-	proc
-proc	/obj/item/circuit_component/health	populate_ports	code/modules/wiremod/components/atom/health.dm:33		no	-	proc
-proc	/obj/item/circuit_component/health	input_received	code/modules/wiremod/components/atom/health.dm:42	port	no	-	proc
-type	/obj/item/circuit_component/hear	/obj/item/circuit_component	code/modules/wiremod/components/atom/hear.dm:7	inert	obj_item_circuit_component_hear	0	0
-proc	/obj/item/circuit_component/hear	populate_ports	code/modules/wiremod/components/atom/hear.dm:25		no	-	proc
-proc	/obj/item/circuit_component/hear	register_shell	code/modules/wiremod/components/atom/hear.dm:34	shell	no	-	proc
-proc	/obj/item/circuit_component/hear	unregister_shell	code/modules/wiremod/components/atom/hear.dm:39	shell	no	-	proc
-proc	/obj/item/circuit_component/hear	on_shell_hear	code/modules/wiremod/components/atom/hear.dm:42	source,arguments	no	-	proc root
-proc	/obj/item/circuit_component/hear	Hear	code/modules/wiremod/components/atom/hear.dm:46	speaker,message_language,raw_message,radio_freq,radio_freq_name,radio_freq_color,spans,message_mods,message_range	no	-	proc
-type	/obj/item/circuit_component/matscanner	/obj/item/circuit_component	code/modules/wiremod/components/atom/matscanner.dm:7	inert	obj_item_circuit_component_matscanner	0	0
-proc	/obj/item/circuit_component/matscanner	get_ui_notices	code/modules/wiremod/components/atom/matscanner.dm:22		no	-	proc
-proc	/obj/item/circuit_component/matscanner	populate_ports	code/modules/wiremod/components/atom/matscanner.dm:26		no	-	proc
-proc	/obj/item/circuit_component/matscanner	input_received	code/modules/wiremod/components/atom/matscanner.dm:31	port	no	-	proc
-type	/obj/item/circuit_component/pinpointer	/obj/item/circuit_component	code/modules/wiremod/components/atom/pinpointer.dm:7	inert	obj_item_circuit_component_pinpointer	0	0
-proc	/obj/item/circuit_component/pinpointer	populate_ports	code/modules/wiremod/components/atom/pinpointer.dm:22		no	-	proc
-proc	/obj/item/circuit_component/pinpointer	input_received	code/modules/wiremod/components/atom/pinpointer.dm:30	port	no	-	proc
-type	/obj/item/circuit_component/reagentscanner	/obj/item/circuit_component	code/modules/wiremod/components/atom/reagentscanner.dm:7	inert	obj_item_circuit_component_reagentscanner	0	0
-proc	/obj/item/circuit_component/reagentscanner	get_ui_notices	code/modules/wiremod/components/atom/reagentscanner.dm:20		no	-	proc
-proc	/obj/item/circuit_component/reagentscanner	populate_ports	code/modules/wiremod/components/atom/reagentscanner.dm:28		no	-	proc
-proc	/obj/item/circuit_component/reagentscanner	input_received	code/modules/wiremod/components/atom/reagentscanner.dm:32	port	no	-	proc
-type	/obj/item/circuit_component/remotecam	/obj/item/circuit_component	code/modules/wiremod/components/atom/remotecam.dm:13	inert	obj_item_circuit_component_remotecam	0	0
-proc	/obj/item/circuit_component/remotecam	get_ui_notices	code/modules/wiremod/components/atom/remotecam.dm:56		no	-	proc
-proc	/obj/item/circuit_component/remotecam	populate_ports	code/modules/wiremod/components/atom/remotecam.dm:64		no	-	proc
-proc	/obj/item/circuit_component/remotecam	register_shell	code/modules/wiremod/components/atom/remotecam.dm:75	shell	no	-	proc
-proc	/obj/item/circuit_component/remotecam	unregister_shell	code/modules/wiremod/components/atom/remotecam.dm:79	shell	no	-	proc
-proc	/obj/item/circuit_component/remotecam	Destroy	code/modules/wiremod/components/atom/remotecam.dm:84		no	-	proc
-proc	/obj/item/circuit_component/remotecam	input_received	code/modules/wiremod/components/atom/remotecam.dm:90	port	no	-	proc
-proc	/obj/item/circuit_component/remotecam	init_camera	code/modules/wiremod/components/atom/remotecam.dm:106		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	remove_camera	code/modules/wiremod/components/atom/remotecam.dm:133		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	close_camera	code/modules/wiremod/components/atom/remotecam.dm:148		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	update_camera_range	code/modules/wiremod/components/atom/remotecam.dm:155		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	update_camera_name_network	code/modules/wiremod/components/atom/remotecam.dm:161		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	update_camera_location	code/modules/wiremod/components/atom/remotecam.dm:189	old_loc,movement_dir,forced,old_locs,momentum_change	no	-	proc root
-proc	/obj/item/circuit_component/remotecam	cameranet_add	code/modules/wiremod/components/atom/remotecam.dm:199		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	cameranet_remove	code/modules/wiremod/components/atom/remotecam.dm:209		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	set_camera_emp	code/modules/wiremod/components/atom/remotecam.dm:219	source,severity,protection	no	-	proc root
-proc	/obj/item/circuit_component/remotecam	remove_camera_emp	code/modules/wiremod/components/atom/remotecam.dm:236		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	start_process	code/modules/wiremod/components/atom/remotecam.dm:244		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	stop_process	code/modules/wiremod/components/atom/remotecam.dm:252		no	-	proc root
-proc	/obj/item/circuit_component/remotecam	process	code/modules/wiremod/components/atom/remotecam.dm:260	seconds_per_tick	no	-	proc
+type	/obj/item/circuit_component/set_variable	/obj/item/circuit_component	code/modules/wiremod/components/admin/setvar.dm:7	live	obj_item_circuit_component_set_variable	1	0
+proc	/obj/item/circuit_component/set_variable	populate_ports	code/modules/wiremod/components/admin/setvar.dm:25		yes	full	proc
+proc	/obj/item/circuit_component/set_variable	input_received	code/modules/wiremod/components/admin/setvar.dm:31	port	yes	full	proc
+type	/obj/item/circuit_component/spawn_atom	/obj/item/circuit_component	code/modules/wiremod/components/admin/spawn.dm:7	live	obj_item_circuit_component_spawn_atom	1	0
+proc	/obj/item/circuit_component/spawn_atom	populate_ports	code/modules/wiremod/components/admin/spawn.dm:24		yes	full	proc
+proc	/obj/item/circuit_component/spawn_atom	input_received	code/modules/wiremod/components/admin/spawn.dm:31	port	yes	full	proc
+type	/obj/item/circuit_component/to_type	/obj/item/circuit_component	code/modules/wiremod/components/admin/to_type.dm:7	live	obj_item_circuit_component_to_type	1	0
+proc	/obj/item/circuit_component/to_type	populate_ports	code/modules/wiremod/components/admin/to_type.dm:18		yes	full	proc
+proc	/obj/item/circuit_component/to_type	input_received	code/modules/wiremod/components/admin/to_type.dm:22	port	yes	full	proc
+type	/obj/item/circuit_component/signal_handler	/obj/item/circuit_component	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:10	live	obj_item_circuit_component_signal_handler	1	0
+proc	/obj/item/circuit_component/signal_handler	populate_options	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:55		yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	populate_ports	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:65		yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	add_source_entity	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:74		yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	save_data_to_list	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:83	component_data	yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	load_data_from_list	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:88	component_data	yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	pre_input_received	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:96	port	yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	set_signal_options	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:108	port	yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	register_signals	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:128	port	yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	load_new_ports	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:140	ports_to_load	yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	unregister_signals_all	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:157	port	yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	unregister_signals	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:166	port	yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	run_ports_on_args	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:179	arguments	yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	handle_signal_received	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:188		yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	handle_bitflag_received	code/modules/wiremod/components/admin/signal_handler/signal_handler.dm:216	port,return_values	yes	full	proc root
+proc	/obj/item/circuit_component/signal_handler	ui_state	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:63	user	yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	ui_static_data	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:66	user	yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	ui_interact	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:71	user,ui	yes	full	proc
+proc	/obj/item/circuit_component/signal_handler	ui_act	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:78	action,params,ui	yes	full	proc
+type	/obj/item/circuit_component/direction	/obj/item/circuit_component	code/modules/wiremod/components/atom/direction.dm:7	live	obj_item_circuit_component_direction	1	0
+proc	/obj/item/circuit_component/direction	get_ui_notices	code/modules/wiremod/components/atom/direction.dm:29		yes	full	proc
+proc	/obj/item/circuit_component/direction	populate_ports	code/modules/wiremod/components/atom/direction.dm:33		yes	full	proc
+proc	/obj/item/circuit_component/direction	input_received	code/modules/wiremod/components/atom/direction.dm:44	port	yes	full	proc
+type	/obj/item/circuit_component/gps	/obj/item/circuit_component	code/modules/wiremod/components/atom/gps.dm:7	live	obj_item_circuit_component_gps	1	0
+proc	/obj/item/circuit_component/gps	populate_ports	code/modules/wiremod/components/atom/gps.dm:18		yes	full	proc
+proc	/obj/item/circuit_component/gps	input_received	code/modules/wiremod/components/atom/gps.dm:23	port	yes	full	proc
+type	/obj/item/circuit_component/health	/obj/item/circuit_component	code/modules/wiremod/components/atom/health.dm:7	live	obj_item_circuit_component_health	1	0
+proc	/obj/item/circuit_component/health	get_ui_notices	code/modules/wiremod/components/atom/health.dm:29		yes	full	proc
+proc	/obj/item/circuit_component/health	populate_ports	code/modules/wiremod/components/atom/health.dm:33		yes	full	proc
+proc	/obj/item/circuit_component/health	input_received	code/modules/wiremod/components/atom/health.dm:42	port	yes	full	proc
+type	/obj/item/circuit_component/hear	/obj/item/circuit_component	code/modules/wiremod/components/atom/hear.dm:7	live	obj_item_circuit_component_hear	1	0
+proc	/obj/item/circuit_component/hear	populate_ports	code/modules/wiremod/components/atom/hear.dm:25		yes	full	proc
+proc	/obj/item/circuit_component/hear	register_shell	code/modules/wiremod/components/atom/hear.dm:34	shell	yes	full	proc
+proc	/obj/item/circuit_component/hear	unregister_shell	code/modules/wiremod/components/atom/hear.dm:39	shell	yes	full	proc
+proc	/obj/item/circuit_component/hear	on_shell_hear	code/modules/wiremod/components/atom/hear.dm:42	source,arguments	yes	full	proc root
+proc	/obj/item/circuit_component/hear	Hear	code/modules/wiremod/components/atom/hear.dm:46	speaker,message_language,raw_message,radio_freq,radio_freq_name,radio_freq_color,spans,message_mods,message_range	yes	full	proc
+type	/obj/item/circuit_component/matscanner	/obj/item/circuit_component	code/modules/wiremod/components/atom/matscanner.dm:7	live	obj_item_circuit_component_matscanner	1	0
+proc	/obj/item/circuit_component/matscanner	get_ui_notices	code/modules/wiremod/components/atom/matscanner.dm:22		yes	full	proc
+proc	/obj/item/circuit_component/matscanner	populate_ports	code/modules/wiremod/components/atom/matscanner.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/matscanner	input_received	code/modules/wiremod/components/atom/matscanner.dm:31	port	yes	full	proc
+type	/obj/item/circuit_component/pinpointer	/obj/item/circuit_component	code/modules/wiremod/components/atom/pinpointer.dm:7	live	obj_item_circuit_component_pinpointer	1	0
+proc	/obj/item/circuit_component/pinpointer	populate_ports	code/modules/wiremod/components/atom/pinpointer.dm:22		yes	full	proc
+proc	/obj/item/circuit_component/pinpointer	input_received	code/modules/wiremod/components/atom/pinpointer.dm:30	port	yes	full	proc
+type	/obj/item/circuit_component/reagentscanner	/obj/item/circuit_component	code/modules/wiremod/components/atom/reagentscanner.dm:7	live	obj_item_circuit_component_reagentscanner	1	0
+proc	/obj/item/circuit_component/reagentscanner	get_ui_notices	code/modules/wiremod/components/atom/reagentscanner.dm:20		yes	full	proc
+proc	/obj/item/circuit_component/reagentscanner	populate_ports	code/modules/wiremod/components/atom/reagentscanner.dm:28		yes	full	proc
+proc	/obj/item/circuit_component/reagentscanner	input_received	code/modules/wiremod/components/atom/reagentscanner.dm:32	port	yes	full	proc
+type	/obj/item/circuit_component/remotecam	/obj/item/circuit_component	code/modules/wiremod/components/atom/remotecam.dm:13	live	obj_item_circuit_component_remotecam	1	0
+proc	/obj/item/circuit_component/remotecam	get_ui_notices	code/modules/wiremod/components/atom/remotecam.dm:56		yes	full	proc
+proc	/obj/item/circuit_component/remotecam	populate_ports	code/modules/wiremod/components/atom/remotecam.dm:64		yes	full	proc
+proc	/obj/item/circuit_component/remotecam	register_shell	code/modules/wiremod/components/atom/remotecam.dm:75	shell	yes	full	proc
+proc	/obj/item/circuit_component/remotecam	unregister_shell	code/modules/wiremod/components/atom/remotecam.dm:79	shell	yes	full	proc
+proc	/obj/item/circuit_component/remotecam	Destroy	code/modules/wiremod/components/atom/remotecam.dm:84		yes	full	proc
+proc	/obj/item/circuit_component/remotecam	input_received	code/modules/wiremod/components/atom/remotecam.dm:90	port	yes	full	proc
+proc	/obj/item/circuit_component/remotecam	init_camera	code/modules/wiremod/components/atom/remotecam.dm:106		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	remove_camera	code/modules/wiremod/components/atom/remotecam.dm:133		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	close_camera	code/modules/wiremod/components/atom/remotecam.dm:148		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	update_camera_range	code/modules/wiremod/components/atom/remotecam.dm:155		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	update_camera_name_network	code/modules/wiremod/components/atom/remotecam.dm:161		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	update_camera_location	code/modules/wiremod/components/atom/remotecam.dm:189	old_loc,movement_dir,forced,old_locs,momentum_change	yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	cameranet_add	code/modules/wiremod/components/atom/remotecam.dm:199		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	cameranet_remove	code/modules/wiremod/components/atom/remotecam.dm:209		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	set_camera_emp	code/modules/wiremod/components/atom/remotecam.dm:219	source,severity,protection	yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	remove_camera_emp	code/modules/wiremod/components/atom/remotecam.dm:236		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	start_process	code/modules/wiremod/components/atom/remotecam.dm:244		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	stop_process	code/modules/wiremod/components/atom/remotecam.dm:252		yes	full	proc root
+proc	/obj/item/circuit_component/remotecam	process	code/modules/wiremod/components/atom/remotecam.dm:260	seconds_per_tick	yes	full	proc
 type	/obj/item/circuit_component/remotecam/bci	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:282	inert	obj_item_circuit_component_remotecam_bci	0	0
 proc	/obj/item/circuit_component/remotecam/bci	register_shell	code/modules/wiremod/components/atom/remotecam.dm:317	shell	no	-	proc
 proc	/obj/item/circuit_component/remotecam/bci	unregister_shell	code/modules/wiremod/components/atom/remotecam.dm:332	shell	no	-	proc
@@ -71321,20 +71321,20 @@ proc	/obj/item/circuit_component/remotecam/bci	Destroy	code/modules/wiremod/comp
 proc	/obj/item/circuit_component/remotecam/bci	on_organ_implanted	code/modules/wiremod/components/atom/remotecam.dm:348	source,owner	no	-	proc root
 proc	/obj/item/circuit_component/remotecam/bci	on_organ_removed	code/modules/wiremod/components/atom/remotecam.dm:355	source,owner	no	-	proc root
 proc	/obj/item/circuit_component/remotecam/bci	process	code/modules/wiremod/components/atom/remotecam.dm:386	seconds_per_tick	no	-	proc
-type	/obj/item/circuit_component/remotecam/drone	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:295	inert	obj_item_circuit_component_remotecam_drone	0	0
-proc	/obj/item/circuit_component/remotecam/drone	register_shell	code/modules/wiremod/components/atom/remotecam.dm:362	shell	no	-	proc
-type	/obj/item/circuit_component/remotecam/airlock	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:300	inert	obj_item_circuit_component_remotecam_airlock	0	0
-proc	/obj/item/circuit_component/remotecam/airlock	register_shell	code/modules/wiremod/components/atom/remotecam.dm:370	shell	no	-	proc
-type	/obj/item/circuit_component/remotecam/polaroid	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:309	inert	obj_item_circuit_component_remotecam_polaroid	0	0
-proc	/obj/item/circuit_component/remotecam/polaroid	register_shell	code/modules/wiremod/components/atom/remotecam.dm:378	shell	no	-	proc
-proc	/obj/item/circuit_component/remotecam/polaroid	process	code/modules/wiremod/components/atom/remotecam.dm:416	seconds_per_tick	no	-	proc
-type	/obj/item/circuit_component/self	/obj/item/circuit_component	code/modules/wiremod/components/atom/self.dm:7	inert	obj_item_circuit_component_self	0	0
-proc	/obj/item/circuit_component/self	populate_ports	code/modules/wiremod/components/atom/self.dm:17		no	-	proc
-proc	/obj/item/circuit_component/self	register_shell	code/modules/wiremod/components/atom/self.dm:21	shell	no	-	proc
-proc	/obj/item/circuit_component/self	unregister_shell	code/modules/wiremod/components/atom/self.dm:25	shell	no	-	proc
-type	/obj/item/circuit_component/species	/obj/item/circuit_component	code/modules/wiremod/components/atom/species.dm:7	inert	obj_item_circuit_component_species	0	0
-proc	/obj/item/circuit_component/species	populate_ports	code/modules/wiremod/components/atom/species.dm:19		no	-	proc
-proc	/obj/item/circuit_component/species	input_received	code/modules/wiremod/components/atom/species.dm:24	port	no	-	proc
+type	/obj/item/circuit_component/remotecam/drone	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:295	live	obj_item_circuit_component_remotecam_drone	1	0
+proc	/obj/item/circuit_component/remotecam/drone	register_shell	code/modules/wiremod/components/atom/remotecam.dm:362	shell	yes	full	proc
+type	/obj/item/circuit_component/remotecam/airlock	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:300	live	obj_item_circuit_component_remotecam_airlock	1	0
+proc	/obj/item/circuit_component/remotecam/airlock	register_shell	code/modules/wiremod/components/atom/remotecam.dm:370	shell	yes	full	proc
+type	/obj/item/circuit_component/remotecam/polaroid	/obj/item/circuit_component/remotecam	code/modules/wiremod/components/atom/remotecam.dm:309	live	obj_item_circuit_component_remotecam_polaroid	1	0
+proc	/obj/item/circuit_component/remotecam/polaroid	register_shell	code/modules/wiremod/components/atom/remotecam.dm:378	shell	yes	full	proc
+proc	/obj/item/circuit_component/remotecam/polaroid	process	code/modules/wiremod/components/atom/remotecam.dm:416	seconds_per_tick	yes	full	proc
+type	/obj/item/circuit_component/self	/obj/item/circuit_component	code/modules/wiremod/components/atom/self.dm:7	live	obj_item_circuit_component_self	1	0
+proc	/obj/item/circuit_component/self	populate_ports	code/modules/wiremod/components/atom/self.dm:17		yes	full	proc
+proc	/obj/item/circuit_component/self	register_shell	code/modules/wiremod/components/atom/self.dm:21	shell	yes	full	proc
+proc	/obj/item/circuit_component/self	unregister_shell	code/modules/wiremod/components/atom/self.dm:25	shell	yes	full	proc
+type	/obj/item/circuit_component/species	/obj/item/circuit_component	code/modules/wiremod/components/atom/species.dm:7	live	obj_item_circuit_component_species	1	0
+proc	/obj/item/circuit_component/species	populate_ports	code/modules/wiremod/components/atom/species.dm:19		yes	full	proc
+proc	/obj/item/circuit_component/species	input_received	code/modules/wiremod/components/atom/species.dm:24	port	yes	full	proc
 type	/obj/item/circuit_component/install_detector	/obj/item/circuit_component	code/modules/wiremod/components/bci/install_detector.dm:9	inert	obj_item_circuit_component_install_detector	0	0
 proc	/obj/item/circuit_component/install_detector	populate_ports	code/modules/wiremod/components/bci/install_detector.dm:19		no	-	proc
 proc	/obj/item/circuit_component/install_detector	register_shell	code/modules/wiremod/components/bci/install_detector.dm:25	shell	no	-	proc
@@ -71389,18 +71389,18 @@ proc	/obj/item/circuit_component/target_intercept	input_received	code/modules/wi
 proc	/obj/item/circuit_component/target_intercept	on_organ_removed	code/modules/wiremod/components/bci/hud/target_intercept.dm:51	source,owner	no	-	proc root
 proc	/obj/item/circuit_component/target_intercept	InterceptClickOn	code/modules/wiremod/components/bci/hud/target_intercept.dm:57	user,params,object	no	-	proc root
 proc	/obj/item/circuit_component/target_intercept	get_ui_notices	code/modules/wiremod/components/bci/hud/target_intercept.dm:64		no	-	proc
-type	/obj/item/circuit_component/id_access_reader	/obj/item/circuit_component	code/modules/wiremod/components/id/access_reader.dm:2	inert	obj_item_circuit_component_id_access_reader	0	0
-proc	/obj/item/circuit_component/id_access_reader	get_ui_notices	code/modules/wiremod/components/id/access_reader.dm:16		no	-	proc
-proc	/obj/item/circuit_component/id_access_reader	populate_ports	code/modules/wiremod/components/id/access_reader.dm:20		no	-	proc
-proc	/obj/item/circuit_component/id_access_reader	input_received	code/modules/wiremod/components/id/access_reader.dm:25	port	no	-	proc
-type	/obj/item/circuit_component/id_getter	/obj/item/circuit_component	code/modules/wiremod/components/id/getter.dm:2	inert	obj_item_circuit_component_id_getter	0	0
-proc	/obj/item/circuit_component/id_getter	get_ui_notices	code/modules/wiremod/components/id/getter.dm:19		no	-	proc
-proc	/obj/item/circuit_component/id_getter	populate_ports	code/modules/wiremod/components/id/getter.dm:23		no	-	proc
-proc	/obj/item/circuit_component/id_getter	input_received	code/modules/wiremod/components/id/getter.dm:28	port	no	-	proc
-type	/obj/item/circuit_component/id_info_reader	/obj/item/circuit_component	code/modules/wiremod/components/id/info_reader.dm:2	inert	obj_item_circuit_component_id_info_reader	0	0
-proc	/obj/item/circuit_component/id_info_reader	get_ui_notices	code/modules/wiremod/components/id/info_reader.dm:22		no	-	proc
-proc	/obj/item/circuit_component/id_info_reader	populate_ports	code/modules/wiremod/components/id/info_reader.dm:26		no	-	proc
-proc	/obj/item/circuit_component/id_info_reader	input_received	code/modules/wiremod/components/id/info_reader.dm:33	port	no	-	proc
+type	/obj/item/circuit_component/id_access_reader	/obj/item/circuit_component	code/modules/wiremod/components/id/access_reader.dm:2	live	obj_item_circuit_component_id_access_reader	1	0
+proc	/obj/item/circuit_component/id_access_reader	get_ui_notices	code/modules/wiremod/components/id/access_reader.dm:16		yes	full	proc
+proc	/obj/item/circuit_component/id_access_reader	populate_ports	code/modules/wiremod/components/id/access_reader.dm:20		yes	full	proc
+proc	/obj/item/circuit_component/id_access_reader	input_received	code/modules/wiremod/components/id/access_reader.dm:25	port	yes	full	proc
+type	/obj/item/circuit_component/id_getter	/obj/item/circuit_component	code/modules/wiremod/components/id/getter.dm:2	live	obj_item_circuit_component_id_getter	1	0
+proc	/obj/item/circuit_component/id_getter	get_ui_notices	code/modules/wiremod/components/id/getter.dm:19		yes	full	proc
+proc	/obj/item/circuit_component/id_getter	populate_ports	code/modules/wiremod/components/id/getter.dm:23		yes	full	proc
+proc	/obj/item/circuit_component/id_getter	input_received	code/modules/wiremod/components/id/getter.dm:28	port	yes	full	proc
+type	/obj/item/circuit_component/id_info_reader	/obj/item/circuit_component	code/modules/wiremod/components/id/info_reader.dm:2	live	obj_item_circuit_component_id_info_reader	1	0
+proc	/obj/item/circuit_component/id_info_reader	get_ui_notices	code/modules/wiremod/components/id/info_reader.dm:22		yes	full	proc
+proc	/obj/item/circuit_component/id_info_reader	populate_ports	code/modules/wiremod/components/id/info_reader.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/id_info_reader	input_received	code/modules/wiremod/components/id/info_reader.dm:33	port	yes	full	proc
 type	/obj/item/circuit_component/list_pick	/obj/item/circuit_component	code/modules/wiremod/components/list/list_pick.dm:7	live	obj_item_circuit_component_list_pick	1	0
 proc	/obj/item/circuit_component/list_pick	make_list_port	code/modules/wiremod/components/list/list_pick.dm:30		yes	full	proc root
 proc	/obj/item/circuit_component/list_pick	populate_ports	code/modules/wiremod/components/list/list_pick.dm:33		yes	full	proc
@@ -71461,23 +71461,23 @@ proc	/obj/item/circuit_component/list_literal	populate_options	code/modules/wire
 proc	/obj/item/circuit_component/list_literal	pre_input_received	code/modules/wiremod/components/list/list_literal.dm:30	port	yes	full	proc
 proc	/obj/item/circuit_component/list_literal	populate_ports	code/modules/wiremod/components/list/list_literal.dm:37		yes	full	proc
 proc	/obj/item/circuit_component/list_literal	input_received	code/modules/wiremod/components/list/list_literal.dm:49	port	yes	full	proc
-type	/obj/item/circuit_component/list_literal/ntnet_send	/obj/item/circuit_component/list_literal	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:10	inert	obj_item_circuit_component_list_literal_ntnet_send	0	0
-proc	/obj/item/circuit_component/list_literal/ntnet_send	populate_ports	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:17		no	-	proc
-proc	/obj/item/circuit_component/list_literal/ntnet_send	should_receive_input	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:21	port	no	-	proc
-proc	/obj/item/circuit_component/list_literal/ntnet_send	input_received	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:28	port	no	-	proc
+type	/obj/item/circuit_component/list_literal/ntnet_send	/obj/item/circuit_component/list_literal	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:10	live	obj_item_circuit_component_list_literal_ntnet_send	1	0
+proc	/obj/item/circuit_component/list_literal/ntnet_send	populate_ports	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:17		yes	full	proc
+proc	/obj/item/circuit_component/list_literal/ntnet_send	should_receive_input	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:21	port	yes	full	proc
+proc	/obj/item/circuit_component/list_literal/ntnet_send	input_received	code/modules/wiremod/components/ntnet/ntnet_send_literal.dm:28	port	yes	full	proc
 type	/obj/item/circuit_component/list_literal/nfc_send	/obj/item/circuit_component/list_literal	code/modules/wiremod/components/utility/nfc_send_literal.dm:10	live	obj_item_circuit_component_list_literal_nfc_send	1	0
 proc	/obj/item/circuit_component/list_literal/nfc_send	populate_ports	code/modules/wiremod/components/utility/nfc_send_literal.dm:20		yes	full	proc
 proc	/obj/item/circuit_component/list_literal/nfc_send	should_receive_input	code/modules/wiremod/components/utility/nfc_send_literal.dm:25	port	yes	full	proc
 proc	/obj/item/circuit_component/list_literal/nfc_send	input_received	code/modules/wiremod/components/utility/nfc_send_literal.dm:32	port	yes	full	proc
-type	/obj/item/circuit_component/list_literal/wirenet_send	/obj/item/circuit_component/list_literal	code/modules/wiremod/components/wirenet/send_literal.dm:2	inert	obj_item_circuit_component_list_literal_wirenet_send	0	0
-proc	/obj/item/circuit_component/list_literal/wirenet_send	Initialize	code/modules/wiremod/components/wirenet/send_literal.dm:22	mapload	no	-	proc
-proc	/obj/item/circuit_component/list_literal/wirenet_send	Destroy	code/modules/wiremod/components/wirenet/send_literal.dm:31		no	-	proc
-proc	/obj/item/circuit_component/list_literal/wirenet_send	on_powernet_connection	code/modules/wiremod/components/wirenet/send_literal.dm:35	new_powernet	no	-	proc root
-proc	/obj/item/circuit_component/list_literal/wirenet_send	on_powernet_disconnection	code/modules/wiremod/components/wirenet/send_literal.dm:38	old_powernet	no	-	proc root
-proc	/obj/item/circuit_component/list_literal/wirenet_send	on_set_cable_layer	code/modules/wiremod/components/wirenet/send_literal.dm:41	new_layer	no	-	proc root
-proc	/obj/item/circuit_component/list_literal/wirenet_send	get_ui_notices	code/modules/wiremod/components/wirenet/send_literal.dm:44		no	-	proc
-proc	/obj/item/circuit_component/list_literal/wirenet_send	populate_ports	code/modules/wiremod/components/wirenet/send_literal.dm:49		no	-	proc
-proc	/obj/item/circuit_component/list_literal/wirenet_send	input_received	code/modules/wiremod/components/wirenet/send_literal.dm:53	port	no	-	proc
+type	/obj/item/circuit_component/list_literal/wirenet_send	/obj/item/circuit_component/list_literal	code/modules/wiremod/components/wirenet/send_literal.dm:2	live	obj_item_circuit_component_list_literal_wirenet_send	1	0
+proc	/obj/item/circuit_component/list_literal/wirenet_send	Initialize	code/modules/wiremod/components/wirenet/send_literal.dm:22	mapload	yes	full	proc
+proc	/obj/item/circuit_component/list_literal/wirenet_send	Destroy	code/modules/wiremod/components/wirenet/send_literal.dm:31		yes	full	proc
+proc	/obj/item/circuit_component/list_literal/wirenet_send	on_powernet_connection	code/modules/wiremod/components/wirenet/send_literal.dm:35	new_powernet	yes	full	proc root
+proc	/obj/item/circuit_component/list_literal/wirenet_send	on_powernet_disconnection	code/modules/wiremod/components/wirenet/send_literal.dm:38	old_powernet	yes	full	proc root
+proc	/obj/item/circuit_component/list_literal/wirenet_send	on_set_cable_layer	code/modules/wiremod/components/wirenet/send_literal.dm:41	new_layer	yes	full	proc root
+proc	/obj/item/circuit_component/list_literal/wirenet_send	get_ui_notices	code/modules/wiremod/components/wirenet/send_literal.dm:44		yes	full	proc
+proc	/obj/item/circuit_component/list_literal/wirenet_send	populate_ports	code/modules/wiremod/components/wirenet/send_literal.dm:49		yes	full	proc
+proc	/obj/item/circuit_component/list_literal/wirenet_send	input_received	code/modules/wiremod/components/wirenet/send_literal.dm:53	port	yes	full	proc
 type	/obj/item/circuit_component/split	/obj/item/circuit_component	code/modules/wiremod/components/list/split.dm:7	live	obj_item_circuit_component_split	1	0
 proc	/obj/item/circuit_component/split	populate_ports	code/modules/wiremod/components/list/split.dm:22		yes	full	proc
 proc	/obj/item/circuit_component/split	input_received	code/modules/wiremod/components/list/split.dm:27	port	yes	full	proc
@@ -71507,27 +71507,27 @@ type	/obj/item/circuit_component/trigonometry	/obj/item/circuit_component	code/m
 proc	/obj/item/circuit_component/trigonometry	populate_options	code/modules/wiremod/components/math/trigonometry.dm:30		yes	full	proc
 proc	/obj/item/circuit_component/trigonometry	populate_ports	code/modules/wiremod/components/math/trigonometry.dm:41		yes	full	proc
 proc	/obj/item/circuit_component/trigonometry	input_received	code/modules/wiremod/components/math/trigonometry.dm:45	port	yes	full	proc
-type	/obj/item/circuit_component/ntnet_receive	/obj/item/circuit_component	code/modules/wiremod/components/ntnet/ntnet_receive.dm:7	inert	obj_item_circuit_component_ntnet_receive	0	0
-proc	/obj/item/circuit_component/ntnet_receive	populate_options	code/modules/wiremod/components/ntnet/ntnet_receive.dm:22		no	-	proc
-proc	/obj/item/circuit_component/ntnet_receive	populate_ports	code/modules/wiremod/components/ntnet/ntnet_receive.dm:25		no	-	proc
-proc	/obj/item/circuit_component/ntnet_receive	pre_input_received	code/modules/wiremod/components/ntnet/ntnet_receive.dm:30	port	no	-	proc
-proc	/obj/item/circuit_component/ntnet_receive	ntnet_receive	code/modules/wiremod/components/ntnet/ntnet_receive.dm:36	source,data	no	-	proc root
-type	/obj/item/circuit_component/ntnet_send	/obj/item/circuit_component	code/modules/wiremod/components/ntnet/ntnet_send.dm:8	inert	obj_item_circuit_component_ntnet_send	0	0
-proc	/obj/item/circuit_component/ntnet_send	populate_options	code/modules/wiremod/components/ntnet/ntnet_send.dm:23		no	-	proc
-proc	/obj/item/circuit_component/ntnet_send	populate_ports	code/modules/wiremod/components/ntnet/ntnet_send.dm:26		no	-	proc
-proc	/obj/item/circuit_component/ntnet_send	should_receive_input	code/modules/wiremod/components/ntnet/ntnet_send.dm:30	port	no	-	proc
-proc	/obj/item/circuit_component/ntnet_send	pre_input_received	code/modules/wiremod/components/ntnet/ntnet_send.dm:37	port	no	-	proc
-proc	/obj/item/circuit_component/ntnet_send	input_received	code/modules/wiremod/components/ntnet/ntnet_send.dm:42	port	no	-	proc
-type	/obj/item/circuit_component/pressuresensor	/obj/item/circuit_component	code/modules/wiremod/components/sensors/pressuresensor.dm:7	inert	obj_item_circuit_component_pressuresensor	0	0
-proc	/obj/item/circuit_component/pressuresensor	populate_ports	code/modules/wiremod/components/sensors/pressuresensor.dm:16		no	-	proc
-proc	/obj/item/circuit_component/pressuresensor	input_received	code/modules/wiremod/components/sensors/pressuresensor.dm:19	port	no	-	proc
-type	/obj/item/circuit_component/tempsensor	/obj/item/circuit_component	code/modules/wiremod/components/sensors/tempsensor.dm:7	inert	obj_item_circuit_component_tempsensor	0	0
-proc	/obj/item/circuit_component/tempsensor	populate_ports	code/modules/wiremod/components/sensors/tempsensor.dm:16		no	-	proc
-proc	/obj/item/circuit_component/tempsensor	input_received	code/modules/wiremod/components/sensors/tempsensor.dm:19	port	no	-	proc
-type	/obj/item/circuit_component/view_sensor	/obj/item/circuit_component	code/modules/wiremod/components/sensors/view_sensor.dm:8	inert	obj_item_circuit_component_view_sensor	0	0
-proc	/obj/item/circuit_component/view_sensor	populate_ports	code/modules/wiremod/components/sensors/view_sensor.dm:27		no	-	proc
-proc	/obj/item/circuit_component/view_sensor	get_ui_notices	code/modules/wiremod/components/sensors/view_sensor.dm:32		no	-	proc
-proc	/obj/item/circuit_component/view_sensor	input_received	code/modules/wiremod/components/sensors/view_sensor.dm:36	port	no	-	proc
+type	/obj/item/circuit_component/ntnet_receive	/obj/item/circuit_component	code/modules/wiremod/components/ntnet/ntnet_receive.dm:7	live	obj_item_circuit_component_ntnet_receive	1	0
+proc	/obj/item/circuit_component/ntnet_receive	populate_options	code/modules/wiremod/components/ntnet/ntnet_receive.dm:22		yes	full	proc
+proc	/obj/item/circuit_component/ntnet_receive	populate_ports	code/modules/wiremod/components/ntnet/ntnet_receive.dm:25		yes	full	proc
+proc	/obj/item/circuit_component/ntnet_receive	pre_input_received	code/modules/wiremod/components/ntnet/ntnet_receive.dm:30	port	yes	full	proc
+proc	/obj/item/circuit_component/ntnet_receive	ntnet_receive	code/modules/wiremod/components/ntnet/ntnet_receive.dm:36	source,data	yes	full	proc root
+type	/obj/item/circuit_component/ntnet_send	/obj/item/circuit_component	code/modules/wiremod/components/ntnet/ntnet_send.dm:8	live	obj_item_circuit_component_ntnet_send	1	0
+proc	/obj/item/circuit_component/ntnet_send	populate_options	code/modules/wiremod/components/ntnet/ntnet_send.dm:23		yes	full	proc
+proc	/obj/item/circuit_component/ntnet_send	populate_ports	code/modules/wiremod/components/ntnet/ntnet_send.dm:26		yes	full	proc
+proc	/obj/item/circuit_component/ntnet_send	should_receive_input	code/modules/wiremod/components/ntnet/ntnet_send.dm:30	port	yes	full	proc
+proc	/obj/item/circuit_component/ntnet_send	pre_input_received	code/modules/wiremod/components/ntnet/ntnet_send.dm:37	port	yes	full	proc
+proc	/obj/item/circuit_component/ntnet_send	input_received	code/modules/wiremod/components/ntnet/ntnet_send.dm:42	port	yes	full	proc
+type	/obj/item/circuit_component/pressuresensor	/obj/item/circuit_component	code/modules/wiremod/components/sensors/pressuresensor.dm:7	live	obj_item_circuit_component_pressuresensor	1	0
+proc	/obj/item/circuit_component/pressuresensor	populate_ports	code/modules/wiremod/components/sensors/pressuresensor.dm:16		yes	full	proc
+proc	/obj/item/circuit_component/pressuresensor	input_received	code/modules/wiremod/components/sensors/pressuresensor.dm:19	port	yes	full	proc
+type	/obj/item/circuit_component/tempsensor	/obj/item/circuit_component	code/modules/wiremod/components/sensors/tempsensor.dm:7	live	obj_item_circuit_component_tempsensor	1	0
+proc	/obj/item/circuit_component/tempsensor	populate_ports	code/modules/wiremod/components/sensors/tempsensor.dm:16		yes	full	proc
+proc	/obj/item/circuit_component/tempsensor	input_received	code/modules/wiremod/components/sensors/tempsensor.dm:19	port	yes	full	proc
+type	/obj/item/circuit_component/view_sensor	/obj/item/circuit_component	code/modules/wiremod/components/sensors/view_sensor.dm:8	live	obj_item_circuit_component_view_sensor	1	0
+proc	/obj/item/circuit_component/view_sensor	populate_ports	code/modules/wiremod/components/sensors/view_sensor.dm:27		yes	full	proc
+proc	/obj/item/circuit_component/view_sensor	get_ui_notices	code/modules/wiremod/components/sensors/view_sensor.dm:32		yes	full	proc
+proc	/obj/item/circuit_component/view_sensor	input_received	code/modules/wiremod/components/sensors/view_sensor.dm:36	port	yes	full	proc
 type	/obj/item/circuit_component/concat	/obj/item/circuit_component	code/modules/wiremod/components/string/concat.dm:7	live	obj_item_circuit_component_concat	1	0
 proc	/obj/item/circuit_component/concat	populate_ports	code/modules/wiremod/components/string/concat.dm:22		yes	full	proc
 proc	/obj/item/circuit_component/concat	input_received	code/modules/wiremod/components/string/concat.dm:34	port	yes	full	proc
@@ -71633,56 +71633,56 @@ proc	/obj/item/circuit_component/wire_bundle	on_pulse_wire	code/modules/wiremod/
 proc	/obj/item/circuit_component/wire_bundle	can_access_wires	code/modules/wiremod/components/utility/wire_bundle.dm:85	source	yes	full	proc root
 proc	/obj/item/circuit_component/wire_bundle	on_shell_requesting_context	code/modules/wiremod/components/utility/wire_bundle.dm:91	source,context,item,user	yes	full	proc root
 proc	/obj/item/circuit_component/wire_bundle	on_shell_secondary_interaction	code/modules/wiremod/components/utility/wire_bundle.dm:102	source,user,tool	yes	full	proc root
-type	/obj/item/circuit_component/wirenet_receive	/obj/item/circuit_component	code/modules/wiremod/components/wirenet/receive.dm:2	inert	obj_item_circuit_component_wirenet_receive	0	0
-proc	/obj/item/circuit_component/wirenet_receive	Initialize	code/modules/wiremod/components/wirenet/receive.dm:25	mapload	no	-	proc
-proc	/obj/item/circuit_component/wirenet_receive	on_powernet_connection	code/modules/wiremod/components/wirenet/receive.dm:34	new_powernet	no	-	proc root
-proc	/obj/item/circuit_component/wirenet_receive	on_powernet_disconnection	code/modules/wiremod/components/wirenet/receive.dm:37	old_powernet	no	-	proc root
-proc	/obj/item/circuit_component/wirenet_receive	on_set_cable_layer	code/modules/wiremod/components/wirenet/receive.dm:40	new_layer	no	-	proc root
-proc	/obj/item/circuit_component/wirenet_receive	get_ui_notices	code/modules/wiremod/components/wirenet/receive.dm:43		no	-	proc
-proc	/obj/item/circuit_component/wirenet_receive	populate_options	code/modules/wiremod/components/wirenet/receive.dm:48		no	-	proc
-proc	/obj/item/circuit_component/wirenet_receive	populate_ports	code/modules/wiremod/components/wirenet/receive.dm:51		no	-	proc
-proc	/obj/item/circuit_component/wirenet_receive	pre_input_received	code/modules/wiremod/components/wirenet/receive.dm:55	port	no	-	proc
-proc	/obj/item/circuit_component/wirenet_receive	on_circuit_transmission	code/modules/wiremod/components/wirenet/receive.dm:60	_source,data	no	-	proc root
-type	/obj/item/circuit_component/wirenet_send	/obj/item/circuit_component	code/modules/wiremod/components/wirenet/send.dm:2	inert	obj_item_circuit_component_wirenet_send	0	0
-proc	/obj/item/circuit_component/wirenet_send	Initialize	code/modules/wiremod/components/wirenet/send.dm:28	mapload	no	-	proc
-proc	/obj/item/circuit_component/wirenet_send	Destroy	code/modules/wiremod/components/wirenet/send.dm:37		no	-	proc
-proc	/obj/item/circuit_component/wirenet_send	on_powernet_connection	code/modules/wiremod/components/wirenet/send.dm:41	new_powernet	no	-	proc root
-proc	/obj/item/circuit_component/wirenet_send	on_powernet_disconnection	code/modules/wiremod/components/wirenet/send.dm:44	old_powernet	no	-	proc root
-proc	/obj/item/circuit_component/wirenet_send	on_set_cable_layer	code/modules/wiremod/components/wirenet/send.dm:47	new_layer	no	-	proc root
-proc	/obj/item/circuit_component/wirenet_send	get_ui_notices	code/modules/wiremod/components/wirenet/send.dm:50		no	-	proc
-proc	/obj/item/circuit_component/wirenet_send	populate_options	code/modules/wiremod/components/wirenet/send.dm:55		no	-	proc
-proc	/obj/item/circuit_component/wirenet_send	populate_ports	code/modules/wiremod/components/wirenet/send.dm:58		no	-	proc
-proc	/obj/item/circuit_component/wirenet_send	pre_input_received	code/modules/wiremod/components/wirenet/send.dm:62	port	no	-	proc
-proc	/obj/item/circuit_component/wirenet_send	input_received	code/modules/wiremod/components/wirenet/send.dm:67	port	no	-	proc
-type	/obj/item/circuit_component/airlock	/obj/item/circuit_component	code/modules/wiremod/shell/airlock.dm:42	inert	obj_item_circuit_component_airlock	0	0
-proc	/obj/item/circuit_component/airlock	populate_ports	code/modules/wiremod/shell/airlock.dm:72		no	-	proc
-proc	/obj/item/circuit_component/airlock	register_shell	code/modules/wiremod/shell/airlock.dm:87	shell	no	-	proc
-proc	/obj/item/circuit_component/airlock	unregister_shell	code/modules/wiremod/shell/airlock.dm:95	shell	no	-	proc
-proc	/obj/item/circuit_component/airlock	on_airlock_set_bolted	code/modules/wiremod/shell/airlock.dm:104	source,should_bolt	no	-	proc root
-proc	/obj/item/circuit_component/airlock	on_airlock_open	code/modules/wiremod/shell/airlock.dm:112	source,force	no	-	proc root
-proc	/obj/item/circuit_component/airlock	on_airlock_closed	code/modules/wiremod/shell/airlock.dm:117	source,forced	no	-	proc root
-proc	/obj/item/circuit_component/airlock	input_received	code/modules/wiremod/shell/airlock.dm:122	port	no	-	proc
-type	/obj/item/circuit_component/airlock_access_event	/obj/item/circuit_component	code/modules/wiremod/shell/airlock.dm:138	inert	obj_item_circuit_component_airlock_access_event	0	0
-proc	/obj/item/circuit_component/airlock_access_event	register_shell	code/modules/wiremod/shell/airlock.dm:155	shell	no	-	proc
-proc	/obj/item/circuit_component/airlock_access_event	unregister_shell	code/modules/wiremod/shell/airlock.dm:163	shell	no	-	proc
-proc	/obj/item/circuit_component/airlock_access_event	populate_ports	code/modules/wiremod/shell/airlock.dm:171		no	-	proc
-proc	/obj/item/circuit_component/airlock_access_event	should_open_airlock	code/modules/wiremod/shell/airlock.dm:177	port,return_values	no	-	proc root
-proc	/obj/item/circuit_component/airlock_access_event	handle_allowed	code/modules/wiremod/shell/airlock.dm:183	source,accesser	no	-	proc root
-type	/obj/item/circuit_component/assembly_input	/obj/item/circuit_component	code/modules/wiremod/shell/assembly.dm:96	inert	obj_item_circuit_component_assembly_input	0	0
-proc	/obj/item/circuit_component/assembly_input	populate_ports	code/modules/wiremod/shell/assembly.dm:101		no	-	proc
-proc	/obj/item/circuit_component/assembly_input	register_shell	code/modules/wiremod/shell/assembly.dm:104	shell	no	-	proc
-proc	/obj/item/circuit_component/assembly_input	unregister_shell	code/modules/wiremod/shell/assembly.dm:107	shell	no	-	proc
-proc	/obj/item/circuit_component/assembly_input	on_pulsed	code/modules/wiremod/shell/assembly.dm:110	source,pulser	no	-	proc root
-type	/obj/item/circuit_component/assembly_output	/obj/item/circuit_component	code/modules/wiremod/shell/assembly.dm:115	inert	obj_item_circuit_component_assembly_output	0	0
-proc	/obj/item/circuit_component/assembly_output	populate_ports	code/modules/wiremod/shell/assembly.dm:122		no	-	proc
-proc	/obj/item/circuit_component/assembly_output	register_shell	code/modules/wiremod/shell/assembly.dm:125	shell	no	-	proc
-proc	/obj/item/circuit_component/assembly_output	unregister_shell	code/modules/wiremod/shell/assembly.dm:130	shell	no	-	proc
-proc	/obj/item/circuit_component/assembly_output	input_received	code/modules/wiremod/shell/assembly.dm:134	port,return_values	no	-	proc
-type	/obj/item/circuit_component/bot	/obj/item/circuit_component	code/modules/wiremod/shell/bot.dm:25	inert	obj_item_circuit_component_bot	0	0
-proc	/obj/item/circuit_component/bot	populate_ports	code/modules/wiremod/shell/bot.dm:33		no	-	proc
-proc	/obj/item/circuit_component/bot	register_shell	code/modules/wiremod/shell/bot.dm:37	shell	no	-	proc
-proc	/obj/item/circuit_component/bot	unregister_shell	code/modules/wiremod/shell/bot.dm:40	shell	no	-	proc
-proc	/obj/item/circuit_component/bot	on_attack_hand	code/modules/wiremod/shell/bot.dm:43	source,user	no	-	proc root
+type	/obj/item/circuit_component/wirenet_receive	/obj/item/circuit_component	code/modules/wiremod/components/wirenet/receive.dm:2	live	obj_item_circuit_component_wirenet_receive	1	0
+proc	/obj/item/circuit_component/wirenet_receive	Initialize	code/modules/wiremod/components/wirenet/receive.dm:25	mapload	yes	full	proc
+proc	/obj/item/circuit_component/wirenet_receive	on_powernet_connection	code/modules/wiremod/components/wirenet/receive.dm:34	new_powernet	yes	full	proc root
+proc	/obj/item/circuit_component/wirenet_receive	on_powernet_disconnection	code/modules/wiremod/components/wirenet/receive.dm:37	old_powernet	yes	full	proc root
+proc	/obj/item/circuit_component/wirenet_receive	on_set_cable_layer	code/modules/wiremod/components/wirenet/receive.dm:40	new_layer	yes	full	proc root
+proc	/obj/item/circuit_component/wirenet_receive	get_ui_notices	code/modules/wiremod/components/wirenet/receive.dm:43		yes	full	proc
+proc	/obj/item/circuit_component/wirenet_receive	populate_options	code/modules/wiremod/components/wirenet/receive.dm:48		yes	full	proc
+proc	/obj/item/circuit_component/wirenet_receive	populate_ports	code/modules/wiremod/components/wirenet/receive.dm:51		yes	full	proc
+proc	/obj/item/circuit_component/wirenet_receive	pre_input_received	code/modules/wiremod/components/wirenet/receive.dm:55	port	yes	full	proc
+proc	/obj/item/circuit_component/wirenet_receive	on_circuit_transmission	code/modules/wiremod/components/wirenet/receive.dm:60	_source,data	yes	full	proc root
+type	/obj/item/circuit_component/wirenet_send	/obj/item/circuit_component	code/modules/wiremod/components/wirenet/send.dm:2	live	obj_item_circuit_component_wirenet_send	1	0
+proc	/obj/item/circuit_component/wirenet_send	Initialize	code/modules/wiremod/components/wirenet/send.dm:28	mapload	yes	full	proc
+proc	/obj/item/circuit_component/wirenet_send	Destroy	code/modules/wiremod/components/wirenet/send.dm:37		yes	full	proc
+proc	/obj/item/circuit_component/wirenet_send	on_powernet_connection	code/modules/wiremod/components/wirenet/send.dm:41	new_powernet	yes	full	proc root
+proc	/obj/item/circuit_component/wirenet_send	on_powernet_disconnection	code/modules/wiremod/components/wirenet/send.dm:44	old_powernet	yes	full	proc root
+proc	/obj/item/circuit_component/wirenet_send	on_set_cable_layer	code/modules/wiremod/components/wirenet/send.dm:47	new_layer	yes	full	proc root
+proc	/obj/item/circuit_component/wirenet_send	get_ui_notices	code/modules/wiremod/components/wirenet/send.dm:50		yes	full	proc
+proc	/obj/item/circuit_component/wirenet_send	populate_options	code/modules/wiremod/components/wirenet/send.dm:55		yes	full	proc
+proc	/obj/item/circuit_component/wirenet_send	populate_ports	code/modules/wiremod/components/wirenet/send.dm:58		yes	full	proc
+proc	/obj/item/circuit_component/wirenet_send	pre_input_received	code/modules/wiremod/components/wirenet/send.dm:62	port	yes	full	proc
+proc	/obj/item/circuit_component/wirenet_send	input_received	code/modules/wiremod/components/wirenet/send.dm:67	port	yes	full	proc
+type	/obj/item/circuit_component/airlock	/obj/item/circuit_component	code/modules/wiremod/shell/airlock.dm:42	live	obj_item_circuit_component_airlock	1	0
+proc	/obj/item/circuit_component/airlock	populate_ports	code/modules/wiremod/shell/airlock.dm:72		yes	full	proc
+proc	/obj/item/circuit_component/airlock	register_shell	code/modules/wiremod/shell/airlock.dm:87	shell	yes	full	proc
+proc	/obj/item/circuit_component/airlock	unregister_shell	code/modules/wiremod/shell/airlock.dm:95	shell	yes	full	proc
+proc	/obj/item/circuit_component/airlock	on_airlock_set_bolted	code/modules/wiremod/shell/airlock.dm:104	source,should_bolt	yes	full	proc root
+proc	/obj/item/circuit_component/airlock	on_airlock_open	code/modules/wiremod/shell/airlock.dm:112	source,force	yes	full	proc root
+proc	/obj/item/circuit_component/airlock	on_airlock_closed	code/modules/wiremod/shell/airlock.dm:117	source,forced	yes	full	proc root
+proc	/obj/item/circuit_component/airlock	input_received	code/modules/wiremod/shell/airlock.dm:122	port	yes	full	proc
+type	/obj/item/circuit_component/airlock_access_event	/obj/item/circuit_component	code/modules/wiremod/shell/airlock.dm:138	live	obj_item_circuit_component_airlock_access_event	1	0
+proc	/obj/item/circuit_component/airlock_access_event	register_shell	code/modules/wiremod/shell/airlock.dm:155	shell	yes	full	proc
+proc	/obj/item/circuit_component/airlock_access_event	unregister_shell	code/modules/wiremod/shell/airlock.dm:163	shell	yes	full	proc
+proc	/obj/item/circuit_component/airlock_access_event	populate_ports	code/modules/wiremod/shell/airlock.dm:171		yes	full	proc
+proc	/obj/item/circuit_component/airlock_access_event	should_open_airlock	code/modules/wiremod/shell/airlock.dm:177	port,return_values	yes	full	proc root
+proc	/obj/item/circuit_component/airlock_access_event	handle_allowed	code/modules/wiremod/shell/airlock.dm:183	source,accesser	yes	full	proc root
+type	/obj/item/circuit_component/assembly_input	/obj/item/circuit_component	code/modules/wiremod/shell/assembly.dm:96	live	obj_item_circuit_component_assembly_input	1	0
+proc	/obj/item/circuit_component/assembly_input	populate_ports	code/modules/wiremod/shell/assembly.dm:101		yes	full	proc
+proc	/obj/item/circuit_component/assembly_input	register_shell	code/modules/wiremod/shell/assembly.dm:104	shell	yes	full	proc
+proc	/obj/item/circuit_component/assembly_input	unregister_shell	code/modules/wiremod/shell/assembly.dm:107	shell	yes	full	proc
+proc	/obj/item/circuit_component/assembly_input	on_pulsed	code/modules/wiremod/shell/assembly.dm:110	source,pulser	yes	full	proc root
+type	/obj/item/circuit_component/assembly_output	/obj/item/circuit_component	code/modules/wiremod/shell/assembly.dm:115	live	obj_item_circuit_component_assembly_output	1	0
+proc	/obj/item/circuit_component/assembly_output	populate_ports	code/modules/wiremod/shell/assembly.dm:122		yes	full	proc
+proc	/obj/item/circuit_component/assembly_output	register_shell	code/modules/wiremod/shell/assembly.dm:125	shell	yes	full	proc
+proc	/obj/item/circuit_component/assembly_output	unregister_shell	code/modules/wiremod/shell/assembly.dm:130	shell	yes	full	proc
+proc	/obj/item/circuit_component/assembly_output	input_received	code/modules/wiremod/shell/assembly.dm:134	port,return_values	yes	full	proc
+type	/obj/item/circuit_component/bot	/obj/item/circuit_component	code/modules/wiremod/shell/bot.dm:25	live	obj_item_circuit_component_bot	1	0
+proc	/obj/item/circuit_component/bot	populate_ports	code/modules/wiremod/shell/bot.dm:33		yes	full	proc
+proc	/obj/item/circuit_component/bot	register_shell	code/modules/wiremod/shell/bot.dm:37	shell	yes	full	proc
+proc	/obj/item/circuit_component/bot	unregister_shell	code/modules/wiremod/shell/bot.dm:40	shell	yes	full	proc
+proc	/obj/item/circuit_component/bot	on_attack_hand	code/modules/wiremod/shell/bot.dm:43	source,user	yes	full	proc root
 type	/obj/item/circuit_component/bci_core	/obj/item/circuit_component	code/modules/wiremod/shell/brain_computer_interface.dm:59	inert	obj_item_circuit_component_bci_core	0	0
 proc	/obj/item/circuit_component/bci_core	populate_ports	code/modules/wiremod/shell/brain_computer_interface.dm:73		no	-	proc
 proc	/obj/item/circuit_component/bci_core	Destroy	code/modules/wiremod/shell/brain_computer_interface.dm:81		no	-	proc
@@ -71709,31 +71709,31 @@ proc	/obj/item/circuit_component/controller	handle_trigger	code/modules/wiremod/
 proc	/obj/item/circuit_component/controller	send_trigger	code/modules/wiremod/shell/controller.dm:65	source,user	yes	full	proc root
 proc	/obj/item/circuit_component/controller	send_alternate_signal	code/modules/wiremod/shell/controller.dm:74	source,user	yes	full	proc root
 proc	/obj/item/circuit_component/controller	send_right_signal	code/modules/wiremod/shell/controller.dm:84	source,user	yes	full	proc root
-type	/obj/item/circuit_component/dispenser_bot	/obj/item/circuit_component	code/modules/wiremod/shell/dispenser.dm:96	inert	obj_item_circuit_component_dispenser_bot	0	0
-proc	/obj/item/circuit_component/dispenser_bot	populate_ports	code/modules/wiremod/shell/dispenser.dm:118		no	-	proc
-proc	/obj/item/circuit_component/dispenser_bot	register_shell	code/modules/wiremod/shell/dispenser.dm:125	shell	no	-	proc
-proc	/obj/item/circuit_component/dispenser_bot	unregister_shell	code/modules/wiremod/shell/dispenser.dm:130	shell	no	-	proc
-proc	/obj/item/circuit_component/dispenser_bot	on_shell_add_item	code/modules/wiremod/shell/dispenser.dm:137	source,added_item	no	-	proc root
-proc	/obj/item/circuit_component/dispenser_bot	on_shell_remove_item	code/modules/wiremod/shell/dispenser.dm:143	source,added_item	no	-	proc root
-proc	/obj/item/circuit_component/dispenser_bot	remove_vendor_component	code/modules/wiremod/shell/dispenser.dm:149	vendor_component	no	-	proc root
-proc	/obj/item/circuit_component/dispenser_bot	ui_perform_action	code/modules/wiremod/shell/dispenser.dm:159	user,action	no	-	proc
-type	/obj/item/circuit_component/vendor_component	/obj/item/circuit_component	code/modules/wiremod/shell/dispenser.dm:174	inert	obj_item_circuit_component_vendor_component	0	0
-proc	/obj/item/circuit_component/vendor_component	register_shell	code/modules/wiremod/shell/dispenser.dm:188	shell	no	-	proc
-proc	/obj/item/circuit_component/vendor_component	unregister_shell	code/modules/wiremod/shell/dispenser.dm:193	shell	no	-	proc
-proc	/obj/item/circuit_component/vendor_component	populate_ports	code/modules/wiremod/shell/dispenser.dm:197		no	-	proc
-proc	/obj/item/circuit_component/vendor_component	vend_item	code/modules/wiremod/shell/dispenser.dm:201	port,return_values	no	-	proc root
-type	/obj/item/circuit_component/bot_circuit	/obj/item/circuit_component	code/modules/wiremod/shell/drone.dm:49	inert	obj_item_circuit_component_bot_circuit	0	0
-proc	/obj/item/circuit_component/bot_circuit	register_shell	code/modules/wiremod/shell/drone.dm:67	shell	no	-	proc
-proc	/obj/item/circuit_component/bot_circuit	unregister_shell	code/modules/wiremod/shell/drone.dm:72	shell	no	-	proc
-proc	/obj/item/circuit_component/bot_circuit	on_borg_charge	code/modules/wiremod/shell/drone.dm:76	source,charge_cell,seconds_per_tick	no	-	proc root
-proc	/obj/item/circuit_component/bot_circuit	populate_ports	code/modules/wiremod/shell/drone.dm:82		no	-	proc
-proc	/obj/item/circuit_component/bot_circuit	input_received	code/modules/wiremod/shell/drone.dm:88	port	no	-	proc
-type	/obj/item/circuit_component/wiremod_gun	/obj/item/circuit_component	code/modules/wiremod/shell/gun.dm:45	inert	obj_item_circuit_component_wiremod_gun	0	0
-proc	/obj/item/circuit_component/wiremod_gun	Initialize	code/modules/wiremod/shell/gun.dm:54	mapload	no	-	proc
-proc	/obj/item/circuit_component/wiremod_gun	register_shell	code/modules/wiremod/shell/gun.dm:60	shell	no	-	proc
-proc	/obj/item/circuit_component/wiremod_gun	unregister_shell	code/modules/wiremod/shell/gun.dm:65	shell	no	-	proc
-proc	/obj/item/circuit_component/wiremod_gun	handle_shot	code/modules/wiremod/shell/gun.dm:83	source,firer,target,angle	no	-	proc root
-proc	/obj/item/circuit_component/wiremod_gun	handle_chamber	code/modules/wiremod/shell/gun.dm:94	source	no	-	proc root
+type	/obj/item/circuit_component/dispenser_bot	/obj/item/circuit_component	code/modules/wiremod/shell/dispenser.dm:96	live	obj_item_circuit_component_dispenser_bot	1	0
+proc	/obj/item/circuit_component/dispenser_bot	populate_ports	code/modules/wiremod/shell/dispenser.dm:118		yes	full	proc
+proc	/obj/item/circuit_component/dispenser_bot	register_shell	code/modules/wiremod/shell/dispenser.dm:125	shell	yes	full	proc
+proc	/obj/item/circuit_component/dispenser_bot	unregister_shell	code/modules/wiremod/shell/dispenser.dm:130	shell	yes	full	proc
+proc	/obj/item/circuit_component/dispenser_bot	on_shell_add_item	code/modules/wiremod/shell/dispenser.dm:137	source,added_item	yes	full	proc root
+proc	/obj/item/circuit_component/dispenser_bot	on_shell_remove_item	code/modules/wiremod/shell/dispenser.dm:143	source,added_item	yes	full	proc root
+proc	/obj/item/circuit_component/dispenser_bot	remove_vendor_component	code/modules/wiremod/shell/dispenser.dm:149	vendor_component	yes	full	proc root
+proc	/obj/item/circuit_component/dispenser_bot	ui_perform_action	code/modules/wiremod/shell/dispenser.dm:159	user,action	yes	full	proc
+type	/obj/item/circuit_component/vendor_component	/obj/item/circuit_component	code/modules/wiremod/shell/dispenser.dm:174	live	obj_item_circuit_component_vendor_component	1	0
+proc	/obj/item/circuit_component/vendor_component	register_shell	code/modules/wiremod/shell/dispenser.dm:188	shell	yes	full	proc
+proc	/obj/item/circuit_component/vendor_component	unregister_shell	code/modules/wiremod/shell/dispenser.dm:193	shell	yes	full	proc
+proc	/obj/item/circuit_component/vendor_component	populate_ports	code/modules/wiremod/shell/dispenser.dm:197		yes	full	proc
+proc	/obj/item/circuit_component/vendor_component	vend_item	code/modules/wiremod/shell/dispenser.dm:201	port,return_values	yes	full	proc root
+type	/obj/item/circuit_component/bot_circuit	/obj/item/circuit_component	code/modules/wiremod/shell/drone.dm:49	live	obj_item_circuit_component_bot_circuit	1	0
+proc	/obj/item/circuit_component/bot_circuit	register_shell	code/modules/wiremod/shell/drone.dm:67	shell	yes	full	proc
+proc	/obj/item/circuit_component/bot_circuit	unregister_shell	code/modules/wiremod/shell/drone.dm:72	shell	yes	full	proc
+proc	/obj/item/circuit_component/bot_circuit	on_borg_charge	code/modules/wiremod/shell/drone.dm:76	source,charge_cell,seconds_per_tick	yes	full	proc root
+proc	/obj/item/circuit_component/bot_circuit	populate_ports	code/modules/wiremod/shell/drone.dm:82		yes	full	proc
+proc	/obj/item/circuit_component/bot_circuit	input_received	code/modules/wiremod/shell/drone.dm:88	port	yes	full	proc
+type	/obj/item/circuit_component/wiremod_gun	/obj/item/circuit_component	code/modules/wiremod/shell/gun.dm:45	live	obj_item_circuit_component_wiremod_gun	1	0
+proc	/obj/item/circuit_component/wiremod_gun	Initialize	code/modules/wiremod/shell/gun.dm:54	mapload	yes	full	proc
+proc	/obj/item/circuit_component/wiremod_gun	register_shell	code/modules/wiremod/shell/gun.dm:60	shell	yes	full	proc
+proc	/obj/item/circuit_component/wiremod_gun	unregister_shell	code/modules/wiremod/shell/gun.dm:65	shell	yes	full	proc
+proc	/obj/item/circuit_component/wiremod_gun	handle_shot	code/modules/wiremod/shell/gun.dm:83	source,firer,target,angle	yes	full	proc root
+proc	/obj/item/circuit_component/wiremod_gun	handle_chamber	code/modules/wiremod/shell/gun.dm:94	source	yes	full	proc root
 type	/obj/item/circuit_component/implant_core	/obj/item/circuit_component	code/modules/wiremod/shell/implant.dm:48	inert	obj_item_circuit_component_implant_core	0	0
 proc	/obj/item/circuit_component/implant_core	populate_ports	code/modules/wiremod/shell/implant.dm:62		no	-	proc
 proc	/obj/item/circuit_component/implant_core	Destroy	code/modules/wiremod/shell/implant.dm:70		no	-	proc
@@ -71747,49 +71747,49 @@ proc	/obj/item/circuit_component/implant_core	on_borg_charge	code/modules/wiremo
 proc	/obj/item/circuit_component/implant_core	on_electrocute	code/modules/wiremod/shell/implant.dm:159	source,shock_damage,shock_source,siemens_coefficient,flags	no	-	proc root
 proc	/obj/item/circuit_component/implant_core	on_examine	code/modules/wiremod/shell/implant.dm:171	source,mob,examine_text	no	-	proc root
 proc	/obj/item/circuit_component/implant_core	Topic	code/modules/wiremod/shell/implant.dm:177	href,href_list	no	-	proc
-type	/obj/item/circuit_component/keyboard_shell	/obj/item/circuit_component	code/modules/wiremod/shell/keyboard.dm:21	inert	obj_item_circuit_component_keyboard_shell	0	0
-proc	/obj/item/circuit_component/keyboard_shell	populate_ports	code/modules/wiremod/shell/keyboard.dm:31		no	-	proc
-proc	/obj/item/circuit_component/keyboard_shell	register_shell	code/modules/wiremod/shell/keyboard.dm:36	shell	no	-	proc
-proc	/obj/item/circuit_component/keyboard_shell	unregister_shell	code/modules/wiremod/shell/keyboard.dm:40	shell	no	-	proc
-proc	/obj/item/circuit_component/keyboard_shell	send_trigger	code/modules/wiremod/shell/keyboard.dm:44	source,user	no	-	proc root
-proc	/obj/item/circuit_component/keyboard_shell	use_keyboard	code/modules/wiremod/shell/keyboard.dm:48	user	no	-	proc root
-type	/obj/item/circuit_component/mod_adapter_core	/obj/item/circuit_component	code/modules/wiremod/shell/module.dm:140	inert	obj_item_circuit_component_mod_adapter_core	0	0
-proc	/obj/item/circuit_component/mod_adapter_core	populate_options	code/modules/wiremod/shell/module.dm:182		no	-	proc
-proc	/obj/item/circuit_component/mod_adapter_core	populate_ports	code/modules/wiremod/shell/module.dm:185		no	-	proc
-proc	/obj/item/circuit_component/mod_adapter_core	register_shell	code/modules/wiremod/shell/module.dm:201	shell	no	-	proc
-proc	/obj/item/circuit_component/mod_adapter_core	unregister_shell	code/modules/wiremod/shell/module.dm:207	shell	no	-	proc
-proc	/obj/item/circuit_component/mod_adapter_core	input_received	code/modules/wiremod/shell/module.dm:213	port	no	-	proc
-proc	/obj/item/circuit_component/mod_adapter_core	on_move	code/modules/wiremod/shell/module.dm:227	source,old_loc,dir,forced	no	-	proc root
-proc	/obj/item/circuit_component/mod_adapter_core	on_module_select	code/modules/wiremod/shell/module.dm:258	source,module	no	-	proc root
-proc	/obj/item/circuit_component/mod_adapter_core	on_module_changed	code/modules/wiremod/shell/module.dm:263		no	-	proc root
-proc	/obj/item/circuit_component/mod_adapter_core	on_mod_part_toggled	code/modules/wiremod/shell/module.dm:273		no	-	proc root
-proc	/obj/item/circuit_component/mod_adapter_core	on_mod_toggled	code/modules/wiremod/shell/module.dm:299		no	-	proc root
-proc	/obj/item/circuit_component/mod_adapter_core	equip_check	code/modules/wiremod/shell/module.dm:304		no	-	proc root
-type	/obj/item/circuit_component/money_dispenser	/obj/item/circuit_component	code/modules/wiremod/shell/moneybot.dm:43	inert	obj_item_circuit_component_money_dispenser	0	0
-proc	/obj/item/circuit_component/money_dispenser	populate_ports	code/modules/wiremod/shell/moneybot.dm:64		no	-	proc
-proc	/obj/item/circuit_component/money_dispenser	get_ui_notices	code/modules/wiremod/shell/moneybot.dm:68		no	-	proc
-proc	/obj/item/circuit_component/money_dispenser	register_shell	code/modules/wiremod/shell/moneybot.dm:73	shell	no	-	proc
-proc	/obj/item/circuit_component/money_dispenser	unregister_shell	code/modules/wiremod/shell/moneybot.dm:78	shell	no	-	proc
-proc	/obj/item/circuit_component/money_dispenser	pre_input_received	code/modules/wiremod/shell/moneybot.dm:82	port	no	-	proc
-proc	/obj/item/circuit_component/money_dispenser	input_received	code/modules/wiremod/shell/moneybot.dm:85	port	no	-	proc
-type	/obj/item/circuit_component/money_bot	/obj/item/circuit_component	code/modules/wiremod/shell/moneybot.dm:113	inert	obj_item_circuit_component_money_bot	0	0
-proc	/obj/item/circuit_component/money_bot	populate_ports	code/modules/wiremod/shell/moneybot.dm:126		no	-	proc
-proc	/obj/item/circuit_component/money_bot	register_shell	code/modules/wiremod/shell/moneybot.dm:132	shell	no	-	proc
-proc	/obj/item/circuit_component/money_bot	unregister_shell	code/modules/wiremod/shell/moneybot.dm:142	shell	no	-	proc
-proc	/obj/item/circuit_component/money_bot	handle_money_insert	code/modules/wiremod/shell/moneybot.dm:154	source,item,attacker	no	-	proc root
-proc	/obj/item/circuit_component/money_bot	handle_money_update	code/modules/wiremod/shell/moneybot.dm:171	source	no	-	proc root
-proc	/obj/item/circuit_component/money_bot	on_set_locked	code/modules/wiremod/shell/moneybot.dm:182	source,new_value	no	-	proc root
-type	/obj/item/circuit_component/wiremod_scanner	/obj/item/circuit_component	code/modules/wiremod/shell/scanner.dm:26	inert	obj_item_circuit_component_wiremod_scanner	0	0
-proc	/obj/item/circuit_component/wiremod_scanner	populate_ports	code/modules/wiremod/shell/scanner.dm:40		no	-	proc
-proc	/obj/item/circuit_component/wiremod_scanner	register_shell	code/modules/wiremod/shell/scanner.dm:45	shell	no	-	proc
-proc	/obj/item/circuit_component/wiremod_scanner	unregister_shell	code/modules/wiremod/shell/scanner.dm:48	shell	no	-	proc
-proc	/obj/item/circuit_component/wiremod_scanner	handle_interaction	code/modules/wiremod/shell/scanner.dm:54	source,user,target	no	-	proc root
-type	/obj/item/circuit_component/scanner_gate	/obj/item/circuit_component	code/modules/wiremod/shell/scanner_gate.dm:40	inert	obj_item_circuit_component_scanner_gate	0	0
-proc	/obj/item/circuit_component/scanner_gate	populate_ports	code/modules/wiremod/shell/scanner_gate.dm:47		no	-	proc
-proc	/obj/item/circuit_component/scanner_gate	register_shell	code/modules/wiremod/shell/scanner_gate.dm:51	shell	no	-	proc
-proc	/obj/item/circuit_component/scanner_gate	unregister_shell	code/modules/wiremod/shell/scanner_gate.dm:59	shell	no	-	proc
-proc	/obj/item/circuit_component/scanner_gate	on_trigger	code/modules/wiremod/shell/scanner_gate.dm:67	source,passed	no	-	proc root
-proc	/obj/item/circuit_component/scanner_gate	on_set_locked	code/modules/wiremod/shell/scanner_gate.dm:78	source,new_value	no	-	proc root
+type	/obj/item/circuit_component/keyboard_shell	/obj/item/circuit_component	code/modules/wiremod/shell/keyboard.dm:21	live	obj_item_circuit_component_keyboard_shell	1	0
+proc	/obj/item/circuit_component/keyboard_shell	populate_ports	code/modules/wiremod/shell/keyboard.dm:31		yes	full	proc
+proc	/obj/item/circuit_component/keyboard_shell	register_shell	code/modules/wiremod/shell/keyboard.dm:36	shell	yes	full	proc
+proc	/obj/item/circuit_component/keyboard_shell	unregister_shell	code/modules/wiremod/shell/keyboard.dm:40	shell	yes	full	proc
+proc	/obj/item/circuit_component/keyboard_shell	send_trigger	code/modules/wiremod/shell/keyboard.dm:44	source,user	yes	full	proc root
+proc	/obj/item/circuit_component/keyboard_shell	use_keyboard	code/modules/wiremod/shell/keyboard.dm:48	user	yes	full	proc root
+type	/obj/item/circuit_component/mod_adapter_core	/obj/item/circuit_component	code/modules/wiremod/shell/module.dm:140	live	obj_item_circuit_component_mod_adapter_core	1	0
+proc	/obj/item/circuit_component/mod_adapter_core	populate_options	code/modules/wiremod/shell/module.dm:182		yes	full	proc
+proc	/obj/item/circuit_component/mod_adapter_core	populate_ports	code/modules/wiremod/shell/module.dm:185		yes	full	proc
+proc	/obj/item/circuit_component/mod_adapter_core	register_shell	code/modules/wiremod/shell/module.dm:201	shell	yes	full	proc
+proc	/obj/item/circuit_component/mod_adapter_core	unregister_shell	code/modules/wiremod/shell/module.dm:207	shell	yes	full	proc
+proc	/obj/item/circuit_component/mod_adapter_core	input_received	code/modules/wiremod/shell/module.dm:213	port	yes	full	proc
+proc	/obj/item/circuit_component/mod_adapter_core	on_move	code/modules/wiremod/shell/module.dm:227	source,old_loc,dir,forced	yes	full	proc root
+proc	/obj/item/circuit_component/mod_adapter_core	on_module_select	code/modules/wiremod/shell/module.dm:258	source,module	yes	full	proc root
+proc	/obj/item/circuit_component/mod_adapter_core	on_module_changed	code/modules/wiremod/shell/module.dm:263		yes	full	proc root
+proc	/obj/item/circuit_component/mod_adapter_core	on_mod_part_toggled	code/modules/wiremod/shell/module.dm:273		yes	full	proc root
+proc	/obj/item/circuit_component/mod_adapter_core	on_mod_toggled	code/modules/wiremod/shell/module.dm:299		yes	full	proc root
+proc	/obj/item/circuit_component/mod_adapter_core	equip_check	code/modules/wiremod/shell/module.dm:304		yes	full	proc root
+type	/obj/item/circuit_component/money_dispenser	/obj/item/circuit_component	code/modules/wiremod/shell/moneybot.dm:43	live	obj_item_circuit_component_money_dispenser	1	0
+proc	/obj/item/circuit_component/money_dispenser	populate_ports	code/modules/wiremod/shell/moneybot.dm:64		yes	full	proc
+proc	/obj/item/circuit_component/money_dispenser	get_ui_notices	code/modules/wiremod/shell/moneybot.dm:68		yes	full	proc
+proc	/obj/item/circuit_component/money_dispenser	register_shell	code/modules/wiremod/shell/moneybot.dm:73	shell	yes	full	proc
+proc	/obj/item/circuit_component/money_dispenser	unregister_shell	code/modules/wiremod/shell/moneybot.dm:78	shell	yes	full	proc
+proc	/obj/item/circuit_component/money_dispenser	pre_input_received	code/modules/wiremod/shell/moneybot.dm:82	port	yes	full	proc
+proc	/obj/item/circuit_component/money_dispenser	input_received	code/modules/wiremod/shell/moneybot.dm:85	port	yes	full	proc
+type	/obj/item/circuit_component/money_bot	/obj/item/circuit_component	code/modules/wiremod/shell/moneybot.dm:113	live	obj_item_circuit_component_money_bot	1	0
+proc	/obj/item/circuit_component/money_bot	populate_ports	code/modules/wiremod/shell/moneybot.dm:126		yes	full	proc
+proc	/obj/item/circuit_component/money_bot	register_shell	code/modules/wiremod/shell/moneybot.dm:132	shell	yes	full	proc
+proc	/obj/item/circuit_component/money_bot	unregister_shell	code/modules/wiremod/shell/moneybot.dm:142	shell	yes	full	proc
+proc	/obj/item/circuit_component/money_bot	handle_money_insert	code/modules/wiremod/shell/moneybot.dm:154	source,item,attacker	yes	full	proc root
+proc	/obj/item/circuit_component/money_bot	handle_money_update	code/modules/wiremod/shell/moneybot.dm:171	source	yes	full	proc root
+proc	/obj/item/circuit_component/money_bot	on_set_locked	code/modules/wiremod/shell/moneybot.dm:182	source,new_value	yes	full	proc root
+type	/obj/item/circuit_component/wiremod_scanner	/obj/item/circuit_component	code/modules/wiremod/shell/scanner.dm:26	live	obj_item_circuit_component_wiremod_scanner	1	0
+proc	/obj/item/circuit_component/wiremod_scanner	populate_ports	code/modules/wiremod/shell/scanner.dm:40		yes	full	proc
+proc	/obj/item/circuit_component/wiremod_scanner	register_shell	code/modules/wiremod/shell/scanner.dm:45	shell	yes	full	proc
+proc	/obj/item/circuit_component/wiremod_scanner	unregister_shell	code/modules/wiremod/shell/scanner.dm:48	shell	yes	full	proc
+proc	/obj/item/circuit_component/wiremod_scanner	handle_interaction	code/modules/wiremod/shell/scanner.dm:54	source,user,target	yes	full	proc root
+type	/obj/item/circuit_component/scanner_gate	/obj/item/circuit_component	code/modules/wiremod/shell/scanner_gate.dm:40	live	obj_item_circuit_component_scanner_gate	1	0
+proc	/obj/item/circuit_component/scanner_gate	populate_ports	code/modules/wiremod/shell/scanner_gate.dm:47		yes	full	proc
+proc	/obj/item/circuit_component/scanner_gate	register_shell	code/modules/wiremod/shell/scanner_gate.dm:51	shell	yes	full	proc
+proc	/obj/item/circuit_component/scanner_gate	unregister_shell	code/modules/wiremod/shell/scanner_gate.dm:59	shell	yes	full	proc
+proc	/obj/item/circuit_component/scanner_gate	on_trigger	code/modules/wiremod/shell/scanner_gate.dm:67	source,passed	yes	full	proc root
+proc	/obj/item/circuit_component/scanner_gate	on_set_locked	code/modules/wiremod/shell/scanner_gate.dm:78	source,new_value	yes	full	proc root
 type	/obj/item/circuitboard	/obj/item	code/game/objects/items/circuitboards/circuitboard.dm:7	live	obj_item_circuitboard	1	1
 proc	/obj/item/circuitboard	Initialize	code/game/objects/items/circuitboards/circuitboard.dm:25	mapload	yes	full	proc
 proc	/obj/item/circuitboard	grind_results	code/game/objects/items/circuitboards/circuitboard.dm:32		yes	full	proc
@@ -83709,10 +83709,10 @@ proc	/obj/item/integrated_circuit/module	remove_component	code/modules/wiremod/c
 proc	/obj/item/integrated_circuit/module	Destroy	code/modules/wiremod/components/abstract/module.dm:63		yes	full	proc
 type	/obj/item/integrated_circuit/loaded	/obj/item/integrated_circuit	code/modules/wiremod/core/integrated_circuit.dm:101	live	obj_item_integrated_circuit_loaded	1	1
 proc	/obj/item/integrated_circuit/loaded	Initialize	code/modules/wiremod/core/integrated_circuit.dm:101	mapload	yes	full	proc
-type	/obj/item/integrated_circuit/loaded/hello_world	/obj/item/integrated_circuit/loaded	code/modules/wiremod/preset/hello_world.dm:8	inert	obj_item_integrated_circuit_loaded_hello_world	0	1
-proc	/obj/item/integrated_circuit/loaded/hello_world	Initialize	code/modules/wiremod/preset/hello_world.dm:8	mapload	no	-	proc
-type	/obj/item/integrated_circuit/loaded/speech_relay	/obj/item/integrated_circuit/loaded	code/modules/wiremod/preset/speech_relay.dm:8	inert	obj_item_integrated_circuit_loaded_speech_relay	0	1
-proc	/obj/item/integrated_circuit/loaded/speech_relay	Initialize	code/modules/wiremod/preset/speech_relay.dm:8	mapload	no	-	proc
+type	/obj/item/integrated_circuit/loaded/hello_world	/obj/item/integrated_circuit/loaded	code/modules/wiremod/preset/hello_world.dm:8	live	obj_item_integrated_circuit_loaded_hello_world	1	1
+proc	/obj/item/integrated_circuit/loaded/hello_world	Initialize	code/modules/wiremod/preset/hello_world.dm:8	mapload	yes	full	proc
+type	/obj/item/integrated_circuit/loaded/speech_relay	/obj/item/integrated_circuit/loaded	code/modules/wiremod/preset/speech_relay.dm:8	live	obj_item_integrated_circuit_loaded_speech_relay	1	1
+proc	/obj/item/integrated_circuit/loaded/speech_relay	Initialize	code/modules/wiremod/preset/speech_relay.dm:8	mapload	yes	full	proc
 type	/obj/item/integrated_circuit/admin	/obj/item/integrated_circuit	code/modules/wiremod/core/integrated_circuit.dm:768	live	obj_item_integrated_circuit_admin	0	0
 type	/obj/item/usb_cable	/obj/item	code/modules/wiremod/core/usb_cable.dm:3	live	obj_item_usb_cable	1	0
 proc	/obj/item/usb_cable	Destroy	code/modules/wiremod/core/usb_cable.dm:20		yes	full	proc
@@ -83731,10 +83731,10 @@ type	/obj/item/compact_remote	/obj/item	code/modules/wiremod/shell/compact_remot
 proc	/obj/item/compact_remote	Initialize	code/modules/wiremod/shell/compact_remote.dm:19	mapload	yes	full	proc
 type	/obj/item/controller	/obj/item	code/modules/wiremod/shell/controller.dm:8	live	obj_item_controller	1	1
 proc	/obj/item/controller	Initialize	code/modules/wiremod/shell/controller.dm:20	mapload	yes	full	proc
-type	/obj/item/keyboard_shell	/obj/item	code/modules/wiremod/shell/keyboard.dm:2	inert	obj_item_keyboard_shell	0	0
-proc	/obj/item/keyboard_shell	Initialize	code/modules/wiremod/shell/keyboard.dm:14	mapload	no	-	proc
-type	/obj/item/wiremod_scanner	/obj/item	code/modules/wiremod/shell/scanner.dm:7	inert	obj_item_wiremod_scanner	0	0
-proc	/obj/item/wiremod_scanner	Initialize	code/modules/wiremod/shell/scanner.dm:19	mapload	no	-	proc
+type	/obj/item/keyboard_shell	/obj/item	code/modules/wiremod/shell/keyboard.dm:2	live	obj_item_keyboard_shell	1	0
+proc	/obj/item/keyboard_shell	Initialize	code/modules/wiremod/shell/keyboard.dm:14	mapload	yes	full	proc
+type	/obj/item/wiremod_scanner	/obj/item	code/modules/wiremod/shell/scanner.dm:7	live	obj_item_wiremod_scanner	1	0
+proc	/obj/item/wiremod_scanner	Initialize	code/modules/wiremod/shell/scanner.dm:19	mapload	yes	full	proc
 type	/obj/item/shell	/obj/item	code/modules/wiremod/shell/shell_items.dm:7	live	obj_item_shell	1	0
 proc	/obj/item/shell	screwdriver_act	code/modules/wiremod/shell/shell_items.dm:14	user,tool	yes	full	proc
 type	/obj/item/shell/bot	/obj/item/shell	code/modules/wiremod/shell/shell_items.dm:30	live	obj_item_shell_bot	0	0
@@ -83745,8 +83745,8 @@ type	/obj/item/shell/airlock	/obj/item/shell	code/modules/wiremod/shell/shell_it
 type	/obj/item/shell/dispenser	/obj/item/shell	code/modules/wiremod/shell/shell_items.dm:65	live	obj_item_shell_dispenser	0	0
 type	/obj/item/shell/bci	/obj/item/shell	code/modules/wiremod/shell/shell_items.dm:71	live	obj_item_shell_bci	0	0
 type	/obj/item/shell/scanner_gate	/obj/item/shell	code/modules/wiremod/shell/shell_items.dm:78	live	obj_item_shell_scanner_gate	0	0
-type	/obj/item/undertile_circuit	/obj/item	code/modules/wiremod/shell/undertile.dm:2	inert	obj_item_undertile_circuit	0	0
-proc	/obj/item/undertile_circuit	Initialize	code/modules/wiremod/shell/undertile.dm:11	mapload	no	-	proc
+type	/obj/item/undertile_circuit	/obj/item	code/modules/wiremod/shell/undertile.dm:2	live	obj_item_undertile_circuit	1	0
+proc	/obj/item/undertile_circuit	Initialize	code/modules/wiremod/shell/undertile.dm:11	mapload	yes	full	proc
 type	/obj/machinery	/obj	code/game/machinery/_machinery.dm:88	base	obj_machinery	1	1
 proc	/obj/machinery	New	code/game/machinery/_machinery.dm:166	location,board	yes	full	proc
 proc	/obj/machinery	Initialize	code/game/machinery/_machinery.dm:174	mapload	yes	full	proc
@@ -84171,13 +84171,13 @@ proc	/obj/machinery/door/airlock/tram	examine	code/modules/transport/tram/tram_d
 proc	/obj/machinery/door/airlock/tram	try_safety_unlock	code/modules/transport/tram/tram_doors.dm:221	user	yes	full	proc
 proc	/obj/machinery/door/airlock/tram	bumpopen	code/modules/transport/tram/tram_doors.dm:235	user,forced	yes	full	proc
 proc	/obj/machinery/door/airlock/tram	animation_effects	code/modules/transport/tram/tram_doors.dm:258	animation,force_type	yes	full	proc
-type	/obj/machinery/door/airlock/shell	/obj/machinery/door/airlock	code/modules/wiremod/shell/airlock.dm:12	inert	obj_machinery_door_airlock_shell	0	0
-proc	/obj/machinery/door/airlock/shell	Initialize	code/modules/wiremod/shell/airlock.dm:15	mapload	no	-	proc
-proc	/obj/machinery/door/airlock/shell	check_access	code/modules/wiremod/shell/airlock.dm:24	I	no	-	proc
-proc	/obj/machinery/door/airlock/shell	canAIControl	code/modules/wiremod/shell/airlock.dm:27	user	no	-	proc
-proc	/obj/machinery/door/airlock/shell	canAIHack	code/modules/wiremod/shell/airlock.dm:30	user	no	-	proc
-proc	/obj/machinery/door/airlock/shell	allowed	code/modules/wiremod/shell/airlock.dm:33	user	no	-	proc
-proc	/obj/machinery/door/airlock/shell	get_wires	code/modules/wiremod/shell/airlock.dm:38		no	-	proc
+type	/obj/machinery/door/airlock/shell	/obj/machinery/door/airlock	code/modules/wiremod/shell/airlock.dm:12	live	obj_machinery_door_airlock_shell	1	0
+proc	/obj/machinery/door/airlock/shell	Initialize	code/modules/wiremod/shell/airlock.dm:15	mapload	yes	full	proc
+proc	/obj/machinery/door/airlock/shell	check_access	code/modules/wiremod/shell/airlock.dm:24	I	yes	full	proc
+proc	/obj/machinery/door/airlock/shell	canAIControl	code/modules/wiremod/shell/airlock.dm:27	user	yes	full	proc
+proc	/obj/machinery/door/airlock/shell	canAIHack	code/modules/wiremod/shell/airlock.dm:30	user	yes	full	proc
+proc	/obj/machinery/door/airlock/shell	allowed	code/modules/wiremod/shell/airlock.dm:33	user	yes	full	proc
+proc	/obj/machinery/door/airlock/shell	get_wires	code/modules/wiremod/shell/airlock.dm:38		yes	full	proc
 type	/obj/machinery/door/morgue	/obj/machinery/door	code/game/machinery/doors/door.dm:706	live	obj_machinery_door_morgue	1	1
 proc	/obj/machinery/door/morgue	Initialize	code/game/machinery/doors/door.dm:708	mapload	yes	full	proc
 proc	/obj/machinery/door/morgue	drag_check	code/game/machinery/doors/door.dm:713	user	yes	full	proc root
@@ -102780,7 +102780,7 @@ proc	/obj/structure/door_assembly	wrench_act	code/game/objects/structures/door_a
 proc	/obj/structure/door_assembly	wirecutter_act	code/game/objects/structures/door_assembly.dm:285	user,tool	yes	full	proc
 proc	/obj/structure/door_assembly	crowbar_act	code/game/objects/structures/door_assembly.dm:303	user,tool	yes	full	proc
 proc	/obj/structure/door_assembly	screwdriver_act	code/game/objects/structures/door_assembly.dm:329	user,tool	yes	full	proc
-proc	/obj/structure/door_assembly	finish_door	code/game/objects/structures/door_assembly.dm:344		yes	partial	proc root
+proc	/obj/structure/door_assembly	finish_door	code/game/objects/structures/door_assembly.dm:344		yes	full	proc root
 proc	/obj/structure/door_assembly	update_overlays	code/game/objects/structures/door_assembly.dm:386		yes	full	proc
 proc	/obj/structure/door_assembly	update_name	code/game/objects/structures/door_assembly.dm:394		yes	full	proc
 proc	/obj/structure/door_assembly	transfer_assembly_vars	code/game/objects/structures/door_assembly.dm:407	source,target,previous	yes	full	proc root
@@ -106372,34 +106372,34 @@ type	/obj/structure/mecha_wreckage/durand	/obj/structure/mecha_wreckage	code/mod
 type	/obj/structure/mecha_wreckage/phazon	/obj/structure/mecha_wreckage	code/modules/vehicles/mecha/mecha_wreckage.dm:226	live	obj_structure_mecha_wreckage_phazon	0	0
 type	/obj/structure/mecha_wreckage/savannah_ivanov	/obj/structure/mecha_wreckage	code/modules/vehicles/mecha/mecha_wreckage.dm:237	live	obj_structure_mecha_wreckage_savannah_ivanov	0	0
 type	/obj/structure/mecha_wreckage/odysseus	/obj/structure/mecha_wreckage	code/modules/vehicles/mecha/mecha_wreckage.dm:250	live	obj_structure_mecha_wreckage_odysseus	0	0
-type	/obj/structure/bot	/obj/structure	code/modules/wiremod/shell/bot.dm:7	inert	obj_structure_bot	0	0
-proc	/obj/structure/bot	Initialize	code/modules/wiremod/shell/bot.dm:15	mapload	no	-	proc
-type	/obj/structure/dispenser_bot	/obj/structure	code/modules/wiremod/shell/dispenser.dm:7	inert	obj_structure_dispenser_bot	0	0
-proc	/obj/structure/dispenser_bot	atom_deconstruct	code/modules/wiremod/shell/dispenser.dm:21	disassembled	no	-	proc
-proc	/obj/structure/dispenser_bot	Destroy	code/modules/wiremod/shell/dispenser.dm:25		no	-	proc
-proc	/obj/structure/dispenser_bot	add_item	code/modules/wiremod/shell/dispenser.dm:30	user,to_add	no	-	proc root
-proc	/obj/structure/dispenser_bot	handle_stored_item_moved	code/modules/wiremod/shell/dispenser.dm:38	moving_item,location	no	-	proc root
-proc	/obj/structure/dispenser_bot	handle_stored_item_deleted	code/modules/wiremod/shell/dispenser.dm:43	deleting_item	no	-	proc root
-proc	/obj/structure/dispenser_bot	remove_item	code/modules/wiremod/shell/dispenser.dm:47	to_remove	no	-	proc root
-proc	/obj/structure/dispenser_bot	Initialize	code/modules/wiremod/shell/dispenser.dm:57	mapload	no	-	proc
-proc	/obj/structure/dispenser_bot	item_interaction	code/modules/wiremod/shell/dispenser.dm:63	user,tool,modifiers	no	-	proc
-proc	/obj/structure/dispenser_bot	wrench_act	code/modules/wiremod/shell/dispenser.dm:87	user,tool	no	-	proc
-type	/obj/structure/money_bot	/obj/structure	code/modules/wiremod/shell/moneybot.dm:7	inert	obj_structure_money_bot	0	0
-proc	/obj/structure/money_bot	atom_deconstruct	code/modules/wiremod/shell/moneybot.dm:18	disassembled	no	-	proc
-proc	/obj/structure/money_bot	add_money	code/modules/wiremod/shell/moneybot.dm:22	to_add	no	-	proc root
-proc	/obj/structure/money_bot	Initialize	code/modules/wiremod/shell/moneybot.dm:26	mapload	no	-	proc
-proc	/obj/structure/money_bot	wrench_act	code/modules/wiremod/shell/moneybot.dm:33	user,tool	no	-	proc
-type	/obj/structure/scanner_gate_shell	/obj/structure	code/modules/wiremod/shell/scanner_gate.dm:2	inert	obj_structure_scanner_gate_shell	0	0
-proc	/obj/structure/scanner_gate_shell	Initialize	code/modules/wiremod/shell/scanner_gate.dm:8	mapload	no	-	proc
-proc	/obj/structure/scanner_gate_shell	wrench_act	code/modules/wiremod/shell/scanner_gate.dm:20	user,tool	no	-	proc
-proc	/obj/structure/scanner_gate_shell	on_entered	code/modules/wiremod/shell/scanner_gate.dm:28	source,AM	no	-	proc root
-proc	/obj/structure/scanner_gate_shell	set_scanline	code/modules/wiremod/shell/scanner_gate.dm:33	type,duration	no	-	proc root
-type	/obj/structure/server	/obj/structure	code/modules/wiremod/shell/server.dm:8	inert	obj_structure_server	0	0
-proc	/obj/structure/server	Initialize	code/modules/wiremod/shell/server.dm:16	mapload	no	-	proc
-proc	/obj/structure/server	wrench_act	code/modules/wiremod/shell/server.dm:20	user,tool	no	-	proc
-type	/obj/structure/wallmount_circuit	/obj/structure	code/modules/wiremod/shell/wallmount.dm:2	inert	obj_structure_wallmount_circuit	0	0
-proc	/obj/structure/wallmount_circuit	Initialize	code/modules/wiremod/shell/wallmount.dm:11	mapload	no	-	proc
-proc	/obj/structure/wallmount_circuit	wrench_act	code/modules/wiremod/shell/wallmount.dm:15	user,tool	no	-	proc
+type	/obj/structure/bot	/obj/structure	code/modules/wiremod/shell/bot.dm:7	live	obj_structure_bot	1	0
+proc	/obj/structure/bot	Initialize	code/modules/wiremod/shell/bot.dm:15	mapload	yes	full	proc
+type	/obj/structure/dispenser_bot	/obj/structure	code/modules/wiremod/shell/dispenser.dm:7	live	obj_structure_dispenser_bot	1	0
+proc	/obj/structure/dispenser_bot	atom_deconstruct	code/modules/wiremod/shell/dispenser.dm:21	disassembled	yes	full	proc
+proc	/obj/structure/dispenser_bot	Destroy	code/modules/wiremod/shell/dispenser.dm:25		yes	full	proc
+proc	/obj/structure/dispenser_bot	add_item	code/modules/wiremod/shell/dispenser.dm:30	user,to_add	yes	full	proc root
+proc	/obj/structure/dispenser_bot	handle_stored_item_moved	code/modules/wiremod/shell/dispenser.dm:38	moving_item,location	yes	full	proc root
+proc	/obj/structure/dispenser_bot	handle_stored_item_deleted	code/modules/wiremod/shell/dispenser.dm:43	deleting_item	yes	full	proc root
+proc	/obj/structure/dispenser_bot	remove_item	code/modules/wiremod/shell/dispenser.dm:47	to_remove	yes	full	proc root
+proc	/obj/structure/dispenser_bot	Initialize	code/modules/wiremod/shell/dispenser.dm:57	mapload	yes	full	proc
+proc	/obj/structure/dispenser_bot	item_interaction	code/modules/wiremod/shell/dispenser.dm:63	user,tool,modifiers	yes	full	proc
+proc	/obj/structure/dispenser_bot	wrench_act	code/modules/wiremod/shell/dispenser.dm:87	user,tool	yes	full	proc
+type	/obj/structure/money_bot	/obj/structure	code/modules/wiremod/shell/moneybot.dm:7	live	obj_structure_money_bot	1	0
+proc	/obj/structure/money_bot	atom_deconstruct	code/modules/wiremod/shell/moneybot.dm:18	disassembled	yes	full	proc
+proc	/obj/structure/money_bot	add_money	code/modules/wiremod/shell/moneybot.dm:22	to_add	yes	full	proc root
+proc	/obj/structure/money_bot	Initialize	code/modules/wiremod/shell/moneybot.dm:26	mapload	yes	full	proc
+proc	/obj/structure/money_bot	wrench_act	code/modules/wiremod/shell/moneybot.dm:33	user,tool	yes	full	proc
+type	/obj/structure/scanner_gate_shell	/obj/structure	code/modules/wiremod/shell/scanner_gate.dm:2	live	obj_structure_scanner_gate_shell	1	0
+proc	/obj/structure/scanner_gate_shell	Initialize	code/modules/wiremod/shell/scanner_gate.dm:8	mapload	yes	full	proc
+proc	/obj/structure/scanner_gate_shell	wrench_act	code/modules/wiremod/shell/scanner_gate.dm:20	user,tool	yes	full	proc
+proc	/obj/structure/scanner_gate_shell	on_entered	code/modules/wiremod/shell/scanner_gate.dm:28	source,AM	yes	full	proc root
+proc	/obj/structure/scanner_gate_shell	set_scanline	code/modules/wiremod/shell/scanner_gate.dm:33	type,duration	yes	full	proc root
+type	/obj/structure/server	/obj/structure	code/modules/wiremod/shell/server.dm:8	live	obj_structure_server	1	0
+proc	/obj/structure/server	Initialize	code/modules/wiremod/shell/server.dm:16	mapload	yes	full	proc
+proc	/obj/structure/server	wrench_act	code/modules/wiremod/shell/server.dm:20	user,tool	yes	full	proc
+type	/obj/structure/wallmount_circuit	/obj/structure	code/modules/wiremod/shell/wallmount.dm:2	live	obj_structure_wallmount_circuit	1	0
+proc	/obj/structure/wallmount_circuit	Initialize	code/modules/wiremod/shell/wallmount.dm:11	mapload	yes	full	proc
+proc	/obj/structure/wallmount_circuit	wrench_act	code/modules/wiremod/shell/wallmount.dm:15	user,tool	yes	full	proc
 type	/obj/projectile	/obj	code/modules/projectiles/projectile.dm:8	base	obj_projectile	1	0
 proc	/obj/projectile	Initialize	code/modules/projectiles/projectile.dm:275	mapload	yes	full	proc
 proc	/obj/projectile	Destroy	code/modules/projectiles/projectile.dm:282		yes	full	proc

@@ -50,20 +50,24 @@ Branch `ui-overhaul`, local only, nothing pushed. Commits, oldest first:
 | `11e5c15` | The chat window above the bar, see-through at rest, input shown only while typing (client only; section 13) |
 | `a951ee7` | Package 4, slice 4A: under Tab the chat column, the character with its worn slots, clicks on the sprite, the overlay closing on damage (client only; DV694; section 12) |
 | `4012739` | tg's own slot sprites on the hands, the bar and the worn slots (client only; section 16) |
-| `336a2929` | Merge of `origin/main` (release 1.15.0, upstream's protocol 98): this branch's wire changes are protocol 100, its deviations DV689 to DV694 (were DV599 to DV604); `RadialExtra.TurnOver` 10 and `Offer` 11 beside upstream's `StepIn` 9; signed off by the contributor 2026-11-27 |
+| `336a2929` | Merge of `origin/main` (release 1.15.0, upstream's protocol 98): this branch's wire changes became protocol 99 then (100 today), its deviations DV685 to DV690 then (were DV599 to DV604; DV689 to DV694 today); `RadialExtra.TurnOver` 10 and `Offer` 11 beside upstream's `StepIn` 9; signed off by the contributor 2026-11-27 |
 | `1e37154c` | First person: dragging oneself onto an object by looking down; DEVIATION markers and dated comments cleaned (client only; DV695; section 17) |
+| `cea8fa48` | Package 4, slice 4B: every carried storage in a right column, drags between everything, the quick transfer, Shift+click examine, Tab's rustle and traps (server and client; DV696, DV694, DV693; section 12; signed off by the contributor 2026-11-27) |
+| `2d4468d8` | Merge of `origin/main` (release 1.16.0, upstream's protocol 99: photos): this branch's wire changes are protocol 100, its messages Hotbar 34 and Storages 35 (were 32 and 33), its deviations DV689 to DV696 (were DV685 to DV692); signed off by the contributor 2026-11-27 |
 
-The numbers in this table are today's. Commit messages carry the numbers of their time: this branch's wire changes
-were built as protocol 95, became 98 in the merge of release 1.14.0 and 99 in the merge of release 1.15.0; its
-deviations were DV599 to DV604 until the merge of 1.15.0 and are DV689 to DV694 since. "Since the merge" in a row
-means since both.
+The numbers in this table are today's. Commit messages carry the numbers of their time. This branch's wire changes
+were built as protocol 95 and became 98 in the merge of release 1.14.0, 99 in the merge of 1.15.0 and 100 in the
+merge of 1.16.0. Its deviations were DV599 to DV604 until the merge of 1.15.0, DV685 to DV692 until the merge of
+1.16.0, and are DV689 to DV696 since (click through, Turn over, the prompt only in reach, alien chest, the belt
+hotbar, the Tab inventory's character panel and column, the first-person drag of oneself, the Tab inventory's
+server side). "Since the merge" in a row means since the last of them.
 
 The branch follows `origin/main` (https://github.com/Noardewyn/AnomalyStation): fetch at the start of a session and
 before any wire or server work, and merge upstream in before building on it; upstream's protocol and DV numbers win
 and ours are renumbered after them. Upstream's `CLAUDE.md` now forbids code comments that say who asked for something
 or when; builders write what the code does and why, with plain `DEVIATION(DVnnn)` and decision references.
 
-Protocol version 100 (ours; built as "95", "98" after the merge of 1.14.0, 99 since the merge of 1.15.0) is not released: slices T4a, T4b and T4c and the hotbar
+Protocol version 100 (ours; built as "95", "98" after the merge of 1.14.0, "99" after that of 1.15.0, 100 since the merge of 1.16.0) is not released: slices T4a, T4b and T4c, the hotbar and the Tab inventory's storages
 ride one release by the owner (`tools/release.sh`); until then the build warns `ANOMVER01` and
 `BuildInfoTests.TheVersionNamesTheProtocolItSpeaks` fails by design.
 
@@ -1920,3 +1924,37 @@ oneself after this slice, another client taking an item in the middle of a drag,
 column, coming back to a human body, resizing the window with Tab on.
 Seen and not from this slice: the "Cursor mode" hint overlaps the version title at 1280 wide and at 150%; the
 hover hint can sit over the right hand box at 1280x720 125%.
+
+### Slice 4C: settled design (the other container and the nearby strip; the panel's place chosen by the designer from two mockups, 2026-11-27)
+
+Human HUD, under Tab. Built in two parts as slice 4B was: 4C-1 the server and the wire, 4C-2 the client. One commit
+after the contributor's sign-off (it changes the wire: HIGH).
+
+The other container:
+- When the player has opened a storage that is not one they carry (a box on the floor, a bag on a table, a
+  storage inside a locker: tg's `active_storage` when it is none of the carried storages), it shows as a panel in
+  the right column, pinned at the column's bottom just above the nearby strip and always visible; the player's own
+  storages take the space above it and scroll there (the designer's choice: "Pinned at the bottom"). The panel is
+  as the others: the container's picture, name, tg's room, one cell for every slot. A line 1 thick at half strength
+  separates it from the storages above. tg's own storage window is then never shown on the human HUD.
+- Opening it is tg's own way (whatever opens a storage today), and that turns the Tab inventory on, as tg's window
+  did. It closes by tg's rule (tg closes `active_storage` when the player can no longer reach it, or opens
+  another): the panel goes when the server says so.
+- Every drag, click, Shift+click and quick transfer of slice 4B works with it: an item in it is a source, the
+  panel a target. The quick transfer from a hand goes into the other container while one is open (the transfer
+  between two inventories), otherwise into the backpack; from the other container to the active hand.
+- The server: the Storages message carries the open other container as its last entry, marked as such, when tg
+  lets the player see into it (it is their `active_storage`, tg's reach and tg's own checks hold); a move may take
+  an item out of it and put one into it by tg's own procs with tg's reach rule asked each time; nothing else of
+  another's or of the world can be named.
+
+The nearby strip:
+- One row of cells at the very bottom of the right column, titled "Nearby": the items lying on the player's own
+  tile and the eight around it, nearest first, the mouse wheel over the row moving along it when they do not fit.
+  The client lists them from the world it already knows (things of tg's item type lying on a turf); tg decides
+  reach when one is acted on, so an item behind a window may be listed and a click on it then does nothing
+  (a known limit).
+- A click on a cell is tg's click on that item (it is picked up into the active hand if tg allows); Shift+click
+  examines it; a drag from a cell onto a hand box is the same pick-up. A drag from the inventory onto the strip
+  drops the item (the move to the floor). No server change for the strip.
+- With nothing nearby the strip shows its title and one empty cell (the drop target).

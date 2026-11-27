@@ -136,12 +136,12 @@ public readonly record struct LiveHudLayout(HudRect Doll, int DollScale, bool Vi
 public readonly record struct HandsLayout(HudRect Left, HudRect Right, HudRect Hotbar, float Unit, HudRect Hint = default, float HintShare = 0f, float HintName = 0f);
 
 /// <summary>What a hotbar cell shows at a given time (<see cref="LiveHud.CellLook"/>; package 3).</summary>
-/// <param name="Alpha">The whole cell's opacity (its fill, rim, cap and picture): less for a belt cell with no belt worn.</param>
+/// <param name="Alpha">The whole cell's opacity (tg's slot picture, the rim, the cap and the item's picture): less for a belt cell with no belt worn.</param>
 /// <param name="Picture">The item's picture (none for an empty cell).</param>
 /// <param name="PictureAlpha">The picture's opacity within the cell: less while the item is out in a hand.</param>
 /// <param name="Cap">The key cap's label: the first key bound to the cell (null: unbound, no cap).</param>
 /// <param name="CapAlpha">The cap's opacity within the cell: dim on an empty cell.</param>
-/// <param name="Rim">The rim's colour (<c>0xRRGGBBAA</c>): red while a refused press blinks.</param>
+/// <param name="Rim">The colour of a rim over tg's slot picture (<c>0xRRGGBBAA</c>): red while a refused press blinks; 0, no rim, otherwise.</param>
 public readonly record struct HotbarCellLook(float Alpha, TableRef Picture, float PictureAlpha, string Cap, float CapAlpha, uint Rim);
 
 /// <summary>The live HUD's reading of tg's screen entries and its layout (ui-overhaul.md section 6, wireframes Mockup 1).</summary>
@@ -344,10 +344,10 @@ public static class LiveHud
     }
 
     /// <summary>
-    /// What a native hand box draws of tg's hand box <paramref name="hand"/> over the held items it draws on their own (its vis_contents children):
+    /// What a hand box draws of tg's hand box <paramref name="hand"/> over the held items it draws on their own (its vis_contents children):
     /// the overlays the server put on the box's appearance but the active hand's mark and those items, i.e. tg's <c>handcuff_overlay</c> and
     /// <c>blocked_overlay</c> (screen_objects.dm, inventory/hand update_overlays) and a held item the box does not list as a child. The box's own
-    /// picture (tg's empty hand slot) is the native box. Bottom to top, as the server sends them.
+    /// picture (tg's <c>hand_l</c> or <c>hand_r</c>, <see cref="SlotArt"/>) and its active mark are drawn under the items. Bottom to top, as the server sends them.
     /// </summary>
     public static List<TableRef> HandOverlays(ReplicaWorld replica, ScreenEntry hand)
     {
@@ -369,10 +369,115 @@ public static class LiveHud
     /// <summary>
     /// Whether tg marks the hand box <paramref name="hand"/> as unusable: one of <see cref="HandOverlays"/> is tg's <c>handcuff_overlay</c>
     /// (screen_gen.dmi <c>markus</c> on a right hand, <c>gabrielle</c> on a left one) or its <c>blocked_overlay</c> (<c>blocked</c>: the arm is
-    /// missing or disabled). The native box then has a red border and a lighter fill.
+    /// missing or disabled). The box then has a red border over tg's mark (<see cref="HandFrame"/>).
     /// </summary>
     public static bool HandMarked(ReplicaWorld replica, ScreenEntry hand)
-        => HandOverlays(replica, hand).Exists(o => replica.TryGetAppearance(o, out AppearanceEntry e) && replica.ResolveString(e.IconState) is "markus" or "gabrielle" or "blocked");
+        => HandOverlays(replica, hand).Exists(o => IsSlotMark(replica, o));
+
+    // ---- section 16: tg's own slot pictures on the bottom row and in the character panel ----
+
+    /// <summary>
+    /// tg's blank slot state that the bar's belt cells, which have no slot entry of tg's, take from the player's HUD style: <c>template_small</c>, the
+    /// picture tg's belt, pocket and ID slots show while they hold an item (human.dm icon_full), the same size as the pocket and ID cells' art beside
+    /// them; every human HUD style has it.
+    /// </summary>
+    public const string BlankSlotState = "template_small";
+
+    /// <summary>
+    /// The picture of tg's slot entry <paramref name="slot"/> (a hand, a pocket, the ID slot, a worn slot) that its box or cell is drawn with: the
+    /// entry's own icon file and icon state as the server sends them (tg's <c>hand_l</c> or <c>hand_r</c>; an empty slot's own picture such as
+    /// <c>pocket</c> or <c>uniform</c>, a full one's <c>template</c> or <c>template_small</c>), without its overlays, which are drawn on their own: the
+    /// active mark (<see cref="ActiveMark"/>) with the picture, the held items in the box's picture square, the marks (<see cref="HandOverlays"/>) over
+    /// them. Null when the entry has no readable icon and state.
+    /// </summary>
+    public static (string Icon, string State)? SlotArt(ReplicaWorld replica, ScreenEntry slot)
+    {
+        if (!replica.TryGetAppearance(slot.Appearance, out AppearanceEntry app))
+            return null;
+        string icon = replica.ResolveResource(app.Icon) ?? replica.ResolveString(app.Icon), state = replica.ResolveString(app.IconState);
+        return string.IsNullOrEmpty(icon) || string.IsNullOrEmpty(state) ? null : (icon, state);
+    }
+
+    /// <summary>
+    /// The picture of the bar's belt cells: <see cref="BlankSlotState"/> of the icon file the first of <paramref name="styled"/> (the player's own slot
+    /// entries: the pockets and the ID slot, then the hands) is drawn from, so another HUD style is followed; null when none of them has one.
+    /// </summary>
+    public static (string Icon, string State)? BlankSlotArt(ReplicaWorld replica, IEnumerable<ScreenEntry> styled)
+    {
+        foreach (ScreenEntry entry in styled)
+        {
+            if (SlotArt(replica, entry) is (string icon, _))
+                return (icon, BlankSlotState);
+        }
+        return null;
+    }
+
+    /// <summary>tg's active hand mark on the hand box <paramref name="hand"/> (its <c>lhandactive</c> or <c>rhandactive</c> overlay), drawn with the box's picture under the held items; none on the other hand.</summary>
+    public static TableRef ActiveMark(ReplicaWorld replica, ScreenEntry hand)
+    {
+        if (replica.TryGetAppearance(hand.Appearance, out AppearanceEntry app) && app.OverlayCount > 0)
+        {
+            foreach (TableRef overlay in app.Overlays)
+            {
+                if (replica.TryGetAppearance(overlay, out AppearanceEntry o) && (replica.ResolveString(o.IconState) ?? string.Empty).EndsWith("handactive", StringComparison.Ordinal))
+                    return overlay;
+            }
+        }
+        return TableRef.None;
+    }
+
+    /// <summary>
+    /// The picture of tg's active mark on <paramref name="hand"/> (<see cref="ActiveMark"/>), drawn as the slot's picture is: the overlay's own icon
+    /// file, or, for an overlay that carries none (BYOND's text overlay, which takes its atom's icon), the hand's; null on the other hand.
+    /// </summary>
+    public static (string Icon, string State)? ActiveMarkArt(ReplicaWorld replica, ScreenEntry hand)
+    {
+        if (!replica.TryGetAppearance(ActiveMark(replica, hand), out AppearanceEntry mark) || SlotArt(replica, hand) is not (string handIcon, _))
+            return null;
+        string icon = mark.Icon.IsNone ? handIcon : replica.ResolveResource(mark.Icon) ?? replica.ResolveString(mark.Icon) ?? handIcon;
+        return (icon, replica.ResolveString(mark.IconState));
+    }
+
+    /// <summary>
+    /// The tint (<c>0xRRGGBBAA</c>) tg's slot picture of <paramref name="slot"/> is drawn with: the entry's own colour and alpha as the server sends them
+    /// (tg dims a slot that cannot be used now to alpha 128, human.dm update_locked_slots), times the cell's own opacity <paramref name="cellAlpha"/>
+    /// (a belt cell with no belt worn). A missing entry is drawn white at the cell's opacity. A colour matrix is not followed.
+    /// </summary>
+    public static uint SlotTint(ReplicaWorld replica, ScreenEntry? slot, float cellAlpha = 1f)
+    {
+        uint rgba = 0xFFFFFFFFu;
+        float alpha = cellAlpha;
+        if (slot is ScreenEntry entry && replica.TryGetAppearance(entry.Appearance, out AppearanceEntry app))
+        {
+            rgba = app.Rgba;
+            alpha *= app.Alpha / 255f * (app.Rgba & 0xFF) / 255f;
+        }
+        return (rgba & 0xFFFFFF00u) | (uint)Math.Clamp(MathF.Round(alpha * 255f), 0f, 255f);
+    }
+
+    /// <summary>
+    /// Whether the overlay <paramref name="overlay"/> of a slot is one of tg's slot-level marks (the handcuffs, <c>markus</c> or <c>gabrielle</c>, and
+    /// <c>blocked</c>), drawn over the slot's whole picture (<see cref="SlotArtSquare"/>); any other overlay (a held item the box does not list as a
+    /// child) is drawn in the box's picture square, as the items are.
+    /// </summary>
+    public static bool IsSlotMark(ReplicaWorld replica, TableRef overlay)
+        => replica.TryGetAppearance(overlay, out AppearanceEntry e) && replica.ResolveString(e.IconState) is "markus" or "gabrielle" or "blocked";
+
+    /// <summary>
+    /// Where a box's or cell's slot picture (tg's 32 x 32 square) is drawn in <paramref name="box"/>: the largest square of whole pixels centred in it,
+    /// so it fills a square box; the picture is scaled by whatever factor that takes and sampled nearest-neighbour, as the chips' pictures are.
+    /// </summary>
+    public static HudRect SlotArtSquare(HudRect box)
+    {
+        float side = MathF.Floor(Math.Max(0f, Math.Min(box.Width, box.Height)));
+        return new HudRect(MathF.Round(box.Left + (box.Width - side) / 2f), MathF.Round(box.Top + (box.Height - side) / 2f), side, side);
+    }
+
+    /// <summary>
+    /// The border drawn over a hand box's picture (<c>0xRRGGBBAA</c>; 0: none): red on a cuffed or missing hand (<paramref name="marked"/>), over tg's
+    /// mark; none otherwise, the active hand included, which tg's own active mark shows.
+    /// </summary>
+    public static uint HandFrame(bool marked) => marked ? UiTokens.HandMarkedBorder : 0u;
 
     /// <summary>
     /// Whether one of tg's status indicators <paramref name="entry"/> (stamina, internals, suit cell, another of its right column, or the hunger bar)
@@ -677,8 +782,8 @@ public static class LiveHud
 
     /// <summary>
     /// Package 3: what cell <paramref name="cell"/> (1 to 10) of the bar <paramref name="bar"/> shows at <paramref name="now"/> (the clock of
-    /// <see cref="HotbarModel.Apply"/>), its key cap from <paramref name="bindings"/>. Empty: the rim and a dim cap only; holding: the item's picture;
-    /// out (its item in one of the player's hands): the picture at <see cref="UiTokens.HotbarOutAlpha"/>; refused: the rim red for
+    /// <see cref="HotbarModel.Apply"/>), its key cap from <paramref name="bindings"/>, over tg's slot picture of the cell. Empty: a dim cap only; holding: the item's picture;
+    /// out (its item in one of the player's hands): the picture at <see cref="UiTokens.HotbarOutAlpha"/>; refused: a red rim for
     /// <see cref="UiTokens.HotbarRefusedSeconds"/> from <see cref="HotbarModel.RefusedAt"/>. With no belt worn the belt's cells are empty cells at
     /// <see cref="UiTokens.HotbarNoBeltAlpha"/>.
     /// </summary>
@@ -689,7 +794,7 @@ public static class LiveHud
         float alpha = belt && !bar.BeltWorn ? UiTokens.HotbarNoBeltAlpha : 1f;
         string cap = KeyChips.KeyOf(bindings, PlayAction.Hotbar1 + (byte)(cell - 1));
         bool refused = bar.RefusedCell == cell && now >= bar.RefusedAt && now - bar.RefusedAt < UiTokens.HotbarRefusedSeconds;
-        uint rim = refused ? UiTokens.HotbarRefusedRim : UiTokens.HotbarRim;
+        uint rim = refused ? UiTokens.HotbarRefusedRim : 0u;
         return shown.State switch
         {
             HotbarCellState.Holding => new HotbarCellLook(alpha, shown.Appearance, 1f, cap, 1f, rim),

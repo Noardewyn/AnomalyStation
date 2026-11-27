@@ -13,6 +13,7 @@ client's top-right corner, in its window title and in the first line of the serv
 - What you can do with the thing under the crosshair now shows beside it, each with your key; F3 shows ping and FPS in one chip at the top right.
 - The health doll, health and mood stand bare at the right edge over the combat toggle in the corner; the zone selector shows only in cursor mode.
 - Your hands sit either side of a ten-cell bar of belt, pockets and ID at the bottom centre; a strip above them names the held item and its keys.
+- The hand boxes, the bar's cells and the worn slots under Tab are drawn with tg's own slot pictures of your HUD style.
 - Tab (or I) shows your character with its worn slots round it and the chat at the left; click the sprite to use an item on yourself; damage closes it.
 - Alerts, hunger and stamina are small chips above the health doll, or left of it on a crowded screen, instead of a column at the right edge.
 - Every chip's picture is centred and scaled so its art fills the chip, so hunger, stamina and alerts no longer sit small or off-centre.

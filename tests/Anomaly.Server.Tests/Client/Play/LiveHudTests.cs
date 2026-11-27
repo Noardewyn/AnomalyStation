@@ -1196,7 +1196,7 @@ public class LiveHudTests
         Assert.Equal(LiveHud.HandPicture(hands.Right, hands.Unit), LiveHud.MaptextSquare(LiveHudRole.RightHand, hands));
         for (int cell = 0; cell < TabInventory.CellCount; cell++)
         {
-            // slice 4A: the slot's tg picture is fitted to its cell's picture square in the character panel (HudLayer.Place), so its icon square is that
+            // slice 4A: the worn item is drawn in its cell's picture square in the character panel (section 16: tg's slot picture fills the whole cell)
             HudRect square = LiveHud.HandPicture(panel.Cells[cell], panel.CellUnit);
             Assert.Equal(square, LiveHud.MaptextSquare(LiveHudRole.WornSlot, hands, panel, cell));
             Assert.Equal(square, ScreenLoc.FitIcon(square, 32, 32, 0, 0));

@@ -6,10 +6,10 @@ using Anomaly.Protocol;
 namespace Anomaly.Client.Hud;
 
 /// <summary>
-/// The live HUD's native boxes (ui-overhaul.md section 6, wireframes Mockup 1): slice C's two hand boxes with the held items' pictures, the active
-/// one larger with an amber border, the swap-hands key on the inactive one, a red border on a cuffed or missing hand; package 3's ten hotbar cells
-/// between them (ui-overhaul.md section 10); slice D's alert chips by the vitals and the held-item hint strip over the hands; slice 4A's character
-/// panel under Tab (its cells and the own sprite). It only draws: <see cref="HudLayer"/> places it first in its root, so tg's pictures (the
+/// The live HUD's own boxes (ui-overhaul.md section 6, wireframes Mockup 1): slice C's two hand boxes with the held items' pictures, the active
+/// one larger, the swap-hands key on the inactive one, a red border on a cuffed or missing hand; package 3's ten hotbar cells between them
+/// (ui-overhaul.md section 10); section 16: the boxes and cells drawn with tg's own slot pictures of the player's HUD style; slice D's alert chips by
+/// the vitals and the held-item hint strip over the hands; slice 4A's character panel under Tab (its cells and the own sprite). It only draws: <see cref="HudLayer"/> places it first in its root, so tg's pictures (the
 /// alerts in their chips) stand over it and it hides with the interface, and reports the hand boxes' rectangles to the HUD pick under their
 /// screen entries.
 /// </summary>
@@ -18,8 +18,8 @@ public partial class LiveHudView : Control
     private bool _handsDrawn;
     private readonly StyleBoxFlat _boxStyle = new();
 
-    /// <summary>A held item's picture and where it is drawn.</summary>
-    public readonly record struct Picture(Texture2D Texture, Rect2 Rect);
+    /// <summary>A picture, where it is drawn, and its tint (<c>0xRRGGBBAA</c>; section 16: tg's slot picture with its entry's colour and alpha and the cell's opacity, <see cref="LiveHud.SlotTint"/>).</summary>
+    public readonly record struct Picture(Texture2D Texture, Rect2 Rect, uint Rgba = 0xFFFFFFFFu);
 
     /// <summary>Slice C: what the hands and the hint strip show this frame (<see cref="HudLayer"/> fills it, then calls <see cref="ShowHands"/>).</summary>
     public sealed class HandsScene
@@ -27,6 +27,7 @@ public partial class LiveHudView : Control
         public bool Shown;
         public HandsLayout Layout;
         public bool LeftActive, RightActive, HasLeft, HasRight;
+        public readonly List<Picture> LeftArt = new(), RightArt = new(); // section 16: tg's hand slot picture and its active mark, filling the box
         public readonly List<Picture> Left = new(), Right = new(), LeftOverlays = new(), RightOverlays = new(); // the items, then tg's handcuffs and blocked mark
         public string Swap; // the swap-hands key cap's label (null: unbound)
         public bool LeftMarked, RightMarked; // tg's handcuff or blocked mark on that hand (LiveHud.HandMarked)
@@ -39,12 +40,15 @@ public partial class LiveHudView : Control
         public readonly CellScene[] Cells = Enumerable.Range(0, HotbarMessage.CellCount).Select(_ => new CellScene()).ToArray(); // package 3: the bar
     }
 
-    /// <summary>Package 3: one cell of the bar this frame: where it is, what it shows (<see cref="LiveHud.CellLook"/>) and its item's picture.</summary>
+    /// <summary>
+    /// Package 3: one cell of the bar this frame: where it is, what it shows (<see cref="LiveHud.CellLook"/>) and its item's picture; section 16: tg's
+    /// slot picture under it. Slice 4A: a worn slot's cell in the character panel, with tg's marks over its item.
+    /// </summary>
     public sealed class CellScene
     {
         public HudRect Rect;
-        public HotbarCellLook Look;
-        public readonly List<Picture> Pictures = new();
+        public HotbarCellLook Look = new(1f, default, 1f, null, 1f, 0u);
+        public readonly List<Picture> Art = new(), Pictures = new(), Overlays = new();
     }
 
     /// <summary>Slice C: the hands; slice D: the hint strip.</summary>
@@ -63,23 +67,24 @@ public partial class LiveHudView : Control
         QueueRedraw();
     }
 
-    private readonly List<HudRect> _panelCells = new();
+    private readonly List<CellScene> _panelCells = new();
     private float _panelUnit;
     private Texture2D _sprite;
     private Rect2 _spriteAt, _spriteFrom;
 
     /// <summary>
-    /// Slice 4A: the character panel this frame: the cells of tg's worn slots (tg's slot pictures are drawn over them) at <paramref name="unit"/>, and
-    /// the own sprite's picture (<paramref name="sprite"/>; null: none), its part <paramref name="from"/> drawn at <paramref name="at"/>. No backing.
+    /// Slice 4A: the character panel this frame: the cells of tg's worn slots at <paramref name="unit"/> (section 16: tg's slot picture filling each,
+    /// the worn item in its picture square), and the own sprite's picture (<paramref name="sprite"/>; null: none), its part <paramref name="from"/>
+    /// drawn at <paramref name="at"/>. No backing.
     /// </summary>
-    public void ShowPanel(List<HudRect> cells, float unit, Texture2D sprite, Rect2 at, Rect2 from)
+    public void ShowPanel(List<CellScene> cells, float unit, Texture2D sprite, Rect2 at, Rect2 from)
     {
-        if (sprite == null && _sprite == null && cells.SequenceEqual(_panelCells) && unit == _panelUnit)
+        if (sprite == null && _sprite == null && cells.Count == 0 && _panelCells.Count == 0)
             return;
         _panelCells.Clear();
         _panelCells.AddRange(cells);
         (_panelUnit, _sprite, _spriteAt, _spriteFrom) = (unit, sprite, at, from);
-        QueueRedraw(); // the sprite's picture animates and changes with what is worn: drawn afresh while shown
+        QueueRedraw(); // the sprite's and the items' pictures animate and change with what is worn: drawn afresh while shown
     }
 
     public LiveHudView()
@@ -113,15 +118,9 @@ public partial class LiveHudView : Control
             _chipStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * c)));
             DrawStyleBox(_chipStyle, R(chip));
         }
-        // slice 4A: the panel's cells in the bar's look (its fill and faint rim), and the own sprite
-        foreach (HudRect cell in _panelCells)
-        {
-            _boxStyle.BgColor = ChatLines.Rgba(UiTokens.DollPanelBack);
-            _boxStyle.BorderColor = ChatLines.Rgba(UiTokens.HotbarRim);
-            _boxStyle.SetBorderWidthAll(Math.Max(1, (int)Math.Round(_panelUnit)));
-            _boxStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * _panelUnit)));
-            DrawStyleBox(_boxStyle, R(cell));
-        }
+        // slice 4A: the panel's cells as the bar's (section 16: tg's slot picture, the worn item, tg's marks), and the own sprite
+        foreach (CellScene cell in _panelCells)
+            DrawCell(font, cell, _panelUnit);
         if (_sprite != null)
             DrawTextureRectRegion(_sprite, _spriteAt, _spriteFrom);
     }
@@ -133,9 +132,9 @@ public partial class LiveHudView : Control
         HandsScene h = Hands;
         float k = h.Layout.Unit;
         if (h.HasLeft)
-            DrawHand(h.Layout.Left, h.LeftActive, h.LeftMarked, h.Left, h.LeftOverlays, k);
+            DrawHand(h.Layout.Left, h.LeftMarked, h.LeftArt, h.Left, h.LeftOverlays, k);
         if (h.HasRight)
-            DrawHand(h.Layout.Right, h.RightActive, h.RightMarked, h.Right, h.RightOverlays, k);
+            DrawHand(h.Layout.Right, h.RightMarked, h.RightArt, h.Right, h.RightOverlays, k);
         if (h.Swap != null && (h.LeftActive ? h.HasRight : h.HasLeft))
         {
             int capSize = FontPx(UiTokens.SwapCapFont, k);
@@ -177,20 +176,22 @@ public partial class LiveHudView : Control
         }
     }
 
-    // Package 3: a cell of the bar: the chips' fill with the faint rim (red while a refused press blinks), the item's picture as a hand box draws
-    // it (fainter while the item is out in a hand), its key cap in the top left corner (dim on an empty cell); the whole cell fainter for a belt
-    // cell with no belt worn.
+    // Package 3: a cell of the bar: section 16's tg slot picture filling it, the item's picture as a hand box draws it (fainter while the item is
+    // out in a hand), tg's marks over it (a worn slot's), a red rim while a refused press blinks, its key cap in the top left corner (dim on an
+    // empty cell); the whole cell fainter for a belt cell with no belt worn.
     private void DrawCell(Font font, CellScene cell, float k)
     {
         HotbarCellLook look = cell.Look;
-        _boxStyle.BgColor = ChatLines.Rgba(UiTokens.DollPanelBack, look.Alpha);
-        _boxStyle.BorderColor = ChatLines.Rgba(look.Rim, look.Alpha);
-        _boxStyle.SetBorderWidthAll(Math.Max(1, (int)Math.Round(k)));
-        _boxStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.DollPanelRadius * k)));
-        DrawStyleBox(_boxStyle, R(cell.Rect));
+        var whole = new Color(1f, 1f, 1f, look.Alpha);
+        foreach (Picture p in cell.Art)
+            DrawTextureRect(p.Texture, p.Rect, false, ChatLines.Rgba(p.Rgba)); // the cell's opacity is in the tint (LiveHud.SlotTint)
         var tint = new Color(1f, 1f, 1f, look.Alpha * look.PictureAlpha);
         foreach (Picture p in cell.Pictures)
             DrawTextureRect(p.Texture, p.Rect, false, tint);
+        foreach (Picture p in cell.Overlays)
+            DrawTextureRect(p.Texture, p.Rect, false, whole);
+        if (look.Rim != 0u)
+            DrawFrame(cell.Rect, look.Rim, look.Alpha, Math.Max(1, (int)Math.Round(k)), k);
         if (look.Cap == null)
             return;
         int capSize = FontPx(UiTokens.SwapCapFont, k);
@@ -237,17 +238,28 @@ public partial class LiveHudView : Control
         }
     }
 
-    private void DrawHand(HudRect box, bool active, bool marked, List<Picture> pictures, List<Picture> overlays, float k)
+    // Section 16: tg's hand slot picture with its active mark filling the box, the held items, tg's handcuffs or blocked mark over them, and on a
+    // cuffed or missing hand a red border over all (LiveHud.HandFrame), active or not.
+    private void DrawHand(HudRect box, bool marked, List<Picture> art, List<Picture> pictures, List<Picture> overlays, float k)
     {
-        // a cuffed or missing hand: a red border and a lighter fill under tg's mark, active or not
-        _boxStyle.BgColor = ChatLines.Rgba(marked ? UiTokens.HandMarkedBack : UiTokens.HandBack);
-        _boxStyle.BorderColor = ChatLines.Rgba(marked ? UiTokens.HandMarkedBorder : active ? UiTokens.HandActiveBorder : UiTokens.HandRim);
-        _boxStyle.SetBorderWidthAll(active || marked ? Math.Max(1, (int)Math.Round(UiTokens.HandBorder * k)) : Math.Max(1, (int)Math.Round(k)));
-        _boxStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.ChipRadius * k)));
-        DrawStyleBox(_boxStyle, R(box));
+        foreach (Picture p in art)
+            DrawTextureRect(p.Texture, p.Rect, false, ChatLines.Rgba(p.Rgba));
         foreach (Picture p in pictures)
             DrawTextureRect(p.Texture, p.Rect, false);
         foreach (Picture p in overlays)
             DrawTextureRect(p.Texture, p.Rect, false);
+        if (LiveHud.HandFrame(marked) is uint frame and not 0u)
+            DrawFrame(box, frame, 1f, Math.Max(1, (int)Math.Round(UiTokens.HandBorder * k)), k);
     }
+
+    // A border alone (no fill) round `rect`, with the chips' rounded corners.
+    private void DrawFrame(HudRect rect, uint rgba, float alpha, int width, float k)
+    {
+        _frameStyle.BorderColor = ChatLines.Rgba(rgba, alpha);
+        _frameStyle.SetBorderWidthAll(width);
+        _frameStyle.SetCornerRadiusAll(Math.Max(1, (int)Math.Round(UiTokens.ChipRadius * k)));
+        DrawStyleBox(_frameStyle, R(rect));
+    }
+
+    private readonly StyleBoxFlat _frameStyle = new() { DrawCenter = false };
 }

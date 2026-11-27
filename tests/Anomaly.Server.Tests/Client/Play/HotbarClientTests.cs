@@ -10,6 +10,9 @@ namespace Anomaly.Server.Tests.Client.Play;
 /// </summary>
 public class HotbarClientTests
 {
+    // section 16: a cell draws tg's slot picture with no rim of ours over it, but the red one of a refused press
+    private const uint NoRim = 0u;
+
     private static HotbarMessage Message(byte refused = 0, string left = "wrench", bool belt = true)
     {
         var cells = Enumerable.Repeat(HotbarCell.Empty, HotbarMessage.CellCount).ToArray();
@@ -27,8 +30,8 @@ public class HotbarClientTests
         var model = new HotbarModel();
         model.Apply(Message(), refusals: 0, refusedCell: 0, now: 1.0);
         KeyBindings keys = KeyBindings.Defaults();
-        uint rim = UiTokens.HotbarRim;
-        // empty: the rim and a dim key cap, no picture; holding: the item's picture; out (in a hand): the picture at about a third
+        uint rim = NoRim;
+        // empty: a dim key cap, no picture, and no rim over tg's slot picture (section 16); holding: the item's picture; out (in a hand): the picture at about a third
         Assert.Equal(new HotbarCellLook(1f, TableRef.None, 0f, "1", UiTokens.HotbarEmptyCapAlpha, rim), LiveHud.CellLook(model, 1, keys, 1.0));
         Assert.Equal(new HotbarCellLook(1f, new TableRef(13, true), 1f, "5", 1f, rim), LiveHud.CellLook(model, 5, keys, 1.0));
         Assert.Equal(new HotbarCellLook(1f, new TableRef(12, true), UiTokens.HotbarOutAlpha, "3", 1f, rim), LiveHud.CellLook(model, 3, keys, 1.0));
@@ -53,24 +56,24 @@ public class HotbarClientTests
         model.Apply(Message(), refusals: 0, refusedCell: 0, now: 1.0);
         KeyBindings keys = KeyBindings.Defaults();
         uint Rim(int cell, double now) => LiveHud.CellLook(model, cell, keys, now).Rim;
-        Assert.Equal(UiTokens.HotbarRim, Rim(9, 1.0)); // nothing refused yet
+        Assert.Equal(NoRim, Rim(9, 1.0)); // nothing refused yet
         model.Apply(Message(), refusals: 1, refusedCell: 9, now: 2.0);
         Assert.InRange(UiTokens.HotbarRefusedSeconds, 0.3, 0.37);
-        Assert.Equal(UiTokens.HotbarRim, Rim(9, 1.99)); // not before it
+        Assert.Equal(NoRim, Rim(9, 1.99)); // not before it
         Assert.Equal(UiTokens.HotbarRefusedRim, Rim(9, 2.0));
         Assert.Equal(UiTokens.HotbarRefusedRim, Rim(9, 2.3));
-        Assert.Equal(UiTokens.HotbarRim, Rim(9, 2.34)); // over about a third of a second later
-        Assert.Equal(UiTokens.HotbarRim, Rim(8, 2.1)); // only the refused cell
+        Assert.Equal(NoRim, Rim(9, 2.34)); // over about a third of a second later
+        Assert.Equal(NoRim, Rim(8, 2.1)); // only the refused cell
         // the refusal's look keeps the cell's state (an empty cell stays empty)
         Assert.Equal(LiveHud.CellLook(model, 9, keys, 3.0) with { Rim = UiTokens.HotbarRefusedRim }, LiveHud.CellLook(model, 9, keys, 2.1));
         // a second refusal of the same cell starts the blink again
         model.Apply(Message(), refusals: 2, refusedCell: 9, now: 2.2);
         Assert.Equal(UiTokens.HotbarRefusedRim, Rim(9, 2.4)); // 0.4 after the first, 0.2 after the second
-        Assert.Equal(UiTokens.HotbarRim, Rim(9, 2.54));
+        Assert.Equal(NoRim, Rim(9, 2.54));
         // a refusal of another cell moves the blink there
         model.Apply(Message(), refusals: 3, refusedCell: 2, now: 3.0);
         Assert.Equal(UiTokens.HotbarRefusedRim, Rim(2, 3.1));
-        Assert.Equal(UiTokens.HotbarRim, Rim(9, 3.1));
+        Assert.Equal(NoRim, Rim(9, 3.1));
     }
 
     [Fact]
@@ -88,7 +91,7 @@ public class HotbarClientTests
         noBelt.Apply(Message(belt: false), refusals: 1, refusedCell: 2, now: 2.0);
         Assert.Equal(new HotbarCellLook(UiTokens.HotbarNoBeltAlpha, TableRef.None, 0f, "2", UiTokens.HotbarEmptyCapAlpha, UiTokens.HotbarRefusedRim),
             LiveHud.CellLook(noBelt, 2, keys, 2.1));
-        Assert.Equal(UiTokens.HotbarRim, LiveHud.CellLook(noBelt, 2, keys, 2.4).Rim);
+        Assert.Equal(NoRim, LiveHud.CellLook(noBelt, 2, keys, 2.4).Rim);
     }
 
     [Fact]

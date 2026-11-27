@@ -178,7 +178,7 @@ public static class UiTokens
     /// <summary>The gap between the reduced doll and tg's right-hand column of HUD entries, and between the vitals and what stands left of them (the prompts, the zone labels).</summary>
     public const float DollPanelGap = 12f;
 
-    /// <summary>The dark fill of the alert chips and the hand boxes (slice B's doll panel's, which slice E removed).</summary>
+    /// <summary>The dark fill of the alert chips (slice B's doll panel's, which slice E removed).</summary>
     public const uint DollPanelBack = 0x1E242BB3;
 
     /// <summary>An alert chip's corner radius.</summary>
@@ -201,10 +201,7 @@ public static class UiTokens
     /// <summary>The hotbar's whole width: ten cells, seven gaps within the groups and two between them.</summary>
     public const float HotbarWidth = HotbarSlots * HotbarSlot + (HotbarSlots - 3) * HotbarSlotGap + 2 * HotbarGroupGap;
 
-    /// <summary>A cell's rim: the other hand box's faint one.</summary>
-    public const uint HotbarRim = HandRim;
-
-    /// <summary>... red for <see cref="HotbarRefusedSeconds"/> after a press that did nothing.</summary>
+    /// <summary>A cell's rim, drawn over tg's slot picture only for <see cref="HotbarRefusedSeconds"/> after a press that did nothing: red.</summary>
     public const uint HotbarRefusedRim = Security;
 
     /// <summary>How long a refused cell's rim is red, seconds.</summary>
@@ -228,17 +225,8 @@ public static class UiTokens
     /// <summary>... and the other hand's.</summary>
     public const float HandInactive = 56f;
 
-    /// <summary>The active hand's border: its width ...</summary>
+    /// <summary>The red border of a cuffed or missing hand's box: its width.</summary>
     public const float HandBorder = 2f;
-
-    /// <summary>... and colour (the palette's amber).</summary>
-    public const uint HandActiveBorder = Engineering;
-
-    /// <summary>A hand box's fill.</summary>
-    public const uint HandBack = DollPanelBack;
-
-    /// <summary>The other hand box's faint rim (not a highlight: it only keeps the box seen over a dark floor), one reference pixel wide.</summary>
-    public const uint HandRim = 0xFFFFFF40;
 
     /// <summary>The room between a hand box's edge and the held item's picture.</summary>
     public const float HandInset = 6f;
@@ -259,11 +247,8 @@ public static class UiTokens
     /// <summary>A key cap's label too wide for its cap is drawn smaller, to this share of the cap's text size at least, then cut (LiveHud.CapLabel).</summary>
     public const float CapLeastShare = 0.6f;
 
-    /// <summary>A handcuffed or blocked hand (tg's handcuff or blocked overlay on its box): its border, whether it is the active hand or not ...</summary>
+    /// <summary>A handcuffed or blocked hand (tg's handcuff or blocked overlay on its box): its border over tg's mark, whether it is the active hand or not.</summary>
     public const uint HandMarkedBorder = Security;
-
-    /// <summary>... and its lighter fill, so that tg's mark over it reads at a glance.</summary>
-    public const uint HandMarkedBack = 0x5A6470D9;
 
     // ---- the held-item hint strip over the hands (LiveHud.HintBy): slice D's combat pill's height, dark fill and rounded ends ----
 

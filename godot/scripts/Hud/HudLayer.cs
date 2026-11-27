@@ -24,7 +24,7 @@ namespace Anomaly.Client.Hud;
 /// <para>
 /// The live HUD (ui-overhaul.md section 6, <see cref="LiveHud"/>): the doll is re-placed (it shows injuries only; its wound outlines stay tg's),
 /// still taking tg's clicks, and tg's zone selector is shown only while the cursor is free. Slice C, on the human HUD: tg's two hand boxes are
-/// drawn as native boxes either side of the hotbar at the bottom centre (<see cref="LiveHudView"/>); the boxes still take tg's clicks and drags.
+/// drawn as our own boxes either side of the hotbar at the bottom centre (<see cref="LiveHudView"/>; section 16: with tg's own slot pictures); the boxes still take tg's clicks and drags.
 /// Package 3: the hotbar's ten cells between them (the belt's seven, a click on one under Tab its press; tg's pocket and ID slots drawn as cells 8
 /// to 10, still tg's for clicks and drags). Slice 4A, under Tab only: the character panel (the own sprite, taking clicks as the doll does, with tg's
 /// worn slots round it in cells, still tg's for clicks, drags and tooltips) and the chat window's docked place (<see cref="TabInventory"/>). Slice D,
@@ -308,7 +308,7 @@ void fragment() {
             }
             else if (IsHand(RoleNow(item)))
             {
-                // slice C: the native box is tg's hand box for clicks and drags, the held item's own pixels in its picture square the item's
+                // slice C: the drawn box is tg's hand box for clicks and drags, the held item's own pixels in its picture square the item's
                 HudRect box = item.Role == LiveHudRole.LeftHand ? _hands.Left : _hands.Right;
                 bottomToTop.Add(new HudDrawn(item.Entry.Id, box, null, 0, 0));
                 bottomToTop.Add(new HudDrawn(item.Entry.Id, LiveHud.HandPicture(box, _hands.Unit), null, 0, 0, HudPictures.ChildrenOf(_replica, _textures, item.Entry, _lastNow)));
@@ -463,6 +463,7 @@ void fragment() {
         bool doll = false, human = false;
         Item left = null, right = null, active = null;
         _wornSlots.Clear();
+        Array.Clear(_barSlots);
         _alerts.Clear();
         (DollEntry, CollapsedToggle, ExpandedToggle) = (0, 0, 0);
         foreach (Item item in _order)
@@ -494,6 +495,7 @@ void fragment() {
                     break;
                 case LiveHudRole.BarSlot:
                     item.Cell = LiveHud.BarCellOfSlot(item.Entry.SlotId);
+                    _barSlots[item.Cell - HotbarMessage.BeltCells - 1] = item;
                     break;
             }
             // the active hand, whichever (a third or fourth hand stays at tg's place): the one with tg's active overlay
@@ -536,17 +538,21 @@ void fragment() {
             _view.ShowHands();
             return;
         }
-        UpdateCells(scene);
+        UpdateCells(scene, left, right);
         scene.Layout = _hands;
         scene.LeftActive = leftActive;
         scene.RightActive = rightActive;
         scene.HasLeft = left != null;
         scene.HasRight = right != null;
         HudRect leftSquare = LiveHud.HandPicture(_hands.Left, _hands.Unit), rightSquare = LiveHud.HandPicture(_hands.Right, _hands.Unit);
+        HudRect leftArt = LiveHud.SlotArtSquare(_hands.Left), rightArt = LiveHud.SlotArtSquare(_hands.Right);
+        // section 16: tg's hand slot picture with its active mark fills the box, the held items stay in its picture square, tg's marks over them
+        SlotPictures(left, leftArt, scene.LeftArt, active: true);
+        SlotPictures(right, rightArt, scene.RightArt, active: true);
         Pictures(left, leftSquare, scene.Left);
         Pictures(right, rightSquare, scene.Right);
-        Overlays(left, leftSquare, scene.LeftOverlays);
-        Overlays(right, rightSquare, scene.RightOverlays);
+        Overlays(left, leftArt, leftSquare, scene.LeftOverlays);
+        Overlays(right, rightArt, rightSquare, scene.RightOverlays);
         scene.Swap = LiveHud.SwapKey(_options.Bindings);
         scene.LeftMarked = left != null && LiveHud.HandMarked(_replica, left.Entry);
         scene.RightMarked = right != null && LiveHud.HandMarked(_replica, right.Entry);
@@ -593,10 +599,21 @@ void fragment() {
             _view.ShowPanel(_panelCells, 0f, null, default, default);
             return;
         }
+        // section 16: tg's slot picture fills the cell, the worn item stays in the cell's picture square (where the HUD pick finds it)
         foreach (Item item in _wornSlots)
         {
-            if (item.Cell >= 0)
-                _panelCells.Add(_panel.Cells[item.Cell]);
+            if (item.Cell < 0)
+                continue;
+            if (_panelCells.Count == _panelScenes.Count)
+                _panelScenes.Add(new LiveHudView.CellScene());
+            LiveHudView.CellScene cell = _panelScenes[_panelCells.Count];
+            HudRect rect = _panel.Cells[item.Cell];
+            cell.Rect = rect;
+            HudRect art = LiveHud.SlotArtSquare(rect), square = LiveHud.HandPicture(rect, _panel.CellUnit);
+            SlotPictures(item, art, cell.Art, active: false);
+            Pictures(item, square, cell.Pictures);
+            Overlays(item, art, square, cell.Overlays);
+            _panelCells.Add(cell);
         }
         Texture2D sprite = null;
         Rect2 shown = default, source = default;
@@ -621,14 +638,28 @@ void fragment() {
         _view.ShowPanel(_panelCells, _panel.CellUnit, sprite, shown, source);
     }
 
-    private readonly List<HudRect> _panelCells = new();
+    private readonly List<LiveHudView.CellScene> _panelCells = new(), _panelScenes = new(); // the cells shown this frame; every scene made so far
+    private readonly Item[] _barSlots = new Item[HotbarMessage.CellCount - HotbarMessage.BeltCells]; // tg's pocket and ID slots by bar cell (8 to 10)
+    private readonly List<ScreenEntry> _styled = new();
 
     // Package 3: the bar's ten cells as the hotbar model says (LiveHud.CellLook), each item drawn as a hand box draws its item, with a stack's
-    // amount (its maptext) on the item's square; tg's pocket and ID slots are only their cells' click areas (Collect).
-    private void UpdateCells(LiveHudView.HandsScene scene)
+    // amount (its maptext) on the item's square; tg's pocket and ID slots are only their cells' click areas (Collect). Section 16: under each, tg's
+    // slot picture filling the cell: a pocket's or the ID slot's own, the belt cells' the blank state of the same HUD style.
+    private void UpdateCells(LiveHudView.HandsScene scene, Item left, Item right)
     {
         HotbarModel bar = Hotbar ?? NoHotbar;
         var real = _textures as AppearanceTextures;
+        _styled.Clear();
+        foreach (Item slot in _barSlots) // the pockets and the ID slot first, then the hands
+        {
+            if (slot != null)
+                _styled.Add(slot.Entry);
+        }
+        if (left != null)
+            _styled.Add(left.Entry);
+        if (right != null)
+            _styled.Add(right.Entry);
+        Texture2D blank = StatePicture(LiveHud.BlankSlotArt(_replica, _styled));
         for (int cell = 1; cell <= HotbarMessage.CellCount; cell++)
         {
             HudRect rect = LiveHud.BarCell(_hands, cell);
@@ -636,6 +667,15 @@ void fragment() {
             LiveHudView.CellScene shown = scene.Cells[cell - 1];
             shown.Rect = rect;
             shown.Look = look;
+            HudRect art = LiveHud.SlotArtSquare(rect);
+            if (cell <= HotbarMessage.BeltCells)
+            {
+                shown.Art.Clear();
+                if (blank != null) // no entry of tg's: white at the cell's opacity
+                    shown.Art.Add(new LiveHudView.Picture(blank, new Rect2(art.Left, art.Top, art.Width, art.Height), LiveHud.SlotTint(_replica, null, look.Alpha)));
+            }
+            else
+                SlotPictures(_barSlots[cell - HotbarMessage.BeltCells - 1], art, shown.Art, active: false, look.Alpha);
             shown.Pictures.Clear();
             HudRect square = LiveHud.HandPicture(rect, _hands.Unit);
             if (!look.Picture.IsNone && _textures.TryCompose(_replica, look.Picture, 2, _lastNow, out ComposedAppearance composed))
@@ -694,9 +734,42 @@ void fragment() {
     private List<PromptLine> _hintLines = new();
     private readonly List<(float Cap, float Verb)> _hintWidths = new();
 
-    // tg's overlays on a hand box that the native box draws over the held items (LiveHud.HandOverlays: the handcuffs, the blocked mark), placed as
-    // the box's own picture would hold them for an icon square at `square`.
-    private void Overlays(Item hand, HudRect square, List<LiveHudView.Picture> into)
+    // Section 16: tg's slot picture of a hand, a pocket, the ID slot or a worn slot (LiveHud.SlotArt: the entry's own icon state without its
+    // overlays) filling `square` in the entry's own colour and alpha times the cell's opacity `cellAlpha` (LiveHud.SlotTint), and on a hand
+    // (`active`) tg's active mark over it in the same way (LiveHud.ActiveMarkArt: an overlay without an icon file takes the hand's), both under the
+    // items.
+    private void SlotPictures(Item slot, HudRect square, List<LiveHudView.Picture> into, bool active, float cellAlpha = 1f)
+    {
+        into.Clear();
+        if (slot == null)
+            return;
+        var at = new Rect2(square.Left, square.Top, square.Width, square.Height);
+        uint tint = LiveHud.SlotTint(_replica, slot.Entry, cellAlpha);
+        if (StatePicture(LiveHud.SlotArt(_replica, slot.Entry)) is Texture2D art)
+            into.Add(new LiveHudView.Picture(art, at, tint));
+        if (active && StatePicture(LiveHud.ActiveMarkArt(_replica, slot.Entry)) is Texture2D mark)
+            into.Add(new LiveHudView.Picture(mark, at, tint));
+    }
+
+    private static readonly Dictionary<(string Icon, string State), Texture2D> StatePictures = new();
+
+    // An icon state's first picture facing south (a slot's picture is one frame, one direction), made once; null while its icon file is loading or
+    // when it has no such state.
+    private Texture2D StatePicture((string Icon, string State)? art)
+    {
+        if (art is not (string icon, string state) || _textures is not AppearanceTextures real)
+            return null;
+        if (StatePictures.TryGetValue((icon, state), out Texture2D known))
+            return known;
+        if (real.Library.GetSheet(icon) is not IconSheet sheet)
+            return null; // not loaded yet: asked again next frame
+        return StatePictures[(icon, state)] = sheet.TryGetState(state, out IIconState found) ? ImageTexture.CreateFromImage(AppearanceTextures.ToImage(found.Get(0, 0))) : null;
+    }
+
+    // tg's overlays on a hand box or a worn slot that are drawn over its held items (LiveHud.HandOverlays): tg's slot-level marks (the handcuffs, the
+    // blocked mark) over the slot's whole picture at `art`, anything else (a held item the box does not list as a child) in the picture square
+    // `square` as the items are (LiveHud.IsSlotMark); each placed as the box's own picture would hold it for an icon square there.
+    private void Overlays(Item hand, HudRect art, HudRect square, List<LiveHudView.Picture> into)
     {
         into.Clear();
         if (hand == null)
@@ -706,7 +779,7 @@ void fragment() {
         {
             if (!_textures.TryCompose(_replica, overlay, 2, _lastNow, out ComposedAppearance composed))
                 continue;
-            HudRect at = LiveHud.ChildPicture(square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY, shiftX, shiftY);
+            HudRect at = LiveHud.ChildPicture(LiveHud.IsSlotMark(_replica, overlay) ? art : square, composed.PixelWidth, composed.PixelHeight, composed.OriginX, composed.OriginY, shiftX, shiftY);
             into.Add(new LiveHudView.Picture(composed.Texture, new Rect2(at.Left, at.Top, at.Width, at.Height)));
         }
     }
@@ -757,12 +830,6 @@ void fragment() {
         {
             fullscreen = false;
             return ScreenLoc.FitIcon(_layout.Doll, width, height, originX, originY);
-        }
-        if (RoleNow(item) == LiveHudRole.WornSlot) // slice 4A: tg's picture in its cell of the character panel, as a bar cell's item, its icon pixels kept
-        {
-            fullscreen = false;
-            HudRect cell = _panel.CellAt(item.Cell);
-            return ScreenLoc.FitIcon(cell.Width > 0f ? LiveHud.HandPicture(cell, _panel.CellUnit) : default, width, height, originX, originY);
         }
         if (RoleNow(item) == LiveHudRole.Alert && item.Cell < _chips.Count) // slice D: tg's picture in its chip; section 11: its visible art fitted to it
         {
@@ -884,12 +951,23 @@ void fragment() {
         }
         if (IsHand(RoleNow(item)))
         {
-            // drawn as the native hand box (LiveHudView), which Collect reports under this entry
+            // drawn as its hand box (LiveHudView: tg's hand slot picture filling the box, the held items in its picture square), which Collect reports under this entry
             if (item.Whole != null)
                 item.Whole.Visible = false;
             foreach (TextureRect big in item.Fitted)
                 big.Visible = false;
             ShowMaptext(item, metrics, item.Entry.Appearance, HudLook.None); // slice C: a held stack's amount over the box's picture square, as tg puts it on its slot
+            return;
+        }
+        if (RoleNow(item) == LiveHudRole.WornSlot)
+        {
+            // section 16: drawn in its cell of the character panel (LiveHudView: tg's slot picture filling the cell, the item in its picture square),
+            // which Collect reports under this entry; a stack's amount on that square
+            if (item.Whole != null)
+                item.Whole.Visible = false;
+            foreach (TextureRect big in item.Fitted)
+                big.Visible = false;
+            ShowMaptext(item, metrics, item.Entry.Appearance, HudLook.None);
             return;
         }
         if (RoleNow(item) == LiveHudRole.BarSlot)

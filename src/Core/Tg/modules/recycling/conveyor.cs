@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The conveyors (the owner, 2026-11-04): the whole file but the circuit component (/obj/item/circuit_component/conveyor_switch
-// stays inert: circuits, not-translated.md 114), the screentips (add_context, deferred by the owner's rule of 2026-10-29) and
+// The conveyors (the owner, 2026-11-04): the whole file with the switch's USB port and its circuit component, but the screentips
+// (add_context, deferred by the owner's rule of 2026-10-29) and
 // the variable editor's hooks (vv_edit_var, D275); live-partial.txt lists them. A belt moves what lies on it through its
 // convey component's move loop on SSconveyors (conveyor_movement.dm); a switch (or several with one id) sets every belt of
 // its id going forward, backward or off; a crowbar lifts a belt into a belt stack and a switch into a switch assembly, which
@@ -583,8 +583,7 @@ public partial class obj_machinery_conveyor_switch : obj_machinery
         update_appearance();
         obj_machinery_conveyor.conveyors_by_id_add(id, this);
         set_wires(Dm.@new<datum_wires_conveyor>(this));
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/conveyor_switch), only_root_path = TRUE))
-        Dm.Deferred("code/modules/recycling/conveyor.dm:453", "Initialize: the USB port of the conveyor switch's circuit component (circuits, not-translated.md 114)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_conveyor_switch)), only_root_path: TRUE)));
         register_context();
         return dot;
     }
@@ -932,5 +931,77 @@ public partial class obj_machinery_conveyor_switch : obj_machinery
     public override async DmTask<object> attack_robot_secondary(mob user = null, DmList modifiers = null)
     {
         return await attack_hand_secondary(user, modifiers);
+    }
+}
+
+// tg: code/modules/recycling/conveyor.dm:713
+public partial class obj_item_circuit_component_conveyor_switch : obj_item_circuit_component
+{
+    // tg: code/modules/recycling/conveyor.dm:726
+    public override async DmTask populate_ports()
+    {
+        active = add_input_port("Activate", PORT_TYPE_SIGNAL, trigger: nameof(activate)) as datum_port_input;
+        stop = add_input_port("Stop", PORT_TYPE_SIGNAL, trigger: nameof(stop__proc)) as datum_port_input;
+        direction = add_output_port("Conveyor Direction", PORT_TYPE_NUMBER) as datum_port_output;
+    }
+
+    // tg: code/modules/recycling/conveyor.dm:731
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+        Dm.append(ref dot, create_ui_notice("Conveyor direction 0 means that it is stopped, 1 means that it is active and -1 means that it is working in reverse mode", "orange", "info"));
+        return dot;
+    }
+
+    // tg: code/modules/recycling/conveyor.dm:735
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_conveyor_switch)))
+        {
+            attached_switch = shell as obj_machinery_conveyor_switch;
+            if (!Dm.truthy(attached_switch.oneway))
+                reverse = add_input_port("Reverse", PORT_TYPE_SIGNAL, trigger: nameof(reverse__proc)) as datum_port_input;
+        }
+    }
+
+    // tg: code/modules/recycling/conveyor.dm:742
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_switch = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/modules/recycling/conveyor.dm:746
+    public virtual async DmTask on_switch_changed()
+    {
+        attached_switch.update_appearance();
+        await attached_switch.update_linked_conveyors();
+        attached_switch.update_linked_switches();
+        direction.set_output(attached_switch.position);
+    }
+
+    // tg: code/modules/recycling/conveyor.dm:752
+    [SignalHandler]
+    public virtual void activate()
+    {
+        attached_switch.position = obj_machinery_conveyor.CONVEYOR_FORWARD;
+        Waiting.Detach(on_switch_changed());
+    }
+
+    // tg: code/modules/recycling/conveyor.dm:757
+    [SignalHandler]
+    public virtual void stop__proc()
+    {
+        attached_switch.position = obj_machinery_conveyor.CONVEYOR_OFF;
+        Waiting.Detach(on_switch_changed());
+    }
+
+    // tg: code/modules/recycling/conveyor.dm:762
+    [SignalHandler]
+    public virtual void reverse__proc()
+    {
+        attached_switch.position = obj_machinery_conveyor.CONVEYOR_BACKWARDS;
+        Waiting.Detach(on_switch_changed());
     }
 }

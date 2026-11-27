@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL: only make_datum_reference_lists translated (GLOB.Initialize calls it at world start, boot package, wave 3),
-// init_crafting_recipes (M5 slice 2: the stack recipes as crafting recipes; slice 8: the recipe datums in scope, those whose
-// ingredients the port can hold), init_crafting_recipes_atoms (M5 slice 8, the crafting menu) and init_subtypes_w_path_keys (the
+// init_crafting_recipes (M5 slice 2: the stack recipes as crafting recipes; slice 8: the recipe datums; the recipes with reagent
+// ingredients and the chemical reactions' recipe guides since the restaurant), init_crafting_recipes_atoms (M5 slice 8, the crafting menu) and init_subtypes_w_path_keys (the
 // M7 delamination slice: SSmaterials' dimensional themes) and init_subtypes (M9 slice D: the announcement system). init_plant_traits (gaps P2: the plant
 // genes' table of the seed extractor and the plant analyzer).
 
@@ -38,9 +38,7 @@ public static partial class GlobalProcs
     {
         foreach (Type crafting_recipe_path in Dm.each<Type>(valid_subtypesof(typeof(datum_crafting_recipe))))
         {
-            // GAP(M5 slice 8 -> chemistry, M8): the recipes of a chemical reaction (/datum/crafting_recipe/food/reaction and its
-            // soups: their own New and setup_chemical_reaction_details read GLOB.chemical_reactions_list) stay inert and are not
-            // created (DV25).
+            // DV25: a recipe whose type is inert (its own procs not translated) is not created.
             if (InertSeam.IsInertType(crafting_recipe_path))
                 continue;
             datum_crafting_recipe recipe = Dm.@new(crafting_recipe_path) as datum_crafting_recipe;
@@ -49,14 +47,6 @@ public static partial class GlobalProcs
                 qdel(recipe);
                 continue;
             }
-            // GAP(M5 slice 8 -> chemistry, M8): a recipe whose ingredients or catalysts include a reagent is left out until the
-            // reagent containers that hold them are translated (the port cannot hold its ingredients; docs/ai/specs/not-translated.md).
-            if (!crafting_recipe_ingredients_held(recipe))
-            {
-                qdel(recipe);
-                continue;
-            }
-
             bool is_cooking = Dm.@in(recipe.category, GLOB.crafting_category_food);
             recipe.reqs = sort_list(recipe.reqs, "/proc/" + nameof(GlobalProcs.cmp_crafting_req_priority)) as DmList;
 
@@ -135,20 +125,6 @@ public static partial class GlobalProcs
                 Dm.append(ref GLOB.crafting_recipes, recipe);
             }
         }
-    }
-
-    /// Whether the port can hold every ingredient of the recipe (M5 slice 8's scope, not tg code): no reagent among its
-    /// requirements or catalysts and no chemical reaction (the reagent containers are chemistry, M8).
-    private static bool crafting_recipe_ingredients_held(datum_crafting_recipe recipe)
-    {
-        if (recipe.reaction != null || Dm.truthy(LAZYLEN(recipe.chem_catalysts)))
-            return false;
-        foreach (object req in Dm.each(recipe.reqs))
-        {
-            if (ispath(req, typeof(datum_reagent)))
-                return false;
-        }
-        return true;
     }
 
     /// Inits atoms used in crafting recipes

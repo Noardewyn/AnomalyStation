@@ -9,8 +9,22 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps J6 (D298): the drills, shovels, spades, the entrenching tool and Big Slappy. The suicides are live-partial rows.
+// Gaps J6 (D298): the drills, shovels, spades, the entrenching tool and Big Slappy; and the pickaxe's and the shovel's suicides.
 // The drill's cuffable_item element stays a row (the cuffed_item status effect, not ported).
+
+// tg: code/modules/mining/equipment/mining_tools.dm:3
+public partial class obj_item_pickaxe : obj_item
+{
+    // tg: code/modules/mining/equipment/mining_tools.dm:23
+    public override async DmTask<object> suicide_act(mob_living user = null)
+    {
+        user.visible_message(span_suicide(I18n.T("[] begins digging into [] chest! It looks like [] trying to commit suicide!", user, user.p_their(), user.p_theyre())));
+        if (Dm.truthy(await use_tool(user, user, 30, volume: 50)))
+            return BRUTELOSS;
+        user.visible_message(span_suicide(I18n.T("[] couldn't do it!", user)));
+        return SHAME;
+    }
+}
 
 // tg: code/modules/mining/equipment/mining_tools.dm:66
 public partial class obj_item_pickaxe_drill : obj_item_pickaxe
@@ -36,6 +50,16 @@ public partial class obj_item_shovel : obj_item
         //it's sharp, so it works, but barely.
         Waiting.NoSleep(AddElement(typeof(datum_element_gravedigger)));
         return dot;
+    }
+
+    // tg: code/modules/mining/equipment/mining_tools.dm:144
+    public override async DmTask<object> suicide_act(mob_living user = null)
+    {
+        user.visible_message(span_suicide(I18n.T("[] begins digging their own grave! It looks like [] trying to commit suicide!", user, user.p_theyre())));
+        if (Dm.truthy(await use_tool(user, user, 30, volume: 50)))
+            return BRUTELOSS;
+        user.visible_message(span_suicide(I18n.T("[] couldn't do it!", user)));
+        return SHAME;
     }
 }
 

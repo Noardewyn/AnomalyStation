@@ -9,8 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Silicons SI3 (D326): the techweb, whole but the scientific papers' publication (add_scientific_paper: the NT Frontier program and the
-// ordnance papers, a later research campaign, a live-partial row). The station's science techweb is made by SSresearch with its starter
+// Silicons SI3 (D326): the techweb, whole (the scientific papers' publication came with the ordnance lab). The station's science techweb is made by SSresearch with its starter
 // nodes researched; the exosuit fabricator reads its designs; a researched node pays the science budget its bounty (gaps P4a).
 // The var block is generated (D111).
 
@@ -560,6 +559,34 @@ public partial class datum_techweb : datum
         }
         foreach (datum_scientific_partner partner in Dm.each_cast<datum_scientific_partner>(SSresearch.scientific_partners))
             scientific_cooperation[partner.type] = 0;
+    }
+
+    /// Publish the paper into our techweb. Cancel if we are not allowed to.
+    // tg: code/modules/research/techweb/_techweb.dm:470
+    public virtual async DmTask<object> add_scientific_paper(datum_scientific_paper paper_to_add = null)
+    {
+        if (!Dm.truthy(paper_to_add.allowed_to_publish(this)))
+            return FALSE;
+        paper_to_add.publish_paper(this);
+
+        // If we haven't published a paper in the same topic ...
+        if (Dm.locate_type(paper_to_add.experiment_path, published_papers[paper_to_add.experiment_path]) != null)
+            return TRUE;
+        // Quickly add and complete it.
+        // PS: It's also possible to use add_experiment() together with a list/available_experiments check
+        // to determine if we need to run all this, but this pretty much does the same while only needing one evaluation.
+
+        add_experiment(paper_to_add.experiment_path);
+
+        foreach (datum_experiment experiment in Dm.each_cast<datum_experiment>(available_experiments))
+        {
+            if (!Dm.eq(experiment.type, paper_to_add.experiment_path))
+                continue;
+
+            await experiment.finish_experiment(linked_web_override: this);
+        }
+
+        return TRUE;
     }
 
     /// Returns a flat list of all design datums this techweb has researched.

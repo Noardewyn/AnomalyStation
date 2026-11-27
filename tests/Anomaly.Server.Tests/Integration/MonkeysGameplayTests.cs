@@ -76,7 +76,9 @@ public class MonkeysGameplayTests(ITestOutputHelper output)
                 errors.Add(e);
         };
 
-        List<mob_living_carbon_human_species_monkey> monkeys = In(w, () => Dm.each<mob_living_carbon_human_species_monkey>(world).ToList());
+        // the station's: Lavaland's ruins hold more, as their seeding rolls
+        List<mob_living_carbon_human_species_monkey> monkeys = In(w, () => Dm.each<mob_living_carbon_human_species_monkey>(world)
+            .Where(m => get_turf(m) is turf t && Dm.truthy(is_station_level(t.z))).ToList());
         var pun = (mob_living_carbon_human_species_monkey_punpun)monkeys.Single(m => m is mob_living_carbon_human_species_monkey_punpun);
         Assert.Equal(9, monkeys.Count); // Meta's 8 and Pun Pun
         foreach (mob_living_carbon_human_species_monkey monkey in monkeys)
@@ -131,7 +133,8 @@ public class MonkeysGameplayTests(ITestOutputHelper output)
         output.WriteLine("moved in a minute: " + string.Join(", ", movers));
         Assert.True(movers.Count >= 5, string.Join(", ", movers));
 
-        // water makes a monkey of a cube, and the replica sees it
+        // water makes a monkey of a cube, and the replica sees it (the new one: none of the world's monkeys before it)
+        List<mob_living_carbon_human_species_monkey> before = In(w, () => Dm.each<mob_living_carbon_human_species_monkey>(world).ToList());
         obj_item_food_monkeycube cube = null;
         Do(w, () =>
         {
@@ -140,7 +143,7 @@ public class MonkeysGameplayTests(ITestOutputHelper output)
         });
         w.Run(Second * 2);
         Assert.True(In(w, () => QDELETED(cube)));
-        var born = In(w, () => Dm.each<mob_living_carbon_human_species_monkey>(world).Single(m => !monkeys.Contains(m)));
+        var born = In(w, () => Dm.each<mob_living_carbon_human_species_monkey>(world).Single(m => !before.Contains(m)));
         Assert.Contains(replica.Entities, e => e.Id == born.dm_id);
 
         // the rough cost of all of Meta's monkeys on an idle round: their plans (4 a second) and Life (1 every 2 seconds)

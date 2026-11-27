@@ -54,7 +54,7 @@ public class KeyChipsTests
     [Fact]
     public void The_prompt_names_a_thing_only_from_the_servers_answer_for_it()
     {
-        // DV601: on a real server nothing shows until the answer for this very target has come
+        // DV687: on a real server nothing shows until the answer for this very target has come
         var thing = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0);
         var cell = new ClickTarget(TargetKind.Turf, 0, 3, 4, 1);
         Assert.Null(KeyChips.PromptName(KeyChips.AnswerFor(null, thing), realServer: true, "toolbox"));
@@ -84,7 +84,7 @@ public class KeyChipsTests
     [Fact]
     public void Out_of_reach_only_the_prompt_goes_bare_and_the_radial_and_dev_tools_keep_a_name()
     {
-        // DV601: the server's zero-length name is "out of reach": no name given, so the radial's title and the dev tools use the client's own;
+        // DV687: the server's zero-length name is "out of reach": no name given, so the radial's title and the dev tools use the client's own;
         // tg's null ("no screentip") the same; a name is the server's
         Assert.Null(KeyChips.ServerName(new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7, Name = "" }));
         Assert.Null(KeyChips.ServerName(new ContextHintsMessage { TargetKind = TargetKind.Entity, Target = 7 }));

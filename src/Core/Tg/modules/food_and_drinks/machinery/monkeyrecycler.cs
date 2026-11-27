@@ -14,7 +14,15 @@ namespace Anomaly.Core.Tg;
 // tg: code/modules/food_and_drinks/machinery/monkeyrecycler.dm:1
 public partial class datum_controller_global_vars : datum_controller
 {
-    public DmList monkey_recyclers = Dm.list();
+    // tg: code/modules/food_and_drinks/machinery/monkeyrecycler.dm:1  GLOBAL_LIST_EMPTY(monkey_recyclers)
+    public DmList monkey_recyclers;
+
+    // tg: code/modules/food_and_drinks/machinery/monkeyrecycler.dm:1  (GLOBAL_MANAGED(monkey_recyclers, list()), __DEFINES/__globals.dm:5)
+    public virtual void InitGlobalmonkey_recyclers()
+    {
+        monkey_recyclers = Dm.list();
+        Dm.append(ref gvars_datum_init_order, "monkey_recyclers");
+    }
 }
 
 // tg: code/modules/food_and_drinks/machinery/monkeyrecycler.dm:4

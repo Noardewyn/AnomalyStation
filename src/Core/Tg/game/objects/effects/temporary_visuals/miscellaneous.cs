@@ -16,8 +16,8 @@ namespace Anomaly.Core.Tg;
 // (:319-328); the M7x slice B: the gun's firing effect (:61); the M7 projectiles slice: a projectile's impact (:383); the M7 supermatter slice, part 2: the circle wave (:782, a
 // gravitational anomaly's detonation); E13: the RCD family's constructing effect (:518); syndicate X2: the decoys (:236-262); gaps R1: the
 // bluespace artillery's splash (:173); gaps B1: the bluespace fissure (:310, the bluespace prophet's streams); gaps OD2: the focus ring (:823, the
-// House Edge's wind-up); gaps MO2: the sonar ping (:613, the MOD active sonar's pings, DV541). The other visuals of the file come with their
-// mechanics.
+// House Edge's wind-up); gaps MO2: the sonar ping (:613, the MOD active sonar's pings, DV541); the Lavaland fauna: the withering spawn (:720, the despawn
+// of the hivelord's and the legion's minions); the megafauna: the cleaving saw's bleed and its burst (:456-480); the tendrils' loot: the warp cube's flash (:483). The other visuals of the file come with their mechanics.
 
 // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:691
 [DmPath("/obj/effect/temp_visual/block")]
@@ -519,6 +519,111 @@ public partial class obj_effect_temp_visual_dir_setting_curse : obj_effect_temp_
         object dot = base.Initialize(mapload, __extra);
         if (Dm.truthy(fades))
             Dm.animate(this, Dm.named("alpha", 0), Dm.named("time", 32));
+        return dot;
+    }
+}
+
+/// Plays a dispersing animation on hivelord and legion minions so they don't just vanish
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:720
+public partial class obj_effect_temp_visual_despawn_effect : obj_effect_temp_visual
+{
+    // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:724
+    [DmParams("mapload", "copy_from")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        atom copy_from = Dm.arg<atom>(__extra, 0);
+        if (copy_from == null)
+        {
+            base.Initialize(mapload, __extra);
+            return INITIALIZE_HINT_QDEL;
+        }
+        icon = copy_from.icon;
+        icon_state = copy_from.icon_state;
+        pixel_x = copy_from.pixel_x;
+        pixel_y = copy_from.pixel_y;
+        duration = rand(0.5f * SECONDS, 1 * SECONDS);
+        matrix transformation = Dm.matrix(transform);
+        transformation.Turn(rand(-70, 70));
+        transformation.Scale(0.7f, 0.7f);
+        animate(
+            this,
+            Dm.named("pixel_x", rand(-5, 5)),
+            Dm.named("pixel_y", -5),
+            Dm.named("transform", transformation),
+            Dm.named("color", "#44444400"),
+            Dm.named("time", duration),
+            Dm.named("flags", ANIMATION_RELATIVE));
+        return base.Initialize(mapload, __extra);
+    }
+}
+
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:456
+public partial class obj_effect_temp_visual_bleed : obj_effect_temp_visual
+{
+    // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:463
+    [DmParams("mapload", "size_calc_target")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        atom size_calc_target = Dm.arg(__extra, 0) as atom;
+        object dot = base.Initialize(mapload, __extra);
+        object size_matrix = Dm.matrix();
+        if (size_calc_target != null)
+        {
+            layer = Dm.num(size_calc_target.layer) + 0.01f;
+            size_matrix = Dm.mul(Dm.matrix(), Dm.num(size_calc_target.get_visual_height()) / ICON_SIZE_Y);
+            transform = size_matrix; //scale the bleed overlay's size based on the target's icon size
+        }
+        object M = transform;
+        if (Dm.truthy(shrink))
+            M = Dm.mul(size_matrix, 0.1f);
+        else
+            M = Dm.mul(size_matrix, 2);
+        animate(this, Dm.named("alpha", 20), Dm.named("transform", M), Dm.named("time", duration), Dm.named("flags", ANIMATION_PARALLEL));
+        return dot;
+    }
+}
+
+
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:482
+public partial class obj_effect_temp_visual_warp_cube : obj_effect_temp_visual
+{
+    // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:486
+    [DmParams("mapload", "teleporting_atom", "warp_color", "new_outgoing")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        atom teleporting_atom = Dm.arg<atom>(__extra, 0);
+        object warp_color = Dm.arg(__extra, 1);
+        object new_outgoing = Dm.arg(__extra, 2);
+        object dot = base.Initialize(mapload, __extra);
+        if (teleporting_atom != null)
+        {
+            outgoing = Dm.num(new_outgoing);
+            appearance = teleporting_atom.appearance;
+            Waiting.NoSleep(setDir(teleporting_atom.dir));
+            if (Dm.truthy(warp_color))
+            {
+                color = Dm.list(warp_color, warp_color, warp_color, Dm.list(0, 0, 0));
+                Waiting.NoSleep(set_light(1.4f, 1, warp_color));
+            }
+            mouse_opacity = MOUSE_OPACITY_TRANSPARENT;
+            matrix skew = transform as matrix;
+            skew = skew.Turn(180);
+            skew = skew.Interpolate(transform as matrix, 0.5f);
+            if (!Dm.truthy(outgoing))
+            {
+                transform = Dm.mul(skew, 2);
+                skew = teleporting_atom.transform as matrix;
+                alpha = 0;
+                animate(this, Dm.named("alpha", teleporting_atom.alpha), Dm.named("transform", skew), Dm.named("time", duration));
+            }
+            else
+            {
+                skew = Dm.mul(skew, 2) as matrix;
+                animate(this, Dm.named("alpha", 0), Dm.named("transform", skew), Dm.named("time", duration));
+            }
+        }
+        else
+            return INITIALIZE_HINT_QDEL;
         return dot;
     }
 }

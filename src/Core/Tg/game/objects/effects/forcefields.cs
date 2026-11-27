@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (gaps J2, D298): the forcefield base and the mime's invisible wall; the wizard's and the others come with their users.
+// PARTIAL (gaps J2, D298): the forcefield base and the mime's invisible wall; the wizard's forcefield with the forcewall spell; the
+// cosmic field waits for the heretics.
 
 // tg: code/game/objects/effects/forcefields.dm:1
 public partial class obj_effect_forcefield : obj_effect
@@ -28,6 +29,39 @@ public partial class obj_effect_forcefield : obj_effect
     public override DmTask<object> singularity_pull(atom singularity = null, object current_size = null)
     {
         return default;
+    }
+}
+
+/// The wizard's forcefield, summoned by forcewall
+// tg: code/game/objects/effects/forcefields.dm:22
+public partial class obj_effect_forcefield_wizard : obj_effect_forcefield
+{
+    // tg: code/game/objects/effects/forcefields.dm:29
+    [DmParams("mapload", "caster", "flags")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        mob caster = Dm.arg(__extra, 0) as mob;
+        object flags = Dm.arg(__extra, 1) ?? MAGIC_RESISTANCE;
+        object dot = base.Initialize(mapload, __extra);
+        if (caster != null)
+            caster_weakref = WEAKREF(caster) as datum_weakref;
+        antimagic_flags = Dm.num(flags);
+        return dot;
+    }
+
+    // tg: code/game/objects/effects/forcefields.dm:35
+    public override async DmTask<object> CanAllowThrough(atom_movable mover = null, object border_dir = null)
+    {
+        if (IS_WEAKREF_OF(mover, caster_weakref))
+            return TRUE;
+        if (isliving(mover))
+        {
+            mob_living living_mover = (mob_living)mover;
+            if (Dm.truthy(living_mover.can_block_magic(antimagic_flags, charge_cost: 0)))
+                return TRUE;
+        }
+
+        return await base.CanAllowThrough(mover, border_dir);
     }
 }
 

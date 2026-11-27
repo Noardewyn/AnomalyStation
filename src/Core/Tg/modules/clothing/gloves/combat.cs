@@ -19,7 +19,7 @@ public partial class obj_item_clothing_gloves_combat_wizard : obj_item_clothing_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/gloves/combat.dm:30", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)"); //something something wizard casting
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5)); //something something wizard casting
         return dot;
     }
 }
@@ -31,7 +31,7 @@ public partial class obj_item_clothing_gloves_combat_floortile : obj_item_clothi
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/gloves/combat.dm:40", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)"); //tacticool
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5)); //tacticool
         return dot;
     }
 }

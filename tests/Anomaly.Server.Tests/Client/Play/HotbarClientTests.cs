@@ -4,7 +4,7 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Client.Play;
 
 /// <summary>
-/// ui-overhaul.md section 10, slice 3A (DV603) on the client: the hotbar's state from the server's message (<see cref="HotbarModel"/>), the ten hotbar
+/// ui-overhaul.md section 10, slice 3A (DV689) on the client: the hotbar's state from the server's message (<see cref="HotbarModel"/>), the ten hotbar
 /// keys (1 to 9 and 0, the number row and the keypad) with tg's action buttons on Shift and a number, an old options file keeping its keys, and a
 /// press sent as a HotbarPress of that cell alone.
 /// </summary>

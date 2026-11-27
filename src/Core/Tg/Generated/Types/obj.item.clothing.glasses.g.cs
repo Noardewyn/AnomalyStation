@@ -1739,9 +1739,9 @@ public partial class obj_item_clothing_glasses_phantom : obj_item_clothing_glass
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:2
-[DmPath("/obj/item/clothing/glasses/godeye"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_glasses_godeye : obj_item_clothing_glasses
+// tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/glasses/godeye")]
+public partial class obj_item_clothing_glasses_godeye
 {
     public datum_action_cooldown_spell_pointed_scan scan_ability; // tg: code/modules/mining/lavaland/mining_loot/eye_of_god.dm:11
 
@@ -1785,9 +1785,9 @@ public partial class obj_item_clothing_glasses_mod
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:36
-[DmPath("/obj/item/clothing/glasses/prism_glasses"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_glasses_prism_glasses : obj_item_clothing_glasses
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:36 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/glasses/prism_glasses")]
+public partial class obj_item_clothing_glasses_prism_glasses
 {
     public string glasses_color = "#FFFFFF"; // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:43
 

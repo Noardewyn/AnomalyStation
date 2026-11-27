@@ -49,9 +49,9 @@ public partial class datum_round_event_ghost_role
     }
 }
 
-// tg: code/modules/bitrunning/event.dm:71
-[DmPath("/datum/round_event/ghost_role/bitrunning_glitch"), DmGeneratedOnly, DmInert]
-public partial class datum_round_event_ghost_role_bitrunning_glitch : datum_round_event_ghost_role
+// tg: code/modules/bitrunning/event.dm:71 (the var block of a hand-written class)
+[DmPath("/datum/round_event/ghost_role/bitrunning_glitch")]
+public partial class datum_round_event_ghost_role_bitrunning_glitch
 {
     public object forced_role; // tg: code/modules/bitrunning/event.dm:75
 

@@ -491,7 +491,7 @@ public sealed partial class Bot : IDisposable
                 break;
 
             case MessageId.Hotbar:
-                // version 98 also (DV603): the own human's hotbar cells (a bot presses none, but one it cannot read is a decode error)
+                // version 99 also (DV689): the own human's hotbar cells (a bot presses none, but one it cannot read is a decode error)
                 if (Codec.TryDecode(message, out HotbarMessage hotbar, out _)) Replica.Apply(hotbar);
                 else Stats.DecodeErrors++;
                 break;

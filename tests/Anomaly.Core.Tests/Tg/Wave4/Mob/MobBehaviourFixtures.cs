@@ -64,6 +64,11 @@ internal sealed class MobRoom
             Dm.@new<datum_controller_subsystem_processing_plumbing>(); // E15: a plumbing component stops processing on SSplumbing when deleted (_plumbing.dm:114), tg's MC always creates it
             Dm.@new<datum_controller_subsystem_polling>(); // Syndicate X2: a ghost-controllable mob (a regal rat) polls the ghosts on SSpolling (ghost_direct_control.dm:81), tg's MC always creates it
             Dm.@new<datum_controller_subsystem_security_level>(); // Syndicate N1a: a nuke reads the security level in its Initialize (_nuclear_bomb.dm:66), tg's MC always creates it
+            // the ash walker egg's shell gibs a human when it goes (mining_roles.dm:201-206), whose bodyparts are thrown (spread_bodyparts),
+            // and throw_at reads SSthrowing's state (atoms_movable.dm:1442), which tg's MC always creates; its currentrun is set here, as
+            // TgToyRoom does, since the room never fires it
+            Dm.@new<datum_controller_subsystem_throwing>();
+            SSthrowing.currentrun ??= Dm.list();
             // M4b audio slice 6: playsound takes a channel from SSsounds (sound.dm:36), which tg's MC always creates and
             // initializes before the atoms; a hotspot's puff and an item's drop sound reach it.
             Dm.@new<datum_controller_subsystem_sounds>();

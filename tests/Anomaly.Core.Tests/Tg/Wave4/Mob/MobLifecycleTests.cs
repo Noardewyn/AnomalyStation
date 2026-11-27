@@ -538,7 +538,7 @@ public class MobLifecycleTests
             .Where(t => t != typeof(obj_effect_bug_moving)) // unit_test.dm:286: not meant to spawn without the machine wand (gaps DV2)
             .Where(t => !typeof(obj_effect_skyfall_landingzone).IsAssignableFrom(t)) // unit_test.dm:358: needs a linked mecha (D321)
             .Where(t => !typeof(obj_effect_pod_landingzone).IsAssignableFrom(t) && !typeof(obj_effect_pod_landingzone_effect).IsAssignableFrom(t)) // unit_test.dm:318-319: need their pod (syndicate G4c)
-            .Where(t => !new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection) }.Contains(t)) // gaps E3: the assistant's outfit's ID trim reads SSid_access (outfit.dm:213), not in the harness world
+            .Where(t => !new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection), typeof(obj_effect_mob_spawn_corpse_human_bitrunner), typeof(obj_effect_mob_spawn_corpse_human_cyber_police) }.Contains(t)) // gaps E3: the assistant's outfit's ID trim reads SSid_access (outfit.dm:213), not in the harness world; the bitrunner's and the cyber police's outfits have one too
             .Where(t => !typeof(mob_eye_camera_remote_base_construction).IsAssignableFrom(t)) // unit_test.dm:327: no linked console (the aux base console)
             .Where(t => !typeof(mob_eye_camera_remote_shuttle_docker).IsAssignableFrom(t)) // unit_test.dm:329: no linked console (syndicate N1c)
             .Where(t => !typeof(mob_eye_imaginary_friend).IsAssignableFrom(t)) // unit_test.dm:323: no trauma to pass in (gaps K1)
@@ -558,6 +558,8 @@ public class MobLifecycleTests
             .Where(t => !typeof(obj_structure_ethereal_crystal).IsAssignableFrom(t)) // unit_test.dm:325: the ethereal crystal needs its heart (gaps OG1)
             .Where(t => !typeof(obj_item_modular_computer_processor).IsAssignableFrom(t)) // unit_test.dm:309: the console's processing unit crashes outside its console (live since E2)
             .Where(t => !typeof(obj_machinery_space_heater_improvised_chem_heater).IsAssignableFrom(t)) // its RefreshParts reads its subsystem's wait (spaceheater.dm:537), and MobRoom's Master lists no SSmachines (E9)
+            .Where(t => t != typeof(obj_machinery_restaurant_portal) && t != typeof(obj_structure_holosign_robot_seat)) // unit_test.dm:276, :278: template types
+            .Where(t => t != typeof(mob_living_basic_robot_customer)) // its Initialize reads SSrestaurant (robot_customer.dm:34), which MobRoom's Master lacks
             .Where(t => !typeof(obj_machinery_power_manufacturing_crafter).IsAssignableFrom(t)) // its Initialize starts processing on SSmanufacturing (crafter.dm:25), which MobRoom's Master does not list (E16)
             // unit_test.dm:307, :339, :373 (silicons SI2): the silicons' PDAs delete themselves outside a silicon, the preset-model
             // cyborgs invoke async in their Initialize, and the robot models never spawn outside a robot
@@ -575,6 +577,7 @@ public class MobLifecycleTests
             // disease is not ported (reagent_containers.dm:81, diseases after the core version), and the uplink hides the kit (DV343). The
             // live types of syndicate G4d moved the room's random stream onto that kit
             .Where(t => t != typeof(obj_item_storage_box_syndicate_bundle_b))
+            .Where(t => !typeof(obj_effect_sliding_puzzle).IsAssignableFrom(t)) // unit_test.dm:343: it spawns turf changing stuff (its vault floors and tiles)
             .ToList());
 
     [Fact]
@@ -596,6 +599,10 @@ public class MobLifecycleTests
         {
             // Gaps S3: the fortune, fishing tip and junk mail papers pick from GLOB string lists that tg's GLOB reads at world start
             // (strings.dm:4-12): the room mounts the strings after its GLOB
+            GLOB.InitGlobalfirst_names(); // the bitrunning revolutionary names itself from them (revolutionary.dm:96-105)
+            GLOB.InitGlobalfirst_names_male();
+            GLOB.InitGlobalfirst_names_female();
+            GLOB.InitGloballast_names();
             GLOB.InitGlobalphonetic_alphabet(); // syndicate G3a: a deathrattle group names itself from it (implant_deathrattle.dm)
             GLOB.InitGlobalwisdoms();
             GLOB.InitGlobalfishing_tips();
@@ -604,6 +611,27 @@ public class MobLifecycleTests
             GLOB.InitGlobalposibrain_names(); // silicons SI2: a positronic brain names itself from it (positronic.dm:33)
             GLOB.InitGlobalai_names(); // silicons SI9: the saboteur cyborg's chameleon picks an AI name (borgchameleon.dm:32)
             GLOB.InitGlobalgross_adjectives(); // gaps P3b: the fly's infused organs name themselves from it (odd_organ_name, names.dm:288)
+            GLOB.InitGlobalclown_names(); // the legion-infested corpses: the consumed clown names itself from them (mining_corpses.dm:261)
+            GLOB.InitGlobalgolem_names(); // and the corpses of the other species from their languages (terrum.dm:32, calcic.dm:31, draconic.dm:41, moffic.dm:34)
+            GLOB.InitGlobalplasmaman_names();
+            GLOB.InitGloballizard_names_male();
+            GLOB.InitGloballizard_names_female();
+            GLOB.InitGlobalmoth_first();
+            GLOB.InitGlobalmoth_last();
+            // the Thing's ruin machines (its phase depleters, the aggro gates) queue their links on SSqueuelinks, which tg's MC always makes
+            if (SSqueuelinks == null)
+                Dm.@new<datum_controller_subsystem_queuelinks>();
+            // the library's consoles look for the database at Initialize (lib_machines.dm:173, SSdbcore.Connect), which tg's MC always makes
+            if (SSdbcore == null)
+                Dm.@new<datum_controller_subsystem_dbcore>();
+            // the trading cards and packs read the sets SStrading_card_game loads at boot (tcg.dm:21, :389), which tg's MC always loads
+            if (SStrading_card_game == null)
+            {
+                if (Anomaly.Core.Tests.Tools.TgClone.Root != null)
+                    TgStrings.Mount(DmWorldState.Of(World.Current).Files, Anomaly.Core.Tests.Tools.TgClone.Root, TgStrings.CardFiles);
+                Dm.@new<datum_controller_subsystem_trading_card_game>();
+                Waiting.NoSleep(SStrading_card_game.Initialize());
+            }
             // silicons SI3: the printers' auto-unlocking techwebs (the lathe's, the smelter's, the biogenerator's) register with SSresearch
             // and read its design table; tg's MC always makes it
             if (SSresearch == null)
@@ -630,12 +658,20 @@ public class MobLifecycleTests
                     for (int dy = -1; dy <= 1; dy++)
                         foreach (atom to_kill in Dm.each_cast<atom>(MobRoom.T(3 + dx, 3 + dy).contents.Copy()))
                             qdel(to_kill, force: TRUE);
+                // The ash walker egg's shell, deleted above, gibs a human (mining_roles.dm:201-206): its organs spill where it stood
+                // after that cell was listed, and its bodyparts fly up to three cells away (spread_bodyparts); the organs process on
+                // SSobj (their decay). tg's next round of create_and_destroy.dm:31-35 clears them; here the cells around are cleared again.
+                for (int dx = -3; dx <= 3; dx++)
+                    for (int dy = -3; dy <= 3; dy++)
+                        if (MobRoom.T(3 + dx, 3 + dy) is turf around)
+                            foreach (atom to_kill in Dm.each_cast<atom>(around.contents.Copy()))
+                                qdel(to_kill, force: TRUE);
                 Assert.True(length(GLOB.mob_list) == 0, type.Name + " left a mob in GLOB.mob_list");
                 Assert.True(length(GLOB.alive_mob_list) == 0, type.Name + " left a mob in GLOB.alive_mob_list");
                 Assert.True(length(GLOB.dead_mob_list) == 0, type.Name + " left a mob in GLOB.dead_mob_list");
                 Assert.True(length(GLOB.suicided_mob_list) == 0, type.Name + " left a mob in GLOB.suicided_mob_list");
                 Assert.True(length(GLOB.objects_by_id_tag) == 0, type.Name + " left an id tag");
-                Assert.True(SSobj.processing.len == 0, type.Name + " left a processing object");
+                Assert.True(SSobj.processing.len == 0, type.Name + " left a processing object: " + string.Join(", ", Dm.each(SSobj.processing).Select(o => o.GetType().Name + (o is atom a ? " at " + a.x + "," + a.y + " in " + (a.loc?.GetType().Name ?? "null") : ""))));
             }
             Assert.Equal(0f, MobRoom.T(3, 3).contents.len);
         });

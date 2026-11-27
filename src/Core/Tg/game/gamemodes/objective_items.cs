@@ -768,3 +768,13 @@ public partial class obj_item_mod_control_pre_equipped_safeguard : obj_item_mod_
         return add_item_to_steal(this, typeof(obj_item_mod_control_pre_equipped_safeguard));
     }
 }
+
+// tg: code/game/gamemodes/objective_items.dm:489 (the reactive armours are live)
+public partial class obj_item_clothing_suit_armor_reactive_teleport : obj_item_clothing_suit_armor_reactive
+{
+    // tg: code/game/gamemodes/objective_items.dm:489
+    public override object add_stealing_item_objective()
+    {
+        return add_item_to_steal(this, typeof(obj_item_clothing_suit_armor_reactive_teleport));
+    }
+}

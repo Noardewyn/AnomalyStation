@@ -148,21 +148,32 @@ public class ManipulatorManufacturingGameplayTests(ITestOutputHelper output)
         In(w, () => ADD_TRAIT(me, TRAIT_ADVANCEDTOOLUSER, ADMIN_TRAIT));
 
         // ---- the two barometric monitors (cargo): the weather announcer's all-clear screen and green light, seen by a client beside them
-        List<obj_machinery_mining_weather_monitor> monitors = In(w, () => Dm.each<obj_machinery_mining_weather_monitor>(Dm.world).ToList());
+        // (cargo's: Lavaland's ruins hold more, as their seeding rolls)
+        List<obj_machinery_mining_weather_monitor> monitors = In(w, () => Dm.each<obj_machinery_mining_weather_monitor>(Dm.world).Where(m => Dm.truthy(is_station_level(m.z))).ToList());
         Assert.Equal(2, monitors.Count);
         In(w, () => Waiting.NoSleep(me.forceMove(monitors[0].loc)));
         w.Run(2 * Second);
+        // what each shows follows the announcer's warning level (weatherannouncer.dm:65, :117): all clear, or Lavaland's ash storm
+        // when SSweather has rolled one in the round's first seconds
+        string shown = null;
         foreach (var monitor in monitors)
         {
             In(w, () =>
             {
                 Assert.IsType<obj_machinery_mining_weather_monitor_directional_east>(monitor);
                 var announcer = (datum_component_weather_announcer)monitor.GetComponent(typeof(datum_component_weather_announcer));
-                Assert.Equal(0f, announcer.warning_level);
-                Assert.Equal(LIGHT_COLOR_GREEN, Dm.str(monitor.light_color));
+                bool danger = Dm.truthy(announcer.is_weather_dangerous);
+                (string color, string state) = Dm.num(announcer.warning_level) switch
+                {
+                    0f => (LIGHT_COLOR_GREEN, "wallgreen"),
+                    1f => (LIGHT_COLOR_DIM_YELLOW, "wallyellow"),
+                    _ => danger ? (LIGHT_COLOR_INTENSE_RED, "wallred") : (LIGHT_COLOR_DIM_YELLOW, "wallyellow"),
+                };
+                Assert.Equal(color, Dm.str(monitor.light_color));
+                shown ??= state;
             });
         }
-        Assert.Contains("wallgreen", OverlaysOf(replica, monitors[0]));
+        Assert.Contains(shown, OverlaysOf(replica, monitors[0]));
 
         // ---- a big manipulator in a free spot of the station, set up through its window: pick up west, drop east
         var taken = new List<turf>();

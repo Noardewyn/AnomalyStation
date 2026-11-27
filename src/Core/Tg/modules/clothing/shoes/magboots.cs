@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // M4c slice 2: the magboots (the mag-pulse toggle in hand, its traits, slowdown, icon state and rigstep footsteps). The
 // "Toggle Magboots" verb itself waits for the verbs (M9; its body __gvb_toggle is translated); the item action button
-// ("Toggle magboots", the generic toggle) came with M4c slice 3. The fishing difficulty element is fishing (M10+). The advanced and
+// ("Toggle magboots", the generic toggle) came with M4c slice 3. The fishing difficulty element comes and goes with the mag-pulse. The advanced and
 // blood-red magboots are var-only. The var blocks are generated.
 
 // tg: code/modules/clothing/shoes/magboots.dm:4
@@ -36,8 +36,7 @@ public partial class obj_item_clothing_shoes_magboots : obj_item_clothing_shoes
         RegisterSignal(this, COMSIG_SPEED_POTION_APPLIED, nameof(on_speed_potioned));
         if (Dm.truthy(fishing_modifier))
         {
-            // AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing (M10+)
-            Dm.Deferred("code/modules/clothing/shoes/magboots.dm:42", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty), the fishing difficulty (fishing, M10+)");
+            Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier));
         }
         return dot;
     }
@@ -52,8 +51,9 @@ public partial class obj_item_clothing_shoes_magboots : obj_item_clothing_shoes
 
         if (Dm.truthy(magpulse) && Dm.truthy(magpulse_fishing_modifier))
         {
-            // RemoveElement(/datum/element/adjust_fishing_difficulty) and AddElement(..., fishing_modifier): fishing (M10+)
-            Dm.Deferred("code/modules/clothing/shoes/magboots.dm:52", "on_speed_potioned: the fishing difficulty element (fishing, M10+)");
+            RemoveElement(typeof(datum_element_adjust_fishing_difficulty));
+            if (Dm.truthy(fishing_modifier))
+                Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier));
         }
         magpulse_fishing_modifier = fishing_modifier;
     }
@@ -84,13 +84,11 @@ public partial class obj_item_clothing_shoes_magboots : obj_item_clothing_shoes
             slowdown += slowdown_active;
             if (Dm.truthy(magpulse_fishing_modifier))
             {
-                // AddElement(/datum/element/adjust_fishing_difficulty, magpulse_fishing_modifier): fishing (M10+)
-                Dm.Deferred("code/modules/clothing/shoes/magboots.dm:69", "attack_self: the fishing difficulty element (fishing, M10+)");
+                await AddElement(typeof(datum_element_adjust_fishing_difficulty), magpulse_fishing_modifier);
             }
             else if (magpulse_fishing_modifier != fishing_modifier)
             {
-                // RemoveElement(/datum/element/adjust_fishing_difficulty): fishing (M10+)
-                Dm.Deferred("code/modules/clothing/shoes/magboots.dm:71", "attack_self: the fishing difficulty element (fishing, M10+)");
+                RemoveElement(typeof(datum_element_adjust_fishing_difficulty));
             }
             await AddComponent(typeof(datum_component_shoe_footstep), active_step_sounds, Dm.named("volume", 50));
         }
@@ -98,13 +96,11 @@ public partial class obj_item_clothing_shoes_magboots : obj_item_clothing_shoes
         {
             if (Dm.truthy(fishing_modifier))
             {
-                // AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing (M10+)
-                Dm.Deferred("code/modules/clothing/shoes/magboots.dm:75", "attack_self: the fishing difficulty element (fishing, M10+)");
+                await AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier);
             }
             else if (magpulse_fishing_modifier != fishing_modifier)
             {
-                // RemoveElement(/datum/element/adjust_fishing_difficulty): fishing (M10+)
-                Dm.Deferred("code/modules/clothing/shoes/magboots.dm:77", "attack_self: the fishing difficulty element (fishing, M10+)");
+                RemoveElement(typeof(datum_element_adjust_fishing_difficulty));
             }
             detach_clothing_traits(active_traits);
             slowdown -= slowdown_active;

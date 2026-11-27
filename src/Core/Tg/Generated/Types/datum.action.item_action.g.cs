@@ -85,9 +85,9 @@ public partial class datum_action_item_action_zoom_lock_action : datum_action_it
     }
 }
 
-// tg: code/datums/actions/items/beserk.dm:2
-[DmPath("/datum/action/item_action/berserk_mode"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_berserk_mode : datum_action_item_action
+// tg: code/datums/actions/items/beserk.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/berserk_mode")]
+public partial class datum_action_item_action_berserk_mode
 {
     // tg: code/datums/actions/items/beserk.dm:2
     public datum_action_item_action_berserk_mode()
@@ -207,9 +207,9 @@ public partial class datum_action_item_action_hands_free_moth_googles : datum_ac
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:80
-[DmPath("/datum/action/item_action/hands_free/memento_mori"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_hands_free_memento_mori : datum_action_item_action_hands_free
+// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:80 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/hands_free/memento_mori")]
+public partial class datum_action_item_action_hands_free_memento_mori
 {
     // tg: code/modules/mining/lavaland/mining_loot/clothing.dm:80
     public datum_action_item_action_hands_free_memento_mori()
@@ -303,9 +303,9 @@ public partial class datum_action_item_action_organ_action_toggle_hud
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:14
-[DmPath("/datum/action/item_action/organ_action/colossus"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_organ_action_colossus : datum_action_item_action_organ_action
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/organ_action/colossus")]
+public partial class datum_action_item_action_organ_action_colossus
 {
     public obj_item_organ_vocal_cords_colossus cords; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:15
 
@@ -775,9 +775,9 @@ public partial class datum_action_item_action_zipper
     }
 }
 
-// tg: code/datums/actions/items/vortex_recall.dm:2
-[DmPath("/datum/action/item_action/vortex_recall"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_vortex_recall : datum_action_item_action
+// tg: code/datums/actions/items/vortex_recall.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/vortex_recall")]
+public partial class datum_action_item_action_vortex_recall
 {
     // tg: code/datums/actions/items/vortex_recall.dm:2
     public datum_action_item_action_vortex_recall()
@@ -1489,9 +1489,9 @@ public partial class datum_action_item_action_mod_pinnable_module
     }
 }
 
-// tg: code/modules/wiremod/shell/module.dm:97
-[DmPath("/datum/action/item_action/mod/pinnable/circuit"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_mod_pinnable_circuit : datum_action_item_action_mod_pinnable
+// tg: code/modules/wiremod/shell/module.dm:97 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/mod/pinnable/circuit")]
+public partial class datum_action_item_action_mod_pinnable_circuit
 {
     public obj_item_mod_module_circuit module; // tg: code/modules/wiremod/shell/module.dm:101
     public obj_item_circuit_component_equipment_action circuit_component; // tg: code/modules/wiremod/shell/module.dm:104
@@ -1535,9 +1535,9 @@ public partial class datum_action_item_action_pray_refill : datum_action_item_ac
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:70
-[DmPath("/datum/action/item_action/change_prism_colour"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_change_prism_colour : datum_action_item_action
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:70 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/change_prism_colour")]
+public partial class datum_action_item_action_change_prism_colour
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:70
     public datum_action_item_action_change_prism_colour()
@@ -1548,9 +1548,9 @@ public partial class datum_action_item_action_change_prism_colour : datum_action
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:84
-[DmPath("/datum/action/item_action/place_light_prism"), DmGeneratedOnly, DmInert]
-public partial class datum_action_item_action_place_light_prism : datum_action_item_action
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:84 (the var block of a hand-written class)
+[DmPath("/datum/action/item_action/place_light_prism")]
+public partial class datum_action_item_action_place_light_prism
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:84
     public datum_action_item_action_place_light_prism()

@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: the base component, a signal in GLOB.GPS_list, and the handheld GPS (/datum/component/gps/item and tgui's Gps window, silicons
-// SI2: the mining cyborg's GPS); the kheiral cuffs' GPS comes with the cuffs.
+// The base component, a signal in GLOB.GPS_list; the Kheiral cuffs' signal, gone when the cuffs are dropped or reach the station's
+// level; and the handheld GPS (/datum/component/gps/item and tgui's Gps window).
 
 ///GPS component. Atoms that have this show up on gps. Pretty simple stuff.
 // tg: code/datums/components/gps.dm:5
@@ -34,6 +34,42 @@ public partial class datum_component_gps : datum_component
     {
         Dm.remove(ref GLOB.GPS_list, this);
         return base.Destroy(force);
+    }
+}
+
+// tg: code/datums/components/gps.dm:21
+public partial class datum_component_gps_kheiral_cuffs : datum_component_gps
+{
+    // tg: code/datums/components/gps.dm:23
+    [DmParams("_gpstag")]
+    public override async DmTask<object> Initialize(params object[] __extra)
+    {
+        object _gpstag = Dm.arg(__extra, 0) ?? "COM0";
+        object dot = await base.Initialize(_gpstag);
+        RegisterSignal(parent, COMSIG_ITEM_DROPPED, nameof(deactivate_kheiral_cuffs));
+        RegisterSignal(parent, COMSIG_MOVABLE_Z_CHANGED, nameof(deactivate_if_station));
+        return dot;
+    }
+
+    // tg: code/datums/components/gps.dm:28
+    [SignalHandler]
+    public virtual void deactivate_kheiral_cuffs(datum source = null)
+    {
+        qdel(this);
+    }
+
+    // tg: code/datums/components/gps.dm:32
+    [SignalHandler]
+    public virtual void deactivate_if_station(atom_movable moved_atom = null, turf old_turf = null, turf new_turf = null)
+    {
+        if (!isturf(new_turf))
+            return;
+
+        if (Dm.truthy(is_station_level(new_turf.z)))
+        {
+            qdel(this);
+            return;
+        }
     }
 }
 

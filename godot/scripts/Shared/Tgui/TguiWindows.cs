@@ -42,6 +42,9 @@ public static class TguiInterfaces
         ["ListInputWindow"] = ListInputWindow.Render,
         ["StackCrafting"] = StackCrafting.Render,
         ["AirlockElectronics"] = AirlockElectronics.Render,
+        ["ReligiousTool"] = ReligiousTool.Render,
+        ["SparringContract"] = SparringContract.Render,
+        ["AntagInfoShade"] = AntagInfoShade.Render,
         ["Wires"] = Wires.Render,
         ["PersonalCrafting"] = PersonalCrafting.Render,
         ["AirAlarm"] = AirAlarm.Render,
@@ -79,6 +82,8 @@ public static class TguiInterfaces
         ["ComponentPrinter"] = ComponentPrinter.Render, // gaps CI1
         ["CircuitModule"] = CircuitModule.Render, // gaps CI1
         ["CircuitAdminPanel"] = CircuitAdminPanel.Render, // gaps CI1
+        ["CircuitAccessChecker"] = CircuitAccessChecker.Render,
+        ["CircuitSignalHandler"] = CircuitSignalHandler.Render,
         ["ScannerGate"] = ScannerGate.Render, // gaps SG1
         ["HypnoChair"] = HypnoChair.Render, // gaps SG1
         ["VotePanel"] = VotePanel.Render, // the owner, 2026-11-08: votes
@@ -118,6 +123,7 @@ public static class TguiInterfaces
         ["NuclearBomb"] = NuclearBomb.Render,
         ["EmergencyShuttleConsole"] = EmergencyShuttleConsole.Render,
         ["ShuttleConsole"] = ShuttleConsole.Render,
+        ["AuxBaseConsole"] = AuxBaseConsole.Render,
         ["Cargo"] = Cargo.Render,
         ["StripMenu"] = StripMenu.Render,
         ["EmotePanel"] = EmotePanel.Render, // M9 slice B (D256)
@@ -179,6 +185,7 @@ public static class TguiInterfaces
         ["Experimentor"] = Experimentor.Render, // gaps RD4
         ["InfuserBook"] = InfuserBook.Render, // gaps P3b
         ["MinigamesMenu"] = MinigamesMenu.Render, // gaps S4d
+        ["Microscope"] = Microscope.Render, // cytology's microscope
         ["NtosRadar"] = NtosRadar.Render, // syndicate N1b
         ["NtosRadarSyndicate"] = NtosRadar.RenderSyndicate, // syndicate N1b: the Fission360
         ["NtosFileManager"] = NtosFileManager.Render, // M9 slice E
@@ -282,9 +289,16 @@ public static class TguiInterfaces
         ["GulagItemReclaimer"] = GulagItemReclaimer.Render, // gaps LC1
         ["GulagTeleporterConsole"] = GulagTeleporterConsole.Render, // gaps LC1
         ["PrisonerManagement"] = PrisonerManagement.Render, // gaps LC1
+        ["RaptorDex"] = RaptorDex.Render, // Lavaland's raptors
+        ["NtosRaptorDex"] = NtosRaptorDex.Render, // Lavaland's raptors
         ["SeedExtractor"] = SeedExtractor.Render, // gaps package P2
         ["MedicalKiosk"] = MedicalKiosk.Render, // gaps MD1
         ["Biogenerator"] = Biogenerator.Render, // gaps package P2
+        ["FishCatalog"] = FishCatalog.Render,
+        ["FishingRod"] = FishingRod.Render,
+        ["FishingCalculator"] = FishingCalculator.Render,
+        ["Aquarium"] = Aquarium.Render,
+        ["FishAnalyzer"] = FishAnalyzer.Render,
         ["ExosuitFabricator"] = ExosuitFabricator.Render, // silicons SI3
         ["Fabricator"] = Fabricator.Render, // gaps RD1
         ["Autolathe"] = Autolathe.Render, // gaps RD1
@@ -303,6 +317,7 @@ public static class TguiInterfaces
         ["CellularEmporium"] = CellularEmporium.Render, // gaps K1
         ["LingMMITalk"] = LingMMITalk.Render, // gaps K1
         ["AntagInfoSentient"] = AntagInfoSentient.Render, // syndicate G3c
+        ["AntagInfoGlitch"] = AntagInfoGlitch.Render, // bitrunning
         ["Uplink"] = Uplink.Render, // syndicate package A2
         ["DynamicAdmin"] = DynamicAdmin.Render, // syndicate package A3
         ["DynamicTester"] = DynamicTester.Render, // syndicate package A3
@@ -325,6 +340,31 @@ public static class TguiInterfaces
         ["QuantumConsole"] = QuantumConsole.Render, // gaps BR1
         ["NetpodOutfits"] = NetpodOutfits.Render, // gaps BR1
         ["AvatarHelp"] = AvatarHelp.Render, // gaps BR1
+        ["LibraryVisitor"] = LibraryVisitor.Render, // the library's visitor console
+        ["LibraryConsole"] = LibraryConsole.Render, // the library's book management console
+        ["LibraryScanner"] = LibraryScanner.Render, // the library's scanner
+        ["TankCompressor"] = TankCompressor.Render, // the ordnance lab
+        ["DopplerArray"] = DopplerArray.Render, // the ordnance lab
+        ["NtosScipaper"] = NtosScipaper.Render, // the ordnance lab
+        ["MassDriverControl"] = MassDriverControl.Render, // the ordnance lab
+        ["AnomalyRefinery"] = AnomalyRefinery.Render, // the anomaly refinery
+        ["LaunchpadConsole"] = LaunchpadConsole.Render, // the launchpad control console
+        ["MechpadConsole"] = MechpadConsole.Render, // the orbital mech pad console
+        ["LibraryAdmin"] = LibraryAdmin.Render, // the admins' library console
+        ["Holodeck"] = Holodeck.Render, // the holodeck control console
+        ["OrionGame"] = OrionGame.Render, // The Orion Trail arcade
+        ["BattleArcade"] = BattleArcade.Render, // the battle arcade
+        ["SlotMachine"] = SlotMachine.Render, // the slot machines
+        ["Roulette"] = Roulette.Render, // the roulette table
+        ["AdminBookViewer"] = AdminBookViewer.Render, // the admins' library console's book viewer
+        ["DSMBook"] = DSMBook.Render, // the psychologist's manual
+        ["IDCBook"] = IDCBook.Render, // the manual of the diseases
+        ["ExoscannerConsole"] = ExoscannerConsole.Render, // the exploration drones' scanner array control console
+        ["ExodroneConsole"] = ExodroneConsole.Render, // the exploration drone control console
+        ["AdventureBrowser"] = AdventureBrowser.Render, // the admins' adventure manager
+        ["PaintingMachine"] = PaintingMachine.Render, // the PDA & ID painter
+        ["PipeDispenser"] = PipeDispenser.Render, // the pipe, disposal pipe and transit tube dispensers
+        ["Gateway"] = Gateway.Render, // the gateway control console
     };
 
     /// <summary>The interface of that name, or null when it is not translated yet.</summary>

@@ -20,7 +20,7 @@ namespace Anomaly.Core.Tg;
 public partial class turf_open_misc_asteroid : turf_open_misc
 {
     // tg: code/game/turfs/open/asteroid.dm:3  #define DIG_SHEET_AMOUNT 5 (#undef at the end of the file)
-    private const int DIG_SHEET_AMOUNT = 5;
+    internal const int DIG_SHEET_AMOUNT = 5;
 
     // tg: code/game/turfs/open/asteroid.dm:34
     public override object broken_states()
@@ -229,6 +229,144 @@ public partial class turf_open_misc_asteroid_basalt : turf_open_misc_asteroid
                 await set_light(BASALT_LIGHT_RANGE_DIM, BASALT_LIGHT_POWER, LIGHT_COLOR_LAVA); //barely anything!
                 break;
         }
+    }
+}
+
+/// Variant for ruins which replaces itself with the floor of a biome it generates in
+// tg: code/game/turfs/open/asteroid.dm:199  (the ruins' floor that takes the biome's about it)
+public partial class turf_open_misc_asteroid_basalt_lava_land_surface_biome_replace : turf_open_misc_asteroid_basalt_lava_land_surface
+{
+    // tg: code/game/turfs/open/asteroid.dm:206
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        // Just spawn a normal lavaland rock if we fail to get a mapgen, such as being spawned over lava
+        Type supposed_type = typeof(turf_open_misc_asteroid_basalt_lava_land_surface);
+        var cur_area = loc as area;
+        var map_generator = cur_area?.get_generator();
+        if (map_generator == null)
+        {
+            cur_area = GLOB.areas_by_type[default_area] as area;
+            map_generator = cur_area?.get_generator();
+        }
+
+        if (map_generator is datum_map_generator_cave_generator cave_generator)
+        {
+            object biome = cave_generator.get_biome_for_turf(this);
+            if (Dm.truthy(biome))
+            {
+                var generating_biome = (datum_biome)SSmapping.biomes[biome];
+                supposed_type = generating_biome.open_turf_type;
+            }
+        }
+
+        float cur_flags = turf_flags;
+        // TURF-IDENTITY: tg's src becomes the new turf
+        var new_turf = Waiting.NoSleep(ChangeTurf(supposed_type, flags: Dm.bitor(CHANGETURF_FORCEOP, CHANGETURF_INHERIT_AIR))) as turf;
+        if (Dm.truthy(Dm.bitand(cur_flags, NO_RUINS)))
+            new_turf.turf_flags = Dm.bitor(new_turf.turf_flags, NO_RUINS);
+        return dot;
+    }
+}
+
+// tg: code/game/turfs/open/asteroid.dm:321  (Lavaland's winter biodome)
+public partial class turf_open_misc_asteroid_snow : turf_open_misc_asteroid
+{
+    // tg: code/game/turfs/open/asteroid.dm:339
+    public override object burn_tile()
+    {
+        if (!Dm.truthy(burnt))
+        {
+            visible_message(span_danger(I18n.T("[] melts away!.", this)));
+            slowdown = 0;
+            burnt = TRUE;
+            update_appearance();
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    // tg: code/game/turfs/open/asteroid.dm:348
+    public override object burnt_states() => Dm.list("snow_dug");
+
+    // tg: code/game/turfs/open/asteroid.dm:351
+    public override void add_footprint(mob_living_carbon_human walker = null, object movement_direction = null)
+    {
+        if (HAS_TRAIT(walker, TRAIT_NO_SNOWPRINTS))
+            return;
+        // skip the special logic if the level doesn't naturally have snowstorms
+        if (!Dm.truthy(SSmapping.level_trait(z, ZTRAIT_SNOWSTORM)))
+        {
+            base.add_footprint(walker, movement_direction);
+            return;
+        }
+
+        // if an active snow storm affecting this turf is currently in its main or wind down stage, skip footprint creation
+        foreach (datum_weather_snow_storm active_weather in Dm.each<datum_weather_snow_storm>(SSweather.processing))
+        {
+            if (!Dm.eq(active_weather.stage, MAIN_STAGE) && !Dm.eq(active_weather.stage, WIND_DOWN_STAGE))
+                continue;
+            if (!Dm.@in(loc, active_weather.impacted_areas))
+                continue;
+            return;
+        }
+
+        base.add_footprint(walker, movement_direction);
+        // when a snow storm enters its main stage, clear all of our footprints
+        foreach (Type snow_type in Dm.each<Type>(typesof(typeof(datum_weather_snow_storm))))
+            RegisterSignal(SSdcs, COMSIG_WEATHER_START(snow_type), nameof(snow_clear_footprints), @override: TRUE);
+    }
+
+    // tg: code/game/turfs/open/asteroid.dm:371
+    [SignalHandler]
+    public virtual void snow_clear_footprints(datum source = null, datum_weather storm = null)
+    {
+        if (!Dm.@in(loc, storm.impacted_areas))
+            return;
+
+        clear_footprints();
+        foreach (Type snow_type in Dm.each<Type>(typesof(typeof(datum_weather_snow_storm))))
+            UnregisterSignal(SSdcs, COMSIG_WEATHER_START(snow_type));
+    }
+
+    // tg: code/game/turfs/open/asteroid.dm:381
+    public override async DmTask<object> item_interaction(mob_living user = null, obj_item tool = null, DmList modifiers = null, params object[] __extra)
+    {
+        if (tool is not obj_item_stack_sheet_mineral_snow)
+            return await base.item_interaction(user, tool, modifiers, __extra);
+
+        if (Dm.truthy(dug))
+        {
+            if (Dm.truthy(await tool.use(DIG_SHEET_AMOUNT)))
+            {
+                user.visible_message(
+                    span_notice(I18n.T("[] packs [] back in.", user, this)),
+                    span_notice(I18n.T("You pack [] back in.", this)),
+                    vision_distance: COMBAT_MESSAGE_RANGE);
+                await refill_dug();
+                return ITEM_INTERACT_SUCCESS;
+            }
+
+            to_chat(user, I18n.T("You don't have enough [] to fill the hole.", tool.name));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        if (Dm.truthy(footprint_entrance_dirs) || Dm.truthy(footprint_exit_dirs))
+        {
+            if (Dm.truthy(await tool.use(1)))
+            {
+                user.visible_message(
+                    span_notice(I18n.T("[] fills in the footprints in [].", user, this)),
+                    span_notice(I18n.T("You fill in the footprints in [].", this)),
+                    vision_distance: COMBAT_MESSAGE_RANGE);
+                clear_footprints();
+                return ITEM_INTERACT_SUCCESS;
+            }
+
+            return NONE;
+        }
+
+        return NONE;
     }
 }
 

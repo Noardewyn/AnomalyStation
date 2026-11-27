@@ -986,9 +986,9 @@ public partial class obj_item_gun_ballistic_revolver_peashooter : obj_item_gun_b
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:127
-[DmPath("/obj/item/gun/ballistic/revolver/chaplain"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_ballistic_revolver_chaplain : obj_item_gun_ballistic_revolver
+// tg: code/modules/religion/burdened/psyker.dm:127 (the var block of a hand-written class)
+[DmPath("/obj/item/gun/ballistic/revolver/chaplain")]
+public partial class obj_item_gun_ballistic_revolver_chaplain
 {
     public float needs_burden = 1; // tg: code/modules/religion/burdened/psyker.dm:138
 
@@ -5238,9 +5238,9 @@ public partial class obj_item_gun_energy_taser : obj_item_gun_energy
     }
 }
 
-// tg: code/modules/wiremod/shell/gun.dm:7
-[DmPath("/obj/item/gun/energy/wiremod_gun"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_energy_wiremod_gun : obj_item_gun_energy
+// tg: code/modules/wiremod/shell/gun.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/gun/energy/wiremod_gun")]
+public partial class obj_item_gun_energy_wiremod_gun
 {
     // tg: code/modules/wiremod/shell/gun.dm:7
     public obj_item_gun_energy_wiremod_gun()
@@ -6411,9 +6411,9 @@ public partial class obj_item_gun_magic_hook_debug : obj_item_gun_magic_hook
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:85
-[DmPath("/obj/item/gun/magic/bloodchill"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_magic_bloodchill : obj_item_gun_magic
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/gun/magic/bloodchill")]
+public partial class obj_item_gun_magic_bloodchill
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:85
     public obj_item_gun_magic_bloodchill()

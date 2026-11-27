@@ -33,8 +33,7 @@ public partial class obj_item_clothing_suit_toggle_labcoat_paramedic : obj_item_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -3) //FISH DOCTOR?!
-        Dm.Deferred("code/modules/clothing/suits/labcoat.dm:65", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -3): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3)); //FISH DOCTOR?!
         Dm.append(ref allowed, typeof(obj_item_crowbar_power_paramedic));
         return dot;
     }

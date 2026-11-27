@@ -9,9 +9,9 @@ using Anomaly.Core.Kernel;
 
 namespace Anomaly.Core.Tg;
 
-// tg: code/datums/components/reskinnable_atom.dm:7
-[DmPath("/datum/atom_skin"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_skin : datum
+// tg: code/datums/components/reskinnable_atom.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/atom_skin")]
+public partial class datum_atom_skin
 {
     public object preview_name; // tg: code/datums/components/reskinnable_atom.dm:10
     public float change_base_icon_state = 0; // tg: code/datums/components/reskinnable_atom.dm:13
@@ -38,9 +38,9 @@ public partial class datum_atom_skin : datum
     }
 }
 
-// tg: code/datums/martial/kaza_ruk.dm:275
-[DmPath("/datum/atom_skin/kaza_ruk"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_skin_kaza_ruk : datum_atom_skin
+// tg: code/datums/martial/kaza_ruk.dm:275 (the var block of a hand-written class)
+[DmPath("/datum/atom_skin/kaza_ruk")]
+public partial class datum_atom_skin_kaza_ruk
 {
     public object reskin_color; // tg: code/datums/martial/kaza_ruk.dm:278
 
@@ -53,7 +53,7 @@ public partial class datum_atom_skin_kaza_ruk : datum_atom_skin
 }
 
 // tg: code/datums/martial/kaza_ruk.dm:297
-[DmPath("/datum/atom_skin/kaza_ruk/red"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/kaza_ruk/red"), DmGeneratedOnly]
 public partial class datum_atom_skin_kaza_ruk_red : datum_atom_skin_kaza_ruk
 {
     // tg: code/datums/martial/kaza_ruk.dm:297
@@ -64,7 +64,7 @@ public partial class datum_atom_skin_kaza_ruk_red : datum_atom_skin_kaza_ruk
 }
 
 // tg: code/datums/martial/kaza_ruk.dm:300
-[DmPath("/datum/atom_skin/kaza_ruk/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/kaza_ruk/blue"), DmGeneratedOnly]
 public partial class datum_atom_skin_kaza_ruk_blue : datum_atom_skin_kaza_ruk
 {
     // tg: code/datums/martial/kaza_ruk.dm:300
@@ -82,7 +82,7 @@ public partial class datum_atom_skin_kaza_ruk_blue : datum_atom_skin_kaza_ruk
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:7
-[DmPath("/datum/atom_skin/floppy_disk"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk : datum_atom_skin
 {
     // tg: code/game/objects/items/floppy_disk.dm:7
@@ -93,7 +93,7 @@ public partial class datum_atom_skin_floppy_disk : datum_atom_skin
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:10
-[DmPath("/datum/atom_skin/floppy_disk/red"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/red"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_red : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:10
@@ -105,7 +105,7 @@ public partial class datum_atom_skin_floppy_disk_red : datum_atom_skin_floppy_di
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:14
-[DmPath("/datum/atom_skin/floppy_disk/dark_blue"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/dark_blue"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_dark_blue : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:14
@@ -117,7 +117,7 @@ public partial class datum_atom_skin_floppy_disk_dark_blue : datum_atom_skin_flo
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:18
-[DmPath("/datum/atom_skin/floppy_disk/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/yellow"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_yellow : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:18
@@ -129,7 +129,7 @@ public partial class datum_atom_skin_floppy_disk_yellow : datum_atom_skin_floppy
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:22
-[DmPath("/datum/atom_skin/floppy_disk/black"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/black"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_black : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:22
@@ -141,7 +141,7 @@ public partial class datum_atom_skin_floppy_disk_black : datum_atom_skin_floppy_
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:26
-[DmPath("/datum/atom_skin/floppy_disk/green"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/green"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_green : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:26
@@ -153,7 +153,7 @@ public partial class datum_atom_skin_floppy_disk_green : datum_atom_skin_floppy_
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:30
-[DmPath("/datum/atom_skin/floppy_disk/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/purple"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_purple : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:30
@@ -165,7 +165,7 @@ public partial class datum_atom_skin_floppy_disk_purple : datum_atom_skin_floppy
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:34
-[DmPath("/datum/atom_skin/floppy_disk/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/grey"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_grey : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:34
@@ -177,7 +177,7 @@ public partial class datum_atom_skin_floppy_disk_grey : datum_atom_skin_floppy_d
 }
 
 // tg: code/game/objects/items/floppy_disk.dm:38
-[DmPath("/datum/atom_skin/floppy_disk/light_blue"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/floppy_disk/light_blue"), DmGeneratedOnly]
 public partial class datum_atom_skin_floppy_disk_light_blue : datum_atom_skin_floppy_disk
 {
     // tg: code/game/objects/items/floppy_disk.dm:38
@@ -189,7 +189,7 @@ public partial class datum_atom_skin_floppy_disk_light_blue : datum_atom_skin_fl
 }
 
 // tg: code/game/objects/items/weaponry/melee/baton.dm:760
-[DmPath("/datum/atom_skin/stunsword"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/stunsword"), DmGeneratedOnly]
 public partial class datum_atom_skin_stunsword : datum_atom_skin
 {
     // tg: code/game/objects/items/weaponry/melee/baton.dm:760
@@ -203,7 +203,7 @@ public partial class datum_atom_skin_stunsword : datum_atom_skin
 }
 
 // tg: code/game/objects/items/weaponry/melee/baton.dm:766
-[DmPath("/datum/atom_skin/stunsword/default"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/stunsword/default"), DmGeneratedOnly]
 public partial class datum_atom_skin_stunsword_default : datum_atom_skin_stunsword
 {
     // tg: code/game/objects/items/weaponry/melee/baton.dm:766
@@ -215,7 +215,7 @@ public partial class datum_atom_skin_stunsword_default : datum_atom_skin_stunswo
 }
 
 // tg: code/game/objects/items/weaponry/melee/baton.dm:770
-[DmPath("/datum/atom_skin/stunsword/energy"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/stunsword/energy"), DmGeneratedOnly]
 public partial class datum_atom_skin_stunsword_energy : datum_atom_skin_stunsword
 {
     // tg: code/game/objects/items/weaponry/melee/baton.dm:770
@@ -227,7 +227,7 @@ public partial class datum_atom_skin_stunsword_energy : datum_atom_skin_stunswor
 }
 
 // tg: code/modules/clothing/masks/costume.dm:3
-[DmPath("/datum/atom_skin/joy_mask"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/joy_mask"), DmGeneratedOnly]
 public partial class datum_atom_skin_joy_mask : datum_atom_skin
 {
     // tg: code/modules/clothing/masks/costume.dm:3
@@ -239,7 +239,7 @@ public partial class datum_atom_skin_joy_mask : datum_atom_skin
 }
 
 // tg: code/modules/clothing/masks/costume.dm:7
-[DmPath("/datum/atom_skin/joy_mask/joy"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/joy_mask/joy"), DmGeneratedOnly]
 public partial class datum_atom_skin_joy_mask_joy : datum_atom_skin_joy_mask
 {
     // tg: code/modules/clothing/masks/costume.dm:7
@@ -251,7 +251,7 @@ public partial class datum_atom_skin_joy_mask_joy : datum_atom_skin_joy_mask
 }
 
 // tg: code/modules/clothing/masks/costume.dm:11
-[DmPath("/datum/atom_skin/joy_mask/flushed"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/joy_mask/flushed"), DmGeneratedOnly]
 public partial class datum_atom_skin_joy_mask_flushed : datum_atom_skin_joy_mask
 {
     // tg: code/modules/clothing/masks/costume.dm:11
@@ -263,7 +263,7 @@ public partial class datum_atom_skin_joy_mask_flushed : datum_atom_skin_joy_mask
 }
 
 // tg: code/modules/clothing/masks/costume.dm:15
-[DmPath("/datum/atom_skin/joy_mask/pensive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/joy_mask/pensive"), DmGeneratedOnly]
 public partial class datum_atom_skin_joy_mask_pensive : datum_atom_skin_joy_mask
 {
     // tg: code/modules/clothing/masks/costume.dm:15
@@ -275,7 +275,7 @@ public partial class datum_atom_skin_joy_mask_pensive : datum_atom_skin_joy_mask
 }
 
 // tg: code/modules/clothing/masks/costume.dm:19
-[DmPath("/datum/atom_skin/joy_mask/angry"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/joy_mask/angry"), DmGeneratedOnly]
 public partial class datum_atom_skin_joy_mask_angry : datum_atom_skin_joy_mask
 {
     // tg: code/modules/clothing/masks/costume.dm:19
@@ -287,7 +287,7 @@ public partial class datum_atom_skin_joy_mask_angry : datum_atom_skin_joy_mask
 }
 
 // tg: code/modules/clothing/masks/costume.dm:23
-[DmPath("/datum/atom_skin/joy_mask/pleading"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/joy_mask/pleading"), DmGeneratedOnly]
 public partial class datum_atom_skin_joy_mask_pleading : datum_atom_skin_joy_mask
 {
     // tg: code/modules/clothing/masks/costume.dm:23
@@ -299,7 +299,7 @@ public partial class datum_atom_skin_joy_mask_pleading : datum_atom_skin_joy_mas
 }
 
 // tg: code/modules/clothing/under/costume.dm:295
-[DmPath("/datum/atom_skin/mech_suit"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit : datum_atom_skin
 {
     // tg: code/modules/clothing/under/costume.dm:295
@@ -310,7 +310,7 @@ public partial class datum_atom_skin_mech_suit : datum_atom_skin
 }
 
 // tg: code/modules/clothing/under/costume.dm:298
-[DmPath("/datum/atom_skin/mech_suit/red"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit/red"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit_red : datum_atom_skin_mech_suit
 {
     // tg: code/modules/clothing/under/costume.dm:298
@@ -322,7 +322,7 @@ public partial class datum_atom_skin_mech_suit_red : datum_atom_skin_mech_suit
 }
 
 // tg: code/modules/clothing/under/costume.dm:302
-[DmPath("/datum/atom_skin/mech_suit/white"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit/white"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit_white : datum_atom_skin_mech_suit
 {
     // tg: code/modules/clothing/under/costume.dm:302
@@ -334,7 +334,7 @@ public partial class datum_atom_skin_mech_suit_white : datum_atom_skin_mech_suit
 }
 
 // tg: code/modules/clothing/under/costume.dm:306
-[DmPath("/datum/atom_skin/mech_suit/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit/blue"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit_blue : datum_atom_skin_mech_suit
 {
     // tg: code/modules/clothing/under/costume.dm:306
@@ -346,7 +346,7 @@ public partial class datum_atom_skin_mech_suit_blue : datum_atom_skin_mech_suit
 }
 
 // tg: code/modules/clothing/under/costume.dm:310
-[DmPath("/datum/atom_skin/mech_suit/black"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit/black"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit_black : datum_atom_skin_mech_suit
 {
     // tg: code/modules/clothing/under/costume.dm:310
@@ -358,7 +358,7 @@ public partial class datum_atom_skin_mech_suit_black : datum_atom_skin_mech_suit
 }
 
 // tg: code/modules/clothing/under/costume.dm:314
-[DmPath("/datum/atom_skin/mech_suit/royal"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit/royal"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit_royal : datum_atom_skin_mech_suit
 {
     // tg: code/modules/clothing/under/costume.dm:314
@@ -370,7 +370,7 @@ public partial class datum_atom_skin_mech_suit_royal : datum_atom_skin_mech_suit
 }
 
 // tg: code/modules/clothing/under/costume.dm:318
-[DmPath("/datum/atom_skin/mech_suit/royal_alt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit/royal_alt"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit_royal_alt : datum_atom_skin_mech_suit
 {
     // tg: code/modules/clothing/under/costume.dm:318
@@ -382,7 +382,7 @@ public partial class datum_atom_skin_mech_suit_royal_alt : datum_atom_skin_mech_
 }
 
 // tg: code/modules/clothing/under/costume.dm:322
-[DmPath("/datum/atom_skin/mech_suit/explorer"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/mech_suit/explorer"), DmGeneratedOnly]
 public partial class datum_atom_skin_mech_suit_explorer : datum_atom_skin_mech_suit
 {
     // tg: code/modules/clothing/under/costume.dm:326
@@ -394,7 +394,7 @@ public partial class datum_atom_skin_mech_suit_explorer : datum_atom_skin_mech_s
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:180
-[DmPath("/datum/atom_skin/pride_pin"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin : datum_atom_skin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:180
@@ -405,7 +405,7 @@ public partial class datum_atom_skin_pride_pin : datum_atom_skin
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:183
-[DmPath("/datum/atom_skin/pride_pin/gay"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/gay"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_gay : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:183
@@ -417,7 +417,7 @@ public partial class datum_atom_skin_pride_pin_gay : datum_atom_skin_pride_pin
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:187
-[DmPath("/datum/atom_skin/pride_pin/bi"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/bi"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_bi : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:187
@@ -429,7 +429,7 @@ public partial class datum_atom_skin_pride_pin_bi : datum_atom_skin_pride_pin
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:191
-[DmPath("/datum/atom_skin/pride_pin/pan"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/pan"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_pan : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:191
@@ -441,7 +441,7 @@ public partial class datum_atom_skin_pride_pin_pan : datum_atom_skin_pride_pin
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:195
-[DmPath("/datum/atom_skin/pride_pin/ace"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/ace"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_ace : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:195
@@ -453,7 +453,7 @@ public partial class datum_atom_skin_pride_pin_ace : datum_atom_skin_pride_pin
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:199
-[DmPath("/datum/atom_skin/pride_pin/enby"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/enby"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_enby : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:199
@@ -465,7 +465,7 @@ public partial class datum_atom_skin_pride_pin_enby : datum_atom_skin_pride_pin
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:203
-[DmPath("/datum/atom_skin/pride_pin/trans"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/trans"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_trans : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:203
@@ -477,7 +477,7 @@ public partial class datum_atom_skin_pride_pin_trans : datum_atom_skin_pride_pin
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:207
-[DmPath("/datum/atom_skin/pride_pin/intersex"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/intersex"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_intersex : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:207
@@ -489,7 +489,7 @@ public partial class datum_atom_skin_pride_pin_intersex : datum_atom_skin_pride_
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:211
-[DmPath("/datum/atom_skin/pride_pin/lesbian"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/lesbian"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_lesbian : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:211
@@ -501,7 +501,7 @@ public partial class datum_atom_skin_pride_pin_lesbian : datum_atom_skin_pride_p
 }
 
 // tg: code/modules/clothing/under/accessories/badges.dm:215
-[DmPath("/datum/atom_skin/pride_pin/mlm"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/pride_pin/mlm"), DmGeneratedOnly]
 public partial class datum_atom_skin_pride_pin_mlm : datum_atom_skin_pride_pin
 {
     // tg: code/modules/clothing/under/accessories/badges.dm:215
@@ -512,9 +512,9 @@ public partial class datum_atom_skin_pride_pin_mlm : datum_atom_skin_pride_pin
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:3
-[DmPath("/datum/atom_skin/crusher_skin"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_skin_crusher_skin : datum_atom_skin
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/atom_skin/crusher_skin")]
+public partial class datum_atom_skin_crusher_skin
 {
     public object new_projectile_icon = Dm.resource("icons/obj/weapons/guns/projectiles.dmi"); // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:9
     public object new_projectile_icon_state; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:11
@@ -533,7 +533,7 @@ public partial class datum_atom_skin_crusher_skin : datum_atom_skin
 }
 
 // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:32
-[DmPath("/datum/atom_skin/crusher_skin/sword"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/crusher_skin/sword"), DmGeneratedOnly]
 public partial class datum_atom_skin_crusher_skin_sword : datum_atom_skin_crusher_skin
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:32
@@ -546,9 +546,9 @@ public partial class datum_atom_skin_crusher_skin_sword : datum_atom_skin_crushe
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:38
-[DmPath("/datum/atom_skin/crusher_skin/harpoon"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_skin_crusher_skin_harpoon : datum_atom_skin_crusher_skin
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/atom_skin/crusher_skin/harpoon")]
+public partial class datum_atom_skin_crusher_skin_harpoon
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:38
     public datum_atom_skin_crusher_skin_harpoon()
@@ -561,9 +561,9 @@ public partial class datum_atom_skin_crusher_skin_harpoon : datum_atom_skin_crus
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:60
-[DmPath("/datum/atom_skin/crusher_skin/dagger"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_skin_crusher_skin_dagger : datum_atom_skin_crusher_skin
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:60 (the var block of a hand-written class)
+[DmPath("/datum/atom_skin/crusher_skin/dagger")]
+public partial class datum_atom_skin_crusher_skin_dagger
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:60
     public datum_atom_skin_crusher_skin_dagger()
@@ -576,7 +576,7 @@ public partial class datum_atom_skin_crusher_skin_dagger : datum_atom_skin_crush
 }
 
 // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:103
-[DmPath("/datum/atom_skin/crusher_skin/glaive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/crusher_skin/glaive"), DmGeneratedOnly]
 public partial class datum_atom_skin_crusher_skin_glaive : datum_atom_skin_crusher_skin
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:103
@@ -594,7 +594,7 @@ public partial class datum_atom_skin_crusher_skin_glaive : datum_atom_skin_crush
 }
 
 // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:114
-[DmPath("/datum/atom_skin/crusher_skin/locked"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/crusher_skin/locked"), DmGeneratedOnly]
 public partial class datum_atom_skin_crusher_skin_locked : datum_atom_skin_crusher_skin
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:114
@@ -605,7 +605,7 @@ public partial class datum_atom_skin_crusher_skin_locked : datum_atom_skin_crush
 }
 
 // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:117
-[DmPath("/datum/atom_skin/crusher_skin/locked/ashen_skull"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/crusher_skin/locked/ashen_skull"), DmGeneratedOnly]
 public partial class datum_atom_skin_crusher_skin_locked_ashen_skull : datum_atom_skin_crusher_skin_locked
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:117
@@ -619,7 +619,7 @@ public partial class datum_atom_skin_crusher_skin_locked_ashen_skull : datum_ato
 }
 
 // tg: code/modules/paperwork/clipboard.dm:3
-[DmPath("/datum/atom_skin/clipboard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/clipboard"), DmGeneratedOnly]
 public partial class datum_atom_skin_clipboard : datum_atom_skin
 {
     // tg: code/modules/paperwork/clipboard.dm:3
@@ -631,7 +631,7 @@ public partial class datum_atom_skin_clipboard : datum_atom_skin
 }
 
 // tg: code/modules/paperwork/clipboard.dm:7
-[DmPath("/datum/atom_skin/clipboard/brown"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/clipboard/brown"), DmGeneratedOnly]
 public partial class datum_atom_skin_clipboard_brown : datum_atom_skin_clipboard
 {
     // tg: code/modules/paperwork/clipboard.dm:7
@@ -643,7 +643,7 @@ public partial class datum_atom_skin_clipboard_brown : datum_atom_skin_clipboard
 }
 
 // tg: code/modules/paperwork/clipboard.dm:11
-[DmPath("/datum/atom_skin/clipboard/black"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/clipboard/black"), DmGeneratedOnly]
 public partial class datum_atom_skin_clipboard_black : datum_atom_skin_clipboard
 {
     // tg: code/modules/paperwork/clipboard.dm:11
@@ -655,7 +655,7 @@ public partial class datum_atom_skin_clipboard_black : datum_atom_skin_clipboard
 }
 
 // tg: code/modules/paperwork/clipboard.dm:15
-[DmPath("/datum/atom_skin/clipboard/white"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/clipboard/white"), DmGeneratedOnly]
 public partial class datum_atom_skin_clipboard_white : datum_atom_skin_clipboard
 {
     // tg: code/modules/paperwork/clipboard.dm:15
@@ -666,9 +666,9 @@ public partial class datum_atom_skin_clipboard_white : datum_atom_skin_clipboard
     }
 }
 
-// tg: code/modules/paperwork/pen.dm:186
-[DmPath("/datum/atom_skin/cap_pen"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_skin_cap_pen : datum_atom_skin
+// tg: code/modules/paperwork/pen.dm:186 (the var block of a hand-written class)
+[DmPath("/datum/atom_skin/cap_pen")]
+public partial class datum_atom_skin_cap_pen
 {
     // tg: code/modules/paperwork/pen.dm:186
     public datum_atom_skin_cap_pen()
@@ -678,7 +678,7 @@ public partial class datum_atom_skin_cap_pen : datum_atom_skin
 }
 
 // tg: code/modules/paperwork/pen.dm:198
-[DmPath("/datum/atom_skin/cap_pen/oak"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/cap_pen/oak"), DmGeneratedOnly]
 public partial class datum_atom_skin_cap_pen_oak : datum_atom_skin_cap_pen
 {
     // tg: code/modules/paperwork/pen.dm:198
@@ -690,7 +690,7 @@ public partial class datum_atom_skin_cap_pen_oak : datum_atom_skin_cap_pen
 }
 
 // tg: code/modules/paperwork/pen.dm:202
-[DmPath("/datum/atom_skin/cap_pen/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/cap_pen/gold"), DmGeneratedOnly]
 public partial class datum_atom_skin_cap_pen_gold : datum_atom_skin_cap_pen
 {
     // tg: code/modules/paperwork/pen.dm:202
@@ -702,7 +702,7 @@ public partial class datum_atom_skin_cap_pen_gold : datum_atom_skin_cap_pen
 }
 
 // tg: code/modules/paperwork/pen.dm:206
-[DmPath("/datum/atom_skin/cap_pen/rosewood"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/cap_pen/rosewood"), DmGeneratedOnly]
 public partial class datum_atom_skin_cap_pen_rosewood : datum_atom_skin_cap_pen
 {
     // tg: code/modules/paperwork/pen.dm:206
@@ -714,7 +714,7 @@ public partial class datum_atom_skin_cap_pen_rosewood : datum_atom_skin_cap_pen
 }
 
 // tg: code/modules/paperwork/pen.dm:210
-[DmPath("/datum/atom_skin/cap_pen/black_silver"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/cap_pen/black_silver"), DmGeneratedOnly]
 public partial class datum_atom_skin_cap_pen_black_silver : datum_atom_skin_cap_pen
 {
     // tg: code/modules/paperwork/pen.dm:210
@@ -726,7 +726,7 @@ public partial class datum_atom_skin_cap_pen_black_silver : datum_atom_skin_cap_
 }
 
 // tg: code/modules/paperwork/pen.dm:214
-[DmPath("/datum/atom_skin/cap_pen/command_blue"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/cap_pen/command_blue"), DmGeneratedOnly]
 public partial class datum_atom_skin_cap_pen_command_blue : datum_atom_skin_cap_pen
 {
     // tg: code/modules/paperwork/pen.dm:214
@@ -738,7 +738,7 @@ public partial class datum_atom_skin_cap_pen_command_blue : datum_atom_skin_cap_
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:114
-[DmPath("/datum/atom_skin/det_revolver"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver : datum_atom_skin
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:114
@@ -750,7 +750,7 @@ public partial class datum_atom_skin_det_revolver : datum_atom_skin
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:118
-[DmPath("/datum/atom_skin/det_revolver/default"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/default"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_default : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:118
@@ -762,7 +762,7 @@ public partial class datum_atom_skin_det_revolver_default : datum_atom_skin_det_
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:122
-[DmPath("/datum/atom_skin/det_revolver/fitz_special"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/fitz_special"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_fitz_special : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:122
@@ -774,7 +774,7 @@ public partial class datum_atom_skin_det_revolver_fitz_special : datum_atom_skin
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:126
-[DmPath("/datum/atom_skin/det_revolver/police_positive_special"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/police_positive_special"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_police_positive_special : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:126
@@ -786,7 +786,7 @@ public partial class datum_atom_skin_det_revolver_police_positive_special : datu
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:130
-[DmPath("/datum/atom_skin/det_revolver/blued_steel"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/blued_steel"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_blued_steel : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:130
@@ -798,7 +798,7 @@ public partial class datum_atom_skin_det_revolver_blued_steel : datum_atom_skin_
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:134
-[DmPath("/datum/atom_skin/det_revolver/stainless_steel"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/stainless_steel"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_stainless_steel : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:134
@@ -810,7 +810,7 @@ public partial class datum_atom_skin_det_revolver_stainless_steel : datum_atom_s
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:138
-[DmPath("/datum/atom_skin/det_revolver/gold_trim"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/gold_trim"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_gold_trim : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:138
@@ -822,7 +822,7 @@ public partial class datum_atom_skin_det_revolver_gold_trim : datum_atom_skin_de
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:142
-[DmPath("/datum/atom_skin/det_revolver/golden"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/golden"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_golden : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:142
@@ -834,7 +834,7 @@ public partial class datum_atom_skin_det_revolver_golden : datum_atom_skin_det_r
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:146
-[DmPath("/datum/atom_skin/det_revolver/peacemaker"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/peacemaker"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_peacemaker : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:146
@@ -846,7 +846,7 @@ public partial class datum_atom_skin_det_revolver_peacemaker : datum_atom_skin_d
 }
 
 // tg: code/modules/projectiles/guns/ballistic/revolver.dm:150
-[DmPath("/datum/atom_skin/det_revolver/black_panther"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/det_revolver/black_panther"), DmGeneratedOnly]
 public partial class datum_atom_skin_det_revolver_black_panther : datum_atom_skin_det_revolver
 {
     // tg: code/modules/projectiles/guns/ballistic/revolver.dm:150
@@ -858,7 +858,7 @@ public partial class datum_atom_skin_det_revolver_black_panther : datum_atom_ski
 }
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:307
-[DmPath("/datum/atom_skin/bar_shotgun"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/bar_shotgun"), DmGeneratedOnly]
 public partial class datum_atom_skin_bar_shotgun : datum_atom_skin
 {
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:307
@@ -870,7 +870,7 @@ public partial class datum_atom_skin_bar_shotgun : datum_atom_skin
 }
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:311
-[DmPath("/datum/atom_skin/bar_shotgun/default"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/bar_shotgun/default"), DmGeneratedOnly]
 public partial class datum_atom_skin_bar_shotgun_default : datum_atom_skin_bar_shotgun
 {
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:311
@@ -882,7 +882,7 @@ public partial class datum_atom_skin_bar_shotgun_default : datum_atom_skin_bar_s
 }
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:315
-[DmPath("/datum/atom_skin/bar_shotgun/dark_red"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/bar_shotgun/dark_red"), DmGeneratedOnly]
 public partial class datum_atom_skin_bar_shotgun_dark_red : datum_atom_skin_bar_shotgun
 {
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:315
@@ -894,7 +894,7 @@ public partial class datum_atom_skin_bar_shotgun_dark_red : datum_atom_skin_bar_
 }
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:319
-[DmPath("/datum/atom_skin/bar_shotgun/ash"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/bar_shotgun/ash"), DmGeneratedOnly]
 public partial class datum_atom_skin_bar_shotgun_ash : datum_atom_skin_bar_shotgun
 {
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:319
@@ -906,7 +906,7 @@ public partial class datum_atom_skin_bar_shotgun_ash : datum_atom_skin_bar_shotg
 }
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:323
-[DmPath("/datum/atom_skin/bar_shotgun/faded_grey"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/bar_shotgun/faded_grey"), DmGeneratedOnly]
 public partial class datum_atom_skin_bar_shotgun_faded_grey : datum_atom_skin_bar_shotgun
 {
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:323
@@ -918,7 +918,7 @@ public partial class datum_atom_skin_bar_shotgun_faded_grey : datum_atom_skin_ba
 }
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:327
-[DmPath("/datum/atom_skin/bar_shotgun/maple"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/bar_shotgun/maple"), DmGeneratedOnly]
 public partial class datum_atom_skin_bar_shotgun_maple : datum_atom_skin_bar_shotgun
 {
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:327
@@ -930,7 +930,7 @@ public partial class datum_atom_skin_bar_shotgun_maple : datum_atom_skin_bar_sho
 }
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:331
-[DmPath("/datum/atom_skin/bar_shotgun/rosewood"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/bar_shotgun/rosewood"), DmGeneratedOnly]
 public partial class datum_atom_skin_bar_shotgun_rosewood : datum_atom_skin_bar_shotgun
 {
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:331
@@ -942,7 +942,7 @@ public partial class datum_atom_skin_bar_shotgun_rosewood : datum_atom_skin_bar_
 }
 
 // tg: code/modules/reagents/reagent_containers/medigel.dm:3
-[DmPath("/datum/atom_skin/med_gel"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_gel"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_gel : datum_atom_skin
 {
     // tg: code/modules/reagents/reagent_containers/medigel.dm:3
@@ -953,7 +953,7 @@ public partial class datum_atom_skin_med_gel : datum_atom_skin
 }
 
 // tg: code/modules/reagents/reagent_containers/medigel.dm:6
-[DmPath("/datum/atom_skin/med_gel/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_gel/blue"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_gel_blue : datum_atom_skin_med_gel
 {
     // tg: code/modules/reagents/reagent_containers/medigel.dm:6
@@ -965,7 +965,7 @@ public partial class datum_atom_skin_med_gel_blue : datum_atom_skin_med_gel
 }
 
 // tg: code/modules/reagents/reagent_containers/medigel.dm:10
-[DmPath("/datum/atom_skin/med_gel/cyan"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_gel/cyan"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_gel_cyan : datum_atom_skin_med_gel
 {
     // tg: code/modules/reagents/reagent_containers/medigel.dm:10
@@ -977,7 +977,7 @@ public partial class datum_atom_skin_med_gel_cyan : datum_atom_skin_med_gel
 }
 
 // tg: code/modules/reagents/reagent_containers/medigel.dm:14
-[DmPath("/datum/atom_skin/med_gel/green"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_gel/green"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_gel_green : datum_atom_skin_med_gel
 {
     // tg: code/modules/reagents/reagent_containers/medigel.dm:14
@@ -989,7 +989,7 @@ public partial class datum_atom_skin_med_gel_green : datum_atom_skin_med_gel
 }
 
 // tg: code/modules/reagents/reagent_containers/medigel.dm:18
-[DmPath("/datum/atom_skin/med_gel/red"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_gel/red"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_gel_red : datum_atom_skin_med_gel
 {
     // tg: code/modules/reagents/reagent_containers/medigel.dm:18
@@ -1001,7 +1001,7 @@ public partial class datum_atom_skin_med_gel_red : datum_atom_skin_med_gel
 }
 
 // tg: code/modules/reagents/reagent_containers/medigel.dm:22
-[DmPath("/datum/atom_skin/med_gel/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_gel/orange"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_gel_orange : datum_atom_skin_med_gel
 {
     // tg: code/modules/reagents/reagent_containers/medigel.dm:22
@@ -1013,7 +1013,7 @@ public partial class datum_atom_skin_med_gel_orange : datum_atom_skin_med_gel
 }
 
 // tg: code/modules/reagents/reagent_containers/medigel.dm:26
-[DmPath("/datum/atom_skin/med_gel/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_gel/purple"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_gel_purple : datum_atom_skin_med_gel
 {
     // tg: code/modules/reagents/reagent_containers/medigel.dm:26
@@ -1025,7 +1025,7 @@ public partial class datum_atom_skin_med_gel_purple : datum_atom_skin_med_gel
 }
 
 // tg: code/modules/reagents/reagent_containers/spray.dm:429
-[DmPath("/datum/atom_skin/med_spray"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_spray"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_spray : datum_atom_skin
 {
     // tg: code/modules/reagents/reagent_containers/spray.dm:429
@@ -1037,7 +1037,7 @@ public partial class datum_atom_skin_med_spray : datum_atom_skin
 }
 
 // tg: code/modules/reagents/reagent_containers/spray.dm:433
-[DmPath("/datum/atom_skin/med_spray/red"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_spray/red"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_spray_red : datum_atom_skin_med_spray
 {
     // tg: code/modules/reagents/reagent_containers/spray.dm:433
@@ -1049,7 +1049,7 @@ public partial class datum_atom_skin_med_spray_red : datum_atom_skin_med_spray
 }
 
 // tg: code/modules/reagents/reagent_containers/spray.dm:437
-[DmPath("/datum/atom_skin/med_spray/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_spray/yellow"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_spray_yellow : datum_atom_skin_med_spray
 {
     // tg: code/modules/reagents/reagent_containers/spray.dm:437
@@ -1061,7 +1061,7 @@ public partial class datum_atom_skin_med_spray_yellow : datum_atom_skin_med_spra
 }
 
 // tg: code/modules/reagents/reagent_containers/spray.dm:441
-[DmPath("/datum/atom_skin/med_spray/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/atom_skin/med_spray/blue"), DmGeneratedOnly]
 public partial class datum_atom_skin_med_spray_blue : datum_atom_skin_med_spray
 {
     // tg: code/modules/reagents/reagent_containers/spray.dm:441

@@ -22,14 +22,6 @@ public partial class obj_item_shell : obj_item
     // tg: code/modules/wiremod/shell/shell_items.dm:14
     public override async DmTask<object> screwdriver_act(mob_living user = null, obj_item tool = null)
     {
-        // DEVIATION(DV570): the shells these assemblies finish into are CI2's and CI3's (bots, drones, servers, the airlock, the
-        // dispenser, the BCI, the scanner gate); until one is ported, finishing its assembly is refused with "not ported yet"
-        // (D132) instead of making an inert shell.
-        if (shell_to_spawn != null && InertSeam.IsInertType(shell_to_spawn))
-        {
-            balloon_alert(user, I18n.T("not ported yet"));
-            return TRUE;
-        }
         user.visible_message(span_notice(I18n.T("[] begins finishing [].", user, this)), span_notice(I18n.T("You begin finishing [].", this)));
         tool.play_tool_sound(this);
         if (!Dm.truthy(await do_after(user, screw_delay, this)))

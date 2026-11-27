@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // M7x slice D: the pump shotgun, the riot shotgun, the combat shotguns and the double-barrel (the station set). Syndicate N2a (D316): the
 // operatives' Bulldog with its secondary magazine. Gaps GU1 (D333): the hook-modified shotgun of the deathmatch loadouts (its right-click
 // hook). The dual-feed (cycler) shotgun is the fugitive hunters' and the spies' (docs/ai/specs/not-translated.md section 215, D333); the
-// monkey and musket shotguns and the pump-action grenade launcher keep generated var blocks only (section 49). The seclight points and
-// the double-barrel's reskins are deferred leaves (the attachment and reskin components, M10+). The var blocks are generated (D111) but
+// monkey and musket shotguns and the pump-action grenade launcher keep generated var blocks only (section 49). The seclight points are
+// a deferred leaf (the attachment component, M10+); the double-barrel's reskins are live. The var blocks are generated (D111) but
 // the hook shotgun's (below).
 
 // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:1
@@ -81,7 +81,7 @@ public partial class obj_item_gun_ballistic_shotgun_doublebarrel : obj_item_gun_
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:362
     public override async DmTask setup_reskins()
     {
-        Dm.Deferred("code/modules/projectiles/guns/ballistic/shotgun.dm:363", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/bar_shotgun) (the reskin component and its radial menu)");
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_bar_shotgun));
     }
 
     // tg: code/modules/projectiles/guns/ballistic/shotgun.dm:365

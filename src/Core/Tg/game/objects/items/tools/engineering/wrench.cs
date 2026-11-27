@@ -9,8 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: the base wrench's Initialize (M4a P4a) and the combat wrench (syndicate G4d, D316: the sentry gun's); suicide_act is a
-// live-partial stub (M10); the medical, power and bolter wrenches come after the core version.
+// PARTIAL: the base wrench's Initialize (M4a P4a), the medical wrench's examine and the combat wrench (syndicate G4d, D316: the
+// sentry gun's); the suicide acts are live-partial stubs (the suicide verb, M10+); the power and bolter wrenches come after the
+// core version.
 
 // tg: code/game/objects/items/tools/engineering/wrench.dm:1
 public partial class obj_item_wrench : obj_item
@@ -24,6 +25,21 @@ public partial class obj_item_wrench : obj_item
     }
 
     // tg: code/game/objects/items/tools/engineering/wrench.dm:37  suicide_act: live-partial (M10).
+}
+
+// tg: code/game/objects/items/tools/engineering/wrench.dm:53
+public partial class obj_item_wrench_medical : obj_item_wrench
+{
+    // tg: code/game/objects/items/tools/engineering/wrench.dm:65
+    public override async DmTask<object> examine(mob user = null, params object[] __extra)
+    {
+        DmList dot = await base.examine(user, __extra) as DmList;
+        if (Dm.truthy(suicider))
+            Dm.append(ref dot, span_notice(I18n.T("For some reason, it reminds you of [].", suicider)));
+        return dot;
+    }
+
+    // tg: code/game/objects/items/tools/engineering/wrench.dm:70  suicide_act: live-partial (the suicide verb, M10+).
 }
 
 // tg: code/game/objects/items/tools/engineering/wrench.dm:97

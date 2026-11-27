@@ -45,7 +45,11 @@ public partial class datum_element_cliff_walking : datum_element
             return;
         }
         REMOVE_TRAIT(climber, TRAIT_CLIFF_WALKER, type);
-        // The falling off a cliff (turf/open/cliff.try_fall) waits with its turf: no cliffs are on the port's maps.
-        Dm.Deferred("code/datums/elements/cliff_walker.dm:31", "try_fall of a dead climber on a cliff turf: no cliff turf on Meta");
+
+        turf_open_cliff cliff_tile = get_turf(climber) as turf_open_cliff;
+        if (cliff_tile is not turf_open_cliff) // iscliffturf (__DEFINES/is_helpers.dm:104)
+            return;
+
+        cliff_tile.try_fall(climber);
     }
 }

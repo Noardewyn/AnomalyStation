@@ -14,8 +14,8 @@ namespace Anomaly.Core.Tg;
 // and report (gather_antag_data, antag_report, cmp_antag_category, printplayer, printplayerlist, printobjectives), the antagonist HUD for
 // all and the antagonists in the game log at the round's end, build_roundend_report as far as its antagonists. Not here: the nuke disk
 // (N1), the newscaster, the hardcore random score, the medals, the achievements, the report button and the report files (the statistics
-// and the logs: not ported). The AI laws' report came with silicons SI5; the economic summary (market_report) with gaps P4d, but for the
-// restaurant venues' lines (SSrestaurant, not ported); the station goals' report (goal_report) with gaps R1; the end credits' roll and
+// and the logs: not ported). The AI laws' report came with silicons SI5; the economic summary (market_report) with gaps P4d, its
+// restaurant venues' lines with the restaurant; the station goals' report (goal_report) with gaps R1; the end credits' roll and
 // the commendations (handle_hearts) with gaps R5.
 
 // tg: code/__HELPERS/roundend.dm:9
@@ -388,8 +388,12 @@ public partial class datum_controller_subsystem_ticker : datum_controller_subsys
         }
         Dm.append(ref parts, I18n.T("<div class='panel stationborder'><span class='header'>Station Economic Summary:</span><br>"));
         Dm.append(ref parts, I18n.T("<span class='service'>Service Statistics:</span><br>"));
-        // tg: :530-533  for(var/venue_path in SSrestaurant.all_venues): each venue's customers served and income. The restaurant venues
-        // (SSrestaurant, the robot customers) are not ported, so service earns no tourist income.
+        foreach (object venue_path in Dm.each(SSrestaurant?.all_venues))
+        {
+            datum_venue venue = SSrestaurant.all_venues[venue_path] as datum_venue;
+            tourist_income += venue.total_income;
+            Dm.append(ref parts, I18n.T("The [] served [] customer\\s and made [] [].<br>", venue, venue.customers_served, venue.total_income, MONEY_NAME));
+        }
         Dm.append(ref parts, I18n.T("In total, they earned [] [][]<br>", tourist_income, MONEY_NAME, tourist_income != 0 ? "!" : "..."));
         log_econ(Dm.text("Roundend service income: [] [].", tourist_income, MONEY_NAME));
 

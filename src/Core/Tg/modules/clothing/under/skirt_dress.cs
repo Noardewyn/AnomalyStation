@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (gaps CL1, D333): the striped dress (its spray can recolouring waits for the GAGS recolouring), the wedding dress and the
-// evening gown (their fishing difficulty waits for fishing); the rest of the file is var-only. The var blocks are generated (D111).
+// evening gown (with their fishing difficulty); the rest of the file is var-only. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/under/skirt_dress.dm:15
 public partial class obj_item_clothing_under_dress_striped : obj_item_clothing_under_dress
@@ -32,7 +32,7 @@ public partial class obj_item_clothing_under_dress_wedding_dress : obj_item_clot
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/skirt_dress.dm:52", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 4): fishing (M10+)"); //You aren't going to fish with this are you?
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 4)); //You aren't going to fish with this are you?
         return dot;
     }
 }
@@ -44,7 +44,7 @@ public partial class obj_item_clothing_under_dress_eveninggown : obj_item_clothi
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/skirt_dress.dm:69", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 4): fishing (M10+)"); //You aren't going to fish with this are you?
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 4)); //You aren't going to fish with this are you?
         return dot;
     }
 }

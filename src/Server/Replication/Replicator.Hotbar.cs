@@ -4,7 +4,7 @@ using Anomaly.Protocol;
 
 namespace Anomaly.Server.Replication;
 
-// Version 98 also (DV603, ui-overhaul.md section 10, slice 3A; protocol.md section 96): the own human's ten hotbar cells and the names of the items
+// Version 99 also (DV689, ui-overhaul.md section 10, slice 3A; protocol.md section 97): the own human's ten hotbar cells and the names of the items
 // in its hands, read after the tick (BeltHotbar.Peek: the cells as the next command phase will keep them) and sent when they change, when a press
 // was refused, and in a join. A cell's picture is its item drawn alone, as a slot's vis_contents child (the same private row the HUD's slot uses).
 

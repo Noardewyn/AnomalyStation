@@ -139,7 +139,7 @@ public partial class obj_effect_hotspot : obj_effect
                 cold_fire = TRUE;
         }
 
-        turf_open our_turf = loc as turf_open;
+        turf our_turf = loc as turf; // tg types it open; a hotspot made on a wall (a drake's meteor) reads the wall's empty list
         //on creation we check adjacent turfs for hot spot to start grouping, if surrounding do not have hot spots we create our own
         foreach (turf_open to_check in Dm.each_cast<turf_open>(our_turf.atmos_adjacent_turfs))
         {
@@ -176,10 +176,11 @@ public partial class obj_effect_hotspot : obj_effect
         air_update_turf(FALSE, FALSE);
         Waiting.NoSleep(AddElement(typeof(datum_element_connect_loc), Initialize__loc_connections));
 
-        if (our_turf.fire_puff_cooldown <= world.time) // COOLDOWN_FINISHED (__DEFINES/cooldowns.dm:113), inline (rules 11.1 (a))
+        turf_open open_turf = (turf_open)our_turf; // the exposure above only goes on over an open turf's air
+        if (open_turf.fire_puff_cooldown <= world.time) // COOLDOWN_FINISHED (__DEFINES/cooldowns.dm:113), inline (rules 11.1 (a))
         {
-            playsound(our_turf, Dm.resource("sound/effects/fire_puff.ogg"), 30); // tg: code/modules/atmospherics/environmental/LINDA_fire.dm:144
-            our_turf.fire_puff_cooldown = world.time + 5 * SECONDS; // COOLDOWN_START (__DEFINES/cooldowns.dm:111), inline
+            playsound(open_turf, Dm.resource("sound/effects/fire_puff.ogg"), 30); // tg: code/modules/atmospherics/environmental/LINDA_fire.dm:144
+            open_turf.fire_puff_cooldown = world.time + 5 * SECONDS; // COOLDOWN_START (__DEFINES/cooldowns.dm:111), inline
         }
 
         // Remove just_spawned protection if no longer processing the parent cell
@@ -508,7 +509,7 @@ public partial class datum_hot_group : datum
     public virtual void remove_from_group(obj_effect_hotspot target = null)
     {
         Dm.remove(ref spot_list, target);
-        turf_open target_turf = target.loc as turf_open;
+        turf target_turf = target.loc as turf; // as add_to_group reads it
         if (Dm.truthy(target_turf))
         {
             Dm.remove(ref x_coord, target_turf.x);
@@ -528,7 +529,7 @@ public partial class datum_hot_group : datum
             return;
         Dm.append(ref spot_list, target);
         target.our_hot_group = this;
-        turf_open target_turf = target.loc as turf_open;
+        turf target_turf = target.loc as turf; // tg types it open; a hotspot made on a wall joins a group before it is deleted
         Dm.append(ref x_coord, target_turf.x);
         Dm.append(ref y_coord, target_turf.y);
         Dm.append(ref z_coord, target_turf.z);

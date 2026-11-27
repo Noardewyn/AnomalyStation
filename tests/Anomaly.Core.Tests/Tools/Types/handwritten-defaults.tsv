@@ -346,6 +346,10 @@
 /datum/reagents	ui_tags_selected	decl	code/modules/reagents/chemistry/holder/holder.dm:29	{"K":"num","N":0}
 /datum/reagents	ui_reaction_index	decl	code/modules/reagents/chemistry/holder/holder.dm:31	{"K":"num","N":1}
 /datum/reagents	ui_beaker_sync	decl	code/modules/reagents/chemistry/holder/holder.dm:33	{"K":"num","N":0}
+/datum/action/cooldown/spell/shapeshift	shapeshift_type	decl	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:27	{"K":"null","N":0}
+/datum/action/cooldown/spell/shapeshift	button_icon_state	override	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:10	{"K":"str","N":0,"S":"shapeshift"}
+/datum/action/cooldown/spell/shapeshift	school	override	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:11	{"K":"str","N":0,"S":"transmutation"}
+/datum/action/cooldown/spell/shapeshift	cooldown_time	override	code/modules/spells/spell_types/shapeshift/_shapeshift.dm:12	{"K":"num","N":100}
 /datum/pathfind	start	decl	code/__HELPERS/paths/path.dm:85	{"K":"null","N":0}
 /datum/can_pass_info	pass_flags	decl	code/__HELPERS/paths/path.dm:276	{"K":"num","N":0}
 /datum/sort_instance	L	decl	code/__HELPERS/sorts/sort_instance.dm:15	{"K":"null","N":0}
@@ -862,6 +866,14 @@
 /datum/status_effect/temporary_blindness	tick_interval	override	code/datums/status_effects/debuffs/vision/blindness.dm:94	{"K":"num","N":20}
 /datum/status_effect/temporary_blindness	alert_type	override	code/datums/status_effects/debuffs/vision/blindness.dm:95	{"K":"null","N":0}
 /datum/status_effect/temporary_blindness	remove_on_fullheal	override	code/datums/status_effects/debuffs/vision/blindness.dm:96	{"K":"num","N":1}
+/datum/status_effect/slimerecall	bluespace	decl	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:63	{"K":"null","N":0}
+/datum/status_effect/slimerecall	id	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:57	{"K":"str","N":0,"S":"slime_recall"}
+/datum/status_effect/slimerecall	duration	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:58	{"K":"num","N":-1}
+/datum/status_effect/slimerecall	tick_interval	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:59	{"K":"num","N":-1}
+/datum/status_effect/slimerecall	alert_type	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:60	{"K":"null","N":0}
+/datum/status_effect/stabilized/gold	familiar	decl	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1037	{"K":"null","N":0}
+/datum/status_effect/stabilized/gold	id	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1035	{"K":"str","N":0,"S":"stabilizedgold"}
+/datum/status_effect/stabilized/gold	colour	override	code/modules/research/xenobiology/crossbreeding/_status_effects.dm:1036	{"K":"str","N":0,"S":"gold"}
 /datum/bt_node/ai_behavior/acquire_target	vision_range	decl	code/datums/ai/generic_behaviors/acquire_target.dm:12	{"K":"num","N":7}
 /datum/bt_node/ai_behavior/acquire_target/target_from_retaliate_list	check_faction	decl	code/datums/ai/generic_behaviors/target_retaliate.dm:12	{"K":"num","N":0}
 /datum/bt_node/ai_behavior/acquire_target/target_from_retaliate_list	target_source	override	code/datums/ai/generic_behaviors/target_retaliate.dm:4	{"K":"type","N":0,"S":"/datum/target_source/from_bb_list/retaliate_list"}
@@ -952,6 +964,7 @@
 /datum/component/damage_chain	dupe_mode	override	code/datums/components/damage_chain.dm:5	{"K":"num","N":1}
 /datum/component/gas_leaker	process_type	decl	code/datums/components/gas_leaker.dm:8	{"K":"null","N":0}
 /datum/component/pinata	death_drop	decl	code/datums/components/pinata.dm:10	{"K":"null","N":0}
+/datum/component/profound_fisher	our_rod	decl	code/datums/components/profound_fisher.dm:4	{"K":"null","N":0}
 /datum/component/plumbing	reagents	decl	code/datums/components/plumbing/_plumbing.dm:6	{"K":"null","N":0}
 /datum/component/plumbing	dupe_mode	override	code/datums/components/plumbing/_plumbing.dm:2	{"K":"num","N":1}
 /datum/looping_sound/spectre_meter	mid_sounds	override	code/modules/modular_computers/file_system/programs/maintenance/spectre_meter.dm:115	{"K":"null","N":0}
@@ -1184,6 +1197,9 @@
 /datum/effect_system	abstract_type	override	code/game/objects/effects/effect_system/effect_system.dm:23	{"K":"type","N":0,"S":"/datum/effect_system"}
 /datum/overlay_info	icon	decl	code/game/objects/items/rcd/RTD.dm:106	{"K":"null","N":0}
 /datum/stack_recipe	category	decl	code/game/objects/items/stacks/stack_recipe.dm:27	{"K":"null","N":0}
+/datum/card	summoncost	decl	code/game/objects/items/tcg/tcg.dm:483	{"K":"num","N":-1}
+/datum/card	power	decl	code/game/objects/items/tcg/tcg.dm:485	{"K":"num","N":-1}
+/datum/card	resolve	decl	code/game/objects/items/tcg/tcg.dm:487	{"K":"num","N":-1}
 /datum/admins	fakekey	decl	code/modules/admin/holder2.dm:18	{"K":"null","N":0}
 /datum/admin_rank	name	decl	code/modules/admin/admin_ranks.dm:9	{"K":"str","N":0,"S":"NoRank"}
 /datum/admin_rank	source	decl	code/modules/admin/admin_ranks.dm:11	{"K":"null","N":0}
@@ -1541,6 +1557,9 @@
 /datum/persistent_client	time_of_death	decl	code/modules/client/persistent_client.dm:40	{"K":"num","N":0}
 /datum/preferences	path	decl	code/modules/client/preferences.dm:6	{"K":"null","N":0}
 /datum/deathmatch_modifier	name	decl	code/modules/deathmatch/deathmatch_modifier.dm:4	{"K":"str","N":0,"S":"Unnamed Modifier"}
+/datum/adventure_node	id	decl	code/modules/explorer_drone/adventure.dm:286	{"K":"null","N":0}
+/datum/fishing_challenge	reward_path	decl	code/modules/fishing/fishing_minigame.dm:51	{"K":"str","N":0,"S":"dud"}
+/datum/fishing_challenge	location	decl	code/modules/fishing/fishing_minigame.dm:69	{"K":"null","N":0}
 /datum/instrument_key	key	decl	code/modules/instruments/instrument_data/_instrument_key.dm:7	{"K":"null","N":0}
 /datum/job_department	display_order	decl	code/modules/jobs/departments/departments.dm:13	{"K":"num","N":0}
 /datum/job_department	abstract_type	override	code/modules/jobs/departments/departments.dm:3	{"K":"type","N":0,"S":"/datum/job_department"}
@@ -1853,6 +1872,8 @@
 /datum/ntnet_conversation	id	decl	code/modules/modular_computers/file_system/programs/chatroom/conversation.dm:14	{"K":"null","N":0}
 /datum/paper_field	field_index	decl	code/modules/paperwork/paper.dm:891	{"K":"num","N":-1}
 /datum/equilibrium	reaction	decl	code/modules/reagents/chemistry/equilibrium.dm:15	{"K":"null","N":0}
+/datum/sparring_match	chaplain	decl	code/modules/religion/sparring/sparring_datum.dm:3	{"K":"null","N":0}
+/datum/sparring_match	arena_condition	decl	code/modules/religion/sparring/sparring_datum.dm:9	{"K":"null","N":0}
 /datum/tgui_window	id	decl	code/modules/tgui/tgui_window.dm:7	{"K":"null","N":0}
 /datum/tgui_alert	choice	decl	code/modules/tgui_input/alert.dm:57	{"K":"null","N":0}
 /datum/tgui_color_picker	choice	decl	code/modules/tgui_input/color.dm:43	{"K":"null","N":0}
@@ -2677,6 +2698,8 @@
 /mob/living/basic/parrot	mob_size	override	code/modules/mob/living/basic/pets/parrot/_parrot.dm:38	{"K":"num","N":1}
 /mob/living/basic/parrot	gold_core_spawnable	override	code/modules/mob/living/basic/pets/parrot/_parrot.dm:39	{"K":"num","N":2}
 /mob/living/basic/parrot	ai_controller	override	code/modules/mob/living/basic/pets/parrot/_parrot.dm:41	{"K":"type","N":0,"S":"/datum/ai_controller/basic_controller/parrot"}
+/mob/eye/camera/remote/xenobio	allowed_area	decl	code/modules/research/xenobiology/xenobio_camera.dm:4	{"K":"null","N":0}
+/mob/eye/camera/remote/xenobio	visible_to_user	override	code/modules/research/xenobiology/xenobio_camera.dm:3	{"K":"num","N":1}
 /obj	obj_flags	decl	code/game/objects/objs.dm:6	{"K":"num","N":2}
 /obj	desc_controls	decl	code/game/objects/objs.dm:9	{"K":"null","N":0}
 /obj	no_damage_feedback	decl	code/game/objects/objs.dm:12	{"K":"str","N":0,"S":"without leaving a mark"}
@@ -4024,28 +4047,32 @@
 /obj/item/coupon	icon	override	code/modules/cargo/coupon.dm:52	{"K":"res","N":0,"S":"icons/obj/card.dmi"}
 /obj/item/coupon	item_flags	override	code/modules/cargo/coupon.dm:53	{"K":"num","N":64}
 /obj/item/coupon	w_class	override	code/modules/cargo/coupon.dm:54	{"K":"num","N":1}
-/obj/item/fish	required_fluid_type	decl	code/modules/fishing/fish/_fish.dm:64	{"K":"str","N":0,"S":"Freshwater"}
-/obj/item/fish	name	override	code/modules/fishing/fish/_fish.dm:20	{"K":"str","N":0,"S":"fish"}
-/obj/item/fish	desc	override	code/modules/fishing/fish/_fish.dm:21	{"K":"str","N":0,"S":"very bland"}
-/obj/item/fish	abstract_type	override	code/modules/fishing/fish/_fish.dm:22	{"K":"type","N":0,"S":"/obj/item/fish"}
-/obj/item/fish	icon	override	code/modules/fishing/fish/_fish.dm:23	{"K":"res","N":0,"S":"icons/obj/aquarium/fish.dmi"}
-/obj/item/fish	lefthand_file	override	code/modules/fishing/fish/_fish.dm:24	{"K":"res","N":0,"S":"icons/mob/inhands/fish_lefthand.dmi"}
-/obj/item/fish	righthand_file	override	code/modules/fishing/fish/_fish.dm:25	{"K":"res","N":0,"S":"icons/mob/inhands/fish_righthand.dmi"}
-/obj/item/fish	icon_angle	override	code/modules/fishing/fish/_fish.dm:26	{"K":"num","N":180}
-/obj/item/fish	force	override	code/modules/fishing/fish/_fish.dm:27	{"K":"num","N":6}
-/obj/item/fish	throwforce	override	code/modules/fishing/fish/_fish.dm:28	{"K":"num","N":6}
-/obj/item/fish	throw_range	override	code/modules/fishing/fish/_fish.dm:29	{"K":"num","N":8}
-/obj/item/fish	attack_verb_continuous	init	code/modules/fishing/fish/_fish.dm:30	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"slaps"}},{"Value":{"K":"str","N":0,"S":"whacks"}}]}
-/obj/item/fish	attack_verb_simple	init	code/modules/fishing/fish/_fish.dm:31	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"slap"}},{"Value":{"K":"str","N":0,"S":"whack"}}]}
-/obj/item/fish	hitsound	override	code/modules/fishing/fish/_fish.dm:32	{"K":"str","N":0,"S":"default_fish_slap"}
-/obj/item/fish	drop_sound	override	code/modules/fishing/fish/_fish.dm:33	{"K":"res","N":0,"S":"sound/mobs/non-humanoids/fish/fish_drop1.ogg"}
-/obj/item/fish	pickup_sound	override	code/modules/fishing/fish/_fish.dm:34	{"K":"str","N":0,"S":"fish_pickup"}
-/obj/item/fish	sound_vary	override	code/modules/fishing/fish/_fish.dm:35	{"K":"num","N":1}
-/obj/item/fish	obj_flags	override	code/modules/fishing/fish/_fish.dm:36	{"K":"num","N":8}
-/obj/item/fish	item_flags	override	code/modules/fishing/fish/_fish.dm:37	{"K":"num","N":8}
-/obj/item/fish	material_flags	override	code/modules/fishing/fish/_fish.dm:39	{"K":"num","N":111}
-/obj/item/fish	max_integrity	override	code/modules/fishing/fish/_fish.dm:41	{"K":"num","N":200}
-/obj/item/fish	integrity_failure	override	code/modules/fishing/fish/_fish.dm:42	{"K":"num","N":0.5}
+/obj/item/exodrone	location	decl	code/modules/explorer_drone/exodrone.dm:34	{"K":"null","N":0}
+/obj/item/exodrone	name	override	code/modules/explorer_drone/exodrone.dm:23	{"K":"str","N":0,"S":"exploration drone"}
+/obj/item/exodrone	desc	override	code/modules/explorer_drone/exodrone.dm:24	{"K":"str","N":0,"S":"A long range, semi-autonomous exploration drone."}
+/obj/item/exodrone	icon	override	code/modules/explorer_drone/exodrone.dm:25	{"K":"res","N":0,"S":"icons/obj/exploration.dmi"}
+/obj/item/exodrone	icon_state	override	code/modules/explorer_drone/exodrone.dm:26	{"K":"str","N":0,"S":"drone"}
+/obj/item/exodrone	w_class	override	code/modules/explorer_drone/exodrone.dm:27	{"K":"num","N":4}
+/obj/item/firelance	cell	decl	code/modules/explorer_drone/loot.dm:155	{"K":"null","N":0}
+/obj/item/firelance	name	override	code/modules/explorer_drone/loot.dm:146	{"K":"str","N":0,"S":"fire lance"}
+/obj/item/firelance	desc	override	code/modules/explorer_drone/loot.dm:147	{"K":"str","N":0,"S":"Melts everything in front of you. Takes a while to start and operate."}
+/obj/item/firelance	icon	override	code/modules/explorer_drone/loot.dm:148	{"K":"res","N":0,"S":"icons/obj/exploration.dmi"}
+/obj/item/firelance	icon_state	override	code/modules/explorer_drone/loot.dm:149	{"K":"str","N":0,"S":"firelance"}
+/obj/item/firelance	inhand_icon_state	override	code/modules/explorer_drone/loot.dm:150	{"K":"str","N":0,"S":"firelance"}
+/obj/item/firelance	righthand_file	override	code/modules/explorer_drone/loot.dm:151	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_righthand.dmi"}
+/obj/item/firelance	lefthand_file	override	code/modules/explorer_drone/loot.dm:152	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_lefthand.dmi"}
+/obj/item/fish_gene	trait_type	decl	code/modules/fishing/fishing_equipment.dm:859	{"K":"null","N":0}
+/obj/item/fish_gene	name	override	code/modules/fishing/fishing_equipment.dm:848	{"K":"str","N":0,"S":"fish trait injector"}
+/obj/item/fish_gene	icon	override	code/modules/fishing/fishing_equipment.dm:849	{"K":"res","N":0,"S":"icons/obj/fishing.dmi"}
+/obj/item/fish_gene	icon_state	override	code/modules/fishing/fishing_equipment.dm:850	{"K":"str","N":0,"S":"fish_trait_injector"}
+/obj/item/fish_gene	desc	override	code/modules/fishing/fishing_equipment.dm:851	{"K":"str","N":0,"S":"A single-use injector containing a specific trait that can be used on any (living) fish compatible with it."}
+/obj/item/fish_gene	w_class	override	code/modules/fishing/fishing_equipment.dm:852	{"K":"num","N":1}
+/obj/item/fish_gene	inhand_icon_state	override	code/modules/fishing/fishing_equipment.dm:853	{"K":"str","N":0,"S":"dnainjector"}
+/obj/item/fish_gene	worn_icon_state	override	code/modules/fishing/fishing_equipment.dm:854	{"K":"str","N":0,"S":"pen"}
+/obj/item/fish_gene	lefthand_file	override	code/modules/fishing/fishing_equipment.dm:855	{"K":"res","N":0,"S":"icons/mob/inhands/equipment/medical_lefthand.dmi"}
+/obj/item/fish_gene	righthand_file	override	code/modules/fishing/fishing_equipment.dm:856	{"K":"res","N":0,"S":"icons/mob/inhands/equipment/medical_righthand.dmi"}
+/obj/item/fish_gene	throw_speed	override	code/modules/fishing/fishing_equipment.dm:857	{"K":"num","N":3}
+/obj/item/fish_gene	throw_range	override	code/modules/fishing/fishing_equipment.dm:858	{"K":"num","N":5}
 /obj/item/pizzabox	pizza	decl	code/modules/food_and_drinks/pizzabox.dm:29	{"K":"null","N":0}
 /obj/item/pizzabox	name	override	code/modules/food_and_drinks/pizzabox.dm:10	{"K":"str","N":0,"S":"pizza box"}
 /obj/item/pizzabox	desc	override	code/modules/food_and_drinks/pizzabox.dm:11	{"K":"str","N":0,"S":"A box suited for pizzas."}
@@ -4238,6 +4265,16 @@
 /obj/machinery/computer/cargo/express	req_access	init	code/modules/cargo/expressconsole.dm:13	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"cargo"}}]}
 /obj/machinery/computer/cargo/express	is_express	override	code/modules/cargo/expressconsole.dm:14	{"K":"num","N":1}
 /obj/machinery/computer/cargo/express	interface_type	override	code/modules/cargo/expressconsole.dm:15	{"K":"str","N":0,"S":"CargoExpress"}
+/obj/machinery/computer/auxiliary_base	destination	decl	code/modules/mining/aux_base.dm:33	{"K":"null","N":0}
+/obj/machinery/computer/auxiliary_base	name	override	code/modules/mining/aux_base.dm:15	{"K":"str","N":0,"S":"auxiliary base management console"}
+/obj/machinery/computer/auxiliary_base	desc	override	code/modules/mining/aux_base.dm:16	{"K":"str","N":0,"S":"Allows a deployable expedition base to be dropped from the station to a designated mining location. It can also interface with the mining shuttle at the landing site if a mobile beacon is also deployed."}
+/obj/machinery/computer/auxiliary_base	icon	override	code/modules/mining/aux_base.dm:18	{"K":"res","N":0,"S":"icons/obj/machines/wallmounts.dmi"}
+/obj/machinery/computer/auxiliary_base	icon_state	override	code/modules/mining/aux_base.dm:19	{"K":"str","N":0,"S":"pod_off"}
+/obj/machinery/computer/auxiliary_base	icon_keyboard	override	code/modules/mining/aux_base.dm:20	{"K":"null","N":0}
+/obj/machinery/computer/auxiliary_base	icon_screen	override	code/modules/mining/aux_base.dm:21	{"K":"str","N":0,"S":"pod_on"}
+/obj/machinery/computer/auxiliary_base	req_one_access	init	code/modules/mining/aux_base.dm:22	{"K":"list","N":0,"L":[{"Value":{"K":"str","N":0,"S":"aux_base"}},{"Value":{"K":"str","N":0,"S":"command"}}]}
+/obj/machinery/computer/auxiliary_base	circuit	override	code/modules/mining/aux_base.dm:23	{"K":"type","N":0,"S":"/obj/item/circuitboard/computer/auxiliary_base"}
+/obj/machinery/computer/auxiliary_base	density	override	code/modules/mining/aux_base.dm:37	{"K":"num","N":0}
 /obj/machinery/hypnochair	timerid	decl	code/game/machinery/hypnochair.dm:21	{"K":"num","N":0}
 /obj/machinery/hypnochair	name	override	code/game/machinery/hypnochair.dm:2	{"K":"str","N":0,"S":"enhanced interrogation chamber"}
 /obj/machinery/hypnochair	desc	override	code/game/machinery/hypnochair.dm:3	{"K":"str","N":0,"S":"A device used to perform \u0022enhanced interrogation\u0022 through invasive mental conditioning."}
@@ -4363,6 +4400,28 @@
 /obj/machinery/electrolyzer	armor_type	override	code/modules/atmospherics/machinery/components/electrolyzer/electrolyzer.dm:13	{"K":"type","N":0,"S":"/datum/armor/machinery_electrolyzer"}
 /obj/machinery/electrolyzer	circuit	override	code/modules/atmospherics/machinery/components/electrolyzer/electrolyzer.dm:14	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/electrolyzer"}
 /obj/machinery/electrolyzer	use_power	override	code/modules/atmospherics/machinery/components/electrolyzer/electrolyzer.dm:16	{"K":"num","N":0}
+/obj/machinery/gateway	calibrated	decl	code/modules/awaymissions/gateway.dm:163	{"K":"num","N":1}
+/obj/machinery/gateway	destination_type	decl	code/modules/awaymissions/gateway.dm:165	{"K":"type","N":0,"S":"/datum/gateway_destination/gateway"}
+/obj/machinery/gateway	destination_name	decl	code/modules/awaymissions/gateway.dm:167	{"K":"str","N":0,"S":"Unknown Gateway"}
+/obj/machinery/gateway	destination	decl	code/modules/awaymissions/gateway.dm:169	{"K":"null","N":0}
+/obj/machinery/gateway	target	decl	code/modules/awaymissions/gateway.dm:171	{"K":"null","N":0}
+/obj/machinery/gateway	portal	decl	code/modules/awaymissions/gateway.dm:173	{"K":"null","N":0}
+/obj/machinery/gateway	portal_visuals	decl	code/modules/awaymissions/gateway.dm:175	{"K":"null","N":0}
+/obj/machinery/gateway	teleportion_possible	decl	code/modules/awaymissions/gateway.dm:176	{"K":"num","N":0}
+/obj/machinery/gateway	transport_active	decl	code/modules/awaymissions/gateway.dm:177	{"K":"num","N":0}
+/obj/machinery/gateway	name	override	code/modules/awaymissions/gateway.dm:146	{"K":"str","N":0,"S":"gateway"}
+/obj/machinery/gateway	desc	override	code/modules/awaymissions/gateway.dm:147	{"K":"str","N":0,"S":"A mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations."}
+/obj/machinery/gateway	icon	override	code/modules/awaymissions/gateway.dm:148	{"K":"res","N":0,"S":"icons/obj/machines/gateway.dmi"}
+/obj/machinery/gateway	icon_state	override	code/modules/awaymissions/gateway.dm:149	{"K":"str","N":0,"S":"portal_frame"}
+/obj/machinery/gateway	resistance_flags	override	code/modules/awaymissions/gateway.dm:150	{"K":"num","N":115}
+/obj/machinery/gateway	pixel_x	override	code/modules/awaymissions/gateway.dm:153	{"K":"num","N":-32}
+/obj/machinery/gateway	pixel_y	override	code/modules/awaymissions/gateway.dm:154	{"K":"num","N":-32}
+/obj/machinery/gateway	bound_height	override	code/modules/awaymissions/gateway.dm:155	{"K":"num","N":64}
+/obj/machinery/gateway	bound_width	override	code/modules/awaymissions/gateway.dm:156	{"K":"num","N":96}
+/obj/machinery/gateway	bound_x	override	code/modules/awaymissions/gateway.dm:157	{"K":"num","N":-32}
+/obj/machinery/gateway	bound_y	override	code/modules/awaymissions/gateway.dm:158	{"K":"num","N":0}
+/obj/machinery/gateway	density	override	code/modules/awaymissions/gateway.dm:159	{"K":"num","N":1}
+/obj/machinery/gateway	active_power_usage	override	code/modules/awaymissions/gateway.dm:161	{"K":"num","N":5000}
 /obj/machinery/grill	grilled_item	decl	code/modules/food_and_drinks/machinery/grill.dm:20	{"K":"null","N":0}
 /obj/machinery/grill	name	override	code/modules/food_and_drinks/machinery/grill.dm:7	{"K":"str","N":0,"S":"Barbeque grill"}
 /obj/machinery/grill	desc	override	code/modules/food_and_drinks/machinery/grill.dm:8	{"K":"str","N":0,"S":"Just like the old days. Smokes items over a light heat"}
@@ -4373,6 +4432,19 @@
 /obj/machinery/grill	processing_flags	override	code/modules/food_and_drinks/machinery/grill.dm:13	{"K":"num","N":2}
 /obj/machinery/grill	use_power	override	code/modules/food_and_drinks/machinery/grill.dm:14	{"K":"num","N":0}
 /obj/machinery/grill	custom_materials	init	code/modules/food_and_drinks/machinery/grill.dm:15	{"K":"list","N":0,"L":[{"Key":{"K":"type","N":0,"S":"/datum/material/iron"},"Value":{"K":"num","N":800}},{"Key":{"K":"type","N":0,"S":"/datum/material/glass"},"Value":{"K":"num","N":5}}]}
+/obj/machinery/restaurant_portal	linked_venue	decl	code/modules/food_and_drinks/restaurant/_venue.dm:174	{"K":"null","N":0}
+/obj/machinery/restaurant_portal	turned_on_portal	decl	code/modules/food_and_drinks/restaurant/_venue.dm:177	{"K":"null","N":0}
+/obj/machinery/restaurant_portal	name	override	code/modules/food_and_drinks/restaurant/_venue.dm:162	{"K":"str","N":0,"S":"restaurant portal"}
+/obj/machinery/restaurant_portal	desc	override	code/modules/food_and_drinks/restaurant/_venue.dm:163	{"K":"str","N":0,"S":"A robot-only gate into the wonders of Space Station cuisine!"}
+/obj/machinery/restaurant_portal	icon	override	code/modules/food_and_drinks/restaurant/_venue.dm:164	{"K":"res","N":0,"S":"icons/obj/machines/restaurant_portal.dmi"}
+/obj/machinery/restaurant_portal	icon_state	override	code/modules/food_and_drinks/restaurant/_venue.dm:165	{"K":"str","N":0,"S":"portal"}
+/obj/machinery/restaurant_portal	base_icon_state	override	code/modules/food_and_drinks/restaurant/_venue.dm:166	{"K":"str","N":0,"S":"portal"}
+/obj/machinery/restaurant_portal	anchored	override	code/modules/food_and_drinks/restaurant/_venue.dm:167	{"K":"num","N":1}
+/obj/machinery/restaurant_portal	density	override	code/modules/food_and_drinks/restaurant/_venue.dm:168	{"K":"num","N":0}
+/obj/machinery/restaurant_portal	circuit	override	code/modules/food_and_drinks/restaurant/_venue.dm:169	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/restaurant_portal"}
+/obj/machinery/restaurant_portal	layer	override	code/modules/food_and_drinks/restaurant/_venue.dm:170	{"K":"num","N":2.9}
+/obj/machinery/restaurant_portal	armor_type	override	code/modules/food_and_drinks/restaurant/_venue.dm:171	{"K":"type","N":0,"S":"/datum/armor/restaurant_portal"}
+/obj/machinery/restaurant_portal	resistance_flags	override	code/modules/food_and_drinks/restaurant/_venue.dm:172	{"K":"num","N":50}
 /obj/machinery/hydroponics	myseed	decl	code/modules/hydroponics/hydroponics.dm:44	{"K":"null","N":0}
 /obj/machinery/hydroponics	name	override	code/modules/hydroponics/hydroponics.dm:2	{"K":"str","N":0,"S":"hydroponics tray"}
 /obj/machinery/hydroponics	desc	override	code/modules/hydroponics/hydroponics.dm:3	{"K":"str","N":0,"S":"A basin used to grow plants in."}
@@ -4411,6 +4483,14 @@
 /obj/machinery/chem_master	active_power_usage	override	code/modules/reagents/chemistry/machinery/chem_master.dm:11	{"K":"num","N":200}
 /obj/machinery/chem_master	resistance_flags	override	code/modules/reagents/chemistry/machinery/chem_master.dm:12	{"K":"num","N":34}
 /obj/machinery/chem_master	circuit	override	code/modules/reagents/chemistry/machinery/chem_master.dm:13	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/chem_master"}
+/obj/machinery/research/anomaly_refinery	inserted_core	decl	code/modules/research/anomaly/anomaly_refinery.dm:23	{"K":"null","N":0}
+/obj/machinery/research/anomaly_refinery	name	override	code/modules/research/anomaly/anomaly_refinery.dm:14	{"K":"str","N":0,"S":"anomaly refinery"}
+/obj/machinery/research/anomaly_refinery	desc	override	code/modules/research/anomaly/anomaly_refinery.dm:15	{"K":"str","N":0,"S":"An advanced machine capable of implosion-compressing raw anomaly cores into finished artifacts. Also equipped with state of the art bomb prediction software."}
+/obj/machinery/research/anomaly_refinery	circuit	override	code/modules/research/anomaly/anomaly_refinery.dm:16	{"K":"type","N":0,"S":"/obj/item/circuitboard/machine/anomaly_refinery"}
+/obj/machinery/research/anomaly_refinery	icon	override	code/modules/research/anomaly/anomaly_refinery.dm:17	{"K":"res","N":0,"S":"icons/obj/machines/research.dmi"}
+/obj/machinery/research/anomaly_refinery	base_icon_state	override	code/modules/research/anomaly/anomaly_refinery.dm:18	{"K":"str","N":0,"S":"explosive_compressor"}
+/obj/machinery/research/anomaly_refinery	icon_state	override	code/modules/research/anomaly/anomaly_refinery.dm:19	{"K":"str","N":0,"S":"explosive_compressor"}
+/obj/machinery/research/anomaly_refinery	density	override	code/modules/research/anomaly/anomaly_refinery.dm:20	{"K":"num","N":1}
 /obj/effect/anomaly/dimensional	theme	decl	code/game/objects/effects/anomalies/anomalies_dimensional.dm:13	{"K":"null","N":0}
 /obj/effect/anomaly/dimensional	name	override	code/game/objects/effects/anomalies/anomalies_dimensional.dm:3	{"K":"str","N":0,"S":"dimensional anomaly"}
 /obj/effect/anomaly/dimensional	icon_state	override	code/game/objects/effects/anomalies/anomalies_dimensional.dm:4	{"K":"str","N":0,"S":"dimensional"}
@@ -4456,6 +4536,23 @@
 /obj/effect/puzzle_poddoor_open	icon_state	override	code/game/objects/items/puzzle_pieces.dm:531	{"K":"str","N":0,"S":""}
 /obj/effect/puzzle_poddoor_open	anchored	override	code/game/objects/items/puzzle_pieces.dm:532	{"K":"num","N":1}
 /obj/effect/puzzle_poddoor_open	invisibility	override	code/game/objects/items/puzzle_pieces.dm:533	{"K":"num","N":100}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	team	decl	code/modules/mob_spawn/ghost_roles/mining_roles.dm:225	{"K":"null","N":0}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	eggshell	decl	code/modules/mob_spawn/ghost_roles/mining_roles.dm:226	{"K":"null","N":0}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	name	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:211	{"K":"str","N":0,"S":"ash walker egg"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	desc	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:212	{"K":"str","N":0,"S":"A man-sized yellow egg, spawned from some unfathomable creature. A humanoid silhouette lurks within."}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	prompt_name	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:213	{"K":"str","N":0,"S":"necropolis ash walker"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	icon	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:214	{"K":"res","N":0,"S":"icons/mob/simple/lavaland/lavaland_monsters.dmi"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	icon_state	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:215	{"K":"str","N":0,"S":"large_egg"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	mob_species	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:216	{"K":"type","N":0,"S":"/datum/species/lizard/ashwalker"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	outfit	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:217	{"K":"type","N":0,"S":"/datum/outfit/ashwalker"}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	move_resist	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:218	{"K":"num","N":1000}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	density	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:219	{"K":"num","N":0}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	you_are_text	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:220	{"K":"str","N":0,"S":"You are an ash walker. Your tribe worships the Necropolis."}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	flavour_text	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:221	{"K":"str","N":0,"S":"The wastes are sacred ground, its monsters a blessed bounty. You have seen lights in the distance... they foreshadow the arrival of outsiders that seek to tear apart the Necropolis and its domain. Fresh sacrifices for your nest."}
+/obj/effect/mob_spawn/ghost_role/human/ash_walker	spawner_job_path	override	code/modules/mob_spawn/ghost_roles/mining_roles.dm:224	{"K":"type","N":0,"S":"/datum/job/ash_walker"}
+/obj/effect/sliding_puzzle/prison	prisoner	decl	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:277	{"K":"null","N":0}
+/obj/effect/sliding_puzzle/prison	auto_setup	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276	{"K":"num","N":0}
+/obj/effect/sliding_puzzle/prison	element_type	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:278	{"K":"type","N":0,"S":"/obj/structure/puzzle_element/prison"}
 /obj/structure/closet/crate/critter	tank	decl	code/game/objects/structures/crates_lockers/crates/critter.dm:22	{"K":"null","N":0}
 /obj/structure/closet/crate/critter	name	override	code/game/objects/structures/crates_lockers/crates/critter.dm:2	{"K":"str","N":0,"S":"critter crate"}
 /obj/structure/closet/crate/critter	desc	override	code/game/objects/structures/crates_lockers/crates/critter.dm:3	{"K":"str","N":0,"S":"A crate designed for safe transport of animals. It has an oxygen tank for safe transport in space."}
@@ -4504,12 +4601,26 @@
 /obj/structure/headpike	density	override	code/game/objects/structures/headpike.dm:6	{"K":"num","N":0}
 /obj/structure/headpike	anchored	override	code/game/objects/structures/headpike.dm:7	{"K":"num","N":1}
 /obj/structure/headpike	custom_materials	init	code/game/objects/structures/headpike.dm:8	{"K":"list","N":0,"L":[{"Key":{"K":"type","N":0,"S":"/datum/material/glass"},"Value":{"K":"num","N":115}},{"Key":{"K":"type","N":0,"S":"/datum/material/iron"},"Value":{"K":"num","N":65}}]}
+/obj/structure/holosign/robot_seat	linked_venue	decl	code/modules/food_and_drinks/restaurant/_venue.dm:325	{"K":"type","N":0,"S":"/datum/venue"}
+/obj/structure/holosign/robot_seat	density	override	code/modules/food_and_drinks/restaurant/_venue.dm:319	{"K":"num","N":0}
+/obj/structure/holosign/robot_seat	desc	override	code/modules/food_and_drinks/restaurant/_venue.dm:320	{"K":"str","N":0,"S":"Used to indicate a place to sit for a robot tourist. I better be careful."}
+/obj/structure/holosign/robot_seat	icon	override	code/modules/food_and_drinks/restaurant/_venue.dm:321	{"K":"res","N":0,"S":"icons/effects/effects.dmi"}
+/obj/structure/holosign/robot_seat	icon_state	override	code/modules/food_and_drinks/restaurant/_venue.dm:322	{"K":"str","N":0,"S":"eating_zone"}
+/obj/structure/holosign/robot_seat	layer	override	code/modules/food_and_drinks/restaurant/_venue.dm:323	{"K":"num","N":3.7}
+/obj/structure/holosign/robot_seat	use_vis_overlay	override	code/modules/food_and_drinks/restaurant/_venue.dm:324	{"K":"num","N":0}
 /obj/structure/tray	connected	decl	code/game/objects/structures/morgue.dm:540	{"K":"null","N":0}
 /obj/structure/tray	icon	override	code/game/objects/structures/morgue.dm:532	{"K":"res","N":0,"S":"icons/obj/machines/crematorium.dmi"}
 /obj/structure/tray	density	override	code/game/objects/structures/morgue.dm:533	{"K":"num","N":1}
 /obj/structure/tray	anchored	override	code/game/objects/structures/morgue.dm:534	{"K":"num","N":1}
 /obj/structure/tray	pass_flags_self	override	code/game/objects/structures/morgue.dm:535	{"K":"num","N":65}
 /obj/structure/tray	max_integrity	override	code/game/objects/structures/morgue.dm:537	{"K":"num","N":350}
+/obj/structure/puzzle_element	source	decl	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:205	{"K":"null","N":0}
+/obj/structure/puzzle_element	name	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198	{"K":"str","N":0,"S":"mysterious pillar"}
+/obj/structure/puzzle_element	desc	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:199	{"K":"str","N":0,"S":"Puzzling..."}
+/obj/structure/puzzle_element	icon	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:200	{"K":"res","N":0,"S":"icons/obj/mining_zones/artefacts.dmi"}
+/obj/structure/puzzle_element	icon_state	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:201	{"K":"str","N":0,"S":"puzzle_pillar"}
+/obj/structure/puzzle_element	anchored	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:202	{"K":"num","N":0}
+/obj/structure/puzzle_element	density	override	code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:203	{"K":"num","N":1}
 /obj/structure/light_construct	cell	decl	code/modules/power/lighting/light_construct.dm:20	{"K":"null","N":0}
 /obj/structure/light_construct	name	override	code/modules/power/lighting/light_construct.dm:2	{"K":"str","N":0,"S":"light fixture frame"}
 /obj/structure/light_construct	desc	override	code/modules/power/lighting/light_construct.dm:3	{"K":"str","N":0,"S":"A light fixture under construction."}

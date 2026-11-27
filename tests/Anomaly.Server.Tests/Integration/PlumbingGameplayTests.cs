@@ -60,7 +60,7 @@ public class PlumbingGameplayTests(ITestOutputHelper output)
         int bootRuntimes = w.World.RuntimeErrorCount; // Meta's boot reaches code of later milestones (strict: false)
 
         // Meta's one synthesizer, facing west into its duct line; the engineer stands on the line's duct west of it
-        var synth = In(w, () => Dm.each<obj_machinery_plumbing_synthesizer>(Dm.world).Single());
+        var synth = In(w, () => Dm.each<obj_machinery_plumbing_synthesizer>(Dm.world).Where(m => Dm.truthy(is_station_level(m.z))).Single()); // (the station's: a ruin may hold one)
         (int sx, int sy, int z) = In(w, () => ((int)synth.x, (int)synth.y, (int)synth.z));
         output.WriteLine($"the synthesizer at {sx},{sy},{z}");
         turf At(int tx, int ty) => In(w, () => locate(tx, ty, z));

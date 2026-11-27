@@ -15,7 +15,8 @@ public partial class obj_item_reagent_containers_medigel : obj_item_reagent_cont
     // tg: code/modules/reagents/reagent_containers/medigel.dm:58
     public override async DmTask setup_reskins()
     {
-        // AddComponent(/datum/component/reskinable_item, /datum/atom_skin/med_gel): the reskin menu (reskinnable_atom.dm, not-translated.md 114)
+        if (icon_state == "medigel") // oh yeah baby raw icon state check to make sure we can't reskin preset gels
+            await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_med_gel));
     }
 
     // tg: code/modules/reagents/reagent_containers/medigel.dm:62

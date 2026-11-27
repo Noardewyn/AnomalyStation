@@ -1148,7 +1148,7 @@ public partial class obj_machinery_door_airlock_abductor : obj_machinery_door_ai
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2455 (the var block of a hand-written class)
-[DmPath("/obj/machinery/door/airlock/cult"), DmInert]
+[DmPath("/obj/machinery/door/airlock/cult")]
 public partial class obj_machinery_door_airlock_cult
 {
     public Type openingoverlaytype = typeof(obj_effect_temp_visual_cult_door); // tg: code/game/machinery/doors/airlock.dm:2464
@@ -1177,7 +1177,7 @@ public partial class obj_machinery_door_airlock_cult
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2523
-[DmPath("/obj/machinery/door/airlock/cult/friendly"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/friendly"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_friendly : obj_machinery_door_airlock_cult
 {
     // tg: code/game/machinery/doors/airlock.dm:2523
@@ -1188,7 +1188,7 @@ public partial class obj_machinery_door_airlock_cult_friendly : obj_machinery_do
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2526
-[DmPath("/obj/machinery/door/airlock/cult/glass"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/glass"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_glass : obj_machinery_door_airlock_cult
 {
     // tg: code/game/machinery/doors/airlock.dm:2526
@@ -1200,7 +1200,7 @@ public partial class obj_machinery_door_airlock_cult_glass : obj_machinery_door_
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2530
-[DmPath("/obj/machinery/door/airlock/cult/glass/friendly"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/glass/friendly"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_glass_friendly : obj_machinery_door_airlock_cult_glass
 {
     // tg: code/game/machinery/doors/airlock.dm:2530
@@ -1211,7 +1211,7 @@ public partial class obj_machinery_door_airlock_cult_glass_friendly : obj_machin
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2533
-[DmPath("/obj/machinery/door/airlock/cult/unruned"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/unruned"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_unruned : obj_machinery_door_airlock_cult
 {
     // tg: code/game/machinery/doors/airlock.dm:2533
@@ -1225,7 +1225,7 @@ public partial class obj_machinery_door_airlock_cult_unruned : obj_machinery_doo
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2539
-[DmPath("/obj/machinery/door/airlock/cult/unruned/friendly"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/unruned/friendly"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_unruned_friendly : obj_machinery_door_airlock_cult_unruned
 {
     // tg: code/game/machinery/doors/airlock.dm:2539
@@ -1236,7 +1236,7 @@ public partial class obj_machinery_door_airlock_cult_unruned_friendly : obj_mach
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2542
-[DmPath("/obj/machinery/door/airlock/cult/unruned/glass"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/unruned/glass"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_unruned_glass : obj_machinery_door_airlock_cult_unruned
 {
     // tg: code/game/machinery/doors/airlock.dm:2542
@@ -1248,7 +1248,7 @@ public partial class obj_machinery_door_airlock_cult_unruned_glass : obj_machine
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2546
-[DmPath("/obj/machinery/door/airlock/cult/unruned/glass/friendly"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/unruned/glass/friendly"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_unruned_glass_friendly : obj_machinery_door_airlock_cult_unruned_glass
 {
     // tg: code/game/machinery/doors/airlock.dm:2546
@@ -1259,7 +1259,7 @@ public partial class obj_machinery_door_airlock_cult_unruned_glass_friendly : ob
 }
 
 // tg: code/game/machinery/doors/airlock.dm:2549
-[DmPath("/obj/machinery/door/airlock/cult/weak"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/airlock/cult/weak"), DmGeneratedOnly]
 public partial class obj_machinery_door_airlock_cult_weak : obj_machinery_door_airlock_cult
 {
     // tg: code/game/machinery/doors/airlock.dm:2549
@@ -1402,9 +1402,9 @@ public partial class obj_machinery_door_airlock_tram
     }
 }
 
-// tg: code/modules/wiremod/shell/airlock.dm:12
-[DmPath("/obj/machinery/door/airlock/shell"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_door_airlock_shell : obj_machinery_door_airlock
+// tg: code/modules/wiremod/shell/airlock.dm:12 (the var block of a hand-written class)
+[DmPath("/obj/machinery/door/airlock/shell")]
+public partial class obj_machinery_door_airlock_shell
 {
     // tg: code/modules/wiremod/shell/airlock.dm:12
     public obj_machinery_door_airlock_shell()
@@ -1529,9 +1529,9 @@ public partial class obj_machinery_door_firedoor_heavy : obj_machinery_door_fire
     }
 }
 
-// tg: code/game/machinery/doors/passworddoor.dm:2
-[DmPath("/obj/machinery/door/password"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_door_password : obj_machinery_door
+// tg: code/game/machinery/doors/passworddoor.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/door/password")]
+public partial class obj_machinery_door_password
 {
     public string password = "Swordfish"; // tg: code/game/machinery/doors/passworddoor.dm:13
     public float interaction_activated = 1; // tg: code/game/machinery/doors/passworddoor.dm:15
@@ -1557,7 +1557,7 @@ public partial class obj_machinery_door_password : obj_machinery_door
 }
 
 // tg: code/game/machinery/doors/passworddoor.dm:26
-[DmPath("/obj/machinery/door/password/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/password/voice"), DmGeneratedOnly]
 public partial class obj_machinery_door_password_voice : obj_machinery_door_password
 {
     // tg: code/game/machinery/doors/passworddoor.dm:26
@@ -1857,9 +1857,9 @@ public partial class obj_machinery_door_poddoor_shutters_indestructible_preopen 
     }
 }
 
-// tg: code/game/machinery/doors/shutters.dm:53
-[DmPath("/obj/machinery/door/poddoor/shutters/radiation"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_door_poddoor_shutters_radiation : obj_machinery_door_poddoor_shutters
+// tg: code/game/machinery/doors/shutters.dm:53 (the var block of a hand-written class)
+[DmPath("/obj/machinery/door/poddoor/shutters/radiation")]
+public partial class obj_machinery_door_poddoor_shutters_radiation
 {
     // tg: code/game/machinery/doors/shutters.dm:53
     public obj_machinery_door_poddoor_shutters_radiation()
@@ -1873,7 +1873,7 @@ public partial class obj_machinery_door_poddoor_shutters_radiation : obj_machine
 }
 
 // tg: code/game/machinery/doors/shutters.dm:60
-[DmPath("/obj/machinery/door/poddoor/shutters/radiation/preopen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/door/poddoor/shutters/radiation/preopen"), DmGeneratedOnly]
 public partial class obj_machinery_door_poddoor_shutters_radiation_preopen : obj_machinery_door_poddoor_shutters_radiation
 {
     // tg: code/game/machinery/doors/shutters.dm:60

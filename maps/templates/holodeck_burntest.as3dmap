@@ -1,0 +1,17 @@
+anomaly-map 1
+source _maps/templates/holodeck_burntest.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+
+[chunk 1 1 1]
+4,9: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+6,9: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+5,7: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+2,6: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+8,6: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+2,5: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+8,5: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+5,4: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+4,2: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop
+6,2: /obj/effect/holodeck_effect/sparks | /turf/open/floor/holofloor/plating/burnmix | /area/template_noop

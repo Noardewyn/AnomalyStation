@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file but the watcher trophy's delay (the crusher, lavaland) (gaps package C3). A shared leaf: C4's and C5's ranged creatures use it too.
+// The whole file (gaps package C3; the watcher trophy's delay since Lavaland's fauna). A shared leaf: C4's and C5's ranged creatures use it too.
 
 /**
  * Configurable ranged attack for basic mobs.
@@ -53,6 +53,8 @@ public partial class datum_component_ranged_attacks : datum_component
         await base.RegisterWithParent();
         ADD_TRAIT(parent, TRAIT_SUBTREE_REQUIRED_OPERATIONAL_DATUM, type);
         RegisterSignal(parent, COMSIG_MOB_ATTACK_RANGED, nameof(fire_ranged_attack));
+        // COMSIG_MOB_TROPHY_ACTIVATED(TROPHY_WATCHER) (__DEFINES/dcs/signals/signals_mob/signals_mob_main.dm:294), inline
+        RegisterSignal(parent, "COMSIG_MOB_TROPHY_ACTIVATED" + TROPHY_WATCHER, nameof(disable_attack));
         RegisterSignal(parent, COMSIG_LIVING_STATUS_APPLIED, nameof(on_status_applied));
         RegisterSignal(parent, COMSIG_LIVING_STATUS_REMOVED, nameof(on_status_removed));
     }
@@ -61,7 +63,7 @@ public partial class datum_component_ranged_attacks : datum_component
     public override async DmTask UnregisterFromParent(params object[] __extra)
     {
         await base.UnregisterFromParent(__extra);
-        UnregisterSignal(parent, Dm.list(COMSIG_MOB_ATTACK_RANGED, COMSIG_LIVING_STATUS_APPLIED, COMSIG_LIVING_STATUS_REMOVED));
+        UnregisterSignal(parent, Dm.list(COMSIG_MOB_ATTACK_RANGED, "COMSIG_MOB_TROPHY_ACTIVATED" + TROPHY_WATCHER, COMSIG_LIVING_STATUS_APPLIED, COMSIG_LIVING_STATUS_REMOVED));
         REMOVE_TRAIT(parent, TRAIT_SUBTREE_REQUIRED_OPERATIONAL_DATUM, type);
     }
 
@@ -128,5 +130,20 @@ public partial class datum_component_ranged_attacks : datum_component
         if (effect is not datum_status_effect_rebuked rebuked)
             return;
         cooldown_time = Dm.num(cooldown_time) / Dm.num(rebuked.cd_increase);
+    }
+
+    /// Delay the attack when hit by a watcher trophy detonation
+    // tg: code/datums/components/ranged_attacks.dm:95
+    [SignalHandler]
+    public virtual void disable_attack(mob source = null, obj_item_crusher_trophy used_trophy = null, mob_living user = null)
+    {
+        float stun_duration = used_trophy.bonus_value * 0.1f * SECONDS;
+        // COOLDOWN_INCREMENT(src, fire_cooldown, stun_duration) (__DEFINES/cooldowns.dm:122), inline
+        if (Dm.num(fire_cooldown) <= world.time)
+        {
+            fire_cooldown = world.time + stun_duration;
+            return;
+        }
+        fire_cooldown = Dm.num(fire_cooldown) + stun_duration;
     }
 }

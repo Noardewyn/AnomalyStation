@@ -151,7 +151,7 @@ public static class BillboardMath
     /// lying body, so the frame decides which side of the body the viewer sees: a conscious body (knocked down, crawling) lies face down, so the
     /// viewer sees its back (north); a limp one (unconscious, in crit, dead) lies on its back or front by the way it fell: front (south) when the
     /// viewer is on the side it faces, back (north) when behind it. <paramref name="directions"/> is the icon's direction count.
-    /// Slice T4c (DV573, DV600), before that rule: a body someone turned over shows the side it was turned to
+    /// Slice T4c (DV573, DV686), before that rule: a body someone turned over shows the side it was turned to
     /// (<paramref name="turnedFaceUp"/>, the posture's <c>PostureBits.TurnedFaceUp</c>) from every side, and one lying <paramref name="buckled"/> to
     /// an object (a bed, an operating table) lies on its back, its front (south) seen from every side. The server mirrors it for shots
     /// (<c>ShotGeometry.ChooseLyingDir</c>).

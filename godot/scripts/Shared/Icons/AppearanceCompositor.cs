@@ -382,9 +382,9 @@ public sealed partial class AppearanceCompositor
         {
             if (depth > MaxDepth)
                 return;
-            foreach ((TableRef reference, AppearanceEntry child, double relative) in OverlaysOf(tables, e))
+            foreach ((TableRef reference, AppearanceEntry child, double relative, int place) in OverlaysOf(tables, e))
             {
-                double[] at = Run.Append(path, relative);
+                double[] at = Run.Append(Run.Append(path, relative), place);
                 if (isPart(child))
                     found.Add((Run.Append(at, 0.0), found.Count, reference)); // its own picture's path, as Run.EmitOwn gives it
                 else
@@ -393,14 +393,21 @@ public sealed partial class AppearanceCompositor
         }
     }
 
-    // The overlays of an entry with their layer relative to it, in list order (Run.Children's overlays).
-    private static IEnumerable<(TableRef Reference, AppearanceEntry Child, double Relative)> OverlaysOf(IAppearanceSource tables, AppearanceEntry e)
+    // The overlays of an entry with their layer relative to it and their place among its children (after the underlays found), in list
+    // order (Run.Children's overlays).
+    private static IEnumerable<(TableRef Reference, AppearanceEntry Child, double Relative, int Place)> OverlaysOf(IAppearanceSource tables, AppearanceEntry e)
     {
         double basis = Math.Max(0, e.Layer);
+        int place = 0;
+        foreach (TableRef reference in e.Underlays)
+        {
+            if (tables.TryGetAppearance(reference, out _))
+                place++;
+        }
         foreach (TableRef reference in e.Overlays)
         {
             if (tables.TryGetAppearance(reference, out AppearanceEntry child))
-                yield return (reference, child, Run.Relative(child, basis, false, child.Plane != FloorLayers.FloatPlane && child.Plane < e.Plane));
+                yield return (reference, child, Run.Relative(child, basis, false, child.Plane != FloorLayers.FloatPlane && child.Plane < e.Plane), place++);
         }
     }
 
@@ -451,7 +458,7 @@ public sealed partial class AppearanceCompositor
             _rootOpaque = rootOpaque;
         }
 
-        /// <summary>Draws <paramref name="e"/> and its children into <paramref name="into"/>; <paramref name="path"/> is the entry's sort path (its parent's plus its layer relative to the parent).</summary>
+        /// <summary>Draws <paramref name="e"/> and its children into <paramref name="into"/>; <paramref name="path"/> is the entry's sort path (its parent's plus its layer relative to the parent and its place among the parent's children).</summary>
         public void Visit(AppearanceEntry e, Context parent, double[] path, bool isRoot, int depth, List<Sprite> into)
         {
             if (depth > MaxDepth || Sprites.Count > MaxSprites)
@@ -512,13 +519,13 @@ public sealed partial class AppearanceCompositor
                 EmitOwn(state, group, new[] { 0.0 }, inner);
                 // KEEP_APART children are drawn outside the group, after it: the group's render target is the picture without them, which
                 // they may take as a render source (tg's blood stain cut to a colour-filtered item's shape, decals/blood.dm:46; M6 slice 7b)
-                List<(AppearanceEntry Child, double Relative)> apart = null;
-                foreach ((AppearanceEntry child, double relative) in Children(e))
+                List<(AppearanceEntry Child, double Relative, int Index)> apart = null;
+                foreach ((AppearanceEntry child, double relative, int index) in Children(e))
                 {
                     if (keepTogether && (child.AppearanceFlags & AppearanceFlag.KeepApart) != 0)
-                        (apart ??= new List<(AppearanceEntry, double)>()).Add((child, relative));
+                        (apart ??= new List<(AppearanceEntry, double, int)>()).Add((child, relative, index));
                     else
-                        Visit(child, group, new[] { relative }, false, depth + 1, inner);
+                        Visit(child, group, new[] { relative, index }, false, depth + 1, inner);
                 }
                 ComposedRaster picture = inner.Count == 0 ? null : _owner.Render(inner, width, height, false);
                 if (picture != null)
@@ -544,30 +551,39 @@ public sealed partial class AppearanceCompositor
                     }
                 }
                 if (apart != null)
-                    foreach ((AppearanceEntry child, double relative) in apart)
-                        Visit(child, context, Append(path, relative), false, depth + 1, into);
+                    foreach ((AppearanceEntry child, double relative, int index) in apart)
+                        Visit(child, context, Append(Append(path, relative), index), false, depth + 1, into);
                 return;
             }
 
             EmitOwn(state, context, Append(path, 0.0), into);
-            foreach ((AppearanceEntry child, double relative) in Children(e))
-                Visit(child, context, Append(path, relative), false, depth + 1, into);
+            foreach ((AppearanceEntry child, double relative, int index) in Children(e))
+                Visit(child, context, Append(Append(path, relative), index), false, depth + 1, into);
         }
 
-        // The children of an entry with their layer relative to it: underlays then overlays, in list order. A float layer
-        // (negative) floats just above the parent (overlays) or just below it (underlays), ordered among floats by its value; any other
-        // layer is absolute, so it is relative to the parent's own layer.
-        private IEnumerable<(AppearanceEntry, double)> Children(AppearanceEntry e)
+        // The children of an entry with their layer relative to it and their place in the lists: underlays then overlays, in list
+        // order. A float layer (negative) floats just above the parent (overlays) or just below it (underlays), ordered among floats by
+        // its value; any other layer is absolute, so it is relative to the parent's own layer. The place follows the layer in a
+        // sprite's path, so that of two children on one layer the first is drawn whole, with its own overlays, before the second (BYOND
+        // sorts the flattened overlays by layer and keeps their order among equals: tg's fishing minigame draws its fish over the bait
+        // and the bait's bars, both vis_contents of the HUD on one layer, fishing_minigame.dm:818).
+        private IEnumerable<(AppearanceEntry, double, int)> Children(AppearanceEntry e)
         {
             double basis = Math.Max(0, e.Layer);
+            int index = 0;
             foreach (TableRef reference in e.Underlays)
             {
                 if (_tables.TryGetAppearance(reference, out AppearanceEntry child))
-                    yield return (child, Relative(child, basis, true, child.Plane < e.Plane));
+                    yield return (child, Relative(child, basis, true, child.Plane < e.Plane), index++);
             }
-            foreach ((_, AppearanceEntry child, double relative) in OverlaysOf(_tables, e))
-                yield return (child, relative);
+            foreach ((_, AppearanceEntry child, double relative, int place) in OverlaysOf(_tables, e))
+                yield return (child, relative, place);
         }
+
+        // An overlay on its parent's own layer sorts with the top float layer (FLOAT_LAYER, -1), so that list order decides between
+        // them: tg's fishing HUD has its rod's frame as a FLOAT_LAYER overlay and the completion bar, in the frame's slot, as a
+        // vis_contents object on the HUD's own layer added after it (fishing_minigame.dm:815-818), and BYOND draws the bar over the frame.
+        private const double TopFloat = (1000.0 - 1.0) / 1000.0;
 
         // belowPlane: an underlay or overlay on a lower plane than its parent is under it whatever its layer (a diagonal wall's space underlay is on tg's floor plane at layer 10002, over the wall's 2.058 by layer alone;
         // a rock's wall-plane copy, add_large_wall_overlay, is under its smoothed game-plane picture)
@@ -579,7 +595,9 @@ public sealed partial class AppearanceCompositor
                 return (1000.0 + Math.Max(child.Layer, -1000.0)) / 1000.0 - (underlay ? 1.0 : 0.0);
             double relative = child.Layer - basis;
             // At the parent's own layer an underlay is still below it and an overlay above (the parent is drawn first among equals).
-            return underlay && relative == 0 ? -1e-9 : relative;
+            if (relative == 0)
+                return underlay ? -1e-9 : TopFloat;
+            return relative;
         }
 
         private void EmitOwn(IIconState state, Context c, double[] path, List<Sprite> into)

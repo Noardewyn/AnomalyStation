@@ -7,7 +7,8 @@ using static Anomaly.Core.Tg.Defines;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (syndicate G4a, D316): random_nukecode, for the red pill junk mail; ion_num (silicons SI1, D326).
+// PARTIAL (syndicate G4a, D316): random_nukecode, for the red pill junk mail; ion_num (silicons SI1, D326); get_random_food and
+// get_random_drink (the silver slime extract's food and drinks); get_random_coin (the gold crossbreeds' coins).
 
 public static partial class GlobalProcs
 {
@@ -64,6 +65,22 @@ public static partial class GlobalProcs
         }
 
         return pick(get_random_drink__allowed_drinks);
+    }
+
+    ///Gets a random coin excluding the blocked type and including extra coins which aren't pathed like coins.
+    // tg: code/__HELPERS/randoms.dm:38
+    public static object get_random_coin()
+    {
+        DmList blocked = Dm.list(
+            typeof(obj_item_coin_gold_debug),
+            typeof(obj_item_coin_eldritch),
+            typeof(obj_item_coin_mythril)
+        );
+        DmList extra_coins = Dm.list(
+            typeof(obj_item_food_chococoin)
+        );
+        DmList allowed_coins = Dm.add(Dm.sub(subtypesof(typeof(obj_item_coin)), blocked), extra_coins) as DmList;
+        return pick(allowed_coins);
     }
 
     private static ref DmList get_random_food__allowed_food => ref TgState.Current.GlobalProcs__get_random_food__allowed_food;

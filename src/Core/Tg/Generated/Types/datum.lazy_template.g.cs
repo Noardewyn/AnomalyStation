@@ -359,9 +359,9 @@ public partial class datum_lazy_template_virtual_domain_ash_drake : datum_lazy_t
     }
 }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:2
-[DmPath("/datum/lazy_template/virtual_domain/beach_bar"), DmGeneratedOnly, DmInert]
-public partial class datum_lazy_template_virtual_domain_beach_bar : datum_lazy_template_virtual_domain
+// tg: code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/lazy_template/virtual_domain/beach_bar")]
+public partial class datum_lazy_template_virtual_domain_beach_bar
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/beach_bar.dm:2
     public datum_lazy_template_virtual_domain_beach_bar()
@@ -400,9 +400,9 @@ public partial class datum_lazy_template_virtual_domain_blood_drunk_miner : datu
     }
 }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:2
-[DmPath("/datum/lazy_template/virtual_domain/breeze_bay"), DmGeneratedOnly, DmInert]
-public partial class datum_lazy_template_virtual_domain_breeze_bay : datum_lazy_template_virtual_domain
+// tg: code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/lazy_template/virtual_domain/breeze_bay")]
+public partial class datum_lazy_template_virtual_domain_breeze_bay
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/breeze_bay.dm:2
     public datum_lazy_template_virtual_domain_breeze_bay()
@@ -552,9 +552,9 @@ public partial class datum_lazy_template_virtual_domain_grasslands_hunt
     }
 }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:2
-[DmPath("/datum/lazy_template/virtual_domain/heretic_hunt"), DmGeneratedOnly, DmInert]
-public partial class datum_lazy_template_virtual_domain_heretic_hunt : datum_lazy_template_virtual_domain
+// tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/lazy_template/virtual_domain/heretic_hunt")]
+public partial class datum_lazy_template_virtual_domain_heretic_hunt
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/heretic_hunt.dm:2
     public datum_lazy_template_virtual_domain_heretic_hunt()
@@ -589,9 +589,9 @@ public partial class datum_lazy_template_virtual_domain_hierophant : datum_lazy_
     }
 }
 
-// tg: code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:2
-[DmPath("/datum/lazy_template/virtual_domain/island_brawl"), DmGeneratedOnly, DmInert]
-public partial class datum_lazy_template_virtual_domain_island_brawl : datum_lazy_template_virtual_domain
+// tg: code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/lazy_template/virtual_domain/island_brawl")]
+public partial class datum_lazy_template_virtual_domain_island_brawl
 {
     // tg: code/modules/bitrunning/virtual_domain/domains/island_brawl.dm:2
     public datum_lazy_template_virtual_domain_island_brawl()

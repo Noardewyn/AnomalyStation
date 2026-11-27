@@ -507,7 +507,8 @@ public partial class obj_item_circuit_component : obj_item
      * * signal_type - The signal type used for sending this global signal (optional, default is COMSIG_GLOB_CIRCUIT_NTNET_DATA_SENT)
      */
     // tg: code/modules/wiremod/core/component.dm:438
-    public virtual void send_ntnet_data(datum_port_input port = null, object key = null, string signal_type = null)
+    // port: the port base (tg's list literal transmitters pass their output port to this datum/port/input parameter)
+    public virtual void send_ntnet_data(datum_port port = null, object key = null, string signal_type = null)
     {
         signal_type ??= COMSIG_GLOB_CIRCUIT_NTNET_DATA_SENT;
         // SEND_GLOBAL_SIGNAL(signal_type, list(...)) (__DEFINES/dcs/helpers.dm:7), expanded inline (rules 11.1 (e))

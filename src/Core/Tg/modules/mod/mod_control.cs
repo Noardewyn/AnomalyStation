@@ -16,8 +16,7 @@ namespace Anomaly.Core.Tg;
 // mouse button), its charge accessors and the spacesuit HUD's charge icon, the speed of its parts and the speed potion. tg's first
 // definition of Initialize (:88) is Initialize__d0 here: mod_link.dm's later definition (mod_link.cs) overrides it and calls it as
 // its ..() (rules 7.5). D132 seam (InertSeam, narrowed by gaps MO2): a module whose own tg code is not translated yet (the space
-// ninja's modules, M10+, and the circuit module, wiremod) is not installed (install), so that an inert type never runs as the base
-// module. The var block is generated (D111).
+// ninja's modules, M10+) is not installed (install), so that an inert type never runs as the base module. The var block is generated (D111).
 
 /// MODsuits, trade-off between armor and utility
 // tg: code/modules/mod/mod_control.dm:8
@@ -818,8 +817,7 @@ public partial class obj_item_mod_control : obj_item_mod
     public virtual async DmTask install(obj_item_mod_module new_module = null, mob user = null)
     {
         // InertSeam (gaps MO1, D132; narrowed by gaps MO2): a module whose own tg code is not translated yet (a space ninja's
-        // module, M10+, or the circuit module, wiremod) is refused with tg's "not ported yet" balloon, so that its inert type never runs
-        // as the base module.
+        // module, M10+) is refused with tg's "not ported yet" balloon, so that its inert type never runs as the base module.
         if (InertSeam.MissingInitialize(new_module, "install", user))
             return;
         foreach (obj_item_mod_module old_module in Dm.each_cast<obj_item_mod_module>(modules))

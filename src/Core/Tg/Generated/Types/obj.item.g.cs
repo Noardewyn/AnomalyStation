@@ -175,9 +175,9 @@ public partial class obj_item_fishing_rod_mob_fisher : obj_item_fishing_rod
     }
 }
 
-// tg: code/modules/clothing/gloves/special.dm:238
-[DmPath("/obj/item/fishing_rod/mob_fisher/athletic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_mob_fisher_athletic : obj_item_fishing_rod_mob_fisher
+// tg: code/modules/clothing/gloves/special.dm:238 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/mob_fisher/athletic")]
+public partial class obj_item_fishing_rod_mob_fisher_athletic
 {
     // tg: code/modules/clothing/gloves/special.dm:238
     public obj_item_fishing_rod_mob_fisher_athletic()
@@ -257,9 +257,9 @@ public partial class obj_item_fishing_rod_bone : obj_item_fishing_rod
     }
 }
 
-// tg: code/modules/fishing/fishing_rod.dm:679
-[DmPath("/obj/item/fishing_rod/telescopic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_telescopic : obj_item_fishing_rod
+// tg: code/modules/fishing/fishing_rod.dm:679 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/telescopic")]
+public partial class obj_item_fishing_rod_telescopic
 {
     public float active_force = 8; // tg: code/modules/fishing/fishing_rod.dm:696
 
@@ -286,7 +286,7 @@ public partial class obj_item_fishing_rod_telescopic : obj_item_fishing_rod
 }
 
 // tg: code/modules/fishing/fishing_rod.dm:752
-[DmPath("/obj/item/fishing_rod/telescopic/master"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fishing_rod/telescopic/master"), DmGeneratedOnly]
 public partial class obj_item_fishing_rod_telescopic_master : obj_item_fishing_rod_telescopic
 {
     // tg: code/modules/fishing/fishing_rod.dm:752
@@ -313,9 +313,9 @@ public partial class obj_item_fishing_rod_telescopic_master : obj_item_fishing_r
     }
 }
 
-// tg: code/modules/fishing/fishing_rod.dm:772
-[DmPath("/obj/item/fishing_rod/tech"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_tech : obj_item_fishing_rod
+// tg: code/modules/fishing/fishing_rod.dm:772 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/tech")]
+public partial class obj_item_fishing_rod_tech
 {
     // tg: code/modules/fishing/fishing_rod.dm:772
     public obj_item_fishing_rod_tech()
@@ -342,9 +342,9 @@ public partial class obj_item_fishing_rod_tech : obj_item_fishing_rod
     }
 }
 
-// tg: code/modules/fishing/fishing_rod.dm:812
-[DmPath("/obj/item/fishing_rod/material"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_material : obj_item_fishing_rod
+// tg: code/modules/fishing/fishing_rod.dm:812 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/material")]
+public partial class obj_item_fishing_rod_material
 {
     // tg: code/modules/fishing/fishing_rod.dm:812
     public obj_item_fishing_rod_material()
@@ -1004,9 +1004,9 @@ public partial class obj_item_assembly_signaler_low_range : obj_item_assembly_si
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:3
-[DmPath("/obj/item/assembly/signaler/anomaly"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly : obj_item_assembly_signaler
+// tg: code/modules/research/anomaly/anomaly_core.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly")]
+public partial class obj_item_assembly_signaler_anomaly
 {
     public Type anomaly_type = typeof(obj_effect_anomaly); // tg: code/modules/research/anomaly/anomaly_core.dm:12
     public string core_color = "#FFFFFF"; // tg: code/modules/research/anomaly/anomaly_core.dm:14
@@ -1032,9 +1032,9 @@ public partial class obj_item_assembly_signaler_anomaly : obj_item_assembly_sign
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:45
-[DmPath("/obj/item/assembly/signaler/anomaly/pyro"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_pyro : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:45 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/pyro")]
+public partial class obj_item_assembly_signaler_anomaly_pyro
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:45
     public obj_item_assembly_signaler_anomaly_pyro()
@@ -1047,9 +1047,9 @@ public partial class obj_item_assembly_signaler_anomaly_pyro : obj_item_assembly
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:60
-[DmPath("/obj/item/assembly/signaler/anomaly/grav"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_grav : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:60 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/grav")]
+public partial class obj_item_assembly_signaler_anomaly_grav
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:60
     public obj_item_assembly_signaler_anomaly_grav()
@@ -1062,9 +1062,9 @@ public partial class obj_item_assembly_signaler_anomaly_grav : obj_item_assembly
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:75
-[DmPath("/obj/item/assembly/signaler/anomaly/flux"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_flux : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/flux")]
+public partial class obj_item_assembly_signaler_anomaly_flux
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:75
     public obj_item_assembly_signaler_anomaly_flux()
@@ -1077,9 +1077,9 @@ public partial class obj_item_assembly_signaler_anomaly_flux : obj_item_assembly
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:85
-[DmPath("/obj/item/assembly/signaler/anomaly/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_bluespace : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/bluespace")]
+public partial class obj_item_assembly_signaler_anomaly_bluespace
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:85
     public obj_item_assembly_signaler_anomaly_bluespace()
@@ -1093,9 +1093,9 @@ public partial class obj_item_assembly_signaler_anomaly_bluespace : obj_item_ass
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:101
-[DmPath("/obj/item/assembly/signaler/anomaly/vortex"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_vortex : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:101 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/vortex")]
+public partial class obj_item_assembly_signaler_anomaly_vortex
 {
     public float turf_contents_pull_chance = 33; // tg: code/modules/research/anomaly/anomaly_core.dm:107
     public float turf_destroy_chance = 25; // tg: code/modules/research/anomaly/anomaly_core.dm:108
@@ -1113,9 +1113,9 @@ public partial class obj_item_assembly_signaler_anomaly_vortex : obj_item_assemb
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:144
-[DmPath("/obj/item/assembly/signaler/anomaly/bioscrambler"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_bioscrambler : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:144 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/bioscrambler")]
+public partial class obj_item_assembly_signaler_anomaly_bioscrambler
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:144
     public obj_item_assembly_signaler_anomaly_bioscrambler()
@@ -1129,9 +1129,9 @@ public partial class obj_item_assembly_signaler_anomaly_bioscrambler : obj_item_
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:157
-[DmPath("/obj/item/assembly/signaler/anomaly/hallucination"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_hallucination : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:157 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/hallucination")]
+public partial class obj_item_assembly_signaler_anomaly_hallucination
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:157
     public obj_item_assembly_signaler_anomaly_hallucination()
@@ -1145,9 +1145,9 @@ public partial class obj_item_assembly_signaler_anomaly_hallucination : obj_item
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:168
-[DmPath("/obj/item/assembly/signaler/anomaly/dimensional"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_dimensional : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:168 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/dimensional")]
+public partial class obj_item_assembly_signaler_anomaly_dimensional
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:168
     public obj_item_assembly_signaler_anomaly_dimensional()
@@ -1161,9 +1161,9 @@ public partial class obj_item_assembly_signaler_anomaly_dimensional : obj_item_a
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:190
-[DmPath("/obj/item/assembly/signaler/anomaly/ectoplasm"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_ectoplasm : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:190 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/ectoplasm")]
+public partial class obj_item_assembly_signaler_anomaly_ectoplasm
 {
     // tg: code/modules/research/anomaly/anomaly_core.dm:190
     public obj_item_assembly_signaler_anomaly_ectoplasm()
@@ -1177,9 +1177,9 @@ public partial class obj_item_assembly_signaler_anomaly_ectoplasm : obj_item_ass
     }
 }
 
-// tg: code/modules/research/anomaly/anomaly_core.dm:201
-[DmPath("/obj/item/assembly/signaler/anomaly/weather"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_signaler_anomaly_weather : obj_item_assembly_signaler_anomaly
+// tg: code/modules/research/anomaly/anomaly_core.dm:201 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/signaler/anomaly/weather")]
+public partial class obj_item_assembly_signaler_anomaly_weather
 {
     public float charges = 8; // tg: code/modules/research/anomaly/anomaly_core.dm:208
 
@@ -1298,9 +1298,9 @@ public partial class obj_item_assembly_relic_lavaland_revealed { }
 [DmPath("/obj/item/assembly/relic/revealed")]
 public partial class obj_item_assembly_relic_revealed { }
 
-// tg: code/modules/wiremod/shell/assembly.dm:7
-[DmPath("/obj/item/assembly/wiremod"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assembly_wiremod : obj_item_assembly
+// tg: code/modules/wiremod/shell/assembly.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/assembly/wiremod")]
+public partial class obj_item_assembly_wiremod
 {
     public atom_movable power_use_proxy; // tg: code/modules/wiremod/shell/assembly.dm:14
 
@@ -2729,9 +2729,9 @@ public partial class obj_item_implant_mod
     }
 }
 
-// tg: code/modules/wiremod/shell/implant.dm:2
-[DmPath("/obj/item/implant/circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_implant_circuit : obj_item_implant
+// tg: code/modules/wiremod/shell/implant.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/implant/circuit")]
+public partial class obj_item_implant_circuit
 {
     // tg: code/modules/wiremod/shell/implant.dm:2
     public obj_item_implant_circuit()
@@ -5619,9 +5619,9 @@ public partial class obj_item_defibrillator_compact_combat_loaded_nanotrasen : o
 [DmPath("/obj/item/defibrillator/loaded")]
 public partial class obj_item_defibrillator_loaded { }
 
-// tg: code/game/machinery/deployable.dm:206
-[DmPath("/obj/item/deployable_turret_folded"), DmGeneratedOnly, DmInert]
-public partial class obj_item_deployable_turret_folded : obj_item
+// tg: code/game/machinery/deployable.dm:206 (the var block of a hand-written class)
+[DmPath("/obj/item/deployable_turret_folded")]
+public partial class obj_item_deployable_turret_folded
 {
     // tg: code/game/machinery/deployable.dm:206
     public obj_item_deployable_turret_folded()
@@ -5827,9 +5827,9 @@ public partial class obj_item_producepad
     }
 }
 
-// tg: code/game/machinery/roulette_machine.dm:452
-[DmPath("/obj/item/roulette_wheel_beacon"), DmGeneratedOnly, DmInert]
-public partial class obj_item_roulette_wheel_beacon : obj_item
+// tg: code/game/machinery/roulette_machine.dm:452 (the var block of a hand-written class)
+[DmPath("/obj/item/roulette_wheel_beacon")]
+public partial class obj_item_roulette_wheel_beacon
 {
     public object used; // tg: code/game/machinery/roulette_machine.dm:456
 
@@ -6199,9 +6199,9 @@ public partial class obj_item_mob_holder_drone { }
 [DmPath("/obj/item/mob_holder/destructible"), DmGeneratedOnly, DmInert]
 public partial class obj_item_mob_holder_destructible : obj_item_mob_holder { }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161
-[DmPath("/obj/item/mob_holder/purple_raptor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mob_holder_purple_raptor : obj_item_mob_holder
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161 (the var block of a hand-written class)
+[DmPath("/obj/item/mob_holder/purple_raptor")]
+public partial class obj_item_mob_holder_purple_raptor
 {
     public datum_action_innate_raptor_wings flight_action; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:161
     public float wings_open = 0; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:164
@@ -6270,9 +6270,9 @@ public partial class obj_item_civ_bounty_beacon
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion.dm:497
-[DmPath("/obj/item/orion_ship"), DmGeneratedOnly, DmInert]
-public partial class obj_item_orion_ship : obj_item
+// tg: code/game/machinery/computer/arcade/orion.dm:497 (the var block of a hand-written class)
+[DmPath("/obj/item/orion_ship")]
+public partial class obj_item_orion_ship
 {
     public float? active = 0; // tg: code/game/machinery/computer/arcade/orion.dm:503
 
@@ -6394,9 +6394,9 @@ public partial class obj_item_tgui_book_manual_infuser
     }
 }
 
-// tg: code/modules/library/book.dm:306
-[DmPath("/obj/item/tgui_book/manual/dsm"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tgui_book_manual_dsm : obj_item_tgui_book_manual
+// tg: code/modules/library/book.dm:306 (the var block of a hand-written class)
+[DmPath("/obj/item/tgui_book/manual/dsm")]
+public partial class obj_item_tgui_book_manual_dsm
 {
     // tg: code/modules/library/book.dm:306
     public obj_item_tgui_book_manual_dsm()
@@ -6408,9 +6408,9 @@ public partial class obj_item_tgui_book_manual_dsm : obj_item_tgui_book_manual
     }
 }
 
-// tg: code/modules/library/book.dm:384
-[DmPath("/obj/item/tgui_book/manual/idc"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tgui_book_manual_idc : obj_item_tgui_book_manual
+// tg: code/modules/library/book.dm:384 (the var block of a hand-written class)
+[DmPath("/obj/item/tgui_book/manual/idc")]
+public partial class obj_item_tgui_book_manual_idc
 {
     // tg: code/modules/library/book.dm:384
     public obj_item_tgui_book_manual_idc()
@@ -6603,9 +6603,9 @@ public partial class obj_item_knife_hunting
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/blood_drunk.dm:122
-[DmPath("/obj/item/knife/hunting/wildhunter"), DmGeneratedOnly, DmInert]
-public partial class obj_item_knife_hunting_wildhunter : obj_item_knife_hunting
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/blood_drunk.dm:122 (the var block of a hand-written class)
+[DmPath("/obj/item/knife/hunting/wildhunter")]
+public partial class obj_item_knife_hunting_wildhunter
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/blood_drunk.dm:122
     public obj_item_knife_hunting_wildhunter()
@@ -7001,9 +7001,9 @@ public partial class obj_item_knife_plastic
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27
-[DmPath("/obj/item/knife/envy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_knife_envy : obj_item_knife
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27 (the var block of a hand-written class)
+[DmPath("/obj/item/knife/envy")]
+public partial class obj_item_knife_envy
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:27
     public obj_item_knife_envy()
@@ -7029,9 +7029,9 @@ public partial class obj_item_knife_envy : obj_item_knife
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:21
-[DmPath("/obj/item/knife/rainbowknife"), DmGeneratedOnly, DmInert]
-public partial class obj_item_knife_rainbowknife : obj_item_knife
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:21 (the var block of a hand-written class)
+[DmPath("/obj/item/knife/rainbowknife")]
+public partial class obj_item_knife_rainbowknife
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:21
     public obj_item_knife_rainbowknife()
@@ -7801,9 +7801,9 @@ public partial class obj_item_poster_wanted_missing : obj_item_poster_wanted
     }
 }
 
-// tg: code/game/objects/effects/posters/contraband.dm:3
-[DmPath("/obj/item/poster/random_contraband"), DmGeneratedOnly, DmInert]
-public partial class obj_item_poster_random_contraband : obj_item_poster
+// tg: code/game/objects/effects/posters/contraband.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/poster/random_contraband")]
+public partial class obj_item_poster_random_contraband
 {
     // tg: code/game/objects/effects/posters/contraband.dm:3
     public obj_item_poster_random_contraband()
@@ -11622,9 +11622,9 @@ public partial class obj_item_restraints_legcuffs_bola_cult : obj_item_restraint
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:116
-[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_restraints_legcuffs_goliath_tentacle : obj_item_restraints_legcuffs
+// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:116 (the var block of a hand-written class)
+[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle")]
+public partial class obj_item_restraints_legcuffs_goliath_tentacle
 {
     public obj_effect_goliath_tentacle tentacle; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:128
     public datum_component_leash leash; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:130
@@ -11647,9 +11647,9 @@ public partial class obj_item_restraints_legcuffs_goliath_tentacle : obj_item_re
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:212
-[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle/drag"), DmGeneratedOnly, DmInert]
-public partial class obj_item_restraints_legcuffs_goliath_tentacle_drag : obj_item_restraints_legcuffs_goliath_tentacle { }
+// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:212 (the var block of a hand-written class)
+[DmPath("/obj/item/restraints/legcuffs/goliath_tentacle/drag")]
+public partial class obj_item_restraints_legcuffs_goliath_tentacle_drag { }
 
 // tg: code/game/objects/items/holosign_creator.dm:2 (the var block of a hand-written class)
 [DmPath("/obj/item/holosign_creator")]
@@ -11828,9 +11828,9 @@ public partial class obj_item_holosign_creator_cyborg
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/_venue.dm:307
-[DmPath("/obj/item/holosign_creator/robot_seat"), DmGeneratedOnly, DmInert]
-public partial class obj_item_holosign_creator_robot_seat : obj_item_holosign_creator
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:307 (the var block of a hand-written class)
+[DmPath("/obj/item/holosign_creator/robot_seat")]
+public partial class obj_item_holosign_creator_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/_venue.dm:307
     public obj_item_holosign_creator_robot_seat()
@@ -11852,7 +11852,7 @@ public partial class obj_item_holosign_creator_robot_seat : obj_item_holosign_cr
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:61
-[DmPath("/obj/item/holosign_creator/robot_seat/restaurant"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/holosign_creator/robot_seat/restaurant"), DmGeneratedOnly]
 public partial class obj_item_holosign_creator_robot_seat_restaurant : obj_item_holosign_creator_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:61
@@ -11864,7 +11864,7 @@ public partial class obj_item_holosign_creator_robot_seat_restaurant : obj_item_
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:94
-[DmPath("/obj/item/holosign_creator/robot_seat/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/holosign_creator/robot_seat/bar"), DmGeneratedOnly]
 public partial class obj_item_holosign_creator_robot_seat_bar : obj_item_holosign_creator_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:94
@@ -13600,9 +13600,9 @@ public partial class obj_item_shield_mirror : obj_item_shield
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:53
-[DmPath("/obj/item/shield/adamantineshield"), DmGeneratedOnly, DmInert]
-public partial class obj_item_shield_adamantineshield : obj_item_shield
+// tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:53 (the var block of a hand-written class)
+[DmPath("/obj/item/shield/adamantineshield")]
+public partial class obj_item_shield_adamantineshield
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_weapons.dm:53
     public obj_item_shield_adamantineshield()
@@ -13810,9 +13810,9 @@ public partial class obj_item_pinpointer_syndicate_cyborg
     }
 }
 
-// tg: code/modules/mining/equipment/vent_pointer.dm:2
-[DmPath("/obj/item/pinpointer/vent"), DmGeneratedOnly, DmInert]
-public partial class obj_item_pinpointer_vent : obj_item_pinpointer
+// tg: code/modules/mining/equipment/vent_pointer.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/pinpointer/vent")]
+public partial class obj_item_pinpointer_vent
 {
     // tg: code/modules/mining/equipment/vent_pointer.dm:2
     public obj_item_pinpointer_vent()
@@ -19688,9 +19688,9 @@ public partial class obj_item_gps_visible_debug : obj_item_gps
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:208
-[DmPath("/obj/item/gps/computer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gps_computer : obj_item_gps
+// tg: code/modules/mining/equipment/survival_pod.dm:208 (the var block of a hand-written class)
+[DmPath("/obj/item/gps/computer")]
+public partial class obj_item_gps_computer
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:208
     public obj_item_gps_computer()
@@ -21137,9 +21137,9 @@ public partial class obj_item_camera_detective : obj_item_camera
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:9
-[DmPath("/obj/item/camera/rewind"), DmGeneratedOnly, DmInert]
-public partial class obj_item_camera_rewind : obj_item_camera
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/camera/rewind")]
+public partial class obj_item_camera_rewind
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:9
     public obj_item_camera_rewind()
@@ -21153,9 +21153,9 @@ public partial class obj_item_camera_rewind : obj_item_camera
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:61
-[DmPath("/obj/item/camera/timefreeze"), DmGeneratedOnly, DmInert]
-public partial class obj_item_camera_timefreeze : obj_item_camera
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:61 (the var block of a hand-written class)
+[DmPath("/obj/item/camera/timefreeze")]
+public partial class obj_item_camera_timefreeze
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:61
     public obj_item_camera_timefreeze()
@@ -25374,9 +25374,9 @@ public partial class obj_item_extinguisher_anti : obj_item_extinguisher
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:5
-[DmPath("/obj/item/tcgcard"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tcgcard : obj_item
+// tg: code/game/objects/items/tcg/tcg.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/tcgcard")]
+public partial class obj_item_tcgcard
 {
     public string id = "code"; // tg: code/game/objects/items/tcg/tcg.dm:11
     public string series = "coderbus"; // tg: code/game/objects/items/tcg/tcg.dm:13
@@ -25395,9 +25395,9 @@ public partial class obj_item_tcgcard : obj_item
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:189
-[DmPath("/obj/item/tcgcard_deck"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tcgcard_deck : obj_item
+// tg: code/game/objects/items/tcg/tcg.dm:189 (the var block of a hand-written class)
+[DmPath("/obj/item/tcgcard_deck")]
+public partial class obj_item_tcgcard_deck
 {
     public float flipped = 0; // tg: code/game/objects/items/tcg/tcg.dm:196
 
@@ -25414,9 +25414,9 @@ public partial class obj_item_tcgcard_deck : obj_item
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:339
-[DmPath("/obj/item/cardpack"), DmGeneratedOnly, DmInert]
-public partial class obj_item_cardpack : obj_item
+// tg: code/game/objects/items/tcg/tcg.dm:339 (the var block of a hand-written class)
+[DmPath("/obj/item/cardpack")]
+public partial class obj_item_cardpack
 {
     public string series = "MEME"; // tg: code/game/objects/items/tcg/tcg.dm:346
     public float contains_coin = -1; // tg: code/game/objects/items/tcg/tcg.dm:348
@@ -25447,7 +25447,7 @@ public partial class obj_item_cardpack : obj_item
 }
 
 // tg: code/game/objects/items/tcg/tcg.dm:370
-[DmPath("/obj/item/cardpack/series_one"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/cardpack/series_one"), DmGeneratedOnly]
 public partial class obj_item_cardpack_series_one : obj_item_cardpack
 {
     // tg: code/game/objects/items/tcg/tcg.dm:370
@@ -25462,7 +25462,7 @@ public partial class obj_item_cardpack_series_one : obj_item_cardpack
 }
 
 // tg: code/game/objects/items/tcg/tcg.dm:377
-[DmPath("/obj/item/cardpack/resin"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/cardpack/resin"), DmGeneratedOnly]
 public partial class obj_item_cardpack_resin : obj_item_cardpack
 {
     // tg: code/game/objects/items/tcg/tcg.dm:377
@@ -26854,9 +26854,9 @@ public partial class obj_item_weldingtool_mini_empty : obj_item_weldingtool_mini
     }
 }
 
-// tg: code/game/objects/items/tools/engineering/weldingtool.dm:379
-[DmPath("/obj/item/weldingtool/abductor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_weldingtool_abductor : obj_item_weldingtool
+// tg: code/game/objects/items/tools/engineering/weldingtool.dm:379 (the var block of a hand-written class)
+[DmPath("/obj/item/weldingtool/abductor")]
+public partial class obj_item_weldingtool_abductor
 {
     // tg: code/game/objects/items/tools/engineering/weldingtool.dm:379
     public obj_item_weldingtool_abductor()
@@ -27184,9 +27184,9 @@ public partial class obj_item_wrench_abductor : obj_item_wrench
     }
 }
 
-// tg: code/game/objects/items/tools/engineering/wrench.dm:54
-[DmPath("/obj/item/wrench/medical"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wrench_medical : obj_item_wrench
+// tg: code/game/objects/items/tools/engineering/wrench.dm:54 (the var block of a hand-written class)
+[DmPath("/obj/item/wrench/medical")]
+public partial class obj_item_wrench_medical
 {
     public object suicider; // tg: code/game/objects/items/tools/engineering/wrench.dm:63
 
@@ -28392,9 +28392,9 @@ public partial class obj_item_gohei : obj_item
     }
 }
 
-// tg: code/game/objects/items/weaponry/melee/soulscythe.dm:4
-[DmPath("/obj/item/soulscythe"), DmGeneratedOnly, DmInert]
-public partial class obj_item_soulscythe : obj_item
+// tg: code/game/objects/items/weaponry/melee/soulscythe.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/soulscythe")]
+public partial class obj_item_soulscythe
 {
     public mob_living_basic_soulscythe soul; // tg: code/game/objects/items/weaponry/melee/soulscythe.dm:24
     public float @using = 0; // tg: code/game/objects/items/weaponry/melee/soulscythe.dm:26
@@ -28749,9 +28749,9 @@ public partial class obj_item_throwing_star_toy : obj_item_throwing_star
     }
 }
 
-// tg: code/game/objects/structures/deployable_turret.dm:230
-[DmPath("/obj/item/gun_control"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gun_control : obj_item
+// tg: code/game/objects/structures/deployable_turret.dm:230 (the var block of a hand-written class)
+[DmPath("/obj/item/gun_control")]
+public partial class obj_item_gun_control
 {
     public obj_machinery_deployable_turret turret; // tg: code/game/objects/structures/deployable_turret.dm:236
 
@@ -31556,9 +31556,9 @@ public partial class obj_item_runic_vendor_scepter : obj_item
     }
 }
 
-// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:2
-[DmPath("/obj/item/soulstone"), DmGeneratedOnly, DmInert]
-public partial class obj_item_soulstone : obj_item
+// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/soulstone")]
+public partial class obj_item_soulstone
 {
     public object base_name; // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:13
     public float one_use = 0; // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:15
@@ -31584,7 +31584,7 @@ public partial class obj_item_soulstone : obj_item
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:590
-[DmPath("/obj/item/soulstone/anybody"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody : obj_item_soulstone
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:590
@@ -31595,7 +31595,7 @@ public partial class obj_item_soulstone_anybody : obj_item_soulstone
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:615
-[DmPath("/obj/item/soulstone/anybody/revolver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/revolver"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_revolver : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:615
@@ -31607,7 +31607,7 @@ public partial class obj_item_soulstone_anybody_revolver : obj_item_soulstone_an
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:619
-[DmPath("/obj/item/soulstone/anybody/purified"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/purified"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_purified : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:619
@@ -31619,7 +31619,7 @@ public partial class obj_item_soulstone_anybody_purified : obj_item_soulstone_an
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:627
-[DmPath("/obj/item/soulstone/anybody/chaplain"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/chaplain"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_chaplain : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:627
@@ -31631,9 +31631,9 @@ public partial class obj_item_soulstone_anybody_chaplain : obj_item_soulstone_an
     }
 }
 
-// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:632
-[DmPath("/obj/item/soulstone/anybody/chaplain/sparring"), DmGeneratedOnly, DmInert]
-public partial class obj_item_soulstone_anybody_chaplain_sparring : obj_item_soulstone_anybody_chaplain
+// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:632 (the var block of a hand-written class)
+[DmPath("/obj/item/soulstone/anybody/chaplain/sparring")]
+public partial class obj_item_soulstone_anybody_chaplain_sparring
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:632
     public obj_item_soulstone_anybody_chaplain_sparring()
@@ -31646,7 +31646,7 @@ public partial class obj_item_soulstone_anybody_chaplain_sparring : obj_item_sou
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:644
-[DmPath("/obj/item/soulstone/anybody/mining"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/anybody/mining"), DmGeneratedOnly]
 public partial class obj_item_soulstone_anybody_mining : obj_item_soulstone_anybody
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:644
@@ -31657,7 +31657,7 @@ public partial class obj_item_soulstone_anybody_mining : obj_item_soulstone_anyb
 }
 
 // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:607
-[DmPath("/obj/item/soulstone/mystic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/soulstone/mystic"), DmGeneratedOnly]
 public partial class obj_item_soulstone_mystic : obj_item_soulstone
 {
     // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:607
@@ -32680,9 +32680,9 @@ public partial class obj_item_modular_computer
     // GAP(types): idle_threads = list() (code/modules/modular_computers/computers/item/computer.dm:50): to be initialized in the hand-written dm_init_vars of obj_item_modular_computer
 }
 
-// tg: code/modules/modular_computers/computers/item/laptop.dm:2
-[DmPath("/obj/item/modular_computer/laptop"), DmGeneratedOnly, DmInert]
-public partial class obj_item_modular_computer_laptop : obj_item_modular_computer
+// tg: code/modules/modular_computers/computers/item/laptop.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/modular_computer/laptop")]
+public partial class obj_item_modular_computer_laptop
 {
     public float start_open = 1; // tg: code/modules/modular_computers/computers/item/laptop.dm:23
     public string icon_state_closed = "laptop-closed"; // tg: code/modules/modular_computers/computers/item/laptop.dm:24
@@ -32717,7 +32717,7 @@ public partial class obj_item_modular_computer_laptop : obj_item_modular_compute
 }
 
 // tg: code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:84 (the var block of a hand-written class)
-[DmPath("/obj/item/modular_computer/laptop/gamer"), DmInert]
+[DmPath("/obj/item/modular_computer/laptop/gamer")]
 public partial class obj_item_modular_computer_laptop_gamer
 {
     // tg: code/modules/bitrunning/objects/gimmick_disks/sports_disk.dm:84
@@ -32737,7 +32737,7 @@ public partial class obj_item_modular_computer_laptop_gamer
 }
 
 // tg: code/modules/modular_computers/computers/item/laptop.dm:128
-[DmPath("/obj/item/modular_computer/laptop/buildable"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/buildable"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_buildable : obj_item_modular_computer_laptop
 {
     // tg: code/modules/modular_computers/computers/item/laptop.dm:128
@@ -32748,11 +32748,11 @@ public partial class obj_item_modular_computer_laptop_buildable : obj_item_modul
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/obj/item/modular_computer/laptop/preset"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/preset"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_preset : obj_item_modular_computer_laptop { }
 
 // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:2
-[DmPath("/obj/item/modular_computer/laptop/preset/civilian"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/preset/civilian"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_preset_civilian : obj_item_modular_computer_laptop_preset
 {
     // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:2
@@ -32770,7 +32770,7 @@ public partial class obj_item_modular_computer_laptop_preset_civilian : obj_item
 }
 
 // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:9
-[DmPath("/obj/item/modular_computer/laptop/preset/mafia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/modular_computer/laptop/preset/mafia"), DmGeneratedOnly]
 public partial class obj_item_modular_computer_laptop_preset_mafia : obj_item_modular_computer_laptop_preset
 {
     // tg: code/modules/modular_computers/computers/item/laptop_presets.dm:9
@@ -34135,9 +34135,9 @@ public partial class obj_item_market_uplink_blackmarket
     }
 }
 
-// tg: code/modules/clothing/belts/polymorph_belt.dm:3
-[DmPath("/obj/item/polymorph_belt"), DmGeneratedOnly, DmInert]
-public partial class obj_item_polymorph_belt : obj_item
+// tg: code/modules/clothing/belts/polymorph_belt.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/polymorph_belt")]
+public partial class obj_item_polymorph_belt
 {
     public object stored_mob_type; // tg: code/modules/clothing/belts/polymorph_belt.dm:13
     public float? active = 0; // tg: code/modules/clothing/belts/polymorph_belt.dm:15
@@ -34165,7 +34165,7 @@ public partial class obj_item_polymorph_belt : obj_item
 }
 
 // tg: code/modules/clothing/belts/polymorph_belt.dm:106
-[DmPath("/obj/item/polymorph_belt/functioning"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/polymorph_belt/functioning"), DmGeneratedOnly]
 public partial class obj_item_polymorph_belt_functioning : obj_item_polymorph_belt
 {
     // tg: code/modules/clothing/belts/polymorph_belt.dm:106
@@ -34303,9 +34303,9 @@ public partial class obj_item_collar_bomb_button : obj_item
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:2
-[DmPath("/obj/item/reactive_armor_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_item_reactive_armor_shell : obj_item
+// tg: code/modules/clothing/suits/reactive_armour.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/reactive_armor_shell")]
+public partial class obj_item_reactive_armor_shell
 {
     // tg: code/modules/clothing/suits/reactive_armour.dm:2
     public obj_item_reactive_armor_shell()
@@ -34655,13 +34655,12 @@ public partial class obj_item_experi_scanner
     }
 }
 
-// tg: code/modules/explorer_drone/exodrone.dm:23
-[DmPath("/obj/item/exodrone"), DmGeneratedOnly, DmInert]
-public partial class obj_item_exodrone : obj_item
+// tg: code/modules/explorer_drone/exodrone.dm:23 (the vars the hand-written class does not declare)
+[DmPath("/obj/item/exodrone")]
+public partial class obj_item_exodrone
 {
     public string drone_status = "idle"; // tg: code/modules/explorer_drone/exodrone.dm:30
     public float controlled = 0; // tg: code/modules/explorer_drone/exodrone.dm:32
-    public Type location; // tg: code/modules/explorer_drone/exodrone.dm:34
     public datum_exploration_site travel_target; // tg: code/modules/explorer_drone/exodrone.dm:36
     public object travel_time; // tg: code/modules/explorer_drone/exodrone.dm:38
     public object travel_timer_id; // tg: code/modules/explorer_drone/exodrone.dm:40
@@ -34675,16 +34674,6 @@ public partial class obj_item_exodrone : obj_item
     public DmList tools; // tg: code/modules/explorer_drone/exodrone.dm:56
     public float travel_cost_coeff = 250; // tg: code/modules/explorer_drone/exodrone.dm:58
 
-    // tg: code/modules/explorer_drone/exodrone.dm:23
-    public obj_item_exodrone()
-    {
-        name = "exploration drone";
-        desc = "A long range, semi-autonomous exploration drone.";
-        icon = Dm.resource("icons/obj/exploration.dmi");
-        icon_state = "drone";
-        w_class = 4;
-    }
-
     // tg: code/modules/explorer_drone/exodrone.dm:54
     protected internal override void dm_init_vars()
     {
@@ -34694,9 +34683,9 @@ public partial class obj_item_exodrone : obj_item
     }
 }
 
-// tg: code/modules/explorer_drone/exodrone.dm:465
-[DmPath("/obj/item/fuel_pellet"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fuel_pellet : obj_item
+// tg: code/modules/explorer_drone/exodrone.dm:465 (the var block of a hand-written class)
+[DmPath("/obj/item/fuel_pellet")]
+public partial class obj_item_fuel_pellet
 {
     public string fuel_type = "basic"; // tg: code/modules/explorer_drone/exodrone.dm:470
     public float uses = 5; // tg: code/modules/explorer_drone/exodrone.dm:472
@@ -34712,7 +34701,7 @@ public partial class obj_item_fuel_pellet : obj_item
 }
 
 // tg: code/modules/explorer_drone/exodrone.dm:480
-[DmPath("/obj/item/fuel_pellet/advanced"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fuel_pellet/advanced"), DmGeneratedOnly]
 public partial class obj_item_fuel_pellet_advanced : obj_item_fuel_pellet
 {
     // tg: code/modules/explorer_drone/exodrone.dm:480
@@ -34725,7 +34714,7 @@ public partial class obj_item_fuel_pellet_advanced : obj_item_fuel_pellet
 }
 
 // tg: code/modules/explorer_drone/exodrone.dm:485
-[DmPath("/obj/item/fuel_pellet/exotic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fuel_pellet/exotic"), DmGeneratedOnly]
 public partial class obj_item_fuel_pellet_exotic : obj_item_fuel_pellet
 {
     // tg: code/modules/explorer_drone/exodrone.dm:485
@@ -34767,30 +34756,17 @@ public partial class obj_item_trade_chip
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:146
-[DmPath("/obj/item/firelance"), DmGeneratedOnly, DmInert]
-public partial class obj_item_firelance : obj_item
+// tg: code/modules/explorer_drone/loot.dm:146 (the vars the hand-written class does not declare)
+[DmPath("/obj/item/firelance")]
+public partial class obj_item_firelance
 {
     public float windup_time = 100; // tg: code/modules/explorer_drone/loot.dm:153
     public float melt_range = 3; // tg: code/modules/explorer_drone/loot.dm:154
-    public Type cell; // tg: code/modules/explorer_drone/loot.dm:155
-
-    // tg: code/modules/explorer_drone/loot.dm:146
-    public obj_item_firelance()
-    {
-        name = "fire lance";
-        desc = "Melts everything in front of you. Takes a while to start and operate.";
-        icon = Dm.resource("icons/obj/exploration.dmi");
-        icon_state = "firelance";
-        inhand_icon_state = "firelance";
-        righthand_file = Dm.resource("icons/mob/inhands/items/firelance_righthand.dmi");
-        lefthand_file = Dm.resource("icons/mob/inhands/items/firelance_lefthand.dmi");
-    }
 }
 
-// tg: code/modules/fishing/bait.dm:2
-[DmPath("/obj/item/bait_can"), DmGeneratedOnly, DmInert]
-public partial class obj_item_bait_can : obj_item
+// tg: code/modules/fishing/bait.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/bait_can")]
+public partial class obj_item_bait_can
 {
     public float bait_removal_cooldown = 0; // tg: code/modules/fishing/bait.dm:9
     public Type bait_type = typeof(obj_item_food_bait); // tg: code/modules/fishing/bait.dm:11
@@ -34810,7 +34786,7 @@ public partial class obj_item_bait_can : obj_item
 }
 
 // tg: code/modules/fishing/bait.dm:49
-[DmPath("/obj/item/bait_can/worm"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bait_can/worm"), DmGeneratedOnly]
 public partial class obj_item_bait_can_worm : obj_item_bait_can
 {
     // tg: code/modules/fishing/bait.dm:49
@@ -34823,7 +34799,7 @@ public partial class obj_item_bait_can_worm : obj_item_bait_can
 }
 
 // tg: code/modules/fishing/bait.dm:54
-[DmPath("/obj/item/bait_can/worm/premium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bait_can/worm/premium"), DmGeneratedOnly]
 public partial class obj_item_bait_can_worm_premium : obj_item_bait_can_worm
 {
     // tg: code/modules/fishing/bait.dm:54
@@ -34836,7 +34812,7 @@ public partial class obj_item_bait_can_worm_premium : obj_item_bait_can_worm
 }
 
 // tg: code/modules/fishing/bait.dm:59
-[DmPath("/obj/item/bait_can/super_baits"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/bait_can/super_baits"), DmGeneratedOnly]
 public partial class obj_item_bait_can_super_baits : obj_item_bait_can
 {
     // tg: code/modules/fishing/bait.dm:59
@@ -34849,9 +34825,9 @@ public partial class obj_item_bait_can_super_baits : obj_item_bait_can
     }
 }
 
-// tg: code/modules/fishing/bait.dm:65
-[DmPath("/obj/item/fishing_lure"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure : obj_item
+// tg: code/modules/fishing/bait.dm:65 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure")]
+public partial class obj_item_fishing_lure
 {
     public DmList spin_frequency; // tg: code/modules/fishing/bait.dm:74
 
@@ -34873,9 +34849,9 @@ public partial class obj_item_fishing_lure : obj_item
     }
 }
 
-// tg: code/modules/fishing/bait.dm:130
-[DmPath("/obj/item/fishing_lure/minnow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_minnow : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:130 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/minnow")]
+public partial class obj_item_fishing_lure_minnow
 {
     // tg: code/modules/fishing/bait.dm:130
     public obj_item_fishing_lure_minnow()
@@ -34886,9 +34862,9 @@ public partial class obj_item_fishing_lure_minnow : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:143
-[DmPath("/obj/item/fishing_lure/plug"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_plug : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:143 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/plug")]
+public partial class obj_item_fishing_lure_plug
 {
     // tg: code/modules/fishing/bait.dm:143
     public obj_item_fishing_lure_plug()
@@ -34899,9 +34875,9 @@ public partial class obj_item_fishing_lure_plug : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:155
-[DmPath("/obj/item/fishing_lure/dropping"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_dropping : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:155 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/dropping")]
+public partial class obj_item_fishing_lure_dropping
 {
     // tg: code/modules/fishing/bait.dm:155
     public obj_item_fishing_lure_dropping()
@@ -34919,9 +34895,9 @@ public partial class obj_item_fishing_lure_dropping : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:175
-[DmPath("/obj/item/fishing_lure/spoon"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_spoon : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:175 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/spoon")]
+public partial class obj_item_fishing_lure_spoon
 {
     // tg: code/modules/fishing/bait.dm:175
     public obj_item_fishing_lure_spoon()
@@ -34939,9 +34915,9 @@ public partial class obj_item_fishing_lure_spoon : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:193
-[DmPath("/obj/item/fishing_lure/artificial_fly"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_artificial_fly : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/artificial_fly")]
+public partial class obj_item_fishing_lure_artificial_fly
 {
     // tg: code/modules/fishing/bait.dm:193
     public obj_item_fishing_lure_artificial_fly()
@@ -34959,9 +34935,9 @@ public partial class obj_item_fishing_lure_artificial_fly : obj_item_fishing_lur
     }
 }
 
-// tg: code/modules/fishing/bait.dm:204
-[DmPath("/obj/item/fishing_lure/led"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_led : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:204 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/led")]
+public partial class obj_item_fishing_lure_led
 {
     // tg: code/modules/fishing/bait.dm:204
     public obj_item_fishing_lure_led()
@@ -34979,9 +34955,9 @@ public partial class obj_item_fishing_lure_led : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:231
-[DmPath("/obj/item/fishing_lure/lucky_coin"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_lucky_coin : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:231 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/lucky_coin")]
+public partial class obj_item_fishing_lure_lucky_coin
 {
     // tg: code/modules/fishing/bait.dm:231
     public obj_item_fishing_lure_lucky_coin()
@@ -34999,9 +34975,9 @@ public partial class obj_item_fishing_lure_lucky_coin : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:250
-[DmPath("/obj/item/fishing_lure/algae"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_algae : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:250 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/algae")]
+public partial class obj_item_fishing_lure_algae
 {
     // tg: code/modules/fishing/bait.dm:250
     public obj_item_fishing_lure_algae()
@@ -35019,9 +34995,9 @@ public partial class obj_item_fishing_lure_algae : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:261
-[DmPath("/obj/item/fishing_lure/grub"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_grub : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:261 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/grub")]
+public partial class obj_item_fishing_lure_grub
 {
     // tg: code/modules/fishing/bait.dm:261
     public obj_item_fishing_lure_grub()
@@ -35039,9 +35015,9 @@ public partial class obj_item_fishing_lure_grub : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:274
-[DmPath("/obj/item/fishing_lure/buzzbait"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_buzzbait : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:274 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/buzzbait")]
+public partial class obj_item_fishing_lure_buzzbait
 {
     // tg: code/modules/fishing/bait.dm:274
     public obj_item_fishing_lure_buzzbait()
@@ -35059,9 +35035,9 @@ public partial class obj_item_fishing_lure_buzzbait : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:285
-[DmPath("/obj/item/fishing_lure/spinnerbait"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_spinnerbait : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:285 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/spinnerbait")]
+public partial class obj_item_fishing_lure_spinnerbait
 {
     // tg: code/modules/fishing/bait.dm:285
     public obj_item_fishing_lure_spinnerbait()
@@ -35079,9 +35055,9 @@ public partial class obj_item_fishing_lure_spinnerbait : obj_item_fishing_lure
     }
 }
 
-// tg: code/modules/fishing/bait.dm:301
-[DmPath("/obj/item/fishing_lure/daisy_chain"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_lure_daisy_chain : obj_item_fishing_lure
+// tg: code/modules/fishing/bait.dm:301 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_lure/daisy_chain")]
+public partial class obj_item_fishing_lure_daisy_chain
 {
     // tg: code/modules/fishing/bait.dm:301
     public obj_item_fishing_lure_daisy_chain()
@@ -35119,9 +35095,9 @@ public partial class obj_item_fishing_line : obj_item
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:25
-[DmPath("/obj/item/fishing_line/reinforced"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_line_reinforced : obj_item_fishing_line
+// tg: code/modules/fishing/fishing_equipment.dm:25 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_line/reinforced")]
+public partial class obj_item_fishing_line_reinforced
 {
     // tg: code/modules/fishing/fishing_equipment.dm:25
     public obj_item_fishing_line_reinforced()
@@ -35168,9 +35144,9 @@ public partial class obj_item_fishing_line_bouncy : obj_item_fishing_line
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:63
-[DmPath("/obj/item/fishing_line/sinew"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_line_sinew : obj_item_fishing_line
+// tg: code/modules/fishing/fishing_equipment.dm:63 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_line/sinew")]
+public partial class obj_item_fishing_line_sinew
 {
     // tg: code/modules/fishing/fishing_equipment.dm:63
     public obj_item_fishing_line_sinew()
@@ -35185,9 +35161,9 @@ public partial class obj_item_fishing_line_sinew : obj_item_fishing_line
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:90
-[DmPath("/obj/item/fishing_line/auto_reel"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_line_auto_reel : obj_item_fishing_line
+// tg: code/modules/fishing/fishing_equipment.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_line/auto_reel")]
+public partial class obj_item_fishing_line_auto_reel
 {
     // tg: code/modules/fishing/fishing_equipment.dm:90
     public obj_item_fishing_line_auto_reel()
@@ -35233,9 +35209,9 @@ public partial class obj_item_fishing_line_bluespace : obj_item_fishing_line
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:162
-[DmPath("/obj/item/fishing_hook"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook : obj_item
+// tg: code/modules/fishing/fishing_equipment.dm:162 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook")]
+public partial class obj_item_fishing_hook
 {
     public object fishing_hook_traits; // tg: code/modules/fishing/fishing_equipment.dm:170
     public string rod_overlay_icon_state = "hook_overlay"; // tg: code/modules/fishing/fishing_equipment.dm:172
@@ -35260,9 +35236,9 @@ public partial class obj_item_fishing_hook : obj_item
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:217
-[DmPath("/obj/item/fishing_hook/magnet"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_magnet : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:217 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/magnet")]
+public partial class obj_item_fishing_hook_magnet
 {
     // tg: code/modules/fishing/fishing_equipment.dm:217
     public obj_item_fishing_hook_magnet()
@@ -35276,9 +35252,9 @@ public partial class obj_item_fishing_hook_magnet : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:245
-[DmPath("/obj/item/fishing_hook/shiny"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_shiny : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:245 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/shiny")]
+public partial class obj_item_fishing_hook_shiny
 {
     // tg: code/modules/fishing/fishing_equipment.dm:245
     public obj_item_fishing_hook_shiny()
@@ -35290,9 +35266,9 @@ public partial class obj_item_fishing_hook_shiny : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:264
-[DmPath("/obj/item/fishing_hook/anomaly"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_anomaly : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:264 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/anomaly")]
+public partial class obj_item_fishing_hook_anomaly
 {
     public obj_item_assembly_signaler_anomaly core; // tg: code/modules/fishing/fishing_equipment.dm:269
 
@@ -35306,7 +35282,7 @@ public partial class obj_item_fishing_hook_anomaly : obj_item_fishing_hook
 }
 
 // tg: code/modules/fishing/fishing_equipment.dm:480
-[DmPath("/obj/item/fishing_hook/weighted"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fishing_hook/weighted"), DmGeneratedOnly]
 public partial class obj_item_fishing_hook_weighted : obj_item_fishing_hook
 {
     // tg: code/modules/fishing/fishing_equipment.dm:480
@@ -35320,9 +35296,9 @@ public partial class obj_item_fishing_hook_weighted : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:487
-[DmPath("/obj/item/fishing_hook/rescue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_rescue : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:487 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/rescue")]
+public partial class obj_item_fishing_hook_rescue
 {
     // tg: code/modules/fishing/fishing_equipment.dm:487
     public obj_item_fishing_hook_rescue()
@@ -35337,7 +35313,7 @@ public partial class obj_item_fishing_hook_rescue : obj_item_fishing_hook
 }
 
 // tg: code/modules/fishing/fishing_equipment.dm:520
-[DmPath("/obj/item/fishing_hook/bone"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fishing_hook/bone"), DmGeneratedOnly]
 public partial class obj_item_fishing_hook_bone : obj_item_fishing_hook
 {
     // tg: code/modules/fishing/fishing_equipment.dm:520
@@ -35357,9 +35333,9 @@ public partial class obj_item_fishing_hook_bone : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:527
-[DmPath("/obj/item/fishing_hook/stabilized"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_stabilized : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:527 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/stabilized")]
+public partial class obj_item_fishing_hook_stabilized
 {
     // tg: code/modules/fishing/fishing_equipment.dm:527
     public obj_item_fishing_hook_stabilized()
@@ -35380,9 +35356,9 @@ public partial class obj_item_fishing_hook_stabilized : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:541
-[DmPath("/obj/item/fishing_hook/jaws"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_hook_jaws : obj_item_fishing_hook
+// tg: code/modules/fishing/fishing_equipment.dm:541 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_hook/jaws")]
+public partial class obj_item_fishing_hook_jaws
 {
     // tg: code/modules/fishing/fishing_equipment.dm:541
     public obj_item_fishing_hook_jaws()
@@ -35397,9 +35373,9 @@ public partial class obj_item_fishing_hook_jaws : obj_item_fishing_hook
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:13
-[DmPath("/obj/item/survivalcapsule"), DmGeneratedOnly, DmInert]
-public partial class obj_item_survivalcapsule : obj_item
+// tg: code/modules/mining/equipment/survival_pod.dm:13 (the var block of a hand-written class)
+[DmPath("/obj/item/survivalcapsule")]
+public partial class obj_item_survivalcapsule
 {
     public string template_id = "shelter_alpha"; // tg: code/modules/mining/equipment/survival_pod.dm:19
     public datum_map_template_shelter template; // tg: code/modules/mining/equipment/survival_pod.dm:21
@@ -35417,9 +35393,9 @@ public partial class obj_item_survivalcapsule : obj_item
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:590
-[DmPath("/obj/item/survivalcapsule/fishing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_survivalcapsule_fishing : obj_item_survivalcapsule
+// tg: code/modules/fishing/fishing_equipment.dm:590 (the var block of a hand-written class)
+[DmPath("/obj/item/survivalcapsule/fishing")]
+public partial class obj_item_survivalcapsule_fishing
 {
     // tg: code/modules/fishing/fishing_equipment.dm:590
     public obj_item_survivalcapsule_fishing()
@@ -35437,7 +35413,7 @@ public partial class obj_item_survivalcapsule_fishing : obj_item_survivalcapsule
 }
 
 // tg: code/modules/fishing/fishing_equipment.dm:680
-[DmPath("/obj/item/survivalcapsule/fishing/hacked"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/fishing/hacked"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_fishing_hacked : obj_item_survivalcapsule_fishing
 {
     // tg: code/modules/fishing/fishing_equipment.dm:680
@@ -35448,7 +35424,7 @@ public partial class obj_item_survivalcapsule_fishing_hacked : obj_item_survival
 }
 
 // tg: code/modules/mining/equipment/survival_pod.dm:137
-[DmPath("/obj/item/survivalcapsule/luxury"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/luxury"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_luxury : obj_item_survivalcapsule
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:137
@@ -35461,7 +35437,7 @@ public partial class obj_item_survivalcapsule_luxury : obj_item_survivalcapsule
 }
 
 // tg: code/modules/mining/equipment/survival_pod.dm:142
-[DmPath("/obj/item/survivalcapsule/luxuryelite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/luxuryelite"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_luxuryelite : obj_item_survivalcapsule
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:142
@@ -35474,7 +35450,7 @@ public partial class obj_item_survivalcapsule_luxuryelite : obj_item_survivalcap
 }
 
 // tg: code/modules/mining/equipment/survival_pod.dm:147
-[DmPath("/obj/item/survivalcapsule/bathroom"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/survivalcapsule/bathroom"), DmGeneratedOnly]
 public partial class obj_item_survivalcapsule_bathroom : obj_item_survivalcapsule
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:147
@@ -35486,9 +35462,9 @@ public partial class obj_item_survivalcapsule_bathroom : obj_item_survivalcapsul
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:714
-[DmPath("/obj/item/fish_genegun"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_genegun : obj_item
+// tg: code/modules/fishing/fishing_equipment.dm:714 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_genegun")]
+public partial class obj_item_fish_genegun
 {
     public obj_item loaded_injector; // tg: code/modules/fishing/fishing_equipment.dm:731
 
@@ -35520,32 +35496,13 @@ public partial class obj_item_fish_genegun : obj_item
     }
 }
 
-// tg: code/modules/fishing/fishing_equipment.dm:848
-[DmPath("/obj/item/fish_gene"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_gene : obj_item
-{
-    public datum_fish_trait trait_type; // tg: code/modules/fishing/fishing_equipment.dm:859
+// tg: code/modules/fishing/fishing_equipment.dm:848 (the vars the hand-written class does not declare)
+[DmPath("/obj/item/fish_gene")]
+public partial class obj_item_fish_gene { }
 
-    // tg: code/modules/fishing/fishing_equipment.dm:848
-    public obj_item_fish_gene()
-    {
-        name = "fish trait injector";
-        icon = Dm.resource("icons/obj/fishing.dmi");
-        icon_state = "fish_trait_injector";
-        desc = "A single-use injector containing a specific trait that can be used on any (living) fish compatible with it.";
-        w_class = 1;
-        inhand_icon_state = "dnainjector";
-        worn_icon_state = "pen";
-        lefthand_file = Dm.resource("icons/mob/inhands/equipment/medical_lefthand.dmi");
-        righthand_file = Dm.resource("icons/mob/inhands/equipment/medical_righthand.dmi");
-        throw_speed = 3;
-        throw_range = 5;
-    }
-}
-
-// tg: code/modules/fishing/aquarium/aquarium.dm:123
-[DmPath("/obj/item/fish_tank"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_tank : obj_item
+// tg: code/modules/fishing/aquarium/aquarium.dm:123 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_tank")]
+public partial class obj_item_fish_tank
 {
     public string fluid_type = "Freshwater"; // tg: code/modules/fishing/aquarium/aquarium.dm:138
     public float maximum_relative_size = 100; // tg: code/modules/fishing/aquarium/aquarium.dm:141
@@ -35582,9 +35539,9 @@ public partial class obj_item_fish_tank : obj_item
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium.dm:260
-[DmPath("/obj/item/fish_tank/lawyer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_tank_lawyer : obj_item_fish_tank
+// tg: code/modules/fishing/aquarium/aquarium.dm:260 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_tank/lawyer")]
+public partial class obj_item_fish_tank_lawyer
 {
     // tg: code/modules/fishing/aquarium/aquarium.dm:260
     public obj_item_fish_tank_lawyer()
@@ -35594,7 +35551,7 @@ public partial class obj_item_fish_tank_lawyer : obj_item_fish_tank
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:72
-[DmPath("/obj/item/fish_tank/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish_tank/bluespace"), DmGeneratedOnly]
 public partial class obj_item_fish_tank_bluespace : obj_item_fish_tank
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:72
@@ -35614,9 +35571,9 @@ public partial class obj_item_fish_tank_bluespace : obj_item_fish_tank
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:121
-[DmPath("/obj/item/aquarium_kit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_aquarium_kit : obj_item
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:121 (the var block of a hand-written class)
+[DmPath("/obj/item/aquarium_kit")]
+public partial class obj_item_aquarium_kit
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:121
     public obj_item_aquarium_kit()
@@ -35636,9 +35593,9 @@ public partial class obj_item_aquarium_kit : obj_item
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:134
-[DmPath("/obj/item/aquarium_prop"), DmGeneratedOnly, DmInert]
-public partial class obj_item_aquarium_prop : obj_item
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:134 (the var block of a hand-written class)
+[DmPath("/obj/item/aquarium_prop")]
+public partial class obj_item_aquarium_prop
 {
     public string layer_mode = "bottom"; // tg: code/modules/fishing/aquarium/aquarium_kit.dm:140
     public float beauty = 150; // tg: code/modules/fishing/aquarium/aquarium_kit.dm:141
@@ -35661,7 +35618,7 @@ public partial class obj_item_aquarium_prop : obj_item
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:163
-[DmPath("/obj/item/aquarium_prop/rocks"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/rocks"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_rocks : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:163
@@ -35674,7 +35631,7 @@ public partial class obj_item_aquarium_prop_rocks : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:168
-[DmPath("/obj/item/aquarium_prop/seaweed"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/seaweed"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_seaweed : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:168
@@ -35688,7 +35645,7 @@ public partial class obj_item_aquarium_prop_seaweed : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:174
-[DmPath("/obj/item/aquarium_prop/seaweed/top"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/seaweed/top"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_seaweed_top : obj_item_aquarium_prop_seaweed
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:174
@@ -35701,7 +35658,7 @@ public partial class obj_item_aquarium_prop_seaweed_top : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:179
-[DmPath("/obj/item/aquarium_prop/sand"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/sand"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_sand : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:179
@@ -35715,7 +35672,7 @@ public partial class obj_item_aquarium_prop_sand : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:185
-[DmPath("/obj/item/aquarium_prop/treasure"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/treasure"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_treasure : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:185
@@ -35728,9 +35685,9 @@ public partial class obj_item_aquarium_prop_treasure : obj_item_aquarium_prop
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:4
-[DmPath("/obj/item/aquarium_upgrade"), DmGeneratedOnly, DmInert]
-public partial class obj_item_aquarium_upgrade : obj_item
+// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/aquarium_upgrade")]
+public partial class obj_item_aquarium_upgrade
 {
     public Type upgrade_from_type = typeof(obj_structure_aquarium); // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:10
     public Type upgrade_to_type = typeof(obj_structure_aquarium); // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:12
@@ -35746,7 +35703,7 @@ public partial class obj_item_aquarium_upgrade : obj_item
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:32
-[DmPath("/obj/item/aquarium_upgrade/bioelec_gen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_upgrade/bioelec_gen"), DmGeneratedOnly]
 public partial class obj_item_aquarium_upgrade_bioelec_gen : obj_item_aquarium_upgrade
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:32
@@ -35767,7 +35724,7 @@ public partial class obj_item_aquarium_upgrade_bioelec_gen : obj_item_aquarium_u
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:64
-[DmPath("/obj/item/aquarium_upgrade/bluespace_tank"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_upgrade/bluespace_tank"), DmGeneratedOnly]
 public partial class obj_item_aquarium_upgrade_bluespace_tank : obj_item_aquarium_upgrade
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:64
@@ -35788,9 +35745,9 @@ public partial class obj_item_aquarium_upgrade_bluespace_tank : obj_item_aquariu
     }
 }
 
-// tg: code/modules/fishing/aquarium/fish_analyzer.dm:3
-[DmPath("/obj/item/fish_analyzer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_analyzer : obj_item
+// tg: code/modules/fishing/aquarium/fish_analyzer.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_analyzer")]
+public partial class obj_item_fish_analyzer
 {
     public object case_color; // tg: code/modules/fishing/aquarium/fish_analyzer.dm:24
     public atom scanned_object; // tg: code/modules/fishing/aquarium/fish_analyzer.dm:26
@@ -37044,9 +37001,9 @@ public partial class obj_item_instrument_violin_golden : obj_item_instrument_vio
     }
 }
 
-// tg: code/modules/religion/festival/festival_violin.dm:2
-[DmPath("/obj/item/instrument/violin/festival"), DmGeneratedOnly, DmInert]
-public partial class obj_item_instrument_violin_festival : obj_item_instrument_violin
+// tg: code/modules/religion/festival/festival_violin.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/instrument/violin/festival")]
+public partial class obj_item_instrument_violin_festival
 {
     // tg: code/modules/religion/festival/festival_violin.dm:2
     public obj_item_instrument_violin_festival()
@@ -37600,9 +37557,9 @@ public partial class obj_item_vorpalscythe : obj_item
     }
 }
 
-// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:163
-[DmPath("/obj/item/secure_camera_console_pod"), DmGeneratedOnly, DmInert]
-public partial class obj_item_secure_camera_console_pod : obj_item
+// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:163 (the var block of a hand-written class)
+[DmPath("/obj/item/secure_camera_console_pod")]
+public partial class obj_item_secure_camera_console_pod
 {
     // tg: code/modules/jobs/job_types/station_trait/human_ai.dm:163
     public obj_item_secure_camera_console_pod()
@@ -38580,9 +38537,9 @@ public partial class obj_item_feather : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:6
-[DmPath("/obj/item/freeze_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_freeze_cube : obj_item
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/freeze_cube")]
+public partial class obj_item_freeze_cube
 {
     public float? cooldown_time = 50; // tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:14
     public float freeze_cooldown = 0; // tg: code/modules/mapfluff/ruins/lavalandruin_code/biodome_winter.dm:15
@@ -38600,9 +38557,9 @@ public partial class obj_item_freeze_cube : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318
-[DmPath("/obj/item/prisoncube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_prisoncube : obj_item
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318 (the var block of a hand-written class)
+[DmPath("/obj/item/prisoncube")]
+public partial class obj_item_prisoncube
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:318
     public obj_item_prisoncube()
@@ -38614,9 +38571,9 @@ public partial class obj_item_prisoncube : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:94
-[DmPath("/obj/item/watcher_hatchling"), DmGeneratedOnly, DmInert]
-public partial class obj_item_watcher_hatchling : obj_item
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:94 (the var block of a hand-written class)
+[DmPath("/obj/item/watcher_hatchling")]
+public partial class obj_item_watcher_hatchling
 {
     public obj_effect_watcher_orbiter orbiter; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:100
     public mob_living owner; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:102
@@ -38706,9 +38663,9 @@ public partial class obj_item_abstracthotelstorage : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:3
-[DmPath("/obj/item/petri_dish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_petri_dish : obj_item
+// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/petri_dish")]
+public partial class obj_item_petri_dish
 {
     public datum_biological_sample sample; // tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:10
 
@@ -38730,9 +38687,9 @@ public partial class obj_item_petri_dish : obj_item
     }
 }
 
-// tg: code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2
-[DmPath("/obj/item/petri_dish/oldstation"), DmGeneratedOnly, DmInert]
-public partial class obj_item_petri_dish_oldstation : obj_item_petri_dish
+// tg: code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/petri_dish/oldstation")]
+public partial class obj_item_petri_dish_oldstation
 {
     // tg: code/modules/mapfluff/ruins/spaceruin_code/oldstation/oldstation_cytology.dm:2
     public obj_item_petri_dish_oldstation()
@@ -38742,9 +38699,9 @@ public partial class obj_item_petri_dish_oldstation : obj_item_petri_dish
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59
-[DmPath("/obj/item/petri_dish/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_petri_dish_random : obj_item_petri_dish
+// tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59 (the var block of a hand-written class)
+[DmPath("/obj/item/petri_dish/random")]
+public partial class obj_item_petri_dish_random
 {
     // tg: code/modules/research/xenobiology/vatgrowing/petri_dish.dm:59
     public obj_item_petri_dish_random()
@@ -38778,9 +38735,9 @@ public partial class obj_item_assault_pod
     }
 }
 
-// tg: code/modules/mining/aux_base.dm:258
-[DmPath("/obj/item/assault_pod/mining"), DmGeneratedOnly, DmInert]
-public partial class obj_item_assault_pod_mining : obj_item_assault_pod
+// tg: code/modules/mining/aux_base.dm:258 (the var block of a hand-written class)
+[DmPath("/obj/item/assault_pod/mining")]
+public partial class obj_item_assault_pod_mining
 {
     public float? setting = 0; // tg: code/modules/mining/aux_base.dm:267
     public float no_restrictions = 0; // tg: code/modules/mining/aux_base.dm:268
@@ -38801,7 +38758,7 @@ public partial class obj_item_assault_pod_mining : obj_item_assault_pod
 }
 
 // tg: code/modules/mining/aux_base.dm:307
-[DmPath("/obj/item/assault_pod/mining/unrestricted"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/assault_pod/mining/unrestricted"), DmGeneratedOnly]
 public partial class obj_item_assault_pod_mining_unrestricted : obj_item_assault_pod_mining
 {
     // tg: code/modules/mining/aux_base.dm:307
@@ -38864,9 +38821,9 @@ public partial class obj_item_extraction_pack
     }
 }
 
-// tg: code/modules/mining/fulton.dm:200
-[DmPath("/obj/item/extraction_pack/networked"), DmGeneratedOnly, DmInert]
-public partial class obj_item_extraction_pack_networked : obj_item_extraction_pack
+// tg: code/modules/mining/fulton.dm:200 (the var block of a hand-written class)
+[DmPath("/obj/item/extraction_pack/networked")]
+public partial class obj_item_extraction_pack_networked
 {
     // tg: code/modules/mining/fulton.dm:200
     public obj_item_extraction_pack_networked()
@@ -38979,9 +38936,9 @@ public partial class obj_item_boulder_beacon
     }
 }
 
-// tg: code/modules/mining/equipment/grapple_gun.dm:4
-[DmPath("/obj/item/grapple_gun"), DmGeneratedOnly, DmInert]
-public partial class obj_item_grapple_gun : obj_item
+// tg: code/modules/mining/equipment/grapple_gun.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/grapple_gun")]
+public partial class obj_item_grapple_gun
 {
     public float hooked = 1; // tg: code/modules/mining/equipment/grapple_gun.dm:15
     public object grapple_timer_id; // tg: code/modules/mining/equipment/grapple_gun.dm:17
@@ -39057,9 +39014,9 @@ public partial class obj_item_mining_scanner
 [DmPath("/obj/item/mining_scanner/admin")]
 public partial class obj_item_mining_scanner_admin { }
 
-// tg: code/modules/mining/equipment/mining_tools.dm:3
-[DmPath("/obj/item/pickaxe"), DmGeneratedOnly]
-public partial class obj_item_pickaxe : obj_item
+// tg: code/modules/mining/equipment/mining_tools.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/pickaxe")]
+public partial class obj_item_pickaxe
 {
     // tg: code/modules/mining/equipment/mining_tools.dm:3
     public obj_item_pickaxe()
@@ -39243,9 +39200,9 @@ public partial class obj_item_pickaxe_drill_jackhammer : obj_item_pickaxe_drill
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:82
-[DmPath("/obj/item/pickaxe/drill/jackhammer/demonic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_pickaxe_drill_jackhammer_demonic : obj_item_pickaxe_drill_jackhammer
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:82 (the var block of a hand-written class)
+[DmPath("/obj/item/pickaxe/drill/jackhammer/demonic")]
+public partial class obj_item_pickaxe_drill_jackhammer_demonic
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:82
     public obj_item_pickaxe_drill_jackhammer_demonic()
@@ -39552,9 +39509,9 @@ public partial class obj_item_resonator_upgraded
     }
 }
 
-// tg: code/modules/mining/equipment/survival_pod.dm:286
-[DmPath("/obj/item/fakeartefact"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fakeartefact : obj_item
+// tg: code/modules/mining/equipment/survival_pod.dm:286 (the var block of a hand-written class)
+[DmPath("/obj/item/fakeartefact")]
+public partial class obj_item_fakeartefact
 {
     // tg: code/modules/mining/equipment/survival_pod.dm:286
     public obj_item_fakeartefact()
@@ -39565,9 +39522,9 @@ public partial class obj_item_fakeartefact : obj_item
     }
 }
 
-// tg: code/modules/mining/equipment/wormhole_jaunter.dm:3
-[DmPath("/obj/item/wormhole_jaunter"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wormhole_jaunter : obj_item
+// tg: code/modules/mining/equipment/wormhole_jaunter.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/wormhole_jaunter")]
+public partial class obj_item_wormhole_jaunter
 {
     // tg: code/modules/mining/equipment/wormhole_jaunter.dm:3
     public obj_item_wormhole_jaunter()
@@ -39588,9 +39545,9 @@ public partial class obj_item_wormhole_jaunter : obj_item
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:9
-[DmPath("/obj/item/kinetic_crusher"), DmGeneratedOnly, DmInert]
-public partial class obj_item_kinetic_crusher : obj_item
+// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/kinetic_crusher")]
+public partial class obj_item_kinetic_crusher
 {
     public object toggle_light_sound = Dm.resource("sound/items/weapons/empty.ogg"); // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:41
     public object fire_kinetic_blast_sound = Dm.resource("sound/items/weapons/plasma_cutter.ogg"); // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:43
@@ -39650,7 +39607,7 @@ public partial class obj_item_kinetic_crusher : obj_item
 }
 
 // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:290
-[DmPath("/obj/item/kinetic_crusher/compact"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/kinetic_crusher/compact"), DmGeneratedOnly]
 public partial class obj_item_kinetic_crusher_compact : obj_item_kinetic_crusher
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher.dm:290
@@ -39661,9 +39618,9 @@ public partial class obj_item_kinetic_crusher_compact : obj_item_kinetic_crusher
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:6
-[DmPath("/obj/item/crusher_trophy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy : obj_item
+// tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy")]
+public partial class obj_item_crusher_trophy
 {
     public float bonus_value = 10; // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:12
     public object trophy_id; // tg: code/modules/mining/equipment/kinetic_crusher/kinetic_crusher_trophies.dm:14
@@ -39681,9 +39638,9 @@ public partial class obj_item_crusher_trophy : obj_item
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:7
-[DmPath("/obj/item/crusher_trophy/watcher_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_watcher_wing : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/watcher_wing")]
+public partial class obj_item_crusher_trophy_watcher_wing
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:7
     public obj_item_crusher_trophy_watcher_wing()
@@ -39705,9 +39662,9 @@ public partial class obj_item_crusher_trophy_watcher_wing : obj_item_crusher_tro
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:33
-[DmPath("/obj/item/crusher_trophy/magma_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_magma_wing : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/magma_wing")]
+public partial class obj_item_crusher_trophy_magma_wing
 {
     public DmList marked_targets; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:40
 
@@ -39730,9 +39687,9 @@ public partial class obj_item_crusher_trophy_magma_wing : obj_item_crusher_troph
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:97
-[DmPath("/obj/item/crusher_trophy/ice_wing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_ice_wing : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:97 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/ice_wing")]
+public partial class obj_item_crusher_trophy_ice_wing
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:97
     public obj_item_crusher_trophy_ice_wing()
@@ -39753,9 +39710,9 @@ public partial class obj_item_crusher_trophy_ice_wing : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:126
-[DmPath("/obj/item/crusher_trophy/legion_skull"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_legion_skull : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:126 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/legion_skull")]
+public partial class obj_item_crusher_trophy_legion_skull
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:126
     public obj_item_crusher_trophy_legion_skull()
@@ -39775,9 +39732,9 @@ public partial class obj_item_crusher_trophy_legion_skull : obj_item_crusher_tro
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:149
-[DmPath("/obj/item/crusher_trophy/goliath_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_goliath_tentacle : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:149 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/goliath_tentacle")]
+public partial class obj_item_crusher_trophy_goliath_tentacle
 {
     public float missing_health_ratio = 0.1f; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:158
 
@@ -39801,9 +39758,9 @@ public partial class obj_item_crusher_trophy_goliath_tentacle : obj_item_crusher
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:175
-[DmPath("/obj/item/crusher_trophy/lobster_claw"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_lobster_claw : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:175 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/lobster_claw")]
+public partial class obj_item_crusher_trophy_lobster_claw
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:175
     public obj_item_crusher_trophy_lobster_claw()
@@ -39824,9 +39781,9 @@ public partial class obj_item_crusher_trophy_lobster_claw : obj_item_crusher_tro
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:193
-[DmPath("/obj/item/crusher_trophy/brimdemon_fang"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_brimdemon_fang : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/brimdemon_fang")]
+public partial class obj_item_crusher_trophy_brimdemon_fang
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:193
     public obj_item_crusher_trophy_brimdemon_fang()
@@ -39839,9 +39796,9 @@ public partial class obj_item_crusher_trophy_brimdemon_fang : obj_item_crusher_t
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:212
-[DmPath("/obj/item/crusher_trophy/bileworm_spewlet"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_bileworm_spewlet : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:212 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/bileworm_spewlet")]
+public partial class obj_item_crusher_trophy_bileworm_spewlet
 {
     public datum_action_cooldown_mob_cooldown_projectile_attack_dir_shots_spewlet ability; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:220
 
@@ -39864,9 +39821,9 @@ public partial class obj_item_crusher_trophy_bileworm_spewlet : obj_item_crusher
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:295
-[DmPath("/obj/item/crusher_trophy/ice_demon_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_ice_demon_cube : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:295 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/ice_demon_cube")]
+public partial class obj_item_crusher_trophy_ice_demon_cube
 {
     public float summon_amount = 2; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:301
     public float summon_cooldown = 0; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:303
@@ -39882,9 +39839,9 @@ public partial class obj_item_crusher_trophy_ice_demon_cube : obj_item_crusher_t
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:332
-[DmPath("/obj/item/crusher_trophy/wolf_ear"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_wolf_ear : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:332 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/wolf_ear")]
+public partial class obj_item_crusher_trophy_wolf_ear
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:332
     public obj_item_crusher_trophy_wolf_ear()
@@ -39897,9 +39854,9 @@ public partial class obj_item_crusher_trophy_wolf_ear : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:347
-[DmPath("/obj/item/crusher_trophy/bear_paw"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_bear_paw : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:347 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/bear_paw")]
+public partial class obj_item_crusher_trophy_bear_paw
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:347
     public obj_item_crusher_trophy_bear_paw()
@@ -39912,9 +39869,9 @@ public partial class obj_item_crusher_trophy_bear_paw : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:366
-[DmPath("/obj/item/crusher_trophy/raptor_feather"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_raptor_feather : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:366 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/raptor_feather")]
+public partial class obj_item_crusher_trophy_raptor_feather
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_fauna.dm:366
     public obj_item_crusher_trophy_raptor_feather()
@@ -39934,9 +39891,9 @@ public partial class obj_item_crusher_trophy_raptor_feather : obj_item_crusher_t
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:7
-[DmPath("/obj/item/crusher_trophy/miner_eye"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_miner_eye : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/miner_eye")]
+public partial class obj_item_crusher_trophy_miner_eye
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:7
     public obj_item_crusher_trophy_miner_eye()
@@ -39949,9 +39906,9 @@ public partial class obj_item_crusher_trophy_miner_eye : obj_item_crusher_trophy
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22
-[DmPath("/obj/item/crusher_trophy/tail_spike"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_tail_spike : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/tail_spike")]
+public partial class obj_item_crusher_trophy_tail_spike
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:22
     public obj_item_crusher_trophy_tail_spike()
@@ -39963,9 +39920,9 @@ public partial class obj_item_crusher_trophy_tail_spike : obj_item_crusher_troph
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:46
-[DmPath("/obj/item/crusher_trophy/demon_claws"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_demon_claws : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:46 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/demon_claws")]
+public partial class obj_item_crusher_trophy_demon_claws
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:46
     public obj_item_crusher_trophy_demon_claws()
@@ -39980,9 +39937,9 @@ public partial class obj_item_crusher_trophy_demon_claws : obj_item_crusher_trop
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:83
-[DmPath("/obj/item/crusher_trophy/blaster_tubes"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_blaster_tubes : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:83 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/blaster_tubes")]
+public partial class obj_item_crusher_trophy_blaster_tubes
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:83
     public obj_item_crusher_trophy_blaster_tubes()
@@ -39997,9 +39954,9 @@ public partial class obj_item_crusher_trophy_blaster_tubes : obj_item_crusher_tr
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:135
-[DmPath("/obj/item/crusher_trophy/vortex_talisman"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_vortex_talisman : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:135 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/vortex_talisman")]
+public partial class obj_item_crusher_trophy_vortex_talisman
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:135
     public obj_item_crusher_trophy_vortex_talisman()
@@ -40012,9 +39969,9 @@ public partial class obj_item_crusher_trophy_vortex_talisman : obj_item_crusher_
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:154
-[DmPath("/obj/item/crusher_trophy/ice_block_talisman"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_ice_block_talisman : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:154 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/ice_block_talisman")]
+public partial class obj_item_crusher_trophy_ice_block_talisman
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:154
     public obj_item_crusher_trophy_ice_block_talisman()
@@ -40027,9 +39984,9 @@ public partial class obj_item_crusher_trophy_ice_block_talisman : obj_item_crush
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:169
-[DmPath("/obj/item/crusher_trophy/wendigo_horn"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_wendigo_horn : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:169 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/wendigo_horn")]
+public partial class obj_item_crusher_trophy_wendigo_horn
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:169
     public obj_item_crusher_trophy_wendigo_horn()
@@ -40041,9 +39998,9 @@ public partial class obj_item_crusher_trophy_wendigo_horn : obj_item_crusher_tro
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:193
-[DmPath("/obj/item/crusher_trophy/broodmother_tongue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_broodmother_tongue : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/broodmother_tongue")]
+public partial class obj_item_crusher_trophy_broodmother_tongue
 {
     public object use_time; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:201
 
@@ -40060,9 +40017,9 @@ public partial class obj_item_crusher_trophy_broodmother_tongue : obj_item_crush
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:228
-[DmPath("/obj/item/crusher_trophy/legionnaire_spine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_legionnaire_spine : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:228 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/legionnaire_spine")]
+public partial class obj_item_crusher_trophy_legionnaire_spine
 {
     public object next_use_time; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:236
 
@@ -40079,9 +40036,9 @@ public partial class obj_item_crusher_trophy_legionnaire_spine : obj_item_crushe
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:265
-[DmPath("/obj/item/crusher_trophy/flesh_glob"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_flesh_glob : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:265 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/flesh_glob")]
+public partial class obj_item_crusher_trophy_flesh_glob
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_megafauna.dm:265
     public obj_item_crusher_trophy_flesh_glob()
@@ -40094,9 +40051,9 @@ public partial class obj_item_crusher_trophy_flesh_glob : obj_item_crusher_troph
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:124
-[DmPath("/obj/item/crusher_trophy/retool_kit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_retool_kit : obj_item_crusher_trophy
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:124 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/retool_kit")]
+public partial class obj_item_crusher_trophy_retool_kit
 {
     public Type forced_skin; // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:131
 
@@ -40111,9 +40068,9 @@ public partial class obj_item_crusher_trophy_retool_kit : obj_item_crusher_troph
     }
 }
 
-// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:148
-[DmPath("/obj/item/crusher_trophy/retool_kit/ashenskull"), DmGeneratedOnly, DmInert]
-public partial class obj_item_crusher_trophy_retool_kit_ashenskull : obj_item_crusher_trophy_retool_kit
+// tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:148 (the var block of a hand-written class)
+[DmPath("/obj/item/crusher_trophy/retool_kit/ashenskull")]
+public partial class obj_item_crusher_trophy_retool_kit_ashenskull
 {
     // tg: code/modules/mining/equipment/kinetic_crusher/trophies_misc.dm:148
     public obj_item_crusher_trophy_retool_kit_ashenskull()
@@ -40125,9 +40082,9 @@ public partial class obj_item_crusher_trophy_retool_kit_ashenskull : obj_item_cr
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:5
-[DmPath("/obj/item/mining_stabilizer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mining_stabilizer : obj_item
+// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/mining_stabilizer")]
+public partial class obj_item_mining_stabilizer
 {
     // tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:5
     public obj_item_mining_stabilizer()
@@ -40162,9 +40119,9 @@ public partial class obj_item_skeleton_key : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:5
-[DmPath("/obj/item/cain_and_abel"), DmGeneratedOnly, DmInert]
-public partial class obj_item_cain_and_abel : obj_item
+// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/item/cain_and_abel")]
+public partial class obj_item_cain_and_abel
 {
     public float combo_count = 0; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:28
     public float max_combo = 6; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:30
@@ -40209,9 +40166,9 @@ public partial class obj_item_cain_and_abel : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:26
-[DmPath("/obj/item/wisp_lantern"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wisp_lantern : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:26 (the var block of a hand-written class)
+[DmPath("/obj/item/wisp_lantern")]
+public partial class obj_item_wisp_lantern
 {
     public obj_effect_wisp wisp; // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:33
 
@@ -40228,9 +40185,9 @@ public partial class obj_item_wisp_lantern : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:110
-[DmPath("/obj/item/jacobs_ladder"), DmGeneratedOnly, DmInert]
-public partial class obj_item_jacobs_ladder : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:110 (the var block of a hand-written class)
+[DmPath("/obj/item/jacobs_ladder")]
+public partial class obj_item_jacobs_ladder
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:110
     public obj_item_jacobs_ladder()
@@ -40242,9 +40199,9 @@ public partial class obj_item_jacobs_ladder : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:136
-[DmPath("/obj/item/book_of_babel"), DmGeneratedOnly, DmInert]
-public partial class obj_item_book_of_babel : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:136 (the var block of a hand-written class)
+[DmPath("/obj/item/book_of_babel")]
+public partial class obj_item_book_of_babel
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:136
     public obj_item_book_of_babel()
@@ -40257,9 +40214,9 @@ public partial class obj_item_book_of_babel : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:48
-[DmPath("/obj/item/cursed_katana"), DmGeneratedOnly, DmInert]
-public partial class obj_item_cursed_katana : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:48 (the var block of a hand-written class)
+[DmPath("/obj/item/cursed_katana")]
+public partial class obj_item_cursed_katana
 {
     public float shattered = 0; // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:67
     public float drew_blood = 0; // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:68
@@ -40298,9 +40255,9 @@ public partial class obj_item_cursed_katana : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:3
-[DmPath("/obj/item/rod_of_asclepius"), DmGeneratedOnly, DmInert]
-public partial class obj_item_rod_of_asclepius : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/rod_of_asclepius")]
+public partial class obj_item_rod_of_asclepius
 {
     public float? activated = 0; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:11
 
@@ -40318,9 +40275,9 @@ public partial class obj_item_rod_of_asclepius : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:75
-[DmPath("/obj/item/warp_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_warp_cube : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/item/warp_cube")]
+public partial class obj_item_warp_cube
 {
     public string teleport_color = "#3FBAFD"; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:79
     public obj_item_warp_cube linked; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:80
@@ -40336,9 +40293,9 @@ public partial class obj_item_warp_cube : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:125
-[DmPath("/obj/item/warp_cube/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_warp_cube_red : obj_item_warp_cube
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:125 (the var block of a hand-written class)
+[DmPath("/obj/item/warp_cube/red")]
+public partial class obj_item_warp_cube_red
 {
     // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:125
     public obj_item_warp_cube_red()
@@ -40350,9 +40307,9 @@ public partial class obj_item_warp_cube_red : obj_item_warp_cube
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:144
-[DmPath("/obj/item/immortality_talisman"), DmGeneratedOnly, DmInert]
-public partial class obj_item_immortality_talisman : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:144 (the var block of a hand-written class)
+[DmPath("/obj/item/immortality_talisman")]
+public partial class obj_item_immortality_talisman
 {
     public float cooldown = 0; // tg: code/modules/mining/lavaland/mining_loot/equipment.dm:150
 
@@ -40391,17 +40348,17 @@ public partial class obj_item_shared_storage : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:241
-[DmPath("/obj/item/shared_storage/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_shared_storage_red : obj_item_shared_storage { }
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:241 (the var block of a hand-written class)
+[DmPath("/obj/item/shared_storage/red")]
+public partial class obj_item_shared_storage_red { }
 
-// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:248
-[DmPath("/obj/item/shared_storage/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_shared_storage_blue : obj_item_shared_storage { }
+// tg: code/modules/mining/lavaland/mining_loot/equipment.dm:248 (the var block of a hand-written class)
+[DmPath("/obj/item/shared_storage/blue")]
+public partial class obj_item_shared_storage_blue { }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:4
-[DmPath("/obj/item/drake_remains"), DmGeneratedOnly, DmInert]
-public partial class obj_item_drake_remains : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/drake_remains")]
+public partial class obj_item_drake_remains
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:4
     public obj_item_drake_remains()
@@ -40420,9 +40377,9 @@ public partial class obj_item_drake_remains : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:165
-[DmPath("/obj/item/dragons_blood"), DmGeneratedOnly, DmInert]
-public partial class obj_item_dragons_blood : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:165 (the var block of a hand-written class)
+[DmPath("/obj/item/dragons_blood")]
+public partial class obj_item_dragons_blood
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:165
     public obj_item_dragons_blood()
@@ -40434,9 +40391,9 @@ public partial class obj_item_dragons_blood : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:216
-[DmPath("/obj/item/lava_staff"), DmGeneratedOnly, DmInert]
-public partial class obj_item_lava_staff : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:216 (the var block of a hand-written class)
+[DmPath("/obj/item/lava_staff")]
+public partial class obj_item_lava_staff
 {
     public Type turf_type = typeof(turf_open_lava_smooth_weak); // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:232
     public string transform_string = "lava"; // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:233
@@ -40475,9 +40432,9 @@ public partial class obj_item_lava_staff : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:4
-[DmPath("/obj/item/mayhem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_mayhem : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/mayhem")]
+public partial class obj_item_mayhem
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:4
     public obj_item_mayhem()
@@ -40489,9 +40446,9 @@ public partial class obj_item_mayhem : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:4
-[DmPath("/obj/item/resurrection_crystal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_resurrection_crystal : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/resurrection_crystal")]
+public partial class obj_item_resurrection_crystal
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/demonic_frost_miner.dm:4
     public obj_item_resurrection_crystal()
@@ -40519,9 +40476,9 @@ public partial class obj_item_ice_energy_crystal : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:4
-[DmPath("/obj/item/hierophant_club"), DmGeneratedOnly, DmInert]
-public partial class obj_item_hierophant_club : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/hierophant_club")]
+public partial class obj_item_hierophant_club
 {
     public obj_effect_hierophant beacon; // tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:24
     public float? teleporting = 0; // tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:26
@@ -40559,9 +40516,9 @@ public partial class obj_item_hierophant_club : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/legion.dm:4
-[DmPath("/obj/item/storm_staff"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storm_staff : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/legion.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/storm_staff")]
+public partial class obj_item_storm_staff
 {
     public float max_thunder_charges = 3; // tg: code/modules/mining/lavaland/mining_loot/megafauna/legion.dm:20
     public float thunder_charges = 3; // tg: code/modules/mining/lavaland/mining_loot/megafauna/legion.dm:21
@@ -40597,9 +40554,9 @@ public partial class obj_item_storm_staff : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/wendigo.dm:4
-[DmPath("/obj/item/wendigo_blood"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wendigo_blood : obj_item
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/wendigo.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/wendigo_blood")]
+public partial class obj_item_wendigo_blood
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/wendigo.dm:4
     public obj_item_wendigo_blood()
@@ -40817,9 +40774,9 @@ public partial class obj_item_guardian_creator_miner
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:15
-[DmPath("/obj/item/ore_sensor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ore_sensor : obj_item
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:15 (the var block of a hand-written class)
+[DmPath("/obj/item/ore_sensor")]
+public partial class obj_item_ore_sensor
 {
     public float? range = 5; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:21
     public float cooldown = 40; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon_loot.dm:22
@@ -40857,9 +40814,9 @@ public partial class obj_item_goliath_saddle : obj_item
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:2
-[DmPath("/obj/item/raptor_dex"), DmGeneratedOnly, DmInert]
-public partial class obj_item_raptor_dex : obj_item
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/raptor_dex")]
+public partial class obj_item_raptor_dex
 {
     public DmList scan_data; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_dex.dm:8
 
@@ -41014,13 +40971,13 @@ public partial class obj_item_slimepotion_sentience_nuclear_dangerous_horse : ob
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:695
-[DmPath("/obj/item/slimepotion/slime"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime : obj_item_slimepotion { }
+// tg: code/modules/research/xenobiology/xenobiology.dm:695 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime")]
+public partial class obj_item_slimepotion_slime { }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:709
-[DmPath("/obj/item/slimepotion/slime/docility"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_docility : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:709 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/docility")]
+public partial class obj_item_slimepotion_slime_docility
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:709
     public obj_item_slimepotion_slime_docility()
@@ -41031,9 +40988,9 @@ public partial class obj_item_slimepotion_slime_docility : obj_item_slimepotion_
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:890
-[DmPath("/obj/item/slimepotion/slime/steroid"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_steroid : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:890 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/steroid")]
+public partial class obj_item_slimepotion_slime_steroid
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:890
     public obj_item_slimepotion_slime_steroid()
@@ -41044,9 +41001,9 @@ public partial class obj_item_slimepotion_slime_steroid : obj_item_slimepotion_s
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:916
-[DmPath("/obj/item/slimepotion/slime/stabilizer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_stabilizer : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:916 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/stabilizer")]
+public partial class obj_item_slimepotion_slime_stabilizer
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:916
     public obj_item_slimepotion_slime_stabilizer()
@@ -41057,9 +41014,9 @@ public partial class obj_item_slimepotion_slime_stabilizer : obj_item_slimepotio
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:934
-[DmPath("/obj/item/slimepotion/slime/mutator"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_mutator : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/xenobiology.dm:934 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/mutator")]
+public partial class obj_item_slimepotion_slime_mutator
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:934
     public obj_item_slimepotion_slime_mutator()
@@ -41070,9 +41027,9 @@ public partial class obj_item_slimepotion_slime_mutator : obj_item_slimepotion_s
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:214
-[DmPath("/obj/item/slimepotion/slime/chargedstabilizer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_chargedstabilizer : obj_item_slimepotion_slime
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:214 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime/chargedstabilizer")]
+public partial class obj_item_slimepotion_slime_chargedstabilizer
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:214
     public obj_item_slimepotion_slime_chargedstabilizer()
@@ -41083,9 +41040,9 @@ public partial class obj_item_slimepotion_slime_chargedstabilizer : obj_item_sli
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:834
-[DmPath("/obj/item/slimepotion/transference"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_transference : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:834 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/transference")]
+public partial class obj_item_slimepotion_transference
 {
     public float prompted = 0; // tg: code/modules/research/xenobiology/xenobiology.dm:837
     public float animal_type = 1; // tg: code/modules/research/xenobiology/xenobiology.dm:838
@@ -41125,9 +41082,9 @@ public partial class obj_item_slimepotion_enhancer_max : obj_item_slimepotion_en
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:956
-[DmPath("/obj/item/slimepotion/speed"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_speed : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:956 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/speed")]
+public partial class obj_item_slimepotion_speed
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:956
     public obj_item_slimepotion_speed()
@@ -41138,9 +41095,9 @@ public partial class obj_item_slimepotion_speed : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:996
-[DmPath("/obj/item/slimepotion/fireproof"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_fireproof : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:996 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/fireproof")]
+public partial class obj_item_slimepotion_fireproof
 {
     public float uses = 3; // tg: code/modules/research/xenobiology/xenobiology.dm:1000
 
@@ -41154,9 +41111,9 @@ public partial class obj_item_slimepotion_fireproof : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:1029
-[DmPath("/obj/item/slimepotion/genderchange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_genderchange : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:1029 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/genderchange")]
+public partial class obj_item_slimepotion_genderchange
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:1029
     public obj_item_slimepotion_genderchange()
@@ -41182,9 +41139,9 @@ public partial class obj_item_slimepotion_renaming
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobiology.dm:1104
-[DmPath("/obj/item/slimepotion/slimeradio"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slimeradio : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/xenobiology.dm:1104 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slimeradio")]
+public partial class obj_item_slimepotion_slimeradio
 {
     // tg: code/modules/research/xenobiology/xenobiology.dm:1104
     public obj_item_slimepotion_slimeradio()
@@ -41195,9 +41152,9 @@ public partial class obj_item_slimepotion_slimeradio : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:9
-[DmPath("/obj/item/slimepotion/extract_cloner"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_extract_cloner : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/extract_cloner")]
+public partial class obj_item_slimepotion_extract_cloner
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:9
     public obj_item_slimepotion_extract_cloner()
@@ -41208,9 +41165,9 @@ public partial class obj_item_slimepotion_extract_cloner : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:35
-[DmPath("/obj/item/slimepotion/peacepotion"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_peacepotion : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:35 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/peacepotion")]
+public partial class obj_item_slimepotion_peacepotion
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:35
     public obj_item_slimepotion_peacepotion()
@@ -41221,9 +41178,9 @@ public partial class obj_item_slimepotion_peacepotion : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:73
-[DmPath("/obj/item/slimepotion/lovepotion"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_lovepotion : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:73 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/lovepotion")]
+public partial class obj_item_slimepotion_lovepotion
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:73
     public obj_item_slimepotion_lovepotion()
@@ -41234,9 +41191,9 @@ public partial class obj_item_slimepotion_lovepotion : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:109
-[DmPath("/obj/item/slimepotion/spaceproof"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_spaceproof : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:109 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/spaceproof")]
+public partial class obj_item_slimepotion_spaceproof
 {
     public float uses = 2; // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:112
 
@@ -41249,9 +41206,9 @@ public partial class obj_item_slimepotion_spaceproof : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:151
-[DmPath("/obj/item/slimepotion/lavaproof"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_lavaproof : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:151 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/lavaproof")]
+public partial class obj_item_slimepotion_lavaproof
 {
     public float uses = 2; // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:155
 
@@ -41265,9 +41222,9 @@ public partial class obj_item_slimepotion_lavaproof : obj_item_slimepotion
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:185
-[DmPath("/obj/item/slimepotion/slime_reviver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimepotion_slime_reviver : obj_item_slimepotion
+// tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:185 (the var block of a hand-written class)
+[DmPath("/obj/item/slimepotion/slime_reviver")]
+public partial class obj_item_slimepotion_slime_reviver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_potions.dm:185
     public obj_item_slimepotion_slime_reviver()
@@ -41990,9 +41947,9 @@ public partial class obj_item_clockwork_alloy : obj_item
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:367
-[DmPath("/obj/item/tumor_shard"), DmGeneratedOnly, DmInert]
-public partial class obj_item_tumor_shard : obj_item
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:367 (the var block of a hand-written class)
+[DmPath("/obj/item/tumor_shard")]
+public partial class obj_item_tumor_shard
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:367
     public obj_item_tumor_shard()
@@ -43779,9 +43736,9 @@ public partial class obj_item_sales_tagger
     }
 }
 
-// tg: code/modules/religion/religion_structures.dm:105
-[DmPath("/obj/item/ritual_totem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ritual_totem : obj_item
+// tg: code/modules/religion/religion_structures.dm:105 (the var block of a hand-written class)
+[DmPath("/obj/item/ritual_totem")]
+public partial class obj_item_ritual_totem
 {
     // tg: code/modules/religion/religion_structures.dm:105
     public obj_item_ritual_totem()
@@ -43804,9 +43761,9 @@ public partial class obj_item_ritual_totem : obj_item
     }
 }
 
-// tg: code/modules/religion/sparring/ceremonial_gear.dm:3
-[DmPath("/obj/item/ceremonial_blade"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ceremonial_blade : obj_item
+// tg: code/modules/religion/sparring/ceremonial_gear.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/ceremonial_blade")]
+public partial class obj_item_ceremonial_blade
 {
     public DmList alt_continuous; // tg: code/modules/religion/sparring/ceremonial_gear.dm:32
     public DmList alt_simple; // tg: code/modules/religion/sparring/ceremonial_gear.dm:33
@@ -43851,9 +43808,9 @@ public partial class obj_item_ceremonial_blade : obj_item
     }
 }
 
-// tg: code/modules/religion/sparring/sparring_contract.dm:2
-[DmPath("/obj/item/sparring_contract"), DmGeneratedOnly, DmInert]
-public partial class obj_item_sparring_contract : obj_item
+// tg: code/modules/religion/sparring/sparring_contract.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/sparring_contract")]
+public partial class obj_item_sparring_contract
 {
     public float weapons_condition = 3; // tg: code/modules/religion/sparring/sparring_contract.dm:11
     public Type arena_condition = typeof(area_station_service_chapel); // tg: code/modules/religion/sparring/sparring_contract.dm:13
@@ -43895,9 +43852,9 @@ public partial class obj_item_research : obj_item
     }
 }
 
-// tg: code/modules/research/anomaly/raw_anomaly.dm:10
-[DmPath("/obj/item/raw_anomaly_core"), DmGeneratedOnly, DmInert]
-public partial class obj_item_raw_anomaly_core : obj_item
+// tg: code/modules/research/anomaly/raw_anomaly.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/item/raw_anomaly_core")]
+public partial class obj_item_raw_anomaly_core
 {
     public Type anomaly_type; // tg: code/modules/research/anomaly/raw_anomaly.dm:16
 
@@ -43912,7 +43869,7 @@ public partial class obj_item_raw_anomaly_core : obj_item
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:19
-[DmPath("/obj/item/raw_anomaly_core/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/bluespace"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_bluespace : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:19
@@ -43926,7 +43883,7 @@ public partial class obj_item_raw_anomaly_core_bluespace : obj_item_raw_anomaly_
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:25
-[DmPath("/obj/item/raw_anomaly_core/vortex"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/vortex"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_vortex : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:25
@@ -43940,7 +43897,7 @@ public partial class obj_item_raw_anomaly_core_vortex : obj_item_raw_anomaly_cor
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:31
-[DmPath("/obj/item/raw_anomaly_core/grav"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/grav"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_grav : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:31
@@ -43954,7 +43911,7 @@ public partial class obj_item_raw_anomaly_core_grav : obj_item_raw_anomaly_core
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:37
-[DmPath("/obj/item/raw_anomaly_core/pyro"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/pyro"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_pyro : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:37
@@ -43968,7 +43925,7 @@ public partial class obj_item_raw_anomaly_core_pyro : obj_item_raw_anomaly_core
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:43
-[DmPath("/obj/item/raw_anomaly_core/flux"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/flux"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_flux : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:43
@@ -43982,7 +43939,7 @@ public partial class obj_item_raw_anomaly_core_flux : obj_item_raw_anomaly_core
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:49
-[DmPath("/obj/item/raw_anomaly_core/hallucination"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/hallucination"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_hallucination : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:49
@@ -43996,7 +43953,7 @@ public partial class obj_item_raw_anomaly_core_hallucination : obj_item_raw_anom
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:55
-[DmPath("/obj/item/raw_anomaly_core/bioscrambler"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/bioscrambler"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_bioscrambler : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:55
@@ -44010,7 +43967,7 @@ public partial class obj_item_raw_anomaly_core_bioscrambler : obj_item_raw_anoma
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:61
-[DmPath("/obj/item/raw_anomaly_core/dimensional"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/dimensional"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_dimensional : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:61
@@ -44024,7 +43981,7 @@ public partial class obj_item_raw_anomaly_core_dimensional : obj_item_raw_anomal
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:67
-[DmPath("/obj/item/raw_anomaly_core/ectoplasm"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/ectoplasm"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_ectoplasm : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:67
@@ -44038,7 +43995,7 @@ public partial class obj_item_raw_anomaly_core_ectoplasm : obj_item_raw_anomaly_
 }
 
 // tg: code/modules/research/anomaly/raw_anomaly.dm:73
-[DmPath("/obj/item/raw_anomaly_core/weather"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/raw_anomaly_core/weather"), DmGeneratedOnly]
 public partial class obj_item_raw_anomaly_core_weather : obj_item_raw_anomaly_core
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:73
@@ -44051,9 +44008,9 @@ public partial class obj_item_raw_anomaly_core_weather : obj_item_raw_anomaly_co
     }
 }
 
-// tg: code/modules/research/anomaly/raw_anomaly.dm:79
-[DmPath("/obj/item/raw_anomaly_core/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_raw_anomaly_core_random : obj_item_raw_anomaly_core
+// tg: code/modules/research/anomaly/raw_anomaly.dm:79 (the var block of a hand-written class)
+[DmPath("/obj/item/raw_anomaly_core/random")]
+public partial class obj_item_raw_anomaly_core_random
 {
     // tg: code/modules/research/anomaly/raw_anomaly.dm:79
     public obj_item_raw_anomaly_core_random()
@@ -44079,9 +44036,9 @@ public partial class obj_item_inert_anomaly : obj_item
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_items.dm:3
-[DmPath("/obj/item/gizmo"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gizmo : obj_item
+// tg: code/modules/research/gizmo/gizmo_items.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/gizmo")]
+public partial class obj_item_gizmo
 {
     public DmList icon_states; // tg: code/modules/research/gizmo/gizmo_items.dm:10
     public Type controller = typeof(datum_gizmo_controller_item); // tg: code/modules/research/gizmo/gizmo_items.dm:12
@@ -44104,7 +44061,7 @@ public partial class obj_item_gizmo : obj_item
 }
 
 // tg: code/modules/research/gizmo/gizmo_items.dm:34
-[DmPath("/obj/item/gizmo/moo"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/gizmo/moo"), DmGeneratedOnly]
 public partial class obj_item_gizmo_moo : obj_item_gizmo
 {
     // tg: code/modules/research/gizmo/gizmo_items.dm:34
@@ -44114,9 +44071,9 @@ public partial class obj_item_gizmo_moo : obj_item_gizmo
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:82
-[DmPath("/obj/item/gizmo_copy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_gizmo_copy : obj_item { }
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:82 (the var block of a hand-written class)
+[DmPath("/obj/item/gizmo_copy")]
+public partial class obj_item_gizmo_copy { }
 
 // tg: code/modules/research/xenobiology/xenobiology.dm:4 (the var block of a hand-written class)
 [DmPath("/obj/item/slime_extract")]
@@ -44434,9 +44391,9 @@ public partial class obj_item_slime_extract_rainbow
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:94
-[DmPath("/obj/item/slimecrossbeaker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecrossbeaker : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:94 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecrossbeaker")]
+public partial class obj_item_slimecrossbeaker
 {
     public float del_on_empty = 1; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:98
     public DmList list_reagents; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:99
@@ -44452,7 +44409,7 @@ public partial class obj_item_slimecrossbeaker : obj_item
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:120
-[DmPath("/obj/item/slimecrossbeaker/bloodpack"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/bloodpack"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_bloodpack : obj_item_slimecrossbeaker
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:120
@@ -44472,7 +44429,7 @@ public partial class obj_item_slimecrossbeaker_bloodpack : obj_item_slimecrossbe
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:126
-[DmPath("/obj/item/slimecrossbeaker/pax"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/pax"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_pax : obj_item_slimecrossbeaker
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:126
@@ -44492,7 +44449,7 @@ public partial class obj_item_slimecrossbeaker_pax : obj_item_slimecrossbeaker
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:132
-[DmPath("/obj/item/slimecrossbeaker/omnizine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/omnizine"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_omnizine : obj_item_slimecrossbeaker
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:132
@@ -44511,16 +44468,16 @@ public partial class obj_item_slimecrossbeaker_omnizine : obj_item_slimecrossbea
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:138
-[DmPath("/obj/item/slimecrossbeaker/autoinjector"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecrossbeaker_autoinjector : obj_item_slimecrossbeaker
+// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:138 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecrossbeaker/autoinjector")]
+public partial class obj_item_slimecrossbeaker_autoinjector
 {
     public float ignore_flags = 0; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:138
     public float self_use_only = 0; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:139
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:168
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/regenpack"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/regenpack"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_autoinjector_regenpack : obj_item_slimecrossbeaker_autoinjector
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:168
@@ -44541,7 +44498,7 @@ public partial class obj_item_slimecrossbeaker_autoinjector_regenpack : obj_item
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:175
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimejelly"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimejelly"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_autoinjector_slimejelly : obj_item_slimecrossbeaker_autoinjector
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:175
@@ -44562,9 +44519,9 @@ public partial class obj_item_slimecrossbeaker_autoinjector_slimejelly : obj_ite
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:183
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/peaceandlove"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecrossbeaker_autoinjector_peaceandlove : obj_item_slimecrossbeaker_autoinjector
+// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:183 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/peaceandlove")]
+public partial class obj_item_slimecrossbeaker_autoinjector_peaceandlove
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:183
     public obj_item_slimecrossbeaker_autoinjector_peaceandlove()
@@ -44583,7 +44540,7 @@ public partial class obj_item_slimecrossbeaker_autoinjector_peaceandlove : obj_i
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:193
-[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimestimulant"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecrossbeaker/autoinjector/slimestimulant"), DmGeneratedOnly]
 public partial class obj_item_slimecrossbeaker_autoinjector_slimestimulant : obj_item_slimecrossbeaker_autoinjector
 {
     // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:193
@@ -44602,9 +44559,9 @@ public partial class obj_item_slimecrossbeaker_autoinjector_slimestimulant : obj
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:85
-[DmPath("/obj/item/barriercube"), DmGeneratedOnly, DmInert]
-public partial class obj_item_barriercube : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/barriercube")]
+public partial class obj_item_barriercube
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:85
     public obj_item_barriercube()
@@ -44617,9 +44574,9 @@ public partial class obj_item_barriercube : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:155
-[DmPath("/obj/item/capturedevice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_capturedevice : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:155 (the var block of a hand-written class)
+[DmPath("/obj/item/capturedevice")]
+public partial class obj_item_capturedevice
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:155
     public obj_item_capturedevice()
@@ -44632,9 +44589,9 @@ public partial class obj_item_capturedevice : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:608
-[DmPath("/obj/item/hothands"), DmGeneratedOnly, DmInert]
-public partial class obj_item_hothands : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:608 (the var block of a hand-written class)
+[DmPath("/obj/item/hothands")]
+public partial class obj_item_hothands
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_status_effects.dm:608
     public obj_item_hothands()
@@ -44644,9 +44601,9 @@ public partial class obj_item_hothands : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:53
-[DmPath("/obj/item/slime_cookie"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:53 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie")]
+public partial class obj_item_slime_cookie
 {
     public string taste = "error"; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:56
     public float nutrition = 5; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:57
@@ -44667,7 +44624,7 @@ public partial class obj_item_slime_cookie : obj_item
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:98
-[DmPath("/obj/item/slime_cookie/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slime_cookie/grey"), DmGeneratedOnly]
 public partial class obj_item_slime_cookie_grey : obj_item_slime_cookie
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:98
@@ -44681,9 +44638,9 @@ public partial class obj_item_slime_cookie_grey : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:110
-[DmPath("/obj/item/slime_cookie/orange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_orange : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:110 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/orange")]
+public partial class obj_item_slime_cookie_orange
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:110
     public obj_item_slime_cookie_orange()
@@ -44695,9 +44652,9 @@ public partial class obj_item_slime_cookie_orange : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:124
-[DmPath("/obj/item/slime_cookie/purple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_purple : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:124 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/purple")]
+public partial class obj_item_slime_cookie_purple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:124
     public obj_item_slime_cookie_purple()
@@ -44709,9 +44666,9 @@ public partial class obj_item_slime_cookie_purple : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:145
-[DmPath("/obj/item/slime_cookie/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_blue : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:145 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/blue")]
+public partial class obj_item_slime_cookie_blue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:145
     public obj_item_slime_cookie_blue()
@@ -44723,9 +44680,9 @@ public partial class obj_item_slime_cookie_blue : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:159
-[DmPath("/obj/item/slime_cookie/metal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_metal : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:159 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/metal")]
+public partial class obj_item_slime_cookie_metal
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:159
     public obj_item_slime_cookie_metal()
@@ -44737,9 +44694,9 @@ public partial class obj_item_slime_cookie_metal : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:173
-[DmPath("/obj/item/slime_cookie/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_yellow : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:173 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/yellow")]
+public partial class obj_item_slime_cookie_yellow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:173
     public obj_item_slime_cookie_yellow()
@@ -44751,9 +44708,9 @@ public partial class obj_item_slime_cookie_yellow : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:187
-[DmPath("/obj/item/slime_cookie/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_darkpurple : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:187 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/darkpurple")]
+public partial class obj_item_slime_cookie_darkpurple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:187
     public obj_item_slime_cookie_darkpurple()
@@ -44765,9 +44722,9 @@ public partial class obj_item_slime_cookie_darkpurple : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:201
-[DmPath("/obj/item/slime_cookie/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_darkblue : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:201 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/darkblue")]
+public partial class obj_item_slime_cookie_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:201
     public obj_item_slime_cookie_darkblue()
@@ -44779,9 +44736,9 @@ public partial class obj_item_slime_cookie_darkblue : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:216
-[DmPath("/obj/item/slime_cookie/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_silver : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:216 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/silver")]
+public partial class obj_item_slime_cookie_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:216
     public obj_item_slime_cookie_silver()
@@ -44794,9 +44751,9 @@ public partial class obj_item_slime_cookie_silver : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:231
-[DmPath("/obj/item/slime_cookie/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_bluespace : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:231 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/bluespace")]
+public partial class obj_item_slime_cookie_bluespace
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:231
     public obj_item_slime_cookie_bluespace()
@@ -44808,9 +44765,9 @@ public partial class obj_item_slime_cookie_bluespace : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:272
-[DmPath("/obj/item/slime_cookie/sepia"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_sepia : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:272 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/sepia")]
+public partial class obj_item_slime_cookie_sepia
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:272
     public obj_item_slime_cookie_sepia()
@@ -44822,9 +44779,9 @@ public partial class obj_item_slime_cookie_sepia : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:287
-[DmPath("/obj/item/slime_cookie/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_cerulean : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:287 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/cerulean")]
+public partial class obj_item_slime_cookie_cerulean
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:287
     public obj_item_slime_cookie_cerulean()
@@ -44836,9 +44793,9 @@ public partial class obj_item_slime_cookie_cerulean : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:304
-[DmPath("/obj/item/slime_cookie/pyrite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_pyrite : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:304 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/pyrite")]
+public partial class obj_item_slime_cookie_pyrite
 {
     public string colour = "#FFFFFF"; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:308
 
@@ -44852,9 +44809,9 @@ public partial class obj_item_slime_cookie_pyrite : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:346
-[DmPath("/obj/item/slime_cookie/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_red : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:346 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/red")]
+public partial class obj_item_slime_cookie_red
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:346
     public obj_item_slime_cookie_red()
@@ -44866,9 +44823,9 @@ public partial class obj_item_slime_cookie_red : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:364
-[DmPath("/obj/item/slime_cookie/green"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_green : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:364 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/green")]
+public partial class obj_item_slime_cookie_green
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:364
     public obj_item_slime_cookie_green()
@@ -44880,9 +44837,9 @@ public partial class obj_item_slime_cookie_green : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:381
-[DmPath("/obj/item/slime_cookie/pink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_pink : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:381 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/pink")]
+public partial class obj_item_slime_cookie_pink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:381
     public obj_item_slime_cookie_pink()
@@ -44894,9 +44851,9 @@ public partial class obj_item_slime_cookie_pink : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:395
-[DmPath("/obj/item/slime_cookie/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_gold : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:395 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/gold")]
+public partial class obj_item_slime_cookie_gold
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:395
     public obj_item_slime_cookie_gold()
@@ -44908,9 +44865,9 @@ public partial class obj_item_slime_cookie_gold : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:414
-[DmPath("/obj/item/slime_cookie/oil"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_oil : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:414 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/oil")]
+public partial class obj_item_slime_cookie_oil
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:414
     public obj_item_slime_cookie_oil()
@@ -44922,9 +44879,9 @@ public partial class obj_item_slime_cookie_oil : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:428
-[DmPath("/obj/item/slime_cookie/black"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_black : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:428 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/black")]
+public partial class obj_item_slime_cookie_black
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:428
     public obj_item_slime_cookie_black()
@@ -44936,9 +44893,9 @@ public partial class obj_item_slime_cookie_black : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:442
-[DmPath("/obj/item/slime_cookie/lightpink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_lightpink : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:442 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/lightpink")]
+public partial class obj_item_slime_cookie_lightpink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:442
     public obj_item_slime_cookie_lightpink()
@@ -44950,9 +44907,9 @@ public partial class obj_item_slime_cookie_lightpink : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:456
-[DmPath("/obj/item/slime_cookie/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slime_cookie_adamantine : obj_item_slime_cookie
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:456 (the var block of a hand-written class)
+[DmPath("/obj/item/slime_cookie/adamantine")]
+public partial class obj_item_slime_cookie_adamantine
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:456
     public obj_item_slime_cookie_adamantine()
@@ -44964,9 +44921,9 @@ public partial class obj_item_slime_cookie_adamantine : obj_item_slime_cookie
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:12
-[DmPath("/obj/item/autoslime"), DmGeneratedOnly, DmInert]
-public partial class obj_item_autoslime : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:12 (the var block of a hand-written class)
+[DmPath("/obj/item/autoslime")]
+public partial class obj_item_autoslime
 {
     public obj_item_slime_extract extract; // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:14
     public string effect_desc = "A self-sustaining slime extract. When used, lets you choose which reaction you want."; // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:15
@@ -44979,9 +44936,9 @@ public partial class obj_item_autoslime : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:3
-[DmPath("/obj/item/biopsy_tool"), DmGeneratedOnly, DmInert]
-public partial class obj_item_biopsy_tool : obj_item
+// tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/biopsy_tool")]
+public partial class obj_item_biopsy_tool
 {
     public float can_swap_objects = 0; // tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:11
 
@@ -45005,7 +44962,7 @@ public partial class obj_item_biopsy_tool : obj_item
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:25
-[DmPath("/obj/item/biopsy_tool/organ"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/biopsy_tool/organ"), DmGeneratedOnly]
 public partial class obj_item_biopsy_tool_organ : obj_item_biopsy_tool
 {
     // tg: code/modules/research/xenobiology/vatgrowing/biopsy_tool.dm:25
@@ -45019,9 +44976,9 @@ public partial class obj_item_biopsy_tool_organ : obj_item_biopsy_tool
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/swab.dm:3
-[DmPath("/obj/item/swab"), DmGeneratedOnly, DmInert]
-public partial class obj_item_swab : obj_item
+// tg: code/modules/research/xenobiology/vatgrowing/swab.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/swab")]
+public partial class obj_item_swab
 {
     // tg: code/modules/research/xenobiology/vatgrowing/swab.dm:3
     public obj_item_swab()
@@ -45912,9 +45869,9 @@ public partial class obj_item_oar : obj_item
     }
 }
 
-// tg: code/modules/vehicles/lavaboat.dm:80
-[DmPath("/obj/item/ship_in_a_bottle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_ship_in_a_bottle : obj_item
+// tg: code/modules/vehicles/lavaboat.dm:80 (the var block of a hand-written class)
+[DmPath("/obj/item/ship_in_a_bottle")]
+public partial class obj_item_ship_in_a_bottle
 {
     // tg: code/modules/vehicles/lavaboat.dm:80
     public obj_item_ship_in_a_bottle()
@@ -46356,13 +46313,13 @@ public partial class obj_item_integrated_circuit_module
 [DmPath("/obj/item/integrated_circuit/loaded")]
 public partial class obj_item_integrated_circuit_loaded { }
 
-// tg: code/modules/wiremod/preset/hello_world.dm:8
-[DmPath("/obj/item/integrated_circuit/loaded/hello_world"), DmGeneratedOnly, DmInert]
-public partial class obj_item_integrated_circuit_loaded_hello_world : obj_item_integrated_circuit_loaded { }
+// tg: code/modules/wiremod/preset/hello_world.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/integrated_circuit/loaded/hello_world")]
+public partial class obj_item_integrated_circuit_loaded_hello_world { }
 
-// tg: code/modules/wiremod/preset/speech_relay.dm:8
-[DmPath("/obj/item/integrated_circuit/loaded/speech_relay"), DmGeneratedOnly, DmInert]
-public partial class obj_item_integrated_circuit_loaded_speech_relay : obj_item_integrated_circuit_loaded { }
+// tg: code/modules/wiremod/preset/speech_relay.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/integrated_circuit/loaded/speech_relay")]
+public partial class obj_item_integrated_circuit_loaded_speech_relay { }
 
 // tg: code/modules/wiremod/core/integrated_circuit.dm:768
 [DmPath("/obj/item/integrated_circuit/admin"), DmGeneratedOnly]
@@ -46460,9 +46417,9 @@ public partial class obj_item_controller
     }
 }
 
-// tg: code/modules/wiremod/shell/keyboard.dm:2
-[DmPath("/obj/item/keyboard_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_item_keyboard_shell : obj_item
+// tg: code/modules/wiremod/shell/keyboard.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/keyboard_shell")]
+public partial class obj_item_keyboard_shell
 {
     // tg: code/modules/wiremod/shell/keyboard.dm:2
     public obj_item_keyboard_shell()
@@ -46487,9 +46444,9 @@ public partial class obj_item_keyboard_shell : obj_item
     }
 }
 
-// tg: code/modules/wiremod/shell/scanner.dm:7
-[DmPath("/obj/item/wiremod_scanner"), DmGeneratedOnly, DmInert]
-public partial class obj_item_wiremod_scanner : obj_item
+// tg: code/modules/wiremod/shell/scanner.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/wiremod_scanner")]
+public partial class obj_item_wiremod_scanner
 {
     // tg: code/modules/wiremod/shell/scanner.dm:7
     public obj_item_wiremod_scanner()
@@ -46698,9 +46655,9 @@ public partial class obj_item_shell_scanner_gate : obj_item_shell
     }
 }
 
-// tg: code/modules/wiremod/shell/undertile.dm:2
-[DmPath("/obj/item/undertile_circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_undertile_circuit : obj_item
+// tg: code/modules/wiremod/shell/undertile.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/undertile_circuit")]
+public partial class obj_item_undertile_circuit
 {
     // tg: code/modules/wiremod/shell/undertile.dm:2
     public obj_item_undertile_circuit()

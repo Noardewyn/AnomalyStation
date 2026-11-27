@@ -61,8 +61,9 @@ public class PlayTest20261114Tests
     {
         AudioRoom r = Room(16102);
         mob_living_carbon_human bob = r.Join(3, LineY, "Bob");
-        // the Lavaland flight potion: still inert (the soda cans are ported now, the jerrycans since gaps OD1)
-        var can = Held<obj_item_reagent_containers_cup_bottle_potion_flight>(r, bob);
+        // the cult's unholy water flask: inert while the cult is not ported (D333; the soda cans are ported now, the jerrycans
+        // since gaps OD1, the Lavaland flight potion with the necropolis loot)
+        var can = Held<obj_item_reagent_containers_cup_beaker_unholywater>(r, bob);
         Assert.True(r.In(() => InertSeam.IsInert(can) && can.reagents == null));
         Assert.True(Dm.truthy(r.In(() => Waiting.NoSleep(can.attack_self(bob)))));
         Assert.True(Dm.truthy(r.In(() => Waiting.NoSleep(can.attack_self_secondary(bob)))));
@@ -70,11 +71,12 @@ public class PlayTest20261114Tests
     }
 
     [Fact]
-    public void AnInertLaptopBrokenByABlastIsDeletedAsItIs()
+    public void ALaptopBrokenByABlastIsDeleted()
     {
         AudioRoom r = Room(16103);
+        // the laptop was inert when this was found; it is live since the MetaStation leftovers
         var laptop = r.In(() => Dm.@new<obj_item_modular_computer_laptop>(locate(5, LineY, 1)));
-        Assert.True(r.In(() => InertSeam.IsInert(laptop) && laptop.physical == null));
+        Assert.False(r.In(() => InertSeam.IsInert(laptop)));
         r.In(() => Waiting.NoSleep(laptop.deconstruct(FALSE)));
         Assert.True(r.In(() => QDELETED(laptop)));
         r.AssertNoRuntimes();

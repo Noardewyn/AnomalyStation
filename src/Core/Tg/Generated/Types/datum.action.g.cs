@@ -68,9 +68,9 @@ public partial class datum_action_vote
     }
 }
 
-// tg: code/datums/actions/mobs/adjust_vision.dm:8
-[DmPath("/datum/action/adjust_vision"), DmGeneratedOnly, DmInert]
-public partial class datum_action_adjust_vision : datum_action
+// tg: code/datums/actions/mobs/adjust_vision.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/action/adjust_vision")]
+public partial class datum_action_adjust_vision
 {
     public DmList low_light_cutoff; // tg: code/datums/actions/mobs/adjust_vision.dm:18
     public DmList medium_light_cutoff; // tg: code/datums/actions/mobs/adjust_vision.dm:19
@@ -90,7 +90,7 @@ public partial class datum_action_adjust_vision : datum_action
 }
 
 // tg: code/datums/actions/mobs/adjust_vision.dm:67
-[DmPath("/datum/action/adjust_vision/bileworm"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/adjust_vision/bileworm"), DmGeneratedOnly]
 public partial class datum_action_adjust_vision_bileworm : datum_action_adjust_vision
 {
     // tg: code/datums/actions/mobs/adjust_vision.dm:67
@@ -1298,9 +1298,9 @@ public partial class datum_action_minimap_nuclear : datum_action_minimap
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:415
-[DmPath("/datum/action/exit_possession"), DmGeneratedOnly, DmInert]
-public partial class datum_action_exit_possession : datum_action
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:415 (the var block of a hand-written class)
+[DmPath("/datum/action/exit_possession")]
+public partial class datum_action_exit_possession
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:415
     public datum_action_exit_possession()

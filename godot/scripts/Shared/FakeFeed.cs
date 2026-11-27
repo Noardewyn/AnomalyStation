@@ -60,7 +60,7 @@ public sealed class FakeFeed : IWorldFeed
     }
 
     /// <inheritdoc/>
-    public HotbarMessage Hotbar => _replica.Hotbar; // version 98 also (DV603): the replica takes the message (ReplicaWorld.V98.cs)
+    public HotbarMessage Hotbar => _replica.Hotbar; // version 99 also (DV689): the replica takes the message (ReplicaWorld.V99.cs)
 
     /// <inheritdoc/>
     public int HotbarRefusals => _replica.HotbarRefusals;

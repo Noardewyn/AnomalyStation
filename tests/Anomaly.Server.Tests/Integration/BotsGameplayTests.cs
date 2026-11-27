@@ -77,7 +77,7 @@ public class BotsGameplayTests(ITestOutputHelper output)
         foreach ((Type type, int count) in new[] { (typeof(mob_living_basic_bot_cleanbot), 3), (typeof(mob_living_basic_bot_medbot), 1), (typeof(mob_living_basic_bot_mulebot), 3), (typeof(mob_living_basic_bot_repairbot), 1), (typeof(mob_living_basic_bot_secbot), 3) })
             Assert.Equal(count, bots.Count(b => type.IsInstanceOfType(b)));
         Assert.All(bots, b => Assert.False(InertSeam.IsInert(b), b.GetType().Name));
-        Assert.Equal(3, In(w, () => Dm.each<mob_living_basic_bot_secbot>().Count(s => HAS_TRAIT(s, TRAIT_COMMISSIONED) || s is mob_living_basic_bot_secbot_pingsky)));
+        Assert.Equal(3, In(w, () => bots.OfType<mob_living_basic_bot_secbot>().Count(s => HAS_TRAIT(s, TRAIT_COMMISSIONED) || s is mob_living_basic_bot_secbot_pingsky)));
 
         // the patrolling ones walk their beacons (their replica follows)
         var patrollers = bots.Where(b => b is mob_living_basic_bot_cleanbot_autopatrol or mob_living_basic_bot_medbot_autopatrol or mob_living_basic_bot_secbot_beepsky_officer).ToList();

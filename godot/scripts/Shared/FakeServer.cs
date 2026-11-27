@@ -251,7 +251,7 @@ public sealed partial class FakeServer
         if (_options.Inventory)
         {
             InitInventory();
-            InitHotbar(); // ui-overhaul.md section 10 (DV603)
+            InitHotbar(); // ui-overhaul.md section 10 (DV689)
             BuildInventoryHud();
         }
     }
@@ -460,7 +460,7 @@ public sealed partial class FakeServer
         if (InventoryOn)
         {
             BuildInventoryHud();
-            BuildHotbar(); // DV603: its pictures' rows go out in this Delta, the message after it
+            BuildHotbar(); // DV689: its pictures' rows go out in this Delta, the message after it
         }
         emit(Channel.State, Codec.Encode(BuildDelta()));
         foreach (string text in replies)
@@ -561,7 +561,7 @@ public sealed partial class FakeServer
                     InventoryHover(a);
                     break;
                 case ActionKind.HotbarPress when InventoryOn:
-                    HotbarPress(a.HotbarCell); // DV603 (FakeServer.Hotbar.cs)
+                    HotbarPress(a.HotbarCell); // DV689 (FakeServer.Hotbar.cs)
                     break;
             }
         }
@@ -649,7 +649,7 @@ public sealed partial class FakeServer
         }
         if (verb == "toolbelt")
         {
-            GiveToolbelt(replies); // DV603: the hotbar's kit (FakeServer.Hotbar.cs)
+            GiveToolbelt(replies); // DV689: the hotbar's kit (FakeServer.Hotbar.cs)
             return;
         }
         if (verb == "speedscale")

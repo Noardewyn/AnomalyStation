@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // J1 (D298): the detective's fedora (the pockets with the flask in them, the candy corn on alt-click; the screentip is a live-partial row) and the
-// surgery caps' Initialize, attack_self and examine (the strings; the fishing difficulty element is a deferred leaf, fishing M10+). The var
+// surgery caps' Initialize, attack_self and examine (the strings, the fishing difficulty element). The var
 // blocks are generated. Gaps J2: the chef's hat, with the mouse pilot. Gaps CL1 (D333): the head mirror (a closer look at a lit face's mouth,
 // ears and eyes on examining it more) and the highlander's beret.
 
@@ -65,8 +65,7 @@ public partial class obj_item_clothing_head_utility_surgerycap : obj_item_clothi
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -3) //FISH DOCTOR?!
-        Dm.Deferred("code/modules/clothing/head/jobs.dm:669", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -3): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3));
         return dot;
     }
 
@@ -501,7 +500,7 @@ public partial class obj_item_clothing_head_utility_head_mirror : obj_item_cloth
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/jobs.dm:718", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -3): fishing (M10+)"); //FISH DOCTOR?!
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3)); //FISH DOCTOR?!
         return dot;
     }
 

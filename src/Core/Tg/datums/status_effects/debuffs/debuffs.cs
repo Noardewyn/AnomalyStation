@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL: only the M2 subset translated (M2 P1, the living core): /datum/status_effect/incapacitating and its stun,
 // knockdown, immobilized, paralyzed, incapacitated, unconscious and sleeping subtypes, knocked_out and
 // GLOB.unconscious_appearances, with the file-local defines; M8 slice E: convulsing; M8y slice B: stasis; the other debuffs of the file come
-// with their systems. Syndicate G4c: his_wrath. Gaps P3: spasms, dna_melt, go_away (with deletes_mob) and freezing_blast. Gaps E1a: teleport_madness. Gaps E4: fake_virus. Gaps B1: discoordinated (the discoordination trauma). Gaps MS1: gonbola_pacify (the gonbola's peace and its moodlet). Gaps GU1: designated_target (the .38 flare round's mark). Gaps RG2: necropolis_curse with apply_necropolis_curse and the curse's temp visual.
+// with their systems. Syndicate G4c: his_wrath. Gaps P3: spasms, dna_melt, go_away (with deletes_mob) and freezing_blast. Gaps E1a: teleport_madness. Gaps E4: fake_virus. Gaps B1: discoordinated (the discoordination trauma). Gaps MS1: gonbola_pacify (the gonbola's peace and its moodlet). Gaps GU1: designated_target (the .38 flare round's mark). Gaps RG2: necropolis_curse with apply_necropolis_curse and the curse's temp visual. The kinetic crusher's mark (crusher_mark, its detonation and the backstab). The cleaving saw's saw_bleed and its bloodletting kind.
 
 // tg: code/datums/status_effects/debuffs/debuffs.dm:2  #define HEALING_SLEEP_DEFAULT 0.2 (file-local, #undef at the end): a private const of
 // /datum/status_effect/incapacitating/sleeping below; HEALING_SLEEP_ORGAN_MULTIPLIER (:4) and SLEEP_QUALITY_WORKOUT_MULTIPLER
@@ -593,10 +593,8 @@ public partial class datum_status_effect_incapacitating_sleeping : datum_status_
 
         if (iscarbon(owner))
         {
-            // tg: :326-328  var/mob/living/carbon/carbon_owner = owner; carbon_owner.handle_dreams()
-            // GAP(M2 P2): /mob/living/carbon/proc/handle_dreams (modules/mob/living/carbon/life.dm) is not declared; dreams are
-            // chat text (M9).
-            Dm.Deferred("code/datums/status_effects/debuffs/debuffs.dm:328", "sleeping tick: carbon_owner.handle_dreams(), the dream texts (dreams, M10+)");
+            mob_living_carbon carbon_owner = owner as mob_living_carbon;
+            carbon_owner.handle_dreams();
         }
 
         if (prob(8) && owner.health > owner.crit_threshold)
@@ -1485,3 +1483,123 @@ public sealed partial class TgState
     // tg: code/datums/status_effects/debuffs/debuffs.dm:968  /datum/status_effect/ants's var/static/list/ant_debuff_speech
     internal DmList datum_status_effect_ants__ant_debuff_speech;
 }
+
+// tg: code/datums/status_effects/debuffs/debuffs.dm:429
+public partial class datum_status_effect_crusher_mark : datum_status_effect
+{
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:445
+    [DmParams("new_owner", "was_boosted", "crusher")]
+    public override async DmTask<object> on_creation(mob_living new_owner = null, params object[] __extra)
+    {
+        object was_boosted = Dm.arg(__extra, 0);
+        obj_item_kinetic_crusher crusher = Dm.arg<obj_item_kinetic_crusher>(__extra, 1);
+        object dot = await base.on_creation(new_owner, __extra);
+        boosted = Dm.num(was_boosted);
+        this.crusher = crusher;
+        if (crusher != null)
+            RegisterSignal(crusher, COMSIG_QDELETING, nameof(on_crusher_destroyed));
+        return dot;
+    }
+
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:452
+    [SignalHandler]
+    public virtual void on_crusher_destroyed(datum source = null)
+    {
+        crusher = null;
+    }
+
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:456
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        if (owner.mob_size < MOB_SIZE_LARGE)
+            return FALSE;
+
+        marked_underlay = Dm.@new<obj_effect_abstract_crusher_mark>();
+        marked_underlay.pixel_w = -(owner.base_pixel_x + owner.base_pixel_w);
+        marked_underlay.pixel_z = -(owner.base_pixel_y + owner.base_pixel_z);
+        marked_underlay.transform = Dm.mul(marked_underlay.transform, 0.5f);
+        Dm.append(owner.vis_contents, marked_underlay);
+        animate(marked_underlay, ready_delay, Dm.named("transform", Dm.mul(Dm.matrix(), 1.2f)), Dm.named("flags", Dm.bitor(CIRCULAR_EASING, EASE_IN)));
+        _addtimer(Dm.@new<datum_callback>(this, nameof(scale_back)), ready_delay, file: "code/datums/status_effects/debuffs/debuffs.dm", line: 466); // Animate chains do not function with vis_contents
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:469
+    public virtual void scale_back()
+    {
+        animate(marked_underlay, Dm.named("time", 0.1f * SECONDS), Dm.named("transform", Dm.matrix()), Dm.named("flags", Dm.bitor(CUBIC_EASING, EASE_OUT)));
+    }
+
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:472
+    public override object Destroy(float? force = null)
+    {
+        if (owner != null)
+            Dm.remove(owner.underlays, marked_underlay);
+        QDEL_NULL(ref marked_underlay);
+        crusher = null;
+        return base.Destroy(force);
+    }
+
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:479
+    public virtual async DmTask detonate(obj_item_kinetic_crusher used_crusher = null, mob_living user = null, float? melee_hit = null)
+    {
+        melee_hit ??= TRUE;
+        datum_status_effect_crusher_damage crusher_damage_effect = (owner.has_status_effect(typeof(datum_status_effect_crusher_damage)) ?? await owner.apply_status_effect(typeof(datum_status_effect_crusher_damage))) as datum_status_effect_crusher_damage;
+        float target_health = owner.health;
+        float combined_damage = detonation_damage;
+        if (used_crusher != null)
+        {
+            foreach (obj_item_crusher_trophy crusher_trophy in Dm.each<obj_item_crusher_trophy>(used_crusher.trophies))
+                combined_damage += Dm.num(await crusher_trophy.on_mark_detonation(owner, user, used_crusher));
+        }
+
+        // Trophy effects kill the target, abort
+        if (QDELETED(owner))
+            return;
+
+        if (!QDELETED(crusher_damage_effect))
+            crusher_damage_effect.total_damage += target_health - owner.health; // We did some damage, but let's not assume how much we did
+
+        Dm.@new<obj_effect_temp_visual_kinetic_blast>(get_turf(owner));
+        bool backstabbed = false;
+        object def_check = owner.getarmor(type: BOMB);
+
+        // Backstab bonus, only if a crusher was used to detonate the mark
+        if (Dm.truthy(melee_hit) && used_crusher != null && (Dm.truthy(boosted) || (user != null && Dm.truthy(check_behind(user, owner)) && !HAS_TRAIT(owner, TRAIT_BACKSTAB_IMMUNE))))
+        {
+            backstabbed = true;
+            combined_damage += used_crusher.backstab_bonus;
+            playsound(user, used_crusher.backstab_sound, 100, TRUE);
+        }
+
+        if (!QDELETED(crusher_damage_effect))
+            crusher_damage_effect.total_damage += combined_damage;
+
+        if (user != null && Dm.truthy(user._listen_lookup?[COMSIG_LIVING_CRUSHER_DETONATE]))
+            user._SendSignal(COMSIG_LIVING_CRUSHER_DETONATE, Dm.list(user, owner, used_crusher, backstabbed ? TRUE : FALSE));
+        await owner.apply_damage(combined_damage, BRUTE, blocked: Dm.num(def_check));
+        if (!QDELETED(owner))
+            owner.remove_status_effect(this);
+    }
+}
+
+// tg: code/datums/status_effects/debuffs/debuffs.dm:521
+public partial class datum_status_effect_stacking_saw_bleed : datum_status_effect_stacking
+{
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:531
+    public override void fadeout_effect()
+    {
+        Dm.@new<obj_effect_temp_visual_bleed>(get_turf(owner));
+    }
+
+    // tg: code/datums/status_effects/debuffs/debuffs.dm:534
+    public override void threshold_cross_effect()
+    {
+        Dm.@new<obj_effect_temp_visual_bleed_explode>(get_turf(owner));
+        playsound(owner, SFX_DESECRATION, 100, TRUE, -1);
+        foreach (object splatter_dir in Dm.each(GLOB.alldirs))
+            Waiting.NoSleep(owner.create_splatter(splatter_dir));
+        Waiting.NoSleep(owner.adjust_brute_loss(bleed_damage));
+    }
+}
+

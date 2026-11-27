@@ -429,18 +429,6 @@ public partial class datum_component_mob_harvest
     }
 }
 
-// tg: code/datums/components/ranged_attacks.dm:6
-public partial class datum_component_ranged_attacks
-{
-    // tg: code/datums/components/ranged_attacks.dm:95
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual void disable_attack(mob source = null, obj_item_crusher_trophy used_trophy = null, mob_living user = null)
-    {
-        Dm.Deferred("code/datums/components/ranged_attacks.dm:95", "disable_attack: the watcher trophy's delay (the crusher, lavaland) (M10+)");
-    }
-}
-
 // tg: code/datums/components/scope.dm:7
 public partial class datum_component_scope
 {
@@ -640,71 +628,6 @@ public partial class datum_team_cult
     }
 }
 
-// tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:44
-public partial class datum_reagent_toxin_mutagen
-{
-    // tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:80
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/toxin_reagents.dm:80", "used_on_fish: fishing (not ported): mutagen makes a fish mutagenic for a while (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1391
-public partial class datum_reagent_toxin_bonehurtingjuice
-{
-    // tg: code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1437
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/toxin_reagents.dm:1437", "used_on_fish: fishing (not ported): bone hurting juice hurts a fish made of bone (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:548
-public partial class datum_reagent_lube
-{
-    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:573
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/other_reagents.dm:573", "used_on_fish: fishing (not ported): a fish fed space lube grows into a lubefish (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:2722
-public partial class datum_reagent_growthserum
-{
-    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:2753
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/other_reagents.dm:2753", "used_on_fish: fishing (not ported, gaps FI1-3): a fish fed growth serum grows quickly for a while (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:425
-public partial class datum_reagent_teslium
-{
-    // tg: code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:443
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public virtual DmTask<object> used_on_fish(obj_item_fish fish = null)
-    {
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/pyrotechnic_reagents.dm:443", "used_on_fish: fishing (not ported, gaps FI1-3): a fish fed teslium is electrogenic for a while (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
 // tg: code/modules/jobs/job_types/bartender.dm:2
 public partial class datum_job_bartender
 {
@@ -713,7 +636,7 @@ public partial class datum_job_bartender
     [DmGeneratedStub]
     public override void award_service(client winner = null, object award = null)
     {
-        Dm.Deferred("code/modules/jobs/job_types/bartender.dm:38", "award_service: the service awards (the medals and SSrestaurant's venues, after M10) (M10+)");
+        Dm.Deferred("code/modules/jobs/job_types/bartender.dm:38", "award_service: the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1) (M10+)");
     }
 }
 
@@ -725,7 +648,7 @@ public partial class datum_job_cook
     [DmGeneratedStub]
     public override void award_service(client winner = null, object award = null)
     {
-        Dm.Deferred("code/modules/jobs/job_types/cook.dm:56", "award_service: the service awards (the medals and SSrestaurant's venues, after M10) (M10+)");
+        Dm.Deferred("code/modules/jobs/job_types/cook.dm:56", "award_service: the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1) (M10+)");
     }
 }
 
@@ -748,6 +671,84 @@ public partial class datum_spacevine_controller
     {
         Dm.Deferred("code/modules/events/space_vines/vine_controller.dm:54", "vv_do_topic: the Delete Vines option of the view variables menu (admin tooling) (M10+)");
         return DmTask<object>.FromResult(default);
+    }
+}
+
+// tg: code/modules/fishing/sources/_fish_source.dm:77
+public partial class datum_fish_source
+{
+    // tg: code/modules/fishing/sources/_fish_source.dm:603
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public virtual object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
+    {
+        Dm.NotTranslated("code/modules/fishing/sources/_fish_source.dm:603", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/sources/subtypes/structures.dm:35
+public partial class datum_fish_source_holographic
+{
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:55
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
+    {
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:55", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/sources/subtypes/structures.dm:82
+public partial class datum_fish_source_hydro_tray
+{
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:106
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
+    {
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:106", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/sources/subtypes/structures.dm:219
+public partial class datum_fish_source_aquarium
+{
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:242
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
+    {
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:242", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/sources/subtypes/structures.dm:255
+public partial class datum_fish_source_vending
+{
+    // tg: code/modules/fishing/sources/subtypes/structures.dm:265
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
+    {
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/structures.dm:265", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/sources/subtypes/surgery.dm:4
+public partial class datum_fish_source_surgery
+{
+    // tg: code/modules/fishing/sources/subtypes/surgery.dm:43
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object generate_wiki_contents(datum_autowiki_fish_sources wiki = null)
+    {
+        Dm.NotTranslated("code/modules/fishing/sources/subtypes/surgery.dm:43", "generate_wiki_contents: the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported) (M10+)");
+        return default;
     }
 }
 
@@ -820,15 +821,15 @@ public partial class datum_picture
     }
 }
 
-// tg: code/modules/research/techweb/_techweb.dm:11
-public partial class datum_techweb
+// tg: code/modules/religion/religion_sects.dm:536
+public partial class datum_religion_sect_dreams
 {
-    // tg: code/modules/research/techweb/_techweb.dm:470
-    // STUB(research): docs/ai/specs/live-partial.txt, section Silicons
+    // tg: code/modules/religion/religion_sects.dm:660
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public virtual DmTask<object> add_scientific_paper(datum_scientific_paper paper_to_add = null)
+    public override DmTask<object> vv_edit_var(object var_name = null, object var_value = null)
     {
-        Dm.Deferred("code/modules/research/techweb/_techweb.dm:470", "add_scientific_paper: the ordnance papers' publication (NT Frontier and the scientific papers, a later research campaign) (research)");
+        Dm.Deferred("code/modules/religion/religion_sects.dm:660", "vv_edit_var: the admin's variable editor (admin tooling) (M10+)");
         return DmTask<object>.FromResult(default);
     }
 }

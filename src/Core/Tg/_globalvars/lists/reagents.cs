@@ -216,10 +216,9 @@ public static partial class GlobalProcs
 
         //Randomized need to go last since they need to check against conflicts with normal recipes
         DmList paths = Dm.add(Dm.sub(subtypesof(typeof(datum_chemical_reaction)), typesof(typeof(datum_chemical_reaction_randomized))), subtypesof(typeof(datum_chemical_reaction_randomized))) as DmList;
-        // GAP(gaps F1 -> the kitchen, xenobiology): inert reactions skipped until translated (the inert rule, types-converter.md 4
-        // and 8). A live reaction, written or var-only under a live parent (the drinks and every chemistry reaction since gaps P5),
-        // is made and indexed as tg; an inert one has tg procs nobody wrote (the food and soup mixtures, the slime extracts) and
-        // would react with tg's numbers but none of its own procs, so it joins when its package writes it.
+        // The inert rule (types-converter.md 4 and 8): an inert reaction would react with tg's numbers but none of its own procs, so it
+        // is skipped. Every reaction of tg's is live (the kitchen's, the drinks', chemistry's and the slime extracts'); the filter stays
+        // for a reaction a later snapshot adds before it is written.
         DmList live = Dm.list();
         foreach (object path in Dm.each(paths))
         {

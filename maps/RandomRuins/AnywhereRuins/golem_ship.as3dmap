@@ -1,0 +1,260 @@
+anomaly-map 1
+source _maps/RandomRuins/AnywhereRuins/golem_ship.dmm tg 1d99bd7f
+size 20 16 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+2,16: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+3,16: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+4,16: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+5,16: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,16: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+7,16: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+8,16: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+1,15: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+2,15: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+3,15: /obj/item/stack/ore/titanium{pixel_y = 10; pixel_x = -10} | /obj/item/stack/ore/iron{pixel_y = 10; pixel_x = 10} | /obj/structure/bed | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+4,15: /obj/structure/railing{dir = 8} | /obj/structure/filingcabinet/chestdrawer | /obj/item/aquarium_prop/treasure{pixel_y = 10; pixel_x = 8} | /obj/item/storage/crayons | /obj/item/pen{pixel_y = -2} | /obj/item/toy/cards/deck | /obj/item/toy/cards/deck/cas/black | /obj/item/toy/cards/deck/cas | /obj/item/toy/cards/deck/tarot | /obj/item/toy/cards/deck/wizoff | /obj/item/stack/spacecash/c500 | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+5,15: /obj/structure/aquarium | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,15: /obj/structure/bookcase/random/reference | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+7,15: /obj/structure/bookcase/random/reference | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+8,15: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+1,14: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+2,14: /obj/item/stack/ore/gold{pixel_y = 13; pixel_x = -8} | /obj/structure/table/wood | /obj/item/flashlight/lamp/green{pixel_y = 15} | /obj/item/book/manual/wiki/research_and_development{name = "Sacred Text of the Liberator"; pixel_x = -4; pixel_y = 3} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+3,14: /obj/item/stack/ore/gold{pixel_y = 7; pixel_x = -11} | /obj/item/stack/ore/iron{pixel_y = -17; pixel_x = 10} | /obj/item/stack/ore/gold{pixel_y = -16; pixel_x = -6} | /obj/item/stack/ore/iron{pixel_y = 7; pixel_x = 12} | /obj/structure/statue/gold/rd{name = "Statue of the Liberator"; desc = "This is a highly valuable statue made from gold. It represents the creator of your species, the Liberator."} | /obj/item/stack/ore/gold{pixel_y = 18; pixel_x = -8} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+4,14: /obj/structure/railing{dir = 8} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+5,14: /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,14: /obj/structure/chair/office{dir = 4} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+7,14: /obj/structure/table/wood | /obj/item/resonator/upgraded{name = "Chief Golem's Resonator"; pixel_y = 6; pixel_x = -8} | /obj/item/paper_bin{pixel_x = 9; pixel_y = 7} | /obj/item/pen{pixel_y = -2} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+8,14: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+1,13: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+2,13: /obj/structure/table/wood | /obj/item/bedsheet/rd/royal_cape{pixel_x = 5; pixel_y = 9} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+3,13: /obj/item/stack/ore/plasma{pixel_x = -8; pixel_y = -8} | /obj/item/stack/ore/gold{pixel_y = 2; pixel_x = 6} | /obj/item/stack/ore/iron{pixel_y = 5; pixel_x = -10} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+4,13: /obj/structure/railing{dir = 8} | /obj/item/chair/wood{pixel_x = 4; pixel_y = -8} | /obj/machinery/button/door/directional/south{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+5,13: /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,13: /obj/machinery/bookbinder | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+7,13: /obj/structure/table/wood | /obj/item/blueprints/golem{pixel_y = 3; pixel_x = -2} | /obj/structure/light_construct/small/directional/east | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+8,13: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+11,13: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+12,13: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+13,13: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+14,13: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+15,13: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+16,13: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+17,13: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+18,13: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+19,13: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+20,13: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+1,12: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+2,12: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+3,12: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+4,12: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+5,12: /obj/machinery/door/airlock/titanium | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,12: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+7,12: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+8,12: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+10,12: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+11,12: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+12,12: /obj/structure/reagent_dispensers/plumbed | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+13,12: /obj/structure/reagent_dispensers/plumbed | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+14,12: /obj/structure/chair/office{dir = 4} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+15,12: /obj/structure/table | /obj/item/stack/medical/wrap/sticky_tape{pixel_y = 12; pixel_x = 4} | /obj/item/pen{pixel_x = -6} | /obj/structure/light_construct/directional/north | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+16,12: /obj/structure/chair/office{dir = 8} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+17,12: /obj/structure/reagent_dispensers/fueltank | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+18,12: /obj/structure/reagent_dispensers/fueltank | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+19,12: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+20,12: /obj/machinery/power/shuttle_engine/propulsion{dir = 4} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+4,11: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+5,11: /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,11: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+10,11: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+11,11: /obj/structure/table | /obj/item/storage/toolbox/fishing{pixel_y = 14} | /obj/item/storage/toolbox/fishing{pixel_y = 7; pixel_x = -1} | /obj/item/storage/toolbox/fishing{pixel_y = -1; pixel_x = -1} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+12,11: /obj/item/aquarium_kit{pixel_y = 12; pixel_x = -5} | /obj/effect/turf_decal/siding/thinplating_new/corner | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+13,11: /obj/effect/turf_decal/siding/thinplating_new | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+14,11: /obj/effect/turf_decal/siding/thinplating_new | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+15,11: /obj/effect/turf_decal/siding/thinplating_new | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+16,11: /obj/effect/turf_decal/siding/thinplating_new/corner{dir = 8} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+17,11: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+18,11: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+19,11: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+20,11: /obj/machinery/power/shuttle_engine/propulsion{dir = 4} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+4,10: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+5,10: /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,10: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship_bedroom"} | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+8,10: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+9,10: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+10,10: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+11,10: /obj/structure/table | /obj/item/fishing_line/reinforced{pixel_y = 11; pixel_x = -7} | /obj/item/fishing_line/reinforced{pixel_y = 4; pixel_x = 2} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+12,10: /obj/effect/turf_decal/siding/thinplating_new{dir = 4} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+13,10: /obj/effect/turf_decal/tile/dark_red | /obj/effect/turf_decal/tile/dark_red{dir = 4} | /obj/effect/turf_decal/tile/dark_red{dir = 8} | /obj/effect/turf_decal/trimline/yellow/arrow_ccw | /obj/effect/turf_decal/trimline/yellow/arrow_ccw | /obj/effect/turf_decal/trimline/yellow/arrow_ccw | /obj/effect/turf_decal/tile/yellow{dir = 1} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/golem_ship
+14,10: /obj/effect/turf_decal/tile/dark_red | /obj/effect/turf_decal/tile/dark_red{dir = 4} | /obj/effect/turf_decal/tile/dark_red{dir = 1} | /obj/effect/turf_decal/tile/dark_red{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/trimline/yellow/arrow_ccw | /obj/effect/turf_decal/trimline/yellow/arrow_ccw | /obj/effect/turf_decal/trimline/yellow/arrow_ccw | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/golem_ship
+15,10: /obj/effect/turf_decal/tile/dark_red | /obj/effect/turf_decal/tile/dark_red{dir = 4} | /obj/effect/turf_decal/tile/dark_red{dir = 8} | /obj/effect/turf_decal/trimline/yellow/arrow_ccw{dir = 6} | /obj/effect/turf_decal/trimline/yellow/arrow_ccw{dir = 6} | /obj/effect/turf_decal/trimline/yellow/arrow_ccw{dir = 6} | /obj/effect/turf_decal/tile/yellow{dir = 1} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/golem_ship
+16,10: /obj/effect/turf_decal/siding/thinplating_new{dir = 8} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+17,10: /obj/effect/mob_spawn/ghost_role/human/golem/adamantine | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+18,10: /obj/effect/mob_spawn/ghost_role/human/golem/adamantine | /obj/structure/sink/directional/west | /obj/structure/mirror/directional/east | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+19,10: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+20,10: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+2,9: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+3,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+4,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+5,9: /obj/machinery/door/airlock/titanium{name = "Liberator's Shrine"} | /obj/effect/turf_decal/siding/wood | /turf/open/floor/wood | /area/ruin/powered/golem_ship
+6,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+7,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+8,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+9,9: /obj/machinery/vending/games | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+10,9: /obj/machinery/vending/cigarette | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+11,9: /obj/machinery/fishing_portal_generator | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+12,9: /obj/effect/turf_decal/siding/thinplating_new{dir = 4} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+13,9: /obj/effect/turf_decal/tile/dark_red | /obj/effect/turf_decal/tile/dark_red{dir = 4} | /obj/effect/turf_decal/tile/dark_red{dir = 1} | /obj/effect/turf_decal/tile/yellow{dir = 8} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/golem_ship
+14,9: /obj/effect/turf_decal/tile/dark_red | /obj/effect/turf_decal/tile/dark_red{dir = 1} | /obj/effect/turf_decal/tile/dark_red{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/trimline/purple/arrow_ccw{dir = 8} | /obj/effect/turf_decal/tile/yellow{dir = 4} | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/golem_ship
+15,9: /obj/effect/turf_decal/tile/dark_red{dir = 1} | /obj/effect/turf_decal/tile/dark_red{dir = 8} | /obj/effect/turf_decal/tile/yellow{dir = 4} | /obj/effect/turf_decal/tile/yellow | /turf/open/floor/mineral/plastitanium | /area/ruin/powered/golem_ship
+16,9: /obj/effect/turf_decal/siding/thinplating_new{dir = 8} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+17,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+18,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+19,9: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+1,8: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+2,8: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+3,8: /obj/structure/table/reinforced | /obj/item/disk/design_disk/golem_shell{pixel_y = 2; pixel_x = 6} | /obj/item/assembly/igniter{pixel_y = 12; pixel_x = -3} | /obj/item/stock_parts/micro_laser{pixel_x = -2} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+4,8: /obj/machinery/autolathe | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+5,8: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+6,8: /obj/machinery/computer/arcade/battle | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+7,8: /obj/machinery/computer/arcade/orion_trail | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+8,8: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+9,8: /obj/item/toy/crayon/spraycan{pixel_x = -11; pixel_y = 21} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+10,8: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+11,8: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+12,8: /obj/effect/turf_decal/siding/thinplating_new/corner{dir = 4} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+13,8: /obj/effect/turf_decal/siding/thinplating_new{dir = 1} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+14,8: /obj/effect/turf_decal/siding/thinplating_new{dir = 1} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+15,8: /obj/effect/turf_decal/siding/thinplating_new{dir = 1} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+16,8: /obj/effect/turf_decal/siding/thinplating_new/corner{dir = 1} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+17,8: /obj/machinery/door/airlock/titanium | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+18,8: /obj/structure/light_construct/directional/north | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+19,8: /obj/machinery/door/airlock/titanium | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+1,7: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+2,7: /obj/machinery/computer/shuttle{dir = 4} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+3,7: /obj/structure/chair/office{dir = 8} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+4,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+5,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+6,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+7,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+8,7: /obj/structure/light_construct/directional/north | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+9,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+10,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+11,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+12,7: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+13,7: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+14,7: /obj/structure/light_construct/directional/south | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+15,7: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+16,7: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+17,7: /obj/machinery/door/airlock/titanium | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+18,7: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+19,7: /obj/machinery/door/airlock/titanium | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+1,6: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+2,6: /obj/structure/table | /obj/item/folder/blue{pixel_y = 1; pixel_x = 4} | /obj/item/paper_bin{pixel_x = -6; pixel_y = 7} | /obj/item/assembly/voice{pixel_x = -6; pixel_y = -4} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+3,6: /obj/structure/chair/office{dir = 8} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+4,6: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+5,6: /obj/structure/chair/office{dir = 4} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+6,6: /obj/structure/table | /obj/item/taperecorder{pixel_y = 7; pixel_x = 5} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+7,6: /obj/structure/chair/office{dir = 8} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+8,6: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+9,6: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+10,6: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+11,6: /obj/effect/mob_spawn/ghost_role/human/golem/adamantine | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+12,6: /obj/structure/table | /obj/item/instrument/harmonica{pixel_y = 5; pixel_x = -1} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+13,6: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+14,6: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+15,6: /obj/machinery/door/airlock/titanium{name = "Storage"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+16,6: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+17,6: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+18,6: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+19,6: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+1,5: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+2,5: /obj/structure/table | /obj/item/tape{pixel_x = 2; pixel_y = -1} | /obj/item/pen/blue{pixel_x = -5} | /obj/machinery/button/door{pixel_y = 7; id = "golemship"; name = "shutter button"; desc = "The shutter control switch for the main research vessel."} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+3,5: /obj/structure/chair/office{dir = 8} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+4,5: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+5,5: /obj/structure/chair/office{dir = 4} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+6,5: /obj/structure/table | /obj/item/chisel{pixel_y = 8; pixel_x = -7} | /obj/item/assembly/signaler{pixel_y = 12; pixel_x = 7} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+7,5: /obj/structure/chair/office{dir = 8} | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+8,5: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+9,5: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+10,5: /obj/structure/closet/crate/bin | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+11,5: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+12,5: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+13,5: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+14,5: /obj/item/pickaxe | /obj/effect/mob_spawn/ghost_role/human/golem/adamantine | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+15,5: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+16,5: /obj/item/stack/sheet/glass{pixel_y = 2; pixel_x = 5} | /obj/item/stack/cable_coil/five{pixel_y = 7; pixel_x = 4} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+17,5: /obj/structure/frame/machine | /obj/item/circuitboard/machine/ore_redemption/offstation{pixel_y = -13; pixel_x = 7} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+18,5: /obj/machinery/computer/order_console/mining/golem | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+19,5: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+1,4: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+2,4: /obj/structure/frame/computer{dir = 4} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+3,4: /obj/structure/chair/office{dir = 8} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+4,4: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+5,4: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+6,4: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+7,4: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+8,4: /obj/structure/extinguisher_cabinet/directional/south | /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+9,4: /turf/open/floor/mineral/titanium | /area/ruin/powered/golem_ship
+10,4: /obj/structure/table/reinforced | /obj/machinery/reagentgrinder | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+11,4: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+12,4: /obj/structure/closet/crate | /obj/item/pickaxe | /obj/item/pickaxe | /obj/item/pickaxe | /obj/item/pickaxe | /obj/item/shovel | /obj/item/shovel | /obj/item/shovel | /obj/item/shovel | /obj/item/fishing_rod | /obj/item/fishing_rod | /obj/item/fishing_rod | /obj/item/storage/box/lights/tubes | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+13,4: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+14,4: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+15,4: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+16,4: /obj/item/stack/sheet/glass{pixel_y = 7; pixel_x = 12} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+17,4: /obj/item/stack/sheet/glass{pixel_y = -4; pixel_x = 12} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+18,4: /obj/item/stack/sheet/glass{pixel_y = 7; pixel_x = 5} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+19,4: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+20,4: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+1,3: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+2,3: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+3,3: /obj/item/storage/medkit/fire{pixel_y = 6; pixel_x = -1} | /obj/item/storage/medkit/fire{pixel_y = 13; pixel_x = -1} | /obj/structure/table | /obj/structure/light_construct/directional/south | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+4,3: /obj/item/storage/medkit/brute{pixel_y = 7; pixel_x = -11} | /obj/item/storage/medkit/brute{pixel_y = 14; pixel_x = -12} | /obj/structure/table | /obj/item/assembly/timer{pixel_y = -1; pixel_x = 8} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+5,3: /obj/structure/table | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+6,3: /obj/item/storage/medkit/fire{pixel_y = 5; pixel_x = 7} | /obj/item/surgical_drapes{pixel_x = 7; pixel_y = 10} | /obj/structure/table | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+7,3: /obj/item/storage/toolbox/mechanical{pixel_y = 7; pixel_x = 3} | /obj/item/storage/toolbox/mechanical{pixel_y = 1; pixel_x = -2} | /obj/structure/table | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+8,3: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+9,3: /obj/machinery/griddle | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+10,3: /obj/structure/table/reinforced | /obj/item/storage/medkit/fire{pixel_y = 8; pixel_x = 1} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+11,3: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+12,3: /obj/structure/ore_box | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+13,3: /obj/structure/ore_box | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+14,3: /obj/structure/ore_box | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+15,3: /obj/item/storage/bag/ore{pixel_x = -5; pixel_y = -5} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+16,3: /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+17,3: /turf/open/floor/plating | /area/ruin/powered/golem_ship
+18,3: /obj/item/shovel{pixel_x = -6; pixel_y = -8} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+19,3: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+20,3: /obj/machinery/power/shuttle_engine/propulsion{dir = 4} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+2,2: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+3,2: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+4,2: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+5,2: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+6,2: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+7,2: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+8,2: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+9,2: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+10,2: /obj/effect/spawner/structure/window/reinforced/shuttle | /obj/machinery/door/poddoor/preopen{id = "golemship"} | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+11,2: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+12,2: /obj/structure/ore_box | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+13,2: /obj/structure/ore_box | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+14,2: /obj/structure/ore_box | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+15,2: /obj/structure/ore_box | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+16,2: /obj/structure/closet/crate | /obj/item/pickaxe | /obj/item/pickaxe | /obj/item/pickaxe | /obj/item/pickaxe | /obj/item/shovel | /obj/item/shovel | /obj/item/shovel | /obj/item/shovel | /obj/item/fishing_rod | /obj/item/fishing_rod | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+17,2: /obj/structure/closet | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/storage/bag/ore | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /obj/item/flashlight/lantern | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+18,2: /obj/structure/closet | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/card/id/advanced/mining | /obj/item/mining_scanner | /obj/item/mining_scanner | /obj/item/mining_scanner | /obj/item/mining_scanner | /obj/item/mining_scanner | /obj/item/mining_scanner | /obj/item/mining_scanner | /obj/item/mining_scanner | /obj/item/mining_scanner | /turf/open/floor/mineral/titanium/purple | /area/ruin/powered/golem_ship
+19,2: /obj/machinery/power/shuttle_engine/heater{dir = 4} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+20,2: /obj/machinery/power/shuttle_engine/propulsion{dir = 4} | /turf/open/floor/plating | /area/ruin/powered/golem_ship
+11,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+12,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+13,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+14,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+15,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+16,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+17,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+18,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+19,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship
+20,1: /turf/closed/wall/mineral/titanium/nodiagonal | /area/ruin/powered/golem_ship

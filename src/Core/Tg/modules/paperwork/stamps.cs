@@ -45,7 +45,7 @@ public partial class obj_item_stamp_clown : obj_item_stamp
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/paperwork/stamps.dm:101", "Initialize: AddElement(/datum/element/swabable, CELL_LINE_TABLE_CLOWN, ...): the cell lines (the sample swab, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_CLOWN, CELL_VIRUS_TABLE_GENERIC, rand(2, 3), 0));
         return dot;
     }
 }

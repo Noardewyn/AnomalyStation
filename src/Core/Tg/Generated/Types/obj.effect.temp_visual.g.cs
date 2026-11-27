@@ -57,9 +57,9 @@ public partial class obj_effect_temp_visual_dragon_swoop_bubblegum : obj_effect_
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:305
-[DmPath("/obj/effect/temp_visual/dragon_swoop/legionnaire"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dragon_swoop_legionnaire : obj_effect_temp_visual_dragon_swoop
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:305 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dragon_swoop/legionnaire")]
+public partial class obj_effect_temp_visual_dragon_swoop_legionnaire
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:305
     public obj_effect_temp_visual_dragon_swoop_legionnaire()
@@ -69,9 +69,9 @@ public partial class obj_effect_temp_visual_dragon_swoop_legionnaire : obj_effec
     }
 }
 
-// tg: code/datums/actions/mobs/lava_swoop.dm:204
-[DmPath("/obj/effect/temp_visual/dragon_flight"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dragon_flight : obj_effect_temp_visual
+// tg: code/datums/actions/mobs/lava_swoop.dm:204 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dragon_flight")]
+public partial class obj_effect_temp_visual_dragon_flight
 {
     // tg: code/datums/actions/mobs/lava_swoop.dm:204
     public obj_effect_temp_visual_dragon_flight()
@@ -85,9 +85,9 @@ public partial class obj_effect_temp_visual_dragon_flight : obj_effect_temp_visu
     }
 }
 
-// tg: code/datums/actions/mobs/lava_swoop.dm:228
-[DmPath("/obj/effect/temp_visual/dragon_flight/end"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dragon_flight_end : obj_effect_temp_visual_dragon_flight
+// tg: code/datums/actions/mobs/lava_swoop.dm:228 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dragon_flight/end")]
+public partial class obj_effect_temp_visual_dragon_flight_end
 {
     // tg: code/datums/actions/mobs/lava_swoop.dm:228
     public obj_effect_temp_visual_dragon_flight_end()
@@ -1316,9 +1316,9 @@ public partial class obj_effect_temp_visual_dir_setting_cloak_walk : obj_effect_
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:12
-[DmPath("/obj/effect/temp_visual/dir_setting/miner_death"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dir_setting_miner_death : obj_effect_temp_visual_dir_setting
+// tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:12 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dir_setting/miner_death")]
+public partial class obj_effect_temp_visual_dir_setting_miner_death
 {
     // tg: code/modules/mob/living/basic/boss/blood_drunk_miner/blood_drunk_objects.dm:12
     public obj_effect_temp_visual_dir_setting_miner_death()
@@ -1328,9 +1328,9 @@ public partial class obj_effect_temp_visual_dir_setting_miner_death : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:3
-[DmPath("/obj/effect/temp_visual/effect_trail"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_effect_trail : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/effect_trail")]
+public partial class obj_effect_temp_visual_effect_trail
 {
     public Type spawned_effect; // tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:10
     public float spawn_interval = 5; // tg: code/game/objects/effects/temporary_visuals/effect_trail.dm:12
@@ -1352,9 +1352,9 @@ public partial class obj_effect_temp_visual_effect_trail : obj_effect_temp_visua
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:81
-[DmPath("/obj/effect/temp_visual/effect_trail/burrowed_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_effect_trail_burrowed_tentacle : obj_effect_temp_visual_effect_trail
+// tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:81 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/effect_trail/burrowed_tentacle")]
+public partial class obj_effect_temp_visual_effect_trail_burrowed_tentacle
 {
     public mob_living owner; // tg: code/modules/mob/living/basic/lavaland/goliath/goliath_actions.dm:88
 
@@ -1370,9 +1370,9 @@ public partial class obj_effect_temp_visual_effect_trail_burrowed_tentacle : obj
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:218
-[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_effect_trail_tendril_chaser : obj_effect_temp_visual_effect_trail
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:218 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser")]
+public partial class obj_effect_temp_visual_effect_trail_tendril_chaser
 {
     public float area_spawn = 0; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:222
 
@@ -1386,7 +1386,7 @@ public partial class obj_effect_temp_visual_effect_trail_tendril_chaser : obj_ef
 }
 
 // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:225
-[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser/wide_area"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/effect_trail/tendril_chaser/wide_area"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_effect_trail_tendril_chaser_wide_area : obj_effect_temp_visual_effect_trail_tendril_chaser
 {
     // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:225
@@ -1397,7 +1397,7 @@ public partial class obj_effect_temp_visual_effect_trail_tendril_chaser_wide_are
 }
 
 // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:32
-[DmPath("/obj/effect/temp_visual/effect_trail/spike_chaser"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/effect_trail/spike_chaser"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_effect_trail_spike_chaser : obj_effect_temp_visual_effect_trail
 {
     // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:32
@@ -2035,9 +2035,9 @@ public partial class obj_effect_temp_visual_annoyed : obj_effect_temp_visual
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:457
-[DmPath("/obj/effect/temp_visual/bleed"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_bleed : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:457 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/bleed")]
+public partial class obj_effect_temp_visual_bleed
 {
     public float? shrink = 1; // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:461
 
@@ -2052,7 +2052,7 @@ public partial class obj_effect_temp_visual_bleed : obj_effect_temp_visual
 }
 
 // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:478
-[DmPath("/obj/effect/temp_visual/bleed/explode"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/bleed/explode"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_bleed_explode : obj_effect_temp_visual_bleed
 {
     // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:478
@@ -2064,9 +2064,9 @@ public partial class obj_effect_temp_visual_bleed_explode : obj_effect_temp_visu
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:483
-[DmPath("/obj/effect/temp_visual/warp_cube"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_warp_cube : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:483 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/warp_cube")]
+public partial class obj_effect_temp_visual_warp_cube
 {
     public float outgoing = 1; // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:484
 
@@ -2199,9 +2199,9 @@ public partial class obj_effect_temp_visual_jet_plume : obj_effect_temp_visual
     }
 }
 
-// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:721
-[DmPath("/obj/effect/temp_visual/despawn_effect"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_despawn_effect : obj_effect_temp_visual
+// tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:721 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/despawn_effect")]
+public partial class obj_effect_temp_visual_despawn_effect
 {
     // tg: code/game/objects/effects/temporary_visuals/miscellaneous.dm:721
     public obj_effect_temp_visual_despawn_effect()
@@ -3042,9 +3042,9 @@ public partial class obj_effect_temp_visual_resonance_crush
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:3
-[DmPath("/obj/effect/temp_visual/dagger_slash"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_slash : obj_effect_temp_visual
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_slash")]
+public partial class obj_effect_temp_visual_dagger_slash
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:3
     public obj_effect_temp_visual_dagger_slash()
@@ -3093,13 +3093,13 @@ public partial class obj_effect_temp_visual_dagger_engraved : obj_effect_temp_vi
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:89
-[DmPath("/obj/effect/temp_visual/dagger_engraved/launch"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_engraved_launch : obj_effect_temp_visual_dagger_engraved { }
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:89 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_engraved/launch")]
+public partial class obj_effect_temp_visual_dagger_engraved_launch { }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:123
-[DmPath("/obj/effect/temp_visual/dagger_engraved/crystals"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_engraved_crystals : obj_effect_temp_visual_dagger_engraved
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:123 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_engraved/crystals")]
+public partial class obj_effect_temp_visual_dagger_engraved_crystals
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:123
     public obj_effect_temp_visual_dagger_engraved_crystals()
@@ -3109,9 +3109,9 @@ public partial class obj_effect_temp_visual_dagger_engraved_crystals : obj_effec
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:143
-[DmPath("/obj/effect/temp_visual/wisp_explosion"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_wisp_explosion : obj_effect_temp_visual
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:143 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/wisp_explosion")]
+public partial class obj_effect_temp_visual_wisp_explosion
 {
     // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:143
     public obj_effect_temp_visual_wisp_explosion()
@@ -3126,9 +3126,9 @@ public partial class obj_effect_temp_visual_wisp_explosion : obj_effect_temp_vis
     }
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:157
-[DmPath("/obj/effect/temp_visual/dagger_crystal"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_dagger_crystal : obj_effect_temp_visual
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:157 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/dagger_crystal")]
+public partial class obj_effect_temp_visual_dagger_crystal
 {
     public float applied_damage = 50; // tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:164
 
@@ -3170,9 +3170,9 @@ public partial class obj_effect_temp_visual_dust_animation_filter
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:90
-[DmPath("/obj/effect/temp_visual/incoming_thing_acid"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_incoming_thing_acid : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/incoming_thing_acid")]
+public partial class obj_effect_temp_visual_incoming_thing_acid
 {
     // tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:90
     public obj_effect_temp_visual_incoming_thing_acid()
@@ -3189,9 +3189,9 @@ public partial class obj_effect_temp_visual_incoming_thing_acid : obj_effect_tem
     }
 }
 
-// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:62
-[DmPath("/obj/effect/temp_visual/slippery_ice"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_slippery_ice : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:62 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/slippery_ice")]
+public partial class obj_effect_temp_visual_slippery_ice
 {
     public float phase_in_period = 20; // tg: code/modules/mob/living/basic/icemoon/ice_demon/ice_demon_abilities.dm:71
 
@@ -3308,9 +3308,9 @@ public partial class obj_effect_temp_visual_solarbeam_killsat : obj_effect_temp_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:69
-[DmPath("/obj/effect/temp_visual/brim_burst"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_brim_burst : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:69 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/brim_burst")]
+public partial class obj_effect_temp_visual_brim_burst
 {
     // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimdemon.dm:69
     public obj_effect_temp_visual_brim_burst()
@@ -3322,9 +3322,9 @@ public partial class obj_effect_temp_visual_brim_burst : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:91
-[DmPath("/obj/effect/temp_visual/hivebrood_spawn"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hivebrood_spawn : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:91 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hivebrood_spawn")]
+public partial class obj_effect_temp_visual_hivebrood_spawn
 {
     // tg: code/modules/mob/living/basic/lavaland/hivelord/spawn_hivelord_brood.dm:91
     public obj_effect_temp_visual_hivebrood_spawn()
@@ -3335,9 +3335,9 @@ public partial class obj_effect_temp_visual_hivebrood_spawn : obj_effect_temp_vi
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:77
-[DmPath("/obj/effect/temp_visual/legion_skull_depart"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_legion_skull_depart : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:77 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/legion_skull_depart")]
+public partial class obj_effect_temp_visual_legion_skull_depart
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:77
     public obj_effect_temp_visual_legion_skull_depart()
@@ -3349,9 +3349,9 @@ public partial class obj_effect_temp_visual_legion_skull_depart : obj_effect_tem
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:90
-[DmPath("/obj/effect/temp_visual/legion_skull_land"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_legion_skull_land : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/legion_skull_land")]
+public partial class obj_effect_temp_visual_legion_skull_land
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:90
     public obj_effect_temp_visual_legion_skull_land()
@@ -3365,9 +3365,9 @@ public partial class obj_effect_temp_visual_legion_skull_land : obj_effect_temp_
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:107
-[DmPath("/obj/effect/temp_visual/legion_brood_indicator"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_legion_brood_indicator : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:107 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/legion_brood_indicator")]
+public partial class obj_effect_temp_visual_legion_brood_indicator
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/spawn_legions.dm:107
     public obj_effect_temp_visual_legion_brood_indicator()
@@ -3402,9 +3402,9 @@ public partial class obj_effect_temp_visual_mook_dust : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148
-[DmPath("/obj/effect/temp_visual/mook_dust/small"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_mook_dust_small : obj_effect_temp_visual_mook_dust { }
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_abilities.dm:148 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/mook_dust/small")]
+public partial class obj_effect_temp_visual_mook_dust_small { }
 
 // tg: code/modules/mob/living/basic/lavaland/tendril/tendril.dm:160
 [DmPath("/obj/effect/temp_visual/spike_stab"), DmGeneratedOnly]
@@ -3419,9 +3419,9 @@ public partial class obj_effect_temp_visual_spike_stab : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:37
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_emerging_ground_spike : obj_effect_temp_visual
+// tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:37 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike")]
+public partial class obj_effect_temp_visual_emerging_ground_spike
 {
     public float harm_delay = 3; // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:43
     public float position_variance = 8; // tg: code/modules/mob/living/basic/space_fauna/meteor_heart/chasing_spikes.dm:45
@@ -3447,9 +3447,9 @@ public partial class obj_effect_temp_visual_emerging_ground_spike : obj_effect_t
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:246
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_emerging_ground_spike_tendril : obj_effect_temp_visual_emerging_ground_spike
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:246 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril")]
+public partial class obj_effect_temp_visual_emerging_ground_spike_tendril
 {
     public float hit_loser = 0; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:256
     public float hit_entry = 3.5f; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:258
@@ -3474,7 +3474,7 @@ public partial class obj_effect_temp_visual_emerging_ground_spike_tendril : obj_
 }
 
 // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:280
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/single"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/single"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_single : obj_effect_temp_visual_emerging_ground_spike_tendril
 {
     // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:280
@@ -3488,9 +3488,9 @@ public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_single
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:289
-[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/chaser"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_chaser : obj_effect_temp_visual_emerging_ground_spike_tendril
+// tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:289 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/emerging_ground_spike/tendril/chaser")]
+public partial class obj_effect_temp_visual_emerging_ground_spike_tendril_chaser
 {
     public obj_effect_temp_visual_effect_trail_tendril_chaser spawner; // tg: code/modules/mob/living/basic/lavaland/tendril/tendril_actions.dm:289
 }
@@ -3801,9 +3801,9 @@ public partial class obj_effect_temp_visual_bubblegum_hands_leftsmack : obj_effe
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:164
-[DmPath("/obj/effect/temp_visual/at_shield"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_at_shield : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:164 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/at_shield")]
+public partial class obj_effect_temp_visual_at_shield
 {
     public object target; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/colossus.dm:175
 
@@ -3824,9 +3824,9 @@ public partial class obj_effect_temp_visual_at_shield : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:225
-[DmPath("/obj/effect/temp_visual/lava_warning"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_lava_warning : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:225 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/lava_warning")]
+public partial class obj_effect_temp_visual_lava_warning
 {
     public mob owner; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:230
 
@@ -3876,9 +3876,9 @@ public partial class obj_effect_temp_visual_lava_safe : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:288
-[DmPath("/obj/effect/temp_visual/fireball"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_fireball : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:288 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/fireball")]
+public partial class obj_effect_temp_visual_fireball
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:288
     public obj_effect_temp_visual_fireball()
@@ -3895,9 +3895,9 @@ public partial class obj_effect_temp_visual_fireball : obj_effect_temp_visual
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:303
-[DmPath("/obj/effect/temp_visual/target"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_target : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:303 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/target")]
+public partial class obj_effect_temp_visual_target
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/drake.dm:303
     public obj_effect_temp_visual_target()
@@ -3926,9 +3926,9 @@ public partial class obj_effect_temp_visual_hierophant
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:534
-[DmPath("/obj/effect/temp_visual/hierophant/squares"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_squares : obj_effect_temp_visual_hierophant
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:534 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/squares")]
+public partial class obj_effect_temp_visual_hierophant_squares
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:534
     public obj_effect_temp_visual_hierophant_squares()
@@ -3940,9 +3940,9 @@ public partial class obj_effect_temp_visual_hierophant_squares : obj_effect_temp
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:546
-[DmPath("/obj/effect/temp_visual/hierophant/wall"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_wall : obj_effect_temp_visual_hierophant
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:546 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/wall")]
+public partial class obj_effect_temp_visual_hierophant_wall
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:546
     public obj_effect_temp_visual_hierophant_wall()
@@ -3959,9 +3959,9 @@ public partial class obj_effect_temp_visual_hierophant_wall : obj_effect_temp_vi
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:581
-[DmPath("/obj/effect/temp_visual/hierophant/chaser"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_chaser : obj_effect_temp_visual_hierophant
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:581 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/chaser")]
+public partial class obj_effect_temp_visual_hierophant_chaser
 {
     public mob_living target; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:582
     public turf targetturf; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:583
@@ -4061,9 +4061,9 @@ public partial class obj_effect_temp_visual_hierophant_blast : obj_effect_temp_v
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:674
-[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_blast_damaging : obj_effect_temp_visual_hierophant_blast
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:674 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging")]
+public partial class obj_effect_temp_visual_hierophant_blast_damaging
 {
     public float? damage = 10; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:674
     public float monster_damage_boost = 1; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:675
@@ -4080,7 +4080,7 @@ public partial class obj_effect_temp_visual_hierophant_blast_damaging : obj_effe
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:177
-[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging/pandora"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/temp_visual/hierophant/blast/damaging/pandora"), DmGeneratedOnly]
 public partial class obj_effect_temp_visual_hierophant_blast_damaging_pandora : obj_effect_temp_visual_hierophant_blast_damaging
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:177
@@ -4091,9 +4091,9 @@ public partial class obj_effect_temp_visual_hierophant_blast_damaging_pandora : 
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:747
-[DmPath("/obj/effect/temp_visual/hierophant/blast/visual"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_hierophant_blast_visual : obj_effect_temp_visual_hierophant_blast
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:747 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/hierophant/blast/visual")]
+public partial class obj_effect_temp_visual_hierophant_blast_visual
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:747
     public obj_effect_temp_visual_hierophant_blast_visual()
@@ -4107,9 +4107,9 @@ public partial class obj_effect_temp_visual_hierophant_blast_visual : obj_effect
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:403
-[DmPath("/obj/effect/temp_visual/elite_tumor_wall"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_temp_visual_elite_tumor_wall : obj_effect_temp_visual
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:403 (the var block of a hand-written class)
+[DmPath("/obj/effect/temp_visual/elite_tumor_wall")]
+public partial class obj_effect_temp_visual_elite_tumor_wall
 {
     public datum_weakref activator_ref; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:416
     public datum_weakref ourelite_ref; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:417

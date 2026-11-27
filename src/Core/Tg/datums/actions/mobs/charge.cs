@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (syndicate X2: the charger holoparasite's charge): only the charge (:1-181) and the basic charge (:183-229) translated; the
-// post-charge tiredness and the triple, hallucination and other bosses' charges come with their mobs.
+// post-charge tiredness (:232-248, the lobstrosity's); the triple and hallucination charges (:250-338, Bubblegum's).
 
 // tg: code/datums/actions/mobs/charge.dm:1
 public partial class datum_action_cooldown_mob_cooldown_charge : datum_action_cooldown_mob_cooldown
@@ -307,5 +307,118 @@ public partial class datum_action_cooldown_mob_cooldown_charge_basic_charge : da
         living_target.visible_message(span_danger(Dm.text("[] charges into []!", source, living_target)), span_userdanger(Dm.text("[] charges into you!", source)));
         if (knockdown_duration >= 0)
             await living_target.Knockdown(knockdown_duration);
+    }
+}
+
+// tg: code/datums/actions/mobs/charge.dm:232
+public partial class datum_status_effect_tired_post_charge : datum_status_effect
+{
+    // tg: code/datums/actions/mobs/charge.dm:238
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        await owner.add_movespeed_modifier(tired_movespeed);
+        return dot;
+    }
+
+    // tg: code/datums/actions/mobs/charge.dm:242
+    public override async DmTask<object> on_remove()
+    {
+        object dot = await base.on_remove();
+        owner.remove_movespeed_modifier(tired_movespeed);
+        return dot;
+    }
+}
+
+// tg: code/datums/actions/mobs/charge.dm:250
+public partial class datum_action_cooldown_mob_cooldown_charge_triple_charge : datum_action_cooldown_mob_cooldown_charge
+{
+    // tg: code/datums/actions/mobs/charge.dm:255
+    public override async DmTask charge_sequence(atom_movable charger = null, atom target_atom = null, object delay = null, object past = null)
+    {
+        for (float i = 0; i <= 2; i++)
+            await do_charge(owner, target_atom, Dm.num(charge_delay) - 2 * i, charge_past);
+    }
+}
+
+// tg: code/datums/actions/mobs/charge.dm:259
+public partial class datum_action_cooldown_mob_cooldown_charge_hallucination_charge : datum_action_cooldown_mob_cooldown_charge
+{
+    // tg: code/datums/actions/mobs/charge.dm:273
+    public override async DmTask charge_sequence(atom_movable charger = null, atom target_atom = null, object delay = null, object past = null)
+    {
+        if (!Dm.truthy(enraged) || prob(33))
+        {
+            await hallucination_charge(target_atom, 6, 8, 0, 6, TRUE);
+            return;
+        }
+        for (float i = 0; i <= 2; i++)
+            await hallucination_charge(target_atom, 4, 9 - 2 * i, 0, 4, TRUE);
+        for (float i = 0; i <= 2; i++)
+            await do_charge(owner, target_atom, Dm.num(charge_delay) - 2 * i, charge_past);
+    }
+
+    // tg: code/datums/actions/mobs/charge.dm:283
+    public override async DmTask<object> do_charge(atom_movable charger = null, atom target_atom = null, object delay = null, object past = null)
+    {
+        object dot = await base.do_charge(charger, target_atom, delay, past);
+        if (charger != owner)
+            qdel(charger);
+        return dot;
+    }
+
+    // tg: code/datums/actions/mobs/charge.dm:288
+    public virtual async DmTask hallucination_charge(atom target_atom = null, object clone_amount = null, object delay = null, object past = null, object radius = null, object use_self = null)
+    {
+        float starting_angle = rand(1, 360);
+        if (!Dm.truthy(radius))
+            return;
+        float angle_difference = 360 / Dm.num(clone_amount);
+        bool self_placed = false;
+        for (float i = 1, i__end = Dm.num(clone_amount); i <= i__end; i++)
+        {
+            float angle = (starting_angle + angle_difference * i);
+            turf place = locate(target_atom.x + cos(angle) * Dm.num(radius), target_atom.y + sin(angle) * Dm.num(radius), target_atom.z) as turf;
+            if (place == null)
+                continue;
+            if (Dm.truthy(use_self) && !self_placed)
+            {
+                await owner.forceMove(place);
+                self_placed = true;
+                continue;
+            }
+            mob_living_simple_animal_hostile_megafauna_bubblegum_hallucination our_clone = Dm.@new<mob_living_simple_animal_hostile_megafauna_bubblegum_hallucination>(place);
+            our_clone.appearance = owner.appearance;
+            our_clone.name = Dm.text("[]'s hallucination", owner);
+            our_clone.alpha = 127.5f;
+            our_clone.move_through_mob = owner;
+            our_clone.spawn_blood = spawn_blood;
+            Waiting.Detach(do_charge(our_clone, target_atom, delay, past)); // INVOKE_ASYNC
+        }
+        if (Dm.truthy(use_self))
+            await do_charge(owner, target_atom, delay, past);
+    }
+
+    // tg: code/datums/actions/mobs/charge.dm:313
+    public override async DmTask hit_target(atom_movable source = null, object target = null, object damage_dealt = null)
+    {
+        object applied_damage = charge_damage;
+        if (source != owner)
+            applied_damage = hallucination_damage;
+        await base.hit_target(source, target, applied_damage);
+    }
+}
+
+// tg: code/datums/actions/mobs/charge.dm:319
+public partial class datum_action_cooldown_mob_cooldown_charge_hallucination_charge_hallucination_surround : datum_action_cooldown_mob_cooldown_charge_hallucination_charge
+{
+    // tg: code/datums/actions/mobs/charge.dm:327
+    public override async DmTask charge_sequence(atom_movable charger = null, atom target_atom = null, object delay = null, object past = null)
+    {
+        for (float i = 0; i <= 4; i++)
+        {
+            await hallucination_charge(target_atom, 2, 8, 2, 2, FALSE);
+            await do_charge(owner, target_atom, charge_delay, charge_past);
+        }
     }
 }

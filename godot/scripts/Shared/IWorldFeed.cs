@@ -166,13 +166,13 @@ public interface IWorldFeed
     /// <summary>Protocol version 92 (DV96): how many times the own shots' hit count changed since the join (each change is a hit marker).</summary>
     int GunSightHits => 0;
 
-    /// <summary>Protocol version 98 also (DV603): the own hotbar the server last sent (its refusal field cleared), <see cref="HotbarMessage.None"/> before the first.</summary>
+    /// <summary>Protocol version 99 also (DV689): the own hotbar the server last sent (its refusal field cleared), <see cref="HotbarMessage.None"/> before the first.</summary>
     HotbarMessage Hotbar => HotbarMessage.None;
 
-    /// <summary>Protocol version 98 also (DV603): how many refused presses the server reported since the join (each is a blink of <see cref="HotbarRefusedCell"/>).</summary>
+    /// <summary>Protocol version 99 also (DV689): how many refused presses the server reported since the join (each is a blink of <see cref="HotbarRefusedCell"/>).</summary>
     int HotbarRefusals => 0;
 
-    /// <summary>Protocol version 98 also (DV603): the cell (1 to 10) of the last refused press, 0 before the first.</summary>
+    /// <summary>Protocol version 99 also (DV689): the cell (1 to 10) of the last refused press, 0 before the first.</summary>
     int HotbarRefusedCell => 0;
 
     /// <summary>The transport's round trip in milliseconds.</summary>

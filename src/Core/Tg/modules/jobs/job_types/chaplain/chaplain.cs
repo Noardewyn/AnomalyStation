@@ -39,7 +39,7 @@ public partial class datum_job_chaplain : datum_job
             obj_item nullrod = Dm.@new(nrt, human_spawned) as obj_item;
             await human_spawned.put_in_hands(nullrod);
             if (GLOB.religious_sect != null)
-                Dm.Deferred("code/modules/jobs/job_types/chaplain/chaplain.dm:64", "after_spawn: GLOB.religious_sect.on_conversion, the sects (modules/religion)");
+                await GLOB.religious_sect.on_conversion(human_spawned);
             return;
         }
         human_spawned.mind?.set_holy_role(HOLY_ROLE_HIGHPRIEST);

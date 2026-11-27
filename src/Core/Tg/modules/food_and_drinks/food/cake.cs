@@ -9,9 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable,
-// make_dryable) and the energy cake's sword (:314-323) translated (gaps package H2, D333); the rest of the file is generated or waits for its
-// package.
+// The whole file: the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable, make_dryable)
+// and the energy cake's sword (:314-323) came with the kitchen (gaps H2, D333); the energy cake slice's dagger and the fruit cake
+// slice's look with the restaurant. The var blocks are generated.
 
 public partial class obj_item_food_cake_birthday : obj_item_food_cake
 {
@@ -95,6 +95,52 @@ public partial class obj_item_food_cakeslice_empty : obj_item_food_cakeslice
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_FILL, Dm.named("max_ingredients", 16)));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/cake.dm:325
+public partial class obj_item_food_cakeslice_birthday_energy : obj_item_food_cakeslice_birthday
+{
+    // tg: code/modules/food_and_drinks/food/cake.dm:341
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        RegisterSignal(this, COMSIG_FOOD_EATEN, nameof(bite_taken));
+        return dot;
+    }
+
+    // tg: code/modules/food_and_drinks/food/cake.dm:345
+    public override async DmTask<object> attack__proc(mob_living target_mob = null, mob_living user = null, DmList modifiers = null, object attack_modifiers = null, params object[] __extra)
+    {
+        if (HAS_TRAIT(user, TRAIT_PACIFISM) && target_mob != user) //Prevents pacifists from attacking others directly
+        {
+            balloon_alert(user, I18n.T("that's dangerous!"));
+            return FALSE;
+        }
+        return await base.attack__proc(target_mob, user, modifiers, attack_modifiers, __extra);
+    }
+
+    // tg: code/modules/food_and_drinks/food/cake.dm:351
+    [SignalHandler]
+    public virtual void bite_taken(datum source = null, mob_living eater = null, mob_living feeder = null)
+    {
+        to_chat(eater, I18n.T("<font color='red' size='5'>As you eat the cake slice, you accidentally hurt yourself on the embedded energy dagger!</font>"));
+        if (eater != feeder)
+            log_combat(feeder, eater, "fed an energy cake to", this);
+        Waiting.NoSleep(eater.apply_damage(18, BRUTE, BODY_ZONE_HEAD));
+        playsound(eater, Dm.resource("sound/items/weapons/blade1.ogg"), 5, TRUE);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/cake.dm:683
+public partial class obj_item_food_cakeslice_fruit : obj_item_food_cakeslice
+{
+    // tg: code/modules/food_and_drinks/food/cake.dm:694
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        icon_state = Dm.text("[][]", base_icon_state, rand(1, 3));
         return dot;
     }
 }

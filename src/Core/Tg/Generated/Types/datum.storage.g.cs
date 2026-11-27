@@ -1496,9 +1496,9 @@ public partial class datum_storage_bag_of_holding
     }
 }
 
-// tg: code/datums/storage/subtypes/others/cards.dm:5
-[DmPath("/datum/storage/tcg"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_tcg : datum_storage
+// tg: code/datums/storage/subtypes/others/cards.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/storage/tcg")]
+public partial class datum_storage_tcg
 {
     // tg: code/datums/storage/subtypes/others/cards.dm:5
     public datum_storage_tcg()
@@ -1522,9 +1522,9 @@ public partial class datum_storage_carpskin_bag : datum_storage
     }
 }
 
-// tg: code/datums/storage/subtypes/others/extract_inventory.dm:2
-[DmPath("/datum/storage/extract_inventory"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_extract_inventory : datum_storage
+// tg: code/datums/storage/subtypes/others/extract_inventory.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/storage/extract_inventory")]
+public partial class datum_storage_extract_inventory
 {
     // tg: code/datums/storage/subtypes/others/extract_inventory.dm:2
     public datum_storage_extract_inventory()
@@ -1693,9 +1693,9 @@ public partial class datum_storage_coffee_cart_rack
     }
 }
 
-// tg: code/datums/storage/subtypes/others/fish_case.dm:2
-[DmPath("/datum/storage/fish_case"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_fish_case : datum_storage
+// tg: code/datums/storage/subtypes/others/fish_case.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/storage/fish_case")]
+public partial class datum_storage_fish_case
 {
     // tg: code/datums/storage/subtypes/others/fish_case.dm:2
     public datum_storage_fish_case()
@@ -1706,9 +1706,9 @@ public partial class datum_storage_fish_case : datum_storage
     }
 }
 
-// tg: code/datums/storage/subtypes/others/fish_case.dm:23
-[DmPath("/datum/storage/fish_case/adjust_size"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_fish_case_adjust_size : datum_storage_fish_case { }
+// tg: code/datums/storage/subtypes/others/fish_case.dm:23 (the var block of a hand-written class)
+[DmPath("/datum/storage/fish_case/adjust_size")]
+public partial class datum_storage_fish_case_adjust_size { }
 
 // tg: code/datums/storage/subtypes/others/misc.dm:5 (the var block of a hand-written class)
 [DmPath("/datum/storage/test_tube_rack")]
@@ -1919,9 +1919,9 @@ public partial class datum_storage_mail_counterfeit_bluespace : datum_storage_ma
     }
 }
 
-// tg: code/datums/storage/subtypes/others/misc.dm:278
-[DmPath("/datum/storage/card_binder"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_card_binder : datum_storage
+// tg: code/datums/storage/subtypes/others/misc.dm:278 (the var block of a hand-written class)
+[DmPath("/datum/storage/card_binder")]
+public partial class datum_storage_card_binder
 {
     // tg: code/datums/storage/subtypes/others/misc.dm:278
     public datum_storage_card_binder()
@@ -2021,9 +2021,9 @@ public partial class datum_storage_rped_compact : datum_storage_rped
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323
-[DmPath("/datum/storage/raptor_storage"), DmGeneratedOnly, DmInert]
-public partial class datum_storage_raptor_storage : datum_storage
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323 (the var block of a hand-written class)
+[DmPath("/datum/storage/raptor_storage")]
+public partial class datum_storage_raptor_storage
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:323
     public datum_storage_raptor_storage()

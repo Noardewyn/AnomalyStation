@@ -213,11 +213,10 @@ public class StationTraitsR2Tests
             Assert.Equal("signup", bridge.get_lobby_icon_state(player));
             Assert.Equal("bridge_assistant", Dm.str((bridge.get_lobby_overlay_states(player) as DmList)[1]));
             Assert.Contains(typeof(datum_station_trait_job_human_ai), Dm.each_cast<Type>(bridge.blacklist));
-            // its job is ported (gaps R2): it rolls; the veteran advisor's and the human AI's jobs are not yet, so SSstation keeps
-            // those two out of the random pool (DV432), an admin's future traits still make them
+            // its job is ported (gaps R2): it rolls, and so do the veteran advisor's and the human AI's since their jobs are (DV432)
             Assert.False(datum_controller_subsystem_processing_station.WaitsForItsSystem(typeof(datum_station_trait_job_bridge_assistant)));
-            Assert.True(datum_controller_subsystem_processing_station.WaitsForItsSystem(typeof(datum_station_trait_job_veteran_advisor)));
-            Assert.True(datum_controller_subsystem_processing_station.WaitsForItsSystem(typeof(datum_station_trait_job_human_ai)));
+            Assert.False(datum_controller_subsystem_processing_station.WaitsForItsSystem(typeof(datum_station_trait_job_veteran_advisor)));
+            Assert.False(datum_controller_subsystem_processing_station.WaitsForItsSystem(typeof(datum_station_trait_job_human_ai)));
             Assert.False(datum_controller_subsystem_processing_station.WaitsForItsSystem(typeof(datum_station_trait_skub)));
         });
     }

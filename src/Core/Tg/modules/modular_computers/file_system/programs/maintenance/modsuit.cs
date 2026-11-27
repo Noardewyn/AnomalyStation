@@ -9,10 +9,10 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps MO1 (D333): the file but its circuit component. MODsuit Control, a maintenance disk's PDA app: a control unit tapped on
+// Gaps MO1 (D333): the whole file. MODsuit Control, a maintenance disk's PDA app: a control unit tapped on
 // the PDA is synced to it, and the NtosMODsuit window then shows that suit's MODsuit window and works its acts remotely. The
-// program's circuit component (/obj/item/circuit_component/mod_program/modsuit_control, :52-71) is wiremod's (section 164): a row
-// in not-translated.md 219. The var block is generated (D111).
+// program's circuit component (:52-71) syncs the suit a circuit plugged into the computer names. The var block is generated
+// (D111).
 
 // tg: code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:1
 public partial class datum_computer_file_program_maintenance_modsuit_control : datum_computer_file_program_maintenance
@@ -79,5 +79,32 @@ public partial class datum_computer_file_program_maintenance_modsuit_control : d
         if (controlled_suit == null)
             return null;
         return await controlled_suit.ui_act(action, @params, ui, state);
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:52
+public partial class obj_item_circuit_component_mod_program_modsuit_control : obj_item_circuit_component_mod_program
+{
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:58
+    public override async DmTask populate_ports()
+    {
+        await base.populate_ports();
+        suit_port = add_input_port("MODsuit Controlled", PORT_TYPE_ATOM) as datum_port_input;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/maintenance/modsuit.dm:62
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        datum_computer_file_program_maintenance_modsuit_control control = associated_program as datum_computer_file_program_maintenance_modsuit_control;
+        object mod_value = suit_port.value;
+        if (mod_value == null && control.controlled_suit != null)
+        {
+            control.unsync_modsuit();
+            return null;
+        }
+        if (!(mod_value is obj_item_mod_control mod))
+            return null;
+        control.sync_modsuit(mod);
+        return null;
     }
 }

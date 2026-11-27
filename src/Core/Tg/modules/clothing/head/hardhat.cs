@@ -161,7 +161,7 @@ public partial class obj_item_clothing_head_utility_hardhat_pumpkinhead : obj_it
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/hardhat.dm:260", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 3): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 3));
         return dot;
     }
 

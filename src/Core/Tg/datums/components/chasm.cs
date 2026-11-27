@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (D304). A chasm's fishing spot (the rescue hook's catch, :56) waits for fishing (ROADMAP section 4).
+// The whole file (D304). A chasm is a fishing spot: the rescue hook fishes the fallen out of it (:257).
 
 // Used by /turf/open/chasm and subtypes to implement the "dropping" mechanic
 // tg: code/datums/components/chasm.dm:2
@@ -78,8 +78,7 @@ public partial class datum_component_chasm : datum_component
             _addtimer(Dm.@new<datum_callback>(this, nameof(drop_stuff)), 0);
         else if (HAS_TRAIT(parent, TRAIT_CHASM_STOPPED)) // The lattice initialized before we could set our signals
             on_chasm_stopped(parent);
-        // tg: :56  parent.AddComponent(/datum/component/fishing_spot, GLOB.preset_fish_sources[/datum/fish_source/chasm]): fishing is not in the core version (ROADMAP section 4)
-        await DmTask.CompletedTask;
+        await parent.AddComponent(typeof(datum_component_fishing_spot), GLOB.preset_fish_sources[typeof(datum_fish_source_chasm)]);
         return null;
     }
 

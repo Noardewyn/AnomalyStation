@@ -13,7 +13,8 @@ namespace Anomaly.Core.Tg;
 // wanted status, the fan and blood HUDs, and the image helpers. Not translated, with their rows (not-translated.md section 55): the
 // malfunctioning AI's hacked-APC HUD (a live-partial row, with the malfunction, silicons SI8); silicons SI1, SI2 and SI4 (D326) added the
 // silicons', the cyborgs', the AI's and the airlocks' diagnostic HUD (the mechs' came with the mechs),
-// get_visual_width and get_visual_height (their callers are not ported), and get_cached_width and get_cached_height of an image.
+// and get_cached_width and get_cached_height of an image. The megafauna added get_visual_width and get_visual_height (the cleaving saw's
+// bleed scales to its target).
 
 /* DATA HUD DATUMS */
 
@@ -159,6 +160,34 @@ public partial class atom : datum
         if (icon == null)
             return 0;
         return ICON_SIZE_Y;
+    }
+
+    // tg: code/game/data_huds.dm:517
+    public virtual object get_visual_width()
+    {
+        float width = Dm.num(get_cached_width());
+        float height = Dm.num(get_cached_height());
+        matrix t = transform as matrix ?? Dm.matrix();
+        DmList scale_list = Dm.list(
+            width * t.a + height * t.b + t.c,
+            width * t.a + t.c,
+            height * t.b + t.c,
+            t.c);
+        return Dm.num(max(scale_list)) - Dm.num(min(scale_list));
+    }
+
+    // tg: code/game/data_huds.dm:528
+    public virtual object get_visual_height()
+    {
+        float width = Dm.num(get_cached_width());
+        float height = Dm.num(get_cached_height());
+        matrix t = transform as matrix ?? Dm.matrix();
+        DmList scale_list = Dm.list(
+            width * t.d + height * t.e + t.f,
+            width * t.d + t.f,
+            height * t.e + t.f,
+            t.f);
+        return Dm.num(max(scale_list)) - Dm.num(min(scale_list));
     }
 
     // tg: code/game/data_huds.dm:539

@@ -166,7 +166,8 @@ public partial class obj_item_mod_module_drill : obj_item_mod_module
         if (Dm.truthy(ballin))
             return;
         tool_behaviour = TOOL_MINING;
-        RegisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP, nameof(bump_mine));
+        // DEVIATION(DV354): walking into rock with the drill out does not dig it, as with a pick in the hand: the drill digs on its click
+        // (on_select_use); the sphere's excavation registers the bump itself (on_module_activated)
     }
 
     // tg: code/modules/mod/modules/modules_supply.dm:175
@@ -175,7 +176,6 @@ public partial class obj_item_mod_module_drill : obj_item_mod_module
         if (Dm.truthy(ballin))
             return;
         tool_behaviour = null; // NONE: tool_behaviour holds a tool's name (text), and NONE (0) reads as none
-        UnregisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP);
     }
 
     // tg: code/modules/mod/modules/modules_supply.dm:181
@@ -246,6 +246,7 @@ public partial class obj_item_mod_module_drill : obj_item_mod_module
         if (!Dm.truthy(active))
             Waiting.NoSleep(on_activation());
         ballin = TRUE;
+        RegisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP, nameof(bump_mine)); // DEVIATION(DV354): only the sphere digs on the bump (tg: on_activation)
     }
 
     // tg: code/modules/mod/modules/modules_supply.dm:236
@@ -258,6 +259,7 @@ public partial class obj_item_mod_module_drill : obj_item_mod_module
         use_energy_cost *= 2;
         exp_multiplier /= 0.2f;
         ballin = FALSE;
+        UnregisterSignal(mod.wearer, COMSIG_MOVABLE_BUMP); // DEVIATION(DV354): the sphere's bump dig ends with it (tg: on_deactivation)
         if (!Dm.truthy(active))
             Waiting.NoSleep(on_deactivation());
     }

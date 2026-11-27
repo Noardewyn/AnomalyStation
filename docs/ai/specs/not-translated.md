@@ -37,6 +37,7 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/game/world.dm:263` | `SetupLogs`: `log_runtime(GLOB.revdata.get_log_message())`, the commit info for the runtime log (`/datum/getrev`) | `SetupLogs` | M10 | `game/world.cs` |
 | `code/controllers/subsystem/air.dm:106` | `Initialize`: atmos_handbooks_init: the tgui handbooks (M10) | `Initialize` | M10 | `controllers/subsystem/air.cs` |
 | `code/controllers/subsystem/air.dm:217` | `fire`: SStgui.update_uis(SSair): the admin atmos control panel (tgui, M10) | `fire` | M10 (tgui) | `controllers/subsystem/air.cs` |
+| `code/datums/materials/basemats.dm:541`, `:547` | a mythril item's fantasy affixes (`AddComponent(/datum/component/fantasy)`, `TRAIT_INNATELY_FANTASTICAL_ITEM`): nothing reads an affix | a mythril coin's or sheet's Initialize; the first slot machine of a world makes one of every coin (`slotmachine.dm:99-102`); Lavaland's greed ruin holds a mythril coin | the fantasy component (a leftover, D356) | `datums/materials/basemats.cs` |
 | `code/modules/tgui/external.dm:107` | `/datum/ui_act` "change_ui_state": writes the tgui layout preference (the preferences are not translated: a window's layout choice is not kept) | any window's layout toggle (no translated interface has one) | M9 (the preferences) | `modules/tgui/external.cs` |
 | `code/modules/tgui/states.dm:107` | `shared_living_ui_distance`: the machine remote's controlled machine (`/obj/item/machine_remote` is generated only) | every living mob's window update with a remote in hand | M10+ (the machine remote) | `modules/tgui/states.cs` |
 | `code/modules/tgui_input/alert.dm:30` | `tgui_alert` with more than 3 buttons: tg falls back to `tgui_input_list` (not translated yet): null | a caller with 4 or more buttons (none in M5) | with tgui_input_list | `modules/tgui_input/alert.cs` |
@@ -44,10 +45,7 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/controllers/subsystem/air.dm:609` | `log_active_turfs`: the per-level mapping log and SSblackbox feedback of roundstart active turfs (M10) | `log_active_turfs` | M10 | `controllers/subsystem/air.cs` |
 | `code/controllers/subsystem/air.dm:728` | `setup_turf_visuals`: the excited groups' debug overlays (the admin atmos control panel, M10) | `setup_turf_visuals` | M10 (the admin atmos control panel) | `controllers/subsystem/air.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:28` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/passive_gate.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/pump.dm:29` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/pump.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/pump.dm:30` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/pump.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/valve.dm:90` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/valve.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:34` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/volume_pump.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:39` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/volume_pump.cs` |
 | `code/modules/atmospherics/machinery/components/components_base.dm:70` | `update_overlays`: emissive_appearance(icon, "[icon_state]-emissive", src), the device's emissive glow (DEVIATION DV12) | `update_overlays` | never as such (emissives, DV12) | `modules/atmospherics/machinery/components/components_base.cs` |
 | `code/modules/atmospherics/machinery/components/trinary_devices/filter.dm:18` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/components/trinary_devices/filter.cs` |
@@ -122,7 +120,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/controllers/subsystem/mapping.dm:241` | `SSmapping.calculate_z_level_gravity` for a level SSmapping does not manage (the host-built test and toy rooms: `gravity_by_z_level` has no entry, which tg's `manage_z_level` would have made): the gravity is computed and returned but not stored (M3 R4) | a gravity generator created in a test or toy room (`update_list`, the create-and-destroy tests) | never (tg manages every level; D108) | `controllers/subsystem/mapping.cs` |
 | `code/controllers/subsystem/mapping.dm:108` | `SSmapping/Initialize`: `current_map = config.defaultmap` when the loaded config is defaulted (the `maps.txt` default) | `SSmapping/Initialize`, only when `load_map_config` fell back to the default config | M10 (the map vote and rotation; the host's map selection is tg's FORCE_MAP, D108) | `controllers/subsystem/mapping.cs` |
 | `code/controllers/subsystem/mapping.dm:113` | `SSmapping/Initialize`: the plane cube (`plane_offset_to_true`, `true_to_offset_planes`, `plane_to_offset`, the blacklists, `critical_planes`, `create_plane_offsets(0, 0)`): BYOND's plane masters; the lists stay null so the plane macros keep their base case | `SSmapping/Initialize` (a map world) | never as such (BYOND client presentation; the 3D client has no plane masters, D104) | `controllers/subsystem/mapping.cs` |
-| `code/controllers/subsystem/mapping.dm:371` | `determine_fake_sale`: the fake ice or fake space tile stack in `GLOB.arcade_prize_pool` | `SSmapping/Initialize` | with the arcade machines (a later milestone) | `controllers/subsystem/mapping.cs` |
 | `code/controllers/subsystem/mapping.dm:728` | `initialize_biomes`: one `/datum/biome` of each subtype for the map generators | `SSmapping/Initialize` | with the planetary levels (lavaland, icemoon; D108) | `controllers/subsystem/mapping.cs` |
 | `code/game/area/areas.dm:236` | `RunTerrainGeneration`: the area's map generator over its turfs (only an area with `map_generator`) | `SSmapping.run_map_terrain_generation` (`SSmapping/Initialize`) | with the planetary levels (D108; no station area has a generator) | `game/area/areas.cs` |
 | `code/game/area/areas.dm:246` | `RunTerrainPopulation`: the map generator's population pass | `SSmapping.run_map_terrain_population` | with the planetary levels (D108) | `game/area/areas.cs` |
@@ -136,7 +133,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/game/turfs/change_turf.dm:198` | `ChangeTurf`: `SScameras.bare_major_chunk_change(src)` when the opacity changed | `ChangeTurf` once SSticker exists | with the camera network (a later milestone) | `game/turfs/change_turf.cs` |
 | `code/game/turfs/change_turf.dm:203` | `ChangeTurf`: the area's `lighting_effects` overlay of an offset plane | `ChangeTurf` on a level with a plane offset | never as such: BYOND lighting (D114) on stacked levels | `game/turfs/change_turf.cs` |
 | `code/modules/mapping/reader.dm:526` | `/datum/parsed_map/_dmm_load`: the row-wise DMM loader | `_load_impl` for a non-TGM map (never: the engine reader gives the TGM shape, and the converter reads DMM syntax) | never (unreachable, docs/ai/specs/map-format.md 5) | `modules/mapping/reader.cs` |
-| `code/modules/mapping/reader.dm:948` | `build_coordinate`: `place_on_top` (`load_on_top`, `baseturfs.dm`) for the templates' turfs | `load` with `place_on_top` (map templates: shuttles, ruins) | M10 (the map templates: shuttles, D108, and ruins load with `place_on_top`; nothing loads a template before; `load_on_top` waits with them, baseturfs' `place_on_top` is translated since M5 slice 4) | `modules/mapping/reader.cs` |
 | `code/modules/mapping/space_management/space_transition.dm:8` | `/datum/space_level/set_neigbours`: the space transition grid between the space levels' edges | `setup_map_transitions` (not called: D108) | with the space levels (D108: the station level only) | `modules/mapping/space_management/space_transition.cs` |
 | `code/modules/mob/living/living.dm:187` | `MobBump`: `spreadFire(M)`, fire spreading on contact (no fire stacks exist before M4b) | `/mob/living/capsule_mob_bump` (M2 P4: a capsule contact) | M8 (fire stacks on people, with burns) | `modules/mob/mob_movement.capsule.cs` |
 | `code/modules/client/client_procs.dm:937` | `client/Click`: `winset` of the input bar's focus (the BYOND skin) | `/client/Click` (M2 P4: every click of a player) | never as such (the skin is not ported; the 3D client has its own input) | `modules/client/client_procs.click.cs` |
@@ -232,7 +228,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/modules/mob/living/init_signals.dm:363` | on_mind_temporarily_gone_trait_gain: med_hud_set_status(), the medical data HUD (M8) | `on_mind_temporarily_gone_trait_gain` | M8 | `modules/mob/living/init_signals.cs` |
 | `code/modules/mob/living/init_signals.dm:368` | on_mind_temporarily_gone_trait_loss: med_hud_set_status(), the medical data HUD (M8) | `on_mind_temporarily_gone_trait_loss` | M8 | `modules/mob/living/init_signals.cs` |
 | `code/modules/mob/living/living.dm:11` | Initialize: medhud and diag_hud add_atom_to_hud(src), the medical and diagnostic data HUDs (HUD glasses, M8) | `Initialize` | M8 | `modules/mob/living/living.cs` |
-| `code/modules/mob/living/living.dm:15` | Initialize: add_ally(src), the mob's own entry in its allies list (factions and the mob AI, a later milestone) | `Initialize` | M2 lead (add_ally skeleton) / the mob AI milestone | `modules/mob/living/living.cs` |
 | `code/modules/mob/living/living.dm:17` | Initialize: remove_verb(src, /mob/living/verb/pulled), the Pull verb (verbs, M9-M10) | `Initialize` | M9, M10 | `modules/mob/living/living.cs` |
 | `code/modules/mob/living/living.dm:20` | Initialize: update_fov(), the field of view cone (living_fov.dm, M9) | `Initialize` | M9 | `modules/mob/living/living.cs` |
 | `code/modules/mob/living/living.dm:31` | prepare_data_huds: med_hud_set_health() and med_hud_set_status(), the medical data HUD (M8) | `prepare_data_huds` | M8 | `modules/mob/living/living.cs` |
@@ -245,7 +240,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/modules/mob/living/living_defense.dm:864` | disarm: the side kick's visible message and chat line (pronouns and hearing, M9) | `disarm` | M9 | `modules/mob/living/living_defense.cs` |
 | `code/modules/mob/living/status_procs.dm:599` | fakedeath: station_timestamp_timeofdeath = round_timestamp() (the station clock, M10) | `fakedeath` | M10 | `modules/mob/living/status_procs.cs` |
 | `code/modules/surgery/bodyparts/default_parts.dm:202` | set_disabled: owner.dropItemToGround(owner.get_item_for_held_index(held_index)): dropping what the disabled hand holds (items in hands, M4a) | `set_disabled` | M6 (disabled limbs) | `modules/surgery/bodyparts/default_parts.cs` |
-| `code/modules/surgery/organs/_organ.dm:106` | Initialize: AddElement(/datum/element/swabable, ...): a swabable organ (cytology, M8) | `Initialize` | M8 | `modules/surgery/organs/_organ.cs` |
 | `code/modules/surgery/organs/internal/appendix/_appendix.dm:51` | become_inflamed: owner.med_hud_set_status(): the medical HUD's status image (M8) | `become_inflamed` | M8 | `modules/surgery/organs/internal/appendix/_appendix.cs` |
 | `code/modules/surgery/organs/internal/appendix/_appendix.dm:99` | on_mob_remove: organ_owner.med_hud_set_status(): the medical HUD's status image (M8) | `on_mob_remove` | M8 | `modules/surgery/organs/internal/appendix/_appendix.cs` |
 | `code/modules/surgery/organs/internal/appendix/_appendix.dm:105` | on_mob_insert: organ_owner.med_hud_set_status(): the medical HUD's status image (M8) | `on_mob_insert` | M8 | `modules/surgery/organs/internal/appendix/_appendix.cs` |
@@ -270,7 +264,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/modules/reagents/chemistry/holder/reactions.dm:24` | `handle_reactions`: the reaction lookup over `GLOB.chemical_reactions_list_reactant_index` and starting reactions (fuel alone has none) | `add_reagent` once the MC runs | M8 (chemistry) | `modules/reagents/chemistry/holder/reactions.cs` |
 <!-- deferred leaves: append rows above this comment -->
 | `code/datums/outfit.dm:215` | `equip`: update_ID_card, the security HUD's job icon (data HUDs, M8) | `equip` | M8 (data HUDs) | `datums/outfit.cs` |
-| `code/modules/clothing/clothing.dm:74` | `Initialize`: `AddElement(/datum/element/venue_price, FOOD_PRICE_CHEAP)`, the venue price of clothing | `/obj/item/clothing/Initialize` | the restaurant venues (their robot customers; not ported) | `modules/clothing/clothing.cs` |
 | `code/modules/clothing/clothing.dm:77` | `Initialize`: `AddElement(/datum/element/attack_equip)`, equipping clothing on others by attacking | `/obj/item/clothing/Initialize` | M9 (equipping others) | `modules/clothing/clothing.cs` |
 | `code/modules/clothing/under/_under.dm:58` | `Initialize`: `register_context()`, the jumpsuit's screentips | `/obj/item/clothing/under/Initialize` | M9 (screentips) | `modules/clothing/under/_under.cs` |
 | `code/modules/clothing/under/_under.dm:59` | `Initialize`: `AddElement(/datum/element/update_icon_updates_onmob)`, redrawing the wearer when the jumpsuit's icon changes | `/obj/item/clothing/under/Initialize` | M9 (clothing: adjusting, damage, dyes) | `modules/clothing/under/_under.cs` |
@@ -314,7 +307,7 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/game/machinery/doors/poddoor.dm:33` | `/obj/machinery/door/poddoor/Initialize`: `AddElement(/datum/element/nav_computer_icon, ...)` | a pod door `Initialize` with `show_nav_computer_icon` | M10 (shuttles) | `game/machinery/doors/poddoor.cs` |
 | `code/game/machinery/doors/firedoor.dm:662` | `update_overlays`: emissive_appearance of the hazard lights (DEVIATION DV12) | `update_overlays` | never as such (emissives, DV12) | `game/machinery/doors/firedoor.cs` |
 | `code/game/machinery/firealarm.dm:73` | `Initialize`: set_wires(new /datum/wires/firealarm(src)): the fire alarm's wires (hacking, M7) | `Initialize` | M7 (hacking) | `game/machinery/firealarm.cs` |
-| `code/game/machinery/firealarm.dm:75` | `Initialize`: the USB port (circuits), redirect_attack_hand_from_turf (clicks, M4a) and register_context (screentips, M9) | `Initialize` | later (circuits), M9 (clicking the floor below, screentips) | `game/machinery/firealarm.cs` |
+| `code/game/machinery/firealarm.dm:77` | `Initialize`: redirect_attack_hand_from_turf (clicks, M4a) and register_context (screentips, M9); the USB port came with gaps CI3 | `Initialize` | M9 (clicking the floor below, screentips) | `game/machinery/firealarm.cs` |
 | `code/modules/lighting/lighting_atom.dm:84` | `/atom/set_opacity`: `AddElement(/datum/element/light_blocking)` | `set_opacity(TRUE)` of a movable (doors closing) | never as such: the client computes light (D24, rules 13); `CellState` reads opacity directly | `modules/lighting/lighting_atom.cs` |
 | `code/modules/lighting/lighting_atom.dm:86` | `/atom/set_opacity`: `RemoveElement(/datum/element/light_blocking)` | `set_opacity(FALSE)` of a movable (doors opening) | never as such (D24, rules 13) | `modules/lighting/lighting_atom.cs` |
 | `code/modules/lighting/lighting_atom.dm:88` | `/atom/set_opacity`: `SScameras.update_visibility(src)` | every opacity change | M9 (security cameras) | `modules/lighting/lighting_atom.cs` |
@@ -323,7 +316,6 @@ A package that adds a deferred leaf, a stub or a seam reports it with the row's 
 | `code/modules/power/lighting/light.dm:194` | `/obj/machinery/light/update_overlays`: `emissive_appearance(overlay_icon, base_state, src, alpha)`, the fixture's glow (DEVIATION DV12) | `update_overlays` of a lit fixture | never while DV12 stands (D24; lead decision D2) | `modules/power/lighting/light.cs` |
 | `code/game/objects/effects/decals/decal.dm:73` | `/obj/effect/turf_decal/Initialize`: `request_decoration_colors(src, pattern)` (`__HELPERS/events.dm:88`), the holiday and station-trait colours of a decal that uses them; without either it gives null and the decal keeps its colour | a turf decal's init with `use_holiday_colors` | M10 (holidays and station traits) | `game/objects/effects/decals/decal.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:95` | `Initialize`: set_wires(new /datum/wires/airalarm(src)): the air alarm's wires (hacking, M7) | `Initialize` | M7 (hacking) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
-| `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:123` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (circuits) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:135` | `Initialize`: register_context(): screentip contexts (M9) | `Initialize` | M9 | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:570` | `update_overlays`: emissive_appearance of the alarm's screen (DEVIATION DV12) | `update_overlays` | never as such (emissives, DV12) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
 | `code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:722` | `setup_chamber_link`: the mapping log of a missing sensor (AREACOORD, M10) | `setup_chamber_link` | M10 (the mapping log) | `modules/atmospherics/machinery/air_alarm/_air_alarm.cs` |
@@ -381,19 +373,10 @@ Template for a new row:
 | `code/modules/mob/mob_movement.dm:387` | `/mob/living/slip`: `add_personality_mood_to_viewers`, the onlookers' moods | a slip | M9 (moods and personalities) | `modules/mob/mob_movement.cs` |
 | `code/game/machinery/buttons.dm:118` | `/obj/machinery/button/update_overlays`: `emissive_appearance` of the light mask (DEVIATION DV12) | a powered button's appearance | never as such (DV12: no emissive plane) | `game/machinery/buttons.cs` |
 | `code/modules/clothing/spacesuits/_spacesuits.dm:50` | `/obj/item/clothing/head/helmet/space/Initialize`: `AddComponent(/datum/component/clothing_dirt, visor_dirt)`, the visor dirtied by pepper spray | every space helmet's init | M8 (chemistry) | `modules/clothing/spacesuits/_spacesuits.cs` |
-| `code/modules/clothing/spacesuits/_spacesuits.dm:52` | `/obj/item/clothing/head/helmet/space/Initialize`: `AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier)` | every space helmet's init | M10+ (fishing) | `modules/clothing/spacesuits/_spacesuits.cs` |
 | `code/modules/clothing/spacesuits/_spacesuits.dm:54` | `/obj/item/clothing/head/helmet/space/Initialize`: `AddElement(/datum/element/equipment_bodypart_texture, BODY_ZONE_HEAD, /datum/bodypart_texture/mesh/space)`, the mesh texture filter on the wearer's limbs | every space helmet's init | M9 (bodypart textures) | `modules/clothing/spacesuits/_spacesuits.cs` |
-| `code/modules/clothing/spacesuits/_spacesuits.dm:135` | `/obj/item/clothing/suit/space/Initialize`: `AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier)` | every space suit's init | M10+ (fishing) | `modules/clothing/spacesuits/_spacesuits.cs` |
 | `code/modules/clothing/spacesuits/_spacesuits.dm:136` | `/obj/item/clothing/suit/space/Initialize`: `AddElement(/datum/element/equipment_bodypart_texture, BODY_ZONE_CHEST, /datum/bodypart_texture/mesh/space)` | every space suit's init | M9 (bodypart textures) | `modules/clothing/spacesuits/_spacesuits.cs` |
-| `code/modules/clothing/shoes/magboots.dm:42` | `/obj/item/clothing/shoes/magboots/Initialize`: `AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier)` | every magboots' init | M10+ (fishing) | `modules/clothing/shoes/magboots.cs` |
-| `code/modules/clothing/shoes/magboots.dm:52` | `/obj/item/clothing/shoes/magboots/on_speed_potioned`: the fishing difficulty element swapped | a speed potion on active magboots | M10+ (fishing) | `modules/clothing/shoes/magboots.cs` |
-| `code/modules/clothing/shoes/magboots.dm:69` | `/obj/item/clothing/shoes/magboots/attack_self`: `AddElement(/datum/element/adjust_fishing_difficulty, magpulse_fishing_modifier)` | the mag-pulse turned on | M10+ (fishing) | `modules/clothing/shoes/magboots.cs` |
-| `code/modules/clothing/shoes/magboots.dm:71` | `/obj/item/clothing/shoes/magboots/attack_self`: `RemoveElement(/datum/element/adjust_fishing_difficulty)` | the mag-pulse turned on (boots without an active modifier) | M10+ (fishing) | `modules/clothing/shoes/magboots.cs` |
-| `code/modules/clothing/shoes/magboots.dm:75` | `/obj/item/clothing/shoes/magboots/attack_self`: `AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier)` | the mag-pulse turned off | M10+ (fishing) | `modules/clothing/shoes/magboots.cs` |
-| `code/modules/clothing/shoes/magboots.dm:77` | `/obj/item/clothing/shoes/magboots/attack_self`: `RemoveElement(/datum/element/adjust_fishing_difficulty)` | the mag-pulse turned off (boots without a modifier) | M10+ (fishing) | `modules/clothing/shoes/magboots.cs` |
 | `code/modules/reagents/reagent_dispenser.dm:62` | `/obj/structure/reagent_dispensers/Initialize`: `AddElement(/datum/element/climbable)` and `AddElement(/datum/element/elevation, pixel_shift = 14)`, climbing onto a tank and standing on it | the water, foam and fuel tanks' init | M9 (climbing) | `modules/reagents/reagent_dispenser.cs` |
 | `code/datums/materials/_material.dm:265` | `/datum/material/setup_glow`: the starlight of a transparent material turf over space | a glass floor built over space | the starlight pass (space's own starlight is an M3 deferred leaf) | `datums/materials/_material.cs` |
-| `code/game/atom/atom_materials.dm:351`, `:440` | `apply_single_mat_effect` / `remove_single_mat_effect`: the shiny bait element of a shiny material (the beauty element is live since gaps MS1, section 227) | every atom with material effects and such a material (glass, plasma, ...) | with fishing (gaps FI1) | `game/atom/atom_materials.cs` |
 | `code/game/objects/items/stacks/sheets/sheet_types.dm:190`, `rods.dm:64`, `tiles/tile_iron.dm:111` | the iron sheet's, the rods' and the iron tile's `contextual_screentip_tools` (the welder's hints) | every iron sheet, rod and iron tile at init | M9 (screentips) | `sheet_types.cs`, `rods.cs`, `tile_iron.cs` |
 | `code/game/objects/items/stacks/stack.dm:101` | `/obj/item/stack/Initialize`: the golem food component (`GLOB.golem_stack_food_directory` is not declared) | every stack | M10+ (golems) | `game/objects/items/stacks/stack.cs` |
 | `code/game/objects/items/stacks/stack_recipe.dm:67` | `/datum/stack_recipe/New`: `result_image`, the base64 picture of a coloured result (`icon2base64`) | every recipe with a coloured result (comfy chairs, ...) | never as such: the server renders no icons (D104); the StackCrafting window shows the result's untinted icon | `game/objects/items/stacks/stack_recipe.cs` |
@@ -471,7 +454,6 @@ the owner's request (2026-10-15), although most are ordinary `Dm.NotTranslated` 
 | Where (tg) | What | Reached by | Milestone |
 |---|---|---|---|
 | `code/_globalvars/lists/reagents.dm:50` | `GLOB.chemical_reagents_list` is not built: `add_reagent` reads the reagent type's initial `creation_purity` and `ph` (the same numbers) | every `add_reagent` | M8 |
-| `code/modules/reagents/chemistry/reagents/other_reagents.dm:145` | water's `expose_turf`: a slime's `apply_water` | water on a slime's tile | M10 (xenobiology) |
 | `code/modules/reagents/chemistry/reagents/other_reagents.dm:180`, `:184` | water's `expose_obj`: a dehydrated carp swells, a hairless hide gets wet (the monkey cube is live since C5) | water on those items | M8 (food; and the hide: water's `expose_obj` is reagent exposure, chemistry), M10 (carps) |
 | `docs/ai/specs/live-partial.txt` (## M4b: the fire extinguisher) | water's and fuel's `on_mob_life`, fuel's `on_spark_act` (chemistry: M8; the dispenser's `knock_down` since gaps F1); water's `on_hydroponics_apply` (hydroponics: M10+); the dispenser's `rig_boom` and `IsSpecialAssembly` since gaps AS1. The dispenser's `boom`, `take_damage` and `atom_deconstruct` are translated (M5x slice 3) | drinking, sparks, hydroponics | M8, M10+ |
 
@@ -531,7 +513,6 @@ grab and pull, the HUD's pull button (`/atom/movable/screen/pull`) on the human 
 
 | Where (tg) | What | Reached from | Milestone | Port file |
 |---|---|---|---|---|
-| `code/game/objects/structures/door_assembly.dm:356` | `finish_door`: the integrated circuit shell of electronics with `shell` set (`/datum/component/shell`, the airlock circuit components; `Dm.NotTranslated`) | the electronics window's "set_shell" then finishing an airlock | M10+ (circuits and wiremod, left out of M5) | `game/objects/structures/door_assembly.cs` |
 | `code/game/machinery/doors/airlock.dm:906`, `datums/wires/airlock.dm` (interact, pulse, UI) | cutting an airlock's wires by hand (the hacking window): tg's normal way to unpower an airlock for deconstruction; the wires' `on_cut` is translated (a broken airlock's `cut_all`) | a wire tool on an open panel (`attempt_wire_interaction`, live-partial M7) | M7 (wires and hacking) | `datums/wires/airlock.cs` |
 
 ## 10. Furniture, closets, pipes and the machine frames left for later (M5 slice 7, 2026-10-15)
@@ -542,7 +523,7 @@ for its milestone. The generated live-partial stubs are rows of `docs/ai/specs/l
 | Where (tg) | What | Reached from | Milestone | Port file |
 |---|---|---|---|---|
 | `code/game/objects/structures/tables_racks.dm:1351`, `:1352` | the rack's `climbable` and `elevation` elements (deferred leaves, as the table's) | every rack's init | M9 (climbing, the raised items) | `game/objects/structures/tables_racks.cs` |
-| `code/game/objects/structures/beds_chairs/chair.dm:30`, `:106`, `:419` | the chair's fishing difficulty element (M10+), the armrest's emissive blocker (DV12; its colour filter is translated, M6 slice 7b), the chair item's `cuffable_item` element (M6) | a chair's init and overlays, the chair item's init | as noted | `game/objects/structures/beds_chairs/chair.cs` |
+| `code/game/objects/structures/beds_chairs/chair.dm:106`, `:419` | the armrest's emissive blocker (DV12; its colour filter is translated, M6 slice 7b), the chair item's `cuffable_item` element (M6) | a chair's init and overlays, the chair item's init | as noted | `game/objects/structures/beds_chairs/chair.cs` |
 | `code/game/machinery/pipe/construction.dm:220` | the Invert Pipe verb (`Dm.NotTranslated`) | the verb | M9 (verbs) | `game/machinery/pipe/construction.cs` |
 | `code/game/machinery/firealarm.dm:450`, `air_alarm_interact.dm:26`, `:114`, `:136` | the wires window of an open fire alarm or air alarm, the air alarm's "final wires" (`wires.is_all_cut`) and `wires.repair`: neither alarm has its `/datum/wires` yet (`set_wires` is a deferred leaf of their Initialize); a complete air alarm cannot be taken apart until then | a wirecutter or multitool on an open alarm | M7 (hacking) | `game/machinery/firealarm.cs`, `modules/atmospherics/machinery/air_alarm/air_alarm_interact.cs` |
 | `code/modules/atmospherics/machinery/portable/canister.dm:440` | `crowbar_act`: the shielding's cell removed (`internal_cell` is GAP(types), there is none; `Dm.NotTranslated`) | a crowbar on a canister with its hatch open | with the cell (M7, GAP(types)) | `modules/atmospherics/machinery/portable/canister.cs` |
@@ -555,16 +536,10 @@ leave for later:
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/__HELPERS/global_lists.dm:20` | `init_crafting_recipes`: the recipes whose requirements or catalysts include a reagent (an IED's welding fuel, a molotov's fuel, most cooking recipes' salt, flour, milk...) are not listed: the reagent containers that hold them are not translated, so the port cannot hold their ingredients (the owner's scope of M5 slice 8) | the world start | M8 (chemistry) | `__HELPERS/global_lists.cs` |
-| `code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:139`, `soup_guide.dm:12` | the recipes of a chemical reaction (`/datum/crafting_recipe/food/reaction` and its soups: `New`, `setup_chemical_reaction_details`, `get_food_types` read `GLOB.chemical_reactions_list` and the glass styles): inert, not created (DV25) | the world start | M8 (chemistry) | `__HELPERS/global_lists.cs` |
-| `code/datums/components/crafting/_crafting.dm:199` | `get_surroundings`: the reagents of a drainable reagent container counted as requirements (`is_drainable`) | a crafting window or craft near a filled container | M8 (chemistry) | `datums/components/crafting/_crafting.cs` |
-| `code/datums/components/crafting/_crafting.dm:437` | `get_used_reqs`: a reagent requirement taken from the containers around (`trans_to` into the infinite holder) | a recipe with a reagent requirement (none is listed) | M8 (chemistry) | `datums/components/crafting/_crafting.cs` |
-| `code/datums/components/crafting/_crafting.dm:738` | `build_crafting_data`: a chemical reaction recipe's container, mixing and heating steps | a reaction recipe (none is listed) | M8 (chemistry) | `datums/components/crafting/_crafting.cs` |
 | `code/datums/components/crafting/_crafting.dm:381` | `construct_item`: an inert result (D132) keeps its type's declared `custom_materials` instead of its parts' (`set_custom_materials` would remove material effects its skipped Initialize never applied); a part made of a material SSmaterials does not create (meat, pizza: DV25) adds nothing to the result's materials | a craft whose result or parts are not ported | with each result's type; M8 (food materials) | `datums/components/crafting/_crafting.cs` |
 | `code/datums/components/crafting/tools.dm:108` | `/datum/crafting_recipe/shuttle_blueprints/check_tools`: the crayon's `use_charges` and `check_empty` (crayons are not translated): the crude shuttle blueprints never pass their tool check | the window's craftability of that recipe | M9 (crayons) | `datums/components/crafting/tools.cs` |
-| `code/modules/asset_cache/assets/crafting.dm:37` | `add_atom_icon`: a reagent's glass style picture (`GLOB.glass_style_singletons`); a reagent (a grinder recipe's result in the cooking list) is drawn as its default container | the cooking window | M8 (chemistry) | `modules/asset_cache/assets/crafting.cs` |
 | `code/datums/elements/slapcrafting.dm:135` | `topic_handler`: translated, and since D154 a chat link is sent back (`ClientSeam.Topic`), but the "See Recipe For ..." link is `examine_more`'s (`slapcrafting.dm:133`), which the minimal examine does not run | examining a slapcraft item twice | M9 (examine_more) | `datums/elements/slapcrafting.cs` |
-| `code/game/objects/items/handcuffs.dm:236`, `pillow.dm:48`, `crayons.dm:812`, `weaponry/ranged/flamethrower.dm:46`, `weaponry/melee/spear.dm:79`, `:405`, `:500`, `:524`, `weaponry/shields.dm:186`, `storage/backpack.dm:57`, `devices/flashlight.dm:64`, `devices/radio/radio.dm:123`, `scanners/gas_analyzer.dm:44`, `machinery/pipe/construction.dm:177`, `research/anomaly/anomaly_core.dm:187`, `wizard/equipment/soulstone.dm:37`, `fishing/aquarium/aquarium_kit.dm:131`, `clothing/glasses/_glasses.dm:416`, `:437`, `clothing/head/jobs.dm:439`, `clothing/glasses/hud.dm:115`, `:159`, `:205`, `clothing/gloves/boxing.dm:20`, `color.dm:18`, `:50`, `surgery/surgery_tools.dm:309`, `guns/energy/kinetic_accelerator.dm:35`, `laser.dm:19`, `energy_gun.dm:21`, `ammunition/ballistic/shotgun.dm:200`, `cups/glassbottle.dm:36`, `cups/soda.dm:34`, `crafting/guncrafting.dm:25`, `:41`, `:55` | the other slapcrafting hosts: their `Initialize` is not translated (their types are inert or their own init waits for its milestone), so they get the element with it; their recipes are listed in the window | the host's init | each host's milestone | (the hosts' files) |
+| `code/game/objects/items/handcuffs.dm:236`, `pillow.dm:48`, `crayons.dm:812`, `weaponry/ranged/flamethrower.dm:46`, `weaponry/melee/spear.dm:79`, `:405`, `:500`, `:524`, `weaponry/shields.dm:186`, `storage/backpack.dm:57`, `devices/flashlight.dm:64`, `devices/radio/radio.dm:123`, `scanners/gas_analyzer.dm:44`, `machinery/pipe/construction.dm:177`, `research/anomaly/anomaly_core.dm:187`, `wizard/equipment/soulstone.dm:37`, `clothing/glasses/_glasses.dm:416`, `:437`, `clothing/head/jobs.dm:439`, `clothing/glasses/hud.dm:115`, `:159`, `:205`, `clothing/gloves/boxing.dm:20`, `color.dm:18`, `:50`, `surgery/surgery_tools.dm:309`, `guns/energy/kinetic_accelerator.dm:35`, `laser.dm:19`, `energy_gun.dm:21`, `ammunition/ballistic/shotgun.dm:200`, `cups/glassbottle.dm:36`, `cups/soda.dm:34`, `crafting/guncrafting.dm:25`, `:41`, `:55` | the other slapcrafting hosts: their `Initialize` is not translated (their types are inert or their own init waits for its milestone), so they get the element with it; their recipes are listed in the window | the host's init | each host's milestone | (the hosts' files) |
 
 ## 12. Explosions left for later (M5x slice 1, 2026-10-15)
 
@@ -576,7 +551,6 @@ The explosion engine (`controllers/subsystem/explosions.dm`, `EX_ACT`, the `/ato
 | `code/controllers/subsystem/explosions.dm:47` | `stat_entry`: the MC stat panel line of SSexplosions (stat panels, translation-rules.md 13) | the MC's stat panel | M10 (admin tooling) | `controllers/subsystem/explosions.cs` |
 | `code/controllers/subsystem/explosions.dm:375` | `propagate_blastwave`: `SSblackbox.record_feedback("associative", "explosion", ...)` | every explosion | M10 (round statistics) | `controllers/subsystem/explosions.cs` |
 | `code/controllers/subsystem/explosions.dm:470` | `propagate_blastwave`: `debug_world`, the explosion's timing line in the world chat, shown only while `GLOB.debugging_enabled` (the admins' DebugGame verb) | never (the flag is never set) | M10 (admin tooling) | `controllers/subsystem/explosions.cs` |
-| `code/game/turfs/turf.dm:881` | `/turf/ex_act`: a fish source's reward from an explosion (`spawn_reward_from_explosion`) | an explosion on a turf with a fish source (none on the ported station maps) | out of the core version (fishing) | `game/turfs/turf.cs` |
 
 ## 13. People and chained objects in blasts left for later (M5x slice 3, 2026-10-16)
 
@@ -745,9 +719,7 @@ player's brain keeps their mind in tg's brain mob: `transfer_identity` whole, th
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/game/objects/effects/decals/cleanable/blood.dm:664` | old gibs' `Initialize`: `AddElement(/datum/element/swabable)`, their cell lines (`Dm.Deferred`) | mapped old gibs | M8 (cytology) | `game/objects/effects/decals/cleanable/blood.cs` |
 | `code/game/objects/effects/spawners/gibspawner.dm:24` | `Initialize`: the fake silicon (`gib_mob_type`) whose blood DNA the gibs of a spawner made without a mob take (the xeno and larva spawners' fake alien is live since gaps X5) | a robot gib spawner spawned on its own | after the core version (silicons) | `game/objects/effects/spawners/gibspawner.cs` |
-| `code/modules/mob/living/simple_animal/simple_animal.dm:335` | `/mob/living/simple_animal/gib_animation` (the animal gibbing animation, `icon_gib`) | gibbing a simple animal | with the simple animals | (not declared) |
 | `code/datums/mind/_mind.dm:192` | `transfer_to`: the orbiting ghosts follow the mind (`transfer_observers_to`, `Dm.Deferred`; the mind's languages move as tg's, M9 slice A) | a mind going to a brain mob | after D151 (orbit) | `datums/mind/_mind.cs` |
 | `code/datums/mind/_mind.dm:208`, `:210` | `transfer_to`: the antagonist HUD (`add_alt_appearance`, `Dm.Deferred`) and an antagonist's `on_body_transfer` (`Dm.NotTranslated`, in the loop over a mind's antagonists: none) | as above | M10 (antagonists) | `datums/mind/_mind.cs` |
 | `code/datums/mind/_mind.dm:220` | `transfer_to`: `client.init_verbs()`, the character's verbs (`Dm.Deferred`) | a mind with a client moved | M9 (verbs) | `datums/mind/_mind.cs` |
@@ -866,7 +838,6 @@ tritium and antinoblium chances, the species' antinoblium and the gas reactions'
 |---|---|---|---|---|
 | `code/datums/components/irradiated.dm:184`; `code/game/objects/items/devices/geiger_counter.dm:111` | the geiger counter's scan messages: `icon2html(geiger_counter, user)`, the counter's icon in the chat line (the text is sent) | a scan | M9 (chat icons) | `datums/components/irradiated.cs`, `game/objects/items/devices/geiger_counter.cs` |
 | `code/modules/mob/living/carbon/human/_species.dm:718` | `handle_radiation`: the random negative mutation ("You mutate!", `easy_random_mutate`, the gasp emote, `domutcheck`) | irradiated for over 2 minutes (0.5 % a second) | M8 (genetics; the emote M9) | `modules/mob/living/carbon/human/_species.cs` |
-| `code/modules/clothing/suits/utility.dm:203`, `:238` | the radiation hood's and suit's `adjust_fishing_difficulty` element | every hood and suit | M10+ (fishing) | `modules/clothing/suits/utility.cs` |
 | `code/modules/clothing/suits/utility.dm:206` | the hood's `clothing_dirt` component ("rad_dirt": the visor tinted by pepper spray and spray paint) | every hood | M8 (chemistry) | `modules/clothing/suits/utility.cs` |
 | `code/modules/clothing/suits/utility.dm:207`, `:239` | the `equipment_bodypart_texture` element (the black mesh texture on the head and chest under the hood and suit) | every hood and suit | M10+ (bodypart textures) | `modules/clothing/suits/utility.cs` |
 | the other radiation sources of tg | the radioactive nebula station trait (with `radioactive_exposure`), radioactive reagents (uranium, polonium, radium), the radiation projectiles and guns, the uranium walls, floors, false walls and tram walls (mineral walls), the HFR, the experimentor, the gizmos and the vines (the radiation storm came with gaps E2a, the irradiated meteor with D299) | (no translated caller) | M8 (chemistry); M10+ for the rest | (generated, inert) |
@@ -880,9 +851,7 @@ tg's temperature control units (`thermomachine.dm`: the freezer, the heater and 
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/modules/atmospherics/machinery/components/unary_devices/thermomachine.dm:47` | `Initialize`: `AddComponent(/datum/component/usb_port, ...)`, the circuit USB port (`/obj/item/circuit_component/thermomachine` stays inert) | every interactive unit's init | later (circuits and wiremod) | `modules/atmospherics/machinery/components/unary_devices/thermomachine.cs` |
 | `code/modules/atmospherics/machinery/components/unary_devices/thermomachine.dm:138` | `update_overlays`: both `emissive_appearance` copies of the lit screen (DEVIATION DV12) | a unit that is on, every appearance update | never as such (DV12: no emissive plane) | `modules/atmospherics/machinery/components/unary_devices/thermomachine.cs` |
-| `code/modules/atmospherics/machinery/other/meter.dm:43` | `Initialize`: `AddComponent(/datum/component/usb_port, ...)`, the circuit USB port (`/obj/item/circuit_component/atmos_meter` stays inert) | every meter's init | later (circuits and wiremod) | `modules/atmospherics/machinery/other/meter.cs` |
 | `code/modules/atmospherics/machinery/other/meter.dm:153` | `update_overlays`: the `emissive_appearance` copies of the buttons and the pressure bars (DEVIATION DV12) | every meter appearance update | never as such (DV12: no emissive plane) | `modules/atmospherics/machinery/other/meter.cs` |
 | `code/game/machinery/computer/atmos_computers/_air_sensor.dm:30` | `/obj/machinery/air_sensor/Initialize`: `AddElement(/datum/element/contextual_screentip_tools, multitool_tips)`, the multitool screentips (package E5; the sensors and the atmospherics control consoles are translated) | every air sensor's init | M10+ (the screentips, not now: D264) | `game/machinery/computer/atmos_computers/_air_sensor.cs` |
 | `code/game/machinery/computer/atmos_computers/_air_sensor.dm:174` | `/obj/item/air_sensor/Initialize`: `register_context()`, the screentip context (package E5) | every sensor item's init | M10+ (the screentips, not now: D264) | `game/machinery/computer/atmos_computers/_air_sensor.cs` |
@@ -903,7 +872,6 @@ gloves are live with the gloves (their `siemens_coefficient`, tg's random coeffi
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
 | `code/modules/mob/living/living_defense.dm:631` | `electrocute_act`: `add_shared_particles(/particles/smoke/burning)` and its removal in ten seconds, the smoke of a mob burnt past 100 (`Dm.Deferred`) | a shock of a badly burnt mob | M10+ (particles, a client visual) | `modules/mob/living/living_defense.cs` |
-| `code/modules/clothing/gloves/insulated.dm:21` | `/obj/item/clothing/gloves/color/yellow/Initialize`: `AddElement(/datum/element/adjust_fishing_difficulty, 10)` (`Dm.Deferred`) | every pair of insulated gloves | M10+ (fishing) | `modules/clothing/gloves/insulated.cs` |
 | `code/modules/unit_tests/mouse_bite_cable.dm` | tg's unit test of a mouse biting a live cable (the mouse's AI and its cable chewing) | | M10+ (mice; not ported) | (none) |
 | `code/game/machinery/doors/airlock.dm:1827-1843`, `code/datums/wires/airlock.dm:66-102` | the airlock's electrification by the AI and by the wires window (`shock_restore`, `shock_temp`, `shock_perm`, the hacking window); an EMP's and a pulsed shock wire's electrification and the airlock's `shock` are translated | the AI, the wires window | M10+ (the AI), after the core version (D162: no wire hacking) | `game/machinery/doors/airlock.cs`, `datums/wires/airlock.cs` |
 | every other `/obj/shock` override and `electrocute_act` override of tg (`vending`, `suit_storage_unit`, `mecha`, the roulette wheel; the secbot, drones, constructs and simple animals) | the types are skeletons or inert in the port | their wires, their touches | with their modules (M8-M10+) | (the types' own files) |
@@ -921,7 +889,7 @@ which is the belt in a hand, in the belt slot's picture of the HUD, on the floor
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
 | `code/game/objects/items/devices/multitool.dm:327-340`, `code/modules/mob/living/basic/drone/drone_tools.dm:86`, `code/modules/uplink/uplink_devices.dm:88`, `code/datums/proximity_monitor/field.dm:168` | the abductor's and the cyborg's multitools are var-only subtypes (live, with the base multitool's code); the drone's, the uplink's and the field debug are inert (their procs are the drones', the traitors' and the debug tool's; the circuit marker is live since gaps CI1) | those tools | after the core version | (generated) |
-| every machine with a `multitool_act` that reads or fills the buffer (`set_buffer`, `.buffer`): the launch pads, the teleporter station, the quantum pad, the telecomms machines, the cloner, the fishing portal, the botpad, the pirate pads, the photobooth button, the research servers ... | none of these machines is live in the port; the buffer works (`set_buffer`, the removal signal, the examine line, `ToolKitTests`) and each machine's `multitool_act` reads it when its milestone translates it. The live `multitool_act`s that read no buffer (the cable's reading, the SMES's input and output, the blast door controller, the grenades, the closets, the suit storage unit's decontamination, the fire alarm and the air alarm) work with the real multitool | a multitool used on those machines | with each machine | (various) |
+| every machine with a `multitool_act` that reads or fills the buffer (`set_buffer`, `.buffer`): the launch pads, the teleporter station, the quantum pad, the telecomms machines, the cloner, the botpad, the pirate pads, the photobooth button, the research servers ... | none of these machines is live in the port; the buffer works (`set_buffer`, the removal signal, the examine line, `ToolKitTests`) and each machine's `multitool_act` reads it when its milestone translates it. The live `multitool_act`s that read no buffer (the cable's reading, the SMES's input and output, the blast door controller, the grenades, the closets, the suit storage unit's decontamination, the fire alarm and the air alarm) work with the real multitool | a multitool used on those machines | with each machine | (various) |
 | `code/game/objects/items/storage/belt.dm:32-33` | `Initialize`: `AddElement(/datum/element/attack_equip)` (putting a belt on another mob by attacking it with the belt in hand) and `AddElement(/datum/element/strip_accessible_storage)` (opening the belt in the strip menu): `Dm.Deferred`, as the backpack's | a belt used on another player, the strip window | M9 (social interactions, the strip window) | `game/objects/items/storage/belt.cs` |
 | `code/game/objects/items/storage/belt.dm:193-1000`, `holsters.dm`, `uplink_kits.dm:329` | the belts with procs of their own: the medical belt's paramedic and ERT versions, the full security, mining, soulstone, military, assault, grenade, janitor and bandolier ones (their contents), the sheaths (`Destroy`, `examine`, `click_alt`, `update_icon_state`), the wand belts and bandolier, the snack belt, the champion's belt, the holsters, the chameleon and unfathomable curio belts: inert, their types hold nothing and do nothing as tg's special code does | those belts | with their jobs and antagonists (M8 to the parity tier) | (generated, inert) |
 | `code/game/objects/items/storage/belt.dm:56-77`, `:79-98`, `:120-138`, `:140-158`, `:160-179` | `get_types_to_preload` of the full belts returns tg's list; the wardrobe's stock (`SSwardrobe`) is a stub that stocks nothing, so `provide_type` makes each tool new, as tg does for a type it has not stocked (`wardrobe.dm:274`) | a full belt made | M4a (the wardrobe's stock) | `controllers/subsystem/wardrobe.cs` |
@@ -941,11 +909,10 @@ the icon's `DrawBox` and BYOND's `oview`, the powered grille's bolt (`grille.dm:
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/datums/beam.dm:470-527`, `:529-598` | `/obj/effect/ebeam/reacting` (a beam that reacts to what enters it: live with the stun baton's beam and gaps AS1's infrared emitter; the heretic's beams wait on the heretics) and `/datum/beam/held` (a fishing line, the vacuum hose), their users inert | their users | with their users (M10+) | `datums/beam.cs` (PARTIAL) |
+| `code/datums/beam.dm:470-527`, `:529-598` | `/obj/effect/ebeam/reacting` (a beam that reacts to what enters it: live with the stun baton's beam and gaps AS1's infrared emitter; the heretic's beams wait on the heretics) and `/datum/beam/held` (the vacuum hose, inert; the fishing line is live since gaps FI2) | their users | with their users (M10+) | `datums/beam.cs` (PARTIAL) |
 | `code/datums/beam.dm:345` | `Draw`: the segments' `emissive_appearance` overlay (DEVIATION(DV12): no emissive plane; the client draws the segments unshaded, DV77) | every beam | with the emissive plane (DV12) | `datums/beam.cs` |
-| `code/modules/vehicles/ridden.dm:76`, `vehicles/bicycle.dm:13`, `blob/structures/_blob.dm:243`, `nuclear_bomb/_nuclear_bomb.dm:619`, `aquarium/aquarium_upgrades.dm:51` | the `zap_act` of inert types: a bolt that strikes one is stopped by the interaction guard (D132, DV27: the /atom root's null; the abductor RTG's, `power/rtg.dm:123`, is translated, section 88) | a bolt near a ridden vehicle, a blob, the nuke, a bioelectric aquarium | with their types | `game/objects/obj_defense.cs`, `structures.cs`, `_machinery.cs` |
+| `code/modules/vehicles/ridden.dm:76`, `vehicles/bicycle.dm:13`, `blob/structures/_blob.dm:243`, `nuclear_bomb/_nuclear_bomb.dm:619` | the `zap_act` of inert types: a bolt that strikes one is stopped by the interaction guard (D132, DV27: the /atom root's null; the abductor RTG's, `power/rtg.dm:123`, is translated, section 88) | a bolt near a ridden vehicle, a blob, the nuke | with their types | `game/objects/obj_defense.cs`, `structures.cs`, `_machinery.cs` |
 | `code/datums/wires/tesla_coil.dm`, `code/datums/wires/_wires.dm` | the coil's wires window (hacking: pulsing WIRE_ZAP by hand) | a screwdriver and a multitool on the coil | with wire hacking (D162) | `datums/wires/tesla_coil.cs` |
-| `code/modules/power/singularity/emitter.dm:81` | `Initialize`: `AddComponent(/datum/component/usb_port, ...)`, the integrated circuits' port (`Dm.Deferred`) | every emitter | wiremod (after the core version) | `modules/power/singularity/emitter.cs` |
 | `code/modules/power/singularity/emitter.dm:629-703` | the CTF emitter and the diode disks: inert (the disks' branch of `item_interaction` is translated) | | with their users (M10+) | `modules/power/singularity/emitter.cs` (PARTIAL) |
 | `code/modules/power/singularity/field_generator.dm:179` | `blob_act` of the field generator (a live-partial stub: its `..()` is the `/obj` root of `blob_act`, which is not translated) | a blob on a generator | M10+ (blobs, antagonists) | `docs/ai/specs/live-partial.txt` |
 | `code/modules/shuttle/misc/special.dm:6-25` | `/obj/machinery/power/emitter/energycannon` (its one proc, `RefreshParts`, returns without the parent's parts) and the wabbajack statue below it: inert; they are shuttle-template and minigame props (`emergency_supermatter.dmm`, `emergency_wabbajack.dmm`, CTF, deathmatch), not the engine's | a special emergency shuttle, a minigame | with the special shuttles (M10+) | (generated, inert) |
@@ -1022,8 +989,6 @@ pressure and volume pumps' tgui window (`pump.dm:69-102`, `volume_pump.dm:122-15
 | `code/modules/power/supermatter/supermatter.dm:379-490`, `supermatter_gas.dm:10` | the ghosts' Supermatter monitor window (`ui_interact`, `ui_static_data`, `ui_data`, `sm_ui_data`, `sm_gas_data`; `live-partial.txt` rows); the crew's supermatter monitor is the NTOS program (`modular_computers/file_system/programs/sm_monitor.dm`, the modular computers) | a ghost's click; an engineer's tablet or console | M10 (the ghosts); modular computers (after the core version) | `modules/power/supermatter/supermatter.cs` |
 | `code/modules/power/supermatter/supermatter.dm:526`, `:529`, `:531` | `update_overlays`: the emissive masks of the crystal and its holiday lights (DEVIATION(DV12): no emissive plane; the glow is its light and the rays filter) | every crystal | with the emissive plane (DV12) | `modules/power/supermatter/supermatter.cs` |
 | `code/modules/power/supermatter/supermatter_variants.dm:67` | the wizard's small crystal: its GPS signal and station announcement (`live-partial.txt` row) | the wizard's sword recipe | M10+ (the wizard) | (generated stub) |
-| `code/game/objects/structures/reflector.dm:40`, `:271-296` | the reflector's integrated circuits port and circuit component (`Dm.Deferred`, inert) | every reflector | wiremod (after the core version) | `game/objects/structures/reflector.cs` |
-| `code/game/objects/effects/anomalies/_anomalies.dm:42`, `:112`, `:128` | the anomaly cores: the signaler a cored anomaly carries on a random free frequency and code, the core a neutralized one drops (or an inert anomaly past SSresearch's cap), the analyzer's frequency readout (`Dm.Deferred`; the generated `anomaly_core` var is a `Type` and keeps the core's path) | an anomaly made with its core (the random events'; the supermatter's drop none); a gas analyzer on one | with the anomaly cores (`modules/research/anomaly/anomaly_core.dm`: the cores' signal effects, the refinery; research, M10+; the signaler itself came with M9 slice D) | `game/objects/effects/anomalies/_anomalies.cs` |
 | `code/game/objects/effects/anomalies/_anomalies.dm:59` | the admins' variable editor (`vv_edit_var`, a `live-partial.txt` row; the orbit menu at `:31` translated in M10x slice C) | every anomaly made after the map load | M10 (admin tooling) | `game/objects/effects/anomalies/_anomalies.cs` |
 | `code/game/objects/effects/anomalies/anomalies_pyroclastic.dm:43`, `:50` | the pyroclastic slime its detonation makes (the basic slime mob, enraged, adult, red or orange) and the ghost poll that picks its player (`Dm.Deferred`; the 500 moles of hot plasma and oxygen are translated) | a pyroclastic anomaly's end | M10 (the slimes, the ghosts' polls) | `game/objects/effects/anomalies/anomalies_pyroclastic.cs` |
 | `code/game/objects/effects/anomalies/anomalies_flux.dm:27` | the flux anomaly's emissive overlay (DEVIATION(DV12): no emissive plane; it glows by its light) | every flux anomaly | with the emissive plane (DV12) | `game/objects/effects/anomalies/anomalies_flux.cs` |
@@ -1042,7 +1007,7 @@ The gas analyzer (`gas_analyzer.dm`, whole but the rows below), the atmos handbo
 | `code/_onclick/hud/rendering/render_plate.dm:337` | `set_light_cutoff` of the lighting plane master: the port has no plane masters (rules 13); `mob.sync_lighting_plane_cutoff` still has nothing to set. The cutoffs reach the client as the private block's vision (protocol 31, DV81) and the light grid takes its floor from them | the cutoffs of eyes and glasses | (none: the 3D client's, D24) | `modules/mob/mob.cs` |
 | `code/modules/mob/living/living.dm:2060` | `update_sight`: `eyes.see_invisible` / `invis_view` reach only the server's sight; the client draws no see-invisible layers of its own beyond the observer layer (protocol 22) | | (none) | `modules/mob/living/living.cs` |
 | `code/game/objects/items/holosign_creator.dm:161` | the holofan projector's `register_context()` (`Dm.Deferred`; `add_context` is translated) | every ATMOS holofan projector | M9 (screentips) | `game/objects/items/holosign_creator.cs` |
-| `code/modules/food_and_drinks/restaurant/_venue.dm`, `code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm` | `/obj/item/holosign_creator/robot_seat` (the bar's and restaurant's seat projectors), `/obj/structure/holosign/robot_seat` and `/obj/structure/holosign/barrier/cyborg/cybersun_ai_shield`: defined in other files, inert | | with their users (the restaurant venues: after the core version) | (generated, inert) |
+| `code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm` | `/obj/structure/holosign/barrier/cyborg/cybersun_ai_shield`: defined in another file, inert (the restaurant's seat projectors and seats came with gaps KT1, section 246) | | with its users | (generated, inert) |
 
 ## 38. The delamination left for later (the M7 delamination slice, G6, D163, D166)
 
@@ -1068,7 +1033,6 @@ bioscrambler and dimensional anomalies (`anomalies_vortex.dm`, `anomalies_bioscr
 | `code/game/objects/effects/anomalies/anomalies_dimensional_themes.dm:39`, `:232` | the meat and pizza themes' material: SSmaterials makes no meat or pizza material (generated-only, DV25: food, M8), so these themes keep the default window colour and put no material on their tiles (a GAP at both sites) | a dimensional anomaly's meat or pizza theme | M8 (food) | `game/objects/effects/anomalies/anomalies_dimensional_themes.cs` |
 | `code/game/objects/effects/anomalies/anomalies_dimensional_themes.dm:243-508` | the floors, walls, objects and random spawns the themes put in (grass, carpets, fake basalt and pits, bronze, abductor and light floors, wood, bamboo, snow, cult and bronze walls, wooden, bronze and material airlocks, platforms, flora, monkeys, goldgrubs, ...) are tg's types; those whose own code is not translated are made inert (D112: drawn with their sprite, their own behaviour waits for its milestone) | a dimensional anomaly | with each type's milestone (M8 to M10+) | (generated, inert) |
 | `code/modules/mob/living/carbon/carbon_defense.dm:621`, `:631` | `bioscramble`: an inert organ or limb type picked is not put in (DEVIATION(DV89); 238 of 311 organ types, 46 of 140 bodypart types) | the bioscrambler anomaly's pulse | M8 and later (the species, organs and limbs) | `modules/mob/living/carbon/carbon_defense.cs` |
-| `code/modules/surgery/bodyparts/_bodyparts.dm:1026`, `:1060` | `clear_ownership`, `apply_ownership`: the fishing spot of an opened body (`/datum/component/fishing_spot`, `/datum/fish_source/surgery`; `Dm.Deferred`) | a limb with its skin open and organs cut put on or taken off (a skeleton's limb a bioscrambler gives) | M8 (surgery, fishing) | `modules/surgery/bodyparts/_bodyparts.cs` |
 
 ## 39. The lighting left for later (M7 lighting slice L1, D168)
 
@@ -1076,9 +1040,8 @@ The wall light switch (`lightswitch.dm`), the light fixture frame and its wall f
 
 | tg site | What | Reached by | Milestone | Port file |
 |---|---|---|---|---|
-| `code/game/machinery/lightswitch.dm:28`, `:30` | `Initialize`: `AddComponent(/datum/component/redirect_attack_hand_from_turf)` (a click on the floor below the switch) and the USB port of the circuits (`Dm.Deferred`) | every switch's init | M4a (clicks on the floor below), M10+ (circuits and wiremod) | `game/machinery/lightswitch.cs` |
+| `code/game/machinery/lightswitch.dm:28` | `Initialize`: `AddComponent(/datum/component/redirect_attack_hand_from_turf)` (a click on the floor below the switch, `Dm.Deferred`; the USB port came with gaps CI3) | every switch's init | M4a (clicks on the floor below) | `game/machinery/lightswitch.cs` |
 | `code/game/machinery/lightswitch.dm:71` | `update_overlays`: `emissive_appearance` of the switch's glow (`Dm.Deferred`, DEVIATION DV12) | a powered switch's appearance | never as such (DV12: no emissive plane) | `game/machinery/lightswitch.cs` |
-| `code/game/machinery/lightswitch.dm:130-` | `/obj/item/circuit_component/light_switch`: `populate_ports`, `register_usb_parent`, `unregister_usb_parent`, `on_light_switch_set`, `input_received`: the circuit component of the switch (inert; the signal `COMSIG_LIGHT_SWITCH_SET` is sent) | a USB port of the switch | M10+ (circuits and wiremod) | (generated, inert) |
 | `code/game/objects/items/devices/flashlight.dm:476`, `:535` | `/obj/item/flashlight/flare/Initialize` and `light_updated`: the light middleman (`middleman = new(src, "flashlight")`, its signal, `being_overriding_light`, `fire_flicker_middleman`): the lit flare's flicker (`Dm.Deferred`; the same as the welder's, `weldingtool.dm:61`) | a flare's init, a lit flare's light | never (the lighting module, D24, rules 13: the client lights from the replicated `light_on`) | `game/objects/items/devices/flashlight.cs` |
 | `code/game/objects/items/devices/flashlight.dm:906` | `/obj/item/flashlight/glowstick/Initialize`: `AddComponentFrom(SOURCE_EDIBLE_INNATE, /datum/component/edible, ...)`, eating a glowstick (`Dm.Deferred`) | a glowstick's init | M8 (food) | `game/objects/items/devices/flashlight.cs` |
 | `code/game/objects/items/devices/flashlight.dm:1100-1128`, `:1059-1098`, `:799-868`, `:1130-` | `/obj/item/flashlight/eyelight`, `eyelight/glow`, `spotlight`, `flashdark`, `slime`, `emp` and `lamp/space_bubble`: inert, unchanged (none is reached by a thing translated here but the eyelight through the fluid's metabolism above) | | with their users (M8, M10+) | (generated, inert) |
@@ -1142,7 +1105,6 @@ technicians' and the chief engineer's `populate_contents_immediate` (`closets/se
 |---|---|---|---|---|
 | `code/game/gamemodes/objective_items.dm:703` | `/obj/item/pipe_dispenser/add_stealing_item_objective` (a generated deferred stub) | the traitors' stealing objectives | M10 (antagonists) | `Generated/LivePartial/obj.g.cs` |
 | `code/modules/atmospherics/machinery/components/binary_devices/pressure_valve.dm:19`, `temperature_gate.dm:23`, `temperature_pump.dm:19` | `Initialize`: register_context(): screentip contexts (`Dm.Deferred`) | `Initialize` | M9 | `modules/atmospherics/machinery/components/binary_devices/pressure_valve.cs`, `temperature_gate.cs`, `temperature_pump.cs` |
-| `code/modules/atmospherics/machinery/components/binary_devices/temperature_pump.dm:18` | `Initialize`: AddComponent(/datum/component/usb_port): the circuit USB port (`Dm.Deferred`) | `Initialize` | later (circuits and wiremod) | `modules/atmospherics/machinery/components/binary_devices/temperature_pump.cs` |
 
 Not a leaf: `mouse_wheeled` (`RPD.dm:579`, the layer change by the mouse wheel) is translated and registered on `COMSIG_MOUSE_SCROLL_ON`
 as tg does, but the client sends no mouse wheel input to the server yet (`/atom/MouseWheel` and `mob/MouseWheelOn` are translated and
@@ -1242,10 +1204,9 @@ blocks (D111; the .38, .357, 9mm and 10mm casings and bullets, the speed loaders
 | tg | what | when it is reached | milestone | C# |
 |---|---|---|---|---|
 | `code/modules/projectiles/guns/ballistic/revolver.dm:60` | the `spin` verb (`GAME_VERB`, `Dm.NotTranslated`; its body `__gvb_spin` and `spin_chamber` are translated, the alt-click and the use-in-hand reach them), and the `verbs -= ...` line of `spin_chamber` for a revolver without a cylinder | the Spin Chamber verb of the right-click menu | M9 (verbs) | `modules/projectiles/guns/ballistic/revolver.cs` |
-| `code/modules/projectiles/guns/ballistic/revolver.dm:168` | the detective revolver's `setup_reskins` (`Dm.Deferred`): the reskin component and its radial menu (nine skins) | the detective's revolver being reskinned | M10+ | `modules/projectiles/guns/ballistic/revolver.cs` |
-| `code/modules/projectiles/guns/ballistic/revolver.dm:370`, `:382`, `:410` | the Russian revolver's `on_mail_unwrap` (a live-partial row), the cursed `russian/soul` revolver's soul capture and the `reverse` revolver (generated only, inert) | traitor mail; the soulstone revolver; the reverse revolver | M10+ | (generated stubs) |
+| `code/modules/projectiles/guns/ballistic/revolver.dm:370`, `:410` | the Russian revolver's `on_mail_unwrap` (a live-partial row) and the `reverse` revolver (the cursed `russian/soul` revolver's soul capture came with gaps CH1) (generated only, inert) | traitor mail; the reverse revolver | M10+ | (generated stubs) |
 | `code/modules/projectiles/guns/ballistic.dm:256`, `objective_items.dm:255` | `vv_edit_var` of the ballistic guns and `add_stealing_item_objective` of the detective's revolver (live-partial stubs) | the admin variable editor, the traitors' objectives | M10 | (generated stubs) |
-| `psyker.dm:239`, `ammunition/ballistic/revolver.dm:26`, `:103`, `pistol.dm:68` | the bullets and casings with procs of their own that are not station guns' loads: the .38 holy bullets, the .357 heartseeker, the .160 smart (generated only, inert; the .38 TRAC, hot shot and iceblox bullets and the pea came with gaps GU1) | those rounds | after the core version | (generated) |
+| `ammunition/ballistic/revolver.dm:26`, `:103`, `pistol.dm:68` | the bullets and casings with procs of their own that are not station guns' loads: the .357 heartseeker, the .160 smart (generated only, inert; the .38 TRAC, hot shot and iceblox bullets and the pea came with gaps GU1, the .38 holy bullets with gaps CH1) | those rounds | after the core version | (generated) |
 
 ## 49. Shotguns, pellet clouds, full auto, the battle rifle, the scope, the tase and the hold-up left for later (M7x slice D)
 
@@ -1266,7 +1227,6 @@ the gunpoint, the recharger's battle rifle branch and the WT-550 and battle rifl
 |---|---|---|---|---|
 | `code/datums/components/fullauto.dm:128`, `:218` | a press or a drag over a click catcher or a screen object: `parse_caught_click_modifiers` (the turf under the catcher; `Dm.NotTranslated`); the first-person client sends the world thing under the crosshair, never a catcher | never in the first-person client | the 2D client's click catcher | `datums/components/fullauto.cs` |
 | `code/modules/projectiles/guns/ballistic/automatic.dm:89` | the WT-550's `add_bayonet_point` (`Dm.Deferred`): the bayonet mount | a gun's init | after the core version (attachments, ROADMAP) | `guns/ballistic/shotgun.cs`, `automatic.cs` |
-| `code/modules/projectiles/guns/ballistic/shotgun.dm:362` | the double-barrel's `setup_reskins` (`Dm.Deferred`): the reskin component and its radial menu (six finishes) | the double-barrel being reskinned | M10+ | `guns/ballistic/shotgun.cs` |
 | `code/modules/projectiles/guns/ballistic/shotgun.dm`, `automatic.dm`, `ammunition/ballistic/shotgun.dm`, `projectile/bullets/shotgun.dm` | the guns and rounds that are not the station set's: the cycler (dual tube), bulldog, hook, monkey and musket shotguns, the pump-action grenade launcher, the toy and CTF shotguns, the C-20r, the smartgun and the other automatic guns (the Saber SMG, the Thompson and the L6 SAW are translated, 2026-11-12); the milspec, executioner, pulverizer, incendiary, dragonsbreath, stun, meteor, pulse, frag-12, incapacitate, flechette, ion, scatter laser, tech and dart shells and their projectiles (generated var blocks; those with procs of their own are inert) | those guns or shells | after the core version | (generated) |
 | `code/game/gamemodes/objective_items.dm:143`, `:386`, `:823` | `add_stealing_item_objective` of the double-barrel, the compact combat shotgun and the riot shotgun (live-partial stubs) | the traitors' objectives | M10 | (generated stubs) |
 | `code/datums/components/scope.dm:59`, `:253`, `cursor_catcher.dm:41-66`, `scope.dm:217-231` | the 2D scope view: `process` (panning the client's pixel offsets), the tracker's cursor tracking (`MouseEntered`, `MouseMove`, `calculate_params`, the scope's `Click`) and `stop_zooming`'s pan back (live-partial rows); DV98 zooms the first-person field of view instead and `given_turf` stays null, so `on_gun_fire` never redirects a shot | never in the first-person client | the 2D client | `datums/components/scope.cs`, `game/objects/effects/cursor_catcher.cs` |
@@ -1282,7 +1242,7 @@ Translated whole: `code/modules/reagents/chemistry/holder/holder.dm` (the mob br
 `holder/mob_life.dm` (`metabolize`, `metabolize_reagent`, `end_metabolization`, `process_mob_reagent_purity`,
 `handle_stasis_chems`), `holder/properties.dm`, `code/modules/reagents/stacked_effects/` and `code/modules/reagents/chemistry/taste.dm`;
 the `/datum/reagent` base's metabolism hooks, overdose procs, spark act, taste description and purity helpers with
-`pretty_string_from_reagent_list` (`reagents.dm` but `on_hydroponics_apply` and `used_on_fish`); the liver base's chemical
+`pretty_string_from_reagent_list` (`reagents.dm` but `on_hydroponics_apply`); the liver base's chemical
 handling, examine, job trait transfer, failure stages and owner examine (`_liver.dm:54-213`); the stomach's digestion of
 reagents and of swallowed things (`_stomach.dm:61-131`, `:201-330`; hunger stays M2's, the disgust effects later); the living
 and carbon `get_fullness`, `has_reagent`, `reagent_tick` and `reagent_expose`; tasting (`taste.dm:1-94`); water's and welding
@@ -1310,7 +1270,6 @@ the hands slot of `can_equip`, CPR's two balloon alerts. Leaves:
 
 | tg | what | when it is reached | milestone | C# |
 |---|---|---|---|---|
-| `code/modules/clothing/neck/_neck.dm:242` | the stethoscope's `AddElement(/datum/element/adjust_fishing_difficulty, -3)` (`Dm.Deferred`) | fishing with a stethoscope worn | M10+ (fishing) | `clothing/neck/_neck.cs` |
 | `code/_onclick/item_attack.dm` (`flick` of a held item) | a held item's `flick` (the analyzer's `health-scan`, the wound analyzer's `_pinprick`) is not drawn in the hand slot or the first-person view model: a hand slot's `vis_contents` child carries no flick on the wire (protocol 12's `ScreenChild`); the item's own overlays (the wound analyzer's faces) are drawn | scanning with an analyzer in hand | a later protocol version (presentation) | `src/Protocol/MessagesV12.cs` |
 
 ## 52. The core medicines left for later (M8 slice B)
@@ -1332,7 +1291,6 @@ set (they are given since gaps OG1, section 229). Leaves:
 |---|---|---|---|---|
 | `code/datums/status_effects/debuffs/heart_attack.dm:61`, `:133` | `med_hud_set_status()` of a visible heart attack (`Dm.Deferred`; `TRAIT_DISEASELIKE_SEVERITY_HIGH` is kept) | a heart attack's third stage and its end | M8 slice F (data HUDs) | `datums/status_effects/debuffs/heart_attack.cs` |
 | `code/datums/status_effects/debuffs/heart_attack.dm:107` | the darkened flash preference of the stopped heart's flash (a GAP local read as null: the client's prefs stay null) | a heart attack's end | M9 (preferences) | `datums/status_effects/debuffs/heart_attack.cs` |
-| `code/datums/status_effects/stacking_effect.dm:88` | the stack overlay of a stacking effect with an `overlay_file` (`Dm.NotTranslated`: `get_cached_height` is the atom HUDs') | none in M8 (the saline dilution has no overlay) | M8 slice F (data HUDs) | `datums/status_effects/stacking_effect.cs` |
 | `code/datums/status_effects/drug_effects.dm` (but the saline dilution; woozy, high blood pressure and seizure since gaps RG2, section 225) | the drugs' status effects (the cannabis and stoned effects, ...) | the drugs (D181: out) | after the core version | (generated, inert) |
 | `code/datums/status_effects/drug_effects.dm` (but the saline dilution and the stoned effect, gaps RG3) | the drugs' status effects (woozy, high blood pressure, seizure, ...) | the drugs (D181: out) | after the core version | (generated, inert) |
 | `code/datums/status_effects/debuffs/dizziness.dm:68-81` | the wobble's three `animate` steps of the client's `pixel_x` and `pixel_y` reach the player as a view turn (DV106) | a dizzy player | (DV106) | `src/Server/Replication/Replicator.CameraShake.cs`, `godot/scripts/Shared/Play/CameraLayer.cs` |
@@ -1373,14 +1331,12 @@ the living's container flags, the item's `doMove` out of an inventory (`items.dm
 
 | tg | what | when it is reached | milestone | C# |
 |---|---|---|---|---|
-| `code/modules/reagents/chemistry/reagents.dm:107` | `New`: `AddElement(/datum/element/venue_price)`, a reagent's venue price (`Dm.Deferred`; was not translated) | every new reagent | the restaurant venues (their robot customers; not ported) | `modules/reagents/chemistry/reagents.cs` |
 | `code/modules/reagents/reagent_containers.dm` (`apply_fantasy_bonuses`, `remove_fantasy_bonuses`; the syringe gun's came with gaps GU1) | fantasy affixes (live-partial stubs) | a fantasy affix | M10 | (generated) |
 | `code/modules/reagents/reagent_containers/cups/_cup.dm:203` | `pour_concrete` (`Dm.NotTranslated`) | concrete poured from a cup | M10+ | `cups/_cup.cs:216` |
 | `code/modules/reagents/reagent_containers/syringes.dm:29` | `Initialize`: the `dart_insert` component (`Dm.Deferred`) | a syringe in a foam dart | toys, later | `syringes.cs:26` |
 | `code/modules/reagents/reagent_containers/pill.dm:156` | `on_accidental_consumption`: the eater's taste reaction to the food the pill hid in (`Dm.Deferred`) | a pill hidden in food | food (D188, D194) | `pill.cs:217` |
 | `code/modules/reagents/reagent_containers/pill.dm:401` | `on_consumption`: the maintenance pill score (`Dm.Deferred`) | a maintenance pill swallowed | M10 (achievements) | `pill.cs:276` |
 | `code/modules/reagents/reagent_containers/spray.dm:144`, `:147` | the Empty Spray Bottle verb and its `tgui_alert` (`Dm.NotTranslated`) | the verb | M9 (verbs) | `spray.cs:185`, `:194` |
-| `code/modules/reagents/reagent_containers/spray.dm:456` | `setup_reskins`: the medical spray's reskin component (`Dm.Deferred`) | a medical spray made | later (reskins) | `spray.cs:306` |
 | `effects_chemspray.dm` (`blob_act`), the `suicide_act` of the medipen, the cleaner, the pepper spray, the medkits and the pill bottle, `crate/freezer` `process_internal_air`, `gun/syringe/dna` (`Initialize`, `item_interaction`), phlogiston's `on_spark_act` | live-partial stubs (`docs/ai/specs/live-partial.txt`, M8 slice C; the cyborgs' self-filling sprays came with silicons SI2) | blobs, the suicide verb, a freezer's air, genetics, a spark in a container | M9 to M10+ | (generated) |
 | `code/game/objects/items/storage/medkit.dm:32` | `Initialize`: the `cuffable_item` element (`Dm.Deferred`) | a medkit made | later (the element) | `game/objects/items/storage/medkit.cs:25` |
 | `code/game/objects/items/storage/medkit.dm:390` | `tool_act`: a medibot from a medkit and a robot arm (`Dm.NotTranslated`) | a robot arm on a medkit | medibots (D188) | `game/objects/items/storage/medkit.cs:35` |
@@ -1403,7 +1359,6 @@ HUD), the stamina display, `GLOB.human_heights_to_offsets` and `GLOB.security_ve
 | `code/game/data_huds.dm:490-513` | `get_cached_width` and `get_cached_height` of an image, `get_visual_width` and `get_visual_height` (DV108) | the temporary visuals of a throw bonus and the brimdust sac | M10+ | (not declared) |
 | `code/modules/clothing/glasses/hud.dm:26` | the suicide act of HUD glasses (live-partial row) | the suicide verb | M10 | (generated stub) |
 | `code/modules/clothing/glasses/hud.dm:120-165` | the diagnostic glasses show nothing: the diagnostic HUD is out | wearing them | M10+ | (traits only) |
-| `code/modules/mining/equipment/explorer_gear.dm:52` | the explorer suit's allowed list: `GLOB.mining_suit_allowed` is translated (gaps MO1, the mining MOD theme's suit storage), but the explorer gear is inert (section 115), so its Initialize never reads it: a miner cannot hang a tank on the suit | the two Shaft Miner outfits' suit store (the ported `outfit_sanity` skips that check) | M10 (mining) | (generated) |
 | `code/modules/clothing/suits/armor.dm:33-45`, `:69` and the other `Initialize` and `worn_overlays` of the armor subtypes | the fantasy bonuses (live-partial rows) and the cuirass, captain's formal carapace, detective's suit, durathread and military vests, press and security jackets stay inert | none of those is on a station job's outfit | M10+ | `modules/clothing/suits/armor.cs` |
 | `code/game/objects/items/implants/implant_pad.dm`, the locator and the tracking beacon's readers | the implant pad and the readers of a tracking implant (the console and its buttons came with gaps LC1) | reading an implant | M9+ (consoles) | `game/objects/items/implants/` |
 | `code/game/objects/items/implants/implant_mindshield.dm:26` | the deconverted mind's quip (`say`, `Dm.Deferred`) | a mindshield implanted into a converted mind | M10 (antagonists) | `implants/implant_mindshield.cs` |
@@ -1460,7 +1415,6 @@ table's rest in `tables_racks.dm`), the `soft_landing` element and `get_icon_dim
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `code/modules/mob/mob.dm:280` | the buckle's warnings and feedback to the viewers ("X starts buckling Y to the chair!", "X sits Y down on the chair."): `/atom/visible_message` to others is section 1's deferred leaf (hearing); the buckled mob's own line reaches him | a mob buckled by another | M9 (hearing) | `modules/mob/mob.cs` |
-| `code/game/objects/structures/beds_chairs/bed.dm:381` | the dirty mattress's `swabable` cell lines (`Dm.Deferred`, as the gibs') | a dirty mattress's init (none on Meta) | M10+ (cytology) | `game/objects/structures/beds_chairs/bed.cs` |
 | `code/game/objects/structures/beds_chairs/bed.dm:208`, `:211`, `tables_racks.dm:1325` | the medical bed's brakes and the linked operating table's emissive appearances (DV12) | a braked medical bed, a linked table with a patient | with DV12 | `bed.cs`, `tables_racks.cs` |
 | `code/game/objects/structures/beds_chairs/chair.dm:563-680`, `/obj/structure/chair/e_chair` | the bronze, mime and plastic chairs stay inert (the alien nest is live since gaps X5, the electric chair since gaps AS1) (D132): none on Meta | none on Meta | with their content | `Generated/Types/obj.structure.chair.g.cs` |
 | `code/modules/vehicles/wheelchair.dm`, `code/datums/components/riding/` | the wheelchair and the riding component (`COMSIG_MOVABLE_PREBUCKLE` has no listener): Meta maps no wheelchair; its janicart and secway are ridden vehicles, inert | none on Meta | M9 (riding) | (none) |
@@ -1527,7 +1481,7 @@ closed climb times), canisters and the other portable atmospherics, the reagent 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `code/game/objects/structures/tables_racks.dm:110`, `:1352`, `crates.dm:45`, `:122`, `:134`, `portable_atmospherics.dm:64`, `reagent_dispenser.dm:63`, `safe.dm:65`, `spaceheater.dm:75` | the `elevation` element: the client draws the climber on the structure's top instead (DV154); its `TRAIT_ELEVATED_TURF` is missing for foam and lava | standing on any of them | the 3D world's heights (later) | the mirror files named |
-| `deployable.dm:129`, `modules/instruments/stationary.dm:56`, `religion_structures.dm:19`, `fence.dm:86`, `platform.dm:48`, `steps.dm:19` | the climbable (and climb-walkable) element of types whose `Initialize` is not translated: sandbags, pianos, altars, fences, platforms, steps | a drag of oneself onto one | their milestones | (generated) |
+| `deployable.dm:129`, `modules/instruments/stationary.dm:56`, `fence.dm:86`, `platform.dm:48`, `steps.dm:19` | the climbable (and climb-walkable) element of types whose `Initialize` is not translated: sandbags, pianos, fences, platforms, steps | a drag of oneself onto one (the altars' came with gaps CH1) | their milestones | (generated) |
 | (port) `ShotGeometry` | a climber's aimed shot leaves from the floor-standing eye (DV157) | a shot fired standing on a table | M9 | `Infrastructure/ShotGeometry.cs` |
 
 ## 69. Pointing, the verbs, the HUD buttons and the resist key (M8z slice D, D234, D237, D240-D245)
@@ -1783,7 +1737,8 @@ Not translated, each recorded at its site:
 | the shuttle manipulator (the shuttle purchases came with gaps CM1, section 200; the navigation computers' dock overlap and hidden turfs with syndicate N1c) | after M10 | `shuttle.cs` |
 | the console's ninja drain and battlecruiser card, the cross-server messages (the emag came with G1a; the hacks, the syndicate console, the nuke codes and the spare ID safe codes with gaps CM1: section 200 lists what is left) | after M10 (antagonists, other servers) | `communications.cs` (live-partial stubs) |
 | the talk logs, the admins' links and the requests manager of the console and the shuttle calls | M10+ (the admin logs and panels, section 83) | `communications.cs`, `datums/communications.cs`, `pray.cs`, `supply.cs` |
-| the transit turfs' shuttle cling (things pulled along by a moving shuttle), the ruins', shelters' and holodeck's template preloads | after M10 | `transit.cs`, `mapping.cs` |
+| the transit turfs' shuttle cling (things pulled along by a moving shuttle), the holodeck's template preloads (the shelters' came with gaps LV1, section 234; the ruins' with gaps LV6, section 240) | after M10 | `transit.cs`, `mapping.cs` |
+| the transit turfs' shuttle cling (things pulled along by a moving shuttle), the ruins' template preload (the shelters' came with gaps LV1, section 234, the holodeck's programs with gaps RC1, section 247) | after M10 | `transit.cs`, `mapping.cs` |
 | the round's shuttle name in the database, the admins' fly-shuttle verb and var editing of the arrivals shuttle | M10+ (section 83) | `emergency.cs`, `arrivals.cs` (live-partial stubs) |
 | the hulks' and rust's effect on titanium walls | after M10 | `mineral_walls.cs` (live-partial stubs) |
 
@@ -1816,7 +1771,7 @@ Not translated, each recorded at its site:
 |---|---|---|
 | the antagonists' round-end data and report, the antagonist HUD for all (SSdynamic's round result and its report lines: syndicate A3) | the alpha | `roundend.cs` |
 | the round's data file, the blackbox's counts and first death, the report files, the logs, the TGS events | not ported (section 83; the round id is translated) | `roundend.cs`, `ticker.cs`, `world.cs` |
-| the speed round and other achievements, the hardcore random score, the medals, the market report's restaurant venues (the economic summary came with gaps P4d, the station goals with gaps R1, the end credits and the commendations with gaps R5, section 186) | after M10 | `roundend.cs` |
+| the speed round and other achievements, the hardcore random score, the medals (the economic summary came with gaps P4d, the station goals with gaps R1, the end credits and the commendations with gaps R5, section 186, the market report's restaurant venues with gaps KT1, section 246) | after M10 | `roundend.cs` |
 | the report's action button and its browser window (DV192) | after M10 | `roundend.cs` |
 | the hard reboot through TGS | not ported | `world.cs` |
 
@@ -1880,10 +1835,9 @@ inquisitive ghost preference; the client's `Supermatter` and `NtosSupermatter` w
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `console_presets.dm:93-170` | the cargo interfacing consoles: translated (gaps P4d, section 170: the department order app, the chat client's channels and `#cargobus`; their shipping, budget and coupon apps live, the bounty board since silicons SI6b, the restock tracker still inert) | MetaStation's cargo and department consoles | translated (section 170) | `computers/machinery/console_presets.cs` |
-| the programs `scipaper_program`, `arcade` (`card_mod`, `job_management`, `power_monitor`, `chatclient`, `ntnetmonitor` and `robocontrol` came with gaps S4, section 164; `ai_restorer` and `portrait_printer` with the silicons campaign) | the consoles' other apps: stored as tg stores them, generated-only; running one shows the client's placeholder for an untranslated window (as the PDA's, section 74) | an engineering, identification, research, command, civilian or curator console | the packages that port them (`alarm_monitor`, Canary, came with E6: section 86) | (none) |
+| the programs `arcade` (`scipaper_program` came with gaps OR1, section 248; `card_mod`, `job_management`, `power_monitor`, `chatclient`, `ntnetmonitor` and `robocontrol` came with gaps S4, section 164; `ai_restorer` and `portrait_printer` with the silicons campaign) | the consoles' other apps: stored as tg stores them, generated-only; running one shows the client's placeholder for an untranslated window (as the PDA's, section 74) | an engineering, identification, research, command, civilian or curator console | the packages that port them (`alarm_monitor`, Canary, came with E6: section 86) | (none) |
 | `modular_computer.dm:89` | `emag_act` (`live-partial.txt` E2) | an emag on a console | M10+ (antagonists) | `Generated/LivePartial/obj.g.cs` |
-| `modular_computer.dm:45` | the console's circuit shell (`add_shell_component`, wiremod) | a console's Initialize | with the circuits | `modular_computers/computers/machinery/modular_computer.cs` |
-| `controllers/subsystem/persistence/*.dm` but `counter_delamination.dm`, `incident_display.dm:103`, `:183`, `:355` | SSpersistence: only `Initialize`, `collect_data` and the delamination counter are translated (DV220); every other load and save (Poly, engravings, tattoos, trophies, recent maps, photos, outfits, adventures, recipes, scars, message bottles) and the tram counters (`tram_hits_this_round` and `tram_hits_last_round` stay 0: no trams) are left out with a comment | a round's start and end, a multitool's switch to tram mode | M10+ (round persistence) | `controllers/subsystem/persistence/_persistence.cs` |
+| `controllers/subsystem/persistence/*.dm` but `counter_delamination.dm`, `incident_display.dm:103`, `:183`, `:355` | SSpersistence: only `Initialize`, `collect_data`, the delamination counter (DV220) and the exploration drones' adventures (`load_adventures`, section 249) are translated; every other load and save (Poly, engravings, tattoos, trophies, recent maps, photos, outfits, recipes, scars, message bottles) and the tram counters (`tram_hits_this_round` and `tram_hits_last_round` stay 0: no trams) are left out with a comment | a round's start and end, a multitool's switch to tram mode | M10+ (round persistence) | `controllers/subsystem/persistence/_persistence.cs` |
 | `incident_display.dm:102` | the tram collisions (`SStransport`'s `COMSIG_TRAM_COLLISION`; no tram on MetaStation) | a tram display | with the trams | `game/machinery/incident_display.cs` |
 | `incident_display.dm:277`, `:288` and the other `emissive_appearance` sites | the displays' emissive glow (DEVIATION DV12) | every display | with the emissive plane | `game/machinery/incident_display.cs` |
 | the inert types' own `attack_ghost` (portals, ladders, the gateway, the spawners and others: section 16) | a ghost's click on them runs `/obj`'s (`attack_ghost` is not one of the inert seam's guarded procs) | a ghost's click on an inert prop | with their types | (none) |
@@ -1955,8 +1909,8 @@ rows (E12a: the screentips, not now by the owner, D264). The crystallizer's othe
 quality prefix but stay inert until their own packages (their Initialize and own procs do not run, D112) (the healium, proto-nitrate,
 nitrous oxide and foam crystals are live since gaps F1, `grenades/atmos_grenades.dm`): the metal hydrogen, diamond and zaukerite sheets
 (`mineral.dm`: no crafting recipes), hot ice (`hot_ice.dm`), the ammonia crystals (`ammonia_crystals.dm`), the crystal cell
-(`power/cell.dm:248`: its charge is not set up) and the fuel pellets (`explorer_drone/exodrone.dm`). The plasma sheet and the
-supermatter shard are live. Nothing else is left.
+(`power/cell.dm:248`: its charge is not set up). The plasma sheet, the supermatter shard and the fuel pellets
+(`explorer_drone/exodrone.dm`, live with the exploration drones, section 249) are live. Nothing else is left.
 
 ## 91. The RCD family: the RCD, the RLD, the RTD, the RDD (E13, D287)
 
@@ -1997,7 +1951,6 @@ Package E14 translates `blueprints.dm`, `airlock_painter.dm`, `decal_painter.dm`
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `code/game/objects/items/blueprints.dm:249-253` | the cerulean prints' HSL colour filter on the renamed area's turfs (`color_transition_filter`, `add_atom_colour`); the rename and `XENOBIOLOGY_COMPATIBLE` run | a rename with the cerulean prints (a slime extract's) | xenobiology | `game/objects/items/blueprints.cs` |
 | `code/game/objects/items/tools/engineering/painter/paintable_decals.dm:39`, `:54`, `:63`, `:204`, `:271` | the decal painter's sprite sheet: the categories' `generate_*_spritesheet_icon` procs (`live-partial.txt` E14) and the asset `/datum/asset/spritesheet_batched/decals` (inert); the server sends no assets and the client draws the sheet's classes from its own .dmi files (`TguiSpritesheets.TryDrawDecal`, DV44) | the DecalPainter window's previews | never as such (DV44) | `Generated/LivePartial/datum.g.cs` |
 | `code/game/objects/items/tools/engineering/painter/airlock_painter.dm:73`, `:120`, `code/game/gamemodes/objective_items.dm:592` | the airlock painter's `suicide_act` and examine (the ink level), the blueprints' stealing objective (`live-partial.txt` E14) | the suicide verb, an examine, a traitor's objectives | M10+ (examines not now: D264; antagonists) | `Generated/LivePartial/obj.g.cs` |
 
@@ -2033,7 +1986,6 @@ mounted-atom line of a supporting wall, the ID card's tasteful-thickness apprais
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `code/game/turfs/turf.dm:866`, `:874` | the fishing spot line and the catchable fish names of a turf with a fish source (`Dm.Deferred`): `GLOB.preset_fish_sources` is fishing | an examine of a fishing spot by a fisher (no turf of the ported maps has a fish source) | fishing (after the core version) | `game/turfs/turf.cs` |
 | `code/game/turfs/open/_open.dm:143` | the footprints' `icon2html` of the shoe in the chat line (`Dm.Deferred`; as `blood.dm:773`, `atom_examine.dm:202`): the 3D client's chat draws text only | an examine of a floor with bloody footprints | the chat icons (row in section 76) | `game/turfs/open/_open.cs` |
 
 ## 96. Plumbing: the plumbing machines, the plumbed tanks, the duct stack, the plumbing constructor (E15, D287)
@@ -2054,7 +2006,7 @@ ChemReactionChamber, ChemSplitter, ChemSynthesizer and RapidPlumbingDevice windo
 | `code/modules/reagents/chemistry/holder/reactions.dm:24` | the reaction chamber's and the acclimator's `handle_reactions` reach the holder's deferred reaction lookup (chemistry, 0/717 reactions): the chamber takes in its required reagents, heats or cools them and empties them out unreacted; the chem chamber's pH buffers are taken in and dosed by tg's code | a filled reaction chamber or acclimator | chemistry (M8 rows, section on reagents) | `modules/reagents/chemistry/holder/reactions.cs` |
 | `code/datums/components/plumbing/hydroponics.dm`, `boulder_reactions.dm` | the hydroponics tray's and the boulder refinery's plumbing components: inert with their hosts (the trays and the refinery are not ported) | a plumbed tray or refinery | hydroponics, mining (after the core version) | (generated, inert) |
 | `code/modules/plumbing/plumbers/pumps.dm`, `code/game/objects/items/plunger.dm` | the liquid pump finds no geyser (the geysers are lavaland's, inert) and beeps; the plunger is inert, so the machines' and the IV's `plunger_act` (translated) is reached by no player | a pump on a station tile; a plunger | lavaland and the plunger (after the core version) | `modules/plumbing/plumbers/pumps.cs` |
-| `code/game/objects/structures/shower.dm`, `water_structures/sink.dm`, `toilet.dm`, `code/modules/fishing/aquarium/aquarium.dm` | the other hosts of the plumbing component (showers, sinks, toilets, aquariums; the smoke machine is live since gaps F1, the medipen refiller since gaps P5, the limb grower since gaps MD3): inert with their own packages; their component kinds (`simple_demand/extended`, `aquarium`) are translated | ducts laid to them | their packages | (generated, inert) |
+| `code/game/objects/structures/shower.dm`, `water_structures/sink.dm`, `toilet.dm` | the other hosts of the plumbing component (showers, sinks, toilets; the aquariums since gaps FI3, the smoke machine is live since gaps F1, the medipen refiller since gaps P5, the limb grower since gaps MD3): inert with their own packages; their component kinds (`simple_demand/extended`, `aquarium`) are translated | ducts laid to them | their packages | (generated, inert) |
 | `code/modules/asset_cache/assets/chemmaster.dm`, `plumbing.dm` | the chemmaster and plumbing sprite sheets: the server sends no assets (DV44); the pill press's `class_name` is tg's `icon_class_name` (`"chemmaster32x32 <id>"`, every container's sprite is 32x32) and the client draws both sheets from its own .dmi files | the ChemPress and RapidPlumbingDevice windows | (DV44) | `modules/plumbing/plumbers/pill_press.cs`, `godot/scripts/Shared/Tgui/TguiSpritesheets.cs` |
 
 ## 97. Object examines: clothing, limbs, mobs, the remaining live types (X3, D291)
@@ -2073,8 +2025,6 @@ and thermoplastic's, the microwave's (with the `RefreshParts` its lines read), t
 | `code/game/objects/items/cards_ids.dm:271`, `:274` | the ID card's `get_id_examine_strings` and `get_examine_icon`: `icon2html` of the card's flat icon (`Dm.Deferred`; as `atom_examine.dm:202`) | the human's examine of a worn ID; an ID card's examine title | the chat icons (row in section 76) | `game/objects/items/cards_ids.cs` |
 | `code/modules/mob/living/basic/drone/_drone.dm:244` | the drone's hat line (`Dm.Deferred`): its `head` slot is typed as a path in the port and is filled only by the drone's inventory procs, which are not translated | examining a drone with a hat | the drones (PORT-CHECKLIST section 7) | `modules/mob/living/basic/drone/_drone.cs` |
 | `code/modules/mob/living/silicon/examine.dm:5` | the laws a ghost reads on a silicon (`Dm.Deferred`): `/datum/ai_laws` is inert | a ghost examining a silicon with laws | the silicons (after the core version) | `modules/mob/living/silicon/examine.cs` |
-| `code/modules/fishing/fish/_fish.dm:581` | the fish's drowning warning (`Dm.Deferred`): `proper_environment` reads SSfishing's safe turfs and the aquariums | a fisher's deeper look at a fish | fishing (after the core version) | `modules/fishing/fish/_fish.cs` |
-| `code/modules/fishing/fishing_rod.dm:121`, `:150` | the rod's equipped line, hook and bait and its cast range (`Dm.Deferred`): the slots hold paths until the rod's Initialize and `set_slot`, and `get_cast_range` reads the line and the fishing skill | examining a fishing rod; a fisher's closer look | fishing (after the core version) | `modules/fishing/fishing_rod.cs` |
 
 ## 98. The IV drip, the combination safe and the loot panel (G1, D291)
 
@@ -2169,7 +2119,6 @@ is live since gaps MS1 (section 227).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `code/modules/food_and_drinks/food/_food.dm:89` | `Initialize`: the venue price element (`Dm.Deferred`) | a food with a `venue_value` | M10+ (the restaurants) | `modules/food_and_drinks/food/_food.cs` |
 | `code/modules/food_and_drinks/food/_food.dm:227` | `make_germ_sensitive`: the decomposition of food left on the floor (`Dm.Deferred`; `decomposition.dm` is inert: the mold, the ants and the stink particles; the germs came with gaps VI1, section 228) | every unwrapped food's init | the food decomposition | `modules/food_and_drinks/food/_food.cs` |
 | `code/datums/components/food/edible.dm:538` | `check_materials`: the golem food buffs of `GLOB.golem_stack_food_directory` (`Dm.Deferred`) | a rock eater eating a material | M10+ (golems) | `datums/components/food/edible.cs` |
 | `code/modules/reagents/reagent_containers/cups/drinks.dm`, `drinkingglass.dm`, `glassbottle.dm` | the drinking glasses, mugs and bottles of `/obj/item/reagent_containers/cup/glass` stay inert: their smash needs the broken bottle's icon mimicry (`icon.SwapColor`, not in the shim) and the glass's look the glass styles (`takes_reagent_appearance`); the live cups (beakers, chemistry bottles, buckets) are drunk from | Meta's bar and kitchen glasses | a later package (the bar's glasses and bottles) | (generated, inert) |
@@ -2185,13 +2134,12 @@ vendor of Meta, 92 machines), 7 left inert. The live-partial rows are in `live-p
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `code/modules/vending/vendor/_vending.dm:248` | `Initialize`: `AddComponent(/datum/component/fishing_spot, fish_source_path)`, fishing in a vendor (`Dm.Deferred`) | every vendor at init | fishing | `modules/vending/vendor/_vending.cs` |
 | `code/modules/vending/vendor/_vending.dm:396` | `update_overlays`: the light mask's `emissive_appearance` (DEVIATION DV12; the client's vendor models light their masks themselves, `vending_light_layers.json`) | a powered vendor | (DV12) | `modules/vending/vendor/_vending.cs` |
 | `code/modules/vending/vendor/tilting.dm:234` | `post_crush_living`: the crushed player's achievement (`give_award`, achievements; the witnesses' memory is given since the merge) | a vendor that crushes a player | M10+ | `modules/vending/vendor/tilting.cs` |
 | `code/modules/vending/vendor/ui_data.dm:156` | `ui_act`'s `select_colors`: the greyscale colour menu of a colourable product (`Dm.Deferred`; `/datum/greyscale_modify_menu`, the GAGS editor, is not ported); `_vend_greyscale` is translated, unreached | the palette button of a colourable product | the GAGS editor (admin tooling) | `modules/vending/vendor/ui_data.cs` |
 | `code/modules/asset_cache/assets/vending.dm` | the vending sprite sheet (DEVIATION DV44): `collect_records_for_static_data` gives a GAGS product its client-composed GAGS name (DV19) and tg's preview state, and a coloured icon its icon and state, drawn without the colour | the Vending window | (DV44) | `modules/vending/vendor/ui_data.cs` |
 | `code/modules/vending/wardrobes.dm:37` | `take_damage`: the mothroaches flee through their AI's blackboard (`Dm.Deferred`; the mothroach is inert, the creatures' AI is C1); they still leave the wardrobe | a damaged wardrobe with mothroaches (5% of rounds, one wardrobe) | C1 | `modules/vending/wardrobes.cs` |
-| `code/modules/vending/custom.dm`, `runic_vendor.dm`, `subtype.dm`, `sustenance.dm:47`, `mapfluff/ruins/objects_and_mobs/museum.dm:162` | inert types, none on Meta: the custom vendor and its greed and unbreakable subtypes (players' own stock and prices; the economy came with gaps P4a, the vendor waits for its own package), the runic vendor (the wizard), the subtype vendor (admin), the labor camp's vendor (labor points: the gulag), the museum's hotdog vendor | an admin spawn | their own package, the antagonists, the gulag | (inert) |
+| `code/modules/vending/custom.dm`, `runic_vendor.dm`, `subtype.dm`, `mapfluff/ruins/objects_and_mobs/museum.dm:162` | inert types, none on Meta: the custom vendor and its greed and unbreakable subtypes (players' own stock and prices; the economy came with gaps P4a, the vendor waits for its own package), the runic vendor (the wizard), the subtype vendor (admin), the museum's hotdog vendor | an admin spawn | their own package, the antagonists, the gulag | (inert) |
 | `modules/modular_computers/file_system/programs/restock_tracker.dm` | the NtosRestock program (the vendors' restock tracker; the Coupon Master came with gaps P4b) | a PDA, the cargo interfacing console | the PDA's apps | (inert) |
 | `code/game/objects/items/food/` and the glassware | inert products spawn as tg's objects (rules: an inert type initializes with its presentation): the bar's glasses, mugs and bottles (`reagent_containers/cup/glass`: `glass.dm`'s smash needs the shim's `SwapColor` and the broken bottle, the drinking glass the glass styles; about 40 procs), the soda cans, cigarettes and lighters, the games and seeds; each turns usable with its own package | buying one | their packages | (inert) |
 
@@ -2208,7 +2156,6 @@ scrubs. Deferred leaves (`Dm.Deferred`) and `live-partial.txt` rows (section "Ga
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `code/datums/elements/adjust_fishing_difficulty.dm` via `gloves/botany.dm:17`, `special.dm:102`, `:134`, `shoes/laceup.dm:10`, `head/jobs.dm:669`, `under/jobs/medical.dm:96`, `suits/wintercoats.dm:427`, `suits/labcoat.dm:65` | the fishing difficulty element of the botanist's, captain's and nitrile gloves, the laceup shoes, the surgery cap, the scrubs and the paramedic's two coats (`Dm.Deferred`) | the item worn while fishing | M10+ (fishing) | `modules/clothing/gloves/botany.cs`, `special.cs`, `shoes/laceup.cs`, `head/jobs.cs`, `under/jobs/medical.cs`, `suits/wintercoats.cs`, `suits/labcoat.cs` |
 | `code/modules/clothing/suits/wintercoats.dm:551`, `:564`, `suits/jobs.dm:471` | the engineering winter coat's and hood's and the atmospherics overalls' `emissive_appearance` lights (DEVIATION DV12) | a worn coat, hood or overalls | never as such (emissives, DV12) | `modules/clothing/suits/wintercoats.cs`, `jobs.cs` |
 | `code/datums/components/toggle_suit.dm:74` | `on_adding_context`, the toggling suits' screentip (live-partial row; `RegisterWithParent` does not register the signal) | hovering a labcoat or jacket with an item | M10+ (screentips) | (generated stubs) |
 | `code/modules/clothing/under/accessories/_accessories.dm:216`, `head/jobs.dm:222`, `neck/_neck.dm:137` | `add_context`: the accessories', the detective fedora's and the ties' screentips (live-partial rows) | hovering them with an item | M10+ (screentips) | (generated stubs) |
@@ -2231,10 +2178,10 @@ The live-partial rows are in `live-partial.txt`'s C1 section.
 | `code/datums/ai/` (every `EVLOG_*`), `_ai_controller.dm:1037-1098` | the admin event logger's lines and the controller's snapshot for it | admin tooling | M10+ | the AI files |
 | `code/controllers/subsystem/ai_controllers.dm:66`, `:85-146` | the MC panel line and the pass statistics that feed it (rules 13) | the MC panel | none | `controllers/subsystem/ai_controllers.cs` |
 | `code/__HELPERS/paths/sssp.dm`, `path.dm:50`, `:63` | the path maps and `get_swarm_path_to`, `get_sssp` (only tg's admin path debugger calls them at the snapshot) | none | M10+ | none |
-| `code/datums/ai/generic_behaviors/hunt_target.dm:76`, `basic_ai_behaviors/use_mob_ability.dm:35`, `pet_commands/pet_use_targeted_ability.dm` | the leaves that fire `/datum/action/cooldown` abilities at a target (`InterceptClickOn`) and the shapeshift variant: `/datum/action/cooldown` is live since C2, each ability's own procs stay inert with its spell | a creature with an ability (the leaves `targeted_mob_ability`, `use_mob_ability` themselves are translated and fall back on `/datum/action`) | C3-C5, spells | none |
+| `code/datums/ai/generic_behaviors/hunt_target.dm:76`, `pet_commands/pet_use_targeted_ability.dm` | the leaves that fire `/datum/action/cooldown` abilities at a target (`InterceptClickOn`; the shapeshift variant of `use_mob_ability` is live since gaps XB2): `/datum/action/cooldown` is live since C2, each ability's own procs stay inert with its spell | a creature with an ability (the leaves `targeted_mob_ability`, `use_mob_ability` themselves are translated and fall back on `/datum/action`) | C3-C5, spells | none |
 | `generic_behaviors/keep_playing_instrument.dm`, `play_instrument.dm`, `setup_instrument.dm`, `heal_eye_damage.dm`, `basic_ai_behaviors/ventcrawling.dm`, `write_on_paper.dm` | inert leaves whose hosts are not live (instruments, the eyeball, `/datum/pet_command`, ventcrawling, paper); a tree that uses one blocks there (no `perform`, RUNNING) | none yet | C4 (ventcrawling), S3 (paper); `stuff_in_disposal.dm` done with the disposal system (D325); `issue_pet_command.dm` done by C2 | none |
-| `basic_mobs/targeting_strategies/` `baby_raptor`, `beamable_hydro`, `befriendable_cultist`, `empty_paper`, `finished_stove`, `injured_raptor`, `playable_synthesizer`, `raptor_trough`, `slime_food`, `sniffable_hydro`, `treatable_hydro`, `unlit_bonfire` | strategies reading hosts not live: inert, so they only check the distance (the base's `is_valid_target`). The package of the mob that uses one translates it | none yet | C3-C5 | none |
-| `code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:52-256`, `:372-436` | the crate mimic (its storage, lock action) and the gun mimics stay inert | none on Meta | M10+ | none |
+| `basic_mobs/targeting_strategies/` `beamable_hydro`, `befriendable_cultist`, `empty_paper`, `finished_stove`, `playable_synthesizer`, `slime_food`, `sniffable_hydro`, `treatable_hydro` (the raptors' and the mooks' four are live since gaps LV3) | strategies reading hosts not live: inert, so they only check the distance (the base's `is_valid_target`). The package of the mob that uses one translates it | none yet | C3-C5 | none |
+| `code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:52-256`, `:372-436` | the gun mimics stay inert (the crate mimic with its storage and lock action: gaps BR2) | none on Meta | M10+ | none |
 | `code/modules/mob/living/basic/cult/constructs/_construct.dm:66`, `:67`, `:87` | a construct's `wall_tearer`, `healing_touch`, `structure_repair` and spells (`Dm.Deferred`): the proteon has none; the wraith, juggernaut, artificer and harvester stay inert with the cult | a player proteon (`smashes_walls`) | the cult | `modules/mob/living/basic/cult/constructs/_construct.cs` |
 | `code/datums/ai/telegraph_effects.dm:13` | the telegraph's emissive overlay (DV12) | a telegraph | none | the mirror files |
 | `code/datums/ai/basic_mobs/basic_ai_behaviors/targeting.dm:49-71` | tg's own proximity field for idle searches is commented out at the snapshot ("TEMP DISABLED"); not translated, `update_combat_targets`' other procs are | tg neither | none | `datums/ai/basic_mobs/basic_ai_behaviors/targeting.cs` |
@@ -2249,7 +2196,7 @@ Package J3 makes live the job gear of smoking and the service tools: `game/objec
 | `code/game/objects/items/cigarettes.dm:320` | `on_forcesay`: choking on a cigarette when hit hard (`datums/status_effects/debuffs/choke.dm`, 301 lines, not ported) | a heavy hit that interrupts speech with a cigarette in the mouth | M10+ | `game/objects/items/cigarettes.cs` |
 | `code/game/objects/items/cigarettes.dm:291` | `on_consume`: the 500 cigarettes eaten achievement (awards) | eating cigarettes | M10+ | `game/objects/items/cigarettes.cs` |
 | `code/game/objects/items/lighter.dm:47`, `:80` | the light middleman's flicker (the lighting module, D24, as the welder's and flare's): the flame's light is steady | a lit lighter | never as such (D24) | `game/objects/items/lighter.cs` |
-| `code/game/objects/items/crayons.dm:216`, `:221` | the venue price (robot customers), the spray can's `palette` component (its colour wheel action; the window's colours and custom colour work) | a crayon sold at a restaurant, on an object; the spray can's action | M10+; M10+ | `game/objects/items/crayons.cs` |
+| `code/game/objects/items/crayons.dm:221` | the spray can's `palette` component (its colour wheel action; the window's colours and custom colour work; the venue price of `:216` came with gaps KT1) | the spray can's action | M10+ | `game/objects/items/crayons.cs` |
 | `code/game/objects/items/crayons.dm:811`, `:867`, `:925`, `:1022` | the spray can's coolant slapcraft, the sprayed face's overlay (`face_decal`), restyling a robotic limb (a radial menu) | a spray can on a face or a robotic limb | M10+; the limb with J5 and P1 | `game/objects/items/crayons.cs` |
 | `code/game/objects/effects/decals/crayon.dm:60`, `:64` | the chalk outline's alpha mask (`getFlatIcon` of a mob, the chat icons gap, section 76): the outline shows the whole body in chalk's colour | an outline around a corpse | M10+ | `game/objects/effects/decals/crayon.cs` |
 | `code/game/objects/items/devices/laserpointer.dm:112`, `:143` | `do_teleport`, the blink of a jammed bluespace lens (`datums/helper_datums/teleport.dm` is not ported; the items are removed or the lens consumed as tg's) | a tier 1-2 diode with a lens | with the teleport procs | `game/objects/items/devices/laserpointer.cs` |
@@ -2258,9 +2205,8 @@ Package J3 makes live the job gear of smoking and the service tools: `game/objec
 | `code/modules/reagents/reagent_containers/cups/glassbottle.dm:92` | the message thrown into the sea kept between rounds (`SSpersistence.save_message_bottle`) | a bottled message and water | M10+ (persistence) | `modules/reagents/reagent_containers/cups/glassbottle.cs` |
 | `code/modules/reagents/reagent_containers/cups/glassbottle.dm:243` | the torn outline of a broken bottle (an icon `Blend` and `SwapColor`, both in the shim since syndicate G4c): the broken bottle draws the whole bottle | a smashed bottle | M10+ (icon operations) | `modules/reagents/reagent_containers/cups/glassbottle.cs` |
 | `code/modules/photography/camera/camera_image_capturing.dm:18`, `photos/photo.dm:107`, `_pictures.dm:65` | the picture's image: `camera_get_icon` composes every seen atom's sprite on one icon, which the 3D client has no replica of. A picture has its description, the mobs and names it saw and its blueprints flag; the photo draws tg's plain photo sprite and says it is blank when looked at. (Open question to the owner: a real render of the client's 3D view?) | taking and looking at a photo | owner's choice | `modules/photography/camera/camera_image_capturing.cs`, `photos/photo.cs`, `_pictures.cs` |
-| `code/modules/photography/camera/camera.dm:69`, `:71` | the flash's overlay light component (the flash is the holder's `light_on`), the circuit shell (the AI's picture by the camera net and the holodisk's record came with silicons SI4) | a camera in a circuit | M10+ | `modules/photography/camera/camera.cs` |
+| `code/modules/photography/camera/camera.dm:69` | the flash's overlay light component (the flash is the holder's `light_on`; the AI's picture by the camera net and the holodisk's record came with silicons SI4, the circuit shell with gaps CI2) | a camera's flash | M10+ | `modules/photography/camera/camera.cs` |
 | `code/modules/photography/camera/other.dm:12` | the camera obscura's revenant statuses | a revenant on a photo | M10+ (antagonists) | `modules/photography/camera/other.cs` |
-| `code/modules/library/barcode_scanner.dm:49` | checking a book in and out: the library's computers are not ported, so the scanner is never linked and says so | a scanner on a book | after the library | `modules/library/barcode_scanner.cs` |
 | `code/datums/components/walking_aid.dm:91` | the waddling of a walking aid (no aid of the port waddles yet) | a waddling crutch | with its item | `datums/components/walking_aid.cs` |
 | live-partial rows of section "Gaps J3" | the screentips (`add_context`, `add_item_context`), the key's `manual_suicide`, the balloon's `vv_edit_var`, the photo's Rename verb and `get_save_vars`, the picture's `Copy`, `log_to_file` and (de)serialization | hovering, the verbs tab, admin tooling, persistence | M10+ | (generated stubs) |
 
@@ -2273,8 +2219,6 @@ Package J3 makes live the job gear of smoking and the service tools: `game/objec
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `code/datums/elements/pet_cult.dm`, `code/modules/mob/living/basic/pets/pet_cult/` | `cultist_pet`: the pets a cult sacrifices into its own (inert: `AddElement` does nothing); the cult's commands and runes | a cult | the cult | the pets' files |
-| `code/datums/elements/swabbable.dm` | `swabable` of every pet (inert) | a swab | cytology | the pets' files |
-| `code/datums/components/profound_fisher.dm` | the penguins' and carp's fishing (inert; the penguins' eggs and growing up run since C4) | adult penguins, a tamed carp | fishing | `pets/penguin/penguin.cs` |
 | `code/modules/mob/living/basic/pets/cat/keeki.dm`, `datums/ai/basic_mobs/targeting_strategies/finished_stove.dm` | the cake cat (regenerator, consumable mob) stays inert; the stove strategy (a bread or cake cat's tree only; the ovens and donuts are live since gaps H2) | none on Meta | the cats' crafted kinds | none |
 | `code/datums/elements/nerfed_pulling.dm`, `cliff_walker.dm`, `basic_allergenic_attack.dm`, `space_fauna/spider/spider_abilities/web.dm` | a spider's player elements, the allergy (quirks), the web ability (his tree never webs) | a player spider, a tamed spider | C4, spells | `space_fauna/spider/spider.cs` |
 | `dog_subtypes.dm:102` | a crafted bread dog's brain and player (a pet in the washing machine: gaps H1; the corgi's `petrify` came with gaps ST5) | none yet | M10+ | `pets/dog/dog_subtypes.cs` |
@@ -2300,7 +2244,7 @@ Package C3 makes every bot of tg live with its controller, tree, leaves and stra
 | `bot_hud.dm:35` | the path shown on the diagnostic HUD is built on the server; the client draws no bot path images | a diagnostic HUD | with the data HUDs | `bots/bot_hud.cs` |
 | `modules/mob/living/basic/bots/_bots.dm:248` (`log_silicon`), the tippable's and ghost control's logs | admin logs | | M10+ | the mirror files |
 | `NtosBotControl` (`modules/modular_computers/file_system/programs/robocontrol.dm`) | PDA bot control | a PDA | S4 | none |
-| live-partial rows of section "Gaps C3" | the cleanbot's `vv_edit_var`, the ninja's `ninjadrain_act`, the mop's fantasy bonuses, the watcher trophy on ranged attacks | admin tooling, antagonists, lavaland | M10+ | (generated stubs) |
+| live-partial rows of section "Gaps C3" | the cleanbot's `vv_edit_var`, the ninja's `ninjadrain_act`, the mop's fantasy bonuses | admin tooling, antagonists | M10+ | (generated stubs) |
 
 ## 110. Vermin, space fauna and farm animals (C4, D298)
 
@@ -2308,18 +2252,20 @@ Package C3 makes every bot of tg live with its controller, tree, leaves and stra
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `space_fauna/` `morph.dm`, `revenant/`, `space_dragon/`, `demon/`, `spider/` but Araneus, `meteor_heart/`, `robot_customer.dm`, `supermatter_spider.dm` | tied to an antagonist or event not ported (morph, revenant, dragon, demons, the spider nest, the meteor heart; the changeling's headslug came with gaps K1) or to the restaurant (robot customers) and the cascade | their antagonist or event | with them | none |
-| `modules/mob/living/basic/slime/` | `_onclick/hud/slime.dm` and `screen_objects.dm:1359`: a player slime's HUD and power display; `research/xenobiology/` the console, extracts and potions: extracts spawn as inert objects from a dead slime | a player slime, xenobiology | P-science | `slime/slime.cs`, `slime/life.cs` |
+| `space_fauna/` `morph.dm`, `revenant/`, `space_dragon/`, `demon/`, `spider/` but Araneus, `meteor_heart/`, `supermatter_spider.dm` | tied to an antagonist or event not ported (morph, revenant, dragon, demons, the spider nest, the meteor heart; the changeling's headslug came with gaps K1, the restaurant's robot customers with gaps KT1) or to the cascade | their antagonist or event | with them | none |
+| `modules/mob/living/basic/slime/` | `_onclick/hud/slime.dm` and `screen_objects.dm:1359`: a player slime's HUD and power display | a player slime | P-science | `slime/slime.cs`, `slime/life.cs` |
 | `controllers/subsystem/minor_mapping.dm:63`, `:108` | the flat satchels under the floor and the hull weakpoints (both types inert); the migration itself runs | round start | M10+ | `controllers/subsystem/minor_mapping.cs` |
 | `datums/components/butchering.dm:128`, `:280`, `:305`, `:312`, recycler, mecha, wearable | a person's limb cut for meat, the replacement limb, slitting a throat (`neck_slice` inert), the recycler's, the mech drill's and the wearable's variants | a person on a table, a recycler, a mech | surgery, M10+ | `datums/components/butchering.cs` |
 | `modules/surgery/surgery_tools.dm:242`, `:299`, `chainsaw.dm`, `spear.dm`, `sabre.dm`, `claymore.dm`, `energy.dm`, `misc.dm`, `spess_knife.dm`, `pen.dm`, mining and cult weapons | the butchering each of those weapons adds in its own Initialize: its host is not live | those weapons | with their packages | none |
-| `components/riding/riding_mob.dm` `human`, `mulebot`, `ed_bot`, `vatbeast`, `goliath`, `glutton`, `guardian`, `goldgrub`, `leaper`, `raptor`, `riding_minigame.dm`, `riding_vehicle.dm` | riding people, robots and lavaland mounts, the raptors' minigame, vehicles: each with its host (mulebot's with C3; the cyborg's came with silicons SI2); a roughrider's sanity multiplier (no moods) is the neutral 0.9 | their hosts | C3, M10+ | `components/riding/riding_mob.cs` |
+| `components/riding/riding_mob.dm` `human`, `mulebot`, `ed_bot`, `vatbeast`, `glutton`, `guardian`, `leaper`, `riding_vehicle.dm` | riding people, robots and the leaper, vehicles (the goldgrub's, the raptors' and their minigame are live since gaps LV3, section 236): each with its host (mulebot's with C3; the cyborg's came with silicons SI2); a roughrider's sanity multiplier (no moods) is the neutral 0.9 | their hosts | C3, M10+ | `components/riding/riding_mob.cs` |
+| `components/riding/riding_mob.dm` `human`, `mulebot`, `ed_bot`, `guardian`, `goldgrub`, `leaper`, `raptor`, `riding_minigame.dm`, `riding_vehicle.dm` | riding people, robots and lavaland mounts, the raptors' minigame, vehicles: each with its host (mulebot's with C3; the cyborg's came with silicons SI2); a roughrider's sanity multiplier (no moods) is the neutral 0.9 | their hosts | C3, M10+ | `components/riding/riding_mob.cs` |
 | `components/ranged_mob_full_auto.dm` | holding the mouse to autofire as a player glockroach (`COMSIG_CLIENT_MOUSEDOWN` has no sender in the 3D client) | a player roach | M10+ | inert |
 | `components/ghost_direct_control.dm`, `poster_tearer.dm` | a ghost taking over a `regal_rat/controlled` (the rat stays on its tree; its ghosts' poll runs since syndicate X2), tearing posters as a player rat | a ghost, a player rat | ghost roles | `space_fauna/regal_rat/regal_rat.cs` |
 | `space_fauna/carp/carp.dm:232`, `:244`, `:250`, `magicarp.dm`, `projectiles/projectile/magic*` | Cayenne's disk, implant and achievement; the magic bolts are inert objects (a magicarp fires them, they only fly and hit) | the nuke team, a wizard | those antagonists | `space_fauna/carp/carp.cs` |
 | `modules/events/wizard/petsplosion.dm`, `magicarp.dm` | the wizard's events that bring the animals (the carp migration and the wisdom cow came with gaps E4, the vent clogs with E1a, the scrubber overflows with syndicate N1c) | the wizard's events | the wizard | none |
-| `elements/swabbable.dm`, `components/holographic_nature.dm`, `food_storage`, `elements/consumable_mob.dm`, `raptor_food.dm`, `mood_events` | the swab, the holodeck carp's nature, hiding items in cheese, eating a butter bear, raptor food, the blood mood: AddElement or AddComponent does nothing while inert | a swab, the holodeck, a cheese wedge, a bite of bear | cytology, M10+ | the mob files |
-| `elements/cliff_walker.dm:31`, `generic_behaviors/keep_playing_instrument.dm`, `play_instrument.dm`, `setup_instrument.dm` | a dead goat falling off a cliff turf (no cliffs on Meta); the mouse playing a synth on the floor (instruments inert: the strategy refuses a synth with no song, DV-free guard) | a cliff, a mouse near a synth | ruins, instruments | `elements/cliff_walker.cs`, `targeting_strategies/playable_synthesizer.cs` |
+| `elements/swabbable.dm`, `food_storage`, `elements/consumable_mob.dm`, `mood_events` | the swab, hiding items in cheese, eating a butter bear, the blood mood (raptor food is live since gaps LV3): AddElement or AddComponent does nothing while inert | a swab, a cheese wedge, a bite of bear | cytology, M10+ | the mob files |
+| `food_storage`, `elements/consumable_mob.dm`, `raptor_food.dm`, `mood_events` | hiding items in cheese, eating a butter bear, raptor food, the blood mood: AddElement or AddComponent does nothing while inert | a cheese wedge, a bite of bear | M10+ | the mob files |
+| `generic_behaviors/keep_playing_instrument.dm`, `play_instrument.dm`, `setup_instrument.dm` | (a dead goat falling off a cliff turf: live since gaps BR2's cliffs) the mouse playing a synth on the floor (instruments inert: the strategy refuses a synth with no song, DV-free guard) | a mouse near a synth | instruments | `targeting_strategies/playable_synthesizer.cs` |
 
 ## 111. The monkeys and Pun Pun (C5, D298)
 
@@ -2331,7 +2277,7 @@ Beyond the list, what a monkey's body needed: `/obj/item/organ/tail` and the tai
 | `code/modules/mob/living/carbon/human/species_types/monkeys.dm:46`, `:50` | `dna.add_mutation` and `remove_mutation` of `/datum/mutation/race` (a monkey's DNA console entry and the hook that makes it human when the mutation goes) | any monkey species gain or loss | P3 | `species_types/monkeys.cs` |
 | `generic_behaviors/keep_playing_instrument.dm`, `play_instrument.dm`, `setup_instrument.dm` | the instruments are inert; `generic_play_instrument` only runs for a tamed monkey holding one, and then it blocks at the inert leaf | a player handing Pun Pun an instrument | music | none |
 | `code/modules/reagents/chemistry/recipes/others.dm:657-700` | `/datum/chemical_reaction` is inert: monkey powder and water, bath salts: no monkey from the beaker | mixing the reagents | chemistry's reactions | none |
-| `silicon/silicon_defense.dm:43`, `simple_animal/animal_defense.dm:55`, the other inert types' `attack_paw` | not translated: the mobs' own files are not ported, so a bite does the base's; the inert hosts refuse it | a monkey biting them | with their hosts | none |
+| `silicon/silicon_defense.dm:43`, the other inert types' `attack_paw` (the simple animals' is live since gaps LV4) | not translated: the mobs' own files are not ported, so a bite does the base's; the inert hosts refuse it | a monkey biting them | with their hosts | none |
 | `code/datums/mutations/body.dm:241` `/datum/mutation/race`, `human.dm:1040` `crewlike_monkify`, `mutations/passive.dm:18` `clever` | the mutation (Monkeyize from genetics), the crew monkey's helper | genetics, the Pun Pun station trait | P3 | none |
 | `code/modules/clothing/head/mind_monkey_helmet.dm`, `modules/antagonists/syndicate_monkey/`, `_common/antag_spawner.dm:414-452`, `storage/toolboxes/weapons.dm:255` `monkeycase`, `shotgun.dm:421` | the sentience helmet (a ghost poll), the syndicate monkey agent with its uplink, the monkey gun case (its monkeylock pin came with gaps GU1): antagonists and uplinks, none on Meta, each pulls in a host that is not live | an uplink, a science crate | antagonists | (inert) |
 | `basic/farm_animals/gorilla/gorilla.dm:188`, `food/monkeycube.dm:103-148` | the gorilla, bee, pony and random cubes are live but spawn their inert mobs (the Pun Pun job came with gaps R2, section 184) | a cube from an uplink, the gym day trait | fauna | (inert) |
@@ -2346,9 +2292,8 @@ Package J4 makes live the detective's work (`modules/detectivework/` whole, the 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `game/objects/structures/detectiveboard.dm:107` | an evidence photo's picture in the window (a picture has no image, section 107; the card shows its name and description) | a photo on the board | with the camera's image | `game/objects/structures/detectiveboard.cs` |
-| `code/datums/components/swabbing.dm`, `code/datums/elements/swabbable.dm`, `modules/research/xenobiology/vatgrowing/swab.dm` | swabs stay inert: `/datum/biological_sample` and the micro-organisms (cell lines) are not ported | a swab on a mob or a dirty thing | P3 (DNA and genetics) | (inert) |
 | `code/game/objects/items/weaponry/shields.dm:47`, `storage/lockbox.dm:25` (with `storage/briefcase.dm:26`, section 107) | `/datum/element/cuffable_item`: cuffing the shield or box to the wrist (the element and the `cuffed_item` status effect) | handcuffs on a shield | M10+ | `game/objects/items/weaponry/shields.cs` |
-| `code/modules/clothing/suits/armor.dm:315`, `clothing/head/helmet.dm:265`, `clothing/gloves/tacklers.dm:29` | the fishing difficulty element (as section 105) and the riot suit's mesh on the chest (`equipment_bodypart_texture`, as `suits/utility.dm`) | fishing, the suit's sprite | M10+ | `modules/clothing/suits/armor.cs` |
+| `code/modules/clothing/suits/armor.dm:315`, `clothing/head/helmet.dm:265`, `clothing/gloves/tacklers.dm:29` | the riot suit's mesh on the chest (`equipment_bodypart_texture`, as `suits/utility.dm`; the fishing difficulty elements are live since gaps FI2) | the suit's sprite | M10+ | `modules/clothing/suits/armor.cs` |
 | `code/modules/photography/photos/album.dm:20`, `:45`, `:50`, `:75` | albums kept between rounds (`SSpersistence.photo_albums_database`, `load_photo_from_disk`): a picture has no image yet | a photo in an album | with the camera's image | `modules/photography/photos/album.cs` |
 | `code/modules/mining/laborcamp/laborstacker.dm`, `game/machinery/prisonlabor.dm`, `game/machinery/gulag_item_reclaimer.dm`, `game/machinery/computer/prisoner/` | a prisoner ID's points are counted, read and shown and the labour gate tests them, but nothing earns them: the labour camp's machines stay inert; the sentence's timer runs on the gate (Meta maps none) | the labour camp | M10+ (the labour shuttle) | `game/objects/items/cards_ids.cs` |
 | `code/controllers/subsystem/networks/id_access.dm:466` | `apply_active_reta_grants_to_card` when a plain-clothes card flips (the RETA grants, as `cards_ids.dm:159`) | a flip during an emergency grant | M10 | `controllers/subsystem/networks/id_access.cs` |
@@ -2362,13 +2307,13 @@ Package J4 makes live the detective's work (`modules/detectivework/` whole, the 
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `spell_types/pointed/_pointed.dm:103` projectile, `conjure/_conjure.dm:72` limit_summons, `elements/effect_trail.dm:46` cosmic field, the 190 spells with their own procs | the projectile spells and the rest: the base is live, each spell comes with its wizard, heretic, cultist or other host (var-only spells went live with the base; nothing live grants them) | their antagonists | with them | `modules/spells/` |
-| `modules/spells/spell.dm:112`, `:116`, `:372`, `__HELPERS/pronouns.dm:81` | the stat panel's spell list (no stat panel), a spell's smoke (`do_smoke`: the chemistry's smoke), `%PRONOUN_` in emote invocations: no live spell uses them | a heretic or cult spell | with them | `modules/spells/spell.cs` |
+| `spell_types/pointed/_pointed.dm:103` projectile, `elements/effect_trail.dm:46` cosmic field (the conjure's `limit_summons` is live since gaps LV3, the ice demon's afterimages; the leaper's toads wait for the leaper), the 190 spells with their own procs | the projectile spells and the rest: the base is live, each spell comes with its wizard, heretic, cultist or other host (var-only spells went live with the base; nothing live grants them) | their antagonists | with them | `modules/spells/` |
+| `modules/spells/spell.dm:112`, `:116` | the stat panel's spell list (no stat panel), a spell's smoke (`do_smoke`: the chemistry's smoke): no live spell uses them | a heretic or cult spell | with them | `modules/spells/spell.cs` |
 | `datums/components/seethrough_mob.dm` | the fugu's and a glanded mob's see-through toggle: an image for the mob's own client over a big sprite; AddComponent does nothing while inert | a player fugu | M10+ | inert |
 | `monkey/monkey_controller.dm` pun_pun | Pun Pun's controller and the `bar_gorilla_combat` subtree run once the monkey controller is live (C5); until then an inert controller | a bar gorilla | C5 | `gorilla/gorilla.cs` |
 | `corpses/mob_corpses.dm:359`, `dynamic_human_icon_gen.dm:31` | the Cat Surgeon's and the paper wizard's look comes from their corpse spawner's outfit (DV113); the Cat Surgeon leaves his corpse since gaps E3 | a mob spawner | M10+ | `__HELPERS/dynamic_human_icon_gen.cs` |
 | `surgery_tools.dm:269`, `wiz_robe.dm:280`, `collectable.dm:37`, `dna_injector.dm:276`, `piano_synth.dm`, `pistol.dm:251`, `butcher_results` ants | the things these mobs drop or eat stay inert objects: the saw, the paper robe with its summoning, the paper hat, Frosty's injector, Hatsune's synth, the stickman's pistol; the mushroom's and eyeball's food works by type | those packages | surgery, wizard | none |
-| `gorilla.dm:144`, `elements/swabbable.dm` (netherworld, mushroom), `obj/item/ectoplasm/revenant` | the Kong achievement; the swabs; the revenant's ectoplasm (the atmos resin and the foam fluid are live since gaps F1) | a player gorilla, a swab, a revenant | M10+ | the mob files |
+| `gorilla.dm:144`, `obj/item/ectoplasm/revenant` | the Kong achievement; the revenant's ectoplasm (the atmos resin and the foam fluid are live since gaps F1) | a player gorilla, a revenant | M10+ | the mob files |
 | `lightgeist.dm:69` | a player lightgeist dying when it ghosts | a ghost role | M10+ | `space_fauna/lightgeist.cs` |
 
 ## 106. Every job's starting kit (J2, D298)
@@ -2377,34 +2322,27 @@ Package J2 translates the job datums and outfits that were inert (security offic
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `code/modules/jobs/job_types/chaplain/chaplain.dm:64`, `code/modules/library/bibles.dm:212`, `:255` | a sect: `on_conversion`, `sect_bless`, `sect_dead_bless` (`Dm.Deferred`; GLOB.religious_sect stays null: the rites and sects are rows of `modules/religion`, the altar is an inert prop) | a sect once the altar's rites are ported | religion | `modules/jobs/job_types/chaplain/chaplain.cs`, `modules/library/bibles.cs` |
 | `code/modules/library/bibles.dm:325` | exorcising a bound haunted blade (the cult) | a bible on a haunted blade | cult | `modules/library/bibles.cs` |
-| `code/datums/mind/_mind.dm:338` | `set_holy_role`: the blessed_aware HUD (the blessed tiles' overlay) | a new holy role | religion | `datums/mind/_mind.cs` |
 | `code/datums/elements/nullrod_core.dm:14`, `:32` | the effect_remover (runes), cult_kill_tracker and bane (spirits) components (`Dm.Deferred`; the cult and the spirits are not ported) | every null rod at init | cult | `datums/elements/nullrod_core.cs` |
 | `code/modules/jobs/job_types/chaplain/chaplain_nullrod.dm` | the variants' alternative_sharpness (the right-click's pointy attack), butchering, walking_aid, spirit_holding, kneejerk, prosthetic_icon and `make_item_prosthetic`, chemical_transfer, cuffable_item (`Dm.Deferred`) | the variant's init | their own components | `modules/jobs/job_types/chaplain/chaplain_nullrod.cs` |
 | `code/modules/jobs/job_types/chaplain/chaplain_nullrod.dm:5` | the menu's non-rod variants stay inert items: the carp-sie plush, the divine bow, the vorpal scythe's shard, the holy skateboard, the hanzo katana, the energy sword rods | picking one from the menu | plushes, bows, cyberimps, skateboards, belts, energy weapons | `modules/jobs/job_types/chaplain/chaplain_nullrod.cs` |
-| `code/game/objects/items/granters/magic/mime.dm:22-33` | the advanced guides (the blockade and finger guns) wait for `spell/forcewall/mime` and the pointed projectile spells | an admin spawn | spells | none |
-| `code/modules/clothing/masks/gasmask.dm:48`, `:51`, `:333`; `code/modules/clothing/shoes/clown.dm:15-17`; `code/modules/clothing/under/jobs/civilian/clown_mime.dm:41`; `code/modules/paperwork/stamps.dm:101` | the visor's pepper dirt (clothing_dirt), the fishing difficulty, the swabable cell lines, the matches lit on clown shoes (`Dm.Deferred`) | the item's init | pepper spray, fishing, the sample swab, J3 | the mirror files |
+| `code/modules/clothing/masks/gasmask.dm:48`, `:51`, `:333`; `code/modules/clothing/shoes/clown.dm:15-17`; `code/modules/clothing/under/jobs/civilian/clown_mime.dm:41`; `code/modules/paperwork/stamps.dm:101` | the visor's pepper dirt (clothing_dirt), the matches lit on clown shoes (`Dm.Deferred`; the fishing difficulty is live since gaps FI2) | the item's init | pepper spray, J3 | the mirror files |
 | `code/modules/instruments/items.dm:20`, `:44` | translated in silicons SI6c (D326): `/datum/song` and the InstrumentEditor window | — | — | `modules/instruments/` |
 | `code/modules/hydroponics/plant_genes.dm:79` | `set_reagent` reads the reagent's name from its type: GLOB.chemical_reagents_list is not built (the holder's GAP) | every reagent gene | chemistry | `modules/hydroponics/plant_genes.cs` |
 | `code/modules/jobs/job_types/prisoner.dm:77` | the prison tattoos (`Dm.Deferred`; the tattoo kit and SSpersistence's art; the record's mugshot came with gaps SC2) | a prisoner joining | art | `modules/jobs/job_types/prisoner.cs` |
 | `code/modules/paperwork/stamps.dm:22` | `get_writing_implement_details`: the stamp's sheet class is the icon state; the PaperSheet window draws it from bureaucracy.dmi's `paper_<state>` impression, not tg's large stamp PNGs (DV44, DV300 proposed) | stamping a paper | DV300 | `modules/paperwork/stamps.cs` |
-| `code/game/objects/effects/forcefields.dm:81` | leaning on the mime's wall (`Dm.Deferred`, L1) | dropping yourself on the wall | L1 | `game/objects/effects/forcefields.cs` |
 | `tgui/.../MarkdownViewer.tsx` | the book's window draws its markdown as source text (the kit has no html node) | reading a book | the kit | `godot/scripts/Shared/Tgui/Interfaces/MarkdownViewer.cs` |
 | `code/modules/jobs/job_types/_job.dm:465` | `award_service` stays a skeleton with its row: the medals (after M10); `get_mail_goodies` and the bank accounts came with gaps P4a and P4b | the round end's awards | medals | `modules/jobs/job_types/_job.cs` |
-| `code/modules/jobs/job_types/station_trait/veteran_advisor.dm`, `human_ai.dm` | the veteran advisor and the human AI stay inert datums (the advisor needs the paraplegic quirk and his trim's access, his PTSD trauma came with gaps B1; the human AI its outfit and remote; their station traits came with gaps R2 and wait for them, section 184; the cargo gorilla's, the bridge assistant's and Pun Pun's jobs came with gaps R2) | a station trait an admin forces | the station trait jobs | none |
+| `code/modules/jobs/job_types/station_trait/veteran_advisor.dm`, `human_ai.dm` | translated in gaps JB1 (D339): both jobs with their outfits, trims and gear; the veteran's paraplegic quirk is left, section 253 | — | — | `modules/jobs/job_types/station_trait/` |
 
 ## 114. Gaps J5: the job gear of medical, science and engineering (D298)
 
 | tg file:line | What | Who reaches it | When | Translated file |
 |---|---|---|---|---|
 | `code/game/objects/items/devices/scanners/sequence_scanner.dm:37`, `:60`, `:92`, `:162` | the DNA console's database and buffer, `gene_scan`, `get_display_name` (the mutations) | a scan of a target's mutations; the console | P3 | `game/objects/items/devices/scanners/sequence_scanner.cs` |
-| `code/game/machinery/computer/crew.dm:15`, `:20`-`:75` | the console's USB port and `/obj/item/circuit_component/medical_console_data` (circuits; the AI's "select_person" came with silicons SI4) | circuits | M10+ | `game/machinery/computer/crew.cs` |
 | `code/game/objects/items/tanks/watertank.dm:370` | `/obj/item/reagent_containers/chemtank` (stays inert) | not a starting item | later | none |
-| `code/modules/reagents/reagent_containers/medigel.dm:58`, `code/game/objects/items/floppy_disk.dm:80` | `AddComponent(/datum/component/reskinable_item, ...)`: the reskin menu (`reskinnable_atom.dm` is inert) | alt-click on a plain gel or a disk | M10+ | `modules/reagents/reagent_containers/medigel.cs`, `game/objects/items/floppy_disk.cs` |
 | `code/game/objects/items/floppy_disk.dm:129`, `:148`, `:206` | the sticker's radial menu, disk stacks (`/obj/item/disk_stack` stays inert), `can_be_package_wrapped` (package wrapping) | right alt-click on a disk; a disk on a disk | M10+, the deliveries (PORT-CHECKLIST) | `game/objects/items/floppy_disk.cs` |
 | `code/modules/clothing/suits/bio.dm:22`, `suits/utility.dm:41`, `:153`, `head/hardhat.dm:225` | `/datum/component/clothing_dirt`, `/datum/element/equipment_bodypart_texture` (both inert): a dirty visor, the mesh body textures (the hat stabilizer, a hat over a hood, came with gaps MO1) | bio and bomb hoods, fire suits | M10+ | `modules/clothing/job_gear_j5.cs` |
-| `code/modules/clothing/gloves/special.dm:176`, `gloves/insulated.dm:155`, `gloves/color.dm:46`, `glasses/_glasses.dm:560`, `head/welding.dm:28`, `under/jobs/medical.dm:52`, `suits/bio.dm`, `suits/utility.dm` | `AddElement(/datum/element/adjust_fishing_difficulty, ...)` | fishing | M10+ (fishing) | `modules/clothing/job_gear_j5.cs` |
 | `code/game/objects/items/storage/lockbox.dm:25`, `code/game/objects/items/pet_carrier.dm:50` | `AddElement(/datum/element/cuffable_item)` (inert): cuffing a case to a wrist | cable cuffs on a case | M10+ | `game/objects/items/storage/lockbox.cs`, `game/objects/items/pet_carrier.cs` |
 | `code/modules/clothing/masks/bandana.dm:62` | the neckerchief's sprite widening (`transform`) | alt-click on a bandana | client's billboards | `modules/clothing/job_gear_j5.cs` |
 | `code/game/objects/items/wiki_manuals.dm:43` | `/obj/item/book/manual/wiki/display_content`: the wiki in a browser window (a live-partial row) | the chemist's manual | no web view in the client | live-partial |
@@ -2417,7 +2355,6 @@ Package J2 translates the job datums and outfits that were inert (security offic
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `survival_pod.dm`, `shelters.dm`, `aux_base.dm:270` | the bluespace capsule and the landing field designator in the miner's locker: map templates loaded at run time (the `_maps/templates` shelters are not converted) and the auxiliary base's drop | the miner's locker | no package yet (open question in the J6 report) | inert types |
 | `minerals.dm:392` the random rocks, `:74` spread_vein, `ore_generation.dm` | ore generation on a mining level; Meta has no mining level. The tools work on `/turf/closed/mineral` and the ore rocks | no map uses them | no package yet (Lavaland is not in the plan) | inert types, live-partial row |
 | `vent_mining/ore_vent.dm`, `mineral_scanner.dm:80` | the ore vents' overlays and the radar ping | Lavaland only | not in the plan | `mineral_scanner.cs` leaf |
 | `openspace.dm`, the hook's hole on a stacked map | Meta is one level: the hook's climb is translated and tested on two stacked toy levels with a test double for the hole (`/turf/open/openspace` stays inert) | a multi-level map | no package yet | inert type |
@@ -2426,7 +2363,7 @@ Package J2 translates the job datums and outfits that were inert (security offic
 | `minerals.dm` gibtonite's overlays on the rock, `flick_overlay_view` | the wall model does not draw a rock's overlays: a struck deposit is heard and read, not seen pulsing | gibtonite in rock | open question in the J6 report | server state is translated |
 | `emissive_appearance` on the beacons and the radio | their glow overlays (DV12) | always | DV12 | leaves |
 | `album.dm` persistence_load, populate_from_id_list, the storage's save_everything | albums across rounds | SSpersistence | later | live-partial rows |
-| `explorer_gear.dm:21,:49` the explorer suit, `job_boxes.dm:273,:282` the bonus box and modkit box, `belt.dm:301` | the mining points' goods (the miner's default kit does not hold them) | the mining vendor | P4 | inert types |
+| `job_boxes.dm:273,:282` the bonus box and modkit box, `belt.dm:301` (the explorer suit came with gaps LV1, section 234) | the mining points' goods (the miner's default kit does not hold them) | the mining vendor | P4 | inert types |
 | skills: `datum/skill/mining`, athletics | mining and athletics modifiers and experience (skills are not ported, as `minerals.cs`) | every shot and climb: modifier 1 | later | leaves |
 | `mod_types.dm:122` loader | the cargo technician's alternate MODsuit outfit (`/datum/outfit/job/cargo_tech/mod`, not the default kit) | an admin outfit | the modsuits | inert type |
 
@@ -2447,20 +2384,18 @@ foam and smoke family. The deferred leaves and what stays inert:
 | `holder/reactions.dm:143`, `:204`, `:241`, `equilibrium.dm:383` | `icon2html` of the reacting container in the reaction's chat line (`Dm.Deferred`): the chat is text | every reaction message | the chat icons (section 76) | `holder/reactions.cs`, `equilibrium.cs` |
 | `equilibrium.dm:139` | `consider_catalyst`: the catalyst agents' speed, pH and heat modifiers (`Dm.Deferred`; the catalyst reagents are inert) | a catalyst agent in a reacting holder | chemistry | `equilibrium.cs` |
 | `_globalvars/lists/reagents.dm:136` | the randomized recipes' conflict regeneration (`Dm.Deferred`; the randomized reactions are generated-only and never made) | none (DV25) | chemistry | `_globalvars/lists/reagents.cs` |
-| `recipes.dm:185` (`chemical_mob_spawn`) | the slime reactions' mobs (`create_random_mob`): a live-partial row | an inert slime reaction | xenobiology | (stub) |
-| the other 700 reaction types (`recipes/*.dm`) | not in the reaction lists until written (DV25): medicines, drinks, explosives, slime extracts; mixing them makes nothing (the kitchen's food and soup reactions are live since gaps H2) | any other mix | chemistry, xenobiology | (generated) |
-| `clusterbuster.dm:113` | a volatile slime extract's `auto_activate_reaction` (`Dm.Deferred`): the slime extracts are inert | the volatile slime clusterbuster | xenobiology | `clusterbuster.cs` |
+| the other 700 reaction types (`recipes/*.dm`) | not in the reaction lists until written (DV25): medicines, drinks, explosives; mixing them makes nothing (the kitchen's food and soup reactions are live since gaps H2) | any other mix | chemistry | (generated) |
 | `clusterbuster.dm:128-176` | the EMP, minibomb, manhack, carp and soap kinds scatter inert payloads (`empgrenade`, `syndieminibomb`, `spawnergrenade`): they lie there and do not go off | an admin-spawned clusterbuster | their packages (antagonists, M10+) | (inert payloads) |
 | the prefilled grenades' reagents | fluorosulfuric acid, the bio terror toxins, fungal spores and the others are inert reagents: they spread and splash but their own exposure effects (the acid's burn) wait for their reagents (space cleaner, colorful reagent, glitter, clf3 and holy water are live since gaps RG3); the incendiary, holy and plain potassium-water mixes have no written reaction | the antiweed, facid, bioterror, tuberculosis, incendiary and holy grenades | chemistry | (generated reagents) |
 | `smoke_machine.dm:47` (`add_context`) | the smoke machine's screentips: a live-partial row | hovering it with a tool | D264 | (stub) |
 | `machine_designs.dm:327` (`/datum/design/board/smoke_machine`) | the board's research design: every design is inert (`/datum/design`) | research | P3 and research | (inert) |
 | `heretic_grenade.dm` (`rust_sower`), `clown_weapons.dm:216` (`teargas/moustache`) | the heretic's and the clown ops' chem grenades | antagonists | M10+ | (inert) |
-| `modules/research/xenobiology/` slime extracts, `lavaland` brimdust, `wizard` colourful smoke, `blob` foam, foam darts, Foam Force toys | the smoke and foam of other packages (not in F1) | their packages | xenobiology, lavaland, antagonists, toys | (inert) |
+| `wizard` colourful smoke, `blob` foam, foam darts, Foam Force toys | the smoke and foam of other packages (not in F1) | their packages | antagonists, toys | (inert) |
 | `effects_foam.dm`, the foamed metal | drawn as a volume of its own picture, not tg's flat tile picture (DV247 proposed): a mound for the foam, a storey-high block for the walls | always | DV247 | `godot/scripts/Render/FoamVolume.cs` |
 
 ## 119. Hydroponics (P2, D298)
 
-Translated: `code/modules/hydroponics` whole but the tray's circuit component (440 of its 441 types live, 529 procs): the trays and the
+Translated: `code/modules/hydroponics` whole (its 441 types live; the tray's circuit component with gaps CI3): the trays and the
 soil (`hydroponics.dm`, `hydroponics_chemreact.dm`, `soil.dm`, the snail), every seed and plant (`seeds.dm`, `grown.dm`,
 `growninedible.dm`, `grown/*.dm`: 158 seeds, 157 grown items with their juice, grind and distill values), every plant gene and unique
 gene (the smoke trait among them), mutations and species mutations, cross-pollination, grafts and the gene shears, the seed extractor
@@ -2473,8 +2408,6 @@ honeycomb raid and nutriment's grown tastes. The deferred leaves and what stays 
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `hydroponics.dm:1282`, `:183` (`usb_port`) | the tray's circuit component and its USB port (wiremod): the circuit component type stays inert | a circuit wired to a tray | wiremod | `modules/hydroponics/hydroponics.cs` |
-| `hydroponics.dm:184` (`fishing_spot`, `/datum/fish_source/hydro_tray`) | fishing in a tray | a fishing rod on a tray | fishing (M10+) | `modules/hydroponics/hydroponics.cs` |
 | `grown/replicapod.dm:179` | the pod person (`Dm.Deferred`): `/datum/species/pod` and the random chemical blood type are inert; the harvest makes the seeds only | a replica pod with a blood sample and a mind | the pod species | `modules/hydroponics/grown/replicapod.cs` |
 | `grown/banana.dm:218` | the Gros Michel peel's rotting (`Dm.Deferred`; the decomposition component is inert) | a Gros Michel peel | the food decomposition | `modules/hydroponics/grown/banana.cs` |
 | `_bee.dm:67` | the bee's clickbox (`Dm.Deferred`): a bigger 2D click target | always | never as such (3D clicks) | `modules/mob/living/basic/farm_animals/bee/_bee.cs` |
@@ -2483,7 +2416,7 @@ honeycomb raid and nutriment's grown tastes. The deferred leaves and what stays 
 | `hydroponics.dm:494-513`, `biogenerator.dm:184-191` | the emissive twins of the tray's status lights and auto-grow overlay and of the biogenerator's screen (DV12) | always | DV12 | `hydroponics.cs`, `biogenerator.cs` |
 | `grown/replicapod.dm:224` | the investigate log of a podman cloned from a pod (the pod person is not made, `Dm.Deferred`) | a pod grown with a cloned mind | M10+ (admin logs) | `modules/hydroponics/grown/replicapod.cs` |
 | the hovering screentips (`contextual_screentip_item_typechecks`) and `add_context` | the context tips of the tray, the seed, the graft, the glowshroom, the extractor, the barrel, the log and the portaseeder (comments and live-partial rows) | hovering | D264 (screentips, not now) | (those files, stubs) |
-| `swabable` (cell lines), `germ_sensitive` (germs), `bugkiller_reagent`, `equipment_bodypart_texture` (the beekeeper suit's mesh) | inert elements and components the package adds: they do nothing yet | swabbing, germs, the pest killer on bugs, the suit's worn texture | their packages | (inert) |
+| `germ_sensitive` (germs), `bugkiller_reagent`, `equipment_bodypart_texture` (the beekeeper suit's mesh) | inert elements and components the package adds: they do nothing yet | germs, the pest killer on bugs, the suit's worn texture | their packages | (inert) |
 | the products of the genes and mutations that are other packages' types | the walking tree and the hunter spiderlings of a tray's mutations, the worms of the shovel and the apple, raw opium, the chanterelle hat, imitation carp meat, the potato battery, the snap-pop, the pod organs of the organ tree, the colourful powders, the lavaland flora's produce: inert objects (their reagents still react and apply in trays) | those plants | their packages (C, kitchen, L, chemistry) | (inert) |
 | `code/modules/modular_computers/file_system/programs/botanical_encyclopedia.dm` | the botanical encyclopedia (an NTOS app with SeedTable) | a tablet | S4 | none |
 | `research_designs.dm` (the design sheet), `biogenerator.dm:52`, `:500`, `:543` | the designs' GAGS pictures and colour transforms (the sheet draws the file's state as it is, DV44); the research web's unlocking of biogenerator designs (DV306: every BIOGENERATOR design of the initial category is offered) | the biogenerator's window | research | `godot/scripts/Shared/Tgui/RapidDeviceSheets.cs`, `biogenerator.cs` |
@@ -2514,7 +2447,6 @@ scanner's paper report (`autopsy_scanner.dm:51` `scan_cadaver`, gaps autopsy). T
 | `operation_wing_repair.dm:56` | healing the moth's wings and antennae (`Dm.Deferred`; moths are not ported) | a moth's wing repair | the species | `operation_wing_repair.cs` |
 | `operation_zombie.dm:71` | the Romerol tumor put in (`Dm.Deferred`; `zombie_infection` is inert) | the zombie operation | the zombies (M10+) | `operation_zombie.cs` |
 | `operation_asthma.dm:43`, `:57` | the asthma quirk's inflammation (`Dm.Deferred`; the quirk is inert) | the asthma operation | the quirks | `operation_asthma.cs` |
-| `bodyparts/_bodyparts.dm:1991`, `:1993` | fishing in an opened body (`/datum/component/fishing_spot`, `/datum/fish_source/surgery`; `Dm.Deferred`, they were runtimes before) | a chest opened to its organs and sawed | fishing | `bodyparts/_bodyparts.cs` |
 | `surgery_tray.dm:36`, `:39` | the tray's screentips (`register_context` deferred, `add_context` a live-partial row) | hovering the tray | D264 | `surgery_tray.cs` |
 | `cyberimp/augments_internal.dm:73`, `:431`, `:439` | the augment overlay's emissive (DV12), the surgical processor implant's forced combat (the heretic's inert status effect) (`Dm.Deferred`; its EMP insanity and moodlets are live since gaps MS1) | an EMP on a surgeon with the implant | DV12, the antagonists | `cyberimp/augments_internal.cs` |
 | `cyberimp/augments_internal.dm:103-350`, `:478-496`, `augments_arms.dm`, `augments_chest.dm` | the other cybernetic implants came with gaps P6: section 121 | | | `cyberimp/` |
@@ -2541,14 +2473,13 @@ NoticeBoard, Photocopier, Fax, NtosFaxBond. The deferred leaves and what stays i
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `paper.dm:83`, `:91` | the message in a bottle's queue (`SSpersistence.queued_message_bottles`, `Dm.Deferred` and a comment): the random roll stays | a paper made after the map load | M10+ (persistence) | `paperwork/paper.cs` |
-| `pen.dm:200-237`, `pen.dm:250`, `clipboard.dm:1-16`, `:55` | the captain's pen's and the clipboard's skins (`/datum/atom_skin/cap_pen`, `/datum/atom_skin/clipboard` stay inert; `setup_reskins` is `Dm.Deferred`): the reskin component and its radial | alt-clicking the pen or the clipboard | with the other reskins | `paperwork/pen.cs`, `clipboard.cs` |
 | `pen.dm:43`, `:88-104`, `:300-331`, `:379-433`, `:505-528` | a pen in a foam dart (`/datum/component/dart_insert` is inert: AddComponent does nothing); the dart procs are translated and wait | a pen in a foam dart | the toy guns | `paperwork/pen.cs` |
 | `paper_cutter.dm:214` | the cutter's blade (`/obj/item/hatchet/cutterblade`): a hatchet, inert until the hatchet's package; the cutter holds it as a prop | taking the blade out | P2 (hydroponics' tools) | (inert) |
 | `paperwork.dm:65` | the chameleon stamp's `update_look` (`Dm.Deferred`): the chameleon actions are inert | a chameleon stamp on paperwork | antagonists | `paperwork/paperwork.cs` |
 | `fax.dm:366` | `send_special`'s request manager entry and the admins' fax message (`Dm.Deferred`; the forced fax in a supply pod came with gaps P4d) | a fax to CentCom or the Syndicate | admin tooling | `paperwork/fax.cs` |
 | `ticketmachine.dm:171`, `:256` | the machine's and the tickets' numbers are BYOND maptext, which the world's appearances do not carry (protocol 18: the HUD's only); the number is in the examine and the machine says it (DV301 proposed) | the HoP's queue | the world's maptext | `paperwork/ticketmachine.cs` |
 | live-partial rows of section "Gaps S3" | the screentips (`add_context`, `add_item_context`), the label's `vv_edit_var`, the cabinets' telekinesis, the notice board's and photocopier's map export, the stamps' and documents' stealing objectives | as the rows say | M10+ | (generated stubs) |
-| `mail.dm:365`, `stationCollision.dm:87-106`, `forgottenship.dm:62`, `abductor_items.dm:318`, `hilbertshotel.dm:653`, `pamphlet.dm:58-77`, `vday.dm:132`, `human_ai.dm:141-145`, `special.dm:235-311`, `honorbound_rites.dm:74` | the papers whose own procs are their systems' (the red pill junk mail, the away mission's safe hints and pamphlet, the forgotten ship's code, the abductors' guide, Hilbert's note, the valentine, the human AI's laws, the secret recipes, the honorbound writ; the scrambled password came with gaps OD1): 15 types stay inert (an inert Initialize stub would skip the paper's own) | their maps, events and systems | with those systems (P4, antagonists, ruins, away missions, religion) | (inert) |
+| `mail.dm:365`, `stationCollision.dm:87-106`, `forgottenship.dm:62`, `abductor_items.dm:318`, `hilbertshotel.dm:653`, `pamphlet.dm:58-77`, `vday.dm:132`, `special.dm:235-311` | the papers whose own procs are their systems' (the red pill junk mail, the away mission's safe hints and pamphlet, the forgotten ship's code, the abductors' guide, Hilbert's note, the valentine, the secret recipes; the scrambled password came with gaps OD1, the honorbound writ with gaps CH1, the human AI's lawset note with gaps JB1): 13 types stay inert (an inert Initialize stub would skip the paper's own) | their maps, events and systems | with those systems (P4, antagonists, ruins, away missions) | (inert) |
 | `paper.dm:516`, `stamps.dm:22` | the stamps' and logos' tgui assets: the client draws the stamps from tg's icons (DV44, DV300 proposed) | the PaperSheet window | DV300 | `paperwork/paper.cs` |
 
 ## 130. The antagonist core (syndicate A1, D316)
@@ -2578,6 +2509,7 @@ these admin tools are tgui's prompts; the tools offer no inert antagonist or obj
 | `objective.dm:937-961` | summon magic's objective (inert: `GLOB.summoned_magic_objectives` is the wizard's) | the wizard's summon magic | the wizard (no package) | (inert) |
 | `objective.dm:665-673` | a custom steal target by type search in the admin's objective edit (`pick_closest_path`, `make_types_fancy`: the admin type picker; `Dm.Deferred`, the objective is unchanged) | the admin's steal objective edit, "custom" | the admin tools (D275) | `objective.cs` |
 | `objective_items.dm:554-581` | the steal targets with their own procs whose items or systems are not ported (inert; SStraitor does not make them, DV340): the supermatter sliver with its kit (G3), a functional AI (the silicons); the research server's hard drive (`:520-535`) came with gaps RD2 | a steal objective's target pick | G3, the silicons | (inert) |
+| `objective_items.dm:181`, `:361`, `:399`, `:450`, `:461`, `:514`, `:613`, `:683`, `:740`, `:983` | `add_stealing_item_objective` of the inert target items (the mech removal tool, the captain's laser, the hand teleporter, the CMO's hypospray, the nuclear disk, the nuclear core, the black box, the plushies, the space law book, Lamarr, the sabre sheath; the MOD units' came with gaps MO1, the reactive teleport armour's with gaps OR2): an inert item never initializes, so its target is never on the map and drops out at New, as in tg with the item missing | the map load | each item's package | (inert) |
 | `objective_items.dm:361`, `:399`, `:450`, `:461`, `:489`, `:514`, `:613`, `:683`, `:740`, `:983` | `add_stealing_item_objective` of the inert target items (the captain's laser, the hand teleporter, the CMO's hypospray, the nuclear disk, the reactive armour, the nuclear core, the black box, the plushies, the space law book, Lamarr, the sabre sheath; the MOD units' came with gaps MO1): an inert item never initializes, so its target is never on the map and drops out at New, as in tg with the item missing | the map load | each item's package | (inert) |
 
 ## 135. The traitor's weapons and explosives (syndicate G2, D316)
@@ -2599,9 +2531,7 @@ and flash, `machinery/launch_pad.dm` with the briefcase launchpad (`storage/brie
 | `hypnosis.dm:39`, `:63` | the hypnotized antagonist datum with its fixation objective and antag HUD (`add_antag_datum`, A1's mind procs; `/datum/antagonist/hypnotized`): the phrase, its alert, echoes and highlight work | a trance's next heard words | the antagonist core (syndicate A1) | leaves |
 | `icon2html` in the bomb's, training bomb's, wires', pizza bomb's and power fist's lines | the item's picture in the chat line | always | chat icons (section 76) | comments |
 | `launch_pad.dm:39`, `:59`, `:112` | the diagnostic HUD's target indicator of a launchpad (`prepare_huds`, the diagnostic hud); the pad teleports to its offset without it | a diagnostic HUD | the diagnostic HUD (M10+) | leaves |
-| `launch_pad.dm:448` the circuit component, `usb_port.dm` | the launchpad's wiremod component and USB port (the component's AddComponent is inert) | a stationary launchpad | wiremod (no package yet) | inert types |
 | `syndicatebomb.dm:74` GLOB.active_cosmic_fields | a heretic's cosmic field defusing a bomb | the heretic | the heretics | GAP local |
-| `special.dm:62` | the North Star gloves' fishing difficulty | fishing | fishing (M10+) | leaf |
 | `syndicatebeacon.dm:194` the No Escape beacon's black hole | the shuttle event `/datum/shuttle_event/simple_spawner/black_hole/no_escape` is created and stays inert | the No Escape final objective on the escape shuttle | the shuttle events and the final objectives (A2) | inert type |
 | `syndicatebomb.dm:687`, `:710` | tg reads `chosen_theme?.name` on a typepath (a runtime in tg): the dimensional core's examine line and balloon after a theme is picked are skipped | a dimensional core with a theme | tg's bug | guards |
 | `pizzabox.dm:367` the infinite pizza box | the anomalous box (quirks; the kitchen's pizzas, Arnold's and the slices are live since gaps H2) | the quirks | the quirks | inert type |
@@ -2763,10 +2693,9 @@ blood-red sneaksuit of `under/syndicate.dm`. Stage G3d: `modules/cards` whole (t
 | `stealth_box.dm:58` | the suicide log of a suicide in the agent's box (`suicide_log`, the suicide verb; `Dm.Deferred`) | a suicide in the box | the suicide verb | `stealth_box.cs` |
 | `uplink_kits.dm:578` | the romerol kit: its bottle's reagent (romerol) and the zombie species are not live; the Romerol entry waits (`UplinkWaits`) | buying romerol | the zombies (no package) | `uplink_kits.cs` |
 | `syndie_spraycan.dm:152` | the spraycan suicide's painted face: `/datum/component/face_decal` is not live, so the AddComponent does nothing | the suicide verb | the face decals | `syndie_spraycan.cs` |
-| `spawnergrenade.dm:41-80` | the viscerator and mutant clown grenades spawn tg's inert mobs (`/mob/living/basic/viscerator`, `/mob/living/basic/clown/mutant`); the viscerator box waits for N2 | an admin's grenade | the mobs' packages | `spawnergrenade.cs` |
+| `spawnergrenade.dm:41-80` | the viscerator and mutant clown grenades spawned tg's inert mobs (`/mob/living/basic/viscerator`, live since N2, and `/mob/living/basic/clown/mutant`, live since gaps BR2); the viscerator box waits for N2 | an admin's grenade | the mobs' packages | `spawnergrenade.cs` |
 | `cosmetics.dm:26` | the lipstick's `vv_edit_var` (a live-partial row) and the razors (`/obj/item/razor`, the barber's tools) | an admin's var edit; shaving | M10+; the barber's tools | `cosmetics.cs` |
 | `cardboard_cutouts.dm:40`, `:120` | DV372: a cutout whose outfit or species is inert (the wizard, nightmare, ash walker, deathsquad, pirate, ninja and abductor ones; the nuclear operative's since N1b is live) is not in the crayon's menu, and a cutout that starts as one stays blank (`Dm.Deferred`); the picture is the dressed dummy's look itself, not `getFlatIcon`'s 2D flattening | a crayon on a cutout | those outfits' and species' packages | `cardboard_cutouts.cs` |
-| `xenobiology.dm:806` | the simple animal's `sentience_act` (`Dm.Deferred`): the simple animals are not ported, and their `compare_sentience_type` is not live, so the potion calls one an "invalid creature!" first | an intelligence potion on a simple animal | the simple animals | `xenobiology.cs` |
 | `xenobiology.dm:826` | the syndicate potion's tactical map implant (`/obj/item/implant/tacmap/nuclear/cayenne`; `Dm.Deferred`; tg implants it into the potion itself) | a raised syndicate pony | the minimap (the operatives') | `xenobiology.cs` |
 | `plushes.dm:51`, `drinks.dm:182` | the plushes' and the mug's `cuffable_item` element (`Dm.Deferred`): cuffing an item to a wrist | always | the restraints (M10+) | `plushes.cs`, `drinks.cs` |
 | `plushes.dm:237` | the rule-8 achievement of a plush birth (`give_award`; `Dm.Deferred`) | two married plushes | the achievements (M10+) | `plushes.cs` |
@@ -2800,10 +2729,8 @@ inert:
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `devices/taperecorder.dm` | the paperwork implant's tape recorder (inert with the recorders) | the paperwork implant | with the tape recorder | (inert) |
-| `research/anomaly/anomaly_core.dm` | the gravity anomaly core that upgrades a Herculean spine into an Atlas (the cores are inert research items; the spine's check is translated) | a core on a spine | research | (inert) |
 | `research/designs/medical_designs.dm:418-713` | the implants' research designs (data) with no techweb, protolathe or exosuit fabricator: on the station the implants come from the CMO's autosurgeon (the medical HUD), the cyber implants box, the medkits' and lockers' autosurgeons and admin spawns | printing an implant | research | (data) |
-| `mining_loot/cursed_katana.dm:9`, `chaplain/chaplain_vorpal_scythe.dm:9` | the cursed katana's and the vorpal scythe's arm shards (subtypes of the toolkit with procs of their own; inert with the katana and the null rod's scythe) | lavaland loot, the chaplain's menu | with their packages | (inert) |
-| `wiremod/shell/brain_computer_interface.dm` | the brain-computer interface implant (`cyberimp/bci`, the circuits) | a BCI | circuits (M10+) | (inert) |
+| `chaplain/chaplain_vorpal_scythe.dm:9` | the vorpal scythe's arm shard (a subtype of the toolkit with procs of its own; inert with the null rod's scythe; the cursed katana's shard is live since gaps LV5) | the chaplain's menu | with its package | (inert) |
 | the toolkits' `emag_act` | translated, unreachable: the emag is inert | an emag on a paperwork or toolset implant | the emag | `cyberimp/augments_arms.cs` |
 | `datums/elements/organ_set_bonus.dm` users | the infused organs' set bonuses (carp, goliath, gondola, rat are var-only and live; the organs that add them wait for the DNA infuser) | an infused organ | P3 | `datums/elements/organ_set_bonus.cs` |
 
@@ -2837,7 +2764,6 @@ DM's two-colour `gradient`. The deferred leaves and what stays inert:
 | `persistence/recipes.dm:2` (`save_randomized_recipes`) | saving the randomized recipes at the round's end: SSpersistence is not ported, so every round generates them anew unless the file is there | the round's end | SSpersistence (M10+) | none |
 | `special.dm:230-311` (`/obj/item/paper/secretrecipe`, gorgium, metalgen) | the recipe papers stay inert: they read SSpersistence's saved recipes (metalgen's `metal_transmute` is live since gaps RG3) | the papers in the vault and the cargo crate | SSpersistence | (inert) |
 | `chem_recipe_debug.dm` (`/obj/machinery/chem_recipe_debug`, ChemRecipeDebug.tsx) | the admin recipe debugger (697 lines and its window): an admin tool | admins only | admin tools (M10+) | (inert) |
-| `slime_extracts.dm` (57 reactions) | the slime extracts' reactions stay inert, out of the reaction lists (DV25; the kitchen's food and soup reactions are live since gaps H2) | a slime extract | xenobiology | (generated) |
 | the reagents' own procs (`chemistry/reagents/*.dm`: the few inert ones left are rows of section 226, such as the vaccine, the disease and transformation toxins, romerol and concrete; the drinks and food reagents since gaps RG1, section 224; the medicines, toxins and impure reagents since gaps RG2, section 225; the drugs, pyrotechnics, other reagents and the gases' since gaps RG3, section 226) | the effects of the inert reagents on mobs, turfs and objects (`on_mob_life`, `expose_*`, overdoses): the reactions make them and the machines move, sort and print them, but their own effects wait for their reagents | drinking, injecting or splashing them | chemistry's reagents | (generated) |
 | `ui_data.dm` window (`Reagents/index.tsx`) | the bookmarks live in the window's state (tg keeps one set for every window of the client); the reagent's wiki button (a BYOND verb) is left out | the reaction search | never as such | `godot/scripts/Shared/Tgui/Interfaces/Reagents.cs` |
 | `medipen_refiller.dm:113` (`plunger_act`) | translated, but the plunger (`/obj/item/plunger`) is inert, so no player reaches it | a plunger on the refiller | the plunger | `game/machinery/medipen_refiller.cs` |
@@ -2862,7 +2788,6 @@ The walk is DV358.
 | `mech_fabricator.dm` | the exosuit fabricator (inert): parts are spawned, not printed yet | a robotics console's fabricator | D321's next stage | `mech_fabricator.cs` (to write) |
 | `mecha_construction_paths.dm` | building a chassis from its parts step by step | a chassis frame with its parts | D321's next stage | `mecha_construction_paths.cs` (to write) |
 | tgui `ExosuitFabricator` | the fabricator's window (with the fabricator) | a robotics fabricator | D321's next stage | `godot/scripts/Shared/Tgui/Interfaces/` |
-| `game/machinery/mechlaunchpad.dm`, `computer/mechlaunchpad.dm` | the mech pad and its console (inert) | a mech pad | D321's next stage | (generated) |
 
 ## 141. Status displays (gaps W1, D298)
 
@@ -2873,7 +2798,6 @@ display picture lists of `modules/mob/living/silicon/ai/_preferences.dm`. The em
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `status_display.dm` greenscreen types (`greenscreen_location_indicator`, `greenscreen_appearance_holder`, `greenscreen_display`, `greenscreen_camera`) | the captain-caster's greenscreen; a display's `SD_GREENSCREEN` branches are translated and only that camera reaches them | the greenscreen camera | with the cameras (M9 leftovers) | `game/machinery/status_display.cs` |
-| `status_display.dm:406` (`usb_port`) | the display's circuit USB port and `/obj/item/circuit_component/status_display` (`Dm.Deferred`) | a circuit wired to a display | wiremod (M10+) | `game/machinery/status_display.cs` |
 | `status_display.dm` `send_status_display_alert`, `post_status` sources | the signal's source is null, not tg's `virtualspeaker` (GAP(types)) | any status signal | the virtual speakers | `game/machinery/status_display.cs` |
 
 ## 142. Votes (the owner, 2026-11-08)
@@ -3026,7 +2950,7 @@ regulator, the modular computer console and the modular computer itself (the PDA
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `emags.dm:227-252`, `computer/communications.dm:122-135` | the battlecruiser card and its branch of the communications console's `emag_act`: `summon_battlecruiser` loads the Starfury's map and the battlecruiser team's ghost spawners, none of them ported; the card stays inert and the console answers FALSE to it | only an admin spawns the card | the nuclear operatives (N1) or later | `emags.cs`, `communications.cs` |
-| 59 `emag_act` procs of inert types (the arcades, sleepers, slot machines, the holodeck, pAIs, the tram, research consoles, ...; the MODsuit's and the DNA lock module's came with gaps MO1) | they come with their machines; until then those machines are inert and an emag does nothing to them | an emag on one of them | their packages | (generated) |
+| 54 `emag_act` procs of inert types (sleepers, pAIs, the tram, research consoles, ...; the MODsuit's and the DNA lock module's came with gaps MO1, the arcades', the slot machines' and their board's and the holodeck's with gaps RC1) | they come with their machines; until then those machines are inert and an emag does nothing to them | an emag on one of them | their packages | (generated) |
 
 Translated (stage G1b): `clothing/chameleon/` but the drones' camogear: the chameleon change action (`_chameleon_action.dm` whole: the
 disguise list, the look copied from the picked type with its greyscale icons, the EMP's 30 seconds of random looks), the outfit action
@@ -3078,12 +3002,11 @@ Translated (stage X1b): the contractor support unit (`contract_teammate.dm` whol
 objective and no uplink, its outfit with the lit cigarette; the support beacon itself was translated in G4c), the fulton kit's box
 (`job_boxes.dm:323`) and `mining/fulton.dm` but the networked pack, core and beacon (the pack's link, attaching, the balloon's lift
 and flight with tg's sounds and `animate()` chains, the landing next to the beacon; the beacon's core, naming, undeploying, the
-global list of beacons). A holder that lifts a mob is drawn as that mob (DV377).
+global list of beacons; the networked pack, core and beacon came with gaps LV1, section 234). A holder that lifts a mob is drawn as that mob (DV377).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `syndicate_contract.dm:256` | the souvenir achievement | a victim in the syndicate souvenir uniform | the achievements | `syndicate_contract.cs` |
-| `fulton.dm:199-269`, `:292-296`, `:347-355` | the networked fulton pack, core and beacon (the "Candela" mining beacon networks, `candela_node`) | the mining vendor | the mining | (generated, inert) |
 | `fulton.dm:121-129`, `:138-196` (client) | a lifted thing the client draws as a 3D model (a crate, a closet) shows neither the balloon overlay nor the rise and the descent: the static props' models play no `animate()` chain and draw no overlay (a lifted mob is a node and shows both, DV377); the thing still lands at the beacon | a fulton pack used on a crate | the client's static props | `MapRenderer.cs` |
 | `lazy_template.dm:130-156` | the other lazy templates' maps (the nukie base and elevator, the wizard den, the abductor ships, the heretic room, the voidwalker void) are not converted: their load CRASHes on the missing map | their antagonists | their packages | `tools/Anomaly.Tools.Maps/Program.cs` |
 
@@ -3105,14 +3028,11 @@ Psychotic Brawling with the violent psychosis (`special.dm:244-267`) and the mar
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `datums/martial/wrestling.dm` (the Wrestling and its champion belt) | not carried over: the file is Goon-derived (its header), and D80 keeps such files out of the port | an admin's spawn; the deathmatch | never (D80) | (generated, inert) |
-| `gloves/boxing.dm:25`; `gloves/punch_mitts.dm:12` | the gloves' fishing difficulty (the golden gloves' athletics skill reward came with gaps SL1) | fishing with the gloves on | fishing | `gloves/boxing.cs`, `gloves/punch_mitts.cs` |
-| `kaza_ruk.dm:274-301`, `:315-316` | the security Kaza Ruk gloves' red and blue skins (`/datum/atom_skin`, the reskinable item) | reskinning the gloves | the atom skins | `kaza_ruk.cs` |
 | `cqc.dm:43` | a touch spell sent back at its caster (`do_hand_hit`; the touch spells are not ported) | a wizard's touch spell on a CQC user | the touch spells | `cqc.cs` |
 | `plasma_fist.dm:109`, `:129` | the Apotheosis' plasmaman body (the species is not ported), the explosion's cause (the port's `explosion()` takes an atom, the art is a datum: the log names no cause) | the Apotheosis | the plasmaman | `plasma_fist.cs` |
 | `impure_medicine_reagents.dm:965-1010` | the Monkey Dust (the inverse bath salts, with the primal instincts trauma, live since gaps B1), the Jungle Arts' only source | a monkey on Monkey Dust | the impure reagents | (generated) |
 | `plasma_fist.dm:100`, `:109`, `:129` | the attacker's purple screen flash (`flash_color`, the client colours), the Apotheosis' plasmaman body (the species is not ported), the explosion's cause (the port's `explosion()` takes an atom, the art is a datum: the log names no cause) | the Plasma Fist; the Apotheosis | the client colours; the plasmaman | `plasma_fist.cs` |
 | `species_types/mushpeople.dm` | the mushroom people, who grow the odd mushroom (the Mushroom Punch's source) | a mushroom person | the species | (generated) |
-| `mining_loot/clothing.dm:94-140` | the concussive gauntlets (hunter boxing and the rock smash) | lavaland loot | the lavaland loot | (generated) |
 | `storage/toolboxes/weapons.dm:211-214`, `uplink_items/nukeops.dm:224` | the nuclear operatives' CQC equipment case (the gun cases are not ported): its uplink entry stays hidden | a nuclear operative's uplink | syndicate N2 | (generated) |
 | `costume.dm:509` | the gi's spray can recolouring (`gags_recolorable`) | a spray can on the gi | the recolouring | `under/costume.cs` |
 | `datums/martial/_martial.dm:308-311` | the table smash: translated, but nothing sends `COMSIG_LIVING_TABLE_SLAMMING` or `COMSIG_LIVING_TABLE_LIMB_SLAMMING` yet (the table slams) | a martial artist's table slam | the table slams | `_martial.cs` |
@@ -3139,7 +3059,7 @@ and its terminals (`shuttle_consoles/syndicate.dm` but the navigation computer),
 (`closets/syndicate.dm` whole), `syndicate_name`, the operative alias and species preferences, `equip_species_outfit`; the operatives'
 kit: the combat boots, the nuclear PDA, the Ansem's lore, the operation-ready survival box; on the base and on Meta (22 of them, inert until now, DV31): the pressure tank
 (`atmospherics/machinery/components/tank.dm` whole, with `gas_leaker.dm`, `volatile_gas_storage.dm`, `crackable.dm`, `cracked.dm`;
-SSair processes the leaker as tg passes it, a datum); the NTOS radar (`programs/radar.dm` whole but its circuit components: the
+SSair processes the leaker as tg passes it, a datum); the NTOS radar (`programs/radar.dm` whole, its circuit components since gaps CI3: the
 Fission360, the Lifeline, the Custodial Locator, with the client's NtosRadar windows and tg's radar pictures); the base's keycard doors
 (`puzzle_pieces.dm:1-145`, with `subsystem/queuelinks.dm` whole); the hijacked shuttle's syndicate dock and the base's early load on a hijack; the nuclear pinpointer's armed-nuke line. A dock made in a template's load yields
 a tick before loading its round-start shuttle (tg's call sleeps at the reservation's CHECK_TICK, its tick spent; the port's never is,
@@ -3166,12 +3086,10 @@ are hidden shuttles), `get_overlap`, `ISINRANGE_EX`, `get_linked_z_levels_in_ran
 | `operative_team.dm:79` | the round-end report's badass icon (`icon2html`) for a team that nuked the station spending no telecrystal | the round's end | chat icons | `operative_team.cs` |
 | `outfits.dm:19`, `:44`, `:101`; `implants/implant_tacmap.dm` | the operatives' tactical map implant and its minimap blips (the operatives, the disk, the nuke): tg's minimap HUD (`modules/minimap/`) is not ported; the port's minimap is D315's own; the implant is inert in the operatives' bodies | an operative's outfit | the owner's decision (D315's minimap) | (generated) |
 | `outfits.dm:30-35`, `:49-54`, `:104-115` | the plasmaman operatives' outfits (the plasmaman species is not ported: an operative is human or the client's own species) | an operative of the plasmaman species | the plasmaman species | `outfits.cs` |
-| `radar.dm:410-535` | the radar programs' circuit components (`circuit_component/mod_program/radar`: the circuits, wiremod) | a circuit shell | the circuits | `radar.cs` |
 | `pray.dm:80` | the nuke codes' request in the admins' requests manager (`GLOB.requests.nuke_request`) and the admins' links of its message (the request itself, its admins' message and the crew's announcement came with gaps CM1) | the communications console | the admin tools | `admin/verbs/pray.cs` |
 | `_event.dm:167` | an admin-forced event's options (`/datum/event_admin_setup`: the admin's prompts) | an admin forcing an event | the admin tools | `_event.cs` |
 | `subsystem/events.dm:167-207` | the holidays of the real date (`fill_holidays`, `check_holidays`: the deterministic world reads no date, D31; no holiday, as tg's default `allow_holidays` off) | the round's start | none (D31) | `events.cs` |
-| `camera_advanced.dm:57-74`, `:293-486` | the advanced camera console's circuits (the USB port and the circuit components: wiremod) | a circuit shell on the console | the circuits | `camera_advanced.cs`, live-partial |
-| `camera_advanced.dm:150`, `:282`; `xenobio_camera.dm`; `construction_console.dm` | the abductor's, the human AI's, the xenobiology and the base construction consoles (their own types, inert) | Meta's xenobiology and aux base consoles, the base's slime console | their departments | (generated) |
+| `camera_advanced.dm:150`; `construction_console.dm` | the abductor's and the base construction consoles (their own types, inert; the human AI's came with gaps JB1) | Meta's aux base console | their departments | (generated) |
 
 ## 149. The nukie arsenal (syndicate N2, D316)
 
@@ -3207,7 +3125,6 @@ silicon entries (the rows below; its MODsuit entries came with gaps MO2).
 |---|---|---|---|---|
 | `automatic.dm:51` | the C-20r's bayonet mount (`bayonet_attachable`, as the WT-550's) | a knife on the gun | M10+ (bayonets) | `automatic.cs` |
 | `cannonball.dm:90-170` | the ballista's spears | the ballista | the ballista | (generated) |
-| `sweets.dm:232-262` | the bubblegum gum (its bubblegum hallucination) | the bubblegum's loot | M10+ | (generated) |
 | `antag_spawner.dm:193-255` | the clown operatives' beacon (N3) and the cyborg teleporters (the silicons): inert, their uplink entries hidden | the uplink | N3, the silicons | (inert) |
 | `under/syndicate.dm:82` | the tacticool turtleneck's syndicate dye (the washing machine) | a washing machine | M10+ | live-partial |
 | `nukeops.dm` | the AI entries (the Syndicate intelliCard, the AI upgrade disk) stay hidden (the MODsuits and their modules are sold since gaps MO2) | the uplink | the syndicate silicons (SI8, SI9) | `uplink_items.cs` |
@@ -3233,7 +3150,6 @@ lighter test harnesses; the server, ToyScenario and TgTestWorld mount them) gets
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `implant_tacmap.dm` | the operatives' tacmap implant stays inert (the minimap against D315: the owner's question) | the outfits | the owner | (inert) |
-| `other_reagents.dm:573` | space lube fed to a fish (the lubefish mutation) | a fish | M10+ (fishing) | live-partial |
 | `effects.dm:123`, `:133`, `:140`, `:146` | the panic attack's tunnel vision (`add_fov_trait`, `remove_fov_trait`: the 2D field of view cone, living_fov.dm; the 3D view is the client's) | a panicking mob | never as such (presentation) | `effects.cs` |
 | `fearful.dm:88` | the cowardly, paranoid and brave personalities' fear multipliers | any fear | M10+ (personalities) | `fearful.cs` |
 | `_sources.dm:43-209` | the nyctophobia, claustrophobia, clausophobia, monophobia and pyrophobia sources are live, but the quirks (and the nightmare's spell) that add them are not | a quirk | M10+ (quirks) | `_sources.cs` |
@@ -3324,7 +3240,7 @@ of stacks, the reagents the cyborgs synthesize; `notify_ghosts`, `on_saboteur`'s
 | `modules_ninja.dm:494`, `:502` | the space ninja draining a cyborg (`live-partial.txt`) | the ninja | M10+ | (generated stubs) |
 | `_onclick/hud/robot.dm:9`, `:27` | the HUD's navigate and floor changer buttons (as the human's HUD; the language button: gaps L2) | the HUD | M10+ | `_onclick/hud/robot.cs` |
 | `robot.dm` (`GLOB.current_anonymous_theme`), `robot/death.dm` (`SSblackbox.ReportDeath`), `robot/examine.dm` (`icon2html`), `game.dm:204` (`winset` flash) | the admins' anonymous names, the round statistics, the held module's chat icon, the taskbar flash | admins, the chat | presentation, M10+ | the robot's files |
-| `piano_synth.dm:15`, `:21` | the synthesizer's song and circuit shell (`/datum/song`, SSinstruments, wiremod: the instruments are props, section 106) | music | M10+ | `instruments/items.cs` |
+| `piano_synth.dm:15`, `:21` | the synthesizer's song (`/datum/song`, SSinstruments: the instruments are props, section 106; the circuit shell came with gaps CI3) | music | M10+ | `instruments/items.cs` |
 | `art/statues.dm:380`, `:416-419`, `:79`, `:94` | the chisel shaping a concrete floor (concrete floors are not translated: nothing on Meta places or makes them), the sculptors' personality moods (personalities are not ported), the drake's and dragonman's glowing eyes (DV12) | a chisel, sculptors | M10+ | `art/statues.cs` |
 | `_persistence.dm` | saving and loading the wall engravings and the prison tattoos across rounds | the persistence | M10+ | `persistence/_persistence.cs` |
 | `robot/items/tools.dm` | the omnitool's context tips (D264, `live-partial.txt`) | screentips | M10+ | live-partial |
@@ -3343,8 +3259,6 @@ retired), the operating computer's and the medbot's techweb links, the war decla
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `research/techweb/_techweb.dm:470` | `add_scientific_paper`: publishing an ordnance paper (`live-partial.txt`) | NT Frontier | a later research campaign | (generated) |
-| `research/ordnance/_scipaper.dm` (the papers) | the papers (the experiments, their handler, the scanners and the destructive analyzer since gaps RD3, section 195; the experimentor since gaps RD4, section 202) | NT Frontier | a later research campaign | inert types |
 | `research/rdconsole.dm`, `server.dm`, `server_control.dm`, `designs/*` printers (protolathes, imprinters, techfabs, the autolathe) | the R&D consoles, servers and fabricators: no server mines points, nothing enqueues a node | research | a later research campaign | inert types |
 
 ## 156. The AI (silicons SI4, D326)
@@ -3409,7 +3323,6 @@ instrument plays a note whose file exists).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `instruments/piano_synth.dm:16`, `:70-202` | the synthesizer's circuit shell and its synth circuit components (`Dm.Deferred`): wiremod | the synthesizer's init | wiremod | `modules/instruments/piano_synth.cs` |
 | `instrument_data/hardcoded.dm` (the `mid` instruments), `items.dm:131`, `:159`, `:190` | the MIDI note files of the violin, saxophone, recorder, accordion, glockenspiel, xylophone, harmonica and trombone (and the spectral doots): DV391, silent | playing one of them | Ogg renders (an owner question) | — |
 | `songs/_song.dm:403` | `vv_edit_var` (admin variable editing; `live-partial.txt`) | an admin | M10+ | (generated stub) |
 
@@ -3485,10 +3398,8 @@ Translated (S4d, Mafia): `modules/mafia` whole (the controller with its phases, 
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `statusdisplay.dm:94-121`, `signalcommander.dm:100-123`, `borg_monitor.dm:190-216`, `wirecarp.dm:71-131` | the apps' circuit components (`/obj/item/circuit_component/mod_program/*`: wiremod; SignalCommander's signal from a circuit reads the circuit's creator and owner since gaps CI1) | a circuit in a computer | the circuits (gaps CI3, D339) | (inert) |
 | `maintenance/themes.dm:44` | the PDA theme's progress award, which keeps a found theme for later rounds (`give_award`, a comment) | installing a maintenance theme | the achievements (M10) | `maintenance/themes.cs` |
 | `maintenance/camera.dm`, `nanopaint.dm`, `file_system/image_file.dm` | the camera app and NanoPaint: a photo or painting as an image file (`icon2base64`: the server reads no .dmi, D104) | a maintenance disk's camera, NanoPaint | with NtOS's image files | (inert) |
-| `raptordex.dm` | the RaptorDex (inert with the raptors) | a raptor scanned | with the raptors (Lavaland's ranch) | (inert) |
 | `virtual_pet.dm:193-198` | a photo the pet takes saved as the PDA's image file (`on_photo_captured`, a `Dm.Deferred` leaf: NtOS's image files, `icon2base64`) | the Orbie's take-photo command at level 3 | with NtOS's image files | `programs/virtual_pet.cs` |
 | `virtual_pet.dm:453`, `:505-507` | the hats locked behind achievements (`SSachievements`, `get_award_status`) | a hat chosen | the achievements (M10) | `programs/virtual_pet.cs` |
 | `mafia/controller.dm:403-409` | the achievements a role wins (`award_role`: `give_award`, a `Dm.Deferred` leaf) | a game won | the achievements (M10) | `modules/mafia/controller.cs` |
@@ -3509,12 +3420,11 @@ every mutation type (DV25 left it). The DNA infuser and its organ sets are their
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `instability_meltdown.dm:27`, `:34`, `:55`, `:68`, `:87`, `:94`, `:101`, `:149`, `:164` | the meltdowns that need other systems: the paraplegic's wheelchair (its trauma came with gaps B1), corgize and crabize, the advanced mutation toxin, `animate_atom_living` (an organ's: `items.dm:1904`; the root came with gaps ST5), the skeleton species and `slow_psykerize` (the petrified statue of `:129` came with gaps ST5) (`Dm.Deferred` leaves: the meltdown picks them and does nothing) | a DNA meltdown at full instability | the ridden vehicles, transformations, slime people, magic and psykers | `datums/instability_meltdown.cs` |
+| `instability_meltdown.dm:27`, `:34`, `:55`, `:68`, `:87`, `:94`, `:101`, `:149` | the meltdowns that need other systems: the paraplegic's wheelchair (its trauma came with gaps B1), corgize and crabize, the advanced mutation toxin, `animate_atom_living` (an organ's: `items.dm:1904`; the root came with gaps ST5) (the petrified statue of `:129` came with gaps ST5, `slow_psykerize` with gaps CH1, the skeleton species of `:149` with gaps EX1) (`Dm.Deferred` leaves: the meltdown picks them and does nothing) | a DNA meltdown at full instability | the ridden vehicles, transformations, slime people and magic | `datums/instability_meltdown.cs` |
 | `farsight.dm:45`, `:50` | the farsight's wider view (`client.view_size`, `Dm.Deferred` leaves) | casting farsight | the client's view size | `datums/mutations/farsight.cs` |
 | `hulk.dm:97-251` | the hulk's tail swing (`check_swing`, `setup_swing`, `swing_loop`, `finish_swing`): based on Goonstation's wrestling swing, not taken (D80); declared with not-translated bodies and never registered | — | — (D80) | `datums/mutations/hulk.cs` |
 | `touch/_touch.dm:311` | the spicy handshake achievement (`Dm.Deferred` leaf) | a shock touch on a handshake | the achievements (M10) | `modules/spells/spell_types/touch/_touch.cs` |
 | `spiderwebs.dm:137-end`, `spider_abilities/web.dm:81-end` | the spiders' other webs and web abilities | the spiders | with the spiders | `game/objects/effects/spiderwebs.cs`, `.../spider_abilities/web.cs` |
-| `mining_loot/equipment.dm` but `:167-226` | Lavaland's mining loot (the void magnet's hole in reality is translated) | Lavaland's tendrils | with Lavaland's loot | `modules/mining/lavaland/mining_loot/equipment.cs` |
 | `quirks/negative_quirks/allergic.dm:25-end` | the medicine allergy quirk (only `GLOB.allergy_reagent_blacklist` is translated) | a quirk chosen | the quirks (M10) | `datums/quirks/negative_quirks/allergic.cs` |
 | `asset_cache/assets/genetics.dm` | the asset datum (the client draws the GIFs itself, DV44) | the console's window | — (DV44) | `game/machinery/computer/dna_console.cs` |
 
@@ -3532,8 +3442,6 @@ the infused tongues use.
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `infuser_tier_one_entries.dm:145` | a fish trait's own infusion entry (`GLOB.fish_traits`, a `Dm.Deferred` leaf: a fish infuses the plain fish entry) | infusing a fish with a trait | the fishing | `game/machinery/dna_infuser/infuser_entries/infuser_tier_one_entries.cs` |
-| `library/book.dm:305-end` | the DSM and IDC manuals and their windows (DSMBook, IDCBook) | reading them | the library row | `modules/library/book.cs` |
 
 ## 167. The economy (gaps P4a, D327)
 
@@ -3548,13 +3456,11 @@ client's NtosPay, AccountingConsole, BankMachine and HoloPay windows.
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `basemats.dm:541`, `:547` | a mythril item's fantasy affixes (`/datum/component/fantasy`): a mythril coin's Initialize reaches the not-translated leaf, and so does a mythril sheet's (gaps SK1) | a mythril coin or sheet | the fantasy affixes | `datums/materials/basemats.cs` |
-| `nt_pay.dm:113-186` | the NT Pay app's circuit component (wiremod) | a circuit in a PDA | wiremod (section 164) | `modules/modular_computers/file_system/programs/nt_pay.cs` |
+| `basemats.dm:541`, `:547` | (a deferred leaf since 2026-11-27, section 1) a mythril item's fantasy affixes (`/datum/component/fantasy`): a mythril coin's Initialize reaches the not-translated leaf, and so does a mythril sheet's (gaps SK1) and the first slot machine's of a world, which makes one of every coin to learn their values (`slotmachine.dm:99-102`, gaps RC1) | a mythril coin or sheet; a slot machine | the fantasy affixes | `datums/materials/basemats.cs` |
 | `account.dm:253-290` | the bank card's picture before its chat line (`icon2html`, chat icons) | every card message | chat icons (section 76) | `modules/economy/account.cs` |
 | `account.dm:120-139` | the CRAB-17's drain (`/obj/structure/checkoutmachine`: `dumpeet` and `stop_dump` are translated, the machine is inert) | a traitor's CRAB-17 | the traitor's uplink items | `modules/economy/account.cs` |
 | `cards_ids.dm:134`, `:704`, `:1034` | the card's fantasy bonuses, its admin var edits and the honorific toggle (`item_ctrl_click`) | — | the fantasy affixes, admin tooling, the honorifics | `game/objects/items/cards_ids.cs` |
 | `medical_kiosk.dm`, `wall_healer.dm` | the medical kiosk and the wall healer, machines that charge through the payment component | using them | with their machines | (inert) |
-| `datums/elements/venue_price.dm` | the restaurant venues' prices of drinks and clothes (`clothing.dm:74`, `reagents.dm:107`: `Dm.Deferred` leaves) | a bar's or a restaurant's robot customer | the restaurant venues | `modules/clothing/clothing.cs`, `modules/reagents/chemistry/reagents.cs` |
 
 ## 168. Cargo with the economy (gaps P4b, D327)
 
@@ -3572,7 +3478,6 @@ the budget, prices and private buying, NtosCargo and NtosCouponMaster (DV237 end
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `explorer_drone/loot.dm:1-118`, `:142-end` | the exploration drone's loot generators and its other loot (the fire lance, the unique items) | the exodrone | the exploration drones | `modules/explorer_drone/loot.cs` |
-| `exports/fish.dm` | the fish's export value (a not-translated leaf: fishing) | selling a fish | fishing | `modules/cargo/exports/fish.cs` |
 | `livestock.dm`, `imports.dm:92`, `:138`, `:380`, `costumes_toys.dm:294`, `organic.dm:209` | the packs' own fills and crates (the critters and their stasis, the dumpster corpse, the mafia and fan upgrade imports, the gift crate, the pizza's anomalies): these packs ship their plain contents | ordering them | with what they spawn | `modules/cargo/packs/_packs.cs` |
 | `budgetordering.dm:48` | `isAdminGhostAI` (no admin ghosts, GAP(lead) in `is_helpers.cs`) | an admin ghost | admin tooling | `programs/budgetordering.cs` |
 
@@ -3586,7 +3491,6 @@ the living mob's bank account (`living.dm:661`); the client's CivCargoHoldTermin
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `bounties/assistant.dm:229-284` | the fish bounties: translated, but the fish are a skeleton (fishing), so no fish is caught to ship | an assistant's fish bounty | fishing | `modules/cargo/bounties/assistant.cs` |
 | `pirate_shuttle_equipment.dm:1-171`, `:423-end` | the pirates' shuttle equipment, their exports (the ransom, the loot) and their CargoHoldTerminal window | the pirate event | the pirates (PORT-CHECKLIST, antagonists) | `modules/antagonists/pirate/pirate_shuttle_equipment.cs` |
 
 ## 170. The rest of cargo (gaps P4d, D327)
@@ -3630,7 +3534,7 @@ Newspaper, BountyBoard and NtosBountyBoard windows.
 | `newspaper.dm:105`, `:154`, `:165` | the read newspaper's field of view cone (`add_fov_trait`, the 2D client's; the 3D view is the client's, as the panic attack's) | reading a newspaper | never as such (presentation) | `newspaper.cs` |
 | `newspaper.dm:60`, `:73` | the newspaper's context tips and its suicide (`live-partial.txt` SI6b) | hovering, the suicide verb | M10+ (D264), M10+ | `Generated/LivePartial/obj.g.cs` |
 | `roundend.dm:157`, `ticker.dm:850` | the round's newscaster log (`gather_newscaster`, `newscaster.json` in the round's log folder; the ticker's Shutdown) | the round's end | the logs (M10+) | (none) |
-| `betting.dm:182-193`, `lib_machines.dm:516-524`, `admin_newscaster.dm`, `world_topic.dm:296-312` | the other writers of the news (the request console's announcement translated, gaps SC1): the SpaceBet app, the library's book club feed, the admins' newscaster and the cross-server topics | their machines and apps | with them | (inert) |
+| `betting.dm:182-193`, `admin_newscaster.dm`, `world_topic.dm:296-312` | the other writers of the news (the request console's announcement translated, gaps SC1; the library's book club feed, gaps LB1): the SpaceBet app, the admins' newscaster and the cross-server topics | their machines and apps | with them | (inert) |
 
 ## 172. Leaning, the table slam and the table flip (gaps L1, D327)
 
@@ -3662,7 +3566,7 @@ station machine and an EMP'd one keep Galactic Common, as in a tg round with no 
 |---|---|---|---|---|
 | `code/modules/language/_language.dm:97` | `vv_edit_var`: the view variables' edit of a language's vars (admin tooling) | an admin's view variables | M10+ (rules 13) | `modules/language/_language.cs` |
 | `code/game/say.dm:178`, `datums/chatmessage.dm:177` | a language's icon in the chat line and over the speaker's head (section 70) | a line in any language | with the chat icons (section 76, later by the owner) | `game/say.cs`, `datums/chatmessage.cs` |
-| `modules/admin/topic.dm:928`, `research/gizmo/gizmodes/gizmisc.dm:51` | the other callers: an admin's open of a mob's language menu, the gizmo's random language (the station trait that scrambles the bots' languages came with gaps R2) | an admin, the gizmo | with the admin tools and the gizmo | none |
+| `modules/admin/topic.dm:928` | the other caller: an admin's open of a mob's language menu (the station trait that scrambles the bots' languages came with gaps R2, the gizmo's random language with gaps OR2) | an admin | with the admin tools | none |
 
 ## 174. The random events: the anomalies, the vent clogs, the machinery and command events (gaps E1a and E1b, D327)
 
@@ -3698,8 +3602,7 @@ DEVIATION(DV380): the false alarm leaves out the midround rulesets that are not 
 Translated: `structures/construction_console/` whole (the console, its drone kept in its `allowed_area`, the internal RCD, the build,
 configure, fan and turret actions, Log out; the aux and CentCom subtypes), and the aux base management console's `Initialize` and
 `Destroy` (`mining/aux_base.dm`), so the drone starts at it and placed turrets register with it. Its launch window, `set_mining_mode` and
-`set_landing_zone` are `live-partial.txt` rows: the base's deployment to lavaland, the landing designator and the mining shuttle beacon
-come with mining. The aux console's drone stands on the controller's turf (tg makes it inside the controller).
+`set_landing_zone` (the base's deployment to lavaland, the landing designator and the mining shuttle beacon) came with gaps LV1 (section 234). The aux console's drone stands on the controller's turf (tg makes it inside the controller).
 
 ## 176. The weather (gaps E2a, D327)
 
@@ -3781,7 +3684,6 @@ as in section 174. The syndicate infiltrators and the Russian mobsters the hijac
 | `events/stray_cargo.dm`, `shuttle_catastrophe.dm`, `shuttle_loan_event.dm` `/datum/event_admin_setup/*` | the admins' options: the pod's aim and crate, the syndicate pod's telecrystal value and uplink, the catastrophe's warning and shuttle, the loan's offer | the admins' Trigger Event panel | the admin tools (D275) | none |
 | `shuttle_catastrophe.dm:44-48` | the replacement's pool is the purchasable emergency shuttles the host mounted (DV188): since gaps CM1 tg's catalogue but the Scrapheap Challenge and the Arena (section 200) | a shuttle catastrophe | the Scrapheap Challenge's modular maps, the Arena's level | `events/shuttle_catastrophe.cs` |
 | `mineral_walls.dm:176`, `misc_floor.dm:276` | the mail strike's wooden walls and rusted plating are inert turfs (the wood wall's tool interaction; the rust element, the heretics') | the mail strike's loan | the heretics; the mineral walls | none |
-| `boxing.dm:29` | the floortile balaclava's fishing modifier (`Dm.Deferred`) | fishing in one | fishing (M10+) | `clothing/masks/boxing.cs` |
 
 ## 180. The creatures and crew events (gaps E4, D327)
 
@@ -3794,7 +3696,6 @@ disease outbreaks came with the diseases (gaps VI1, section 228).
 |---|---|---|---|---|
 | `events/carp_migration.dm`, `heart_attack.dm`, `mass_hallucination.dm`, `wisdomcow.dm` `/datum/event_admin_setup/*` | the admins' carp directions, heart attack count, forced hallucination and the wise cow's place, wisdom and milk | the admins' Trigger Event panel | the admin tools (D275) | none |
 | `events/heart_attack.dm:72` | the Healthy achievement of a fit crew member spared a heart attack (the athletics protection came with gaps SL1) | a heart attack | the achievements (owner-deferred, D333) | `heart_attack.cs` |
-| `events/ghost_role/sentience.dm:61`, `:82-85` | the simple animals' candidacy and `sentience_act` (no simple animal is ported; the basic mobs replace them) | the sentience event | none (the simple animals are not ported) | `sentience.cs` |
 
 ## 181. The space vines (gaps E4b, D327)
 
@@ -3890,9 +3791,9 @@ reboot.
 | `negative_traits.dm:477`, `station.dm:29` | the nebulas' parallax layer and its green starlight (`SSparallax`) | the nebula traits | the 3D space view (no parallax) | `negative_traits.cs` |
 | `neutral_traits.dm:558`, `:566`, `basic/pets/pet_designer.dm` | the pet day's customization window and pets (`/datum/pet_customization` is inert): the trait waits out of the pool | a round with the trait | the pet designer | `neutral_traits.cs` |
 | `neutral_traits.dm:77`, `components/multiple_lives.dm` | Ian's two extra lives in Ian's Adventure (the multiple lives component is inert; his teleport and deadchat control run) | a round with the trait | the multiple lives component | `neutral_traits.cs` |
-| `jobs/job_types/station_trait/veteran_advisor.dm`, `human_ai.dm` | the veteran advisor's and the human AI's jobs are inert (the paraplegic quirk, the advisor's trim (his PTSD trauma came with gaps B1); the human AI's outfit and remote): their two job traits wait out of the pool (their sign-up and the fax machine the human AI adds are translated) | an admin forcing the trait | the station trait jobs | `job_traits.cs` |
+| `jobs/job_types/station_trait/veteran_advisor.dm`, `human_ai.dm` | translated in gaps JB1 (D339): the two jobs are live, so their traits roll (the veteran's paraplegic quirk is left, section 253) | — | — | `job_traits.cs` |
 | `job_traits.dm:180` | `GLOB.triple_ai_controller`: the AI triumvirate's admin verb (`admin/verbs/ai_triumvirate.dm`) is not ported, so the human AI keeps one position | the human AI trait | the admin tools | `job_traits.cs` |
-| `positive_traits.dm:316` | the Cybernetic Revolution's organs not ported (the research director's BCI, the shaft miner's rush gland; the coroner's bone tongue, the prisoner's shielded eyes and the cargo technician's and quartermaster's stomachs are live since gaps OG1): those two jobs get none | a round with the trait | the organs' mechanics | `positive_traits.cs` |
+| `positive_traits.dm:316` | the Cybernetic Revolution's organ not ported (the research director's BCI; the coroner's bone tongue, the prisoner's shielded eyes and the cargo technician's and quartermaster's stomachs are live since gaps OG1, the shaft miner's rush gland since gaps LV2): that job gets none | a round with the trait | the organs' mechanics | `positive_traits.cs` |
 | `__DEFINES/mood.dm:109` (`landmarks.dm:577`, `:584`) | the teetotal and bibulous personalities at a hangover spawn (not ported: nobody has one); the hangover's drunkenness and drugginess are tg's since gaps RG1 | a join at a hangover spawn | the personalities (owner-deferred) | `landmarks.cs` |
 | `wallets.dm:17` | the strip menu's reach into a wallet (`/datum/element/strip_accessible_storage` is inert) | stripping a wallet's wearer | the strip menu's storage | `wallets.cs` |
 | `wallets.dm:79`, `:83` | the wallet's flattened picture in the examine line (`getFlatIcon`, `icon2html`: the chat icons, as the ID card's) | examining a wallet | the chat icons | `wallets.cs` |
@@ -3931,7 +3832,7 @@ one wins, so "slow down" sets the run intent and "run" only gives its cooldown (
 | `brain_damage/imaginary_friend.dm:234`, `:238` | the imaginary friend's admin say and dead say (`Dm.Deferred`, as `living_say.cs`) | an admin as an imaginary friend | the admin tools (M10+) | `datums/brain_damage/imaginary_friend.cs` |
 | `brain_damage/imaginary_friend.dm:274`, `:366-373` | the lag switch's runechat measure (never on, as `chatmessage.cs`), the custom emote's ban and mute checks (no ban database, no mutes, as `living/emote.cs`; comments) | the friend's speech bubble, its `me` | the admin tools (M10+) | `datums/brain_damage/imaginary_friend.cs` |
 | `antagonists/obsessed/obsessed.dm:290` | the heirloom thief's steal target (`Dm.Deferred`: the port's `steal_target` holds a typepath, DV340; unreached while the family heirloom quirk is inert, so the objective is never picked) | an obsession on a crewman with an heirloom | the quirks | `modules/antagonists/obsessed/obsessed.cs` |
-| `religion/burdened/burdened_trauma.dm`, `religion/honorbound/honorbound_trauma.dm`, `antagonists/voidwalker/voidwalker_traumas.dm` | the burdened, honorbound and voided traumas (inert, never gained at random: `random_gain = FALSE`) | the chaplain's sects, the voidwalker | the religions, the voidwalker | (generated) |
+| `antagonists/voidwalker/voidwalker_traumas.dm` | the voided traumas (inert, never gained at random: `random_gain = FALSE`; the burdened and honorbound traumas came with gaps CH1) | the voidwalker | the voidwalker | (generated) |
 | `mining_loot/megafauna/colossus.dm:4` | the colossus's vocal cords, the voice of god's other speaker (inert) | the colossus's loot | the lavaland loot | (generated) |
 | `items/devices/desynchronizer.dm:1-73` | the desynchronizer itself (inert; its sync holder is translated) | a desynchronizer | the research items | `game/objects/items/devices/desynchronizer.cs` |
 | the quirks (phobia, insanity, narcolepsy, monophobia, paraplegic, hemiplegic), the heretic, wizard and abductor gear, the hypnochair, the medical kiosk, the experimental cloner, the tinfoil hat, the drug and alcohol reagents, the drunk blackout, the deathmatch modifiers, the mind swap's trapped owner, the madness curse, the station trait jobs | their trauma calls come with them (the traumas they give are live) | those systems | theirs | (not translated) |
@@ -3956,7 +3857,6 @@ is an untrained mind's: the skills are not ported (D243; they came with gaps SL1
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `helper_datums/icon_snapshot.dm:14`, `powers/transform.dm:161`, `:167`, `:170` | `getFlatIcon` and `icon2html` of the profile snapshot and the flesh ID (the ID's picture in the examine text and its chat icon) | examining a changeling's flesh ID, `makeImg` | the chat icons (not-translated.md 76) | `icon_snapshot.cs`, `transform.cs` |
-| `powers/mutations.dm:735` | the legion hive head's brood takes no creator (`assign_creator`: the lavaland legion is not ported); the broods still spawn | the legion hive head | the mining fauna | `mutations.cs` |
 | `powers/spiders.dm:22` | Spread Infestation's bloody spider egg cluster (the spider ghost roles, egg clusters and flesh spider are inert): the power spends its chemicals and lays nothing | the power | the spiders (giant spider antagonist) | `spiders.cs` |
 | `powers/expel_worm.dm:28` | the blood worm's expulsion (`leave_host`; the blood worms are not ported): `IsAvailable` never passes | a changeling hosting a blood worm | the blood worm antagonist | `expel_worm.cs` |
 
@@ -3971,7 +3871,6 @@ art (`elements/art.dm:54-66`).
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `mining/mine_items.dm:102-104` | the mining shuttle console's warning to a head revolutionary | the mining shuttle console | with the mining shuttle | none |
 | `spell_types/pointed/mind_transfer.dm:113` | the mind swap's refusal of a revolutionary | the wizard's mind swap | with the wizard | none |
 | `revolution_handler.dm:76-79`, `:106-109` | the loyalists' and the disillusioned's moods at the revolution's end (`add_personality_mood_to_viewers`) | either side's victory | with the personalities (M10+, as the slip's) | `antagonists/revolution/revolution_handler.cs` |
 ## 189. The xenomorphs (gaps X5, D333)
@@ -4017,8 +3916,7 @@ coupon, `coupon.dm:84`), the washing effect (`status_effects/neutral.dm:661-770`
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `toilet.dm:43-44`, `:160` | the station toilets' fishing spot (`/datum/component/fishing_spot` with the toilet's fish source) and the fish-safe storage element (`Dm.Deferred`; fish dropped in the bowl are kept, flushed and taken out as tg's); the swirlie's achievement (D332) | a fishing rod on a toilet; a swirlie that kills | the fishing (`modules/fishing`); the achievements | `game/objects/structures/water_structures/toilet.cs` |
-| `water_source.dm:153` | the puddle's tadpole (`/obj/item/fish/tadpole`, `Dm.Deferred` after tg's five seconds of scooping) | a right click on a puddle | the fishing | `game/objects/structures/water_structures/water_source.cs` |
+| `toilet.dm:160` | the swirlie's achievement (D332; the toilets' fishing spot is live since gaps FI2) | a swirlie that kills | the achievements | `game/objects/structures/water_structures/toilet.cs` |
 | `mirror.dm:68` | a round-start mirror's revenant prison (`/datum/component/revenant_prison`, 0.2% of the mapped mirrors; `Dm.Deferred`; the others get tg's cozy revenant home trait) | a mapped mirror | the revenant (antagonists, D333) | `game/objects/structures/mirror.cs` |
 | `bibles.dm:134` | the smiting's achievement (`gods_wrath`, `Dm.Deferred`, D332) | burning a bible twice | the achievements | `modules/library/bibles.cs` |
 | `modules_ninja.dm:608` | the recycler's `ninjadrain_act` (a `live-partial.txt` stub) | a space ninja's gloves on a recycler | the ninja (antagonists, D333) | (generated stub) |
@@ -4055,8 +3953,6 @@ slices.
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `food/_food.dm:228`, `decomposition.dm` | the decomposition of food left on the floor (the germs came with gaps VI1) | food on the floor | the food decomposition | `food/_food.cs` |
-| `machinery/deep_fryer.dm:63` | fishing in the deep fryer (the fishing spot and the fish-safe storage) | a fishing rod at the fryer | fishing | `machinery/deep_fryer.cs` |
-| `machinery/processor.dm:231`, `:289-325` | the slime processor's USB port and its circuit component (`/obj/item/circuit_component/slime_processor`, inert) | a circuit | the circuits (wiremod) | `machinery/processor.cs` |
 | `machinery/stove_component.dm:269`, `coffeemaker.dm:418`, `:670` | the steam particles' position over a pot (BYOND's `/particles` vars are not declared; particles are not drawn) | cooking soup, brewing coffee | the particles | `stove_component.cs`, `coffeemaker.cs` |
 | `components/ingredients_holder.dm:143` | the custom food's filling colour, read from the ingredient's sprite (`icon.GetPixel`; the server reads no tg icon, D104): the filling overlay is not drawn | putting an ingredient on bread, a bun, a pizza base | the client's icons (D104) | `components/ingredients_holder.cs` |
 
@@ -4081,7 +3977,7 @@ Translated whole: `structures/janitor.dm`, `suits/wetfloor.dm`, `vehicles/ridden
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `riding/riding_vehicle.dm:110-541` (but `:355-377`, the secway's, gaps SE1) | the other vehicles' riding (the ATV, scooters, skateboards and hoverboards, wheelchairs, the speedbike, the lavaboat and the dragon boat, the bone bike, the lasso's goliath, the stake...) | riding those vehicles | with the vehicles (`modules/vehicles`) | `datums/components/riding/riding_vehicle.cs` |
+| `riding/riding_vehicle.dm:110-541` (but `:355-377`, the secway's, gaps SE1, and `:143-171`, the lava and dragon boats', gaps LV5) | the other vehicles' riding (the ATV, scooters, skateboards and hoverboards, wheelchairs, the speedbike, the bone bike, the lasso's goliath, the stake...) | riding those vehicles | with the vehicles (`modules/vehicles`) | `datums/components/riding/riding_vehicle.cs` |
 | `janitor.dm:121`, `:125`, `:127` | the cart's examine lines' chat icons (`icon2html`): the 3D client's chat is text | examining a loaded cart | the chat icons | `game/objects/structures/janitor.cs` |
 
 
@@ -4113,10 +4009,6 @@ client's `ExperimentConfigure` (with its public `Experiment` and `TechwebServer`
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `types/ordnance.dm` | the ordnance experiments are completed by publishing a paper with the NT Frontier app (the doppler array's and the tank compressor's records, `_scipaper.dm`): the papers and the ordnance machines are not ported | the ordnance lab, NT Frontier | the papers and the ordnance lab | `experisci/experiment/types/ordnance.cs` |
-| `types/exploration.dm` | the exploration scans read `GLOB.exploration_sites`, which the explorer drones' scanner array fills (`explorer_drone/`, with its own experiment handler, `scanner_array.dm:188`): the list stays empty and no exploration scan completes | the exodrone scanner array | the explorer drones | `experisci/experiment/types/exploration.cs` |
-| `types/scanning_fish.dm` | the fish scans' other handlers (the tech fishing rod, `fishing_rod.dm:790`, and the fish analyzer, `fish_analyzer.dm:34`) and the fishing portal generator's settings they unlock (`fishing_portal_machine.dm:273`): fishing is not ported; the experi-scanner and the destructive scanner scan a fish | fishing | fishing | `experisci/experiment/types/scanning_fish.cs` |
-| `types/scanning_vatgrown.dm` | the cytology scans count only vat-grown creatures (`TRAIT_VATGROWN`, given by the growing vat's micro-organisms, `vatgrowing/samples/_micro_organism.dm:90`): cytology is not ported, so none completes | cytology | xenobiology | `experisci/experiment/types/scanning_vatgrown.cs` |
-| `physical_experiments.dm:38-60` | the arcade playtest is won at an arcade cabinet (`COMSIG_ARCADE_VICTORY`): the arcade machines are inert, so it never completes | an arcade game | the arcade machines | `experisci/experiment/physical_experiments.cs` |
 | `random_scanning.dm:33` | the exosuit load test counts only crew-built mechs (`TRAIT_MECHA_CREATED_NORMALLY`, given by the mech construction paths, `mecha_construction_paths.dm:35`, inert): none passes until mech construction comes | scanning an equipped mech | mech construction | `experisci/experiment/types/random_scanning.cs` |
 
 ## 196. The R&D consoles and servers (gaps RD2, D333)
@@ -4135,7 +4027,7 @@ console's board (`computer_circuitboards.dm:470-524`), the hard drive's steal ob
 
 ## 198. The records consoles (gaps SC2, D333)
 
-Translated whole: `machinery/computer/records/records.dm` and `medical.dm`, `security.dm` but its circuit components, `computer/warrant.dm`,
+Translated whole: `machinery/computer/records/records.dm` and `medical.dm`, `security.dm` (its circuit components since gaps CI3), `computer/warrant.dm`,
 `effects/wanted_poster.dm` (DV498), `datums/records/medical_note.dm`; the record's photos of `datums/records/record.dm` (`get_front_photo`,
 `get_side_photo`, `recreate_manifest_photos`, `delete_photos`, `get_photo`, `make_photo`, DV497) with the manifest's and the prisoner's
 pictures; the list defines `PHYSICAL_STATUSES`, `MENTAL_STATUSES` and `WANTED_STATUSES`; `STRIP_HTML_FULL` and `strip_html_full`
@@ -4144,7 +4036,6 @@ pictures; the list defines `PHYSICAL_STATUSES`, `MENTAL_STATUSES` and `WANTED_ST
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `computer/records/security.dm:40-45`, `:394-532` | the console's USB port and its circuit components (`arrest_console_data`, `arrest_console_arrest`): the integrated circuits are not ported, the components stay inert | a circuit's USB cable on the console | with the integrated circuits (`modules/wiremod`) | `game/machinery/computer/records/security.cs` |
 | `security.dm:228`, `:240`, `:258`, `:265`, `warrant.dm:132`, `carbon/human/human.dm:340`, `:353` | `SSblackbox.ReportCitation`: the database's citation table (comments, translation rules 13) | every crime and citation written, edited or paid | with the database (not planned) | `security.cs`, `warrant.cs`, `human.cs` |
 | `computer/records/records.dm:11` | `isAdminGhostAI`: an admin ghost or AI's view of a console it is not logged in to | an admin observing | with the admin tools | `game/machinery/computer/records/records.cs` |
 | `effects/wanted_poster.dm:71` (DV498) | the mugshot on a hung wanted or missing poster: its overlay's recipe, a dressed human's flat picture shifted and cropped, is longer than a resource (512 bytes, `Limits.MaxResourceBytes`), so the poster shows its paper and header only (the rolled poster is tg's sprite) | hanging a printed poster | the owner's choice: a larger resource cap or flat pictures carried another way | `game/objects/effects/wanted_poster.cs` |
@@ -4159,7 +4050,6 @@ Translated: `machinery/teleporter.dm`, `computer/teleporter.dm` (:1-264), `items
 
 | tg reference | what | when it matters | ported with | C# file |
 |---|---|---|---|---|
-| `computer/teleporter.dm:28`, `:266-326` | the console's USB port and its teleporter control circuit component (set and list targets from a circuit) | a circuit plugged into the console | the integrated circuits | `game/machinery/computer/teleporter.cs` |
 | `machinery/teleporter.dm:87-88` | in Moth Week (`check_holidays(MOTH_WEEK)`) the uncalibrated jump makes a moth: the moth species is not ported, so the fly stands in | an uncalibrated jump in Moth Week (July) | the moth species | `game/machinery/teleporter.cs` |
 
 ## 201. The limb grower, the organ harvester and the lazarus injector (gaps MD3, D333)
@@ -4170,13 +4060,11 @@ Translated whole: `game/machinery/limbgrower.dm` (with the Limbgrower window), `
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `simple_animal/hostile/hostile.dm:654` | the hostile simple animals' `lazarus_revive` (robust searching off when revived friendly, on when malfunctioning): the simple animals are not ported (tg's station mobs are basic mobs) | a lazarus injector on a dead hostile simple animal | the simple animals | `modules/mob/living/living.cs` |
 | `antagonists/blood_worm/blood_worm_mob.dm:285` | the blood worm's `lazarus_revive` (antagonists, D333) | a lazarus injector on a dead blood worm | the blood worms' antagonist | `modules/mob/living/living.cs` |
 
 ## 197. The medical wall machines and the kiosk (gaps MD1, D333)
 Translated whole: `machinery/wall_healer.dm`, `machinery/medical_kiosk.dm`, `scanners/scanner_wand.dm`, `machinery/wall_vitals.dm` up to
-its circuit component (`:1-530`); the kiosk's and the first aid station's boards (`machine_circuitboards.dm:875`, `:1993`).
-| `wall_vitals.dm:98`, `:532-668` | the vitals display's circuit USB port and the vitals monitor circuit component (`Dm.Deferred`) | a USB cable on the display | wiremod (5.3 circuits) | `game/machinery/wall_vitals.cs` |
+its circuit component (`:1-530`; the circuit component and its USB port came with gaps CI3); the kiosk's and the first aid station's boards (`machine_circuitboards.dm:875`, `:1993`).
 | `wall_healer.dm:187`, `wall_vitals.dm:333` | the reservoirs' and the screen outline's `emissive_appearance` (DEVIATION DV12) | the machines' overlays | with the emissive plane | the mirror files above |
 ## 200. The communications console (gaps CM1, D333)
 Translated: the rest of `computer/communications.dm` but what the table lists: the shuttle purchases (`purchaseShuttle`, the catalogue page
@@ -4192,16 +4080,16 @@ since M10 slice G5 and gaps W1 (tested in `Gaps/CommsCM1Tests.cs`).
 | `communications.dm:122-135` | the battlecruiser card's branch of `emag_act` (section 134) | an admin's spawn of the card | the nuclear operatives (N1) or later | `communications.cs` |
 | `modules_ninja.dm:389-406` | the space ninja's drain of the console (`ninjadrain_act`, `ninjadrain_charge`, live-partial stubs) and its hacker module, the only caller of `try_hack_console`; the hack's pirate and fugitive results start inert rulesets (DV346) | the space ninja | the space ninja (antagonists paused, D333) | live-partial |
 | `_maps/shuttles/emergency/emergency_scrapheap.dmm`, `emergency.dm:287-301` | the Scrapheap Challenge shuttle is not converted (DV188): its pieces are `/obj/modular_map_root/scrapheapchallenge` roots, whose module loader (`modular_map_loader/modular_map_loader.dm`, translated with gaps BR1 for the virtual domains' safehouses) has no converted modules of the shuttle's (`_maps/shuttles/emergency/emergency_scrapheap/` and `strings/modular_maps/emergency_scrapheap.toml` are not converted or mounted), so the template is not mounted (its unlock, an empty cargo budget, is set by `account.cs`) | the catalogue with an empty cargo budget | the modular map roots | `tools/Anomaly.Tools.Maps/Program.cs` |
-| `_maps/shuttles/emergency/emergency_arena.dmm`, `emergency.dm:168-193` | the Arena shuttle is not converted (DV188): its arena level (`_maps/templates/the_arena.dmm`) is not either, and its unlock is Bubblegum's death (`bubblegum.dm:294`, Lavaland's megafauna); `post_load` is translated | the catalogue after Bubblegum's death | Lavaland's megafauna | `tools/Anomaly.Tools.Maps/Program.cs` |
+| `_maps/shuttles/emergency/emergency_arena.dmm`, `emergency.dm:168-193` | the Arena shuttle is not converted (DV188): its arena level (`_maps/templates/the_arena.dmm`) is not either, and its unlock, Bubblegum's death (`bubblegum.dm:294`), is live since gaps LV4 and opens the catalogue's Arena entry to no template; `post_load` is translated | the catalogue after Bubblegum's death | the Arena's maps and its arena objects (the entrance forcefield and landmarks, the healing fountain; not planned) | `tools/Anomaly.Tools.Maps/Program.cs` |
 | `_maps/shuttles/emergency/emergency_pod.dmm`, `emergency_cramped.dmm` | the emergency shuttles tg never sells (no purchase access, no price) are not converted: only the admins' shuttle manipulator loads them | the shuttle manipulator | the admin tools (D275) | `tools/Anomaly.Tools.Maps/Program.cs` |
-| `holodeck/computer.dm:236`, `elements/nullrod_core.dm:39`, `living.dm:1747`, `zombie/organs.dm:101`, `blob/overmind.dm:177` | the unlocks of the medisim dome (the holodeck's thunderdome program), Shuttle 667 (the null rod's core), the wabbajack (polymorph and mirror magic) and the Tombstone (the zombies, the blob; its biohazard disease unlock came with gaps VI1): those shuttles show in the catalogue with their prerequisite and cannot be bought | the catalogue | the holodeck, the chaplain's null rods, magic, the zombies, the blob | their systems |
+| `elements/nullrod_core.dm:39`, `living.dm:1747`, `zombie/organs.dm:101`, `blob/overmind.dm:177` | the unlocks of Shuttle 667 (the null rod's core), the wabbajack (polymorph and mirror magic) and the Tombstone (the zombies, the blob; its biohazard disease unlock came with gaps VI1, the medisim dome's, by the holodeck's 1218 AD program, with gaps RC1): those shuttles show in the catalogue with their prerequisite and cannot be bought | the catalogue | the chaplain's null rods, magic, the zombies, the blob | their systems |
 | `pray.dm:58-60`, `:82-83` | the admins' comms notification sound preference (`comms_notification`) for the messages to CentCom and the Syndicate (the nuke codes' request plays it to every admin, as tg) | an admin online | the admins' preferences (section 83) | `admin/verbs/pray.cs` |
 ## 202. The experimentor and the relics (gaps RD4, D333)
 Translated whole: `research/experimentor/` (`experimentor.dm` with the Experimentor window, `experiments.dm`, `wires.dm`,
 `_defines.dm`), `research/relics.dm`, `datums/components/shielded.dm`, the cardboard ID card (`cards_ids.dm:2071-2209`),
 `get_loose_container` (`__HELPERS/atoms.dm:320`) and `ready_random_color` (`__HELPERS/text.dm:459`); of `projectile/magic.dm`, the
 magic bolt's base (`:1-29`) and the fireball (`:492-527`). DV496 covers the experimentor's picture.
-| `relics.dm:192-210` | the necrotech monster summon picks the cult's hostile constructs (antagonists, D333), the Lavaland fauna (brimdemon, goldgrub, goliath, hivelord, ice demon, legion, lobstrosity, watcher) and the raptors, all inert: they appear as inert props | a revealed necrotech relic's summon | the Lavaland fauna, the raptors; the constructs with the cult | `modules/research/relics.cs` |
+| `relics.dm:192-210` | the necrotech monster summon picks the cult's hostile constructs (antagonists, D333), inert: they appear as inert props (the brimdemon, goliath, hivelord, legion, lobstrosity and watcher are live since gaps LV2, the goldgrub, the ice demon and the raptors since gaps LV3) | a revealed necrotech relic's summon | the constructs with the cult | `modules/research/relics.cs` |
 | `projectile/magic.dm:31-490`, `:529-623` | the other magic bolts (death, resurrection, teleport, safety, door, change, animate, locker, flying, bounty, antimagic, fetch, babel, necropotence, wipe, the area bolts, lightning, magic missile, juggernaut, shrink): the wizard's and the cult's spells, inert | a wizard's or a cult's spell | the wizard and the cult (antagonists, D333) | (inert) |
 | `cards_ids.dm:2162`, `:2191-2196` | the cardboard card's chat picture (`icon2html` in its show line, its examine strings and its examine icon): the 3D client's chat is text | showing or examining a cardboard ID | (by design) | `game/objects/items/cards_ids.cs` |
 
@@ -4214,7 +4102,6 @@ Translated whole: `game/objects/structures/flora.dm` and `game/objects/items/kir
 |---|---|---|---|---|
 | `structures/flora.dm:318`, `:1122` (DV499) | the trees' and the siderite growth's see-through component (`datums/components/seethrough.dm`, inert) and the coordinate maps it reads (`GLOBAL_LIST_INIT(see_through_maps)`, `__HELPERS/see_through_maps.dm:25`): a fade of the big sprite for a top-down viewer standing behind it (`Dm.Deferred`) | every tree and siderite growth at init | a third-person or spectator view | `game/objects/structures/flora.cs`, `__HELPERS/see_through_maps.cs` |
 | `structures/flora.dm:1144` (DV12) | the volcanic pore's emissive lava glow (`emissive_appearance`, `Dm.Deferred`); its own light (lava coloured, range 3) is drawn | a volcanic pore (Lavaland) | with the emissive planes (DV12) | `game/objects/structures/flora.cs` |
-| `kirby_plants/kirbyplants.dm:184` | the neglected fern's swabbable cell lines (`/datum/element/swabable` is inert, as the banana's and the pets') | a swab on the fern | cytology | `game/objects/items/kirby_plants/kirbyplants.cs` |
 ## 204. Furniture and odd structures (gaps ST2, D333)
 Translated whole: `game/objects/structures/curtains.dm` (with `assembly/doorcontrol.dm`'s curtain controller and
 `machinery/buttons.dm`'s curtain button), `modules/library/bookcase.dm`, `modules/library/random_books.dm`,
@@ -4242,7 +4129,6 @@ the holder, and nothing reads it through that type); gibtonite's `rig_overlay` a
 mutable appearances, so the holder itself is the overlay, as tg's `add_overlay` takes it; the dispenser's `last_rigger` is typed a
 string and keeps the rigger's key name; a rigged tank is not its holder's `master` (typed an item, `items.dm:108`; nothing a player
 sees reads it on a tank).
-| `modules/wiremod/shell/assembly.dm` | the compact remote's circuit assembly (`/obj/item/assembly/wiremod`, Meta 4 as compact remotes): a shell for an integrated circuit | a circuit put in it | wiremod (after the core version) | `Generated/Types/obj.item.g.cs` |
 | `modules/assembly/timer.dm:16`, `:22` | the timer's `suicide_act` and `manual_suicide` (the timer counting down to the holder's death): live-partial rows (`docs/ai/specs/live-partial.txt`) | the suicide verb | M10+ (the suicide verb) | `Generated/LivePartial/obj.g.cs` |
 | `datums/components/trapdoor.dm:330-380` | the trapdoor assembly (`/obj/item/assembly/trapdoor`, inert) linking to a trapdoor and its remote: none on Meta | a trapdoor remote, a mapped trapdoor | with the trapdoor component (M10+) | `Generated/Types/obj.item.g.cs` |
 | `game/machinery/photobooth.dm:193-220` | the photobooth's button assembly (`/obj/item/assembly/control/photobooth_control`, inert) with the photobooth itself (inert; Meta 2, with its button: the HoP's and security's) | the photobooth's button | with the photobooth (photography, M10+) | `Generated/Types/obj.item.g.cs` |
@@ -4260,7 +4146,6 @@ pointer, the laser pointer, the desk bell, the vehicle keys, the universal scann
 DV522 (the target's pixel test). At the snapshot `inspector.dm` holds only the N-spect scanner: no inspection report, no clown's scanner.
 | `items/dice.dm:267-446` | the Die of Fate (`/obj/item/dice/d20/fate` and its one-use, cursed and stealth kinds): its twenty outcomes on a roll (dust, death, a swarm of creatures, the gear destroyed, monkeying, the cold, the cookie, the cash, the Mateba, a random spellbook, the summoned servant, the wizard's robes and powers) and its pickup by a non-wizard; it needs the wizard's spells (`summon_mob/dice`, the random spell granter), `make_wizard` and `IS_WIZARD`, and `/datum/disease/cold`. The types stay inert. | the wizard's spellbook or an admin's spawn | with the wizard (D333: the antagonists are the xenomorphs alone) | `game/objects/items/dice.cs` |
 | `weaponry/melee/claymore.dm:55-79`, `:107-260` | the cutlass (its Initialize adds `/datum/element/cuffable_item`, inert) and the highlander's claymore with its robot kind (the notches, the pinpointer to the nearest highlander, the bloodthirst; an admin event's): the types stay inert. | the pirates' bitrunning domain, the mystery box, a cutlass crafted; the Highlander admin event | with the melee leftovers (cutlass) and the admin events (highlander) | `game/objects/items/weaponry/melee/claymore.cs` |
-| `modules/mining/equipment/vent_pointer.dm` | the vent pointer (`/obj/item/pinpointer/vent`), which points at Lavaland's and the icemoon's ore vents: the type stays inert | a miner's vent pointer | with mining's ore vents (Lavaland) | (none yet) |
 | `items/granters/magic/` (the wizard's) | the wizard's spellbooks wait for their spells (section 221); the skill, crafting, sign language, origami, chuunibyou and smoke books came with gaps SL1 | reading a manual | with the wizard | (inert) |
 
 ## 207. Closets, crates and dispensers left (gaps ST3, D333)
@@ -4275,8 +4160,7 @@ medical, personal) that were left; the water cooler, the serving dish, the irish
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `crates_lockers/closet_see_inside.dm` (the datum whole) | what a mob shut in a closet sees: tg gives its client two images, the closet's sprite greyed out and the closet's contents through a mask under the door at 85 alpha; the 3D client draws a closet as a model, and a player inside it is drawn no 2D overlay of either. The closet still makes the datum (`closets.dm:72`), which stays inert | a player shut in a closet or crate | the first-person view from inside a closet, when it is designed (the client's, not tg's images) | `game/objects/structures/crates_lockers/closets.cs` |
-| `abandoned_crates_loot.dm:126-136` | a loot pick makes a thing that stays inert: the crate mimic (`/mob/living/basic/mimic/crate`, the mimics' AI and attacks); the mimic's crate still deletes itself when opened (the bwoink sound mine of `:138-149` is live since gaps ST5) | an abandoned crate's loot (each 1 crate in 100) | the mimics with the space fauna's leftovers | `.../crates/abandoned_crates/abandoned_crates_loot.cs` |
-| `crates.dm:209` | the trash cart's swabbable cell lines (`/datum/element/swabable` is inert, as the fern's and the pets') | a swab on a trash cart | cytology | `game/objects/structures/crates_lockers/crates.cs` |
+| `abandoned_crates_loot.dm:126-136` | (the crate mimic a loot pick makes is live since gaps BR2) the mimic's crate still deletes itself when opened (the bwoink sound mine of `:138-149` is live since gaps ST5) | an abandoned crate's loot (each 1 crate in 100) | the mimics with the space fauna's leftovers | `.../crates/abandoned_crates/abandoned_crates_loot.cs` |
 
 ## 208. Storage leftovers (gaps SR1, D333)
 Translated whole: `game/objects/items/storage/sixpack.dm`, `basket.dm`, `garment.dm`, `backpack.dm` (the bag of holding, its inert
@@ -4292,13 +4176,11 @@ curiosity (the dueling case came with gaps GU1, section 215); `toolboxes/fishing
 `others/misc.dm`'s test tube rack, organ box and can ring; `/obj/proc/freeze` (`objs.dm:265`, the organ box freezes what it holds) and
 the sabre sheath's steal target (`gamemodes/objective_items.dm:983`). The cafeteria trays, the monkey cube boxes, the candle and crayon
 boxes, the secure briefcases and the dice bags were live before. Left:
-| `storage/belt.dm:301` | the healing explorer's webbing (`/obj/item/storage/belt/mining/healing`): its two legion cores are preserved with `/obj/item/organ/monster_core/preserve`, which no class declares while `mining/equipment/monster_organs` is untranslated. The type stays inert. | the mining vendor's kit, a Lavaland ruin's loot | with mining's monster organs (Lavaland) | `game/objects/items/storage/belt.cs` |
 | `boxes/clothes_boxes.dm:62-69` | the rumble royale broadcast kit (`/obj/item/storage/box/syndie_kit/battle_royale`): its remote links its implanter (`/obj/item/royale_remote/link_implanter`, `devices/battle_royale.dm` untranslated). The type stays inert. | an admin's or an uplink's spawn | with the battle royale devices (the syndicate's uplink items) | `game/objects/items/storage/boxes/clothes_boxes.cs` |
-| `boxes/fishing_boxes.dm` (whole), `toolboxes/fishing.dm:39-53` | the fishing boxes (hooks, lines and their master kinds, the fish revival kit, the lures, the aquarium props) and the super fishing toolbox: their contents (hooks, lures, bait, fish cases, the aquarium kit, the fish analyzer) are fishing's and inert, `modules/fishing` is not live enough for them (the brief's rule). The types stay inert; the fishing toolbox and its compact kind are live (Meta's two), their fishing difficulty element a deferred leaf. | the fishing vendor, the fishing mystery box, the toolbox's master kind | with fishing (after the core version) | (none; `toolboxes/fishing.cs`) |
 | `storage/dufflebags.dm:109-121` | the living duffel bag (`/obj/item/storage/backpack/duffelbag/cursed`): its `/datum/component/curse_of_hunger` (the hunger, the eating of food put inside, the drop-deletion) is untranslated. The type stays inert. | the clown's cursed bag (an uplink item, a chaplain's curse) | with the cursed items (the curse of hunger component) | `game/objects/items/storage/dufflebags.cs` |
 | `storage/belt.dm:912` (the sabre), `:938`, `:959` | the sheaths are live but their blades are other packages': the captain's sabre (`weaponry/melee/sabre.dm`: its bane, its parry, the sounds of drawing and sheathing it), the katanas and the energy katana stay inert; the scabbard's gladius is live (gaps DE1). | the captain's locker, the katana's sheath | with the melee leftovers (PORT-CHECKLIST 8) | `game/objects/items/weaponry/melee/sabre.cs` (none yet) |
-| `datums/storage/subtypes/others/` (`cards.dm`, `carpskin_bag.dm`, `extract_inventory.dm`, `fish_case.dm`, `misc.dm`'s Easter basket, card binder and toilet bong, `rped.dm`), `pockets.dm:201-230` | the storage kinds of items outside `items/storage/` (the trading cards, the carpskin fish bag, the slime extract inventory, the fish cases, the Easter basket, the card binder, the toilet bong, the rapid part exchange device, the helmet's and the void cloak's pockets): they come with their items | those items | with their items (PORT-CHECKLIST 8, research and the antagonists' gear) | (none) |
-| `fishing/aquarium/aquarium_kit.dm`, `fishing/fishing_equipment.dm`, `species_types/snail.dm`, `events/holiday/easter.dm`, `heretic/items/unfathomable_curio.dm`, `fugitive/hunters/hunter_gear.dm`, `boombox/music_tapes.dm`, `quirks/positive_quirks/poster_boy.dm`, `martial/wrestling.dm` | the `/obj/item/storage` types defined outside `items/storage/` (the aquarium kits, the fishing bags, the snail's shell, the Easter basket, the heretic's curio, the hunters' gear, the music tape box, the poster boy's box, the wrestling belt): not SR1's files; they come with their own packages | those items | with their packages | (their mirrors) |
+| `datums/storage/subtypes/others/` (`carpskin_bag.dm`, `fish_case.dm`, `misc.dm`'s Easter basket, and toilet bong, `rped.dm`), `pockets.dm:201-230` | the storage kinds of items outside `items/storage/` (the carpskin fish bag, the fish cases, the Easter basket, the toilet bong, the rapid part exchange device, the helmet's and the void cloak's pockets; the trading cards' and the card binder's came with gaps RC1): they come with their items | those items | with their items (PORT-CHECKLIST 8, research and the antagonists' gear) | (none) |
+| `species_types/snail.dm`, `events/holiday/easter.dm`, `heretic/items/unfathomable_curio.dm`, `fugitive/hunters/hunter_gear.dm`, `boombox/music_tapes.dm`, `quirks/positive_quirks/poster_boy.dm`, `martial/wrestling.dm` | the `/obj/item/storage` types defined outside `items/storage/` (the snail's shell, the Easter basket, the heretic's curio, the hunters' gear, the music tape box, the poster boy's box, the wrestling belt; the fish cases, the fishing bags and the fishing boxes are live since gaps FI1-3): not SR1's files; they come with their own packages | those items | with their packages | (their mirrors) |
 ## 209. The clothing leftovers (gaps CL1, D333)
 Translated whole: `clothing/head/` `animalears.dm`, `cakehat.dm`, `cone.dm`, `garlands.dm`, `tinfoilhat.dm`, `tophat.dm`,
 `whoopee.dm`, `wig.dm`, `masks/gondola.dm`, `gloves/bone.dm`, `gloves/combat.dm`, `shoes/costume.dm`, `galoshes.dm`, `gunboots.dm`,
@@ -4328,24 +4210,18 @@ pins, the salesman's glasses) are live since gaps MS1 (section 227).
 | `clothing/chameleon/` (`chameleon.dm`, `chameleon_drone.dm`, `generic_chameleon_clothing.dm`) and every `*/chameleon` subtype | the chameleon kit: the disguise action that copies a chosen item's look, the EMP's random look, the drone's chameleon projector; traitor gear | the syndicate uplink's chameleon kit | with the traitors (D333: the antagonists are the xenomorphs alone) | (none yet) |
 | `spacesuits/plasmamen.dm`, `under/jobs/Plasmaman/`, `gloves/plasmaman.dm` | the plasmamen's envirosuits and helmets (the self-extinguishing charges, the helmet's lamp and welding visor, the smile and the job colours) | a plasmaman crew member | with the species (PORT-CHECKLIST section 4) | (none yet) |
 | `suits/ethereal.dm`, `under/ethereal.dm` | the ethereals' raincoats and the lustrous jumpsuit (their colour from the wearer's light) | an ethereal crew member | with the species (PORT-CHECKLIST section 4) | (none yet) |
-| `suits/reactive_armour.dm`, `suits/reactive_armour_dimensional_themes.dm` | the reactive armour and its kinds (teleport, fire, stealth, tesla, repulse, table, hallucinating, radiation, bioscrambling, delimbering, ectoplasm, dimensional): every kind needs an anomaly core put in (`/obj/item/assembly/signaler/anomaly/*`, inert) and their `hit_reaction` the human's `check_block` (below) | the research director's armour shell with a core | with the anomaly cores (the research of anomalies) | (none yet) |
-| `belts/polymorph_belt.dm` | the polymorph belt: a bioscrambler anomaly core (inert) and the shapeshift spell (`spell/shapeshift/polymorph_belt`) | the belt made at the protolathe | with the anomaly cores and the shapeshift spells | (none yet) |
-| `head/perceptomatrix.dm` | the perceptomatrix helmet: a hallucination anomaly core (inert) and its pointed hallucination spell | the helmet made at the protolathe | with the anomaly cores | (none yet) |
 | `neck/horrific_necktie.dm` | the horrific necktie (`tie/disco`): the spirit it grabs and its voice | an admin's spawn, the bitrunning loot | with the ghost roles' polls | (none yet) |
 | `head/mind_monkey_helmet.dm` | the monkey mind magnification helmet: a ghost poll that puts a player into the monkey | the helmet made at the protolathe | with the ghost roles' polls | (none yet) |
 | `neck/collar_bomb.dm` | the collar bomb and its button: its wires (`/datum/wires/collar_bomb`) and the cuffable item element are inert | the uplink's collar bomb kit | with the traitors (D333) and the wire hacking | (none yet) |
 | `clothing/outfits/` (`standard.dm`, `ert.dm`, `vv_outfit.dm`, `vr.dm`) | the admin outfits, the ERT outfits, the outfit made from a mob's variables and the virtual reality outfits: no live job needs one | an admin's select-equipment, the ERT | with the admin tools and the ERT | (none yet) |
-| `gloves/special.dm:180-262` | the athletic fishing gloves (the workout while fishing) and their mob-fisher rod: the profound fisher component and the fishing are inert | fishing with the gloves on | with fishing (M10+) | `modules/clothing/gloves/special.cs` |
 | `neck/pearl.dm` | the pearl necklace: the wearer's legs swapped for a cerulean tail when wet (the cerulean species' fish tail organ and its limbs) | the necklace from the ocean loot | with the species (cerulean) | (none yet) |
 | `shoes/wheelys.dm` | the wheelys and the rollerskates: their skateboard vehicle (`/obj/vehicle/ridden/scooter/skateboard/wheelys`) and the riding component are inert | the wheelys' item action | with the vehicles and riding | (none yet) |
 | `clothing.dm:545` | `generate_female_clothing` (`GLOB.female_clothing_icons`, the female cut of a jumpsuit, `wear_female_version` deferred, DV-F1a) | a woman's jumpsuit drawn | the 3D pass of the bodies (C2) | `modules/clothing/clothing.cs` |
 | `shoes/_shoes.dm:38`, `under/_under.dm:74` | the screentips (`add_context`, live-partial rows; `register_context` not called): D291 keeps them deferred | a hover with a held item | D291 | (the generated stubs) |
-| `masks/costume.dm:34`, `under/accessories/badges.dm:224`, `under/costume.dm:339` | `setup_reskins` (`Dm.Deferred`): the emotion mask's, the pride pin's and the mech suit's reskin menus (`/datum/component/reskinable_item`, inert, as section 114) | the alt-click reskin | with the reskins | the files of the sites |
 | `shoes/costume.dm:93`, `under/skirt_dress.dm:12` | `AddElement(/datum/element/gags_recolorable)` (`Dm.Deferred`): the glow shoes' and the striped dress's colours changed with a spray can | a spray can on them | with the GAGS recolouring | the files of the sites |
 | `head/soft_caps.dm:167` | the fishing hat's skill reward element (`Dm.Deferred`) | the fishing hat | with the skills | `modules/clothing/head/soft_caps.cs` |
 | `head/wig.dm:18` | `AddComponent(/datum/component/hat_stabilizer)` (`Dm.Deferred`): a hat worn over the wig | a hat on a wig | with the hat stabilizer | `modules/clothing/head/wig.cs` |
 | `suits/armor.dm:481` | the heavy armour's mesh texture on the chest (`equipment_bodypart_texture`, inert, as `suits/utility.dm`) | the heavy armour worn | M10+ (bodypart textures) | `modules/clothing/suits/armor.cs` |
-| the `adjust_fishing_difficulty` elements of the package's clothing (`Dm.Deferred`): `glasses/_glasses.dm:524`, `:531`, `:726`, `:794`; `gloves/bone.dm:18`, `combat.dm:30`, `:40`, `insulated.dm:140`, `special.dm:17`, `:82`; `head/collectable.dm:121`, `:147`, `:196`, `fedora.dm:42`, `hardhat.dm:260`, `helmet.dm:363`, `:514`, `jobs.dm:718`, `moth.dm:18`, `pirate.dm:10`, `soft_caps.dm:168`; `masks/animal_masks.dm:157`, `:161`, `:166`, `:249`, `:253`, `:258`, `:311`, `:315`, `:320`, `gasmask.dm:253`; `shoes/boots.dm:83`, `:202`, `costume.dm:56`, `:139`, `galoshes.dm:20`; `suits/armor.dm:445`, `:754`, `costume.dm:286`, `:302`, `:422`, `:436`, `:451`, `:465`, `:642`, `ghostsheet.dm:19`, `jobs.dm:68`, `:382`, `moth.dm:24`; `under/jobs/civilian/curator.dm:34`, `miscellaneous.dm:67`, `skirt_dress.dm:52`, `:69`, `suits.dm:107`, `:118`, `syndicate.dm:141`, `:186`; the wizard hats' and robes' `antagonists/wizard/equipment/wiz_robe.dm:20`, `:134` | the fishing difficulty the clothing adds (as section 105) | fishing in them | with fishing (M10+) | the files of the sites |
 | `mob/living/carbon/human/human_defense.dm:79` | the human's `check_block` (not translated): the `hit_reaction` of the balloon vest (its pop on a sharp hit or a bullet), the durability suits and helmets (their wear) and the emergency suit (its tear) are translated but no attack calls them yet | a worn suit hit | with the blocks (the human's `check_block`) | `modules/clothing/suits/armor.cs`, `head/helmet.cs`, `spacesuits/softsuit.cs` |
 
 ## 210. Buildable structures and the gym (gaps ST4, D333)
@@ -4374,11 +4250,8 @@ Leaves:
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `weaponry/melee/soulscythe.dm` | the soulscythe (`/obj/item/soulscythe`, `/mob/living/basic/soulscythe` and its projectile): a possessed scythe that a ghost takes over, flies with it and fights; it comes only from Lavaland's necropolis chests | a necropolis chest's loot | with Lavaland (PORT-CHECKLIST 10) | (none yet) |
 | `modules/mob/living/basic/boss/thing/thing_objects.dm:1-49`, `:82-140` | the Thing boss's spikes and acid (`/obj/structure/thing_boss_spike`, `/obj/effect/temp_visual/incoming_thing_acid`, `/obj/effect/thing_acid`) | the Thing's fight | with the boss and its ruin (PORT-CHECKLIST 12.3) | `modules/mob/living/basic/boss/thing/thing_objects.cs` |
 | `weaponry/melee/sabre.dm:28`, `:136` | the sabre's and the parsnip sabre's `cuffable_item` element (binding them to a wrist with handcuffs): `Dm.Deferred`, as in every cuffable item | handcuffs used on a held sabre | with the cuffed item status effect (section 46) | `game/objects/items/weaponry/melee/sabre.cs` |
-| `weaponry/melee/baton.dm:799` | the stunsword's reskins (`/datum/component/reskinable_item`): the reskin menu | the reskin menu | with the reskins (section 114) | `game/objects/items/weaponry/melee/baton.cs` |
-| `grenades/ghettobomb.dm:194` | the wiremod assembly as an IED's trigger: the type stays inert with the circuits | a wiremod assembly on a halved pipe | with the circuits | `game/objects/items/grenades/ghettobomb.cs` |
 
 ## 212. The toys (gaps TY1, D333)
 
@@ -4394,7 +4267,6 @@ Leaves:
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `items/tcg/tcg.dm`, `tcg_machines.dm`, `controllers/subsystem/tcgsetup.dm`, `datums/storage/subtypes/others/cards.dm` | the trading card game whole: the cards (`/datum/card` fills itself from `strings/tcg/` JSON through `vars`, rules 10.7), the packs and their opening with the rarity odds, the decks and their shuffling, the card holder machines with their holographic summons and stats overlays (`getFlatIcon` in their name chaser); SStrading_card_game would load the card sets at boot. The packs, decks and card holders stay inert; the card binder (`storage/card_binder`, live) holds nothing it can take | a card pack from the games vendor, the toys crate or an explorer drone | a trading card package, after the toys | (generated) |
 | `items/frog_statue.dm` | the frog statue and the frog contract: the wizard's pet frog bound into a statue, recalled and released (the spellbook's purchase) | the wizard's spellbook | the wizard (D333: xenomorphs only for now) | (generated) |
 | `toys.dm:1759-1762` | the Intento's high score award: `user.client.get_award_status(/datum/award/score/intento_score)` and `give_award` (`Dm.Deferred`; the high scores are kept in `GLOB.intento_players`) | a game over with a new best score | the achievements (D332) | `game/objects/items/toys.cs` |
 | `toys.dm:1191` | the xeno figure's "Hiss!" line without `icon2html` of the figure (the 3D client's chat is text, as `atom_examine.dm:202`) | pulling the xeno figure's string | the chat icons (M9) | `game/objects/items/toys.cs` |
@@ -4420,15 +4292,12 @@ bedsheets and their bin, the syndicate crate's key and the tram plate stay live-
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `signboards/_signboard.dm:173-200` (`MouseEntered`, `MouseExited`, `update_text`) | the text over a written signboard: tg gives the hovering client a private image whose maptext (Grand9K Pixel, 6 pt) shows the text above the board; the server makes the image and puts it in `client.images` as tg does, but the 3D client draws no private image's maptext (it draws maptext for the status displays only), so the text is read on examine | a written signboard looked at | a client change: drawing a private image's maptext (stopped and reported, as the brief asks) | `game/objects/structures/signboards/_signboard.cs` |
-| `signboards/holosign.dm:25`, `:60`, `:162-236`; `reflector.dm:271-300` | the holographic signboard's and the reflector's circuit components (`/obj/item/circuit_component/holo_signboard`, `/obj/item/circuit_component/reflector`) and the USB port the sign makes; the sign text's glow in the dark (`emissive_appearance`, DV12) | a USB cable or a circuit on a holographic signboard or a reflector | the integrated circuits (wiremod, inert); DV12 | `.../signboards/holosign.cs`, `game/objects/structures/reflector.cs` |
 | `traps.dm:99-181` | the bounty trap (`/obj/structure/trap/stun/hunter`, `/obj/item/bountytrap`, its radio mistyped as a type by the converter): a fugitive hunter's tool that only fugitives set off | the fugitive hunters' gear | the antagonists (D333), with the fugitive hunters | `game/objects/structures/traps.cs` |
 | `antagonists/fugitive/hunters/hunter_gear.dm` (all but the bouncy castle); `antagonists/cult/cult_structures.dm:91-` | the fugitive hunters' gear (the bounty locator, the psychic's and the bounty hunters' items); the cult's structures (the altar, forge, archives, pylon and their item dispensers) | the fugitive hunters, the cult | the antagonists (D333) | `modules/antagonists/fugitive/hunters/hunter_gear.cs`, `modules/antagonists/cult/cult_structures.cs` |
-| `maintenance.dm:22`, `:39` | the moisture trap's fish safe storage and fishing spot (`Dm.Deferred`; the fish source's `prob(50)` is drawn) | a fishing rod cast into a moisture trap | fishing | `game/objects/structures/maintenance.cs` |
 | `billboard.dm:16`, `containers.dm:17` | the see-through fade of the billboards and the shipping containers for a top-down viewer behind them (DV499, `Dm.Deferred`) | a player behind a billboard or a container | never (the first-person view, DV499) | `game/objects/structures/billboard.cs`, `containers.cs` |
 | `life_candle.dm:36`, `:93` | the life candle's light middleman (its flame's flicker, `fire_flicker_middleman`) | a lit life candle | never (client lighting, D24), as the welder's and the lighter's | `game/objects/structures/life_candle.cs` |
-| `mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm`, `mook/mook_village.dm:2-20` | the ore containers' subtypes: the gutlunchers' food troughs (and the raptor trough of the wood recipes) and the mook village's material stand stay inert | Lavaland's ashwalker nest and mook village, a raptor trough built from planks | Lavaland | (inert) |
 | `items.dm:1904`, `bodypart/*.dm` `animate_atom_living`; `staff.dm`, `wand.dm`, `wand_animate.dm`, `wand_rebel.dm` | an item's, a gun's and a bodypart's own `animate_atom_living` (a mimic of the item, the wands' and staffs' animation); a structure and a petrified statue come alive (`structures.dm:71`, `petrified_statue.dm:92`) | the staff of animation, the wands, a DNA meltdown's vomited organ | the wizard (antagonists) and the magic projectiles | (generated stubs, `datums/instability_meltdown.cs`) |
-| `structures/cannons/` (`cannon.dm`, `cannonballs.dm`, `mounted_guns/mounted_gun.dm`), `deployable_turret.dm`, `spawner.dm`, `icemoon/cave_entrance.dm`, `lavaland/geyser.dm` (but its plunger, live), `divine.dm`, `hivebot.dm` | the off-station structures: the pirates' cannons and their balls, the mounted guns (the pirates' and the Ice Box's), the deployable turrets, the mob spawners (Lavaland's and Ice Box's tendrils, the syndicate's and the ruins'), Ice Box's cave entrances, Lavaland's geysers (the plumbing pump's sources), the religion's sacrificial altar and sect structures, the hivebot beacon | the pirates, the ruins, Lavaland and Ice Box, the chaplain's sects | the antagonists, the ruins, Lavaland, the religions | (inert) |
+| `structures/cannons/` (`cannon.dm`, `cannonballs.dm`, `mounted_guns/mounted_gun.dm`), `spawner.dm:253-297` (the cult's eldritch gateway), `lavaland/geyser.dm` (but its plunger, live), `divine.dm`, `hivebot.dm` | the off-station structures: the pirates' cannons and their balls, the mounted guns (the pirates' and the Ice Box's) (the deployable turrets came with gaps JB1), the cult's proteon gateway (the other mob spawners and Ice Box's cave entrances are live since gaps LV5), Lavaland's geysers (the plumbing pump's sources), the religion's sacrificial altar and sect structures, the hivebot beacon | the pirates, the ruins, Lavaland and Ice Box, the chaplain's sects | the antagonists, the ruins, Lavaland, the religions | (inert) |
 
 ## 214. The stacks' leftovers (gaps SK1, D333)
 
@@ -4482,10 +4351,9 @@ Leaves:
 | `guns/ballistic/shotgun.dm:121-190` | the cycler shotgun (`automatic/dual_tube`, its bounty and deadly kinds) | the fugitive hunters, the spy's uplink | the antagonists (D333) | (generated) |
 | `ammunition/ballistic/shotgun.dm:226` | the bioterror dart shells | the nuclear operatives' uplink | the operatives (D333) | (generated) |
 | `projectile/bullets/junk.dm:48-60` | the ant dart of an improvised shell | firing an ant-filled junk shell | with the ants reagent | (generated) |
-| `guns/ballistic/revolver.dm:389` | the soul revolver's soul capture into `/obj/item/soulstone/anybody/revolver` (`capture_soul`, `Dm.NotTranslated`) | the ruin's revolver fired at one's own head | the cult's soulstones (D333) | `modules/projectiles/guns/ballistic/revolver.cs` |
 | `projectile/beams.dm:430` | the abductors' alien shrink bolt (a var block under the inert magic bolts) | the abductors' shrink ray | the abductors (D333) | (generated) |
 | `game/objects/items.dm:1851`, `:1868` | `modify_fantasy_variable`, `reset_fantasy_variable` (skeletons): the guns' fantasy bonuses are translated and call them | the fantasy component (inert) | M10+ | `game/objects/items.cs` |
-| `capture_the_flag/ctf_equipment.dm`, `awaymissions/mission_code/stationCollision.dm:51-60`, `awaymissions/cold_stuff.dm:28-33`, `wiremod/shell/gun.dm`, `xenobiology/crossbreeding/_weapons.dm:85-107`, `religion/burdened/psyker.dm:127-197`, `heretic/items/hunter_rifle.dm`, `heretic_gateway_guns.dm`, `cult/cult_items.dm`, `abductor_items.dm:237-250` | the guns defined outside `modules/projectiles` (22 CTF guns, the away missions' four, the wiremod gun, the bloodchill, the psyker chaplain's revolver, the heretics', the cult's and the abductors' guns with the abductor pin) | capture the flag, the away missions, circuits, xenobiology's crossbreeds, the burdened sect, the antagonists | with those packages (the antagonists: D333) | (generated) |
+| `capture_the_flag/ctf_equipment.dm`, `awaymissions/mission_code/stationCollision.dm:51-60`, `awaymissions/cold_stuff.dm:28-33`, `heretic/items/hunter_rifle.dm`, `heretic_gateway_guns.dm`, `cult/cult_items.dm`, `abductor_items.dm:237-250` | the guns defined outside `modules/projectiles` (22 CTF guns, the away missions' four, the heretics', the cult's and the abductors' guns with the abductor pin; the psyker chaplain's revolver is live with the chapel, section 244, the crossbreeds' blood chiller with section 243) | capture the flag, the away missions, the antagonists | with those packages (the antagonists: D333) | (generated) |
 
 ## 216. Devices, implants, the RCD family and the disks (gaps DV2, D333)
 
@@ -4509,10 +4377,8 @@ the jammer's screentip. Leaves:
 | `implants/implant_tacmap.dm` | the tactical map implant and its nuclear operative, leader and off-base kinds: the minimap HUD action and its icons (`/datum/minimap`, the minimap system is not ported) and the operatives' base door denial | the tactical map implant case, the nuclear operatives' implants | the antagonists (D333), with the minimap system | (generated, inert) |
 | `implants/implant_abductor.dm`, `crab17.dm`, `devices/aicard_evil.dm` (with `/obj/item/disk/computer/syndie_ai_upgrade`) | the abductors' recall implant, the crab-17 phone with its checkout machine and the market crash, the syndicate intelliCard and its AI upgrade disk | the abductors, traitors' uplinks | the antagonists after the xenomorphs (D333) | (generated, inert) |
 | `devices/battle_royale.dm`, `implants/implant_battle_royale.dm` | the battle royale: its controller, the royale implanter and remote, the implant that kills its holder outside the zone | an admin event | the admin tooling (M10+) | (generated, inert) |
-| `quantum_pad.dm` (`/obj/machinery/quantum_pad`), `research/anomaly/anomaly_core.dm` | the quantum pad that links a quantum keycard (`set_pad`), and the anomaly cores the anomaly releaser injects: both are untranslated, so a keycard stays unlinked and only an admin-made core reaches the releaser | the quantum pads, an anomaly's core | science (M10+) | `game/objects/items/devices/quantum_keycard.cs`, `anomaly_releaser.cs` |
 | `boombox.dm:118`; `vaporizer.dm:117` | the boombox's floating music notes (`/particles/musical_notes` in a particle holder, `Dm.Deferred`) and the vaporizer's steam (`/particles/smoke/steam`, set but not drawn): DM particles, which the client does not draw | a playing boombox, an EMP'd vaporizer | the client's particles (after the core version) | `game/objects/items/devices/boombox/boombox.cs`, `vaporizer.cs` |
 | `implantchair.dm:195` | the neural imprinter's brainwash (`brainwash()`, `Dm.NotTranslated`) | an admin-spawned brainwashing chair | the antagonists (D333), with the brainwashed | `game/objects/items/implants/implantchair.cs` |
-| `floppy_disk.dm:92` | the disk's reskin colours (`/datum/atom_skin/floppy_disk` through `/datum/component/reskinable_item`, section 114) | a floppy disk | with the reskin component | `game/objects/items/floppy_disk.cs` |
 | `pressureplates.dm:41` | the pressure plate's "pp_overlay" picture on the floor tile that hides it (DV529: an `/image` has no `ref()` in the port, and the undertile element is keyed by its arguments' refs) | a plate under a floor tile | an image ref in the shim (object-model.md section 3) | `game/objects/items/devices/pressureplates.cs` |
 
 ## 217. The items' odds (gaps OD1, D333)
@@ -4574,7 +4440,6 @@ A). MetaStation's two flatpacked flatpackers, its lead-acid battery, its vault p
 | `skateboards.dm:17` | the skateboard's `attack_self`: the board put on its wheels as an `/obj/vehicle/ridden/scooter/skateboard` (improvised, pro, hoverboard, admin and holy kinds) with its user buckled on it; so the six boards stay inert, and the holy skateboard's translated `Initialize` (its null rod core) waits for them too | a skateboard used in hand; the chaplain's holy skateboard | the vehicles (`modules/vehicles/scooter.dm`, with their riding, section 4201's row) | `game/objects/items/skateboards.cs` (PARTIAL) |
 | `piggy_bank.dm:47`, `:64`, `:98` | `SSpersistence.load_piggy_bank`, `save_piggy_bank` (from the round-end callback) and `queued_broken_piggy_ids` (`Dm.Deferred`): the museum's and the vault's money kept between rounds, a broken one starting empty; each round they start with their initial money | the museum and vault piggy banks | persistence (owner-deferred, D333) | `game/objects/items/piggy_bank.cs` |
 | `dna_probe.dm:189-193` | the carp DNA sampler's self-mutation (`Dm.NotTranslated` after its fifteen seconds): its user turned into a raging space dragon (`change_mob_type`, the anger glow, `dragon_rage`, the Lifesign Alert), the sampler deleted | an admin-made carp sampler used in hand with carp DNA | the antagonists (D333), with the space dragon | `game/objects/items/dna_probe.cs` |
-| `drug_items.dm:35` | the moon rock's swabbable cell lines (`/datum/element/swabable` is inert, as the fern's and the pets') | a swab on a moon rock | cytology | `game/objects/items/drug_items.cs` |
 | `game/machinery/flatpacker.dm`, `modules/vending/mail.dm` | the flatpacker and the mail sorter that the flatpacks deploy are inert machines: deployed, they stand with their parts but have none of their own procs (the flatpacker's packing and its window, the sorter's sorting); the shuttle propulsion engine's flatpack deploys a live engine | MetaStation's two flatpacks, the cargo mail sorter's | the fabricators (D333) and cargo's mail | (generated, inert) |
 
 ## 219. The MODsuit core (gaps MO1, D333)
@@ -4582,7 +4447,7 @@ Translated whole: `modules/mod/` `mod_control.dm`, `mod_activation.dm`, `mod_act
 `mod_link.dm`, `mod_paint.dm`, `mod_part.dm`, `mod_theme.dm` (the themes' suit procs: `set_up_parts`, `set_skin`, the mining theme's
 suit storage), `mod_types.dm`, `mod_ui.dm` and `modules/modules_visor.dm`; the procs of `mod_core.dm` but the soul shard cores, of
 `mod_clothes.dm`, `modules/_module.dm` and `modules/modules_general.dm` but the leaves below, and of
-`modular_computers/file_system/programs/maintenance/modsuit.dm` but its circuit component; `datums/components/hat_stabilizer.dm`,
+`modular_computers/file_system/programs/maintenance/modsuit.dm` (its circuit component since gaps CI3); `datums/components/hat_stabilizer.dm`,
 `datums/wires/mod.dm`, `client/preferences/mod_select.dm`, the jump jet status effect (`status_effects/buffs.dm`),
 `parse_slot_flags` (`__HELPERS/mobs.dm`), `GLOB.mining_suit_allowed` (`__DEFINES/inventory.dm:311`), the MOD units' steal objectives
 (`objective_items.dm:325`, `:889`, `:900`, `:911`, `:933`), `get_loose_container`'s sealed-suit check (`__HELPERS/atoms.dm:332-340`)
@@ -4597,14 +4462,12 @@ shock absorber and the advanced EMP shield modules. Leaves:
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `mod_types.dm:23-25`, `mod_control.dm:109`, `:619` (TEMPORARY SEAM, D132; narrowed by gaps MO2) | the space ninja's modules (`modules_ninja.dm` but the cloaking module, the antagonists', D333: the ninja cloak, the camera vision welding module, the hacker, the weapon recall, the adrenaline boost, the energy net, the EMP pulse and the reinforced DNA lock) and the MOD circuit module (wiremod, the row below) are inert: a pre-equipped suit is made without them, a theme's inbuilt one is not installed, and `install` refuses one by hand with tg's "not ported yet" balloon (`InertSeam.MissingInitialize`), so that an inert type never runs as the base module (every other module file is live since gaps MO2, section 222) | the space ninja's suits (the ninja's and the empty ninja kind), the administrative suit (its ninja cloak), the research suit (the circuit module; on Meta the research director's, the only module the seam leaves out there), a module put into a suit | the ninja (M10+); wiremod (not planned) | `mod_types.cs`, `mod_control.cs`; `Gaps/ModsuitsMO1Tests` and `Gaps/ModsuitsMO2MetaTests` pin it |
+| `mod_types.dm:23-25`, `mod_control.dm:109`, `:619` (TEMPORARY SEAM, D132; narrowed by gaps MO2) | the space ninja's modules (`modules_ninja.dm` but the cloaking module, the antagonists', D333: the ninja cloak, the camera vision welding module, the hacker, the weapon recall, the adrenaline boost, the energy net, the EMP pulse and the reinforced DNA lock) are inert: a pre-equipped suit is made without them, a theme's inbuilt one is not installed, and `install` refuses one by hand with tg's "not ported yet" balloon (`InertSeam.MissingInitialize`), so that an inert type never runs as the base module (every other module file is live since gaps MO2, section 222) | the space ninja's suits (the ninja's and the empty ninja kind), the administrative suit (its ninja cloak), a module put into a suit | the ninja (M10+) | `mod_types.cs`, `mod_control.cs`; `Gaps/ModsuitsMO1Tests` and `Gaps/ModsuitsMO2MetaTests` pin it |
 | `mod_core.dm:501-656`, `mod_types.dm:18` (TEMPORARY SEAM, D132) | the soul shard core and its wizard kind (`/obj/item/mod/core/soul`, `soul/wizard`, inert): its charge is its wearer's sanity, and its soulstone and its backlash read the cult, heretic and wizard antagonists; a pre-equipped suit with it (the wizard's enchanted suit) is made coreless rather than run it as the base core | the wizard's enchanted suit (the spellbook, an admin), the soul shard core's crafting recipe | the antagonists (D333) | (generated, inert); `mod_types.cs` |
 | `mod_core.dm:478` | the lavaland core's pollen (`/particles/pollen/modsuit` on the wearer, `Dm.Deferred`): DM particles, which the client does not draw (the flowers it grows are translated) | an active suit with the plasma flower core | the client's particles (after the core version) | `modules/mod/mod_core.cs` |
 | `mod_clothes.dm:19`, `:44` | the mesh texture the MOD helmet and chestplate draw on the head and chest (`/datum/element/equipment_bodypart_texture`, `Dm.Deferred`; as the space suits', section 1) | every MOD helmet and chestplate | M10+ (bodypart textures) | `modules/mod/mod_clothes.cs` |
 | `mod_clothes.dm:51` | `handle_cerulean_modsuit` (`Dm.NotTranslated`): the Cerulean species' modsuit icon, cut and blended on the server (icon procs), read only by `cerulean_update_icons.dm` | a Cerulean in a MODsuit (the species is not ported) | M10+ (species) | `modules/mod/mod_clothes.cs` |
-| `modules_general.dm:1013`, `:1020-1022`, `:1027-1028` | the fishing glove's rod on the gloves (`/datum/component/profound_fisher`) and its easier fishing (`/datum/element/adjust_fishing_difficulty`), `Dm.Deferred`: fishing is not ported (the rod is still put in and taken out) | a fishing glove module with a rod | fishing (M10+) | `modules/mod/modules/modules_general.cs` |
 | `modules_general.dm:983` | the fishing glove's examine names the rod where tg draws its picture (`icon2html`): the 3D client's chat is text | examining the module | chat icons (M10+) | `modules/mod/modules/modules_general.cs` |
-| `programs/maintenance/modsuit.dm:52-71`, `wiremod/shell/module.dm` | the MODsuit Control program's circuit component, the MOD circuit module (`/obj/item/mod/module/circuit`: the research suit lists it, the seam above leaves it out) and its pinned action (`pinnable/circuit`): wiremod (section 164) | a circuit shell, the research suit | wiremod (not planned) | (generated, inert) |
 | `mod_theme.dm:94-104` | the themes' `New` checking that a theme's variants are made of the same parts: `#ifdef UNIT_TESTS` only, inactive in production as in tg | the unit test build | none | `modules/mod/mod_theme.cs` (comment) |
 | `mod_types.dm` (the ninja's, the wizard's, the syndicate's, the ERT's and the admins' suits) | those suits are live with their themes and, since gaps MO2, with their modules but the space ninja's (the seam above; the uplink sells the Syndicate, elite and infiltrator suits since gaps MO2); the antagonists' outfits and spells that hand them out are the antagonists' (D333) | an admin's spawn | the antagonists (D333) | `modules/mod/mod_types.cs`, `modules/uplink/uplink_items.cs` |
 | `suit_storage_unit.dm:736` | `disable_modlink` on a unit whose MOD slot holds a backpack (tg's slot takes either): tg calls `mod.disable_modlink()` on it and runtimes; the port skips it | a backpack in a suit storage unit whose communication wires are cut | none (a tg runtime) | `game/machinery/suit_storage_unit.cs` |
@@ -4623,10 +4486,8 @@ RPED), `machine_frame.dm` and `computer/buildandrepair.dm` (`install_parts_from_
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `ash_flora.dm:429`, `:442`, `:457`, `:506` | `AddElement(/datum/element/raptor_food, ...)` on the cactus fruit, seraka, fire blossom and plasma flower (`Dm.Deferred`): the raptors' growth, ability and colour from the food | feeding a raptor | with the raptors (Lavaland's fauna, PORT-CHECKLIST section 10) | `modules/mining/lavaland/ash_flora.cs` |
 | `ash_flora.dm:219` | the glowgrowth's glow overlay (`emissive_appearance`, DV12) | a glowgrowth not picked | never while DV12 stands | `modules/mining/lavaland/ash_flora.cs` |
 | `elephantgraveyard.dm:15` | the bone statues' see-through fade (`/datum/component/seethrough`, DV499) | a player behind a colossal bone | never as such (DV499: the first-person view) | `modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.cs` |
-| `elephantgraveyard.dm:102` | the oil well's fishing spot (`/datum/component/fishing_spot` with `/datum/fish_source/oil_well`, `Dm.Deferred`) | fishing in the oil well | with fishing (`modules/fishing`) | `modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.cs` |
 | `minerals.dm:1263`, `:1272` | the very strong rock's legendary miner achievement and the mining experience (`Dm.Deferred`); a master miner breaks it, and no mind is one while the skills are not ported (D243), so nothing reaches them | a master miner on very strong rock | achievements (owner-deferred, D333); the skills (section 4) | `game/turfs/closed/minerals.cs` |
 ## 221. The skills (gaps SL1, D333)
 
@@ -4653,14 +4514,12 @@ fitness (`calculate_fitness`, `compare_fitness`); Pwr Game (`drink_reagents.dm:6
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `granters/magic/barnyard.dm:24`, `blind.dm:16`, `charge.dm:17`, `fireball.dm:16`, `forcewall.dm:16`, `knock.dm:16`, `mindswap.dm:18`, `:33`, `summon_cheese.dm:23`, `summon_item.dm:16`; `_spell_granter.dm:63`, `:81` | the wizard's spellbooks (their recoils, the mindswap book's ending, the random books' picks): their spells are inert | a wizard's spellbook | with the wizard (an antagonist, D333) | (inert) |
+| `granters/magic/barnyard.dm:24`, `blind.dm:16`, `charge.dm:17`, `fireball.dm:16`, `forcewall.dm:16`, `knock.dm:16`, `mindswap.dm:18`, `:33`, `summon_cheese.dm:23`; `_spell_granter.dm:63`, `:81` | the wizard's spellbooks (their recoils, the mindswap book's ending, the random books' picks): their spells are inert | a wizard's spellbook | with the wizard (an antagonist, D333) | (inert) |
 | `playtime_reward_cloak.dm:9`, `:15` | the veteran cloak's game preference (`/datum/preference/toggle/playtime_reward_cloak`) | the game preferences | the preferences (owner-deferred, D333) | `modules/client/preferences/playtime_reward_cloak.cs` |
 | `acrobatics.dm:138-143` | the Spinesthetics chip's smoking head: the particle holder is made and placed as tg's, the client draws no BYOND particles (as the cigarettes' smoke) | a flip past the chip's charges | particles (M10+) | `generic_skillchips/acrobatics.cs` |
 | `swimming_tile.dm:96`, `:99`, `:152` | swimming's athletics (the stamina drain and the experience) | a swimmer | with the swimming element (not ported) | (not ported) |
-| `machinery/computer/arcade/_arcade.dm:80`, `amputation.dm:24`, `battle.dm:239`, `:363`, `orion.dm:134-427`, `orion_event.dm:510` | the arcade cabinets' gaming skill | an arcade cabinet | with the arcade cabinets (not ported) | (not ported) |
 | `experimental_cloning_record.dm:31`, `:66` | the clone record's athletics level | the experimental cloner | with the cloner (not ported) | (not ported) |
-| `fish_mount.dm:199`, `fishing_minigame.dm:165-166`, `:361-366`, `sources/_fish_source.dm:177`, `fishing_equipment.dm:325`, `fishing_rod.dm:150`, `:256`, `:265`, `:325`; `gloves/special.dm:233`, `:256` | the fishing skill's experience and difficulty, the athletic fishing gloves | fishing | fishing (after the core version) | `modules/fishing/*` |
-| `kinetic_crusher.dm:368`, `lobstrosity.dm:105-106`, `space_dragon.dm:112-127`, `meteor_deflection.dm:33`, `:61` | the crusher's mining speed, the lobstrosity's and the space dragon's fishing, the meteor deflection's athletics | the crusher, the lobstrosity, the space dragon, a deflected meteor | with their files (not ported; the space dragon an antagonist, D333) | (not ported) |
+| `space_dragon.dm:112-127`, `meteor_deflection.dm:33`, `:61` | the space dragon's fishing (the lobstrosity's is live since gaps FI2), the meteor deflection's athletics (the crusher's mining speed is live since gaps LV2) | the lobstrosity, the space dragon, a deflected meteor | fishing; the space dragon an antagonist (D333); the meteor deflection with its file | (not ported) |
 | `human.dm:898`, `:931` | the fireman carry's athletics (its time and experience): `fireman_carry` is `Dm.NotTranslated` | a fireman carry | M10+ (grabbing) | `modules/mob/living/carbon/human/human.cs` |
 | `deathmatch_modifier.dm:600` | the deathmatch's legendary athletics | a deathmatch | with the deathmatch (not ported) | (not ported) |
 ## 222. The MODsuit modules (gaps MO2, D333)
@@ -4686,14 +4545,10 @@ counts its `3 SECONDS` (30 deciseconds) to kill down by seconds (a victim is era
 `pixel_x` from `base_pixel_y`, and the disposal selector's first tag is a destination's name (`Initialize`, `:387`), which no sorting
 junction matches (the port keeps NONE, which routes and shows the same, until a destination is picked). Leaves:
 | `modules_ninja.dm:60-1020` | the space ninja's modules (the advanced cloak, the camera vision welding module, the star dispenser and its stamina stars, the hacker with its `ninjadrain_act` procs, the weapon recall, the reinforced DNA lock, the EMP pulse, the ninja status readout, the energy net, the adrenaline boost): inert, the D132 seam (section 219) keeps them out of a suit | the ninja's suits, the administrative suit's cloak, a module put into a suit | the ninja (M10+, D333) | `modules/mod/modules/modules_ninja.cs` (PARTIAL); (generated, inert) |
-| `modules_supply.dm:181-222` | the drill digs through `manual_mine`, whose do_after holds (DV348): a player's dig runs only while the left button is down with the crosshair on the rock, so walking into rock with the drill active (tg's bump mining, `bump_mine`) or a middle-click use digs nothing unless the player also holds the left button on the rock; a mob with no player bump-mines as tg (DV354 dropped the bump dig of a mining tool in the hand, not this module's) | a player with an active drill module | an owner question (gaps MO2's report) | `modules/mod/modules/modules_supply.cs` |
 | `modules_supply.dm:778` | the mining micromissile's impact particles (`spawn_particles`, `/particles/...`, `Dm.Deferred`): DM particles, which the client does not draw (the missile's damage and mining are translated) | a sphere-mode missile hitting something | the client's particles (after the core version) | `modules/mod/modules/modules_supply.cs` |
 | `modules_maint.dm:89` | the springlock's achievement (`give_award(/datum/award/achievement/misc/springlock)`, `Dm.Deferred`) | a springlock snapping shut on its wearer | the achievements (D332) | `modules/mod/modules/modules_maint.cs` |
 | `module_kinesis.dm:80-92` | the kinesis drag: the cursor catcher's `given_turf` stays null in the first-person client (DV98), so a grabbed object floats where it was grabbed (with its beam, glow and hum) until it is thrown or let go | a kinesis module grabbing something | DV98 (the cursor catcher's 3D aim) | `modules/mod/modules/module_kinesis.cs` |
-| `timestop.dm:205-209`, `:218-219` | a frozen simple animal's AI off and back on and the hostile one's `LoseTarget` (`Dm.Deferred`): the simple animals are not ported (a basic creature's AI is stopped) | a time stop over a simple animal | the simple animals | `datums/proximity_monitor/fields/timestop.cs` |
-| `research/anomaly/anomaly_core.dm` | the anomaly cores the anomaly-locked modules take (bluespace for the storage of holding and the teleporter, gravitational for the kinesis and anti-gravity modules) are inert research items: a core is slotted, shown and screwed out by the translated component, and an admin's or a prebuilt module's core works, but none comes from a neutralized anomaly (section 36's row at `_anomalies.dm:42`) | a module that needs a core | the anomaly research | (generated, inert) |
 | `modules_service.dm` (the janitorial mister), `modules_maint.dm` (the tanner) | the space cleaner and the spray tan they spray are inert reagents (as the prefilled grenades', section 116): the mister's spray cleans nothing, the tanner's spray tans no one (its radiation dose is translated) | the janitor's mister, the tanner | chemistry's reagents (M8) | (generated, inert) |
-| `xenobiology/crossbreeding/_misc.dm` (but `/datum/saved_bodypart` and the two procs above) | the slime crossbreeds' items of the file (the rewind and timefreeze cameras, the capture device, the others) | xenobiology's crossbreeding | xenobiology | `modules/research/xenobiology/crossbreeding/_misc.cs` (PARTIAL) |
 
 ## 223. The roundstart species, part 1: lizards and felinids (gaps SP1, D333, D338)
 
@@ -4717,11 +4572,8 @@ lizard's and felinid's features (`PreferencesMenu.cs`). The lizard and the felin
 | `species_types/moth.dm`, `ethereal.dm`, `plasmaman.dm`, `cerulean.dm` with their parts, preferences and the cerulean's clothing (`human_update_icons.dm:459` `generate_cerulean_icons`) | the other roundstart species tg ships (`game_options.txt:370-376`) | Character Setup | gaps SP2 | (generated), `human_update_icons.cs` |
 | `species_types/` golems, jellypeople, the pod, fly and snail people, skeletons, zombies, vampires, abductors, shadows, dullahans, the android and the rest | the species that are not roundstart, or not enabled by tg's config | their sources | gaps SP3 | (generated) |
 | `reagents/other_reagents.dm:695-760` | the mutation toxins whose species is not ported yet (`/datum/reagent/mutationtoxin` is live since gaps RG3: a human turns into a ported species, the human, felinid, lizard, fly, shadow and android among them; a toxin whose species is inert keeps him as he is, GAP(D338), section 226) | chemistry, the green slime's extract | gaps SP3 (all the species) | `reagents/other_reagents.cs` |
-| `recipes/slime_extracts.dm:63`, `:68` | the green extract's lizard and felinid reactions (`slimelizard`, `slimefelinid`) | xenobiology | with xenobiology | (generated) |
 | `turfs/open/water.dm:292`, `:315` | the water hater's dislike of a water turf (the water turfs are a skeleton) | a felinid wading | with the water turfs | `game/turfs/open/water.cs` |
-| `fishing/fish/_fish.dm:441` | the felinid tongue's taste for fish (`TRAIT_FISH_EATER`): the fish's food reaction is a skeleton | a felinid eating a fish | with the fishing | `modules/fishing/fish/_fish.cs` |
 | `_species.dm` `family_heirlooms`, `admin/topic.dm:824` `species_cookie` | the felinid's cat toy heirloom (the family heirloom quirk) and the admin's species cookie | the quirk, the admin's cookie | with the quirks (D333: owner-deferred), the admin's topics | (generated) |
-| `antagonists/ashwalker/`, `mob_spawn/ghost_roles/mining_roles.dm`'s ash walker eggs, `ruins/objects_and_mobs/ash_walker_den.dm` | the ash walkers' ghost role, their team and their nest (the species is live) | Lavaland's tendril nest | with Lavaland's ghost roles | (generated) |
 | `antagonists/pirate/` silverscales, `deathmatch/deathmatch_loadouts.dm:779`, `:885`, `experimental_cloner/experimental_cloner_fuckup.dm:23` | the silverscale pirates, the deathmatch's lizard and felinid loadouts, the experimental cloner's felinisation | their antagonists and machines | with them | (generated) |
 | `_species.dm:1975` | `dump_harddel_info` (SSgarbage's hard deletes are not ported, DV7) | a hard delete | (none) | `_species.cs` |
 
@@ -4753,9 +4605,8 @@ blur, the held items' float, the alert and the reverb. Leaves:
 | `drunk.dm:122`, `:169` | the bibulous personality's after-drink moodlet and the whimsical scientist's Ballmer peak lines (`HAS_PERSONALITY` reads the personalities, which nobody has) | a drunk scientist or bibulous drinker | the personalities (owner-deferred) | `datums/status_effects/debuffs/drunk.cs` |
 | `alcohol_reagents.dm:1091`, `:1096` | the devil's kiss's blood crawl exit effect (`crawl.exit_blood_effect`, `Dm.Deferred`): the crawler is still expelled and hurt | a slaughter demon or a blood crawler who drank devil's kiss | the antagonists (D333): the slaughter demon and the blood crawl spell | `reagents/drinks/alcohol_reagents.cs` |
 | `alcohol_reagents.dm:3457` | the poet's dream's heretic dreams (`/datum/status_effect/grouped/heretic_dreams`, inert: `Dm.Deferred`) | drinking a poet's dream | the antagonists (D333): the heretic | `reagents/drinks/alcohol_reagents.cs` |
-| `drink_reagents.dm:247` | milk's `used_on_fish` (`Dm.Deferred`): a bone fish fed milk repaired and sated | feeding milk to a fish | fishing (M10+) | `reagents/drinks/drink_reagents.cs` |
 | `alcohol_reagents.dm:2227` | the bug spray's `/datum/element/bugkiller_reagent` (inert, as the toxins' insecticide's) | splashing bug spray on an insect | with the element's package | `reagents/drinks/alcohol_reagents.cs` |
-| `game/objects/effects/decals/cleanable/food.dm` | the file is PARTIAL: the salt pile only; the tomato smudge's `can_bloodcrawl_in` and the squid ink's `Initialize` are left | a blood crawler; squid ink | the antagonists (D333); the squid | `game/objects/effects/decals/cleanable/food.cs` |
+| `game/objects/effects/decals/cleanable/food.dm` | the file is PARTIAL: the salt pile and the squid ink (gaps KT1); the tomato smudge's `can_bloodcrawl_in` is left | a blood crawler | the antagonists (D333) | `game/objects/effects/decals/cleanable/food.cs` |
 ## 225. The medicines, toxins and addictions (gaps RG2, D333, D339)
 Translated whole: `chemistry/reagents/medicine_reagents.dm` (strange reagent's revival and the fishy reagent's, the stimulants,
 ephedrine, the trauma, mutation and drunkenness cures, flumpuline's eye stalks, earthsblood, modafinil's overdose, the rest of the
@@ -4774,7 +4625,6 @@ mood event is live since gaps MS1 (section 227). Kept as tg has them: nicotine's
 proc does not pass (no jitter); the medicine addiction `QDEL_NULL`s its weak references; regenerative jelly's `expose_mob` names its
 second parameter `reac_volume` (the methods); corazargh and the oculater call their parent twice; spewium's first `vomit` is in the
 old argument order (`MOB_VOMIT_BLOOD`, so its `vomit_type` is never read). Left:
-| `toxin_reagents.dm:80`, `:1437` | mutagen's and bone hurting juice's `used_on_fish` (`Dm.Deferred` stubs, live-partial.txt) | a fish fed or dipped | with fishing (`modules/fishing`) | `modules/reagents/chemistry/reagents/toxin_reagents.cs` |
 | `toxin_reagents.dm:1792` | the spider serum's `mind?.add_antag_datum(/datum/antagonist/spider)` (`Dm.Deferred`; the spiderlings, the bloody vomit and the giant spider are translated) | thirty cycles of spider serum in a body with a mind | the spider antagonist (antagonist-only, D333) | `modules/reagents/chemistry/reagents/toxin_reagents.cs` |
 | `toxin_reagents.dm:1227-1243` | rotatium's turned game plane masters: the server animates their `transform`, the client draws no plane master transform | a player on rotatium | presentation (the plane masters' transform) | `modules/reagents/chemistry/reagents/toxin_reagents.cs` |
 | `generic_addictions.dm:85-97` | the hallucinogen withdrawal's `angular_blur` and `wave` filters on the game plane master: added and removed on the server; the client draws only the blur and colour filters of the game plane | a hallucinogen addict in withdrawal | presentation (the plane filters) | `modules/reagents/withdrawal/generic_addictions.cs` |
@@ -4801,14 +4651,12 @@ client: the game plane's colour filters in their colour spaces (HSL, HCY), its w
 |---|---|---|---|---|
 | `drug_reagents.dm:568-579`, `:632-643`, `:755-765` | the loops of the trips' `animate()` on the game plane's filters (the hue cycle, the waves' phase, saturnX's pulse and blur): the private block's game plane carries no animation tracks, so the client draws each filter as it stands (DV553) | a drugged player | a protocol version with the game plane's animations | `godot/scripts/Shared/Play/ViewBlur.cs` |
 | `neutral.dm:565` | the eigenstasium wild ride's reroll of the quirks (`SSquirks.randomise_quirks`, `Dm.Deferred`) | the wild ride's end | the quirks (D333) | `datums/status_effects/neutral.cs` |
-| `pyrotechnic_reagents.dm:492` | energized jelly's luminescent jellyperson (the extract cooldown, `Dm.Deferred`: the species is inert) | a luminescent | gaps XB1-2 | `pyrotechnic_reagents.cs` |
 | `other_reagents.dm:376` | holy water draining a heretic's spells (`Dm.Deferred`); the cultist's branches of holy and unholy water run, for whoever is a cultist | a heretic | the heretic (D333) | `other_reagents.cs` |
 | `elements/rust.dm:97-139` | the heretic's rust (its corruption of whoever walks on it) | the heretic's rust spreading | the heretic (D333) | `datums/elements/rust.cs` |
-| `other_reagents.dm:695-760` | the mutation toxins of the species not ported yet (the moth, the ethereal, the pod, the jellypeople, the golem, the abductor, the skeleton, the zombie, the plasmaman): a human keeps his species (GAP(D338)) | chemistry, the green extract | gaps SP2, SP3, XB1-2 | `other_reagents.cs` |
+| `other_reagents.dm:695-760` | the mutation toxins of the species not ported yet (the moth, the ethereal, the pod, the jellypeople, the golem, the abductor, the skeleton, the zombie, the plasmaman): a human keeps his species (GAP(D338)) | chemistry, the green extract | gaps SP2, SP3 | `other_reagents.cs` |
 | `other_reagents.dm:2679-2720` | romerol (inert: its zombie infection organ waits for the zombie species; the vaccine, the transformation toxins, the fungal spores, the gondola toxin and Agent-S came with VI1's diseases in gaps train 12) | its sources | the antagonists (D333), SP3 | (generated, inert) |
 | `other_reagents.dm:3685-3750` | concrete, hexacrete and pavement (inert: the concrete walls and floors are not ported) | a girder or catwalk splashed | the structures | (generated, inert) |
 | `other_reagents.dm:3611` | polyjuice's random transformation (`wabbajack`, `living.dm:1489`, not translated: `Dm.Deferred`) | polyjuice past its cycle | M10+ (the wizard's wabbajack) | `other_reagents.cs` |
-| `pyrotechnic_reagents.dm:443`, `other_reagents.dm:2753` | teslium and growth serum fed to a fish (`live-partial.txt` rows) | a fish | gaps FI1-3 | (generated stubs) |
 ## 227. The moods (gaps MS1, D333, D339)
 Translated whole: `datums/mood.dm` (the mood datum every human makes in `setup_mood`, the dummy's; the mood events' add, refresh,
 replace and clear with their timeouts and the conditional events' priorities; the mood level and the sanity with SSmood's drain and
@@ -4837,15 +4685,13 @@ moodless hugger is DV555. Left:
 | `datums/personality/` (every file), `status_effects/neutral.dm:848-895` (`moodlet_in_area`, inert), `art/paintings.dm:650`, `art/statues.dm:419` | the personalities: `HAS_PERSONALITY` reads a mob's `personalities`, which nobody has, so the mood events' personality multipliers and branches, the empathetic and misanthropic viewers' moods, the framers' and sculptors' moods and the work-area moodlets never apply; `print_mood`'s personality line is never shown | a personality | the personalities (owner-deferred) | `datums/mood.cs`, `datums/mood_events/` |
 | `modules/unit_tests/antag_moodlets.dm` | tg's antagonist moodlet test (a heretic's moodlet): the heretic is not ported; `death_moodlets.dm`'s cases are in `MoodsMS1Tests` | the tests | the heretics (D333) | (tests) |
 | `modules/antagonists/heretic/` (`influences.dm`, `items/` corrupted organs, crimson cleaver, eldritch painting, forbidden book, armour, necks, labyrinth handbook, madness mask, `knowledge/moon_lore.dm`, `sacrifice_knowledge.dm`, `magic/` flesh ascension, madness touch, mind gate, moon parade and ringleader, `status_effects/`, `structures/carving_knife.dm`) | the heretics' moods (the events are live) | a heretic | the heretics (antagonist-only, D333) | (not translated) |
-| `modules/antagonists/nightmare/nightmare.dm`, `religion/dreams/banish_nightmare.dm` | the nightmare's moods | a nightmare | the nightmare (antagonist-only, D333) | (not translated) |
+| `modules/antagonists/nightmare/nightmare.dm` | the nightmare's moods | a nightmare | the nightmare (antagonist-only, D333) | (not translated) |
 | `antagonists/wizard/equipment/artefact.dm`, `grand_ritual/finales/cheese.dm`, `projectiles/projectile/magic.dm:346`, `status_effects/debuffs/tower_of_babel.dm`, `guns/magic/wands/wand_zap.dm` | the wizard's moods (the artefacts, the cheese finale, the tower of Babel's curse, the wand) | a wizard | the wizard (antagonist-only, D333) | (not translated) |
-| `antagonists/ashwalker/ashwalker.dm`, `mapfluff/ruins/objects_and_mobs/ash_walker_den.dm` | the ash walkers' moods | an ash walker | the ash walkers (antagonist-only, D333) | (not translated) |
 | `antagonists/pirate/pirate_roles.dm`, `antagonists/survivalist/survivalist.dm`, `antagonists/blood_worm/blood_worm_tester.dm`, `brain_item.dm:600` (the abductor brain's peanut butter) | the pirates', survivalists', blood worm's and abductors' moods | those antagonists | their antagonists (antagonist-only, D333) | (not translated) |
-| `modules/research/gizmo/gizmodes/gizmood.dm` | the gizmo's `gizmood` (the events `gizmo_positive` and `gizmo_negative` are live) | a gizmo | the gizmos (gaps OR1, D339) | (not translated) |
-| `modules/religion/` (`religion_sects.dm`, `rites.dm`, `dreams/dream_portent.dm`, `festival/instrument_rites.dm`, `honorbound/honorbound_trauma.dm`, `sparring/sparring_datum.dm`), `jobs/job_types/chaplain/chaplain_vorpal_scythe.dm` | the chaplain's sects', rites' and sparring moods | a chaplain | the chapel (gaps CH1, D339) | (not translated) |
+| `jobs/job_types/chaplain/chaplain_vorpal_scythe.dm` | the vorpal scythe's moods (the sects', rites' and sparring moods came with gaps CH1) | a chaplain | the chapel (gaps CH1, D339) | (not translated) |
+| `game/turfs/open/water.dm:293-318` (the hot spring, inert) | the hot spring's mood (the arcade cabinets', roulette's and slot machines' came with gaps RC1, section 247) | a hot spring | the hot spring | (not translated) |
 | `machinery/computer/arcade/_arcade.dm`, `machinery/roulette_machine.dm`, `machinery/slotmachine.dm`, `game/turfs/open/water.dm:293-318` (the hot spring, inert) | the arcade cabinets', roulette's and slot machines' moods, the hot spring's | playing them; a hot spring | recreation (gaps RC1, D339) | (not translated) |
-| `components/aquarium.dm`, `fishing/fishing_minigame.dm`, `fishing/sources/_fish_source.dm`, `sources/subtypes/rifts.dm`, `fishing/fish/_fish.dm` | the fishing and aquarium moods (the fish petting and released events are live) | fishing | fishing (gaps FI1-3, D339) | (not translated) |
-| `basic/lavaland/legion/legion.dm`, `legion_tumour.dm`, `monster_organs/regenerative_core.dm`, `mining_mobs/elites/pandora.dm` | lavaland's moods (the legion's, the regenerative core's, Pandora's) | lavaland | Lavaland (gaps LV1-5, D339) | (not translated) |
+| `clothing/neck/pearl.dm`, `status_effects/debuffs/choke.dm`, `elements/art.dm:70-86` (the commoner's art, inert) | the pearl necklace's, the choking's and the proletarian art's moods (the reactive table armour's came with gaps OR2) | wearing them; choking on food | with their systems | (not translated) |
 | `clothing/neck/pearl.dm`, `clothing/suits/reactive_armour.dm`, `status_effects/debuffs/choke.dm`, `elements/art.dm:70-86` (the commoner's art, inert) | the pearl necklace's, the reactive armour's, the choking's and the proletarian art's moods | wearing them; choking on food | with their systems | (not translated) |
 | `modules/mob/living/living.dm:2248` | the View Variables dropdown's "Add Mood Event" (VV is admin tooling; the admin procs it calls are translated) | an admin | the admin tools | `modules/mob/living/living.cs` |
 | `carbon/life.dm:322-391` | the smells' and the chemical euphoria's moods of a carbon breathing without a species' lungs (`check_breath` of carbons, section 1; the lungs give them to humans) | a monkey or alien breathing | with the carbon `check_breath` | `modules/mob/living/carbon/life.cs` |
@@ -4871,15 +4717,13 @@ type. Left:
 | `datums/diseases/asthma_attack.dm` | the asthma attack and its four severities (inert) | the asthma quirk | the quirks (D333) | (generated, inert) |
 | `datums/quirks/negative_quirks/chronic_illness.dm` | the chronic illness quirk's disease (the disease is live) | the quirk | the quirks (D333) | (inert) |
 | `transformation.dm:299` (`/datum/disease/transformation/morph`) | the morph form: the morph mob is inert, so its victim becomes an inert morph | an admin's disease | the morph (space fauna) | `datums/diseases/transformation.cs` |
-| `transformation.dm:263` (the slime form's stage 3) | the jellypeople species the slime transformation sets (`/datum/species/jelly` inert) | the slime mutation toxin, the black slime extract | the jellypeople (gaps SP2), xenobiology (XB1-2) | `datums/diseases/transformation.cs` |
+| `transformation.dm:263` (the slime form's stage 3) | the jellypeople species the slime transformation sets (`/datum/species/jelly` inert) | the slime mutation toxin, the black slime extract | the jellypeople (gaps SP3) | `datums/diseases/transformation.cs` |
 | `wizarditis.dm:61`, `:96`, `:101` | casting a wizard spell whose code is not ported (DV560: a `Dm.Deferred`) | wizarditis at stage 4 | the wizard (D333) | `datums/diseases/wizarditis.cs` |
 | `admin/admin_verbs.dm` (`AdminCreateVirus`, the give disease verb) | the admins' virus panel and verbs (`AdminCreateVirus` is translated, nothing calls it) | an admin | the admin tools | (none) |
 | `events/disease_outbreak.dm:73-247` | the outbreaks' admin setups (`/datum/event_admin_setup`, as every event's) | an admin forcing the event | the admin tools | (generated, inert) |
 | `abductor/equipment/glands/heal.dm`, `viral.dm` | the abductor glands' cure and random virus | an abductee | the abductors (D333) | (inert) |
 | `revenant/revenant_abilities.dm:371-376` | the revenant's blight ability (the blight is live) | a revenant | the revenant (D333) | (inert) |
 | `wands/wand_plague.dm` | the wand of plague's verminous plague (the plague is live) | the wizard | the wizard (D333) | (inert) |
-| `food/snacks.dm:44-49`, `food/sandwichtoast.dm:318` | the Bronx candy's parasite and the death sandwich's poisoning (the diseases are live; the foods are inert) | eating them | the foods | (inert) |
-| `xenobiology/xenobiology.dm:482` | the black slime extract's slime transformation | the extract | xenobiology (XB1-2) | (inert) |
 | `spacesuits/_spacesuits.dm:393` | the space helmet suicide's advanced cold | a suicide | the suicides (M10) | `modules/clothing/spacesuits/_spacesuits.cs` (live-partial.txt) |
 | `items/dice.dm:384` | the Die of Fate's cold | the Die of Fate | the wizard (D333) | `game/objects/items/dice.cs` (inert type) |
 | `modules/antagonists/disease` | the sentient disease: not in the snapshot (D333) | | | |
@@ -4916,7 +4760,7 @@ the binary's), the ethereal heart's examine with no line between 300 and 600 sec
 | `lost_crew/character/_character.dm:13-16`, `scenarios.dm:56`, `flavor.dm:13`, `damages/melee.dm:40` | the ethereal and moth corpses, the exotic species class (the podpeople), the prosthetic limb flavour and the heretic's blades are left out of the rolls (DV561) | a lost crew body | the species (SP2-3, D338), the quirks (D333), the heretic (D333) | `lost_crew/damages/_damages.cs` |
 | `lost_crew/character/flavor.dm:11` | `add_quirk` (`Dm.NotTranslated` in `status_procs.cs`): the quirk flavour is never rolled while its quirk is inert (DV561) | a lost crew body | the quirks (D333) | `lost_crew/character/flavor.cs` |
 | `zombie/organs.dm` | the zombie infection (`/obj/item/organ/zombie_infection`, inert): its host turns into the infectious zombie species, which is not ported | romerol, a zombie's bite | the zombies with the species (D338) | (generated) |
-| `brain_item.dm:528`, `:581`, `species_types/` (cerulean, dullahan, mushpeople, vampire), `fish/types/rift.dm:696`, `demon_items.dm:3`, `religion/burdened/psyker.dm`, `dreams/banish_nightmare.dm:77`, the abductor glands, `heretic/items/corrupted_organs.dm`, `nightmare_organs.dm`, the Lavaland organs | the species', antagonists', chaplain's, fishing's and Lavaland's organs | their owners | the species (D338), the antagonists (D333), the chapel (CH1), fishing, Lavaland (D342) | (generated) |
+| `brain_item.dm:528`, `:581`, `species_types/` (cerulean, dullahan, mushpeople, vampire), `demon_items.dm:3`, the abductor glands, `heretic/items/corrupted_organs.dm`, `nightmare_organs.dm`, the Lavaland organs | the species', antagonists' and Lavaland's organs (the babbelfish's ears are live since gaps FI1) | their owners | the species (D338), the antagonists (D333), Lavaland (D342) | (generated) |
 | `implants/implant_abductor.dm`, `implant_tacmap.dm`, `implant_battle_royale.dm` | the abductors' recall implant, the tactical map implants (no minimap), the battle royale's | the abductors, the nuclear operatives' map, an admin event | section 216's rows | (generated) |
 | `surgery/organs/internal/eyes/_eyes.dm:130`, `:146` | the native field of view (`add_fov_trait`, `Dm.Deferred` when the config's `native_fov` is on) | eyes with a native FOV | the 2D field of view (not in first person) | `eyes/_eyes.cs` |
 ## 230. Bitrunning (gaps BR1-2, D333, D339, D341)
@@ -4944,25 +4788,49 @@ converted (`maps/virtual_domains`, `maps/safehouses`) and mounted at tg's `_maps
 `load_map_items` tests its bitrunning landmarks for a mob spawner (never one, so a domain's ghost spawners are only those the
 advanced NPCs' load lists); `validate_turf` returns the turf it was given when a neighbour is open; the baseturf helper's
 `list(baseturf_to_replace = TRUE)` keys the string; the beach bum's two spare rounds stay in nullspace when the pockets take the
-others. Left:
+others. Gaps BR2 translated the other domains and the glitch: `virtual_domain/domains/` (the beach bar's drinks and the breeze bay's
+fish that reveal the crate, the island brawl's deaths counted from its islanders' spawners, the heretic hunt's bodies dragged onto
+the rune and scored by rank with its flick, sound and balloon, the fake crewmen with their weapons, corpses and behaviour trees, the
+virtual heretic's outfit, the wendigo domain's gutted corpses; the other domains are var-only with their maps), `antagonists/`
+whole (the glitch's objective, virtual body, npc friendliness and agent look; the cyber police with the sleeping carp, the cyber
+tactical unit with its implant, the netguardian prime with its burst SMG and rocket barrage, the domain ghost actor), `event.dm`
+but the admins' setups, and the clients' AntagInfoGlitch window. With them the domains' mobs: `basic/revolutionary.dm`, the
+xenomorphs of `basic/alien/` (the drone's weeds, the sentinel's spit, the queen's eggs, the maid's cleaning), `ruin_defender/
+zombie.dm`, the crate mimic and its lock (`ruin_defender/mimic/mimic.dm`), the clowns of `basic/clown/clown.dm`; the
+`turf/open/cliff.dm` cliffs with `controllers/subsystem/movement/cliff_falling.dm`, `status_effects/neutral.dm`'s gutted,
+`elements/rust_healing.dm`, `mob_helpers.dm`'s `is_touching_rust`, `GLOB.heretic_path_to_color`, the EVA crate, the permalube
+and bananium floors' wet floor, `game/machinery/doors/passworddoor.dm` and `turf/open/_open.dm`'s `add_footprint` (a stale stub). The
+gondola meat's advanced tranquility and its transformation were already live. Kept as tg has it: the glitch event's
+`can_spawn_event` returns the parent's result when no server is running; SScliff_falling's `on_moved` compares a type with a turf;
+the crate mimic's lock action declares `Activate` on the wrong path; the heretic hunt's sacrificed body, gibbed in its own Moved,
+goes on to read its deleted DNA (a runtime); the food cart's packed table, queued for smoothing in nullspace, crashes
+SSicon_smooth (the beach bar's and the island's carts). Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
 | --- | --- | --- | --- | --- |
-| `virtual_domain/domains/ash_drake.dm` | the ash drake domain: its megafauna (the virtual ash drake) | the console's hard tab | the owner's Lavaland mobs (D342) | (generated) |
-| `virtual_domain/domains/blood_drunk_miner.dm` | the blood-drunk miner domain: its megafauna | the console's hard tab | the owner's Lavaland mobs (D342) | (generated) |
-| `virtual_domain/domains/bubblegum.dm` | the Bubblegum domain: its megafauna | the console's hard tab | the owner's Lavaland mobs (D342) | (generated) |
-| `virtual_domain/domains/colossus.dm` | the Colossus domain: its megafauna | the console's hard tab | the owner's Lavaland mobs (D342) | (generated) |
-| `virtual_domain/domains/hierophant.dm` | the Hierophant domain: its megafauna | the console's hard tab | the owner's Lavaland mobs (D342) | (generated) |
-| `virtual_domain/domains/wendigo.dm` | the wendigo domain: its megafauna | the console's hard tab | the owner's Lavaland mobs (D342) | (generated) |
-| `util/virtual_megafauna.dm`, `server/signal_handlers.dm:74-81` | `make_virtual_megafauna` (the megafauna's and the bosses' health halved within 600-1300, their achievements and crusher drops removed, their loot an encrypted cache): the server's template-loaded handler throws `Dm.NotTranslated` on a megafauna or boss | a megafauna domain loaded | the owner's Lavaland mobs (D342) | `modules/bitrunning/server/signal_handlers.cs` |
-| `virtual_domain/domains/` (`abductor_ship.dm`, `beach_bar.dm`, `breeze_bay.dm`, `clown_planet.dm`, `fredingtonfastingbear.dm`, `heretic_hunt.dm`, `island_brawl.dm`, `meta_central.dm` with its `*.bt.json`, `pipedream.dm`, `pirates.dm`, `psyker_shuffle.dm`, `psyker_zombies.dm`, `stairs_and_cliffs.dm`, `syndicate_assault.dm`, `vaporwave.dm`, `xeno_nest.dm`) | the other domains: their maps load, their own mobs, spawners, secondary objectives and loot procs are inert | the console | gaps BR2 | (generated) |
-| `antagonists/` (`_parent.dm` but `fix_agent_id`, `cyber_police.dm`, `cyber_tac.dm`, `netguardian.dm`, `ghost_role.dm`), `event.dm` | the glitch (the cyber police, the cyber tactical unit, the netguardian prime), the domain ghost actor and the glitch event: `setup_glitch`'s antag datum is inert; the AntagInfoGlitch window | a threat-rolled domain | gaps BR2 | (generated) |
-| `virtual_domain/domains/gondola_asteroid.dm:33-41` | the gondola meat's advanced tranquility (`/datum/reagent/gondola_mutation_toxin/virtual_domain` and its transformation disease): the toxin's `expose_mob` and the transformation diseases are inert | eating a virtual gondola's meat | the transformations (diseases) | (generated) |
+| `virtual_domain/domains/ash_drake.dm` | the ash drake domain: its megafauna (the virtual ash drake) | the console's hard tab | Lavaland's mobs (gaps LV1-5, D353) | (generated) |
+| `virtual_domain/domains/blood_drunk_miner.dm` | the blood-drunk miner domain: its megafauna | the console's hard tab | Lavaland's mobs (gaps LV1-5, D353) | (generated) |
+| `virtual_domain/domains/bubblegum.dm` | the Bubblegum domain: its megafauna | the console's hard tab | Lavaland's mobs (gaps LV1-5, D353) | (generated) |
+| `virtual_domain/domains/colossus.dm` | the Colossus domain: its megafauna | the console's hard tab | Lavaland's mobs (gaps LV1-5, D353) | (generated) |
+| `virtual_domain/domains/hierophant.dm` | the Hierophant domain: its megafauna | the console's hard tab | Lavaland's mobs (gaps LV1-5, D353) | (generated) |
+| `virtual_domain/domains/wendigo.dm` | the wendigo domain: its megafauna (its gutted corpses are live) | the console's hard tab | Lavaland's mobs (gaps LV1-5, D353) | (generated) |
+| `util/virtual_megafauna.dm`, `server/signal_handlers.dm:74-81` | `make_virtual_megafauna` (the megafauna's and the bosses' health halved within 600-1300, their achievements and crusher drops removed, their loot an encrypted cache): the server's template-loaded handler throws `Dm.NotTranslated` on a megafauna or boss | a megafauna domain loaded | Lavaland's mobs (gaps LV1-5, D353) | `modules/bitrunning/server/signal_handlers.cs` |
 | `outfits.dm:16` | the echolocator's `psykerize` (the psyker head and brain, their echolocation and psychic spells; `Dm.Deferred`) | the psyker domains' forced outfit | the psykers (the burdened sect, chaplain) | `modules/bitrunning/outfits.cs` |
-| `objects/disks.dm:93-113` | the ability disks' spells (Summon Cheese, Lesser Heal, Fireball, Lightning Bolt, Forcewall, the dragon and polar bear shapeshifts): the disk is live and grants the chosen action, the actions are inert | an ability disk loaded onto an avatar | the wizard (D333); the dragon form with the megafauna (D342) | (generated) |
-| `objects/disks.dm:204-220` | the PKC disks' crusher trophies (inert, as the kinetic crusher) | a PKC disk's pick | the owner's Lavaland mobs (D342) | (generated) |
+| `objects/disks.dm:93-113` | the ability disks' spells (Summon Cheese, Lesser Heal, Fireball, Lightning Bolt, Forcewall): the disk is live and grants the chosen action, the actions are inert; the dragon and polar bear shapeshifts are live since gaps XB2 | an ability disk loaded onto an avatar | the wizard (D333) | (generated) |
+| `objects/disks.dm:93-113` | the ability disks' spells (Summon Cheese, Lesser Heal, Fireball, Lightning Bolt, the dragon and polar bear shapeshifts; the Forcewall is live since gaps LB1): the disk is live and grants the chosen action, those actions are inert | an ability disk loaded onto an avatar | the wizard (D333); the dragon form with the megafauna (D342) | (generated) |
 | `objects/gimmick_disks/sports_disk.dm:84` | the gamer laptop: its `install_default_programs` is translated, the laptop base (`modular_computers/computers/item/laptop.dm`) is inert | the sports gimmick disk | the laptops | `modules/bitrunning/objects/gimmick_disks/sports_disk.cs` |
 | `objects/gimmick_disks/dungeon_disk.dm:166` | the Untie Digi-Shoes spell (`untie_shoes/digital`, inert as the wizard's `untie_shoes`; the disk's Digi-Smoke is live) | the dungeon gimmick disk | the wizard (D333) | (generated) |
 | `server/threats.dm:197` | `station_spawn`'s red pill achievement (`Dm.Deferred`) | a glitch breaking out to the station | the achievements (D332) | `modules/bitrunning/server/threats.cs` |
-| `holodeck/turfs.dm:100` | the holographic water's fishing spot (`Dm.Deferred`) | a fishing rod on holographic water | fishing (gaps FI1-3, D339) | `modules/holodeck/turfs.cs` |
+| `event.dm:38-69` | the glitch event's admin setups (`/datum/event_admin_setup`: the forced role, the candidates' minimum) | an admin running the event with its setup | the admins' event setups (as the other events) | (generated) |
+| `heretic_hunt.dm` map, `heretic_summon/raw_prophet` | the heretic hunt's raw prophets (inert; `setup_domain` gives them their AI) and the heretic's things on the map (the big rune, whose colour is set, with its flick; the sickly blade, rune carver, eldritch robes, lionhunter rifle, curio belt and wounded potion; the visible influence; the rust walls and plating) | the heretic hunt | the heretic (D333) | (generated) |
+| `abductor_ship.dm` map | the abductor ship's machinery and gear (the console, experiment machine, gland dispenser, pad and camera console; the baton, silencer, mind device, tools, helmet and shrink ray; the fat sucker, the server, the abductor table frame, plating and glass) | the abductor ship | the abductors (D333) | (generated) |
+| `pirates.dm` map | the pirates' cannons, cannonballs, loot locator and cutlasses | the pirates domain | the pirates (D333) | (generated) |
+| `syndicate_assault.dm` map, `mapfluff/ruins/spaceruin_code/forgottenship.dm:2-14` | the Cybersun vault door (`password/voice/sfc`, inert: its password `GLOB.fscpassword` is generated at GLOB's start from tg's phonetic alphabet, which the test worlds that build GLOB without tg's strings lack) | the syndicate assault's vault | the space ruins (with a GLOB start that mounts tg's strings) | (generated) |
+| `stairs_and_cliffs.dm:22`, `turfs/open/lava.dm:463-490` | the glacier's plasma lava (`lava/plasma/virtual_domain`): its freezing burn | stepping into the glacier's plasma | the ice moon's terrain (gaps LV1-5) | (generated) |
+| the domains' maps: `turfs/open/sand.dm`, `water.dm:107-120`, `grass.dm`, `planet.dm`, `ice.dm`, `asteroid.dm:322-390`, `closed/wall/misc_walls.dm:49`, `mineral_walls.dm:161-200`, `reinf_walls.dm:263`, `indestructible.dm:215-230`, `floor/plating/misc_plating.dm:18-30` | the domains' terrain: the beach sand, coast and water, the grass and jungle, the ice and snow, the rust, wooden and Syndicate walls, the operatives' glass and the abductor plating are inert (drawn with tg's sprites; their own footprints, digging, shovelling and break states are not) | walking the beach, island, pirate, glacier and vaporwave domains | the terrain turfs (no package) | (generated) |
+| the domains' maps | the props of other systems on the maps (the laptops, arcades and roulette, the hoverboard, wheelchair and ATV, the card decks and dodgeball, the signpost, the deployable HMG, the PDA painter and photobooth button, the mass driver, the honk staff, the meateor fluff, picture frames and posters, the popsicles and seaweed, the mapping helpers) | the domains | their own systems | (generated) |
+| the domains' maps | the props of other systems on the maps (the laptops, arcades and roulette, the hoverboard, wheelchair and ATV, the card decks and dodgeball, the signpost (the deployable HMG is live since gaps JB1), the exoscanner, PDA painter and photobooth button, the mass driver, the honk staff, the meateor fluff, picture frames and posters, the popsicles and seaweed, the mapping helpers) | the domains | their own systems | (generated) |
+| `ruin_defender/zombie.dm:43` | `try_to_zombie_infect` (`Dm.NotTranslated`) for a zombie with an infection chance (none of the domains' zombies has one) | a mapped infectious zombie's hit on a human | the zombie infection (`modules/zombie`) | `modules/mob/living/basic/ruin_defender/zombie.cs` |
+| `basic/alien/maid.dm:36-62` | the barmaid (the escape shuttle's, with its area-based godmode) | the escape shuttle's bar | the area-based godmode component | (generated) |
 
 ## 231. The circuits' core and editor (gaps CI1, D333, D339, D341)
 Translated whole: `modules/wiremod/core/` (`integrated_circuit.dm` with the circuit's cell, shell, display name, variables, setters and
@@ -4986,11 +4854,695 @@ an explicit null, so `trigger = null` on a port still triggers `input_received`;
 its receiver reads the data list as the sender; the wire bundle calls its parent's `removed_from` twice; tg's `circuit_component_category`
 unit test loops over typepaths with a typed variable and so checks nothing (the port checks every design). The editor's adaptation is
 DV571. Left:
-| `wiremod/components/action/`, `atom/`, `bci/`, `id/`, `ntnet/`, `sensors/`, `admin/` | the components that act on the world or sense it (speech, sound emitter, light, radio, pathfinder, the MMI and its BORIS container, the entity readers, the ID readers, the NTNet and wirenet links, the sensors, the admin components): inert, so not listed or printed (DV568) | a circuit | gaps CI2 (D339) | (inert) |
-| `wiremod/dcs_components/boris_circuit_container.dm` | the BORIS container (an AI in a circuit's MMI component) | an MMI component | gaps CI2 (D339) | (inert) |
-| `wiremod/preset/hello_world.dm`, `speech_relay.dm` | the loaded circuits of Meta's science (they add CI2's speech and hear components) | Meta's loaded circuits | gaps CI2 (D339) | (inert) |
-| `wiremod/shell/` but `compact_remote.dm`, `controller.dm`, `shell_items.dm` (the bot, money bot, drone, server, airlock, dispenser, BCI, scanner gate, keyboard, gun, MOD module, assembly shells) | the other shells, and the finishing of their assemblies (DV570) | a shell assembly screwdrivered | gaps CI2 (D339) | (inert) |
-| `datums/components/usb_port.dm` and every machine's USB circuit component (`circuit_component/*` in the machines' own files, `mod_program/*`) | the USB port of the machines and computers and their circuit components | a USB cable on a machine | gaps CI3 (D339) | (inert) |
-| `modules/research/designs/wiremod/` | the designs of CI2's and CI3's components and shells (DV384: not offered while their item is inert) | a printer | gaps CI2-3 (D339) | (generated) |
 | `wiremod/core/duplicator.dm:223` (`load_circuit`'s input) | tg's "File" option, and a JSON longer than one console line: the console's `load-circuit JSON` is a player's console line, capped at 200 bytes by the protocol (`Limits.MaxDevCommandBytes`), so only a small circuit is typed in | an admin loading a saved circuit | the admin tools | `src/Server/ServerHost.Console.cs` |
 | `wiremod/core/integrated_circuit.dm:417`, `:680` (`isAdminGhostAI`) | an admin ghost or AI's admin view of a circuit (is_admin, printing any component): the port's admin ghost check is a GAP, false | an admin ghost | the admin tools | `modules/wiremod/core/integrated_circuit.cs` |
+
+## 232. The circuits' components and shells (gaps CI2, D333, D339, D341)
+Translated whole: the components of `modules/wiremod/components/action/` (camera, equipment action with its innate action, laser
+pointer with its flash, light, MMI with its disconnect action, pathfind, pull, radio, sound emitter, speech), `atom/` (direction,
+GPS, health, health state, hear, material scanner, pinpointer, reagent scanner, the remote cameras of the drone, the airlock and the
+polaroid, self, species), `id/` (the access checker with its CircuitAccessChecker window, the access reader, the ID getter, the info
+reader), `ntnet/` (receive, send, send literal), `sensors/` (pressure, temperature, view), `wirenet/` (receive, send, send literal; the
+wirenet connection came with the core), `admin/` (animate, filter with the filter, flag and bitflag helpers, get and set variable,
+input request, save shell, the signal handler with its CircuitSignalHandler window and signal list, spawn, to type);
+`dcs_components/component_boris_circuit_container.dm` (an AI in a circuit's MMI component, with the AIs' HUD alternate appearance); the shells
+`airlock.dm` (the circuit airlock, its wires and its airlock and access event components), `assembly.dm` (the wiremod assembly with its
+input and output components and its power proxies), `bot.dm`, `dispenser.dm` (with the vendor component), `drone.dm` (the circuit drone
+and its movement component), `gun.dm`, `keyboard.dm`, `module.dm` (the MOD circuit module with its pinned actions and adapter core),
+`moneybot.dm`, `scanner.dm`, `scanner_gate.dm` (with its passive and scanning lines), `server.dm`, `undertile.dm`, `wallmount.dm`; every
+shell assembly but the BCI's now finishes into its shell (DV570); `preset/hello_world.dm` and `speech_relay.dm` (Meta's four loaded
+circuits in science). The research designs of these components and shells are offered (DV384) and the techweb's circuit nodes unlock
+them. Dependencies ported with them: `datums/components/shuttle_move_deferred_checks.dm`, the AIs' basic alternate appearance
+(`atom_hud/alternate_appearance/basic/ais`), `datumvars.dm`'s `vv_var_blacklist` and `can_vv_get`, `log_admin_circuit`,
+`__HELPERS/filters.dm`'s `master_filter_info`. The readers swept: the airlock electronics' shell flag finishes a circuit airlock
+(`door_assembly.dm:356`), the photo camera is a circuit shell (`camera.dm:71`), the research suit carries its circuit module, the IED
+takes the wiremod assembly. A core fix: the NFC and NTNet receivers take the list literal transmitters' output port (tg types the
+local as an input port). The remote camera is a station camera on its network, which the camera consoles show; the view sensor reads
+the server's view; the laser pointer's dot is the flick overlay the handheld laser pointer shows: no new adaptation. Kept as tg has
+them: the material scanner breaks alloys down; the dispenser's stored item that moves away is never removed from its list, and its
+removal fires the "added" output; the MOD module's pinned action keeps its deleted pinner; `shuttle_move_deferred_checks` adds its
+check with LAZYOR on a copy; the radio's frequency port starts at the signaler's frequency; an anchored wirenet shell with no cable
+under it runtimes (the connection attaches connect_loc to itself); the speech relay preset leaves its speech's trigger unwired; the
+equipment action's design has no category. The sound emitter's backwards playback is DV603. Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `wiremod/components/admin/proccall.dm` | the proc call component and its ProcCallMenu window: an admin's circuit calls any proc (`WrapAdminProcCall`, `HandleUserlessProcCall`, the admin proc-call machinery, not ported) | an admin circuit | the admin tools (D275) | (inert) |
+| `wiremod/components/admin/sdql.dm` | the SDQL component: an admin's circuit runs an SDQL2 query (SDQL2 is not ported) | an admin circuit | the admin tools (D275) | (inert) |
+| `wiremod/shell/airlock.dm:43` (`isAdminGhostAI`) | an admin ghost or AI opens a circuit airlock: the port's admin ghost check is a GAP, false | an admin ghost | the admin tools | `modules/wiremod/shell/airlock.cs` |
+| the shells' 3D models | the bot, money bot, drone, server, dispenser, scanner, keyboard, gun, undertile and wallmount shells keep tg's sprites; the circuit scanner gate is drawn by the scanner gate's model (required-models.md) | the shells | the models | `godot/assets/models/models.json` |
+
+## 233. The brain-computer interface and the machines' USB components (gaps CI3, D333, D339, D341)
+Translated whole: `wiremod/shell/brain_computer_interface.dm` (the BCI with its core component, its message to the owner, its charge
+from a cyborg recharger or an electric shock and its charge action, the owner's speech through it; the BCI implanter with its occupant,
+the BCI loaded and swapped, the arm raising, working and falling, the implant put in or taken back into storage, the ejection, the
+lock and the deconstruction), `shell/implant.dm` (the circuit implant, its core and charge action; the implant case and its design hold
+a live implant), `wiremod/components/bci/` (the install detector, reagent injector, thought listener, VOX, and `hud/`: the object, bar
+and counter overlays, drawn as one-person alternate appearances that only the owner's client gets, and the target intercept),
+`components/usb/` (the emitter, temperature pump and thermomachine components), the BCI's remote camera (`remotecam/bci` of
+`components/atom/remotecam.dm`), `datums/components/usb_port.dm` (the cable plugged in, the machine's components added to the circuit,
+the cable's beam to the shell, the snap past two tiles), `computer_circuit.dm` (a computer's shell with its programs' components) and
+every machine's and program's own circuit component and USB port: the holographic signboard, the reflector, the vitals display, the
+launchpad, the fire alarm, the status displays, the light switch, the crew, teleporter, security records and advanced camera consoles
+(the latter's circuit action and intercept), the conveyor switch, the hydroponics tray, the synthesizer and headphones, the slime
+processor, the emitter, the meter, the pumps, the digital valve, the temperature pump, the thermomachine, the air alarm
+(`air_alarm_circuit.dm`); the status display, NT Pay, signal commander, messenger (`messenger_circuit.dm`), notepad, radar, WireCarp,
+cyborg monitor, MODsuit control and spectre meter apps. With them: `censor_ic_filter_for_pdas` (no word filter is loaded, so a
+message passes as with none configured). The research designs of the BCI, its components, the implanter's board and the circuit
+implant are offered (DV384) and the techweb's circuit nodes unlock them; the BCI's assembly finishes into the BCI (DV570 retired).
+Kept as tg has them: the circuit implant's core clears its implant before it reads its host when its shell goes; the bar overlay
+keeps its overlays under the target but looks them up by the target's weak reference; the arrest console's component never fills its
+options; the air alarm's vent component writes the external pressure into the internal bound; the messenger component reads the
+receiving computer, not the sender's, for a messenger's device; the radar component reads the turf of the selected reference text;
+the implanter's `close_machine` takes the user as its density. No new adaptation. Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `wiremod/components/action/camera.dm:62-120` (`circuit_component/mod_program/camera`) | the camera app's circuit component: the app (`programs/maintenance/camera.dm`) waits for NtOS's image files (section 164) | a circuit in a computer with the camera app | with NtOS's image files | (inert) |
+| `messenger_program.dm:633-636` | the circuit sender's creator in the PDA message's talk log tag (`shell_addendum`): the talk log | a circuit's PDA message | the logs (M10) | `programs/messenger/messenger_program.cs` |
+| the BCI's and the circuit implant's 3D model | the chip keeps tg's sprite (`circuits.dmi` state `bci`) until its model is made (required-models.md); the implanter has its model (`machines/medical_wave/bci_implanter.glb`) | a BCI in hand or on the floor | the 3D models | — |
+## 234. The Lavaland shuttles' flights and the mining gear (gaps LV1, D339, D353)
+
+Checked and tested: the mining, common mining and labour shuttles fly between Meta's docks and Lavaland's with tg's ShuttleConsole
+windows, timings (ignition, then transit), ripples at the far dock in transit and the airlocks shutting (an ordinary shuttle has
+no hyperspace sounds in tg); the mining base's console calls the mining shuttle back; the camp's one-way console summons the labour shuttle and only brig access sends it home. Translated: the mining shuttle
+console's warning to a head revolutionary (`mine_items.dm:102`); `mine_items.dm` whole (the light emitters, the mine carts and their
+rails); `aux_base.dm` whole (the AuxBaseConsole window with its blind drop and turrets, the landing field designator, `set_landing_zone`,
+`set_mining_mode`, the mining shuttle beacon); `equipment/survival_pod.dm` and `shelters.dm` (the capsules unfolding the converted
+mining shelters, SSmapping's `preloadShelterTemplates`, the pod computer, the survival storage unit, the forgery);
+`wormhole_jaunter.dm`, `kheiral_cuffs.dm` with the cuffs' GPS component, `grapple_gun.dm`, `vent_pointer.dm`; the rest of
+`explorer_gear.dm` (the explorer suit and hood, the goliath cloak and hood, the skull helmet); `fulton.dm`'s networked pack and beacon;
+the ore vent's GPS signal (`ore_vent.dm:513`); the pickaxe's and shovel's suicides (`mining_tools.dm:23`, `:144`); the labour camp's sustenance vendor (`sustenance.dm:56-75`, labour points); the "No ERP"
+poster of Lavaland's base (`posters/official.dm:261`). DV611 (the shelters the host mounted), DV612 (the capsule's throw under DV416).
+
+| `survival_pod.dm:192-199`, `game/machinery/sleepers.dm` | the pod's sleeper: its overlay is translated, but the sleeper itself is not ported, so `/obj/machinery/sleeper/survival_pod` stays inert (no shelter template places one) | an admin spawn | the sleepers (medical) | `equipment/survival_pod.cs` |
+| `explorer_gear.dm:201` | the bone armour: `equipment_bodypart_texture` (the drake-mesh body texture) is not ported, so the armour stays inert | ash walkers' crafting | the bodypart textures | (generated) |
+| `kheiral_cuffs.dm:103-110` | the cuffs' glow, worn and lying (`emissive_appearance`) | always | DV12 | `equipment/kheiral_cuffs.cs` |
+| `grapple_gun.dm:114-123` | the zipliner's body turned along the line (`animate(transform)`) is sent as tg's transform; whether the client tilts a first-person body is not checked | a grapple | the client's mob transforms | `equipment/grapple_gun.cs` |
+| `laborshuttle.dm:25` | tg compares the docked port's `name` (Lavaland's "labor camp") with the id "laborcamp_away", so "Shuttle is already at the outpost!" never shows; the console is locked there anyway (no destination left). A tg bug, kept | the camp's console with the shuttle docked | (tg) | `laborcamp/laborshuttle.cs` |
+| the gear's 3D models | the shelter's furniture, the jaunter, the grapple gun, the cuffs, the mine cart and its rails, the designator and the beacon keep tg's sprites (docs/ai/required-models.md) | always | the models | (client) |
+## 235. Lavaland's fauna, the monster organs and the kinetic crusher (gaps LV2, D339, D353)
+Translated whole: `modules/mob/living/basic/lavaland/mining.dm` (the mining mob base with its crusher damage tracking and the
+kinetic accelerator's bonus), the goliaths (`goliath/`: the goliath, its ancient and immortal kinds, the tentacles, the tentacle
+attacks in a line and around it, the saddle and riding), the watchers (`watcher/`: the gaze, the beam, the overwatch, the
+magmawing and icewing, their AI), the legions (`legion/`: the legion, its snow, dwarf and large kinds, the skulls and their
+infesting of corpses, the legion monkey and the consumed corpses of `mob_spawn/corpses/mining_corpses.dm`), the hivelords and their
+broods, the basilisks with their overheating, the brimdemons with their beam, the bileworms (spit, burrow, the vileworm), the
+lobstrosities (charge, snip, the juveniles' growth and happiness) and the node drone with the ore vents' wave defence; the
+whole `mining/equipment/monster_organs/` folder (the monster core base with its decay and the stabilizer, the regenerative core
+with its in-hand heal and its implanted revival, the brimdust sac with the brimdust coating and its blast, the rush gland with the
+lobster rush); `mining/equipment/kinetic_crusher/` (the crusher with the destabilizer, the mark and its detonation, the backstab,
+`kinetic_crusher_trophies.dm`, `trophies_fauna.dm`, `trophies_misc.dm`: the retool kits and the crusher's skins). With them:
+the biomes' fauna spawning and `mining_mob_respawner.dm` (a mob that dies respawns in an ash storm), the reskin component and atom
+skins (`datums/components/reskinnable_atom.dm`, `__DEFINES/reskin.dm`) with every reskin site that waited for it (the detective's
+revolver, the double-barrel, the medical spray, the medigel, the floppy disk, the captain's pen, the clipboard, the Kaza Ruk
+gloves, the pride pin, the joy mask, the mech suit, the stunsword), `datums/components/happiness.dm`, `explodable.dm`,
+`spawner.dm`, the explorer suit and hood with the goliath plates, the goliath cloak, the bone armour and the skull helmet, the
+healing explorer's webbing, the changeling's brood. The trophies of the common fauna are crafted from their loot with the crusher as
+the tool (`crafting/melee_weapon.dm:291-365`), as tg has them. Kept as tg has them: the retool kit's skin stays on the crusher
+after the kit is pried off (the removal re-adds the reskin component with no skin, which the existing one absorbs); a lobstrosity
+deleted mid-charge runtimes in the charge's cooldown with no owner; the icewing trophy freezes only the cold-resistant; the parry
+removes stale parriers from the wrong list; the floor-loving element balloons on allowed moves; the spawner stops processing on
+SSprocessing even when it started on the fast one. Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `crafting/melee_weapon.dm:351` (`crusher_trophy/brimdemon_fang`) | the brimdemon fang's recipe asks for brimdust and is left out with every recipe needing a reagent (section 11's `global_lists.dm:20` row) | the crafting menu | M8 (chemistry) | `__HELPERS/global_lists.cs` |
+| `mining_corpses.dm` | the golem, moth and plasmaman species a legion-infested corpse may take are inert (the skeleton is live since gaps EX1): the corpse keeps its species type with its inert procs | a legion's corpse | the species | `modules/mob_spawn/corpses/mining_corpses.cs` |
+| `explorer_gear.dm:203` | the bone armour's drake mesh on the chest (`equipment_bodypart_texture` is not ported) | the bone armour worn | M10+ | `modules/mining/equipment/explorer_gear.cs` |
+| `bileworm_actions.dm:203` | the bile splash's goop particles (the particle holder is not ported) | a bile glob's impact | M10+ | `basic/lavaland/bileworm/bileworm_actions.cs` |
+| `goliath.dm:186`, `tentacle.dm:102`, `watcher.dm:72`, `legion.dm:95`, `legion_brood.dm:130`, `brimdemon.dm:65`, `lobstrosity.dm:70`, `_bileworm.dm:65`, `bileworm_actions.dm:179`, `:247` | the fauna's emissive glows in the dark (DV12) | always | DV12 | the mirror files |
+| the fauna's 3D models | the goliaths, watchers, legions, hivelords, basilisks, brimdemons, bileworms, lobstrosities and the node drone keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 241. Climb in, the MOD drill and the lizards' limbs (gaps FX1, D355)
+The radial's Climb in (DV639) is offered on every live receiver of tg's drag of a player's own mob onto a thing that would take him in
+or onto it: the exosuits and the other sealed vehicles, the netpod, the DNA scanner, the suit storage unit, the hypnochair, the implant
+chair, the cryo cell (tg lets only an incapacitated carbon in by himself), the disposal bins and chutes, and Climb on for the
+photocopier, the morgue and crematorium trays and a hacked MULEbot; each receiver answers quietly beside it
+(`Infrastructure/ClimbIn.cs`, `dm_climb_in_label`), with tg's own drop checks (`ClimbIn.DropPasses`), and the choice sends tg's drag.
+An open closet, locker, crate or body bag offers Climb in as tg's step onto its tile and its close (DV640). The drop receivers that take
+no one in are not offered: the wall healer takes the user's hand, the DNA infuser only a dead creature, the transit tube station a
+pod, the monkey recycler an unconscious monkey, the golf cart's rear buckles (Buckle), the walls, windows, airlocks and computers lean.
+The MOD drill digs on its click held on the rock and not on a bump; the sphere's excavation keeps tg's bump (DV354; the client sends
+the middle button's MouseDown, so the held dig runs while it is down; a module's click that waits runs detached, `_module.cs`
+`on_special_click`). The lizards' limbs: the real client draws tg's lizard bodyparts on every lizard, a player turned lizard, a spawned
+lizard and an ash walker with digitigrade legs, standing and lying, and his severed arm on the floor, from
+`icons/mob/human/species/lizard/bodyparts.dmi` in his mutant colour (the server's appearance, lobby.md 10; screenshots in FX1's
+report); no 2D limb is a human's, so the owner's "own limbs" is asked back as the 3D models' question (D338). Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `game/machinery/sleepers.dm:118` | the sleeper's Climb in: the sleeper is not ported (D216) | a sleeper | not planned (D216) | (generated) |
+| `game/machinery/experimental_cloner/experimental_cloner_scanner.dm:136` | the experimental cloner scanner's Climb in: the cloner is inert | the experimental cloner | with the cloner | (generated) |
+| `vehicles/cars/car.dm:27`, `cars/golfcart/golfcart.dm:207`, `golfcart_rear.dm:172` | the cars' Climb in (the clown car's kidnapping too) and the golf cart's drop: the cars are inert | the clown car, the golf cart | the vehicles' campaign | (generated) |
+| `antagonists/abductor/machinery/experiment.dm:26`, `antagonists/fugitive/hunters/hunter_gear.dm:16` | the abductors' experiment machine and the fugitive hunters' capture device: inert | their antagonists | their antagonists (D333) | (generated) |
+| `game/objects/structures/crates_lockers/closets.dm:987` | an owner question: the closet's Climb in is the port's step and close (DV640), tg takes no drag of oneself onto a closet; kept, or no Climb in on closets | an open closet | the owner's answer | `Infrastructure/ClimbIn.cs` |
+| `species_parts/lizard_bodyparts.dm` | an owner question: the lizard's 3D body (D338 draws the species on the human billboard with tg's lizard sprites, which the client already shows); the lizard body and its digitigrade legs are already in `required-models.md` (gaps SP1) | a lizard | the owner's answer | (none) |
+| `modules_supply.dm:192` `bump_mine` | an owner question: the sphere's excavation still digs on the bump (tg's), the drill's only bump-dig left | a mining MOD in sphere mode | the owner's answer | `modules/mod/modules/modules_supply.cs` |
+
+## 236. Lavaland's fauna, second half, and the ice moon's mobs (gaps LV3, D339, D353)
+Translated whole: `modules/mob/living/basic/lavaland/goldgrub/` (the goldgrub with its ore eating and spitting, its burrowing
+through the rock, its girth that bounces kinetic shots, its taming and riding, the bluespace egg and the baby's growth),
+`gutlunchers/` (the milk, warrior and grub gutlunchers, the udder's cream and salglu from gold and bluespace, the breeding with
+the father's stats, the grub's growth, the warriors' pet commands and wall tearing, the food trough), `raptor/` whole (the
+raptors and their seven colours with each colour's gift, the inheritance of stats and personality traits, the guaranteed
+crossbreeds, the eggs and their hatching, the chick, youngling and adult stages, the happiness, the troughs, the baby, adult and
+healer AI, the RaptorDex with its `RaptorDex` window), `mook/` (the mooks, workers, bards and chief, their leap, jump and ore
+carrying, the village's material stand and landmark, their behaviour trees) and `modules/mob/living/basic/icemoon/` whole (the
+ice demon with its teleport, slippery floors and afterimages, the ice whelp with its ice breath, eruption, sculptures and
+cannibalism, the polar bears, the wolves with their taming, riding and pet commands). With them:
+`modules/modular_computers/file_system/programs/raptordex.dm` (the NtOS RaptorDex and its `NtosRaptorDex` window),
+`datums/components/riding/riding_minigame.dm` and the goldgrub's, raptor's, raptor healer's and chick's riding,
+`datums/components/proficient_miner.dm`, `ai_listen_to_weather.dm`, `joint_damage.dm`, `datums/elements/ore_collecting.dm`,
+`clever_girl.dm`, `raptor_food.dm` (with its sites: the bluespace crystal, the diamond ore, the four ash flora fruits, the meat
+slabs), `datums/actions/mobs/fire_breath.dm` (the line, the cone and the mass fire), the conjure spell's `limit_summons`, the
+targeting strategies `baby_raptor`, `injured_raptor`, `raptor_trough` and `unlit_bonfire`, `__DEFINES/basic_mobs.dm`'s
+`gutlunch_count`, the living mob's own entry in its allies list (`living.dm:15`, a stub left from before `add_ally` was translated: a tamed wolf takes its tamer's allies), and the crusher's tail spike (`trophies_megafauna.dm:21-43`, the ice whelp's and the ash drake's trophy). The ice
+demon cube, wolf ear, bear paw and raptor feather drop from their mobs (section 235's LV3 row). Lavaland's biomes and the cave
+generator now place live goldgrubs and raptors, the mining base's ranch (`Lavaland.dmm`: three younglings, a chick, four troughs,
+three RaptorDexes) is live, and the necrotech relic's summon, the dimensional anomaly's goldgrubs and the mook dust of the
+flatpacks, the soulscythe, the bee smoker and the cursed katana come with them. Kept as tg has them: nothing sends
+`COMSIG_ITEM_EATEN_BY_BASIC_MOB`, so `raptor_food`'s stats never reach a raptor, and `set_parents` sums the child's own (empty)
+`foods_eaten` (`raptor_inheritance.dm:54`), so food never shapes a chick either; the happiness component's callback thresholds are percents (0 to 100) compared with the happiness as a fraction (`happiness.dm:101-112`), so a raptor's happiness never raises its attack or its growth (the RaptorDex's hearts, read from the blackboard, do fill); the gutluncher's udder callback calls
+`update_overlays` whose list nobody applies, and a plain rebuild passes no volumes, so the full udder shows whenever the overlays are
+rebuilt; the ice demon's slippery ice passes its phase-in period to the callback instead of `addtimer` and turns slippery a tick
+after it appears; `clever_girl`'s `Detach` is declared on `/datum/element/cleaning` (`clever_girl.dm:9`), so the element never
+unregisters its door signal. Left:
+| `riding_minigame.dm:44-61`, `:112-137` | the riding minigame's arrows and hearts are `client.images` on the rider (`ABOVE_HUD_PLANE`), which the first-person client does not draw on one's own body (DV110), and its arrows name the world's directions while first-person movement is view-relative (D101): the minigame runs as tg's (a rider who steers the arrows' way tames the raptor, one who misses is thrown) but the rider sees neither the arrows nor the hearts | mounting a wild adult raptor | an owner decision: how first person shows the minigame (asked) | `datums/components/riding/riding_minigame.cs` |
+| `datums/mapgen/Cavegens/IcemoonCaves.dm`, `_maps/RandomRuins/IceRuins/` (the lodge, the abandoned homestead, the plasma facility, the frozen comms, outpost 31) | the ice moon's caves, which place its cave entrances and demonic portals (live since gaps LV5), and its ruins: the ice moon is not loaded with MetaStation, so its mobs spawn only where a live site places them | the ice moon | the ice moon's map (lavaland.md) | (not loaded) |
+| `_maps/RandomRuins/SpaceRuins/abandonedzoo.dmm`, `dragoontomb.dmm`, `shuttles/emergency/emergency_ark.dmm`, `emergency_dep_sup.dmm` | the space ruins and the emergency shuttles that carry raptors, gutlunchers, polar bears or wolves | the space level, those shuttles | gaps SH1 | (not loaded) |
+| `polar_bear.dm:46` | the polar bear's swab (`swabable`, inert) | a swab | cytology (gaps XB1-2) | `basic/icemoon/polar_bear/polar_bear.cs` |
+| `goldgrub.dm:151` | the goldgrub's emissive glow in the dark (DV12) | always | DV12 | `basic/lavaland/goldgrub/goldgrub.cs` |
+| `clever_girl.dm:17` | the "clever girl" achievement for a raptor opening a door | a raptor at a door | the achievements (D332) | `datums/elements/clever_girl.cs` |
+| `raptor_dex.dm:32`, `:43-47`, `raptordex.dm:23`, `:34-38` | the scan's raptor picture and friendship hearts as base64 pictures: the client draws them from their icon and icon states (DV619) | a raptor scanned | DV619 | `basic/lavaland/raptor/raptor_dex.cs` |
+| the mobs' 3D models | the goldgrubs, gutlunchers, raptors (three stages, seven colours), mooks, ice demons, ice whelps, polar bears and wolves keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+
+## 237. The megafauna and their loot (gaps LV4, D339, D353)
+Translated whole: the legacy simple animal base (`simple_animal/simple_animal.dm`, `animal_defense.dm`, `damage_procs.dm`,
+`hostile/hostile.dm`, the hostile mobs' unarmed attack in `_onclick/other_mobs.dm` and `controllers/subsystem/npcpool.dm`, which
+drives their AI), `simple_animal/hostile/megafauna/` whole (the megafauna base with its devouring, telegraphed attacks, GPS signal
+and crusher loot; the ash drake with its fire breath, meteors, lava swoop, flight shadow and lava arena, and the lesser drake;
+Bubblegum with its blood warp, triple and hallucination charges and surround; the colossus with its spiral, random, shotgun,
+alternating and final volleys, its projectile shield and the bolts that dust the dead; the hierophant with its chasers, cross
+blasts, blinks, burst, arena walls and beacon; the legion with its skulls, charge, sentinels and splitting; the demonic frost miner
+with its frost orbs, snowball guns, ice shotguns, enrage and prisms; the wendigo with its slam, scream, teleport and shockwaves;
+the clockwork defender), `basic/boss/` (the boss base; the blood-drunk miner with its dash, rapid saw, kinetic accelerator,
+dash attack, transforming saw, its guidance, hunter and doom kinds and its death effect; the Thing with its three phases, the
+decimate, charge, tendrils, shriek and acid, the phase depleters and the aggro gates), the mob actions they use
+(`datums/actions/mobs/`: fire_breath, meteors, lava_swoop, blood_warp, charge's triple and hallucination charges, projectileattack
+whole, chase_target, create_legion_skull, create_legion_turrets with the legion sentinel, dash, teleport, ground_slam),
+`mining_loot/megafauna/` whole (the drake's cloak, ghost sword, dragon's blood and lava staff; Bubblegum's H.E.C.K. suit, mayhem
+bottle and the soulscythe; the colossus' vocal cords and anomalous crystals; the hierophant club with its blink and beacon; the
+storm staff; the cleaving saw and the wildhunter knife; the frost miner's crystal, cursed boots and demonic jackhammer; the wendigo's
+blood; the Thing's AI-uplink brain), the necropolis chests of the megafauna, `trophies_megafauna.dm` but the elites' trophies,
+`necropolis_gate.dm` whole (the legion's gate), `bitrunning/util/virtual_megafauna.dm` (the virtual megafauna of the bitrunning
+domains, whose six megafauna domains load now), the megafauna's and the bosses' shuttle-move notices, the boss vents' summoning, and with them the boss music, attack telegraph, wall smasher, knockback, projectile
+shield and kill achievement elements, the dash weapon action, the vortex recall, the blooddrunk, mayhem, saw bleed and saw slowdown
+status effects, the worn butchering component, the bubblegum gum. Kept as tg has them: the hierophant's damaging blast passes its
+"penetrated" text into the armour check's silent slot; the legion's split never stops its own death, so each split legion dies at
+once and only the last one drops the staff; the wendigo never starts its scream cooldown; the Thing's square tendrils always take
+the big telegraph (its condition is a ternary of 2 or 1); the knockback element flips its shared distance on a negative throw; the
+frost miner's second animate names its flags twice; the lava staff's reset of a lava turf reports a failure after it worked and starts
+no cooldown; no one sends a boss vent's wave conclusion from its boss, so its node drone never comes; a crusher kill of the Thing,
+the blood-drunk miner or the wendigo puts the trophy in the body's butchering (their crusher loot is not dropped at once). Fixed: the
+turf references the drake's meteors and lava, the lava staff and the ice trail boots keep across a turf change, and the explosions'
+turf lists (two colossus bolts on one wall in a tick); a hotspot made on a wall (a meteor's) no longer throws. Left:
+| `kill_achievement.dm`, `_megafauna.dm:79-87`, `bubblegum.dm:158`, `boss.dm:118` | the achievements, the score and the medals of a megafauna or a boss kill (and Bubblegum's frenching): the element is live and gives nothing | a megafauna's death | the achievements (D332, owner-deferred) | `datums/elements/kill_achievement.cs` |
+| `_megafauna.dm:69`, `boss.dm:44` | the see-through of a big mob (`seethrough_mob`: a client image trick for large sprites) stays inert | always | M10+ (the client) | (inert) |
+| `mining_loot/megafauna/ash_drake.dm:43`, `:53` | the drake armour's and helm's drake mesh on the body (`equipment_bodypart_texture`) | the drake armour worn | M10+ | `mining_loot/megafauna/ash_drake.cs` |
+| `necropolis_chests.dm`, `mining_loot/` but the megafauna's, `cain_and_abel/` | the tendril and puzzle chests, the skeleton key and the colossus chest's Cain and Abel (inert); the legion's 20% tendril crate opens empty | a necropolis chest | gaps LV5 (D353) | `mining/lavaland/necropolis_chests.cs` |
+| `trophies_megafauna.dm` | the broodmother's tongue and the legionnaire's spine (the elites' trophies) | an elite's death | gaps LV5 (D353) | `kinetic_crusher/trophies_megafauna.cs` |
+| `simple_animal/hostile/mining_mobs/` | the `asteroid` base and the elites stand on the live base but stay inert | Lavaland's tumors | gaps LV5 (D353) | (inert) |
+| `simple_animal/hostile/ooze.dm` | the gelatinous and grape oozes (the only other legacy hostile mobs) stay inert | a vat growing | the cytology (vat growing) | (inert) |
+| `_maps/map_files/IceBoxStation`, the ice moon's ruins | the wendigo's, the frost miner's, the clockwork defender's and the Thing's arenas: the ice moon is not loaded, so they live only where something spawns them | the ice moon | the ice moon (not loaded) | (not loaded) |
+| `_onclick/hud/soulscythe.dm` | the soulscythe spirit's HUD (its blood level) | a possessed soulscythe | the HUD screens | (inert) |
+| `megafauna/legion.dm:114` | the small legion's eyes glowing (`emissive_appearance`) | always | DV12 | `megafauna/legion.cs` |
+| `create_legion_turrets.dm:81` | tg passes the sentinel's tracer icon and state swapped, so its tracer draws nothing; here it draws (DV623) | a legion sentinel | DV623 | `datums/actions/mobs/create_legion_turrets.cs` |
+| `mining_loot/megafauna/the_thing.dm:129`, `:165` | the AI's `deployed_shell` is not set to the human shell the AI-uplink brain puts it in (DV624) | an AI deployed into the brain's body | DV624 | `mining_loot/megafauna/the_thing.cs` |
+| the megafauna's 3D models | the drake, Bubblegum, the colossus, the hierophant, the legion, the frost miner, the wendigo, the knight, the blood-drunk miner and the Thing keep tg's sprites (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 242. Xenobiology and cytology (gaps XB1, D339)
+Live: `research/xenobiology/xenobiology.dm` whole (every slime extract with its uses, grinding,
+the enhancer and the maximizer, core crossing, `auto_activate_reaction` with `GLOB.slime_extract_auto_activate_reactions`, every potion
+and the steroid), `reagents/chemistry/recipes/slime_extracts.dm` whole (every reaction is in the reaction lists; the gold extract's
+mobs through `chemical_mob_spawn`, the silver's food and drinks through `get_random_food` and `get_random_drink`, the rainbow's
+clusterbusters, the sepia's timestop, the cerulean's blueprints with their colour filter), `xenobio_camera.dm` whole but the context
+tips (the console, its camera eye seen and moved as DV382's, its seven actions and the hotkey help, the shift, ctrl and alt clicks, the
+monkey cubes, the potion, the linked monkey recycler, the suction tube's effects and sounds, its HUD with the potion display from
+`screen_objects.dm`), the slime food status effect, cytology's `vatgrowing/` whole (the vat and the small vat, the microscope with the
+client's Microscope window, the petri dish with the random one and the old station's, the swab, the biopsy tool, the samples, the
+micro-organisms, every cell line and virus, the swabbing component and the swabable element with `_globalvars/lists/xenobiology.dm`),
+the vatbeast with its tentacle slap and riding, the banana glutton (its eating, regurgitation and riding, `elements/damage_threshold.dm`),
+the longface and the banana clown, and the swabable cell lines of every live organ, pet, decal and item. Kept as tg has it: the
+docility potion's rabid branch never runs (`clear_blackboard_key` returns nothing), the vat's slosh never plays (`handle_growth`
+returns nothing), the auto-activation whitelist filters nothing (it reads the extract's `type` off a typepath), the vat's on and off
+overlays are one static pair for every vat, the foam reaction's message is passed as the foam's result type, the oil extract's warning
+spells "violently !". Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `xenobio_camera.dm:79` | the console's context tips (`add_context`, a live-partial stub) | hovering the console | the context tips (D264, D291) | (live-partial stub) |
+| `minebots/minebot_upgrades.dm:40` | the minebot's sentience potion (inert, its `after_success`) | a mining sentience potion | the minebots (Lavaland's gear, LV1-5, D353) | (generated) |
+| `cell_lines/common.dm` blob spore, blobbernaut | the independent blob spore and blobbernaut a cell line grows are inert | a grown blob cell line | the blob (antagonists, D333) | (generated) |
+| `cell_lines/common.dm` gelatinous and grape oozes | the oozes (`simple_animal/hostile/ooze.dm`) are inert | a grown ooze cell line | the simple animals | (generated) |
+| `cell_lines/common.dm` the tree, the mega arachnid | `basic/tree.dm` and `basic/jungle/mega_arachnid/` are inert | a grown tree or arachnid cell line | the jungle and the tree mobs (M10+) | (generated) |
+| `cell_lines/organs.dm` the corrupt heart | the heretic's corrupted heart is inert | a grown corrupt heart cell line | the heretic (antagonists, D333) | (generated) |
+| `slime_extracts.dm:140` (`slimemobspawn/spider`) | the gold extract's spider reaction summons the midwife giant spider, inert | a gold extract with spider extract | the spiders (antagonists, D333) | (generated) |
+| `slime_extracts.dm:586` (`flight_potion`) | the rainbow extract's flight potion bottle (`mining_loot/consumables.dm`) is inert | a rainbow extract with holy water and uranium | Lavaland's loot (LV1-5, D353) | (generated) |
+| `__HELPERS/mobs.dm:327` (`create_random_mob`) | the gold extract's summoning picks among every `gold_core_spawnable` creature, the inert ones included: an inert one appears and stands | a gold extract's reaction | the creatures' packages | `__HELPERS/mobs.cs` |
+| `vatgrower.dm:140` | the vat's glow on the emissive plane (DV12) | always | DV12 | `vatgrowing/vatgrower.cs` |
+| the 3D models | the extracts, potions, petri dish, swab, biopsy tool, vatbeast and the suction tube keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 244. The chapel (gaps CH1, D339)
+Translated whole: `modules/religion/` (`religion_sects.dm` with its nine sects, `rites.dm`, `religion_structures.dm` (the altar,
+the altar of the gods and the ritual totem), `deaconize.dm`, `burdened/` (the burdened trauma, the psyker's head and brain,
+`psykerize` and `slow_psykerize`, the chaplain's revolver and its holy .38, the psychic projection, booster and wall),
+`honorbound/` (the honorbound trauma and its declare evil spell, the forgiveness and rules rites, the holy writ, the crusader's
+deaconize), `pyre/`, `festival/` (the festival violin, the song tuner rites and their songs), `sparring/` (the ceremonial gear,
+the contract with its `SparringContract` window, the match) and `dreams/` (the banish nightmare, portent, projection, protection
+and slumber party rites, the dreamer's deaconize, the blessed sacred heart)), `_globalvars/religion.dm`'s
+`set_new_religious_sect` and `reset_religious_sect`, `datums/components/religious_tool.dm` (with its `ReligiousTool` window),
+`sect_nullrod_bonus.dm`, `unbreakable.dm`, `smooth_tunes.dm`, `soulstoned.dm`, `datums/elements/tenacious.dm`,
+`datums/status_effects/song_effects.dm`, `modules/flufftext/dreaming.dm` (the sleepers' dreams, `GLOB.dreams`; the sleeping
+effect now dreams), `modules/spells/spell_types/charged/_charged.dm` (the charged and beam spells), `self/forcewall.dm` (the
+mime's and the cult's walls with it), the shade (`mob/living/basic/cult/shade.dm`) and the loyal shade
+(`antagonists/shade/shade_minion.dm`, with its `AntagInfoShade` window), the soulstone (`antagonists/wizard/equipment/soulstone.dm`
+but the rows below: the capture into a shade, the release, the bible's exorcism, the soulful toolbox, the chaplain's and the
+sparring shard, the cursed revolver's capture), the admin smite's `lightningbolt` (`modules/admin/smites/lightning.dm`, the
+sparring god's punishment), `is_chaplain_job`, `isAdminObserver`, `GET_CULTIST`, `IS_HERETIC`, `GET_HERETIC`. The chaplain's
+spawn converts him to the sect, the bible blesses through the sect and smacks the dead, the echolocator outfit and the psyker
+meltdown make psykers, and SSsounds' list of every sound file walks the host's sound index (`SoundLengths.Paths`) for the dream
+of a random sound. Left:
+| `soulstone.dm:120`, `:318`, `:380-406`, `:425`, `:453`, `:482-585` | corrupting a soulstone, a cultist's capture of the cult's sacrifice target, a shade put into a construct shell and the construct-making procs, a cultist's shade and master: the cult's and the wizard's uses of the stone (live-partial rows and `Dm.NotTranslated`) | a cultist or a wizard with a soulstone | the cult and the wizard (D333) | `modules/antagonists/wizard/equipment/soulstone.cs` |
+| `psyker.dm:20` | the psyker's echolocation (`/datum/component/echolocation`: the blindness that shows the world as fading echo images): a 2D view effect | a psyker | an owner decision: how first person shows echolocation | `modules/religion/burdened/psyker.cs` |
+| `psyker.dm:403` | the psychic wall's field-of-view effect (`play_fov_effect`) | the psychic wall | presentation (FOV) | `modules/religion/burdened/psyker.cs` |
+| `soulstone.dm:265` | the soulful toolbox's achievement | a shade forced into a toolbox | the achievements (D332) | `modules/antagonists/wizard/equipment/soulstone.cs` |
+| `religion_sects.dm:660` (`/datum/religion_sect/dreams/vv_edit_var`) | the admin's variable editor of the dream sect | an admin | admin tooling | (live-partial) |
+| `rites.dm:226` | the greed sect's custom vendor rite spawns `/obj/machinery/vending/custom/greed`, which stays inert | the greed sect's rite | the custom vendor's package | (inert) |
+| the chapel's 3D models | the altar of the gods in its sects' colours, the ritual totem, the ceremonial blade, the scrolls, the chaplain's revolver, the festival violin, the psyker head and brain, the soulstones, the shade (required-models.md) | always | the models | `godot/assets/models/models.json` |
+
+## 238. The tendrils, the necropolis and the elites (gaps LV5, D339, D353)
+Translated whole: the necropolis tendril (`basic/lavaland/tendril/`: the mob with its rooting, which clears the rock about it and
+turns the ash to necropolis floor, its heartbeat quickening with its wounds, its death into its chest with the floor going back; its
+lash, its chasers and their wide kind, its cross spikes and its stab with their telegraphs; its AI and tree were live), the base of
+its spikes (`meteor_heart/chasing_spikes.dm:36-91`, the emerging ground spike), `necropolis_chests.dm` whole (the tendril chest's
+skeleton-key lock and the mining loot table, the demonic chest, the puzzle chest, the skeleton key), `mining_loot/` but the
+megafauna's (`berserker.dm`, `clothing.dm`, `consumables.dm`, `cursed_katana.dm`, `equipment.dm`, `eye_of_god.dm`, `godslayer.dm`),
+`cain_and_abel/` whole, the elites (`simple_animal/hostile/mining_mobs/mining_mobs.dm`, `elites/` whole: the elite base with its
+attack actions, the pulsing tumor with its activation, ghost poll, arena walls, fight checks, the regenerative core's boost, its
+loss and win; the goliath broodmother, the herald with its mirror and cloak, the legionnaire with its head and bonfire, pandora with
+its hope; the tumor shard), the elites' crusher trophies (`trophies_megafauna.dm` is whole now), `structures/spawner.dm` but the
+cult's gateway (the monster nests: the base with its holotag, the syndicate, skeleton, clown and mining nests, the netherworld link,
+the sentient spawner) and `icemoon/cave_entrance.dm` whole (the ice moon's cave entrances and demonic portals, the collapsing
+portal's loot), `vehicles/lavaboat.dm` whole with the boats' riding (`riding_vehicle.dm:143-171`), the instant summons spell and its
+book (`spell_types/self/summonitem.dm`, `granters/magic/summon_item.dm`), the alien welder's refuelling (`weldingtool.dm:390`). With
+them: SSaura and the aura healing component with its alert, the combo attacks component, the berserk mode action, the Hippocratic
+oath (`buffs.dm`), the warp cube's flash (`temporary_visuals/miscellaneous.dm:482`), `cure_curse_of_babel`
+(`spells/spell_types/tower_of_babel.dm`), `unequip_everything` (`mob/inventory.dm:486`, a dusting that drops its items), and the shim's
+`matrix.Interpolate` (dm-conformance). The tendrils the cave generator
+and the biomes place are live, so is the legion's 20% tendril chest, and the necropolis chests now hold their loot. tg's tendril
+in this snapshot is a mob: it spawns no fauna (it calls the fauna about it to its aid, `call_reinforcements`, live since gaps LV2)
+and does not collapse into a chasm (the collapse is the ash walkers' nest's, gaps LV6); the ice moon's demonic portal is the
+spawner that collapses into a chest or a tumor. Kept as tg has them: the chaser ability deletes its trail's weak references, not
+the trails (`QDEL_LIST` on `WEAKREF`s), so its trails run on after a cross spike; the concussive gauntlets' bump passes no proximity,
+so only the punch mines; the aura healing's `self_heal` is never read; the broodmother calls `spawn_children` with no target, so its
+babies come without one. Left:
+| `tendril.dm:98` | the tendril score and the tendril exterminator achievement of the killers in view | a tendril's death | the achievements (D332, owner-deferred) | `basic/lavaland/tendril/tendril.cs` |
+| `tendril.dm:120` | the tendril's emissive and bloom overlays (DV12) | always | DV12 | `basic/lavaland/tendril/tendril.cs` |
+| `elites/elite.dm:34` | the elites' see-through (`seethrough_mob`, inert: a client image trick for large sprites, as the megafauna's) | always | M10+ (the client) | (inert) |
+| `spawners/random/mining_loot.dm:10`, `:37`, `necropolis_chests.dm:126` | the soul stone of the loot table and the puzzle chest (`soulstone/anybody/mining`, `antagonists/wizard/equipment/soulstone.dm`) is an inert item | a necropolis chest | the wizard and the cult (antagonist-only, D333) | (inert) |
+| `spawners/random/mining_loot.dm:36` | the demonic loot's wolf coat (`spell_types/shapeshift/wolf.dm`): its shapeshift is the wizard's spells' | a demonic chest | the wizard's spells | (inert) |
+| `structures/spawner.dm:253-297` | the cult's eldritch gateway (the proteon spawner) | a cult rune | the cult (antagonist-only, D333) | (inert) |
+| the tendrils', elites' and loot's 3D models | the tendril, the nests, the tumor, the four elites, the boats and the loot keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 243. The crossbreeds (gaps XB2, D339)
+Live: `research/xenobiology/crossbreeding/` whole: `__corecross.dm` (the crossbreed base with its name, colour and examine text, the
+crossing of ten extracts fed to an adult slime from XB1's `xenobiology.dm`, the slime-crossed beakers, blood pack, pax, omnizine and
+autoinjectors), every colour of the burning, charged, chilling, consuming (with every slime cookie), industrial, prismatic,
+recurring, regenerative, reproductive, self-sustaining and stabilized families, `_clothing.dm` (the rebreather, the prism glasses
+with their two actions and the light prism, the heroine bud, the adamantine armour), `_misc.dm` (the rewind and time-freeze cameras,
+the hypercharged cell, the barrier cube with its barricade and gel walls, the ice stasis, the capture device), `_mobs.dm` (the slime
+form and the transformed slime), `_potions.dm` (the extract cloner, the peace and love potions, the pressure and lava proofing, the
+slime reviver, the slime stabilizer), `_status_effects.dm` (every crossbreed status effect with its alerts: the rainbow protection,
+the slime skins, the frozen stasis, the slime recall, the slime-to-mob links, the cookies' buffs and every stabilized effect with
+the gold familiar and the rainbow's regenerative backup) and `_weapons.dm` (the arm blade, the rainbow knife, the adamantine shield,
+the blood gun with its bloodchill shot). With them: `spells/spell_types/shapeshift/` (the shapeshift spell base, its status effects
+with the shapeshifted alert, and the var-only dragon, gorilla, polar bear, wizard, wolf and heretic monster forms, with the AI's
+shapeshift leaf of `use_mob_ability.dm`), the reproductive extract's stomach (`storage/subtypes/others/extract_inventory.dm`),
+`get_random_coin` (`__HELPERS/randoms.dm`), the ration pack's eating (`food/packaged.dm`), `unequip_everything`, `drop_everything`
+and `get_all_cells` (`mob/inventory.dm`) and `randomize_human` (`admin/create_mob.dm`). Kept as tg has it: the burning red extract's
+friends loop types its loop var as a list, so it skips every friend and enrages none of them, the stabilized cerulean extract,
+having moved its holder's soul to the clone, still tells the body left behind that it "can't find" a living one
+(`_status_effects.dm:774`), the stabilized black effect never fades once its extract is dropped (its tick returns before its base
+unless it drains someone, `_status_effects.dm:981`). DV647 (a friendless slime under the burning red extract), DV648 (the prism
+glasses' lens action). Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `charged.dm:181` | the charged green extract turns its user into the chosen jellyperson subspecies; the jellypeople are inert: the extract fizzes and stays | a charged green extract | the jellypeople (gaps SP3) | `crossbreeding/charged.cs` |
+| `charged.dm:252` | the charged black extract's species change picks among the species a slime extract may make, the inert ones included; an inert roll fizzes and the extract stays | a charged black extract | the species (gaps SP3) | `crossbreeding/charged.cs` |
+| `charged.dm:271` | the charged adamantine extract's golem shell (`ghost_role/human/golem/servant`) is inert: it stands and gives no ghost a golem body | a charged adamantine extract | the golems (gaps SP3) | (generated) |
+| `chilling.dm:308` | the chilling black extract's golem change leaves the user as he is while the golems are inert | a chilling black extract | the golems (gaps SP3) | `crossbreeding/chilling.cs` |
+| `regenerative.dm:211` | the regenerative green extract's jelly mutation toxin turns a human into an inert jellyperson | a regenerative green extract on a human | the jellypeople (gaps SP3) | (generated) |
+| `stabilized.dm:130` | the stabilized gold extract's familiar picks among every friendly `gold_core_spawnable` creature, the inert ones included: an inert one appears and stands | a stabilized gold extract | the creatures' packages | `crossbreeding/stabilized.cs` |
+| `heretic/magic/ascended_shapeshift.dm`, `flesh_ascension.dm` | the shapeshift subtypes with procs of their own (the heretics' ascended and flesh forms) stay inert with their owners (the polymorph belt's came with gaps OR2) | their spells | the heretic (antagonists, D333) | (generated) |
+| `shapeshift/shapechange.dm` | two of the wizard's Wild Shapeshift forms, the mystic juggernaut and the wizard viper spider, are inert: shifted into one, the caster is an inert mob | the wizard's spell | the constructs, the spiders (antagonists, D333) | (generated) |
+| the client | the rainbow protection's colour filter, the spooky cookie's skeleton seen by the others, the prism glasses' tint, the slime form's change and back, the blood gun's shot, the industrial extract's bubbling, the crossbreeds' sprites and colours, seen in a real client | always | the client checks | (client) |
+| the 3D models | the crossbreeds, the cookies, the barrier cube and its walls, the light prism and glasses, the capture device and the crossbreed gear keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 245. The library's machines and the theatre's leftovers (gaps LB1, D339)
+Live: `modules/library/lib_machines.dm` whole (the visitor console with its archive search and the LibraryVisitor window; the book
+management console with its inventory loaded from its area's books at mapload, the check-outs, the archive's search, the upload of the
+scanner's cache, the newscasters' book club feed, the printing of bibles and posters on the printer's cooldown, the emagged forbidden
+lore, and the LibraryConsole window; the scanner with its scan flick, sound and LibraryScanner window; the book binder crediting the ID it
+scanned, its binding flick and its 4.1 s bind; the borrowbook datum; `library_updated`), `admin_only.dm` whole (the admins' console and
+its book viewer, the LibraryAdmin and AdminBookViewer windows), `book.dm`'s DSM and IDC manuals (the DSMBook and IDCBook windows on tg's
+paginated book), the barcode scanner's book scans, the library console's board and its screwdriver switch, `spells/spell_types/self/forcewall.dm`
+whole (the wizard's forcewall, the cult's shield, the mime's invisible blockade) with the wizard's forcefield of `effects/forcefields.dm`,
+`spells/spell_types/pointed/finger_guns.dm` whole, the emote invocations' `%PRONOUN_` (`spell.dm:372`, the mime's spells are the first to use them), and `SSdbcore`'s `Connect`, `IsConnected` and `Disconnect` up to the SQL pool. tg keeps
+the library's archive in its SQL database (`SSdbcore`); the port has none (D76 keeps the host's own data, D332 keeps persistence out), so
+`Connect` fails as tg's does with SQL off and the consoles take tg's own no-connection paths: the archive's windows show "Unable to
+retrieve book listings", an upload or an archive print says "Connection to Archive has been severed. Aborting.", and the admins' console
+closes its window. The scanner's and the binder's flicks play on their models' working surfaces (`models.json`). Kept as tg has it: the
+news post without a news network says so and goes on into it; the check-out's period is `max(params, 1)`; the admins' window reads an
+`author_ckey` field its console never sends. Left:
+| `lib_machines.dm:200-224`, `:229-243`, `:617-629`, `:663-688`; `admin_only.dm:31-79`, `:156-275` | the archive's SQL: the search and its page count, the upload, the archive's print, and the admins' search, history, view, hide and unhide (`Dm.NotTranslated` behind the failed `Connect`) | a tg database | an owner's question: backing the archive with the host's SQLite (D76, D332) | `modules/library/lib_machines.cs`, `admin_only.cs` |
+| `controllers/subsystem/dbcore.dm:266-301`, `:363`, `:371` | the SQL connection pool (rust-g, rules 13) | `SQL_ENABLED` in the config | never (rules 13) | `controllers/subsystem/dbcore.cs` |
+| `lib_machines.dm:584` | the forbidden lore's cult dagger (`/obj/item/melee/cultblade/dagger`) is inert | an emagged console's lore | the cult (antagonists, D333) | (generated) |
+| Meta's library | the cult's archives in the library (`structures/destructible/cult/item_dispenser/archives/library`) are inert | always | the cult (antagonists, D333) | (generated) |
+| `religion/burdened/psyker.dm:390` | the psyker's psychic wall (a forcewall) stays inert with the psyker | a psyker | the chapel (gaps CH1) | (generated) |
+| `tgui/.../DSMBook.tsx`, `IDCBook.tsx` | a blank page's DeForest logo (an SVG mask in tg's stylesheet) is its name in text | an empty page | the kit | `godot/scripts/Shared/Tgui/Interfaces/PaginatedBook.cs` |
+| `tgui/.../LibraryConsole/screens/Forbidden.tsx` | the forbidden lore's cult font (tg's `LibraryComputer__CultText` styles) is red text | an emagged console | the kit | `godot/scripts/Shared/Tgui/Interfaces/LibraryConsole.cs` |
+| the 3D models | the scanner's open panel (`bigscanner2`) has no hatch on its model; the visitor and admin consoles share the old computer's model | always | the models | `godot/assets/models/models.json` |
+
+## 240. Lavaland's ruins and the ash walkers (gaps LV6, D339, D353, D355)
+Translated whole: tg's ruin seeding (`modules/mapping/ruins.dm`: the placement tries, the isolated levels' reservations, the
+reserved load with the clearing of what stood below, `seedRuins` with its budget and mineral budget, forced, linked and unique
+ruins), SSmapping's ruin steps in tg's order (`setup_ruins` after the templates' preload, `load_reserved_ruins` after the rivers,
+`load_ruin_now`, `preloadRuinTemplates` sorted by `cmp_ruincost_priority`, `get_isolated_ruin_z`), the ruin landmark,
+`datums/ruins.dm` and `datums/ruins/lavaland.dm` (the random blood-drunk miner); the ruins' code (`lavalandruin_code/`: the sliding
+puzzle and the prison cube, the freeze cube, the dead god, the syndicate base's comms crate and shard, the watcher egg, hatchling
+and orbiter; `objects_and_mobs/ash_walker_den.dm`, `sin_ruins.dm` and `cursed_slot_machine.dm` with the slot machine's curse,
+`status_effects/debuffs/cursed.dm`); the ghost roles of `mob_spawn/ghost_roles/mining_roles.dm` whole (the hermit, the beach bums,
+the lifeguard, the bartender, the lifebringer, the ash walker eggs, the syndicate base's scientist and comms agent); the ash
+walkers (`antagonists/ashwalker/` whole: the tribe, its round-end report, the skeleton key's recipe, the headpike's joy); the ruin
+defenders (`basic/ruin_defender/dark_wizard.dm`, `skeleton.dm`), the ATV (`vehicles/atv.dm` with its riding), the gas miners
+(`atmospherics/machinery/other/miner.dm`), the step triggers' base, message, sound and outfitter (`step_triggers.dm`), the
+firepit (`awaymissions/mission_code/Cabin.dm`), the butchering gloves (`icemoonruin_code/wrath.dm`), the cult airlock
+(`airlock.dm:2455-2531`), the bombable turf element and the ruins' mapping helpers (no lava, the atom injectors, the airlock note
+placer, the bombable wall), the fountain hall's healing fountain and sacrificial altar (`structures/divine.dm`), the shoe factory's
+loot (`mapfluff/ruins/shoe_factory.dm`), the rubble's bounce, the shuttle bar's table, the plasma poster's closer look, the processor's board,
+and the ruins' turfs (the biome-replacing basalt and rock, sand and the coast, ice and snow, grass, the watery rock, the abductor
+plating, the cult, rusted, wooden and explosive plastitanium walls, the necropolis' and the hierophant's walls, the beach water,
+the rusted plating). The ruins load from `maps/RandomRuins` (the Maps tool converts them with Meta; the syndicate base's rooms
+from `strings/modular_maps/syndicatebase.toml`). Kept as tg has them: the tribe's report prints its other objectives and drops
+the text, the slot machine's curse passes its one second as the callback's argument, and the gas miner's power draw passes the
+draw as an argument `update_use_power` ignores, the firepit's `Initialize` toggles the mapped fire out and its `fire_act`, hand and `extinguish` set it and toggle it back (only a flame's `item_interaction` lights it, and nothing puts it out), and the pride ruin's door on weak lava is burnt by the lava's `initialize_occupant` before its stone tile makes the lava safe and before it has its integrity (a `take_damage` CRASH, as in tg). Left:
+| `mapping.dm:254-270` (`setup_ruins`' ice and space branches), `_maps/RandomRuins/IceRuins/`, `SpaceRuins/` | the ice moon's and space's seeding: the code is general and translated, but no level of theirs is loaded, and their maps are not converted (DV635) | the ice moon, the space levels | gaps SH1 (space), the ice moon (not loaded) | `controllers/subsystem/mapping.cs` |
+| `cult/runes.dm`, `cult/cult_items.dm`, `cult/cult_structure_pylon.dm` | the cult altar ruin's Nar'Sie rune, cult blade and dagger, veil shifter and pylon are inert | the cult altar ruin | the cult (antagonist-only, D333) | (inert) |
+| `abductor/machinery/`, `abductor/abductor_structures.dm`, `abductor/equipment/gear/abductor_items.dm:284` | the crashed UFO's experiment machine, gland dispenser, pad, operating table and guide are inert | the UFO crash ruin | the abductors (antagonist-only, D333) | (inert) |
+| `wizard/equipment/artefact.dm:29`, `guns/magic/staff.dm`, `items/dice.dm:279`, `machinery/wishgranter.dm` | the veal render, the staff of the honk, the one-use die of fate (greed's bag of money gives one) and the wish granter (its wish makes an antagonist) are inert | the clown biodome, greed's slot machine, the cube ruin | the wizard and the wish granter's antagonist (D333) | (inert) |
+| `computer/arcade/battle.dm`, `orion.dm`, `slotmachine.dm:736`, `cards/deck/cas.dm`, `items/skateboards.dm:17`, `holodeck/items.dm:61` | the arcade cabinets, the syndicate slot machine, the Cards Against Spess decks, the hoverboard and the dodgeball are inert | the syndicate base, the golem ship, the beach biodome | recreation (gaps RC1), the holodeck | (inert) |
+| `food/snacks.dm:88-110`, `:538`, `frozen.dm:354-397`, `packaged.dm:360` | the chips, the random corn chips, the creamsicles and the ration packs are inert | the ruins' snacks | the kitchen (gaps KT1) | (inert) |
+| `library/book.dm:384`, `library/lib_machines.dm:793` | the IDC manual and the bookbinder are inert | the syndicate base, the golem ship | the library (gaps LB1) | (inert) |
+| `game/machinery/sleepers.dm` | the syndicate base's and the survival pod ruin's sleepers are inert (D216: the sleeper is not ported, as MetaStation maps none; the ruins do) | the syndicate base, the survival pod ruin | an owner question (D216) | (inert) |
+| `spawners/message_in_a_bottle.dm` | the beach's message in a bottle reads the persistent messages | the beach biodome | persistence (D332, owner-deferred) | (inert) |
+| `turfs/open/water.dm:225-330` | the hot spring's warm water (its bathers' moods and the frogs) is inert | the elephant graveyard, the gaia ruin | the water package | (inert) |
+| `ghost_roles/golem_roles.dm`, `species_types/golems.dm`, `podpeople.dm` | the free golems' ship spawns inert golem shells, and the seed vault's lifebringer hatches as a pod person whose species is inert | the golem ship, the seed vault | the other species (PORT-CHECKLIST 4) | (inert) |
+| `cursed_slot_machine.dm:55`, `surface.dm:20` | the slot machine's screen glow (DV12) and the dead god's see-through (DV499) | always | DV12, DV499 | `cursed_slot_machine.cs`, `surface.cs` |
+| `step_triggers.dm:47-190`, `:238-` | the thrower, the stopper and the teleporting step triggers (no Lavaland ruin places them) | away missions, the shuttles | with their maps | `game/objects/effects/step_triggers.cs` |
+| `mission_code/Cabin.dm:89-140`, `shuttle/misc/special.dm` but `:175-211` | the cabin's lumbermill, rune ladder and snowy map generator; the special shuttles' machines and the luxury shuttle's blockers | the away mission, the special shuttles | the away missions, gaps SH1 | `mission_code/Cabin.cs`, `shuttle/misc/special.cs` |
+| the ruins' 3D models | the nest, the eggs, the pillars, the slot machine, the dead god, the ATV and the gas miners keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 246. The restaurant and the food left (gaps KT1, D339)
+Translated whole: `food_and_drinks/restaurant/` (`_venue.dm` but the portal's context tips: the venue's processing, customers,
+orders and payments, its opening and closing by an ID with its access, the portal with its door overlay, its venue picked with an
+ID, its board, panel and wrench; the seat projectors and the seats; `generic_venues.dm`: the restaurant and the bar, the food's
+thought bubble, the food pushed into the mouth and the drink slurped; `custom_order.dm`: the moth clothing, ice cream, reagent,
+drink and soup orders; `customers/_customer.dm`: the eleven customer kinds with their prefixes, lines, looks and voices),
+`controllers/subsystem/restaurant.dm`, `basic/space_fauna/robot_customer.dm`, `datums/ai/robot_customer/` (the controller and the
+behaviours; the tree was embedded), `elements/food/venue_price.dm` with its sites (`_food.dm:89`, `reagents.dm:107`,
+`clothing.dm:74`, `crayons.dm:216`), the round end's restaurant venues (`roundend.dm`), the portal's board
+(`machine_circuitboards.dm`); every food subtype's own proc left in `food/` (`snacks.dm`, `burgers.dm`, `soup.dm`, `bait.dm` whole;
+the rest of `misc.dm`, `bread.dm`, `lizard.dm` (its moonfish eggs' aquarium content since gaps FI1), `pastries.dm`, `cake.dm`, `frozen.dm`, `spaghetti.dm`,
+`martian.dm`, `mexican.dm`, `sweets.dm`, `vegetables.dm`, `pie.dm`, `packaged.dm`, `sandwichtoast.dm`), the recipe guides
+(`recipes_guide.dm`, `soup_guide.dm`) and the monkey recyclers' list. With them: `components/food/ghost_edible.dm`,
+`status_effects/limited_effect.dm` and the health buff of `buffs.dm`, the squid ink decal (`cleanable/food.dm`), and the crafting of
+reagent ingredients the guides and most cooking recipes need (`global_lists.dm:20`, `_crafting.dm:199`, `:437`, `:738`, the glass
+style picture of `assets/crafting.dm:37`; section 11's rows). Meta's two portals and two seat projectors are live. Kept as tg has
+them: the moth clothing order is made with no venue (`order_food` passes only the customer, so its `New` reads a null venue); the
+ice cream cone sold to a customer reports no transaction, so it is not counted as served; the reaction guides' `New` runs the
+parent twice; the ice cream order's flavour list grows with every order; the crazy burger never stops processing.
+| `restaurant/_venue.dm:285`, `:190` | the portal's context tips (`add_context`, a live-partial stub, and its `register_context`) | a held tool or ID over a portal | the screentips (D291) | `modules/food_and_drinks/restaurant/_venue.cs` |
+| `job_types/cook.dm:56`, `bartender.dm:38` | the cook's and bartender's tourist scores from their venue's income (`award_service`, live-partial rows of gaps J2) | the round end | the achievements (D332) | (live-partial) |
+| the restaurant's 3D models | the portal, the robot customers, the seat holosign and the thought bubble keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 247. Recreation: the holodeck, the arcade, the slots, the roulette and the cards (gaps RC1, D339)
+Live: `modules/holodeck/` whole but the holographic skateboard (the computer with its program list, its loading of tg's 29 converted
+programs from `maps/templates/` with the cooldown, the derezzing of what leaves the holodeck, the safeties' stamina damage, the emag's
+dangerous programs, the floor check and its overload, the emergency shutdown, the EMP and the explosions, and the Holodeck window; the
+holodeck area's power procs; the effects' deck, sparks, random book and the animal spawners with their holographic nature; the
+holographic swords, dodgeball, ready button, conveyor and papers; `holodeck_map_templates.dm`'s blacklist), SSmapping's
+`preloadHolodeckTemplates` and `determine_fake_sale` (the fake tiles in the arcade's prize pool), `game/machinery/computer/arcade/`
+whole (the cabinet's prizes for tickets with the GAMERGOD double and its rare pulse rifle, its display case key reset, its EMP; The
+Orion Trail with every event, the space port's market, the Realism Mode emag with its explosive model ship and the Kobayashi Maru; the
+battle arcade with its worlds, shop, gear, enemy turns and its emag; Mediborg's Amputation Adventure; the OrionGame and BattleArcade
+windows with tg's arcade pictures), `slotmachine.dm` whole (the coins and holochips, the spin, the reels and lines, the payouts, the
+jackpot's announcement, rays and memory, the traps, the owner's account, the multitool's pay mode, the emag, the EMP; its circuit
+board's themes; the SlotMachine window drawing tg's symbols), `roulette_machine.dm` whole (the owner's card, the bets, the spin with its
+flicks, light and sounds, the payout in poker chips, the wires, the shock, the welder, the theft and the prize beacon's pod; the Roulette
+window), `items/tcg/` whole (the cards with their tap and flip, the packs with tg's rarity odds, the decks with their draw, shuffle and
+flip, the card holders with their holographic summons, stats and mark, the mana and life buttons and the display panel),
+SStrading_card_game (`tcgsetup.dm`, loading tg's two sets and keywords from `strings/tcg/` at boot), `storage/subtypes/others/cards.dm`
+and the card binder's storage. The `COMSIG_ARCADE_VICTORY` signal completes the arcade playtest experiment; the gaming skill and the
+recreation moods are live with their machines. DV663 (the rigged slot machine throws its payout), DV664 (the slot symbols' icons in the
+window). Kept as tg has it: the console starts on the offline program, so its init's load returns at once and a mapped holodeck (Meta's)
+keeps its reinforced floor until a program is loaded; Orion Trail's turn goes on after its game over and may roll an event onto the
+game-over screen; its `remove_crewmember` removes from the settlers list it iterates; the slot machine's EMP passes a
+second argument to `give_payout`, which takes one; `datum_card`'s numbers are text in set one and numbers in set two. Left:
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `holodeck/items.dm:167-173` | the holographic skateboard's `pick_up_board` (the skateboards of `scooter.dm` are not translated): the skate park's board is inert | the skate park program | the scooters and skateboards (vehicles) | (generated) |
+| the holodeck's programs | inert things on three programs: the chapel court's robes (`chaplainsuit`), the lounge's shuttle bar table (`table/wood/shuttle_bar`), the Kobayashi Maru's mass driver | those programs | the chapel's clothing, the tables, the mass driver | (generated) |
+| `arcade/_arcade.dm:90`, `orion.dm:132` | the pulse rifle prize's and the Orion Trail gamer's achievements (`give_award`, `Dm.Deferred`) | a prize; reporting a killer | the achievements (D332) | `arcade/_arcade.cs`, `arcade/orion.cs` |
+| `tcg.dm:65`, `:69`, `tcg_machines.dm:189` | the card's picture in its examine line (`icon2html` of `getFlatIcon`, `Dm.Deferred`) | examining a card or summon | the chat icons (M10+) | `tcg/tcg.cs`, `tcg/tcg_machines.cs` |
+| `tcgsetup.dm:154-185` | `check_card_datums`, the admins' check of every card's vars against their defaults (`vars`, rules 10.7; `Dm.NotTranslated`) | an admin's card check | never (rules 10.7) | `controllers/subsystem/tcgsetup.cs` |
+| `holodeck/items.dm:135`, `slotmachine.dm`, `roulette_machine.dm` | the emissive glow of the ready button and the machines' lights on the emissive plane (DV12) | always | the client's emissives (DV12) | (the files) |
+| the client | the holodeck's program swap, the arcade windows' pictures and mood faces, the slot reels rolling, the roulette's flicks and lights, the summons' holograms, seen in a real client | always | the client checks | (client) |
+| the 3D models | the roulette table, the card holders and summons, the mana and life buttons, the display panel, the cards, packs, decks and binder, the model Orion ship and the ready button keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+
+## 248. Ordnance and the small machines (gaps OR1, D339)
+Live: `research/ordnance/` whole: the tank compressor (`tank_compressor.dm`: it pumps its input port's gas into an inserted tank up to
+5000 kPa, keeps what the tank leaks in its buffer and records it, ten moles or more, as a gas record when the tank is destroyed or
+ejected, absorbs a blast inside it, prints a record to a disk as a gaseous ordnance file with the experiments it fits; the
+TankCompressor window), the tachyon-doppler array (`doppler_array.dm`: it records every blast in front of it within 150 tiles with the
+factual and the theoretical radii and the exploding tank's reactions, states it, prints it to a disk; its red light while powered and
+its rotation; the DopplerArray window), the scientific papers and their partners (`_scipaper.dm`, `scipaper_partner.dm`); the NT Frontier
+app (`programs/frontier.dm`, the NtosScipaper window), the ordnance data files (`file_system/data.dm:36-87`) and the techweb's
+`add_scientific_paper` (publishing completes the ordnance experiment and pays the science budget); `game/machinery/mass_driver.dm` with
+`datums/wires/mass_driver.dm` (the testing range's, the chapel's, the disposals' and the shack's drivers with their launch flick) and
+`computer/pod.dm` (the launch controls with the MassDriverControl window), and the mass driver button's controller
+(`assembly/doorcontrol.dm:180-207`). Meta's compressor, doppler array, four drivers and four controls boot live. The models were already
+in the catalog (the compressor's doors and hatch, the doppler's panel, the driver's launch flick). Kept as tg has it: the launch control's
+`process` sleeps into its alarm (pod.dm:25, the port runs it detached as `set waitfor = FALSE` does); `add_scientific_paper` looks for
+the experiment's type among the papers and so always completes it again; a paper's `0 in gains` never matches; the purchase message
+reads its refund by text, so it says "refunding  points"; each `RefreshParts` adds the servos' range to the driver's again.
+The anomaly refinery, the cores and their users, the gizmos and the pads came with gaps OR2 (section 254).
+## 249. The exploration drones (gaps EX1, D339)
+Live: `modules/explorer_drone/` whole: `scanner_array.dm` (the scanner dishes with their off, ready, scanning and open states, the
+array's controller and its power from the dishes' scanning modules, the scan conditions the dishes weigh, the wide, point and deep scans
+with tg's costs and timings, the emergency stop and the failed scan when a dish leaves the array, the console with its sound and the
+ExoscannerConsole window, its experiment handler completing the exploration experiments), `manager.dm` and `exploration_site.dm` (the
+sites and their bands, `generate_exploration_sites`, each site kind with its events, the reveals of the point and deep scans), `exodrone.dm`
+(the drone with tg's probe names, its tools, cargo, log with its `$$` keywords, travel with its fuel coefficients, its busy delays,
+damage and self-destruct, its return to a free launcher or a random station tile; the launcher with its fuel overlays, the launch's
+smoke and sound, its crowbar; the fuel pellets), `control_console.dm` (every act and the ExodroneConsole window with tg's adventure
+screens), `adventure.dm` (tg's adventure format: the loading of `strings/exoadventures/` by SSpersistence's Initialize, the validation,
+the nodes, choices, qualities, effects, triggers and requirement groups, the delays), `exploration_events/` whole (the fluff, danger,
+resource, trader and adventure events with their tools, requirements, loot and deals), `loot.dm` whole (the loot generators, the
+antique, the trade chip, the fire lance with its windup and beam), and the admins' adventure browser (`/datum/adventure_browser` with the
+AdventureBrowser window, playtesting an adventure on the drone console's screen). Beside them: the catering crate's spoiled food
+(`cargo/packs/exploration.dm`), the skeleton species (`species_types/skeletons.dm`, whose head the welded locker holds; the dragon's
+blood, a legion's corpse and the skeletonize meltdown, `instability_meltdown.dm:149`, give it now), the GLOB of the drones' tools
+(`__DEFINES/adventure.dm`), and the client's copy of tg's `icons/ui/adventure/` pictures (the icon converter) with the adventures'
+own base64 pictures decoded on the client. Meta's dish, its console, the two launchers with their drones and the drone console work.
+Kept as tg has it: an event's blacklist is tested against its own required traits, not the site's (`exploration_site.dm:111`), so a
+blacklist never excludes an event; a mineral deposit makes its sheets with the amount as their loc (`resource.dm:300`), so the stack
+is made in nullspace with its default amount and moved into the cargo; the console's `explore_event` act does not return TRUE, so the
+window updates on the next tick; the dish's `on_set_panel_open` does not call its parent; the drone sends its status signal before it sets the status
+(`exodrone.dm:145`), so the console's alert screen shows the status the drone left; the console's self-destruct calls the drone's `handle_deconstruct`,
+which since tg's deconstruction refactor no longer deletes it (`obj_defense.dm:183`): the explosion and sparks go off where the drone is
+(nowhere at a site) and the drone flies on. Left:
+| `manager.dm:80`, `control_console.dm:180` | `/datum/asset/simple/adventure` stays inert: `ui_assets` sends nothing (DV44); the client draws tg's pictures from its own copy | the consoles' windows | (the client) | `modules/explorer_drone/manager.cs`, `control_console.cs` |
+| `manager.dm:86` | the admin verb Adventure Manager (`ADMIN_VERB`): the server console's `adventures` command stands in (D275) and opens the browser for the admin | an admin | M10+ (admin verbs) | `src/Server/ServerHost.Console.cs` |
+| `tgui/.../ExodroneConsole.tsx` | the lost signal's Nanotrasen logo (tgui-core's SVG) is a warning icon; the adventure screen's monospace font is the kit's | a lost drone, an adventure | the kit | `godot/scripts/Shared/Tgui/Interfaces/ExodroneConsole.cs` |
+| the 3D models | the drone, the fuel pellets and the loot are tg's sprites (`required-models.md`) | always | the models | `godot/assets/models/models.json` |
+
+## 253. The veteran advisor, the human AI and the deployable turrets (gaps JB1, D339)
+
+Live: `jobs/job_types/station_trait/veteran_advisor.dm` and `human_ai.dm` whole, so their two job traits roll (DV432's list loses them):
+the Veteran Security Advisor starts on a security officer's spot in his formal uniform, trenchcoat, veteran cap and eyepatch, with the
+M1911 holster, the telescopic baton, the cane, the cigar and its box, the lighter, the bronze heart medal, his PDA, the mindshield and
+the PTSD trauma; his trim's `refresh_trim_access` (`id_trim/jobs.dm:1335`) is translated. The Human AI starts at a free latejoin core or
+the AI's spot, announced when it joins after the start, in its robotic ID, jumpsuit, diagnostic HUD and headset, with the omni door
+remote, the machine remote, the sensor device, the infinite laser pointer, the flash, the lawset note (`default_lawset_list`, copying
+the core rack's laws) and the pre-packaged camera console (it unpacks only in the AI satellite's chamber; a screwdriver packs it back,
+`camera_advanced.dm:282`), a void suit with its oxygen where its spot is not safe, the robotic tongue and the silicons' and turrets'
+factions. `structures/deployable_turret.dm` whole (the machine gun, the heavy machine gun and the admins' Infinity Gun with their
+controls, and the heretic away mission's var-only naval cannon: manning, the burst with its sound per shot and its overheat sound, the turning with the gunner, the wrench's folding),
+`machinery/deployable.dm`'s folded heavy machine gun and `components/deployable.dm` whole. Kept from tg: `process` ends the gun's
+processing on its first run (`update_positioning` returns null for a manned gun), so the gun turns on its gunner's clicks and its
+shots. DEVIATION(DV349): the gunner's view size is left alone. Meta maps none of the turrets: the bitrunners' Meta Central domain maps a heavy machine gun, an
+admin spawns them, and the marine engineer's ERT outfit (inert, with the ERT) carries the folded gun; the syndicate duffel bag holds one.
+
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `veteran_advisor.dm:57`, `negative_quirks/paraplegic.dm`, `quirks/_quirk.dm`, `mob/living/status_procs.dm:458`, `vehicles/wheelchair.dm` | the veteran's paraplegic quirk (`Dm.Deferred`): the quirk datum's procs, `add_quirk`, the paraplegic quirk with its trauma and `put_in_wheelchair`, and the wheelchair (the vehicle, its folded item and its riding are inert), so the veteran walks | the veteran's spawn | the quirks (owner-deferred, D333, D339) | `modules/jobs/job_types/station_trait/veteran_advisor.cs` |
+| `awaymissions/mission_code/heretic/naval_cannon.dm:33` | the heretic away mission's naval cannon is live (a var-only deployable turret); its 40 mm shell's `on_hit` explosion (`/obj/projectile/bullet/mm40`, inert) waits with the mission | the away mission's cannon | the away missions | (generated) |
+## 250. The fish (gaps FI1, D339)
+Live: `fishing/fish/` whole (`_fish.dm`: the fish item with its size and weight and their force, health, hunger, feeding and
+growth by food, life in and out of water with the flop, death with its message and dead sprite, revival, breeding with its
+evolutions, the electrogenesis, petting, butchering into fillets, cooking and eating, grinding, the export price and the examine;
+`fish_traits.dm`: every trait with its effects on the fish, on its eater and on a grown mob, the spontaneous traits and their DNA
+infusions; `fish_evolution.dm`; `chasm_detritus.dm`; every fish of `types/`), with `components/aquarium_content.dm`,
+`components/fish_growth.dm`, `elements/fish_safe_storage.dm`, `components/throwbonus_on_windup.dm` (the lavaloop's wind-up bar),
+`actions/mobs/charge_apc.dm`, the shadow regeneration of `buffs.dm`, `__HELPERS/logging/fishing.dm`, `isfish`, the fish defines'
+`GET_FISH_SLOWDOWN` and `GET_FISH_WEIGHT_RANK`, the reagents fed to a fish (`reagents.dm:326` and milk's, mutagen's, bone hurting
+juice's, teslium's, space lube's and growth serum's `used_on_fish`), `fishing/fish_mount.dm`, `fishing/fish_catalog.dm` with its
+FishCatalog window and tg's fish sprite sheet (`assets/fish.dm`, drawn by the client), SSfishing (`processing/fishing.dm`: the
+fish's cached properties and beauty scores, the catchable fish by id, the fish evolutions' fish), the fish cases of
+`aquarium/aquarium_kit.dm` and `storage/subtypes/others/fish_case.dm`, the fish-safe toilet, moisture trap and deep fryer, the
+puddle's tadpoles (`water_source.dm:153`), the fish export (`exports/fish.dm`), the DNA infuser's fish traits
+(`infuser_tier_one_entries.dm:145`) and the moonfish eggs' aquarium content (`food/lizard.dm:150`). Kept as tg has them: the second
+of the fish's two `item_interaction` definitions replaces the first, so a stethoscope never checks a fish's pulse; the armored
+pike's second `get_fish_taste` replaces its raw taste with the cooked one; the fritterish picks its variant twice; the
+mastodon's suicide message misses a bracket; a fish's temperature check ignores the range it is given; `slapperoni` counts its
+iterations wrongly; the emulsify trait's `continue` does nothing; the anxiety trait unregisters a signal it never registered; the
+electrogenesis trait registers a trait name as a signal; the hallucinogenic trait checks the fish instead of its eater; the
+nessie-fish evolution is never used.
+| `processing/fishing.dm:29-45` | the fish's icons and their unknown outlines as base64 pictures (`icon2base64`; the server renders no icons, D104) | the fishing achievement's window | the achievements (D332) | `controllers/subsystem/processing/fishing.cs` |
+| `fish_mount.dm:56`, `:80`, `:137` | the bar's trophy fish kept between rounds (SSpersistence's `load_trophy_fish` and `save_trophy_fish`, `Dm.Deferred`: the mount starts with tg's first fish, as on an empty database) | a persistent mount loaded or a fish mounted on it | persistence (D332) | `modules/fishing/fish_mount.cs` |
+| `types/rift.dm:545` | the babbelfish's closer-look excerpt (DV675) | a closer look at a babbelfish | (a deviation) | `types/rift.cs` |
+| `types/air_space.dm`, `types/rift.dm:71` | the starfish's emissive glow (`emissive_appearance`, DV12) | a starfish seen in the dark | the emissive plane (DV12) | `types/air_space.cs` |
+| the fish's 3D models | the fish, the mount, the fish cases, the encyclopedia and the babbel ears keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 254. The anomaly cores, the gizmos and the pads (gaps OR2, D339)
+Live: `research/anomaly/` whole: the anomaly refinery (`anomaly_refinery.dm`: a raw core and a transfer valve go in, the implosion opens
+the valve inside it, catches the blast and makes the finished core when the blast reaches the radius the core's kind needs, which grows
+from 4 to 20 tiles with the cores of that kind made, up to SSresearch's limit; the failed and timed-out tests eject both; the emag's
+ejected live bomb; the bomb simulator; the AnomalyRefinery window), the raw cores (`raw_anomaly.dm`, the random raw core picking a kind)
+and the anomaly cores (`anomaly_core.dm`: the signaler an anomaly carries on a random free frequency and code, neutralizing the
+anomalies on its tile when its code reaches it, the gas analyzer's readout, and each kind's signal: the pyroclastic fire, the
+gravitational pull, the flux zap, the bluespace blink, the vortex pull, the bioscrambler pulse, the hallucination pulse, the dimensional
+turn of the tiles, the ectoplasmic haunt, the weather thunderbolt; the dimensional core's slapcrafting into the dimensional bomb core),
+with `effects/anomalies/_anomalies.dm`'s cores (made with the anomaly, dropped by a neutralized one, an inert anomaly past the limit).
+The signaler's `signal` is now a sleeping proc as in tg's slots (the bluespace core's blink sleeps), its callers detach it. The cores'
+users made live: the reactive armour shell and its armours (`suits/reactive_armour.dm` whole but the fugitive hunters' psyker armour:
+the teleport, incendiary, stealth, tesla, repulse, table, hallucinating, bioscrambling, barricade, ectoplasm and weather armours with
+their EMP'd effects; `reactive_armour_dimensional_themes.dm` whole), the polymorphic field inverter (`belts/polymorph_belt.dm` whole:
+the scan, the shapeshift with its channel and the status effect that follows an aging animal) and the perceptomatrix helm
+(`head/perceptomatrix.dm` but the fishing difficulty: the core's traits, ear protection, mind anti-magic and screen colour, the
+Hallucinate spell with its pancake blast). The users that were live and waited only for a core now get one: the wormhole projector,
+the gravity gun, the anomalock heart, the Atlas spine, the MOD anomaly-locked modules, the dimensional bomb core, the weather tower,
+the anomaly releaser, the ice demon's raw core. `research/gizmo/` whole (the controller, interfaces, puzzle with its code sequences,
+wires, voice, the machines with the beyblade and toggle gizmos, the items, every gizmode and gizpulse) with
+`datums/elements/moving_randomly.dm`; `game/machinery/quantum_pad.dm` whole (the multitool link, the keycard, the mapped links, the
+charge and teleport with its beam flick, the USB circuit component), `computer/launchpad_control.dm` whole (the LaunchpadConsole
+window, the USB component), `mechlaunchpad.dm` and `computer/mechlaunchpad.dm` whole (the MechpadConsole window, the mech launch by
+supply pod), `ecto_sniffer.dm` with its wires. The sniffer's paranormal levels and the voice gizmos' words are mounted from tg's
+`strings/`. Meta's refinery, its three random raw cores, its gizmo spawner and tucker tubes, its ecto sniffer and its orbital pad with
+its console boot live (Meta maps no quantum pad and no launchpad console). Kept as tg has it: the random raw core picks among all raw
+core subtypes, itself included (`raw_anomaly.dm:86`), and the next one picks again; the refinery window's giver column shows the
+target tank's moles and its target column checks the giver's for the pressure (`AnomalyRefinery.jsx`); the refinery's stoppable timeout
+timer keeps its id in a timer var, so `QDEL_NULL` only clears it and the timeout fires after the test ends; the food gizmode's
+dispenser list repeats a key, so one of its two kinds is lost (`giz_filler.dm`), and it deletes its weakrefs instead of the food; the
+thrower passes `GLOB.alldirs` as the direction when nothing is in reach (a runtime in tg too); the moo gizmo's loot table reads a
+list's initial value, which is null (`gizcode.dm`); the copier's scan plays its sound on a datum, which plays nothing.
+| `effects/anomalies/_anomalies.dm:102` | the blackbox tally of neutralized anomalies (`Dm.Deferred`) | a neutralized anomaly | M10+ (the round statistics) | `game/objects/effects/anomalies/_anomalies.cs` |
+| `research/anomaly/anomaly_core.dm:27` | the core's `manual_suicide` (gibbing the suicider whose core gets its signal; a live-partial row, as the signaler's) | a suicide with a signaler core | M10+ (the suicide verb) | `modules/research/anomaly/anomaly_core.cs` |
+| `suits/reactive_armour.dm` (`/psykerboost`) | the psyker reactive armour stays inert | the fugitive hunters' psyker | the fugitive hunters (antagonists, D333) | (inert) |
+| the 3D models | the refinery, the cores and raw cores, the quantum pad, the orbital pad, the sniffer, the gizmos, the reactive armours, the belt and the helm are tg's sprites (`required-models.md`) | always | the models | `godot/assets/models/models.json` |
+
+## 251. Fishing: the rods, the minigame and the spots (gaps FI2, D339)
+
+Live: `fishing/fishing_rod.dm` (the rods with their bait, line and hook slots and the FishingRod window, the cast's projectile and the
+line's held beam, the bobber, reeling and unhooking, the telescopic, tech (its fish scans), material and master rods, the hooked
+status effect of `status_effects/debuffs/hooked.dm`), `fishing_equipment.dm` (the lines with the reinforced line's lava use and the
+auto-reel, the hooks: magnet, shiny, weighted, rescue, stabilized, jaws, the anomaly-core hooks with their six cores, the fishing tip,
+the fishing capsule with its eight spots (`_maps/templates/fishing_*.dmm`, converted into `maps/templates`), its spot radial, voice and admin
+alert, the fishing bag, the fish gene gun and the trait injector), `bait.dm` (the
+bait cans and the lures with their spin timing and the fish each catches), `fishing_minigame.dm` (the challenge: the bobber's wait, the
+bite and the click, the minigame's HUD with its bait, fish, completion bar and active effects, the mouse held to reel, the difficulty
+and its experience; the challenge ends on moving, dropping the rod or the spot going), `fish_movement.dm` (the fish's moves and their
+three kinds), `admin.dm` (the Fishing Calculator, the server console's `fishing-calculator`), `sources/` whole but the autowiki's tables
+(the fish sources with their loot tables, counts and regeneration, the bait and hook odds, the fish traits' weights and difficulty,
+explosive fishing, the released fish taken back; the structures', ruins', rifts', surgery's and portal dimensions' sources),
+`fishing_portal_machine.dm` (the fish-porter with its dimensions, scans, emag, linked spots and z-level reach), `components/fishing_spot.dm`,
+`components/profound_fisher.dm`, `elements/adjust_fishing_difficulty.dm` with every caller (the clothing, chairs, tackle, the
+fish encyclopedia, the MOD fishing glove), `elements/shiny_bait.dm`, `GLOB.preset_fish_sources`, `GLOB.prototype_organs`,
+`GLOB.fishing_challenges_by_user`, and the fishing spots of the turfs (`turf.dm:829-887`: the lazy fishing of water, lava,
+sand and the ice hole), the toilets, moisture traps, hydroponics trays, vending machines, deep fryers, chasms, opened bodies, holodeck
+water and the oil well; SSfishing's lure catches and safe turfs, the fish encyclopedia's spots, the syndicate fish case, the seven
+fish traits' fishing modifiers (section 250's rows), the materials' fishing rewards (bluespace, bananium, paper, bone, telecrystal),
+the lobstrosity's and penguins' fishing.
+Deviations: DV679 (the rod window's part pictures), DV680 (the bioscrambler core's trait pool), DV681 (the vending machine's
+difficulty arguments), DV682 (the fish-porter's radial menus).
+tg bugs kept: the LED and lucky coin lures put their trait on the lure rather than the rod; dropping a lure reads the toilet's table twice;
+the jaws hook's kill timer never starts (`in` on a number); `has_known_fishes` is never true with `show_anyway`; the holographic water's
+`on_challenge_completed` swaps its arguments and unregisters its move signal from the challenge; the fish's movement uses `^` for a power;
+the heretic's infused-rod line is shown whether the rod is infused or not; the minigame's kill rule is never listed; the lure bonus to a fish's bait weight never applies (`bait.dm:120` passes a typepath to
+`is_type_in_list`, whose `istype` is false for a path).
+
+| tg site | What is left | Reached by | Milestone | Mirror file |
+| --- | --- | --- | --- | --- |
+| `sources/_fish_source.dm:603`, `structures.dm:55`, `:106`, `:242`, `:265`, `surgery.dm:43` | the fish sources' autowiki tables (`generate_wiki_contents`, live-partial rows: tg's wiki generator is not ported) | the wiki | none | (generated stubs) |
+| `fishing_rod.dm:101`, `:109`, `fishing_equipment.dm:606` | the rod's and the fishing capsule's screentips (`add_context`, `add_item_context`, live-partial rows) | hovering with a rod | the screentips (D291) | (generated stubs) |
+| `sources/subtypes/rifts.dm:155`, `:158`, `:162` | a heretic's catch in a dimensional rift drains the influence and gives knowledge points (`after_drain`, `adjust_knowledge_points`, a `GAP(heretic)`: the mood and the whispers are given) | a heretic fishing a rift | the heretic | `sources/subtypes/rifts.cs` |
+| `game/turfs/open/water.dm:48`, `:53`, `:76` | the water's wetting (`watery_tile`), scooping (`reagent_scoopable_atom`) and the deep water's swimming (`swimming_tile`, `Dm.Deferred`; the water is now a fishing spot) | walking into water, scooping it | the water | `game/turfs/open/water.cs` |
+| `game/turfs/open/water.dm:213-330` | the hot springs (`/turf/open/water/hot_spring`, inert: their steam, waves and warm dip; so the fishing capsule's hot spring and Lavaland's ruins' springs are no fishing spots yet) | a hot spring | the water | (inert) |
+| `space_dragon` rift, `heretic_influence` | the carp rift's and the heretic influences' fishing spots (their antagonists are inert) | a space dragon's rift, a heretic's influence | the antagonists | (inert) |
+| the fishing models | the rods, the bobber, the line's beam and the minigame HUD keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 252. The aquariums and fishing's reach (gaps FI3, D339)
+
+Live: `components/aquarium.dm` whole (the aquarium component: the fish and props it holds with their beauty, clamped as tg clamps
+it, the fluid and its temperature, the manual, assisted and stasis modes with the assisted mode's choice of fluid and temperature for
+the most fish, the feed storage feeding the fish at its interval, feeding by a can of fish feed, plunging the feed out, the breeding
+candidates and the evolution conditions it answers, the visuals' layers, admiring it for tg's moods, its transfer to an upgraded
+aquarium, the Aquarium window, its screentips), `fishing/aquarium/` whole (`aquarium.dm`: the room aquarium with its glass, water,
+panel and borders, wrenching, the glass broken by damage that spills its fish and water and two glass sheets that fix it, the
+prefilled aquarium, the fish tank that limits its fish's size, grows heavier and slower with them and stops growth when crowded, the
+lawyer's tank with its goldfish; `aquarium_upgrades.dm`: the upgrade kits, the bioelectricity generator that magnifies its fish's
+electrogenesis into tesla zaps and takes only explosive shocks, the bluespace fish tank; `aquarium_kit.dm`: the aquarium kit that
+slapcrafts an aquarium or a fish tank, the aquarium props; `fish_analyzer.dm`: the fish analyzer with its random case colour, its
+FishAnalyzer window and its fish scans), the athletic fishing gloves and their rod (`gloves/special.dm:180-279`: fishing bare-handed,
+the workout's stamina, athletics and exercise, the hurt arms on a big catch), the fishing boxes (`boxes/fishing_boxes.dm` whole), the
+super fishing toolbox, the haunted trading post's donkfish aquarium, the perceptomatrix helm's fishing difficulty. The aquariums'
+fish swim: each fish's or prop's visual (`/obj/effect/aquarium`) is sent as a visual of its aquarium with its own `animate()` chain
+(the replicator's held visuals), and the client draws it into the aquarium's picture at its chain's pixel_w, pixel_z and transform
+(`VisInsets`), between the water and the borders. The rows that waited for the aquariums are closed: the aquarium moods, the fish
+analyzer's scans, the fishing boxes, the athletic gloves and their experience, the perceptomatrix, the ruins' aquariums (the beach and
+winter biodomes, the golem ship), the breeze bay's boxes, and the stale rows of the fish's drowning warning, space lube fed to a fish
+and the felinid's taste for fish (live since gaps FI1).
+Deviations: DV683 (the Aquarium window's locked sections).
+
+| tg site | What is left | Reached by | Milestone | Mirror file |
+| --- | --- | --- | --- | --- |
+| `components/aquarium_content.dm:87` | a fish tank held or in the inventory is drawn without its fish: the aquarium's visuals are drawn only on an aquarium that stands in the world (the replicator's held visuals, `ReplicatedFields.IsHeldVisual`); tg draws them in the inventory's slot too | a fish tank in hand | the inventory's pictures | `src/Server/Replication/AppearanceTables.cs` |
+| `fish_analyzer.dm:63` | the analyzer's screen glow (`emissive_appearance`, DV12) | a fish analyzer seen in the dark | the emissive plane (DV12) | `fishing/aquarium/fish_analyzer.cs` |
+| `mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm` | the trading post's other gimmicks (only its donkfish aquarium is live) | the haunted trading post | the space ruins | `spaceruin_code/hauntedtradingpost.cs` |
+| the aquariums' 3D models | the aquariums, the fish tanks, the upgrade kits, the props, the fish analyzer, the athletic gloves and the fishing boxes keep tg's sprites until their models (required-models.md) | always | the models | `godot/assets/models/models.json` |
+## 255. MetaStation's small leftovers (gaps MT1, the 2026-11-26 audit)
+Live: the blobstart, generic maintenance and security equipment landmarks (`effects/landmarks.dm:362-390`) fill `GLOB.blobstart`,
+`GLOB.generic_maintenance_landmarks` and `GLOB.secequipment` (the nuke disk's fallback relocation, `find_maintenance_spawn` and the
+Santa event read them), and `controllers/subsystem/job.dm:647`'s spare security lockers past five officers spawn on the last; the AI
+areas' `secure` ambience with `annoying_ambience` (`area/areas/station/ai.dm:14`) and the bar's `GLOB.bar_areas` (`service.dm:43`);
+the radiation shutters' insulation swap on open and close (`doors/shutters.dm:74-80`); the random contraband poster's trait, the
+medical wrench's examine, the chem master board's dial, the garbage decal's swab, the iced abductor's corpse; the outlet injector's
+and the passive gate's `AtmosPump` windows (`ui_interact`, `ui_data`, `ui_act`, the client already drew the window) and the volume
+pump's multitool overclock.
+
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `tools/engineering/wrench.dm:70` | the medical wrench's `suicide_act` (the prayer, the light and the servitude overlay; a live-partial row, as the other suicide acts) | the suicide verb | M10+ (the suicide verb) | `game/objects/items/tools/engineering/wrench.cs` |
+
+## 256. MetaStation's machines with windows (gaps MT2, the 2026-11-26 audit)
+Live: `machinery/PDApainter.dm` whole (the painter and its five departmental variants with their PDA and trim lists from SSid_access,
+the PDA's look and the ID's trim, the swap and eject, the repair; the PaintingMachine window), `machinery/pipe/pipe_dispenser.dm`
+whole (the pipe, disposal pipe and transit tube dispensers with their recipes, cooldown and smart pipe directions, the pipes put back
+and the disposal pipes dragged in; the PipeDispenser window), `computers/item/laptop.dm` and `laptop_presets.dm` (open and closed,
+their weight class and slowdown, the Toggle Open verb, the messenger's ending), `awaymissions/gateway.dm` (the destinations, the
+station's gateway with its home destination, the portal bumper, the away gateway, the control console with the Gateway window and
+the map view's static) and the gateway's `shuttleRotate`. Away missions are not ported (PORT-CHECKLIST 12): on MetaStation the
+console lists no destination, as tg's does with no away map loaded.
+
+| tg site | What is left | Reached by | Milestone | Mirror file |
+|---|---|---|---|---|
+| `machinery/PDApainter.dm:100`, `computers/item/laptop.dm:40` | the screentip contexts (`add_context`, live-partial rows; `register_context` deferred) | hovering with an item | M10+ (the screentips, D264) | `game/machinery/PDApainter.cs`, `modules/modular_computers/computers/item/laptop.cs` |
+| `awaymissions/gateway.dm:239` | the portal lights' emissive copy (`GLOB.emissive_color` on `EMISSIVE_PLANE`) | an active gateway | DV12 (lighting planes) | `modules/awaymissions/gateway.cs` |
+

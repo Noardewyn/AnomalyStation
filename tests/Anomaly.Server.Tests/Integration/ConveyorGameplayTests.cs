@@ -100,9 +100,14 @@ public class ConveyorGameplayTests(ITestOutputHelper output)
         Assert.Equal("conveyor_forward", ModelOf(belts[0]));
         Assert.Contains(heard, e => e.File == "sound/machines/lever/lever_start.ogg");
 
-        // the wrench rides north; the client sees it where the server has it
-        Run(w, alice, Second / 2);
-        (int X, int Y) wrenchAt = In(w, () => ((int)wrench.x, (int)wrench.y));
+        // the wrench rides north; the client sees it where the server has it. A belt moves it every 0.2 s (its speed, conveyor.dm:30,
+        // in a move loop of SSconveyors): its first move is looked at, before the delivery chute at the row's end (three belts on) takes it
+        (int X, int Y) wrenchAt = wrenchFrom;
+        for (int t = 0; t < Second && wrenchAt == wrenchFrom; t++)
+        {
+            Run(w, alice, 1);
+            wrenchAt = In(w, () => ((int)wrench.x, (int)wrench.y));
+        }
         Assert.Equal(wrenchFrom.X, wrenchAt.X);
         Assert.True(wrenchAt.Y > wrenchFrom.Y, $"the wrench rode north from {wrenchFrom} (now {wrenchAt})");
         Run(w, alice, 2);

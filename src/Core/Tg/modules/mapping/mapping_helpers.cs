@@ -1103,7 +1103,7 @@ public partial class obj_effect_mapping_helpers_broken_floor : obj_effect_mappin
     // tg: code/modules/mapping/mapping_helpers.dm:1279
     public override void LateInitialize(params object[] __extra)
     {
-        turf_open_floor floor = get_turf(this) as turf_open_floor;
+        turf floor = get_turf(this); // tg's var/turf/open/floor is not checked: the ruins put the helper on misc turfs too, and break_tile is every turf's
         floor.break_tile();
         qdel(this);
     }
@@ -1115,7 +1115,7 @@ public partial class obj_effect_mapping_helpers_burnt_floor : obj_effect_mapping
     // tg: code/modules/mapping/mapping_helpers.dm:1291
     public override void LateInitialize(params object[] __extra)
     {
-        turf_open_floor floor = get_turf(this) as turf_open_floor;
+        turf floor = get_turf(this); // tg's var/turf/open/floor is not checked: the ruins put the helper on misc turfs too, and burn_tile is every turf's
         floor.burn_tile();
         qdel(this);
     }
@@ -1208,5 +1208,170 @@ public partial class obj_effect_mapping_helpers_requests_console_ore_update : ob
     public override void payload(obj_machinery_requests_console console = null)
     {
         console.receive_ore_updates = TRUE;
+    }
+}
+
+// The ruins' helpers (the lava-free tiles, the object flag injector, the airlock notes and the bombable walls)
+
+// tg: code/modules/mapping/mapping_helpers.dm:703
+public partial class obj_effect_mapping_helpers_no_lava : obj_effect_mapping_helpers
+{
+    //needs to do its thing before spawn_rivers() is called
+    // The New() that INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava) defines (__DEFINES/subsystems.dm:96; inline, rules 11.1 (c), (d))
+    // tg: code/modules/mapping/mapping_helpers.dm:700
+    [DmParams("loc")]
+    public override async DmTask New(params object[] __extra)
+    {
+        object loc = Dm.arg(__extra, 0);
+        await base.New(Dm.forward(__extra, loc));
+        if (!Dm.truthy(Dm.bitand(flags_1, INITIALIZED_1)))
+        {
+            float previous_initialized_value = SSatoms.initialized;
+            SSatoms.initialized = INITIALIZATION_INNEW_MAPLOAD;
+            DmList args = Dm.args(Dm.forward(__extra, loc));
+            args[1] = TRUE;
+            SSatoms.InitAtom(this, FALSE, args);
+            SSatoms.initialized = previous_initialized_value;
+        }
+    }
+
+    // tg: code/modules/mapping/mapping_helpers.dm:705
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        turf T = get_turf(this);
+        T.turf_flags = Dm.bitor(T.turf_flags, NO_LAVA_GEN);
+        return dot;
+    }
+}
+
+///Helpers used for injecting stuff into atoms on the map.
+// tg: code/modules/mapping/mapping_helpers.dm:719
+public partial class obj_effect_mapping_helpers_atom_injector : obj_effect_mapping_helpers
+{
+    //Late init so everything is likely ready and loaded (no warranty)
+    // tg: code/modules/mapping/mapping_helpers.dm:732
+    public override void LateInitialize(params object[] __extra)
+    {
+        if (!Dm.truthy(check_validity()))
+            return;
+        turf target_turf = get_turf(this);
+        float matches_found = 0;
+        foreach (atom atom_on_turf in Dm.each<atom>(target_turf.get_all_contents()))
+        {
+            if (atom_on_turf == this)
+                continue;
+            if (Dm.truthy(target_name) && !Dm.eq(atom_on_turf.name, target_name))
+                continue;
+            if (target_type != null && !istype(atom_on_turf, target_type))
+                continue;
+            inject(atom_on_turf);
+            matches_found++;
+            if (Dm.truthy(first_match_only))
+            {
+                qdel(this);
+                return;
+            }
+        }
+        if (!Dm.truthy(matches_found))
+            stack_trace(generate_stack_trace(), "code/modules/mapping/mapping_helpers.dm", 750);
+        qdel(this);
+    }
+
+    ///Checks if whatever we are trying to inject with is valid
+    // tg: code/modules/mapping/mapping_helpers.dm:754
+    public virtual object check_validity() => TRUE;
+
+    ///Injects our stuff into the atom
+    // tg: code/modules/mapping/mapping_helpers.dm:758
+    public virtual void inject(atom target = null)
+    {
+    }
+
+    ///Generates text for our stack trace
+    // tg: code/modules/mapping/mapping_helpers.dm:762
+    public virtual object generate_stack_trace()
+    {
+        return Dm.text("[] found no targets at ([], [], []). First Match Only: [] target type: [] | target name: []", name, x, y, z, Dm.truthy(first_match_only) ? "true" : "false", target_type, target_name);
+    }
+}
+
+// tg: code/modules/mapping/mapping_helpers.dm:766
+public partial class obj_effect_mapping_helpers_atom_injector_obj_flag : obj_effect_mapping_helpers_atom_injector
+{
+    // tg: code/modules/mapping/mapping_helpers.dm:770
+    public override void inject(atom target = null)
+    {
+        if (target is not obj obj_target)
+            return;
+        obj_target.obj_flags = Dm.num(Dm.bitor(obj_target.obj_flags, inject_flags));
+    }
+}
+
+//lets mappers place notes on airlocks with custom info or a pre-made note from a path
+// tg: code/modules/mapping/mapping_helpers.dm:1145
+public partial class obj_effect_mapping_helpers_airlock_note_placer : obj_effect_mapping_helpers
+{
+    // tg: code/modules/mapping/mapping_helpers.dm:1152
+    public override void LateInitialize(params object[] __extra)
+    {
+        turf turf = get_turf(this);
+        if (Dm.truthy(note_path) && !ispath(note_path, typeof(obj_item_paper))) //don't put non-paper in the paper slot thank you
+        {
+            log_mapping(Dm.text("[] at [],[] had an improper note_path path, could not place paper note.", this, x, y));
+            qdel(this);
+            return;
+        }
+        if (Dm.locate<obj_machinery_door_airlock>(turf) != null)
+        {
+            var found_airlock = Dm.locate<obj_machinery_door_airlock>(turf);
+            if (Dm.truthy(note_path))
+            {
+                var paper = (obj_item_paper)Dm.@new((Type)note_path, this);
+                found_airlock.note = paper;
+                Waiting.NoSleep(paper.forceMove(found_airlock));
+                found_airlock.update_appearance();
+                qdel(this);
+                return;
+            }
+            if (Dm.truthy(note_info))
+            {
+                var paper = Dm.@new<obj_item_paper>(this);
+                if (Dm.truthy(note_name))
+                    paper.name = Dm.str(note_name);
+                paper.add_raw_text(Dm.text("[]", note_info));
+                paper.update_appearance();
+                found_airlock.note = paper;
+                Waiting.NoSleep(paper.forceMove(found_airlock));
+                found_airlock.update_appearance();
+                qdel(this);
+                return;
+            }
+            log_mapping(Dm.text("[] at [],[] had no note_path or note_info, cannot place paper note.", this, x, y));
+            qdel(this);
+            return;
+        }
+        log_mapping(Dm.text("[] at [],[] could not find an airlock on current turf, cannot place paper note.", this, x, y));
+        qdel(this);
+    }
+}
+
+/// Apply to a wall (or floor, technically) to ensure it is instantly destroyed by any explosion, even if usually invulnerable
+// tg: code/modules/mapping/mapping_helpers.dm:1461
+public partial class obj_effect_mapping_helpers_bombable_wall : obj_effect_mapping_helpers
+{
+    // tg: code/modules/mapping/mapping_helpers.dm:1465
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        base.Initialize(mapload, __extra);
+        if (!Dm.truthy(mapload))
+        {
+            log_mapping(Dm.text("[] spawned outside of mapload!", this));
+            return null;
+        }
+
+        turf our_turf = get_turf(this); // In case a locker ate us or something
+        Waiting.NoSleep(our_turf.AddElement(typeof(datum_element_bombable_turf)));
+        return INITIALIZE_HINT_QDEL;
     }
 }

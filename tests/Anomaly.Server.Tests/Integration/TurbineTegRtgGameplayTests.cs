@@ -137,7 +137,8 @@ public class TurbineTegRtgGameplayTests(ITestOutputHelper output)
         In(w, () => ADD_TRAIT(me, TRAIT_GODMODE, ADMIN_TRAIT)); // the hot gas and the blasts of the incinerator room
 
         // ---- the incinerator's turbine: its computer found the mapped rotor (mapping_id "main_turbine"), the three parts linked
-        var computer = In(w, () => Assert.Single(Dm.each<obj_machinery_computer_turbine_computer>(Dm.world)));
+        // Meta's: Lavaland's ruins hold more, as their seeding rolls
+        var computer = In(w, () => Assert.Single(Dm.each<obj_machinery_computer_turbine_computer>(Dm.world), c => Dm.truthy(is_station_level(c.z))));
         var core = In(w, () => (obj_machinery_power_turbine_core_rotor)computer.turbine_core.resolve());
         In(w, () =>
         {

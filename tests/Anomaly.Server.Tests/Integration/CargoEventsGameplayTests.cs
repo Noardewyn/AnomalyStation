@@ -33,7 +33,7 @@ public class CargoEventsGameplayTests
         RealHeadlessWorld.Player alice = w.Join("Alice");
         var me = (mob_living_carbon_human)w.MobOf(alice);
         var chat = new List<string>();
-        alice.Client.ServerTextReceived += t => chat.Add(t.ToString());
+        alice.Client.ServerTextReceived += t => chat.Add(System.Net.WebUtility.HtmlDecode(t.ToString())); // tg's html_encode: "what&#39;s"
         w.Run(Second);
         Assert.Equal("cargo_away", In(w, () => Dm.str(SSshuttle.supply.getDockedId())));
 
@@ -103,7 +103,7 @@ public class CargoEventsGameplayTests
             MapJoinTests.MapConfig("metastation", MetaServer.Folder(), noInterest: true), strict: false);
         RealHeadlessWorld.Player alice = w.Join("Alice");
         var chat = new List<string>();
-        alice.Client.ServerTextReceived += t => chat.Add(t.ToString());
+        alice.Client.ServerTextReceived += t => chat.Add(System.Net.WebUtility.HtmlDecode(t.ToString())); // tg's html_encode: "what&#39;s"
         w.Run(Second);
 
         var control = Control<datum_round_event_control_stray_cargo>(w);

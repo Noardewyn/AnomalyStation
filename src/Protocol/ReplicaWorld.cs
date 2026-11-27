@@ -267,7 +267,7 @@ public sealed partial class ReplicaWorld
     }
 
     /// <summary>
-    /// Decodes a State channel message and applies it when it is a MapGrid, Snapshot, Delta, (version 6) Airflow, (version 13) Sounds, (version 15) RadialMenu, (version 16) UiWindow, (version 19) Tooltip or (version 98) Hotbar, among others. Returns false with the
+    /// Decodes a State channel message and applies it when it is a MapGrid, Snapshot, Delta, (version 6) Airflow, (version 13) Sounds, (version 15) RadialMenu, (version 16) UiWindow, (version 19) Tooltip or (version 99) Hotbar, among others. Returns false with the
     /// error for an undecodable message, and with <see cref="ProtocolError.WrongMessage"/> for any other id (a
     /// <see cref="Welcome"/> is the caller's). A desync still throws (<see cref="Apply(Delta)"/>).
     /// </summary>
@@ -341,7 +341,7 @@ public sealed partial class ReplicaWorld
                     return false;
                 Apply(motion);
                 return true;
-            case MessageId.Hotbar: // version 98 also (DV603)
+            case MessageId.Hotbar: // version 99 also (DV689)
                 if (!Codec.TryDecode(message, out HotbarMessage hotbar, out error))
                     return false;
                 Apply(hotbar);

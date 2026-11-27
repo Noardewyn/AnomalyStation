@@ -75,7 +75,7 @@ public enum CommandKind : byte
 /// <param name="DragTime">Version 17: the drag's length in deciseconds (at most 255).</param>
 /// <param name="Aim">Version 34: the camera's aim of a click or a mouse action (DV94), null for none.</param>
 /// <param name="WaitsForLoad">Version 97 (DV597): a Join of a client that loads the world first (<see cref="Session.AwaitingLoad"/>).</param>
-/// <remarks>Version 98 also (DV603): a <see cref="ActionKind.HotbarPress"/> carries its cell (1 to 10) in <c>Target</c>, so the command log keeps it.</remarks>
+/// <remarks>Version 99 also (DV689): a <see cref="ActionKind.HotbarPress"/> carries its cell (1 to 10) in <c>Target</c>, so the command log keeps it.</remarks>
 public readonly record struct QueuedCommand(long ApplyTick, int Session, uint Seq, CommandKind Kind, string Text = null, HeldDirs Dirs = HeldDirs.None,
     Anomaly.Core.Motion.MotionInput Motion = default, ActionKind Action = ActionKind.None, long Target = 0, ClickButton Button = ClickButton.None, ClickModifiers Modifiers = ClickModifiers.None,
     TargetKind TargetKind = TargetKind.None, int TurfX = 0, int TurfY = 0, int TurfZ = 0, byte IconX = 0, byte IconY = 0, KeybindingCode Keybinding = KeybindingCode.None, bool KeyUp = false, AimZone AimZone = AimZone.None,
@@ -283,6 +283,12 @@ public enum ConsoleVerb : byte
 
     /// <summary>Gaps CI1 (D339): <c>load-circuit JSON</c>, tg's Load Circuit with the circuit's JSON typed as its direct input.</summary>
     LoadCircuit,
+
+    /// <summary><c>adventures</c>, tg's Adventure Manager (the AdventureBrowser window: the exploration drones' adventures, played as a test).</summary>
+    Adventures,
+
+    /// <summary><c>fishing-calculator</c>, tg's Fishing Calculator (the FishingCalculator window: a fishing spot's catches for a rod, hook, line and bait).</summary>
+    FishingCalculator,
 }
 
 /// <summary>A parsed console line.</summary>
@@ -326,6 +332,8 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
         + "  station-traits              the round's station traits and the next round's (a window)\n"
         + "  circuits                    every integrated circuit in the game (a window)\n"
         + "  load-circuit JSON           a circuit loaded from its saved JSON at your feet\n"
+        + "  adventures                  the exploration drones' adventures, each playable as a test (a window)\n"
+        + "  fishing-calculator          a fishing spot's catches for a rod, hook, line and bait (a window)\n"
         + "  dev-help                    the dev commands' syntax\n"
         + "  help                        this text";
 
@@ -335,7 +343,7 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
         or ConsoleVerb.Tickets or ConsoleVerb.Pm
         or ConsoleVerb.CheckAntagonists or ConsoleVerb.TraitorPanel or ConsoleVerb.CheckTeams or ConsoleVerb.ComboHud
         or ConsoleVerb.DynamicPanel or ConsoleVerb.DynamicTester or ConsoleVerb.Secrets or ConsoleVerb.StationTraits or ConsoleVerb.SkillPanel
-        or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit;
+        or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit or ConsoleVerb.Adventures or ConsoleVerb.FishingCalculator;
 
     /// <summary>
     /// M10 slice I: a ban's DURATION, <c>perm</c> (null) or minutes (<c>30</c>, <c>30m</c>, <c>2h</c>, <c>7d</c>, <c>1w</c>); false for anything else.
@@ -409,6 +417,8 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
             "station-traits" => ConsoleVerb.StationTraits,
             "circuits" => ConsoleVerb.Circuits,
             "load-circuit" => ConsoleVerb.LoadCircuit,
+            "adventures" => ConsoleVerb.Adventures,
+            "fishing-calculator" => ConsoleVerb.FishingCalculator,
             _ when DevCommandLine.IsDevVerb(words[0]) => ConsoleVerb.Dev,
             _ => ConsoleVerb.Unknown,
         };

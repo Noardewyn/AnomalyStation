@@ -9,8 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps BR1 (D339, D341): the whole file. The megafauna made virtual (make_virtual_megafauna, util/virtual_megafauna.dm) wait for the
-// owner's Lavaland mobs (D342): those mobs are inert, and a domain that holds one is not hosted yet.
+// The whole file is translated.
 
 // tg: code/modules/bitrunning/server/signal_handlers.dm:1
 public partial class obj_machinery_quantum_server : obj_machinery
@@ -104,15 +103,15 @@ public partial class obj_machinery_quantum_server : obj_machinery
 
                 if (creature is mob_living_simple_animal_hostile_megafauna)
                 {
-                    // D342: make_virtual_megafauna (util/virtual_megafauna.dm:2) waits for the megafauna, the owner's Lavaland mobs
-                    Dm.NotTranslated("code/modules/bitrunning/util/virtual_megafauna.dm:2", "make_virtual_megafauna: the megafauna (D342)");
+                    mob_living_simple_animal_hostile_megafauna boss = creature as mob_living_simple_animal_hostile_megafauna;
+                    boss.make_virtual_megafauna();
                     continue;
                 }
 
                 if (creature is mob_living_basic_boss)
                 {
-                    // D342: make_virtual_megafauna (util/virtual_megafauna.dm:31) waits for the bosses, the owner's Lavaland mobs
-                    Dm.NotTranslated("code/modules/bitrunning/util/virtual_megafauna.dm:31", "make_virtual_megafauna: the bosses (D342)");
+                    mob_living_basic_boss basic_boss = creature as mob_living_basic_boss;
+                    basic_boss.make_virtual_megafauna();
                     continue;
                 }
 

@@ -32,9 +32,9 @@ public partial class obj_structure
     }
 }
 
-// tg: code/datums/actions/mobs/create_legion_turrets.dm:33
-[DmPath("/obj/structure/legionturret"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_legionturret : obj_structure
+// tg: code/datums/actions/mobs/create_legion_turrets.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/structure/legionturret")]
+public partial class obj_structure_legionturret
 {
     public Type projectile_type = typeof(obj_projectile_beam_legion); // tg: code/datums/actions/mobs/create_legion_turrets.dm:48
     public float initial_firing_time = 18; // tg: code/datums/actions/mobs/create_legion_turrets.dm:50
@@ -1506,9 +1506,9 @@ public partial class obj_structure_projected_forcefield
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:133
-[DmPath("/obj/structure/trading_card_summon"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_trading_card_summon : obj_structure
+// tg: code/game/objects/items/tcg/tcg_machines.dm:133 (the var block of a hand-written class)
+[DmPath("/obj/structure/trading_card_summon")]
+public partial class obj_structure_trading_card_summon
 {
     public datum_card template; // tg: code/game/objects/items/tcg/tcg_machines.dm:139
     public obj_item_tcgcard card_ref; // tg: code/game/objects/items/tcg/tcg_machines.dm:141
@@ -1534,9 +1534,9 @@ public partial class obj_structure_trading_card_summon : obj_structure
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:252
-[DmPath("/obj/structure/trading_card_summon/blank"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_trading_card_summon_blank : obj_structure_trading_card_summon
+// tg: code/game/objects/items/tcg/tcg_machines.dm:252 (the var block of a hand-written class)
+[DmPath("/obj/structure/trading_card_summon/blank")]
+public partial class obj_structure_trading_card_summon_blank
 {
     // tg: code/game/objects/items/tcg/tcg_machines.dm:252
     public obj_structure_trading_card_summon_blank()
@@ -3436,9 +3436,9 @@ public partial class obj_structure_displaycase_chassis
     }
 }
 
-// tg: code/game/objects/structures/divine.dm:2
-[DmPath("/obj/structure/sacrificealtar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_sacrificealtar : obj_structure
+// tg: code/game/objects/structures/divine.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/sacrificealtar")]
+public partial class obj_structure_sacrificealtar
 {
     // tg: code/game/objects/structures/divine.dm:2
     public obj_structure_sacrificealtar()
@@ -3453,9 +3453,9 @@ public partial class obj_structure_sacrificealtar : obj_structure
     }
 }
 
-// tg: code/game/objects/structures/divine.dm:23
-[DmPath("/obj/structure/healingfountain"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_healingfountain : obj_structure
+// tg: code/game/objects/structures/divine.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/structure/healingfountain")]
+public partial class obj_structure_healingfountain
 {
     public float time_between_uses = 1800; // tg: code/game/objects/structures/divine.dm:29
     public float last_process = 0; // tg: code/game/objects/structures/divine.dm:30
@@ -6139,26 +6139,12 @@ public partial class obj_structure_holosign_barrier_medical
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/_venue.dm:319
-[DmPath("/obj/structure/holosign/robot_seat"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_holosign_robot_seat : obj_structure_holosign
-{
-    public Type linked_venue = typeof(datum_venue); // tg: code/modules/food_and_drinks/restaurant/_venue.dm:325
-
-    // tg: code/modules/food_and_drinks/restaurant/_venue.dm:319
-    public obj_structure_holosign_robot_seat()
-    {
-        density = 0;
-        desc = "Used to indicate a place to sit for a robot tourist. I better be careful.";
-        icon = Dm.resource("icons/effects/effects.dmi");
-        icon_state = "eating_zone";
-        layer = 3.7f;
-        use_vis_overlay = 0;
-    }
-}
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:319 (the vars the hand-written class does not declare)
+[DmPath("/obj/structure/holosign/robot_seat")]
+public partial class obj_structure_holosign_robot_seat { }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:65
-[DmPath("/obj/structure/holosign/robot_seat/restaurant"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/holosign/robot_seat/restaurant"), DmGeneratedOnly]
 public partial class obj_structure_holosign_robot_seat_restaurant : obj_structure_holosign_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:65
@@ -6171,7 +6157,7 @@ public partial class obj_structure_holosign_robot_seat_restaurant : obj_structur
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:98
-[DmPath("/obj/structure/holosign/robot_seat/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/holosign/robot_seat/bar"), DmGeneratedOnly]
 public partial class obj_structure_holosign_robot_seat_bar : obj_structure_holosign_robot_seat
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:98
@@ -7574,9 +7560,9 @@ public partial class obj_structure_noticeboard_staff : obj_structure_noticeboard
 [DmPath("/obj/structure/ore_container")]
 public partial class obj_structure_ore_container { }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:2
-[DmPath("/obj/structure/ore_container/food_trough"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_ore_container_food_trough : obj_structure_ore_container
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/ore_container/food_trough")]
+public partial class obj_structure_ore_container_food_trough
 {
     public DmList list_of_materials; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:5
     public DmList x_offsets; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:7
@@ -7600,7 +7586,7 @@ public partial class obj_structure_ore_container_food_trough : obj_structure_ore
 }
 
 // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:40
-[DmPath("/obj/structure/ore_container/food_trough/gutlunch_trough"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/ore_container/food_trough/gutlunch_trough"), DmGeneratedOnly]
 public partial class obj_structure_ore_container_food_trough_gutlunch_trough : obj_structure_ore_container_food_trough
 {
     // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutluncher_foodtrough.dm:40
@@ -7622,7 +7608,7 @@ public partial class obj_structure_ore_container_food_trough_gutlunch_trough : o
 }
 
 // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_food_trough.dm:2
-[DmPath("/obj/structure/ore_container/food_trough/raptor_trough"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/ore_container/food_trough/raptor_trough"), DmGeneratedOnly]
 public partial class obj_structure_ore_container_food_trough_raptor_trough : obj_structure_ore_container_food_trough
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_food_trough.dm:2
@@ -7644,9 +7630,9 @@ public partial class obj_structure_ore_container_food_trough_raptor_trough : obj
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3
-[DmPath("/obj/structure/ore_container/material_stand"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_ore_container_material_stand : obj_structure_ore_container
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/structure/ore_container/material_stand")]
+public partial class obj_structure_ore_container_material_stand
 {
     // tg: code/modules/mob/living/basic/lavaland/mook/mook_village.dm:3
     public obj_structure_ore_container_material_stand()
@@ -9836,9 +9822,9 @@ public partial class obj_structure_showerframe
     }
 }
 
-// tg: code/game/objects/structures/spawner.dm:2
-[DmPath("/obj/structure/spawner"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner : obj_structure
+// tg: code/game/objects/structures/spawner.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner")]
+public partial class obj_structure_spawner
 {
     public float max_mobs = 5; // tg: code/game/objects/structures/spawner.dm:13
     public float spawn_time = 300; // tg: code/game/objects/structures/spawner.dm:14
@@ -9874,7 +9860,7 @@ public partial class obj_structure_spawner : obj_structure
 }
 
 // tg: code/game/objects/structures/spawner.dm:86
-[DmPath("/obj/structure/spawner/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/syndicate"), DmGeneratedOnly]
 public partial class obj_structure_spawner_syndicate : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:86
@@ -9898,7 +9884,7 @@ public partial class obj_structure_spawner_syndicate : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:96
-[DmPath("/obj/structure/spawner/skeleton"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/skeleton"), DmGeneratedOnly]
 public partial class obj_structure_spawner_skeleton : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:96
@@ -9926,7 +9912,7 @@ public partial class obj_structure_spawner_skeleton : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:110
-[DmPath("/obj/structure/spawner/clown"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/clown"), DmGeneratedOnly]
 public partial class obj_structure_spawner_clown : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:110
@@ -9954,7 +9940,7 @@ public partial class obj_structure_spawner_clown : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:135
-[DmPath("/obj/structure/spawner/mining"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining : obj_structure_spawner
 {
     // tg: code/game/objects/structures/spawner.dm:135
@@ -9979,7 +9965,7 @@ public partial class obj_structure_spawner_mining : obj_structure_spawner
 }
 
 // tg: code/game/objects/structures/spawner.dm:152
-[DmPath("/obj/structure/spawner/mining/goldgrub"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/goldgrub"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_goldgrub : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:152
@@ -9999,7 +9985,7 @@ public partial class obj_structure_spawner_mining_goldgrub : obj_structure_spawn
 }
 
 // tg: code/game/objects/structures/spawner.dm:158
-[DmPath("/obj/structure/spawner/mining/goliath"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/goliath"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_goliath : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:158
@@ -10019,7 +10005,7 @@ public partial class obj_structure_spawner_mining_goliath : obj_structure_spawne
 }
 
 // tg: code/game/objects/structures/spawner.dm:164
-[DmPath("/obj/structure/spawner/mining/hivelord"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/hivelord"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_hivelord : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:164
@@ -10039,7 +10025,7 @@ public partial class obj_structure_spawner_mining_hivelord : obj_structure_spawn
 }
 
 // tg: code/game/objects/structures/spawner.dm:170
-[DmPath("/obj/structure/spawner/mining/basilisk"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/basilisk"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_basilisk : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:170
@@ -10059,7 +10045,7 @@ public partial class obj_structure_spawner_mining_basilisk : obj_structure_spawn
 }
 
 // tg: code/game/objects/structures/spawner.dm:176
-[DmPath("/obj/structure/spawner/mining/wumborian"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/mining/wumborian"), DmGeneratedOnly]
 public partial class obj_structure_spawner_mining_wumborian : obj_structure_spawner_mining
 {
     // tg: code/game/objects/structures/spawner.dm:176
@@ -10078,9 +10064,9 @@ public partial class obj_structure_spawner_mining_wumborian : obj_structure_spaw
     }
 }
 
-// tg: code/game/objects/structures/spawner.dm:182
-[DmPath("/obj/structure/spawner/nether"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_nether : obj_structure_spawner
+// tg: code/game/objects/structures/spawner.dm:182 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/nether")]
+public partial class obj_structure_spawner_nether
 {
     // tg: code/game/objects/structures/spawner.dm:182
     public obj_structure_spawner_nether()
@@ -10107,9 +10093,9 @@ public partial class obj_structure_spawner_nether : obj_structure_spawner
     }
 }
 
-// tg: code/game/objects/structures/spawner.dm:229
-[DmPath("/obj/structure/spawner/sentient"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_sentient : obj_structure_spawner
+// tg: code/game/objects/structures/spawner.dm:229 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/sentient")]
+public partial class obj_structure_spawner_sentient
 {
     public string role_name = "A sentient mob"; // tg: code/game/objects/structures/spawner.dm:229
     public string assumed_control_message = "You are a sentient mob from a badly coded spawner"; // tg: code/game/objects/structures/spawner.dm:230
@@ -10146,9 +10132,9 @@ public partial class obj_structure_spawner_sentient_proteon_spawner : obj_struct
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:13
-[DmPath("/obj/structure/spawner/ice_moon"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_ice_moon : obj_structure_spawner
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:13 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/ice_moon")]
+public partial class obj_structure_spawner_ice_moon
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:13
     public obj_structure_spawner_ice_moon()
@@ -10175,9 +10161,9 @@ public partial class obj_structure_spawner_ice_moon : obj_structure_spawner
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:67
-[DmPath("/obj/structure/spawner/ice_moon/polarbear"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_ice_moon_polarbear : obj_structure_spawner_ice_moon
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:67 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/ice_moon/polarbear")]
+public partial class obj_structure_spawner_ice_moon_polarbear
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:67
     public obj_structure_spawner_ice_moon_polarbear()
@@ -10195,9 +10181,9 @@ public partial class obj_structure_spawner_ice_moon_polarbear : obj_structure_sp
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:79
-[DmPath("/obj/structure/spawner/ice_moon/demonic_portal"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_spawner_ice_moon_demonic_portal : obj_structure_spawner_ice_moon
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:79 (the var block of a hand-written class)
+[DmPath("/obj/structure/spawner/ice_moon/demonic_portal")]
+public partial class obj_structure_spawner_ice_moon_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:79
     public obj_structure_spawner_ice_moon_demonic_portal()
@@ -10220,7 +10206,7 @@ public partial class obj_structure_spawner_ice_moon_demonic_portal : obj_structu
 }
 
 // tg: code/game/objects/structures/icemoon/cave_entrance.dm:107
-[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/ice_whelp"), DmGeneratedOnly]
 public partial class obj_structure_spawner_ice_moon_demonic_portal_ice_whelp : obj_structure_spawner_ice_moon_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:108
@@ -10238,7 +10224,7 @@ public partial class obj_structure_spawner_ice_moon_demonic_portal_ice_whelp : o
 }
 
 // tg: code/game/objects/structures/icemoon/cave_entrance.dm:111
-[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/snowlegion"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/spawner/ice_moon/demonic_portal/snowlegion"), DmGeneratedOnly]
 public partial class obj_structure_spawner_ice_moon_demonic_portal_snowlegion : obj_structure_spawner_ice_moon_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:112
@@ -10930,9 +10916,9 @@ public partial class obj_structure_table_wood_fancy_royalblue : obj_structure_ta
     }
 }
 
-// tg: code/modules/shuttle/misc/special.dm:175
-[DmPath("/obj/structure/table/wood/shuttle_bar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_table_wood_shuttle_bar : obj_structure_table_wood
+// tg: code/modules/shuttle/misc/special.dm:175 (the var block of a hand-written class)
+[DmPath("/obj/structure/table/wood/shuttle_bar")]
+public partial class obj_structure_table_wood_shuttle_bar
 {
     public float boot_dir = 1; // tg: code/modules/shuttle/misc/special.dm:177
 
@@ -14923,9 +14909,9 @@ public partial class obj_structure_speaking_tile : obj_structure
     }
 }
 
-// tg: code/modules/awaymissions/mission_code/Cabin.dm:37
-[DmPath("/obj/structure/firepit"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_firepit : obj_structure
+// tg: code/modules/awaymissions/mission_code/Cabin.dm:37 (the var block of a hand-written class)
+[DmPath("/obj/structure/firepit")]
+public partial class obj_structure_firepit
 {
     public float? active = 1; // tg: code/modules/awaymissions/mission_code/Cabin.dm:42
 
@@ -15060,9 +15046,9 @@ public partial class obj_structure_spacevine
     }
 }
 
-// tg: code/modules/fishing/fish_mount.dm:18
-[DmPath("/obj/structure/fish_mount"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_fish_mount : obj_structure
+// tg: code/modules/fishing/fish_mount.dm:18 (the var block of a hand-written class)
+[DmPath("/obj/structure/fish_mount")]
+public partial class obj_structure_fish_mount
 {
     public obj_item_fish mounted_fish; // tg: code/modules/fishing/fish_mount.dm:31
     public object persistence_id; // tg: code/modules/fishing/fish_mount.dm:33
@@ -15093,7 +15079,7 @@ public partial class obj_structure_fish_mount : obj_structure
 }
 
 // tg: code/modules/fishing/fish_mount.dm:209
-[DmPath("/obj/structure/fish_mount/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar : obj_structure_fish_mount
 {
     // tg: code/modules/fishing/fish_mount.dm:209
@@ -15104,7 +15090,7 @@ public partial class obj_structure_fish_mount_bar : obj_structure_fish_mount
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional : obj_structure_fish_mount_bar
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15115,7 +15101,7 @@ public partial class obj_structure_fish_mount_bar_directional : obj_structure_fi
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/north"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/north"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_north : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15127,7 +15113,7 @@ public partial class obj_structure_fish_mount_bar_directional_north : obj_struct
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/south"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/south"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_south : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15139,7 +15125,7 @@ public partial class obj_structure_fish_mount_bar_directional_south : obj_struct
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/east"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/east"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_east : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15151,7 +15137,7 @@ public partial class obj_structure_fish_mount_bar_directional_east : obj_structu
 }
 
 // tg: code/modules/fishing/fish_mount.dm:211
-[DmPath("/obj/structure/fish_mount/bar/directional/west"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/fish_mount/bar/directional/west"), DmGeneratedOnly]
 public partial class obj_structure_fish_mount_bar_directional_west : obj_structure_fish_mount_bar_directional
 {
     // tg: code/modules/fishing/fish_mount.dm:211
@@ -15162,9 +15148,9 @@ public partial class obj_structure_fish_mount_bar_directional_west : obj_structu
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium.dm:2
-[DmPath("/obj/structure/aquarium"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium : obj_structure
+// tg: code/modules/fishing/aquarium/aquarium.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium")]
+public partial class obj_structure_aquarium
 {
     public float aquarium_zone_min_pw = 2; // tg: code/modules/fishing/aquarium/aquarium.dm:15
     public float aquarium_zone_max_pw = 31; // tg: code/modules/fishing/aquarium/aquarium.dm:16
@@ -15195,9 +15181,9 @@ public partial class obj_structure_aquarium : obj_structure
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium.dm:106
-[DmPath("/obj/structure/aquarium/prefilled"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium_prefilled : obj_structure_aquarium
+// tg: code/modules/fishing/aquarium/aquarium.dm:106 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium/prefilled")]
+public partial class obj_structure_aquarium_prefilled
 {
     // tg: code/modules/fishing/aquarium/aquarium.dm:106
     public obj_structure_aquarium_prefilled()
@@ -15207,9 +15193,9 @@ public partial class obj_structure_aquarium_prefilled : obj_structure_aquarium
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:39
-[DmPath("/obj/structure/aquarium/bioelec_gen"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium_bioelec_gen : obj_structure_aquarium
+// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:39 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium/bioelec_gen")]
+public partial class obj_structure_aquarium_bioelec_gen
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:39
     public obj_structure_aquarium_bioelec_gen()
@@ -15222,9 +15208,9 @@ public partial class obj_structure_aquarium_bioelec_gen : obj_structure_aquarium
     }
 }
 
-// tg: code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86
-[DmPath("/obj/structure/aquarium/donkfish"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium_donkfish : obj_structure_aquarium
+// tg: code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium/donkfish")]
+public partial class obj_structure_aquarium_donkfish
 {
     // tg: code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86
     public obj_structure_aquarium_donkfish()
@@ -15646,29 +15632,17 @@ public partial class obj_structure_bookcase_random_reference_wizard
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198
-[DmPath("/obj/structure/puzzle_element"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_puzzle_element : obj_structure
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198 (the vars the hand-written class does not declare)
+[DmPath("/obj/structure/puzzle_element")]
+public partial class obj_structure_puzzle_element
 {
     public float? id = 0; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:204
-    public Type source; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:205
     public icon puzzle_icon; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:206
-
-    // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:198
-    public obj_structure_puzzle_element()
-    {
-        name = "mysterious pillar";
-        desc = "Puzzling...";
-        icon = Dm.resource("icons/obj/mining_zones/artefacts.dmi");
-        icon_state = "puzzle_pillar";
-        anchored = 0;
-        density = 1;
-    }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303
-[DmPath("/obj/structure/puzzle_element/prison"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_puzzle_element_prison : obj_structure_puzzle_element
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303 (the var block of a hand-written class)
+[DmPath("/obj/structure/puzzle_element/prison")]
+public partial class obj_structure_puzzle_element_prison
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:303
     public obj_structure_puzzle_element_prison()
@@ -15677,9 +15651,9 @@ public partial class obj_structure_puzzle_element_prison : obj_structure_puzzle_
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10
-[DmPath("/obj/structure/dead_ratvar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_dead_ratvar : obj_structure
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/structure/dead_ratvar")]
+public partial class obj_structure_dead_ratvar
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/surface.dm:10
     public obj_structure_dead_ratvar()
@@ -15705,9 +15679,9 @@ public partial class obj_structure_dead_ratvar : obj_structure
 [DmPath("/obj/structure/lavaland"), DmGeneratedOnly]
 public partial class obj_structure_lavaland : obj_structure { }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:4
-[DmPath("/obj/structure/lavaland/ash_walker"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_lavaland_ash_walker : obj_structure_lavaland
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/structure/lavaland/ash_walker")]
+public partial class obj_structure_lavaland_ash_walker
 {
     public float meat_counter = 6; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:18
     public datum_team_ashwalkers ashies; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:19
@@ -15753,9 +15727,9 @@ public partial class obj_structure_lavaland_ash_walker_fake : obj_structure_lava
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:3
-[DmPath("/obj/structure/cursed_slot_machine"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_cursed_slot_machine : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/structure/cursed_slot_machine")]
+public partial class obj_structure_cursed_slot_machine
 {
     public string icon_screen = "slots_screen"; // tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:10
     public float brightness_on = 1; // tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:12
@@ -15779,9 +15753,9 @@ public partial class obj_structure_cursed_slot_machine : obj_structure
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101
-[DmPath("/obj/structure/cursed_money"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_cursed_money : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101 (the var block of a hand-written class)
+[DmPath("/obj/structure/cursed_money")]
+public partial class obj_structure_cursed_money
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/cursed_slot_machine.dm:101
     public obj_structure_cursed_money()
@@ -15795,9 +15769,9 @@ public partial class obj_structure_cursed_money : obj_structure
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:3
-[DmPath("/obj/structure/necropolis_gate"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_necropolis_gate : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/structure/necropolis_gate")]
+public partial class obj_structure_necropolis_gate
 {
     public float? open = 0; // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:20
     public float changing_openness = 0; // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:21
@@ -15829,7 +15803,7 @@ public partial class obj_structure_necropolis_gate : obj_structure
 }
 
 // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:145
-[DmPath("/obj/structure/necropolis_gate/locked"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/necropolis_gate/locked"), DmGeneratedOnly]
 public partial class obj_structure_necropolis_gate_locked : obj_structure_necropolis_gate
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:145
@@ -15839,9 +15813,9 @@ public partial class obj_structure_necropolis_gate_locked : obj_structure_necrop
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:149
-[DmPath("/obj/structure/necropolis_gate/legion_gate"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_necropolis_gate_legion_gate : obj_structure_necropolis_gate
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:149 (the var block of a hand-written class)
+[DmPath("/obj/structure/necropolis_gate/legion_gate")]
+public partial class obj_structure_necropolis_gate_legion_gate
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:149
     public obj_structure_necropolis_gate_legion_gate()
@@ -15851,9 +15825,9 @@ public partial class obj_structure_necropolis_gate_legion_gate : obj_structure_n
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:83
-[DmPath("/obj/structure/opacity_blocker"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_opacity_blocker : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:83 (the var block of a hand-written class)
+[DmPath("/obj/structure/opacity_blocker")]
+public partial class obj_structure_opacity_blocker
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:83
     public obj_structure_opacity_blocker()
@@ -15869,9 +15843,9 @@ public partial class obj_structure_opacity_blocker : obj_structure
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:223
-[DmPath("/obj/structure/necropolis_arch"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_necropolis_arch : obj_structure
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:223 (the var block of a hand-written class)
+[DmPath("/obj/structure/necropolis_arch")]
+public partial class obj_structure_necropolis_arch
 {
     public float? open = 0; // tg: code/modules/mapfluff/ruins/objects_and_mobs/necropolis_gate.dm:234
 
@@ -16214,9 +16188,9 @@ public partial class obj_structure_meateor_fluff_eyeball : obj_structure_meateor
     }
 }
 
-// tg: code/modules/mining/aux_base.dm:333
-[DmPath("/obj/structure/mining_shuttle_beacon"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_mining_shuttle_beacon : obj_structure
+// tg: code/modules/mining/aux_base.dm:333 (the var block of a hand-written class)
+[DmPath("/obj/structure/mining_shuttle_beacon")]
+public partial class obj_structure_mining_shuttle_beacon
 {
     public string shuttle_ID = "landing_zone_dock"; // tg: code/modules/mining/aux_base.dm:337
     public obj_docking_port_stationary Mport; // tg: code/modules/mining/aux_base.dm:340
@@ -16268,9 +16242,9 @@ public partial class obj_structure_extraction_point_syndicate
     }
 }
 
-// tg: code/modules/mining/fulton.dm:348
-[DmPath("/obj/structure/extraction_point/networked"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_extraction_point_networked : obj_structure_extraction_point
+// tg: code/modules/mining/fulton.dm:348 (the var block of a hand-written class)
+[DmPath("/obj/structure/extraction_point/networked")]
+public partial class obj_structure_extraction_point_networked
 {
     // tg: code/modules/mining/fulton.dm:348
     public obj_structure_extraction_point_networked()
@@ -16282,9 +16256,9 @@ public partial class obj_structure_extraction_point_networked : obj_structure_ex
     }
 }
 
-// tg: code/modules/mining/mine_items.dm:531
-[DmPath("/obj/structure/minecart_rail"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_minecart_rail : obj_structure
+// tg: code/modules/mining/mine_items.dm:531 (the var block of a hand-written class)
+[DmPath("/obj/structure/minecart_rail")]
+public partial class obj_structure_minecart_rail
 {
     // tg: code/modules/mining/mine_items.dm:531
     public obj_structure_minecart_rail()
@@ -16300,9 +16274,9 @@ public partial class obj_structure_minecart_rail : obj_structure
     }
 }
 
-// tg: code/modules/mining/mine_items.dm:555
-[DmPath("/obj/structure/minecart_rail/railbreak"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_minecart_rail_railbreak : obj_structure_minecart_rail
+// tg: code/modules/mining/mine_items.dm:555 (the var block of a hand-written class)
+[DmPath("/obj/structure/minecart_rail/railbreak")]
+public partial class obj_structure_minecart_rail_railbreak
 {
     // tg: code/modules/mining/mine_items.dm:555
     public obj_structure_minecart_rail_railbreak()
@@ -16546,9 +16520,9 @@ public partial class obj_structure_candela_beacon
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing.dm:207
-[DmPath("/obj/structure/thing_boss_phase_depleter"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_thing_boss_phase_depleter : obj_structure
+// tg: code/modules/mob/living/basic/boss/thing/thing.dm:207 (the var block of a hand-written class)
+[DmPath("/obj/structure/thing_boss_phase_depleter")]
+public partial class obj_structure_thing_boss_phase_depleter
 {
     public float functional = 1; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:215
     public datum_weakref boss_weakref; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:217
@@ -16566,9 +16540,9 @@ public partial class obj_structure_thing_boss_phase_depleter : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing.dm:297
-[DmPath("/obj/structure/aggro_gate"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aggro_gate : obj_structure
+// tg: code/modules/mob/living/basic/boss/thing/thing.dm:297 (the var block of a hand-written class)
+[DmPath("/obj/structure/aggro_gate")]
+public partial class obj_structure_aggro_gate
 {
     public string queue_id = "the_thing_depleter"; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:308
     public string target_bb_key = "Current Target"; // tg: code/modules/mob/living/basic/boss/thing/thing.dm:310
@@ -16589,9 +16563,9 @@ public partial class obj_structure_aggro_gate : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:2
-[DmPath("/obj/structure/thing_boss_spike"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_thing_boss_spike : obj_structure
+// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/thing_boss_spike")]
+public partial class obj_structure_thing_boss_spike
 {
     public float expiry_time = 100; // tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:9
 
@@ -16688,9 +16662,9 @@ public partial class obj_structure_gel_cocoon : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:280
-[DmPath("/obj/structure/frost_miner_prism"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_frost_miner_prism : obj_structure
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:280 (the var block of a hand-written class)
+[DmPath("/obj/structure/frost_miner_prism")]
+public partial class obj_structure_frost_miner_prism
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner.dm:280
     public obj_structure_frost_miner_prism()
@@ -16705,14 +16679,14 @@ public partial class obj_structure_frost_miner_prism : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:124
-[DmPath("/obj/structure/elite_tumor"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_elite_tumor : obj_structure
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:124 (the var block of a hand-written class)
+[DmPath("/obj/structure/elite_tumor")]
+public partial class obj_structure_elite_tumor
 {
     public float activity = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:136
     public float boosted = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:137
     public float times_won = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:138
-    public Type activator; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:139
+    public mob_living_carbon_human activator; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:139
     public mob_living_simple_animal_hostile_asteroid_elite mychild; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:140
     public DmList potentialspawns; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:142
 
@@ -16741,9 +16715,9 @@ public partial class obj_structure_elite_tumor : obj_structure
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:269
-[DmPath("/obj/structure/legionnaire_bonfire"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_legionnaire_bonfire : obj_structure
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:269 (the var block of a hand-written class)
+[DmPath("/obj/structure/legionnaire_bonfire")]
+public partial class obj_structure_legionnaire_bonfire
 {
     public mob_living_simple_animal_hostile_asteroid_elite_legionnaire myowner; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:279
 
@@ -16763,9 +16737,9 @@ public partial class obj_structure_legionnaire_bonfire : obj_structure
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:174
-[DmPath("/obj/structure/ash_walker_eggshell"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_ash_walker_eggshell : obj_structure
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:174 (the var block of a hand-written class)
+[DmPath("/obj/structure/ash_walker_eggshell")]
+public partial class obj_structure_ash_walker_eggshell
 {
     public obj_effect_mob_spawn_ghost_role_human_ash_walker egg; // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:180
 
@@ -18272,9 +18246,9 @@ public partial class obj_structure_disposaloutlet
     }
 }
 
-// tg: code/modules/religion/religion_structures.dm:2
-[DmPath("/obj/structure/altar"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_altar : obj_structure
+// tg: code/modules/religion/religion_structures.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/altar")]
+public partial class obj_structure_altar
 {
     public float lit_candles = 1; // tg: code/modules/religion/religion_structures.dm:13
     public object emissive_icon_state; // tg: code/modules/religion/religion_structures.dm:15
@@ -18295,9 +18269,9 @@ public partial class obj_structure_altar : obj_structure
     }
 }
 
-// tg: code/modules/religion/religion_structures.dm:48
-[DmPath("/obj/structure/altar/of_gods"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_altar_of_gods : obj_structure_altar
+// tg: code/modules/religion/religion_structures.dm:48 (the var block of a hand-written class)
+[DmPath("/obj/structure/altar/of_gods")]
+public partial class obj_structure_altar_of_gods
 {
     public datum_religion_sect sect_to_altar; // tg: code/modules/religion/religion_structures.dm:51
 
@@ -18309,9 +18283,9 @@ public partial class obj_structure_altar_of_gods : obj_structure_altar
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:50
-[DmPath("/obj/structure/light_prism"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_light_prism : obj_structure
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:50 (the var block of a hand-written class)
+[DmPath("/obj/structure/light_prism")]
+public partial class obj_structure_light_prism
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:50
     public obj_structure_light_prism()
@@ -18343,9 +18317,9 @@ public partial class obj_structure_ice_stasis
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:2
-[DmPath("/obj/structure/microscope"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_microscope : obj_structure
+// tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/microscope")]
+public partial class obj_structure_microscope
 {
     public obj_item_petri_dish current_dish; // tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:8
 
@@ -18367,7 +18341,7 @@ public partial class obj_structure_microscope : obj_structure
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:125
-[DmPath("/obj/structure/microscope/unanchored"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/structure/microscope/unanchored"), DmGeneratedOnly]
 public partial class obj_structure_microscope_unanchored : obj_structure_microscope
 {
     // tg: code/modules/research/xenobiology/vatgrowing/microscope.dm:125
@@ -19410,9 +19384,9 @@ public partial class obj_structure_mecha_wreckage_odysseus : obj_structure_mecha
     }
 }
 
-// tg: code/modules/wiremod/shell/bot.dm:7
-[DmPath("/obj/structure/bot"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_bot : obj_structure
+// tg: code/modules/wiremod/shell/bot.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/structure/bot")]
+public partial class obj_structure_bot
 {
     // tg: code/modules/wiremod/shell/bot.dm:7
     public obj_structure_bot()
@@ -19426,9 +19400,9 @@ public partial class obj_structure_bot : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/dispenser.dm:7
-[DmPath("/obj/structure/dispenser_bot"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_dispenser_bot : obj_structure
+// tg: code/modules/wiremod/shell/dispenser.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/structure/dispenser_bot")]
+public partial class obj_structure_dispenser_bot
 {
     public float max_weight = 3; // tg: code/modules/wiremod/shell/dispenser.dm:15
     public float capacity = 20; // tg: code/modules/wiremod/shell/dispenser.dm:16
@@ -19454,9 +19428,9 @@ public partial class obj_structure_dispenser_bot : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/moneybot.dm:7
-[DmPath("/obj/structure/money_bot"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_money_bot : obj_structure
+// tg: code/modules/wiremod/shell/moneybot.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/structure/money_bot")]
+public partial class obj_structure_money_bot
 {
     public float stored_money = 0; // tg: code/modules/wiremod/shell/moneybot.dm:15
     public float locked = 0; // tg: code/modules/wiremod/shell/moneybot.dm:16
@@ -19473,9 +19447,9 @@ public partial class obj_structure_money_bot : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/scanner_gate.dm:2
-[DmPath("/obj/structure/scanner_gate_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_scanner_gate_shell : obj_structure
+// tg: code/modules/wiremod/shell/scanner_gate.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/scanner_gate_shell")]
+public partial class obj_structure_scanner_gate_shell
 {
     public float locked = 0; // tg: code/modules/wiremod/shell/scanner_gate.dm:6
 
@@ -19489,9 +19463,9 @@ public partial class obj_structure_scanner_gate_shell : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/server.dm:8
-[DmPath("/obj/structure/server"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_server : obj_structure
+// tg: code/modules/wiremod/shell/server.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/structure/server")]
+public partial class obj_structure_server
 {
     // tg: code/modules/wiremod/shell/server.dm:8
     public obj_structure_server()
@@ -19505,9 +19479,9 @@ public partial class obj_structure_server : obj_structure
     }
 }
 
-// tg: code/modules/wiremod/shell/wallmount.dm:2
-[DmPath("/obj/structure/wallmount_circuit"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_wallmount_circuit : obj_structure
+// tg: code/modules/wiremod/shell/wallmount.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/wallmount_circuit")]
+public partial class obj_structure_wallmount_circuit
 {
     // tg: code/modules/wiremod/shell/wallmount.dm:2
     public obj_structure_wallmount_circuit()

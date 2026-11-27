@@ -122,7 +122,7 @@ public partial class obj_item_food_grown_banana_bunch : obj_item_food_grown_bana
         Waiting.NoSleep(holder.clear_reagents());
         Waiting.NoSleep(holder.add_reagent(typeof(datum_reagent_consumable_monkey_energy), 10));
         Waiting.NoSleep(holder.add_reagent(typeof(datum_reagent_consumable_banana), 10));
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_CLOWNANA, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)); // inert until the cell lines (P3)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_CLOWNANA, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5));
         return dot;
     }
 

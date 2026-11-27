@@ -99,7 +99,7 @@ copy_client_data() {
     mkdir -p "$1/tgstation/config"
     cp -R "$tg/strings" "$1/tgstation/strings"
     rm -f "$1/tgstation/strings/cas_black.txt" "$1/tgstation/strings/cas_white.txt" # D343: CC BY-NC-SA 2.0, never mounted
-    cp "$tg/config/blanks.json" "$tg/config/silicon_laws.txt" "$1/tgstation/config/"
+    cp "$tg/config/blanks.json" "$tg/config/silicon_laws.txt" "$tg/config/robot_voices.json" "$1/tgstation/config/"
     : > "$1/tgstation/tgstation.dme"
 }
 

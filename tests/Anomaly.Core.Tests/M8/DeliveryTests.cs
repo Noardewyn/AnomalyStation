@@ -328,11 +328,12 @@ public class DeliveryTests
     [Fact]
     public void AnInertContainerThrownOrDroppedSoundsAsAnEmptyOneInsteadOfReadingItsMissingHolder()
     {
-        // The wizard's potion bottle's type is inert (its Initialize is not translated), so it has no reagent holder; the Meta
-        // singularity scenarios threw such containers into walls (reagent_containers.dm:355 read reagents.total_volume). (The coffee
-        // cup this test first used is live since gaps H3.)
+        // The cult's unholy water flask's type is inert (its Initialize is not translated while the cult is not ported, D333), so
+        // it has no reagent holder; the Meta singularity scenarios threw such containers into walls (reagent_containers.dm:355
+        // read reagents.total_volume). (The coffee cup this test first used is live since gaps H3, the potion bottle with the
+        // necropolis loot.)
         var r = Room(8302);
-        var cup = r.In(() => Dm.@new<obj_item_reagent_containers_cup_bottle_potion>(locate(5, 5, 1)));
+        var cup = r.In(() => Dm.@new<obj_item_reagent_containers_cup_beaker_unholywater>(locate(5, 5, 1)));
         r.In(() =>
         {
             Assert.Null(cup.reagents);

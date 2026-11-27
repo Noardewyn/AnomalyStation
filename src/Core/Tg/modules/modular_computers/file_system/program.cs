@@ -10,8 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The whole file (M9 slice E: NtOS): an executable program, its access checks, its start, kill and background, and its hardware
-// check. Left out with a comment: the unremovable circuit components of a program installed on a computer's circuit shell
-// (wiremod: the shell component is not ported, so computer.shell stays null). The var block is generated (D111).
+// check, and the unremovable circuit components a program adds to its computer's circuit shell. The var block is generated (D111).
 
 // /program/ files are executable programs that do things.
 // tg: code/modules/modular_computers/file_system/program.dm:2
@@ -25,7 +24,9 @@ public partial class datum_computer_file_program : datum_computer_file
             run_access = string_list(run_access) as DmList;
         if (Dm.truthy(LAZYLEN(download_access)))
             download_access = string_list(download_access) as DmList;
-        // the circuit comp type's associated program check (:59-60): the circuit components (wiremod) are not ported
+        ///We need to ensure that different programs (subtypes mostly) won't try to load in the same circuit comps into the shell or usb port of the modpc.
+        if (circuit_comp_type != null && !Dm.eq(Dm.initial(circuit_comp_type, (obj_item_circuit_component_mod_program c) => c.associated_program), type))
+            stack_trace(Dm.text("circuit comp type mismatch: [] has circuit comp type \\[[]\\], while \\[[]\\] has associated program \\[[]\\].", type, circuit_comp_type, circuit_comp_type, Dm.initial(circuit_comp_type, (obj_item_circuit_component_mod_program c) => c.associated_program)), "code/modules/modular_computers/file_system/program.dm", 60);
     }
 
     /**
@@ -38,16 +39,36 @@ public partial class datum_computer_file_program : datum_computer_file
     public override void on_install(datum_computer_file source = null, obj_item_modular_computer computer_installing = null, mob user = null)
     {
         base.on_install(source, computer_installing, user);
-        // if(isnull(circuit_comp_type) || isnull(computer.shell)) return (:69-70): the shell component (wiremod) is not ported, so
-        // computer.shell is always null and the components are never added
+        if (circuit_comp_type == null || computer.shell == null)
+            return;
+        if (Dm.locate_type(circuit_comp_type, computer.shell.unremovable_circuit_components) == null)
+        {
+            obj_item_circuit_component_mod_program comp = Dm.@new(circuit_comp_type) as obj_item_circuit_component_mod_program;
+            computer.shell.add_unremovable_circuit_component(comp);
+            if (computer.shell.attached_circuit != null)
+            {
+                Waiting.NoSleep(comp.forceMove(computer.shell.attached_circuit));
+                Waiting.NoSleep(computer.shell.attached_circuit.add_component(comp));
+            }
+        }
     }
 
     ///Here we deal with killing the associated components instead.
     // tg: code/modules/modular_computers/file_system/program.dm:79
     public override object Destroy(float? force = null)
     {
-        // the unremovable circuit components (:80-85): computer.shell is always null (wiremod is not ported)
+        if (circuit_comp_type == null || computer?.shell == null)
+            return base.Destroy(force);
+        foreach (obj_item_circuit_component_mod_program comp in Dm.each<obj_item_circuit_component_mod_program>(computer.shell.unremovable_circuit_components))
+        {
+            if (Dm.eq(comp.associated_program, this))
+            {
+                Dm.remove(computer.shell.unremovable_circuit_components, comp);
+                qdel(comp);
+            }
+        }
         return base.Destroy(force);
+
     }
 
     // tg: code/modules/modular_computers/file_system/program.dm:88

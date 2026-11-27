@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// J1 (D298): the botanist's leather gloves' Initialize (the fishing difficulty element is a deferred leaf, fishing M10+). The var block is generated.
+// J1 (D298): the botanist's leather gloves' Initialize (with its fishing difficulty element). The var block is generated.
 
 // tg: code/modules/clothing/gloves/botany.dm:2
 public partial class obj_item_clothing_gloves_botanic_leather : obj_item_clothing_gloves
@@ -18,8 +18,7 @@ public partial class obj_item_clothing_gloves_botanic_leather : obj_item_clothin
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -4)
-        Dm.Deferred("code/modules/clothing/gloves/botany.dm:17", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }

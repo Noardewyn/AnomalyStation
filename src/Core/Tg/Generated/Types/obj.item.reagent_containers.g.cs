@@ -2071,9 +2071,9 @@ public partial class obj_item_reagent_containers_cup_bottle_wittel : obj_item_re
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:161
-[DmPath("/obj/item/reagent_containers/cup/bottle/potion"), DmGeneratedOnly, DmInert]
-public partial class obj_item_reagent_containers_cup_bottle_potion : obj_item_reagent_containers_cup_bottle
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:161 (the var block of a hand-written class)
+[DmPath("/obj/item/reagent_containers/cup/bottle/potion")]
+public partial class obj_item_reagent_containers_cup_bottle_potion
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:161
     public obj_item_reagent_containers_cup_bottle_potion()
@@ -2093,7 +2093,7 @@ public partial class obj_item_reagent_containers_cup_bottle_potion : obj_item_re
 }
 
 // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:173
-[DmPath("/obj/item/reagent_containers/cup/bottle/potion/flight"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/reagent_containers/cup/bottle/potion/flight"), DmGeneratedOnly]
 public partial class obj_item_reagent_containers_cup_bottle_potion_flight : obj_item_reagent_containers_cup_bottle_potion
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:173

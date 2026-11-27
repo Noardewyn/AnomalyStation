@@ -9,8 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M4a P5 (the lead): the job trims' procs (the var blocks are generated). The security officer's, warden's and veteran
-// advisor's refresh_trim_access (departmental access by population, M10) are not translated: their base runs.
+// M4a P5 (the lead): the job trims' procs (the var blocks are generated). The security officer's and warden's
+// refresh_trim_access (departmental access by population, M10) are not translated: their base runs. The veteran advisor's came with
+// his job.
 
 /**
  * This file contains all the trims associated with station jobs.
@@ -180,6 +181,24 @@ public partial class datum_id_trim_job_detective : datum_id_trim_job
 public partial class datum_id_trim_job_head_of_security : datum_id_trim_job
 {
     // tg: code/datums/id_trim/jobs.dm:739
+    public override object refresh_trim_access()
+    {
+        object dot = base.refresh_trim_access();
+
+        if (!Dm.truthy(dot))
+            return dot;
+
+        // Config check for if sec has maint access.
+        if (Dm.truthy(config.Get(typeof(datum_config_entry_flag_security_has_maint_access))))
+            Dm.combine(ref access, Dm.list(ACCESS_MAINT_TUNNELS));
+        return dot;
+    }
+}
+
+// tg: code/datums/id_trim/jobs.dm:1312
+public partial class datum_id_trim_job_veteran_advisor : datum_id_trim_job
+{
+    // tg: code/datums/id_trim/jobs.dm:1335
     public override object refresh_trim_access()
     {
         object dot = base.refresh_trim_access();

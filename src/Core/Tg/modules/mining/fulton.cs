@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The syndicate campaign X1b (D316): the whole file but the networked pack, core and beacon (the mining's "Candela" networks,
-// not-translated section 138), whose types stay generated and inert.
+// The fulton extraction packs, their beacons and cores; the networked pack links to a networked beacon or to any fulton point of a
+// mining "Candela" navigation network one of whose nodes is in sight, and reaches it only while a node of that network still is.
 
 public partial class datum_controller_global_vars
 {
@@ -288,6 +288,103 @@ public partial class obj_item_extraction_pack_syndicate : obj_item_extraction_pa
 {
 }
 
+// tg: code/modules/mining/fulton.dm:199
+public partial class obj_item_extraction_pack_networked : obj_item_extraction_pack
+{
+    // tg: code/modules/mining/fulton.dm:205
+    public override async DmTask<object> attack_self(mob user = null, object modifiers = null, params object[] __extra)
+    {
+        DmList possible_beacons = Dm.list();
+        foreach (datum_weakref point_ref in Dm.each<datum_weakref>(GLOB.total_extraction_beacons.Copy()))
+        {
+            var extraction_point = point_ref.resolve() as obj_structure_extraction_point;
+            if (extraction_point == null)
+            {
+                GLOB.total_extraction_beacons.Remove(point_ref);
+                continue;
+            }
+            if (Dm.@in(extraction_point.beacon_network, beacon_networks))
+                Dm.append(ref possible_beacons, extraction_point);
+        }
+
+        foreach (datum_mining_beacon_network network in Dm.each<datum_mining_beacon_network>(GLOB.mining_beacon_networks))
+        {
+            DmList fulton_points = Dm.list();
+            bool node_located = false;
+            foreach (datum_component_candela_node node in Dm.each<datum_component_candela_node>(network.linked_nodes))
+            {
+                if (Dm.truthy(node.fulton_point))
+                    Dm.append(ref fulton_points, node.parent);
+
+                if (node_located)
+                    continue;
+
+                if (get_dist(node.parent, user) <= MINING_BEACON_MAX_REACH && Dm.@in(user, viewers(MINING_BEACON_MAX_REACH, node.parent)))
+                    node_located = true;
+            }
+
+            if (node_located)
+                Dm.combine(ref possible_beacons, fulton_points);
+        }
+
+        if (!Dm.truthy(length(possible_beacons)))
+        {
+            balloon_alert(user, "no beacons");
+            return null;
+        }
+
+        object chosen_beacon = await tgui_input_list(user, "Beacon to connect to", "Balloon Extraction Pack", sort_names(possible_beacons) as DmList);
+        if (chosen_beacon == null)
+            return null;
+
+        beacon_ref = WEAKREF(chosen_beacon as datum) as datum_weakref;
+        balloon_alert(user, "linked!");
+        return null;
+    }
+
+    // tg: code/modules/mining/fulton.dm:242
+    public override atom_movable get_beacon(mob_living user = null)
+    {
+        var beacon = beacon_ref?.resolve() as atom_movable;
+        if (beacon == null)
+        {
+            balloon_alert(user, "not linked!");
+            beacon_ref = null;
+            return null;
+        }
+
+        // Anything that isn't an extraction point must've came from a Candela network, go through all of its nodes check if we can access it
+        if (beacon is obj_structure_extraction_point)
+            return beacon;
+
+        foreach (datum_mining_beacon_network network in Dm.each<datum_mining_beacon_network>(GLOB.mining_beacon_networks))
+        {
+            // Check if its even our target's network to begin with
+            bool target_net = false;
+            foreach (datum_component_candela_node node in Dm.each<datum_component_candela_node>(network.linked_nodes))
+            {
+                if (node.parent == beacon)
+                {
+                    target_net = true;
+                    break;
+                }
+            }
+
+            if (!target_net)
+                continue;
+
+            foreach (datum_component_candela_node node in Dm.each<datum_component_candela_node>(network.linked_nodes))
+            {
+                if (get_dist(node.parent, user) <= MINING_BEACON_MAX_REACH && Dm.@in(user, viewers(MINING_BEACON_MAX_REACH, node.parent)))
+                    return beacon;
+            }
+        }
+
+        balloon_alert(user, "our of network reach!");
+        return null;
+    }
+}
+
 // tg: code/modules/mining/fulton.dm:271
 public partial class obj_item_fulton_core : obj_item
 {
@@ -371,6 +468,18 @@ public partial class obj_structure_extraction_point : obj_structure
 // tg: code/modules/mining/fulton.dm:343
 public partial class obj_structure_extraction_point_syndicate : obj_structure_extraction_point
 {
+}
+
+// tg: code/modules/mining/fulton.dm:347
+public partial class obj_structure_extraction_point_networked : obj_structure_extraction_point
+{
+    // tg: code/modules/mining/fulton.dm:353
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_candela_node), Dm.@new<datum_mining_beacon_network>(), null, Dm.named("connection_pixel_x", base_pixel_w), Dm.named("connection_pixel_y", base_pixel_z - 2)));
+        return dot;
+    }
 }
 
 // tg: code/modules/mining/fulton.dm:357

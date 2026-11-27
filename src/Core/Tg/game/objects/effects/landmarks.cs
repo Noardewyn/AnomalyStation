@@ -134,6 +134,46 @@ public partial class obj_effect_landmark_latejoin : obj_effect_landmark
     }
 }
 
+//generic maintenance locations
+// tg: code/game/objects/effects/landmarks.dm:362
+public partial class obj_effect_landmark_generic_maintenance_landmark : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:366
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        base.Initialize(mapload, __extra);
+        Dm.append(ref GLOB.generic_maintenance_landmarks, loc);
+        return INITIALIZE_HINT_QDEL;
+    }
+}
+
+//objects with the stationloving component (nuke disk) respawn here.
+//also blobs that have their spawn forcemoved (running out of time when picking their spawn spot) and santa
+// tg: code/game/objects/effects/landmarks.dm:373
+public partial class obj_effect_landmark_blobstart : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:377
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        base.Initialize(mapload, __extra);
+        Dm.append(ref GLOB.blobstart, loc);
+        return INITIALIZE_HINT_QDEL;
+    }
+}
+
+//spawns sec equipment lockers depending on the number of sec officers
+// tg: code/game/objects/effects/landmarks.dm:383
+public partial class obj_effect_landmark_secequipment : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:387
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        base.Initialize(mapload, __extra);
+        Dm.append(ref GLOB.secequipment, loc);
+        return INITIALIZE_HINT_QDEL;
+    }
+}
+
 /**
  * Generic event spawn points
  *
@@ -431,5 +471,29 @@ public partial class obj_effect_landmark_holding_facility : obj_effect_landmark
         base.Initialize(mapload, __extra);
         Dm.append(ref GLOB.holdingfacility, loc);
         return INITIALIZE_HINT_QDEL;
+    }
+}
+
+// tg: code/game/objects/effects/landmarks.dm:484  (a placed ruin's landmark, for the admins' ruin jump and the Clarke's ruin scanner)
+public partial class obj_effect_landmark_ruin : obj_effect_landmark
+{
+    // tg: code/game/objects/effects/landmarks.dm:487
+    [DmParams("mapload", "my_ruin_template")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object my_ruin_template = Dm.arg(__extra, 0);
+        object dot = base.Initialize(mapload, __extra);
+        name = Dm.text("ruin_[]", GLOB.ruin_landmarks.len + 1);
+        ruin_template = my_ruin_template as datum_map_template_ruin;
+        Dm.combine(ref GLOB.ruin_landmarks, this);
+        return dot;
+    }
+
+    // tg: code/game/objects/effects/landmarks.dm:493
+    public override object Destroy(float? force = null)
+    {
+        Dm.remove(ref GLOB.ruin_landmarks, this);
+        ruin_template = null;
+        return base.Destroy(force);
     }
 }

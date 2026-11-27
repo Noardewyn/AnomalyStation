@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file but the radar's circuit components (radar.dm:410-535, /obj/item/circuit_component/mod_program/radar and its kinds: the
-// circuits, wiremod, are not ported; no shell ever registers to the computer's radar signals). Syndicate N1b (D316): the nuclear
+// The whole file, with the radar's circuit components (radar.dm:410-535) that pick and track a target from a circuit plugged into
+// the computer through the computer's radar signals. Syndicate N1b (D316): the nuclear
 // operatives' Fission360 on their PDA, with the crew's Lifeline and Custodial Locator. Its NtosRadar windows are the client's, its
 // pictures tg's radar_assets (the asset transport is the client's, DV44). The var blocks are generated (D111).
 
@@ -23,6 +23,8 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
     internal const int RADAR_TRACKABLE = 1;
     // tg: code/modules/modular_computers/file_system/programs/radar.dm:6  #define RADAR_TRACKABLE_ANYWAY 2
     internal const int RADAR_TRACKABLE_ANYWAY = 2;
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:9  #define MAX_RADAR_CIRCUIT_DISTANCE 18
+    internal const int MAX_RADAR_CIRCUIT_DISTANCE = 18;
 
     // tg: code/modules/modular_computers/file_system/programs/radar.dm:34
     public override async DmTask<object> on_start(mob_living user = null)
@@ -39,7 +41,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
         return dot;
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:42
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:43
     public override object kill_program(mob user = null)
     {
         objects = Dm.list();
@@ -48,14 +50,14 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
         return base.kill_program(user);
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:48
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:49
     public override object Destroy(float? force = null)
     {
         STOP_PROCESSING(SSfastprocess, this);
         return base.Destroy(force);
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:52
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:53
     public override async DmTask<object> ui_assets(mob user = null)
     {
         // list(get_asset_datum(/datum/asset/simple/radar_assets)): the asset transport is the client's (DV44); the client draws the radar's
@@ -63,7 +65,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
         return Dm.list();
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:57
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:58
     public override async DmTask<object> ui_data(mob user = null)
     {
         DmList data = Dm.list();
@@ -78,7 +80,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
         return data;
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:69
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:70
     public override async DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
     {
         object dot = await base.ui_act(action, @params, ui, state);
@@ -106,7 +108,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
     }
 
     /// Returns all ref()s that are being tracked currently
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:88
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:89
     public virtual DmList trackable_object_refs()
     {
         DmList all_refs = Dm.list();
@@ -172,7 +174,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
      *Arguments:
      **arg1 is the atom being evaluated.
     */
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:149
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:146
     public virtual object trackable(atom_movable signal = null)
     {
         // SHOULD_CALL_PARENT(TRUE)
@@ -202,7 +204,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
      *as to limit the load players may place on the server using these
      *somewhat costly loops.
     */
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:176
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:173
     public virtual void scan()
     {
         return;
@@ -219,7 +221,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
      *GLOB.poi_list), but the result will be the same; evaluate the string and
      *return an atom reference.
     */
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:191
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:187
     public virtual object find_atom()
     {
         // SHOULD_CALL_PARENT(TRUE)
@@ -229,7 +231,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
     }
 
     //We use SSfastprocess for the program icon state because it runs faster than process_tick() does.
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:198
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:194
     public override object process(object seconds_per_tick = null, params object[] __extra)
     {
         if (computer.active_program != this)
@@ -275,7 +277,7 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
     }
 
     //We can use process_tick to restart fast processing, since the computer will be running this constantly either way.
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:233
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:228
     public override object process_tick(object seconds_per_tick = null)
     {
         if (computer.active_program == this)
@@ -285,16 +287,16 @@ public partial class datum_computer_file_program_radar : datum_computer_file_pro
 }
 
 ///A program that tracks crew members via suit sensors
-// tg: code/modules/modular_computers/file_system/programs/radar.dm:243
+// tg: code/modules/modular_computers/file_system/programs/radar.dm:237
 public partial class datum_computer_file_program_radar_lifeline : datum_computer_file_program_radar
 {
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:253
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:246
     public override object find_atom()
     {
         return base.find_atom() ?? locate_ref_in(selected, GLOB.human_list);
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:256
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:249
     public override void scan()
     {
         objects = Dm.list();
@@ -316,7 +318,7 @@ public partial class datum_computer_file_program_radar_lifeline : datum_computer
         }
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:272
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:266
     public override object trackable(atom_movable signal = null)
     {
         object dot = base.trackable(signal);
@@ -333,16 +335,16 @@ public partial class datum_computer_file_program_radar_lifeline : datum_computer
 }
 
 ///Tracks all janitor equipment
-// tg: code/modules/modular_computers/file_system/programs/radar.dm:285
+// tg: code/modules/modular_computers/file_system/programs/radar.dm:280
 public partial class datum_computer_file_program_radar_custodial_locator : datum_computer_file_program_radar
 {
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:296
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:291
     public override object find_atom()
     {
         return base.find_atom() ?? locate_ref_in(selected, GLOB.janitor_devices);
     }
 
-    // tg: code/modules/modular_computers/file_system/programs/radar.dm:299
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:294
     public override void scan()
     {
         objects = Dm.list();
@@ -467,5 +469,167 @@ public partial class datum_computer_file_program_radar_fission360 : datum_comput
                 span_danger(I18n.T("[] vibrates and lets out an ominous alarm. Uh oh.", computer)),
                 span_notice(I18n.T("[] begins to vibrate rapidly. Wonder what that means...", computer)));
         }
+    }
+}
+
+/**
+ * Base circuit for the radar program.
+ * The abstract radar doesn't have this, nor this one is associated to it, so
+ * make sure to specify the associate_program and circuit_comp_type of subtypes,
+ */
+// tg: code/modules/modular_computers/file_system/programs/radar.dm:415
+public partial class obj_item_circuit_component_mod_program_radar : obj_item_circuit_component_mod_program
+{
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:427
+    public override async DmTask populate_ports()
+    {
+        await base.populate_ports();
+        target = add_input_port("Target", PORT_TYPE_ATOM) as datum_port_input;
+        selected_by_app = add_output_port("Selected From Program", PORT_TYPE_ATOM) as datum_port_output;
+        x_pos = add_output_port("X", PORT_TYPE_NUMBER) as datum_port_output;
+        y_pos = add_output_port("Y", PORT_TYPE_NUMBER) as datum_port_output;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:434
+    public override async DmTask register_shell(atom_movable shell = null)
+    {
+        await base.register_shell(shell);
+        obj_item_modular_computer computer = (associated_program as datum_computer_file_program).computer;
+        RegisterSignal(computer, COMSIG_MODULAR_COMPUTER_RADAR_TRACKABLE, nameof(can_track));
+        RegisterSignal(computer, COMSIG_MODULAR_COMPUTER_RADAR_FIND_ATOM, nameof(get_atom));
+        RegisterSignal(computer, COMSIG_MODULAR_COMPUTER_RADAR_SELECTED, nameof(on_selected));
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:440
+    public override async DmTask unregister_shell(atom_movable shell = null)
+    {
+        UnregisterSignal((associated_program as datum_computer_file_program).computer, Dm.list(
+            COMSIG_MODULAR_COMPUTER_RADAR_TRACKABLE,
+            COMSIG_MODULAR_COMPUTER_RADAR_FIND_ATOM,
+            COMSIG_MODULAR_COMPUTER_RADAR_SELECTED));
+        await base.unregister_shell(shell);
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:448
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+        Dm.append(ref dot, create_ui_notice(Dm.text("Max range for unsupported entities: [] tiles", datum_computer_file_program_radar.MAX_RADAR_CIRCUIT_DISTANCE), "orange", FA_ICON_BULLSEYE));
+        return dot;
+    }
+
+    ///Set the selected ref of the program to the target (if it exists) and update the x/y pos ports (if trackable) when triggered.
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:453
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        datum_computer_file_program_radar radar = associated_program as datum_computer_file_program_radar;
+        atom radar_atom = radar.find_atom() as atom;
+        if (target.value != radar_atom)
+        {
+            radar.selected = REF(target.value);
+            SStgui.update_uis(radar.computer);
+        }
+        if (Dm.truthy(radar.trackable(radar_atom as atom_movable)))
+        {
+            turf turf = get_turf(radar_atom) as turf;
+            x_pos.set_output(turf.x);
+            y_pos.set_output(turf.y);
+        }
+        else
+        {
+            x_pos.set_output(null);
+            y_pos.set_output(null);
+        }
+        return null;
+    }
+
+    /**
+     * Check if we can track the object. When making different definitions of this proc for subtypes, include typical
+     * targets as an exception to this (e.g humans for lifeline) so that even if they're coming from a circuit input
+     * they won't get filtered by the maximum distance, because they're "supported entities".
+     */
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:472
+    [SignalHandler]
+    public virtual object can_track(datum source = null, atom signal = null, object signal_turf = null, object computer_turf = null)
+    {
+        if (Dm.truthy(target.value) && Dm.num(get_dist_euclidean(computer_turf as atom, signal_turf as atom)) > datum_computer_file_program_radar.MAX_RADAR_CIRCUIT_DISTANCE)
+            return COMPONENT_RADAR_DONT_TRACK;
+        return COMPONENT_RADAR_TRACK_ANYWAY;
+    }
+
+    ///Return the value of the target port.
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:479
+    [SignalHandler]
+    public virtual void get_atom(datum source = null, DmList atom_container = null)
+    {
+        atom_container[1] = target.value;
+    }
+
+    /**
+     * When a target is selected by the app, reset the target port, update the x/pos ports (if trackable)
+     * and set selected_by_app port to the target atom.
+     */
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:487
+    [SignalHandler]
+    public virtual void on_selected(datum source = null, object selected_ref = null)
+    {
+        target.set_value(null);
+        datum_computer_file_program_radar radar = associated_program as datum_computer_file_program_radar;
+        atom selected_atom = radar.find_atom() as atom;
+        selected_by_app.set_output(selected_atom);
+        if (Dm.truthy(radar.trackable(selected_atom as atom_movable)))
+        {
+            // tg takes the turf of the selected REF text here, not of the atom, so this runtimes on a null turf; kept as tg has it
+            turf turf = get_turf(radar.selected as atom) as turf;
+            x_pos.set_output(turf.x);
+            y_pos.set_output(turf.y);
+        }
+        else
+        {
+            x_pos.set_output(null);
+            y_pos.set_output(null);
+        }
+
+        trigger_output.set_output(COMPONENT_SIGNAL);
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/radar.dm:504
+public partial class obj_item_circuit_component_mod_program_radar_medical : obj_item_circuit_component_mod_program_radar
+{
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:507
+    public override object can_track(datum source = null, atom signal = null, object signal_turf = null, object computer_turf = null)
+    {
+        if (Dm.@in(target.value, GLOB.human_list))
+            return NONE;
+        return base.can_track(source, signal, signal_turf, computer_turf);
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/radar.dm:512
+public partial class obj_item_circuit_component_mod_program_radar_janitor : obj_item_circuit_component_mod_program_radar
+{
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:515
+    public override object can_track(datum source = null, atom signal = null, object signal_turf = null, object computer_turf = null)
+    {
+        if (Dm.@in(target.value, GLOB.janitor_devices))
+            return NONE;
+        return base.can_track(source, signal, signal_turf, computer_turf);
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/radar.dm:519
+public partial class obj_item_circuit_component_mod_program_radar_nukie : obj_item_circuit_component_mod_program_radar
+{
+    // tg: code/modules/modular_computers/file_system/programs/radar.dm:522
+    public override object can_track(datum source = null, atom signal = null, object signal_turf = null, object computer_turf = null)
+    {
+        if (Dm.@in(target.value, SSmachines.get_machines_by_type_and_subtypes(typeof(obj_machinery_nuclearbomb))))
+            return NONE;
+        if (Dm.@in(target.value, SSpoints_of_interest.real_nuclear_disks))
+            return NONE;
+        if (target.value == SSshuttle.getShuttle("syndicate"))
+            return NONE;
+        return base.can_track(source, signal, signal_turf, computer_turf);
     }
 }

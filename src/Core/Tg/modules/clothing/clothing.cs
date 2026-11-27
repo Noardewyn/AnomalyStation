@@ -123,8 +123,7 @@ public partial class obj_item_clothing : obj_item
         if (Dm.truthy(LAZYLEN(clothing_traits)))
             clothing_traits = string_list(clothing_traits) as DmList;
         dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/venue_price, FOOD_PRICE_CHEAP): the element is not declared (venues and the economy)
-        Dm.Deferred("code/modules/clothing/clothing.dm:74", "Initialize: AddElement(/datum/element/venue_price, FOOD_PRICE_CHEAP): the venue price of clothing (the restaurant venues' robot customers, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_venue_price), FOOD_PRICE_CHEAP));
         if (Dm.truthy(can_be_bloody) && (Dm.truthy(Dm.bitand(body_parts_covered, FEET)) || Dm.truthy(Dm.bitand(flags_inv, HIDESHOES))))
             Waiting.NoSleep(LoadComponent(typeof(datum_component_bloodysoles)));
         // AddElement(/datum/element/attack_equip): the element is not declared (equipping onto another mob by attacking, M4a)

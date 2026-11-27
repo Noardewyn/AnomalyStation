@@ -20,7 +20,7 @@ public partial class obj_item_reagent_containers_cup_watering_can : obj_item_rea
     {
         object dot = base.Initialize(mapload, __extra);
         if (Dm.truthy(mapload))
-            Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SNAIL, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)); // inert until the cell lines (P3)
+            Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_SNAIL, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5));
         return dot;
     }
 }

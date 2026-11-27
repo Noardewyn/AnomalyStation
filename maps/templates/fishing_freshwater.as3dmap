@@ -1,0 +1,15 @@
+anomaly-map 1
+source _maps/templates/fishing_freshwater.dmm tg 1d99bd7f
+size 3 3 1
+chunk 32
+default /obj/effect/turf_decal/siding/blue | /turf/open/water/no_planet_atmos | /area/template_noop
+
+[chunk 1 1 1]
+1,3: /obj/effect/turf_decal/siding/blue/inner_corner{dir = 1} | /turf/open/water/no_planet_atmos | /area/template_noop
+2,3: /obj/effect/turf_decal/siding/blue{dir = 1} | /turf/open/water/no_planet_atmos | /area/template_noop
+3,3: /obj/structure/chair/plastic | /obj/item/reagent_containers/cup/soda_cans/beer{pixel_x = 12; pixel_y = -5} | /obj/effect/turf_decal/siding/blue/inner_corner_inv{dir = 8} | /turf/template_noop | /area/template_noop
+1,2: /obj/effect/turf_decal/siding/blue{dir = 8} | /turf/open/water/no_planet_atmos | /area/template_noop
+2,2: /turf/open/water/no_planet_atmos | /area/template_noop
+3,2: /obj/effect/turf_decal/siding/blue{dir = 4} | /turf/open/water/no_planet_atmos | /area/template_noop
+1,1: /obj/effect/turf_decal/siding/blue/inner_corner{dir = 8} | /turf/open/water/no_planet_atmos | /area/template_noop
+3,1: /obj/effect/turf_decal/siding/blue/inner_corner | /turf/open/water/no_planet_atmos | /area/template_noop

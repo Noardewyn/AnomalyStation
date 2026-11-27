@@ -261,7 +261,7 @@ public class ExplosionGameplayTests
         var texts = new List<string>();
         engineer.Client.ServerTextReceived += t => texts.Add(t.Html);
         engineer.Session.DevCommand($"explode {LightX} {LightY} 1 0 0 3 5 0"); // Z 1, light 3, flash 5, no flame
-        for (int i = 0; i < 20 && texts.Count == 0; i++) // the input buffer: the command is applied a few ticks later
+        for (int i = 0; i < 20 && texts.All(t => t.Contains("Payday", StringComparison.Ordinal)); i++) // a payday line may come first; the input buffer: the command is applied a few ticks later
             w.Run(1);
         w.Run(1); // SSexplosions fires
         _output.WriteLine("reply: " + string.Join(" | ", texts));

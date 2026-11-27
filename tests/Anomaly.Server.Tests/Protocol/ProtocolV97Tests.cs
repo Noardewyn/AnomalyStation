@@ -13,7 +13,7 @@ public class ProtocolV97Tests
         Assert.Equal(hello, back);
         Assert.True(Codec.TryDecode(Codec.Encode(hello with { WaitsForLoad = false }), out back, out error), error.ToString());
         Assert.False(back.WaitsForLoad);
-        Assert.True(ProtocolVersion.Current >= 97); // version 98 follows (BuildInfoTests pins the current one)
+        Assert.True(ProtocolVersion.Current >= 97);
     }
 
     [Fact]
@@ -23,7 +23,7 @@ public class ProtocolV97Tests
         byte[] bytes = Codec.Encode(loaded);
         Assert.True(Codec.TryDecode(bytes, out ActionMessage back, out ProtocolError error), error.ToString());
         Assert.Equal(loaded, back);
-        Assert.True(ActionKinds.Last >= ActionKind.Loaded); // version 98 adds HotbarPress after it
+        Assert.True(ActionKinds.Last >= ActionKind.Loaded); // version 99 adds HotbarPress after it
         Assert.Throws<ProtocolException>(() => Codec.Encode(loaded with { Target = 4, TargetKind = TargetKind.Entity }));
         Assert.Throws<ProtocolException>(() => Codec.Encode(loaded with { Text = "x" }));
     }

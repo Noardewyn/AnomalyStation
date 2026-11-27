@@ -57,8 +57,9 @@ public class CreateAndDestroyTests
         // unit_test.dm:325: the ethereal crystal needs its heart (live since gaps OG1)
         || typeof(obj_structure_ethereal_crystal).IsAssignableFrom(t)
         // the infected assistants' corpses dress in the assistant's outfit, whose ID trim reads SSid_access (outfit.dm:213), which the harness
-        // world does not initialize (the other job corpses are generated-only and skipped). Gaps E3
-        || new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection) }.Contains(t)
+        // world does not initialize (the other job corpses are generated-only and skipped). Gaps E3; the bitrunner's and the cyber
+        // police's corpses (the bitrunning domains) dress in outfits with an ID trim too
+        || new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection), typeof(obj_effect_mob_spawn_corpse_human_bitrunner), typeof(obj_effect_mob_spawn_corpse_human_cyber_police) }.Contains(t)
         // the improvised chem heater's RefreshParts reads its subsystem's wait (spaceheater.dm:537); the toy room's Master lists no SSmachines (E9)
         || typeof(obj_machinery_space_heater_improvised_chem_heater).IsAssignableFrom(t)
         // the manufacturing crafter's Initialize starts processing on SSmanufacturing (crafter.dm:25); the toy room's Master does not list it (E16)
@@ -68,7 +69,14 @@ public class CreateAndDestroyTests
         // unit_test.dm:307, :339, :373 (silicons SI2: live since then): the silicons' PDAs delete themselves outside a silicon, the
         // preset-model cyborgs invoke async in their Initialize, and the robot models never spawn outside a robot
         || typeof(obj_item_modular_computer_pda_silicon).IsAssignableFrom(t) || typeof(mob_living_silicon_robot_model).IsAssignableFrom(t)
-        || typeof(obj_item_robot_model).IsAssignableFrom(t);
+        || typeof(obj_item_robot_model).IsAssignableFrom(t)
+        // unit_test.dm:343: the sliding puzzle "spawns turf changing stuff" (its vault floors and tiles; live since the Lavaland ruins)
+        || typeof(obj_effect_sliding_puzzle).IsAssignableFrom(t)
+        // unit_test.dm:276, :278: the restaurant's portal and seat are template types
+        || t == typeof(obj_machinery_restaurant_portal) || t == typeof(obj_structure_holosign_robot_seat)
+        // the robot customer's Initialize reads SSrestaurant's venues and customers (robot_customer.dm:34), which the harness world
+        // does not initialize (tg's runs with every subsystem)
+        || t == typeof(mob_living_basic_robot_customer);
 
     private static List<Type> ValidMovableTypes() => datum_unit_test_create_and_destroy.TranslatedMovableTypes().Where(t => !Uncreatable(t)).ToList();
 
@@ -112,6 +120,20 @@ public class CreateAndDestroyTests
             Dm.@new<datum_controller_subsystem_processing_plumbing>();
             // syndicate N1a: a nuke reads the security level in its Initialize (_nuclear_bomb.dm:66)
             Dm.@new<datum_controller_subsystem_security_level>();
+            // the Thing's ruin machines (its phase depleters, the aggro gates) queue their links on SSqueuelinks, which tg's MC always makes
+            if (SSqueuelinks == null)
+                Dm.@new<datum_controller_subsystem_queuelinks>();
+            // the library's consoles look for the database at Initialize (lib_machines.dm:173, SSdbcore.Connect), which tg's MC always makes
+            if (SSdbcore == null)
+                Dm.@new<datum_controller_subsystem_dbcore>();
+            // the trading cards and packs read the sets SStrading_card_game loads at boot (tcg.dm:21, :389), which tg's MC always loads
+            if (SStrading_card_game == null)
+            {
+                if (Anomaly.Core.Tests.Tools.TgClone.Root != null)
+                    TgStrings.Mount(DmWorldState.Of(World.Current).Files, Anomaly.Core.Tests.Tools.TgClone.Root, TgStrings.CardFiles);
+                Dm.@new<datum_controller_subsystem_trading_card_game>();
+                Waiting.NoSleep(SStrading_card_game.Initialize());
+            }
             // silicons SI3: the printers' auto-unlocking techwebs (the lathe's, the smelter's, the biogenerator's) register with SSresearch and
             // read its design table; tg's MC always makes it
             if (SSresearch == null)
@@ -121,6 +143,10 @@ public class CreateAndDestroyTests
             }
             // Gaps S3: the fortune, fishing tip and junk mail papers pick from GLOB string lists that tg's GLOB reads at world start
             // (strings.dm:4-12): the toy room mounts the strings after its GLOB
+            GLOB.InitGlobalfirst_names(); // the bitrunning revolutionary names itself from them (revolutionary.dm:96-105)
+            GLOB.InitGlobalfirst_names_male();
+            GLOB.InitGlobalfirst_names_female();
+            GLOB.InitGloballast_names();
             GLOB.InitGlobalphonetic_alphabet(); // syndicate G3a: a deathrattle group names itself from it (implant_deathrattle.dm)
             GLOB.InitGlobalwisdoms();
             GLOB.InitGlobalfishing_tips();
@@ -129,6 +155,13 @@ public class CreateAndDestroyTests
             GLOB.InitGlobalposibrain_names(); // silicons SI2: a positronic brain names itself from it (positronic.dm:33)
             GLOB.InitGlobalai_names(); // silicons SI9: the saboteur cyborg's chameleon picks an AI name (borgchameleon.dm:32)
             GLOB.InitGlobalgross_adjectives(); // gaps P3b: the fly's infused organs name themselves from it (odd_organ_name, names.dm:288)
+            GLOB.InitGlobalclown_names(); // the legion-infested corpses: the consumed clown names itself from them (mining_corpses.dm:261)
+            GLOB.InitGlobalgolem_names(); // and the corpses of the other species from their languages (terrum.dm:32, calcic.dm:31, draconic.dm:41, moffic.dm:34)
+            GLOB.InitGlobalplasmaman_names();
+            GLOB.InitGloballizard_names_male();
+            GLOB.InitGloballizard_names_female();
+            GLOB.InitGlobalmoth_first();
+            GLOB.InitGlobalmoth_last();
             turf spawn_at = ToyRoom.FloorBottomLeft();
             DmList cached_contents = spawn_at.contents.Copy();
             // The ghosts (D151): a ghost made on a turf goes to the arrivals shuttle or the station's centre (observer.dm:127-131);

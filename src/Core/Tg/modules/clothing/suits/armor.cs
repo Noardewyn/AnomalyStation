@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // M7x slice B: /obj/item/clothing/suit/armor takes the security vest's allowed list, so a disabler hangs on the officer's vest. Gaps
 // CL1 (D333): the rest of the file (the cuirass' and the SWAT suit's rustle, the formal coats' toggled icon, the balloon vest that
 // pops, the reflective vest, the durathread and elder atmosian allowed lists, the durability suits and the holymelon's
-// anti-magic). The fishing difficulty elements and the heavy suit's mesh texture wait for fishing and the bodypart textures, the
+// anti-magic). The heavy suit's mesh texture waits for the bodypart textures, the
 // press vest's and the security jacket's emissive overlays are DV12 (not-translated.md 209). The fantasy bonuses are live-partial
 // stubs. The var blocks are generated (D111).
 
@@ -88,8 +88,7 @@ public partial class obj_item_clothing_suit_armor_riot : obj_item_clothing_suit_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, 5): fishing difficulty (section 105)
-        Dm.Deferred("code/modules/clothing/suits/armor.dm:315", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 5), fishing difficulty; AddElement(/datum/element/equipment_bodypart_texture, BODY_ZONE_CHEST, texture_type), the mesh texture on the chest");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 5));
         init_rustle_component();
         return dot;
     }
@@ -154,7 +153,7 @@ public partial class obj_item_clothing_suit_armor_swat : obj_item_clothing_suit_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/armor.dm:445", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 5));
         init_rustle_component();
         return dot;
     }
@@ -258,7 +257,7 @@ public partial class obj_item_clothing_suit_armor_vest_military : obj_item_cloth
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/armor.dm:754", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 5));
         return dot;
     }
 }

@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps P4c (D298): the whole file; the assistant bounties are var blocks (generated) but the toolbox's and the fish's procs. The fish
-// bounties reach the fish (fishing, a skeleton: not-translated section 169).
+// bounties read the fish and their cases.
 
 // tg: code/modules/cargo/bounties/assistant.dm:43
 public partial class datum_bounty_item_assistant_toolbox : datum_bounty_item_assistant

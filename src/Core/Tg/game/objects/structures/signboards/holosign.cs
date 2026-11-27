@@ -9,9 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: the holographic signboard and is_color_dark_with_saturation translated (gaps ST5, D333); its circuit component
-// (/obj/item/circuit_component/holo_signboard, and the USB port the sign makes for it) waits for the integrated circuits (wiremod
-// is inert, not-translated.md 213). The holographic sign is written by hand, lit teal while it shows text, recoloured through tg's
+// The whole file: the holographic signboard and is_color_dark_with_saturation (gaps ST5, D333), and its circuit component on the
+// sign's USB port that writes, recolours and clears it from a circuit. The holographic sign is written by hand, lit teal while it shows text, recoloured through tg's
 // colour picker on a right click (greyscale sprite tinted; too dark a colour refused), locked to the name on an ID card swiped on
 // it, and an emag shorts its lock (its "_emag" sprite). Its text over the board is the signboard's (`_signboard.cs`: the 3D client
 // draws no private image's maptext yet). The var blocks are generated (D111).
@@ -25,7 +24,7 @@ public partial class obj_structure_signboard_holosign : obj_structure_signboard
         object dot = base.Initialize(mapload, __extra);
         if (Dm.truthy(current_color))
             Waiting.Detach(set_color(current_color));
-        Dm.Deferred("code/game/objects/structures/signboards/holosign.dm:25", "Initialize: AddComponent(/datum/component/usb_port, list(/obj/item/circuit_component/holo_signboard)): the integrated circuits (wiremod, inert)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), Dm.list(typeof(obj_item_circuit_component_holo_signboard))));
         return dot;
     }
 
@@ -121,14 +120,14 @@ public partial class obj_structure_signboard_holosign : obj_structure_signboard
             {
                 registered_owner = null;
                 balloon_alert(user, I18n.T("id lock removed"));
-                investigate_log(Dm.text("([]) removed id lock", key_name(user)), INVESTIGATE_SIGNBOARD);
+                investigate_log(Dm.text("([]) removed id lock", key_name(user)), obj_structure_signboard.INVESTIGATE_SIGNBOARD);
             }
         }
         else
         {
             registered_owner = trimmed_id_name;
             balloon_alert(user, I18n.T("locked to id"));
-            investigate_log(Dm.text("([]) added id lock for \"[]\"", key_name(user), registered_owner), INVESTIGATE_SIGNBOARD);
+            investigate_log(Dm.text("([]) added id lock for \"[]\"", key_name(user), registered_owner), obj_structure_signboard.INVESTIGATE_SIGNBOARD);
         }
         update_appearance();
         return ITEM_INTERACT_SUCCESS;
@@ -189,12 +188,12 @@ public partial class obj_structure_signboard_holosign : obj_structure_signboard
         if (Dm.truthy(new_color))
         {
             balloon_alert(user, I18n.T("set color to []", new_color));
-            investigate_log(Dm.text("([]) set the color to []", key_name(user), Dm.truthy(new_color) ? new_color : "(none)"), INVESTIGATE_SIGNBOARD);
+            investigate_log(Dm.text("([]) set the color to []", key_name(user), Dm.truthy(new_color) ? new_color : "(none)"), obj_structure_signboard.INVESTIGATE_SIGNBOARD);
         }
         else
         {
             balloon_alert(user, I18n.T("unset color"));
-            investigate_log(Dm.text("([]) cleared the color", key_name(user)), INVESTIGATE_SIGNBOARD);
+            investigate_log(Dm.text("([]) cleared the color", key_name(user)), obj_structure_signboard.INVESTIGATE_SIGNBOARD);
         }
         return dot;
     }
@@ -207,7 +206,7 @@ public partial class obj_structure_signboard_holosign : obj_structure_signboard
         playsound(this, SFX_SPARKS, vol: 100, vary: TRUE, extrarange: SHORT_RANGE_SOUND_EXTRARANGE);
         do_sparks(3, cardinal_only: FALSE, source: this);
         balloon_alert(user, I18n.T("lock broken"));
-        investigate_log(Dm.text("was emagged by [] (previous owner: [])", key_name(user), Dm.truthy(registered_owner) ? registered_owner : "(none)"), INVESTIGATE_SIGNBOARD);
+        investigate_log(Dm.text("was emagged by [] (previous owner: [])", key_name(user), Dm.truthy(registered_owner) ? registered_owner : "(none)"), obj_structure_signboard.INVESTIGATE_SIGNBOARD);
         registered_owner = null;
         obj_flags = Dm.num(Dm.bitor(obj_flags, EMAGGED));
         update_appearance();
@@ -253,5 +252,95 @@ public static partial class GlobalProcs
         threshold ??= 25;
         DmList hsl = rgb2num(Dm.str(color), COLORSPACE_HSL);
         return Dm.num(Dm.num(hsl[3]) < threshold);
+    }
+}
+
+// tg: code/game/objects/structures/signboards/holosign.dm:162
+public partial class obj_item_circuit_component_holo_signboard : obj_item_circuit_component
+{
+    /// tg's `set_color` port (holosign.dm:176): the name is atom.color's setter in C#, so the var is declared here under another name.
+    public datum_port_input set_color_port;
+
+    // tg: code/game/objects/structures/signboards/holosign.dm:180
+    public override async DmTask populate_ports()
+    {
+        message = add_input_port("Message", PORT_TYPE_STRING) as datum_port_input;
+        clear = add_input_port("Clear", PORT_TYPE_SIGNAL, trigger: nameof(clear_received)) as datum_port_input;
+
+        fail_reason = add_output_port("Fail Reason", PORT_TYPE_STRING) as datum_port_output;
+        on_fail = add_output_port("Failed", PORT_TYPE_SIGNAL) as datum_port_output;
+
+        red = add_input_port("Red", PORT_TYPE_NUMBER) as datum_port_input;
+        green = add_input_port("Green", PORT_TYPE_NUMBER) as datum_port_input;
+        blue = add_input_port("Blue", PORT_TYPE_NUMBER) as datum_port_input;
+        set_color_port = add_input_port("Set Color", PORT_TYPE_SIGNAL, trigger: nameof(color_received)) as datum_port_input;
+    }
+
+    // tg: code/game/objects/structures/signboards/holosign.dm:192
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_structure_signboard_holosign)))
+            connected_display = shell as obj_structure_signboard_holosign;
+    }
+
+    // tg: code/game/objects/structures/signboards/holosign.dm:197
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (connected_display == null)
+            return null;
+        if (Dm.num(length(message.value)) > connected_display.max_length) //5000 is a hell of a lot longer than 144.
+        {
+            fail_reason.set_output(Dm.text("Too long ([]/[]).", length(message.value), connected_display.max_length));
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+        if (Dm.truthy(is_ic_filtered(message.value)))
+        {
+            fail_reason.set_output("Prohibited content.");
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        string edited_message = replacetextEx_char(message.value, "<br>", "\n");
+        if (Dm.truthy(Waiting.NoSleep(connected_display.set_text(edited_message))))
+        {
+            investigate_log(Dm.text("Circuit USB ([]) set text to \"[]\"", parent.get_creator(), connected_display.sign_text is var or__1 && Dm.truthy(or__1) ? or__1 : "(none)"), obj_structure_signboard.INVESTIGATE_SIGNBOARD);
+            if (Dm.truthy(is_soft_ic_filtered(message.value)))
+                message_admins(Dm.text("A circuit component (by []) added a soft filtered message to a signboard. []", parent.get_creator_admin(), ADMIN_COORDJMP(this)));
+        }
+        else
+        {
+            fail_reason.set_output("Connection refused by external endpoint.");
+            on_fail.set_output(COMPONENT_SIGNAL);
+        }
+        return null;
+    }
+
+    // tg: code/game/objects/structures/signboards/holosign.dm:219
+    public virtual async DmTask clear_received(datum_port_input port = null)
+    {
+        if (!Dm.truthy(await connected_display.set_text(null)))
+        {
+            fail_reason.set_output("Connection refused by external endpoint.");
+            on_fail.set_output(COMPONENT_SIGNAL);
+        }
+    }
+
+    // tg: code/game/objects/structures/signboards/holosign.dm:224
+    public virtual async DmTask color_received(datum_port_input port = null)
+    {
+        red.set_value(clamp(red.value, 0, 255));
+        blue.set_value(clamp(blue.value, 0, 255));
+        green.set_value(clamp(green.value, 0, 255));
+        string signboard_color = rgb(Dm.num(red.value), Dm.num(green.value), Dm.num(blue.value));
+        if (Dm.truthy(signboard_color) && signboard_color != rgb(0, 0, 0) && Dm.truthy(is_color_dark_with_saturation(signboard_color, 25)))
+        {
+            fail_reason.set_output("Color too dark to display.");
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return;
+        }
+        await connected_display.set_color(signboard_color); //doesnt have a return so no need to check and error
+        investigate_log(Dm.text("Circuit USB ([]) set the color to []", parent.get_creator(), signboard_color is var or__1 && Dm.truthy(or__1) ? or__1 : "(none)"), obj_structure_signboard.INVESTIGATE_SIGNBOARD);
     }
 }

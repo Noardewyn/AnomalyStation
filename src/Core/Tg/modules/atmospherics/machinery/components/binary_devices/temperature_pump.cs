@@ -9,10 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M7 slice D172 (the temperature pump, which the rapid pipe dispenser dispenses): the whole file except the circuit USB port
-// (circuits), the screentip context (M9) and the investigate logs (M10), which are deferred leaves (generated live-partial stub:
-// add_context). The window is tg's AtmosTempPump interface. /obj/item/circuit_component/atmos_temperature_pump stays inert
-// (circuits). The var block is generated.
+// M7 slice D172 (the temperature pump, which the rapid pipe dispenser dispenses): the whole file except the screentip context
+// (M9) and the investigate logs (M10), which are deferred leaves (generated live-partial stub: add_context). The window is tg's
+// AtmosTempPump interface. Its USB port takes the USB circuit component (wiremod/components/usb/temperature_pump.dm). The var block is generated.
 
 // tg: code/modules/atmospherics/machinery/components/binary_devices/temperature_pump.dm:1
 public partial class obj_machinery_atmospherics_components_binary_temperature_pump : obj_machinery_atmospherics_components_binary
@@ -22,8 +21,7 @@ public partial class obj_machinery_atmospherics_components_binary_temperature_pu
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/atmos_temperature_pump), only_root_path = TRUE)): circuits
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/temperature_pump.dm:18", "Initialize: AddComponent(/datum/component/usb_port): the circuit USB port (circuits)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_atmos_temperature_pump)), only_root_path: TRUE)));
         // register_context() (datums/screentips/atom_context.dm:5): the screentip context of the held tool
         Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/temperature_pump.dm:19", "Initialize: register_context(): screentip contexts (M10+)");
         return dot;

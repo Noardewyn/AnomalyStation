@@ -101,7 +101,7 @@ public interface IClientEntryPoints
     /// <summary>Version 86 (DV503): the radial's entry that is no click (<see cref="RadialExtras.Pick"/>: the table's Flip).</summary>
     void ContextPick(client player, atom target, string label) => RadialExtras.Pick(player, target, label);
 
-    /// <summary>Version 98 also (DV603): a press of hotbar cell <paramref name="cell"/> (<see cref="BeltHotbar.Press"/>: the own human's cells, by tg's procs).</summary>
+    /// <summary>Version 99 also (DV689): a press of hotbar cell <paramref name="cell"/> (<see cref="BeltHotbar.Press"/>: the own human's cells, by tg's procs).</summary>
     void HotbarPress(client player, int cell) => BeltHotbar.Press(player, cell);
 
     /// <summary>Version 78: the player clicked a command verb of the stat panel (<see cref="ClientSeam.RunVerb"/>: BYOND runs the verb with usr the mob).</summary>

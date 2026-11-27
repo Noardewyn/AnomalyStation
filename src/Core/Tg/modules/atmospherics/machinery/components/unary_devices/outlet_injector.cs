@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL (M4b slice 2: the air injectors): the init (the id tag), the ctrl and alt clicks, the picture, process_atmos and
 // can_unwrench. Deferred leaves: the tool screentips and the screentip context (M9) and the investigate logs (M10).
-// Generated live-partial stubs: add_context (M9) and the tgui window (ui_interact, ui_data, ui_act: M9).
+// Generated live-partial stub: add_context (M9). The tgui window (ui_interact, ui_data, ui_act) is tg's AtmosPump.
 // The air sensor link (multitool_act) is translated (package E5). The var block is generated.
 
 // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:1
@@ -135,6 +135,64 @@ public partial class obj_machinery_atmospherics_components_unary_outlet_injector
             update_parents();
         }
         return dot.Value;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:113
+    public override async DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
+    {
+        ui = await SStgui.try_update_ui(user, this, ui) as datum_tgui;
+        if (!Dm.truthy(ui))
+        {
+            ui = Dm.@new<datum_tgui>(user, this, "AtmosPump", name);
+            await ui.open();
+        }
+        return null;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:119
+    public override async DmTask<object> ui_data(mob user = null)
+    {
+        DmList data = Dm.list();
+        data["on"] = on;
+        data["rate"] = round(volume_rate);
+        data["max_rate"] = round(MAX_TRANSFER_RATE);
+        return data;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:126
+    public override async DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
+    {
+        object dot = await base.ui_act(action, @params, ui, state);
+        if (Dm.truthy(dot))
+            return dot;
+
+        if (Dm.eq(action, "power"))
+        {
+            set_on(Dm.truthy(on) ? FALSE : TRUE);
+            investigate_log(Dm.text("was turned [] by []", Dm.truthy(on) ? "on" : "off", key_name(usr)), INVESTIGATE_ATMOS);
+            dot = TRUE;
+        }
+        else if (Dm.eq(action, "rate"))
+        {
+            object rate = @params["rate"];
+            if (Dm.eq(rate, "max"))
+            {
+                rate = MAX_TRANSFER_RATE;
+                dot = TRUE;
+            }
+            else if (text2num(rate) != null)
+            {
+                rate = text2num(rate);
+                dot = TRUE;
+            }
+            if (Dm.truthy(dot))
+            {
+                volume_rate = clamp(Dm.num(rate), 0, MAX_TRANSFER_RATE);
+                investigate_log(Dm.text("was set to [] L/s by []", volume_rate, key_name(usr)), INVESTIGATE_ATMOS);
+            }
+        }
+        update_appearance(UPDATE_ICON);
+        return dot;
     }
 
     // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:149

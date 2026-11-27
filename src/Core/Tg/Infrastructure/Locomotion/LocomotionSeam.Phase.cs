@@ -411,7 +411,7 @@ public static partial class LocomotionSeam
         if (c.StrideTravel < stride)
             return;
         c.StrideTravel %= stride;
-        if (!QDELETED(mob) && mob.loc is turf)
+        if (!QDELETED(mob) && mob.loc is turf && Dm.truthy(mob._listen_lookup?[COMSIG_LIVING_CAPSULE_STRIDE])) // SEND_SIGNAL: a mob without footsteps has no listener
             mob._SendSignal(COMSIG_LIVING_CAPSULE_STRIDE, Dm.list(mob, mob.loc, mob.dir, FALSE, null, TRUE));
     }
 

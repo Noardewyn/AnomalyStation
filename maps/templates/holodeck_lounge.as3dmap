@@ -1,0 +1,73 @@
+anomaly-map 1
+source _maps/templates/holodeck_lounge.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+
+[chunk 1 1 1]
+1,10: /obj/structure/table/wood | /obj/item/storage/fancy/cigarettes/cigars/cohiba | /obj/item/lighter | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+2,10: /obj/structure/table/wood | /obj/item/flashlight/lamp/green | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,10: /obj/structure/chair/wood | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+5,10: /obj/structure/chair/wood | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+6,10: /obj/structure/chair/wood | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+8,10: /obj/structure/closet/crate/bin | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+9,10: /obj/structure/table/wood | /obj/item/paper_bin | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+3,9: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,9: /obj/structure/table/wood/poker | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+5,9: /obj/structure/table/wood/poker | /obj/item/storage/box/matches | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+6,9: /obj/structure/table/wood/poker | /obj/effect/holodeck_effect/cards | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+7,9: /obj/structure/chair/wood{dir = 8} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+3,8: /obj/structure/chair/wood{dir = 4} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,8: /obj/structure/table/wood/poker | /obj/item/storage/dice | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+5,8: /obj/structure/table/wood/poker | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+6,8: /obj/structure/table/wood/poker | /obj/item/cigarette/pipe | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+7,8: /obj/structure/chair/wood{dir = 8} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,7: /obj/structure/chair/wood{dir = 1} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+5,7: /obj/structure/chair/wood{dir = 1} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+6,7: /obj/structure/chair/wood{dir = 1} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,6: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+7,6: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+8,6: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+9,6: /obj/structure/window/reinforced/spawner/directional/south | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+3,5: /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,5: /obj/structure/table/wood | /obj/item/instrument/saxophone | /turf/open/floor/holofloor/carpet | /area/template_noop
+5,5: /turf/open/floor/holofloor{icon_state = "stairs-l"} | /area/template_noop
+6,5: /turf/open/floor/holofloor{icon_state = "stairs-r"} | /area/template_noop
+7,5: /obj/structure/table/wood | /obj/effect/holodeck_effect/random_book | /turf/open/floor/holofloor/carpet | /area/template_noop
+8,5: /obj/structure/table/wood | /obj/item/kirbyplants/organic/plant5{pixel_y = 10} | /turf/open/floor/holofloor/carpet | /area/template_noop
+9,5: /obj/structure/table/wood | /obj/item/flashlight/lamp/green{pixel_y = 4} | /turf/open/floor/holofloor/carpet | /area/template_noop
+1,4: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+2,4: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+3,4: /obj/structure/chair/stool/bar/directional/south | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,4: /obj/structure/table/wood | /obj/item/instrument/piano_synth/headphones | /turf/open/floor/holofloor/carpet | /area/template_noop
+5,4: /turf/open/floor/holofloor/carpet | /area/template_noop
+6,4: /turf/open/floor/holofloor/carpet | /area/template_noop
+7,4: /turf/open/floor/holofloor/carpet | /area/template_noop
+8,4: /turf/open/floor/holofloor/carpet | /area/template_noop
+9,4: /turf/open/floor/holofloor/carpet | /area/template_noop
+1,3: /obj/structure/table/wood/shuttle_bar | /obj/item/book/manual/wiki/barman_recipes | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+2,3: /obj/structure/table/wood/shuttle_bar | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+3,3: /obj/structure/table/wood/shuttle_bar | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,3: /obj/structure/musician/piano | /turf/open/floor/holofloor/carpet | /area/template_noop
+5,3: /obj/structure/chair/stool/bar/directional/west | /turf/open/floor/holofloor/carpet | /area/template_noop
+6,3: /turf/open/floor/holofloor/carpet | /area/template_noop
+7,3: /turf/open/floor/holofloor/carpet | /area/template_noop
+8,3: /turf/open/floor/holofloor/carpet | /area/template_noop
+9,3: /obj/structure/chair/comfy/brown{dir = 8} | /turf/open/floor/holofloor/carpet | /area/template_noop
+1,2: /obj/structure/sink/directional/east | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+3,2: /obj/machinery/door/window/right/directional/east | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,2: /turf/open/floor/holofloor/carpet | /area/template_noop
+5,2: /turf/open/floor/holofloor/carpet | /area/template_noop
+6,2: /turf/open/floor/holofloor/carpet | /area/template_noop
+7,2: /turf/open/floor/holofloor/carpet | /area/template_noop
+8,2: /turf/open/floor/holofloor/carpet | /area/template_noop
+9,2: /obj/structure/chair/comfy/brown{dir = 8} | /turf/open/floor/holofloor/carpet | /area/template_noop
+1,1: /obj/structure/table/wood/shuttle_bar | /obj/item/rag{pixel_x = 10; pixel_y = 1} | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+2,1: /obj/structure/table/wood/shuttle_bar | /obj/item/reagent_containers/cup/glass/shaker | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+3,1: /obj/structure/window/reinforced/spawner/directional/east | /obj/structure/table/wood/shuttle_bar | /obj/item/storage/box/cups | /turf/open/floor/holofloor{dir = 9; icon_state = "wood"} | /area/template_noop
+4,1: /obj/structure/table/wood | /obj/item/instrument/violin | /turf/open/floor/holofloor/carpet | /area/template_noop
+5,1: /obj/structure/table/wood | /obj/item/instrument/guitar | /turf/open/floor/holofloor/carpet | /area/template_noop
+6,1: /obj/structure/chair/comfy/brown{buildstackamount = 0; dir = 1} | /turf/open/floor/holofloor/carpet | /area/template_noop
+7,1: /obj/structure/chair/comfy/brown{buildstackamount = 0; dir = 1} | /turf/open/floor/holofloor/carpet | /area/template_noop
+8,1: /obj/structure/chair/comfy/brown{buildstackamount = 0; dir = 1} | /turf/open/floor/holofloor/carpet | /area/template_noop
+9,1: /obj/structure/table/wood | /obj/item/cigarette/pipe | /obj/effect/holodeck_effect/random_book | /turf/open/floor/holofloor/carpet | /area/template_noop

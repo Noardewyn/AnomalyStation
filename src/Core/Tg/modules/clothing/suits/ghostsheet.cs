@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (gaps CL1, D333): the ghost sheet's procs; its Halloween glow is DV12 and its fishing difficulty waits for fishing
-// (not-translated.md 209). The spooky ghost sheet is var-only. The var blocks are generated (D111).
+// PARTIAL (gaps CL1, D333): the ghost sheet's procs; its Halloween glow is DV12 (not-translated.md 209), with its
+// fishing difficulty. The spooky ghost sheet is var-only. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/suits/ghostsheet.dm:1
 public partial class obj_item_clothing_suit_costume_ghost_sheet : obj_item_clothing_suit_costume
@@ -21,7 +21,7 @@ public partial class obj_item_clothing_suit_costume_ghost_sheet : obj_item_cloth
         object dot = base.Initialize(mapload, __extra);
         if (Dm.truthy(check_holidays(HALLOWEEN)))
             Waiting.NoSleep(update_icon(UPDATE_OVERLAYS));
-        Dm.Deferred("code/modules/clothing/suits/ghostsheet.dm:19", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 8): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 8));
         return dot;
     }
 

@@ -227,6 +227,12 @@ Exosuits (D321, DV359): **Climb in** is added the same way on a sealed vehicle n
 seat he is not in (`RadialExtra.Enter`). Its hint's action is `ContextHintAction.DropSelf`, as Buckle's: choosing it sends tg's drag of the
 own mob onto the vehicle (`/obj/vehicle/sealed/mouse_drop_receive`, `mob_try_enter`), and the vehicle's own checks say why it refuses.
 
+Since gaps FX1 (D355, DV639) **Climb in** (or **Climb on**, for a thing he ends up on top of) is offered on every live receiver of tg's
+drag of the own mob that would take him now: each type answers through `atom_movable.dm_climb_in_label` (`Infrastructure/ClimbIn.cs`,
+the receiver's own conditions asked quietly), and `ClimbIn.DropPasses` asks `base_mouse_drop_handler`'s checks without their messages;
+a type whose receiver is not ported offers none. An open closet's Climb in (DV640) is an Extra pick (`ContextHintAction.Extra`,
+`RadialExtra.StepIn`): the server steps him onto its tile and closes it with his hand. The client draws both with the door-in icon.
+
 ## 7. The inert guard (D132)
 
 **The problem.** An inert or base item (868 inert `/obj/item` types on Meta; the PDA and the headset are base types whose own

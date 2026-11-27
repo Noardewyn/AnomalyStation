@@ -28,9 +28,13 @@ public class PushSmoothnessTests
             return f();
     }
 
-    private static RealHeadlessWorld NewWorld(int jitterFrames) =>
-        new(new LoopbackOptions { Seed = 7, TimeoutSteps = 4000, MinLatencySteps = jitterFrames > 0 ? 1 : 0, MaxLatencySteps = jitterFrames },
-            new ServerConfig { Seed = 7, RoomWidth = 48, RoomHeight = 24, Console = false, StatusEveryTicks = 100000, MoveSpeedScale = 0.5f }, framesPerTick: Fps / 20);
+    private static RealHeadlessWorld NewWorld(int jitterFrames, ulong seed = 7) =>
+        new(new LoopbackOptions { Seed = seed, TimeoutSteps = 4000, MinLatencySteps = jitterFrames > 0 ? 1 : 0, MaxLatencySteps = jitterFrames },
+            new ServerConfig { Seed = seed, RoomWidth = 48, RoomHeight = 24, Console = false, StatusEveryTicks = 100000, MoveSpeedScale = 0.5f }, framesPerTick: Fps / 20);
+
+    // A player over a jittery network asks the server to keep two frames of its input queued, as the game's client does off localhost
+    // (GameScene); one frame is for localhost, where nothing jitters.
+    private static RealHeadlessWorld.Player Join(RealHeadlessWorld w, string name, int jitterFrames) => w.Join(name, jitterFrames > 0 ? 2 : 1);
 
     // A crate spawned on (x, y) of the own mob's level, with the own mob put on (mx, my).
     private static obj_structure_closet_crate Setup(RealHeadlessWorld w, RealHeadlessWorld.Player p, int mx, int my, int x, int y)
@@ -57,7 +61,7 @@ public class PushSmoothnessTests
     public void A_pushed_crate_moves_evenly_ahead_of_the_body_in_every_direction(int ux, int uy, int jitterFrames)
     {
         using RealHeadlessWorld w = NewWorld(jitterFrames);
-        RealHeadlessWorld.Player p = w.Join("Pusher");
+        RealHeadlessWorld.Player p = Join(w, "Pusher", jitterFrames);
         int cx = 25, cy = ux != 0 ? 15 : (uy > 0 ? 14 : 17); // the hall: x 5 to 48, y 13 to 18
         var crate = Setup(w, p, cx - ux, cy - uy, cx, cy);
         int length = ux != 0 ? 8 : 3;
@@ -78,7 +82,7 @@ public class PushSmoothnessTests
     public void A_crate_pulled_from_the_own_tile_starts_without_a_surge()
     {
         using RealHeadlessWorld w = NewWorld(3);
-        RealHeadlessWorld.Player p = w.Join("Puller");
+        RealHeadlessWorld.Player p = Join(w, "Puller", 3);
         var crate = Setup(w, p, 20, 14, 20, 14); // spawned where the player stands, as the spawn menu does
         Assert.True(p.Session.Click(crate.dm_id, ClickButton.Left, ClickModifiers.Ctrl));
         w.Run(5);
@@ -92,11 +96,16 @@ public class PushSmoothnessTests
         Assert.True(min > 0.6f * mean, $"the pulled crate slowed to {min:0.00} of a mean {mean:0.00}");
     }
 
-    [Fact]
-    public void Walking_back_into_a_pulled_crate_pushes_it_evenly()
+    // The seed moves the subsystems' random first fire times and the network's delays, so the push begins at another point of a tick and
+    // of the jitter each time: the push takes over from the pull at whatever moment the body touches the crate.
+    public static TheoryData<int> Seeds => new() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+
+    [Theory]
+    [MemberData(nameof(Seeds))]
+    public void Walking_back_into_a_pulled_crate_pushes_it_evenly(int seed)
     {
-        using RealHeadlessWorld w = NewWorld(3);
-        RealHeadlessWorld.Player p = w.Join("Puller");
+        using RealHeadlessWorld w = NewWorld(3, (ulong)seed);
+        RealHeadlessWorld.Player p = Join(w, "Puller", 3);
         var crate = Setup(w, p, 20, 14, 19, 14);
         Assert.True(p.Session.Click(crate.dm_id, ClickButton.Left, ClickModifiers.Ctrl));
         w.Run(5);

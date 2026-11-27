@@ -10,9 +10,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Translated whole for M4a (P2) but the procs that stay for their milestones (change_number_of_hands M10, the wizard's extra
-// hands; the
-// stripping and gibbing helpers unequip_everything, gather_belongings, drop_everything, get_all_cells: M9, M6; get_all_gear came with
-// the gaps package G1's loot panel) and the stack merge of put_in_hands (stacks, M5).
+// hands; gather_belongings, M9) and the stack merge of put_in_hands (stacks, M5); get_all_gear came with the gaps package G1's loot
+// panel, unequip_everything with the chapel's soulstone and the memento mori's dusting, drop_everything and get_all_cells with
+// the crossbreeds.
 
 // tg: code/modules/mob/inventory.dm:5
 public partial class mob : atom_movable
@@ -859,8 +859,21 @@ public partial class mob_living : mob
     // tg: code/modules/mob/inventory.dm:486
     public virtual async DmTask<object> unequip_everything()
     {
-        Dm.NotTranslated("code/modules/mob/inventory.dm:486", "unequip_everything: stripping a mob of everything (gibbing and admin undress, M6 and M10+)");
-        return default;
+        DmList items = Dm.list();
+        Dm.combine(ref items, get_equipped_items(INCLUDE_POCKETS));
+        // In case something isn't actually unequipped somehow
+        DmList dropped_items = Dm.list();
+        foreach (object I in Dm.each(items))
+        {
+            object return_val = await dropItemToGround(I as obj_item);
+            if (!isitem(return_val))
+                continue;
+            Dm.combine(ref dropped_items, return_val);
+        }
+        object held = await drop_all_held_items();
+        if (islist(held))
+            Dm.combine(ref dropped_items, held);
+        return dropped_items;
     }
 }
 
@@ -1079,14 +1092,39 @@ public partial class mob_living : mob
     // tg: code/modules/mob/inventory.dm:704
     public virtual async DmTask<object> drop_everything(object del_on_drop = null, object force = null, object del_if_nodrop = null)
     {
-        Dm.NotTranslated("code/modules/mob/inventory.dm:704", "drop_everything: everything a mob carries (stripping and gibbing, M10+ and M6)");
-        return default;
+        DmList dot = Dm.list(); //list of items that were successfully dropped
+
+        DmList all_gear = get_all_gear(INCLUDE_ACCESSORIES, recursive: FALSE) as DmList;
+        foreach (obj_item item in Dm.each<obj_item>(all_gear))
+        {
+            if (Dm.truthy(await dropItemToGround(item, Dm.num(force))))
+            {
+                if (QDELETED(item)) //DROPDEL can cause this item to be deleted
+                    continue;
+                if (Dm.truthy(del_on_drop))
+                {
+                    qdel(item);
+                    continue;
+                }
+                Dm.append(ref dot, item);
+            }
+            else if (Dm.truthy(del_if_nodrop))
+                qdel(item);
+        }
+        return dot;
     }
 
     // tg: code/modules/mob/inventory.dm:727
     public virtual object get_all_cells(float? max_percent = null)
     {
-        Dm.NotTranslated("code/modules/mob/inventory.dm:727", "get_all_cells: the power cells a mob carries (power, M6)");
-        return default;
+        max_percent ??= 1.0f;
+        DmList cell_items = Dm.list();
+        foreach (obj_item stored in Dm.each<obj_item>(get_all_gear() as DmList))
+        {
+            obj_item_stock_parts_power_store stored_cell = stored.get_cell() as obj_item_stock_parts_power_store;
+            if (stored_cell != null && Dm.num(stored_cell.charge) <= (Dm.num(stored_cell.maxcharge) * max_percent))
+                cell_items[stored] = stored_cell;
+        }
+        return cell_items;
     }
 }

@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (gaps J3, D298): the crayons, their box and the spray cans, with the Crayon window. Left: the suicide's atom colour keeps tg's filter, the venue price (kitchen),
+// The whole file (gaps J3, D298): the crayons, their box and the spray cans, with the Crayon window. Left: the suicide's atom colour keeps tg's filter,
 // the cyborg's spray can (no cyborgs; the palette, the spray can's colour wheel, came with silicons SI4d),
 // the coolant slapcraft, the face decal of a sprayed face. The var blocks are generated.
 
@@ -69,8 +69,7 @@ public partial class obj_item_toy_crayon : obj_item_toy
 
         drawtype = pick(all_drawables);
 
-        // AddElement(/datum/element/venue_price, FOOD_PRICE_EXOTIC): the kitchen's customers
-        Dm.Deferred("code/game/objects/items/crayons.dm:216", "Initialize: AddElement(/datum/element/venue_price, FOOD_PRICE_EXOTIC): the venue price (the kitchen's robot customers, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_venue_price), FOOD_PRICE_EXOTIC));
         //This makes sure that spraycans do not rename stuff instead of painting
         if (!Dm.truthy(can_change_colour))
             Waiting.NoSleep(AddElement(typeof(datum_element_tool_renaming))); // gaps S3: renaming things with a crayon

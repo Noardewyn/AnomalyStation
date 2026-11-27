@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps J2 (D298): the bible: healing by the holy role, the skin choice, the water's blessing, the bullet it can stop. The sects' blessing
-// is unreachable while GLOB.religious_sect is null (rows in not-translated.md 106). The syndicate tome (syndicate G3b); its rune clearing
+// Gaps J2 (D298): the bible: healing by the holy role, the skin choice, the water's blessing, the bullet it can stop; the sect's own
+// blessing and corpse blessing since the chapel's sects. The syndicate tome (syndicate G3b); its rune clearing
 // (the effect_remover component) is not live, so the AddComponent does nothing (not-translated.md 136). Gaps H1: the curse on a heathen who
 // burns it (the omen) and the smiting of the twice cursed.
 
@@ -230,10 +230,7 @@ public partial class obj_item_book_bible : obj_item_book
     public virtual async DmTask<object> bless(mob_living blessed = null, mob_living user = null)
     {
         if (GLOB.religious_sect != null)
-        {
-            Dm.Deferred("code/modules/library/bibles.dm:212", "bless: GLOB.religious_sect.sect_bless, the sects (modules/religion)");
-            return BLESSING_IGNORED;
-        }
+            return await GLOB.religious_sect.sect_bless(blessed, user);
 
         if (!ishuman(blessed))
             return BLESSING_FAILED;
@@ -297,7 +294,11 @@ public partial class obj_item_book_bible : obj_item_book
 
         if (Dm.eq(target_mob.stat, DEAD))
         {
-            // GLOB.religious_sect?.sect_dead_bless(target_mob, user) == BLESSING_FAILED is false while no sect is ported
+            if (GLOB.religious_sect != null && Dm.eq(await GLOB.religious_sect.sect_dead_bless(target_mob, user), BLESSING_FAILED))
+            {
+                target_mob.visible_message(span_danger(I18n.T("[] smacks []'s lifeless corpse with [].", user, target_mob, this)));
+                playsound(target_mob, SFX_PUNCH, 25, TRUE, -1);
+            }
             return null;
         }
 

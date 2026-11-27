@@ -196,7 +196,7 @@ public class PlaySessionTests
     [Fact]
     public void AWorldThingKeptUnderTheCrosshairIsHoveredAgainTwiceASecondAndAScreenEntryIsNot()
     {
-        // DV601: the repeat brings the server's answer after a walk into or out of reach
+        // DV687: the repeat brings the server's answer after a walk into or out of reach
         (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);
         rig.Run(0.5);
         int Hovers() => feed.Actions.Count(a => a.Kind == ActionKind.Hover);
@@ -245,7 +245,7 @@ public class PlaySessionTests
     [Fact]
     public void WhileThePetCommandsKeyIsHeldNoRepeatGoesOutButANewThingOrZoneDoes()
     {
-        // DV601: tg's pets listen to MouseEntered while the key is held (obeys_commands.dm); a repeat would be a new entering and open the radial again
+        // DV687: tg's pets listen to MouseEntered while the key is held (obeys_commands.dm); a repeat would be a new entering and open the radial again
         (RecordingFeed feed, PlayRig rig) = Rig(bots: 0);
         rig.Run(0.5);
         int Hovers() => feed.Actions.Count(a => a.Kind == ActionKind.Hover);
@@ -311,7 +311,7 @@ public class PlaySessionTests
     [Fact]
     public void TheAnswerInHandCountsOnlyForTheLookItArrivedIn()
     {
-        // DV601: an answer from an earlier look at a thing may have been in reach then; a new look waits for its own
+        // DV687: an answer from an earlier look at a thing may have been in reach then; a new look waits for its own
         (RecordingFeed _, PlayRig rig) = Rig(bots: 0);
         rig.Run(0.5);
         var pen = new ClickTarget(TargetKind.Entity, 7, 0, 0, 0, 16, 16);

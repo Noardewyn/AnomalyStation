@@ -12,7 +12,9 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (syndicate G4c, D316): His Grace's effect and its alert; silicons SI2 (D326) the Synthpax immunity; gaps B1 (D327) the desensitization of the combat PTSD and the obsession; gaps K1
 // (D327) the changeling's Fleshmend; gaps X5 the alien nest's sustenance; gaps MO1 (D333) the MODsuit jump jet's anti-gravity; gaps SL1
 // (D333) the exercised effect of a workout (its mood event since gaps MS1); gaps RG1
-// (D339) the garibaldi's revolutionary resilience; the other buffs come with their systems.
+// (D339) the garibaldi's revolutionary resilience; the Envirochow's health buff (the restaurant); the regenerative core's tendrils; the blood-drunk eye's blooddrunk; the bottle
+// of mayhem's frenzy; the Rod of Asclepius' hippocratic oath; the shadow regeneration (the nocturnal fish); the other
+// buffs come with their systems.
 
 //Largely beneficial effects go here, even if they have drawbacks.
 
@@ -358,6 +360,35 @@ public partial class datum_status_effect_good_music : datum_status_effect
     }
 }
 
+/// Same as above, but also heal in darkness!! Mostly superseded but some simple mobs use this
+// tg: code/datums/status_effects/buffs.dm:640  (the nocturnal fish's regeneration)
+public partial class datum_status_effect_shadow_regeneration : datum_status_effect_shadow
+{
+    // tg: code/datums/status_effects/buffs.dm:643
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        if (!Dm.truthy(dot))
+            return FALSE;
+        await heal_owner();
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:650
+    public override async DmTask refresh(object effect = null, params object[] __extra)
+    {
+        await base.refresh(effect, __extra);
+        await heal_owner();
+    }
+
+    /// Regenerate health whenever this status effect is applied or reapplied
+    // tg: code/datums/status_effects/buffs.dm:655
+    public virtual async DmTask heal_owner()
+    {
+        await owner.heal_overall_damage(brute: 1, burn: 1, required_bodytype: BODYTYPE_ORGANIC);
+    }
+}
+
 /// Applies desensitized mood modifier to the mob, carrying between mind transfers
 // tg: code/datums/status_effects/buffs.dm:665  (gaps B1: the combat PTSD and the obsession traumas)
 public partial class datum_status_effect_desensitized : datum_status_effect
@@ -506,31 +537,264 @@ public partial class datum_status_effect_jump_jet : datum_status_effect
     }
 }
 
-/// Same as the shadow alert, but also heal in darkness!! Mostly superseded but some simple mobs use this
-// tg: code/datums/status_effects/buffs.dm:641
-public partial class datum_status_effect_shadow_regeneration : datum_status_effect_shadow
+// tg: code/datums/status_effects/buffs.dm:381
+public partial class datum_status_effect_regenerative_core : datum_status_effect
 {
-    // tg: code/datums/status_effects/buffs.dm:643
+    // tg: code/datums/status_effects/buffs.dm:388
     public override async DmTask<object> on_apply(params object[] __extra)
     {
-        object dot = await base.on_apply(__extra);
-        if (!Dm.truthy(dot))
-            return FALSE;
-        await heal_owner();
+        owner.add_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        await owner.adjust_brute_loss(-25);
+        await owner.adjust_fire_loss(-25);
+        await owner.fully_heal(HEAL_CC_STATUS);
+        owner.bodytemperature = Dm.num(owner.get_body_temp_normal());
+        if (ishuman(owner))
+        {
+            mob_living_carbon_human humi = owner as mob_living_carbon_human;
+            humi.set_coretemperature(humi.get_body_temp_normal());
+        }
         return TRUE;
     }
 
-    // tg: code/datums/status_effects/buffs.dm:650
-    public override async DmTask refresh(object effect = null, params object[] __extra)
+    // tg: code/datums/status_effects/buffs.dm:398
+    public override async DmTask<object> on_remove()
     {
-        await base.refresh(effect, __extra);
-        await heal_owner();
+        owner.remove_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        return null;
+    }
+}
+
+// tg: code/datums/status_effects/buffs.dm:95 (the blood-drunk miner's eye: its crusher trophy's mark detonation)
+public partial class datum_status_effect_blooddrunk : datum_status_effect
+{
+    // tg: code/datums/status_effects/buffs.dm:106
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        owner.add_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        MODIFY_PHYSIOLOGY(owner, BRUTE, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, BURN, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, TOX, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, OXY, 0.1f);
+        MODIFY_PHYSIOLOGY(owner, STAMINA, 0.1f);
+        await owner.add_stun_absorption(source: id, priority: 4);
+        owner.playsound_local(get_turf(owner), Dm.resource("sound/effects/singlebeat.ogg"), 40, 1, use_reverb: FALSE);
+        return TRUE;
     }
 
-    /// Regenerate health whenever this status effect is applied or reapplied
-    // tg: code/datums/status_effects/buffs.dm:655
-    public virtual async DmTask heal_owner()
+    // tg: code/datums/status_effects/buffs.dm:117  (tg restores the pressure coefficient, not the stamina one it lowered: kept)
+    public override async DmTask<object> on_remove()
     {
-        await owner.heal_overall_damage(brute: 1, burn: 1, required_bodytype: BODYTYPE_ORGANIC);
+        MODIFY_PHYSIOLOGY(owner, BRUTE, 10);
+        MODIFY_PHYSIOLOGY(owner, BURN, 10);
+        MODIFY_PHYSIOLOGY(owner, TOX, 10);
+        MODIFY_PHYSIOLOGY(owner, OXY, 10);
+        MODIFY_PHYSIOLOGY(owner, PHYS_COEFF_PRESSURE, 10);
+        owner.remove_movespeed_mod_immunities(id, typeof(datum_movespeed_modifier_damage_slowdown));
+        owner.remove_stun_absorption(id);
+        return null;
+    }
+}
+
+// tg: code/datums/status_effects/buffs.dm:423
+public partial class datum_status_effect_mayhem : datum_status_effect
+{
+    // tg: code/datums/status_effects/buffs.dm:430
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        await base.on_apply(__extra);
+        to_chat(owner, Dm.text("<span class='reallybig redtext'>[]</span>", I18n.T("RIP AND TEAR")));
+        Dm.output_to(owner, sound(Dm.resource("sound/effects/hallucinations/veryfar_noise.ogg"))); // SEND_SOUND (DIRECT_OUTPUT, rules 12)
+        await owner.cause_hallucination(
+            typeof(datum_hallucination_delusion_preset_demon),
+            Dm.text("[] status effect", id),
+            Dm.named("duration", duration),
+            Dm.named("affects_us", FALSE),
+            Dm.named("affects_others", TRUE),
+            Dm.named("skip_nearby", FALSE),
+            Dm.named("play_wabbajack", FALSE));
+
+        await owner.drop_all_held_items();
+
+        if (iscarbon(owner))
+        {
+            chainsaw = Dm.@new<obj_item_chainsaw_doomslayer>(get_turf(owner));
+            ADD_TRAIT(chainsaw, TRAIT_NODROP, TRAIT_STATUS_EFFECT(id));
+            await owner.put_in_hands(chainsaw, forced: TRUE);
+            await chainsaw.attack_self(owner);
+            await (owner.reagents as datum_reagents).add_reagent(typeof(datum_reagent_medicine_adminordrazine), 25);
+        }
+
+        owner.log_message("entered a blood frenzy", LOG_ATTACK);
+        to_chat(owner, span_narsiesmall(I18n.T("KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, NO TEAM MATES OR ALLEGIANCES! KILL THEM ALL!")));
+
+        object colour = owner.add_client_colour(typeof(datum_client_colour_bloodlust), REF(this));
+        _addtimer(Dm.@new<datum_callback>(GLOBAL_PROC, "/proc/" + nameof(GlobalProcs.qdel), 1.1f * SECONDS > GC_FILTER_QUEUE ? WEAKREF(colour as datum) : colour), 1.1f * SECONDS, file: "code/datums/status_effects/buffs.dm", line: 456); // QDEL_IN(colour, 1.1 SECONDS)
+        return TRUE;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:460
+    public override async DmTask<object> on_remove()
+    {
+        await base.on_remove();
+        to_chat(owner, span_notice(I18n.T("Your bloodlust seeps back into the bog of your subconscious and you regain self control.")));
+        owner.log_message("exited a blood frenzy", LOG_ATTACK);
+        QDEL_NULL(ref chainsaw);
+        return null;
+    }
+}
+
+
+//Hippocratic Oath: Applied when the Rod of Asclepius is activated.
+// tg: code/datums/status_effects/buffs.dm:268
+public partial class datum_status_effect_hippocratic_oath : datum_status_effect
+{
+    // tg: code/datums/status_effects/buffs.dm:279
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        // tg: code/datums/status_effects/buffs.dm:280 (var/static/list/organ_healing)
+        DmList organ_healing = TgState.Current.datum_status_effect_hippocratic_oath__on_apply__organ_healing ??= Dm.list(
+            Dm.kv(ORGAN_SLOT_BRAIN, 1.4f));
+
+        aura_healing = await owner.AddComponent(
+            typeof(datum_component_aura_healing),
+            Dm.named("range", 7),
+            Dm.named("brute_heal", 1.4f),
+            Dm.named("burn_heal", 1.4f),
+            Dm.named("toxin_heal", 1.4f),
+            Dm.named("suffocation_heal", 1.4f),
+            Dm.named("stamina_heal", 1.4f),
+            Dm.named("simple_heal", 1.4f),
+            Dm.named("organ_healing", organ_healing),
+            Dm.named("healing_color", "#375637")) as datum_component_aura_healing;
+
+        //Makes the user passive, it's in their oath not to harm!
+        owner.add_traits(Dm.list(TRAIT_PACIFISM, TRAIT_HIPPOCRATIC_OATH, TRAIT_MEDICAL_HUD), HIPPOCRATIC_OATH_TRAIT);
+        return await base.on_apply(__extra);
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:301
+    public override async DmTask<object> on_remove()
+    {
+        QDEL_NULL(ref aura_healing);
+        owner.remove_traits(Dm.list(TRAIT_PACIFISM, TRAIT_HIPPOCRATIC_OATH, TRAIT_MEDICAL_HUD), HIPPOCRATIC_OATH_TRAIT);
+        await DmTask.CompletedTask;
+        return null;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:305
+    public override object get_examine_text(mob examiner = null)
+    {
+        return span_notice(I18n.T("[] seem[] to have an aura of healing and helpfulness about [].", owner.p_They(), owner.p_s(), owner.p_them()));
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:308
+    public override async DmTask<object> tick(object seconds_between_ticks = null)
+    {
+        float sbt = Dm.num(seconds_between_ticks);
+        if (owner.stat == DEAD)
+        {
+            if (deathTick < 4)
+                deathTick += 1;
+            else
+                await consume_owner();
+        }
+        else
+        {
+            if (iscarbon(owner))
+            {
+                mob_living_carbon itemUser = owner as mob_living_carbon;
+                obj_item heldItem = itemUser.get_item_for_held_index(hand) as obj_item;
+                if (heldItem == null || heldItem.type != typeof(obj_item_rod_of_asclepius)) //Checks to make sure the rod is still in their hand
+                {
+                    obj_item_rod_of_asclepius newRod = Dm.@new<obj_item_rod_of_asclepius>(itemUser.loc);
+                    newRod.activated__proc();
+                    if (!Dm.truthy(itemUser.has_hand_for_held_index(hand)))
+                    {
+                        //If user does not have the corresponding hand anymore, give them one and return the rod to their hand
+                        string zone = IS_LEFT_INDEX(Dm.num(hand)) ? BODY_ZONE_L_ARM : BODY_ZONE_R_ARM;
+                        if (Dm.truthy(await itemUser.regenerate_limb(zone, null)))
+                            await itemUser.put_in_hand(newRod, hand, forced: TRUE);
+                        else
+                        {
+                            await consume_owner(); //we can't regrow, abort abort
+                            return null;
+                        }
+                        to_chat(itemUser, span_notice(I18n.T("Your arm suddenly grows back with the Rod of Asclepius still attached!")));
+                    }
+                    else
+                    {
+                        //Otherwise get rid of whatever else is in their hand and return the rod to said hand
+                        await itemUser.put_in_hand(newRod, hand, forced: TRUE);
+                        to_chat(itemUser, span_notice(I18n.T("The Rod of Asclepius suddenly grows back out of your arm!")));
+                    }
+                }
+                //Because a servant of medicines stops at nothing to help others, lets keep them on their toes and give them an additional boost.
+                if (Dm.num(itemUser.health) < Dm.num(itemUser.maxHealth))
+                    Dm.@new<obj_effect_temp_visual_heal>(get_turf(itemUser), "#375637");
+                float need_mob_update = FALSE;
+                need_mob_update += Dm.num(await itemUser.adjust_brute_loss(-0.6f * sbt, updating_health: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_fire_loss(-0.6f * sbt, updating_health: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_tox_loss(-0.6f * sbt, updating_health: FALSE, forced: TRUE)); //Because Slime People are people too
+                need_mob_update += Dm.num(await itemUser.adjust_oxy_loss(-0.6f * sbt, updating_health: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_stamina_loss(-3 * sbt, updating_stamina: FALSE));
+                need_mob_update += Dm.num(await itemUser.adjust_organ_loss(ORGAN_SLOT_BRAIN, -0.6f * sbt));
+                if (Dm.truthy(need_mob_update))
+                    await itemUser.updatehealth();
+            }
+        }
+        return null;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:347
+    public virtual async DmTask consume_owner()
+    {
+        owner.visible_message(span_notice(I18n.T("[]'s soul is absorbed into the rod, relieving the previous snake of its duty.", owner)));
+        DmList chems = Dm.list(typeof(datum_reagent_medicine_sal_acid), typeof(datum_reagent_medicine_c2_convermol), typeof(datum_reagent_medicine_oxandrolone));
+        mob_living_basic_snake spawned = Dm.@new<mob_living_basic_snake>(owner.loc, pick(chems));
+        spawned.name = I18n.T("Asclepius's Snake");
+        spawned.real_name = I18n.T("Asclepius's Snake");
+        spawned.desc = I18n.T("A mystical snake previously trapped upon the Rod of Asclepius, now freed of its burden. Unlike the average snake, its bites contain chemicals with minor healing properties.");
+        Dm.@new<obj_effect_decal_cleanable_ash>(owner.loc);
+        Dm.@new<obj_item_rod_of_asclepius>(owner.loc);
+        owner.investigate_log("has been consumed by the Rod of Asclepius.", INVESTIGATE_DEATHS);
+        qdel(owner);
+        await DmTask.CompletedTask;
+    }
+}
+
+public sealed partial class TgState
+{
+    // tg: code/datums/status_effects/buffs.dm:280 (var/static/list/organ_healing)
+    internal DmList datum_status_effect_hippocratic_oath__on_apply__organ_healing;
+}
+
+// tg: code/datums/status_effects/buffs.dm:500
+public partial class datum_status_effect_limited_buff_health_buff : datum_status_effect_limited_buff
+{
+    // tg: code/datums/status_effects/buffs.dm:512
+    public override async DmTask<object> on_creation(mob_living new_owner = null, params object[] __extra)
+    {
+        historic_max_health = new_owner.maxHealth;
+        return await base.on_creation(new_owner, __extra);
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:516
+    public override async DmTask<object> on_apply(params object[] __extra)
+    {
+        object dot = await base.on_apply(__extra);
+        float health_increase = round(max(fragile_mob_health_buff, Dm.num(historic_max_health) * health_buff_modifier));
+        owner.maxHealth += health_increase;
+        owner.balloon_alert_to_viewers(I18n.T("health buffed"));
+        to_chat(owner, span_nicegreen(I18n.T("You feel healthy, like if your body is little stronger than it was a moment ago.")));
+
+        await owner.adjust_brute_loss(-(health_increase * healing_modifier));
+        return dot;
+    }
+
+    // tg: code/datums/status_effects/buffs.dm:525
+    public override void maxed_out()
+    {
+        base.maxed_out();
+        to_chat(owner, span_warning(I18n.T("You don't feel any healthier.")));
     }
 }

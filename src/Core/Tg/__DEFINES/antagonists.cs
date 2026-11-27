@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (syndicate A2, D316): the traitors' employers (GLOB.syndicate_employers, nanotrasen_employers, hijack_employers,
-// normal_employers) and the IS_TRAITOR, IS_NUKE_OP and DESTROY_AI_PROB macros; the constants of the file are generated into Defines.
+// normal_employers) and the IS_TRAITOR, IS_NUKE_OP, IS_CULTIST, GET_CULTIST, IS_HERETIC, GET_HERETIC and DESTROY_AI_PROB macros; the constants of the file are generated into Defines.
 
 public partial class datum_controller_global_vars
 {
@@ -116,6 +116,15 @@ public static partial class GlobalProcs
 
     // tg: code/__DEFINES/antagonists.dm:280  #define IS_CULTIST(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/cult))
     public static object IS_CULTIST(object mob) => (mob as mob)?.mind?.has_antag_datum(typeof(datum_antagonist_cult));
+
+    // tg: code/__DEFINES/antagonists.dm:283  #define GET_CULTIST(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/cult))
+    public static datum_antagonist_cult GET_CULTIST(object mob) => (mob as mob)?.mind?.has_antag_datum(typeof(datum_antagonist_cult)) as datum_antagonist_cult;
+
+    // tg: code/__DEFINES/antagonists.dm:293  #define IS_HERETIC(mob) (mob.mind?.has_antag_datum(/datum/antagonist/heretic) || HAS_TRAIT(mob, TRAIT_ACT_AS_HERETIC))
+    public static bool IS_HERETIC(object mob) => Dm.truthy((mob as mob)?.mind?.has_antag_datum(typeof(datum_antagonist_heretic))) || HAS_TRAIT(mob, TRAIT_ACT_AS_HERETIC);
+
+    // tg: code/__DEFINES/antagonists.dm:295  #define GET_HERETIC(mob) (mob.mind?.has_antag_datum(/datum/antagonist/heretic))
+    public static datum_antagonist_heretic GET_HERETIC(object mob) => (mob as mob)?.mind?.has_antag_datum(typeof(datum_antagonist_heretic)) as datum_antagonist_heretic;
 
     // tg: code/__DEFINES/antagonists.dm:273  #define IS_TRAITOR(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/traitor))
     public static object IS_TRAITOR(object mob) => (mob as mob)?.mind?.has_antag_datum(typeof(datum_antagonist_traitor));

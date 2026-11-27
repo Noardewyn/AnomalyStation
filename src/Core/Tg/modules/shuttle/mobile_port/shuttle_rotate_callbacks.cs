@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M10 slice G3 (D272): the whole file, the rotation of what a shuttle carries when it docks turned (Meta's mining docks); the alien
-// weeds' since gaps X5.
+// weeds' since gaps X5, and the shuttle bar's.
 
 /*
 All shuttleRotate procs go here
@@ -138,6 +138,17 @@ public partial class obj_structure_disposalpipe : obj_structure
     }
 }
 
+// tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:72 (the shuttle bar's kick, a Lavaland ruin's table)
+public partial class obj_structure_table_wood_shuttle_bar : obj_structure_table_wood
+{
+    // tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:72
+    public override async DmTask shuttleRotate(object rotation = null, float? @params = null)
+    {
+        await base.shuttleRotate(rotation, @params);
+        boot_dir = Dm.num(angle2dir(Dm.num(rotation) + Dm.num(dir2angle(boot_dir))));
+    }
+}
+
 // tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:76 (gaps X5: the alien weeds)
 public partial class obj_structure_alien_weeds : obj_structure_alien
 {
@@ -181,6 +192,17 @@ public partial class obj_machinery_atmospherics : obj_machinery
             float new_pos = supposed_node_connect.Find(node_dir);
             nodes[new_pos] = nodes_copy[i];
         }
+    }
+}
+
+// tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:105
+public partial class obj_machinery_gateway : obj_machinery
+{
+    // tg: code/modules/shuttle/mobile_port/shuttle_rotate_callbacks.dm:105
+    public override async DmTask shuttleRotate(object rotation = null, float? @params = null)
+    {
+        @params = NONE;
+        await base.shuttleRotate(rotation, @params);
     }
 }
 

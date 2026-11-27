@@ -56,6 +56,9 @@ public class GunsGU1MetaTests : IClassFixture<MetaWorldFixture>
             bool antiqueLore = false;
             for (int z = 1; z <= world.maxz; z++)
             {
+                // the station's guns: Lavaland's ruins hold others (the clown biodome's staff of honk), as their seeding rolls
+                if (!Dm.truthy(is_station_level(z)))
+                    continue;
                 for (int y = 1; y <= world.maxy; y++)
                 {
                     for (int x = 1; x <= world.maxx; x++)

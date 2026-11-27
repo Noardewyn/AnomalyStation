@@ -57,6 +57,18 @@ public static class SoundLengths
         return h == 0 ? 1 : h;
     }
 
+    /// <summary>
+    /// The paths of the current world's table in ordinal order (none without a table, or for a table that is not a list of
+    /// lengths): SSsounds' list of every sound file (tg walks BYOND's resource folder for it) reads them.
+    /// </summary>
+    public static IReadOnlyList<string> Paths()
+    {
+        World world = World.CurrentOrNull;
+        if (world == null || Holder.Of(world).Table is not DictionaryTable table)
+            return Array.Empty<string>();
+        return table.Lengths.Keys.OrderBy(k => k, StringComparer.Ordinal).ToList();
+    }
+
     /// <summary>The length of <paramref name="path"/> in the current world's table, in deciseconds; null without a table or an entry.</summary>
     public static float? Length(string path)
     {

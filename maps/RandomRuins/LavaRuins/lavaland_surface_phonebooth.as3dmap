@@ -1,0 +1,18 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_phonebooth.dmm tg 1d99bd7f
+size 3 5 1
+chunk 32
+default /turf/closed/wall | /area/ruin/powered/lavaland_phone_booth
+
+[chunk 1 1 1]
+1,5: /obj/structure/lattice | /obj/structure/billboard/Phone_booth | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/powered/lavaland_phone_booth
+2,5: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/powered/lavaland_phone_booth
+3,5: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/powered/lavaland_phone_booth
+2,4: /obj/effect/spawner/structure/window/hollow/reinforced | /turf/open/floor/plating/lavaland_atmos | /area/ruin/powered/lavaland_phone_booth
+1,3: /obj/machinery/vending/snack/green{all_products_free = 0} | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/plating/lavaland_atmos | /area/ruin/powered/lavaland_phone_booth
+2,3: /obj/machinery/holopad | /turf/open/floor/iron/dark | /area/ruin/powered/lavaland_phone_booth
+3,3: /obj/effect/turf_decal/tile/yellow/half/contrasted{dir = 4} | /obj/item/gps/spaceruin{gpstag = "Public Holophone"} | /obj/machinery/light/small{dir = 1} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating/lavaland_atmos | /area/ruin/powered/lavaland_phone_booth
+1,2: /obj/machinery/vending/cigarette{all_products_free = 0} | /obj/structure/window/reinforced/spawner/directional/east | /turf/open/floor/plating/lavaland_atmos | /area/ruin/powered/lavaland_phone_booth
+2,2: /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{dir = 4} | /turf/open/floor/iron/dark | /area/ruin/powered/lavaland_phone_booth
+3,2: /obj/machinery/airalarm/directional/south | /obj/effect/turf_decal/tile/yellow/half/contrasted{dir = 4} | /obj/machinery/atmospherics/components/tank/air/layer4{dir = 8} | /obj/structure/window/reinforced/spawner/directional/west | /turf/open/floor/plating/lavaland_atmos | /area/ruin/powered/lavaland_phone_booth
+2,1: /obj/machinery/door/window/left/directional/north | /obj/machinery/door/window/left/directional/south | /turf/open/floor/iron/dark/smooth_edge | /area/ruin/powered/lavaland_phone_booth

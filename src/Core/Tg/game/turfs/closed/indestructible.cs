@@ -84,3 +84,36 @@ public partial class turf_closed_indestructible_riveted_boss : turf_closed_indes
         return TRUE;
     }
 }
+
+// tg: code/game/turfs/closed/indestructible.dm:305  (Lavaland's gluttony ruin)
+public partial class turf_closed_indestructible_necropolis : turf_closed_indestructible
+{
+    // tg: code/game/turfs/closed/indestructible.dm:312
+    public override object get_smooth_underlay_icon(mutable_appearance underlay_appearance = null, turf asking_turf = null, object adjacency_dir = null)
+    {
+        underlay_appearance.icon = Dm.resource("icons/turf/floors.dmi");
+        underlay_appearance.icon_state = "necro1";
+        return TRUE;
+    }
+}
+
+// tg: code/game/turfs/closed/indestructible.dm:352  (the hierophant's arena)
+public partial class turf_closed_indestructible_riveted_hierophant : turf_closed_indestructible_riveted
+{
+    // tg: code/game/turfs/closed/indestructible.dm:361
+    public override object set_smoothed_icon_state(object new_junction = null)
+    {
+        object dot = base.set_smoothed_icon_state(new_junction);
+        update_appearance(UPDATE_OVERLAYS);
+        return dot;
+    }
+
+    // tg: code/game/turfs/closed/indestructible.dm:365
+    public override async DmTask<object> update_overlays(params object[] __extra)
+    {
+        object dot = await base.update_overlays(__extra);
+        // . += emissive_appearance('icons/turf/walls/hierophant_wall_e.dmi', icon_state, src): the runes' glow on the emissive plane
+        // (DEVIATION DV12)
+        return dot;
+    }
+}

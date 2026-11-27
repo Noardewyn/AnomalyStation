@@ -9,9 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Lavaland L2c (D304): the whole file. The var block is generated (D111). The wave defence (the NODE drone, the clearing of the
-// vent's surroundings and the spawner's waves of fauna) waits for the fauna, L5: a confirmed excavation stops after tg's alert.
-// The tapped vent's emissive glow stays under DV12, the GPS signal waits for the GPS (L2d), and the trimming of the vent's top
+// Lavaland L2c (D304): the whole file. The var block is generated (D111). The wave defence runs as tg's: the NODE drone, the
+// clearing of the vent's surroundings and the spawner's waves of fauna.
+// The tapped vent's emissive glow stays under DV12, and the trimming of the vent's top
 // when a mob stands behind it is not done (DV261).
 
 // tg: code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:8
@@ -246,10 +246,57 @@ public partial class obj_structure_ore_vent : obj_structure
             return FALSE;
         if (!Dm.truthy(await can_interact(user)) && !Dm.truthy(mech_scan))
             return FALSE;
-        // Shake(duration = 3 SECONDS); the NODE drone (new /mob/living/basic/node_drone, arrive, the conclusion's signals); the ash
-        // particles; the clearing of the walls, rubble and lava platforms within 5 tiles: the wave defence comes with the fauna.
-        Dm.Deferred("code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:245", "pre_wave_defense: the NODE drone and the clearing before the wave defence (the fauna, Lavaland L5)");
-        return FALSE;
+        //This is where we start spitting out mobs.
+        Shake(duration: 3 * SECONDS);
+        if (Dm.truthy(spawn_drone))
+        {
+            node = Dm.@new<mob_living_basic_node_drone>(loc);
+            node.arrive(this);
+            RegisterSignals(node, Dm.list(COMSIG_QDELETING, COMSIG_LIVING_DEATH, COMSIG_MOVABLE_MOVED), nameof(handle_wave_conclusion));
+        }
+
+        add_shared_particles(typeof(particles_smoke_ash));
+        for (int i = 1; i <= 5; i++) // Clears the surroundings of the ore vent before starting wave defense.
+        {
+            foreach (turf rock in Dm.each<turf>(oview(i, this)))
+            {
+                if (rock is turf_closed_mineral drillable) //Solid wall checks: Mine out the wall, but start skipping more as we move farther away.
+                {
+                    if (prob((i * 15) - 25))
+                        continue;
+                    await drillable.gets_drilled(user);
+                    if (prob(15))
+                        Dm.@new<obj_effect_decal_cleanable_rubble>(rock); // Only throw rubble when we actually mine something, and not all the time.
+                    continue; //skip the rest of the checks
+                }
+
+                if (rock is turf_open_misc_asteroid && prob(10)) // Open rock floors: make rubble decals occasionally.
+                {
+                    Dm.@new<obj_effect_decal_cleanable_rubble>(rock);
+                    continue;
+                }
+
+                if (rock is turf_open_lava) // Lava turfs, skip as we get farther away, otherwise produce a boulder and make it a platform, lasting the whole wave.
+                {
+                    if (prob((i * 15) - 35)) // We want to skip these less than the mining walls, since lava is more common to deal with.
+                        continue;
+
+                    obj_item_boulder produced = await produce_boulder(FALSE) as obj_item_boulder;
+                    obj_structure_lattice_catwalk_boulder platform = produced?.create_platform(rock, null, (wave_timer / 5) * 75 * SECONDS) as obj_structure_lattice_catwalk_boulder; // We have to finangle the number a bit to turn it into a timer again.
+
+                    if (platform == null || !QDELETED(produced))
+                    {
+                        qdel(produced);
+                        continue;
+                    }
+                    platform.alpha = 0;
+                    platform.pixel_z = -16;
+                    animate(platform, Dm.named("alpha", 255), Dm.named("time", 2 * SECONDS), Dm.named("pixel_z", 0), Dm.named("easing", Dm.bitor(QUAD_EASING, EASE_OUT)));
+                }
+            }
+            await sleep(0.6f * SECONDS);
+        }
+        return TRUE;
     }
 
     /**
@@ -259,10 +306,26 @@ public partial class obj_structure_ore_vent : obj_structure
     // tg: code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:286
     public virtual async DmTask start_wave_defense()
     {
-        // AddComponent(/datum/component/spawner, defending_mobs, ...), COOLDOWN_START(src, wave_cooldown, INFINITY), the
-        // COMSIG_VENT_WAVE_CONCLUDED signal and the icon: the spawner's waves of fauna.
-        Dm.Deferred("code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:290", "start_wave_defense: the spawner's waves of fauna (Lavaland L5)");
-        await DmTask.CompletedTask;
+        await AddComponent(
+            typeof(datum_component_spawner),
+            Dm.named("spawn_types", defending_mobs),
+            Dm.named("spawn_time", 7.5f * SECONDS),
+            Dm.named("max_spawned", 10),
+            Dm.named("max_spawn_per_attempt", round(boulder_size / 5)),
+            Dm.named("max_spawn_types_per_attempt", 2),
+            Dm.named("spawn_text", "emerges to assault"),
+            Dm.named("spawn_distance", 4),
+            Dm.named("spawn_distance_exclude", 3),
+            Dm.named("initial_spawn_delay", 6 * SECONDS),
+            Dm.named("spawner_logic", SPAWN_BY_WAVE_BEHAVIOR),
+            Dm.named("max_waves", wave_timer),
+            Dm.named("effect", typeof(obj_effect_temp_visual_dust_cloud)),
+            Dm.named("sound_effect", Dm.resource("sound/effects/node_drilling.ogg")),
+            Dm.named("spawn_windup", 0.9f * SECONDS),
+            Dm.named("linked_mob", node));
+        wave_cooldown = world.time + INFINITY; // COOLDOWN_START(src, wave_cooldown, INFINITY)
+        RegisterSignal(this, COMSIG_VENT_WAVE_CONCLUDED, nameof(handle_wave_conclusion));
+        update_appearance(UPDATE_ICON_STATE);
     }
 
     /**
@@ -274,7 +337,7 @@ public partial class obj_structure_ore_vent : obj_structure
     [SignalHandler]
     public virtual void handle_wave_conclusion(datum source = null)
     {
-        Dm.Deferred("code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:325", "handle_wave_conclusion: remove_shared_particles(/particles/smoke/ash) (particles are not ported)");
+        remove_shared_particles(typeof(particles_smoke_ash));
         UnregisterSignal(this, COMSIG_VENT_WAVE_CONCLUDED);
         //happens in COMSIG_QDELETING
         if (QDELETED(node) || node.stat == DEAD)
@@ -477,8 +540,7 @@ public partial class obj_structure_ore_vent : obj_structure
     {
         if (!QDELETED(node))
         {
-            // node.pre_escape(success = success): the NODE drone comes with the wave defence
-            Dm.Deferred("code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:481", "reset_drone: the NODE drone's escape (the wave defence, Lavaland L5)");
+            node.pre_escape(success: success);
             UnregisterSignal(node, Dm.list(COMSIG_QDELETING, COMSIG_MOVABLE_MOVED));
         }
         node = null;
@@ -519,8 +581,7 @@ public partial class obj_structure_ore_vent : obj_structure
             discovered = TRUE;
             balloon_alert(user, I18n.T("vent scanned!"));
             generate_description(user);
-            // AddComponent(/datum/component/gps, name): the vent's GPS signal
-            Dm.Deferred("code/game/objects/structures/lavaland/vent_mining/ore_vent.dm:513", "scan_and_confirm: the vent's GPS signal (the GPS, Lavaland L2d)");
+            await AddComponent(typeof(datum_component_gps), name);
             obj_item_card_id user_id_card = user.get_idcard(TRUE) as obj_item_card_id;
             if (user_id_card == null)
                 return;

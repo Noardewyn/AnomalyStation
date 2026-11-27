@@ -11,7 +11,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Server.Tests.Integration;
 
 /// <summary>
-/// Package T, slice T4b (protocol 98 also): the hover carries the body zone looked at. Through a real server and clients: the server selects it as tg's
+/// Package T, slice T4b (protocol 99 also): the hover carries the body zone looked at. Through a real server and clients: the server selects it as tg's
 /// <c>zone_selected</c> without tg's log (<c>set_selected_zone(..., should_log = FALSE)</c>) before tg's hover, so the hints of the same mob follow the
 /// look (carbon_context's Headpat on the head, Hug on the chest); a zone on a thing that is no carbon changes nothing; while any of tg's do-afters runs
 /// for the looker the zone stays (the gun at the mouth keeps the mouth and fires), a click still sets it, and the look applies again after; a burst of
@@ -89,7 +89,7 @@ public class HoverZoneGameplayTests
             Assert.Equal(BODY_ZONE_PRECISE_EYES, In(w, () => aliceMob.zone_selected));
             Assert.Equal("Headpat", LeftClickLabel(LastHintsOn(hints, bobMob)));
 
-            // the same zone again: nothing is sent, until the repeat (DV601: PlaySession.RepeatHoverInterval after the last hover) sends it again
+            // the same zone again: nothing is sent, until the repeat (DV687: PlaySession.RepeatHoverInterval after the last hover) sends it again
             Assert.False(alice.Session.Hover(On(bobMob, AimZone.Eyes), w.Now));
             Assert.False(alice.Session.Hover(On(bobMob, AimZone.Eyes) with { IconY = 22 }, w.Now + 0.1));
             Assert.True(alice.Session.Hover(On(bobMob, AimZone.Eyes) with { IconY = 22 }, w.Now + 1));
@@ -176,8 +176,9 @@ public class HoverZoneGameplayTests
             Assert.NotNull(gun);
             float beam = In(w, () => Dm.num(gun.chambered.loaded_projectile.damage));
 
-            // tg's handle_suicide from the next tile: a 12 second do-after
-            Assert.True(alice.Session.Click(On(bobMob, AimZone.Mouth), ClickButton.Left, ClickModifiers.None));
+            // tg's handle_suicide from the next tile: a 12 second do-after. The click carries the camera's aim at the head, as a first-person client's
+            // does, so the shot's zone is the part its line crosses (DV95), not tg's distance roll
+            Assert.True(alice.Session.Click(On(bobMob, AimZone.Mouth), ClickButton.Left, ClickModifiers.None, GunInMouthGameplayTests.AtHead(w, alice, bobMob)));
             w.Run(Second);
             Assert.Equal(BODY_ZONE_PRECISE_MOUTH, In(w, () => aliceMob.zone_selected));
             Assert.True(In(w, () => LAZYLEN(aliceMob.do_afters)) > 0);

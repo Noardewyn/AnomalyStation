@@ -9,8 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps CL1 (D333): the original moth cap's goggles (the scope zoom of its item action); its fishing difficulty element waits for
-// fishing. The var blocks are generated (D111).
+// Gaps CL1 (D333): the original moth cap's goggles (the scope zoom of its item action); with its fishing difficulty element. The var blocks are generated (D111).
 
 // tg: code/modules/clothing/head/moth.dm:12
 public partial class obj_item_clothing_head_mothcap_original : obj_item_clothing_head_mothcap
@@ -20,7 +19,7 @@ public partial class obj_item_clothing_head_mothcap_original : obj_item_clothing
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_scope), Dm.named("range_modifier", 1.2f), Dm.named("zoom_method", ZOOM_METHOD_ITEM_ACTION), Dm.named("item_action_type", typeof(datum_action_item_action_hands_free_moth_googles))));
-        Dm.Deferred("code/modules/clothing/head/moth.dm:18", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }

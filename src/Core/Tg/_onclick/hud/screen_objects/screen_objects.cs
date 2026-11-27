@@ -13,7 +13,8 @@ namespace Anomaly.Core.Tg;
 // (M2 P3, D107); the swap, inventory and hand slots, close, storage_up, drop, the combat toggle, resist, storage,
 // throw_catch and the zone selector (M4a P2, D126, D131). The other screen objects of the file (navigation, the area
 // creator, languages, pull, rest, sleep, the space suit, the mood, hunger and stamina displays, ...) come with
-// their milestones (M4b-M9); gaps S1 (D291): the hunger display and its bar.
+// their milestones (M4b-M9); gaps S1 (D291): the hunger display and its bar; the slime console's monkey, slime and potion
+// display.
 
 /*
 	Screen objects
@@ -1710,46 +1711,104 @@ public partial class atom_movable_screen_slime_power : atom_movable_screen
     }
 }
 
-// tg: code/_onclick/hud/screen_objects/screen_objects.dm:1407
+// tg: code/_onclick/hud/screen_objects/screen_objects.dm:1390
+/// Used to show how many monkeys & slimes are in the console
 public partial class atom_movable_screen_xenobio_console : atom_movable_screen
 {
+    // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1355  #define FORMAT_XENOBIO_HUD_MAPTEXT(text_to_use) MAPTEXT_SPESSFONT(...) (file-local, #undef at :1463)
+    internal static string FORMAT_XENOBIO_HUD_MAPTEXT(object text_to_use) => MAPTEXT_SPESSFONT(Dm.text("<span style='color: []; text-align: center; line-height: 1.9; '>[]</span>", COLOR_WHITE, text_to_use));
+    // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1356  #define POTION_DROP_SPEED 5 DECISECONDS (file-local, #undef at :1464)
+    internal const float POTION_DROP_SPEED = 5 * DECISECONDS;
+
+    // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1397
+    [DmParams("mapload", "hud_owner")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        potion_hud = Dm.@new<atom_movable_screen_xenobio_potion>();
+        potion_hud.layer = layer - 1;
+        Dm.append(vis_contents, potion_hud);
+        potion_launcher = Dm.@new<atom_movable_screen_xenobio_potion>();
+        potion_launcher.layer = layer - 2;
+        Dm.append(vis_contents, potion_launcher);
+        return dot;
+    }
+
+    /// Called by the console any time we update the monkeys, slimes, or max slimes
     // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1407
     public virtual void on_update_hud(object slimes = null, object monkeys = null, object max_slimes = null)
     {
-        Dm.NotTranslated("code/_onclick/hud/screen_objects/screen_objects.dm:1407", "on_update_hud: M4a P2 (skeleton)");
+        maptext = FORMAT_XENOBIO_HUD_MAPTEXT(Dm.text("[]\n[]/[]", monkeys, slimes, max_slimes));
+        maptext_x = 5;
+        maptext_y = 2;
     }
 
+    /// Called by the console any time we update the potion
     // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1413
     public virtual void update_potion(obj_item_slimepotion_slime potion = null)
     {
-        Dm.NotTranslated("code/_onclick/hud/screen_objects/screen_objects.dm:1413", "update_potion: M4a P2 (skeleton)");
+        if (potion == null)
+        {
+            potion_hud.eject_pot();
+            flick("xenobio_potion_launch", potion_launcher);
+        }
+        else if (Dm.truthy(potion_hud.stored_potion))
+            potion_hud.swap_pot(potion);
+        else
+            potion_hud.add_pot(potion);
+    }
+
+    // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1422
+    public override object Destroy(float? force = null)
+    {
+        Dm.remove(vis_contents, potion_hud);
+        QDEL_NULL(ref potion_hud);
+        Dm.remove(vis_contents, potion_launcher);
+        QDEL_NULL(ref potion_launcher);
+        return base.Destroy(force);
     }
 }
 
-// tg: code/_onclick/hud/screen_objects/screen_objects.dm:1436
+// tg: code/_onclick/hud/screen_objects/screen_objects.dm:1429
 public partial class atom_movable_screen_xenobio_potion : atom_movable_screen
 {
+    /// Visually ejects the current potion
     // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1436
     public virtual void eject_pot(obj_item_slimepotion_slime potion = null)
     {
-        Dm.NotTranslated("code/_onclick/hud/screen_objects/screen_objects.dm:1436", "eject_pot: M4a P2 (skeleton)");
+        animate(this, 2 * DECISECONDS, Dm.named("pixel_y", 280));
+        stored_potion = FALSE;
     }
 
+    /// Visually add the current potion
     // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1441
     public virtual void add_pot(obj_item_slimepotion_slime potion = null)
     {
-        Dm.NotTranslated("code/_onclick/hud/screen_objects/screen_objects.dm:1441", "add_pot: M4a P2 (skeleton)");
+        stored_potion = TRUE;
+        icon = potion.icon;
+        icon_state = potion.icon_state;
+        pixel_y = 280;
+        pixel_x = -8;
+        add_filter("potion_outline", 1, outline_filter(1, "#eeeeee", OUTLINE_SQUARE) as DmList);
+        add_filter("potion_glow", 2, drop_shadow_filter(0.1f, 0.1f, 2, 0, "#eeeeee") as DmList);
+        // transform.Scale(0.8, 0.8): tg scales the copy that reading transform gives and drops it, so the icon keeps its size
+        animate(this, atom_movable_screen_xenobio_console.POTION_DROP_SPEED, Dm.named("easing", BOUNCE_EASING), Dm.named("pixel_y", 19));
     }
 
+    /// Swap out our current potion for a new one
     // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1453
     public virtual void swap_pot(obj_item_slimepotion_slime potion = null)
     {
-        Dm.NotTranslated("code/_onclick/hud/screen_objects/screen_objects.dm:1453", "swap_pot: M4a P2 (skeleton)");
+        _addtimer(Dm.@new<datum_callback>(this, nameof(swap_pot_icon), potion), atom_movable_screen_xenobio_console.POTION_DROP_SPEED, TIMER_CLIENT_TIME, file: "code/_onclick/hud/screen_objects/screen_objects.dm", line: 1454);
+        animate(this, atom_movable_screen_xenobio_console.POTION_DROP_SPEED, Dm.named("easing", BACK_EASING), Dm.named("pixel_x", -50));
     }
 
+    /// Swaps the potion icon & name. Made for use w/ addtimer() so as to not disrupt the animation chain
     // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1458
     public virtual void swap_pot_icon(obj_item pot = null)
     {
-        Dm.NotTranslated("code/_onclick/hud/screen_objects/screen_objects.dm:1458", "swap_pot_icon: M4a P2 (skeleton)");
+        name = pot.name;
+        icon_state = pot.icon_state;
+        animate(this, atom_movable_screen_xenobio_console.POTION_DROP_SPEED, Dm.named("easing", BACK_EASING), Dm.named("pixel_x", -8));
     }
 }

@@ -44,8 +44,15 @@ public class BountyGameplayTests
         w.Run(10);
         Assert.Same(card, In(w, () => terminal.inserted_scan_id));
         var windows = new TguiWindows { SendAct = (window, action, parameters) => alice.Session.UiAct(window, action, parameters), SendClose = window => alice.Session.UiClose(window) };
-        windows.Sync(alice.Session.Replica.UiWindows, 1280, 720, 1);
-        TguiWindow window = windows.Open.First(x => x.Interface == "CivCargoHoldTerminal");
+        // tg opens the window before it keeps the card (id_insert's ui_interact, bounty_machinery.dm:322, then :50): the card shows
+        // with SStgui's next update
+        TguiWindow window = null;
+        for (int t = 0; t < 2 * 20 && window?.Content.AllText().Contains("Welcome valued employee.", StringComparison.Ordinal) != true; t++)
+        {
+            w.Run(1);
+            windows.Sync(alice.Session.Replica.UiWindows, 1280, 720, 1);
+            window = windows.Open.First(x => x.Interface == "CivCargoHoldTerminal");
+        }
         Assert.Contains("Welcome valued employee.", window.Content.AllText());
 
         window.Context.Act("bounty");

@@ -285,7 +285,7 @@ public static class TguiRender
             StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered,
             TextureFilter = CanvasItem.TextureFilterEnum.Nearest,
             MouseFilter = Control.MouseFilterEnum.Ignore,
-            Modulate = new Color(1, 1, 1, (float)(node.Opacity ?? 1)),
+            Modulate = PictureTint(node),
         };
         if (node.Rotation != 0) // CSS rotate about the middle (the safe's dial)
         {
@@ -308,6 +308,15 @@ public static class TguiRender
                 rect.MouseExited += () => hoverAt(-1, -1);
         }
         return rect;
+    }
+
+    // A picture with a hex colour is that colour's tint (tg's uni_icon(..., color=), which multiplies the icon by it: the Orion Trail's mood
+    // faces, the virtual pet's body), with the node's opacity
+    private static Color PictureTint(UiNode node)
+    {
+        Color tint = node.Color is string hex && hex.StartsWith('#') ? TguiTheme.Hex(hex) : new Color(1, 1, 1);
+        tint.A = (float)(node.Opacity ?? 1);
+        return tint;
     }
 
     // M5 slice 8: tgui-core's Floating: the anchor (children) shows the content (Content) in a popup under it while hovered; the

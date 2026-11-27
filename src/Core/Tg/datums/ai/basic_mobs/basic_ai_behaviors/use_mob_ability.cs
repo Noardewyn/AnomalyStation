@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The file but the shapeshift variant (its spell is inert, with its host) (gaps package C1).
+// The whole file (gaps package C1; the shapeshift variant since the crossbreeds made the shapeshift spells live).
 
 /// Triggers a mob ability stored in a blackboard key. Returns INSTANT SUCCESS if triggered, INSTANT FAILURE if unavailable or trigger fails.
 // tg: code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:2
@@ -47,5 +47,21 @@ public partial class datum_bt_node_ai_behavior_use_mob_ability : datum_bt_node_a
             return null;
         finish_async(Dm.truthy(result) ? AI_BEHAVIOR_SUCCEEDED : AI_BEHAVIOR_FAILED);
         return null;
+    }
+}
+
+/// Triggers a shapeshift ability, picking a random shape if none has been selected yet (AI can't use context wheels).
+// tg: code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:30
+public partial class datum_bt_node_ai_behavior_use_mob_ability_shapeshift : datum_bt_node_ai_behavior_use_mob_ability
+{
+    // tg: code/datums/ai/basic_mobs/basic_ai_behaviors/use_mob_ability.dm:33
+    public override async DmTask<object> get_valid_ability(datum_ai_controller controller = null)
+    {
+        datum_action_cooldown_spell_shapeshift using_action = await base.get_valid_ability(controller) as datum_action_cooldown_spell_shapeshift;
+        if (QDELETED(using_action))
+            return null;
+        if (using_action.shapeshift_type == null)
+            using_action.shapeshift_type = pick(using_action.possible_shapes) as Type;
+        return using_action;
     }
 }

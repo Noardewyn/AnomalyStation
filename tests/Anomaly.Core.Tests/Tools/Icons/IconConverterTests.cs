@@ -131,7 +131,14 @@ public class IconConverterTests : IDisposable
         Assert.True(File.Exists(Path.Combine(output, "icons", "blanks", "blank_title.png")));
         // syndicate N1b: the NTOS radar's three pictures (icons/ui/tgui/ntosradar_*.png) are copied unchanged too
         Assert.True(File.Exists(Path.Combine(output, "icons", "ui", "tgui", "ntosradar_background.png")));
-        Assert.Equal(dmis + inventory + programs + lobby + 2 + 3, Directory.EnumerateFiles(Path.Combine(output, "icons"), "*.png", SearchOption.AllDirectories).Count());
+        // the battle arcade's inn and campfire (icons/ui/arcade/shopkeeper.png and fireplace.png) are copied unchanged too
+        Assert.True(File.Exists(Path.Combine(output, "icons", "ui", "arcade", "shopkeeper.png")));
+        Assert.True(File.Exists(Path.Combine(output, "icons", "ui", "arcade", "fireplace.png")));
+        // the exploration drones' adventure screens (icons/ui/adventure/*.png, tg's asset/simple/adventure) are copied unchanged too
+        int adventure = Directory.EnumerateFiles(Path.Combine(TgClone.Root, "icons", "ui", "adventure"), "*.png").Count();
+        Assert.Equal(4, adventure);
+        Assert.Equal(adventure, Directory.EnumerateFiles(Path.Combine(output, "icons", "ui", "adventure"), "*.png").Count());
+        Assert.Equal(dmis + inventory + programs + lobby + adventure + 2 + 3 + 2, Directory.EnumerateFiles(Path.Combine(output, "icons"), "*.png", SearchOption.AllDirectories).Count());
         Assert.Equal(dmis + programs + 1, Directory.EnumerateFiles(Path.Combine(output, "icons"), "*.json", SearchOption.AllDirectories).Count());
         using JsonDocument worn = JsonDocument.Parse(File.ReadAllText(Path.Combine(output, "gags/jumpsuit/worn.json")));
         Assert.Equal("icons/mob/clothing/under/color.dmi", worn.RootElement.GetProperty("icon_file").GetString());

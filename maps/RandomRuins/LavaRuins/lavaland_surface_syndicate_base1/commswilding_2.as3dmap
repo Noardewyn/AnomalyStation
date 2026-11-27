@@ -1,0 +1,58 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/commswilding_2.dmm tg 1d99bd7f
+size 9 8 1
+chunk 32
+default /turf/closed/wall/mineral/plastitanium/nodiagonal | /area/ruin/syndicate_lava_base/telecomms
+
+[chunk 1 1 1]
+1,8: /turf/template_noop | /area/template_noop
+5,8: /turf/template_noop | /area/template_noop
+6,8: /turf/template_noop | /area/template_noop
+7,8: /turf/template_noop | /area/template_noop
+8,8: /turf/template_noop | /area/template_noop
+9,8: /turf/template_noop | /area/template_noop
+3,7: /obj/machinery/telecomms/relay/preset/ruskie{use_power = 0} | /obj/machinery/door/window/brigdoor/left/directional/south{req_access = list("syndicate")} | /obj/effect/turf_decal/siding/thinplating/dark | /turf/open/floor/circuit/green | /area/ruin/syndicate_lava_base/telecomms
+5,7: /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/firedoor | /obj/machinery/door/poddoor/preopen{id = "lavalandsyndi_telecomms"} | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+6,7: /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/firedoor | /obj/machinery/door/poddoor/preopen{id = "lavalandsyndi_telecomms"} | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+7,7: /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/firedoor | /obj/machinery/door/poddoor/preopen{id = "lavalandsyndi_telecomms"} | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+8,7: /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/firedoor | /obj/machinery/door/poddoor/preopen{id = "lavalandsyndi_telecomms"} | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+9,7: /turf/template_noop | /area/template_noop
+2,6: /obj/structure/filingcabinet/security | /obj/effect/turf_decal/siding/thinplating/dark{dir = 4} | /obj/machinery/airalarm/directional/west | /obj/effect/mapping_helpers/airalarm/syndicate_access | /turf/open/floor/circuit/red | /area/ruin/syndicate_lava_base/telecomms
+3,6: /turf/open/floor/iron/dark/textured | /area/ruin/syndicate_lava_base/telecomms
+4,6: /obj/structure/noticeboard/directional/north | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/tile/red{dir = 4} | /turf/open/floor/iron/dark | /area/ruin/syndicate_lava_base/telecomms
+5,6: /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+6,6: /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+7,6: /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+8,6: /obj/item/storage/toolbox/syndicate | /obj/item/multitool | /obj/machinery/button/door{id = "lavalandsyndi_telecomms"; name = "Telecomms Blast Door Control"; pixel_x = 26; req_access = list("syndicate")} | /obj/structure/rack | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+9,6: /turf/template_noop | /area/template_noop
+2,5: /obj/machinery/light/directional/west | /obj/structure/filingcabinet/medical | /obj/effect/turf_decal/siding/thinplating/dark{dir = 6} | /turf/open/floor/circuit | /area/ruin/syndicate_lava_base/telecomms
+3,5: /turf/open/floor/iron/dark/textured_large | /area/ruin/syndicate_lava_base/telecomms
+4,5: /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/effect/turf_decal/tile/red/half/contrasted{dir = 4} | /turf/open/floor/iron/dark | /area/ruin/syndicate_lava_base/telecomms
+5,5: /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+6,5: /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2 | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+7,5: /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+8,5: /obj/machinery/light/small/directional/east | /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4 | /obj/effect/turf_decal/siding/wood/corner | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+9,5: /turf/template_noop | /area/template_noop
+2,4: /obj/machinery/firealarm/directional/west | /obj/machinery/computer/message_monitor{dir = 4} | /obj/item/paper/monitorkey{pixel_x = 5} | /obj/item/radio/intercom{freerange = 1; name = "Syndicate Radio Intercom"; pixel_y = -26} | /turf/open/floor/iron/dark | /area/ruin/syndicate_lava_base/telecomms
+3,4: /obj/structure/chair/office{dir = 4} | /turf/open/floor/iron/dark/textured | /area/ruin/syndicate_lava_base/telecomms
+4,4: /obj/machinery/computer/camera_advanced{dir = 8} | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/machinery/newscaster/directional/south | /obj/structure/railing{dir = 4} | /obj/effect/turf_decal/tile/red | /turf/open/floor/iron/dark | /area/ruin/syndicate_lava_base/telecomms
+5,4: /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+6,4: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2 | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+7,4: /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2 | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+8,4: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4 | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2 | /obj/structure/cable | /obj/effect/turf_decal/siding/wood{dir = 4} | /obj/machinery/power/apc/auto_name/directional/south | /obj/effect/mapping_helpers/apc/syndicate_access | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+9,4: /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4 | /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2 | /obj/structure/cable | /obj/machinery/door/airlock/hatch{name = "Telecommunications"} | /obj/effect/mapping_helpers/airlock/access/all/syndicate/general | /obj/modular_map_connector | /turf/template_noop | /area/ruin/syndicate_lava_base/telecomms
+3,3: /obj/structure/falsewall/plastitanium | /turf/open/floor/plating | /area/ruin/syndicate_lava_base/telecomms
+5,3: /obj/structure/sign/poster/contraband/syndiemoth/directional/south | /obj/structure/table/wood | /obj/item/paper_bin | /obj/item/pen | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+6,3: /obj/structure/table/wood | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+7,3: /obj/structure/table/wood | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+9,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+3,2: /obj/structure/closet/crate/secure/freezer/commsagent | /turf/open/floor/plating | /area/ruin/syndicate_lava_base/telecomms
+6,2: /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/firedoor | /obj/machinery/door/poddoor/preopen{id = "lavalandsyndi_telecomms"} | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+7,2: /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium | /obj/machinery/door/firedoor | /obj/machinery/door/poddoor/preopen{id = "lavalandsyndi_telecomms"} | /turf/open/floor/wood | /area/ruin/syndicate_lava_base/telecomms
+9,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+6,1: /turf/template_noop | /area/template_noop
+7,1: /turf/template_noop | /area/template_noop
+8,1: /turf/template_noop | /area/template_noop
+9,1: /turf/template_noop | /area/template_noop

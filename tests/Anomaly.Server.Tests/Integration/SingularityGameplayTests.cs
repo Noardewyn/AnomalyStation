@@ -48,7 +48,7 @@ public class SingularityGameplayTests
         int SpaceAround() => In(w, () => Enumerable.Range(126, 41).SelectMany(x => Enumerable.Range(158, 41).Select(y => Builtins.locate(x, y, 1))).Count(t => t is turf_open_space));
         int spaceBefore = SpaceAround();
         p.Session.DevCommand("singularity 146 178 1");
-        for (int i = 0; i < 20 && texts.Count == 0; i++)
+        for (int i = 0; i < 20 && texts.All(t => t.Contains("Payday", StringComparison.Ordinal)); i++) // a payday line may come first
             w.Run(1);
         _output.WriteLine("reply: " + string.Join(" | ", texts));
         Assert.Contains(texts, t => t.Contains("stage 3 (5 x 5 tiles)", StringComparison.Ordinal)); // STAGE_THREE is 5 tiles (gravity.dm)

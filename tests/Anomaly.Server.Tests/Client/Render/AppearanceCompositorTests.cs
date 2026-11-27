@@ -94,6 +94,32 @@ public class AppearanceCompositorTests
     }
 
     [Fact]
+    public void AnOverlayOnItsParentsLayerKeepsListOrderWithTheTopFloat()
+    {
+        // tg's fishing HUD: the rod's frame (FLOAT_LAYER) first, then the completion bar on the HUD's own layer, drawn over the frame
+        _icon.Solid("base", White, 4).Solid("g", Green, 4).Solid("b", Blue, 4);
+        TableRef frame = Add("g", e => e.Layer = -1);
+        TableRef bar = Add("b", e => e.Layer = 3);
+        Assert.Equal(Blue, Compose(Add("base", e => { e.Layer = 3; e.Overlays.AddRange(new[] { frame, bar }); })).Image.Get(0, 0));
+        Assert.Equal(Green, Compose(Add("base", e => { e.Layer = 3; e.Overlays.AddRange(new[] { bar, frame }); })).Image.Get(0, 0));
+        // a lower float stays under it whatever the order
+        TableRef low = Add("g", e => e.Layer = -2);
+        Assert.Equal(Blue, Compose(Add("base", e => { e.Layer = 3; e.Overlays.AddRange(new[] { bar, low }); })).Image.Get(0, 0));
+    }
+
+    [Fact]
+    public void OfTwoChildrenOnOneLayerTheFirstIsDrawnWholeBeforeTheSecond()
+    {
+        // tg's fishing HUD: the bait with its bars (its own overlays), then the fish, both on the HUD's layer: the fish is over the bars
+        _icon.Solid("base", White, 4).Solid("g", Green, 4).Solid("b", Blue, 4).Solid("r", Red, 4);
+        TableRef bars = Add("g", e => e.Layer = -1);
+        TableRef bait = Add("b", e => { e.Layer = 3; e.Overlays.Add(bars); });
+        TableRef fish = Add("r", e => e.Layer = 3);
+        Assert.Equal(Red, Compose(Add("base", e => { e.Layer = 3; e.Overlays.AddRange(new[] { bait, fish }); })).Image.Get(0, 0));
+        Assert.Equal(Green, Compose(Add("base", e => { e.Layer = 3; e.Overlays.AddRange(new[] { fish, bait }); })).Image.Get(0, 0));
+    }
+
+    [Fact]
     public void UnderlaysAreBelowTheAppearanceAndAbsoluteLayersCompareWithTheParents()
     {
         var holed = Raster.Solid(4, 4, Red);

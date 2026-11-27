@@ -29,6 +29,32 @@ public static class TgStrings
         "strings/chav_replacement.json", "strings/elvis_replacement.json", "strings/heckacious.json",
         "strings/medieval_replacement.json", "strings/ork_replacement.json"); // declared before Files, whose initializer adds them
 
+    /// <summary>
+    /// The dreams' words (flufftext/dreaming.dm through GLOB.dream_strings, adjectives, adverbs, ing_verbs and verbs): every sleeping
+    /// carbon dreams on the sleeping status effect's tick, and a random dream picks from these lists, so every world where a mob
+    /// sleeps needs them. They are in <see cref="Files"/> already; none of them names a mob.
+    /// </summary>
+    public static readonly ImmutableArray<string> DreamFiles = ImmutableArray.Create(
+        "strings/dreamstrings.txt", "strings/names/adjectives.txt", "strings/names/adverbs.txt", "strings/names/ing_verbs.txt",
+        "strings/names/verbs.txt");
+
+    /// <summary>
+    /// The trading card game's keywords and its two sets (controllers/subsystem/tcgsetup.dm:5-10, read through file2text at its
+    /// Initialize): SStrading_card_game loads them at boot, before the map, and every card and pack reads the loaded sets at its
+    /// Initialize (objects/items/tcg/tcg.dm:21, :389), so a world that makes them without the Master loads these with the subsystem.
+    /// </summary>
+    public static readonly ImmutableArray<string> CardFiles = ImmutableArray.Create(
+        "strings/tcg/keywords.json", "strings/tcg/set_one.json", "strings/tcg/set_two.json"); // declared before Files, whose initializer adds them
+
+    /// <summary>
+    /// The exploration drones' adventures (tg's text adventures, explorer_drone/adventure.dm): SSpersistence's Initialize reads every
+    /// file of <c>strings/exoadventures/</c> (<c>flist</c>), so the mount lists the snapshot's five (declared before Files, whose initializer adds them).
+    /// </summary>
+    public static readonly ImmutableArray<string> AdventureFiles = ImmutableArray.Create(
+        "strings/exoadventures/britain_replica.json", "strings/exoadventures/quantum_fizzics.json",
+        "strings/exoadventures/robots_wingman.json", "strings/exoadventures/space_yacht.json",
+        "strings/exoadventures/tree_in_the_middle_of_space.json");
+
     /// <summary>The paths, relative to the clone's root, of the files the translated world start and strings() read.</summary>
     public static readonly ImmutableArray<string> Files = ImmutableArray.Create(
     
@@ -104,8 +130,25 @@ public static class TgStrings
         "strings/traumas.json", "strings/zombie_replacement.json",
         // gaps BR1 (D339): the virtual domains' safehouse rooms (the safehouse modular map root, modules/mapping/modular_map_loader/
         // modular_map_loader.dm:30, through rustg_read_toml_file)
-        "strings/modular_maps/safehouse.toml"
-    ).AddRange(GeneticsFiles);
+        "strings/modular_maps/safehouse.toml",
+        // Lavaland's syndicate base's rooms (its modular map roots, lavalandruin_code/syndicate_base.dm:3)
+        "strings/modular_maps/syndicatebase.toml",
+        // the restaurant's robot customers: their kinds' name prefixes (food_and_drinks/restaurant/customers/_customer.dm:49, read at
+        // SSrestaurant's init) and their voices (space_fauna/robot_customer.dm:47, through strings() from the config folder)
+        "strings/names/american_prefix.txt", "strings/names/italian_prefix.txt", "strings/names/french_prefix.txt",
+        "strings/names/japanese_prefix.txt", "strings/names/moth_prefix.txt", "strings/names/mexican_prefix.txt",
+        "strings/names/british_prefix.txt", "strings/names/malf_prefix.txt", "config/robot_voices.json",
+        // the battle arcade's enemy names (machinery/computer/arcade/battle.dm:150, ARCADE_FILE through pick_list)
+        "strings/arcade.json",
+        // the exploration drones: their names, the sites' names and fluff (EXODRONE_FILE, explorer_drone/exodrone.dm:66, through
+        // strings()), and the adventures SSpersistence loads at its Initialize (explorer_drone/adventure.dm:52, flist of
+        // strings/exoadventures/)
+        "strings/exodrone.json",
+        // the ecto sniffer's paranormal activity levels (machinery/ecto_sniffer.dm:36, world.file2list)
+        "strings/spook_levels.txt",
+        // the voice gizmos' words (research/gizmo/gizmo_voice.dm:2, GLOBAL_LIST_INIT through world.file2list)
+        "strings/gizmo_words.txt"
+    ).AddRange(GeneticsFiles).AddRange(CardFiles).AddRange(AdventureFiles);
 
 
     /// <summary>

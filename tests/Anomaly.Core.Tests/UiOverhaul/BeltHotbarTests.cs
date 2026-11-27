@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tests.UiOverhaul;
 
 /// <summary>
-/// ui-overhaul.md section 10, slice 3A (DV603): the belt hotbar's cells (<see cref="BeltHotbar"/>) and the five rules of a press, in a booted toy room
+/// ui-overhaul.md section 10, slice 3A (DV689): the belt hotbar's cells (<see cref="BeltHotbar"/>) and the five rules of a press, in a booted toy room
 /// with one joined player, Alice, in a jumpsuit. The cells are brought up to date every tick as the server's command phase does (a world phase), and a
 /// press is the server's (<see cref="BeltHotbar.Press"/>, from her client). Every move is tg's own: the belt's storage, the slot's equip, put in hands.
 /// </summary>

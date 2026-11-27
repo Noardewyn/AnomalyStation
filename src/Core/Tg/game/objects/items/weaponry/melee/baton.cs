@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M7x slice E (batons): the police baton, the telescopic baton (and the gold, silver, bronze and contractor ones, which only
-// change vars), the stun baton with its loaded and HoS variants, the stunprod and the OZtek boomerang, whole but for the
-// stunsword's reskins (the reskinable item component; docs/ai/specs/not-translated.md section 46); gaps WP1 (D333): the fantasy bonuses,
+// change vars), the stun baton with its loaded and HoS variants, the stunprod and the OZtek boomerang, whole with the
+// stunsword's reskins; gaps WP1 (D333): the fantasy bonuses,
 // the stunsword, the teleprod (it teleports whom it stuns), the snatcherprod (it pulls the held item into its wielder's other hand)
 // and the syndicate's nunchaku (a random pose after each swing and throw; in throw mode it blocks melee and thrown attacks for a
 // little stamina and strikes back at a melee attacker). add_baton_notes is the weapon
@@ -922,8 +922,7 @@ public partial class obj_item_melee_baton_security_stunsword : obj_item_melee_ba
     // tg: code/game/objects/items/weaponry/melee/baton.dm:799
     public override async DmTask setup_reskins()
     {
-        // AddComponent(/datum/component/reskinable_item, /datum/atom_skin/stunsword): the reskin menu (not-translated.md 114)
-        await DmTask.CompletedTask;
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_stunsword));
     }
 
     // tg: code/game/objects/items/weaponry/melee/baton.dm:802

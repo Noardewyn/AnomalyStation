@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The status display app (gaps S4a, D327): the station's status displays' message and picture, set from a PDA or a console
-// through the NtosStatus window (lines 1-91). Its circuit component (`/obj/item/circuit_component/mod_program/status`, :94-121)
-// waits with wiremod (not-translated section 164). The var block is generated (D111).
+// through the NtosStatus window (lines 1-91), and its circuit component that writes them from a circuit plugged into the computer.
+// The var block is generated (D111).
 
 // tg: code/modules/modular_computers/file_system/programs/statusdisplay.dm:1
 public partial class datum_computer_file_program_status : datum_computer_file_program
@@ -118,5 +118,40 @@ public partial class datum_computer_file_program_status : datum_computer_file_pr
         data["lowerText"] = lower_text;
 
         return data;
+    }
+}
+
+// tg: code/modules/modular_computers/file_system/programs/statusdisplay.dm:94
+public partial class obj_item_circuit_component_mod_program_status : obj_item_circuit_component_mod_program
+{
+    // tg: code/modules/modular_computers/file_system/programs/statusdisplay.dm:105
+    public override async DmTask populate_ports()
+    {
+        await base.populate_ports();
+        upper_text = add_input_port("Upper text", PORT_TYPE_STRING) as datum_port_input;
+        bottom_text = add_input_port("Bottom text", PORT_TYPE_STRING) as datum_port_input;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/statusdisplay.dm:110
+    public override void populate_options()
+    {
+        status_display_pics = add_option_port("Set Status Display Picture", GLOB.status_display_approved_pictures, trigger: nameof(set_picture)) as datum_port_input;
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/statusdisplay.dm:113
+    public virtual void set_picture(datum_port port = null)
+    {
+        datum_computer_file_program_status status = associated_program as datum_computer_file_program_status;
+        object creator = parent.get_creator();
+        Waiting.DetachSync(() => status.post_picture(status_display_pics.value, creator));
+    }
+
+    // tg: code/modules/modular_computers/file_system/programs/statusdisplay.dm:117
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        datum_computer_file_program_status status = associated_program as datum_computer_file_program_status;
+        object upper = upper_text.value, lower = bottom_text.value, creator = parent.get_creator();
+        Waiting.DetachSync(() => status.post_message(upper, lower, creator));
+        return null;
     }
 }

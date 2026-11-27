@@ -1,0 +1,5 @@
+anomaly-map 1
+source _maps/templates/holodeck_offline.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /turf/open/floor/holofloor/plating | /area/template_noop

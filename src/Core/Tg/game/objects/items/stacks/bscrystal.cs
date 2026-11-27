@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps J6 (D298): the crystal as an ore (a mined rock drops it into the satchel): it blinks whoever crushes it or is hit by it.
+// Gaps J6 (D298): the crystal as an ore (a mined rock drops it into the satchel): it blinks whoever crushes it or is hit by it,
+// and it is a raptor's food (raptor_food.dm).
 
 // tg: code/game/objects/items/stacks/bscrystal.dm:3
 public partial class obj_item_stack_ore_bluespace_crystal : obj_item_stack_ore
@@ -20,8 +21,7 @@ public partial class obj_item_stack_ore_bluespace_crystal : obj_item_stack_ore
         object dot = base.Initialize(mapload, __extra);
         pixel_x = rand(-5, 5);
         pixel_y = rand(-5, 5);
-        // AddElement(/datum/element/raptor_food, ...): the raptors' food (the raptors, not ported)
-        Dm.Deferred("code/game/objects/items/stacks/bscrystal.dm:35", "Initialize: AddElement(/datum/element/raptor_food): the raptors' food (the raptors, not ported)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_raptor_food), Dm.named("ability_modifier", 0.05f), Dm.named("attack_modifier", 0.5f), Dm.named("color_chances", string_list(Dm.list(Dm.kv(typeof(datum_raptor_color_black), 1))))));
         return dot;
     }
 

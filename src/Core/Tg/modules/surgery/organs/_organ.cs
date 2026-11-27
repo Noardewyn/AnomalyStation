@@ -195,9 +195,8 @@ public partial class obj_item_organ : obj_item
 
         if (Dm.truthy(cell_line) && Dm.truthy(Dm.bitand(organ_flags, ORGAN_ORGANIC)))
         {
-            // AddElement(/datum/element/swabable, cell_line, cell_line_amount = rand(cells_minimum, cells_maximum)): cytology
-            // swabs (M8); GAP(lead): /datum/element/swabable is not declared.
-            Dm.Deferred("code/modules/surgery/organs/_organ.dm:106", "Initialize: AddElement(/datum/element/swabable, ...): a swabable organ (cytology, M8)");
+            // cell_line_amount = rand(...) is passed by name in tg: its place is the third argument, after the virus table
+            Waiting.NoSleep(AddElement(typeof(datum_element_swabable), cell_line, null, rand(cells_minimum, cells_maximum)));
         }
 
         START_PROCESSING(SSobj, this);

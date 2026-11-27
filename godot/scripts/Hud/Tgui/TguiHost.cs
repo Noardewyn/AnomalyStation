@@ -419,6 +419,12 @@ public partial class TguiHost : Control
             if (TguiSpritesheets.TryDrawDecal(textures.Library, state, out Raster decal))
                 texture = ImageTexture.CreateFromImage(AppearanceTextures.ToImage(decal));
         }
+        else if (icon == TguiSpritesheets.Fish32)
+        {
+            // the fish encyclopedia's illustrations (tg's fish sheet, its classes the sanitized icon file and state)
+            if (TguiSpritesheets.TryDrawFish(textures.Library, state, out Raster fish))
+                texture = ImageTexture.CreateFromImage(AppearanceTextures.ToImage(fish));
+        }
         else if (TguiSpritesheets.IsSheet(icon))
         {
             // M7 slice D172: a class of one of tg's sprite sheets (the RPD's "pipes32x32 north-pipe"): that state's frame of that dir in

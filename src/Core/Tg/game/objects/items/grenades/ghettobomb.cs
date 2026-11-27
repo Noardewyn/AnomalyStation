@@ -15,8 +15,8 @@ namespace Anomaly.Core.Tg;
 // lengths of cable, then a timer, a proximity sensor, a mousetrap, a signaler or a voice analyzer makes the IED. The IED: its
 // assembly armed in hand (not a signaler), set up off hand, it goes off when its assembly pulses, drawn as tg's pipe bomb with its
 // assembly's name and armed state, its blast set by its power (heavy a fifth, light seven tenths, flame its power give or take
-// one). The admin-spawned one has a timer and 2.5 power. The wiremod assembly in the halved pipe's list is inert with the
-// circuits (not-translated.md). The activator var holds a path or the assembly itself (the converter typed it as a path):
+// one). The admin-spawned one has a timer and 2.5 power; the halved pipe also takes the circuits' wiremod assembly as its
+// trigger. The activator var holds a path or the assembly itself (the converter typed it as a path):
 // hand-declared here, so hand mode keeps the generated constructor here too. The rest of the var blocks is generated (D111).
 
 // tg: code/game/objects/items/grenades/ghettobomb.dm:1

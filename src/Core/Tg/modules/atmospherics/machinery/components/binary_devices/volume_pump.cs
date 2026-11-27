@@ -10,9 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // PARTIAL (M4b slice 2: the volume pump): the init, the ctrl and alt clicks, the picture, process_atmos and can_unwrench.
-// Deferred leaves: the circuit USB port (circuits), the screentip context (M9) and the investigate logs (M10). Generated
-// live-partial stubs: add_context (M9) and the multitool
-// overclock (multitool_act, M4a). /obj/item/circuit_component/atmos_volume_pump stays inert (circuits). The var block is
+// Deferred leaves: the screentip context (M9) and the investigate logs (M10). Generated
+// live-partial stub: add_context (M9). The multitool's overclock (multitool_act) is translated. The USB port and its circuit component (/obj/item/circuit_component/atmos_volume_pump) are live. The var block is
 // generated.
 
 // Every cycle, the pump uses the air in air_in to try and move a specific volume of gas into air_out.
@@ -35,8 +34,7 @@ public partial class obj_machinery_atmospherics_components_binary_volume_pump : 
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/atmos_volume_pump), only_root_path = TRUE)): circuits
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:34", "Initialize: AddComponent(/datum/component/usb_port): the circuit USB port (circuits)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_atmos_volume_pump)), only_root_path: TRUE)));
         // register_context() (datums/screentips/atom_context.dm:5): the screentip context of the held tool
         Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:39", "Initialize: register_context(): screentip contexts (M10+)");
         return dot;
@@ -207,6 +205,23 @@ public partial class obj_machinery_atmospherics_components_binary_volume_pump : 
         return dot;
     }
 
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:163
+    public override async DmTask<object> multitool_act(mob_living user = null, obj_item tool = null)
+    {
+        if (!Dm.truthy(overclocked))
+        {
+            overclocked = TRUE;
+            to_chat(user, I18n.T("The pump makes a grinding noise and air starts to hiss out as you disable its pressure limits."));
+        }
+        else
+        {
+            overclocked = FALSE;
+            to_chat(user, I18n.T("The pump quiets down as you turn its limiters back on."));
+        }
+        update_appearance(UPDATE_ICON);
+        return TRUE;
+    }
+
     // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:157
     public override object can_unwrench__proc(mob user = null)
     {
@@ -217,5 +232,106 @@ public partial class obj_machinery_atmospherics_components_binary_volume_pump : 
             return FALSE;
         }
         return dot;
+    }
+}
+
+// tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:195
+public partial class obj_item_circuit_component_atmos_volume_pump : obj_item_circuit_component
+{
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:227
+    public override async DmTask populate_ports()
+    {
+        transfer_rate = add_input_port("New Transfer Rate", PORT_TYPE_NUMBER, trigger: nameof(set_transfer_rate)) as datum_port_input;
+        on = add_input_port("Turn On", PORT_TYPE_SIGNAL, trigger: nameof(set_pump_on)) as datum_port_input;
+        off = add_input_port("Turn Off", PORT_TYPE_SIGNAL, trigger: nameof(set_pump_off)) as datum_port_input;
+        request_data = add_input_port("Request Port Data", PORT_TYPE_SIGNAL, trigger: nameof(request_pump_data)) as datum_port_input;
+
+        input_pressure = add_output_port("Input Pressure", PORT_TYPE_NUMBER) as datum_port_output;
+        output_pressure = add_output_port("Output Pressure", PORT_TYPE_NUMBER) as datum_port_output;
+        input_temperature = add_output_port("Input Temperature", PORT_TYPE_NUMBER) as datum_port_output;
+        output_temperature = add_output_port("Output Temperature", PORT_TYPE_NUMBER) as datum_port_output;
+
+        is_active = add_output_port("Active", PORT_TYPE_BOOLEAN) as datum_port_output;
+        turned_on = add_output_port("Turned On", PORT_TYPE_SIGNAL) as datum_port_output;
+        turned_off = add_output_port("Turned Off", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:242
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_atmospherics_components_binary_volume_pump)))
+        {
+            connected_pump = shell as obj_machinery_atmospherics_components_binary_volume_pump;
+            RegisterSignal(connected_pump, COMSIG_ATMOS_MACHINE_SET_ON, nameof(handle_pump_activation));
+        }
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:248
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        UnregisterSignal(connected_pump, COMSIG_ATMOS_MACHINE_SET_ON);
+        connected_pump = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:253
+    public override void pre_input_received(datum_port_input port = null)
+    {
+        transfer_rate.set_value(clamp(transfer_rate.value, 0, MAX_TRANSFER_RATE));
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:256
+    [SignalHandler]
+    public virtual void handle_pump_activation(datum source = null, object active = null)
+    {
+        is_active.set_output(active);
+        if (Dm.truthy(active))
+            turned_on.set_output(COMPONENT_SIGNAL);
+        else
+            turned_off.set_output(COMPONENT_SIGNAL);
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:264
+    [ShouldNotSleep]
+    public virtual void set_transfer_rate()
+    {
+        if (connected_pump == null)
+            return;
+        connected_pump.transfer_rate = Dm.num(transfer_rate.value);
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:270
+    [ShouldNotSleep]
+    public virtual void set_pump_on()
+    {
+        if (connected_pump == null)
+            return;
+        connected_pump.set_on(TRUE);
+        connected_pump.update_appearance(UPDATE_ICON);
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:277
+    [ShouldNotSleep]
+    public virtual void set_pump_off()
+    {
+        if (connected_pump == null)
+            return;
+        connected_pump.set_on(FALSE);
+        connected_pump.update_appearance(UPDATE_ICON);
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:284
+    [ShouldNotSleep]
+    public virtual void request_pump_data()
+    {
+        if (connected_pump == null)
+            return;
+        datum_gas_mixture air_input = connected_pump.airs[1] as datum_gas_mixture;
+        datum_gas_mixture air_output = connected_pump.airs[2] as datum_gas_mixture;
+        input_pressure.set_output(air_input.return_pressure());
+        output_pressure.set_output(air_output.return_pressure());
+        input_temperature.set_output(air_input.return_temperature());
+        output_temperature.set_output(air_output.return_temperature());
     }
 }

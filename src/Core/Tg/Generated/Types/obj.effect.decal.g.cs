@@ -642,9 +642,9 @@ public partial class obj_effect_decal_cleanable_blood_gibs_old
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:376
-[DmPath("/obj/effect/decal/cleanable/blood/gibs/bubblegum"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_blood_gibs_bubblegum : obj_effect_decal_cleanable_blood_gibs
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:376 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/blood/gibs/bubblegum")]
+public partial class obj_effect_decal_cleanable_blood_gibs_bubblegum
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:376
     public obj_effect_decal_cleanable_blood_gibs_bubblegum()
@@ -961,9 +961,9 @@ public partial class obj_effect_decal_cleanable_blood_innards : obj_effect_decal
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:370
-[DmPath("/obj/effect/decal/cleanable/blood/bubblegum"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_blood_bubblegum : obj_effect_decal_cleanable_blood
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:370 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/blood/bubblegum")]
+public partial class obj_effect_decal_cleanable_blood_bubblegum
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/bubblegum.dm:370
     public obj_effect_decal_cleanable_blood_bubblegum()
@@ -1115,9 +1115,9 @@ public partial class obj_effect_decal_cleanable_food_flour : obj_effect_decal_cl
     }
 }
 
-// tg: code/game/objects/effects/decals/cleanable/food.dm:75
-[DmPath("/obj/effect/decal/cleanable/food/squid_ink"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_food_squid_ink : obj_effect_decal_cleanable_food
+// tg: code/game/objects/effects/decals/cleanable/food.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/food/squid_ink")]
+public partial class obj_effect_decal_cleanable_food_squid_ink
 {
     // tg: code/game/objects/effects/decals/cleanable/food.dm:75
     public obj_effect_decal_cleanable_food_squid_ink()
@@ -1564,9 +1564,9 @@ public partial class obj_effect_decal_cleanable_vomit_nebula : obj_effect_decal_
 [DmPath("/obj/effect/decal/cleanable/vomit/nebula/worms"), DmGeneratedOnly, DmInert]
 public partial class obj_effect_decal_cleanable_vomit_nebula_worms : obj_effect_decal_cleanable_vomit_nebula { }
 
-// tg: code/game/objects/effects/decals/cleanable/mess.dm:258
-[DmPath("/obj/effect/decal/cleanable/vomit/old"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_vomit_old : obj_effect_decal_cleanable_vomit
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:258 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/vomit/old")]
+public partial class obj_effect_decal_cleanable_vomit_old
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:258
     public obj_effect_decal_cleanable_vomit_old()
@@ -1577,7 +1577,7 @@ public partial class obj_effect_decal_cleanable_vomit_old : obj_effect_decal_cle
 }
 
 // tg: code/game/objects/effects/decals/cleanable/mess.dm:269
-[DmPath("/obj/effect/decal/cleanable/vomit/old/black_bile"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/decal/cleanable/vomit/old/black_bile"), DmGeneratedOnly]
 public partial class obj_effect_decal_cleanable_vomit_old_black_bile : obj_effect_decal_cleanable_vomit_old
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:269
@@ -1755,9 +1755,9 @@ public partial class obj_effect_decal_cleanable_wrapping_pinata_donk : obj_effec
     }
 }
 
-// tg: code/game/objects/effects/decals/cleanable/mess.dm:366
-[DmPath("/obj/effect/decal/cleanable/garbage"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_garbage : obj_effect_decal_cleanable
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:366 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/garbage")]
+public partial class obj_effect_decal_cleanable_garbage
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:366
     public obj_effect_decal_cleanable_garbage()
@@ -1773,9 +1773,9 @@ public partial class obj_effect_decal_cleanable_garbage : obj_effect_decal_clean
     }
 }
 
-// tg: code/game/objects/effects/decals/cleanable/mess.dm:382
-[DmPath("/obj/effect/decal/cleanable/rubble"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_decal_cleanable_rubble : obj_effect_decal_cleanable
+// tg: code/game/objects/effects/decals/cleanable/mess.dm:382 (the var block of a hand-written class)
+[DmPath("/obj/effect/decal/cleanable/rubble")]
+public partial class obj_effect_decal_cleanable_rubble
 {
     // tg: code/game/objects/effects/decals/cleanable/mess.dm:382
     public obj_effect_decal_cleanable_rubble()

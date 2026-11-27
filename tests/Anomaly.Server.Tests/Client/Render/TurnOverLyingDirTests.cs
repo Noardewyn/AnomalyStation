@@ -6,7 +6,7 @@ using Anomaly.Protocol;
 namespace Anomaly.Server.Tests.Client.Render;
 
 /// <summary>
-/// Package T, slice T4c (DV573, DV600): which side of a lying body is drawn. One rule on the client (<c>BillboardMath.ChooseLyingDir</c>) and its
+/// Package T, slice T4c (DV573, DV686): which side of a lying body is drawn. One rule on the client (<c>BillboardMath.ChooseLyingDir</c>) and its
 /// mirror for the server's shots (<c>ShotGeometry.ChooseLyingDir</c>): a turned body shows the side it was turned to, one lying buckled to an object
 /// its front, from every side; otherwise the floor rule (conscious: its back; limp: by the viewer's side).
 /// </summary>

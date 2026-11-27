@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: the base welder (M4a P4a): its fuel, lighting, burning, the tool checks and the appearance. Not here: the
-// subtypes' procs (the abductor's and experimental welder's process, after the core version). The procs of a later
+// PARTIAL: the base welder (M4a P4a): its fuel, lighting, burning, the tool checks and the appearance, and the
+// subtypes' procs (the experimental and the abductor's welder refuel in process). The procs of a later
 // milestone are stubs: the declared roots below (healing robotic limbs M6) and the rows of
 // docs/ai/specs/live-partial.txt "## P4 (M4a)" for the overrides (suicide_act M10,
 // cyborg_unequip since silicons SI2, interact_with_atom M6, afterattack M4b; ignition_effect is translated, M7 lighting slice L1). The var block is
@@ -452,7 +452,20 @@ public partial class obj_item_weldingtool_mini : obj_item_weldingtool
     }
 }
 
-// tg: code/game/objects/items/tools/engineering/weldingtool.dm:404  (gaps J5, D298)
+// tg: code/game/objects/items/tools/engineering/weldingtool.dm:378
+public partial class obj_item_weldingtool_abductor : obj_item_weldingtool
+{
+    // tg: code/game/objects/items/tools/engineering/weldingtool.dm:390
+    public override object process(object seconds_per_tick = null, params object[] __extra)
+    {
+        if (Dm.num(get_fuel()) <= Dm.num(max_fuel))
+            Waiting.NoSleep((reagents as datum_reagents).add_reagent(typeof(datum_reagent_fuel), 1));
+        base.process(seconds_per_tick, __extra);
+        return null;
+    }
+}
+
+// tg: code/game/objects/items/tools/engineering/weldingtool.dm:403  (gaps J5, D298)
 public partial class obj_item_weldingtool_experimental : obj_item_weldingtool
 {
     // tg: code/game/objects/items/tools/engineering/weldingtool.dm:417

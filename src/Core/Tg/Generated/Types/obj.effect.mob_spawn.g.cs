@@ -853,9 +853,9 @@ public partial class obj_effect_mob_spawn_ghost_role_human_golem_servant : obj_e
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:6
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/hermit"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_ghost_role_human_hermit : obj_effect_mob_spawn_ghost_role_human
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/hermit")]
+public partial class obj_effect_mob_spawn_ghost_role_human_hermit
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:6
     public obj_effect_mob_spawn_ghost_role_human_hermit()
@@ -874,7 +874,7 @@ public partial class obj_effect_mob_spawn_ghost_role_human_hermit : obj_effect_m
 }
 
 // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:61
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/hermit/icemoon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/hermit/icemoon"), DmGeneratedOnly]
 public partial class obj_effect_mob_spawn_ghost_role_human_hermit_icemoon : obj_effect_mob_spawn_ghost_role_human_hermit
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:61
@@ -911,9 +911,9 @@ public partial class obj_effect_mob_spawn_ghost_role_human_beach : obj_effect_mo
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:86
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_ghost_role_human_beach_lifeguard : obj_effect_mob_spawn_ghost_role_human_beach
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:86 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/beach/lifeguard")]
+public partial class obj_effect_mob_spawn_ghost_role_human_beach_lifeguard
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:86
     public obj_effect_mob_spawn_ghost_role_human_beach_lifeguard()
@@ -945,9 +945,9 @@ public partial class obj_effect_mob_spawn_ghost_role_human_bartender : obj_effec
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:147
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/seed_vault"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_ghost_role_human_seed_vault : obj_effect_mob_spawn_ghost_role_human
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:147 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/seed_vault")]
+public partial class obj_effect_mob_spawn_ghost_role_human_seed_vault
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:147
     public obj_effect_mob_spawn_ghost_role_human_seed_vault()
@@ -965,34 +965,13 @@ public partial class obj_effect_mob_spawn_ghost_role_human_seed_vault : obj_effe
     }
 }
 
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:211
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/ash_walker"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_ghost_role_human_ash_walker : obj_effect_mob_spawn_ghost_role_human
-{
-    public Type team; // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:225
-    public obj_structure_ash_walker_eggshell eggshell; // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:226
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:211 (the vars the hand-written class does not declare)
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/ash_walker")]
+public partial class obj_effect_mob_spawn_ghost_role_human_ash_walker { }
 
-    // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:211
-    public obj_effect_mob_spawn_ghost_role_human_ash_walker()
-    {
-        name = "ash walker egg";
-        desc = "A man-sized yellow egg, spawned from some unfathomable creature. A humanoid silhouette lurks within.";
-        prompt_name = "necropolis ash walker";
-        icon = Dm.resource("icons/mob/simple/lavaland/lavaland_monsters.dmi");
-        icon_state = "large_egg";
-        mob_species = typeof(datum_species_lizard_ashwalker);
-        outfit = typeof(datum_outfit_ashwalker);
-        move_resist = 1000;
-        density = 0;
-        you_are_text = "You are an ash walker. Your tribe worships the Necropolis.";
-        flavour_text = "The wastes are sacred ground, its monsters a blessed bounty. You have seen lights in the distance... they foreshadow the arrival of outsiders that seek to tear apart the Necropolis and its domain. Fresh sacrifices for your nest.";
-        spawner_job_path = typeof(datum_job_ash_walker);
-    }
-}
-
-// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:282
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate : obj_effect_mob_spawn_ghost_role_human
+// tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:282 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate")]
+public partial class obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:282
     public obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate()
@@ -1012,7 +991,7 @@ public partial class obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate : 
 }
 
 // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:299
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms"), DmGeneratedOnly]
 public partial class obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms : obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:299
@@ -1028,7 +1007,7 @@ public partial class obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_co
 }
 
 // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:346
-[DmPath("/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms/icemoon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/comms/icemoon"), DmGeneratedOnly]
 public partial class obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms_icemoon : obj_effect_mob_spawn_ghost_role_human_lavaland_syndicate_comms
 {
     // tg: code/modules/mob_spawn/ghost_roles/mining_roles.dm:346
@@ -1916,9 +1895,9 @@ public partial class obj_effect_mob_spawn_corpse_human_factory_qm : obj_effect_m
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/job_corpses.dm:88
-[DmPath("/obj/effect/mob_spawn/corpse/human/bitrunner"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_bitrunner : obj_effect_mob_spawn_corpse_human
+// tg: code/modules/mob_spawn/corpses/job_corpses.dm:88 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/bitrunner")]
+public partial class obj_effect_mob_spawn_corpse_human_bitrunner
 {
     // tg: code/modules/mob_spawn/corpses/job_corpses.dm:88
     public obj_effect_mob_spawn_corpse_human_bitrunner()
@@ -1929,9 +1908,9 @@ public partial class obj_effect_mob_spawn_corpse_human_bitrunner : obj_effect_mo
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mob_corpses.dm:410
-[DmPath("/obj/effect/mob_spawn/corpse/human/cyber_police"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_cyber_police : obj_effect_mob_spawn_corpse_human
+// tg: code/modules/mob_spawn/corpses/mob_corpses.dm:410 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/cyber_police")]
+public partial class obj_effect_mob_spawn_corpse_human_cyber_police
 {
     // tg: code/modules/mob_spawn/corpses/mob_corpses.dm:410
     public obj_effect_mob_spawn_corpse_human_cyber_police()
@@ -2345,9 +2324,9 @@ public partial class obj_effect_mob_spawn_corpse_human_hos : obj_effect_mob_spaw
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:6
-[DmPath("/obj/effect/mob_spawn/corpse/human/charredskeleton"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_charredskeleton : obj_effect_mob_spawn_corpse_human
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/charredskeleton")]
+public partial class obj_effect_mob_spawn_corpse_human_charredskeleton
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:6
     public obj_effect_mob_spawn_corpse_human_charredskeleton()
@@ -2360,7 +2339,7 @@ public partial class obj_effect_mob_spawn_corpse_human_charredskeleton : obj_eff
 }
 
 // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:18
-[DmPath("/obj/effect/mob_spawn/corpse/human/charredskeleton/dragoon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/mob_spawn/corpse/human/charredskeleton/dragoon"), DmGeneratedOnly]
 public partial class obj_effect_mob_spawn_corpse_human_charredskeleton_dragoon : obj_effect_mob_spawn_corpse_human_charredskeleton
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:18
@@ -2370,9 +2349,9 @@ public partial class obj_effect_mob_spawn_corpse_human_charredskeleton_dragoon :
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:31
-[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_legioninfested : obj_effect_mob_spawn_corpse_human
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:31 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested")]
+public partial class obj_effect_mob_spawn_corpse_human_legioninfested
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:31
     public obj_effect_mob_spawn_corpse_human_legioninfested()
@@ -2381,17 +2360,17 @@ public partial class obj_effect_mob_spawn_corpse_human_legioninfested : obj_effe
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:96
-[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/dwarf"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_legioninfested_dwarf : obj_effect_mob_spawn_corpse_human_legioninfested { }
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:96 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/dwarf")]
+public partial class obj_effect_mob_spawn_corpse_human_legioninfested_dwarf { }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:103
-[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/snow"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_legioninfested_snow : obj_effect_mob_spawn_corpse_human_legioninfested { }
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:103 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/snow")]
+public partial class obj_effect_mob_spawn_corpse_human_legioninfested_snow { }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:137
-[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/skeleton"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_legioninfested_skeleton : obj_effect_mob_spawn_corpse_human_legioninfested
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:137 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/skeleton")]
+public partial class obj_effect_mob_spawn_corpse_human_legioninfested_skeleton
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:137
     public obj_effect_mob_spawn_corpse_human_legioninfested_skeleton()
@@ -2402,9 +2381,9 @@ public partial class obj_effect_mob_spawn_corpse_human_legioninfested_skeleton :
     }
 }
 
-// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:150
-[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/skeleton/charred"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mob_spawn_corpse_human_legioninfested_skeleton_charred : obj_effect_mob_spawn_corpse_human_legioninfested_skeleton
+// tg: code/modules/mob_spawn/corpses/mining_corpses.dm:150 (the var block of a hand-written class)
+[DmPath("/obj/effect/mob_spawn/corpse/human/legioninfested/skeleton/charred")]
+public partial class obj_effect_mob_spawn_corpse_human_legioninfested_skeleton_charred
 {
     // tg: code/modules/mob_spawn/corpses/mining_corpses.dm:150
     public obj_effect_mob_spawn_corpse_human_legioninfested_skeleton_charred()

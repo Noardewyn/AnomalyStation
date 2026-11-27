@@ -21,8 +21,7 @@ public class EveryTurfAndAreaTypeTests
     private static readonly Dictionary<string, string> GapsOfLaterMilestones = new()
     {
         // (turf_open_indestructible_light's update_light is translated since M3 P3, lighting_atom.dm:44)
-        ["turf_open_indestructible_permalube"] = "wet_floor",                         // M4: the wet floor component
-        ["turf_open_indestructible_honk"] = "wet_floor",                              // M4
+        // (the permalube and honk floors' permanent wet floor is translated since the bitrunning clown planet)
         // (the planetary gas mixtures of the boss and hierophant arenas are real since M2 P2: SSair.planetary, LINDA_turf_tile.dm:59)
     };
 
@@ -53,8 +52,10 @@ public class EveryTurfAndAreaTypeTests
             else
             {
                 Assert.Empty(t.Runtimes);
-                Assert.True(Dm.truthy(Dm.bitand(made.flags_1, INITIALIZED_1)) || type == typeof(turf_open_space_basic), name);
-                Assert.Same(made, locate(1, 1, 1));
+                // TURF-IDENTITY: a turf whose Initialize changes it (the ruins' biome-replacing rock and basalt) names the cell's final turf
+                var cell = (turf)turf.dm_identity(made);
+                Assert.True(Dm.truthy(Dm.bitand(cell.flags_1, INITIALIZED_1)) || type == typeof(turf_open_space_basic), name);
+                Assert.Same(cell, locate(1, 1, 1));
             }
         }
     }

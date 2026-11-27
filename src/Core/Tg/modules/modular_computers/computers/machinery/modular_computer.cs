@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // The whole file (the engineering package E2, D287): the console that hosts a modular computer's processor (NtOS on a desk), its
 // screen overlays and light, the frame or computer interaction toggle, and the tools, hits and EMPs it passes to the processor.
-// Left out with a marked leaf: the circuit shell (cpu.add_shell_component: wiremod is not ported); emag_act came
-// with the emag (G1a, D316). The var block is generated (D111).
+// The processor's circuit shell sits on the console, with a USB port; emag_act came with the emag (G1a, D316). The var block is
+// generated (D111).
 
 // Modular Computer - A machinery that is mostly just a host to the Modular Computer item.
 // tg: code/modules/modular_computers/computers/machinery/modular_computer.dm:4
@@ -27,7 +27,8 @@ public partial class obj_machinery_modular_computer : obj_machinery
         object dot = base.Initialize(mapload, __extra);
         cpu = Dm.@new<obj_item_modular_computer_processor>(this);
         cpu.screen_on = TRUE;
-        // cpu.add_shell_component(SHELL_CAPACITY_LARGE, SHELL_FLAG_USB_PORT): the circuit shell (wiremod) is not ported
+        Waiting.NoSleep(cpu.add_shell_component(SHELL_CAPACITY_LARGE, SHELL_FLAG_USB_PORT));
+
         update_appearance();
         register_context();
         return dot;

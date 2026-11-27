@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the salt pile translated (gaps RG1: the table salt poured on a floor leaves it; the snails stop at it). The tomato
-// smudge's can_bloodcrawl_in and the squid ink's Initialize are left. The var blocks are generated (D111).
+// PARTIAL: only the salt pile translated (gaps RG1: the table salt poured on a floor leaves it; the snails stop at it). The squid ink's
+// smear (the ink sac's and the squid ink can's splat) came with the restaurant. The tomato smudge's can_bloodcrawl_in is left. The var blocks are generated (D111).
 
 // tg: code/game/objects/effects/decals/cleanable/food.dm:32
 public partial class obj_effect_decal_cleanable_food_salt : obj_effect_decal_cleanable_food
@@ -70,4 +70,15 @@ public sealed partial class TgState
     // tg: code/game/objects/effects/decals/cleanable/food.dm:36  var/static/list/loc_connections
     internal DmList obj_effect_decal_cleanable_food_salt__loc_connections = Dm.list(
         Dm.kv(COMSIG_ATOM_ENTERED, nameof(obj_effect_decal_cleanable_food_salt.on_entered)));
+}
+
+// tg: code/game/objects/effects/decals/cleanable/food.dm:74
+public partial class obj_effect_decal_cleanable_food_squid_ink : obj_effect_decal_cleanable_food
+{
+    // tg: code/game/objects/effects/decals/cleanable/food.dm:81
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        icon_state = Dm.text("floor[]", rand(1, 7));
+        return base.Initialize(mapload, __extra);
+    }
 }

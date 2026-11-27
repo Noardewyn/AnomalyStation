@@ -225,6 +225,9 @@ public static class Program
         // M10 slice G (D272): the shuttle templates tg's SSmapping preloads and the docks load, at _maps/shuttles/<folder>/<name>.dmm,
         // converted to maps/shuttles/<folder>/<name>.as3dmap (the host mounts each at tg's path); Meta's by default when Meta is converted
         if (shuttles.Count == 0 && mapNames.Contains("metastation", StringComparer.Ordinal)) shuttles.AddRange(MetaShuttles);
+        // Tramstation's labour shuttle (its dock's roundstart_template, /datum/map_template/shuttle/labour/generic) and its emergency
+        // shuttle (tramstation.json); its arrivals, auxiliary base, cargo and ferry shuttles are Meta's
+        if (mapNames.Contains("tramstation", StringComparer.Ordinal)) shuttles.AddRange(["labour/labour_generic.dmm", "emergency/emergency_tram.dmm"]);
         // D299: CentCom's level goes with Meta, at maps/map_files/generic/CentCom.as3dmap; D304: so does Lavaland (Meta's minetype)
         var templates = shuttles.Distinct(StringComparer.Ordinal).Select(shuttle => "shuttles/" + shuttle).ToList();
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(["map_files/generic/CentCom.dmm", "map_files/Mining/Lavaland.dmm"]);
@@ -237,6 +240,14 @@ public static class Program
         // safehouses their modular map roots load (maps/safehouses/<name>.as3dmap)
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(VirtualDomains);
         if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Safehouses);
+        // The survival capsules' shelters and the fishing capsule's spots (tg's /datum/map_template/shelter mappaths), at maps/templates/<name>.as3dmap
+        if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(Shelters);
+        // Lavaland's ruins (tg's /datum/map_template/ruin/lavaland prefix and suffix values, and the syndicate base's modules), at
+        // maps/RandomRuins/<folder>/<name>.as3dmap, which SSmapping's seedRuins places over the caves
+        if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(LavaRuins);
+        // The holodeck's programs (tg's /datum/map_template/holodeck mappaths) the holodeck console loads into its area, at
+        // maps/templates/<name>.as3dmap
+        if (mapNames.Contains("metastation", StringComparer.Ordinal)) templates.AddRange(HolodeckPrograms);
         foreach (string template in templates)
         {
             string relative = "_maps/" + template;
@@ -319,6 +330,63 @@ public static class Program
         "virtual_domains/pirates.dmm", "virtual_domains/psyker_shuffle.dmm", "virtual_domains/psyker_zombies.dmm",
         "virtual_domains/stairs_and_cliffs.dmm", "virtual_domains/syndicate_assault.dmm", "virtual_domains/test_only.dmm",
         "virtual_domains/vaporwave.dmm", "virtual_domains/wendigo.dmm", "virtual_domains/xeno_nest.dmm"];
+
+    /// <summary>
+    /// The survival capsules' shelters: the mining shelters of code/modules/mining/shelters.dm and the fishing spots the fishing
+    /// capsule unfolds (/datum/map_template/shelter/fishing and its subtypes).
+    /// </summary>
+    internal static readonly string[] Shelters = ["templates/shelter_1.dmm", "templates/shelter_2.dmm", "templates/shelter_3.dmm",
+        "templates/shelter_t.dmm", "templates/fishing_freshwater.dmm", "templates/fishing_saltwater.dmm", "templates/fishing_tizira.dmm",
+        "templates/fishing_hot_spring.dmm", "templates/fishing_ice.dmm", "templates/fishing_lava.dmm", "templates/fishing_plasma.dmm",
+        "templates/fishing_depths.dmm"];
+
+    /// <summary>
+    /// Lavaland's ruins: every map of tg's _maps/RandomRuins/LavaRuins (with the syndicate base's modules, which its modular map roots
+    /// load from strings/modular_maps/syndicatebase.toml) and the three of _maps/RandomRuins/AnywhereRuins that code/datums/ruins/lavaland.dm
+    /// names (the free golems' ship, the fountain hall, the shoe factory).
+    /// </summary>
+    internal static readonly string[] LavaRuins = ["RandomRuins/LavaRuins/lavaland_battle_site.dmm",
+        "RandomRuins/LavaRuins/lavaland_biodome_beach.dmm", "RandomRuins/LavaRuins/lavaland_biodome_clown_planet.dmm",
+        "RandomRuins/LavaRuins/lavaland_strong_rock.dmm", "RandomRuins/LavaRuins/lavaland_surface_ash_walker1.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_bileworm_nest.dmm", "RandomRuins/LavaRuins/lavaland_surface_biodome_winter.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_blooddrunk1.dmm", "RandomRuins/LavaRuins/lavaland_surface_blooddrunk2.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_blooddrunk3.dmm", "RandomRuins/LavaRuins/lavaland_surface_crashsite.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_cube.dmm", "RandomRuins/LavaRuins/lavaland_surface_cultaltar.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_dead_ratvar.dmm", "RandomRuins/LavaRuins/lavaland_surface_elephant_graveyard.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_elite_tumor.dmm", "RandomRuins/LavaRuins/lavaland_surface_envy.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_gaia.dmm", "RandomRuins/LavaRuins/lavaland_surface_gas.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_gluttony.dmm", "RandomRuins/LavaRuins/lavaland_surface_greed.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_hermit.dmm", "RandomRuins/LavaRuins/lavaland_surface_hierophant.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_mookvillage.dmm", "RandomRuins/LavaRuins/lavaland_surface_ore_vent.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_phonebooth.dmm", "RandomRuins/LavaRuins/lavaland_surface_pizzaparty.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_pride.dmm", "RandomRuins/LavaRuins/lavaland_surface_puzzle.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_random_ripley.dmm", "RandomRuins/LavaRuins/lavaland_surface_seed_vault.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_shuttle_wreckage.dmm", "RandomRuins/LavaRuins/lavaland_surface_sloth.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_survivalpod.dmm", "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_ufo_crash.dmm", "RandomRuins/LavaRuins/lavaland_surface_watcher_grave.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_wizard.dmm", "RandomRuins/LavaRuins/lavaland_surface_xeno_nest.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/commswilding_1.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/commswilding_2.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/commswilding_3.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/mistake_feasible.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/mistake_inevitable.dmm",
+        "RandomRuins/LavaRuins/lavaland_surface_syndicate_base1/mistake_unlikely.dmm",
+        "RandomRuins/AnywhereRuins/golem_ship.dmm", "RandomRuins/AnywhereRuins/fountain_hall.dmm",
+        "RandomRuins/AnywhereRuins/shoe_factory.dmm"];
+
+    /// <summary>
+    /// The holodeck's programs: every mappath of code/modules/holodeck/holodeck_map_templates.dm.
+    /// </summary>
+    internal static readonly string[] HolodeckPrograms = ["templates/holodeck_animeschool.dmm", "templates/holodeck_anthophillia.dmm",
+        "templates/holodeck_baseball.dmm", "templates/holodeck_basketball.dmm", "templates/holodeck_beach.dmm",
+        "templates/holodeck_burntest.dmm", "templates/holodeck_card_battle.dmm", "templates/holodeck_chapelcourt.dmm",
+        "templates/holodeck_dodgeball.dmm", "templates/holodeck_emptycourt.dmm", "templates/holodeck_firingrange.dmm",
+        "templates/holodeck_fitness.dmm", "templates/holodeck_holdoutbunker.dmm", "templates/holodeck_kobayashi.dmm",
+        "templates/holodeck_lounge.dmm", "templates/holodeck_medicalsim.dmm", "templates/holodeck_microwave.dmm",
+        "templates/holodeck_offline.dmm", "templates/holodeck_petpark.dmm", "templates/holodeck_photobooth.dmm",
+        "templates/holodeck_prison.dmm", "templates/holodeck_refuelingstation.dmm", "templates/holodeck_skatepark.dmm",
+        "templates/holodeck_spacecheckers.dmm", "templates/holodeck_spacechess.dmm", "templates/holodeck_thunderdome.dmm",
+        "templates/holodeck_thunderdome1218.dmm", "templates/holodeck_wildlifesim.dmm", "templates/holodeck_winterwonderland.dmm"];
 
     internal static readonly string[] Safehouses = ["safehouses/abductor.dmm", "safehouses/bathroom.dmm", "safehouses/den.dmm",
         "safehouses/dig.dmm", "safehouses/ice.dmm", "safehouses/lavaland_boss.dmm", "safehouses/maintsafe.dmm", "safehouses/mine.dmm",

@@ -1,0 +1,89 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_pride.dmm tg 1d99bd7f
+size 9 12 1
+chunk 32
+default /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+
+[chunk 1 1 1]
+3,12: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+4,12: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+5,12: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+6,12: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+7,12: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,11: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+3,11: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+4,11: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+5,11: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+6,11: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+7,11: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+8,11: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+1,10: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,10: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+3,10: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+4,10: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+5,10: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+6,10: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+7,10: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+8,10: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+9,10: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,9: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+3,9: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+4,9: /obj/item/dyespray | /obj/structure/table/wood/fancy/royalblue | /obj/item/coin/silver | /turf/open/floor/mineral/silver | /area/ruin/powered/pride
+5,9: /obj/structure/mirror/magic/pride{pixel_y = -6} | /turf/closed/wall/mineral/silver | /area/ruin/powered/pride
+6,9: /obj/item/clothing/under/chameleon{armor = null} | /obj/structure/table/wood/fancy/royalblue | /turf/open/floor/mineral/silver | /area/ruin/powered/pride
+7,9: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+8,9: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+9,9: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,8: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+3,8: /obj/structure/mirror/directional/west | /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding_tile/burnt{dir = 4} | /obj/structure/stone_tile/surrounding_tile{dir = 8} | /obj/structure/stone_tile/surrounding_tile | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+4,8: /turf/open/floor/mineral/silver | /area/ruin/powered/pride
+5,8: /turf/open/floor/mineral/silver | /area/ruin/powered/pride
+6,8: /turf/open/floor/mineral/silver | /area/ruin/powered/pride
+7,8: /obj/structure/mirror/directional/east | /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding_tile/burnt | /obj/structure/stone_tile/surrounding_tile{dir = 1} | /obj/structure/stone_tile/surrounding_tile{dir = 8} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+8,8: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+2,7: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+3,7: /obj/structure/mirror/directional/west | /obj/structure/stone_tile/surrounding_tile{dir = 8} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+4,7: /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding_tile/cracked{dir = 4} | /obj/structure/stone_tile/surrounding_tile/cracked | /obj/structure/stone_tile/surrounding_tile{dir = 8} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+5,7: /obj/structure/stone_tile/block | /obj/structure/stone_tile/surrounding_tile/cracked{dir = 4} | /obj/structure/stone_tile/surrounding_tile{dir = 1} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+6,7: /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding_tile/cracked | /obj/structure/stone_tile/surrounding_tile{dir = 1} | /obj/structure/stone_tile/surrounding_tile{dir = 8} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+7,7: /obj/structure/mirror/directional/east | /obj/structure/stone_tile/surrounding_tile | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+8,7: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+2,6: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+3,6: /obj/structure/mirror/directional/west | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+4,6: /obj/structure/stone_tile/block/burnt{dir = 8} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+5,6: /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+6,6: /obj/structure/stone_tile/block/burnt{dir = 4} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+7,6: /obj/structure/mirror/directional/east | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+8,6: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+2,5: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+3,5: /obj/structure/mirror/directional/west | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+4,5: /obj/structure/stone_tile/block{dir = 8} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+5,5: /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding/burnt | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+6,5: /obj/structure/stone_tile/block{dir = 4} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+7,5: /obj/structure/mirror/directional/east | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+8,5: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+1,4: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,4: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+3,4: /obj/structure/mirror/directional/west | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+4,4: /obj/structure/stone_tile/block{dir = 8} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+5,4: /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+6,4: /obj/structure/stone_tile/block/burnt{dir = 4} | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+7,4: /obj/structure/mirror/directional/east | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+8,4: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+1,3: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,3: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+3,3: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+4,3: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+5,3: /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding/burnt | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+6,3: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+7,3: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+8,3: /turf/closed/wall/mineral/cult | /area/ruin/powered/pride
+9,3: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+2,2: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+3,2: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+4,2: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+5,2: /obj/structure/stone_tile/center | /obj/structure/stone_tile/surrounding/burnt | /obj/machinery/door/airlock/cult/unruned/friendly | /turf/open/lava/smooth/weak | /area/ruin/powered/pride
+6,2: /turf/closed/indestructible/riveted/boss | /area/ruin/powered/pride
+7,2: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+8,2: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors
+9,2: /turf/open/lava/smooth/lava_land_surface | /area/lavaland/surface/outdoors

@@ -80,14 +80,15 @@ public class InertMarkTests
     [Fact]
     public void HandPickedTypesFollowTheRule()
     {
-        // The ordnance mass driver that defines no procs: inert while /obj/machinery/mass_driver's procs are not declared (the mass
-        // drivers wait; the departmental protolathe of this example went live in gaps RD1, the syndicate bomb in the syndicate
+        // The cult's stun blood spell that defines no procs: inert while /datum/action/innate/cult/blood_spell's procs are not
+        // declared (the cult waits for its antagonist; the raw anomaly cores of this example went live with the anomaly refinery,
+        // the mass drivers with the ordnance lab, the departmental protolathe in gaps RD1, the syndicate bomb in the syndicate
         // campaign G2, the air sensor in engineering package E5, the thermomachine in M7 slice 4, the firelock of M3's example in
         // M4b slice 2).
-        Assert.Empty(Index.ProcsAt("/obj/machinery/mass_driver/ordnance"));
-        Assert.Contains(Index.ProcsAt("/obj/machinery/mass_driver"), p => p.Translated == "no");
-        AssertInert(typeof(obj_machinery_mass_driver), true);
-        AssertInert(typeof(obj_machinery_mass_driver_ordnance), true);
+        Assert.Empty(Index.ProcsAt("/datum/action/innate/cult/blood_spell/stun"));
+        Assert.Contains(Index.ProcsAt("/datum/action/innate/cult/blood_spell"), p => p.Translated == "no");
+        AssertInert(typeof(datum_action_innate_cult_blood_spell), true);
+        AssertInert(typeof(datum_action_innate_cult_blood_spell_stun), true);
         // M3 P3 declared every proc of /obj/machinery/door/airlock (translated or live-partial stubs): it and its procless
         // subtypes are live.
         Assert.Empty(Index.ProcsAt("/obj/machinery/door/airlock/public/glass/incinerator"));
@@ -105,9 +106,9 @@ public class InertMarkTests
         Assert.Equal("live", Index.ByPath["/obj/item/clothing/under/rank/security"].State);
         AssertInert(typeof(obj_item_clothing_under_rank_security), false);
         // A type with one undeclared proc under a live base type: inert.
-        // (the chicken cutlet's, the example until gaps H2 translated it)
-        Assert.Equal(new[] { "Initialize" }, Index.ProcsAt("/obj/item/food/okonomiyaki").Where(p => p.Translated == "no").Select(p => p.Name).Distinct());
-        AssertInert(typeof(obj_item_food_okonomiyaki), true);
+        // (the chicken cutlet's, the example until gaps H2 translated it; the okonomiyaki's until the restaurant; now the cult's unholy water)
+        Assert.Equal(new[] { "Initialize" }, Index.ProcsAt("/obj/item/reagent_containers/cup/beaker/unholywater").Where(p => p.Translated == "no").Select(p => p.Name).Distinct());
+        AssertInert(typeof(obj_item_reagent_containers_cup_beaker_unholywater), true);
         // A data-only datum type under /datum: live, and its class is generated only.
         AssertInert(typeof(datum_bitfield_status_flags), false);
         Assert.True(typeof(datum_bitfield_status_flags).IsDefined(typeof(DmGeneratedOnlyAttribute), false));

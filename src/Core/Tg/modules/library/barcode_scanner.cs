@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (gaps J3, D298): the scanner's item procs; the library's consoles are not ported, so a scan has no computer (a row, interact_with_book). The var blocks are generated.
+// Gaps J3 (D298): the scanner's item procs; with the library's consoles its scans check books in and out of the book management
+// console it is linked to and add them to its inventory. The context tips are live-partial rows. The var blocks are generated.
 
 // tg: code/modules/library/barcode_scanner.dm:6
 public partial class obj_item_barcodescanner : obj_item
@@ -37,9 +38,71 @@ public partial class obj_item_barcodescanner : obj_item
     // tg: code/modules/library/barcode_scanner.dm:48
     public virtual object interact_with_book(obj_item_book target_book = null, mob_living user = null)
     {
-        Dm.Deferred("code/modules/library/barcode_scanner.dm:49", "interact_with_book: checking a book in or out on the library's computer (the library consoles are not ported; the scanner is never linked)");
-        user.balloon_alert(user, I18n.T("not connected to computer!"));
-        return ITEM_INTERACT_BLOCKING;
+        obj_machinery_computer_libraryconsole_bookmanagement linked_computer = computer_ref?.resolve() as obj_machinery_computer_libraryconsole_bookmanagement;
+        if (linked_computer == null)
+        {
+            user.balloon_alert(user, I18n.T("not connected to computer!"));
+            return ITEM_INTERACT_BLOCKING;
+        }
+
+        switch (scan_mode)
+        {
+            case BARCODE_SCANNER_CHECKIN:
+            {
+                DmList checkouts = linked_computer.checkouts;
+                foreach (object checkout_ref in Dm.each(checkouts))
+                {
+                    datum_borrowbook maybe_ours = checkouts[checkout_ref] as datum_borrowbook;
+                    if (!Dm.truthy(target_book.book_data.compare(maybe_ours.book_data)))
+                        continue;
+                    Dm.remove(ref checkouts, checkout_ref);
+                    linked_computer.checkout_update();
+                    balloon_alert(user, I18n.T("checked in"));
+                    playsound(this, Dm.resource("sound/items/barcodebeep.ogg"), 20, FALSE);
+                    return ITEM_INTERACT_SUCCESS;
+                }
+
+                user.balloon_alert(user, I18n.T("isn't checked out!"));
+                return ITEM_INTERACT_BLOCKING;
+            }
+
+            case BARCODE_SCANNER_CHECKOUT:
+            {
+                DmList checkouts = linked_computer.checkouts;
+                foreach (object checkout_ref in Dm.each(checkouts))
+                {
+                    datum_borrowbook maybe_ours = checkouts[checkout_ref] as datum_borrowbook;
+                    if (Dm.truthy(target_book.book_data.compare(maybe_ours.book_data)))
+                    {
+                        user.balloon_alert(user, I18n.T("already checked out!"));
+                        return ITEM_INTERACT_BLOCKING;
+                    }
+                }
+                foreach (object copy_ref in Dm.each(linked_computer.inventory))
+                {
+                    if (!Dm.truthy(target_book.book_data.compare(linked_computer.inventory[copy_ref] as datum_book_info)))
+                        continue;
+                    linked_computer.checking_out_book = target_book.book_data;
+                    balloon_alert(user, I18n.T("set for check out"));
+                    playsound(this, Dm.resource("sound/items/barcodebeep.ogg"), 20, FALSE);
+                    return ITEM_INTERACT_SUCCESS;
+                }
+                user.balloon_alert(user, I18n.T("not in inventory!"));
+                return ITEM_INTERACT_BLOCKING;
+            }
+
+            case BARCODE_SCANNER_INVENTORY:
+            {
+                datum_book_info our_copy = target_book.book_data.return_copy() as datum_book_info;
+                linked_computer.inventory[@ref(our_copy)] = our_copy;
+                linked_computer.inventory_update();
+                balloon_alert(user, I18n.T("added to inventory"));
+                playsound(this, Dm.resource("sound/items/barcodebeep.ogg"), 20, FALSE);
+                return ITEM_INTERACT_SUCCESS;
+            }
+        }
+
+        return NONE;
     }
 
     // tg: code/modules/library/barcode_scanner.dm:97

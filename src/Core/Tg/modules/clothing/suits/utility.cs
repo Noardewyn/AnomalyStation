@@ -10,8 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M7 radiation slice: the radiation hood's and suit's Initialize (their radiation_protected_clothing); the other types of the
-// file (fire, bomb and the other utility suits) are generated. The var blocks are generated (D111). The fishing difficulty
-// (fishing, M10+), the hood's hat stabilizer (a hat worn over the hood, M10+), its clothing dirt (pepper spray and spray-can
+// file (fire, bomb and the other utility suits) are generated. The var blocks are generated (D111). The hood's hat stabilizer (a hat worn over the hood, M10+), its clothing dirt (pepper spray and spray-can
 // tint, chemistry, M8) and the mesh texture the suits put on the bodypart under them (bodypart textures, M10+) are deferred.
 
 // Radiation
@@ -22,7 +21,7 @@ public partial class obj_item_clothing_head_utility_radiation : obj_item_clothin
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/utility.dm:203", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 7) (fishing, M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 7));
         Waiting.NoSleep(AddComponent(typeof(datum_component_hat_stabilizer), Dm.named("loose_hat", TRUE))); // gaps MO1: the component is live
         Waiting.NoSleep(AddElement(typeof(datum_element_radiation_protected_clothing)));
         Dm.Deferred("code/modules/clothing/suits/utility.dm:206", "Initialize: AddComponent(/datum/component/clothing_dirt, \"rad_dirt\"), the visor's pepper spray tint (chemistry, M8)");
@@ -39,7 +38,7 @@ public partial class obj_item_clothing_suit_utility_radiation : obj_item_clothin
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddElement(typeof(datum_element_radiation_protected_clothing)));
-        Dm.Deferred("code/modules/clothing/suits/utility.dm:238", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 7) (fishing, M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 7));
         Dm.Deferred("code/modules/clothing/suits/utility.dm:239", "Initialize: AddElement(/datum/element/equipment_bodypart_texture, BODY_ZONE_CHEST, ...), the mesh texture on the chest (bodypart textures, M10+)");
         return dot;
     }

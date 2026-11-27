@@ -292,11 +292,11 @@ public sealed class Session
     internal uint LastFrameSeq;
     internal ushort LastYaw;
 
-    // Version 98 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
+    // Version 99 also (slice T4b, world half): the last hover whose zone was skipped while a do-after ran for the mob, applied once it has
     // none left (ServerHost.CatchUpLooks); set and cleared only by applied commands and the world, so a replay holds the same.
     internal QueuedCommand? FrozenLook;
 
-    // DEVIATION(DV601): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
+    // DEVIATION(DV687): the world thing the applied hover named when the mob could not reach it (ServerHost.NoteReach, before tg's hover); the
     // screentip router, which tg calls for that hover later in the tick (SSmouse_entered's fire), sends its hints empty and clears this. Null
     // when it was in reach, a screen target, or the mob's clicks are not gated by reach.
     internal Anomaly.Core.Tg.atom HoverOutOfReach;

@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable,
-// make_dryable) translated (gaps package H2, D333); the rest of the file is generated or waits for its package.
+// The whole file: the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable, make_dryable)
+// came with the kitchen (gaps H2, D333); the carbonara's Italian speech with the restaurant. The var blocks are generated.
 
 public partial class obj_item_food_spaghetti_raw : obj_item_food_spaghetti
 {
@@ -53,6 +53,18 @@ public partial class obj_item_food_spaghetti_boiledspaghetti : obj_item_food_spa
     {
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_SCATTER, Dm.named("max_ingredients", 6)));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/spaghetti.dm:262
+public partial class obj_item_food_spaghetti_carbonara : obj_item_food_spaghetti
+{
+    // tg: code/modules/food_and_drinks/food/spaghetti.dm:276
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddElement(typeof(datum_element_love_food_buff), typeof(datum_status_effect_food_speech_italian)));
         return dot;
     }
 }

@@ -108,7 +108,16 @@ L1-L5 (about 130-175 h) is the first version that plays like tg's. The whole is 
 - **L3, the labour camp part** (gaps LC1, 2026-11-16): the gulag teleporter and its console, the item reclaimer, the camp's beacon,
   the prisoner management console and the prison's plate press and produceporter, live with their windows; the labour shuttle
   stands at its dock (shuttle travel). Left in L3: the mining base's machines as mapped.
-- **Still open in L1:** the biome-replacing rock (ruins, L8). The rest of `Lavaland.dmm`'s inert things belong to other packages
+- **L8, the ruins and the ash walkers** (gaps LV6, D355, 2026-11-25): tg's ruin seeding (`mapping/ruins.dm`) runs in SSmapping's
+  init in tg's order: the ruin templates are preloaded from the converted maps (`maps/RandomRuins`, DV635), Lavaland is seeded with
+  `LAVALAND_BUDGET` 60 and its mineral budget, the guaranteed ruins (the hierophant's arena, a blood-drunk miner, the elite
+  tumours) first, and the reserved ruins load after the rivers with their areas' terrain generation; the cave generator keeps
+  their padding. The ruins' own code (`lavalandruin_code/` and the sins', greed's and the ash walkers' `objects_and_mobs/`), the
+  ruin defenders, the step triggers, the firepit, the ATV, the gas miners and the ruins' turfs are live; the ghost roles of
+  `mining_roles.dm` are, but the seed vault's (pod people) and the syndicate base's (antagonist gear, D333). The ash walkers
+  (`antagonists/ashwalker/` and the nest) found their tribe, lay eggs from their offerings, hatch ghosts and remake their dead.
+  The space and ice moon seeding is general but runs with no level to seed (gaps SH1; the ice moon is not loaded).
+- **Still open in L1:** none of L1's own. The rest of `Lavaland.dmm`'s inert things belong to other packages
   (the base's machines, L3; paperwork, conveyors, cameras and hydroponics are inert on Meta too).
 
 ## Questions for the owner

@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The martial gi (syndicate X3b, D316: the sleeping carp kit's uniform, a carp style factor), but its spray can recolouring (the
-// gags_recolorable element is not ported). Gaps CL1 (D333): the highlander's kilt that cannot be taken off and the mech suit (its
-// reskin menu waits for the reskinnable items, not-translated.md 209). The var blocks are generated (D111).
+// gags_recolorable element is not ported). Gaps CL1 (D333): the highlander's kilt that cannot be taken off and the mech suit (with
+// its reskin menu). The var blocks are generated (D111).
 
 // tg: code/modules/clothing/under/costume.dm:94
 public partial class obj_item_clothing_under_costume_kilt_highlander : obj_item_clothing_under_costume_kilt
@@ -31,9 +31,7 @@ public partial class obj_item_clothing_under_costume_mech_suit : obj_item_clothi
     // tg: code/modules/clothing/under/costume.dm:339
     public override async DmTask setup_reskins()
     {
-        // AddComponent(/datum/component/reskinable_item, /datum/atom_skin/mech_suit)
-        Dm.Deferred("code/modules/clothing/under/costume.dm:340", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/mech_suit): the reskin menu (M10+)");
-        await DmTask.CompletedTask;
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_mech_suit));
     }
 }
 

@@ -1,0 +1,15 @@
+anomaly-map 1
+source _maps/templates/fishing_tizira.dmm tg 1d99bd7f
+size 3 3 1
+chunk 32
+default /obj/effect/turf_decal/siding/green | /turf/open/water/beach/tizira | /area/template_noop
+
+[chunk 1 1 1]
+1,3: /obj/effect/turf_decal/siding/green/inner_corner{dir = 1} | /turf/open/water/beach/tizira | /area/template_noop
+2,3: /obj/effect/turf_decal/siding/green{dir = 1} | /turf/open/water/beach/tizira | /area/template_noop
+3,3: /obj/structure/chair/plastic | /obj/item/food/canned/desert_snails{pixel_x = 14; pixel_y = -3} | /obj/effect/turf_decal/siding/green/inner_corner_inv{dir = 8} | /turf/template_noop | /area/template_noop
+1,2: /obj/effect/turf_decal/siding/green{dir = 8} | /turf/open/water/beach/tizira | /area/template_noop
+2,2: /turf/open/water/beach/tizira | /area/template_noop
+3,2: /obj/effect/turf_decal/siding/green{dir = 4} | /turf/open/water/beach/tizira | /area/template_noop
+1,1: /obj/effect/turf_decal/siding/green/inner_corner{dir = 8} | /turf/open/water/beach/tizira | /area/template_noop
+3,1: /obj/effect/turf_decal/siding/green/inner_corner | /turf/open/water/beach/tizira | /area/template_noop

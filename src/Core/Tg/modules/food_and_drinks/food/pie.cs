@@ -9,7 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (syndicate G4b, D316): the banana cream pie that splats (the pie cannon's ammo); the other pies come with the kitchen.
+// The whole file: the banana cream pie that splats (the pie cannon's ammo) came with syndicate G4b (D316), the pies' kitchen links
+// with the kitchen; the plump pie's fey mood with the restaurant.
 // The var blocks are generated (D111).
 
 // tg: code/modules/food_and_drinks/food/pie.dm:61
@@ -70,5 +71,26 @@ public partial class obj_item_food_pieslice_empty : obj_item_food_pieslice
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_FILL, Dm.named("max_ingredients", 8)));
         return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/pie.dm:179
+public partial class obj_item_food_pie_plump_pie : obj_item_food_pie
+{
+    // tg: code/modules/food_and_drinks/food/pie.dm:191
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        bool fey = prob(10);
+        if (fey)
+        {
+            name = "exceptional plump pie";
+            desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump pie!";
+            food_reagents = Dm.list(
+                Dm.kv(typeof(datum_reagent_consumable_nutriment), 11),
+                Dm.kv(typeof(datum_reagent_medicine_omnizine), 5),
+                Dm.kv(typeof(datum_reagent_consumable_nutriment_vitamin), 4)
+            );
+        }
+        return base.Initialize(mapload, __extra);
     }
 }

@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (D304) but the plasma lava (:448-532, Icemoon's and the station's, which Lavaland does not have). Fishing (lava's fish source, its explosion reward) is not in the core version (ROADMAP section 4), and
-// the immerse element (datums/elements/immerse.dm: a vis_contents mask that sinks a standing atom into the liquid) is BYOND
+// The whole file (D304) but the plasma lava (:448-532, Icemoon's and the station's, which Lavaland does not have). Lava is a lazy fishing spot. The
+// immerse element (datums/elements/immerse.dm: a vis_contents mask that sinks a standing atom into the liquid) is BYOND
 // presentation the 3D client draws its own way (DV12, as the emissive and lighting-plane overlays below).
 
 // tg: code/game/turfs/open/lava.dm:7
@@ -28,7 +28,8 @@ public partial class turf_open_lava : turf_open
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // tg: :52-53  if(fish_source_type) add_lazy_fishing(fish_source_type): fishing is not in the core version (ROADMAP section 4)
+        if (Dm.truthy(fish_source_type))
+            add_lazy_fishing(fish_source_type);
         // You can release chrabs and lavaloops and likes in lava, or be an absolute scumbag and drop other fish there too.
         ADD_TRAIT(this, TRAIT_CATCH_AND_RELEASE, INNATE_TRAIT);
         refresh_light();
@@ -160,7 +161,8 @@ public partial class turf_open_lava : turf_open
     // tg: code/game/turfs/open/lava.dm:153
     public override object ex_act(object severity = null, object target = null, params object[] __extra)
     {
-        // tg: :154-155  the fish source's explosion reward: fishing is not in the core version (ROADMAP section 4)
+        if (Dm.truthy(fish_source))
+            ((datum_fish_source)GLOB.preset_fish_sources[fish_source]).spawn_reward_from_explosion(this, severity);
         return FALSE;
     }
 

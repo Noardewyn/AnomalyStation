@@ -35,7 +35,7 @@ public partial class obj_item_food_drug_moon_rock : obj_item_food_drug
     {
         object dot = base.Initialize(mapload, __extra);
         icon_state = (string)pick("moon_rock1", "moon_rock2", "moon_rock3");
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_MOONICORN, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)); // inert until the cell lines (cytology)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_MOONICORN, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5));
         ADD_TRAIT(this, TRAIT_CONTRABAND, INNATE_TRAIT);
         return dot;
     }

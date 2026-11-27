@@ -524,9 +524,9 @@ public partial class obj_item_food_cookie_snickerdoodle : obj_item_food_cookie
     }
 }
 
-// tg: code/modules/food_and_drinks/food/pastries.dm:579
-[DmPath("/obj/item/food/cookie/macaron"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cookie_macaron : obj_item_food_cookie
+// tg: code/modules/food_and_drinks/food/pastries.dm:579 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cookie/macaron")]
+public partial class obj_item_food_cookie_macaron
 {
     // tg: code/modules/food_and_drinks/food/pastries.dm:579
     public obj_item_food_cookie_macaron()
@@ -597,9 +597,9 @@ public partial class obj_item_food_candyheart
     }
 }
 
-// tg: code/modules/food_and_drinks/food/bait.dm:2
-[DmPath("/obj/item/food/bait"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bait : obj_item_food
+// tg: code/modules/food_and_drinks/food/bait.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bait")]
+public partial class obj_item_food_bait
 {
     public string bait_quality = "baic_quality_bait"; // tg: code/modules/food_and_drinks/food/bait.dm:7
     public object rod_overlay_icon_state; // tg: code/modules/food_and_drinks/food/bait.dm:9
@@ -616,7 +616,7 @@ public partial class obj_item_food_bait : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/bait.dm:18
-[DmPath("/obj/item/food/bait/worm"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bait/worm"), DmGeneratedOnly]
 public partial class obj_item_food_bait_worm : obj_item_food_bait
 {
     // tg: code/modules/food_and_drinks/food/bait.dm:18
@@ -642,7 +642,7 @@ public partial class obj_item_food_bait_worm : obj_item_food_bait
 }
 
 // tg: code/modules/food_and_drinks/food/bait.dm:30
-[DmPath("/obj/item/food/bait/worm/premium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bait/worm/premium"), DmGeneratedOnly]
 public partial class obj_item_food_bait_worm_premium : obj_item_food_bait_worm
 {
     // tg: code/modules/food_and_drinks/food/bait.dm:30
@@ -654,9 +654,9 @@ public partial class obj_item_food_bait_worm_premium : obj_item_food_bait_worm
     }
 }
 
-// tg: code/modules/food_and_drinks/food/bait.dm:35
-[DmPath("/obj/item/food/bait/natural"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bait_natural : obj_item_food_bait
+// tg: code/modules/food_and_drinks/food/bait.dm:35 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bait/natural")]
+public partial class obj_item_food_bait_natural
 {
     // tg: code/modules/food_and_drinks/food/bait.dm:35
     public obj_item_food_bait_natural()
@@ -681,7 +681,7 @@ public partial class obj_item_food_bait_natural : obj_item_food_bait
 }
 
 // tg: code/modules/food_and_drinks/food/bait.dm:51
-[DmPath("/obj/item/food/bait/doughball"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bait/doughball"), DmGeneratedOnly]
 public partial class obj_item_food_bait_doughball : obj_item_food_bait
 {
     // tg: code/modules/food_and_drinks/food/bait.dm:51
@@ -706,9 +706,9 @@ public partial class obj_item_food_bait_doughball : obj_item_food_bait
     }
 }
 
-// tg: code/modules/food_and_drinks/food/bait.dm:64
-[DmPath("/obj/item/food/bait/doughball/synthetic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bait_doughball_synthetic : obj_item_food_bait_doughball
+// tg: code/modules/food_and_drinks/food/bait.dm:64 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bait/doughball/synthetic")]
+public partial class obj_item_food_bait_doughball_synthetic
 {
     // tg: code/modules/food_and_drinks/food/bait.dm:64
     public obj_item_food_bait_doughball_synthetic()
@@ -722,7 +722,7 @@ public partial class obj_item_food_bait_doughball_synthetic : obj_item_food_bait
 }
 
 // tg: code/modules/food_and_drinks/food/bait.dm:76
-[DmPath("/obj/item/food/bait/doughball/synthetic/super"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bait/doughball/synthetic/super"), DmGeneratedOnly]
 public partial class obj_item_food_bait_doughball_synthetic_super : obj_item_food_bait_doughball_synthetic
 {
     // tg: code/modules/food_and_drinks/food/bait.dm:76
@@ -735,9 +735,9 @@ public partial class obj_item_food_bait_doughball_synthetic_super : obj_item_foo
     }
 }
 
-// tg: code/modules/food_and_drinks/food/bait.dm:90
-[DmPath("/obj/item/food/bait/doughball/synthetic/unconsumable"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bait_doughball_synthetic_unconsumable : obj_item_food_bait_doughball_synthetic { }
+// tg: code/modules/food_and_drinks/food/bait.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bait/doughball/synthetic/unconsumable")]
+public partial class obj_item_food_bait_doughball_synthetic_unconsumable { }
 
 // tg: code/modules/food_and_drinks/food/bread.dm:4 (the var block of a hand-written class)
 [DmPath("/obj/item/food/bread")]
@@ -1004,9 +1004,9 @@ public partial class obj_item_food_bread_empty : obj_item_food_bread
     }
 }
 
-// tg: code/modules/food_and_drinks/food/lizard.dm:538
-[DmPath("/obj/item/food/bread/root"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bread_root : obj_item_food_bread
+// tg: code/modules/food_and_drinks/food/lizard.dm:538 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bread/root")]
+public partial class obj_item_food_bread_root
 {
     // tg: code/modules/food_and_drinks/food/lizard.dm:538
     public obj_item_food_bread_root()
@@ -1031,7 +1031,7 @@ public partial class obj_item_food_bread_root : obj_item_food_bread
 }
 
 // tg: code/modules/food_and_drinks/food/lizard.dm:554
-[DmPath("/obj/item/food/bread/root/egg"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bread/root/egg"), DmGeneratedOnly]
 public partial class obj_item_food_bread_root_egg : obj_item_food_bread_root
 {
     // tg: code/modules/food_and_drinks/food/lizard.dm:554
@@ -1161,9 +1161,9 @@ public partial class obj_item_food_breadslice_moldy : obj_item_food_breadslice
     }
 }
 
-// tg: code/modules/food_and_drinks/food/bread.dm:90
-[DmPath("/obj/item/food/breadslice/moldy/bacteria"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_breadslice_moldy_bacteria : obj_item_food_breadslice_moldy
+// tg: code/modules/food_and_drinks/food/bread.dm:90 (the var block of a hand-written class)
+[DmPath("/obj/item/food/breadslice/moldy/bacteria")]
+public partial class obj_item_food_breadslice_moldy_bacteria
 {
     // tg: code/modules/food_and_drinks/food/bread.dm:90
     public obj_item_food_breadslice_moldy_bacteria()
@@ -1360,9 +1360,9 @@ public partial class obj_item_food_breadslice_mimana : obj_item_food_breadslice
     }
 }
 
-// tg: code/modules/food_and_drinks/food/bread.dm:332
-[DmPath("/obj/item/food/breadslice/empty"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_breadslice_empty : obj_item_food_breadslice
+// tg: code/modules/food_and_drinks/food/bread.dm:332 (the var block of a hand-written class)
+[DmPath("/obj/item/food/breadslice/empty")]
+public partial class obj_item_food_breadslice_empty
 {
     // tg: code/modules/food_and_drinks/food/bread.dm:332
     public obj_item_food_breadslice_empty()
@@ -1374,9 +1374,9 @@ public partial class obj_item_food_breadslice_empty : obj_item_food_breadslice
     }
 }
 
-// tg: code/modules/food_and_drinks/food/lizard.dm:558
-[DmPath("/obj/item/food/breadslice/root"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_breadslice_root : obj_item_food_breadslice
+// tg: code/modules/food_and_drinks/food/lizard.dm:558 (the var block of a hand-written class)
+[DmPath("/obj/item/food/breadslice/root")]
+public partial class obj_item_food_breadslice_root
 {
     // tg: code/modules/food_and_drinks/food/lizard.dm:558
     public obj_item_food_breadslice_root()
@@ -1399,7 +1399,7 @@ public partial class obj_item_food_breadslice_root : obj_item_food_breadslice
 }
 
 // tg: code/modules/food_and_drinks/food/lizard.dm:572
-[DmPath("/obj/item/food/breadslice/root/egg"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/breadslice/root/egg"), DmGeneratedOnly]
 public partial class obj_item_food_breadslice_root_egg : obj_item_food_breadslice_root
 {
     // tg: code/modules/food_and_drinks/food/lizard.dm:572
@@ -1558,9 +1558,9 @@ public partial class obj_item_food_butterbiscuit : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/bread.dm:481
-[DmPath("/obj/item/food/butterdog"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_butterdog : obj_item_food
+// tg: code/modules/food_and_drinks/food/bread.dm:481 (the var block of a hand-written class)
+[DmPath("/obj/item/food/butterdog")]
+public partial class obj_item_food_butterdog
 {
     // tg: code/modules/food_and_drinks/food/bread.dm:481
     public obj_item_food_butterdog()
@@ -1781,9 +1781,9 @@ public partial class obj_item_food_burger : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/burgers.dm:18
-[DmPath("/obj/item/food/burger/plain"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_burger_plain : obj_item_food_burger
+// tg: code/modules/food_and_drinks/food/burgers.dm:18 (the var block of a hand-written class)
+[DmPath("/obj/item/food/burger/plain")]
+public partial class obj_item_food_burger_plain
 {
     // tg: code/modules/food_and_drinks/food/burgers.dm:18
     public obj_item_food_burger_plain()
@@ -1806,7 +1806,7 @@ public partial class obj_item_food_burger_plain : obj_item_food_burger
 }
 
 // tg: code/modules/food_and_drinks/food/lizard.dm:930
-[DmPath("/obj/item/food/burger/plain/korta"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/burger/plain/korta"), DmGeneratedOnly]
 public partial class obj_item_food_burger_plain_korta : obj_item_food_burger_plain
 {
     // tg: code/modules/food_and_drinks/food/lizard.dm:930
@@ -1829,9 +1829,9 @@ public partial class obj_item_food_burger_plain_korta : obj_item_food_burger_pla
     }
 }
 
-// tg: code/modules/food_and_drinks/food/burgers.dm:45
-[DmPath("/obj/item/food/burger/human"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_burger_human : obj_item_food_burger
+// tg: code/modules/food_and_drinks/food/burgers.dm:45 (the var block of a hand-written class)
+[DmPath("/obj/item/food/burger/human")]
+public partial class obj_item_food_burger_human
 {
     // tg: code/modules/food_and_drinks/food/burgers.dm:45
     public obj_item_food_burger_human()
@@ -2112,9 +2112,9 @@ public partial class obj_item_food_burger_brain : obj_item_food_burger
     }
 }
 
-// tg: code/modules/food_and_drinks/food/burgers.dm:218
-[DmPath("/obj/item/food/burger/ghost"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_burger_ghost : obj_item_food_burger
+// tg: code/modules/food_and_drinks/food/burgers.dm:218 (the var block of a hand-written class)
+[DmPath("/obj/item/food/burger/ghost")]
+public partial class obj_item_food_burger_ghost
 {
     // tg: code/modules/food_and_drinks/food/burgers.dm:218
     public obj_item_food_burger_ghost()
@@ -2449,9 +2449,9 @@ public partial class obj_item_food_burger_jelly_cherry : obj_item_food_burger_je
     }
 }
 
-// tg: code/modules/food_and_drinks/food/burgers.dm:457
-[DmPath("/obj/item/food/burger/superbite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_burger_superbite : obj_item_food_burger
+// tg: code/modules/food_and_drinks/food/burgers.dm:457 (the var block of a hand-written class)
+[DmPath("/obj/item/food/burger/superbite")]
+public partial class obj_item_food_burger_superbite
 {
     // tg: code/modules/food_and_drinks/food/burgers.dm:457
     public obj_item_food_burger_superbite()
@@ -2775,9 +2775,9 @@ public partial class obj_item_food_burger_chicken : obj_item_food_burger
     }
 }
 
-// tg: code/modules/food_and_drinks/food/burgers.dm:654
-[DmPath("/obj/item/food/burger/cheese"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_burger_cheese : obj_item_food_burger
+// tg: code/modules/food_and_drinks/food/burgers.dm:654 (the var block of a hand-written class)
+[DmPath("/obj/item/food/burger/cheese")]
+public partial class obj_item_food_burger_cheese
 {
     // tg: code/modules/food_and_drinks/food/burgers.dm:654
     public obj_item_food_burger_cheese()
@@ -2800,9 +2800,9 @@ public partial class obj_item_food_burger_cheese : obj_item_food_burger
     }
 }
 
-// tg: code/modules/food_and_drinks/food/burgers.dm:674
-[DmPath("/obj/item/food/burger/crazy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_burger_crazy : obj_item_food_burger
+// tg: code/modules/food_and_drinks/food/burgers.dm:674 (the var block of a hand-written class)
+[DmPath("/obj/item/food/burger/crazy")]
+public partial class obj_item_food_burger_crazy
 {
     // tg: code/modules/food_and_drinks/food/burgers.dm:674
     public obj_item_food_burger_crazy()
@@ -4144,9 +4144,9 @@ public partial class obj_item_food_cakeslice_birthday : obj_item_food_cakeslice
     }
 }
 
-// tg: code/modules/food_and_drinks/food/cake.dm:326
-[DmPath("/obj/item/food/cakeslice/birthday/energy"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cakeslice_birthday_energy : obj_item_food_cakeslice_birthday
+// tg: code/modules/food_and_drinks/food/cake.dm:326 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cakeslice/birthday/energy")]
+public partial class obj_item_food_cakeslice_birthday_energy
 {
     // tg: code/modules/food_and_drinks/food/cake.dm:326
     public obj_item_food_cakeslice_birthday_energy()
@@ -4471,9 +4471,9 @@ public partial class obj_item_food_cakeslice_pavlova_nuts : obj_item_food_cakesl
     }
 }
 
-// tg: code/modules/food_and_drinks/food/cake.dm:684
-[DmPath("/obj/item/food/cakeslice/fruit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cakeslice_fruit : obj_item_food_cakeslice
+// tg: code/modules/food_and_drinks/food/cake.dm:684 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cakeslice/fruit")]
+public partial class obj_item_food_cakeslice_fruit
 {
     // tg: code/modules/food_and_drinks/food/cake.dm:684
     public obj_item_food_cakeslice_fruit()
@@ -6603,9 +6603,9 @@ public partial class obj_item_food_egg_green : obj_item_food_egg
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194
-[DmPath("/obj/item/food/egg/green/grub_egg"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_egg_green_grub_egg : obj_item_food_egg_green
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194 (the var block of a hand-written class)
+[DmPath("/obj/item/food/egg/green/grub_egg")]
+public partial class obj_item_food_egg_green_grub_egg
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub.dm:194
     public obj_item_food_egg_green_grub_egg()
@@ -6712,9 +6712,9 @@ public partial class obj_item_food_egg_fertile
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:19
-[DmPath("/obj/item/food/egg/watcher"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_egg_watcher : obj_item_food_egg
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:19 (the var block of a hand-written class)
+[DmPath("/obj/item/food/egg/watcher")]
+public partial class obj_item_food_egg_watcher
 {
     public float steps_travelled = 0; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:26
     public float steps_to_hatch = 600; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:28
@@ -6738,9 +6738,9 @@ public partial class obj_item_food_egg_watcher : obj_item_food_egg
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:2
-[DmPath("/obj/item/food/egg/raptor_egg"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_egg_raptor_egg : obj_item_food_egg
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/food/egg/raptor_egg")]
+public partial class obj_item_food_egg_raptor_egg
 {
     public Type child_color = typeof(datum_raptor_color); // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:8
     public datum_raptor_inheritance inherited_stats; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_egg.dm:10
@@ -7204,9 +7204,9 @@ public partial class obj_item_food_honkdae
     }
 }
 
-// tg: code/modules/food_and_drinks/food/frozen.dm:98
-[DmPath("/obj/item/food/snowcones"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_snowcones : obj_item_food
+// tg: code/modules/food_and_drinks/food/frozen.dm:98 (the var block of a hand-written class)
+[DmPath("/obj/item/food/snowcones")]
+public partial class obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:98
     public obj_item_food_snowcones()
@@ -7233,7 +7233,7 @@ public partial class obj_item_food_snowcones : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:123
-[DmPath("/obj/item/food/snowcones/lime"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/lime"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_lime : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:123
@@ -7255,7 +7255,7 @@ public partial class obj_item_food_snowcones_lime : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:135
-[DmPath("/obj/item/food/snowcones/lemon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/lemon"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_lemon : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:135
@@ -7277,7 +7277,7 @@ public partial class obj_item_food_snowcones_lemon : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:147
-[DmPath("/obj/item/food/snowcones/apple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/apple"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_apple : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:147
@@ -7299,7 +7299,7 @@ public partial class obj_item_food_snowcones_apple : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:159
-[DmPath("/obj/item/food/snowcones/grape"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/grape"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_grape : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:159
@@ -7321,7 +7321,7 @@ public partial class obj_item_food_snowcones_grape : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:171
-[DmPath("/obj/item/food/snowcones/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/orange"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_orange : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:171
@@ -7343,7 +7343,7 @@ public partial class obj_item_food_snowcones_orange : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:183
-[DmPath("/obj/item/food/snowcones/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/blue"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_blue : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:183
@@ -7365,7 +7365,7 @@ public partial class obj_item_food_snowcones_blue : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:195
-[DmPath("/obj/item/food/snowcones/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/red"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_red : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:195
@@ -7387,7 +7387,7 @@ public partial class obj_item_food_snowcones_red : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:207
-[DmPath("/obj/item/food/snowcones/berry"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/berry"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_berry : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:207
@@ -7409,7 +7409,7 @@ public partial class obj_item_food_snowcones_berry : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:219
-[DmPath("/obj/item/food/snowcones/fruitsalad"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/fruitsalad"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_fruitsalad : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:219
@@ -7431,7 +7431,7 @@ public partial class obj_item_food_snowcones_fruitsalad : obj_item_food_snowcone
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:233
-[DmPath("/obj/item/food/snowcones/pineapple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/pineapple"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_pineapple : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:233
@@ -7453,7 +7453,7 @@ public partial class obj_item_food_snowcones_pineapple : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:245
-[DmPath("/obj/item/food/snowcones/mime"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/mime"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_mime : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:245
@@ -7475,7 +7475,7 @@ public partial class obj_item_food_snowcones_mime : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:257
-[DmPath("/obj/item/food/snowcones/clown"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/clown"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_clown : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:257
@@ -7497,7 +7497,7 @@ public partial class obj_item_food_snowcones_clown : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:269
-[DmPath("/obj/item/food/snowcones/soda"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/soda"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_soda : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:269
@@ -7519,7 +7519,7 @@ public partial class obj_item_food_snowcones_soda : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:281
-[DmPath("/obj/item/food/snowcones/spacemountainwind"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/spacemountainwind"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_spacemountainwind : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:281
@@ -7541,7 +7541,7 @@ public partial class obj_item_food_snowcones_spacemountainwind : obj_item_food_s
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:294
-[DmPath("/obj/item/food/snowcones/pwrgame"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/pwrgame"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_pwrgame : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:294
@@ -7563,7 +7563,7 @@ public partial class obj_item_food_snowcones_pwrgame : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:306
-[DmPath("/obj/item/food/snowcones/honey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/honey"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_honey : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:306
@@ -7586,7 +7586,7 @@ public partial class obj_item_food_snowcones_honey : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:319
-[DmPath("/obj/item/food/snowcones/rainbow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/rainbow"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_rainbow : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:319
@@ -7608,7 +7608,7 @@ public partial class obj_item_food_snowcones_rainbow : obj_item_food_snowcones
 }
 
 // tg: code/modules/food_and_drinks/food/lizard.dm:794
-[DmPath("/obj/item/food/snowcones/korta_ice"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/snowcones/korta_ice"), DmGeneratedOnly]
 public partial class obj_item_food_snowcones_korta_ice : obj_item_food_snowcones
 {
     // tg: code/modules/food_and_drinks/food/lizard.dm:794
@@ -7630,9 +7630,9 @@ public partial class obj_item_food_snowcones_korta_ice : obj_item_food_snowcones
     }
 }
 
-// tg: code/modules/food_and_drinks/food/frozen.dm:331
-[DmPath("/obj/item/food/popsicle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_popsicle : obj_item_food
+// tg: code/modules/food_and_drinks/food/frozen.dm:331 (the var block of a hand-written class)
+[DmPath("/obj/item/food/popsicle")]
+public partial class obj_item_food_popsicle
 {
     public string overlay_state = "creamsicle_o"; // tg: code/modules/food_and_drinks/food/frozen.dm:349
     public float bite_states = 4; // tg: code/modules/food_and_drinks/food/frozen.dm:350
@@ -7663,7 +7663,7 @@ public partial class obj_item_food_popsicle : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:385
-[DmPath("/obj/item/food/popsicle/creamsicle_orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/creamsicle_orange"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_creamsicle_orange : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:385
@@ -7684,7 +7684,7 @@ public partial class obj_item_food_popsicle_creamsicle_orange : obj_item_food_po
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:397
-[DmPath("/obj/item/food/popsicle/creamsicle_berry"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/creamsicle_berry"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_creamsicle_berry : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:397
@@ -7706,7 +7706,7 @@ public partial class obj_item_food_popsicle_creamsicle_berry : obj_item_food_pop
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:410
-[DmPath("/obj/item/food/popsicle/jumbo"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/jumbo"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_jumbo : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:410
@@ -7727,7 +7727,7 @@ public partial class obj_item_food_popsicle_jumbo : obj_item_food_popsicle
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:422
-[DmPath("/obj/item/food/popsicle/licorice_creamsicle"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/licorice_creamsicle"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_licorice_creamsicle : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:422
@@ -7749,7 +7749,7 @@ public partial class obj_item_food_popsicle_licorice_creamsicle : obj_item_food_
 }
 
 // tg: code/modules/food_and_drinks/food/frozen.dm:455
-[DmPath("/obj/item/food/popsicle/meatsicle"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/meatsicle"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_meatsicle : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/frozen.dm:455
@@ -7772,7 +7772,7 @@ public partial class obj_item_food_popsicle_meatsicle : obj_item_food_popsicle
 }
 
 // tg: code/modules/food_and_drinks/food/martian.dm:1210
-[DmPath("/obj/item/food/popsicle/pineapple_pop"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/pineapple_pop"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_pineapple_pop : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:1210
@@ -7795,7 +7795,7 @@ public partial class obj_item_food_popsicle_pineapple_pop : obj_item_food_popsic
 }
 
 // tg: code/modules/food_and_drinks/food/martian.dm:1224
-[DmPath("/obj/item/food/popsicle/sea_salt"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/sea_salt"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_sea_salt : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:1224
@@ -7818,7 +7818,7 @@ public partial class obj_item_food_popsicle_sea_salt : obj_item_food_popsicle
 }
 
 // tg: code/modules/food_and_drinks/food/martian.dm:1240
-[DmPath("/obj/item/food/popsicle/topsicle"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/topsicle"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_topsicle : obj_item_food_popsicle
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:1240
@@ -7841,7 +7841,7 @@ public partial class obj_item_food_popsicle_topsicle : obj_item_food_popsicle
 }
 
 // tg: code/modules/food_and_drinks/food/martian.dm:1253
-[DmPath("/obj/item/food/popsicle/topsicle/banana"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/topsicle/banana"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_topsicle_banana : obj_item_food_popsicle_topsicle
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:1253
@@ -7862,7 +7862,7 @@ public partial class obj_item_food_popsicle_topsicle_banana : obj_item_food_pops
 }
 
 // tg: code/modules/food_and_drinks/food/martian.dm:1264
-[DmPath("/obj/item/food/popsicle/topsicle/pineapple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/popsicle/topsicle/pineapple"), DmGeneratedOnly]
 public partial class obj_item_food_popsicle_topsicle_pineapple : obj_item_food_popsicle_topsicle
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:1264
@@ -8118,9 +8118,9 @@ public partial class obj_item_food_liver_pate : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/lizard.dm:131
-[DmPath("/obj/item/food/moonfish_eggs"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_moonfish_eggs : obj_item_food
+// tg: code/modules/food_and_drinks/food/lizard.dm:131 (the var block of a hand-written class)
+[DmPath("/obj/item/food/moonfish_eggs")]
+public partial class obj_item_food_moonfish_eggs
 {
     // tg: code/modules/food_and_drinks/food/lizard.dm:131
     public obj_item_food_moonfish_eggs()
@@ -9432,9 +9432,9 @@ public partial class obj_item_food_spaghetti_pad_thai : obj_item_food_spaghetti
     }
 }
 
-// tg: code/modules/food_and_drinks/food/spaghetti.dm:263
-[DmPath("/obj/item/food/spaghetti/carbonara"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_spaghetti_carbonara : obj_item_food_spaghetti
+// tg: code/modules/food_and_drinks/food/spaghetti.dm:263 (the var block of a hand-written class)
+[DmPath("/obj/item/food/spaghetti/carbonara")]
+public partial class obj_item_food_spaghetti_carbonara
 {
     // tg: code/modules/food_and_drinks/food/spaghetti.dm:263
     public obj_item_food_spaghetti_carbonara()
@@ -10880,9 +10880,9 @@ public partial class obj_item_food_canned_pine_nuts : obj_item_food_canned
     }
 }
 
-// tg: code/modules/food_and_drinks/food/packaged.dm:98
-[DmPath("/obj/item/food/canned/envirochow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_canned_envirochow : obj_item_food_canned
+// tg: code/modules/food_and_drinks/food/packaged.dm:98 (the var block of a hand-written class)
+[DmPath("/obj/item/food/canned/envirochow")]
+public partial class obj_item_food_canned_envirochow
 {
     // tg: code/modules/food_and_drinks/food/packaged.dm:98
     public obj_item_food_canned_envirochow()
@@ -10905,9 +10905,9 @@ public partial class obj_item_food_canned_envirochow : obj_item_food_canned
     }
 }
 
-// tg: code/modules/food_and_drinks/food/packaged.dm:153
-[DmPath("/obj/item/food/canned/squid_ink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_canned_squid_ink : obj_item_food_canned
+// tg: code/modules/food_and_drinks/food/packaged.dm:153 (the var block of a hand-written class)
+[DmPath("/obj/item/food/canned/squid_ink")]
+public partial class obj_item_food_canned_squid_ink
 {
     // tg: code/modules/food_and_drinks/food/packaged.dm:153
     public obj_item_food_canned_squid_ink()
@@ -11381,9 +11381,9 @@ public partial class obj_item_food_salad_mediterranean_fried_rice : obj_item_foo
     }
 }
 
-// tg: code/modules/food_and_drinks/food/martian.dm:327
-[DmPath("/obj/item/food/salad/egg_fried_rice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_salad_egg_fried_rice : obj_item_food_salad
+// tg: code/modules/food_and_drinks/food/martian.dm:327 (the var block of a hand-written class)
+[DmPath("/obj/item/food/salad/egg_fried_rice")]
+public partial class obj_item_food_salad_egg_fried_rice
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:327
     public obj_item_food_salad_egg_fried_rice()
@@ -11406,9 +11406,9 @@ public partial class obj_item_food_salad_egg_fried_rice : obj_item_food_salad
     }
 }
 
-// tg: code/modules/food_and_drinks/food/martian.dm:345
-[DmPath("/obj/item/food/salad/bibimbap"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_salad_bibimbap : obj_item_food_salad
+// tg: code/modules/food_and_drinks/food/martian.dm:345 (the var block of a hand-written class)
+[DmPath("/obj/item/food/salad/bibimbap")]
+public partial class obj_item_food_salad_bibimbap
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:345
     public obj_item_food_salad_bibimbap()
@@ -11510,9 +11510,9 @@ public partial class obj_item_food_salad_martian_fried_noodles : obj_item_food_s
     }
 }
 
-// tg: code/modules/food_and_drinks/food/martian.dm:415
-[DmPath("/obj/item/food/salad/simple_fried_noodles"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_salad_simple_fried_noodles : obj_item_food_salad
+// tg: code/modules/food_and_drinks/food/martian.dm:415 (the var block of a hand-written class)
+[DmPath("/obj/item/food/salad/simple_fried_noodles")]
+public partial class obj_item_food_salad_simple_fried_noodles
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:415
     public obj_item_food_salad_simple_fried_noodles()
@@ -12378,9 +12378,9 @@ public partial class obj_item_food_salad_antipasto_salad : obj_item_food_salad
     }
 }
 
-// tg: code/modules/food_and_drinks/food/soup.dm:2
-[DmPath("/obj/item/food/bowled"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bowled : obj_item_food
+// tg: code/modules/food_and_drinks/food/soup.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bowled")]
+public partial class obj_item_food_bowled
 {
     // tg: code/modules/food_and_drinks/food/soup.dm:2
     public obj_item_food_bowled()
@@ -12403,7 +12403,7 @@ public partial class obj_item_food_bowled : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/martian.dm:244
-[DmPath("/obj/item/food/bowled/hua_mulan_congee"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bowled/hua_mulan_congee"), DmGeneratedOnly]
 public partial class obj_item_food_bowled_hua_mulan_congee : obj_item_food_bowled
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:244
@@ -12430,7 +12430,7 @@ public partial class obj_item_food_bowled_hua_mulan_congee : obj_item_food_bowle
 }
 
 // tg: code/modules/food_and_drinks/food/moth.dm:460
-[DmPath("/obj/item/food/bowled/fried_eggplant_polenta"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bowled/fried_eggplant_polenta"), DmGeneratedOnly]
 public partial class obj_item_food_bowled_fried_eggplant_polenta : obj_item_food_bowled
 {
     // tg: code/modules/food_and_drinks/food/moth.dm:460
@@ -12455,9 +12455,9 @@ public partial class obj_item_food_bowled_fried_eggplant_polenta : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/soup.dm:15
-[DmPath("/obj/item/food/bowled/wish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bowled_wish : obj_item_food_bowled
+// tg: code/modules/food_and_drinks/food/soup.dm:15 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bowled/wish")]
+public partial class obj_item_food_bowled_wish
 {
     // tg: code/modules/food_and_drinks/food/soup.dm:15
     public obj_item_food_bowled_wish()
@@ -12478,7 +12478,7 @@ public partial class obj_item_food_bowled_wish : obj_item_food_bowled
 }
 
 // tg: code/modules/food_and_drinks/food/soup.dm:30
-[DmPath("/obj/item/food/bowled/mammi"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bowled/mammi"), DmGeneratedOnly]
 public partial class obj_item_food_bowled_mammi : obj_item_food_bowled
 {
     // tg: code/modules/food_and_drinks/food/soup.dm:30
@@ -12500,7 +12500,7 @@ public partial class obj_item_food_bowled_mammi : obj_item_food_bowled
 }
 
 // tg: code/modules/food_and_drinks/food/soup.dm:41
-[DmPath("/obj/item/food/bowled/spacylibertyduff"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bowled/spacylibertyduff"), DmGeneratedOnly]
 public partial class obj_item_food_bowled_spacylibertyduff : obj_item_food_bowled
 {
     // tg: code/modules/food_and_drinks/food/soup.dm:41
@@ -12525,7 +12525,7 @@ public partial class obj_item_food_bowled_spacylibertyduff : obj_item_food_bowle
 }
 
 // tg: code/modules/food_and_drinks/food/soup.dm:57
-[DmPath("/obj/item/food/bowled/amanitajelly"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/bowled/amanitajelly"), DmGeneratedOnly]
 public partial class obj_item_food_bowled_amanitajelly : obj_item_food_bowled
 {
     // tg: code/modules/food_and_drinks/food/soup.dm:57
@@ -12755,9 +12755,9 @@ public partial class obj_item_food_takoyaki_taco : obj_item_food_takoyaki
     }
 }
 
-// tg: code/modules/food_and_drinks/food/martian.dm:612
-[DmPath("/obj/item/food/okonomiyaki"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_okonomiyaki : obj_item_food
+// tg: code/modules/food_and_drinks/food/martian.dm:612 (the var block of a hand-written class)
+[DmPath("/obj/item/food/okonomiyaki")]
+public partial class obj_item_food_okonomiyaki
 {
     // tg: code/modules/food_and_drinks/food/martian.dm:612
     public obj_item_food_okonomiyaki()
@@ -16177,9 +16177,9 @@ public partial class obj_item_food_vegetarian_chimichanga : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/mexican.dm:254
-[DmPath("/obj/item/food/hard_taco_shell"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_hard_taco_shell : obj_item_food
+// tg: code/modules/food_and_drinks/food/mexican.dm:254 (the var block of a hand-written class)
+[DmPath("/obj/item/food/hard_taco_shell")]
+public partial class obj_item_food_hard_taco_shell
 {
     // tg: code/modules/food_and_drinks/food/mexican.dm:254
     public obj_item_food_hard_taco_shell()
@@ -16203,7 +16203,7 @@ public partial class obj_item_food_hard_taco_shell : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/mexican.dm:270
-[DmPath("/obj/item/food/hard_taco_shell/empty"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/hard_taco_shell/empty"), DmGeneratedOnly]
 public partial class obj_item_food_hard_taco_shell_empty : obj_item_food_hard_taco_shell
 {
     // tg: code/modules/food_and_drinks/food/mexican.dm:270
@@ -16354,9 +16354,9 @@ public partial class obj_item_food_pineapple_salsa : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:4
-[DmPath("/obj/item/food/watermelonslice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_watermelonslice : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/food/watermelonslice")]
+public partial class obj_item_food_watermelonslice
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:4
     public obj_item_food_watermelonslice()
@@ -16379,9 +16379,9 @@ public partial class obj_item_food_watermelonslice : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:22
-[DmPath("/obj/item/food/watermelonmush"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_watermelonmush : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/item/food/watermelonmush")]
+public partial class obj_item_food_watermelonmush
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:22
     public obj_item_food_watermelonmush()
@@ -16404,9 +16404,9 @@ public partial class obj_item_food_watermelonmush : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:40
-[DmPath("/obj/item/food/holymelonslice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_holymelonslice : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/item/food/holymelonslice")]
+public partial class obj_item_food_holymelonslice
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:40
     public obj_item_food_holymelonslice()
@@ -16429,9 +16429,9 @@ public partial class obj_item_food_holymelonslice : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:58
-[DmPath("/obj/item/food/holymelonmush"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_holymelonmush : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:58 (the var block of a hand-written class)
+[DmPath("/obj/item/food/holymelonmush")]
+public partial class obj_item_food_holymelonmush
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:58
     public obj_item_food_holymelonmush()
@@ -16454,9 +16454,9 @@ public partial class obj_item_food_holymelonmush : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:76
-[DmPath("/obj/item/food/barrelmelonslice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_barrelmelonslice : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:76 (the var block of a hand-written class)
+[DmPath("/obj/item/food/barrelmelonslice")]
+public partial class obj_item_food_barrelmelonslice
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:76
     public obj_item_food_barrelmelonslice()
@@ -16479,9 +16479,9 @@ public partial class obj_item_food_barrelmelonslice : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:94
-[DmPath("/obj/item/food/barrelmelonmush"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_barrelmelonmush : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:94 (the var block of a hand-written class)
+[DmPath("/obj/item/food/barrelmelonmush")]
+public partial class obj_item_food_barrelmelonmush
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:94
     public obj_item_food_barrelmelonmush()
@@ -16504,9 +16504,9 @@ public partial class obj_item_food_barrelmelonmush : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:112
-[DmPath("/obj/item/food/appleslice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_appleslice : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:112 (the var block of a hand-written class)
+[DmPath("/obj/item/food/appleslice")]
+public partial class obj_item_food_appleslice
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:112
     public obj_item_food_appleslice()
@@ -17007,9 +17007,9 @@ public partial class obj_item_food_onionrings : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:447
-[DmPath("/obj/item/food/pineappleslice"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_pineappleslice : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:447 (the var block of a hand-written class)
+[DmPath("/obj/item/food/pineappleslice")]
+public partial class obj_item_food_pineappleslice
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:447
     public obj_item_food_pineappleslice()
@@ -17200,9 +17200,9 @@ public partial class obj_item_food_stuffed_cabbage : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:545
-[DmPath("/obj/item/food/seaweedsheet"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_seaweedsheet : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:545 (the var block of a hand-written class)
+[DmPath("/obj/item/food/seaweedsheet")]
+public partial class obj_item_food_seaweedsheet
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:545
     public obj_item_food_seaweedsheet()
@@ -17224,7 +17224,7 @@ public partial class obj_item_food_seaweedsheet : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/misc.dm:561
-[DmPath("/obj/item/food/seaweedsheet/saltcane"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/seaweedsheet/saltcane"), DmGeneratedOnly]
 public partial class obj_item_food_seaweedsheet_saltcane : obj_item_food_seaweedsheet
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:561
@@ -17271,9 +17271,9 @@ public partial class obj_item_food_granola_bar : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:588
-[DmPath("/obj/item/food/onigiri"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_onigiri : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:588 (the var block of a hand-written class)
+[DmPath("/obj/item/food/onigiri")]
+public partial class obj_item_food_onigiri
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:588
     public obj_item_food_onigiri()
@@ -17297,7 +17297,7 @@ public partial class obj_item_food_onigiri : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/misc.dm:607
-[DmPath("/obj/item/food/onigiri/empty"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/onigiri/empty"), DmGeneratedOnly]
 public partial class obj_item_food_onigiri_empty : obj_item_food_onigiri
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:607
@@ -17342,9 +17342,9 @@ public partial class obj_item_food_pacoca : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:629
-[DmPath("/obj/item/food/pickle"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_pickle : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:629 (the var block of a hand-written class)
+[DmPath("/obj/item/food/pickle")]
+public partial class obj_item_food_pickle
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:629
     public obj_item_food_pickle()
@@ -17513,9 +17513,9 @@ public partial class obj_item_food_moussaka_slice : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:745
-[DmPath("/obj/item/food/candied_pineapple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_candied_pineapple : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:745 (the var block of a hand-written class)
+[DmPath("/obj/item/food/candied_pineapple")]
+public partial class obj_item_food_candied_pineapple
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:745
     public obj_item_food_candied_pineapple()
@@ -17686,9 +17686,9 @@ public partial class obj_item_food_vegetarian_gyro : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/misc.dm:853
-[DmPath("/obj/item/food/ink_sac"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_ink_sac : obj_item_food
+// tg: code/modules/food_and_drinks/food/misc.dm:853 (the var block of a hand-written class)
+[DmPath("/obj/item/food/ink_sac")]
+public partial class obj_item_food_ink_sac
 {
     // tg: code/modules/food_and_drinks/food/misc.dm:853
     public obj_item_food_ink_sac()
@@ -19388,9 +19388,9 @@ public partial class obj_item_food_bubblegum_happiness : obj_item_food_bubblegum
     }
 }
 
-// tg: code/modules/food_and_drinks/food/sweets.dm:233
-[DmPath("/obj/item/food/bubblegum/bubblegum"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_bubblegum_bubblegum : obj_item_food_bubblegum
+// tg: code/modules/food_and_drinks/food/sweets.dm:233 (the var block of a hand-written class)
+[DmPath("/obj/item/food/bubblegum/bubblegum")]
+public partial class obj_item_food_bubblegum_bubblegum
 {
     // tg: code/modules/food_and_drinks/food/sweets.dm:233
     public obj_item_food_bubblegum_bubblegum()
@@ -19789,9 +19789,9 @@ public partial class obj_item_food_ready_donk_country_chicken : obj_item_food_re
     }
 }
 
-// tg: code/modules/food_and_drinks/food/packaged.dm:360
-[DmPath("/obj/item/food/rationpack"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_rationpack : obj_item_food
+// tg: code/modules/food_and_drinks/food/packaged.dm:360 (the var block of a hand-written class)
+[DmPath("/obj/item/food/rationpack")]
+public partial class obj_item_food_rationpack
 {
     // tg: code/modules/food_and_drinks/food/packaged.dm:360
     public obj_item_food_rationpack()
@@ -19960,9 +19960,9 @@ public partial class obj_item_food_muffin_berry : obj_item_food_muffin
     }
 }
 
-// tg: code/modules/food_and_drinks/food/pastries.dm:29
-[DmPath("/obj/item/food/muffin/booberry"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_muffin_booberry : obj_item_food_muffin
+// tg: code/modules/food_and_drinks/food/pastries.dm:29 (the var block of a hand-written class)
+[DmPath("/obj/item/food/muffin/booberry")]
+public partial class obj_item_food_muffin_booberry
 {
     // tg: code/modules/food_and_drinks/food/pastries.dm:29
     public obj_item_food_muffin_booberry()
@@ -19983,9 +19983,9 @@ public partial class obj_item_food_muffin_booberry : obj_item_food_muffin
     }
 }
 
-// tg: code/modules/food_and_drinks/food/pastries.dm:42
-[DmPath("/obj/item/food/muffin/moffin"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_muffin_moffin : obj_item_food_muffin
+// tg: code/modules/food_and_drinks/food/pastries.dm:42 (the var block of a hand-written class)
+[DmPath("/obj/item/food/muffin/moffin")]
+public partial class obj_item_food_muffin_moffin
 {
     // tg: code/modules/food_and_drinks/food/pastries.dm:42
     public obj_item_food_muffin_moffin()
@@ -20104,9 +20104,9 @@ public partial class obj_item_food_rofflewaffles
     }
 }
 
-// tg: code/modules/food_and_drinks/food/pastries.dm:153
-[DmPath("/obj/item/food/fortunecookie"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_fortunecookie : obj_item_food
+// tg: code/modules/food_and_drinks/food/pastries.dm:153 (the var block of a hand-written class)
+[DmPath("/obj/item/food/fortunecookie")]
+public partial class obj_item_food_fortunecookie
 {
     // tg: code/modules/food_and_drinks/food/pastries.dm:153
     public obj_item_food_fortunecookie()
@@ -20179,9 +20179,9 @@ public partial class obj_item_food_poppypretzel : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/pastries.dm:253
-[DmPath("/obj/item/food/plumphelmetbiscuit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_plumphelmetbiscuit : obj_item_food
+// tg: code/modules/food_and_drinks/food/pastries.dm:253 (the var block of a hand-written class)
+[DmPath("/obj/item/food/plumphelmetbiscuit")]
+public partial class obj_item_food_plumphelmetbiscuit
 {
     // tg: code/modules/food_and_drinks/food/pastries.dm:253
     public obj_item_food_plumphelmetbiscuit()
@@ -20874,9 +20874,9 @@ public partial class obj_item_food_pie_amanita_pie : obj_item_food_pie
     }
 }
 
-// tg: code/modules/food_and_drinks/food/pie.dm:180
-[DmPath("/obj/item/food/pie/plump_pie"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_pie_plump_pie : obj_item_food_pie
+// tg: code/modules/food_and_drinks/food/pie.dm:180 (the var block of a hand-written class)
+[DmPath("/obj/item/food/pie/plump_pie")]
+public partial class obj_item_food_pie_plump_pie
 {
     // tg: code/modules/food_and_drinks/food/pie.dm:180
     public obj_item_food_pie_plump_pie()
@@ -22056,9 +22056,9 @@ public partial class obj_item_food_sandwich_toast_sandwich : obj_item_food_sandw
     }
 }
 
-// tg: code/modules/food_and_drinks/food/sandwichtoast.dm:262
-[DmPath("/obj/item/food/sandwich/death"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_sandwich_death : obj_item_food_sandwich
+// tg: code/modules/food_and_drinks/food/sandwichtoast.dm:262 (the var block of a hand-written class)
+[DmPath("/obj/item/food/sandwich/death")]
+public partial class obj_item_food_sandwich_death
 {
     // tg: code/modules/food_and_drinks/food/sandwichtoast.dm:262
     public obj_item_food_sandwich_death()
@@ -22318,9 +22318,9 @@ public partial class obj_item_food_candy : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:23
-[DmPath("/obj/item/food/candy/bronx"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_candy_bronx : obj_item_food_candy
+// tg: code/modules/food_and_drinks/food/snacks.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/item/food/candy/bronx")]
+public partial class obj_item_food_candy_bronx
 {
     public float revelation = 0; // tg: code/modules/food_and_drinks/food/snacks.dm:39
 
@@ -22396,9 +22396,9 @@ public partial class obj_item_food_sosjerky_healthy : obj_item_food_sosjerky
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:88
-[DmPath("/obj/item/food/chips"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_chips : obj_item_food
+// tg: code/modules/food_and_drinks/food/snacks.dm:88 (the var block of a hand-written class)
+[DmPath("/obj/item/food/chips")]
+public partial class obj_item_food_chips
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:88
     public obj_item_food_chips()
@@ -22425,7 +22425,7 @@ public partial class obj_item_food_chips : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:110
-[DmPath("/obj/item/food/chips/shrimp"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/chips/shrimp"), DmGeneratedOnly]
 public partial class obj_item_food_chips_shrimp : obj_item_food_chips
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:110
@@ -22667,9 +22667,9 @@ public partial class obj_item_food_nutrient_bar : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:243
-[DmPath("/obj/item/food/peanuts"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_peanuts : obj_item_food
+// tg: code/modules/food_and_drinks/food/snacks.dm:243 (the var block of a hand-written class)
+[DmPath("/obj/item/food/peanuts")]
+public partial class obj_item_food_peanuts
 {
     public float safe_for_consumption = 1; // tg: code/modules/food_and_drinks/food/snacks.dm:254
 
@@ -22697,7 +22697,7 @@ public partial class obj_item_food_peanuts : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:260
-[DmPath("/obj/item/food/peanuts/salted"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/peanuts/salted"), DmGeneratedOnly]
 public partial class obj_item_food_peanuts_salted : obj_item_food_peanuts
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:260
@@ -22717,7 +22717,7 @@ public partial class obj_item_food_peanuts_salted : obj_item_food_peanuts
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:269
-[DmPath("/obj/item/food/peanuts/wasabi"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/peanuts/wasabi"), DmGeneratedOnly]
 public partial class obj_item_food_peanuts_wasabi : obj_item_food_peanuts
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:269
@@ -22737,7 +22737,7 @@ public partial class obj_item_food_peanuts_wasabi : obj_item_food_peanuts
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:278
-[DmPath("/obj/item/food/peanuts/honey_roasted"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/peanuts/honey_roasted"), DmGeneratedOnly]
 public partial class obj_item_food_peanuts_honey_roasted : obj_item_food_peanuts
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:278
@@ -22757,7 +22757,7 @@ public partial class obj_item_food_peanuts_honey_roasted : obj_item_food_peanuts
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:287
-[DmPath("/obj/item/food/peanuts/barbecue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/peanuts/barbecue"), DmGeneratedOnly]
 public partial class obj_item_food_peanuts_barbecue : obj_item_food_peanuts
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:287
@@ -22777,7 +22777,7 @@ public partial class obj_item_food_peanuts_barbecue : obj_item_food_peanuts
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:296
-[DmPath("/obj/item/food/peanuts/ban_appeal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/peanuts/ban_appeal"), DmGeneratedOnly]
 public partial class obj_item_food_peanuts_ban_appeal : obj_item_food_peanuts
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:296
@@ -22797,9 +22797,9 @@ public partial class obj_item_food_peanuts_ban_appeal : obj_item_food_peanuts
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:306
-[DmPath("/obj/item/food/peanuts/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_peanuts_random : obj_item_food_peanuts
+// tg: code/modules/food_and_drinks/food/snacks.dm:306 (the var block of a hand-written class)
+[DmPath("/obj/item/food/peanuts/random")]
+public partial class obj_item_food_peanuts_random
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:306
     public obj_item_food_peanuts_random()
@@ -22811,9 +22811,9 @@ public partial class obj_item_food_peanuts_random : obj_item_food_peanuts
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:335
-[DmPath("/obj/item/food/cnds"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cnds : obj_item_food
+// tg: code/modules/food_and_drinks/food/snacks.dm:335 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cnds")]
+public partial class obj_item_food_cnds
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:335
     public obj_item_food_cnds()
@@ -22838,7 +22838,7 @@ public partial class obj_item_food_cnds : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:354
-[DmPath("/obj/item/food/cnds/caramel"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cnds/caramel"), DmGeneratedOnly]
 public partial class obj_item_food_cnds_caramel : obj_item_food_cnds
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:354
@@ -22858,7 +22858,7 @@ public partial class obj_item_food_cnds_caramel : obj_item_food_cnds
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:364
-[DmPath("/obj/item/food/cnds/pretzel"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cnds/pretzel"), DmGeneratedOnly]
 public partial class obj_item_food_cnds_pretzel : obj_item_food_cnds
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:364
@@ -22879,7 +22879,7 @@ public partial class obj_item_food_cnds_pretzel : obj_item_food_cnds
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:375
-[DmPath("/obj/item/food/cnds/peanut_butter"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cnds/peanut_butter"), DmGeneratedOnly]
 public partial class obj_item_food_cnds_peanut_butter : obj_item_food_cnds
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:375
@@ -22899,7 +22899,7 @@ public partial class obj_item_food_cnds_peanut_butter : obj_item_food_cnds
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:385
-[DmPath("/obj/item/food/cnds/banana_honk"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cnds/banana_honk"), DmGeneratedOnly]
 public partial class obj_item_food_cnds_banana_honk : obj_item_food_cnds
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:385
@@ -22918,9 +22918,9 @@ public partial class obj_item_food_cnds_banana_honk : obj_item_food_cnds
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:395
-[DmPath("/obj/item/food/cnds/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cnds_random : obj_item_food_cnds
+// tg: code/modules/food_and_drinks/food/snacks.dm:395 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cnds/random")]
+public partial class obj_item_food_cnds_random
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:395
     public obj_item_food_cnds_random()
@@ -22930,9 +22930,9 @@ public partial class obj_item_food_cnds_random : obj_item_food_cnds
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:411
-[DmPath("/obj/item/food/pistachios"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_pistachios : obj_item_food
+// tg: code/modules/food_and_drinks/food/snacks.dm:411 (the var block of a hand-written class)
+[DmPath("/obj/item/food/pistachios")]
+public partial class obj_item_food_pistachios
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:411
     public obj_item_food_pistachios()
@@ -23009,9 +23009,9 @@ public partial class obj_item_food_semki_healthy : obj_item_food_semki
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:461
-[DmPath("/obj/item/food/cornchips"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cornchips : obj_item_food
+// tg: code/modules/food_and_drinks/food/snacks.dm:461 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cornchips")]
+public partial class obj_item_food_cornchips
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:461
     public obj_item_food_cornchips()
@@ -23038,7 +23038,7 @@ public partial class obj_item_food_cornchips : obj_item_food
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:482
-[DmPath("/obj/item/food/cornchips/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cornchips/blue"), DmGeneratedOnly]
 public partial class obj_item_food_cornchips_blue : obj_item_food_cornchips
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:482
@@ -23060,7 +23060,7 @@ public partial class obj_item_food_cornchips_blue : obj_item_food_cornchips
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:496
-[DmPath("/obj/item/food/cornchips/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cornchips/green"), DmGeneratedOnly]
 public partial class obj_item_food_cornchips_green : obj_item_food_cornchips
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:496
@@ -23082,7 +23082,7 @@ public partial class obj_item_food_cornchips_green : obj_item_food_cornchips
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:510
-[DmPath("/obj/item/food/cornchips/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cornchips/red"), DmGeneratedOnly]
 public partial class obj_item_food_cornchips_red : obj_item_food_cornchips
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:510
@@ -23104,7 +23104,7 @@ public partial class obj_item_food_cornchips_red : obj_item_food_cornchips
 }
 
 // tg: code/modules/food_and_drinks/food/snacks.dm:524
-[DmPath("/obj/item/food/cornchips/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/food/cornchips/purple"), DmGeneratedOnly]
 public partial class obj_item_food_cornchips_purple : obj_item_food_cornchips
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:524
@@ -23125,9 +23125,9 @@ public partial class obj_item_food_cornchips_purple : obj_item_food_cornchips
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:538
-[DmPath("/obj/item/food/cornchips/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cornchips_random : obj_item_food_cornchips
+// tg: code/modules/food_and_drinks/food/snacks.dm:538 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cornchips/random")]
+public partial class obj_item_food_cornchips_random
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:538
     public obj_item_food_cornchips_random()
@@ -23137,9 +23137,9 @@ public partial class obj_item_food_cornchips_random : obj_item_food_cornchips
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:558
-[DmPath("/obj/item/food/hot_shots"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_hot_shots : obj_item_food
+// tg: code/modules/food_and_drinks/food/snacks.dm:558 (the var block of a hand-written class)
+[DmPath("/obj/item/food/hot_shots")]
+public partial class obj_item_food_hot_shots
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:558
     public obj_item_food_hot_shots()
@@ -23279,9 +23279,9 @@ public partial class obj_item_food_sticko_yuyake : obj_item_food_sticko
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:641
-[DmPath("/obj/item/food/sticko/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_sticko_random : obj_item_food_sticko
+// tg: code/modules/food_and_drinks/food/snacks.dm:641 (the var block of a hand-written class)
+[DmPath("/obj/item/food/sticko/random")]
+public partial class obj_item_food_sticko_random
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:641
     public obj_item_food_sticko_random()
@@ -23398,9 +23398,9 @@ public partial class obj_item_food_shok_roks_lanternfruit : obj_item_food_shok_r
     }
 }
 
-// tg: code/modules/food_and_drinks/food/snacks.dm:697
-[DmPath("/obj/item/food/shok_roks/random"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_shok_roks_random : obj_item_food_shok_roks
+// tg: code/modules/food_and_drinks/food/snacks.dm:697 (the var block of a hand-written class)
+[DmPath("/obj/item/food/shok_roks/random")]
+public partial class obj_item_food_shok_roks_random
 {
     // tg: code/modules/food_and_drinks/food/snacks.dm:697
     public obj_item_food_shok_roks_random()
@@ -23813,9 +23813,9 @@ public partial class obj_item_food_lollipop_cyborg : obj_item_food_lollipop
     }
 }
 
-// tg: code/modules/food_and_drinks/food/sweets.dm:333
-[DmPath("/obj/item/food/spiderlollipop"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_spiderlollipop : obj_item_food
+// tg: code/modules/food_and_drinks/food/sweets.dm:333 (the var block of a hand-written class)
+[DmPath("/obj/item/food/spiderlollipop")]
+public partial class obj_item_food_spiderlollipop
 {
     // tg: code/modules/food_and_drinks/food/sweets.dm:333
     public obj_item_food_spiderlollipop()
@@ -23839,9 +23839,9 @@ public partial class obj_item_food_spiderlollipop : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/sweets.dm:355
-[DmPath("/obj/item/food/swirl_lollipop"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_swirl_lollipop : obj_item_food
+// tg: code/modules/food_and_drinks/food/sweets.dm:355 (the var block of a hand-written class)
+[DmPath("/obj/item/food/swirl_lollipop")]
+public partial class obj_item_food_swirl_lollipop
 {
     // tg: code/modules/food_and_drinks/food/sweets.dm:355
     public obj_item_food_swirl_lollipop()
@@ -24062,9 +24062,9 @@ public partial class obj_item_food_loaded_baked_potato : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/vegetables.dm:106
-[DmPath("/obj/item/food/fries"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_fries : obj_item_food
+// tg: code/modules/food_and_drinks/food/vegetables.dm:106 (the var block of a hand-written class)
+[DmPath("/obj/item/food/fries")]
+public partial class obj_item_food_fries
 {
     // tg: code/modules/food_and_drinks/food/vegetables.dm:106
     public obj_item_food_fries()
@@ -24088,9 +24088,9 @@ public partial class obj_item_food_fries : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/vegetables.dm:122
-[DmPath("/obj/item/food/cheesyfries"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_cheesyfries : obj_item_food
+// tg: code/modules/food_and_drinks/food/vegetables.dm:122 (the var block of a hand-written class)
+[DmPath("/obj/item/food/cheesyfries")]
+public partial class obj_item_food_cheesyfries
 {
     // tg: code/modules/food_and_drinks/food/vegetables.dm:122
     public obj_item_food_cheesyfries()
@@ -24114,9 +24114,9 @@ public partial class obj_item_food_cheesyfries : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/vegetables.dm:141
-[DmPath("/obj/item/food/carrotfries"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_carrotfries : obj_item_food
+// tg: code/modules/food_and_drinks/food/vegetables.dm:141 (the var block of a hand-written class)
+[DmPath("/obj/item/food/carrotfries")]
+public partial class obj_item_food_carrotfries
 {
     // tg: code/modules/food_and_drinks/food/vegetables.dm:141
     public obj_item_food_carrotfries()
@@ -24139,9 +24139,9 @@ public partial class obj_item_food_carrotfries : obj_item_food
     }
 }
 
-// tg: code/modules/food_and_drinks/food/vegetables.dm:157
-[DmPath("/obj/item/food/poutine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_food_poutine : obj_item_food
+// tg: code/modules/food_and_drinks/food/vegetables.dm:157 (the var block of a hand-written class)
+[DmPath("/obj/item/food/poutine")]
+public partial class obj_item_food_poutine
 {
     // tg: code/modules/food_and_drinks/food/vegetables.dm:157
     public obj_item_food_poutine()

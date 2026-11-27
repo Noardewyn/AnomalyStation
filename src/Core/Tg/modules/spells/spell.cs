@@ -371,9 +371,8 @@ public partial class datum_action_cooldown_spell : datum_action_cooldown
         else if (Dm.eq(used_invocation_type, INVOCATION_EMOTE))
         {
             invoker.visible_message(
-                // shortcut: REPLACE_PRONOUNS (__HELPERS/pronouns.dm:81, %PRONOUN_ in a heretic or cult emote) is not ported: no live spell uses it; upgrade with those spells
-                capitalize(replacetext(Dm.text("[]", used_invocation_message), "%CASTER", Dm.text("[]", invoker))),
-                capitalize(replacetext(Dm.text("[]", invocation_self_message), "%CASTER", Dm.text("[]", invoker))),
+                capitalize(REPLACE_PRONOUNS(replacetext(Dm.text("[]", used_invocation_message), "%CASTER", Dm.text("[]", invoker)), invoker)),
+                capitalize(REPLACE_PRONOUNS(replacetext(Dm.text("[]", invocation_self_message), "%CASTER", Dm.text("[]", invoker)), invoker)),
                 visible_message_flags: ALWAYS_SHOW_SELF_MESSAGE);
         }
     }

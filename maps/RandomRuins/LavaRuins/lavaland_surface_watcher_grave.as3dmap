@@ -1,0 +1,116 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_watcher_grave.dmm tg 1d99bd7f
+size 15 13 1
+chunk 32
+default /turf/template_noop | /area/template_noop
+
+[chunk 1 1 1]
+5,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,12: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,11: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,10: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+6,10: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+7,10: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+8,10: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+9,10: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+10,10: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+11,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,10: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,9: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+5,9: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+6,9: /obj/structure/flora/rock/style_random | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+7,9: /obj/structure/stone_tile/surrounding/cracked | /obj/structure/stone_tile/center/cracked | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+8,9: /obj/structure/stone_tile/block/cracked{pixel_y = -16} | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+9,9: /obj/structure/flora/ash/tall_shroom | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+10,9: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+11,9: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+12,9: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,8: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+5,8: /obj/structure/flora/ash/stem_shroom | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+6,8: /obj/structure/stone_tile/cracked{pixel_x = 16} | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+7,8: /obj/structure/stone_tile/slab/cracked | /obj/effect/mob_spawn/corpse/watcher/goliath_chewed | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+8,8: /obj/structure/stone_tile/surrounding_tile | /obj/item/food/egg/watcher | /turf/open/misc/asteroid/basalt/wasteland/basin | /area/lavaland/surface/outdoors
+9,8: /obj/structure/stone_tile/cracked{pixel_y = -16} | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+10,8: /obj/structure/flora/rock/style_random | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+11,8: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+12,8: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,8: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,7: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,7: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,7: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+5,7: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+6,7: /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+7,7: /obj/structure/stone_tile/cracked | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+8,7: /obj/structure/stone_tile/block/cracked | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+9,7: /obj/effect/mob_spawn/corpse/goliath/pierced | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+10,7: /obj/structure/flora/ash/stem_shroom | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+11,7: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+12,7: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+13,7: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,7: /obj/structure/stone_tile/cracked{pixel_x = 16} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,6: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,6: /obj/structure/stone_tile/cracked{pixel_x = 16} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,6: /obj/effect/mapping_helpers/bombable_wall | /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+5,6: /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+6,6: /obj/structure/stone_tile/cracked{pixel_x = 16} | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+7,6: /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+8,6: /obj/structure/stone_tile/slab | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+9,6: /obj/structure/stone_tile/slab/cracked | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+10,6: /obj/structure/stone_tile/cracked | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+11,6: /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+12,6: /obj/effect/mapping_helpers/bombable_wall | /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+13,6: /obj/structure/stone_tile/slab/cracked{dir = 4} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,6: /obj/effect/mob_spawn/corpse/watcher/crushed | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+15,6: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,5: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,5: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,5: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+5,5: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+6,5: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+7,5: /obj/structure/flora/ash/cacti | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+8,5: /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+9,5: /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+10,5: /obj/structure/flora/ash/tall_shroom | /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+11,5: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+12,5: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+13,5: /obj/structure/stone_tile/cracked | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,5: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+15,5: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,4: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+6,4: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+7,4: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+8,4: /turf/open/misc/asteroid/basalt/wasteland | /area/lavaland/surface/outdoors
+9,4: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+10,4: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+11,4: /turf/closed/indestructible/riveted/boss/wasteland | /area/lavaland/surface/outdoors
+12,4: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,4: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,3: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+7,3: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+8,3: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+9,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,3: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,2: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+8,2: /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors
+9,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,2: /turf/closed/mineral/volcanic/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors

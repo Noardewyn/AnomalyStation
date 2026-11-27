@@ -4410,9 +4410,9 @@ public partial class datum_chemical_reaction_prefactor_b_speed_agent : datum_che
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:3
-[DmPath("/datum/chemical_reaction/slime"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime : datum_chemical_reaction
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime")]
+public partial class datum_chemical_reaction_slime
 {
     public float deletes_extract = 1; // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:5
 
@@ -4424,9 +4424,9 @@ public partial class datum_chemical_reaction_slime : datum_chemical_reaction
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:29
-[DmPath("/datum/chemical_reaction/slime/slimespawn"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimespawn : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:29 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimespawn")]
+public partial class datum_chemical_reaction_slime_slimespawn
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:30
     public datum_chemical_reaction_slime_slimespawn()
@@ -4443,7 +4443,7 @@ public partial class datum_chemical_reaction_slime_slimespawn : datum_chemical_r
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:38
-[DmPath("/datum/chemical_reaction/slime/slimeinaprov"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimeinaprov"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimeinaprov : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:40
@@ -4461,9 +4461,9 @@ public partial class datum_chemical_reaction_slime_slimeinaprov : datum_chemical
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:43
-[DmPath("/datum/chemical_reaction/slime/slimemonkey"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimemonkey : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:43 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimemonkey")]
+public partial class datum_chemical_reaction_slime_slimemonkey
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:44
     public datum_chemical_reaction_slime_slimemonkey()
@@ -4480,7 +4480,7 @@ public partial class datum_chemical_reaction_slime_slimemonkey : datum_chemical_
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:53
-[DmPath("/datum/chemical_reaction/slime/slimemutate"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimemutate"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimemutate : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:55
@@ -4499,7 +4499,7 @@ public partial class datum_chemical_reaction_slime_slimemutate : datum_chemical_
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:58
-[DmPath("/datum/chemical_reaction/slime/slimehuman"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimehuman"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimehuman : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:60
@@ -4518,7 +4518,7 @@ public partial class datum_chemical_reaction_slime_slimehuman : datum_chemical_r
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:63
-[DmPath("/datum/chemical_reaction/slime/slimelizard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimelizard"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimelizard : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:65
@@ -4537,7 +4537,7 @@ public partial class datum_chemical_reaction_slime_slimelizard : datum_chemical_
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:68
-[DmPath("/datum/chemical_reaction/slime/slimefelinid"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimefelinid"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimefelinid : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:70
@@ -4556,7 +4556,7 @@ public partial class datum_chemical_reaction_slime_slimefelinid : datum_chemical
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:73
-[DmPath("/datum/chemical_reaction/slime/slimemoth"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimemoth"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimemoth : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:75
@@ -4575,7 +4575,7 @@ public partial class datum_chemical_reaction_slime_slimemoth : datum_chemical_re
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:78
-[DmPath("/datum/chemical_reaction/slime/slimeethereal"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimeethereal"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimeethereal : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:80
@@ -4593,9 +4593,9 @@ public partial class datum_chemical_reaction_slime_slimeethereal : datum_chemica
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:84
-[DmPath("/datum/chemical_reaction/slime/slimemetal"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimemetal : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:84 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimemetal")]
+public partial class datum_chemical_reaction_slime_slimemetal
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:85
     public datum_chemical_reaction_slime_slimemetal()
@@ -4611,9 +4611,9 @@ public partial class datum_chemical_reaction_slime_slimemetal : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:94
-[DmPath("/datum/chemical_reaction/slime/slimeglass"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimeglass : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:94 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimeglass")]
+public partial class datum_chemical_reaction_slime_slimeglass
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:95
     public datum_chemical_reaction_slime_slimeglass()
@@ -4629,9 +4629,9 @@ public partial class datum_chemical_reaction_slime_slimeglass : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:105
-[DmPath("/datum/chemical_reaction/slime/slimemobspawn"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimemobspawn : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:105 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimemobspawn")]
+public partial class datum_chemical_reaction_slime_slimemobspawn
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:106
     public datum_chemical_reaction_slime_slimemobspawn()
@@ -4649,9 +4649,9 @@ public partial class datum_chemical_reaction_slime_slimemobspawn : datum_chemica
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:123
-[DmPath("/datum/chemical_reaction/slime/slimemobspawn/lesser"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimemobspawn_lesser : datum_chemical_reaction_slime_slimemobspawn
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:123 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimemobspawn/lesser")]
+public partial class datum_chemical_reaction_slime_slimemobspawn_lesser
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:123
     protected internal override void dm_init_vars()
@@ -4661,9 +4661,9 @@ public partial class datum_chemical_reaction_slime_slimemobspawn_lesser : datum_
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:130
-[DmPath("/datum/chemical_reaction/slime/slimemobspawn/friendly"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimemobspawn_friendly : datum_chemical_reaction_slime_slimemobspawn
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:130 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimemobspawn/friendly")]
+public partial class datum_chemical_reaction_slime_slimemobspawn_friendly
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:130
     protected internal override void dm_init_vars()
@@ -4673,9 +4673,9 @@ public partial class datum_chemical_reaction_slime_slimemobspawn_friendly : datu
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:137
-[DmPath("/datum/chemical_reaction/slime/slimemobspawn/spider"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimemobspawn_spider : datum_chemical_reaction_slime_slimemobspawn
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:137 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimemobspawn/spider")]
+public partial class datum_chemical_reaction_slime_slimemobspawn_spider
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:138
     public datum_chemical_reaction_slime_slimemobspawn_spider()
@@ -4691,9 +4691,9 @@ public partial class datum_chemical_reaction_slime_slimemobspawn_spider : datum_
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:147
-[DmPath("/datum/chemical_reaction/slime/slimebork"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimebork : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:147 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimebork")]
+public partial class datum_chemical_reaction_slime_slimebork
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:148
     public datum_chemical_reaction_slime_slimebork()
@@ -4709,9 +4709,9 @@ public partial class datum_chemical_reaction_slime_slimebork : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:176
-[DmPath("/datum/chemical_reaction/slime/slimebork/drinks"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimebork_drinks : datum_chemical_reaction_slime_slimebork
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:176 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimebork/drinks")]
+public partial class datum_chemical_reaction_slime_slimebork_drinks
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:176
     protected internal override void dm_init_vars()
@@ -4722,7 +4722,7 @@ public partial class datum_chemical_reaction_slime_slimebork_drinks : datum_chem
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:183
-[DmPath("/datum/chemical_reaction/slime/slimefrost"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimefrost"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimefrost : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:185
@@ -4740,9 +4740,9 @@ public partial class datum_chemical_reaction_slime_slimefrost : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:188
-[DmPath("/datum/chemical_reaction/slime/slimestabilizer"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimestabilizer : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:188 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimestabilizer")]
+public partial class datum_chemical_reaction_slime_slimestabilizer
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:189
     public datum_chemical_reaction_slime_slimestabilizer()
@@ -4758,9 +4758,9 @@ public partial class datum_chemical_reaction_slime_slimestabilizer : datum_chemi
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:196
-[DmPath("/datum/chemical_reaction/slime/slimefoam"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimefoam : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:196 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimefoam")]
+public partial class datum_chemical_reaction_slime_slimefoam
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:197
     public datum_chemical_reaction_slime_slimefoam()
@@ -4776,9 +4776,9 @@ public partial class datum_chemical_reaction_slime_slimefoam : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:204
-[DmPath("/datum/chemical_reaction/slime/slimefreeze"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimefreeze : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:204 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimefreeze")]
+public partial class datum_chemical_reaction_slime_slimefreeze
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:205
     public datum_chemical_reaction_slime_slimefreeze()
@@ -4795,9 +4795,9 @@ public partial class datum_chemical_reaction_slime_slimefreeze : datum_chemical_
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:225
-[DmPath("/datum/chemical_reaction/slime/slimefireproof"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimefireproof : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:225 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimefireproof")]
+public partial class datum_chemical_reaction_slime_slimefireproof
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:226
     public datum_chemical_reaction_slime_slimefireproof()
@@ -4814,7 +4814,7 @@ public partial class datum_chemical_reaction_slime_slimefireproof : datum_chemic
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:234
-[DmPath("/datum/chemical_reaction/slime/slimecasp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimecasp"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimecasp : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:236
@@ -4832,9 +4832,9 @@ public partial class datum_chemical_reaction_slime_slimecasp : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:239
-[DmPath("/datum/chemical_reaction/slime/slimefire"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimefire : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:239 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimefire")]
+public partial class datum_chemical_reaction_slime_slimefire
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:240
     public datum_chemical_reaction_slime_slimefire()
@@ -4852,7 +4852,7 @@ public partial class datum_chemical_reaction_slime_slimefire : datum_chemical_re
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:260
-[DmPath("/datum/chemical_reaction/slime/slimesmoke"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimesmoke"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimesmoke : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:262
@@ -4870,9 +4870,9 @@ public partial class datum_chemical_reaction_slime_slimesmoke : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:266
-[DmPath("/datum/chemical_reaction/slime/slimeoverload"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimeoverload : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:266 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimeoverload")]
+public partial class datum_chemical_reaction_slime_slimeoverload
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:267
     public datum_chemical_reaction_slime_slimeoverload()
@@ -4889,9 +4889,9 @@ public partial class datum_chemical_reaction_slime_slimeoverload : datum_chemica
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:280
-[DmPath("/datum/chemical_reaction/slime/slimecell"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimecell : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:280 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimecell")]
+public partial class datum_chemical_reaction_slime_slimecell
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:281
     public datum_chemical_reaction_slime_slimecell()
@@ -4907,9 +4907,9 @@ public partial class datum_chemical_reaction_slime_slimecell : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:288
-[DmPath("/datum/chemical_reaction/slime/slimeglow"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimeglow : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:288 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimeglow")]
+public partial class datum_chemical_reaction_slime_slimeglow
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:289
     public datum_chemical_reaction_slime_slimeglow()
@@ -4925,9 +4925,9 @@ public partial class datum_chemical_reaction_slime_slimeglow : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:299
-[DmPath("/datum/chemical_reaction/slime/slimepsteroid"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimepsteroid : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:299 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimepsteroid")]
+public partial class datum_chemical_reaction_slime_slimepsteroid
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:300
     public datum_chemical_reaction_slime_slimepsteroid()
@@ -4944,7 +4944,7 @@ public partial class datum_chemical_reaction_slime_slimepsteroid : datum_chemica
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:307
-[DmPath("/datum/chemical_reaction/slime/slimeregen"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimeregen"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimeregen : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:309
@@ -4962,9 +4962,9 @@ public partial class datum_chemical_reaction_slime_slimeregen : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:313
-[DmPath("/datum/chemical_reaction/slime/slimeplasma"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimeplasma : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:313 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimeplasma")]
+public partial class datum_chemical_reaction_slime_slimeplasma
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:314
     public datum_chemical_reaction_slime_slimeplasma()
@@ -4980,9 +4980,9 @@ public partial class datum_chemical_reaction_slime_slimeplasma : datum_chemical_
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:322
-[DmPath("/datum/chemical_reaction/slime/slimemutator"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimemutator : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:322 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimemutator")]
+public partial class datum_chemical_reaction_slime_slimemutator
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:323
     public datum_chemical_reaction_slime_slimemutator()
@@ -4998,9 +4998,9 @@ public partial class datum_chemical_reaction_slime_slimemutator : datum_chemical
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:330
-[DmPath("/datum/chemical_reaction/slime/slimebloodlust"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimebloodlust : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:330 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimebloodlust")]
+public partial class datum_chemical_reaction_slime_slimebloodlust
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:331
     public datum_chemical_reaction_slime_slimebloodlust()
@@ -5017,9 +5017,9 @@ public partial class datum_chemical_reaction_slime_slimebloodlust : datum_chemic
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:346
-[DmPath("/datum/chemical_reaction/slime/slimespeed"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimespeed : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:346 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimespeed")]
+public partial class datum_chemical_reaction_slime_slimespeed
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:347
     public datum_chemical_reaction_slime_slimespeed()
@@ -5035,9 +5035,9 @@ public partial class datum_chemical_reaction_slime_slimespeed : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:355
-[DmPath("/datum/chemical_reaction/slime/docility"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_docility : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:355 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/docility")]
+public partial class datum_chemical_reaction_slime_docility
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:356
     public datum_chemical_reaction_slime_docility()
@@ -5053,9 +5053,9 @@ public partial class datum_chemical_reaction_slime_docility : datum_chemical_rea
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:363
-[DmPath("/datum/chemical_reaction/slime/gender"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_gender : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:363 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/gender")]
+public partial class datum_chemical_reaction_slime_gender
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:364
     public datum_chemical_reaction_slime_gender()
@@ -5072,7 +5072,7 @@ public partial class datum_chemical_reaction_slime_gender : datum_chemical_react
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:372
-[DmPath("/datum/chemical_reaction/slime/slimemutate2"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimemutate2"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimemutate2 : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:374
@@ -5090,9 +5090,9 @@ public partial class datum_chemical_reaction_slime_slimemutate2 : datum_chemical
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:378
-[DmPath("/datum/chemical_reaction/slime/slimeexplosion"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimeexplosion : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:378 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimeexplosion")]
+public partial class datum_chemical_reaction_slime_slimeexplosion
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:379
     public datum_chemical_reaction_slime_slimeexplosion()
@@ -5111,7 +5111,7 @@ public partial class datum_chemical_reaction_slime_slimeexplosion : datum_chemic
 }
 
 // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:406
-[DmPath("/datum/chemical_reaction/slime/slimeoil"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chemical_reaction/slime/slimeoil"), DmGeneratedOnly]
 public partial class datum_chemical_reaction_slime_slimeoil : datum_chemical_reaction_slime
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:408
@@ -5129,9 +5129,9 @@ public partial class datum_chemical_reaction_slime_slimeoil : datum_chemical_rea
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:412
-[DmPath("/datum/chemical_reaction/slime/slimepotion2"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimepotion2 : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:412 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimepotion2")]
+public partial class datum_chemical_reaction_slime_slimepotion2
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:412
     public datum_chemical_reaction_slime_slimepotion2()
@@ -5147,9 +5147,9 @@ public partial class datum_chemical_reaction_slime_slimepotion2 : datum_chemical
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:420
-[DmPath("/datum/chemical_reaction/slime/renaming"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_renaming : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:420 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/renaming")]
+public partial class datum_chemical_reaction_slime_renaming
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:420
     public datum_chemical_reaction_slime_renaming()
@@ -5165,9 +5165,9 @@ public partial class datum_chemical_reaction_slime_renaming : datum_chemical_rea
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:430
-[DmPath("/datum/chemical_reaction/slime/adamantine"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_adamantine : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:430 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/adamantine")]
+public partial class datum_chemical_reaction_slime_adamantine
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:431
     public datum_chemical_reaction_slime_adamantine()
@@ -5183,9 +5183,9 @@ public partial class datum_chemical_reaction_slime_adamantine : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:439
-[DmPath("/datum/chemical_reaction/slime/slimefloor2"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimefloor2 : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:439 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimefloor2")]
+public partial class datum_chemical_reaction_slime_slimefloor2
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:440
     public datum_chemical_reaction_slime_slimefloor2()
@@ -5201,9 +5201,9 @@ public partial class datum_chemical_reaction_slime_slimefloor2 : datum_chemical_
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:448
-[DmPath("/datum/chemical_reaction/slime/slimecrystal"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimecrystal : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:448 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimecrystal")]
+public partial class datum_chemical_reaction_slime_slimecrystal
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:449
     public datum_chemical_reaction_slime_slimecrystal()
@@ -5219,9 +5219,9 @@ public partial class datum_chemical_reaction_slime_slimecrystal : datum_chemical
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:457
-[DmPath("/datum/chemical_reaction/slime/slimeradio"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimeradio : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:457 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimeradio")]
+public partial class datum_chemical_reaction_slime_slimeradio
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:458
     public datum_chemical_reaction_slime_slimeradio()
@@ -5237,9 +5237,9 @@ public partial class datum_chemical_reaction_slime_slimeradio : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:466
-[DmPath("/datum/chemical_reaction/slime/slimepsteroid2"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimepsteroid2 : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:466 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimepsteroid2")]
+public partial class datum_chemical_reaction_slime_slimepsteroid2
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:467
     public datum_chemical_reaction_slime_slimepsteroid2()
@@ -5255,9 +5255,9 @@ public partial class datum_chemical_reaction_slime_slimepsteroid2 : datum_chemic
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:474
-[DmPath("/datum/chemical_reaction/slime/slime_territory"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slime_territory : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:474 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slime_territory")]
+public partial class datum_chemical_reaction_slime_slime_territory
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:475
     public datum_chemical_reaction_slime_slime_territory()
@@ -5273,9 +5273,9 @@ public partial class datum_chemical_reaction_slime_slime_territory : datum_chemi
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:483
-[DmPath("/datum/chemical_reaction/slime/slimestop"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimestop : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:483 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimestop")]
+public partial class datum_chemical_reaction_slime_slimestop
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:484
     public datum_chemical_reaction_slime_slimestop()
@@ -5291,9 +5291,9 @@ public partial class datum_chemical_reaction_slime_slimestop : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:501
-[DmPath("/datum/chemical_reaction/slime/slimecamera"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimecamera : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:501 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimecamera")]
+public partial class datum_chemical_reaction_slime_slimecamera
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:502
     public datum_chemical_reaction_slime_slimecamera()
@@ -5309,9 +5309,9 @@ public partial class datum_chemical_reaction_slime_slimecamera : datum_chemical_
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:510
-[DmPath("/datum/chemical_reaction/slime/slimefloor"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimefloor : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:510 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimefloor")]
+public partial class datum_chemical_reaction_slime_slimefloor
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:511
     public datum_chemical_reaction_slime_slimefloor()
@@ -5327,9 +5327,9 @@ public partial class datum_chemical_reaction_slime_slimefloor : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:519
-[DmPath("/datum/chemical_reaction/slime/slimepaint"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimepaint : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:519 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimepaint")]
+public partial class datum_chemical_reaction_slime_slimepaint
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:520
     public datum_chemical_reaction_slime_slimepaint()
@@ -5345,9 +5345,9 @@ public partial class datum_chemical_reaction_slime_slimepaint : datum_chemical_r
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:528
-[DmPath("/datum/chemical_reaction/slime/slimecrayon"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimecrayon : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:528 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimecrayon")]
+public partial class datum_chemical_reaction_slime_slimecrayon
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:529
     public datum_chemical_reaction_slime_slimecrayon()
@@ -5363,9 +5363,9 @@ public partial class datum_chemical_reaction_slime_slimecrayon : datum_chemical_
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:538
-[DmPath("/datum/chemical_reaction/slime/slime_rng"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slime_rng : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:538 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slime_rng")]
+public partial class datum_chemical_reaction_slime_slime_rng
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:539
     public datum_chemical_reaction_slime_slime_rng()
@@ -5381,9 +5381,9 @@ public partial class datum_chemical_reaction_slime_slime_rng : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:554
-[DmPath("/datum/chemical_reaction/slime/slimebomb"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slimebomb : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:554 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slimebomb")]
+public partial class datum_chemical_reaction_slime_slimebomb
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:555
     public datum_chemical_reaction_slime_slimebomb()
@@ -5399,9 +5399,9 @@ public partial class datum_chemical_reaction_slime_slimebomb : datum_chemical_re
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:575
-[DmPath("/datum/chemical_reaction/slime/slime_transfer"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_slime_transfer : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:575 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/slime_transfer")]
+public partial class datum_chemical_reaction_slime_slime_transfer
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:576
     public datum_chemical_reaction_slime_slime_transfer()
@@ -5417,9 +5417,9 @@ public partial class datum_chemical_reaction_slime_slime_transfer : datum_chemic
     }
 }
 
-// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:583
-[DmPath("/datum/chemical_reaction/slime/flight_potion"), DmGeneratedOnly, DmInert]
-public partial class datum_chemical_reaction_slime_flight_potion : datum_chemical_reaction_slime
+// tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:583 (the var block of a hand-written class)
+[DmPath("/datum/chemical_reaction/slime/flight_potion")]
+public partial class datum_chemical_reaction_slime_flight_potion
 {
     // tg: code/modules/reagents/chemistry/recipes/slime_extracts.dm:584
     public datum_chemical_reaction_slime_flight_potion()

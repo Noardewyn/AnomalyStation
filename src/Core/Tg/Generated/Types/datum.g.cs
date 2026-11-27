@@ -3277,9 +3277,9 @@ public partial class datum_thrownthing
     public float? blocked = 0; // tg: code/controllers/subsystem/throwing.dm:93
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:100
-[DmPath("/datum/thrownthing/dagger_launch"), DmGeneratedOnly, DmInert]
-public partial class datum_thrownthing_dagger_launch : datum_thrownthing { }
+// tg: code/modules/mining/lavaland/cain_and_abel/dagger_effects.dm:100 (the var block of a hand-written class)
+[DmPath("/datum/thrownthing/dagger_launch")]
+public partial class datum_thrownthing_dagger_launch { }
 
 // tg: code/controllers/subsystem/tts.dm:522
 [DmPath("/datum/tts_request"), DmGeneratedOnly, DmInert]
@@ -6747,9 +6747,9 @@ public partial class datum_atom_hud_alternate_appearance_basic_everyone
 [DmPath("/datum/atom_hud/alternate_appearance/basic/silicons")]
 public partial class datum_atom_hud_alternate_appearance_basic_silicons { }
 
-// tg: code/game/atom/alternate_appearance.dm:177
-[DmPath("/datum/atom_hud/alternate_appearance/basic/ais"), DmGeneratedOnly, DmInert]
-public partial class datum_atom_hud_alternate_appearance_basic_ais : datum_atom_hud_alternate_appearance_basic { }
+// tg: code/game/atom/alternate_appearance.dm:177 (the var block of a hand-written class)
+[DmPath("/datum/atom_hud/alternate_appearance/basic/ais")]
+public partial class datum_atom_hud_alternate_appearance_basic_ais { }
 
 // tg: code/game/atom/alternate_appearance.dm:181
 [DmPath("/datum/atom_hud/alternate_appearance/basic/observers"), DmGeneratedOnly, DmInert]
@@ -9582,9 +9582,9 @@ public partial class datum_bodypart_overlay_simple_golem_overlay
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:723
-[DmPath("/datum/bodypart_overlay/simple/babbearfish"), DmGeneratedOnly, DmInert]
-public partial class datum_bodypart_overlay_simple_babbearfish : datum_bodypart_overlay_simple
+// tg: code/modules/fishing/fish/types/rift.dm:723 (the var block of a hand-written class)
+[DmPath("/datum/bodypart_overlay/simple/babbearfish")]
+public partial class datum_bodypart_overlay_simple_babbearfish
 {
     // tg: code/modules/fishing/fish/types/rift.dm:723
     public datum_bodypart_overlay_simple_babbearfish()
@@ -12405,9 +12405,9 @@ public partial class datum_pet_command_breed
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55
-[DmPath("/datum/pet_command/breed/gutlunch"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_breed_gutlunch : datum_pet_command_breed { }
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:55 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/breed/gutlunch")]
+public partial class datum_pet_command_breed_gutlunch { }
 
 // tg: code/datums/components/pet_commands/pet_commands_basic.dm:219 (the var block of a hand-written class)
 [DmPath("/datum/pet_command/use_ability")]
@@ -12523,9 +12523,9 @@ public partial class datum_pet_command_use_ability_rapidseeds : datum_pet_comman
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:265
-[DmPath("/datum/pet_command/use_ability/lob_charge"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_use_ability_lob_charge : datum_pet_command_use_ability
+// tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:265 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/use_ability/lob_charge")]
+public partial class datum_pet_command_use_ability_lob_charge
 {
     // tg: code/modules/mob/living/basic/lavaland/lobstrosity/lobstrosity.dm:265
     public datum_pet_command_use_ability_lob_charge()
@@ -12548,7 +12548,7 @@ public partial class datum_pet_command_use_ability_lob_charge : datum_pet_comman
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/pet_command/use_ability/lob_charge/shrimp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/pet_command/use_ability/lob_charge/shrimp"), DmGeneratedOnly]
 public partial class datum_pet_command_use_ability_lob_charge_shrimp : datum_pet_command_use_ability_lob_charge { }
 
 // tg: code/modules/mob/living/basic/pets/orbie/orbie_ai.dm:117 (the var block of a hand-written class)
@@ -12756,9 +12756,9 @@ public partial class datum_pet_command_scatter
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26
-[DmPath("/datum/pet_command/grub_spit"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_grub_spit : datum_pet_command
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/grub_spit")]
+public partial class datum_pet_command_grub_spit
 {
     // tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_ai.dm:26
     public datum_pet_command_grub_spit()
@@ -12777,9 +12777,9 @@ public partial class datum_pet_command_grub_spit : datum_pet_command
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31
-[DmPath("/datum/pet_command/mine_walls"), DmGeneratedOnly, DmInert]
-public partial class datum_pet_command_mine_walls : datum_pet_command
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31 (the var block of a hand-written class)
+[DmPath("/datum/pet_command/mine_walls")]
+public partial class datum_pet_command_mine_walls
 {
     // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_ai.dm:31
     public datum_pet_command_mine_walls()
@@ -12900,9 +12900,9 @@ public partial class datum_ductnet
     public DmList demanders; // tg: code/datums/components/plumbing/ductnet.dm:8
 }
 
-// tg: code/datums/components/riding/riding_minigame.dm:11
-[DmPath("/datum/riding_minigame"), DmGeneratedOnly, DmInert]
-public partial class datum_riding_minigame : datum
+// tg: code/datums/components/riding/riding_minigame.dm:11 (the var block of a hand-written class)
+[DmPath("/datum/riding_minigame")]
+public partial class datum_riding_minigame
 {
     public datum_weakref host; // tg: code/datums/components/riding/riding_minigame.dm:11
     public datum_weakref mounter; // tg: code/datums/components/riding/riding_minigame.dm:13
@@ -20144,9 +20144,9 @@ public partial class datum_proximity_monitor_influence_monitor : datum_proximity
     public float xray_cooldown = 0; // tg: code/modules/antagonists/heretic/influences.dm:286
 }
 
-// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:179
-[DmPath("/datum/proximity_monitor/watcher_gaze"), DmGeneratedOnly, DmInert]
-public partial class datum_proximity_monitor_watcher_gaze : datum_proximity_monitor
+// tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:179 (the var block of a hand-written class)
+[DmPath("/datum/proximity_monitor/watcher_gaze")]
+public partial class datum_proximity_monitor_watcher_gaze
 {
     public datum_action_cooldown_mob_cooldown_watcher_gaze gaze; // tg: code/modules/mob/living/basic/lavaland/watcher/watcher_gaze.dm:179
 }
@@ -21940,9 +21940,9 @@ public partial class datum_wires_airlock_cargo : datum_wires_airlock
     }
 }
 
-// tg: code/modules/wiremod/shell/airlock.dm:2
-[DmPath("/datum/wires/airlock/shell"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_airlock_shell : datum_wires_airlock
+// tg: code/modules/wiremod/shell/airlock.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/airlock/shell")]
+public partial class datum_wires_airlock_shell
 {
     // tg: code/modules/wiremod/shell/airlock.dm:2
     public datum_wires_airlock_shell()
@@ -22035,9 +22035,9 @@ public partial class datum_wires_conveyor
     }
 }
 
-// tg: code/datums/wires/ecto_sniffer.dm:2
-[DmPath("/datum/wires/ecto_sniffer"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_ecto_sniffer : datum_wires
+// tg: code/datums/wires/ecto_sniffer.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/ecto_sniffer")]
+public partial class datum_wires_ecto_sniffer
 {
     // tg: code/datums/wires/ecto_sniffer.dm:2
     public datum_wires_ecto_sniffer()
@@ -22144,9 +22144,9 @@ public partial class datum_wires_holopad
     }
 }
 
-// tg: code/datums/wires/mass_driver.dm:2
-[DmPath("/datum/wires/mass_driver"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_mass_driver : datum_wires
+// tg: code/datums/wires/mass_driver.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/mass_driver")]
+public partial class datum_wires_mass_driver
 {
     // tg: code/datums/wires/mass_driver.dm:2
     public datum_wires_mass_driver()
@@ -22243,9 +22243,9 @@ public partial class datum_wires_robot
     }
 }
 
-// tg: code/datums/wires/roulette.dm:2
-[DmPath("/datum/wires/roulette"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_roulette : datum_wires
+// tg: code/datums/wires/roulette.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/wires/roulette")]
+public partial class datum_wires_roulette
 {
     // tg: code/datums/wires/roulette.dm:2
     public datum_wires_roulette()
@@ -22380,9 +22380,9 @@ public partial class datum_wires_experimentor
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_wires.dm:4
-[DmPath("/datum/wires/gizmo"), DmGeneratedOnly, DmInert]
-public partial class datum_wires_gizmo : datum_wires
+// tg: code/modules/research/gizmo/gizmo_wires.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/wires/gizmo")]
+public partial class datum_wires_gizmo
 {
     public DmList cryptic_wires; // tg: code/modules/research/gizmo/gizmo_wires.dm:10
     public Type puzzle; // tg: code/modules/research/gizmo/gizmo_wires.dm:21
@@ -25152,9 +25152,9 @@ public partial class datum_battle_arcade_gear_tier_9_armor : datum_battle_arcade
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:4
-[DmPath("/datum/orion_event"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event : datum
+// tg: code/game/machinery/computer/arcade/orion_event.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/orion_event")]
+public partial class datum_orion_event
 {
     public string name = "this displays the events name"; // tg: code/game/machinery/computer/arcade/orion_event.dm:4
     public string text = "this displays a blurb about the event"; // tg: code/game/machinery/computer/arcade/orion_event.dm:5
@@ -25174,9 +25174,9 @@ public partial class datum_orion_event : datum
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:66
-[DmPath("/datum/orion_event/engine_part"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_engine_part : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:66 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/engine_part")]
+public partial class datum_orion_event_engine_part
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:66
     public datum_orion_event_engine_part()
@@ -25196,9 +25196,9 @@ public partial class datum_orion_event_engine_part : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:93
-[DmPath("/datum/orion_event/electronic_part"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_electronic_part : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:93 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/electronic_part")]
+public partial class datum_orion_event_electronic_part
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:93
     public datum_orion_event_electronic_part()
@@ -25216,9 +25216,9 @@ public partial class datum_orion_event_electronic_part : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:138
-[DmPath("/datum/orion_event/hull_part"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_hull_part : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:138 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/hull_part")]
+public partial class datum_orion_event_hull_part
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:138
     public datum_orion_event_hull_part()
@@ -25236,9 +25236,9 @@ public partial class datum_orion_event_hull_part : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:181
-[DmPath("/datum/orion_event/old_ship"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_old_ship : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:181 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/old_ship")]
+public partial class datum_orion_event_old_ship
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:181
     public datum_orion_event_old_ship()
@@ -25256,9 +25256,9 @@ public partial class datum_orion_event_old_ship : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:201
-[DmPath("/datum/orion_event/exploring_derelict"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_exploring_derelict : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:201 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/exploring_derelict")]
+public partial class datum_orion_event_exploring_derelict
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:201
     public datum_orion_event_exploring_derelict()
@@ -25275,9 +25275,9 @@ public partial class datum_orion_event_exploring_derelict : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:241
-[DmPath("/datum/orion_event/raiders"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_raiders : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:241 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/raiders")]
+public partial class datum_orion_event_raiders
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:241
     public datum_orion_event_raiders()
@@ -25294,9 +25294,9 @@ public partial class datum_orion_event_raiders : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:270
-[DmPath("/datum/orion_event/illness"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_illness : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:270 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/illness")]
+public partial class datum_orion_event_illness
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:270
     public datum_orion_event_illness()
@@ -25313,9 +25313,9 @@ public partial class datum_orion_event_illness : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:301
-[DmPath("/datum/orion_event/flux"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_flux : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:301 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/flux")]
+public partial class datum_orion_event_flux
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:301
     public datum_orion_event_flux()
@@ -25333,9 +25333,9 @@ public partial class datum_orion_event_flux : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:327
-[DmPath("/datum/orion_event/changeling_infiltration"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_changeling_infiltration : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:327 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/changeling_infiltration")]
+public partial class datum_orion_event_changeling_infiltration
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:327
     public datum_orion_event_changeling_infiltration()
@@ -25352,9 +25352,9 @@ public partial class datum_orion_event_changeling_infiltration : datum_orion_eve
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:349
-[DmPath("/datum/orion_event/changeling_attack"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_changeling_attack : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:349 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/changeling_attack")]
+public partial class datum_orion_event_changeling_attack
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:349
     public datum_orion_event_changeling_attack()
@@ -25370,9 +25370,9 @@ public partial class datum_orion_event_changeling_attack : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:401
-[DmPath("/datum/orion_event/black_hole"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_black_hole : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:401 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/black_hole")]
+public partial class datum_orion_event_black_hole
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:401
     public datum_orion_event_black_hole()
@@ -25389,9 +25389,9 @@ public partial class datum_orion_event_black_hole : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:424
-[DmPath("/datum/orion_event/black_hole_death"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_black_hole_death : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:424 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/black_hole_death")]
+public partial class datum_orion_event_black_hole_death
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:424
     public datum_orion_event_black_hole_death()
@@ -25408,9 +25408,9 @@ public partial class datum_orion_event_black_hole_death : datum_orion_event
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:448
-[DmPath("/datum/orion_event/space_port"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_space_port : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:448 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/space_port")]
+public partial class datum_orion_event_space_port
 {
     public string normal_arrival = "You have spotted a small pocket of civilization along the Orion Trail. A friendly hailing from the nearby space port assures that you can dock to rest and prepare for the travels ahead."; // tg: code/game/machinery/computer/arcade/orion_event.dm:449
 
@@ -25430,7 +25430,7 @@ public partial class datum_orion_event_space_port : datum_orion_event
 }
 
 // tg: code/game/machinery/computer/arcade/orion_event.dm:486
-[DmPath("/datum/orion_event/space_port/tau_ceti"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/orion_event/space_port/tau_ceti"), DmGeneratedOnly]
 public partial class datum_orion_event_space_port_tau_ceti : datum_orion_event_space_port
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:486
@@ -25442,9 +25442,9 @@ public partial class datum_orion_event_space_port_tau_ceti : datum_orion_event_s
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion_event.dm:495
-[DmPath("/datum/orion_event/space_port_raid"), DmGeneratedOnly, DmInert]
-public partial class datum_orion_event_space_port_raid : datum_orion_event
+// tg: code/game/machinery/computer/arcade/orion_event.dm:495 (the var block of a hand-written class)
+[DmPath("/datum/orion_event/space_port_raid")]
+public partial class datum_orion_event_space_port_raid
 {
     // tg: code/game/machinery/computer/arcade/orion_event.dm:495
     public datum_orion_event_space_port_raid()
@@ -27750,9 +27750,9 @@ public partial class datum_golem_food_buff_bluespace : datum_golem_food_buff
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg.dm:475
-[DmPath("/datum/card"), DmGeneratedOnly, DmInert]
-public partial class datum_card : datum
+// tg: code/game/objects/items/tcg/tcg.dm:475 (the vars the hand-written class does not declare)
+[DmPath("/datum/card")]
+public partial class datum_card
 {
     public string id = "coder"; // tg: code/game/objects/items/tcg/tcg.dm:475
     public string name = "Coder"; // tg: code/game/objects/items/tcg/tcg.dm:476
@@ -27760,9 +27760,6 @@ public partial class datum_card : datum
     public string rules = "There are no rules here. There is no escape. No Recall or Intervention can work in this place."; // tg: code/game/objects/items/tcg/tcg.dm:479
     public string icon = "icons/runtime/tcg/default.dmi"; // tg: code/game/objects/items/tcg/tcg.dm:480
     public string icon_state = "template"; // tg: code/game/objects/items/tcg/tcg.dm:481
-    public float summoncost = -1; // tg: code/game/objects/items/tcg/tcg.dm:483
-    public float? power = -1; // tg: code/game/objects/items/tcg/tcg.dm:485
-    public float resolve = -1; // tg: code/game/objects/items/tcg/tcg.dm:487
     public string faction = "socks"; // tg: code/game/objects/items/tcg/tcg.dm:489
     public string cardtype = "C43a7u43?"; // tg: code/game/objects/items/tcg/tcg.dm:491
     public string cardsubtype = "Weeb"; // tg: code/game/objects/items/tcg/tcg.dm:493
@@ -28227,9 +28224,9 @@ public partial class datum_team_abductor_team : datum_team
     }
 }
 
-// tg: code/modules/antagonists/ashwalker/ashwalker.dm:46
-[DmPath("/datum/team/ashwalkers"), DmGeneratedOnly, DmInert]
-public partial class datum_team_ashwalkers : datum_team
+// tg: code/modules/antagonists/ashwalker/ashwalker.dm:46 (the var block of a hand-written class)
+[DmPath("/datum/team/ashwalkers")]
+public partial class datum_team_ashwalkers
 {
     public float sacrifices_made = 0; // tg: code/modules/antagonists/ashwalker/ashwalker.dm:49
     public float eggs_created = 0; // tg: code/modules/antagonists/ashwalker/ashwalker.dm:51
@@ -30364,9 +30361,9 @@ public partial class datum_heretic_knowledge_tree_column_void : datum_heretic_kn
     }
 }
 
-// tg: code/modules/flufftext/dreaming.dm:90
-[DmPath("/datum/dream"), DmGeneratedOnly, DmInert]
-public partial class datum_dream : datum
+// tg: code/modules/flufftext/dreaming.dm:90 (the var block of a hand-written class)
+[DmPath("/datum/dream")]
+public partial class datum_dream
 {
     public float weight = 0; // tg: code/modules/flufftext/dreaming.dm:90
     public float sleep_until_finished = 0; // tg: code/modules/flufftext/dreaming.dm:93
@@ -30394,9 +30391,9 @@ public partial class datum_dream_heretic : datum_dream
     }
 }
 
-// tg: code/modules/flufftext/dreaming.dm:110
-[DmPath("/datum/dream/random"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_random : datum_dream
+// tg: code/modules/flufftext/dreaming.dm:110 (the var block of a hand-written class)
+[DmPath("/datum/dream/random")]
+public partial class datum_dream_random
 {
     // tg: code/modules/flufftext/dreaming.dm:110
     public datum_dream_random()
@@ -30405,9 +30402,9 @@ public partial class datum_dream_random : datum_dream
     }
 }
 
-// tg: code/modules/religion/dreams/dream_portent.dm:361
-[DmPath("/datum/dream/random/vague_portent"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_random_vague_portent : datum_dream_random
+// tg: code/modules/religion/dreams/dream_portent.dm:361 (the var block of a hand-written class)
+[DmPath("/datum/dream/random/vague_portent")]
+public partial class datum_dream_random_vague_portent
 {
     // tg: code/modules/religion/dreams/dream_portent.dm:361
     public datum_dream_random_vague_portent()
@@ -30417,9 +30414,9 @@ public partial class datum_dream_random_vague_portent : datum_dream_random
     }
 }
 
-// tg: code/modules/flufftext/dreaming.dm:166
-[DmPath("/datum/dream/hear_something"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_hear_something : datum_dream
+// tg: code/modules/flufftext/dreaming.dm:166 (the var block of a hand-written class)
+[DmPath("/datum/dream/hear_something")]
+public partial class datum_dream_hear_something
 {
     public object reserved_sound_channel; // tg: code/modules/flufftext/dreaming.dm:168
 
@@ -30430,9 +30427,9 @@ public partial class datum_dream_hear_something : datum_dream
     }
 }
 
-// tg: code/modules/religion/dreams/dream_portent.dm:94
-[DmPath("/datum/dream/specific_portent"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_specific_portent : datum_dream
+// tg: code/modules/religion/dreams/dream_portent.dm:94 (the var block of a hand-written class)
+[DmPath("/datum/dream/specific_portent")]
+public partial class datum_dream_specific_portent
 {
     // tg: code/modules/religion/dreams/dream_portent.dm:94
     public datum_dream_specific_portent()
@@ -30442,9 +30439,9 @@ public partial class datum_dream_specific_portent : datum_dream
     }
 }
 
-// tg: code/modules/religion/dreams/slumber_party.dm:103
-[DmPath("/datum/dream/shared"), DmGeneratedOnly, DmInert]
-public partial class datum_dream_shared : datum_dream
+// tg: code/modules/religion/dreams/slumber_party.dm:103 (the var block of a hand-written class)
+[DmPath("/datum/dream/shared")]
+public partial class datum_dream_shared
 {
     public DmList generated_dream; // tg: code/modules/religion/dreams/slumber_party.dm:105
 
@@ -34535,9 +34532,9 @@ public partial class datum_autowiki_vending : datum_autowiki
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:12
-[DmPath("/datum/gateway_destination"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination : datum
+// tg: code/modules/awaymissions/gateway.dm:12 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination")]
+public partial class datum_gateway_destination
 {
     public string name = "Unknown Destination"; // tg: code/modules/awaymissions/gateway.dm:12
     public float wait = 0; // tg: code/modules/awaymissions/gateway.dm:13
@@ -34545,20 +34542,20 @@ public partial class datum_gateway_destination : datum
     public float? hidden = 0; // tg: code/modules/awaymissions/gateway.dm:15
 }
 
-// tg: code/modules/awaymissions/gateway.dm:64
-[DmPath("/datum/gateway_destination/gateway"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination_gateway : datum_gateway_destination
+// tg: code/modules/awaymissions/gateway.dm:64 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination/gateway")]
+public partial class datum_gateway_destination_gateway
 {
     public obj_machinery_gateway target_gateway; // tg: code/modules/awaymissions/gateway.dm:64
 }
 
-// tg: code/modules/awaymissions/gateway.dm:98
-[DmPath("/datum/gateway_destination/gateway/home"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination_gateway_home : datum_gateway_destination_gateway { }
+// tg: code/modules/awaymissions/gateway.dm:98 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination/gateway/home")]
+public partial class datum_gateway_destination_gateway_home { }
 
-// tg: code/modules/awaymissions/gateway.dm:123
-[DmPath("/datum/gateway_destination/point"), DmGeneratedOnly, DmInert]
-public partial class datum_gateway_destination_point : datum_gateway_destination
+// tg: code/modules/awaymissions/gateway.dm:123 (the var block of a hand-written class)
+[DmPath("/datum/gateway_destination/point")]
+public partial class datum_gateway_destination_point
 {
     public DmList target_turfs; // tg: code/modules/awaymissions/gateway.dm:123
     public Type id; // tg: code/modules/awaymissions/gateway.dm:125
@@ -38626,9 +38623,9 @@ public partial class datum_mod_theme_administrative : datum_mod_theme
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9
-[DmPath("/datum/armour_dimensional_theme"), DmGeneratedOnly, DmInert]
-public partial class datum_armour_dimensional_theme : datum
+// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/armour_dimensional_theme")]
+public partial class datum_armour_dimensional_theme
 {
     public Type material; // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:9
     public Type replace_floor = typeof(turf_open_floor_material); // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:10
@@ -38638,11 +38635,11 @@ public partial class datum_armour_dimensional_theme : datum
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/armour_dimensional_theme/safe"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe : datum_armour_dimensional_theme { }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:132
-[DmPath("/datum/armour_dimensional_theme/safe/natural"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/natural"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_natural : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:132
@@ -38655,7 +38652,7 @@ public partial class datum_armour_dimensional_theme_safe_natural : datum_armour_
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:137
-[DmPath("/datum/armour_dimensional_theme/safe/snow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/snow"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_snow : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:137
@@ -38669,7 +38666,7 @@ public partial class datum_armour_dimensional_theme_safe_snow : datum_armour_dim
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:143
-[DmPath("/datum/armour_dimensional_theme/safe/space"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/space"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_space : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:143
@@ -38683,7 +38680,7 @@ public partial class datum_armour_dimensional_theme_safe_space : datum_armour_di
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:149
-[DmPath("/datum/armour_dimensional_theme/safe/glass"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/glass"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_glass : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:149
@@ -38695,7 +38692,7 @@ public partial class datum_armour_dimensional_theme_safe_glass : datum_armour_di
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:153
-[DmPath("/datum/armour_dimensional_theme/safe/secure"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/secure"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_secure : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:153
@@ -38708,7 +38705,7 @@ public partial class datum_armour_dimensional_theme_safe_secure : datum_armour_d
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:158
-[DmPath("/datum/armour_dimensional_theme/safe/meat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/safe/meat"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_safe_meat : datum_armour_dimensional_theme_safe
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:158
@@ -38719,11 +38716,11 @@ public partial class datum_armour_dimensional_theme_safe_meat : datum_armour_dim
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/armour_dimensional_theme/dangerous"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous : datum_armour_dimensional_theme { }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:164
-[DmPath("/datum/armour_dimensional_theme/dangerous/clown"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/clown"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_clown : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:164
@@ -38736,7 +38733,7 @@ public partial class datum_armour_dimensional_theme_dangerous_clown : datum_armo
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:169
-[DmPath("/datum/armour_dimensional_theme/dangerous/radioactive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/radioactive"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_radioactive : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:169
@@ -38748,7 +38745,7 @@ public partial class datum_armour_dimensional_theme_dangerous_radioactive : datu
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:173
-[DmPath("/datum/armour_dimensional_theme/dangerous/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/plasma"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_plasma : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:173
@@ -38760,7 +38757,7 @@ public partial class datum_armour_dimensional_theme_dangerous_plasma : datum_arm
 }
 
 // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:177
-[DmPath("/datum/armour_dimensional_theme/dangerous/ice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/armour_dimensional_theme/dangerous/ice"), DmGeneratedOnly]
 public partial class datum_armour_dimensional_theme_dangerous_ice : datum_armour_dimensional_theme_dangerous
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:177
@@ -38773,9 +38770,9 @@ public partial class datum_armour_dimensional_theme_dangerous_ice : datum_armour
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183
-[DmPath("/datum/armour_dimensional_theme/dangerous/lavaland"), DmGeneratedOnly, DmInert]
-public partial class datum_armour_dimensional_theme_dangerous_lavaland : datum_armour_dimensional_theme_dangerous
+// tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183 (the var block of a hand-written class)
+[DmPath("/datum/armour_dimensional_theme/dangerous/lavaland")]
+public partial class datum_armour_dimensional_theme_dangerous_lavaland
 {
     // tg: code/modules/clothing/suits/reactive_armour_dimensional_themes.dm:183
     public datum_armour_dimensional_theme_dangerous_lavaland()
@@ -40340,9 +40337,9 @@ public partial class datum_rpgloot_controller : datum { }
 [DmPath("/datum/rpgtitle_controller"), DmGeneratedOnly, DmInert]
 public partial class datum_rpgtitle_controller : datum { }
 
-// tg: code/modules/explorer_drone/adventure.dm:67
-[DmPath("/datum/adventure_db_entry"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_db_entry : datum
+// tg: code/modules/explorer_drone/adventure.dm:67 (the var block of a hand-written class)
+[DmPath("/datum/adventure_db_entry")]
+public partial class datum_adventure_db_entry
 {
     public object filename; // tg: code/modules/explorer_drone/adventure.dm:67
     public object raw_json; // tg: code/modules/explorer_drone/adventure.dm:69
@@ -40354,9 +40351,9 @@ public partial class datum_adventure_db_entry : datum
     public DmList required_site_traits; // tg: code/modules/explorer_drone/adventure.dm:84
 }
 
-// tg: code/modules/explorer_drone/adventure.dm:162
-[DmPath("/datum/adventure"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure : datum
+// tg: code/modules/explorer_drone/adventure.dm:162 (the var block of a hand-written class)
+[DmPath("/datum/adventure")]
+public partial class datum_adventure
 {
     public object name; // tg: code/modules/explorer_drone/adventure.dm:162
     public object starting_node; // tg: code/modules/explorer_drone/adventure.dm:164
@@ -40387,11 +40384,10 @@ public partial class datum_adventure : datum
     }
 }
 
-// tg: code/modules/explorer_drone/adventure.dm:286
-[DmPath("/datum/adventure_node"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_node : datum
+// tg: code/modules/explorer_drone/adventure.dm:286 (the vars the hand-written class does not declare)
+[DmPath("/datum/adventure_node")]
+public partial class datum_adventure_node
 {
-    public Type id; // tg: code/modules/explorer_drone/adventure.dm:286
     public object description; // tg: code/modules/explorer_drone/adventure.dm:288
     public object image_name; // tg: code/modules/explorer_drone/adventure.dm:290
     public object raw_image; // tg: code/modules/explorer_drone/adventure.dm:292
@@ -40402,9 +40398,9 @@ public partial class datum_adventure_node : datum
     public object delay_message; // tg: code/modules/explorer_drone/adventure.dm:302
 }
 
-// tg: code/modules/explorer_drone/exploration_site.dm:18
-[DmPath("/datum/exploration_site"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_site : datum
+// tg: code/modules/explorer_drone/exploration_site.dm:18 (the var block of a hand-written class)
+[DmPath("/datum/exploration_site")]
+public partial class datum_exploration_site
 {
     public object name; // tg: code/modules/explorer_drone/exploration_site.dm:18
     public object description; // tg: code/modules/explorer_drone/exploration_site.dm:20
@@ -40430,7 +40426,7 @@ public partial class datum_exploration_site : datum
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:190
-[DmPath("/datum/exploration_site/abandoned_refueling_station"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/abandoned_refueling_station"), DmGeneratedOnly]
 public partial class datum_exploration_site_abandoned_refueling_station : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:190
@@ -40449,9 +40445,9 @@ public partial class datum_exploration_site_abandoned_refueling_station : datum_
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_site.dm:196
-[DmPath("/datum/exploration_site/trader_post"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_site_trader_post : datum_exploration_site
+// tg: code/modules/explorer_drone/exploration_site.dm:196 (the var block of a hand-written class)
+[DmPath("/datum/exploration_site/trader_post")]
+public partial class datum_exploration_site_trader_post
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:196
     public datum_exploration_site_trader_post()
@@ -40471,7 +40467,7 @@ public partial class datum_exploration_site_trader_post : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:209
-[DmPath("/datum/exploration_site/cargo_wreck"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/cargo_wreck"), DmGeneratedOnly]
 public partial class datum_exploration_site_cargo_wreck : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:209
@@ -40491,7 +40487,7 @@ public partial class datum_exploration_site_cargo_wreck : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:215
-[DmPath("/datum/exploration_site/alien_spaceship"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/alien_spaceship"), DmGeneratedOnly]
 public partial class datum_exploration_site_alien_spaceship : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:215
@@ -40510,9 +40506,9 @@ public partial class datum_exploration_site_alien_spaceship : datum_exploration_
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_site.dm:221
-[DmPath("/datum/exploration_site/uncharted_planet"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_site_uncharted_planet : datum_exploration_site
+// tg: code/modules/explorer_drone/exploration_site.dm:221 (the var block of a hand-written class)
+[DmPath("/datum/exploration_site/uncharted_planet")]
+public partial class datum_exploration_site_uncharted_planet
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:221
     public datum_exploration_site_uncharted_planet()
@@ -40531,7 +40527,7 @@ public partial class datum_exploration_site_uncharted_planet : datum_exploration
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:240
-[DmPath("/datum/exploration_site/alien_ruins"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/alien_ruins"), DmGeneratedOnly]
 public partial class datum_exploration_site_alien_ruins : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:240
@@ -40551,7 +40547,7 @@ public partial class datum_exploration_site_alien_ruins : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:246
-[DmPath("/datum/exploration_site/asteroid_belt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/asteroid_belt"), DmGeneratedOnly]
 public partial class datum_exploration_site_asteroid_belt : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:246
@@ -40571,7 +40567,7 @@ public partial class datum_exploration_site_asteroid_belt : datum_exploration_si
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:252
-[DmPath("/datum/exploration_site/spacemine"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/spacemine"), DmGeneratedOnly]
 public partial class datum_exploration_site_spacemine : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:252
@@ -40592,7 +40588,7 @@ public partial class datum_exploration_site_spacemine : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:259
-[DmPath("/datum/exploration_site/junkyard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/junkyard"), DmGeneratedOnly]
 public partial class datum_exploration_site_junkyard : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:259
@@ -40612,16 +40608,16 @@ public partial class datum_exploration_site_junkyard : datum_exploration_site
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:14
-[DmPath("/datum/adventure_loot_generator"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator : datum
+// tg: code/modules/explorer_drone/loot.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator")]
+public partial class datum_adventure_loot_generator
 {
     public object id; // tg: code/modules/explorer_drone/loot.dm:14
 }
 
-// tg: code/modules/explorer_drone/loot.dm:26
-[DmPath("/datum/adventure_loot_generator/maintenance"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_maintenance : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/maintenance")]
+public partial class datum_adventure_loot_generator_maintenance
 {
     public float? amount = 1; // tg: code/modules/explorer_drone/loot.dm:27
 
@@ -40632,9 +40628,9 @@ public partial class datum_adventure_loot_generator_maintenance : datum_adventur
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:41
-[DmPath("/datum/adventure_loot_generator/cargo"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_cargo : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:41 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/cargo")]
+public partial class datum_adventure_loot_generator_cargo
 {
     // tg: code/modules/explorer_drone/loot.dm:41
     public datum_adventure_loot_generator_cargo()
@@ -40643,15 +40639,15 @@ public partial class datum_adventure_loot_generator_cargo : datum_adventure_loot
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:58
-[DmPath("/datum/adventure_loot_generator/simple"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_simple : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:58 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/simple")]
+public partial class datum_adventure_loot_generator_simple
 {
     public object loot_list; // tg: code/modules/explorer_drone/loot.dm:58
 }
 
 // tg: code/modules/explorer_drone/loot.dm:66
-[DmPath("/datum/adventure_loot_generator/simple/unique"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/unique"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_unique : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:66
@@ -40669,7 +40665,7 @@ public partial class datum_adventure_loot_generator_simple_unique : datum_advent
 }
 
 // tg: code/modules/explorer_drone/loot.dm:71
-[DmPath("/datum/adventure_loot_generator/simple/cash"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/cash"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_cash : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:71
@@ -40687,7 +40683,7 @@ public partial class datum_adventure_loot_generator_simple_cash : datum_adventur
 }
 
 // tg: code/modules/explorer_drone/loot.dm:76
-[DmPath("/datum/adventure_loot_generator/simple/drugs"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/drugs"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_drugs : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:76
@@ -40705,7 +40701,7 @@ public partial class datum_adventure_loot_generator_simple_drugs : datum_adventu
 }
 
 // tg: code/modules/explorer_drone/loot.dm:81
-[DmPath("/datum/adventure_loot_generator/simple/materials"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/materials"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_materials : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:81
@@ -40723,7 +40719,7 @@ public partial class datum_adventure_loot_generator_simple_materials : datum_adv
 }
 
 // tg: code/modules/explorer_drone/loot.dm:86
-[DmPath("/datum/adventure_loot_generator/simple/weapons"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/weapons"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_weapons : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:86
@@ -40741,7 +40737,7 @@ public partial class datum_adventure_loot_generator_simple_weapons : datum_adven
 }
 
 // tg: code/modules/explorer_drone/loot.dm:91
-[DmPath("/datum/adventure_loot_generator/simple/syndicate_fish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/syndicate_fish"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_syndicate_fish : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:91
@@ -40758,9 +40754,9 @@ public partial class datum_adventure_loot_generator_simple_syndicate_fish : datu
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:96
-[DmPath("/datum/adventure_loot_generator/pet"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_pet : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/pet")]
+public partial class datum_adventure_loot_generator_pet
 {
     public Type carrier_type = typeof(obj_item_pet_carrier_biopod); // tg: code/modules/explorer_drone/loot.dm:97
     public DmList possible_pets; // tg: code/modules/explorer_drone/loot.dm:98
@@ -40779,17 +40775,17 @@ public partial class datum_adventure_loot_generator_pet : datum_adventure_loot_g
     }
 }
 
-// tg: code/modules/explorer_drone/manager.dm:3
-[DmPath("/datum/adventure_browser"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_browser : datum
+// tg: code/modules/explorer_drone/manager.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/adventure_browser")]
+public partial class datum_adventure_browser
 {
     public datum_adventure temp_adventure; // tg: code/modules/explorer_drone/manager.dm:3
     public object feedback_message; // tg: code/modules/explorer_drone/manager.dm:4
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:24
-[DmPath("/datum/exoscan"), DmGeneratedOnly, DmInert]
-public partial class datum_exoscan : datum
+// tg: code/modules/explorer_drone/scanner_array.dm:24 (the var block of a hand-written class)
+[DmPath("/datum/exoscan")]
+public partial class datum_exoscan
 {
     public object scan_type; // tg: code/modules/explorer_drone/scanner_array.dm:24
     public float scan_power = 0; // tg: code/modules/explorer_drone/scanner_array.dm:26
@@ -40797,9 +40793,9 @@ public partial class datum_exoscan : datum
     public object scan_timer; // tg: code/modules/explorer_drone/scanner_array.dm:30
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:289
-[DmPath("/datum/scanner_controller"), DmGeneratedOnly, DmInert]
-public partial class datum_scanner_controller : datum
+// tg: code/modules/explorer_drone/scanner_array.dm:289 (the var block of a hand-written class)
+[DmPath("/datum/scanner_controller")]
+public partial class datum_scanner_controller
 {
     public DmList tracked_dishes; // tg: code/modules/explorer_drone/scanner_array.dm:289
     public datum_exoscan current_scan; // tg: code/modules/explorer_drone/scanner_array.dm:291
@@ -40815,17 +40811,17 @@ public partial class datum_scanner_controller : datum
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:350
-[DmPath("/datum/scan_condition"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition : datum
+// tg: code/modules/explorer_drone/scanner_array.dm:350 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition")]
+public partial class datum_scan_condition
 {
     public object name; // tg: code/modules/explorer_drone/scanner_array.dm:350
     public object description; // tg: code/modules/explorer_drone/scanner_array.dm:351
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:358
-[DmPath("/datum/scan_condition/nebula"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_nebula : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:358 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/nebula")]
+public partial class datum_scan_condition_nebula
 {
     public float distance = 15; // tg: code/modules/explorer_drone/scanner_array.dm:360
 
@@ -40837,9 +40833,9 @@ public partial class datum_scan_condition_nebula : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:369
-[DmPath("/datum/scan_condition/pulsar"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_pulsar : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:369 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/pulsar")]
+public partial class datum_scan_condition_pulsar
 {
     public float distance = 2; // tg: code/modules/explorer_drone/scanner_array.dm:371
 
@@ -40851,9 +40847,9 @@ public partial class datum_scan_condition_pulsar : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:380
-[DmPath("/datum/scan_condition/asteroid_belt"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_asteroid_belt : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:380 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/asteroid_belt")]
+public partial class datum_scan_condition_asteroid_belt
 {
     // tg: code/modules/explorer_drone/scanner_array.dm:380
     public datum_scan_condition_asteroid_belt()
@@ -40863,9 +40859,9 @@ public partial class datum_scan_condition_asteroid_belt : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:388
-[DmPath("/datum/scan_condition/black_hole"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_black_hole : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:388 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/black_hole")]
+public partial class datum_scan_condition_black_hole
 {
     // tg: code/modules/explorer_drone/scanner_array.dm:388
     public datum_scan_condition_black_hole()
@@ -40875,9 +40871,9 @@ public partial class datum_scan_condition_black_hole : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:399
-[DmPath("/datum/scan_condition/easy"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_easy : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:399 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/easy")]
+public partial class datum_scan_condition_easy
 {
     // tg: code/modules/explorer_drone/scanner_array.dm:399
     public datum_scan_condition_easy()
@@ -40887,9 +40883,9 @@ public partial class datum_scan_condition_easy : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:4
-[DmPath("/datum/exploration_event"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event : datum
+// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event")]
+public partial class datum_exploration_event
 {
     public string name = "Something interesting"; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:6
     public float visited = 0; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:8
@@ -40908,9 +40904,9 @@ public partial class datum_exploration_event : datum
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:43
-[DmPath("/datum/exploration_event/simple"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple : datum_exploration_event
+// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:43 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple")]
+public partial class datum_exploration_event_simple
 {
     public string ui_image = "default"; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:44
     public float skippable = 1; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:46
@@ -40925,9 +40921,9 @@ public partial class datum_exploration_event_simple : datum_exploration_event
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/danger.dm:3
-[DmPath("/datum/exploration_event/simple/danger"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_danger : datum_exploration_event_simple
+// tg: code/modules/explorer_drone/exploration_events/danger.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/danger")]
+public partial class datum_exploration_event_simple_danger
 {
     public string required_tool = "laser"; // tg: code/modules/explorer_drone/exploration_events/danger.dm:5
     public string has_tool_action_text = "Fight"; // tg: code/modules/explorer_drone/exploration_events/danger.dm:6
@@ -40947,7 +40943,7 @@ public partial class datum_exploration_event_simple_danger : datum_exploration_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:35
-[DmPath("/datum/exploration_event/simple/danger/carp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/carp"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_carp : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:35
@@ -40973,7 +40969,7 @@ public partial class datum_exploration_event_simple_danger_carp : datum_explorat
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:48
-[DmPath("/datum/exploration_event/simple/danger/carp/surface_variety"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/carp/surface_variety"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_carp_surface_variety : datum_exploration_event_simple_danger_carp
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:48
@@ -40985,7 +40981,7 @@ public partial class datum_exploration_event_simple_danger_carp_surface_variety 
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:51
-[DmPath("/datum/exploration_event/simple/danger/assistant"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/assistant"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_assistant : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:51
@@ -41010,7 +41006,7 @@ public partial class datum_exploration_event_simple_danger_assistant : datum_exp
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:62
-[DmPath("/datum/exploration_event/simple/danger/collapse"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/collapse"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_collapse : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:62
@@ -41036,7 +41032,7 @@ public partial class datum_exploration_event_simple_danger_collapse : datum_expl
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:74
-[DmPath("/datum/exploration_event/simple/danger/loose_wires"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/loose_wires"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_loose_wires : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:74
@@ -41062,7 +41058,7 @@ public partial class datum_exploration_event_simple_danger_loose_wires : datum_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:86
-[DmPath("/datum/exploration_event/simple/danger/cosmic_rays"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/cosmic_rays"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_cosmic_rays : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:86
@@ -41088,7 +41084,7 @@ public partial class datum_exploration_event_simple_danger_cosmic_rays : datum_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:98
-[DmPath("/datum/exploration_event/simple/danger/alien_sentry"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/alien_sentry"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_alien_sentry : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:98
@@ -41113,9 +41109,9 @@ public partial class datum_exploration_event_simple_danger_alien_sentry : datum_
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/danger.dm:110
-[DmPath("/datum/exploration_event/simple/danger/beast"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_danger_beast : datum_exploration_event_simple_danger
+// tg: code/modules/explorer_drone/exploration_events/danger.dm:110 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/danger/beast")]
+public partial class datum_exploration_event_simple_danger_beast
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:110
     public datum_exploration_event_simple_danger_beast()
@@ -41141,7 +41137,7 @@ public partial class datum_exploration_event_simple_danger_beast : datum_explora
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:129
-[DmPath("/datum/exploration_event/simple/danger/rad"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/rad"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_rad : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:129
@@ -41166,9 +41162,9 @@ public partial class datum_exploration_event_simple_danger_rad : datum_explorati
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/resource.dm:3
-[DmPath("/datum/exploration_event/simple/resource"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_resource : datum_exploration_event_simple
+// tg: code/modules/explorer_drone/exploration_events/resource.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/resource")]
+public partial class datum_exploration_event_simple_resource
 {
     public object required_tool; // tg: code/modules/explorer_drone/exploration_events/resource.dm:8
     public Type loot_type = typeof(obj_item_trash_chips); // tg: code/modules/explorer_drone/exploration_events/resource.dm:10
@@ -41190,7 +41186,7 @@ public partial class datum_exploration_event_simple_resource : datum_exploration
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:74
-[DmPath("/datum/exploration_event/simple/resource/concealed_cache"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/concealed_cache"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_concealed_cache : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:74
@@ -41216,7 +41212,7 @@ public partial class datum_exploration_event_simple_resource_concealed_cache : d
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:87
-[DmPath("/datum/exploration_event/simple/resource/remnants"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/remnants"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_remnants : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:87
@@ -41242,7 +41238,7 @@ public partial class datum_exploration_event_simple_resource_remnants : datum_ex
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:99
-[DmPath("/datum/exploration_event/simple/resource/gunfight"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/gunfight"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_gunfight : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:99
@@ -41268,7 +41264,7 @@ public partial class datum_exploration_event_simple_resource_gunfight : datum_ex
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:112
-[DmPath("/datum/exploration_event/simple/resource/maint_room"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/maint_room"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_maint_room : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:112
@@ -41296,7 +41292,7 @@ public partial class datum_exploration_event_simple_resource_maint_room : datum_
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:126
-[DmPath("/datum/exploration_event/simple/resource/storage"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/storage"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_storage : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:126
@@ -41323,7 +41319,7 @@ public partial class datum_exploration_event_simple_resource_storage : datum_exp
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:140
-[DmPath("/datum/exploration_event/simple/resource/alien_tools"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/alien_tools"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_alien_tools : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:140
@@ -41351,7 +41347,7 @@ public partial class datum_exploration_event_simple_resource_alien_tools : datum
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:154
-[DmPath("/datum/exploration_event/simple/resource/pod"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/pod"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_pod : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:154
@@ -41379,7 +41375,7 @@ public partial class datum_exploration_event_simple_resource_pod : datum_explora
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:169
-[DmPath("/datum/exploration_event/simple/resource/fuel_storage"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/fuel_storage"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_fuel_storage : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:169
@@ -41407,7 +41403,7 @@ public partial class datum_exploration_event_simple_resource_fuel_storage : datu
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:183
-[DmPath("/datum/exploration_event/simple/resource/navigation"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/navigation"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_navigation : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:183
@@ -41434,7 +41430,7 @@ public partial class datum_exploration_event_simple_resource_navigation : datum_
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:197
-[DmPath("/datum/exploration_event/simple/resource/unknown_microbiome"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/unknown_microbiome"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_unknown_microbiome : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:197
@@ -41461,7 +41457,7 @@ public partial class datum_exploration_event_simple_resource_unknown_microbiome 
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:210
-[DmPath("/datum/exploration_event/simple/resource/tcg_nerd"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/tcg_nerd"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_tcg_nerd : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:210
@@ -41489,7 +41485,7 @@ public partial class datum_exploration_event_simple_resource_tcg_nerd : datum_ex
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:225
-[DmPath("/datum/exploration_event/simple/resource/comms_satellite"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/comms_satellite"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_comms_satellite : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:225
@@ -41515,9 +41511,9 @@ public partial class datum_exploration_event_simple_resource_comms_satellite : d
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/resource.dm:238
-[DmPath("/datum/exploration_event/simple/resource/welded_locker"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_resource_welded_locker : datum_exploration_event_simple_resource
+// tg: code/modules/explorer_drone/exploration_events/resource.dm:238 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/resource/welded_locker")]
+public partial class datum_exploration_event_simple_resource_welded_locker
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:238
     public datum_exploration_event_simple_resource_welded_locker()
@@ -41542,7 +41538,7 @@ public partial class datum_exploration_event_simple_resource_welded_locker : dat
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:260
-[DmPath("/datum/exploration_event/simple/resource/plasma_deposit"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/plasma_deposit"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_plasma_deposit : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:260
@@ -41569,9 +41565,9 @@ public partial class datum_exploration_event_simple_resource_plasma_deposit : da
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/resource.dm:274
-[DmPath("/datum/exploration_event/simple/resource/mineral_deposit"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_resource_mineral_deposit : datum_exploration_event_simple_resource
+// tg: code/modules/explorer_drone/exploration_events/resource.dm:274 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/resource/mineral_deposit")]
+public partial class datum_exploration_event_simple_resource_mineral_deposit
 {
     public float loot_amount = 30; // tg: code/modules/explorer_drone/exploration_events/resource.dm:286
     public object chosen_material_type; // tg: code/modules/explorer_drone/exploration_events/resource.dm:287
@@ -41599,9 +41595,9 @@ public partial class datum_exploration_event_simple_resource_mineral_deposit : d
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/trader.dm:3
-[DmPath("/datum/exploration_event/simple/trader"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_trader : datum_exploration_event_simple
+// tg: code/modules/explorer_drone/exploration_events/trader.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/trader")]
+public partial class datum_exploration_event_simple_trader
 {
     public object required_path; // tg: code/modules/explorer_drone/exploration_events/trader.dm:6
     public object traded_path; // tg: code/modules/explorer_drone/exploration_events/trader.dm:8
@@ -41617,7 +41613,7 @@ public partial class datum_exploration_event_simple_trader : datum_exploration_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:60
-[DmPath("/datum/exploration_event/simple/trader/vendor_ai"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/vendor_ai"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_vendor_ai : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:60
@@ -41640,7 +41636,7 @@ public partial class datum_exploration_event_simple_trader_vendor_ai : datum_exp
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:69
-[DmPath("/datum/exploration_event/simple/trader/farmer_market"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/farmer_market"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_farmer_market : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:69
@@ -41663,7 +41659,7 @@ public partial class datum_exploration_event_simple_trader_farmer_market : datum
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:78
-[DmPath("/datum/exploration_event/simple/trader/fish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/fish"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_fish : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:78
@@ -41687,7 +41683,7 @@ public partial class datum_exploration_event_simple_trader_fish : datum_explorat
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:88
-[DmPath("/datum/exploration_event/simple/trader/shady_merchant"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/shady_merchant"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_shady_merchant : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:88
@@ -41710,7 +41706,7 @@ public partial class datum_exploration_event_simple_trader_shady_merchant : datu
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:97
-[DmPath("/datum/exploration_event/simple/trader/surplus"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/surplus"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_surplus : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:97
@@ -41732,9 +41728,9 @@ public partial class datum_exploration_event_simple_trader_surplus : datum_explo
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/trader.dm:106
-[DmPath("/datum/exploration_event/simple/trader/flame_card"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_trader_flame_card : datum_exploration_event_simple_trader
+// tg: code/modules/explorer_drone/exploration_events/trader.dm:106 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/trader/flame_card")]
+public partial class datum_exploration_event_simple_trader_flame_card
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:106
     public datum_exploration_event_simple_trader_flame_card()
@@ -41756,9 +41752,9 @@ public partial class datum_exploration_event_simple_trader_flame_card : datum_ex
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/adventure.dm:3
-[DmPath("/datum/exploration_event/adventure"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_adventure : datum_exploration_event
+// tg: code/modules/explorer_drone/exploration_events/adventure.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/adventure")]
+public partial class datum_exploration_event_adventure
 {
     public datum_adventure adventure; // tg: code/modules/explorer_drone/exploration_events/adventure.dm:4
 
@@ -41770,9 +41766,9 @@ public partial class datum_exploration_event_adventure : datum_exploration_event
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/fluff.dm:3
-[DmPath("/datum/exploration_event/fluff"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_fluff : datum_exploration_event
+// tg: code/modules/explorer_drone/exploration_events/fluff.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/fluff")]
+public partial class datum_exploration_event_fluff
 {
     // tg: code/modules/explorer_drone/exploration_events/fluff.dm:3
     public datum_exploration_event_fluff()
@@ -41781,16 +41777,16 @@ public partial class datum_exploration_event_fluff : datum_exploration_event
     }
 }
 
-// tg: code/modules/fishing/admin.dm:6
-[DmPath("/datum/fishing_calculator"), DmGeneratedOnly, DmInert]
-public partial class datum_fishing_calculator : datum
+// tg: code/modules/fishing/admin.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/fishing_calculator")]
+public partial class datum_fishing_calculator
 {
     public DmList current_table; // tg: code/modules/fishing/admin.dm:6
 }
 
-// tg: code/modules/fishing/fish_movement.dm:13
-[DmPath("/datum/fish_movement"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_movement : datum
+// tg: code/modules/fishing/fish_movement.dm:13 (the var block of a hand-written class)
+[DmPath("/datum/fish_movement")]
+public partial class datum_fish_movement
 {
     public datum_fishing_challenge master; // tg: code/modules/fishing/fish_movement.dm:13
     public float times_fired = 0; // tg: code/modules/fishing/fish_movement.dm:15
@@ -41806,7 +41802,7 @@ public partial class datum_fish_movement : datum
 }
 
 // tg: code/modules/fishing/fish_movement.dm:155
-[DmPath("/datum/fish_movement/slow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_movement/slow"), DmGeneratedOnly]
 public partial class datum_fish_movement_slow : datum_fish_movement
 {
     // tg: code/modules/fishing/fish_movement.dm:155
@@ -41820,7 +41816,7 @@ public partial class datum_fish_movement_slow : datum_fish_movement
 }
 
 // tg: code/modules/fishing/fish_movement.dm:162
-[DmPath("/datum/fish_movement/zippy"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_movement/zippy"), DmGeneratedOnly]
 public partial class datum_fish_movement_zippy : datum_fish_movement
 {
     // tg: code/modules/fishing/fish_movement.dm:162
@@ -41830,33 +41826,33 @@ public partial class datum_fish_movement_zippy : datum_fish_movement
     }
 }
 
-// tg: code/modules/fishing/fish_movement.dm:167
-[DmPath("/datum/fish_movement/accelerando"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_movement_accelerando : datum_fish_movement
+// tg: code/modules/fishing/fish_movement.dm:167 (the var block of a hand-written class)
+[DmPath("/datum/fish_movement/accelerando")]
+public partial class datum_fish_movement_accelerando
 {
     public object short_jump_vel_add; // tg: code/modules/fishing/fish_movement.dm:167
     public object long_jump_vel_add; // tg: code/modules/fishing/fish_movement.dm:169
     public float accel_time_cap = 30; // tg: code/modules/fishing/fish_movement.dm:171
 }
 
-// tg: code/modules/fishing/fish_movement.dm:201
-[DmPath("/datum/fish_movement/choppy"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_movement_choppy : datum_fish_movement
+// tg: code/modules/fishing/fish_movement.dm:201 (the var block of a hand-written class)
+[DmPath("/datum/fish_movement/choppy")]
+public partial class datum_fish_movement_choppy
 {
     public float faux_position = 0; // tg: code/modules/fishing/fish_movement.dm:201
 }
 
-// tg: code/modules/fishing/fish_movement.dm:211
-[DmPath("/datum/fish_movement/plunger"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_movement_plunger : datum_fish_movement
+// tg: code/modules/fishing/fish_movement.dm:211 (the var block of a hand-written class)
+[DmPath("/datum/fish_movement/plunger")]
+public partial class datum_fish_movement_plunger
 {
     public float is_plunging = 1; // tg: code/modules/fishing/fish_movement.dm:211
     public float plunging_speed = -22; // tg: code/modules/fishing/fish_movement.dm:213
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:39
-[DmPath("/datum/fishing_challenge"), DmGeneratedOnly, DmInert]
-public partial class datum_fishing_challenge : datum
+// tg: code/modules/fishing/fishing_minigame.dm:39 (the vars the hand-written class does not declare)
+[DmPath("/datum/fishing_challenge")]
+public partial class datum_fishing_challenge
 {
     public object start_time; // tg: code/modules/fishing/fishing_minigame.dm:39
     public float completed = 0; // tg: code/modules/fishing/fishing_minigame.dm:41
@@ -41864,7 +41860,6 @@ public partial class datum_fishing_challenge : datum
     public DmList active_effects; // tg: code/modules/fishing/fishing_minigame.dm:45
     public float active_effect_cd = 0; // tg: code/modules/fishing/fishing_minigame.dm:47
     public object current_active_effect; // tg: code/modules/fishing/fishing_minigame.dm:49
-    public string reward_path = "dud"; // tg: code/modules/fishing/fishing_minigame.dm:51
     public float difficulty = 15; // tg: code/modules/fishing/fishing_minigame.dm:53
     public float phase = 1; // tg: code/modules/fishing/fishing_minigame.dm:55
     public object next_phase_timer; // tg: code/modules/fishing/fishing_minigame.dm:57
@@ -41873,7 +41868,6 @@ public partial class datum_fishing_challenge : datum
     public mob_living user; // tg: code/modules/fishing/fishing_minigame.dm:63
     public obj_item_fishing_rod used_rod; // tg: code/modules/fishing/fishing_minigame.dm:65
     public obj_effect_fishing_float @float; // tg: code/modules/fishing/fishing_minigame.dm:67
-    public Type location; // tg: code/modules/fishing/fishing_minigame.dm:69
     public string background = "background_default"; // tg: code/modules/fishing/fishing_minigame.dm:71
     public string fish_icon = "fish"; // tg: code/modules/fishing/fishing_minigame.dm:73
     public datum_beam fishing_line; // tg: code/modules/fishing/fishing_minigame.dm:76
@@ -41906,23 +41900,23 @@ public partial class datum_fishing_challenge : datum
     }
 }
 
-// tg: code/modules/fishing/fish/chasm_detritus.dm:21
-[DmPath("/datum/chasm_detritus"), DmGeneratedOnly, DmInert]
-public partial class datum_chasm_detritus : datum
+// tg: code/modules/fishing/fish/chasm_detritus.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/chasm_detritus")]
+public partial class datum_chasm_detritus
 {
     public float default_contents_chance = 25; // tg: code/modules/fishing/fish/chasm_detritus.dm:21
     public string default_contents_key = "normal"; // tg: code/modules/fishing/fish/chasm_detritus.dm:23
 }
 
-// tg: code/modules/fishing/fish/chasm_detritus.dm:81
-[DmPath("/datum/chasm_detritus/restricted"), DmGeneratedOnly, DmInert]
-public partial class datum_chasm_detritus_restricted : datum_chasm_detritus
+// tg: code/modules/fishing/fish/chasm_detritus.dm:81 (the var block of a hand-written class)
+[DmPath("/datum/chasm_detritus/restricted")]
+public partial class datum_chasm_detritus_restricted
 {
     public Type chasm_storage_restricted_type = typeof(obj); // tg: code/modules/fishing/fish/chasm_detritus.dm:81
 }
 
 // tg: code/modules/fishing/fish/chasm_detritus.dm:92
-[DmPath("/datum/chasm_detritus/restricted/objects"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/chasm_detritus/restricted/objects"), DmGeneratedOnly]
 public partial class datum_chasm_detritus_restricted_objects : datum_chasm_detritus_restricted
 {
     // tg: code/modules/fishing/fish/chasm_detritus.dm:92
@@ -41933,9 +41927,9 @@ public partial class datum_chasm_detritus_restricted_objects : datum_chasm_detri
     }
 }
 
-// tg: code/modules/fishing/fish/chasm_detritus.dm:96
-[DmPath("/datum/chasm_detritus/restricted/bodies"), DmGeneratedOnly, DmInert]
-public partial class datum_chasm_detritus_restricted_bodies : datum_chasm_detritus_restricted
+// tg: code/modules/fishing/fish/chasm_detritus.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/chasm_detritus/restricted/bodies")]
+public partial class datum_chasm_detritus_restricted_bodies
 {
     // tg: code/modules/fishing/fish/chasm_detritus.dm:96
     public datum_chasm_detritus_restricted_bodies()
@@ -41946,9 +41940,9 @@ public partial class datum_chasm_detritus_restricted_bodies : datum_chasm_detrit
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:14
-[DmPath("/datum/fish_evolution"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution : datum
+// tg: code/modules/fishing/fish/fish_evolution.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution")]
+public partial class datum_fish_evolution
 {
     public object name; // tg: code/modules/fishing/fish/fish_evolution.dm:14
     public float probability = 0; // tg: code/modules/fishing/fish/fish_evolution.dm:16
@@ -41962,9 +41956,9 @@ public partial class datum_fish_evolution : datum
     public float show_result_on_wiki = 1; // tg: code/modules/fishing/fish/fish_evolution.dm:32
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:86
-[DmPath("/datum/fish_evolution/lubefish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_lubefish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:86 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/lubefish")]
+public partial class datum_fish_evolution_lubefish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:86
     public datum_fish_evolution_lubefish()
@@ -41983,7 +41977,7 @@ public partial class datum_fish_evolution_lubefish : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:97
-[DmPath("/datum/fish_evolution/purple_sludgefish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/purple_sludgefish"), DmGeneratedOnly]
 public partial class datum_fish_evolution_purple_sludgefish : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:97
@@ -42002,9 +41996,9 @@ public partial class datum_fish_evolution_purple_sludgefish : datum_fish_evoluti
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:103
-[DmPath("/datum/fish_evolution/mastodon"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_mastodon : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:103 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/mastodon")]
+public partial class datum_fish_evolution_mastodon
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:103
     public datum_fish_evolution_mastodon()
@@ -42025,7 +42019,7 @@ public partial class datum_fish_evolution_mastodon : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:116
-[DmPath("/datum/fish_evolution/chasm_chrab"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/chasm_chrab"), DmGeneratedOnly]
 public partial class datum_fish_evolution_chasm_chrab : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:116
@@ -42039,7 +42033,7 @@ public partial class datum_fish_evolution_chasm_chrab : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:122
-[DmPath("/datum/fish_evolution/ice_chrab"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/ice_chrab"), DmGeneratedOnly]
 public partial class datum_fish_evolution_ice_chrab : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:122
@@ -42053,7 +42047,7 @@ public partial class datum_fish_evolution_ice_chrab : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:128
-[DmPath("/datum/fish_evolution/three_eyes"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/three_eyes"), DmGeneratedOnly]
 public partial class datum_fish_evolution_three_eyes : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:128
@@ -42071,9 +42065,9 @@ public partial class datum_fish_evolution_three_eyes : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:133
-[DmPath("/datum/fish_evolution/chainsawfish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_chainsawfish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:133 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/chainsawfish")]
+public partial class datum_fish_evolution_chainsawfish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:133
     public datum_fish_evolution_chainsawfish()
@@ -42091,9 +42085,9 @@ public partial class datum_fish_evolution_chainsawfish : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:146
-[DmPath("/datum/fish_evolution/armored_pike"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_armored_pike : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:146 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/armored_pike")]
+public partial class datum_fish_evolution_armored_pike
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:146
     public datum_fish_evolution_armored_pike()
@@ -42105,7 +42099,7 @@ public partial class datum_fish_evolution_armored_pike : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:156
-[DmPath("/datum/fish_evolution/fritterish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/fritterish"), DmGeneratedOnly]
 public partial class datum_fish_evolution_fritterish : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:156
@@ -42124,7 +42118,7 @@ public partial class datum_fish_evolution_fritterish : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:161
-[DmPath("/datum/fish_evolution/nessie"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/nessie"), DmGeneratedOnly]
 public partial class datum_fish_evolution_nessie : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:161
@@ -42137,13 +42131,13 @@ public partial class datum_fish_evolution_nessie : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:166
-[DmPath("/datum/fish_evolution/nessiefish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_nessiefish : datum_fish_evolution { }
+// tg: code/modules/fishing/fish/fish_evolution.dm:166 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/nessiefish")]
+public partial class datum_fish_evolution_nessiefish { }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:172
-[DmPath("/datum/fish_evolution/moonfish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_moonfish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:172 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/moonfish")]
+public partial class datum_fish_evolution_moonfish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:172
     public datum_fish_evolution_moonfish()
@@ -42154,9 +42148,9 @@ public partial class datum_fish_evolution_moonfish : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_evolution.dm:184
-[DmPath("/datum/fish_evolution/dwarf_moonfish"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_evolution_dwarf_moonfish : datum_fish_evolution
+// tg: code/modules/fishing/fish/fish_evolution.dm:184 (the var block of a hand-written class)
+[DmPath("/datum/fish_evolution/dwarf_moonfish")]
+public partial class datum_fish_evolution_dwarf_moonfish
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:184
     public datum_fish_evolution_dwarf_moonfish()
@@ -42168,7 +42162,7 @@ public partial class datum_fish_evolution_dwarf_moonfish : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:196
-[DmPath("/datum/fish_evolution/lavaloop"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/lavaloop"), DmGeneratedOnly]
 public partial class datum_fish_evolution_lavaloop : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:196
@@ -42181,7 +42175,7 @@ public partial class datum_fish_evolution_lavaloop : datum_fish_evolution
 }
 
 // tg: code/modules/fishing/fish/fish_evolution.dm:201
-[DmPath("/datum/fish_evolution/plasmaloop"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_evolution/plasmaloop"), DmGeneratedOnly]
 public partial class datum_fish_evolution_plasmaloop : datum_fish_evolution
 {
     // tg: code/modules/fishing/fish/fish_evolution.dm:201
@@ -42193,9 +42187,9 @@ public partial class datum_fish_evolution_plasmaloop : datum_fish_evolution
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:25
-[DmPath("/datum/fish_trait"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait : datum
+// tg: code/modules/fishing/fish/fish_traits.dm:25 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait")]
+public partial class datum_fish_trait
 {
     public string name = "Unnamed Trait"; // tg: code/modules/fishing/fish/fish_traits.dm:25
     public string catalog_description = "Uh uh, someone has forgotten to set description to this trait. Yikes!"; // tg: code/modules/fishing/fish/fish_traits.dm:27
@@ -42210,9 +42204,9 @@ public partial class datum_fish_trait : datum
     public float bioscramble_weight = 0; // tg: code/modules/fishing/fish/fish_traits.dm:45
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:133
-[DmPath("/datum/fish_trait/wary"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_wary : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:133 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/wary")]
+public partial class datum_fish_trait_wary
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:133
     public datum_fish_trait_wary()
@@ -42223,9 +42217,9 @@ public partial class datum_fish_trait_wary : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:146
-[DmPath("/datum/fish_trait/shiny_lover"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_shiny_lover : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:146 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/shiny_lover")]
+public partial class datum_fish_trait_shiny_lover
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:146
     public datum_fish_trait_shiny_lover()
@@ -42236,9 +42230,9 @@ public partial class datum_fish_trait_shiny_lover : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:163
-[DmPath("/datum/fish_trait/picky_eater"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_picky_eater : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:163 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/picky_eater")]
+public partial class datum_fish_trait_picky_eater
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:163
     public datum_fish_trait_picky_eater()
@@ -42249,9 +42243,9 @@ public partial class datum_fish_trait_picky_eater : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:195
-[DmPath("/datum/fish_trait/nocturnal"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_nocturnal : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:195 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/nocturnal")]
+public partial class datum_fish_trait_nocturnal
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:195
     public datum_fish_trait_nocturnal()
@@ -42262,9 +42256,9 @@ public partial class datum_fish_trait_nocturnal : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:239
-[DmPath("/datum/fish_trait/heavy"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_heavy : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:239 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/heavy")]
+public partial class datum_fish_trait_heavy
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:239
     public datum_fish_trait_heavy()
@@ -42274,9 +42268,9 @@ public partial class datum_fish_trait_heavy : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:255
-[DmPath("/datum/fish_trait/carnivore"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_carnivore : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:255 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/carnivore")]
+public partial class datum_fish_trait_carnivore
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:255
     public datum_fish_trait_carnivore()
@@ -42293,9 +42287,9 @@ public partial class datum_fish_trait_carnivore : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:276
-[DmPath("/datum/fish_trait/vegan"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_vegan : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:276 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/vegan")]
+public partial class datum_fish_trait_vegan
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:276
     public datum_fish_trait_vegan()
@@ -42312,9 +42306,9 @@ public partial class datum_fish_trait_vegan : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:303
-[DmPath("/datum/fish_trait/emulsijack"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_emulsijack : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:303 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/emulsijack")]
+public partial class datum_fish_trait_emulsijack
 {
     public DmList resistance_traits; // tg: code/modules/fishing/fish/fish_traits.dm:305
 
@@ -42334,9 +42328,9 @@ public partial class datum_fish_trait_emulsijack : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:348
-[DmPath("/datum/fish_trait/emulsijack/psychic"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_emulsijack_psychic : datum_fish_trait_emulsijack
+// tg: code/modules/fishing/fish/fish_traits.dm:348 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/emulsijack/psychic")]
+public partial class datum_fish_trait_emulsijack_psychic
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:348
     public datum_fish_trait_emulsijack_psychic()
@@ -42354,9 +42348,9 @@ public partial class datum_fish_trait_emulsijack_psychic : datum_fish_trait_emul
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:357
-[DmPath("/datum/fish_trait/necrophage"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_necrophage : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:357 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/necrophage")]
+public partial class datum_fish_trait_necrophage
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:357
     public datum_fish_trait_necrophage()
@@ -42374,7 +42368,7 @@ public partial class datum_fish_trait_necrophage : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:380
-[DmPath("/datum/fish_trait/parthenogenesis"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/parthenogenesis"), DmGeneratedOnly]
 public partial class datum_fish_trait_parthenogenesis : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:380
@@ -42394,7 +42388,7 @@ public partial class datum_fish_trait_parthenogenesis : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:391
-[DmPath("/datum/fish_trait/no_mating"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/no_mating"), DmGeneratedOnly]
 public partial class datum_fish_trait_no_mating : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:391
@@ -42416,7 +42410,7 @@ public partial class datum_fish_trait_no_mating : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:404
-[DmPath("/datum/fish_trait/recessive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/recessive"), DmGeneratedOnly]
 public partial class datum_fish_trait_recessive : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:404
@@ -42436,9 +42430,9 @@ public partial class datum_fish_trait_recessive : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:411
-[DmPath("/datum/fish_trait/revival"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_revival : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:411 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/revival")]
+public partial class datum_fish_trait_revival
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:411
     public datum_fish_trait_revival()
@@ -42456,9 +42450,9 @@ public partial class datum_fish_trait_revival : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:445
-[DmPath("/datum/fish_trait/predator"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_predator : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:445 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/predator")]
+public partial class datum_fish_trait_predator
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:445
     public datum_fish_trait_predator()
@@ -42477,7 +42471,7 @@ public partial class datum_fish_trait_predator : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:476
-[DmPath("/datum/fish_trait/yucky"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/yucky"), DmGeneratedOnly]
 public partial class datum_fish_trait_yucky : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:476
@@ -42497,9 +42491,9 @@ public partial class datum_fish_trait_yucky : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:483
-[DmPath("/datum/fish_trait/toxic"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_toxic : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:483 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/toxic")]
+public partial class datum_fish_trait_toxic
 {
     public float venom_mult = 1; // tg: code/modules/fishing/fish/fish_traits.dm:488
 
@@ -42520,7 +42514,7 @@ public partial class datum_fish_trait_toxic : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:535
-[DmPath("/datum/fish_trait/toxic/carpotoxin"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/toxic/carpotoxin"), DmGeneratedOnly]
 public partial class datum_fish_trait_toxic_carpotoxin : datum_fish_trait_toxic
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:535
@@ -42542,7 +42536,7 @@ public partial class datum_fish_trait_toxic_carpotoxin : datum_fish_trait_toxic
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:543
-[DmPath("/datum/fish_trait/toxin_immunity"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/toxin_immunity"), DmGeneratedOnly]
 public partial class datum_fish_trait_toxin_immunity : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:543
@@ -42562,7 +42556,7 @@ public partial class datum_fish_trait_toxin_immunity : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:549
-[DmPath("/datum/fish_trait/crossbreeder"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/crossbreeder"), DmGeneratedOnly]
 public partial class datum_fish_trait_crossbreeder : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:549
@@ -42583,9 +42577,9 @@ public partial class datum_fish_trait_crossbreeder : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:557
-[DmPath("/datum/fish_trait/territorial"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_territorial : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:557 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/territorial")]
+public partial class datum_fish_trait_territorial
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:557
     public datum_fish_trait_territorial()
@@ -42596,9 +42590,9 @@ public partial class datum_fish_trait_territorial : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:585
-[DmPath("/datum/fish_trait/lubed"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_lubed : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:585 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/lubed")]
+public partial class datum_fish_trait_lubed
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:585
     public datum_fish_trait_lubed()
@@ -42618,9 +42612,9 @@ public partial class datum_fish_trait_lubed : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:614
-[DmPath("/datum/fish_trait/amphibious"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_amphibious : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:614 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/amphibious")]
+public partial class datum_fish_trait_amphibious
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:614
     public datum_fish_trait_amphibious()
@@ -42640,7 +42634,7 @@ public partial class datum_fish_trait_amphibious : datum_fish_trait
 }
 
 // tg: code/modules/fishing/fish/fish_traits.dm:634
-[DmPath("/datum/fish_trait/mixotroph"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_trait/mixotroph"), DmGeneratedOnly]
 public partial class datum_fish_trait_mixotroph : datum_fish_trait
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:634
@@ -42659,9 +42653,9 @@ public partial class datum_fish_trait_mixotroph : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:640
-[DmPath("/datum/fish_trait/antigrav"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_antigrav : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:640 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/antigrav")]
+public partial class datum_fish_trait_antigrav
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:640
     public datum_fish_trait_antigrav()
@@ -42679,9 +42673,9 @@ public partial class datum_fish_trait_antigrav : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:664
-[DmPath("/datum/fish_trait/anxiety"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_anxiety : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:664 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/anxiety")]
+public partial class datum_fish_trait_anxiety
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:664
     public datum_fish_trait_anxiety()
@@ -42692,9 +42686,9 @@ public partial class datum_fish_trait_anxiety : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:696
-[DmPath("/datum/fish_trait/electrogenesis"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_electrogenesis : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:696 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/electrogenesis")]
+public partial class datum_fish_trait_electrogenesis
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:696
     public datum_fish_trait_electrogenesis()
@@ -42712,9 +42706,9 @@ public partial class datum_fish_trait_electrogenesis : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:746
-[DmPath("/datum/fish_trait/stunted"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_stunted : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:746 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/stunted")]
+public partial class datum_fish_trait_stunted
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:746
     public datum_fish_trait_stunted()
@@ -42732,9 +42726,9 @@ public partial class datum_fish_trait_stunted : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:756
-[DmPath("/datum/fish_trait/stinger"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_stinger : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:756 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/stinger")]
+public partial class datum_fish_trait_stinger
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:756
     public datum_fish_trait_stinger()
@@ -42752,9 +42746,9 @@ public partial class datum_fish_trait_stinger : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:782
-[DmPath("/datum/fish_trait/toxic_barbs"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_toxic_barbs : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:782 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/toxic_barbs")]
+public partial class datum_fish_trait_toxic_barbs
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:782
     public datum_fish_trait_toxic_barbs()
@@ -42772,9 +42766,9 @@ public partial class datum_fish_trait_toxic_barbs : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:814
-[DmPath("/datum/fish_trait/hallucinogenic"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_hallucinogenic : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:814 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/hallucinogenic")]
+public partial class datum_fish_trait_hallucinogenic
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:814
     public datum_fish_trait_hallucinogenic()
@@ -42792,9 +42786,9 @@ public partial class datum_fish_trait_hallucinogenic : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:851
-[DmPath("/datum/fish_trait/ink"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_ink : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:851 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/ink")]
+public partial class datum_fish_trait_ink
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:851
     public datum_fish_trait_ink()
@@ -42813,9 +42807,9 @@ public partial class datum_fish_trait_ink : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/fish/fish_traits.dm:888
-[DmPath("/datum/fish_trait/camouflage"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_trait_camouflage : datum_fish_trait
+// tg: code/modules/fishing/fish/fish_traits.dm:888 (the var block of a hand-written class)
+[DmPath("/datum/fish_trait/camouflage")]
+public partial class datum_fish_trait_camouflage
 {
     // tg: code/modules/fishing/fish/fish_traits.dm:888
     public datum_fish_trait_camouflage()
@@ -42834,9 +42828,9 @@ public partial class datum_fish_trait_camouflage : datum_fish_trait
     }
 }
 
-// tg: code/modules/fishing/sources/_fish_source.dm:77
-[DmPath("/datum/fish_source"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source : datum
+// tg: code/modules/fishing/sources/_fish_source.dm:77 (the var block of a hand-written class)
+[DmPath("/datum/fish_source")]
+public partial class datum_fish_source
 {
     public DmList fish_table; // tg: code/modules/fishing/sources/_fish_source.dm:77
     public DmList fish_counts; // tg: code/modules/fishing/sources/_fish_source.dm:79
@@ -42866,7 +42860,7 @@ public partial class datum_fish_source : datum
 }
 
 // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:4
-[DmPath("/datum/fish_source/portal"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/portal"), DmGeneratedOnly]
 public partial class datum_fish_source_portal : datum_fish_source
 {
     public string radial_name = "Aquarium"; // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:18
@@ -42888,9 +42882,9 @@ public partial class datum_fish_source_portal : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:21
-[DmPath("/datum/fish_source/portal/beach"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_portal_beach : datum_fish_source_portal
+// tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/portal/beach")]
+public partial class datum_fish_source_portal_beach
 {
     // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:35
     public datum_fish_source_portal_beach()
@@ -42912,7 +42906,7 @@ public partial class datum_fish_source_portal_beach : datum_fish_source_portal
 }
 
 // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:48
-[DmPath("/datum/fish_source/portal/chasm"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/portal/chasm"), DmGeneratedOnly]
 public partial class datum_fish_source_portal_chasm : datum_fish_source_portal
 {
     // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:48
@@ -42934,9 +42928,9 @@ public partial class datum_fish_source_portal_chasm : datum_fish_source_portal
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:62
-[DmPath("/datum/fish_source/portal/ocean"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_portal_ocean : datum_fish_source_portal
+// tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:62 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/portal/ocean")]
+public partial class datum_fish_source_portal_ocean
 {
     // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:83
     public datum_fish_source_portal_ocean()
@@ -42960,7 +42954,7 @@ public partial class datum_fish_source_portal_ocean : datum_fish_source_portal
 }
 
 // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:97
-[DmPath("/datum/fish_source/portal/hyperspace"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/portal/hyperspace"), DmGeneratedOnly]
 public partial class datum_fish_source_portal_hyperspace : datum_fish_source_portal
 {
     // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:97
@@ -42985,7 +42979,7 @@ public partial class datum_fish_source_portal_hyperspace : datum_fish_source_por
 }
 
 // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:117
-[DmPath("/datum/fish_source/portal/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/portal/syndicate"), DmGeneratedOnly]
 public partial class datum_fish_source_portal_syndicate : datum_fish_source_portal
 {
     // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:117
@@ -43011,9 +43005,9 @@ public partial class datum_fish_source_portal_syndicate : datum_fish_source_port
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:147
-[DmPath("/datum/fish_source/portal/random"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_portal_random : datum_fish_source_portal
+// tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:147 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/portal/random")]
+public partial class datum_fish_source_portal_random
 {
     // tg: code/modules/fishing/sources/subtypes/fishing_portal_machine.dm:148
     public datum_fish_source_portal_random()
@@ -43034,7 +43028,7 @@ public partial class datum_fish_source_portal_random : datum_fish_source_portal
 }
 
 // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:4
-[DmPath("/datum/fish_source/cursed_spring"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/cursed_spring"), DmGeneratedOnly]
 public partial class datum_fish_source_cursed_spring : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:4
@@ -43056,9 +43050,9 @@ public partial class datum_fish_source_cursed_spring : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:20
-[DmPath("/datum/fish_source/chasm"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_chasm : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:20 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/chasm")]
+public partial class datum_fish_source_chasm
 {
     // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:20
     public datum_fish_source_chasm()
@@ -43079,9 +43073,9 @@ public partial class datum_fish_source_chasm : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:48
-[DmPath("/datum/fish_source/lavaland"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_lavaland : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:48 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/lavaland")]
+public partial class datum_fish_source_lavaland
 {
     // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:48
     public datum_fish_source_lavaland()
@@ -43107,7 +43101,7 @@ public partial class datum_fish_source_lavaland : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:88
-[DmPath("/datum/fish_source/lavaland/icemoon"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/lavaland/icemoon"), DmGeneratedOnly]
 public partial class datum_fish_source_lavaland_icemoon : datum_fish_source_lavaland
 {
     // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:88
@@ -43131,7 +43125,7 @@ public partial class datum_fish_source_lavaland_icemoon : datum_fish_source_lava
 }
 
 // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:121
-[DmPath("/datum/fish_source/oil_well"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/oil_well"), DmGeneratedOnly]
 public partial class datum_fish_source_oil_well : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/mining_ruins.dm:121
@@ -43155,7 +43149,7 @@ public partial class datum_fish_source_oil_well : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/rifts.dm:4
-[DmPath("/datum/fish_source/carp_rift"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/carp_rift"), DmGeneratedOnly]
 public partial class datum_fish_source_carp_rift : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/rifts.dm:4
@@ -43179,9 +43173,9 @@ public partial class datum_fish_source_carp_rift : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/rifts.dm:30
-[DmPath("/datum/fish_source/dimensional_rift"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_dimensional_rift : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/rifts.dm:30 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/dimensional_rift")]
+public partial class datum_fish_source_dimensional_rift
 {
     // tg: code/modules/fishing/sources/subtypes/rifts.dm:30
     public datum_fish_source_dimensional_rift()
@@ -43205,7 +43199,7 @@ public partial class datum_fish_source_dimensional_rift : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/structures.dm:4
-[DmPath("/datum/fish_source/moisture_trap"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/moisture_trap"), DmGeneratedOnly]
 public partial class datum_fish_source_moisture_trap : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:4
@@ -43227,7 +43221,7 @@ public partial class datum_fish_source_moisture_trap : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/structures.dm:16
-[DmPath("/datum/fish_source/toilet"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/toilet"), DmGeneratedOnly]
 public partial class datum_fish_source_toilet : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:16
@@ -43250,9 +43244,9 @@ public partial class datum_fish_source_toilet : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/structures.dm:35
-[DmPath("/datum/fish_source/holographic"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_holographic : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/structures.dm:35 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/holographic")]
+public partial class datum_fish_source_holographic
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:35
     public datum_fish_source_holographic()
@@ -43271,9 +43265,9 @@ public partial class datum_fish_source_holographic : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/structures.dm:82
-[DmPath("/datum/fish_source/hydro_tray"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_hydro_tray : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/structures.dm:82 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/hydro_tray")]
+public partial class datum_fish_source_hydro_tray
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:82
     public datum_fish_source_hydro_tray()
@@ -43295,7 +43289,7 @@ public partial class datum_fish_source_hydro_tray : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/structures.dm:193
-[DmPath("/datum/fish_source/deepfryer"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/deepfryer"), DmGeneratedOnly]
 public partial class datum_fish_source_deepfryer : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:193
@@ -43318,9 +43312,9 @@ public partial class datum_fish_source_deepfryer : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/structures.dm:219
-[DmPath("/datum/fish_source/aquarium"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_aquarium : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/structures.dm:219 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/aquarium")]
+public partial class datum_fish_source_aquarium
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:219
     public datum_fish_source_aquarium()
@@ -43339,9 +43333,9 @@ public partial class datum_fish_source_aquarium : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/structures.dm:255
-[DmPath("/datum/fish_source/vending"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_vending : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/structures.dm:255 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/vending")]
+public partial class datum_fish_source_vending
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:255
     public datum_fish_source_vending()
@@ -43362,9 +43356,9 @@ public partial class datum_fish_source_vending : datum_fish_source
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/structures.dm:386
-[DmPath("/datum/fish_source/vending/custom"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_vending_custom : datum_fish_source_vending
+// tg: code/modules/fishing/sources/subtypes/structures.dm:386 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/vending/custom")]
+public partial class datum_fish_source_vending_custom
 {
     // tg: code/modules/fishing/sources/subtypes/structures.dm:386
     public datum_fish_source_vending_custom()
@@ -43373,9 +43367,9 @@ public partial class datum_fish_source_vending_custom : datum_fish_source_vendin
     }
 }
 
-// tg: code/modules/fishing/sources/subtypes/surgery.dm:4
-[DmPath("/datum/fish_source/surgery"), DmGeneratedOnly, DmInert]
-public partial class datum_fish_source_surgery : datum_fish_source
+// tg: code/modules/fishing/sources/subtypes/surgery.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/fish_source/surgery")]
+public partial class datum_fish_source_surgery
 {
     // tg: code/modules/fishing/sources/subtypes/surgery.dm:4
     public datum_fish_source_surgery()
@@ -43398,7 +43392,7 @@ public partial class datum_fish_source_surgery : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/turfs.dm:4
-[DmPath("/datum/fish_source/ocean"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/ocean"), DmGeneratedOnly]
 public partial class datum_fish_source_ocean : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/turfs.dm:4
@@ -43422,7 +43416,7 @@ public partial class datum_fish_source_ocean : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/turfs.dm:39
-[DmPath("/datum/fish_source/ocean/beach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/ocean/beach"), DmGeneratedOnly]
 public partial class datum_fish_source_ocean_beach : datum_fish_source_ocean
 {
     // tg: code/modules/fishing/sources/subtypes/turfs.dm:39
@@ -43442,7 +43436,7 @@ public partial class datum_fish_source_ocean_beach : datum_fish_source_ocean
 }
 
 // tg: code/modules/fishing/sources/subtypes/turfs.dm:45
-[DmPath("/datum/fish_source/ice_fishing"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/ice_fishing"), DmGeneratedOnly]
 public partial class datum_fish_source_ice_fishing : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/turfs.dm:45
@@ -43466,7 +43460,7 @@ public partial class datum_fish_source_ice_fishing : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/turfs.dm:61
-[DmPath("/datum/fish_source/river"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/river"), DmGeneratedOnly]
 public partial class datum_fish_source_river : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/turfs.dm:61
@@ -43492,7 +43486,7 @@ public partial class datum_fish_source_river : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/turfs.dm:90
-[DmPath("/datum/fish_source/sand"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/sand"), DmGeneratedOnly]
 public partial class datum_fish_source_sand : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/turfs.dm:90
@@ -43513,7 +43507,7 @@ public partial class datum_fish_source_sand : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/turfs.dm:103
-[DmPath("/datum/fish_source/hot_spring"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/hot_spring"), DmGeneratedOnly]
 public partial class datum_fish_source_hot_spring : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/turfs.dm:103
@@ -43538,7 +43532,7 @@ public partial class datum_fish_source_hot_spring : datum_fish_source
 }
 
 // tg: code/modules/fishing/sources/subtypes/turfs.dm:125
-[DmPath("/datum/fish_source/tizira"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/fish_source/tizira"), DmGeneratedOnly]
 public partial class datum_fish_source_tizira : datum_fish_source
 {
     // tg: code/modules/fishing/sources/subtypes/turfs.dm:125
@@ -43983,9 +43977,9 @@ public partial class datum_food_processor_process_canned_ink : datum_food_proces
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/_venue.dm:4
-[DmPath("/datum/venue"), DmGeneratedOnly, DmInert]
-public partial class datum_venue : datum
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/venue")]
+public partial class datum_venue
 {
     public string name = "unnamed venue"; // tg: code/modules/food_and_drinks/restaurant/_venue.dm:4
     public string venue_type = "Restaurant Venue"; // tg: code/modules/food_and_drinks/restaurant/_venue.dm:6
@@ -44014,9 +44008,9 @@ public partial class datum_venue : datum
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:4
-[DmPath("/datum/venue/restaurant"), DmGeneratedOnly, DmInert]
-public partial class datum_venue_restaurant : datum_venue
+// tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/venue/restaurant")]
+public partial class datum_venue_restaurant
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:4
     public datum_venue_restaurant()
@@ -44037,7 +44031,7 @@ public partial class datum_venue_restaurant : datum_venue
 }
 
 // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:72
-[DmPath("/datum/venue/bar"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/venue/bar"), DmGeneratedOnly]
 public partial class datum_venue_bar : datum_venue
 {
     // tg: code/modules/food_and_drinks/restaurant/generic_venues.dm:72
@@ -44058,20 +44052,20 @@ public partial class datum_venue_bar : datum_venue
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:13
-[DmPath("/datum/custom_order"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order : datum { }
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:13 (the var block of a hand-written class)
+[DmPath("/datum/custom_order")]
+public partial class datum_custom_order { }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:42
-[DmPath("/datum/custom_order/moth_clothing"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_moth_clothing : datum_custom_order
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:42 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/moth_clothing")]
+public partial class datum_custom_order_moth_clothing
 {
     public object wanted_clothing_type; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:42
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:89
-[DmPath("/datum/custom_order/icecream"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_icecream : datum_custom_order
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:89 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/icecream")]
+public partial class datum_custom_order_icecream
 {
     public DmList wanted_flavors; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:89
     public Type cone_type = typeof(obj_item_food_icecream); // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:91
@@ -44085,18 +44079,18 @@ public partial class datum_custom_order_icecream : datum_custom_order
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:135
-[DmPath("/datum/custom_order/reagent"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_reagent : datum_custom_order
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:135 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/reagent")]
+public partial class datum_custom_order_reagent
 {
     public Type reagent_type; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:135
     public Type container_needed; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:137
     public float reagents_needed = 10; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:139
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:188
-[DmPath("/datum/custom_order/reagent/drink"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_reagent_drink : datum_custom_order_reagent
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:188 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/reagent/drink")]
+public partial class datum_custom_order_reagent_drink
 {
     // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:188
     public datum_custom_order_reagent_drink()
@@ -44105,9 +44099,9 @@ public partial class datum_custom_order_reagent_drink : datum_custom_order_reage
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:198
-[DmPath("/datum/custom_order/reagent/soup"), DmGeneratedOnly, DmInert]
-public partial class datum_custom_order_reagent_soup : datum_custom_order_reagent
+// tg: code/modules/food_and_drinks/restaurant/custom_order.dm:198 (the var block of a hand-written class)
+[DmPath("/datum/custom_order/reagent/soup")]
+public partial class datum_custom_order_reagent_soup
 {
     public object picked_serving; // tg: code/modules/food_and_drinks/restaurant/custom_order.dm:201
 
@@ -44118,9 +44112,9 @@ public partial class datum_custom_order_reagent_soup : datum_custom_order_reagen
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:3
-[DmPath("/datum/customer_data"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data : datum
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/customer_data")]
+public partial class datum_customer_data
 {
     public DmList orderable_objects; // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:3
     public DmList order_prices; // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:5
@@ -44160,7 +44154,7 @@ public partial class datum_customer_data : datum
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:66
-[DmPath("/datum/customer_data/american"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/american"), DmGeneratedOnly]
 public partial class datum_customer_data_american : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:71
@@ -44186,7 +44180,7 @@ public partial class datum_customer_data_american : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:107
-[DmPath("/datum/customer_data/italian"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/italian"), DmGeneratedOnly]
 public partial class datum_customer_data_italian : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:107
@@ -44214,9 +44208,9 @@ public partial class datum_customer_data_italian : datum_customer_data
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:157
-[DmPath("/datum/customer_data/french"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data_french : datum_customer_data
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:157 (the var block of a hand-written class)
+[DmPath("/datum/customer_data/french")]
+public partial class datum_customer_data_french
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:157
     public datum_customer_data_french()
@@ -44244,9 +44238,9 @@ public partial class datum_customer_data_french : datum_customer_data
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:201
-[DmPath("/datum/customer_data/japanese"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data_japanese : datum_customer_data
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:201 (the var block of a hand-written class)
+[DmPath("/datum/customer_data/japanese")]
+public partial class datum_customer_data_japanese
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:201
     public datum_customer_data_japanese()
@@ -44275,7 +44269,7 @@ public partial class datum_customer_data_japanese : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:245
-[DmPath("/datum/customer_data/japanese/salaryman"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/japanese/salaryman"), DmGeneratedOnly]
 public partial class datum_customer_data_japanese_salaryman : datum_customer_data_japanese
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:252
@@ -44302,9 +44296,9 @@ public partial class datum_customer_data_japanese_salaryman : datum_customer_dat
     }
 }
 
-// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:279
-[DmPath("/datum/customer_data/moth"), DmGeneratedOnly, DmInert]
-public partial class datum_customer_data_moth : datum_customer_data
+// tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:279 (the var block of a hand-written class)
+[DmPath("/datum/customer_data/moth")]
+public partial class datum_customer_data_moth
 {
     public DmList wings_chosen; // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:303
 
@@ -44336,7 +44330,7 @@ public partial class datum_customer_data_moth : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:339
-[DmPath("/datum/customer_data/mexican"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/mexican"), DmGeneratedOnly]
 public partial class datum_customer_data_mexican : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:339
@@ -44366,7 +44360,7 @@ public partial class datum_customer_data_mexican : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:379
-[DmPath("/datum/customer_data/british"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/british"), DmGeneratedOnly]
 public partial class datum_customer_data_british : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:379
@@ -44390,7 +44384,7 @@ public partial class datum_customer_data_british : datum_customer_data
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:416
-[DmPath("/datum/customer_data/british/gent"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/british/gent"), DmGeneratedOnly]
 public partial class datum_customer_data_british_gent : datum_customer_data_british
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:416
@@ -44407,7 +44401,7 @@ public partial class datum_customer_data_british_gent : datum_customer_data_brit
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:425
-[DmPath("/datum/customer_data/british/bobby"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/british/bobby"), DmGeneratedOnly]
 public partial class datum_customer_data_british_bobby : datum_customer_data_british
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:425
@@ -44424,7 +44418,7 @@ public partial class datum_customer_data_british_bobby : datum_customer_data_bri
 }
 
 // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:435
-[DmPath("/datum/customer_data/malfunction"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/customer_data/malfunction"), DmGeneratedOnly]
 public partial class datum_customer_data_malfunction : datum_customer_data
 {
     // tg: code/modules/food_and_drinks/restaurant/customers/_customer.dm:435
@@ -46972,9 +46966,9 @@ public partial class datum_language_menu
     public datum_language_holder language_holder; // tg: code/modules/language/_language_menu.dm:2
 }
 
-// tg: code/modules/library/admin_only.dm:278
-[DmPath("/datum/book_history_entry"), DmGeneratedOnly, DmInert]
-public partial class datum_book_history_entry : datum
+// tg: code/modules/library/admin_only.dm:278 (the var block of a hand-written class)
+[DmPath("/datum/book_history_entry")]
+public partial class datum_book_history_entry
 {
     public Type id; // tg: code/modules/library/admin_only.dm:278
     public object book; // tg: code/modules/library/admin_only.dm:280
@@ -46985,9 +46979,9 @@ public partial class datum_book_history_entry : datum
     public object ip_addr; // tg: code/modules/library/admin_only.dm:290
 }
 
-// tg: code/modules/library/admin_only.dm:306
-[DmPath("/datum/admin_book_viewer"), DmGeneratedOnly, DmInert]
-public partial class datum_admin_book_viewer : datum
+// tg: code/modules/library/admin_only.dm:306 (the var block of a hand-written class)
+[DmPath("/datum/admin_book_viewer")]
+public partial class datum_admin_book_viewer
 {
     public datum_weakref owner_ref; // tg: code/modules/library/admin_only.dm:306
     public float view_raw = 0; // tg: code/modules/library/admin_only.dm:308
@@ -48951,9 +48945,9 @@ public partial class datum_candela_item_handler
     public datum_beam beam_visual; // tg: code/modules/mining/equipment/candela_network/candela_item_handler.dm:23
 }
 
-// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:218
-[DmPath("/datum/abel_wisp_frame"), DmGeneratedOnly, DmInert]
-public partial class datum_abel_wisp_frame : datum
+// tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:218 (the var block of a hand-written class)
+[DmPath("/datum/abel_wisp_frame")]
+public partial class datum_abel_wisp_frame
 {
     public float? x = 0; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:218
     public float? y = 0; // tg: code/modules/mining/lavaland/cain_and_abel/_cain_and_abel.dm:219
@@ -49239,18 +49233,18 @@ public partial class datum_guardian_fluff_carp : datum_guardian_fluff
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4
-[DmPath("/datum/gutlunch_inherited_stats"), DmGeneratedOnly, DmInert]
-public partial class datum_gutlunch_inherited_stats : datum
+// tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/gutlunch_inherited_stats")]
+public partial class datum_gutlunch_inherited_stats
 {
     public object attack; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:4
     public object speed; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:6
     public object health; // tg: code/modules/mob/living/basic/lavaland/gutlunchers/gutlunchers_inherit_datum.dm:8
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11
-[DmPath("/datum/raptor_color"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color : datum
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color")]
+public partial class datum_raptor_color
 {
     public string color = "error"; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:11
     public string description = "Report this!"; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:13
@@ -49272,9 +49266,9 @@ public partial class datum_raptor_color : datum
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84
-[DmPath("/datum/raptor_color/red"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_red : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/red")]
+public partial class datum_raptor_color_red
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:84
     public datum_raptor_color_red()
@@ -49297,9 +49291,9 @@ public partial class datum_raptor_color_red : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104
-[DmPath("/datum/raptor_color/purple"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_purple : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/purple")]
+public partial class datum_raptor_color_purple
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:104
     public datum_raptor_color_purple()
@@ -49318,9 +49312,9 @@ public partial class datum_raptor_color_purple : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347
-[DmPath("/datum/raptor_color/green"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_green : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/green")]
+public partial class datum_raptor_color_green
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:347
     public datum_raptor_color_green()
@@ -49338,9 +49332,9 @@ public partial class datum_raptor_color_green : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366
-[DmPath("/datum/raptor_color/white"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_white : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/white")]
+public partial class datum_raptor_color_white
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:366
     public datum_raptor_color_white()
@@ -49359,7 +49353,7 @@ public partial class datum_raptor_color_white : datum_raptor_color
 }
 
 // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:412
-[DmPath("/datum/raptor_color/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/raptor_color/yellow"), DmGeneratedOnly]
 public partial class datum_raptor_color_yellow : datum_raptor_color
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:412
@@ -49378,9 +49372,9 @@ public partial class datum_raptor_color_yellow : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422
-[DmPath("/datum/raptor_color/blue"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_blue : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/blue")]
+public partial class datum_raptor_color_blue
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:422
     public datum_raptor_color_blue()
@@ -49398,9 +49392,9 @@ public partial class datum_raptor_color_blue : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435
-[DmPath("/datum/raptor_color/black"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_color_black : datum_raptor_color
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435 (the var block of a hand-written class)
+[DmPath("/datum/raptor_color/black")]
+public partial class datum_raptor_color_black
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:435
     public datum_raptor_color_black()
@@ -49418,9 +49412,9 @@ public partial class datum_raptor_color_black : datum_raptor_color
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3
-[DmPath("/datum/raptor_inheritance"), DmGeneratedOnly, DmInert]
-public partial class datum_raptor_inheritance : datum
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/raptor_inheritance")]
+public partial class datum_raptor_inheritance
 {
     public DmList personality_traits; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:3
     public float? attack_modifier = 0; // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_inheritance.dm:5
@@ -51060,9 +51054,9 @@ public partial class datum_addiction_nicotine
     }
 }
 
-// tg: code/modules/religion/rites.dm:3
-[DmPath("/datum/religion_rites"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites : datum
+// tg: code/modules/religion/rites.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites")]
+public partial class datum_religion_rites
 {
     public string name = "religious rite"; // tg: code/modules/religion/rites.dm:3
     public string desc = "immm gonna rooon"; // tg: code/modules/religion/rites.dm:5
@@ -51073,9 +51067,9 @@ public partial class datum_religion_rites : datum
     public float rite_flags = 1; // tg: code/modules/religion/rites.dm:16
 }
 
-// tg: code/modules/religion/deaconize.dm:7
-[DmPath("/datum/religion_rites/deaconize"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_deaconize : datum_religion_rites
+// tg: code/modules/religion/deaconize.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/deaconize")]
+public partial class datum_religion_rites_deaconize
 {
     public mob_living_carbon_human potential_deacon; // tg: code/modules/religion/deaconize.dm:22
 
@@ -51097,9 +51091,9 @@ public partial class datum_religion_rites_deaconize : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/dreams/deaconize_dreamer.dm:2
-[DmPath("/datum/religion_rites/deaconize/dreamers"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_deaconize_dreamers : datum_religion_rites_deaconize
+// tg: code/modules/religion/dreams/deaconize_dreamer.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/deaconize/dreamers")]
+public partial class datum_religion_rites_deaconize_dreamers
 {
     // tg: code/modules/religion/dreams/deaconize_dreamer.dm:2
     public datum_religion_rites_deaconize_dreamers()
@@ -51109,9 +51103,9 @@ public partial class datum_religion_rites_deaconize_dreamers : datum_religion_ri
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_rites.dm:119
-[DmPath("/datum/religion_rites/deaconize/crusader"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_deaconize_crusader : datum_religion_rites_deaconize
+// tg: code/modules/religion/honorbound/honorbound_rites.dm:119 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/deaconize/crusader")]
+public partial class datum_religion_rites_deaconize_crusader
 {
     // tg: code/modules/religion/honorbound/honorbound_rites.dm:119
     public datum_religion_rites_deaconize_crusader()
@@ -51131,9 +51125,9 @@ public partial class datum_religion_rites_deaconize_crusader : datum_religion_ri
     }
 }
 
-// tg: code/modules/religion/rites.dm:81
-[DmPath("/datum/religion_rites/synthconversion"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_synthconversion : datum_religion_rites
+// tg: code/modules/religion/rites.dm:81 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/synthconversion")]
+public partial class datum_religion_rites_synthconversion
 {
     // tg: code/modules/religion/rites.dm:81
     public datum_religion_rites_synthconversion()
@@ -51153,9 +51147,9 @@ public partial class datum_religion_rites_synthconversion : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:130
-[DmPath("/datum/religion_rites/machine_blessing"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_machine_blessing : datum_religion_rites
+// tg: code/modules/religion/rites.dm:130 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/machine_blessing")]
+public partial class datum_religion_rites_machine_blessing
 {
     // tg: code/modules/religion/rites.dm:130
     public datum_religion_rites_machine_blessing()
@@ -51175,9 +51169,9 @@ public partial class datum_religion_rites_machine_blessing : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/rites.dm:182
-[DmPath("/datum/religion_rites/greed"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_greed : datum_religion_rites
+// tg: code/modules/religion/rites.dm:182 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/greed")]
+public partial class datum_religion_rites_greed
 {
     public float money_cost = 0; // tg: code/modules/religion/rites.dm:184
 
@@ -51189,9 +51183,9 @@ public partial class datum_religion_rites_greed : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:205
-[DmPath("/datum/religion_rites/greed/vendatray"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_greed_vendatray : datum_religion_rites_greed
+// tg: code/modules/religion/rites.dm:205 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/greed/vendatray")]
+public partial class datum_religion_rites_greed_vendatray
 {
     // tg: code/modules/religion/rites.dm:205
     public datum_religion_rites_greed_vendatray()
@@ -51203,9 +51197,9 @@ public partial class datum_religion_rites_greed_vendatray : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:218
-[DmPath("/datum/religion_rites/greed/custom_vending"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_greed_custom_vending : datum_religion_rites_greed
+// tg: code/modules/religion/rites.dm:218 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/greed/custom_vending")]
+public partial class datum_religion_rites_greed_custom_vending
 {
     // tg: code/modules/religion/rites.dm:218
     public datum_religion_rites_greed_custom_vending()
@@ -51217,9 +51211,9 @@ public partial class datum_religion_rites_greed_custom_vending : datum_religion_
     }
 }
 
-// tg: code/modules/religion/rites.dm:233
-[DmPath("/datum/religion_rites/maint_adaptation"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_maint_adaptation : datum_religion_rites
+// tg: code/modules/religion/rites.dm:233 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/maint_adaptation")]
+public partial class datum_religion_rites_maint_adaptation
 {
     // tg: code/modules/religion/rites.dm:233
     public datum_religion_rites_maint_adaptation()
@@ -51239,9 +51233,9 @@ public partial class datum_religion_rites_maint_adaptation : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/rites.dm:267
-[DmPath("/datum/religion_rites/adapted_eyes"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_adapted_eyes : datum_religion_rites
+// tg: code/modules/religion/rites.dm:267 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/adapted_eyes")]
+public partial class datum_religion_rites_adapted_eyes
 {
     // tg: code/modules/religion/rites.dm:267
     public datum_religion_rites_adapted_eyes()
@@ -51254,9 +51248,9 @@ public partial class datum_religion_rites_adapted_eyes : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:296
-[DmPath("/datum/religion_rites/adapted_food"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_adapted_food : datum_religion_rites
+// tg: code/modules/religion/rites.dm:296 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/adapted_food")]
+public partial class datum_religion_rites_adapted_food
 {
     public obj_item_food mold_target; // tg: code/modules/religion/rites.dm:302
 
@@ -51271,9 +51265,9 @@ public partial class datum_religion_rites_adapted_food : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:327
-[DmPath("/datum/religion_rites/ritual_totem"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_ritual_totem : datum_religion_rites
+// tg: code/modules/religion/rites.dm:327 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/ritual_totem")]
+public partial class datum_religion_rites_ritual_totem
 {
     public obj_item_stack_sheet_mineral_wood converted; // tg: code/modules/religion/rites.dm:332
 
@@ -51287,9 +51281,9 @@ public partial class datum_religion_rites_ritual_totem : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:359
-[DmPath("/datum/religion_rites/sparring_contract"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_sparring_contract : datum_religion_rites
+// tg: code/modules/religion/rites.dm:359 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/sparring_contract")]
+public partial class datum_religion_rites_sparring_contract
 {
     public obj_item_paper contract_target; // tg: code/modules/religion/rites.dm:363
 
@@ -51302,9 +51296,9 @@ public partial class datum_religion_rites_sparring_contract : datum_religion_rit
     }
 }
 
-// tg: code/modules/religion/rites.dm:393
-[DmPath("/datum/religion_rites/declare_arena"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_declare_arena : datum_religion_rites
+// tg: code/modules/religion/rites.dm:393 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/declare_arena")]
+public partial class datum_religion_rites_declare_arena
 {
     public area area_instance; // tg: code/modules/religion/rites.dm:399
 
@@ -51326,9 +51320,9 @@ public partial class datum_religion_rites_declare_arena : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:420
-[DmPath("/datum/religion_rites/ceremonial_weapon"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_ceremonial_weapon : datum_religion_rites
+// tg: code/modules/religion/rites.dm:420 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/ceremonial_weapon")]
+public partial class datum_religion_rites_ceremonial_weapon
 {
     public obj_item_stack_sheet converted; // tg: code/modules/religion/rites.dm:426
 
@@ -51343,9 +51337,9 @@ public partial class datum_religion_rites_ceremonial_weapon : datum_religion_rit
     }
 }
 
-// tg: code/modules/religion/rites.dm:466
-[DmPath("/datum/religion_rites/unbreakable"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_unbreakable : datum_religion_rites
+// tg: code/modules/religion/rites.dm:466 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/unbreakable")]
+public partial class datum_religion_rites_unbreakable
 {
     // tg: code/modules/religion/rites.dm:466
     public datum_religion_rites_unbreakable()
@@ -51358,9 +51352,9 @@ public partial class datum_religion_rites_unbreakable : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/rites.dm:486
-[DmPath("/datum/religion_rites/tenacious"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_tenacious : datum_religion_rites
+// tg: code/modules/religion/rites.dm:486 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/tenacious")]
+public partial class datum_religion_rites_tenacious
 {
     // tg: code/modules/religion/rites.dm:486
     public datum_religion_rites_tenacious()
@@ -51373,9 +51367,9 @@ public partial class datum_religion_rites_tenacious : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:92
-[DmPath("/datum/religion_rites/nullrod_transformation"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_nullrod_transformation : datum_religion_rites
+// tg: code/modules/religion/burdened/psyker.dm:92 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/nullrod_transformation")]
+public partial class datum_religion_rites_nullrod_transformation
 {
     public obj_item_nullrod transformation_target; // tg: code/modules/religion/burdened/psyker.dm:96
 
@@ -51388,9 +51382,9 @@ public partial class datum_religion_rites_nullrod_transformation : datum_religio
     }
 }
 
-// tg: code/modules/religion/dreams/banish_nightmare.dm:2
-[DmPath("/datum/religion_rites/banish_nightmare"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_banish_nightmare : datum_religion_rites
+// tg: code/modules/religion/dreams/banish_nightmare.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/banish_nightmare")]
+public partial class datum_religion_rites_banish_nightmare
 {
     // tg: code/modules/religion/dreams/banish_nightmare.dm:2
     public datum_religion_rites_banish_nightmare()
@@ -51402,9 +51396,9 @@ public partial class datum_religion_rites_banish_nightmare : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/dreams/dream_portent.dm:2
-[DmPath("/datum/religion_rites/dream_portent"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_dream_portent : datum_religion_rites
+// tg: code/modules/religion/dreams/dream_portent.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/dream_portent")]
+public partial class datum_religion_rites_dream_portent
 {
     // tg: code/modules/religion/dreams/dream_portent.dm:2
     public datum_religion_rites_dream_portent()
@@ -51417,9 +51411,9 @@ public partial class datum_religion_rites_dream_portent : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/dreams/dream_projection.dm:2
-[DmPath("/datum/religion_rites/dream_projection"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_dream_projection : datum_religion_rites
+// tg: code/modules/religion/dreams/dream_projection.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/dream_projection")]
+public partial class datum_religion_rites_dream_projection
 {
     // tg: code/modules/religion/dreams/dream_projection.dm:2
     public datum_religion_rites_dream_projection()
@@ -51431,9 +51425,9 @@ public partial class datum_religion_rites_dream_projection : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/dreams/dream_protection.dm:2
-[DmPath("/datum/religion_rites/dream_protection"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_dream_protection : datum_religion_rites
+// tg: code/modules/religion/dreams/dream_protection.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/dream_protection")]
+public partial class datum_religion_rites_dream_protection
 {
     // tg: code/modules/religion/dreams/dream_protection.dm:2
     public datum_religion_rites_dream_protection()
@@ -51446,9 +51440,9 @@ public partial class datum_religion_rites_dream_protection : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/dreams/slumber_party.dm:2
-[DmPath("/datum/religion_rites/slumber_party"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_slumber_party : datum_religion_rites
+// tg: code/modules/religion/dreams/slumber_party.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/slumber_party")]
+public partial class datum_religion_rites_slumber_party
 {
     // tg: code/modules/religion/dreams/slumber_party.dm:2
     public datum_religion_rites_slumber_party()
@@ -51461,9 +51455,9 @@ public partial class datum_religion_rites_slumber_party : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:2
-[DmPath("/datum/religion_rites/holy_violin"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_holy_violin : datum_religion_rites
+// tg: code/modules/religion/festival/instrument_rites.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/holy_violin")]
+public partial class datum_religion_rites_holy_violin
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:2
     public datum_religion_rites_holy_violin()
@@ -51483,9 +51477,9 @@ public partial class datum_religion_rites_holy_violin : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:17
-[DmPath("/datum/religion_rites/portable_song_tuning"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_portable_song_tuning : datum_religion_rites
+// tg: code/modules/religion/festival/instrument_rites.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/portable_song_tuning")]
+public partial class datum_religion_rites_portable_song_tuning
 {
     public obj_item_instrument instrument_target; // tg: code/modules/religion/festival/instrument_rites.dm:24
 
@@ -51507,9 +51501,9 @@ public partial class datum_religion_rites_portable_song_tuning : datum_religion_
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:57
-[DmPath("/datum/religion_rites/song_tuner"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner : datum_religion_rites
+// tg: code/modules/religion/festival/instrument_rites.dm:57 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner")]
+public partial class datum_religion_rites_song_tuner
 {
     public float repeats_okay = 1; // tg: code/modules/religion/festival/instrument_rites.dm:63
     public string song_invocation_message = "beep borp you forgot to fill in a variable report to git hub"; // tg: code/modules/religion/festival/instrument_rites.dm:65
@@ -51528,9 +51522,9 @@ public partial class datum_religion_rites_song_tuner : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:111
-[DmPath("/datum/religion_rites/song_tuner/evangelism"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_evangelism : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:111 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/evangelism")]
+public partial class datum_religion_rites_song_tuner_evangelism
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:111
     public datum_religion_rites_song_tuner_evangelism()
@@ -51545,9 +51539,9 @@ public partial class datum_religion_rites_song_tuner_evangelism : datum_religion
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:129
-[DmPath("/datum/religion_rites/song_tuner/light"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_light : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:129 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/light")]
+public partial class datum_religion_rites_song_tuner_light
 {
     public obj_effect_dummy_lighting_obj_moblight performer_light_obj; // tg: code/modules/religion/festival/instrument_rites.dm:138
 
@@ -51565,9 +51559,9 @@ public partial class datum_religion_rites_song_tuner_light : datum_religion_rite
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:151
-[DmPath("/datum/religion_rites/song_tuner/nullwave"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_nullwave : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:151 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/nullwave")]
+public partial class datum_religion_rites_song_tuner_nullwave
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:151
     public datum_religion_rites_song_tuner_nullwave()
@@ -51582,9 +51576,9 @@ public partial class datum_religion_rites_song_tuner_nullwave : datum_religion_r
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:163
-[DmPath("/datum/religion_rites/song_tuner/pain"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_pain : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:163 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/pain")]
+public partial class datum_religion_rites_song_tuner_pain
 {
     // tg: code/modules/religion/festival/instrument_rites.dm:163
     public datum_religion_rites_song_tuner_pain()
@@ -51599,9 +51593,9 @@ public partial class datum_religion_rites_song_tuner_pain : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/festival/instrument_rites.dm:183
-[DmPath("/datum/religion_rites/song_tuner/lullaby"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_song_tuner_lullaby : datum_religion_rites_song_tuner
+// tg: code/modules/religion/festival/instrument_rites.dm:183 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/song_tuner/lullaby")]
+public partial class datum_religion_rites_song_tuner_lullaby
 {
     public DmList listener_counter; // tg: code/modules/religion/festival/instrument_rites.dm:192
 
@@ -51626,9 +51620,9 @@ public partial class datum_religion_rites_song_tuner_lullaby : datum_religion_ri
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_rites.dm:3
-[DmPath("/datum/religion_rites/forgive"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_forgive : datum_religion_rites
+// tg: code/modules/religion/honorbound/honorbound_rites.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/forgive")]
+public partial class datum_religion_rites_forgive
 {
     public mob_living who; // tg: code/modules/religion/honorbound/honorbound_rites.dm:6
 
@@ -51641,9 +51635,9 @@ public partial class datum_religion_rites_forgive : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_rites.dm:36
-[DmPath("/datum/religion_rites/summon_rules"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_summon_rules : datum_religion_rites
+// tg: code/modules/religion/honorbound/honorbound_rites.dm:36 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/summon_rules")]
+public partial class datum_religion_rites_summon_rules
 {
     public obj_item_paper writ_target; // tg: code/modules/religion/honorbound/honorbound_rites.dm:40
 
@@ -51656,9 +51650,9 @@ public partial class datum_religion_rites_summon_rules : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:10
-[DmPath("/datum/religion_rites/fireproof"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_fireproof : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/fireproof")]
+public partial class datum_religion_rites_fireproof
 {
     public obj_item_clothing chosen_clothing; // tg: code/modules/religion/pyre/pyre_rites.dm:19
 
@@ -51680,9 +51674,9 @@ public partial class datum_religion_rites_fireproof : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:45
-[DmPath("/datum/religion_rites/burning_sacrifice"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_burning_sacrifice : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:45 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/burning_sacrifice")]
+public partial class datum_religion_rites_burning_sacrifice
 {
     public mob_living_carbon chosen_sacrifice; // tg: code/modules/religion/pyre/pyre_rites.dm:54
 
@@ -51703,9 +51697,9 @@ public partial class datum_religion_rites_burning_sacrifice : datum_religion_rit
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:102
-[DmPath("/datum/religion_rites/infinite_candle"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_infinite_candle : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:102 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/infinite_candle")]
+public partial class datum_religion_rites_infinite_candle
 {
     // tg: code/modules/religion/pyre/pyre_rites.dm:102
     public datum_religion_rites_infinite_candle()
@@ -51718,9 +51712,9 @@ public partial class datum_religion_rites_infinite_candle : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/pyre/pyre_rites.dm:117
-[DmPath("/datum/religion_rites/blazing_star"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_rites_blazing_star : datum_religion_rites
+// tg: code/modules/religion/pyre/pyre_rites.dm:117 (the var block of a hand-written class)
+[DmPath("/datum/religion_rites/blazing_star")]
+public partial class datum_religion_rites_blazing_star
 {
     public obj_item_ammo_casing_arrow_holy enchant_target; // tg: code/modules/religion/pyre/pyre_rites.dm:128
 
@@ -51742,9 +51736,9 @@ public partial class datum_religion_rites_blazing_star : datum_religion_rites
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:12
-[DmPath("/datum/religion_sect"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect : datum
+// tg: code/modules/religion/religion_sects.dm:12 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect")]
+public partial class datum_religion_sect
 {
     public string name = "Religious Sect Base Type"; // tg: code/modules/religion/religion_sects.dm:12
     public string quote = "Hail Coderbus! Coderbus #1! Fuck the playerbase!"; // tg: code/modules/religion/religion_sects.dm:14
@@ -51774,7 +51768,7 @@ public partial class datum_religion_sect : datum
 }
 
 // tg: code/modules/religion/religion_sects.dm:152
-[DmPath("/datum/religion_sect/puritanism"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/religion_sect/puritanism"), DmGeneratedOnly]
 public partial class datum_religion_sect_puritanism : datum_religion_sect
 {
     // tg: code/modules/religion/religion_sects.dm:152
@@ -51787,9 +51781,9 @@ public partial class datum_religion_sect_puritanism : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:160
-[DmPath("/datum/religion_sect/mechanical"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_mechanical : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:160 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/mechanical")]
+public partial class datum_religion_sect_mechanical
 {
     // tg: code/modules/religion/religion_sects.dm:160
     public datum_religion_sect_mechanical()
@@ -51812,9 +51806,9 @@ public partial class datum_religion_sect_mechanical : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:235
-[DmPath("/datum/religion_sect/pyre"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_pyre : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:235 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/pyre")]
+public partial class datum_religion_sect_pyre
 {
     // tg: code/modules/religion/religion_sects.dm:235
     public datum_religion_sect_pyre()
@@ -51837,9 +51831,9 @@ public partial class datum_religion_sect_pyre : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:267
-[DmPath("/datum/religion_sect/greed"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_greed : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:267 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/greed")]
+public partial class datum_religion_sect_greed
 {
     // tg: code/modules/religion/religion_sects.dm:267
     public datum_religion_sect_greed()
@@ -51860,9 +51854,9 @@ public partial class datum_religion_sect_greed : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:316
-[DmPath("/datum/religion_sect/burden"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_burden : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:316 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/burden")]
+public partial class datum_religion_sect_burden
 {
     // tg: code/modules/religion/religion_sects.dm:316
     public datum_religion_sect_burden()
@@ -51885,9 +51879,9 @@ public partial class datum_religion_sect_burden : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:419
-[DmPath("/datum/religion_sect/honorbound"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_honorbound : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:419 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/honorbound")]
+public partial class datum_religion_sect_honorbound
 {
     // tg: code/modules/religion/religion_sects.dm:419
     public datum_religion_sect_honorbound()
@@ -51908,9 +51902,9 @@ public partial class datum_religion_sect_honorbound : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:443
-[DmPath("/datum/religion_sect/maintenance"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_maintenance : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:443 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/maintenance")]
+public partial class datum_religion_sect_maintenance
 {
     // tg: code/modules/religion/religion_sects.dm:443
     public datum_religion_sect_maintenance()
@@ -51932,9 +51926,9 @@ public partial class datum_religion_sect_maintenance : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:485
-[DmPath("/datum/religion_sect/spar"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_spar : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:485 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/spar")]
+public partial class datum_religion_sect_spar
 {
     public obj_item_sparring_contract existing_contract; // tg: code/modules/religion/religion_sects.dm:499
     public DmList arenas; // tg: code/modules/religion/religion_sects.dm:501
@@ -51962,9 +51956,9 @@ public partial class datum_religion_sect_spar : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:514
-[DmPath("/datum/religion_sect/music"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_music : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:514 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/music")]
+public partial class datum_religion_sect_music
 {
     // tg: code/modules/religion/religion_sects.dm:514
     public datum_religion_sect_music()
@@ -51986,9 +51980,9 @@ public partial class datum_religion_sect_music : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/religion_sects.dm:536
-[DmPath("/datum/religion_sect/dreams"), DmGeneratedOnly, DmInert]
-public partial class datum_religion_sect_dreams : datum_religion_sect
+// tg: code/modules/religion/religion_sects.dm:536 (the var block of a hand-written class)
+[DmPath("/datum/religion_sect/dreams")]
+public partial class datum_religion_sect_dreams
 {
     public float dream_protection = 0; // tg: code/modules/religion/religion_sects.dm:555
     public float deacon_count = 0; // tg: code/modules/religion/religion_sects.dm:557
@@ -52019,14 +52013,12 @@ public partial class datum_religion_sect_dreams : datum_religion_sect
     }
 }
 
-// tg: code/modules/religion/sparring/sparring_datum.dm:3
-[DmPath("/datum/sparring_match"), DmGeneratedOnly, DmInert]
-public partial class datum_sparring_match : datum
+// tg: code/modules/religion/sparring/sparring_datum.dm:3 (the vars the hand-written class does not declare)
+[DmPath("/datum/sparring_match")]
+public partial class datum_sparring_match
 {
-    public Type chaplain; // tg: code/modules/religion/sparring/sparring_datum.dm:3
     public mob_living_carbon_human opponent; // tg: code/modules/religion/sparring/sparring_datum.dm:5
     public object weapons_condition; // tg: code/modules/religion/sparring/sparring_datum.dm:7
-    public Type arena_condition; // tg: code/modules/religion/sparring/sparring_datum.dm:9
     public object stakes_condition; // tg: code/modules/religion/sparring/sparring_datum.dm:11
     public float chaplain_violations_allowed = 2; // tg: code/modules/religion/sparring/sparring_datum.dm:13
     public float opponent_violations_allowed = 2; // tg: code/modules/religion/sparring/sparring_datum.dm:15
@@ -52208,9 +52200,9 @@ public partial class datum_experimentor_result_handler_fail
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_controller.dm:6
-[DmPath("/datum/gizmo_controller"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmo_controller : datum
+// tg: code/modules/research/gizmo/gizmo_controller.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/gizmo_controller")]
+public partial class datum_gizmo_controller
 {
     public DmList interfaces; // tg: code/modules/research/gizmo/gizmo_controller.dm:6
     public DmList instances; // tg: code/modules/research/gizmo/gizmo_controller.dm:8
@@ -52225,7 +52217,7 @@ public partial class datum_gizmo_controller : datum
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:27
-[DmPath("/datum/gizmo_controller/beyblade"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/beyblade"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_beyblade : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:27
@@ -52237,7 +52229,7 @@ public partial class datum_gizmo_controller_beyblade : datum_gizmo_controller
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:31
-[DmPath("/datum/gizmo_controller/toggle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/toggle"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_toggle : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:31
@@ -52249,7 +52241,7 @@ public partial class datum_gizmo_controller_toggle : datum_gizmo_controller
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:35
-[DmPath("/datum/gizmo_controller/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/voice"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_voice : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:35
@@ -52261,11 +52253,11 @@ public partial class datum_gizmo_controller_voice : datum_gizmo_controller
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/datum/gizmo_controller/item"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/item"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_item : datum_gizmo_controller { }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:42
-[DmPath("/datum/gizmo_controller/cursed"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/cursed"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_cursed : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:42
@@ -52277,7 +52269,7 @@ public partial class datum_gizmo_controller_cursed : datum_gizmo_controller
 }
 
 // tg: code/modules/research/gizmo/gizmo_controller.dm:46
-[DmPath("/datum/gizmo_controller/moo"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_controller/moo"), DmGeneratedOnly]
 public partial class datum_gizmo_controller_moo : datum_gizmo_controller
 {
     // tg: code/modules/research/gizmo/gizmo_controller.dm:46
@@ -52288,9 +52280,9 @@ public partial class datum_gizmo_controller_moo : datum_gizmo_controller
     }
 }
 
-// tg: code/modules/research/gizmo/gizmo_interface.dm:4
-[DmPath("/datum/gizmo_interface"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmo_interface : datum
+// tg: code/modules/research/gizmo/gizmo_interface.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/gizmo_interface")]
+public partial class datum_gizmo_interface
 {
     public Type controller; // tg: code/modules/research/gizmo/gizmo_interface.dm:4
     public Type puzzle = typeof(datum_gizmo_puzzle); // tg: code/modules/research/gizmo/gizmo_interface.dm:6
@@ -52311,7 +52303,7 @@ public partial class datum_gizmo_interface : datum
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:46
-[DmPath("/datum/gizmo_interface/beyblade"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/beyblade"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_beyblade : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:47
@@ -52330,7 +52322,7 @@ public partial class datum_gizmo_interface_beyblade : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:52
-[DmPath("/datum/gizmo_interface/toggle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/toggle"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_toggle : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:52
@@ -52342,7 +52334,7 @@ public partial class datum_gizmo_interface_toggle : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:56
-[DmPath("/datum/gizmo_interface/voice_unlock"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/voice_unlock"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_voice_unlock : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:57
@@ -52361,7 +52353,7 @@ public partial class datum_gizmo_interface_voice_unlock : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:62
-[DmPath("/datum/gizmo_interface/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/voice"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_voice : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:62
@@ -52372,7 +52364,7 @@ public partial class datum_gizmo_interface_voice : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:66
-[DmPath("/datum/gizmo_interface/cursed"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/cursed"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_cursed : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:69
@@ -52390,7 +52382,7 @@ public partial class datum_gizmo_interface_cursed : datum_gizmo_interface
 }
 
 // tg: code/modules/research/gizmo/gizmo_interface.dm:72
-[DmPath("/datum/gizmo_interface/moo"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_interface/moo"), DmGeneratedOnly]
 public partial class datum_gizmo_interface_moo : datum_gizmo_interface
 {
     // tg: code/modules/research/gizmo/gizmo_interface.dm:73
@@ -52408,9 +52400,9 @@ public partial class datum_gizmo_interface_moo : datum_gizmo_interface
     }
 }
 
-// tg: code/modules/research/gizmo/gizpuzzle.dm:4
-[DmPath("/datum/gizmo_puzzle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmo_puzzle : datum
+// tg: code/modules/research/gizmo/gizpuzzle.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/gizmo_puzzle")]
+public partial class datum_gizmo_puzzle
 {
     public DmList cryptic_pulse; // tg: code/modules/research/gizmo/gizpuzzle.dm:4
     public float code_length = 3; // tg: code/modules/research/gizmo/gizpuzzle.dm:16
@@ -52431,7 +52423,7 @@ public partial class datum_gizmo_puzzle : datum
 }
 
 // tg: code/modules/research/gizmo/gizpuzzle.dm:95
-[DmPath("/datum/gizmo_puzzle/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmo_puzzle/voice"), DmGeneratedOnly]
 public partial class datum_gizmo_puzzle_voice : datum_gizmo_puzzle
 {
     // tg: code/modules/research/gizmo/gizpuzzle.dm:95
@@ -52441,9 +52433,9 @@ public partial class datum_gizmo_puzzle_voice : datum_gizmo_puzzle
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:8
-[DmPath("/datum/gizmodes"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes : datum
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes")]
+public partial class datum_gizmodes
 {
     public datum_gizmo_interface @interface; // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:8
     public datum_gizpulse current_active; // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:10
@@ -52469,7 +52461,7 @@ public partial class datum_gizmodes : datum
 }
 
 // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:3
-[DmPath("/datum/gizmodes/sputter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/sputter"), DmGeneratedOnly]
 public partial class datum_gizmodes_sputter : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:8
@@ -52488,7 +52480,7 @@ public partial class datum_gizmodes_sputter : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:31
-[DmPath("/datum/gizmodes/dispenser"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/dispenser"), DmGeneratedOnly]
 public partial class datum_gizmodes_dispenser : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:39
@@ -52507,7 +52499,7 @@ public partial class datum_gizmodes_dispenser : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:80
-[DmPath("/datum/gizmodes/dispenser/food"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/dispenser/food"), DmGeneratedOnly]
 public partial class datum_gizmodes_dispenser_food : datum_gizmodes_dispenser
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:88
@@ -52527,7 +52519,7 @@ public partial class datum_gizmodes_dispenser_food : datum_gizmodes_dispenser
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:3
-[DmPath("/datum/gizmodes/bad"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/bad"), DmGeneratedOnly]
 public partial class datum_gizmodes_bad : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:17
@@ -52547,9 +52539,9 @@ public partial class datum_gizmodes_bad : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:25
-[DmPath("/datum/gizmodes/code_crack"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_code_crack : datum_gizmodes
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:25 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/code_crack")]
+public partial class datum_gizmodes_code_crack
 {
     public string init_jingle = "sound/machines/terminal/terminal_processing.ogg"; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:37
     public float puzzles_left = 3; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:39
@@ -52578,9 +52570,9 @@ public partial class datum_gizmodes_code_crack : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:220
-[DmPath("/datum/gizmodes/code_crack/tutorial"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_code_crack_tutorial : datum_gizmodes_code_crack
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:220 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/code_crack/tutorial")]
+public partial class datum_gizmodes_code_crack_tutorial
 {
     public float dispensed_hardmode = 0; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:234
 
@@ -52592,9 +52584,9 @@ public partial class datum_gizmodes_code_crack_tutorial : datum_gizmodes_code_cr
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:269
-[DmPath("/datum/gizmodes/code_crack/moo"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_code_crack_moo : datum_gizmodes_code_crack
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:269 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/code_crack/moo")]
+public partial class datum_gizmodes_code_crack_moo
 {
     public float min_code_length = 2; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:271
     public float max_code_length = 3; // tg: code/modules/research/gizmo/gizmodes/gizcode.dm:272
@@ -52608,7 +52600,7 @@ public partial class datum_gizmodes_code_crack_moo : datum_gizmodes_code_crack
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:3
-[DmPath("/datum/gizmodes/copier"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/copier"), DmGeneratedOnly]
 public partial class datum_gizmodes_copier : datum_gizmodes
 {
     public datum_weakref marked; // tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:10
@@ -52624,9 +52616,9 @@ public partial class datum_gizmodes_copier : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:3
-[DmPath("/datum/gizmodes/electric"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_electric : datum_gizmodes
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/electric")]
+public partial class datum_gizmodes_electric
 {
     public obj_item_stock_parts_power_store_battery_gizmo power; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:29
 
@@ -52649,7 +52641,7 @@ public partial class datum_gizmodes_electric : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:3
-[DmPath("/datum/gizmodes/mover"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/mover"), DmGeneratedOnly]
 public partial class datum_gizmodes_mover : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:3
@@ -52661,7 +52653,7 @@ public partial class datum_gizmodes_mover : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:15
-[DmPath("/datum/gizmodes/lights"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/lights"), DmGeneratedOnly]
 public partial class datum_gizmodes_lights : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:15
@@ -52674,7 +52666,7 @@ public partial class datum_gizmodes_lights : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:38
-[DmPath("/datum/gizmodes/voice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/voice"), DmGeneratedOnly]
 public partial class datum_gizmodes_voice : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:38
@@ -52687,7 +52679,7 @@ public partial class datum_gizmodes_voice : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:3
-[DmPath("/datum/gizmodes/mood_pulser"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/mood_pulser"), DmGeneratedOnly]
 public partial class datum_gizmodes_mood_pulser : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:7
@@ -52706,9 +52698,9 @@ public partial class datum_gizmodes_mood_pulser : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:3
-[DmPath("/datum/gizmodes/mopper"), DmGeneratedOnly, DmInert]
-public partial class datum_gizmodes_mopper : datum_gizmodes
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/gizmodes/mopper")]
+public partial class datum_gizmodes_mopper
 {
     public DmList reagents; // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:15
     public datum_reagents reagent_holder; // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:22
@@ -52735,7 +52727,7 @@ public partial class datum_gizmodes_mopper : datum_gizmodes
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:3
-[DmPath("/datum/gizmodes/teleporter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizmodes/teleporter"), DmGeneratedOnly]
 public partial class datum_gizmodes_teleporter : datum_gizmodes
 {
     // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:9
@@ -52753,28 +52745,28 @@ public partial class datum_gizmodes_teleporter : datum_gizmodes
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:80
-[DmPath("/datum/gizpulse"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse : datum
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:80 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse")]
+public partial class datum_gizpulse
 {
     public float affect_timer = 1; // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:80
 }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:14
-[DmPath("/datum/gizpulse/sputter"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_sputter : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/sputter")]
+public partial class datum_gizpulse_sputter
 {
     public float oil_range = 3; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:14
     public float oil_chance = 8; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:16
 }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:26
-[DmPath("/datum/gizpulse/throw_self"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_throw_self : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/throw_self")]
+public partial class datum_gizpulse_throw_self { }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:44
-[DmPath("/datum/gizpulse/dispense"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_dispense : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:44 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/dispense")]
+public partial class datum_gizpulse_dispense
 {
     public DmList possible_objects; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:44
     public object object_to_spawn; // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:53
@@ -52791,9 +52783,9 @@ public partial class datum_gizpulse_dispense : datum_gizpulse
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:93
-[DmPath("/datum/gizpulse/dispense/food"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_dispense_food : datum_gizpulse_dispense
+// tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:93 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/dispense/food")]
+public partial class datum_gizpulse_dispense_food
 {
     // tg: code/modules/research/gizmo/gizmodes/giz_filler.dm:93
     protected internal override void dm_init_vars()
@@ -52804,7 +52796,7 @@ public partial class datum_gizpulse_dispense_food : datum_gizpulse_dispense
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:35
-[DmPath("/datum/gizpulse/dispense/robot_spider"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/dispense/robot_spider"), DmGeneratedOnly]
 public partial class datum_gizpulse_dispense_robot_spider : datum_gizpulse_dispense
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:35
@@ -52815,9 +52807,9 @@ public partial class datum_gizpulse_dispense_robot_spider : datum_gizpulse_dispe
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:88
-[DmPath("/datum/gizpulse/mode_controle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:88 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle")]
+public partial class datum_gizpulse_mode_controle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizactives.dm:88
     public datum_gizpulse_mode_controle()
@@ -52826,25 +52818,25 @@ public partial class datum_gizpulse_mode_controle : datum_gizpulse
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:95
-[DmPath("/datum/gizpulse/mode_controle/select_mode"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_select_mode : datum_gizpulse_mode_controle { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:95 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/select_mode")]
+public partial class datum_gizpulse_mode_controle_select_mode { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:106
-[DmPath("/datum/gizpulse/mode_controle/cycle_mode"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_cycle_mode : datum_gizpulse_mode_controle { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:106 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/cycle_mode")]
+public partial class datum_gizpulse_mode_controle_cycle_mode { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:126
-[DmPath("/datum/gizpulse/mode_controle/cycle_mode/activate"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_cycle_mode_activate : datum_gizpulse_mode_controle_cycle_mode { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:126 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/cycle_mode/activate")]
+public partial class datum_gizpulse_mode_controle_cycle_mode_activate { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:117
-[DmPath("/datum/gizpulse/mode_controle/direct_activate"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mode_controle_direct_activate : datum_gizpulse_mode_controle { }
+// tg: code/modules/research/gizmo/gizmodes/gizactives.dm:117 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mode_controle/direct_activate")]
+public partial class datum_gizpulse_mode_controle_direct_activate { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:23
-[DmPath("/datum/gizpulse/explode"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_explode : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:23 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/explode")]
+public partial class datum_gizpulse_explode
 {
     public float? range_heavy = 0; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:23
     public float range_medium = 1; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:24
@@ -52853,7 +52845,7 @@ public partial class datum_gizpulse_explode : datum_gizpulse
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:32
-[DmPath("/datum/gizpulse/explode/fire"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/explode/fire"), DmGeneratedOnly]
 public partial class datum_gizpulse_explode_fire : datum_gizpulse_explode
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:32
@@ -52863,9 +52855,9 @@ public partial class datum_gizpulse_explode_fire : datum_gizpulse_explode
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:68
-[DmPath("/datum/gizpulse/thrower"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_thrower : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:68 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/thrower")]
+public partial class datum_gizpulse_thrower
 {
     public DmList throwables; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:68
     public object throwing_path; // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:74
@@ -52878,9 +52870,9 @@ public partial class datum_gizpulse_thrower : datum_gizpulse
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:100
-[DmPath("/datum/gizpulse/thrower/grenade"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_thrower_grenade : datum_gizpulse_thrower
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:100 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/thrower/grenade")]
+public partial class datum_gizpulse_thrower_grenade
 {
     // tg: code/modules/research/gizmo/gizmodes/gizbad.dm:100
     protected internal override void dm_init_vars()
@@ -52890,109 +52882,109 @@ public partial class datum_gizpulse_thrower_grenade : datum_gizpulse_thrower
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:96
-[DmPath("/datum/gizpulse/ominous"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_ominous : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/ominous")]
+public partial class datum_gizpulse_ominous { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:115
-[DmPath("/datum/gizpulse/bone_breaker"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_bone_breaker : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizbad.dm:115 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/bone_breaker")]
+public partial class datum_gizpulse_bone_breaker { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:117
-[DmPath("/datum/gizpulse/activate_puzzle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_activate_puzzle : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:117 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/activate_puzzle")]
+public partial class datum_gizpulse_activate_puzzle { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:139
-[DmPath("/datum/gizpulse/cycle_position"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_cycle_position : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:139 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/cycle_position")]
+public partial class datum_gizpulse_cycle_position { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:160
-[DmPath("/datum/gizpulse/cycle_digit"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_cycle_digit : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:160 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/cycle_digit")]
+public partial class datum_gizpulse_cycle_digit { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:182
-[DmPath("/datum/gizpulse/try_crack"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_try_crack : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcode.dm:182 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/try_crack")]
+public partial class datum_gizpulse_try_crack { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:17
-[DmPath("/datum/gizpulse/scan"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_scan : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/scan")]
+public partial class datum_gizpulse_scan { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:34
-[DmPath("/datum/gizpulse/copy"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_copy : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:34 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/copy")]
+public partial class datum_gizpulse_copy
 {
     public DmList copies; // tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:34
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:71
-[DmPath("/datum/gizpulse/erase"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_erase : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizcopier.dm:71 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/erase")]
+public partial class datum_gizpulse_erase { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:42
-[DmPath("/datum/gizpulse/electric"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:42 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric")]
+public partial class datum_gizpulse_electric { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:58
-[DmPath("/datum/gizpulse/electric/emp"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_emp : datum_gizpulse_electric
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:58 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/emp")]
+public partial class datum_gizpulse_electric_emp
 {
     public float min_power = 10000; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:58
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:70
-[DmPath("/datum/gizpulse/electric/discharge"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_discharge : datum_gizpulse_electric { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:70 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/discharge")]
+public partial class datum_gizpulse_electric_discharge { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:79
-[DmPath("/datum/gizpulse/electric/charge"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_charge : datum_gizpulse_electric { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:79 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/charge")]
+public partial class datum_gizpulse_electric_charge { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:105
-[DmPath("/datum/gizpulse/electric/revive"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_revive : datum_gizpulse_electric
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:105 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/revive")]
+public partial class datum_gizpulse_electric_revive
 {
     public float defib_cost = 5000; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:105
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:131
-[DmPath("/datum/gizpulse/electric/draw"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_draw : datum_gizpulse_electric { }
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:131 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/draw")]
+public partial class datum_gizpulse_electric_draw { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:157
-[DmPath("/datum/gizpulse/electric/passive_charge"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_electric_passive_charge : datum_gizpulse_electric
+// tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:157 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/electric/passive_charge")]
+public partial class datum_gizpulse_electric_passive_charge
 {
     public float recharge = 1000.00006f; // tg: code/modules/research/gizmo/gizmodes/gizlectric.dm:157
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:5
-[DmPath("/datum/gizpulse/start_moving"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_start_moving : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/start_moving")]
+public partial class datum_gizpulse_start_moving { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:9
-[DmPath("/datum/gizpulse/stop_moving"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_stop_moving : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/stop_moving")]
+public partial class datum_gizpulse_stop_moving { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:21
-[DmPath("/datum/gizpulse/lights_on"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_lights_on : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/lights_on")]
+public partial class datum_gizpulse_lights_on { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:31
-[DmPath("/datum/gizpulse/lights_off"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_lights_off : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:31 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/lights_off")]
+public partial class datum_gizpulse_lights_off { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:44
-[DmPath("/datum/gizpulse/voice_hint"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_voice_hint : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:44 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/voice_hint")]
+public partial class datum_gizpulse_voice_hint { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:50
-[DmPath("/datum/gizpulse/language_change"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_language_change : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmisc.dm:50 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/language_change")]
+public partial class datum_gizpulse_language_change { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:13
-[DmPath("/datum/gizpulse/mood_pulser"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_mood_pulser : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:13 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/mood_pulser")]
+public partial class datum_gizpulse_mood_pulser
 {
     public Type mood; // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:13
     public object ring_color; // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:15
@@ -53000,7 +52992,7 @@ public partial class datum_gizpulse_mood_pulser : datum_gizpulse
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:30
-[DmPath("/datum/gizpulse/mood_pulser/positive"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/mood_pulser/positive"), DmGeneratedOnly]
 public partial class datum_gizpulse_mood_pulser_positive : datum_gizpulse_mood_pulser
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:30
@@ -53012,7 +53004,7 @@ public partial class datum_gizpulse_mood_pulser_positive : datum_gizpulse_mood_p
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:35
-[DmPath("/datum/gizpulse/mood_pulser/negative"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/mood_pulser/negative"), DmGeneratedOnly]
 public partial class datum_gizpulse_mood_pulser_negative : datum_gizpulse_mood_pulser
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmood.dm:35
@@ -53023,23 +53015,23 @@ public partial class datum_gizpulse_mood_pulser_negative : datum_gizpulse_mood_p
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:38
-[DmPath("/datum/gizpulse/radiation_pulse"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_radiation_pulse : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmood.dm:38 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/radiation_pulse")]
+public partial class datum_gizpulse_radiation_pulse { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:52
-[DmPath("/datum/gizpulse/wet_tiles"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_wet_tiles : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:52 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/wet_tiles")]
+public partial class datum_gizpulse_wet_tiles { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:67
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_wet_tiles_fluid_circle : datum_gizpulse_wet_tiles
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:67 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle")]
+public partial class datum_gizpulse_wet_tiles_fluid_circle
 {
     public float? size = 0; // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:67
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:74
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/small"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/small"), DmGeneratedOnly]
 public partial class datum_gizpulse_wet_tiles_fluid_circle_small : datum_gizpulse_wet_tiles_fluid_circle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:74
@@ -53050,7 +53042,7 @@ public partial class datum_gizpulse_wet_tiles_fluid_circle_small : datum_gizpuls
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:78
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/medium"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/medium"), DmGeneratedOnly]
 public partial class datum_gizpulse_wet_tiles_fluid_circle_medium : datum_gizpulse_wet_tiles_fluid_circle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:78
@@ -53061,7 +53053,7 @@ public partial class datum_gizpulse_wet_tiles_fluid_circle_medium : datum_gizpul
 }
 
 // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:82
-[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/large"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/gizpulse/wet_tiles/fluid_circle/large"), DmGeneratedOnly]
 public partial class datum_gizpulse_wet_tiles_fluid_circle_large : datum_gizpulse_wet_tiles_fluid_circle
 {
     // tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:82
@@ -53071,59 +53063,59 @@ public partial class datum_gizpulse_wet_tiles_fluid_circle_large : datum_gizpuls
     }
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:85
-[DmPath("/datum/gizpulse/fluid_smoke"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_fluid_smoke : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:85 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/fluid_smoke")]
+public partial class datum_gizpulse_fluid_smoke { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:90
-[DmPath("/datum/gizpulse/swap_reagent"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_swap_reagent : datum_gizpulse { }
+// tg: code/modules/research/gizmo/gizmodes/gizmopper.dm:90 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/swap_reagent")]
+public partial class datum_gizpulse_swap_reagent { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:15
-[DmPath("/datum/gizpulse/teleport"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport : datum_gizpulse
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:15 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport")]
+public partial class datum_gizpulse_teleport
 {
     public float offset_min = 5; // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:15
     public float offset_max = 15; // tg: code/modules/research/gizmo/gizmodes/gizporter.dm:17
 }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:33
-[DmPath("/datum/gizpulse/teleport/self"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport_self : datum_gizpulse_teleport { }
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:33 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport/self")]
+public partial class datum_gizpulse_teleport_self { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:37
-[DmPath("/datum/gizpulse/teleport/other"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport_other : datum_gizpulse_teleport { }
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:37 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport/other")]
+public partial class datum_gizpulse_teleport_other { }
 
-// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:43
-[DmPath("/datum/gizpulse/teleport/other/and_self"), DmGeneratedOnly, DmInert]
-public partial class datum_gizpulse_teleport_other_and_self : datum_gizpulse_teleport_other { }
+// tg: code/modules/research/gizmo/gizmodes/gizporter.dm:43 (the var block of a hand-written class)
+[DmPath("/datum/gizpulse/teleport/other/and_self")]
+public partial class datum_gizpulse_teleport_other_and_self { }
 
-// tg: code/modules/research/ordnance/_scipaper.dm:4
-[DmPath("/datum/scientific_paper"), DmGeneratedOnly, DmInert]
-public partial class datum_scientific_paper : datum
+// tg: code/modules/research/ordnance/_scipaper.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/scientific_paper")]
+public partial class datum_scientific_paper
 {
     public object title; // tg: code/modules/research/ordnance/_scipaper.dm:4
     public object author; // tg: code/modules/research/ordnance/_scipaper.dm:6
     public float et_alia = 0; // tg: code/modules/research/ordnance/_scipaper.dm:8
     public object @abstract; // tg: code/modules/research/ordnance/_scipaper.dm:10
     public DmList gains; // tg: code/modules/research/ordnance/_scipaper.dm:12
-    public datum_experiment_ordnance experiment_path; // tg: code/modules/research/ordnance/_scipaper.dm:14
+    public Type experiment_path; // tg: code/modules/research/ordnance/_scipaper.dm:14
     public object tracked_variable; // tg: code/modules/research/ordnance/_scipaper.dm:16
     public object tier; // tg: code/modules/research/ordnance/_scipaper.dm:21
-    public datum_scientific_partner partner_path; // tg: code/modules/research/ordnance/_scipaper.dm:23
+    public Type partner_path; // tg: code/modules/research/ordnance/_scipaper.dm:23
 }
 
-// tg: code/modules/research/ordnance/_scipaper.dm:195
-[DmPath("/datum/scientific_paper/explosive"), DmGeneratedOnly, DmInert]
-public partial class datum_scientific_paper_explosive : datum_scientific_paper
+// tg: code/modules/research/ordnance/_scipaper.dm:195 (the var block of a hand-written class)
+[DmPath("/datum/scientific_paper/explosive")]
+public partial class datum_scientific_paper_explosive
 {
     public datum_data_tachyon_record explosion_record; // tg: code/modules/research/ordnance/_scipaper.dm:195
 }
 
-// tg: code/modules/research/ordnance/_scipaper.dm:232
-[DmPath("/datum/scientific_paper/gaseous"), DmGeneratedOnly, DmInert]
-public partial class datum_scientific_paper_gaseous : datum_scientific_paper
+// tg: code/modules/research/ordnance/_scipaper.dm:232 (the var block of a hand-written class)
+[DmPath("/datum/scientific_paper/gaseous")]
+public partial class datum_scientific_paper_gaseous
 {
     public datum_data_compressor_record compressor_record; // tg: code/modules/research/ordnance/_scipaper.dm:232
 }
@@ -53785,17 +53777,17 @@ public partial class datum_saved_bodypart
     public object burn_dam; // tg: code/modules/research/xenobiology/crossbreeding/_misc.dm:20
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4
-[DmPath("/datum/micro_organism"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism : datum
+// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism")]
+public partial class datum_micro_organism
 {
     public string name = "Unknown fluids"; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:4
     public string desc = "White fluid that tastes like salty coins and milk"; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:6
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15
-[DmPath("/datum/micro_organism/cell_line"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line : datum_micro_organism
+// tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line")]
+public partial class datum_micro_organism_cell_line
 {
     public float growth = 0; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:15
     public DmList required_reagents; // tg: code/modules/research/xenobiology/vatgrowing/samples/_micro_organism.dm:17
@@ -53810,7 +53802,7 @@ public partial class datum_micro_organism_cell_line : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:8
-[DmPath("/datum/micro_organism/cell_line/mouse"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/mouse"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_mouse : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:8
@@ -53834,7 +53826,7 @@ public partial class datum_micro_organism_cell_line_mouse : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:32
-[DmPath("/datum/micro_organism/cell_line/chicken"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/chicken"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_chicken : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:32
@@ -53857,7 +53849,7 @@ public partial class datum_micro_organism_cell_line_chicken : datum_micro_organi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:50
-[DmPath("/datum/micro_organism/cell_line/cow"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/cow"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_cow : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:50
@@ -53879,7 +53871,7 @@ public partial class datum_micro_organism_cell_line_cow : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:69
-[DmPath("/datum/micro_organism/cell_line/moonicorn"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/moonicorn"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_moonicorn : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:69
@@ -53901,7 +53893,7 @@ public partial class datum_micro_organism_cell_line_moonicorn : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:94
-[DmPath("/datum/micro_organism/cell_line/goat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/goat"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_goat : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:94
@@ -53923,7 +53915,7 @@ public partial class datum_micro_organism_cell_line_goat : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:116
-[DmPath("/datum/micro_organism/cell_line/sheep"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/sheep"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_sheep : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:116
@@ -53945,7 +53937,7 @@ public partial class datum_micro_organism_cell_line_sheep : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:138
-[DmPath("/datum/micro_organism/cell_line/pig"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/pig"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_pig : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:138
@@ -53967,7 +53959,7 @@ public partial class datum_micro_organism_cell_line_pig : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:159
-[DmPath("/datum/micro_organism/cell_line/cat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/cat"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_cat : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:159
@@ -53989,7 +53981,7 @@ public partial class datum_micro_organism_cell_line_cat : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:180
-[DmPath("/datum/micro_organism/cell_line/corgi"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/corgi"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_corgi : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:180
@@ -54011,7 +54003,7 @@ public partial class datum_micro_organism_cell_line_corgi : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:199
-[DmPath("/datum/micro_organism/cell_line/pug"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/pug"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_pug : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:199
@@ -54033,7 +54025,7 @@ public partial class datum_micro_organism_cell_line_pug : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:217
-[DmPath("/datum/micro_organism/cell_line/fox"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/fox"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_fox : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:217
@@ -54055,7 +54047,7 @@ public partial class datum_micro_organism_cell_line_fox : datum_micro_organism_c
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:239
-[DmPath("/datum/micro_organism/cell_line/stoat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/stoat"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_stoat : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:239
@@ -54077,7 +54069,7 @@ public partial class datum_micro_organism_cell_line_stoat : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:262
-[DmPath("/datum/micro_organism/cell_line/rabbit"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/rabbit"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_rabbit : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:262
@@ -54099,7 +54091,7 @@ public partial class datum_micro_organism_cell_line_rabbit : datum_micro_organis
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:284
-[DmPath("/datum/micro_organism/cell_line/mothroach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/mothroach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_mothroach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:284
@@ -54121,7 +54113,7 @@ public partial class datum_micro_organism_cell_line_mothroach : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:303
-[DmPath("/datum/micro_organism/cell_line/bear"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/bear"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_bear : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:303
@@ -54143,7 +54135,7 @@ public partial class datum_micro_organism_cell_line_bear : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:324
-[DmPath("/datum/micro_organism/cell_line/carp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/carp"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_carp : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:324
@@ -54165,7 +54157,7 @@ public partial class datum_micro_organism_cell_line_carp : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:343
-[DmPath("/datum/micro_organism/cell_line/megacarp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/megacarp"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_megacarp : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:343
@@ -54187,7 +54179,7 @@ public partial class datum_micro_organism_cell_line_megacarp : datum_micro_organ
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:363
-[DmPath("/datum/micro_organism/cell_line/penguin"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/penguin"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_penguin : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:363
@@ -54209,7 +54201,7 @@ public partial class datum_micro_organism_cell_line_penguin : datum_micro_organi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:382
-[DmPath("/datum/micro_organism/cell_line/snake"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/snake"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_snake : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:382
@@ -54230,7 +54222,7 @@ public partial class datum_micro_organism_cell_line_snake : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:400
-[DmPath("/datum/micro_organism/cell_line/lizard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/lizard"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_lizard : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:400
@@ -54251,7 +54243,7 @@ public partial class datum_micro_organism_cell_line_lizard : datum_micro_organis
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:428
-[DmPath("/datum/micro_organism/cell_line/slime"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/slime"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_slime : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:428
@@ -54273,7 +54265,7 @@ public partial class datum_micro_organism_cell_line_slime : datum_micro_organism
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:446
-[DmPath("/datum/micro_organism/cell_line/blob_spore"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/blob_spore"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_blob_spore : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:446
@@ -54295,7 +54287,7 @@ public partial class datum_micro_organism_cell_line_blob_spore : datum_micro_org
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:466
-[DmPath("/datum/micro_organism/cell_line/blobbernaut"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/blobbernaut"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_blobbernaut : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:466
@@ -54317,7 +54309,7 @@ public partial class datum_micro_organism_cell_line_blobbernaut : datum_micro_or
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:485
-[DmPath("/datum/micro_organism/cell_line/gelatinous_cube"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/gelatinous_cube"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_gelatinous_cube : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:485
@@ -54339,7 +54331,7 @@ public partial class datum_micro_organism_cell_line_gelatinous_cube : datum_micr
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:510
-[DmPath("/datum/micro_organism/cell_line/sholean_grapes"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/sholean_grapes"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_sholean_grapes : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:510
@@ -54361,7 +54353,7 @@ public partial class datum_micro_organism_cell_line_sholean_grapes : datum_micro
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:540
-[DmPath("/datum/micro_organism/cell_line/cockroach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/cockroach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_cockroach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:540
@@ -54384,7 +54376,7 @@ public partial class datum_micro_organism_cell_line_cockroach : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:559
-[DmPath("/datum/micro_organism/cell_line/glockroach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/glockroach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_glockroach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:559
@@ -54407,7 +54399,7 @@ public partial class datum_micro_organism_cell_line_glockroach : datum_micro_org
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:581
-[DmPath("/datum/micro_organism/cell_line/hauberoach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/hauberoach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_hauberoach : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:581
@@ -54430,7 +54422,7 @@ public partial class datum_micro_organism_cell_line_hauberoach : datum_micro_org
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:603
-[DmPath("/datum/micro_organism/cell_line/pine"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/pine"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_pine : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:603
@@ -54451,9 +54443,9 @@ public partial class datum_micro_organism_cell_line_pine : datum_micro_organism_
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624
-[DmPath("/datum/micro_organism/cell_line/vat_beast"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_vat_beast : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/vat_beast")]
+public partial class datum_micro_organism_cell_line_vat_beast
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:624
     public datum_micro_organism_cell_line_vat_beast()
@@ -54473,9 +54465,9 @@ public partial class datum_micro_organism_cell_line_vat_beast : datum_micro_orga
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657
-[DmPath("/datum/micro_organism/cell_line/netherworld"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_netherworld : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/netherworld")]
+public partial class datum_micro_organism_cell_line_netherworld
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:657
     public datum_micro_organism_cell_line_netherworld()
@@ -54494,12 +54486,12 @@ public partial class datum_micro_organism_cell_line_netherworld : datum_micro_or
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684
-[DmPath("/datum/micro_organism/cell_line/clown"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_clown : datum_micro_organism_cell_line { }
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:684 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/clown")]
+public partial class datum_micro_organism_cell_line_clown { }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:698
-[DmPath("/datum/micro_organism/cell_line/clown/bananaclown"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/clown/bananaclown"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_clown_bananaclown : datum_micro_organism_cell_line_clown
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:698
@@ -54520,7 +54512,7 @@ public partial class datum_micro_organism_cell_line_clown_bananaclown : datum_mi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:721
-[DmPath("/datum/micro_organism/cell_line/clown/glutton"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/clown/glutton"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_clown_glutton : datum_micro_organism_cell_line_clown
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:721
@@ -54541,7 +54533,7 @@ public partial class datum_micro_organism_cell_line_clown_glutton : datum_micro_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:747
-[DmPath("/datum/micro_organism/cell_line/clown/longclown"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/clown/longclown"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_clown_longclown : datum_micro_organism_cell_line_clown
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:747
@@ -54562,7 +54554,7 @@ public partial class datum_micro_organism_cell_line_clown_longclown : datum_micr
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:770
-[DmPath("/datum/micro_organism/cell_line/frog"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/frog"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_frog : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:770
@@ -54584,7 +54576,7 @@ public partial class datum_micro_organism_cell_line_frog : datum_micro_organism_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:791
-[DmPath("/datum/micro_organism/cell_line/axolotl"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/axolotl"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_axolotl : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:791
@@ -54606,7 +54598,7 @@ public partial class datum_micro_organism_cell_line_axolotl : datum_micro_organi
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:814
-[DmPath("/datum/micro_organism/cell_line/walking_mushroom"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/walking_mushroom"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_walking_mushroom : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:814
@@ -54627,9 +54619,9 @@ public partial class datum_micro_organism_cell_line_walking_mushroom : datum_mic
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839
-[DmPath("/datum/micro_organism/cell_line/queen_bee"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_queen_bee : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/queen_bee")]
+public partial class datum_micro_organism_cell_line_queen_bee
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:839
     public datum_micro_organism_cell_line_queen_bee()
@@ -54650,7 +54642,7 @@ public partial class datum_micro_organism_cell_line_queen_bee : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:874
-[DmPath("/datum/micro_organism/cell_line/butterfly"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/butterfly"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_butterfly : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:874
@@ -54673,7 +54665,7 @@ public partial class datum_micro_organism_cell_line_butterfly : datum_micro_orga
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:897
-[DmPath("/datum/micro_organism/cell_line/mega_arachnid"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/mega_arachnid"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_mega_arachnid : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:897
@@ -54694,7 +54686,7 @@ public partial class datum_micro_organism_cell_line_mega_arachnid : datum_micro_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:923
-[DmPath("/datum/micro_organism/cell_line/snail"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/snail"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_snail : datum_micro_organism_cell_line
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/common.dm:923
@@ -54715,9 +54707,9 @@ public partial class datum_micro_organism_cell_line_snail : datum_micro_organism
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3
-[DmPath("/datum/micro_organism/cell_line/organs"), DmGeneratedOnly, DmInert]
-public partial class datum_micro_organism_cell_line_organs : datum_micro_organism_cell_line
+// tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/micro_organism/cell_line/organs")]
+public partial class datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:3
     public datum_micro_organism_cell_line_organs()
@@ -54729,7 +54721,7 @@ public partial class datum_micro_organism_cell_line_organs : datum_micro_organis
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:16
-[DmPath("/datum/micro_organism/cell_line/organs/heart"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:16
@@ -54750,7 +54742,7 @@ public partial class datum_micro_organism_cell_line_organs_heart : datum_micro_o
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:33
-[DmPath("/datum/micro_organism/cell_line/organs/heart/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart_evolved : datum_micro_organism_cell_line_organs_heart
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:33
@@ -54770,7 +54762,7 @@ public partial class datum_micro_organism_cell_line_organs_heart_evolved : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:47
-[DmPath("/datum/micro_organism/cell_line/organs/heart/sacred"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart/sacred"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart_sacred : datum_micro_organism_cell_line_organs_heart
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:47
@@ -54791,7 +54783,7 @@ public partial class datum_micro_organism_cell_line_organs_heart_sacred : datum_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:61
-[DmPath("/datum/micro_organism/cell_line/organs/heart/corrupt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/heart/corrupt"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_heart_corrupt : datum_micro_organism_cell_line_organs_heart
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:61
@@ -54812,7 +54804,7 @@ public partial class datum_micro_organism_cell_line_organs_heart_corrupt : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:78
-[DmPath("/datum/micro_organism/cell_line/organs/lungs"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/lungs"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_lungs : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:78
@@ -54833,7 +54825,7 @@ public partial class datum_micro_organism_cell_line_organs_lungs : datum_micro_o
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:95
-[DmPath("/datum/micro_organism/cell_line/organs/lungs/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/lungs/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_lungs_evolved : datum_micro_organism_cell_line_organs_lungs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:95
@@ -54853,7 +54845,7 @@ public partial class datum_micro_organism_cell_line_organs_lungs_evolved : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:109
-[DmPath("/datum/micro_organism/cell_line/organs/liver"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:109
@@ -54874,7 +54866,7 @@ public partial class datum_micro_organism_cell_line_organs_liver : datum_micro_o
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:126
-[DmPath("/datum/micro_organism/cell_line/organs/liver/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver_evolved : datum_micro_organism_cell_line_organs_liver
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:126
@@ -54894,7 +54886,7 @@ public partial class datum_micro_organism_cell_line_organs_liver_evolved : datum
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:140
-[DmPath("/datum/micro_organism/cell_line/organs/liver/bloody"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver/bloody"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver_bloody : datum_micro_organism_cell_line_organs_liver
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:140
@@ -54914,7 +54906,7 @@ public partial class datum_micro_organism_cell_line_organs_liver_bloody : datum_
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:153
-[DmPath("/datum/micro_organism/cell_line/organs/liver/distillery"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/liver/distillery"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_liver_distillery : datum_micro_organism_cell_line_organs_liver
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:153
@@ -54935,7 +54927,7 @@ public partial class datum_micro_organism_cell_line_organs_liver_distillery : da
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:169
-[DmPath("/datum/micro_organism/cell_line/organs/stomach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/stomach"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_stomach : datum_micro_organism_cell_line_organs
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:169
@@ -54956,7 +54948,7 @@ public partial class datum_micro_organism_cell_line_organs_stomach : datum_micro
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:186
-[DmPath("/datum/micro_organism/cell_line/organs/stomach/evolved"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/cell_line/organs/stomach/evolved"), DmGeneratedOnly]
 public partial class datum_micro_organism_cell_line_organs_stomach_evolved : datum_micro_organism_cell_line_organs_stomach
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/cell_lines/organs.dm:186
@@ -54976,7 +54968,7 @@ public partial class datum_micro_organism_cell_line_organs_stomach_evolved : dat
 }
 
 // tg: code/modules/research/xenobiology/vatgrowing/samples/viruses/_virus.dm:3
-[DmPath("/datum/micro_organism/virus"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/micro_organism/virus"), DmGeneratedOnly]
 public partial class datum_micro_organism_virus : datum_micro_organism
 {
     // tg: code/modules/research/xenobiology/vatgrowing/samples/viruses/_virus.dm:3
@@ -54986,9 +54978,9 @@ public partial class datum_micro_organism_virus : datum_micro_organism
     }
 }
 
-// tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4
-[DmPath("/datum/biological_sample"), DmGeneratedOnly, DmInert]
-public partial class datum_biological_sample : datum
+// tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/biological_sample")]
+public partial class datum_biological_sample
 {
     public DmList micro_organisms; // tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:4
     public float sample_layers = 1; // tg: code/modules/research/xenobiology/vatgrowing/samples/_sample.dm:6

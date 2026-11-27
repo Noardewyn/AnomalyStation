@@ -43,6 +43,9 @@ public static partial class GlobalProcs
     // tg: code/__DEFINES/text.dm:26  #define MAPTEXT_TINY_UNICODE(text) {"<span style='font-family: \"TinyUnicode\"; font-size: 12pt; line-height: 0.75; -dm-text-outline: 1px black'>[##text]</span>"}
     public static string MAPTEXT_TINY_UNICODE(object text) => Dm.text("<span style='font-family: \"TinyUnicode\"; font-size: 12pt; line-height: 0.75; -dm-text-outline: 1px black'>[]</span>", text);
 
+    // tg: code/__DEFINES/text.dm:29  #define MAPTEXT_SPESSFONT(text) {"<span style='font-family: \"Spess Font\"; font-size: 6pt; line-height: 1.4; -dm-text-outline: 1px black'>[##text]</span>"}  (gaps XB1: the slime console's display)
+    public static string MAPTEXT_SPESSFONT(object text) => Dm.text("<span style='font-family: \"Spess Font\"; font-size: 6pt; line-height: 1.4; -dm-text-outline: 1px black'>[]</span>", text);
+
     // tg: code/__DEFINES/text.dm:114  #define ALPHABET list(...): a new list at every use (gaps P3, D327)
     public static DmList ALPHABET() => Dm.list("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
 

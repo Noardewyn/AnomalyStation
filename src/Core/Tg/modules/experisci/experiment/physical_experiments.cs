@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps RD3 (D333, the experiments): the whole file: the extreme cooking experiment (an emitter fired at a tracked meat wall, which
-// falls into gibs and a steak) and the arcade playtest (won at a tracked arcade cabinet; the arcade machines are not ported yet, so
-// COMSIG_ARCADE_VICTORY is never sent: not-translated.md section 195). The var blocks are generated (D111).
+// falls into gibs and a steak) and the arcade playtest (won at a tracked arcade cabinet, which sends COMSIG_ARCADE_VICTORY on a win).
+// The var blocks are generated (D111).
 
 // tg: code/modules/experisci/experiment/physical_experiments.dm:1
 public partial class datum_experiment_physical_meat_wall_explosion : datum_experiment_physical

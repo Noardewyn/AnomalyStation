@@ -1,0 +1,109 @@
+anomaly-map 1
+source _maps/templates/shelter_3.dmm tg 1d99bd7f
+size 11 11 1
+chunk 32
+default /turf/open/floor/carpet/black | /area/misc/survivalpod
+
+[chunk 1 1 1]
+1,11: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,11: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+3,11: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+4,11: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+5,11: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+6,11: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+7,11: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+8,11: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+9,11: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+10,11: /obj/effect/turf_decal/mining/survival{dir = 1} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+11,11: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+1,10: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+2,10: /obj/structure/table/wood/fancy/black | /obj/machinery/chem_dispenser/drinks | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+3,10: /obj/structure/table/wood/fancy/black | /obj/machinery/chem_dispenser/drinks/beer | /obj/machinery/light/directional/north | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+4,10: /obj/machinery/vending/boozeomat | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+5,10: /obj/item/book/manual/wiki/barman_recipes | /obj/item/reagent_containers/cup/glass/shaker | /obj/item/rag | /obj/structure/table/wood/fancy/black | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+6,10: /obj/structure/table/wood/fancy/black | /obj/item/clipboard | /obj/item/toy/figure/bartender | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+7,10: /obj/structure/table/wood/fancy/black | /obj/item/storage/fancy/cigarettes/cigars | /obj/item/storage/fancy/cigarettes/cigars/cohiba{pixel_y = 4} | /obj/item/storage/fancy/cigarettes/cigars/havana{pixel_y = 8} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+8,10: /obj/structure/table/wood/fancy/black | /obj/effect/spawner/random/food_or_drink/keg | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+9,10: /obj/machinery/light/directional/north | /obj/structure/closet/secure_closet/bar/all_access | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+10,10: /obj/structure/disposalpipe/trunk{dir = 4} | /obj/machinery/disposal/bin | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+11,10: /obj/effect/turf_decal/mining/survival{dir = 4} | /obj/structure/disposalpipe/junction{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+1,9: /obj/machinery/door/airlock/survival_pod/glass | /obj/effect/mapping_helpers/airlock/access/any/service/bar | /obj/effect/mapping_helpers/airlock/access/any/supply/mining | /obj/structure/fans/tiny | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+2,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+3,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+4,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+5,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+6,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+7,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+8,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+9,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+10,9: /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+11,9: /obj/structure/disposalpipe/segment | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+1,8: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+2,8: /obj/structure/table/reinforced | /obj/item/lighter{pixel_x = -4; pixel_y = 4} | /obj/item/lighter | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+3,8: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+4,8: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+5,8: /obj/structure/table/reinforced | /obj/item/storage/box/matches{pixel_x = -4; pixel_y = 8} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+6,8: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+7,8: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+8,8: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+9,8: /obj/machinery/door/window/survival_pod/left/directional/south{req_one_access = list("bar","mining")} | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+10,8: /obj/structure/table/reinforced | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+11,8: /obj/effect/turf_decal/mining/survival{dir = 4} | /obj/structure/disposalpipe/segment | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+1,7: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+2,7: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+3,7: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+4,7: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+5,7: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+6,7: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+7,7: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+8,7: /obj/structure/chair/stool/bar/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+10,7: /obj/machinery/vending/cigarette | /turf/open/floor/carpet/black | /area/misc/survivalpod
+11,7: /obj/structure/disposalpipe/segment | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+1,6: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+10,6: /obj/structure/disposalpipe/trunk{dir = 4} | /obj/machinery/disposal/bin | /turf/open/floor/carpet/black | /area/misc/survivalpod
+11,6: /obj/effect/turf_decal/mining/survival{dir = 4} | /obj/structure/disposalpipe/segment{dir = 9} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+1,5: /obj/structure/window/reinforced/survival_pod/spawner/directional/west | /obj/structure/window/reinforced/survival_pod/spawner/directional/east | /obj/structure/window/reinforced/survival_pod/spawner/directional/north | /obj/structure/window/reinforced/survival_pod/spawner/directional/south | /obj/structure/grille | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+2,5: /obj/structure/chair/comfy/black | /turf/open/floor/carpet/black | /area/misc/survivalpod
+4,5: /obj/structure/chair/comfy/black | /turf/open/floor/carpet/black | /area/misc/survivalpod
+5,5: /obj/structure/chair/comfy/black | /turf/open/floor/carpet/black | /area/misc/survivalpod
+7,5: /obj/structure/chair/comfy/black | /turf/open/floor/carpet/black | /area/misc/survivalpod
+8,5: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+9,5: /obj/machinery/door/airlock/survival_pod | /turf/open/floor/mineral/plastitanium/pod/light | /area/misc/survivalpod
+10,5: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+11,5: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+1,4: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+2,4: /obj/structure/table/wood/fancy | /obj/item/reagent_containers/condiment/peppermill{pixel_x = -4; pixel_y = 12} | /obj/item/reagent_containers/condiment/saltshaker{pixel_x = 4; pixel_y = 4} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+4,4: /obj/structure/table/wood/fancy | /obj/item/reagent_containers/condiment/peppermill{pixel_x = -4; pixel_y = 12} | /obj/item/reagent_containers/condiment/saltshaker{pixel_x = 4; pixel_y = 4} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+5,4: /obj/structure/table/wood/fancy | /obj/item/reagent_containers/condiment/peppermill{pixel_x = -4; pixel_y = 12} | /obj/item/reagent_containers/condiment/saltshaker{pixel_x = 4; pixel_y = 4} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+7,4: /obj/structure/table/wood/fancy | /obj/item/reagent_containers/condiment/peppermill{pixel_x = -4; pixel_y = 12} | /obj/item/reagent_containers/condiment/saltshaker{pixel_x = 4; pixel_y = 4} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+8,4: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+9,4: /obj/structure/sink/directional/east | /obj/structure/mirror/directional/west | /turf/open/floor/mineral/plastitanium/pod/light | /area/misc/survivalpod
+10,4: /obj/structure/sink/directional/west | /obj/machinery/light/small/directional/east | /obj/structure/urinal/directional/north | /obj/structure/mirror/directional/east | /turf/open/floor/mineral/plastitanium/pod/light | /area/misc/survivalpod
+11,4: /obj/effect/turf_decal/mining/survival{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+1,3: /obj/structure/window/reinforced/survival_pod/spawner/directional/west | /obj/structure/window/reinforced/survival_pod/spawner/directional/east | /obj/structure/window/reinforced/survival_pod/spawner/directional/north | /obj/structure/window/reinforced/survival_pod/spawner/directional/south | /obj/structure/grille | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+2,3: /obj/structure/chair/comfy/black{dir = 1} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+4,3: /obj/structure/chair/comfy/black{dir = 1} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+5,3: /obj/structure/chair/comfy/black{dir = 1} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+7,3: /obj/structure/chair/comfy/black{dir = 1} | /turf/open/floor/carpet/black | /area/misc/survivalpod
+8,3: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+9,3: /obj/machinery/door/airlock/survival_pod | /turf/open/floor/mineral/plastitanium/pod/light | /area/misc/survivalpod
+10,3: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+11,3: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+1,2: /obj/effect/turf_decal/mining/survival{dir = 8} | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+2,2: /obj/machinery/vending/snack/blue | /turf/open/floor/carpet/black | /area/misc/survivalpod
+3,2: /obj/machinery/light/directional/south | /turf/open/floor/carpet/black | /area/misc/survivalpod
+8,2: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+9,2: /obj/structure/toilet{dir = 4} | /turf/open/floor/mineral/plastitanium/pod/light | /area/misc/survivalpod
+10,2: /obj/structure/curtain{alpha = 240; color = "#454545"; icon_state = "bathroom-closed"; open = 0} | /obj/item/soap/deluxe | /obj/machinery/light/small/directional/east | /obj/machinery/shower/directional/south | /turf/open/floor/mineral/plastitanium/pod/light | /area/misc/survivalpod
+11,2: /obj/effect/turf_decal/mining/survival{dir = 4} | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+1,1: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,1: /obj/effect/turf_decal/mining/survival | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+3,1: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+4,1: /obj/effect/turf_decal/mining/survival | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+5,1: /obj/structure/window/reinforced/survival_pod/spawner/directional/west | /obj/structure/window/reinforced/survival_pod/spawner/directional/east | /obj/structure/window/reinforced/survival_pod/spawner/directional/north | /obj/structure/window/reinforced/survival_pod/spawner/directional/south | /obj/structure/grille | /turf/open/floor/mineral/plastitanium/pod/dark | /area/misc/survivalpod
+6,1: /obj/machinery/door/airlock/survival_pod/glass | /obj/structure/fans/tiny | /turf/open/floor/carpet/black | /area/misc/survivalpod
+7,1: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+8,1: /obj/effect/turf_decal/mining/survival | /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+9,1: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+10,1: /turf/closed/wall/mineral/plastitanium/survival/nodiagonal | /area/misc/survivalpod
+11,1: /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod

@@ -15,7 +15,7 @@ namespace Anomaly.Core.Tg;
 // (M1: isAI), M3 P4's isimage (remove_filter), isfloorturf (the floor's ChangeTurf) and isprojectile (the grille's and table's passage), and M3 P3's isclosedturf,
 // isindestructiblewall, isplatingturf, isdrone, ismecha and is_area_shuttle, and M4b slice 2's islava (the heat-exchanging
 // pipes), M4a P4b's in_range (the reinforced and operating tables) and M4b audio slice 1's istransparentturf and isnewplayer, M4b's isalien and isorgan (the extinguisher cabinet, reagent transfers)
-// (playsound), and M4c slice 5's isopenspaceturf, is_space_or_openspace and isshuttleturf (the airlock pump) and the ghosts' is_job, the M7 projectiles slice's isvehicle and the M7 supermatter slice's isplasmaman, islarva, iscameramob, iseffect and is_clown_job, and the M7 delamination slice's isindestructiblefloor, ischasm and isdead, and M7x slice B's IN_GIVEN_RANGE, isgun and isammobox and M8z slice B's isalienadult and isbot, and gaps ST2's isbook with GLOB.book_types and isProbablyWallMounted, and gaps BR1's is_area_virtual translated; the rest of is_helpers.dm is
+// (playsound), and M4c slice 5's isopenspaceturf, is_space_or_openspace and isshuttleturf (the airlock pump) and the ghosts' is_job, the M7 projectiles slice's isvehicle and the M7 supermatter slice's isplasmaman, islarva, iscameramob, iseffect and is_clown_job, and the M7 delamination slice's isindestructiblefloor, ischasm and isdead, and M7x slice B's IN_GIVEN_RANGE, isgun and isammobox and M8z slice B's isalienadult and isbot, and gaps ST2's isbook with GLOB.book_types and isProbablyWallMounted, and gaps BR1's is_area_virtual and the chapel's is_chaplain_job, isinstrument and isandroid translated; the rest of is_helpers.dm is
 // translated with the waves that use it (rules 10.4, 11.1).
 public static partial class GlobalProcs
 {
@@ -322,6 +322,12 @@ public static partial class GlobalProcs
         return A is mob_living_simple_animal;
     }
 
+    // tg: code/__DEFINES/is_helpers.dm:222
+    public static bool ishostile(object A)
+    {
+        return A is mob_living_simple_animal_hostile;
+    }
+
     // tg: code/__DEFINES/is_helpers.dm:285  (M4b: a reagent transfer into an organ)
     public static bool isorgan(object A)
     {
@@ -476,6 +482,21 @@ public static partial class GlobalProcs
     public static bool is_clown_job(object job_type)
     {
         return job_type is datum_job_clown;
+    }
+
+    // tg: code/__DEFINES/is_helpers.dm:153  (the chapel: the mechanical sect's conversion rite)
+    public static bool isandroid(object A)
+    {
+        return Dm.truthy(is_species(A, typeof(datum_species_android)));
+    }
+
+    // tg: code/__DEFINES/is_helpers.dm:301  (the chapel: the festival sect's songs)
+    public static bool isinstrument(object A) => A is obj_item_instrument || A is obj_structure_musician;
+
+    // tg: code/__DEFINES/is_helpers.dm:355  (the chapel: the altar's chaplain list)
+    public static bool is_chaplain_job(object job_type)
+    {
+        return job_type is datum_job_chaplain;
     }
 }
 
@@ -648,6 +669,9 @@ public static partial class GlobalProcs
 
     // tg: code/__DEFINES/is_helpers.dm:169  #define isalienqueen(A) (istype(A, /mob/living/carbon/alien/adult/royal/queen)) (gaps X5: the alien HUD)
     public static bool isalienqueen(object A) => A is mob_living_carbon_alien_adult_royal_queen;
+
+    // tg: code/__DEFINES/is_helpers.dm:257  #define isfish(A) (istype(A, /obj/item/fish)) (the fish)
+    public static bool isfish(object A) => A is obj_item_fish;
 
     // tg: code/__DEFINES/is_helpers.dm:364  #define isprojectilespell(thing) (istype(thing, /datum/action/cooldown/spell/pointed/projectile)) (gaps E4b: the on-hit effect element)
     public static bool isprojectilespell(object thing) => thing is datum_action_cooldown_spell_pointed_projectile;

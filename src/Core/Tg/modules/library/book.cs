@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // Gaps J2 (D298): the book, for the bible and the granters: reading (the MarkdownViewer window), vandalizing and carving. The context tips are rows.
 // Gaps P3b (D327): the tgui book (book.dm:264-296: its window and page sound) and the manual's book state, for the DNA infusion book; the
-// DSM and IDC manuals (:299-end) wait for the library row.
+// DSM and IDC manuals (:299-end) with their DSMBook and IDCBook windows.
 
 // tg: code/modules/library/book.dm:1
 public partial class obj_item_book : obj_item
@@ -351,4 +351,206 @@ public partial class obj_item_tgui_book_manual : obj_item_tgui_book
     {
         return GLOB.book_state;
     }
+}
+
+// tg: code/modules/library/book.dm:302  #define ASSERT_DATA(data_list, data_field) (the file's own): a missing field is a stack trace
+public partial class obj_item_tgui_book_manual : obj_item_tgui_book
+{
+    protected void ASSERT_DATA(DmList data_list, string data_field, int line)
+    {
+        if (!Dm.truthy(data_list[data_field]))
+            stack_trace(Dm.text("[] - [] lacks [] information!", type, data_list["id"], data_field), "code/modules/library/book.dm", line);
+    }
+}
+
+// tg: code/modules/library/book.dm:306
+public partial class obj_item_tgui_book_manual_dsm : obj_item_tgui_book_manual
+{
+    // tg: code/modules/library/book.dm:315  var/static/list/trauma_info
+    private static ref DmList ui_static_data__trauma_info => ref TgState.Current.obj_item_tgui_book_manual_dsm__ui_static_data__trauma_info;
+
+    // tg: code/modules/library/book.dm:313
+    public override async DmTask<object> ui_static_data(mob user = null)
+    {
+        DmList data = Dm.list();
+
+        if (ui_static_data__trauma_info == null)
+        {
+            ui_static_data__trauma_info = Dm.list();
+
+            DmList blacklist = Dm.list();
+            // phobias need some special handing thanks to all their funky types
+            Dm.append(ref blacklist, typesof(typeof(datum_brain_trauma_mild_phobia)));
+
+            foreach (Type trauma_type in Dm.each_cast<Type>(Dm.sub(valid_subtypesof(typeof(datum_brain_trauma)), blacklist)))
+            {
+                if (!Dm.truthy(Dm.initial(trauma_type, (datum_brain_trauma p) => p.known_trauma)))
+                    continue;
+
+                DmList trauma_data = Dm.list();
+                trauma_data["full_name"] = Dm.initial(trauma_type, (datum_brain_trauma p) => p.name);
+                trauma_data["scan_name"] = Dm.initial(trauma_type, (datum_brain_trauma p) => p.scan_desc);
+                trauma_data["desc"] = Dm.initial(trauma_type, (datum_brain_trauma p) => p.desc);
+                trauma_data["symptoms"] = Dm.initial(trauma_type, (datum_brain_trauma p) => p.symptoms);
+                trauma_data["id"] = trauma_type;
+                Dm.append(ref ui_static_data__trauma_info, Dm.list(trauma_data));
+            }
+
+            foreach (Type quirk_type in Dm.each_cast<Type>(valid_subtypesof(typeof(datum_quirk))))
+            {
+                if (!Dm.truthy(Dm.bitand(Dm.initial(quirk_type, (datum_quirk p) => p.quirk_flags), QUIRK_TRAUMALIKE)))
+                    continue;
+
+                DmList trauma_data = Dm.list();
+                trauma_data["full_name"] = Dm.initial(quirk_type, (datum_quirk p) => p.name);
+                trauma_data["scan_name"] = LOWER_TEXT(Dm.initial(quirk_type, (datum_quirk p) => p.name));
+                trauma_data["desc"] = Dm.initial(quirk_type, (datum_quirk p) => p.medical_record_text);
+                trauma_data["symptoms"] = Dm.initial(quirk_type, (datum_quirk p) => p.medical_symptom_text);
+                trauma_data["id"] = quirk_type;
+                Dm.append(ref ui_static_data__trauma_info, Dm.list(trauma_data));
+            }
+
+            foreach (Type addiction_type in Dm.each_cast<Type>(GLOB.addictions))
+            {
+                DmList trauma_data = Dm.list();
+                trauma_data["full_name"] = I18n.T("[] Addiction", capitalize(Dm.initial(addiction_type, (datum_addiction p) => p.name)));
+                trauma_data["scan_name"] = I18n.T("[] addiction", Dm.initial(addiction_type, (datum_addiction p) => p.name));
+                trauma_data["desc"] = Dm.initial(addiction_type, (datum_addiction p) => p.description);
+                trauma_data["symptoms"] = Dm.initial(addiction_type, (datum_addiction p) => p.symptoms);
+                trauma_data["id"] = addiction_type;
+                Dm.append(ref ui_static_data__trauma_info, Dm.list(trauma_data));
+            }
+
+            foreach ((object phobia_type, object phobia_name) in Dm.pairs(GLOB.phobia_types))
+            {
+                DmList trauma_data = Dm.list();
+                trauma_data["full_name"] = phobia_name;
+                trauma_data["scan_name"] = Dm.text("[] of []", Dm.initial(typeof(datum_brain_trauma_mild_phobia), (datum_brain_trauma_mild_phobia p) => p.scan_desc), phobia_type);
+                trauma_data["desc"] = I18n.T("Patient is irrationally afraid of [].", phobia_type);
+                trauma_data["symptoms"] = Dm.initial(typeof(datum_brain_trauma_mild_phobia), (datum_brain_trauma_mild_phobia p) => p.symptoms);
+                trauma_data["id"] = Dm.text("[]/[]", typeof(datum_brain_trauma_mild_phobia), phobia_type);
+                Dm.append(ref ui_static_data__trauma_info, Dm.list(trauma_data));
+            }
+
+            // validate
+            foreach (DmList trauma_data in Dm.each_cast<DmList>(ui_static_data__trauma_info))
+            {
+                // these are asserted to be present, no matter what
+                ASSERT_DATA(trauma_data, "full_name", 369);
+                ASSERT_DATA(trauma_data, "scan_name", 370);
+                ASSERT_DATA(trauma_data, "id", 371);
+                // these start as null, so there is a chance they are missing
+                if (!Dm.truthy(trauma_data["desc"]))
+                {
+                    trauma_data["desc"] = I18n.T("No description recorded - this is an error. Report this lack of research.");
+                    stack_trace(Dm.text("[] - [] lacks a description!", type, trauma_data["id"]), "code/modules/library/book.dm", 375);
+                }
+                if (!Dm.truthy(trauma_data["symptoms"]))
+                {
+                    trauma_data["symptoms"] = I18n.T("No symptoms recorded - this is an error. Report this lack of research.");
+                    stack_trace(Dm.text("[] - [] lacks symptom information!", type, trauma_data["id"]), "code/modules/library/book.dm", 378);
+                }
+            }
+        }
+
+        data["traumas"] = ui_static_data__trauma_info;
+        return data;
+    }
+}
+
+// tg: code/modules/library/book.dm:384
+public partial class obj_item_tgui_book_manual_idc : obj_item_tgui_book_manual
+{
+    // tg: code/modules/library/book.dm:393  var/static/list/disease_info
+    private static ref DmList ui_static_data__disease_info => ref TgState.Current.obj_item_tgui_book_manual_idc__ui_static_data__disease_info;
+
+    // tg: code/modules/library/book.dm:391
+    public override async DmTask<object> ui_static_data(mob user = null)
+    {
+        DmList data = Dm.list();
+
+        if (ui_static_data__disease_info == null)
+        {
+            ui_static_data__disease_info = Dm.list();
+
+            foreach (Type disease_type in Dm.each_cast<Type>(valid_subtypesof(typeof(datum_disease))))
+            {
+                if (Dm.truthy(Dm.bitand(Dm.initial(disease_type, (datum_disease p) => p.visibility_flags), HIDDEN_BOOK)))
+                    continue;
+
+                DmList disease_data = Dm.list();
+                disease_data["form"] = Dm.initial(disease_type, (datum_disease p) => p.form);
+                disease_data["agent"] = Dm.initial(disease_type, (datum_disease p) => p.agent);
+                disease_data["name"] = Dm.initial(disease_type, (datum_disease p) => p.name);
+                disease_data["desc"] = Dm.initial(disease_type, (datum_disease p) => p.desc);
+                disease_data["illness"] = "N/A";
+                disease_data["spread_by"] = Dm.initial(disease_type, (datum_disease p) => p.spread_text) is var or__1 && Dm.truthy(or__1) ? or__1 : get_disease_spread_text(Dm.initial(disease_type, (datum_disease p) => p.spread_flags));
+                disease_data["cured_by"] = Dm.initial(disease_type, (datum_disease p) => p.cure_text);
+                disease_data["id"] = disease_type;
+                disease_data["level"] = "N/A";
+                Dm.append(ref ui_static_data__disease_info, Dm.list(disease_data));
+            }
+
+            foreach (Type symptom_type in Dm.each_cast<Type>(valid_subtypesof(typeof(datum_symptom))))
+            {
+                DmList symptom_data = Dm.list();
+                symptom_data["form"] = "Symptom";
+                symptom_data["agent"] = "N/A";
+                symptom_data["name"] = Dm.initial(symptom_type, (datum_symptom p) => p.name);
+                symptom_data["desc"] = Dm.initial(symptom_type, (datum_symptom p) => p.desc);
+                symptom_data["illness"] = Dm.initial(symptom_type, (datum_symptom p) => p.illness);
+                symptom_data["spread_by"] = "N/A";
+                // the scope operator reads safely (OpenDream's ScopeReference): a symptom with no cure (youth, viral, species) reads null
+                object symptom_cure = Dm.initial(symptom_type, (datum_symptom p) => p.symptom_cure);
+                symptom_data["cured_by"] = symptom_cure == null ? null : Dm.initial(symptom_cure, (datum_reagent p) => p.name);
+                symptom_data["id"] = symptom_type;
+                symptom_data["level"] = Dm.text("[]", Dm.initial(symptom_type, (datum_symptom p) => p.level));
+                Dm.append(ref ui_static_data__disease_info, Dm.list(symptom_data));
+            }
+
+            DmList advanced_virus_info = Dm.list(
+                Dm.kv("form", "Virus"),
+                Dm.kv("agent", "Microbes"),
+                Dm.kv("name", I18n.T("Advanced Disease")),
+                Dm.kv("desc", I18n.T("A catch-all category for diseases that are too complex to document in their entirety. The Virology department is known for bio-engineering these diseases, as such their danger can vary wildly. These diseases are often a combination of various symptoms, each cataloged in this book individually.")),
+                Dm.kv("illness", "N/A"),
+                Dm.kv("spread_by", I18n.T("Varies by symptom combination")),
+                Dm.kv("cured_by", I18n.T("Varies by symptom combination")),
+                Dm.kv("id", typeof(datum_disease_advance)));
+            Dm.append(ref ui_static_data__disease_info, Dm.list(advanced_virus_info));
+
+            // validate
+            foreach (DmList disease_data in Dm.each_cast<DmList>(ui_static_data__disease_info))
+            {
+                // these are asserted to be present, no matter what
+                ASSERT_DATA(disease_data, "form", 444);
+                ASSERT_DATA(disease_data, "agent", 445);
+                ASSERT_DATA(disease_data, "name", 446);
+                ASSERT_DATA(disease_data, "spread_by", 447);
+                ASSERT_DATA(disease_data, "illness", 448);
+                ASSERT_DATA(disease_data, "id", 449);
+                // these start as null, so there is a chance they are missing
+                if (!Dm.truthy(disease_data["desc"]))
+                {
+                    disease_data["desc"] = I18n.T("No description recorded - this is an error. Report this lack of research.");
+                    stack_trace(Dm.text("[] - [] lacks a description!", type, disease_data["id"]), "code/modules/library/book.dm", 453);
+                }
+                if (!Dm.truthy(disease_data["cured_by"]) && !ispath(disease_data["id"], typeof(datum_symptom)))
+                {
+                    disease_data["cured_by"] = "Unknown";
+                    stack_trace(Dm.text("[] - [] lacks cure information!", type, disease_data["id"]), "code/modules/library/book.dm", 456);
+                }
+            }
+        }
+
+        data["diseases"] = ui_static_data__disease_info;
+        return data;
+    }
+}
+
+public sealed partial class TgState
+{
+    // tg: code/modules/library/book.dm:315, :393  the manuals' proc-level statics
+    internal DmList obj_item_tgui_book_manual_dsm__ui_static_data__trauma_info;
+    internal DmList obj_item_tgui_book_manual_idc__ui_static_data__disease_info;
 }

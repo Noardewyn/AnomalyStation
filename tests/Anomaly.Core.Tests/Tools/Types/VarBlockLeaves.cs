@@ -30,11 +30,9 @@ internal static class VarBlockLeaves
         // skeletons here (initialize_materials, EMISSIVE_BLOCK_UNIQUE). M3 P4 switched the inert seam on: those types are
         // inert (D112) and their init skips both leaves (types-converter.md 7), so their rows are gone. A package that makes
         // one of them live adds its row back while its leaf is untranslated.
-        // Gaps P4a: the coins are live; a mythril coin's material gives an item fantasy affixes (basemats.dm:541,
-        // /datum/component/fantasy), a not-translated leaf until the fantasy affixes.
-        [typeof(obj_item_coin_mythril)] = "fantasy affixes",
-        // Gaps SK1: the mythril sheet is live with its recipes, and its material reaches the same leaf
-        [typeof(obj_item_stack_sheet_mineral_mythril)] = "fantasy affixes",
+        // The mythril coin's and sheet's material, and the slot machine's first Initialize, which makes one of every coin
+        // (slotmachine.dm:99-102), reach a mythril item's fantasy affixes (basemats.dm:541): a deferred leaf (not-translated.md
+        // section 1), no runtime, so their rows are gone.
     };
 
     /// <summary>
@@ -58,6 +56,8 @@ internal static class VarBlockLeaves
         [typeof(obj_item_flatpack)] = "BAD_INIT_DIDNT_INIT",
         // gaps BR1: made without the domain it was completed in, the decrypted curiosity returns INITIALIZE_HINT_QDEL before its ..() (lockbox.dm:337-339)
         [typeof(obj_item_storage_lockbox_bitrunning_decrypted)] = "BAD_INIT_DIDNT_INIT",
+        // the slime console's eye, made without its console, does the same through its parent (remote.dm:35)
+        [typeof(mob_eye_camera_remote_xenobio)] = "BAD_INIT_DIDNT_INIT",
     };
 
     /// <summary>The runtimes that are tg's own stack traces of a type, and the text that names them.</summary>

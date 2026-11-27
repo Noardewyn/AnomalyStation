@@ -507,7 +507,7 @@ public partial class atom : datum
         {
             await AddElement(typeof(datum_element_beauty), Dm.mul(beauty_modifier, amount));
             if (Dm.ge(beauty_modifier, 0.15f) && HAS_TRAIT(this, TRAIT_FISHING_BAIT))
-                Dm.Deferred("code/game/atom/atom_materials.dm:353", "apply_single_mat_effect: AddElement(/datum/element/shiny_bait): the shiny bait (fishing, FI1)");
+                await AddElement(typeof(datum_element_shiny_bait));
         }
 
         if (Dm.truthy(Dm.bitand(material_flags, MATERIAL_AFFECT_STATISTICS)) && Dm.truthy(uses_integrity))
@@ -626,7 +626,7 @@ public partial class atom : datum
         {
             RemoveElement(typeof(datum_element_beauty), Dm.mul(beauty_modifier, amount));
             if (Dm.ge(beauty_modifier, 0.15f) && HAS_TRAIT(this, TRAIT_FISHING_BAIT))
-                Dm.Deferred("code/game/atom/atom_materials.dm:442", "remove_single_mat_effect: RemoveElement(/datum/element/shiny_bait): the shiny bait (fishing, FI1)");
+                RemoveElement(typeof(datum_element_shiny_bait));
         }
 
         if (Dm.truthy(Dm.bitand(material_flags, MATERIAL_AFFECT_STATISTICS)) && Dm.truthy(uses_integrity))

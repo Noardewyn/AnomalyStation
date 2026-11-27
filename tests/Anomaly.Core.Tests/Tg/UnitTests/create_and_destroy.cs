@@ -69,6 +69,10 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         Dm.@new<datum_controller_subsystem_vis_overlays>(); // M3 P4: the plastic flaps' Initialize adds their vis overlay (plasticflaps.dm:121); tg's MC always creates it
         // Gaps S3: the fortune, fishing tip and junk mail papers pick from GLOB string lists that tg's GLOB reads at world start
         // (strings.dm:4-12), here after the strings' mount
+        GLOB.InitGlobalfirst_names(); // the bitrunning revolutionary names itself from them (revolutionary.dm:96-105)
+        GLOB.InitGlobalfirst_names_male();
+        GLOB.InitGlobalfirst_names_female();
+        GLOB.InitGloballast_names();
         GLOB.InitGlobalphonetic_alphabet(); // syndicate G3a: a deathrattle group names itself from it (implant_deathrattle.dm)
         GLOB.InitGlobalwisdoms();
         GLOB.InitGlobalfishing_tips();
@@ -77,6 +81,16 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         GLOB.InitGlobalposibrain_names(); // silicons SI2: a positronic brain names itself from it (positronic.dm:33)
         GLOB.InitGlobalai_names(); // silicons SI9: the saboteur cyborg's chameleon picks an AI name (borgchameleon.dm:32)
         GLOB.InitGlobalgross_adjectives(); // gaps P3b: the fly's infused organs name themselves from it (odd_organ_name, names.dm:288)
+        GLOB.InitGlobalclown_names(); // the legion-infested corpses: the consumed clown names itself from them (mining_corpses.dm:261)
+        GLOB.InitGlobalgolem_names(); // and the corpses of the other species from their languages (terrum.dm:32, calcic.dm:31, draconic.dm:41, moffic.dm:34)
+        GLOB.InitGlobalplasmaman_names();
+        GLOB.InitGloballizard_names_male();
+        GLOB.InitGloballizard_names_female();
+        GLOB.InitGlobalmoth_first();
+        GLOB.InitGlobalmoth_last();
+        // the Thing's ruin machines (its phase depleters, the aggro gates) queue their links on SSqueuelinks, which tg's MC always makes
+        if (SSqueuelinks == null)
+            Dm.@new<datum_controller_subsystem_queuelinks>();
         // M6 slice 5: a gib spawner's gibs streak along tg's move_to loop (blood.dm:610), on SSmovement, which tg's MC always creates
         if (SSmovement == null)
             Dm.@new<datum_controller_subsystem_movement>();
@@ -135,6 +149,11 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         turf spawn_at = run_loc_floor_bottom_left as turf;
 
         DmList cached_contents = spawn_at.contents.Copy();
+        // ADAPTED (with the mob lists' check below, which tg's test lacks): a random spawner scatters its loot up to
+        // spawn_scatter_radius tiles away (2 at most in tg), where tg's cleanup of spawn_at never looks; those tiles are cleaned
+        // too, or a scattered mob (the snake in the cowboy boots of the shoe factory's loot) stays on the mob lists.
+        List<(turf Near, DmList Cached)> scatter_turfs = Dm.each_cast<turf>(RANGE_TURFS(2, spawn_at)).Where(near => near != spawn_at)
+            .Select(near => (near, near.contents.Copy())).ToList();
 
         // GLOB.running_create_and_destroy = TRUE: ADAPTED, the global (create_and_destroy.dm:8) is test-only and read by
         // no translated code yet.
@@ -144,8 +163,15 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         // valid_typesof drops the types whose abstract_type is themselves (__HELPERS/abstract_types.dm:25): since wave 4
         // that is /atom/movable, /obj and /mob (W4.M), so the abstract roots are no longer created.
         var uncreatables = new HashSet<Type> { typeof(obj_item_bodypart) };
+        //Yet more templates (unit_test.dm:276; live since the restaurant)
+        uncreatables.Add(typeof(obj_machinery_restaurant_portal));
+        //Template type (unit_test.dm:278)
+        uncreatables.Add(typeof(obj_structure_holosign_robot_seat));
         //Singleton (unit_test.dm:280; M7 power helpers slice: the dview mob, live since then)
         uncreatables.Add(typeof(mob_dview));
+        // ADAPTED: the robot customer's Initialize reads SSrestaurant's venues and customers (robot_customer.dm:34), which the harness
+        // world does not initialize (tg's runs with every subsystem)
+        uncreatables.Add(typeof(mob_living_basic_robot_customer));
         //Not meant to spawn without the machine wand (unit_test.dm:286; gaps DV2: live since then)
         uncreatables.Add(typeof(obj_effect_bug_moving));
         // ADAPTED, GAP(M3 P1 -> lead): the hand-written skeletons that got tg's var block reach a leaf of a later package
@@ -169,10 +195,15 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         // configuration, which SSsecurity_level's level datums read (security_level_datums.dm:44; tg's runs with every subsystem). Gaps E2b
         uncreatables.Add(typeof(obj_effect_meteor_dark_matteor));
         // ADAPTED: the infected assistants' corpses dress in the assistant's outfit, whose ID trim reads SSid_access (outfit.dm:213), which the
-        // harness world does not initialize (tg's runs with every subsystem; the other job corpses are generated-only and skipped). Gaps E3
-        foreach (Type t in new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection) })
+        // harness world does not initialize (tg's runs with every subsystem; the other job corpses are generated-only and skipped). Gaps E3; the bitrunner's and the cyber police's corpses (the
+        // bitrunning domains) dress in outfits with an ID trim too
+        foreach (Type t in new[] { typeof(obj_effect_mob_spawn_corpse_human_assistant_beesease_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_brainrot_infection), typeof(obj_effect_mob_spawn_corpse_human_assistant_spanishflu_infection), typeof(obj_effect_mob_spawn_corpse_human_bitrunner), typeof(obj_effect_mob_spawn_corpse_human_cyber_police) })
             uncreatables.Add(t);
         uncreatables.Add(typeof(obj_item_storage_box_syndie_kit_induction_kit_clown)); // tg's own stack trace, see VarBlockLeaves
+        // ADAPTED: the first slot machine of a world makes one of every coin to learn their values (slotmachine.dm:99-102), the mythril
+        // coin among them, and so reaches its listed leaf (VarBlockLeaves); with the base machine left out, its themed kinds would reach it
+        foreach (Type t in Dm.each_cast<Type>(typesof(typeof(obj_machinery_computer_slot_machine))))
+            uncreatables.Add(t);
         // ADAPTED: the second syndi-kit picks its kit at random (uplink_kits.dm:186, pick_weight): its bees kit holds the beesease bottle,
         // whose disease is not ported (reagent_containers.dm:81, diseases after the core version), and the uplink hides the kit (DV343);
         // new live types move the sweep's random stream onto that kit (as MobLifecycleTests since syndicate G4d; here since N3a)
@@ -195,6 +226,9 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
         uncreatables.Add(typeof(obj_effect_landmark_bitrunning_crate_replacer));
         //needs a heart (unit_test.dm:325; live since gaps OG1)
         foreach (Type t in Dm.each_cast<Type>(typesof(typeof(obj_structure_ethereal_crystal))))
+            uncreatables.Add(t);
+        //this boi spawns turf changing stuff, and it stacks and causes pain. Let's just not (unit_test.dm:343; live since the Lavaland ruins)
+        foreach (Type t in Dm.each_cast<Type>(typesof(typeof(obj_effect_sliding_puzzle))))
             uncreatables.Add(t);
         //No tauma to pass in (unit_test.dm:323; live since gaps B1)
         foreach (Type t in Dm.each_cast<Type>(typesof(typeof(mob_eye_imaginary_friend))))
@@ -271,6 +305,13 @@ public sealed class datum_unit_test_create_and_destroy : TgUnitTest
                     qdel(to_kill, force: TRUE);
             }
             to_del = null;
+            foreach ((turf near, DmList near_cached) in scatter_turfs)
+            {
+                DmList scattered = Dm.sub(near.contents, near_cached) as DmList;
+                if (Dm.truthy(length(scattered)))
+                    foreach (atom to_kill in Dm.each_cast<atom>(scattered))
+                        qdel(to_kill, force: TRUE);
+            }
         }
 
         //Clear it, just in case

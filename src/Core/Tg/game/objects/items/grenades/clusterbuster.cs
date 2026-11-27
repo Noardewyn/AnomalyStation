@@ -144,13 +144,9 @@ public partial class obj_effect_payload_spawner_random_slime : obj_effect_payloa
         for (float _ = 1; _ <= numspawned; _++)
         {
             Type chosen = pick(subtypesof(typeof(obj_item_slime_extract))) as Type;
-            Dm.@new(chosen, loc);
+            obj_item_slime_extract slime_extract = Dm.@new(chosen, loc) as obj_item_slime_extract;
             if (Dm.truthy(@volatile))
-            {
-                // addtimer(CALLBACK(slime_extract, TYPE_PROC_REF(/obj/item/slime_extract, auto_activate_reaction)), rand(...)): the
-                // slime extracts are inert (xenobiology), so a volatile extract does not go off by itself
-                Dm.Deferred("code/game/objects/items/grenades/clusterbuster.dm:113", "spawn_payload: auto_activate_reaction of a volatile slime extract (the slime extracts, xenobiology)");
-            }
+                _addtimer(Dm.@new<datum_callback>(slime_extract, nameof(obj_item_slime_extract.auto_activate_reaction)), rand(obj_item_grenade_clusterbuster.RANDOM_DETONATE_MIN_TIME, obj_item_grenade_clusterbuster.RANDOM_DETONATE_MAX_TIME), file: "code/game/objects/items/grenades/clusterbuster.dm", line: 113);
             float steps = rand(1, 4);
             for (float step = 1; step <= steps; step++)
                 Waiting.NoSleep(step_away(this, loc));

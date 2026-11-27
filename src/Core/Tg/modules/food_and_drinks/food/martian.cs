@@ -9,9 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable,
-// make_dryable) and the kamaboko's design (:76) translated (gaps package H2, D333); the rest of the file is generated or waits for its
-// package.
+// The whole file: the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable, make_dryable)
+// and the kamaboko's design (:76) came with the kitchen (gaps H2, D333); the fried rice's, bibimbap's, fried noodles' and okonomiyaki's
+// ingredients with the restaurant. The var blocks are generated.
 
 public partial class obj_item_food_bread_reispan : obj_item_food_bread
 {
@@ -96,5 +96,53 @@ public partial class obj_item_food_raw_ballpark_pretzel : obj_item_food
     public override async DmTask make_grillable()
     {
         await AddComponent(typeof(datum_component_grillable), typeof(obj_item_food_ballpark_pretzel), rand(15 * SECONDS, 25 * SECONDS), TRUE, TRUE);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/martian.dm:326
+public partial class obj_item_food_salad_egg_fried_rice : obj_item_food_salad
+{
+    // tg: code/modules/food_and_drinks/food/martian.dm:340
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_STACK));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/martian.dm:344
+public partial class obj_item_food_salad_bibimbap : obj_item_food_salad
+{
+    // tg: code/modules/food_and_drinks/food/martian.dm:361
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_STACK));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/martian.dm:414
+public partial class obj_item_food_salad_simple_fried_noodles : obj_item_food_salad
+{
+    // tg: code/modules/food_and_drinks/food/martian.dm:429
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_STACK));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/martian.dm:611
+public partial class obj_item_food_okonomiyaki : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/martian.dm:626
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), null, CUSTOM_INGREDIENT_ICON_STACK));
+        return dot;
     }
 }

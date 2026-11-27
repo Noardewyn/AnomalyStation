@@ -13,8 +13,8 @@ namespace Anomaly.Core.Tests.Tg.UnitTests;
 // ADAPTED (M5 slice 8): tg runs every recipe of GLOB.crafting_recipes + GLOB.cooking_recipes; here only the translated ones:
 // the recipes whose result, requirements, tools, machinery and structures are all translated types (not inert, D112, D132:
 // an inert result skips the materials of its Initialize, so tg's materials parity cannot hold for it), food left out (its meat
-// and pizza materials are not created by SSmaterials, DV25: food, M8). No reagent container
-// is allocated: no recipe in scope needs a reagent (init_crafting_recipes, global_lists.cs). PERFORM_ALL_TESTS(crafting) is
+// and pizza materials are not created by SSmaterials, DV25: food, M8). The bottomless cup holds the reagent requirements and
+// catalysts (since the restaurant: init_crafting_recipes lists the recipes with reagents). PERFORM_ALL_TESTS(crafting) is
 // FALSE in the port (rules 1.7), so check_requirements runs: a recipe with its own check_requirements is left out. The room
 // is the toy room (TgToyRoom.Install).
 
@@ -29,6 +29,8 @@ public sealed class datum_unit_test_crafting : TgUnitTest
 {
     //The object responsible for using the crafting component
     public atom_movable crafter;
+    //The reagent holder responsible for holding reagents that may be used in a recipe.
+    public obj_item_reagent_containers_cup bottomless_cup;
     ///The tools that have been spawned so far, to be reused in other recipes as well.
     public DmList tools = Dm.list();
 
@@ -55,7 +57,7 @@ public sealed class datum_unit_test_crafting : TgUnitTest
         turf turf = crafter.loc as turf;
         Type old_turf_type = turf.type;
         datum_component_personal_crafting_unit_test craft_comp = await crafter.AddComponent(typeof(datum_component_personal_crafting_unit_test)) as datum_component_personal_crafting_unit_test;
-        // bottomless_cup = allocate_bottomless_cup(): ADAPTED, no recipe in scope needs a reagent
+        bottomless_cup = allocate_bottomless_cup();
 
         DmList all_recipes = Dm.add(GLOB.crafting_recipes, GLOB.cooking_recipes) as DmList;
         foreach (datum_crafting_recipe recipe in Dm.each_cast<datum_crafting_recipe>(all_recipes))
@@ -67,6 +69,10 @@ public sealed class datum_unit_test_crafting : TgUnitTest
             //split into a different proc, so if something fails it's both easier to track and doesn't halt the loop.
             await process_recipe(craft_comp, recipe);
             processed++;
+            // ADAPTED: the crafter's tile rather than the one Run started on (a turf recipe's ChangeTurf leaves the port a new turf object
+            // where tg keeps the same one, so the cup and the crafter would part ways)
+            if (QDELETED(bottomless_cup) || bottomless_cup.loc != crafter.loc) //The cup itself was used in a recipe, rather than its contents.
+                bottomless_cup = allocate_bottomless_cup();
         }
 
         // ADAPTED: the port's own check that the adapted test is not empty
@@ -78,6 +84,17 @@ public sealed class datum_unit_test_crafting : TgUnitTest
             await turf.ChangeTurf(old_turf_type);
     }
 
+    ///Allocate a reagent container with infinite capacity and no reaction to use in crafting
+    // tg: code/modules/unit_tests/crafting.dm:39
+    private obj_item_reagent_containers_cup allocate_bottomless_cup()
+    {
+        obj_item_reagent_containers_cup cup = allocate<obj_item_reagent_containers_cup>();
+        datum_reagents holder = (datum_reagents)cup.reagents;
+        holder.flags = Dm.bitor(holder.flags, Dm.bitor(NO_REACT, DRAINABLE));
+        holder.maximum_volume = INFINITY;
+        return cup;
+    }
+
     // ADAPTED: whether every type the recipe makes or uses is translated (see the header).
     private static bool Translated(datum_crafting_recipe recipe)
     {
@@ -87,6 +104,10 @@ public sealed class datum_unit_test_crafting : TgUnitTest
         if (ispath(recipe.result, typeof(obj_item_food)) || Dm.each(recipe.reqs).Any(req => ispath(req, typeof(obj_item_food))))
             return false;
         if (recipe.GetType().GetMethod(nameof(datum_crafting_recipe.check_requirements))?.DeclaringType != typeof(datum_crafting_recipe))
+            return false;
+        // the improvised chem heater's RefreshParts reads its subsystem's wait (spaceheater.dm:537); the toy room's Master lists no
+        // SSmachines (as the lifecycle sweeps, E9; its recipe needs reagents, listed since the restaurant)
+        if (ispath(recipe.result, typeof(obj_machinery_space_heater_improvised_chem_heater)))
             return false;
         foreach (DmList list in new[] { recipe.reqs, recipe.tool_paths, recipe.machinery, recipe.structures })
         {
@@ -120,7 +141,13 @@ public sealed class datum_unit_test_crafting : TgUnitTest
 
         foreach ((object req_path, object amount) in Dm.pairs(recipe.reqs)) //spawn items and reagents
         {
-            // if(ispath(req_path, /datum/reagent)): ADAPTED, no reagent in scope
+            if (ispath(req_path, typeof(datum_reagent))) //it's a reagent
+            {
+                datum_reagents holder = (datum_reagents)bottomless_cup.reagents;
+                if (!Dm.truthy(holder.has_reagent(req_path, Dm.num(amount))))
+                    Waiting.NoSleep(holder.add_reagent(req_path as Type, Dm.num(amount) + 1, no_react: TRUE));
+                continue;
+            }
 
             // A recipe might accept an abstract base type as its reqs - e.g. obj/item/food/grown - signifying it can use any item of that type.
             // However, we cannot create those abstract base types... but we also cannot pick a random subtype everytime either,
@@ -141,6 +168,14 @@ public sealed class datum_unit_test_crafting : TgUnitTest
             //it's any other item
             for (int iteration = 1; iteration <= Dm.num(amount); iteration++)
                 Dm.@new(req_path as Type, turf);
+        }
+
+        foreach ((object req_path, object chem_amount) in Dm.pairs(recipe.chem_catalysts)) // spawn catalysts
+        {
+            object amount = chem_amount;
+            datum_reagents holder = (datum_reagents)bottomless_cup.reagents;
+            if (!Dm.truthy(holder.has_reagent(req_path, Dm.num(amount))))
+                Waiting.NoSleep(holder.add_reagent(req_path as Type, Dm.num(amount) + 1, no_react: TRUE));
         }
 
         DmList bulky_objects = Dm.list();
@@ -233,7 +268,7 @@ public sealed class datum_unit_test_crafting : TgUnitTest
     // tg: code/modules/unit_tests/crafting.dm:182
     private void clear_trash()
     {
-        foreach (atom_movable trash in Dm.each<atom_movable>(Dm.sub(range(1, crafter), Dm.list(crafter))))
+        foreach (atom_movable trash in Dm.each<atom_movable>(Dm.sub(range(1, crafter), Dm.list(crafter, bottomless_cup))))
             qdel(trash);
     }
 }

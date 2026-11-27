@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL (M4b slice 2: the manual and digital valves): the picture, set_open, the reconcilation of both sides when open,
 // interact with its 1 second switch, the valve sounds, and the digital valve's init and picture. Deferred leaves:
-// the investigate logs (M10) and the digital valve's circuit USB port (circuits). /obj/item/circuit_component/digital_valve
-// stays inert (circuits). The var blocks are generated.
+// the investigate logs (M10). The digital valve's USB port and its circuit component (/obj/item/circuit_component/digital_valve)
+// are live. The var blocks are generated.
 
 /*
 It's like a regular ol' straight pipe, but you can turn it on and off.
@@ -118,8 +118,7 @@ public partial class obj_machinery_atmospherics_components_binary_valve_digital 
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/digital_valve), only_root_path = TRUE)): circuits
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/valve.dm:90", "Initialize: AddComponent(/datum/component/usb_port): the circuit USB port (circuits)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_digital_valve)), only_root_path: TRUE)));
         return dot;
     }
 
@@ -134,5 +133,63 @@ public partial class obj_machinery_atmospherics_components_binary_valve_digital 
             return;
         }
         base.update_icon_nopipes(__extra);
+    }
+}
+
+// tg: code/modules/atmospherics/machinery/components/binary_devices/valve.dm:94
+public partial class obj_item_circuit_component_digital_valve : obj_item_circuit_component
+{
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/valve.dm:112
+    public override async DmTask populate_ports()
+    {
+        open = add_input_port("Open", PORT_TYPE_SIGNAL) as datum_port_input;
+        close = add_input_port("Close", PORT_TYPE_SIGNAL) as datum_port_input;
+
+        is_open = add_output_port("Is Open", PORT_TYPE_BOOLEAN) as datum_port_output;
+        opened = add_output_port("Opened", PORT_TYPE_SIGNAL) as datum_port_output;
+        closed = add_output_port("Closed", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/valve.dm:120
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_atmospherics_components_binary_valve_digital)))
+        {
+            attached_valve = shell as obj_machinery_atmospherics_components_binary_valve_digital;
+            RegisterSignal(attached_valve, COMSIG_VALVE_SET_OPEN, nameof(handle_valve_toggled));
+        }
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/valve.dm:126
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        UnregisterSignal(attached_valve, COMSIG_VALVE_SET_OPEN);
+        attached_valve = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/valve.dm:131
+    [SignalHandler]
+    public virtual void handle_valve_toggled(datum source = null, object on = null)
+    {
+        is_open.set_output(on);
+        if (Dm.truthy(on))
+            opened.set_output(COMPONENT_SIGNAL);
+        else
+            closed.set_output(COMPONENT_SIGNAL);
+    }
+
+    // tg: code/modules/atmospherics/machinery/components/binary_devices/valve.dm:139
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (attached_valve == null)
+            return null;
+
+        if (COMPONENT_TRIGGERED_BY(open, port) && !Dm.truthy(attached_valve.on))
+            Waiting.NoSleep(attached_valve.set_open(TRUE));
+        if (COMPONENT_TRIGGERED_BY(close, port) && Dm.truthy(attached_valve.on))
+            Waiting.NoSleep(attached_valve.set_open(FALSE));
+        return null;
     }
 }

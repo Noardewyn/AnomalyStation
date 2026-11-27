@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps CL1 (D333): the whole file (the bone bracers; their fishing difficulty element waits for fishing). The var block is
+// Gaps CL1 (D333): the whole file (the bone bracers; with their fishing difficulty element). The var block is
 // generated (D111).
 
 // tg: code/modules/clothing/gloves/bone.dm:1
@@ -19,7 +19,7 @@ public partial class obj_item_clothing_gloves_bracer : obj_item_clothing_gloves
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/gloves/bone.dm:18", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 2): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 2));
         return dot;
     }
 }

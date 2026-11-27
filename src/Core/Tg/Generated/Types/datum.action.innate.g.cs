@@ -39,9 +39,9 @@ public partial class datum_action_innate_augury : datum_action_innate
     }
 }
 
-// tg: code/datums/dash_weapon.dm:3
-[DmPath("/datum/action/innate/dash"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_dash : datum_action_innate
+// tg: code/datums/dash_weapon.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/dash")]
+public partial class datum_action_innate_dash
 {
     public float current_charges = 1; // tg: code/datums/dash_weapon.dm:8
     public float max_charges = 1; // tg: code/datums/dash_weapon.dm:10
@@ -97,9 +97,9 @@ public partial class datum_action_innate_dash_ninja : datum_action_innate_dash
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:248
-[DmPath("/datum/action/innate/dash/hierophant"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_dash_hierophant : datum_action_innate_dash
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:248 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/dash/hierophant")]
+public partial class datum_action_innate_dash_hierophant
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/hierophant.dm:248
     public datum_action_innate_dash_hierophant()
@@ -1428,9 +1428,9 @@ public partial class datum_action_innate_mafia_panel
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:2
-[DmPath("/datum/action/innate/brain_undeployment"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_brain_undeployment : datum_action_innate
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/brain_undeployment")]
+public partial class datum_action_innate_brain_undeployment
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:2
     public datum_action_innate_brain_undeployment()
@@ -1495,9 +1495,9 @@ public partial class datum_action_innate_seek_prey : datum_action_innate
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330
-[DmPath("/datum/action/innate/raptor_wings"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_raptor_wings : datum_action_innate
+// tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/raptor_wings")]
+public partial class datum_action_innate_raptor_wings
 {
     // tg: code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:330
     public datum_action_innate_raptor_wings()
@@ -1560,10 +1560,6 @@ public partial class datum_action_innate_mimic_lock__2 : datum_action_innate
 // tg: (implied by a subtype's path)
 [DmPath("/datum/action/innate/mimic"), DmGeneratedOnly]
 public partial class datum_action_innate_mimic : datum_action_innate { }
-
-// tg: code/modules/mob/living/basic/ruin_defender/mimic/mimic.dm:246
-[DmPath("/datum/action/innate/mimic/lock"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_mimic_lock : datum_action_innate_mimic { }
 
 // tg: code/modules/mob/living/basic/slime/actions.dm:2 (the var block of a hand-written class)
 [DmPath("/datum/action/innate/slime")]
@@ -1838,9 +1834,9 @@ public partial class datum_action_innate_undeployment
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:198
-[DmPath("/datum/action/innate/megafauna_attack"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_megafauna_attack : datum_action_innate
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:198 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/megafauna_attack")]
+public partial class datum_action_innate_megafauna_attack
 {
     public object chosen_message; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:201
     public float chosen_attack_num = 0; // tg: code/modules/mob/living/simple_animal/hostile/megafauna/_megafauna.dm:202
@@ -1855,7 +1851,7 @@ public partial class datum_action_innate_megafauna_attack : datum_action_innate
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:112
-[DmPath("/datum/action/innate/megafauna_attack/blink"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/blink"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_blink : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:112
@@ -1870,7 +1866,7 @@ public partial class datum_action_innate_megafauna_attack_blink : datum_action_i
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:119
-[DmPath("/datum/action/innate/megafauna_attack/chaser_swarm"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/chaser_swarm"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_chaser_swarm : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:119
@@ -1885,7 +1881,7 @@ public partial class datum_action_innate_megafauna_attack_chaser_swarm : datum_a
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:126
-[DmPath("/datum/action/innate/megafauna_attack/cross_blasts"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/cross_blasts"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_cross_blasts : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:126
@@ -1900,7 +1896,7 @@ public partial class datum_action_innate_megafauna_attack_cross_blasts : datum_a
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:133
-[DmPath("/datum/action/innate/megafauna_attack/blink_spam"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/megafauna_attack/blink_spam"), DmGeneratedOnly]
 public partial class datum_action_innate_megafauna_attack_blink_spam : datum_action_innate_megafauna_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:133
@@ -1914,9 +1910,9 @@ public partial class datum_action_innate_megafauna_attack_blink_spam : datum_act
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:71
-[DmPath("/datum/action/innate/elite_attack"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_elite_attack : datum_action_innate
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:71 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/elite_attack")]
+public partial class datum_action_innate_elite_attack
 {
     public object chosen_message; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:77
     public float chosen_attack_num = 0; // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/elite.dm:79
@@ -1933,7 +1929,7 @@ public partial class datum_action_innate_elite_attack : datum_action_innate
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:61
-[DmPath("/datum/action/innate/elite_attack/tentacle_patch"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/tentacle_patch"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_tentacle_patch : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:61
@@ -1947,7 +1943,7 @@ public partial class datum_action_innate_elite_attack_tentacle_patch : datum_act
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:67
-[DmPath("/datum/action/innate/elite_attack/spawn_children"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/spawn_children"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_spawn_children : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:67
@@ -1961,7 +1957,7 @@ public partial class datum_action_innate_elite_attack_spawn_children : datum_act
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:73
-[DmPath("/datum/action/innate/elite_attack/rage"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/rage"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_rage : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:73
@@ -1975,7 +1971,7 @@ public partial class datum_action_innate_elite_attack_rage : datum_action_innate
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:79
-[DmPath("/datum/action/innate/elite_attack/call_children"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/call_children"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_call_children : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:79
@@ -1989,7 +1985,7 @@ public partial class datum_action_innate_elite_attack_call_children : datum_acti
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:74
-[DmPath("/datum/action/innate/elite_attack/herald_trishot"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/herald_trishot"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_herald_trishot : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:74
@@ -2003,7 +1999,7 @@ public partial class datum_action_innate_elite_attack_herald_trishot : datum_act
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:80
-[DmPath("/datum/action/innate/elite_attack/herald_directionalshot"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/herald_directionalshot"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_herald_directionalshot : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:80
@@ -2017,7 +2013,7 @@ public partial class datum_action_innate_elite_attack_herald_directionalshot : d
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:86
-[DmPath("/datum/action/innate/elite_attack/herald_teleshot"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/herald_teleshot"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_herald_teleshot : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:86
@@ -2031,7 +2027,7 @@ public partial class datum_action_innate_elite_attack_herald_teleshot : datum_ac
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:92
-[DmPath("/datum/action/innate/elite_attack/herald_mirror"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/herald_mirror"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_herald_mirror : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:92
@@ -2045,7 +2041,7 @@ public partial class datum_action_innate_elite_attack_herald_mirror : datum_acti
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:57
-[DmPath("/datum/action/innate/elite_attack/legionnaire_charge"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/legionnaire_charge"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_legionnaire_charge : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:57
@@ -2059,7 +2055,7 @@ public partial class datum_action_innate_elite_attack_legionnaire_charge : datum
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:63
-[DmPath("/datum/action/innate/elite_attack/head_detach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/head_detach"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_head_detach : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:63
@@ -2073,7 +2069,7 @@ public partial class datum_action_innate_elite_attack_head_detach : datum_action
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:69
-[DmPath("/datum/action/innate/elite_attack/bonfire_teleport"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/bonfire_teleport"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_bonfire_teleport : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:69
@@ -2087,7 +2083,7 @@ public partial class datum_action_innate_elite_attack_bonfire_teleport : datum_a
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:75
-[DmPath("/datum/action/innate/elite_attack/spew_smoke"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/spew_smoke"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_spew_smoke : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/legionnaire.dm:75
@@ -2101,7 +2097,7 @@ public partial class datum_action_innate_elite_attack_spew_smoke : datum_action_
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:53
-[DmPath("/datum/action/innate/elite_attack/singular_shot"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/singular_shot"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_singular_shot : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:53
@@ -2115,7 +2111,7 @@ public partial class datum_action_innate_elite_attack_singular_shot : datum_acti
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:59
-[DmPath("/datum/action/innate/elite_attack/magic_box"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/magic_box"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_magic_box : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:59
@@ -2129,7 +2125,7 @@ public partial class datum_action_innate_elite_attack_magic_box : datum_action_i
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:65
-[DmPath("/datum/action/innate/elite_attack/pandora_teleport"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/pandora_teleport"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_pandora_teleport : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:65
@@ -2143,7 +2139,7 @@ public partial class datum_action_innate_elite_attack_pandora_teleport : datum_a
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:71
-[DmPath("/datum/action/innate/elite_attack/aoe_squares"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/action/innate/elite_attack/aoe_squares"), DmGeneratedOnly]
 public partial class datum_action_innate_elite_attack_aoe_squares : datum_action_innate_elite_attack
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/pandora.dm:71
@@ -2282,9 +2278,9 @@ public partial class datum_action_innate_proto_emitter_firing
     }
 }
 
-// tg: code/modules/religion/dreams/dream_projection.dm:180
-[DmPath("/datum/action/innate/stop_projection"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_stop_projection : datum_action_innate
+// tg: code/modules/religion/dreams/dream_projection.dm:180 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/stop_projection")]
+public partial class datum_action_innate_stop_projection
 {
     // tg: code/modules/religion/dreams/dream_projection.dm:180
     public datum_action_innate_stop_projection()
@@ -2294,9 +2290,9 @@ public partial class datum_action_innate_stop_projection : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:354
-[DmPath("/datum/action/innate/slime_place"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_slime_place : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:354 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/slime_place")]
+public partial class datum_action_innate_slime_place
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:354
     public datum_action_innate_slime_place()
@@ -2307,9 +2303,9 @@ public partial class datum_action_innate_slime_place : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:371
-[DmPath("/datum/action/innate/slime_pick_up"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_slime_pick_up : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:371 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/slime_pick_up")]
+public partial class datum_action_innate_slime_pick_up
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:371
     public datum_action_innate_slime_pick_up()
@@ -2320,9 +2316,9 @@ public partial class datum_action_innate_slime_pick_up : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:390
-[DmPath("/datum/action/innate/feed_slime"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_feed_slime : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:390 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/feed_slime")]
+public partial class datum_action_innate_feed_slime
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:390
     public datum_action_innate_feed_slime()
@@ -2333,9 +2329,9 @@ public partial class datum_action_innate_feed_slime : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:408
-[DmPath("/datum/action/innate/monkey_recycle"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_monkey_recycle : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:408 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/monkey_recycle")]
+public partial class datum_action_innate_monkey_recycle
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:408
     public datum_action_innate_monkey_recycle()
@@ -2346,9 +2342,9 @@ public partial class datum_action_innate_monkey_recycle : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:425
-[DmPath("/datum/action/innate/slime_scan"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_slime_scan : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:425 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/slime_scan")]
+public partial class datum_action_innate_slime_scan
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:425
     public datum_action_innate_slime_scan()
@@ -2359,9 +2355,9 @@ public partial class datum_action_innate_slime_scan : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:443
-[DmPath("/datum/action/innate/feed_potion"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_feed_potion : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:443 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/feed_potion")]
+public partial class datum_action_innate_feed_potion
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:443
     public datum_action_innate_feed_potion()
@@ -2372,9 +2368,9 @@ public partial class datum_action_innate_feed_potion : datum_action_innate
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:471
-[DmPath("/datum/action/innate/hotkey_help"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_hotkey_help : datum_action_innate
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:471 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/hotkey_help")]
+public partial class datum_action_innate_hotkey_help
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:471
     public datum_action_innate_hotkey_help()
@@ -2425,9 +2421,9 @@ public partial class datum_action_innate_flight
     }
 }
 
-// tg: code/modules/wiremod/components/action/equpiment_action.dm:95
-[DmPath("/datum/action/innate/circuit_equipment_action"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_circuit_equipment_action : datum_action_innate
+// tg: code/modules/wiremod/components/action/equpiment_action.dm:95 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/circuit_equipment_action")]
+public partial class datum_action_innate_circuit_equipment_action
 {
     public obj_item_circuit_component_equipment_action action_comp; // tg: code/modules/wiremod/components/action/equpiment_action.dm:100
 
@@ -2441,9 +2437,9 @@ public partial class datum_action_innate_circuit_equipment_action : datum_action
     }
 }
 
-// tg: code/modules/wiremod/components/action/mmi.dm:4
-[DmPath("/datum/action/innate/mmi_comp_disconnect"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_mmi_comp_disconnect : datum_action_innate
+// tg: code/modules/wiremod/components/action/mmi.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/mmi_comp_disconnect")]
+public partial class datum_action_innate_mmi_comp_disconnect
 {
     // tg: code/modules/wiremod/components/action/mmi.dm:4
     public datum_action_innate_mmi_comp_disconnect()
@@ -2455,9 +2451,9 @@ public partial class datum_action_innate_mmi_comp_disconnect : datum_action_inna
     }
 }
 
-// tg: code/modules/wiremod/shell/brain_computer_interface.dm:198
-[DmPath("/datum/action/innate/bci_charge_action"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_bci_charge_action : datum_action_innate
+// tg: code/modules/wiremod/shell/brain_computer_interface.dm:198 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/bci_charge_action")]
+public partial class datum_action_innate_bci_charge_action
 {
     public obj_item_circuit_component_bci_core circuit_component; // tg: code/modules/wiremod/shell/brain_computer_interface.dm:203
 
@@ -2471,9 +2467,9 @@ public partial class datum_action_innate_bci_charge_action : datum_action_innate
     }
 }
 
-// tg: code/modules/wiremod/shell/implant.dm:187
-[DmPath("/datum/action/innate/implant_charge_action"), DmGeneratedOnly, DmInert]
-public partial class datum_action_innate_implant_charge_action : datum_action_innate
+// tg: code/modules/wiremod/shell/implant.dm:187 (the var block of a hand-written class)
+[DmPath("/datum/action/innate/implant_charge_action")]
+public partial class datum_action_innate_implant_charge_action
 {
     public obj_item_circuit_component_implant_core circuit_component; // tg: code/modules/wiremod/shell/implant.dm:192
 

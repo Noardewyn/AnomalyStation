@@ -1891,9 +1891,9 @@ public partial class obj_item_circuitboard_machine_chem_mass_spec : obj_item_cir
     }
 }
 
-// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:830
-[DmPath("/obj/item/circuitboard/machine/chem_master"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_machine_chem_master : obj_item_circuitboard_machine
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:830 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/machine/chem_master")]
+public partial class obj_item_circuitboard_machine_chem_master
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:830
     public obj_item_circuitboard_machine_chem_master()
@@ -1914,7 +1914,7 @@ public partial class obj_item_circuitboard_machine_chem_master : obj_item_circui
 }
 
 // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1246
-[DmPath("/obj/item/circuitboard/machine/chem_master/condi"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/machine/chem_master/condi"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_machine_chem_master_condi : obj_item_circuitboard_machine_chem_master
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1246
@@ -2305,9 +2305,9 @@ public partial class obj_item_circuitboard_machine_monkey_recycler : obj_item_ci
     }
 }
 
-// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383
-[DmPath("/obj/item/circuitboard/machine/processor"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_machine_processor : obj_item_circuitboard_machine
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/machine/processor")]
+public partial class obj_item_circuitboard_machine_processor
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1383
     public obj_item_circuitboard_machine_processor()
@@ -2327,7 +2327,7 @@ public partial class obj_item_circuitboard_machine_processor : obj_item_circuitb
 }
 
 // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1048
-[DmPath("/obj/item/circuitboard/machine/processor/slime"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/machine/processor/slime"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_machine_processor_slime : obj_item_circuitboard_machine_processor
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1048
@@ -2340,7 +2340,7 @@ public partial class obj_item_circuitboard_machine_processor_slime : obj_item_ci
 }
 
 // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1053
-[DmPath("/obj/item/circuitboard/machine/processor/slime/fullupgrade"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/machine/processor/slime/fullupgrade"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_machine_processor_slime_fullupgrade : obj_item_circuitboard_machine_processor_slime
 {
     // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1053
@@ -3146,9 +3146,9 @@ public partial class obj_item_circuitboard_machine_sheetifier : obj_item_circuit
     }
 }
 
-// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1535
-[DmPath("/obj/item/circuitboard/machine/restaurant_portal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_machine_restaurant_portal : obj_item_circuitboard_machine
+// tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1535 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/machine/restaurant_portal")]
+public partial class obj_item_circuitboard_machine_restaurant_portal
 {
     public Type venue_type = typeof(datum_venue_restaurant); // tg: code/game/objects/items/circuitboards/machines/machine_circuitboards.dm:1543
 
@@ -4849,9 +4849,9 @@ public partial class obj_item_circuitboard_computer_holodeck : obj_item_circuitb
     }
 }
 
-// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:269
-[DmPath("/obj/item/circuitboard/computer/libraryconsole"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_computer_libraryconsole : obj_item_circuitboard_computer
+// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:269 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/computer/libraryconsole")]
+public partial class obj_item_circuitboard_computer_libraryconsole
 {
     // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:269
     public obj_item_circuitboard_computer_libraryconsole()
@@ -4862,7 +4862,7 @@ public partial class obj_item_circuitboard_computer_libraryconsole : obj_item_ci
 }
 
 // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:273
-[DmPath("/obj/item/circuitboard/computer/libraryconsole/bookconsole"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/circuitboard/computer/libraryconsole/bookconsole"), DmGeneratedOnly]
 public partial class obj_item_circuitboard_computer_libraryconsole_bookconsole : obj_item_circuitboard_computer_libraryconsole
 {
     // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:273
@@ -4912,9 +4912,9 @@ public partial class obj_item_circuitboard_computer_pod : obj_item_circuitboard_
     }
 }
 
-// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:303
-[DmPath("/obj/item/circuitboard/computer/slot_machine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_circuitboard_computer_slot_machine : obj_item_circuitboard_computer
+// tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:303 (the var block of a hand-written class)
+[DmPath("/obj/item/circuitboard/computer/slot_machine")]
+public partial class obj_item_circuitboard_computer_slot_machine
 {
     // tg: code/game/objects/items/circuitboards/computer_circuitboards.dm:303
     public obj_item_circuitboard_computer_slot_machine()

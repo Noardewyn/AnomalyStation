@@ -1,0 +1,346 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_pizzaparty.dmm tg 1d99bd7f
+size 23 23 1
+chunk 32
+default /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+
+[chunk 1 1 1]
+1,23: /turf/template_noop | /area/template_noop
+2,23: /turf/template_noop | /area/template_noop
+3,23: /turf/template_noop | /area/template_noop
+4,23: /turf/template_noop | /area/template_noop
+5,23: /turf/template_noop | /area/template_noop
+6,23: /turf/template_noop | /area/template_noop
+7,23: /turf/template_noop | /area/template_noop
+8,23: /turf/template_noop | /area/template_noop
+9,23: /turf/template_noop | /area/template_noop
+16,23: /turf/template_noop | /area/template_noop
+17,23: /turf/template_noop | /area/template_noop
+18,23: /turf/template_noop | /area/template_noop
+19,23: /turf/template_noop | /area/template_noop
+20,23: /turf/template_noop | /area/template_noop
+21,23: /turf/template_noop | /area/template_noop
+22,23: /turf/template_noop | /area/template_noop
+23,23: /turf/template_noop | /area/template_noop
+1,22: /turf/template_noop | /area/template_noop
+2,22: /turf/template_noop | /area/template_noop
+3,22: /turf/template_noop | /area/template_noop
+4,22: /turf/template_noop | /area/template_noop
+5,22: /turf/template_noop | /area/template_noop
+6,22: /turf/template_noop | /area/template_noop
+7,22: /turf/template_noop | /area/template_noop
+8,22: /turf/template_noop | /area/template_noop
+13,22: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+17,22: /turf/template_noop | /area/template_noop
+18,22: /turf/template_noop | /area/template_noop
+19,22: /turf/template_noop | /area/template_noop
+20,22: /turf/template_noop | /area/template_noop
+21,22: /turf/template_noop | /area/template_noop
+22,22: /turf/template_noop | /area/template_noop
+23,22: /turf/template_noop | /area/template_noop
+1,21: /turf/template_noop | /area/template_noop
+2,21: /turf/template_noop | /area/template_noop
+3,21: /turf/template_noop | /area/template_noop
+4,21: /turf/template_noop | /area/template_noop
+10,21: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,21: /obj/item/stack/sheet/iron | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,21: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,21: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,21: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+21,21: /turf/template_noop | /area/template_noop
+22,21: /turf/template_noop | /area/template_noop
+23,21: /turf/template_noop | /area/template_noop
+1,20: /turf/template_noop | /area/template_noop
+2,20: /turf/template_noop | /area/template_noop
+3,20: /turf/template_noop | /area/template_noop
+9,20: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,20: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,20: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,20: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,20: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+22,20: /turf/template_noop | /area/template_noop
+23,20: /turf/template_noop | /area/template_noop
+1,19: /turf/template_noop | /area/template_noop
+2,19: /turf/template_noop | /area/template_noop
+7,19: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+8,19: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+9,19: /turf/closed/wall | /area/ruin/unpowered
+10,19: /turf/closed/wall | /area/ruin/unpowered
+11,19: /obj/structure/girder | /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+12,19: /turf/closed/wall | /area/ruin/unpowered
+13,19: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /obj/structure/flora/ash/leaf_shroom | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+14,19: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+17,19: /obj/item/stack/sheet/iron | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,19: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+22,19: /turf/template_noop | /area/template_noop
+23,19: /turf/template_noop | /area/template_noop
+1,18: /turf/template_noop | /area/template_noop
+2,18: /turf/template_noop | /area/template_noop
+5,18: /obj/effect/decal/cleanable/blood/old | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,18: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+9,18: /turf/closed/wall | /area/ruin/unpowered
+10,18: /obj/structure/toilet{dir = 4} | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/broken/directional/north | /turf/open/floor/iron/freezer/lavaland | /area/ruin/unpowered
+11,18: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /obj/item/lipstick/random | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+12,18: /turf/closed/wall | /area/ruin/unpowered
+13,18: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+14,18: /obj/effect/mapping_helpers/broken_floor | /obj/structure/glowshroom/single | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+16,18: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,18: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+23,18: /turf/template_noop | /area/template_noop
+4,17: /obj/item/clothing/under/shorts/blue | /obj/effect/decal/cleanable/blood/old | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,17: /mob/living/basic/mining/goliath | /obj/effect/decal/cleanable/blood/old | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,17: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+9,17: /turf/closed/wall | /area/ruin/unpowered
+10,17: /obj/structure/sink/directional/north | /obj/structure/mirror/directional/south | /obj/item/instrument/saxophone | /obj/item/clothing/head/helmet/skull | /turf/open/floor/iron/freezer/lavaland | /area/ruin/unpowered
+11,17: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/freezer/lavaland | /area/ruin/unpowered
+12,17: /obj/structure/mineral_door/wood | /turf/open/floor/iron/freezer/lavaland | /area/ruin/unpowered
+13,17: /obj/structure/glowshroom/single | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+14,17: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+15,17: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,17: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+18,17: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+20,17: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+21,17: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,16: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+8,16: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+9,16: /turf/closed/wall | /area/ruin/unpowered
+10,16: /turf/closed/wall | /area/ruin/unpowered
+11,16: /turf/closed/wall | /area/ruin/unpowered
+12,16: /turf/closed/wall | /area/ruin/unpowered
+13,16: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/siding/thinplating_new{dir = 1} | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,16: /turf/closed/wall | /area/ruin/unpowered
+15,16: /turf/closed/wall | /area/ruin/unpowered
+16,16: /turf/closed/wall | /area/ruin/unpowered
+17,16: /turf/closed/wall | /area/ruin/unpowered
+18,16: /obj/structure/girder | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+19,16: /obj/structure/girder | /obj/effect/decal/cleanable/dirt | /obj/item/stack/sheet/iron | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+20,16: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+6,15: /obj/item/clothing/shoes/sneakers/orange | /obj/effect/decal/remains/human | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,15: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+8,15: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+9,15: /turf/closed/wall | /area/ruin/unpowered
+10,15: /obj/structure/table | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/spawner/random/food_or_drink/pizzaparty | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+11,15: /obj/structure/table | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/spawner/random/food_or_drink/pizzaparty | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+12,15: /obj/machinery/smartfridge/food | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/cleanable/dirt | /obj/structure/sign/calendar/directional/north | /obj/item/reagent_containers/cup/glass/bottle/beer/light | /obj/item/reagent_containers/cup/glass/bottle/beer/light | /obj/item/reagent_containers/cup/glass/bottle/beer/light | /obj/item/reagent_containers/cup/glass/bottle/beer/light | /obj/item/reagent_containers/cup/glass/bottle/beer/light | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+13,15: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,15: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/structure/reagent_dispensers/water_cooler{name = "punch cooler"; reagent_id = /datum/reagent/consumable/ethanol/bacchus_blessing} | /obj/effect/decal/cleanable/cobweb/cobweb2 | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+15,15: /turf/closed/wall | /area/ruin/unpowered
+16,15: /obj/structure/chair/comfy/brown{dir = 4} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+17,15: /obj/structure/glowshroom/single | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/broken/directional/north | /obj/structure/sign/poster/party_game/directional/north | /obj/item/tail_pin | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+18,15: /obj/structure/chair/wood/wings | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+19,15: /obj/item/chair/wood/wings | /obj/effect/decal/cleanable/dirt | /obj/effect/decal/remains/human | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+20,15: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /obj/structure/flora/ash/fireblossom | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+21,15: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+1,14: /turf/template_noop | /area/template_noop
+5,14: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+6,14: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+7,14: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+8,14: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+9,14: /turf/closed/wall | /area/ruin/unpowered
+10,14: /obj/structure/table | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/structure/sign/clock/directional/west | /obj/effect/spawner/random/food_or_drink/donkpockets | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+11,14: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/item/plate{pixel_x = 8} | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+12,14: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+13,14: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/cleanable/dirt | /obj/structure/glowshroom/single | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,14: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+15,14: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/turf_decal/siding/thinplating_new{dir = 4} | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+16,14: /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+17,14: /obj/item/chair/wood/wings{pixel_x = -3; pixel_y = -8} | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+18,14: /obj/structure/table/wood/fancy/red | /obj/effect/decal/cleanable/dirt | /obj/item/kitchen/fork{pixel_x = -5; pixel_y = 8} | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+19,14: /obj/structure/table/wood/fancy/red | /obj/item/food/cake/birthday | /obj/effect/mapping_helpers/burnt_floor | /obj/item/knife/kitchen{pixel_x = 8; pixel_y = 7} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+20,14: /obj/item/chair/wood/wings{pixel_x = 16} | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+22,14: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+23,14: /turf/template_noop | /area/template_noop
+1,13: /turf/template_noop | /area/template_noop
+4,13: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+5,13: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+6,13: /obj/structure/flora/ash/tall_shroom | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,13: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+8,13: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+9,13: /turf/closed/wall | /area/ruin/unpowered
+10,13: /obj/machinery/oven | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/machinery/light/small/directional/west | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+11,13: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+12,13: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+13,13: /obj/structure/chair/wood/wings | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/remains/human | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,13: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+15,13: /turf/closed/wall | /area/ruin/unpowered
+16,13: /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+17,13: /obj/item/plate{pixel_x = -5; pixel_y = 5} | /obj/item/kitchen/fork{pixel_x = 12} | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+18,13: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+19,13: /obj/structure/chair/wood/wings{dir = 1} | /obj/effect/mapping_helpers/burnt_floor | /obj/structure/glowshroom/single | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+20,13: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /obj/structure/flora/ash/fireblossom | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+21,13: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+22,13: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+23,13: /turf/template_noop | /area/template_noop
+4,12: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+5,12: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+6,12: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,12: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+8,12: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+9,12: /obj/effect/spawner/structure/window | /turf/open/floor/plating | /area/ruin/unpowered
+10,12: /obj/structure/sink/kitchen/directional/east | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+11,12: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/item/kitchen/fork | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+12,12: /obj/structure/chair/wood/wings{dir = 4} | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+13,12: /obj/structure/table/wood/fancy/red | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/item/clothing/head/costume/festive{desc = "A festive party hat with the name 'jojo' scribbled on the front."; name = "party hat"} | /obj/effect/spawner/random/clothing/kittyears_or_rabbitears | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,12: /obj/item/chair/wood/wings | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/remains/human | /obj/effect/decal/cleanable/blood/old | /obj/machinery/light/small/broken/directional/east | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+15,12: /turf/closed/wall | /area/ruin/unpowered
+16,12: /obj/item/kirbyplants/fern | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+17,12: /obj/item/chair/wood/wings{pixel_y = -9} | /obj/effect/decal/remains/human | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+18,12: /obj/structure/table/wood | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/directional/south | /obj/item/gift{contains_type = /obj/item/toy/plush/beeplushie; pixel_x = 7; pixel_y = 6} | /obj/structure/sign/clock/directional/south | /obj/item/gift{contains_type = /obj/item/toy/plush/ratplush; pixel_x = -4; pixel_y = 2} | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+19,12: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /obj/structure/flora/ash/fireblossom | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+20,12: /obj/effect/mapping_helpers/burnt_floor | /obj/structure/glowshroom/single | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+21,12: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+23,12: /turf/template_noop | /area/template_noop
+5,11: /obj/structure/flora/ash/tall_shroom | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+6,11: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,11: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+8,11: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+9,11: /turf/closed/wall | /area/ruin/unpowered
+10,11: /obj/structure/table | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/item/storage/box/cups | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+11,11: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/structure/glowshroom/single | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+12,11: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/item/plate | /obj/item/food/pizzaslice/mushroom | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+13,11: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,11: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+15,11: /turf/closed/wall | /area/ruin/unpowered
+16,11: /turf/closed/wall | /area/ruin/unpowered
+17,11: /turf/closed/wall | /area/ruin/unpowered
+18,11: /turf/closed/wall | /area/ruin/unpowered
+19,11: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+20,11: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+22,11: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,10: /obj/structure/flora/ash/tall_shroom | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+5,10: /obj/structure/flora/ash/tall_shroom | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+6,10: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,10: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/item/plate | /obj/effect/turf_decal/siding/thinplating{dir = 9} | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+8,10: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/siding/thinplating{dir = 1} | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+9,10: /turf/closed/wall | /area/ruin/unpowered
+10,10: /obj/structure/table | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/item/gift{contains_type = /obj/item/toy/figure/wizard} | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+11,10: /obj/structure/table | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/item/reagent_containers/cup/glass/bottle/beer/light | /obj/item/reagent_containers/cup/glass/bottle/beer/light{pixel_x = 7; pixel_y = 4} | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+12,10: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/structure/closet/crate/bin | /obj/effect/spawner/random/food_or_drink/seed_rare | /obj/effect/spawner/random/trash/food_packaging | /obj/effect/spawner/random/trash/food_packaging | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+13,10: /obj/item/chair/wood/wings{pixel_x = 12; pixel_y = 6} | /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,10: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+15,10: /turf/closed/wall | /area/ruin/unpowered
+16,10: /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/directional/west | /obj/structure/rack | /obj/item/storage/box/lights/bulbs | /obj/item/storage/toolbox/mechanical/old | /obj/item/gift{contains_type = /obj/item/gun/ballistic/automatic/toy} | /obj/item/gift{contains_type = /obj/item/gun/ballistic/automatic/pistol/toy} | /obj/item/ammo_box/foambox | /obj/effect/decal/cleanable/cobweb | /obj/effect/spawner/random/decoration/glowstick | /obj/effect/spawner/random/decoration/paint | /obj/machinery/power/apc/auto_name/directional/north | /obj/effect/mapping_helpers/apc/unlocked | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+17,10: /obj/structure/mineral_door/wood | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+18,10: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+19,10: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+20,10: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,9: /obj/structure/flora/tree/stump | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+4,9: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+5,9: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+6,9: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,9: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/siding/thinplating{dir = 8} | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+8,9: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/machinery/grill | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/broken/directional/east | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+9,9: /turf/closed/wall | /area/ruin/unpowered
+10,9: /turf/closed/wall | /area/ruin/unpowered
+11,9: /turf/closed/wall | /area/ruin/unpowered
+12,9: /turf/closed/wall | /area/ruin/unpowered
+13,9: /obj/effect/turf_decal/tile/yellow/diagonal_edge | /obj/effect/turf_decal/tile/neutral/diagonal_centre | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/siding/thinplating_new | /turf/open/floor/iron/diagonal/lavaland | /area/ruin/unpowered
+14,9: /turf/closed/wall | /area/ruin/unpowered
+15,9: /turf/closed/wall | /area/ruin/unpowered
+16,9: /turf/closed/wall | /area/ruin/unpowered
+17,9: /turf/closed/wall | /area/ruin/unpowered
+19,9: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,8: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+4,8: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+5,8: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+6,8: /obj/structure/flora/ash/seraka | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,8: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/effect/decal/cleanable/blood/old | /obj/effect/turf_decal/siding/thinplating{dir = 8} | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+8,8: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/effect/decal/remains/human{pixel_x = 5; pixel_y = 10} | /obj/effect/decal/cleanable/blood/old | /obj/item/clothing/shoes/cookflops | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+9,8: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+10,8: /turf/closed/wall | /area/ruin/unpowered
+11,8: /obj/effect/decal/cleanable/cobweb | /obj/machinery/light/small/directional/north | /mob/living/basic/pet/dog/bullterrier/lavaland_party | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+12,8: /obj/structure/table/wood | /obj/item/paper_bin | /obj/effect/spawner/random/bureaucracy/pen | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+13,8: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+14,8: /obj/structure/table/wood | /obj/item/flashlight/lamp/green{pixel_x = -4; pixel_y = 11} | /obj/effect/decal/cleanable/dirt | /obj/item/reagent_containers/cup/glass/bottle/beer/almost_empty{pixel_x = 9; pixel_y = 4} | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+15,8: /obj/structure/chair/sofa/right/brown | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+16,8: /obj/structure/chair/sofa/left/brown | /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/directional/north | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+17,8: /turf/closed/wall | /area/ruin/unpowered
+18,8: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,7: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+4,7: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+5,7: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+6,7: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,7: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/structure/chair/plastic{dir = 4} | /obj/effect/turf_decal/siding/thinplating{dir = 8} | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+8,7: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+9,7: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/structure/flora/ash/leaf_shroom | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+10,7: /obj/structure/mineral_door/wood | /obj/effect/turf_decal/siding/thinplating_new{dir = 4} | /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+11,7: /obj/item/shard{pixel_x = -2; pixel_y = -11} | /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+12,7: /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+13,7: /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+14,7: /obj/effect/decal/cleanable/dirt | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+15,7: /obj/effect/mapping_helpers/burnt_floor | /obj/effect/decal/cleanable/dirt | /obj/effect/spawner/random/food_or_drink/snack | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+16,7: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+17,7: /obj/effect/mapping_helpers/broken_floor | /obj/structure/glowshroom/single | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+18,7: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,7: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+23,7: /turf/template_noop | /area/template_noop
+5,6: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+6,6: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,6: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/siding/thinplating{dir = 10} | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+8,6: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/siding/thinplating | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+9,6: /obj/effect/turf_decal/tile/bar/opposingcorners | /obj/effect/decal/cleanable/dirt | /obj/structure/flora/ash/leaf_shroom | /obj/effect/turf_decal/siding/thinplating | /turf/open/floor/iron/lavaland | /area/ruin/unpowered
+10,6: /obj/structure/grille/broken | /obj/item/stack/rods{pixel_x = 12} | /obj/effect/decal/cleanable/glass | /obj/effect/decal/cleanable/dirt | /obj/structure/flora/ash/leaf_shroom | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+11,6: /obj/effect/decal/cleanable/glass | /obj/effect/decal/cleanable/dirt | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+12,6: /obj/item/shard{pixel_x = -6; pixel_y = 7} | /obj/effect/decal/cleanable/dirt | /obj/structure/sign/clock/directional/south | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+13,6: /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+14,6: /obj/item/kirbyplants/fern | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+15,6: /obj/effect/mapping_helpers/burnt_floor | /obj/structure/fluff{icon = 'icons/obj/machines/computer.dmi'; icon_state = "television"; name = "old tv"; desc = "A modern plasma display boxed in by a rustic wooden frame and mock antenna. Just like the old, old, old days."} | /turf/open/floor/carpet/blue/lavaland | /area/ruin/unpowered
+16,6: /obj/effect/mapping_helpers/burnt_floor | /obj/structure/glowshroom/single | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+17,6: /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+18,6: /obj/structure/lattice | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+22,6: /turf/template_noop | /area/template_noop
+23,6: /turf/template_noop | /area/template_noop
+1,5: /turf/template_noop | /area/template_noop
+6,5: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+7,5: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+8,5: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+10,5: /turf/closed/wall | /area/ruin/unpowered
+11,5: /turf/closed/wall | /area/ruin/unpowered
+12,5: /turf/closed/wall | /area/ruin/unpowered
+13,5: /turf/closed/wall | /area/ruin/unpowered
+14,5: /turf/closed/wall | /area/ruin/unpowered
+15,5: /turf/closed/wall | /area/ruin/unpowered
+16,5: /obj/structure/girder | /obj/effect/decal/cleanable/dirt | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+17,5: /obj/structure/girder | /obj/effect/mapping_helpers/broken_floor | /obj/effect/decal/cleanable/dirt | /obj/item/stack/sheet/iron | /turf/open/floor/plating/lavaland_atmos | /area/ruin/unpowered
+22,5: /turf/template_noop | /area/template_noop
+23,5: /turf/template_noop | /area/template_noop
+1,4: /turf/template_noop | /area/template_noop
+2,4: /turf/template_noop | /area/template_noop
+7,4: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+8,4: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+12,4: /turf/open/misc/dirt{initial_gas_mix = "LAVALAND_ATMOS"} | /area/lavaland/surface/outdoors
+13,4: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+14,4: /obj/structure/flora/grass/brown/style_random | /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+22,4: /turf/template_noop | /area/template_noop
+23,4: /turf/template_noop | /area/template_noop
+1,3: /turf/template_noop | /area/template_noop
+2,3: /turf/template_noop | /area/template_noop
+13,3: /turf/open/floor/grass/lavaland | /area/lavaland/surface/outdoors
+21,3: /turf/template_noop | /area/template_noop
+22,3: /turf/template_noop | /area/template_noop
+23,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/template_noop | /area/template_noop
+3,2: /turf/template_noop | /area/template_noop
+4,2: /turf/template_noop | /area/template_noop
+5,2: /turf/template_noop | /area/template_noop
+19,2: /turf/template_noop | /area/template_noop
+20,2: /turf/template_noop | /area/template_noop
+21,2: /turf/template_noop | /area/template_noop
+22,2: /turf/template_noop | /area/template_noop
+23,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+5,1: /turf/template_noop | /area/template_noop
+10,1: /turf/template_noop | /area/template_noop
+11,1: /turf/template_noop | /area/template_noop
+12,1: /turf/template_noop | /area/template_noop
+13,1: /turf/template_noop | /area/template_noop
+14,1: /turf/template_noop | /area/template_noop
+19,1: /turf/template_noop | /area/template_noop
+20,1: /turf/template_noop | /area/template_noop
+21,1: /turf/template_noop | /area/template_noop
+22,1: /turf/template_noop | /area/template_noop
+23,1: /turf/template_noop | /area/template_noop

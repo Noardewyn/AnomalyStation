@@ -142,6 +142,8 @@ public static partial class TypeOrder
 
     // A method, not a const: a const string would be stored twice in the assembly.
     private static string EncodedConstants() => """
+#AIStatus
+21541	f1
 #absorption_capacity
 29040	n
 29043	i5
@@ -580,6 +582,7 @@ public static partial class TypeOrder
 32190	y/obj/item/ammo_box/magazine
 32191	y/obj/item/ammo_box/magazine/internal
 32330	y/obj/item/ammo_box/magazine/toy
+32619	y/obj/item/fish
 32700	y/obj/item/kitchen
 32747	y/obj/item/instrument
 32786	y/obj/item/skillchip
@@ -1075,7 +1078,6 @@ public static partial class TypeOrder
 36503	f1500
 36507	f500
 36510	f500
-36539	f5000
 36547	f470
 36557	f114000
 36558	f720
@@ -1136,6 +1138,48 @@ public static partial class TypeOrder
 27434	f1
 27448	f0
 27472	f0
+#agent
+1458	sUnknown
+1459	sadvance microbes
+1465	sKronkaine Abuse
+1466	sAllergy
+1467	sExcess Lepidopticides
+1468	sInflammatory
+1473	sApidae Infection
+1474	sCryptococcus Cosmosis
+1475	sQuantum Entanglement
+1476	sXY-rhinovirus
+1477	sICE9-rhinovirus
+1478	sEating the Death Sandwich wrong
+1479	sSevere Genetic Damage
+1480	sS4E1 Retrovirus
+1481	sGravitokinetic Bipotential SADS-
+1482	sH13N1 Flu Virion
+1483	s1nqu1s1t10n Flu Virion
+1484	sAgent S and DNA Restructuring
+1485	sGravitokinetic Bipotential SADS+
+1487	sFukkos Miracos
+1488	sFood-bourne Parasite
+1489	sAvian Vengence
+1490	sH0NI<42 Virus
+1491	sVirus
+1492	sUnknown
+1493	sShenanigans
+1494	sKongey Vibrion M-909
+1495	sR2D2 Nanomachines
+1496	sRip-LEY Alien Microbes
+1497	sAdvanced Mutation Toxin
+1498	sFell Doge Majicks
+1499	sGluttony's Blessing
+1500	sTranquility
+1502	sFungal Tubercle Bacillus Cosmosis
+1503	sWizard's Curse
+1504	sSub-quantum DNA Repulsion
+1505	sRincewindus Vulgaris
+1506	sCarp Ella
+1507	sAtmobacter Polyri
+1508	sStars
+1509	sUnholy Forces
 #ai_movement
 5417	y/datum/ai_movement/basic_avoidance
 5433	y/datum/ai_movement/basic_avoidance
@@ -1274,6 +1318,38 @@ public static partial class TypeOrder
 29686	f0.0025
 29687	f0.004
 29688	f0.0005
+#alignment
+7993	n
+7994	i3
+7995	i1
+7996	i1
+7997	i1
+7998	i1
+7999	i2
+8000	i1
+8001	i1
+8002	i1
+8003	i3
+8004	i1
+8005	i1
+8006	i1
+8007	i1
+8008	i2
+8009	i2
+8010	i2
+8011	i1
+8012	i1
+8013	i1
+19372	sgood
+19374	sneutral
+19375	sneutral
+19376	sevil
+19377	sneutral
+19378	sgood
+19379	sevil
+19380	sneutral
+19381	sgood
+19382	sgood
 #allow_bureaucratic_error
 14531	f1
 14535	f0
@@ -2123,7 +2199,6 @@ public static partial class TypeOrder
 36588	f0
 36594	f0
 36595	f0
-36625	f1
 36650	f1
 36692	f1
 36695	f1
@@ -2477,7 +2552,6 @@ public static partial class TypeOrder
 43266	f1
 43267	f0
 43269	f0
-43280	f0
 43282	f1
 43284	f1
 43285	f1
@@ -3406,7 +3480,6 @@ public static partial class TypeOrder
 36542	y/datum/armor/transport_machinery
 36543	y/datum/armor/transport_module
 36557	y/datum/armor/transport_module
-36625	y/datum/armor/restaurant_portal
 36640	y/datum/armor/obj_soil
 36783	y/datum/armor/field_generator
 36808	y/datum/armor/machinery_disposal
@@ -3864,6 +3937,13 @@ public static partial class TypeOrder
 5912	shead
 5913	shead
 5914	shead
+#attack_speed
+26575	f2
+31810	f1
+32629	f10
+32670	f10
+32862	f12
+32897	f6
 #attack_verb_continuous
 19138	spunches
 20977	sattacks
@@ -4164,6 +4244,19 @@ public static partial class TypeOrder
 21569	sslash your arms at
 21570	sbite at
 21571	ssmash into the side of
+#author
+540	n
+562	n
+10461	n
+10468	n
+12002	s
+12003	s
+12004	s
+15565	n
+17515	n
+17516	n
+19480	n
+34352	s
 #availability_prob
 15319	i40
 15320	i50
@@ -4238,6 +4331,118 @@ public static partial class TypeOrder
 15393	i35
 15394	i80
 15395	i30
+#average_size
+32619	f50
+32620	f65
+32621	f60
+32623	f30
+32624	f40
+32625	f35
+32627	f60
+32628	f100
+32630	f20
+32634	f30
+32635	f30
+32636	f20
+32637	f80
+32638	f30
+32639	f3
+32640	f25
+32641	f27
+32642	f20
+32643	f30
+32644	f60
+32645	f30
+32646	f30
+32647	f30
+32648	f50
+32651	f70
+32652	f30
+32654	f150
+32655	f100
+32656	f30
+32657	f150
+32658	f30
+32659	f180
+32660	f60
+32661	f40
+32662	f30
+32664	f30
+32665	f30
+32666	f30
+32667	f60
+32668	f50
+32669	f60
+32670	f140
+32672	f60
+32673	f40
+32675	f20
+32678	f20
+32679	f50
+32680	f150
+32683	f110
+32684	f85
+32685	f95
+32686	f50
+32688	f20
+32689	f25
+#average_weight
+32619	f1000
+32620	f1100
+32621	f1000
+32623	f300
+32624	f1500
+32625	f550
+32627	f1200
+32628	f2000
+32629	f3000
+32630	f200
+32634	f500
+32635	f500
+32636	f180
+32637	f1600
+32638	f500
+32639	f10
+32640	f400
+32641	f500
+32642	f200
+32643	f1000
+32644	f1000
+32645	f500
+32646	f500
+32647	f500
+32648	f500
+32651	f2000
+32652	f500
+32654	f2750
+32655	f500
+32656	f2000
+32657	f5000
+32658	f2000
+32659	f5000
+32660	f1200
+32661	f750
+32662	f500
+32664	f500
+32665	f500
+32666	f500
+32667	f1000
+32668	f1000
+32669	f700
+32670	f4000
+32671	f500
+32672	f1400
+32673	f700
+32675	f400
+32678	f400
+32679	f1000
+32680	f6000
+32683	f6000
+32684	f2500
+32685	f2000
+32686	f950
+32688	f300
+32689	f350
 #base_icon_state
 741	n
 957	sicebeam
@@ -4771,7 +4976,6 @@ public static partial class TypeOrder
 36609	sdrying-rack
 36621	sdisktoaster
 36624	sstove
-36625	sportal
 36629	sconveyor
 36646	ssextractor
 36647	sbigscanner
@@ -4805,7 +5009,6 @@ public static partial class TypeOrder
 36804	sjuicer
 36805	ssmoke
 36806	sswitch
-36813	sexplosive_compressor
 36820	stdoppler
 36832	sbeacon
 36833	srecharge_port
@@ -5445,6 +5648,18 @@ public static partial class TypeOrder
 42271	sbronze airlock
 42274	salien airlock
 42275	spod airlock
+#base_pixel_w
+21194	f-8
+21324	f-20
+24248	f-8
+32628	f-16
+32654	f-16
+32659	f-16
+32670	f-18
+32680	f-16
+32684	f-16
+37331	f-64
+37332	f-32
 #baseturfs
 44052	y/turf/open/floor/plating
 44059	y/turf/open/floor/material/meat
@@ -5571,6 +5786,9 @@ public static partial class TypeOrder
 34607	f0.1
 #beam_icon
 1025	sblood
+#beam_range
+871	f10
+21551	f5
 #bedsheet_type
 31839	ssingle
 31841	sdouble
@@ -6245,6 +6463,8 @@ public static partial class TypeOrder
 #bold_telepathy_span
 1096	sboldnotice
 1100	srevenboldnotice
+#bomb_cooldown
+34244	f19
 #boss_hp
 19196	f45
 19197	f40
@@ -7939,6 +8159,8 @@ public static partial class TypeOrder
 26867	f1.5
 26871	f1.25
 26872	f0.5
+#burst_range
+21551	f3
 #burst_size
 23994	f1
 24016	f2
@@ -8702,7 +8924,6 @@ public static partial class TypeOrder
 1058	srepulse
 1059	stailsweep
 1060	ssacredflame
-1061	sshapeshift
 1063	slock_ascension
 1064	sworm_ascend
 1066	stransformslime
@@ -9148,6 +9369,16 @@ public static partial class TypeOrder
 26768	f0
 26820	f0
 26849	f0
+#can_breed
+21020	f1
+21025	f0
+21051	f1
+21055	f0
+21179	f1
+21182	f0
+21324	f1
+21497	f1
+21498	f0
 #can_buckle
 20959	f1
 33831	f1
@@ -13365,7 +13596,6 @@ public static partial class TypeOrder
 4413	sblack
 4414	slight-pink
 4415	sadamantine
-4416	sgold
 4417	srainbow
 19153	n
 19154	sgrey
@@ -14416,7 +14646,6 @@ public static partial class TypeOrder
 1058	f400
 1059	f150
 1060	f60
-1061	f100
 1063	f200
 1065	f300
 1066	f0
@@ -15606,6 +15835,8 @@ public static partial class TypeOrder
 31335	f20
 31336	f0
 31338	f0
+#could_be_held
+21324	f0
 #crafted_food_buff
 24417	n
 24802	y/datum/status_effect/food/trait/waddle
@@ -16439,6 +16670,47 @@ public static partial class TypeOrder
 3638	f3200
 3639	f1600
 3640	f1900
+#cure_text
+1458	s
+1465	sTrauma (Adrenaline / \u0022Determination\u0022)
+1466	sEpinephrine
+1467	sEthanol (Liquid Courage)
+1468	sAlbuterol or surgical intervention
+1473	sSugar
+1474	sMannitol
+1475	sAbated by Sansufentanyl
+1476	sSpaceacillin or rest
+1477	sSpaceacillin or common Cold antibodies
+1478	sAnacea
+1479	sRezadone, abated by Mutadone, or death
+1480	sMutadone
+1481	sSynaptizine & Sulfur
+1482	sSpaceacillin, abated by rest
+1483	sSpaceacillin or common Flu antibodies
+1484	sTable Salt & Mutadone
+1485	sSynaptizine & Sulfur
+1487	y/datum/reagent/iron
+1488	sSurgical removal of the liver
+1489	sHoly Water
+1490	sBanana products, especially banana bread.
+1491	sMutadone or rest
+1492	sChick Chicky Boom!
+1493	sA coder's love (theoretical).
+1494	sDeath
+1495	sCopper
+1496	sSpaceacillin & Glycerol
+1497	sFrost Oil
+1498	sDeath
+1499	sNothing
+1500	sCondensed Capsaicin (not applied via vapor)
+1502	sSpaceacillin & Convermol
+1503	sExorcism
+1504	sLiquid Dark Matter
+1505	sThe Manly Dorf, abated by magical grounding
+1506	sChlorine
+1507	sMilk
+1508	sSpace Cleaner
+1509	sHoly Water or rest
 #current_tile_charge
 6251	f0
 30379	f0
@@ -16941,6 +17213,8 @@ public static partial class TypeOrder
 43905	f65
 43906	f30
 43907	f5
+#damage_chance
+4167	f10
 #damage_deflection
 33514	f10
 33588	f30
@@ -17132,6 +17406,67 @@ public static partial class TypeOrder
 20351	n
 20352	sassoc list
 20353	slist
+#death_message
+21060	sloses her false life and collapses!
+21077	scollapses into a pile of bones!
+21078	scollapses into a pile of bones, its gear clanging as it hits the ground!
+21081	scollapses into a pile of bones, its gear falling to the floor!
+21083	scollapses into a pile of bones, their suit dissolving among the plasma!
+21130	smalfunctions!
+21132	sfalls to the ground, decaying into glowing particles.
+21151	swails in chorus and dissolves into quivering flesh.
+21160	sfades as the energies that tied it to this world dissipate.
+21163	scollapses on its side.
+21167	ssnarls its last and perishes.
+21169	sseizes up and falls limp, slowly receeding into its burrow with a dying gurgle...
+21171	swails as infernal energy escapes from its wounds, leaving it an empty husk.
+21172	sstops moving as green liquid oozes from the carcass!
+21179	sis pulped into bugmash.
+21205	sis hacked into pieces!
+21207	sis hacked into pieces!
+21208	slets out a waning guttural screech, green blood bubbling from its maw...
+21216	sexplodes into a cloud of gas!
+21220	scollapses to the ground!
+21238	scollapses in a shattered heap.
+21300	simplodes into itself.
+21306	sshatters and vanishes, releasing a gust of cold air.
+21312	svanishes into thin air! It was a fake!
+21317	scollapses into bits of plant matter.
+21348	sblows apart!
+21352	sfades out of existence!
+21363	s
+21370	srapidly decays into a pile of bones!
+21385	swails, disintegrating into a pile of ectoplasm!
+21386	swails as it is torn back to the realm from which it came!
+21390	sfainted!
+21394	sfalls to the ground, its shard dulling to a miserable grey!
+21402	sloses its false life and collapses!
+21420	sscreams in agony as it sublimates into a sulfurous smoke.
+21422	sfades out, as all of its friends are released from its prison of hugs.
+21425	sblows apart!
+21430	sfalls apart into a fine dust.
+21431	sgets his head split open.
+21434	swails as its form turns into a pulpy mush.
+21442	sscreeches in agony as it collapses to the floor, its life extinguished.
+21446	slets out a final hiss...
+21492	sfalls apart into a fine dust.
+21499	sis smashed into pieces!
+21544	ssinks into a pool of blood, fleeing the battle. You've won, for now... 
+21545	sExplodes into a pool of blood!
+21546	sfalls, quickly decaying into centuries old dust.
+21547	sdisintegrates, leaving a glowing core in its wake.
+21548	sfalls to the ground, decaying into plasma particles.
+21549	scollapses into a pile of bones, its flesh sloughing away.
+21558	sfalls to the ground in a bloody heap, shaking the arena.
+21561	scollapses into a pile of goo!
+21562	sdeflates and spills its vital juices!
+21565	sexplodes into gore!
+21566	sfalls to the ground.
+21567	sbegins to shudder as it becomes transparent...
+21568	sshatters violently!
+21569	s's arms reach out before it falls apart onto the floor, lifeless.
+21570	scrumbles away!
+21571	s's lights flicker, before its top part falls down.
 #decal_icon
 3358	sdefault
 3359	sbluespace
@@ -17647,6 +17982,54 @@ public static partial class TypeOrder
 6439	f8
 6440	f15
 6441	f1
+#demolition_mod
+24328	f1.5
+24330	f1.33
+26367	f1.25
+26538	f1.5
+26546	f1.25
+26550	f0.25
+26553	f1.5
+26565	f1
+26576	f0.25
+26582	f0.75
+26583	f0.3
+26597	f1.5
+26600	f0.8
+26877	f1.25
+26879	f2
+26880	f3
+26881	f1.25
+27176	f1.25
+27422	f0.25
+29064	f1.25
+29844	f0.75
+30185	f1.25
+30268	f1.25
+30378	f0.75
+30382	f1
+30383	f0.5
+30384	f0.5
+30474	f0.75
+30535	f1.5
+30837	f9000
+31676	f1.25
+31730	f0.5
+31738	f0.25
+31771	f1.25
+31807	f1.5
+31812	f1.25
+31820	f1.15
+31925	f1.25
+31994	f0.5
+32624	f1.2
+32629	f0.8
+32670	f0.75
+32684	f1.5
+32846	f1.15
+32862	f2
+33083	f0.25
+43720	f200
 #density
 20948	f0
 20957	f1
@@ -17745,7 +18128,6 @@ public static partial class TypeOrder
 34208	f0
 34326	f0
 34332	f0
-34358	f0
 34365	f1
 34435	f1
 34439	f0
@@ -17844,7 +18226,6 @@ public static partial class TypeOrder
 36511	f1
 36536	f1
 36537	f1
-36539	f1
 36541	f1
 36543	f0
 36546	f1
@@ -17868,7 +18249,6 @@ public static partial class TypeOrder
 36604	f1
 36607	f1
 36624	f1
-36625	f0
 36635	f1
 36640	f0
 36646	f1
@@ -17911,7 +18291,6 @@ public static partial class TypeOrder
 36805	f1
 36808	f1
 36811	f1
-36813	f1
 36814	f1
 36820	f1
 36821	f1
@@ -17964,7 +18343,6 @@ public static partial class TypeOrder
 39038	f0
 39056	f0
 39064	f1
-39065	f0
 39092	f0
 39098	f0
 39105	f0
@@ -18070,7 +18448,6 @@ public static partial class TypeOrder
 42606	f1
 42609	f0
 42612	f1
-42616	f0
 42619	f1
 42621	f1
 42622	f1
@@ -18159,7 +18536,6 @@ public static partial class TypeOrder
 43263	f0
 43266	f1
 43269	f1
-43280	f1
 43282	f1
 43284	f1
 43286	f1
@@ -19694,7 +20070,6 @@ public static partial class TypeOrder
 11987	sHonestly, there wasn't much to gleam from a penguin's DNA, other than they walk funny.
 11988	sHydroponics research has long been interested in splicing human DNA into plant DNA, creating podpeople. Many scientists didn't want to let those hippies get the leg up on them, so they attempted the opposite - to pretty uninteresting results.
 12102	n
-12118	sWow, a mint condition coder card! Better tell the GitHub all about this!
 13529	sCasts a curse of immobility on a crew member.<br>While cursed, the victim will be unable to walk. You can additionally supply an item that a victim has touched or is covered in the victim's blood to make the curse last longer.
 13530	sCast a curse of sickness on a crew member.<br>While cursed, the victim will repeatedly vomit while their organs will take constant damage. You can additionally supply an item that a victim has touched or is covered in the victim's blood to make the curse last longer.
 13534	sGrants you Ashen Passage, a spell that lets you phase out of reality, allowing you to traverse a short distance, passing though any walls.
@@ -29349,11 +29724,9 @@ public static partial class TypeOrder
 32554	sSomehow, this piece of paper can be applied to items to make them \u0022better\u0022. Apparently there's a risk of losing the item if it's already \u0022too good\u0022. <i>This all feels so arbitrary...</i>
 32555	sSomehow, this piece of paper can be applied to items to make them \u0022better\u0022. This scroll is made from the tongues of dead paper wizards, and can be used an unlimited number of times, with no drawbacks.
 32556	sA handheld scanner used for completing the many experiments of modern science.
-32557	sA long range, semi-autonomous exploration drone.
 32558	sA compressed fuel pellet for long-distance drone flight.
 32561	sValuable and completely incomprehensible.
 32562	sUses the station's cargo network to contact a black market supplier, allowing the purchase of a new crate type at cargo console.
-32563	sMelts everything in front of you. Takes a while to start and operate.
 32564	sthere's a lot of them in there, getting them out takes a while though.
 32565	sThis can got worms.
 32566	sThis can got fancy worms.
@@ -29390,7 +29763,6 @@ public static partial class TypeOrder
 32601	sA luxury bar in a capsule. Bartender required and not included.
 32602	sProvides vital emergency support to employees who are caught short in the field.
 32603	sA device designed to inject or extract traits to and from fish. It takes an empty syringe, which is converted into a fish gene injector once the trait is extracted. Repeated applications may kill the fish.
-32604	sA single-use injector containing a specific trait that can be used on any (living) fish compatible with it.
 32605	sA more portable sort of aquarium to store various fishes in, unless they're too big or there're too many of them.
 32607	sAll the capacity of a bulky room aquarium, squeezed in a bag-sized rectangular cuboid.
 32608	sEverything you need to build your own aquarium or fish tank. Raw materials sold separately.
@@ -29404,6 +29776,7 @@ public static partial class TypeOrder
 32616	sAll the required components to allow an aquarium to harness energy bioelectric fish.
 32617	sThe required components to upgrade your portable fish tank into bottomless, handheld aquarium.
 32618	sA fish-shaped scanner used to monitor fish's status and evolutionary traits.
+32619	svery bland
 32620	sA bronze alien \u0022fish\u0022 living and swimming underneath faraway sandy places.
 32621	sA sand-dwelling crustacean. It looks like a crab and tastes like a crab, but waddles like a fish.
 32622	sA misshapen fish-thing all covered in stubby little tendrils.
@@ -30189,7 +30562,6 @@ public static partial class TypeOrder
 34354	sLibrarian's command station.
 34355	sIt seems to be powering and controlling the vault locks.
 34356	sIt monitors power levels across the station.
-34358	sAllows a deployable expedition base to be dropped from the station to a designated mining location. It can also interface with the mining shuttle at the landing site if a mobile beacon is also deployed.
 34364	sA computer to remotely control a gas turbine.
 34365	sUsed to work with viruses.
 34366	sA console used to interface with R&D tools.
@@ -30431,7 +30803,6 @@ public static partial class TypeOrder
 36533	sDon't be a badmin.
 36534	sA mixture of N2O and Oxygen
 36536	sA machine for cleaning out pipes of lingering gases. It is a huge tank with a pump attached to it.
-36539	sA mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations.
 36543	sMakes the tram go, or something. Holds the tram's electronics, controls, and maintenance panel. A sticker above the card reader says 'Engineering access only.'
 36546	sThis semiconductor is half of the brains controlling the tram and its auxiliary equipment.
 36547	sA display to show you what direction the tram is travelling.
@@ -30480,7 +30851,6 @@ public static partial class TypeOrder
 36621	sA machine capable of storing a variety of disks. Denoted by most as the DSU (disk storage unit).
 36622	sA heated storage unit.
 36624	sYou'd think this thing would be more useful in here.
-36625	sA robot-only gate into the wonders of Space Station cuisine!
 36628	sThis device is used to declare ready. If all devices in an area are ready, the event will begin!
 36629	sA conveyor belt.
 36635	sConverts plants into biomass, which can be used to construct useful items.
@@ -30581,7 +30951,6 @@ public static partial class TypeOrder
 36807	sA conveyor control switch. It appears to only go in one direction.
 36809	sA pneumatic waste disposal unit.
 36811	sA chute for big and small packages alike!
-36813	sAn advanced machine capable of implosion-compressing raw anomaly cores into finished artifacts. Also equipped with state of the art bomb prediction software.
 36814	sDoes a function when you put the jigger at the other ends thing.
 36820	sA highly precise directional sensor array which measures the release of quants from decaying tachyons. The doppler shifting of the mirror-image formed by these quants can reveal the size, location and temporal affects of energetic disturbances within a large radius ahead of the array.\n
 36821	sTastes just like the chef's soup.
@@ -30833,7 +31202,6 @@ public static partial class TypeOrder
 39059	sA humming sleeper with a silhouetted occupant inside. Its stasis function is broken and it's likely being used as a bed.
 39060	sA humming sleeper with a silhouetted occupant inside. Its stasis function is broken and it's likely being used as a bed.
 39064	sAn ancient machine that seems to be used for storing plant matter. The glass is obstructed by a mat of vines.
-39065	sA man-sized yellow egg, spawned from some unfathomable creature. A humanoid silhouette lurks within.
 39070	sA humming cryo pod. You can barely recognise a uniform underneath the built up ice. The machine is attempting to wake up its occupant.
 39071	sA humming cryo pod. You can barely recognise a security uniform underneath the built up ice. The machine is attempting to wake up its occupant.
 39072	sA humming cryo pod. You can barely recognise an engineering uniform underneath the built up ice. The machine is attempting to wake up its occupant.
@@ -31684,7 +32052,6 @@ public static partial class TypeOrder
 42613	sA powerful energy field that blocks movement. Energy arcs off it.
 42614	sA fragile holographic energy field projected by an AI core. It keeps unwanted humanoids at safe distance.
 42615	sA holobarrier that uses biometrics to detect human viruses. Denies passing to personnel with easily-detected, malicious viruses. Good for quarantines.
-42616	sUsed to indicate a place to sit for a robot tourist. I better be careful.
 42619	sFill it with water, but don't forget a mop!
 42620	sThis is the alpha and omega of sanitation.
 42621	sThe frame of a meat spike.
@@ -31985,7 +32352,6 @@ public static partial class TypeOrder
 43268	sThis is a minimoog, like a space piano, but more spacey!
 43269	sA great place for storing knowledge.
 43279	sIt reeks of cheese...
-43280	sPuzzling...
 43282	sThe remains of a monstrous war machine.
 43284	sA vile tendril of corruption. It's surrounded by a nest of rapidly growing eggs...
 43285	sA vile tendril of corruption. It's surrounded by a nest of rapidly growing eggs...
@@ -34900,7 +35266,6 @@ public static partial class TypeOrder
 15696	sWe're looking for a site to test our asteroid blasting caps. Perform point scan of one.
 15697	sWe require more research data on black holes, perform deep scan of a system affected by one.
 15698	sWe need scan data of specific site type
-15703	n
 15704	n
 15705	sAn old shuttle refueling station drifting through the void.
 15706	sA weak radio transmission advertises this place as RANDOMIZED_NAME
@@ -35146,6 +35511,140 @@ public static partial class TypeOrder
 19655	sBluespace technology using unstable or unbalanced procedures, prone to damaging the fabric of bluespace. Outlawed by galactic conventions.
 #detonate_in
 34558	f6000
+#difficulty
+2790	f0
+2791	f2
+2792	f2
+2794	f2
+2796	f3
+2797	f1
+2798	f3
+2799	f2
+2802	f1
+2803	f3
+2804	f3
+2805	f1
+2806	f1
+2807	f2
+2808	f2
+2809	f2
+2810	f1
+2811	f2
+2814	f0
+2815	f3
+2816	f1
+9851	f16
+9854	f32
+9856	f8
+9857	f8
+9858	f12
+9859	f12
+9865	f16
+9866	f16
+9867	f12
+9874	f16
+9875	f16
+9876	f16
+9877	f14
+9878	f18
+9879	f18
+9880	f16
+9881	f16
+9883	f12
+9884	f16
+9885	f12
+9887	f24
+9888	f20
+9889	f20
+9891	f16
+9893	f10
+9894	f12
+9895	f16
+9896	f12
+9897	f10
+9898	f12
+9899	f16
+9903	f12
+9906	f8
+9907	f18
+9908	f32
+9911	f18
+9913	f16
+9927	f12
+9930	f16
+9931	f16
+11577	f0
+11580	f2
+11581	f3
+11582	f2
+11583	f2
+11584	f1
+11585	f1
+11586	f1
+11587	f1
+11588	f3
+11589	f1
+11590	f2
+11591	f3
+11592	f2
+11593	f3
+11594	f4
+11595	f1
+11596	f1
+11597	f1
+11598	f1
+11599	f1
+11600	f1
+11601	f1
+11602	f1
+11603	f4
+11604	f4
+11605	f4
+11606	f3
+11607	f3
+11608	f3
+11609	f3
+11610	f3
+11611	f5
+11612	f4
+11613	f3
+11614	f3
+11615	f4
+11616	f4
+11617	f5
+11618	f5
+11619	f3
+11620	f4
+11622	f3
+11623	f2
+11624	f2
+11625	f3
+11626	f3
+11627	f2
+11628	f1
+11629	f1
+11630	f2
+11631	f2
+11632	f2
+11633	f2
+11634	f2
+11635	f2
+11636	f2
+11637	f3
+13912	sunset
+13914	sEasy
+13915	sMedium
+13916	sHard
+13919	sEasy
+13920	sMedium
+13921	sHard
+13923	sMedium
+13924	sHard
+13931	sMedium
+13932	sEasy
+13933	sHard
+13934	sHard
+13935	sEasy
 #digitigrade_customization
 13707	f1
 13708	f2
@@ -37861,6 +38360,7 @@ public static partial class TypeOrder
 32540	rsound/items/handling/component_drop.ogg
 32542	rsound/items/evidence_bag/evidence_bag_drop.ogg
 32556	sgeneric_device_drop
+32619	rsound/mobs/non-humanoids/fish/fish_drop1.ogg
 32624	rsound/items/handling/materials/glass_drop.ogg
 32654	rsound/mobs/non-humanoids/fish/fish_drop1.ogg
 32656	rsound/items/handling/materials/glass_drop.ogg
@@ -38135,7 +38635,6 @@ public static partial class TypeOrder
 4370	f200
 4371	f100
 4372	f300
-4373	f-1
 4374	f-1
 4376	f-1
 4377	f-1
@@ -38609,6 +39108,8 @@ public static partial class TypeOrder
 2430	f100
 2431	f75
 2432	f30
+#emissive_icon_state
+43452	n
 #emotion
 2631	sBlank
 2632	sVery Happy
@@ -38630,6 +39131,10 @@ public static partial class TypeOrder
 2648	sRed Glow
 30817	sneutral
 34619	sai_off
+#enemies_defeated
+34244	n
+#enrage_time
+21544	f70
 #equip_sound
 21606	rsound/items/equip/glove_equip.ogg
 21626	rsound/items/equip/glove_equip.ogg
@@ -38713,7 +39218,6 @@ public static partial class TypeOrder
 14095	f1
 14096	f1
 #experience_multiplier
-15778	f1
 24331	f1
 #experiment_proper
 15676	f0
@@ -38760,6 +39264,93 @@ public static partial class TypeOrder
 44741	f1E+31
 44747	f1E+31
 44917	f1E+31
+#exposed_wound_bonus
+20977	f0
+21033	f45
+21059	f20
+21165	f10
+21396	f10
+21421	f0
+21483	f50
+21499	f20
+21541	f0
+21996	f5
+24328	f15
+24329	f15
+24330	f10
+26522	f5
+26530	f30
+26538	f5
+26550	f10
+26553	f20
+26582	f25
+26583	f15
+26585	f10
+26595	f20
+26596	f20
+26597	f30
+26600	f15
+26609	f15
+26877	f20
+26882	f15
+26921	f25
+26929	f30
+29844	f15
+29849	f0
+29860	f20
+30378	f15
+30382	f25
+30383	f20
+30384	f0
+30535	f20
+30835	f10
+31738	f15
+31753	f15
+31810	f50
+31811	f25
+31825	f10
+31912	f2
+31988	f10
+31994	f10
+32378	f20
+32385	f20
+32624	f15
+32629	f15
+32654	f20
+32670	f20
+32704	f14
+32729	f15
+32774	f15
+32916	f20
+43515	f10
+43517	f40
+43525	f15
+43556	f5
+43568	f70
+43587	f40
+43598	f5
+43599	f5
+43600	f-100
+43605	f5
+43606	f20
+43632	f30
+43650	f30
+43651	f30
+43652	f20
+43668	f30
+43677	f30
+43686	f10
+43690	f20
+43703	f80
+43704	f20
+43705	f20
+43706	f40
+43707	f0
+43708	f-100
+43711	f15
+43725	f5
+43881	f10
+43882	f10
 #extended_desc
 15463	sAn abstract MOD description.
 15464	sA lightweight suit produced by the DeForest Medical Corporation, based off the work of Nakamura Engineering. The latest in technology has been employed in this suit to render it immunized against allergens, airborne toxins, and regular pathogens. The primary asset of this suit is the speed, fusing high-powered servos and actuators with a carbon-fiber construction. While there's very little armor used, it is incredibly acid-resistant. It is slightly more demanding of power than civilian-grade models, and weak against fingers tapping the glass.
@@ -38965,6 +39556,20 @@ public static partial class TypeOrder
 14488	f0
 14494	f0
 14496	f0
+#fallback_icon
+12659	ricons/obj/food/soupsalad.dmi
+12806	ricons/obj/drinks/drink_effects.dmi
+12808	ricons/obj/drinks/bottles.dmi
+13314	ricons/obj/drinks/drink_effects.dmi
+13516	ricons/obj/drinks/drink_effects.dmi
+13517	ricons/obj/drinks/drink_effects.dmi
+#fallback_icon_state
+12659	sbowl
+12806	sfailed_reaction_fallback
+12808	sbeer
+13314	sspraytan_fallback
+13516	sacid_buffer_fallback
+13517	sbase_buffer_fallback
 #false_alarm_able
 2233	f0
 2234	f1
@@ -38976,6 +39581,32 @@ public static partial class TypeOrder
 #fatal
 2751	f0
 2763	f1
+#favor_cost
+19334	f0
+19338	f1000
+19339	f2000
+19343	f150
+19344	f300
+19345	f5
+19346	f100
+19348	f1
+19349	f0
+19350	f4
+19351	f3
+19353	f0
+19354	f50
+19355	f100
+19356	f200
+19357	f200
+19358	f20
+19359	f10
+19360	f10
+19361	f0
+19362	f0
+19365	f40
+19368	f700
+19370	f200
+19371	f1500
 #feature_key
 5926	s
 5928	sfish_tail
@@ -39010,6 +39641,9 @@ public static partial class TypeOrder
 8191	spod_hair
 9988	n
 19760	n
+#feedback_message
+15725	n
+34244	n
 #female_sprite_flags
 10482	f1
 22836	f0
@@ -39440,6 +40074,133 @@ public static partial class TypeOrder
 31633	n
 31634	n
 31635	n
+#fish_flags
+32619	f11
+32631	f10
+32633	f10
+32642	f2
+32659	f10
+32660	f10
+32661	f10
+32677	f9
+32680	f10
+#fish_id
+32619	n
+32620	ssand_surfer
+32621	ssand_crab
+32622	sbumpy
+32623	scosmostarfish
+32624	schrystarfish
+32625	sbaby_carp
+32626	ssockeye_salmon
+32627	sarctic_char
+32628	spike
+32629	sarmored_pike
+32630	sgoldfish
+32632	sthree_eyes
+32634	sangelfish
+32635	sguppy
+32636	splasmatetra
+32637	scatfish
+32638	szipzap
+32639	stadpole
+32640	sperch
+32641	ssacabambaspis
+32642	shologoldfish
+32643	sholocrab
+32644	sholopufferfish
+32645	sholoangelfish
+32646	sholoclownfish
+32647	scheckered
+32648	shalffish
+32649	schasm_crab
+32650	sarctic_crab
+32651	sbonemass
+32652	slavaloop
+32653	splasma_lavaloop
+32654	swalro-dolphish
+32655	sflumpulus
+32656	sgullion
+32657	smossglob
+32658	sbabbelfish
+32659	smastodon
+32660	ssoulfish
+32661	sskin_crab
+32662	sclownfish
+32663	slube
+32664	scardinal
+32665	sgreenchromis
+32666	sfirefish
+32667	spufferfish
+32668	slanternfish
+32669	sstingray
+32670	sswordfish
+32671	ssquid
+32672	smonkfish
+32673	splaice
+32674	sratfish
+32675	ssludgefish
+32676	spurple_sludgefish
+32677	sslimefish
+32678	sfryish
+32679	sfritterish
+32680	snessie
+32681	semulsijack
+32682	sdonkfish
+32683	sjumpercable
+32684	schainsawfish
+32685	smoonfish
+32686	sdwarf_moonfish
+32687	sgunner_jellyfish
+32688	sneedlefish
+32689	sarmorfish
+#fish_id_redirect_path
+32619	n
+32631	y/obj/item/fish/goldfish
+32633	y/obj/item/fish/goldfish/three_eyes
+#fish_movement_type
+32619	y/datum/fish_movement
+32620	y/datum/fish_movement/plunger
+32621	y/datum/fish_movement/slow
+32624	y/datum/fish_movement/accelerando
+32628	y/datum/fish_movement/plunger
+32651	y/datum/fish_movement/zippy
+32652	y/datum/fish_movement/zippy
+32654	y/datum/fish_movement/choppy
+32655	y/datum/fish_movement/slow
+32656	y/datum/fish_movement/slow
+32657	y/datum/fish_movement/slow
+32658	y/datum/fish_movement/slow
+32660	y/datum/fish_movement/choppy
+32666	y/datum/fish_movement/zippy
+32670	y/datum/fish_movement/plunger
+32674	y/datum/fish_movement/zippy
+32678	y/datum/fish_movement/zippy
+32679	y/datum/fish_movement
+32680	y/datum/fish_movement
+32684	y/datum/fish_movement/accelerando
+32689	y/datum/fish_movement/slow
+#fishing_difficulty_modifier
+32619	f0
+32620	f5
+32624	f15
+32628	f10
+32629	f20
+32632	f10
+32654	f30
+32655	f22
+32656	f22
+32657	f-35
+32658	f15
+32659	f30
+32663	f5
+32665	f5
+32670	f25
+32678	f-5
+32680	f45
+32684	f30
+32685	f10
+32686	f0
 #flags
 148	n
 6123	n
@@ -40099,6 +40860,15 @@ public static partial class TypeOrder
 43448	y/obj/structure/disposalpipe/sorting/mail
 43449	y/obj/structure/disposalpipe/sorting/wrap/flip
 43450	y/obj/structure/disposalpipe/sorting/wrap
+#food
+32619	y/datum/reagent/consumable/nutriment
+32624	y/datum/reagent/bluespace
+32632	y/datum/reagent/toxin/mutagen
+32654	y/datum/reagent/blood
+32655	y/datum/reagent/consumable/nutriment/fat
+32656	y/datum/reagent/silicon
+32663	y/datum/reagent/lube
+34245	f80
 #foodtypes
 6415	f0
 24417	n
@@ -41465,6 +42235,7 @@ public static partial class TypeOrder
 32518	f0
 32603	f7
 32605	f5
+32619	f6
 32624	f12
 32629	f20
 32654	f19
@@ -41546,6 +42317,23 @@ public static partial class TypeOrder
 43933	f30
 #force_bonus
 31812	f0
+#form
+1458	sVirus
+1459	sAdvanced Disease
+1465	sCondition
+1466	sCondition
+1467	sCondition
+1468	sBronchitis
+1473	sParasite
+1478	sCondition
+1479	sVirus
+1488	sParasite
+1502	sFungus
+1503	sAffliction
+1506	sParasite
+1507	sBacteria
+1508	sCondition
+1509	sCondition
 #four_char_chance
 4234	f10
 4235	f4
@@ -44474,6 +45262,7 @@ public static partial class TypeOrder
 32390	rsound/items/tools/welder2.ogg
 32421	rsound/items/weapons/bladeslice.ogg
 32603	rsound/items/hypospray.ogg
+32619	sdefault_fish_slap
 32624	sshatter
 32629	rsound/items/weapons/bladeslice.ogg
 32652	n
@@ -44777,7 +45566,6 @@ public static partial class TypeOrder
 12027	ricons/obj/tiles.dmi
 12028	ricons/obj/antags/abductor.dmi
 12029	ricons/obj/weapons/spear.dmi
-12118	sicons/runtime/tcg/default.dmi
 12164	n
 13644	n
 13661	ricons/mob/actions/actions_AI.dmi
@@ -47083,23 +47871,21 @@ public static partial class TypeOrder
 32552	ricons/obj/mining_zones/artefacts.dmi
 32554	ricons/obj/scrolls.dmi
 32556	ricons/obj/devices/scanner.dmi
-32557	ricons/obj/exploration.dmi
 32558	ricons/obj/exploration.dmi
 32561	ricons/obj/exploration.dmi
 32562	ricons/obj/exploration.dmi
-32563	ricons/obj/exploration.dmi
 32564	ricons/obj/fishing.dmi
 32568	ricons/obj/fishing.dmi
 32581	ricons/obj/fishing.dmi
 32588	ricons/obj/fishing.dmi
 32597	ricons/obj/mining.dmi
 32603	ricons/obj/fishing.dmi
-32604	ricons/obj/fishing.dmi
 32605	ricons/obj/aquarium/tanks.dmi
 32608	ricons/obj/aquarium/supplies.dmi
 32609	ricons/obj/aquarium/tanks.dmi
 32615	ricons/obj/aquarium/supplies.dmi
 32618	ricons/obj/devices/scanner.dmi
+32619	ricons/obj/aquarium/fish.dmi
 32624	ricons/obj/aquarium/rift.dmi
 32628	ricons/obj/aquarium/wide.dmi
 32654	ricons/obj/aquarium/wide.dmi
@@ -47402,7 +48188,6 @@ public static partial class TypeOrder
 34280	ricons/obj/machines/bitrunning.dmi
 34326	ricons/obj/machines/wallmounts.dmi
 34330	ricons/obj/machines/wallmounts.dmi
-34358	ricons/obj/machines/wallmounts.dmi
 34365	ricons/obj/medical/chemical.dmi
 34371	ricons/obj/machines/particle_accelerator.dmi
 34374	ricons/obj/machines/barsigns.dmi
@@ -47545,7 +48330,6 @@ public static partial class TypeOrder
 36503	ricons/obj/medical/cryogenics.dmi
 36504	ricons/obj/pipes_n_cables/atmos.dmi
 36511	ricons/map_icons/objects.dmi
-36539	ricons/obj/machines/gateway.dmi
 36543	ricons/obj/tram/tram_controllers.dmi
 36547	ricons/obj/tram/tram_display.dmi
 36551	ricons/obj/tram/tram_indicator.dmi
@@ -47576,7 +48360,6 @@ public static partial class TypeOrder
 36607	ricons/obj/machines/smartfridge.dmi
 36622	ricons/obj/mining_zones/donkvendor.dmi
 36624	ricons/obj/machines/kitchen_stove.dmi
-36625	ricons/obj/machines/restaurant_portal.dmi
 36628	ricons/obj/machines/wallmounts.dmi
 36629	ricons/obj/machines/recycling.dmi
 36635	ricons/obj/machines/biogenerator.dmi
@@ -47628,7 +48411,6 @@ public static partial class TypeOrder
 36805	ricons/obj/medical/chemical.dmi
 36806	ricons/obj/machines/recycling.dmi
 36808	ricons/obj/pipes_n_cables/disposal.dmi
-36813	ricons/obj/machines/research.dmi
 36814	ricons/obj/science/gizmos.dmi
 36820	ricons/obj/machines/research.dmi
 36821	ricons/obj/science/vatgrowing.dmi
@@ -47965,7 +48747,6 @@ public static partial class TypeOrder
 39061	ricons/obj/machines/sleeper.dmi
 39063	ricons/obj/machines/sleeper.dmi
 39064	ricons/obj/mining_zones/spawners.dmi
-39065	ricons/mob/simple/lavaland/lavaland_monsters.dmi
 39066	ricons/obj/machines/sleeper.dmi
 39070	ricons/obj/machines/sleeper.dmi
 39074	ricons/obj/machines/sleeper.dmi
@@ -48275,7 +49056,6 @@ public static partial class TypeOrder
 42595	ricons/obj/storage/closet.dmi
 42603	ricons/mob/simple/hivebot.dmi
 42604	ricons/effects/holosigns.dmi
-42616	ricons/effects/effects.dmi
 42619	ricons/obj/service/janitor.dmi
 42621	ricons/obj/service/kitchen.dmi
 42622	ricons/obj/service/kitchen.dmi
@@ -48473,7 +49253,6 @@ public static partial class TypeOrder
 43263	ricons/obj/service/hydroponics/equipment.dmi
 43266	ricons/obj/art/musician.dmi
 43269	ricons/obj/service/library.dmi
-43280	ricons/obj/mining_zones/artefacts.dmi
 43282	ricons/obj/mining_zones/dead_ratvar.dmi
 43284	ricons/mob/simple/lavaland/nest.dmi
 43285	ricons/mob/simple/lavaland/nest.dmi
@@ -49000,6 +49779,7 @@ public static partial class TypeOrder
 32410	f-45
 32411	f-45
 32421	f-90
+32619	f180
 32701	f-90
 32703	f-45
 32705	f-90
@@ -49070,6 +49850,93 @@ public static partial class TypeOrder
 42746	ricons/obj/fluff/previews.dmi
 42747	ricons/obj/fluff/previews.dmi
 43963	ricons/obj/fluff/previews.dmi
+#icon_screen
+33849	ssolar
+33966	sgeneric
+33968	sslots_screen
+33980	sciv_bounty
+33981	saccounts
+33982	sai-fixer
+33983	ssolar
+33985	salert:0
+33987	scameras
+33988	sdetective_tv
+33989	smining
+33994	n
+33995	sentertainment_blank
+34167	scommsyndie
+34168	scameras
+34170	n
+34172	smining
+34176	ssyndishuttle
+34178	srecharge_comp_on
+34187	ssyndishuttle
+34188	ssyndishuttle
+34189	ssyndishuttle
+34190	ssyndishuttle
+34195	sslime_comp
+34196	scomm
+34197	scommsyndie
+34198	screw
+34200	sdna
+34201	steleport
+34202	smechpad
+34204	screw
+34207	slibrary
+34208	n
+34217	srobot
+34218	salert:0
+34221	splaque_screen
+34222	scomm
+34230	sexplosive
+34231	scommsyndie
+34232	ssyndishuttle
+34233	smining
+34237	scomm
+34240	ssecurity
+34241	sinvaders
+34244	sfighters
+34246	n
+34247	stank
+34276	srequest
+34278	n
+34280	n
+34283	sexplosive
+34285	smedcomp
+34287	smedlaptop
+34288	ssecurity
+34290	sseclaptop
+34292	screw
+34295	scomm_logs
+34296	scomm_monitor
+34297	scomm_logs
+34298	sshuttle
+34300	ssyndishuttle
+34304	ssyndishuttle
+34305	ssyndishuttle
+34306	ssyndishuttle
+34307	ssyndishuttle
+34326	spod_on
+34328	ssyndishuttle
+34330	spod_on
+34332	stram_1
+34345	sbitrunning
+34346	ssupply
+34348	srequest
+34351	sholocontrol
+34352	slibrary
+34354	slibrary
+34355	spower
+34356	spower
+34364	sturbinecomp
+34365	n
+34366	srdcomp
+34368	srdcomp
+34370	sshuttle
+34371	n
+34372	srecharge_comp
+34373	smecha
+43286	sslots_screen
 #icon_state
 1517	s
 1535	n
@@ -49863,7 +50730,6 @@ public static partial class TypeOrder
 12028	ssheet-abductor
 12029	sratvarian_spear
 12099	n
-12118	stemplate
 12207	n
 12209	stile_fourcorners
 12210	stile_full
@@ -57483,13 +58349,11 @@ public static partial class TypeOrder
 32552	sgreentext
 32554	sscroll
 32556	sexperiscanner
-32557	sdrone
 32558	sfuel_basic
 32559	sfuel_advanced
 32560	sfuel_exotic
 32561	santique
 32562	strade_chip
-32563	sfirelance
 32564	sbait_can
 32568	sminnow
 32569	sminnow
@@ -57523,7 +58387,6 @@ public static partial class TypeOrder
 32597	scapsule
 32598	scapsule_fishing
 32603	sfish_gun
-32604	sfish_trait_injector
 32605	sfish_tank_map
 32607	sfish_tank_bluespace_map
 32608	sconstruction_kit
@@ -58224,7 +59087,6 @@ public static partial class TypeOrder
 34354	soldcomp
 34355	scomputer
 34357	scomputer
-34358	spod_off
 34364	scomputer
 34365	spandemic0
 34366	scomputer
@@ -59369,7 +60231,6 @@ public static partial class TypeOrder
 36534	s/obj/machinery/portable_atmospherics/canister/anesthetic_mix
 36536	spipe_scrubber
 36537	ssiphon
-36539	sportal_frame
 36543	stram-controller
 36546	shome-controller
 36547	sdesto_blank
@@ -59414,7 +60275,6 @@ public static partial class TypeOrder
 36621	sdisktoaster
 36622	sdonkvendor
 36624	sstove
-36625	sportal
 36628	sauth_off
 36629	sconveyor_map
 36632	sconveyor_map_inverted
@@ -59502,7 +60362,6 @@ public static partial class TypeOrder
 36807	sconveyor_switch_oneway
 36809	sdisposal
 36811	sintake
-36813	sexplosive_compressor
 36814	sgizmo_1
 36817	sgizmo_active_0
 36820	stdoppler
@@ -61037,7 +61896,6 @@ public static partial class TypeOrder
 39061	ssleeper
 39063	ssleeper
 39064	sterrarium
-39065	slarge_egg
 39066	ssleeper_s
 39070	ssleeper
 39074	ssleeper_s
@@ -62343,7 +63201,6 @@ public static partial class TypeOrder
 42609	sholo_firelock
 42611	sholo_tram
 42615	sholo_medical
-42616	seating_zone
 42619	smopbucket
 42620	scart
 42621	sspikeframe
@@ -62694,7 +63551,6 @@ public static partial class TypeOrder
 43268	sminimoog
 43269	sbookempty
 43273	srandom_bookcase
-43280	spuzzle_pillar
 43282	sdead_ratvar
 43284	sash_walker_nest
 43285	sash_walker_nest
@@ -64956,7 +65812,6 @@ public static partial class TypeOrder
 4370	sslumber_party
 4371	srainbow_protection
 4372	sslimeskin
-4373	sslime_recall
 4374	sslime_frozen
 4376	sslime_cloned
 4377	sslime_clonedecay
@@ -64998,7 +65853,6 @@ public static partial class TypeOrder
 4413	sstabilizedblack
 4414	sstabilizedlightpink
 4415	sstabilizedadamantine
-4416	sstabilizedgold
 4417	sstabilizedrainbow
 4418	sstabilizedbluespacecooldown
 4419	sbrokenpeace
@@ -65078,7 +65932,6 @@ public static partial class TypeOrder
 11152	sstimulant_withdrawal
 11156	ssanity_component
 11157	ssanity_component
-12118	scoder
 12445	n
 12535	f0
 12541	sabductor_generic
@@ -65190,7 +66043,6 @@ public static partial class TypeOrder
 15560	sHoly Data
 15561	sIllegal Tech
 15562	sAdditional Notes
-15703	n
 15714	n
 15715	smaint
 15716	strade_contract
@@ -65371,7 +66223,6 @@ public static partial class TypeOrder
 42624	n
 42673	i1
 43231	n
-43280	f0
 #id_trim
 2856	y/datum/id_trim/chameleon/operative
 2857	y/datum/id_trim/chameleon/operative/clown
@@ -65583,6 +66434,35 @@ public static partial class TypeOrder
 2422	f1
 2425	f1
 2427	f1
+#illness
+8108	sUnidentified
+8109	sMan-Mouth
+8112	sCold Shoulder
+8113	sPneumatic Tubes
+8114	sIron Lungs
+8115	sShattered Reality
+8116	sJest Infection
+8117	sAural Perforation
+8118	sBroken Face
+8119	sMotion Sickness
+8120	sBurning Desire
+8121	sSpontaneous Combustion
+8122	sCrispy Skin
+8123	sJellyitis
+8124	sPremature Mummification
+8125	sLycanthropy
+8126	sParanoyance
+8127	sBrain Freeze
+8139	sDiscrete Itching
+8140	sAurora Snorealis
+8144	sThin Skinned
+8145	sChroma Imbalance
+8146	sBard Flu
+8152	sDiluted Pupils
+8153	sMime Crisis
+8154	sCyclonic Irritation
+8155	sNebula Nausea
+8156	sPlacid Reflux
 #image_icon
 17129	ricons/effects/atmospherics.dmi
 37283	n
@@ -67763,9 +68643,7 @@ public static partial class TypeOrder
 32543	selectronic
 32551	segg
 32556	sexperiscanner
-32563	sfirelance
 32603	sgun
-32604	sdnainjector
 32618	sfish_analyzer
 32628	spike
 32629	sarmored_pike
@@ -68234,6 +69112,73 @@ public static partial class TypeOrder
 43957	f12
 43958	f8
 43959	f8
+#integrity_failure
+22316	f0
+27176	f0.5
+32619	f0.5
+32654	f0.25
+32657	f0.33
+33652	f0
+33835	f0.8
+33847	f0.33
+33849	f0.5
+33852	f0.2
+33871	f0.33
+33966	f0.5
+34332	f0.1
+34374	f0.5
+34457	f0.33
+34468	f0.4
+34475	f0.4
+34500	f0.75
+34560	f0.4
+34561	f0.5
+34705	f0.5
+34910	f0.2
+36200	f0.25
+36210	f0.5
+36217	f0.5
+36220	f0
+36227	f0.5
+36493	f0.33
+36511	f0.4
+36542	f0.1
+36543	f0.25
+36558	f0.25
+36607	f0.5
+36709	f0.5
+36739	f0.33
+36840	f0.25
+36846	f0.25
+36853	f0.33
+39651	f0.1
+39719	f0.25
+39786	f0
+39824	f0
+39825	f0
+39839	f0
+39848	f0
+39928	f0
+40033	f0.5
+41839	f0.05
+42223	f0.25
+42227	f0
+42277	f0.25
+42329	f0.33
+42590	f0.4
+42653	f0.5
+42751	f0.75
+42870	f0.33
+42888	f0.25
+42941	f0.4
+43060	f0.35
+43250	f0.3
+43265	f0.25
+43471	f0.75
+43960	f0.5
+43962	f0.5
+43973	f0.5
+43976	f0.5
 #interaction_efficiency_penalty
 11437	f1
 11440	f1.3
@@ -68414,6 +69359,10 @@ public static partial class TypeOrder
 41602	f0
 41608	f1
 41615	f1
+#is_unique
+17049	f0
+17055	f1
+17060	f1
 #item
 2215	n
 12290	n
@@ -69067,6 +70016,7 @@ public static partial class TypeOrder
 32543	f64
 32605	f8
 32618	f64
+32619	f8
 32721	f4320
 32735	f2048
 32745	f64
@@ -69144,6 +70094,25 @@ public static partial class TypeOrder
 14636	f20447
 14637	f3935
 14638	f20447
+#jobban_flag
+2228	n
+2230	sTraitor
+2231	sChangeling
+2232	sHead Revolutionary
+2235	sTraitor
+2236	sTraitor
+2238	sWizard
+2239	sOperative
+2240	sClown Operative
+2243	sBlood Worm
+2249	sChangeling
+2254	sXenomorph
+2255	sSentience Potion Spawn
+2257	sTraitor
+2259	sMalf AI
+2260	sBlob
+10196	n
+10212	sBlood Worm
 #json_config
 8634	rcode/datums/greyscale/json_configs/cerulean_mod.json
 8635	rcode/datums/greyscale/json_configs/cerulean_mod_basic.json
@@ -69895,6 +70864,18 @@ public static partial class TypeOrder
 43908	n
 #keylock
 31031	f2
+#known_trauma
+5975	f0
+5980	f0
+5984	f0
+5987	f0
+5996	f0
+6040	f0
+6041	f0
+6045	f0
+6050	f0
+6054	f0
+6056	f0
 #label
 4930	s
 5207	sSEQUENCE
@@ -69903,6 +70884,8 @@ public static partial class TypeOrder
 23300	n
 30494	s
 33020	n
+#latest_unlocked_world
+34244	sThe Plains
 #law_id
 30663	n
 30664	sconfig_custom
@@ -70183,7 +71166,6 @@ public static partial class TypeOrder
 36604	f2.9
 36607	f2.9
 36624	f2.9
-36625	f2.9
 36629	f2.6
 36650	f3.3
 36684	f2.9
@@ -70401,7 +71383,6 @@ public static partial class TypeOrder
 42520	f4.7
 42565	f2.75
 42594	f4.1
-42616	f3.7
 42628	f10008
 42638	f4.1
 42642	f3.1
@@ -70956,9 +71937,8 @@ public static partial class TypeOrder
 32543	ricons/mob/inhands/items/devices_lefthand.dmi
 32551	ricons/mob/inhands/items/food_lefthand.dmi
 32556	ricons/mob/inhands/items/devices_lefthand.dmi
-32563	ricons/mob/inhands/items/firelance_lefthand.dmi
 32603	ricons/mob/inhands/weapons/guns_lefthand.dmi
-32604	ricons/mob/inhands/equipment/medical_lefthand.dmi
+32619	ricons/mob/inhands/fish_lefthand.dmi
 32654	ricons/mob/inhands/fish_lefthand.dmi
 32655	ricons/mob/inhands/fish_lefthand.dmi
 32656	ricons/mob/inhands/fish_lefthand.dmi
@@ -72209,6 +73189,9 @@ public static partial class TypeOrder
 43509	f0
 43510	f0
 43511	f0
+#long_jump_chance
+15772	f0.0625
+15773	f1.5
 #machine_name
 30600	sGeneric
 30601	sPart-Mart
@@ -72270,6 +73253,62 @@ public static partial class TypeOrder
 33853	f0
 #manual_control
 36210	f0
+#mappath
+3378	n
+3716	s_maps/templates/the_arena.dmm
+3717	s_maps/templates/mansus_backdoor.dmm
+3719	s_maps/minigame/CTF/classic.dmm
+3720	s_maps/minigame/CTF/fourSide.dmm
+3721	s_maps/minigame/CTF/downtown.dmm
+3722	s_maps/minigame/CTF/limbo.dmm
+3723	s_maps/minigame/CTF/cruiser.dmm
+3724	s_maps/minigame/CTF/turbine.dmm
+3726	s_maps/templates/holodeck_offline.dmm
+3727	s_maps/templates/holodeck_emptycourt.dmm
+3728	s_maps/templates/holodeck_dodgeball.dmm
+3729	s_maps/templates/holodeck_basketball.dmm
+3730	s_maps/templates/holodeck_thunderdome.dmm
+3731	s_maps/templates/holodeck_beach.dmm
+3732	s_maps/templates/holodeck_lounge.dmm
+3733	s_maps/templates/holodeck_petpark.dmm
+3734	s_maps/templates/holodeck_firingrange.dmm
+3735	s_maps/templates/holodeck_animeschool.dmm
+3736	s_maps/templates/holodeck_chapelcourt.dmm
+3737	s_maps/templates/holodeck_spacechess.dmm
+3738	s_maps/templates/holodeck_spacecheckers.dmm
+3739	s_maps/templates/holodeck_kobayashi.dmm
+3740	s_maps/templates/holodeck_winterwonderland.dmm
+3741	s_maps/templates/holodeck_photobooth.dmm
+3742	s_maps/templates/holodeck_skatepark.dmm
+3743	s_maps/templates/holodeck_microwave.dmm
+3744	s_maps/templates/holodeck_baseball.dmm
+3745	s_maps/templates/holodeck_card_battle.dmm
+3746	s_maps/templates/holodeck_fitness.dmm
+3747	s_maps/templates/holodeck_medicalsim.dmm
+3748	s_maps/templates/holodeck_thunderdome1218.dmm
+3749	s_maps/templates/holodeck_burntest.dmm
+3750	s_maps/templates/holodeck_wildlifesim.dmm
+3751	s_maps/templates/holodeck_holdoutbunker.dmm
+3752	s_maps/templates/holodeck_anthophillia.dmm
+3753	s_maps/templates/holodeck_refuelingstation.dmm
+3754	s_maps/templates/holodeck_prison.dmm
+3763	s_maps/templates/hilbertshotel.dmm
+3764	s_maps/templates/hilbertshotelempty.dmm
+3765	s_maps/templates/hilbertshotellore.dmm
+3766	s_maps/templates/hilbertshotelstorage.dmm
+3769	s_maps/templates/shelter_1.dmm
+3770	s_maps/templates/shelter_2.dmm
+3771	s_maps/templates/shelter_3.dmm
+3772	s_maps/templates/shelter_t.dmm
+3773	s_maps/templates/fishing_freshwater.dmm
+3774	s_maps/templates/fishing_saltwater.dmm
+3775	s_maps/templates/fishing_tizira.dmm
+3776	s_maps/templates/fishing_hot_spring.dmm
+3777	s_maps/templates/fishing_ice.dmm
+3778	s_maps/templates/fishing_lava.dmm
+3779	s_maps/templates/fishing_plasma.dmm
+3780	s_maps/templates/fishing_depths.dmm
+3781	s_maps/templates/battlecruiser_starfury.dmm
 #maptext
 20368	s
 20833	s
@@ -72997,6 +74036,7 @@ public static partial class TypeOrder
 31937	f200
 31938	f100
 32384	f200
+32619	f200
 32624	f100
 32628	f300
 32629	f360
@@ -73367,6 +74407,7 @@ public static partial class TypeOrder
 36622	f10
 #max_pressure
 8350	f550
+32619	f550
 32623	f1E+31
 32654	f550
 32655	f550
@@ -73644,6 +74685,121 @@ public static partial class TypeOrder
 13713	y/obj/item/stack/sheet/mineral/plasma
 13714	y/obj/item/food/meat/slab/human/mutant/plant
 13715	y/obj/item/food/meat/slab/human/mutant/skeleton
+#medical_record_text
+10342	sPatient has a history with SOMETHING but he refuses to tell us what it is.
+10343	sPatient has a history of hard drugs.
+10344	sPatient is a current smoker.
+10345	sPatient is an alcoholic.
+10346	sPatient's immune system responds violently to certain chemicals.
+10347	sPatient has lost their sensation of smell.
+10348	sPatient suffers from asthma.
+10349	sPatient has permanent blindness.
+10350	sPatient has a tumor in their brain that is slowly driving them to brain death.
+10351	sPatient has an anomalous chronic illness that requires constant medication to keep under control.
+10352	sPatient's cochlear nerve is incurably damaged.
+10353	sPatient demonstrates an unnatural attachment to a family heirloom.
+10354	sPatient has lost their eyelids in a grueling accident.
+10355	sPatient's immune system responds violently to certain food.
+10356	sPatient is afflicted with chronic immunodeficiency.
+10357	sPatient appears to suffer from a weakness in the leg.
+10358	sPatient may involuntarily fall asleep during normal activities, and feel drowsy at any given moment.
+10359	sPatient requires prescription glasses in order to counteract nearsightedness.
+10360	sPatient has severe scarring on one of their eyes, resulting in partial vision loss.
+10361	sPatient starkly refused to take off headwear during examination.
+10362	sPatient mentions photography as a stress-relieving hobby.
+10363	sPatient reports being a big enjoyer of clowns.
+10364	sPatient reports being a big fan of mimes.
+10365	sPatient brain scans show a highly-developed auditory pathway.
+10366	sPatient reports a desire to cover walls with homemade objects.
+10367	sPatient can communicate with sign language.
+10368	sPatient was recently seen for possible paint huffing incident.
+10369	sPatient appears to be suffering from sleep deprivation.
+10370	sPatient scans indicate severe and chronic back pain.
+10371	sPatient requires regular treatment for blood loss due to low production of blood.
+10372	sThis patient has disclosed an extreme hatred for unnatural bodyparts and augmentations.
+10373	sPatient demonstrates a fear of tight spaces.
+10374	sPatient has demonstrated an extreme difficulty with high motor skill paired with an inability to demonstrate critical thinking.
+10375	sPatient is CSL.
+10376	sPatient is cursed with bad luck.
+10377	sPatient has a mild mood disorder causing them to experience acute episodes of depression.
+10378	sPatient has a bipolar personality disorder.
+10379	sPatient is absurdly easy to injure. Please take all due diligence to avoid possible malpractice suits.
+10380	sPatient is absurdly easy to knock out. Do not allow them near a boxing ring.
+10381	sPatient has an untreatable impairment in motor function on half of their body.
+10382	sPatient demonstrates a high level of emotional volatility.
+10383	sPatient is not literate.
+10384	sAlas, the patient struggled to scrape together enough money to pay the checkup bill.
+10385	sPatient suffers from acute Reality Dissociation Syndrome and experiences vivid hallucinations, and may have trouble speaking.
+10386	sPatient demonstrates a low tolerance for alcohol. (Wimp)
+10387	sPatient has a severe fear of being left alone.
+10388	sThe patient is unable to use their voice in any capacity.
+10389	sPatient is unusually pacifistic and cannot bring themselves to cause physical harm.
+10390	sThe patient exhibits congenital hypoesthesia, making them insensitive to pain stimuli.
+10391	sPatient demonstrates a fear of the dark. (Seriously?)
+10392	sPatient presents optimistically, but possesses a tendency to lose their head when placed under pressure.
+10393	sPatient has an untreatable impairment in motor function in the lower extremities.
+10394	sPatient has acute phobia of light, and insists it is physically harmful.
+10395	sPatient possesses a strong tremor in both hands.
+10396	sPatient suffers from prosopagnosia and cannot recognize faces.
+10398	sDuring physical examination, patient was found to have a low-budget prosthetic organ. <b>Removal of these organs is known to be dangerous to the patient as well as the practitioner.</b>
+10399	sPatient presents a notably unassertive personality and is easy to manipulate.
+10400	sPatient demonstrates a fear of fire.
+10401	sDuring physical examination, patient was found to have all low-budget prosthetic limbs.
+10402	sPatient is usually anxious in social encounters and prefers to avoid them.
+10403	sPatient is soft-spoken and difficult to hear.
+10404	sDuring physical examination, patient was found to have numerous low-budget prosthetic internal organs. <b>Removal of these organs is known to be dangerous to the patient as well as the practitioner.</b>
+10405	sPatient's mind is in a vulnerable state, and cannot recover from traumatic events.
+10406	sPatient is unable to tell objects apart from a distance.
+10407	sPatient demonstrates irregular nutrition preferences.
+10408	sPatient has passed all our social fitness tests with flying colours, but had trouble on the empathy tests.
+10409	sPatient does not speak Galactic Common and may require an interpreter.
+10410	sPatient has a severe video game addiction.
+10411	sPatient's irises are different colors.
+10412	sPatient is afflicted with almost complete color blindness.
+10413	sPatient suffers from ageusia and is incapable of tasting food or reagents.
+10414	sPatient has an irrational fear of something.
+10415	sPatient is correct to think that pineapple is disgusting.
+10416	sPatient demonstrates a pathological love of pineapple.
+10417	sFucking creep kept staring at me the whole damn checkup. I'm only diagnosing this because it's less awkward than thinking it was on purpose.
+10418	sPatient has Thanatorenasia - in the event of their death and resuscitation, they may experience memory loss or a change in personality.
+10419	sPatient reports hating pathetic creatures of meat and bone.
+10420	sPatient reports a vegetarian diet.
+10421	sPatient demonstrates a high tolerance for alcohol.
+10422	sPatient speaks multiple languages.
+10423	sPatient has a cybernetic implant on their back of their head that lets them install and remove skillchips at will. Gross.
+10424	sPatient explained how they got caught up in 'the skillchip chase' recently, and now they have some useless chip in their head. Dumbass.
+10425	sPatient routinely fakes cardiac arrest to get out of fights.
+10426	sPatient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages.
+10427	sPatient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed.
+10428	sPatient scored highly on cardio tests.
+10429	sPatient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case.
+10430	sPatient demonstrates constant euthymia irregular for environment. It's a bit much, to be honest.
+10431	sPatient has an unusually sensitive olfactory system.
+10432	sPatient's dexterity belies a strong capacity for stealth.
+10433	sPatient has a fascination with fire, and exhibits a compulsive desire to start fires.
+10434	sPatient demonstrates an uncanny knack for self-diagnosis.
+10435	sPatient has been exposed to planetary conditions for extended periods, resulting in an excessively stout build.
+10436	sPatient demonstrates a high aversion to danger and has described hiding in containers out of fear.
+10437	sPatient is well-adapted to non-terrestrial environments.
+10438	sPatient has a stronger than average immune system...to food poisoning, at least.
+10439	sPatient displays mastery over throwing balls.
+10440	sPatient has an above average appreciation for food and drink.
+#medical_symptom_text
+10373	sExperiences panic attacks and shortness of breath when confined in small spaces. Medication such as Psicodine may lessen the severity of the reaction.
+10374	sExhibits poor coordination and frequent accidents, along with difficulty in problem-solving and decision-making tasks.
+10377	sExperiences persistent feelings of sadness, hopelessness, and a lack of motivation.
+10378	sExhibits sudden and unpredictable changes in personality, mood, and behavior, often swinging between extremes of emotion and demeanor.
+10382	sExhibits heightened emotional responses to stimuli, leading to greatly increased sensitivity and reactivity in social situations.
+10390	sExhibits an inability to perceive pain, which may lead to unintentional self-injury and delayed response to harmful stimuli.
+10391	sExperiences panic attacks and shortness of breath when in dark environments. Medication such as Psicodine may lessen the severity of the reaction.
+10394	sExhibits heightened sensitivity to bright lights, leading to discomfort and avoidance behaviors.
+10396	sUnable to recognize familiar faces, often relying on alternative cues such as voice, clothing, identification, or context to identify individuals.
+10400	sExperiences panic attacks and shortness of breath when near open flames. Medication such as Psicodine may lessen the severity of the reaction.
+10402	sExperiences intense anxiety and discomfort in social situations, leading to avoidance of social interactions and difficulty in communication.
+10405	sExhibits severe mood instability and an inability to recover from psychological stressors.
+10418	sIn the event of the patient's death and resuscitation, they may experience memory loss or a change in personality.
+10430	sExhibits persistent feelings of happiness and elevated mood, which may lead to unrealistic optimism and risk-taking behaviors.
+10433	sExperiences an uncontrollable urge to start fires and a fascination with flames.
 #melee_damage_lower
 19143	f10
 19144	f15
@@ -74641,6 +75797,15 @@ public static partial class TypeOrder
 29021	f10
 29023	f15
 29024	f3
+#minimum_distance
+2291	n
+4991	f0
+5080	f20
+5201	f2
+5202	f0
+21542	f1
+21544	f5
+21552	f5
 #minimum_value_override
 9309	i0
 9310	i0
@@ -74648,6 +75813,83 @@ public static partial class TypeOrder
 23995	f0
 24027	f0
 24062	f25
+#mob_size
+20948	f1
+20950	f3
+20957	f3
+20976	f0
+20987	f1
+20992	f3
+21015	f1
+21017	f4
+21018	f1
+21025	f1
+21041	f1
+21051	f1
+21055	f1
+21064	f0
+21066	f1
+21068	f2
+21130	f4
+21131	f4
+21150	f3
+21184	f1
+21188	f2
+21194	f4
+21198	f4
+21205	f3
+21207	f3
+21213	f3
+21222	f3
+21235	f3
+21246	f3
+21256	f3
+21261	f1
+21265	f0
+21270	f0
+21272	f1
+21302	f0
+21305	f4
+21311	f4
+21318	f3
+21319	f3
+21320	f3
+21322	f1
+21323	f3
+21324	f3
+21357	f3
+21358	f4
+21362	f1
+21363	f4
+21365	f4
+21379	f0
+21381	f1
+21384	f1
+21388	f0
+21416	f3
+21418	f1
+21438	f0
+21439	f1
+21442	f3
+21446	f0
+21470	f0
+21484	f3
+21496	f1
+21497	f1
+21498	f1
+21499	f0
+21501	f0
+21502	f0
+21505	f1
+21511	f0
+21518	f1
+21522	f0
+21528	f0
+21529	f0
+21538	f1
+21543	f4
+21560	f3
+21563	f3
 #mob_throw_hit_sound
 29061	rsound/misc/moist_impact.ogg
 31835	rsound/items/weapons/pierce.ogg
@@ -75299,6 +76541,29 @@ public static partial class TypeOrder
 32967	f5
 39213	f5
 39848	f0
+#move_force
+8323	n
+20976	f0
+21017	f30000
+21045	f2999
+21131	f30000
+21132	f1000
+21160	f2999
+21163	f2999
+21165	f2999
+21167	f500
+21174	f2999
+21305	f30000
+21311	f30000
+21323	f2999
+21352	f0
+21492	f9000
+21543	f30000
+21582	f1E+31
+38106	f30000
+38111	f30000
+39255	f1E+31
+43935	f111.111115
 #move_resist
 8323	n
 20896	f1E+31
@@ -75350,7 +76615,6 @@ public static partial class TypeOrder
 37304	f1E+31
 38909	f1E+31
 39056	f1000
-39065	f1000
 39098	f1000
 39255	f1E+31
 39828	f2000
@@ -75383,6 +76647,21 @@ public static partial class TypeOrder
 44045	f1E+31
 44046	f1E+31
 44047	f1E+31
+#move_to_delay
+21542	f3
+21544	f5
+21546	f5
+21547	f10
+21548	f20
+21549	f5
+21551	f10
+21558	f6
+21565	f5
+21566	f5
+21567	f10
+21569	f3
+21570	f2
+21571	f10
 #movement_type
 5071	n
 21306	f8
@@ -81141,7 +82420,6 @@ public static partial class TypeOrder
 12093	sAbductor Agent
 12096	n
 12099	n
-12118	sCoder
 12127	n
 12128	spaintable_decals
 12129	sachievements
@@ -95254,13 +96532,11 @@ public static partial class TypeOrder
 32554	sitem fortification scroll
 32555	sunlimited foolproof item fortification scroll
 32556	sExperi-Scanner
-32557	sexploration drone
 32558	sstandard fuel pellet
 32559	sadvanced fuel pellet
 32560	sexotic fuel pellet
 32561	santique
 32562	strade contract chip
-32563	sfire lance
 32564	scan o bait
 32565	scan o' worm
 32566	scan o' worm deluxe
@@ -95300,7 +96576,6 @@ public static partial class TypeOrder
 32601	sluxury elite bar capsule
 32602	semergency relief capsule
 32603	sfish gene-gun
-32604	sfish trait injector
 32605	sfish tank
 32607	sbluespace fish tank
 32608	sDIY Aquarium Construction Kit
@@ -95313,6 +96588,7 @@ public static partial class TypeOrder
 32616	saquarium bioelectricity kit
 32617	sbluespace fish tank kit
 32618	sfish analyzer
+32619	sfish
 32620	ssand surfer
 32621	sburrower crab
 32622	sbump-fish
@@ -96304,7 +97580,6 @@ public static partial class TypeOrder
 34355	svault controller
 34356	spower monitoring console
 34357	sold computer
-34358	sauxiliary base management console
 34364	sgas turbine control computer
 34365	t\\improper PanD.E.M.I.C 2200
 34366	sR&D Console
@@ -96773,7 +98048,6 @@ public static partial class TypeOrder
 36536	spipe scrubber
 36537	sportable air pump
 36538	sLil' Pump
-36539	sgateway
 36543	stram controller
 36546	stram central controller
 36547	sdestination sign
@@ -96825,7 +98099,6 @@ public static partial class TypeOrder
 36621	sdisk compartmentalizer
 36622	ssurvival pod storage
 36624	sstove
-36625	srestaurant portal
 36627	sbar portal
 36628	sready declaration device
 36629	sconveyor belt
@@ -96954,7 +98227,6 @@ public static partial class TypeOrder
 36806	sconveyor switch
 36809	sdisposal unit
 36811	sdelivery chute
-36813	sanomaly refinery
 36814	sgizmo
 36820	stachyon-doppler array
 36821	sgrowing vat
@@ -97937,7 +99209,6 @@ public static partial class TypeOrder
 39062	slifeguard sleeper
 39063	sbartender sleeper
 39064	spreserved terrarium
-39065	sash walker egg
 39066	sSyndicate Bioweapon Scientist
 39067	sSyndicate Comms Agent
 39068	sIcemoon Comms Agent
@@ -99450,7 +100721,6 @@ public static partial class TypeOrder
 43276	sbookcase (Religion)
 43277	sbookcase (Adult)
 43278	sbookcase (Reference)
-43280	smysterious pillar
 43282	shulking wreck
 43284	snecropolis tendril nest
 43285	snecropolis tendril nest
@@ -101698,6 +102968,7 @@ public static partial class TypeOrder
 32551	f8
 32599	f1
 32618	f4096
+32619	f8
 32701	f4096
 32704	f4096
 32705	f4096
@@ -102188,7 +103459,6 @@ public static partial class TypeOrder
 39061	y/datum/outfit/beachbum
 39062	y/datum/outfit/beachbum/lifeguard
 39063	y/datum/outfit/spacebartender
-39065	y/datum/outfit/ashwalker
 39066	y/datum/outfit/lavaland_syndicate
 39067	y/datum/outfit/lavaland_syndicate/comms
 39068	y/datum/outfit/lavaland_syndicate/comms/icemoon
@@ -103087,6 +104357,7 @@ public static partial class TypeOrder
 32540	rsound/items/handling/component_pickup.ogg
 32542	rsound/items/evidence_bag/evidence_bag_pickup.ogg
 32556	sgeneric_device_pickup
+32619	sfish_pickup
 32624	rsound/items/handling/materials/glass_pick_up.ogg
 32654	sfish_pickup
 32656	rsound/items/handling/materials/glass_pick_up.ogg
@@ -103537,7 +104808,6 @@ public static partial class TypeOrder
 36488	f0
 36497	f27
 36498	f-27
-36539	f-32
 36549	f-8
 36550	f8
 36555	f32
@@ -104566,7 +105836,6 @@ public static partial class TypeOrder
 36486	f0
 36495	f27
 36496	f-27
-36539	f-32
 36553	f32
 36554	f-32
 36557	f32
@@ -105757,12 +107026,24 @@ public static partial class TypeOrder
 32158	sInozhakust
 32159	sPlasma flower
 32160	sStar Cactus Cluster
+#player_current_hp
+34244	f100
+#player_current_mp
+34244	f50
+#player_current_world
+34244	sThe Plains
+#player_gold
+34244	f30
 #player_hp
 19196	f30
 19197	f35
 #player_mp
 19196	f10
 19197	f15
+#player_turn
+34244	f1
+#plunging_speed
+15777	f-22
 #plural_form
 13688	sShadowpeople
 13699	sFlypeople
@@ -106117,6 +107398,83 @@ public static partial class TypeOrder
 #powerloss_inhibition
 19294	f0
 19297	f1
+#pref_flag
+2228	n
+2230	sSyndicate Infiltrator
+2231	sStowaway Changeling
+2232	sProvocateur
+2238	sWizard (Midround)
+2239	sOperative (Midround)
+2240	sClown Operative (Midround)
+2241	sBlob
+2242	sXenomorph
+2243	sBlood Worm Infestation
+2244	sNightmare
+2245	sSpace Dragon
+2246	sAbductor
+2247	sSpace Ninja
+2248	sRevenant
+2249	sChangeling (Midround)
+2251	sParadox Clone
+2252	sVoidwalker
+2253	sFugitive
+2257	sSyndicate Sleeper Agent
+2259	sMalf AI (Midround)
+2260	sBlob Infection
+2261	sObsessed
+2263	sTraitor
+2264	sMalf AI
+2265	sBlood Brother
+2266	sChangeling
+2267	sBlood Worm
+2268	sHeretic
+2269	sWizard
+2270	sCultist
+2271	sOperative
+2272	sClown Operative
+2273	sHead Revolutionary
+2274	sSpy
+10196	n
+10199	sAbductor
+10204	sLavaland
+10205	sBattlecruiser Crew
+10207	sBattlecruiser Captain
+10208	sBlob
+10209	sBlob Infection
+10211	sBlood Worm
+10212	sBlood Worm Infestation
+10213	sBrainwashed Victim
+10215	sChangeling
+10218	sChangeling
+10219	sOperative
+10228	sCultist
+10271	sEvil Clone
+10272	sFugitive
+10275	sHeretic
+10276	sHeretic
+10279	sHeretic
+10282	sHypnotized Victim
+10284	sMalf AI
+10287	sNightmare
+10288	sObsessed
+10290	sParadox Clone
+10291	sTraitor
+10292	sPyroclastic Anomaly Slime
+10295	sRevolutionary
+10296	sHead Revolutionary
+10302	sSpace Dragon
+10303	sSpace Ninja
+10306	sSpy
+10312	sTraitor
+10313	sContractor Support Unit
+10318	sSunwalker
+10319	sVoidwalker
+10322	sSentience Potion Spawn
+10324	sWizard
+10330	sXenomorph
+10332	sGlitch
+10336	sGlitch
+10337	sRecovered Crew
 #prefix
 1203	n
 3380	s_maps/RandomRuins/IceRuins/
@@ -106168,6 +107526,78 @@ public static partial class TypeOrder
 #pressure_limit
 36504	f500000
 36533	f1E+14
+#preview_name
+6593	n
+6595	sRed
+6596	sBlue
+6598	sRed
+6599	sDark Blue
+6600	sYellow
+6601	sBlack
+6602	sGreen
+6603	sPurple
+6604	sGrey
+6605	sLight Blue
+6607	sDefault
+6608	sEnergy
+6610	sJoy
+6611	sFlushed
+6612	sPensive
+6613	sAngry
+6614	sPleading
+6616	sRed
+6617	sWhite
+6618	sBlue
+6619	sBlack
+6620	sroyal division
+6621	sroyal division - alternate
+6622	sexplorer corps - alternate
+6624	sRainbow Pride
+6625	sBisexual Pride
+6626	sPansexual Pride
+6627	sAsexual Pride
+6628	sNon-binary Pride
+6629	sTransgender Pride
+6630	sIntersex Pride
+6631	sLesbian Pride
+6632	sGay Pride
+6634	sSword
+6635	sHarpoon
+6636	sDagger and Blaster
+6637	sGlaive
+6639	sSkull
+6641	sBrown
+6642	sBlack
+6643	sWhite
+6645	sOak
+6646	sGold
+6647	sRosewood
+6648	sBlack and Silver
+6649	sCommand Blue
+6651	sDefault
+6652	sFitz Special
+6653	sPolice Positive Special
+6654	sBlued Steel
+6655	sStainless Steel
+6656	sGold Trim
+6657	sGolden
+6658	sThe Peacemaker
+6659	sBlack Panther
+6661	sStandard Finish
+6662	sDark Red Finish
+6663	sAsh
+6664	sFaded Grey
+6665	sMaple
+6666	sRosewood
+6668	sBlue
+6669	sCyan
+6670	sGreen
+6671	sRed
+6672	sOrange
+6673	sPurple
+6675	sRed
+6676	sYellow
+6677	sBlue
 #priority
 10	f21
 11	f19
@@ -106545,6 +107975,10 @@ public static partial class TypeOrder
 19253	smodsuit_control
 19255	sspectre_meter_0
 19263	stext
+#projectile_icon
+32868	ricons/obj/weapons/guns/projectiles.dmi
+#projectile_icon_state
+32868	spulse1
 #projectile_sound
 774	n
 780	rsound/items/weapons/kinetic_accel.ogg
@@ -106917,6 +108351,26 @@ public static partial class TypeOrder
 43084	y/obj/projectile/bullet/shrapnel
 43085	y/obj/projectile/beam/laser/repeater
 43086	y/obj/projectile/bullet/ballista_spear
+#pull_force
+8323	n
+20976	f0
+21017	f30000
+21131	f30000
+21160	f2999
+21163	f2999
+21165	f2999
+21167	f500
+21174	f2999
+21215	f0
+21305	f30000
+21311	f30000
+21318	f2999
+21323	f2999
+21352	f0
+21388	f0
+21492	f9000
+21543	f30000
+39255	f1E+31
 #purchase_path
 11767	n
 11769	y/obj/item/reagent_containers/condiment/milk
@@ -107462,8 +108916,80 @@ public static partial class TypeOrder
 #quirk
 17754	n
 17755	y/datum/quirk/prosthetic_limb
+#quirk_flags
+10342	f3
+10346	f3
+10349	f5
+10350	f3
+10353	f3
+10359	f5
+10360	f5
+10361	f5
+10367	f5
+10369	f7
+10373	f17
+10374	f16
+10375	f8
+10377	f19
+10378	f19
+10382	f16
+10384	f9
+10390	f16
+10391	f17
+10394	f17
+10396	f17
+10397	f5
+10400	f16
+10401	f5
+10402	f17
+10405	f16
+10411	f5
+10418	f32
+10419	f3
+10426	f3
+10430	f19
+10433	f19
+10435	f5
+10437	f5
+#quote
+19372	sHail Coderbus! Coderbus #1! Fuck the playerbase!
+19373	sNanotrasen Recommends!
+19374	sMay you find peace in a metal shell.
+19375	sIt must burn! The primal energy must be respected.
+19376	sGreed is good.
+19377	sTo feel the freedom, you must first understand captivity.
+19378	sA good, honorable crusade against evil is required.
+19379	sYour kingdom in the darkness.
+19380	sYour next swing must be faster, neophyte. Steel your heart.
+19381	sEverything follows a rhythm: the heartbeat of the universe!
+19382	sThe dream is a window into the soul.
 #r_code
 36332	sADMIN
+#radial_icon
+3773	sriver
+3774	sseaboat
+3775	splanet
+3776	sonsen
+3777	sice
+3778	slava
+3779	splasma
+3780	sdepths
+8048	ricons/hud/radial_pets.dmi
+8064	ricons/effects/effects.dmi
+8065	ricons/mob/simple/animal.dmi
+8066	ricons/mob/simple/pets.dmi
+8067	ricons/obj/antags/cult/rune.dmi
+8078	ricons/mob/actions/actions_spells.dmi
+8079	ricons/mob/actions/actions_items.dmi
+8080	ricons/obj/weapons/guns/projectiles.dmi
+8081	ricons/effects/beam.dmi
+8082	ricons/obj/weapons/guns/projectiles.dmi
+8083	ricons/mob/actions/actions_items.dmi
+8086	ricons/obj/art/camera.dmi
+8093	ricons/obj/service/janitor.dmi
+8094	ricons/obj/service/hydroponics/equipment.dmi
+8098	ricons/obj/ore.dmi
+8101	ricons/mob/actions/actions_mecha.dmi
 #radioactive_nebula_shielding
 36776	f4
 #radius
@@ -107478,6 +109004,7 @@ public static partial class TypeOrder
 #radius_boost
 34547	f0
 #random_case_rarity
+32619	f1000
 32620	f400
 32623	f0
 32624	f50
@@ -108337,10 +109864,144 @@ public static partial class TypeOrder
 13512	f16777215
 13513	f16777215
 13514	f16777215
+#range
+771	f5
+842	f9
+908	f3
+910	f5
+1517	f0
+4935	f7
+5038	f2
+5042	f3
+5158	f9
+5241	f7
+6096	f5
+6142	n
+6173	f5
+6288	f1
+6305	f1
+6374	n
+8357	n
+19465	f14
+21292	f13
+21293	f7
+21295	f7
+21296	f5
+21297	f13
+22533	f5
+23348	f1
+23349	f2
+23352	f7
+23394	f1
+23404	f3
+23405	f3
+23406	f1
+23409	f1
+23412	f2
+23413	f2
+23414	f3
+23415	f0
+23416	f1
+23423	f1
+23426	f3
+23427	f3
+23430	f2
+23444	f3
+23459	f3
+23460	f1
+24373	f0
+24376	f9
+27043	f4
+28190	f7
+28426	n
+30822	f12
+30823	f5
+31138	f7
+31140	f4
+32543	f8
+32928	f5
+34206	f4
+34210	f6
+34522	f10
+34523	f8
+37324	f3
+37339	f1
+38095	f2
+41793	f7
+41856	f7
+42919	f1
+43235	f2
+43516	f6
+43523	f255
+43552	f150
+43559	f15
+43591	f20
+43592	f5
+43593	f45
+43594	f6
+43598	f7
+43617	f400
+43622	f6
+43623	f25
+43624	f20
+43632	f6
+43649	f7
+43659	f10
+43710	f10
+43717	f7
+43727	f400
+43731	f50
+43732	f16
+43733	f50
+43734	f400
+43735	f200
+43746	f7
+43747	f6
+43754	f8
+43759	f15
+43760	f7
+43763	f100
+43764	f10
+43765	f105
+43766	f25
+43784	f7
+43809	f75
+43810	f5
+43819	f9
+43820	f6
+43821	f20
+43822	f9
+43826	f3
+43827	f4
+43828	f5
+43838	f9
+43839	f9
+43840	f7
+43844	f7
+43845	f2
+43850	f500
+43851	f150
+43852	f150
+43859	f10
+43861	f9
+43863	f3
+43869	f10
+43870	f7
+43872	f20
+43875	f5
+43887	f21
+43888	f1
+43889	f7
+43893	f16
+43894	f20
+43901	f3
+43902	f4
+43903	f7
+43904	f7
+44911	n
 #range_boost
 34554	f0
 #rarity
-12118	suber rare to the extreme
 32003	f0
 32006	f15
 32007	f30
@@ -109057,6 +110718,7 @@ public static partial class TypeOrder
 17038	y/datum/reagent/consumable/ethanol/squirt_cider
 17039	y/datum/reagent/consumable/ethanol/jack_rose
 #required_fluid_type
+32619	sFreshwater
 32620	sAir
 32621	sSaltwater
 32622	sAny Fluid
@@ -109095,6 +110757,115 @@ public static partial class TypeOrder
 32687	sSaltwater
 32688	sSaltwater
 32689	sSaltwater
+#required_reagents
+15864	n
+19658	n
+36760	n
+#required_temperature_max
+15783	f1E+31
+15787	f288.15
+15788	f283.15
+15798	f333.15
+32619	f373.15
+32620	f333.15
+32621	f313.15
+32622	f313.15
+32623	f1E+31
+32625	f473.15
+32626	f292.15
+32627	f292.15
+32628	f300.15
+32630	f299.15
+32634	f303.15
+32635	f301.15
+32636	f301.15
+32637	f303.15
+32638	f299.15
+32639	f293.15
+32640	f299.15
+32641	f318.15
+32649	f400
+32650	f288.15
+32652	f1273.15
+32653	f353.15
+32654	f340.15
+32655	f1E+31
+32656	f340.15
+32657	f1E+31
+32660	f311.15
+32662	f303.15
+32664	f303.15
+32665	f301.15
+32666	f301.15
+32667	f301.15
+32668	f291.15
+32671	f299.15
+32672	f296.15
+32673	f291.15
+32674	f308.15
+32675	f313.15
+32678	f493.15
+32681	f313.15
+32682	f301.15
+32683	f303.15
+32684	f299.15
+32685	f303.15
+32687	f305.15
+32688	f305.15
+32689	f305.15
+#required_temperature_min
+15783	f0
+15787	f287.15
+15788	f282.15
+15797	f333.15
+32619	f273.15
+32620	f298.15
+32621	f293.15
+32622	f288.15
+32623	f0
+32625	f0
+32626	f276.15
+32627	f276.15
+32628	f285.15
+32630	f291.15
+32634	f295.15
+32635	f293.15
+32636	f293.15
+32637	f285.15
+32638	f291.15
+32639	f288.15
+32640	f278.15
+32641	f293.15
+32649	f282.15
+32650	f160
+32652	f313.15
+32653	f173.15
+32654	f270.15
+32655	f0
+32656	f0
+32657	f0
+32660	f276.15
+32662	f295.15
+32664	f295.15
+32665	f296.15
+32666	f296.15
+32667	f296.15
+32668	f275.15
+32671	f278.15
+32672	f275.15
+32673	f275.15
+32674	f288.15
+32675	f283.15
+32677	f293.15
+32678	f323.15
+32681	f278.15
+32682	f288.15
+32683	f283.15
+32684	f291.15
+32685	f293.15
+32687	f297.15
+32688	f283.15
+32689	f283.15
 #requires_space
 19756	f0
 19759	f1
@@ -109676,7 +111447,6 @@ public static partial class TypeOrder
 36337	f99
 36493	f2
 36500	f243
-36539	f115
 36543	f51
 36557	f51
 36567	f115
@@ -109685,7 +111455,6 @@ public static partial class TypeOrder
 36602	f2
 36609	f4
 36624	f2
-36625	f50
 36696	f99
 36703	f115
 36750	f50
@@ -109858,10 +111627,51 @@ public static partial class TypeOrder
 44049	f35
 #resonance_damage
 37208	f20
+#restaurant_order
+12659	y/datum/custom_order/reagent/soup
 #restockable
 15352	f0
 15353	f0
 15378	f0
+#restricted
+3725	f0
+3747	f1
+3748	f1
+3749	f1
+3750	f1
+3751	f1
+3752	f1
+3753	f1
+3754	f1
+19945	f1
+20009	f1
+20019	f1
+20031	f1
+20032	f1
+20033	f1
+20034	f1
+20055	f1
+20056	f1
+20057	f1
+20070	f1
+20078	f1
+20089	f1
+20090	f1
+20093	f1
+20094	f1
+20106	f1
+20110	f1
+20113	f1
+20116	f1
+20120	f1
+20131	f1
+20166	f1
+20167	f1
+20168	f1
+20218	f1
+20224	f0
+20225	f0
+45032	f0
 #result
 2217	n
 6143	n
@@ -111087,6 +112897,92 @@ public static partial class TypeOrder
 28425	n
 28426	n
 30046	n
+#resulting_atom
+8318	n
+19658	n
+19659	y/mob/living/basic/mouse
+19660	y/mob/living/basic/chicken
+19661	y/mob/living/basic/cow
+19662	y/mob/living/basic/cow/moonicorn
+19663	y/mob/living/basic/goat
+19664	y/mob/living/basic/sheep
+19665	y/mob/living/basic/pig
+19666	y/mob/living/basic/pet/cat
+19667	y/mob/living/basic/pet/dog/corgi
+19668	y/mob/living/basic/pet/dog/pug
+19669	y/mob/living/basic/pet/fox
+19670	y/mob/living/basic/stoat
+19671	y/mob/living/basic/rabbit
+19672	y/mob/living/basic/mothroach
+19673	y/mob/living/basic/bear
+19674	y/mob/living/basic/carp
+19675	y/mob/living/basic/carp/mega
+19676	y/mob/living/basic/pet/penguin/baby
+19677	y/mob/living/basic/snake
+19678	y/mob/living/basic/lizard
+19679	y/mob/living/basic/slime
+19680	y/mob/living/basic/blob_minion/spore/independent
+19681	y/mob/living/basic/blob_minion/blobbernaut/independent
+19682	y/mob/living/simple_animal/hostile/ooze/gelatinous
+19683	y/mob/living/simple_animal/hostile/ooze/grapes
+19684	y/mob/living/basic/cockroach
+19685	y/mob/living/basic/cockroach/glockroach
+19686	y/mob/living/basic/cockroach/hauberoach
+19687	y/mob/living/basic/tree
+19688	y/mob/living/basic/vatbeast
+19691	y/mob/living/basic/clown/banana
+19692	y/mob/living/basic/clown/mutant/glutton
+19693	y/mob/living/basic/clown/longface
+19694	y/obj/effect/spawner/random/frog
+19695	y/mob/living/basic/axolotl
+19696	y/mob/living/basic/mushroom
+19697	y/obj/item/queen_bee/bought
+19698	y/mob/living/basic/butterfly
+19699	y/mob/living/basic/mega_arachnid
+19700	y/mob/living/basic/snail
+19702	y/obj/item/organ/heart
+19703	y/obj/item/organ/heart/evolved
+19704	y/obj/item/organ/heart/evolved/sacred
+19705	y/obj/item/organ/heart/corrupt
+19706	y/obj/item/organ/lungs
+19707	y/obj/item/organ/lungs/evolved
+19708	y/obj/item/organ/liver
+19709	y/obj/item/organ/liver/evolved
+19710	y/obj/item/organ/liver/bloody
+19711	y/obj/item/organ/liver/distillery
+19712	y/obj/item/organ/stomach
+19713	y/obj/item/organ/stomach/evolved
+#resulting_atom_count
+19658	f1
+19659	f2
+19684	f5
+19685	f2
+19686	f2
+19698	f3
+#resulting_food_path
+15865	n
+15866	y/obj/item/food/tofu
+15867	y/obj/item/food/candy_corn
+15870	y/obj/item/food/chocolatebar
+15871	y/obj/item/food/chocolatebar
+15872	y/obj/item/food/chocolatebar
+15878	y/obj/item/food/cheese/wheel
+15879	y/obj/item/food/meat/slab/synthmeat
+15883	y/obj/item/food/dough
+15884	y/obj/item/food/rice_dough
+15885	y/obj/item/food/cakebatter
+15886	y/obj/item/food/cakebatter/vegan
+15895	y/obj/item/food/mothic_pizza_dough
+15896	y/obj/item/food/cheese/curd_cheese
+15897	y/obj/item/food/cheese/mozzarella
+15899	y/obj/item/food/bread/corn
+15965	y/obj/item/food/spaghetti/boilednoodles
+15966	y/obj/item/food/spaghetti/ramen_beef
+15980	y/obj/item/food/volt_fish
+#retreat_distance
+21542	n
+21544	i5
+21552	i5
 #righthand_file
 21600	ricons/mob/inhands/clothing/gloves_righthand.dmi
 21691	ricons/mob/inhands/clothing/hats_righthand.dmi
@@ -111551,9 +113447,8 @@ public static partial class TypeOrder
 32543	ricons/mob/inhands/items/devices_righthand.dmi
 32551	ricons/mob/inhands/items/food_righthand.dmi
 32556	ricons/mob/inhands/items/devices_righthand.dmi
-32563	ricons/mob/inhands/items/firelance_righthand.dmi
 32603	ricons/mob/inhands/weapons/guns_righthand.dmi
-32604	ricons/mob/inhands/equipment/medical_righthand.dmi
+32619	ricons/mob/inhands/fish_righthand.dmi
 32654	ricons/mob/inhands/fish_righthand.dmi
 32655	ricons/mob/inhands/fish_righthand.dmi
 32656	ricons/mob/inhands/fish_righthand.dmi
@@ -111699,6 +113594,10 @@ public static partial class TypeOrder
 19879	sGastric Lavage (Stomach Pump)
 19880	sNutrient Processor Purge (Stomach Pump)
 19881	sPteroplasty (Wing Repair)
+#robust_searching
+21542	f0
+21543	f1
+21564	f1
 #rods_amount
 42590	f2
 42591	f1
@@ -111859,9 +113758,21 @@ public static partial class TypeOrder
 11258	rsound/items/handling/medkit/medkit_rustle.ogg
 11279	rsound/items/handling/toolbox/toolbox_rustle.ogg
 11296	scig_pack_insert
+#safe
+3773	f1
+3778	f0
+3779	f0
+3780	f0
+33514	f1
+33614	f0
+33622	f0
 #safe_co2_max
 29535	f20
 29541	f20
+#safe_for_consumption
+25627	f1
+25632	f0
+25633	f0
 #safe_oxygen_min
 29522	f0
 29523	f0
@@ -112094,6 +114005,61 @@ public static partial class TypeOrder
 10170	soperative_alias
 10171	shacker_alias
 10172	sloadout_list
+#scan_desc
+5973	spsychotic schizophrenic delusions
+5974	spartial schizophrenia
+5976	sgod delusion
+5977	sbluespace attunement
+5978	squantum alignment
+5979	sviolent psychosis
+5981	straumatic neuropathy
+5982	schronic functional necrosis
+5983	sexistential crisis
+5984	scriminal mind
+5985	sPTSD
+5986	sferality
+5987	sobject attachment
+5988	sdamaged frontal lobe
+5989	sdamaged frontal lobe
+5990	slooping thought pattern
+5992	slight hypersensitivity
+5993	sparanormal activity
+5994	sthaumic blank
+5995	sextra-sensory paranoia
+5998	sschizophrenia
+5999	sreduced mouth coordination
+6000	sreduced brain activity
+6001	scommunication disorder
+6002	sconcussion
+6003	sself-awareness deficit
+6004	sweak motor nerve signal
+6005	snervous fits
+6006	snervous cough
+6007	sinability to form complex sentences
+6008	slooping neural pattern
+6009	scolorblindness
+6010	spossessiveness
+6011	sphobia
+6036	sextensive damage to the brain's speech center
+6037	sextensive damage to the brain's language center
+6038	sextensive damage to the brain's occipital lobe
+6039	scerebral paralysis
+6044	straumatic narcolepsy
+6045	schronic narcolepsy
+6046	smonophobia
+6047	sextreme discoordination
+6048	spacific syndrome
+6049	soneiric feedback loop
+6050	soneiric feedback loop
+6051	sdyslexia
+6052	skleptomania
+6053	scomplete lobe separation
+6054	scomplete lobe separation
+6055	salcohol-induced CNS impairment
+6056	scosmic neural pattern
+6057	sstable cosmic neural pattern
+#search_objects
+21542	f0
 #sechud_icon
 8975	ricons/mob/huds/hud.dmi
 #sechud_icon_state
@@ -112590,10 +114556,28 @@ public static partial class TypeOrder
 44091	y/obj/item/stack/sheet/bronze
 44095	y/obj/item/stack/sheet/plasteel
 44098	y/obj/item/stack/sheet/mineral/plastitanium
+#shelter_id
+3768	n
+3769	sshelter_alpha
+3770	sshelter_beta
+3771	sshelter_charlie
+3772	sshelter_toilet
+3773	sfishing_default
+3774	sfishing_beach
+3775	sfishing_tizira
+3776	sfishing_hot_spring
+3777	sfishing_ice
+3778	sfishing_lava
+3779	sfishing_plasma
+3780	sfishing_depths
 #shielding_strength
 34557	n
 34558	i999
 34560	i4
+#short_jump_chance
+15772	f2.25
+15773	f0
+15774	f6.75
 #shots_before_degradation
 24130	f10
 #should_draw_greyscale
@@ -113816,6 +115800,11 @@ public static partial class TypeOrder
 31798	f1
 32001	f1
 32191	f1
+#spawn_chance
+1503	f5
+6369	n
+19143	f33
+19150	f1
 #spawn_positions
 14531	f0
 14532	f3
@@ -114278,12 +116267,149 @@ public static partial class TypeOrder
 27584	f4
 27587	f2
 27589	f4
+#spread_flags
+1458	f56
+1465	f2
+1466	f2
+1467	f28
+1468	f2
+1473	f28
+1474	f28
+1475	f2
+1477	f28
+1478	f1
+1479	f2
+1480	f28
+1481	f28
+1484	f1
+1485	f28
+1486	f2
+1488	f2
+1489	f1
+1491	f28
+1492	f28
+1493	f1
+1494	f2
+1503	f16
+1504	f28
+1506	f2
+1507	f2
+1508	f2
+1509	f2
+#spread_text
+1458	s
+1459	sUnknown
+1465	sNone
+1466	sNone
+1467	sSkin contact
+1468	sNone
+1473	sSkin contact
+1474	sSkin contact
+1475	sNone
+1476	sAirborne
+1477	sSkin contact
+1478	sNone
+1479	sNone
+1480	sSkin contact
+1481	sSkin contact
+1482	sAirborne
+1483	sAirborne
+1484	sNone
+1485	sSkin contact
+1486	sSkin contact
+1487	sAirborne
+1488	sNone
+1489	sNone
+1490	sAirborne
+1491	sContact
+1492	sSkin contact
+1493	sNone
+1494	sUnknown
+1502	sAirborne
+1504	sSkin contact
+1505	sAirborne
+1506	sNone
+1507	sNone
+1508	sNone
+1509	sNone
 #sprint
 20957	f10
 20958	f5
 21585	f10
+#sprite_accessory_override
+29738	y/datum/sprite_accessory/ears/fox
+29744	y/datum/sprite_accessory/ears/cat/cybernetic
+29833	y/datum/sprite_accessory/wings/mothra
+29834	y/datum/sprite_accessory/wings/megamoth
+29835	y/datum/sprite_accessory/wings_open/angel
+29836	y/datum/sprite_accessory/wings/dragon
+29837	y/datum/sprite_accessory/wings/robotic
+29838	y/datum/sprite_accessory/wings/skeleton
+29839	y/datum/sprite_accessory/wings/fly
+29840	y/datum/sprite_accessory/wings/slime
 #squish_damage
 33871	f75
+#stable_population
+32619	f1
+32620	f5
+32621	f5
+32622	f4
+32623	f3
+32624	f3
+32625	f7
+32626	f6
+32627	f6
+32628	f4
+32629	f3
+32630	f9
+32631	f1
+32632	f4
+32633	f1
+32634	f3
+32635	f6
+32636	f3
+32637	f3
+32638	f3
+32640	f7
+32641	f7
+32642	f1
+32649	f4
+32651	f3
+32652	f5
+32654	f3
+32655	f2
+32656	f3
+32657	f2
+32658	f3
+32659	f2
+32660	f4
+32661	f5
+32662	f4
+32664	f4
+32665	f5
+32666	f3
+32667	f3
+32668	f3
+32669	f4
+32670	f3
+32671	f6
+32672	f4
+32673	f5
+32674	f10
+32675	f8
+32677	f4
+32678	f8
+32679	f5
+32680	f3
+32681	f3
+32682	f4
+32683	f12
+32684	f3
+32685	f2
+32686	f3
+32687	f4
+32688	f12
+32689	f10
 #stagger
 1024	f0
 #stamina
@@ -114476,6 +116602,11 @@ public static partial class TypeOrder
 4393	f3
 4421	f0
 4422	f3
+#stealthy
+27211	f0
+33593	f0
+#stomp_range
+21558	f1
 #storage_override
 14648	n
 14848	y/obj/item/folder
@@ -114916,6 +117047,93 @@ public static partial class TypeOrder
 26569	n
 26570	sgreen
 26571	sred
+#symptom_cure
+8108	y/datum/reagent/medicine/spaceacillin
+8109	y/datum/reagent/medicine/mannitol
+8110	y/datum/reagent/acetaldehyde
+8111	y/datum/reagent/inverse/penthrite
+8112	y/datum/reagent/medicine/leporazine
+8113	y/datum/reagent/medicine/c2/tirimol
+8114	y/datum/reagent/toxin/bonehurtingjuice
+8115	y/datum/reagent/medicine/synaptizine
+8117	y/datum/reagent/medicine/psicodine
+8118	y/datum/reagent/consumable/milk
+8119	y/datum/reagent/medicine/haloperidol
+8120	y/datum/reagent/medicine/leporazine
+8121	y/datum/reagent/medicine/leporazine
+8122	y/datum/reagent/consumable/frostoil
+8123	y/datum/reagent/medicine/omnizine
+8124	y/datum/reagent/medicine/earthsblood
+8125	y/datum/reagent/acetaldehyde
+8126	y/datum/reagent/medicine/psicodine
+8127	y/datum/reagent/drug/space_drugs
+8140	y/datum/reagent/medicine/ondansetron
+8144	y/datum/reagent/barbers_aid
+8145	y/datum/reagent/water/salt
+8147	n
+8148	n
+8150	n
+8151	n
+8152	y/datum/reagent/medicine/oculine
+8153	y/datum/reagent/inverse/healing/convermol
+8154	y/datum/reagent/medicine/ondansetron
+8156	y/datum/reagent/medicine/diphenhydramine
+8157	n
+#symptoms
+1459	n
+5973	sExhibits obsessive behaviors towards a specific individual, including frequent staring, intrusive thoughts, and an overwhelming desire to be near them. This obsession can lead to social withdrawal, anxiety, and impaired daily functioning.
+5974	sExhibits signs of interacting with an unseen individual, including talking to themselves, responding to unheard stimuli, and displaying behaviors that suggest the presence of a companion. This \u0022imaginary friend\u0022 may influence the patient's actions and emotional state, leading to social withdrawal, altered perceptions of reality, or atypical activities.
+5976	sOccasionally utters phrases or commands in a commanding tone, often accompanied by a sense of divine authority. These utterances can influence the behavior of others, compelling them to act in accordance with the spoken words.
+5977	sGains the ability to perceive hidden pathways through bluespace, allowing for spontaneous creation of temporary portals that connect two distant locations. To the average eye, the patient appears to disappear into thin air, only to reappear elsewhere nearby.
+5978	sFrequently experiences spontaneous quantum entanglement with nearby objects or beings, resulting in sudden and unpredictable teleportation events that connect the patient to the entangled target.
+5979	sExhibits erratic and potentially violent behavior when in physical contact with others, often accidentally attacking those they intend to offer a hand, or hugging those who they mean to strike.
+5981	sExhibits a remarkable resistance to pain and physical trauma, allowing them to sustain severe injuries that would incapacitate an otherwise normal individual.
+5982	sExperiences intermittent auditory hallucinations characterized by whispering voices, which are often perceived as communications from the deceased.
+5983	sExperiences sporadic episodes of \u0022non-existence\u0022, during which the patient temporarily fades out of reality, becoming intangible and invisible to others. Often accompanied by feelings of detachment, depression, and disorientation.
+5985	sWitnessed or experienced a traumatic, horrific, or potentially life threatening event, resulting in avoidance, intrusive thoughts, flashbacks, auditory hallucinations, emotional numbness, detachment from others, and heightened reactivity to stimuli - particularly in situations reminiscent of the traumatic event.
+5986	sRarely experiences episodes where higher cognitive functions are suppressed, resulting in behavior driven primarily by primal instincts. During these episodes, the patient may exhibit increased aggression, territoriality, and a focus on basic survival needs.
+5988	sExperiences an overwhelming compulsion to self-harm, often engaging in behaviors that lead to significant physical injury. This compulsion is driven by an intense psychological need to feel pain and suffering, believing that through this self-inflicted harm, they can achieve a deeper understanding of universal truths and the nature of existence.
+5989	sGains a strict code of honor that governs their behavior, forbidding them from attacking those who are unready, just, or innocent. This code often leads to strife, both external and internal, as the patient struggles to reconcile their beliefs with the realities of combat and survival.
+5990	sFixates on a specific word or phrase. This fixation can lead to altered behavior, such as prioritizing actions related to the phrase over other tasks while neglecting work, needs, or social interactions.
+5992	sExhibits extreme discomfort and adverse reactions when exposed to bright light sources, and will go to great lengths to avoid illuminated areas. This sensitivity can lead to skin irritation, similar to that of a severe sunburn.
+5993	sExperiences frequent and unprovoked physical disturbances in their immediate vicinity, such as objects being thrown or moved without any apparent cause.
+5994	sExhibits a complete immunity to effects unexplainable by conventional science, such as the abilities demonstrated by members of the Wizard Federation.
+5995	sFeels an unshakable sensation of being watched or pursued by an unseen entity, leading to heightened anxiety, paranoia, and occasional hallucinations of a ghostly figure in their vicinity. Extreme cases may even result in physical harm inflicted upon the patient by a seemingly invisible force.
+5998	sExperiences frequent hallucinations (either visual or auditory) or delusions which subside on being administered Mindbreaker Toxin.
+5999	sHas difficulty speaking fluently, often repeating or prolonging sounds or syllables.
+6000	sExhibits a noticeable decline in cognitive functions, including speech, memory, motorics, and problem-solving abilities.
+6001	sStruggles to articulate thoughts into coherent speech, often resulting in jumbled or nonsensical sentences.
+6002	sExperiences headaches, dizziness, nausea, confusion, and occasional loss of consciousness.
+6003	sExhibits a lack of awareness or denial of their own medical conditions, often insisting they are perfectly healthy despite clear evidence to the contrary.
+6004	sExperiences sudden episodes of muscle weakness, resulting in weak grip strength, difficulty moving, and occasional falls.
+6005	sExperiences involuntary muscle contractions leading to sudden, brief movements or twitches, which can interfere with normal motor functions.
+6006	sExperiences a persistent, uncontrollable urge to cough, which may disrupt normal activities and social interactions.
+6007	sStruggles to express thoughts verbally, often substituting complex words with simpler alternatives or nonsensical sounds.
+6008	sExperiences involuntary repetition of previously heard or spoken phrases, leading to persistent moments of déjà vu in both hearing and speech.
+6009	sExhibits a complete inability to perceive colors, seeing the world in shades of gray, black, and white.
+6010	sExhibits an overwhelming need to keep personal belongings close, often resulting in an intense grip on held items that persists even when forced to let go.
+6011	sWhen exposed to a specific stimulus, experiences an immediate anxiety or fear response far greater than typically expected, leading to panic attacks or impaired social and occupational functioning. Physical contact such as hugging, or medication such as Psicodine may lessen the severity of the reaction.
+6036	sCompletley incapable of producing sound or speech verbally.
+6037	sCompletely incapable of understanding or producing language besides incomprehensible utterances.
+6038	sExhibits a complete loss of vision despite having fully functional eyes.
+6039	sExperience a complete loss of voluntary movement in specific body parts.
+6044	sExperiences sudden and uncontrollable episodes of drowsiness or sleepiness during regular activities.
+6046	sExperiences intense fear and anxiety when alone, often leading to panic attacks, nausea, rapid heartbeat, and in severe cases, fainting, vomiting, or heart failure.
+6047	sCompletely incapable of performing tasks that require fine motor skills or coordination, such as using tools or operating machinery.
+6048	sCompletely incapable of willing themselves to commit acts of violence or harm towards others, often going to great lengths to avoid confrontations or situations that may lead to violence.
+6049	sExperiences sudden episodes of deep stupor or trance-like states, during which the patient becomes highly suggestible to external influences, often leading to altered perceptions or behaviors, memories imposed by others, or in severe cases, danger to self or others.
+6051	sExperiences significant difficulties in reading and writing, often confusing letters and words, leading to challenges in literacy-related tasks such as reading scanners or completing paperwork.
+6052	sExperiences an uncontrollable urge to steal nearby items, often without need or reason, leading to compulsive theft behaviors that can interfere with daily life and social interactions.
+6053	sExhibits two distinct personalities that alternate control over the same body, each with its own memories, behaviors, and preferences. While both personalities are aware of each other, they may have conflicting desires and actions, leading to confusion and disorientation for the host.
+6055	sExcessive alcohol consumption leading to a temporary blackout, followed by confusion, disorientation, and an almost completely altered state of consciousness upon waking for several minutes - during which the individual may exhibit impaired fine motor skills, an incredible resistance to pain, and a complete lack of memory.
+19326	sWants more cringe code.
+19327	sExpresses a desire for painkillers, and when in withdrawl, experiences drowsiness, high blood pressure, and nausea.
+19328	sExpresses a desire for stimulants, and when in withdrawal, experiences fatigue, slowness, and difficulty concentrating.
+19329	sExpresses a desire for alcoholic beverages, and when in withdrawal, experiences jitteriness, hallucinations, and potentially seizures.
+19330	sExpresses a desire for hallucinogens, and when in withdrawal, experiences feelings of emptiness, difficulty seeing, and disconnection from reality.
+19331	sExpresses a desire for maintenance drugs, and when in withdrawal, experiences various adaptions such as light sensitivity, numbness, changes to taste, enhanced hair growth, and greater low light vision.
+19332	sExpresses a need for medication despite being otherwise healthy, and when in withdrawal, experiences coughing fits, hallucinations, and distorted health perceptions.
+19333	sExpresses a desire for nicotine products, and when in withdrawal, experiences jitteriness, coughing, and difficulty concentrating.
 #target_temperature
 34606	f293.15
 34890	f293.15
@@ -114995,6 +117213,8 @@ public static partial class TypeOrder
 #tastes
 12928	n
 24417	n
+#taunt_chance
+21542	f0
 #telepathy_span
 1096	snotice
 1100	srevennotice
@@ -115035,6 +117255,42 @@ public static partial class TypeOrder
 44839	f180
 44845	f259.15
 44853	f2.7
+#template_id
+3725	n
+3726	sholodeck_offline
+3727	sholodeck_emptycourt
+3728	sholodeck_dodgeball
+3729	sholodeck_basketball
+3730	sholodeck_thunderdome
+3731	sholodeck_beach
+3732	sholodeck_lounge
+3733	sholodeck_petpark
+3734	sholodeck_firingrange
+3735	sholodeck_animeschool
+3736	sholodeck_chapelcourt
+3737	sholodeck_spacechess
+3738	sholodeck_spacecheckers
+3739	sholodeck_kobayashi
+3740	sholodeck_winterwonderland
+3741	sholodeck_photobooth
+3742	sholodeck_skatepark
+3743	sholodeck_microwave
+3744	sholodeck_baseball
+3745	sholodeck_card_battle
+3746	sholodeck_fitness
+3747	sholodeck_medicalsim
+3748	sholodeck_thunderdome1218
+3749	sholodeck_burntest
+3750	sholodeck_wildlifesim
+3751	sholodeck_holdoutbunker
+3752	sholodeck_anthophillia
+3753	sholodeck_refuelingstation
+3754	sholodeck_prison
+32597	sshelter_alpha
+32598	sfishing_default
+32600	sshelter_beta
+32601	sshelter_charlie
+32602	sshelter_toilet
 #text_gain_indication
 9850	s<span class='notice'>You feel pumped up!</span>
 9851	s<span class='notice'>Your body feels normal!</span>
@@ -115170,6 +117426,78 @@ public static partial class TypeOrder
 9938	s<span class='warning'>Your body feels vulnerable to fire again.</span>
 9939	s<span class='warning'>You feel like recovering from a fall is a challenge again.</span>
 9940	s<span class='warning'>Your lungs feel vulnerable to airborne contaminant again.</span>
+#tgui_icon
+14531	n
+14532	sfa-gamepad
+14533	sfa-code
+14534	sfa-qrcode
+14535	sfa-eye
+14536	sfa-fan
+14537	sfa-cocktail
+14538	sfa-seedling
+14539	sfa-crown
+14540	sfa-box
+14541	sfa-prescription-bottle
+14542	sfa-user-astronaut
+14543	sfa-user-md
+14544	sfa-face-grin-tears
+14545	sfa-utensils
+14546	sfa-skull
+14547	sfa-book
+14548	sfa-robot
+14549	sfa-user-secret
+14550	sfa-dna
+14551	sfa-dog
+14552	sfa-user-shield
+14553	sfa-soap
+14554	sfa-gavel
+14555	sfa-staff-snake
+14556	sfa-comment-slash
+14557	sfa-truck-medical
+14558	sfa-lock
+14559	sfa-brain
+14560	sfa-sack-dollar
+14561	sfa-user-graduate
+14562	sfa-battery-half
+14563	sfa-flask
+14564	sfa-shield-halved
+14565	sfa-digging
+14566	sfa-gears
+14568	sfa-handcuffs
+14574	sfa-moon
+14584	sfa-magic
+14588	sfa-toolbox
+14589	sfa-cross
+14590	sfa-pen-alt
+14592	sfa-crown
+14593	sfa-shield-halved
+14594	sfa-gears
+14595	sfa-staff-snake
+14596	sfa-cross
+14597	sfa-soap
+14598	sfa-face-grin-tears
+14599	sfa-medal
+14601	sfa-pen-fancy
+14620	sfa-mobile-alt
+14628	sfa-dragon
+14630	sfa-dragon
+14631	sfa-dragon
+14634	sfa-building-shield
+14635	sfa-paw
+14636	sfa-eye
+14637	sfa-paw
+14638	sfa-ribbon
+19372	sfa-bug
+19373	sfa-bible
+19374	sfa-robot
+19375	sfa-fire-alt
+19376	sfa-dollar-sign
+19377	sfa-user-injured
+19378	sfa-scroll
+19379	sfa-eye
+19380	sfa-fist-raised
+19381	sfa-music
+19382	sfa-cloud
 #tgui_id
 19193	n
 19194	sNtosAiRestorer
@@ -115325,6 +117653,242 @@ public static partial class TypeOrder
 4236	f25
 #throw_chance
 19923	f17.5
+#throw_range
+771	f8
+11715	f1
+21773	f5
+22061	f5
+22165	f3
+22312	f5
+22450	f5
+22755	f2
+22799	f2
+22813	f5
+23527	f1
+23529	f6
+23888	f3
+23994	f5
+24254	f0
+24320	f7
+24321	f7
+24322	f7
+24441	f3
+24444	f3
+24492	f7
+24531	f5
+24562	f3
+25705	f5
+25709	f5
+26145	f5
+26282	f4
+26311	f7
+26328	f7
+26367	f7
+26511	f0
+26536	f5
+26554	f5
+26555	f5
+26565	f4
+26572	f1
+26585	f0
+26588	f0
+26615	f7
+26886	f3
+26890	f5
+26897	f4
+26920	f7
+27175	f5
+27176	f4
+27181	f7
+27566	f7
+27783	f7
+27788	f1
+27802	f7
+27833	f2
+27875	f7
+27881	f5
+27921	f9
+27992	f7
+27999	f7
+28021	f5
+28102	f7
+28103	f10
+28105	f5
+28169	f1
+28188	f7
+28241	f7
+28813	f7
+28869	f3
+28921	f5
+28942	f3
+28944	f3
+28980	f3
+28984	f3
+29026	f2
+29040	f7
+29064	f7
+29082	f5
+29091	f5
+29097	f7
+29098	f7
+29450	f7
+29451	f28
+29452	f3
+29471	f5
+29475	f5
+29501	f7
+29515	f5
+29844	f6
+29849	f7
+29859	f7
+29860	f8
+29867	f5
+29870	f0
+29940	f2
+29943	f5
+30007	f4
+30011	f7
+30019	f7
+30024	f1
+30070	f5
+30168	f1
+30171	f2
+30185	f7
+30201	f5
+30222	f1
+30234	f7
+30250	f1
+30251	f7
+30268	f4
+30271	f5
+30307	f2
+30352	f7
+30353	f4
+30366	f3
+30370	f7
+30382	f9
+30383	f9
+30388	f3
+30397	f4
+30398	f5
+30400	f5
+30404	f4
+30405	f1
+30406	f7
+30417	f7
+30471	f5
+30473	f7
+30479	f7
+30497	f3
+30532	f7
+30533	f10
+30535	f5
+30536	f5
+30543	f7
+30598	f1
+30599	f5
+30600	f7
+30660	f7
+30708	f7
+30715	f5
+30719	f7
+30724	f5
+30725	f2
+30737	f2
+30798	f2
+30812	f7
+30813	f7
+30824	f7
+31129	f7
+31135	f7
+31136	f7
+31144	f5
+31171	f5
+31189	f5
+31190	f4
+31229	f5
+31255	f7
+31270	f7
+31653	f5
+31663	f7
+31676	f7
+31730	f5
+31733	f3
+31738	f5
+31753	f5
+31766	f7
+31783	f7
+31807	f4
+31809	f0
+31815	f6
+31820	f4
+31821	f4
+31823	f1
+31827	f5
+31839	f2
+31920	f7
+31925	f3
+31932	f5
+31940	f5
+31988	f5
+32162	f7
+32168	f7
+32171	f7
+32172	f3
+32173	f3
+32174	f3
+32175	f3
+32177	f3
+32181	f5
+32185	f0
+32189	f7
+32371	f5
+32390	f7
+32410	f1
+32411	f7
+32412	f5
+32421	f5
+32422	f7
+32434	f0
+32435	f5
+32454	f7
+32514	f1
+32540	f7
+32605	f3
+32618	f7
+32619	f8
+32624	f8
+32654	f4
+32657	f7
+32701	f5
+32703	f7
+32705	f5
+32731	f7
+32735	f3
+32767	f15
+32773	f7
+32785	f5
+32824	f5
+32840	f0
+32843	f5
+32862	f2
+32867	f5
+32982	f5
+32994	f5
+33001	f7
+33022	f3
+33023	f1
+33025	f7
+33027	f1
+33059	f1
+33083	f5
+33090	f1
+33108	f6
+33131	f6
+33397	f6
+33433	f5
+33465	f7
+33481	f2
 #throw_speed
 21773	f2
 22061	f2
@@ -115527,7 +118091,6 @@ public static partial class TypeOrder
 32514	f0
 32533	f3
 32540	f3
-32604	f3
 32618	f3
 32624	f4
 32701	f3
@@ -115866,6 +118429,7 @@ public static partial class TypeOrder
 32603	f5
 32605	f5
 32618	f3
+32619	f6
 32624	f11
 32652	f5
 32654	f7
@@ -115923,6 +118487,8 @@ public static partial class TypeOrder
 39255	f100
 43086	f30
 43360	f2
+#throwforce_bonus
+6385	f0
 #time
 6705	f30
 6707	f5
@@ -117137,7 +119703,6 @@ public static partial class TypeOrder
 11138	f1
 11139	f1
 11140	f1
-32604	n
 #transform
 14057	n
 #transparent_protection
@@ -117580,6 +120145,8 @@ public static partial class TypeOrder
 17432	s#1fad4e
 17433	s#d9268e
 28276	sblue
+#ui_panel
+34244	sWorld Map
 #ui_style
 1557	ricons/hud/screen_ai.dmi
 1558	ricons/hud/screen_alien.dmi
@@ -118125,6 +120692,12 @@ public static partial class TypeOrder
 39076	f8
 39077	f1
 39083	f1E+31
+#uses_left
+32564	f20
+32567	f12
+32834	f3
+42678	f1E+31
+42683	f18
 #usesound
 26615	rsound/items/weapons/empty.ogg
 26879	rsound/items/tools/crowbar.ogg
@@ -118991,6 +121564,36 @@ public static partial class TypeOrder
 38155	f16
 38161	f56
 44049	f60
+#visibility_flags
+1458	f0
+1459	f4
+1465	f2
+1466	f2
+1468	f6
+1471	f1
+1478	f1
+1481	f4
+1492	f4
+1493	f3
+1494	f0
+1495	f0
+1496	f0
+1497	f0
+1498	f0
+1499	f0
+1500	f0
+1501	f4
+#vision_range
+4954	i9
+5124	n
+21542	f9
+21543	f5
+21546	f9
+21548	f18
+21552	f13
+21558	f9
+21563	f2
+21564	f6
 #visual
 19189	n
 29625	f1
@@ -120442,7 +123045,6 @@ public static partial class TypeOrder
 32552	f4
 32554	f1
 32556	f2
-32557	f4
 32564	f2
 32568	f2
 32581	f2
@@ -120450,7 +123052,6 @@ public static partial class TypeOrder
 32596	f3
 32597	f1
 32603	f2
-32604	f1
 32605	f4
 32607	f3
 32608	f1
@@ -120999,6 +123600,7 @@ public static partial class TypeOrder
 20325	f3
 29956	f5
 29957	f1
+32619	n
 #wetness
 28919	f30
 #width
@@ -121731,7 +124333,6 @@ public static partial class TypeOrder
 32543	selectronic
 32554	sscroll
 32603	sgun
-32604	spen
 32618	sfish_analyzer
 32700	skitchen_tool
 32703	srolling_pin
@@ -121941,6 +124542,96 @@ public static partial class TypeOrder
 11434	y/datum/wound/slash/flesh/severe
 11435	y/datum/wound/slash/flesh/critical
 11436	y/datum/wound/slash/flesh/critical/cleave
+#yield
+24682	f5
+24696	f6
+24779	f5
+24799	f7
+24804	f6
+24813	f6
+25540	f5
+25564	f6
+25566	f4
+25568	f4
+32003	f3
+32008	f6
+32009	f6
+32012	f5
+32018	f2
+32019	f2
+32023	f4
+32025	f2
+32033	f4
+32041	f4
+32043	f3
+32044	f3
+32045	f4
+32046	f5
+32047	f4
+32048	f4
+32049	f5
+32050	f2
+32052	f3
+32056	f2
+32057	f2
+32058	f5
+32059	f2
+32061	f6
+32063	f4
+32066	f2
+32067	f2
+32070	f6
+32071	f6
+32072	f6
+32073	f2
+32074	f5
+32077	f2
+32078	f1
+32079	f5
+32080	f5
+32086	f4
+32087	f4
+32088	f2
+32089	f5
+32090	f4
+32091	f1
+32092	f5
+32093	f4
+32094	f3
+32098	f5
+32099	f6
+32101	f5
+32103	f7
+32104	f1
+32106	f5
+32108	f4
+32112	f5
+32114	f4
+32116	f5
+32119	f6
+32120	f5
+32121	f5
+32122	f1
+32124	f4
+32126	f5
+32127	f5
+32129	f5
+32131	f10
+32135	f2
+32136	f2
+32137	f2
+32138	f5
+32140	f4
+32141	f4
+32142	f2
+32143	f2
+32145	f2
+32146	f4
+32155	f3
+32157	f5
+32158	f3
+32159	f3
+32160	f3
 #zone
 1803	f360
 29542	smouth
@@ -121977,6 +124668,6 @@ public static partial class TypeOrder
 29842	shead
 #zone_on_open
 34204	n
-!0,1,2,3,4,5,6,7,12,14,17,20,21,23,32,35,39,42,45,47,49,55,56,63,66,68,70,71,80,82,84,101,108,110,125,127,145,146,147,569,570,572,1511,1514,1516,1556,1567,1805,1807,1808,1832,1835,1840,1841,1842,1843,1844,1845,1850,1851,1852,1853,1854,1855,1856,1858,1859,1860,1864,1865,1866,1874,1880,1889,1904,1905,1906,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2016,2066,2067,2068,2069,2070,2071,2072,2076,2079,2083,2095,2098,2110,2119,2120,2121,2122,2123,2124,2148,2149,2150,2152,2157,2159,2161,2162,2171,2172,2173,2174,2177,2179,2180,2181,2182,2187,2188,2196,2198,2199,2216,2222,2226,2286,2305,2316,2317,2318,2322,2840,2842,2843,2845,2929,2981,2982,2983,3375,3377,3379,3792,3796,3802,3844,3859,3995,4015,4027,4098,4139,4169,4170,4171,4172,4175,4177,4178,4179,4180,4181,4214,4215,4243,4244,4245,4253,4257,4953,4963,4986,5030,5219,5220,5221,5222,5223,5225,5233,5234,5237,5240,5248,5254,5259,5260,5261,5266,5414,5906,5907,5908,5941,5944,5946,5971,6074,6097,6108,6133,6174,6215,6295,6421,6585,8158,8192,8223,8243,8325,8341,8395,8406,8418,8424,8428,8429,8436,8517,8518,8519,8520,8521,8522,8523,8524,8525,8526,8528,8529,8530,8531,8532,8535,8536,8537,8538,8539,8540,8541,8542,8543,8544,8545,8546,8547,8548,8549,8550,8551,8552,8553,8554,8555,8556,8557,8558,8559,8560,8561,8562,8563,8564,8565,8566,8567,8568,8633,8692,8693,8694,8695,8973,9009,9141,9178,9182,9183,9186,9187,9301,9390,9408,9430,9432,9849,10214,10340,10466,10469,10478,11142,11153,11472,11478,11504,12011,12030,12100,12101,12427,12430,12508,12571,13527,13687,13692,13911,14063,14065,14066,14067,14068,14069,14070,14071,14072,14073,14074,14075,14076,14077,14078,14079,14080,14081,14082,14083,14084,14085,14086,14087,14088,14453,15290,15299,15317,15396,15397,15427,15428,15515,17416,17423,17435,17436,17437,17438,17439,17440,17441,17442,17443,17444,17446,17453,17472,17477,17490,17510,17664,17665,17666,17667,17668,17669,17670,17671,17672,17673,17674,17675,17676,17677,17678,17679,17680,17681,17682,17683,17684,17685,17686,17687,17688,17689,17690,17691,17692,17693,17694,17695,17696,17697,17698,17699,17700,17701,17702,17703,17704,17705,17706,17707,17708,17709,17710,17711,17712,17713,17714,17715,17716,17717,17718,17719,17720,17721,17722,17723,17724,17725,17726,17727,17728,17729,17730,17731,17732,17761,17768,17813,19091,19099,19111,19115,19116,19117,19118,19119,19120,19121,19122,19123,19124,19210,19273,19291,19319,19911,19912,19914,19916,19931,20301,20346,20364,20365,20367,20467,20468,20469,20470,20471,20472,20473,20474,20475,20476,20477,20491,20492,20493,20494,20502,20508,20683,20684,20685,20686,20687,20689,20691,20694,20792,20811,20818,20819,20820,20821,20893,20904,20905,20906,20907,20909,20947,20978,20988,20991,21007,21013,21288,21353,21597,21598,21599,22835,22860,23051,23052,23053,23054,23055,23056,23057,23058,23059,23060,23061,23062,23063,23064,23065,23066,23067,23068,23069,23070,23071,23072,23073,23074,23075,23076,23077,23078,23079,23080,23081,23082,23083,23084,23085,23086,23087,23088,23089,23090,23422,23596,23959,24018,24120,24342,24426,25678,26464,26581,26625,26711,26712,26739,26740,26767,26794,26818,26819,26848,27032,27794,28107,28123,28246,28866,29520,29521,29532,29551,29581,29600,29653,29670,29672,29693,29729,29737,30183,30396,30757,30854,30857,30893,31230,31242,31247,31273,32115,32161,32455,32462,32521,32619,32690,32726,32739,32962,33065,33515,33767,33793,33802,33813,33961,33967,34219,34282,34347,34487,34575,34579,34659,34685,34870,36192,36193,36326,36340,36499,36593,36636,36757,36787,36801,38099,38231,38238,38913,38962,38963,39784,40119,41860,42599,42675,43380,43514,43917,44050,44051,44108,44109,44220,44738,44739,44751,44752,44753,44754,44755,44756,44757,44758,44759,44760,44761,44762,44763,44764,44765,44766,44767,44768,44769,44770,44771,44772,44773,44774,44775,44919,44920,45421,45424,45595,45969,45970,45972,45973,45974,45976,45979,46039,46041,46042,46043,46044,46045,46046,46047,46048,46049,46050
+!0,1,2,3,4,5,6,7,12,14,17,20,21,23,32,35,39,42,45,47,49,55,56,63,66,68,70,71,80,82,84,101,108,110,125,127,145,146,147,569,570,572,1061,1511,1514,1516,1556,1567,1805,1807,1808,1832,1835,1840,1841,1842,1843,1844,1845,1850,1851,1852,1853,1854,1855,1856,1858,1859,1860,1864,1865,1866,1874,1880,1889,1904,1905,1906,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2016,2066,2067,2068,2069,2070,2071,2072,2076,2079,2083,2095,2098,2110,2119,2120,2121,2122,2123,2124,2148,2149,2150,2152,2157,2159,2161,2162,2171,2172,2173,2174,2177,2179,2180,2181,2182,2187,2188,2196,2198,2199,2216,2222,2226,2286,2305,2316,2317,2318,2322,2840,2842,2843,2845,2929,2981,2982,2983,3375,3377,3379,3792,3796,3802,3844,3859,3995,4015,4027,4098,4139,4169,4170,4171,4172,4175,4177,4178,4179,4180,4181,4214,4215,4243,4244,4245,4253,4257,4373,4416,4953,4963,4986,5030,5219,5220,5221,5222,5223,5225,5233,5234,5237,5240,5248,5254,5259,5260,5261,5266,5414,5906,5907,5908,5941,5944,5946,5971,6074,6097,6108,6133,6174,6215,6295,6300,6421,6585,8158,8192,8223,8243,8325,8341,8395,8406,8418,8424,8428,8429,8436,8517,8518,8519,8520,8521,8522,8523,8524,8525,8526,8528,8529,8530,8531,8532,8535,8536,8537,8538,8539,8540,8541,8542,8543,8544,8545,8546,8547,8548,8549,8550,8551,8552,8553,8554,8555,8556,8557,8558,8559,8560,8561,8562,8563,8564,8565,8566,8567,8568,8633,8692,8693,8694,8695,8973,9009,9141,9178,9182,9183,9186,9187,9301,9390,9408,9430,9432,9849,10214,10340,10466,10469,10478,11142,11153,11472,11478,11504,12011,12030,12100,12101,12118,12427,12430,12508,12571,13527,13687,13692,13911,14063,14065,14066,14067,14068,14069,14070,14071,14072,14073,14074,14075,14076,14077,14078,14079,14080,14081,14082,14083,14084,14085,14086,14087,14088,14453,15290,15299,15317,15396,15397,15427,15428,15515,15703,15778,17416,17423,17435,17436,17437,17438,17439,17440,17441,17442,17443,17444,17446,17453,17472,17477,17490,17510,17664,17665,17666,17667,17668,17669,17670,17671,17672,17673,17674,17675,17676,17677,17678,17679,17680,17681,17682,17683,17684,17685,17686,17687,17688,17689,17690,17691,17692,17693,17694,17695,17696,17697,17698,17699,17700,17701,17702,17703,17704,17705,17706,17707,17708,17709,17710,17711,17712,17713,17714,17715,17716,17717,17718,17719,17720,17721,17722,17723,17724,17725,17726,17727,17728,17729,17730,17731,17732,17761,17768,17813,19091,19099,19111,19115,19116,19117,19118,19119,19120,19121,19122,19123,19124,19210,19273,19291,19319,19383,19911,19912,19914,19916,19931,20301,20346,20364,20365,20367,20467,20468,20469,20470,20471,20472,20473,20474,20475,20476,20477,20491,20492,20493,20494,20502,20508,20683,20684,20685,20686,20687,20689,20691,20694,20792,20811,20818,20819,20820,20821,20893,20904,20905,20906,20907,20909,20947,20978,20988,20991,21007,21013,21288,21353,21588,21597,21598,21599,22835,22860,23051,23052,23053,23054,23055,23056,23057,23058,23059,23060,23061,23062,23063,23064,23065,23066,23067,23068,23069,23070,23071,23072,23073,23074,23075,23076,23077,23078,23079,23080,23081,23082,23083,23084,23085,23086,23087,23088,23089,23090,23422,23596,23959,24018,24120,24342,24426,25678,26464,26581,26625,26711,26712,26739,26740,26767,26794,26818,26819,26848,27032,27794,28107,28123,28246,28866,29520,29521,29532,29551,29581,29600,29653,29670,29672,29693,29729,29737,30183,30396,30757,30854,30857,30893,31230,31242,31247,31273,32115,32161,32455,32462,32521,32557,32563,32604,32690,32726,32739,32962,33065,33515,33767,33793,33802,33813,33961,33967,34219,34282,34347,34358,34487,34575,34579,34659,34685,34870,36192,36193,36326,36340,36499,36539,36593,36625,36636,36757,36787,36801,36813,38099,38231,38238,38913,38962,38963,39065,39275,39784,40119,41860,42599,42616,42675,43280,43380,43514,43917,44050,44051,44108,44109,44220,44738,44739,44751,44752,44753,44754,44755,44756,44757,44758,44759,44760,44761,44762,44763,44764,44765,44766,44767,44768,44769,44770,44771,44772,44773,44774,44775,44919,44920,45421,45424,45595,45969,45970,45972,45973,45974,45976,45979,46039,46041,46042,46043,46044,46045,46046,46047,46048,46049,46050
 """;
 }

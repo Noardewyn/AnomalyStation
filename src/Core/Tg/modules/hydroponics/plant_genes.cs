@@ -515,8 +515,9 @@ public partial class datum_plant_gene_trait_teleport : datum_plant_gene_trait
      * target - the carbon targeted that was slipped and was teleported
      */
     // tg: code/modules/hydroponics/plant_genes.dm:505
+    // the slipper is any living mob (tg's mob/living/carbon is not enforced by DM: a clown slips too)
     [SignalHandler]
-    public virtual void slip_teleport(obj_item our_plant = null, mob_living_carbon target = null)
+    public virtual void slip_teleport(obj_item our_plant = null, mob_living target = null)
     {
         our_plant.investigate_log(Dm.text("slip-teleported [] at []. Last touched by: [].", key_name(target), AREACOORD(target), our_plant.fingerprintslast), INVESTIGATE_BOTANY);
         obj_item_seeds our_seed = our_plant.get_plant_seed() as obj_item_seeds;

@@ -12,9 +12,8 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (gaps W1, 2026-11-07): the status displays (the base display, evac, supply, shuttle, AI and random message), their shared
 // text overlays (status_display_text, drawn by the clients as world maptext, protocol version 74) and the global alert procs.
 // The greenscreen (the location indicator, the appearance holder, the greenscreen display and the captain-caster camera) is
-// translated in the syndicate campaign (D316). Not translated: the circuit
-// component (/obj/item/circuit_component/status_display, wiremod), the evac display's
-// circuit USB port (Deferred). DEVIATION(DV12): the displays' emissive "outline" overlay is not created.
+// translated in the syndicate campaign (D316). The evac display's USB port takes its circuit
+// component, which sets the displays' message or picture from a circuit. DEVIATION(DV12): the displays' emissive "outline" overlay is not created.
 
 // tg: code/game/machinery/status_display.dm:11  GLOBAL_DATUM_INIT(status_font, /datum/font, new /datum/font/tiny_unicode/size_12pt())
 public partial class datum_controller_global_vars : datum_controller
@@ -602,7 +601,7 @@ public partial class obj_machinery_status_display_evac : obj_machinery_status_di
         // register for radio system
         SSradio.add_object(this, frequency);
         // Circuit USB
-        Dm.Deferred("code/game/machinery/status_display.dm:406", "Initialize: AddComponent(/datum/component/usb_port, ...) for the status display circuit component (wiremod is not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_status_display)), only_root_path: TRUE)));
         // the port's test worlds may boot without the subsystem (tg always has it)
         if (SSsecurity_level != null)
             RegisterSignal(SSsecurity_level, COMSIG_SECURITY_LEVEL_CHANGED, nameof(on_sec_level_change));
@@ -1551,4 +1550,98 @@ public partial class obj_machinery_greenscreen_camera : obj_machinery
         }
         return dot;
     }
+}
+
+// tg: code/game/machinery/status_display.dm:797
+public partial class obj_item_circuit_component_status_display : obj_item_circuit_component
+{
+    // tg: code/game/machinery/status_display.dm:812
+    public override async DmTask populate_ports()
+    {
+        message1 = add_input_port("Message 1", PORT_TYPE_STRING) as datum_port_input;
+        message2 = add_input_port("Message 2", PORT_TYPE_STRING) as datum_port_input;
+    }
+
+    // tg: code/game/machinery/status_display.dm:817  var/static/list/command_options
+    private static ref DmList populate_options__command_options => ref TgState.Current.obj_item_circuit_component_status_display__populate_options__command_options;
+    // tg: code/game/machinery/status_display.dm:824  var/static/list/picture_options
+    private static ref DmList populate_options__picture_options => ref TgState.Current.obj_item_circuit_component_status_display__populate_options__picture_options;
+
+    // tg: code/game/machinery/status_display.dm:816
+    public override void populate_options()
+    {
+        command = add_option_port("Command", populate_options__command_options) as datum_port_input_option;
+        command_map = populate_options__command_options;
+
+        picture = add_option_port("Picture", populate_options__picture_options) as datum_port_input_option;
+        picture_map = populate_options__picture_options;
+    }
+
+    // tg: code/game/machinery/status_display.dm:849
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_status_display)))
+            connected_display = shell as obj_machinery_status_display;
+    }
+
+    // tg: code/game/machinery/status_display.dm:854
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        connected_display = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/machinery/status_display.dm:858
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        // Just use command handling built into status display.
+        // The option inputs thankfully sanitize command and picture for us.
+
+        if (connected_display == null)
+            return null;
+
+        object command_value = command_map[command.value];
+        datum_signal status_signal = Dm.@new<datum_signal>(Dm.list(Dm.kv("command", command_value)));
+        object sw__1 = command_value;
+        if (Dm.eq(sw__1, "message"))
+        {
+            status_signal.data["top_text"] = message1.value;
+            status_signal.data["bottom_text"] = message2.value;
+        }
+        else if (Dm.eq(sw__1, "alert"))
+            status_signal.data["picture_state"] = picture_map[picture.value];
+
+        connected_display.receive_signal(status_signal);
+        return null;
+    }
+}
+
+public sealed partial class TgState
+{
+    // tg: code/game/machinery/status_display.dm:817  (var/static/list/command_options in /obj/item/circuit_component/status_display/populate_options)
+    internal DmList obj_item_circuit_component_status_display__populate_options__command_options = Dm.list(
+        Dm.kv("Blank", "blank"),
+        Dm.kv("Shuttle", "shuttle"),
+        Dm.kv("Message", "message"),
+        Dm.kv("Alert", "alert"));
+
+    // tg: code/game/machinery/status_display.dm:824  (var/static/list/picture_options in /obj/item/circuit_component/status_display/populate_options)
+    internal DmList obj_item_circuit_component_status_display__populate_options__picture_options = Dm.list(
+        Dm.kv("Default", "default"),
+        Dm.kv("Delta Alert", "deltaalert"),
+        Dm.kv("Red Alert", "redalert"),
+        Dm.kv("Blue Alert", "bluealert"),
+        Dm.kv("Green Alert", "greenalert"),
+        Dm.kv("Biohazard", "biohazard"),
+        Dm.kv("Lockdown", "lockdown"),
+        Dm.kv("Radiation", "radiation"),
+        Dm.kv("Happy", "ai_happy"),
+        Dm.kv("Neutral", "ai_neutral"),
+        Dm.kv("Very Happy", "ai_veryhappy"),
+        Dm.kv("Sad", "ai_sad"),
+        Dm.kv("Unsure", "ai_unsure"),
+        Dm.kv("Confused", "ai_confused"),
+        Dm.kv("Surprised", "ai_surprised"),
+        Dm.kv("BSOD", "ai_bsod"));
 }

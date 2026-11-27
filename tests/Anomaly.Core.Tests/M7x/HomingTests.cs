@@ -37,6 +37,7 @@ public class HomingTests
         // level along the line from Bob's eye: the cone alone would throw most of each burst past Rob, 7 tiles away
         string aim = "icon-x=16;icon-y=16;left=1;button=left;" + ClientSeam.AimParam(3 * 32, LineY * 32, 20.8, 90, 0);
         var pitches = new List<float>();
+        r.World.Rng.Reseed(4242, 1); // the cone and homing rolls from here, whatever the boot drew
         for (int burst = 0; burst < 3; burst++)
         {
             r.In(() => { bob.next_click = -1; bob.next_move = -1; gun.fire_cd = 0; });

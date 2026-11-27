@@ -3660,9 +3660,9 @@ public partial class obj_item_paper_lures_instructions : obj_item_paper
     }
 }
 
-// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:138
-[DmPath("/obj/item/paper/default_lawset_list"), DmGeneratedOnly, DmInert]
-public partial class obj_item_paper_default_lawset_list : obj_item_paper
+// tg: code/modules/jobs/job_types/station_trait/human_ai.dm:138 (the var block of a hand-written class)
+[DmPath("/obj/item/paper/default_lawset_list")]
+public partial class obj_item_paper_default_lawset_list
 {
     // tg: code/modules/jobs/job_types/station_trait/human_ai.dm:138
     public obj_item_paper_default_lawset_list()
@@ -3819,9 +3819,9 @@ public partial class obj_item_paper_secretrecipe_metalgen : obj_item_paper_secre
     }
 }
 
-// tg: code/modules/religion/honorbound/honorbound_rites.dm:68
-[DmPath("/obj/item/paper/holy_writ"), DmGeneratedOnly, DmInert]
-public partial class obj_item_paper_holy_writ : obj_item_paper
+// tg: code/modules/religion/honorbound/honorbound_rites.dm:68 (the var block of a hand-written class)
+[DmPath("/obj/item/paper/holy_writ")]
+public partial class obj_item_paper_holy_writ
 {
     // tg: code/modules/religion/honorbound/honorbound_rites.dm:68
     public obj_item_paper_holy_writ()

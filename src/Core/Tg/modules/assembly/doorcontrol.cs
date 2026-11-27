@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // PARTIAL (M4a P4b): the controller assembly (its init, examine, screentips and the ID copy), the blast door controller
 // (every pod door with its id opens or closes) and the airlock controller (open, ID scan, bolts, shock and safety by its
 // specialfunctions) are translated: what a Meta door button runs. M5 slice 10: the multitool's ID setting (the controller's
-// number input; the blast door controller's list of pod door ids); the mass driver and flasher
-// controllers are after the core version (their activate rows there, M10+). Engineering E8 (D287): the igniter controller. Gaps MD2: the
+// number input; the blast door controller's list of pod door ids); the flasher controller is after the
+// core version (its activate row there, M10+); the mass driver controller came with the ordnance lab. Engineering E8 (D287): the igniter controller. Gaps MD2: the
 // crematorium controller. Gaps ST2: the curtain controller (the theatre's mechanical curtains).
 //
 // GAP(lead): VARSET_CALLBACK (__HELPERS/varset_callback.dm:3) needs the global proc ___callbackvarset, which is not
@@ -282,16 +282,46 @@ public partial class obj_item_assembly_control_airlock : obj_item_assembly_contr
 // tg: code/modules/assembly/doorcontrol.dm:180
 public partial class obj_item_assembly_control_massdriver : obj_item_assembly_control
 {
+    // tg: code/modules/assembly/doorcontrol.dm:184  (the mass drivers: the pod doors open, the drivers fire, the doors close)
+    public override async DmTask<object> activate(mob activator = null)
+    {
+        await DmTask.CompletedTask;
+        if (Dm.truthy(cooldown))
+            return null;
+        cooldown = TRUE;
+        foreach (obj_machinery_door_poddoor M in Dm.each_cast<obj_machinery_door_poddoor>(SSmachines.get_machines_by_type_and_subtypes(typeof(obj_machinery_door_poddoor))))
+        {
+            if (Dm.eq(M.id, id))
+                Waiting.Detach(M.open()); // INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/door/poddoor, open))
+        }
+
+        _addtimer(Dm.@new<datum_callback>(this, nameof(activate_stage2)), 1 * SECONDS, file: "code/modules/assembly/doorcontrol.dm", line: 192);
+        return null;
+    }
+
     // tg: code/modules/assembly/doorcontrol.dm:194
     public virtual async DmTask activate_stage2()
     {
-        Dm.NotTranslated("code/modules/assembly/doorcontrol.dm:194", "activate_stage2: the mass driver controller (mass drivers, M10+)");
+        foreach (obj_machinery_mass_driver M in Dm.each_cast<obj_machinery_mass_driver>(SSmachines.get_machines_by_type_and_subtypes(typeof(obj_machinery_mass_driver))))
+        {
+            if (Dm.eq(M.id, id))
+                await M.drive();
+        }
+
+        _addtimer(Dm.@new<datum_callback>(this, nameof(activate_stage3)), 6 * SECONDS, file: "code/modules/assembly/doorcontrol.dm", line: 199);
     }
 
     // tg: code/modules/assembly/doorcontrol.dm:201
     public virtual void activate_stage3()
     {
-        Dm.NotTranslated("code/modules/assembly/doorcontrol.dm:201", "activate_stage3: the mass driver controller (mass drivers, M10+)");
+        foreach (obj_machinery_door_poddoor M in Dm.each_cast<obj_machinery_door_poddoor>(SSmachines.get_machines_by_type_and_subtypes(typeof(obj_machinery_door_poddoor))))
+        {
+            if (Dm.eq(M.id, id))
+                Waiting.Detach(M.close()); // INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/door/poddoor, close))
+        }
+
+        // VARSET_CALLBACK(src, cooldown, FALSE): see the GAP(lead) in the file header
+        _addtimer(Dm.@new<datum_callback>(this, nameof(cooldown__varset), FALSE), 1 * SECONDS, file: "code/modules/assembly/doorcontrol.dm", line: 206);
     }
 }
 

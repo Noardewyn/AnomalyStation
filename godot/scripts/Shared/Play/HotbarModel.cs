@@ -5,7 +5,7 @@ namespace Anomaly.Client.Shared;
 // Engine-free: no Godot API here (it is compiled into tests/Anomaly.Server.Tests too).
 
 /// <summary>
-/// ui-overhaul.md section 10, slice 3A (DV603, protocol version 98's Hotbar): the client's copy of the own hotbar, the ten cells (1 to 7 the belt,
+/// ui-overhaul.md section 10, slice 3A (DV689, protocol version 99's Hotbar): the client's copy of the own hotbar, the ten cells (1 to 7 the belt,
 /// 8 and 9 the pockets, 10 the ID slot) as the server last sent them, the names of the items in the own hands, and the last refused press with
 /// when it came (for slice 3B's blink). Nothing is predicted: a press is sent and the server's next message says what it did.
 /// </summary>

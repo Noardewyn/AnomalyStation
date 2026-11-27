@@ -179,7 +179,13 @@ public class ShieldGeneratorGameplayTests(ITestOutputHelper output)
             Assert.True(In(w, () => isspaceturf(space)));
             w.Run(Second / 2);
             Assert.True(In(w, () => Dm.@in(space, inside.atmos_adjacent_turfs)), "the breach shares the room's air");
+            // SSair shares the gas over a few fires: until the floor beside the breach has lost some (5 s at most)
             float venting = Pressure(w, inside);
+            for (int t = 0; t < 5 * Second && venting >= before; t++)
+            {
+                w.Run(1);
+                venting = Pressure(w, inside);
+            }
 
             // the projector on: a shield on the breach, and the room no longer shares its air with it
             Click(w, p, projector, 0.25f);

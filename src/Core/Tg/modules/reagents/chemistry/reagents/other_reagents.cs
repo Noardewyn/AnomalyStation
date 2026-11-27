@@ -147,11 +147,7 @@ public partial class datum_reagent_water : datum_reagent
             return dot;
 
         foreach (mob_living_basic_slime exposed_slime in Dm.each<mob_living_basic_slime>(open_turf))
-        {
-            // exposed_slime.apply_water(): a slime hurt by water (/mob/living/basic/slime is not translated; xenobiology,
-            // M10)
-            Dm.NotTranslated("code/modules/reagents/chemistry/reagents/other_reagents.dm:145", "expose_turf: exposed_slime.apply_water() (slimes, xenobiology, M10+)");
-        }
+            await exposed_slime.apply_water();
 
         float cool_temp = cooling_temperature;
 
@@ -707,6 +703,15 @@ public partial class datum_reagent_lube : datum_reagent
         }
         return dot;
     }
+
+    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:573
+    public override async DmTask<object> used_on_fish(obj_item_fish fish = null)
+    {
+        await DmTask.CompletedTask;
+        ADD_TRAIT(fish, TRAIT_FISH_FED_LUBE, type); //required for the lubefish mutation
+        _addtimer(TRAIT_CALLBACK_REMOVE(fish, TRAIT_FISH_FED_LUBE, type), fish.feeding_frequency, TIMER_UNIQUE | TIMER_OVERRIDE, file: "code/modules/reagents/chemistry/reagents/other_reagents.dm", line: 575);
+        return TRUE;
+    }
 }
 
 // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:2865 (silicons SI2: the peacekeeper cyborg's hypospray)
@@ -871,8 +876,9 @@ public partial class datum_wound_burn_flesh : datum_wound_burn
 }
 
 // Gaps RG3 (D339): the rest of the file. The diseases' reagents (the vaccines, the transformation toxins, the spores, Agent-S,
-// Tranquility) came with VI1's diseases (wired in gaps train 12), romerol (the zombies), the concrete (its walls and floors are not ported) and the fish procs (FI1-3) stay with
-// their rows in not-translated.md section 226; the moods are MS1's (live since gaps train 11).
+// Tranquility) came with VI1's diseases (wired in gaps train 12), romerol (the zombies) and the concrete (its walls and floors are not ported) stay with
+// their rows in not-translated.md section 226; the moods are MS1's (live since gaps train 11). Space lube and growth serum fed to a
+// fish came with the fish.
 
 // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:80 (gaps VI1's diseases, wired in gaps train 12)
 public partial class datum_reagent_vaccine : datum_reagent
@@ -2268,6 +2274,15 @@ public partial class datum_reagent_growthserum : datum_reagent
         await affected_mob.update_transform(RESIZE_DEFAULT_SIZE / current_size);
         current_size = RESIZE_DEFAULT_SIZE;
     }
+
+    // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:2753
+    public override async DmTask<object> used_on_fish(obj_item_fish fish = null)
+    {
+        await DmTask.CompletedTask;
+        ADD_TRAIT(fish, TRAIT_FISH_QUICK_GROWTH, type);
+        _addtimer(TRAIT_CALLBACK_REMOVE(fish, TRAIT_FISH_QUICK_GROWTH, type), fish.feeding_frequency * 0.8f, TIMER_UNIQUE | TIMER_OVERRIDE, file: "code/modules/reagents/chemistry/reagents/other_reagents.dm", line: 2755);
+        return TRUE;
+    }
 }
 
 // tg: code/modules/reagents/chemistry/reagents/other_reagents.dm:2767
@@ -2535,7 +2550,7 @@ public partial class datum_reagent_gravitum : datum_reagent
         show_message ??= TRUE;
         object dot = await base.expose_obj(exposed_obj, reac_volume, methods, show_message);
         await exposed_obj.AddElement(typeof(datum_element_forced_gravity), 0);
-        _addtimer(Dm.@new<datum_callback>(exposed_obj, nameof(datum._RemoveElement), Dm.list(typeof(datum_element_forced_gravity), 0)), Dm.num(volume) * time_multiplier, Dm.num(Dm.bitor(TIMER_UNIQUE, TIMER_OVERRIDE)), file: "code/modules/reagents/chemistry/reagents/other_reagents.dm", line: 3106);
+        _addtimer(Dm.@new<datum_callback>(exposed_obj, nameof(datum._RemoveElement), Dm.list(typeof(datum_element_forced_gravity), 0)), Dm.num(volume) * time_multiplier, Dm.num(TIMER_UNIQUE | TIMER_OVERRIDE), file: "code/modules/reagents/chemistry/reagents/other_reagents.dm", line: 3106);
         return dot;
     }
 

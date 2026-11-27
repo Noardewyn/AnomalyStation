@@ -143,7 +143,7 @@ public sealed class AppearanceEntry
     public const short DefaultMaptextSize = 32;
 }
 
-/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 98).</summary>
+/// <summary>Bits of <see cref="NetField.Posture"/>: tg's <c>body_position</c> and <c>lying_angle</c> (0, 90, 180, 270), one byte; all eight bits are used (version 99).</summary>
 public static class PostureBits
 {
     /// <summary>Bit 0: lying (tg <c>LYING_DOWN</c>).</summary>
@@ -171,12 +171,12 @@ public static class PostureBits
     public const byte Buckled = 32;
 
     /// <summary>
-    /// Bit 6 (version 98, slice T4c, DV600): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
+    /// Bit 6 (version 99, slice T4c, DV686): someone turned the lying body over, so its side up is fixed (<see cref="FaceUp"/>) for every viewer.
     /// Set only while lying; the server forgets the side when the body stands up.
     /// </summary>
     public const byte SideFixed = 64;
 
-    /// <summary>Bit 7 (version 98, slice T4c, DV600): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
+    /// <summary>Bit 7 (version 99, slice T4c, DV686): with <see cref="SideFixed"/>, the turned body lies face up (its front is drawn); without, back up.</summary>
     public const byte FaceUp = 128;
 
     /// <summary>
@@ -492,7 +492,7 @@ public enum ActionKind : byte
     /// </summary>
     Loaded = 27,
     /// <summary>
-    /// Version 98 (DV603, ui-overhaul.md section 10): a press of hotbar cell <see cref="ActionMessage.HotbarCell"/> (1 to 10: 1 to 7 the belt,
+    /// Version 99 (DV689, ui-overhaul.md section 10): a press of hotbar cell <see cref="ActionMessage.HotbarCell"/> (1 to 10: 1 to 7 the belt,
     /// 8 and 9 the pockets, 10 the ID slot), untargeted. The server does what the cell's rules say with tg's procs, or tells the client it refused.
     /// </summary>
     HotbarPress = 28,
@@ -575,7 +575,7 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     /// <summary>Version 4: tg's <c>icon-y</c>, 1 to 32 (0: absent): north (or up on a billboard) is y.</summary>
     public byte IconY { get; init; }
 
-    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 98: bit 3 its high bit); version 98 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
+    /// <summary>The body zone a click aims at (<see cref="Protocol.AimZone"/>, DV30), bits 4-6 of the modifiers byte (version 99: bit 3 its high bit); version 99 also: the zone a hover on an entity looks at, a byte after its target; None otherwise.</summary>
     public AimZone AimZone { get; init; }
 
     /// <summary>Version 4: the keybinding of a <see cref="ActionKind.Keybinding"/> (<see cref="KeybindingCode"/>), else None.</summary>
@@ -634,6 +634,6 @@ public readonly record struct ActionMessage(uint FrameSeq, ActionKind Kind, long
     /// <summary>Version 38: a <see cref="ActionKind.Say"/> of type "thinking": tg's <c>payload["visible"]</c>; false otherwise.</summary>
     public bool SayVisible { get; init; }
 
-    /// <summary>Version 98 also (DV603): the cell of a <see cref="ActionKind.HotbarPress"/>, 1 to <see cref="HotbarMessage.CellCount"/>; 0 for every other kind.</summary>
+    /// <summary>Version 99 also (DV689): the cell of a <see cref="ActionKind.HotbarPress"/>, 1 to <see cref="HotbarMessage.CellCount"/>; 0 for every other kind.</summary>
     public int HotbarCell { get; init; }
 }

@@ -41,7 +41,7 @@ public partial class mob_living_basic_bee : mob_living_basic
         Dm.Deferred("code/modules/mob/living/basic/farm_animals/bee/_bee.dm:67", "Initialize: the clickbox component (a 2D click target, inert)");
         Waiting.NoSleep(AddComponent(typeof(datum_component_swarming)));
         Waiting.NoSleep(AddComponent(typeof(datum_component_obeys_commands), pet_commands));
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_QUEEN_BEE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)); // inert until the cell lines (P3)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_QUEEN_BEE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5));
         Waiting.NoSleep(AddElement(typeof(datum_element_basic_allergenic_attack), Dm.named("allergen", BUGS), Dm.named("allergen_chance", 33), Dm.named("histamine_add", 5)));
         Waiting.NoSleep(AddElement(typeof(datum_element_can_be_held)));
         return dot;
@@ -291,7 +291,7 @@ public partial class obj_item_queen_bee : obj_item
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_QUEEN_BEE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)); // inert until the cell lines (P3)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_QUEEN_BEE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5));
         RegisterSignal(this, COMSIG_ATOM_ATTACKBY, nameof(handle_needle));
         return dot;
     }
@@ -393,7 +393,7 @@ public partial class obj_item_trash_bee : obj_item_trash
         mob_living_basic_bee dead_bee = Dm.arg(__extra, 0) as mob_living_basic_bee;
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddComponentFrom(SOURCE_EDIBLE_INNATE, typeof(datum_component_edible), Dm.list(Dm.kv(typeof(datum_reagent_consumable_nutriment_vitamin), 5)), null, mob_living_basic_bee.BEE_FOODGROUPS, 10, 0, Dm.list("bee"), null, 10));
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_QUEEN_BEE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)); // inert until the cell lines (P3)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_QUEEN_BEE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5));
         RegisterSignal(this, COMSIG_ATOM_ON_LAZARUS_INJECTOR, nameof(use_lazarus));
         if (dead_bee == null)
             return dot;

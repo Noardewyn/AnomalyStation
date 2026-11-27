@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The syndicate campaign X3b (D316): the punching mitts (hunter boxing), whole but the fishing difficulty (fishing is not ported).
+// The syndicate campaign X3b (D316): the punching mitts (hunter boxing), whole.
 // The var blocks are generated (D111).
 
 // tg: code/modules/clothing/gloves/punch_mitts.dm:1
@@ -19,7 +19,7 @@ public partial class obj_item_clothing_gloves_fingerless_punch_mitts : obj_item_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/gloves/punch_mitts.dm:12", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -6): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -6));
         Waiting.NoSleep(AddComponent(typeof(datum_component_martial_art_giver), typeof(datum_martial_art_boxing_hunter)));
         return dot;
     }

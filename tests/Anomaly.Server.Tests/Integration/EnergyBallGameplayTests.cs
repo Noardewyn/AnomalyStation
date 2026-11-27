@@ -51,7 +51,7 @@ public class EnergyBallGameplayTests(ITestOutputHelper output)
         Action<Exception> sink = w.World.RuntimeErrorSink;
         w.World.RuntimeErrorSink = e => { errors.Add(e); sink?.Invoke(e); };
 
-        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).ToList()));
+        obj_machinery_power_supermatter_crystal sm = In(w, () => Assert.Single(Dm.each<obj_machinery_power_supermatter_crystal>(Dm.world).Where(c => Dm.truthy(is_station_level(c.z))).ToList()));
         int smx = (int)In(w, () => Dm.num(sm.x)), smy = (int)In(w, () => Dm.num(sm.y));
         // the engineer watches from twelve tiles north, in the dev godmode (apps.md 1.6a): the ball's zaps and the delamination's
         // blast would kill him, and the ball does not dust a godmode mob (energy_ball.dm:193)

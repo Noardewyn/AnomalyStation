@@ -49,9 +49,10 @@ public class ComputerFrameTests
     public void AnInertConsoleTakenApartWithAScrewdriverLeavesItsFrameAndBoard()
     {
         var (r, bob) = Room(7103);
-        // the library console is inert (D112): its Initialize, which makes the board (_machinery.dm:179), never ran (the teleporter
-        // console was the example until gaps TP1 made it live, the station alert console until E6)
-        var console = Place<obj_machinery_computer_libraryconsole>(r);
+        // the experimental cloner's console is inert (D112): its Initialize, which makes the board (_machinery.dm:179), never ran (the
+        // launchpad console was the example until the anomaly lab's pads were ported, the teleporter console until gaps TP1 made it
+        // live, the station alert console until E6, the library console until the library's machines were ported)
+        var console = Place<obj_machinery_computer_experimental_cloner>(r);
         r.Step(Second);
         Assert.True(r.In(() => InertSeam.IsInert(console)));
         Hold<obj_item_screwdriver>(r, bob);
@@ -59,7 +60,7 @@ public class ComputerFrameTests
         Assert.True(r.In(() => QDELETED(console)), string.Join("\n", r.Room.RuntimeText));
         var frame = Assert.Single(On<obj_structure_frame_computer>(r));
         Assert.Equal(FRAME_COMPUTER_STATE_GLASSED, State(r, frame));
-        Assert.IsType<obj_item_circuitboard_computer_libraryconsole>(r.In(() => frame.circuit_value));
+        Assert.IsType<obj_item_circuitboard_computer_experimental_cloner>(r.In(() => frame.circuit_value));
         Assert.Same(r.In(() => frame.circuit_value), r.In(() => Dm.each(frame.contents).Single()));
         r.AssertNoRuntimes();
     }
@@ -87,7 +88,8 @@ public class ComputerFrameTests
         Assert.Equal(dir, r.In(() => Dm.num(frame.dir)));
         Assert.Same(board, r.In(() => frame.circuit_value));
         Assert.Same(board, r.In(() => Dm.each(frame.contents).Single()));
-        Assert.Contains(r.Sounds.Heard, h => h.File == "sound/items/tools/screwdriver.ogg");
+        // the screwdriver's usesound is a pick of its two (screwdriver.dm:25)
+        Assert.Contains(r.Sounds.Heard, h => h.File is "sound/items/tools/screwdriver.ogg" or "sound/items/tools/screwdriver2.ogg");
 
         // ---- 2. Down: the crowbar pries out the glass (2 glass sheets), the wirecutter the cable (5), the screwdriver
         //         unsecures the board, the crowbar takes it out

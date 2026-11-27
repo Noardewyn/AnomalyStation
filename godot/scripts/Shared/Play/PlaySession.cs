@@ -135,7 +135,7 @@ public sealed class PlaySession
         _feed.Poll(now);
         if (_feed.Phase != FeedPhase.Playing)
             return;
-        Hotbar.Apply(_feed.Hotbar, _feed.HotbarRefusals, _feed.HotbarRefusedCell, now); // version 98 also (DV603)
+        Hotbar.Apply(_feed.Hotbar, _feed.HotbarRefusals, _feed.HotbarRefusedCell, now); // version 99 also (DV689)
         long newest = Math.Max(_feed.Tick, _replica.MotionTick); // version 42: a Motion runs ahead of a Delta the reliable channel holds back
         if (newest != _lastTick)
         {
@@ -364,7 +364,7 @@ public sealed class PlaySession
             TurfZ = target.Kind is TargetKind.Turf or TargetKind.Ceiling ? target.Z : 0,
             IconX = pixel ? target.IconX : (byte)0,
             IconY = pixel ? target.IconY : (byte)0,
-            AimZone = kind is ActionKind.Click or ActionKind.Throw or ActionKind.Hover && target.Kind == TargetKind.Entity ? target.Aim : AimZone.None, // version 98 also: a hover's zone
+            AimZone = kind is ActionKind.Click or ActionKind.Throw or ActionKind.Hover && target.Kind == TargetKind.Entity ? target.Aim : AimZone.None, // version 99 also: a hover's zone
             // version 88 (DV527): the tick the world was drawn at, for the server's lag compensation
             Aim = pixel && kind != ActionKind.DblClick && aim is ShotAim a ? a with { Seen = (long)Math.Round(Math.Max(0, RenderTick) * 16) } : null,
         };
@@ -522,7 +522,7 @@ public sealed class PlaySession
     public const double HoverInterval = 0.1;
 
     /// <summary>
-    /// Version 98 also (slice T4b): the shortest time between two hovers of the same thing whose zone changed: 8 a second. It mirrors the server's
+    /// Version 99 also (slice T4b): the shortest time between two hovers of the same thing whose zone changed: 8 a second. It mirrors the server's
     /// <c>ActionLimits.Hover</c> (a bucket of 5 hovers refilled at 10 a second, <see cref="HoverInterval"/>): the zone's resends share
     /// <see cref="HoverInterval"/>'s clock, so a sweep, however long, never sends faster than the refill and the server never drops its newest zone;
     /// the quarter below the refill leaves the bucket's burst for the arrival jitter.
@@ -530,14 +530,14 @@ public sealed class PlaySession
     public const double ZoneHoverInterval = HoverInterval * 1.25;
 
     /// <summary>
-    /// Version 98 also (slice T4b): whether a hover on <paramref name="target"/> carries the body zone looked at: a picked entity pixel seen through
+    /// Version 99 also (slice T4b): whether a hover on <paramref name="target"/> carries the body zone looked at: a picked entity pixel seen through
     /// the crosshair. In cursor mode (Tab) it carries none: the free pointer passing over a person must not overwrite the zone chosen on tg's zone
     /// selector, which shows there; a click there still carries its zone.
     /// </summary>
     public static bool HoverCarriesZone(in ClickTarget target, bool cursorMode) => !cursorMode && target.Kind == TargetKind.Entity && target.IconX != 0;
 
     /// <summary>
-    /// DV601: while the same world thing stays hovered, the hover goes out again this long after the last hover or unhover, so the server's answer
+    /// DV687: while the same world thing stays hovered, the hover goes out again this long after the last hover or unhover, so the server's answer
     /// follows reach (the prompt shows only in reach: the player walks up, steps back, or the thing moves), the held item and combat mode. Two a
     /// second, on <see cref="HoverInterval"/>'s clock, well inside the server's bucket (10 a second, 5 at once), so the zone's resends are not starved.
     /// None while the pet-commands key is held: tg's pets listen to MouseEntered then (obeys_commands.dm), and each repeat would be a new entering
@@ -547,7 +547,7 @@ public sealed class PlaySession
 
 
     /// <summary>
-    /// DV601: the server's newest hints (<see cref="HintsArrived"/>), kept only while <see cref="Hover"/> is given the same thing (any zone):
+    /// DV687: the server's newest hints (<see cref="HintsArrived"/>), kept only while <see cref="Hover"/> is given the same thing (any zone):
     /// a look at another thing, or at nothing, drops them, so an answer from an earlier look at a thing never stands for a new one (it may have
     /// been in reach then). Match them to a target with <see cref="KeyChips.AnswerFor"/>.
     /// </summary>
@@ -586,7 +586,7 @@ public sealed class PlaySession
     /// M4a (D125): the crosshair's target (or, in cursor mode, the HUD entry under the pointer) is <paramref name="target"/> now. A hover goes
     /// out when the thing changed, at most once per <see cref="HoverInterval"/> (the newest change waits for the interval). Version 14: nothing
     /// under it clears the hints at once and, when the server was told of a thing, sends an <see cref="ActionKind.Unhover"/> (BYOND's
-    /// <c>MouseExited</c>), on the same interval. Version 98 also (slice T4b): the hover carries the target's <see cref="ClickTarget.Aim"/>, the zone looked
+    /// <c>MouseExited</c>), on the same interval. Version 99 also (slice T4b): the hover carries the target's <see cref="ClickTarget.Aim"/>, the zone looked
     /// at, and goes out again when only that zone changed, at most once per <see cref="ZoneHoverInterval"/>. Returns true when a hover or an unhover was sent.
     /// A belt cell of the bar (package 3) or the Tab inventory's own sprite (slice 4A) is no tg entry: over it the pointer hovers nothing.
     /// </summary>
@@ -595,8 +595,8 @@ public sealed class PlaySession
         if (LiveHud.IsOurs(target)) // a belt cell, the own sprite (slice 4A)
             return Hover(ClickTarget.None, now);
         if (!target.SameThing(_hintsLook))
-            (_hintsLook, Hints) = (target, null); // DV601: a new look, or none: the answer in hand was for an earlier one
-        bool repeat = target.IsSet && target.Kind != TargetKind.Screen && !_heldKeybindings.Contains(KeybindingCode.ViewPetCommands) && now - _lastHoverAt >= RepeatHoverInterval; // DV601
+            (_hintsLook, Hints) = (target, null); // DV687: a new look, or none: the answer in hand was for an earlier one
+        bool repeat = target.IsSet && target.Kind != TargetKind.Screen && !_heldKeybindings.Contains(KeybindingCode.ViewPetCommands) && now - _lastHoverAt >= RepeatHoverInterval; // DV687
         if (!target.IsSet)
         {
             _hovered = default;
@@ -610,7 +610,7 @@ public sealed class PlaySession
             return false;
         _pendingHover = target;
         _hasPendingHover = true;
-        // version 98 also: a new zone on the same thing goes out too, at most ZoneHoverInterval apart (the newest waits for it)
+        // version 99 also: a new zone on the same thing goes out too, at most ZoneHoverInterval apart (the newest waits for it)
         if (now - _lastHoverAt < (_pendingHover.IsSet && _pendingHover.SameThing(_serverHovered) ? ZoneHoverInterval : HoverInterval))
             return false;
         _lastHoverAt = now;
@@ -723,11 +723,11 @@ public sealed class PlaySession
     /// <summary>Version 16: tgui window closes sent.</summary>
     public int UiClosesSent { get; private set; }
 
-    /// <summary>Version 98 also (DV603): the own hotbar as the server last sent it (the cells, the held names, the last refused press).</summary>
+    /// <summary>Version 99 also (DV689): the own hotbar as the server last sent it (the cells, the held names, the last refused press).</summary>
     public HotbarModel Hotbar { get; } = new();
 
     /// <summary>
-    /// Version 98 also (DV603, ui-overhaul.md section 10): a press of hotbar cell <paramref name="cell"/> (1 to 10), sent as it is; the server decides
+    /// Version 99 also (DV689, ui-overhaul.md section 10): a press of hotbar cell <paramref name="cell"/> (1 to 10), sent as it is; the server decides
     /// what it does (nothing is predicted). False, and nothing sent, for a cell out of range.
     /// </summary>
     public bool HotbarPress(int cell)

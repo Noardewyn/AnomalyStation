@@ -13,7 +13,7 @@ namespace Anomaly.Core.Tg;
 // warning loop (process), Destroy, the environment check (check_danger: the danger level and the area's atmos alarm),
 // select_mode, the area relationship, update_name, the pictures and the light, the map helpers' procs (unlock, the
 // accesses, the cold room, kitchen and no-check thresholds) and the air sensor link (its multitool_act: package E5). Deferred leaves: the wires
-// (/datum/wires/airalarm: hacking, M7), the circuit USB port (circuits), the screentips (M9), the spoken warning (say:
+// (/datum/wires/airalarm: hacking, M7), the screentips (M9), the spoken warning (say:
 // speech, M9), the emissives (DEVIATION DV12) and the mapping log lines (AREACOORD, M10). Generated live-partial stubs:
 // the map export (M10), add_context (M9) and air_alarm_interact.dm's emag proc (M10+); its tool and
 // construction procs are translated in air_alarm_interact.cs (M5 slice 7). The tgui window (ui_status, ui_interact,
@@ -69,8 +69,14 @@ public partial class obj_machinery_airalarm : obj_machinery
         select_mode(this, typeof(datum_air_alarm_mode_filtering), should_apply: FALSE);
 
         Waiting.NoSleep(AddElement(typeof(datum_element_connect_loc), atmos_connections));
-        // AddComponent(/datum/component/usb_port, typecacheof(list(the air alarm's circuit components)), only_root_path = TRUE): circuits
-        Dm.Deferred("code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:123", "Initialize: AddComponent(/datum/component/usb_port): the circuit USB port (circuits)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port),
+            typecacheof(Dm.list(
+                typeof(obj_item_circuit_component_air_alarm_general),
+                typeof(obj_item_circuit_component_air_alarm),
+                typeof(obj_item_circuit_component_air_alarm_scrubbers),
+                typeof(obj_item_circuit_component_air_alarm_vents)
+            ), only_root_path: TRUE)
+        ));
 
         Dm.append(ref GLOB.air_alarms, this);
         if (Dm.truthy(mapload))
@@ -765,8 +771,9 @@ public partial class obj_machinery_airalarm : obj_machinery
     }
 
     // tg: code/modules/atmospherics/machinery/air_alarm/_air_alarm.dm:641
-    // (mode_path is object, not tg's declared /datum/air_alarm_mode: it holds a typepath, rules 3.5 V3)
-    public virtual void select_mode(atom source = null, object mode_path = null, float? should_apply = null)
+    // (mode_path is object, not tg's declared /datum/air_alarm_mode: it holds a typepath, rules 3.5 V3; source is object, not
+    // tg's atom: the circuits' air alarm component passes its creator's text, rules 3.5)
+    public virtual void select_mode(object source = null, object mode_path = null, float? should_apply = null)
     {
         should_apply ??= TRUE;
         datum_air_alarm_mode new_mode = GLOB.air_alarm_modes[mode_path] as datum_air_alarm_mode;

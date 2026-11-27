@@ -1,14 +1,16 @@
 // Translated from tgstation (snapshot 1d99bd7f): code/_globalvars/religion.dm
 // Original copyright and license: tgstation, AGPL-3.0 (code). See ../tgstation/LICENSE.
 using Anomaly.Core.DmShim;
+using Anomaly.Core.Kernel;
+using static Anomaly.Core.DmShim.Dm;
+using static Anomaly.Core.Tg.Builtins;
 using static Anomaly.Core.Tg.Defines;
 using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (M10x slice A): the deity and the prayer types' colours, crosses and boxes that a prayer reads (pray.cs); gaps J2 (D298): the
-// chaplain's religion, bible and holy weapon. The sect's procs (set_new_religious_sect, reset_religious_sect, :52-82) wait for the
-// sects (not-translated.md 106).
+// The whole file: the deity and the prayer types' colours, crosses and boxes that a prayer reads (pray.cs), the chaplain's religion,
+// bible and holy weapon, and the sect's selection and reset (the chapel).
 
 // tg: code/_globalvars/religion.dm:1
 public partial class datum_controller_global_vars : datum_controller
@@ -144,5 +146,61 @@ public partial class datum_controller_global_vars : datum_controller
             Dm.kv(EVIL_PRAYER, "red_box"),
             Dm.kv(SANTA_PRAYER, "blue_box"),
             Dm.kv(SANTA_NAUGHTY_PRAYER, "red_box"));
+    }
+}
+
+public static partial class GlobalProcs
+{
+    /// Sets a new religious sect used by all chaplains int he round
+    // tg: code/_globalvars/religion.dm:52
+    public static async DmTask set_new_religious_sect(object path = null, float? reset_existing = null)
+    {
+        reset_existing ??= FALSE;
+        if (!ispath(path, typeof(datum_religion_sect)))
+        {
+            message_admins(Dm.text("[] has tried to spawn an item when selecting a sect.", ADMIN_LOOKUPFLW(usr)));
+            return;
+        }
+
+        if (GLOB.religious_sect != null)
+        {
+            if (!Dm.truthy(reset_existing))
+                return;
+            reset_religious_sect();
+        }
+
+        GLOB.religious_sect = await Dm.new_async((Type)path) as datum_religion_sect;
+        foreach (object i in Dm.each(GLOB.player_list))
+        {
+            if (!isliving(i))
+                continue;
+            mob_living am_i_holy_living = i as mob_living;
+            if (!Dm.truthy(am_i_holy_living.mind?.holy_role))
+                continue;
+            await GLOB.religious_sect.on_conversion(am_i_holy_living);
+        }
+        // SEND_GLOBAL_SIGNAL(COMSIG_RELIGIOUS_SECT_CHANGED) (__DEFINES/dcs/helpers.dm:7), expanded inline (rules 11.1 (e))
+        if (Dm.truthy(SSdcs._listen_lookup?[COMSIG_RELIGIOUS_SECT_CHANGED]))
+            SSdcs._SendSignal(COMSIG_RELIGIOUS_SECT_CHANGED, Dm.list(SSdcs));
+    }
+
+    /// Removes any existing religious sect from chaplains, allowing another to be selected
+    // tg: code/_globalvars/religion.dm:73
+    public static void reset_religious_sect()
+    {
+        foreach (object i in Dm.each(GLOB.player_list))
+        {
+            if (!isliving(i))
+                continue;
+            mob_living am_i_holy_living = i as mob_living;
+            if (!Dm.truthy(am_i_holy_living.mind?.holy_role))
+                continue;
+            GLOB.religious_sect.on_deconversion(am_i_holy_living);
+        }
+
+        GLOB.religious_sect = null;
+        // SEND_GLOBAL_SIGNAL(COMSIG_RELIGIOUS_SECT_RESET) (__DEFINES/dcs/helpers.dm:7), expanded inline (rules 11.1 (e))
+        if (Dm.truthy(SSdcs._listen_lookup?[COMSIG_RELIGIOUS_SECT_RESET]))
+            SSdcs._SendSignal(COMSIG_RELIGIOUS_SECT_RESET, Dm.list(SSdcs));
     }
 }

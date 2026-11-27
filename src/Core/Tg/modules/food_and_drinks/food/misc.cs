@@ -9,9 +9,10 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable,
-// make_dryable), the burned mess (the bad recipe, :196-262) and the butter on a stick (:392-412) translated (gaps package H2,
-// D333); the rest of the file is generated or waits for its package (the huge mushroom slice is in _food.cs).
+// The whole file: the kitchen links of the food (make_grillable, make_bakeable, make_microwaveable, make_processable, make_dryable),
+// the burned mess (the bad recipe, :196-262) and the butter on a stick (:392-412) came with the kitchen (gaps H2, D333); the melons'
+// and fruits' juices, the sushi sheet's and the onigiri's ingredients, the pickle a coroner likes, the candied pineapple's look and
+// the ink sac's splat with the restaurant. The huge mushroom slice is in _food.cs. The var blocks are generated.
 
 // tg: code/modules/food_and_drinks/food/misc.dm:196
 public partial class obj_item_food_badrecipe : obj_item_food
@@ -150,5 +151,177 @@ public partial class obj_item_food_badrecipe_moldy_bacteria : obj_item_food_badr
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_MOLD, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 25));
         return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:3
+public partial class obj_item_food_watermelonslice : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:18
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_consumable_watermelonjuice);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:21
+public partial class obj_item_food_watermelonmush : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:36
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_consumable_watermelonjuice);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:39
+public partial class obj_item_food_holymelonslice : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:54
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_water_holywater);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:57
+public partial class obj_item_food_holymelonmush : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:72
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_water_holywater);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:75
+public partial class obj_item_food_barrelmelonslice : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:90
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_consumable_ethanol_beer);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:93
+public partial class obj_item_food_barrelmelonmush : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:108
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_consumable_ethanol_beer);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:111
+public partial class obj_item_food_appleslice : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:126
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_consumable_applejuice);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:446
+public partial class obj_item_food_pineappleslice : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:454
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_consumable_pineapplejuice);
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:544
+public partial class obj_item_food_seaweedsheet : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:556
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), typeof(obj_item_food_sushi_empty), CUSTOM_INGREDIENT_ICON_FILL, Dm.named("max_ingredients", 6)));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:587
+public partial class obj_item_food_onigiri : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:601
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_ingredients_holder), typeof(obj_item_food_onigiri_empty), CUSTOM_INGREDIENT_ICON_NOCHANGE, Dm.named("max_ingredients", 4)));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:628
+public partial class obj_item_food_pickle : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:643
+    public override object juice_typepath()
+    {
+        return typeof(datum_reagent_consumable_pickle);
+    }
+
+    // tg: code/modules/food_and_drinks/food/misc.dm:646
+    public override async DmTask make_edible()
+    {
+        await base.make_edible();
+        await AddComponentFrom(SOURCE_EDIBLE_INNATE, typeof(datum_component_edible), Dm.named("check_liked", Dm.@new<datum_callback>(this, nameof(check_liked))));
+    }
+
+    // tg: code/modules/food_and_drinks/food/misc.dm:650
+    public virtual object check_liked(mob_living_carbon_human consumer = null)
+    {
+        obj_item_organ_liver liver = consumer.get_organ_slot(ORGAN_SLOT_LIVER) as obj_item_organ_liver;
+        if (!HAS_TRAIT(consumer, TRAIT_AGEUSIA) && liver != null && HAS_TRAIT(liver, TRAIT_CORONER_METABOLISM))
+            return FOOD_LIKED;
+        return null;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:744
+public partial class obj_item_food_candied_pineapple : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:759
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        icon_state = Dm.text("[]_[]", base_icon_state, rand(1, 3));
+        return dot;
+    }
+}
+
+// tg: code/modules/food_and_drinks/food/misc.dm:852
+public partial class obj_item_food_ink_sac : obj_item_food
+{
+    // tg: code/modules/food_and_drinks/food/misc.dm:860
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        Waiting.NoSleep(AddComponent(typeof(datum_component_splat),
+            Dm.named("memory_type", typeof(datum_memory_witnessed_inking)),
+            Dm.named("smudge_type", typeof(obj_effect_decal_cleanable_food_squid_ink)),
+            Dm.named("moodlet_type", typeof(datum_mood_event_inked)),
+            Dm.named("splat_color", COLOR_NEARLY_ALL_BLACK),
+            Dm.named("hit_callback", Dm.@new<datum_callback>(this, nameof(blind_em)))
+        ));
+        return dot;
+    }
+
+    // tg: code/modules/food_and_drinks/food/misc.dm:870
+    public virtual async DmTask blind_em(mob_living victim = null, object can_splat_on = null)
+    {
+        if (Dm.truthy(can_splat_on))
+        {
+            await victim.adjust_temp_blindness_up_to(2.5f * SECONDS, 3 * SECONDS);
+            await victim.adjust_confusion_up_to(2.5f * SECONDS, 3 * SECONDS);
+        }
+        victim.visible_message(span_warning(I18n.T("[] is inked by []!", victim, this)), span_userdanger(I18n.T("You've been inked by []!", this)));
+        playsound(victim, SFX_DESECRATION, 50, TRUE);
     }
 }

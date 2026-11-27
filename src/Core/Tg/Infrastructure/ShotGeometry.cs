@@ -593,8 +593,6 @@ public static class ShotGeometry
     /// <c>receive_damage</c>) is lit for <see cref="HitFlashDeciseconds"/>, for everyone who sees the mob: the part's own cached images as
     /// one overlay over the picture, bright red.
     /// </summary>
-    // the world time each carbon's lit parts go out (FlashLimb)
-    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<mob_living_carbon, Dictionary<string, float>> LitParts = new();
 
     public static void FlashLimb(mob_living_carbon carbon, object zone)
     {
@@ -603,7 +601,7 @@ public static class ShotGeometry
         if (mob_living_carbon.limb_icon_cache[carbon.icon_render_keys[zone]] is not DmList parts || parts.len == 0)
             return;
         // one flash per part at a time: damage every tick (toxins, fire) would pile up tg's 100 overlays before the first went out
-        var lit = LitParts.GetOrCreateValue(carbon);
+        var lit = TgState.Current.ShotGeometry__LitParts.GetOrCreateValue(carbon);
         string part = Dm.str(zone);
         float now = Dm.num(world.time);
         if (lit.TryGetValue(part, out float until) && now < until)
@@ -729,7 +727,7 @@ public static class ShotGeometry
 
     /// <summary>
     /// The frame a lying <paramref name="target"/> shows a viewer at (<paramref name="viewerX"/>, <paramref name="viewerY"/>), from its own state as the
-    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV600).
+    /// replicator sends it in the posture byte: limp, lying buckled to an object (slice T4c) and the side it was turned to (DV686).
     /// </summary>
     public static byte LyingFrame(mob_living target, byte yaw, double mobX, double mobY, double viewerX, double viewerY)
         => ChooseLyingDir(yaw, mobX, mobY, viewerX, viewerY, IsLimp(target), target.dm_lies_buckled, target.dm_turned_face_up);
@@ -821,7 +819,7 @@ public static class ShotGeometry
     }
 
     /// <summary>
-    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV600, <paramref name="turnedFaceUp"/>), one
+    /// The client's <c>BillboardMath.ChooseLyingDir</c>: a body turned over shows the side it was turned to (DV686, <paramref name="turnedFaceUp"/>), one
     /// lying buckled to an object its front (slice T4c), from every side; otherwise a conscious body lies face down (its back, north), a limp one by the
     /// viewer's side.
     /// </summary>
@@ -973,4 +971,10 @@ public static class BodyMasks
         }
         return table;
     }
+}
+
+public sealed partial class TgState
+{
+    // the world time each carbon's lit parts go out (ShotGeometry.FlashLimb)
+    internal readonly System.Runtime.CompilerServices.ConditionalWeakTable<mob_living_carbon, Dictionary<string, float>> ShotGeometry__LitParts = new();
 }

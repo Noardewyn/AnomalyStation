@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (M9 slice E: a PDA message's filter): check_pda_message_against_filter, is_ic_filtered_for_pdas and
-// is_soft_ic_filtered_for_pdas. The word filter's regexes are built from config/word_filter.toml by the configuration's
+// PARTIAL (M9 slice E: a PDA message's filter): check_pda_message_against_filter, is_ic_filtered_for_pdas,
+// is_soft_ic_filtered_for_pdas and censor_ic_filter_for_pdas (a circuit's PDA message). The word filter's regexes are built from config/word_filter.toml by the configuration's
 // LoadChatFilter, which the port does not load (the regex is a shim gap, configuration.cs): they stay null, so no word is
 // filtered, as with no word filter configured. The IC, OOC and censor filters come with their callers.
 
@@ -61,6 +61,17 @@ public static partial class GlobalProcs
         if (datum_controller_configuration.soft_ic_outside_pda_filter_regex != null)
             Dm.NotTranslated("code/__HELPERS/chat_filter.dm:79", "is_soft_ic_filtered_for_pdas: the word filter's regex (/regex, a shim gap; the filter config is not loaded)");
         return null;
+    }
+
+    ///Given a pda message, will replace any match in the message with grawlixs.
+    // tg: code/__HELPERS/chat_filter.dm:89
+    public static object censor_ic_filter_for_pdas(object message = null)
+    {
+        if (datum_controller_configuration.ic_outside_pda_filter_regex != null)
+            Dm.NotTranslated("code/__HELPERS/chat_filter.dm:91", "censor_ic_filter_for_pdas: the word filter's regex (/regex, a shim gap; the filter config is not loaded)");
+        if (datum_controller_configuration.soft_ic_outside_pda_filter_regex != null)
+            Dm.NotTranslated("code/__HELPERS/chat_filter.dm:93", "censor_ic_filter_for_pdas: the word filter's regex (/regex, a shim gap; the filter config is not loaded)");
+        return message;
     }
 }
 

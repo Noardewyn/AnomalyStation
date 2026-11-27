@@ -37,9 +37,9 @@ public partial class obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:23
-[DmPath("/obj/machinery/computer/slot_machine"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine : obj_machinery_computer
+// tg: code/game/machinery/slotmachine.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine")]
+public partial class obj_machinery_computer_slot_machine
 {
     public float money = 3000; // tg: code/game/machinery/slotmachine.dm:33
     public float plays = 0; // tg: code/game/machinery/slotmachine.dm:34
@@ -84,9 +84,9 @@ public partial class obj_machinery_computer_slot_machine : obj_machinery_compute
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:558
-[DmPath("/obj/machinery/computer/slot_machine/command"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_command : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:558 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/command")]
+public partial class obj_machinery_computer_slot_machine_command
 {
     // tg: code/game/machinery/slotmachine.dm:558
     public obj_machinery_computer_slot_machine_command()
@@ -105,9 +105,9 @@ public partial class obj_machinery_computer_slot_machine_command : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:578
-[DmPath("/obj/machinery/computer/slot_machine/security"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_security : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:578 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/security")]
+public partial class obj_machinery_computer_slot_machine_security
 {
     // tg: code/game/machinery/slotmachine.dm:578
     public obj_machinery_computer_slot_machine_security()
@@ -126,9 +126,9 @@ public partial class obj_machinery_computer_slot_machine_security : obj_machiner
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:598
-[DmPath("/obj/machinery/computer/slot_machine/medical"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_medical : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:598 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/medical")]
+public partial class obj_machinery_computer_slot_machine_medical
 {
     // tg: code/game/machinery/slotmachine.dm:598
     public obj_machinery_computer_slot_machine_medical()
@@ -147,9 +147,9 @@ public partial class obj_machinery_computer_slot_machine_medical : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:618
-[DmPath("/obj/machinery/computer/slot_machine/engineering"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_engineering : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:618 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/engineering")]
+public partial class obj_machinery_computer_slot_machine_engineering
 {
     // tg: code/game/machinery/slotmachine.dm:618
     public obj_machinery_computer_slot_machine_engineering()
@@ -168,9 +168,9 @@ public partial class obj_machinery_computer_slot_machine_engineering : obj_machi
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:638
-[DmPath("/obj/machinery/computer/slot_machine/cargo"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_cargo : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:638 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/cargo")]
+public partial class obj_machinery_computer_slot_machine_cargo
 {
     // tg: code/game/machinery/slotmachine.dm:638
     public obj_machinery_computer_slot_machine_cargo()
@@ -189,9 +189,9 @@ public partial class obj_machinery_computer_slot_machine_cargo : obj_machinery_c
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:658
-[DmPath("/obj/machinery/computer/slot_machine/service"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_service : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:658 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/service")]
+public partial class obj_machinery_computer_slot_machine_service
 {
     // tg: code/game/machinery/slotmachine.dm:658
     public obj_machinery_computer_slot_machine_service()
@@ -210,9 +210,9 @@ public partial class obj_machinery_computer_slot_machine_service : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:678
-[DmPath("/obj/machinery/computer/slot_machine/science"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_science : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:678 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/science")]
+public partial class obj_machinery_computer_slot_machine_science
 {
     // tg: code/game/machinery/slotmachine.dm:678
     public obj_machinery_computer_slot_machine_science()
@@ -231,9 +231,9 @@ public partial class obj_machinery_computer_slot_machine_science : obj_machinery
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:698
-[DmPath("/obj/machinery/computer/slot_machine/clown"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_clown : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:698 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/clown")]
+public partial class obj_machinery_computer_slot_machine_clown
 {
     // tg: code/game/machinery/slotmachine.dm:698
     public obj_machinery_computer_slot_machine_clown()
@@ -251,9 +251,9 @@ public partial class obj_machinery_computer_slot_machine_clown : obj_machinery_c
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:717
-[DmPath("/obj/machinery/computer/slot_machine/mime"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_mime : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:717 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/mime")]
+public partial class obj_machinery_computer_slot_machine_mime
 {
     // tg: code/game/machinery/slotmachine.dm:717
     public obj_machinery_computer_slot_machine_mime()
@@ -271,9 +271,9 @@ public partial class obj_machinery_computer_slot_machine_mime : obj_machinery_co
     }
 }
 
-// tg: code/game/machinery/slotmachine.dm:736
-[DmPath("/obj/machinery/computer/slot_machine/syndicate"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_slot_machine_syndicate : obj_machinery_computer_slot_machine
+// tg: code/game/machinery/slotmachine.dm:736 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/slot_machine/syndicate")]
+public partial class obj_machinery_computer_slot_machine_syndicate
 {
     // tg: code/game/machinery/slotmachine.dm:736
     public obj_machinery_computer_slot_machine_syndicate()
@@ -2983,9 +2983,9 @@ public partial class obj_machinery_computer_camera_advanced_abductor : obj_machi
     }
 }
 
-// tg: code/game/machinery/computer/camera_advanced.dm:282
-[DmPath("/obj/machinery/computer/camera_advanced/human_ai"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_camera_advanced_human_ai : obj_machinery_computer_camera_advanced { }
+// tg: code/game/machinery/computer/camera_advanced.dm:282 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/camera_advanced/human_ai")]
+public partial class obj_machinery_computer_camera_advanced_human_ai { }
 
 // tg: code/game/objects/structures/construction_console/construction_console.dm:11 (the var block of a hand-written class)
 [DmPath("/obj/machinery/computer/camera_advanced/base_construction")]
@@ -3502,9 +3502,9 @@ public partial class obj_machinery_computer_camera_advanced_shuttle_docker_custo
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:29
-[DmPath("/obj/machinery/computer/camera_advanced/xenobio"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_camera_advanced_xenobio : obj_machinery_computer_camera_advanced
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:29 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/camera_advanced/xenobio")]
+public partial class obj_machinery_computer_camera_advanced_xenobio
 {
     public datum_weakref connected_recycler_ref; // tg: code/modules/research/xenobiology/xenobio_camera.dm:41
     public DmList stored_slimes; // tg: code/modules/research/xenobiology/xenobio_camera.dm:43
@@ -3696,9 +3696,9 @@ public partial class obj_machinery_computer_dna_console
     }
 }
 
-// tg: code/game/machinery/computer/launchpad_control.dm:2
-[DmPath("/obj/machinery/computer/launchpad"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_launchpad : obj_machinery_computer
+// tg: code/game/machinery/computer/launchpad_control.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/launchpad")]
+public partial class obj_machinery_computer_launchpad
 {
     public object selected_id; // tg: code/game/machinery/computer/launchpad_control.dm:9
     public DmList launchpads; // tg: code/game/machinery/computer/launchpad_control.dm:10
@@ -3716,9 +3716,9 @@ public partial class obj_machinery_computer_launchpad : obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/computer/mechlaunchpad.dm:2
-[DmPath("/obj/machinery/computer/mechpad"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_mechpad : obj_machinery_computer
+// tg: code/game/machinery/computer/mechlaunchpad.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/mechpad")]
+public partial class obj_machinery_computer_mechpad
 {
     public string id = "roboticsmining"; // tg: code/game/machinery/computer/mechlaunchpad.dm:9
     public object selected_id; // tg: code/game/machinery/computer/mechlaunchpad.dm:11
@@ -3818,11 +3818,11 @@ public partial class obj_machinery_computer_operating_oldstation : obj_machinery
     }
 }
 
-// tg: code/game/machinery/computer/pod.dm:2
-[DmPath("/obj/machinery/computer/pod"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_pod : obj_machinery_computer
+// tg: code/game/machinery/computer/pod.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/pod")]
+public partial class obj_machinery_computer_pod
 {
-    public Type connected; // tg: code/game/machinery/computer/pod.dm:6
+    public obj_machinery_mass_driver connected; // tg: code/game/machinery/computer/pod.dm:6
     public object id = 1; // tg: code/game/machinery/computer/pod.dm:8
     public float timing = 0; // tg: code/game/machinery/computer/pod.dm:10
     public float? time = 30; // tg: code/game/machinery/computer/pod.dm:12
@@ -3839,7 +3839,7 @@ public partial class obj_machinery_computer_pod : obj_machinery_computer
 }
 
 // tg: code/game/machinery/computer/pod.dm:135
-[DmPath("/obj/machinery/computer/pod/old"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old : obj_machinery_computer_pod
 {
     // tg: code/game/machinery/computer/pod.dm:135
@@ -3853,7 +3853,7 @@ public partial class obj_machinery_computer_pod_old : obj_machinery_computer_pod
 }
 
 // tg: code/game/machinery/computer/pod.dm:141
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller : obj_machinery_computer_pod_old
 {
     // tg: code/game/machinery/computer/pod.dm:141
@@ -3868,7 +3868,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller : obj
 }
 
 // tg: code/game/machinery/computer/pod.dm:148
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:148
@@ -3879,7 +3879,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordna
 }
 
 // tg: code/game/machinery/computer/pod.dm:152
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver/longrange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/ordnancedriver/longrange"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver_longrange : obj_machinery_computer_pod_old_mass_driver_controller_ordnancedriver
 {
     // tg: code/game/machinery/computer/pod.dm:152
@@ -3890,7 +3890,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_ordna
 }
 
 // tg: code/game/machinery/computer/pod.dm:155
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/chapelgun"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/chapelgun"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_chapelgun : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:155
@@ -3901,7 +3901,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_chape
 }
 
 // tg: code/game/machinery/computer/pod.dm:158
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/trash"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/trash"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_trash : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:158
@@ -3912,7 +3912,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_trash
 }
 
 // tg: code/game/machinery/computer/pod.dm:161
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/shack"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/shack"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_shack : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/game/machinery/computer/pod.dm:161
@@ -3923,7 +3923,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_shack
 }
 
 // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:91
-[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/feeder"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/mass_driver_controller/feeder"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_mass_driver_controller_feeder : obj_machinery_computer_pod_old_mass_driver_controller
 {
     // tg: code/modules/awaymissions/mission_code/heretic/heretic_gateway_misc.dm:91
@@ -3934,7 +3934,7 @@ public partial class obj_machinery_computer_pod_old_mass_driver_controller_feede
 }
 
 // tg: code/game/machinery/computer/pod.dm:164
-[DmPath("/obj/machinery/computer/pod/old/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/syndicate"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_syndicate : obj_machinery_computer_pod_old
 {
     // tg: code/game/machinery/computer/pod.dm:164
@@ -3953,7 +3953,7 @@ public partial class obj_machinery_computer_pod_old_syndicate : obj_machinery_co
 }
 
 // tg: code/game/machinery/computer/pod.dm:169
-[DmPath("/obj/machinery/computer/pod/old/swf"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/pod/old/swf"), DmGeneratedOnly]
 public partial class obj_machinery_computer_pod_old_swf : obj_machinery_computer_pod_old
 {
     // tg: code/game/machinery/computer/pod.dm:169
@@ -4380,9 +4380,9 @@ public partial class obj_machinery_computer_warrant
     }
 }
 
-// tg: code/game/machinery/computer/arcade/_arcade.dm:2
-[DmPath("/obj/machinery/computer/arcade"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade : obj_machinery_computer
+// tg: code/game/machinery/computer/arcade/_arcade.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade")]
+public partial class obj_machinery_computer_arcade
 {
     public DmList prize_override; // tg: code/game/machinery/computer/arcade/_arcade.dm:14
 
@@ -4400,9 +4400,9 @@ public partial class obj_machinery_computer_arcade : obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/computer/arcade/amputation.dm:2
-[DmPath("/obj/machinery/computer/arcade/amputation"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_amputation : obj_machinery_computer_arcade
+// tg: code/game/machinery/computer/arcade/amputation.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/amputation")]
+public partial class obj_machinery_computer_arcade_amputation
 {
     // tg: code/game/machinery/computer/arcade/amputation.dm:2
     public obj_machinery_computer_arcade_amputation()
@@ -4416,7 +4416,7 @@ public partial class obj_machinery_computer_arcade_amputation : obj_machinery_co
 }
 
 // tg: code/game/machinery/computer/arcade/amputation.dm:43
-[DmPath("/obj/machinery/computer/arcade/amputation/festive"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/computer/arcade/amputation/festive"), DmGeneratedOnly]
 public partial class obj_machinery_computer_arcade_amputation_festive : obj_machinery_computer_arcade_amputation
 {
     // tg: code/game/machinery/computer/arcade/amputation.dm:43
@@ -4434,9 +4434,9 @@ public partial class obj_machinery_computer_arcade_amputation_festive : obj_mach
     }
 }
 
-// tg: code/game/machinery/computer/arcade/battle.dm:41
-[DmPath("/obj/machinery/computer/arcade/battle"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_battle : obj_machinery_computer_arcade
+// tg: code/game/machinery/computer/arcade/battle.dm:41 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/battle")]
+public partial class obj_machinery_computer_arcade_battle
 {
     public string player_current_world = "The Plains"; // tg: code/game/machinery/computer/arcade/battle.dm:68
     public string latest_unlocked_world = "The Plains"; // tg: code/game/machinery/computer/arcade/battle.dm:70
@@ -4474,9 +4474,9 @@ public partial class obj_machinery_computer_arcade_battle : obj_machinery_comput
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion.dm:4
-[DmPath("/obj/machinery/computer/arcade/orion_trail"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_orion_trail : obj_machinery_computer_arcade
+// tg: code/game/machinery/computer/arcade/orion.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/orion_trail")]
+public partial class obj_machinery_computer_arcade_orion_trail
 {
     public float? busy = 0; // tg: code/game/machinery/computer/arcade/orion.dm:11
     public float? engine = 0; // tg: code/game/machinery/computer/arcade/orion.dm:12
@@ -4517,9 +4517,9 @@ public partial class obj_machinery_computer_arcade_orion_trail : obj_machinery_c
     }
 }
 
-// tg: code/game/machinery/computer/arcade/orion.dm:52
-[DmPath("/obj/machinery/computer/arcade/orion_trail/kobayashi"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_arcade_orion_trail_kobayashi : obj_machinery_computer_arcade_orion_trail
+// tg: code/game/machinery/computer/arcade/orion.dm:52 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/arcade/orion_trail/kobayashi")]
+public partial class obj_machinery_computer_arcade_orion_trail_kobayashi
 {
     public DmList event_whitelist; // tg: code/game/machinery/computer/arcade/orion.dm:59
 
@@ -6157,9 +6157,9 @@ public partial class obj_machinery_computer_shuttle_syndicate_drop_pod
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:332
-[DmPath("/obj/machinery/computer/gateway_control"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_gateway_control : obj_machinery_computer
+// tg: code/modules/awaymissions/gateway.dm:332 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/gateway_control")]
+public partial class obj_machinery_computer_gateway_control
 {
     public obj_machinery_gateway G; // tg: code/modules/awaymissions/gateway.dm:335
 
@@ -6421,9 +6421,9 @@ public partial class obj_machinery_computer_cargo_request : obj_machinery_comput
     }
 }
 
-// tg: code/modules/explorer_drone/control_console.dm:2
-[DmPath("/obj/machinery/computer/exodrone_control_console"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_exodrone_control_console : obj_machinery_computer
+// tg: code/modules/explorer_drone/control_console.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/exodrone_control_console")]
+public partial class obj_machinery_computer_exodrone_control_console
 {
     public obj_item_exodrone controlled_drone; // tg: code/modules/explorer_drone/control_console.dm:7
     public float signal_lost = 0; // tg: code/modules/explorer_drone/control_console.dm:9
@@ -6438,9 +6438,9 @@ public partial class obj_machinery_computer_exodrone_control_console : obj_machi
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:79
-[DmPath("/obj/machinery/computer/exoscanner_control"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_exoscanner_control : obj_machinery_computer
+// tg: code/modules/explorer_drone/scanner_array.dm:79 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/exoscanner_control")]
+public partial class obj_machinery_computer_exoscanner_control
 {
     public float failed_popup = 0; // tg: code/modules/explorer_drone/scanner_array.dm:84
     public datum_exploration_site selected_site; // tg: code/modules/explorer_drone/scanner_array.dm:86
@@ -6455,9 +6455,9 @@ public partial class obj_machinery_computer_exoscanner_control : obj_machinery_c
     }
 }
 
-// tg: code/modules/holodeck/computer.dm:33
-[DmPath("/obj/machinery/computer/holodeck"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_holodeck : obj_machinery_computer
+// tg: code/modules/holodeck/computer.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/holodeck")]
+public partial class obj_machinery_computer_holodeck
 {
     public Type mapped_start_area = typeof(area_station_holodeck_rec_center); // tg: code/modules/holodeck/computer.dm:40
     public datum_map_template_holodeck template; // tg: code/modules/holodeck/computer.dm:43
@@ -6496,9 +6496,9 @@ public partial class obj_machinery_computer_holodeck : obj_machinery_computer
     }
 }
 
-// tg: code/modules/library/lib_machines.dm:22
-[DmPath("/obj/machinery/computer/libraryconsole"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_libraryconsole : obj_machinery_computer
+// tg: code/modules/library/lib_machines.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/libraryconsole")]
+public partial class obj_machinery_computer_libraryconsole
 {
     public object book_id; // tg: code/modules/library/lib_machines.dm:30
     public string title = ""; // tg: code/modules/library/lib_machines.dm:32
@@ -6534,9 +6534,9 @@ public partial class obj_machinery_computer_libraryconsole : obj_machinery_compu
     }
 }
 
-// tg: code/modules/library/admin_only.dm:6
-[DmPath("/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_libraryconsole_admin_only_do_not_map_in_you_fucker : obj_machinery_computer_libraryconsole
+// tg: code/modules/library/admin_only.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/libraryconsole/admin_only_do_not_map_in_you_fucker")]
+public partial class obj_machinery_computer_libraryconsole_admin_only_do_not_map_in_you_fucker
 {
     public float view_raw = 0; // tg: code/modules/library/admin_only.dm:8
     public float show_deleted = 1; // tg: code/modules/library/admin_only.dm:10
@@ -6557,9 +6557,9 @@ public partial class obj_machinery_computer_libraryconsole_admin_only_do_not_map
     }
 }
 
-// tg: code/modules/library/lib_machines.dm:278
-[DmPath("/obj/machinery/computer/libraryconsole/bookmanagement"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_libraryconsole_bookmanagement : obj_machinery_computer_libraryconsole
+// tg: code/modules/library/lib_machines.dm:278 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/libraryconsole/bookmanagement")]
+public partial class obj_machinery_computer_libraryconsole_bookmanagement
 {
     public float can_spawn_lore = 1; // tg: code/modules/library/lib_machines.dm:291
     public float screen_state = 1; // tg: code/modules/library/lib_machines.dm:293
@@ -6671,7 +6671,7 @@ public partial class obj_machinery_computer_old : obj_machinery_computer
     }
 }
 
-// tg: code/modules/mining/aux_base.dm:15 (the var block of a hand-written class)
+// tg: code/modules/mining/aux_base.dm:15 (the vars the hand-written class does not declare)
 [DmPath("/obj/machinery/computer/auxiliary_base")]
 public partial class obj_machinery_computer_auxiliary_base
 {
@@ -6679,28 +6679,7 @@ public partial class obj_machinery_computer_auxiliary_base
     public float launch_warning = 1; // tg: code/modules/mining/aux_base.dm:27
     public DmList turrets; // tg: code/modules/mining/aux_base.dm:29
     public object possible_destinations; // tg: code/modules/mining/aux_base.dm:31
-    public Type destination; // tg: code/modules/mining/aux_base.dm:33
     public float blind_drop_ready = 1; // tg: code/modules/mining/aux_base.dm:35
-
-    // tg: code/modules/mining/aux_base.dm:15
-    public obj_machinery_computer_auxiliary_base()
-    {
-        name = "auxiliary base management console";
-        desc = "Allows a deployable expedition base to be dropped from the station to a designated mining location. It can also interface with the mining shuttle at the landing site if a mobile beacon is also deployed.";
-        icon = Dm.resource("icons/obj/machines/wallmounts.dmi");
-        icon_state = "pod_off";
-        icon_keyboard = null;
-        icon_screen = "pod_on";
-        circuit = typeof(obj_item_circuitboard_computer_auxiliary_base);
-        density = 0;
-    }
-
-    // tg: code/modules/mining/aux_base.dm:22
-    protected internal override void dm_init_vars()
-    {
-        base.dm_init_vars();
-        req_one_access = Dm.list("aux_base", "command"); // tg: code/modules/mining/aux_base.dm:22
-    }
 }
 
 // tg: code/modules/mining/aux_base.dm:39

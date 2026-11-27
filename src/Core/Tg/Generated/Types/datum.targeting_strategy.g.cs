@@ -29,9 +29,9 @@ public partial class datum_targeting_strategy_accessible_cable { }
 [DmPath("/datum/targeting_strategy/ally_mob")]
 public partial class datum_targeting_strategy_ally_mob { }
 
-// tg: code/datums/ai/basic_mobs/targeting_strategies/baby_raptor.dm:4
-[DmPath("/datum/targeting_strategy/healthy_raptor_baby"), DmGeneratedOnly, DmInert]
-public partial class datum_targeting_strategy_healthy_raptor_baby : datum_targeting_strategy { }
+// tg: code/datums/ai/basic_mobs/targeting_strategies/baby_raptor.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/targeting_strategy/healthy_raptor_baby")]
+public partial class datum_targeting_strategy_healthy_raptor_baby { }
 
 // tg: code/datums/ai/basic_mobs/targeting_strategies/basic_targeting_strategy.dm:3 (the var block of a hand-written class)
 [DmPath("/datum/targeting_strategy/basic")]
@@ -239,9 +239,9 @@ public partial class datum_targeting_strategy_basic_bileworm : datum_targeting_s
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion_ai.dm:26
-[DmPath("/datum/targeting_strategy/basic/legion"), DmGeneratedOnly, DmInert]
-public partial class datum_targeting_strategy_basic_legion : datum_targeting_strategy_basic
+// tg: code/modules/mob/living/basic/lavaland/legion/legion_ai.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/targeting_strategy/basic/legion")]
+public partial class datum_targeting_strategy_basic_legion
 {
     // tg: code/modules/mob/living/basic/lavaland/legion/legion_ai.dm:26
     public datum_targeting_strategy_basic_legion()
@@ -250,9 +250,9 @@ public partial class datum_targeting_strategy_basic_legion : datum_targeting_str
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:21
-[DmPath("/datum/targeting_strategy/basic/mook"), DmGeneratedOnly, DmInert]
-public partial class datum_targeting_strategy_basic_mook : datum_targeting_strategy_basic
+// tg: code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:21 (the var block of a hand-written class)
+[DmPath("/datum/targeting_strategy/basic/mook")]
+public partial class datum_targeting_strategy_basic_mook
 {
     // tg: code/modules/mob/living/basic/lavaland/mook/mook_ai.dm:21
     public datum_targeting_strategy_basic_mook()
@@ -399,9 +399,9 @@ public partial class datum_targeting_strategy_injured_mob { }
 [DmPath("/datum/targeting_strategy/injured_mob/not_self")]
 public partial class datum_targeting_strategy_injured_mob_not_self { }
 
-// tg: code/datums/ai/basic_mobs/targeting_strategies/injured_raptor.dm:3
-[DmPath("/datum/targeting_strategy/injured_mob/not_self/injured_raptor"), DmGeneratedOnly, DmInert]
-public partial class datum_targeting_strategy_injured_mob_not_self_injured_raptor : datum_targeting_strategy_injured_mob_not_self { }
+// tg: code/datums/ai/basic_mobs/targeting_strategies/injured_raptor.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/targeting_strategy/injured_mob/not_self/injured_raptor")]
+public partial class datum_targeting_strategy_injured_mob_not_self_injured_raptor { }
 
 // tg: code/datums/ai/basic_mobs/targeting_strategies/legged_conscious_human.dm:4 (the var block of a hand-written class)
 [DmPath("/datum/targeting_strategy/legged_conscious_human")]
@@ -427,9 +427,9 @@ public partial class datum_targeting_strategy_playable_synthesizer { }
 [DmPath("/datum/targeting_strategy/pollinatable_hydro")]
 public partial class datum_targeting_strategy_pollinatable_hydro { }
 
-// tg: code/datums/ai/basic_mobs/targeting_strategies/raptor_trough.dm:4
-[DmPath("/datum/targeting_strategy/raptor_trough"), DmGeneratedOnly, DmInert]
-public partial class datum_targeting_strategy_raptor_trough : datum_targeting_strategy { }
+// tg: code/datums/ai/basic_mobs/targeting_strategies/raptor_trough.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/targeting_strategy/raptor_trough")]
+public partial class datum_targeting_strategy_raptor_trough { }
 
 // tg: code/datums/ai/basic_mobs/targeting_strategies/slime_food.dm:5 (the var block of a hand-written class)
 [DmPath("/datum/targeting_strategy/slime_food")]
@@ -459,9 +459,9 @@ public partial class datum_targeting_strategy_unbroken_light { }
 [DmPath("/datum/targeting_strategy/uncarried_egg")]
 public partial class datum_targeting_strategy_uncarried_egg { }
 
-// tg: code/datums/ai/basic_mobs/targeting_strategies/unlit_bonfire.dm:4
-[DmPath("/datum/targeting_strategy/unlit_bonfire"), DmGeneratedOnly, DmInert]
-public partial class datum_targeting_strategy_unlit_bonfire : datum_targeting_strategy { }
+// tg: code/datums/ai/basic_mobs/targeting_strategies/unlit_bonfire.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/targeting_strategy/unlit_bonfire")]
+public partial class datum_targeting_strategy_unlit_bonfire { }
 
 // tg: code/datums/ai/basic_mobs/targeting_strategies/valid_cat_home.dm:4 (the var block of a hand-written class)
 [DmPath("/datum/targeting_strategy/valid_cat_home")]
@@ -515,9 +515,9 @@ public partial class datum_targeting_strategy_treatable_patient { }
 [DmPath("/datum/targeting_strategy/crit_patient")]
 public partial class datum_targeting_strategy_crit_patient { }
 
-// tg: code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:142
-[DmPath("/datum/targeting_strategy/ore_vent_unclaimed"), DmGeneratedOnly, DmInert]
-public partial class datum_targeting_strategy_ore_vent_unclaimed : datum_targeting_strategy { }
+// tg: code/modules/mob/living/basic/lavaland/node_drone/node_drone.dm:142 (the var block of a hand-written class)
+[DmPath("/datum/targeting_strategy/ore_vent_unclaimed")]
+public partial class datum_targeting_strategy_ore_vent_unclaimed { }
 
 // tg: code/modules/mob/living/basic/minebots/minebot_ai.dm:149
 [DmPath("/datum/targeting_strategy/rock_stoner"), DmGeneratedOnly, DmInert]

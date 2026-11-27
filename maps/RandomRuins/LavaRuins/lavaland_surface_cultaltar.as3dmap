@@ -1,0 +1,179 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_cultaltar.dmm tg 1d99bd7f
+size 15 15 1
+chunk 32
+default /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+
+[chunk 1 1 1]
+1,15: /turf/template_noop | /area/template_noop
+2,15: /turf/template_noop | /area/template_noop
+3,15: /turf/template_noop | /area/template_noop
+4,15: /turf/template_noop | /area/template_noop
+5,15: /turf/template_noop | /area/template_noop
+6,15: /turf/template_noop | /area/template_noop
+7,15: /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/template_noop
+8,15: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+10,15: /turf/template_noop | /area/template_noop
+11,15: /turf/template_noop | /area/template_noop
+12,15: /turf/template_noop | /area/template_noop
+13,15: /turf/template_noop | /area/template_noop
+14,15: /turf/template_noop | /area/template_noop
+15,15: /turf/template_noop | /area/template_noop
+1,14: /turf/template_noop | /area/template_noop
+2,14: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+3,14: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+4,14: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+5,14: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+6,14: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+10,14: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+11,14: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+12,14: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+13,14: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+14,14: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+15,14: /turf/template_noop | /area/template_noop
+1,13: /turf/template_noop | /area/template_noop
+2,13: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+3,13: /obj/structure/destructible/cult/pylon | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+4,13: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+5,13: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+6,13: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+7,13: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+8,13: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+9,13: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+10,13: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+11,13: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+12,13: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+13,13: /obj/structure/destructible/cult/pylon | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+14,13: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+15,13: /turf/template_noop | /area/template_noop
+1,12: /turf/template_noop | /area/template_noop
+2,12: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+3,12: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+4,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+5,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+6,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+7,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+9,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+10,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+11,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+12,12: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,12: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+14,12: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+15,12: /turf/template_noop | /area/template_noop
+1,11: /turf/template_noop | /area/template_noop
+2,11: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+3,11: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+4,11: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+5,11: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+7,11: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+10,11: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+11,11: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+12,11: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,11: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+14,11: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+15,11: /turf/template_noop | /area/template_noop
+1,10: /turf/template_noop | /area/template_noop
+2,10: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+3,10: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+4,10: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+7,10: /obj/effect/decal/remains/human | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+8,10: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+9,10: /obj/effect/decal/remains/human | /obj/item/melee/cultblade | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+12,10: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,10: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+14,10: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+15,10: /turf/template_noop | /area/template_noop
+3,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+4,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+6,9: /obj/effect/decal/remains/human | /obj/item/clothing/shoes/cult | /obj/item/clothing/suit/hooded/cultrobes | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+10,9: /obj/effect/decal/remains/human | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+12,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+1,8: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+3,8: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+6,8: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+8,8: /obj/effect/rune/narsie{color = "#ff0000"; used = 1} | /obj/item/cult_shift | /obj/effect/decal/remains/human | /obj/item/melee/cultblade/dagger | /obj/effect/step_trigger/sound_effect/lavaland_cult_altar | /obj/effect/step_trigger/message{message = "<span class='cult italic'><b><span class='big'>You've made a grave mistake, haven't you?</span></b></span>"; name = "ohfuck"} | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+10,8: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+13,8: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+15,8: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+3,7: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+4,7: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+6,7: /obj/effect/decal/remains/human | /obj/item/melee/cultblade | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+10,7: /obj/effect/decal/remains/human | /obj/item/clothing/shoes/cult | /obj/item/clothing/suit/hooded/cultrobes | /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+12,7: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,7: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+1,6: /turf/template_noop | /area/template_noop
+2,6: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+3,6: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+4,6: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+7,6: /obj/effect/decal/remains/human | /obj/item/clothing/shoes/cult | /obj/item/clothing/suit/hooded/cultrobes | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+8,6: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+9,6: /obj/effect/decal/remains/human | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+12,6: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,6: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+14,6: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+15,6: /turf/template_noop | /area/template_noop
+1,5: /turf/template_noop | /area/template_noop
+2,5: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+3,5: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+4,5: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+5,5: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+11,5: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+12,5: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,5: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+14,5: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+15,5: /turf/template_noop | /area/template_noop
+1,4: /turf/template_noop | /area/template_noop
+2,4: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+3,4: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+4,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+5,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+6,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+7,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+9,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+10,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+11,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+12,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,4: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+14,4: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+15,4: /turf/template_noop | /area/template_noop
+1,3: /turf/template_noop | /area/template_noop
+2,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+3,3: /obj/structure/destructible/cult/pylon | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+4,3: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+5,3: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+6,3: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+7,3: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+8,3: /obj/effect/decal/cleanable/blood/old | /turf/open/floor/engine/cult{initial_gas_mix = "LAVALAND_ATMOS"} | /area/ruin/unpowered/cultaltar
+9,3: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+10,3: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+11,3: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+12,3: /obj/effect/decal/remains/human | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+13,3: /obj/structure/destructible/cult/pylon | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+14,3: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+15,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+3,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+4,2: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+5,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/template_noop
+6,2: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+10,2: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+11,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+12,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered/cultaltar
+13,2: /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/unpowered/cultaltar
+14,2: /turf/closed/wall/mineral/cult | /area/ruin/unpowered/cultaltar
+15,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+5,1: /turf/template_noop | /area/template_noop
+6,1: /turf/template_noop | /area/template_noop
+8,1: /turf/open/lava/smooth/lava_land_surface | /area/template_noop
+10,1: /turf/template_noop | /area/template_noop
+11,1: /turf/template_noop | /area/template_noop
+12,1: /turf/template_noop | /area/template_noop
+13,1: /turf/template_noop | /area/template_noop
+14,1: /turf/template_noop | /area/template_noop
+15,1: /turf/template_noop | /area/template_noop

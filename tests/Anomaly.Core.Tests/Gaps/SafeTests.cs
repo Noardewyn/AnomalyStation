@@ -188,12 +188,12 @@ public class SafeTests
         Take(bob);
 
         Click(r, bob, safe);
-        JsonElement modal = LastUpdate(Take(bob), out string first);
+        JsonElement modal = LastFullUpdate(Take(bob), out string first);
         Assert.Equal("NumberInputModal", InterfaceOf(modal));
         Assert.Equal("Set tumbler #1 (0-99):", modal.GetProperty("static_data").GetProperty("message").GetString());
         Assert.Equal(99, modal.GetProperty("static_data").GetProperty("max_value").GetInt32());
         Act(r, bob, first, "submit", ("entry", 11));
-        modal = LastUpdate(Take(bob), out string second);
+        modal = LastFullUpdate(Take(bob), out string second);
         Assert.Equal("Set tumbler #2 (0-99):", modal.GetProperty("static_data").GetProperty("message").GetString());
         Act(r, bob, second, "submit", ("entry", 22));
         r.Step(2);

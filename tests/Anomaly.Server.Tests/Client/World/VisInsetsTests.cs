@@ -63,4 +63,31 @@ public class VisInsetsTests
         Assert.Equal(128, moved.Alpha);
         Assert.Equal(0, source.Entries[mattress].Alpha); // the run's entry keeps the chain's end
     }
+
+    [Fact]
+    public void An_aquarium_fish_is_drawn_where_its_chain_swims_it_and_turned_the_way_it_swims()
+    {
+        var source = new Source();
+        TableRef tank = new(1, false), fish = new(2, false);
+        source.Entries[tank] = new AppearanceEntry { Layer = 3f };
+        source.Entries[fish] = new AppearanceEntry { Layer = 3.03f, PixelW = 4, PixelZ = -2 };
+        var insets = new VisInsets(source);
+
+        float[] flipped = { -1, 0, 0, 0, 1, 0 };
+        TableRef left = insets.With(tank, fish, 0, 0, 255, null, 7, 1), right = insets.With(tank, fish, 0, 0, 255, flipped, 7, 1);
+        Assert.NotEqual(left, right); // the turn is a look of its own
+        Assert.Equal(right, insets.With(tank, fish, 0, 0, 255, new float[] { -1, 0, 0, 0, 1, 0 }, 7, 1));
+        Assert.True(insets.TryGetAppearance(right, out AppearanceEntry composed));
+        Assert.True(insets.TryGetAppearance(composed.Overlays[^1], out AppearanceEntry moved));
+        Assert.Equal((7, 1), ((int)moved.PixelW, (int)moved.PixelZ));
+        Assert.Equal(flipped, moved.Transform);
+        Assert.True(insets.TryGetAppearance(left, out AppearanceEntry plain));
+        Assert.True(insets.TryGetAppearance(plain.Overlays[^1], out AppearanceEntry unturned));
+        Assert.Null(unturned.Transform);
+        // without pixel_w and pixel_z the helper keeps its own (the cryo occupant)
+        Assert.True(insets.TryGetAppearance(insets.With(tank, fish, 0, 0), out AppearanceEntry still));
+        Assert.True(insets.TryGetAppearance(still.Overlays[^1], out AppearanceEntry own));
+        Assert.Equal((4, -2), ((int)own.PixelW, (int)own.PixelZ));
+        Assert.Equal(4, source.Entries[fish].PixelW); // the run's entry is not changed
+    }
 }

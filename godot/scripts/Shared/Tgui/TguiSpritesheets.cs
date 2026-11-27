@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Globalization;
 using Anomaly.Client.Shared.Icons;
 
@@ -157,6 +158,41 @@ public static class TguiSpritesheets
         picture = floor;
         return true;
     }
+
+    // ---- tg's "fish" sheet at 32x32 (the fish encyclopedia's illustrations) ----
+
+    /// <summary>tg's "fish" sheet at 32x32 (asset_cache/assets/fish.dm), the fish encyclopedia's illustrations.</summary>
+    public const string Fish32 = "fish32x32";
+
+    // tg: code/modules/asset_cache/assets/fish.dm:9  a fish's class is sanitize_css_class_name("[icon][icon_state]"), the file and the state
+    // with all but letters and digits dropped. The fish's three icon files (no sanitized name starts another) are the prefixes; the state is
+    // the file's state whose sanitized name is the rest, drawn as uni_icon draws it (its first frame, facing south).
+    private static readonly string[] FishFiles = { "icons/obj/aquarium/fish.dmi", "icons/obj/aquarium/rift.dmi", "icons/obj/aquarium/wide.dmi" };
+
+    /// <summary>The picture of a class of <see cref="Fish32"/> (<c>"iconsobjaquariumfishdmigoldfish"</c>) from tg's .dmi files; false when the class or a file is unknown.</summary>
+    public static bool TryDrawFish(IconLibrary library, string cls, out Raster picture)
+    {
+        picture = null;
+        if (string.IsNullOrEmpty(cls))
+            return false;
+        foreach (string file in FishFiles)
+        {
+            string prefix = SanitizeCssClassName(file);
+            if (!cls.StartsWith(prefix, StringComparison.Ordinal) || !library.TryGetIcon(file, out IIcon icon) || icon is not IconSheet sheet)
+                continue;
+            string rest = cls[prefix.Length..];
+            foreach (IconState state in sheet.States)
+            {
+                if (SanitizeCssClassName(state.Name) == rest)
+                    return TryFrame(library, file, state.Name, ByondDir.South, out picture);
+            }
+            return false;
+        }
+        return false;
+    }
+
+    // tg: code/__HELPERS/text.dm:1217  sanitize_css_class_name: the name without the characters that are not letters or digits
+    private static string SanitizeCssClassName(string name) => new(name.Where(char.IsAsciiLetterOrDigit).ToArray());
 
     // BYOND's turn(dir, 45): one step counterclockwise (north to northwest)
     private static byte TurnLeft45(byte dir) => dir switch

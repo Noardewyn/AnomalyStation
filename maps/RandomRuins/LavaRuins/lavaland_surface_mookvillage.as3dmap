@@ -1,0 +1,187 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_mookvillage.dmm tg 1d99bd7f
+size 20 20 1
+chunk 32
+default /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+
+[chunk 1 1 1]
+4,20: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+5,20: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+6,20: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+7,20: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+8,20: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+9,20: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+14,20: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+15,20: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+16,20: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,20: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,20: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,20: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+4,19: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+5,19: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+6,19: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+7,19: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+8,19: /obj/structure/chair/wood | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+9,19: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+14,19: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+15,19: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+16,19: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,19: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,19: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,19: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+4,18: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+5,18: /obj/structure/closet/cabinet | /obj/item/food/grown/banana | /obj/item/food/meat/slab/goliath | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+6,18: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+7,18: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+8,18: /obj/structure/table/wood/shuttle_bar | /obj/item/flashlight/flare/candle/infinite | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+9,18: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+11,18: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,18: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+15,18: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+16,18: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,18: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,18: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,18: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+4,17: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+5,17: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+6,17: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+7,17: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+8,17: /obj/structure/chair/wood{dir = 1} | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+9,17: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+11,17: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,17: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+15,17: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+16,17: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,17: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,17: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,17: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+4,16: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+5,16: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+6,16: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+7,16: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+8,16: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+9,16: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+14,16: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+15,16: /obj/item/fishing_rod | /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+16,16: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,16: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,16: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,16: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+4,15: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+5,15: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+6,15: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+7,15: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+8,15: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+9,15: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+12,15: /mob/living/basic/mining/mook/worker | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,15: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+15,15: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+16,15: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,15: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,15: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,15: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+2,14: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,14: /turf/open/floor/carpet/lone/lavaland | /area/lavaland/surface/outdoors
+7,14: /turf/open/floor/carpet/lone/lavaland | /area/lavaland/surface/outdoors
+14,14: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+15,14: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+16,14: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,14: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,14: /obj/structure/bed/maint | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,14: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+1,13: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+2,13: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,13: /obj/effect/landmark/mook_village | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,13: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,13: /obj/structure/flora/ash/fireblossom | /mob/living/basic/mining/mook/worker | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,13: /mob/living/basic/mining/mook | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,13: /mob/living/basic/mining/mook/worker/bard | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+15,13: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,13: /turf/open/floor/carpet/lone/lavaland | /area/lavaland/surface/outdoors
+17,13: /turf/open/floor/carpet/lone/lavaland | /area/lavaland/surface/outdoors
+7,12: /mob/living/basic/mining/mook | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,12: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,11: /mob/living/basic/mining/mook/worker | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,11: /obj/structure/railing/corner | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,11: /obj/structure/railing | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,11: /obj/structure/railing | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,11: /obj/structure/railing | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,11: /obj/structure/railing | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,11: /obj/structure/railing/corner{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,11: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+17,11: /mob/living/basic/mining/mook/worker | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,11: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,10: /obj/structure/ore_container/material_stand | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,10: /obj/structure/railing{dir = 4} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,10: /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+10,10: /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+11,10: /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+12,10: /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+13,10: /obj/structure/railing{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,9: /obj/structure/railing{dir = 4} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,9: /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+10,9: /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+11,9: /obj/structure/flora/tree/jungle/style_3 | /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+12,9: /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+13,9: /obj/structure/railing{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+19,9: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,8: /mob/living/basic/mining/mook/worker | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,8: /obj/structure/railing{dir = 4} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,8: /obj/structure/flora/tree/jungle/style_5 | /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+10,8: /obj/structure/flora/grass/jungle/b | /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+11,8: /obj/structure/flora/grass/jungle/b | /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+12,8: /obj/structure/flora/tree/jungle/style_5 | /turf/open/misc/grass/jungle/lavaland | /area/lavaland/surface/outdoors
+13,8: /obj/structure/railing{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,8: /mob/living/basic/mining/mook | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,8: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+17,8: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+18,8: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+19,8: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+20,8: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+8,7: /obj/structure/railing/corner{dir = 4} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,7: /obj/structure/railing{dir = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,7: /obj/structure/railing{dir = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+11,7: /obj/structure/railing{dir = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+12,7: /obj/structure/railing{dir = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,7: /obj/structure/railing/corner{dir = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,7: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,7: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,7: /obj/structure/table/wood/shuttle_bar | /obj/item/hatchet/wooden | /obj/item/storage/belt/champion | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,7: /obj/structure/table/wood/shuttle_bar | /obj/item/clothing/head/costume/garland/poppy | /obj/structure/sign/nanotrasen/directional/north | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,7: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+20,7: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+5,6: /obj/item/flashlight/lantern{start_on = 1} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,6: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+8,6: /mob/living/basic/mining/mook | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,6: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,6: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,6: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,6: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,6: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+20,6: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+2,5: /obj/structure/chair/pew/left | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+3,5: /obj/structure/chair/pew | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+4,5: /obj/structure/chair/pew | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+5,5: /obj/structure/chair/pew | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+6,5: /obj/structure/chair/pew/right | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,5: /obj/structure/flora/ash/fireblossom | /mob/living/basic/mining/mook/worker/tribal_chief | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,5: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+17,5: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+18,5: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+19,5: /obj/structure/bed/pod | /obj/item/bedsheet/nanotrasen | /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+20,5: /turf/open/floor/wood/lavaland | /area/lavaland/surface/outdoors
+7,4: /obj/structure/chair/pew/left{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+10,4: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+13,4: /mob/living/basic/mining/mook/worker | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,4: /mob/living/basic/mining/mook | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+16,4: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+17,4: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+18,4: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+19,4: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+20,4: /turf/closed/wall/mineral/wood | /area/lavaland/surface/outdoors
+4,3: /obj/structure/bonfire/prelit | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,3: /obj/structure/chair/pew{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+9,3: /mob/living/basic/mining/mook/worker | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,2: /obj/structure/chair/pew{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+7,1: /obj/structure/chair/pew/right{dir = 8} | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors
+14,1: /obj/structure/flora/ash/fireblossom | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors

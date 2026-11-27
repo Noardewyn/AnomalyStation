@@ -3007,9 +3007,9 @@ public partial class datum_supply_pack_exploration_scrapyard : datum_supply_pack
     }
 }
 
-// tg: code/modules/cargo/packs/exploration.dm:17
-[DmPath("/datum/supply_pack/exploration/catering"), DmGeneratedOnly, DmInert]
-public partial class datum_supply_pack_exploration_catering : datum_supply_pack_exploration
+// tg: code/modules/cargo/packs/exploration.dm:17 (the var block of a hand-written class)
+[DmPath("/datum/supply_pack/exploration/catering")]
+public partial class datum_supply_pack_exploration_catering
 {
     // tg: code/modules/cargo/packs/exploration.dm:17
     public datum_supply_pack_exploration_catering()

@@ -29,6 +29,15 @@ public static partial class GlobalProcs
         logger.Log(LOG_CATEGORY_COMPAT_GAME, Dm.text("ADMIN: []", text));
     }
 
+    /// Logging for admin actions on or with circuits
+    // tg: code/__HELPERS/logging/admin.dm:13
+    public static void log_admin_circuit(object text = null, DmList data = null)
+    {
+        GLOB.admin_activities.Add(text);
+        logger.Log(LOG_CATEGORY_ADMIN_CIRCUIT, text, data);
+        logger.Log(LOG_CATEGORY_COMPAT_GAME, Dm.text("ADMIN: CIRCUIT: []", text));
+    }
+
     /// General logging for admin actions
     // tg: code/__HELPERS/logging/admin.dm:18
     public static void log_admin_private(object text = null, DmList data = null)

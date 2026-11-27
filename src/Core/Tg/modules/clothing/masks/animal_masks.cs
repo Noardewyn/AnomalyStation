@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // /obj/item/clothing/mask/animal's equipped (both definitions: equipped__proc__d0 and equipped__proc), dropped and handle_speech
 // (M4a clothing: animal masks are put on and taken off; worn, they turn the wearer's speech into animal sounds). Gaps CL1 (D333):
 // the rest of the file: GLOB.cursed_animal_masks, the curse (make_cursed, clear_curse: the mask melds onto the face with tg's curse
-// sound), the voice box toggle (alt-click and its examine line), vv_edit_var and the frog, small, bear and tribal masks (their fishing
-// difficulty elements wait for fishing).
+// sound), the voice box toggle (alt-click and its examine line), vv_edit_var and the frog, small, bear and tribal masks (with their fishing
+// difficulty elements).
 
 public partial class datum_controller_global_vars
 {
@@ -211,7 +211,7 @@ public partial class obj_item_clothing_mask_animal_frog : obj_item_clothing_mask
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:157", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, cursed ? 4 : -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), Dm.truthy(cursed) ? 4 : -4));
         return dot;
     }
 
@@ -219,14 +219,16 @@ public partial class obj_item_clothing_mask_animal_frog : obj_item_clothing_mask
     public override async DmTask make_cursed()
     {
         await base.make_cursed();
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:161", "make_cursed: the adjust_fishing_difficulty element swapped from -4 to 4: fishing (M10+)");
+        RemoveElement(typeof(datum_element_adjust_fishing_difficulty), -4);
+        await AddElement(typeof(datum_element_adjust_fishing_difficulty), 4);
     }
 
     // tg: code/modules/clothing/masks/animal_masks.dm:164
     public override async DmTask clear_curse()
     {
         await base.clear_curse();
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:166", "clear_curse: the adjust_fishing_difficulty element swapped from 4 to -4: fishing (M10+)");
+        RemoveElement(typeof(datum_element_adjust_fishing_difficulty), 4);
+        await AddElement(typeof(datum_element_adjust_fishing_difficulty), -4);
     }
 }
 
@@ -248,7 +250,7 @@ public partial class obj_item_clothing_mask_animal_small_bear : obj_item_clothin
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:249", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, cursed ? 4 : -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), Dm.truthy(cursed) ? 4 : -4));
         return dot;
     }
 
@@ -256,14 +258,16 @@ public partial class obj_item_clothing_mask_animal_small_bear : obj_item_clothin
     public override async DmTask make_cursed()
     {
         await base.make_cursed();
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:253", "make_cursed: the adjust_fishing_difficulty element swapped from -4 to 4: fishing (M10+)");
+        RemoveElement(typeof(datum_element_adjust_fishing_difficulty), -4);
+        await AddElement(typeof(datum_element_adjust_fishing_difficulty), 4);
     }
 
     // tg: code/modules/clothing/masks/animal_masks.dm:256
     public override async DmTask clear_curse()
     {
         await base.clear_curse();
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:258", "clear_curse: the adjust_fishing_difficulty element swapped from 4 to -4: fishing (M10+)");
+        RemoveElement(typeof(datum_element_adjust_fishing_difficulty), 4);
+        await AddElement(typeof(datum_element_adjust_fishing_difficulty), -4);
     }
 }
 
@@ -274,7 +278,7 @@ public partial class obj_item_clothing_mask_animal_small_tribal : obj_item_cloth
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:311", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, cursed ? 5 : -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), Dm.truthy(cursed) ? 5 : -5));
         return dot;
     }
 
@@ -282,13 +286,15 @@ public partial class obj_item_clothing_mask_animal_small_tribal : obj_item_cloth
     public override async DmTask make_cursed()
     {
         await base.make_cursed();
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:315", "make_cursed: the adjust_fishing_difficulty element swapped from -5 to 5: fishing (M10+)");
+        RemoveElement(typeof(datum_element_adjust_fishing_difficulty), -5);
+        await AddElement(typeof(datum_element_adjust_fishing_difficulty), 5);
     }
 
     // tg: code/modules/clothing/masks/animal_masks.dm:318
     public override async DmTask clear_curse()
     {
         await base.clear_curse();
-        Dm.Deferred("code/modules/clothing/masks/animal_masks.dm:320", "clear_curse: the adjust_fishing_difficulty element swapped from 5 to -5: fishing (M10+)");
+        RemoveElement(typeof(datum_element_adjust_fishing_difficulty), 5);
+        await AddElement(typeof(datum_element_adjust_fishing_difficulty), -5);
     }
 }

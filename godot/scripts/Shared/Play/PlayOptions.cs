@@ -156,7 +156,7 @@ public enum PlayAction : byte
     Inventory,
 
     /// <summary>
-    /// ui-overhaul.md section 10 (DV603, protocol version 98's HotbarPress): the ten hotbar cells [1 to 9 and 0, the number row and the keypad]: 1 to 7
+    /// ui-overhaul.md section 10 (DV689, protocol version 99's HotbarPress): the ten hotbar cells [1 to 9 and 0, the number row and the keypad]: 1 to 7
     /// the belt, 8 and 9 the pockets, 0 (Hotbar10) the ID slot. A press is sent to the server, which decides what it does (tg has no such keys).
     /// </summary>
     Hotbar1,

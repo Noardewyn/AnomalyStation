@@ -2801,9 +2801,9 @@ public partial class atom_movable_screen_alert_status_effect_french_speech : ato
     }
 }
 
-// tg: code/datums/status_effects/debuffs/cursed.dm:179
-[DmPath("/atom/movable/screen/alert/status_effect/cursed"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_cursed : atom_movable_screen_alert_status_effect
+// tg: code/datums/status_effects/debuffs/cursed.dm:179 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/cursed")]
+public partial class atom_movable_screen_alert_status_effect_cursed
 {
     // tg: code/datums/status_effects/debuffs/cursed.dm:179
     public atom_movable_screen_alert_status_effect_cursed()
@@ -3064,9 +3064,9 @@ public partial class atom_movable_screen_alert_status_effect_firewall : atom_mov
     }
 }
 
-// tg: code/datums/status_effects/debuffs/hooked.dm:23
-[DmPath("/atom/movable/screen/alert/status_effect/hooked"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_hooked : atom_movable_screen_alert_status_effect
+// tg: code/datums/status_effects/debuffs/hooked.dm:23 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/hooked")]
+public partial class atom_movable_screen_alert_status_effect_hooked
 {
     // tg: code/datums/status_effects/debuffs/hooked.dm:23
     public atom_movable_screen_alert_status_effect_hooked()
@@ -3080,7 +3080,7 @@ public partial class atom_movable_screen_alert_status_effect_hooked : atom_movab
 }
 
 // tg: code/datums/status_effects/debuffs/hooked.dm:60
-[DmPath("/atom/movable/screen/alert/status_effect/hooked/jaws"), DmGeneratedOnly, DmInert]
+[DmPath("/atom/movable/screen/alert/status_effect/hooked/jaws"), DmGeneratedOnly]
 public partial class atom_movable_screen_alert_status_effect_hooked_jaws : atom_movable_screen_alert_status_effect_hooked
 {
     // tg: code/datums/status_effects/debuffs/hooked.dm:60
@@ -3557,9 +3557,9 @@ public partial class atom_movable_screen_alert_status_effect_embryonic : atom_mo
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:92
-[DmPath("/atom/movable/screen/alert/status_effect/brimdust_coating"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_brimdust_coating : atom_movable_screen_alert_status_effect
+// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:92 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/brimdust_coating")]
+public partial class atom_movable_screen_alert_status_effect_brimdust_coating
 {
     // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:92
     public atom_movable_screen_alert_status_effect_brimdust_coating()
@@ -3719,9 +3719,9 @@ public partial class atom_movable_screen_alert_status_effect_bluespaceslime : at
     }
 }
 
-// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:247
-[DmPath("/atom/movable/screen/alert/status_effect/shapeshifted"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_status_effect_shapeshifted : atom_movable_screen_alert_status_effect
+// tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:247 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/status_effect/shapeshifted")]
+public partial class atom_movable_screen_alert_status_effect_shapeshifted
 {
     // tg: code/modules/spells/spell_types/shapeshift/_shape_status.dm:247
     public atom_movable_screen_alert_status_effect_shapeshifted()
@@ -4121,9 +4121,9 @@ public partial class atom_movable_screen_alert_unpossess_object : atom_movable_s
     }
 }
 
-// tg: code/datums/components/aura_healing.dm:158
-[DmPath("/atom/movable/screen/alert/aura_healing"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_alert_aura_healing : atom_movable_screen_alert
+// tg: code/datums/components/aura_healing.dm:158 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/alert/aura_healing")]
+public partial class atom_movable_screen_alert_aura_healing
 {
     // tg: code/datums/components/aura_healing.dm:158
     public atom_movable_screen_alert_aura_healing()
@@ -5204,9 +5204,9 @@ public partial class atom_movable_screen_map_view_camera
     public atom_movable_screen_background cam_background; // tg: code/game/machinery/computer/camera.dm:166
 }
 
-// tg: code/modules/awaymissions/gateway.dm:399
-[DmPath("/atom/movable/screen/map_view/gateway_port"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_map_view_gateway_port : atom_movable_screen_map_view
+// tg: code/modules/awaymissions/gateway.dm:399 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/map_view/gateway_port")]
+public partial class atom_movable_screen_map_view_gateway_port
 {
     public datum_gateway_destination our_destination; // tg: code/modules/awaymissions/gateway.dm:399
     public atom_movable_screen_background cam_background; // tg: code/modules/awaymissions/gateway.dm:401
@@ -6335,7 +6335,7 @@ public partial class atom_movable_screen_slime_power
 }
 
 // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1391 (the var block of a hand-written class)
-[DmPath("/atom/movable/screen/xenobio_console"), DmInert]
+[DmPath("/atom/movable/screen/xenobio_console")]
 public partial class atom_movable_screen_xenobio_console
 {
     public atom_movable_screen_xenobio_potion potion_hud; // tg: code/_onclick/hud/screen_objects/screen_objects.dm:1394
@@ -6686,9 +6686,9 @@ public partial class atom_movable_screen_buildmode_preview_item : atom_movable_s
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:803
-[DmPath("/atom/movable/screen/fishing_hud"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_fishing_hud : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:803 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/fishing_hud")]
+public partial class atom_movable_screen_fishing_hud
 {
     public atom_movable_screen_hud_fish hud_fish; // tg: code/modules/fishing/fishing_minigame.dm:808
     public atom_movable_screen_hud_bait hud_bait; // tg: code/modules/fishing/fishing_minigame.dm:810
@@ -6704,9 +6704,9 @@ public partial class atom_movable_screen_fishing_hud : atom_movable_screen
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:836
-[DmPath("/atom/movable/screen/hud_bait"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_hud_bait : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:836 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/hud_bait")]
+public partial class atom_movable_screen_hud_bait
 {
     public float cur_height = 27; // tg: code/modules/fishing/fishing_minigame.dm:839
 
@@ -6719,9 +6719,9 @@ public partial class atom_movable_screen_hud_bait : atom_movable_screen
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:864
-[DmPath("/atom/movable/screen/hud_fish"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_hud_fish : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:864 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/hud_fish")]
+public partial class atom_movable_screen_hud_fish
 {
     // tg: code/modules/fishing/fishing_minigame.dm:864
     public atom_movable_screen_hud_fish()
@@ -6732,9 +6732,9 @@ public partial class atom_movable_screen_hud_fish : atom_movable_screen
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:874
-[DmPath("/atom/movable/screen/hud_completion"), DmGeneratedOnly, DmInert]
-public partial class atom_movable_screen_hud_completion : atom_movable_screen
+// tg: code/modules/fishing/fishing_minigame.dm:874 (the var block of a hand-written class)
+[DmPath("/atom/movable/screen/hud_completion")]
+public partial class atom_movable_screen_hud_completion
 {
     // tg: code/modules/fishing/fishing_minigame.dm:874
     public atom_movable_screen_hud_completion()

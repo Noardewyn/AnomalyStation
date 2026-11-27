@@ -512,9 +512,9 @@ public partial class datum_controller_subsystem_processing_antag_hud
     }
 }
 
-// tg: code/controllers/subsystem/processing/aura.dm:3
-[DmPath("/datum/controller/subsystem/processing/aura"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_processing_aura : datum_controller_subsystem_processing
+// tg: code/controllers/subsystem/processing/aura.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/processing/aura")]
+public partial class datum_controller_subsystem_processing_aura
 {
     // tg: code/controllers/subsystem/processing/aura.dm:3
     public datum_controller_subsystem_processing_aura()
@@ -565,9 +565,9 @@ public partial class datum_controller_subsystem_processing_burning
     }
 }
 
-// tg: code/controllers/subsystem/processing/fishing.dm:3
-[DmPath("/datum/controller/subsystem/processing/fishing"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_processing_fishing : datum_controller_subsystem_processing
+// tg: code/controllers/subsystem/processing/fishing.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/processing/fishing")]
+public partial class datum_controller_subsystem_processing_fishing
 {
     public DmList cached_fish_icons; // tg: code/controllers/subsystem/processing/fishing.dm:10
     public DmList cached_unknown_fish_icons; // tg: code/controllers/subsystem/processing/fishing.dm:12
@@ -1543,9 +1543,9 @@ public partial class datum_controller_subsystem_mouse_entered
     }
 }
 
-// tg: code/controllers/subsystem/npcpool.dm:2
-[DmPath("/datum/controller/subsystem/npcpool"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_npcpool : datum_controller_subsystem
+// tg: code/controllers/subsystem/npcpool.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/npcpool")]
+public partial class datum_controller_subsystem_npcpool
 {
     public DmList currentrun; // tg: code/controllers/subsystem/npcpool.dm:7
 
@@ -1875,9 +1875,9 @@ public partial class datum_controller_subsystem_radioactive_nebula : datum_contr
     }
 }
 
-// tg: code/controllers/subsystem/restaurant.dm:6
-[DmPath("/datum/controller/subsystem/restaurant"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_restaurant : datum_controller_subsystem
+// tg: code/controllers/subsystem/restaurant.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/restaurant")]
+public partial class datum_controller_subsystem_restaurant
 {
     public DmList all_venues; // tg: code/controllers/subsystem/restaurant.dm:10
     public DmList all_customers; // tg: code/controllers/subsystem/restaurant.dm:12
@@ -2276,9 +2276,9 @@ public partial class datum_controller_subsystem_sun
     }
 }
 
-// tg: code/controllers/subsystem/tcgsetup.dm:2
-[DmPath("/datum/controller/subsystem/trading_card_game"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_trading_card_game : datum_controller_subsystem
+// tg: code/controllers/subsystem/tcgsetup.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/trading_card_game")]
+public partial class datum_controller_subsystem_trading_card_game
 {
     public string card_directory = "strings/tcg"; // tg: code/controllers/subsystem/tcgsetup.dm:5
     public DmList card_files; // tg: code/controllers/subsystem/tcgsetup.dm:7
@@ -2682,9 +2682,9 @@ public partial class datum_controller_subsystem_movement_ai_movement
     }
 }
 
-// tg: code/controllers/subsystem/movement/cliff_falling.dm:3
-[DmPath("/datum/controller/subsystem/movement/cliff_falling"), DmGeneratedOnly, DmInert]
-public partial class datum_controller_subsystem_movement_cliff_falling : datum_controller_subsystem_movement
+// tg: code/controllers/subsystem/movement/cliff_falling.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/controller/subsystem/movement/cliff_falling")]
+public partial class datum_controller_subsystem_movement_cliff_falling
 {
     public DmList cliff_grinders; // tg: code/controllers/subsystem/movement/cliff_falling.dm:9
 

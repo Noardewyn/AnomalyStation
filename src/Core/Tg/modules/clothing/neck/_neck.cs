@@ -170,8 +170,7 @@ public partial class obj_item_clothing_neck_stethoscope : obj_item_clothing_neck
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -3) //FISH DOCTOR?!
-        Dm.Deferred("code/modules/clothing/neck/_neck.dm:242", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -3), the fishing difficulty (fishing, M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3));
         return dot;
     }
 

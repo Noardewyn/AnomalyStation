@@ -15,9 +15,8 @@ namespace Anomaly.Core.Tg;
 // window, a flatline on death, multi-level suit sensors), the eating apparatus, the EMP shield and its advanced kind, the
 // flashlight (colour and range set in the window) and the flashdark, the burger dispenser, longfall (no fall damage), the thermal
 // regulator, the DNA lock, the plasma stabilizer, the hat stabilizer, the sign language radio, the joint torsion ratchet (charge
-// from walking), the recycler (trash walked over becomes sheets) and its riot dart kind, the fishing glove and the shock
-// absorber. Left with rows (not-translated.md 219): the fishing glove's rod (the profound_fisher component, :1013, :1022 and :1028)
-// and its easier fishing (the adjust_fishing_difficulty element, :1020 and :1027), fishing being unported. The var blocks are
+// from walking), the recycler (trash walked over becomes sheets) and its riot dart kind, the fishing glove (its rod's
+// fishing interface on the gloves and their easier fishing) and the shock absorber. The var blocks are
 // generated (D111).
 
 ///Storage - Adds a storage component to the suit.
@@ -1055,9 +1054,7 @@ public partial class obj_item_mod_module_fishing_glove : obj_item_mod_module
             obj_item gloves = mod?.get_part_from_slot(ITEM_SLOT_GLOVES) as obj_item;
             if (gloves != null && !QDELETED(mod))
             {
-                // qdel(gloves.GetComponent(/datum/component/profound_fisher)): the rod's fishing interface on the gloves (fishing is
-                // not ported; the component is inert and never added)
-                Dm.Deferred("code/modules/mod/modules/modules_general.dm:1013", "Exited: qdel(gloves.GetComponent(/datum/component/profound_fisher)), the gloves' fishing interface (fishing, M10+)");
+                qdel(gloves.GetComponent(typeof(datum_component_profound_fisher)));
             }
         }
         return await base.Exited(gone, direction);
@@ -1069,9 +1066,9 @@ public partial class obj_item_mod_module_fishing_glove : obj_item_mod_module
         obj_item gloves = mod.get_part_from_slot(ITEM_SLOT_GLOVES) as obj_item;
         if (gloves == null)
             return;
-        // gloves.AddElement(/datum/element/adjust_fishing_difficulty, -5); if(equipped) gloves.AddComponent(/datum/component/profound_fisher,
-        // equipped, delete_rod_when_deleted = FALSE): easier fishing and the rod's fishing interface on the gloves (fishing is not ported)
-        Dm.Deferred("code/modules/mod/modules/modules_general.dm:1020", "on_part_activation: the adjust_fishing_difficulty element and the profound_fisher component on the gloves (fishing, M10+)");
+        await gloves.AddElement(typeof(datum_element_adjust_fishing_difficulty), -5);
+        if (equipped != null)
+            await gloves.AddComponent(typeof(datum_component_profound_fisher), equipped, Dm.named("delete_rod_when_deleted", FALSE));
     }
 
     // tg: code/modules/mod/modules/modules_general.dm:1024
@@ -1081,8 +1078,8 @@ public partial class obj_item_mod_module_fishing_glove : obj_item_mod_module
         obj_item gloves = mod.get_part_from_slot(ITEM_SLOT_GLOVES) as obj_item;
         if (gloves != null && !Dm.truthy(deleting))
         {
-            // gloves.RemoveElement(/datum/element/adjust_fishing_difficulty); qdel(gloves.GetComponent(/datum/component/profound_fisher))
-            Dm.Deferred("code/modules/mod/modules/modules_general.dm:1027", "on_part_deactivation: the adjust_fishing_difficulty element and the profound_fisher component off the gloves (fishing, M10+)");
+            gloves.RemoveElement(typeof(datum_element_adjust_fishing_difficulty));
+            qdel(gloves.GetComponent(typeof(datum_component_profound_fisher)));
         }
     }
 }

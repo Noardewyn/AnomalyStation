@@ -61,9 +61,9 @@ public partial class datum_component_aggro_emote
     public object minimum_chance; // tg: code/datums/components/aggro_emote.dm:14
 }
 
-// tg: code/datums/components/ai_has_target_timer.dm:4
-[DmPath("/datum/component/ai_target_timer"), DmGeneratedOnly, DmInert]
-public partial class datum_component_ai_target_timer : datum_component
+// tg: code/datums/components/ai_has_target_timer.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/component/ai_target_timer")]
+public partial class datum_component_ai_target_timer
 {
     public object increment_key; // tg: code/datums/components/ai_has_target_timer.dm:4
     public object target_key; // tg: code/datums/components/ai_has_target_timer.dm:6
@@ -72,9 +72,9 @@ public partial class datum_component_ai_target_timer : datum_component
     public object reset_clock_timer; // tg: code/datums/components/ai_has_target_timer.dm:12
 }
 
-// tg: code/datums/components/ai_listen_to_weather.dm:6
-[DmPath("/datum/component/ai_listen_to_weather"), DmGeneratedOnly, DmInert]
-public partial class datum_component_ai_listen_to_weather : datum_component
+// tg: code/datums/components/ai_listen_to_weather.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/ai_listen_to_weather")]
+public partial class datum_component_ai_listen_to_weather
 {
     public Type weather_type; // tg: code/datums/components/ai_listen_to_weather.dm:6
     public object weather_key; // tg: code/datums/components/ai_listen_to_weather.dm:8
@@ -152,9 +152,9 @@ public partial class datum_component_appearance_on_aggro
     public object alpha_on_deaggro; // tg: code/datums/components/appearance_on_aggro.dm:15
 }
 
-// tg: code/datums/components/aquarium.dm:10
-[DmPath("/datum/component/aquarium"), DmGeneratedOnly, DmInert]
-public partial class datum_component_aquarium : datum_component
+// tg: code/datums/components/aquarium.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/component/aquarium")]
+public partial class datum_component_aquarium
 {
     public DmList tracked_fish_by_type; // tg: code/datums/components/aquarium.dm:13
     public string fluid_type = "Freshwater"; // tg: code/datums/components/aquarium.dm:16
@@ -188,9 +188,9 @@ public partial class datum_component_aquarium : datum_component
     }
 }
 
-// tg: code/datums/components/aquarium_content.dm:5
-[DmPath("/datum/component/aquarium_content"), DmGeneratedOnly, DmInert]
-public partial class datum_component_aquarium_content : datum_component
+// tg: code/datums/components/aquarium_content.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/component/aquarium_content")]
+public partial class datum_component_aquarium_content
 {
     public obj_effect_aquarium vc_obj; // tg: code/datums/components/aquarium_content.dm:5
     public object current_animation; // tg: code/datums/components/aquarium_content.dm:17
@@ -284,9 +284,9 @@ public partial class datum_component_atom_mounted
     public atom hanging_support_atom; // tg: code/datums/components/atom_mounted.dm:4
 }
 
-// tg: code/datums/components/aura_healing.dm:9
-[DmPath("/datum/component/aura_healing"), DmGeneratedOnly, DmInert]
-public partial class datum_component_aura_healing : datum_component
+// tg: code/datums/components/aura_healing.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/component/aura_healing")]
+public partial class datum_component_aura_healing
 {
     public float? range = 5; // tg: code/datums/components/aura_healing.dm:9
     public float requires_visibility = 1; // tg: code/datums/components/aura_healing.dm:12
@@ -368,9 +368,9 @@ public partial class datum_component_basic_inhands
     public DmList cached_overlays; // tg: code/datums/components/basic_inhands.dm:12
 }
 
-// tg: code/datums/components/basic_mob_attack_telegraph.dm:6
-[DmPath("/datum/component/basic_mob_attack_telegraph"), DmGeneratedOnly, DmInert]
-public partial class datum_component_basic_mob_attack_telegraph : datum_component
+// tg: code/datums/components/basic_mob_attack_telegraph.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/basic_mob_attack_telegraph")]
+public partial class datum_component_basic_mob_attack_telegraph
 {
     public object telegraph_duration; // tg: code/datums/components/basic_mob_attack_telegraph.dm:6
     public mutable_appearance target_overlay; // tg: code/datums/components/basic_mob_attack_telegraph.dm:8
@@ -378,9 +378,9 @@ public partial class datum_component_basic_mob_attack_telegraph : datum_componen
     public datum_callback on_began_forecast; // tg: code/datums/components/basic_mob_attack_telegraph.dm:12
 }
 
-// tg: code/datums/components/basic_ranged_ready_overlay.dm:7
-[DmPath("/datum/component/basic_ranged_ready_overlay"), DmGeneratedOnly, DmInert]
-public partial class datum_component_basic_ranged_ready_overlay : datum_component
+// tg: code/datums/components/basic_ranged_ready_overlay.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/basic_ranged_ready_overlay")]
+public partial class datum_component_basic_ranged_ready_overlay
 {
     public object overlay_state; // tg: code/datums/components/basic_ranged_ready_overlay.dm:7
     public object display_after; // tg: code/datums/components/basic_ranged_ready_overlay.dm:9
@@ -503,9 +503,9 @@ public partial class datum_component_boomerang
     public object examine_message; // tg: code/datums/components/boomerang.dm:15
 }
 
-// tg: code/datums/components/boss_music.dm:6
-[DmPath("/datum/component/boss_music"), DmGeneratedOnly, DmInert]
-public partial class datum_component_boss_music : datum_component
+// tg: code/datums/components/boss_music.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/boss_music")]
+public partial class datum_component_boss_music
 {
     public object boss_track; // tg: code/datums/components/boss_music.dm:6
     public object track_duration; // tg: code/datums/components/boss_music.dm:8
@@ -609,9 +609,9 @@ public partial class datum_component_butchering_recycler { }
 [DmPath("/datum/component/butchering/mecha"), DmGeneratedOnly, DmInert]
 public partial class datum_component_butchering_mecha : datum_component_butchering { }
 
-// tg: code/datums/components/butchering.dm:558
-[DmPath("/datum/component/butchering/wearable"), DmGeneratedOnly, DmInert]
-public partial class datum_component_butchering_wearable : datum_component_butchering { }
+// tg: code/datums/components/butchering.dm:558 (the var block of a hand-written class)
+[DmPath("/datum/component/butchering/wearable")]
+public partial class datum_component_butchering_wearable { }
 
 // tg: code/datums/components/callouts.dm:7
 [DmPath("/datum/component/callouts"), DmGeneratedOnly, DmInert]
@@ -715,9 +715,9 @@ public partial class datum_component_cleaner
     public datum_callback on_cleaned_callback; // tg: code/datums/components/cleaner.dm:17
 }
 
-// tg: code/datums/components/clickbox.dm:11
-[DmPath("/datum/component/clickbox"), DmGeneratedOnly, DmInert]
-public partial class datum_component_clickbox : datum_component
+// tg: code/datums/components/clickbox.dm:11 (the var block of a hand-written class)
+[DmPath("/datum/component/clickbox")]
+public partial class datum_component_clickbox
 {
     public string icon_state = "sphere"; // tg: code/datums/components/clickbox.dm:13
     public float x_offset = 0; // tg: code/datums/components/clickbox.dm:15
@@ -762,9 +762,9 @@ public partial class datum_component_codeword_hearing
     public object span_class; // tg: code/datums/components/codeword_hearing.dm:17
 }
 
-// tg: code/datums/components/combo_attacks.dm:3
-[DmPath("/datum/component/combo_attacks"), DmGeneratedOnly, DmInert]
-public partial class datum_component_combo_attacks : datum_component
+// tg: code/datums/components/combo_attacks.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/combo_attacks")]
+public partial class datum_component_combo_attacks
 {
     public object max_combo_length; // tg: code/datums/components/combo_attacks.dm:3
     public object examine_message; // tg: code/datums/components/combo_attacks.dm:5
@@ -1526,12 +1526,12 @@ public partial class datum_component_dejavu_wizard
     }
 }
 
-// tg: code/datums/components/deployable.dm:14
-[DmPath("/datum/component/deployable"), DmGeneratedOnly, DmInert]
-public partial class datum_component_deployable : datum_component
+// tg: code/datums/components/deployable.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/component/deployable")]
+public partial class datum_component_deployable
 {
     public object deploy_time; // tg: code/datums/components/deployable.dm:14
-    public obj thing_to_be_deployed; // tg: code/datums/components/deployable.dm:16
+    public Type thing_to_be_deployed; // tg: code/datums/components/deployable.dm:16
     public object multiple_deployments; // tg: code/datums/components/deployable.dm:18
     public object deployments; // tg: code/datums/components/deployable.dm:20
     public object add_description_hint; // tg: code/datums/components/deployable.dm:22
@@ -1774,18 +1774,18 @@ public partial class datum_component_engraved
     public object story_value; // tg: code/datums/components/engraved.dm:16
 }
 
-// tg: code/datums/components/evolutionary_leap.dm:8
-[DmPath("/datum/component/evolutionary_leap"), DmGeneratedOnly, DmInert]
-public partial class datum_component_evolutionary_leap : datum_component
+// tg: code/datums/components/evolutionary_leap.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/component/evolutionary_leap")]
+public partial class datum_component_evolutionary_leap
 {
     public object evolve_mark; // tg: code/datums/components/evolutionary_leap.dm:8
     public object timer_id; // tg: code/datums/components/evolutionary_leap.dm:10
     public Type evolve_path; // tg: code/datums/components/evolutionary_leap.dm:12
 }
 
-// tg: code/datums/components/explodable.dm:4
-[DmPath("/datum/component/explodable"), DmGeneratedOnly, DmInert]
-public partial class datum_component_explodable : datum_component
+// tg: code/datums/components/explodable.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/component/explodable")]
+public partial class datum_component_explodable
 {
     public float devastation_range = 0; // tg: code/datums/components/explodable.dm:4
     public float heavy_impact_range = 0; // tg: code/datums/components/explodable.dm:6
@@ -1862,9 +1862,9 @@ public partial class datum_component_fertile_egg
     public datum_callback post_hatch; // tg: code/datums/components/fertile_egg.dm:33
 }
 
-// tg: code/datums/components/fish_growth.dm:3
-[DmPath("/datum/component/fish_growth"), DmGeneratedOnly, DmInert]
-public partial class datum_component_fish_growth : datum_component
+// tg: code/datums/components/fish_growth.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/fish_growth")]
+public partial class datum_component_fish_growth
 {
     public Type result_type; // tg: code/datums/components/fish_growth.dm:5
     public object maturation; // tg: code/datums/components/fish_growth.dm:7
@@ -1880,9 +1880,9 @@ public partial class datum_component_fish_growth : datum_component
     }
 }
 
-// tg: code/datums/components/fishing_spot.dm:3
-[DmPath("/datum/component/fishing_spot"), DmGeneratedOnly, DmInert]
-public partial class datum_component_fishing_spot : datum_component
+// tg: code/datums/components/fishing_spot.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/fishing_spot")]
+public partial class datum_component_fishing_spot
 {
     public datum_fish_source fish_source; // tg: code/datums/components/fishing_spot.dm:5
 
@@ -2024,9 +2024,9 @@ public partial class datum_component_gps
     public DmList tagged; // tg: code/datums/components/gps.dm:8
 }
 
-// tg: code/datums/components/gps.dm:23
-[DmPath("/datum/component/gps/kheiral_cuffs"), DmGeneratedOnly, DmInert]
-public partial class datum_component_gps_kheiral_cuffs : datum_component_gps { }
+// tg: code/datums/components/gps.dm:23 (the var block of a hand-written class)
+[DmPath("/datum/component/gps/kheiral_cuffs")]
+public partial class datum_component_gps_kheiral_cuffs { }
 
 // tg: code/datums/components/gps.dm:43 (the var block of a hand-written class)
 [DmPath("/datum/component/gps/item")]
@@ -2111,9 +2111,9 @@ public partial class datum_component_gunpoint
     }
 }
 
-// tg: code/datums/components/happiness.dm:9
-[DmPath("/datum/component/happiness"), DmGeneratedOnly, DmInert]
-public partial class datum_component_happiness : datum_component
+// tg: code/datums/components/happiness.dm:9 (the var block of a hand-written class)
+[DmPath("/datum/component/happiness")]
+public partial class datum_component_happiness
 {
     public object happiness_level; // tg: code/datums/components/happiness.dm:11
     public object maximum_happiness; // tg: code/datums/components/happiness.dm:13
@@ -2438,9 +2438,9 @@ public partial class datum_component_jetpack
     }
 }
 
-// tg: code/datums/components/joint_damage.dm:6
-[DmPath("/datum/component/joint_damage"), DmGeneratedOnly, DmInert]
-public partial class datum_component_joint_damage : datum_component
+// tg: code/datums/components/joint_damage.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/joint_damage")]
+public partial class datum_component_joint_damage
 {
     public datum_weakref overlord_mob; // tg: code/datums/components/joint_damage.dm:6
     public object previous_health_count; // tg: code/datums/components/joint_damage.dm:8
@@ -2626,9 +2626,9 @@ public partial class datum_component_locked_to_account
     }
 }
 
-// tg: code/datums/components/magnet.dm:4
-[DmPath("/datum/component/magnet"), DmGeneratedOnly, DmInert]
-public partial class datum_component_magnet : datum_component
+// tg: code/datums/components/magnet.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/component/magnet")]
+public partial class datum_component_magnet
 {
     public object pull_range; // tg: code/datums/components/magnet.dm:4
     public DmList attracted_typecache; // tg: code/datums/components/magnet.dm:6
@@ -2993,9 +2993,9 @@ public partial class datum_component_palette
     }
 }
 
-// tg: code/datums/components/parry.dm:4
-[DmPath("/datum/component/parriable_projectile"), DmGeneratedOnly, DmInert]
-public partial class datum_component_parriable_projectile : datum_component
+// tg: code/datums/components/parry.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/component/parriable_projectile")]
+public partial class datum_component_parriable_projectile
 {
     public DmList parry_turfs; // tg: code/datums/components/parry.dm:4
     public DmList parriers; // tg: code/datums/components/parry.dm:6
@@ -3122,20 +3122,19 @@ public partial class datum_component_pricetag
     }
 }
 
-// tg: code/datums/components/proficient_miner.dm:4
-[DmPath("/datum/component/proficient_miner"), DmGeneratedOnly, DmInert]
-public partial class datum_component_proficient_miner : datum_component
+// tg: code/datums/components/proficient_miner.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/component/proficient_miner")]
+public partial class datum_component_proficient_miner
 {
     public float mining_speed = 0; // tg: code/datums/components/proficient_miner.dm:4
     public float pass_driver = 0; // tg: code/datums/components/proficient_miner.dm:6
     public float last_bumpmine_tick = -1; // tg: code/datums/components/proficient_miner.dm:8
 }
 
-// tg: code/datums/components/profound_fisher.dm:4
-[DmPath("/datum/component/profound_fisher"), DmGeneratedOnly, DmInert]
-public partial class datum_component_profound_fisher : datum_component
+// tg: code/datums/components/profound_fisher.dm:4 (the vars the hand-written class does not declare)
+[DmPath("/datum/component/profound_fisher")]
+public partial class datum_component_profound_fisher
 {
-    public obj_item_fishing_rod_mob_fisher our_rod; // tg: code/datums/components/profound_fisher.dm:4
     public float delete_rod_when_deleted = 1; // tg: code/datums/components/profound_fisher.dm:6
 }
 
@@ -3337,9 +3336,9 @@ public partial class datum_component_regenerator
     public datum_callback regen_check; // tg: code/datums/components/regenerator.dm:29
 }
 
-// tg: code/datums/components/religious_tool.dm:7
-[DmPath("/datum/component/religious_tool"), DmGeneratedOnly, DmInert]
-public partial class datum_component_religious_tool : datum_component
+// tg: code/datums/components/religious_tool.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/religious_tool")]
+public partial class datum_component_religious_tool
 {
     public datum_religion_sect easy_access_sect; // tg: code/datums/components/religious_tool.dm:9
     public float selecting_sect = 0; // tg: code/datums/components/religious_tool.dm:11
@@ -3374,9 +3373,9 @@ public partial class datum_component_rename
     }
 }
 
-// tg: code/datums/components/reskinnable_atom.dm:135
-[DmPath("/datum/component/reskinable_item"), DmGeneratedOnly, DmInert]
-public partial class datum_component_reskinable_item : datum_component
+// tg: code/datums/components/reskinnable_atom.dm:135 (the var block of a hand-written class)
+[DmPath("/datum/component/reskinable_item")]
+public partial class datum_component_reskinable_item
 {
     public object base_reskin_type; // tg: code/datums/components/reskinnable_atom.dm:137
     public float infinite_reskin = 0; // tg: code/datums/components/reskinnable_atom.dm:139
@@ -3400,9 +3399,9 @@ public partial class datum_component_revenant_prison : datum_component
     public datum_action_mirror_talk mirror_talk; // tg: code/datums/components/revenant_prison.dm:9
 }
 
-// tg: code/datums/components/revenge_ability.dm:7
-[DmPath("/datum/component/revenge_ability"), DmGeneratedOnly, DmInert]
-public partial class datum_component_revenge_ability : datum_component
+// tg: code/datums/components/revenge_ability.dm:7 (the var block of a hand-written class)
+[DmPath("/datum/component/revenge_ability")]
+public partial class datum_component_revenge_ability
 {
     public datum_action_cooldown ability; // tg: code/datums/components/revenge_ability.dm:9
     public datum_targeting_strategy targeting; // tg: code/datums/components/revenge_ability.dm:11
@@ -3461,9 +3460,9 @@ public partial class datum_component_seclite_attachable
     }
 }
 
-// tg: code/datums/components/sect_nullrod_bonus.dm:8
-[DmPath("/datum/component/sect_nullrod_bonus"), DmGeneratedOnly, DmInert]
-public partial class datum_component_sect_nullrod_bonus : datum_component
+// tg: code/datums/components/sect_nullrod_bonus.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/component/sect_nullrod_bonus")]
+public partial class datum_component_sect_nullrod_bonus
 {
     public DmList bonus_rites; // tg: code/datums/components/sect_nullrod_bonus.dm:8
     public float bonus_applied = 0; // tg: code/datums/components/sect_nullrod_bonus.dm:10
@@ -3606,9 +3605,9 @@ public partial class datum_component_shuttle_cling
     public float not_clinging_move_delay = 2; // tg: code/datums/components/shuttle_cling.dm:28
 }
 
-// tg: code/datums/components/shuttle_move_deferred_checks.dm:3
-[DmPath("/datum/component/shuttle_move_deferred_checks"), DmGeneratedOnly, DmInert]
-public partial class datum_component_shuttle_move_deferred_checks : datum_component
+// tg: code/datums/components/shuttle_move_deferred_checks.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/shuttle_move_deferred_checks")]
+public partial class datum_component_shuttle_move_deferred_checks
 {
     public DmList targets; // tg: code/datums/components/shuttle_move_deferred_checks.dm:5
     public object check; // tg: code/datums/components/shuttle_move_deferred_checks.dm:8
@@ -3780,9 +3779,9 @@ public partial class datum_component_slippery_item
     public object last_fall; // tg: code/datums/components/slippery_item.dm:12
 }
 
-// tg: code/datums/components/smooth_tunes.dm:5
-[DmPath("/datum/component/smooth_tunes"), DmGeneratedOnly, DmInert]
-public partial class datum_component_smooth_tunes : datum_component
+// tg: code/datums/components/smooth_tunes.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/component/smooth_tunes")]
+public partial class datum_component_smooth_tunes
 {
     public datum_religion_rites_song_tuner linked_songtuner_rite; // tg: code/datums/components/smooth_tunes.dm:5
     public datum_song linked_song; // tg: code/datums/components/smooth_tunes.dm:7
@@ -3815,9 +3814,9 @@ public partial class datum_component_soul_stealer : datum_component
     }
 }
 
-// tg: code/datums/components/soulstoned.dm:3
-[DmPath("/datum/component/soulstoned"), DmGeneratedOnly, DmInert]
-public partial class datum_component_soulstoned : datum_component
+// tg: code/datums/components/soulstoned.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/soulstoned")]
+public partial class datum_component_soulstoned
 {
     public atom_movable container; // tg: code/datums/components/soulstoned.dm:3
 }
@@ -3864,9 +3863,9 @@ public partial class datum_component_space_dive : datum_component
     public Type diveable_decal = typeof(obj_effect_decal_cleanable_vomit_nebula); // tg: code/datums/components/space_dive.dm:14
 }
 
-// tg: code/datums/components/spawner.dm:5
-[DmPath("/datum/component/spawner"), DmGeneratedOnly, DmInert]
-public partial class datum_component_spawner : datum_component
+// tg: code/datums/components/spawner.dm:5 (the var block of a hand-written class)
+[DmPath("/datum/component/spawner")]
+public partial class datum_component_spawner
 {
     public object spawn_time; // tg: code/datums/components/spawner.dm:5
     public object spawn_text; // tg: code/datums/components/spawner.dm:7
@@ -4123,9 +4122,9 @@ public partial class datum_component_supermatter_crystal
     public datum_callback consume_callback; // tg: code/datums/components/supermatter_crystal.dm:6
 }
 
-// tg: code/datums/components/swabbing.dm:8
-[DmPath("/datum/component/swabbing"), DmGeneratedOnly, DmInert]
-public partial class datum_component_swabbing : datum_component
+// tg: code/datums/components/swabbing.dm:8 (the var block of a hand-written class)
+[DmPath("/datum/component/swabbing")]
+public partial class datum_component_swabbing
 {
     public DmList swabbed_items; // tg: code/datums/components/swabbing.dm:8
     public object can_swab_objs; // tg: code/datums/components/swabbing.dm:10
@@ -4298,9 +4297,9 @@ public partial class datum_component_thermite
     }
 }
 
-// tg: code/datums/components/throwbonus_on_windup.dm:3
-[DmPath("/datum/component/throwbonus_on_windup"), DmGeneratedOnly, DmInert]
-public partial class datum_component_throwbonus_on_windup : datum_component
+// tg: code/datums/components/throwbonus_on_windup.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/throwbonus_on_windup")]
+public partial class datum_component_throwbonus_on_windup
 {
     public float maximum_bonus = 20; // tg: code/datums/components/throwbonus_on_windup.dm:3
     public datum_callback pass_maximum_callback; // tg: code/datums/components/throwbonus_on_windup.dm:5
@@ -4494,9 +4493,9 @@ public partial class datum_component_udder
     public datum_callback on_milk_callback; // tg: code/datums/components/udder.dm:10
 }
 
-// tg: code/datums/components/unbreakable.dm:2
-[DmPath("/datum/component/unbreakable"), DmGeneratedOnly, DmInert]
-public partial class datum_component_unbreakable : datum_component
+// tg: code/datums/components/unbreakable.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/component/unbreakable")]
+public partial class datum_component_unbreakable
 {
     public float surge_cooldown = 0; // tg: code/datums/components/unbreakable.dm:2
 }
@@ -4550,9 +4549,9 @@ public partial class datum_component_uplink
     }
 }
 
-// tg: code/datums/components/usb_port.dm:3
-[DmPath("/datum/component/usb_port"), DmGeneratedOnly, DmInert]
-public partial class datum_component_usb_port : datum_component
+// tg: code/datums/components/usb_port.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/component/usb_port")]
+public partial class datum_component_usb_port
 {
     public DmList circuit_component_types; // tg: code/datums/components/usb_port.dm:5
     public obj_item_integrated_circuit attached_circuit; // tg: code/datums/components/usb_port.dm:8
@@ -5200,9 +5199,9 @@ public partial class datum_component_riding_creature_megacarp
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:497
-[DmPath("/datum/component/riding/creature/vatbeast"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_vatbeast : datum_component_riding_creature
+// tg: code/datums/components/riding/riding_mob.dm:497 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/vatbeast")]
+public partial class datum_component_riding_creature_vatbeast
 {
     // tg: code/datums/components/riding/riding_mob.dm:497
     public datum_component_riding_creature_vatbeast()
@@ -5212,9 +5211,9 @@ public partial class datum_component_riding_creature_vatbeast : datum_component_
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:517
-[DmPath("/datum/component/riding/creature/goliath"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_goliath : datum_component_riding_creature
+// tg: code/datums/components/riding/riding_mob.dm:517 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/goliath")]
+public partial class datum_component_riding_creature_goliath
 {
     public float flat_speed_mod = -9.5f; // tg: code/datums/components/riding/riding_mob.dm:521
     public object last_move_dir; // tg: code/datums/components/riding/riding_mob.dm:523
@@ -5239,7 +5238,7 @@ public partial class datum_component_riding_creature_goliath : datum_component_r
 }
 
 // tg: code/datums/components/riding/riding_mob.dm:535
-[DmPath("/datum/component/riding/creature/goliath/deathmatch"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/component/riding/creature/goliath/deathmatch"), DmGeneratedOnly]
 public partial class datum_component_riding_creature_goliath_deathmatch : datum_component_riding_creature_goliath
 {
     // tg: code/datums/components/riding/riding_mob.dm:535
@@ -5249,9 +5248,9 @@ public partial class datum_component_riding_creature_goliath_deathmatch : datum_
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:586
-[DmPath("/datum/component/riding/creature/glutton"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_glutton : datum_component_riding_creature { }
+// tg: code/datums/components/riding/riding_mob.dm:586 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/glutton")]
+public partial class datum_component_riding_creature_glutton { }
 
 // tg: code/datums/components/riding/riding_mob.dm:603 (the var block of a hand-written class)
 [DmPath("/datum/component/riding/creature/guardian")]
@@ -5264,9 +5263,9 @@ public partial class datum_component_riding_creature_guardian
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:628
-[DmPath("/datum/component/riding/creature/goldgrub"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_goldgrub : datum_component_riding_creature
+// tg: code/datums/components/riding/riding_mob.dm:628 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/goldgrub")]
+public partial class datum_component_riding_creature_goldgrub
 {
     // tg: code/datums/components/riding/riding_mob.dm:628
     public datum_component_riding_creature_goldgrub()
@@ -5288,9 +5287,9 @@ public partial class datum_component_riding_creature_leaper : datum_component_ri
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:700
-[DmPath("/datum/component/riding/creature/raptor"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_raptor : datum_component_riding_creature
+// tg: code/datums/components/riding/riding_mob.dm:700 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/raptor")]
+public partial class datum_component_riding_creature_raptor
 {
     // tg: code/datums/components/riding/riding_mob.dm:700
     public datum_component_riding_creature_raptor()
@@ -5302,7 +5301,7 @@ public partial class datum_component_riding_creature_raptor : datum_component_ri
 }
 
 // tg: code/datums/components/riding/riding_mob.dm:747
-[DmPath("/datum/component/riding/creature/raptor/combat"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/component/riding/creature/raptor/combat"), DmGeneratedOnly]
 public partial class datum_component_riding_creature_raptor_combat : datum_component_riding_creature_raptor
 {
     // tg: code/datums/components/riding/riding_mob.dm:747
@@ -5312,13 +5311,13 @@ public partial class datum_component_riding_creature_raptor_combat : datum_compo
     }
 }
 
-// tg: code/datums/components/riding/riding_mob.dm:749
-[DmPath("/datum/component/riding/creature/raptor/healer"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_raptor_healer : datum_component_riding_creature_raptor { }
+// tg: code/datums/components/riding/riding_mob.dm:749 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/raptor/healer")]
+public partial class datum_component_riding_creature_raptor_healer { }
 
-// tg: code/datums/components/riding/riding_mob.dm:781
-[DmPath("/datum/component/riding/creature/raptor/small"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_raptor_small : datum_component_riding_creature_raptor { }
+// tg: code/datums/components/riding/riding_mob.dm:781 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/raptor/small")]
+public partial class datum_component_riding_creature_raptor_small { }
 
 // tg: code/datums/components/riding/riding_mob.dm:790 (the var block of a hand-written class)
 [DmPath("/datum/component/riding/creature/spider")]
@@ -5355,9 +5354,9 @@ public partial class datum_component_riding_creature_ed_bot : datum_component_ri
 [DmPath("/datum/component/riding/creature/ed_bot/nukie"), DmGeneratedOnly, DmInert]
 public partial class datum_component_riding_creature_ed_bot_nukie : datum_component_riding_creature_ed_bot { }
 
-// tg: code/modules/mob/living/basic/icemoon/wolf/wolf_extras.dm:12
-[DmPath("/datum/component/riding/creature/wolf"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_creature_wolf : datum_component_riding_creature { }
+// tg: code/modules/mob/living/basic/icemoon/wolf/wolf_extras.dm:12 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/creature/wolf")]
+public partial class datum_component_riding_creature_wolf { }
 
 // tg: code/datums/components/riding/riding_mob.dm:695
 [DmPath("/datum/component/riding/leaper"), DmGeneratedOnly, DmInert]
@@ -5367,9 +5366,9 @@ public partial class datum_component_riding_leaper : datum_component_riding { }
 [DmPath("/datum/component/riding/vehicle")]
 public partial class datum_component_riding_vehicle { }
 
-// tg: code/datums/components/riding/riding_vehicle.dm:111
-[DmPath("/datum/component/riding/vehicle/atv"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_vehicle_atv : datum_component_riding_vehicle
+// tg: code/datums/components/riding/riding_vehicle.dm:111 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/vehicle/atv")]
+public partial class datum_component_riding_vehicle_atv
 {
     // tg: code/datums/components/riding/riding_vehicle.dm:111
     public datum_component_riding_vehicle_atv()
@@ -5392,9 +5391,9 @@ public partial class datum_component_riding_vehicle_bicycle : datum_component_ri
     }
 }
 
-// tg: code/datums/components/riding/riding_vehicle.dm:144
-[DmPath("/datum/component/riding/vehicle/lavaboat"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_vehicle_lavaboat : datum_component_riding_vehicle
+// tg: code/datums/components/riding/riding_vehicle.dm:144 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/vehicle/lavaboat")]
+public partial class datum_component_riding_vehicle_lavaboat
 {
     public DmList allowed_turfs; // tg: code/datums/components/riding/riding_vehicle.dm:147
 
@@ -5413,9 +5412,9 @@ public partial class datum_component_riding_vehicle_lavaboat : datum_component_r
     }
 }
 
-// tg: code/datums/components/riding/riding_vehicle.dm:162
-[DmPath("/datum/component/riding/vehicle/lavaboat/dragonboat"), DmGeneratedOnly, DmInert]
-public partial class datum_component_riding_vehicle_lavaboat_dragonboat : datum_component_riding_vehicle_lavaboat
+// tg: code/datums/components/riding/riding_vehicle.dm:162 (the var block of a hand-written class)
+[DmPath("/datum/component/riding/vehicle/lavaboat/dragonboat")]
+public partial class datum_component_riding_vehicle_lavaboat_dragonboat
 {
     // tg: code/datums/components/riding/riding_vehicle.dm:162
     public datum_component_riding_vehicle_lavaboat_dragonboat()
@@ -5798,9 +5797,9 @@ public partial class datum_component_meteor_combat
     public datum_callback destruction_proc; // tg: code/modules/meteors/meteor_deflection.dm:11
 }
 
-// tg: code/modules/research/gizmo/gizmo_voice.dm:6
-[DmPath("/datum/component/gizmo_voice"), DmGeneratedOnly, DmInert]
-public partial class datum_component_gizmo_voice : datum_component
+// tg: code/modules/research/gizmo/gizmo_voice.dm:6 (the var block of a hand-written class)
+[DmPath("/datum/component/gizmo_voice")]
+public partial class datum_component_gizmo_voice
 {
     public Type puzzle; // tg: code/modules/research/gizmo/gizmo_voice.dm:6
 }
@@ -5826,9 +5825,9 @@ public partial class datum_component_circuit_component_add_port
     }
 }
 
-// tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:2
-[DmPath("/datum/component/boris_circuit_container"), DmGeneratedOnly, DmInert]
-public partial class datum_component_boris_circuit_container : datum_component
+// tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:2 (the var block of a hand-written class)
+[DmPath("/datum/component/boris_circuit_container")]
+public partial class datum_component_boris_circuit_container
 {
     public DmList mmi_components; // tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:3
     public datum_weakref indicator_weakref; // tg: code/modules/wiremod/dcs_components/component_boris_circuit_container.dm:4

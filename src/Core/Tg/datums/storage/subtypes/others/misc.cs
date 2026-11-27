@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL: only the pill bottle's storage (M8 slice C), the crayon box's (gaps J3), the surgery tray's (gaps P1) and the portable
 // chem mixer's (gaps P5), the implant's (syndicate G3), the briefcase gun's (syndicate G4a), the dice bag's (gaps DE1); the test
-// tube rack's, the organ box's and the can ring's (gaps SR1); the toilet bong's (gaps ST5); the file's other storages come with
+// tube rack's, the organ box's and the can ring's (gaps SR1); the toilet bong's (gaps ST5); the trading card binder's; the file's other storages come with
 // their items.
 
 ///Surgery tray
@@ -277,6 +277,18 @@ public partial class datum_storage_sixcan : datum_storage
             typeof(obj_item_reagent_containers_cup_glass_bottle_beer),
             typeof(obj_item_reagent_containers_cup_glass_bottle_ale),
             typeof(obj_item_reagent_containers_cup_glass_waterbottle)));
+    }
+}
+
+// tg: code/datums/storage/subtypes/others/misc.dm:277
+public partial class datum_storage_card_binder : datum_storage
+{
+    // tg: code/datums/storage/subtypes/others/misc.dm:281
+    [DmParams("parent", "max_slots", "max_specific_storage", "max_total_storage", "rustle_sound", "remove_rustle_sound")]
+    public override async DmTask New(params object[] __extra)
+    {
+        await base.New(__extra);
+        set_holdable(typeof(obj_item_tcgcard));
     }
 }
 

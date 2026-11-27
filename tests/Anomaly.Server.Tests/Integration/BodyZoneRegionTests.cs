@@ -230,7 +230,7 @@ public class BodyZoneRegionTests(ITestOutputHelper output)
     }
 
     /// <summary>
-    /// Slice T4c (DV600): a conscious body on the floor keeps the floor rule, back up with no eyes and no mouth from every side; turned over from
+    /// Slice T4c (DV686): a conscious body on the floor keeps the floor rule, back up with no eyes and no mouth from every side; turned over from
     /// the radial it shows its face from every side; turned again, its back.
     /// </summary>
     [Fact]

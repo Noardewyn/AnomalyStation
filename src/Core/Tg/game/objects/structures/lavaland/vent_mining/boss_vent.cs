@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Lavaland L2c (D304): the whole file. The var block is generated (D111). The boss's summoning waits for the megafauna (L6).
+// Lavaland L2c (D304): the whole file. The var block is generated (D111).
 
 // tg: code/game/objects/structures/lavaland/vent_mining/boss_vent.dm:2
 public partial class obj_structure_ore_vent_boss : obj_structure_ore_vent
@@ -54,10 +54,11 @@ public partial class obj_structure_ore_vent_boss : obj_structure_ore_vent
     {
         if (!(wave_cooldown <= world.time))
             return;
-        // Completely override the normal wave defense, and just spawn the boss: new summoned_boss(loc), its
-        // COMSIG_VENT_WAVE_CONCLUDED, the blackbox tally and the boss's summon line.
-        Dm.Deferred("code/game/objects/structures/lavaland/vent_mining/boss_vent.dm:59", "start_wave_defense: the vent's megafauna (Lavaland L6)");
-        await DmTask.CompletedTask;
+        // Completely override the normal wave defense, and just spawn the boss.
+        mob_living_simple_animal_hostile_megafauna boss = Dm.@new((System.Type)summoned_boss, loc) as mob_living_simple_animal_hostile_megafauna;
+        RegisterSignal(boss, COMSIG_VENT_WAVE_CONCLUDED, nameof(handle_wave_conclusion));
+        SSblackbox.record_feedback("tally", "ore_vent_mobs_spawned", 1, summoned_boss);
+        await boss.say(boss.summon_line, language: typeof(datum_language_common), forced: "summon line"); //Pull their specific summon line to say. Default is meme text so make sure that they have theirs set already.
     }
 
     // tg: code/game/objects/structures/lavaland/vent_mining/boss_vent.dm:63

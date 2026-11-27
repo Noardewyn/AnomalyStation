@@ -22,26 +22,29 @@ public class SoundsSubsystemTests
         {
             Assert.Equal(1f, SSsounds.initialized);
             Assert.Equal(1011f, length(SSsounds.channel_list));
+            // the hear-something dream holds the top channel from SSsounds' post-initialize (dreaming.dm:172, :186)
+            Assert.IsType<datum_dream_hear_something>(SSsounds.using_channels["1011"]);
+            Assert.Equal(1010f, Dm.num(SSsounds.channel_reserve_high));
             float first = Dm.num(SSsounds.random_available_channel());
             Assert.Equal(first + 1, Dm.num(SSsounds.random_available_channel()));
             Assert.Equal(first + 2, Dm.num(SSsounds.random_available_channel()));
 
             // the top channels are reserved downwards from 1011; random ones never reach them
-            Assert.Equal(1011f, Dm.num(SSsounds.reserve_sound_channel()));
             Assert.Equal(1010f, Dm.num(SSsounds.reserve_sound_channel()));
-            Assert.Equal(1009f, Dm.num(SSsounds.channel_reserve_high));
-            SSsounds.channel_random_low = 1009;
-            Assert.Equal(1009f, Dm.num(SSsounds.random_available_channel()));
+            Assert.Equal(1009f, Dm.num(SSsounds.reserve_sound_channel()));
+            Assert.Equal(1008f, Dm.num(SSsounds.channel_reserve_high));
+            SSsounds.channel_random_low = 1008;
+            Assert.Equal(1008f, Dm.num(SSsounds.random_available_channel()));
             Assert.Equal(1f, Dm.num(SSsounds.random_available_channel())); // wrapped
 
-            // freeing 1011 swaps it below the reserve mark, where the rotation reaches it
-            SSsounds.free_sound_channel(1011);
-            Assert.Equal(1010f, Dm.num(SSsounds.channel_reserve_high));
-            SSsounds.channel_random_low = 1010;
-            Assert.Equal(1011f, Dm.num(SSsounds.random_available_channel()));
+            // freeing 1010 swaps it below the reserve mark, where the rotation reaches it
+            SSsounds.free_sound_channel(1010);
+            Assert.Equal(1009f, Dm.num(SSsounds.channel_reserve_high));
+            SSsounds.channel_random_low = 1009;
+            Assert.Equal(1010f, Dm.num(SSsounds.random_available_channel()));
             Assert.Equal(1f, Dm.num(SSsounds.random_available_channel()));
-            Assert.True(Dm.truthy(SSsounds.reserved_channels["1010"])); // still reserved, now at index 1011
-            Assert.Equal(1011f, Dm.num(SSsounds.reserved_channels["1010"]));
+            Assert.True(Dm.truthy(SSsounds.reserved_channels["1009"])); // still reserved, now at index 1010
+            Assert.Equal(1010f, Dm.num(SSsounds.reserved_channels["1009"]));
             Assert.Equal(961f, Dm.num(SSsounds.available_channels_left())); // tg's count: the 1011 channels less the 50 kept for random use
         });
         room.AssertNoRuntimes();
@@ -56,14 +59,14 @@ public class SoundsSubsystemTests
             var owner = Dm.@new<datum>();
             float a = Dm.num(SSsounds.reserve_sound_channel_for_datum(owner));
             float b = Dm.num(SSsounds.reserve_sound_channel_for_datum(owner));
-            Assert.Equal(1011f, a);
-            Assert.Equal(1010f, b);
+            Assert.Equal(1010f, a); // below the hear-something dream's 1011 (dreaming.dm:186)
+            Assert.Equal(1009f, b);
             Assert.Equal(2f, length(SSsounds.using_channels_by_datum[owner]));
-            Assert.Same(owner, SSsounds.using_channels["1011"]);
+            Assert.Same(owner, SSsounds.using_channels["1010"]);
             qdel(owner);
             Assert.Null(SSsounds.using_channels_by_datum[owner]);
-            Assert.Null(SSsounds.using_channels["1011"]);
-            Assert.Equal(1011f, Dm.num(SSsounds.channel_reserve_high));
+            Assert.Null(SSsounds.using_channels["1010"]);
+            Assert.Equal(1010f, Dm.num(SSsounds.channel_reserve_high));
         });
         room.AssertNoRuntimes();
     }

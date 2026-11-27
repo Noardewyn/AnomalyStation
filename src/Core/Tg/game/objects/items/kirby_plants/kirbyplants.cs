@@ -13,7 +13,7 @@ namespace Anomaly.Core.Tg;
 // up to hide behind (tactical), beautiful (beauty 500), with their pickup and drop sounds; a random plant picks its look at init, a
 // plastic one among the four plastic looks; someone with the bonsai skill trims a plant with a sharp item into the next look; a dead
 // plant shows its withered state until a seed is planted in it; Potty's light toggles with its action; the neglected fern is
-// swabbable (the cell lines are inert, as the banana's). The organic and synthetic plants (organic_plants.dm,
+// swabbable. The organic and synthetic plants (organic_plants.dm,
 // synthetic_plants.dm) are var-only. The var blocks are generated (D111).
 
 // tg: code/game/objects/items/kirby_plants/kirbyplants.dm:1
@@ -210,7 +210,7 @@ public partial class obj_item_kirbyplants_fern : obj_item_kirbyplants
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_ALGAE, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 5)); // inert until the cell lines (cytology)
+        Waiting.NoSleep(AddElement(typeof(datum_element_swabable), CELL_LINE_TABLE_ALGAE, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 5));
         return dot;
     }
 }

@@ -1672,9 +1672,9 @@ public partial class obj_item_clothing_head_helmet_changeling_hivehead_legion : 
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:208
-[DmPath("/obj/item/clothing/head/helmet/skull"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_helmet_skull : obj_item_clothing_head_helmet
+// tg: code/modules/mining/equipment/explorer_gear.dm:208 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/helmet/skull")]
+public partial class obj_item_clothing_head_helmet_skull
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:208
     public obj_item_clothing_head_helmet_skull()
@@ -2566,9 +2566,9 @@ public partial class obj_item_clothing_head_helmet_monkey_sentience : obj_item_c
     }
 }
 
-// tg: code/modules/clothing/head/perceptomatrix.dm:3
-[DmPath("/obj/item/clothing/head/helmet/perceptomatrix"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_helmet_perceptomatrix : obj_item_clothing_head_helmet
+// tg: code/modules/clothing/head/perceptomatrix.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/helmet/perceptomatrix")]
+public partial class obj_item_clothing_head_helmet_perceptomatrix
 {
     public float core_installed = 0; // tg: code/modules/clothing/head/perceptomatrix.dm:37
     public DmList active_components; // tg: code/modules/clothing/head/perceptomatrix.dm:39
@@ -2613,7 +2613,7 @@ public partial class obj_item_clothing_head_helmet_perceptomatrix : obj_item_clo
 }
 
 // tg: code/modules/clothing/head/perceptomatrix.dm:149
-[DmPath("/obj/item/clothing/head/helmet/perceptomatrix/functioning"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/helmet/perceptomatrix/functioning"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_helmet_perceptomatrix_functioning : obj_item_clothing_head_helmet_perceptomatrix
 {
     // tg: code/modules/clothing/head/perceptomatrix.dm:149
@@ -4650,9 +4650,9 @@ public partial class obj_item_clothing_head_hooded_chaplain_hood_divine_archer :
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:35
-[DmPath("/obj/item/clothing/head/hooded/explorer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_explorer : obj_item_clothing_head_hooded
+// tg: code/modules/mining/equipment/explorer_gear.dm:35 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/explorer")]
+public partial class obj_item_clothing_head_hooded_explorer
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:35
     public obj_item_clothing_head_hooded_explorer()
@@ -4674,7 +4674,7 @@ public partial class obj_item_clothing_head_hooded_explorer : obj_item_clothing_
 }
 
 // tg: code/modules/mining/equipment/explorer_gear.dm:248
-[DmPath("/obj/item/clothing/head/hooded/explorer/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/head/hooded/explorer/syndicate"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_hooded_explorer_syndicate : obj_item_clothing_head_hooded_explorer
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:248
@@ -4691,9 +4691,9 @@ public partial class obj_item_clothing_head_hooded_explorer_syndicate : obj_item
 [DmPath("/obj/item/clothing/head/hooded/cloakhood"), DmGeneratedOnly]
 public partial class obj_item_clothing_head_hooded_cloakhood : obj_item_clothing_head_hooded { }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:167
-[DmPath("/obj/item/clothing/head/hooded/cloakhood/goliath"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_cloakhood_goliath : obj_item_clothing_head_hooded_cloakhood
+// tg: code/modules/mining/equipment/explorer_gear.dm:167 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/cloakhood/goliath")]
+public partial class obj_item_clothing_head_hooded_cloakhood_goliath
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:167
     public obj_item_clothing_head_hooded_cloakhood_goliath()
@@ -4740,9 +4740,9 @@ public partial class obj_item_clothing_head_hooded_cloakhood_godslayer : obj_ite
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:50
-[DmPath("/obj/item/clothing/head/hooded/cloakhood/drake"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_cloakhood_drake : obj_item_clothing_head_hooded_cloakhood
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:50 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/cloakhood/drake")]
+public partial class obj_item_clothing_head_hooded_cloakhood_drake
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:50
     public obj_item_clothing_head_hooded_cloakhood_drake()
@@ -4762,9 +4762,9 @@ public partial class obj_item_clothing_head_hooded_cloakhood_drake : obj_item_cl
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:51
-[DmPath("/obj/item/clothing/head/hooded/berserker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_berserker : obj_item_clothing_head_hooded
+// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:51 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/berserker")]
+public partial class obj_item_clothing_head_hooded_berserker
 {
     public float berserk_charge = 0; // tg: code/modules/mining/lavaland/mining_loot/berserker.dm:69
     public float berserk_active = 0; // tg: code/modules/mining/lavaland/mining_loot/berserker.dm:71
@@ -4795,9 +4795,9 @@ public partial class obj_item_clothing_head_hooded_berserker : obj_item_clothing
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:76
-[DmPath("/obj/item/clothing/head/hooded/hostile_environment"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_hooded_hostile_environment : obj_item_clothing_head_hooded
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:76 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/hooded/hostile_environment")]
+public partial class obj_item_clothing_head_hooded_hostile_environment
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:76
     public obj_item_clothing_head_hooded_hostile_environment()
@@ -7952,9 +7952,9 @@ public partial class obj_item_clothing_head_mod
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:101
-[DmPath("/obj/item/clothing/head/peaceflower"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_head_peaceflower : obj_item_clothing_head
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:101 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/head/peaceflower")]
+public partial class obj_item_clothing_head_peaceflower
 {
     // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:101
     public obj_item_clothing_head_peaceflower()

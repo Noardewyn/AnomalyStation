@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // PARTIAL: only the insulated gloves (yellow), the budget ones (fyellow) and the worn out ones (fyellow/old) translated (the M7
 // shocks slice: electrocute_mob reads the gloves' siemens_coefficient; the gloves item of the engineering tools, D164, is a
 // later slice). Their fantasy bonuses and the stealing objective are generated live-partial stubs (M10); the fishing
-// difficulty element is a deferred leaf (fishing, M10+). Gaps CL1 (D333): the spray-on gloves and their can (their charges spent
+// difficulty element is live. Gaps CL1 (D333): the spray-on gloves and their can (their charges spent
 // by a prevented shock or a cleaning), the cut gloves. The var blocks are generated.
 
 // tg: code/modules/clothing/gloves/insulated.dm:7
@@ -23,8 +23,7 @@ public partial class obj_item_clothing_gloves_color_yellow : obj_item_clothing_g
     {
         object dot = null;
         dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, 10): fishing (M10+)
-        Dm.Deferred("code/modules/clothing/gloves/insulated.dm:21", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 10): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 10));
         return dot;
     }
 }
@@ -137,7 +136,7 @@ public partial class obj_item_clothing_gloves_cut : obj_item_clothing_gloves
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/gloves/insulated.dm:140", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5));
         return dot;
     }
 }

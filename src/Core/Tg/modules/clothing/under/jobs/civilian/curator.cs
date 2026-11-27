@@ -9,7 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL (gaps CL1, D333): the treasure hunter's suit (its fishing difficulty waits for fishing); the rest of the file is var-only.
+// PARTIAL (gaps CL1, D333): the treasure hunter's suit (with its fishing difficulty); the rest of the file is var-only.
 // The var blocks are generated (D111).
 
 // tg: code/modules/clothing/under/jobs/civilian/curator.dm:24
@@ -19,7 +19,7 @@ public partial class obj_item_clothing_under_rank_civilian_curator_treasure_hunt
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/under/jobs/civilian/curator.dm:34", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -5): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -5));
         return dot;
     }
 }

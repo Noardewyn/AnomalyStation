@@ -3626,9 +3626,9 @@ public partial class obj_item_toy_hazard_warning_plasma : obj_item_toy_hazard_wa
     }
 }
 
-// tg: code/modules/holodeck/items.dm:54
-[DmPath("/obj/item/toy/dodgeball"), DmGeneratedOnly, DmInert]
-public partial class obj_item_toy_dodgeball : obj_item_toy
+// tg: code/modules/holodeck/items.dm:54 (the var block of a hand-written class)
+[DmPath("/obj/item/toy/dodgeball")]
+public partial class obj_item_toy_dodgeball
 {
     // tg: code/modules/holodeck/items.dm:54
     public obj_item_toy_dodgeball()

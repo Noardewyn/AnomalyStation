@@ -46,7 +46,7 @@ public class GunInMouthGameplayTests(ITestOutputHelper output)
     }
 
     // At the head's middle row (tg's icon-y 27 of the mob-scaled picture), at the mob's server position.
-    private static ShotAim AtHead(RealHeadlessWorld w, RealHeadlessWorld.Player shooter, mob_living target)
+    internal static ShotAim AtHead(RealHeadlessWorld w, RealHeadlessWorld.Player shooter, mob_living target)
     {
         (double x, double y) = In(w, () => LocomotionSeam.TryGetState(w.World, target.dm_id, out Anomaly.Core.Motion.MotionState s, out _)
             ? (s.X / 256.0, s.Y / 256.0) : (Dm.num(target.x), Dm.num(target.y)));

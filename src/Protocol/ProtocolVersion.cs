@@ -196,15 +196,17 @@ public static class ProtocolVersion
     /// a circuit floor or lava lights the room, and a ceiling's floor block lights the room under it.
     /// Version 97 (DV597): the Hello's flag <see cref="Hello.WaitsForLoad"/> and the action <see cref="ActionKind.Loaded"/>: the game's client
     /// loads the world behind its loading screen before its new player is late-joined.
-    /// Version 98 (package T, slice T4a, DV30; Codec.V98.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
+    /// Version 98: a <see cref="UiWindowMessage"/> may be <see cref="Limits.MaxUiWindowBytes"/> 1 MiB long (256 KiB before) and a UI payload
+    /// may hold <see cref="Limits.MaxUiValues"/> 65536 values (32768 before), as tg's crafting window sends every cooking recipe at once.
+    /// Version 99 (package T, slice T4a, DV30; Codec.V99.cs): a click's and a throw's aim zone gains <see cref="AimZone.Eyes"/>,
     /// <see cref="AimZone.Mouth"/> and <see cref="AimZone.Groin"/>, the modifiers byte's spare bit 3 its high bit.
-    /// Version 98 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
+    /// Version 99 also (package T, slice T4b, DV30): a hover on an entity may end with the zone looked at (one byte, 1 to 9), which the server
     /// selects without logging before tg's hover, so the hints name what a click there does.
-    /// Version 98 also (package T, slice T4c, DV600): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
+    /// Version 99 also (package T, slice T4c, DV686): the posture byte's bits 6 and 7 (<see cref="PostureBits.SideFixed"/>,
     /// <see cref="PostureBits.FaceUp"/>), the side a lying body was turned to from the radial's Turn over (a ContextPick of that label).
-    /// Version 98 also (ui-overhaul.md section 10, slice 3A, DV603; MessagesV98Hotbar.cs): the Hotbar message, the own human's ten hotbar cells
+    /// Version 99 also (ui-overhaul.md section 10, slice 3A, DV689; MessagesV99Hotbar.cs): the Hotbar message, the own human's ten hotbar cells
     /// and the held items' names, and the <see cref="ActionKind.HotbarPress"/> action, a press of one cell.
-    public const ushort Current = 98;
+    public const ushort Current = 99;
 
     /// <summary>The length of <see cref="Magic"/>.</summary>
     public const int MagicLength = 4;

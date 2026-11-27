@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The whole file but the image itself (gaps J3, D298): the camera takes pictures with their description, spotted mobs and names, flash, film, zoom and printing, and prints a photo. The picture's image
-// (camera_get_icon, a composite of the seen atoms' sprites) has no counterpart in the 3D client: a row. The holodisk record and the circuit shell are rows too (the AI's camera net came with silicons SI4). The var blocks are generated.
+// (camera_get_icon, a composite of the seen atoms' sprites) has no counterpart in the 3D client: a row. The holodisk record is a row too (the AI's camera net came with silicons SI4); the camera is a circuit shell. The var blocks are generated.
 
 // tg: code/modules/photography/camera/camera.dm:2
 public partial class obj_item_camera : obj_item
@@ -37,8 +37,7 @@ public partial class obj_item_camera : obj_item
             Dm.Deferred("code/modules/photography/camera/camera.dm:69", "Initialize: /datum/component/overlay_lighting/camera, the flash's overlay light (the lighting module, D24)");
         }
 
-        // AddComponent(/datum/component/shell, list(new /obj/item/circuit_component/camera, new /obj/item/circuit_component/remotecam/polaroid), SHELL_CAPACITY_SMALL): the circuits
-        Dm.Deferred("code/modules/photography/camera/camera.dm:71", "Initialize: AddComponent(/datum/component/shell, ...): the camera as a circuit shell (integrated circuits, not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_shell), Dm.list(Dm.@new<obj_item_circuit_component_camera>(), Dm.@new<obj_item_circuit_component_remotecam_polaroid>()), SHELL_CAPACITY_SMALL));
         // register_context(): the context tips (screentips, not now)
         return dot;
     }

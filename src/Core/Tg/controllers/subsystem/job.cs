@@ -876,9 +876,20 @@ public partial class datum_controller_subsystem_job : datum_controller_subsystem
         }
 
         //Spawn some extra eqipment lockers if we have more than 5 officers
-        // for(var/i=equip_needed-5, i>0, i--) a security closet at the next of GLOB.secequipment (:653-663): the spare security lockers'
-        // landmarks (/obj/effect/landmark/secequipment) are not translated, so GLOB.secequipment is empty and the loop breaks at once
-        // //We ran out of spare locker spawns!
+        float equip_needed = J.total_positions;
+        if (equip_needed < 0) // -1: infinite available slots
+            equip_needed = 12;
+        for (float i = equip_needed - 5; i > 0; i--)
+        {
+            if (Dm.truthy(length(GLOB.secequipment)))
+            {
+                object spawnloc = GLOB.secequipment[1];
+                Dm.@new<obj_structure_closet_secure_closet_security_sec>(spawnloc);
+                Dm.remove(ref GLOB.secequipment, spawnloc);
+            }
+            else //We ran out of spare locker spawns!
+                break;
+        }
     }
 
     // tg: code/controllers/subsystem/job.dm:659

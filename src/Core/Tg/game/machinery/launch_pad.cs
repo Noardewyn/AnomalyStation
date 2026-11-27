@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // The syndicate campaign G2 (D316): the bluespace launchpad, the briefcase launchpad and its remote (the LaunchpadRemote window):
 // set an offset within range, launch or pull what stands on the pad or the target, the beam and the sparks. The diagnostic HUD
 // with the target indicator (prepare_huds, the diagnostic hud and the hud image) is a deferred leaf, as for the airlocks; the
-// pad's circuit component (wiremod) stays inert; the logs are rows.
+// pad's USB port takes its circuit component; the logs are rows.
 
 // tg: code/game/machinery/launch_pad.dm:3
 public partial class obj_machinery_launchpad : obj_machinery
@@ -585,5 +585,104 @@ public partial class obj_item_launchpad_remote : obj_item
             dot = TRUE;
         }
         return dot;
+    }
+}
+
+// tg: code/game/machinery/launch_pad.dm:442
+public partial class obj_item_circuit_component_bluespace_launchpad : obj_item_circuit_component
+{
+    // tg: code/game/machinery/launch_pad.dm:458
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+
+        if (attached_launchpad == null)
+            return dot;
+
+        Dm.append(ref dot, create_ui_notice(Dm.text("Minimum Range: []", -Dm.num(attached_launchpad.range)), "orange", "minus"));
+        Dm.append(ref dot, create_ui_notice(Dm.text("Maximum Range: []", attached_launchpad.range), "orange", "plus"));
+        return dot;
+    }
+
+    // tg: code/game/machinery/launch_pad.dm:467
+    public override async DmTask populate_ports()
+    {
+        x_pos = add_input_port("X offset", PORT_TYPE_NUMBER) as datum_port_input;
+        y_pos = add_input_port("Y offset", PORT_TYPE_NUMBER) as datum_port_input;
+        send_trigger = add_input_port("Send", PORT_TYPE_SIGNAL) as datum_port_input;
+        retrieve_trigger = add_input_port("Retrieve", PORT_TYPE_SIGNAL) as datum_port_input;
+
+        sent = add_output_port("Sent", PORT_TYPE_SIGNAL) as datum_port_output;
+        retrieved = add_output_port("Retrieved", PORT_TYPE_SIGNAL) as datum_port_output;
+        why_fail = add_output_port("Fail reason", PORT_TYPE_STRING) as datum_port_output;
+        on_fail = add_output_port("Failed", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/launch_pad.dm:478
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_launchpad)))
+            attached_launchpad = shell as obj_machinery_launchpad;
+    }
+
+    // tg: code/game/machinery/launch_pad.dm:483
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_launchpad = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/machinery/launch_pad.dm:487
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (attached_launchpad == null)
+        {
+            why_fail.set_output("Not connected!");
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        if (abs(Dm.num(x_pos.value)) > Dm.num(attached_launchpad.range) || abs(Dm.num(y_pos.value)) > Dm.num(attached_launchpad.range))
+        {
+            why_fail.set_output("Out of range!");
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        attached_launchpad.set_offset(x_pos.value, y_pos.value);
+
+        if (COMPONENT_TRIGGERED_BY(port, x_pos))
+        {
+            x_pos.set_value(attached_launchpad.x_offset);
+            return null;
+        }
+
+        if (COMPONENT_TRIGGERED_BY(port, y_pos))
+        {
+            y_pos.set_value(attached_launchpad.y_offset);
+            return null;
+        }
+
+        object checks = attached_launchpad.teleport_checks();
+        if (checks != null)
+        {
+            why_fail.set_output(checks);
+            on_fail.set_output(COMPONENT_SIGNAL);
+            return null;
+        }
+
+        if (COMPONENT_TRIGGERED_BY(send_trigger, port))
+        {
+            Waiting.Detach(attached_launchpad.doteleport(null, TRUE, parent.get_creator()));
+            sent.set_output(COMPONENT_SIGNAL);
+        }
+
+        if (COMPONENT_TRIGGERED_BY(retrieve_trigger, port))
+        {
+            Waiting.Detach(attached_launchpad.doteleport(null, FALSE, parent.get_creator()));
+            retrieved.set_output(COMPONENT_SIGNAL);
+        }
+        return null;
     }
 }

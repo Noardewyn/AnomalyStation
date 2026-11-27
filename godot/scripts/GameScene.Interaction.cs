@@ -261,7 +261,7 @@ public partial class GameScene
         if (target.Kind == TargetKind.Entity && _feed.Replica.TryGet(target.Id, out ReplicaEntity e) && !string.IsNullOrEmpty(e.State.Name))
             return e.State.Name;
         if (target.Kind == TargetKind.Ceiling)
-            return Anomaly.Core.DmShim.I18n.T("Ceiling"); // the server names a ceiling only in reach (DV601)
+            return Anomaly.Core.DmShim.I18n.T("Ceiling"); // the server names a ceiling only in reach (DV687)
         if (target.Kind != TargetKind.Turf)
             return string.Empty;
         // Until the cell's hints arrive: what kind of turf it is (a wall was named "floor" before, the owner's play test 2026-10-14).
@@ -396,7 +396,7 @@ public partial class GameScene
         // The hover: a thing or a cell under the crosshair (tg's screentip names a turf too: its hints carry the wall's or floor's name; while
         // throwing, a cell's hint is the throw).
         ClickTarget hover = _hit.Kind is TargetKind.Entity or TargetKind.Turf or TargetKind.Ceiling ? _target : ClickTarget.None;
-        // version 98 also (slice T4b): the hover on a mob carries the body zone looked at (the cached zone map), so the hints name what a click does;
+        // version 99 also (slice T4b): the hover on a mob carries the body zone looked at (the cached zone map), so the hints name what a click does;
         // not in cursor mode, where tg's zone selector holds the player's choice
         if (PlaySession.HoverCarriesZone(hover, _mouse.CursorMode))
             hover = hover with { Aim = _entities.AimZoneAt(hover.Id, hover.IconX, hover.IconY, hover.Picture) };
@@ -680,7 +680,7 @@ public partial class GameScene
                 OnRightReleased(App.NowSeconds);
             else if (button.ButtonIndex == MouseButton.Left && _drag.Pressed)
                 OnLeftReleased(button.Position);
-            if (button.ButtonIndex == MouseButton.Left)
+            if (button.ButtonIndex == MouseButton.Left || button.ButtonIndex == MouseButton.Middle && _session.MouseHeld == ClickButton.Middle)
                 _session.MouseUp(_target, HeldModifiers(), _aim); // version 34: BYOND's MouseUp (stops tg's full auto)
             return;
         }
@@ -765,6 +765,9 @@ public partial class GameScene
                 }
                 break;
             case PlayAction.MiddleClick:
+                // BYOND's MouseDown of the middle press too: a selected MOD module's dig (the drill's) runs while the button is held, as a pick's (DV348, DV354)
+                if (button.ButtonIndex == MouseButton.Middle && _aim.HasValue && (modifiers & ClickModifiers.Shift) == 0 && !_mouse.CursorMode)
+                    _session.MouseDown(_target, ClickButton.Middle, modifiers, _aim, App.NowSeconds);
                 ClickAtCrosshair(ClickButton.Middle, modifiers);
                 break;
         }
@@ -1132,7 +1135,7 @@ public partial class GameScene
                 _session.Keybinding(KeybindingCode.Scoreboard); // version 93 (DV585): the deathmatch scoreboard, while held
                 break;
             case >= PlayAction.Hotbar1 and <= PlayAction.Hotbar10:
-                _session.HotbarPress(HotbarModel.CellOf(action.Value)); // ui-overhaul.md section 10 (DV603): the server decides; nothing predicted
+                _session.HotbarPress(HotbarModel.CellOf(action.Value)); // ui-overhaul.md section 10 (DV689): the server decides; nothing predicted
                 break;
             case >= PlayAction.ActionButton1 and <= PlayAction.ActionButton9:
                 // the owner (2026-10-29): tg's click on the shown action button of that number

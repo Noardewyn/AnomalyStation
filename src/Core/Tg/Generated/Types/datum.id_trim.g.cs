@@ -1895,9 +1895,9 @@ public partial class datum_id_trim_job_station_engineer_gunner : datum_id_trim_j
     }
 }
 
-// tg: code/datums/id_trim/jobs.dm:1313
-[DmPath("/datum/id_trim/job/veteran_advisor"), DmGeneratedOnly, DmInert]
-public partial class datum_id_trim_job_veteran_advisor : datum_id_trim_job
+// tg: code/datums/id_trim/jobs.dm:1313 (the var block of a hand-written class)
+[DmPath("/datum/id_trim/job/veteran_advisor")]
+public partial class datum_id_trim_job_veteran_advisor
 {
     // tg: code/datums/id_trim/jobs.dm:1313
     public datum_id_trim_job_veteran_advisor()

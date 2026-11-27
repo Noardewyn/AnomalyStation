@@ -1320,9 +1320,9 @@ public partial class obj_item_clothing_suit_hooded_chaplain_hoodie_divine_archer
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:3
-[DmPath("/obj/item/clothing/suit/hooded/explorer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_explorer : obj_item_clothing_suit_hooded
+// tg: code/modules/mining/equipment/explorer_gear.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/explorer")]
+public partial class obj_item_clothing_suit_hooded_explorer
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:3
     public obj_item_clothing_suit_hooded_explorer()
@@ -1348,7 +1348,7 @@ public partial class obj_item_clothing_suit_hooded_explorer : obj_item_clothing_
 }
 
 // tg: code/modules/mining/equipment/explorer_gear.dm:228
-[DmPath("/obj/item/clothing/suit/hooded/explorer/syndicate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/clothing/suit/hooded/explorer/syndicate"), DmGeneratedOnly]
 public partial class obj_item_clothing_suit_hooded_explorer_syndicate : obj_item_clothing_suit_hooded_explorer
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:228
@@ -1377,9 +1377,9 @@ public partial class obj_item_clothing_suit_hooded_cloak : obj_item_clothing_sui
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:114
-[DmPath("/obj/item/clothing/suit/hooded/cloak/goliath"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_cloak_goliath : obj_item_clothing_suit_hooded_cloak
+// tg: code/modules/mining/equipment/explorer_gear.dm:114 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/cloak/goliath")]
+public partial class obj_item_clothing_suit_hooded_cloak_goliath
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:114
     public obj_item_clothing_suit_hooded_cloak_goliath()
@@ -1400,9 +1400,9 @@ public partial class obj_item_clothing_suit_hooded_cloak_goliath : obj_item_clot
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:2
-[DmPath("/obj/item/clothing/suit/hooded/cloak/godslayer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_cloak_godslayer : obj_item_clothing_suit_hooded_cloak
+// tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/cloak/godslayer")]
+public partial class obj_item_clothing_suit_hooded_cloak_godslayer
 {
     public float heal_amount = 500; // tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:16
     public float effect_cooldown_time = 6000; // tg: code/modules/mining/lavaland/mining_loot/godslayer.dm:18
@@ -1427,9 +1427,9 @@ public partial class obj_item_clothing_suit_hooded_cloak_godslayer : obj_item_cl
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:19
-[DmPath("/obj/item/clothing/suit/hooded/cloak/drake"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_cloak_drake : obj_item_clothing_suit_hooded_cloak
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:19 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/cloak/drake")]
+public partial class obj_item_clothing_suit_hooded_cloak_drake
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/ash_drake.dm:19
     public obj_item_clothing_suit_hooded_cloak_drake()
@@ -1456,9 +1456,9 @@ public partial class obj_item_clothing_suit_hooded_cloak_drake : obj_item_clothi
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:8
-[DmPath("/obj/item/clothing/suit/hooded/berserker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_berserker : obj_item_clothing_suit_hooded
+// tg: code/modules/mining/lavaland/mining_loot/berserker.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/berserker")]
+public partial class obj_item_clothing_suit_hooded_berserker
 {
     // tg: code/modules/mining/lavaland/mining_loot/berserker.dm:8
     public obj_item_clothing_suit_hooded_berserker()
@@ -1481,9 +1481,9 @@ public partial class obj_item_clothing_suit_hooded_berserker : obj_item_clothing
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:28
-[DmPath("/obj/item/clothing/suit/hooded/hostile_environment"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_hooded_hostile_environment : obj_item_clothing_suit_hooded
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:28 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/hooded/hostile_environment")]
+public partial class obj_item_clothing_suit_hooded_hostile_environment
 {
     // tg: code/modules/mining/lavaland/mining_loot/megafauna/bubblegum.dm:28
     public obj_item_clothing_suit_hooded_hostile_environment()
@@ -1548,9 +1548,9 @@ public partial class obj_item_clothing_suit_armor
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:35
-[DmPath("/obj/item/clothing/suit/armor/reactive"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive : obj_item_clothing_suit_armor
+// tg: code/modules/clothing/suits/reactive_armour.dm:35 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive")]
+public partial class obj_item_clothing_suit_armor_reactive
 {
     public float? active = 0; // tg: code/modules/clothing/suits/reactive_armour.dm:45
     public float bad_effect = 0; // tg: code/modules/clothing/suits/reactive_armour.dm:47
@@ -1580,9 +1580,9 @@ public partial class obj_item_clothing_suit_armor_reactive : obj_item_clothing_s
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:122
-[DmPath("/obj/item/clothing/suit/armor/reactive/teleport"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_teleport : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:122 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/teleport")]
+public partial class obj_item_clothing_suit_armor_reactive_teleport
 {
     public float tele_range = 6; // tg: code/modules/clothing/suits/reactive_armour.dm:127
 
@@ -1612,9 +1612,9 @@ public partial class obj_item_clothing_suit_armor_reactive_psykerboost : obj_ite
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:148
-[DmPath("/obj/item/clothing/suit/armor/reactive/fire"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_fire : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:148 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/fire")]
+public partial class obj_item_clothing_suit_armor_reactive_fire
 {
     // tg: code/modules/clothing/suits/reactive_armour.dm:148
     public obj_item_clothing_suit_armor_reactive_fire()
@@ -1626,9 +1626,9 @@ public partial class obj_item_clothing_suit_armor_reactive_fire : obj_item_cloth
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:175
-[DmPath("/obj/item/clothing/suit/armor/reactive/stealth"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_stealth : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:175 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/stealth")]
+public partial class obj_item_clothing_suit_armor_reactive_stealth
 {
     public float cooldown_alpha_removal = 50; // tg: code/modules/clothing/suits/reactive_armour.dm:180
     public float cooldown_animation_time = 30; // tg: code/modules/clothing/suits/reactive_armour.dm:182
@@ -1646,9 +1646,9 @@ public partial class obj_item_clothing_suit_armor_reactive_stealth : obj_item_cl
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:230
-[DmPath("/obj/item/clothing/suit/armor/reactive/tesla"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_tesla : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:230 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/tesla")]
+public partial class obj_item_clothing_suit_armor_reactive_tesla
 {
     public float zap_power = 25000; // tg: code/modules/clothing/suits/reactive_armour.dm:238
     public float zap_range = 20; // tg: code/modules/clothing/suits/reactive_armour.dm:240
@@ -1673,9 +1673,9 @@ public partial class obj_item_clothing_suit_armor_reactive_tesla : obj_item_clot
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:265
-[DmPath("/obj/item/clothing/suit/armor/reactive/repulse"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_repulse : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:265 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/repulse")]
+public partial class obj_item_clothing_suit_armor_reactive_repulse
 {
     public float repulse_force = 9000; // tg: code/modules/clothing/suits/reactive_armour.dm:269
 
@@ -1689,9 +1689,9 @@ public partial class obj_item_clothing_suit_armor_reactive_repulse : obj_item_cl
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:301
-[DmPath("/obj/item/clothing/suit/armor/reactive/table"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_table : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:301 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/table")]
+public partial class obj_item_clothing_suit_armor_reactive_table
 {
     public float tele_range = 10; // tg: code/modules/clothing/suits/reactive_armour.dm:305
 
@@ -1705,9 +1705,9 @@ public partial class obj_item_clothing_suit_armor_reactive_table : obj_item_clot
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:333
-[DmPath("/obj/item/clothing/suit/armor/reactive/hallucinating"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_hallucinating : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:333 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/hallucinating")]
+public partial class obj_item_clothing_suit_armor_reactive_hallucinating
 {
     // tg: code/modules/clothing/suits/reactive_armour.dm:333
     public obj_item_clothing_suit_armor_reactive_hallucinating()
@@ -1726,9 +1726,9 @@ public partial class obj_item_clothing_suit_armor_reactive_hallucinating : obj_i
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:362
-[DmPath("/obj/item/clothing/suit/armor/reactive/bioscrambling"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_bioscrambling : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:362 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/bioscrambling")]
+public partial class obj_item_clothing_suit_armor_reactive_bioscrambling
 {
     public float? range = 5; // tg: code/modules/clothing/suits/reactive_armour.dm:367
 
@@ -1742,9 +1742,9 @@ public partial class obj_item_clothing_suit_armor_reactive_bioscrambling : obj_i
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:416
-[DmPath("/obj/item/clothing/suit/armor/reactive/barricade"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_barricade : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:416 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/barricade")]
+public partial class obj_item_clothing_suit_armor_reactive_barricade
 {
     // tg: code/modules/clothing/suits/reactive_armour.dm:416
     public obj_item_clothing_suit_armor_reactive_barricade()
@@ -1757,9 +1757,9 @@ public partial class obj_item_clothing_suit_armor_reactive_barricade : obj_item_
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:478
-[DmPath("/obj/item/clothing/suit/armor/reactive/ectoplasm"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_ectoplasm : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:478 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/ectoplasm")]
+public partial class obj_item_clothing_suit_armor_reactive_ectoplasm
 {
     // tg: code/modules/clothing/suits/reactive_armour.dm:478
     public obj_item_clothing_suit_armor_reactive_ectoplasm()
@@ -1772,9 +1772,9 @@ public partial class obj_item_clothing_suit_armor_reactive_ectoplasm : obj_item_
     }
 }
 
-// tg: code/modules/clothing/suits/reactive_armour.dm:497
-[DmPath("/obj/item/clothing/suit/armor/reactive/weather"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_reactive_weather : obj_item_clothing_suit_armor_reactive
+// tg: code/modules/clothing/suits/reactive_armour.dm:497 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/reactive/weather")]
+public partial class obj_item_clothing_suit_armor_reactive_weather
 {
     // tg: code/modules/clothing/suits/reactive_armour.dm:497
     public obj_item_clothing_suit_armor_reactive_weather()
@@ -2744,9 +2744,9 @@ public partial class obj_item_clothing_suit_armor_heavy
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:123
-[DmPath("/obj/item/clothing/suit/armor/heavy/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_heavy_adamantine : obj_item_clothing_suit_armor_heavy
+// tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:123 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/heavy/adamantine")]
+public partial class obj_item_clothing_suit_armor_heavy_adamantine
 {
     public float hit_reflect_chance = 40; // tg: code/modules/research/xenobiology/crossbreeding/_clothing.dm:134
 
@@ -3054,9 +3054,9 @@ public partial class obj_item_clothing_suit_armor_dragoon : obj_item_clothing_su
     }
 }
 
-// tg: code/modules/mining/equipment/explorer_gear.dm:187
-[DmPath("/obj/item/clothing/suit/armor/bone"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_suit_armor_bone : obj_item_clothing_suit_armor
+// tg: code/modules/mining/equipment/explorer_gear.dm:187 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/suit/armor/bone")]
+public partial class obj_item_clothing_suit_armor_bone
 {
     // tg: code/modules/mining/equipment/explorer_gear.dm:187
     public obj_item_clothing_suit_armor_bone()

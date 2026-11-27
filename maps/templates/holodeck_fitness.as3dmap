@@ -1,0 +1,77 @@
+anomaly-map 1
+source _maps/templates/holodeck_fitness.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+
+[chunk 1 1 1]
+1,10: /turf/open/floor/holofloor/white | /area/template_noop
+2,10: /turf/open/floor/holofloor/white | /area/template_noop
+3,10: /obj/structure/curtain | /obj/machinery/shower/directional/south | /turf/open/floor/holofloor/white | /area/template_noop
+4,10: /turf/open/floor/holofloor/white | /area/template_noop
+5,10: /obj/structure/curtain | /obj/machinery/shower/directional/south | /turf/open/floor/holofloor/white | /area/template_noop
+6,10: /turf/open/floor/holofloor/white | /area/template_noop
+7,10: /obj/structure/curtain | /obj/machinery/shower/directional/south | /turf/open/floor/holofloor/white | /area/template_noop
+8,10: /turf/open/floor/holofloor/white | /area/template_noop
+9,10: /turf/open/floor/holofloor/white | /area/template_noop
+1,9: /turf/open/floor/holofloor/white | /area/template_noop
+2,9: /obj/effect/turf_decal/tile/blue{dir = 2} | /turf/open/floor/holofloor/white | /area/template_noop
+3,9: /obj/effect/turf_decal/tile/blue/half/contrasted | /turf/open/floor/holofloor/white | /area/template_noop
+4,9: /obj/effect/turf_decal/tile/blue/half/contrasted | /turf/open/floor/holofloor/white | /area/template_noop
+5,9: /obj/effect/turf_decal/tile/blue/half/contrasted | /turf/open/floor/holofloor/white | /area/template_noop
+6,9: /obj/effect/turf_decal/tile/blue/half/contrasted | /turf/open/floor/holofloor/white | /area/template_noop
+7,9: /obj/effect/turf_decal/tile/blue/half/contrasted | /turf/open/floor/holofloor/white | /area/template_noop
+8,9: /obj/effect/turf_decal/tile/blue{dir = 8} | /turf/open/floor/holofloor/white | /area/template_noop
+9,9: /turf/open/floor/holofloor/white | /area/template_noop
+1,8: /obj/effect/turf_decal/siding/thinplating_new/dark{dir = 1} | /turf/open/floor/holofloor/dark | /area/template_noop
+2,8: /obj/effect/turf_decal/siding/thinplating_new/dark{dir = 1} | /turf/open/floor/holofloor/dark | /area/template_noop
+3,8: /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north | /turf/open/floor/holofloor/dark | /area/template_noop
+4,8: /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north | /turf/open/floor/holofloor/dark | /area/template_noop
+5,8: /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north | /turf/open/floor/holofloor/dark | /area/template_noop
+6,8: /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north | /turf/open/floor/holofloor/dark | /area/template_noop
+7,8: /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north | /turf/open/floor/holofloor/dark | /area/template_noop
+8,8: /obj/effect/turf_decal/siding/thinplating_new/dark{dir = 1} | /turf/open/floor/holofloor/dark | /area/template_noop
+9,8: /obj/effect/turf_decal/siding/thinplating_new/dark{dir = 1} | /turf/open/floor/holofloor/dark | /area/template_noop
+1,7: /turf/open/floor/holofloor/dark | /area/template_noop
+2,7: /obj/structure/weightmachine/weightlifter | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+4,7: /obj/structure/weightmachine/weightlifter | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+6,7: /obj/structure/weightmachine/weightlifter | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+8,7: /obj/structure/punching_bag | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+9,7: /turf/open/floor/holofloor/dark | /area/template_noop
+1,6: /obj/item/kirbyplants/organic/plant17 | /turf/open/floor/holofloor/dark | /area/template_noop
+9,6: /obj/item/kirbyplants/organic/plant1 | /turf/open/floor/holofloor/dark | /area/template_noop
+1,5: /obj/item/kirbyplants/organic/plant13 | /turf/open/floor/holofloor/dark | /area/template_noop
+9,5: /obj/item/kirbyplants/organic/plant2 | /turf/open/floor/holofloor/dark | /area/template_noop
+1,4: /turf/open/floor/holofloor/dark | /area/template_noop
+2,4: /obj/structure/weightmachine | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+4,4: /obj/structure/weightmachine | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+6,4: /obj/structure/weightmachine | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+8,4: /obj/structure/punching_bag | /obj/effect/turf_decal/tile/red/opposingcorners | /turf/open/floor/holofloor/dark | /area/template_noop
+9,4: /turf/open/floor/holofloor/dark | /area/template_noop
+1,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+2,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+3,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+4,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+5,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+6,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+7,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+8,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+9,3: /obj/effect/turf_decal/siding/thinplating_new/dark | /turf/open/floor/holofloor/dark | /area/template_noop
+1,2: /turf/open/floor/holofloor | /area/template_noop
+2,2: /turf/open/floor/holofloor | /area/template_noop
+3,2: /turf/open/floor/holofloor | /area/template_noop
+4,2: /turf/open/floor/holofloor | /area/template_noop
+5,2: /turf/open/floor/holofloor | /area/template_noop
+6,2: /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 4} | /turf/open/floor/holofloor | /area/template_noop
+7,2: /obj/effect/turf_decal/tile/neutral/fourcorners | /turf/open/floor/holofloor | /area/template_noop
+8,2: /obj/effect/turf_decal/tile/neutral/fourcorners | /turf/open/floor/holofloor | /area/template_noop
+9,2: /obj/structure/chair{dir = 8} | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 8} | /turf/open/floor/holofloor | /area/template_noop
+1,1: /obj/item/training_toolbox | /obj/structure/table | /obj/item/training_toolbox{pixel_y = 3; pixel_x = 2} | /turf/open/floor/holofloor | /area/template_noop
+2,1: /obj/item/clothing/under/color/red | /obj/structure/rack | /obj/item/clothing/under/color/red | /turf/open/floor/holofloor | /area/template_noop
+3,1: /obj/item/clothing/under/color/yellow | /obj/structure/rack | /obj/item/clothing/under/color/yellow | /turf/open/floor/holofloor | /area/template_noop
+4,1: /obj/item/clothing/under/color/darkgreen | /obj/structure/rack | /obj/item/clothing/under/color/darkgreen | /turf/open/floor/holofloor | /area/template_noop
+5,1: /obj/item/clothing/under/color/blue | /obj/structure/rack | /obj/item/clothing/under/color/blue | /turf/open/floor/holofloor | /area/template_noop
+6,1: /obj/item/instrument/piano_synth/headphones{pixel_y = 6; pixel_x = -3} | /obj/structure/table | /obj/item/instrument/piano_synth/headphones{pixel_y = -1; pixel_x = 3} | /obj/effect/turf_decal/tile/neutral{dir = 4} | /turf/open/floor/holofloor | /area/template_noop
+7,1: /obj/structure/chair{dir = 1} | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+8,1: /obj/structure/chair{dir = 1} | /obj/effect/turf_decal/tile/neutral/half/contrasted{dir = 1} | /turf/open/floor/holofloor | /area/template_noop
+9,1: /obj/structure/table | /obj/item/radio/entertainment/speakers/physical | /obj/effect/turf_decal/tile/neutral{dir = 1} | /turf/open/floor/holofloor | /area/template_noop

@@ -1328,9 +1328,9 @@ public partial class obj_item_organ_brain_cybernetic
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:16
-[DmPath("/obj/item/organ/brain/cybernetic/ai"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_cybernetic_ai : obj_item_organ_brain_cybernetic
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:16 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/cybernetic/ai")]
+public partial class obj_item_organ_brain_cybernetic_ai
 {
     public mob_living_silicon_ai mainframe; // tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:20
     public mob_living_silicon_ai connected_ai; // tg: code/modules/mining/lavaland/mining_loot/megafauna/the_thing.dm:22
@@ -1557,9 +1557,9 @@ public partial class obj_item_organ_brain_primate
     }
 }
 
-// tg: code/modules/religion/burdened/psyker.dm:2
-[DmPath("/obj/item/organ/brain/psyker"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_brain_psyker : obj_item_organ_brain
+// tg: code/modules/religion/burdened/psyker.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/brain/psyker")]
+public partial class obj_item_organ_brain_psyker
 {
     public datum_weakref echolocation_component; // tg: code/modules/religion/burdened/psyker.dm:14
     public datum_weakref antimagic_component; // tg: code/modules/religion/burdened/psyker.dm:16
@@ -2194,9 +2194,9 @@ public partial class obj_item_organ_heart_evolved_sacred
     }
 }
 
-// tg: code/modules/religion/dreams/banish_nightmare.dm:77
-[DmPath("/obj/item/organ/heart/evolved/sacred/dreamer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_heart_evolved_sacred_dreamer : obj_item_organ_heart_evolved_sacred
+// tg: code/modules/religion/dreams/banish_nightmare.dm:77 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/heart/evolved/sacred/dreamer")]
+public partial class obj_item_organ_heart_evolved_sacred_dreamer
 {
     public float charges = 3; // tg: code/modules/religion/dreams/banish_nightmare.dm:81
 
@@ -4274,9 +4274,9 @@ public partial class obj_item_organ_ears_stoat
     }
 }
 
-// tg: code/modules/fishing/fish/types/rift.dm:696
-[DmPath("/obj/item/organ/ears/babbelfish"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_ears_babbelfish : obj_item_organ_ears
+// tg: code/modules/fishing/fish/types/rift.dm:696 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/ears/babbelfish")]
+public partial class obj_item_organ_ears_babbelfish
 {
     public datum_bodypart_overlay_simple_babbearfish babbel_overlay; // tg: code/modules/fishing/fish/types/rift.dm:713
     public object bound_component; // tg: code/modules/fishing/fish/types/rift.dm:714
@@ -4783,9 +4783,9 @@ public partial class obj_item_organ_cyberimp_arm_toolkit
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:9
-[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_cyberimp_arm_toolkit_shard : obj_item_organ_cyberimp_arm_toolkit
+// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard")]
+public partial class obj_item_organ_cyberimp_arm_toolkit_shard
 {
     // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:9
     public obj_item_organ_cyberimp_arm_toolkit_shard()
@@ -4827,9 +4827,9 @@ public partial class obj_item_organ_cyberimp_arm_toolkit_shard_scythe : obj_item
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:31
-[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard/katana"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_cyberimp_arm_toolkit_shard_katana : obj_item_organ_cyberimp_arm_toolkit_shard
+// tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:31 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/cyberimp/arm/toolkit/shard/katana")]
+public partial class obj_item_organ_cyberimp_arm_toolkit_shard_katana
 {
     // tg: code/modules/mining/lavaland/mining_loot/cursed_katana.dm:31
     public obj_item_organ_cyberimp_arm_toolkit_shard_katana()
@@ -5602,9 +5602,9 @@ public partial class obj_item_organ_cyberimp_mouth_breathing_tube
     }
 }
 
-// tg: code/modules/wiremod/shell/brain_computer_interface.dm:2
-[DmPath("/obj/item/organ/cyberimp/bci"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_cyberimp_bci : obj_item_organ_cyberimp
+// tg: code/modules/wiremod/shell/brain_computer_interface.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/cyberimp/bci")]
+public partial class obj_item_organ_cyberimp_bci
 {
     // tg: code/modules/wiremod/shell/brain_computer_interface.dm:2
     public obj_item_organ_cyberimp_bci()
@@ -5618,9 +5618,9 @@ public partial class obj_item_organ_cyberimp_bci : obj_item_organ_cyberimp
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:33
-[DmPath("/obj/item/organ/monster_core"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_monster_core : obj_item_organ
+// tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:33 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/monster_core")]
+public partial class obj_item_organ_monster_core
 {
     public float inert = 0; // tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:45
     public object decay_timer; // tg: code/modules/mining/equipment/monster_organs/monster_organ.dm:47
@@ -5652,9 +5652,9 @@ public partial class obj_item_organ_monster_core : obj_item_organ
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:17
-[DmPath("/obj/item/organ/monster_core/brimdust_sac"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_monster_core_brimdust_sac : obj_item_organ_monster_core
+// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:17 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/monster_core/brimdust_sac")]
+public partial class obj_item_organ_monster_core_brimdust_sac
 {
     public float brimdust_auto_apply_cooldown = 0; // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:27
 
@@ -5679,9 +5679,9 @@ public partial class obj_item_organ_monster_core_brimdust_sac : obj_item_organ_m
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/regenerative_core.dm:6
-[DmPath("/obj/item/organ/monster_core/regenerative_core"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_monster_core_regenerative_core : obj_item_organ_monster_core
+// tg: code/modules/mining/equipment/monster_organs/regenerative_core.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/monster_core/regenerative_core")]
+public partial class obj_item_organ_monster_core_regenerative_core
 {
     // tg: code/modules/mining/equipment/monster_organs/regenerative_core.dm:6
     public obj_item_organ_monster_core_regenerative_core()
@@ -5704,7 +5704,7 @@ public partial class obj_item_organ_monster_core_regenerative_core : obj_item_or
 }
 
 // tg: code/modules/mining/equipment/monster_organs/regenerative_core.dm:50
-[DmPath("/obj/item/organ/monster_core/regenerative_core/legion"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/organ/monster_core/regenerative_core/legion"), DmGeneratedOnly]
 public partial class obj_item_organ_monster_core_regenerative_core_legion : obj_item_organ_monster_core_regenerative_core
 {
     // tg: code/modules/mining/equipment/monster_organs/regenerative_core.dm:50
@@ -5719,9 +5719,9 @@ public partial class obj_item_organ_monster_core_regenerative_core_legion : obj_
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:9
-[DmPath("/obj/item/organ/monster_core/rush_gland"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_monster_core_rush_gland : obj_item_organ_monster_core
+// tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/monster_core/rush_gland")]
+public partial class obj_item_organ_monster_core_rush_gland
 {
     // tg: code/modules/mining/equipment/monster_organs/rush_gland.dm:9
     public obj_item_organ_monster_core_rush_gland()
@@ -5764,9 +5764,9 @@ public partial class obj_item_organ_vocal_cords
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:4
-[DmPath("/obj/item/organ/vocal_cords/colossus"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_vocal_cords_colossus : obj_item_organ_vocal_cords
+// tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/vocal_cords/colossus")]
+public partial class obj_item_organ_vocal_cords_colossus
 {
     public float next_command = 0; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:8
     public float cooldown_mod = 1; // tg: code/modules/mining/lavaland/mining_loot/megafauna/colossus.dm:9
@@ -5809,9 +5809,9 @@ public partial class obj_item_organ_vocal_cords_adamantine
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/legion/legion_tumour.dm:3
-[DmPath("/obj/item/organ/legion_tumour"), DmGeneratedOnly, DmInert]
-public partial class obj_item_organ_legion_tumour : obj_item_organ
+// tg: code/modules/mob/living/basic/lavaland/legion/legion_tumour.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/organ/legion_tumour")]
+public partial class obj_item_organ_legion_tumour
 {
     public float stage = 0; // tg: code/modules/mob/living/basic/lavaland/legion/legion_tumour.dm:13
     public Type applied_status = typeof(datum_status_effect_regenerative_core); // tg: code/modules/mob/living/basic/lavaland/legion/legion_tumour.dm:15

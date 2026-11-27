@@ -1,0 +1,43 @@
+anomaly-map 1
+source _maps/templates/holodeck_thunderdome.dmm tg 1d99bd7f
+size 9 10 1
+chunk 32
+default /turf/open/floor/holofloor/basalt | /area/template_noop
+
+[chunk 1 1 1]
+1,10: /obj/structure/table | /obj/machinery/readybutton | /turf/open/floor/holofloor/basalt | /area/template_noop
+2,10: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/red | /obj/item/clothing/under/color/red | /obj/item/melee/energy/sword/holographic/red | /turf/open/floor/holofloor/basalt | /area/template_noop
+3,10: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/red | /obj/item/clothing/under/color/red | /obj/item/melee/energy/sword/holographic/red | /turf/open/floor/holofloor/basalt | /area/template_noop
+4,10: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/red | /obj/item/clothing/under/color/red | /obj/item/melee/energy/sword/holographic/red | /turf/open/floor/holofloor/basalt | /area/template_noop
+5,10: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/red | /obj/item/clothing/under/color/red | /obj/item/melee/energy/sword/holographic/red | /turf/open/floor/holofloor/basalt | /area/template_noop
+6,10: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/red | /obj/item/clothing/under/color/red | /obj/item/melee/energy/sword/holographic/red | /turf/open/floor/holofloor/basalt | /area/template_noop
+7,10: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/red | /obj/item/clothing/under/color/red | /obj/item/melee/energy/sword/holographic/red | /turf/open/floor/holofloor/basalt | /area/template_noop
+8,10: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/red | /obj/item/clothing/under/color/red | /obj/item/melee/energy/sword/holographic/red | /turf/open/floor/holofloor/basalt | /area/template_noop
+9,10: /obj/structure/table | /turf/open/floor/holofloor/basalt | /area/template_noop
+1,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+2,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+3,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+4,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+5,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+6,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+7,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+8,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+9,6: /obj/structure/window/spawner/directional/south | /turf/open/floor/holofloor/basalt | /area/template_noop
+1,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+2,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+3,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+4,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+5,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+6,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+7,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+8,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+9,5: /obj/structure/window/spawner/directional/north | /turf/open/floor/holofloor/basalt | /area/template_noop
+1,1: /obj/structure/table | /turf/open/floor/holofloor/basalt | /area/template_noop
+2,1: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/green | /obj/item/clothing/under/color/green | /obj/item/melee/energy/sword/holographic/green | /turf/open/floor/holofloor/basalt | /area/template_noop
+3,1: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/green | /obj/item/clothing/under/color/green | /obj/item/melee/energy/sword/holographic/green | /turf/open/floor/holofloor/basalt | /area/template_noop
+4,1: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/green | /obj/item/clothing/under/color/green | /obj/item/melee/energy/sword/holographic/green | /turf/open/floor/holofloor/basalt | /area/template_noop
+5,1: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/green | /obj/item/clothing/under/color/green | /obj/item/melee/energy/sword/holographic/green | /turf/open/floor/holofloor/basalt | /area/template_noop
+6,1: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/green | /obj/item/clothing/under/color/green | /obj/item/melee/energy/sword/holographic/green | /turf/open/floor/holofloor/basalt | /area/template_noop
+7,1: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/green | /obj/item/clothing/under/color/green | /obj/item/melee/energy/sword/holographic/green | /turf/open/floor/holofloor/basalt | /area/template_noop
+8,1: /obj/structure/table | /obj/item/clothing/head/helmet/thunderdome/holosuit | /obj/item/clothing/suit/armor/tdome/holosuit/green | /obj/item/clothing/under/color/green | /obj/item/melee/energy/sword/holographic/green | /turf/open/floor/holofloor/basalt | /area/template_noop
+9,1: /obj/structure/table | /obj/machinery/readybutton | /turf/open/floor/holofloor/basalt | /area/template_noop

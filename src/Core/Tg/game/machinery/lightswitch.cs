@@ -9,10 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M7 lighting slice L1 (D168): the whole file but the circuit component (/obj/item/circuit_component/light_switch stays
-// inert: circuits, M10+). The wall light switch flips its area's lightswitch and tells the area's machines through
-// power_change (the fixtures switch on or off); the wall frame it leaves is generated. Deferred leaves: the circuit USB port
-// and the turf's hand redirect (Initialize), the emissive glow (DEVIATION DV12). The var block is generated: tg's `area` is
+// M7 lighting slice L1 (D168): the whole file, with its circuit component on the USB port. The wall light switch flips its
+// area's lightswitch and tells the area's machines through power_change (the fixtures switch on or off); the wall frame it
+// leaves is generated. Deferred leaves: the turf's hand redirect (Initialize), the emissive glow (DEVIATION DV12). The var block is generated: tg's `area` is
 // an object there (the maps write a path or text; Initialize resolves it to the area instance, read through `the_area`).
 
 // tg: code/game/machinery/lightswitch.dm:2
@@ -26,9 +25,10 @@ public partial class obj_machinery_light_switch : obj_machinery
     {
         object dot = base.Initialize(mapload, __extra);
 
-        // AddComponent(/datum/component/redirect_attack_hand_from_turf) (clicking the wall below, clicks) and
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/light_switch), only_root_path = TRUE)) (circuits)
-        Dm.Deferred("code/game/machinery/lightswitch.dm:28", "Initialize: the USB port (circuits, M10+) and redirect_attack_hand_from_turf (clicking the wall below, M4a)");
+        // AddComponent(/datum/component/redirect_attack_hand_from_turf) (clicking the wall below, clicks)
+        Dm.Deferred("code/game/machinery/lightswitch.dm:28", "Initialize: redirect_attack_hand_from_turf (clicking the wall below, M4a)");
+
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_light_switch)), only_root_path: TRUE)));
         if (istext(area))
             area = text2path((string)area);
         if (ispath(area))
@@ -170,6 +170,50 @@ public partial class obj_machinery_light_switch : obj_machinery
     public override async DmTask<object> on_deconstruction(object disassembled = null)
     {
         Dm.@new<obj_item_wallframe_light_switch>(loc);
+        return null;
+    }
+}
+
+// tg: code/game/machinery/lightswitch.dm:130
+public partial class obj_item_circuit_component_light_switch : obj_item_circuit_component
+{
+    // tg: code/game/machinery/lightswitch.dm:142
+    public override async DmTask populate_ports()
+    {
+        on_setting = add_input_port("On", PORT_TYPE_BOOLEAN) as datum_port_input;
+        is_on = add_output_port("Is On", PORT_TYPE_BOOLEAN) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/lightswitch.dm:146
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_light_switch)))
+        {
+            attached_switch = shell as obj_machinery_light_switch;
+            RegisterSignal(shell, COMSIG_LIGHT_SWITCH_SET, nameof(on_light_switch_set));
+        }
+    }
+
+    // tg: code/game/machinery/lightswitch.dm:152
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_switch = null;
+        UnregisterSignal(shell, COMSIG_LIGHT_SWITCH_SET);
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/machinery/lightswitch.dm:157
+    [SignalHandler]
+    public virtual void on_light_switch_set(datum source = null, object status = null)
+    {
+        is_on.set_output(status);
+    }
+
+    // tg: code/game/machinery/lightswitch.dm:161
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        attached_switch?.set_lights(Dm.truthy(on_setting.value) ? TRUE : FALSE);
         return null;
     }
 }

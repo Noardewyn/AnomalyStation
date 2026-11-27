@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // J1 (D298): the quartermaster's overcoat's and the detective's trench coat's Initialize (the allowed lists), the apron's and the atmos
 // overalls' worn pictures. The digitigrade masks of the apron and the overalls (generate_digitigrade_icons) came with the lizards' legs
 // (gaps SP1); the overalls' emissive glow is DEVIATION DV12. Gaps CL1 (D333): the
-// detective's suit jacket's allowed list; the overalls' and the surgical apron's fishing difficulty waits for fishing. The var blocks
+// detective's suit jacket's allowed list; the overalls' and the surgical apron's fishing difficulty. The var blocks
 // are generated.
 
 // tg: code/modules/clothing/suits/jobs.dm:51
@@ -22,7 +22,7 @@ public partial class obj_item_clothing_suit_apron_overalls : obj_item_clothing_s
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/jobs.dm:68", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -4): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -4));
         return dot;
     }
 }
@@ -75,7 +75,7 @@ public partial class obj_item_clothing_suit_apron_surgical : obj_item_clothing_s
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/suits/jobs.dm:382", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -3): fishing (M10+)"); // FISH DOCTOR?!
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3)); // FISH DOCTOR?!
         return dot;
     }
 }

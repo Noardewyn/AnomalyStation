@@ -17,7 +17,28 @@ public static partial class GlobalProcs
     // tg: code/modules/admin/create_mob.dm:4
     public static async DmTask randomize_human(mob_living_carbon_human human = null, float? randomize_mutations = null)
     {
-        Dm.NotTranslated("code/modules/admin/create_mob.dm:4", "randomize_human: not in M2 (names, hairstyles and underwear: M10+)");
+        randomize_mutations ??= FALSE;
+        human.gender = (Dm.truthy(((datum_species)human.dna.species).sexes) ? (string)pick(MALE, FEMALE, PLURAL, NEUTER) : PLURAL);
+        human.physique = human.gender;
+        // as in randomize_human_normie: a test harness world without tg's strings files has empty name lists; its human keeps
+        // its name
+        if (Dm.length(GLOB.last_names) > 0)
+        {
+            human.real_name = human.generate_random_mob_name();
+            human.name = Dm.str(human.get_visible_name());
+        }
+        human.set_hairstyle(random_hairstyle(human.gender), update: FALSE);
+        human.set_facial_hairstyle(random_facial_hairstyle(human.gender), update: FALSE);
+        human.set_haircolor("#" + Dm.str(random_color()), update: FALSE);
+        human.set_facial_haircolor(human.hair_color, update: FALSE);
+        await human.set_eye_color(random_eye_color());
+        human.skin_tone = (string)pick(GLOB.skin_tones);
+        ((datum_species)human.dna.species).randomize_active_underwear_only(human);
+        // Needs to be called towards the end to update all the UIs just set above
+        human.dna.initialize_dna(newblood_type: random_human_blood_type(), create_mutation_blocks: randomize_mutations, randomize_features: TRUE);
+        // Snowflake for Ethereals
+        await human.updatehealth();
+        await human.updateappearance(mutcolor_update: TRUE);
     }
 
     /**

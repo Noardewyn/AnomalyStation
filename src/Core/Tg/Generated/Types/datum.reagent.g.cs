@@ -282,9 +282,9 @@ public partial class datum_reagent_gondola_mutation_toxin_virtual_domain : datum
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:178
-[DmPath("/datum/reagent/flightpotion"), DmGeneratedOnly, DmInert]
-public partial class datum_reagent_flightpotion : datum_reagent
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:178 (the var block of a hand-written class)
+[DmPath("/datum/reagent/flightpotion")]
+public partial class datum_reagent_flightpotion
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:178
     public datum_reagent_flightpotion()

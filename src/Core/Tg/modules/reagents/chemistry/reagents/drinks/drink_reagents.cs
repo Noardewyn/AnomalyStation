@@ -225,11 +225,14 @@ public partial class datum_reagent_consumable_milk : datum_reagent_consumable
     }
 
     // tg: code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:247
-    public virtual async DmTask<object> used_on_fish(obj_item_fish fish = null)
+    public override async DmTask<object> used_on_fish(obj_item_fish fish = null)
     {
-        // if(HAS_TRAIT(fish, TRAIT_FISH_MADE_OF_BONE)) fish.repair_damage(fish.max_integrity * max(fish.get_hunger() * 0.5, 0.12));
-        // fish.sate_hunger(); return TRUE: a bone fish fed milk heals and is sated
-        Dm.Deferred("code/modules/reagents/chemistry/reagents/drinks/drink_reagents.dm:247", "used_on_fish: a bone fish fed milk repairs and is sated (fishing is not ported: the fish's sate_hunger and feeding, M10+)");
+        if (HAS_TRAIT(fish, TRAIT_FISH_MADE_OF_BONE))
+        {
+            await fish.repair_damage(fish.max_integrity * max(Dm.num(fish.get_hunger()) * 0.5f, 0.12f));
+            await fish.sate_hunger();
+            return TRUE;
+        }
         return null;
     }
 }

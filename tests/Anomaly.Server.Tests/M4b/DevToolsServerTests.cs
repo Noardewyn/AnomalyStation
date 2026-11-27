@@ -172,13 +172,17 @@ public class DevToolsServerTests
             Type plasma = typeof(datum_gas_plasma);
             float Moles(int x, int y) => Dm.num(((turf_open)locate(x, y, 1)).air.moles[plasma]);
 
-            // the test room's layout has a wall at (6, 6): a wall holds no air, its eight neighbours change
+            // the test room's layout has a wall at (6, 6): a wall holds no air, its eight neighbours change. SSair waits while the
+            // command's own gas is read (when LINDA first shares it depends on the Master's queue)
+            using (server.World.Enter())
+                GlobalProcs.SSair.can_fire = Dm.FALSE;
             Assert.Contains("on 8 open turf(s) within 1 of (6,6,1)", Run(server, alice, "air add plasma 50 6 6 1 1"));
             using (server.World.Enter())
             {
                 Assert.Equal(50f, Moles(5, 5), 1);
                 Assert.Equal(50f, Moles(7, 7), 1);
                 Assert.Equal(0f, Moles(6, 9));
+                GlobalProcs.SSair.can_fire = Dm.TRUE;
             }
 
             // below 0 removes, never below none (the whole patch: LINDA shares the gas between the commands)

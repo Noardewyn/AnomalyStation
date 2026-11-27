@@ -6140,9 +6140,9 @@ public partial class datum_crafting_recipe_food_drying_kamaboko : datum_crafting
     }
 }
 
-// tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1273
-[DmPath("/datum/crafting_recipe/food/order"), DmGeneratedOnly, DmInert]
-public partial class datum_crafting_recipe_food_order : datum_crafting_recipe_food
+// tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1273 (the var block of a hand-written class)
+[DmPath("/datum/crafting_recipe/food/order")]
+public partial class datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1275
     public datum_crafting_recipe_food_order()
@@ -6161,7 +6161,7 @@ public partial class datum_crafting_recipe_food_order : datum_crafting_recipe_fo
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1283
-[DmPath("/datum/crafting_recipe/food/order/red_bay"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/red_bay"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_red_bay : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1283
@@ -6172,7 +6172,7 @@ public partial class datum_crafting_recipe_food_order_red_bay : datum_crafting_r
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1286
-[DmPath("/datum/crafting_recipe/food/order/dashi"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/dashi"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_dashi : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1286
@@ -6183,7 +6183,7 @@ public partial class datum_crafting_recipe_food_order_dashi : datum_crafting_rec
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1289
-[DmPath("/datum/crafting_recipe/food/order/curry"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/curry"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_curry : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1289
@@ -6194,7 +6194,7 @@ public partial class datum_crafting_recipe_food_order_curry : datum_crafting_rec
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1292
-[DmPath("/datum/crafting_recipe/food/order/bbq"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/bbq"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_bbq : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1292
@@ -6205,7 +6205,7 @@ public partial class datum_crafting_recipe_food_order_bbq : datum_crafting_recip
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1295
-[DmPath("/datum/crafting_recipe/food/order/soy"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/soy"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_soy : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1295
@@ -6216,7 +6216,7 @@ public partial class datum_crafting_recipe_food_order_soy : datum_crafting_recip
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1298
-[DmPath("/datum/crafting_recipe/food/order/vegetable_oil"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/vegetable_oil"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_vegetable_oil : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1298
@@ -6227,7 +6227,7 @@ public partial class datum_crafting_recipe_food_order_vegetable_oil : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1302
-[DmPath("/datum/crafting_recipe/food/order/vinegar"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/vinegar"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_vinegar : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1302
@@ -6238,7 +6238,7 @@ public partial class datum_crafting_recipe_food_order_vinegar : datum_crafting_r
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1305
-[DmPath("/datum/crafting_recipe/food/order/chap_can"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/chap_can"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_chap_can : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1305
@@ -6249,7 +6249,7 @@ public partial class datum_crafting_recipe_food_order_chap_can : datum_crafting_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1308
-[DmPath("/datum/crafting_recipe/food/order/flour"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/flour"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_flour : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1308
@@ -6260,7 +6260,7 @@ public partial class datum_crafting_recipe_food_order_flour : datum_crafting_rec
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1311
-[DmPath("/datum/crafting_recipe/food/order/rice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/rice"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_rice : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1311
@@ -6271,7 +6271,7 @@ public partial class datum_crafting_recipe_food_order_rice : datum_crafting_reci
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1314
-[DmPath("/datum/crafting_recipe/food/order/cornmeal"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/cornmeal"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_cornmeal : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1314
@@ -6282,7 +6282,7 @@ public partial class datum_crafting_recipe_food_order_cornmeal : datum_crafting_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1317
-[DmPath("/datum/crafting_recipe/food/order/enzyme"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/enzyme"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_enzyme : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1317
@@ -6293,7 +6293,7 @@ public partial class datum_crafting_recipe_food_order_enzyme : datum_crafting_re
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1320
-[DmPath("/datum/crafting_recipe/food/order/salt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/salt"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_salt : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1320
@@ -6305,7 +6305,7 @@ public partial class datum_crafting_recipe_food_order_salt : datum_crafting_reci
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1324
-[DmPath("/datum/crafting_recipe/food/order/pepper"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/pepper"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_pepper : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1324
@@ -6317,7 +6317,7 @@ public partial class datum_crafting_recipe_food_order_pepper : datum_crafting_re
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1328
-[DmPath("/datum/crafting_recipe/food/order/oliveoil"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/oliveoil"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_oliveoil : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1328
@@ -6328,7 +6328,7 @@ public partial class datum_crafting_recipe_food_order_oliveoil : datum_crafting_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1331
-[DmPath("/datum/crafting_recipe/food/order/peanutbutter"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/peanutbutter"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_peanutbutter : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1331
@@ -6340,7 +6340,7 @@ public partial class datum_crafting_recipe_food_order_peanutbutter : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1335
-[DmPath("/datum/crafting_recipe/food/order/cherryjelly"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/cherryjelly"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_cherryjelly : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1335
@@ -6352,7 +6352,7 @@ public partial class datum_crafting_recipe_food_order_cherryjelly : datum_crafti
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1340
-[DmPath("/datum/crafting_recipe/food/order/worcestershire_sauce"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/worcestershire_sauce"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_worcestershire_sauce : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1340
@@ -6364,7 +6364,7 @@ public partial class datum_crafting_recipe_food_order_worcestershire_sauce : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1344
-[DmPath("/datum/crafting_recipe/food/order/coconut_milk"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/coconut_milk"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_coconut_milk : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1344
@@ -6375,7 +6375,7 @@ public partial class datum_crafting_recipe_food_order_coconut_milk : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1347
-[DmPath("/datum/crafting_recipe/food/order/grounding_solution"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/grounding_solution"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_grounding_solution : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1347
@@ -6386,7 +6386,7 @@ public partial class datum_crafting_recipe_food_order_grounding_solution : datum
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1350
-[DmPath("/datum/crafting_recipe/food/order/canned_tomatoes"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/canned_tomatoes"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_canned_tomatoes : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1350
@@ -6397,7 +6397,7 @@ public partial class datum_crafting_recipe_food_order_canned_tomatoes : datum_cr
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1353
-[DmPath("/datum/crafting_recipe/food/order/honey"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/honey"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_honey : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1353
@@ -6409,7 +6409,7 @@ public partial class datum_crafting_recipe_food_order_honey : datum_crafting_rec
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1357
-[DmPath("/datum/crafting_recipe/food/order/yoghurt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/yoghurt"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_yoghurt : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1357
@@ -6421,7 +6421,7 @@ public partial class datum_crafting_recipe_food_order_yoghurt : datum_crafting_r
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1361
-[DmPath("/datum/crafting_recipe/food/order/milk"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/milk"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_milk : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1361
@@ -6432,7 +6432,7 @@ public partial class datum_crafting_recipe_food_order_milk : datum_crafting_reci
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1364
-[DmPath("/datum/crafting_recipe/food/order/soymilk"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/soymilk"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_soymilk : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1364
@@ -6443,7 +6443,7 @@ public partial class datum_crafting_recipe_food_order_soymilk : datum_crafting_r
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1367
-[DmPath("/datum/crafting_recipe/food/order/canned_bee_larva"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/canned_bee_larva"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_canned_bee_larva : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1367
@@ -6454,7 +6454,7 @@ public partial class datum_crafting_recipe_food_order_canned_bee_larva : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1370
-[DmPath("/datum/crafting_recipe/food/order/canned_gunner_jellyfish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/canned_gunner_jellyfish"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_canned_gunner_jellyfish : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1370
@@ -6465,7 +6465,7 @@ public partial class datum_crafting_recipe_food_order_canned_gunner_jellyfish : 
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1373
-[DmPath("/datum/crafting_recipe/food/order/canned_desert_snails"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/canned_desert_snails"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_canned_desert_snails : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1373
@@ -6476,7 +6476,7 @@ public partial class datum_crafting_recipe_food_order_canned_desert_snails : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1376
-[DmPath("/datum/crafting_recipe/food/order/canned_squid_ink"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/canned_squid_ink"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_canned_squid_ink : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1376
@@ -6487,7 +6487,7 @@ public partial class datum_crafting_recipe_food_order_canned_squid_ink : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1379
-[DmPath("/datum/crafting_recipe/food/order/octapus_tentacle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/octapus_tentacle"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_octapus_tentacle : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1379
@@ -6499,7 +6499,7 @@ public partial class datum_crafting_recipe_food_order_octapus_tentacle : datum_c
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1383
-[DmPath("/datum/crafting_recipe/food/order/armorfish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/armorfish"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_armorfish : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1383
@@ -6511,7 +6511,7 @@ public partial class datum_crafting_recipe_food_order_armorfish : datum_crafting
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1387
-[DmPath("/datum/crafting_recipe/food/order/moonfish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/moonfish"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_moonfish : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1387
@@ -6523,7 +6523,7 @@ public partial class datum_crafting_recipe_food_order_moonfish : datum_crafting_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1391
-[DmPath("/datum/crafting_recipe/food/order/moonfish_eggs"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/moonfish_eggs"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_moonfish_eggs : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1391
@@ -6535,7 +6535,7 @@ public partial class datum_crafting_recipe_food_order_moonfish_eggs : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1395
-[DmPath("/datum/crafting_recipe/food/order/voltvine"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/voltvine"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_voltvine : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1395
@@ -6546,7 +6546,7 @@ public partial class datum_crafting_recipe_food_order_voltvine : datum_crafting_
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1398
-[DmPath("/datum/crafting_recipe/food/order/pickles"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/pickles"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_pickles : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1398
@@ -6557,7 +6557,7 @@ public partial class datum_crafting_recipe_food_order_pickles : datum_crafting_r
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1401
-[DmPath("/datum/crafting_recipe/food/order/cream"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/cream"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_cream : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1401
@@ -6568,7 +6568,7 @@ public partial class datum_crafting_recipe_food_order_cream : datum_crafting_rec
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1404
-[DmPath("/datum/crafting_recipe/food/order/egg"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/order/egg"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_order_egg : datum_crafting_recipe_food_order
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1404
@@ -6798,9 +6798,9 @@ public partial class datum_crafting_recipe_food_vending_volt_energy : datum_craf
     }
 }
 
-// tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1475
-[DmPath("/datum/crafting_recipe/food/biogenerator"), DmGeneratedOnly, DmInert]
-public partial class datum_crafting_recipe_food_biogenerator : datum_crafting_recipe_food
+// tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1475 (the var block of a hand-written class)
+[DmPath("/datum/crafting_recipe/food/biogenerator")]
+public partial class datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1477
     public datum_crafting_recipe_food_biogenerator()
@@ -6819,7 +6819,7 @@ public partial class datum_crafting_recipe_food_biogenerator : datum_crafting_re
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1485
-[DmPath("/datum/crafting_recipe/food/biogenerator/seaweed_sheet"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/seaweed_sheet"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_seaweed_sheet : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1485
@@ -6830,7 +6830,7 @@ public partial class datum_crafting_recipe_food_biogenerator_seaweed_sheet : dat
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1488
-[DmPath("/datum/crafting_recipe/food/biogenerator/monkey_cube"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/monkey_cube"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_monkey_cube : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1488
@@ -6841,7 +6841,7 @@ public partial class datum_crafting_recipe_food_biogenerator_monkey_cube : datum
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1491
-[DmPath("/datum/crafting_recipe/food/biogenerator/sugar"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/sugar"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_sugar : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1491
@@ -6852,7 +6852,7 @@ public partial class datum_crafting_recipe_food_biogenerator_sugar : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1494
-[DmPath("/datum/crafting_recipe/food/biogenerator/milk"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/milk"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_milk : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1494
@@ -6863,7 +6863,7 @@ public partial class datum_crafting_recipe_food_biogenerator_milk : datum_crafti
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1497
-[DmPath("/datum/crafting_recipe/food/biogenerator/soymilk"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/soymilk"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_soymilk : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1497
@@ -6874,7 +6874,7 @@ public partial class datum_crafting_recipe_food_biogenerator_soymilk : datum_cra
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1500
-[DmPath("/datum/crafting_recipe/food/biogenerator/flour"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/flour"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_flour : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1500
@@ -6885,7 +6885,7 @@ public partial class datum_crafting_recipe_food_biogenerator_flour : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1503
-[DmPath("/datum/crafting_recipe/food/biogenerator/enzyme"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/enzyme"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_enzyme : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1503
@@ -6896,7 +6896,7 @@ public partial class datum_crafting_recipe_food_biogenerator_enzyme : datum_craf
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1506
-[DmPath("/datum/crafting_recipe/food/biogenerator/black_pepper"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/black_pepper"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_black_pepper : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1506
@@ -6907,7 +6907,7 @@ public partial class datum_crafting_recipe_food_biogenerator_black_pepper : datu
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1509
-[DmPath("/datum/crafting_recipe/food/biogenerator/cream"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/cream"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_cream : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1509
@@ -6918,7 +6918,7 @@ public partial class datum_crafting_recipe_food_biogenerator_cream : datum_craft
 }
 
 // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1512
-[DmPath("/datum/crafting_recipe/food/biogenerator/ethanol"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/crafting_recipe/food/biogenerator/ethanol"), DmGeneratedOnly]
 public partial class datum_crafting_recipe_food_biogenerator_ethanol : datum_crafting_recipe_food_biogenerator
 {
     // tg: code/modules/food_and_drinks/recipes/tablecraft/recipes_guide.dm:1512

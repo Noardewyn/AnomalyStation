@@ -50,7 +50,7 @@ public class LoopTests
         datum_sound_token token = room.In(() => alarm.soundloop.sound_token_instance);
         Assert.NotNull(token);
         float channel = room.In(() => Dm.num(token.sound_channel));
-        Assert.Equal(1011f, channel); // reserve_sound_channel_for_datum: the top channel (sounds.dm:146)
+        Assert.Equal(1010f, channel); // reserve_sound_channel_for_datum: the top free channel (sounds.dm:146), under the hear-something dream's 1011
 
         room.Step(10 * Second);
         List<HeardSound> plays = Sirens(room, listener);

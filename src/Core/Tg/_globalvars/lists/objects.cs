@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // PARTIAL: only GLOB.cable_list (M3 P4: the cables' init), the nav beacon lists (2026-10-18: the beacons' init) and the crafting and cooking recipe lists (M5 slice 2:
 // init_crafting_recipes), intercoms_list and active_jammers (M9 slice D: the radio), ladders and stairs (D325: multi-z), rcd_list (E13: the RCDs), wire_color_directory and
-// wire_name_directory (engineering E14: the wires' shared colours and the blueprints' legend), editable_sign_types (gaps S3), teleportbeacons (gaps E1a), experiment_handlers (gaps RD3), curtains and trophy_cases (gaps ST2) translated; the file's other object lists come with their users.
+// wire_name_directory (engineering E14: the wires' shared colours and the blueprints' legend), editable_sign_types (gaps S3), teleportbeacons (gaps E1a), experiment_handlers (gaps RD3), curtains and trophy_cases (gaps ST2), prototype_organs (the surgery's fishing spot) translated; the file's other object lists come with their users.
 
 public partial class datum_controller_global_vars : datum_controller
 {
@@ -366,5 +366,29 @@ public partial class datum_controller_global_vars : datum_controller
     {
         mob_spawners = Dm.list();
         Dm.append(ref gvars_datum_init_order, "mob_spawners");
+    }
+
+    // tg: code/_globalvars/lists/objects.dm:89  GLOBAL_LIST_INIT(prototype_organs, typecacheof(list(...), only_root_path = TRUE)): the organ
+    // typepaths that are not unit test-able and shouldn't be spawned by some things (the surgery's fish source)
+    public DmList prototype_organs;
+
+    // tg: code/_globalvars/lists/objects.dm:89  (GLOBAL_MANAGED(prototype_organs, ...), __DEFINES/__globals.dm:5)
+    public virtual void InitGlobalprototype_organs()
+    {
+        prototype_organs = typecacheof(Dm.list(
+            typeof(obj_item_organ),
+            typeof(obj_item_organ_wings),
+            typeof(obj_item_organ_cyberimp),
+            typeof(obj_item_organ_cyberimp_brain),
+            typeof(obj_item_organ_cyberimp_mouth),
+            typeof(obj_item_organ_cyberimp_arm),
+            typeof(obj_item_organ_cyberimp_chest),
+            typeof(obj_item_organ_cyberimp_eyes),
+            typeof(obj_item_organ_alien),
+            typeof(obj_item_organ_brain_dullahan),
+            typeof(obj_item_organ_ears_dullahan),
+            typeof(obj_item_organ_tongue_dullahan),
+            typeof(obj_item_organ_eyes_dullahan)), only_root_path: TRUE) as DmList;
+        Dm.append(ref gvars_datum_init_order, "prototype_organs");
     }
 }

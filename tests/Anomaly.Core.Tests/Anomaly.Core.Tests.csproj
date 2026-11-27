@@ -24,6 +24,8 @@
     <ProjectReference Include="..\..\tools\Anomaly.Tools.Icons\Anomaly.Tools.Icons.csproj" />
     <!-- M4b: the sound tool (the audio plan, section 4.3). -->
     <ProjectReference Include="..\..\tools\Anomaly.Tools.Sounds\Anomaly.Tools.Sounds.csproj" />
+    <!-- The crafting window's cooking tab encoded with the wire codec, checked against the protocol's caps (M5/CraftingTests). -->
+    <ProjectReference Include="..\..\src\Protocol\Anomaly.Protocol.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="Xunit" />

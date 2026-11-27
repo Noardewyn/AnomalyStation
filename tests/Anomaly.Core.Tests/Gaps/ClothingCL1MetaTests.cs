@@ -11,8 +11,7 @@ namespace Anomaly.Core.Tests.Gaps;
 /// <summary>
 /// Gaps package CL1 on the converted MetaStation: every piece of clothing mapped on the station (on the floor, on the racks, in the
 /// lockers, the wardrobes and the boxes) boots live, but the kinds the package leaves with a not-translated row (section 209: the
-/// reactive armour, the plasmaman's and the ethereal's clothing, the chameleon kit, the polymorph belt, the perceptomatrix, the
-/// horrific necktie, the mind-monkey helmet, the collar bomb, the skill capes, the pearl necklace, the fishing gloves, the wheelys);
+/// plasmaman's and the ethereal's clothing, the chameleon kit, the horrific necktie, the mind-monkey helmet, the collar bomb, the skill capes, the pearl necklace, the fishing gloves, the wheelys);
 /// the kinds that were inert before (the welding goggles, the cargo gauntlets, the collectable hats, the traffic cones, the top hat,
 /// the animal masks, the winter boots, the surgical apron, the well-worn shirts) are found, the theatre's fake wizard robe (a costume spawner's random pick) is live, with no runtime from
 /// the package's files.
@@ -38,11 +37,11 @@ public class ClothingCL1MetaTests : IClassFixture<MetaWorldFixture>
     // the kinds left with a row (not-translated.md 209 and the earlier rows): their types stay inert
     private static readonly string[] LeftInert =
     {
-        "reactive", "plasmaman", "ethereal", "chameleon", "polymorph", "perceptomatrix", "horrific", "mind_monkey", "collar_bomb",
+        "plasmaman", "ethereal", "chameleon", "horrific", "mind_monkey", "collar_bomb",
         "necklace_pearl", "gloves_fishing", "wheelys", "wizrobe_paper", // the skill capes came with gaps SL1
-        // the mining skull helmet (mining/equipment/explorer_gear.dm, its armour plate waits for the mining gear): a random roll that
-        // shows on Meta since gaps MO1's live MODsuits draw rand() at init (their MODlink ids), not CL1's
-        "helmet_skull",
+        // the chaplain's holiday priest robe (chaplain_costumes.dm, with the chapel): a random roll (one of the random costumes) that
+        // shows on Meta since the mining gear's live types draw from the random stream at init
+        "chaplainsuit_holidaypriest",
     };
 
     private static IEnumerable<atom> Walk(IEnumerable<atom> things)

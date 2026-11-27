@@ -12,8 +12,8 @@ namespace Anomaly.Core.Tg;
 // Gaps TP1 (D333's station order: the bridge's teleporter): the teleporter control console (:1-264): its power station link, the
 // Teleporter window (the target, the regime, the calibration), the targets (the tracking beacons and the tracking implants in the
 // teleporter regime, the linked stations in the gate regime) picked from a list, the calibration timed by the hub's matter bins,
-// a disabled beacon dropping the lock. Deferred: the circuit's USB port and its teleporter control component (:266-326; the
-// integrated circuits are not ported, not-translated.md). The var blocks are generated (D111); `id` is hand-written below (tg
+// a disabled beacon dropping the lock, the circuit's USB port and its teleporter control component. The var blocks are generated
+// (D111); `id` is hand-written below (tg
 // gives it a number's text, the converter typed it as a path).
 
 // tg: code/game/machinery/computer/teleporter.dm:4
@@ -46,8 +46,7 @@ public partial class obj_machinery_computer_teleporter : obj_machinery_computer
         id = Dm.text("[]", rand(1000, 9999));
         link_power_station();
 
-        // tg: AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/teleporter_control_console), only_root_path = TRUE))
-        // DEFERRED (not-translated.md): the integrated circuits' USB port is not ported.
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_teleporter_control_console)), only_root_path: TRUE)));
         return dot;
     }
 
@@ -353,5 +352,110 @@ public partial class obj_machinery_computer_teleporter : obj_machinery_computer
         if (!Dm.truthy(check_teleport_valid(AM, get_turf(this))))
             return FALSE;
         return TRUE;
+    }
+}
+
+// tg: code/game/machinery/computer/teleporter.dm:243
+public partial class obj_item_circuit_component_teleporter_control_console : obj_item_circuit_component
+{
+    // tg: code/game/machinery/computer/teleporter.dm:258
+    public override async DmTask populate_ports()
+    {
+        new_target = add_input_port("New Target", PORT_TYPE_STRING) as datum_port_input;
+        set_target_trigger = add_input_port("Set Target", PORT_TYPE_SIGNAL) as datum_port_input;
+        update_trigger = add_input_port("Update Targets", PORT_TYPE_SIGNAL) as datum_port_input;
+
+        current_target = add_output_port("Current Target", PORT_TYPE_STRING) as datum_port_output;
+        possible_targets = add_output_port("Possible Targets", PORT_TYPE_LIST(PORT_TYPE_ANY)) as datum_port_output;
+        on_fail = add_output_port("Failed", PORT_TYPE_SIGNAL) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/computer/teleporter.dm:268
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+
+        if (istype(shell, typeof(obj_machinery_computer_teleporter)))
+        {
+            attached_console = shell as obj_machinery_computer_teleporter;
+
+            RegisterSignal(attached_console, COMSIG_TELEPORTER_NEW_TARGET, nameof(on_teleporter_new_target));
+            update_targets();
+        }
+    }
+
+    // tg: code/game/machinery/computer/teleporter.dm:277
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        UnregisterSignal(attached_console, COMSIG_TELEPORTER_NEW_TARGET);
+        attached_console = null;
+        return attached_console;
+    }
+
+    // tg: code/game/machinery/computer/teleporter.dm:282
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        DmList targets = attached_console.get_targets();
+
+        if (COMPONENT_TRIGGERED_BY(set_target_trigger, port))
+        {
+            object target = targets[new_target.value];
+            if (!Dm.truthy(target))
+            {
+                on_fail.set_output(COMPONENT_SIGNAL);
+                return null;
+            }
+
+            attached_console.investigate_log(Dm.text("Teleport location set to [] by circuit. []", target, parent.get_creator()));
+
+            if (istype(target, typeof(obj_machinery_teleport_station)))
+            {
+                obj_machinery_teleport_station station = target as obj_machinery_teleport_station;
+                attached_console.set_teleport_target(station.teleporter_hub);
+                Waiting.NoSleep(attached_console.lock_in_station(station));
+            }
+            else
+                attached_console.set_teleport_target(target);
+
+            return null;
+        }
+
+        if (COMPONENT_TRIGGERED_BY(update_trigger, port))
+            update_targets();
+        return null;
+    }
+
+    // tg: code/game/machinery/computer/teleporter.dm:305
+    [SignalHandler]
+    public virtual void on_teleporter_new_target(datum source = null, atom new_target = null)
+    {
+        if (new_target == null)
+        {
+            current_target.set_output(null);
+            return;
+        }
+
+        DmList targets = attached_console.get_targets();
+        foreach (object target_name in Dm.each(targets))
+        {
+            if (Dm.eq(targets[target_name], new_target))
+            {
+                current_target.set_output(target_name);
+                return;
+            }
+        }
+
+        // Last ditch scenario, we still need a string.
+        current_target.set_output(new_target.name);
+    }
+
+    // tg: code/game/machinery/computer/teleporter.dm:321
+    public virtual void update_targets()
+    {
+        DmList target_names = Dm.list();
+        foreach (object target in Dm.each(attached_console.get_targets()))
+            Dm.combine(ref target_names, target);
+
+        possible_targets.set_output(target_names);
     }
 }

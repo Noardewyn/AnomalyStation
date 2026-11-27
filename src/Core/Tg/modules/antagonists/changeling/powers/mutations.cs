@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // Gaps K1 (D327): the whole file: the organic weapon and suit bases, the arm blade, the tentacle (its gun, casing and projectile:
 // the pull of an item, the drag, the disarm and the grab-and-impale), the organic shield, the chitinous armor, the hive head with
-// its bees and the legion hive head. The var blocks are generated (D111). The legion hive head's brood is not ported: its
-// assign_creator waits (Dm.Deferred). The arm blade's smash of a computer is /obj/attack_alien (its slot's user widened to the carbon, gaps K1b).
+// its bees and the legion hive head. The var blocks are generated (D111). The legion hive head's brood takes the changeling
+// as its creator. The arm blade's smash of a computer is /obj/attack_alien (its slot's user widened to the carbon, gaps K1b).
 
 /*
 	Changeling Mutations! ~By Miauw (ALL OF IT :V)
@@ -756,6 +756,7 @@ public partial class datum_action_cooldown_hivehead_spawn_minions_legion : datum
     {
         mob_living_basic_mining_legion_brood brood = minion as mob_living_basic_mining_legion_brood;
         if (brood is mob_living_basic_mining_legion_brood)
-            Dm.Deferred("code/modules/antagonists/changeling/powers/mutations.dm:735", "minion_additional_changes: brood.assign_creator(owner, FALSE), the legion brood's creator (the lavaland legion is not ported: mining fauna)");
+            brood.assign_creator(owner as mob_living, FALSE);
+        await DmTask.CompletedTask;
     }
 }

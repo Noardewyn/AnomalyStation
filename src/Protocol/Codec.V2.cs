@@ -116,7 +116,7 @@ public static partial class Codec
 
     // [u8 id = 10] [varuint frameSeq] [u8 kind] then by kind:
     //   Click (4):      [u8 target kind 1..3] [target] [u8 button] [u8 modifiers] [u8 icon-x 0..32] [u8 icon-y 0..32]
-    //   Hover (7):      [u8 target kind 1..3] [target] [version 98: u8 aim zone 1..9 on an entity, absent for none (Codec.V98.cs)]
+    //   Hover (7):      [u8 target kind 1..3] [target] [version 99: u8 aim zone 1..9 on an entity, absent for none (Codec.V99.cs)]
     //                   target: Entity and Screen [varuint id >= 1]; Turf [u8 x 1..255] [u8 y 1..255] [varuint z 1..16]
     //   DevGasProbe (8, version 5): [target: a turf]
     //   Unhover (9, version 14): nothing
@@ -128,7 +128,7 @@ public static partial class Codec
     //   MouseDown (15), MouseDrag (16), MouseUp (17) (version 34), MouseWheel (21, version 70: the button 1 up, 2 down):
     //                   [u8 target kind 0..3] [target unless 0] [u8 button 1..3]
     //                   [u8 modifiers: shift 1, ctrl 2, alt 4, bit 7 aim] [u8 icon-x 0..32] [u8 icon-y 0..32] [aim if bit 7]
-    //   a Click's modifiers byte bits 4-6 are its aim zone (DV30); version 98: bit 3 is the zone's high bit (Codec.V98.cs)
+    //   a Click's modifiers byte bits 4-6 are its aim zone (DV30); version 99: bit 3 is the zone's high bit (Codec.V99.cs)
     //   version 34: a Click's modifiers byte bit 7 says an aim follows its icon-y (Codec.V34.cs:
     //                   [varint east] [varint north] [u16 up mm] [u16 yaw] [i16 pitch -16384..16384])
     //   Keybinding (6): [u8 code 1..13] [u8 key up 0|1]
@@ -178,7 +178,7 @@ public static partial class Codec
                 WriteUiAction(ref w, message);
                 break;
             case ActionKind.HotbarPress:
-                // version 98 also (DV603): the cell, 1 to 10
+                // version 99 also (DV689): the cell, 1 to 10
                 if (message.HotbarCell < 1 || message.HotbarCell > HotbarMessage.CellCount)
                     throw Bad("a hotbar press of cell " + message.HotbarCell);
                 w.WriteByte((byte)message.HotbarCell);
@@ -219,7 +219,7 @@ public static partial class Codec
                 WriteTarget(ref w, targetKind, message.Target, message.TurfX, message.TurfY, message.TurfZ, "a click or hover");
                 if (message.Kind == ActionKind.Hover)
                 {
-                    WriteHoverZone(ref w, message.AimZone, targetKind); // version 98 (slice T4b)
+                    WriteHoverZone(ref w, message.AimZone, targetKind); // version 99 (slice T4b)
                     break;
                 }
                 if (message.Button < ClickButton.Left || message.Button > ClickButton.Middle)
@@ -233,7 +233,7 @@ public static partial class Codec
                 if (message.AimZone > AimZone.Last)
                     throw Bad("a click with an unknown aim zone");
                 w.WriteByte((byte)message.Button);
-                w.WriteByte((byte)((byte)message.Modifiers | ZoneBits(message.AimZone) | (message.Aim.HasValue ? ModifierAimBit : 0))); // version 98: bit 3 the zone's high bit
+                w.WriteByte((byte)((byte)message.Modifiers | ZoneBits(message.AimZone) | (message.Aim.HasValue ? ModifierAimBit : 0))); // version 99: bit 3 the zone's high bit
                 w.WriteByte(message.IconX);
                 w.WriteByte(message.IconY);
                 if (message.Aim.HasValue)
@@ -362,7 +362,7 @@ public static partial class Codec
                     ReadUiAction(ref r, kind, out uiWindow, out uiAction, out uiParams);
                     break;
                 case ActionKind.HotbarPress:
-                    hotbarCell = r.ReadByte(); // version 98 also (DV603)
+                    hotbarCell = r.ReadByte(); // version 99 also (DV689)
                     if (hotbarCell < 1 || hotbarCell > HotbarMessage.CellCount)
                         throw Bad("a hotbar press of cell " + hotbarCell);
                     break;
@@ -404,7 +404,7 @@ public static partial class Codec
                     ReadTarget(ref r, out targetKind, out target, out turfX, out turfY, out turfZ, "a click or hover");
                     if (kind == ActionKind.Hover)
                     {
-                        aimZone = ReadHoverZone(ref r, targetKind); // version 98 (slice T4b)
+                        aimZone = ReadHoverZone(ref r, targetKind); // version 99 (slice T4b)
                         break;
                     }
                     byte buttonByte = r.ReadByte();
@@ -412,7 +412,7 @@ public static partial class Codec
                         throw Bad("a click with an unknown button");
                     button = (ClickButton)buttonByte;
                     byte mods = r.ReadByte();
-                    // version 98: bit 3 is the zone's high bit (Codec.V98.cs), no longer an unknown modifier
+                    // version 99: bit 3 is the zone's high bit (Codec.V99.cs), no longer an unknown modifier
                     int zone = ZoneOfModifiers(mods);
                     if (zone > (byte)AimZone.Last)
                         throw Bad("a click with an unknown aim zone");

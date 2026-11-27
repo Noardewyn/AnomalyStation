@@ -68,9 +68,9 @@ public partial class obj_effect_overlay_camera_static : obj_effect_overlay
     }
 }
 
-// tg: code/datums/components/happiness.dm:145
-[DmPath("/obj/effect/overlay/happiness_overlay"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_overlay_happiness_overlay : obj_effect_overlay
+// tg: code/datums/components/happiness.dm:145 (the var block of a hand-written class)
+[DmPath("/obj/effect/overlay/happiness_overlay")]
+public partial class obj_effect_overlay_happiness_overlay
 {
     public object hearts_percentage; // tg: code/datums/components/happiness.dm:150
     public object heart_icon = Dm.resource("icons/effects/effects.dmi"); // tg: code/datums/components/happiness.dm:152
@@ -165,9 +165,9 @@ public partial class obj_effect_overlay_vis_field
     }
 }
 
-// tg: code/datums/components/throwbonus_on_windup.dm:147
-[DmPath("/obj/effect/overlay/windup_bar"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_overlay_windup_bar : obj_effect_overlay
+// tg: code/datums/components/throwbonus_on_windup.dm:147 (the var block of a hand-written class)
+[DmPath("/obj/effect/overlay/windup_bar")]
+public partial class obj_effect_overlay_windup_bar
 {
     public float maximum_count = 1E+31f; // tg: code/datums/components/throwbonus_on_windup.dm:154
     public float current_count = 0; // tg: code/datums/components/throwbonus_on_windup.dm:156
@@ -1514,9 +1514,9 @@ public partial class obj_effect_abstract_gazer_beamend : obj_effect_abstract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:633
-[DmPath("/obj/effect/abstract/sucked_atom"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_abstract_sucked_atom : obj_effect_abstract
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:633 (the var block of a hand-written class)
+[DmPath("/obj/effect/abstract/sucked_atom")]
+public partial class obj_effect_abstract_sucked_atom
 {
     public float mob_initial_alpha = 255; // tg: code/modules/research/xenobiology/xenobio_camera.dm:636
 
@@ -1528,9 +1528,9 @@ public partial class obj_effect_abstract_sucked_atom : obj_effect_abstract
     }
 }
 
-// tg: code/modules/research/xenobiology/xenobio_camera.dm:670
-[DmPath("/obj/effect/abstract/xenosuction"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_abstract_xenosuction : obj_effect_abstract
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:670 (the var block of a hand-written class)
+[DmPath("/obj/effect/abstract/xenosuction")]
+public partial class obj_effect_abstract_xenosuction
 {
     // tg: code/modules/research/xenobiology/xenobio_camera.dm:670
     public obj_effect_abstract_xenosuction()
@@ -1727,9 +1727,9 @@ public partial class obj_effect_dummy_phased_mob_spell_jaunt_red : obj_effect_du
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81
-[DmPath("/obj/effect/dummy/phased_mob/grub_burrow"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_dummy_phased_mob_grub_burrow : obj_effect_dummy_phased_mob { }
+// tg: code/modules/mob/living/basic/lavaland/goldgrub/goldgrub_abilities.dm:81 (the var block of a hand-written class)
+[DmPath("/obj/effect/dummy/phased_mob/grub_burrow")]
+public partial class obj_effect_dummy_phased_mob_grub_burrow { }
 
 // tg: code/modules/mod/modules/modules_timeline.dm:199
 [DmPath("/obj/effect/dummy/phased_mob/chrono"), DmGeneratedOnly]
@@ -1984,9 +1984,9 @@ public partial class obj_effect_forcefield_arena_shuttle_entrance : obj_effect_f
     }
 }
 
-// tg: code/game/objects/effects/forcefields.dm:23
-[DmPath("/obj/effect/forcefield/wizard"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_forcefield_wizard : obj_effect_forcefield
+// tg: code/game/objects/effects/forcefields.dm:23 (the var block of a hand-written class)
+[DmPath("/obj/effect/forcefield/wizard")]
+public partial class obj_effect_forcefield_wizard
 {
     public float antimagic_flags = 1; // tg: code/game/objects/effects/forcefields.dm:23
     public datum_weakref caster_weakref; // tg: code/game/objects/effects/forcefields.dm:25
@@ -2622,9 +2622,9 @@ public partial class obj_effect_mine_minebot : obj_effect_mine
     }
 }
 
-// tg: code/game/objects/effects/mining_mob_respawner.dm:3
-[DmPath("/obj/effect/mining_mob_respawner"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_mining_mob_respawner : obj_effect
+// tg: code/game/objects/effects/mining_mob_respawner.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/mining_mob_respawner")]
+public partial class obj_effect_mining_mob_respawner
 {
     public float outdoor_only = 1; // tg: code/game/objects/effects/mining_mob_respawner.dm:7
     public float registered_spawn_signal = 0; // tg: code/game/objects/effects/mining_mob_respawner.dm:9
@@ -2654,9 +2654,9 @@ public partial class obj_effect_mining_mob_respawner : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/mining_mob_respawner.dm:142
-[DmPath("/obj/effect/unburrow"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_unburrow : obj_effect
+// tg: code/game/objects/effects/mining_mob_respawner.dm:142 (the var block of a hand-written class)
+[DmPath("/obj/effect/unburrow")]
+public partial class obj_effect_unburrow
 {
     public float? animate_time = 20; // tg: code/game/objects/effects/mining_mob_respawner.dm:144
 
@@ -2667,9 +2667,9 @@ public partial class obj_effect_unburrow : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/mining_mob_respawner.dm:172
-[DmPath("/obj/effect/fly_down"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_fly_down : obj_effect
+// tg: code/game/objects/effects/mining_mob_respawner.dm:172 (the var block of a hand-written class)
+[DmPath("/obj/effect/fly_down")]
+public partial class obj_effect_fly_down
 {
     public float? animate_time = 6; // tg: code/game/objects/effects/mining_mob_respawner.dm:175
 
@@ -2841,7 +2841,7 @@ public partial class obj_effect_portal_anom : obj_effect_portal
 [DmPath("/obj/effect/portal/permanent")]
 public partial class obj_effect_portal_permanent
 {
-    public Type id; // tg: code/game/objects/effects/portals.dm:190
+    public object id; // tg: code/game/objects/effects/portals.dm:190
 
     // tg: code/game/objects/effects/portals.dm:186
     public obj_effect_portal_permanent()
@@ -2894,9 +2894,9 @@ public partial class obj_effect_portal_wormhole
     }
 }
 
-// tg: code/modules/mining/equipment/wormhole_jaunter.dm:109
-[DmPath("/obj/effect/portal/jaunt_tunnel"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_portal_jaunt_tunnel : obj_effect_portal
+// tg: code/modules/mining/equipment/wormhole_jaunter.dm:109 (the var block of a hand-written class)
+[DmPath("/obj/effect/portal/jaunt_tunnel")]
+public partial class obj_effect_portal_jaunt_tunnel
 {
     // tg: code/modules/mining/equipment/wormhole_jaunter.dm:109
     public obj_effect_portal_jaunt_tunnel()
@@ -3044,9 +3044,9 @@ public partial class obj_effect_shield
     }
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:4
-[DmPath("/obj/effect/step_trigger"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger : obj_effect
+// tg: code/game/objects/effects/step_triggers.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger")]
+public partial class obj_effect_step_trigger
 {
     public float affect_ghosts = 0; // tg: code/game/objects/effects/step_triggers.dm:4
     public float stopper = 1; // tg: code/game/objects/effects/step_triggers.dm:5
@@ -3060,9 +3060,9 @@ public partial class obj_effect_step_trigger : obj_effect
     }
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:40
-[DmPath("/obj/effect/step_trigger/message"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger_message : obj_effect_step_trigger
+// tg: code/game/objects/effects/step_triggers.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger/message")]
+public partial class obj_effect_step_trigger_message
 {
     public object message; // tg: code/game/objects/effects/step_triggers.dm:40
     public float once = 1; // tg: code/game/objects/effects/step_triggers.dm:41
@@ -3095,7 +3095,7 @@ public partial class obj_effect_step_trigger_thrower : obj_effect_step_trigger
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/obj/effect/step_trigger/stopper"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/step_trigger/stopper"), DmGeneratedOnly]
 public partial class obj_effect_step_trigger_stopper : obj_effect_step_trigger { }
 
 // tg: code/game/objects/effects/step_triggers.dm:116
@@ -3137,9 +3137,9 @@ public partial class obj_effect_step_trigger_teleport_fancy : obj_effect_step_tr
     public float exitsmoke = 0; // tg: code/game/objects/effects/step_triggers.dm:170
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:195
-[DmPath("/obj/effect/step_trigger/sound_effect"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger_sound_effect : obj_effect_step_trigger
+// tg: code/game/objects/effects/step_triggers.dm:195 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger/sound_effect")]
+public partial class obj_effect_step_trigger_sound_effect
 {
     public object sound; // tg: code/game/objects/effects/step_triggers.dm:195
     public float? volume = 100; // tg: code/game/objects/effects/step_triggers.dm:196
@@ -3150,7 +3150,7 @@ public partial class obj_effect_step_trigger_sound_effect : obj_effect_step_trig
 }
 
 // tg: code/game/objects/effects/step_triggers.dm:219
-[DmPath("/obj/effect/step_trigger/sound_effect/lavaland_cult_altar"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/step_trigger/sound_effect/lavaland_cult_altar"), DmGeneratedOnly]
 public partial class obj_effect_step_trigger_sound_effect_lavaland_cult_altar : obj_effect_step_trigger_sound_effect
 {
     // tg: code/game/objects/effects/step_triggers.dm:219
@@ -3163,9 +3163,9 @@ public partial class obj_effect_step_trigger_sound_effect_lavaland_cult_altar : 
     }
 }
 
-// tg: code/game/objects/effects/step_triggers.dm:226
-[DmPath("/obj/effect/step_trigger/outfitter"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_step_trigger_outfitter : obj_effect_step_trigger
+// tg: code/game/objects/effects/step_triggers.dm:226 (the var block of a hand-written class)
+[DmPath("/obj/effect/step_trigger/outfitter")]
+public partial class obj_effect_step_trigger_outfitter
 {
     public datum_outfit outfit_to_equip; // tg: code/game/objects/effects/step_triggers.dm:228
     public float happens_once = 0; // tg: code/game/objects/effects/step_triggers.dm:229
@@ -3896,9 +3896,9 @@ public partial class obj_effect_particle_effect_fluid_smoke_bad_black : obj_effe
     }
 }
 
-// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:54
-[DmPath("/obj/effect/particle_effect/fluid/smoke/bad/brimdust"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_particle_effect_fluid_smoke_bad_brimdust : obj_effect_particle_effect_fluid_smoke_bad
+// tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:54 (the var block of a hand-written class)
+[DmPath("/obj/effect/particle_effect/fluid/smoke/bad/brimdust")]
+public partial class obj_effect_particle_effect_fluid_smoke_bad_brimdust
 {
     // tg: code/modules/mining/equipment/monster_organs/brimdust_sac.dm:54
     public obj_effect_particle_effect_fluid_smoke_bad_brimdust()
@@ -4290,9 +4290,9 @@ public partial class obj_effect_resin_container
     }
 }
 
-// tg: code/game/objects/items/tcg/tcg_machines.dm:397
-[DmPath("/obj/effect/trading_card_panel"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_trading_card_panel : obj_effect
+// tg: code/game/objects/items/tcg/tcg_machines.dm:397 (the var block of a hand-written class)
+[DmPath("/obj/effect/trading_card_panel")]
+public partial class obj_effect_trading_card_panel
 {
     public float gems = 1; // tg: code/game/objects/items/tcg/tcg_machines.dm:404
     public float gem_slots = 1; // tg: code/game/objects/items/tcg/tcg_machines.dm:406
@@ -4320,7 +4320,7 @@ public partial class obj_effect_trading_card_panel : obj_effect
 }
 
 // tg: code/game/objects/items/tcg/tcg_machines.dm:455
-[DmPath("/obj/effect/trading_card_panel/health"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/trading_card_panel/health"), DmGeneratedOnly]
 public partial class obj_effect_trading_card_panel_health : obj_effect_trading_card_panel
 {
     // tg: code/game/objects/items/tcg/tcg_machines.dm:455
@@ -4372,9 +4372,9 @@ public partial class obj_effect_appearance_clone_closet_item : obj_effect_appear
     }
 }
 
-// tg: code/game/objects/structures/icemoon/cave_entrance.dm:115
-[DmPath("/obj/effect/collapsing_demonic_portal"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_collapsing_demonic_portal : obj_effect
+// tg: code/game/objects/structures/icemoon/cave_entrance.dm:115 (the var block of a hand-written class)
+[DmPath("/obj/effect/collapsing_demonic_portal")]
+public partial class obj_effect_collapsing_demonic_portal
 {
     // tg: code/game/objects/structures/icemoon/cave_entrance.dm:115
     public obj_effect_collapsing_demonic_portal()
@@ -5331,9 +5331,9 @@ public partial class obj_effect_invisible_wall : obj_effect
     }
 }
 
-// tg: code/modules/awaymissions/gateway.dm:132
-[DmPath("/obj/effect/gateway_portal_bumper"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_gateway_portal_bumper : obj_effect
+// tg: code/modules/awaymissions/gateway.dm:132 (the var block of a hand-written class)
+[DmPath("/obj/effect/gateway_portal_bumper")]
+public partial class obj_effect_gateway_portal_bumper
 {
     public obj_machinery_gateway gateway; // tg: code/modules/awaymissions/gateway.dm:132
 
@@ -5749,9 +5749,9 @@ public partial class obj_effect_immovablerod_wizard : obj_effect_immovablerod
     }
 }
 
-// tg: code/modules/fishing/fishing_minigame.dm:887
-[DmPath("/obj/effect/fishing_float"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_fishing_float : obj_effect
+// tg: code/modules/fishing/fishing_minigame.dm:887 (the var block of a hand-written class)
+[DmPath("/obj/effect/fishing_float")]
+public partial class obj_effect_fishing_float
 {
     public DmList spin_frequency; // tg: code/modules/fishing/fishing_minigame.dm:895
     public float spin_ready = 0; // tg: code/modules/fishing/fishing_minigame.dm:897
@@ -5796,9 +5796,9 @@ public partial class obj_effect_plasma_image_holder : obj_effect
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:8
-[DmPath("/obj/effect/holodeck_effect"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect : obj_effect
+// tg: code/modules/holodeck/holo_effect.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect")]
+public partial class obj_effect_holodeck_effect
 {
     // tg: code/modules/holodeck/holo_effect.dm:8
     public obj_effect_holodeck_effect()
@@ -5809,9 +5809,9 @@ public partial class obj_effect_holodeck_effect : obj_effect
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:28
-[DmPath("/obj/effect/holodeck_effect/cards"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_cards : obj_effect_holodeck_effect
+// tg: code/modules/holodeck/holo_effect.dm:28 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/cards")]
+public partial class obj_effect_holodeck_effect_cards
 {
     // tg: code/modules/holodeck/holo_effect.dm:28
     public obj_effect_holodeck_effect_cards()
@@ -5821,28 +5821,28 @@ public partial class obj_effect_holodeck_effect_cards : obj_effect_holodeck_effe
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:36
-[DmPath("/obj/effect/holodeck_effect/sparks"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_sparks : obj_effect_holodeck_effect { }
+// tg: code/modules/holodeck/holo_effect.dm:36 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/sparks")]
+public partial class obj_effect_holodeck_effect_sparks { }
 
-// tg: code/modules/holodeck/holo_effect.dm:46
-[DmPath("/obj/effect/holodeck_effect/random_book"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_random_book : obj_effect_holodeck_effect { }
+// tg: code/modules/holodeck/holo_effect.dm:46 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/random_book")]
+public partial class obj_effect_holodeck_effect_random_book { }
 
-// tg: code/modules/holodeck/holo_effect.dm:54
-[DmPath("/obj/effect/holodeck_effect/mobspawner"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_mobspawner : obj_effect_holodeck_effect
+// tg: code/modules/holodeck/holo_effect.dm:54 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/mobspawner")]
+public partial class obj_effect_holodeck_effect_mobspawner
 {
     public object mobtype = typeof(mob_living_basic_carp_holographic); // tg: code/modules/holodeck/holo_effect.dm:54
     public mob our_mob; // tg: code/modules/holodeck/holo_effect.dm:55
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:103
-[DmPath("/obj/effect/holodeck_effect/mobspawner/pet"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_mobspawner_pet : obj_effect_holodeck_effect_mobspawner { }
+// tg: code/modules/holodeck/holo_effect.dm:103 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/mobspawner/pet")]
+public partial class obj_effect_holodeck_effect_mobspawner_pet { }
 
 // tg: code/modules/holodeck/holo_effect.dm:122
-[DmPath("/obj/effect/holodeck_effect/mobspawner/bee"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/bee"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_bee : obj_effect_holodeck_effect_mobspawner
 {
     // tg: code/modules/holodeck/holo_effect.dm:122
@@ -5853,7 +5853,7 @@ public partial class obj_effect_holodeck_effect_mobspawner_bee : obj_effect_holo
 }
 
 // tg: code/modules/holodeck/holo_effect.dm:125
-[DmPath("/obj/effect/holodeck_effect/mobspawner/monkey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/monkey"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_monkey : obj_effect_holodeck_effect_mobspawner
 {
     // tg: code/modules/holodeck/holo_effect.dm:125
@@ -5863,9 +5863,9 @@ public partial class obj_effect_holodeck_effect_mobspawner_monkey : obj_effect_h
     }
 }
 
-// tg: code/modules/holodeck/holo_effect.dm:128
-[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_holodeck_effect_mobspawner_penguin : obj_effect_holodeck_effect_mobspawner
+// tg: code/modules/holodeck/holo_effect.dm:128 (the var block of a hand-written class)
+[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin")]
+public partial class obj_effect_holodeck_effect_mobspawner_penguin
 {
     // tg: code/modules/holodeck/holo_effect.dm:128
     public obj_effect_holodeck_effect_mobspawner_penguin()
@@ -5875,7 +5875,7 @@ public partial class obj_effect_holodeck_effect_mobspawner_penguin : obj_effect_
 }
 
 // tg: code/modules/holodeck/holo_effect.dm:136
-[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin_baby"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/penguin_baby"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_penguin_baby : obj_effect_holodeck_effect_mobspawner
 {
     // tg: code/modules/holodeck/holo_effect.dm:136
@@ -5886,11 +5886,11 @@ public partial class obj_effect_holodeck_effect_mobspawner_penguin_baby : obj_ef
 }
 
 // tg: (implied by a subtype's path)
-[DmPath("/obj/effect/holodeck_effect/mobspawner/crab"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/crab"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_crab : obj_effect_holodeck_effect_mobspawner { }
 
 // tg: code/modules/holodeck/holo_effect.dm:139
-[DmPath("/obj/effect/holodeck_effect/mobspawner/crab/jon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/holodeck_effect/mobspawner/crab/jon"), DmGeneratedOnly]
 public partial class obj_effect_holodeck_effect_mobspawner_crab_jon : obj_effect_holodeck_effect_mobspawner_crab
 {
     // tg: code/modules/holodeck/holo_effect.dm:139
@@ -5900,9 +5900,9 @@ public partial class obj_effect_holodeck_effect_mobspawner_crab_jon : obj_effect
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:2
-[DmPath("/obj/effect/sliding_puzzle"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle : obj_effect
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/effect/sliding_puzzle")]
+public partial class obj_effect_sliding_puzzle
 {
     public DmList elements; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:7
     public Type floor_type = typeof(turf_open_floor_vault); // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:8
@@ -5923,9 +5923,9 @@ public partial class obj_effect_sliding_puzzle : obj_effect
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:254
-[DmPath("/obj/effect/sliding_puzzle/admin"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle_admin : obj_effect_sliding_puzzle
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:254 (the var block of a hand-written class)
+[DmPath("/obj/effect/sliding_puzzle/admin")]
+public partial class obj_effect_sliding_puzzle_admin
 {
     public icon puzzle_icon; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:255
     public object puzzle_state; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:256
@@ -5937,9 +5937,9 @@ public partial class obj_effect_sliding_puzzle_admin : obj_effect_sliding_puzzle
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264
-[DmPath("/obj/effect/sliding_puzzle/lavaland"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle_lavaland : obj_effect_sliding_puzzle
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264 (the var block of a hand-written class)
+[DmPath("/obj/effect/sliding_puzzle/lavaland")]
+public partial class obj_effect_sliding_puzzle_lavaland
 {
     // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:264
     public obj_effect_sliding_puzzle_lavaland()
@@ -5948,23 +5948,13 @@ public partial class obj_effect_sliding_puzzle_lavaland : obj_effect_sliding_puz
     }
 }
 
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276
-[DmPath("/obj/effect/sliding_puzzle/prison"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_sliding_puzzle_prison : obj_effect_sliding_puzzle
-{
-    public Type prisoner; // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:277
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276 (the vars the hand-written class does not declare)
+[DmPath("/obj/effect/sliding_puzzle/prison")]
+public partial class obj_effect_sliding_puzzle_prison { }
 
-    // tg: code/modules/mapfluff/ruins/lavalandruin_code/puzzle.dm:276
-    public obj_effect_sliding_puzzle_prison()
-    {
-        auto_setup = 0;
-        element_type = typeof(obj_structure_puzzle_element_prison);
-    }
-}
-
-// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:142
-[DmPath("/obj/effect/watcher_orbiter"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_watcher_orbiter : obj_effect
+// tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:142 (the var block of a hand-written class)
+[DmPath("/obj/effect/watcher_orbiter")]
+public partial class obj_effect_watcher_orbiter
 {
     public atom_movable parent; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:150
     public datum_movement_detector tracker; // tg: code/modules/mapfluff/ruins/lavalandruin_code/watcher_grave.dm:152
@@ -5995,9 +5985,9 @@ public partial class obj_effect_watcher_orbiter : obj_effect
     }
 }
 
-// tg: code/modules/mining/mine_items.dm:5
-[DmPath("/obj/effect/light_emitter"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_light_emitter : obj_effect
+// tg: code/modules/mining/mine_items.dm:5 (the var block of a hand-written class)
+[DmPath("/obj/effect/light_emitter")]
+public partial class obj_effect_light_emitter
 {
     public float set_luminosity = 8; // tg: code/modules/mining/mine_items.dm:9
     public float set_cap = 0; // tg: code/modules/mining/mine_items.dm:10
@@ -6013,7 +6003,7 @@ public partial class obj_effect_light_emitter : obj_effect
 }
 
 // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:127
-[DmPath("/obj/effect/light_emitter/tendril"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/tendril"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_tendril : obj_effect_light_emitter
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:127
@@ -6026,7 +6016,7 @@ public partial class obj_effect_light_emitter_tendril : obj_effect_light_emitter
 }
 
 // tg: code/modules/mining/mine_items.dm:23
-[DmPath("/obj/effect/light_emitter/podbay"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/podbay"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_podbay : obj_effect_light_emitter
 {
     // tg: code/modules/mining/mine_items.dm:23
@@ -6037,7 +6027,7 @@ public partial class obj_effect_light_emitter_podbay : obj_effect_light_emitter
 }
 
 // tg: code/modules/mining/mine_items.dm:26
-[DmPath("/obj/effect/light_emitter/thunderdome"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/thunderdome"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_thunderdome : obj_effect_light_emitter
 {
     // tg: code/modules/mining/mine_items.dm:26
@@ -6049,7 +6039,7 @@ public partial class obj_effect_light_emitter_thunderdome : obj_effect_light_emi
 }
 
 // tg: code/modules/mining/mine_items.dm:30
-[DmPath("/obj/effect/light_emitter/fake_outdoors"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/light_emitter/fake_outdoors"), DmGeneratedOnly]
 public partial class obj_effect_light_emitter_fake_outdoors : obj_effect_light_emitter
 {
     // tg: code/modules/mining/mine_items.dm:30
@@ -6060,9 +6050,9 @@ public partial class obj_effect_light_emitter_fake_outdoors : obj_effect_light_e
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:132
-[DmPath("/obj/effect/collapse"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_collapse : obj_effect
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:132 (the var block of a hand-written class)
+[DmPath("/obj/effect/collapse")]
+public partial class obj_effect_collapse
 {
     public DmList collected; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:140
     public obj_effect_light_emitter_tendril emitted_light; // tg: code/modules/mapfluff/ruins/objects_and_mobs/ash_walker_den.dm:142
@@ -6128,9 +6118,9 @@ public partial class obj_effect_smooths_with_walls : obj_effect
     }
 }
 
-// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4
-[DmPath("/obj/effect/gluttony"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_gluttony : obj_effect
+// tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/effect/gluttony")]
+public partial class obj_effect_gluttony
 {
     // tg: code/modules/mapfluff/ruins/objects_and_mobs/sin_ruins.dm:4
     public obj_effect_gluttony()
@@ -6655,9 +6645,9 @@ public partial class obj_effect_extraction_holder
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:71
-[DmPath("/obj/effect/wisp"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_wisp : obj_effect
+// tg: code/modules/mining/lavaland/mining_loot/consumables.dm:71 (the var block of a hand-written class)
+[DmPath("/obj/effect/wisp")]
+public partial class obj_effect_wisp
 {
     // tg: code/modules/mining/lavaland/mining_loot/consumables.dm:71
     public obj_effect_wisp()
@@ -6716,9 +6706,9 @@ public partial class obj_effect_immortality_talisman_void : obj_effect_immortali
     }
 }
 
-// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:110
-[DmPath("/obj/effect/thing_acid"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_thing_acid : obj_effect
+// tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:110 (the var block of a hand-written class)
+[DmPath("/obj/effect/thing_acid")]
+public partial class obj_effect_thing_acid
 {
     public float duration_time = 50; // tg: code/modules/mob/living/basic/boss/thing/thing_objects.dm:117
 
@@ -6752,9 +6742,9 @@ public partial class obj_effect_slippery_acid : obj_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:153
-[DmPath("/obj/effect/bileworm_acid"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_bileworm_acid : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:153 (the var block of a hand-written class)
+[DmPath("/obj/effect/bileworm_acid")]
+public partial class obj_effect_bileworm_acid
 {
     public float? damage = 20; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:159
     public float speed = 5; // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:161
@@ -6773,7 +6763,7 @@ public partial class obj_effect_bileworm_acid : obj_effect
 }
 
 // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:22
-[DmPath("/obj/effect/bileworm_acid/corrupt"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/bileworm_acid/corrupt"), DmGeneratedOnly]
 public partial class obj_effect_bileworm_acid_corrupt : obj_effect_bileworm_acid
 {
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_vileworm.dm:22
@@ -6784,9 +6774,9 @@ public partial class obj_effect_bileworm_acid_corrupt : obj_effect_bileworm_acid
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:236
-[DmPath("/obj/effect/bileworm_target"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_bileworm_target : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:236 (the var block of a hand-written class)
+[DmPath("/obj/effect/bileworm_target")]
+public partial class obj_effect_bileworm_target
 {
     // tg: code/modules/mob/living/basic/lavaland/bileworm/bileworm_actions.dm:236
     public obj_effect_bileworm_target()
@@ -6798,9 +6788,9 @@ public partial class obj_effect_bileworm_target : obj_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:128
-[DmPath("/obj/effect/brimbeam"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_brimbeam : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:128 (the var block of a hand-written class)
+[DmPath("/obj/effect/brimbeam")]
+public partial class obj_effect_brimbeam
 {
     public datum_weakref creator; // tg: code/modules/mob/living/basic/lavaland/brimdemon/brimbeam.dm:138
 
@@ -6819,9 +6809,9 @@ public partial class obj_effect_brimbeam : obj_effect
     }
 }
 
-// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:3
-[DmPath("/obj/effect/goliath_tentacle"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_goliath_tentacle : obj_effect
+// tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/effect/goliath_tentacle")]
+public partial class obj_effect_goliath_tentacle
 {
     public object action_timer; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:10
     public float grapple_time = 100; // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:12
@@ -6843,7 +6833,7 @@ public partial class obj_effect_goliath_tentacle : obj_effect
 }
 
 // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:113
-[DmPath("/obj/effect/goliath_tentacle/drag"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/goliath_tentacle/drag"), DmGeneratedOnly]
 public partial class obj_effect_goliath_tentacle_drag : obj_effect_goliath_tentacle
 {
     // tg: code/modules/mob/living/basic/lavaland/goliath/tentacle.dm:113
@@ -6854,7 +6844,7 @@ public partial class obj_effect_goliath_tentacle_drag : obj_effect_goliath_tenta
 }
 
 // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:229
-[DmPath("/obj/effect/goliath_tentacle/broodmother"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/effect/goliath_tentacle/broodmother"), DmGeneratedOnly]
 public partial class obj_effect_goliath_tentacle_broodmother : obj_effect_goliath_tentacle
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:229
@@ -6866,13 +6856,13 @@ public partial class obj_effect_goliath_tentacle_broodmother : obj_effect_goliat
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:233
-[DmPath("/obj/effect/goliath_tentacle/broodmother/patch"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_goliath_tentacle_broodmother_patch : obj_effect_goliath_tentacle_broodmother { }
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/goliath_broodmother.dm:233 (the var block of a hand-written class)
+[DmPath("/obj/effect/goliath_tentacle/broodmother/patch")]
+public partial class obj_effect_goliath_tentacle_broodmother_patch { }
 
-// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:760
-[DmPath("/obj/effect/hierophant"), DmGeneratedOnly, DmInert]
-public partial class obj_effect_hierophant : obj_effect
+// tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:760 (the var block of a hand-written class)
+[DmPath("/obj/effect/hierophant")]
+public partial class obj_effect_hierophant
 {
     // tg: code/modules/mob/living/simple_animal/hostile/megafauna/hierophant.dm:760
     public obj_effect_hierophant()

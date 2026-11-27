@@ -1412,9 +1412,9 @@ public partial class obj_item_clothing_gloves_atmos
     }
 }
 
-// tg: code/modules/clothing/gloves/special.dm:181
-[DmPath("/obj/item/clothing/gloves/fishing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_gloves_fishing : obj_item_clothing_gloves
+// tg: code/modules/clothing/gloves/special.dm:181 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/gloves/fishing")]
+public partial class obj_item_clothing_gloves_fishing
 {
     public datum_fishing_challenge challenge; // tg: code/modules/clothing/gloves/special.dm:186
 
@@ -1623,9 +1623,9 @@ public partial class obj_item_clothing_gloves_divine_archer : obj_item_clothing_
     }
 }
 
-// tg: code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2
-[DmPath("/obj/item/clothing/gloves/butchering"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_gloves_butchering : obj_item_clothing_gloves
+// tg: code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/gloves/butchering")]
+public partial class obj_item_clothing_gloves_butchering
 {
     // tg: code/modules/mapfluff/ruins/icemoonruin_code/wrath.dm:2
     public obj_item_clothing_gloves_butchering()
@@ -1641,9 +1641,9 @@ public partial class obj_item_clothing_gloves_butchering : obj_item_clothing_glo
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:95
-[DmPath("/obj/item/clothing/gloves/gauntlets"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_gloves_gauntlets : obj_item_clothing_gloves
+// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:95 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/gloves/gauntlets")]
+public partial class obj_item_clothing_gloves_gauntlets
 {
     // tg: code/modules/mining/lavaland/mining_loot/clothing.dm:95
     public obj_item_clothing_gloves_gauntlets()

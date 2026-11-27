@@ -9,8 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file (gaps S3, D298) but the captain's pen's skins (setup_reskins and the /datum/atom_skin/cap_pen datums: the reskin
-// component and its radial menu are not ported, as the other reskinnable items'). The foam dart insert component is inert, so a pen
+// The whole file (gaps S3, D298) with the captain's pen's skins (setup_reskins and the /datum/atom_skin/cap_pen datums). The foam dart insert component is inert, so a pen
 // never goes into a dart yet: its dart procs are translated and wait for it. The var blocks are generated.
 
 /* Pens!
@@ -219,7 +218,7 @@ public partial class obj_item_pen_fountain_captain : obj_item_pen_fountain
     // tg: code/modules/paperwork/pen.dm:249
     public override async DmTask setup_reskins()
     {
-        Dm.Deferred("code/modules/paperwork/pen.dm:250", "setup_reskins: AddComponent(/datum/component/reskinable_item, /datum/atom_skin/cap_pen) (the reskin component and its radial menu)");
+        await AddComponent(typeof(datum_component_reskinable_item), typeof(datum_atom_skin_cap_pen));
     }
 
     // tg: code/modules/paperwork/pen.dm:252
@@ -607,5 +606,25 @@ public partial class obj_effect_temp_visual_security_holosign : obj_effect_temp_
         if (Dm.truthy(creator))
             visible_message(span_danger(I18n.T("[] created a security hologram!", creator)));
         return dot;
+    }
+}
+
+// Skins for captain's fountain pen
+// tg: code/modules/paperwork/pen.dm:185
+public partial class datum_atom_skin_cap_pen : datum_atom_skin
+{
+    // tg: code/modules/paperwork/pen.dm:188
+    public override void apply(atom apply_to = null, mob user = null)
+    {
+        base.apply(apply_to, user);
+        apply_to.desc = I18n.T("It's an expensive [] fountain pen. The nib is quite sharp.", preview_name);
+        apply_to.update_desc();
+    }
+
+    // tg: code/modules/paperwork/pen.dm:193
+    public override void clear_skin(atom clear_from = null, mob user = null)
+    {
+        base.clear_skin(clear_from, user);
+        clear_from.desc = Dm.initial(clear_from.type, (atom a) => a.desc);
     }
 }

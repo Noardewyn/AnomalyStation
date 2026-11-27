@@ -9,8 +9,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// M7 slice 4 (the engine's cooling loop): the gas flow meter, the whole file but the circuit component (/obj/item/circuit_component/atmos_meter
-// stays inert with the other circuits; the meter's USB port is a deferred leaf). The emissive glow of its pressure bars is
+// M7 slice 4 (the engine's cooling loop): the gas flow meter, the whole file, with its USB port and circuit component. The emissive glow of its pressure bars is
 // DEVIATION(DV12). The var block is generated. The turf meter (tg's `meter/turf`, meter.dm:237) keeps a turf in `target`, which tg
 // types as a pipe and the generated field holds as one: its turf is `target_turf`, and `target_atom` reads either (GAP(types)).
 
@@ -22,7 +21,7 @@ public partial class obj_machinery_meter : obj_machinery
     public turf target_turf;
 
     // What the meter reads: its pipe, or its turf (tg's `target`)
-    private atom target_atom => target != null ? target : target_turf;
+    internal atom target_atom => target != null ? target : target_turf;
 
     // tg: code/modules/atmospherics/machinery/other/meter.dm:28
     public override object Destroy(float? force = null)
@@ -49,8 +48,7 @@ public partial class obj_machinery_meter : obj_machinery
 
         if (target_atom == null)
             reattach_to_layer();
-        // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/atmos_meter), only_root_path = TRUE)): circuits
-        Dm.Deferred("code/modules/atmospherics/machinery/other/meter.dm:43", "Initialize: AddComponent(/datum/component/usb_port): the circuit USB port (circuits)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_atmos_meter)), only_root_path: TRUE)));
         return base.Initialize(mapload, Dm.forward(__extra, new_piping_layer));
     }
 
@@ -304,5 +302,45 @@ public partial class obj_machinery_meter_turf : obj_machinery_meter
     public override void reattach_to_layer()
     {
         target_turf = loc as turf;
+    }
+}
+
+// tg: code/modules/atmospherics/machinery/other/meter.dm:197
+public partial class obj_item_circuit_component_atmos_meter : obj_item_circuit_component
+{
+    // tg: code/modules/atmospherics/machinery/other/meter.dm:212
+    public override async DmTask populate_ports()
+    {
+        request_data = add_input_port("Request Meter Data", PORT_TYPE_SIGNAL, trigger: nameof(request_meter_data)) as datum_port_input;
+
+        pressure = add_output_port("Pressure", PORT_TYPE_NUMBER) as datum_port_output;
+        temperature = add_output_port("Temperature", PORT_TYPE_NUMBER) as datum_port_output;
+    }
+
+    // tg: code/modules/atmospherics/machinery/other/meter.dm:218
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_meter)))
+            connected_meter = shell as obj_machinery_meter;
+    }
+
+    // tg: code/modules/atmospherics/machinery/other/meter.dm:223
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        connected_meter = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/modules/atmospherics/machinery/other/meter.dm:227
+    [ShouldNotSleep]
+    public virtual void request_meter_data()
+    {
+        if (connected_meter == null)
+            return;
+        // target_atom: the meter's target, a pipe or (for the turf meter) its turf
+        datum_gas_mixture environment = Waiting.NoSleep(connected_meter.target_atom.return_air()) as datum_gas_mixture;
+        pressure.set_output(environment.return_pressure());
+        temperature.set_output(environment.temperature);
     }
 }

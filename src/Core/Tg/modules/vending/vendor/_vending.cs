@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // Gaps package S2 (docs/ai/specs/gaps.md, D291): the whole of vendor/ (this file, inventory.dm, interaction.dm, throwing.dm, tilting.dm,
 // ui_data.dm). The var blocks are generated. Deferred leaves (rows in live-partial.txt and not-translated.md section 103): the screentips
-// (add_context), view variables (vv_edit_var), the text-to-speech voice (SStts), the fishing spot (fishing), the light mask's emissive
+// (add_context), view variables (vv_edit_var), the text-to-speech voice (SStts), the light mask's emissive
 // (DV12), the admin logs. The payment component and the prices came with the economy (gaps P4a, D327; DV225 ended).
 
 // tg: code/modules/vending/vendor/_vending.dm:7
@@ -110,7 +110,7 @@ public partial class obj_machinery_vending : obj_machinery
         register_context();
 
         if (fish_source_path != null)
-            Dm.Deferred("code/modules/vending/vendor/_vending.dm:248", "Initialize: AddComponent(/datum/component/fishing_spot, fish_source_path): fishing in a vendor (fishing, 0/787)");
+            Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), fish_source_path));
 
         return dot;
     }

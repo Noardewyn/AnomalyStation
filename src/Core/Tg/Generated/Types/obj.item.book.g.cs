@@ -485,9 +485,9 @@ public partial class obj_item_book_manual_ancient_parchment : obj_item_book_manu
     }
 }
 
-// tg: code/modules/fishing/fish_catalog.dm:3
-[DmPath("/obj/item/book/manual/fish_catalog"), DmGeneratedOnly, DmInert]
-public partial class obj_item_book_manual_fish_catalog : obj_item_book_manual
+// tg: code/modules/fishing/fish_catalog.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/book/manual/fish_catalog")]
+public partial class obj_item_book_manual_fish_catalog
 {
     // tg: code/modules/fishing/fish_catalog.dm:3
     public obj_item_book_manual_fish_catalog()
@@ -924,9 +924,9 @@ public partial class obj_item_book_granter_action_spell_summon_cheese : obj_item
     }
 }
 
-// tg: code/game/objects/items/granters/magic/summon_item.dm:2
-[DmPath("/obj/item/book/granter/action/spell/summonitem"), DmGeneratedOnly, DmInert]
-public partial class obj_item_book_granter_action_spell_summonitem : obj_item_book_granter_action_spell
+// tg: code/game/objects/items/granters/magic/summon_item.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/book/granter/action/spell/summonitem")]
+public partial class obj_item_book_granter_action_spell_summonitem
 {
     // tg: code/game/objects/items/granters/magic/summon_item.dm:2
     public obj_item_book_granter_action_spell_summonitem()

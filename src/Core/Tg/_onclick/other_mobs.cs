@@ -551,7 +551,8 @@ public partial class mob_living_simple_animal_hostile : mob_living_simple_animal
     // tg: code/_onclick/other_mobs.dm:301
     public override async DmTask<object> resolve_unarmed_attack(atom attack_target = null, DmList modifiers = null, params object[] __extra)
     {
-        Dm.NotTranslated("code/_onclick/other_mobs.dm:302", "resolve_unarmed_attack: GiveTarget and AttackingTarget of hostile simple animals (simple animals, M8+)");
+        GiveTarget(attack_target);
+        Waiting.Detach(AttackingTarget(attack_target)); // INVOKE_ASYNC
         return null;
     }
 }

@@ -326,6 +326,7 @@ public sealed class SoundMixer
     /// (1); a magnitude up to 100 is a multiplier; more is a rate in Hz over the file's own rate (tg's 32000 to 55000 on 44.1 kHz
     /// files). A negative one (BYOND plays backwards) plays forwards here.
     /// </summary>
+    // DEVIATION(DV603): no reverse playback; a negative frequency (the circuits' sound emitter played backwards) plays forwards.
     public static float Pitch(float frequency, int sampleRate)
     {
         if (frequency == 0f || !float.IsFinite(frequency))

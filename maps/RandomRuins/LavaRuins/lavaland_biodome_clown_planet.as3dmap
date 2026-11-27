@@ -1,0 +1,800 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_biodome_clown_planet.dmm tg 1d99bd7f
+size 31 32 1
+chunk 32
+default /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+
+[chunk 1 1 1]
+1,32: /turf/template_noop | /area/template_noop
+2,32: /turf/template_noop | /area/template_noop
+3,32: /turf/template_noop | /area/template_noop
+4,32: /turf/template_noop | /area/template_noop
+5,32: /turf/template_noop | /area/template_noop
+6,32: /turf/template_noop | /area/template_noop
+7,32: /turf/template_noop | /area/template_noop
+8,32: /turf/template_noop | /area/template_noop
+9,32: /turf/template_noop | /area/template_noop
+10,32: /turf/template_noop | /area/template_noop
+11,32: /turf/template_noop | /area/template_noop
+12,32: /turf/template_noop | /area/template_noop
+13,32: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,32: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+15,32: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+16,32: /obj/effect/mapping_helpers/no_lava | /obj/machinery/door/airlock/external/ruin | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+17,32: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+18,32: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+19,32: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+20,32: /turf/template_noop | /area/template_noop
+21,32: /turf/template_noop | /area/template_noop
+22,32: /turf/template_noop | /area/template_noop
+23,32: /turf/template_noop | /area/template_noop
+24,32: /turf/template_noop | /area/template_noop
+25,32: /turf/template_noop | /area/template_noop
+26,32: /turf/template_noop | /area/template_noop
+27,32: /turf/template_noop | /area/template_noop
+28,32: /turf/template_noop | /area/template_noop
+29,32: /turf/template_noop | /area/template_noop
+30,32: /turf/template_noop | /area/template_noop
+31,32: /turf/template_noop | /area/template_noop
+1,31: /turf/template_noop | /area/template_noop
+2,31: /turf/template_noop | /area/template_noop
+3,31: /turf/template_noop | /area/template_noop
+4,31: /turf/template_noop | /area/template_noop
+5,31: /turf/template_noop | /area/template_noop
+6,31: /turf/template_noop | /area/template_noop
+7,31: /turf/template_noop | /area/template_noop
+8,31: /turf/template_noop | /area/template_noop
+9,31: /turf/template_noop | /area/template_noop
+10,31: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/lavaland/surface/outdoors/explored
+11,31: /obj/machinery/light/directional/south | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/powered/clownplanet
+12,31: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/lavaland/surface/outdoors/explored
+13,31: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,31: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+15,31: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+16,31: /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+17,31: /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+18,31: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+19,31: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+20,31: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/lavaland/surface/outdoors/explored
+21,31: /obj/machinery/light/directional/south | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/powered/clownplanet
+22,31: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/lavaland/surface/outdoors/explored
+23,31: /turf/template_noop | /area/template_noop
+24,31: /turf/template_noop | /area/template_noop
+25,31: /turf/template_noop | /area/template_noop
+26,31: /turf/template_noop | /area/template_noop
+27,31: /turf/template_noop | /area/template_noop
+28,31: /turf/template_noop | /area/template_noop
+29,31: /turf/template_noop | /area/template_noop
+30,31: /turf/template_noop | /area/template_noop
+31,31: /turf/template_noop | /area/template_noop
+1,30: /turf/template_noop | /area/template_noop
+2,30: /turf/template_noop | /area/template_noop
+3,30: /turf/template_noop | /area/template_noop
+4,30: /turf/template_noop | /area/template_noop
+5,30: /turf/template_noop | /area/template_noop
+6,30: /turf/template_noop | /area/template_noop
+13,30: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,30: /obj/item/clothing/head/cone | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+15,30: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+16,30: /obj/item/paper/crumpled/bloody/ruins/lavaland/clown_planet/hope | /obj/effect/decal/cleanable/blood/old | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+17,30: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+18,30: /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+19,30: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+27,30: /turf/template_noop | /area/template_noop
+28,30: /turf/template_noop | /area/template_noop
+29,30: /turf/template_noop | /area/template_noop
+30,30: /turf/template_noop | /area/template_noop
+31,30: /turf/template_noop | /area/template_noop
+1,29: /turf/template_noop | /area/template_noop
+2,29: /turf/template_noop | /area/template_noop
+3,29: /turf/template_noop | /area/template_noop
+4,29: /turf/template_noop | /area/template_noop
+8,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+9,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+10,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+11,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+12,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+13,29: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,29: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+15,29: /obj/machinery/disposal/delivery_chute{desc = "The following is engraved upon the chute: A FATE WORSE THAN DEATH LIES WITHIN"; dir = 1; name = "THE TRIAL OF HONKITUDE"} | /obj/structure/disposalpipe/trunk | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+16,29: /obj/machinery/light/small/directional/south | /obj/effect/mapping_helpers/no_lava | /mob/living/basic/clown | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+17,29: /obj/structure/disposalpipe/trunk | /obj/structure/disposaloutlet{dir = 1} | /obj/effect/mapping_helpers/no_lava | /turf/open/floor/noslip | /area/ruin/powered/clownplanet
+18,29: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+19,29: /obj/effect/mapping_helpers/no_lava | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+20,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+21,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+22,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+23,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+24,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+25,29: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+28,29: /turf/template_noop | /area/template_noop
+29,29: /turf/template_noop | /area/template_noop
+30,29: /turf/template_noop | /area/template_noop
+31,29: /turf/template_noop | /area/template_noop
+1,28: /turf/template_noop | /area/template_noop
+2,28: /turf/template_noop | /area/template_noop
+3,28: /turf/template_noop | /area/template_noop
+6,28: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+7,28: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+8,28: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+9,28: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+10,28: /obj/structure/disposalpipe/segment{dir = 10} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+11,28: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+12,28: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+13,28: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+15,28: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+17,28: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+19,28: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+22,28: /obj/structure/disposalpipe/trunk | /obj/structure/disposaloutlet{dir = 1} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+25,28: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+26,28: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+29,28: /turf/template_noop | /area/template_noop
+30,28: /turf/template_noop | /area/template_noop
+31,28: /turf/template_noop | /area/template_noop
+1,27: /turf/template_noop | /area/template_noop
+2,27: /turf/template_noop | /area/template_noop
+5,27: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+6,27: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+7,27: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+8,27: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+9,27: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,27: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+11,27: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+12,27: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+13,27: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,27: /obj/structure/disposalpipe/segment{dir = 10} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+15,27: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+16,27: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+17,27: /obj/structure/disposalpipe/sorting/mail/flip{dir = 1} | /obj/effect/mapping_helpers/mail_sorting/supply/qm_office | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+22,27: /obj/structure/window/reinforced/spawner/directional/south | /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+27,27: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+30,27: /turf/template_noop | /area/template_noop
+31,27: /turf/template_noop | /area/template_noop
+1,26: /turf/template_noop | /area/template_noop
+2,26: /turf/template_noop | /area/template_noop
+4,26: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,26: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+7,26: /obj/effect/decal/cleanable/food/pie_smudge | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+8,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+9,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+11,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/machinery/light/small/directional/north | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+12,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+13,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,26: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,26: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,26: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+19,26: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,26: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+21,26: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/machinery/light/small/directional/north | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+22,26: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+23,26: /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+24,26: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+25,26: /obj/effect/decal/cleanable/cobweb/cobweb2 | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+27,26: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+28,26: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+30,26: /turf/template_noop | /area/template_noop
+31,26: /turf/template_noop | /area/template_noop
+1,25: /turf/template_noop | /area/template_noop
+4,25: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,25: /obj/structure/disposalpipe/segment{dir = 6} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+6,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/cobweb | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+7,25: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+8,25: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+9,25: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,25: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+11,25: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+12,25: /obj/structure/disposalpipe/segment{dir = 5} | /obj/item/bikehorn | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+13,25: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,25: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,25: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+16,25: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+17,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+19,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+21,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+22,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+23,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+24,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+25,25: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+26,25: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+28,25: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,25: /turf/template_noop | /area/template_noop
+1,24: /turf/template_noop | /area/template_noop
+3,24: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,24: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,24: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+6,24: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+7,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+8,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+9,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+11,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+12,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+13,24: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,24: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,24: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,24: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+19,24: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+21,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+22,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+23,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+24,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+25,24: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+26,24: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+27,24: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+28,24: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+29,24: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,24: /turf/template_noop | /area/template_noop
+1,23: /turf/template_noop | /area/template_noop
+3,23: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,23: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+5,23: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+6,23: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+7,23: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+8,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+9,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+11,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+12,23: /obj/structure/disposalpipe/segment{dir = 10} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+13,23: /obj/effect/decal/cleanable/food/pie_smudge | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,23: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,23: /obj/effect/decal/cleanable/dirt | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,23: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+18,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+19,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+21,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+22,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+23,23: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+24,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+25,23: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+26,23: /obj/structure/disposalpipe/segment{dir = 10} | /obj/machinery/light/small/directional/east | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+28,23: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+29,23: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,23: /turf/template_noop | /area/template_noop
+1,22: /turf/template_noop | /area/template_noop
+3,22: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,22: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+5,22: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/dirt | /obj/machinery/light/small/directional/west | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+6,22: /obj/item/bikehorn | /obj/effect/decal/cleanable/dirt | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+7,22: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+8,22: /obj/structure/disposalpipe/trunk{dir = 4} | /obj/structure/disposaloutlet{dir = 8} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+9,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+10,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+11,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+12,22: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+13,22: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,22: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,22: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+16,22: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+19,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+21,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+22,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+23,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+24,22: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+25,22: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+26,22: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+27,22: /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+28,22: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+29,22: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,22: /turf/template_noop | /area/template_noop
+1,21: /turf/template_noop | /area/template_noop
+3,21: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,21: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+5,21: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+6,21: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+7,21: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+8,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+9,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+10,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+11,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+12,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+13,21: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,21: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,21: /obj/effect/decal/cleanable/food/pie_smudge | /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,21: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,21: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+19,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+20,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+21,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/structure/table | /obj/item/paper/crumpled/bloody/ruins/lavaland/clown_planet/escape | /obj/item/pen/fourcolor | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+22,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/structure/table | /obj/item/flashlight/lamp/bananalamp | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+23,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+24,21: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+25,21: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+26,21: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+27,21: /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+28,21: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+29,21: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,21: /turf/template_noop | /area/template_noop
+1,20: /turf/template_noop | /area/template_noop
+3,20: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,20: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+5,20: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+6,20: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+7,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+8,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+9,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+10,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+11,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/item/pickaxe | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+12,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+13,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,20: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,20: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,20: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,20: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,20: /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,20: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+21,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+22,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+23,20: /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+24,20: /obj/structure/disposalpipe/segment{dir = 6} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+25,20: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+26,20: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+27,20: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+29,20: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,20: /turf/template_noop | /area/template_noop
+1,19: /turf/template_noop | /area/template_noop
+4,19: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,19: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+6,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+7,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+8,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/machinery/light/small/directional/west | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+9,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+10,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+11,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+12,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/machinery/light/small/directional/east | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+13,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,19: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,19: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,19: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+17,19: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,19: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,19: /obj/structure/disposalpipe/segment{invisibility = 101} | /obj/machinery/light/small/directional/west | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+21,19: /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+22,19: /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+23,19: /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+24,19: /obj/structure/disposalpipe/segment{dir = 9} | /obj/machinery/light/small/directional/east | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+28,19: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,19: /turf/template_noop | /area/template_noop
+1,18: /turf/template_noop | /area/template_noop
+2,18: /obj/machinery/light/directional/east | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/powered/clownplanet
+5,18: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+6,18: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+8,18: /turf/closed/mineral/bananium/volcanic | /area/ruin/powered/clownplanet
+9,18: /obj/item/pickaxe | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+10,18: /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+11,18: /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+12,18: /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+13,18: /obj/structure/disposalpipe/segment{dir = 6} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+14,18: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,18: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,18: /obj/structure/disposalpipe/segment{dir = 5} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+17,18: /obj/item/bikehorn | /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,18: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+19,18: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,18: /obj/structure/disposalpipe/segment{dir = 9} | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+21,18: /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+22,18: /turf/open/indestructible/light | /area/ruin/powered/clownplanet
+23,18: /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+24,18: /turf/closed/mineral/bananium/volcanic | /area/ruin/powered/clownplanet
+26,18: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+27,18: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+30,18: /obj/machinery/light/directional/west | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/ruin/powered/clownplanet
+31,18: /turf/template_noop | /area/template_noop
+1,17: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+2,17: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+3,17: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+7,17: /obj/effect/decal/cleanable/cobweb | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+9,17: /turf/closed/mineral/bananium/volcanic | /area/ruin/powered/clownplanet
+10,17: /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+11,17: /turf/closed/mineral/bananium/volcanic | /area/ruin/powered/clownplanet
+13,17: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,17: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,17: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,17: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,17: /obj/structure/disposalpipe/segment | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,17: /obj/effect/decal/cleanable/food/pie_smudge | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+21,17: /turf/closed/mineral/bananium/volcanic | /area/ruin/powered/clownplanet
+22,17: /obj/machinery/disposal/delivery_chute{dir = 1} | /obj/structure/disposalpipe/trunk | /turf/open/indestructible/white | /area/ruin/powered/clownplanet
+23,17: /turf/closed/mineral/bananium/volcanic | /area/ruin/powered/clownplanet
+25,17: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+29,17: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+30,17: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+31,17: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+1,16: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+2,16: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+3,16: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+4,16: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+6,16: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+7,16: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+8,16: /obj/machinery/light/directional/north | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,16: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+13,16: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+14,16: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,16: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,16: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,16: /obj/structure/disposalpipe/junction/yjunction{dir = 1; invisibility = 101} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,16: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+19,16: /obj/structure/mecha_wreckage/honker | /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+20,16: /obj/effect/decal/cleanable/blood/oil | /obj/structure/disposalpipe/segment{dir = 10} | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+22,16: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+24,16: /obj/machinery/light/directional/north | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+25,16: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+26,16: /obj/effect/decal/cleanable/cobweb/cobweb2 | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+28,16: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+29,16: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+30,16: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+31,16: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+1,15: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+2,15: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+3,15: /obj/item/grown/bananapeel{color = "#2F3000"; name = "stealth banana peel"} | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+4,15: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+6,15: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+7,15: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+8,15: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,15: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+11,15: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+12,15: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+15,15: /obj/structure/disposalpipe/segment{dir = 5} | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+16,15: /obj/structure/disposalpipe/segment{dir = 10} | /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+17,15: /obj/effect/decal/cleanable/dirt | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+18,15: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /obj/effect/turf_decal/tile/yellow/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+20,15: /obj/structure/disposalpipe/segment{dir = 5} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+21,15: /obj/structure/disposalpipe/segment{dir = 4; invisibility = 101} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+22,15: /obj/structure/disposalpipe/segment{dir = 9} | /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+23,15: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+24,15: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+25,15: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+26,15: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+28,15: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+29,15: /obj/item/grown/bananapeel{color = "#2F3000"; name = "stealth banana peel"} | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+30,15: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+31,15: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+1,14: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+2,14: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+3,14: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+4,14: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+6,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+7,14: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+8,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,14: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+10,14: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+11,14: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+12,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+16,14: /obj/structure/disposalpipe/segment{invisibility = 101} | /turf/closed/wall/r_wall | /area/ruin/powered/clownplanet
+19,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+20,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+21,14: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+23,14: /obj/effect/turf_decal/tile/red/fourcorners | /turf/open/indestructible/permalube | /area/ruin/powered/clownplanet
+24,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+25,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+26,14: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+28,14: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+29,14: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+30,14: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+31,14: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+1,13: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+2,13: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+3,13: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+7,13: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+10,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+11,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+12,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+14,13: /obj/item/reagent_containers/cup/glass/trophy/gold_cup | /obj/structure/table/glass | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+15,13: /obj/machinery/light/small/directional/north | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+16,13: /obj/machinery/disposal/delivery_chute | /obj/structure/disposalpipe/trunk{dir = 1} | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+17,13: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+18,13: /obj/item/reagent_containers/cup/glass/trophy/gold_cup | /obj/structure/table/glass | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+20,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+21,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+22,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+23,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+24,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+25,13: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+29,13: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+30,13: /obj/effect/mapping_helpers/no_lava | /turf/open/chasm/lavaland | /area/lavaland/surface/outdoors/explored
+31,13: /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface/biome_replace | /area/lavaland/surface/outdoors/explored
+1,12: /turf/template_noop | /area/template_noop
+2,12: /obj/machinery/light/directional/east | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/powered/clownplanet
+5,12: /obj/effect/decal/cleanable/cobweb | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+6,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+7,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+11,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+13,12: /obj/structure/statue/bananium/clown | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+14,12: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+15,12: /obj/structure/table/glass | /obj/item/grown/bananapeel/bluespace | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+16,12: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+17,12: /obj/structure/table/glass | /obj/item/clothing/shoes/clown_shoes/banana_shoes | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+18,12: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+19,12: /obj/structure/statue/bananium/clown | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+21,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+22,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+23,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+24,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+25,12: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+26,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+27,12: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+30,12: /obj/machinery/light/directional/west | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/powered/clownplanet
+31,12: /turf/template_noop | /area/template_noop
+1,11: /turf/template_noop | /area/template_noop
+4,11: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,11: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+6,11: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+7,11: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+8,11: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,11: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+10,11: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+13,11: /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/machinery/light/small/directional/west | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+14,11: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+15,11: /obj/structure/table/glass | /obj/item/reagent_containers/spray/waterflower/superlube | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+16,11: /obj/item/bikehorn/airhorn | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+17,11: /obj/structure/table/glass | /obj/item/gun/magic/staff/honk | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+18,11: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+19,11: /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/item/coin/bananium | /obj/machinery/light/small/directional/east | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+22,11: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+23,11: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+24,11: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+25,11: /obj/item/bikehorn | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+26,11: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+27,11: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+28,11: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,11: /turf/template_noop | /area/template_noop
+1,10: /turf/template_noop | /area/template_noop
+3,10: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,10: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,10: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+6,10: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+7,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+10,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+11,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+12,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+14,10: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+15,10: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+16,10: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+17,10: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+18,10: /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+20,10: /obj/effect/mob_spawn/corpse/human/damaged | /obj/effect/decal/cleanable/blood/old | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+21,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+22,10: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+23,10: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+24,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+25,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+27,10: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+28,10: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+29,10: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,10: /turf/template_noop | /area/template_noop
+1,9: /turf/template_noop | /area/template_noop
+3,9: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,9: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+5,9: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+6,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+7,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+8,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+10,9: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+11,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+12,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+13,9: /obj/machinery/light/directional/north | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+16,9: /obj/machinery/door/airlock/bananium | /turf/open/floor/carpet | /area/ruin/powered/clownplanet
+19,9: /obj/machinery/light/directional/north | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+20,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+21,9: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+22,9: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+23,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+25,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+26,9: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+27,9: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+28,9: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+29,9: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,9: /turf/template_noop | /area/template_noop
+1,8: /turf/template_noop | /area/template_noop
+3,8: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+4,8: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+5,8: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+6,8: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+7,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+8,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,8: /obj/item/bikehorn | /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+10,8: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+11,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+13,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+14,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+16,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+17,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+18,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+19,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+20,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+21,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+22,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+23,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+24,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+25,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+26,8: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+27,8: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+28,8: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+29,8: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,8: /turf/template_noop | /area/template_noop
+1,7: /turf/template_noop | /area/template_noop
+4,7: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,7: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+6,7: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+8,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+9,7: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+10,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+11,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+12,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+13,7: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+14,7: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+15,7: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+16,7: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+17,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+18,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+19,7: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+20,7: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+21,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+22,7: /obj/item/bikehorn | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+24,7: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+26,7: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+27,7: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+28,7: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+31,7: /turf/template_noop | /area/template_noop
+1,6: /turf/template_noop | /area/template_noop
+2,6: /turf/template_noop | /area/template_noop
+4,6: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+5,6: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+6,6: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+7,6: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+8,6: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+9,6: /obj/machinery/light/directional/south | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+10,6: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+11,6: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+12,6: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+13,6: /obj/item/bikehorn | /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+14,6: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+15,6: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+16,6: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+17,6: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+18,6: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+19,6: /obj/effect/decal/cleanable/dirt | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+20,6: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+21,6: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+22,6: /obj/machinery/light/directional/south | /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+24,6: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+25,6: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+26,6: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+27,6: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+28,6: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+30,6: /turf/template_noop | /area/template_noop
+31,6: /turf/template_noop | /area/template_noop
+1,5: /turf/template_noop | /area/template_noop
+2,5: /turf/template_noop | /area/template_noop
+5,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+6,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+7,5: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+8,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+10,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+11,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+12,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+13,5: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+14,5: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+15,5: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+17,5: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+18,5: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+19,5: /turf/open/indestructible/honk | /area/ruin/powered/clownplanet
+20,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+21,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+23,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+24,5: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+25,5: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+26,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+27,5: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+30,5: /turf/template_noop | /area/template_noop
+31,5: /turf/template_noop | /area/template_noop
+1,4: /turf/template_noop | /area/template_noop
+2,4: /turf/template_noop | /area/template_noop
+3,4: /turf/template_noop | /area/template_noop
+6,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+7,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+8,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+9,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+10,4: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+11,4: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+12,4: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+13,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+14,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+15,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+16,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+17,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+18,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+19,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+20,4: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+21,4: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+22,4: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+23,4: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+24,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+25,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+26,4: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+29,4: /turf/template_noop | /area/template_noop
+30,4: /turf/template_noop | /area/template_noop
+31,4: /turf/template_noop | /area/template_noop
+1,3: /turf/template_noop | /area/template_noop
+2,3: /turf/template_noop | /area/template_noop
+3,3: /turf/template_noop | /area/template_noop
+4,3: /turf/template_noop | /area/template_noop
+8,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+9,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+10,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+11,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+12,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+13,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+14,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+15,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+16,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+17,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+18,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+19,3: /obj/effect/spawner/structure/window/reinforced | /turf/open/floor/plating | /area/ruin/powered/clownplanet
+20,3: /turf/open/floor/plating | /area/ruin/powered/clownplanet
+21,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+22,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+23,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+24,3: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+28,3: /turf/template_noop | /area/template_noop
+29,3: /turf/template_noop | /area/template_noop
+30,3: /turf/template_noop | /area/template_noop
+31,3: /turf/template_noop | /area/template_noop
+1,2: /turf/template_noop | /area/template_noop
+2,2: /turf/template_noop | /area/template_noop
+3,2: /turf/template_noop | /area/template_noop
+4,2: /turf/template_noop | /area/template_noop
+5,2: /turf/template_noop | /area/template_noop
+6,2: /obj/machinery/light/directional/north | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/powered/clownplanet
+11,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+12,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+13,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+14,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+15,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+16,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+17,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+18,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+19,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+20,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+21,2: /turf/open/lava/smooth | /area/ruin/powered/clownplanet
+26,2: /obj/machinery/light/directional/north | /obj/effect/mapping_helpers/no_lava | /turf/open/misc/asteroid/basalt/lava_land_surface | /area/ruin/powered/clownplanet
+27,2: /turf/template_noop | /area/template_noop
+28,2: /turf/template_noop | /area/template_noop
+29,2: /turf/template_noop | /area/template_noop
+30,2: /turf/template_noop | /area/template_noop
+31,2: /turf/template_noop | /area/template_noop
+1,1: /turf/template_noop | /area/template_noop
+2,1: /turf/template_noop | /area/template_noop
+3,1: /turf/template_noop | /area/template_noop
+4,1: /turf/template_noop | /area/template_noop
+5,1: /turf/template_noop | /area/template_noop
+6,1: /turf/template_noop | /area/template_noop
+7,1: /turf/template_noop | /area/template_noop
+8,1: /turf/template_noop | /area/template_noop
+9,1: /turf/template_noop | /area/template_noop
+23,1: /turf/template_noop | /area/template_noop
+24,1: /turf/template_noop | /area/template_noop
+25,1: /turf/template_noop | /area/template_noop
+26,1: /turf/template_noop | /area/template_noop
+27,1: /turf/template_noop | /area/template_noop
+28,1: /turf/template_noop | /area/template_noop
+29,1: /turf/template_noop | /area/template_noop
+30,1: /turf/template_noop | /area/template_noop
+31,1: /turf/template_noop | /area/template_noop

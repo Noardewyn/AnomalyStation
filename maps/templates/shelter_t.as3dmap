@@ -1,0 +1,10 @@
+anomaly-map 1
+source _maps/templates/shelter_t.dmm tg 1d99bd7f
+size 3 3 1
+chunk 32
+default /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+
+[chunk 1 1 1]
+1,2: /obj/structure/sign/warning/biohazard | /turf/closed/wall/mineral/plastitanium/survival/pod | /area/misc/survivalpod
+2,2: /obj/structure/toilet | /obj/item/paper{pixel_x = 7; pixel_y = -7} | /obj/effect/turf_decal/trimline/red | /obj/machinery/button/door/directional/east{id = "podtoilet"; name = "Privacy Shutters"; pixel_y = 6} | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod
+2,1: /obj/machinery/door/airlock/survival_pod/glass | /obj/machinery/door/poddoor/shutters/preopen{id = "podtoilet"; name = "Privacy Shutters"} | /turf/open/floor/mineral/plastitanium/pod | /area/misc/survivalpod

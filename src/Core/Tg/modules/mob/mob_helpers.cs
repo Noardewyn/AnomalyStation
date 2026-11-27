@@ -13,7 +13,7 @@ namespace Anomaly.Core.Tg;
 // Login and Logout), check_zone, ran_zone and get_random_valid_zone (M2 P2: the carbon damage procs' zone choice), and
 // findname (M2 F1: a unique random name) and shake_camera (M5x slice 1: an explosion's shake; the client's animate path goes
 // to the presentation's animate sink, which protocol 21 hands to the player's camera) and default_lighting_cutoff (the
-// ghosts, 2026-10-16), stars (M9 slice A) and Gibberish (M9 slice D: the radio), get_player_client (syndicate A1), health_percentage (syndicate X2), the cyborg's is_antag and notify_ghosts (silicons SI2), copy_recent_speech (gaps P3: the mind reader), stifled (gaps SL1: cuffed sign language) and get_path_by_slot (gaps MO2: the MOD chameleon module) translated; the rest of the helpers come with their callers.
+// ghosts, 2026-10-16), stars (M9 slice A) and Gibberish (M9 slice D: the radio), get_player_client (syndicate A1), health_percentage (syndicate X2), the cyborg's is_antag and notify_ghosts (silicons SI2), copy_recent_speech (gaps P3: the mind reader), stifled (gaps SL1: cuffed sign language) and get_path_by_slot (gaps MO2: the MOD chameleon module) and is_touching_rust (the rust healing element) and isAdminObserver (the chapel's altar) translated; the rest of the helpers come with their callers.
 
 // tg: code/modules/mob/mob_helpers.dm:4 (interleaved types, rules 1.9)
 public partial class mob : atom_movable
@@ -55,6 +55,21 @@ public partial class mob : atom_movable
 // tg: code/modules/mob/mob_helpers.dm:11 (global procs; interleaved types, rules 1.9)
 public static partial class GlobalProcs
 {
+    ///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
+    // tg: code/modules/mob/mob_helpers.dm:343
+    public static object isAdminObserver(mob user = null)
+    {
+        if (user == null) //Are they a mob? Auto interface updates call this with a null src
+            return null;
+        if (user.client == null) // Do they have a client?
+            return null;
+        if (!isobserver(user)) // Are they a ghost?
+            return null;
+        if (!Dm.truthy(check_rights_for(user.client, R_ADMIN))) // Are they allowed?
+            return null;
+        return TRUE;
+    }
+
     /**
      * Convert random parts of a passed in message to stars
      *
@@ -649,5 +664,22 @@ public partial class mob : atom_movable
         foreach (object key in Dm.each(recent_speech))
             Dm.append(ref raw_lines, recent_speech[key]);
         return raw_lines;
+    }
+}
+
+// tg: code/modules/mob/mob_helpers.dm:593 (the rust healing element)
+public partial class mob : atom_movable
+{
+    /// Returns true if the mob is on a rusty tile, really low level just because we call it in a bunch of unrelated places
+    // tg: code/modules/mob/mob_helpers.dm:593
+    public virtual object is_touching_rust(float? check_flying = null)
+    {
+        check_flying ??= FALSE;
+        if (Dm.truthy(check_flying) && Dm.truthy(Dm.bitand(movement_type, MOVETYPES_NOT_TOUCHING_GROUND)))
+            return FALSE;
+        if (HAS_TRAIT(this, TRAIT_MAGICALLY_PHASED) || Dm.truthy(Dm.bitand(movement_type, VENTCRAWLING)))
+            return FALSE;
+        turf our_turf = get_turf(this);
+        return Dm.num(HAS_TRAIT(our_turf, TRAIT_RUSTY));
     }
 }

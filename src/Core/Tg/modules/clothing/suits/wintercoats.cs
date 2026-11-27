@@ -222,8 +222,7 @@ public partial class obj_item_clothing_suit_hooded_wintercoat_medical_paramedic 
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, -3) //mirrored from jacket
-        Dm.Deferred("code/modules/clothing/suits/wintercoats.dm:427", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -3): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -3)); //mirrored from jacket
         Dm.append(ref allowed, typeof(obj_item_crowbar_power_paramedic));
         return dot;
     }

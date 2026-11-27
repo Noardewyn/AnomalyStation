@@ -42,26 +42,6 @@
 /obj/item/wallframe/flasher	icon_state	override	code/game/machinery/flasher.dm:223	"mflash_frame"	null
 /obj/item/wallframe/flasher	result_path	override	code/game/machinery/flasher.dm:224	/obj/machinery/flasher	null
 /obj/item/wallframe/flasher	pixel_shift	override	code/game/machinery/flasher.dm:226	28	null
-/obj/item/fish	name	override	code/modules/fishing/fish/_fish.dm:20	"fish"	"item"
-/obj/item/fish	desc	override	code/modules/fishing/fish/_fish.dm:21	"very bland"	null
-/obj/item/fish	abstract_type	override	code/modules/fishing/fish/_fish.dm:22	/obj/item/fish	/obj/item
-/obj/item/fish	icon	override	code/modules/fishing/fish/_fish.dm:23	'icons/obj/aquarium/fish.dmi'	'icons/obj/anomaly.dmi'
-/obj/item/fish	lefthand_file	override	code/modules/fishing/fish/_fish.dm:24	'icons/mob/inhands/fish_lefthand.dmi'	'icons/mob/inhands/items_lefthand.dmi'
-/obj/item/fish	righthand_file	override	code/modules/fishing/fish/_fish.dm:25	'icons/mob/inhands/fish_righthand.dmi'	'icons/mob/inhands/items_righthand.dmi'
-/obj/item/fish	icon_angle	override	code/modules/fishing/fish/_fish.dm:26	180	0
-/obj/item/fish	force	override	code/modules/fishing/fish/_fish.dm:27	6	0
-/obj/item/fish	throwforce	override	code/modules/fishing/fish/_fish.dm:28	6	0
-/obj/item/fish	throw_range	override	code/modules/fishing/fish/_fish.dm:29	8	7
-/obj/item/fish	attack_verb_continuous	init	code/modules/fishing/fish/_fish.dm:30	list("slaps", "whacks")	null
-/obj/item/fish	attack_verb_simple	init	code/modules/fishing/fish/_fish.dm:31	list("slap", "whack")	null
-/obj/item/fish	hitsound	override	code/modules/fishing/fish/_fish.dm:32	"default_fish_slap"	null
-/obj/item/fish	drop_sound	override	code/modules/fishing/fish/_fish.dm:33	'sound/mobs/non-humanoids/fish/fish_drop1.ogg'	null
-/obj/item/fish	pickup_sound	override	code/modules/fishing/fish/_fish.dm:34	"fish_pickup"	null
-/obj/item/fish	sound_vary	override	code/modules/fishing/fish/_fish.dm:35	1	0
-/obj/item/fish	obj_flags	override	code/modules/fishing/fish/_fish.dm:36	8	0
-/obj/item/fish	item_flags	override	code/modules/fishing/fish/_fish.dm:37	8	0
-/obj/item/fish	material_flags	override	code/modules/fishing/fish/_fish.dm:39	111	0
-/obj/item/fish	integrity_failure	override	code/modules/fishing/fish/_fish.dm:42	0.5	0
 /obj/effect/decal/remains/human/smokey	name	override	code/game/objects/effects/decals/remains.dm:21	"remains of Charles Morlbaro"	"remains"
 /obj/effect/decal/remains/human/smokey	desc	override	code/game/objects/effects/decals/remains.dm:22	"I guess we figured out what happened to the guy who lives here. You\u0027d b...	"They look like human remains. They have a strange aura about them."
 /obj/vehicle/sealed/mecha	hud_possible	init	code/modules/vehicles/mecha/_mecha.dm:36	list("8", "10", "11", "13", "21")	null

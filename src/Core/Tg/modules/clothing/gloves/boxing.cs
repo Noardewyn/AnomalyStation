@@ -10,7 +10,7 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // The syndicate campaign X3b (D316): the boxing gloves (boxing, the evil ones' evil boxing) and their traitor mail uppercut, whole
-// but the fishing difficulty (fishing is not ported); the golden gloves' athletics skill reward came with gaps SL1 (D333). The var
+// with the fishing difficulty; the golden gloves' athletics skill reward came with gaps SL1 (D333). The var
 // blocks are generated (D111).
 
 // tg: code/modules/clothing/gloves/boxing.dm:1
@@ -23,7 +23,7 @@ public partial class obj_item_clothing_gloves_boxing : obj_item_clothing_gloves
         Waiting.NoSleep(AddElement(typeof(datum_element_slapcrafting), TgState.Current.obj_item_clothing_gloves_boxing__slapcraft_recipe_list));
 
         Waiting.NoSleep(AddComponent(typeof(datum_component_martial_art_giver), style_to_give));
-        Dm.Deferred("code/modules/clothing/gloves/boxing.dm:25", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, 19): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), 19));
         RegisterSignal(this, COMSIG_ITEM_IN_UNWRAPPED_TRAITOR_MAIL, nameof(on_mail_unwrap));
         return dot;
     }

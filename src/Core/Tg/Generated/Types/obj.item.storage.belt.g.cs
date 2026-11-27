@@ -499,9 +499,9 @@ public partial class obj_item_storage_belt_mining_alt : obj_item_storage_belt_mi
     }
 }
 
-// tg: code/game/objects/items/storage/belt.dm:301
-[DmPath("/obj/item/storage/belt/mining/healing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_belt_mining_healing : obj_item_storage_belt_mining { }
+// tg: code/game/objects/items/storage/belt.dm:301 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/belt/mining/healing")]
+public partial class obj_item_storage_belt_mining_healing { }
 
 // tg: code/game/objects/items/storage/belt.dm:311
 [DmPath("/obj/item/storage/belt/mining/primitive"), DmGeneratedOnly]

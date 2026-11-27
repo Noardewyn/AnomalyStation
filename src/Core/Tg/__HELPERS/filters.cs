@@ -10,8 +10,136 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M5 slice 2: layering_filter (a material's texture filter, atom_materials.dm:364). M6 slice 7 (D155, filters reach the client):
-// the other filter makers, the wibbly filters and convert_list_to_filter. Not translated: GLOB.master_filter_info (filters.dm:4-170),
-// the data of the admin filter editor (filterrific, admin tooling M10); nothing else reads it.
+// the other filter makers, the wibbly filters and convert_list_to_filter. GLOB.master_filter_info (filters.dm:4-170), the data of the
+// admin filter editor (filterrific, admin tooling), is translated for the circuits' admin filter components, which read its defaults.
+
+public partial class datum_controller_global_vars
+{
+    // tg: code/__HELPERS/filters.dm:1
+    private const string ICON_NOT_SET = "Not Set";
+
+    //This is stored as a nested list instead of datums or whatever because it json encodes nicely for usage in tgui
+    // tg: code/__HELPERS/filters.dm:4  GLOBAL_LIST_INIT(master_filter_info, list(...))
+    public DmList master_filter_info;
+
+    // tg: code/__HELPERS/filters.dm:4  (GLOBAL_MANAGED(master_filter_info, ...), __DEFINES/__globals.dm:5)
+    public virtual void InitGlobalmaster_filter_info()
+    {
+        master_filter_info = Dm.list(
+            Dm.kv("alpha", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("icon", ICON_NOT_SET),
+                    Dm.kv("render_source", ""),
+                    Dm.kv("flags", NONE))),
+                Dm.kv("flags", Dm.list(
+                    Dm.kv("MASK_INVERSE", MASK_INVERSE),
+                    Dm.kv("MASK_SWAP", MASK_SWAP))))),
+            Dm.kv("angular_blur", Dm.list(Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("size", 1))))),
+            Dm.kv("bloom", Dm.list(Dm.kv("defaults", Dm.list(
+                    Dm.kv("threshold", COLOR_BLACK),
+                    Dm.kv("size", 1),
+                    Dm.kv("offset", 0),
+                    Dm.kv("alpha", 255))))),
+            Dm.kv("color", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("color", matrix()),
+                    Dm.kv("space", FILTER_COLOR_RGB))),
+                Dm.kv("options", Dm.list(Dm.kv("space", Dm.list(
+                        Dm.kv("FILTER_COLOR_RGB", FILTER_COLOR_RGB),
+                        Dm.kv("FILTER_COLOR_HSV", FILTER_COLOR_HSV),
+                        Dm.kv("FILTER_COLOR_HSL", FILTER_COLOR_HSL),
+                        Dm.kv("FILTER_COLOR_HCY", FILTER_COLOR_HCY))))))),
+            Dm.kv("displace", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("size", null),
+                    Dm.kv("icon", ICON_NOT_SET),
+                    Dm.kv("render_source", ""),
+                    Dm.kv("flags", NONE))),
+                Dm.kv("flags", Dm.list(Dm.kv("FILTER_OVERLAY", FILTER_OVERLAY))))),
+            Dm.kv("drop_shadow", Dm.list(Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 1),
+                    Dm.kv("y", -1),
+                    Dm.kv("size", 1),
+                    Dm.kv("offset", 0),
+                    Dm.kv("color", COLOR_HALF_TRANSPARENT_BLACK))))),
+            Dm.kv("blur", Dm.list(Dm.kv("defaults", Dm.list(Dm.kv("size", 1))))),
+            Dm.kv("layer", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("icon", ICON_NOT_SET),
+                    Dm.kv("render_source", ""),
+                    Dm.kv("flags", FILTER_OVERLAY),
+                    Dm.kv("color", COLOR_WHITE),
+                    Dm.kv("transform", null),
+                    Dm.kv("blend_mode", BLEND_DEFAULT))),
+                Dm.kv("flags", Dm.list(Dm.kv("FILTER_OVERLAY", FILTER_OVERLAY))),
+                Dm.kv("options", Dm.list(Dm.kv("blend_mode", Dm.list(
+                        Dm.kv("BLEND_DEFAULT", BLEND_DEFAULT),
+                        Dm.kv("BLEND_OVERLAY", BLEND_OVERLAY),
+                        Dm.kv("BLEND_ADD", BLEND_ADD),
+                        Dm.kv("BLEND_SUBTRACT", BLEND_SUBTRACT),
+                        Dm.kv("BLEND_MULTIPLY", BLEND_MULTIPLY),
+                        Dm.kv("BLEND_INSET_OVERLAY", BLEND_INSET_OVERLAY))))))),
+            Dm.kv("motion_blur", Dm.list(Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0))))),
+            Dm.kv("outline", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("size", 0),
+                    Dm.kv("color", COLOR_BLACK),
+                    Dm.kv("flags", NONE))),
+                Dm.kv("flags", Dm.list(
+                    Dm.kv("OUTLINE_SHARP", OUTLINE_SHARP),
+                    Dm.kv("OUTLINE_SQUARE", OUTLINE_SQUARE))))),
+            Dm.kv("radial_blur", Dm.list(Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("size", 0.01))))),
+            Dm.kv("rays", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("size", 16),
+                    Dm.kv("color", COLOR_WHITE),
+                    Dm.kv("offset", 0),
+                    Dm.kv("density", 10),
+                    Dm.kv("threshold", 0.5),
+                    Dm.kv("factor", 0),
+                    Dm.kv("flags", Dm.bitor(FILTER_OVERLAY, FILTER_UNDERLAY)))),
+                Dm.kv("flags", Dm.list(
+                    Dm.kv("FILTER_OVERLAY", FILTER_OVERLAY),
+                    Dm.kv("FILTER_UNDERLAY", FILTER_UNDERLAY))))),
+            Dm.kv("ripple", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("size", 1),
+                    Dm.kv("repeat", 2),
+                    Dm.kv("radius", 0),
+                    Dm.kv("falloff", 1),
+                    Dm.kv("flags", NONE))),
+                Dm.kv("flags", Dm.list(Dm.kv("WAVE_BOUNDED", WAVE_BOUNDED))))),
+            Dm.kv("wave", Dm.list(
+                Dm.kv("defaults", Dm.list(
+                    Dm.kv("x", 0),
+                    Dm.kv("y", 0),
+                    Dm.kv("size", 1),
+                    Dm.kv("offset", 0),
+                    Dm.kv("flags", NONE))),
+                Dm.kv("flags", Dm.list(
+                    Dm.kv("WAVE_SIDEWAYS", WAVE_SIDEWAYS),
+                    Dm.kv("WAVE_BOUNDED", WAVE_BOUNDED))))));
+        Dm.append(ref gvars_datum_init_order, "master_filter_info");
+    }
+}
 
 public static partial class GlobalProcs
 {

@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps BR1 (D339, D341): the whole file, the outfits the domains force on avatars: the echolocator (its psyker head and brain wait
-// for the psykers, not-translated section 230) and the island brawl's armed beach bum. The var blocks are generated (D111).
+// Gaps BR1 (D339, D341): the whole file, the outfits the domains force on avatars: the echolocator (made a psyker: its head and brain,
+// religion/burdened/psyker.cs) and the island brawl's armed beach bum. The var blocks are generated (D111).
 
 // tg: code/modules/bitrunning/outfits.dm:3
 public partial class datum_outfit_echolocator : datum_outfit
@@ -19,7 +19,7 @@ public partial class datum_outfit_echolocator : datum_outfit
     public override async DmTask post_equip(mob_living_carbon_human user = null, float? visuals_only = null)
     {
         await base.post_equip(user, visuals_only);
-        Dm.Deferred("code/modules/bitrunning/outfits.dm:16", "user.psykerize(): the psyker head and brain (religion/burdened/psyker.dm, the echolocation and the psychic spells) wait for the psykers");
+        await user.psykerize();
     }
 }
 

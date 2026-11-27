@@ -13,8 +13,7 @@ namespace Anomaly.Core.Tg;
 // that moves into its radius (the living are muted, stopped and held in stasis, projectiles and throws hang in the air, machines and
 // structures only look frozen), drawn colour-inverted, while its immune caster is not; the timestopper's channelled kind lasts until
 // the caster moves. The wizard's time stop (/obj/effect/timestop/magic, held off by antimagic) comes with it; its spell is the
-// wizard's (D333). A simple animal's AI is not stopped (the simple animals are not ported); a basic creature's is. The var blocks are
-// generated (D111).
+// wizard's (D333). The var blocks are generated (D111).
 
 // tg: code/datums/proximity_monitor/fields/timestop.dm:2
 public partial class obj_effect_timestop : obj_effect
@@ -266,8 +265,13 @@ public partial class datum_proximity_monitor_advanced_timestop : datum_proximity
         GLOB.move_manager.stop_looping(victim); //stops them mid pathing even if they're stunimmune //This is really dumb
         if (isanimal(victim))
         {
-            // animal_victim.toggle_ai(AI_OFF) and, for a hostile one, LoseTarget(): the simple animals are not ported
-            Dm.Deferred("code/datums/proximity_monitor/fields/timestop.dm:205", "freeze_mob: a simple animal's toggle_ai and LoseTarget (the simple animals are not ported)");
+            mob_living_simple_animal animal_victim = victim as mob_living_simple_animal;
+            animal_victim.toggle_ai(AI_OFF);
+            if (ishostile(victim))
+            {
+                mob_living_simple_animal_hostile hostile_victim = victim as mob_living_simple_animal_hostile;
+                hostile_victim.LoseTarget();
+            }
         }
         else if (isbasicmob(victim))
         {
@@ -284,8 +288,8 @@ public partial class datum_proximity_monitor_advanced_timestop : datum_proximity
         Dm.remove(ref frozen_mobs, victim);
         if (isanimal(victim))
         {
-            // animal_victim.toggle_ai(initial(animal_victim.AIStatus)): the simple animals are not ported
-            Dm.Deferred("code/datums/proximity_monitor/fields/timestop.dm:218", "unfreeze_mob: a simple animal's toggle_ai (the simple animals are not ported)");
+            mob_living_simple_animal animal_victim = victim as mob_living_simple_animal;
+            animal_victim.toggle_ai(Dm.initial(animal_victim, (mob_living_simple_animal p) => p.AIStatus));
         }
         else if (isbasicmob(victim))
         {

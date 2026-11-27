@@ -18,7 +18,7 @@ public partial class obj_item_clothing_gloves_tackler : obj_item_clothing_gloves
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddElement(/datum/element/adjust_fishing_difficulty, fishing_modifier): fishing difficulty (section 105)
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), fishing_modifier)); //fishing tackle equipment (ba dum tsh)
         return dot;
     }
 

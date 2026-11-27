@@ -950,9 +950,9 @@ public partial class datum_map_template_ruin_lavaland_blood_drunk_miner_hunter :
     }
 }
 
-// tg: code/datums/ruins/lavaland.dm:171
-[DmPath("/datum/map_template/ruin/lavaland/blood_drunk_miner/random"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_ruin_lavaland_blood_drunk_miner_random : datum_map_template_ruin_lavaland_blood_drunk_miner
+// tg: code/datums/ruins/lavaland.dm:171 (the var block of a hand-written class)
+[DmPath("/datum/map_template/ruin/lavaland/blood_drunk_miner/random")]
+public partial class datum_map_template_ruin_lavaland_blood_drunk_miner_random
 {
     // tg: code/datums/ruins/lavaland.dm:171
     public datum_map_template_ruin_lavaland_blood_drunk_miner_random()
@@ -5203,9 +5203,9 @@ public partial class datum_map_template_ctf_turbine : datum_map_template_ctf
     }
 }
 
-// tg: code/modules/holodeck/holodeck_map_templates.dm:4
-[DmPath("/datum/map_template/holodeck"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_holodeck : datum_map_template
+// tg: code/modules/holodeck/holodeck_map_templates.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/map_template/holodeck")]
+public partial class datum_map_template_holodeck
 {
     public object template_id; // tg: code/modules/holodeck/holodeck_map_templates.dm:4
     public float restricted = 0; // tg: code/modules/holodeck/holodeck_map_templates.dm:6
@@ -5220,7 +5220,7 @@ public partial class datum_map_template_holodeck : datum_map_template
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:13
-[DmPath("/datum/map_template/holodeck/offline"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/offline"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_offline : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:13
@@ -5233,7 +5233,7 @@ public partial class datum_map_template_holodeck_offline : datum_map_template_ho
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:18
-[DmPath("/datum/map_template/holodeck/emptycourt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/emptycourt"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_emptycourt : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:18
@@ -5246,7 +5246,7 @@ public partial class datum_map_template_holodeck_emptycourt : datum_map_template
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:23
-[DmPath("/datum/map_template/holodeck/dodgeball"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/dodgeball"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_dodgeball : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:23
@@ -5259,7 +5259,7 @@ public partial class datum_map_template_holodeck_dodgeball : datum_map_template_
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:28
-[DmPath("/datum/map_template/holodeck/basketball"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/basketball"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_basketball : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:28
@@ -5272,7 +5272,7 @@ public partial class datum_map_template_holodeck_basketball : datum_map_template
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:33
-[DmPath("/datum/map_template/holodeck/thunderdome"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/thunderdome"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_thunderdome : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:33
@@ -5285,7 +5285,7 @@ public partial class datum_map_template_holodeck_thunderdome : datum_map_templat
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:38
-[DmPath("/datum/map_template/holodeck/beach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/beach"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_beach : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:38
@@ -5298,7 +5298,7 @@ public partial class datum_map_template_holodeck_beach : datum_map_template_holo
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:43
-[DmPath("/datum/map_template/holodeck/lounge"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/lounge"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_lounge : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:43
@@ -5311,7 +5311,7 @@ public partial class datum_map_template_holodeck_lounge : datum_map_template_hol
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:48
-[DmPath("/datum/map_template/holodeck/petpark"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/petpark"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_petpark : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:48
@@ -5324,7 +5324,7 @@ public partial class datum_map_template_holodeck_petpark : datum_map_template_ho
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:53
-[DmPath("/datum/map_template/holodeck/firingrange"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/firingrange"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_firingrange : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:53
@@ -5337,7 +5337,7 @@ public partial class datum_map_template_holodeck_firingrange : datum_map_templat
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:58
-[DmPath("/datum/map_template/holodeck/anime_school"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/anime_school"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_anime_school : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:58
@@ -5350,7 +5350,7 @@ public partial class datum_map_template_holodeck_anime_school : datum_map_templa
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:63
-[DmPath("/datum/map_template/holodeck/chapelcourt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/chapelcourt"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_chapelcourt : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:63
@@ -5363,7 +5363,7 @@ public partial class datum_map_template_holodeck_chapelcourt : datum_map_templat
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:68
-[DmPath("/datum/map_template/holodeck/spacechess"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/spacechess"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_spacechess : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:68
@@ -5376,7 +5376,7 @@ public partial class datum_map_template_holodeck_spacechess : datum_map_template
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:73
-[DmPath("/datum/map_template/holodeck/spacecheckers"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/spacecheckers"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_spacecheckers : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:73
@@ -5389,7 +5389,7 @@ public partial class datum_map_template_holodeck_spacecheckers : datum_map_templ
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:78
-[DmPath("/datum/map_template/holodeck/kobayashi"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/kobayashi"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_kobayashi : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:78
@@ -5402,7 +5402,7 @@ public partial class datum_map_template_holodeck_kobayashi : datum_map_template_
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:83
-[DmPath("/datum/map_template/holodeck/winterwonderland"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/winterwonderland"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_winterwonderland : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:83
@@ -5415,7 +5415,7 @@ public partial class datum_map_template_holodeck_winterwonderland : datum_map_te
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:88
-[DmPath("/datum/map_template/holodeck/photobooth"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/photobooth"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_photobooth : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:88
@@ -5428,7 +5428,7 @@ public partial class datum_map_template_holodeck_photobooth : datum_map_template
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:93
-[DmPath("/datum/map_template/holodeck/skatepark"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/skatepark"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_skatepark : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:93
@@ -5441,7 +5441,7 @@ public partial class datum_map_template_holodeck_skatepark : datum_map_template_
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:98
-[DmPath("/datum/map_template/holodeck/microwave"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/microwave"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_microwave : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:98
@@ -5454,7 +5454,7 @@ public partial class datum_map_template_holodeck_microwave : datum_map_template_
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:103
-[DmPath("/datum/map_template/holodeck/baseball"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/baseball"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_baseball : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:103
@@ -5467,7 +5467,7 @@ public partial class datum_map_template_holodeck_baseball : datum_map_template_h
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:108
-[DmPath("/datum/map_template/holodeck/card_battle"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/card_battle"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_card_battle : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:108
@@ -5480,7 +5480,7 @@ public partial class datum_map_template_holodeck_card_battle : datum_map_templat
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:113
-[DmPath("/datum/map_template/holodeck/fitness"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/fitness"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_fitness : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:113
@@ -5493,7 +5493,7 @@ public partial class datum_map_template_holodeck_fitness : datum_map_template_ho
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:120
-[DmPath("/datum/map_template/holodeck/medicalsim"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/medicalsim"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_medicalsim : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:120
@@ -5507,7 +5507,7 @@ public partial class datum_map_template_holodeck_medicalsim : datum_map_template
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:126
-[DmPath("/datum/map_template/holodeck/thunderdome1218"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/thunderdome1218"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_thunderdome1218 : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:126
@@ -5521,7 +5521,7 @@ public partial class datum_map_template_holodeck_thunderdome1218 : datum_map_tem
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:132
-[DmPath("/datum/map_template/holodeck/burntest"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/burntest"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_burntest : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:132
@@ -5535,7 +5535,7 @@ public partial class datum_map_template_holodeck_burntest : datum_map_template_h
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:138
-[DmPath("/datum/map_template/holodeck/wildlifesim"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/wildlifesim"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_wildlifesim : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:138
@@ -5549,7 +5549,7 @@ public partial class datum_map_template_holodeck_wildlifesim : datum_map_templat
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:144
-[DmPath("/datum/map_template/holodeck/holdoutbunker"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/holdoutbunker"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_holdoutbunker : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:144
@@ -5563,7 +5563,7 @@ public partial class datum_map_template_holodeck_holdoutbunker : datum_map_templ
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:150
-[DmPath("/datum/map_template/holodeck/anthophillia"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/anthophillia"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_anthophillia : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:150
@@ -5577,7 +5577,7 @@ public partial class datum_map_template_holodeck_anthophillia : datum_map_templa
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:156
-[DmPath("/datum/map_template/holodeck/refuelingstation"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/refuelingstation"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_refuelingstation : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:156
@@ -5591,7 +5591,7 @@ public partial class datum_map_template_holodeck_refuelingstation : datum_map_te
 }
 
 // tg: code/modules/holodeck/holodeck_map_templates.dm:162
-[DmPath("/datum/map_template/holodeck/prison"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/holodeck/prison"), DmGeneratedOnly]
 public partial class datum_map_template_holodeck_prison : datum_map_template_holodeck
 {
     // tg: code/modules/holodeck/holodeck_map_templates.dm:162
@@ -5781,9 +5781,9 @@ public partial class datum_map_template_map_module
     }
 }
 
-// tg: code/modules/mining/shelters.dm:3
-[DmPath("/datum/map_template/shelter"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter : datum_map_template
+// tg: code/modules/mining/shelters.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter")]
+public partial class datum_map_template_shelter
 {
     public object shelter_id; // tg: code/modules/mining/shelters.dm:7
     public object description; // tg: code/modules/mining/shelters.dm:9
@@ -5807,9 +5807,9 @@ public partial class datum_map_template_shelter : datum_map_template
     }
 }
 
-// tg: code/modules/mining/shelters.dm:49
-[DmPath("/datum/map_template/shelter/alpha"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_alpha : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:49 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/alpha")]
+public partial class datum_map_template_shelter_alpha
 {
     // tg: code/modules/mining/shelters.dm:49
     public datum_map_template_shelter_alpha()
@@ -5821,9 +5821,9 @@ public partial class datum_map_template_shelter_alpha : datum_map_template_shelt
     }
 }
 
-// tg: code/modules/mining/shelters.dm:63
-[DmPath("/datum/map_template/shelter/beta"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_beta : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:63 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/beta")]
+public partial class datum_map_template_shelter_beta
 {
     // tg: code/modules/mining/shelters.dm:63
     public datum_map_template_shelter_beta()
@@ -5835,9 +5835,9 @@ public partial class datum_map_template_shelter_beta : datum_map_template_shelte
     }
 }
 
-// tg: code/modules/mining/shelters.dm:78
-[DmPath("/datum/map_template/shelter/charlie"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_charlie : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:78 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/charlie")]
+public partial class datum_map_template_shelter_charlie
 {
     // tg: code/modules/mining/shelters.dm:78
     public datum_map_template_shelter_charlie()
@@ -5849,9 +5849,9 @@ public partial class datum_map_template_shelter_charlie : datum_map_template_she
     }
 }
 
-// tg: code/modules/mining/shelters.dm:93
-[DmPath("/datum/map_template/shelter/toilet"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_toilet : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:93 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/toilet")]
+public partial class datum_map_template_shelter_toilet
 {
     // tg: code/modules/mining/shelters.dm:93
     public datum_map_template_shelter_toilet()
@@ -5863,9 +5863,9 @@ public partial class datum_map_template_shelter_toilet : datum_map_template_shel
     }
 }
 
-// tg: code/modules/mining/shelters.dm:107
-[DmPath("/datum/map_template/shelter/fishing"), DmGeneratedOnly, DmInert]
-public partial class datum_map_template_shelter_fishing : datum_map_template_shelter
+// tg: code/modules/mining/shelters.dm:107 (the var block of a hand-written class)
+[DmPath("/datum/map_template/shelter/fishing")]
+public partial class datum_map_template_shelter_fishing
 {
     public string radial_icon = "river"; // tg: code/modules/mining/shelters.dm:113
     public float safe = 1; // tg: code/modules/mining/shelters.dm:118
@@ -5882,7 +5882,7 @@ public partial class datum_map_template_shelter_fishing : datum_map_template_she
 }
 
 // tg: code/modules/mining/shelters.dm:133
-[DmPath("/datum/map_template/shelter/fishing/beach"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/beach"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_beach : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:133
@@ -5897,7 +5897,7 @@ public partial class datum_map_template_shelter_fishing_beach : datum_map_templa
 }
 
 // tg: code/modules/mining/shelters.dm:140
-[DmPath("/datum/map_template/shelter/fishing/tizira"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/tizira"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_tizira : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:140
@@ -5912,7 +5912,7 @@ public partial class datum_map_template_shelter_fishing_tizira : datum_map_templ
 }
 
 // tg: code/modules/mining/shelters.dm:147
-[DmPath("/datum/map_template/shelter/fishing/hot_spring"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/hot_spring"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_hot_spring : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:147
@@ -5927,7 +5927,7 @@ public partial class datum_map_template_shelter_fishing_hot_spring : datum_map_t
 }
 
 // tg: code/modules/mining/shelters.dm:154
-[DmPath("/datum/map_template/shelter/fishing/ice"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/ice"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_ice : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:154
@@ -5942,7 +5942,7 @@ public partial class datum_map_template_shelter_fishing_ice : datum_map_template
 }
 
 // tg: code/modules/mining/shelters.dm:161
-[DmPath("/datum/map_template/shelter/fishing/lava"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/lava"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_lava : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:161
@@ -5958,7 +5958,7 @@ public partial class datum_map_template_shelter_fishing_lava : datum_map_templat
 }
 
 // tg: code/modules/mining/shelters.dm:169
-[DmPath("/datum/map_template/shelter/fishing/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/plasma"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_plasma : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:169
@@ -5974,7 +5974,7 @@ public partial class datum_map_template_shelter_fishing_plasma : datum_map_templ
 }
 
 // tg: code/modules/mining/shelters.dm:177
-[DmPath("/datum/map_template/shelter/fishing/depths"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/map_template/shelter/fishing/depths"), DmGeneratedOnly]
 public partial class datum_map_template_shelter_fishing_depths : datum_map_template_shelter_fishing
 {
     // tg: code/modules/mining/shelters.dm:177

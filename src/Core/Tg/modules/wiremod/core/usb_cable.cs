@@ -9,9 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps CI1 (D339, D341): the whole file, the USB cable: it takes a shell's circuit and then a machine's USB port (the machines'
-// USB ports and their components are CI3's: a cable on a machine is refused by the machine's own code until then). The var block
-// is generated (D111).
+// Gaps CI1 (D339, D341): the whole file, the USB cable: it takes a shell's circuit and then a machine's USB port
+// (datums/components/usb_port.cs). The var block is generated (D111).
 
 /// A cable that can connect integrated circuits to anything with a USB port, such as computers and machines.
 // tg: code/modules/wiremod/core/usb_cable.dm:2

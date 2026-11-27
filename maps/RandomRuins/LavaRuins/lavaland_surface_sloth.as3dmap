@@ -1,0 +1,231 @@
+anomaly-map 1
+source _maps/RandomRuins/LavaRuins/lavaland_surface_sloth.dmm tg 1d99bd7f
+size 50 10 1
+chunk 32
+default /turf/closed/indestructible/riveted | /area/ruin/unpowered
+
+[chunk 1 1 1]
+2,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+3,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+4,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+5,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+6,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+7,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+8,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+9,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+10,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+11,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+12,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+13,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+14,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+15,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+16,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+17,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+18,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+19,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+20,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+21,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+22,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+23,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+24,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+25,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+26,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+27,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+28,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+29,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+30,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+31,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+32,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+2,8: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+2,7: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+4,7: /obj/item/paper/fluff/stations/lavaland/sloth/note | /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+5,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+6,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+7,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+9,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+10,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+11,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+13,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+14,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+15,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+17,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+18,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+19,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+21,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+22,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+23,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+25,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+26,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+27,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+29,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+30,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+31,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+2,6: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+4,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+5,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+7,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+9,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+11,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+13,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+15,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+17,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+19,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+21,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+23,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+25,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+27,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+29,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+31,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+2,5: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+4,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+5,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+7,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+9,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+11,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+13,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+15,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+17,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+19,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+21,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+23,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+25,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+27,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+29,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+31,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+2,4: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+4,4: /obj/structure/table/wood | /obj/item/food/grown/citrus/orange | /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+5,4: /obj/structure/bed | /obj/item/bedsheet/brown | /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+7,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+8,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+9,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+11,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+12,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+13,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+15,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+16,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+17,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+19,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+20,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+21,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+23,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+24,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+25,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+27,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+28,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+29,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+31,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+32,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+2,3: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+2,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+3,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+4,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+5,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+6,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+7,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+8,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+9,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+10,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+11,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+12,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+13,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+14,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+15,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+16,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+17,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+18,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+19,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+20,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+21,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+22,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+23,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+24,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+25,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+26,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+27,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+28,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+29,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+30,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+31,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+32,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+
+[chunk 33 1 1]
+33,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+34,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+35,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+36,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+37,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+38,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+39,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+40,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+41,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+42,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+43,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+44,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+45,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+46,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+47,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+48,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+49,9: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+33,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+34,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+35,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+37,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+38,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+39,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+41,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+42,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+43,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+45,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+46,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+47,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+49,7: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+33,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+35,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+37,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+39,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+41,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+43,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+45,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+47,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+49,6: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+50,6: /obj/machinery/door/airlock/wood | /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+33,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+35,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+37,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+39,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+41,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+43,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+45,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+47,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+49,5: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+50,5: /obj/machinery/door/airlock/wood | /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+33,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+35,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+36,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+37,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+39,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+40,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+41,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+43,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+44,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+45,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+47,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+48,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+49,4: /turf/open/floor/sepia{slowdown = 10} | /area/ruin/unpowered
+33,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+34,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+35,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+36,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+37,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+38,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+39,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+40,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+41,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+42,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+43,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+44,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+45,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+46,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+47,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+48,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered
+49,2: /turf/open/lava/smooth/lava_land_surface | /area/ruin/unpowered

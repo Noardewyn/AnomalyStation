@@ -49,9 +49,9 @@ public partial class obj_machinery_atmospherics
     }
 }
 
-// tg: code/modules/atmospherics/machinery/other/miner.dm:9
-[DmPath("/obj/machinery/atmospherics/miner"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_atmospherics_miner : obj_machinery_atmospherics
+// tg: code/modules/atmospherics/machinery/other/miner.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/machinery/atmospherics/miner")]
+public partial class obj_machinery_atmospherics_miner
 {
     public Type spawn_id; // tg: code/modules/atmospherics/machinery/other/miner.dm:18
     public float spawn_temp = 293.15f; // tg: code/modules/atmospherics/machinery/other/miner.dm:19
@@ -83,7 +83,7 @@ public partial class obj_machinery_atmospherics_miner : obj_machinery_atmospheri
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:149
-[DmPath("/obj/machinery/atmospherics/miner/n2o"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/n2o"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_n2o : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:149
@@ -96,7 +96,7 @@ public partial class obj_machinery_atmospherics_miner_n2o : obj_machinery_atmosp
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:154
-[DmPath("/obj/machinery/atmospherics/miner/nitrogen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/nitrogen"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_nitrogen : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:154
@@ -109,7 +109,7 @@ public partial class obj_machinery_atmospherics_miner_nitrogen : obj_machinery_a
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:159
-[DmPath("/obj/machinery/atmospherics/miner/oxygen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/oxygen"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_oxygen : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:159
@@ -122,7 +122,7 @@ public partial class obj_machinery_atmospherics_miner_oxygen : obj_machinery_atm
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:164
-[DmPath("/obj/machinery/atmospherics/miner/plasma"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/plasma"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_plasma : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:164
@@ -135,7 +135,7 @@ public partial class obj_machinery_atmospherics_miner_plasma : obj_machinery_atm
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:169
-[DmPath("/obj/machinery/atmospherics/miner/carbon_dioxide"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/carbon_dioxide"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_carbon_dioxide : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:169
@@ -148,7 +148,7 @@ public partial class obj_machinery_atmospherics_miner_carbon_dioxide : obj_machi
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:174
-[DmPath("/obj/machinery/atmospherics/miner/bz"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/bz"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_bz : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:174
@@ -161,7 +161,7 @@ public partial class obj_machinery_atmospherics_miner_bz : obj_machinery_atmosph
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:179
-[DmPath("/obj/machinery/atmospherics/miner/water_vapor"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/water_vapor"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_water_vapor : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:179
@@ -174,7 +174,7 @@ public partial class obj_machinery_atmospherics_miner_water_vapor : obj_machiner
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:184
-[DmPath("/obj/machinery/atmospherics/miner/freon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/freon"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_freon : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:184
@@ -187,7 +187,7 @@ public partial class obj_machinery_atmospherics_miner_freon : obj_machinery_atmo
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:189
-[DmPath("/obj/machinery/atmospherics/miner/halon"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/halon"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_halon : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:189
@@ -200,7 +200,7 @@ public partial class obj_machinery_atmospherics_miner_halon : obj_machinery_atmo
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:194
-[DmPath("/obj/machinery/atmospherics/miner/healium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/healium"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_healium : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:194
@@ -213,7 +213,7 @@ public partial class obj_machinery_atmospherics_miner_healium : obj_machinery_at
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:199
-[DmPath("/obj/machinery/atmospherics/miner/hydrogen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/hydrogen"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_hydrogen : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:199
@@ -226,7 +226,7 @@ public partial class obj_machinery_atmospherics_miner_hydrogen : obj_machinery_a
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:204
-[DmPath("/obj/machinery/atmospherics/miner/hypernoblium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/hypernoblium"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_hypernoblium : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:204
@@ -239,7 +239,7 @@ public partial class obj_machinery_atmospherics_miner_hypernoblium : obj_machine
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:209
-[DmPath("/obj/machinery/atmospherics/miner/miasma"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/miasma"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_miasma : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:209
@@ -252,7 +252,7 @@ public partial class obj_machinery_atmospherics_miner_miasma : obj_machinery_atm
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:214
-[DmPath("/obj/machinery/atmospherics/miner/nitrium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/nitrium"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_nitrium : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:214
@@ -265,7 +265,7 @@ public partial class obj_machinery_atmospherics_miner_nitrium : obj_machinery_at
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:219
-[DmPath("/obj/machinery/atmospherics/miner/pluoxium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/pluoxium"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_pluoxium : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:219
@@ -278,7 +278,7 @@ public partial class obj_machinery_atmospherics_miner_pluoxium : obj_machinery_a
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:224
-[DmPath("/obj/machinery/atmospherics/miner/proto_nitrate"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/proto_nitrate"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_proto_nitrate : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:224
@@ -291,7 +291,7 @@ public partial class obj_machinery_atmospherics_miner_proto_nitrate : obj_machin
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:229
-[DmPath("/obj/machinery/atmospherics/miner/tritium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/tritium"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_tritium : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:229
@@ -304,7 +304,7 @@ public partial class obj_machinery_atmospherics_miner_tritium : obj_machinery_at
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:234
-[DmPath("/obj/machinery/atmospherics/miner/zauker"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/zauker"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_zauker : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:234
@@ -317,7 +317,7 @@ public partial class obj_machinery_atmospherics_miner_zauker : obj_machinery_atm
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:239
-[DmPath("/obj/machinery/atmospherics/miner/helium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/helium"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_helium : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:239
@@ -330,7 +330,7 @@ public partial class obj_machinery_atmospherics_miner_helium : obj_machinery_atm
 }
 
 // tg: code/modules/atmospherics/machinery/other/miner.dm:244
-[DmPath("/obj/machinery/atmospherics/miner/antinoblium"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/machinery/atmospherics/miner/antinoblium"), DmGeneratedOnly]
 public partial class obj_machinery_atmospherics_miner_antinoblium : obj_machinery_atmospherics_miner
 {
     // tg: code/modules/atmospherics/machinery/other/miner.dm:244

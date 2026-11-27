@@ -10,8 +10,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // M7 slice 4 (the engine's cooling loop): the whole file, the freezer and the heater (their heat transfer, the power use through
-// the APC, the tool acts, the construction from the board and the parts, the picture, the window). The circuit USB port, the
-// investigate logs and the emissive glow stay deferred leaves (circuits; admin tooling, M10; DEVIATION(DV12)), each with a row in
+// the APC, the tool acts, the construction from the board and the parts, the picture, the window). Its USB port takes the USB
+// circuit component (wiremod/components/usb/thermomachine.dm). The investigate logs and the emissive glow stay deferred
+// leaves (admin tooling, M10; DEVIATION(DV12)), each with a row in
 // docs/ai/specs/not-translated.md. The var block is generated.
 
 // tg: code/modules/atmospherics/machinery/components/unary_devices/thermomachine.dm:1  #define THERMOMACHINE_POWER_CONVERSION 0.01 (file-local, #undef at :396)
@@ -30,8 +31,7 @@ public partial class obj_machinery_atmospherics_components_unary_thermomachine :
         update_appearance(UPDATE_ICON);
         if (Dm.truthy(interactive))
         {
-            // AddComponent(/datum/component/usb_port, typecacheof(list(/obj/item/circuit_component/thermomachine), only_root_path = TRUE)): circuits
-            Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/thermomachine.dm:47", "Initialize: AddComponent(/datum/component/usb_port): the circuit USB port (circuits)");
+            Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_thermomachine)), only_root_path: TRUE)));
         }
         register_context();
         return dot;

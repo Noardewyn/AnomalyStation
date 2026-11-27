@@ -6,14 +6,14 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// DEVIATION(DV603): the belt hotbar (ui-overhaul.md section 10, package 3). Not in tg: a human's ten hotbar cells,
+// DEVIATION(DV689): the belt hotbar (ui-overhaul.md section 10, package 3). Not in tg: a human's ten hotbar cells,
 // 1 to 7 the worn belt's contents, 8 and 9 the left and right pocket, 10 (the key 0) the ID slot. A press of a cell takes its item into the
 // active hand, puts it back, swaps it with an item taken from another cell, or stores the held item in an empty cell, every move by tg's own
 // procs as tg's quick-equip keys make them (human/inventory.dm smart_equip_targeted: the belt's storage datum's attempt_insert and the stored
 // item's on_found and attack_hand; the slot's equip_to_slot_if_possible), and a worn item into a hand as tg's drag of it onto the hand does
 // (inventory.dm putItemFromInventoryInHandIfPossible), so tg's checks, sounds, delays and messages apply. Which belt item is in which cell is the
 // port's own state on the mob (dm_hotbar), brought up to date in the command phase and before every press, and read by the replicator for the
-// client's cells (protocol version 98, Hotbar).
+// client's cells (protocol version 99, Hotbar).
 
 /// <summary>What a hotbar cell shows (ui-overhaul.md section 10).</summary>
 public enum HotbarState : byte
@@ -28,7 +28,7 @@ public enum HotbarState : byte
     Out = 2,
 }
 
-/// <summary>A human's ten hotbar cells and which item is in each (DV603).</summary>
+/// <summary>A human's ten hotbar cells and which item is in each (DV689).</summary>
 public sealed class BeltHotbar
 {
     /// <summary>The cells: 1 to 7 the belt, 8 and 9 the pockets, 10 the ID slot.</summary>
@@ -157,7 +157,7 @@ public sealed class BeltHotbar
     }
 
     /// <summary>
-    /// A press of cell <paramref name="cell"/> from <paramref name="player"/>'s client (protocol version 98's HotbarPress): only a connected client's
+    /// A press of cell <paramref name="cell"/> from <paramref name="player"/>'s client (protocol version 99's HotbarPress): only a connected client's
     /// own human mob, a cell of 1 to 10; anything else does nothing. Runs detached with usr the mob, as BYOND runs a verb.
     /// </summary>
     public static void Press(client player, int cell)
@@ -353,6 +353,6 @@ public sealed class BeltHotbar
 
 public partial class mob_living_carbon_human
 {
-    /// <summary>DV603: the belt hotbar's cells (<see cref="BeltHotbar"/>), made at the mob's first command phase or press.</summary>
+    /// <summary>DV689: the belt hotbar's cells (<see cref="BeltHotbar"/>), made at the mob's first command phase or press.</summary>
     public BeltHotbar dm_hotbar;
 }

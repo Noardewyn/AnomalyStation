@@ -66,7 +66,6 @@
 # I1a: the decal base and the cleanable decals (effects/decals/decal.dm, cleanable.dm)
 /obj/effect/decal	blob_act	M10+	deferred	a blob covering the decal deletes it (the blob, M10+)
 /obj/effect/decal/cleanable	item_interaction	M8	deferred	scooping the decal's reagents into a cup (hands M4a, reagents M8)
-/obj/effect/decal/cleanable	can_bloodcrawl_in	M10+	not_translated	the slaughter demon's bloodcrawl check (blood M8, antagonists M10+)
 /obj/effect/decal/cleanable	attackby	M8	deferred	a hit with an item on a mess (cleaning, with the chemistry of mops and sprays)
 
 ## R4 (M3): the station's gravity generator (the owner's first walk on the real server)
@@ -79,18 +78,11 @@
 # The atmospherics device base, the unary devices, the air vents and the air scrubbers are live; the procs they leave out:
 /obj/machinery/atmospherics/components	get_save_vars	M10+	deferred	admin variable editing and map saving
 /obj/machinery/atmospherics/components/unary/outlet_injector	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
-/obj/machinery/atmospherics/components/unary/outlet_injector	ui_interact	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/unary/outlet_injector	ui_data	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/unary/outlet_injector	ui_act	M10+	deferred	tgui windows
 /obj/machinery/atmospherics/components/trinary/filter	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/atmospherics/components/trinary/mixer	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/atmospherics/components/binary/pump	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/atmospherics/components/binary/volume_pump	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
-/obj/machinery/atmospherics/components/binary/volume_pump	multitool_act	M10+	deferred	the volume pump's overclock (atmospherics, after the core version)
 /obj/machinery/atmospherics/components/binary/passive_gate	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
-/obj/machinery/atmospherics/components/binary/passive_gate	ui_interact	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/binary/passive_gate	ui_data	M10+	deferred	tgui windows
-/obj/machinery/atmospherics/components/binary/passive_gate	ui_act	M10+	deferred	tgui windows
 
 ## M4b slice 2: firelocks and fire alarms
 # The firelocks and the fire alarms are live; the procs they leave out:
@@ -140,13 +132,11 @@
 # M4a P4b: the buttons, the assemblies and the door controllers (construction M5, tgui M9, the AI and shuttles later).
 /obj/machinery/button	get_save_vars	M10+	deferred	admin variable editing and map saving
 /obj/machinery/button	ninjadrain_act	M10+	deferred	the space ninja's drain (antagonists, after the core version)
-/obj/item/assembly/control/massdriver	activate	M10+	not_translated	the mass driver controller (after the core version)
 /obj/item/assembly/control/flasher	activate	M10+	not_translated	the flasher controller (after the core version)
 
 ## P5 (M4a): ID cards, trims, SSid_access, jobs, outfit
 # M4a P5: rows for the ID card types (holopay and money M10, chameleon and prisoner after the core version).
 
-## I1 (M4a): integration
 
 ## M4c slice 1: tanks and internals
 # The gas tanks, the internals tanks, the breath masks and the tank dispenser are live; the procs they leave out:
@@ -175,7 +165,6 @@
 # they leave out:
 /obj/item/tank/jetpack	suicide_act	M10+	deferred	the suicide verb (M10+)
 
-## M5 slice 2: materials and stacks
 
 ## M5 slice 5: windows, grilles, the fire axe
 # The window and grille construction rows of P4 (19, labelled M4a) are translated and removed; the fire axe and its cabinet turn live.
@@ -184,7 +173,6 @@
 # The girder, the false wall, the lattice and the r-wall's subtypes made live by M5 slice 4 (game/objects/structures/girders.cs,
 # false_walls.cs, lattice.cs): the procs left for their milestones.
 
-## M5 slice 6: airlocks, their assemblies and electronics
 
 ## M5 slice 7: furniture, closets, pipes, machine frames
 # The table frame, the rack and its parts, the chair (with the stool, the bar stool, the office chair and the comfy chairs)
@@ -235,7 +223,6 @@
 ## Flashlight (M4a, 2026-10-17: the owner asked for the flashlight)
 # Empty since gaps train 7: gaps DV2 translated the flashlight's on_saboteur, the train the hard hat's.
 
-## Hidden floor equipment (2026-10-18, the owner: tg's under-floor beacons, terminals and safe showed on the floors)
 
 ## M7 slice 2 (the power storage and the placeholder source)
 /obj/machinery/power/smes	ninjadrain_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
@@ -255,7 +242,6 @@
 
 ## M7 slice T1 (the electrical tool kit)
 /obj/item/storage/belt	suicide_act	M10+	deferred	the suicide verb (M10+)
-## M7 zaps slice (2026-10-20, D163): the emitter turns live (its shot waits for the projectile base: fire_beam is Dm.NotTranslated)
 
 ## M7 projectiles slice (2026-10-20, D165): the projectile base, the emitter beam and the tracer, muzzle and impact effects turn live
 /obj/projectile	vv_edit_var	M10+	deferred	the admins' variable editor turning a projectile (admin tooling, M10+)
@@ -264,9 +250,6 @@
 
 ## M7 supermatter slice (2026-10-20, D163): the crystal, its component, the strategies, the countdown and the warp effect turn live
 /obj/effect/anomaly	vv_edit_var	M10+	deferred	the admins' variable editor making an anomaly immortal stops its countdown (admin tooling, M10+)
-## M7 slice T3 (the engineering extras, D164)
-## M7 lighting slice L1 (D168)
-## M7 slice D172 (the rapid pipe dispenser)
 ## M7 slice D172 (the pipes the rapid pipe dispenser dispenses: the pressure gate, the temperature gate, the temperature pump)
 /obj/machinery/atmospherics/components/binary/pressure_valve	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 /obj/machinery/atmospherics/components/binary/temperature_gate	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
@@ -295,11 +278,8 @@
 /atom/movable/screen/fullscreen/cursor_catcher/scope	Click	M10+	deferred	the 2D cursor tracking of the scope's tracker (DV98)
 /atom/movable/screen/fullscreen/cursor_catcher/scope	calculate_params	M10+	deferred	the cursor's pixel to a turf, scaled by the range modifier (DV98)
 
-## M8 slice D (healing items, the health analyzer, first aid)
 
-## M8 slice E (the defibrillator, its mount, revival)
 
-## F (M8): data HUDs, implants, skillchips
 ## M8 slice C (reagent containers, syringes, pills, patches, medipens, sprays, medkits, blood packs, the IV drip, the syringe gun)
 /obj/item/reagent_containers	apply_fantasy_bonuses	M10+	deferred	fantasy affixes (M10+)
 /obj/item/reagent_containers	remove_fantasy_bonuses	M10+	deferred	fantasy affixes (M10+)
@@ -355,27 +335,20 @@
 /obj/machinery/computer/communications	ninjadrain_act	M10+	deferred	the space ninja's drain of the console (the ninja is not ported, D333)
 /obj/machinery/computer/communications	ninjadrain_charge	M10+	deferred	the space ninja's drain of the console (the ninja is not ported, D333)
 
-## M10 slice G2 (D274): the heads of staff
 ## M10 slice I (D275): the admin rank's admin-tool procs (the admins' variable editor and the permissions panel, not ported)
 /datum/admin_rank	vv_edit_var	M10+	deferred	the admins' variable editor (admin tools, not ported)
 /datum/admin_rank	allow_mark_datum	M10+	deferred	the admins' variable editor's datum marking (admin tools, not ported)
 /datum/admin_rank	can_vv_mark	M10+	deferred	the admins' variable editor's datum marking (admin tools, not ported)
 /datum/admin_rank	pretty_print_source	M10+	deferred	the permissions panel's rank source (admin tools, not ported)
 
-## E2 (D287): the supermatter monitor, the modular computer consoles, the incident displays
 
 ## Engineering E5 (D287): the atmospherics control consoles and air sensors
 /obj/item/air_sensor	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
 
-## Engineering E7 (D287): singularity containment, the field generators and their fields
 
-## Engineering E8 (D287): the incinerators' airlock consoles and sensors, igniters, sparkers, access buttons
 
-## E6 (D287): the station alert and atmospheric alert consoles, Canary, the power flow control console
 
-## Engineering E9 (D287): space heaters and cell chargers
 
-## Engineering E11 (D287): the gas turbine, the thermoelectric generator, the RTG
 
 ## Engineering E10 (D287): the shield generators
 /obj/machinery/atmos_shield_gen	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
@@ -387,7 +360,6 @@
 ## Engineering E13 (D287): the RCD family (the RCD, the RLD, the RTD, the RDD and its decorations)
 # (its four examine rows are translated: E15, D291)
 
-## Engineering E12b (D287): the hypertorus fusion reactor
 
 ## Engineering E14 (D287): the station blueprints, the airlock and decal painters
 /obj/item/airlock_painter	suicide_act	M10+	deferred	the suicide verb (M10+)
@@ -415,12 +387,10 @@
 /turf/open/misc	blob_act	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall/mineral/plastitanium	rust_turf	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 /turf/closed/wall/mineral/plastitanium	hulk_recoil	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
-/obj/item/pickaxe	suicide_act	M10+	deferred	the suicide verb (M10+)
 
 ## Gaps G4 (D291): the memories
 /datum/memory	serialize_list	M10+	deferred	the datum serialization (the persistence of engravings and the logs; /datum/serialize_list is not translated, datum.cs)
 
-## Gaps G3 (D291): Meta's mapping helpers and spawners (the request consoles live for their helpers)
 
 ## Gaps S1 (D291): eating, drinking and hunger
 # The food subtypes' own kitchen links (slicing, the oven, the grill, the microwave, the drying rack) and hydroponics' (section
@@ -487,7 +457,6 @@
 /mob/living/basic/bot/medbot	ninjadrain_act	M10+	deferred	the ninja's draining gloves (antagonists)
 /obj/item/mop	apply_fantasy_bonuses	M10+	deferred	the enchanting's fantasy component (not ported)
 /obj/item/mop	remove_fantasy_bonuses	M10+	deferred	the enchanting's fantasy component (not ported)
-/datum/component/ranged_attacks	disable_attack	M10+	deferred	the watcher trophy's delay (the crusher, lavaland)
 
 ## Gaps C4 (D298): vermin, space fauna and farm animals
 /obj/item/knife/bloodletter	afterattack	the cult	deferred	the bloodletter's saw_bleed stacks (the status effect stays inert)
@@ -504,8 +473,8 @@
 /obj/effect/dummy/phased_mob	can_blob_attack	M10+	deferred	the blob (not ported)
 
 ## Gaps J2 (D298): the jobs that could not be taken, their gear, the mime's spells, the bible and null rod, the seed's stats
-/datum/job/bartender	award_service	M10+	deferred	the service awards (the medals and SSrestaurant's venues, after M10)
-/datum/job/cook	award_service	M10+	deferred	the service awards (the medals and SSrestaurant's venues, after M10)
+/datum/job/bartender	award_service	M10+	deferred	the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1)
+/datum/job/cook	award_service	M10+	deferred	the service awards and the tourist scores (the achievements, D332; SSrestaurant's venues are live since gaps KT1)
 /obj/item/book	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
 
 ## Gaps J4 (D298): security and detective gear
@@ -525,7 +494,6 @@
 /obj/item/book/manual/wiki	display_content	M10+	deferred	the wiki page in a browser window; the client has no web view (no wikiurl is configured either)
 
 ## Gaps J6 (D298): the mining and cargo gear
-/obj/item/shovel	suicide_act	M10+	deferred	the suicide verb (M10+)
 /obj/item/universal_scanner	add_context	M10+	deferred	screentips (D264)
 /obj/structure/closet/crate/grave	add_context	M10+	deferred	screentips (D264)
 
@@ -577,7 +545,6 @@
 /obj/structure/noticeboard	on_object_saved	M10+	deferred	the admin map export (the pinned papers written as map text)
 /obj/machinery/photocopier	get_save_vars	M10+	deferred	the admin map export (the paper stack saved with the map)
 
-## Syndicate A1 (D316): the antagonist core
 
 ## Syndicate G2 (D316): the traitor's weapons and explosives; not-translated.md section 135.
 /obj/item/melee/energy/sword/surplus	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
@@ -590,7 +557,6 @@
 /obj/effect/weakpoint	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
 /obj/item/jammer	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
 
-## Syndicate A2 (D316): the traitor and the uplink
 
 ## Syndicate A3 (D316): Dynamic, the round's mode
 /datum/dynamic_ruleset	vv_edit_var	M10+	deferred	admin variable editing (the variable editor is not ported, D275)
@@ -666,22 +632,10 @@
 ## Syndicate G4d (D316): the sentry gun, the portable turrets; not-translated.md section 137.
 /obj/machinery/porta_turret_cover	attack_hulk	M10+	deferred	antagonist, engine, mech and other parity-tier interactions
 
-## Syndicate N1c (D316): the advanced camera console and the navigation computer; not-translated.md section 148.
-/obj/machinery/computer/camera_advanced	register_usb_port	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	on_port_register_object	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	add_circuit_action	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	remove_circuit_action	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	on_port_unregister_object	M10+	deferred	the circuits' USB port (wiremod, not ported)
-/obj/machinery/computer/camera_advanced	unregister_usb_port	M10+	deferred	the circuits' USB port (wiremod, not ported)
 
-## Syndicate N2a (D316): the nukie arsenal's guns; not-translated.md section 149.
 
-## Syndicate N2c (D316): the reinforcements and the assault pod; not-translated.md section 149.
 
-## Syndicate N3 (D316): the clown operatives; not-translated.md section 150.
-/datum/reagent/lube	used_on_fish	M10+	deferred	fishing (not ported): a fish fed space lube grows into a lubefish
 
-## Syndicate brig timers (D316): the brig cells' door timers and flashers; not-translated.md section 151.
 
 ## Silicons SI1 (D326): the silicon base, laws, the law rack and the law modules.
 /obj/machinery/ai_law_rack	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
@@ -693,8 +647,6 @@
 /mob/living/silicon/robot	make_scottish	SI9	deferred	the admins' highlander event (its claymore comes with the syndicate cyborgs' items, silicons SI9)
 /obj/item/borg/cyborg_omnitool	add_context	M10+	deferred	the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred)
 
-## Silicons SI3 (D326): research and the exosuit fabricator. The techweb publishes no paper until the ordnance papers and NT Frontier come.
-/datum/techweb	add_scientific_paper	research	deferred	the ordnance papers' publication (NT Frontier and the scientific papers, a later research campaign)
 
 ## Silicons SI4 (D326): the AI, the camera net, holopads and the verb registry.
 /datum/controller/subsystem/verbs	serialize_verb	M10+	deferred	the tgui panel's entry of a verb (the port's stat panel is the replicated command verb list, ClientSeam.Verbs.cs)
@@ -733,14 +685,6 @@
 /datum/component/deadchat_control	handle_vv_topic	M10+	deferred	the admins' removal from the variable editor's dropdown (view variables, admin tooling)
 /datum/component/deadchat_control	async_handle_vv_topic	M10+	deferred	the admins' removal from the variable editor's dropdown (view variables, admin tooling)
 
-## The aux base construction console (2026-11-14): not-translated.md section 175
-/obj/machinery/computer/auxiliary_base	ui_interact	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	ui_data	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	ui_act	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	launch_check	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	set_mining_mode	M10+	deferred	the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining
-/obj/machinery/computer/auxiliary_base	set_landing_zone	M10+	deferred	the landing designator (assault_pod/mining): the base's deployment to lavaland comes with mining
-
 ## Gaps E4b (D327): the space vines, not-translated.md section 181
 /datum/spacevine_controller	vv_get_dropdown	M10+	deferred	the Delete Vines option of the view variables menu (admin tooling)
 /datum/spacevine_controller	vv_do_topic	M10+	deferred	the Delete Vines option of the view variables menu (admin tooling)
@@ -759,7 +703,6 @@
 /obj/machinery/computer/records/security	ninjadrain_charge	M10+	deferred	the space ninja's hack of the security records (antagonists, D333)
 /obj/machinery/computer/records/security	can_hack	M10+	deferred	the space ninja's hack of the security records (antagonists, D333)
 
-## Gaps ST2 (D333): furniture and odd structures, not-translated.md section 204
 
 ## Gaps AS1 (D333): the assemblies, not-translated.md section 205
 /obj/item/assembly/timer	suicide_act	M10+	deferred	the suicide verb
@@ -774,28 +717,43 @@
 /obj/item/vaporizer	add_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
 /obj/item/machine_remote	add_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
 
-## Gaps RG2 (D339): the medicines, toxins and addictions, not-translated.md section 225
-/datum/reagent/toxin/mutagen	used_on_fish	M10+	deferred	fishing (not ported): mutagen makes a fish mutagenic for a while
-/datum/reagent/toxin/bonehurtingjuice	used_on_fish	M10+	deferred	fishing (not ported): bone hurting juice hurts a fish made of bone
 
-## Gaps RG3 (D333, D339): the drugs, pyrotechnics and the other reagents, not-translated.md section 226
-/datum/reagent/teslium	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed teslium is electrogenic for a while
-/datum/reagent/growthserum	used_on_fish	M10+	deferred	fishing (not ported, gaps FI1-3): a fish fed growth serum grows quickly for a while
 
+## Gaps XB1 (D339): xenobiology and cytology, not-translated.md section 242
+/obj/machinery/computer/camera_advanced/xenobio	add_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
+
+## Gaps CH1 (D339): the chapel, not-translated.md section 244
+/obj/item/soulstone	corrupt	M10+	not_translated	the cult's corruption of a soulstone and its shade (the cult, D333)
+/obj/item/soulstone	transfer_to_construct	M10+	not_translated	a shade put into a construct shell becomes a construct (the cult's and the wizard's constructs, D333)
+/obj/item/soulstone	check_menu	M10+	not_translated	the construct shell's radial menu check (the cult's and the wizard's constructs, D333)
+/datum/religion_sect/dreams	vv_edit_var	M10+	deferred	the admin's variable editor (admin tooling)
+
+## Gaps KT1 (D339): the restaurant and the food left, not-translated.md section 246
+/obj/machinery/restaurant_portal	add_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
+
+## Gaps OR2 (D339): the anomaly cores, the gizmos and the pads, not-translated.md section 254
+/obj/item/assembly/signaler/anomaly	manual_suicide	M10+	deferred	the suicide verb
+## Gaps FI2 (D339): fishing, not-translated.md section 251
+/datum/fish_source	generate_wiki_contents	M10+	not_translated	the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported)
+/datum/fish_source/holographic	generate_wiki_contents	M10+	not_translated	the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported)
+/datum/fish_source/hydro_tray	generate_wiki_contents	M10+	not_translated	the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported)
+/datum/fish_source/aquarium	generate_wiki_contents	M10+	not_translated	the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported)
+/datum/fish_source/vending	generate_wiki_contents	M10+	not_translated	the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported)
+/datum/fish_source/surgery	generate_wiki_contents	M10+	not_translated	the fish sources' autowiki tables (tg's wiki generator, datum/autowiki, is not ported)
+/obj/item/fishing_rod	add_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
+/obj/item/fishing_rod	add_item_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
+/obj/item/survivalcapsule/fishing	add_context	M10+	deferred	the context tips (screentips, not now: D291 keeps them deferred)
 ## Species SP2a (D349): the moth and the plasmaman
 /obj/item/clothing/under/plasmaman/clown/magic	Initialize	D349	deferred	the wizard's enchanted clown suit adds the clown pockets spell (a wizard item, antagonist code not ported)
-
 ## Species SP3a (D349)
 /datum/golem_food_buff/gibtonite	apply_effects	D349	not_translated	the gibtonite_hand launcher item is not translated (mining items); a golem still eats gibtonite for its nutrition
 /datum/golem_food_buff/bluespace	apply_effects	D349	not_translated	the bluespace_finger teleport item is not translated (mining items); a golem still eats bluespace crystals for its nutrition
-
-
-## Species SP2c (D349): the jelly family and the cerulean
-/obj/item/slime_extract	grind_results	D349	deferred	the slime extract (xenobiology lab) is not translated; only activate() and the colours' overrides are, the luminescent actions call them
-/obj/item/slime_extract	examine	D349	deferred	xenobiology lab not translated
-/obj/item/slime_extract	item_interaction	D349	deferred	xenobiology lab not translated (the enhancer potion)
-/obj/item/slime_extract	interact_with_atom	D349	deferred	xenobiology lab not translated (core crossing on a slime)
-/obj/item/slime_extract	auto_activate_reaction	D349	deferred	xenobiology lab not translated
-
 ## Species SP3b (D349)
 # No rows: every proc of the abductor, dullahan, vampire, spirit/ghost and nightmare species is translated. Left out whole (their types stay inert): the abductor baton recall (summonitem/abductor, abductor gear), the nightmare antagonist's terrorize spell and the shadow cloak (heretic).
+
+## The MetaStation leftovers (gaps MT1)
+/obj/item/wrench/medical	suicide_act	M10+	deferred	suicides (the suicide verb, M10+)
+
+## The MetaStation leftovers' machines (gaps MT2)
+/obj/machinery/pdapainter	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)
+/obj/item/modular_computer/laptop	add_context	M10+	deferred	examine and the context tips (not now, by the owner: D264)

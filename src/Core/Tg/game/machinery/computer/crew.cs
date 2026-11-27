@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// Gaps J5 (D298): the crew monitor behind the console and the handheld monitor. The console's circuit component stays inert with the circuits;
-// the AI's "select_person" tracking came with silicons SI4 (D326).
+// Gaps J5 (D298): the crew monitor behind the console and the handheld monitor, with the console's USB port and its crew
+// monitoring data circuit component; the AI's "select_person" tracking came with silicons SI4 (D326).
 
 // tg: code/game/machinery/computer/crew.dm:7
 public partial class obj_machinery_computer_crew : obj_machinery_computer
@@ -19,7 +19,7 @@ public partial class obj_machinery_computer_crew : obj_machinery_computer
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        // AddComponent(/datum/component/usb_port, ...): the circuits (not-translated.md 114)
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_medical_console_data)), only_root_path: TRUE)));
         return dot;
     }
 
@@ -232,5 +232,73 @@ public partial class datum_controller_global_vars
     {
         crewmonitor = Dm.@new<datum_crewmonitor>();
         Dm.append(ref gvars_datum_init_order, "crewmonitor");
+    }
+}
+
+// tg: code/game/machinery/computer/crew.dm:18
+public partial class obj_item_circuit_component_medical_console_data : obj_item_circuit_component
+{
+    // tg: code/game/machinery/computer/crew.dm:29
+    public override async DmTask populate_ports()
+    {
+        records = add_output_port("Crew Monitoring Data", PORT_TYPE_TABLE) as datum_port_output;
+    }
+
+    // tg: code/game/machinery/computer/crew.dm:32
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_computer_crew)))
+            attached_console = shell as obj_machinery_computer_crew;
+    }
+
+    // tg: code/game/machinery/computer/crew.dm:37
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_console = null;
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/game/machinery/computer/crew.dm:41
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+        Dm.append(ref dot, create_table_notices(Dm.list(
+            "name",
+            "job",
+            "life_status",
+            "suffocation",
+            "toxin",
+            "burn",
+            "brute",
+            "location",
+            "health")));
+        return dot;
+    }
+
+    // tg: code/game/machinery/computer/crew.dm:56
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (attached_console == null || GLOB.crewmonitor == null)
+            return null;
+
+        DmList new_table = Dm.list();
+        foreach (DmList player_record in Dm.each_cast<DmList>(GLOB.crewmonitor.update_data(attached_console.z)))
+        {
+            DmList entry = Dm.list();
+            entry["name"] = player_record["name"];
+            entry["job"] = player_record["assignment"];
+            entry["life_status"] = player_record["life_status"];
+            entry["suffocation"] = player_record["oxydam"];
+            entry["toxin"] = player_record["toxdam"];
+            entry["burn"] = player_record["burndam"];
+            entry["brute"] = player_record["brutedam"];
+            entry["location"] = player_record["area"];
+            entry["health"] = player_record["health"];
+            Dm.append(new_table, Dm.list(entry));
+        }
+
+        records.set_output(new_table);
+        return null;
     }
 }

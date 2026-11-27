@@ -12,7 +12,7 @@ namespace Anomaly.Core.Tg;
 // Gaps P2 (D298): the hydroponics tray whole: water, nutrients, toxicity, pests, weeds, health, age and the growth stages,
 // harvesting, the auto-grow, mutations, the pollination, the snail, the tray's lights and plant picture. Left out: the screentip
 // element and add_context (D264, live-partial rows), the investigate and admin logs (comments, M10+), the emissive overlays
-// (DV12) and the circuit component (wiremod, not-translated.md section 119). `myseed` is hand-declared (rule V3 types it Type).
+// (DV12). The tray's USB port takes its circuit component. `myseed` is hand-declared (rule V3 types it Type).
 
 // tg: code/modules/hydroponics/hydroponics.dm:2
 public partial class obj_machinery_hydroponics : obj_machinery
@@ -1500,8 +1500,8 @@ public partial class obj_machinery_hydroponics_constructable : obj_machinery_hyd
         object dot = base.Initialize(mapload, __extra);
         Waiting.NoSleep(AddElement(typeof(datum_element_simple_rotation)));
         Waiting.NoSleep(AddComponent(typeof(datum_component_plumbing_hydroponics)));
-        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_hydroponics)), only_root_path: TRUE))); // inert until wiremod
-        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_hydro_tray))); // inert until fishing
+        Waiting.NoSleep(AddComponent(typeof(datum_component_usb_port), typecacheof(Dm.list(typeof(obj_item_circuit_component_hydroponics)), only_root_path: TRUE)));
+        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_hydro_tray)));
         return dot;
     }
 
@@ -1564,5 +1564,158 @@ public partial class obj_machinery_hydroponics_constructable : obj_machinery_hyd
     public override async DmTask<object> crowbar_act(mob_living user = null, obj_item tool = null)
     {
         return await default_deconstruction_crowbar(user, tool);
+    }
+}
+
+///The usb port circuit
+
+// tg: code/modules/hydroponics/hydroponics.dm:1281
+public partial class obj_item_circuit_component_hydroponics : obj_item_circuit_component
+{
+    // tg: code/modules/hydroponics/hydroponics.dm:1314
+    public override async DmTask populate_ports()
+    {
+        selfsustaining_setting = add_input_port("Auto-Grow Setting", PORT_TYPE_BOOLEAN) as datum_port_input;
+
+        plant_status = add_output_port("Plant Status", PORT_TYPE_NUMBER) as datum_port_output;
+        is_self_sustaining = add_output_port("Auto-Grow Status", PORT_TYPE_BOOLEAN) as datum_port_output;
+        plant_harvested = add_output_port("Plant Harvested", PORT_TYPE_SIGNAL) as datum_port_output;
+        last_harvest = add_output_port("Last Harvest Amount", PORT_TYPE_NUMBER) as datum_port_output;
+        plant_died = add_output_port("Plant Died", PORT_TYPE_SIGNAL) as datum_port_output;
+        seeds_planted = add_output_port("Seeds Planted", PORT_TYPE_SIGNAL) as datum_port_output;
+        water_level = add_output_port("Water Level", PORT_TYPE_NUMBER) as datum_port_output;
+        toxic_level = add_output_port("Toxins Level", PORT_TYPE_NUMBER) as datum_port_output;
+        pests_level = add_output_port("Pests Level", PORT_TYPE_NUMBER) as datum_port_output;
+        weeds_level = add_output_port("Weeds Level", PORT_TYPE_NUMBER) as datum_port_output;
+        plant_health = add_output_port("Plant Health", PORT_TYPE_NUMBER) as datum_port_output;
+        reagents_level = add_output_port("Reagents Level", PORT_TYPE_NUMBER) as datum_port_output;
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1341
+    public override void register_usb_parent(atom_movable shell = null)
+    {
+        base.register_usb_parent(shell);
+        if (istype(shell, typeof(obj_machinery_hydroponics)))
+        {
+            attached_tray = shell as obj_machinery_hydroponics;
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_SEED, nameof(on_set_seed));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_SELFSUSTAINING, nameof(on_set_selfsustaining));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_WEEDLEVEL, nameof(on_set_weedlevel));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_PESTLEVEL, nameof(on_set_pestlevel));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_WATERLEVEL, nameof(on_set_waterlevel));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_PLANT_HEALTH, nameof(on_set_plant_health));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_TOXIC, nameof(on_set_toxic_level));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_SET_PLANT_STATUS, nameof(on_set_plant_status));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_ON_HARVEST, nameof(on_harvest));
+            RegisterSignal(attached_tray, COMSIG_HYDROTRAY_PLANT_DEATH, nameof(on_plant_death));
+            RegisterSignal(attached_tray.reagents as datum, COMSIG_REAGENTS_HOLDER_UPDATED, nameof(update_reagents_level));
+        }
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1357
+    public override object unregister_usb_parent(atom_movable shell = null)
+    {
+        attached_tray = null;
+        UnregisterSignal(shell, Dm.list(COMSIG_HYDROTRAY_SET_SEED, COMSIG_HYDROTRAY_SET_SELFSUSTAINING,
+            COMSIG_HYDROTRAY_SET_WEEDLEVEL, COMSIG_HYDROTRAY_SET_PESTLEVEL, COMSIG_HYDROTRAY_SET_WATERLEVEL,
+            COMSIG_HYDROTRAY_SET_PLANT_HEALTH, COMSIG_HYDROTRAY_SET_TOXIC, COMSIG_HYDROTRAY_SET_PLANT_STATUS,
+            COMSIG_HYDROTRAY_ON_HARVEST, COMSIG_HYDROTRAY_PLANT_DEATH));
+        if (shell.reagents != null)
+            UnregisterSignal(shell.reagents as datum, COMSIG_REAGENTS_HOLDER_UPDATED);
+        return base.unregister_usb_parent(shell);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1367
+    public override object get_ui_notices()
+    {
+        object dot = base.get_ui_notices();
+        Dm.append(ref dot, create_ui_notice(Dm.text("Plant Status Index: \"[]\", \"[]\", \"[]\", \"[]\"", HYDROTRAY_NO_PLANT, HYDROTRAY_PLANT_GROWING, HYDROTRAY_PLANT_DEAD, HYDROTRAY_PLANT_HARVESTABLE), "orange", "info"));
+        return dot;
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1371
+    [SignalHandler]
+    public virtual void on_set_seed(datum source = null, obj_item_seeds new_seed = null)
+    {
+        seeds_planted.set_output(COMPONENT_SIGNAL);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1375
+    [SignalHandler]
+    public virtual void on_set_selfsustaining(datum source = null, object new_value = null)
+    {
+        is_self_sustaining.set_output(new_value);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1379
+    [SignalHandler]
+    public virtual void on_set_weedlevel(datum source = null, object new_value = null)
+    {
+        weeds_level.set_output(new_value);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1383
+    [SignalHandler]
+    public virtual void on_set_pestlevel(datum source = null, object new_value = null)
+    {
+        pests_level.set_output(new_value);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1387
+    [SignalHandler]
+    public virtual void on_set_waterlevel(datum source = null, object new_value = null)
+    {
+        water_level.set_output(new_value);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1391
+    [SignalHandler]
+    public virtual void on_set_plant_health(datum source = null, object new_value = null)
+    {
+        plant_health.set_output(new_value);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1395
+    [SignalHandler]
+    public virtual void on_set_toxic_level(datum source = null, object new_value = null)
+    {
+        toxic_level.set_output(new_value);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1399
+    [SignalHandler]
+    public virtual void on_set_plant_status(datum source = null, object new_value = null)
+    {
+        plant_status.set_output(new_value);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1403
+    [SignalHandler]
+    public virtual void on_harvest(datum source = null, object product_amount = null)
+    {
+        last_harvest.set_output(product_amount);
+        plant_harvested.set_output(COMPONENT_SIGNAL);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1408
+    [SignalHandler]
+    public virtual void on_plant_death(datum source = null)
+    {
+        plant_died.set_output(COMPONENT_SIGNAL);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1412
+    [SignalHandler]
+    public virtual void update_reagents_level(datum source = null)
+    {
+        reagents_level.set_output(((datum_reagents)attached_tray.reagents).total_volume);
+    }
+
+    // tg: code/modules/hydroponics/hydroponics.dm:1416
+    public override object input_received(datum_port_input port = null, DmList return_values = null)
+    {
+        if (Dm.truthy(attached_tray.anchored) && Dm.truthy(attached_tray.powered__proc()))
+            attached_tray.set_self_sustaining(Dm.not(Dm.not(selfsustaining_setting.value)));
+        return null;
     }
 }

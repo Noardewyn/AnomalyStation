@@ -9,8 +9,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// J1 (D298): the fedoras' Initialize (the hat's pockets, datums/storage/subtypes/pockets.cs); gaps CL1 (D333): the carpskin fedora (its fishing
-// difficulty element waits for fishing) and the fedora's suicide act. The var blocks are generated.
+// J1 (D298): the fedoras' Initialize (the hat's pockets, datums/storage/subtypes/pockets.cs); gaps CL1 (D333): the carpskin fedora (with its fishing
+// difficulty element) and the fedora's suicide act. The var blocks are generated.
 
 // tg: code/modules/clothing/head/fedora.dm:1
 public partial class obj_item_clothing_head_fedora : obj_item_clothing_head
@@ -45,7 +45,7 @@ public partial class obj_item_clothing_head_fedora_carpskin : obj_item_clothing_
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/clothing/head/fedora.dm:42", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -6): fishing (M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -6));
         return dot;
     }
 }

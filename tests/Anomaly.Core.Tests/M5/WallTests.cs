@@ -28,7 +28,12 @@ public class WallTests
         var r = new AudioRoom(12, 9, seed: seed);
         mob_living_carbon_human bob = r.Join(4, 4, "Bob");
         r.In(() => ADD_TRAIT(bob, TRAIT_ADVANCEDTOOLUSER, "test"));
+        // a human starts at a random nutrition; a fed one's good mood lifts his sanity past neutral, and that level speeds his tools
+        // up by a tenth (mood.dm:607, :661, high_sanity): Bob is held between hungry and fed at neutral sanity, where tg's delays
+        // are the plain ones
+        r.In(() => Waiting.NoSleep(bob.set_nutrition((NUTRITION_LEVEL_HUNGRY + NUTRITION_LEVEL_FED) / 2)));
         r.Step(Second);
+        r.In(() => Waiting.NoSleep((bob.mob_mood as datum_mood).set_sanity(SANITY_NEUTRAL)));
         return (r, bob);
     }
 

@@ -829,9 +829,9 @@ public partial class obj_item_clothing_neck_necklace_pearl_skeleton : obj_item_c
     }
 }
 
-// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:3
-[DmPath("/obj/item/clothing/neck/necklace/memento_mori"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_neck_necklace_memento_mori : obj_item_clothing_neck_necklace
+// tg: code/modules/mining/lavaland/mining_loot/clothing.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/neck/necklace/memento_mori")]
+public partial class obj_item_clothing_neck_necklace_memento_mori
 {
     public mob_living_carbon_human active_owner; // tg: code/modules/mining/lavaland/mining_loot/clothing.dm:10
 
@@ -1146,9 +1146,9 @@ public partial class obj_item_clothing_neck_cloak_skill_reward_playing : obj_ite
     }
 }
 
-// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:264
-[DmPath("/obj/item/clothing/neck/cloak/herald_cloak"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_neck_cloak_herald_cloak : obj_item_clothing_neck_cloak
+// tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:264 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/neck/cloak/herald_cloak")]
+public partial class obj_item_clothing_neck_cloak_herald_cloak
 {
     // tg: code/modules/mob/living/simple_animal/hostile/mining_mobs/elites/herald.dm:264
     public obj_item_clothing_neck_cloak_herald_cloak()

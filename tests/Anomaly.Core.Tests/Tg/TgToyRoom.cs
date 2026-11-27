@@ -149,11 +149,12 @@ internal sealed class TgToyRoom
         if (SSmaterials == null)
             Dm.@new<datum_controller_subsystem_materials>(); // GLOB's make_datum_reference_lists reads its recipes (global_lists.dm:93)
             Dm.@new<datum_controller_subsystem_accessories>(); // M10x slice D2: tg makes it at PreInit, before GLOB (sprite_accessories.dm:47); bodies read its lists
+        // gaps P3: SSatoms' setupGenetics makes every mutation, and the speech ones read tg's strings files in their New; a sleeping
+        // mob dreams from the dream words, which GLOB's InitGlobal procs read (strings.dm:1-11), so before GLOB
+        if (Tools.TgClone.Root != null)
+            TgStrings.Mount(DmWorldState.Of(World.Current).Files, Tools.TgClone.Root, TgStrings.GeneticsFiles.AddRange(TgStrings.DreamFiles));
         if (GLOB__var == null)
             Dm.@new<datum_controller_global_vars>(); // New runs every InitGlobal proc (globals.dm:11, :48)
-        // gaps P3: SSatoms' setupGenetics makes every mutation, and the speech ones read tg's strings files in their New
-        if (Tools.TgClone.Root != null)
-            TgStrings.Mount(DmWorldState.Of(World.Current).Files, Tools.TgClone.Root, TgStrings.GeneticsFiles);
         TgTestGenesis.Install(); // SSchat and the configuration
         if (SSdcs == null)
             Dm.@new<datum_controller_subsystem_processing_dcs>();

@@ -10,8 +10,8 @@ using static Anomaly.Core.Tg.GlobalProcs;
 namespace Anomaly.Core.Tg;
 
 // Gaps BR1 (D339): the whole file, the holographic floors the virtual domains (grasslands hunt's basalt) and the holodeck lay:
-// the floor that ignores tools and does not burn or break, and the subtypes' random states. The holographic water's fishing
-// spot waits for fishing (Dm.Deferred, not-translated section 230). The var blocks are generated (D111).
+// the floor that ignores tools and does not burn or break, and the subtypes' random states. The holographic water is a
+// fishing spot. The var blocks are generated (D111).
 
 // tg: code/modules/holodeck/turfs.dm:1
 public partial class turf_open_floor_holofloor : turf_open_floor
@@ -83,7 +83,7 @@ public partial class turf_open_floor_holofloor_beach_water : turf_open_floor_hol
     public override object Initialize(object mapload = null, params object[] __extra)
     {
         object dot = base.Initialize(mapload, __extra);
-        Dm.Deferred("code/modules/holodeck/turfs.dm:100", "AddComponent(/datum/component/fishing_spot, /datum/fish_source/holographic): fishing in the holographic water waits for fishing");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_holographic)));
         return dot;
     }
 }

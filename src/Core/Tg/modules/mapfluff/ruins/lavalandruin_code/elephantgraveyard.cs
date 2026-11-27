@@ -11,7 +11,7 @@ namespace Anomaly.Core.Tg;
 
 // Gaps J6 (D298): the grave crate and the shovel's fresh grave (lines 133-315). Gaps OD3 (D333): the rest of the file, the Lavaland ruin's
 // parts: the bone statues (their see-through fade is DV499), the wasteland's cracked earth and dry rock (on the strong rock of
-// minerals.cs), the oil well (its fishing spot waits for fishing) and the filled graves' contents with the lead researcher's. The
+// minerals.cs), the oil well (a fishing spot) and the filled graves' contents with the lead researcher's. The
 // add_context screentip is a live-partial row.
 
 // tg: code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:133
@@ -220,7 +220,7 @@ public partial class obj_structure_sink_oil_well : obj_structure_sink
         object dot = base.Initialize(mapload, __extra);
         //I'm pretty much aware that, because how oil wells and sinks work, attackby() won't work unless in combat mode.
         //Thankfully, the user can cast the line from a distance.
-        Dm.Deferred("code/modules/mapfluff/ruins/lavalandruin_code/elephantgraveyard.dm:102", "Initialize: AddComponent(/datum/component/fishing_spot, /datum/fish_source/oil_well), fishing in the oil (fishing is not ported)");
+        Waiting.NoSleep(AddComponent(typeof(datum_component_fishing_spot), typeof(datum_fish_source_oil_well)));
         return dot;
     }
 

@@ -9,9 +9,9 @@ using Anomaly.Core.Kernel;
 
 namespace Anomaly.Core.Tg;
 
-// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:28
-[DmPath("/obj/item/slimecross"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross : obj_item
+// tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:28 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross")]
+public partial class obj_item_slimecross
 {
     public string colour = "null"; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:32
     public string effect = "null"; // tg: code/modules/research/xenobiology/crossbreeding/__corecross.dm:33
@@ -32,9 +32,9 @@ public partial class obj_item_slimecross : obj_item
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:7
-[DmPath("/obj/item/slimecross/burning"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning")]
+public partial class obj_item_slimecross_burning
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:7
     public obj_item_slimecross_burning()
@@ -46,9 +46,9 @@ public partial class obj_item_slimecross_burning : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:31
-[DmPath("/obj/item/slimecross/burning/grey"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_grey : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:31 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/grey")]
+public partial class obj_item_slimecross_burning_grey
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:31
     public obj_item_slimecross_burning_grey()
@@ -58,9 +58,9 @@ public partial class obj_item_slimecross_burning_grey : obj_item_slimecross_burn
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:43
-[DmPath("/obj/item/slimecross/burning/orange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_orange : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:43 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/orange")]
+public partial class obj_item_slimecross_burning_orange
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:43
     public obj_item_slimecross_burning_orange()
@@ -70,9 +70,9 @@ public partial class obj_item_slimecross_burning_orange : obj_item_slimecross_bu
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:52
-[DmPath("/obj/item/slimecross/burning/purple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_purple : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:52 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/purple")]
+public partial class obj_item_slimecross_burning_purple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:52
     public obj_item_slimecross_burning_purple()
@@ -82,9 +82,9 @@ public partial class obj_item_slimecross_burning_purple : obj_item_slimecross_bu
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:61
-[DmPath("/obj/item/slimecross/burning/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_blue : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:61 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/blue")]
+public partial class obj_item_slimecross_burning_blue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:61
     public obj_item_slimecross_burning_blue()
@@ -94,9 +94,9 @@ public partial class obj_item_slimecross_burning_blue : obj_item_slimecross_burn
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:75
-[DmPath("/obj/item/slimecross/burning/metal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_metal : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:75 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/metal")]
+public partial class obj_item_slimecross_burning_metal
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:75
     public obj_item_slimecross_burning_metal()
@@ -106,9 +106,9 @@ public partial class obj_item_slimecross_burning_metal : obj_item_slimecross_bur
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:86
-[DmPath("/obj/item/slimecross/burning/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_yellow : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:86 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/yellow")]
+public partial class obj_item_slimecross_burning_yellow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:86
     public obj_item_slimecross_burning_yellow()
@@ -118,9 +118,9 @@ public partial class obj_item_slimecross_burning_yellow : obj_item_slimecross_bu
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:103
-[DmPath("/obj/item/slimecross/burning/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_darkpurple : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:103 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/darkpurple")]
+public partial class obj_item_slimecross_burning_darkpurple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:103
     public obj_item_slimecross_burning_darkpurple()
@@ -130,9 +130,9 @@ public partial class obj_item_slimecross_burning_darkpurple : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:113
-[DmPath("/obj/item/slimecross/burning/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_darkblue : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:113 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/darkblue")]
+public partial class obj_item_slimecross_burning_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:113
     public obj_item_slimecross_burning_darkblue()
@@ -142,9 +142,9 @@ public partial class obj_item_slimecross_burning_darkblue : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:123
-[DmPath("/obj/item/slimecross/burning/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_silver : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:123 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/silver")]
+public partial class obj_item_slimecross_burning_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:123
     public obj_item_slimecross_burning_silver()
@@ -154,9 +154,9 @@ public partial class obj_item_slimecross_burning_silver : obj_item_slimecross_bu
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:142
-[DmPath("/obj/item/slimecross/burning/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_bluespace : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:142 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/bluespace")]
+public partial class obj_item_slimecross_burning_bluespace
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:142
     public obj_item_slimecross_burning_bluespace()
@@ -166,9 +166,9 @@ public partial class obj_item_slimecross_burning_bluespace : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:155
-[DmPath("/obj/item/slimecross/burning/sepia"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_sepia : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:155 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/sepia")]
+public partial class obj_item_slimecross_burning_sepia
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:155
     public obj_item_slimecross_burning_sepia()
@@ -178,9 +178,9 @@ public partial class obj_item_slimecross_burning_sepia : obj_item_slimecross_bur
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:164
-[DmPath("/obj/item/slimecross/burning/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_cerulean : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:164 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/cerulean")]
+public partial class obj_item_slimecross_burning_cerulean
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:164
     public obj_item_slimecross_burning_cerulean()
@@ -190,9 +190,9 @@ public partial class obj_item_slimecross_burning_cerulean : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:173
-[DmPath("/obj/item/slimecross/burning/pyrite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_pyrite : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:173 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/pyrite")]
+public partial class obj_item_slimecross_burning_pyrite
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:173
     public obj_item_slimecross_burning_pyrite()
@@ -202,9 +202,9 @@ public partial class obj_item_slimecross_burning_pyrite : obj_item_slimecross_bu
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:187
-[DmPath("/obj/item/slimecross/burning/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_red : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:187 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/red")]
+public partial class obj_item_slimecross_burning_red
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:187
     public obj_item_slimecross_burning_red()
@@ -214,9 +214,9 @@ public partial class obj_item_slimecross_burning_red : obj_item_slimecross_burni
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:201
-[DmPath("/obj/item/slimecross/burning/green"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_green : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:201 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/green")]
+public partial class obj_item_slimecross_burning_green
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:201
     public obj_item_slimecross_burning_green()
@@ -226,9 +226,9 @@ public partial class obj_item_slimecross_burning_green : obj_item_slimecross_bur
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:221
-[DmPath("/obj/item/slimecross/burning/pink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_pink : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:221 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/pink")]
+public partial class obj_item_slimecross_burning_pink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:221
     public obj_item_slimecross_burning_pink()
@@ -238,9 +238,9 @@ public partial class obj_item_slimecross_burning_pink : obj_item_slimecross_burn
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:230
-[DmPath("/obj/item/slimecross/burning/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_gold : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:230 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/gold")]
+public partial class obj_item_slimecross_burning_gold
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:230
     public obj_item_slimecross_burning_gold()
@@ -250,9 +250,9 @@ public partial class obj_item_slimecross_burning_gold : obj_item_slimecross_burn
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:244
-[DmPath("/obj/item/slimecross/burning/oil"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_oil : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:244 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/oil")]
+public partial class obj_item_slimecross_burning_oil
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:244
     public obj_item_slimecross_burning_oil()
@@ -262,9 +262,9 @@ public partial class obj_item_slimecross_burning_oil : obj_item_slimecross_burni
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:261
-[DmPath("/obj/item/slimecross/burning/black"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_black : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:261 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/black")]
+public partial class obj_item_slimecross_burning_black
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:261
     public obj_item_slimecross_burning_black()
@@ -274,9 +274,9 @@ public partial class obj_item_slimecross_burning_black : obj_item_slimecross_bur
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:275
-[DmPath("/obj/item/slimecross/burning/lightpink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_lightpink : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:275 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/lightpink")]
+public partial class obj_item_slimecross_burning_lightpink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:275
     public obj_item_slimecross_burning_lightpink()
@@ -286,9 +286,9 @@ public partial class obj_item_slimecross_burning_lightpink : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:285
-[DmPath("/obj/item/slimecross/burning/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_adamantine : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:285 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/adamantine")]
+public partial class obj_item_slimecross_burning_adamantine
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:285
     public obj_item_slimecross_burning_adamantine()
@@ -298,9 +298,9 @@ public partial class obj_item_slimecross_burning_adamantine : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:294
-[DmPath("/obj/item/slimecross/burning/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_burning_rainbow : obj_item_slimecross_burning
+// tg: code/modules/research/xenobiology/crossbreeding/burning.dm:294 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/burning/rainbow")]
+public partial class obj_item_slimecross_burning_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/burning.dm:294
     public obj_item_slimecross_burning_rainbow()
@@ -310,9 +310,9 @@ public partial class obj_item_slimecross_burning_rainbow : obj_item_slimecross_b
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:8
-[DmPath("/obj/item/slimecross/charged"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:8 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged")]
+public partial class obj_item_slimecross_charged
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:8
     public obj_item_slimecross_charged()
@@ -324,9 +324,9 @@ public partial class obj_item_slimecross_charged : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:32
-[DmPath("/obj/item/slimecross/charged/grey"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_grey : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:32 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/grey")]
+public partial class obj_item_slimecross_charged_grey
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:32
     public obj_item_slimecross_charged_grey()
@@ -336,9 +336,9 @@ public partial class obj_item_slimecross_charged_grey : obj_item_slimecross_char
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:41
-[DmPath("/obj/item/slimecross/charged/orange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_orange : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:41 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/orange")]
+public partial class obj_item_slimecross_charged_orange
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:41
     public obj_item_slimecross_charged_orange()
@@ -348,9 +348,9 @@ public partial class obj_item_slimecross_charged_orange : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:52
-[DmPath("/obj/item/slimecross/charged/purple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_purple : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:52 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/purple")]
+public partial class obj_item_slimecross_charged_purple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:52
     public obj_item_slimecross_charged_purple()
@@ -360,9 +360,9 @@ public partial class obj_item_slimecross_charged_purple : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:61
-[DmPath("/obj/item/slimecross/charged/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_blue : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:61 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/blue")]
+public partial class obj_item_slimecross_charged_blue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:61
     public obj_item_slimecross_charged_blue()
@@ -372,9 +372,9 @@ public partial class obj_item_slimecross_charged_blue : obj_item_slimecross_char
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:70
-[DmPath("/obj/item/slimecross/charged/metal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_metal : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:70 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/metal")]
+public partial class obj_item_slimecross_charged_metal
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:70
     public obj_item_slimecross_charged_metal()
@@ -384,9 +384,9 @@ public partial class obj_item_slimecross_charged_metal : obj_item_slimecross_cha
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:80
-[DmPath("/obj/item/slimecross/charged/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_yellow : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:80 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/yellow")]
+public partial class obj_item_slimecross_charged_yellow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:80
     public obj_item_slimecross_charged_yellow()
@@ -396,9 +396,9 @@ public partial class obj_item_slimecross_charged_yellow : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:89
-[DmPath("/obj/item/slimecross/charged/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_darkpurple : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:89 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/darkpurple")]
+public partial class obj_item_slimecross_charged_darkpurple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:89
     public obj_item_slimecross_charged_darkpurple()
@@ -408,9 +408,9 @@ public partial class obj_item_slimecross_charged_darkpurple : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:98
-[DmPath("/obj/item/slimecross/charged/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_darkblue : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:98 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/darkblue")]
+public partial class obj_item_slimecross_charged_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:98
     public obj_item_slimecross_charged_darkblue()
@@ -420,9 +420,9 @@ public partial class obj_item_slimecross_charged_darkblue : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:107
-[DmPath("/obj/item/slimecross/charged/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_silver : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:107 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/silver")]
+public partial class obj_item_slimecross_charged_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:107
     public obj_item_slimecross_charged_silver()
@@ -432,9 +432,9 @@ public partial class obj_item_slimecross_charged_silver : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:119
-[DmPath("/obj/item/slimecross/charged/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_bluespace : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:119 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/bluespace")]
+public partial class obj_item_slimecross_charged_bluespace
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:119
     public obj_item_slimecross_charged_bluespace()
@@ -444,9 +444,9 @@ public partial class obj_item_slimecross_charged_bluespace : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:128
-[DmPath("/obj/item/slimecross/charged/sepia"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_sepia : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:128 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/sepia")]
+public partial class obj_item_slimecross_charged_sepia
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:128
     public obj_item_slimecross_charged_sepia()
@@ -456,9 +456,9 @@ public partial class obj_item_slimecross_charged_sepia : obj_item_slimecross_cha
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:137
-[DmPath("/obj/item/slimecross/charged/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_cerulean : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:137 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/cerulean")]
+public partial class obj_item_slimecross_charged_cerulean
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:137
     public obj_item_slimecross_charged_cerulean()
@@ -468,9 +468,9 @@ public partial class obj_item_slimecross_charged_cerulean : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:146
-[DmPath("/obj/item/slimecross/charged/pyrite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_pyrite : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:146 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/pyrite")]
+public partial class obj_item_slimecross_charged_pyrite
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:146
     public obj_item_slimecross_charged_pyrite()
@@ -480,9 +480,9 @@ public partial class obj_item_slimecross_charged_pyrite : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:155
-[DmPath("/obj/item/slimecross/charged/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_red : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:155 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/red")]
+public partial class obj_item_slimecross_charged_red
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:155
     public obj_item_slimecross_charged_red()
@@ -492,9 +492,9 @@ public partial class obj_item_slimecross_charged_red : obj_item_slimecross_charg
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:164
-[DmPath("/obj/item/slimecross/charged/green"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_green : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:164 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/green")]
+public partial class obj_item_slimecross_charged_green
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:164
     public obj_item_slimecross_charged_green()
@@ -504,9 +504,9 @@ public partial class obj_item_slimecross_charged_green : obj_item_slimecross_cha
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:186
-[DmPath("/obj/item/slimecross/charged/pink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_pink : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:186 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/pink")]
+public partial class obj_item_slimecross_charged_pink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:186
     public obj_item_slimecross_charged_pink()
@@ -516,9 +516,9 @@ public partial class obj_item_slimecross_charged_pink : obj_item_slimecross_char
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:195
-[DmPath("/obj/item/slimecross/charged/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_gold : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:195 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/gold")]
+public partial class obj_item_slimecross_charged_gold
 {
     public float max_spawn = 10; // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:197
     public float? spawned = 0; // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:198
@@ -531,9 +531,9 @@ public partial class obj_item_slimecross_charged_gold : obj_item_slimecross_char
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:222
-[DmPath("/obj/item/slimecross/charged/oil"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_oil : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:222 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/oil")]
+public partial class obj_item_slimecross_charged_oil
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:222
     public obj_item_slimecross_charged_oil()
@@ -543,9 +543,9 @@ public partial class obj_item_slimecross_charged_oil : obj_item_slimecross_charg
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:234
-[DmPath("/obj/item/slimecross/charged/black"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_black : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:234 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/black")]
+public partial class obj_item_slimecross_charged_black
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:234
     public obj_item_slimecross_charged_black()
@@ -555,9 +555,9 @@ public partial class obj_item_slimecross_charged_black : obj_item_slimecross_cha
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:257
-[DmPath("/obj/item/slimecross/charged/lightpink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_lightpink : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:257 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/lightpink")]
+public partial class obj_item_slimecross_charged_lightpink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:257
     public obj_item_slimecross_charged_lightpink()
@@ -567,9 +567,9 @@ public partial class obj_item_slimecross_charged_lightpink : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:266
-[DmPath("/obj/item/slimecross/charged/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_adamantine : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:266 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/adamantine")]
+public partial class obj_item_slimecross_charged_adamantine
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:266
     public obj_item_slimecross_charged_adamantine()
@@ -579,9 +579,9 @@ public partial class obj_item_slimecross_charged_adamantine : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:275
-[DmPath("/obj/item/slimecross/charged/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_charged_rainbow : obj_item_slimecross_charged
+// tg: code/modules/research/xenobiology/crossbreeding/charged.dm:275 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/charged/rainbow")]
+public partial class obj_item_slimecross_charged_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/charged.dm:275
     public obj_item_slimecross_charged_rainbow()
@@ -591,9 +591,9 @@ public partial class obj_item_slimecross_charged_rainbow : obj_item_slimecross_c
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:7
-[DmPath("/obj/item/slimecross/chilling"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling")]
+public partial class obj_item_slimecross_chilling
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:7
     public obj_item_slimecross_chilling()
@@ -605,9 +605,9 @@ public partial class obj_item_slimecross_chilling : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:31
-[DmPath("/obj/item/slimecross/chilling/grey"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_grey : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:31 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/grey")]
+public partial class obj_item_slimecross_chilling_grey
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:31
     public obj_item_slimecross_chilling_grey()
@@ -617,9 +617,9 @@ public partial class obj_item_slimecross_chilling_grey : obj_item_slimecross_chi
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:41
-[DmPath("/obj/item/slimecross/chilling/orange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_orange : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:41 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/orange")]
+public partial class obj_item_slimecross_chilling_orange
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:41
     public obj_item_slimecross_chilling_orange()
@@ -629,9 +629,9 @@ public partial class obj_item_slimecross_chilling_orange : obj_item_slimecross_c
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:52
-[DmPath("/obj/item/slimecross/chilling/purple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_purple : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:52 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/purple")]
+public partial class obj_item_slimecross_chilling_purple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:52
     public obj_item_slimecross_chilling_purple()
@@ -641,9 +641,9 @@ public partial class obj_item_slimecross_chilling_purple : obj_item_slimecross_c
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:68
-[DmPath("/obj/item/slimecross/chilling/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_blue : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:68 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/blue")]
+public partial class obj_item_slimecross_chilling_blue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:68
     public obj_item_slimecross_chilling_blue()
@@ -653,9 +653,9 @@ public partial class obj_item_slimecross_chilling_blue : obj_item_slimecross_chi
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:77
-[DmPath("/obj/item/slimecross/chilling/metal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_metal : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:77 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/metal")]
+public partial class obj_item_slimecross_chilling_metal
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:77
     public obj_item_slimecross_chilling_metal()
@@ -665,9 +665,9 @@ public partial class obj_item_slimecross_chilling_metal : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:88
-[DmPath("/obj/item/slimecross/chilling/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_yellow : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:88 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/yellow")]
+public partial class obj_item_slimecross_chilling_yellow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:88
     public obj_item_slimecross_chilling_yellow()
@@ -677,9 +677,9 @@ public partial class obj_item_slimecross_chilling_yellow : obj_item_slimecross_c
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:103
-[DmPath("/obj/item/slimecross/chilling/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_darkpurple : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:103 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/darkpurple")]
+public partial class obj_item_slimecross_chilling_darkpurple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:103
     public obj_item_slimecross_chilling_darkpurple()
@@ -689,9 +689,9 @@ public partial class obj_item_slimecross_chilling_darkpurple : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:127
-[DmPath("/obj/item/slimecross/chilling/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_darkblue : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:127 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/darkblue")]
+public partial class obj_item_slimecross_chilling_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:127
     public obj_item_slimecross_chilling_darkblue()
@@ -701,9 +701,9 @@ public partial class obj_item_slimecross_chilling_darkblue : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:138
-[DmPath("/obj/item/slimecross/chilling/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_silver : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:138 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/silver")]
+public partial class obj_item_slimecross_chilling_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:138
     public obj_item_slimecross_chilling_silver()
@@ -713,9 +713,9 @@ public partial class obj_item_slimecross_chilling_silver : obj_item_slimecross_c
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:149
-[DmPath("/obj/item/slimecross/chilling/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_bluespace : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:149 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/bluespace")]
+public partial class obj_item_slimecross_chilling_bluespace
 {
     public DmList slimepals; // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:151
     public float? active = 0; // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:152
@@ -735,9 +735,9 @@ public partial class obj_item_slimecross_chilling_bluespace : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:193
-[DmPath("/obj/item/slimecross/chilling/sepia"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_sepia : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:193 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/sepia")]
+public partial class obj_item_slimecross_chilling_sepia
 {
     public DmList slimepals; // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:195
 
@@ -756,9 +756,9 @@ public partial class obj_item_slimecross_chilling_sepia : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:216
-[DmPath("/obj/item/slimecross/chilling/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_cerulean : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:216 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/cerulean")]
+public partial class obj_item_slimecross_chilling_cerulean
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:216
     public obj_item_slimecross_chilling_cerulean()
@@ -768,9 +768,9 @@ public partial class obj_item_slimecross_chilling_cerulean : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:227
-[DmPath("/obj/item/slimecross/chilling/pyrite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_pyrite : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:227 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/pyrite")]
+public partial class obj_item_slimecross_chilling_pyrite
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:227
     public obj_item_slimecross_chilling_pyrite()
@@ -780,9 +780,9 @@ public partial class obj_item_slimecross_chilling_pyrite : obj_item_slimecross_c
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:236
-[DmPath("/obj/item/slimecross/chilling/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_red : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:236 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/red")]
+public partial class obj_item_slimecross_chilling_red
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:236
     public obj_item_slimecross_chilling_red()
@@ -792,9 +792,9 @@ public partial class obj_item_slimecross_chilling_red : obj_item_slimecross_chil
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:251
-[DmPath("/obj/item/slimecross/chilling/green"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_green : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:251 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/green")]
+public partial class obj_item_slimecross_chilling_green
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:251
     public obj_item_slimecross_chilling_green()
@@ -804,9 +804,9 @@ public partial class obj_item_slimecross_chilling_green : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:271
-[DmPath("/obj/item/slimecross/chilling/pink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_pink : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:271 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/pink")]
+public partial class obj_item_slimecross_chilling_pink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:271
     public obj_item_slimecross_chilling_pink()
@@ -816,9 +816,9 @@ public partial class obj_item_slimecross_chilling_pink : obj_item_slimecross_chi
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:280
-[DmPath("/obj/item/slimecross/chilling/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_gold : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:280 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/gold")]
+public partial class obj_item_slimecross_chilling_gold
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:280
     public obj_item_slimecross_chilling_gold()
@@ -828,9 +828,9 @@ public partial class obj_item_slimecross_chilling_gold : obj_item_slimecross_chi
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:289
-[DmPath("/obj/item/slimecross/chilling/oil"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_oil : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:289 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/oil")]
+public partial class obj_item_slimecross_chilling_oil
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:289
     public obj_item_slimecross_chilling_oil()
@@ -840,9 +840,9 @@ public partial class obj_item_slimecross_chilling_oil : obj_item_slimecross_chil
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:301
-[DmPath("/obj/item/slimecross/chilling/black"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_black : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:301 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/black")]
+public partial class obj_item_slimecross_chilling_black
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:301
     public obj_item_slimecross_chilling_black()
@@ -852,9 +852,9 @@ public partial class obj_item_slimecross_chilling_black : obj_item_slimecross_ch
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:312
-[DmPath("/obj/item/slimecross/chilling/lightpink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_lightpink : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:312 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/lightpink")]
+public partial class obj_item_slimecross_chilling_lightpink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:312
     public obj_item_slimecross_chilling_lightpink()
@@ -864,9 +864,9 @@ public partial class obj_item_slimecross_chilling_lightpink : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:321
-[DmPath("/obj/item/slimecross/chilling/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_adamantine : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:321 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/adamantine")]
+public partial class obj_item_slimecross_chilling_adamantine
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:321
     public obj_item_slimecross_chilling_adamantine()
@@ -876,9 +876,9 @@ public partial class obj_item_slimecross_chilling_adamantine : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:330
-[DmPath("/obj/item/slimecross/chilling/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_chilling_rainbow : obj_item_slimecross_chilling
+// tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:330 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/chilling/rainbow")]
+public partial class obj_item_slimecross_chilling_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/chilling.dm:330
     public obj_item_slimecross_chilling_rainbow()
@@ -888,9 +888,9 @@ public partial class obj_item_slimecross_chilling_rainbow : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:7
-[DmPath("/obj/item/slimecross/consuming"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_consuming : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/consuming")]
+public partial class obj_item_slimecross_consuming
 {
     public float nutriment_eaten = 0; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:11
     public float nutriment_required = 10; // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:12
@@ -910,7 +910,7 @@ public partial class obj_item_slimecross_consuming : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:93
-[DmPath("/obj/item/slimecross/consuming/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/grey"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_grey : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:93
@@ -923,7 +923,7 @@ public partial class obj_item_slimecross_consuming_grey : obj_item_slimecross_co
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:105
-[DmPath("/obj/item/slimecross/consuming/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/orange"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_orange : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:105
@@ -936,7 +936,7 @@ public partial class obj_item_slimecross_consuming_orange : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:119
-[DmPath("/obj/item/slimecross/consuming/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/purple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_purple : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:119
@@ -949,7 +949,7 @@ public partial class obj_item_slimecross_consuming_purple : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:140
-[DmPath("/obj/item/slimecross/consuming/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/blue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_blue : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:140
@@ -962,7 +962,7 @@ public partial class obj_item_slimecross_consuming_blue : obj_item_slimecross_co
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:154
-[DmPath("/obj/item/slimecross/consuming/metal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/metal"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_metal : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:154
@@ -975,7 +975,7 @@ public partial class obj_item_slimecross_consuming_metal : obj_item_slimecross_c
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:168
-[DmPath("/obj/item/slimecross/consuming/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/yellow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_yellow : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:168
@@ -988,7 +988,7 @@ public partial class obj_item_slimecross_consuming_yellow : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:182
-[DmPath("/obj/item/slimecross/consuming/darkpurple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/darkpurple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_darkpurple : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:182
@@ -1001,7 +1001,7 @@ public partial class obj_item_slimecross_consuming_darkpurple : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:196
-[DmPath("/obj/item/slimecross/consuming/darkblue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/darkblue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_darkblue : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:196
@@ -1014,7 +1014,7 @@ public partial class obj_item_slimecross_consuming_darkblue : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:211
-[DmPath("/obj/item/slimecross/consuming/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/silver"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_silver : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:211
@@ -1027,7 +1027,7 @@ public partial class obj_item_slimecross_consuming_silver : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:226
-[DmPath("/obj/item/slimecross/consuming/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/bluespace"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_bluespace : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:226
@@ -1040,7 +1040,7 @@ public partial class obj_item_slimecross_consuming_bluespace : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:267
-[DmPath("/obj/item/slimecross/consuming/sepia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/sepia"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_sepia : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:267
@@ -1053,7 +1053,7 @@ public partial class obj_item_slimecross_consuming_sepia : obj_item_slimecross_c
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:281
-[DmPath("/obj/item/slimecross/consuming/cerulean"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/cerulean"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_cerulean : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:281
@@ -1067,7 +1067,7 @@ public partial class obj_item_slimecross_consuming_cerulean : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:299
-[DmPath("/obj/item/slimecross/consuming/pyrite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/pyrite"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_pyrite : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:299
@@ -1080,7 +1080,7 @@ public partial class obj_item_slimecross_consuming_pyrite : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:341
-[DmPath("/obj/item/slimecross/consuming/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/red"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_red : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:341
@@ -1093,7 +1093,7 @@ public partial class obj_item_slimecross_consuming_red : obj_item_slimecross_con
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:359
-[DmPath("/obj/item/slimecross/consuming/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/green"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_green : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:359
@@ -1106,7 +1106,7 @@ public partial class obj_item_slimecross_consuming_green : obj_item_slimecross_c
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:376
-[DmPath("/obj/item/slimecross/consuming/pink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/pink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_pink : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:376
@@ -1119,7 +1119,7 @@ public partial class obj_item_slimecross_consuming_pink : obj_item_slimecross_co
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:390
-[DmPath("/obj/item/slimecross/consuming/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/gold"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_gold : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:390
@@ -1132,7 +1132,7 @@ public partial class obj_item_slimecross_consuming_gold : obj_item_slimecross_co
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:409
-[DmPath("/obj/item/slimecross/consuming/oil"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/oil"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_oil : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:409
@@ -1145,7 +1145,7 @@ public partial class obj_item_slimecross_consuming_oil : obj_item_slimecross_con
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:423
-[DmPath("/obj/item/slimecross/consuming/black"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/black"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_black : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:423
@@ -1158,7 +1158,7 @@ public partial class obj_item_slimecross_consuming_black : obj_item_slimecross_c
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:437
-[DmPath("/obj/item/slimecross/consuming/lightpink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/lightpink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_lightpink : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:437
@@ -1171,7 +1171,7 @@ public partial class obj_item_slimecross_consuming_lightpink : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:451
-[DmPath("/obj/item/slimecross/consuming/adamantine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/consuming/adamantine"), DmGeneratedOnly]
 public partial class obj_item_slimecross_consuming_adamantine : obj_item_slimecross_consuming
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:451
@@ -1183,9 +1183,9 @@ public partial class obj_item_slimecross_consuming_adamantine : obj_item_slimecr
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:465
-[DmPath("/obj/item/slimecross/consuming/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_consuming_rainbow : obj_item_slimecross_consuming
+// tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:465 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/consuming/rainbow")]
+public partial class obj_item_slimecross_consuming_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/consuming.dm:465
     public obj_item_slimecross_consuming_rainbow()
@@ -1195,9 +1195,9 @@ public partial class obj_item_slimecross_consuming_rainbow : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:6
-[DmPath("/obj/item/slimecross/industrial"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_industrial : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/industrial")]
+public partial class obj_item_slimecross_industrial
 {
     public float plasmarequired = 2; // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:10
     public Type itempath = typeof(obj_item); // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:11
@@ -1215,7 +1215,7 @@ public partial class obj_item_slimecross_industrial : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:55
-[DmPath("/obj/item/slimecross/industrial/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/grey"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_grey : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:55
@@ -1229,7 +1229,7 @@ public partial class obj_item_slimecross_industrial_grey : obj_item_slimecross_i
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:61
-[DmPath("/obj/item/slimecross/industrial/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/orange"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_orange : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:61
@@ -1243,7 +1243,7 @@ public partial class obj_item_slimecross_industrial_orange : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:67
-[DmPath("/obj/item/slimecross/industrial/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/purple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_purple : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:67
@@ -1257,7 +1257,7 @@ public partial class obj_item_slimecross_industrial_purple : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:73
-[DmPath("/obj/item/slimecross/industrial/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/blue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_blue : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:73
@@ -1271,7 +1271,7 @@ public partial class obj_item_slimecross_industrial_blue : obj_item_slimecross_i
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:79
-[DmPath("/obj/item/slimecross/industrial/metal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/metal"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_metal : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:79
@@ -1284,9 +1284,9 @@ public partial class obj_item_slimecross_industrial_metal : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:85
-[DmPath("/obj/item/slimecross/industrial/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_industrial_yellow : obj_item_slimecross_industrial
+// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/industrial/yellow")]
+public partial class obj_item_slimecross_industrial_yellow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:85
     public obj_item_slimecross_industrial_yellow()
@@ -1299,7 +1299,7 @@ public partial class obj_item_slimecross_industrial_yellow : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:96
-[DmPath("/obj/item/slimecross/industrial/darkpurple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/darkpurple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_darkpurple : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:96
@@ -1312,9 +1312,9 @@ public partial class obj_item_slimecross_industrial_darkpurple : obj_item_slimec
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:102
-[DmPath("/obj/item/slimecross/industrial/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_industrial_darkblue : obj_item_slimecross_industrial
+// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:102 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/industrial/darkblue")]
+public partial class obj_item_slimecross_industrial_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:102
     public obj_item_slimecross_industrial_darkblue()
@@ -1326,9 +1326,9 @@ public partial class obj_item_slimecross_industrial_darkblue : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:113
-[DmPath("/obj/item/slimecross/industrial/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_industrial_silver : obj_item_slimecross_industrial
+// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:113 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/industrial/silver")]
+public partial class obj_item_slimecross_industrial_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:113
     public obj_item_slimecross_industrial_silver()
@@ -1340,7 +1340,7 @@ public partial class obj_item_slimecross_industrial_silver : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:126
-[DmPath("/obj/item/slimecross/industrial/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/bluespace"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_bluespace : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:126
@@ -1354,7 +1354,7 @@ public partial class obj_item_slimecross_industrial_bluespace : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:132
-[DmPath("/obj/item/slimecross/industrial/sepia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/sepia"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_sepia : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:132
@@ -1368,7 +1368,7 @@ public partial class obj_item_slimecross_industrial_sepia : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:138
-[DmPath("/obj/item/slimecross/industrial/cerulean"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/cerulean"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_cerulean : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:138
@@ -1382,7 +1382,7 @@ public partial class obj_item_slimecross_industrial_cerulean : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:144
-[DmPath("/obj/item/slimecross/industrial/pyrite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/pyrite"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_pyrite : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:144
@@ -1396,7 +1396,7 @@ public partial class obj_item_slimecross_industrial_pyrite : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:150
-[DmPath("/obj/item/slimecross/industrial/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/red"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_red : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:150
@@ -1410,7 +1410,7 @@ public partial class obj_item_slimecross_industrial_red : obj_item_slimecross_in
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:156
-[DmPath("/obj/item/slimecross/industrial/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/green"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_green : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:156
@@ -1424,7 +1424,7 @@ public partial class obj_item_slimecross_industrial_green : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:162
-[DmPath("/obj/item/slimecross/industrial/pink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/pink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_pink : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:162
@@ -1437,9 +1437,9 @@ public partial class obj_item_slimecross_industrial_pink : obj_item_slimecross_i
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:168
-[DmPath("/obj/item/slimecross/industrial/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_industrial_gold : obj_item_slimecross_industrial
+// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:168 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/industrial/gold")]
+public partial class obj_item_slimecross_industrial_gold
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:168
     public obj_item_slimecross_industrial_gold()
@@ -1451,7 +1451,7 @@ public partial class obj_item_slimecross_industrial_gold : obj_item_slimecross_i
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:177
-[DmPath("/obj/item/slimecross/industrial/oil"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/oil"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_oil : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:177
@@ -1465,7 +1465,7 @@ public partial class obj_item_slimecross_industrial_oil : obj_item_slimecross_in
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:183
-[DmPath("/obj/item/slimecross/industrial/black"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/black"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_black : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:183
@@ -1479,7 +1479,7 @@ public partial class obj_item_slimecross_industrial_black : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:189
-[DmPath("/obj/item/slimecross/industrial/lightpink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/lightpink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_lightpink : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:189
@@ -1493,7 +1493,7 @@ public partial class obj_item_slimecross_industrial_lightpink : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:195
-[DmPath("/obj/item/slimecross/industrial/adamantine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/industrial/adamantine"), DmGeneratedOnly]
 public partial class obj_item_slimecross_industrial_adamantine : obj_item_slimecross_industrial
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:195
@@ -1506,9 +1506,9 @@ public partial class obj_item_slimecross_industrial_adamantine : obj_item_slimec
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:201
-[DmPath("/obj/item/slimecross/industrial/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_industrial_rainbow : obj_item_slimecross_industrial
+// tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:201 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/industrial/rainbow")]
+public partial class obj_item_slimecross_industrial_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/industrial.dm:201
     public obj_item_slimecross_industrial_rainbow()
@@ -1519,9 +1519,9 @@ public partial class obj_item_slimecross_industrial_rainbow : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:6
-[DmPath("/obj/item/slimecross/prismatic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_prismatic : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/prismatic")]
+public partial class obj_item_slimecross_prismatic
 {
     public string paintcolor = "#FFFFFF"; // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:11
 
@@ -1536,9 +1536,9 @@ public partial class obj_item_slimecross_prismatic : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:22
-[DmPath("/obj/item/slimecross/prismatic/grey"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_prismatic_grey : obj_item_slimecross_prismatic
+// tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:22 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/prismatic/grey")]
+public partial class obj_item_slimecross_prismatic_grey
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:22
     public obj_item_slimecross_prismatic_grey()
@@ -1549,7 +1549,7 @@ public partial class obj_item_slimecross_prismatic_grey : obj_item_slimecross_pr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:34
-[DmPath("/obj/item/slimecross/prismatic/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/orange"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_orange : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:34
@@ -1561,7 +1561,7 @@ public partial class obj_item_slimecross_prismatic_orange : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:38
-[DmPath("/obj/item/slimecross/prismatic/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/purple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_purple : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:38
@@ -1573,7 +1573,7 @@ public partial class obj_item_slimecross_prismatic_purple : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:42
-[DmPath("/obj/item/slimecross/prismatic/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/blue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_blue : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:42
@@ -1585,7 +1585,7 @@ public partial class obj_item_slimecross_prismatic_blue : obj_item_slimecross_pr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:46
-[DmPath("/obj/item/slimecross/prismatic/metal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/metal"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_metal : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:46
@@ -1597,7 +1597,7 @@ public partial class obj_item_slimecross_prismatic_metal : obj_item_slimecross_p
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:50
-[DmPath("/obj/item/slimecross/prismatic/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/yellow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_yellow : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:50
@@ -1609,7 +1609,7 @@ public partial class obj_item_slimecross_prismatic_yellow : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:54
-[DmPath("/obj/item/slimecross/prismatic/darkpurple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/darkpurple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_darkpurple : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:54
@@ -1621,7 +1621,7 @@ public partial class obj_item_slimecross_prismatic_darkpurple : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:58
-[DmPath("/obj/item/slimecross/prismatic/darkblue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/darkblue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_darkblue : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:58
@@ -1633,7 +1633,7 @@ public partial class obj_item_slimecross_prismatic_darkblue : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:62
-[DmPath("/obj/item/slimecross/prismatic/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/silver"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_silver : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:62
@@ -1645,7 +1645,7 @@ public partial class obj_item_slimecross_prismatic_silver : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:66
-[DmPath("/obj/item/slimecross/prismatic/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/bluespace"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_bluespace : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:66
@@ -1657,7 +1657,7 @@ public partial class obj_item_slimecross_prismatic_bluespace : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:70
-[DmPath("/obj/item/slimecross/prismatic/sepia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/sepia"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_sepia : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:70
@@ -1669,7 +1669,7 @@ public partial class obj_item_slimecross_prismatic_sepia : obj_item_slimecross_p
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:74
-[DmPath("/obj/item/slimecross/prismatic/cerulean"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/cerulean"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_cerulean : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:74
@@ -1681,7 +1681,7 @@ public partial class obj_item_slimecross_prismatic_cerulean : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:78
-[DmPath("/obj/item/slimecross/prismatic/pyrite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/pyrite"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_pyrite : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:78
@@ -1693,7 +1693,7 @@ public partial class obj_item_slimecross_prismatic_pyrite : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:82
-[DmPath("/obj/item/slimecross/prismatic/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/red"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_red : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:82
@@ -1705,7 +1705,7 @@ public partial class obj_item_slimecross_prismatic_red : obj_item_slimecross_pri
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:86
-[DmPath("/obj/item/slimecross/prismatic/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/green"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_green : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:86
@@ -1717,7 +1717,7 @@ public partial class obj_item_slimecross_prismatic_green : obj_item_slimecross_p
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:90
-[DmPath("/obj/item/slimecross/prismatic/pink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/pink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_pink : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:90
@@ -1729,7 +1729,7 @@ public partial class obj_item_slimecross_prismatic_pink : obj_item_slimecross_pr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:94
-[DmPath("/obj/item/slimecross/prismatic/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/gold"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_gold : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:94
@@ -1741,7 +1741,7 @@ public partial class obj_item_slimecross_prismatic_gold : obj_item_slimecross_pr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:98
-[DmPath("/obj/item/slimecross/prismatic/oil"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/oil"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_oil : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:98
@@ -1753,7 +1753,7 @@ public partial class obj_item_slimecross_prismatic_oil : obj_item_slimecross_pri
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:102
-[DmPath("/obj/item/slimecross/prismatic/black"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/black"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_black : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:102
@@ -1765,7 +1765,7 @@ public partial class obj_item_slimecross_prismatic_black : obj_item_slimecross_p
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:106
-[DmPath("/obj/item/slimecross/prismatic/lightpink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/lightpink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_lightpink : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:106
@@ -1777,7 +1777,7 @@ public partial class obj_item_slimecross_prismatic_lightpink : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:110
-[DmPath("/obj/item/slimecross/prismatic/adamantine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/prismatic/adamantine"), DmGeneratedOnly]
 public partial class obj_item_slimecross_prismatic_adamantine : obj_item_slimecross_prismatic
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:110
@@ -1788,9 +1788,9 @@ public partial class obj_item_slimecross_prismatic_adamantine : obj_item_slimecr
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:114
-[DmPath("/obj/item/slimecross/prismatic/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_prismatic_rainbow : obj_item_slimecross_prismatic
+// tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:114 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/prismatic/rainbow")]
+public partial class obj_item_slimecross_prismatic_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/prismatic.dm:114
     public obj_item_slimecross_prismatic_rainbow()
@@ -1800,9 +1800,9 @@ public partial class obj_item_slimecross_prismatic_rainbow : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:7
-[DmPath("/obj/item/slimecross/recurring"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_recurring : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/recurring")]
+public partial class obj_item_slimecross_recurring
 {
     public Type extract_type; // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:12
     public obj_item_slime_extract extract; // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:13
@@ -1821,7 +1821,7 @@ public partial class obj_item_slimecross_recurring : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:47
-[DmPath("/obj/item/slimecross/recurring/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/grey"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_grey : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:47
@@ -1833,7 +1833,7 @@ public partial class obj_item_slimecross_recurring_grey : obj_item_slimecross_re
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:51
-[DmPath("/obj/item/slimecross/recurring/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/orange"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_orange : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:51
@@ -1845,7 +1845,7 @@ public partial class obj_item_slimecross_recurring_orange : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:55
-[DmPath("/obj/item/slimecross/recurring/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/purple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_purple : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:55
@@ -1857,7 +1857,7 @@ public partial class obj_item_slimecross_recurring_purple : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:59
-[DmPath("/obj/item/slimecross/recurring/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/blue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_blue : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:59
@@ -1869,7 +1869,7 @@ public partial class obj_item_slimecross_recurring_blue : obj_item_slimecross_re
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:63
-[DmPath("/obj/item/slimecross/recurring/metal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/metal"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_metal : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:63
@@ -1882,7 +1882,7 @@ public partial class obj_item_slimecross_recurring_metal : obj_item_slimecross_r
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:68
-[DmPath("/obj/item/slimecross/recurring/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/yellow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_yellow : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:68
@@ -1895,7 +1895,7 @@ public partial class obj_item_slimecross_recurring_yellow : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:73
-[DmPath("/obj/item/slimecross/recurring/darkpurple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/darkpurple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_darkpurple : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:73
@@ -1908,7 +1908,7 @@ public partial class obj_item_slimecross_recurring_darkpurple : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:78
-[DmPath("/obj/item/slimecross/recurring/darkblue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/darkblue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_darkblue : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:78
@@ -1920,7 +1920,7 @@ public partial class obj_item_slimecross_recurring_darkblue : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:82
-[DmPath("/obj/item/slimecross/recurring/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/silver"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_silver : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:82
@@ -1932,7 +1932,7 @@ public partial class obj_item_slimecross_recurring_silver : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:86
-[DmPath("/obj/item/slimecross/recurring/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/bluespace"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_bluespace : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:86
@@ -1944,7 +1944,7 @@ public partial class obj_item_slimecross_recurring_bluespace : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:90
-[DmPath("/obj/item/slimecross/recurring/sepia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/sepia"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_sepia : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:90
@@ -1957,7 +1957,7 @@ public partial class obj_item_slimecross_recurring_sepia : obj_item_slimecross_r
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:95
-[DmPath("/obj/item/slimecross/recurring/cerulean"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/cerulean"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_cerulean : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:95
@@ -1969,7 +1969,7 @@ public partial class obj_item_slimecross_recurring_cerulean : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:99
-[DmPath("/obj/item/slimecross/recurring/pyrite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/pyrite"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_pyrite : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:99
@@ -1981,7 +1981,7 @@ public partial class obj_item_slimecross_recurring_pyrite : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:103
-[DmPath("/obj/item/slimecross/recurring/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/red"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_red : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:103
@@ -1993,7 +1993,7 @@ public partial class obj_item_slimecross_recurring_red : obj_item_slimecross_rec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:107
-[DmPath("/obj/item/slimecross/recurring/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/green"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_green : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:107
@@ -2005,7 +2005,7 @@ public partial class obj_item_slimecross_recurring_green : obj_item_slimecross_r
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:111
-[DmPath("/obj/item/slimecross/recurring/pink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/pink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_pink : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:111
@@ -2017,7 +2017,7 @@ public partial class obj_item_slimecross_recurring_pink : obj_item_slimecross_re
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:115
-[DmPath("/obj/item/slimecross/recurring/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/gold"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_gold : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:115
@@ -2030,7 +2030,7 @@ public partial class obj_item_slimecross_recurring_gold : obj_item_slimecross_re
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:120
-[DmPath("/obj/item/slimecross/recurring/oil"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/oil"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_oil : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:120
@@ -2042,7 +2042,7 @@ public partial class obj_item_slimecross_recurring_oil : obj_item_slimecross_rec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:124
-[DmPath("/obj/item/slimecross/recurring/black"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/black"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_black : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:124
@@ -2054,7 +2054,7 @@ public partial class obj_item_slimecross_recurring_black : obj_item_slimecross_r
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:128
-[DmPath("/obj/item/slimecross/recurring/lightpink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/lightpink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_lightpink : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:128
@@ -2066,7 +2066,7 @@ public partial class obj_item_slimecross_recurring_lightpink : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:132
-[DmPath("/obj/item/slimecross/recurring/adamantine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/adamantine"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_adamantine : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:132
@@ -2079,7 +2079,7 @@ public partial class obj_item_slimecross_recurring_adamantine : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:137
-[DmPath("/obj/item/slimecross/recurring/rainbow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/recurring/rainbow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_recurring_rainbow : obj_item_slimecross_recurring
 {
     // tg: code/modules/research/xenobiology/crossbreeding/recurring.dm:137
@@ -2091,9 +2091,9 @@ public partial class obj_item_slimecross_recurring_rainbow : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:7
-[DmPath("/obj/item/slimecross/regenerative"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:7 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative")]
+public partial class obj_item_slimecross_regenerative
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:7
     public obj_item_slimecross_regenerative()
@@ -2107,7 +2107,7 @@ public partial class obj_item_slimecross_regenerative : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:40
-[DmPath("/obj/item/slimecross/regenerative/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/regenerative/grey"), DmGeneratedOnly]
 public partial class obj_item_slimecross_regenerative_grey : obj_item_slimecross_regenerative
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:40
@@ -2118,9 +2118,9 @@ public partial class obj_item_slimecross_regenerative_grey : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:44
-[DmPath("/obj/item/slimecross/regenerative/orange"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_orange : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:44 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/orange")]
+public partial class obj_item_slimecross_regenerative_orange
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:44
     public obj_item_slimecross_regenerative_orange()
@@ -2129,9 +2129,9 @@ public partial class obj_item_slimecross_regenerative_orange : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:53
-[DmPath("/obj/item/slimecross/regenerative/purple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_purple : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:53 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/purple")]
+public partial class obj_item_slimecross_regenerative_purple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:53
     public obj_item_slimecross_regenerative_purple()
@@ -2141,9 +2141,9 @@ public partial class obj_item_slimecross_regenerative_purple : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:60
-[DmPath("/obj/item/slimecross/regenerative/blue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_blue : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:60 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/blue")]
+public partial class obj_item_slimecross_regenerative_blue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:60
     public obj_item_slimecross_regenerative_blue()
@@ -2153,9 +2153,9 @@ public partial class obj_item_slimecross_regenerative_blue : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:70
-[DmPath("/obj/item/slimecross/regenerative/metal"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_metal : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:70 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/metal")]
+public partial class obj_item_slimecross_regenerative_metal
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:70
     public obj_item_slimecross_regenerative_metal()
@@ -2165,9 +2165,9 @@ public partial class obj_item_slimecross_regenerative_metal : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:85
-[DmPath("/obj/item/slimecross/regenerative/yellow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_yellow : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:85 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/yellow")]
+public partial class obj_item_slimecross_regenerative_yellow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:85
     public obj_item_slimecross_regenerative_yellow()
@@ -2177,9 +2177,9 @@ public partial class obj_item_slimecross_regenerative_yellow : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:99
-[DmPath("/obj/item/slimecross/regenerative/darkpurple"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_darkpurple : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:99 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/darkpurple")]
+public partial class obj_item_slimecross_regenerative_darkpurple
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:99
     public obj_item_slimecross_regenerative_darkpurple()
@@ -2189,9 +2189,9 @@ public partial class obj_item_slimecross_regenerative_darkpurple : obj_item_slim
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:112
-[DmPath("/obj/item/slimecross/regenerative/darkblue"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_darkblue : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:112 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/darkblue")]
+public partial class obj_item_slimecross_regenerative_darkblue
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:112
     public obj_item_slimecross_regenerative_darkblue()
@@ -2201,9 +2201,9 @@ public partial class obj_item_slimecross_regenerative_darkblue : obj_item_slimec
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:140
-[DmPath("/obj/item/slimecross/regenerative/silver"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_silver : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:140 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/silver")]
+public partial class obj_item_slimecross_regenerative_silver
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:140
     public obj_item_slimecross_regenerative_silver()
@@ -2213,9 +2213,9 @@ public partial class obj_item_slimecross_regenerative_silver : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:148
-[DmPath("/obj/item/slimecross/regenerative/bluespace"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_bluespace : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:148 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/bluespace")]
+public partial class obj_item_slimecross_regenerative_bluespace
 {
     public turf_open T; // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:150
 
@@ -2227,9 +2227,9 @@ public partial class obj_item_slimecross_regenerative_bluespace : obj_item_slime
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:166
-[DmPath("/obj/item/slimecross/regenerative/sepia"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_sepia : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:166 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/sepia")]
+public partial class obj_item_slimecross_regenerative_sepia
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:166
     public obj_item_slimecross_regenerative_sepia()
@@ -2239,9 +2239,9 @@ public partial class obj_item_slimecross_regenerative_sepia : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:174
-[DmPath("/obj/item/slimecross/regenerative/cerulean"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_cerulean : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:174 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/cerulean")]
+public partial class obj_item_slimecross_regenerative_cerulean
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:174
     public obj_item_slimecross_regenerative_cerulean()
@@ -2251,9 +2251,9 @@ public partial class obj_item_slimecross_regenerative_cerulean : obj_item_slimec
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:186
-[DmPath("/obj/item/slimecross/regenerative/pyrite"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_pyrite : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:186 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/pyrite")]
+public partial class obj_item_slimecross_regenerative_pyrite
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:186
     public obj_item_slimecross_regenerative_pyrite()
@@ -2263,9 +2263,9 @@ public partial class obj_item_slimecross_regenerative_pyrite : obj_item_slimecro
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:194
-[DmPath("/obj/item/slimecross/regenerative/red"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_red : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:194 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/red")]
+public partial class obj_item_slimecross_regenerative_red
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:194
     public obj_item_slimecross_regenerative_red()
@@ -2275,9 +2275,9 @@ public partial class obj_item_slimecross_regenerative_red : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:202
-[DmPath("/obj/item/slimecross/regenerative/green"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_green : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:202 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/green")]
+public partial class obj_item_slimecross_regenerative_green
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:202
     public obj_item_slimecross_regenerative_green()
@@ -2287,9 +2287,9 @@ public partial class obj_item_slimecross_regenerative_green : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:214
-[DmPath("/obj/item/slimecross/regenerative/pink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_pink : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:214 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/pink")]
+public partial class obj_item_slimecross_regenerative_pink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:214
     public obj_item_slimecross_regenerative_pink()
@@ -2299,9 +2299,9 @@ public partial class obj_item_slimecross_regenerative_pink : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:222
-[DmPath("/obj/item/slimecross/regenerative/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_gold : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:222 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/gold")]
+public partial class obj_item_slimecross_regenerative_gold
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:222
     public obj_item_slimecross_regenerative_gold()
@@ -2311,9 +2311,9 @@ public partial class obj_item_slimecross_regenerative_gold : obj_item_slimecross
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:232
-[DmPath("/obj/item/slimecross/regenerative/oil"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_oil : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:232 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/oil")]
+public partial class obj_item_slimecross_regenerative_oil
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:232
     public obj_item_slimecross_regenerative_oil()
@@ -2323,9 +2323,9 @@ public partial class obj_item_slimecross_regenerative_oil : obj_item_slimecross_
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:241
-[DmPath("/obj/item/slimecross/regenerative/black"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_black : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:241 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/black")]
+public partial class obj_item_slimecross_regenerative_black
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:241
     public obj_item_slimecross_regenerative_black()
@@ -2335,9 +2335,9 @@ public partial class obj_item_slimecross_regenerative_black : obj_item_slimecros
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:263
-[DmPath("/obj/item/slimecross/regenerative/lightpink"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_lightpink : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:263 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/lightpink")]
+public partial class obj_item_slimecross_regenerative_lightpink
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:263
     public obj_item_slimecross_regenerative_lightpink()
@@ -2347,9 +2347,9 @@ public partial class obj_item_slimecross_regenerative_lightpink : obj_item_slime
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:276
-[DmPath("/obj/item/slimecross/regenerative/adamantine"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_adamantine : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:276 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/adamantine")]
+public partial class obj_item_slimecross_regenerative_adamantine
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:276
     public obj_item_slimecross_regenerative_adamantine()
@@ -2359,9 +2359,9 @@ public partial class obj_item_slimecross_regenerative_adamantine : obj_item_slim
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:283
-[DmPath("/obj/item/slimecross/regenerative/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_regenerative_rainbow : obj_item_slimecross_regenerative
+// tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:283 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/regenerative/rainbow")]
+public partial class obj_item_slimecross_regenerative_rainbow
 {
     // tg: code/modules/research/xenobiology/crossbreeding/regenerative.dm:283
     public obj_item_slimecross_regenerative_rainbow()
@@ -2371,9 +2371,9 @@ public partial class obj_item_slimecross_regenerative_rainbow : obj_item_slimecr
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:9
-[DmPath("/obj/item/slimecross/reproductive"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_reproductive : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:9 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/reproductive")]
+public partial class obj_item_slimecross_reproductive
 {
     public Type extract_type = typeof(obj_item_slime_extract); // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:14
     public float cooldown = 30; // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:15
@@ -2392,7 +2392,7 @@ public partial class obj_item_slimecross_reproductive : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:65
-[DmPath("/obj/item/slimecross/reproductive/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/grey"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_grey : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:65
@@ -2404,7 +2404,7 @@ public partial class obj_item_slimecross_reproductive_grey : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:69
-[DmPath("/obj/item/slimecross/reproductive/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/orange"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_orange : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:69
@@ -2416,7 +2416,7 @@ public partial class obj_item_slimecross_reproductive_orange : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:73
-[DmPath("/obj/item/slimecross/reproductive/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/purple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_purple : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:73
@@ -2428,7 +2428,7 @@ public partial class obj_item_slimecross_reproductive_purple : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:77
-[DmPath("/obj/item/slimecross/reproductive/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/blue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_blue : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:77
@@ -2440,7 +2440,7 @@ public partial class obj_item_slimecross_reproductive_blue : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:81
-[DmPath("/obj/item/slimecross/reproductive/metal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/metal"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_metal : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:81
@@ -2452,7 +2452,7 @@ public partial class obj_item_slimecross_reproductive_metal : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:85
-[DmPath("/obj/item/slimecross/reproductive/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/yellow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_yellow : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:85
@@ -2464,7 +2464,7 @@ public partial class obj_item_slimecross_reproductive_yellow : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:89
-[DmPath("/obj/item/slimecross/reproductive/darkpurple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/darkpurple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_darkpurple : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:89
@@ -2476,7 +2476,7 @@ public partial class obj_item_slimecross_reproductive_darkpurple : obj_item_slim
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:93
-[DmPath("/obj/item/slimecross/reproductive/darkblue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/darkblue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_darkblue : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:93
@@ -2488,7 +2488,7 @@ public partial class obj_item_slimecross_reproductive_darkblue : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:97
-[DmPath("/obj/item/slimecross/reproductive/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/silver"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_silver : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:97
@@ -2500,7 +2500,7 @@ public partial class obj_item_slimecross_reproductive_silver : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:101
-[DmPath("/obj/item/slimecross/reproductive/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/bluespace"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_bluespace : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:101
@@ -2512,7 +2512,7 @@ public partial class obj_item_slimecross_reproductive_bluespace : obj_item_slime
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:105
-[DmPath("/obj/item/slimecross/reproductive/sepia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/sepia"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_sepia : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:105
@@ -2524,7 +2524,7 @@ public partial class obj_item_slimecross_reproductive_sepia : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:109
-[DmPath("/obj/item/slimecross/reproductive/cerulean"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/cerulean"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_cerulean : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:109
@@ -2536,7 +2536,7 @@ public partial class obj_item_slimecross_reproductive_cerulean : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:113
-[DmPath("/obj/item/slimecross/reproductive/pyrite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/pyrite"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_pyrite : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:113
@@ -2548,7 +2548,7 @@ public partial class obj_item_slimecross_reproductive_pyrite : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:117
-[DmPath("/obj/item/slimecross/reproductive/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/red"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_red : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:117
@@ -2560,7 +2560,7 @@ public partial class obj_item_slimecross_reproductive_red : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:121
-[DmPath("/obj/item/slimecross/reproductive/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/green"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_green : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:121
@@ -2572,7 +2572,7 @@ public partial class obj_item_slimecross_reproductive_green : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:125
-[DmPath("/obj/item/slimecross/reproductive/pink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/pink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_pink : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:125
@@ -2584,7 +2584,7 @@ public partial class obj_item_slimecross_reproductive_pink : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:129
-[DmPath("/obj/item/slimecross/reproductive/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/gold"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_gold : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:129
@@ -2596,7 +2596,7 @@ public partial class obj_item_slimecross_reproductive_gold : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:133
-[DmPath("/obj/item/slimecross/reproductive/oil"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/oil"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_oil : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:133
@@ -2608,7 +2608,7 @@ public partial class obj_item_slimecross_reproductive_oil : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:137
-[DmPath("/obj/item/slimecross/reproductive/black"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/black"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_black : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:137
@@ -2620,7 +2620,7 @@ public partial class obj_item_slimecross_reproductive_black : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:141
-[DmPath("/obj/item/slimecross/reproductive/lightpink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/lightpink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_lightpink : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:141
@@ -2632,7 +2632,7 @@ public partial class obj_item_slimecross_reproductive_lightpink : obj_item_slime
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:145
-[DmPath("/obj/item/slimecross/reproductive/adamantine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/adamantine"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_adamantine : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:145
@@ -2644,7 +2644,7 @@ public partial class obj_item_slimecross_reproductive_adamantine : obj_item_slim
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:149
-[DmPath("/obj/item/slimecross/reproductive/rainbow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/reproductive/rainbow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_reproductive_rainbow : obj_item_slimecross_reproductive
 {
     // tg: code/modules/research/xenobiology/crossbreeding/reproductive.dm:149
@@ -2655,9 +2655,9 @@ public partial class obj_item_slimecross_reproductive_rainbow : obj_item_slimecr
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:6
-[DmPath("/obj/item/slimecross/selfsustaining"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_selfsustaining : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:6 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/selfsustaining")]
+public partial class obj_item_slimecross_selfsustaining
 {
     public Type extract_type = typeof(obj_item_slime_extract); // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:9
 
@@ -2671,7 +2671,7 @@ public partial class obj_item_slimecross_selfsustaining : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:72
-[DmPath("/obj/item/slimecross/selfsustaining/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/grey"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_grey : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:72
@@ -2683,7 +2683,7 @@ public partial class obj_item_slimecross_selfsustaining_grey : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:76
-[DmPath("/obj/item/slimecross/selfsustaining/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/orange"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_orange : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:76
@@ -2695,7 +2695,7 @@ public partial class obj_item_slimecross_selfsustaining_orange : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:80
-[DmPath("/obj/item/slimecross/selfsustaining/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/purple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_purple : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:80
@@ -2707,7 +2707,7 @@ public partial class obj_item_slimecross_selfsustaining_purple : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:84
-[DmPath("/obj/item/slimecross/selfsustaining/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/blue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_blue : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:84
@@ -2719,7 +2719,7 @@ public partial class obj_item_slimecross_selfsustaining_blue : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:88
-[DmPath("/obj/item/slimecross/selfsustaining/metal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/metal"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_metal : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:88
@@ -2731,7 +2731,7 @@ public partial class obj_item_slimecross_selfsustaining_metal : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:92
-[DmPath("/obj/item/slimecross/selfsustaining/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/yellow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_yellow : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:92
@@ -2743,7 +2743,7 @@ public partial class obj_item_slimecross_selfsustaining_yellow : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:96
-[DmPath("/obj/item/slimecross/selfsustaining/darkpurple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/darkpurple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_darkpurple : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:96
@@ -2755,7 +2755,7 @@ public partial class obj_item_slimecross_selfsustaining_darkpurple : obj_item_sl
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:100
-[DmPath("/obj/item/slimecross/selfsustaining/darkblue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/darkblue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_darkblue : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:100
@@ -2767,7 +2767,7 @@ public partial class obj_item_slimecross_selfsustaining_darkblue : obj_item_slim
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:104
-[DmPath("/obj/item/slimecross/selfsustaining/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/silver"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_silver : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:104
@@ -2779,7 +2779,7 @@ public partial class obj_item_slimecross_selfsustaining_silver : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:108
-[DmPath("/obj/item/slimecross/selfsustaining/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/bluespace"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_bluespace : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:108
@@ -2791,7 +2791,7 @@ public partial class obj_item_slimecross_selfsustaining_bluespace : obj_item_sli
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:112
-[DmPath("/obj/item/slimecross/selfsustaining/sepia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/sepia"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_sepia : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:112
@@ -2803,7 +2803,7 @@ public partial class obj_item_slimecross_selfsustaining_sepia : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:116
-[DmPath("/obj/item/slimecross/selfsustaining/cerulean"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/cerulean"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_cerulean : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:116
@@ -2815,7 +2815,7 @@ public partial class obj_item_slimecross_selfsustaining_cerulean : obj_item_slim
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:120
-[DmPath("/obj/item/slimecross/selfsustaining/pyrite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/pyrite"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_pyrite : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:120
@@ -2827,7 +2827,7 @@ public partial class obj_item_slimecross_selfsustaining_pyrite : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:124
-[DmPath("/obj/item/slimecross/selfsustaining/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/red"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_red : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:124
@@ -2839,7 +2839,7 @@ public partial class obj_item_slimecross_selfsustaining_red : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:128
-[DmPath("/obj/item/slimecross/selfsustaining/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/green"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_green : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:128
@@ -2851,7 +2851,7 @@ public partial class obj_item_slimecross_selfsustaining_green : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:132
-[DmPath("/obj/item/slimecross/selfsustaining/pink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/pink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_pink : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:132
@@ -2863,7 +2863,7 @@ public partial class obj_item_slimecross_selfsustaining_pink : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:136
-[DmPath("/obj/item/slimecross/selfsustaining/gold"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/gold"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_gold : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:136
@@ -2875,7 +2875,7 @@ public partial class obj_item_slimecross_selfsustaining_gold : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:140
-[DmPath("/obj/item/slimecross/selfsustaining/oil"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/oil"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_oil : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:140
@@ -2887,7 +2887,7 @@ public partial class obj_item_slimecross_selfsustaining_oil : obj_item_slimecros
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:144
-[DmPath("/obj/item/slimecross/selfsustaining/black"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/black"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_black : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:144
@@ -2899,7 +2899,7 @@ public partial class obj_item_slimecross_selfsustaining_black : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:148
-[DmPath("/obj/item/slimecross/selfsustaining/lightpink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/lightpink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_lightpink : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:148
@@ -2911,7 +2911,7 @@ public partial class obj_item_slimecross_selfsustaining_lightpink : obj_item_sli
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:152
-[DmPath("/obj/item/slimecross/selfsustaining/adamantine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/adamantine"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_adamantine : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:152
@@ -2923,7 +2923,7 @@ public partial class obj_item_slimecross_selfsustaining_adamantine : obj_item_sl
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:156
-[DmPath("/obj/item/slimecross/selfsustaining/rainbow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/selfsustaining/rainbow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_selfsustaining_rainbow : obj_item_slimecross_selfsustaining
 {
     // tg: code/modules/research/xenobiology/crossbreeding/selfsustaining.dm:156
@@ -2934,9 +2934,9 @@ public partial class obj_item_slimecross_selfsustaining_rainbow : obj_item_slime
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:10
-[DmPath("/obj/item/slimecross/stabilized"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_stabilized : obj_item_slimecross
+// tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:10 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/stabilized")]
+public partial class obj_item_slimecross_stabilized
 {
     public datum_status_effect linked_effect; // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:14
 
@@ -2951,7 +2951,7 @@ public partial class obj_item_slimecross_stabilized : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:60
-[DmPath("/obj/item/slimecross/stabilized/grey"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/grey"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_grey : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:60
@@ -2963,7 +2963,7 @@ public partial class obj_item_slimecross_stabilized_grey : obj_item_slimecross_s
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:64
-[DmPath("/obj/item/slimecross/stabilized/orange"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/orange"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_orange : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:64
@@ -2975,7 +2975,7 @@ public partial class obj_item_slimecross_stabilized_orange : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:68
-[DmPath("/obj/item/slimecross/stabilized/purple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/purple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_purple : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:68
@@ -2987,7 +2987,7 @@ public partial class obj_item_slimecross_stabilized_purple : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:72
-[DmPath("/obj/item/slimecross/stabilized/blue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/blue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_blue : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:72
@@ -2999,7 +2999,7 @@ public partial class obj_item_slimecross_stabilized_blue : obj_item_slimecross_s
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:76
-[DmPath("/obj/item/slimecross/stabilized/metal"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/metal"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_metal : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:76
@@ -3011,7 +3011,7 @@ public partial class obj_item_slimecross_stabilized_metal : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:80
-[DmPath("/obj/item/slimecross/stabilized/yellow"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/yellow"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_yellow : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:80
@@ -3023,7 +3023,7 @@ public partial class obj_item_slimecross_stabilized_yellow : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:84
-[DmPath("/obj/item/slimecross/stabilized/darkpurple"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/darkpurple"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_darkpurple : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:84
@@ -3035,7 +3035,7 @@ public partial class obj_item_slimecross_stabilized_darkpurple : obj_item_slimec
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:88
-[DmPath("/obj/item/slimecross/stabilized/darkblue"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/darkblue"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_darkblue : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:88
@@ -3047,7 +3047,7 @@ public partial class obj_item_slimecross_stabilized_darkblue : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:92
-[DmPath("/obj/item/slimecross/stabilized/silver"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/silver"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_silver : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:92
@@ -3059,7 +3059,7 @@ public partial class obj_item_slimecross_stabilized_silver : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:96
-[DmPath("/obj/item/slimecross/stabilized/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/bluespace"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_bluespace : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:96
@@ -3071,7 +3071,7 @@ public partial class obj_item_slimecross_stabilized_bluespace : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:100
-[DmPath("/obj/item/slimecross/stabilized/sepia"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/sepia"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_sepia : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:100
@@ -3083,7 +3083,7 @@ public partial class obj_item_slimecross_stabilized_sepia : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:104
-[DmPath("/obj/item/slimecross/stabilized/cerulean"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/cerulean"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_cerulean : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:104
@@ -3095,7 +3095,7 @@ public partial class obj_item_slimecross_stabilized_cerulean : obj_item_slimecro
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:108
-[DmPath("/obj/item/slimecross/stabilized/pyrite"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/pyrite"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_pyrite : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:108
@@ -3107,7 +3107,7 @@ public partial class obj_item_slimecross_stabilized_pyrite : obj_item_slimecross
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:112
-[DmPath("/obj/item/slimecross/stabilized/red"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/red"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_red : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:112
@@ -3119,7 +3119,7 @@ public partial class obj_item_slimecross_stabilized_red : obj_item_slimecross_st
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:116
-[DmPath("/obj/item/slimecross/stabilized/green"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/green"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_green : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:116
@@ -3131,7 +3131,7 @@ public partial class obj_item_slimecross_stabilized_green : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:120
-[DmPath("/obj/item/slimecross/stabilized/pink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/pink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_pink : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:120
@@ -3142,9 +3142,9 @@ public partial class obj_item_slimecross_stabilized_pink : obj_item_slimecross_s
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:124
-[DmPath("/obj/item/slimecross/stabilized/gold"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_stabilized_gold : obj_item_slimecross_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:124 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/stabilized/gold")]
+public partial class obj_item_slimecross_stabilized_gold
 {
     public Type mob_type; // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:126
     public datum_mind saved_mind; // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:127
@@ -3159,7 +3159,7 @@ public partial class obj_item_slimecross_stabilized_gold : obj_item_slimecross_s
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:174
-[DmPath("/obj/item/slimecross/stabilized/oil"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/oil"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_oil : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:174
@@ -3171,7 +3171,7 @@ public partial class obj_item_slimecross_stabilized_oil : obj_item_slimecross_st
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:178
-[DmPath("/obj/item/slimecross/stabilized/black"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/black"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_black : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:178
@@ -3183,7 +3183,7 @@ public partial class obj_item_slimecross_stabilized_black : obj_item_slimecross_
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:182
-[DmPath("/obj/item/slimecross/stabilized/lightpink"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/lightpink"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_lightpink : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:182
@@ -3195,7 +3195,7 @@ public partial class obj_item_slimecross_stabilized_lightpink : obj_item_slimecr
 }
 
 // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:186
-[DmPath("/obj/item/slimecross/stabilized/adamantine"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/slimecross/stabilized/adamantine"), DmGeneratedOnly]
 public partial class obj_item_slimecross_stabilized_adamantine : obj_item_slimecross_stabilized
 {
     // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:186
@@ -3206,9 +3206,9 @@ public partial class obj_item_slimecross_stabilized_adamantine : obj_item_slimec
     }
 }
 
-// tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:190
-[DmPath("/obj/item/slimecross/stabilized/rainbow"), DmGeneratedOnly, DmInert]
-public partial class obj_item_slimecross_stabilized_rainbow : obj_item_slimecross_stabilized
+// tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:190 (the var block of a hand-written class)
+[DmPath("/obj/item/slimecross/stabilized/rainbow")]
+public partial class obj_item_slimecross_stabilized_rainbow
 {
     public obj_item_slimecross_regenerative regencore; // tg: code/modules/research/xenobiology/crossbreeding/stabilized.dm:193
 

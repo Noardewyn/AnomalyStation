@@ -307,16 +307,25 @@ public partial class obj_item_gun_magic
     }
 }
 
-// tg: code/modules/assembly/doorcontrol.dm:181
-public partial class obj_item_assembly_control_massdriver
+// tg: code/modules/fishing/fishing_rod.dm:2
+public partial class obj_item_fishing_rod
 {
-    // tg: code/modules/assembly/doorcontrol.dm:184
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section P4
+    // tg: code/modules/fishing/fishing_rod.dm:101
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public override DmTask<object> activate(mob activator = null)
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
-        Dm.NotTranslated("code/modules/assembly/doorcontrol.dm:184", "activate: the mass driver controller (after the core version) (M10+)");
-        return DmTask<object>.FromResult(default);
+        Dm.Deferred("code/modules/fishing/fishing_rod.dm:101", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
+        return default;
+    }
+
+    // tg: code/modules/fishing/fishing_rod.dm:109
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_item_context(obj_item source = null, DmList context = null, atom target = null, mob_living user = null)
+    {
+        Dm.Deferred("code/modules/fishing/fishing_rod.dm:109", "add_item_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
+        return default;
     }
 }
 
@@ -377,6 +386,19 @@ public partial class obj_item_assembly_signaler
     public virtual DmTask manual_suicide(params object[] __extra)
     {
         Dm.Deferred("code/modules/assembly/signaler.dm:40", "manual_suicide: the suicide verb (M10+)");
+        return DmTask.CompletedTask;
+    }
+}
+
+// tg: code/modules/research/anomaly/anomaly_core.dm:3
+public partial class obj_item_assembly_signaler_anomaly
+{
+    // tg: code/modules/research/anomaly/anomaly_core.dm:27
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override DmTask manual_suicide(params object[] __extra)
+    {
+        Dm.Deferred("code/modules/research/anomaly/anomaly_core.dm:27", "manual_suicide: the suicide verb (M10+)");
         return DmTask.CompletedTask;
     }
 }
@@ -1526,6 +1548,19 @@ public partial class obj_item_wrench
     }
 }
 
+// tg: code/game/objects/items/tools/engineering/wrench.dm:54
+public partial class obj_item_wrench_medical
+{
+    // tg: code/game/objects/items/tools/engineering/wrench.dm:70
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
+    [DmGeneratedStub]
+    public override DmTask<object> suicide_act(mob_living user = null)
+    {
+        Dm.Deferred("code/game/objects/items/tools/engineering/wrench.dm:70", "suicide_act: suicides (the suicide verb, M10+) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
 // tg: code/game/objects/items/tools/engineering/painter/airlock_painter.dm:2
 public partial class obj_item_airlock_painter
 {
@@ -1587,6 +1622,50 @@ public partial class obj_item_grown_log
     }
 }
 
+// tg: code/modules/antagonists/wizard/equipment/soulstone.dm:2
+public partial class obj_item_soulstone
+{
+    // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:120
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public virtual DmTask<object> corrupt()
+    {
+        Dm.NotTranslated("code/modules/antagonists/wizard/equipment/soulstone.dm:120", "corrupt: the cult's corruption of a soulstone and its shade (the cult, D333) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+
+    // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:380
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public virtual DmTask<object> transfer_to_construct(obj_structure_constructshell shell = null, mob user = null)
+    {
+        Dm.NotTranslated("code/modules/antagonists/wizard/equipment/soulstone.dm:380", "transfer_to_construct: a shade put into a construct shell becomes a construct (the cult's and the wizard's constructs, D333) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+
+    // tg: code/modules/antagonists/wizard/equipment/soulstone.dm:394
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public virtual DmTask<object> check_menu(mob user = null, obj_structure_constructshell shell = null)
+    {
+        Dm.NotTranslated("code/modules/antagonists/wizard/equipment/soulstone.dm:394", "check_menu: the construct shell's radial menu check (the cult's and the wizard's constructs, D333) (M10+)");
+        return DmTask<object>.FromResult(default);
+    }
+}
+
+// tg: code/modules/modular_computers/computers/item/laptop.dm:2
+public partial class obj_item_modular_computer_laptop
+{
+    // tg: code/modules/modular_computers/computers/item/laptop.dm:40
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/modular_computers/computers/item/laptop.dm:40", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
+        return default;
+    }
+}
+
 // tg: code/modules/cargo/universal_scanner.dm:4
 public partial class obj_item_universal_scanner
 {
@@ -1596,6 +1675,19 @@ public partial class obj_item_universal_scanner
     public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
         Dm.Deferred("code/modules/cargo/universal_scanner.dm:161", "add_context: screentips (D264) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/fishing/fishing_equipment.dm:590
+public partial class obj_item_survivalcapsule_fishing
+{
+    // tg: code/modules/fishing/fishing_equipment.dm:606
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/fishing/fishing_equipment.dm:606", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
         return default;
     }
 }
@@ -1632,32 +1724,6 @@ public partial class obj_item_barcodescanner
     {
         Dm.Deferred("code/modules/library/barcode_scanner.dm:24", "add_item_context: the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred) (M10+)");
         return default;
-    }
-}
-
-// tg: code/modules/mining/equipment/mining_tools.dm:3
-public partial class obj_item_pickaxe
-{
-    // tg: code/modules/mining/equipment/mining_tools.dm:23
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override DmTask<object> suicide_act(mob_living user = null)
-    {
-        Dm.Deferred("code/modules/mining/equipment/mining_tools.dm:23", "suicide_act: the suicide verb (M10+) (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
-// tg: code/modules/mining/equipment/mining_tools.dm:113
-public partial class obj_item_shovel
-{
-    // tg: code/modules/mining/equipment/mining_tools.dm:144
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
-    [DmGeneratedStub]
-    public override DmTask<object> suicide_act(mob_living user = null)
-    {
-        Dm.Deferred("code/modules/mining/equipment/mining_tools.dm:144", "suicide_act: the suicide verb (M10+) (M10+)");
-        return DmTask<object>.FromResult(default);
     }
 }
 
@@ -1800,55 +1866,6 @@ public partial class obj_item_photo
     public virtual DmTask __gvb_rename(DmList structured_args = null)
     {
         Dm.Deferred("code/modules/photography/photos/photo.dm:115", "__gvb_rename: the Rename photo verb (verbs, M10+) (M10+)");
-        return DmTask.CompletedTask;
-    }
-}
-
-// tg: code/modules/research/xenobiology/xenobiology.dm:4
-public partial class obj_item_slime_extract
-{
-    // tg: code/modules/research/xenobiology/xenobiology.dm:24
-    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
-    [DmGeneratedStub]
-    public override DmTask<object> grind_results()
-    {
-        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:24", "grind_results: the slime extract (xenobiology lab) is not translated; only activate() and the colours' overrides are, the luminescent actions call them (D349)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/research/xenobiology/xenobiology.dm:27
-    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
-    [DmGeneratedStub]
-    public override DmTask<object> examine(mob user = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:27", "examine: xenobiology lab not translated (D349)");
-        return base.examine(user, __extra);
-    }
-
-    // tg: code/modules/research/xenobiology/xenobiology.dm:32
-    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
-    [DmGeneratedStub]
-    public override DmTask<object> item_interaction(mob_living user = null, obj_item tool = null, DmList modifiers = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:32", "item_interaction: xenobiology lab not translated (the enhancer potion) (D349)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/research/xenobiology/xenobiology.dm:69
-    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
-    [DmGeneratedStub]
-    public override DmTask<object> interact_with_atom(atom interacting_with = null, mob_living user = null, DmList modifiers = null)
-    {
-        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:69", "interact_with_atom: xenobiology lab not translated (core crossing on a slime) (D349)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/research/xenobiology/xenobiology.dm:101
-    // STUB(D349): docs/ai/specs/live-partial.txt, section Species
-    [DmGeneratedStub]
-    public virtual DmTask auto_activate_reaction(datum_chemical_reaction_slime slime_reaction = null)
-    {
-        Dm.Deferred("code/modules/research/xenobiology/xenobiology.dm:101", "auto_activate_reaction: xenobiology lab not translated (D349)");
         return DmTask.CompletedTask;
     }
 }
@@ -2117,55 +2134,16 @@ public partial class obj_machinery_computer
     }
 }
 
-// tg: code/game/machinery/computer/camera_advanced.dm:2
-public partial class obj_machinery_computer_camera_advanced
+// tg: code/modules/research/xenobiology/xenobio_camera.dm:29
+public partial class obj_machinery_computer_camera_advanced_xenobio
 {
-    // tg: code/game/machinery/computer/camera_advanced.dm:293
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
+    // tg: code/modules/research/xenobiology/xenobio_camera.dm:79
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
     [DmGeneratedStub]
-    public virtual void register_usb_port(datum_component_usb_port port = null)
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:293", "register_usb_port: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:299
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void on_port_register_object(datum_component_usb_port source = null, atom_movable @object = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:299", "on_port_register_object: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:309
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void add_circuit_action(datum _source = null, obj_item_circuit_component_equipment_action action_comp = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:309", "add_circuit_action: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:316
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void remove_circuit_action(datum _source = null, obj_item_circuit_component_equipment_action action_comp = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:316", "remove_circuit_action: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:324
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void on_port_unregister_object(datum_component_usb_port source = null, atom_movable @object = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:324", "on_port_unregister_object: the circuits' USB port (wiremod, not ported) (M10+)");
-    }
-
-    // tg: code/game/machinery/computer/camera_advanced.dm:331
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section Syndicate
-    [DmGeneratedStub]
-    public virtual void unregister_usb_port(datum_component_usb_port port = null)
-    {
-        Dm.Deferred("code/game/machinery/computer/camera_advanced.dm:331", "unregister_usb_port: the circuits' USB port (wiremod, not ported) (M10+)");
+        Dm.Deferred("code/modules/research/xenobiology/xenobio_camera.dm:79", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
+        return default;
     }
 }
 
@@ -2262,63 +2240,6 @@ public partial class obj_machinery_computer_tram_controls
     }
 }
 
-// tg: code/modules/mining/aux_base.dm:15
-public partial class obj_machinery_computer_auxiliary_base
-{
-    // tg: code/modules/mining/aux_base.dm:49
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public override DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:49", "ui_interact: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/mining/aux_base.dm:56
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public override DmTask<object> ui_data(mob user = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:56", "ui_data: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/mining/aux_base.dm:136
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public override DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:136", "ui_act: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/mining/aux_base.dm:130
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public virtual object launch_check(mob user = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:130", "launch_check: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-        return default;
-    }
-
-    // tg: code/modules/mining/aux_base.dm:200
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public virtual void set_mining_mode()
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:200", "set_mining_mode: the aux base's launch window (AuxBaseConsole): the base's deployment to lavaland comes with mining (M10+)");
-    }
-
-    // tg: code/modules/mining/aux_base.dm:206
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
-    [DmGeneratedStub]
-    public virtual DmTask<object> set_landing_zone(turf T = null, mob user = null, object no_restrictions = null)
-    {
-        Dm.Deferred("code/modules/mining/aux_base.dm:206", "set_landing_zone: the landing designator (assault_pod/mining): the base's deployment to lavaland comes with mining (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-}
-
 // tg: code/game/machinery/buttons.dm:2
 public partial class obj_machinery_button
 {
@@ -2363,6 +2284,19 @@ public partial class obj_machinery_medipen_refiller
     public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
         Dm.Deferred("code/game/machinery/medipen_refiller.dm:32", "add_context: screentips (D264) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/game/machinery/PDApainter.dm:3
+public partial class obj_machinery_pdapainter
+{
+    // tg: code/game/machinery/PDApainter.dm:100
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section The
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/game/machinery/PDApainter.dm:100", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
     }
 }
@@ -2461,33 +2395,6 @@ public partial class obj_machinery_atmospherics_components_unary_outlet_injector
         Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:36", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
     }
-
-    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:113
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:113", "ui_interact: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:119
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_data(mob user = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:119", "ui_data: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:126
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/unary_devices/outlet_injector.dm:126", "ui_act: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
 }
 
 // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:11
@@ -2500,33 +2407,6 @@ public partial class obj_machinery_atmospherics_components_binary_passive_gate
     {
         Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:29", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:76
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_interact(mob user = null, datum_tgui ui = null, params object[] __extra)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:76", "ui_interact: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:82
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_data(mob user = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:82", "ui_data: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:89
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> ui_act(object action = null, DmList @params = null, datum_tgui ui = null, datum_ui_state state = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/passive_gate.dm:89", "ui_act: tgui windows (M10+)");
-        return DmTask<object>.FromResult(default);
     }
 }
 
@@ -2592,15 +2472,6 @@ public partial class obj_machinery_atmospherics_components_binary_volume_pump
     {
         Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:114", "add_context: examine and the context tips (not now, by the owner: D264) (M10+)");
         return default;
-    }
-
-    // tg: code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:163
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section M4b
-    [DmGeneratedStub]
-    public override DmTask<object> multitool_act(mob_living user = null, obj_item tool = null)
-    {
-        Dm.Deferred("code/modules/atmospherics/machinery/components/binary_devices/volume_pump.dm:163", "multitool_act: the volume pump's overclock (atmospherics, after the core version) (M10+)");
-        return DmTask<object>.FromResult(default);
     }
 }
 
@@ -2853,6 +2724,19 @@ public partial class obj_machinery_ltsrbt
     public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
     {
         Dm.Deferred("code/modules/cargo/markets/market_telepad.dm:75", "add_context: the context tips (screentips, not now: the owner's rule of 2026-10-29 keeps them deferred) (M10+)");
+        return default;
+    }
+}
+
+// tg: code/modules/food_and_drinks/restaurant/_venue.dm:162
+public partial class obj_machinery_restaurant_portal
+{
+    // tg: code/modules/food_and_drinks/restaurant/_venue.dm:285
+    // STUB(M10+): docs/ai/specs/live-partial.txt, section Gaps
+    [DmGeneratedStub]
+    public override object add_context(atom source = null, DmList context = null, obj_item held_item = null, mob user = null)
+    {
+        Dm.Deferred("code/modules/food_and_drinks/restaurant/_venue.dm:285", "add_context: the context tips (screentips, not now: D291 keeps them deferred) (M10+)");
         return default;
     }
 }
@@ -3189,15 +3073,6 @@ public partial class obj_effect_decal_cleanable
     {
         Dm.Deferred("code/game/objects/effects/decals/cleanable.dm:97", "item_interaction: scooping the decal's reagents into a cup (hands M4a, reagents M8) (M8)");
         return DmTask<object>.FromResult(default);
-    }
-
-    // tg: code/game/objects/effects/decals/cleanable.dm:116
-    // STUB(M10+): docs/ai/specs/live-partial.txt, section I1
-    [DmGeneratedStub]
-    public virtual object can_bloodcrawl_in()
-    {
-        Dm.NotTranslated("code/game/objects/effects/decals/cleanable.dm:116", "can_bloodcrawl_in: the slaughter demon's bloodcrawl check (blood M8, antagonists M10+) (M10+)");
-        return default;
     }
 
     // tg: code/game/objects/effects/decals/cleanable.dm:126

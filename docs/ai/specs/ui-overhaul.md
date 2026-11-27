@@ -1675,3 +1675,17 @@ Settled design (client only; built right after slice 4A, since both touch the sa
 - On top of tg's picture, as now: the key cap, the item's picture, a stack's count; the states keep their meaning
   (out: the item at a third; refused: a red rim over the cell; no belt: the belt cells at half opacity).
 - The worn slots round the character under Tab (slice 4A) use tg's slot pictures too.
+
+### Slice 4A as built: for the contributor to raise with the owner
+
+- D53 and D131 describe the inventory as a native window with a doll; slice 4A replaces that window with the
+  character panel under Tab (DV604). The layout of that window and its key (the owner's, 2026-10-30) goes with it.
+- D224 and D226 let an item be dragged onto the body's slot on the doll. Dragging onto the health doll and onto the
+  worn slots' cells still works; a drag onto the Tab inventory's own sprite does nothing until slice 4B.
+- Where the design was silent, built so: the cells above and below the sprite are 12 from it; the panel is centred
+  between the chat column's top and the bottom row; the chat column's top is under the place of tg's action
+  palette row, so it does not move when the first action appears; clicks on the sprite with Shift or Alt go to the
+  health doll, as on the doll.
+- Known limits: a second hit inside the same level of tg's health doll does not close the overlay again; tg's
+  round-start intro text draws over the panel for the first seconds of a round; the panel has no backing, so the
+  world shows through it.

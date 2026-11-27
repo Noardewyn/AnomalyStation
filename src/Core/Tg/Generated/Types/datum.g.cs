@@ -40337,9 +40337,9 @@ public partial class datum_rpgloot_controller : datum { }
 [DmPath("/datum/rpgtitle_controller"), DmGeneratedOnly, DmInert]
 public partial class datum_rpgtitle_controller : datum { }
 
-// tg: code/modules/explorer_drone/adventure.dm:67
-[DmPath("/datum/adventure_db_entry"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_db_entry : datum
+// tg: code/modules/explorer_drone/adventure.dm:67 (the var block of a hand-written class)
+[DmPath("/datum/adventure_db_entry")]
+public partial class datum_adventure_db_entry
 {
     public object filename; // tg: code/modules/explorer_drone/adventure.dm:67
     public object raw_json; // tg: code/modules/explorer_drone/adventure.dm:69
@@ -40351,9 +40351,9 @@ public partial class datum_adventure_db_entry : datum
     public DmList required_site_traits; // tg: code/modules/explorer_drone/adventure.dm:84
 }
 
-// tg: code/modules/explorer_drone/adventure.dm:162
-[DmPath("/datum/adventure"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure : datum
+// tg: code/modules/explorer_drone/adventure.dm:162 (the var block of a hand-written class)
+[DmPath("/datum/adventure")]
+public partial class datum_adventure
 {
     public object name; // tg: code/modules/explorer_drone/adventure.dm:162
     public object starting_node; // tg: code/modules/explorer_drone/adventure.dm:164
@@ -40384,11 +40384,10 @@ public partial class datum_adventure : datum
     }
 }
 
-// tg: code/modules/explorer_drone/adventure.dm:286
-[DmPath("/datum/adventure_node"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_node : datum
+// tg: code/modules/explorer_drone/adventure.dm:286 (the vars the hand-written class does not declare)
+[DmPath("/datum/adventure_node")]
+public partial class datum_adventure_node
 {
-    public Type id; // tg: code/modules/explorer_drone/adventure.dm:286
     public object description; // tg: code/modules/explorer_drone/adventure.dm:288
     public object image_name; // tg: code/modules/explorer_drone/adventure.dm:290
     public object raw_image; // tg: code/modules/explorer_drone/adventure.dm:292
@@ -40399,9 +40398,9 @@ public partial class datum_adventure_node : datum
     public object delay_message; // tg: code/modules/explorer_drone/adventure.dm:302
 }
 
-// tg: code/modules/explorer_drone/exploration_site.dm:18
-[DmPath("/datum/exploration_site"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_site : datum
+// tg: code/modules/explorer_drone/exploration_site.dm:18 (the var block of a hand-written class)
+[DmPath("/datum/exploration_site")]
+public partial class datum_exploration_site
 {
     public object name; // tg: code/modules/explorer_drone/exploration_site.dm:18
     public object description; // tg: code/modules/explorer_drone/exploration_site.dm:20
@@ -40427,7 +40426,7 @@ public partial class datum_exploration_site : datum
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:190
-[DmPath("/datum/exploration_site/abandoned_refueling_station"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/abandoned_refueling_station"), DmGeneratedOnly]
 public partial class datum_exploration_site_abandoned_refueling_station : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:190
@@ -40446,9 +40445,9 @@ public partial class datum_exploration_site_abandoned_refueling_station : datum_
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_site.dm:196
-[DmPath("/datum/exploration_site/trader_post"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_site_trader_post : datum_exploration_site
+// tg: code/modules/explorer_drone/exploration_site.dm:196 (the var block of a hand-written class)
+[DmPath("/datum/exploration_site/trader_post")]
+public partial class datum_exploration_site_trader_post
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:196
     public datum_exploration_site_trader_post()
@@ -40468,7 +40467,7 @@ public partial class datum_exploration_site_trader_post : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:209
-[DmPath("/datum/exploration_site/cargo_wreck"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/cargo_wreck"), DmGeneratedOnly]
 public partial class datum_exploration_site_cargo_wreck : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:209
@@ -40488,7 +40487,7 @@ public partial class datum_exploration_site_cargo_wreck : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:215
-[DmPath("/datum/exploration_site/alien_spaceship"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/alien_spaceship"), DmGeneratedOnly]
 public partial class datum_exploration_site_alien_spaceship : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:215
@@ -40507,9 +40506,9 @@ public partial class datum_exploration_site_alien_spaceship : datum_exploration_
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_site.dm:221
-[DmPath("/datum/exploration_site/uncharted_planet"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_site_uncharted_planet : datum_exploration_site
+// tg: code/modules/explorer_drone/exploration_site.dm:221 (the var block of a hand-written class)
+[DmPath("/datum/exploration_site/uncharted_planet")]
+public partial class datum_exploration_site_uncharted_planet
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:221
     public datum_exploration_site_uncharted_planet()
@@ -40528,7 +40527,7 @@ public partial class datum_exploration_site_uncharted_planet : datum_exploration
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:240
-[DmPath("/datum/exploration_site/alien_ruins"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/alien_ruins"), DmGeneratedOnly]
 public partial class datum_exploration_site_alien_ruins : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:240
@@ -40548,7 +40547,7 @@ public partial class datum_exploration_site_alien_ruins : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:246
-[DmPath("/datum/exploration_site/asteroid_belt"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/asteroid_belt"), DmGeneratedOnly]
 public partial class datum_exploration_site_asteroid_belt : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:246
@@ -40568,7 +40567,7 @@ public partial class datum_exploration_site_asteroid_belt : datum_exploration_si
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:252
-[DmPath("/datum/exploration_site/spacemine"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/spacemine"), DmGeneratedOnly]
 public partial class datum_exploration_site_spacemine : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:252
@@ -40589,7 +40588,7 @@ public partial class datum_exploration_site_spacemine : datum_exploration_site
 }
 
 // tg: code/modules/explorer_drone/exploration_site.dm:259
-[DmPath("/datum/exploration_site/junkyard"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_site/junkyard"), DmGeneratedOnly]
 public partial class datum_exploration_site_junkyard : datum_exploration_site
 {
     // tg: code/modules/explorer_drone/exploration_site.dm:259
@@ -40609,16 +40608,16 @@ public partial class datum_exploration_site_junkyard : datum_exploration_site
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:14
-[DmPath("/datum/adventure_loot_generator"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator : datum
+// tg: code/modules/explorer_drone/loot.dm:14 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator")]
+public partial class datum_adventure_loot_generator
 {
     public object id; // tg: code/modules/explorer_drone/loot.dm:14
 }
 
-// tg: code/modules/explorer_drone/loot.dm:26
-[DmPath("/datum/adventure_loot_generator/maintenance"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_maintenance : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:26 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/maintenance")]
+public partial class datum_adventure_loot_generator_maintenance
 {
     public float? amount = 1; // tg: code/modules/explorer_drone/loot.dm:27
 
@@ -40629,9 +40628,9 @@ public partial class datum_adventure_loot_generator_maintenance : datum_adventur
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:41
-[DmPath("/datum/adventure_loot_generator/cargo"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_cargo : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:41 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/cargo")]
+public partial class datum_adventure_loot_generator_cargo
 {
     // tg: code/modules/explorer_drone/loot.dm:41
     public datum_adventure_loot_generator_cargo()
@@ -40640,15 +40639,15 @@ public partial class datum_adventure_loot_generator_cargo : datum_adventure_loot
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:58
-[DmPath("/datum/adventure_loot_generator/simple"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_simple : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:58 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/simple")]
+public partial class datum_adventure_loot_generator_simple
 {
     public object loot_list; // tg: code/modules/explorer_drone/loot.dm:58
 }
 
 // tg: code/modules/explorer_drone/loot.dm:66
-[DmPath("/datum/adventure_loot_generator/simple/unique"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/unique"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_unique : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:66
@@ -40666,7 +40665,7 @@ public partial class datum_adventure_loot_generator_simple_unique : datum_advent
 }
 
 // tg: code/modules/explorer_drone/loot.dm:71
-[DmPath("/datum/adventure_loot_generator/simple/cash"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/cash"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_cash : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:71
@@ -40684,7 +40683,7 @@ public partial class datum_adventure_loot_generator_simple_cash : datum_adventur
 }
 
 // tg: code/modules/explorer_drone/loot.dm:76
-[DmPath("/datum/adventure_loot_generator/simple/drugs"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/drugs"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_drugs : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:76
@@ -40702,7 +40701,7 @@ public partial class datum_adventure_loot_generator_simple_drugs : datum_adventu
 }
 
 // tg: code/modules/explorer_drone/loot.dm:81
-[DmPath("/datum/adventure_loot_generator/simple/materials"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/materials"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_materials : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:81
@@ -40720,7 +40719,7 @@ public partial class datum_adventure_loot_generator_simple_materials : datum_adv
 }
 
 // tg: code/modules/explorer_drone/loot.dm:86
-[DmPath("/datum/adventure_loot_generator/simple/weapons"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/weapons"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_weapons : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:86
@@ -40738,7 +40737,7 @@ public partial class datum_adventure_loot_generator_simple_weapons : datum_adven
 }
 
 // tg: code/modules/explorer_drone/loot.dm:91
-[DmPath("/datum/adventure_loot_generator/simple/syndicate_fish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/adventure_loot_generator/simple/syndicate_fish"), DmGeneratedOnly]
 public partial class datum_adventure_loot_generator_simple_syndicate_fish : datum_adventure_loot_generator_simple
 {
     // tg: code/modules/explorer_drone/loot.dm:91
@@ -40755,9 +40754,9 @@ public partial class datum_adventure_loot_generator_simple_syndicate_fish : datu
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:96
-[DmPath("/datum/adventure_loot_generator/pet"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_loot_generator_pet : datum_adventure_loot_generator
+// tg: code/modules/explorer_drone/loot.dm:96 (the var block of a hand-written class)
+[DmPath("/datum/adventure_loot_generator/pet")]
+public partial class datum_adventure_loot_generator_pet
 {
     public Type carrier_type = typeof(obj_item_pet_carrier_biopod); // tg: code/modules/explorer_drone/loot.dm:97
     public DmList possible_pets; // tg: code/modules/explorer_drone/loot.dm:98
@@ -40776,17 +40775,17 @@ public partial class datum_adventure_loot_generator_pet : datum_adventure_loot_g
     }
 }
 
-// tg: code/modules/explorer_drone/manager.dm:3
-[DmPath("/datum/adventure_browser"), DmGeneratedOnly, DmInert]
-public partial class datum_adventure_browser : datum
+// tg: code/modules/explorer_drone/manager.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/adventure_browser")]
+public partial class datum_adventure_browser
 {
     public datum_adventure temp_adventure; // tg: code/modules/explorer_drone/manager.dm:3
     public object feedback_message; // tg: code/modules/explorer_drone/manager.dm:4
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:24
-[DmPath("/datum/exoscan"), DmGeneratedOnly, DmInert]
-public partial class datum_exoscan : datum
+// tg: code/modules/explorer_drone/scanner_array.dm:24 (the var block of a hand-written class)
+[DmPath("/datum/exoscan")]
+public partial class datum_exoscan
 {
     public object scan_type; // tg: code/modules/explorer_drone/scanner_array.dm:24
     public float scan_power = 0; // tg: code/modules/explorer_drone/scanner_array.dm:26
@@ -40794,9 +40793,9 @@ public partial class datum_exoscan : datum
     public object scan_timer; // tg: code/modules/explorer_drone/scanner_array.dm:30
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:289
-[DmPath("/datum/scanner_controller"), DmGeneratedOnly, DmInert]
-public partial class datum_scanner_controller : datum
+// tg: code/modules/explorer_drone/scanner_array.dm:289 (the var block of a hand-written class)
+[DmPath("/datum/scanner_controller")]
+public partial class datum_scanner_controller
 {
     public DmList tracked_dishes; // tg: code/modules/explorer_drone/scanner_array.dm:289
     public datum_exoscan current_scan; // tg: code/modules/explorer_drone/scanner_array.dm:291
@@ -40812,17 +40811,17 @@ public partial class datum_scanner_controller : datum
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:350
-[DmPath("/datum/scan_condition"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition : datum
+// tg: code/modules/explorer_drone/scanner_array.dm:350 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition")]
+public partial class datum_scan_condition
 {
     public object name; // tg: code/modules/explorer_drone/scanner_array.dm:350
     public object description; // tg: code/modules/explorer_drone/scanner_array.dm:351
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:358
-[DmPath("/datum/scan_condition/nebula"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_nebula : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:358 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/nebula")]
+public partial class datum_scan_condition_nebula
 {
     public float distance = 15; // tg: code/modules/explorer_drone/scanner_array.dm:360
 
@@ -40834,9 +40833,9 @@ public partial class datum_scan_condition_nebula : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:369
-[DmPath("/datum/scan_condition/pulsar"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_pulsar : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:369 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/pulsar")]
+public partial class datum_scan_condition_pulsar
 {
     public float distance = 2; // tg: code/modules/explorer_drone/scanner_array.dm:371
 
@@ -40848,9 +40847,9 @@ public partial class datum_scan_condition_pulsar : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:380
-[DmPath("/datum/scan_condition/asteroid_belt"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_asteroid_belt : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:380 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/asteroid_belt")]
+public partial class datum_scan_condition_asteroid_belt
 {
     // tg: code/modules/explorer_drone/scanner_array.dm:380
     public datum_scan_condition_asteroid_belt()
@@ -40860,9 +40859,9 @@ public partial class datum_scan_condition_asteroid_belt : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:388
-[DmPath("/datum/scan_condition/black_hole"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_black_hole : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:388 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/black_hole")]
+public partial class datum_scan_condition_black_hole
 {
     // tg: code/modules/explorer_drone/scanner_array.dm:388
     public datum_scan_condition_black_hole()
@@ -40872,9 +40871,9 @@ public partial class datum_scan_condition_black_hole : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:399
-[DmPath("/datum/scan_condition/easy"), DmGeneratedOnly, DmInert]
-public partial class datum_scan_condition_easy : datum_scan_condition
+// tg: code/modules/explorer_drone/scanner_array.dm:399 (the var block of a hand-written class)
+[DmPath("/datum/scan_condition/easy")]
+public partial class datum_scan_condition_easy
 {
     // tg: code/modules/explorer_drone/scanner_array.dm:399
     public datum_scan_condition_easy()
@@ -40884,9 +40883,9 @@ public partial class datum_scan_condition_easy : datum_scan_condition
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:4
-[DmPath("/datum/exploration_event"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event : datum
+// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:4 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event")]
+public partial class datum_exploration_event
 {
     public string name = "Something interesting"; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:6
     public float visited = 0; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:8
@@ -40905,9 +40904,9 @@ public partial class datum_exploration_event : datum
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:43
-[DmPath("/datum/exploration_event/simple"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple : datum_exploration_event
+// tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:43 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple")]
+public partial class datum_exploration_event_simple
 {
     public string ui_image = "default"; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:44
     public float skippable = 1; // tg: code/modules/explorer_drone/exploration_events/_exploration_event.dm:46
@@ -40922,9 +40921,9 @@ public partial class datum_exploration_event_simple : datum_exploration_event
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/danger.dm:3
-[DmPath("/datum/exploration_event/simple/danger"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_danger : datum_exploration_event_simple
+// tg: code/modules/explorer_drone/exploration_events/danger.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/danger")]
+public partial class datum_exploration_event_simple_danger
 {
     public string required_tool = "laser"; // tg: code/modules/explorer_drone/exploration_events/danger.dm:5
     public string has_tool_action_text = "Fight"; // tg: code/modules/explorer_drone/exploration_events/danger.dm:6
@@ -40944,7 +40943,7 @@ public partial class datum_exploration_event_simple_danger : datum_exploration_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:35
-[DmPath("/datum/exploration_event/simple/danger/carp"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/carp"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_carp : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:35
@@ -40970,7 +40969,7 @@ public partial class datum_exploration_event_simple_danger_carp : datum_explorat
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:48
-[DmPath("/datum/exploration_event/simple/danger/carp/surface_variety"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/carp/surface_variety"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_carp_surface_variety : datum_exploration_event_simple_danger_carp
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:48
@@ -40982,7 +40981,7 @@ public partial class datum_exploration_event_simple_danger_carp_surface_variety 
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:51
-[DmPath("/datum/exploration_event/simple/danger/assistant"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/assistant"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_assistant : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:51
@@ -41007,7 +41006,7 @@ public partial class datum_exploration_event_simple_danger_assistant : datum_exp
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:62
-[DmPath("/datum/exploration_event/simple/danger/collapse"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/collapse"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_collapse : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:62
@@ -41033,7 +41032,7 @@ public partial class datum_exploration_event_simple_danger_collapse : datum_expl
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:74
-[DmPath("/datum/exploration_event/simple/danger/loose_wires"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/loose_wires"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_loose_wires : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:74
@@ -41059,7 +41058,7 @@ public partial class datum_exploration_event_simple_danger_loose_wires : datum_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:86
-[DmPath("/datum/exploration_event/simple/danger/cosmic_rays"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/cosmic_rays"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_cosmic_rays : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:86
@@ -41085,7 +41084,7 @@ public partial class datum_exploration_event_simple_danger_cosmic_rays : datum_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:98
-[DmPath("/datum/exploration_event/simple/danger/alien_sentry"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/alien_sentry"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_alien_sentry : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:98
@@ -41110,9 +41109,9 @@ public partial class datum_exploration_event_simple_danger_alien_sentry : datum_
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/danger.dm:110
-[DmPath("/datum/exploration_event/simple/danger/beast"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_danger_beast : datum_exploration_event_simple_danger
+// tg: code/modules/explorer_drone/exploration_events/danger.dm:110 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/danger/beast")]
+public partial class datum_exploration_event_simple_danger_beast
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:110
     public datum_exploration_event_simple_danger_beast()
@@ -41138,7 +41137,7 @@ public partial class datum_exploration_event_simple_danger_beast : datum_explora
 }
 
 // tg: code/modules/explorer_drone/exploration_events/danger.dm:129
-[DmPath("/datum/exploration_event/simple/danger/rad"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/danger/rad"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_danger_rad : datum_exploration_event_simple_danger
 {
     // tg: code/modules/explorer_drone/exploration_events/danger.dm:129
@@ -41163,9 +41162,9 @@ public partial class datum_exploration_event_simple_danger_rad : datum_explorati
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/resource.dm:3
-[DmPath("/datum/exploration_event/simple/resource"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_resource : datum_exploration_event_simple
+// tg: code/modules/explorer_drone/exploration_events/resource.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/resource")]
+public partial class datum_exploration_event_simple_resource
 {
     public object required_tool; // tg: code/modules/explorer_drone/exploration_events/resource.dm:8
     public Type loot_type = typeof(obj_item_trash_chips); // tg: code/modules/explorer_drone/exploration_events/resource.dm:10
@@ -41187,7 +41186,7 @@ public partial class datum_exploration_event_simple_resource : datum_exploration
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:74
-[DmPath("/datum/exploration_event/simple/resource/concealed_cache"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/concealed_cache"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_concealed_cache : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:74
@@ -41213,7 +41212,7 @@ public partial class datum_exploration_event_simple_resource_concealed_cache : d
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:87
-[DmPath("/datum/exploration_event/simple/resource/remnants"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/remnants"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_remnants : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:87
@@ -41239,7 +41238,7 @@ public partial class datum_exploration_event_simple_resource_remnants : datum_ex
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:99
-[DmPath("/datum/exploration_event/simple/resource/gunfight"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/gunfight"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_gunfight : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:99
@@ -41265,7 +41264,7 @@ public partial class datum_exploration_event_simple_resource_gunfight : datum_ex
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:112
-[DmPath("/datum/exploration_event/simple/resource/maint_room"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/maint_room"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_maint_room : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:112
@@ -41293,7 +41292,7 @@ public partial class datum_exploration_event_simple_resource_maint_room : datum_
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:126
-[DmPath("/datum/exploration_event/simple/resource/storage"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/storage"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_storage : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:126
@@ -41320,7 +41319,7 @@ public partial class datum_exploration_event_simple_resource_storage : datum_exp
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:140
-[DmPath("/datum/exploration_event/simple/resource/alien_tools"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/alien_tools"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_alien_tools : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:140
@@ -41348,7 +41347,7 @@ public partial class datum_exploration_event_simple_resource_alien_tools : datum
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:154
-[DmPath("/datum/exploration_event/simple/resource/pod"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/pod"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_pod : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:154
@@ -41376,7 +41375,7 @@ public partial class datum_exploration_event_simple_resource_pod : datum_explora
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:169
-[DmPath("/datum/exploration_event/simple/resource/fuel_storage"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/fuel_storage"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_fuel_storage : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:169
@@ -41404,7 +41403,7 @@ public partial class datum_exploration_event_simple_resource_fuel_storage : datu
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:183
-[DmPath("/datum/exploration_event/simple/resource/navigation"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/navigation"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_navigation : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:183
@@ -41431,7 +41430,7 @@ public partial class datum_exploration_event_simple_resource_navigation : datum_
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:197
-[DmPath("/datum/exploration_event/simple/resource/unknown_microbiome"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/unknown_microbiome"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_unknown_microbiome : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:197
@@ -41458,7 +41457,7 @@ public partial class datum_exploration_event_simple_resource_unknown_microbiome 
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:210
-[DmPath("/datum/exploration_event/simple/resource/tcg_nerd"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/tcg_nerd"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_tcg_nerd : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:210
@@ -41486,7 +41485,7 @@ public partial class datum_exploration_event_simple_resource_tcg_nerd : datum_ex
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:225
-[DmPath("/datum/exploration_event/simple/resource/comms_satellite"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/comms_satellite"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_comms_satellite : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:225
@@ -41512,9 +41511,9 @@ public partial class datum_exploration_event_simple_resource_comms_satellite : d
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/resource.dm:238
-[DmPath("/datum/exploration_event/simple/resource/welded_locker"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_resource_welded_locker : datum_exploration_event_simple_resource
+// tg: code/modules/explorer_drone/exploration_events/resource.dm:238 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/resource/welded_locker")]
+public partial class datum_exploration_event_simple_resource_welded_locker
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:238
     public datum_exploration_event_simple_resource_welded_locker()
@@ -41539,7 +41538,7 @@ public partial class datum_exploration_event_simple_resource_welded_locker : dat
 }
 
 // tg: code/modules/explorer_drone/exploration_events/resource.dm:260
-[DmPath("/datum/exploration_event/simple/resource/plasma_deposit"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/resource/plasma_deposit"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_resource_plasma_deposit : datum_exploration_event_simple_resource
 {
     // tg: code/modules/explorer_drone/exploration_events/resource.dm:260
@@ -41566,9 +41565,9 @@ public partial class datum_exploration_event_simple_resource_plasma_deposit : da
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/resource.dm:274
-[DmPath("/datum/exploration_event/simple/resource/mineral_deposit"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_resource_mineral_deposit : datum_exploration_event_simple_resource
+// tg: code/modules/explorer_drone/exploration_events/resource.dm:274 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/resource/mineral_deposit")]
+public partial class datum_exploration_event_simple_resource_mineral_deposit
 {
     public float loot_amount = 30; // tg: code/modules/explorer_drone/exploration_events/resource.dm:286
     public object chosen_material_type; // tg: code/modules/explorer_drone/exploration_events/resource.dm:287
@@ -41596,9 +41595,9 @@ public partial class datum_exploration_event_simple_resource_mineral_deposit : d
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/trader.dm:3
-[DmPath("/datum/exploration_event/simple/trader"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_trader : datum_exploration_event_simple
+// tg: code/modules/explorer_drone/exploration_events/trader.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/trader")]
+public partial class datum_exploration_event_simple_trader
 {
     public object required_path; // tg: code/modules/explorer_drone/exploration_events/trader.dm:6
     public object traded_path; // tg: code/modules/explorer_drone/exploration_events/trader.dm:8
@@ -41614,7 +41613,7 @@ public partial class datum_exploration_event_simple_trader : datum_exploration_e
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:60
-[DmPath("/datum/exploration_event/simple/trader/vendor_ai"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/vendor_ai"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_vendor_ai : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:60
@@ -41637,7 +41636,7 @@ public partial class datum_exploration_event_simple_trader_vendor_ai : datum_exp
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:69
-[DmPath("/datum/exploration_event/simple/trader/farmer_market"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/farmer_market"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_farmer_market : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:69
@@ -41660,7 +41659,7 @@ public partial class datum_exploration_event_simple_trader_farmer_market : datum
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:78
-[DmPath("/datum/exploration_event/simple/trader/fish"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/fish"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_fish : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:78
@@ -41684,7 +41683,7 @@ public partial class datum_exploration_event_simple_trader_fish : datum_explorat
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:88
-[DmPath("/datum/exploration_event/simple/trader/shady_merchant"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/shady_merchant"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_shady_merchant : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:88
@@ -41707,7 +41706,7 @@ public partial class datum_exploration_event_simple_trader_shady_merchant : datu
 }
 
 // tg: code/modules/explorer_drone/exploration_events/trader.dm:97
-[DmPath("/datum/exploration_event/simple/trader/surplus"), DmGeneratedOnly, DmInert]
+[DmPath("/datum/exploration_event/simple/trader/surplus"), DmGeneratedOnly]
 public partial class datum_exploration_event_simple_trader_surplus : datum_exploration_event_simple_trader
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:97
@@ -41729,9 +41728,9 @@ public partial class datum_exploration_event_simple_trader_surplus : datum_explo
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/trader.dm:106
-[DmPath("/datum/exploration_event/simple/trader/flame_card"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_simple_trader_flame_card : datum_exploration_event_simple_trader
+// tg: code/modules/explorer_drone/exploration_events/trader.dm:106 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/simple/trader/flame_card")]
+public partial class datum_exploration_event_simple_trader_flame_card
 {
     // tg: code/modules/explorer_drone/exploration_events/trader.dm:106
     public datum_exploration_event_simple_trader_flame_card()
@@ -41753,9 +41752,9 @@ public partial class datum_exploration_event_simple_trader_flame_card : datum_ex
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/adventure.dm:3
-[DmPath("/datum/exploration_event/adventure"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_adventure : datum_exploration_event
+// tg: code/modules/explorer_drone/exploration_events/adventure.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/adventure")]
+public partial class datum_exploration_event_adventure
 {
     public datum_adventure adventure; // tg: code/modules/explorer_drone/exploration_events/adventure.dm:4
 
@@ -41767,9 +41766,9 @@ public partial class datum_exploration_event_adventure : datum_exploration_event
     }
 }
 
-// tg: code/modules/explorer_drone/exploration_events/fluff.dm:3
-[DmPath("/datum/exploration_event/fluff"), DmGeneratedOnly, DmInert]
-public partial class datum_exploration_event_fluff : datum_exploration_event
+// tg: code/modules/explorer_drone/exploration_events/fluff.dm:3 (the var block of a hand-written class)
+[DmPath("/datum/exploration_event/fluff")]
+public partial class datum_exploration_event_fluff
 {
     // tg: code/modules/explorer_drone/exploration_events/fluff.dm:3
     public datum_exploration_event_fluff()

@@ -6421,9 +6421,9 @@ public partial class obj_machinery_computer_cargo_request : obj_machinery_comput
     }
 }
 
-// tg: code/modules/explorer_drone/control_console.dm:2
-[DmPath("/obj/machinery/computer/exodrone_control_console"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_exodrone_control_console : obj_machinery_computer
+// tg: code/modules/explorer_drone/control_console.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/exodrone_control_console")]
+public partial class obj_machinery_computer_exodrone_control_console
 {
     public obj_item_exodrone controlled_drone; // tg: code/modules/explorer_drone/control_console.dm:7
     public float signal_lost = 0; // tg: code/modules/explorer_drone/control_console.dm:9
@@ -6438,9 +6438,9 @@ public partial class obj_machinery_computer_exodrone_control_console : obj_machi
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:79
-[DmPath("/obj/machinery/computer/exoscanner_control"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_computer_exoscanner_control : obj_machinery_computer
+// tg: code/modules/explorer_drone/scanner_array.dm:79 (the var block of a hand-written class)
+[DmPath("/obj/machinery/computer/exoscanner_control")]
+public partial class obj_machinery_computer_exoscanner_control
 {
     public float failed_popup = 0; // tg: code/modules/explorer_drone/scanner_array.dm:84
     public datum_exploration_site selected_site; // tg: code/modules/explorer_drone/scanner_array.dm:86

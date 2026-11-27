@@ -11565,9 +11565,9 @@ public partial class obj_machinery_destructive_scanner
     }
 }
 
-// tg: code/modules/explorer_drone/exodrone.dm:353
-[DmPath("/obj/machinery/exodrone_launcher"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_exodrone_launcher : obj_machinery
+// tg: code/modules/explorer_drone/exodrone.dm:353 (the var block of a hand-written class)
+[DmPath("/obj/machinery/exodrone_launcher")]
+public partial class obj_machinery_exodrone_launcher
 {
     public obj_item_fuel_pellet fuel_canister; // tg: code/modules/explorer_drone/exodrone.dm:358
 
@@ -11581,9 +11581,9 @@ public partial class obj_machinery_exodrone_launcher : obj_machinery
     }
 }
 
-// tg: code/modules/explorer_drone/scanner_array.dm:194
-[DmPath("/obj/machinery/exoscanner"), DmGeneratedOnly, DmInert]
-public partial class obj_machinery_exoscanner : obj_machinery
+// tg: code/modules/explorer_drone/scanner_array.dm:194 (the var block of a hand-written class)
+[DmPath("/obj/machinery/exoscanner")]
+public partial class obj_machinery_exoscanner
 {
     public float scan_power = 1; // tg: code/modules/explorer_drone/scanner_array.dm:201
 

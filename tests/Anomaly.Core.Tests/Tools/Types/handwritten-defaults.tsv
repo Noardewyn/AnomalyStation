@@ -1556,6 +1556,7 @@
 /datum/persistent_client	time_of_death	decl	code/modules/client/persistent_client.dm:40	{"K":"num","N":0}
 /datum/preferences	path	decl	code/modules/client/preferences.dm:6	{"K":"null","N":0}
 /datum/deathmatch_modifier	name	decl	code/modules/deathmatch/deathmatch_modifier.dm:4	{"K":"str","N":0,"S":"Unnamed Modifier"}
+/datum/adventure_node	id	decl	code/modules/explorer_drone/adventure.dm:286	{"K":"null","N":0}
 /datum/instrument_key	key	decl	code/modules/instruments/instrument_data/_instrument_key.dm:7	{"K":"null","N":0}
 /datum/job_department	display_order	decl	code/modules/jobs/departments/departments.dm:13	{"K":"num","N":0}
 /datum/job_department	abstract_type	override	code/modules/jobs/departments/departments.dm:3	{"K":"type","N":0,"S":"/datum/job_department"}
@@ -4043,6 +4044,20 @@
 /obj/item/coupon	icon	override	code/modules/cargo/coupon.dm:52	{"K":"res","N":0,"S":"icons/obj/card.dmi"}
 /obj/item/coupon	item_flags	override	code/modules/cargo/coupon.dm:53	{"K":"num","N":64}
 /obj/item/coupon	w_class	override	code/modules/cargo/coupon.dm:54	{"K":"num","N":1}
+/obj/item/exodrone	location	decl	code/modules/explorer_drone/exodrone.dm:34	{"K":"null","N":0}
+/obj/item/exodrone	name	override	code/modules/explorer_drone/exodrone.dm:23	{"K":"str","N":0,"S":"exploration drone"}
+/obj/item/exodrone	desc	override	code/modules/explorer_drone/exodrone.dm:24	{"K":"str","N":0,"S":"A long range, semi-autonomous exploration drone."}
+/obj/item/exodrone	icon	override	code/modules/explorer_drone/exodrone.dm:25	{"K":"res","N":0,"S":"icons/obj/exploration.dmi"}
+/obj/item/exodrone	icon_state	override	code/modules/explorer_drone/exodrone.dm:26	{"K":"str","N":0,"S":"drone"}
+/obj/item/exodrone	w_class	override	code/modules/explorer_drone/exodrone.dm:27	{"K":"num","N":4}
+/obj/item/firelance	cell	decl	code/modules/explorer_drone/loot.dm:155	{"K":"null","N":0}
+/obj/item/firelance	name	override	code/modules/explorer_drone/loot.dm:146	{"K":"str","N":0,"S":"fire lance"}
+/obj/item/firelance	desc	override	code/modules/explorer_drone/loot.dm:147	{"K":"str","N":0,"S":"Melts everything in front of you. Takes a while to start and operate."}
+/obj/item/firelance	icon	override	code/modules/explorer_drone/loot.dm:148	{"K":"res","N":0,"S":"icons/obj/exploration.dmi"}
+/obj/item/firelance	icon_state	override	code/modules/explorer_drone/loot.dm:149	{"K":"str","N":0,"S":"firelance"}
+/obj/item/firelance	inhand_icon_state	override	code/modules/explorer_drone/loot.dm:150	{"K":"str","N":0,"S":"firelance"}
+/obj/item/firelance	righthand_file	override	code/modules/explorer_drone/loot.dm:151	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_righthand.dmi"}
+/obj/item/firelance	lefthand_file	override	code/modules/explorer_drone/loot.dm:152	{"K":"res","N":0,"S":"icons/mob/inhands/items/firelance_lefthand.dmi"}
 /obj/item/fish	required_fluid_type	decl	code/modules/fishing/fish/_fish.dm:64	{"K":"str","N":0,"S":"Freshwater"}
 /obj/item/fish	name	override	code/modules/fishing/fish/_fish.dm:20	{"K":"str","N":0,"S":"fish"}
 /obj/item/fish	desc	override	code/modules/fishing/fish/_fish.dm:21	{"K":"str","N":0,"S":"very bland"}

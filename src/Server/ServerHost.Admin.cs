@@ -170,6 +170,7 @@ public sealed partial class ServerHost
         ConsoleVerb.StationTraits => R_FUN,                                                 // ADMIN_VERB(station_traits_panel, R_FUN, ...)
         ConsoleVerb.Circuits => R_ADMIN,                                                    // ADMIN_VERB(view_all_circuits, R_ADMIN, ...)
         ConsoleVerb.LoadCircuit => R_VAREDIT,                                               // ADMIN_VERB(load_circuit, R_VAREDIT, ...)
+        ConsoleVerb.Adventures => R_DEBUG,                                                  // ADMIN_VERB(adventure_manager, R_DEBUG, ...)
         ConsoleVerb.Dev => !DevCommandLine.TryParse(line, out DevCommand dev, out _) ? R_DEBUG : dev.Verb switch
         {
             DevVerb.Shuttle => R_ADMIN, // Call Shuttle

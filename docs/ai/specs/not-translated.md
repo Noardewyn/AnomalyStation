@@ -1851,7 +1851,7 @@ inquisitive ghost preference; the client's `Supermatter` and `NtosSupermatter` w
 | `console_presets.dm:93-170` | the cargo interfacing consoles: translated (gaps P4d, section 170: the department order app, the chat client's channels and `#cargobus`; their shipping, budget and coupon apps live, the bounty board since silicons SI6b, the restock tracker still inert) | MetaStation's cargo and department consoles | translated (section 170) | `computers/machinery/console_presets.cs` |
 | the programs `arcade` (`scipaper_program` came with gaps OR1, section 248; `card_mod`, `job_management`, `power_monitor`, `chatclient`, `ntnetmonitor` and `robocontrol` came with gaps S4, section 164; `ai_restorer` and `portrait_printer` with the silicons campaign) | the consoles' other apps: stored as tg stores them, generated-only; running one shows the client's placeholder for an untranslated window (as the PDA's, section 74) | an engineering, identification, research, command, civilian or curator console | the packages that port them (`alarm_monitor`, Canary, came with E6: section 86) | (none) |
 | `modular_computer.dm:89` | `emag_act` (`live-partial.txt` E2) | an emag on a console | M10+ (antagonists) | `Generated/LivePartial/obj.g.cs` |
-| `controllers/subsystem/persistence/*.dm` but `counter_delamination.dm`, `incident_display.dm:103`, `:183`, `:355` | SSpersistence: only `Initialize`, `collect_data` and the delamination counter are translated (DV220); every other load and save (Poly, engravings, tattoos, trophies, recent maps, photos, outfits, adventures, recipes, scars, message bottles) and the tram counters (`tram_hits_this_round` and `tram_hits_last_round` stay 0: no trams) are left out with a comment | a round's start and end, a multitool's switch to tram mode | M10+ (round persistence) | `controllers/subsystem/persistence/_persistence.cs` |
+| `controllers/subsystem/persistence/*.dm` but `counter_delamination.dm`, `incident_display.dm:103`, `:183`, `:355` | SSpersistence: only `Initialize`, `collect_data`, the delamination counter (DV220) and the exploration drones' adventures (`load_adventures`, section 249) are translated; every other load and save (Poly, engravings, tattoos, trophies, recent maps, photos, outfits, recipes, scars, message bottles) and the tram counters (`tram_hits_this_round` and `tram_hits_last_round` stay 0: no trams) are left out with a comment | a round's start and end, a multitool's switch to tram mode | M10+ (round persistence) | `controllers/subsystem/persistence/_persistence.cs` |
 | `incident_display.dm:102` | the tram collisions (`SStransport`'s `COMSIG_TRAM_COLLISION`; no tram on MetaStation) | a tram display | with the trams | `game/machinery/incident_display.cs` |
 | `incident_display.dm:277`, `:288` and the other `emissive_appearance` sites | the displays' emissive glow (DEVIATION DV12) | every display | with the emissive plane | `game/machinery/incident_display.cs` |
 | the inert types' own `attack_ghost` (portals, ladders, the gateway, the spawners and others: section 16) | a ghost's click on them runs `/obj`'s (`attack_ghost` is not one of the inert seam's guarded procs) | a ghost's click on an inert prop | with their types | (none) |
@@ -1923,8 +1923,8 @@ rows (E12a: the screentips, not now by the owner, D264). The crystallizer's othe
 quality prefix but stay inert until their own packages (their Initialize and own procs do not run, D112) (the healium, proto-nitrate,
 nitrous oxide and foam crystals are live since gaps F1, `grenades/atmos_grenades.dm`): the metal hydrogen, diamond and zaukerite sheets
 (`mineral.dm`: no crafting recipes), hot ice (`hot_ice.dm`), the ammonia crystals (`ammonia_crystals.dm`), the crystal cell
-(`power/cell.dm:248`: its charge is not set up) and the fuel pellets (`explorer_drone/exodrone.dm`). The plasma sheet and the
-supermatter shard are live. Nothing else is left.
+(`power/cell.dm:248`: its charge is not set up). The plasma sheet, the supermatter shard and the fuel pellets
+(`explorer_drone/exodrone.dm`, live with the exploration drones, section 249) are live. Nothing else is left.
 
 ## 91. The RCD family: the RCD, the RLD, the RTD, the RDD (E13, D287)
 
@@ -3447,7 +3447,7 @@ every mutation type (DV25 left it). The DNA infuser and its organ sets are their
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `instability_meltdown.dm:27`, `:34`, `:55`, `:68`, `:87`, `:94`, `:101`, `:149` | the meltdowns that need other systems: the paraplegic's wheelchair (its trauma came with gaps B1), corgize and crabize, the advanced mutation toxin, `animate_atom_living` (an organ's: `items.dm:1904`; the root came with gaps ST5), the skeleton species (the petrified statue of `:129` came with gaps ST5, `slow_psykerize` with gaps CH1) (`Dm.Deferred` leaves: the meltdown picks them and does nothing) | a DNA meltdown at full instability | the ridden vehicles, transformations, slime people and magic | `datums/instability_meltdown.cs` |
+| `instability_meltdown.dm:27`, `:34`, `:55`, `:68`, `:87`, `:94`, `:101`, `:149` | the meltdowns that need other systems: the paraplegic's wheelchair (its trauma came with gaps B1), corgize and crabize, the advanced mutation toxin, `animate_atom_living` (an organ's: `items.dm:1904`; the root came with gaps ST5) (the petrified statue of `:129` came with gaps ST5, `slow_psykerize` with gaps CH1, the skeleton species of `:149` with gaps EX1) (`Dm.Deferred` leaves: the meltdown picks them and does nothing) | a DNA meltdown at full instability | the ridden vehicles, transformations, slime people and magic | `datums/instability_meltdown.cs` |
 | `farsight.dm:45`, `:50` | the farsight's wider view (`client.view_size`, `Dm.Deferred` leaves) | casting farsight | the client's view size | `datums/mutations/farsight.cs` |
 | `hulk.dm:97-251` | the hulk's tail swing (`check_swing`, `setup_swing`, `swing_loop`, `finish_swing`): based on Goonstation's wrestling swing, not taken (D80); declared with not-translated bodies and never registered | — | — (D80) | `datums/mutations/hulk.cs` |
 | `touch/_touch.dm:311` | the spicy handshake achievement (`Dm.Deferred` leaf) | a shock touch on a handshake | the achievements (M10) | `modules/spells/spell_types/touch/_touch.cs` |
@@ -3505,7 +3505,6 @@ the budget, prices and private buying, NtosCargo and NtosCouponMaster (DV237 end
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `explorer_drone/loot.dm:1-118`, `:142-end` | the exploration drone's loot generators and its other loot (the fire lance, the unique items) | the exodrone | the exploration drones | `modules/explorer_drone/loot.cs` |
 | `exports/fish.dm` | the fish's export value (a not-translated leaf: fishing) | selling a fish | fishing | `modules/cargo/exports/fish.cs` |
 | `livestock.dm`, `imports.dm:92`, `:138`, `:380`, `costumes_toys.dm:294`, `organic.dm:209` | the packs' own fills and crates (the critters and their stasis, the dumpster corpse, the mafia and fan upgrade imports, the gift crate, the pizza's anomalies): these packs ship their plain contents | ordering them | with what they spawn | `modules/cargo/packs/_packs.cs` |
 | `budgetordering.dm:48` | `isAdminGhostAI` (no admin ghosts, GAP(lead) in `is_helpers.cs`) | an admin ghost | admin tooling | `programs/budgetordering.cs` |
@@ -4041,7 +4040,7 @@ client's `ExperimentConfigure` (with its public `Experiment` and `TechwebServer`
 
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
-| `types/exploration.dm` | the exploration scans read `GLOB.exploration_sites`, which the explorer drones' scanner array fills (`explorer_drone/`, with its own experiment handler, `scanner_array.dm:188`): the list stays empty and no exploration scan completes | the exodrone scanner array | the explorer drones | `experisci/experiment/types/exploration.cs` |
+| `types/ordnance.dm` | the ordnance experiments are completed by publishing a paper with the NT Frontier app (the doppler array's and the tank compressor's records, `_scipaper.dm`): the papers and the ordnance machines are not ported | the ordnance lab, NT Frontier | the papers and the ordnance lab | `experisci/experiment/types/ordnance.cs` |
 | `types/scanning_fish.dm` | the fish scans' other handlers (the tech fishing rod, `fishing_rod.dm:790`, and the fish analyzer, `fish_analyzer.dm:34`) and the fishing portal generator's settings they unlock (`fishing_portal_machine.dm:273`): fishing is not ported; the experi-scanner and the destructive scanner scan a fish | fishing | fishing | `experisci/experiment/types/scanning_fish.cs` |
 | `random_scanning.dm:33` | the exosuit load test counts only crew-built mechs (`TRAIT_MECHA_CREATED_NORMALLY`, given by the mech construction paths, `mecha_construction_paths.dm:35`, inert): none passes until mech construction comes | scanning an equipped mech | mech construction | `experisci/experiment/types/random_scanning.cs` |
 
@@ -4880,7 +4879,7 @@ SSicon_smooth (the beach bar's and the island's carts). Left:
 | `syndicate_assault.dm` map, `mapfluff/ruins/spaceruin_code/forgottenship.dm:2-14` | the Cybersun vault door (`password/voice/sfc`, inert: its password `GLOB.fscpassword` is generated at GLOB's start from tg's phonetic alphabet, which the test worlds that build GLOB without tg's strings lack) | the syndicate assault's vault | the space ruins (with a GLOB start that mounts tg's strings) | (generated) |
 | `stairs_and_cliffs.dm:22`, `turfs/open/lava.dm:463-490` | the glacier's plasma lava (`lava/plasma/virtual_domain`): its freezing burn | stepping into the glacier's plasma | the ice moon's terrain (gaps LV1-5) | (generated) |
 | the domains' maps: `turfs/open/sand.dm`, `water.dm:107-120`, `grass.dm`, `planet.dm`, `ice.dm`, `asteroid.dm:322-390`, `closed/wall/misc_walls.dm:49`, `mineral_walls.dm:161-200`, `reinf_walls.dm:263`, `indestructible.dm:215-230`, `floor/plating/misc_plating.dm:18-30` | the domains' terrain: the beach sand, coast and water, the grass and jungle, the ice and snow, the rust, wooden and Syndicate walls, the operatives' glass and the abductor plating are inert (drawn with tg's sprites; their own footprints, digging, shovelling and break states are not) | walking the beach, island, pirate, glacier and vaporwave domains | the terrain turfs (no package) | (generated) |
-| the domains' maps | the props of other systems on the maps (the laptops, arcades and roulette, the hoverboard, wheelchair and ATV, the card decks and dodgeball, the signpost, the deployable HMG, the exoscanner, PDA painter and photobooth button, the mass driver, the honk staff, the meateor fluff, picture frames and posters, the popsicles and seaweed, the mapping helpers) | the domains | their own systems | (generated) |
+| the domains' maps | the props of other systems on the maps (the laptops, arcades and roulette, the hoverboard, wheelchair and ATV, the card decks and dodgeball, the signpost, the deployable HMG, the PDA painter and photobooth button, the mass driver, the honk staff, the meateor fluff, picture frames and posters, the popsicles and seaweed, the mapping helpers) | the domains | their own systems | (generated) |
 | `ruin_defender/zombie.dm:43` | `try_to_zombie_infect` (`Dm.NotTranslated`) for a zombie with an infection chance (none of the domains' zombies has one) | a mapped infectious zombie's hit on a human | the zombie infection (`modules/zombie`) | `modules/mob/living/basic/ruin_defender/zombie.cs` |
 | `basic/alien/maid.dm:36-62` | the barmaid (the escape shuttle's, with its area-based godmode) | the escape shuttle's bar | the area-based godmode component | (generated) |
 
@@ -5022,7 +5021,7 @@ SSprocessing even when it started on the fast one. Left:
 | tg site | What is left | Reached by | Milestone | Mirror file |
 |---|---|---|---|---|
 | `crafting/melee_weapon.dm:351` (`crusher_trophy/brimdemon_fang`) | the brimdemon fang's recipe asks for brimdust and is left out with every recipe needing a reagent (section 11's `global_lists.dm:20` row) | the crafting menu | M8 (chemistry) | `__HELPERS/global_lists.cs` |
-| `mining_corpses.dm` | the golem, moth, plasmaman and skeleton species a legion-infested corpse may take are inert: the corpse keeps its species type with its inert procs | a legion's corpse | the species | `modules/mob_spawn/corpses/mining_corpses.cs` |
+| `mining_corpses.dm` | the golem, moth and plasmaman species a legion-infested corpse may take are inert (the skeleton is live since gaps EX1): the corpse keeps its species type with its inert procs | a legion's corpse | the species | `modules/mob_spawn/corpses/mining_corpses.cs` |
 | `explorer_gear.dm:203` | the bone armour's drake mesh on the chest (`equipment_bodypart_texture` is not ported) | the bone armour worn | M10+ | `modules/mining/equipment/explorer_gear.cs` |
 | `lobstrosity.dm:45` | the lobstrosity's fishing (`profound_fisher`; fishing is not ported) | a lobstrosity near water | fishing (FI1-3) | `basic/lavaland/lobstrosity/lobstrosity.cs` |
 | `bileworm_actions.dm:203` | the bile splash's goop particles (the particle holder is not ported) | a bile glob's impact | M10+ | `basic/lavaland/bileworm/bileworm_actions.cs` |
@@ -5124,7 +5123,6 @@ turf lists (two colossus bolts on one wall in a tick); a hotspot made on a wall 
 | `kill_achievement.dm`, `_megafauna.dm:79-87`, `bubblegum.dm:158`, `boss.dm:118` | the achievements, the score and the medals of a megafauna or a boss kill (and Bubblegum's frenching): the element is live and gives nothing | a megafauna's death | the achievements (D332, owner-deferred) | `datums/elements/kill_achievement.cs` |
 | `_megafauna.dm:69`, `boss.dm:44` | the see-through of a big mob (`seethrough_mob`: a client image trick for large sprites) stays inert | always | M10+ (the client) | (inert) |
 | `mining_loot/megafauna/ash_drake.dm:43`, `:53` | the drake armour's and helm's drake mesh on the body (`equipment_bodypart_texture`) | the drake armour worn | M10+ | `mining_loot/megafauna/ash_drake.cs` |
-| `mining_loot/megafauna/ash_drake.dm` (dragon's blood) | the skeleton species the blood may give is inert (the dragon and polar bear shapeshifts it and the wendigo's blood grant are live since gaps XB2) | drinking the blood | the species | (inert) |
 | `necropolis_chests.dm`, `mining_loot/` but the megafauna's, `cain_and_abel/` | the tendril and puzzle chests, the skeleton key and the colossus chest's Cain and Abel (inert); the legion's 20% tendril crate opens empty | a necropolis chest | gaps LV5 (D353) | `mining/lavaland/necropolis_chests.cs` |
 | `trophies_megafauna.dm` | the broodmother's tongue and the legionnaire's spine (the elites' trophies) | an elite's death | gaps LV5 (D353) | `kinetic_crusher/trophies_megafauna.cs` |
 | `simple_animal/hostile/mining_mobs/` | the `asteroid` base and the elites stand on the live base but stay inert | Lavaland's tumors | gaps LV5 (D353) | (inert) |
@@ -5402,3 +5400,33 @@ package is far bigger than one helper's run; the rest waits for its own run, gap
 | the anomaly cores' users | the reactive armours, the polymorph belt, the perceptomatrix, the anomalock heart, the wormhole projector and the gravity gun, the Atlas spine, the anomaly releaser, the dimensional bomb core, the weather tower's charges, the MOD core slot's cores from anomalies (their rows elsewhere name the cores) | those items | gaps OR1, second part (each where nothing else blocks it) | (generated) |
 | `research/gizmo/` | the gizmos with their modes, machines, puzzle, voice, wires and window (inert) | Meta's gizmo spawner and the tucker tubes | gaps OR1, second part | (generated) |
 | `game/machinery/quantum_pad.dm`, `computer/launchpad_control.dm`, `mechlaunchpad.dm`, `computer/mechlaunchpad.dm`, `ecto_sniffer.dm` | the quantum pad, the launchpad console (LaunchpadConsole window), the mech pad and its console (MechpadConsole), the ectoscopic sniffer (inert) | Meta's mech pads and sniffer, built pads | gaps OR1, second part | (generated) |
+## 249. The exploration drones (gaps EX1, D339)
+Live: `modules/explorer_drone/` whole: `scanner_array.dm` (the scanner dishes with their off, ready, scanning and open states, the
+array's controller and its power from the dishes' scanning modules, the scan conditions the dishes weigh, the wide, point and deep scans
+with tg's costs and timings, the emergency stop and the failed scan when a dish leaves the array, the console with its sound and the
+ExoscannerConsole window, its experiment handler completing the exploration experiments), `manager.dm` and `exploration_site.dm` (the
+sites and their bands, `generate_exploration_sites`, each site kind with its events, the reveals of the point and deep scans), `exodrone.dm`
+(the drone with tg's probe names, its tools, cargo, log with its `$$` keywords, travel with its fuel coefficients, its busy delays,
+damage and self-destruct, its return to a free launcher or a random station tile; the launcher with its fuel overlays, the launch's
+smoke and sound, its crowbar; the fuel pellets), `control_console.dm` (every act and the ExodroneConsole window with tg's adventure
+screens), `adventure.dm` (tg's adventure format: the loading of `strings/exoadventures/` by SSpersistence's Initialize, the validation,
+the nodes, choices, qualities, effects, triggers and requirement groups, the delays), `exploration_events/` whole (the fluff, danger,
+resource, trader and adventure events with their tools, requirements, loot and deals), `loot.dm` whole (the loot generators, the
+antique, the trade chip, the fire lance with its windup and beam), and the admins' adventure browser (`/datum/adventure_browser` with the
+AdventureBrowser window, playtesting an adventure on the drone console's screen). Beside them: the catering crate's spoiled food
+(`cargo/packs/exploration.dm`), the skeleton species (`species_types/skeletons.dm`, whose head the welded locker holds; the dragon's
+blood, a legion's corpse and the skeletonize meltdown, `instability_meltdown.dm:149`, give it now), the GLOB of the drones' tools
+(`__DEFINES/adventure.dm`), and the client's copy of tg's `icons/ui/adventure/` pictures (the icon converter) with the adventures'
+own base64 pictures decoded on the client. Meta's dish, its console, the two launchers with their drones and the drone console work.
+Kept as tg has it: an event's blacklist is tested against its own required traits, not the site's (`exploration_site.dm:111`), so a
+blacklist never excludes an event; a mineral deposit makes its sheets with the amount as their loc (`resource.dm:300`), so the stack
+is made in nullspace with its default amount and moved into the cargo; the console's `explore_event` act does not return TRUE, so the
+window updates on the next tick; the dish's `on_set_panel_open` does not call its parent; the drone sends its status signal before it sets the status
+(`exodrone.dm:145`), so the console's alert screen shows the status the drone left; the console's self-destruct calls the drone's `handle_deconstruct`,
+which since tg's deconstruction refactor no longer deletes it (`obj_defense.dm:183`): the explosion and sparks go off where the drone is
+(nowhere at a site) and the drone flies on. Left:
+| `manager.dm:80`, `control_console.dm:180` | `/datum/asset/simple/adventure` stays inert: `ui_assets` sends nothing (DV44); the client draws tg's pictures from its own copy | the consoles' windows | (the client) | `modules/explorer_drone/manager.cs`, `control_console.cs` |
+| `manager.dm:86` | the admin verb Adventure Manager (`ADMIN_VERB`): the server console's `adventures` command stands in (D275) and opens the browser for the admin | an admin | M10+ (admin verbs) | `src/Server/ServerHost.Console.cs` |
+| `loot.dm:92`, `trader.dm:84` | the fish cases (`/obj/item/storage/fish_case/syndicate`, `/random`) a loot generator and a trader give stay inert | a drone's loot, a trade | fishing (gaps FI1-3) | (inert) |
+| `tgui/.../ExodroneConsole.tsx` | the lost signal's Nanotrasen logo (tgui-core's SVG) is a warning icon; the adventure screen's monospace font is the kit's | a lost drone, an adventure | the kit | `godot/scripts/Shared/Tgui/Interfaces/ExodroneConsole.cs` |
+| the 3D models | the drone, the fuel pellets and the loot are tg's sprites (`required-models.md`) | always | the models | `godot/assets/models/models.json` |

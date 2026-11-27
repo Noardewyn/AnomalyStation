@@ -46,6 +46,15 @@ public static class TgStrings
     public static readonly ImmutableArray<string> CardFiles = ImmutableArray.Create(
         "strings/tcg/keywords.json", "strings/tcg/set_one.json", "strings/tcg/set_two.json"); // declared before Files, whose initializer adds them
 
+    /// <summary>
+    /// The exploration drones' adventures (tg's text adventures, explorer_drone/adventure.dm): SSpersistence's Initialize reads every
+    /// file of <c>strings/exoadventures/</c> (<c>flist</c>), so the mount lists the snapshot's five (declared before Files, whose initializer adds them).
+    /// </summary>
+    public static readonly ImmutableArray<string> AdventureFiles = ImmutableArray.Create(
+        "strings/exoadventures/britain_replica.json", "strings/exoadventures/quantum_fizzics.json",
+        "strings/exoadventures/robots_wingman.json", "strings/exoadventures/space_yacht.json",
+        "strings/exoadventures/tree_in_the_middle_of_space.json");
+
     /// <summary>The paths, relative to the clone's root, of the files the translated world start and strings() read.</summary>
     public static readonly ImmutableArray<string> Files = ImmutableArray.Create(
     
@@ -130,8 +139,12 @@ public static class TgStrings
         "strings/names/japanese_prefix.txt", "strings/names/moth_prefix.txt", "strings/names/mexican_prefix.txt",
         "strings/names/british_prefix.txt", "strings/names/malf_prefix.txt", "config/robot_voices.json",
         // the battle arcade's enemy names (machinery/computer/arcade/battle.dm:150, ARCADE_FILE through pick_list)
-        "strings/arcade.json"
-    ).AddRange(GeneticsFiles).AddRange(CardFiles);
+        "strings/arcade.json",
+        // the exploration drones: their names, the sites' names and fluff (EXODRONE_FILE, explorer_drone/exodrone.dm:66, through
+        // strings()), and the adventures SSpersistence loads at its Initialize (explorer_drone/adventure.dm:52, flist of
+        // strings/exoadventures/)
+        "strings/exodrone.json"
+    ).AddRange(GeneticsFiles).AddRange(CardFiles).AddRange(AdventureFiles);
 
 
     /// <summary>

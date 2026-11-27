@@ -351,6 +351,9 @@ public static class TguiInterfaces
         ["AdminBookViewer"] = AdminBookViewer.Render, // the admins' library console's book viewer
         ["DSMBook"] = DSMBook.Render, // the psychologist's manual
         ["IDCBook"] = IDCBook.Render, // the manual of the diseases
+        ["ExoscannerConsole"] = ExoscannerConsole.Render, // the exploration drones' scanner array control console
+        ["ExodroneConsole"] = ExodroneConsole.Render, // the exploration drone control console
+        ["AdventureBrowser"] = AdventureBrowser.Render, // the admins' adventure manager
     };
 
     /// <summary>The interface of that name, or null when it is not translated yet.</summary>

@@ -34655,13 +34655,12 @@ public partial class obj_item_experi_scanner
     }
 }
 
-// tg: code/modules/explorer_drone/exodrone.dm:23
-[DmPath("/obj/item/exodrone"), DmGeneratedOnly, DmInert]
-public partial class obj_item_exodrone : obj_item
+// tg: code/modules/explorer_drone/exodrone.dm:23 (the vars the hand-written class does not declare)
+[DmPath("/obj/item/exodrone")]
+public partial class obj_item_exodrone
 {
     public string drone_status = "idle"; // tg: code/modules/explorer_drone/exodrone.dm:30
     public float controlled = 0; // tg: code/modules/explorer_drone/exodrone.dm:32
-    public Type location; // tg: code/modules/explorer_drone/exodrone.dm:34
     public datum_exploration_site travel_target; // tg: code/modules/explorer_drone/exodrone.dm:36
     public object travel_time; // tg: code/modules/explorer_drone/exodrone.dm:38
     public object travel_timer_id; // tg: code/modules/explorer_drone/exodrone.dm:40
@@ -34675,16 +34674,6 @@ public partial class obj_item_exodrone : obj_item
     public DmList tools; // tg: code/modules/explorer_drone/exodrone.dm:56
     public float travel_cost_coeff = 250; // tg: code/modules/explorer_drone/exodrone.dm:58
 
-    // tg: code/modules/explorer_drone/exodrone.dm:23
-    public obj_item_exodrone()
-    {
-        name = "exploration drone";
-        desc = "A long range, semi-autonomous exploration drone.";
-        icon = Dm.resource("icons/obj/exploration.dmi");
-        icon_state = "drone";
-        w_class = 4;
-    }
-
     // tg: code/modules/explorer_drone/exodrone.dm:54
     protected internal override void dm_init_vars()
     {
@@ -34694,9 +34683,9 @@ public partial class obj_item_exodrone : obj_item
     }
 }
 
-// tg: code/modules/explorer_drone/exodrone.dm:465
-[DmPath("/obj/item/fuel_pellet"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fuel_pellet : obj_item
+// tg: code/modules/explorer_drone/exodrone.dm:465 (the var block of a hand-written class)
+[DmPath("/obj/item/fuel_pellet")]
+public partial class obj_item_fuel_pellet
 {
     public string fuel_type = "basic"; // tg: code/modules/explorer_drone/exodrone.dm:470
     public float uses = 5; // tg: code/modules/explorer_drone/exodrone.dm:472
@@ -34712,7 +34701,7 @@ public partial class obj_item_fuel_pellet : obj_item
 }
 
 // tg: code/modules/explorer_drone/exodrone.dm:480
-[DmPath("/obj/item/fuel_pellet/advanced"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fuel_pellet/advanced"), DmGeneratedOnly]
 public partial class obj_item_fuel_pellet_advanced : obj_item_fuel_pellet
 {
     // tg: code/modules/explorer_drone/exodrone.dm:480
@@ -34725,7 +34714,7 @@ public partial class obj_item_fuel_pellet_advanced : obj_item_fuel_pellet
 }
 
 // tg: code/modules/explorer_drone/exodrone.dm:485
-[DmPath("/obj/item/fuel_pellet/exotic"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fuel_pellet/exotic"), DmGeneratedOnly]
 public partial class obj_item_fuel_pellet_exotic : obj_item_fuel_pellet
 {
     // tg: code/modules/explorer_drone/exodrone.dm:485
@@ -34767,25 +34756,12 @@ public partial class obj_item_trade_chip
     }
 }
 
-// tg: code/modules/explorer_drone/loot.dm:146
-[DmPath("/obj/item/firelance"), DmGeneratedOnly, DmInert]
-public partial class obj_item_firelance : obj_item
+// tg: code/modules/explorer_drone/loot.dm:146 (the vars the hand-written class does not declare)
+[DmPath("/obj/item/firelance")]
+public partial class obj_item_firelance
 {
     public float windup_time = 100; // tg: code/modules/explorer_drone/loot.dm:153
     public float melt_range = 3; // tg: code/modules/explorer_drone/loot.dm:154
-    public Type cell; // tg: code/modules/explorer_drone/loot.dm:155
-
-    // tg: code/modules/explorer_drone/loot.dm:146
-    public obj_item_firelance()
-    {
-        name = "fire lance";
-        desc = "Melts everything in front of you. Takes a while to start and operate.";
-        icon = Dm.resource("icons/obj/exploration.dmi");
-        icon_state = "firelance";
-        inhand_icon_state = "firelance";
-        righthand_file = Dm.resource("icons/mob/inhands/items/firelance_righthand.dmi");
-        lefthand_file = Dm.resource("icons/mob/inhands/items/firelance_lefthand.dmi");
-    }
 }
 
 // tg: code/modules/fishing/bait.dm:2

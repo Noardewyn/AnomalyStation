@@ -9,10 +9,10 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// SSpersistence, only its delamination counter (the incident displays, DV220): Initialize and collect_data call
-// load_delamination_counter and save_delamination_counter; every other load and save (Poly, the engravings, the tattoos,
-// the trophies, the maps, the photos, the outfits, the adventures, the recipes, the scars, the message
-// bottles) is left out with a comment (docs/ai/specs/not-translated.md, M10+ round persistence). The var block is generated (D111).
+// SSpersistence, only its delamination counter (the incident displays, DV220) and the exploration drones' adventures: Initialize and
+// collect_data call load_delamination_counter and save_delamination_counter, and Initialize loads the adventures from tg's files
+// (load_adventures, explorer_drone/adventure.dm); every other load and save (Poly, the engravings, the tattoos, the trophies, the
+// maps, the photos, the outfits, the recipes, the scars, the message bottles) is left out with a comment (docs/ai/specs/not-translated.md, M10+ round persistence). The var block is generated (D111).
 
 // tg: code/controllers/subsystem/persistence/_persistence.dm:4  SUBSYSTEM_DEF(persistence)
 public partial class datum_controller_subsystem_persistence : datum_controller_subsystem
@@ -41,7 +41,7 @@ public partial class datum_controller_subsystem_persistence : datum_controller_s
         // load_photo_persistence(), load_custom_outfits(): not ported (M10+ round persistence)
         load_delamination_counter();
         load_tram_counter();
-        // load_adventures(): not ported (M10+)
+        load_adventures();
         return SS_INIT_SUCCESS;
     }
 

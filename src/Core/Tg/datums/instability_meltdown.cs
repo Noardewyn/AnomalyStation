@@ -11,8 +11,8 @@ namespace Anomaly.Core.Tg;
 
 // The whole file (gaps P3, D327): the meltdowns of a body whose DNA lost all stability. The effects that need a mechanic the port has
 // not got yet are recorded leaves (not-translated section 165): the corgi and crab transformations, the paraplegic's
-// wheelchair (its trauma came with gaps B1; the decloning and gastrolosis diseases came with gaps VI1), the slime mutation toxin, the skeleton species and the
-// staff of animation's mimic (the petrified statue came with gaps ST5). The var blocks are
+// wheelchair (its trauma came with gaps B1; the decloning and gastrolosis diseases came with gaps VI1), the slime mutation toxin and the
+// staff of animation's mimic (the skeleton species came with the exploration drones) (the petrified statue came with gaps ST5). The var blocks are
 // generated (D111).
 
 /// A possible genetic meltdown that occurs when someone exceeds 100 genetic instability
@@ -252,8 +252,7 @@ public partial class datum_instability_meltdown_fatal_skeletonize : datum_instab
     {
         victim.visible_message(span_warning(I18n.T("[]'s skin melts off!", victim)), span_boldwarning(I18n.T("Your skin melts off!")));
         await victim.spawn_gibs();
-        // victim.set_species(/datum/species/skeleton)
-        Dm.Deferred("code/datums/instability_meltdown.dm:149", "skeletonize meltdown: the skeleton species");
+        victim.set_species(typeof(datum_species_skeleton));
         if (prob(90))
             _addtimer(Dm.@new<datum_callback>(victim, nameof(victim.death)), 3 * SECONDS, file: "code/datums/instability_meltdown.dm", line: 151);
     }

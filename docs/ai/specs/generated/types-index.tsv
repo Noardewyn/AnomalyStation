@@ -247,7 +247,7 @@ proc	/	browse_messages	code/modules/admin/sql_message_system.dm:370	type,target_
 proc	/	build_ban_cache	code/modules/admin/sql_ban_system.dm:151	player_client	no	-	global
 proc	/	build_chemical_reactions_lists	code/_globalvars/lists/reagents.dm:99		yes	full	global
 proc	/	build_context	code/datums/screentips/screentips.dm:20	context,key,allow_image	yes	full	global
-proc	/	build_exploration_site_ui_data	code/modules/explorer_drone/exploration_site.dm:182		no	-	global
+proc	/	build_exploration_site_ui_data	code/modules/explorer_drone/exploration_site.dm:182		yes	full	global
 proc	/	build_name2reagentlist	code/_globalvars/lists/reagents.dm:216		yes	full	global
 proc	/	build_planeed_apperance_queue	code/modules/mob/living/carbon/carbon_update_icons.dm:73	appearances	yes	full	global
 proc	/	calculate_light_offset	code/modules/lighting/lighting_atom.dm:218	get_offset	yes	full	global
@@ -606,11 +606,11 @@ proc	/	generate_code_phrase	code/__HELPERS/names.dm:208	return_list	yes	full	glo
 proc	/	generate_cult_rune_types	code/modules/antagonists/cult/runes.dm:8		no	-	global
 proc	/	generate_dummy_lookalike	code/modules/mob/living/carbon/human/dummy.dm:181	slotkey,target	yes	full	global
 proc	/	generate_escape_menu_suicide_icon	code/modules/escape_menu/escape_menu.dm:3		no	-	global
-proc	/	generate_exploration_sites	code/modules/explorer_drone/exploration_site.dm:5		no	-	global
+proc	/	generate_exploration_sites	code/modules/explorer_drone/exploration_site.dm:5		yes	full	global
 proc	/	generate_female_clothing	code/modules/clothing/clothing.dm:545	index,t_color,icon,type	no	-	global
 proc	/	generate_gas_overlays	code/modules/atmospherics/gasmixtures/gas_types.dm:23	old_offset,new_offset,gas_type	yes	full	global
 proc	/	generate_gene_sequence	code/datums/dna/dna.dm:225	length	yes	full	global
-proc	/	generate_generator_index	code/modules/explorer_drone/loot.dm:4		no	-	global
+proc	/	generate_generator_index	code/modules/explorer_drone/loot.dm:4		yes	full	global
 proc	/	generate_global_circuit_signal_list	code/modules/wiremod/components/admin/signal_handler/signal_list.dm:50		yes	full	global
 proc	/	generate_global_heretic_tree	code/modules/antagonists/heretic/knowledge/_heretic_paths.dm:150		no	-	global
 proc	/	generate_global_trait_name_map	code/_globalvars/traits/_traits.dm:891		no	-	global
@@ -908,7 +908,7 @@ proc	/	init_preference_entries_by_key	code/modules/client/preferences/_preferenc
 proc	/	init_print_types	code/modules/modular_computers/file_system/programs/file_browser.dm:3		no	-	global
 proc	/	init_prisoner_crimes	code/modules/client/preferences/prisoner_crime.dm:24		yes	full	global
 proc	/	init_raptor_colors	code/modules/mob/living/basic/lavaland/raptor/raptor_color.dm:3		yes	full	global
-proc	/	init_scan_conditions	code/modules/explorer_drone/scanner_array.dm:10		no	-	global
+proc	/	init_scan_conditions	code/modules/explorer_drone/scanner_array.dm:10		yes	full	global
 proc	/	init_slime_auto_activate_reaction_list	code/modules/research/xenobiology/xenobiology.dm:118		yes	full	global
 proc	/	init_sm_gas	code/modules/power/supermatter/supermatter_gas.dm:1		yes	full	global
 proc	/	init_smites	code/_globalvars/admin.dm:5		no	-	global
@@ -990,7 +990,7 @@ proc	/	listtrim	code/modules/admin/antag_panel.dm:24	L	yes	full	global
 proc	/	living_player_count	code/__HELPERS/mobs.dm:654		yes	full	global
 proc	/	load_admin_ranks	code/modules/admin/admin_ranks.dm:139	dbfail,no_update	yes	full	global
 proc	/	load_admins	code/modules/admin/admin_ranks.dm:247	no_update,initial	yes	partial	global
-proc	/	load_adventures	code/modules/explorer_drone/adventure.dm:52		no	-	global
+proc	/	load_adventures	code/modules/explorer_drone/adventure.dm:52		yes	full	global
 proc	/	load_asset_datum	code/modules/asset_cache/asset_list.dm:9	type	no	-	global
 proc	/	load_default_map_config	code/datums/map_config.dm:81		yes	full	global
 proc	/	load_map	code/modules/mapping/reader.dm:151	dmm_file,x_offset,y_offset,z_offset,crop_map,measure_only,no_changeturf,x_lower,x_upper,y_lower,y_upper,z_lower,z_upper,place_on_top,new_z	yes	full	global
@@ -1800,7 +1800,7 @@ proc	/datum/controller/global_vars	InitGlobalgolem_stack_food_types	code/__DEFIN
 proc	/datum/controller/global_vars	InitGlobalgolem_stack_food_directory	code/__DEFINES/DNA.dm:244		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalbitflags	code/__DEFINES/_flags.dm:4		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalghost_role_flags	code/__DEFINES/admin.dm:157		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalexodrone_tool_metadata	code/__DEFINES/adventure.dm:46		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalexodrone_tool_metadata	code/__DEFINES/adventure.dm:46		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalall_radial_directions	code/__DEFINES/ai/ai.dm:100		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalsyndicate_employers	code/__DEFINES/antagonists.dm:211		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalnanotrasen_employers	code/__DEFINES/antagonists.dm:223		yes	full	proc root
@@ -2701,14 +2701,14 @@ proc	/datum/controller/global_vars	InitGlobalrpgloot_controller	code/modules/eve
 proc	/datum/controller/global_vars	InitGlobalrpgtitle_controller	code/modules/events/wizard/rpgtitles.dm:15		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalall_wormholes	code/modules/events/wormholes.dm:1		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalscanned_fish_by_techweb	code/modules/experisci/experiment/types/scanning_fish.dm:2		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobalexplorer_drone_adventure_db_entries	code/modules/explorer_drone/adventure.dm:49		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalexodrones	code/modules/explorer_drone/exodrone.dm:17		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalexodrone_launchers	code/modules/explorer_drone/exodrone.dm:19		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobalexplorer_drone_adventure_db_entries	code/modules/explorer_drone/adventure.dm:49		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalexodrones	code/modules/explorer_drone/exodrone.dm:17		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalexodrone_launchers	code/modules/explorer_drone/exodrone.dm:19		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalexploration_sites	code/modules/explorer_drone/exploration_site.dm:2		yes	full	proc root
-proc	/datum/controller/global_vars	InitGlobaladventure_loot_generator_index	code/modules/explorer_drone/loot.dm:1		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalexoscanner_controller	code/modules/explorer_drone/scanner_array.dm:3		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalexoscanner_bands	code/modules/explorer_drone/scanner_array.dm:5		no	-	proc root
-proc	/datum/controller/global_vars	InitGlobalscan_conditions	code/modules/explorer_drone/scanner_array.dm:7		no	-	proc root
+proc	/datum/controller/global_vars	InitGlobaladventure_loot_generator_index	code/modules/explorer_drone/loot.dm:1		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalexoscanner_controller	code/modules/explorer_drone/scanner_array.dm:3		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalexoscanner_bands	code/modules/explorer_drone/scanner_array.dm:5		yes	full	proc root
+proc	/datum/controller/global_vars	InitGlobalscan_conditions	code/modules/explorer_drone/scanner_array.dm:7		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalfish_compatible_fluid_types	code/modules/fishing/fish/_fish.dm:9		yes	full	proc root
 proc	/datum/controller/global_vars	InitGlobalchasm_detritus_types	code/modules/fishing/fish/chasm_detritus.dm:9		no	-	proc root
 proc	/datum/controller/global_vars	InitGlobalfish_evolutions	code/modules/fishing/fish/fish_evolution.dm:2		no	-	proc root
@@ -38969,8 +38969,8 @@ type	/datum/supply_pack/engine/tesla_coils	/datum/supply_pack/engine	code/module
 type	/datum/supply_pack/engine/hypertorus_fusion_reactor	/datum/supply_pack/engine	code/modules/cargo/packs/engineering.dm:292	live	datum_supply_pack_engine_hypertorus_fusion_reactor	0	0
 type	/datum/supply_pack/exploration	/datum/supply_pack	code/modules/cargo/packs/exploration.dm:4	live	datum_supply_pack_exploration	0	0
 type	/datum/supply_pack/exploration/scrapyard	/datum/supply_pack/exploration	code/modules/cargo/packs/exploration.dm:8	live	datum_supply_pack_exploration_scrapyard	0	0
-type	/datum/supply_pack/exploration/catering	/datum/supply_pack/exploration	code/modules/cargo/packs/exploration.dm:17	inert	datum_supply_pack_exploration_catering	0	0
-proc	/datum/supply_pack/exploration/catering	fill	code/modules/cargo/packs/exploration.dm:23	crate	no	-	proc
+type	/datum/supply_pack/exploration/catering	/datum/supply_pack/exploration	code/modules/cargo/packs/exploration.dm:17	live	datum_supply_pack_exploration_catering	1	0
+proc	/datum/supply_pack/exploration/catering	fill	code/modules/cargo/packs/exploration.dm:23	crate	yes	full	proc
 type	/datum/supply_pack/exploration/shrubbery	/datum/supply_pack/exploration	code/modules/cargo/packs/exploration.dm:34	live	datum_supply_pack_exploration_shrubbery	0	0
 type	/datum/supply_pack/misc	/datum/supply_pack	code/modules/cargo/packs/general.dm:2	live	datum_supply_pack_misc	0	0
 type	/datum/supply_pack/misc/artsupply	/datum/supply_pack/misc	code/modules/cargo/packs/general.dm:5	live	datum_supply_pack_misc_artsupply	0	0
@@ -40734,181 +40734,181 @@ type	/datum/experiment/exploration_scan/random	/datum/experiment/exploration_sca
 proc	/datum/experiment/exploration_scan/random	New	code/modules/experisci/experiment/types/exploration.dm:55	techweb	yes	full	proc
 type	/datum/experiment/exploration_scan/random/condition	/datum/experiment/exploration_scan/random	code/modules/experisci/experiment/types/exploration.dm:75	live	datum_experiment_exploration_scan_random_condition	0	0
 type	/datum/experiment/exploration_scan/random/site_type	/datum/experiment/exploration_scan/random	code/modules/experisci/experiment/types/exploration.dm:78	live	datum_experiment_exploration_scan_random_site_type	0	0
-type	/datum/adventure_db_entry	/datum	code/modules/explorer_drone/adventure.dm:67	inert	datum_adventure_db_entry	0	0
-proc	/datum/adventure_db_entry	valid_for_use	code/modules/explorer_drone/adventure.dm:87	site_traits	no	-	proc root
-proc	/datum/adventure_db_entry	extract_metadata	code/modules/explorer_drone/adventure.dm:95		no	-	proc root
-proc	/datum/adventure_db_entry	create_adventure	code/modules/explorer_drone/adventure.dm:106		no	-	proc root
-proc	/datum/adventure_db_entry	try_loading_adventure	code/modules/explorer_drone/adventure.dm:112		no	-	proc root
-proc	/datum/adventure_db_entry	try_loading_node	code/modules/explorer_drone/adventure.dm:144	node_data	no	-	proc root
-type	/datum/adventure	/datum	code/modules/explorer_drone/adventure.dm:162	inert	datum_adventure	0	0
-proc	/datum/adventure	validate	code/modules/explorer_drone/adventure.dm:193		no	-	proc root
-proc	/datum/adventure	start_adventure	code/modules/explorer_drone/adventure.dm:201		no	-	proc root
-proc	/datum/adventure	end_adventure	code/modules/explorer_drone/adventure.dm:207	result	no	-	proc root
-proc	/datum/adventure	initialize_qualities	code/modules/explorer_drone/adventure.dm:210		no	-	proc root
-proc	/datum/adventure	navigate_to_node	code/modules/explorer_drone/adventure.dm:214	node_id	no	-	proc root
-proc	/datum/adventure	handle_special_nodes	code/modules/explorer_drone/adventure.dm:228	node_id	no	-	proc root
-proc	/datum/adventure	select_choice	code/modules/explorer_drone/adventure.dm:248	choice_id	no	-	proc root
-proc	/datum/adventure	finish_delay	code/modules/explorer_drone/adventure.dm:271	exit_id	no	-	proc root
-proc	/datum/adventure	ui_data	code/modules/explorer_drone/adventure.dm:276	user	no	-	proc
-proc	/datum/adventure	apply_adventure_effect	code/modules/explorer_drone/adventure.dm:325	effect_data,process_triggers	no	-	proc root
-proc	/datum/adventure	process_adventure_value	code/modules/explorer_drone/adventure.dm:364	raw_value	no	-	proc root
-proc	/datum/adventure	check_requirements	code/modules/explorer_drone/adventure.dm:376	raw_requirements	no	-	proc root
-proc	/datum/adventure	check_requirement_group	code/modules/explorer_drone/adventure.dm:391	raw_group_data	no	-	proc root
-proc	/datum/adventure	check_single_requirement	code/modules/explorer_drone/adventure.dm:420	raw_requirement	no	-	proc root
-type	/datum/adventure_node	/datum	code/modules/explorer_drone/adventure.dm:286	inert	datum_adventure_node	0	0
-proc	/datum/adventure_node	on_enter	code/modules/explorer_drone/adventure.dm:305	context	no	-	proc root
-proc	/datum/adventure_node	on_exit	code/modules/explorer_drone/adventure.dm:311	context	no	-	proc root
-proc	/datum/adventure_node	get_available_choices	code/modules/explorer_drone/adventure.dm:317	context	no	-	proc root
-type	/datum/exploration_site	/datum	code/modules/explorer_drone/exploration_site.dm:18	inert	datum_exploration_site	0	0
-proc	/datum/exploration_site	New	code/modules/explorer_drone/exploration_site.dm:42	band	no	-	proc
-proc	/datum/exploration_site	generate_events	code/modules/explorer_drone/exploration_site.dm:49		no	-	proc root
-proc	/datum/exploration_site	generate_scan_conditions	code/modules/explorer_drone/exploration_site.dm:77		no	-	proc root
-proc	/datum/exploration_site	generate_adventure	code/modules/explorer_drone/exploration_site.dm:83	site_traits	no	-	proc root
-proc	/datum/exploration_site	generate_event	code/modules/explorer_drone/exploration_site.dm:98	site_traits,event_root_type	no	-	proc root
-proc	/datum/exploration_site	build_exploration_event_requirements_cache	code/modules/explorer_drone/exploration_site.dm:119		no	-	proc root
-proc	/datum/exploration_site	add_event	code/modules/explorer_drone/exploration_site.dm:127	event	no	-	proc root
-proc	/datum/exploration_site	on_drone_arrival	code/modules/explorer_drone/exploration_site.dm:137	drone	no	-	proc root
-proc	/datum/exploration_site	reveal	code/modules/explorer_drone/exploration_site.dm:145		no	-	proc root
-proc	/datum/exploration_site	display_name	code/modules/explorer_drone/exploration_site.dm:148		no	-	proc root
-proc	/datum/exploration_site	display_description	code/modules/explorer_drone/exploration_site.dm:151		no	-	proc root
-proc	/datum/exploration_site	site_data	code/modules/explorer_drone/exploration_site.dm:163	exploration	no	-	proc root
-type	/datum/exploration_site/abandoned_refueling_station	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:190	inert	datum_exploration_site_abandoned_refueling_station	0	0
-type	/datum/exploration_site/trader_post	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:196	inert	datum_exploration_site_trader_post	0	0
-proc	/datum/exploration_site/trader_post	New	code/modules/explorer_drone/exploration_site.dm:202	band	no	-	proc
-type	/datum/exploration_site/cargo_wreck	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:209	inert	datum_exploration_site_cargo_wreck	0	0
-type	/datum/exploration_site/alien_spaceship	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:215	inert	datum_exploration_site_alien_spaceship	0	0
-type	/datum/exploration_site/uncharted_planet	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:221	inert	datum_exploration_site_uncharted_planet	0	0
-proc	/datum/exploration_site/uncharted_planet	New	code/modules/explorer_drone/exploration_site.dm:226	band	no	-	proc
-type	/datum/exploration_site/alien_ruins	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:240	inert	datum_exploration_site_alien_ruins	0	0
-type	/datum/exploration_site/asteroid_belt	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:246	inert	datum_exploration_site_asteroid_belt	0	0
-type	/datum/exploration_site/spacemine	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:252	inert	datum_exploration_site_spacemine	0	0
-type	/datum/exploration_site/junkyard	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:259	inert	datum_exploration_site_junkyard	0	0
-type	/datum/adventure_loot_generator	/datum	code/modules/explorer_drone/loot.dm:14	inert	datum_adventure_loot_generator	0	0
-proc	/datum/adventure_loot_generator	generate	code/modules/explorer_drone/loot.dm:16		no	-	proc root
-proc	/datum/adventure_loot_generator	transfer_loot	code/modules/explorer_drone/loot.dm:20	drone	no	-	proc root
-type	/datum/adventure_loot_generator/maintenance	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:26	inert	datum_adventure_loot_generator_maintenance	0	0
-proc	/datum/adventure_loot_generator/maintenance	generate	code/modules/explorer_drone/loot.dm:29		no	-	proc
-type	/datum/adventure_loot_generator/cargo	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:41	inert	datum_adventure_loot_generator_cargo	0	0
-proc	/datum/adventure_loot_generator/cargo	generate	code/modules/explorer_drone/loot.dm:44		no	-	proc
-type	/datum/adventure_loot_generator/simple	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:58	inert	datum_adventure_loot_generator_simple	0	0
-proc	/datum/adventure_loot_generator/simple	generate	code/modules/explorer_drone/loot.dm:60		no	-	proc
-type	/datum/adventure_loot_generator/simple/unique	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:66	inert	datum_adventure_loot_generator_simple_unique	0	0
-type	/datum/adventure_loot_generator/simple/cash	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:71	inert	datum_adventure_loot_generator_simple_cash	0	0
-type	/datum/adventure_loot_generator/simple/drugs	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:76	inert	datum_adventure_loot_generator_simple_drugs	0	0
-type	/datum/adventure_loot_generator/simple/materials	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:81	inert	datum_adventure_loot_generator_simple_materials	0	0
-type	/datum/adventure_loot_generator/simple/weapons	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:86	inert	datum_adventure_loot_generator_simple_weapons	0	0
-type	/datum/adventure_loot_generator/simple/syndicate_fish	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:91	inert	datum_adventure_loot_generator_simple_syndicate_fish	0	0
-type	/datum/adventure_loot_generator/pet	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:96	inert	datum_adventure_loot_generator_pet	0	0
-proc	/datum/adventure_loot_generator/pet	generate	code/modules/explorer_drone/loot.dm:105		no	-	proc
-type	/datum/adventure_browser	/datum	code/modules/explorer_drone/manager.dm:3	inert	datum_adventure_browser	0	0
-proc	/datum/adventure_browser	ui_interact	code/modules/explorer_drone/manager.dm:6	user,ui	no	-	proc
-proc	/datum/adventure_browser	ui_state	code/modules/explorer_drone/manager.dm:13	user	no	-	proc
-proc	/datum/adventure_browser	resolve_adventure	code/modules/explorer_drone/manager.dm:17	source,result	no	-	proc root
-proc	/datum/adventure_browser	ui_act	code/modules/explorer_drone/manager.dm:22	action,params,ui,state	no	-	proc
-proc	/datum/adventure_browser	ui_data	code/modules/explorer_drone/manager.dm:51	user	no	-	proc
-proc	/datum/adventure_browser	ui_close	code/modules/explorer_drone/manager.dm:75	user	no	-	proc
-proc	/datum/adventure_browser	ui_assets	code/modules/explorer_drone/manager.dm:79	user	no	-	proc
-proc	/datum/adventure_browser	Destroy	code/modules/explorer_drone/manager.dm:82	force	no	-	proc
-type	/datum/exoscan	/datum	code/modules/explorer_drone/scanner_array.dm:24	inert	datum_exoscan	0	0
-proc	/datum/exoscan	New	code/modules/explorer_drone/scanner_array.dm:32	scan_type,target	no	-	proc
-proc	/datum/exoscan	ui_description	code/modules/explorer_drone/scanner_array.dm:49		no	-	proc root
-proc	/datum/exoscan	resolve_scan	code/modules/explorer_drone/scanner_array.dm:58		no	-	proc root
-proc	/datum/exoscan	stop	code/modules/explorer_drone/scanner_array.dm:70		no	-	proc root
-proc	/datum/exoscan	Destroy	code/modules/explorer_drone/scanner_array.dm:74	force	no	-	proc
-type	/datum/scanner_controller	/datum	code/modules/explorer_drone/scanner_array.dm:289	inert	datum_scanner_controller	0	0
-proc	/datum/scanner_controller	create_scan	code/modules/explorer_drone/scanner_array.dm:297	scan_type,target	no	-	proc root
-proc	/datum/scanner_controller	cleanup_current_scan	code/modules/explorer_drone/scanner_array.dm:307		no	-	proc root
-proc	/datum/scanner_controller	activate_scanner	code/modules/explorer_drone/scanner_array.dm:312	scanner	no	-	proc root
-proc	/datum/scanner_controller	deactivate_scanner	code/modules/explorer_drone/scanner_array.dm:318	scanner	no	-	proc root
-proc	/datum/scanner_controller	update_scan_power	code/modules/explorer_drone/scanner_array.dm:324		no	-	proc root
-proc	/datum/scanner_controller	get_scan_power	code/modules/explorer_drone/scanner_array.dm:333	target	no	-	proc root
-proc	/datum/scanner_controller	calculate_scan_power	code/modules/explorer_drone/scanner_array.dm:338	conditions	no	-	proc root
-type	/datum/scan_condition	/datum	code/modules/explorer_drone/scanner_array.dm:350	inert	datum_scan_condition	0	0
-proc	/datum/scan_condition	check_dish	code/modules/explorer_drone/scanner_array.dm:354	dish	no	-	proc root
-type	/datum/scan_condition/nebula	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:358	inert	datum_scan_condition_nebula	0	0
-proc	/datum/scan_condition/nebula	check_dish	code/modules/explorer_drone/scanner_array.dm:362	dish	no	-	proc
-type	/datum/scan_condition/pulsar	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:369	inert	datum_scan_condition_pulsar	0	0
-proc	/datum/scan_condition/pulsar	check_dish	code/modules/explorer_drone/scanner_array.dm:373	dish	no	-	proc
-type	/datum/scan_condition/asteroid_belt	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:380	inert	datum_scan_condition_asteroid_belt	0	0
-proc	/datum/scan_condition/asteroid_belt	check_dish	code/modules/explorer_drone/scanner_array.dm:383	dish	no	-	proc
-type	/datum/scan_condition/black_hole	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:388	inert	datum_scan_condition_black_hole	0	0
-proc	/datum/scan_condition/black_hole	check_dish	code/modules/explorer_drone/scanner_array.dm:391	dish	no	-	proc
-type	/datum/scan_condition/easy	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:399	inert	datum_scan_condition_easy	0	0
-proc	/datum/scan_condition/easy	check_dish	code/modules/explorer_drone/scanner_array.dm:402	dish	no	-	proc
-type	/datum/exploration_event	/datum	code/modules/explorer_drone/exploration_events/_exploration_event.dm:4	inert	datum_exploration_event	0	0
-proc	/datum/exploration_event	encounter	code/modules/explorer_drone/exploration_events/_exploration_event.dm:25	drone	no	-	proc root
-proc	/datum/exploration_event	get_discovery_message	code/modules/explorer_drone/exploration_events/_exploration_event.dm:34	drone	no	-	proc root
-proc	/datum/exploration_event	is_targetable	code/modules/explorer_drone/exploration_events/_exploration_event.dm:38		no	-	proc root
-type	/datum/exploration_event/simple	/datum/exploration_event	code/modules/explorer_drone/exploration_events/_exploration_event.dm:43	inert	datum_exploration_event_simple	0	0
-proc	/datum/exploration_event/simple	encounter	code/modules/explorer_drone/exploration_events/_exploration_event.dm:55	drone	no	-	proc
-proc	/datum/exploration_event/simple	fire	code/modules/explorer_drone/exploration_events/_exploration_event.dm:60	drone	no	-	proc root
-proc	/datum/exploration_event/simple	end	code/modules/explorer_drone/exploration_events/_exploration_event.dm:64	drone	no	-	proc root
-proc	/datum/exploration_event/simple	get_description	code/modules/explorer_drone/exploration_events/_exploration_event.dm:68	drone	no	-	proc root
-proc	/datum/exploration_event/simple	get_action_text	code/modules/explorer_drone/exploration_events/_exploration_event.dm:72	drone	no	-	proc root
-proc	/datum/exploration_event/simple	action_enabled	code/modules/explorer_drone/exploration_events/_exploration_event.dm:76	drone	no	-	proc root
-proc	/datum/exploration_event/simple	build_ui_event	code/modules/explorer_drone/exploration_events/_exploration_event.dm:80	drone	no	-	proc root
-type	/datum/exploration_event/simple/danger	/datum/exploration_event/simple	code/modules/explorer_drone/exploration_events/danger.dm:3	inert	datum_exploration_event_simple_danger	0	0
-proc	/datum/exploration_event/simple/danger	get_description	code/modules/explorer_drone/exploration_events/danger.dm:14	drone	no	-	proc
-proc	/datum/exploration_event/simple/danger	get_action_text	code/modules/explorer_drone/exploration_events/danger.dm:20	drone	no	-	proc
-proc	/datum/exploration_event/simple/danger	can_escape_danger	code/modules/explorer_drone/exploration_events/danger.dm:23	drone	no	-	proc root
-proc	/datum/exploration_event/simple/danger	fire	code/modules/explorer_drone/exploration_events/danger.dm:26	drone	no	-	proc
-type	/datum/exploration_event/simple/danger/carp	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:35	inert	datum_exploration_event_simple_danger_carp	0	0
-type	/datum/exploration_event/simple/danger/carp/surface_variety	/datum/exploration_event/simple/danger/carp	code/modules/explorer_drone/exploration_events/danger.dm:48	inert	datum_exploration_event_simple_danger_carp_surface_variety	0	0
-type	/datum/exploration_event/simple/danger/assistant	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:51	inert	datum_exploration_event_simple_danger_assistant	0	0
-type	/datum/exploration_event/simple/danger/collapse	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:62	inert	datum_exploration_event_simple_danger_collapse	0	0
-type	/datum/exploration_event/simple/danger/loose_wires	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:74	inert	datum_exploration_event_simple_danger_loose_wires	0	0
-type	/datum/exploration_event/simple/danger/cosmic_rays	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:86	inert	datum_exploration_event_simple_danger_cosmic_rays	0	0
-type	/datum/exploration_event/simple/danger/alien_sentry	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:98	inert	datum_exploration_event_simple_danger_alien_sentry	0	0
-type	/datum/exploration_event/simple/danger/beast	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:110	inert	datum_exploration_event_simple_danger_beast	0	0
-proc	/datum/exploration_event/simple/danger/beast	New	code/modules/explorer_drone/exploration_events/danger.dm:122		no	-	proc
-type	/datum/exploration_event/simple/danger/rad	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:129	inert	datum_exploration_event_simple_danger_rad	0	0
-type	/datum/exploration_event/simple/resource	/datum/exploration_event/simple	code/modules/explorer_drone/exploration_events/resource.dm:3	inert	datum_exploration_event_simple_resource	0	0
-proc	/datum/exploration_event/simple/resource	get_description	code/modules/explorer_drone/exploration_events/resource.dm:23	drone	no	-	proc
-proc	/datum/exploration_event/simple/resource	action_enabled	code/modules/explorer_drone/exploration_events/resource.dm:32	drone	no	-	proc
-proc	/datum/exploration_event/simple/resource	fire	code/modules/explorer_drone/exploration_events/resource.dm:35	drone	no	-	proc
-proc	/datum/exploration_event/simple/resource	is_targetable	code/modules/explorer_drone/exploration_events/resource.dm:46		no	-	proc
-proc	/datum/exploration_event/simple/resource	delay_finished	code/modules/explorer_drone/exploration_events/resource.dm:49	drone_ref	no	-	proc root
-proc	/datum/exploration_event/simple/resource	finish_event	code/modules/explorer_drone/exploration_events/resource.dm:56	drone	no	-	proc root
-proc	/datum/exploration_event/simple/resource	dispense_loot	code/modules/explorer_drone/exploration_events/resource.dm:61	drone	no	-	proc root
-type	/datum/exploration_event/simple/resource/concealed_cache	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:74	inert	datum_exploration_event_simple_resource_concealed_cache	0	0
-type	/datum/exploration_event/simple/resource/remnants	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:87	inert	datum_exploration_event_simple_resource_remnants	0	0
-type	/datum/exploration_event/simple/resource/gunfight	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:99	inert	datum_exploration_event_simple_resource_gunfight	0	0
-type	/datum/exploration_event/simple/resource/maint_room	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:112	inert	datum_exploration_event_simple_resource_maint_room	0	0
-type	/datum/exploration_event/simple/resource/storage	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:126	inert	datum_exploration_event_simple_resource_storage	0	0
-type	/datum/exploration_event/simple/resource/alien_tools	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:140	inert	datum_exploration_event_simple_resource_alien_tools	0	0
-type	/datum/exploration_event/simple/resource/pod	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:154	inert	datum_exploration_event_simple_resource_pod	0	0
-type	/datum/exploration_event/simple/resource/fuel_storage	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:169	inert	datum_exploration_event_simple_resource_fuel_storage	0	0
-type	/datum/exploration_event/simple/resource/navigation	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:183	inert	datum_exploration_event_simple_resource_navigation	0	0
-type	/datum/exploration_event/simple/resource/unknown_microbiome	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:197	inert	datum_exploration_event_simple_resource_unknown_microbiome	0	0
-type	/datum/exploration_event/simple/resource/tcg_nerd	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:210	inert	datum_exploration_event_simple_resource_tcg_nerd	0	0
-type	/datum/exploration_event/simple/resource/comms_satellite	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:225	inert	datum_exploration_event_simple_resource_comms_satellite	0	0
-type	/datum/exploration_event/simple/resource/welded_locker	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:238	inert	datum_exploration_event_simple_resource_welded_locker	0	0
-proc	/datum/exploration_event/simple/resource/welded_locker	dispense_loot	code/modules/explorer_drone/exploration_events/resource.dm:249	drone	no	-	proc
-type	/datum/exploration_event/simple/resource/plasma_deposit	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:260	inert	datum_exploration_event_simple_resource_plasma_deposit	0	0
-type	/datum/exploration_event/simple/resource/mineral_deposit	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:274	inert	datum_exploration_event_simple_resource_mineral_deposit	0	0
-proc	/datum/exploration_event/simple/resource/mineral_deposit	New	code/modules/explorer_drone/exploration_events/resource.dm:289		no	-	proc
-proc	/datum/exploration_event/simple/resource/mineral_deposit	dispense_loot	code/modules/explorer_drone/exploration_events/resource.dm:298	drone	no	-	proc
-type	/datum/exploration_event/simple/trader	/datum/exploration_event/simple	code/modules/explorer_drone/exploration_events/trader.dm:3	inert	datum_exploration_event_simple_trader	0	0
-proc	/datum/exploration_event/simple/trader	New	code/modules/explorer_drone/exploration_events/trader.dm:13		no	-	proc
-proc	/datum/exploration_event/simple/trader	get_discovery_message	code/modules/explorer_drone/exploration_events/trader.dm:20	drone	no	-	proc
-proc	/datum/exploration_event/simple/trader	get_description	code/modules/explorer_drone/exploration_events/trader.dm:27	drone	no	-	proc
-proc	/datum/exploration_event/simple/trader	is_targetable	code/modules/explorer_drone/exploration_events/trader.dm:34		no	-	proc
-proc	/datum/exploration_event/simple/trader	action_enabled	code/modules/explorer_drone/exploration_events/trader.dm:37	drone	no	-	proc
-proc	/datum/exploration_event/simple/trader	fire	code/modules/explorer_drone/exploration_events/trader.dm:41	drone	no	-	proc
-proc	/datum/exploration_event/simple/trader	trade	code/modules/explorer_drone/exploration_events/trader.dm:49	drone	no	-	proc root
-type	/datum/exploration_event/simple/trader/vendor_ai	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:60	inert	datum_exploration_event_simple_trader_vendor_ai	0	0
-type	/datum/exploration_event/simple/trader/farmer_market	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:69	inert	datum_exploration_event_simple_trader_farmer_market	0	0
-type	/datum/exploration_event/simple/trader/fish	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:78	inert	datum_exploration_event_simple_trader_fish	0	0
-type	/datum/exploration_event/simple/trader/shady_merchant	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:88	inert	datum_exploration_event_simple_trader_shady_merchant	0	0
-type	/datum/exploration_event/simple/trader/surplus	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:97	inert	datum_exploration_event_simple_trader_surplus	0	0
-type	/datum/exploration_event/simple/trader/flame_card	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:106	inert	datum_exploration_event_simple_trader_flame_card	0	0
-proc	/datum/exploration_event/simple/trader/flame_card	get_discovery_message	code/modules/explorer_drone/exploration_events/trader.dm:116	drone	no	-	proc
-proc	/datum/exploration_event/simple/trader/flame_card	get_description	code/modules/explorer_drone/exploration_events/trader.dm:119	drone	no	-	proc
-proc	/datum/exploration_event/simple/trader/flame_card	trade	code/modules/explorer_drone/exploration_events/trader.dm:122	drone	no	-	proc
-type	/datum/exploration_event/adventure	/datum/exploration_event	code/modules/explorer_drone/exploration_events/adventure.dm:3	inert	datum_exploration_event_adventure	0	0
-proc	/datum/exploration_event/adventure	encounter	code/modules/explorer_drone/exploration_events/adventure.dm:7	drone	no	-	proc
-type	/datum/exploration_event/fluff	/datum/exploration_event	code/modules/explorer_drone/exploration_events/fluff.dm:3	inert	datum_exploration_event_fluff	0	0
-proc	/datum/exploration_event/fluff	get_discovery_message	code/modules/explorer_drone/exploration_events/fluff.dm:5	drone	no	-	proc
+type	/datum/adventure_db_entry	/datum	code/modules/explorer_drone/adventure.dm:67	live	datum_adventure_db_entry	1	0
+proc	/datum/adventure_db_entry	valid_for_use	code/modules/explorer_drone/adventure.dm:87	site_traits	yes	full	proc root
+proc	/datum/adventure_db_entry	extract_metadata	code/modules/explorer_drone/adventure.dm:95		yes	full	proc root
+proc	/datum/adventure_db_entry	create_adventure	code/modules/explorer_drone/adventure.dm:106		yes	full	proc root
+proc	/datum/adventure_db_entry	try_loading_adventure	code/modules/explorer_drone/adventure.dm:112		yes	full	proc root
+proc	/datum/adventure_db_entry	try_loading_node	code/modules/explorer_drone/adventure.dm:144	node_data	yes	full	proc root
+type	/datum/adventure	/datum	code/modules/explorer_drone/adventure.dm:162	live	datum_adventure	1	0
+proc	/datum/adventure	validate	code/modules/explorer_drone/adventure.dm:193		yes	full	proc root
+proc	/datum/adventure	start_adventure	code/modules/explorer_drone/adventure.dm:201		yes	full	proc root
+proc	/datum/adventure	end_adventure	code/modules/explorer_drone/adventure.dm:207	result	yes	full	proc root
+proc	/datum/adventure	initialize_qualities	code/modules/explorer_drone/adventure.dm:210		yes	full	proc root
+proc	/datum/adventure	navigate_to_node	code/modules/explorer_drone/adventure.dm:214	node_id	yes	full	proc root
+proc	/datum/adventure	handle_special_nodes	code/modules/explorer_drone/adventure.dm:228	node_id	yes	full	proc root
+proc	/datum/adventure	select_choice	code/modules/explorer_drone/adventure.dm:248	choice_id	yes	full	proc root
+proc	/datum/adventure	finish_delay	code/modules/explorer_drone/adventure.dm:271	exit_id	yes	full	proc root
+proc	/datum/adventure	ui_data	code/modules/explorer_drone/adventure.dm:276	user	yes	full	proc
+proc	/datum/adventure	apply_adventure_effect	code/modules/explorer_drone/adventure.dm:325	effect_data,process_triggers	yes	full	proc root
+proc	/datum/adventure	process_adventure_value	code/modules/explorer_drone/adventure.dm:364	raw_value	yes	full	proc root
+proc	/datum/adventure	check_requirements	code/modules/explorer_drone/adventure.dm:376	raw_requirements	yes	full	proc root
+proc	/datum/adventure	check_requirement_group	code/modules/explorer_drone/adventure.dm:391	raw_group_data	yes	full	proc root
+proc	/datum/adventure	check_single_requirement	code/modules/explorer_drone/adventure.dm:420	raw_requirement	yes	full	proc root
+type	/datum/adventure_node	/datum	code/modules/explorer_drone/adventure.dm:286	live	datum_adventure_node	1	0
+proc	/datum/adventure_node	on_enter	code/modules/explorer_drone/adventure.dm:305	context	yes	full	proc root
+proc	/datum/adventure_node	on_exit	code/modules/explorer_drone/adventure.dm:311	context	yes	full	proc root
+proc	/datum/adventure_node	get_available_choices	code/modules/explorer_drone/adventure.dm:317	context	yes	full	proc root
+type	/datum/exploration_site	/datum	code/modules/explorer_drone/exploration_site.dm:18	live	datum_exploration_site	1	0
+proc	/datum/exploration_site	New	code/modules/explorer_drone/exploration_site.dm:42	band	yes	full	proc
+proc	/datum/exploration_site	generate_events	code/modules/explorer_drone/exploration_site.dm:49		yes	full	proc root
+proc	/datum/exploration_site	generate_scan_conditions	code/modules/explorer_drone/exploration_site.dm:77		yes	full	proc root
+proc	/datum/exploration_site	generate_adventure	code/modules/explorer_drone/exploration_site.dm:83	site_traits	yes	full	proc root
+proc	/datum/exploration_site	generate_event	code/modules/explorer_drone/exploration_site.dm:98	site_traits,event_root_type	yes	full	proc root
+proc	/datum/exploration_site	build_exploration_event_requirements_cache	code/modules/explorer_drone/exploration_site.dm:119		yes	full	proc root
+proc	/datum/exploration_site	add_event	code/modules/explorer_drone/exploration_site.dm:127	event	yes	full	proc root
+proc	/datum/exploration_site	on_drone_arrival	code/modules/explorer_drone/exploration_site.dm:137	drone	yes	full	proc root
+proc	/datum/exploration_site	reveal	code/modules/explorer_drone/exploration_site.dm:145		yes	full	proc root
+proc	/datum/exploration_site	display_name	code/modules/explorer_drone/exploration_site.dm:148		yes	full	proc root
+proc	/datum/exploration_site	display_description	code/modules/explorer_drone/exploration_site.dm:151		yes	full	proc root
+proc	/datum/exploration_site	site_data	code/modules/explorer_drone/exploration_site.dm:163	exploration	yes	full	proc root
+type	/datum/exploration_site/abandoned_refueling_station	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:190	live	datum_exploration_site_abandoned_refueling_station	0	0
+type	/datum/exploration_site/trader_post	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:196	live	datum_exploration_site_trader_post	1	0
+proc	/datum/exploration_site/trader_post	New	code/modules/explorer_drone/exploration_site.dm:202	band	yes	full	proc
+type	/datum/exploration_site/cargo_wreck	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:209	live	datum_exploration_site_cargo_wreck	0	0
+type	/datum/exploration_site/alien_spaceship	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:215	live	datum_exploration_site_alien_spaceship	0	0
+type	/datum/exploration_site/uncharted_planet	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:221	live	datum_exploration_site_uncharted_planet	1	0
+proc	/datum/exploration_site/uncharted_planet	New	code/modules/explorer_drone/exploration_site.dm:226	band	yes	full	proc
+type	/datum/exploration_site/alien_ruins	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:240	live	datum_exploration_site_alien_ruins	0	0
+type	/datum/exploration_site/asteroid_belt	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:246	live	datum_exploration_site_asteroid_belt	0	0
+type	/datum/exploration_site/spacemine	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:252	live	datum_exploration_site_spacemine	0	0
+type	/datum/exploration_site/junkyard	/datum/exploration_site	code/modules/explorer_drone/exploration_site.dm:259	live	datum_exploration_site_junkyard	0	0
+type	/datum/adventure_loot_generator	/datum	code/modules/explorer_drone/loot.dm:14	live	datum_adventure_loot_generator	1	0
+proc	/datum/adventure_loot_generator	generate	code/modules/explorer_drone/loot.dm:16		yes	full	proc root
+proc	/datum/adventure_loot_generator	transfer_loot	code/modules/explorer_drone/loot.dm:20	drone	yes	full	proc root
+type	/datum/adventure_loot_generator/maintenance	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:26	live	datum_adventure_loot_generator_maintenance	1	0
+proc	/datum/adventure_loot_generator/maintenance	generate	code/modules/explorer_drone/loot.dm:29		yes	full	proc
+type	/datum/adventure_loot_generator/cargo	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:41	live	datum_adventure_loot_generator_cargo	1	0
+proc	/datum/adventure_loot_generator/cargo	generate	code/modules/explorer_drone/loot.dm:44		yes	full	proc
+type	/datum/adventure_loot_generator/simple	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:58	live	datum_adventure_loot_generator_simple	1	0
+proc	/datum/adventure_loot_generator/simple	generate	code/modules/explorer_drone/loot.dm:60		yes	full	proc
+type	/datum/adventure_loot_generator/simple/unique	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:66	live	datum_adventure_loot_generator_simple_unique	0	0
+type	/datum/adventure_loot_generator/simple/cash	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:71	live	datum_adventure_loot_generator_simple_cash	0	0
+type	/datum/adventure_loot_generator/simple/drugs	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:76	live	datum_adventure_loot_generator_simple_drugs	0	0
+type	/datum/adventure_loot_generator/simple/materials	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:81	live	datum_adventure_loot_generator_simple_materials	0	0
+type	/datum/adventure_loot_generator/simple/weapons	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:86	live	datum_adventure_loot_generator_simple_weapons	0	0
+type	/datum/adventure_loot_generator/simple/syndicate_fish	/datum/adventure_loot_generator/simple	code/modules/explorer_drone/loot.dm:91	live	datum_adventure_loot_generator_simple_syndicate_fish	0	0
+type	/datum/adventure_loot_generator/pet	/datum/adventure_loot_generator	code/modules/explorer_drone/loot.dm:96	live	datum_adventure_loot_generator_pet	1	0
+proc	/datum/adventure_loot_generator/pet	generate	code/modules/explorer_drone/loot.dm:105		yes	full	proc
+type	/datum/adventure_browser	/datum	code/modules/explorer_drone/manager.dm:3	live	datum_adventure_browser	1	0
+proc	/datum/adventure_browser	ui_interact	code/modules/explorer_drone/manager.dm:6	user,ui	yes	full	proc
+proc	/datum/adventure_browser	ui_state	code/modules/explorer_drone/manager.dm:13	user	yes	full	proc
+proc	/datum/adventure_browser	resolve_adventure	code/modules/explorer_drone/manager.dm:17	source,result	yes	full	proc root
+proc	/datum/adventure_browser	ui_act	code/modules/explorer_drone/manager.dm:22	action,params,ui,state	yes	full	proc
+proc	/datum/adventure_browser	ui_data	code/modules/explorer_drone/manager.dm:51	user	yes	full	proc
+proc	/datum/adventure_browser	ui_close	code/modules/explorer_drone/manager.dm:75	user	yes	full	proc
+proc	/datum/adventure_browser	ui_assets	code/modules/explorer_drone/manager.dm:79	user	yes	full	proc
+proc	/datum/adventure_browser	Destroy	code/modules/explorer_drone/manager.dm:82	force	yes	full	proc
+type	/datum/exoscan	/datum	code/modules/explorer_drone/scanner_array.dm:24	live	datum_exoscan	1	0
+proc	/datum/exoscan	New	code/modules/explorer_drone/scanner_array.dm:32	scan_type,target	yes	full	proc
+proc	/datum/exoscan	ui_description	code/modules/explorer_drone/scanner_array.dm:49		yes	full	proc root
+proc	/datum/exoscan	resolve_scan	code/modules/explorer_drone/scanner_array.dm:58		yes	full	proc root
+proc	/datum/exoscan	stop	code/modules/explorer_drone/scanner_array.dm:70		yes	full	proc root
+proc	/datum/exoscan	Destroy	code/modules/explorer_drone/scanner_array.dm:74	force	yes	full	proc
+type	/datum/scanner_controller	/datum	code/modules/explorer_drone/scanner_array.dm:289	live	datum_scanner_controller	1	0
+proc	/datum/scanner_controller	create_scan	code/modules/explorer_drone/scanner_array.dm:297	scan_type,target	yes	full	proc root
+proc	/datum/scanner_controller	cleanup_current_scan	code/modules/explorer_drone/scanner_array.dm:307		yes	full	proc root
+proc	/datum/scanner_controller	activate_scanner	code/modules/explorer_drone/scanner_array.dm:312	scanner	yes	full	proc root
+proc	/datum/scanner_controller	deactivate_scanner	code/modules/explorer_drone/scanner_array.dm:318	scanner	yes	full	proc root
+proc	/datum/scanner_controller	update_scan_power	code/modules/explorer_drone/scanner_array.dm:324		yes	full	proc root
+proc	/datum/scanner_controller	get_scan_power	code/modules/explorer_drone/scanner_array.dm:333	target	yes	full	proc root
+proc	/datum/scanner_controller	calculate_scan_power	code/modules/explorer_drone/scanner_array.dm:338	conditions	yes	full	proc root
+type	/datum/scan_condition	/datum	code/modules/explorer_drone/scanner_array.dm:350	live	datum_scan_condition	1	0
+proc	/datum/scan_condition	check_dish	code/modules/explorer_drone/scanner_array.dm:354	dish	yes	full	proc root
+type	/datum/scan_condition/nebula	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:358	live	datum_scan_condition_nebula	1	0
+proc	/datum/scan_condition/nebula	check_dish	code/modules/explorer_drone/scanner_array.dm:362	dish	yes	full	proc
+type	/datum/scan_condition/pulsar	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:369	live	datum_scan_condition_pulsar	1	0
+proc	/datum/scan_condition/pulsar	check_dish	code/modules/explorer_drone/scanner_array.dm:373	dish	yes	full	proc
+type	/datum/scan_condition/asteroid_belt	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:380	live	datum_scan_condition_asteroid_belt	1	0
+proc	/datum/scan_condition/asteroid_belt	check_dish	code/modules/explorer_drone/scanner_array.dm:383	dish	yes	full	proc
+type	/datum/scan_condition/black_hole	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:388	live	datum_scan_condition_black_hole	1	0
+proc	/datum/scan_condition/black_hole	check_dish	code/modules/explorer_drone/scanner_array.dm:391	dish	yes	full	proc
+type	/datum/scan_condition/easy	/datum/scan_condition	code/modules/explorer_drone/scanner_array.dm:399	live	datum_scan_condition_easy	1	0
+proc	/datum/scan_condition/easy	check_dish	code/modules/explorer_drone/scanner_array.dm:402	dish	yes	full	proc
+type	/datum/exploration_event	/datum	code/modules/explorer_drone/exploration_events/_exploration_event.dm:4	live	datum_exploration_event	1	0
+proc	/datum/exploration_event	encounter	code/modules/explorer_drone/exploration_events/_exploration_event.dm:25	drone	yes	full	proc root
+proc	/datum/exploration_event	get_discovery_message	code/modules/explorer_drone/exploration_events/_exploration_event.dm:34	drone	yes	full	proc root
+proc	/datum/exploration_event	is_targetable	code/modules/explorer_drone/exploration_events/_exploration_event.dm:38		yes	full	proc root
+type	/datum/exploration_event/simple	/datum/exploration_event	code/modules/explorer_drone/exploration_events/_exploration_event.dm:43	live	datum_exploration_event_simple	1	0
+proc	/datum/exploration_event/simple	encounter	code/modules/explorer_drone/exploration_events/_exploration_event.dm:55	drone	yes	full	proc
+proc	/datum/exploration_event/simple	fire	code/modules/explorer_drone/exploration_events/_exploration_event.dm:60	drone	yes	full	proc root
+proc	/datum/exploration_event/simple	end	code/modules/explorer_drone/exploration_events/_exploration_event.dm:64	drone	yes	full	proc root
+proc	/datum/exploration_event/simple	get_description	code/modules/explorer_drone/exploration_events/_exploration_event.dm:68	drone	yes	full	proc root
+proc	/datum/exploration_event/simple	get_action_text	code/modules/explorer_drone/exploration_events/_exploration_event.dm:72	drone	yes	full	proc root
+proc	/datum/exploration_event/simple	action_enabled	code/modules/explorer_drone/exploration_events/_exploration_event.dm:76	drone	yes	full	proc root
+proc	/datum/exploration_event/simple	build_ui_event	code/modules/explorer_drone/exploration_events/_exploration_event.dm:80	drone	yes	full	proc root
+type	/datum/exploration_event/simple/danger	/datum/exploration_event/simple	code/modules/explorer_drone/exploration_events/danger.dm:3	live	datum_exploration_event_simple_danger	1	0
+proc	/datum/exploration_event/simple/danger	get_description	code/modules/explorer_drone/exploration_events/danger.dm:14	drone	yes	full	proc
+proc	/datum/exploration_event/simple/danger	get_action_text	code/modules/explorer_drone/exploration_events/danger.dm:20	drone	yes	full	proc
+proc	/datum/exploration_event/simple/danger	can_escape_danger	code/modules/explorer_drone/exploration_events/danger.dm:23	drone	yes	full	proc root
+proc	/datum/exploration_event/simple/danger	fire	code/modules/explorer_drone/exploration_events/danger.dm:26	drone	yes	full	proc
+type	/datum/exploration_event/simple/danger/carp	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:35	live	datum_exploration_event_simple_danger_carp	0	0
+type	/datum/exploration_event/simple/danger/carp/surface_variety	/datum/exploration_event/simple/danger/carp	code/modules/explorer_drone/exploration_events/danger.dm:48	live	datum_exploration_event_simple_danger_carp_surface_variety	0	0
+type	/datum/exploration_event/simple/danger/assistant	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:51	live	datum_exploration_event_simple_danger_assistant	0	0
+type	/datum/exploration_event/simple/danger/collapse	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:62	live	datum_exploration_event_simple_danger_collapse	0	0
+type	/datum/exploration_event/simple/danger/loose_wires	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:74	live	datum_exploration_event_simple_danger_loose_wires	0	0
+type	/datum/exploration_event/simple/danger/cosmic_rays	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:86	live	datum_exploration_event_simple_danger_cosmic_rays	0	0
+type	/datum/exploration_event/simple/danger/alien_sentry	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:98	live	datum_exploration_event_simple_danger_alien_sentry	0	0
+type	/datum/exploration_event/simple/danger/beast	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:110	live	datum_exploration_event_simple_danger_beast	1	0
+proc	/datum/exploration_event/simple/danger/beast	New	code/modules/explorer_drone/exploration_events/danger.dm:122		yes	full	proc
+type	/datum/exploration_event/simple/danger/rad	/datum/exploration_event/simple/danger	code/modules/explorer_drone/exploration_events/danger.dm:129	live	datum_exploration_event_simple_danger_rad	0	0
+type	/datum/exploration_event/simple/resource	/datum/exploration_event/simple	code/modules/explorer_drone/exploration_events/resource.dm:3	live	datum_exploration_event_simple_resource	1	0
+proc	/datum/exploration_event/simple/resource	get_description	code/modules/explorer_drone/exploration_events/resource.dm:23	drone	yes	full	proc
+proc	/datum/exploration_event/simple/resource	action_enabled	code/modules/explorer_drone/exploration_events/resource.dm:32	drone	yes	full	proc
+proc	/datum/exploration_event/simple/resource	fire	code/modules/explorer_drone/exploration_events/resource.dm:35	drone	yes	full	proc
+proc	/datum/exploration_event/simple/resource	is_targetable	code/modules/explorer_drone/exploration_events/resource.dm:46		yes	full	proc
+proc	/datum/exploration_event/simple/resource	delay_finished	code/modules/explorer_drone/exploration_events/resource.dm:49	drone_ref	yes	full	proc root
+proc	/datum/exploration_event/simple/resource	finish_event	code/modules/explorer_drone/exploration_events/resource.dm:56	drone	yes	full	proc root
+proc	/datum/exploration_event/simple/resource	dispense_loot	code/modules/explorer_drone/exploration_events/resource.dm:61	drone	yes	full	proc root
+type	/datum/exploration_event/simple/resource/concealed_cache	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:74	live	datum_exploration_event_simple_resource_concealed_cache	0	0
+type	/datum/exploration_event/simple/resource/remnants	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:87	live	datum_exploration_event_simple_resource_remnants	0	0
+type	/datum/exploration_event/simple/resource/gunfight	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:99	live	datum_exploration_event_simple_resource_gunfight	0	0
+type	/datum/exploration_event/simple/resource/maint_room	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:112	live	datum_exploration_event_simple_resource_maint_room	0	0
+type	/datum/exploration_event/simple/resource/storage	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:126	live	datum_exploration_event_simple_resource_storage	0	0
+type	/datum/exploration_event/simple/resource/alien_tools	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:140	live	datum_exploration_event_simple_resource_alien_tools	0	0
+type	/datum/exploration_event/simple/resource/pod	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:154	live	datum_exploration_event_simple_resource_pod	0	0
+type	/datum/exploration_event/simple/resource/fuel_storage	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:169	live	datum_exploration_event_simple_resource_fuel_storage	0	0
+type	/datum/exploration_event/simple/resource/navigation	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:183	live	datum_exploration_event_simple_resource_navigation	0	0
+type	/datum/exploration_event/simple/resource/unknown_microbiome	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:197	live	datum_exploration_event_simple_resource_unknown_microbiome	0	0
+type	/datum/exploration_event/simple/resource/tcg_nerd	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:210	live	datum_exploration_event_simple_resource_tcg_nerd	0	0
+type	/datum/exploration_event/simple/resource/comms_satellite	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:225	live	datum_exploration_event_simple_resource_comms_satellite	0	0
+type	/datum/exploration_event/simple/resource/welded_locker	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:238	live	datum_exploration_event_simple_resource_welded_locker	1	0
+proc	/datum/exploration_event/simple/resource/welded_locker	dispense_loot	code/modules/explorer_drone/exploration_events/resource.dm:249	drone	yes	full	proc
+type	/datum/exploration_event/simple/resource/plasma_deposit	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:260	live	datum_exploration_event_simple_resource_plasma_deposit	0	0
+type	/datum/exploration_event/simple/resource/mineral_deposit	/datum/exploration_event/simple/resource	code/modules/explorer_drone/exploration_events/resource.dm:274	live	datum_exploration_event_simple_resource_mineral_deposit	1	0
+proc	/datum/exploration_event/simple/resource/mineral_deposit	New	code/modules/explorer_drone/exploration_events/resource.dm:289		yes	full	proc
+proc	/datum/exploration_event/simple/resource/mineral_deposit	dispense_loot	code/modules/explorer_drone/exploration_events/resource.dm:298	drone	yes	full	proc
+type	/datum/exploration_event/simple/trader	/datum/exploration_event/simple	code/modules/explorer_drone/exploration_events/trader.dm:3	live	datum_exploration_event_simple_trader	1	0
+proc	/datum/exploration_event/simple/trader	New	code/modules/explorer_drone/exploration_events/trader.dm:13		yes	full	proc
+proc	/datum/exploration_event/simple/trader	get_discovery_message	code/modules/explorer_drone/exploration_events/trader.dm:20	drone	yes	full	proc
+proc	/datum/exploration_event/simple/trader	get_description	code/modules/explorer_drone/exploration_events/trader.dm:27	drone	yes	full	proc
+proc	/datum/exploration_event/simple/trader	is_targetable	code/modules/explorer_drone/exploration_events/trader.dm:34		yes	full	proc
+proc	/datum/exploration_event/simple/trader	action_enabled	code/modules/explorer_drone/exploration_events/trader.dm:37	drone	yes	full	proc
+proc	/datum/exploration_event/simple/trader	fire	code/modules/explorer_drone/exploration_events/trader.dm:41	drone	yes	full	proc
+proc	/datum/exploration_event/simple/trader	trade	code/modules/explorer_drone/exploration_events/trader.dm:49	drone	yes	full	proc root
+type	/datum/exploration_event/simple/trader/vendor_ai	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:60	live	datum_exploration_event_simple_trader_vendor_ai	0	0
+type	/datum/exploration_event/simple/trader/farmer_market	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:69	live	datum_exploration_event_simple_trader_farmer_market	0	0
+type	/datum/exploration_event/simple/trader/fish	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:78	live	datum_exploration_event_simple_trader_fish	0	0
+type	/datum/exploration_event/simple/trader/shady_merchant	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:88	live	datum_exploration_event_simple_trader_shady_merchant	0	0
+type	/datum/exploration_event/simple/trader/surplus	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:97	live	datum_exploration_event_simple_trader_surplus	0	0
+type	/datum/exploration_event/simple/trader/flame_card	/datum/exploration_event/simple/trader	code/modules/explorer_drone/exploration_events/trader.dm:106	live	datum_exploration_event_simple_trader_flame_card	1	0
+proc	/datum/exploration_event/simple/trader/flame_card	get_discovery_message	code/modules/explorer_drone/exploration_events/trader.dm:116	drone	yes	full	proc
+proc	/datum/exploration_event/simple/trader/flame_card	get_description	code/modules/explorer_drone/exploration_events/trader.dm:119	drone	yes	full	proc
+proc	/datum/exploration_event/simple/trader/flame_card	trade	code/modules/explorer_drone/exploration_events/trader.dm:122	drone	yes	full	proc
+type	/datum/exploration_event/adventure	/datum/exploration_event	code/modules/explorer_drone/exploration_events/adventure.dm:3	live	datum_exploration_event_adventure	1	0
+proc	/datum/exploration_event/adventure	encounter	code/modules/explorer_drone/exploration_events/adventure.dm:7	drone	yes	full	proc
+type	/datum/exploration_event/fluff	/datum/exploration_event	code/modules/explorer_drone/exploration_events/fluff.dm:3	live	datum_exploration_event_fluff	1	0
+proc	/datum/exploration_event/fluff	get_discovery_message	code/modules/explorer_drone/exploration_events/fluff.dm:5	drone	yes	full	proc
 type	/datum/fishing_calculator	/datum	code/modules/fishing/admin.dm:6	inert	datum_fishing_calculator	0	0
 proc	/datum/fishing_calculator	ui_interact	code/modules/fishing/admin.dm:8	user,ui	no	-	proc
 proc	/datum/fishing_calculator	ui_state	code/modules/fishing/admin.dm:14	user	no	-	proc
@@ -80970,55 +80970,55 @@ proc	/obj/item/experi_scanner	Initialize	code/modules/experisci/handheld_scanner
 proc	/obj/item/experi_scanner	LateInitialize	code/modules/experisci/handheld_scanner.dm:25		yes	full	proc
 proc	/obj/item/experi_scanner	suicide_act	code/modules/experisci/handheld_scanner.dm:37	user	yes	full	proc
 proc	/obj/item/experi_scanner	make_meat_toilet	code/modules/experisci/handheld_scanner.dm:53	user	yes	full	proc root
-type	/obj/item/exodrone	/obj/item	code/modules/explorer_drone/exodrone.dm:23	inert	obj_item_exodrone	0	1
-proc	/obj/item/exodrone	Initialize	code/modules/explorer_drone/exodrone.dm:64	mapload	no	-	proc
-proc	/obj/item/exodrone	handle_deconstruct	code/modules/explorer_drone/exodrone.dm:79	disassembled	no	-	proc
-proc	/obj/item/exodrone	Destroy	code/modules/explorer_drone/exodrone.dm:84		no	-	proc
-proc	/obj/item/exodrone	ui_description	code/modules/explorer_drone/exodrone.dm:89		no	-	proc root
-proc	/obj/item/exodrone	check_blacklist	code/modules/explorer_drone/exodrone.dm:99		no	-	proc root
-proc	/obj/item/exodrone	launch_for	code/modules/explorer_drone/exodrone.dm:108	target_site	no	-	proc root
-proc	/obj/item/exodrone	finish_travel	code/modules/explorer_drone/exodrone.dm:127		no	-	proc root
-proc	/obj/item/exodrone	set_status	code/modules/explorer_drone/exodrone.dm:144	new_status	no	-	proc root
-proc	/obj/item/exodrone	space_left	code/modules/explorer_drone/exodrone.dm:149		no	-	proc root
-proc	/obj/item/exodrone	add_tool	code/modules/explorer_drone/exodrone.dm:153	tool_type	no	-	proc root
-proc	/obj/item/exodrone	remove_tool	code/modules/explorer_drone/exodrone.dm:159	tool_type	no	-	proc root
-proc	/obj/item/exodrone	update_storage_size	code/modules/explorer_drone/exodrone.dm:164		no	-	proc root
-proc	/obj/item/exodrone	get_cargo_data	code/modules/explorer_drone/exodrone.dm:168		no	-	proc root
-proc	/obj/item/exodrone	try_transfer	code/modules/explorer_drone/exodrone.dm:178	loot,delete_on_failure	no	-	proc root
-proc	/obj/item/exodrone	drop_somewhere_on_station	code/modules/explorer_drone/exodrone.dm:188		no	-	proc root
-proc	/obj/item/exodrone	find_landing_pad	code/modules/explorer_drone/exodrone.dm:198		no	-	proc root
-proc	/obj/item/exodrone	explore_site	code/modules/explorer_drone/exodrone.dm:206	specific_event	no	-	proc root
-proc	/obj/item/exodrone	get_adventure_data	code/modules/explorer_drone/exodrone.dm:221		no	-	proc root
-proc	/obj/item/exodrone	updateKeywords	code/modules/explorer_drone/exodrone.dm:230	text	no	-	proc root
-proc	/obj/item/exodrone	replace_keyword	code/modules/explorer_drone/exodrone.dm:237	match,g1	no	-	proc root
-proc	/obj/item/exodrone	start_adventure	code/modules/explorer_drone/exodrone.dm:248	adventure	no	-	proc root
-proc	/obj/item/exodrone	resolve_adventure	code/modules/explorer_drone/exodrone.dm:258	source,result	no	-	proc root
-proc	/obj/item/exodrone	award_adventure_loot	code/modules/explorer_drone/exodrone.dm:278		no	-	proc root
-proc	/obj/item/exodrone	add_tool_qualities	code/modules/explorer_drone/exodrone.dm:287	source,quality_list	no	-	proc root
-proc	/obj/item/exodrone	adventure_delay_start	code/modules/explorer_drone/exodrone.dm:292	source,delay_time,delay_message	no	-	proc root
-proc	/obj/item/exodrone	adventure_delay_end	code/modules/explorer_drone/exodrone.dm:296	source	no	-	proc root
-proc	/obj/item/exodrone	set_busy	code/modules/explorer_drone/exodrone.dm:301	message,duration	no	-	proc root
-proc	/obj/item/exodrone	unset_busy	code/modules/explorer_drone/exodrone.dm:309	new_status	no	-	proc root
-proc	/obj/item/exodrone	busy_time_left	code/modules/explorer_drone/exodrone.dm:315		no	-	proc root
-proc	/obj/item/exodrone	travel_error	code/modules/explorer_drone/exodrone.dm:319		no	-	proc root
-proc	/obj/item/exodrone	damage	code/modules/explorer_drone/exodrone.dm:339	amount	no	-	proc root
-proc	/obj/item/exodrone	drone_log	code/modules/explorer_drone/exodrone.dm:343	message	no	-	proc root
-proc	/obj/item/exodrone	has_tool	code/modules/explorer_drone/exodrone.dm:348	tool_type	no	-	proc root
-proc	/obj/item/exodrone	get_travel_coeff	code/modules/explorer_drone/exodrone.dm:453		no	-	proc root
-type	/obj/item/fuel_pellet	/obj/item	code/modules/explorer_drone/exodrone.dm:465	inert	obj_item_fuel_pellet	0	1
-proc	/obj/item/fuel_pellet	use	code/modules/explorer_drone/exodrone.dm:474	used	no	-	proc
-type	/obj/item/fuel_pellet/advanced	/obj/item/fuel_pellet	code/modules/explorer_drone/exodrone.dm:480	inert	obj_item_fuel_pellet_advanced	0	0
-type	/obj/item/fuel_pellet/exotic	/obj/item/fuel_pellet	code/modules/explorer_drone/exodrone.dm:485	inert	obj_item_fuel_pellet_exotic	0	0
+type	/obj/item/exodrone	/obj/item	code/modules/explorer_drone/exodrone.dm:23	live	obj_item_exodrone	1	1
+proc	/obj/item/exodrone	Initialize	code/modules/explorer_drone/exodrone.dm:64	mapload	yes	full	proc
+proc	/obj/item/exodrone	handle_deconstruct	code/modules/explorer_drone/exodrone.dm:79	disassembled	yes	full	proc
+proc	/obj/item/exodrone	Destroy	code/modules/explorer_drone/exodrone.dm:84		yes	full	proc
+proc	/obj/item/exodrone	ui_description	code/modules/explorer_drone/exodrone.dm:89		yes	full	proc root
+proc	/obj/item/exodrone	check_blacklist	code/modules/explorer_drone/exodrone.dm:99		yes	full	proc root
+proc	/obj/item/exodrone	launch_for	code/modules/explorer_drone/exodrone.dm:108	target_site	yes	full	proc root
+proc	/obj/item/exodrone	finish_travel	code/modules/explorer_drone/exodrone.dm:127		yes	full	proc root
+proc	/obj/item/exodrone	set_status	code/modules/explorer_drone/exodrone.dm:144	new_status	yes	full	proc root
+proc	/obj/item/exodrone	space_left	code/modules/explorer_drone/exodrone.dm:149		yes	full	proc root
+proc	/obj/item/exodrone	add_tool	code/modules/explorer_drone/exodrone.dm:153	tool_type	yes	full	proc root
+proc	/obj/item/exodrone	remove_tool	code/modules/explorer_drone/exodrone.dm:159	tool_type	yes	full	proc root
+proc	/obj/item/exodrone	update_storage_size	code/modules/explorer_drone/exodrone.dm:164		yes	full	proc root
+proc	/obj/item/exodrone	get_cargo_data	code/modules/explorer_drone/exodrone.dm:168		yes	full	proc root
+proc	/obj/item/exodrone	try_transfer	code/modules/explorer_drone/exodrone.dm:178	loot,delete_on_failure	yes	full	proc root
+proc	/obj/item/exodrone	drop_somewhere_on_station	code/modules/explorer_drone/exodrone.dm:188		yes	full	proc root
+proc	/obj/item/exodrone	find_landing_pad	code/modules/explorer_drone/exodrone.dm:198		yes	full	proc root
+proc	/obj/item/exodrone	explore_site	code/modules/explorer_drone/exodrone.dm:206	specific_event	yes	full	proc root
+proc	/obj/item/exodrone	get_adventure_data	code/modules/explorer_drone/exodrone.dm:221		yes	full	proc root
+proc	/obj/item/exodrone	updateKeywords	code/modules/explorer_drone/exodrone.dm:230	text	yes	full	proc root
+proc	/obj/item/exodrone	replace_keyword	code/modules/explorer_drone/exodrone.dm:237	match,g1	yes	full	proc root
+proc	/obj/item/exodrone	start_adventure	code/modules/explorer_drone/exodrone.dm:248	adventure	yes	full	proc root
+proc	/obj/item/exodrone	resolve_adventure	code/modules/explorer_drone/exodrone.dm:258	source,result	yes	full	proc root
+proc	/obj/item/exodrone	award_adventure_loot	code/modules/explorer_drone/exodrone.dm:278		yes	full	proc root
+proc	/obj/item/exodrone	add_tool_qualities	code/modules/explorer_drone/exodrone.dm:287	source,quality_list	yes	full	proc root
+proc	/obj/item/exodrone	adventure_delay_start	code/modules/explorer_drone/exodrone.dm:292	source,delay_time,delay_message	yes	full	proc root
+proc	/obj/item/exodrone	adventure_delay_end	code/modules/explorer_drone/exodrone.dm:296	source	yes	full	proc root
+proc	/obj/item/exodrone	set_busy	code/modules/explorer_drone/exodrone.dm:301	message,duration	yes	full	proc root
+proc	/obj/item/exodrone	unset_busy	code/modules/explorer_drone/exodrone.dm:309	new_status	yes	full	proc root
+proc	/obj/item/exodrone	busy_time_left	code/modules/explorer_drone/exodrone.dm:315		yes	full	proc root
+proc	/obj/item/exodrone	travel_error	code/modules/explorer_drone/exodrone.dm:319		yes	full	proc root
+proc	/obj/item/exodrone	damage	code/modules/explorer_drone/exodrone.dm:339	amount	yes	full	proc root
+proc	/obj/item/exodrone	drone_log	code/modules/explorer_drone/exodrone.dm:343	message	yes	full	proc root
+proc	/obj/item/exodrone	has_tool	code/modules/explorer_drone/exodrone.dm:348	tool_type	yes	full	proc root
+proc	/obj/item/exodrone	get_travel_coeff	code/modules/explorer_drone/exodrone.dm:453		yes	full	proc root
+type	/obj/item/fuel_pellet	/obj/item	code/modules/explorer_drone/exodrone.dm:465	live	obj_item_fuel_pellet	1	1
+proc	/obj/item/fuel_pellet	use	code/modules/explorer_drone/exodrone.dm:474	used	yes	full	proc
+type	/obj/item/fuel_pellet/advanced	/obj/item/fuel_pellet	code/modules/explorer_drone/exodrone.dm:480	live	obj_item_fuel_pellet_advanced	0	0
+type	/obj/item/fuel_pellet/exotic	/obj/item/fuel_pellet	code/modules/explorer_drone/exodrone.dm:485	live	obj_item_fuel_pellet_exotic	0	0
 type	/obj/item/antique	/obj/item	code/modules/explorer_drone/loot.dm:113	live	obj_item_antique	0	0
 type	/obj/item/trade_chip	/obj/item	code/modules/explorer_drone/loot.dm:120	live	obj_item_trade_chip	1	0
 proc	/obj/item/trade_chip	Initialize	code/modules/explorer_drone/loot.dm:127	mapload,pack_type	yes	full	proc
 proc	/obj/item/trade_chip	try_to_unlock_contract	code/modules/explorer_drone/loot.dm:134	user	yes	full	proc root
-type	/obj/item/firelance	/obj/item	code/modules/explorer_drone/loot.dm:146	inert	obj_item_firelance	0	0
-proc	/obj/item/firelance	Initialize	code/modules/explorer_drone/loot.dm:157	mapload	no	-	proc
-proc	/obj/item/firelance	attack	code/modules/explorer_drone/loot.dm:162	M,user,modifiers,attack_modifiers	no	-	proc
-proc	/obj/item/firelance	get_cell	code/modules/explorer_drone/loot.dm:167		no	-	proc
-proc	/obj/item/firelance	ranged_interact_with_atom	code/modules/explorer_drone/loot.dm:170	interacting_with,user,modifiers	no	-	proc
-proc	/obj/item/firelance	windup_checks	code/modules/explorer_drone/loot.dm:198		no	-	proc root
+type	/obj/item/firelance	/obj/item	code/modules/explorer_drone/loot.dm:146	live	obj_item_firelance	1	0
+proc	/obj/item/firelance	Initialize	code/modules/explorer_drone/loot.dm:157	mapload	yes	full	proc
+proc	/obj/item/firelance	attack	code/modules/explorer_drone/loot.dm:162	M,user,modifiers,attack_modifiers	yes	full	proc
+proc	/obj/item/firelance	get_cell	code/modules/explorer_drone/loot.dm:167		yes	full	proc
+proc	/obj/item/firelance	ranged_interact_with_atom	code/modules/explorer_drone/loot.dm:170	interacting_with,user,modifiers	yes	full	proc
+proc	/obj/item/firelance	windup_checks	code/modules/explorer_drone/loot.dm:198		yes	full	proc root
 type	/obj/item/bait_can	/obj/item	code/modules/fishing/bait.dm:2	inert	obj_item_bait_can	0	0
 proc	/obj/item/bait_can	attack_self	code/modules/fishing/bait.dm:17	user,modifiers	no	-	proc
 proc	/obj/item/bait_can	examine	code/modules/fishing/bait.dm:23	user	no	-	proc
@@ -86681,30 +86681,30 @@ proc	/obj/machinery/computer/cargo/express	ui_data	code/modules/cargo/expresscon
 proc	/obj/machinery/computer/cargo/express	get_discount	code/modules/cargo/expressconsole.dm:115		yes	full	proc
 proc	/obj/machinery/computer/cargo/express	ui_act	code/modules/cargo/expressconsole.dm:118	action,params,ui	yes	full	proc
 type	/obj/machinery/computer/cargo/request	/obj/machinery/computer/cargo	code/modules/cargo/orderconsole.dm:40	live	obj_machinery_computer_cargo_request	0	1
-type	/obj/machinery/computer/exodrone_control_console	/obj/machinery/computer	code/modules/explorer_drone/control_console.dm:2	inert	obj_machinery_computer_exodrone_control_console	0	1
-proc	/obj/machinery/computer/exodrone_control_console	ui_interact	code/modules/explorer_drone/control_console.dm:11	user,ui	no	-	proc
-proc	/obj/machinery/computer/exodrone_control_console	start_drone_control	code/modules/explorer_drone/control_console.dm:18	drone	no	-	proc root
-proc	/obj/machinery/computer/exodrone_control_console	on_exodrone_status_changed	code/modules/explorer_drone/control_console.dm:29		no	-	proc root
-proc	/obj/machinery/computer/exodrone_control_console	drone_destroyed	code/modules/explorer_drone/control_console.dm:35		no	-	proc root
-proc	/obj/machinery/computer/exodrone_control_console	end_drone_control	code/modules/explorer_drone/control_console.dm:41		no	-	proc root
-proc	/obj/machinery/computer/exodrone_control_console	Destroy	code/modules/explorer_drone/control_console.dm:49		no	-	proc
-proc	/obj/machinery/computer/exodrone_control_console	ui_static_data	code/modules/explorer_drone/control_console.dm:53	user	no	-	proc
-proc	/obj/machinery/computer/exodrone_control_console	ui_data	code/modules/explorer_drone/control_console.dm:58	user	no	-	proc
-proc	/obj/machinery/computer/exodrone_control_console	update_overlays	code/modules/explorer_drone/control_console.dm:96		no	-	proc
-proc	/obj/machinery/computer/exodrone_control_console	ui_act	code/modules/explorer_drone/control_console.dm:104	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/exodrone_control_console	ui_assets	code/modules/explorer_drone/control_console.dm:179	user	no	-	proc
-type	/obj/machinery/computer/exoscanner_control	/obj/machinery/computer	code/modules/explorer_drone/scanner_array.dm:79	inert	obj_machinery_computer_exoscanner_control	0	1
-proc	/obj/machinery/computer/exoscanner_control	ui_interact	code/modules/explorer_drone/scanner_array.dm:88	user,ui	no	-	proc
-proc	/obj/machinery/computer/exoscanner_control	ui_data	code/modules/explorer_drone/scanner_array.dm:95	user	no	-	proc
-proc	/obj/machinery/computer/exoscanner_control	ui_static_data	code/modules/explorer_drone/scanner_array.dm:121	user	no	-	proc
-proc	/obj/machinery/computer/exoscanner_control	ui_act	code/modules/explorer_drone/scanner_array.dm:125	action,params,ui,state	no	-	proc
-proc	/obj/machinery/computer/exoscanner_control	stop_current_scan	code/modules/explorer_drone/scanner_array.dm:154		no	-	proc root
-proc	/obj/machinery/computer/exoscanner_control	start_wide_scan	code/modules/explorer_drone/scanner_array.dm:158	radius	no	-	proc root
-proc	/obj/machinery/computer/exoscanner_control	start_point_scan	code/modules/explorer_drone/scanner_array.dm:165		no	-	proc root
-proc	/obj/machinery/computer/exoscanner_control	start_deep_scan	code/modules/explorer_drone/scanner_array.dm:170		no	-	proc root
-proc	/obj/machinery/computer/exoscanner_control	create_scan	code/modules/explorer_drone/scanner_array.dm:175	scan_type,target	no	-	proc root
-proc	/obj/machinery/computer/exoscanner_control	scan_failed	code/modules/explorer_drone/scanner_array.dm:181		no	-	proc root
-proc	/obj/machinery/computer/exoscanner_control	post_machine_initialize	code/modules/explorer_drone/scanner_array.dm:186		no	-	proc
+type	/obj/machinery/computer/exodrone_control_console	/obj/machinery/computer	code/modules/explorer_drone/control_console.dm:2	live	obj_machinery_computer_exodrone_control_console	1	1
+proc	/obj/machinery/computer/exodrone_control_console	ui_interact	code/modules/explorer_drone/control_console.dm:11	user,ui	yes	full	proc
+proc	/obj/machinery/computer/exodrone_control_console	start_drone_control	code/modules/explorer_drone/control_console.dm:18	drone	yes	full	proc root
+proc	/obj/machinery/computer/exodrone_control_console	on_exodrone_status_changed	code/modules/explorer_drone/control_console.dm:29		yes	full	proc root
+proc	/obj/machinery/computer/exodrone_control_console	drone_destroyed	code/modules/explorer_drone/control_console.dm:35		yes	full	proc root
+proc	/obj/machinery/computer/exodrone_control_console	end_drone_control	code/modules/explorer_drone/control_console.dm:41		yes	full	proc root
+proc	/obj/machinery/computer/exodrone_control_console	Destroy	code/modules/explorer_drone/control_console.dm:49		yes	full	proc
+proc	/obj/machinery/computer/exodrone_control_console	ui_static_data	code/modules/explorer_drone/control_console.dm:53	user	yes	full	proc
+proc	/obj/machinery/computer/exodrone_control_console	ui_data	code/modules/explorer_drone/control_console.dm:58	user	yes	full	proc
+proc	/obj/machinery/computer/exodrone_control_console	update_overlays	code/modules/explorer_drone/control_console.dm:96		yes	full	proc
+proc	/obj/machinery/computer/exodrone_control_console	ui_act	code/modules/explorer_drone/control_console.dm:104	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/exodrone_control_console	ui_assets	code/modules/explorer_drone/control_console.dm:179	user	yes	full	proc
+type	/obj/machinery/computer/exoscanner_control	/obj/machinery/computer	code/modules/explorer_drone/scanner_array.dm:79	live	obj_machinery_computer_exoscanner_control	1	1
+proc	/obj/machinery/computer/exoscanner_control	ui_interact	code/modules/explorer_drone/scanner_array.dm:88	user,ui	yes	full	proc
+proc	/obj/machinery/computer/exoscanner_control	ui_data	code/modules/explorer_drone/scanner_array.dm:95	user	yes	full	proc
+proc	/obj/machinery/computer/exoscanner_control	ui_static_data	code/modules/explorer_drone/scanner_array.dm:121	user	yes	full	proc
+proc	/obj/machinery/computer/exoscanner_control	ui_act	code/modules/explorer_drone/scanner_array.dm:125	action,params,ui,state	yes	full	proc
+proc	/obj/machinery/computer/exoscanner_control	stop_current_scan	code/modules/explorer_drone/scanner_array.dm:154		yes	full	proc root
+proc	/obj/machinery/computer/exoscanner_control	start_wide_scan	code/modules/explorer_drone/scanner_array.dm:158	radius	yes	full	proc root
+proc	/obj/machinery/computer/exoscanner_control	start_point_scan	code/modules/explorer_drone/scanner_array.dm:165		yes	full	proc root
+proc	/obj/machinery/computer/exoscanner_control	start_deep_scan	code/modules/explorer_drone/scanner_array.dm:170		yes	full	proc root
+proc	/obj/machinery/computer/exoscanner_control	create_scan	code/modules/explorer_drone/scanner_array.dm:175	scan_type,target	yes	full	proc root
+proc	/obj/machinery/computer/exoscanner_control	scan_failed	code/modules/explorer_drone/scanner_array.dm:181		yes	full	proc root
+proc	/obj/machinery/computer/exoscanner_control	post_machine_initialize	code/modules/explorer_drone/scanner_array.dm:186		yes	full	proc
 type	/obj/machinery/computer/holodeck	/obj/machinery/computer	code/modules/holodeck/computer.dm:33	live	obj_machinery_computer_holodeck	1	1
 proc	/obj/machinery/computer/holodeck	post_machine_initialize	code/modules/holodeck/computer.dm:88		yes	full	proc
 proc	/obj/machinery/computer/holodeck	generate_program_list	code/modules/holodeck/computer.dm:126		yes	full	proc root
@@ -92194,31 +92194,31 @@ proc	/obj/machinery/destructive_scanner	update_icon_state	code/modules/experisci
 proc	/obj/machinery/destructive_scanner	screwdriver_act	code/modules/experisci/destructive_scanner.dm:106	user,tool	yes	full	proc
 proc	/obj/machinery/destructive_scanner	crowbar_act	code/modules/experisci/destructive_scanner.dm:109	user,tool	yes	full	proc
 proc	/obj/machinery/destructive_scanner	can_crowbar_deconstruct	code/modules/experisci/destructive_scanner.dm:112		yes	full	proc
-type	/obj/machinery/exodrone_launcher	/obj/machinery	code/modules/explorer_drone/exodrone.dm:353	inert	obj_machinery_exodrone_launcher	0	1
-proc	/obj/machinery/exodrone_launcher	Initialize	code/modules/explorer_drone/exodrone.dm:360	mapload	no	-	proc
-proc	/obj/machinery/exodrone_launcher	examine	code/modules/explorer_drone/exodrone.dm:364	user	no	-	proc
-proc	/obj/machinery/exodrone_launcher	item_interaction	code/modules/explorer_drone/exodrone.dm:369	user,tool,modifiers	no	-	proc
-proc	/obj/machinery/exodrone_launcher	crowbar_act	code/modules/explorer_drone/exodrone.dm:390	user,crowbar	no	-	proc
-proc	/obj/machinery/exodrone_launcher	Destroy	code/modules/explorer_drone/exodrone.dm:400		no	-	proc
-proc	/obj/machinery/exodrone_launcher	update_overlays	code/modules/explorer_drone/exodrone.dm:405		no	-	proc
-proc	/obj/machinery/exodrone_launcher	get_fuel_coefficent	code/modules/explorer_drone/exodrone.dm:419		no	-	proc root
-proc	/obj/machinery/exodrone_launcher	fuel_up	code/modules/explorer_drone/exodrone.dm:435	drone	no	-	proc root
-proc	/obj/machinery/exodrone_launcher	launch_effect	code/modules/explorer_drone/exodrone.dm:443		no	-	proc root
-proc	/obj/machinery/exodrone_launcher	Exited	code/modules/explorer_drone/exodrone.dm:447	gone,direction	no	-	proc
-type	/obj/machinery/exoscanner	/obj/machinery	code/modules/explorer_drone/scanner_array.dm:194	inert	obj_machinery_exoscanner	0	1
-proc	/obj/machinery/exoscanner	Initialize	code/modules/explorer_drone/scanner_array.dm:203	mapload	no	-	proc
-proc	/obj/machinery/exoscanner	RefreshParts	code/modules/explorer_drone/scanner_array.dm:208		no	-	proc
-proc	/obj/machinery/exoscanner	screwdriver_act	code/modules/explorer_drone/scanner_array.dm:230	user,tool	no	-	proc
-proc	/obj/machinery/exoscanner	crowbar_act	code/modules/explorer_drone/scanner_array.dm:233	user,tool	no	-	proc
-proc	/obj/machinery/exoscanner	scan_change	code/modules/explorer_drone/scanner_array.dm:236		no	-	proc root
-proc	/obj/machinery/exoscanner	Destroy	code/modules/explorer_drone/scanner_array.dm:244		no	-	proc
-proc	/obj/machinery/exoscanner	is_ready	code/modules/explorer_drone/scanner_array.dm:248		no	-	proc root
-proc	/obj/machinery/exoscanner	update_readiness	code/modules/explorer_drone/scanner_array.dm:251		no	-	proc root
-proc	/obj/machinery/exoscanner	update_icon_state	code/modules/explorer_drone/scanner_array.dm:258		no	-	proc
-proc	/obj/machinery/exoscanner	wrench_act	code/modules/explorer_drone/scanner_array.dm:270	user,tool	no	-	proc
-proc	/obj/machinery/exoscanner	set_anchored	code/modules/explorer_drone/scanner_array.dm:275	anchorvalue	no	-	proc
-proc	/obj/machinery/exoscanner	on_set_is_operational	code/modules/explorer_drone/scanner_array.dm:279	old_value	no	-	proc
-proc	/obj/machinery/exoscanner	on_set_panel_open	code/modules/explorer_drone/scanner_array.dm:283	old_value	no	-	proc
+type	/obj/machinery/exodrone_launcher	/obj/machinery	code/modules/explorer_drone/exodrone.dm:353	live	obj_machinery_exodrone_launcher	1	1
+proc	/obj/machinery/exodrone_launcher	Initialize	code/modules/explorer_drone/exodrone.dm:360	mapload	yes	full	proc
+proc	/obj/machinery/exodrone_launcher	examine	code/modules/explorer_drone/exodrone.dm:364	user	yes	full	proc
+proc	/obj/machinery/exodrone_launcher	item_interaction	code/modules/explorer_drone/exodrone.dm:369	user,tool,modifiers	yes	full	proc
+proc	/obj/machinery/exodrone_launcher	crowbar_act	code/modules/explorer_drone/exodrone.dm:390	user,crowbar	yes	full	proc
+proc	/obj/machinery/exodrone_launcher	Destroy	code/modules/explorer_drone/exodrone.dm:400		yes	full	proc
+proc	/obj/machinery/exodrone_launcher	update_overlays	code/modules/explorer_drone/exodrone.dm:405		yes	full	proc
+proc	/obj/machinery/exodrone_launcher	get_fuel_coefficent	code/modules/explorer_drone/exodrone.dm:419		yes	full	proc root
+proc	/obj/machinery/exodrone_launcher	fuel_up	code/modules/explorer_drone/exodrone.dm:435	drone	yes	full	proc root
+proc	/obj/machinery/exodrone_launcher	launch_effect	code/modules/explorer_drone/exodrone.dm:443		yes	full	proc root
+proc	/obj/machinery/exodrone_launcher	Exited	code/modules/explorer_drone/exodrone.dm:447	gone,direction	yes	full	proc
+type	/obj/machinery/exoscanner	/obj/machinery	code/modules/explorer_drone/scanner_array.dm:194	live	obj_machinery_exoscanner	1	1
+proc	/obj/machinery/exoscanner	Initialize	code/modules/explorer_drone/scanner_array.dm:203	mapload	yes	full	proc
+proc	/obj/machinery/exoscanner	RefreshParts	code/modules/explorer_drone/scanner_array.dm:208		yes	full	proc
+proc	/obj/machinery/exoscanner	screwdriver_act	code/modules/explorer_drone/scanner_array.dm:230	user,tool	yes	full	proc
+proc	/obj/machinery/exoscanner	crowbar_act	code/modules/explorer_drone/scanner_array.dm:233	user,tool	yes	full	proc
+proc	/obj/machinery/exoscanner	scan_change	code/modules/explorer_drone/scanner_array.dm:236		yes	full	proc root
+proc	/obj/machinery/exoscanner	Destroy	code/modules/explorer_drone/scanner_array.dm:244		yes	full	proc
+proc	/obj/machinery/exoscanner	is_ready	code/modules/explorer_drone/scanner_array.dm:248		yes	full	proc root
+proc	/obj/machinery/exoscanner	update_readiness	code/modules/explorer_drone/scanner_array.dm:251		yes	full	proc root
+proc	/obj/machinery/exoscanner	update_icon_state	code/modules/explorer_drone/scanner_array.dm:258		yes	full	proc
+proc	/obj/machinery/exoscanner	wrench_act	code/modules/explorer_drone/scanner_array.dm:270	user,tool	yes	full	proc
+proc	/obj/machinery/exoscanner	set_anchored	code/modules/explorer_drone/scanner_array.dm:275	anchorvalue	yes	full	proc
+proc	/obj/machinery/exoscanner	on_set_is_operational	code/modules/explorer_drone/scanner_array.dm:279	old_value	yes	full	proc
+proc	/obj/machinery/exoscanner	on_set_panel_open	code/modules/explorer_drone/scanner_array.dm:283	old_value	yes	full	proc
 type	/obj/machinery/fishing_portal_generator	/obj/machinery	code/modules/fishing/fishing_portal_machine.dm:2	inert	obj_machinery_fishing_portal_generator	0	1
 proc	/obj/machinery/fishing_portal_generator	Initialize	code/modules/fishing/fishing_portal_machine.dm:24	mapload	no	-	proc
 proc	/obj/machinery/fishing_portal_generator	Destroy	code/modules/fishing/fishing_portal_machine.dm:35		no	-	proc

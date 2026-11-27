@@ -282,6 +282,9 @@ public enum ConsoleVerb : byte
 
     /// <summary>Gaps CI1 (D339): <c>load-circuit JSON</c>, tg's Load Circuit with the circuit's JSON typed as its direct input.</summary>
     LoadCircuit,
+
+    /// <summary><c>adventures</c>, tg's Adventure Manager (the AdventureBrowser window: the exploration drones' adventures, played as a test).</summary>
+    Adventures,
 }
 
 /// <summary>A parsed console line.</summary>
@@ -325,6 +328,7 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
         + "  station-traits              the round's station traits and the next round's (a window)\n"
         + "  circuits                    every integrated circuit in the game (a window)\n"
         + "  load-circuit JSON           a circuit loaded from its saved JSON at your feet\n"
+        + "  adventures                  the exploration drones' adventures, each playable as a test (a window)\n"
         + "  dev-help                    the dev commands' syntax\n"
         + "  help                        this text";
 
@@ -334,7 +338,7 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
         or ConsoleVerb.Tickets or ConsoleVerb.Pm
         or ConsoleVerb.CheckAntagonists or ConsoleVerb.TraitorPanel or ConsoleVerb.CheckTeams or ConsoleVerb.ComboHud
         or ConsoleVerb.DynamicPanel or ConsoleVerb.DynamicTester or ConsoleVerb.Secrets or ConsoleVerb.StationTraits or ConsoleVerb.SkillPanel
-        or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit;
+        or ConsoleVerb.Circuits or ConsoleVerb.LoadCircuit or ConsoleVerb.Adventures;
 
     /// <summary>
     /// M10 slice I: a ban's DURATION, <c>perm</c> (null) or minutes (<c>30</c>, <c>30m</c>, <c>2h</c>, <c>7d</c>, <c>1w</c>); false for anything else.
@@ -408,6 +412,7 @@ public readonly record struct ConsoleCommand(ConsoleVerb Verb, IReadOnlyList<str
             "station-traits" => ConsoleVerb.StationTraits,
             "circuits" => ConsoleVerb.Circuits,
             "load-circuit" => ConsoleVerb.LoadCircuit,
+            "adventures" => ConsoleVerb.Adventures,
             _ when DevCommandLine.IsDevVerb(words[0]) => ConsoleVerb.Dev,
             _ => ConsoleVerb.Unknown,
         };

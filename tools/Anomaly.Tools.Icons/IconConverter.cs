@@ -96,6 +96,15 @@ public static class IconConverter
                 WriteIfChanged(Path.Combine(options.OutputDirectory, "icons", "ui", "arcade", arcadePicture), File.ReadAllBytes(source));
         }
 
+        // The exploration drones' adventure screens (tg's asset/simple/adventure, code/modules/asset_cache/assets/adventure.dm) are plain PNGs,
+        // copied unchanged; the client's ExodroneConsole and AdventureBrowser windows draw them from icons/ui/adventure/.
+        string adventureRoot = Path.Combine(iconsRoot, "ui", "adventure");
+        if (Directory.Exists(adventureRoot))
+        {
+            foreach (string picture in Directory.EnumerateFiles(adventureRoot, "*.png").OrderBy(f => f, StringComparer.Ordinal))
+                WriteIfChanged(Path.Combine(options.OutputDirectory, "icons", "ui", "adventure", Path.GetFileName(picture)), File.ReadAllBytes(picture));
+        }
+
         // M10 slice F: the lobby menu's pictures (tg's asset/simple/namespaced/lobby_menu_icons, code/modules/asset_cache/assets/tgui.dm:75:
         // icons/hud/lobby/png/) are plain PNGs, some animated (APNG: the buttons' press and enable flicks), copied unchanged; the
         // client's lobby screen draws them from icons/hud/lobby/png/.

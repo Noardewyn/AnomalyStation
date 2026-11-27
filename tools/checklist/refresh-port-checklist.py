@@ -10,6 +10,7 @@ after a package's regen and once more at a merge train's end, then commit the fi
 
 What it rewrites:
 - the status line and the "Sources" bullets of the header (the tracker's totals, the windows the client draws);
+- section 11's row of the tgui windows the client does not draw;
 - section 1's row of the deferred leaves (the sections of not-translated.md, the rows of live-partial.txt);
 - section 0, the overview by tg area, in full (the areas are AREAS below; add one there, not in the file);
 - every "`path` n/N" in the rest of the file: a type family (a path starting with "/": its live types of all its types) or a
@@ -312,6 +313,11 @@ def refresh(text, counts, notes, today):
                           lambda m: f'{m.group(1)}{drawn} of tg\'s {tg_windows} interfaces;', text, count=1)
         if n != 1:
             notes.append('header: no windows bullet')
+        # section 11's row of the windows not drawn: tg's interfaces less the ones the client draws
+        text, n = re.subn(r'(- \[[ x]\] The tgui windows the client does not draw: )\d+ of tg\'s \d+;',
+                          lambda m: f'{m.group(1)}{tg_windows - drawn} of tg\'s {tg_windows};', text, count=1)
+        if n != 1:
+            notes.append('section 11: no row of the windows not drawn')
     else:
         notes.append('header: tg\'s clone not found, the windows bullet is left alone')
 

@@ -15148,9 +15148,9 @@ public partial class obj_structure_fish_mount_bar_directional_west : obj_structu
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium.dm:2
-[DmPath("/obj/structure/aquarium"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium : obj_structure
+// tg: code/modules/fishing/aquarium/aquarium.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium")]
+public partial class obj_structure_aquarium
 {
     public float aquarium_zone_min_pw = 2; // tg: code/modules/fishing/aquarium/aquarium.dm:15
     public float aquarium_zone_max_pw = 31; // tg: code/modules/fishing/aquarium/aquarium.dm:16
@@ -15181,9 +15181,9 @@ public partial class obj_structure_aquarium : obj_structure
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium.dm:106
-[DmPath("/obj/structure/aquarium/prefilled"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium_prefilled : obj_structure_aquarium
+// tg: code/modules/fishing/aquarium/aquarium.dm:106 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium/prefilled")]
+public partial class obj_structure_aquarium_prefilled
 {
     // tg: code/modules/fishing/aquarium/aquarium.dm:106
     public obj_structure_aquarium_prefilled()
@@ -15193,9 +15193,9 @@ public partial class obj_structure_aquarium_prefilled : obj_structure_aquarium
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:39
-[DmPath("/obj/structure/aquarium/bioelec_gen"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium_bioelec_gen : obj_structure_aquarium
+// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:39 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium/bioelec_gen")]
+public partial class obj_structure_aquarium_bioelec_gen
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:39
     public obj_structure_aquarium_bioelec_gen()
@@ -15208,9 +15208,9 @@ public partial class obj_structure_aquarium_bioelec_gen : obj_structure_aquarium
     }
 }
 
-// tg: code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86
-[DmPath("/obj/structure/aquarium/donkfish"), DmGeneratedOnly, DmInert]
-public partial class obj_structure_aquarium_donkfish : obj_structure_aquarium
+// tg: code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86 (the var block of a hand-written class)
+[DmPath("/obj/structure/aquarium/donkfish")]
+public partial class obj_structure_aquarium_donkfish
 {
     // tg: code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86
     public obj_structure_aquarium_donkfish()

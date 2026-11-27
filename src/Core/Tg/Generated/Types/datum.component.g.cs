@@ -152,9 +152,9 @@ public partial class datum_component_appearance_on_aggro
     public object alpha_on_deaggro; // tg: code/datums/components/appearance_on_aggro.dm:15
 }
 
-// tg: code/datums/components/aquarium.dm:10
-[DmPath("/datum/component/aquarium"), DmGeneratedOnly, DmInert]
-public partial class datum_component_aquarium : datum_component
+// tg: code/datums/components/aquarium.dm:10 (the var block of a hand-written class)
+[DmPath("/datum/component/aquarium")]
+public partial class datum_component_aquarium
 {
     public DmList tracked_fish_by_type; // tg: code/datums/components/aquarium.dm:13
     public string fluid_type = "Freshwater"; // tg: code/datums/components/aquarium.dm:16

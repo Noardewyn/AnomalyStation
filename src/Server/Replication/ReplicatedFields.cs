@@ -208,8 +208,11 @@ public static class ReplicatedFields
     /// </summary>
     public static bool IsInnerVisual(atom_movable v) => v is obj_effect_abstract_eyelid_effect or obj_effect_big_manipulator_arm;
 
+    /// <remarks>An aquarium's visual of a fish or a prop (tg's <c>/obj/effect/aquarium</c>, made in nullspace by the content's
+    /// <c>aquarium_content</c> component and kept in the aquarium's <c>vis_contents</c>) is one too: the fish's swimming is its own
+    /// <c>animate()</c> chain.</remarks>
     public static bool IsHeldVisual(atom_movable v)
-        => v is atom_movable_flick_visual or atom_movable_visual || v is obj_effect_overlay_vis { cache_expiration: -1 };
+        => v is atom_movable_flick_visual or atom_movable_visual or obj_effect_aquarium || v is obj_effect_overlay_vis { cache_expiration: -1 };
 
     // Whether the list holds the item (raw: no DM code runs).
     private static bool Holds(DmList list, object item)

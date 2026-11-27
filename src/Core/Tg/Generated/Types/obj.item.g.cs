@@ -175,9 +175,9 @@ public partial class obj_item_fishing_rod_mob_fisher : obj_item_fishing_rod
     }
 }
 
-// tg: code/modules/clothing/gloves/special.dm:238
-[DmPath("/obj/item/fishing_rod/mob_fisher/athletic"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fishing_rod_mob_fisher_athletic : obj_item_fishing_rod_mob_fisher
+// tg: code/modules/clothing/gloves/special.dm:238 (the var block of a hand-written class)
+[DmPath("/obj/item/fishing_rod/mob_fisher/athletic")]
+public partial class obj_item_fishing_rod_mob_fisher_athletic
 {
     // tg: code/modules/clothing/gloves/special.dm:238
     public obj_item_fishing_rod_mob_fisher_athletic()
@@ -35500,9 +35500,9 @@ public partial class obj_item_fish_genegun
 [DmPath("/obj/item/fish_gene")]
 public partial class obj_item_fish_gene { }
 
-// tg: code/modules/fishing/aquarium/aquarium.dm:123
-[DmPath("/obj/item/fish_tank"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_tank : obj_item
+// tg: code/modules/fishing/aquarium/aquarium.dm:123 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_tank")]
+public partial class obj_item_fish_tank
 {
     public string fluid_type = "Freshwater"; // tg: code/modules/fishing/aquarium/aquarium.dm:138
     public float maximum_relative_size = 100; // tg: code/modules/fishing/aquarium/aquarium.dm:141
@@ -35539,9 +35539,9 @@ public partial class obj_item_fish_tank : obj_item
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium.dm:260
-[DmPath("/obj/item/fish_tank/lawyer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_tank_lawyer : obj_item_fish_tank
+// tg: code/modules/fishing/aquarium/aquarium.dm:260 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_tank/lawyer")]
+public partial class obj_item_fish_tank_lawyer
 {
     // tg: code/modules/fishing/aquarium/aquarium.dm:260
     public obj_item_fish_tank_lawyer()
@@ -35551,7 +35551,7 @@ public partial class obj_item_fish_tank_lawyer : obj_item_fish_tank
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:72
-[DmPath("/obj/item/fish_tank/bluespace"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/fish_tank/bluespace"), DmGeneratedOnly]
 public partial class obj_item_fish_tank_bluespace : obj_item_fish_tank
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:72
@@ -35571,9 +35571,9 @@ public partial class obj_item_fish_tank_bluespace : obj_item_fish_tank
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:121
-[DmPath("/obj/item/aquarium_kit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_aquarium_kit : obj_item
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:121 (the var block of a hand-written class)
+[DmPath("/obj/item/aquarium_kit")]
+public partial class obj_item_aquarium_kit
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:121
     public obj_item_aquarium_kit()
@@ -35593,9 +35593,9 @@ public partial class obj_item_aquarium_kit : obj_item
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_kit.dm:134
-[DmPath("/obj/item/aquarium_prop"), DmGeneratedOnly, DmInert]
-public partial class obj_item_aquarium_prop : obj_item
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:134 (the var block of a hand-written class)
+[DmPath("/obj/item/aquarium_prop")]
+public partial class obj_item_aquarium_prop
 {
     public string layer_mode = "bottom"; // tg: code/modules/fishing/aquarium/aquarium_kit.dm:140
     public float beauty = 150; // tg: code/modules/fishing/aquarium/aquarium_kit.dm:141
@@ -35618,7 +35618,7 @@ public partial class obj_item_aquarium_prop : obj_item
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:163
-[DmPath("/obj/item/aquarium_prop/rocks"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/rocks"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_rocks : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:163
@@ -35631,7 +35631,7 @@ public partial class obj_item_aquarium_prop_rocks : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:168
-[DmPath("/obj/item/aquarium_prop/seaweed"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/seaweed"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_seaweed : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:168
@@ -35645,7 +35645,7 @@ public partial class obj_item_aquarium_prop_seaweed : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:174
-[DmPath("/obj/item/aquarium_prop/seaweed/top"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/seaweed/top"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_seaweed_top : obj_item_aquarium_prop_seaweed
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:174
@@ -35658,7 +35658,7 @@ public partial class obj_item_aquarium_prop_seaweed_top : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:179
-[DmPath("/obj/item/aquarium_prop/sand"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/sand"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_sand : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:179
@@ -35672,7 +35672,7 @@ public partial class obj_item_aquarium_prop_sand : obj_item_aquarium_prop
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_kit.dm:185
-[DmPath("/obj/item/aquarium_prop/treasure"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_prop/treasure"), DmGeneratedOnly]
 public partial class obj_item_aquarium_prop_treasure : obj_item_aquarium_prop
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:185
@@ -35685,9 +35685,9 @@ public partial class obj_item_aquarium_prop_treasure : obj_item_aquarium_prop
     }
 }
 
-// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:4
-[DmPath("/obj/item/aquarium_upgrade"), DmGeneratedOnly, DmInert]
-public partial class obj_item_aquarium_upgrade : obj_item
+// tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:4 (the var block of a hand-written class)
+[DmPath("/obj/item/aquarium_upgrade")]
+public partial class obj_item_aquarium_upgrade
 {
     public Type upgrade_from_type = typeof(obj_structure_aquarium); // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:10
     public Type upgrade_to_type = typeof(obj_structure_aquarium); // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:12
@@ -35703,7 +35703,7 @@ public partial class obj_item_aquarium_upgrade : obj_item
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:32
-[DmPath("/obj/item/aquarium_upgrade/bioelec_gen"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_upgrade/bioelec_gen"), DmGeneratedOnly]
 public partial class obj_item_aquarium_upgrade_bioelec_gen : obj_item_aquarium_upgrade
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:32
@@ -35724,7 +35724,7 @@ public partial class obj_item_aquarium_upgrade_bioelec_gen : obj_item_aquarium_u
 }
 
 // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:64
-[DmPath("/obj/item/aquarium_upgrade/bluespace_tank"), DmGeneratedOnly, DmInert]
+[DmPath("/obj/item/aquarium_upgrade/bluespace_tank"), DmGeneratedOnly]
 public partial class obj_item_aquarium_upgrade_bluespace_tank : obj_item_aquarium_upgrade
 {
     // tg: code/modules/fishing/aquarium/aquarium_upgrades.dm:64
@@ -35745,9 +35745,9 @@ public partial class obj_item_aquarium_upgrade_bluespace_tank : obj_item_aquariu
     }
 }
 
-// tg: code/modules/fishing/aquarium/fish_analyzer.dm:3
-[DmPath("/obj/item/fish_analyzer"), DmGeneratedOnly, DmInert]
-public partial class obj_item_fish_analyzer : obj_item
+// tg: code/modules/fishing/aquarium/fish_analyzer.dm:3 (the var block of a hand-written class)
+[DmPath("/obj/item/fish_analyzer")]
+public partial class obj_item_fish_analyzer
 {
     public object case_color; // tg: code/modules/fishing/aquarium/fish_analyzer.dm:24
     public atom scanned_object; // tg: code/modules/fishing/aquarium/fish_analyzer.dm:26

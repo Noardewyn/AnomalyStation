@@ -17672,47 +17672,47 @@ proc	/datum/component/appearance_on_aggro	Destroy	code/datums/components/appeara
 proc	/datum/component/appearance_on_aggro	revert_appearance	code/datums/components/appearance_on_aggro.dm:59	source	yes	full	proc root
 proc	/datum/component/appearance_on_aggro	on_icon_state_updated	code/datums/components/appearance_on_aggro.dm:66	source	yes	full	proc root
 proc	/datum/component/appearance_on_aggro	on_overlays_updated	code/datums/components/appearance_on_aggro.dm:71	source,overlays	yes	full	proc root
-type	/datum/component/aquarium	/datum/component	code/datums/components/aquarium.dm:10	inert	datum_component_aquarium	0	0
-proc	/datum/component/aquarium	Initialize	code/datums/components/aquarium.dm:68	min_px,max_px,min_py,max_py,default_beauty,reagents_size,min_fluid_temp,max_fluid_temp,init_mode	no	-	proc
-proc	/datum/component/aquarium	RegisterWithParent	code/datums/components/aquarium.dm:97		no	-	proc
-proc	/datum/component/aquarium	UnregisterFromParent	code/datums/components/aquarium.dm:147		no	-	proc
-proc	/datum/component/aquarium	PreTransfer	code/datums/components/aquarium.dm:176	new_parent	no	-	proc
-proc	/datum/component/aquarium	PostTransfer	code/datums/components/aquarium.dm:195	new_parent	no	-	proc
-proc	/datum/component/aquarium	InheritComponent	code/datums/components/aquarium.dm:199	new_comp,i_am_original	no	-	proc
-proc	/datum/component/aquarium	on_click_alt	code/datums/components/aquarium.dm:207	source,user	no	-	proc root
-proc	/datum/component/aquarium	on_item_interaction	code/datums/components/aquarium.dm:225	source,user,item,modifiers	no	-	proc root
-proc	/datum/component/aquarium	start_autofeed	code/datums/components/aquarium.dm:259	source	no	-	proc root
-proc	/datum/component/aquarium	process	code/datums/components/aquarium.dm:265	seconds_per_tick	no	-	proc
-proc	/datum/component/aquarium	feed_fishes	code/datums/components/aquarium.dm:280	movable,fishes	no	-	proc root
-proc	/datum/component/aquarium	on_plunger_act	code/datums/components/aquarium.dm:286	source,plunger,user,reinforced	no	-	proc root
-proc	/datum/component/aquarium	do_plunging	code/datums/components/aquarium.dm:294	source,user	no	-	proc root
-proc	/datum/component/aquarium	on_examine	code/datums/components/aquarium.dm:301	source,user,examine_list	no	-	proc root
-proc	/datum/component/aquarium	can_insert	code/datums/components/aquarium.dm:310	source,item,user	no	-	proc root
-proc	/datum/component/aquarium	on_entered	code/datums/components/aquarium.dm:327	source,entered	no	-	proc root
-proc	/datum/component/aquarium	get_content_beauty	code/datums/components/aquarium.dm:345	content	no	-	proc root
-proc	/datum/component/aquarium	on_exited	code/datums/components/aquarium.dm:358	source,gone	no	-	proc root
-proc	/datum/component/aquarium	get_candidates	code/datums/components/aquarium.dm:380	source,fish,candidates	no	-	proc root
-proc	/datum/component/aquarium	check_evolution	code/datums/components/aquarium.dm:396	source,fish,mate,evolution	no	-	proc root
-proc	/datum/component/aquarium	check_fluid_and_temperature	code/datums/components/aquarium.dm:412	fish	no	-	proc root
-proc	/datum/component/aquarium	on_fish_status_changed	code/datums/components/aquarium.dm:423	fish	no	-	proc root
-proc	/datum/component/aquarium	update_aquarium_beauty	code/datums/components/aquarium.dm:428	old_beauty	no	-	proc root
-proc	/datum/component/aquarium	remove_visual	code/datums/components/aquarium.dm:444	source,visual	no	-	proc root
-proc	/datum/component/aquarium	set_visual	code/datums/components/aquarium.dm:450	source,visual	no	-	proc root
-proc	/datum/component/aquarium	request_layer	code/datums/components/aquarium.dm:460	layer_type	no	-	proc root
-proc	/datum/component/aquarium	get_fishes	code/datums/components/aquarium.dm:476		no	-	proc root
-proc	/datum/component/aquarium	is_fish_population_safe	code/datums/components/aquarium.dm:482		no	-	proc root
-proc	/datum/component/aquarium	get_optimal_aquarium_settings	code/datums/components/aquarium.dm:502		no	-	proc root
-proc	/datum/component/aquarium	interact	code/datums/components/aquarium.dm:575	source,user	no	-	proc root
-proc	/datum/component/aquarium	secondary_interact	code/datums/components/aquarium.dm:582	source,user	no	-	proc root
-proc	/datum/component/aquarium	on_secondary_attack_hand	code/datums/components/aquarium.dm:588	source,user	no	-	proc root
-proc	/datum/component/aquarium	ui_interact	code/datums/components/aquarium.dm:593	user,ui	no	-	proc
-proc	/datum/component/aquarium	ui_data	code/datums/components/aquarium.dm:600	user	no	-	proc
-proc	/datum/component/aquarium	ui_static_data	code/datums/components/aquarium.dm:630	user	no	-	proc
-proc	/datum/component/aquarium	ui_act	code/datums/components/aquarium.dm:642	action,params,ui,state	no	-	proc
-proc	/datum/component/aquarium	set_aquarium_mode	code/datums/components/aquarium.dm:681	new_mode	no	-	proc root
-proc	/datum/component/aquarium	set_fluid_type	code/datums/components/aquarium.dm:692	new_fluid_type	no	-	proc root
-proc	/datum/component/aquarium	admire	code/datums/components/aquarium.dm:699	source,user	no	-	proc root
-proc	/datum/component/aquarium	on_requesting_context_from_item	code/datums/components/aquarium.dm:722	source,context,held_item,user	no	-	proc root
+type	/datum/component/aquarium	/datum/component	code/datums/components/aquarium.dm:10	live	datum_component_aquarium	1	0
+proc	/datum/component/aquarium	Initialize	code/datums/components/aquarium.dm:68	min_px,max_px,min_py,max_py,default_beauty,reagents_size,min_fluid_temp,max_fluid_temp,init_mode	yes	full	proc
+proc	/datum/component/aquarium	RegisterWithParent	code/datums/components/aquarium.dm:97		yes	full	proc
+proc	/datum/component/aquarium	UnregisterFromParent	code/datums/components/aquarium.dm:147		yes	full	proc
+proc	/datum/component/aquarium	PreTransfer	code/datums/components/aquarium.dm:176	new_parent	yes	full	proc
+proc	/datum/component/aquarium	PostTransfer	code/datums/components/aquarium.dm:195	new_parent	yes	full	proc
+proc	/datum/component/aquarium	InheritComponent	code/datums/components/aquarium.dm:199	new_comp,i_am_original	yes	full	proc
+proc	/datum/component/aquarium	on_click_alt	code/datums/components/aquarium.dm:207	source,user	yes	full	proc root
+proc	/datum/component/aquarium	on_item_interaction	code/datums/components/aquarium.dm:225	source,user,item,modifiers	yes	full	proc root
+proc	/datum/component/aquarium	start_autofeed	code/datums/components/aquarium.dm:259	source	yes	full	proc root
+proc	/datum/component/aquarium	process	code/datums/components/aquarium.dm:265	seconds_per_tick	yes	full	proc
+proc	/datum/component/aquarium	feed_fishes	code/datums/components/aquarium.dm:280	movable,fishes	yes	full	proc root
+proc	/datum/component/aquarium	on_plunger_act	code/datums/components/aquarium.dm:286	source,plunger,user,reinforced	yes	full	proc root
+proc	/datum/component/aquarium	do_plunging	code/datums/components/aquarium.dm:294	source,user	yes	full	proc root
+proc	/datum/component/aquarium	on_examine	code/datums/components/aquarium.dm:301	source,user,examine_list	yes	full	proc root
+proc	/datum/component/aquarium	can_insert	code/datums/components/aquarium.dm:310	source,item,user	yes	full	proc root
+proc	/datum/component/aquarium	on_entered	code/datums/components/aquarium.dm:327	source,entered	yes	full	proc root
+proc	/datum/component/aquarium	get_content_beauty	code/datums/components/aquarium.dm:345	content	yes	full	proc root
+proc	/datum/component/aquarium	on_exited	code/datums/components/aquarium.dm:358	source,gone	yes	full	proc root
+proc	/datum/component/aquarium	get_candidates	code/datums/components/aquarium.dm:380	source,fish,candidates	yes	full	proc root
+proc	/datum/component/aquarium	check_evolution	code/datums/components/aquarium.dm:396	source,fish,mate,evolution	yes	full	proc root
+proc	/datum/component/aquarium	check_fluid_and_temperature	code/datums/components/aquarium.dm:412	fish	yes	full	proc root
+proc	/datum/component/aquarium	on_fish_status_changed	code/datums/components/aquarium.dm:423	fish	yes	full	proc root
+proc	/datum/component/aquarium	update_aquarium_beauty	code/datums/components/aquarium.dm:428	old_beauty	yes	full	proc root
+proc	/datum/component/aquarium	remove_visual	code/datums/components/aquarium.dm:444	source,visual	yes	full	proc root
+proc	/datum/component/aquarium	set_visual	code/datums/components/aquarium.dm:450	source,visual	yes	full	proc root
+proc	/datum/component/aquarium	request_layer	code/datums/components/aquarium.dm:460	layer_type	yes	full	proc root
+proc	/datum/component/aquarium	get_fishes	code/datums/components/aquarium.dm:476		yes	full	proc root
+proc	/datum/component/aquarium	is_fish_population_safe	code/datums/components/aquarium.dm:482		yes	full	proc root
+proc	/datum/component/aquarium	get_optimal_aquarium_settings	code/datums/components/aquarium.dm:502		yes	full	proc root
+proc	/datum/component/aquarium	interact	code/datums/components/aquarium.dm:575	source,user	yes	full	proc root
+proc	/datum/component/aquarium	secondary_interact	code/datums/components/aquarium.dm:582	source,user	yes	full	proc root
+proc	/datum/component/aquarium	on_secondary_attack_hand	code/datums/components/aquarium.dm:588	source,user	yes	full	proc root
+proc	/datum/component/aquarium	ui_interact	code/datums/components/aquarium.dm:593	user,ui	yes	full	proc
+proc	/datum/component/aquarium	ui_data	code/datums/components/aquarium.dm:600	user	yes	full	proc
+proc	/datum/component/aquarium	ui_static_data	code/datums/components/aquarium.dm:630	user	yes	full	proc
+proc	/datum/component/aquarium	ui_act	code/datums/components/aquarium.dm:642	action,params,ui,state	yes	full	proc
+proc	/datum/component/aquarium	set_aquarium_mode	code/datums/components/aquarium.dm:681	new_mode	yes	full	proc root
+proc	/datum/component/aquarium	set_fluid_type	code/datums/components/aquarium.dm:692	new_fluid_type	yes	full	proc root
+proc	/datum/component/aquarium	admire	code/datums/components/aquarium.dm:699	source,user	yes	full	proc root
+proc	/datum/component/aquarium	on_requesting_context_from_item	code/datums/components/aquarium.dm:722	source,context,held_item,user	yes	full	proc root
 type	/datum/component/aquarium_content	/datum/component	code/datums/components/aquarium_content.dm:5	live	datum_component_aquarium_content	1	0
 proc	/datum/component/aquarium_content	Initialize	code/datums/components/aquarium_content.dm:25	animation_update_signals	yes	full	proc
 proc	/datum/component/aquarium_content	Destroy	code/datums/components/aquarium_content.dm:39	force	yes	full	proc
@@ -57009,13 +57009,13 @@ proc	/obj/item/clothing/gloves/latex/coroner	add_blood_DNA	code/modules/clothing
 type	/obj/item/clothing/gloves/tinkerer	/obj/item/clothing/gloves	code/modules/clothing/gloves/special.dm:148	live	obj_item_clothing_gloves_tinkerer	0	0
 type	/obj/item/clothing/gloves/atmos	/obj/item/clothing/gloves	code/modules/clothing/gloves/special.dm:163	live	obj_item_clothing_gloves_atmos	1	0
 proc	/obj/item/clothing/gloves/atmos	Initialize	code/modules/clothing/gloves/special.dm:175	mapload	yes	full	proc
-type	/obj/item/clothing/gloves/fishing	/obj/item/clothing/gloves	code/modules/clothing/gloves/special.dm:181	inert	obj_item_clothing_gloves_fishing	0	0
-proc	/obj/item/clothing/gloves/fishing	Initialize	code/modules/clothing/gloves/special.dm:188	mapload	no	-	proc
-proc	/obj/item/clothing/gloves/fishing	equipped	code/modules/clothing/gloves/special.dm:193	user,slot	no	-	proc
-proc	/obj/item/clothing/gloves/fishing	dropped	code/modules/clothing/gloves/special.dm:198	user	no	-	proc
-proc	/obj/item/clothing/gloves/fishing	begin_workout	code/modules/clothing/gloves/special.dm:204	source,challenge	no	-	proc root
-proc	/obj/item/clothing/gloves/fishing	stop_workout	code/modules/clothing/gloves/special.dm:211	source	no	-	proc root
-proc	/obj/item/clothing/gloves/fishing	process	code/modules/clothing/gloves/special.dm:217	seconds_per_tick	no	-	proc
+type	/obj/item/clothing/gloves/fishing	/obj/item/clothing/gloves	code/modules/clothing/gloves/special.dm:181	live	obj_item_clothing_gloves_fishing	1	0
+proc	/obj/item/clothing/gloves/fishing	Initialize	code/modules/clothing/gloves/special.dm:188	mapload	yes	full	proc
+proc	/obj/item/clothing/gloves/fishing	equipped	code/modules/clothing/gloves/special.dm:193	user,slot	yes	full	proc
+proc	/obj/item/clothing/gloves/fishing	dropped	code/modules/clothing/gloves/special.dm:198	user	yes	full	proc
+proc	/obj/item/clothing/gloves/fishing	begin_workout	code/modules/clothing/gloves/special.dm:204	source,challenge	yes	full	proc root
+proc	/obj/item/clothing/gloves/fishing	stop_workout	code/modules/clothing/gloves/special.dm:211	source	yes	full	proc root
+proc	/obj/item/clothing/gloves/fishing	process	code/modules/clothing/gloves/special.dm:217	seconds_per_tick	yes	full	proc
 type	/obj/item/clothing/gloves/tackler	/obj/item/clothing/gloves	code/modules/clothing/gloves/tacklers.dm:2	live	obj_item_clothing_gloves_tackler	1	0
 proc	/obj/item/clothing/gloves/tackler	Initialize	code/modules/clothing/gloves/tacklers.dm:29	mapload	yes	full	proc
 proc	/obj/item/clothing/gloves/tackler	Destroy	code/modules/clothing/gloves/tacklers.dm:33		yes	full	proc
@@ -62060,11 +62060,11 @@ proc	/obj/item/fishing_rod	set_slot	code/modules/fishing/fishing_rod.dm:619	equi
 proc	/obj/item/fishing_rod	Exited	code/modules/fishing/fishing_rod.dm:634	gone,direction	yes	full	proc
 proc	/obj/item/fishing_rod	get_frame	code/modules/fishing/fishing_rod.dm:652	challenge	yes	full	proc root
 type	/obj/item/fishing_rod/mob_fisher	/obj/item/fishing_rod	code/datums/components/profound_fisher.dm:142	live	obj_item_fishing_rod_mob_fisher	0	0
-type	/obj/item/fishing_rod/mob_fisher/athletic	/obj/item/fishing_rod/mob_fisher	code/modules/clothing/gloves/special.dm:238	inert	obj_item_fishing_rod_mob_fisher_athletic	0	0
-proc	/obj/item/fishing_rod/mob_fisher/athletic	Initialize	code/modules/clothing/gloves/special.dm:248	mapload	no	-	proc
-proc	/obj/item/fishing_rod/mob_fisher/athletic	get_fishing_overlays	code/modules/clothing/gloves/special.dm:252		no	-	proc
-proc	/obj/item/fishing_rod/mob_fisher/athletic	hook_hit	code/modules/clothing/gloves/special.dm:255	atom_hit_by_hook_projectile,user	no	-	proc
-proc	/obj/item/fishing_rod/mob_fisher/athletic	noodling_is_dangerous	code/modules/clothing/gloves/special.dm:259	source,reward,user	no	-	proc root
+type	/obj/item/fishing_rod/mob_fisher/athletic	/obj/item/fishing_rod/mob_fisher	code/modules/clothing/gloves/special.dm:238	live	obj_item_fishing_rod_mob_fisher_athletic	1	0
+proc	/obj/item/fishing_rod/mob_fisher/athletic	Initialize	code/modules/clothing/gloves/special.dm:248	mapload	yes	full	proc
+proc	/obj/item/fishing_rod/mob_fisher/athletic	get_fishing_overlays	code/modules/clothing/gloves/special.dm:252		yes	full	proc
+proc	/obj/item/fishing_rod/mob_fisher/athletic	hook_hit	code/modules/clothing/gloves/special.dm:255	atom_hit_by_hook_projectile,user	yes	full	proc
+proc	/obj/item/fishing_rod/mob_fisher/athletic	noodling_is_dangerous	code/modules/clothing/gloves/special.dm:259	source,reward,user	yes	full	proc root
 type	/obj/item/fishing_rod/mob_fisher/dragon	/obj/item/fishing_rod/mob_fisher	code/modules/mob/living/basic/space_fauna/space_dragon/space_dragon.dm:318	live	obj_item_fishing_rod_mob_fisher_dragon	0	0
 type	/obj/item/fishing_rod/unslotted	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:657	live	obj_item_fishing_rod_unslotted	0	0
 type	/obj/item/fishing_rod/rescue	/obj/item/fishing_rod	code/modules/fishing/fishing_rod.dm:663	live	obj_item_fishing_rod_rescue	0	0
@@ -64853,20 +64853,20 @@ type	/obj/item/storage/box/emergencytank	/obj/item/storage/box	code/game/objects
 proc	/obj/item/storage/box/emergencytank	PopulateContents	code/game/objects/items/storage/boxes/engineering_boxes.dm:61		yes	full	proc
 type	/obj/item/storage/box/engitank	/obj/item/storage/box	code/game/objects/items/storage/boxes/engineering_boxes.dm:67	live	obj_item_storage_box_engitank	1	0
 proc	/obj/item/storage/box/engitank	PopulateContents	code/game/objects/items/storage/boxes/engineering_boxes.dm:71		yes	full	proc
-type	/obj/item/storage/box/fishing_hooks	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:2	inert	obj_item_storage_box_fishing_hooks	0	0
-proc	/obj/item/storage/box/fishing_hooks	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:6		no	-	proc
-type	/obj/item/storage/box/fishing_hooks/master	/obj/item/storage/box/fishing_hooks	code/game/objects/items/storage/boxes/fishing_boxes.dm:11	inert	obj_item_storage_box_fishing_hooks_master	0	0
-proc	/obj/item/storage/box/fishing_hooks/master	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:11		no	-	proc
-type	/obj/item/storage/box/fishing_lines	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:17	inert	obj_item_storage_box_fishing_lines	0	0
-proc	/obj/item/storage/box/fishing_lines	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:21		no	-	proc
-type	/obj/item/storage/box/fishing_lines/master	/obj/item/storage/box/fishing_lines	code/game/objects/items/storage/boxes/fishing_boxes.dm:26	inert	obj_item_storage_box_fishing_lines_master	0	0
-proc	/obj/item/storage/box/fishing_lines/master	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:26		no	-	proc
-type	/obj/item/storage/box/fish_revival_kit	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:32	inert	obj_item_storage_box_fish_revival_kit	0	0
-proc	/obj/item/storage/box/fish_revival_kit	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:36		no	-	proc
-type	/obj/item/storage/box/fishing_lures	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:44	inert	obj_item_storage_box_fishing_lures	0	0
-proc	/obj/item/storage/box/fishing_lures	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:52		no	-	proc
-type	/obj/item/storage/box/aquarium_props	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:59	inert	obj_item_storage_box_aquarium_props	0	0
-proc	/obj/item/storage/box/aquarium_props	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:64		no	-	proc
+type	/obj/item/storage/box/fishing_hooks	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:2	live	obj_item_storage_box_fishing_hooks	1	0
+proc	/obj/item/storage/box/fishing_hooks	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:6		yes	full	proc
+type	/obj/item/storage/box/fishing_hooks/master	/obj/item/storage/box/fishing_hooks	code/game/objects/items/storage/boxes/fishing_boxes.dm:11	live	obj_item_storage_box_fishing_hooks_master	1	0
+proc	/obj/item/storage/box/fishing_hooks/master	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:11		yes	full	proc
+type	/obj/item/storage/box/fishing_lines	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:17	live	obj_item_storage_box_fishing_lines	1	0
+proc	/obj/item/storage/box/fishing_lines	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:21		yes	full	proc
+type	/obj/item/storage/box/fishing_lines/master	/obj/item/storage/box/fishing_lines	code/game/objects/items/storage/boxes/fishing_boxes.dm:26	live	obj_item_storage_box_fishing_lines_master	1	0
+proc	/obj/item/storage/box/fishing_lines/master	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:26		yes	full	proc
+type	/obj/item/storage/box/fish_revival_kit	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:32	live	obj_item_storage_box_fish_revival_kit	1	0
+proc	/obj/item/storage/box/fish_revival_kit	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:36		yes	full	proc
+type	/obj/item/storage/box/fishing_lures	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:44	live	obj_item_storage_box_fishing_lures	1	0
+proc	/obj/item/storage/box/fishing_lures	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:52		yes	full	proc
+type	/obj/item/storage/box/aquarium_props	/obj/item/storage/box	code/game/objects/items/storage/boxes/fishing_boxes.dm:59	live	obj_item_storage_box_aquarium_props	1	0
+proc	/obj/item/storage/box/aquarium_props	PopulateContents	code/game/objects/items/storage/boxes/fishing_boxes.dm:64		yes	full	proc
 type	/obj/item/storage/box/flat	/obj/item/storage/box	code/game/objects/items/storage/boxes/flat_boxes.dm:2	live	obj_item_storage_box_flat	1	0
 proc	/obj/item/storage/box/flat	Initialize	code/game/objects/items/storage/boxes/flat_boxes.dm:8	mapload	yes	full	proc
 type	/obj/item/storage/box/flat/fentanylpatches	/obj/item/storage/box/flat	code/game/objects/items/storage/boxes/flat_boxes.dm:25	live	obj_item_storage_box_flat_fentanylpatches	1	0
@@ -65711,8 +65711,8 @@ proc	/obj/item/storage/toolbox/fishing	Initialize	code/game/objects/items/storag
 proc	/obj/item/storage/toolbox/fishing	PopulateContents	code/game/objects/items/storage/toolboxes/fishing.dm:18		yes	full	proc
 type	/obj/item/storage/toolbox/fishing/small	/obj/item/storage/toolbox/fishing	code/game/objects/items/storage/toolboxes/fishing.dm:26	live	obj_item_storage_toolbox_fishing_small	1	0
 proc	/obj/item/storage/toolbox/fishing/small	PopulateContents	code/game/objects/items/storage/toolboxes/fishing.dm:33		yes	full	proc
-type	/obj/item/storage/toolbox/fishing/master	/obj/item/storage/toolbox/fishing	code/game/objects/items/storage/toolboxes/fishing.dm:40	inert	obj_item_storage_toolbox_fishing_master	0	0
-proc	/obj/item/storage/toolbox/fishing/master	PopulateContents	code/game/objects/items/storage/toolboxes/fishing.dm:46		no	-	proc
+type	/obj/item/storage/toolbox/fishing/master	/obj/item/storage/toolbox/fishing	code/game/objects/items/storage/toolboxes/fishing.dm:40	live	obj_item_storage_toolbox_fishing_master	1	0
+proc	/obj/item/storage/toolbox/fishing/master	PopulateContents	code/game/objects/items/storage/toolboxes/fishing.dm:46		yes	full	proc
 type	/obj/item/storage/toolbox/mechanical	/obj/item/storage/toolbox	code/game/objects/items/storage/toolboxes/mechanical.dm:2	live	obj_item_storage_toolbox_mechanical	1	1
 proc	/obj/item/storage/toolbox/mechanical	PopulateContents	code/game/objects/items/storage/toolboxes/mechanical.dm:9		yes	full	proc
 type	/obj/item/storage/toolbox/mechanical/old	/obj/item/storage/toolbox/mechanical	code/game/objects/items/storage/toolboxes/mechanical.dm:18	live	obj_item_storage_toolbox_mechanical_old	0	0
@@ -81163,50 +81163,50 @@ proc	/obj/item/fish_gene	Initialize	code/modules/fishing/fishing_equipment.dm:86
 proc	/obj/item/fish_gene	update_name	code/modules/fishing/fishing_equipment.dm:868		yes	full	proc
 proc	/obj/item/fish_gene	interact_with_atom	code/modules/fishing/fishing_equipment.dm:872	interacting_with,user,modifiers	yes	full	proc
 proc	/obj/item/fish_gene	inject_into_fish	code/modules/fishing/fishing_equipment.dm:884	fish,user,tool	yes	full	proc root
-type	/obj/item/fish_tank	/obj/item	code/modules/fishing/aquarium/aquarium.dm:123	inert	obj_item_fish_tank	0	1
-proc	/obj/item/fish_tank	Initialize	code/modules/fishing/aquarium/aquarium.dm:161	mapload	no	-	proc
-proc	/obj/item/fish_tank	update_icon	code/modules/fishing/aquarium/aquarium.dm:181		no	-	proc
-proc	/obj/item/fish_tank	on_aquarium_liquid_changed	code/modules/fishing/aquarium/aquarium.dm:186	source,fluid_type	no	-	proc root
-proc	/obj/item/fish_tank	update_overlays	code/modules/fishing/aquarium/aquarium.dm:191		no	-	proc
-proc	/obj/item/fish_tank	can_insert	code/modules/fishing/aquarium/aquarium.dm:197	source,item,user	no	-	proc root
-proc	/obj/item/fish_tank	Entered	code/modules/fishing/aquarium/aquarium.dm:210	entered	no	-	proc
-proc	/obj/item/fish_tank	on_new_fish	code/modules/fishing/aquarium/aquarium.dm:214	source,movable	no	-	proc root
-proc	/obj/item/fish_tank	on_fish_size_weight_updated	code/modules/fishing/aquarium/aquarium.dm:222	source,new_size,new_weight	no	-	proc root
-proc	/obj/item/fish_tank	Exited	code/modules/fishing/aquarium/aquarium.dm:226	gone	no	-	proc
-proc	/obj/item/fish_tank	change_size_weight	code/modules/fishing/aquarium/aquarium.dm:233	size_change,weight_change	no	-	proc root
-proc	/obj/item/fish_tank	examine	code/modules/fishing/aquarium/aquarium.dm:253	user	no	-	proc
-type	/obj/item/fish_tank/lawyer	/obj/item/fish_tank	code/modules/fishing/aquarium/aquarium.dm:260	inert	obj_item_fish_tank_lawyer	0	1
-proc	/obj/item/fish_tank/lawyer	Initialize	code/modules/fishing/aquarium/aquarium.dm:262	mapload	no	-	proc
-type	/obj/item/fish_tank/bluespace	/obj/item/fish_tank	code/modules/fishing/aquarium/aquarium_upgrades.dm:72	inert	obj_item_fish_tank_bluespace	0	0
-type	/obj/item/aquarium_kit	/obj/item	code/modules/fishing/aquarium/aquarium_kit.dm:121	inert	obj_item_aquarium_kit	0	1
-proc	/obj/item/aquarium_kit	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:128	mapload	no	-	proc
-type	/obj/item/aquarium_prop	/obj/item	code/modules/fishing/aquarium/aquarium_kit.dm:134	inert	obj_item_aquarium_prop	0	0
-proc	/obj/item/aquarium_prop	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:143	mapload	no	-	proc
-proc	/obj/item/aquarium_prop	generate_aquarium_appearance	code/modules/fishing/aquarium/aquarium_kit.dm:152	source,visual,aquarium	no	-	proc root
-proc	/obj/item/aquarium_prop	get_aquarium_beauty	code/modules/fishing/aquarium/aquarium_kit.dm:158	source,beauty_holder	no	-	proc root
-type	/obj/item/aquarium_prop/rocks	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:163	inert	obj_item_aquarium_prop_rocks	0	0
-type	/obj/item/aquarium_prop/seaweed	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:168	inert	obj_item_aquarium_prop_seaweed	0	0
-type	/obj/item/aquarium_prop/seaweed/top	/obj/item/aquarium_prop/seaweed	code/modules/fishing/aquarium/aquarium_kit.dm:174	inert	obj_item_aquarium_prop_seaweed_top	0	0
-type	/obj/item/aquarium_prop/sand	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:179	inert	obj_item_aquarium_prop_sand	0	0
-type	/obj/item/aquarium_prop/treasure	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:185	inert	obj_item_aquarium_prop_treasure	0	0
-type	/obj/item/aquarium_upgrade	/obj/item	code/modules/fishing/aquarium/aquarium_upgrades.dm:4	inert	obj_item_aquarium_upgrade	0	0
-proc	/obj/item/aquarium_upgrade	interact_with_atom	code/modules/fishing/aquarium/aquarium_upgrades.dm:14	interacting_with,user,modifiers	no	-	proc
-type	/obj/item/aquarium_upgrade/bioelec_gen	/obj/item/aquarium_upgrade	code/modules/fishing/aquarium/aquarium_upgrades.dm:32	inert	obj_item_aquarium_upgrade_bioelec_gen	0	0
-type	/obj/item/aquarium_upgrade/bluespace_tank	/obj/item/aquarium_upgrade	code/modules/fishing/aquarium/aquarium_upgrades.dm:64	inert	obj_item_aquarium_upgrade_bluespace_tank	0	0
-type	/obj/item/fish_analyzer	/obj/item	code/modules/fishing/aquarium/fish_analyzer.dm:3	inert	obj_item_fish_analyzer	0	0
-proc	/obj/item/fish_analyzer	Initialize	code/modules/fishing/aquarium/fish_analyzer.dm:28	mapload	no	-	proc
-proc	/obj/item/fish_analyzer	Destroy	code/modules/fishing/aquarium/fish_analyzer.dm:47		no	-	proc
-proc	/obj/item/fish_analyzer	examine	code/modules/fishing/aquarium/fish_analyzer.dm:51	user	no	-	proc
-proc	/obj/item/fish_analyzer	update_icon_state	code/modules/fishing/aquarium/fish_analyzer.dm:55		no	-	proc
-proc	/obj/item/fish_analyzer	update_overlays	code/modules/fishing/aquarium/fish_analyzer.dm:59		no	-	proc
-proc	/obj/item/fish_analyzer	interact_with_atom	code/modules/fishing/aquarium/fish_analyzer.dm:66	target,user,modifiers	no	-	proc
-proc	/obj/item/fish_analyzer	register_scanned	code/modules/fishing/aquarium/fish_analyzer.dm:79	target	no	-	proc root
-proc	/obj/item/fish_analyzer	unregister_scanned	code/modules/fishing/aquarium/fish_analyzer.dm:83		no	-	proc root
-proc	/obj/item/fish_analyzer	on_target_deleted	code/modules/fishing/aquarium/fish_analyzer.dm:89		no	-	proc root
-proc	/obj/item/fish_analyzer	ui_interact	code/modules/fishing/aquarium/fish_analyzer.dm:93	user,ui	no	-	proc
-proc	/obj/item/fish_analyzer	ui_status	code/modules/fishing/aquarium/fish_analyzer.dm:107	user,state	no	-	proc
-proc	/obj/item/fish_analyzer	ui_data	code/modules/fishing/aquarium/fish_analyzer.dm:116	user	no	-	proc
-proc	/obj/item/fish_analyzer	extract_fish_info	code/modules/fishing/aquarium/fish_analyzer.dm:130	data,fishie	no	-	proc root
+type	/obj/item/fish_tank	/obj/item	code/modules/fishing/aquarium/aquarium.dm:123	live	obj_item_fish_tank	1	1
+proc	/obj/item/fish_tank	Initialize	code/modules/fishing/aquarium/aquarium.dm:161	mapload	yes	full	proc
+proc	/obj/item/fish_tank	update_icon	code/modules/fishing/aquarium/aquarium.dm:181		yes	full	proc
+proc	/obj/item/fish_tank	on_aquarium_liquid_changed	code/modules/fishing/aquarium/aquarium.dm:186	source,fluid_type	yes	full	proc root
+proc	/obj/item/fish_tank	update_overlays	code/modules/fishing/aquarium/aquarium.dm:191		yes	full	proc
+proc	/obj/item/fish_tank	can_insert	code/modules/fishing/aquarium/aquarium.dm:197	source,item,user	yes	full	proc root
+proc	/obj/item/fish_tank	Entered	code/modules/fishing/aquarium/aquarium.dm:210	entered	yes	full	proc
+proc	/obj/item/fish_tank	on_new_fish	code/modules/fishing/aquarium/aquarium.dm:214	source,movable	yes	full	proc root
+proc	/obj/item/fish_tank	on_fish_size_weight_updated	code/modules/fishing/aquarium/aquarium.dm:222	source,new_size,new_weight	yes	full	proc root
+proc	/obj/item/fish_tank	Exited	code/modules/fishing/aquarium/aquarium.dm:226	gone	yes	full	proc
+proc	/obj/item/fish_tank	change_size_weight	code/modules/fishing/aquarium/aquarium.dm:233	size_change,weight_change	yes	full	proc root
+proc	/obj/item/fish_tank	examine	code/modules/fishing/aquarium/aquarium.dm:253	user	yes	full	proc
+type	/obj/item/fish_tank/lawyer	/obj/item/fish_tank	code/modules/fishing/aquarium/aquarium.dm:260	live	obj_item_fish_tank_lawyer	1	1
+proc	/obj/item/fish_tank/lawyer	Initialize	code/modules/fishing/aquarium/aquarium.dm:262	mapload	yes	full	proc
+type	/obj/item/fish_tank/bluespace	/obj/item/fish_tank	code/modules/fishing/aquarium/aquarium_upgrades.dm:72	live	obj_item_fish_tank_bluespace	0	0
+type	/obj/item/aquarium_kit	/obj/item	code/modules/fishing/aquarium/aquarium_kit.dm:121	live	obj_item_aquarium_kit	1	1
+proc	/obj/item/aquarium_kit	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:128	mapload	yes	full	proc
+type	/obj/item/aquarium_prop	/obj/item	code/modules/fishing/aquarium/aquarium_kit.dm:134	live	obj_item_aquarium_prop	1	0
+proc	/obj/item/aquarium_prop	Initialize	code/modules/fishing/aquarium/aquarium_kit.dm:143	mapload	yes	full	proc
+proc	/obj/item/aquarium_prop	generate_aquarium_appearance	code/modules/fishing/aquarium/aquarium_kit.dm:152	source,visual,aquarium	yes	full	proc root
+proc	/obj/item/aquarium_prop	get_aquarium_beauty	code/modules/fishing/aquarium/aquarium_kit.dm:158	source,beauty_holder	yes	full	proc root
+type	/obj/item/aquarium_prop/rocks	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:163	live	obj_item_aquarium_prop_rocks	0	0
+type	/obj/item/aquarium_prop/seaweed	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:168	live	obj_item_aquarium_prop_seaweed	0	0
+type	/obj/item/aquarium_prop/seaweed/top	/obj/item/aquarium_prop/seaweed	code/modules/fishing/aquarium/aquarium_kit.dm:174	live	obj_item_aquarium_prop_seaweed_top	0	0
+type	/obj/item/aquarium_prop/sand	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:179	live	obj_item_aquarium_prop_sand	0	0
+type	/obj/item/aquarium_prop/treasure	/obj/item/aquarium_prop	code/modules/fishing/aquarium/aquarium_kit.dm:185	live	obj_item_aquarium_prop_treasure	0	0
+type	/obj/item/aquarium_upgrade	/obj/item	code/modules/fishing/aquarium/aquarium_upgrades.dm:4	live	obj_item_aquarium_upgrade	1	0
+proc	/obj/item/aquarium_upgrade	interact_with_atom	code/modules/fishing/aquarium/aquarium_upgrades.dm:14	interacting_with,user,modifiers	yes	full	proc
+type	/obj/item/aquarium_upgrade/bioelec_gen	/obj/item/aquarium_upgrade	code/modules/fishing/aquarium/aquarium_upgrades.dm:32	live	obj_item_aquarium_upgrade_bioelec_gen	0	0
+type	/obj/item/aquarium_upgrade/bluespace_tank	/obj/item/aquarium_upgrade	code/modules/fishing/aquarium/aquarium_upgrades.dm:64	live	obj_item_aquarium_upgrade_bluespace_tank	0	0
+type	/obj/item/fish_analyzer	/obj/item	code/modules/fishing/aquarium/fish_analyzer.dm:3	live	obj_item_fish_analyzer	1	0
+proc	/obj/item/fish_analyzer	Initialize	code/modules/fishing/aquarium/fish_analyzer.dm:28	mapload	yes	full	proc
+proc	/obj/item/fish_analyzer	Destroy	code/modules/fishing/aquarium/fish_analyzer.dm:47		yes	full	proc
+proc	/obj/item/fish_analyzer	examine	code/modules/fishing/aquarium/fish_analyzer.dm:51	user	yes	full	proc
+proc	/obj/item/fish_analyzer	update_icon_state	code/modules/fishing/aquarium/fish_analyzer.dm:55		yes	full	proc
+proc	/obj/item/fish_analyzer	update_overlays	code/modules/fishing/aquarium/fish_analyzer.dm:59		yes	full	proc
+proc	/obj/item/fish_analyzer	interact_with_atom	code/modules/fishing/aquarium/fish_analyzer.dm:66	target,user,modifiers	yes	full	proc
+proc	/obj/item/fish_analyzer	register_scanned	code/modules/fishing/aquarium/fish_analyzer.dm:79	target	yes	full	proc root
+proc	/obj/item/fish_analyzer	unregister_scanned	code/modules/fishing/aquarium/fish_analyzer.dm:83		yes	full	proc root
+proc	/obj/item/fish_analyzer	on_target_deleted	code/modules/fishing/aquarium/fish_analyzer.dm:89		yes	full	proc root
+proc	/obj/item/fish_analyzer	ui_interact	code/modules/fishing/aquarium/fish_analyzer.dm:93	user,ui	yes	full	proc
+proc	/obj/item/fish_analyzer	ui_status	code/modules/fishing/aquarium/fish_analyzer.dm:107	user,state	yes	full	proc
+proc	/obj/item/fish_analyzer	ui_data	code/modules/fishing/aquarium/fish_analyzer.dm:116	user	yes	full	proc
+proc	/obj/item/fish_analyzer	extract_fish_info	code/modules/fishing/aquarium/fish_analyzer.dm:130	data,fishie	yes	full	proc root
 type	/obj/item/fish	/obj/item	code/modules/fishing/fish/_fish.dm:20	base	obj_item_fish	1	0
 proc	/obj/item/fish	Initialize	code/modules/fishing/fish/_fish.dm:200	mapload,apply_qualities	yes	full	proc
 proc	/obj/item/fish	grind_results	code/modules/fishing/fish/_fish.dm:252		yes	full	proc
@@ -105505,23 +105505,23 @@ type	/obj/structure/fish_mount/bar/directional/north	/obj/structure/fish_mount/b
 type	/obj/structure/fish_mount/bar/directional/south	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional_south	0	0
 type	/obj/structure/fish_mount/bar/directional/east	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional_east	0	0
 type	/obj/structure/fish_mount/bar/directional/west	/obj/structure/fish_mount/bar/directional	code/modules/fishing/fish_mount.dm:211	live	obj_structure_fish_mount_bar_directional_west	0	0
-type	/obj/structure/aquarium	/obj/structure	code/modules/fishing/aquarium/aquarium.dm:2	inert	obj_structure_aquarium	0	0
-proc	/obj/structure/aquarium	Initialize	code/modules/fishing/aquarium/aquarium.dm:29	mapload	no	-	proc
-proc	/obj/structure/aquarium	update_icon	code/modules/fishing/aquarium/aquarium.dm:36		no	-	proc
-proc	/obj/structure/aquarium	on_aquarium_liquid_changed	code/modules/fishing/aquarium/aquarium.dm:41	source,fluid_type	no	-	proc root
-proc	/obj/structure/aquarium	update_overlays	code/modules/fishing/aquarium/aquarium.dm:46		no	-	proc
-proc	/obj/structure/aquarium	wrench_act	code/modules/fishing/aquarium/aquarium.dm:59	user,tool	no	-	proc
-proc	/obj/structure/aquarium	item_interaction	code/modules/fishing/aquarium/aquarium.dm:64	user,tool,modifiers	no	-	proc
-proc	/obj/structure/aquarium	atom_break	code/modules/fishing/aquarium/aquarium.dm:83	damage_flag	no	-	proc
-proc	/obj/structure/aquarium	aquarium_smash	code/modules/fishing/aquarium/aquarium.dm:88		no	-	proc root
-type	/obj/structure/aquarium/prefilled	/obj/structure/aquarium	code/modules/fishing/aquarium/aquarium.dm:106	inert	obj_structure_aquarium_prefilled	0	0
-proc	/obj/structure/aquarium/prefilled	Initialize	code/modules/fishing/aquarium/aquarium.dm:109	mapload	no	-	proc
-type	/obj/structure/aquarium/bioelec_gen	/obj/structure/aquarium	code/modules/fishing/aquarium/aquarium_upgrades.dm:39	inert	obj_structure_aquarium_bioelec_gen	0	0
-proc	/obj/structure/aquarium/bioelec_gen	Initialize	code/modules/fishing/aquarium/aquarium_upgrades.dm:47	mapload	no	-	proc
-proc	/obj/structure/aquarium/bioelec_gen	zap_act	code/modules/fishing/aquarium/aquarium_upgrades.dm:51	power,zap_flags	no	-	proc
-proc	/obj/structure/aquarium/bioelec_gen	examine	code/modules/fishing/aquarium/aquarium_upgrades.dm:57	user	no	-	proc
-type	/obj/structure/aquarium/donkfish	/obj/structure/aquarium	code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86	inert	obj_structure_aquarium_donkfish	0	0
-proc	/obj/structure/aquarium/donkfish	Initialize	code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:90	mapload	no	-	proc
+type	/obj/structure/aquarium	/obj/structure	code/modules/fishing/aquarium/aquarium.dm:2	live	obj_structure_aquarium	1	0
+proc	/obj/structure/aquarium	Initialize	code/modules/fishing/aquarium/aquarium.dm:29	mapload	yes	full	proc
+proc	/obj/structure/aquarium	update_icon	code/modules/fishing/aquarium/aquarium.dm:36		yes	full	proc
+proc	/obj/structure/aquarium	on_aquarium_liquid_changed	code/modules/fishing/aquarium/aquarium.dm:41	source,fluid_type	yes	full	proc root
+proc	/obj/structure/aquarium	update_overlays	code/modules/fishing/aquarium/aquarium.dm:46		yes	full	proc
+proc	/obj/structure/aquarium	wrench_act	code/modules/fishing/aquarium/aquarium.dm:59	user,tool	yes	full	proc
+proc	/obj/structure/aquarium	item_interaction	code/modules/fishing/aquarium/aquarium.dm:64	user,tool,modifiers	yes	full	proc
+proc	/obj/structure/aquarium	atom_break	code/modules/fishing/aquarium/aquarium.dm:83	damage_flag	yes	full	proc
+proc	/obj/structure/aquarium	aquarium_smash	code/modules/fishing/aquarium/aquarium.dm:88		yes	full	proc root
+type	/obj/structure/aquarium/prefilled	/obj/structure/aquarium	code/modules/fishing/aquarium/aquarium.dm:106	live	obj_structure_aquarium_prefilled	1	0
+proc	/obj/structure/aquarium/prefilled	Initialize	code/modules/fishing/aquarium/aquarium.dm:109	mapload	yes	full	proc
+type	/obj/structure/aquarium/bioelec_gen	/obj/structure/aquarium	code/modules/fishing/aquarium/aquarium_upgrades.dm:39	live	obj_structure_aquarium_bioelec_gen	1	0
+proc	/obj/structure/aquarium/bioelec_gen	Initialize	code/modules/fishing/aquarium/aquarium_upgrades.dm:47	mapload	yes	full	proc
+proc	/obj/structure/aquarium/bioelec_gen	zap_act	code/modules/fishing/aquarium/aquarium_upgrades.dm:51	power,zap_flags	yes	full	proc
+proc	/obj/structure/aquarium/bioelec_gen	examine	code/modules/fishing/aquarium/aquarium_upgrades.dm:57	user	yes	full	proc
+type	/obj/structure/aquarium/donkfish	/obj/structure/aquarium	code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:86	live	obj_structure_aquarium_donkfish	1	0
+proc	/obj/structure/aquarium/donkfish	Initialize	code/modules/mapfluff/ruins/spaceruin_code/hauntedtradingpost.dm:90	mapload	yes	full	proc
 type	/obj/structure/fermenting_barrel	/obj/structure	code/modules/hydroponics/fermenting_barrel.dm:2	live	obj_structure_fermenting_barrel	1	1
 proc	/obj/structure/fermenting_barrel	Initialize	code/modules/hydroponics/fermenting_barrel.dm:31	mapload	yes	full	proc
 proc	/obj/structure/fermenting_barrel	Destroy	code/modules/hydroponics/fermenting_barrel.dm:45		yes	full	proc

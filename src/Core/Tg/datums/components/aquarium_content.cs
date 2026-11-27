@@ -9,9 +9,9 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// The whole file: what lets a fish or a prop be put in an aquarium and shown in it (the fish carries it from its Initialize). The
-// aquariums themselves come with their own package; until then nothing has TRAIT_IS_AQUARIUM and the visual is never built.
-// The var blocks are generated (D111).
+// The whole file: what lets a fish or a prop be put in an aquarium and shown in it (the fish carries it from its Initialize): its
+// visual, an /obj/effect/aquarium in the aquarium's vis_contents, which the fish or the prop draws and animates. The var blocks are
+// generated (D111).
 
 /// Allows movables to be inserted/displayed in aquariums.
 // tg: code/datums/components/aquarium_content.dm:2

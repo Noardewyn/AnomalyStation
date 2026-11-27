@@ -9,9 +9,10 @@ using static Anomaly.Core.Tg.GlobalProcs;
 
 namespace Anomaly.Core.Tg;
 
-// PARTIAL: only the stasis fish cases, which carry a fish safe from the air and start with one (the random, freshwater,
-// saltwater, Tiziran, syndicate and black-market cases). The aquarium kit and the aquarium props come with the aquariums. The
-// var blocks are generated.
+// The whole file: the fish feed can (var-only), the stasis fish cases, which carry a fish safe from the air and start with one (the
+// random, freshwater, saltwater, Tiziran, syndicate and black-market cases), the aquarium construction kit that slapcrafts an
+// aquarium or a fish tank, and the aquarium props (rocks, seaweed, sand, treasure) with their place in the tank and their beauty.
+// The var blocks are generated.
 
 /**
  * Stasis fish case container for moving fish between aquariums safely.
@@ -130,4 +131,58 @@ public sealed partial class TgState
 {
     // tg: code/modules/fishing/aquarium/aquarium_kit.dm:90  get_fish_type's var/static/list/weighted_list (rules 10.6)
     internal DmList obj_item_storage_fish_case_blackmarket__get_fish_type__weighted_list;
+}
+
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:121
+public partial class obj_item_aquarium_kit : obj_item
+{
+    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:128
+    [DmParams("mapload")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        DmList recipes = TgState.Current.obj_item_aquarium_kit__Initialize__recipes ??= Dm.list(typeof(datum_crafting_recipe_aquarium), typeof(datum_crafting_recipe_fish_tank));
+        Waiting.NoSleep(AddElement(typeof(datum_element_slapcrafting), recipes));
+        return dot;
+    }
+}
+
+// tg: code/modules/fishing/aquarium/aquarium_kit.dm:134
+public partial class obj_item_aquarium_prop : obj_item
+{
+    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:144
+    [DmParams("mapload")]
+    public override object Initialize(object mapload = null, params object[] __extra)
+    {
+        object dot = base.Initialize(mapload, __extra);
+        //It's important that we register the signals before the component is attached.
+        RegisterSignal(this, COMSIG_AQUARIUM_CONTENT_GENERATE_APPEARANCE, nameof(generate_aquarium_appearance));
+        Waiting.NoSleep(AddComponent(typeof(datum_component_aquarium_content)));
+        ADD_TRAIT(this, TRAIT_UNIQUE_AQUARIUM_CONTENT, INNATE_TRAIT);
+
+        RegisterSignal(this, COMSIG_MOVABLE_GET_AQUARIUM_BEAUTY, nameof(get_aquarium_beauty));
+        return dot;
+    }
+
+    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:152
+    [SignalHandler]
+    public virtual void generate_aquarium_appearance(datum source = null, obj_effect_aquarium visual = null, atom_movable aquarium = null)
+    {
+        visual.icon = aquarium.icon;
+        visual.icon_state = Dm.text("[][]", icon_state, isitem(aquarium) ? "_fish_tank" : "");
+        visual.layer_mode = layer_mode;
+    }
+
+    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:158
+    [SignalHandler]
+    public virtual void get_aquarium_beauty(datum source = null, DmList beauty_holder = null)
+    {
+        Dm.append(beauty_holder, beauty);
+    }
+}
+
+public sealed partial class TgState
+{
+    // tg: code/modules/fishing/aquarium/aquarium_kit.dm:130  Initialize's var/static/list/recipes (rules 10.6)
+    internal DmList obj_item_aquarium_kit__Initialize__recipes;
 }

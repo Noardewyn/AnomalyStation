@@ -1050,7 +1050,11 @@ public partial class EntityLayer : Node3D
     /// <summary>E16: the big manipulator's arm (the claw, turned toward its task's tile), drawn into the manipulator's picture as a helper is.</summary>
     public const string ManipulatorArmType = "/obj/effect/big_manipulator_arm";
 
-    private static bool IsVisualHelper(string type) => IsPath(type, VisualHelperType) || IsPath(type, VisOverlayType) || IsPath(type, EyelidType) || IsPath(type, ManipulatorArmType);
+    /// <summary>tg's aquarium visuals (a fish or a prop in an aquarium or a fish tank: the fish swims by its chain's pixel_w and pixel_z and turns by its transform), drawn into the aquarium's picture as a helper is.</summary>
+    public const string AquariumVisualType = "/obj/effect/aquarium";
+
+    private static bool IsVisualHelper(string type) => IsPath(type, VisualHelperType) || IsPath(type, VisOverlayType) || IsPath(type, EyelidType) || IsPath(type, ManipulatorArmType)
+        || IsPath(type, AquariumVisualType);
 
     private static bool IsPath(string type, string path)
         => type != null && type.StartsWith(path, StringComparison.Ordinal) && (type.Length == path.Length || type[path.Length] == '/');
@@ -1097,16 +1101,29 @@ public partial class EntityLayer : Node3D
             return false;
         double dx = 0, dy = 0;
         int alpha = root.Alpha;
+        int? w = null, z = null;
+        float[] transform = null;
         if (inset.Entity.Animation != null
             && AnimationPlayback.TryEvaluate(inset.Entity.Animation, _renderTick, Anomaly.Core.Motion.MotionMath.TicksPerSecond, AnimatedBase.Of(root), out AnimatedLook moved, 255))
         {
             dx = moved.PixelX;
             dy = moved.PixelY;
             alpha = (int)Math.Round(Math.Clamp(moved.Alpha, 0, 1) * 255);
+            // an aquarium's fish swims by pixel_w and pixel_z and turns by its transform (tg's swim_animation)
+            if (moved.PixelW != 0 || moved.PixelZ != 0)
+            {
+                w = root.PixelW + (int)Math.Round(moved.PixelW);
+                z = root.PixelZ + (int)Math.Round(moved.PixelZ);
+            }
+            if (!moved.Transform.IsIdentity)
+            {
+                Affine now = Affine.FromMatrix(root.Transform).Then(moved.Transform);
+                transform = new[] { (float)now.A, (float)now.B, (float)now.C, (float)now.D, (float)now.E, (float)now.F };
+            }
         }
         if (alpha == 0)
             return false; // an invisible helper changes nothing (an eyelid between blinks)
-        composed = _insetLooks.With(host, look, root.PixelX + (int)Math.Round(dx), root.PixelY + (int)Math.Round(dy), alpha);
+        composed = _insetLooks.With(host, look, root.PixelX + (int)Math.Round(dx), root.PixelY + (int)Math.Round(dy), alpha, transform, w, z);
         return true;
     }
 

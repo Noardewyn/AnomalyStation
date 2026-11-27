@@ -3158,9 +3158,9 @@ public partial class obj_item_storage_toolbox_fishing_small
     }
 }
 
-// tg: code/game/objects/items/storage/toolboxes/fishing.dm:40
-[DmPath("/obj/item/storage/toolbox/fishing/master"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_toolbox_fishing_master : obj_item_storage_toolbox_fishing
+// tg: code/game/objects/items/storage/toolboxes/fishing.dm:40 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/toolbox/fishing/master")]
+public partial class obj_item_storage_toolbox_fishing_master
 {
     // tg: code/game/objects/items/storage/toolboxes/fishing.dm:40
     public obj_item_storage_toolbox_fishing_master()

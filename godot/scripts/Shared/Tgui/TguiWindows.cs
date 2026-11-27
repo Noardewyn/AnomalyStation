@@ -297,6 +297,8 @@ public static class TguiInterfaces
         ["FishCatalog"] = FishCatalog.Render,
         ["FishingRod"] = FishingRod.Render,
         ["FishingCalculator"] = FishingCalculator.Render,
+        ["Aquarium"] = Aquarium.Render,
+        ["FishAnalyzer"] = FishAnalyzer.Render,
         ["ExosuitFabricator"] = ExosuitFabricator.Render, // silicons SI3
         ["Fabricator"] = Fabricator.Render, // gaps RD1
         ["Autolathe"] = Autolathe.Render, // gaps RD1

@@ -1261,9 +1261,9 @@ public partial class obj_item_storage_box_engitank
     }
 }
 
-// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:2
-[DmPath("/obj/item/storage/box/fishing_hooks"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_box_fishing_hooks : obj_item_storage_box
+// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:2 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/box/fishing_hooks")]
+public partial class obj_item_storage_box_fishing_hooks
 {
     // tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:2
     public obj_item_storage_box_fishing_hooks()
@@ -1274,13 +1274,13 @@ public partial class obj_item_storage_box_fishing_hooks : obj_item_storage_box
     }
 }
 
-// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:11
-[DmPath("/obj/item/storage/box/fishing_hooks/master"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_box_fishing_hooks_master : obj_item_storage_box_fishing_hooks { }
+// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:11 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/box/fishing_hooks/master")]
+public partial class obj_item_storage_box_fishing_hooks_master { }
 
-// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:17
-[DmPath("/obj/item/storage/box/fishing_lines"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_box_fishing_lines : obj_item_storage_box
+// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:17 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/box/fishing_lines")]
+public partial class obj_item_storage_box_fishing_lines
 {
     // tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:17
     public obj_item_storage_box_fishing_lines()
@@ -1291,13 +1291,13 @@ public partial class obj_item_storage_box_fishing_lines : obj_item_storage_box
     }
 }
 
-// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:26
-[DmPath("/obj/item/storage/box/fishing_lines/master"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_box_fishing_lines_master : obj_item_storage_box_fishing_lines { }
+// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:26 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/box/fishing_lines/master")]
+public partial class obj_item_storage_box_fishing_lines_master { }
 
-// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:32
-[DmPath("/obj/item/storage/box/fish_revival_kit"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_box_fish_revival_kit : obj_item_storage_box
+// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:32 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/box/fish_revival_kit")]
+public partial class obj_item_storage_box_fish_revival_kit
 {
     // tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:32
     public obj_item_storage_box_fish_revival_kit()
@@ -1308,9 +1308,9 @@ public partial class obj_item_storage_box_fish_revival_kit : obj_item_storage_bo
     }
 }
 
-// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:44
-[DmPath("/obj/item/storage/box/fishing_lures"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_box_fishing_lures : obj_item_storage_box
+// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:44 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/box/fishing_lures")]
+public partial class obj_item_storage_box_fishing_lures
 {
     // tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:44
     public obj_item_storage_box_fishing_lures()
@@ -1325,9 +1325,9 @@ public partial class obj_item_storage_box_fishing_lures : obj_item_storage_box
     }
 }
 
-// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:59
-[DmPath("/obj/item/storage/box/aquarium_props"), DmGeneratedOnly, DmInert]
-public partial class obj_item_storage_box_aquarium_props : obj_item_storage_box
+// tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:59 (the var block of a hand-written class)
+[DmPath("/obj/item/storage/box/aquarium_props")]
+public partial class obj_item_storage_box_aquarium_props
 {
     // tg: code/game/objects/items/storage/boxes/fishing_boxes.dm:59
     public obj_item_storage_box_aquarium_props()

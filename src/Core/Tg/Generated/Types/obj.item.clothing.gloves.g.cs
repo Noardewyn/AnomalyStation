@@ -1412,9 +1412,9 @@ public partial class obj_item_clothing_gloves_atmos
     }
 }
 
-// tg: code/modules/clothing/gloves/special.dm:181
-[DmPath("/obj/item/clothing/gloves/fishing"), DmGeneratedOnly, DmInert]
-public partial class obj_item_clothing_gloves_fishing : obj_item_clothing_gloves
+// tg: code/modules/clothing/gloves/special.dm:181 (the var block of a hand-written class)
+[DmPath("/obj/item/clothing/gloves/fishing")]
+public partial class obj_item_clothing_gloves_fishing
 {
     public datum_fishing_challenge challenge; // tg: code/modules/clothing/gloves/special.dm:186
 

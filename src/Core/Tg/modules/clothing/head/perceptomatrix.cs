@@ -12,8 +12,7 @@ namespace Anomaly.Core.Tg;
 // The whole file: the perceptomatrix helm. Without a hallucination core it is a blind (infinite tint) helmet that refuses its
 // wearer's psychic spells; a core (three seconds to insert) clears the tint, gives the wearer its perception and mind protection
 // traits, heavy ear protection, mind anti-magic and its pink screen colour, and lets them cast its Hallucinate spell: a pink
-// lightning beam and quantum sparks that blur, stagger and make a human hallucinate (or blow up pancakes). The fishing difficulty
-// element waits for fishing. The var blocks are generated (D111).
+// lightning beam and quantum sparks that blur, stagger and make a human hallucinate (or blow up pancakes). The var blocks are generated (D111).
 
 // tg: code/modules/clothing/head/perceptomatrix.dm:2
 public partial class obj_item_clothing_head_helmet_perceptomatrix : obj_item_clothing_head_helmet
@@ -24,7 +23,7 @@ public partial class obj_item_clothing_head_helmet_perceptomatrix : obj_item_clo
         object dot = base.Initialize(mapload, __extra);
         update_appearance(UPDATE_ICON_STATE);
         Waiting.NoSleep(update_anomaly_state());
-        Dm.Deferred("code/modules/clothing/head/perceptomatrix.dm:73", "Initialize: AddElement(/datum/element/adjust_fishing_difficulty, -7), the fishing difficulty (fishing, M10+)");
+        Waiting.NoSleep(AddElement(typeof(datum_element_adjust_fishing_difficulty), -7)); // PSYCHIC FISHING
         Waiting.NoSleep(AddComponent(typeof(datum_component_hat_stabilizer), Dm.named("loose_hat", TRUE)));
         return dot;
     }
